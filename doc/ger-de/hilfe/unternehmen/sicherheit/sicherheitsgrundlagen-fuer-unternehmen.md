@@ -53,7 +53,7 @@ Schreiben Sie auf, wer welche Aufgabe für Ihre Website übernimmt. Die
 | 4 | Minimale Rechte | Feingranulare Rollen und Richtlinien; niemand bekommt etwas, das keine Rolle gibt | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 | 5 | Backups, die sich wiederherstellen lassen | Eine dokumentierte Liste dessen, was zu sichern ist, und ein Verfahren zum Testen der Wiederherstellung | [Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) |
 | 6 | Eine geschützte Administration | Ein eigener Hostname, Netzwerkbeschränkungen, Request-Shield davor | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md) |
-| 7 | Hinschauen | Anfrage-Logs, ein Log-Viewer und Audit-Alarme bei Brute Force und riskanten Änderungen | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| 7 | Hinschauen | Anfrage-Logs, ein Log-Viewer und Audit-Alarme bei Brute Force und riskanten Änderungen | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | 8 | Ihre personenbezogenen Daten kennen | Mail-Einwilligung, Formularexporte, Kontenlisten, Aufbewahrungseinstellungen | [Personenbezogene Daten in Exponential](personenbezogene-daten-in-exponential.md) |
 | 9 | Ein Weg, Probleme zu melden | Vertrauliche Meldungen an das Projekt, erste Antwort innerhalb eines Werktags | `SECURITY.md` |
 | 10 | Ein Plan für Vorfälle | Runbooks für eine kompromittierte oder ausgefallene Website | [Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md) |
@@ -71,9 +71,9 @@ Aus [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md) und [Si
   ([Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)).
 - Die Anmeldung verrät nicht, welche Konten existieren; die Alarmregeln des Audits melden Brute-Force-Versuche.
 - In der Administration wird eine Content Security Policy im Nur-Bericht-Modus gesendet
-  ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+  ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 - Das Prüfprotokoll ist standardmäßig eingeschaltet, braucht keine Einrichtung und zeichnet Anmeldungen,
-  Inhaltsänderungen, geschriebene Einstellungen und Bestellungen auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+  Inhaltsänderungen, geschriebene Einstellungen und Bestellungen auf ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Was Sie entscheiden müssen
 

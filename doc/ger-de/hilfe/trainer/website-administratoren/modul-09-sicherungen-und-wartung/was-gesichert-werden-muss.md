@@ -142,7 +142,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, mit einem Terminal im Wurzelver
   Liste und Checkliste.
 - [Datenbanksicherungen je Datenbanksystem](../../../hosting/betrieb/datenbank-backups-je-engine.md): die Befehle
   für jede Datenbank.
-- [git_manager](../../../../../eng-us/features/6.0/extensions/git_manager.md): Sicherungen aus der Administration.
+- [git_manager](../../../../funktionen/6.0/erweiterungen/git_manager.md): Sicherungen aus der Administration.
 - [Speicheraufbau](../../../hosting/betrieb/aufbau-des-speichers.md): wo Exponential seine Dateien ablegt.
 
 ## Verwandte Seiten

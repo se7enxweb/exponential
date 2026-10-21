@@ -144,7 +144,7 @@ Verwenden Sie die Schulungsinstallation, Ihren Kursordner und die Beispielbilder
 - [Bilder, Medien und Uploads](../../../medien-und-uploads.md): die Upload-Seite und ihre Optionen.
 - [Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md): wo behaltene Entwürfe
   warten.
-- [Schaltflächen der Schnellauswahl](../../../../../eng-us/features/6.0/quick-location-buttons.md): wie die Schnellauswahl
+- [Schaltflächen der Schnellauswahl](../../../../funktionen/6.0/schaltflaechen-fuer-schnelle-platzierung.md): wie die Schnellauswahl
   festgelegt wird.
 
 ## Verwandte Seiten

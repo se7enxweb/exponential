@@ -18,7 +18,7 @@ an der Kasse unter [Warenkorb und Bestellablauf](../../unternehmen/shops/warenko
 ## Warenkörbe im Dashboard
 
 Das Shop-Dashboard zeigt laufende und abgebrochene Warenkörbe und listet unter „Work to do“ die neuesten Warenkörbe und
-nicht bestätigte Bestellvorgänge auf ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+nicht bestätigte Bestellvorgänge auf ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 Nutzen Sie sie als Signale:
 
 | Was Sie sehen | Was es bedeuten kann | Was zu tun ist |
@@ -42,7 +42,7 @@ sprechen Sie mit Ihrem Partner, bevor Sie das ändern.
 
 Die Warenkorbseite kann einen anderen Namen bekommen, zum Beispiel `/shop/cart/`, mit `settings/shop.ini [BasketSettings]
 BasketViewName`; `/shop/basket/` funktioniert für alte Links weiterhin
-([Name der Warenkorb-View im Shop](../../../../eng-us/bc/6.0/shop-basket-view-name.md)).
+([Name der Warenkorb-View im Shop](../../../bc/6.0/view-name-des-shop-warenkorbs.md)).
 
 ## Bereinigung von Warenkörben
 
@@ -52,7 +52,7 @@ Bereinigung findet also nur statt, wenn die Cronjobs laufen ([Cronjobs](../../..
 
 - [ ] Fragen Sie Ihren Hoster, ob der seltene Cronjob-Teil läuft, und wie oft.
 - [ ] Wenn die „Nächsten Schritte“ des Dashboards vor der Warenkorb-Bereinigung und in Sitzungen gespeicherten
-  Warenkörben warnen, geben Sie das an Ihren Partner weiter ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+  Warenkörben warnen, geben Sie das an Ihren Partner weiter ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Der Wunschzettel
 
@@ -81,7 +81,7 @@ Berücksichtigen Sie sie, wenn Sie die Daten Ihres Shops in Ihrer Datenschutzerk
 - [Warenkorb und Bestellablauf](../../unternehmen/shops/warenkorb-und-bestellablauf.md)
 - [Rabatte und Wunschzettel für Unternehmen](../../unternehmen/shops/rabatte-und-wunschlisten.md)
 - [Shop-Berichte](shop-berichte.md)
-- [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
+- [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

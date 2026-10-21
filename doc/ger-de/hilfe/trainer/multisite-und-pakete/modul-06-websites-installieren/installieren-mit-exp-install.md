@@ -27,7 +27,7 @@ Editor, prüfen sie, bevor etwas geschrieben wird, und lesen, was der Befehl mel
 | Dauer | 55 Minuten (15 Präsentation, 40 Übung; die Installation selbst dauert einige Minuten) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Administratoren, Entwickler und Hoster |
-| Voraussetzungen | [Lektion 6.1](eine-engine-drei-frontends.md); ein frisches Verzeichnis mit dem Code ([Train the Trainer, Lektion 2.2](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/getting-the-code-for-a-class.md)) |
+| Voraussetzungen | [Lektion 6.1](eine-engine-drei-frontends.md); ein frisches Verzeichnis mit dem Code ([Train the Trainer, Lektion 2.2](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/den-code-fuer-einen-kurs-beschaffen.md)) |
 
 ## Lernziele
 
@@ -160,7 +160,7 @@ wird.
 ## Weiterführende Informationen
 
 - [7. Die Installation über die Konsole: exp:install](../../../../installation/07-installation-ueber-die-konsole.md).
-- [Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md).
+- [Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md).
 - [exp:install für Hoster](../../../hosting/bereitstellung/exp-install-fuer-hoster.md).
 - [8. Die Website ausliefern](../../../../installation/08-die-website-ausliefern.md) und
   [10. Nach der Installation](../../../../installation/10-nach-der-installation.md).
@@ -169,7 +169,7 @@ wird.
 
 - [Modul 6: Websites mit dem Kickstarter und exp:install installieren](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

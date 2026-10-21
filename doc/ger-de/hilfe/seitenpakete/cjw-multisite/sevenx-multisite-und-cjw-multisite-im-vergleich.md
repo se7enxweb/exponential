@@ -126,7 +126,7 @@ Beide Listen der Einstellungen in `package.xml` haben dieselbe Form: `ini-site.p
 - [Die Clean-Variante und sevenx_site](../sevenx-multisite/die-clean-variante-und-sevenx-site.md)
 - [Die Installerskripte von cjw_multisite](die-installerskripte-von-cjw-multisite.md)
 - [Das Skript des Multisite-Installers von sevenx_multisite](../sevenx-multisite/das-skript-des-multisite-installers.md)
-- [Seitenpakete und die mitgelieferten Themes](../../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md)
+- [Seitenpakete und die mitgelieferten Themes](../../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -29,7 +29,7 @@ Fünf Operatoren in `kernel/common/`, jeder in seiner eigenen Klasse und registr
 
 ### alphabet
 
-Generierte Seite: [alphabet](../../../eng-us/examples/template-operators/alphabet.md).
+Generierte Seite: [alphabet](../../beispiele/template-operatoren/alphabet.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Gibt zurück:** die Liste der Buchstaben für eine alphabetische Navigation oder `false`, wenn sie ausgeschaltet ist.
@@ -55,7 +55,7 @@ alphabet() gives boolean[false]
 
 ### autolink
 
-Generierte Seite: [autolink](../../../eng-us/examples/template-operators/autolink.md).
+Generierte Seite: [autolink](../../beispiele/template-operatoren/autolink.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -85,7 +85,7 @@ Mail <a href='mailto:info@example.com'>info@example.com</a> or read <a href="htt
 
 ### simpletags
 
-Generierte Seite: [simpletags](../../../eng-us/examples/template-operators/simpletags.md).
+Generierte Seite: [simpletags](../../beispiele/template-operatoren/simpletags.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -125,7 +125,7 @@ Plain &lt;b&gt;&amp;&lt;/b&gt; text<br />
 
 ### eztoc
 
-Generierte Seite: [eztoc](../../../eng-us/examples/template-operators/eztoc.md).
+Generierte Seite: [eztoc](../../beispiele/template-operatoren/eztoc.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -206,7 +206,7 @@ Ausgabe auf alpha:
 
 ### month_overview
 
-Generierte Seite: [month_overview](../../../eng-us/examples/template-operators/month_overview.md).
+Generierte Seite: [month_overview](../../beispiele/template-operatoren/month_overview.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -274,10 +274,10 @@ a day with content links to /content/view/archive/144/(year)/2018/(month)/8/(day
 
 ## Verwandte Seiten
 
-- [Zeichenketten-Operatoren für Designer](../../../eng-us/help/designers/templates/string-operators.md)
-- [Waschen und Maskieren](../../../eng-us/help/designers/templates/wash-and-escaping.md)
-- [Rich-Text-Templates](../../../eng-us/help/designers/templates/rich-text-templates.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Zeichenketten-Operatoren für Designer](../designer/vorlagen/zeichenketten-operatoren.md)
+- [Waschen und Maskieren](../designer/vorlagen/wash-und-maskierung.md)
+- [Rich-Text-Templates](../designer/vorlagen/rich-text-templates.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

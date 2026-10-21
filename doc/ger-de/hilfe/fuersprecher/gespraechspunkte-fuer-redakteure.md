@@ -35,15 +35,15 @@ frage ich?) wichtig. Jeder Punkt unten hat den Bildschirm zum Zeigen und die Que
 |---|---|---|
 | „Jede Bearbeitung ist ein Entwurf. Die Website zeigt weiter die veröffentlichte Version, bis Sie veröffentlichen.“ | **Bearbeiten** bei einem beliebigen Inhalt | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
 | „Ältere Versionen bleiben erhalten. Sie können zwei Versionen vergleichen und zurückgehen.“ | **Versionen verwalten**, **Vergleichen** | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md), [Versionen eines Objekts](../../anleitungen/inhaltsverlauf.md) |
-| „Sie sehen die Seite in Telefon-, Tablet- und Desktopbreite, bevor Sie veröffentlichen.“ | **Vorschau** im Bearbeitungsformular | [Versionsvorschau](../../../eng-us/features/6.0/version-preview-view-modes.md) |
+| „Sie sehen die Seite in Telefon-, Tablet- und Desktopbreite, bevor Sie veröffentlichen.“ | **Vorschau** im Bearbeitungsformular | [Versionsvorschau](../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md) |
 | „Sie ordnen Seiten selbst an: Layouts, Zonen und Blöcke, auch hier mit Entwürfen.“ | Reiter **Layouts**, ein Layout **Öffnen** | [Der Layouts-Editor](../layout-editor.md) |
 | „Jede Übersetzung wird einzeln veröffentlicht; die Kennzeichen zeigen, was es gibt und was fehlt.“ | Sprachkennzeichen bei einem Inhalt | [Sprachen](../sprachen.md) |
-| „Die Administration spricht Ihre Sprache und dreht sich bei Sprachen mit Schreibrichtung von rechts nach links um.“ | Feld **Oberfläche** in der rechten Spalte | [Sprachen in Exponential](../../../eng-us/languages.md#2-support-levels), [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
-| „Ein Schreibassistent kann Text entwerfen und verbessern, veröffentlicht aber nie selbst.“ | Reiter **Intelligence**, nur wo eingerichtet | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
-| „Hilfe gibt es auf jedem Bildschirm: Das Fragezeichen öffnet die Seite zu dem Bildschirm, auf dem Sie sind.“ | „?“ in der Kopfzeile | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| „Die Administration spricht Ihre Sprache und dreht sich bei Sprachen mit Schreibrichtung von rechts nach links um.“ | Feld **Oberfläche** in der rechten Spalte | [Sprachen in Exponential](../../sprachen.md#2-unterstützungsstufen), [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
+| „Ein Schreibassistent kann Text entwerfen und verbessern, veröffentlicht aber nie selbst.“ | Reiter **Intelligence**, nur wo eingerichtet | [expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
+| „Hilfe gibt es auf jedem Bildschirm: Das Fragezeichen öffnet die Seite zu dem Bildschirm, auf dem Sie sind.“ | „?“ in der Kopfzeile | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | „Sie können allein mit der Tastatur arbeiten.“ | Einmal `Tab` auf einer beliebigen Seite; `/` zum Suchen | [Tastenkürzel](../tastenkuerzel.md) |
 | „Gelöschte Inhalte kommen zuerst in den Papierkorb und lassen sich wiederherstellen.“ | **Papierkorb** | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
-| „Heller und dunkler Modus.“ | Die Sonnen-Schaltfläche in der Kopfzeile | [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
+| „Heller und dunkler Modus.“ | Die Sonnen-Schaltfläche in der Kopfzeile | [Das Design admin4](../../funktionen/6.0/admin4-design.md) |
 
 ## In zwei Minuten zeigen
 
@@ -72,7 +72,7 @@ Die Fassung Klick für Klick mit Zeitangaben steht in [Demo-Skripte, Die 5-Minut
 - „Sie können nichts kaputt machen.“ Sagen Sie: „Jede Änderung ist zuerst ein Entwurf, und ältere Versionen bleiben erhalten.“
 - „Die KI schreibt Ihre Inhalte.“ Sagen Sie: „Sie entwirft; Sie entscheiden und veröffentlichen.“
 - „Jede Sprache ist vollständig.“ Sagen Sie: „Zehn Übersetzungen der Administration sind vollständig; andere sind teilweise
-  übersetzt.“ ([Sprachen in Exponential](../../../eng-us/languages.md#2-support-levels))
+  übersetzt.“ ([Sprachen in Exponential](../../sprachen.md#2-unterstützungsstufen))
 
 ## Verwandte Seiten
 

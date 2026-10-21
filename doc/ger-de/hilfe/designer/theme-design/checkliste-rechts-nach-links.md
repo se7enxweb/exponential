@@ -56,7 +56,7 @@ Diese Seite ist für Designer, die ein Design in Sprachen prüfen, die von recht
 ## Verwandte Seiten
 
 - [Tutorial: ein Theme für rechts nach links](tutorial-ein-rechts-nach-links-theme.md)
-- [Sprachen von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md)
+- [Sprachen von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

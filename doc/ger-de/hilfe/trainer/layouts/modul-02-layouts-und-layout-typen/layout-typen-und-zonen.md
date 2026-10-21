@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#layout-types)
-und [Exponential Layouts: Die Layout-Typen](../../../../../eng-us/bc/6.0/LAYOUTS.md#the-layout-types).
+Quellen: [Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#layouttypen)
+und [Exponential Layouts: Die Layout-Typen](../../../../bc/6.0/layouts.md#die-layouttypen).
 
 1. **Die Tabelle** (6 Minuten). Zeigen Sie sie am Beamer:
 
@@ -127,15 +127,15 @@ Verwenden Sie die Schulungsinstallation und Papier.
 
 ## Weiterführende Informationen
 
-- [Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md): Typen, Blöcke
+- [Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md): Typen, Blöcke
   und ein Planungsblatt.
-- [Exponential Layouts: Zonen](../../../../../eng-us/bc/6.0/LAYOUTS.md#zones): was eine Zone leistet.
+- [Exponential Layouts: Zonen](../../../../bc/6.0/layouts.md#zonen): was eine Zone leistet.
 
 ## Verwandte Seiten
 
 - [Modul 2: Layouts und Layout-Typen](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

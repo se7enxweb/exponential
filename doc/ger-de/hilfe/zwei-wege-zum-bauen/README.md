@@ -84,7 +84,7 @@ nie auf der Live-Site. Dateipfade sind relativ zur Wurzel der Installation; Host
 ## Verwandte Seiten
 
 - [Der Layout-Editor](../layout-editor.md)
-- [Hilfe für Designer, alle Seiten](../../../eng-us/help/designers/README.md)
+- [Hilfe für Designer, alle Seiten](../designer/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

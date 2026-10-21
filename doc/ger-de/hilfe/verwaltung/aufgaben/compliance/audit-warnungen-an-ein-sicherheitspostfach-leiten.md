@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren. Standardmäßig gehen Warn-E-Mails an `[MailSettings] AdminEmail` der Site, oft eine Adresse des
 Web-Teams. Schwerwiegende Ereignisse sollten die Menschen erreichen, die darauf reagieren
-([Audit-Warnungen und ihre Empfänger](../../../../../eng-us/help/government/security/audit-alerts-and-recipients.md)).
+([Audit-Warnungen und ihre Empfänger](../../sicherheit/audit-alarme-und-empfaenger.md)).
 
 ## Inhalt
 
@@ -65,7 +65,7 @@ Empfänger höchstens einmal in 900 Sekunden hinaus.
 
 ## Verwandte Seiten
 
-- [Audit-Warnungen und ihre Empfänger](../../../../../eng-us/help/government/security/audit-alerts-and-recipients.md)
+- [Audit-Warnungen und ihre Empfänger](../../sicherheit/audit-alarme-und-empfaenger.md)
 - [Anleitung zum Audit, 4.5](../../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger)
 - [Das Audit-Protokoll verifizieren](das-audit-protokoll-verifizieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

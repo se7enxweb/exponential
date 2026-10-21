@@ -47,7 +47,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [E-Mail-Einstellungen: einrichten und betreiben](../../../../anleitungen/mail-einstellungen-administrator.md),
-Abschnitte 1 bis 10. Was Besucher sehen: [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md).
+Abschnitte 1 bis 10. Was Besucher sehen: [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md).
 
 1. **Die Sperre in einem Absatz** (3 Minuten). Jede E-Mail passiert `eZMailTransport::send()`. Eine E-Mail mit einer
    Kategorie wird mit den Einstellungen der Person, der Sperrliste und einem noch offenen Double-Opt-in abgeglichen.

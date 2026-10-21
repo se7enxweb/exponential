@@ -71,7 +71,7 @@ veröffentlicht war.
 ## Ersetzen und zurückziehen
 
 Entfernen Sie keine Datensatzseite: Durch das Entfernen antwortet ihre Adresse mit „nicht gefunden“, und nichts leitet
-weiter ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+weiter ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 Stattdessen:
 
 1. Fügen Sie oben in der Beschreibung einen Hinweis hinzu: „Zurückgezogen am <Datum>: <Grund>. Ersetzt durch <Link>.“
@@ -103,7 +103,7 @@ Mehr Versionen brauchen mehr Platz in Datenbank und Speicher; sprechen Sie mit I
 
 - [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)
 - [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)
-- [Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)
+- [Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

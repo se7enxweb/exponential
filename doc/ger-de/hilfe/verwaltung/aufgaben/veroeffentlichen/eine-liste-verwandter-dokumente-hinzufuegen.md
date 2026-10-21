@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Redakteure, die auf einer Seite eine Liste „Dokumente“ oder „Siehe auch“ haben möchten. Exponential
 verwendet Inhalte über Relationen wieder: Ein Dokument ist ein einziges Datei-Objekt, und jede Seite, die es braucht,
-verweist darauf ([Relationen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+verweist darauf ([Relationen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Inhalt
 

@@ -46,7 +46,7 @@ jeder mit eigener Adresse, eigenem Design, eigener Startseite und eigenen Anmeld
 ## Ein Portal neben der öffentlichen Website
 
 Die Schritte für eine zweite Website stehen unter
-[Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site).
+[Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website).
 Für ein Portal laufen sie darauf hinaus:
 
 1. Ein Ordner *Partnerportal* im Inhaltsbaum; sein Knoten wird zur Wurzel des Portals (`content.ini [NodeSettings]
@@ -58,7 +58,7 @@ Für ein Portal laufen sie darauf hinaus:
 
 Gemeinsame Einträge wie Produktneuigkeiten können auf beiden Websites erscheinen: Ein Objekt kann Orte in beiden Bäumen
 haben oder von einer Seite im Portal aus verknüpft sein
-([Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+([Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Anmeldung nur im Portal
 
@@ -66,7 +66,7 @@ Zwei Einstellungen machen das Portal privat, während die öffentliche Website o
 
 - Im Siteaccess des Portals `[SiteAccessSettings] RequireUserLogin=true`: Jeder Besucher, der nicht angemeldet ist,
   kommt auf die Anmeldeseite; `AnonymousAccessList[]` hält Registrierung, Aktivierung und Zurücksetzen des Passworts
-  erreichbar ([Was Besucher sehen dürfen, Siteaccess settings](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#siteaccess-settings)).
+  erreichbar ([Was Besucher sehen dürfen, Siteaccess settings](../../ersteller/website-ersteller/rechte-fuer-besucher.md#einstellungen-des-siteaccess)).
   Der öffentliche Siteaccess setzt `false`.
 - Die Richtlinie `user/login` lässt sich nach **SiteAccess** einschränken (`kernel/user/module.php`). Geben Sie
   Partnerrollen `user/login` für `partners`, Mitarbeiterrollen für die Administration und Mitgliedern der öffentlichen
@@ -81,7 +81,7 @@ Zwei Einstellungen machen das Portal privat, während die öffentliche Website o
 ## Ein eigenes Aussehen
 
 Jeder Siteaccess hat sein eigenes `SiteDesign` und kann auf andere Designs zurückgreifen
-([Designs und die Fallback-Kette](../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md)). Das Portal kann
+([Designs und die Fallback-Kette](../../ersteller/website-ersteller/designs-und-die-fallback-kette.md)). Das Portal kann
 wie die Marke aussehen, aber schlichter, mit einem Menü der Partnerbereiche und einem Link zum Abmelden. Templates
 können sich auch nach Sektion unterscheiden, zum Beispiel ein anderes Aussehen für die Gold-Stufe
 ([Sektionen, 11.1](../../../anleitungen/sektionen.md#111-ein-template-für-eine-sektion-überschreiben)).
@@ -90,7 +90,7 @@ können sich auch nach Sektion unterscheiden, zum Beispiel ein anderes Aussehen 
 
 Der Hostname des Portals kommt in den DNS, in den Webserver oder Velocity und in das Zertifikat; `SiteURL` muss die
 Adresse sein, die Menschen verwenden, denn Links in Mails werden daraus gebaut
-([Live gehen: Hosts, HTTPS und Siteaccesses](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+([Live gehen: Hosts, HTTPS und Siteaccesses](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 Registrierungsmails zeigen in die Administration; wenn deren Adresse aus der Mail nicht erreichbar ist, setzen Sie
 `RegistrationAdminBaseURL`
 ([Registrierung und Kontofreigabe](registrierung-und-kontofreigabe.md#die-mail-an-den-administrator-mit-signierten-links)).
@@ -104,7 +104,7 @@ Die Administration selbst kann einen eigenen Hostnamen und Netzwerkbeschränkung
 (Standard), `start`, `end` oder `part`. Mit `start` erreicht `partners.example.com.test.local` den Siteaccess des
 Portals ohne eigene Einträge. `start` und `part` akzeptieren auch Hosts, die Sie nicht gemeint haben; verwenden Sie sie
 also nur dort, wo der Webserver für Ihre eigenen Hosts antwortet
-([Siteaccess über das Host-Präfix](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md#the-host-map-by-the-start-of-a-host)).
+([Siteaccess über das Host-Präfix](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md#die-host-zuordnungstabelle-nach-dem-anfang-eines-hosts)).
 
 ## Abwägungen
 
@@ -117,9 +117,9 @@ also nur dort, wo der Webserver für Ihre eigenen Hosts antwortet
 | ein Fehler in den Rollen kann Inhalte offenlegen | Trennung durch die Bauweise |
 
 Dieselbe Tabelle für Marken steht unter
-[Mehrere Websites einrichten, Trade-offs](../../../../eng-us/help/creators/website-creators/multisite-setup.md#trade-offs).
+[Mehrere Websites einrichten, Trade-offs](../../ersteller/website-ersteller/multisite-einrichten.md#abwägungen).
 Logs und Caches können pro Website geführt werden
-([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)).
+([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)).
 
 ## Checkliste
 
@@ -132,8 +132,8 @@ Logs und Caches können pro Website geführt werden
 
 ## Verwandte Seiten
 
-- [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
-- [Siteaccess über das Host-Präfix und die Weiterleitung zur Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)
+- [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)
+- [Siteaccess über das Host-Präfix und die Weiterleitung zur Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)
 - [Eine Installation, viele Websites](../multisite/eine-installation-viele-websites.md)
 - [Kunden- und Partnerbereiche](kunden-und-partnerbereiche.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

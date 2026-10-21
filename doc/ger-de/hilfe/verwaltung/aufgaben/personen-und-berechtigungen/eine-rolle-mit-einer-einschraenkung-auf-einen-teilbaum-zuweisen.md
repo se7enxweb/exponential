@@ -59,8 +59,8 @@ des Inhaltsbaums gilt, der übliche Weg, einer Abteilung einen eigenen Bereich z
 ## Verwandte Seiten
 - [Eine Rolle mit einer Einschränkung auf eine Sektion zuweisen](eine-rolle-mit-einer-einschraenkung-auf-eine-sektion-zuweisen.md)
 - [Einen Auftragnehmer nur einen Ordner bearbeiten lassen](einen-auftragnehmer-nur-einen-ordner-bearbeiten-lassen.md)
-- [Sektionen und Einschränkungen auf Teilbäume](../../../../../eng-us/help/government/operations/people-and-permissions/sections-and-subtree-limits.md)
-- [Seitenweise Anzeige der Rollenzuweisungen](../../../../../eng-us/features/6.0/role-assignment-paging.md)
+- [Sektionen und Einschränkungen auf Teilbäume](../../betrieb/personen-und-berechtigungen/sektionen-und-teilbaum-einschraenkungen.md)
+- [Seitenweise Anzeige der Rollenzuweisungen](../../../../funktionen/6.0/seitenweise-rollenzuweisungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

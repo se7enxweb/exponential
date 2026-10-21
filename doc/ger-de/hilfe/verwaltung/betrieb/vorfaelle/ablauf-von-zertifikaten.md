@@ -36,7 +36,7 @@ ist oder nicht zu seinem Schlüssel passt.
 ## Unter Velocity
 
 Velocity prüft ein Zertifikat, bevor er es verwendet, und lässt ein selbstsigniertes Zertifikat einspringen, bis das
-echte verwendbar ist ([Velocity: HTTPS und Zertifikate](../../../../../eng-us/features/6.0/velocity-https-certificates.md)).
+echte verwendbar ist ([Velocity: HTTPS und Zertifikate](../../../../funktionen/6.0/velocity-https-zertifikate.md)).
 
 ```bash
 ./console exp:velocity ssl show --allow-root-user
@@ -47,7 +47,7 @@ Der laufende Server übernimmt eine Erneuerung innerhalb einer Minute, ohne Neus
 Erneuerung in einem Hintergrundjob mit wachsenden Pausen nach einem Fehlschlag; wenn sie immer wieder scheitert, prüfen
 Sie, ob Port 80 aus dem Internet erreichbar ist und DNS auf den Server zeigt. Mit eigenen Dateien legen Sie das neue
 Paar an seinen Platz und prüfen mit `ssl show`
-([Ein HTTPS-Zertifikat in Velocity erneuern](../../../../../eng-us/help/government/tasks/operations/renew-an-https-certificate-in-velocity.md)).
+([Ein HTTPS-Zertifikat in Velocity erneuern](../../aufgaben/betrieb/ein-https-zertifikat-in-velocity-erneuern.md)).
 
 ## Unter Apache, nginx oder einem Control Panel
 
@@ -71,7 +71,7 @@ stattdessen.
   planen Sie die manuelle Erneuerung dann frühzeitig.
 
 ## Verwandte Seiten
-- [Velocity auf Let's Encrypt umstellen](../../../../../eng-us/help/government/tasks/operations/switch-velocity-to-lets-encrypt.md)
+- [Velocity auf Let's Encrypt umstellen](../../aufgaben/betrieb/velocity-auf-lets-encrypt-umstellen.md)
 - [TLS und HTTPS (Hosting)](../../../hosting/sicherheit/tls-und-https.md)
 - [Velocity-HTTPS-Zertifikate (Hosting)](../../../hosting/server/https-zertifikate-in-velocity.md)
 - [Website nicht erreichbar](website-nicht-erreichbar.md)

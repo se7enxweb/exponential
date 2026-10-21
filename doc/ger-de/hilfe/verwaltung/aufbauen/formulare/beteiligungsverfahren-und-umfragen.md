@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller, Projektleiter und Redakteure, die die Öffentlichkeit nach ihrer Meinung
 fragen. Ein **Beteiligungsverfahren** bittet über Wochen um überlegte Antworten zu einem Vorschlag; eine **Umfrage**
 stellt eine schnelle Frage. Beide verwenden den Information Collector, mit unterschiedlichen Einstellungen. Quellen:
-[Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)
+[Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)
 und [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -29,7 +29,7 @@ und [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.
 ## Eine Klasse für Beteiligungsverfahren
 
 Legen Sie sie unter **Setup > Klassen** an
-([Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)):
+([Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)):
 
 | Attribut | Bezeichner | Datentyp | Sammelnd |
 |---|---|---|---|

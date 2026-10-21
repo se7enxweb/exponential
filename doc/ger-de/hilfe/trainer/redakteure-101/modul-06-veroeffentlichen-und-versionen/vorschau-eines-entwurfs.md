@@ -120,7 +120,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *News two (updated)* m
 ## Weiterführende Literatur
 
 - [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md#5-vorschau): die Vorschau mit einem Bild.
-- [Ansichtsmodi der Versionsvorschau](../../../../../eng-us/features/6.0/version-preview-view-modes.md): was die Vorschau zeigen
+- [Ansichtsmodi der Versionsvorschau](../../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md): was die Vorschau zeigen
   kann.
 - [Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md): was beim Veröffentlichen
   passiert.

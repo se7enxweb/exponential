@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren und Prüfer, die eine Überprüfung des Zugangs vorbereiten. Am Ende haben Sie eine
 datierte Liste der Konten, die vollen Zugriff haben oder Rollen ändern können, mit Belegen dafür, wie sie diese Rechte
 erhalten haben. Hintergrund:
-[Überprüfungen des Administratorzugangs](../../../../../eng-us/help/government/operations/people-and-permissions/admin-access-reviews.md).
+[Überprüfungen des Administratorzugangs](../../betrieb/personen-und-berechtigungen/ueberpruefung-administrativer-zugaenge.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -74,8 +74,8 @@ deaktivieren Sie ungenutzte Konten ([Eine Rollenzuweisung entfernen](eine-rollen
 ## Verwandte Seiten
 - [Die Kontenliste für eine Überprüfung exportieren](die-kontenliste-fuer-eine-ueberpruefung-exportieren.md)
 - [Prüfen, was eine Rolle erlaubt](pruefen-was-eine-rolle-erlaubt.md)
-- [Grundsätze der minimalen Rechte](../../../../../eng-us/help/government/operations/people-and-permissions/least-privilege-principles.md)
-- [Audit-Warnungen](../../../../../eng-us/help/government/operations/monitoring/audit-alerts.md)
+- [Grundsätze der minimalen Rechte](../../betrieb/personen-und-berechtigungen/prinzip-der-geringsten-rechte.md)
+- [Audit-Warnungen](../../betrieb/ueberwachung/audit-warnungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -46,7 +46,7 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
 ### So führen Sie ihn durch
 
 1. Teilen Sie die Fragen ohne den Schlüssel aus; 25 Minuten (15 nur für den Teil der Redakteure).
-2. Gehen Sie die Antworten mit [expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md) und
+2. Gehen Sie die Antworten mit [expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md) und
    [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#exponential-intelligence) auf dem Projektor durch.
 3. Bewerten Sie mit der Regel unter **Bewertung**.
 
@@ -87,35 +87,35 @@ und zur Aufbewahrung pro Lane.
 <summary>Antworten</summary>
 
 1. **Falsch.** Er schreibt Entwürfe, als angemeldete Redakteurin oder angemeldeter Redakteur, und veröffentlicht nie
-   von sich aus ([expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md#in-short)).
+   von sich aus ([expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt)).
 2. Er kann es nicht: Der Assistent arbeitet mit den Berechtigungen dieses Redakteurs
-   ([expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md#in-short)).
+   ([expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt)).
 3. Drei von **Schreiben**, **Umschreiben**, **Kürzen**, **Übersetzen**, **Vorschlagen** und dem Menü **Verbessern**
    ([Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#exponential-intelligence),
-   [expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-editors)).
+   [expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-redakteure)).
 4. Nichts: Vorschläge ändern nichts, bis Sie sie annehmen und den Entwurf speichern, und der Entwurf wird erst
    veröffentlicht, wenn Sie veröffentlichen
    ([Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#exponential-intelligence)).
 5. **Als Entwürfe speichern** behält die Entwürfe, die er geschrieben hat; **Zur Freigabe senden** führt den normalen
    Veröffentlichungsvorgang als die Redakteurin aus, sodass ein Freigabe-Workflow die Version zurückhält
-   ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-editors)).
+   ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-redakteure)).
 6. Alternativtext von einem Vision-Modell und einen Bericht „Missing alt text“ für einen Teilbaum; Bilder brauchen
    einen Alternativtext für Menschen, die sie nicht sehen können
-   ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-editors),
+   ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-redakteure),
    [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#verknüpfungen-und-bilder)).
 7. Welchen Dienst er verwendet und was ein Klick kostet
    ([Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#exponential-intelligence)).
 8. Ausstehend, sie wartet im Workflow auf die Freigabe
    ([Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md#veröffentlichen)).
 9. Nur in `settings/override/expai.ini.append.php`, für wenige lesbar (Modus 0640), und nie committet
-   ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#switch-it-on)).
+   ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#einschalten)).
 10. `[AISettings] Enabled`, der Hauptschalter; er kann auch pro Siteaccess ausgeschaltet sein
-    ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)).
+    ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)).
 11. Jede Anfrage, jeden Entwurf und jede Zustandsänderung eines Entwurfs, als Ereignisse des Kanals `ai`; nie Prompts,
-    Antworten oder Schlüssel ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)).
+    Antworten oder Schlüssel ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)).
 12. **EI: Summary**: Anbieter mit Region, Aufbewahrung, Datum der Nutzungsbedingungen und Herkunft des Schlüssels (nie
     der Schlüssel selbst), Rollen, Lanes, Limits und externe Werkzeuge
-    ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)).
+    ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)).
 
 </details>
 
@@ -127,7 +127,7 @@ und zur Aufbewahrung pro Lane.
 
 ## Weiterführende Literatur
 
-- [expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md): Redakteure, Administratoren und das
+- [expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md): Redakteure, Administratoren und das
   Einschalten.
 - [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#exponential-intelligence): der Assistent im
   Bearbeitungsformular.

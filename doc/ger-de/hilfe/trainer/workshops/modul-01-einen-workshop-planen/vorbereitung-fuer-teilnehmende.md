@@ -37,7 +37,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-1. Zeigen Sie die Vorlage im [Trainer-Werkzeugkasten](../../../../../eng-us/help/trainers/trainer-toolkit.md#template-pre-work-message-to-learners)
+1. Zeigen Sie die Vorlage im [Trainer-Werkzeugkasten](../../trainer-werkzeugkasten.md#vorlage-vorbereitungsnachricht-an-die-teilnehmenden)
    (5 Minuten).
 2. Wählen Sie die vorbereitende Lektüre nach Rolle (5 Minuten): Redakteure: [Erste Schritte](../../../erste-schritte.md)
    und [Inhalte anlegen und bearbeiten](../../../inhalte-bearbeiten.md); Administratoren: [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md)
@@ -92,14 +92,14 @@ getrennten, sicheren Kanal).
 
 ## Weiterführende Informationen
 
-- [Trainer-Werkzeugkasten](../../../../../eng-us/help/trainers/trainer-toolkit.md)
+- [Trainer-Werkzeugkasten](../../trainer-werkzeugkasten.md)
 - [Erste Schritte](../../../erste-schritte.md)
 
 ## Verwandte Seiten
 
 - [Modul 1: Einen Workshop planen](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

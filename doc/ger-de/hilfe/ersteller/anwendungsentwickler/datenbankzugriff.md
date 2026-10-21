@@ -78,10 +78,10 @@ in einer Schlange auf die Schreibsperre; halten Sie Transaktionen kurz ([SQLite-
 
 - Verwenden Sie Offset und Limit von `arrayQuery()`, nicht `LIMIT` in der Zeichenkette.
 - Vermeiden Sie systemspezifische Funktionen (`IFNULL`, `GROUP_CONCAT`, `MOD()`): Die Korrekturen von eztags für SQLite
-  haben `MOD()` durch `%` ersetzt ([eztags](../../../../eng-us/features/6.0/extensions/eztags.md)).
+  haben `MOD()` durch `%` ersetzt ([eztags](../../../funktionen/6.0/erweiterungen/eztags.md)).
 - Verlassen Sie sich nicht auf `SET @var := ...` oder Zeichenketten mit mehreren Anweisungen.
 - MongoDB kennt keine Joins: Der Treiber des Kernels übersetzt gängige Anweisungen; für Ihre eigenen Tabellen sollten
-  Sie `eZPersistentObject` bevorzugen, das jedes System unterstützt ([MongoDB-Unterstützung](../../../../eng-us/features/6.0/mongodb-database-support.md)).
+  Sie `eZPersistentObject` bevorzugen, das jedes System unterstützt ([MongoDB-Unterstützung](../../../funktionen/6.0/mongodb-datenbankunterstuetzung.md)).
 - Testen Sie auf SQLite und auf dem System der Produktivumgebung.
 - Der SQL-Abfrage-Cache kann Leseergebnisse cachen (`querycache.ini`) ([SQL-Abfrage-Cache](../../../bc/6.0/sql-abfrage-cache.md)).
 
@@ -89,7 +89,7 @@ in einer Schlange auf die Schreibsperre; halten Sie Transaktionen kurz ([SQLite-
 
 - [Persistente Objekte und eigene Tabellen](persistente-objekte-und-eigene-tabellen.md)
 - [Datenbankschema und .dba-Dateien](schema-und-dba-dateien.md)
-- [Standard für Datenbanken und SQL](../../../../eng-us/standards/databases-and-sql.md)
+- [Standard für Datenbanken und SQL](../../../standards/datenbanken-und-sql.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

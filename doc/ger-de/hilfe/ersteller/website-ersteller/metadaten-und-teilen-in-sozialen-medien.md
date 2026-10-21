@@ -33,7 +33,7 @@ Erweiterung `xrowmetadata` oder aus Feldern, die Sie Klassen hinzufügen.
 
 ## Mit xrowmetadata
 
-Aus [xrowmetadata](../../../../eng-us/features/6.0/extensions/xrowmetadata.md):
+Aus [xrowmetadata](../../../funktionen/6.0/erweiterungen/xrowmetadata.md):
 
 1. Fügen Sie den Klassen, die beschrieben werden sollen, den Datentyp für Metadaten hinzu (**Setup > Klassen**).
 2. Geben Sie ihn im Pagelayout aus:

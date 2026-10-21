@@ -60,7 +60,7 @@ und macht Websites zehnmal schneller, sagt 7x, das das CMS seit 1998 pflegt.“
 |---|---|---|
 | „letzten Monat veröffentlicht“ | `git tag -l 'v6.0.*' --sort=version:refname` | Kein Tag v6.0.15: in Entwicklung |
 | „eZ Publish 6.0.15“ | Namensregeln | Das Produkt heißt Exponential |
-| „eine KI, die schreibt und veröffentlicht“ | [Funktionsseite expai](../../../eng-us/features/6.0/extensions/expai.md) | Schreibt nur Entwürfe, veröffentlicht nie |
+| „eine KI, die schreibt und veröffentlicht“ | [Funktionsseite expai](../../funktionen/6.0/erweiterungen/expai.md) | Schreibt nur Entwürfe, veröffentlicht nie |
 | „zehnmal schneller“ | README, Abschnitt Velocity | Kein Vergleich veröffentlicht; nur die dokumentierten Zahlen mit ihren Bedingungen |
 | „sagt 7x“ | Gibt es eine Aussage? | Nein; die Fakten stammen aus der Dokumentation |
 | „pflegt seit 1998“ | [7x in drei Etappen](7x-in-drei-etappen.md) | Gegründet 2001 als Brookins Consulting; hat die Codebasis 2023 übernommen |

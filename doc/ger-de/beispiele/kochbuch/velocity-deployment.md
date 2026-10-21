@@ -125,10 +125,10 @@ Befehle wurden für diese Seite nicht ausgeführt.
 
 - [Kochbuch](README.md)
 - [Die Website ausliefern: Velocity, Apache, nginx und FrankenPHP](../../installation/08-die-website-ausliefern.md)
-- [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md), [Engine-Archiv (phar)](../../../eng-us/bc/6.0/phar.md),
+- [Velocity-Engines](../../bc/6.0/velocity-engines.md), [Engine-Archiv (phar)](../../bc/6.0/phar.md),
   [Bereitstellung](../../anleitungen/bereitstellung.md)
 - [Caching](caching.md); die Konfigurationen für Webserver und Velocity in [Beispiele](../README.md)
 - [Befehle](../befehle/README.md): `exp:velocity` und die anderen Konsolenbefehle
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

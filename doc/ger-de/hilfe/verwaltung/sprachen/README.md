@@ -68,7 +68,7 @@ Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 ## Verwandte Seiten
 
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

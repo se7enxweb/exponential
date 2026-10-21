@@ -281,8 +281,8 @@ Die Beispiele dieser drei sind die Zeilen 4 bis 6 des Zeichenketten-Beispiels ob
 
 - [Die swark-Operatoren](swark-operatoren.md)
 - [Swark-Operatoren: Anfrage und System](swark-operatoren-anfrage-und-system.md)
-- [Array-Operatoren für Designer](../../../eng-us/help/designers/templates/array-operators.md)
-- [Seitenweise Anzeige](../../../eng-us/help/designers/templates/pagination.md)
+- [Array-Operatoren für Designer](../designer/vorlagen/array-operatoren.md)
+- [Seitenweise Anzeige](../designer/vorlagen/seitenumbruch.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

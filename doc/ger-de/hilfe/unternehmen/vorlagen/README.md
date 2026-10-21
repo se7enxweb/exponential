@@ -80,7 +80,7 @@ Diese gibt es bereits; dieser Bereich verweist auf sie, statt sie zu kopieren:
 - [Kosten und Rendite](../kosten/README.md)
 - [Hosting und Partner auswählen](../auswahl/README.md)
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

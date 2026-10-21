@@ -33,7 +33,7 @@ dieser Hilfe zur Beschaffung behandelt das Verfahren ausführlicher.
 | Hosting und Betrieb | Server, Datenbank, Datensicherungen, Updates, Überwachung | Hosting-Unternehmen, Partner ([Hosting-Partner](../../partner/hosting-partner.md)) |
 | Aufbau | Inhaltsmodell, Design, Templates, Migration | Implementierungspartner ([Implementierungspartner](../../partner/implementierungspartner.md)) |
 | Support | Reaktionszeiten, Fehlerbehebungen, Hilfe bei Aktualisierungen | Partner, 7x ([Supportstufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md)) |
-| Schulung | Redaktion, Administration, Entwicklung | Schulungspartner ([Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)) |
+| Schulung | Redaktion, Administration, Entwicklung | Schulungspartner ([Kurskatalog](../../trainer/kurskatalog.md)) |
 | Entwicklung von Funktionen | neue Funktionen, an das Projekt zurückgegeben | jede qualifizierte Entwicklerin, jeder qualifizierte Entwickler ([Funktionswünsche und gesponserte Funktionen](../../partner/funktionswuensche-und-gesponserte-funktionen.md)) |
 
 Getrennte Lose ermöglichen es, einen Dienstleister zu wechseln, ohne alle zu wechseln.
@@ -82,7 +82,7 @@ Getrennte Lose ermöglichen es, einen Dienstleister zu wechseln, ohne alle zu we
 - [Lizenzen für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)
 - [Partner: hier beginnen](../../partner/partner-hier-beginnen.md)
 - [Ein Exponential-Projekt planen](../../fuehrung/ein-exponential-projekt-planen.md)
-- [Beschaffung](../../../../eng-us/help/government/procurement/README.md): der Bereich Beschaffung der Hilfe für Verwaltungen
+- [Beschaffung](../beschaffung/README.md): der Bereich Beschaffung der Hilfe für Verwaltungen
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

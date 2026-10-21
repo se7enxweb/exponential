@@ -61,7 +61,7 @@ nennen:
   ```
 
   Bevorzugen Sie im echten Einsatz eine Passphrase-Datei oder einen Agenten gegenüber einer Passphrase auf der
-  Kommandozeile ([git_manager](../../../../../eng-us/features/6.0/extensions/git_manager.md)).
+  Kommandozeile ([git_manager](../../../../funktionen/6.0/erweiterungen/git_manager.md)).
 - Die eigene Verschlüsselung Ihres Unternehmens-Sicherungssystems, wenn es eine von Ihrem Sicherheitsteam
   freigegebene hat.
 

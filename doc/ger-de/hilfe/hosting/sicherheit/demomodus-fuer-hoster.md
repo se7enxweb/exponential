@@ -104,8 +104,8 @@ Das Skript darf die Variable nicht in `config.php`, `settings/` oder irgendetwas
 
 - [Demomodus](../../demomodus.md) (für Administratoren), [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
 - [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md),
-  [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md), [Beispiele für den Demomodus](../../../../eng-us/examples/demo-mode/README.md)
-- [Demomodus: der Hinweis zum Upgrade](../../../../eng-us/bc/6.0/demo-mode.md)
+  [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md), [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md)
+- [Demomodus: der Hinweis zum Upgrade](../../../bc/6.0/demomodus.md)
 - [Erste Anmeldung und Standardpasswörter](erste-anmeldung-und-standardpasswoerter.md)
 - [Härtung für Hoster](haertung-fuer-hoster.md), [Sicherheit für Hoster: Überblick](README.md)
 - [Eine Demo-Installation einrichten](../../presse/eine-demo-installation-einrichten.md)

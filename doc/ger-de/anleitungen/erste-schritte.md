@@ -33,7 +33,7 @@ Wählen Sie einen Weg. Alle drei ergeben dieselbe Installation.
 
 **A. Git-Klone mit Historie** (empfohlen, wenn Sie eine Website bauen): Der Kernel und jede se7enxweb-Extension
 kommen als Git-Klone an, sodass Sie sehen, was sich geändert hat, der Entwicklung folgen und Korrekturen zurückschicken können.
-[Mit Git entwickeln](../../eng-us/help/develop-with-git.md) erklärt, warum und wie.
+[Mit Git entwickeln](../hilfe/mit-git-entwickeln.md) erklärt, warum und wie.
 
 ```bash
 composer config --global 'preferred-install.se7enxweb/*' source
@@ -53,8 +53,8 @@ cd exponential
 ```
 
 **C. Pakete.** Einzelne Ergänzungen (Inhalte, Klassen, Templates, Dateien) sind `.ezpkg`-Archive, die Sie nach der
-Basisinstallation mit `ezpm` installieren, siehe [ezpm](../../eng-us/features/6.0/ezpm-package-manager-cli.md) und
-[Pakete vergleichen und importieren](../../eng-us/features/6.0/package-compare-and-import.md). Das Installationsprogramm in Schritt 3 installiert selbst
+Basisinstallation mit `ezpm` installieren, siehe [ezpm](../funktionen/6.0/ezpm-paketmanager-cli.md) und
+[Pakete vergleichen und importieren](../funktionen/6.0/pakete-vergleichen-und-importieren.md). Das Installationsprogramm in Schritt 3 installiert selbst
 ein Site-Paket (Standard `sevenx_multisite`), für eine erste Site brauchen Sie also nichts weiter.
 
 Prüfen Sie, ob die Konsole läuft:
@@ -98,7 +98,7 @@ Erwartet am Ende (die Werte weichen ab):
 ```
 
 Kopieren Sie jetzt die Zeilen Admin, Username und Password. Eine Kopie der verwendeten Konfiguration, mit maskierten Passwörtern, liegt in
-`var/log/`; den Fortschritt der Installation finden Sie in `var/log/setup.log` ([was die Protokolle Ihnen sagen](../../eng-us/features/6.0/install-in-one-command.md#what-the-logs-tell-you)).
+`var/log/`; den Fortschritt der Installation finden Sie in `var/log/setup.log` ([was die Protokolle Ihnen sagen](../funktionen/6.0/installation-mit-einem-befehl.md#was-die-logs-ihnen-sagen)).
 
 ### 3.2 Andere Datenbanken
 
@@ -108,7 +108,7 @@ EXP_INSTALL_DB_PASSWORD='YOUR_PASSWORD' ./console exp:install --db=mysql --db-ho
 ```
 
 `--db-action=remove` leert zuerst die angegebene Datenbank; verwenden Sie also eine Datenbank, die nichts enthält, was Sie noch brauchen. Die
-Standardports und -namen jeder Datenbank-Engine stehen in [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md).
+Standardports und -namen jeder Datenbank-Engine stehen in [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md).
 
 ### 3.3 Aus einer Datei (wiederholbare Installationen)
 
@@ -121,14 +121,14 @@ php bin/php/console exp:kickstarter run --force
 ```
 
 `--dry-run` prüft die Antworten und die Pakete und schreibt nichts. Siehe
-[Kickstarter](../../eng-us/features/6.0/kickstarter-cli.md) und, für jeden Schlüssel, [Kickstarter-CLI](../../eng-us/bc/6.0/kickstartercli.md).
+[Kickstarter](../funktionen/6.0/kickstarter-cli.md) und, für jeden Schlüssel, [Kickstarter-CLI](../bc/6.0/kickstartercli.md).
 Halten Sie Ihre `kickstart.ini` aus der Versionsverwaltung heraus; sie enthält das Datenbankpasswort.
 
 ### 3.4 Der Assistent im Browser
 
 Öffnen Sie die Adresse der Site in einem Browser, bevor eine Installation existiert, und der Setup-Assistent startet. SQLite steht
 an erster Stelle und die mitgelieferte Site ist vorausgewählt; wenn Sie also bei jedem Schritt **Weiter** drücken, wird die Standard-Site installiert. Siehe den
-[Setup-Assistenten](../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md) und [die Standardwerte einer Neuinstallation](../../eng-us/features/6.0/clean-install-defaults.md).
+[Setup-Assistenten](../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md) und [die Standardwerte einer Neuinstallation](../funktionen/6.0/standardwerte-einer-sauberen-installation.md).
 
 ## 4. Die Site ansehen
 
@@ -145,9 +145,9 @@ der installierten Site. Halten Sie den Server mit `./console exp:velocity stop -
 
 Wenn Sie Schritt 3 mit einer anderen `--url` ausgeführt haben, verwenden Sie die Site-Adresse, die das Installationsprogramm ausgegeben hat.
 
-Für den Produktivbetrieb verwenden Sie Apache mit PHP-FPM oder die eigenen Engines `qbix` oder `frankenphp` von Velocity: [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
+Für den Produktivbetrieb verwenden Sie Apache mit PHP-FPM oder die eigenen Engines `qbix` oder `frankenphp` von Velocity: [Velocity-Engines](../bc/6.0/velocity-engines.md).
 Wenn eine Seite einen Fehler zeigt, verbirgt der Cache noch nichts; lesen Sie `var/log/error.log` und siehe
-[Eine Installation reparieren](../../eng-us/bc/6.0/repair.md).
+[Eine Installation reparieren](../bc/6.0/reparatur.md).
 
 ## 5. Erste Anmeldung
 
@@ -198,19 +198,19 @@ letzte Zeile `SiteDesign=media` oder ähnlich; verwenden Sie den Namen, der Ihne
 3. Fügen Sie eine sichtbare Zeile hinzu, zum Beispiel `<p>Hello from my template</p>`, und speichern Sie.
 4. Laden Sie den Eintrag auf der Site neu: Die Zeile ist da.
 
-Wie der Editor Overrides anlegt, ordnet und bearbeitet: [Template-Editor](../../eng-us/features/6.0/template-editor-overrides.md).
+Wie der Editor Overrides anlegt, ordnet und bearbeitet: [Template-Editor](../funktionen/6.0/template-editor-ueberschreibungen.md).
 
 ### Über Dateien (was Sie in die Versionsverwaltung aufnehmen)
 
 1. Suchen Sie das Template, das darstellt, was Sie ändern möchten. Schalten Sie die Template-Pfad-Kommentare ein, um es im Seitenquelltext zu sehen:
-   siehe [Template-Pfad-Kommentare](../../eng-us/features/6.0/template-path-comments.md).
+   siehe [Template-Pfad-Kommentare](../funktionen/6.0/template-pfad-kommentare.md).
 2. Kopieren Sie die Datei von ihrem Ort (zum Beispiel `design/standard/templates/`) unter denselben relativen Pfad im
    Verzeichnis Ihres Designs `design/<design>/templates/` (oder dessen `override/templates/`) und bearbeiten Sie die Kopie.
 3. Wenn Sie einen neuen Template-Pfad hinzugefügt statt eine bestehende Datei geändert haben, leeren Sie einmal die Template-Caches:
    `php bin/php/ezcache.php --clear-all --allow-root-user`.
 
-In welcher Reihenfolge Designs und Overrides versucht werden, steht in [Reihenfolge der Template-Overrides](../../eng-us/features/6.0/template-override-ordering.md)
-und [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md).
+In welcher Reihenfolge Designs und Overrides versucht werden, steht in [Reihenfolge der Template-Overrides](../funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md)
+und [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md).
 
 ## 8. Wenn etwas schiefgeht
 
@@ -219,7 +219,7 @@ und [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading
 | `exp:install` meldet, dass eine Installation existiert | Geben Sie `--force` nur an, wenn Sie sie wirklich ersetzen wollen. |
 | Eine weiße Seite oder ein Fehler 500 | Lesen Sie `var/log/error.log`. Prüfen Sie, ob `php -v` 8.0 oder neuer zeigt und ob `vendor/` existiert (führen Sie `composer install` aus). |
 | Die Site-Adresse antwortet nicht | Läuft der Server (`./console exp:velocity status --engine=php`)? Passt der Port zu `--url`? |
-| Sie haben das Passwort vergessen | `exp:install` hat es einmal angezeigt. Ein Passwort, das `exp:install` oder der Kickstarter erzeugt hat (keines angegeben oder ein allgemein bekanntes), steht außerdem in `var/log/initial-admin-password`; der Setup-Assistent im Browser schreibt keine solche Datei, weil Sie das Passwort dort selbst eingeben. Setzen Sie ein neues mit `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, siehe [Benutzerpasswort zurücksetzen](../../eng-us/features/6.0/reset-user-password.md). |
+| Sie haben das Passwort vergessen | `exp:install` hat es einmal angezeigt. Ein Passwort, das `exp:install` oder der Kickstarter erzeugt hat (keines angegeben oder ein allgemein bekanntes), steht außerdem in `var/log/initial-admin-password`; der Setup-Assistent im Browser schreibt keine solche Datei, weil Sie das Passwort dort selbst eingeben. Setzen Sie ein neues mit `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, siehe [Benutzerpasswort zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md). |
 | Eine Änderung wird nicht angezeigt | Leeren Sie den Inhalts-Cache (Schritt 6) und laden Sie die Seite neu. |
 
 ## Siehe auch
@@ -228,16 +228,16 @@ und [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading
 |---|---|
 | Klassen, Objekte und Knoten verstehen | [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md) |
 | Ändern, wie Seiten aussehen | [Templates und Design](templates-und-design.md) |
-| Eine Extension hinzufügen oder schreiben | [Extensions](extensions.md), [RAD-Werkzeuge](../../eng-us/features/6.0/rad-tools.md) |
+| Eine Extension hinzufügen oder schreiben | [Extensions](extensions.md), [RAD-Werkzeuge](../funktionen/6.0/rad-werkzeuge.md) |
 | Die Site auf einen echten Server bringen | [Bereitstellung](bereitstellung.md) |
 | Die Site gesund halten | [Betrieb einer Site](betrieb-einer-website.md), [Sicherheit und Audit](sicherheit-und-audit.md) |
 | Auf eine neuere Release wechseln | [Upgrade](aktualisieren.md) |
-| Einstellungen auf der Kommandozeile ändern | [exp:ini](../../eng-us/features/6.0/exp-ini-command.md) |
-| Änderungen in der Administration im Blick behalten | [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md) |
-| Wiederkehrende Aufgaben ausführen | [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md) |
-| Sehen, was sich wann geändert hat | [Chronik nach Monaten](../../eng-us/history/README.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
-| Wissen, was eine Installation standardmäßig tut | [Standardwerte einer Neuinstallation](../../eng-us/features/6.0/clean-install-defaults.md), [Protokolle und Startdaten des Installationsprogramms](../spezifikationen/6.0/installer-protokolle-und-startdaten.md) |
-| Einen Begriff nachschlagen | [Glossar](../../eng-us/glossary.md) |
+| Einstellungen auf der Kommandozeile ändern | [exp:ini](../funktionen/6.0/exp-ini-befehl.md) |
+| Änderungen in der Administration im Blick behalten | [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md) |
+| Wiederkehrende Aufgaben ausführen | [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md) |
+| Sehen, was sich wann geändert hat | [Chronik nach Monaten](../geschichte/README.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
+| Wissen, was eine Installation standardmäßig tut | [Standardwerte einer Neuinstallation](../funktionen/6.0/standardwerte-einer-sauberen-installation.md), [Protokolle und Startdaten des Installationsprogramms](../spezifikationen/6.0/installer-protokolle-und-startdaten.md) |
+| Einen Begriff nachschlagen | [Glossar](../glossar.md) |
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

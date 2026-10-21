@@ -10,7 +10,7 @@ type: help
 # Glossar für Fürsprecher
 
 Diese Seite ist für Fürsprecher, die anderen Exponential erklären. Jeder Begriff hat eine einfache Definition und einen
-Link. Das vollständige technische Glossar ist [das Glossar](../../../eng-us/glossary.md); die Begriffe zu Produkt und
+Link. Das vollständige technische Glossar ist [das Glossar](../../glossar.md); die Begriffe zu Produkt und
 Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../wer-ist-die-exponential-foundation.md#glossar).
 
 ## Inhalt
@@ -78,7 +78,7 @@ Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../wer
 
 ## Verwandte Seiten
 
-- [Das Glossar](../../../eng-us/glossary.md)
+- [Das Glossar](../../glossar.md)
 - [Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

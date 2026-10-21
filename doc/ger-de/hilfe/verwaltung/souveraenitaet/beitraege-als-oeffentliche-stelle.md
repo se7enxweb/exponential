@@ -67,7 +67,7 @@ sind nicht betroffen. Siehe
 
 ## Übersetzungen und Dokumentation
 
-Übersetzungen der Oberfläche sind `.ts`-Dateien ([Sprachen in Exponential](../../../../eng-us/languages.md)); mehrere
+Übersetzungen der Oberfläche sind `.ts`-Dateien ([Sprachen in Exponential](../../../sprachen.md)); mehrere
 mitgelieferte Übersetzungen sind maschinell unterstützt, und das Projekt freut sich über eine Durchsicht durch
 Muttersprachler. Die Dokumentation ist freie Dokumentation unter der GFDL
 ([Dokumentation und Übersetzungen beitragen](../../partner/dokumentation-und-uebersetzungen-beitragen.md)). Eine öffentliche

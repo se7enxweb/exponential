@@ -31,15 +31,15 @@ Ein Händlerportal verbindet drei Dinge, die es in Exponential bereits gibt:
 
 | Bedarf | Funktion | Seite |
 |---|---|---|
-| Nur Händler dürfen bestellen | `shop/buy` an die Händlerrolle vergeben, nicht an Anonymous | [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md#permissions) |
-| Händler sehen ihre eigenen Preise | Ermäßigungsgruppen pro Benutzergruppe | [Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#discounts) |
+| Nur Händler dürfen bestellen | `shop/buy` an die Händlerrolle vergeben, nicht an Anonymous | [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md#rechte) |
+| Händler sehen ihre eigenen Preise | Ermäßigungsgruppen pro Benutzergruppe | [Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md#rabatte) |
 | Händler sehen Material nur für Händler | Sektionen und Stufen | [Kunden- und Partnerbereiche](kunden-und-partnerbereiche.md) |
 
 ## Bestellen mit dem eingebauten Shop
 
 Der Kernel enthält einen Shop: Produkte sind Inhalte mit einem Preisfeld, Händler legen sie in einen Warenkorb, gehen
 zur Kasse, bestätigen und bezahlen über einen Zahlungsanbieter, und Bestellungen werden im Tab **Shop** der
-Administration verwaltet ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)).
+Administration verwaltet ([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)).
 
 | Schritt | Ansicht |
 |---|---|
@@ -47,8 +47,8 @@ Administration verwaltet ([Einen Shop betreiben: Überblick](../../../../eng-us/
 | Warenkorb | `shop/basket` |
 | Kundendaten | `shop/register` oder `shop/userregister` |
 | Bestätigung mit Versand und USt | `shop/confirmorder` |
-| Zahlung | ein Workflow am Checkout-Trigger mit einem Zahlungsereignis ([Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md)) |
-| Bestellliste, Status, Statistiken | `shop/orderlist`, das Shop-Dashboard ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)) |
+| Zahlung | ein Workflow am Checkout-Trigger mit einem Zahlungsereignis ([Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md)) |
+| Bestellliste, Status, Statistiken | `shop/orderlist`, das Shop-Dashboard ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)) |
 
 Berechtigungen im Shop: Händler brauchen `shop/buy`; Ihre Bestellabteilung braucht `shop/administrate` und für USt und
 Währungen `shop/setup`. Da `shop/buy` eine Richtlinie wie jede andere ist, kann das Bestellen auf die Händlerrolle
@@ -60,7 +60,7 @@ Die Einzelheiten eines Shops, von USt-Regeln bis zu Belegen, stehen im Bereich [
 
 Ermäßigungsgruppen (`shop/discountgroup`) geben Benutzergruppen einen prozentualen Nachlass auf Produkte oder Klassen,
 mit Regeln pro Gruppe (`shop/discountruleedit`)
-([Produkte, Preise und USt, Discounts](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#discounts)).
+([Produkte, Preise und USt, Discounts](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md#rabatte)).
 
 | Händlerstufe | Benutzergruppe | Ermäßigungsregel (Beispiel) |
 |---|---|---|
@@ -69,7 +69,7 @@ mit Regeln pro Gruppe (`shop/discountruleedit`)
 
 Die Prozentsätze in dieser Tabelle sind Platzhalter; Ihre Preispolitik legt sie fest. Preise in mehreren Währungen
 verwenden den Datentyp `ezmultiprice` und die Währungsliste (`shop/currencylist`)
-([Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)). Die USt nach Land regeln
+([Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)). Die USt nach Land regeln
 USt-Typen und USt-Regeln.
 
 > **Hinweis**
@@ -84,11 +84,11 @@ Nicht jedes Portal braucht eine Bestellfunktion. Viele Händler brauchen vor all
 - Produktseiten mit Spezifikationen, Bildern und Downloads, die nur Händler lesen können;
 - Preislisten als Dateien pro Stufe ([Dateien mit Partnern teilen](dateien-mit-partnern-teilen.md));
 - Produktneuigkeiten, verfolgt mit **Benachrichtigen**
-  ([Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md));
+  ([Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md));
 - ein PDF eines Teils des Katalogs ([PDF-Exporte](../../../anleitungen/pdf-exporte.md)).
 
 Produkte und Dokumente lassen sich mit `eztags` über Produktlinien hinweg verschlagworten
-([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)).
+([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)).
 
 ## Lieferantenportale
 
@@ -98,7 +98,7 @@ Lieferanten lesen meist Anforderungen und schicken Dokumente zurück:
 |---|---|---|
 | Spezifikationen und Qualitätsregeln lesen | Seiten in einer Lieferantensektion | [Kunden- und Partnerbereiche](kunden-und-partnerbereiche.md) |
 | Zertifikate in den eigenen Ordner hochladen | `content/create` für die Klasse File, Teilbaum-Einschränkung pro Lieferant | [Dateien mit Partnern teilen](dateien-mit-partnern-teilen.md#partner-hochladen-lassen) |
-| Ein Formular mit Anhang senden | Information Collector mit `enhancedezbinaryfile` | [Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
+| Ein Formular mit Anhang senden | Information Collector mit `enhancedezbinaryfile` | [Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
 | Mitarbeiter erfahren von neuen Uploads | Benachrichtigen für die Lieferantenordner | [Benachrichtigungen für Mitarbeiter](../intranets/benachrichtigungen-fuer-mitarbeiter.md) |
 | Uploads werden vor der Verwendung geprüft | ein Freigabe-Workflow für die Lieferantensektion | [Freigabe-Workflows](../intranets/freigabe-workflows.md) |
 
@@ -106,7 +106,7 @@ Lieferanten lesen meist Anforderungen und schicken Dokumente zurück:
 
 Der Überblick über den Shop listet auf, was der Shop nicht kann: Lagerverwaltung, Rechnungen in einem
 Buchhaltungssystem, Versandetiketten und Marktplätze; planen Sie diese als Erweiterungen oder Integrationen
-([Einen Shop betreiben, What the shop does not do](../../../../eng-us/help/creators/website-creators/shop-overview.md#what-the-shop-does-not-do)).
+([Einen Shop betreiben, What the shop does not do](../../ersteller/website-ersteller/shop-ueberblick.md#was-der-shop-nicht-leistet)).
 Planen Sie für ein Handelsportal bei Bedarf außerdem: die Freigabe von Bestellungen innerhalb der Organisation des
 Händlers, Kreditlimits und eine Schnittstelle zu Ihrem ERP. Die REST API und die Remote-Dienste von Exponential sind der
 übliche Ausgangspunkt für solche Integrationen
@@ -128,7 +128,7 @@ Händlers, Kreditlimits und eine Schnittstelle zu Ihrem ERP. Die REST API und di
 - [Shops](../shops/README.md)
 - [Wie Unternehmen online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Verkaufen über Netzwerke und Partner](../mobil-und-headless/verkaufen-ueber-netzwerke-und-partner.md)
-- [Warenkorb, Bestellablauf und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
+- [Warenkorb, Bestellablauf und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

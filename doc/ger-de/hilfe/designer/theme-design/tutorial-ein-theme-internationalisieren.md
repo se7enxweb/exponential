@@ -112,7 +112,7 @@ php bin/php/ezcache.php --clear-id=translation
 
 - [Texte in Templates übersetzen](../vorlagen/template-texte-uebersetzen.md)
 - [Übersetzungen in einem Theme](../erweiterungen/uebersetzungen-in-einem-theme.md)
-- [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)
+- [Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

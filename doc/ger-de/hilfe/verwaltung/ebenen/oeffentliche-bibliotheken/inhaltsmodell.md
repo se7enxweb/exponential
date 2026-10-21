@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Website-Ersteller und Projektverantwortliche, die die Inhaltsklassen der Website einer
 Bibliothek entwerfen. Die Klassen für Veranstaltungen werden mit Exponential ausgeliefert; Zweigstellen und Empfehlungen
 fügen Sie im Klasseneditor hinzu
-([Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)). Die
+([Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)). Die
 Klassendefinitionen stammen aus dem Paket `sevenx_classes`
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md)) und der Klassenansicht des
 Demonstrationsservers.
@@ -99,7 +99,7 @@ den Datensatz im Katalog, statt ihn zu kopieren.
 ## Die Klasse Event erweitern
 
 Der mitgelieferten Klasse Event Attribute hinzuzufügen ist sicher (vorhandene Veranstaltungen erhalten leere Werte,
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#changing-a-class-on-a-live-site)).
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#eine-klasse-auf-einer-live-website-ändern)).
 Nützliche Ergänzungen für Bibliotheken:
 
 | Attribut | Datentyp | Warum |
@@ -110,13 +110,13 @@ Nützliche Ergänzungen für Bibliotheken:
 | Link zur Buchung | URL | wenn Buchungen anderswo laufen |
 
 Ändern Sie die Templates so, dass sie die neuen Felder zeigen; die mitgelieferten Templates von ezwebin kennen sie nicht
-([Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)).
+([Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)).
 
 ## Verwandte Seiten
 
 - [Öffentliche Bibliotheken](README.md)
 - [Veranstaltungen und Kataloge, verlinkt statt nachgebaut](veranstaltungen-und-verlinkte-kataloge.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

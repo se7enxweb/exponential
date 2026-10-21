@@ -149,7 +149,7 @@ Server steht in [Was auf dem Paketserver liegt](../paketserver/was-auf-dem-paket
 - **Nicht die ganze Website.** Klassen und Inhalte kommen aus den Paketen, die es verlangt; Layouts von sevenx_multisite kommen aus
   share-Dateien von Erweiterungen.
 - **Kein Backup.** Ein Seitenpaket baut eine neue Website. Um eine vorhandene Website umzuziehen, siehe
-  [ezpm, der Paketmanager auf der Kommandozeile](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md).
+  [ezpm, der Paketmanager auf der Kommandozeile](../../../funktionen/6.0/ezpm-paketmanager-cli.md).
 - **Nicht für sich allein unter Setup > Pakete installiert.** Seine Paketseite sagt, dass es nichts zu installieren gibt, weil sein
   Installationstyp `import` ist.
 
@@ -161,7 +161,7 @@ Server steht in [Was auf dem Paketserver liegt](../paketserver/was-auf-dem-paket
   Sie ausdrücklich, es per Pull Request einzureichen.
 - [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)
 - [Seitenpakete für Hoster](../../hosting/bereitstellung/seitenpakete-fuer-hoster.md)
-- [Seitenpakete und die mitgelieferten Themes](../../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md)
+- [Seitenpakete und die mitgelieferten Themes](../../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

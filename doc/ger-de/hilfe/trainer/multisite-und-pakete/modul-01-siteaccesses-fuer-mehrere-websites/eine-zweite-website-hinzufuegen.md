@@ -43,7 +43,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Mehrere Websites in einer Installation einrichten, Schritt für Schritt](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site).
+Quelle: [Mehrere Websites in einer Installation einrichten, Schritt für Schritt](../../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website).
 
 1. **Die fünf Änderungen** (5 Minuten). Zeigen Sie die Reihenfolge an der Tafel: Inhalt (ein Ordner), Siteaccess (ein
    Verzeichnis), Registrierung (zwei Listen), Zuordnung (Modul 2; bei URL-Zuordnung ist nichts nötig), Caches.
@@ -183,7 +183,7 @@ Die Befehle laufen in ihrem Wurzelverzeichnis; fügen Sie `--allow-root-user` nu
 3. Die Kopie bringt das Design, die Sprache und andere Einstellungen mit, sodass die neue Website sofort dargestellt
    wird; Sie ändern nur, was abweicht.
 4. `SiteList[]` in `site.ini [SiteSettings]`, das der Installer in das globale Override schreibt
-   ([Mehrere Websites einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site)).
+   ([Mehrere Websites einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website)).
 5. Der INI-Cache wurde nicht geleert; das globale Override setzt `SiteName` und gewinnt; Velocity wurde nicht neu
    gestartet.
 
@@ -191,18 +191,18 @@ Die Befehle laufen in ihrem Wurzelverzeichnis; fügen Sie `--allow-root-user` nu
 
 ## Weiterführende Informationen
 
-- [Mehrere Websites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md): die
+- [Mehrere Websites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md): die
   Schritte mit Host-Zuordnung.
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md): `set`, `add`, `rem`,
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../bc/6.0/console-exp-ini.md): `set`, `add`, `rem`,
   `--dry-run`.
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site).
-- [Den Inhaltsbaum strukturieren](../../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md).
+- [Den Inhaltsbaum strukturieren](../../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md).
 
 ## Verwandte Seiten
 
 - [Modul 1: Siteaccesses für mehrere Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

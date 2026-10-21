@@ -10,7 +10,7 @@ type: help
 # Die Debug-Ausgabe beschränken
 
 Für Administratoren und Entwickler. Die Debug-Ausgabe zeigt SQL, Dateipfade und Template-Namen: niemals für Besucher
-einer öffentlichen Site ([Debug-Ausgabe in der Produktion](../../../../../eng-us/help/government/security/debug-output-in-production.md)).
+einer öffentlichen Site ([Debug-Ausgabe in der Produktion](../../sicherheit/debug-ausgabe-im-produktivbetrieb.md)).
 
 ## Inhalt
 
@@ -61,7 +61,7 @@ Debug-Schalter.
 
 ## Verwandte Seiten
 
-- [Debug-Ausgabe in der Produktion](../../../../../eng-us/help/government/security/debug-output-in-production.md)
+- [Debug-Ausgabe in der Produktion](../../sicherheit/debug-ausgabe-im-produktivbetrieb.md)
 - [Die Debug-Leiste von Exp](../../../../bc/6.0/debug-leiste.md)
 - [13.4 Debug-Ausgabe und Anzeige von Fehlern](../../../../installation/13-sicherheitshaertung.md#134-debug-ausgabe-und-fehleranzeige)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

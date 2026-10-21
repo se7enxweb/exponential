@@ -67,7 +67,7 @@ license                American spelling in the project's own texts
 | eZ Publish 6, eZ Exponential, Exponential Publish | Exponential 6 |
 | Das Exponential, die Software Exponential CMS | Exponential |
 | 7X, SevenX, Se7enX | 7x |
-| `7x_...` als Präfix im Code | `sevenx_...` oder `exp...` ([Namenspräfixe](../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md)) |
+| `7x_...` als Präfix im Code | `sevenx_...` oder `exp...` ([Namenspräfixe](../../standards/namenspraefixe-sevenx-und-exp.md)) |
 | 7x Foundation, Exponential Inc. | die Exponential Foundation |
 | Exponential AI, ExpAI | Exponential Intelligence |
 | Exponential Qbix | Exponential Velocity |

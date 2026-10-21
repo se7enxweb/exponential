@@ -62,7 +62,7 @@ zu haben.
 Ein Übersetzungs-Siteaccess, der genau wie die Hauptwebsite aussehen soll, erhält
 `[SiteAccessSettings] ExtensionSettingsSiteAccess=<main siteaccess>`, damit die Einstellungen der Design-Erweiterung
 für den Haupt-Siteaccess gelten
-([Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md#a-translation-siteaccess-that-looks-like-the-main-site)).
+([Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md#ein-übersetzungs-siteaccess-der-wie-die-hauptwebsite-aussieht)).
 Geben Sie jedem Siteaccess einen eigenen `SiteName` in der jeweiligen Sprache.
 
 ## Prüfen
@@ -73,9 +73,9 @@ Adresse abgemeldet und prüfen Sie eine übersetzte und eine unübersetzte Seite
 
 ## Verwandte Seiten
 
-- [Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Eine mehrsprachige Website bauen](../../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [10.14 Mehrsprachige Websites](../../../installation/10-nach-der-installation.md#1014-mehrsprachige-sites)
-- [Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)
+- [Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

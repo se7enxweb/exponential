@@ -63,9 +63,9 @@ Unterschied braucht eine Erklärung.
 
 ## Verwandte Seiten
 
-- [Sicherheitsheader](../../../../../eng-us/help/government/security/security-headers.md)
+- [Sicherheitsheader](../../sicherheit/sicherheits-header.md)
 - [HSTS hinzufügen](hsts-hinzufuegen.md)
-- [Sicherheits-Checkliste für den Go-live](../../../../../eng-us/help/government/security/go-live-security-checklist.md)
+- [Sicherheits-Checkliste für den Go-live](../../sicherheit/sicherheits-checkliste-vor-dem-go-live.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

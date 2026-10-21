@@ -38,7 +38,7 @@ Beide Hälften brauchen die Prüfung.
 
 ## Verwandte Seiten
 
-- [Die Barrierefreiheit Ihrer Site testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Die Barrierefreiheit Ihrer Site testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

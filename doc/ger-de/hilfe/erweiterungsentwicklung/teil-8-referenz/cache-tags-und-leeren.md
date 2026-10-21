@@ -77,7 +77,7 @@ Aus `kernel/classes/ezcache.php`:
 | `ignore_content_expiry` | nicht bei jeder Veröffentlichung verfallen |
 
 Cachen Sie benutzerbezogene Inhalte nie ohne den Benutzer in `keys`. Die Hilfe für Designer erklärt die
-Template-Seite ausführlich ([cache-block](../../../../eng-us/help/designers/templates/cache-block.md)).
+Template-Seite ausführlich ([cache-block](../../designer/vorlagen/cache-block.md)).
 
 ## Aus Ihrem PHP-Code
 

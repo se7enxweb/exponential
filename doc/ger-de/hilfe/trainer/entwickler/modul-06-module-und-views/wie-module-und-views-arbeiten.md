@@ -74,7 +74,7 @@ und [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikati
 **Woher kommen die `$Params`?** Der Modul-Runner füllt `$Params` mit den benannten geordneten Parametern und
 `$Params['UserParameters']` mit den ungeordneten.
 
-**Kann eine Erweiterung einem Kernel-Modul eine View hinzufügen?** Ja, mit Bedacht: [Modul-Override durch Erweiterungen](../../../../../eng-us/features/6.0/extension-module-override.md)
+**Kann eine Erweiterung einem Kernel-Modul eine View hinzufügen?** Ja, mit Bedacht: [Modul-Override durch Erweiterungen](../../../../funktionen/6.0/modulueberschreibung-durch-extensions.md)
 erklärt, wie eine Erweiterung Views und Templates eines Moduls bereitstellt oder überschreibt.
 
 **Warum wurden die Kernel-Views zu Klassen?** Damit man sie über Einstellungen und Ereignisse ersetzen und auf sie
@@ -137,7 +137,7 @@ Auf der Entwicklungsinstallation, in einer Shell.
 
 - [Den Code lesen, den Sie bereits haben](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/den-vorhandenen-code-lesen.md).
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md).
-- [Modul-Override durch Erweiterungen](../../../../../eng-us/features/6.0/extension-module-override.md).
+- [Modul-Override durch Erweiterungen](../../../../funktionen/6.0/modulueberschreibung-durch-extensions.md).
 
 ## Verwandte Seiten
 

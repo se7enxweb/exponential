@@ -36,8 +36,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Exponential Layouts: Blockparameter](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-parameters) und
-[Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#view-types-and-parameters).
+Quellen: [Exponential Layouts: Blockparameter](../../../../bc/6.0/layouts.md#blockparameter) und
+[Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#ansichtstypen-und-parameter).
 
 1. **Button / Link** (3 Minuten). Zu seinen Einstellungen gehören der Schaltflächentext, die Linkadresse, ein Ziel
    (im selben oder in einem neuen Fenster öffnen) und ein Stil oder eine CSS-Klasse. Die genauen Feldnamen hängen vom
@@ -108,7 +108,7 @@ Tafel geschrieben.
 <summary>Antworten</summary>
 
 1. Den Text, die Linkadresse und das Ziel.
-2. Eine Beschriftung für Redakteure, um ähnliche Blöcke auseinanderzuhalten ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-parameters)).
+2. Eine Beschriftung für Redakteure, um ähnliche Blöcke auseinanderzuhalten ([Exponential Layouts](../../../../bc/6.0/layouts.md#blockparameter)).
 3. **B.**
 4. **Falsch.** Die meisten einfachen Blöcke haben einen; Listenblöcke haben mehrere.
 5. Für Menschen, die das Bild nicht sehen können, und für den Fall, dass es nicht lädt.
@@ -117,14 +117,14 @@ Tafel geschrieben.
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Blockparameter](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-parameters): die gemeinsamen Felder.
-- [Ihre Website gestalten](../../../../../eng-us/help/creators/website-creators/branding-your-site.md): woher das Aussehen einer Website und ihre Klassen kommen.
+- [Exponential Layouts: Blockparameter](../../../../bc/6.0/layouts.md#blockparameter): die gemeinsamen Felder.
+- [Ihre Website gestalten](../../../ersteller/website-ersteller/ihre-website-markengerecht-gestalten.md): woher das Aussehen einer Website und ihre Klassen kommen.
 
 ## Verwandte Seiten
 
 - [Modul 3: Blöcke](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

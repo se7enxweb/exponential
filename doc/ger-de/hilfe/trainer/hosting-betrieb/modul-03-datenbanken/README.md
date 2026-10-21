@@ -59,7 +59,7 @@ Sicherungen und dem Umzug einer Website zwischen Datenbanksystemen.
 - [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Datenbankunterstützung](../../../datenbankunterstuetzung.md)
 - [Datenbanken in der offiziellen Reihenfolge](../../../hosting/grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

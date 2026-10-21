@@ -126,7 +126,7 @@ sie davon ab, sich wie die Live-Website zu verhalten:
 
    Oder behalten Sie den Transport und setzen `DebugSending=enabled` mit `DebugReceiverEmail=<your test address>`, was jede Mail
    an eine Adresse schickt. Eine Variante pro Maschine (`settings/override/site.ini.test.append.php` mit `EXP_ENV=test`) hält
-   das aus den Live-Einstellungen heraus ([Einstellungen je Umgebung](../../../../eng-us/features/6.0/environment-settings.md)).
+   das aus den Live-Einstellungen heraus ([Einstellungen je Umgebung](../../../funktionen/6.0/umgebungseinstellungen.md)).
 2. **Richten Sie die Crontab** auf der Testmaschine **nicht ein**, sonst laufen Benachrichtigungen, Newsletter und Inhaltsjobs
    gegen echte Adressen. Führen Sie einen Teil nur von Hand aus, wenn Sie ihn testen.
 3. **Beschränken Sie den Zugang.** Stellen Sie die Kopie nicht ins öffentliche Internet; sie enthält personenbezogene Daten.

@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: die Operatorlisten in `lib/eztemplate/classes/eztemplateautoload.php` und
-`kernel/common/eztemplateautoload.php` sowie [String-Template-Operatoren](../../../../../eng-us/features/6.0/string-template-operators.md).
+`kernel/common/eztemplateautoload.php` sowie [String-Template-Operatoren](../../../../funktionen/6.0/template-operatoren-fuer-zeichenketten.md).
 
 1. **Familien** (5 Minuten). Zeigen Sie die Registrierungen in `lib/eztemplate/classes/eztemplateautoload.php` am
    Projektor. Wissenswerte Familien:
@@ -155,9 +155,9 @@ Verwenden Sie die Spielwiese aus Lektion 2.1 und führen Sie sie nach jedem Schr
 
 ## Weiterführende Literatur
 
-- [String-Template-Operatoren](../../../../../eng-us/features/6.0/string-template-operators.md): die in Exponential 6
+- [String-Template-Operatoren](../../../../funktionen/6.0/template-operatoren-fuer-zeichenketten.md): die in Exponential 6
   hinzugekommenen String-Operatoren.
-- [Template-Operatoren für Rollen und Richtlinien](../../../../../eng-us/features/6.0/role-and-policy-template-operators.md):
+- [Template-Operatoren für Rollen und Richtlinien](../../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md):
   `has_role`, `has_policy` und Verwandte.
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): Website-Daten und URL-Kodierung in Templates.
 

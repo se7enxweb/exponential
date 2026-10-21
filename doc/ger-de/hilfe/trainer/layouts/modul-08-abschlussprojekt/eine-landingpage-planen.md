@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Layout-Typen, Zonen und Blöcke: Planungsblatt](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#planning-sheet)
-und [Landingpages mit dem Layout-Editor: Eine Kampagnenseite von Grund auf](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#a-campaign-page-from-scratch).
+Quellen: [Layout-Typen, Zonen und Blöcke: Planungsblatt](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#planungsblatt)
+und [Landingpages mit dem Layout-Editor: Eine Kampagnenseite von Grund auf](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#eine-kampagnenseite-von-grund-auf).
 
 1. **Die Aufgabe** (3 Minuten). Zeigen Sie sie am Beamer: *Eine Herbstkampagnen-Seite für die Schulungs-Website. Ein
    großes Banner mit Titel, einem Satz und einer Schaltfläche; drei von Hand ausgewählte Highlights; darunter die sechs
@@ -107,7 +107,7 @@ Arbeiten Sie zuerst allein, dann zu zweit. Verwenden Sie Papier oder eine Kopie 
 <summary>Antworten</summary>
 
 1. Seite, Layout-Typ, Zone, Blöcke (Typ / Ansichtstyp), Collection
-   ([Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#planning-sheet)).
+   ([Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#planungsblatt)).
 2. Eine Bedingung **time** mit `from` und `to`.
 3. Sie werden einmal in einem gemeinsamen Layout definiert; Änderungen dort erreichen jede Seite.
 4. Manuell für die drei kuratierten Highlights; dynamisch für die neuesten Artikel.
@@ -117,14 +117,14 @@ Arbeiten Sie zuerst allein, dann zu zweit. Verwenden Sie Papier oder eine Kopie 
 
 ## Weiterführende Informationen
 
-- [Landingpages mit dem Layout-Editor](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)
-- [Layout-Regeln: Rezepte](../../../../../eng-us/help/creators/website-creators/layout-rules.md#recipes)
+- [Landingpages mit dem Layout-Editor](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)
+- [Layout-Regeln: Rezepte](../../../ersteller/website-ersteller/layout-regeln.md#rezepte)
 
 ## Verwandte Seiten
 
 - [Modul 8: Abschlussprojekt](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -43,7 +43,7 @@ nachsehen.
 - Leichte Kontenprüfung: Benutzer > Benutzerkonten prüfen, **Seit N Tagen nicht gesehen** und **Gesperrt**.
 - `composer audit` und `composer outdated` (siehe „Patch-Rhythmus“).
 - Seite „Zustand der Logs“ in der Protokollansicht: Wachstum und Rotation der Protokolle
-  ([Protokollansicht](../../../../eng-us/features/6.0/log-viewer.md#log-health)).
+  ([Protokollansicht](../../../funktionen/6.0/log-betrachter.md#zustand-der-logs)).
 
 ## Wo Sie nachsehen
 
@@ -70,7 +70,7 @@ Nachweis, den Prüferinnen und Prüfer bei Anforderungen an Protokollierung und 
 
 - [Sicherheitshärtung: Beobachten](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)
 - [Anfrageprotokolle und das Sicherheitsprotokoll](anfrageprotokolle-und-das-sicherheitsprotokoll.md)
-- [Die Protokollansicht](../../../../eng-us/features/6.0/log-viewer.md)
+- [Die Protokollansicht](../../../funktionen/6.0/log-betrachter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

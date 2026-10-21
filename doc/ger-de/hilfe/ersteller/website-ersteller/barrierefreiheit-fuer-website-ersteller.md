@@ -55,9 +55,9 @@ Geben Sie der Redaktion bei der Übergabe eine kurze Liste dieser Punkte mit
 - Der Online-Editor schreibt strukturierten Rich Text (Überschriften, Listen, Tabellen) statt freiem HTML.
 - Inhalte mit Schreibrichtung von rechts nach links werden von `parts/exp_content_direction.tpl` mit `lang` und `dir`
   markiert.
-- Die Administration selbst folgt einem barrierefreien Design ([admin4-Design](../../../../eng-us/features/6.0/admin4-design.md)),
+- Die Administration selbst folgt einem barrierefreien Design ([admin4-Design](../../../funktionen/6.0/admin4-design.md)),
   sodass auch Redakteure mit Behinderungen damit arbeiten können.
-- Inhaltsprüfungen finden Probleme in Inhalten ([Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+- Inhaltsprüfungen finden Probleme in Inhalten ([Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 
 ## Formulare
 

@@ -48,7 +48,7 @@ in der leeren Variante ([Die Demo-Inhaltspakete](../../../seitenpakete/sevenx-mu
 
 Ein Bericht, eine Strategie oder ein Leitfaden mit einer Einstiegsseite, die ihn zusammenfasst. Legen Sie sie unter
 **Setup > Klassen**, Gruppe Content, **Neue Klasse** an
-([Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)).
+([Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)).
 
 | Attribut | Bezeichner | Datentyp (Name im Klasseneditor) | Pflicht | Warum |
 |---|---|---|---|---|
@@ -59,7 +59,7 @@ Ein Bericht, eine Strategie oder ein Leitfaden mit einer Einstiegsseite, die ihn
 | Datum der Publikation | `publication_date` | Datum (`ezdate`) | ja | das amtliche Datum, unabhängig vom Zeitpunkt der Veröffentlichung |
 | Geschäftszeichen | `reference` | Textzeile (`ezstring`) | nein | die in Zitaten verwendete Dokumentnummer |
 | Art der Publikation | `publication_type` | Auswahl (`ezselection`) | ja | Bericht, Strategie, Leitfaden ... |
-| Themen | `tags` | Tags (`eztags`) | nein | Themen über Einheiten hinweg ([eztags](../../../../../eng-us/features/6.0/extensions/eztags.md)) |
+| Themen | `tags` | Tags (`eztags`) | nein | Themen über Einheiten hinweg ([eztags](../../../../funktionen/6.0/erweiterungen/eztags.md)) |
 | Metadaten | `metadata` | Metadaten (`xrowmetadata`) | nein | Seitentitel und Beschreibung für Suchmaschinen |
 
 Muster für den Objektnamen: `<title>`. Markieren Sie Zusammenfassung als durchsuchbar, damit die Suche die Publikation
@@ -81,7 +81,7 @@ auch dann findet, wenn die Datei nicht indiziert ist.
 | Ergebnis | `outcome` | `ezxmltext` | nein | das veröffentlichte Ergebnis nach dem Ende |
 
 Wird **Informationssammler** an einem Attribut angekreuzt, füllen es die Besucher aus, nicht die Redaktion
-([Formulare mit dem Informationssammler](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+([Formulare mit dem Informationssammler](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 Stellungnahmen erscheinen unter **Setup > Gesammelte Informationen** und lassen sich als CSV exportieren
 ([Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)). Erheben Sie nur, was die Konsultation braucht.
 
@@ -108,7 +108,7 @@ das zuerst auf einer Kopie der Website.
   berührt.
 - **Beziehungen, keine Kopien.** Eine Publikation, die von fünf Themenseiten verlinkt ist, ist ein Objekt mit fünf
   Beziehungen, sodass eine Aktualisierung einmal erfolgt
-  ([Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+  ([Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 - **Mehrere Orte**, wenn eine Seite in zwei Menüs erscheinen muss
   ([Inhaltsmodell und Bearbeitung](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md)).
 
@@ -126,8 +126,8 @@ das zuerst auf einer Kopie der Website.
 
 - [Nationale Regierung](README.md)
 - [Struktur, Sektionen und Rollen für die nationale Regierung](struktur-sektionen-und-rollen.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
+- [Ihr Inhaltsmodell entwerfen](../../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

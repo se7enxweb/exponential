@@ -26,7 +26,7 @@ Fragen, eine einfache Bewertung und ein Protokoll.
 | Backups | Protokolle der Wiederherstellungstests | [Wiederherstellungstest](../gesund-halten/wiederherstellungstest.md) |
 | Sicherheit | Ihre vierteljährlichen Sicherheitsüberprüfungen | [Sicherheits-Checkliste für Betreiber](../gesund-halten/sicherheits-checkliste-fuer-betreiber.md) |
 | Änderungen | Änderungsanfragen: Schätzung gegenüber tatsächlichem Aufwand, pünktlich oder nicht | [Änderungsanfragen](aenderungsanfragen.md) |
-| Deployments und Wartung | Der Kanal `system` des Prüfprotokolls listet Deployments und Wartungsfenster | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Deployments und Wartung | Der Kanal `system` des Prüfprotokolls listet Deployments und Wartungsfenster | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 ## Fragen Sie ihn
 

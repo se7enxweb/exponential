@@ -20,7 +20,7 @@ php vendor/bin/phpunit --group database tests/tests/kernel/content/eZAuditLocati
 ```
 
 Um nur die Tests der Dateien auszuführen, die eine Änderung berührt hat (statt der ganzen Suite), siehe
-[nur die Tests einer Änderung ausführen](../../../../eng-us/features/6.0/quality-checks.md#run-only-the-tests-of-a-change):
+[nur die Tests einer Änderung ausführen](../../../funktionen/6.0/qualitaetspruefungen.md#nur-die-tests-einer-änderung-ausführen):
 `tests/test-map.json` ordnet Quelldateien, Templates und Skripte den Tests zu, die sie abdecken.
 
 Ein Test prüft jeden Standardwert, den eine aktualisierte Website behält, sodass eine spätere Änderung eine Funktion

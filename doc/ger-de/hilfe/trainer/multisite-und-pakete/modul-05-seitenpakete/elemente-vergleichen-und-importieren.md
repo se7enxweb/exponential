@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../../../eng-us/features/6.0/package-compare-and-import.md).
+Quelle: [In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../../funktionen/6.0/pakete-vergleichen-und-importieren.md).
 
 1. **Wie Elemente zugeordnet werden** (4 Minuten). Inhaltsklassen über ihren Bezeichner, Inhaltsobjekte über ihre
    Remote-ID. Beide Seiten werden vom selben Code serialisiert und dann pro Datentyp normalisiert (Rich Text als
@@ -121,7 +121,7 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto, mit dem Pak
 <details>
 <summary>Antworten</summary>
 
-1. Über die Remote-ID ([Paketvergleich und Import](../../../../../eng-us/features/6.0/package-compare-and-import.md#2-compare-a-package-with-the-site)).
+1. Über die Remote-ID ([Paketvergleich und Import](../../../../funktionen/6.0/pakete-vergleichen-und-importieren.md#2-ein-paket-mit-der-website-vergleichen)).
 2. **C.**
 3. **Falsch.** Etwas, das nur auf der Website existiert, wird nie entfernt.
 4. Er behält den Wert der Website.
@@ -131,7 +131,7 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto, mit dem Pak
 
 ## Weiterführende Informationen
 
-- [In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../../../eng-us/features/6.0/package-compare-and-import.md).
+- [In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../../funktionen/6.0/pakete-vergleichen-und-importieren.md).
 - [Pakete, 3. Die Seite eines Pakets](../../../../anleitungen/pakete.md#3-die-seite-eines-pakets).
 - [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md).
 
@@ -139,7 +139,7 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto, mit dem Pak
 
 - [Modul 5: Seitenpakete](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -51,7 +51,7 @@ Siteaccesses Suchen aufzeichnen, oder warnt, dass keiner es tut.
 
 Suchbegriffe sind das, was Besucher eingegeben haben. Sie können Namen, Adressen oder Aktenzeichen enthalten. Der
 Datenschutzstandard führt gespeicherte Suchbegriffe unter den bekannten Lücken, mit denen die Site umgehen muss
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md#known-gaps)):
+([Standards zum Datenschutz](../../../../standards/datenschutz.md#bekannte-lücken)):
 
 - geben Sie die Seite nur Mitarbeitern, die sie brauchen (sie braucht Zugang zu Setup);
 - erwähnen Sie die Aufzeichnung in der Datenschutzerklärung;

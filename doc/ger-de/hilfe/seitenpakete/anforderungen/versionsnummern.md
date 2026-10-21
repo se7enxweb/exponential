@@ -109,7 +109,7 @@ Für ein neues Paket oder ein neues eigenes Release:
 ```
 
 Wie Sie Ihre eigenen Releases über die Zeit nummerieren, steht auf [Eigene Pakete versionieren](../eigene/eigene-pakete-versionieren.md).
-Die Einstellungen und die Seite der Assistenten stehen in [Paketlizenzen und Semantic Versioning](../../../../eng-us/features/6.0/package-licenses-and-versions.md).
+Die Einstellungen und die Seite der Assistenten stehen in [Paketlizenzen und Semantic Versioning](../../../funktionen/6.0/paketlizenzen-und-versionen.md).
 
 ## Verwandte Seiten
 

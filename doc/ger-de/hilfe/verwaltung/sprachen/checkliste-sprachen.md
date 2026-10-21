@@ -66,7 +66,7 @@ Bereichs, die ihn erklärt.
 ## Verwandte Seiten
 
 - [Sprachen auf einen Blick](sprachen-auf-einen-blick.md)
-- [Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Eine mehrsprachige Website bauen](../../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

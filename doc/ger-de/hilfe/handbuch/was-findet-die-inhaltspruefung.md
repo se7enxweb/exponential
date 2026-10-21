@@ -47,7 +47,7 @@ oder `contentcheck/fixfiles`.
 
 ## Verwandte Seiten
 
-- [Die Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md)
+- [Die Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md)
 - [Fehlende Dateien](../../anleitungen/fehlende-dateien.md)
 - [Inhaltsaudits](../kunden/alltag/inhalts-audits.md)
 - [Benutzerhandbuch](README.md)

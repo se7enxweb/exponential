@@ -61,7 +61,7 @@ Stellen haben eigene Stilleitfäden; folgen Sie Ihrem, wo er abweicht.
 - [ ] Daten und Uhrzeiten vollständig geschrieben, mit der Zeitzone, wo es darauf ankommt.
 - [ ] Beträge mit Einheiten und Währung.
 - [ ] Fristen klar und früh genannt.
-- [ ] Beschriftungen und Fehlermeldungen von Formularen sagen, was zu tun ist ([Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)).
+- [ ] Beschriftungen und Fehlermeldungen von Formularen sagen, was zu tun ist ([Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)).
 
 ## Testen Sie es
 
@@ -74,8 +74,8 @@ Stellen haben eigene Stilleitfäden; folgen Sie Ihrem, wo er abweicht.
 
 - [ ] Verwenden Sie für die Struktur die Schaltflächen des Editors für Überschriften und Listen statt fettem Text ([Inhalte bearbeiten](../../inhalte-bearbeiten.md)).
 - [ ] Verwenden Sie für die Kurzfassung das Feld für Zusammenfassung oder Einleitung, das Ihre Inhaltsklasse bietet.
-- [ ] Verwenden Sie eine Erklärung über Relationen wieder, statt sie auf viele Seiten zu kopieren ([Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
-- [ ] Wenn Sie Exponential Intelligence nutzen, um einfachere Formulierungen vorzuschlagen: Es schreibt nur Entwürfe; ein Mensch prüft und veröffentlicht ([das Glossar von Exponential](../../../../eng-us/glossary.md#e)).
+- [ ] Verwenden Sie eine Erklärung über Relationen wieder, statt sie auf viele Seiten zu kopieren ([Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
+- [ ] Wenn Sie Exponential Intelligence nutzen, um einfachere Formulierungen vorzuschlagen: Es schreibt nur Entwürfe; ein Mensch prüft und veröffentlicht ([das Glossar von Exponential](../../../glossar.md#e)).
 
 ## Verwandte Seiten
 

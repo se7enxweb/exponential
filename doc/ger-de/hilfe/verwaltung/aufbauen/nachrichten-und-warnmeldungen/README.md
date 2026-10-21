@@ -44,9 +44,9 @@ Templates und Caches gebaut, wie die Seiten erklären.
 Nach oben: [Eine Site für den öffentlichen Sektor aufbauen](../README.md), der Index aller Anleitungen zum Aufbauen,
 und [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md), der Anfang des Bereichs für Behörden. Warnmeldungen für
 bestimmte Arten von Organisationen stehen in
-[Warnmeldungen in vielen Sprachen und in einfacher Sprache](../../../../../eng-us/help/government/levels/public-health/alerts-multilingual-and-plain-language.md)
+[Warnmeldungen in vielen Sprachen und in einfacher Sprache](../../ebenen/oeffentliche-gesundheit/warnungen-mehrsprachig-und-in-einfacher-sprache.md)
 und
-[Warnmeldungen, Verfügbarkeit, Wartungsmodus und statischer Cache](../../../../../eng-us/help/government/levels/emergency-services/alerts-availability-maintenance-and-static-cache.md).
+[Warnmeldungen, Verfügbarkeit, Wartungsmodus und statischer Cache](../../ebenen/rettungsdienste/warnungen-verfuegbarkeit-wartung-und-statischer-cache.md).
 
 ## Kanäle wählen
 

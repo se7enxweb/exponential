@@ -38,7 +38,7 @@ Pfade sind am einfachsten (ein Zertifikat, ein Host); Hosts passen zu Länderdom
 
 Mit `DefaultHostUriMatchMapItems[]` leitet eine Adresse ohne Sprachsegment (`example.com/`) einmalig auf die Sprache des
 Besuchers weiter, gewählt nach Host und nach dem `Accept-Language` des Browsers, mit einer Adresse pro Sprache und ohne
-Cookie ([Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)):
+Cookie ([Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)):
 
 ```ini
 # settings/override/site.ini.append.php
@@ -103,7 +103,7 @@ selbst aus; bauen Sie sie im Pagelayout aus demselben Ergebnis von `language_swi
 
 - [Eine mehrsprachige Website bauen](mehrsprachige-websites.md)
 - [Websites mit Schreibrichtung von rechts nach links](websites-von-rechts-nach-links.md)
-- [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)
+- [Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

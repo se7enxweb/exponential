@@ -66,12 +66,12 @@ Ihre Methode ([Benchmarking](../../anleitungen/benchmarking.md)).
 |---|---|---|
 | Bearbeiten und Veröffentlichen | Entwürfe, Vorschau, Versionen, Freigabe | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | Seitenbau | Layouts, Blöcke, geteilte Layouts, Zuordnungen | [Der Layout-Editor](../layout-editor.md) |
-| Sprachen | Ein Element übersetzen; die Oberfläche umschalten | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen | Ein Element übersetzen; die Oberfläche umschalten | [Sprachen in Exponential](../../sprachen.md) |
 | Barrierefreiheit | Nur Tastatur; Kontrast hell und dunkel | [Tastaturkürzel](../tastenkuerzel.md) |
 | Installation | Von einem leeren Ordner aus | [Exponential installieren](../../installation/README.md) |
 | Freiheit beim Hosting | Datenbanken, Betriebssysteme | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Sicherheit | Zweistufige Anmeldung, Prüfprotokoll, Härtung | [Sicherheitshärtung](../sicherheitshaertung.md) |
-| Dokumentation | Antworten in der eingebauten Hilfe finden | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Dokumentation | Antworten in der eingebauten Hilfe finden | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | Lizenz | GPL für den Code, GNU FDL für die Dokumentation | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
 | Support und Kontinuität | Was zugesagt ist, und von wem | [Die Zusage zur Unterstützung](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 
@@ -82,9 +82,9 @@ Eine faire Rezension berichtet, was die Quellen selbst einräumen, mit der Quell
 - 6.0.15 ist in Entwicklung und hat kein Veröffentlichungsdatum; vieles von dem, was die Hilfe beschreibt, gehört dazu
   ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
 - Neunzehn der 33 Übersetzungen der Administration sind vollständig (19. Oktober 2026); die anderen zeigen für fehlende
-  Texte Englisch ([Sprachen in Exponential](../../../eng-us/languages.md)).
+  Texte Englisch ([Sprachen in Exponential](../../sprachen.md)).
 - Die mitgelieferte Standard-Engine von Velocity ist der eingebaute Server von PHP, nur für die Entwicklung; die
-  empfohlene Engine muss ausgewählt werden ([Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)).
+  empfohlene Engine muss ausgewählt werden ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)).
 - Exponential Platform DXP liefert keinen Layout-Editor
   ([Die Produktfamilie kennen](../fuersprecher/die-produktfamilie-kennen.md#häufige-verwechslungen)).
 - Die Quellen zählen weder Installationen noch Benutzer noch Entwickler.

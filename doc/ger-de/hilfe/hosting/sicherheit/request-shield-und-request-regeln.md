@@ -13,8 +13,8 @@ Diese Seite ist für Systemadministratoren und Sicherheitsverantwortliche bei ei
 Exponential, bevor oder während der Kernel sie bearbeitet, und sie werden oft verwechselt. Diese Seite sagt, was jede tut, wo sie läuft und
 wie ein Hoster sie einschaltet. Die Fakten zu request-shield stammen aus
 [Sicherheitshärtung: Ein Schutz davor](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield); zum Klassifizierer aus
-[Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md); zu den Request-Regeln aus
-[Request-Regeln](../../../../eng-us/bc/6.0/view_full_security.md).
+[Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md); zu den Request-Regeln aus
+[Request-Regeln](../../../bc/6.0/sicherheit-von-content-view-full.md).
 
 ## Inhalt
 
@@ -166,7 +166,7 @@ Das sind Möglichkeiten, die ein Hoster wählen kann:
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Die Administration einschränken](die-administration-einschraenken.md)
 - [Sicherheitslog](../betrieb/sicherheitslog.md)
-- [HTTP-Cache: Mit request-shield davor](../../../../eng-us/bc/6.0/httpcache.md#with-request-shield-in-front)
+- [HTTP-Cache: Mit request-shield davor](../../../bc/6.0/httpcache.md#mit-vorgeschaltetem-request-shield)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

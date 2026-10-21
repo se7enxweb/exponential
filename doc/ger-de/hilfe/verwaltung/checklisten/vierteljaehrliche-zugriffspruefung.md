@@ -12,7 +12,7 @@ type: help
 Diese Checkliste richtet sich an die Website-Administration und die Verantwortlichen der Website einer öffentlichen
 Stelle, jedes Quartal. Menschen wechseln die Stelle und gehen; ihr Zugang muss folgen. Die Seiten und Befehle stammen
 aus [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md),
-[Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) und [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md).
+[Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) und [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md).
 
 ![Benutzerkonten prüfen: nie angemeldet, seit 180 Tagen nicht gesehen, deaktivierte und gesperrte Konten, der Ausgangspunkt einer Zugriffsprüfung](../../../../eng-us/help/images/government/gov-access-review.webp)
 
@@ -35,17 +35,17 @@ aus [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rol
 
 ## Konten
 
-- [ ] Öffnen Sie **Benutzerkonten prüfen** (`/user/hygiene`) und grenzen Sie die Liste auf Konten ein, die seit der von Ihnen gewählten Anzahl von Tagen nicht genutzt wurden ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] Öffnen Sie **Benutzerkonten prüfen** (`/user/hygiene`) und grenzen Sie die Liste auf Konten ein, die seit der von Ihnen gewählten Anzahl von Tagen nicht genutzt wurden ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Für jede ausgeschiedene Person oder jedes ungenutzte Konto: deaktivieren, oder bei eingeschaltetem **Deaktivieren und verschieben** in die verborgene Gruppe ohne Rollen verschieben; das Werkzeug entfernt Konten nicht von selbst.
-- [ ] Entfernen Sie Konten, die wegmüssen, einzeln; das Entfernen löscht die E-Mail-Einstellungen und anonymisiert das Einwilligungsprotokoll ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
+- [ ] Entfernen Sie Konten, die wegmüssen, einzeln; das Entfernen löscht die E-Mail-Einstellungen und anonymisiert das Einwilligungsprotokoll ([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
 - [ ] Prüfen Sie nicht aktivierte Konten, die auf ihre Aktivierung warten ([Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)).
 - [ ] Es werden keine geteilten oder allgemeinen Konten verwendet.
 
 ## Rollen und Zuweisungen
 
-- [ ] Öffnen Sie **Rollen** (`/role/list`) und prüfen Sie die Richtlinien jeder Rolle; eine Rolle, die alles erlaubt, sollte sehr wenige Mitglieder haben ([Rollen und Richtlinien in Reihenfolge](../../../../eng-us/features/6.0/role-policy-order.md)).
-- [ ] Prüfen Sie für jede Rolle die zugewiesenen Benutzer und Gruppen und ihre Beschränkungen (Sektion, Teilbaum) ([Seitenweise Anzeige von Rollenzuweisungen](../../../../eng-us/features/6.0/role-assignment-paging.md)).
-- [ ] Die Rolle jeder Person passt zu ihrer Aufgabe und ihrer Schulung ([Rollen und Kurse](../../../../eng-us/help/government/procurement/training/roles-to-courses.md)).
+- [ ] Öffnen Sie **Rollen** (`/role/list`) und prüfen Sie die Richtlinien jeder Rolle; eine Rolle, die alles erlaubt, sollte sehr wenige Mitglieder haben ([Rollen und Richtlinien in Reihenfolge](../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md)).
+- [ ] Prüfen Sie für jede Rolle die zugewiesenen Benutzer und Gruppen und ihre Beschränkungen (Sektion, Teilbaum) ([Seitenweise Anzeige von Rollenzuweisungen](../../../funktionen/6.0/seitenweise-rollenzuweisungen.md)).
+- [ ] Die Rolle jeder Person passt zu ihrer Aufgabe und ihrer Schulung ([Rollen und Kurse](../beschaffung/schulung/rollen-und-kurse.md)).
 - [ ] Auftragnehmer haben nur, was der laufende Vertrag braucht, beschränkt auf ihre Sektionen.
 
 ## Schlüssel und Sitzungen

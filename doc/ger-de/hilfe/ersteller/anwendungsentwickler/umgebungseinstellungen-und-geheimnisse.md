@@ -21,7 +21,7 @@ Geheimnissen wie API-Schlüsseln und Passwörtern. Beides muss aus dem Code-Repo
 
 ## Einstellungen pro Umgebung
 
-Aus [Einstellungen pro Umgebung (EXP_ENV)](../../../../eng-us/features/6.0/environment-settings.md):
+Aus [Einstellungen pro Umgebung (EXP_ENV)](../../../funktionen/6.0/umgebungseinstellungen.md):
 
 1. Kopieren Sie `config.env.php.example` nach `config.env.php` und setzen Sie `define( 'EXP_ENV', 'test' );`. Die Datei
    wird im Web und auf der Kommandozeile vor `config.php` gelesen, und `.gitignore` hält sie aus der Versionsverwaltung
@@ -73,7 +73,7 @@ einer Demo spricht, erhält HTTP 403, wenn sie das Passwort eines Administrators
 
 - [Einstellungen und INI-Dateien in Ihrer Anwendung](einstellungen-und-ini-dateien.md)
 - [Sicherheit für Anwendungen](sicherheit-fuer-anwendungen.md)
-- [Sicherheitsstandard](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandard](../../../standards/sicherheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

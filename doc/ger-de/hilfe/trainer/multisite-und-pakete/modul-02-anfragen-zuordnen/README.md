@@ -43,7 +43,7 @@ Weiterleitung, die Besucher von `example.com/` zu ihrer Sprache schickt. Alle Ü
   Vorführung am Beamer durch.
 - Notieren Sie die Befehle, die jede Lektion rückgängig machen (`exp:ini rem`, `exp:ini set ... MatchOrder uri`),
   falls eine Person einen sauberen Zustand möchte, oder setzen Sie die Übungsumgebung zurück wie in
-  [Lektion 2.6 von Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/resetting-the-lab.md).
+  [Lektion 2.6 von Train the Trainer](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-uebungsumgebung-zuruecksetzen.md).
 - Wenn die Übungsumgebungen auf Exponential Velocity laufen, zeigen Sie einmal, dass jede Einstellungsänderung
   `php bin/php/console exp:velocity restart` braucht.
 
@@ -62,7 +62,7 @@ Weiterleitung, die Besucher von `example.com/` zu ihrer Sprache schickt. Alle Ü
 ## Verwandte Seiten
 
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

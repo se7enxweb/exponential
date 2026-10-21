@@ -94,8 +94,8 @@ Laden Sie dann das PHP-FPM neu, das die Website ausliefert, damit die Web-Laufze
 ## Verwandte Seiten
 
 - [Spezifikation der Metadaten von Erweiterungen](../../spezifikationen/6.0/extension-metadaten.md)
-- [Liste der Erweiterungen und Downloads](../../../eng-us/features/6.0/extension-list-and-downloads.md)
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md)
+- [Liste der Erweiterungen und Downloads](../../funktionen/6.0/extension-liste-und-downloads.md)
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md)
 - [ExponentialSDK und exponential.cron](exponentialsdk-und-exponential-cron.md)
-- [September 2026, erste Hälfte](../../../eng-us/history/2026/2026-09a.md#1-to-2-september-knowing-what-is-installed)
+- [September 2026, erste Hälfte](../../geschichte/2026/2026-09a.md#1-bis-2-september-wissen-was-installiert-ist)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

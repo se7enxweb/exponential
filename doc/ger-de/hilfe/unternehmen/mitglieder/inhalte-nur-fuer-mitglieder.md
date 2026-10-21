@@ -32,7 +32,7 @@ dringt.
 Jeder Besucher, der nicht angemeldet ist, ist der Benutzer **Anonymous** und darf nur tun, was die Rolle Anonymous
 erlaubt. Die Standardrolle Anonymous hat `content/read`, beschränkt auf die Sektion Standard. Inhalte in jeder anderen
 Sektion sind für Besucher daher unsichtbar und ergeben „Zugriff verweigert“ oder eine Aufforderung zur Anmeldung
-([Was Besucher sehen dürfen](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#what-it-grants-by-default)).
+([Was Besucher sehen dürfen](../../ersteller/website-ersteller/rechte-fuer-besucher.md#was-die-rolle-standardmäßig-erlaubt)).
 
 Inhalte nur für Mitglieder sind einfach Inhalte in einer Sektion, die die Rolle Mitglied liest und die Rolle Anonymous
 nicht.
@@ -53,7 +53,7 @@ denken.
 
 Eine ganze Website kann stattdessen eine Anmeldung verlangen (`RequireUserLogin=true` in ihrem Siteaccess), was zu
 geschlossenen Communitys ohne öffentlichen Teil passt
-([A members-only area](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md#a-members-only-area)).
+([A members-only area](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md#ein-bereich-nur-für-mitglieder)).
 
 ## Stufen der Mitgliedschaft
 
@@ -82,14 +82,14 @@ Halten Sie den Teaser als eigenes Objekt, damit er öffentlich sein kann, währe
 
 Dokumente sind File-Objekte; jeder Download läuft über `content/download`, das prüft, ob die Person die Datei lesen
 darf. Eine Datei in der Mitgliedersektion können nur Mitglieder herunterladen, selbst wenn der Link weitergegeben wird
-([Dateien und Downloads, Protected downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads)).
+([Dateien und Downloads, Protected downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads)).
 Verlinken Sie Dateien nicht direkt aus dem Speicherverzeichnis. Upload-Grenzen, Angaben zu Format und Größe und das
 Hochladen vieler Dateien behandelt [Dokumente und Dateibibliotheken](../intranets/dokumente-und-dateibibliotheken.md).
 
 ## Suche, Menüs und Feeds
 
 - Die Suche zeigt nur, was die Person lesen darf: Besucher finden Teaser, Mitglieder finden die vollständigen Texte
-  ([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)).
+  ([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)).
 - Menüs zeigen nur Seiten, die die Person lesen darf.
 - Ein RSS-Export listet die neuesten Objekte unterhalb seiner Quellen ([RSS-Feeds](../../../anleitungen/rss-feeds.md));
   wählen Sie einen Mitgliederordner nicht als Quelle eines öffentlichen Feeds, es sei denn, Sie wollen seine Titel
@@ -98,19 +98,19 @@ Hochladen vieler Dateien behandelt [Dokumente und Dateibibliotheken](../intranet
 ## Foren und Beiträge von Mitgliedern
 
 `ezwebin` liefert die Klassen `forums`, `forum`, `forum_topic` und `forum_reply` mit ihren Templates
-([ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md)); sie sind auf dem Demonstrationsserver vorhanden. Mitglieder
+([ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md)); sie sind auf dem Demonstrationsserver vorhanden. Mitglieder
 schreiben Beiträge, wenn ihre Rolle `content/create` für die Klassen der Themen und Antworten hat, beschränkt auf den
 Ort des Forums. Kommentare unter Artikeln funktionieren genauso
-([Was Besucher sehen dürfen, Giving visitors more](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#giving-visitors-more)).
+([Was Besucher sehen dürfen, Giving visitors more](../../ersteller/website-ersteller/rechte-fuer-besucher.md#besuchern-mehr-erlauben)).
 Planen Sie, wer moderiert, und geben Sie dieser Gruppe `content/edit` und `content/remove` nur in der Forensektion.
 
 Sternbewertungen für Inhalte gibt es mit `ezstarrating`
-([ezstarrating](../../../../eng-us/features/6.0/extensions/ezstarrating.md)).
+([ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md)).
 
 ## Als Besucher testen
 
 Verwenden Sie ein privates Browserfenster, nicht Ihre Sitzung in der Administration
-([Als Besucher testen](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#testing-as-a-visitor)):
+([Als Besucher testen](../../ersteller/website-ersteller/rechte-fuer-besucher.md#als-besucher-testen)):
 
 | Angemeldet als | Öffnen | Erwartet |
 |---|---|---|
@@ -134,9 +134,9 @@ Verwenden Sie ein privates Browserfenster, nicht Ihre Sitzung in der Administrat
 ## Verwandte Seiten
 
 - [Registrierung von Mitgliedern](registrierung-von-mitgliedern.md)
-- [Sektionen und Objektzustände für Website-Ersteller](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Sektionen und Objektzustände für Website-Ersteller](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Kunden- und Partnerbereiche](../extranets/kunden-und-partnerbereiche.md)
-- [Berechtigungen für Besucher](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Berechtigungen für Besucher](../../ersteller/website-ersteller/rechte-fuer-besucher.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

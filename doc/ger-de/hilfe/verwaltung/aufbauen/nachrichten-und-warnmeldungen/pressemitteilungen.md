@@ -81,7 +81,7 @@ Versionen lesen darf (`content/versionread`).
 2. Veröffentlichen Sie. Der frühere Text bleibt in der Versionshistorie; **Vergleichen** zeigt die Änderung.
 3. Für eine Korrektur, von der Medien wissen müssen, veröffentlichen Sie normal, damit Folgende benachrichtigt werden;
    für einen Tippfehler **Ohne Benachrichtigung veröffentlichen**, wo eingeschaltet
-   ([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)).
+   ([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)).
 
 Entfernen Sie nie eine veröffentlichte Pressemitteilung, um einen Fehler zu verbergen; korrigieren Sie ihn offen, es sei
 denn, sie muss aus rechtlichen Gründen zurückgezogen werden.

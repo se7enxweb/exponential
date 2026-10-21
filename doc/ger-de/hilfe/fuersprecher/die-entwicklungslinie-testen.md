@@ -35,7 +35,7 @@ cd exponential-main
 git log -1 --format='%h %ad %s'      # note the commit you test
 ```
 
-Installieren Sie sie dann auf SQLite, wie [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)
+Installieren Sie sie dann auf SQLite, wie [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)
 es beschreibt. Um sie aktuell zu halten, siehe [Mit Git entwickeln, Auf dem neuesten Stand bleiben](../mit-git-entwickeln.md#auf-dem-neuesten-stand-bleiben);
 um eine Korrektur vor ihrem Release auszuprobieren, [Eine Korrektur vor dem Release nutzen](../mit-git-entwickeln.md#eine-korrektur-vor-ihrem-release-nutzen).
 

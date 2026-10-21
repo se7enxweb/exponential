@@ -16,7 +16,7 @@ bleiben muss.
 
 `ezupdate` ist der Paketmanager einer Exponential-Installation, in der Administration (**Setup > Updates and packages**,
 `/update/dashboard`) und auf der Kommandozeile. Der Überblick ist
-[ezupdate: Updates und Pakete in der Administration](../../../../eng-us/features/6.0/extensions/ezupdate.md); die eigenen Anleitungen
+[ezupdate: Updates und Pakete in der Administration](../../../funktionen/6.0/erweiterungen/ezupdate.md); die eigenen Anleitungen
 der Erweiterung (Benutzerhandbuch, Konfiguration, Kommandozeile, Sicherheit) liegen in ihrem Ordner `doc/`.
 
 ## Inhalt
@@ -165,7 +165,7 @@ ohne Rückfragen.
 - [Änderungen ausrollen](aenderungen-ausrollen.md)
 - [Composer und Git auf Servern](../grundlagen/composer-und-git-auf-servern.md)
 - [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)
-- [ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md) (Referenz der Funktion)
+- [ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md) (Referenz der Funktion)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

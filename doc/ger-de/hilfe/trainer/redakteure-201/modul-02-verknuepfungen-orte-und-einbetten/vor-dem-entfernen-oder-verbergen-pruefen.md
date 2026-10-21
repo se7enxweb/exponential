@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../../eng-us/features/6.0/reverse-relation-check.md).
+Quelle: [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md).
 
 1. **Warum** (2 Minuten). Wer Inhalte entfernt, hinterlässt Verweise, die ins Leere zeigen; wer sie verbirgt,
    hinterlässt Verweise auf Inhalte, die die Website nicht mehr zeigt.
@@ -120,7 +120,7 @@ Verwenden Sie die Schulungsinstallation und Ihre Elemente aus den Lektionen 2.1 
 <summary>Antworten</summary>
 
 1. Pro ausgewähltem Element die Objekte, die auf das verweisen, was verschwindet
-   ([Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../../eng-us/features/6.0/reverse-relation-check.md)).
+   ([Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)).
 2. `warn` listet die Verweise auf und erlaubt das Entfernen; `block` listet sie auf und verweigert das Entfernen,
    solange sie bestehen.
 3. **Falsch.** Ein Verbergen wird nie verweigert; `block` gilt beim Verbergen als `warn`.
@@ -132,7 +132,7 @@ Verwenden Sie die Schulungsinstallation und Ihre Elemente aus den Lektionen 2.1 
 
 ## Weiterführende Informationen
 
-- [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../../eng-us/features/6.0/reverse-relation-check.md):
+- [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md):
   jeder Fall und jede Einstellung.
 - [Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen): entfernen
   und wiederherstellen.
@@ -141,7 +141,7 @@ Verwenden Sie die Schulungsinstallation und Ihre Elemente aus den Lektionen 2.1 
 
 - [Modul 2: Verknüpfungen, Orte und Einbetten](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

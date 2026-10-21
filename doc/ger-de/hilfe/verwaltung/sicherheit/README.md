@@ -12,7 +12,7 @@ type: help
 Dieser Bereich richtet sich an Informationssicherheitsbeauftragte, Administratorinnen und Administratoren,
 Entwicklerinnen und Entwickler, Hosting-Teams und Projektverantwortliche öffentlicher Stellen, die eine Website mit
 Exponential betreiben. Jede Aussage über das Produkt stammt aus dem Repository: aus den
-[Sicherheitsstandards](../../../../eng-us/standards/security.md) des Projekts (deren Statusangaben „Teilweise erfüllt“,
+[Sicherheitsstandards](../../../standards/sicherheit.md) des Projekts (deren Statusangaben „Teilweise erfüllt“,
 „Nicht geprüft“ und, für OWASP A09, „Erfüllt“ unverändert übernommen werden), aus der
 [Sicherheitshärtung](../../sicherheitshaertung.md), aus
 [Kapitel 13 der Installationsanleitung](../../../installation/13-sicherheitshaertung.md), dem Audit-Leitfaden und den
@@ -81,12 +81,12 @@ mitgelieferte `security.txt`, kein Abhängigkeitsscan in der CI des Projekts.
 | [Reaktion auf Sicherheitsvorfälle bei einer Exponential-Website](reaktion-auf-sicherheitsvorfaelle.md) | eindämmen, untersuchen, neu aufbauen, melden |
 
 Aufgaben, die diese Seiten Schritt für Schritt anwenden, finden Sie in den Compliance-Aufgaben dieser Hilfe
-([Compliance-Aufgaben](../../../../eng-us/help/government/tasks/compliance/README.md)).
+([Compliance-Aufgaben](../aufgaben/compliance/README.md)).
 
 ## Verwandte Seiten
 
 - Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md)
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Sicherheit für Hoster](../../hosting/sicherheit/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

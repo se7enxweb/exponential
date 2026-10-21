@@ -44,17 +44,17 @@ Preise oder Service-Level: Das sind Entscheidungen eines Hosters ([SLA-Optionen]
 
 | Aufgabe | Werkzeug in Exponential | Wo es beschrieben ist |
 |---|---|---|
-| Updates und neue Pakete | **ezupdate**: **Setup > Updates and packages** (`/update/dashboard`); eine Prüfung, die nichts ändert, ein Probelauf, eine Bestätigung des Backups und die eigene Ausgabe von Composer während des Laufs; auch auf der Kommandozeile (`php extension/ezupdate/bin/php/ezupdate.php`) | [ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md), [Automatische Updates mit ezupdate](../betrieb/automatische-updates-mit-ezupdate.md) |
+| Updates und neue Pakete | **ezupdate**: **Setup > Updates and packages** (`/update/dashboard`); eine Prüfung, die nichts ändert, ein Probelauf, eine Bestätigung des Backups und die eigene Ausgabe von Composer während des Laufs; auch auf der Kommandozeile (`php extension/ezupdate/bin/php/ezupdate.php`) | [ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md), [Automatische Updates mit ezupdate](../betrieb/automatische-updates-mit-ezupdate.md) |
 | Vor einem Upgrade | **Setup > Upgrade-Prüfung** (`/setup/systemupgrade`): Konsistenz von Dateien und Datenbank, nur lesend | [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Upgrade | die Update-Dateien und Upgrade-Schritte des Release | [Kapitel 11](../../../installation/11-aktualisieren.md), [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md) |
 | Backups | Wartungsmodus, das Datenbankwerkzeug der Engine, `tar` der Dateien | [10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung) |
 | Die Website vom Netz nehmen | **Setup > Wartung** oder `php bin/php/maintenance.php on ... / off / status` | [Wartungsmodus](../../../anleitungen/wartungsmodus.md) |
 | Zustand | **Setup > Systeminformationen** (`/setup/info`) und `exp:system:info` | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
-| Logs | **Setup > Logdateien** (`setup/logs`), mit Permalinks; Rotation | [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md), [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md) |
+| Logs | **Setup > Logdateien** (`setup/logs`), mit Permalinks; Rotation | [Log-Viewer](../../../funktionen/6.0/log-betrachter.md), [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md) |
 | Geplante Jobs | **Setup > Cronjobs**, das Teile ausführt und Crontab-Zeilen vorschlägt | [Cronjobs](../../../anleitungen/cronjobs.md) |
-| Wer hat was getan | das Prüfprotokoll | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md), [Prüfprotokoll für Hoster](../sicherheit/pruefprotokoll.md) |
+| Wer hat was getan | das Prüfprotokoll | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md), [Prüfprotokoll für Hoster](../sicherheit/pruefprotokoll.md) |
 | Codeänderungen ausrollen | `exp:velocity deploy` (Autoloads, Caches, Neuladen von PHP-FPM, Neustart von Velocity in Reihenfolge) | [8.3.14](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy) |
-| Leistungsprüfungen | `exp:benchmark` | [Benchmark](../../../../eng-us/features/6.0/benchmark.md) |
+| Leistungsprüfungen | `exp:benchmark` | [Benchmark](../../../funktionen/6.0/benchmark.md) |
 
 > **Hinweis**
 > Ein verwaltetes Backup besteht aus der Datenbank **und** `var/storage`, `settings/override` und `settings/siteaccess`, im
@@ -89,7 +89,7 @@ Auf einer verwalteten Installation können sich Einstellungen, die in der Admini
 die Sie ausrollen, widersprechen. Ohne Vorkehrungen schreiben der INI-Editor, die Editoren für Werkzeugleisten und Menüs und
 der Template-Editor `*.ini.append.php`- und `.tpl`-Dateien in das Release-Verzeichnis, wo die Versionsverwaltung sie nicht
 sieht und das nächste Ausrollen sie verwirft
-([Konfiguration über das Ausrollen verwaltet](../../../../eng-us/features/6.0/managed-by-deployment.md)).
+([Konfiguration über das Ausrollen verwaltet](../../../funktionen/6.0/durch-deployment-verwaltet.md)).
 
 Zwei Möglichkeiten:
 

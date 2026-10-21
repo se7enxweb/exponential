@@ -175,13 +175,13 @@ Teil 1 liest nur auf Ihrer Schulungsinstallation; Teil 2 ist eine Planungsübung
   der vollständige Weg mit Konfiguration und Templates.
 - [Exponential Platform Legacy](../../../../installation/migration/exponential-platform-legacy.md): der Hybrid, in beide
   Richtungen.
-- [Legacy-Bridge](../../../../../eng-us/features/6.0/legacy-bridge.md): beide Kernel auf einer Datenbank betreiben.
+- [Legacy-Bridge](../../../../funktionen/6.0/legacy-bridge.md): beide Kernel auf einer Datenbank betreiben.
 
 ## Verwandte Seiten
 
 - [Modul 6: Von den Symfony-basierten Plattformen](README.md)
 - [Migration zu Exponential: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

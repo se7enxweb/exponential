@@ -29,7 +29,7 @@ Berichterstattung tut dasselbe.
 | **CJW Network** | `cjw_newsletter`; eine CJW-Variante von Nexus; request-shield, dokumentiert als Begleiter vor dem HTTP-Cache ("a project of CJW Network ... not of the Foundation") | [Begleitprojekte](../wer-ist-die-exponential-foundation.md#begleitprojekte) |
 | **Qbix** | Exponential Velocity "began as a fork of the Qbix web server engine" | README von Velocity; [Exponential Velocity](../wer-ist-7x.md#exponential-velocity) |
 | **Zeta Components** | Die Bibliotheken des Kernels; 7x pflegt Forks und hat Sicherheits-Pull-Requests an das Upstream-Projekt geschickt | [Der PHP-Stack, auf dem es steht](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt) |
-| **AdminNeo** | Der Datenbank-Quelltexteditor `sevenx_dse` | [sevenx_dse](../../../eng-us/features/6.0/extensions/sevenx_dse.md) |
+| **AdminNeo** | Der Datenbank-Quelltexteditor `sevenx_dse` | [sevenx_dse](../../funktionen/6.0/erweiterungen/sevenx_dse.md) |
 | **eZ Systems** und Hunderte von Beitragenden | Die Codebasis selbst, 1999 bis 2021 | COPYRIGHT.md; [Die Jahre von eZ Publish](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021) |
 
 ## Wie das Projekt die Nennung formuliert

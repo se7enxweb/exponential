@@ -28,23 +28,23 @@ dazu. Die anderen Seiten dieses Bereichs behandeln jede Aufgabe im Einzelnen.
 
 | Aufgabe | Funktion | Dokumentation |
 |---|---|---|
-| Ein Veröffentlichungsplan oder eine Seite „Informationen, die wir veröffentlichen“ | Ordner und Seiten im Inhaltsbaum | [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md) |
-| Dokumente zum Herunterladen | Dateiobjekte, Downloads über `content/download` geprüft | [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
-| Register (Beschlüsse, Verträge, Ausgaben) | eine eigene Inhaltsklasse pro Register | [Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) |
+| Ein Veröffentlichungsplan oder eine Seite „Informationen, die wir veröffentlichen“ | Ordner und Seiten im Inhaltsbaum | [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md) |
+| Dokumente zum Herunterladen | Dateiobjekte, Downloads über `content/download` geprüft | [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md) |
+| Register (Beschlüsse, Verträge, Ausgaben) | eine eigene Inhaltsklasse pro Register | [Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) |
 | Ein PDF eines Bereichs | Setup > PDF-Export | [PDF-Exporte](../../../anleitungen/pdf-exporte.md) |
 | Zu einem festen Zeitpunkt veröffentlichen | Workflow-Ereignis *Bis Datum warten* | [Workflows](../../../anleitungen/workflows.md) |
 | Prüfung vor dem Veröffentlichen | Workflow-Ereignis *Freigeben* | [Workflows](../../../anleitungen/workflows.md) |
 | Feeds neuer Veröffentlichungen | Setup > RSS | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
-| Massenlisten als CSV, JSON, XML | Export mit `xrowextract` | [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md) |
+| Massenlisten als CSV, JSON, XML | Export mit `xrowextract` | [xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md) |
 
 ## Anträge entgegennehmen und beantworten
 
 | Aufgabe | Funktion | Dokumentation |
 |---|---|---|
-| Ein Antragsformular | Klasse und Objekt mit Informationssammler | [Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
+| Ein Antragsformular | Klasse und Objekt mit Informationssammler | [Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
 | Das Team über einen Antrag benachrichtigen | E-Mail an einen Empfänger pro Formular | dieselbe Seite, „Mail to a receiver“ |
 | Anträge lesen und exportieren | Setup > Gesammelte Informationen, CSV-Export | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
-| Spamschutz | Formular-Token, optionale CAPTCHA-Erweiterungen | [Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md) |
+| Spamschutz | Formular-Token, optionale CAPTCHA-Erweiterungen | [Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md) |
 | Eine Auskunft veröffentlichen | eine Seite mit den geschwärzten Dokumenten | siehe „Eine Auskunft nach Informationsfreiheitsrecht veröffentlichen“ |
 
 ## Rechenschaft
@@ -52,9 +52,9 @@ dazu. Die anderen Seiten dieses Bereichs behandeln jede Aufgabe im Einzelnen.
 | Frage | Funktion | Dokumentation |
 |---|---|---|
 | Was stand letzten Monat auf der Seite? | Versionen, **Zwei Versionen vergleichen** | [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md) |
-| Wer hat es geändert oder entfernt? | Prüfprotokoll, standardmäßig eingeschaltet, mit Hash-Kette | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Wer hat es geändert oder entfernt? | Prüfprotokoll, standardmäßig eingeschaltet, mit Hash-Kette | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Wer darf was ändern? | Rollen, Sektionen, Objektzustände | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
-| Wurde die Aufzeichnung verändert? | `./console exp:audit verify` | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes) |
+| Wurde die Aufzeichnung verändert? | `./console exp:audit verify` | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren) |
 
 ## Lücken, die Sie einplanen sollten
 
@@ -74,7 +74,7 @@ dazu. Die anderen Seiten dieses Bereichs behandeln jede Aufgabe im Einzelnen.
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
 - [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)
-- [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -61,7 +61,7 @@ sind für Administratoren; sie betreffen die ganze Site.
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)
+- [View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md)
 - [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

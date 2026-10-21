@@ -112,7 +112,7 @@ Die Seite liest nur die Crontab des Benutzers, als der der Webserver läuft. Fü
 Einträge** die Zeilen, die in die Cron-Seite des Panels eingefügt werden.
 
 Teile können aus der Seite angehalten werden, ohne die Crontab anzurühren; einen angehaltenen Teil lässt `runcronjobs.php` aus, wer
-ihn auch startet ([Cronjob-Teile anhalten](../../../../eng-us/features/6.0/cronjob-pause.md)). Das ist während einer Migration oder einer
+ihn auch startet ([Cronjob-Teile anhalten](../../../funktionen/6.0/cronjobs-pausieren.md)). Das ist während einer Migration oder einer
 Wiederherstellung nützlich.
 
 ## Mit und ohne Shell-Zugang
@@ -129,8 +129,8 @@ Wiederherstellung nützlich.
 | Velocity | möglich, wenn lang laufende Prozesse erlaubt sind | nicht möglich |
 
 Quellen: [Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation),
-[Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md),
-[ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md).
+[Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Log-Viewer](../../../funktionen/6.0/log-betrachter.md),
+[ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md).
 
 Shell-Zugang als eigener Benutzer der Website (nicht als root) ist die sicherste Form, die Sie anbieten können: Alles, was der
 Kunde ausführt, schreibt dann Dateien, die die Website weiterhin ändern kann.

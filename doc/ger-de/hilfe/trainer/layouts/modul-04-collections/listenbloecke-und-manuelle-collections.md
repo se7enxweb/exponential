@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Collections: einem Block seinen Inhalt geben](../../../../../eng-us/bc/6.0/LAYOUTS.md#collections-giving-a-block-its-content)
-und [Blockkatalog](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-catalogue).
+Quellen: [Collections: einem Block seinen Inhalt geben](../../../../bc/6.0/layouts.md#collections-einem-block-seine-inhalte-geben)
+und [Blockkatalog](../../../../bc/6.0/layouts.md#blockkatalog).
 
 1. **Listenblöcke** (3 Minuten). In der Gruppe **Listing**: **List**, **Grid**, **Zig-Zag (List)**, **Accordion
    (List)**, **Sushi bar**, **Single content**; Galerien in **Gallery**. **List** ist das Arbeitspferd mit sechs
@@ -111,7 +111,7 @@ Auswählen genannt.
 <summary>Antworten</summary>
 
 1. Drei beliebige aus `list`, `grid`, `list_numbered`, `list_zigzag`, `list_accordion`, `grid_featured`
-   ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-catalogue)).
+   ([Exponential Layouts](../../../../bc/6.0/layouts.md#blockkatalog)).
 2. **+ Add items**.
 3. **B.**
 4. Das Element ist im Inhaltsbaum verborgen; Besucher sehen es nicht.
@@ -121,14 +121,14 @@ Auswählen genannt.
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Collections](../../../../../eng-us/bc/6.0/LAYOUTS.md#collections-giving-a-block-its-content)
-- [Layout-Typen, Zonen und Blöcke: Collections](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#collections)
+- [Exponential Layouts: Collections](../../../../bc/6.0/layouts.md#collections-einem-block-seine-inhalte-geben)
+- [Layout-Typen, Zonen und Blöcke: Collections](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#collections)
 
 ## Verwandte Seiten
 
 - [Modul 4: Collections](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

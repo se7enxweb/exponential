@@ -41,7 +41,7 @@ typischerweise veröffentlichen (allgemeine Praxis im öffentlichen Sektor), und
 | Warnungen in Minuten veröffentlicht, von einem Bereitschaftsteam | von der Freigabe ausgenommen; ein Bereich für Warnungen auf der Startseite | [Warnungen in vielen Sprachen](warnungen-mehrsprachig-und-in-einfacher-sprache.md) |
 | Hinweise nach Plan überprüft | ein Attribut für das Überprüfungsdatum und eine Liste überfälliger Seiten | [Inhaltsmodell für den öffentlichen Gesundheitsdienst](inhaltsmodell.md) |
 | Viele Sprachen | Übersetzungen je Objekt, ein Siteaccess je Sprache | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
-| Last während eines Ausbruchs | Caches, statischer Cache, Velocity | [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
+| Last während eines Ausbruchs | Caches, statischer Cache, Velocity | [Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md) |
 | Meldungen an Folgende | Benachrichtigungen, RSS, Newsletter | [RSS-Feeds](../../../../anleitungen/rss-feeds.md) |
 | Bereich für Fachleute | ein eigener Ordner; standardmäßig öffentlich, nur wo nötig eingeschränkt | [Sektionen](../../../../anleitungen/sektionen.md) |
 
@@ -67,7 +67,7 @@ Datenschutzbeauftragte(r) Zweck, Sicherheit und Aufbewahrung nicht genehmigt hat
 
 - [Öffentliche Gesundheit](README.md)
 - [Inhaltsmodell für den öffentlichen Gesundheitsdienst](inhaltsmodell.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -37,23 +37,23 @@ Die PHP-Zeichenkettenfunktionen wie `strlen`, `substr` oder `sprintf` sind eine 
 ### upcase
 
 Die Eingabe in Großbuchstaben (`mb_strtoupper`). Keine Parameter. Gibt eine Zeichenkette zurück.
-Erzeugte Referenz: [upcase](../../../eng-us/examples/template-operators/upcase.md).
+Erzeugte Referenz: [upcase](../../beispiele/template-operatoren/upcase.md).
 
 ### downcase
 
 Die Eingabe in Kleinbuchstaben (`mb_strtolower`). Keine Parameter. Gibt eine Zeichenkette zurück.
-Erzeugte Referenz: [downcase](../../../eng-us/examples/template-operators/downcase.md).
+Erzeugte Referenz: [downcase](../../beispiele/template-operatoren/downcase.md).
 
 ### upfirst
 
 Das erste Zeichen groß, der Rest unverändert. Mit `[CharacterSettings] MBStringExtension=enabled` in `i18n.ini`
 arbeitet er mit `mb_*`-Funktionen auf dem internen Zeichensatz, sonst mit `ucfirst()`. Keine Parameter.
-Erzeugte Referenz: [upfirst](../../../eng-us/examples/template-operators/upfirst.md).
+Erzeugte Referenz: [upfirst](../../beispiele/template-operatoren/upfirst.md).
 
 ### upword
 
 Das erste Zeichen jedes Wortes (Wörter an einzelnen Leerzeichen getrennt) groß, mit derselben Multibyte-Regel. Keine
-Parameter. Erzeugte Referenz: [upword](../../../eng-us/examples/template-operators/upword.md).
+Parameter. Erzeugte Referenz: [upword](../../beispiele/template-operatoren/upword.md).
 
 ```tpl
 'fit & healthy'|upcase = {'fit & healthy'|upcase|wash}
@@ -77,13 +77,13 @@ Ausgabe auf alpha:
 
 Die Anzahl der Wörter, gezählt als Folgen von Wortzeichen (`preg_match_all( "#(\w+)#" )`), daher ist `&` kein Wort.
 Keine Parameter. Gibt eine Ganzzahl zurück.
-Erzeugte Referenz: [count_words](../../../eng-us/examples/template-operators/count_words.md).
+Erzeugte Referenz: [count_words](../../beispiele/template-operatoren/count_words.md).
 
 ### count_chars
 
 Die Anzahl der Zeichen (`mb_strlen`). Anders als das arithmetische `count`, das bei einer Zeichenkette die Länge in
 Bytes zurückgibt, zählt `count_chars` ein Multibyte-Zeichen einmal. Keine Parameter. Gibt eine Ganzzahl zurück.
-Erzeugte Referenz: [count_chars](../../../eng-us/examples/template-operators/count_chars.md).
+Erzeugte Referenz: [count_chars](../../beispiele/template-operatoren/count_chars.md).
 
 ```tpl
 'Fit & Healthy recipes'|count_words = {'Fit & Healthy recipes'|count_words}
@@ -109,7 +109,7 @@ PHP `trim()`: entfernt Leerraum oder die Zeichen in `chars_to_remove` an beiden 
 |---|---|---|---|
 | `chars_to_remove` | Zeichenkette | nein | `false` (Leerraum) |
 
-Erzeugte Referenz: [trim](../../../eng-us/examples/template-operators/trim.md).
+Erzeugte Referenz: [trim](../../beispiele/template-operatoren/trim.md).
 
 ### simplify
 
@@ -121,7 +121,7 @@ das in einem Muster eine Bedeutung hat.
 |---|---|---|---|
 | `char` | Zeichenkette | nein | `false` (ein Leerzeichen) |
 
-Erzeugte Referenz: [simplify](../../../eng-us/examples/template-operators/simplify.md).
+Erzeugte Referenz: [simplify](../../beispiele/template-operatoren/simplify.md).
 
 ### pad
 
@@ -132,7 +132,7 @@ PHP `str_pad()` nach rechts, aber nur, wenn die Eingabe kürzer als `desired_len
 | `desired_length` | Ganzzahl | nein | `80` |
 | `pad_sequence` | Zeichenkette | nein | `' '` |
 
-Erzeugte Referenz: [pad](../../../eng-us/examples/template-operators/pad.md).
+Erzeugte Referenz: [pad](../../beispiele/template-operatoren/pad.md).
 
 ```tpl
 [{'   padded   '|trim}]
@@ -173,7 +173,7 @@ genug ist, wird unverändert zurückgegeben.
 
 Gibt eine Zeichenkette zurück. `shorten` zählt Zeichen, keine Wörter, und kann ein Wort oder ein HTML-Tag in der Mitte
 zerschneiden: Kürzen Sie reinen Text und wenden Sie danach `wash` an.
-Erzeugte Referenz: [shorten](../../../eng-us/examples/template-operators/shorten.md).
+Erzeugte Referenz: [shorten](../../beispiele/template-operatoren/shorten.md).
 
 Die erste Zeile verwendet den Namen des Artikels Privacy Policy auf alpha (Knoten 90):
 
@@ -208,13 +208,13 @@ PHP `wordwrap()`. Jeder Parameter wird nur übergeben, wenn der vorherige angege
 | `break_sequence` | Zeichenkette | nein | `false` (`"\n"` von PHP) |
 | `cut` | boolescher Wert | nein | `false` |
 
-Erzeugte Referenz: [wrap](../../../eng-us/examples/template-operators/wrap.md).
+Erzeugte Referenz: [wrap](../../beispiele/template-operatoren/wrap.md).
 
 ### break
 
 PHP `nl2br()`: ein HTML-Zeilenumbruch vor jedem Zeilenwechsel. Keine Parameter. `break` maskiert nicht: Wenden Sie
 zuerst `wash` an, `$text|wash|break`, sonst geht das HTML der Eingabe durch.
-Erzeugte Referenz: [break](../../../eng-us/examples/template-operators/break.md).
+Erzeugte Referenz: [break](../../beispiele/template-operatoren/break.md).
 
 ```tpl
 {'The quick brown fox jumps over the lazy dog'|wrap( 15 )}
@@ -264,7 +264,7 @@ also ein Sicherheitsproblem. Auf alpha ist `EmailAtText` auf ein `spamfilter`-Sp
 
 Ein kompiliertes Template macht aus `wash` mit einem konstanten Typ Inline-PHP (`washTransformation()`); der
 kompilierte Zweig für `pdf` ersetzt nur Leerraum und dekodiert vorher keine Entitäten.
-Erzeugte Referenz: [wash](../../../eng-us/examples/template-operators/wash.md).
+Erzeugte Referenz: [wash](../../beispiele/template-operatoren/wash.md).
 
 ```tpl
 xhtml:      {'<b>"Fit" & \'Healthy\'</b>'|wash}
@@ -289,12 +289,12 @@ unknown:    <b>raw</b>
 ### ord
 
 Wandelt eine Zeichenkette über den Codec `unicode` von `eZTextCodec` in eine Liste von Unicode-Codepunkten um. Keine
-Parameter. Gibt ein Array von Ganzzahlen zurück. Erzeugte Referenz: [ord](../../../eng-us/examples/template-operators/ord.md).
+Parameter. Gibt ein Array von Ganzzahlen zurück. Erzeugte Referenz: [ord](../../beispiele/template-operatoren/ord.md).
 
 ### chr
 
 Die Umkehrung: eine Liste von Codepunkten zu einer Zeichenkette im internen Zeichensatz. Keine Parameter. Gibt eine
-Zeichenkette zurück. Erzeugte Referenz: [chr](../../../eng-us/examples/template-operators/chr.md).
+Zeichenkette zurück. Erzeugte Referenz: [chr](../../beispiele/template-operatoren/chr.md).
 
 ```tpl
 {def $codes = 'Añ€'|ord}
@@ -313,11 +313,11 @@ array( 72, 105 )|chr = Hi
 
 ## Verwandte Seiten
 
-- [Zeichenketten-Operatoren für Designer](../../../eng-us/help/designers/templates/string-operators.md)
-- [Wash und Maskierung](../../../eng-us/help/designers/templates/wash-and-escaping.md): welcher Typ wohin gehört
+- [Zeichenketten-Operatoren für Designer](../designer/vorlagen/zeichenketten-operatoren.md)
+- [Wash und Maskierung](../designer/vorlagen/wash-und-maskierung.md): welcher Typ wohin gehört
 - [PHP-Zeichenkettenfunktionen: suchen und vergleichen](php-zeichenkettenfunktionen-suchen-und-vergleichen.md)
 - [Text-Operatoren](text-operatoren.md): `concat` und `indent`
-- [Alle Template-Operatoren (erzeugt)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (erzeugt)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

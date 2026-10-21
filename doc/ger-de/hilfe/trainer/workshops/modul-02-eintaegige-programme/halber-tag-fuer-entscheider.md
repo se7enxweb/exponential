@@ -38,7 +38,7 @@ Am Ende der Veranstaltung können die Teilnehmenden:
 | Zeit | Block | Verwendet |
 |---|---|---|
 | 13:30 | Begrüßung; die Geschichte in zwei Minuten; wer ist 7x, wer ist die Foundation (30 Min.) | [Die Geschichte von Exponential in zwei Minuten](../../../fuersprecher/die-geschichte-in-zwei-minuten.md), [Wer ist 7x?](../../../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../../../wer-ist-die-exponential-foundation.md) |
-| 14:00 | Geführte Vorführung: Bearbeiten, Veröffentlichen, Layouts (45 Min.) | [Vorführskripte](../../../geschaeft/demo-drehbuecher.md), [Sicher vorführen](../../../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/demonstrating-safely.md) |
+| 14:00 | Geführte Vorführung: Bearbeiten, Veröffentlichen, Layouts (45 Min.) | [Vorführskripte](../../../geschaeft/demo-drehbuecher.md), [Sicher vorführen](../../train-the-trainer/modul-04-durchfuehren/sicher-vorfuehren.md) |
 | 14:45 | Pause (15 Min.) | |
 | 15:00 | Fakten: Lizenzen, Hosting, Datenbanken, Betriebssysteme, Sicherheit (45 Min.) | [Argumente für Entscheidungsträger](../../../fuersprecher/gespraechspunkte-fuer-entscheider.md), [Datenbankunterstützung](../../../datenbankunterstuetzung.md), [Unterstützte Betriebssysteme](../../../betriebssystemunterstuetzung.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) |
 | 15:45 | Fragen und Einwände (30 Min.) | [Mit Einwänden umgehen](../../../geschaeft/einwandbehandlung.md) |
@@ -91,7 +91,7 @@ Die Teilnehmenden füllen gemeinsam aus:
 
 - [Modul 2: Eintägige Agenden](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

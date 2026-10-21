@@ -11,12 +11,12 @@ type: help
 
 Diese Aufgabe richtet sich an Administratoren und Entwickler. Hintergrund:
 [Eigene Locales für nicht gelistete Sprachen](../../sprachen/eigene-locales-fuer-nicht-gelistete-sprachen.md) und
-[Sprachen in Exponential, Abschnitt 7](../../../../../eng-us/languages.md#7-adding-a-locale).
+[Sprachen in Exponential, Abschnitt 7](../../../../sprachen.md#7-eine-locale-hinzufügen).
 
 ## Bevor Sie beginnen
 
 - Prüfen Sie, dass es für die Sprache wirklich keine Datei gibt: die Liste in
-  [Sprachen in Exponential](../../../../../eng-us/languages.md#3-every-locale) und deren Abschnitt 6 der fehlenden Sprachen.
+  [Sprachen in Exponential](../../../../sprachen.md#3-alle-locales) und deren Abschnitt 6 der fehlenden Sprachen.
 - Ein Sprecher, der die Namen der Tage und Monate liefern und die Formate prüfen kann.
 
 ## Schritte

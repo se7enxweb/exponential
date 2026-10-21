@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Exponential Layouts: Container und Verschachtelung](../../../../../eng-us/bc/6.0/LAYOUTS.md#containers-and-nesting) und
-[Blockkatalog](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-catalogue).
+Quellen: [Exponential Layouts: Container und Verschachtelung](../../../../bc/6.0/layouts.md#container-und-verschachtelung) und
+[Blockkatalog](../../../../bc/6.0/layouts.md#blockkatalog).
 
 1. **Container** (4 Minuten). Vier Container-Blöcke, jeder mit Platzhaltern (benannten Steckplätzen wie kleine Zonen):
 
@@ -117,7 +117,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout.
 <summary>Antworten</summary>
 
 1. Ein benannter Steckplatz innerhalb eines Containers, der Blöcke enthält, wie eine kleine Zone
-   ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#containers-and-nesting)).
+   ([Exponential Layouts](../../../../bc/6.0/layouts.md#container-und-verschachtelung)).
 2. `two_columns_66_33` und `two_columns_33_66`.
 3. **B.**
 4. Flach: Zwei Ebenen sind leicht zu bearbeiten.
@@ -127,14 +127,14 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout.
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Container und Verschachtelung](../../../../../eng-us/bc/6.0/LAYOUTS.md#containers-and-nesting)
-- [Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#containers)
+- [Exponential Layouts: Container und Verschachtelung](../../../../bc/6.0/layouts.md#container-und-verschachtelung)
+- [Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#container)
 
 ## Verwandte Seiten
 
 - [Modul 3: Blöcke](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

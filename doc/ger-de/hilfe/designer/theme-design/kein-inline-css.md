@@ -26,7 +26,7 @@ Sie mit den Fällen umgehen, die Inline-CSS zu brauchen scheinen.
 - Eine Content Security Policy mit `style-src 'self'` blockiert Inline-Stile ([CSP-sicheres Design](csp-sicheres-design.md)).
 - Inline-CSS wird nicht gepackt oder zwischengespeichert und mit jeder Seite erneut gesendet.
 - Kopien laufen auseinander: Die Administration hatte einmal 55 Templates mit eigenen `<style>`-Blöcken, vier verschiedene Akzentfarben
-  und Dutzende weiße Karten, die den dunklen Modus ignorierten (die Geschichte steht in [Gestaltung der Administration](../../../../eng-us/bc/6.0/admin4-styling.md),
+  und Dutzende weiße Karten, die den dunklen Modus ignorierten (die Geschichte steht in [Gestaltung der Administration](../../../bc/6.0/admin4-gestaltung.md),
   „Why“).
 - Inline-Stile schlagen Regeln aus Stylesheets, sodass ein Theme das Element nicht mehr neu gestalten kann.
 

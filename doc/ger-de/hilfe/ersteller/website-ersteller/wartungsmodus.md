@@ -62,7 +62,7 @@ nicht stimmt. Jedes Umschalten wird im Prüfprotokoll festgehalten.
 
 - [Backups und Wiederherstellungen](backups-und-wiederherstellungen.md)
 - [Updates und Aktualisierungen](updates-und-aktualisierungen.md)
-- [Die Funktion Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md)
+- [Die Funktion Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

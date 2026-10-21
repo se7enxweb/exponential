@@ -59,9 +59,9 @@ Füllen Sie die Lücken nach Ihrem eigenen Bedarf aus; diese Hilfe schlägt kein
 | Betriebssysteme | Stufen von „tested here“ bis „not possible today“ ([Unterstützung von Betriebssystemen](../../../betriebssystemunterstuetzung.md)) |
 | PHP | 8.0 ist die älteste unterstützte Version; 8.5 die neueste getestete ([Anforderungen](../../../../installation/02-voraussetzungen.md)) |
 | Mehrere Webknoten | Brauchen einen Datenbankserver und gemeinsamen Speicher ([Mehrere Webknoten](../../../hosting/betrieb/mehrere-web-knoten.md)) |
-| HTTPS auf Velocity | Zertifikatsverwaltung einschließlich ACME ([HTTPS-Zertifikate von Velocity](../../../../../eng-us/features/6.0/velocity-https-certificates.md)) |
+| HTTPS auf Velocity | Zertifikatsverwaltung einschließlich ACME ([HTTPS-Zertifikate von Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md)) |
 | Die Administration beschränken | [Die Administration beschränken](../../../hosting/sicherheit/die-administration-einschraenken.md) |
-| Ausgehende Verbindungen im Produkt | **Setup > Updates and packages** holt Composer-Pakete von Paketservern; E-Mails gehen an den konfigurierten Transport; Erweiterungen wie Analyse oder CAPTCHA kontaktieren bei Aktivierung Dritte ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)) |
+| Ausgehende Verbindungen im Produkt | **Setup > Updates and packages** holt Composer-Pakete von Paketservern; E-Mails gehen an den konfigurierten Transport; Erweiterungen wie Analyse oder CAPTCHA kontaktieren bei Aktivierung Dritte ([Datenschutzstandards](../../../../standards/datenschutz.md)) |
 
 ## Wo personenbezogene Daten und Schlüssel liegen
 

@@ -84,7 +84,7 @@ in den Paketen stammt, und verlinkt die Seite, die ihn vollständig erklärt.
 
 - [Seitenpakete: hier beginnen](README.md)
 - [Ihr Seitenpaket beitragen](ihr-seitenpaket-beitragen.md)
-- [Das Glossar von Exponential](../../../eng-us/glossary.md)
+- [Das Glossar von Exponential](../../glossar.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

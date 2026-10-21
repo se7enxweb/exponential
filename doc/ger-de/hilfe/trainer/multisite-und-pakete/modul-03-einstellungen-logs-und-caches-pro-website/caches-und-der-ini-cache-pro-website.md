@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
+Quelle: [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
 
 1. **Die Einstellungen** (6 Minuten):
 
@@ -166,7 +166,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.3.
 
 1. **B.** `global_ini` leert `var/cache/ini/`.
 2. Sie enthält, wann Caches und Bild-Aliase zuletzt geleert wurden; geleert, gälten Bild-Aliase, die vor einem Leeren
-   erzeugt wurden, wieder als aktuell ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#a-site-with-its-cache-in-memory)).
+   erzeugt wurden, wieder als aktuell ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#eine-website-mit-ihrem-cache-im-arbeitsspeicher)).
 3. Ihre Caches gehen nach `var_cache/shop/cache`.
 4. Velocity neu starten (er schreibt seine Liste ausgelieferter Pfade beim Start); für Apache die Regel `var_cache` in
    `.htaccess_root` aktivieren.
@@ -176,17 +176,17 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.3.
 
 ## Weiterführende Informationen
 
-- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md):
+- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md):
   jeder Fall, der Cluster und die Tests.
 - [Caches](../../../../anleitungen/caches.md): die Cache-IDs und Tags.
-- [Caches vor dem Löschen beiseite umbenennen](../../../../../eng-us/features/6.0/cache-clear-rename-aside.md).
+- [Caches vor dem Löschen beiseite umbenennen](../../../../funktionen/6.0/cache-leeren-durch-umbenennen.md).
 - [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md): die Sicht des Hosters auf `var/`.
 
 ## Verwandte Seiten
 
 - [Modul 3: Einstellungen, Logs und Caches pro Website](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

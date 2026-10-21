@@ -40,7 +40,7 @@ Ausfälle, wenn sie stoppen:
 |---|---|
 | Der Workflow-Cronjob | Freigegebene Inhalte werden nie veröffentlicht: „Ohne diesen Cronjob werden freigegebene Inhalte nie veröffentlicht“ ([Workflows](../../../anleitungen/workflows.md#kurz-gesagt)) |
 | Benachrichtigungen | Abonnenten bekommen keine Mails über Aktualisierungen mehr |
-| Der Teil `audit` | Das Audit wird nicht indiziert, Alarmregeln werden nicht ausgewertet, Tagesarchive werden nicht geschrieben ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)) |
+| Der Teil `audit` | Das Audit wird nicht indiziert, Alarmregeln werden nicht ausgewertet, Tagesarchive werden nicht geschrieben ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)) |
 | Inhaltsjobs | Im Hintergrund gestartete umfangreiche Entfernungen oder Kopien kommen nicht voran |
 | Newsletter-Teile | Ausgaben werden nicht versendet ([Newsletter](../newsletter/README.md)) |
 | Sitemap-Teile | Suchmaschinen sehen eine veraltete Sitemap |
@@ -85,7 +85,7 @@ Control-Panels für Shared Hosting bieten meist eine Cron-Seite für dieselben Z
 > **Hinweis**
 > Velocity hat einen eigenen Planer, doch er führt Handler von Velocity-Anwendungen aus, „kein beliebiges
 > PHP-Kommandozeilenskript“; die eigenen periodischen Jobs von Exponential laufen über `runcronjobs.php`
-> ([Velocity-Planer](../../../../eng-us/features/6.0/velocity-scheduler.md)).
+> ([Velocity-Planer](../../../funktionen/6.0/velocity-zeitplaner.md)).
 
 ## Wissen, dass es gelaufen ist
 
@@ -109,7 +109,7 @@ Nehmen Sie die Prüfung von `crontab:list` und der Datumsangaben im Cron-Log in 
 Das Entfernen, Kopieren oder Verschieben eines großen Teilbaums „lief früher innerhalb einer einzigen Webanfrage und
 konnte am Zeitlimit, am Speicherlimit oder an einer riesigen Transaktion scheitern“. Ab 6.0.15 kann eine solche Operation
 als **Inhaltsjob** laufen: „ein Hintergrund-Worker, der in Stapeln arbeitet, nach jedem Stapel einen Checkpoint setzt und
-genau dort weitermacht, wo er aufgehört hat, sogar nach einem `kill -9`“ ([Inhaltsjobs](../../../../eng-us/features/6.0/content-jobs.md)).
+genau dort weitermacht, wo er aufgehört hat, sogar nach einem `kill -9`“ ([Inhaltsjobs](../../../funktionen/6.0/inhaltsauftraege.md)).
 
 Für ein Unternehmen bedeutet das:
 
@@ -126,7 +126,7 @@ Cronjobs laufen in einer Shell und werden vom Wartungsmodus **nicht** angehalten
 ([Anleitung zum Wartungsmodus](../../../anleitungen/wartungsmodus.md#10-installationen-cronjobs-und-bereitstellungen)). Halten Sie für
 einen Import, eine Migration oder eine Aktualisierung die Teile an, die nicht laufen dürfen: **Setup > Cronjobs** hält
 einen Teil oder alle an, bis jemand sie fortsetzt, zeichnet auf, wer was warum angehalten hat, und `runcronjobs.php`
-lässt angehaltene Teile aus, gleich wer es startet ([Cronjob-Teile anhalten](../../../../eng-us/features/6.0/cronjob-pause.md)).
+lässt angehaltene Teile aus, gleich wer es startet ([Cronjob-Teile anhalten](../../../funktionen/6.0/cronjobs-pausieren.md)).
 Setzen Sie sie fort, wenn die Arbeit erledigt ist, und nehmen Sie „Cronjobs fortsetzen“ in die Abschluss-Checkliste des
 Wartungsfensters auf.
 
@@ -153,7 +153,7 @@ Wartungsfensters auf.
 
 - [Cronjobs](../../../anleitungen/cronjobs.md)
 - [Cronjobs (Hosting)](../../hosting/betrieb/cronjobs.md)
-- [Inhaltsjobs](../../../../eng-us/features/6.0/content-jobs.md)
+- [Inhaltsjobs](../../../funktionen/6.0/inhaltsauftraege.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -38,7 +38,7 @@ falsche Person eine Datei bekommt, und was die Organisation später herausfinden
 
 Dateien sind Inhaltsobjekte der Klasse **File** (`ezbinaryfile`), abgelegt in einem Ordner des Partnerbereichs. Jeder
 Download läuft über `content/download`, das prüft, ob die Person das Objekt lesen darf
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#how-a-download-works)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#wie-ein-download-funktioniert)).
 
 | Datei | Ablegen in | Wer sie herunterladen kann |
 |---|---|---|
@@ -48,7 +48,7 @@ Download läuft über `content/download`, das prüft, ob die Person das Objekt l
 
 Die Struktur erklärt [Kunden- und Partnerbereiche](kunden-und-partnerbereiche.md). Download-Links sollten Format und
 Größe zeigen, und jeder geschützte Download sollte als Benutzer ohne Zugriff getestet werden
-([Dateien und Downloads, Checklist](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#checklist)).
+([Dateien und Downloads, Checklist](../../ersteller/website-ersteller/dateien-und-downloads.md#checkliste)).
 
 ## Partner hochladen lassen
 
@@ -62,7 +62,7 @@ eigenen Ordner hochladen:
 
 Uploads werden geprüft: Seit dem 12. Oktober 2026 werden Bilder für jeden Upload-Weg anhand ihres Inhalts gegen
 `image.ini [ImageUploadSettings] AllowedMIMETypes[]` geprüft
-([Verhaltensänderungen 2026-10](../../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)). Die Upload-Größe begrenzen
+([Verhaltensänderungen 2026-10](../../../bc/6.0/verhaltensaenderungen-2026-10.md)). Die Upload-Größe begrenzen
 `upload_max_filesize` und `post_max_size` von PHP.
 
 > **Tipp**
@@ -75,17 +75,17 @@ Uploads werden geprüft: Seit dem 12. Oktober 2026 werden Bilder für jeden Uplo
 Wenn Partner eine Datei mit einem Formular statt als Inhalt schicken, stellt die Erweiterung `enhancedezbinaryfile`
 ein Dateifeld für die Informationssammlung bereit: Sie legt hochgeladene Dateien mit einer Begrenzung in einem
 Download-Ordner ab und verschickt gesammelte Informationen mit der Datei als Anhang
-([enhancedezbinaryfile](../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md),
-[Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+([enhancedezbinaryfile](../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md),
+[Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 
 ## Was Dateien sicher hält
 
 - **Berechtigungsprüfung bei jedem Download.** Verlinken Sie Dateien nie direkt aus dem Speicherverzeichnis; das umgeht
-  die Prüfung ([Dateien und Downloads, Protected downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads)).
+  die Prüfung ([Dateien und Downloads, Protected downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads)).
 - **Inhaltsprüfungen bei Uploads**, wie oben.
 - **Formular-Tokens** in jedem Formular
-  ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
-- **HTTPS** für das Portal ([Live gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+  ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
+- **HTTPS** für das Portal ([Live gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - **Zweistufige Anmeldung** für Partnerkonten, wenn die Dateien sensibel sind
   ([Zwei-Faktor und Anmeldung](../intranets/zwei-faktor-und-anmeldung.md)).
 - **Backups**, die das Speicherverzeichnis einschließen
@@ -95,7 +95,7 @@ Download-Ordner ab und verschickt gesammelte Informationen mit der Datei als Anh
 
 Das Prüfprotokoll zeichnet standardmäßig Inhaltsänderungen, Anmeldungen und Ablehnungen auf. Sein Kanal `read` zeichnet
 stichprobenartig Knotenaufrufe, Suchen und Downloads auf, nur wenn Lesezugriffe eingeschaltet sind
-([Das Prüfprotokoll, What is recorded](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)). Entscheiden Sie mit Ihrer
+([Das Prüfprotokoll, What is recorded](../../../funktionen/6.0/pruefprotokoll.md#was-aufgezeichnet-wird)). Entscheiden Sie mit Ihrer
 Ansprechperson für den Datenschutz, ob ein Portal Aufzeichnungen der Downloads braucht und für wie lange, und sagen Sie
 das im Datenschutzhinweis des Portals ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
@@ -107,7 +107,7 @@ hatte Partner A im März?“ über die Versionsseite beantworten lässt
 
 Die Upload-Grenzen von PHP gelten für Redakteure und Partner gleichermaßen. Sehr große Dateien wie Videos liegen besser
 bei einem Dienst, der dafür gebaut ist, und werden aus dem Portal verlinkt
-([Dateien und Downloads, Large files](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#large-files)).
+([Dateien und Downloads, Large files](../../ersteller/website-ersteller/dateien-und-downloads.md#große-dateien)).
 
 ## Checkliste
 
@@ -122,7 +122,7 @@ bei einem Dienst, der dafür gebaut ist, und werden aus dem Portal verlinkt
 ## Verwandte Seiten
 
 - [Dokumente und Dateibibliotheken](../intranets/dokumente-und-dateibibliotheken.md)
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Händler- und Lieferantenportale](haendler-und-lieferantenportale.md)
 - [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

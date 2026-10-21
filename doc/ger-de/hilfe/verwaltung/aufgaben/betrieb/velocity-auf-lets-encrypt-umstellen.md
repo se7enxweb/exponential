@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren, die Zertifikate möchten, die sich selbst erneuern. Viele Behörden haben eine
 Zertifikatsrichtlinie (eine zugelassene Zertifizierungsstelle, organisationsvalidierte Zertifikate für manche Domains);
 prüfen Sie sie zuerst, denn Let's Encrypt stellt domainvalidierte Zertifikate aus. Referenz:
-[HTTPS und Zertifikate in Velocity](../../../../../eng-us/features/6.0/velocity-https-certificates.md).
+[HTTPS und Zertifikate in Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -67,9 +67,9 @@ Erneuerung geschieht dann im Hintergrund, wenn ein Drittel der Laufzeit übrig i
 
 ## Verwandte Seiten
 - [Ein HTTPS-Zertifikat in Velocity erneuern](ein-https-zertifikat-in-velocity-erneuern.md)
-- [Velocity für Teams im öffentlichen Sektor](../../../../../eng-us/help/government/operations/hosting/velocity-for-public-sector-teams.md)
+- [Velocity für Teams im öffentlichen Sektor](../../betrieb/hosting/velocity-fuer-teams-im-oeffentlichen-sektor.md)
 - [TLS und HTTPS (Hosting)](../../../hosting/sicherheit/tls-und-https.md)
-- [Control Panel von Velocity](../../../../../eng-us/features/6.0/velocity-control-panel.md)
+- [Control Panel von Velocity](../../../../funktionen/6.0/velocity-control-panel.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

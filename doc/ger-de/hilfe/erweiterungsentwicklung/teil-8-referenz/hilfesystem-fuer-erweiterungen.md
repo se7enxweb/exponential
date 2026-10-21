@@ -13,7 +13,7 @@ Teil 8, Referenz 32. Das Hilfezentrum der Administration zeigt die Dokumentation
 Installation dafür entscheidet, die von Erweiterungen. Diese Seite fasst die Einstellungen und Dateikonventionen an
 einer Stelle zusammen. Die Erklärung steht in [Ihre Erweiterung dokumentieren](../teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md),
 das Tutorial in [Hilfeseiten für Ihre Erweiterung, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md)
-und die vollständige Beschreibung in [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md) und seiner
+und die vollständige Beschreibung in [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md) und seiner
 [Spezifikation](../../../spezifikationen/6.0/hilfesystem.md).
 
 ## Ihren doc-Ordner ausliefern
@@ -97,7 +97,7 @@ Release Ihrer Dokumentation aus.
 
 - Zurück: [admin4-Komponenten und -Tokens](admin4-komponenten-und-tokens.md)
 - Weiter: [expservices: entfernte Dienste für Erweiterungen](expservices.md)
-- [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)
+- [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

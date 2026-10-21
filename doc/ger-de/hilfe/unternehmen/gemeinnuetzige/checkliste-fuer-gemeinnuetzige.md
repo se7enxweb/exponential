@@ -110,18 +110,18 @@ Aus [Betrieb mit kleinem Budget](betrieb-mit-kleinem-budget.md):
 
 ## Start
 
-- [ ] Die [Start-Checkliste](../../../../eng-us/help/creators/website-creators/launch-checklist.md) für Website-Ersteller ist bestanden.
-- [ ] HTTPS auf jedem Host ([Online gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+- [ ] Die [Start-Checkliste](../../ersteller/website-ersteller/checkliste-fuer-den-start.md) für Website-Ersteller ist bestanden.
+- [ ] HTTPS auf jedem Host ([Online gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] Die Redakteure haben die Website mit einer kurzen Anleitung übernommen
-      ([Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
-- [ ] Die Adressen der alten Website sind umgeleitet ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+      ([Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
+- [ ] Die Adressen der alten Website sind umgeleitet ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Jeden Monat
 
 - [ ] Formulareingaben sind bearbeitet, und alte werden nach Plan entfernt.
 - [ ] Spenden oder Bestellungen sind mit den Aufzeichnungen des Anbieters abgeglichen.
 - [ ] Logs und das Newsletter-Dashboard sind angesehen.
-- [ ] Konten ausgeschiedener Ehrenamtlicher sind deaktiviert ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] Konten ausgeschiedener Ehrenamtlicher sind deaktiviert ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Updates sind geprüft; Backups sind kontrolliert.
 
 ## Abnahme

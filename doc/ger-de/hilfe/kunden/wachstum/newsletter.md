@@ -27,7 +27,7 @@ Arbeit steht unter [Newsletter-Routine](newsletter-routine.md).
 ## Was Sie bekommen
 
 Aus [Newsletter für Unternehmen](../../unternehmen/newsletter/README.md) und der
-[Funktionsseite zu cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md):
+[Funktionsseite zu cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md):
 
 - Ausgaben werden als Inhalte geschrieben, mit Entwürfen und Vorschau wie jede andere Seite.
 - Besucher abonnieren Listen mit Double-Opt-in.
@@ -68,7 +68,7 @@ denn, die Selbstfreigabe ist eingeschaltet ([Ausgaben schreiben und versenden](.
 Double-Opt-in, ein Einwilligungsprotokoll, ein Abmeldelink in jeder E-Mail und Statistik nur mit Einwilligung sind
 unter [Opt-in und Einwilligung](../../unternehmen/newsletter/opt-in-und-einwilligung.md) beschrieben. Die anderen optionalen
 E-Mails der Website folgen demselben Gedanken: aus, bis die Person sie einschaltet, mit einer Abmeldung per Klick
-([E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)). Die Seiten beschreiben, was die Software
+([E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)). Die Seiten beschreiben, was die Software
 aufzeichnet; was Ihr Recht verlangt, ist eine Frage für Ihren Anwalt oder Datenschutzbeauftragten. Dies ist keine
 Rechtsberatung.
 
@@ -92,8 +92,8 @@ Ihr E-Mail-Anbieter verlangt, und von Versandlimits, die zu Ihrem Mailserver pas
 - [ ] Ist die Absenderdomain für den E-Mail-Anbieter vorbereitet?
 - [ ] Wer erhält Bounce-Berichte?
 
-Die technische Einrichtung steht unter [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)
-und [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md).
+Die technische Einrichtung steht unter [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)
+und [Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md).
 
 ## Verwandte Seiten
 

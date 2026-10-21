@@ -78,7 +78,7 @@ Der Befehl berichtet über das PHP der Kommandozeile (OPcache ist dort meist aus
 Sie die Seite zusätzlich im Browser auf, für das PHP des Webservers.
 
 ## Verwandte Seiten
-- [Systeminformationen für eine Support-Anfrage lesen](../../../../../eng-us/help/government/tasks/operations/read-system-information-for-a-support-request.md)
+- [Systeminformationen für eine Support-Anfrage lesen](../../aufgaben/betrieb/systeminformationen-fuer-eine-supportanfrage-lesen.md)
 - [Überwachung im Überblick](ueberwachung-im-ueberblick.md)
 - [Den Host härten](../hosting/den-host-haerten.md)
 - [Leitfaden Systeminformationen](../../../../anleitungen/systeminformationen.md)

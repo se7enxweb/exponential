@@ -67,7 +67,7 @@ php bin/php/install.php --dry-run
 Viele Installationen legen im Wurzelverzeichnis eine Verknüpfung an, `ln -s bin/php/console console`; danach ist
 `./console exp:install` derselbe Befehl. Die Verknüpfung gehört nicht zu den ausgelieferten Dateien; legen Sie sie
 selbst an, wenn Sie sie möchten. Führen Sie die Konsole im Wurzelverzeichnis der Installation aus, also in dem
-Verzeichnis, das `index.php` enthält. Mehr dazu: [Die Konsole](../../eng-us/bc/6.0/console.md).
+Verzeichnis, das `index.php` enthält. Mehr dazu: [Die Konsole](../bc/6.0/konsole.md).
 
 ## 7.2 Was `exp:install` tut
 
@@ -111,7 +111,7 @@ Befehl mit dem Exit-Status 1.
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), nach Präferenz geordnet:** 1. SQLite 3 (Standard) · 2. PostgreSQL ·
 > 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlichem
-> Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../../eng-us/help/database-support.md).
+> Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
 
 | Option | Standardwert | Bedeutung und Prüfungen |
 |---|---|---|
@@ -166,7 +166,7 @@ Wie bei jeder Installationsmethode lauten die Siteaccess-Verzeichnisse `settings
 [7.8](#78-der-editor-siteaccess-mit-expinstall). Wenn `extension/exp_adminui` in der Installation vorhanden ist, wird
 außerdem `adminui` aus dem Admin-Siteaccess angelegt und ist unabhängig von `--access` über den Pfad `/adminui`
 erreichbar; die Zeile `Siteaccesses` der Zusammenfassung endet dann mit `adminui (by uri)`. Siehe
-[Exponential Admin UI](../../eng-us/features/6.0/exp-adminui.md).
+[Exponential Admin UI](../funktionen/6.0/exp-adminui.md).
 
 ### Administrator (Anmeldename `admin`)
 
@@ -358,7 +358,7 @@ kürzer als `MinPasswordLength` ist (auch `--password='publish'`), werden wie an
 der Konsole der Demo: Solange sie gesetzt ist, kann niemand ein Administratorpasswort ändern oder zurücksetzen, und die
 Administration zeigt ein Banner **Demo-Modus**. Ein Zurücksetzen mit `exp:resetuserpassword` nach der Installation ist
 nicht nötig und wird im Demo-Modus abgelehnt. Setzen Sie die Variable nie für eine echte Site. Alles Weitere:
-[Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
+[Demo-Modus](../bc/6.0/demomodus.md).
 
 ## 7.6 Probelauf und Ausgabe
 
@@ -633,9 +633,9 @@ Skripte, die die Standard-Skriptoptionen verwenden, verweigern die Ausführung a
 |---|---|
 | `exp:kickstarter` | `ini` schreibt `kickstart.ini`, `run` installiert daraus ([Kapitel 6](06-kickstarter.md)) |
 | `exp:maintenance` | `on`, `off`, `status`: die Wartungsseite; `on` nimmt `--message`, `--until`, `--allow-ip`, `--allow-admin` an |
-| `exp:ini` | Einstellungen in jedem Geltungsbereich lesen und ändern: `get`, `set`, `where`, `list` ... ([exp:ini](../../eng-us/bc/6.0/console-exp-ini.md)) |
+| `exp:ini` | Einstellungen in jedem Geltungsbereich lesen und ändern: `get`, `set`, `where`, `list` ... ([exp:ini](../bc/6.0/console-exp-ini.md)) |
 | `exp:ezcache` | Caches nach Tag oder ID leeren (`--clear-tag=ini`, `--clear-all`) |
-| `exp:cache` | alle Caches leeren und untersuchen, einschließlich HTTP, Velocity und OPcache ([Cache-Konsole](../../eng-us/bc/6.0/cache-console.md)) |
+| `exp:cache` | alle Caches leeren und untersuchen, einschließlich HTTP, Velocity und OPcache ([Cache-Konsole](../bc/6.0/cache-konsole.md)) |
 | `exp:ezpgenerateautoloads` | die Autoload-Arrays der Klassen neu erzeugen (`-e` Extensions, `-k` Kernel, `-o` Overrides); eine unbekannte Option beendet den Befehl mit „The referenced parameter '...' is not registered.“ und dem Exit-Status 1 |
 | `exp:velocity` (Alias `exp:vc`) | Exponential Velocity, der empfohlene Anwendungsserver ([Kapitel 8](08-die-website-ausliefern.md)) |
 | `exp:webserver` | die Webserver-Engines (`php`, `frankenphp`, `qbix`) mit denselben Verben wie `exp:velocity` |
@@ -654,16 +654,16 @@ Skripte, die die Standard-Skriptoptionen verwenden, verweigern die Ausführung a
 
 In diesem Repository:
 
-- [Exponential 6.0 installieren](../../eng-us/INSTALL.md), Abschnitt 7
-- [Exponential mit einem Befehl installieren](../../eng-us/features/6.0/install-in-one-command.md)
-- [Die Konsole](../../eng-us/bc/6.0/console.md), [exp:ini](../../eng-us/bc/6.0/console-exp-ini.md), [Cache-Konsole](../../eng-us/bc/6.0/cache-console.md)
-- [Kickstarter-CLI](../../eng-us/bc/6.0/kickstartercli.md)
-- [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md)
+- [Exponential 6.0 installieren](../INSTALL.md), Abschnitt 7
+- [Exponential mit einem Befehl installieren](../funktionen/6.0/installation-mit-einem-befehl.md)
+- [Die Konsole](../bc/6.0/konsole.md), [exp:ini](../bc/6.0/console-exp-ini.md), [Cache-Konsole](../bc/6.0/cache-konsole.md)
+- [Kickstarter-CLI](../bc/6.0/kickstartercli.md)
+- [Wartungsmodus](../funktionen/6.0/wartungsmodus.md)
 - [Installer-Protokolle und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Datenbanktreiber: SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md),
   [Datenbanktreiber, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md),
-  [SQLite-Datenbank](../../eng-us/features/6.0/sqlite-database.md)
-- [Abstraktionen für CLI, Cronjobs und Views](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+  [SQLite-Datenbank](../funktionen/6.0/sqlite-datenbank.md)
+- [Abstraktionen für CLI, Cronjobs und Views](../bc/6.0/cli-cronjob-und-view-abstraktionen.md)
 - [Erste Schritte](../anleitungen/erste-schritte.md)
 - Code: `bin/php/install.php` (Optionen, Prüfungen, Zusammenfassung), `kernel/private/classes/commands/install.php`
   (Passwortregeln, Aufruf des Kickstarters), `kernel/classes/expkickstarter.php`,

@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, die eine vermutete Übernahme, einen gestohlenen Laptop oder einen ausscheidenden Mitarbeiter
 behandeln, der irgendwo noch angemeldet ist. Ein Sitzungscookie ist so viel wert wie das Passwort; diese Aufgabe beendet
-die Sitzungen ([Sitzungen und Cookies](../../../../../eng-us/help/government/security/sessions-and-cookies.md)).
+die Sitzungen ([Sitzungen und Cookies](../../sicherheit/sitzungen-und-cookies.md)).
 
 ## Inhalt
 
@@ -61,8 +61,8 @@ Entfernen von Sitzungen hindert den Benutzer nicht daran, sich erneut anzumelden
 
 ## Verwandte Seiten
 
-- [Sitzungen und Cookies](../../../../../eng-us/help/government/security/sessions-and-cookies.md)
-- [Reaktion auf Vorfälle](../../../../../eng-us/help/government/security/incident-response.md)
+- [Sitzungen und Cookies](../../sicherheit/sitzungen-und-cookies.md)
+- [Reaktion auf Vorfälle](../../sicherheit/reaktion-auf-sicherheitsvorfaelle.md)
 - [Das Administratorpasswort ändern](../../../administratorpasswort-aendern.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

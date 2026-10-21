@@ -14,7 +14,7 @@ ihre Datensätze veröffentlicht. Exponential liefert keine Datensatzklasse mit,
 an. Der Entwurf unten verwendet nur Datentypen, die mit dem Kernel ausgeliefert werden, und benennt seine Felder nach
 den [DCAT-3](https://www.w3.org/TR/vocab-dcat-3/)-Begriffen, die Kataloge verwenden, sodass ein späterer DCAT-Export
 daraus geschrieben werden kann. Die Schritte im Klasseneditor stammen aus
-[Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md).
+[Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md).
 
 ## Inhalt
 
@@ -100,7 +100,7 @@ ihre Datei genügen, und der MIME-Typ des Uploads wird vom Datentyp Datei angeze
 
 - **Das Entfernen eines Attributs löscht seine Daten aus jedem Objekt.** Fügen Sie neue Felder unbesorgt hinzu;
   entfernen Sie sie nur nach einer Datensicherung
-  ([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#changing-a-class-on-a-live-site)).
+  ([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#eine-klasse-auf-einer-live-website-ändern)).
 - **Verwenden Sie die Klasse Artikel nicht für Datensätze**: Die Felder unterscheiden sich, und Templates und Feeds
   lassen sich dann schwer auseinanderhalten.
 - **Keine Schemaprüfung.** Das Feld Format hält fest, was die Redaktion gewählt hat; Exponential untersucht die Datei
@@ -108,8 +108,8 @@ ihre Datei genügen, und der MIME-Typ des Uploads wird vom Datentyp Datei angeze
 
 ## Verwandte Seiten
 
-- [Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
+- [Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md)
+- [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
 - [Inhaltsmodell und Bearbeitung](../../../anleitungen/inhaltsmodell-und-bearbeitung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

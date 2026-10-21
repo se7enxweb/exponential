@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Websiteersteller. Eine öffentliche Website in mehreren Sprachen braucht auf jeder Seite
 eine sichtbare Möglichkeit, die Sprache zu wechseln, die zur selben Seite in der anderen Sprache führt. Exponential
 baut sie aus `[RegionalSettings] TranslationSA[]` und dem Kernel-Operator `language_switcher`
-([Sprachumschalter und Adressen pro Sprache](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md#the-language-switcher)).
+([Sprachumschalter und Adressen pro Sprache](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md#der-sprachumschalter)).
 
 ## Inhalt
 
@@ -78,9 +78,9 @@ einer Seite, die es nur in einer Sprache gibt.
 
 ## Verwandte Seiten
 
-- [Sprachumschalter und Adressen pro Sprache](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md)
-- [Barrierefreiheit für Websiteersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
-- [SEO-Grundlagen](../../../../eng-us/help/creators/website-creators/seo-basics.md)
+- [Sprachumschalter und Adressen pro Sprache](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md)
+- [Barrierefreiheit für Websiteersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
+- [SEO-Grundlagen](../../ersteller/website-ersteller/seo-grundlagen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

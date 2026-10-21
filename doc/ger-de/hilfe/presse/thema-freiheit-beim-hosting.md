@@ -41,17 +41,17 @@ wählen“ ([Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting
 |---|---|---|
 | Webserver | Apache, Nginx, LiteSpeed, OpenLiteSpeed, Caddy, IIS, lighttpd, H2O, Traefik davor, oder Velocity; FrankenPHP als alternative Engine | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options) |
 | Datenbank | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge) |
-| Betriebssystem | Vier Stufen, von „hier getestet“ bis „heute nicht möglich“ | [Unterstützte Betriebssysteme](../../../eng-us/help/os-support.md#the-four-tiers) |
+| Betriebssystem | Vier Stufen, von „hier getestet“ bis „heute nicht möglich“ | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md#die-vier-stufen) |
 | PHP | 8.0 bis 8.5, Velocity eingeschlossen (ab seinem Release 0.0.4.54) | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
-| Wo | Container, Cloud-Maschinen und Hosting-Panels sind abgedeckt | [Unterstützte Betriebssysteme](../../../eng-us/help/os-support.md#containers-cloud-and-hosting-panels) |
+| Wo | Container, Cloud-Maschinen und Hosting-Panels sind abgedeckt | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
 
 ## Fakten, die Sie drucken können
 
 | Fakt | Quelle |
 |---|---|
-| Nichts in den Anforderungen nennt ein Betriebssystem. | [Unterstützte Betriebssysteme](../../../eng-us/help/os-support.md#what-the-operating-system-has-to-provide) |
-| Stufe 1 („hier getestet“) ist AlmaLinux 9 auf dem Entwicklungsserver des Projekts und Ubuntu in der CI. | [Unterstützte Betriebssysteme, Stufe 1](../../../eng-us/help/os-support.md#tier-1-tested-here) |
-| Velocity liefert `.deb`-Pakete für Debian 12 und 13 sowie Ubuntu 22.04 und 24.04. | [Unterstützte Betriebssysteme, Stufe 2](../../../eng-us/help/os-support.md#linux-distributions) |
+| Nichts in den Anforderungen nennt ein Betriebssystem. | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md#was-das-betriebssystem-bereitstellen-muss) |
+| Stufe 1 („hier getestet“) ist AlmaLinux 9 auf dem Entwicklungsserver des Projekts und Ubuntu in der CI. | [Unterstützte Betriebssysteme, Stufe 1](../betriebssystemunterstuetzung.md#stufe-1-hier-getestet) |
+| Velocity liefert `.deb`-Pakete für Debian 12 und 13 sowie Ubuntu 22.04 und 24.04. | [Unterstützte Betriebssysteme, Stufe 2](../betriebssystemunterstuetzung.md#linux-distributionen) |
 | Eine Website kann mit dokumentierten Werkzeugen auf eine andere Datenbank umziehen. | [Eine Website auf eine andere Datenbank umziehen](../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen) |
 | Backups sind die üblichen Dumps der jeweiligen Datenbank. | [Backup und Wiederherstellung](../datenbankunterstuetzung.md#backup-und-wiederherstellung) |
 | „Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos.“ | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
@@ -61,7 +61,7 @@ wählen“ ([Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting
 - **Shared Hosting**: Apache oder LiteSpeed mit `.htaccess` können es ausliefern, und der Einrichtungsassistent
   installiert es ohne Shell; Velocity kann dort meist nicht laufen.
 - Systeme der **Stufe 3** sind „eine begründete Erwartung, kein Testergebnis“
-  ([Unterstützte Betriebssysteme](../../../eng-us/help/os-support.md#the-four-tiers)).
+  ([Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md#die-vier-stufen)).
 - **MongoDB** hat dokumentierte Grenzen ([Grenzen von MongoDB](../datenbankunterstuetzung.md#grenzen-von-mongodb)).
 - **Microsoft SQL Server** ist „mit zusätzlicher Arbeit möglich“, aber keine der sechs.
 

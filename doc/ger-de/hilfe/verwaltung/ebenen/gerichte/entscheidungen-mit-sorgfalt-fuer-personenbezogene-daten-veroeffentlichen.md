@@ -96,7 +96,7 @@ Das Entfernen erfordert `content/versionremove`.
 | Löschen | aus dem Papierkorb entfernen (**Papierkorb leeren** oder die Bereinigung des Papierkorbs) | endgültig; die Dateien gehen mit |
 
 Setzen Sie vor dem Verbergen den Zustand *Zurückgezogen*, wenn Sie das Objekt behalten, damit die Aufzeichnung sagt,
-warum. Jeder Schritt wird im Audit-Protokoll aufgezeichnet ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+warum. Jeder Schritt wird im Audit-Protokoll aufgezeichnet ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Wo Kopien bleiben
 
@@ -105,7 +105,7 @@ warum. Jeder Schritt wird im Audit-Protokoll aufgezeichnet ([Audit-Protokoll](..
 | Archivierte Versionen | entfernen Sie sie wie oben beschrieben |
 | Der Papierkorb | ein Objekt im Papierkorb enthält weiterhin seine Dateien; leeren Sie ihn, wenn die Entscheidung gelöscht werden muss |
 | Suchindex | Verbergen und Entfernen aktualisieren den Index; mit eZ Find prüfen Sie, dass die Entscheidung aus der Suche verschwunden ist |
-| Caches | das Veröffentlichen leert den Ansichts-Cache des Objekts; wenn Sie den statischen Cache, den Antwort-Cache von Velocity (`./console exp:velocity cache clear`) oder ein CDN verwenden, leeren Sie auch diese ([Caches](../../../../anleitungen/caches.md), [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md)) |
+| Caches | das Veröffentlichen leert den Ansichts-Cache des Objekts; wenn Sie den statischen Cache, den Antwort-Cache von Velocity (`./console exp:velocity cache clear`) oder ein CDN verwenden, leeren Sie auch diese ([Caches](../../../../anleitungen/caches.md), [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md)) |
 | Sicherungen | die Entscheidung bleibt in Sicherungen, bis diese ablaufen; Ihre Aufbewahrungsregeln entscheiden |
 | Kopien anderswo | Suchmaschinen, Archive und Personen, die sie heruntergeladen haben; verlangen Sie die Entfernung, wo das Gesetz es vorsieht |
 

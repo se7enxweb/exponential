@@ -46,12 +46,12 @@ Schlüsseln, Limits und Budgets einschalten und **EI: Summary** erstellen.
 - Teilnehmende: Redakteure 101 oder Erfahrung als Redakteur. Redakteure 201 hilft (Freigaben, Barrierefreiheit).
 - Administratoren in Modul 7: Shell-Zugang zu einer eigenen Schulungsinstallation.
 - Trainer: Erfahrung mit dem Assistenten in der Version, die sie unterrichten, und Administratorrechte auf der
-  Schulungsinstallation ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  Schulungsinstallation ([Train the Trainer: Kursüberblick](../train-the-trainer/README.md)).
 
 ## Übungsumgebung
 
 - Eine Schulungsinstallation mit aktiven und konfigurierten expai und expqueue (siehe Lektion 7.2 und
-  [expai: Einschalten](../../../../eng-us/features/6.0/extensions/expai.md#switch-it-on)), laufender Auftragswarteschlange und
+  [expai: Einschalten](../../../funktionen/6.0/erweiterungen/expai.md#einschalten)), laufender Auftragswarteschlange und
   einem Anbieterkonto, das für Schulungen gedacht ist, oder einem lokalen Modell. Nie ein Produktivschlüssel, nie echte
   Kundeninhalte.
 - Ein Konto pro Person mit `expai/write` und `ezjscore/call`, dazu `expai/vector` (gestuft, auf den Schulungsordner
@@ -59,7 +59,7 @@ Schlüsseln, Limits und Budgets einschalten und **EI: Summary** erstellen.
 - Nutzungslimits pro Schulungsbenutzer (zum Beispiel ein tägliches Kostenlimit) und optional ein monatliches Budget für
   die Website.
 - Der Kursordner jeder Person mit einigen kurzen Artikeln und neutralen Beispielbildern (keine Menschen).
-- Die Übungsumgebung aufbauen und zurücksetzen: [Modul 2: Die Übungsumgebung aufbauen](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md)
+- Die Übungsumgebung aufbauen und zurücksetzen: [Modul 2: Die Übungsumgebung aufbauen](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md)
   von Train the Trainer und [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md).
 
 ## Module
@@ -78,7 +78,7 @@ Schlüsseln, Limits und Budgets einschalten und **EI: Summary** erstellen.
 
 Für Trainer, die den Kurs vorbereiten, in dieser Reihenfolge:
 
-1. [expai: Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md): der Überblick für Redakteure,
+1. [expai: Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md): der Überblick für Redakteure,
    Administratoren und Entwickler.
 2. In der Administration **EI: Help**: die Bedienungsanleitung, dann die Seiten zum Tab Intelligence, zum
    Bearbeitungsformular, zu Vorlagen und zum Alternativtext (Module 2 und 3).
@@ -88,7 +88,7 @@ Für Trainer, die den Kurs vorbereiten, in dieser Reihenfolge:
    Nutzungserfassung (Module 1 und 5).
 5. **EI: Help**: die Installationsanleitung, Konfiguration, Anbieter, Probe, Budgets und die Seite EI: Summary
    (Modul 7).
-6. [expqueue](../../../../eng-us/features/6.0/extensions/expqueue.md), [Workflows](../../../anleitungen/workflows.md) und
+6. [expqueue](../../../funktionen/6.0/erweiterungen/expqueue.md), [Workflows](../../../anleitungen/workflows.md) und
    [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md).
 7. Die Regeln Ihrer Organisation zum KI-Einsatz und zum Datenschutz, um sie in Modul 6 zu zitieren.
 8. Danach die Module der Reihe nach: zuerst jeweils die Modulübersicht (Vorbereitungsliste und Zeitplan), dann ihre
@@ -129,8 +129,8 @@ Feldaktionen sicher zu nutzen. Planen Sie Modul 6 innerhalb eines Monats vollst�
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

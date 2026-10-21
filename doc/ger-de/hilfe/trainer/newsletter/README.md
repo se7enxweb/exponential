@@ -47,12 +47,12 @@ Testgruppen nutzen und einen Skin schreiben.
 
 ## Voraussetzungen
 
-- Teilnehmende: grundlegendes Bearbeiten von Inhalten, wie in [Redakteure 101](../../../../eng-us/help/trainers/editors-101/README.md) vermittelt
+- Teilnehmende: grundlegendes Bearbeiten von Inhalten, wie in [Redakteure 101](../redakteure-101/README.md) vermittelt
   (ein Element anlegen, bearbeiten und veröffentlichen). Administratoren: eine Shell auf einer Schulungsinstallation.
   Designer: die Template-Sprache.
 - Trainer: hat den ganzen Kurs einmal auf der eigenen Schulungsinstallation durchgespielt, einschließlich jeder
   Versandübung, und kennt das Material von Train the Trainer
-  ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  ([Train the Trainer: Kursüberblick](../train-the-trainer/README.md)).
 
 ## Übungsumgebung
 
@@ -60,7 +60,7 @@ Testgruppen nutzen und einen Skin schreiben.
   ([7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md)), mit aktiver Erweiterung
   `cjw_newsletter`, angelegten Tabellen, dem Newsletter-Baum mit seiner Sektion und dem Anmeldeformular, das im
   öffentlichen Siteaccess erreichbar ist. Wie man eine Übungsumgebung aufbaut und zurücksetzt:
-  [Modul 2: Die Übungsumgebung aufbauen](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md) von Train the
+  [Modul 2: Die Übungsumgebung aufbauen](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md) von Train the
   Trainer.
 - **Jede Mail wird in Dateien geschrieben**: `site.ini [MailSettings] Transport=file`, und in
   `cjw_newsletter.ini [NewsletterMailSettings]` stehen die Methoden `TransportMethodCronjob`, `TransportMethodPreview`
@@ -89,11 +89,11 @@ Testgruppen nutzen und einen Skin schreiben.
 
 Für einen Trainer, der den Kurs vorbereitet, in dieser Reihenfolge:
 
-1. [cjw_newsletter: Newsletter in der Administration](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md): die
+1. [cjw_newsletter: Newsletter in der Administration](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md): die
    Bestandteile, die Probe ohne Mail, die Einstellungen und was sich in den Releases von Exponential 6 geändert hat.
-2. [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md),
-   [Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md) und
-   [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md): die drei kurzen Seiten, denen
+2. [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md),
+   [Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md) und
+   [Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md): die drei kurzen Seiten, denen
    der Kurs folgt.
 3. [10.4 Mail](../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand) und
    [10.5 Benachrichtigungen und Newsletter](../../../installation/10-nach-der-installation.md#105-benachrichtigungen-und-newsletter):
@@ -142,8 +142,8 @@ Lektionen 1.2, 4.3, 5.1, 5.2 und 5.3: 4 Stunden Lektionen.
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

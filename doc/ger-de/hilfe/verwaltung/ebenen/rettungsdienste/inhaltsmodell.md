@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller und Projektverantwortliche, die di
 Rettungsdienstes entwerfen. Einsatzinhalte werden unter Druck geschrieben, daher hat ihre Klasse wenige Felder. Die
 genannten Klassen und Datentypen gibt es in Exponential
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md), `kernel/classes/datatypes/`); der
-Klasseneditor ist unter [Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)
+Klasseneditor ist unter [Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)
 beschrieben.
 
 ## Inhalt
@@ -96,7 +96,7 @@ Leeren Sie danach den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`); `hi
 
 - [Rettungsdienste](README.md)
 - [Warnungen, Verfügbarkeit, Wartungsmodus und statischer Cache](warnungen-verfuegbarkeit-wartung-und-statischer-cache.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -34,7 +34,7 @@ VPAT (Voluntary Product Accessibility Template), aus dem ein Accessibility Confo
 
 ## Der Status des Projekts
 
-Aus [Standards zur Barrierefreiheit: Section 508](../../../../eng-us/standards/accessibility.md#section-508):
+Aus [Standards zur Barrierefreiheit: Section 508](../../../standards/barrierefreiheit.md#section-508):
 
 - **Status: Nicht geprüft.** Es gibt kein VPAT und keinen Accessibility Conformance Report für Exponential.
 - **Inhaltlich** deckt die Arbeit an WCAG es ab: WCAG 2.0 AA ist eine Teilmenge dessen, wogegen die Administration admin4
@@ -72,9 +72,9 @@ Eine Ausschreibung kann vom Bieter ein VPAT verlangen. Mit Exponential:
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

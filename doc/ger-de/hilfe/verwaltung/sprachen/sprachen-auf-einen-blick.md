@@ -26,30 +26,30 @@ Stellen.
 | Bedarf | Funktion | Dokumentation |
 |---|---|---|
 | Inhalte in mehreren Sprachen | jedes Objekt enthält eine Übersetzung pro Inhaltssprache | [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
-| Eine Website pro Sprache | ein Siteaccess pro Sprache mit seiner `SiteLanguageList[]` | [Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md) |
-| Eine Adresse pro Sprache | ein Pfad (`/de/`), ein Host oder beides | [Sprachumschalter und Adressen pro Sprache](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
-| Die Startseite in der Sprache des Besuchers | Weiterleitung nach Browsersprache mit `DefaultHostUriMatchMapItems[]` | [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md) |
+| Eine Website pro Sprache | ein Siteaccess pro Sprache mit seiner `SiteLanguageList[]` | [Eine mehrsprachige Website bauen](../../ersteller/website-ersteller/mehrsprachige-websites.md) |
+| Eine Adresse pro Sprache | ein Pfad (`/de/`), ein Host oder beides | [Sprachumschalter und Adressen pro Sprache](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md) |
+| Die Startseite in der Sprache des Besuchers | Weiterleitung nach Browsersprache mit `DefaultHostUriMatchMapItems[]` | [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md) |
 | Ein Sprachumschalter | `TranslationSA[]` und der Operator `language_switcher` | dieselbe Seite |
 | Was Besucher sehen, wenn eine Übersetzung fehlt | die Reihenfolge von `SiteLanguageList[]`, „Immer verfügbar“ | [Inhaltssprachen, Abschnitt 6](../../../anleitungen/inhaltssprachen.md#6-hauptsprache-und-immer-verfügbar) |
 | Übersetzer, beschränkt auf ihre Sprache | Richtlinien mit der Einschränkung **Sprache** | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
-| Schriften von rechts nach links | Schreibrichtung aus der Locale-Datei; die Administration spiegelt sich selbst | [Sprachen mit Schreibrichtung von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md) |
+| Schriften von rechts nach links | Schreibrichtung aus der Locale-Datei; die Administration spiegelt sich selbst | [Sprachen mit Schreibrichtung von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md) |
 | Die Administration in der Sprache der Mitarbeitenden | Oberflächenübersetzungen und eine Wahl pro Benutzer | [Sprachen (für Redakteure)](../../sprachen.md) |
-| Datum, Zahlen, Währung pro Sprache | Locale-Dateien | [Sprachen in Exponential](../../../../eng-us/languages.md) |
+| Datum, Zahlen, Währung pro Sprache | Locale-Dateien | [Sprachen in Exponential](../../../sprachen.md) |
 
 ## Die Zahlen
 
 - **Locales**: 268 Locale-Dateien werden in `share/locale/` mitgeliefert; jede kann zu einer Inhaltssprache werden
-  ([Sprachen in Exponential](../../../../eng-us/languages.md)).
+  ([Sprachen in Exponential](../../../sprachen.md)).
 - **Von rechts nach links**: 40 davon tragen `TextDirection=rtl` (gezählt in `share/locale/`; die Liste steht in
-  Abschnitt 9 von [Sprachen in Exponential](../../../../eng-us/languages.md#9-right-to-left-languages)).
+  Abschnitt 9 von [Sprachen in Exponential](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden)).
 - **Inhaltssprachen pro Installation**: höchstens 62 unter 64-Bit-PHP (siehe „Die Grenze von 62 Sprachen“).
 - **Übersetzungen der Administration**: die Verzeichnisse von `share/translations/`, mit sehr unterschiedlicher
   Vollständigkeit; die aktuelle Tabelle steht in
-  [Sprachen in Exponential, Abschnitt 4](../../../../eng-us/languages.md#4-every-administration-translation).
+  [Sprachen in Exponential, Abschnitt 4](../../../sprachen.md#4-alle-übersetzungen-der-administrationsoberfläche).
 
 ## Bekannte Lücken
 
-Aus den [Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md#known-gaps):
+Aus den [Standards zur Internationalisierung](../../../standards/internationalisierung.md#bekannte-lücken):
 
 - Eine Standardverbindung zu MySQL oder MariaDB verwendet das 3-Byte-`utf8`; manche Zeichen (viele historische
   Schriften, Emoji) brauchen `utf8mb4`, das die Administration einrichtet.
@@ -59,7 +59,7 @@ Aus den [Standards zur Internationalisierung](../../../../eng-us/standards/inter
 - `hreflang`-Links zwischen Sprachfassungen werden von den mitgelieferten Designs nicht ausgegeben; Ihr Pagelayout
   fügt sie hinzu.
 - Kein Übersetzungsspeicher und keine maschinelle Übersetzung im Kernel; der optionale Assistent `expai` bietet eine
-  Aktion zum Übersetzen von Feldern ([expai](../../../../eng-us/features/6.0/extensions/expai.md)).
+  Aktion zum Übersetzen von Feldern ([expai](../../../funktionen/6.0/erweiterungen/expai.md)).
 
 ## Wo Sie anfangen
 
@@ -69,8 +69,8 @@ Einrichtung im öffentlichen Sektor und die Checkliste Sprachen am Ende dieses B
 ## Verwandte Seiten
 
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
-- [Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md)
+- [Sprachen in Exponential](../../../sprachen.md)
+- [Standards zur Internationalisierung](../../../standards/internationalisierung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

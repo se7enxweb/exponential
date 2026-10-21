@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Datenschutzbeauftragte und Projektleitungen. Die Aussage des Projekts ist eindeutig:
 „Exponential ist Software, kein Verantwortlicher. Die Einhaltung ... liegt in der Verantwortung der Organisation, die
-die Website betreibt“ ([Datenschutzstandards](../../../../eng-us/standards/privacy.md)). Rund um eine öffentliche Website haben
+die Website betreibt“ ([Datenschutzstandards](../../../standards/datenschutz.md)). Rund um eine öffentliche Website haben
 mehrere Parteien mit personenbezogenen Daten zu tun; diese Seite hilft Ihnen, sie zu benennen.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -36,12 +36,12 @@ mehrere Parteien mit personenbezogenen Daten zu tun; diese Seite hilft Ihnen, si
 
 Der Fehlerbericht des Projekts im Hilfesystem erstellt seine Zusammenfassung der Installation aus einer festen Liste von
 Fakten und entfernt E-Mail-Adressen, IP-Adressen, Zugangsdaten und Pfade, bevor irgendetwas Ihre Website verlässt
-([Datenschutzstandards: DSGVO](../../../../eng-us/standards/privacy.md#gdpr)).
+([Datenschutzstandards: DSGVO](../../../standards/datenschutz.md#dsgvo)).
 
 ## Dienste von Drittanbietern, die Erweiterungen hinzufügen
 
 Einige mit Exponential installierte Erweiterungen senden Besucherdaten an einen Drittanbieter, wenn eine Website sie
-aktiviert ([Datenschutzstandards: Dienste von Drittanbietern](../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)):
+aktiviert ([Datenschutzstandards: Dienste von Drittanbietern](../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)):
 
 | Erweiterung | Drittanbieter |
 |---|---|
@@ -65,7 +65,7 @@ Einschätzung Ihrer Rechtsberatung) mit eigenen Bedingungen.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Hosting-Unternehmen: Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md)
 - [Umsetzungspartner](../../partner/implementierungspartner.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

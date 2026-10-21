@@ -32,11 +32,11 @@ anordnen, ohne Templates anzufassen (`README.md`, „Exponential Layouts“). Di
 | Die neuesten Artikel automatisch anzeigen | ein Listen- oder Rasterblock mit einer dynamischen Sammlung (Kinder, Teilbaum, neueste ...) | `README.md`, „Exponential Layouts“ |
 | Ein ausgewähltes Element unter dynamischen anheften | ein von Hand gewähltes Element in der Sammlung | ebenda |
 | Text-, Bild-, Schaltflächen-, Karten-, Galerie-, Karussell-, Reiter-, Akkordeon-, Landkarten- oder Videoblöcke verwenden | die Standardblöcke von `explayouts_standard` | ebenda |
-| Einem Teil der Website ein eigenes Layout geben | eine Regel nach Teilbaum, Klasse, Siteaccess oder Zeit | [Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md) |
+| Einem Teil der Website ein eigenes Layout geben | eine Regel nach Teilbaum, Klasse, Siteaccess oder Zeit | [Layout-Regeln](../../ersteller/website-ersteller/layout-regeln.md) |
 | Sehen, welches Layout eine Seite verwendet | der Reiter **Layouts** in der Ansicht eines Knotens | `README.md`, „Exponential Layouts“ |
 
 Der Editor befindet sich unter `/explayouts_ui_api/app` in der Administration; der Zugriff erfordert die Richtlinien des
-Moduls `explayouts`, mindestens `explayouts/read` ([Landingpages mit dem Layouts-Editor](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+Moduls `explayouts`, mindestens `explayouts/read` ([Landingpages mit dem Layouts-Editor](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 
 ## Zuständigkeit
 
@@ -50,13 +50,13 @@ Layouts sind gemeinsame Arbeit, geben Sie also jedem eine zuständige Person:
 | Gemeinsamer Header, Footer, Prefooter | nur eine Person, oft der Betreiber oder die Web-Leitung |
 
 Benennen Sie Blöcke klar und vermerken Sie im Namen eines Blocks, warum ein Element angeheftet ist; Ihre Nachfolger
-werden es Ihnen danken ([Landingpages mit dem Layouts-Editor](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+werden es Ihnen danken ([Landingpages mit dem Layouts-Editor](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 
 ## Kampagnenzeiträume
 
 Eine Kampagnen-Landingpage ist ein Layout, das der Seite durch eine Regel mit einer Bedingung `time` (`from`, `to`)
 zugeordnet wird, mit höherer Priorität als die normale Regel der Seite. Vor und nach dem Zeitraum wird das normale
-Layout angezeigt ([Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)). Planen Sie sie im
+Layout angezeigt ([Layout-Regeln](../../ersteller/website-ersteller/layout-regeln.md)). Planen Sie sie im
 [Redaktionskalender](../alltag/redaktionskalender.md) und prüfen Sie sie mit der
 [Checkliste für Kampagnen-Landingpages](checkliste-kampagnen-landingpages.md).
 
@@ -64,7 +64,7 @@ Layout angezeigt ([Layout-Regeln](../../../../eng-us/help/creators/website-creat
 
 Ein gemeinsames Layout enthält den Header, den Footer oder den Prefooter genau einmal; die Zonen jedes Seitenlayouts
 verweisen darauf. Ändern Sie es einmal, und jede Seite folgt (`README.md`, „Exponential Layouts“;
-[Gemeinsame Layouts](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)). Das ist mächtig und daher riskant:
+[Gemeinsame Layouts](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)). Das ist mächtig und daher riskant:
 Ein Fehler dort steht auf jeder Seite. Überlassen Sie es einer einzigen zuständigen Person und veröffentlichen Sie
 Änderungen daran zu einer ruhigen Zeit.
 
@@ -73,7 +73,7 @@ Ein Fehler dort steht auf jeder Seite. Überlassen Sie es einer einzigen zustän
 > **Warnung**
 > Der Editor arbeitet immer an einem Entwurf, und Besucher sehen nur veröffentlichte Layouts. Entwürfe gibt es **pro
 > Layout, nicht pro Benutzer**: Zwei Personen, die dasselbe Layout bearbeiten, überschreiben sich gegenseitig
-> ([Landingpages mit dem Layouts-Editor](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)). Vereinbaren
+> ([Landingpages mit dem Layouts-Editor](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)). Vereinbaren
 > Sie, dass jeweils nur eine Person ein Layout bearbeitet.
 
 - **Publish** macht den Entwurf live; **Discard draft** verwirft ihn.
@@ -85,7 +85,7 @@ Ein Fehler dort steht auf jeder Seite. Überlassen Sie es einer einzigen zustän
 |---|---|
 | Ein neuer Layout-Typ (eine neue Anordnung von Zonen) | Layout-Typen werden in Einstellungen definiert (`explayouts.ini`); der Typ eines Layouts lässt sich später nicht ändern |
 | Eine neue Art von Block | ein Block-Typ ist eine Handler-Klasse und ein Template in einer Erweiterung |
-| Ein Block, der ein Formular oder Shop-Schritte zeigt | Logik gehört in Templates ([Wann Layouts und wann Templates](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#when-to-use-layouts-and-when-templates)) |
+| Ein Block, der ein Formular oder Shop-Schritte zeigt | Logik gehört in Templates ([Wann Layouts und wann Templates](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#wann-layouts-und-wann-templates)) |
 | Layouts in eine andere Installation übertragen | Export und Import (`README.md`, „Exponential Layouts“) |
 
 ## Verwandte Seiten

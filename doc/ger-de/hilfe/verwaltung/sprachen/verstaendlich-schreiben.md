@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Redakteure und Trainer. Sie übersetzt die Grundsätze der einfachen Sprache (siehe
 „Einfache Sprache“) in Regeln für die Felder, die Redakteure in Exponential ausfüllen, und verweist auf die
 überschneidenden Punkte der Barrierefreiheit. Der Stand der Barrierefreiheit des Produkts selbst steht in den
-[Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md).
+[Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md).
 
 ## Inhalt
 
@@ -30,7 +30,7 @@ Diese Seite richtet sich an Redakteure und Trainer. Sie übersetzt die Grundsät
   beantragen“, nicht „Verfahren zum Parkausweis (überarbeitet)“.
 - Halten Sie sie kurz: Der Titel wird zur Adresse der Seite (URL-Alias) und erscheint in Menüs und Suchergebnissen.
 - Umbenennen ist unbedenklich: Die alte Adresse leitet weiter
-  ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+  ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Zusammenfassungen
 
@@ -50,7 +50,7 @@ zeigen sie an.
 - Linktext, der für sich allein verständlich ist: „Antragsformular für den Bewohnerparkausweis“, nicht „hier
   klicken“ (WCAG 2.2 „Linkzweck“, [WCAG 2.2](https://www.w3.org/TR/WCAG22/)).
 - Sagen Sie, wenn ein Link ein Dokument öffnet, und nennen Sie Format und Größe; der Datentyp Datei liefert sie
-  ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
+  ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
 - Verlinken Sie Inhalte mit den Link- oder Einbettungswerkzeugen des Editors, damit Links den Inhalten folgen, wenn
   diese verschoben werden.
 
@@ -69,14 +69,14 @@ Bevorzugen Sie Seitentext gegenüber angehängten Dokumenten; eine Seite ist mit
 - Lesen Sie die Seite laut vor; lange Sätze fallen auf.
 - Prüfen Sie die Seite auf einem Smartphone.
 - Prüfen Sie, ob Bilder Alternativtext haben; Bildfelder können ihn verlangen
-  ([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#attribute-settings)).
+  ([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#attributeinstellungen)).
 - Bitten Sie jemanden außerhalb des Teams, eine bestimmte Information auf der Seite zu finden.
 
 ## Verwandte Seiten
 
 - [Einfache Sprache](einfache-sprache.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
-- [Barrierefreiheit für Websiteersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Barrierefreiheit für Websiteersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

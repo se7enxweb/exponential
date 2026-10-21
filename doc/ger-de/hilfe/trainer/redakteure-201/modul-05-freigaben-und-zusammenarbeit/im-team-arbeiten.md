@@ -137,13 +137,13 @@ Arbeiten Sie zu zweit (A und B), jeweils mit einem Editor-Schulungskonto, an ein
 
 - [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#wenn-jemand-anderes-bearbeitet): Bearbeitungskonflikte.
 - [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md): Versionen und ihre Ersteller.
-- [Benachrichtigungen](../../../../../eng-us/features/6.0/notifications.md): Inhalten folgen.
+- [Benachrichtigungen](../../../../funktionen/6.0/benachrichtigungen.md): Inhalten folgen.
 
 ## Verwandte Seiten
 
 - [Modul 5: Freigaben und Zusammenarbeit](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

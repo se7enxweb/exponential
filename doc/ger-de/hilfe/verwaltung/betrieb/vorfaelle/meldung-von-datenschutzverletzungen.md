@@ -63,9 +63,9 @@ enthielt.
 |---|---|---|
 | Benutzerkonten (Name, Login, E-Mail, Passwort-Hash) | Benutzer und die Benutzerklasse | [Pflege von Benutzerkonten](../personen-und-berechtigungen/pflege-von-benutzerkonten.md) |
 | Formulareinsendungen | gesammelte Informationen | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
-| Newsletter-Abonnenten und Einwilligungsprotokoll | cjw_newsletter, E-Mail-Einstellungen | [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md) |
-| Shop-Bestellungen, falls ein Shop läuft | Bestellungen | [Shop-Dashboard](../../../../../eng-us/features/6.0/store-dashboard.md) |
-| Logs und Audit (maskierte Adressen, pseudonymisiert, wo konfiguriert) | `var/log/`, Audit | [Datenschutzstandard](../../../../../eng-us/standards/privacy.md) |
+| Newsletter-Abonnenten und Einwilligungsprotokoll | cjw_newsletter, E-Mail-Einstellungen | [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md) |
+| Shop-Bestellungen, falls ein Shop läuft | Bestellungen | [Shop-Dashboard](../../../../funktionen/6.0/shop-dashboard.md) |
+| Logs und Audit (maskierte Adressen, pseudonymisiert, wo konfiguriert) | `var/log/`, Audit | [Datenschutzstandard](../../../../standards/datenschutz.md) |
 | Datensicherungen von allem oben Genannten | Ihr Speicher für Datensicherungen | [Schlüssel und Geheimnisse in Datensicherungen](../datensicherung-und-wiederherstellung/schluessel-und-geheimnisse-in-datensicherungen.md) |
 
 Ihr Verzeichnis von Verarbeitungstätigkeiten sollte bereits angeben, welche davon Ihre Website enthält.

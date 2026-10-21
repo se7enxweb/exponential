@@ -123,7 +123,7 @@ WeakPasswordFile=settings/weak-passwords.txt   # one word per line, # for commen
 
 `WeakPasswordCheck=disabled` schaltet die Prüfung für die Formulare ab; die Installer prüfen immer. Ein bestehendes
 Passwort wird bei der Anmeldung nie abgelehnt: Die Liste greift, wenn ein Passwort gesetzt wird. Einzelheiten:
-[der Upgrade-Hinweis](../../eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md).
+[der Upgrade-Hinweis](../bc/6.0/schwache-passwoerter-und-gueltigkeit-von-reset-links.md).
 
 ## Die mitgelieferte Datenbank-Grundausstattung: publish
 

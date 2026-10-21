@@ -51,7 +51,7 @@ aber nicht `access`), sodass Sie nur die Ereignisse sehen, die Ihre Rolle erlaub
 
 ## Verwandte Seiten
 
-- [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md)
+- [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md)
 - [Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)
 - [Verlauf von Inhalten](../../anleitungen/inhaltsverlauf.md)
 - [Benutzerhandbuch](README.md)

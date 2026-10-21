@@ -90,7 +90,7 @@ Benutzerkonto dahinter darf, und eine öffentliche App sollte ein Konto verwende
 |---|---|---|
 | Die Atom-Listenroute `listAtom` | Antwortet in v1 und v2 mit 500, vor und nach der Änderung | Verwenden Sie die Route `list` oder den RSS-Export der Website ([Feeds und Syndication](feeds-und-syndication.md)) |
 | Inhalte über REST aktualisieren | Antwortet nach der Berechtigungsprüfung mit 501 | Legen Sie einen neuen Eintrag an, oder verwenden Sie die Administration oder die Remote-Dienste |
-| Apache mit FastCGI | Der Header `Authorization` muss PHP erreichen | Eine Aufgabe der Serverkonfiguration ([REST API für Anwendungen](../../../../eng-us/help/creators/app-creators/rest-api.md#configuration)) |
+| Apache mit FastCGI | Der Header `Authorization` muss PHP erreichen | Eine Aufgabe der Serverkonfiguration ([REST API für Anwendungen](../../ersteller/anwendungsentwickler/rest-api.md#konfiguration)) |
 
 ## Fragen an Ihren Administrator
 
@@ -109,8 +109,8 @@ Benutzerkonto dahinter darf, und eine öffentliche App sollte ein Konto verwende
 - [Headless mit der REST API](headless-mit-der-rest-api.md)
 - [Apps und API-Schlüssel](apps-und-api-schluessel.md)
 - [REST API v1 und v2: eine Erweiterung](../../../anleitungen/rest-api-v1-und-v2.md)
-- [REST API v1 und v2 für Anwendungen](../../../../eng-us/help/creators/app-creators/rest-api.md)
-- [ezprestapi](../../../../eng-us/features/6.0/extensions/ezprestapi.md)
+- [REST API v1 und v2 für Anwendungen](../../ersteller/anwendungsentwickler/rest-api.md)
+- [ezprestapi](../../../funktionen/6.0/erweiterungen/ezprestapi.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

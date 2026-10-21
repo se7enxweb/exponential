@@ -120,13 +120,13 @@ Verwenden Sie die Schulungsinstallation. Der Trainer hat einen RSS-2.0-Export an
 ## Weiterführende Informationen
 
 - [RSS-Feeds](../../../../anleitungen/rss-feeds.md): Exporte, Importe und die Seite.
-- [RSS, Podcasts und die Feed-Liste](../../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md): die Formate.
+- [RSS, Podcasts und die Feed-Liste](../../../../funktionen/6.0/rss-podcast-und-feed-liste.md): die Formate.
 
 ## Verwandte Seiten
 
 - [Modul 6: Adressen, Feeds und PDF](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

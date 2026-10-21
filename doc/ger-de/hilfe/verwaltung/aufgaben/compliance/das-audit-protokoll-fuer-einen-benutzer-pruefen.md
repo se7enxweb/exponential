@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren und Prüfer mit `audit/read`: eine Prüfung, wenn jemand ausscheidet, eine Beschwerde über eine
 Änderung oder der Verdacht auf Missbrauch
-([Das Audit-Protokoll für Behörden](../../../../../eng-us/help/government/security/audit-trail-for-public-bodies.md)).
+([Das Audit-Protokoll für Behörden](../../sicherheit/audit-protokoll-fuer-oeffentliche-stellen.md)).
 
 ## Inhalt
 

@@ -14,7 +14,7 @@ Exponential gebaute Website zu EN 301 549 „Barrierefreiheitsanforderungen für
 v3.2.1 (2021-03), herausgegeben von ETSI, CEN und CENELEC, in Beziehung setzen müssen
 (<https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf>). Der Status des
 Projekts für diese Norm ist **Nicht geprüft**
-([Standards zur Barrierefreiheit: EN 301 549](../../../../eng-us/standards/accessibility.md#en-301-549)).
+([Standards zur Barrierefreiheit: EN 301 549](../../../standards/barrierefreiheit.md#en-301-549)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -48,9 +48,9 @@ Autorenwerkzeuge und Abschnitt 11.8 als nicht geprüft.
 | 11.8 Autorenwerkzeuge | Bildfelder bieten ein Feld für Alternativtext; eine Klasse kann ihn verpflichtend machen („Alternativtext ist erforderlich“, seit 6.0.15); Rich Text hat Überschriften, Tabellenbeschriftungen und Kopfzellen; die optionale Erweiterung Exponential Intelligence kann Alternativtexte zur Prüfung durch die Redaktion vorschlagen | vom Projekt **nicht bewertet** | bewerten, ob das Werkzeug die Autorinnen und Autoren auffordert und die von ihnen eingegebenen Informationen zur Barrierefreiheit erhält |
 | 12 Dokumentation und Support | das Hilfesystem folgt denselben Regeln (ein `h1`, benannte Landmarks, beschriftete Suche, sichtbarer Fokus, angekündigte Suchergebnisse) | gegenüber Abschnitt 12 nicht bewertet | Ihren eigenen Supportkanal auf barrierefreien Wegen erreichbar machen |
 
-Quellen: [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md),
-[Hilfesystem: Sprachen und Barrierefreiheit](../../../../eng-us/features/6.0/help-system.md#languages-and-accessibility),
-[Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md).
+Quellen: [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md),
+[Hilfesystem: Sprachen und Barrierefreiheit](../../../funktionen/6.0/hilfesystem.md#sprachen-und-barrierefreiheit),
+[Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md).
 
 ### Ein Hinweis zu Abschnitt 11.8 und Rich Text
 
@@ -78,9 +78,9 @@ können:
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

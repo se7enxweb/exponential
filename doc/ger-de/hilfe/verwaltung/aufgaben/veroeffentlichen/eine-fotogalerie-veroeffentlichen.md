@@ -65,7 +65,7 @@ einmal darin ab ([Medien und Uploads](../../../medien-und-uploads.md#dateien-hoc
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Viele Dateien auf einmal hochladen](viele-dateien-auf-einmal-hochladen.md)
-- [Bilder und Bildvarianten](../../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)
+- [Bilder und Bildvarianten](../../../ersteller/website-ersteller/bilder-und-bildvarianten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

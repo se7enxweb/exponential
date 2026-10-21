@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Datenschutzbeauftragte und Projektleitungen. Das Verzeichnis von Verarbeitungstätigkeiten
 (Art. 30 DSGVO) zu führen, ist Aufgabe des Betreibers; die Aussage des Projekts sagt das ausdrücklich
-([Datenschutzstandards: Status](../../../../eng-us/standards/privacy.md#status)). Exponential kann Ihr Verzeichnis nicht
+([Datenschutzstandards: Status](../../../standards/datenschutz.md#status)). Exponential kann Ihr Verzeichnis nicht
 schreiben, aber es kann die Fakten dafür liefern. Unten finden Sie die Verarbeitungstätigkeiten einer typischen
 öffentlichen Website mit den Fakten aus dem Produkt.
 

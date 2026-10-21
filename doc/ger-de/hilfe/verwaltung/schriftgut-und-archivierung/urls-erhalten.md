@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Redaktionen und Administratoren. Öffentliche Stellen zitieren Webadressen in Schreiben,
 Beschlüssen und anderen Veröffentlichungen; eine Adresse, die nicht mehr funktioniert, macht diese Dokumente schwerer
 nutzbar. Exponential hält Adressen bei Umbenennungen und Verschiebungen stabil; das Entfernen ist der wichtigste Weg,
-sie zu brechen ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+sie zu brechen ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Inhalt
 
@@ -41,7 +41,7 @@ sie zu brechen ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/hel
 | Besucher einer entfernten Seite an einen nützlichen Ort schicken | ein Alias oder Platzhalter auf den Ersatz oder auf eine Archivseite |
 
 Einzelheiten: [Links, URL-Aliasse, Platzhalter](../../../anleitungen/urls-und-aliase.md),
-[URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md).
+[URL-Aliasse und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md).
 
 ## Praktiken
 
@@ -66,7 +66,7 @@ und beobachten Sie nach Umstrukturierungen **Setup > Logdateien** > „Nicht gef
 
 - [Weiterleitungen nach einer Umstrukturierung](weiterleitungen-nach-einer-umstrukturierung.md)
 - [Links, URL-Aliasse, Platzhalter und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)
-- [URL-Platzhalter](../../../../eng-us/help/creators/website-creators/url-wildcards.md)
+- [URL-Platzhalter](../../ersteller/website-ersteller/url-platzhalter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

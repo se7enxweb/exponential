@@ -42,8 +42,8 @@ Entfernen des Moduls.
 
 - [Gesammelte Informationen](../../anleitungen/gesammelte-informationen.md)
 - [Formulare und gesammelte Informationen](../kunden/wachstum/formulare-und-gesammelte-informationen.md)
-- [Formulareinsendungen](../../../eng-us/help/creators/website-creators/form-submissions.md)
-- [Spamschutz für Formulare](../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)
+- [Formulareinsendungen](../ersteller/website-ersteller/formulareinsendungen.md)
+- [Spamschutz für Formulare](../ersteller/website-ersteller/spamschutz-fuer-formulare.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

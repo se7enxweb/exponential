@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Geschäftsinhaber, die entscheiden, wie ihre Kunden bezahlen. Sie erklärt, wie ein
 Zahlungsanbieter in einen Exponential-Shop eingebunden wird, die zwei Arten der Anbindung, die Anbieter, für die das
 Projekt Erweiterungen anbietet, und die Fragen, die Sie stellen sollten, bevor Sie einen Vertrag mit einem Anbieter
-schließen. Die Einrichtung ist unter [Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md) beschrieben.
+schließen. Die Einrichtung ist unter [Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md) beschrieben.
 
 ## Inhalt
 
@@ -28,7 +28,7 @@ schließen. Die Einrichtung ist unter [Zahlungsanbieter](../../../../eng-us/help
 
 In Exponential ist eine Zahlungsanbindung ein **Workflow-Ereignis** an der Kasse. Wenn der Kunde bezahlt, schickt das
 Ereignis ihn zum Anbieter oder belastet ihn direkt und markiert die Bestellung als bezahlt, sobald der Anbieter
-bestätigt ([Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md)). In der Praxis:
+bestätigt ([Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md)). In der Praxis:
 
 1. `settings/paymentgateways.ini` listet die aktiven Anbindungen auf.
 2. Ein Workflow mit dem Ereignis der Zahlungsanbindung (`ezpaymentgateway`, in `kernel/classes/workflowtypes/event/`)
@@ -60,7 +60,7 @@ Anbieters eingegeben; bei einem Formular auf Ihrer Website laufen sie über Ihre
 | `ezpaypal` 1.2.3 | PayPal | Weiterleitung zu PayPal; PayPal benachrichtigt `/paypal/notify_url` | Vom `composer.json` des Hauptverzeichnisses verlangt (`se7enxweb/ezpaypal ~1.2.3`) |
 | `ezauthorize` | Authorize.Net | Kartenformular auf Ihrer Website, an die AIM-Schnittstelle von Authorize.Net gesendet | Im `composer.json` vorgeschlagen (`se7enxweb/ezauthorize`) |
 
-Quellen: [ezpaypal](../../../../eng-us/features/6.0/extensions/ezpaypal.md), das `composer.json` des Hauptverzeichnisses und die
+Quellen: [ezpaypal](../../../funktionen/6.0/erweiterungen/ezpaypal.md), das `composer.json` des Hauptverzeichnisses und die
 eigenen Dateien der Erweiterung (`extension/ezauthorize/doc/README`, `classes/ezauthorizeaim.php`). Der Vorschlag im
 `composer.json` beschreibt ezauthorize als „transparent (no redirect away to paypal.com website distractions)“
 Zahlungslösung.
@@ -73,9 +73,9 @@ Viele Unternehmen haben bereits eine Bank oder einen Zahlungsanbieter. Hat das P
 sich eine Anbindung schreiben: eine Klasse, die `eZPaymentGateway` erweitert oder, für Anbieter mit Weiterleitung,
 `eZRedirectGateway`, registriert in der `paymentgateways.ini` einer Erweiterung, dazu eine Ansicht für den Rückruf des
 Anbieters. Die Seiten unter `doc/eng-us/shop/examples/paypal/` gehen eine solche Schritt für Schritt durch
-([Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md#a-gateway-of-your-own)).
+([Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md#ein-eigenes-gateway)).
 
-Das ist Arbeit für Anwendungsentwickler ([Einen Workflow-Ereignistyp schreiben](../../../../eng-us/help/creators/app-creators/writing-a-workflow-event-type.md)).
+Das ist Arbeit für Anwendungsentwickler ([Einen Workflow-Ereignistyp schreiben](../../ersteller/anwendungsentwickler/einen-workflow-ereignistyp-schreiben.md)).
 Eine Anbindung mit Weiterleitung ist meist das einfachere und sicherere Projekt. Wenn Sie eine in Auftrag geben,
 bitten Sie darum, dass sie als Erweiterung veröffentlicht wird, die andere nutzen können
 ([Erweiterungen zurückgeben: Ihre Arbeit mit allen teilen](../../erweiterungen-zurueckgeben.md)).
@@ -101,7 +101,7 @@ zählt. Für PayPal lautet die Einstellung `paypal.ini [OrderSettings] PaymentMa
 
 ## Zahlungen testen
 
-Aus [Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md#testing):
+Aus [Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md#testen):
 
 - [ ] Eine Zahlung im Testmodus des Anbieters wird abgeschlossen, und die Bestellung wird bezahlt.
 - [ ] Eine abgebrochene Zahlung lässt die Bestellung unbezahlt, und der Kunde kann es erneut versuchen.
@@ -110,7 +110,7 @@ Aus [Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment
 
 ## Verwandte Seiten
 
-- [Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
+- [Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md)
 - [Zahlungen mit PayPal](zahlungen-mit-paypal.md)
 - [Kartenzahlungen und PCI-Grundlagen](kartenzahlungen-und-pci-grundlagen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

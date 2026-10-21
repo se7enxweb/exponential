@@ -13,7 +13,7 @@ Diese Seite ist für Redakteure und Web-Verantwortliche nach einer Umstrukturier
 Sektion umbenannt, alte Seiten außer Dienst gestellt. Lesezeichen, gedruckte Faltblätter und andere Sites verweisen auf
 die alten Adressen. Exponential behält Weiterleitungen für umbenannte und verschobene Seiten von selbst; entfernte
 Seiten und ganze Muster brauchen Sie
-([Weiterleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md),
+([Weiterleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md),
 [URLs und Aliase, 4](../../../../anleitungen/urls-und-aliase.md#4-url-platzhalter)).
 
 ## Inhalt
@@ -73,7 +73,7 @@ globaler Alias mit Weiterleitung.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Seite verschieben](eine-seite-verschieben.md)
-- [URL-Platzhalter](../../../../../eng-us/help/creators/website-creators/url-wildcards.md)
+- [URL-Platzhalter](../../../ersteller/website-ersteller/url-platzhalter.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

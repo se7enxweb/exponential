@@ -35,7 +35,7 @@ Double-Opt-in beweist, dass der Inhaber der Adresse es verlangt hat.
 | Weicher oder harter Rückläufer | die Mail konnte nicht zugestellt werden |
 
 Nur bestätigte oder freigegebene Abonnenten erhalten Ausgaben
-([Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md)).
+([Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md)).
 
 ## Was das Anmeldeformular sagt
 
@@ -49,10 +49,10 @@ Nur bestätigte oder freigegebene Abonnenten erhalten Ausgaben
 Die E-Mail-Einstellungen des Kernels führen ein Einwilligungsprotokoll (`expmail_consent_log`): Zeit, Kategorie, alter
 und neuer Zustand, Quelle, der genau angezeigte Text, handelnder Benutzer, Siteaccess. Werbliche Kategorien sind
 Opt-in, der Widerruf ist so einfach wie die Einwilligung, und eine Person kann ihre Einstellungen und ihren
-Einwilligungsverlauf herunterladen ([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md#gdpr),
+Einwilligungsverlauf herunterladen ([Standards zum Datenschutz](../../../../standards/datenschutz.md#dsgvo),
 [E-Mail-Einstellungen für Administratoren](../../../../anleitungen/mail-einstellungen-administrator.md)). Der Newsletter
 arbeitet seit 4.2.0 über diese E-Mail-Einstellungen
-([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
 ## Bestehende Listen importieren
 
@@ -63,13 +63,13 @@ einzelne Mail zur erneuten Einwilligung über einen anderen Kanal oder beginnen 
 ## Statistik und Einwilligung
 
 Öffnungen und Klicks je Person werden nur mit der Einwilligung des Empfängers in die Kategorie „Newsletter statistics“
-gezählt; sonst nur anonyme Summen ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)). Das
+gezählt; sonst nur anonyme Summen ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)). Das
 Tracking ist aus, bis es eingeschaltet wird. Viele Behörden brauchen überhaupt keine personenbezogenen Statistiken.
 
 ## Verwandte Seiten
 
 - [Abmeldung mit einem Klick und das Mail-Gateway](abmeldung-mit-einem-klick-und-das-mail-gateway.md)
-- [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md)
+- [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

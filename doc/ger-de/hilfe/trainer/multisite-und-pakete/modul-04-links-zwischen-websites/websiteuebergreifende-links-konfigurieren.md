@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Links auf Inhalte einer anderen Website, Installation und neue Installationen](../../../../../eng-us/features/6.0/multisite-cross-site-links.md#installing-it-on-an-existing-site).
+Quelle: [Links auf Inhalte einer anderen Website, Installation und neue Installationen](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md#auf-einer-bestehenden-website-installieren).
 
 1. **Die Einstellungen** (5 Minuten):
 
@@ -165,15 +165,15 @@ Verwenden Sie Ihre Schulungsinstallation aus Modul 3. Ersetzen Sie `http://127.0
    werden.
 4. `postInstallWriteMultisiteURLSettings` der Multisite-Installer.
 5. `eZURLMultisite::crossSiteURL( $nodeOrURLAlias, 'relative' )`; `false` bedeutet, den lokalen Link beizubehalten
-   ([Für Entwickler von Erweiterungen](../../../../../eng-us/features/6.0/multisite-cross-site-links.md#for-extension-developers)).
+   ([Für Entwickler von Erweiterungen](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md#für-entwickler-von-extensions)).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Links auf Inhalte einer anderen Website einer Multisite-Installation](../../../../../eng-us/features/6.0/multisite-cross-site-links.md).
-- [Suche mit eZ Find und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md) und
-  [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md): wenn Suchergebnisse websiteübergreifend
+- [Links auf Inhalte einer anderen Website einer Multisite-Installation](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md).
+- [Suche mit eZ Find und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md) und
+  [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md): wenn Suchergebnisse websiteübergreifend
   verlinken.
 - [Caches](../../../../anleitungen/caches.md): der Template- und der Inhalts-Cache.
 
@@ -181,7 +181,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Modul 3. Ersetzen Sie `http://127.0
 
 - [Modul 4: Links zwischen Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

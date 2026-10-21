@@ -37,7 +37,7 @@ auf der ein KI-Anbieter eingerichtet ist.
 
 - [Exponential Intelligence für Website-Inhaber](../kunden/wachstum/exponential-intelligence.md)
 - [KI-Entwürfe verantwortungsvoll nutzen](../kunden/wachstum/ki-entwuerfe-verantwortungsvoll-nutzen.md)
-- [expai](../../../eng-us/features/6.0/extensions/expai.md)
+- [expai](../../funktionen/6.0/erweiterungen/expai.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

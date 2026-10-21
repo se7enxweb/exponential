@@ -150,8 +150,8 @@ ERROR : Unknown template variable 'title' in namespace 'Box'
 
 - Zurück: [Variablen im Detail](variablen-im-detail.md)
 - Weiter: [Zugriff auf Attribute](zugriff-auf-attribute.md)
-- [Include](../../../eng-us/help/designers/templates/include.md)
-- [Section (veraltet)](../../../eng-us/help/designers/templates/section-legacy.md)
+- [Include](../designer/vorlagen/include.md)
+- [Section (veraltet)](../designer/vorlagen/section-legacy.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

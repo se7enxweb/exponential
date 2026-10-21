@@ -30,13 +30,13 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 
 - [ ] Zweck, Stufen und verantwortliche Person entschieden ([Mitgliederwebsite planen](mitgliederwebsite-planen.md)).
 - [ ] Die Website antwortet unter ihrer Adresse mit HTTPS
-  ([Live gehen: Hosts, HTTPS und Siteaccesses](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+  ([Live gehen: Hosts, HTTPS und Siteaccesses](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] Das Standardpasswort des Administrators geändert
   ([Standard-Administratorpasswort](../../standard-administratorpasswort.md)).
 - [ ] Der öffentliche Siteaccess hat `RequireUserLogin=false`
-  ([Was Besucher sehen dürfen, Common mistakes](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#common-mistakes)).
+  ([Was Besucher sehen dürfen, Common mistakes](../../ersteller/website-ersteller/rechte-fuer-besucher.md#häufige-fehler)).
 - [ ] Barrierefreiheit auf den wichtigsten Seiten geprüft
-  ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+  ([Barrierefreiheit testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)).
 
 ## Registrierung
 
@@ -48,9 +48,9 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 - [ ] Wenn die Organisation Mitglieder freigibt: Die Mail „Neuer Benutzer registriert“ kommt an, und ihre Links
   funktionieren ([Registrierung und Kontofreigabe](../extranets/registrierung-und-kontofreigabe.md)).
 - [ ] CAPTCHA in der Benutzerklasse
-  ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+  ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 - [ ] Vergessenes Passwort getestet
-  ([Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+  ([Das Passwort eines Benutzers zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 
 ## Inhalte nur für Mitglieder
 
@@ -65,7 +65,7 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 
 - [ ] Newsletter-Listen pro Zielgruppe ([Kommunikation mit Mitgliedern](kommunikation-mit-mitgliedern.md)).
 - [ ] Eine vollständige Generalprobe des Newsletters mit Dateitransport erledigt
-  ([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+  ([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 - [ ] Cron-Teile des Newsletters eingeplant.
 - [ ] Fußzeile der E-Mail-Einstellungen: Name und Postanschrift der Organisation ausgefüllt.
 - [ ] Einträge der Absenderdomain vom Hoster geprüft ([Mailzustellung](../../hosting/betrieb/mailzustellung.md)).
@@ -83,7 +83,7 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
   ([Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)).
 - [ ] Nur die nötigen Felder in der Benutzerklasse.
 - [ ] Suchstatistiken ausgeschaltet gelassen oder mit einem Grund eingeschaltet
-  ([Suche auf der Website, Search statistics](../../../../eng-us/help/creators/website-creators/site-search.md#search-statistics)).
+  ([Suche auf der Website, Search statistics](../../ersteller/website-ersteller/suche-auf-der-website.md#suchstatistiken)).
 - [ ] Aufbewahrung für unbestätigte und inaktive Konten vereinbart
   ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 - [ ] Datenschutzhinweis veröffentlicht ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
@@ -111,8 +111,8 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 | Rhythmus | Aufgabe | Seite |
 |---|---|---|
 | Wöchentlich | Registrierungen freigeben oder bereinigen | [Rollen und Richtlinien, 7](../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen) |
-| Monatlich | Newsletter; Bounces und die Sperrliste prüfen | [Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md) |
-| Vierteljährlich | inaktive und doppelte Konten prüfen | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
+| Monatlich | Newsletter; Bounces und die Sperrliste prüfen | [Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md) |
+| Vierteljährlich | inaktive und doppelte Konten prüfen | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 | Jährlich | Rollen, Sektionen und den Datenschutzhinweis prüfen | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md) |
 
 Passen Sie den Rhythmus an die Größe Ihrer Organisation an.
@@ -121,7 +121,7 @@ Passen Sie den Rhythmus an die Größe Ihrer Organisation an.
 
 - [Mitgliederwebsites](README.md)
 - [Checkliste für kleine Gruppen](../vereine/checkliste-fuer-kleine-gruppen.md)
-- [Checkliste für den Start für Website-Ersteller](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Checkliste für den Start für Website-Ersteller](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Vorlage Checkliste Go-live](../vorlagen/checkliste-go-live.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

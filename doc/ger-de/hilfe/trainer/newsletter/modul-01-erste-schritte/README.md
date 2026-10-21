@@ -34,7 +34,7 @@ noch keine Ausgabe geschrieben.
 
 - [ ] Eine Schulungsinstallation mit aktiver Erweiterung `cjw_newsletter`, angelegten Tabellen und einem
       Newsletter-Baum mit mindestens einem System und einer Liste (siehe die Datei `INSTALL` der Erweiterung und die
-      [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+      [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 - [ ] `site.ini [MailSettings] Transport=file` und alle drei Schlüssel `TransportMethod*` auf `file` gesetzt, geprüft
       in der Einstellungsansicht (Lektion 1.2 vorab vom Trainer erledigt).
 - [ ] Ein Schulungskonto für die Administration pro Person; Shell-Zugang für die Administratoren im Raum.
@@ -52,7 +52,7 @@ noch keine Ausgabe geschrieben.
 ## Verwandte Seiten
 
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

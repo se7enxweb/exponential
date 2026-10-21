@@ -67,7 +67,7 @@ weiterzuführen, nachdem es dieses seit 2014 vorbereitet hatte.“
 | 2001 | "I founded 7x in 2001 as Brookins Consulting" (<https://graham.se7enx.com/7x>) |
 | 2014 | Darstellung von 7x (18. Oktober 2026); "rebranded in 2014" (<https://graham.se7enx.com/7x>) |
 | 2022 | Darstellung von 7x; "Previously before 2022, 7x was called Brookins Consulting" ([README.md](https://github.com/se7enxweb/exponential/blob/main/README.md)) |
-| Dezember 2023 | "In 2023/12 Brookins Consulting an eZ Partner in USA ... renamed the company to '7x'" (<https://se7enx.com/about/exponential-hosting-usa>); [Dezember 2023](../../../eng-us/history/2023/2023-12.md) |
+| Dezember 2023 | "In 2023/12 Brookins Consulting an eZ Partner in USA ... renamed the company to '7x'" (<https://se7enx.com/about/exponential-hosting-usa>); [Dezember 2023](../../geschichte/2023/2023-12.md) |
 
 Jede öffentliche Quelle nennt die Etappe, die sie beschreibt, und deshalb unterscheiden sich die Jahre
 ([Wer ist 7x?](../wer-ist-7x.md#von-brookins-consulting-zu-7x-in-drei-stufen)).

@@ -152,18 +152,18 @@ Kurz gefasst, bevor Sie den Pull Request öffnen:
 - Ein geändertes Paket bekommt eine neue Version. Ein Ordner auf dem Server ist ein Release von Exponential; darin erhöhen Sie die Version
   Ihres Pakets, wenn Sie seine Datei ersetzen, und sagen in `<changelog>` und im Pull Request, was sich geändert hat.
 - Wenn Ihr Paket auch in Ihrem eigenen Repository getaggt wird, gilt dort ebenfalls die Regel des Projekts für Tags: Ein gepushtes Tag
-  wird nie verschoben ([Ein gepushtes Tag ist dauerhaft](../../../eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md)).
+  wird nie verschoben ([Ein gepushtes Tag ist dauerhaft](../designer/veroeffentlichung/ein-gepushter-tag-ist-endgueltig.md)).
 
 ## Lizenz
 
 - **Code** (Installationsskripte, Templates, Einstellungen, Erweiterungen im Paket): eine Lizenz, die mit der GNU GPL vereinbar ist, weil
   Exponential selbst unter GPL 2.0 oder neuer steht. Der Standard des Paketassistenten ist `GPL-2.0-or-later`
-  (`package.ini [LicenseSettings] DefaultLicense`). Siehe [GPL für Theme-Code](../../../eng-us/help/designers/distribution/gpl-for-theme-code.md).
+  (`package.ini [LicenseSettings] DefaultLicense`). Siehe [GPL für Theme-Code](../designer/veroeffentlichung/gpl-fuer-theme-code.md).
 - **Dokumentation**, die mit dem Paket ausgeliefert wird (README, Anleitungen): die GNU Free Documentation License 1.3, wie für die eigene
   Dokumentation von Exponential ([Freie Dokumentation](../freie-dokumentation.md),
-  [GFDL für Theme-Dokumentation](../../../eng-us/help/designers/distribution/gfdl-for-theme-documentation.md)).
+  [GFDL für Theme-Dokumentation](../designer/veroeffentlichung/gfdl-fuer-theme-dokumentation.md)).
 - **Bilder und Demo-Inhalte**: nur Material, das Sie teilen dürfen, mit angegebener Lizenz. Creative-Commons-Lizenzen stehen in der Liste
-  des Assistenten ([Creative Commons für Bilder](../../../eng-us/help/designers/distribution/creative-commons-for-images.md)).
+  des Assistenten ([Creative Commons für Bilder](../designer/veroeffentlichung/creative-commons-fuer-bilder.md)).
 
 ## Die Installation zuerst in einer Sandbox testen
 
@@ -225,7 +225,7 @@ Fragen zu einem Paket, bevor Sie einen Pull Request öffnen, sind in den Issue-T
 - [Ein eigenes Seitenpaket erstellen](eigene/README.md)
 - [Der Paketserver](paketserver/README.md)
 - [Anforderungen an die Dokumentation von Seitenpaketen](anforderungen/README.md)
-- [Wählen, wo Sie veröffentlichen](../../../eng-us/help/designers/distribution/choosing-where-to-publish.md)
+- [Wählen, wo Sie veröffentlichen](../designer/veroeffentlichung/waehlen-wo-veroeffentlicht-wird.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

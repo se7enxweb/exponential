@@ -42,7 +42,7 @@ Aus `php ezpm.php help` und `kernel/private/classes/commands/ezpm.php`:
 | `list`, `info` | `list`, `info PACKAGE` | die Pakete der Repositorys, die Details eines Pakets |
 
 Globale Optionen umfassen `-s`/`--siteaccess`, `-l`/`--login` mit `-p`/`--password` und `-r`/`--repos`; die vollständige Tabelle steht auf
-[ezpm: der Paketmanager auf der Kommandozeile](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md).
+[ezpm: der Paketmanager auf der Kommandozeile](../../../funktionen/6.0/ezpm-paketmanager-cli.md).
 
 > **Warnung**
 > Führen Sie ezpm auf einer Testinstallation aus. `install` und `import` ändern die Installation; `create`, `add`, `set` und `export` schreiben
@@ -91,7 +91,7 @@ php ezpm.php set acme_extension state stable
 
 Das Exportieren einer Erweiterung ist standardmäßig aus: `add ezextension` verweigert, bis die Erweiterung in
 `package.ini [ExtensionExportSettings] AllowedExtensions[]` steht (oder `*`), und es verweigert immer eine Erweiterung mit geheimen Werten
-oder Schlüsselmaterial ([Mit ezpm exportieren](../../../../eng-us/help/designers/extensions/exporting-with-ezpm.md)).
+oder Schlüsselmaterial ([Mit ezpm exportieren](../../designer/erweiterungen/exportieren-mit-ezpm.md)).
 
 ## Felder setzen
 
@@ -142,8 +142,8 @@ jeder Lauf mit einem leeren Paket beginnt.
 
 - [Ein eigenes Seitenpaket erstellen](README.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [ezpm: der Paketmanager auf der Kommandozeile](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md)
-- [Das JSON-Paketformat](../../../../eng-us/bc/6.0/package-json-format.md)
+- [ezpm: der Paketmanager auf der Kommandozeile](../../../funktionen/6.0/ezpm-paketmanager-cli.md)
+- [Das JSON-Paketformat](../../../bc/6.0/package-json-format.md)
 - [Klassen und Inhalte ändern](klassen-und-inhalte-aendern.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

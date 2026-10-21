@@ -39,7 +39,7 @@ stammen aus Ihren eigenen Angeboten und Aufzeichnungen.
 |---|---|---|
 | Beschaffung | Ausschreibung, Bewertung, Proof of Concept | [Plan für einen Proof of Concept](../bewertung/plan-fuer-einen-proof-of-concept.md) |
 | Umsetzung | Inhaltsmodell, Design, Templates, Integrationen, Migration alter Inhalte | [Leitfaden für Umsetzungsprojekte](../../../partner/leitfaden-fuer-implementierungsprojekte.md), [Übersicht zur Migration](../../../../installation/migration/README.md) |
-| Livegang | Härtung, Tests der Barrierefreiheit, Schulung, Start | [Sicherheitshärtung](../../../sicherheitshaertung.md), [Checkliste zum Start](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Livegang | Härtung, Tests der Barrierefreiheit, Schulung, Start | [Sicherheitshärtung](../../../sicherheitshaertung.md), [Checkliste zum Start](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 | Betrieb | Hosting, Support, Sicherungen, Überwachung, redaktionelle Arbeit | [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md) |
 | Weiterentwicklung | Upgrades, neue Funktionen, Redesigns | [Aktualisieren](../../../../anleitungen/aktualisieren.md) |
 | Ausstieg | Export, Übergabe, Übergang | [Exponential verlassen](../../../../installation/migration/exponential-verlassen.md) |

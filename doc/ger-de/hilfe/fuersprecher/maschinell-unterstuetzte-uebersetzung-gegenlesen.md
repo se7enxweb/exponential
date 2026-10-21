@@ -10,7 +10,7 @@ type: help
 # Eine maschinell unterstützte Übersetzung gegenlesen
 
 Diese Seite ist für Muttersprachler einer Sprache, deren Übersetzung der Administration vollständig, aber maschinell
-unterstützt ist. Laut [Sprachen in Exponential](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)
+unterstützt ist. Laut [Sprachen in Exponential](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)
 ist das Gegenlesen der maschinell unterstützten Übersetzungen ins Spanische, Französische, Ukrainische, Hebräische,
 Lateinische und Klingonische „der schnellste Gewinn“. Sie müssen nicht entwickeln können.
 
@@ -25,7 +25,7 @@ Lateinische und Klingonische „der schnellste Gewinn“. Sie müssen nicht entw
 
 ## Einrichten
 
-- Eine Installation, die Sie kontrollieren ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)).
+- Eine Installation, die Sie kontrollieren ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - Stellen Sie Ihre eigene Oberflächensprache im Feld **Oberfläche** der rechten Spalte um ([Sprachen](../sprachen.md)).
 - Wenn sich Texte nicht ändern, leert ein Administrator den Übersetzungscache
   (`php bin/php/ezcache.php --clear-tag=i18n --allow-root-user`, laut Abschnitt 8).
@@ -58,7 +58,7 @@ Prüfen Sie in der Reihenfolge, in der Redakteure ihnen begegnen:
 ## Ein Glossar führen
 
 Schreiben Sie auf, wie wichtige Begriffe übersetzt werden, und verwenden Sie sie überall: object, content class, draft,
-version, publish, siteaccess, section, role, policy, trash, layout, zone, block. Das [Glossar](../../../eng-us/glossary.md) der
+version, publish, siteaccess, section, role, policy, trash, layout, zone, block. Das [Glossar](../../glossar.md) der
 Hilfe erklärt jeden englischen Begriff.
 
 ## Korrigieren und einreichen
@@ -87,7 +87,7 @@ Glossary decisions:
 
 - [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md)
 - [Einen Beitrags-Sprint vorschlagen](einen-beitrags-sprint-vorschlagen.md)
-- [Sprachen in Exponential](../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../sprachen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

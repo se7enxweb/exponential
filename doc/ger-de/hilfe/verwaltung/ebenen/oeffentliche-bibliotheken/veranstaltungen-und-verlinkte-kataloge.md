@@ -28,13 +28,13 @@ Website verlinkt darauf.
 |---|---|---|
 | Klasse Event (`event`) | Short title (Pflicht), Full title, Text, Category (Schlüsselwörter), From Time (Pflicht), To Time | [Inhaltsmodell für öffentliche Bibliotheken](inhaltsmodell.md) |
 | Klasse Event calendar (`event_calendar`) | ein Container mit Full Title und einer Auswahl **View** | |
-| Ansichten | `event_view_calendar.tpl` (Monatsraster) und `event_view_program.tpl` (Liste) des Designs ezwebin | [ezwebin](../../../../../eng-us/features/6.0/extensions/ezwebin.md) |
-| Cache | der Veranstaltungskalender von ezwebin hält seine Seite 400 Sekunden (`cache_ttl`) | [Caching für Designerinnen und Designer](../../../../../eng-us/help/designers/theme-design/caching-for-designers.md) |
+| Ansichten | `event_view_calendar.tpl` (Monatsraster) und `event_view_program.tpl` (Liste) des Designs ezwebin | [ezwebin](../../../../funktionen/6.0/erweiterungen/ezwebin.md) |
+| Cache | der Veranstaltungskalender von ezwebin hält seine Seite 400 Sekunden (`cache_ttl`) | [Caching für Designerinnen und Designer](../../../designer/theme-design/caching-fuer-designer.md) |
 
 Die Ansichten kommen mit dem Design ezwebin. Das Standarddesign `simple` neuer Installationen hat kein Template für den
 Veranstaltungskalender; eine Website mit diesem Design braucht einen eigenen Override `full/event_calendar.tpl` oder eine
 mit einem Fetch erstellte Liste (nächster Abschnitt)
-([Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)).
+([Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)).
 
 Eine Veranstaltung hinzufügen: Öffnen Sie den Veranstaltungskalender, **Neu erstellen** > **Event**, füllen Sie Short
 title und From Time (und To Time) aus, den Text mit Ort und Barrierefreiheit, und **Zur Veröffentlichung schicken**
@@ -64,10 +64,10 @@ Anfangszeit:
 
 `$calendar_node_id` ist der Knoten Ihres Veranstaltungskalenders. Für eine Zweigstelle fügen Sie der Klasse Event ein
 Beziehungsattribut `branch` hinzu und filtern danach, oder Sie versehen Veranstaltungen mit dem Tag der Zweigstelle und
-listen nach Tag ([Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)). Eine
+listen nach Tag ([Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)). Eine
 zwischengespeicherte Startseite zeigt eine vergangene Veranstaltung, bis ihr Cache abläuft; geben Sie dem Block einen
 Cache-Ablauf oder ein kurzes `cache_ttl`
-([Ansichts-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)).
+([Ansichts-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md)).
 
 ## Änderungen, Absagen und Anmeldung
 
@@ -112,7 +112,7 @@ seiner Schaltfläche einen klaren Namen. Ein RSS-Import legt je Eintrag des Feed
 
 - [Öffentliche Bibliotheken](README.md)
 - [Inhaltsmodell für öffentliche Bibliotheken](inhaltsmodell.md)
-- [RSS-Feeds für Ihre Website](../../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
+- [RSS-Feeds für Ihre Website](../../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

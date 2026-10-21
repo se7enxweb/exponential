@@ -57,7 +57,7 @@ wartet das Konto, bis jemand entscheidet ([Registrierung und Kontofreigabe](regi
 Ja. Das Öffnen eines Links ändert nichts; die freigebende Person muss mit der richtigen Richtlinie angemeldet sein und
 durch einen Klick auf eine Schaltfläche bestätigen. Die Links sind signiert, laufen standardmäßig nach 7 Tagen ab und
 geben nur einmal frei oder lehnen nur einmal ab
-([Signierte Links, Security](../../../../eng-us/features/6.0/registration-admin-links.md#security)).
+([Signierte Links, Security](../../../funktionen/6.0/admin-links-der-registrierung.md#sicherheit)).
 
 **Wie schließen wir Konten, wenn ein Vertrag endet?**
 Entfernen Sie die Zuordnungen der Organisation, deaktivieren Sie dann ihre Konten oder deaktivieren und verschieben Sie
@@ -104,7 +104,7 @@ Nachlass auf Produkte oder Klassen. Feste Preislisten pro Händler sind keine do
 
 **Verwaltet der Shop Lagerbestände oder Rechnungen?**
 Nein. Lagerbestand, Buchhaltungsrechnungen, Versandetiketten und Marktplätze sind Erweiterungen oder Integrationen
-([Einen Shop betreiben, What the shop does not do](../../../../eng-us/help/creators/website-creators/shop-overview.md#what-the-shop-does-not-do)).
+([Einen Shop betreiben, What the shop does not do](../../ersteller/website-ersteller/shop-ueberblick.md#was-der-shop-nicht-leistet)).
 
 ## Sicherheit und Nachweise
 
@@ -114,7 +114,7 @@ Ja, mit `sevenx_authentication_2fa` und `Enforce2FA=enabled`
 
 **Können wir belegen, wer Zugriff hatte und was sich geändert hat?**
 Das Prüfprotokoll zeichnet Anmeldungen, Ablehnungen, Rollenzuordnungen und Inhaltsänderungen in einem
-manipulationssicheren Log auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+manipulationssicheren Log auf ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 **Wie oft sollten wir Zugriffe prüfen?**
 In einem festen Rhythmus, den Sie mit Ihrem Sicherheitsbeauftragten vereinbaren; die Routine dafür steht unter

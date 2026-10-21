@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren. Ein ganzer Siteaccess kann eine Anmeldung verlangen, was zu einem
 Intranet passt
-([Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md#a-members-only-area)).
+([Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md#ein-bereich-nur-für-mitglieder)).
 
 ## Inhalt
 
@@ -58,7 +58,7 @@ festgelegt im Webserver oder in der Firewall. Die Anmeldung ist die zweite Verte
 ## Aus Suchmaschinen heraushalten
 
 Seiten, die eine Anmeldung verlangen, können Crawler nicht lesen. Fügen Sie für den Intranet-Host eine `robots.txt`
-hinzu, die alles verbietet ([robots.txt](../../../../../eng-us/help/creators/website-creators/robots-txt.md)).
+hinzu, die alles verbietet ([robots.txt](../../../ersteller/website-ersteller/robots-txt.md)).
 
 ## Prüfungen
 
@@ -69,7 +69,7 @@ hinzu, die alles verbietet ([robots.txt](../../../../../eng-us/help/creators/web
 ## Verwandte Seiten
 
 - [Sektionen und Rollen für Intranet-Inhalte](sektionen-und-rollen-fuer-intranet-inhalte.md)
-- [Live gehen: Hosts, HTTPS und Siteaccesses](../../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)
+- [Live gehen: Hosts, HTTPS und Siteaccesses](../../../ersteller/website-ersteller/livegang-hosts-und-https.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

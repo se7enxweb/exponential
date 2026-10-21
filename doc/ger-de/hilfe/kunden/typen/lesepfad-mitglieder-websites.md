@@ -18,7 +18,7 @@ Die Reihenfolge, in der ein Mitgliederteam seine Website kennenlernt. Jeder Schr
 | 1 | [Mitglieder-Websites: hier beginnen](mitglieder-websites-hier-beginnen.md) | Alle | Wie eine Mitglieder-Website läuft |
 | 2 | [In der Administration anmelden](../../anmelden-in-der-administration.md) | Mitgliederverwaltung | Wo man sich anmeldet |
 | 3 | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Alle mit Zugang | Mitgliederdaten brauchen sichere Konten |
-| 4 | [Administratorlinks bei Registrierungen](../../../../eng-us/features/6.0/registration-admin-links.md) | Mitgliederverwaltung | Neue Mitglieder genehmigen oder ablehnen |
+| 4 | [Administratorlinks bei Registrierungen](../../../funktionen/6.0/admin-links-der-registrierung.md) | Mitgliederverwaltung | Neue Mitglieder genehmigen oder ablehnen |
 | 5 | [Inhalte nur für Mitglieder](../../unternehmen/mitglieder/inhalte-nur-fuer-mitglieder.md) | Mitgliederverwaltung | Was die Öffentlichkeit sieht und was Mitglieder sehen |
 | 6 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Vorstandsmitglied, das für die Website verantwortlich ist | Eine Rolle pro Aufgabe |
 | 7 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Nachrichtenredaktion | Neuigkeiten für Mitglieder |
@@ -27,7 +27,7 @@ Die Reihenfolge, in der ein Mitgliederteam seine Website kennenlernt. Jeder Schr
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 8 | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) | Mitgliederverwaltung | Mitglieder wählen und beenden ihre E-Mails |
+| 8 | [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md) | Mitgliederverwaltung | Mitglieder wählen und beenden ihre E-Mails |
 | 9 | [Newsletter](../wachstum/newsletter.md) | Kommunikation | Newsletter für Mitglieder |
 | 10 | [Mitgliederbereiche und Registrierung](../wachstum/mitgliederbereiche-und-registrierung.md) | Mitgliederverwaltung | Den Mitgliederbereich ausbauen |
 | 11 | [Redaktionskalender](../alltag/redaktionskalender.md) | Kommunikation | Neuigkeiten, Veranstaltungen und Mailings gemeinsam geplant |
@@ -38,7 +38,7 @@ Die Reihenfolge, in der ein Mitgliederteam seine Website kennenlernt. Jeder Schr
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 14 | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) | Mitgliederverwaltung | Alte, gesperrte und doppelte Konten |
+| 14 | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) | Mitgliederverwaltung | Alte, gesperrte und doppelte Konten |
 | 15 | [DSGVO-Anfragen](../handel/dsgvo-anfragen.md) | Vorstand | Wenn ein Mitglied nach seinen Daten fragt |
 | 16 | [Datenexport und Löschung](../handel/datenexport-und-loeschung.md) | Mitgliederverwaltung | Was die Software exportieren und entfernen kann |
 | 17 | [Sicherheitsgrundlagen](../gesund-halten/sicherheitsgrundlagen.md) | Vorstand | Eine Mitglieder-Website enthält personenbezogene Daten |

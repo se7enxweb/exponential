@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren und Mitarbeiter des Service Desks. Am Ende hat eine Kollegin oder ein Kollege, die
 die Abteilung gewechselt haben, die Rechte der neuen Abteilung und keine der alten. Der Zugang folgt den Benutzergruppen,
 also ist der Wechsel eine Änderung des Orts des Kontos. Hintergrund:
-[Eintritte, Wechsel und Austritte](../../../../../eng-us/help/government/operations/people-and-permissions/joiners-movers-leavers.md#movers).
+[Eintritte, Wechsel und Austritte](../../betrieb/personen-und-berechtigungen/eintritt-wechsel-austritt.md#wechsel).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -53,7 +53,7 @@ Das Konto hat jetzt nur die Rollen der neuen Gruppe (dazu die Rollen der Gruppen
 |---|---|
 | Freigebender der alten Abteilung | aus deren Gruppe der Freigebenden entfernen; **Benutzer, die den Inhalt bewilligen** in den Ereignissen Approve prüfen (**Setup > Workflows**) |
 | Dem Konto direkt zugewiesene Rollen | jede Seite einer Rolle; markieren und **Ausgewählte entfernen** |
-| Inhalte im Besitz des Kontos, wenn Rollen `Owner = Self` verwenden | **Change owner** für die Inhalte der alten Abteilung ([Eigentümerschaft von Inhalten](../../../../../eng-us/help/government/operations/editorial-workflows/content-ownership.md)) |
+| Inhalte im Besitz des Kontos, wenn Rollen `Owner = Self` verwenden | **Change owner** für die Inhalte der alten Abteilung ([Eigentümerschaft von Inhalten](../../betrieb/redaktionelle-workflows/verantwortung-fuer-inhalte.md)) |
 | Entwürfe in der alten Abteilung | die Person veröffentlicht oder entfernt sie oder übergibt sie |
 
 ## Prüfen, ob es funktioniert hat
@@ -69,7 +69,7 @@ Das Konto hat jetzt nur die Rollen der neuen Gruppe (dazu die Rollen der Gruppen
 - [Einen neuen Mitarbeiter hinzufügen](einen-neuen-mitarbeiter-hinzufuegen.md)
 - [Eine Rollenzuweisung entfernen](eine-rollenzuweisung-entfernen.md)
 - [Einem Freigebenden Rechte geben](einem-freigebenden-rechte-geben.md)
-- [Rollengestaltung: Redakteure der Abteilungen](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-department-editors.md)
+- [Rollengestaltung: Redakteure der Abteilungen](../../betrieb/personen-und-berechtigungen/rollenentwurf-fachredaktionen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

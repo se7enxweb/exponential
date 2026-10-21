@@ -78,7 +78,7 @@ Die Rollenentwürfe unter [Redaktionen der Fachbereiche](rollenentwurf-fachredak
 ## Fallstricke
 
 - **Eine neue Sektion ist für Besucher unsichtbar.** Wenn Sie eine Sektion für einen neuen öffentlichen Bereich anlegen, geben Sie der Rolle
-  Anonymous auch dafür `content/read` ([Besucher eine neue Sektion lesen lassen](../../../../../eng-us/help/government/tasks/people-and-permissions/let-visitors-read-a-new-section.md)).
+  Anonymous auch dafür `content/read` ([Besucher eine neue Sektion lesen lassen](../../aufgaben/personen-und-berechtigungen/besucher-eine-neue-sektion-lesen-lassen.md)).
 - **Das Entfernen einer Sektion** ist nur möglich, wenn kein Objekt, keine Richtlinie und keine Rollenzuweisung sie verwendet; es gibt kein
   Rückgängig, und eine neue Sektion mit demselben Namen erhält eine neue ID ([Sektionen, Abschnitt 7](../../../../anleitungen/sektionen.md#7-eine-sektion-entfernen)).
 - **Sektionskennungen** werden von Templates verwendet; eine Umbenennung kann ein Design beschädigen
@@ -89,9 +89,9 @@ Die Rollenentwürfe unter [Redaktionen der Fachbereiche](rollenentwurf-fachredak
 
 ## Verwandte Seiten
 - [Rollen, Richtlinien und Einschränkungen](rollen-richtlinien-und-einschraenkungen.md)
-- [Eine Sektion für geschützte Inhalte anlegen](../../../../../eng-us/help/government/tasks/people-and-permissions/create-a-section-for-restricted-content.md)
-- [Eine Rolle mit einer Teilbaum-Einschränkung zuweisen](../../../../../eng-us/help/government/tasks/people-and-permissions/assign-a-role-with-a-subtree-limitation.md)
-- [Eine Rolle mit einer Sektionseinschränkung zuweisen](../../../../../eng-us/help/government/tasks/people-and-permissions/assign-a-role-with-a-section-limitation.md)
+- [Eine Sektion für geschützte Inhalte anlegen](../../aufgaben/personen-und-berechtigungen/eine-sektion-fuer-eingeschraenkte-inhalte-anlegen.md)
+- [Eine Rolle mit einer Teilbaum-Einschränkung zuweisen](../../aufgaben/personen-und-berechtigungen/eine-rolle-mit-einer-einschraenkung-auf-einen-teilbaum-zuweisen.md)
+- [Eine Rolle mit einer Sektionseinschränkung zuweisen](../../aufgaben/personen-und-berechtigungen/eine-rolle-mit-einer-einschraenkung-auf-eine-sektion-zuweisen.md)
 - [Leitfaden zu Sektionen](../../../../anleitungen/sektionen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren bei Hosting-Anbietern, die PHP für E
 OPcache-Einstellungen Sie unter jedem Server nutzen, warum die Einstellungen von Velocity von denen von PHP-FPM abweichen, welche
 Einstellung Exponential kaputtmacht, was das Projekt gemessen hat und wie Sie den Cache auf einer Live-Website prüfen. Die Quelle ist
 [Kapitel 10, Abschnitt 10.12](../../../installation/10-nach-der-installation.md#opcache) und
-[Velocity und der Opcode-Cache](../../../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md).
+[Velocity und der Opcode-Cache](../../../funktionen/6.0/velocity-opcode-cache-und-profil.md).
 
 ## Inhalt
 
@@ -132,7 +132,7 @@ wieder aus, indem Sie die Datei `.on` aus `var/tmp/` verschieben; das Log wächs
 - [Abstimmung von PHP-FPM](abstimmung-von-php-fpm.md)
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Cache-Schichten](cache-schichten.md)
-- [Velocity und der Opcode-Cache](../../../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md)
+- [Velocity und der Opcode-Cache](../../../funktionen/6.0/velocity-opcode-cache-und-profil.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

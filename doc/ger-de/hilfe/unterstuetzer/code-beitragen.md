@@ -62,7 +62,7 @@ Version 2.0 oder höher, lizenziert werden“ (CONTRIBUTING.md).
 
 - [Mit Git entwickeln](../mit-git-entwickeln.md)
 - [Testen und Fehler melden](testen-und-fehler-melden.md)
-- [Code zurückgeben (für Partner)](../../../eng-us/help/partners/contributing-code-back.md)
+- [Code zurückgeben (für Partner)](../partner/code-zurueckgeben.md)
 - [Zum Projekt beitragen](../projekt/zum-projekt-beitragen.md): alle Wege, beim Aufbau von Exponential zu helfen
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

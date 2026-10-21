@@ -66,7 +66,7 @@ Eine Liste der Artikel des Bereichs ist für anonyme Besucher leer.
 
 Einen Link zu verbergen ist eine Höflichkeit; geschützt wird durch die Richtlinie. Verlassen Sie sich für die Sicherheit
 nie allein auf eine Bedingung im Template. Die in 6.0 hinzugekommenen Operatoren für Rollen und Richtlinien sind in
-[Template-Operatoren für Rollen und Richtlinien](../../../../eng-us/features/6.0/role-and-policy-template-operators.md) beschrieben.
+[Template-Operatoren für Rollen und Richtlinien](../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md) beschrieben.
 
 ## Den Zugriff eines Benutzers prüfen
 

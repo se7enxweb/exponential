@@ -44,7 +44,7 @@ Morgen; oder eine Korrektur, die direkt vor einer Pressemitteilung veröffentlic
 | `[DeploySettings] WarmUpURL[]` | Seiten, die `exp:velocity deploy` als letzten Schritt im Hintergrund abruft |
 
 Verwenden Sie für `--siteaccess` den Namen Ihres eigenen öffentlichen Siteaccess. Einzelheiten:
-[Caches vorladen](../../../../anleitungen/caches-vorwaermen.md) und [Ansicht „Seiten vorladen“](../../../../../eng-us/features/6.0/preload-sites-view.md).
+[Caches vorladen](../../../../anleitungen/caches-vorwaermen.md) und [Ansicht „Seiten vorladen“](../../../../funktionen/6.0/ansicht-websites-vorladen.md).
 
 ## Aufwärmen nach einer Bereitstellung
 

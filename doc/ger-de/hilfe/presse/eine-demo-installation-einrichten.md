@@ -56,7 +56,7 @@ composer install
 ## Mit einem Befehl installieren
 
 Auf der Entwicklungslinie installiert ein Befehl das Multisite-Paket auf SQLite in `eng-US`, ohne Datenbankserver
-([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)):
+([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)):
 
 ```bash
 php bin/php/console exp:install --dry-run    # checks the configuration, installs nothing

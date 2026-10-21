@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Hosting-Anbieter, die Redis oder Valkey betreiben und es Exponential-Websites anbieten möchten, für Geschwindigkeit oder
 für Websites, die von mehreren Web-Knoten ausgeliefert werden. Sie beantwortet: was die Erweiterung `sevenx_valkey_cache` in Redis oder
 Valkey verlegt, wie Sie sie einrichten, wie sich mehrere Kunden einen Server teilen können, ohne die Schlüssel der anderen zu sehen, und
-wo die Grenzen liegen. Die Quelle ist [sevenx_valkey_cache: Cache-Backend für Redis und Valkey](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md).
+wo die Grenzen liegen. Die Quelle ist [sevenx_valkey_cache: Cache-Backend für Redis und Valkey](../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md).
 
 ## Inhalt
 
@@ -161,7 +161,7 @@ getrenntes Thema des Clusterings ([Clustering und gemeinsamer Speicher](../betri
 - [Cache-Schichten](cache-schichten.md)
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md)
 - [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md)
-- [sevenx_valkey_cache](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md)
+- [sevenx_valkey_cache](../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

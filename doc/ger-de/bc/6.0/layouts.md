@@ -1001,7 +1001,7 @@ Rendering-Schicht der Legacy-Templates.
 ## Verwandte Seiten
 
 - [JSON-API des Layout-Editors (Spezifikation)](../../spezifikationen/6.0/explayouts-ui-api.md)
-- [Layout-Editor (Seite der Erweiterung)](../../../eng-us/features/6.0/extensions/explayouts_ui_api.md) und [Formular-Editor](../../../eng-us/features/6.0/extensions/explayouts_ui.md)
-- [Der Fork von layouts-core](../../../eng-us/features/6.0/platform-layouts-core-fork.md)
+- [Layout-Editor (Seite der Erweiterung)](../../funktionen/6.0/erweiterungen/explayouts_ui_api.md) und [Formular-Editor](../../funktionen/6.0/erweiterungen/explayouts_ui.md)
+- [Der Fork von layouts-core](../../funktionen/6.0/plattform-layouts-core-fork.md)
 - [Verhaltensänderungen vom Juli und August 2026](verhaltensaenderungen-2026-07-08.md)
 - [Anleitung zu Templates und Design](../../anleitungen/templates-und-design.md)

@@ -32,10 +32,10 @@ Eine Klasse hat Attribute, die als **Informationssammler** markiert sind; ein Re
 an, und dessen Seite zeigt das Formular. Wenn ein Besucher es absendet, wird jedes Feld geprüft, eine **Sammlung**
 gespeichert, eventuell eine Mail gesendet, und der Besucher sieht eine Ergebnisseite oder wird weitergeleitet.
 Mitarbeiter lesen und exportieren die Sammlungen unter **Setup > Gesammelte Informationen**
-([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md#how-it-works)).
+([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md#wie-es-funktioniert)).
 Die mitgelieferte Klasse `feedback_form` ist ein fertiges Beispiel; ein Formular für Ehrenamtliche ist eine eigene
 Klasse, die auf dieselbe Weise gebaut wird
-([Ein Kontaktformular bauen, Schritt für Schritt](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)).
+([Ein Kontaktformular bauen, Schritt für Schritt](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)).
 
 ## Ein Formular für Ehrenamtliche gestalten
 
@@ -52,7 +52,7 @@ Fragen Sie nur, was Sie brauchen, um einen Ehrenamtlichen einzusetzen. Ein typis
 | Einwilligung zur Kontaktaufnahme | Kontrollkästchen (`ezboolean`) mit dem Text daneben | Ja |
 
 Jedes davon wird im Klasseneditor als **Informationssammler** markiert
-([Inhaltsklassen für Websites, Attributeinstellungen](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#attribute-settings)).
+([Inhaltsklassen für Websites, Attributeinstellungen](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#attributeinstellungen)).
 Die Beschreibung über dem Formular (was das Ehrenamt umfasst, wer das Formular liest, wie lange Sie es aufbewahren) ist
 ein normales Attribut, das Redakteure schreiben.
 
@@ -67,7 +67,7 @@ ein normales Attribut, das Redakteure schreiben.
   hat, „sodass jedes Formular sein eigenes Team anschreiben kann“.
 - `collect.ini [EmailSettings] SendEmail` ist für Formulare standardmäßig eingeschaltet.
 
-Quelle: [Formulare mit dem Informationssammler, Mail an einen Empfänger](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md#mail-to-a-receiver).
+Quelle: [Formulare mit dem Informationssammler, Mail an einen Empfänger](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md#mail-an-einen-empfänger).
 Testen Sie mit dem Datei-Transport, bevor echte Mails eingeschaltet werden (dieselbe Seite). Bevorzugen Sie nach dem
 Absenden eine Weiterleitung auf eine Dankesseite (`Display=redirect`), „damit ein Neuladen nicht erneut sendet“
 (dieselbe Seite, Nach dem Absenden).
@@ -78,7 +78,7 @@ Wenn Ehrenamtliche ein Dokument schicken müssen (ein Zeugnis, einen Lebenslauf)
 `enhancedezbinaryfile` („Enhanced File“), der für die Informationssammlung gebaut ist. Er legt hochgeladene Dateien in
 einem Download-Ordner mit einer Grenze ab, `MaxFiles` standardmäßig 25, und verschickt die gesammelten Informationen als
 mehrteilige Mail, wenn eine Datei angehängt ist. „`0` behält eine unbegrenzte Zahl, was für eine Website mit anonymen
-Uploads nicht ratsam ist“ ([enhancedezbinaryfile](../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md)).
+Uploads nicht ratsam ist“ ([enhancedezbinaryfile](../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md)).
 
 Fragen Sie sich, ob Sie die Datei wirklich bei der Anmeldung brauchen; oft kann sie später von einer Person bei den
 Ehrenamtlichen angefordert werden, die Sie aufnehmen.
@@ -91,10 +91,10 @@ Ehrenamtlichen angefordert werden, die Sie aufnehmen.
 | CAPTCHA (`recaptcha` oder `hcaptcha`) | Fügen Sie der Formularklasse das CAPTCHA-Attribut hinzu |
 | Spam in großen Mengen entfernen | **Setup > Gesammelte Informationen** |
 
-Quelle: [Spam-Schutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md). Das CAPTCHA-Widget lädt
+Quelle: [Spam-Schutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md). Das CAPTCHA-Widget lädt
 ein Skript von seinem Anbieter; nennen Sie den Anbieter in Ihrem Datenschutzhinweis. Beide mitgelieferten
 CAPTCHA-Dienste bieten eine barrierefreie Alternative
-([Barrierefreiheit für Website-Ersteller, Formulare](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#forms)).
+([Barrierefreiheit für Website-Ersteller, Formulare](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#formulare)).
 
 ## Eingaben lesen, exportieren und entfernen
 
@@ -105,7 +105,7 @@ CAPTCHA-Dienste bieten eine barrierefreie Alternative
 - **Ausgewählte entfernen** löscht Eingaben nach einer Bestätigung; die Formulare bleiben.
 - „Alles braucht `infocollector/read`. Geben Sie es den Menschen, die die Formulare bearbeiten, nicht jedem Redakteur.“
 
-Quelle: [Formulareingaben lesen und exportieren](../../../../eng-us/help/creators/website-creators/form-submissions.md) und der Leitfaden
+Quelle: [Formulareingaben lesen und exportieren](../../ersteller/website-ersteller/formulareinsendungen.md) und der Leitfaden
 [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md).
 
 ## Andere Anmeldungen
@@ -115,10 +115,10 @@ Quelle: [Formulareingaben lesen und exportieren](../../../../eng-us/help/creator
 | Anmeldung zu einer Veranstaltung | Ein Formularobjekt auf der Seite der Veranstaltung |
 | Eine schnelle Umfrage unter Unterstützern | Den Formulartyp `poll`: „Eine Umfrage kann pro Benutzer einmal beantwortet werden“ (`CollectionUserDataList[poll]=unique`) |
 | Einen Newsletter für Unterstützer | `cjw_newsletter` mit Double-Opt-in, kein Formular ([Newsletter](../newsletter/README.md)) |
-| Konten für Ehrenamtliche mit einem Mitgliederbereich | Benutzerregistrierung ([Mitgliederregistrierung und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)) |
+| Konten für Ehrenamtliche mit einem Mitgliederbereich | Benutzerregistrierung ([Mitgliederregistrierung und Mitgliederbereiche](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)) |
 
 Formulartypen werden in `settings/collect.ini` festgelegt
-([Formulare mit dem Informationssammler, Formulartypen](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md#form-types-form-feedback-poll)).
+([Formulare mit dem Informationssammler, Formulartypen](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md#formulartypen-form-feedback-poll)).
 
 ## Personenbezogene Daten
 
@@ -131,7 +131,7 @@ Formulartypen werden in `settings/collect.ini` festgelegt
 - Entfernen Sie alte Eingaben nach einem Zeitplan, den Sie benennen können.
 
 Diese Punkte folgen der Checkliste für personenbezogene Daten in
-[Formulareingaben lesen und exportieren](../../../../eng-us/help/creators/website-creators/form-submissions.md#personal-data-checklist).
+[Formulareingaben lesen und exportieren](../../ersteller/website-ersteller/formulareinsendungen.md#checkliste-für-personenbezogene-daten).
 Siehe auch [Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md).
 
 ## Checkliste Formulare
@@ -147,7 +147,7 @@ Siehe auch [Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare
 ## Verwandte Seiten
 
 - [Gemeinnützige Organisationen](README.md)
-- [Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)
+- [Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)
 - [Formulare und Rückmeldungen von Mitgliedern](../vereine/formulare-und-rueckmeldungen-von-mitgliedern.md)
 - [Gesammelte Informationen (Leitfaden)](../../../anleitungen/gesammelte-informationen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

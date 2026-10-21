@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Anwendungsentwickler, die die Landkarte kennen möchten, bevor sie Code schreiben: was bei einer
 Anfrage passiert, welcher Teil der Installation was tut und wohin der Code einer Anwendung gehört. Der Bereich Standards
-erklärt die Architektur des Kernels ausführlich ([Kernel-Architektur](../../../../eng-us/standards/architecture/kernel-architecture.md)).
+erklärt die Architektur des Kernels ausführlich ([Kernel-Architektur](../../../standards/architektur/kernel-architektur.md)).
 
 ## Inhalt
 
@@ -87,7 +87,7 @@ Klassen (`Exponential\Runnable\Command`, `CronjobPart`, `ModuleView`), und Ihre 
 
 - [Exponential als Anwendungsplattform](exponential-als-anwendungsplattform.md)
 - [Aufbau einer Erweiterung](aufbau-einer-erweiterung.md)
-- [Schichten und Benennung](../../../../eng-us/standards/architecture/layering-and-naming.md)
+- [Schichten und Benennung](../../../standards/architektur/schichten-und-benennung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -69,8 +69,8 @@ Website dann vor: `php bin/php/preload.php --siteaccess=site --allow-root-user`.
   Korrekturen einen sichtbaren Korrekturhinweis.
 
 ## Verwandte Seiten
-- [Caches nach einer Einstellungsänderung leeren](../../../../../eng-us/help/government/tasks/operations/clear-caches-after-a-settings-change.md)
-- [Caches nach einer Template-Änderung leeren](../../../../../eng-us/help/government/tasks/operations/clear-caches-after-a-template-change.md)
+- [Caches nach einer Einstellungsänderung leeren](../../aufgaben/betrieb/caches-nach-einer-aenderung-an-einstellungen-leeren.md)
+- [Caches nach einer Template-Änderung leeren](../../aufgaben/betrieb/caches-nach-einer-aenderung-an-templates-leeren.md)
 - [Velocity-Antwortcache und HTTP-Cache](../verfuegbarkeit/velocity-antwortcache-und-http-cache.md)
 - [Caches leeren und vorwärmen (Hosting)](../../../hosting/leistung/caches-leeren-und-vorwaermen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

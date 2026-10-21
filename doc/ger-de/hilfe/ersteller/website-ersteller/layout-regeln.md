@@ -99,7 +99,7 @@ Eine Regel zu kopieren ist der schnellste Weg, eine Familie ähnlicher Regeln zu
 ## Verwandte Seiten
 
 - [Landingpages mit dem Layouts-Editor](landingpages-mit-dem-layouts-editor.md)
-- [explayouts_ui: ein Layout einer Seite zuordnen](../../../../eng-us/features/6.0/extensions/explayouts_ui.md#map-a-layout-to-a-page)
+- [explayouts_ui: ein Layout einer Seite zuordnen](../../../funktionen/6.0/erweiterungen/explayouts_ui.md#ein-layout-einer-seite-zuordnen)
 - [View-Cache und Cache-Blöcke](view-cache-und-cache-bloecke.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

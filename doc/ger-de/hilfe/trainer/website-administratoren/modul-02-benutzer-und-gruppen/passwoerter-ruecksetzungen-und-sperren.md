@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Das Administratorpasswort ändern](../../../administratorpasswort-aendern.md) und
-[Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../../../eng-us/features/6.0/reset-user-password.md).
+[Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md).
 
 1. **Ihr eigenes Passwort** (3 Minuten). In admin4 das Benutzermenü (die Schaltfläche mit Ihrem Namen in der
    Kopfzeile) > **Passwort ändern**. Die Seite listet die Anforderungen auf und hakt sie während der Eingabe ab;
@@ -155,9 +155,9 @@ Installation:
 
 - [Das Administratorpasswort ändern](../../../administratorpasswort-aendern.md): jeder Weg, und was zu tun ist, wenn Sie
   ausgesperrt sind.
-- [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../../../eng-us/features/6.0/reset-user-password.md): die
+- [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md): die
   Optionen und Fehlermeldungen des Skripts.
-- [Ihr Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md): die Regeln und die E-Mail.
+- [Ihr Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md): die Regeln und die E-Mail.
 - [Sitzungen](../../../../anleitungen/sitzungen.md): alle Sitzungen nach einer vermuteten Kompromittierung beenden.
 
 ## Verwandte Seiten

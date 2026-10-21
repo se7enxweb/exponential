@@ -227,7 +227,7 @@ OK (13 tests, 30 assertions)
 - [Unterstützung für PHP 8](php8.md)
 - [Upgrade auf PHPUnit 10](phpunitv10.md), [Upgrade auf PHPUnit 13](phpunitv13.md)
   und [PHPUnit 13 unter PHP 8.4](phpunitv13-fuer-php841.md)
-- [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
-- Geschichte: [April 2025](../../../eng-us/history/2025/2025-04.md), [September 2025](../../../eng-us/history/2025/2025-09.md),
-  [Dezember 2025](../../../eng-us/history/2025/2025-12.md), [Februar 2026](../../../eng-us/history/2026/2026-02.md),
-  [März 2026](../../../eng-us/history/2026/2026-03.md)
+- [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md)
+- Geschichte: [April 2025](../../geschichte/2025/2025-04.md), [September 2025](../../geschichte/2025/2025-09.md),
+  [Dezember 2025](../../geschichte/2025/2025-12.md), [Februar 2026](../../geschichte/2026/2026-02.md),
+  [März 2026](../../geschichte/2026/2026-03.md)

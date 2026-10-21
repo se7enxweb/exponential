@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren. Am Ende kann eine Kollegin oder ein Kollege die Logs der Installation in der
 Administration lesen, maskiert, ohne Administrator zu sein. Die Rechte des Log-Viewers sind drei Funktionen des Moduls
-`setup` ([Log-Viewer, „Wer ihn verwenden darf“](../../../../../eng-us/features/6.0/log-viewer.md#who-may-use-it)).
+`setup` ([Log-Viewer, „Wer ihn verwenden darf“](../../../../funktionen/6.0/log-betrachter.md#wer-ihn-verwenden-darf)).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -57,10 +57,10 @@ In der Shell werden Logs mit `./console exp:logs` gelesen, das keine Richtlinie 
 Entscheidung.
 
 ## Verwandte Seiten
-- [Der Log-Viewer](../../../../../eng-us/help/government/operations/monitoring/the-log-viewer.md)
+- [Der Log-Viewer](../../betrieb/ueberwachung/der-log-viewer.md)
 - [Die Fehlerübersicht lesen](../betrieb/die-fehleruebersicht-lesen.md)
 - [Einem Prüfer Lesezugriff auf das Audit-Protokoll geben](einem-pruefer-lesezugriff-auf-das-audit-protokoll-geben.md)
-- [Grundsätze der minimalen Rechte](../../../../../eng-us/help/government/operations/people-and-permissions/least-privilege-principles.md)
+- [Grundsätze der minimalen Rechte](../../betrieb/personen-und-berechtigungen/prinzip-der-geringsten-rechte.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

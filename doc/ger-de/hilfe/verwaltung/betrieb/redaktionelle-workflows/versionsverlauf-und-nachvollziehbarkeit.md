@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Redaktionen, Webverantwortliche und Schriftgutverantwortliche, die zeigen müssen, was eine öffentliche Seite zu einem
 bestimmten Zeitpunkt aussagte und wer sie geändert hat. Zwei Quellen beantworten das: die **Versionsseite** jedes Objekts und das **Prüfprotokoll**.
 Quellen: [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), `settings/content.ini [VersionManagement]` und
-[Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md).
+[Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md).
 
 ## Inhalt
 1. [Die Versionsseite](#die-versionsseite)
@@ -56,7 +56,7 @@ entsprechend wächst. Nach dem Senken einer Grenze entfernt `bin/php/cleanupvers
 Der Kanal `content` erfasst Veröffentlichen, Verschieben, Kopieren, Entfernen, Verbergen, Sektionen, Zustände, Papierkorb und Versionen, mit
 Benutzer und Uhrzeit; der Kanal `access` erfasst Anmeldungen. Die Einträge sind hashverkettet, werden standardmäßig 90 Tage live gehalten und
 730 Tage archiviert (`settings/audit.ini`, Kanäle `content`, `access`, `system`, `commerce`), was Sie je Kanal ändern können
-([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)).
+([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md#was-aufgezeichnet-wird)).
 
 ## Typische Fragen beantworten
 

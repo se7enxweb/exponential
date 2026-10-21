@@ -42,8 +42,8 @@ Benutzer, deren Rolle `rss/edit` hat.
 ## Verwandte Seiten
 
 - [RSS-Feeds](../../anleitungen/rss-feeds.md)
-- [RSS-Feeds für Ihre Website](../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
-- [RSS: Feeds für Apple Podcasts, eine blätterbare Feed-Liste und sicherere Exporte](../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)
+- [RSS-Feeds für Ihre Website](../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
+- [RSS: Feeds für Apple Podcasts, eine blätterbare Feed-Liste und sicherere Exporte](../../funktionen/6.0/rss-podcast-und-feed-liste.md)
 - [Wie importiere ich einen RSS-Feed?](wie-importiere-ich-einen-rss-feed.md)
 - [Benutzerhandbuch](README.md)
 

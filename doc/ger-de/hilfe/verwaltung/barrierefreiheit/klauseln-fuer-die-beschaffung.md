@@ -31,7 +31,7 @@ Formulierungen mit Ihrer Beschaffungs- und Rechtsberatung an.
 
 - Verlangen Sie prüfbare Ergebnisse (WCAG 2.2 AA auf der gelieferten Website), keine Adjektive („barrierefrei“).
 - Trennen Sie die **Software** (die Erklärung des Projekts: admin4 „Teilweise erfüllt“, EN 301 549 und Section 508
-  „Nicht geprüft“, kein VPAT; [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)) von der
+  „Nicht geprüft“, kein VPAT; [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)) von der
   **Leistung** (Ihr Design, Ihre Konfiguration, Ihr Inhaltsmodell).
 - Machen Sie die Abnahme von einem Test abhängig und Mängel von ihrer Behebung.
 
@@ -77,7 +77,7 @@ Testmethode, benannten Werkzeugen und Beispielen höher.
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Implementierungspartner](../../partner/implementierungspartner.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

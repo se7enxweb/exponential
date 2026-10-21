@@ -17,7 +17,7 @@ Entscheider unter [Produktklassen und Katalog](../../unternehmen/shops/produktkl
 ## Ein Produkt ist eine Seite
 
 In Exponential ist ein Produkt ein Inhalt einer Klasse mit einem Preisfeld (`ezprice` oder `ezmultiprice`)
-([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)). Für das Team bedeutet das:
+([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)). Für das Team bedeutet das:
 
 - die Produktredaktion verwendet denselben Editor, dieselben Entwürfe, Versionen und dieselbe Vorschau wie für jede
   andere Seite ([Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md), [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md));
@@ -42,12 +42,12 @@ Freigabe-Workflow für die Produktordner einrichten ([Workflows](../../../anleit
 
 | Wie oft | Prüfung | Wo |
 |---|---|---|
-| Wöchentlich | Produkte ohne Preis | Das Shop-Dashboard zählt sie ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)) |
+| Wöchentlich | Produkte ohne Preis | Das Shop-Dashboard zählt sie ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)) |
 | Wöchentlich | Ausverkaufte Artikel verborgen oder gekennzeichnet | Die Produktordner |
 | Wöchentlich | Preise und USt-Typen neuer Produkte | **Shop > Produktübersicht** (`shop/productsoverview`) listet Produkte mit ihren Preisen |
 | Monatlich | Bestseller weiterhin leicht zu finden | Rangliste im Dashboard, Startseite, Menüs |
-| Monatlich | Bilder und Dateien, die niemand mehr verwendet | [Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md) |
-| Vierteljährlich | Suchbegriffe ohne Treffer | [Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md) |
+| Monatlich | Bilder und Dateien, die niemand mehr verwendet | [Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md) |
+| Vierteljährlich | Suchbegriffe ohne Treffer | [Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md) |
 | Jährlich | Kategorien, Tags und Menüs passen noch zum Sortiment | Inhaltsstruktur |
 
 ## Ausverkaufte und saisonale Produkte
@@ -67,7 +67,7 @@ jedes Mal:
 > Bevor ein Produkt entfernt oder verborgen wird, listet die Administration die Seiten auf, die darauf verweisen
 > (Artikel, die darauf verlinken, verwandte Produkte). Das ist die ausgelieferte Einstellung,
 > `content.ini [RemoveSettings] ReverseRelationCheck=warn`
-> ([Entfernen und Verbergen: die Prüfung umgekehrter Beziehungen](../../../../eng-us/features/6.0/reverse-relation-check.md)).
+> ([Entfernen und Verbergen: die Prüfung umgekehrter Beziehungen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)).
 
 Für ein Produkt, das verkauft wurde, ist Verbergen meist besser als Entfernen: Alte Bestellungen behalten ihre
 Bestellpositionen so oder so, aber ein verborgenes Produkt behält seine Adresse und seine Historie, falls es
@@ -89,15 +89,15 @@ bearbeiten; planen Sie es daher wie ein kleines Projekt ([Preise und Währungen]
 ## Viele Produkte auf einmal
 
 Das Verschieben, Kopieren oder Entfernen einer großen Zahl von Produkten kann im Hintergrund als Inhaltsauftrag
-laufen, der in Stapeln arbeitet und nach einer Unterbrechung fortgesetzt wird ([Inhaltsaufträge](../../../../eng-us/features/6.0/content-jobs.md)).
-Mehrere ausgewählte Unterelemente lassen sich in einem Schritt kopieren ([Ausgewählte Unterelemente kopieren](../../../../eng-us/features/6.0/subitems-copy-selected.md)).
+laufen, der in Stapeln arbeitet und nach einer Unterbrechung fortgesetzt wird ([Inhaltsaufträge](../../../funktionen/6.0/inhaltsauftraege.md)).
+Mehrere ausgewählte Unterelemente lassen sich in einem Schritt kopieren ([Ausgewählte Unterelemente kopieren](../../../funktionen/6.0/unterelemente-auswahl-kopieren.md)).
 
 ## Verwandte Seiten
 
 - [Ein Produkt anlegen](ein-produkt-anlegen.md)
 - [Produktklassen und Katalog (für Unternehmen)](../../unternehmen/shops/produktklassen-und-katalog.md)
 - [Suche und Navigation im Shop](../../unternehmen/shops/suche-und-navigation-im-shop.md)
-- [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
+- [Produkte, Preise und Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

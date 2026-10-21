@@ -10,7 +10,7 @@ type: help
 # Checkliste Datenschutz
 
 Diese Checkliste richtet sich an die Datenschutzbeauftragten und die Website-Administration einer öffentlichen Stelle.
-Sie folgt den [Datenschutzstandards](../../../../eng-us/standards/privacy.md), die festhalten: Exponential ist Software, kein
+Sie folgt den [Datenschutzstandards](../../../standards/datenschutz.md), die festhalten: Exponential ist Software, kein
 Verantwortlicher; die Einhaltung liegt in der Verantwortung der Organisation, die die Website betreibt.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -28,39 +28,39 @@ Verantwortlicher; die Einhaltung liegt in der Verantwortung der Organisation, di
 
 ## Bestandsaufnahme
 
-- [ ] Halten Sie fest, wo personenbezogene Daten liegen: Benutzerkonten, Formulareinsendungen ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)), Abonnenten von Newslettern, Bestellungen, Protokolle, Suchbegriffe ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
-- [ ] Halten Sie jede aktive Erweiterung fest, die Daten an einen Drittanbieter sendet: `ActiveExtensions[]` in `settings/override/site.ini.append.php` ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)).
+- [ ] Halten Sie fest, wo personenbezogene Daten liegen: Benutzerkonten, Formulareinsendungen ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)), Abonnenten von Newslettern, Bestellungen, Protokolle, Suchbegriffe ([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
+- [ ] Halten Sie jede aktive Erweiterung fest, die Daten an einen Drittanbieter sendet: `ActiveExtensions[]` in `settings/override/site.ini.append.php` ([Datenschutzstandards](../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)).
 - [ ] Halten Sie Zwecke und Rechtsgrundlagen in Ihrem Verzeichnis von Verarbeitungstätigkeiten fest.
 
 ## Hinweise und Cookies
 
 - [ ] Datenschutzerklärung veröffentlicht und von jeder Seite aus verlinkt.
-- [ ] Der Kernel setzt nur funktionale Cookies; führen Sie sie in der Erklärung auf ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#eprivacy-directive-cookies)).
-- [ ] Wenn die Website Webanalyse, Einbettungen oder Werbung hinzufügt, fügen Sie ein Banner zur Einwilligung hinzu: Exponential hat keines ([Statistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
-- [ ] CAPTCHA-Dienste (reCAPTCHA, hCaptcha) in der Erklärung genannt, wenn sie verwendet werden ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+- [ ] Der Kernel setzt nur funktionale Cookies; führen Sie sie in der Erklärung auf ([Datenschutzstandards](../../../standards/datenschutz.md#eprivacy-richtlinie-cookies)).
+- [ ] Wenn die Website Webanalyse, Einbettungen oder Werbung hinzufügt, fügen Sie ein Banner zur Einwilligung hinzu: Exponential hat keines ([Statistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
+- [ ] CAPTCHA-Dienste (reCAPTCHA, hCaptcha) in der Erklärung genannt, wenn sie verwendet werden ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 
 ## Formulare und E-Mail
 
-- [ ] Jedes Formular fragt nur nach dem, was es braucht, und zeigt einen Einwilligungs- oder Informationstext ([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
-- [ ] Jedes Formular hat eine Aufbewahrungsregel; alte Einsendungen werden entfernt ([Formulareinsendungen](../../../../eng-us/help/creators/website-creators/form-submissions.md)).
+- [ ] Jedes Formular fragt nur nach dem, was es braucht, und zeigt einen Einwilligungs- oder Informationstext ([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
+- [ ] Jedes Formular hat eine Aufbewahrungsregel; alte Einsendungen werden entfernt ([Formulareinsendungen](../../ersteller/website-ersteller/formulareinsendungen.md)).
 - [ ] E-Mail-Einstellungen eingerichtet: Kategorien standardmäßig ausgeschaltet, Einwilligungsprotokoll wird geführt ([E-Mail-Einstellungen einrichten](../../../anleitungen/mail-einstellungen-administrator.md)).
-- [ ] Absenderangaben (Postanschrift) für die Fußzeile der E-Mails gesetzt ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe)).
-- [ ] Newsletter-Statistiken nur mit vorheriger Einwilligung ([Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)).
+- [ ] Absenderangaben (Postanschrift) für die Fußzeile der E-Mails gesetzt ([Datenschutzstandards](../../../standards/datenschutz.md#can-spam-act-und-abmeldung-mit-einem-klick)).
+- [ ] Newsletter-Statistiken nur mit vorheriger Einwilligung ([Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)).
 
 ## Protokolle und Aufbewahrung
 
-- [ ] Datenschutzeinstellungen des Audits geprüft: gekürzte Adressen, Pseudonymisierung nach `PseudonymiseAfterDays` ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
-- [ ] Anfrageprotokolle maskieren IP-Adressen (`MaskIP=enabled`) ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).
-- [ ] Andere Protokolle des Kernels als 404, Sicherheit und CSP haben standardmäßig keine Altersgrenze; setzen Sie `MaxAgeDays` oder rotieren Sie sie selbst ([Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)).
+- [ ] Datenschutzeinstellungen des Audits geprüft: gekürzte Adressen, Pseudonymisierung nach `PseudonymiseAfterDays` ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
+- [ ] Anfrageprotokolle maskieren IP-Adressen (`MaskIP=enabled`) ([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)).
+- [ ] Andere Protokolle des Kernels als 404, Sicherheit und CSP haben standardmäßig keine Altersgrenze; setzen Sie `MaxAgeDays` oder rotieren Sie sie selbst ([Protokollrotation](../../../funktionen/6.0/log-rotation.md)).
 - [ ] Zugriffsprotokolle des Webservers werden nach der Aufbewahrungsregel des Hosters behandelt.
 - [ ] Auch Datensicherungen haben eine Aufbewahrungsfrist ([Sicherungspläne und Aufbewahrung](../../hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md)).
 
 ## Anfragen betroffener Personen
 
-- [ ] Auskunft und Datenübertragbarkeit: Export der E-Mail-Einstellungen und der Einwilligungsgeschichte (`mailpreferences/export`, `./console exp:mail:preferences export`); Audit-Einträge mit `./console exp:audit export --subject-user=<id>` ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
-- [ ] Andere Daten (Formulareinsendungen, Inhalte, die die Person geschrieben hat, Bestellungen) werden über die einzelnen Werkzeuge der Administration gefunden; es gibt kein einzelnes „alle meine Daten exportieren“ ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
+- [ ] Auskunft und Datenübertragbarkeit: Export der E-Mail-Einstellungen und der Einwilligungsgeschichte (`mailpreferences/export`, `./console exp:mail:preferences export`); Audit-Einträge mit `./console exp:audit export --subject-user=<id>` ([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
+- [ ] Andere Daten (Formulareinsendungen, Inhalte, die die Person geschrieben hat, Bestellungen) werden über die einzelnen Werkzeuge der Administration gefunden; es gibt kein einzelnes „alle meine Daten exportieren“ ([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
 - [ ] Löschung: Das Entfernen des Kontos löscht die E-Mail-Einstellungen und anonymisiert das Einwilligungsprotokoll; Formulareinsendungen entfernen Sie getrennt.
-- [ ] Einschränkung: **Deaktivieren und verschieben**, wo eingeschaltet ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] Einschränkung: **Deaktivieren und verschieben**, wo eingeschaltet ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Jede Anfrage wird mit Datum und Antwort in Ihrem eigenen Register festgehalten.
 
 ## Dienstleister
@@ -73,7 +73,7 @@ Verantwortlicher; die Einhaltung liegt in der Verantwortung der Organisation, di
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Compliance und DSGVO (für Hoster)](../../hosting/sicherheit/compliance-und-dsgvo.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

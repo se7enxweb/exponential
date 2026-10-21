@@ -48,7 +48,7 @@ Schreiben Sie diese Punkte in den Vertrag oder die Support-Vereinbarung (siehe
 |---|---|
 | Die neue Versionsnummer | **Setup > Systeminformationen** ([Systeminformationen](../../../anleitungen/systeminformationen.md)) |
 | Eine saubere Upgrade-Prüfung, oder eine Liste bewusst geänderter Dateien | **Setup > Upgrade-Prüfung** ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)) |
-| Das Deployment festgehalten | Das Prüfprotokoll hält Deployments und das Leeren von Caches fest ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Das Deployment festgehalten | Das Prüfprotokoll hält Deployments und das Leeren von Caches fest ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 | Ihre wichtigsten Seiten geprüft | Startseite, Anmeldung, eine Veröffentlichung, ein Formular, der Shop, falls Sie einen haben |
 | Alles, was noch zu tun ist | Zu prüfende Einstellungen, Erweiterungen, die auf ein Release warten |
 

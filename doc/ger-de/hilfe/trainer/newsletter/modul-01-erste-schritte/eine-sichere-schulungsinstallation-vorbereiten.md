@@ -46,7 +46,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 Quellen: [10.4 Mail: der Datei-Transport und echter Versand](../../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand),
 [10.5 Benachrichtigungen und Newsletter](../../../../installation/10-nach-der-installation.md#105-benachrichtigungen-und-newsletter) und der
-[Abschnitt zur Probe auf der Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail).
+[Abschnitt zur Probe auf der Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden).
 
 1. **Zwei Transportsysteme** (5 Minuten). Der Kernel sendet Passwort-Mails, Registrierungen und Formular-Mails über
    `site.ini [MailSettings] Transport` (mitgeliefert: `sendmail`). Der Newsletter hat seine eigenen drei Methoden in
@@ -189,7 +189,7 @@ Arbeiten Sie im Wurzelverzeichnis der Installation.
 <summary>Antworten</summary>
 
 1. `TransportMethodPreview`, verwendet für den Testversand einer Ausgabe ([10.5](../../../../installation/10-nach-der-installation.md#105-benachrichtigungen-und-newsletter)).
-2. **B.** Bearbeiten Sie nie die eigene Datei der Erweiterung; Overrides gehören nach `settings/override/` ([Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+2. **B.** Bearbeiten Sie nie die eigene Datei der Erweiterung; Overrides gehören nach `settings/override/` ([Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 3. Die Top-Level-Domain `.invalid` ist reserviert und kann nie zugestellt werden, also kann keine echte Person die
    Mail erhalten.
 4. Das Leeren des INI-Caches (`php bin/php/ezcache.php --clear-tag=ini`), siehe [Caches](../../../../anleitungen/caches.md).
@@ -211,7 +211,7 @@ Arbeiten Sie im Wurzelverzeichnis der Installation.
 
 - [Modul 1: Erste Schritte](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

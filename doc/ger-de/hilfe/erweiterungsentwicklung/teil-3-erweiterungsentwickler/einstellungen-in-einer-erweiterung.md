@@ -139,7 +139,7 @@ besteht, einschließlich Event-Listenern und Anpassungspunkten für Siteaccesses
 - Zurück: [composer.json für eine Erweiterung](composer-json-fuer-erweiterungen.md)
 - Weiter: [Autoloads und Klassenbenennung](autoloads-und-klassennamen.md)
 - [Wie INI-Einstellungen funktionieren](../teil-2-builder/wie-ini-einstellungen-funktionieren.md)
-- [Umgebungseinstellungen](../../../../eng-us/features/6.0/environment-settings.md)
+- [Umgebungseinstellungen](../../../funktionen/6.0/umgebungseinstellungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

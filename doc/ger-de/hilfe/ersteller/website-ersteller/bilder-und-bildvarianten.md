@@ -130,7 +130,7 @@ Leeren Sie danach den View-Cache für Inhalte, damit Seiten auf die neuen Dateie
 
 - [Die Medienbibliothek organisieren](die-medienbibliothek-organisieren.md)
 - [Medien und Uploads (für die Redaktion)](../../medien-und-uploads.md)
-- [Velocity: statische Dateien und Bilder](../../../../eng-us/features/6.0/velocity-static-files-and-images.md)
+- [Velocity: statische Dateien und Bilder](../../../funktionen/6.0/velocity-statische-dateien-und-bilder.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -65,13 +65,13 @@ vorrangige Übersetzung vorhanden ist“).
 | Maschinelle Übersetzung ohne Prüfung veröffentlicht | Prüfung durch jemanden, der Sprache und Thema kennt |
 | Die falsche Sprache bearbeiten | prüfen Sie die Sprache in der Titelzeile des Bearbeitungsformulars |
 | Seiten fehlen in einer Sprache, sind aber aus übersetzten Menüs verlinkt | entscheiden Sie, ob „immer verfügbar“ die Hauptsprache zeigt ([Inhaltssprachen, 6](../../../../anleitungen/inhaltssprachen.md#6-hauptsprache-und-immer-verfügbar)) |
-| Text von rechts nach links in einer Seite von links nach rechts | der Siteaccess setzt die Schreibrichtung; kennzeichnen Sie gemischten Text im Editor ([Sprachen mit Schreibrichtung von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)) |
+| Text von rechts nach links in einer Seite von links nach rechts | der Siteaccess setzt die Schreibrichtung; kennzeichnen Sie gemischten Text im Editor ([Sprachen mit Schreibrichtung von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md)) |
 
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Sprachen](../../../sprachen.md)
-- [Mehrsprachige Sites](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Mehrsprachige Sites](../../../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -18,12 +18,12 @@ Sie einen Anbieter wählen, steht unter [Zahlungsanbieter für Unternehmen](../.
 In Exponential ist ein Payment-Gateway ein Workflow-Ereignis an der Kasse. `settings/paymentgateways.ini` listet die
 aktiven Gateways auf, und ein Workflow mit dem Ereignis für das Payment-Gateway ist mit dem Trigger `shop_checkout`
 verbunden. An der Kasse bezahlt der Kunde, und die Bestellung wird aufgegeben, wenn der Workflow abgeschlossen ist
-([Payment-Gateways für Website-Ersteller](../../../../eng-us/help/creators/website-creators/payment-gateways.md)). Das Projekt bietet
+([Payment-Gateways für Website-Ersteller](../../ersteller/website-ersteller/payment-gateways.md)). Das Projekt bietet
 `ezpaypal` (eine Weiterleitung zu PayPal) und `ezauthorize` (ein Kartenformular, das an Authorize.Net gesendet wird)
 ([Zahlungsanbieter für Unternehmen](../../unternehmen/shops/zahlungsanbieter-fuer-unternehmen.md)).
 
 Wenn an der Kasse kein Zahlungsschritt eingerichtet ist, werden Bestellungen ohne Zahlung aufgegeben, und das
-Shop-Dashboard weist unter „Nächste Schritte“ darauf hin ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+Shop-Dashboard weist unter „Nächste Schritte“ darauf hin ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Wer was tut
 
@@ -92,7 +92,7 @@ nicht über Ihre Website laufen ([Kartenzahlungen und PCI](kartenzahlungen-und-p
 - [PayPal](paypal.md)
 - [Kartenzahlungen und PCI](kartenzahlungen-und-pci.md)
 - [Zahlungsanbieter für Unternehmen](../../unternehmen/shops/zahlungsanbieter-fuer-unternehmen.md)
-- [Payment-Gateways für Website-Ersteller](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
+- [Payment-Gateways für Website-Ersteller](../../ersteller/website-ersteller/payment-gateways.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -69,7 +69,7 @@ Keines davon ist allgemein günstiger; vergleichen Sie mit Ihren eigenen Angebot
   unter welcher Vereinbarung. In der EU braucht ein Anbieter, der personenbezogene Daten in Ihrem Auftrag verarbeitet,
   einen Auftragsverarbeitungsvertrag nach der [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
 - Die Administration von Exponential lädt standardmäßig keine Skripte oder Schriften von anderen Hosts, die
-  Administration selbst sendet also keine Daten an Dritte ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)).
+  Administration selbst sendet also keine Daten an Dritte ([Datenschutzstandards](../../../../standards/datenschutz.md)).
 - Sicherheitspflichten können Sie unabhängig vom gewählten Modell treffen; in der EU siehe die
   [NIS2-Richtlinie](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) für Einrichtungen in ihrem Anwendungsbereich.
 

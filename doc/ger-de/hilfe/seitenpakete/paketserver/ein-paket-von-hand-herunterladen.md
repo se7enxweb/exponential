@@ -146,7 +146,7 @@ php ezpm.php import var/tmp/packages/sevenx_multisite.ezpkg
 
 `ezpm.php import` nimmt den Pfad einer `.ezpkg` in jedem der beiden Paketformate und führt dieselben Prüfungen des Archivs aus wie die Seite
 zum Hochladen. Es weist ein Paket ab, dessen Name bereits in einem Repository existiert (mit der Meldung, dass das Paket nicht importiert
-werden konnte, weil es bereits existiert). Siehe [ezpm, der Paketmanager auf der Kommandozeile](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md).
+werden konnte, weil es bereits existiert). Siehe [ezpm, der Paketmanager auf der Kommandozeile](../../../funktionen/6.0/ezpm-paketmanager-cli.md).
 
 **In der Administration**: **Setup > Pakete**, **Neues Paket importieren**, die Datei wählen, **Importiere Paket**
 ([Ein Paket importieren](../admin-oberflaeche/ein-paket-importieren.md)).

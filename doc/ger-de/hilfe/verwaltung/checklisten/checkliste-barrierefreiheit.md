@@ -11,7 +11,7 @@ type: help
 
 Diese Checkliste richtet sich an die Verantwortlichen für Barrierefreiheit, die Website-Administration und die leitende
 Redaktion einer öffentlichen Stelle. Sie trennt, was Exponential mitbringt, von dem, was Ihre Organisation tun muss. Die
-Statusangaben stammen aus den [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md): WCAG 2.2 AA
+Statusangaben stammen aus den [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md): WCAG 2.2 AA
 **Teilweise erfüllt** für die Administration admin4 und admin4l; EN 301 549 und Section 508
 **Nicht geprüft**; öffentliche Designs nicht geprüft; kein VPAT.
 
@@ -30,25 +30,25 @@ Statusangaben stammen aus den [Standards zur Barrierefreiheit](../../../../eng-u
 
 ## Die Administration
 
-- [ ] Mitarbeitende, die es brauchen, verwenden das Design **admin4**, das gegen die Kriterien von WCAG 2.2 AA gebaut und getestet ist ([Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)).
+- [ ] Mitarbeitende, die es brauchen, verwenden das Design **admin4**, das gegen die Kriterien von WCAG 2.2 AA gebaut und getestet ist ([Das Design admin4](../../../funktionen/6.0/admin4-design.md)).
 - [ ] Mitarbeitende kennen die [Tastenkürzel](../../tastenkuerzel.md) und den hellen, dunklen und systemabhängigen Modus.
-- [ ] Sie kennen die Lücken: Die klassische Administration, der Online-Editor (TinyMCE) und einige Erweiterungen werden nicht von denselben Tests abgedeckt ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#known-gaps)).
+- [ ] Sie kennen die Lücken: Die klassische Administration, der Online-Editor (TinyMCE) und einige Erweiterungen werden nicht von denselben Tests abgedeckt ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#bekannte-lücken)).
 - [ ] Die Oberflächensprache ist bei Bedarf pro Benutzer eingestellt ([Einstellungen zum Umschalten der Oberfläche](../../../anleitungen/ui-umschalter-einstellungen.md)).
 
 ## Das öffentliche Design
 
 - [ ] Das Design wurde für WCAG 2.2 AA gebaut oder geprüft; die öffentlichen Designs des Projekts sind nicht geprüft und liegen in der Verantwortung der Websiteersteller.
-- [ ] Sprunglink, Landmarks, eine `h1` pro Seite, sichtbarer Fokus, `lang` an `<html>` ([Barrierefreiheit für Websiteersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+- [ ] Sprunglink, Landmarks, eine `h1` pro Seite, sichtbarer Fokus, `lang` an `<html>` ([Barrierefreiheit für Websiteersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 - [ ] Farbkontrast von Text 4,5:1 und von Bedienelementen 3:1; keine Information allein über Farbe.
 - [ ] Das Layout bricht bei 320 CSS-Pixeln und bei 200 % Zoom sauber um.
-- [ ] Formulare haben Beschriftungen, Fehlermeldungen und Anleitungen ([Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)).
-- [ ] Sprachen mit Schreibrichtung von rechts nach links setzen die Richtung ([Websites von rechts nach links](../../../../eng-us/help/creators/website-creators/right-to-left-sites.md)).
-- [ ] Ein CAPTCHA, falls vorhanden, hat eine barrierefreie Alternative ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+- [ ] Formulare haben Beschriftungen, Fehlermeldungen und Anleitungen ([Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)).
+- [ ] Sprachen mit Schreibrichtung von rechts nach links setzen die Richtung ([Websites von rechts nach links](../../ersteller/website-ersteller/websites-von-rechts-nach-links.md)).
+- [ ] Ein CAPTCHA, falls vorhanden, hat eine barrierefreie Alternative ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 
 ## Inhalte
 
-- [ ] Die Redaktion ist in barrierefreien Inhalten geschult ([Redaktion 201, Modul 8](../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md)).
-- [ ] Jedes informative Bild hat einen Alternativtext; nichts in der Software zwingt die Redaktion, ihn auszufüllen ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#known-gaps)).
+- [ ] Die Redaktion ist in barrierefreien Inhalten geschult ([Redaktion 201, Modul 8](../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md)).
+- [ ] Jedes informative Bild hat einen Alternativtext; nichts in der Software zwingt die Redaktion, ihn auszufüllen ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#bekannte-lücken)).
 - [ ] Überschriften sind in der richtigen Reihenfolge; Tabellen haben Kopfzeilen; Linktexte beschreiben das Ziel.
 - [ ] Dokumente (PDF, Office-Dateien) sind barrierefrei oder haben eine barrierefreie Alternative.
 - [ ] Videos haben Untertitel; Audio hat Transkripte.
@@ -56,7 +56,7 @@ Statusangaben stammen aus den [Standards zur Barrierefreiheit](../../../../eng-u
 
 ## Tests
 
-- [ ] Testen Sie die wichtigsten Abläufe allein mit der Tastatur und mit einem Screenreader ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+- [ ] Testen Sie die wichtigsten Abläufe allein mit der Tastatur und mit einem Screenreader ([Barrierefreiheit testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)).
 - [ ] Lassen Sie eine automatische Prüfung über die Haupttemplates laufen; sie findet nur einen Teil der Probleme.
 - [ ] Folgen Sie für eine formale Bewertung einer Methode wie [WCAG-EM](https://www.w3.org/TR/WCAG-EM/).
 - [ ] Testen Sie nach Designänderungen und nach Aktualisierungen erneut.
@@ -72,7 +72,7 @@ Statusangaben stammen aus den [Standards zur Barrierefreiheit](../../../../eng-u
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - Der Bereich Barrierefreiheit dieser Hilfe für Verwaltungen (von einem anderen Autor geschrieben)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

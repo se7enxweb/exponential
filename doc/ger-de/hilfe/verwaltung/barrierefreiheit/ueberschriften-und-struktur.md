@@ -46,16 +46,16 @@ Prüfen Sie, was Ihr eigenes Design tut: Ein Design kann `header.tpl` überschre
 
 - Ein `h1` je Seite (der Name der Seite); Landmarks (`header`, `nav`, `main`, `footer`); Überschriften in
   Block-Templates, die sich in die Gliederung der Seite einfügen
-  ([Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+  ([Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 - Verwenden Sie Überschriftenelemente in Blöcken nicht für visuelle Effekte (ein Teaser-Titel in einer Liste kann je
   nach Gliederung ein `h2` oder `h3` sein, nicht nach seinem Aussehen).
 - Mit dem Layout-Editor gebaute Landingpages: Prüfen Sie, dass die Block-Templates eine logische Gliederung ergeben
-  ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+  ([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 
 ## Seitentitel
 
 WCAG 2.4.2 verlangt beschreibende Seitentitel. Den `<title>` baut Ihr Pagelayout aus dem Namen des Inhalts und dem
-Namen der Website ([Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md)). Den ersten Teil steuert die
+Namen der Website ([Das Pagelayout](../../ersteller/website-ersteller/das-pagelayout.md)). Den ersten Teil steuert die
 Redaktion: Geben Sie jedem Objekt einen klaren, eindeutigen Namen. Die eigenen Titel der Administration baut
 `page_head.tpl`.
 
@@ -63,7 +63,7 @@ Redaktion: Geben Sie jedem Objekt einen klaren, eindeutigen Namen. Die eigenen T
 
 - [Barrierefreie Inhalte für die Redaktion](barrierefreie-inhalte-fuer-die-redaktion.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
-- [Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md)
+- [Das Pagelayout](../../ersteller/website-ersteller/das-pagelayout.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -45,8 +45,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [ezupdate: Aktualisierungen und Pakete in der Administration](../../../../../eng-us/features/6.0/extensions/ezupdate.md),
-[git_manager: Deploy und Sicherung aus der Administration](../../../../../eng-us/features/6.0/extensions/git_manager.md) und
+Quellen: [ezupdate: Aktualisierungen und Pakete in der Administration](../../../../funktionen/6.0/erweiterungen/ezupdate.md),
+[git_manager: Deploy und Sicherung aus der Administration](../../../../funktionen/6.0/erweiterungen/git_manager.md) und
 [Automatische Aktualisierungen mit ezupdate für Hoster](../../../hosting/betrieb/automatische-updates-mit-ezupdate.md).
 
 1. **Zwei Arten von Installationen** (3 Minuten). Eine mit Composer verwaltete Installation (`composer.json`,
@@ -144,7 +144,7 @@ Installation des Trainers am Projektor. Jeder der folgenden Schritte liest nur.
 <summary>Antworten</summary>
 
 1. **B.** Sie führt `composer outdated` aus
-   ([ezupdate, So läuft eine Aktualisierung ab](../../../../../eng-us/features/6.0/extensions/ezupdate.md#how-an-update-goes)).
+   ([ezupdate, So läuft eine Aktualisierung ab](../../../../funktionen/6.0/erweiterungen/ezupdate.md#wie-ein-update-abläuft)).
 2. `AllowUpdate` und `AllowInstall` sind ausgeschaltet, bis ein Administrator sie einschaltet.
 3. `update/ezupdate`; um die Installation zu ändern, ist `update/manage` nötig.
 4. `git fetch --prune` auf dem Remote und sonst nichts: kein Pull, Merge, Reset oder Checkout.
@@ -155,8 +155,8 @@ Installation des Trainers am Projektor. Jeder der folgenden Schritte liest nur.
 
 ## Weiterführende Literatur
 
-- [ezupdate: Aktualisierungen und Pakete in der Administration](../../../../../eng-us/features/6.0/extensions/ezupdate.md).
-- [git_manager: Deploy und Sicherung aus der Administration](../../../../../eng-us/features/6.0/extensions/git_manager.md).
+- [ezupdate: Aktualisierungen und Pakete in der Administration](../../../../funktionen/6.0/erweiterungen/ezupdate.md).
+- [git_manager: Deploy und Sicherung aus der Administration](../../../../funktionen/6.0/erweiterungen/git_manager.md).
 - [Mit Git aktualisieren](../../../mit-git-aktualisieren.md): einen Git-Checkout in einer Shell aktualisieren.
 - [Automatische Aktualisierungen mit ezupdate für Hoster](../../../hosting/betrieb/automatische-updates-mit-ezupdate.md).
 

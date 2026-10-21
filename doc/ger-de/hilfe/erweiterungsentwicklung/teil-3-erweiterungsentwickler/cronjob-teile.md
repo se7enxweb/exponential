@@ -114,7 +114,7 @@ php runcronjobs.php -s site --script=hellodigest.php
 
 Administratoren können Ihren Teil unter **Setup > Cronjobs** anhalten, und ein Listener des Ereignisses
 `cronjob/part/run` kann die Ausführung eines Teils verweigern (zum Beispiel während eines Releases); siehe
-[Einen Cronjob-Teil auslassen](../../../../eng-us/features/6.0/cronjob-part-filter.md). Sie müssen keinen eigenen
+[Einen Cronjob-Teil auslassen](../../../funktionen/6.0/filter-fuer-cronjob-teile.md). Sie müssen keinen eigenen
 Schalter bauen.
 
 ## RAD

@@ -59,7 +59,7 @@ das Original liest (`$attribute`), und die Parameter, die es annimmt, weil ander
 ## Für eine Klasse oder ein Feld umgestalten
 
 Verwenden Sie einen Override mit `Source=content/datatype/view/<datatype>.tpl` und `Match[class_identifier]` und/oder
-`Match[attribute_identifier]` ([attribute_view_gui](attribute-view-gui.md#restyling-one-field-with-an-override)).
+`Match[attribute_identifier]` ([attribute_view_gui](attribute-view-gui.md#ein-feld-mit-einem-override-anders-gestalten)).
 
 ## Regeln
 

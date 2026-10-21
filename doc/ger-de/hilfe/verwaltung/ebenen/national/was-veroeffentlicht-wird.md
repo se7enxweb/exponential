@@ -42,15 +42,15 @@ und wo Exponential es bietet.
 |---|---|---|
 | Viele Redakteurinnen und Redakteure, jede und jeder auf die eigene Einheit beschränkt | Sektionen und Rollen mit Einschränkungen nach Sektion | [Sektionen](../../../../anleitungen/sektionen.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
 | Ein zweites Augenpaar vor dem Veröffentlichen | Ein Ereignis *Freigeben* in einem Workflow beim Veröffentlichen | [Workflows](../../../../anleitungen/workflows.md) |
-| Verlauf jedes veröffentlichten Textes | Versionen mit Vergleich und neuem Entwurf aus einer alten Version; das Audit-Protokoll | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Verlauf jedes veröffentlichten Textes | Versionen mit Vergleich und neuem Entwurf aus einer alten Version; das Audit-Protokoll | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Publikationen als Dokumente | Die Klasse File (`ezbinaryfile`), Beziehungen von Seiten zu Dateien, PDF-Exporte eines Teilbaums | [PDF-Exporte](../../../../anleitungen/pdf-exporte.md) |
 | Mehrere Amtssprachen | Inhaltssprachen und Übersetzungen je Objekt | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
 | Konsultationen mit Antworten | Der Informationssammler und **Setup > Gesammelte Informationen** | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
 | Nachrichtenfeeds für Medien und andere Websites | RSS-Exporte | [RSS-Feeds](../../../../anleitungen/rss-feeds.md) |
 | Benachrichtigungen an Abonnenten | Das Benachrichtigungssystem und die E-Mail-Einstellungen | [Benachrichtigungen](../../../../anleitungen/benachrichtigungen-administrator.md) |
-| Themen quer über Einheiten | Tags mit eztags | [Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md) |
-| Suche über eine große Website | Eingebaute Suche oder eZ Find mit Solr | [Suche mit eZ Find und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md) |
-| Lastspitzen | Ansichts-Cache, statischer Cache, Antwort-Cache von Velocity | [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
+| Themen quer über Einheiten | Tags mit eztags | [Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md) |
+| Suche über eine große Website | Eingebaute Suche oder eZ Find mit Solr | [Suche mit eZ Find und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md) |
+| Lastspitzen | Ansichts-Cache, statischer Cache, Antwort-Cache von Velocity | [Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md) |
 
 ## Umfang und Rhythmus
 
@@ -86,8 +86,8 @@ Seiten ein.
 
 - [Nationale Regierung](README.md)
 - [Inhaltsmodell für die nationale Regierung](inhaltsmodell.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
-- [Sitemap und Inhaltsinventar](../../../../../eng-us/help/creators/website-creators/site-map-and-content-inventory.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
+- [Sitemap und Inhaltsinventar](../../../ersteller/website-ersteller/sitemap-und-inhaltsbestandsaufnahme.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

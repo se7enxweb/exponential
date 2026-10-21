@@ -83,7 +83,7 @@ werden muss.
   ([Kommunikation mit Mitgliedern](kommunikation-mit-mitgliedern.md)).
 - Benachrichtigungen, wenn in Bereichen, denen ein Mitglied folgt, neue Inhalte erscheinen.
 - Jede Person wählt auf einer Seite, welche optionalen Mails sie bekommt, und jede optionale Mail hat eine Abmeldung
-  per Klick ([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md)).
+  per Klick ([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 ## Veranstaltungen und Gemeinschaft
 
@@ -136,7 +136,7 @@ dokumentierten Funktionen. Ein einmaliger Beitrag lässt sich als Produkt über 
 - [Mitgliederwebsites](README.md)
 - [Checkliste für Mitgliederwebsites](checkliste-fuer-mitgliederwebsites.md)
 - [Website-Planung für kleine Gruppen](../vereine/website-planung-fuer-kleine-gruppen.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

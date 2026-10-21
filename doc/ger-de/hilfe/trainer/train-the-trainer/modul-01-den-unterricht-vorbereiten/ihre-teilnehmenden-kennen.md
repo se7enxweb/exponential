@@ -127,7 +127,7 @@ Bereiten Sie die Aufnahme für eine echte oder ausgedachte Gruppe von acht Teiln
 
 ## Weiterführende Literatur
 
-- [Dashboard und Zielgruppen der Hilfe](../../../../../eng-us/features/6.0/help-system.md#in-short): die Zielgruppen des
+- [Dashboard und Zielgruppen der Hilfe](../../../../funktionen/6.0/hilfesystem.md#kurz-gesagt): die Zielgruppen des
   Hilfe-Centers.
 - [Die Privatsphäre von Menschen schützen](../../../fuersprecher/privatsphaere-schuetzen.md): was man nicht sammeln oder
   zeigen sollte.

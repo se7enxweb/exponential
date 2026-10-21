@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren einer Multisite-Installation. Jede Site kann ihr eigenes VarDir haben; die
 folgenden Einstellungen trennen Logs und Caches je Site
-([Logs, INI-Cache und Ablaufzeitstempel je Site](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)).
+([Logs, INI-Cache und Ablaufzeitstempel je Site](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)).
 
 ## Inhalt
 
@@ -55,7 +55,7 @@ an die Einstellungen einer Site gebunden sind (Newsletter, Sitemaps), laufen fü
 
 ## Verwandte Seiten
 
-- [Logs, INI-Cache und Ablaufzeitstempel je Site](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)
+- [Logs, INI-Cache und Ablaufzeitstempel je Site](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)
 - [Eine Site betreiben](../../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

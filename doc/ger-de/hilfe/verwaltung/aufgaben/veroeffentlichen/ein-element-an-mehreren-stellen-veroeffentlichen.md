@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, deren Seite an zwei Stellen gehört: eine Dienstleistung unter „Wohnen“ und unter
 „Umzug“, eine Seite mit Hinweisen unter zwei Zielgruppen. In Exponential kann ein Objekt mehrere **Orte** haben; es
 ist dieselbe Seite, also erscheint eine Änderung überall
-([Relationen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+([Relationen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Inhalt
 

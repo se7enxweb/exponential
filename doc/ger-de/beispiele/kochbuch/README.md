@@ -70,7 +70,7 @@ Das Kochbuch zeigt, wie es geht; die Referenzbereiche listen auf, was es gibt, a
 - [Befehle](../befehle/README.md) und [Erweiterungspunkte](../erweiterungspunkte/README.md)
 
 Die Programmierregeln und der Musterkatalog (wie Code, Templates und Dokumentation in diesem Projekt geschrieben
-werden) stehen in [den Standards](../../../eng-us/standards/README.md); das Kochbuch folgt ihnen und wiederholt sie
+werden) stehen in [den Standards](../../standards/README.md); das Kochbuch folgt ihnen und wiederholt sie
 nicht.
 
 ## Verwandte Seiten
@@ -78,7 +78,7 @@ nicht.
 - [Beispiele](../README.md): alle Beispielbereiche, einschließlich der Webserver-Konfigurationen.
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../anleitungen/extensions.md)
 - [Templates und Design](../../anleitungen/templates-und-design.md)
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md): die Assistenten, die die meisten dieser Gerüste für Sie
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md): die Assistenten, die die meisten dieser Gerüste für Sie
   schreiben.
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

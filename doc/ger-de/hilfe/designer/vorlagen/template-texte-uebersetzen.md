@@ -66,7 +66,7 @@ zeigt (`doc/eng-us/languages.md`, „Translation fallbacks“).
 ## Verwandte Seiten
 
 - [Der Operator i18n](der-i18n-operator.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

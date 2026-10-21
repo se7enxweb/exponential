@@ -113,7 +113,7 @@ server {
 
 Für eine Installation mit mehreren Websites mit `site.ini [FileSettings] CacheVarDir=var_cache` fügt Kapitel 8 eine auskommentierte
 Location für `^/var_cache/([^/]+/)?cache/(texttoimage|public)/` hinzu; siehe
-[Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
+[Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
 
 ## Warum er so geordnet ist
 

@@ -31,7 +31,7 @@ Dokumentation und die Schulungen in dieser Hilfe sind ebenfalls kostenlos
 ## Gibt es einen Preis pro Benutzer oder pro Website?
 
 Nein. Es gibt keine Plätze, Redakteure oder Websites, die lizenziert werden müssten. Eine Installation kann viele
-Websites bedienen ([Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)) und beliebig viele
+Websites bedienen ([Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)) und beliebig viele
 Benutzerkonten.
 
 ## Was kostet trotzdem Geld?
@@ -41,14 +41,14 @@ Benutzerkonten.
 | Umsetzung: Inhaltsmodell, Design, Templates, Migration | eine Agentur oder einen Partner, oder Ihre Mitarbeitenden |
 | Hosting und Betrieb | einen Hoster, oder Ihr Rechenzentrum und Ihre Mitarbeitenden |
 | Support mit vereinbarten Reaktionszeiten | 7x oder einen Partner |
-| Schulung | einen Schulungspartner oder Ihre eigenen Trainer ([Schulungsaufwand budgetieren](../../../../eng-us/help/government/procurement/training/budgeting-training-effort.md)) |
-| Routinemäßige Aktualisierungen und Sicherheitsupdates | Ihren Dienstleister oder Ihre Mitarbeitenden ([Aktualisierungen im Budget einplanen](../../../../eng-us/help/government/procurement/lifecycle/planning-upgrades-in-the-budget.md)) |
+| Schulung | einen Schulungspartner oder Ihre eigenen Trainer ([Schulungsaufwand budgetieren](../beschaffung/schulung/schulungsaufwand-budgetieren.md)) |
+| Routinemäßige Aktualisierungen und Sicherheitsupdates | Ihren Dienstleister oder Ihre Mitarbeitenden ([Aktualisierungen im Budget einplanen](../beschaffung/lebenszyklus/upgrades-im-haushalt-planen.md)) |
 | Prüfungen von Barrierefreiheit und Sicherheit | eine unabhängige Prüfstelle |
 | Dienste von Drittanbietern, die Sie hinzufügen (Webanalyse, E-Mail, KI-Anbieter) | diese Dienste |
 | Ausstieg und Übergang am Ende eines Vertrags | den bisherigen und den neuen Dienstleister |
 
 Der Teil zu den Gesamtbetriebskosten im Bereich Beschaffung fasst diese Posten in einem Modell zusammen
-([Beschaffung](../../../../eng-us/help/government/procurement/README.md)).
+([Beschaffung](../beschaffung/README.md)).
 
 ## Was kostet Support?
 
@@ -62,7 +62,7 @@ Partner, keine Preisliste für öffentliche Stellen.
 
 Neue Versionen selbst sind kostenlos. Die Arbeit, sie einzuspielen, ist es nicht: Jemand muss sichern, aktualisieren,
 testen und prüfen. Ihr Umfang hängt vor allem davon ab, wie viel eigens entwickelten Code Ihre Website hat und wie weit
-sie zurückliegt ([Aktualisierungen im Budget einplanen](../../../../eng-us/help/government/procurement/lifecycle/planning-upgrades-in-the-budget.md)).
+sie zurückliegt ([Aktualisierungen im Budget einplanen](../beschaffung/lebenszyklus/upgrades-im-haushalt-planen.md)).
 
 ## Wie vergleichen wir Angebote?
 
@@ -74,7 +74,7 @@ entwickelter Code, fehlende Schulung für neue Mitarbeitende, ein fehlender Auss
 ## Verwandte Seiten
 
 - [FAQ für Verwaltungen](README.md)
-- [Exponential im öffentlichen Sektor beschaffen](../../../../eng-us/help/government/procurement/README.md)
+- [Exponential im öffentlichen Sektor beschaffen](../beschaffung/README.md)
 - [SLA-Optionen für das Hosting von Exponential](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -43,10 +43,10 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Einwilligung](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#consent),
-[Bounces und die Sperrliste](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#bounces-and-the-blacklist),
+Quellen: [Einwilligung](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#einwilligung),
+[Bounces und die Sperrliste](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#bounces-und-die-sperrliste),
 [E-Mail-Einstellungen: einrichten und betreiben](../../../../anleitungen/mail-einstellungen-administrator.md) und die
-Anleitung zur Zustellbarkeit der Erweiterung (verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+Anleitung zur Zustellbarkeit der Erweiterung (verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 
 1. **Die Checkliste zur Einwilligung** (5 Minuten). Double-Opt-in für jedes öffentliche Abonnement; ein Abmeldelink
    in jeder Ausgabe; ein Anmeldeformular, das sagt, was Abonnenten bekommen und wie oft; Exporte nur so lange
@@ -71,7 +71,7 @@ rechtliche Aufforderung hin oder bei einer Funktionsadresse, die sich beschwert 
 
 **Hilft das Löschen eines Benutzers beim Recht auf Vergessenwerden?** Die E-Mail-Einstellungen haben einen
 Löschweg, der auch die Daten des Newsletter-Benutzers entfernt; siehe
-[E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md). Folgen Sie dem Verfahren Ihrer Organisation.
+[E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md). Folgen Sie dem Verfahren Ihrer Organisation.
 
 **Kann eine Person alle ihre Mail-Einstellungen an einem Ort verwalten?** Ja, auf der Seite der E-Mail-Einstellungen
 der Website; die Newsletter-Kategorie erscheint dort.
@@ -125,17 +125,17 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 <summary>Antworten</summary>
 
 1. Zwei beliebige aus: Double-Opt-in, ein Abmeldelink in jeder Ausgabe, ein klares Anmeldeformular, kurzlebige
-   Exporte ([Einwilligung](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#consent)).
-2. **B.** ([Status](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#statuses)).
-3. Die Sperrliste; sie hat Vorrang vor jeder Liste ([Bounces und die Sperrliste](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#bounces-and-the-blacklist)).
-4. Ein Hard-Bounce oder eine Beschwerde (Anleitung zur Zustellbarkeit, verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+   Exporte ([Einwilligung](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#einwilligung)).
+2. **B.** ([Status](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#status)).
+3. Die Sperrliste; sie hat Vorrang vor jeder Liste ([Bounces und die Sperrliste](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#bounces-und-die-sperrliste)).
+4. Ein Hard-Bounce oder eine Beschwerde (Anleitung zur Zustellbarkeit, verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 5. Wenn die Person vielleicht zurückkommen möchte; die Sperrliste ist für Adressen, die nie Mail bekommen dürfen.
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#consent):
+- [Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#einwilligung):
   die Checkliste zur Einwilligung.
 - [E-Mail-Einstellungen: einrichten und betreiben](../../../../anleitungen/mail-einstellungen-administrator.md): die
   Unterdrückungsliste und das Einwilligungsprotokoll.
@@ -145,7 +145,7 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 
 - [Modul 3: Abonnenten](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

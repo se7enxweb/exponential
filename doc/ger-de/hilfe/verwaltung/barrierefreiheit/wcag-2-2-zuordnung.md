@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Koordination Barrierefreiheit, an Design, Entwic
 eine Website planen oder prüfen. Sie listet die Erfolgskriterien von WCAG 2.2 auf, die die Erklärung des Projekts
 abdeckt, sagt für jedes, was die Administration admin4 tut und welcher Test es absichert, und sagt, wer für dasselbe
 Kriterium auf Ihrer öffentlichen Website verantwortlich ist. Jeder Eintrag für die Administration stammt aus
-[Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#wcag-22); WCAG selbst finden Sie unter
+[Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#wcag-22); WCAG selbst finden Sie unter
 <https://www.w3.org/TR/WCAG22/>.
 
 ## Inhalt
@@ -43,7 +43,7 @@ Kriterium auf Ihrer öffentlichen Website verantwortlich ist. Jeder Eintrag für
 | 1.4.3 Kontrast (Minimum) | Tokens `--a4-*` geprüft: Text 4,5:1 im hellen und dunklen Modus | `AdminTokenContrastTest.php` | Design: die Farb-Tokens Ihres Themes |
 | 1.4.4 Textgröße ändern, 1.4.10 Umbruch | in Breiten für Telefon, Tablet und Desktop geprüft; Seiten bei 960 px mit 200 % Zoom geprüft | `AdminResponsiveTest.php` | Design und Entwicklung: responsive Templates |
 | 1.4.11 Nicht-Text-Kontrast | Fokusrahmen und Feldränder 3:1, Diagrammfarben 3:1 | `AdminTokenContrastTest.php` | Design |
-| 1.4.13 Inhalt bei Hover oder Fokus | Tooltips überfahrbar, dauerhaft, mit Escape schließbar | [Design admin4](../../../../eng-us/features/6.0/admin4-design.md) | Entwicklung |
+| 1.4.13 Inhalt bei Hover oder Fokus | Tooltips überfahrbar, dauerhaft, mit Escape schließbar | [Design admin4](../../../funktionen/6.0/admin4-design.md) | Entwicklung |
 | 2.1.1 Tastatur | Reiter eines Knotens (Reitermuster der APG), Inhaltsbaum, Kontextmenüs per Tastatur | `AdminKeyboardTest.php`, `AdminContextMenuTest.php` | Entwicklung: Menüs, Slider, eingebettete Widgets |
 | 2.4.1 Blöcke umgehen | „Zum Hauptinhalt springen“ ist der erste Tabulatorstopp | `AdminLandmarksTest.php` | Entwicklung: ein Sprunglink in Ihrem Pagelayout |
 | 2.4.3 Fokus-Reihenfolge | dieselbe Tabulatorreihenfolge im Kopfbereich in admin4 und admin4l | `AdminHeaderTabOrderTest.php` | Entwicklung |
@@ -70,7 +70,7 @@ Einige Fakten, die für diese Kriterien zählen und sich im Repository prüfen l
 - **2.5.7 Ziehbewegungen**: Unterelemente lassen sich in admin4 per Ziehen und Ablegen umsortieren. Der Griff ist auch
   eine Schaltfläche, die die Zeile mit Leertaste, Enter und den Pfeiltasten verschiebt, und die Prioritätszellen lassen
   sich weiterhin von Hand bearbeiten
-  ([Unterelemente per Ziehen und Ablegen umsortieren](../../../../eng-us/features/6.0/admin4-design.md#reordering-sub-items-by-drag-and-drop)).
+  ([Unterelemente per Ziehen und Ablegen umsortieren](../../../funktionen/6.0/admin4-design.md#unterelemente-per-drag-and-drop-neu-anordnen)).
   Nehmen Sie andere Ziehinteraktionen Ihrer Erweiterungen (zum Beispiel den Layout-Editor) in Ihre Prüfung auf.
 - **2.2.1 Zeiteinteilung anpassbar**: Sitzungen enden nach `site.ini [Session] SessionTimeout` (standardmäßig 259200
   Sekunden); ein aus Sicherheitsgründen gewählter kürzerer Wert kann Redakteurinnen und Redakteure betreffen, die
@@ -83,10 +83,10 @@ Einige Fakten, die für diese Kriterien zählen und sich im Repository prüfen l
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
 - [Styling von admin4](../../../bc/6.0/admin4-gestaltung.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

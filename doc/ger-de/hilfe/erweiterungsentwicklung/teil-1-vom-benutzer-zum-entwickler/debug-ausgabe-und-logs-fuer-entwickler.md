@@ -61,7 +61,7 @@ Prüfen Sie jede davon mit `./console exp:ini where site.ini/<Block>/<Setting>`.
 
 Mit `ShowTemplatePathComments=enabled` sehen Sie sich den Seitenquelltext an: Jeder Teil des HTML ist von Kommentaren
 umschlossen, die sein Template nennen. Das ist der schnellste Weg von „dieser Teil der Seite“ zu „diese Datei“.
-Siehe [Template-Pfadkommentare](../../../../eng-us/features/6.0/template-path-comments.md).
+Siehe [Template-Pfadkommentare](../../../funktionen/6.0/template-pfad-kommentare.md).
 
 ## Die Log-Dateien
 
@@ -85,7 +85,7 @@ grep -c "" var/log/deprecated.log    # how many deprecation lines
 ```
 
 Die Administration hat einen Viewer für dieselben Dateien, mit Suche und Permalinks: **Setup > Logs**, beschrieben in
-[Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md). Jeder Fehler trägt eine Referenz, die zu jeder Zeile seiner
+[Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md). Jeder Fehler trägt eine Referenz, die zu jeder Zeile seiner
 Anfrage führt: [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md). Auf
 der Kommandozeile heißt das `./console exp:explogs`.
 

@@ -71,7 +71,7 @@ und den Funktionsseiten:
   Sitzungen enden.
 - Mit `[UserSettings] DeactivateAndMove=enabled` (auf Wunsch einzuschalten) deaktiviert **Deaktivieren und
   verschieben** das Konto und verschiebt es umkehrbar in eine verborgene Gruppe ohne Rollen, wobei Inhalte und Verlauf
-  erhalten bleiben ([Deaktivieren und verschieben](../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move)). Das
+  erhalten bleiben ([Deaktivieren und verschieben](../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben)). Das
   Entfernen eines Benutzerobjekts ist endgültig: Benutzer kommen nie in den Papierkorb.
 - Wechselnde Beschäftigte: Ändern Sie die Gruppenzugehörigkeit, nicht die Rollen der Gruppe.
 
@@ -89,7 +89,7 @@ Zweimal im Jahr oder wie es Ihre Richtlinie vorsieht:
 ## Verwandte Seiten
 
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
-- [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)
 - [Kurs Rollen und Richtlinien](../../trainer/website-administratoren/modul-03-rollen-und-richtlinien/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

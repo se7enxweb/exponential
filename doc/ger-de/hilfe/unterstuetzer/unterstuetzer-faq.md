@@ -52,7 +52,7 @@ Sponsern, Arbeitszeit von Mitarbeitenden einbringen und allgemein nutzbare Arbei
 [Exponential als Unternehmen unterstützen](als-unternehmen-unterstuetzen.md)
 
 **Was ist der Unterschied zwischen einem Unterstützer, einem Sponsor und einem Partner?**
-[Was ein Exponential-Partner ist](../../../eng-us/help/partners/what-is-an-exponential-partner.md#partner-supporter-sponsor-contributor-customer)
+[Was ein Exponential-Partner ist](../partner/was-ein-exponential-partner-ist.md#partner-unterstützer-sponsor-beitragende-kunde)
 
 ## Verwandte Seiten
 

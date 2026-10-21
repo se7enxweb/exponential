@@ -13,7 +13,7 @@ type: help
 [Geschichte](geschichte-der-template-sprache.md#die-verbesserte-syntax-2005-version-36)). Sie ist weiterhin registriert, ältere Designs und Erweiterungen nutzen sie
 überall, und sie kann einige Dinge, die die neueren Funktionen anders lösen. Diese Seite dokumentiert jeden Parameter von
 `eZTemplateSectionFunction` (`lib/eztemplate/classes/eztemplatesectionfunction.php`) und zeigt neben jedem die moderne Entsprechung. Eine kurze
-Anleitung zum Umstellen bietet [Section (veraltet)](../../../eng-us/help/designers/templates/section-legacy.md).
+Anleitung zum Umstellen bietet [Section (veraltet)](../designer/vorlagen/section-legacy.md).
 
 ## Inhalt
 
@@ -239,9 +239,9 @@ Schleife also auf `foreach` mit `str_split|reverse` um.
 ## Verwandte Seiten
 
 - Zurück: [Referenz der Kontrollstrukturen](referenz-der-kontrollstrukturen.md)
-- [Section (veraltet)](../../../eng-us/help/designers/templates/section-legacy.md)
-- [section](../../../eng-us/examples/template-functions/section.md), aus dem Code erzeugt
-- [Foreach-Schleifen](../../../eng-us/help/designers/templates/foreach-loops.md)
+- [Section (veraltet)](../designer/vorlagen/section-legacy.md)
+- [section](../../beispiele/template-funktionen/section.md), aus dem Code erzeugt
+- [Foreach-Schleifen](../designer/vorlagen/foreach-schleifen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

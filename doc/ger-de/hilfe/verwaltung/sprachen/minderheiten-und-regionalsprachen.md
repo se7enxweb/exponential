@@ -32,8 +32,8 @@ Walisisch (`cym-GB`), Baskisch (`eus-ES`), Galicisch (`glg-ES`), Irisch (`gle-IE
 Bretonisch (`bre-FR`), Okzitanisch (`oci-FR`), Westfriesisch (`fry-NL`), Nordsamisch (`sme-NO`), Rätoromanisch
 (`roh-CH`), Luxemburgisch (`ltz-LU`), Maori (`mri-NZ`), Hawaiisch (`haw-US`) und Grönländisch (`kal-GL`). Die
 vollständige Liste mit den Namen in der jeweiligen Sprache steht in
-[Sprachen in Exponential, Abschnitt 3](../../../../eng-us/languages.md#3-every-locale); noch fehlende Sprachen stehen in
-[Abschnitt 6](../../../../eng-us/languages.md#6-common-languages-still-missing). Eine fehlende Locale lässt sich als Datei
+[Sprachen in Exponential, Abschnitt 3](../../../sprachen.md#3-alle-locales); noch fehlende Sprachen stehen in
+[Abschnitt 6](../../../sprachen.md#6-verbreitete-sprachen-die-noch-fehlen). Eine fehlende Locale lässt sich als Datei
 hinzufügen (siehe „Eigene Locales für nicht gelistete Sprachen“).
 
 ## Teilweise Übersetzung mit Ersatzsprache
@@ -56,7 +56,7 @@ Sie fest, welche Bereiche zuerst übersetzt werden: Kontakt, die meistgenutzten 
 
 Für die meisten Minderheitensprachen gibt es keine Übersetzung der Administration; die Oberfläche bleibt in einer
 anderen Sprache, während Inhalte in der Minderheitensprache geschrieben werden können und Datumsangaben ihrer Locale
-folgen ([Sprachen in Exponential, Abschnitt 2](../../../../eng-us/languages.md#2-support-levels)). Die festen Texte Ihres
+folgen ([Sprachen in Exponential, Abschnitt 2](../../../sprachen.md#2-unterstützungsstufen)). Die festen Texte Ihres
 öffentlichen Designs sind Ihre eigenen `.ts`-Übersetzungen, die ein Übersetzer für die wenigen Texte einer
 öffentlichen Website liefern kann.
 
@@ -64,7 +64,7 @@ folgen ([Sprachen in Exponential, Abschnitt 2](../../../../eng-us/languages.md#2
 
 Prüfen Sie, ob die Schriften des Designs jeden Buchstaben der Sprache enthalten (zum Beispiel Buchstaben mit Akzenten
 und Sonderbuchstaben). Zeichen oberhalb von U+FFFF brauchen unter MySQL und MariaDB `utf8mb4`
-([Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md#4-byte-characters-on-mysql-and-mariadb)).
+([Standards zur Internationalisierung](../../../standards/internationalisierung.md#4-byte-zeichen-unter-mysql-und-mariadb)).
 
 ## Zusammenarbeit mit Sprechern
 
@@ -78,7 +78,7 @@ und Sonderbuchstaben). Zeichen oberhalb von U+FFFF brauchen unter MySQL und Mari
 
 ## Verwandte Seiten
 
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Eigene Locales für nicht gelistete Sprachen](eigene-locales-fuer-nicht-gelistete-sprachen.md)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

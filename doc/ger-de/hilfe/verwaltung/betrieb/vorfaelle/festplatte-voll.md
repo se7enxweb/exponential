@@ -63,7 +63,7 @@ Führen Sie während eines Vorfalls kein `rm -rf` unter `var/` von Hand aus; ver
 Mit `[AuditSettings] OnWriteFailure=continue` (Standard) lief die Website weiter, und nicht geschriebene Einträge wurden
 in `error.log` als `AUDIT-UNWRITTEN` vermerkt; das Audit-Dashboard warnt. Mit `refuse` wurden sicherheitsrelevante
 Aktionen verweigert (`AUDIT-REFUSED`)
-([Prüfprotokoll, „When the audit cannot write“](../../../../../eng-us/features/6.0/audit-trail.md#when-the-audit-cannot-write-onwritefailure)).
+([Prüfprotokoll, „When the audit cannot write“](../../../../funktionen/6.0/pruefprotokoll.md#wenn-das-audit-nicht-schreiben-kann-onwritefailure)).
 Danach:
 
 ```bash
@@ -85,8 +85,8 @@ Halten Sie die Lücke im Prüfprotokoll in Ihren Notizen zum Vorfall fest: Prüf
 
 ## Verwandte Seiten
 - [Website nicht erreichbar](website-nicht-erreichbar.md)
-- [Logs rotieren und bereinigen](../../../../../eng-us/help/government/tasks/operations/rotate-and-prune-logs.md)
-- [Den Zustand der Logs prüfen](../../../../../eng-us/help/government/tasks/operations/check-log-health.md)
+- [Logs rotieren und bereinigen](../../aufgaben/betrieb/logs-rotieren-und-bereinigen.md)
+- [Den Zustand der Logs prüfen](../../aufgaben/betrieb/den-zustand-der-logs-pruefen.md)
 - [Speicheraufteilung (Hosting)](../../../hosting/betrieb/aufbau-des-speichers.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

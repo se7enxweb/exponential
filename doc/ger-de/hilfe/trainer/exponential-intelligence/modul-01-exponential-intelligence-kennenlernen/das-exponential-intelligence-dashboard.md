@@ -125,7 +125,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto.
 
 ## Weiterführende Informationen
 
-- [expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md#for-editors)
+- [expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md#für-redakteure)
 - Die Seiten zum Dashboard und zur Nutzung unter **EI: Help** (`extension/expai/doc/dashboard.md`,
   `extension/expai/doc/usage-tracking.md`).
 
@@ -133,7 +133,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto.
 
 - [Modul 1: Exponential Intelligence kennenlernen](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

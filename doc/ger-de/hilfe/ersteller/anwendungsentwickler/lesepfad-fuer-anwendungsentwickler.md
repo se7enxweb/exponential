@@ -78,7 +78,7 @@ Sie können: eine getestete, sichere, versionierte Erweiterung ausliefern und im
 
 ## Weiterführendes
 
-Die [Standards](../../../../eng-us/standards/README.md) beschreiben die Regeln und Muster der Codebasis; der Bereich für
+Die [Standards](../../../standards/README.md) beschreiben die Regeln und Muster der Codebasis; der Bereich für
 Website-Ersteller behandelt den Bau von Websites; Beiträge zum Projekt beginnen mit [Mit Git entwickeln](../../mit-git-entwickeln.md)
 und [Mit der Community arbeiten](../../fuehrung/mit-der-community-arbeiten.md).
 

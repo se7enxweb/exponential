@@ -15,7 +15,7 @@ eine Sicherheitsbewertung oder eine Regel zur Datenresidenz. Sie führt jeden Or
 speichert, sagt, welche Orte üblicherweise personenbezogene Daten enthalten und welche Funktionen Daten nur dann
 anderswohin senden, wenn Sie sie einschalten. Wo der Server selbst steht, ist Ihre Hosting-Entscheidung; diese Seite
 sagt Ihnen, was in das Inventar gehört. Die Fakten stammen aus [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md)
-und den [Datenschutzstandards](../../../../../eng-us/standards/privacy.md).
+und den [Datenschutzstandards](../../../../standards/datenschutz.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -53,8 +53,8 @@ Regel folgen.
 | Die eigenen Logs des Webservers | außerhalb von Exponential | ja |
 
 Quellen: [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md),
-[Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md), [Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md),
-[Datenschutzstandards](../../../../../eng-us/standards/privacy.md). Wie lange jeder Eintrag standardmäßig aufbewahrt wird, steht
+[Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md), [Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md),
+[Datenschutzstandards](../../../../standards/datenschutz.md). Wie lange jeder Eintrag standardmäßig aufbewahrt wird, steht
 unter [Aufbewahrung von Logs und Daten](../../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md).
 
 Datenschutzfunktionen, die verringern, was gespeichert wird: Die Anfrage-Logs maskieren Client-Adressen
@@ -66,7 +66,7 @@ IP-Adressen, wenn er Zeilen anzeigt.
 
 Der Kernel und die Administration senden standardmäßig nichts an Dritte. Die Skripte der Administration werden lokal
 ausgeliefert, und admin4 lädt keine Webschriften oder Skripte von anderen Hosts. Daten verlassen den Server nur über
-das, was Sie konfigurieren ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)):
+das, was Sie konfigurieren ([Datenschutzstandards](../../../../standards/datenschutz.md)):
 
 | Funktion | Sendet Daten an | Standard |
 |---|---|---|
@@ -96,7 +96,7 @@ Regeln zur Datenresidenz gelten üblicherweise auch für Kopien:
 - **Exporte**: Audit-Exporte, CSV-Exporte von Konten (**Benutzer > Benutzerkonten prüfen**), Exporte von
   Formulardaten. Legen Sie fest, wer sie anfertigen darf; jeder wird im Prüfprotokoll aufgezeichnet.
 - **Supportberichte**: Der Fehlerbericht der Hilfe entfernt E-Mail-Adressen, IP-Adressen und Zugangsdaten, bevor er
-  gesendet wird ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)).
+  gesendet wird ([Datenschutzstandards](../../../../standards/datenschutz.md)).
 
 ## Mehrere Maschinen und Anbieter
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Datenschutzbeauftragte, Administratoren und Entwickler. Wenn Sie die Grenzen im Voraus
 kennen, können Sie das Verfahren für Auskunftsanträge planen und, wenn Anträge häufig sind, einen eigenen Export in
-Auftrag geben. Die Fakten stammen aus [Datenschutzstandards: Bekannte Lücken](../../../../eng-us/standards/privacy.md#known-gaps).
+Auftrag geben. Die Fakten stammen aus [Datenschutzstandards: Bekannte Lücken](../../../standards/datenschutz.md#bekannte-lücken).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -57,8 +57,8 @@ personenbezogen sind. Das Projekt stellt eigene Exporte dort bereit, wo ihm das 
 ## Verwandte Seiten
 
 - [Das Auskunftsrecht](auskunftsrecht.md)
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
-- [Entwicklung von Erweiterungen](../../../../eng-us/help/extension-development/README.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
+- [Entwicklung von Erweiterungen](../../erweiterungsentwicklung/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

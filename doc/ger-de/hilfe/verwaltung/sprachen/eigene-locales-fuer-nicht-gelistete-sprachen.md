@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Entwickler, die eine Sprache brauchen, für die es noch keine
 Locale-Datei gibt. Eine Inhaltssprache braucht eine Datei `share/locale/<code>.ini`, denn die Locale entscheidet über
 den Namen der Sprache, ihre HTTP-Sprachangabe, ihre Schreibrichtung und darüber, wie Datum und Zahlen geschrieben
-werden. Das Dateiformat ist in [Sprachen in Exponential, Abschnitt 7](../../../../eng-us/languages.md#7-adding-a-locale)
+werden. Das Dateiformat ist in [Sprachen in Exponential, Abschnitt 7](../../../sprachen.md#7-eine-locale-hinzufügen)
 beschrieben.
 
 ## Inhalt
@@ -29,7 +29,7 @@ Drei Buchstaben für die Sprache, ein Bindestrich, das zweibuchstabige Land nach
 für ältere Sprachen seine historischen Codes (`eng`, `ger`, `fre`, `esl` ...) und verwendet für andere den Code nach
 ISO 639-2/T; eine Sprache ohne Code nach ISO 639-2 erhält ihren Code nach ISO 639-3. Numerische Regionen können nicht
 verwendet werden. Prüfen Sie zuerst die Liste der mitgelieferten Dateien und Abschnitt 6 von
-[Sprachen in Exponential](../../../../eng-us/languages.md#6-common-languages-still-missing) für Sprachen, von denen bekannt ist,
+[Sprachen in Exponential](../../../sprachen.md#6-verbreitete-sprachen-die-noch-fehlen) für Sprachen, von denen bekannt ist,
 dass sie fehlen.
 
 ## Die Datei schreiben
@@ -73,9 +73,9 @@ auf, denn eine nur auf dem Server hinzugefügte Datei kann bei einem Update verl
 
 ## Verwandte Seiten
 
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Eine Inhaltssprache hinzufügen](eine-inhaltssprache-hinzufuegen.md)
-- [Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md)
+- [Standards zur Internationalisierung](../../../standards/internationalisierung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

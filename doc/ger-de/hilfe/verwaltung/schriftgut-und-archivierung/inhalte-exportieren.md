@@ -33,7 +33,7 @@ Schriftgut, also wählen Sie nach Zweck.
 | REST-API | Knoten, Objekte, Felder, Unterknoten als JSON, mit Rechten | Versionsgeschichte | „Export über die REST-API“ |
 | RSS-Feeds | die neuesten Einträge einer Liste | alles Ältere | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
 | CSV der gesammelten Informationen | die Einsendungen eines Formulars | andere Formulare | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
-| CSV aus Benutzerkonten prüfen | die Liste der Konten | Inhalte der Konten | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
+| CSV aus Benutzerkonten prüfen | die Liste der Konten | Inhalte der Konten | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 | Audit-Export | Einträge als CSV, JSON-Zeilen, JSON oder ein signiertes Bündel | | „Audit-Einträge als Nachweis“ |
 | Datenbank-Dump | alles | die Dateien (getrennt exportiert: `var/storage`) | [Datensicherungen](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung) |
 

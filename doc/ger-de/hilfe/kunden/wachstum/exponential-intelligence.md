@@ -26,7 +26,7 @@ und mit dessen Berechtigungen (`README.md`, „Exponential Intelligence“). Wie
 
 ## Was er für die Redaktion tut
 
-Aus `README.md` und [expai: Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md):
+Aus `README.md` und [expai: Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md):
 
 | Wo | Was |
 |---|---|
@@ -96,7 +96,7 @@ Schalter `[AISettings] Enabled` schaltet ihn überall auf einmal oder pro Siteac
 
 - [KI-Entwürfe verantwortungsvoll nutzen](ki-entwuerfe-verantwortungsvoll-nutzen.md)
 - [Unterstützte Übersetzung mit Exponential Intelligence](../../unternehmen/mehrsprachig/unterstuetzte-uebersetzung-mit-exponential-intelligence.md)
-- [expai: Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)
+- [expai: Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

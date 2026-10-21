@@ -158,7 +158,7 @@ Installation aus; ersetzen Sie `exponential.db` durch den Dateinamen, den `ls` z
 - [Kapitel 9, SQLite 3](../../../../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei): die
   vollständige Erklärung.
 - [SQLite für Hoster](../../../hosting/grundlagen/sqlite-fuer-hoster.md): die Zusammenfassung für Hoster.
-- [Unterstützung der SQLite-Datenbank](../../../../../eng-us/features/6.0/sqlite-database.md): die Funktionsseite.
+- [Unterstützung der SQLite-Datenbank](../../../../funktionen/6.0/sqlite-datenbank.md): die Funktionsseite.
 - [Eine SQLite-Website überwachen](../../../../installation/09-datenbanken.md#überwachung-einer-sqlite-site): die Tabelle der
   Prüfungen.
 
@@ -166,7 +166,7 @@ Installation aus; ersetzen Sie `exponential.db` durch den Dateinamen, den `ls` z
 
 - [Modul 3: Datenbanken](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

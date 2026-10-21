@@ -170,8 +170,8 @@ Für diese Seite geprüft (2026-10-18): `php -l` für das Skript; die Optionen v
 - [Cronjobs: ausführen, einplanen und verfolgen](../../anleitungen/cronjobs.md)
 - [Cronjob-Teile](../cronjobs/README.md): jeder Teil und jedes Skript des Kernels
 - [Befehle](../befehle/README.md): `runcronjobs.php` und die Konsole
-- [Einen Cronjob-Teil auslassen](../../../eng-us/features/6.0/cronjob-part-filter.md),
-  [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- [Einen Cronjob-Teil auslassen](../../funktionen/6.0/filter-fuer-cronjob-teile.md),
+  [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

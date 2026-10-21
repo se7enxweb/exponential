@@ -23,7 +23,7 @@ Mitgliederbereich für angemeldete Mitglieder.
 ## Die Rollen- und Richtlinienoperatoren
 
 Sieben Operatoren von `eZTemplateRoleOperator` (`lib/eztemplate/classes/eztemplateroleoperator.php`), beschrieben in
-[Rollen- und Richtlinienprüfungen in Templates](../../../../eng-us/features/6.0/role-and-policy-template-operators.md):
+[Rollen- und Richtlinienprüfungen in Templates](../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md):
 
 ```tpl
 {if $current_user|has_role( 'Editor' )} ... {/if}

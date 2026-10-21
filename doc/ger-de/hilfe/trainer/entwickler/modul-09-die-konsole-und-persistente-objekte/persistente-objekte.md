@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: `kernel/classes/ezpersistentobject.php` (die Definition ist oberhalb von `definition()` dokumentiert),
-[Standards für Datenbanken und SQL](../../../../../eng-us/standards/databases-and-sql.md#the-ezdb-rules-for-safe-sql) und
+[Standards für Datenbanken und SQL](../../../../standards/datenbanken-und-sql.md#die-ezdb-regeln-für-sicheres-sql) und
 Kernel-Klassen, die sie verwenden, etwa `kernel/classes/ezrole.php`.
 
 1. **Die Definition** (6 Minuten). Gehen Sie `mysiteGreeting::definition()` durch: Jedes Feld hat einen `name` (den
@@ -211,9 +211,9 @@ Auf der Entwicklungsinstallation auf SQLite, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [Standards für Datenbanken und SQL](../../../../../eng-us/standards/databases-and-sql.md): sicheres SQL, Dialekte, Schemas.
+- [Standards für Datenbanken und SQL](../../../../standards/datenbanken-und-sql.md): sicheres SQL, Dialekte, Schemas.
 - [Datenbankunterstützung](../../../datenbankunterstuetzung.md): auf welchen Datenbanken Exponential läuft.
-- [SQLite als Datenbank](../../../../../eng-us/features/6.0/sqlite-database.md).
+- [SQLite als Datenbank](../../../../funktionen/6.0/sqlite-datenbank.md).
 
 ## Verwandte Seiten
 

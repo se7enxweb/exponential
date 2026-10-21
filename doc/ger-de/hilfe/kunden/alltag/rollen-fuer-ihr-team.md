@@ -43,13 +43,13 @@ die Ihr Partner hinzugefügt hat; fragen Sie nach der Liste.
 > **Hinweis**
 > Weisen Sie Rollen lieber **Gruppen** zu als einzelnen Benutzern: Jedes Mitglied der Gruppe, jetzt und später, erhält
 > die Rolle. Der Benutzerbaum hat Gruppen wie Administrator users, Editors und Members
-> ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+> ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## In Aufgaben denken, nicht in Personen
 
 Listen Sie die Aufgaben in Ihrem Team auf und geben Sie dann jeder Aufgabe eine Rolle. Die Übergabe der
 Website-Ersteller nennt die üblichen: Autor, Redakteur (veröffentlicht), Layout-Redakteur, Formularbearbeitung
-(`infocollector/read`) und Shop-Personal ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+(`infocollector/read`) und Shop-Personal ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 | Aufgabe | Braucht typischerweise | Bitten Sie Ihren Administrator um |
 |---|---|---|
@@ -58,7 +58,7 @@ Website-Ersteller nennt die üblichen: Autor, Redakteur (veröffentlicht), Layou
 | Freigebende Person | über ausstehende Versionen entscheiden | Mitgliedschaft in der Gruppe der freigebenden Personen des Freigabe-Workflows |
 | Layout-Redakteur | Landingpages ändern | die Richtlinien von `explayouts` ([Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md)) |
 | Formularbearbeitung | Formulareinsendungen lesen und exportieren | `infocollector/read` ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) |
-| Kontenverwaltung | Konten überprüfen und deaktivieren | `user/hygiene` ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)) |
+| Kontenverwaltung | Konten überprüfen und deaktivieren | `user/hygiene` ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)) |
 | Übersetzer | in eine Sprache übersetzen | Übersetzen und Bearbeiten, eingeschränkt nach **Sprache** ([Übersetzungsroutine](uebersetzungsroutine.md)) |
 
 Das [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md) macht aus dieser Tabelle ein Formular zum Ausfüllen.
@@ -83,7 +83,7 @@ zum Bearbeiten, Übersetzen und Anlegen von Inhalten lassen sich außerdem nach 
 | `audit/read`, `audit/manage` | liest oder verwaltet das Prüfprotokoll |
 
 Quellen: [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md),
-[Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md). `PreventPrivilegeEscalation` ist in
+[Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md). `PreventPrivilegeEscalation` ist in
 `settings/site.ini` standardmäßig eingeschaltet, sodass niemand mehr gewähren kann, als er selbst hat.
 
 ## Wie oft Sie nachsehen sollten

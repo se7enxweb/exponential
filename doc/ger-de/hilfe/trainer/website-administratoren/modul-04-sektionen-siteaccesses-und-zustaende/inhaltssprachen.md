@@ -135,7 +135,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 ## Weiterführende Literatur
 
 - [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md): jeder Schritt, mit durchgespielten Arbeitsabläufen.
-- [Übersetzungen und Sprachen](../../../../../eng-us/features/6.0/translations-and-languages.md): die Referenz zur Funktion.
+- [Übersetzungen und Sprachen](../../../../funktionen/6.0/uebersetzungen-und-sprachen.md): die Referenz zur Funktion.
 - [Sprachen](../../../sprachen.md): jede Sprache und ihr Unterstützungsgrad.
 
 ## Verwandte Seiten

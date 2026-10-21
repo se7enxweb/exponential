@@ -73,7 +73,7 @@ ihrer Dateien ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)).
 | Weg | Werkzeug |
 |---|---|
 | E-Mail, wenn sich ein Teil der Website ändert | Benachrichtigungen: Benutzer folgen einem Teil der Website ([Benachrichtigungen](../../../anleitungen/benachrichtigungen-administrator.md)) |
-| Eine Mailingliste für Datenankündigungen | Die Erweiterung `cjw_newsletter` ([Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)) |
+| Eine Mailingliste für Datenankündigungen | Die Erweiterung `cjw_newsletter` ([Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)) |
 | Maschinen, die nach Änderungen abfragen | Die REST-API mit einer Liste der Unterknoten, sortiert nach Änderung ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)) |
 
 ## Probleme
@@ -87,8 +87,8 @@ ihrer Dateien ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)).
 ## Verwandte Seiten
 
 - [RSS-Feeds](../../../anleitungen/rss-feeds.md)
-- [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
-- [RSS: Feeds für Apple Podcasts, eine seitenweise Feedliste und sicherere Exporte](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)
+- [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
+- [RSS: Feeds für Apple Podcasts, eine seitenweise Feedliste und sicherere Exporte](../../../funktionen/6.0/rss-podcast-und-feed-liste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

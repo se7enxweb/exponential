@@ -12,7 +12,7 @@ type: help
 Für Administratoren und Entwickler von Behörden mit Änderungsmanagement. Mit eingeschaltetem Schalter kann die
 Administration keine Dateien `*.ini.append.php` oder `.tpl` mehr schreiben, keine Erweiterungen aktivieren, weder den
 Setup-Assistenten noch Code-Generatoren ausführen und keine Pakete installieren
-([Konfiguration, die vom Deployment verwaltet wird](../../../../../eng-us/help/government/security/managed-by-deployment.md)).
+([Konfiguration, die vom Deployment verwaltet wird](../../sicherheit/von-der-bereitstellung-verwaltet.md)).
 
 ## Inhalt
 
@@ -54,9 +54,9 @@ weiterhin geschrieben.
 
 ## Verwandte Seiten
 
-- [Konfiguration, die vom Deployment verwaltet wird](../../../../../eng-us/features/6.0/managed-by-deployment.md)
+- [Konfiguration, die vom Deployment verwaltet wird](../../../../funktionen/6.0/durch-deployment-verwaltet.md)
 - [Bereitstellung](../../../../anleitungen/bereitstellung.md)
-- [Dateiberechtigungen und Eigentümer](../../../../../eng-us/help/government/security/file-permissions-and-ownership.md)
+- [Dateiberechtigungen und Eigentümer](../../sicherheit/dateirechte-und-eigentuemer.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

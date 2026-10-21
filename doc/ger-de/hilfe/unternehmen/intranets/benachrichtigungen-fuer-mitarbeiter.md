@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Intranetverantwortliche und Teams der internen Kommunikation. Sie erklärt, wie Exponential
 Mitarbeiter über neue Inhalte informiert, was jede Person wählen kann, was die Organisation am Laufen halten muss und
 wie Sie auf der Seite von „nützlich“ statt „störend“ bleiben. Die Sicht der Benutzer steht unter
-[Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md), die Sicht des Betriebs in
+[Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md), die Sicht des Betriebs in
 [der Anleitung für Administratoren](../../../anleitungen/benachrichtigungen-administrator.md).
 
 ## Inhalt
@@ -37,7 +37,7 @@ wie Sie auf der Seite von „nützlich“ statt „störend“ bleiben. Die Sich
 | Kontomails (Aktivierung, Passwort geändert) | immer | niemand; wesentliche Mails werden immer verschickt |
 
 All das braucht ein Konto mit der Richtlinie `notification/use`
-([Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md)). Geben Sie sie der Rolle
+([Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md)). Geben Sie sie der Rolle
 Mitarbeiter.
 
 ## Einträgen folgen
@@ -45,11 +45,11 @@ Mitarbeiter.
 Eine Person folgt einem Eintrag mit **Benachrichtigen** in seinem Menü oder mit **Einträge hinzufügen** unter **Meine
 Benachrichtigungen** (`/notification/settings`). Allein das Öffnen der Adresse von Benachrichtigen ändert nichts; erst
 die Schaltfläche abonniert. Die Einstellungsseite listet alles auf, dem gefolgt wird, mit Filtern und Blättern, und
-**Ausgewählte entfernen** beendet das Folgen ([Items I follow](../../../../eng-us/features/6.0/notifications.md#items-i-follow)).
+**Ausgewählte entfernen** beendet das Folgen ([Items I follow](../../../funktionen/6.0/benachrichtigungen.md#elemente-denen-ich-folge)).
 
 Mails werden nur für Inhalte verschickt, die die Person lesen darf. Die Berechtigungen gelten auch in ihrem Postfach;
 ein Mitglied des Vertriebs, das dem ganzen Intranet folgt, erfährt nichts von neuen Personalseiten
-([Einschränkungen von Inhaltsrichtlinien](../../../../eng-us/features/6.0/content-limitation-handlers.md#what-you-can-do) nennt
+([Einschränkungen von Inhaltsrichtlinien](../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md#was-sie-tun-können) nennt
 Benachrichtigungen für Teilbäume unter den Stellen, an denen Berechtigungen geprüft werden).
 
 Gute Einträge, die Sie Mitarbeitern empfehlen können: der Ordner mit Firmenneuigkeiten, der Ordner ihrer Abteilung, der
@@ -59,7 +59,7 @@ Ordner mit Richtlinien.
 
 Normalerweise wird jede Änderung sofort gemailt. Ein Digest hält Nachrichten zurück und schickt eine Mail täglich zu
 einer gewählten Stunde, wöchentlich an einem gewählten Tag oder monatlich an einem gewählten Tag des Monats; er wird nur
-verschickt, wenn etwas geschehen ist ([E-mail digest](../../../../eng-us/features/6.0/notifications.md#e-mail-digest)). Für die
+verschickt, wenn etwas geschehen ist ([E-mail digest](../../../funktionen/6.0/benachrichtigungen.md#zusammenfassung-per-e-mail)). Für die
 meisten Mitarbeiter ist ein täglicher Digest die freundliche Voreinstellung, die Sie empfehlen können.
 
 ## Mails für Freigebende
@@ -67,7 +67,7 @@ meisten Mitarbeiter ist ein täglicher Digest die freundliche Voreinstellung, di
 Wenn die Freigabe vor dem Veröffentlichen verwendet wird ([Freigabe-Workflows](freigabe-workflows.md)), erfahren
 Freigebende über Benachrichtigungen zur Zusammenarbeit, dass etwas wartet: Sie markieren auf ihrer Einstellungsseite
 unter **Benachrichtigung zur Zusammenarbeit** die Art **Freigabe**
-([Collaboration notification](../../../../eng-us/features/6.0/notifications.md#collaboration-notification)). Machen Sie das zum
+([Collaboration notification](../../../funktionen/6.0/benachrichtigungen.md#benachrichtigung-zur-zusammenarbeit)). Machen Sie das zum
 Teil der Einarbeitung von Freigebenden; eine freigebende Person, die die Mail nie bekommt, verzögert jeden Artikel.
 
 ## Die Prüfung der E-Mail-Einstellungen
@@ -84,7 +84,7 @@ Was das für ein Intranet bedeutet:
   (`HandlerClass=expNotificationMailCategoryHandler`); wer vorher Einträgen gefolgt ist, sieht die Benachrichtigungen
   über Inhalte also als eingeschaltet. Eine Person kann die Kategorie unter **Meine E-Mail-Einstellungen** ausschalten,
   und jede optionale Mail enthält einen Link zum Abmelden mit einem Klick
-  ([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md)).
+  ([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md)).
 - `AllowDefaultOn=enabled` schaltet eine optionale Kategorie für alle ein, die nie gewählt haben. Der Kommentar in
   `mailpreferences.ini` beschränkt das auf Websites, deren Empfänger einem Recht unterliegen, das es für diese Mail
   erlaubt. Ob das für Ihre Mitarbeiter gilt, ist eine Frage für Ihre Rechtsberatung; diese Seite ist keine
@@ -125,7 +125,7 @@ Die Mailzustellung selbst (Absenderadresse, SPF und DKIM bei Ihrem Mailanbieter)
 
 ## Verwandte Seiten
 
-- [Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md)
+- [Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md)
 - [Benachrichtigungen: die Anleitung für Administratoren](../../../anleitungen/benachrichtigungen-administrator.md)
 - [Neuigkeiten und Ankündigungen](neuigkeiten-und-ankuendigungen.md)
 - [Kommunikation mit Mitgliedern](../mitglieder/kommunikation-mit-mitgliedern.md)

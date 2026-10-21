@@ -31,7 +31,7 @@ ergänzen müssten.
 
 `ezwebin` liefert Installationspakete für die Klassen `event`, `event_calendar` und `multicalendar`
 (`extension/ezwebin/packages/`) mit Templates in seinem Design; die drei Klassen existieren auf dem
-Demonstrationsserver ([ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md)).
+Demonstrationsserver ([ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md)).
 
 **Event** (`event`), Felder wie auf dem Demonstrationsserver definiert:
 
@@ -50,7 +50,7 @@ Auswahl **View**.
 
 Datums- und Zeitfelder verwenden seit ezwebin 6.0.14 und 6.0.15 die Datumsauswahl von Exponential UI
 (`exp::datepicker`), und die Texte des Veranstaltungskalenders sind übersetzt (ezwebin 6.0.9 und 6.0.10)
-([ezwebin, What changed](../../../../eng-us/features/6.0/extensions/ezwebin.md#what-changed-in-the-exponential-6-releases)).
+([ezwebin, What changed](../../../funktionen/6.0/erweiterungen/ezwebin.md#was-sich-in-den-releases-von-exponential-6-geändert-hat)).
 
 ## Kalender- und Programmansicht
 
@@ -59,11 +59,11 @@ Kalenders entweder `event_view_calendar.tpl` oder `event_view_program.tpl` ein. 
 Mitglieder einen Monatskalender oder eine Programmliste sehen. Die vollständige Ansicht einer Veranstaltung zeigt Titel,
 Kategorie, Zeitraum und Text (`full/event.tpl`). Die vollständige Ansicht des Kalenders setzt eine Cache-Zeit von 400
 Sekunden (`cache_ttl`); eine neue Veranstaltung kann also einige Minuten brauchen, bis sie dort erscheint
-([Set block und append block](../../../../eng-us/help/designers/templates/set-block-and-append-block.md)).
+([Set block und append block](../../designer/vorlagen/set-block-und-append-block.md)).
 
 `settings/menu.ini.append.php` von ezwebin führt `event_calendar` unter den Klassen auf, die im oberen und linken Menü
 erscheinen; ein im Baum platzierter Kalender erscheint also in der Navigation
-([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)).
+([Menüs und Navigation](../../ersteller/website-ersteller/menues-und-navigation.md)).
 
 ## Mehrere Kalender in einem
 
@@ -90,32 +90,32 @@ Organisationen:
 - **Ein Formular mit dem Information Collector.** Felder einer Klasse lassen sich als Informationssammler markieren,
   sodass Besucher auf der Seite ein Formular ausfüllen; Einsendungen werden gespeichert und können an einen Empfänger
   gemailt werden
-  ([Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md),
-  [Formulareinsendungen](../../../../eng-us/help/creators/website-creators/form-submissions.md)). Ein Anmeldeformular pro Veranstaltung
+  ([Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md),
+  [Formulareinsendungen](../../ersteller/website-ersteller/formulareinsendungen.md)). Ein Anmeldeformular pro Veranstaltung
   oder eine Gruppe von Anmeldefeldern, die Ihr Partner der Klasse Event hinzufügt, sammelt Name, E-Mail und Optionen.
 - **Eine Newsletter-Liste pro Veranstaltungsreihe.** Mitglieder, die Einladungen möchten, abonnieren sie
   ([Kommunikation mit Mitgliedern](kommunikation-mit-mitgliedern.md)).
 
 Schützen Sie öffentliche Anmeldeformulare mit einem CAPTCHA gegen Spam
-([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)), und sagen Sie im Formular,
+([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)), und sagen Sie im Formular,
 welche Daten aufbewahrt werden und warum ([Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)).
 
 ## Veranstaltungen ankündigen
 
 - Ein Block „kommende Veranstaltungen“ auf der Startseite, mit dem Layout-Editor oder `ezflow`
-  ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+  ([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 - Eine Einladung im Newsletter.
 - Benachrichtigungen für Mitglieder, die dem Veranstaltungskalender folgen
-  ([Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md)).
+  ([Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md)).
 - Ein RSS-Export des Kalenders für öffentliche Veranstaltungen ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 - Metadaten für das Teilen in sozialen Medien
-  ([Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md)).
+  ([Metadaten und Teilen in sozialen Medien](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md)).
 
 ## Nach der Veranstaltung
 
 Fügen Sie der Veranstaltungsseite Folien, Aufzeichnungen und Fotos hinzu, oder einem damit verknüpften Ordner nur für
 Mitglieder. Große Videos liegen besser bei einem Videodienst und werden eingebettet
-([Dateien und Downloads, Large files](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#large-files)). Vergangene
+([Dateien und Downloads, Large files](../../ersteller/website-ersteller/dateien-und-downloads.md#große-dateien)). Vergangene
 Veranstaltungen bleiben als Archiv im Kalender.
 
 ## Was nicht eingebaut ist
@@ -146,7 +146,7 @@ Bitten Sie einen Partner, zu schätzen, was Sie brauchen ([Einen Partner auswäh
 
 - [Veranstaltungen und Neuigkeiten für Gruppen](../vereine/veranstaltungen-und-neuigkeiten-fuer-gruppen.md)
 - [Kommunikation mit Mitgliedern](kommunikation-mit-mitgliedern.md)
-- [Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)
+- [Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)
 - [Ehrenamtliche und Anmeldeformulare](../gemeinnuetzige/ehrenamtliche-und-anmeldeformulare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

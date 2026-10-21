@@ -37,8 +37,8 @@ Benutzer, deren Rolle `notification/use` hat.
 
 ## Verwandte Seiten
 
-- [Benachrichtigungen: die Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md)
-- [Ohne Benachrichtigung veröffentlichen](../../../eng-us/features/6.0/publish-without-notification.md)
+- [Benachrichtigungen: die Anleitung für Benutzer](../../funktionen/6.0/benachrichtigungen.md)
+- [Ohne Benachrichtigung veröffentlichen](../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

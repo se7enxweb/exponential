@@ -175,7 +175,7 @@ Eine PHP-Änderung braucht die Autoloads, die INI- und Template-Caches, das Engi
 ./console exp:velocity deploy --kernel      # a kernel class was added or renamed
 ```
 
-Die Tabelle der Schritte, die Gründe für die Reihenfolge, jede Option und ein Beispiellauf stehen unter [Velocity-Engines: eine PHP-Änderung ausrollen](../../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+Die Tabelle der Schritte, die Gründe für die Reihenfolge, jede Option und ein Beispiellauf stehen unter [Velocity-Engines: eine PHP-Änderung ausrollen](../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy).
 
 ## Weitere Befehle
 

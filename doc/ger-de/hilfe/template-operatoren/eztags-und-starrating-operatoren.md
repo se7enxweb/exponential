@@ -194,7 +194,7 @@ Ausgabe auf alpha:
 ## Verwandte Seiten
 
 - [ezwebin-Operatoren](ezwebin-operatoren.md) (`eztagcloud` für den älteren Schlagwort-Datentyp)
-- [Fetch-Funktionen in den Beispielen](../../../eng-us/examples/fetch-functions/README.md)
+- [Fetch-Funktionen in den Beispielen](../../beispiele/fetch-funktionen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -51,12 +51,12 @@ eines Kontos beendet auch seine Sitzungen (**Benutzer > Benutzerkonten prüfen**
 `site.ini [UserSettings] MaxNumberOfFailedLogin=0` (mitgeliefert) bedeutet keine Sperre. Eine Zahl sperrt ein Konto
 nach so vielen fehlgeschlagenen Anmeldungen; `TrustedIPList[]` listet Adressen, die immer erlaubt sind.
 **Benutzer > Benutzerkonten prüfen** zeigt gesperrte Konten und hat **Entsperren**. Brute-Force-Anmeldungen lösen
-außerdem einen Alarm im Audit-Protokoll aus ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+außerdem einen Alarm im Audit-Protokoll aus ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 
 - [Sitzungen](../../../../anleitungen/sitzungen.md)
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

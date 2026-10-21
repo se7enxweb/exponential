@@ -129,7 +129,7 @@ eintragen, steht in [ezinfo.php](../teil-3-erweiterungsentwickler/ezinfo-php.md)
 - Weiter: [Verlinken oder kopieren: Quellen fair zitieren](verlinken-oder-kopieren.md)
 - [Lizenzen und wie sie sich kombinieren lassen](../teil-5-erweitern-forken-zurueckgeben/lizenzen-und-kompatibilitaet.md)
 - [Geben Sie Ihre Erweiterungen zurück](../../erweiterungen-zurueckgeben.md), [FAQ zur Lizenzierung](../../projekt/lizenz-faq.md)
-- [Die Lizenz dieser Dokumentation](../../../../eng-us/README-LICENSE.md)
+- [Die Lizenz dieser Dokumentation](../../../README-LIZENZ.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

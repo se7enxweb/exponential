@@ -104,7 +104,7 @@ Wo jeder Teil erklärt wird:
 | 1, 2 | [Rendite der Stabilität](../kosten/rendite-der-stabilitaet.md), [Vorlage: ROI-Arbeitsblatt](vorlage-roi-arbeitsblatt.md) |
 | 3 | [Arbeitsblatt: Kosten eines Ausfalls](../kosten/arbeitsblatt-kosten-eines-ausfalls.md), [Störungsbehandlung für kleine Teams](../zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md) |
 | 4 | [Budget für Aktualisierungen und Wartung](../kosten/budget-fuer-aktualisierungen-und-wartung.md), [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md) |
-| 5 | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md), [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md), [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) |
+| 5 | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md), [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md), [Content Security Policy](../../../funktionen/6.0/content-security-policy.md) |
 | 6 | [Personenbezogene Daten in Exponential](../sicherheit/personenbezogene-daten-in-exponential.md), [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md) |
 | 7 | [Wiederherstellungsübungen](../zuverlaessigkeit/wiederherstellungsuebungen.md) |
 | 8 | [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md) |

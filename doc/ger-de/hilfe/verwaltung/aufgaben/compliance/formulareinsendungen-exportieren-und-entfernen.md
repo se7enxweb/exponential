@@ -49,7 +49,7 @@ oder vierteljährliche Routine hält sie innerhalb Ihrer Aufbewahrungsregeln
 
 - [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)
 - [Formulareinsendungen als Schriftgut](../../schriftgut-und-archivierung/gesammelte-informationen-als-schriftgut.md)
-- [Formulareinsendungen für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/form-submissions.md)
+- [Formulareinsendungen für Website-Ersteller](../../../ersteller/website-ersteller/formulareinsendungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

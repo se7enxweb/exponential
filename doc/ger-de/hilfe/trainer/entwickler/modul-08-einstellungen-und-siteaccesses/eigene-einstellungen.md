@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Eine eigene INI-Datei](../../../../../eng-us/help/designers/extensions/your-own-ini-file.md) und
-[Einstellungsdateien in einer Erweiterung](../../../../../eng-us/help/designers/extensions/settings-files-in-an-extension.md).
+Quellen: [Eine eigene INI-Datei](../../../designer/erweiterungen/eine-eigene-ini-datei.md) und
+[Einstellungsdateien in einer Erweiterung](../../../designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md).
 
 1. **Die Datei** (3 Minuten). Eine Erweiterung kann unter `settings/` eine neue INI-Datei mitbringen, hier
    `extension/mysite_hello/settings/mysite.ini.append.php`. Jede Einstellung erhält einen Kommentar, der sagt, was
@@ -143,9 +143,9 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [Eine eigene INI-Datei](../../../../../eng-us/help/designers/extensions/your-own-ini-file.md).
-- [Einstellungsdateien in einer Erweiterung](../../../../../eng-us/help/designers/extensions/settings-files-in-an-extension.md).
-- [Siteaccess-Einstellungen in einer Erweiterung](../../../../../eng-us/help/designers/extensions/siteaccess-settings-in-an-extension.md).
+- [Eine eigene INI-Datei](../../../designer/erweiterungen/eine-eigene-ini-datei.md).
+- [Einstellungsdateien in einer Erweiterung](../../../designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md).
+- [Siteaccess-Einstellungen in einer Erweiterung](../../../designer/erweiterungen/siteaccess-einstellungen-in-einem-theme.md).
 
 ## Verwandte Seiten
 

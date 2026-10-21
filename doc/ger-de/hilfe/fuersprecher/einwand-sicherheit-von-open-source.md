@@ -52,8 +52,8 @@ Die meisten Vorfälle bei jedem CMS entstehen durch die Art, wie eine Website be
 Administratoren:
 
 - eine [Anleitung zur Härtung](../sicherheitshaertung.md) Bedrohung für Bedrohung, mit einer [Checkliste](../sicherheitshaertung.md#checkliste);
-- die [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md);
-- das [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) und die [Request-Logs](../../../eng-us/features/6.0/request-logs.md);
+- die [Content Security Policy](../../funktionen/6.0/content-security-policy.md);
+- das [Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) und die [Request-Logs](../../funktionen/6.0/anfrageprotokolle.md);
 - die [zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md);
 - erzeugte Administratorpasswörter bei neuen Installationen ([Das Standardpasswort des Administrators](../standard-administratorpasswort.md)).
 

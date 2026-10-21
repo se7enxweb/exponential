@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Anwendungsentwickler, deren Seiten Daten aus PHP ohne Neuladen brauchen: Autovervollständigung,
 Live-Zähler, kleine Speichervorgänge. `ezjscore` ruft registrierte PHP-Funktionen über HTTP auf und antwortet in JSON
-([ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md), [Backend-Dienste von ezjscore](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)).
+([ezjscore](../../../funktionen/6.0/erweiterungen/ezjscore.md), [Backend-Dienste von ezjscore](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)).
 
 ## Inhalt
 

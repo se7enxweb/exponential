@@ -34,44 +34,44 @@ vervielfacht, was da ist; einen verwirrenden Bestellvorgang repariert sie nicht.
 
 ## Suchmaschinen
 
-Was Exponential Ihnen bietet, und die Checkliste dazu, stehen unter [SEO-Grundlagen für Exponential-Websites](../../../../eng-us/help/creators/website-creators/seo-basics.md).
+Was Exponential Ihnen bietet, und die Checkliste dazu, stehen unter [SEO-Grundlagen für Exponential-Websites](../../ersteller/website-ersteller/seo-grundlagen.md).
 Die Punkte, die für einen Shop am wichtigsten sind:
 
 | Punkt | Warum | Lesen Sie |
 |---|---|---|
-| Lesbare Adressen | Produktnamen in der URL | [URL-Aliase und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md) |
-| Eine Adresse pro Seite | Produkte in mehreren Kategorien dürfen nicht mit sich selbst konkurrieren | [SEO-Grundlagen](../../../../eng-us/help/creators/website-creators/seo-basics.md#one-address-per-page) |
-| Titel und Beschreibungen pro Produkt | Was das Suchergebnis zeigt | [Seitenmetadaten und Teilen in sozialen Netzwerken](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md) |
-| XML-Sitemaps | Neue Produkte werden schnell gefunden | [XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md) |
-| robots.txt | Warenkorb, Kasse und Kontoseiten aus der Suche heraushalten | [robots.txt](../../../../eng-us/help/creators/website-creators/robots-txt.md) |
-| Weiterleitungen für entfernte Produkte | Alte Links führen noch irgendwohin | [Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
+| Lesbare Adressen | Produktnamen in der URL | [URL-Aliase und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md) |
+| Eine Adresse pro Seite | Produkte in mehreren Kategorien dürfen nicht mit sich selbst konkurrieren | [SEO-Grundlagen](../../ersteller/website-ersteller/seo-grundlagen.md#eine-adresse-je-seite) |
+| Titel und Beschreibungen pro Produkt | Was das Suchergebnis zeigt | [Seitenmetadaten und Teilen in sozialen Netzwerken](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md) |
+| XML-Sitemaps | Neue Produkte werden schnell gefunden | [XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md) |
+| robots.txt | Warenkorb, Kasse und Kontoseiten aus der Suche heraushalten | [robots.txt](../../ersteller/website-ersteller/robots-txt.md) |
+| Weiterleitungen für entfernte Produkte | Alte Links führen noch irgendwohin | [Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
 
 Auf alpha trägt die Produktklasse ein Feld `xrowmetadata` für Metadaten
-([xrowmetadata](../../../../eng-us/features/6.0/extensions/xrowmetadata.md)); Sitemaps kommen von `bcgooglesitemaps` oder
-`xrowmetadata` ([XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md#choose-an-extension)).
+([xrowmetadata](../../../funktionen/6.0/erweiterungen/xrowmetadata.md)); Sitemaps kommen von `bcgooglesitemaps` oder
+`xrowmetadata` ([XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md#eine-erweiterung-wählen)).
 
 ## Teilen in sozialen Netzwerken
 
 Wenn ein Kunde ein Produkt teilt, zeigt die Vorschau einen Titel, einen Text und ein Bild. Open-Graph-Daten und
-Bilder zum Teilen werden wie unter [Seitenmetadaten und Teilen in sozialen Netzwerken](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md#open-graph-and-sharing-images)
+Bilder zum Teilen werden wie unter [Seitenmetadaten und Teilen in sozialen Netzwerken](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md#open-graph-und-bilder-zum-teilen)
 beschrieben eingerichtet. Verwenden Sie ein Produktbild, das auch auf ein breites Format zugeschnitten funktioniert.
 
 ## Feeds
 
 RSS-Feeds können neue Produkte oder Angebote zu Lesern, Partner-Websites und Apps bringen
-([RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)). Für den Verkauf über
+([RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)). Für den Verkauf über
 Partner und Netzwerke siehe [Verkaufen über Netzwerke und Partner](../mobil-und-headless/verkaufen-ueber-netzwerke-und-partner.md)
 und [Feeds und Syndication](../mobil-und-headless/feeds-und-syndication.md).
 
 ## Newsletter an Kunden
 
 Bestehende Kunden sind am günstigsten wieder zu erreichen. Die Newsletter-Erweiterung `cjw_newsletter` von Exponential
-verwaltet Listen, Abonnements, Ausgaben und Bounces ([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md),
+verwaltet Listen, Abonnements, Ausgaben und Bounces ([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md),
 [Newsletter](../newsletter/README.md)).
 
 > **Warnung**
 > Ein Kauf bei Ihnen ist keine Einwilligung in Werbemails. Bestellmails sind notwendige Mails; Angebote sind optionale
-> Mails, die das Opt-in des Kunden brauchen ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md),
+> Mails, die das Opt-in des Kunden brauchen ([Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md),
 > [Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)). Dies ist keine Rechtsberatung; prüfen Sie die für
 > Sie geltenden Regeln mit Ihrem Anwalt.
 
@@ -82,7 +82,7 @@ Produktseiten.
 
 Ein Ausverkauf, eine Saison oder eine neue Kollektion verdient eine eigene Seite. Mit Layouts bauen Redakteure solche
 Seiten aus Zonen und Blöcken, mit Entwürfen und einer Vorschau vor dem Veröffentlichen
-([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md),
+([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md),
 [Kampagnen und Landingpages](../gemeinnuetzige/kampagnen-und-landingpages.md)). Stellen Sie die Produkte der Kampagne als
 zusätzliche Platzierungen oder verknüpfte Objekte auf die Seite, damit die Preise an einer Stelle bleiben
 ([Suche und Navigation im Shop](suche-und-navigation-im-shop.md#ein-produkt-an-mehreren-stellen)).
@@ -92,7 +92,7 @@ Verbinden Sie eine Kampagne mit einer Rabattregel, wenn sie für eine Kundengrup
 ## Vertrauen auf der Produktseite
 
 - **Bewertungen**: Mit `ezstarrating` bewerten Kunden Produkte mit 1 bis 5 Sternen, eine Stimme pro Benutzer und
-  Sitzung, und Templates können nach Bewertung sortieren ([ezstarrating](../../../../eng-us/features/6.0/extensions/ezstarrating.md)).
+  Sitzung, und Templates können nach Bewertung sortieren ([ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md)).
 - **Technische Daten**: Eine klare Tabelle beantwortet Fragen, bevor sie gestellt werden.
 - **Ihre Bedingungen**: Versand, Rückgabe und Kontakt auf jeder Produktseite.
 
@@ -104,8 +104,8 @@ Veröffentlichen Sie nie erfundene Rezensionen oder Bewertungen; zeigen Sie nur,
 |---|---|
 | Sind Bestellungen und Umsatz während der Kampagne gestiegen? | Shop-Dashboard, Umsatz pro Tag ([Shop-Dashboard und Berichte](shop-uebersicht-und-berichte.md)) |
 | Welche Produkte wurden verkauft? | Bestseller und **Shop > Statistik** |
-| Woher kamen die Besucher? | Ein Webanalyse-Dienst ([Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)) |
-| Wonach haben Besucher gesucht? | Suchstatistiken ([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)) |
+| Woher kamen die Besucher? | Ein Webanalyse-Dienst ([Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)) |
+| Wonach haben Besucher gesucht? | Suchstatistiken ([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)) |
 | Wurden mehr Warenkörbe abgebrochen? | Dashboard, abgebrochene Warenkörbe |
 
 Webanalyse-Dienste brauchen in vielen Ländern eine Einwilligung und müssen von Ihrer Content Security Policy erlaubt
@@ -121,7 +121,7 @@ sein; beides behandelt die Seite zur Webanalyse.
 
 ## Verwandte Seiten
 
-- [SEO-Grundlagen für Exponential-Websites](../../../../eng-us/help/creators/website-creators/seo-basics.md)
+- [SEO-Grundlagen für Exponential-Websites](../../ersteller/website-ersteller/seo-grundlagen.md)
 - [Fallstudien und Content-Marketing schreiben](../../geschaeft/fallstudien-und-content-marketing.md)
 - [Einen Newsletter planen](../newsletter/einen-newsletter-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

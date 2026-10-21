@@ -81,7 +81,7 @@ Die PHP-Werte, die der Setup-Assistent prüft (`memory_limit` 64M oder mehr, `ma
 `file_uploads`, `allow_url_fopen`), werden in den PHP-Einstellungen der Domain gesetzt
 ([2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)). Die Notizen zur MongoDB-Portierung setzen FPM-Direktiven wie
 `request_terminate_timeout` in den PHP-Einstellungen der Domain, im Feld **Additional configuration directives** (Plesk → Domains →
-Ihre Domain → PHP Settings) ([MongoDB-Unterstützung im Kernel](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)).
+Ihre Domain → PHP Settings) ([MongoDB-Unterstützung im Kernel](../../../bc/6.0/mongodb-kernel-unterstuetzung.md)).
 
 ## PHP-FPM-Pools und der richtige Dienst
 
@@ -98,7 +98,7 @@ systemctl reload plesk-php85-fpm                        # graceful, no dropped r
 
 `exp:velocity deploy` findet den richtigen Dienst selbst: `settings/velocity.ini [DeploySettings] PhpFpmService=auto` erkennt die
 Pool-Konfiguration, die nach der Hosting-Domain der Installation benannt ist (`/var/www/vhosts/<domain>/...`, wie Plesk Pools benennt);
-`--dry-run` zeigt, was gefunden wurde und warum ([Engines von Velocity](../../../../eng-us/bc/6.0/velocity-engines.md)). Um ihn ausdrücklich
+`--dry-run` zeigt, was gefunden wurde und warum ([Engines von Velocity](../../../bc/6.0/velocity-engines.md)). Um ihn ausdrücklich
 festzulegen:
 
 ```ini
@@ -114,7 +114,7 @@ Mehr zu Pools: [PHP-Auswahl und FPM-Pools](php-auswahl-und-fpm-pools.md).
 Plesk stellt nginx vor Apache, und `mod_remoteip` von Apache (`RemoteIPHeader X-Forwarded-For`, `RemoteIPInternalProxy 127.0.0.1`)
 setzt `REMOTE_ADDR` auf den Besucher; nginx spricht über HTTPS mit Apache, sodass Apache `HTTPS=on` setzt. Der Kernel sieht dann den
 Besucher als Gegenstelle und braucht keinen weitergeleiteten Header: nichts zu konfigurieren, und `ClientIpByCustomHTTPHeader` kann
-auf `false` bleiben ([Vertrauenswürdige Proxys](../../../../eng-us/bc/6.0/trusted-proxies.md)).
+auf `false` bleiben ([Vertrauenswürdige Proxys](../../../bc/6.0/vertrauenswuerdige-proxys.md)).
 
 ## Zertifikate
 
@@ -125,7 +125,7 @@ auf `false` bleiben ([Vertrauenswürdige Proxys](../../../../eng-us/bc/6.0/trust
   für den Host hält, exportiert aus `/usr/local/psa/var/certificates/` außerhalb des Document Root.
 - Plesk erneuert das Let's-Encrypt-Zertifikat nach eigenem Zeitplan und schreibt dabei eine **neue Datei unter einem neuen Namen**;
   die exportierte Kopie veraltet dann. Der Export muss nach jeder Erneuerung wiederholt werden, gefolgt von einem Neuladen
-  ([FrankenPHP, Erneuerung](../../../../eng-us/bc/6.0/frankenphp.md)). Velocity prüft seine Zertifikatsdateien alle 60 Sekunden und tauscht ein
+  ([FrankenPHP, Erneuerung](../../../bc/6.0/frankenphp.md)). Velocity prüft seine Zertifikatsdateien alle 60 Sekunden und tauscht ein
   geändertes, gültiges Paar live aus ([8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity)), aber nur,
   wenn der Pfad, den es liest, die neue Datei bekommt.
 
@@ -134,7 +134,7 @@ Siehe [TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md).
 ## Logs
 
 Die eigenen Logs von Exponential liegen unter `var/log` und `var/<site>/log`. Um die Logs des Webservers von Plesk in
-**Setup > Logdateien** zu zeigen, nennen Sie sie in `logviewer.ini` ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)):
+**Setup > Logdateien** zu zeigen, nennen Sie sie in `logviewer.ini` ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)):
 
 ```ini
 # settings/override/logviewer.ini.append.php
@@ -173,7 +173,7 @@ Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselbe
   oder sitzt hinter dem nginx von Plesk ([8.3.5](../../../installation/08-die-website-ausliefern.md#835-adresse-ports-benutzer-und-gruppe)).
 - **Firewall.** Manche Plesk-Installationen steuern firewalld oder nftables über die Plesk-Erweiterung Firewall. Wenn eine Regel, die
   Sie mit `firewall-cmd` hinzufügen, beim nächsten Anwenden durch Plesk verschwindet, fügen Sie sie stattdessen in Plesk hinzu
-  (Tools & Settings → Firewall) ([FrankenPHP](../../../../eng-us/bc/6.0/frankenphp.md)).
+  (Tools & Settings → Firewall) ([FrankenPHP](../../../bc/6.0/frankenphp.md)).
 - **Ein Benutzer.** Die Worker von Velocity laufen als Systembenutzer der Domain (`[ServerSettings] User`, `Group`), derselbe Benutzer
   wie der Pool von Plesk ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)).
 - **Ausrollen.** `exp:velocity deploy` lädt `plesk-php<XY>-fpm` neu und startet Velocity in einem Lauf neu.
@@ -185,7 +185,7 @@ Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselbe
 | **Setup > Systeminformationen** meldet, dass Statistiken zu OPcache nicht verfügbar sind | Plesk kann `opcache_get_status` für eine Domain in `disable_functions` setzen; der Cache funktioniert, nur seine Kennzahlen lassen sich aus PHP nicht lesen ([Systeminformationen](../../../anleitungen/systeminformationen.md)) | nichts, oder erlauben Sie die Funktion für die Domain |
 | Eine Änderung an PHP wirkt nicht | der falsche Master wurde neu geladen ([Kapitel 12](../../../installation/12-fehlerbehebung.md)) | `plesk-php<XY>-fpm` neu laden |
 | Ein Test scheitert im Browser, aber `php -m` sieht gut aus | die beiden PHPs unterscheiden sich: Installieren Sie die Erweiterung für das Web-PHP (auf Plesk die PHP-Version der Domain) | in der PHP-Version der Domain installieren und neu laden |
-| ezupdate findet kein Composer des Systems | `open_basedir` (Standard bei Plesk) verbirgt die Systemordner, sodass ezupdate zuerst unterhalb des Wurzelverzeichnisses der Installation sucht ([Einstellungen von ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)) | `[ComposerSettings] Path`/`Binary` setzen, oder mit *Get Composer* ein geprüftes `composer.phar` nach `var/ezupdate/` herunterladen lassen |
+| ezupdate findet kein Composer des Systems | `open_basedir` (Standard bei Plesk) verbirgt die Systemordner, sodass ezupdate zuerst unterhalb des Wurzelverzeichnisses der Installation sucht ([Einstellungen von ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)) | `[ComposerSettings] Path`/`Binary` setzen, oder mit *Get Composer* ein geprüftes `composer.phar` nach `var/ezupdate/` herunterladen lassen |
 | Ein langer Schritt des Setup-Assistenten wird abgebrochen | das `request_terminate_timeout` des Pools | für die Installation erhöhen, danach wieder senken |
 
 ## Checkliste

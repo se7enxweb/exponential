@@ -28,7 +28,7 @@ anwendet.
 | Dauer | 40 Minuten (20 Präsentation, 20 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Systemadministratoren und Support-Mitarbeitende im Hosting |
-| Voraussetzungen | Eine Schulungsinstallation pro Person, ausgeliefert auf ihrem Rechner (siehe [Eine Installation pro Person](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md)); ein Terminal mit `curl` |
+| Voraussetzungen | Eine Schulungsinstallation pro Person, ausgeliefert auf ihrem Rechner (siehe [Eine Installation pro Person](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md)); ein Terminal mit `curl` |
 
 ## Lernziele
 
@@ -171,7 +171,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert auf Ihrem Rechner 
 
 - [Modul 1: Die Website ausliefern](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

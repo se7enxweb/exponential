@@ -74,7 +74,7 @@ einem Tag:
 
 1. Tragen Sie jeden Teil mit demselben Datum in den Kalender ein.
 2. Bauen Sie die Landingpage als Layout und ordnen Sie es mit einer Regel zu, deren Bedingung `time` die Werte `from`
-   und `to` hat, mit höherer Priorität als die normale Regel der Seite ([Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)).
+   und `to` hat, mit höherer Priorität als die normale Regel der Seite ([Layout-Regeln](../../ersteller/website-ersteller/layout-regeln.md)).
 3. Planen Sie die Newsletter-Ausgabe, und schicken Sie sie zuerst an eine Testgruppe
    ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)).
 4. Verwenden Sie am Tag davor die [Checkliste für Kampagnen-Landingpages](../wachstum/checkliste-kampagnen-landingpages.md).

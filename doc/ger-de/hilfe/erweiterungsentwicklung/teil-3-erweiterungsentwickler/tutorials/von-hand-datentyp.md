@@ -33,7 +33,7 @@ mkdir -p extension/mysite_hello/datatypes/mysiterating
 ```
 
 Kopieren Sie die vollständige Klasse `mysiteRatingType` aus
-[Speicherung, Validierung und Templates von Datentypen](../../../../../eng-us/help/extension-development/part-3-extension-developer/datatype-storage-validation-and-templates.md#the-class)
+[Speicherung, Validierung und Templates von Datentypen](../datentyp-speicherung-validierung-und-templates.md#die-klasse)
 nach `datatypes/mysiterating/mysiteratingtype.php`. Der Dateiname, der Ordner und die Zeichenkette `mysiterating`
 müssen übereinstimmen: Der Kernel bindet `datatypes/<type>/<type>type.php` ein.
 

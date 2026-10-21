@@ -42,7 +42,7 @@ Erinnerung frisch ist. Ohne Schuldzuweisung: Die Frage ist, warum System und Pro
 ./console exp:logs --search=<keyword> --scope=all --from='<start>' --to='<end>'
 ```
 
-Exportieren Sie die Audit-Einträge für die Akte ([Audit-Einträge für eine Prüfung exportieren](../../../../../eng-us/help/government/tasks/operations/export-audit-records-for-an-auditor.md)).
+Exportieren Sie die Audit-Einträge für die Akte ([Audit-Einträge für eine Prüfung exportieren](../../aufgaben/betrieb/audit-eintraege-fuer-einen-pruefer-exportieren.md)).
 
 ## Ursachen und begünstigende Faktoren
 

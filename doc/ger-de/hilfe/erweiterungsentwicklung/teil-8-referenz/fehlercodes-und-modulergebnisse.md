@@ -77,7 +77,7 @@ Die Fehlerseiten sind die Templates `error/kernel/<code>.tpl` in der Design-Kett
 - Zurück: [Verzeichnisse unter var/](verzeichnisse-unter-var.md)
 - Weiter: [Die JavaScript-API von expui](expui-javascript-api.md)
 - [eZModule und Modulergebnisse](ezmodule.md)
-- [Fehler-Templates](../../../../eng-us/help/designers/templates/error-templates.md)
+- [Fehler-Templates](../../designer/vorlagen/fehler-templates.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

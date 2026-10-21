@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren, die Konten für Übersetzer einrichten, für Mitarbeitende eines
 Sprachdienstes oder beauftragte Übersetzer. Die Richtlinien von Exponential lassen sich nach **Sprache** einschränken,
 sodass ein Übersetzer eine Sprache bearbeiten darf und sonst nichts
-([Eine mehrsprachige Website bauen, Übersetzer](../../../../eng-us/help/creators/website-creators/multilingual-sites.md#translators),
+([Eine mehrsprachige Website bauen, Übersetzer](../../ersteller/website-ersteller/mehrsprachige-websites.md#übersetzer),
 [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 
 ## Inhalt
@@ -50,7 +50,7 @@ Objekt hinzuzufügen, und alle drei lassen sich nach **Sprache** einschränken
 
 - Persönliche Konten, nie geteilt; ein Enddatum in Ihren Unterlagen vermerkt. Exponential kennt kein Ablaufdatum für
   Konten: Deaktivieren Sie Konten, wenn der Vertrag endet, und nutzen Sie **Benutzer > Benutzerkonten prüfen**, um
-  Konten zu finden, die eine Weile nicht genutzt wurden ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  Konten zu finden, die eine Weile nicht genutzt wurden ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - Zweistufige Anmeldung, wo Ihre Richtlinien sie verlangen ([Anmeldung mit zwei Faktoren](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - Ein Freigabeschritt, bevor Übersetzungen online gehen, wenn der Übersetzer nicht die letzte prüfende Instanz ist
   (siehe „Übersetzungsablauf und Freigabe“).

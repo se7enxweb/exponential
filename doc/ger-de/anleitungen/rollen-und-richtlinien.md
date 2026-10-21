@@ -84,7 +84,7 @@ Um die Einschränkungen einer Richtlinie später zu ändern, klicken Sie im Edit
 
 Die Reihenfolge der Richtlinien ändert nichts daran, was jemand tun darf: Jede Richtlinie gewährt Zugriff für sich.
 Sie hilft beim Lesen einer Rolle. Die Reihenfolge sind die IDs der Richtlinien im Entwurf (siehe
-[Rollen: Richtlinien-IDs, Sortierung und Reihenfolge-Schaltflächen](../../eng-us/features/6.0/role-policy-order.md)); alle
+[Rollen: Richtlinien-IDs, Sortierung und Reihenfolge-Schaltflächen](../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md)); alle
 Arten des Verschiebens verwenden sie.
 
 Behalten Sie im Editor **Reihenfolge der Rolle** (ID aufsteigend) bei, dann:
@@ -160,7 +160,7 @@ der nicht aktivierten Benutzer. Jeder öffnet `user/registration/<token>` in der
 Bestätigung gebeten; das Öffnen eines Links ändert nichts. Freigeben aktiviert das Konto so, wie es **Ausgewählte
 Benutzer aktivieren** tut, oder nimmt das Freigabeelement an und veröffentlicht das Konto sofort; Ablehnen entfernt
 das Konto. Links zum Freigeben und Ablehnen funktionieren einmal, jeder Link läuft ab. Einzelheiten:
-[Signierte Links in der Mail „Neuer Benutzer registriert“](../../eng-us/features/6.0/registration-admin-links.md).
+[Signierte Links in der Mail „Neuer Benutzer registriert“](../funktionen/6.0/admin-links-der-registrierung.md).
 
 Die Einstellungen, in `[UserSettings]` (am besten in `settings/override/site.ini.append.php`):
 
@@ -185,9 +185,9 @@ die `SiteURL` weglässt), setzen Sie `RegistrationAdminBaseURL`; andernfalls fü
 
 Für die Konten, die aktiviert wurden, listet **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) diejenigen auf, die
 sich nie angemeldet haben, lange nicht gesehen wurden, deaktiviert, gesperrt, verwaist sind oder eine E-Mail-Adresse
-teilen, und deaktiviert, aktiviert oder entsperrt sie in großer Zahl: [Benutzerkonten prüfen](../../eng-us/features/6.0/user-hygiene.md). Mit `[UserSettings]
+teilen, und deaktiviert, aktiviert oder entsperrt sie in großer Zahl: [Benutzerkonten prüfen](../funktionen/6.0/benutzerpflege.md). Mit `[UserSettings]
 DeactivateAndMove=enabled` setzt **Deaktivieren und verschieben** Konten außer Dienst, statt sie zu entfernen, und
-verschiebt sie bei der Reaktivierung zurück ([Deaktivieren und verschieben](../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move), Funktion
+verschiebt sie bei der Reaktivierung zurück ([Deaktivieren und verschieben](../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben), Funktion
 `user/deactivate`). Eine Rolle wird der Gruppe der deaktivierten Benutzer niemals zugewiesen: Zuweisen lässt sie aus
 und sagt das.
 
@@ -252,7 +252,7 @@ Anwendung zurückgeschickt.
   `--dry-run`: Jede Rolle, die Benutzern das Anmelden erlaubt, erhält die Richtlinie für dieselben Siteaccesses,
   sodass niemand verliert, was er vorher tun konnte. Die ganze Geschichte und wie Sie das alte Verhalten eine Zeit lang
   beibehalten, steht in
-  [dem Upgrade-Hinweis](../../eng-us/bc/6.0/oauth-authorize-policy.md).
+  [dem Upgrade-Hinweis](../bc/6.0/oauth-autorisierungsrichtlinie.md).
 
 ## Wer das darf
 
@@ -310,13 +310,13 @@ Anwendung zurückgeschickt.
 - Jedes Template liegt in `design/admin` und `design/admin4`; das Erscheinungsbild ist `role/exp_style.tpl`, auf
   `.exp-roles` beschränkt. Kein gemeinsames Stylesheet wird geändert.
 
-**Demo-Modus und die Rolle Administrator.** Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) gilt ein Konto, dessen Rollen uneingeschränkten Zugriff auf jedes Modul und jede Funktion gewähren, wie es die Rolle **Administrator** tut, als Administrator: Sein Passwort kann weder geändert noch zurückgesetzt werden. Konten mit eingeschränkten Rollen behalten die üblichen Passwortregeln. [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
+**Demo-Modus und die Rolle Administrator.** Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) gilt ein Konto, dessen Rollen uneingeschränkten Zugriff auf jedes Modul und jede Funktion gewähren, wie es die Rolle **Administrator** tut, als Administrator: Sein Passwort kann weder geändert noch zurückgesetzt werden. Konten mit eingeschränkten Rollen behalten die üblichen Passwortregeln. [Demo-Modus](../bc/6.0/demomodus.md).
 
 ## Siehe auch
 
-- [Rollen: Richtlinien-IDs, Sortierung und Reihenfolge-Schaltflächen](../../eng-us/features/6.0/role-policy-order.md)
-- [Blätterfunktion für Rollenzuweisungen](../../eng-us/features/6.0/role-assignment-paging.md)
-- [Signierte Links in der Mail „Neuer Benutzer registriert“](../../eng-us/features/6.0/registration-admin-links.md)
+- [Rollen: Richtlinien-IDs, Sortierung und Reihenfolge-Schaltflächen](../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md)
+- [Blätterfunktion für Rollenzuweisungen](../funktionen/6.0/seitenweise-rollenzuweisungen.md)
+- [Signierte Links in der Mail „Neuer Benutzer registriert“](../funktionen/6.0/admin-links-der-registrierung.md)
 - [Sektionen](sektionen.md), [Objektzustände](objektzustaende.md), [Sicherheit und Audit](sicherheit-und-audit.md)
 - [Eigentümer ändern](eigentuemer-aendern.md): die Richtlinien `owner/change` und `owner/subtree` von ezownerchange
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

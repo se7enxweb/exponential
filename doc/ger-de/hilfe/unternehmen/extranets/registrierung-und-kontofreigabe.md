@@ -55,7 +55,7 @@ Rechte, bis jemand sie freigibt (siehe unten).
 `site.ini [UserSettings] DefaultUserPlacement` ist der Knoten der Benutzergruppe, in der neue Registrierungen landen
 (ausgeliefert `12`). Setzen Sie ihn im Siteaccess des Portals auf eine eigene Gruppe, zum Beispiel *Partner-Bewerber*,
 damit Registrierungen nie in einer Redakteursgruppe landen
-([Mitgliederregistrierung, Registration settings](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md#registration-settings)).
+([Mitgliederregistrierung, Registration settings](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md#einstellungen-für-die-registrierung)).
 
 Ein nützliches Muster: Die Gruppe der Bewerber hat nur `user/login` für das Portal und Lesezugriff auf eine
 Willkommensseite. Nach der Freigabe fügt ein Administrator das Konto der Gruppe seiner Partnerorganisation hinzu, die
@@ -66,7 +66,7 @@ die eigentlichen Rollen trägt ([Kunden- und Partnerbereiche](kunden-und-partner
 Mit `VerifyUserType=email` (der ausgelieferte Wert) wird das Konto über einen Link in einer Mail an den neuen Benutzer
 aktiviert. Die Aktivierungsmail, die Mail „Aktivierung erneut gesendet“ und die Mail „Registrierung freigegeben“ sind
 HTML-Mails mit einem Textteil und verwenden https-Links
-([Signierte Links, The mails the new user gets](../../../../eng-us/features/6.0/registration-admin-links.md#the-mails-the-new-user-gets)).
+([Signierte Links, The mails the new user gets](../../../funktionen/6.0/admin-links-der-registrierung.md#die-e-mails-die-der-neue-benutzer-erhält)).
 `PasswordInRegistrationEmail=disabled` hält Passwörter aus Mails heraus.
 
 ## Die Mail an den Administrator mit signierten Links
@@ -75,9 +75,9 @@ Mit `RegistrationFeedback=email` schickt jede Registrierung dem Administrator (`
 `[MailSettings] AdminEmail`) die Mail „Neuer Benutzer registriert“. Seit 6.0.15 nennt sie das Konto und seinen Zustand
 und enthält bis zu fünf Links: **View account**, **Activate account** oder **Approve**, **Reject and remove**,
 **Open approval item** und **All unactivated users**
-([Signierte Links in der Mail „New user registered“](../../../../eng-us/features/6.0/registration-admin-links.md)).
+([Signierte Links in der Mail „New user registered“](../../../funktionen/6.0/admin-links-der-registrierung.md)).
 
-Was diese Links schützt ([Security](../../../../eng-us/features/6.0/registration-admin-links.md#security)):
+Was diese Links schützt ([Security](../../../funktionen/6.0/admin-links-der-registrierung.md#sicherheit)):
 
 - Jeder Link ist mit HMAC-SHA-256 unter einem aus dem Site-Geheimnis abgeleiteten Schlüssel signiert, nennt ein Konto
   und eine Aktion und läuft nach `RegistrationActionTTL` Sekunden ab (standardmäßig 7 Tage).
@@ -97,7 +97,7 @@ Damit kein Konto funktioniert, bevor jemand es geprüft hat, kann die Veröffent
 Freigabeelement warten: ein Ereignis *Approve* in dem Workflow, der vor dem Veröffentlichen ausgelöst wird. Das Konto
 ist dann im Zustand `workflow`, „Waiting for approval before it is published“; **Approve** in der Mail nimmt das
 Freigabeelement an und veröffentlicht das Konto sofort, **Reject** lehnt es ab und entfernt das Konto
-([What approve and reject do](../../../../eng-us/features/6.0/registration-admin-links.md#what-approve-and-reject-do)).
+([What approve and reject do](../../../funktionen/6.0/admin-links-der-registrierung.md#was-freigeben-und-ablehnen-tun)).
 
 Das Ereignis Approve grenzt nach Sektion, Sprache, Version und Benutzergruppe ein, was es zurückhält
 ([Workflows, 3.2](../../../anleitungen/workflows.md#32-das-ereignis-freigeben-einrichten)). Bitten Sie Ihren Partner, es so
@@ -116,13 +116,13 @@ Registrierungen, die älter als 30 Tage sind, sind mit **Old** gekennzeichnet
 
 Für eine kleine Zahl von Partnern legen Mitarbeiter die Konten in der Administration unter der Gruppe des Partners an.
 Eine öffentliche Registrierung ist nicht nötig. Die Passwortregeln gelten für jedes Formular, das ein Passwort setzt
-([Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md)), und Benutzer setzen vergessene Passwörter
-selbst zurück ([Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+([Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md)), und Benutzer setzen vergessene Passwörter
+selbst zurück ([Das Passwort eines Benutzers zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 
 ## Bots fernhalten
 
 - Ein CAPTCHA-Feld (reCAPTCHA oder hCaptcha) in der Benutzerklasse schützt das Registrierungsformular
-  ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+  ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 - Formular-Tokens schützen jedes Formular gegen seitenübergreifende Anfragen.
 - Nicht aktivierte Registrierungen werden regelmäßig bereinigt.
 
@@ -141,7 +141,7 @@ selbst zurück ([Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/
 ## Verwandte Seiten
 
 - [Registrierung von Mitgliedern](../mitglieder/registrierung-von-mitgliedern.md)
-- [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
+- [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
 - [Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

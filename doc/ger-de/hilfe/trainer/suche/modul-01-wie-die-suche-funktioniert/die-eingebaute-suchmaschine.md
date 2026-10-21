@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: `settings/site.ini [SearchSettings]`, [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md) und
+Quelle: `settings/site.ini [SearchSettings]`, [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md) und
 [10.8 Suchindizierung und Bildverarbeitung](../../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung).
 
 1. **Index in der Datenbank** (4 Minuten). Wenn ein Objekt veröffentlicht wird, nimmt die Suchmaschine den Text jedes
@@ -137,15 +137,15 @@ Verwenden Sie Ihre eigene Schulungsinstallation und ein Terminal in ihrem Wurzel
 3. **B.** Eine Phrase muss die Reihenfolge einhalten; Platzhalter sind standardmäßig ausgeschaltet.
 4. Leere Suchen verbrauchen viele Ressourcen (Kommentar in `settings/site.ini`).
 5. `php bin/php/console exp:ini where <file>/<block>/<setting>`
-   ([Einstellungen über die Kommandozeile ändern](../../../../../eng-us/features/6.0/exp-ini-command.md)).
+   ([Einstellungen über die Kommandozeile ändern](../../../../funktionen/6.0/exp-ini-befehl.md)).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md): die Tabelle der Einstellungen der eingebauten
+- [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md): die Tabelle der Einstellungen der eingebauten
   Suchmaschine.
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): Einstellungen
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): Einstellungen
   sicher lesen und schreiben.
 - [Such-Backends](../../../hosting/grundlagen/such-backends.md): die eingebaute Suchmaschine aus Sicht eines Hosters.
 
@@ -153,7 +153,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation und ein Terminal in ihrem Wurzel
 
 - [Modul 1: Wie die Suche funktioniert](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

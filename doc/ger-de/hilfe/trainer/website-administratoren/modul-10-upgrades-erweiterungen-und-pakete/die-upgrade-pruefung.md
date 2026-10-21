@@ -136,8 +136,8 @@ Installation.
 ## Weiterführende Literatur
 
 - [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md): jeder Teil der Seite und jeder Befund.
-- [Prüfung der Dateikonsistenz und die Dateiliste des Release](../../../../../eng-us/features/6.0/file-consistency-check.md).
-- [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-checks.md).
+- [Prüfung der Dateikonsistenz und die Dateiliste des Release](../../../../funktionen/6.0/dateikonsistenzpruefung.md).
+- [Qualitätsprüfungen](../../../../funktionen/6.0/qualitaetspruefungen.md).
 
 ## Verwandte Seiten
 

@@ -81,7 +81,7 @@ ein genauerer Blick.
 - **„Alles leeren“ als Gewohnheit.** Es funktioniert und verdeckt die Ursache. Bitten Sie die Teilnehmenden, den Cache
   zu benennen, bevor sie leeren.
 - **Leeren, bevor der Code live ist.** Leeren Sie auf einem Server die Seiten-Caches erst, wenn PHP-FPM oder Velocity
-  den neuen Code ausführt; sonst wird wieder eine alte Seite gespeichert. Lektion 4.1 von [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) greift das wieder auf.
+  den neuen Code ausführt; sonst wird wieder eine alte Seite gespeichert. Lektion 4.1 von [Hosting und Betrieb](../../hosting-betrieb/README.md) greift das wieder auf.
 
 ## Praktische Übung
 
@@ -143,7 +143,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 
 - [Caches](../../../../anleitungen/caches.md): die Seite und die üblichen Fragen dazu.
 - [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md#2-den-richtigen-cache-leeren): welcher Cache bei welcher Änderung.
-- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../../../eng-us/features/6.0/cache-clear-rename-aside.md): warum
+- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../../funktionen/6.0/cache-leeren-durch-umbenennen.md): warum
   Anfragen beim Leeren nicht warten müssen.
 
 ## Verwandte Seiten

@@ -11,7 +11,7 @@ type: reference
 
 Diese Seite richtet sich an Datenschutzbeauftragte, Projektleitungen und Administratoren öffentlicher Stellen in der EU
 (und anderswo, wo die DSGVO gilt). Sie ordnet Themen der Datenschutz-Grundverordnung dem zu, was Exponential
-bereitstellt, nach [Datenschutzstandards: DSGVO](../../../../eng-us/standards/privacy.md#gdpr). Der Status des Projekts ist
+bereitstellt, nach [Datenschutzstandards: DSGVO](../../../standards/datenschutz.md#dsgvo). Der Status des Projekts ist
 **„Teilweise erfüllt“**, in dem Sinne, dass die Software die aufgeführten Funktionen bereitstellt;
 die Pflichten der Verordnung bleiben bei der Organisation, die die Website betreibt. Amtlicher Text: Verordnung (EU)
 2016/679, <https://eur-lex.europa.eu/eli/reg/2016/679/oj>.
@@ -60,7 +60,7 @@ der Aufbewahrungsplan und Anweisungen für die Beschäftigten.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
-- [Audit-Leitfaden, 4.12 Datenschutz- und DSGVO-Aufgaben](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
+- [Audit-Leitfaden, 4.12 Datenschutz- und DSGVO-Aufgaben](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)
 - [Compliance und DSGVO für Hoster](../../hosting/sicherheit/compliance-und-dsgvo.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -28,7 +28,7 @@ Verhindern Sie zuerst weiteren Schaden und verwenden Sie dann das genaueste Werk
   verbergen Sie das Element sofort (`content/hide`) oder schalten Sie den Wartungsmodus für die ganze Website ein.
 - Wenn ein Inhaltsjob noch läuft (eine große Entfernung, Kopie oder Sektionszuweisung), können Sie ihn auf seiner
   Fortschrittsseite verfolgen; warten Sie auf ihn oder starten Sie keine neuen
-  ([Inhaltsjobs](../../../../../eng-us/features/6.0/content-jobs.md)).
+  ([Inhaltsjobs](../../../../funktionen/6.0/inhaltsauftraege.md)).
 - Bitten Sie die Redaktion, Änderungen im betroffenen Bereich zu unterbrechen.
 
 ## Genau herausfinden, was passiert ist
@@ -41,7 +41,7 @@ Verhindern Sie zuerst weiteren Schaden und verwenden Sie dann das genaueste Werk
 Das Entfernen eines Teilbaums ist ein übergeordnetes Ereignis mit einem untergeordneten Ereignis je Knoten darunter;
 ein Inhaltsjob ist das übergeordnete Ereignis von allem, was seine Stapel getan haben; die Warnung `mass_delete` wird
 ausgelöst, wenn ein Benutzer in zehn Minuten 500 Knoten entfernt
-([Prüfprotokoll, „Why you want it“](../../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Notieren Sie, wer, wann
+([Prüfprotokoll, „Why you want it“](../../../../funktionen/6.0/pruefprotokoll.md#warum-sie-es-wollen)). Notieren Sie, wer, wann
 und welcher oberste Knoten.
 
 ## Rückgängig machen, mit dem genauesten Werkzeug zuerst

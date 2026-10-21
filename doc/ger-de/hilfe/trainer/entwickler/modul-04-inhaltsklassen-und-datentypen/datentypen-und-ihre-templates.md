@@ -145,7 +145,7 @@ Verwenden Sie die Spielwiese aus Lektion 2.1 und ändern Sie die Knoten-ID in `p
 
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md): Datentypen im
   Editor.
-- [Rich Text: Zusatzzeichen und TeX-Quelltext](../../../../../eng-us/features/6.0/rich-text-supplementary-characters-and-tex-source.md):
+- [Rich Text: Zusatzzeichen und TeX-Quelltext](../../../../funktionen/6.0/rich-text-zusatzzeichen-und-tex-quelltext.md):
   wie Rich Text gespeichert wird.
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): Overrides.
 

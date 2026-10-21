@@ -91,7 +91,7 @@ und werden bei der ersten Verwendung erzeugt ([4.6 Schlüssel](../../../bc/6.0/a
 
 - [Audit-Leitfaden, 5.3](../../../bc/6.0/audit.md#53-die-hash-kette-und-was-die-prüfung-findet)
 - [Das Audit-Protokoll für öffentliche Stellen](audit-protokoll-fuer-oeffentliche-stellen.md)
-- [Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md)
+- [Audit-Protokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

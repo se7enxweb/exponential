@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Standards für Datenbanken und SQL](../../../../../eng-us/standards/databases-and-sql.md), die Abschnitte über die
+Quelle: [Standards für Datenbanken und SQL](../../../../standards/datenbanken-und-sql.md), die Abschnitte über die
 eZDB-Regeln und die Unterschiede der Dialekte.
 
 1. **Die zwei Regeln** (5 Minuten). Jeder String aus einer Anfrage, einer Einstellung oder der Datenbank wird mit
@@ -169,9 +169,9 @@ Auf der Entwicklungsinstallation, mit der Tabelle `mysite_greeting` aus Lektion 
 
 ## Weiterführende Literatur
 
-- [Standards für Datenbanken und SQL](../../../../../eng-us/standards/databases-and-sql.md).
-- [Sicherheitsstandard](../../../../../eng-us/standards/security.md).
-- [MongoDB als Datenbank](../../../../../eng-us/features/6.0/mongodb-database-support.md): was rohes SQL dort nicht kann.
+- [Standards für Datenbanken und SQL](../../../../standards/datenbanken-und-sql.md).
+- [Sicherheitsstandard](../../../../standards/sicherheit.md).
+- [MongoDB als Datenbank](../../../../funktionen/6.0/mongodb-datenbankunterstuetzung.md): was rohes SQL dort nicht kann.
 
 ## Verwandte Seiten
 

@@ -70,7 +70,7 @@ Aus [Tags und Schlagwörter](tags-und-schlagwoerter.md):
 - [ ] Weg entschieden: Eingabe, Import per Skript, REST, RSS-Import oder Writer-Import
       ([Katalog planen](katalog-planen.md#wie-einträge-hereinkommen)).
 - [ ] Importe verwenden Remote-IDs, damit sie ohne Duplikate erneut laufen können
-      ([Inhalte im Code anlegen und aktualisieren](../../../../eng-us/help/creators/app-creators/creating-content-in-code.md)).
+      ([Inhalte im Code anlegen und aktualisieren](../../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md)).
 - [ ] Eine Stichprobe echter Einträge vor dem vollständigen Import von Katalogisierenden geprüft.
 - [ ] Alte Sammlungen veröffentlicht, bevor Feeds angekündigt werden.
 
@@ -111,27 +111,27 @@ Aus [PDF- und Druckexporte](pdf-und-druckexporte.md) und [Feeds für Neuerwerbun
 
 ## Barrierefreiheit und Leser
 
-- [ ] Templates folgen [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md):
+- [ ] Templates folgen [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md):
       Landmarks, ein `h1`, Beschriftungen, Kontrast, Zoom auf 200 %.
 - [ ] Cover und Scans haben Alternativtexte.
-- [ ] Getestet mit [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md).
+- [ ] Getestet mit [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md).
 - [ ] Leserkonten und Bereiche nur für Mitglieder geprüft ([Mitglieder](../mitglieder/README.md)).
 
 ## Start
 
-- [ ] Die [Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md) des Website-Erstellers
+- [ ] Die [Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md) des Website-Erstellers
       bestanden.
 - [ ] Backups von Datenbank und Speicher laufen, und eine Wiederherstellung ist getestet
-      ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
-- [ ] Sitemaps erzeugt und angemeldet ([Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)).
+      ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
+- [ ] Sitemaps erzeugt und angemeldet ([Sitemaps](../../ersteller/website-ersteller/sitemaps.md)).
 - [ ] Katalogisierende geschult; eine kurze Anleitung für Redakteure geschrieben
-      ([Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+      ([Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Jeden Monat
 
 - [ ] Suchbegriffe ohne Ergebnisse geprüft; Synonyme oder Einträge ergänzt.
 - [ ] Inhaltsprüfungen ausgeführt: nicht verknüpfte Dateien, ungültige Relationen, fehlende Dateien
-      ([Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+      ([Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 - [ ] Feeds in einem Feedreader geöffnet; gespeicherte PDFs bei Bedarf neu erzeugt.
 - [ ] Rollen für Mitarbeiter und Ehrenamtliche geprüft, die gewechselt haben
       ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
@@ -148,7 +148,7 @@ Aus [PDF- und Druckexporte](pdf-und-druckexporte.md) und [Feeds für Neuerwerbun
 - [Bibliotheken und Kataloge](README.md)
 - [Checkliste Go-live](../vorlagen/checkliste-go-live.md)
 - [Checkliste Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md)
-- [Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -44,7 +44,7 @@ Home
 
 Jeder oberste Ordner ist ein Leistungsbereich, benannt so, wie die Einwohnerschaft spricht, nicht nach dem Fachbereich.
 Dienstleistungen, die in zwei Bereiche gehören, erhalten einen zweiten Ort. Halten Sie die Tiefe, wo möglich, bei drei
-Ebenen; das Menü zeigt den Baum ([Menüs und Navigation](../../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)).
+Ebenen; das Menü zeigt den Baum ([Menüs und Navigation](../../../ersteller/website-ersteller/menues-und-navigation.md)).
 
 ## Sektionen
 
@@ -78,10 +78,10 @@ freigegebene Seiten nie.
 
 Viele Fachbereiche bearbeiten ein paar Mal im Monat. Der **Editor-Siteaccess** gibt ihnen eine einfachere Oberfläche zum
 Bearbeiten von Inhalten ([Anmelden im Editor](../../../anmelden-im-editor.md),
-[Einrichtungsassistent und Editor-Siteaccess](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)). Helfen
+[Einrichtungsassistent und Editor-Siteaccess](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md)). Helfen
 Sie ihnen mit:
 
-- einer Anleitung auf einer Seite je Aufgabe ([Aufgaben zum Veröffentlichen](../../../../../eng-us/help/government/tasks/publishing/README.md));
+- einer Anleitung auf einer Seite je Aufgabe ([Aufgaben zum Veröffentlichen](../../aufgaben/veroeffentlichen/README.md));
 - **Meine Entwürfe**, um unfertige Arbeit zu finden
   ([Entwürfe und ausstehende Objekte](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md));
 - zweistufiger Anmeldung, weil das Passwort gelegentlicher Redakteurinnen und Redakteure am ehesten wiederverwendet ist
@@ -98,8 +98,8 @@ Sie ihnen mit:
 
 - [Kommunen](README.md)
 - [Schwerpunkte der Anforderungen für Kommunen](schwerpunkte-der-anforderungen.md)
-- [Den Inhaltsbaum strukturieren](../../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)
-- [An die Redaktion übergeben](../../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)
+- [Den Inhaltsbaum strukturieren](../../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)
+- [An die Redaktion übergeben](../../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

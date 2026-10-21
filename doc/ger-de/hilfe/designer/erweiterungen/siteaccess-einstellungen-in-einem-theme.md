@@ -19,7 +19,7 @@ aus einer Installation betreiben, jede in ihrer eigenen Erweiterung.
 | `settings/siteaccess/<siteaccess>/` | Nur solange dieser Siteaccess läuft |
 | `settings/override/` | Solange ein Siteaccess läuft, der in dieser Erweiterung einen Ordner `settings/siteaccess/<name>/` hat (seit Januar 2026) |
 
-Der zweite Ort ist in [Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
+Der zweite Ort ist in [Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)
 beschrieben. Sein Ablagename, wie ihn die Debug-Ausgabe zeigt, ist `ext-siteaccess-override:<extension>`.
 
 ## Ein echtes Beispiel

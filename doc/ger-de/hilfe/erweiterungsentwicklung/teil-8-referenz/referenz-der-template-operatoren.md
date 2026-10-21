@@ -14,8 +14,8 @@ nach der PHP-Klasse, die sie implementiert. Die Liste entstand, indem die Templa
 jedem registrierten Operator gefragt wurde (Oktober 2026); sie zeigt also, was Templates aufrufen können, nicht, was
 ein altes Handbuch sagte. Erweiterungen fügen eigene Operatoren hinzu; diese erscheinen nur, wenn die Erweiterung
 aktiv ist. Wie jeder Operator verwendet wird, mit Beispielen, steht in der Hilfe für Designer
-([Überblick über die Operatoren](../../../../eng-us/help/designers/templates/operators-overview.md) und
-[Operatorreferenz](../../../../eng-us/help/designers/templates/operator-reference.md)).
+([Überblick über die Operatoren](../../designer/vorlagen/operatoren-ueberblick.md) und
+[Operatorreferenz](../../designer/vorlagen/operatorreferenz.md)).
 
 ## Zeichenketten (eZTemplateStringOperator)
 

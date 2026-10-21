@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: die Seiten zu EI: Summary und zum Audit-Protokoll unter **EI: Help** (`extension/expai/doc/summary.md`,
-`extension/expai/doc/audit-trail.md`) und [expai: Für Administratoren](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators).
+`extension/expai/doc/audit-trail.md`) und [expai: Für Administratoren](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren).
 
 1. **EI: Summary** (4 Minuten). Setup > **EI: Summary** (oder **Details** auf dem Dashboard). Nur lesend; jede Angabe
    wird in dem Moment gelesen, in dem die Seite sich öffnet. Abschnitte: **Master switch and surfaces**, **Providers**
@@ -122,7 +122,7 @@ Verwenden Sie die Schulungsinstallation mit einem Administratorkonto.
 
 ## Weiterführende Informationen
 
-- [expai: Für Administratoren](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)
+- [expai: Für Administratoren](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)
 - [Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md): das Audit-Protokoll.
 - Die Seiten zu EI: Summary und zum Audit-Protokoll unter **EI: Help**.
 
@@ -130,7 +130,7 @@ Verwenden Sie die Schulungsinstallation mit einem Administratorkonto.
 
 - [Modul 7: Administration](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

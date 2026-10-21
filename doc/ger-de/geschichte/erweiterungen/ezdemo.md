@@ -1,8 +1,8 @@
 # ezdemo (Demo-Design): Chronik
 
-Das Demo-Design ging denselben Weg wie ezwebin: Paket-Updates Anfang 2024, dann im September und Oktober 2026 Übersetzungen, die Korrekturen der Seite „Passwort vergessen“ und der Fehlerseiten, jQuery 4 und das Entfernen von YUI aus seinen Galerien und Flyouts. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezdemo.md).
+Das Demo-Design ging denselben Weg wie ezwebin: Paket-Updates Anfang 2024, dann im September und Oktober 2026 Übersetzungen, die Korrekturen der Seite „Passwort vergessen“ und der Fehlerseiten, jQuery 4 und das Entfernen von YUI aus seinen Galerien und Flyouts. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezdemo.md).
 
-Diese Seite führt **jede der 23 Änderungen** des Repositorys `ezdemo` zwischen 2023-12-22 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezdemo.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezdemo.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezdemo.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 23 Änderungen** des Repositorys `ezdemo` zwischen 2023-12-22 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezdemo.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezdemo.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezdemo.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -82,7 +82,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezdemo.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezdemo.md)
 - [Release Notes](../../../changelogs/extensions/ezdemo.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezdemo.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

@@ -34,12 +34,12 @@ Feeds, Medien, Tags, Layouts, das Audit und mehr), ausgeliefert über die Aufruf
 distribution“ (Teil der Standarddistribution) und braucht keinen Build-Schritt und keinen zusätzlichen Server.
 
 Die **Discovery** listet jeden Dienst mit seinen Parametern auf, sodass Programme den Katalog nicht fest einprogrammieren
-([Remote-Dienste mit expservices](../../../../eng-us/help/creators/app-creators/remote-services-expservices.md#calling-a-service)).
+([Remote-Dienste mit expservices](../../ersteller/anwendungsentwickler/entfernte-dienste-expservices.md#einen-dienst-aufrufen)).
 
 ## Was sich darüber erledigen lässt
 
 Die Gruppen der Dienste, aus
-[Remote-Dienste: die ganze Administration als HTTP-API](../../../../eng-us/features/6.0/remote-services-expservices.md#domains):
+[Remote-Dienste: die ganze Administration als HTTP-API](../../../funktionen/6.0/entfernte-dienste-expservices.md#domänen):
 
 | Gruppe | Beispiele |
 |---|---|
@@ -79,13 +79,13 @@ Die Erweiterung liefert Beispiel-Frontends, die „news, shop, forums, media, fe
 without a build step“ (Neuigkeiten, Shop, Foren, Medien, Feeds, Suche und Anmeldung im Browser ohne Build-Schritt)
 rendern: `expportal_jquery` (eine Referenz mit jQuery 4) und `expportal_reactive` (React mit React Bootstrap), unter
 vier Designs in `extension/expservices/design/`
-([Darauf gebaute Portale](../../../../eng-us/features/6.0/remote-services-expservices.md#portals-built-on-it)). Sie rufen die
+([Darauf gebaute Portale](../../../funktionen/6.0/entfernte-dienste-expservices.md#darauf-gebaute-portale)). Sie rufen die
 Dienste beim Namen auf. Für ein Unternehmen sind sie ein Ausgangspunkt und eine Vorführung, kein fertiges Produkt: Ihre
 Entwickler passen sie an Ihre Marke und Ihre Regeln an.
 
 ## REST API oder Remote-Dienste
 
-Aus [Wann man es verwendet](../../../../eng-us/help/creators/app-creators/remote-services-expservices.md#when-to-use-it):
+Aus [Wann man es verwendet](../../ersteller/anwendungsentwickler/entfernte-dienste-expservices.md#wann-es-passt):
 
 | Bedarf | Verwenden |
 |---|---|
@@ -114,8 +114,8 @@ Bestellungen, Benutzer, Caches, Feeds, als angemeldete Person oder als Skript.
 - [Apps und API-Schlüssel](apps-und-api-schluessel.md)
 - [Verkaufen über Netzwerke und Partner](verkaufen-ueber-netzwerke-und-partner.md)
 - [Entfernte Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)
-- [Remote-Dienste mit expservices](../../../../eng-us/help/creators/app-creators/remote-services-expservices.md)
-- [Remote-Dienste: die ganze Administration als HTTP-API](../../../../eng-us/features/6.0/remote-services-expservices.md)
+- [Remote-Dienste mit expservices](../../ersteller/anwendungsentwickler/entfernte-dienste-expservices.md)
+- [Remote-Dienste: die ganze Administration als HTTP-API](../../../funktionen/6.0/entfernte-dienste-expservices.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

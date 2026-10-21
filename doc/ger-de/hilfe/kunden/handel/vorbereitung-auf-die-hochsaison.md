@@ -27,13 +27,13 @@ haben beide Arten viel zu tun, und auf den persönlichen Seiten wird das Geld ve
 |---|---|
 | Die Daten der Aktion oder Saison und den erwarteten Umfang festlegen (eine frühere Spitze, die Größe eines Newsletters) | Eigentümer |
 | Dem Hoster die Daten und den erwarteten Umfang mitteilen | Eigentümer |
-| Den Hoster bitten, die Antwortzeiten mit `exp:benchmark` zu messen und das Ergebnis als Ausgangswert aufzubewahren, einschließlich einer Produktseite, einer Kategorieseite und des Warenkorbs ([Benchmark](../../../../eng-us/features/6.0/benchmark.md)) | Hoster |
+| Den Hoster bitten, die Antwortzeiten mit `exp:benchmark` zu messen und das Ergebnis als Ausgangswert aufzubewahren, einschließlich einer Produktseite, einer Kategorieseite und des Warenkorbs ([Benchmark](../../../funktionen/6.0/benchmark.md)) | Hoster |
 | Preise, Rabatte und Versandbedingungen für den Zeitraum festlegen | Eigentümer |
 | Die Landingpages und Newsletter planen | Marketing |
 
 ## Zwei Wochen vorher
 
-- [ ] Landingpages als Entwürfe erstellt und geprüft ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+- [ ] Landingpages als Entwürfe erstellt und geprüft ([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 - [ ] Ermäßigungsregeln vorbereitet, noch nicht aktiv ([Rabatte](rabatte.md)).
 - [ ] Preisänderungen als Entwürfe vorbereitet ([Preise und Währungen](preise-und-waehrungen.md)).
 - [ ] Geplante Updates von Exponential oder Erweiterungen jetzt erledigt, nicht später, und getestet.

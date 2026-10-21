@@ -42,7 +42,7 @@ ihn wie jede andere Version ([Freigabe und Prüfung](../alltag/freigabe-und-prue
 - [ ] Bei einer Änderung an einer bestehenden Seite: **Vergleichen** Sie den Entwurf auf der Versionsseite mit der
       veröffentlichten Version, damit Sie genau sehen, was sich geändert hat ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - [ ] Bei Massenarbeit in Vector: Prüfen Sie jede Änderung pro Feld, bevor etwas geschrieben wird, und nutzen Sie
-      danach **What changed** mit Zurücknehmen ([expai](../../../../eng-us/features/6.0/extensions/expai.md)).
+      danach **What changed** mit Zurücknehmen ([expai](../../../funktionen/6.0/erweiterungen/expai.md)).
 
 ## Worum Sie nicht bitten sollten
 
@@ -55,7 +55,7 @@ ihn wie jede andere Version ([Freigabe und Prüfung](../alltag/freigabe-und-prue
 ## Bilder und Alternativtexte
 
 Der Assistent kann mithilfe eines Bildmodells Alternativtexte für Bilder vorschlagen, und ein Bericht „Missing alt
-text“ kann Vorschläge für einen Teilbaum in die Warteschlange stellen ([expai](../../../../eng-us/features/6.0/extensions/expai.md)).
+text“ kann Vorschläge für einen Teilbaum in die Warteschlange stellen ([expai](../../../funktionen/6.0/erweiterungen/expai.md)).
 Behandeln Sie einen Vorschlag als Entwurf: Sagt er, was in **diesem** Zusammenhang wichtig ist, und vermeidet er es zu
 raten, wer eine Person auf dem Foto ist?
 
@@ -80,7 +80,7 @@ schreiben Sie es in die Richtlinie unten und wenden Sie es einheitlich an.
 | Das Dashboard des Assistenten: Kosten, Anfragen, Entwürfe, Grenzen | Budget und ungewöhnliche Nutzung |
 | Entwürfe, die er geschrieben hat und die nie veröffentlicht wurden | vergeudete Arbeit oder unklare Briefings |
 | Korrekturen nach dem Veröffentlichen von KI-unterstützten Seiten | wo die Prüfung versagt hat |
-| Der Prüfprotokoll-Kanal `ai`, mit dem Administrator | wer ihn wofür genutzt hat ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Der Prüfprotokoll-Kanal `ai`, mit dem Administrator | wer ihn wofür genutzt hat ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 
 ## Vorlage für eine Richtlinie
 

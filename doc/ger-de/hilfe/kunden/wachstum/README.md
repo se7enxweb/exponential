@@ -67,7 +67,7 @@ wöchentlicher Blick auf die Website. Planen Sie dann mit dem [Arbeitsblatt für
 
 - [Ihre Website im Alltag betreiben](../alltag/README.md)
 - [Mobil und Headless für Unternehmen](../../unternehmen/mobil-und-headless/README.md)
-- [Was Sie bauen können](../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
+- [Was Sie bauen können](../../ersteller/website-ersteller/was-sie-bauen-koennen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

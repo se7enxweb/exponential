@@ -77,7 +77,7 @@ Auf der Startseite oder einer Themenseite listet ein Fetch die neuesten Artikel 
 
 Der Layout-Editor kann Listen von Inhalten auch ohne Template-Arbeit in Blöcken zeigen
 ([Der Layout-Editor](../../../layout-editor.md)). Listen in Cache-Blöcken brauchen einen Ablauf, damit neue Elemente
-erscheinen ([View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)).
+erscheinen ([View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md)).
 
 ## Daten
 
@@ -96,7 +96,7 @@ Um zu einem späteren Zeitpunkt zu veröffentlichen, siehe [Pressemitteilungen](
 - Schreiben Sie den Alternativtext für das, was das Bild im Zusammenhang des Artikels zeigt; ein dekoratives Bild
   braucht keinen, sollte dann aber nicht im Feld Image stehen.
 - Bildgrößen kommen aus Aliasen
-  ([Bilder und Bildvarianten](../../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)).
+  ([Bilder und Bildvarianten](../../../ersteller/website-ersteller/bilder-und-bildvarianten.md)).
 - Fotos von Personen brauchen deren Einwilligung, wo Ihre Regeln es verlangen.
 
 ## Verwandte Seiten

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Projektleiter, die die Inhaltsklasse für Leistungsseiten anlegen. Eine
 Klasse für alle Leistungen hält die Seiten einheitlich, macht Listen und Suche vorhersehbar und lässt Redakteure ein
 Formular ausfüllen, statt eine Seite zu gestalten. Der Klasseneditor ist in
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) beschrieben; die
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) beschrieben; die
 genannten Datentypen sind die aus `kernel/classes/datatypes/` und der Erweiterung eztags.
 
 ## Inhalt
@@ -95,7 +95,7 @@ Standardinstallation aktiviert
 
 - [Einen Leistungskatalog aufbauen](README.md)
 - [Die Leistungsseite und einfache Sprache](die-leistungsseite-und-einfache-sprache.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

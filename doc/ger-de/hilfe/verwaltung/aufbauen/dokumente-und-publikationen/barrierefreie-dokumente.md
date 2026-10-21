@@ -67,7 +67,7 @@ Nicht jedes alte Dokument kann sofort barrierefrei gemacht werden. Sagen Sie auf
 Barrierefreiheit, wie man eine barrierefreie Fassung anfordert, und antworten Sie innerhalb einer genannten Frist.
 Erklärungen zur Barrierefreiheit beschreibt das W3C:
 [Developing an accessibility statement](https://www.w3.org/WAI/planning/statements/). Exponential liefert keine
-Vorlage für eine solche Erklärung mit ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
+Vorlage für eine solche Erklärung mit ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)).
 
 ## Was Exponential prüft und was nicht
 
@@ -84,8 +84,8 @@ Tabellenkalkulation, unterstützt durch den CSV-Export der Tabelle der Unterelem
 ## Verwandte Seiten
 
 - [Dokumente und Publikationen](README.md)
-- [Barrierefreiheit für Site-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
-- [Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Barrierefreiheit für Site-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
+- [Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

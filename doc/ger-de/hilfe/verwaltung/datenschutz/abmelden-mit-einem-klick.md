@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Kommunikationsteams. Der Widerruf einer Einwilligung muss so einfach
 sein wie ihre Erteilung, und große Postfachanbieter verlangen von Massenversendern das Abmelden mit einem Klick. Das
 E-Mail-Gate von Exponential fügt beides jeder optionalen E-Mail hinzu
-([Datenschutzstandards: CAN-SPAM Act und Abmelden mit einem Klick](../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe)).
+([Datenschutzstandards: CAN-SPAM Act und Abmelden mit einem Klick](../../../standards/datenschutz.md#can-spam-act-und-abmeldung-mit-einem-klick)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -70,7 +70,7 @@ beschrieben.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [E-Mail-Einstellungen für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md)
 - [Die Sperrliste](sperrliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

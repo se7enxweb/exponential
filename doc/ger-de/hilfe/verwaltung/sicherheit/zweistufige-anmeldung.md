@@ -100,7 +100,7 @@ Social Login beziehen, sofern aktiviert, Identitätsanbieter Dritter ein (siehe 
 
 - [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)
 - [Zwei-Faktor-Anmeldung für Hoster](../../hosting/sicherheit/zweistufige-anmeldung.md)
-- [sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md)
+- [sevenx_authentication_2fa](../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -79,10 +79,10 @@ Datenbankserver. Fragen: die Foren auf share.exponential.earth und der Telegram-
 | 7x übernahm 2023; fünfzehn Releases seit Januar 2024 | [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x) |
 | Die Foundation betreibt das Projekt | [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
 | Velocity, Layouts, Exponential Intelligence | [Die Produkte im Einzelnen](../wer-ist-die-exponential-foundation.md#die-produkte-im-einzelnen) |
-| Hilfe in der Administration | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Hilfe in der Administration | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | GPL, GFDL | [Open Source und Lizenzierung](gespraechspunkte-open-source-und-lizenzierung.md) |
 | Jeder Pull Request wird übernommen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
-| Ein Befehl, SQLite | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Ein Befehl, SQLite | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 
 ## Checkliste zum Proben
 

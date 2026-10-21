@@ -58,15 +58,15 @@ Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs f�
 
 Die Antworten von Exponential darauf stehen auf den obigen Seiten: Rollen und Sektionen für viele Einheiten, Versionen
 und das Audit-Protokoll für den Verlauf ([Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md),
-[Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)), Inhaltssprachen für gleichrangige Übersetzungen
+[Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)), Inhaltssprachen für gleichrangige Übersetzungen
 ([Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md)) und Caching und Velocity für Last
-([Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md)).
+([Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md)).
 
 ## Verwandte Seiten
 
 - [Verwaltungsebenen](../README.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
-- [Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
+- [Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

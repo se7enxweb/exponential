@@ -33,11 +33,11 @@ ist die Referenz, auf die die meisten Regeln verweisen.
 
 Die Administration von Exponential (admin4, admin4l) wird mit **Teilweise erfüllt** gegenüber WCAG 2.2 AA bewertet;
 EN 301 549 und Section 508 sind **nicht geprüft**; öffentliche Designs sind nicht geprüft
-([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Für Ihre Website bedeutet das:
+([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)). Für Ihre Website bedeutet das:
 
 | Bereich | Ihre Arbeit |
 |---|---|
-| Design-Templates | mit Tastatur, Screenreader und Zoom testen ([Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)) |
+| Design-Templates | mit Tastatur, Screenreader und Zoom testen ([Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)) |
 | Bilder | **Alternativtext ist erforderlich** an Bildattributen einschalten ([Inhaltsmodell und Bearbeitung, 9](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#9-pflicht-alternativtext-gekürzte-textzeilen-und-von-php-erzeugte-namen)) |
 | Formulare | Beschriftungen, Fehlermeldungen, kein CAPTCHA ohne Alternative |
 | Dokumente | eine Zusammenfassung in HTML auf der Seite; barrierefreie PDFs aus der Quelle |
@@ -53,7 +53,7 @@ Viele Kommunen bieten wichtige Seiten in Sprachen an, die die Einwohnerschaft ü
 Übersetzungen je Objekt und ein Siteaccess je Sprache unterstützen das
 ([Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md)); eine teilweise übersetzte Website sollte sagen, welche Seiten
 es in welcher Sprache gibt. Sprachen von rechts nach links werden unterstützt
-([Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)).
+([Sprachen von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md)).
 
 ## Sicherheit mit einem kleinen Team
 
@@ -63,8 +63,8 @@ Ein kleines Team kann die Website nicht jede Stunde beobachten, daher zählen di
 |---|---|---|
 | Zweistufige Anmeldung für jedes Konto von Beschäftigten | sevenx_authentication_2fa, `Enforce2FA` | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Kontosperre nach fehlgeschlagenen Anmeldungen | `MaxNumberOfFailedLogin`, standardmäßig aus | [Sicherheitshärtung](../../../sicherheitshaertung.md) |
-| CSRF-Schutz jedes Formulars | `ezformtoken` | [Seite „Formular abgelaufen“](../../../../../eng-us/features/6.0/form-expired-page.md) |
-| Audit von Änderungen | standardmäßig an | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| CSRF-Schutz jedes Formulars | `ezformtoken` | [Seite „Formular abgelaufen“](../../../../funktionen/6.0/seite-abgelaufenes-formular.md) |
+| Audit von Änderungen | standardmäßig an | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Updates | Upgrade-Prüfung und Update-Leitfaden | [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md), [Aktualisieren](../../../../anleitungen/aktualisieren.md) |
 
 Halten Sie schriftlich fest, wer Sicherheitsupdates einspielt, besonders wenn ein Lieferant die Website hostet.
@@ -83,15 +83,15 @@ Melde- und Antragsformulare erheben Namen, Anschriften und E-Mail-Adressen. Expo
 **Setup > Gesammelte Informationen**, exportiert sie als CSV (jeder Export wird im Audit aufgezeichnet) und entfernt sie
 auf Anfrage ([Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)). Alte Eingaben löscht es nicht von
 selbst: Planen Sie eine Überprüfung ein. CAPTCHA-Erweiterungen (`recaptcha`, `hcaptcha`) sind Dienste Dritter
-([Spamschutz für Formulare](../../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)). Exponential liefert kein
-Cookie-Banner mit ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)); siehe in der EU die
+([Spamschutz für Formulare](../../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)). Exponential liefert kein
+Cookie-Banner mit ([Datenschutzstandards](../../../../standards/datenschutz.md)); siehe in der EU die
 [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
 
 ## Verwandte Seiten
 
 - [Kommunen](README.md)
 - [Die ersten 90 Tage für Kommunen](die-ersten-90-tage.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

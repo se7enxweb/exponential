@@ -123,7 +123,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 3. **Rollen** und **Richtlinien**.
 4. Ja, die Rollen der Gruppen darüber gelten ebenfalls.
 5. **Falsch.** Benutzerobjekte landen nie im Papierkorb; das Entfernen eines Benutzers ist endgültig
-   ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+   ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 
 </details>
 
@@ -132,7 +132,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): Rollen und wie sie
   bei den Benutzern ankommen.
 - [Ihr Konto und die Anmeldung](../../../konten-und-anmeldung.md): was Benutzer von ihrem eigenen Konto sehen.
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md): die Kontoprüfungen aus Lektion 2.4.
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md): die Kontoprüfungen aus Lektion 2.4.
 
 ## Verwandte Seiten
 

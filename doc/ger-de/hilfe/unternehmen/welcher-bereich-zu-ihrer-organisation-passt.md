@@ -50,13 +50,13 @@ Aufwand jeder braucht.
 | Arbeiten mit Händlern, Lieferanten oder Kunden hinter einer Anmeldung | [Extranets und Partnerportale](extranets/README.md) | [Intranets](intranets/README.md) |
 | Führen mehrere Marken oder Länder | [Marken mit Multisite](multisite/README.md) | [Mehrsprachige Unternehmen](mehrsprachig/README.md) |
 | Versorgen eine App oder andere Systeme mit Inhalten | [Mobil und headless](mobil-und-headless/README.md) | [Zuverlässigkeit](zuverlaessigkeit/README.md) |
-| Dienen als Behörde der Öffentlichkeit | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) | [Sicherheit](sicherheit/README.md) |
+| Dienen als Behörde der Öffentlichkeit | Der eigene Bereich [Behörden](../verwaltung/verwaltungen-hier-beginnen.md) | [Sicherheit](sicherheit/README.md) |
 
 ## Zuordnung nach den Nutzern der Website
 
 | Nutzer | Was sie braucht | Lesen |
 |---|---|---|
-| Anonyme Besucher | Schnelle Seiten, Suche, gute URLs | [Zuverlässigkeit](zuverlaessigkeit/README.md), [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) |
+| Anonyme Besucher | Schnelle Seiten, Suche, gute URLs | [Zuverlässigkeit](zuverlaessigkeit/README.md), [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md) |
 | Kunden mit einem Konto | Registrierung, Bestellhistorie, Datenschutz | [Kundenkonten und Gastbestellung](shops/kundenkonten-und-gastbestellung.md), [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md) |
 | Mitarbeiter | Rollen pro Abteilung, Freigabe, Suche | [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md) |
 | Partner | Freigegebene Registrierung, getrennte Bereiche | [Registrierung und Kontofreigabe](extranets/registrierung-und-kontofreigabe.md) |

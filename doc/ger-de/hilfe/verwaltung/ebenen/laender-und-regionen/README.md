@@ -60,14 +60,14 @@ Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs f�
 
 Exponential hat kein geografisches Informationssystem. F체r Orte bietet es einen Datentyp f체r Kartenorte
 (`ezgmaplocation`, der Google Maps verwendet, einen Dienst eines Dritten) und einfache Anschriften in Textfeldern
-([ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md)). Verlinken Sie f체r alles 체ber einen Punkt
+([ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md)). Verlinken Sie f체r alles 체ber einen Punkt
 auf einer Karte hinaus Ihr bestehendes GIS oder Kartenportal.
 
 ## Verwandte Seiten
 
 - [Verwaltungsebenen](../README.md)
 - [Kommunen](../kommunen/README.md)
-- [Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- [Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, 체bersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

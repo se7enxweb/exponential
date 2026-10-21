@@ -49,7 +49,7 @@ vorbereiten, durchführen und auswerten, mit Material, das korrekt, barrierefrei
 Für einen Trainer, der diesen Kurs vorbereitet, in dieser Reihenfolge:
 
 1. [Trainer: hier beginnen](../trainer-hier-beginnen.md) und der [Kurskatalog](../kurskatalog.md).
-2. [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md): das Hilfe-Center, aus dem Sie unterrichten werden.
+2. [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md): das Hilfe-Center, aus dem Sie unterrichten werden.
 3. [Freie Dokumentation](../../freie-dokumentation.md): was Sie mit dem Material tun dürfen.
 4. [Die Geschichte von Exponential in zwei Minuten](../../fuersprecher/die-geschichte-in-zwei-minuten.md) und die
    [Kurzkarte zu den Namensregeln](../../fuersprecher/kurzkarte-namensregeln.md).

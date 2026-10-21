@@ -43,7 +43,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: die Rendering-Anleitung der Erweiterung („Writing a skin“, verlinkt von der
-[Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)),
+[Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)),
 [Templates und Design](../../../../anleitungen/templates-und-design.md) und [Caches](../../../../anleitungen/caches.md).
 
 1. **Die Dateien** (3 Minuten). Ein Skin `<name>` besteht aus
@@ -153,10 +153,10 @@ Ordner Ihres Designs und `<name>` durch Ihren Vornamen (für den Skin-Namen nur 
 <summary>Antworten</summary>
 
 1. `outputformat/html.tpl` und `outputformat/text.tpl` unterhalb von `newsletter/skin/<name>/` (Rendering-Anleitung,
-   verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+   verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 2. **B.** In Ihrem eigenen Design, niemals in dem der Erweiterung ([Templates und Design](../../../../anleitungen/templates-und-design.md)).
 3. Mit `{set-block variable=$subject scope=root}...{/set-block}` (Rendering-Anleitung).
-4. `[NewsletterSettings] AvailableSkinArray[]` in einem Override ([Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+4. `[NewsletterSettings] AvailableSkinArray[]` in einem Override ([Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 5. Eine Mail wird außerhalb der Website gelesen; relative Adressen haben nichts, worauf sie sich beziehen könnten.
 
 </details>
@@ -165,14 +165,14 @@ Ordner Ihres Designs und `<name>` durch Ihren Vornamen (für den Skin-Namen nur 
 
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): Designs, Overrides und die Template-Sprache.
 - [Caches](../../../../anleitungen/caches.md): welche Caches nach einer Template-Änderung zu leeren sind.
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420):
   die Rendering-Anleitung mit Variablen und Operatoren.
 
 ## Verwandte Seiten
 
 - [Modul 6: Templates und Skins](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

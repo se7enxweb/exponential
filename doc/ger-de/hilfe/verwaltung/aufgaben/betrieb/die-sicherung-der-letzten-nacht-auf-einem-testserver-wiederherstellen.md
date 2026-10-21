@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren, die zeigen müssen, dass sich Sicherungen wiederherstellen lassen, wie es die
 meisten Pläne zur Betriebskontinuität verlangen. Am Ende läuft auf einem Testserver die Site aus der Sicherung der
 letzten Nacht, und Sie wissen, wie lange eine Wiederherstellung dauert. Hintergrund:
-[Tests der Wiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/restore-testing.md).
+[Tests der Wiederherstellung](../../betrieb/datensicherung-und-wiederherstellung/wiederherstellungstests.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -71,14 +71,14 @@ letzten Nacht, und Sie wissen, wie lange eine Wiederherstellung dauert. Hintergr
 
 Datum, verwendete Sicherung, benötigte Zeit, gefundene Probleme, wer geprüft hat. Die benötigte Zeit ist eine Tatsache
 für Ihre Planung der Wiederherstellung
-([RPO und RTO als Entscheidungen](../../../../../eng-us/help/government/operations/backups-and-recovery/rpo-and-rto-as-decisions.md)). Entfernen oder
+([RPO und RTO als Entscheidungen](../../betrieb/datensicherung-und-wiederherstellung/rpo-und-rto-als-entscheidungen.md)). Entfernen oder
 sperren Sie die Testkopie, wenn Sie fertig sind, denn sie enthält Produktionsdaten.
 
 ## Verwandte Seiten
-- [Auf einem Testserver wiederherstellen](../../../../../eng-us/help/government/operations/backups-and-recovery/restoring-to-a-test-server.md)
+- [Auf einem Testserver wiederherstellen](../../betrieb/datensicherung-und-wiederherstellung/wiederherstellung-auf-einem-testserver.md)
 - [Wiederherstellung und Tests der Wiederherstellung (Hosting)](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md)
 - [Aus der Sicherung wiederherstellen (Runbook für Hoster)](../../../hosting/runbooks/aus-einem-backup-wiederherstellen.md)
-- [Plan für die Notfallwiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/disaster-recovery-plan.md)
+- [Plan für die Notfallwiederherstellung](../../betrieb/datensicherung-und-wiederherstellung/notfallwiederherstellungsplan.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -45,7 +45,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Valkey und Redis](../../../hosting/leistung/valkey-und-redis.md) und
-[sevenx_valkey_cache](../../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md).
+[sevenx_valkey_cache](../../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md).
 
 1. **Was sie speichert** (3 Minuten). Template-Blöcke `{valkey-block ...}`, den Inhalts-View-Cache und den kompilierten
    INI-Cache. Einträge haben ein Ablaufdatum, Generierungssperren gegen Stampedes sowie Knoten- und Teilbaumindizes,
@@ -143,7 +143,7 @@ PHP-Erweiterung `redis` sowie eine Schulungsinstallation, die Sie ändern dürfe
 ## Weiterführende Informationen
 
 - [Valkey und Redis](../../../hosting/leistung/valkey-und-redis.md)
-- [sevenx_valkey_cache](../../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md)
+- [sevenx_valkey_cache](../../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md)
 - [Mandantentrennung](../../../hosting/sicherheit/trennung-von-mandanten.md)
 - [Caches](../../../../anleitungen/caches.md): die Sicht der Administration.
 
@@ -151,7 +151,7 @@ PHP-Erweiterung `redis` sowie eine Schulungsinstallation, die Sie ändern dürfe
 
 - [Modul 7: Leistung und Skalierung](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

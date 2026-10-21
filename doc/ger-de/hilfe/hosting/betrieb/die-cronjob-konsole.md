@@ -15,7 +15,7 @@ von der PHP-Konfiguration einer Hosting-Plattform braucht, wie das Anhalten funk
 Sie es einem Kunden übergeben.
 
 Das vollständige Benutzerhandbuch ist [Cronjobs: ausführen, planen und verfolgen](../../../anleitungen/cronjobs.md); die Referenz
-der Funktion ist [Cronjob-Konsole](../../../../eng-us/features/6.0/cronjobs-console.md). Was die Teile tun, steht auf
+der Funktion ist [Cronjob-Konsole](../../../funktionen/6.0/cronjobs-in-der-konsole.md). Was die Teile tun, steht auf
 [Cronjobs](cronjobs.md).
 
 ## Inhalt
@@ -96,7 +96,7 @@ PHP-FPM als verschiedene Benutzer laufen.
 ## Teile anhalten
 
 Einen angehaltenen Teil lässt `runcronjobs.php` aus, wer ihn auch startet: die Crontab, `./console cron:<part>`, die Befehle
-`cron:` von Velocity oder die Seite ([Cronjob-Teile anhalten](../../../../eng-us/features/6.0/cronjob-pause.md)). Ein Teil, der während
+`cron:` von Velocity oder die Seite ([Cronjob-Teile anhalten](../../../funktionen/6.0/cronjobs-pausieren.md)). Ein Teil, der während
 seines Laufs angehalten wird, beendet das gerade laufende Skript und lässt den Rest aus. Der Hinweis sagt, seit wann, von wem
 und warum:
 

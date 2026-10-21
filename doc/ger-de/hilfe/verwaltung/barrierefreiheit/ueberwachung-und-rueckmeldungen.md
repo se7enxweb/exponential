@@ -31,7 +31,7 @@ regelmäßige Prüfungen. Exponential gibt Ihnen die Bausteine; die Routine ist 
 - Bieten Sie mindestens zwei Wege an: eine E-Mail-Adresse und ein Formular (und eine Telefonnummer, wo Sie eine haben).
 - Bauen Sie das Formular mit dem Informationssammler: die mitgelieferte Klasse Feedback form (`feedback_form`) oder
   eine eigene Klasse, sodass jede Meldung als Sammlung gespeichert und an ein Team gemailt werden kann
-  ([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+  ([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 - Felder: was die Person tun wollte, die Seitenadresse (wo möglich vorausgefüllt), was geschehen ist, wie geantwortet
   werden soll. Machen Sie jedes Feld außer der Beschreibung optional.
 - Verlinken Sie den Kanal aus der Erklärung zur Barrierefreiheit und der Fußzeile.
@@ -55,7 +55,7 @@ regelmäßige Prüfungen. Exponential gibt Ihnen die Bausteine; die Routine ist 
 - Für jede: Alternativtext, Überschriften, Linktexte, Tabellen, verlinkte Dokumente, Sprache.
 - Wo die Erweiterung Exponential Intelligence aktiv ist, listet der Bericht **Missing alt text** (Fehlender
   Alternativtext; `/expai/alttext`) Bilder ohne Alternativtext unterhalb eines Knotens auf
-  ([Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)).
+  ([Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md)).
 - Geben Sie Probleme mit einem Beispiel für die bessere Fassung an die Redaktion zurück.
 
 ## Auf Rückschritte achten
@@ -80,8 +80,8 @@ regelmäßige Prüfungen. Exponential gibt Ihnen die Bausteine; die Routine ist 
 ## Verwandte Seiten
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
-- [Formulareingaben](../../../../eng-us/help/creators/website-creators/form-submissions.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Formulareingaben](../../ersteller/website-ersteller/formulareinsendungen.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

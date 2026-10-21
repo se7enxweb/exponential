@@ -195,8 +195,8 @@ Die Größe der Datenbank ist selten der Grund. Siehe [Die Datenbank-Engine wech
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
 - [Datenbankunterstützung: SQLite 3](../../datenbankunterstuetzung.md#1-sqlite-3-der-standard)
 - [Kapitel 9.2: SQLite 3](../../../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei)
-- [Unterstützung für SQLite-Datenbanken](../../../../eng-us/features/6.0/sqlite-database.md) und
-  [SQLite-Transaktionen](../../../../eng-us/bc/6.0/sqlite-transactions.md)
+- [Unterstützung für SQLite-Datenbanken](../../../funktionen/6.0/sqlite-datenbank.md) und
+  [SQLite-Transaktionen](../../../bc/6.0/sqlite-transaktionen.md)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

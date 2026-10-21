@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren, die externe Zugänge überprüfen, monatlich oder am Ende jedes Projekts.
 **Benutzer > Benutzerkonten prüfen** (`/user/hygiene`) listet Konten mit Filtern und bearbeitet viele auf einmal
-([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Inhalt
 
@@ -52,7 +52,7 @@ Inhalte, Gruppen und Rollen bleiben. **Aktivieren** macht es rückgängig. Nicht
 ## Verwandte Seiten
 
 - [Den Zugang beenden](den-zugang-beenden.md)
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -50,7 +50,7 @@ Benutzerkonten liegen nie im Papierkorb.
 
 - [Die Ansicht des Papierkorbs](../../../../bc/6.0/papierkorb.md)
 - [Elemente im Papierkorb 90 Tage aufbewahren](elemente-im-papierkorb-90-tage-aufbewahren.md)
-- [Sicherungen und Wiederherstellung](../../../../../eng-us/help/government/security/backups-and-recovery.md)
+- [Sicherungen und Wiederherstellung](../../sicherheit/sicherung-und-wiederherstellung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

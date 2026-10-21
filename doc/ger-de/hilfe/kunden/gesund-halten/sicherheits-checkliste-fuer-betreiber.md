@@ -36,7 +36,7 @@ mit dem Datum auf; sie zeigen einem Prüfer, einem Versicherer oder einem Kunden
 - [ ] Ist die zweistufige Anmeldung für Administratoren verpflichtend ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md))?
 - [ ] Wer hat die Rolle Administrator? Ist die Liste so kurz wie möglich?
 - [ ] Wurden die Konten von Personen geschlossen, die gegangen sind? Nachweis: **Benutzer > Benutzerkonten prüfen**
-      ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+      ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Gibt es einen schriftlichen, getesteten Weg zurück hinein, wenn sich kein Administrator anmelden kann (ein Notfallverfahren)?
 
 ## Einstellungen und ausgelieferte Dateien
@@ -52,7 +52,7 @@ mit dem Datum auf; sie zeigen einem Prüfer, einem Versicherer oder einem Kunden
 ## Beobachten
 
 - [ ] Ist das Prüfprotokoll unversehrt? Nachweis: die Ausgabe von `exp:audit status` oder `audit.php verify`
-      ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+      ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 - [ ] Wer erhält die Alarm-E-Mails des Prüfprotokolls (Brute-Force-Anmeldungen, eine vergebene Rolle Administrator, ein
       abgeschaltetes Prüfprotokoll)? Ist das eine Person, die sie liest?
 - [ ] Werden die Logs mindestens wöchentlich gelesen ([Logs für Betreiber](logs-fuer-betreiber.md))?

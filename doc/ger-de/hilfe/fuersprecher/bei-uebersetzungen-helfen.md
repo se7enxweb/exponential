@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Fürsprecher, die neben Englisch eine weitere Sprache sprechen, und für diejenigen, die Übersetzer
 gewinnen. Übersetzen ist einer der wertvollsten Beiträge: „Übersetzungen der seit 6.0 hinzugekommenen Texte (etwa
 10.000) sind die nützlichste Arbeit für jede Sprache“, die noch nicht vollständig ist
-([Sprachen in Exponential, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)).
+([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 
 ## Inhalt
 
@@ -31,8 +31,8 @@ gewinnen. Übersetzen ist einer der wertvollsten Beiträge: „Übersetzungen de
 | Teilweise | Eine ältere Übersetzung deckt einen Teil der heutigen Texte ab |
 | Nur Inhalte | Noch keine Übersetzung der Administration |
 
-Die Zeile Ihrer Sprache steht in [Abschnitt 4, Jede Übersetzung der Administration](../../../eng-us/languages.md#4-every-administration-translation);
-die Stufen in [Abschnitt 2](../../../eng-us/languages.md#2-support-levels).
+Die Zeile Ihrer Sprache steht in [Abschnitt 4, Jede Übersetzung der Administration](../../sprachen.md#4-alle-übersetzungen-der-administrationsoberfläche);
+die Stufen in [Abschnitt 2](../../sprachen.md#2-unterstützungsstufen).
 
 - **Vollständig, aber maschinell unterstützt** (Spanisch, Französisch, Ukrainisch, Hebräisch, Latein, Klingonisch): Ein
   Gegenlesen ist „der schnellste Gewinn“ ([Eine maschinell unterstützte Übersetzung gegenlesen](maschinell-unterstuetzte-uebersetzung-gegenlesen.md)).
@@ -49,7 +49,7 @@ die Stufen in [Abschnitt 2](../../../eng-us/languages.md#2-support-levels).
 
 ## Die Administration übersetzen, Schritt für Schritt
 
-Aus [Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation):
+Aus [Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen):
 
 1. **Neue Texte**: Die Betreuer aktualisieren die unübersetzte Datei mit `ezlupdate`; für Ihre Sprache fügt
    `bin/linux/ezlupdate <code>` neue Texte hinzu und markiert verschwundene als veraltet.
@@ -67,7 +67,7 @@ Aus [Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-adminis
 - Lassen Sie den englischen Text nicht als „Übersetzung“ stehen, es sei denn, er ist richtig (ein Produktname); der
   Qualitätstest prüft das.
 - Verwenden Sie die Produktnamen korrekt ([Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)).
-- Testen Sie bei Sprachen mit Schreibrichtung von rechts nach links die Bildschirme mit `dir="rtl"` ([Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md)).
+- Testen Sie bei Sprachen mit Schreibrichtung von rechts nach links die Bildschirme mit `dir="rtl"` ([Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md)).
 
 Die Qualitätsregeln stammen aus dem Qualitätstest für Übersetzungen, der in Abschnitt 8 beschrieben ist.
 
@@ -89,7 +89,7 @@ Requests sind einfacher als ein riesiger.
 
 - [Eine maschinell unterstützte Übersetzung gegenlesen](maschinell-unterstuetzte-uebersetzung-gegenlesen.md)
 - [Gesprächspunkte: Sprachen und Schreibrichtung von rechts nach links](gespraechspunkte-sprachen-und-rtl.md)
-- [Sprachen in Exponential](../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../sprachen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

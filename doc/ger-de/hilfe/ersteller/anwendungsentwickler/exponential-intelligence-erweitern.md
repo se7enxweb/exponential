@@ -104,7 +104,7 @@ Template oder Block fehlt ([Erweiterungsoberfläche von RAD](../../../bc/6.0/rad
 
 - [Exponential Intelligence (expai) für Anwendungen](exponential-intelligence.md)
 - [RAD-Werkzeuge: schneller bauen](rad-werkzeuge.md)
-- [expai](../../../../eng-us/features/6.0/extensions/expai.md)
+- [expai](../../../funktionen/6.0/erweiterungen/expai.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

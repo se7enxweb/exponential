@@ -80,9 +80,9 @@ können, um ihn zu erleichtern.
 | Stufe | Wer sie sind | Ihr nächster Schritt | Wie Sie helfen | Quelle |
 |---|---|---|---|---|
 | 1. Aufmerksam | Hat den Namen gehört | Liest über das Projekt | Verlinken Sie die Seiten der Foundation und von 7x in Ihrem Material | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
-| 2. Benutzer | Betreibt oder bearbeitet eine Site | Nutzt die Hilfe, fragt in den Foren | Weisen Sie Redakteure auf das Dashboard der Hilfe und die Seiten für ihre Zielgruppe hin | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| 2. Benutzer | Betreibt oder bearbeitet eine Site | Nutzt die Hilfe, fragt in den Foren | Weisen Sie Redakteure auf das Dashboard der Hilfe und die Seiten für ihre Zielgruppe hin | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | 3. Meldender | Stößt auf ein Problem | Legt ein gutes Issue an | Erklären Sie die Seite **Fehler melden** und eine gute Fehlerbeschreibung | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung) |
-| 4. Dokumentierender oder Übersetzer | Kennt einen Teil gut | Verbessert eine Hilfeseite mit *Auf GitHub bearbeiten*, vervollständigt eine Übersetzung | Geben Sie in Projekten Zeit dafür | [Freie Dokumentation](../freie-dokumentation.md#anderen-helfen), [Sprachen](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation) |
+| 4. Dokumentierender oder Übersetzer | Kennt einen Teil gut | Verbessert eine Hilfeseite mit *Auf GitHub bearbeiten*, vervollständigt eine Übersetzung | Geben Sie in Projekten Zeit dafür | [Freie Dokumentation](../freie-dokumentation.md#anderen-helfen), [Sprachen](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen) |
 | 5. Mitwirkender | Kann Code ändern | Sendet einen Pull-Request | Installieren Sie vom ersten Tag an mit Git-Klonen | [Mit Git entwickeln](../mit-git-entwickeln.md), `CONTRIBUTING.md` |
 | 6. Reviewer oder Maintainer | Trägt regelmäßig bei | Prüft die Arbeit anderer, pflegt eine Erweiterung | Würdigen Sie die Arbeit öffentlich | `CONTRIBUTING.md`, „Code Reviews“ |
 
@@ -90,7 +90,7 @@ Was Stufe 5 attraktiv macht und dokumentiert ist:
 
 - „Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten“: Jeder
   Pull-Request wird gemergt, und seine Commits bleiben so, wie der Mitwirkende sie geschrieben hat
-  ([Continuous Integration](../../../eng-us/bc/6.0/ci.md#the-commit-message-policy)).
+  ([Continuous Integration](../../bc/6.0/ci.md#die-regeln-für-commit-nachrichten)).
 - Beiträge bleiben frei: „any modifications made to the project are also released under the same GPLv2 or later
   license“ (`CONTRIBUTING.md`), jede Änderung am Projekt wird also unter derselben Lizenz veröffentlicht.
 - Eine Korrektur „reaches every site in the next release“, sie erreicht mit dem nächsten Release jede Site
@@ -105,8 +105,8 @@ Menschen aus Marketing und Projektarbeit können direkt beitragen. Dies sind dok
 
 | Beitrag | Warum er wichtig ist | Wie | Quelle |
 |---|---|---|---|
-| Eine maschinengestützte Übersetzung prüfen | Spanisch, Französisch, Ukrainisch, Hebräisch, Latein und Klingonisch wurden maschinengestützt übersetzt; eine Prüfung ist „the quickest win“, der schnellste Gewinn | Die Administration in der Sprache lesen und falsche Texte melden oder korrigieren | [Sprachen](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation) |
-| Fehlende Texte übersetzen | Seit 6.0 kamen etwa 10.000 Texte hinzu; sie zu übersetzen ist für jede unvollständige Sprache „the most useful work“, die nützlichste Arbeit | Qt Linguist oder ein XML-Editor, dann ein Pull-Request | [Sprachen](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation) |
+| Eine maschinengestützte Übersetzung prüfen | Spanisch, Französisch, Ukrainisch, Hebräisch, Latein und Klingonisch wurden maschinengestützt übersetzt; eine Prüfung ist „the quickest win“, der schnellste Gewinn | Die Administration in der Sprache lesen und falsche Texte melden oder korrigieren | [Sprachen](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen) |
+| Fehlende Texte übersetzen | Seit 6.0 kamen etwa 10.000 Texte hinzu; sie zu übersetzen ist für jede unvollständige Sprache „the most useful work“, die nützlichste Arbeit | Qt Linguist oder ein XML-Editor, dann ein Pull-Request | [Sprachen](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen) |
 | Eine Hilfeseite verbessern | Bessere Hilfe bedeutet weniger Support-Fragen | *Auf GitHub bearbeiten* auf der Seite, dann ein Pull-Request; angenommen unter der GNU FDL 1.3 oder höher | [Freie Dokumentation](../freie-dokumentation.md#anderen-helfen) |
 | Eine Hilfeseite übersetzen | Eine übersetzte Seite „helps every reader of that language“, hilft jedem Leser dieser Sprache | Wie oben | [Freie Dokumentation](../freie-dokumentation.md#anderen-helfen) |
 | Ein Tutorial oder einen Blogbeitrag schreiben | Neue Benutzer finden Antworten | Auf Share oder Ihrer eigenen Site veröffentlichen, zurückverlinken | [Wer ist 7x?](../wer-ist-7x.md#die-community) |
@@ -128,7 +128,7 @@ Ein Plan, den Ihre Organisation übernehmen und anpassen kann. Jeder Punkt nutzt
 ### Bei jedem Release
 
 - [ ] Das Changelog des neuen Release lesen ([Changelogs](../../../changelogs/README.md)) und die Monatsseiten der
-      [Geschichte](../../../eng-us/history/README.md).
+      [Geschichte](../../geschichte/README.md).
 - [ ] Aus dem Changelog einen kurzen Beitrag „Was ist neu für Redakteure“ schreiben, mit Links zu den Funktionsseiten.
 - [ ] Ihren Kunden sagen, welche Hilfeseiten sich geändert haben.
 
@@ -219,7 +219,7 @@ Organisation selbst beobachten und zählen kann:
 | Issues, die Ihr Team angelegt oder zu schließen geholfen hat | Nach Ihren Konten filtern | Die Issue-Tracker auf GitHub |
 | Pull-Requests, die Ihr Team gesendet hat und die gemergt wurden | Nach Ihren Konten filtern; `git log --grep="Merge pull request"` in einem Klon | GitHub, `git log` |
 | Hilfeseiten, die Ihr Team verbessert hat | Ihre Pull-Requests, die `doc/` betreffen | GitHub |
-| Übersetzungstexte, die Ihr Team vervollständigt hat | `php bin/php/ezchecktranslation.php <code> --allow-root-user` vorher und nachher | [Sprachen](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation) |
+| Übersetzungstexte, die Ihr Team vervollständigt hat | `php bin/php/ezchecktranslation.php <code> --allow-root-user` vorher und nachher | [Sprachen](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen) |
 | Kunden, die Sie mit der Community bekannt gemacht haben | Ihre Checkliste für die Übergabe | Ihre Unterlagen |
 | Aus dem Kalender veröffentlichte Inhalte | Ihr Kalender | Ihre Site |
 | Aktivität im gesamten Projekt | Commits und gemergte Pull-Requests, mit den Befehlen, die die Quelle nennt | [Wer ist 7x?](../wer-ist-7x.md#7x-in-zahlen) |

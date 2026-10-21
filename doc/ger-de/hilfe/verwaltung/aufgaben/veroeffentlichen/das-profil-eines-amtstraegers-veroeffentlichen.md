@@ -71,7 +71,7 @@ Copyright, Links zu sozialen Medien, Meta Data); andernfalls verwenden Sie einen
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Datenschutzstandards](../../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../../standards/datenschutz.md)
 - [Bildern Alternativtext geben](bildern-alternativtext-geben.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

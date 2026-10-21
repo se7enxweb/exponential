@@ -50,13 +50,13 @@ möglicherweise nicht verwendet; lassen Sie sie dann weg.
   Online-Editor, Bilder, Versionen und der Papierkorb).
 - Trainer: Erfahrung als Redakteur und einige Administratorrechte auf der Schulungsinstallation, weil mehrere Module
   vorbereitete Rollen, einen Workflow, eine zweite Sprache, eine Zustandsgruppe oder ein Tags-Feld brauchen
-  ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  ([Train the Trainer: Kursüberblick](../train-the-trainer/README.md)).
 
 ## Übungsumgebung
 
 - Eine Schulungsinstallation, die von jedem Rechner der Teilnehmenden erreichbar ist (zum Beispiel installiert mit
   `php bin/php/console exp:install`, [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md));
-  wie man sie aufbaut und zurücksetzt: [Modul 2: Die Übungsumgebung aufbauen](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md)
+  wie man sie aufbaut und zurücksetzt: [Modul 2: Die Übungsumgebung aufbauen](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md)
   von Train the Trainer.
 - Ein Editor-Konto pro Person, dazu Konten für Freigebende und Prüfende für die Partnerübungen; E-Mail-Adressen unter
   `example.invalid`; keine echten E-Mails.
@@ -87,16 +87,16 @@ Für Trainer, die den Kurs vorbereiten, in dieser Reihenfolge:
 1. [Sprachen](../../sprachen.md) und [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) (Abschnitte 1 bis 9).
 2. [Inhalte erstellen und bearbeiten](../../inhalte-bearbeiten.md) und
    [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md), zur Auffrischung.
-3. [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../eng-us/features/6.0/reverse-relation-check.md) und
+3. [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md) und
    [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md) (Abschnitte 8 und 10).
-4. [Sektionen](../../../anleitungen/sektionen.md), [Inhaltsaufträge](../../../../eng-us/features/6.0/content-jobs.md) und
-   [Die Papierkorbansicht](../../../../eng-us/bc/6.0/trash.md).
+4. [Sektionen](../../../anleitungen/sektionen.md), [Inhaltsaufträge](../../../funktionen/6.0/inhaltsauftraege.md) und
+   [Die Papierkorbansicht](../../../bc/6.0/papierkorb.md).
 5. [Objektzustände](../../../anleitungen/objektzustaende.md) und [Workflows](../../../anleitungen/workflows.md), mit
    [Meine Entwürfe und meine ausstehenden Elemente](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md).
 6. [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../../anleitungen/urls-und-aliase.md),
    [RSS-Feeds](../../../anleitungen/rss-feeds.md) und [PDF-Exporte](../../../anleitungen/pdf-exporte.md).
-7. [eztags](../../../../eng-us/features/6.0/extensions/eztags.md), [Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)
-   und [Standards für Barrierefreiheit](../../../../eng-us/standards/accessibility.md).
+7. [eztags](../../../funktionen/6.0/erweiterungen/eztags.md), [Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)
+   und [Standards für Barrierefreiheit](../../../standards/barrierefreiheit.md).
 8. [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md): Sie werden mehrere Rollen vorbereiten.
 9. Danach die Module der Reihe nach: zuerst jeweils die Modulübersicht (Vorbereitungsliste und Zeitplan), dann ihre
    Lektionen. Proben Sie jede Übung, einschließlich der Partnerübungen mit zwei Browsern.
@@ -139,8 +139,8 @@ wenden die Teilnehmenden das Modul auf ihrer eigenen Website an und bringen eine
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

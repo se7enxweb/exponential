@@ -37,7 +37,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Eine mehrsprachige Website aufbauen](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md) und
+Quellen: [Eine mehrsprachige Website aufbauen](../../../ersteller/website-ersteller/mehrsprachige-websites.md) und
 [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md).
 
 1. **Drei Regeln** (5 Minuten), von der Seite für Website-Ersteller:
@@ -148,7 +148,7 @@ Verwenden Sie Ihre Schulungsinstallation mit dem Siteaccess `site_b` aus Lektion
 <summary>Antworten</summary>
 
 1. Keiner: Das Hinzufügen einer Inhaltssprache ändert keinen Siteaccess
-   ([Eine mehrsprachige Website aufbauen](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md#how-languages-work)).
+   ([Eine mehrsprachige Website aufbauen](../../../ersteller/website-ersteller/mehrsprachige-websites.md#wie-sprachen-funktionieren)).
 2. **B.** `eng-US` ist der Fallback; der Artikel wird auf Englisch angezeigt.
 3. Sie setzt das Array zurück, sodass die Werte, die die Datei von früheren Dateien geerbt hat, wegfallen und nur die
    folgenden Zeilen zählen.
@@ -160,17 +160,17 @@ Verwenden Sie Ihre Schulungsinstallation mit dem Siteaccess `site_b` aus Lektion
 
 ## Weiterführende Informationen
 
-- [Eine mehrsprachige Website aufbauen](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md): Fallbacks,
+- [Eine mehrsprachige Website aufbauen](../../../ersteller/website-ersteller/mehrsprachige-websites.md): Fallbacks,
   Übersetzer, Oberflächentexte.
 - [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md): die vollständige Referenz.
-- [Sprachumschalter und Adressen pro Sprache](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md).
-- [Übersetzungen und Sprachen](../../../../../eng-us/features/6.0/translations-and-languages.md).
+- [Sprachumschalter und Adressen pro Sprache](../../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md).
+- [Übersetzungen und Sprachen](../../../../funktionen/6.0/uebersetzungen-und-sprachen.md).
 
 ## Verwandte Seiten
 
 - [Modul 1: Siteaccesses für mehrere Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

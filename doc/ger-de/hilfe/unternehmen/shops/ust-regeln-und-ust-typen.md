@@ -16,7 +16,7 @@ Bestellposition wählt. Sie beschreibt, was die Software tut, nicht, was Ihr Ste
 > **Warnung**
 > Diese Seite ist keine Steuerberatung. Mehrwertsteuer- und Umsatzsteuerrecht unterscheiden sich von Land zu Land und
 > ändern sich mit der Zeit. Der Shop berechnet, was Sie konfigurieren; ob das für Ihr Unternehmen richtig ist, ist eine
-> Frage für Ihren Steuerberater ([Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#vat)).
+> Frage für Ihren Steuerberater ([Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md#mehrwertsteuer)).
 
 ## Inhalt
 
@@ -47,7 +47,7 @@ verwaltet (`shop/vattype`, das `shop/setup` braucht). Die Klasse ist `eZVatType`
   niemand raten muss.
 - Ändern Sie einen Prozentsatz, wenn sich das Gesetz ändert; jeder Preis, der den Typ verwendet, folgt.
 - Das Shop-Dashboard warnt, wenn ein USt-Typ mit 0 Prozent verwendet wird, damit ein Nullsatz nie ein Versehen ist
-  ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+  ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## USt-Regeln
 
@@ -95,11 +95,11 @@ passt (dieselbe Datei).
 Das Land stammt aus dem in `UserCountryAttribute` genannten Feld des Kundenkontos oder aus dem Land, das ein Besucher
 wählt (`shop/setusercountry`). Die Länderauswahl in den Shop-Formularen ist die gruppierte Liste, die unter
 [Ländergruppen und Regionen](laendergruppen-und-regionen.md) beschrieben ist; in den USt-Regeln sendet sie den
-Ländercode ([Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md)).
+Ländercode ([Die gruppierte Länderliste](../../../funktionen/6.0/laendergruppen.md)).
 
 Eine andere USt-Logik, zum Beispiel eine, die auf der Lieferanschrift oder auf der USt-Identifikationsnummer eines
 Kunden beruht, lässt sich als eigener USt-Handler schreiben; `shop.ini [VATSettings]` hat dafür
-`RepositoryDirectories[]` und `ExtensionDirectories[]`. Das ist Entwicklerarbeit ([Einen Workflow-Ereignistyp schreiben](../../../../eng-us/help/creators/app-creators/writing-a-workflow-event-type.md)
+`RepositoryDirectories[]` und `ExtensionDirectories[]`. Das ist Entwicklerarbeit ([Einen Workflow-Ereignistyp schreiben](../../ersteller/anwendungsentwickler/einen-workflow-ereignistyp-schreiben.md)
 zeigt das allgemeine Muster für Erweiterungen; ein Partner kann helfen, siehe [Einen Partner auswählen](../auswahl/einen-partner-auswaehlen.md)).
 
 ## Umsatzsteuer außerhalb von Ländern mit Mehrwertsteuer
@@ -122,7 +122,7 @@ braucht einen eigenen USt-Handler oder eine Integration.
 
 ## Verwandte Seiten
 
-- [Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
+- [Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)
 - [Preise und Währungen](preise-und-waehrungen.md)
 - [Ländergruppen und Regionen](laendergruppen-und-regionen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

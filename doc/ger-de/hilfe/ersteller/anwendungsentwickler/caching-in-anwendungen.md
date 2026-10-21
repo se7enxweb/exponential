@@ -83,7 +83,7 @@ Velocity hält PHP-Prozesse zwischen Anfragen am Leben: Eine statische Variable 
 nächste Anfrage. Halten Sie niemals benutzerspezifische Daten in statischen Variablen; setzen Sie den Zustand pro
 Anfrage zurück oder legen Sie ihn unter einem Schlüssel der Anfrage ab. Der Prozessspeicher wird nicht zwischen Workern geteilt, er ist
 also auch kein gemeinsamer Cache
-([Persistenter Worker-Server Velocity](../../../../eng-us/features/6.0/velocity-persistent-worker-server.md)).
+([Persistenter Worker-Server Velocity](../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)).
 
 ## Verwandte Seiten
 

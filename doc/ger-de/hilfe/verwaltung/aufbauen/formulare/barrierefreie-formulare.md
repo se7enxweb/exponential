@@ -14,7 +14,7 @@ das sich nicht mit Tastatur oder Screenreader ausfüllen lässt, schließt Mensc
 Die Formulare der Administration von Exponential wurden nach Kriterien der WCAG 2.2 AA gebaut und getestet
 (Beschriftungen, Fehlerzusammenfassungen, `aria-invalid`), mit dem Status **Teilweise erfüllt**; die öffentlichen
 Formular-Templates gehören zu Ihrem Design und sind nicht geprüft
-([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Die Muster der Administration sind ein gutes
+([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)). Die Muster der Administration sind ein gutes
 Vorbild.
 
 ## Inhalt
@@ -46,7 +46,7 @@ Aus den [WCAG 2.2](https://www.w3.org/TR/WCAG22/):
 Das View-Template des sammelnden Attributs erzeugt das Eingabefeld. Geben Sie in Ihrem Formular-Template jedem
 Eingabefeld eine sichtbare Beschriftung, die mit `for` und `id` daran gebunden ist; das mitgelieferte Template von
 ezwebin zeigt das Muster
-([Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md#the-form-template)).
+([Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md#das-formular-template)).
 
 | Praxis | Warum |
 |---|---|
@@ -90,13 +90,13 @@ genügt oft das Formular-Token plus ein einfaches Honeypot-Feld in Ihrem Templat
 - [ ] Senden Sie es leer: Die Fehlerzusammenfassung wird angekündigt und verlinkt auf die Felder.
 - [ ] Zoomen Sie auf 200 % und verwenden Sie ein 320 px breites Fenster: Nichts wird abgeschnitten.
 - [ ] Führen Sie als ersten Durchgang eine automatische Prüfung aus
-  ([Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+  ([Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)).
 
 ## Verwandte Seiten
 
 - [Formulare aufbauen](README.md)
 - [Grundlagen des Information Collectors](grundlagen-des-information-collectors.md)
-- [Barrierefreiheit für Site-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Barrierefreiheit für Site-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

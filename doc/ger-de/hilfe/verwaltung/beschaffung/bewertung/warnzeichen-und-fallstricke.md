@@ -25,15 +25,15 @@ dokumentierte Lage zeigt, sodass Sie dem Bieter eine genaue Frage stellen könne
 
 | Behauptung in einem Angebot | Dokumentierte Lage |
 |---|---|
-| „Exponential ist konform mit WCAG 2.2 AA“ | admin4/admin4l „Teilweise erfüllt“; öffentliche Designs nicht geprüft ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
+| „Exponential ist konform mit WCAG 2.2 AA“ | admin4/admin4l „Teilweise erfüllt“; öffentliche Designs nicht geprüft ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)) |
 | „Für Exponential ist ein VPAT / Accessibility Conformance Report verfügbar“ | es gibt keinen; Section 508 und EN 301 549 sind „nicht geprüft“ |
-| „Zertifiziert nach OWASP ASVS“ | es wurde keine Bewertung nach ASVS durchgeführt: „Nicht geprüft“ ([Sicherheitsstandards](../../../../../eng-us/standards/security.md#owasp-asvs-403)) |
+| „Zertifiziert nach OWASP ASVS“ | es wurde keine Bewertung nach ASVS durchgeführt: „Nicht geprüft“ ([Sicherheitsstandards](../../../../standards/sicherheit.md#owasp-asvs-403)) |
 | „Schutz gegen Brute-Force ist eingebaut und eingeschaltet“ | die Kontosperre ist standardmäßig aus; Brute-Force wird von Alarmregeln des Audits erkannt |
 | „Eine strenge Content Security Policy schützt die Website“ | Report-only in der Administration, standardmäßig keine auf Websites |
-| „DSGVO-konform ab Werk“ | Funktionen werden bereitgestellt; die Einhaltung ist Aufgabe der Organisation, und es gibt kein Cookie-Banner ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)) |
+| „DSGVO-konform ab Werk“ | Funktionen werden bereitgestellt; die Einhaltung ist Aufgabe der Organisation, und es gibt kein Cookie-Banner ([Datenschutzstandards](../../../../standards/datenschutz.md)) |
 | „Garantierte Reaktionszeiten vom Exponential-Projekt“ | das Projekt veröffentlicht kein SLA; nur eine erste Antwort auf vertrauliche Sicherheitsmeldungen innerhalb eines Werktags ([SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)) |
 | „Unsere Version ist das offizielle Release mit Langzeitunterstützung“ | `SECURITY.md` nennt die Linie 6.0.x als gepflegt; Korrekturen kommen im nächsten Release 6.0.x |
-| „Eingebautes GIS / Kartenfunktion“ | eine GIS-Funktion ist nicht dokumentiert; die Erweiterung [ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md) fügt einen Datentyp für Kartenorte hinzu, der Google Maps verwendet, einen Dienst eines Dritten |
+| „Eingebautes GIS / Kartenfunktion“ | eine GIS-Funktion ist nicht dokumentiert; die Erweiterung [ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md) fügt einen Datentyp für Kartenorte hinzu, der Google Maps verwendet, einen Dienst eines Dritten |
 
 Ein Bieter kann das, was die Behauptung verspricht, trotzdem durch eigene Arbeit liefern. Bitten Sie ihn, die Behauptung
 als Zusage für **Ihre** Website neu zu formulieren, mit der Angabe, wie sie bei der Abnahme nachgewiesen wird.
@@ -60,7 +60,7 @@ als Zusage für **Ihre** Website neu zu formulieren, mit der Angabe, wie sie bei
 
 - Eine Demo auf der Kopie einer echten Website mit echten personenbezogenen Daten.
 - Analyse, Captcha oder Social Login von Dritten eingeschaltet ohne einen Plan zur Einwilligung: Die Seite
-  [Datenschutzstandards](../../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions) listet, welche
+  [Datenschutzstandards](../../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions) listet, welche
   mitgelieferten Erweiterungen bei Aktivierung Daten an Dritte senden.
 - Keine Antwort auf „Wer verarbeitet unsere personenbezogenen Daten, wo und nach welcher Vereinbarung?“
 - Während der Ausschreibung per E-Mail verschickte Zugangsdaten.

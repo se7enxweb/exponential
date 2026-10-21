@@ -84,12 +84,12 @@ weiter funktionieren.
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md) und [Sicherheit](../sicherheit/README.md)
 - [Mehrere Marken in einer Installation](../multisite/README.md) und
   [Verkaufen in mehreren Sprachen und Märkten](../mehrsprachig/README.md)
-- Für Entwickler: [App-Entwickler: hier beginnen](../../../../eng-us/help/creators/app-creators/app-creators-start-here.md)
-- Organisationen des öffentlichen Sektors: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
+- Für Entwickler: [App-Entwickler: hier beginnen](../../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
+- Organisationen des öffentlichen Sektors: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md)
 
 ## Verwandte Seiten
 
-- [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md)
+- [Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md)
 - [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
 - [Entfernte Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

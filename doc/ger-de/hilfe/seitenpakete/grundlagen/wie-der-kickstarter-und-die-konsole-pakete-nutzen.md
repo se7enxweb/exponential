@@ -153,7 +153,7 @@ löschen nur die Kopie im Repository, nicht das, was eine Installation auf eine 
 - [Der Kickstarter, 6.4.2 Abschnitte und Schlüssel](../../../installation/06-kickstarter.md#642-abschnitte-und-schlüssel)
 - [Der Kickstarter, 6.7 Probeläufe](../../../installation/06-kickstarter.md#67-probeläufe)
 - [Die Installation über die Konsole, 7.3 Optionen](../../../installation/07-installation-ueber-die-konsole.md#73-optionen)
-- [Installation mit einem Befehl](../../../../eng-us/features/6.0/install-in-one-command.md)
+- [Installation mit einem Befehl](../../../funktionen/6.0/installation-mit-einem-befehl.md)
 - [Offline-Installationen und Spiegel](../paketserver/offline-installationen-und-spiegel.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

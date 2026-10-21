@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Projektleiter, die Anmeldungen zu einer Veranstaltung brauchen.
 Exponential hat kein Buchungssystem; der **Information Collector** kann einfache Anmeldungen annehmen. Diese Seite zeigt
 wie, und wo seine Grenzen liegen. Quellen:
-[Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)
+[Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)
 und [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -68,7 +68,7 @@ kein Formular, wenn das Feld Booking „freier Eintritt“ sagt.
 | Beschränken Sie `infocollector/read` | wer es hat, sieht die Anmeldungen aller Veranstaltungen |
 
 In der EU gilt die [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)).
+([Standards zum Datenschutz](../../../../standards/datenschutz.md)).
 
 ## Wann ein Buchungssystem sinnvoll ist
 

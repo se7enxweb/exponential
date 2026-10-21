@@ -22,7 +22,7 @@ Format zu wählen, bevor sie den Inhalt wählen.
 | Dauer | 30 Minuten (10 Präsentation, 20 Übung) |
 | Niveau | Einsteiger |
 | Zielgruppe | Trainer und die Personen, die Schulungen beauftragen |
-| Voraussetzungen | [Lektion 1.3 von Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/knowing-your-learners.md) |
+| Voraussetzungen | [Lektion 1.3 von Train the Trainer](../../train-the-trainer/modul-01-den-unterricht-vorbereiten/ihre-teilnehmenden-kennen.md) |
 
 ## Lernziele
 
@@ -101,7 +101,7 @@ Begründung.
 
 ## Weiterführende Informationen
 
-- [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)
+- [Kurskatalog](../../kurskatalog.md)
 - [Gliederung eines praktischen Workshops](../../../fuersprecher/ablaufplan-praxis-workshop.md): die Formate der
   Fürsprecher mit 90 Minuten und einem halben Tag.
 
@@ -109,7 +109,7 @@ Begründung.
 
 - [Modul 1: Einen Workshop planen](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

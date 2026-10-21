@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Anwendungsentwickler, die KI-Unterstützung in ihrer Anwendung möchten oder wissen wollen, wie sie
 sich einfügt. Exponential Intelligence ist die Erweiterung `expai`: ein Schreibassistent in der Administration, der
 nachschlägt, was er braucht, und **Entwürfe** im Namen der angemeldeten Redakteurin oder des angemeldeten Redakteurs
-schreibt, ohne jemals selbst zu veröffentlichen ([expai](../../../../eng-us/features/6.0/extensions/expai.md)). Die vollständige
+schreibt, ohne jemals selbst zu veröffentlichen ([expai](../../../funktionen/6.0/erweiterungen/expai.md)). Die vollständige
 Dokumentation liegt in ihrem Repository und unter `extension/expai/doc/`.
 
 ## Inhalt
@@ -74,7 +74,7 @@ Details und ausgearbeitete Beispiele: [Exponential Intelligence erweitern](expon
 
 - [Exponential Intelligence erweitern](exponential-intelligence-erweitern.md)
 - [Warteschlangen mit expqueue](warteschlangen-mit-expqueue.md)
-- [Datenschutzstandard](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandard](../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

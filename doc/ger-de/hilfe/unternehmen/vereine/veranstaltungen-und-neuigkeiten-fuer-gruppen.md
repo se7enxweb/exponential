@@ -42,7 +42,7 @@ Die Website-Oberfläche `ezwebin`, die `composer.json` voraussetzt, bringt diese
 In den Rollen des Multisite-Website-Pakets werden `event`-Objekte unterhalb eines `event_calendar` angelegt
 ([Rollen und Richtlinien von sevenx_multisite](../../seitenpakete/sevenx-multisite/rollen-und-richtlinien-von-sevenx-multisite.md)). Der
 ezwebin-Veranstaltungskalender speichert seine Seite für kurze Zeit im Cache („Der ezwebin-Veranstaltungskalender
-behält seine Seite 400 Sekunden lang“, [Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)),
+behält seine Seite 400 Sekunden lang“, [Caching für Designer](../../designer/theme-design/caching-fuer-designer.md)),
 daher kann es einige Minuten dauern, bis eine neue Veranstaltung in der Kalenderansicht erscheint.
 
 ## Neuigkeiten einrichten
@@ -50,7 +50,7 @@ daher kann es einige Minuten dauern, bis eine neue Veranstaltung in der Kalender
 1. Legen Sie in der öffentlichen Sektion einen Ordner „Neuigkeiten“ an.
 2. Redakteure legen darin Artikel an; jeder Artikel hat einen Titel, eine Einleitung, einen Haupttext und ein Bild.
 3. Geben Sie dem Ordner eine Vollansicht, die die neuesten Artikel auflistet; der Website-Ersteller richtet das einmal
-   ein ([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)).
+   ein ([Menüs und Navigation](../../ersteller/website-ersteller/menues-und-navigation.md)).
 4. Legen Sie fest, wie lange Neuigkeiten auf der Startseite bleiben und wann alte Neuigkeiten in einen Archivordner
    wandern.
 
@@ -62,7 +62,7 @@ daher kann es einige Minuten dauern, bis eine neue Veranstaltung in der Kalender
 4. Verlinken Sie den Kalender im Hauptmenü und auf der Startseite.
 
 Templates und Ansichten sind die Arbeit des Website-Erstellers; siehe
-[Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md), wenn Sie eine Klasse
+[Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md), wenn Sie eine Klasse
 ändern möchten, weil Ihre Gruppe ein zusätzliches Feld braucht (zum Beispiel „Anmeldung erforderlich“).
 
 ## Den Kalender aktuell halten
@@ -81,13 +81,13 @@ einer bestimmten Person:
 
 | Kanal | Wie | Seite |
 |---|---|---|
-| Benachrichtigungen | Mitglieder mit einem Konto folgen dem Ordner „Neuigkeiten“ oder dem Kalender und erhalten eine E-Mail, „wenn unterhalb eines Elements, dem Sie folgen, etwas veröffentlicht wird“, sofort oder als tägliche, wöchentliche oder monatliche Zusammenfassung | [Benachrichtigungen: das Handbuch für Benutzer](../../../../eng-us/features/6.0/notifications.md) |
-| Feeds | Ein RSS- oder Atom-Export des Ordners „Neuigkeiten“ und des Kalenders unter `/rss/feed/<address>` | [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md) |
+| Benachrichtigungen | Mitglieder mit einem Konto folgen dem Ordner „Neuigkeiten“ oder dem Kalender und erhalten eine E-Mail, „wenn unterhalb eines Elements, dem Sie folgen, etwas veröffentlicht wird“, sofort oder als tägliche, wöchentliche oder monatliche Zusammenfassung | [Benachrichtigungen: das Handbuch für Benutzer](../../../funktionen/6.0/benachrichtigungen.md) |
+| Feeds | Ein RSS- oder Atom-Export des Ordners „Neuigkeiten“ und des Kalenders unter `/rss/feed/<address>` | [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md) |
 | Newsletter | Ein regelmäßiger Newsletter mit `cjw_newsletter`, auf Wunsch automatisch aus neuen Artikeln befüllt | [Newsletter](../newsletter/README.md) |
 
 Benachrichtigungen brauchen ein Konto mit der Richtlinie `notification/use` (dieselbe Seite zu Benachrichtigungen).
 Jede optionale Mail durchläuft die E-Mail-Einstellungen der Website, sodass Mitglieder wählen, was sie bekommen, und
-es mit einem Klick abbestellen können ([E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)).
+es mit einem Klick abbestellen können ([E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 > **Tipp**
 > Für eine kleine Gruppe reichen Benachrichtigungen oft aus: Es muss kein Newsletter geschrieben werden, und Mitglieder,
@@ -98,17 +98,17 @@ es mit einem Klick abbestellen können ([E-Mail-Einstellungen](../../../../eng-u
 
 Die Startseite zeigt meist die nächsten Veranstaltungen und die neuesten Neuigkeiten. Mit Exponential Layouts hält
 sich ein `list`-Block mit einer dynamischen Sammlung selbst aktuell („die neuesten fünf Artikel in dieser Sektion“,
-in der [Layouts-Referenz](../../../../eng-us/bc/6.0/LAYOUTS.md)), und ein Redakteur kann die Seite ohne Entwickler neu anordnen
-([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)). Vereinbaren Sie, dass
+in der [Layouts-Referenz](../../../bc/6.0/layouts.md)), und ein Redakteur kann die Seite ohne Entwickler neu anordnen
+([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)). Vereinbaren Sie, dass
 immer nur eine Person zur selben Zeit das Layout der Startseite bearbeitet, denn Layout-Entwürfe werden geteilt.
 
 ## Neuigkeiten und Veranstaltungen nur für Mitglieder
 
 Manche Neuigkeiten (Protokolle, interne Beschlüsse) sind nur für Mitglieder bestimmt. Legen Sie sie in eine Sektion,
 die nur Mitglieder lesen dürfen; Besucher können sie dann nicht öffnen, und die Suche zeigt Besuchern nur, was sie lesen
-dürfen ([Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md#the-built-in-engine)). Verwenden Sie Ordner nur
+dürfen ([Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md#die-eingebaute-suchmaschine)). Verwenden Sie Ordner nur
 für Mitglieder nicht als Quellen öffentlicher Feeds oder als Artikelvorrat eines öffentlichen Newsletters
-([Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md),
+([Sektionen und Objektzustände](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md),
 [Inhalte nur für Mitglieder](../mitglieder/inhalte-nur-fuer-mitglieder.md)).
 
 ## Checkliste für Veranstaltungen und Neuigkeiten

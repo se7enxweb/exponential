@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller und Projektverantwortliche, die di
 Gesundheitsdienstes entwerfen. Die genannten Klassen und Datentypen gibt es in Exponential
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md), `kernel/classes/datatypes/`, genannte
 Erweiterungen); der Klasseneditor ist unter
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) beschrieben.
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) beschrieben.
 
 ## Inhalt
 
@@ -95,7 +95,7 @@ werden ([Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md)).
 
 - [Öffentliche Gesundheit](README.md)
 - [Warnungen in vielen Sprachen und in einfacher Sprache](warnungen-mehrsprachig-und-in-einfacher-sprache.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

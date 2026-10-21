@@ -80,13 +80,13 @@ Crontab; **Setup > Cronjobs** schlägt Zeilen vor ([12. Planen mit der Crontab](
 - Von einem Cronjob-Skript läuft immer nur eine Instanz gleichzeitig. `MaxScriptExecutionTime` (Standard 43200
   Sekunden) erlaubt einer neuen Instanz, eine hängende zu übernehmen; setzen Sie den Wert für lange Jobs pro Teil.
 - Teile lassen sich unter **Setup > Cronjobs** pausieren (`[PauseSettings] Pause=enabled`); ein pausierter Teil wird
-  übersprungen, ganz gleich, wer ihn startet ([Cronjob-Teile pausieren](../../../../eng-us/features/6.0/cronjob-pause.md)).
+  übersprungen, ganz gleich, wer ihn startet ([Cronjob-Teile pausieren](../../../funktionen/6.0/cronjobs-pausieren.md)).
 - Machen Sie Skripte wiederholbar: Auf einen abgestürzten Lauf folgt ein weiterer.
 
 ## Sie im Blick behalten
 
 **Setup > Cronjobs** zeigt jeden Teil, seine letzten Läufe, Ausgaben und Probleme und ob die Crontab ihn plant
-([Cronjob-Konsole](../../../../eng-us/features/6.0/cronjobs-console.md)). Schreiben Sie klare Ausgabezeilen; sie sind das, was ein
+([Cronjob-Konsole](../../../funktionen/6.0/cronjobs-in-der-konsole.md)). Schreiben Sie klare Ausgabezeilen; sie sind das, was ein
 Administrator liest, wenn etwas fehlschlägt.
 
 ## Verwandte Seiten

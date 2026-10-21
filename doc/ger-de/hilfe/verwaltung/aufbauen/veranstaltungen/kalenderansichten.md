@@ -49,7 +49,7 @@ benutzen als ein Raster, auf Telefonen und mit Screenreadern.
 ## Caching
 
 Der Veranstaltungskalender von ezwebin setzt in seiner vollständigen Ansicht ein `cache_ttl`, damit der „aktuelle
-Monat“ ohne Veröffentlichen weiterrückt ([Caching für Designer](../../../../../eng-us/help/designers/theme-design/caching-for-designers.md)).
+Monat“ ohne Veröffentlichen weiterrückt ([Caching für Designer](../../../designer/theme-design/caching-fuer-designer.md)).
 Das Veröffentlichen einer Veranstaltung leert den View-Cache der Veranstaltung und ihres übergeordneten Kalenders.
 Listen von Veranstaltungen an anderer Stelle (Blöcke auf der Startseite) brauchen ihren eigenen Ablauf
 ([Kommende Veranstaltungen auflisten](kommende-veranstaltungen-auflisten.md)).
@@ -65,7 +65,7 @@ Das Standarddesign neuer Installationen (`simple`) hat keine Templates für Vera
 | Exponential Layouts: ein Block, der die Veranstaltungen eines Kalenders listet | keine Template-Arbeit für Redakteure ([Der Layout-Editor](../../../layout-editor.md)) |
 
 Template-Overrides werden über den Bezeichner der Klasse zugeordnet
-([Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)). Die Templates von ezwebin sind
+([Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)). Die Templates von ezwebin sind
 GPL-Code; sie in Ihr Design zu kopieren, ist unter derselben Lizenz erlaubt.
 
 ## Barrierefreiheit von Kalendern
@@ -79,14 +79,14 @@ GPL-Code; sie in Ihr Design zu kopieren, ist unter derselben Lizenz erlaubt.
 | Alternative | bieten Sie neben dem Raster immer die Programmliste an |
 
 Testen Sie mit Tastatur und Screenreader
-([Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)); das mitgelieferte Template
-von ezwebin wurde nicht geprüft ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
+([Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)); das mitgelieferte Template
+von ezwebin wurde nicht geprüft ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)).
 
 ## Verwandte Seiten
 
 - [Veranstaltungen](README.md)
 - [Was mitgeliefert wird](was-fuer-veranstaltungen-mitgeliefert-wird.md)
-- [Designs und die Fallback-Kette](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md)
+- [Designs und die Fallback-Kette](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

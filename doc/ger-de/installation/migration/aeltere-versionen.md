@@ -30,7 +30,7 @@ Wurzelverzeichnis der Installation an ([Kapitel 15.2](../15-migration-von-5x-leg
 | 5.0 bis 5.4, Community-Releases 2013.x und 2014.x (mit dem Symfony-Stack) | [Kapitel 15](../15-migration-von-5x-legacy.md) | den Legacy-Teil herauslösen; die 5.4-Datenbank geht auf 6.0.0, dann auf den heutigen Stand |
 | Die reine Legacy-Linie 5.90 (2015.01, 2017.08, 2017.12 und spätere Releases, die `VERSION_MAJOR = 5`, `VERSION_MINOR = 90` melden) | [Kapitel 11.5](../11-aktualisieren.md#115-von-54-oder-590-auf-600), mit [15.9](../15-migration-von-5x-legacy.md#159-benutzer-passwort-hashes-und-sitzungen) für Passwörter | auf 6.0.0, dann auf den heutigen Stand |
 | Releases, die nach einem Jahr später als 2017 benannt sind | in diesem Repository nicht geprüft | lesen Sie `lib/version.php`: Eine 5.90-Release folgt der Zeile darüber |
-| LoveStack (die Distribution des Legacy-Kernels von Mugo Web) | [LoveStack: Migration](../../../eng-us/bc/6.0/love/MIGRATION.md) | `./console exp:explovestack` prüft sie und registriert ihre Datenbank als die von Exponential |
+| LoveStack (die Distribution des Legacy-Kernels von Mugo Web) | [LoveStack: Migration](../../bc/6.0/love/migration.md) | `./console exp:explovestack` prüft sie und registriert ihre Datenbank als die von Exponential |
 | Exponential 6.0.0 bis 6.0.14 | [Kapitel 11.6](../11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) | die Update-Dateien von 6.0.x |
 
 Danach finden Sie in [Kapitel 17](../17-migrationsreferenz.md) die Nachschlagetabellen und in [Kapitel 12](../12-fehlerbehebung.md) die
@@ -65,4 +65,4 @@ Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) u
 <!-- exp-partner-block:end -->
 
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License
-1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).

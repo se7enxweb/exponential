@@ -36,7 +36,7 @@ Prüfung).
 ## Verwandte Seiten
 
 - [Objektzustände](../../anleitungen/objektzustaende.md)
-- [Sektionen und Objektzustände](../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Sektionen und Objektzustände](../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

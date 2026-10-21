@@ -78,8 +78,8 @@ Kommandozeile (`ezpm.php`) funktioniert weiter.
 
 - [Seitenpakete: hier beginnen](../README.md)
 - [Pakete](../../../anleitungen/pakete.md)
-- [ezupdate: Updates und Pakete in der Administration](../../../../eng-us/features/6.0/extensions/ezupdate.md)
-- [Die Seiten Über und Pakete](../../../../eng-us/features/6.0/about-and-package-pages.md)
+- [ezupdate: Updates und Pakete in der Administration](../../../funktionen/6.0/erweiterungen/ezupdate.md)
+- [Die Seiten Über und Pakete](../../../funktionen/6.0/info-und-paketseiten.md)
 - [Ein eigenes Seitenpaket erstellen](../eigene/README.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

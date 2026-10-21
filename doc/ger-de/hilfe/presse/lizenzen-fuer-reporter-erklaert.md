@@ -28,10 +28,10 @@ sollten die Leser einen Anwalt fragen.
 |---|---|---|
 | Die Software (Exponential 6) | GNU General Public License, Version 2 oder jede spätere Version | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE); README, „License“ |
 | Beiträge dazu | Dieselbe Lizenz: „alle am Projekt vorgenommenen Änderungen werden ebenfalls unter derselben Lizenz GPLv2 oder später veröffentlicht“ | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Die Dokumentation, einschließlich dieser Hilfe | GNU Free Documentation License 1.3 oder jede spätere Version | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
+| Die Dokumentation, einschließlich dieser Hilfe | GNU Free Documentation License 1.3 oder jede spätere Version | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
 | Exponential Velocity | MIT | seine `composer.json` |
 | Exponential Platform DXP (Metapaket) | „GPL-2.0-or-later or proprietary“ | seine `composer.json` |
-| Übernommene Dokumentation von eZ Systems | Die Bedingungen, mit denen sie kam (GPL v2) | [Ältere Seiten mit eigenen Bedingungen](../../../eng-us/README-LICENSE.md#older-pages-with-their-own-terms) |
+| Übernommene Dokumentation von eZ Systems | Die Bedingungen, mit denen sie kam (GPL v2) | [Ältere Seiten mit eigenen Bedingungen](../../README-LIZENZ.md#ältere-seiten-mit-eigenen-bedingungen) |
 | Jede Erweiterung | Ihre eigene Lizenz, angegeben in ihrem Paket | `composer.json` und `ezinfo.php` der Erweiterung |
 
 ## Die GPL in einfachen Worten

@@ -52,7 +52,7 @@ Einstellung leer ist; die Rechteprüfungen gelten weiter, sodass anonyme Clients
 der Website sehen. Bevor Sie das ändern:
 
 1. Stellen Sie sicher, dass die Rolle Anonymous nur öffentliche Sektionen liest
-   ([Rechte für Besucher](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)).
+   ([Rechte für Besucher](../../ersteller/website-ersteller/rechte-fuer-besucher.md)).
 2. Entscheiden Sie, ob die Schreibrouten geschlossen bleiben müssen: Sie prüfen weiterhin `content/create`,
    `content/edit` und `content/remove`, die Anonymous nicht haben darf.
 3. Planen Sie die Last ein: Eine öffentliche API kann massenhaft aufgerufen werden. Setzen Sie Ratenbegrenzungen davor
@@ -91,7 +91,7 @@ Fügen Sie `-H "Authorization: Bearer expk_..."` hinzu, solange eine Authentifiz
   erhalten.
 - [ ] Veröffentlichen Sie eine kurze Seite mit der Basisadresse, den Aufrufen oben und der Lizenz der Daten.
 - [ ] Beobachten Sie nach dem Start die Anfrageprotokolle und das Prüfprotokoll
-  ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md), [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+  ([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md), [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 

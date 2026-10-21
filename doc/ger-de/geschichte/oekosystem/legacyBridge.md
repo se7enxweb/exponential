@@ -176,13 +176,13 @@ Hier nicht ausgeführt: Diese Befehle brauchen ein Symfony-Projekt mit installie
 
 ## Verwandte Seiten
 
-- [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md)
+- [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md)
 - [Spezifikation der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
 - [Namen der Konsolenbefehle](../../spezifikationen/6.0/platform-konsolenbefehle.md)
 - [Release-Changelog](../../../changelogs/extensions/legacyBridge.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/legacyBridge.md)
-- [Site-Bundles](../../../eng-us/features/6.0/platform-site-bundles.md)
+- [Site-Bundles](../../funktionen/6.0/plattform-site-bundles.md)
 - Plattform-Ökosystem nach Monat: [2025-07](monate/2025-07.md), [2025-08](monate/2025-08.md), [2026-02](monate/2026-02.md), [2026-03](monate/2026-03.md), [2026-04](monate/2026-04.md)

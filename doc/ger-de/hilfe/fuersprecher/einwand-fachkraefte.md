@@ -28,7 +28,7 @@ ist, und tun Sie dann etwas dagegen: Über Fürsprecher wächst der Kreis der Fa
 | „Der Stack ist schlicht: PHP 8, Composer, eine Template-Sprache, INI-Einstellungen, die Datenbank Ihrer Wahl. Ein PHP-Entwickler ist schnell produktiv.“ | [Wer ist 7x?, Der Anwendungsstack](../wer-ist-7x.md#der-anwendungs-stack) |
 | „Das Lernmaterial ist umfangreich und kostenlos: diese Hilfe, das Installationsbuch, die Anleitungen, doc.exponential.earth, eZpedia und drei Schulungsbücher mit über 700 Seiten.“ | [Mit Einwänden umgehen, Fachkräfte](../geschaeft/einwandbehandlung.md#fachkräfte-finden-wir-leute-die-es-kennen), [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 | „Es gibt einen dokumentierten Weg vom Benutzer zum Entwickler.“ | [Mit Git entwickeln](../mit-git-entwickeln.md) |
-| „Die RAD-Werkzeuge schreiben in Minuten eine funktionierende Erweiterung, sodass neue Entwickler durch Tun lernen.“ | [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md) |
+| „Die RAD-Werkzeuge schreiben in Minuten eine funktionierende Erweiterung, sodass neue Entwickler durch Tun lernen.“ | [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md) |
 | „Schulungen kann man kaufen; 7x führt sie unter seinen Dienstleistungen, und jeder Anbieter kann sie anbieten.“ | [Dienstleistungen und Hosting](../wer-ist-7x.md#dienstleistungen-und-hosting) |
 | „Die Codebasis hatte viele Beitragende: 194 Commit-Autoren vor 2016 und seit 2023 Pull Requests von mehreren Organisationen.“ | [Beitragende und Freunde des Projekts](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |
 | „Hilfe ist öffentlich: Foren, Telegram, Issue-Tracker.“ | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |

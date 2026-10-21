@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen)
-und [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md).
+und [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md).
 
 1. **Nicht aktivierte Benutzer** (4 Minuten). **Benutzer > Nicht aktivierte Benutzer** listet Personen auf, die sich
    registriert, aber nie auf den Link ihrer Aktivierungsmail geklickt haben. Registrierungen, die älter als 30 Tage
@@ -137,7 +137,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
    ([Nicht aktivierte Benutzer aufräumen](../../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen)).
 2. **B.** Die Zahl der Tage ist standardmäßig 180.
 3. **Falsch.** Die Seite deaktiviert, aktiviert und entsperrt; das Entfernen bleibt bei **Entfernen** am Knoten selbst.
-4. `user/hygiene` ([Wer sie verwenden darf](../../../../../eng-us/features/6.0/user-hygiene.md#who-may-use-it)).
+4. `user/hygiene` ([Wer sie verwenden darf](../../../../funktionen/6.0/benutzerpflege.md#wer-sie-verwenden-darf)).
 5. Es deaktiviert Konten und verschiebt sie in eine versteckte Gruppe ohne Rollen, wobei es sich merkt, wo sie vorher
    lagen; es ist standardmäßig ausgeschaltet (`DeactivateAndMove=disabled`).
 
@@ -145,7 +145,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 
 ## Weiterführende Literatur
 
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md): jeder Filter, jede Aktion und jede Einstellung.
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md): jeder Filter, jede Aktion und jede Einstellung.
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): die Seite der nicht
   aktivierten Benutzer und die Registrierungsmail.
 - [Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md): wo die Änderungen an Konten protokolliert werden.

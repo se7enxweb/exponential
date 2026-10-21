@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratorinnen und Administratoren sowie Hosting-Teams. Exponential trennt echte
 Fehler vom Rauschen: Antworten „nicht gefunden“ gehen nach `404.log`, Anfragen, die die Klassifizierung für eine
 Sondierung oder einen Angriff hält, gehen nach `security.log`, und `error.log` behält die echten Fehler
-([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)). Für eine öffentliche Website erhalten Sie so ein ruhiges
+([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)). Für eine öffentliche Website erhalten Sie so ein ruhiges
 Fehlerprotokoll und eine eigene, lesbare Aufzeichnung der Angriffe.
 
 ## Inhalt
@@ -59,12 +59,12 @@ Klassifizierung klassifiziert nur. Blockieren ist Aufgabe von request-shield, de
 - In `404.log` wird jeder Abfragewert durch `***` ersetzt.
 - Die Protokollansicht maskiert E-Mail-Adressen, IP-Adressen und Geheimnisse standardmäßig; **Unmaskiert zeigen**
   benötigt `setup/unmasklogs` und wird selbst aufgezeichnet
-  ([Protokollansicht: Datenschutz](../../../../eng-us/features/6.0/log-viewer.md#privacy-what-is-masked)).
+  ([Protokollansicht: Datenschutz](../../../funktionen/6.0/log-betrachter.md#datenschutz-was-maskiert-wird)).
 
 ## Aufbewahrung
 
 `404.log` und `security.log` behalten 5 komprimierte Archive von bis zu 10 MB, gelöscht nach 30 Tagen (404) und 90
-Tagen (security) ([Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)). Ändern Sie das je Protokoll in
+Tagen (security) ([Protokollrotation](../../../funktionen/6.0/log-rotation.md)). Ändern Sie das je Protokoll in
 `settings/override/logviewer.ini.append.php`, `[RotationSettings] MaxAgeDays[security]=<days>`. Das Löschen nach Alter
 läuft mit `./console exp:logs --prune` oder dem Cronjob-Teil `logs` (`php runcronjobs.php logs`).
 
@@ -78,8 +78,8 @@ läuft mit `./console exp:logs --prune` oder dem Cronjob-Teil `logs` (`php runcr
 
 ## Verwandte Seiten
 
-- [Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)
-- [Die Protokollansicht](../../../../eng-us/features/6.0/log-viewer.md)
+- [Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)
+- [Die Protokollansicht](../../../funktionen/6.0/log-betrachter.md)
 - [request-shield vor einer öffentlichen Website](request-shield.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

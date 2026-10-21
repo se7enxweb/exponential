@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Administration, die die Logs einer öffentlichen Website jeden Tag prüft, ohne sie Zeile
 für Zeile zu lesen. Dafür hat der Log-Viewer zwei Übersichtsseiten: **Fehlerübersicht** (`/setup/logsdigest`) und
 **Zustand der Logs** (`/setup/logshealth`), beide unter **Setup > Logdateien** und beide mit der Funktion `setup/logs`
-([Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md#error-digest)).
+([Log-Viewer](../../../../funktionen/6.0/log-betrachter.md#fehlerübersicht)).
 
 ## Inhalt
 1. [Die Fehlerübersicht](#die-fehlerübersicht)
@@ -64,8 +64,8 @@ Stufe und dem Zeitpunkt des letzten Auftretens. Jede Gruppe verweist auf das dan
 3. Reiter **Audit**, **Alarme**: Wurde seit gestern etwas ausgelöst?
 4. Halten Sie Befunde in Ihrem Betriebsprotokoll oder Ticketsystem fest.
 
-Vorgehen: [Die Fehlerübersicht lesen](../../../../../eng-us/help/government/tasks/operations/read-the-error-digest.md) und
-[Den Zustand der Logs prüfen](../../../../../eng-us/help/government/tasks/operations/check-log-health.md).
+Vorgehen: [Die Fehlerübersicht lesen](../../aufgaben/betrieb/die-fehleruebersicht-lesen.md) und
+[Den Zustand der Logs prüfen](../../aufgaben/betrieb/den-zustand-der-logs-pruefen.md).
 
 ## Verwandte Seiten
 - [Der Log-Viewer](der-log-viewer.md)

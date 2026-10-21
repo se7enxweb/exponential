@@ -10,7 +10,7 @@ type: help
 # Eine Anforderung zur Datenverarbeitung schreiben
 
 **Wer:** die Beschaffungsverantwortlichen mit dem Datenschutzbeauftragten. **Wann:** beim Entwurf der Anforderungen. Die
-Fakten stammen aus den [Datenschutzstandards](../../../../../eng-us/standards/privacy.md).
+Fakten stammen aus den [Datenschutzstandards](../../../../standards/datenschutz.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung. EU: [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
@@ -29,7 +29,7 @@ Fakten stammen aus den [Datenschutzstandards](../../../../../eng-us/standards/pr
   Newsletter-Abonnenten, Logs ([Checkliste zum Datenschutz](../../checklisten/checkliste-datenschutz.md)).
 - Wissen Sie, was die Software bietet: Einwilligungsprotokoll, E-Mail-Kategorien mit Opt-in, Löschung beim Entfernen des
   Kontos, Maskierung der Logs und Einstellungen zur Aufbewahrung; und was ihr fehlt: kein „alle meine Daten
-  exportieren“, kein Cookie-Banner ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md#known-gaps)).
+  exportieren“, kein Cookie-Banner ([Datenschutzstandards](../../../../standards/datenschutz.md#bekannte-lücken)).
 
 ## Schritte
 
@@ -38,7 +38,7 @@ Fakten stammen aus den [Datenschutzstandards](../../../../../eng-us/standards/pr
 2. **Legen Sie den Datenstandort fest** für Produktion, Sicherungen und Supportzugang.
 3. **Verbieten Sie unangekündigte Dritte**: keine Erweiterung, die Besucherdaten an Dritte sendet (Analyse, CAPTCHA,
    Anmeldung über soziale Netzwerke, KI-Anbieter), ohne Ihre schriftliche Zustimmung
-   ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)).
+   ([Datenschutzstandards](../../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)).
 4. **Legen Sie die Aufbewahrung fest**: Formulare, Logs (die allgemeinen Logs des Kernels haben standardmäßig keine
    Altersgrenze), Sicherungen, Audit-Einträge.
 5. **Verlangen Sie Unterstützung für die Rechte der Betroffenen**: Der Lieferant dokumentiert, wie die Daten einer Person
@@ -46,7 +46,7 @@ Fakten stammen aus den [Datenschutzstandards](../../../../../eng-us/standards/pr
    dafür gibt.
 6. **Verlangen Sie, dass Test-, Entwicklungs- und Schulungskopien keine personenbezogenen Daten enthalten.**
 7. **Verlangen Sie Rückgabe und Löschung** am Ende
-   ([Personenbezogene Daten beim Ausstieg](../../../../../eng-us/help/government/procurement/exit-plans/personal-data-at-exit.md)).
+   ([Personenbezogene Daten beim Ausstieg](../../beschaffung/ausstiegsplaene/personenbezogene-daten-beim-ausstieg.md)).
 
 ## Beispiel
 
@@ -73,8 +73,8 @@ Anforderungen, die die Datenflüsse ausdrücklich und prüfbar machen, abgestimm
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Anforderungen an Privatsphäre und Datenschutz](../../../../../eng-us/help/government/procurement/requirements/privacy-and-data-protection-requirements.md)
-- [Klausel zu Datenschutz und Datenverarbeitung](../../../../../eng-us/help/government/procurement/tender-templates/privacy-and-data-processing-clause.md)
+- [Anforderungen an Privatsphäre und Datenschutz](../../beschaffung/anforderungen/anforderungen-an-datenschutz.md)
+- [Klausel zu Datenschutz und Datenverarbeitung](../../beschaffung/ausschreibungsvorlagen/klausel-datenschutz-und-auftragsverarbeitung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

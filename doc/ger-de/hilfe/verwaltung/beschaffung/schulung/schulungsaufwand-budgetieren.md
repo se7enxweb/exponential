@@ -51,7 +51,7 @@ Das Kursmaterial selbst kostet nichts: Es ist freie Dokumentation unter der GNU 
 | Train the Trainer | 34 | etwa 21 |
 
 Quelle: [Kurskatalog](../../../trainer/kurskatalog.md). Viele Kurse bieten kürzere Zeitpläne aus ausgewählten
-Modulen; die Tagesprogramme der [Workshops](../../../../../eng-us/help/trainers/workshops/README.md) sind eine weitere Möglichkeit.
+Modulen; die Tagesprogramme der [Workshops](../../../trainer/workshops/README.md) sind eine weitere Möglichkeit.
 Rechnen Sie Pausen zu den Stunden hinzu, wenn Sie Tage planen.
 
 ## Das Arbeitsblatt

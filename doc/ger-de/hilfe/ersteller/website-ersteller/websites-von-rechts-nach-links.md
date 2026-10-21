@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Website-Ersteller, die eine öffentliche Website oder eine Sprache davon in einer Schrift
 mit Schreibrichtung von rechts nach links bauen. Die Administration dreht sich bei Oberflächensprachen von rechts nach
-links von selbst um ([Sprachen von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md));
+links von selbst um ([Sprachen von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md));
 ein öffentliches Design tut, was seine Templates und Stylesheets vorgeben, deshalb zeigt diese Seite, was Sie
 ergänzen müssen.
 
@@ -26,7 +26,7 @@ ergänzen müssen.
 ## Woher die Richtung kommt
 
 Die einzige Quelle ist die Locale-Datei: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`. 28
-Locale-Dateien tragen diesen Eintrag; die Liste steht unter [Sprachen in Exponential](../../../../eng-us/languages.md). Der Kernel
+Locale-Dateien tragen diesen Eintrag; die Liste steht unter [Sprachen in Exponential](../../../sprachen.md). Der Kernel
 stellt ihn bereit:
 
 | Wo | Was |

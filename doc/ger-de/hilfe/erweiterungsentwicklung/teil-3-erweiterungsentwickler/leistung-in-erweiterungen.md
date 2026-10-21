@@ -72,7 +72,7 @@ und ändert die Regeln für Ihren Code:
 - **Umschließen Sie einen Download samt `eZExecution::cleanExit()` nie mit `catch ( Exception )`**: Unter Velocity
   wirft der saubere Abschluss eine Ausnahme, um den Request zu beenden.
 
-Siehe [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
+Siehe [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md).
 
 ## Frontend
 

@@ -87,7 +87,7 @@ Ein leeres Formular für die Berechnung steht im Bereich Vorlagen:
 - [Hosting und Partner auswählen](../auswahl/README.md): wohin das Geld für Hosting und Dienstleistungen geht.
 - [Vorlagen](../vorlagen/README.md): kopierfertige Arbeitsblätter und Checklisten.
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 

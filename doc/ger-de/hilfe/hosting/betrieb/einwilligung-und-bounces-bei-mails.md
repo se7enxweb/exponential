@@ -181,7 +181,7 @@ mit dem Backup-Zeitraum zusammenspielen.
 - [Compliance und DSGVO](../sicherheit/compliance-und-dsgvo.md)
 - [Aufbewahrung von Logs und Daten](../sicherheit/aufbewahrung-von-logs-und-daten.md)
 - [Cronjobs](cronjobs.md)
-- [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) (was die Menschen auf einer Website sehen)
+- [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md) (was die Menschen auf einer Website sehen)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

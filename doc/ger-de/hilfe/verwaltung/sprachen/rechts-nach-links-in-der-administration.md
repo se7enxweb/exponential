@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren und Redakteure, deren Mitarbeitende 
 mit Schreibrichtung von rechts nach links nutzen. Seit 6.0.15 dreht sich die Administration um, wenn die
 Oberflächensprache von rechts nach links geschrieben wird: Die Seite trägt `dir="rtl"`, die Seitenspalten tauschen
 die Plätze, Text beginnt rechts, und Symbole, die entlang der Zeile zeigen, zeigen in die andere Richtung
-([Sprachen mit Schreibrichtung von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md)).
+([Sprachen mit Schreibrichtung von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md)).
 
 ## Inhalt
 
@@ -28,7 +28,7 @@ In der rechten Werkzeugleiste enthält der Kasten **Oberfläche** die Liste **Sp
 Beispiel *עברית (ישראל)* (Hebräisch, `heb-IL`) und klicken Sie auf **Anwenden** ([Sprachen (für Redakteure)](../../sprachen.md)).
 Die Wahl gilt bis zur Abmeldung. Die hebräische Übersetzung der Administration ist vollständig und maschinell
 unterstützt; Arabisch (`ara-SA`) ist neu und ebenfalls maschinell unterstützt; für beide ist eine Durchsicht durch
-Muttersprachler willkommen ([Sprachen in Exponential, Abschnitt 4](../../../../eng-us/languages.md#4-every-administration-translation)).
+Muttersprachler willkommen ([Sprachen in Exponential, Abschnitt 4](../../../sprachen.md#4-alle-übersetzungen-der-administrationsoberfläche)).
 
 ## Was sich ändert
 
@@ -49,7 +49,7 @@ der tiptap-Editor) stellen ihre Schreibrichtung um. So kann eine französischspr
 
 ## Bekannte offene Punkte
 
-Aus [Sprachen mit Schreibrichtung von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md#follow-ups):
+Aus [Sprachen mit Schreibrichtung von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md#folgearbeiten):
 
 - Einige Stylesheets von Erweiterungen verwenden stellenweise noch physisches Links und Rechts.
 - Die Anmeldeseite folgt nur der eigenen Locale des Siteaccess; eine Anmeldeseite von rechts nach links braucht einen
@@ -61,7 +61,7 @@ Aus [Sprachen mit Schreibrichtung von rechts nach links in der Administration](.
 
 - [Rechts-nach-links-Sprachen auf öffentlichen Websites](rechts-nach-links-sprachen-auf-oeffentlichen-websites.md)
 - [Sprachen der Administrationsoberfläche](sprachen-der-administrationsoberflaeche.md)
-- [Liste der Oberflächensprachen](../../../../eng-us/features/6.0/ui-switch-languages.md)
+- [Liste der Oberflächensprachen](../../../funktionen/6.0/ui-umschalter-sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

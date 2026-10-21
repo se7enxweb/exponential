@@ -71,7 +71,7 @@ Viele öffentliche Stellen betreiben nur Serversoftware, die eine interne Bewert
   übersetzt.
 - **Velocity** ist ein PHP-Anwendungsserver, der mit Exponential ausgeliefert wird, freie Software wie der Rest. Reichen
   Sie ihn als Teil der Anwendung mit seiner Dokumentation zur Bewertung ein:
-  [Velocity-Webserver](../../../../../eng-us/features/6.0/velocity-web-server.md) und
+  [Velocity-Webserver](../../../../funktionen/6.0/velocity-webserver.md) und
   [Velocity für Teams im öffentlichen Sektor](velocity-fuer-teams-im-oeffentlichen-sektor.md).
 - **FrankenPHP** wird als festgelegtes Release heruntergeladen, dessen SHA-256-Prüfsumme vor dem Start geprüft wird
   ([Bereitstellen](../../../../anleitungen/bereitstellung.md)); `install --engine=frankenphp --check` berechnet den Hash einer

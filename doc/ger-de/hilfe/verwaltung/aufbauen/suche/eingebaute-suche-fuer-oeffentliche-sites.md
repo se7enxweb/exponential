@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Site-Ersteller und Administratoren öffentlicher Sites. Exponential hat eine eingebaute
 Suchmaschine, die ihren Index in der Datenbank hält; für die meisten Sites genügt sie
-([Site-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md)).
+([Site-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md)).
 
 ## Inhalt
 
@@ -68,7 +68,7 @@ Mit verzögerter Indizierung muss der Cronjob-Teil `indexcontent.php` laufen
 
 ## Verwandte Seiten
 
-- [Site-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md)
+- [Site-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md)
 - [Suchen (für Redakteure)](../../../suchen.md)
 - [Such-Backends beim Hosting](../../../hosting/grundlagen/such-backends.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

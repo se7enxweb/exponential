@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Mehrere Websites in einer Installation einrichten, Redakteure und die Administration](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#editors-and-the-administration)
+Quellen: [Mehrere Websites in einer Installation einrichten, Redakteure und die Administration](../../../ersteller/website-ersteller/multisite-einrichten.md#redaktion-und-administration)
 und [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md#5-die-rolle-zuweisen).
 
 1. **Die Administration kennt die Websites** (4 Minuten). `SiteList[]` in `site.ini [SiteSettings]` (der Installer
@@ -142,15 +142,15 @@ Verwenden Sie Ihre Schulungsinstallation mit *Site B* (Lektion 1.3) und Ihrem Ad
 ## Weiterführende Informationen
 
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md): Rollen anlegen, zuweisen und testen.
-- [Mehrere Websites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#editors-and-the-administration).
+- [Mehrere Websites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md#redaktion-und-administration).
 - [Im Editor anmelden](../../../anmelden-im-editor.md) und [In der Administration anmelden](../../../anmelden-in-der-administration.md).
-- [Berechtigungen für Besucher](../../../../../eng-us/help/creators/website-creators/visitor-permissions.md).
+- [Berechtigungen für Besucher](../../../ersteller/website-ersteller/rechte-fuer-besucher.md).
 
 ## Verwandte Seiten
 
 - [Modul 4: Links zwischen Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

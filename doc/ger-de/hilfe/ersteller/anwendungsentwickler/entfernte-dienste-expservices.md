@@ -74,7 +74,7 @@ mitgelieferten Domänen in `extension/expservices/classes/`; lesende Dienste las
 
 - [OAuth und API-Schlüssel](oauth-und-api-schluessel.md)
 - [Headless Exponential](headless-exponential.md)
-- [Entfernte Dienste (Funktion)](../../../../eng-us/features/6.0/remote-services-expservices.md)
+- [Entfernte Dienste (Funktion)](../../../funktionen/6.0/entfernte-dienste-expservices.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

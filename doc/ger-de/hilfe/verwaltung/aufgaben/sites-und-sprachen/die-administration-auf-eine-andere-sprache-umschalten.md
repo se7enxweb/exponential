@@ -38,7 +38,7 @@ Texte, verwendet aber ihre eigenen Formate für Datum und Zahlen.
 
 ## Verwandte Seiten
 
-- [Die Liste der Oberflächensprachen](../../../../../eng-us/features/6.0/ui-switch-languages.md)
+- [Die Liste der Oberflächensprachen](../../../../funktionen/6.0/ui-umschalter-sprachen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

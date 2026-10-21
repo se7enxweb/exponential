@@ -53,7 +53,7 @@ Erzählen Sie die Zwei-Minuten-Fassung und fügen Sie je nach Zuhörer einen die
 | Zuhörer | Fügen Sie hinzu | Quelle |
 |---|---|---|
 | Ein Entwickler | „Es läuft auf PHP 8.0 bis 8.5, wird mit Composer installiert, und jedes Paket ist ein Git-Repository, das Sie mit vollständiger Historie klonen können. Jeder Pull Request wird übernommen.“ | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen), [Mit Git entwickeln](../mit-git-entwickeln.md), [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
-| Ein Administrator | „SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS oder Windows; und eine Installation mit einem Befehl.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Ein Administrator | „SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS oder Windows; und eine Installation mit einem Befehl.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Ein Redakteur | „Entwürfe und Versionen, eine Vorschau in Telefonbreite, ein Seitenbaukasten und Hilfe auf jedem Bildschirm.“ | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md), [Der Layouts-Editor](../layout-editor.md) |
 | Ein Entscheider | „Die Software hat ihren ursprünglichen Hersteller schon einmal überlebt, weil ihr Code frei ist. Ein Unternehmen und eine gemeinnützige Organisation stehen dahinter.“ | [Mit Einwänden umgehen, Langlebigkeit](../geschaeft/einwandbehandlung.md#langlebigkeit-gibt-es-das-in-zehn-jahren-noch) |
 | Jemand aus der Symfony-Welt | „Die Familie hat auch Symfony-Distributionen: Exponential Platform DXP sowie Legacy oder Nexus mit Exponential 6 darin.“ | [Die Produktfamilie kennen](die-produktfamilie-kennen.md) |
@@ -96,7 +96,7 @@ Mehr in [Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-sc
 - [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md)
 - [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md)
 - [Wer ist 7x?](../wer-ist-7x.md)
-- [Die Geschichte von Exponential](../../../eng-us/history/README.md)
+- [Die Geschichte von Exponential](../../geschichte/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

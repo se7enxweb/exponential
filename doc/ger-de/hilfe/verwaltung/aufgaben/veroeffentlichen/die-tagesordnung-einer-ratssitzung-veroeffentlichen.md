@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Redakteure im Sitzungsdienst oder in einem Ratsbüro, die Tagesordnungen von Sitzungen
 veröffentlichen. Sie setzt voraus, dass die Site eine Klasse Meeting hat (wie in
-[Inhaltsmodell für Kommunen](../../../../../eng-us/help/government/levels/municipal-and-local/content-model.md) vorgeschlagen) oder je Sitzung einen
+[Inhaltsmodell für Kommunen](../../ebenen/kommunen/inhaltsmodell.md) vorgeschlagen) oder je Sitzung einen
 Ordner verwendet; die Schritte nutzen die Bearbeitungsfunktionen, die in
 [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md) beschrieben sind.
 
@@ -73,7 +73,7 @@ Wenn die Site Sitzungsseiten zur Freigabe zurückhält, wird die Version aussteh
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Das Sitzungsprotokoll nach der Genehmigung veröffentlichen](das-sitzungsprotokoll-nach-der-genehmigung-veroeffentlichen.md)
-- [Ratssitzungen und kommunale Dienstleistungen](../../../../../eng-us/help/government/levels/municipal-and-local/council-meetings-and-local-services.md)
+- [Ratssitzungen und kommunale Dienstleistungen](../../ebenen/kommunen/ratssitzungen-und-oertliche-dienstleistungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

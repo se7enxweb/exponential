@@ -41,8 +41,8 @@ bearbeiten und, für die Zuordnung, die Zuordnungen bearbeiten.
 ## Verwandte Seiten
 
 - [Der Layout-Editor](../layout-editor.md)
-- [Landingpages mit Layouts](../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)
-- [Zwei Wege zu bauen](../../../eng-us/help/build-two-ways/README.md)
+- [Landingpages mit Layouts](../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)
+- [Zwei Wege zu bauen](../zwei-wege-zum-bauen/README.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

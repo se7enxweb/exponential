@@ -69,8 +69,8 @@ nicht angezeigt werden“. Freigebende brauchen daher eine Rolle mit dem Modul `
 ## Verwandte Seiten
 - [Entwürfe und ausstehende Elemente](entwuerfe-und-wartende-elemente.md)
 - [Überblick über Freigabe-Workflows](freigabe-workflows-im-ueberblick.md)
-- [Einer freigebenden Person Rechte geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-approver-rights.md)
-- [Kurs Redaktion 101](../../../../../eng-us/help/trainers/editors-101/README.md)
+- [Einer freigebenden Person Rechte geben](../../aufgaben/personen-und-berechtigungen/einem-freigebenden-rechte-geben.md)
+- [Kurs Redaktion 101](../../../trainer/redakteure-101/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

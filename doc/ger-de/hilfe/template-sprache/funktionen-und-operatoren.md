@@ -163,15 +163,15 @@ und in der Referenz zu [foreach](referenz-der-kontrollstrukturen.md#foreach) ver
   Kompilierung behandeln.
 - Schreiben Sie eine **Fetch-Funktion** (in der `function_definition.php` eines Moduls), um Templates Daten aus der Datenbank zu geben:
   `fetch( 'yourmodule', 'yourfunction', hash( ... ) )`. Siehe
-  [Eine eigene Fetch-Funktion schreiben](../../../eng-us/help/creators/app-creators/writing-a-fetch-function.md).
+  [Eine eigene Fetch-Funktion schreiben](../ersteller/anwendungsentwickler/eine-eigene-fetch-funktion-schreiben.md).
 
 ## Verwandte Seiten
 
 - Zurück: [Operatoren in Ausdrücken](operatoren-in-ausdruecken.md)
 - Weiter: [Referenz der Kontrollstrukturen](referenz-der-kontrollstrukturen.md)
-- [Referenz der Funktionen](../../../eng-us/help/designers/templates/function-reference.md) und [Referenz der Operatoren](../../../eng-us/help/designers/templates/operator-reference.md)
-- [Template-Operatoren schreiben](../../../eng-us/help/creators/app-creators/template-operators.md)
-- [Ein eigener Template-Operator](../../../eng-us/examples/cookbook/custom-template-operator.md)
+- [Referenz der Funktionen](../designer/vorlagen/funktionsreferenz.md) und [Referenz der Operatoren](../designer/vorlagen/operatorreferenz.md)
+- [Template-Operatoren schreiben](../ersteller/anwendungsentwickler/template-operatoren-schreiben.md)
+- [Ein eigener Template-Operator](../../beispiele/kochbuch/eigener-template-operator.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

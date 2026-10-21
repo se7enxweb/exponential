@@ -85,11 +85,11 @@ Für einen Trainer, der den Kurs vorbereitet, in dieser Reihenfolge:
    [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md).
 4. [Bilder, Medien und Uploads](../../medien-und-uploads.md), [Suchen](../../suchen.md) und
    [Tastenkürzel](../../tastenkuerzel.md).
-5. [Der Online-Editor auf Basis von TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md) und
+5. [Der Online-Editor auf Basis von TinyMCE 8](../../../funktionen/6.0/online-editor-tinymce8.md) und
    [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md).
 6. [Meine Entwürfe und meine Warteliste](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md),
    [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md) und [Lesezeichen](../../../anleitungen/lesezeichen.md).
-7. [Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
+7. [Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
 8. Danach die Module der Reihe nach: zuerst jeweils der Überblick des Moduls (seine Vorbereitungsliste und sein
    Zeitplan), dann seine Lektionen. Proben Sie jede Übung auf Ihrer Schulungsinstallation.
 

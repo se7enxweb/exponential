@@ -42,7 +42,7 @@ dass das Formular erkannt wird.
 **CSV exportieren** lädt `<name>-collected.csv` herunter (UTF-8 mit Byte Order Mark): Sammlungs-ID, Sende- und
 Änderungszeit (UTC), Benutzer-ID, dann eine Spalte pro Sammelattribut. Werte, die eine Tabellenkalkulation als Formel
 lesen würde, beginnen mit einem Apostroph. Höchstens 50 000 Zeilen, die neuesten zuerst. Jeder Export wird im
-Prüfprotokoll festgehalten, mit der Zeilenanzahl und niemals den Werten ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+Prüfprotokoll festgehalten, mit der Zeilenanzahl und niemals den Werten ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Einsendungen entfernen
 

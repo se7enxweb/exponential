@@ -41,7 +41,7 @@ Meetings
 ```
 
 Alte Aliasse leiten weiter, wenn Ordner umbenannt werden, sodass die Struktur ohne defekte Links wachsen kann
-([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Eine Sitzungsklasse
 
@@ -91,13 +91,13 @@ Sie einen datierten Hinweis hinzu. Die Versionsgeschichte behält die frühere D
   ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)).
 - Stellen Sie Unterlagen als barrierefreie Dokumente oder als Seitentext bereit; gescannte PDFs ohne Text sind nicht
   barrierefrei. Der Stand der Barrierefreiheit der Website ist in den
-  [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) dokumentiert.
+  [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) dokumentiert.
 
 ## Verwandte Seiten
 
 - [Beschlussregister](beschlussregister.md)
 - [Zeitgesteuertes Veröffentlichen und Sperrfristen](zeitgesteuertes-veroeffentlichen-und-sperrfristen.md)
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

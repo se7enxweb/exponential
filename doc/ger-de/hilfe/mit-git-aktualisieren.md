@@ -181,7 +181,7 @@ php bin/php/ezcache.php --clear-all
 Auf einer Site, die von Exponential Velocity ausgeliefert wird, führen Sie stattdessen
 `php bin/php/console exp:velocity deploy` aus: Es erzeugt die Klassen-Maps neu, leert die Caches, macht PHP-FPM den
 neuen Code bekannt und startet Velocity neu, in der richtigen Reihenfolge
-([Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md)).
+([Velocity-Engines](../bc/6.0/velocity-engines.md)).
 
 ### A7. Die Site prüfen und das Wartungsfenster beenden
 
@@ -517,7 +517,7 @@ Die letzten beiden Befehle zeigen, wann er das nächste Mal läuft und was er be
 - [Mit Git entwickeln](mit-git-entwickeln.md): als Klone installieren, auf einem Branch arbeiten, Korrekturen zurückschicken.
 - [Erweiterungen zurückgeben](erweiterungen-zurueckgeben.md): Ihre eigenen Erweiterungen veröffentlichen, damit alle sie nutzen können, und was die GPL verlangt, wenn Sie eine weitergeben.
 - [Upgrade](../installation/11-aktualisieren.md): die Schritte für Datenbank und Einstellungen bei jedem Release.
-- [Die Upgrade-Prüfung](../anleitungen/upgrade-pruefung.md) und [git_manager](../../eng-us/features/6.0/extensions/git_manager.md).
+- [Die Upgrade-Prüfung](../anleitungen/upgrade-pruefung.md) und [git_manager](../funktionen/6.0/erweiterungen/git_manager.md).
 - Das Projekt auf GitHub: [se7enxweb/exponential](https://github.com/se7enxweb/exponential) und seine
   [Releases](https://github.com/se7enxweb/exponential/releases).
 

@@ -13,7 +13,7 @@ Diese Seite ist für Administratoren und Entwickler, die Pakete im Browser erste
 Paketen (`/package/create`) ein Schritt-Assistent aus den gemeinsamen Komponenten der Administration: Er zeigt, wo Sie sind, fragt jeden Teil
 in einer Karte ab, zeigt Fehler an ihren Feldern und lässt Sie das ganze Paket überprüfen, bevor es geschrieben wird. Was er sendet und was
 er schreibt, hat sich nicht geändert. Die vollständige Beschreibung, mit jedem Template und jedem gesendeten Namen, ist
-[Der Paketassistent](../../../../eng-us/features/6.0/package-wizard.md); diese Seite ist die Kurzanleitung.
+[Der Paketassistent](../../../funktionen/6.0/paketassistent.md); diese Seite ist die Kurzanleitung.
 
 ![Paket erstellen: die vier Assistenten](../../../../eng-us/help/images/help/sp-wizard.webp)
 
@@ -88,7 +88,7 @@ Der Assistent schreibt nur ein Paket; die Website ändert sich nicht.
 **Fortgeschritten > Exportieren** im Inhaltsbaum öffnet den Assistenten für Inhaltsobjekte mit dem bereits gewählten Knoten:
 `/package/create/(creator)/ezcontentobject/(node)/<node id>`, wahlweise `(subtree)/1`, `(classes)/0|1` und `(versions)/current|all`
 (`kernel/package/module.php`). Er füllt nur den Assistenten aus; das Paket entsteht, wenn Sie seine Schritte bestätigen. Siehe
-[Das Exportmenü für Inhalte](../../../../eng-us/bc/6.0/content-export-menu.md).
+[Das Exportmenü für Inhalte](../../../bc/6.0/menue-inhalte-exportieren.md).
 
 ## Das Ergebnis in einem Seitenpaket nutzen
 
@@ -100,10 +100,10 @@ geben Sie ihr einen `<vendor>` und nennen Sie sie in `<requires>` Ihres Seitenpa
 ## Verwandte Seiten
 
 - [Pakete in der Administration](README.md)
-- [Der Paketassistent (Beschreibung der Funktion)](../../../../eng-us/features/6.0/package-wizard.md)
-- [Der Paketassistent Schritt für Schritt](../../../../eng-us/help/designers/extensions/package-creator-wizard-step-by-step.md)
+- [Der Paketassistent (Beschreibung der Funktion)](../../../funktionen/6.0/paketassistent.md)
+- [Der Paketassistent Schritt für Schritt](../../designer/erweiterungen/paketerstellungs-assistent-schritt-fuer-schritt.md)
 - [Berechtigungen für Pakete](berechtigungen-fuer-pakete.md)
-- [Paketlizenzen und Versionen](../../../../eng-us/features/6.0/package-licenses-and-versions.md)
+- [Paketlizenzen und Versionen](../../../funktionen/6.0/paketlizenzen-und-versionen.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

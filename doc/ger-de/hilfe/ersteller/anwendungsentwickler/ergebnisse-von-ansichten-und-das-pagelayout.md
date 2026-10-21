@@ -79,7 +79,7 @@ angehängt.
 In Templates: `{'Latest items'|i18n( 'extension/expdemo' )}`. In PHP: `ezpI18n::tr( 'extension/expdemo', 'Latest items' )`.
 Übersetzungen liegen in `extension/<ext>/translations/<locale>/translation.ts` und werden mit
 `site.ini [RegionalSettings] TranslationExtensions[]=<ext>` registriert
-([Internationalisierung](../../../../eng-us/standards/internationalization.md)).
+([Internationalisierung](../../../standards/internationalisierung.md)).
 
 ## Verwandte Seiten
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Website-Ersteller und Redakteure, die sich um Newsletter-Abonnenten kümmern. Sie behandelt,
 was die Abonnementstatus bedeuten, wo Abonnenten verwaltet werden, Import und Export und wie Listen sauber bleiben
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
 ![Das Newsletter-Dashboard: Listen, Abonnenten, Ausgaben und der Stand des Versands](../../../../eng-us/help/images/creators/newsletter-lists.webp)
 

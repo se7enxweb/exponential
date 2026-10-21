@@ -46,9 +46,9 @@ Builds erleichtert.
 
 - Die `composer.lock` Ihrer Installation verzeichnet die genaue Version und den Commit jedes Pakets.
 - **Setup > Updates and packages** (`ezupdate`) zeigt die installierten Pakete, wie jedes bezogen wurde und bei
-  Git-Arbeitskopien den Branch und den Commit ([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+  Git-Arbeitskopien den Branch und den Commit ([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 - Die Info-Seite listet jede Erweiterung mit ihrer Version und Lizenz auf
-  ([Info- und Paketseiten](../../../../eng-us/features/6.0/about-and-package-pages.md)).
+  ([Info- und Paketseiten](../../../funktionen/6.0/info-und-paketseiten.md)).
 - **Setup > Upgrade-Prüfung** vergleicht die Dateien mit den mitgelieferten Prüfsummen
   ([Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)).
 

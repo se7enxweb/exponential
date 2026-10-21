@@ -34,7 +34,7 @@ Composer-Pakete mit unveränderlichen Releases; die folgende Routine folgt
 | request-shield (falls verwendet) | seine Releases |
 
 Die CI des Projekts führt keinen Schwachstellenscan der Abhängigkeiten aus
-([Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/security.md#known-gaps)), daher ist `composer audit` Ihre
+([Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken)), daher ist `composer audit` Ihre
 Aufgabe.
 
 ## Wie Exponential veröffentlicht
@@ -77,7 +77,7 @@ haben.
 
 - [13.15 Auf dem aktuellen Stand bleiben](../../../installation/13-sicherheitshaertung.md#1315-auf-dem-neuesten-stand-bleiben)
 - [Aktualisieren](../../../anleitungen/aktualisieren.md)
-- [Updates und Upgrades für Website-Ersteller](../../../../eng-us/help/creators/website-creators/updates-and-upgrades.md)
+- [Updates und Upgrades für Website-Ersteller](../../ersteller/website-ersteller/updates-und-aktualisierungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

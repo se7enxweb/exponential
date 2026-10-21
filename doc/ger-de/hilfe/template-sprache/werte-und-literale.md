@@ -201,9 +201,9 @@ Ausgabe auf alpha:
 
 - Zurück: [Lexikalische Struktur](lexikalische-struktur.md)
 - Weiter: [Variablen im Detail](variablen-im-detail.md)
-- [Grundlagen der TPL-Syntax](../../../eng-us/help/designers/templates/tpl-syntax-basics.md)
-- [Array-Operatoren](../../../eng-us/help/designers/templates/array-operators.md)
-- [Die Typ-Operatoren](../../../eng-us/examples/template-operators/get_type.md)
+- [Grundlagen der TPL-Syntax](../designer/vorlagen/tpl-syntax-grundlagen.md)
+- [Array-Operatoren](../designer/vorlagen/array-operatoren.md)
+- [Die Typ-Operatoren](../../beispiele/template-operatoren/get_type.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -40,8 +40,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: `settings/site.ini [SearchSettings]` (ihre Kommentare), [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md#settings-that-matter)
-und [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md).
+Quelle: `settings/site.ini [SearchSettings]` (ihre Kommentare), [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md#einstellungen-auf-die-es-ankommt)
+und [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md).
 
 1. **Wo man sie setzt** (2 Minuten). Sucheinstellungen gehören zum Siteaccess, in dem gesucht wird, meist dem
    öffentlichen: `settings/siteaccess/<public siteaccess>/site.ini.append.php`, geschrieben von
@@ -147,9 +147,9 @@ Verwenden Sie Ihre eigene Schulungsinstallation. `<public siteaccess>` ist ihr �
 
 ## Weiterführende Informationen
 
-- [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md#settings-that-matter): die Tabelle der
+- [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md#einstellungen-auf-die-es-ankommt): die Tabelle der
   Einstellungen.
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): Geltungsbereiche,
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): Geltungsbereiche,
   Sicherungen und Sicherheit.
 - [Die Einstellungsseite: sehen, woher jeder INI-Wert kommt](../../../../anleitungen/einstellungsseite.md): Einstellungen in der
   Administration lesen.
@@ -158,7 +158,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. `<public siteaccess>` ist ihr �
 
 - [Modul 5: Feinabstimmung und Fehlersuche](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

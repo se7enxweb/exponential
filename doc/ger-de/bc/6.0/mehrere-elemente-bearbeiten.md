@@ -373,8 +373,8 @@ Abschnitten oben auf einer Kopie der Installation aus. Prüfen Sie, dass die Vie
 
 ## Verwandte Seiten
 
-- [Optionen der Tabelle der Unterelemente](../../../eng-us/features/6.0/subitems-table-options.md) und [Unterelemente: Ausgewählte kopieren](../../../eng-us/features/6.0/subitems-copy-selected.md)
-- [Content-Jobs](../../../eng-us/features/6.0/content-jobs.md)
-- [September 2026, erste Hälfte: 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Optionen der Tabelle der Unterelemente](../../funktionen/6.0/optionen-der-unterelementtabelle.md) und [Unterelemente: Ausgewählte kopieren](../../funktionen/6.0/unterelemente-auswahl-kopieren.md)
+- [Content-Jobs](../../funktionen/6.0/inhaltsauftraege.md)
+- [September 2026, erste Hälfte: 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Anleitung zum Inhaltsmodell und zum Bearbeiten](../../anleitungen/inhaltsmodell-und-bearbeitung.md)

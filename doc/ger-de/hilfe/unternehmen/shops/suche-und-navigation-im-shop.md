@@ -33,7 +33,7 @@ Zusatzarbeit in Menüs und Suchergebnissen erscheint.
 ## Kategorien und Menüs
 
 Menüs kommen aus dem Inhaltsbaum: Jede Kategorie ist ein Ordner, und das Menü zeigt die Ordner unterhalb eines
-Startpunkts ([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)). Für einen Shop gilt:
+Startpunkts ([Menüs und Navigation](../../ersteller/website-ersteller/menues-und-navigation.md)). Für einen Shop gilt:
 
 - beschränken Sie die oberste Ebene auf die Handvoll Kategorien, in denen Kunden denken;
 - ordnen Sie Kategorien nach Priorität, nicht alphabetisch;
@@ -41,7 +41,7 @@ Startpunkts ([Menüs und Navigation](../../../../eng-us/help/creators/website-cr
 - blenden Sie leere oder saisonale Kategorien aus, statt sie zu löschen.
 
 Welche Klassen in Menüs erscheinen, ist eine Einstellung (`menu.ini`), sodass Produktseiten das Menü nicht überfüllen
-müssen. Der Baum selbst wird unter [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)
+müssen. Der Baum selbst wird unter [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)
 geplant.
 
 ## Ein Produkt an mehreren Stellen
@@ -54,13 +54,13 @@ Entfernen Sie die zusätzliche Platzierung, wenn die Kampagne endet.
 
 Tags laufen quer zu den Kategorien: Marke, Material, Anlass, Farbe. Mit `eztags` werden Tags zentral verwaltet, lassen
 sich übersetzen und als Tag-Seiten und Tag-Wolken anzeigen
-([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)). Vereinbaren Sie ein kleines
+([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)). Vereinbaren Sie ein kleines
 Tag-Vokabular, bevor die Redakteure beginnen, sonst wächst die Tag-Liste schneller als der Katalog.
 
 ## Die eingebaute Suche
 
 Die eingebaute Suchmaschine hält ihren Index in der Datenbank und genügt für die meisten Websites
-([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)). Sie durchsucht die durchsuchbaren Felder
+([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)). Sie durchsucht die durchsuchbaren Felder
 der Produkte (auf alpha markiert die Produktklasse Name, Artikelnummer, Beschreibungen und technische Daten als
 durchsuchbar; den Preis nicht) und führt Suchstatistiken, sodass Sie sehen, wonach Kunden gesucht und was sie nicht
 gefunden haben.
@@ -72,7 +72,7 @@ gefunden haben.
 ## Solr-Suche mit Facetten
 
 Große Kataloge und Kunden, die filtern möchten, verlangen nach Solr über die Erweiterung `ezfind`
-([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)). Sie ergänzt:
+([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)). Sie ergänzt:
 
 | Mit Solr | Nutzen für einen Shop |
 |---|---|
@@ -88,7 +88,7 @@ sind Designarbeit.
 ## Bewertungen und technische Daten
 
 - Die Erweiterung `ezstarrating` fügt ein Feld für Sternebewertungen hinzu und lässt Templates nach Bewertung sortieren
-  und abrufen ([ezstarrating](../../../../eng-us/features/6.0/extensions/ezstarrating.md)); auf alpha hat die Produktklasse eines.
+  und abrufen ([ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md)); auf alpha hat die Produktklasse eines.
 - Eine Tabelle mit technischen Daten (`ezmatrix` in der Produktklasse von alpha) lässt Kunden Produkte auf der Seite
   vergleichen.
 

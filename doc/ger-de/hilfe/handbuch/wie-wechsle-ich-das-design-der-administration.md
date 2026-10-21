@@ -39,8 +39,8 @@ angeboten werden.
 
 ## Verwandte Seiten
 
-- [Das Administrationsdesign für Ihre Sitzung wählen](../../../eng-us/features/6.0/ui-switch-design.md)
-- [Sprache der Oberfläche und der UI-Umschalter](../../../eng-us/features/6.0/ui-switch.md)
+- [Das Administrationsdesign für Ihre Sitzung wählen](../../funktionen/6.0/ui-umschalter-design.md)
+- [Sprache der Oberfläche und der UI-Umschalter](../../funktionen/6.0/ui-umschalter.md)
 - [Der Umschalter für das Administrationsdesign: Einstellungen, Designs und Rollen](../../anleitungen/ui-umschalter-design.md)
 - [Benutzerhandbuch](README.md)
 

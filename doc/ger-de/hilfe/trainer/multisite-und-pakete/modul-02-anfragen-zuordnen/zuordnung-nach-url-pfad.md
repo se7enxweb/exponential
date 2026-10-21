@@ -159,16 +159,16 @@ Verwenden Sie Ihre Schulungsinstallation aus Modul 1 (URL-Zuordnung).
 ## Weiterführende Informationen
 
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site).
-- [URL-Aliase und sprechende URLs](../../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md): wie Aliase
+- [URL-Aliase und sprechende URLs](../../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md): wie Aliase
   entstehen.
 - [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md): die Referenz für Administratoren.
-- [Live gehen: Hosts, HTTPS und Siteaccesses](../../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md).
+- [Live gehen: Hosts, HTTPS und Siteaccesses](../../../ersteller/website-ersteller/livegang-hosts-und-https.md).
 
 ## Verwandte Seiten
 
 - [Modul 2: Anfragen Siteaccesses zuordnen](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

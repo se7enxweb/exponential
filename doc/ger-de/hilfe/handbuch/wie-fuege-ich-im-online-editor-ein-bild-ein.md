@@ -40,7 +40,7 @@ der Medien-Bibliothek.
 
 - [Medien und Uploads](../medien-und-uploads.md)
 - [Richtlinien für Bilder und Dateien](../kunden/alltag/richtlinien-fuer-bilder-und-dateien.md)
-- [Der Online-Editor auf TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md)
+- [Der Online-Editor auf TinyMCE 8](../../funktionen/6.0/online-editor-tinymce8.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

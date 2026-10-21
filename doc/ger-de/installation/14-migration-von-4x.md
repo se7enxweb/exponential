@@ -25,7 +25,7 @@ Exponential 6.0 ist derselbe Legacy-Kernel, weitergeführt. Das bestimmt die For
 | Inhalts-Datentypen | Alle Kernel-Datentypen von 3.x/4.x befinden sich weiterhin in `kernel/classes/datatypes/` und in `content.ini [DataTypeSettings] AvailableDataTypes[]`: `ezxmltext`, `ezimage`, `ezbinaryfile`, `ezmedia`, `ezobjectrelationlist`, `ezmatrix`, `ezenum`, `ezoption`, `ezmultioption`, `ezmultioption2`, `ezprice`, `ezmultiprice`, `ezisbn`, `ezkeyword`, `ezuser` und die anderen. |
 | Rich Text | `ezxmltext` bleibt `ezxmltext` und wird mit dem Online-Editor (ezoe) bearbeitet. Es gibt **keine** Konvertierung von XmlText nach RichText. |
 | Seiten | Der Seiten-Datentyp `ezflow` wird als Paket ausgeliefert (`composer.json` verlangt `se7enxweb/ezflow`). Es gibt **keine** Konvertierung von Page nach LandingPage. |
-| Templates | Die Template-Sprache, ihre Funktionen (einschließlich der alten Funktionen `section`, `let`, `set` und `default`) und ihre Operatoren behalten ihre Namen; INI-Blöcke und -Schlüssel behalten ihre ([Das Produkt heißt Exponential](../../eng-us/features/6.0/rebranding-to-exponential.md)). |
+| Templates | Die Template-Sprache, ihre Funktionen (einschließlich der alten Funktionen `section`, `let`, `set` und `default`) und ihre Operatoren behalten ihre Namen; INI-Blöcke und -Schlüssel behalten ihre ([Das Produkt heißt Exponential](../funktionen/6.0/umbenennung-in-exponential.md)). |
 | Extension-API | `eZPersistentObject`, `eZDataType`, `eZWorkflowEventType`, Module mit `module.php`, Fetch-Funktionen in `function_definition.php`, in `autoloads/eztemplateautoload.php` registrierte Template-Operatoren, Einstellungen in `settings/*.ini.append.php`. |
 | Klassennamen | Kernel-Klassen mit dem Präfix `eZ` behalten ihre Namen. Die Versionsklasse ist `ExponentialSDK`; `eZPublishSDK` existiert weiterhin als Unterklasse davon (`lib/ezpublishsdk.php`). |
 
@@ -458,17 +458,17 @@ entpackte neue Release kopieren).
 |---|---|
 | `[DatabaseSettings] DatabaseImplementation=ezmysql` | Funktioniert: `site.ini [DatabaseSettings] ImplementationAlias[ezmysql]=eZMySQLiDB`. Schreiben Sie der Klarheit halber `ezmysqli`. Die Seiten 4.5 und 4.6 des Herstellers verlangten dieselbe Änderung. |
 | `[DatabaseSettings] Charset`, `i18n.ini [CharacterSettings] Charset` | `utf-8` (die neuen Standardwerte); entfernen Sie andere Werte, sobald die Datenbank konvertiert ist. |
-| `[ExtensionSettings] ActiveExtensions[]` | Entfernen Sie `ezdhtml` (seit 4.1 durch `ezoe` ersetzt) und jede Extension, die Sie nicht installieren. Behalten Sie die Reihenfolge bei: Sie entscheidet, welche Templates und Einstellungen welcher Extension gewinnen ([Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md)). `ezjscore` wird von der Administration und von ezwebin benötigt. |
+| `[ExtensionSettings] ActiveExtensions[]` | Entfernen Sie `ezdhtml` (seit 4.1 durch `ezoe` ersetzt) und jede Extension, die Sie nicht installieren. Behalten Sie die Reihenfolge bei: Sie entscheidet, welche Templates und Einstellungen welcher Extension gewinnen ([Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md)). `ezjscore` wird von der Administration und von ezwebin benötigt. |
 | `[UserSettings] HashType`, `SiteName`, `UpdateHash` | Siehe [14.10](#1410-benutzer-passwörter-und-anmeldung). |
-| `[DesignSettings]` des Administrations-Siteaccess | Das alte Design `admin2` wurde 2012 zum ausgelieferten Design `admin`; die heutigen Administrationsdesigns sind `admin`, `admin3`, `admin4` und `admin4l`, dazu die YUI-freie klassische graue Oberfläche als Siteaccess `classic` ([YUI entfernt](../../eng-us/bc/6.0/yui-removal.md)). Übernehmen Sie die `[DesignSettings]` eines frisch installierten Administrations-Siteaccess statt der 4.x-Liste. |
+| `[DesignSettings]` des Administrations-Siteaccess | Das alte Design `admin2` wurde 2012 zum ausgelieferten Design `admin`; die heutigen Administrationsdesigns sind `admin`, `admin3`, `admin4` und `admin4l`, dazu die YUI-freie klassische graue Oberfläche als Siteaccess `classic` ([YUI entfernt](../bc/6.0/yui-entfernung.md)). Übernehmen Sie die `[DesignSettings]` eines frisch installierten Administrations-Siteaccess statt der 4.x-Liste. |
 | `override.ini.append.php` des Administrations-Siteaccess | Entfernen Sie die Regeln für Benutzer-Tabs, die die 4.6-Seite des Herstellers nennt (`[window_controls]`, `[windows]` mit Treffer auf `ezusernavigationpart`); ihre Templates gibt es nicht mehr. |
 | Blöcke in `override.ini` | Seit dem 12. Juli 2026 werden Blöcke nach `Priority` sortiert, die niedrigste zuerst, und ein Block ohne Priorität kommt zuletzt. Geben Sie Blöcken, die gewinnen müssen, eine `Priority` ([11.6](11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand), Schritt 3). |
 | YUI-Schlüssel in `ezjscore.ini` (`ExternalScripts[yui*]`, `LocalScripts[yui*]`, `[YUI3]`, `PreferredLibrary=yui3`) | Löschen; sie haben heute keine Bedeutung mehr. |
 | `site.ini [SiteAccessSettings] DetectMobileDevice`, `MobileSiteAccessURL`, `MobileSiteAccessList[]` (4.7-Seite des Herstellers) | Nur, wenn Sie den mobilen Siteaccess verwendet haben; die Schlüssel sind unverändert. |
 | `template.ini [PHP] PHPOperatorList[]` | Jede dort zugeordnete PHP-Funktion muss in PHP 8 existieren (14.9). |
 | Dateien mit dem Namen `*.ini.append` oder `*.ini.php` | Werden weiterhin gelesen, sind aber seit 4.4 veraltet. Benennen Sie sie in `*.ini.append.php` um, mit der ersten Zeile `<?php /* #?ini charset="utf-8"?`, damit ein falsch konfigurierter Webserver sie nicht als Text ausliefern kann. |
-| Extension-Verzeichnisse | Neu und optional: `[ExtensionSettings] AdditionalExtensionDirectories[]` erlaubt, dass Ihre eigenen Extensions in einem zweiten Wurzelverzeichnis liegen ([Zusätzliche Extension-Verzeichnisse](../../eng-us/bc/6.0/AdditionalExtensionDirectories.md)). |
-| `MinPasswordLength`, `GeneratePasswordLength` | Neue Standardwerte 10 und 16 ([Passwortlänge](../../eng-us/bc/5.90/password_length.md)). |
+| Extension-Verzeichnisse | Neu und optional: `[ExtensionSettings] AdditionalExtensionDirectories[]` erlaubt, dass Ihre eigenen Extensions in einem zweiten Wurzelverzeichnis liegen ([Zusätzliche Extension-Verzeichnisse](../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md)). |
+| `MinPasswordLength`, `GeneratePasswordLength` | Neue Standardwerte 10 und 16 ([Passwortlänge](../bc/5.90/passwortlaenge.md)). |
 
 Bauen Sie danach den INI-Cache neu auf und prüfen Sie jeden Siteaccess:
 
@@ -519,11 +519,11 @@ php bin/php/eztemplatecheck.php extension/<yours>/design/
 
 | Bereich | Änderung | Was zu tun ist |
 |---|---|---|
-| `wash` und die HTML-Escaping-Operatoren | Maskieren einfache Anführungszeichen unter jeder PHP-Version (`ENT_QUOTES \| ENT_SUBSTITUTE \| ENT_HTML401`) | Nichts, außer ein Test vergleicht die exakte Ausgabe; leeren Sie den Template-Cache einmal ([Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md)). |
+| `wash` und die HTML-Escaping-Operatoren | Maskieren einfache Anführungszeichen unter jeder PHP-Version (`ENT_QUOTES \| ENT_SUBSTITUTE \| ENT_HTML401`) | Nichts, außer ein Test vergleicht die exakte Ausgabe; leeren Sie den Template-Cache einmal ([Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md)). |
 | `template.ini [PHP] PHPOperatorList[]` | Die zugeordnete PHP-Funktion wird direkt aufgerufen | Entfernen Sie Zuordnungen zu Funktionen, die PHP 8 entfernt hat (14.9). |
-| YUI | `ezjsc::yui2`, `ezjsc::yui3`, `ezjsc::yui3io` laden nichts; `YUI(...)`, `YAHOO.*` sind undefiniert | Verlagern Sie den Code nach jQuery oder Exponential UI (`exp::*`); die Tabelle der Ersetzungen steht in [YUI entfernt](../../eng-us/bc/6.0/yui-removal.md). |
-| jQuery | `ezjsc::jquery` ist jQuery 4.0.0 mit jQuery Migrate 4.0.2 (stiller Build), `ezjsc::jqueryUI` ist jQuery UI 1.14.2 (`extension/ezjscore/settings/ezjscore.ini`) | Ersetzen Sie `.bind()`, `.unbind()`, Event-Kurzformen, `jQuery.trim()`, `.size()` ([jQuery 4](../../eng-us/features/6.0/jquery4-and-yui-removal.md)). |
-| Online-Editor | ezoe verwendet standardmäßig TinyMCE 3.5.12, TinyMCE 8 ist optional zuschaltbar; das gespeicherte XML ist dasselbe | Eigene ezoe-Plugins, die für TinyMCE 3 geschrieben wurden, funktionieren mit der Standard-Engine weiter ([TinyMCE 3 und 8](../../eng-us/bc/6.0/ezoe-tinymce8.md)). |
+| YUI | `ezjsc::yui2`, `ezjsc::yui3`, `ezjsc::yui3io` laden nichts; `YUI(...)`, `YAHOO.*` sind undefiniert | Verlagern Sie den Code nach jQuery oder Exponential UI (`exp::*`); die Tabelle der Ersetzungen steht in [YUI entfernt](../bc/6.0/yui-entfernung.md). |
+| jQuery | `ezjsc::jquery` ist jQuery 4.0.0 mit jQuery Migrate 4.0.2 (stiller Build), `ezjsc::jqueryUI` ist jQuery UI 1.14.2 (`extension/ezjscore/settings/ezjscore.ini`) | Ersetzen Sie `.bind()`, `.unbind()`, Event-Kurzformen, `jQuery.trim()`, `.size()` ([jQuery 4](../funktionen/6.0/jquery4-und-entfernung-von-yui.md)). |
+| Online-Editor | ezoe verwendet standardmäßig TinyMCE 3.5.12, TinyMCE 8 ist optional zuschaltbar; das gespeicherte XML ist dasselbe | Eigene ezoe-Plugins, die für TinyMCE 3 geschrieben wurden, funktionieren mit der Standard-Engine weiter ([TinyMCE 3 und 8](../bc/6.0/ezoe-tinymce8.md)). |
 | ezdhtml | Seit 4.1 entfernt | Verwenden Sie ezoe; das XML von `ezxmltext` braucht keine Konvertierung. |
 | Benutzer-Tabs der Administration | `window_controls_user.tpl` und `windows_user.tpl` gibt es seit 4.6 nicht mehr | Entfernen Sie die Override-Regeln (14.7). |
 
@@ -606,7 +606,7 @@ Der Kernel behält Kompatibilitätsmethoden mit den alten Namen bei (`eZDataType
 `eZPersistentObject::eZPersistentObject()`, `eZWorkflowType::eZWorkflowType()`,
 `eZWorkflowEventType::eZWorkflowEventType()`), sodass `$this->eZDataType( ... )` innerhalb Ihres eigenen
 `__construct()` weiterhin funktioniert; was nicht mehr ausgeführt wird, ist der Konstruktor alten Stils Ihrer eigenen
-Klasse. Siehe auch [5.90 und PHP 7](../../eng-us/bc/5.90/php7.md).
+Klasse. Siehe auch [5.90 und PHP 7](../bc/5.90/php7.md).
 
 ### Signaturen, die zur Elternklasse passen müssen
 
@@ -623,7 +623,7 @@ function onPublish( $contentObjectAttribute, $contentObject, $publishedNodes ) {
 ```
 
 Die eigenen Extensions von Exponential hatten genau das (`onPublish()` von syndication, `makeObjectsArray()` von
-ezstarrating), siehe [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md).
+ezstarrating), siehe [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md).
 
 ### Aus PHP entfernte Funktionen und Syntax
 
@@ -680,7 +680,7 @@ statisch aufzurufen, ist seit 8.0 ein `Error`; Vergleiche zwischen Zahlen und ni
 8.0 geändert (`0 == 'a'` ist false). `eZPersistentObject` trägt bereits `#[AllowDynamicProperties]` und speichert nicht
 deklarierte Felder selbst, sodass Unterklassen keine Warnung erzeugen; Ihre anderen Klassen müssen ihre Eigenschaften
 deklarieren. Die Abfolge der PHP-8-Änderungen des Kernels selbst, Release für Release, steht in
-[Unterstützung für PHP 8](../../eng-us/bc/6.0/php8.md).
+[Unterstützung für PHP 8](../bc/6.0/php8.md).
 
 ### php.ini
 
@@ -753,7 +753,7 @@ php bin/php/updatesearchindex.php --clean
 eZ Find (Solr) wird in `composer.json` als `se7enxweb/ezfind` vorgeschlagen; installieren Sie es als Paket und
 indizieren Sie mit seinen eigenen Werkzeugen neu. `settings/solr.ini` und `php bin/php/console exp:solr` steuern einen
 Solr-Server für diese Installation; er ist aus, bis `[SolrSettings] Enabled=true` gesetzt ist. Relationen werden seit
-2018 eine Ebene tief indiziert ([Indizierung von Relationen](../../eng-us/bc/5.90/relation_indexing.md)): Suchergebnisse, die
+2018 eine Ebene tief indiziert ([Indizierung von Relationen](../bc/5.90/indizierung-von-beziehungen.md)): Suchergebnisse, die
 sich auf Relationen von Relationen stützten, ändern sich.
 
 ## 14.12 Die Inhalte nach der Migration prüfen
@@ -818,7 +818,7 @@ Zuerst ihre Entsprechungen in Exponential, danach die für den Legacy-Weg spezif
 | Seite zeigt `?` statt Zeichen mit Akzent | Die Verbindung ist UTF-8, die Daten haben noch einen anderen Zeichensatz | `ezconvertdbcharset.php` (14.5.2). |
 | „Illegal mix of collations“ unter MySQL 8 | Alte Tabellen in `utf8`, von den Update-Dateien angelegte Tabellen in `utf8mb4` | Setzen Sie den Standard der Datenbank vor der Kette (14.5.2); konvertieren Sie die neuen Tabellen in denselben Zeichensatz. |
 | Benutzer können sich nicht anmelden | Fehlendes `ezuser_setting`, `md5_site` mit einem anderen `SiteName`, `mysql`-Hashes unter MySQL 8 | 14.10. |
-| Administration hat keine Menüs, `YUI is not defined` in der Konsole | Eigene Templates oder Einstellungen laden noch YUI | [YUI entfernt](../../eng-us/bc/6.0/yui-removal.md). |
+| Administration hat keine Menüs, `YUI is not defined` in der Konsole | Eigene Templates oder Einstellungen laden noch YUI | [YUI entfernt](../bc/6.0/yui-entfernung.md). |
 | Dateien einer Cluster-Website fehlen | Website mit `eZDBFileHandler` oder `STORAGE_BACKEND`-Konstanten | 14.4 und 14.6. |
 | Ein Template-Override gewinnt nicht mehr | `override.ini`-Blöcke nach `Priority` sortiert, oder Reihenfolge der Extensions | 14.7. |
 | Die Übersetzungen der Zustandsgruppen aus 5.0 erscheinen doppelt | `deduplicatecontentstategrouplanguage.php` nicht ausgeführt | Führen Sie es aus (Phase B, 5.0). |
@@ -949,19 +949,19 @@ In diesem Repository:
   [4.1 auf 4.2](../../changelogs/4.2/CHANGELOG-4.1.0-to-4.2.0), [4.2 auf 4.3](../../changelogs/4.3/CHANGELOG-4.2.0-to-4.3.0),
   [4.3 auf 4.4](../../changelogs/4.4/CHANGELOG-4.3.0-to-4.4.0), [4.5 auf 4.6](../../changelogs/4.6/CHANGELOG-4.5.0-to-4.6.0.txt),
   [4.6 auf 4.7](../../changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt).
-- 5.90-Linie: [Überblick](../../eng-us/bc/5.90/README.md), [PHP 7](../../eng-us/bc/5.90/php7.md),
-  [Passwortlänge](../../eng-us/bc/5.90/password_length.md), [Indizierung von Relationen](../../eng-us/bc/5.90/relation_indexing.md).
-- PHP 8: [Unterstützung für PHP 8](../../eng-us/bc/6.0/php8.md), [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md).
-- JavaScript und Editor: [YUI entfernt](../../eng-us/bc/6.0/yui-removal.md),
-  [jQuery 4 und die Entfernung von YUI](../../eng-us/features/6.0/jquery4-and-yui-removal.md),
-  [TinyMCE 3 und TinyMCE 8 in ezoe](../../eng-us/bc/6.0/ezoe-tinymce8.md).
-- Extensions: [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md),
-  [zusätzliche Extension-Verzeichnisse](../../eng-us/bc/6.0/AdditionalExtensionDirectories.md),
-  [Verhaltensänderungen der Legacy-Extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md).
-- [Das Produkt heißt Exponential](../../eng-us/features/6.0/rebranding-to-exponential.md),
-  [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md),
-  [Dateikonsistenzprüfung](../../eng-us/features/6.0/file-consistency-check.md), [Audit](../../eng-us/bc/6.0/audit.md),
-  [Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md),
+- 5.90-Linie: [Überblick](../bc/5.90/README.md), [PHP 7](../bc/5.90/php7.md),
+  [Passwortlänge](../bc/5.90/passwortlaenge.md), [Indizierung von Relationen](../bc/5.90/indizierung-von-beziehungen.md).
+- PHP 8: [Unterstützung für PHP 8](../bc/6.0/php8.md), [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md).
+- JavaScript und Editor: [YUI entfernt](../bc/6.0/yui-entfernung.md),
+  [jQuery 4 und die Entfernung von YUI](../funktionen/6.0/jquery4-und-entfernung-von-yui.md),
+  [TinyMCE 3 und TinyMCE 8 in ezoe](../bc/6.0/ezoe-tinymce8.md).
+- Extensions: [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md),
+  [zusätzliche Extension-Verzeichnisse](../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md),
+  [Verhaltensänderungen der Legacy-Extensions](../bc/6.0/verhaltensaenderungen-von-erweiterungen.md).
+- [Das Produkt heißt Exponential](../funktionen/6.0/umbenennung-in-exponential.md),
+  [Wartungsmodus](../funktionen/6.0/wartungsmodus.md),
+  [Dateikonsistenzprüfung](../funktionen/6.0/dateikonsistenzpruefung.md), [Audit](../bc/6.0/audit.md),
+  [Legacy Bridge](../funktionen/6.0/legacy-bridge.md),
   [Sicherheitshärtung August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md).
 - Code: `update/database/`, `update/common/scripts/`, `bin/php/ezconvertdbcharset.php`,
   `bin/php/ezconvertmysqltabletype.php`, `bin/php/ezsqldiff.php`, `bin/php/updateniceurls.php`,

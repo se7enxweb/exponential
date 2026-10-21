@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Anwendungsentwickler, die jeden Push ihrer Erweiterung automatisch prüfen lassen möchten. Die
 eigenen Workflows des Kernels in `.github/workflows/` sind ein erprobtes Vorbild
-([GitHub-Actions-Workflows](../../../../eng-us/standards/testing-and-ci.md#github-actions-workflows)).
+([GitHub-Actions-Workflows](../../../standards/tests-und-ci.md#workflows-von-github-actions)).
 
 ## Inhalt
 
@@ -82,7 +82,7 @@ Kernels aus. Halten Sie diese Tests nach Möglichkeit frei von Datenbankzugriffe
 ## Verwandte Seiten
 
 - [Anwendungen testen](anwendungen-testen.md)
-- [Qualitätsprüfungen](../../../../eng-us/features/6.0/quality-checks.md)
+- [Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspruefungen.md)
 - [Verhaltensänderungen der CI](../../../bc/6.0/ci.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

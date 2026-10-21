@@ -10,7 +10,7 @@ type: help
 # Demo-Skript: Installation von null
 
 Diese Seite ist für Creator, die eine Installation von Exponential aus dem Nichts filmen. Die Befehle stammen aus
-[Mit Git entwickeln](../mit-git-entwickeln.md#eine-neue-site), [Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)
+[Mit Git entwickeln](../mit-git-entwickeln.md#eine-neue-site), [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)
 und [Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md). `exp:install` gehört zur Linie 6.0.15, die in
 Entwicklung ist; beim Release 6.0.14 würden Sie stattdessen den Einrichtungsassistenten oder den Kickstarter verwenden
 ([Eine Installationsmethode wählen](../../installation/04-installationsweg-waehlen.md)). Sagen Sie vor der Kamera, welche
@@ -59,7 +59,7 @@ Voraussetzungen: [Voraussetzungen](../../installation/02-voraussetzungen.md). Di
 | 12 | Das Dashboard, dann die Website | „Und hier ist die Website.“ |
 
 Die Wahl der Datenbank, in der dokumentierten Reihenfolge der Präferenz: SQLite (der Standard), PostgreSQL, MongoDB,
-MariaDB, Oracle, MySQL ([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md#choose-a-database)).
+MariaDB, Oracle, MySQL ([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md#eine-datenbank-wählen)).
 Wenn Sie eine andere Datenbank zeigen, übergeben Sie das Passwort mit der Umgebungsvariablen `EXP_INSTALL_DB_PASSWORD`,
 die es aus der Prozessliste und dem Shell-Verlauf heraushält, und tippen Sie es nie vor der Kamera.
 

@@ -10,7 +10,7 @@ type: help
 # Einer Abteilung ein eigenes Design geben
 
 Diese Aufgabe richtet sich an Site-Ersteller. Hintergrund: [Designs je Site](../../aufbauen/multisite/designs-je-site.md)
-und [Designs und die Fallback-Kette](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md).
+und [Designs und die Fallback-Kette](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md).
 
 ## Bevor Sie beginnen
 
@@ -39,7 +39,7 @@ Ein gemeinsames Basisdesign (zum Beispiel `gov_base`) existiert in einer eigenen
 
 - Die Abteilungs-Site zeigt ihr Logo und ihre Farbe; jeder andere Teil der Seite kommt aus dem Basisdesign.
 - Der Kontrast der Akzentfarbe, die Fokus-Stile und die Tastaturnavigation bestehen weiterhin Ihre Prüfungen
-  ([Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+  ([Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)).
 
 ## Probleme
 
@@ -50,7 +50,7 @@ Ein gemeinsames Basisdesign (zum Beispiel `gov_base`) existiert in einer eigenen
 
 ## Verwandte Seiten
 
-- [Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)
+- [Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

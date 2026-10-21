@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an Administratorinnen und Administratoren, die die Bearbeitungsumgebung einrichten, an die
 Koordination Barrierefreiheit, die sie bewertet, und an Trainerinnen und Trainer, die Beschäftigten mit Behinderungen
 ihre Verwendung beibringen. Sie listet auf, was das Administrationsdesign admin4 (und seine Layoutvariante admin4l)
-für die Barrierefreiheit tut, wie es in [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) und
-[Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md) dokumentiert ist, und wie Sie admin4 zu dem Design machen,
+für die Barrierefreiheit tut, wie es in [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) und
+[Das Design admin4](../../../funktionen/6.0/admin4-design.md) dokumentiert ist, und wie Sie admin4 zu dem Design machen,
 das Ihre Redaktion erhält. Das Projekt bewertet admin4 gegenüber WCAG 2.2 AA mit **Teilweise erfüllt**.
 
 ## Inhalt
@@ -33,7 +33,7 @@ Die Arbeit an der Barrierefreiheit konzentriert sich auf admin4 und admin4l. Die
 Formularfehler nicht abgedeckt.
 
 1. Setzen Sie in der `site.ini.append.php` des Administrations-Siteaccess `[DesignSettings] SiteDesign=admin4`
-   ([Darauf umstellen](../../../../eng-us/features/6.0/admin4-design.md#switch-to-it)).
+   ([Darauf umstellen](../../../funktionen/6.0/admin4-design.md#darauf-umstellen)).
 2. Leeren Sie die Caches: `php bin/php/ezcache.php --clear-all --allow-root-user`.
 3. Wenn Sie den Designwechsel je Sitzung anbieten, entscheiden Sie, welche Designs er auflistet
    ([Der Designwechsel der Administration](../../../anleitungen/ui-umschalter-design.md)). Wer das klassische Design wählt,
@@ -50,7 +50,7 @@ Formularfehler nicht abgedeckt.
   `placeholder` zählt nicht als solcher.
 
 Abgesichert durch `AdminLandmarksTest.php` und `AdminFormLabelsTest.php`
-([Landmarks und Namen](../../../../eng-us/features/6.0/admin4-design.md#landmarks-and-names)).
+([Landmarks und Namen](../../../funktionen/6.0/admin4-design.md#landmarks-und-namen)).
 
 ## Tastatur
 
@@ -64,7 +64,7 @@ Abgesichert durch `AdminLandmarksTest.php` und `AdminFormLabelsTest.php`
 - Die Taste `/` springt zum Suchfeld.
 
 Alle Tasten sind für die Benutzer unter [Tastenkürzel](../../tastenkuerzel.md) aufgeführt; die Einzelheiten
-stehen unter [Tastatur](../../../../eng-us/features/6.0/admin4-design.md#keyboard).
+stehen unter [Tastatur](../../../funktionen/6.0/admin4-design.md#tastatur).
 
 ## Visuelle Darstellung
 
@@ -87,14 +87,14 @@ stehen unter [Tastatur](../../../../eng-us/features/6.0/admin4-design.md#keyboar
 
 - `<html lang>` folgt dem Locale des Siteaccess.
 - Oberflächensprachen von rechts nach links setzen `dir="rtl"`, spiegeln das Layout und isolieren Namen mit `<bdi>`
-  ([Sprachen von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md)).
+  ([Sprachen von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md)).
 - Inhalte in einer Inhaltssprache von rechts nach links werden im Bearbeitungsformular und in den Vorschauen mit `lang`
   und `dir` gekennzeichnet.
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
 - [Tastenkürzel](../../tastenkuerzel.md)
 - [Styling von admin4](../../../bc/6.0/admin4-gestaltung.md) (für Entwicklerinnen und Entwickler, die es erweitern)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

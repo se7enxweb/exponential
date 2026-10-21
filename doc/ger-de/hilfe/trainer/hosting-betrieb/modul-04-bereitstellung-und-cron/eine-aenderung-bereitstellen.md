@@ -154,16 +154,16 @@ Installation.
   Umgebung.
 - [Exponential bereitstellen](../../../../anleitungen/bereitstellung.md): der Rundgang von einer frischen Installation bis zu
   HTTPS.
-- [Durch die Bereitstellung verwaltet](../../../../../eng-us/features/6.0/managed-by-deployment.md): Konfiguration, die die
+- [Durch die Bereitstellung verwaltet](../../../../funktionen/6.0/durch-deployment-verwaltet.md): Konfiguration, die die
   Bereitstellung verwaltet.
-- [Der Befehl exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): Einstellungen auf der Kommandozeile lesen und
+- [Der Befehl exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): Einstellungen auf der Kommandozeile lesen und
   schreiben.
 
 ## Verwandte Seiten
 
 - [Modul 4: Bereitstellung und Cron](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektverantwortliche und Lieferanten, die in einer Ausschreibung oder von einem Käufer
 um einen Accessibility Conformance Report (ACR) gebeten werden, oft in Form eines VPAT. Es gibt **kein VPAT und keinen
 ACR für Exponential**
-([Standards zur Barrierefreiheit: Section 508](../../../../eng-us/standards/accessibility.md#section-508)). Was Sie erstellen
+([Standards zur Barrierefreiheit: Section 508](../../../standards/barrierefreiheit.md#section-508)). Was Sie erstellen
 können, ist ein Bericht für **Ihre Konfiguration**: eine bestimmte Version von Exponential, ein Administrationsdesign,
 ein öffentliches Design und eine Menge von Erweiterungen. Diese Seite zeigt, wie.
 
@@ -75,7 +75,7 @@ Online-Editor) und was die Umgehung oder der Plan ist.
 
 Sie dürfen, mit dem Link, die eigenen Nachweise des Projekts für die Administration zitieren:
 
-- die Statusangaben der [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) (Teilweise erfüllt,
+- die Statusangaben der [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) (Teilweise erfüllt,
   Nicht geprüft);
 - die Liste der Designtests und was sie absichern (Formularbeschriftungen, Landmarks, Tastaturmuster, Kontrast-Tokens,
   Fehlerübersichten);
@@ -86,9 +86,9 @@ für Ihre Anmerkungen, kein Ersatz für Ihren Test.
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Systeminformationen](../../../anleitungen/systeminformationen.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

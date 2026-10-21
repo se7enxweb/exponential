@@ -129,13 +129,13 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *Opening hours* (in Le
 
 - [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../../../anleitungen/urls-und-aliase.md): globale Aliase,
   Platzhalter und die Linkliste.
-- [URL-Platzhalter](../../../../../eng-us/help/creators/website-creators/url-wildcards.md): Muster von Adressen, für Website-Ersteller.
+- [URL-Platzhalter](../../../ersteller/website-ersteller/url-platzhalter.md): Muster von Adressen, für Website-Ersteller.
 
 ## Verwandte Seiten
 
 - [Modul 6: Adressen, Feeds und PDF](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

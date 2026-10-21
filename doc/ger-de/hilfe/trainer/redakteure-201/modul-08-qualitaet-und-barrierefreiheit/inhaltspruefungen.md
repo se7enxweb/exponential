@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md).
+Quelle: [Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md).
 
 1. **Wo** (2 Minuten). Im Menü des Elements: **Fortgeschritten** > **Ungültige Relationen im Teilbaum** und **Nicht
    verknüpfte Objekte im Teilbaum**; auch im Setup-Menü. Sie funktionieren nur in den Administrations-Siteaccesses, und
@@ -124,7 +124,7 @@ Papierkorb liegt, und ein Bild, das niemand verwendet.
 <summary>Antworten</summary>
 
 1. Drei beliebige aus: gelöscht, im Papierkorb, verborgen, nie veröffentlicht, ohne Ort, für Sie nicht verfügbar,
-   fehlende Dateien ([Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md#in-short)).
+   fehlende Dateien ([Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md#kurz-gefasst)).
 2. **Falsch.** Die Seite liest nur.
 3. **C.**
 4. Die Prüfung kann Verwendungen von außerhalb der Website nicht kennen; der Papierkorb erlaubt die Wiederherstellung.
@@ -134,16 +134,16 @@ Papierkorb liegt, und ein Bild, das niemand verwendet.
 
 ## Weiterführende Informationen
 
-- [Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md): jede Prüfung, was als Verweis zählt, und fehlende
+- [Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md): jede Prüfung, was als Verweis zählt, und fehlende
   Dateien.
-- [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../../eng-us/features/6.0/reverse-relation-check.md):
+- [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md):
   defekte Verweise verhindern.
 
 ## Verwandte Seiten
 
 - [Modul 8: Qualität und Barrierefreiheit](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

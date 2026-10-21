@@ -61,7 +61,7 @@ abarbeitet.
   Modul aufbaut.
 - [Ältere Versionen dieses Kernels](../../../../installation/migration/aeltere-versionen.md): welches Kapitel zu welcher
   Version passt.
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

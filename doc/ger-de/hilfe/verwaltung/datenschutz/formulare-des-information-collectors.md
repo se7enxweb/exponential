@@ -15,7 +15,7 @@ Informationen. In Exponential ist ein Formular ein Inhaltsobjekt, dessen Klasse 
 **Informationssammler** hat; jede Einsendung wird als Sammlung gespeichert
 ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)). Das Projekt führt Formulare unter den bekannten
 Lücken: „Die Website muss einen Einwilligungstext und eine Aufbewahrungsregel selbst hinzufügen“
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
+([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -73,8 +73,8 @@ Nichts entfernt Sammlungen automatisch. Legen Sie eine Routine fest:
 ## Verwandte Seiten
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
-- [Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)
-- [Formulareinsendungen](../../../../eng-us/help/creators/website-creators/form-submissions.md)
+- [Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)
+- [Formulareinsendungen](../../ersteller/website-ersteller/formulareinsendungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

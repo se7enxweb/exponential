@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Template-Pfadkommentare](../../../../../eng-us/features/6.0/template-path-comments.md) und
+Quellen: [Template-Pfadkommentare](../../../../funktionen/6.0/template-pfad-kommentare.md) und
 [Templates und Design, Teil 7](../../../../anleitungen/templates-und-design.md#7-templates-debuggen).
 
 1. **Pfadkommentare** (4 Minuten). Mit `[TemplateSettings] ShowTemplatePathComments=enabled` wird die Ausgabe jedes
@@ -144,9 +144,9 @@ Auf der Entwicklungsinstallation, mit den Overrides aus Lektion 3.2.
 
 ## Weiterführende Literatur
 
-- [Template-Pfadkommentare](../../../../../eng-us/features/6.0/template-path-comments.md): Format, Overrides und Grenzen.
-- [Die Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md): die Tabs Templates, Zeitmessung und SQL.
-- [Verbesserungen der Debug-Ausgabe](../../../../../eng-us/features/6.0/debug-output-improvements.md): was sich an der
+- [Template-Pfadkommentare](../../../../funktionen/6.0/template-pfad-kommentare.md): Format, Overrides und Grenzen.
+- [Die Exp Debug bar](../../../../funktionen/6.0/exp-debug-leiste.md): die Tabs Templates, Zeitmessung und SQL.
+- [Verbesserungen der Debug-Ausgabe](../../../../funktionen/6.0/verbesserte-debug-ausgabe.md): was sich an der
   Debug-Ausgabe geändert hat.
 
 ## Verwandte Seiten

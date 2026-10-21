@@ -20,13 +20,13 @@ Diese Seite ist für die Chefredaktion, den Art Director und die Person, die die
 
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
-| Lange Artikel mit mehreren Teilen | Inhaltsklassen mit den Feldern, die Sie brauchen; die Demo-Installation hat *Article*, *Article (main-page)* und *Article (sub-page)* | [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md) |
+| Lange Artikel mit mehreren Teilen | Inhaltsklassen mit den Feldern, die Sie brauchen; die Demo-Installation hat *Article*, *Article (main-page)* und *Article (sub-page)* | [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md) |
 | Gestaltete Reportage- und Ausgabenseiten | Exponential Layouts: Layouts, Zonen und Blöcke, die Ihre Redaktion anordnet | [Der Layouts-Editor](../../layout-editor.md), [Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md) |
-| Fotostrecken | Galerien und automatische Umwandlung und Skalierung von Bildern | [Medien und Uploads](../../medien-und-uploads.md), [Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md) |
+| Fotostrecken | Galerien und automatische Umwandlung und Skalierung von Bildern | [Medien und Uploads](../../medien-und-uploads.md), [Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md) |
 | Klare redaktionelle Stufen | Entwürfe, Freigabe-Workflows und Versionskontrolle | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md) |
 | Ausgaben, die an einem festen Datum erscheinen | Zeitgesteuerte Veröffentlichung | [Zeitgesteuertes Veröffentlichen](../alltag/zeitgesteuertes-veroeffentlichen.md) |
 | Leser, die wiederkommen | Newsletter (die Erweiterung CJW Newsletter) und Feeds | [Newsletter](../wachstum/newsletter.md) |
-| Verwandte Geschichten | Beziehungen zwischen Inhaltselementen | [Beziehungen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md) |
+| Verwandte Geschichten | Beziehungen zwischen Inhaltselementen | [Beziehungen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md) |
 
 Die Liste der Funktionen steht in der `README.md` des Repositorys („Main Exponential features“, „Exponential Layouts“).
 Die obigen Klassennamen sind die der Demo-Installation unter <https://alpha.se7enx.com>; Ihre Website verwendet
@@ -43,7 +43,7 @@ Die meisten Magazine finden, dass eine einfache Struktur am besten funktioniert:
 4. **Ein Erscheinungsdatum für die Ausgabe**, mit Beiträgen, die so geplant sind, dass sie zusammen erscheinen.
 
 Ihr Website-Ersteller oder Partner legt beim Bau der Website fest, wie sich das auf Klassen und den Inhaltsbaum
-abbildet ([Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)). Passt die
+abbildet ([Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)). Passt die
 Struktur nicht mehr zu Ihrer Arbeitsweise, ist das eine Änderungsanfrage an Ihren Partner
 ([Änderungsanfragen](../partner-und-hoster/aenderungsanfragen.md)), nichts, was man in jeder Ausgabe umgehen sollte.
 
@@ -80,7 +80,7 @@ verkauft, ergänzen Sie den [Lesepfad für Onlineshops](lesepfad-onlineshops.md)
 - [Lesepfad für Magazine](lesepfad-magazine.md)
 - [Nachrichtenredaktionen: hier beginnen](nachrichtenredaktionen-hier-beginnen.md)
 - [Blogs: hier beginnen](blogs-hier-beginnen.md)
-- [Landingpages mit Layouts (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)
+- [Landingpages mit Layouts (Website-Ersteller)](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

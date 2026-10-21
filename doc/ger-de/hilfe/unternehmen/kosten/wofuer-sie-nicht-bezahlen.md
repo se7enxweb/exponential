@@ -75,12 +75,12 @@ Aus `README.md`, „Main Exponential features“, und den Erweiterungen, die `co
 | Online-Shop | „Advanced e-Commerce Stores (Built in)“ mit USt, Währungen, Bestellungen; PayPal über `ezpaypal` | [Shops](../shops/README.md) |
 | Newsletter | `cjw_newsletter` wird von `composer.json` verlangt | [Newsletter](../newsletter/README.md) |
 | Zweistufige Anmeldung | `sevenx_authentication_2fa` wird verlangt, und die Installer aktivieren es | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Prüfprotokoll | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicheres Prüfprotokoll mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
-| Suche | „Built in search engine“ (eingebaute Suchmaschine); Solr über `ezfind` ist optional | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
+| Prüfprotokoll | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicheres Prüfprotokoll mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
+| Suche | „Built in search engine“ (eingebaute Suchmaschine); Solr über `ezfind` ist optional | [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md) |
 | Sprachen | „Advanced multi-lingual support“ (umfassende Mehrsprachigkeit) | [Mehrsprachig](../mehrsprachig/README.md) |
 | Headless und Apps | „A headless CRUD REST API“ | [Mobil und headless](../mobil-und-headless/README.md) |
-| Seitenbaukasten | Exponential Layouts | [Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md) |
-| Formulare | „Contact forms“ (Kontaktformulare) mit dem Information Collector; Erweiterungen für reCAPTCHA und hCaptcha | [Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
+| Seitenbaukasten | Exponential Layouts | [Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md) |
+| Formulare | „Contact forms“ (Kontaktformulare) mit dem Information Collector; Erweiterungen für reCAPTCHA und hCaptcha | [Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
 | Aktualisierungen in der Administration | `ezupdate` wird verlangt | [Automatische Aktualisierungen mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |
 
 Bevor Sie einen Posten aus dem Budget streichen, prüfen Sie, ob die enthaltene Funktion tut, was Sie brauchen: Eine

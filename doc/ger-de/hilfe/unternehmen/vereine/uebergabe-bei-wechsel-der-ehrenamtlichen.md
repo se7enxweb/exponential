@@ -38,7 +38,7 @@ die Übergabe sauber machen, und was zu tun ist, wenn der vorherige Administrato
 | Wissen | Der kurze Leitfaden für Redakteure, die Hausregeln, wo die Backups liegen, die monatliche Routine |
 | Offene Arbeit | Entwürfe, ausstehende Freigaben, unbeantwortete Formulareinsendungen |
 
-Der in [Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md#the-editor-guide)
+Der in [Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md#der-leitfaden-für-die-redaktion)
 beschriebene Leitfaden für Redakteure ist das zentrale Dokument: Er nennt „Rollen, nicht ... Personen, die gehen
 könnten“.
 
@@ -46,7 +46,7 @@ könnten“.
 
 - [ ] Aktualisieren Sie den Leitfaden für Redakteure und die Liste, wer was tut.
 - [ ] Erstellen Sie ein frisches Backup und bestätigen Sie, dass es sich wiederherstellen lässt
-      ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+      ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 - [ ] Notieren Sie offene Entwürfe und ausstehende Freigaben; wartende Workflow-Prozesse stehen unter **Setup >
       Workflow-Prozesse** ([Workflows](../../../anleitungen/workflows.md)).
 - [ ] Bearbeiten oder exportieren Sie offene Formulareinsendungen ([Formulare und Rückmeldungen von Mitgliedern](formulare-und-rueckmeldungen-von-mitgliedern.md#aufräumen)).
@@ -58,7 +58,7 @@ könnten“.
 **Benutzerkonten > Benutzerkonten prüfen** (`user/hygiene`) listet Konten mit Filtern wie **Nie angemeldet**, **Seit
 N Tagen nicht gesehen** (standardmäßig 180), **Deaktiviert** und **Gesperrt** und kann angehakte Konten nach einer
 Bestätigung **Deaktivieren**, **Aktivieren** und **Entsperren**
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 Deaktivieren Sie lieber, als zu entfernen: „Ein Benutzerobjekt kommt in Exponential nie in den Papierkorb ... das
 Entfernen ist endgültig“ (dieselbe Seite). Ein deaktiviertes Konto behält die Inhalte und die Historie der Person und
@@ -68,7 +68,7 @@ kann sich wieder anmelden, wenn sie zurückkommt.
 einzige verborgene Gruppe ohne Rollen und merkt sich, wo sie waren; **Reaktivieren und zurückverschieben** macht es
 rückgängig. Die Funktion muss eingeschaltet werden: Ausgeliefert wird `site.ini [UserSettings] DeactivateAndMove=disabled`,
 und ein Administrator schaltet sie ein
-([Deaktivieren und verschieben](../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move)). Für eine Gruppe, deren
+([Deaktivieren und verschieben](../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben)). Für eine Gruppe, deren
 Ehrenamtliche oft zurückkehren, hält sie die Benutzerliste sauber, ohne jemanden zu verlieren.
 
 ## Ändern, wem Inhalte gehören
@@ -96,7 +96,7 @@ Jederzeit zwei Administratoren: Der neue wird hinzugefügt, bevor der scheidende
 Das passiert, wenn der einzige Administrator gegangen ist. Jemand mit Zugang zum Server kann mit
 `bin/php/resetuserpassword.php` ein neues Passwort setzen, zum Beispiel ein neues Passwort mit 20 Zeichen für `admin`
 erzeugen; „das erzeugte Passwort wird einmal ausgegeben“
-([Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+([Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 Dafür braucht es Zugang zum Server, ein Grund mehr, das Hosting-Konto in den Händen der Gruppe zu halten.
 
 > **Warnung**
@@ -107,9 +107,9 @@ Dafür braucht es Zugang zum Server, ein Grund mehr, das Hosting-Konto in den H�
 
 Das Prüfprotokoll hält Anmeldungen und Abweisungen, Änderungen an Inhalten, Schreibvorgänge an Einstellungen und mehr
 fest, ist standardmäßig eingeschaltet und lässt sich in der Administration oder auf der Kommandozeile lesen
-([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Ein neuer Administrator sieht, welche Konten zuletzt aktiv
+([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Ein neuer Administrator sieht, welche Konten zuletzt aktiv
 waren und was sich in den letzten Monaten geändert hat, ohne fragen zu müssen. Die Logdateien stehen im Log-Viewer
-([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 
 ## Nach der Übergabe
 

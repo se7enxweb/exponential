@@ -39,7 +39,7 @@ Die gezählten Werte, mit Methoden und Daten, stehen unter [Exponential in Zahle
 | Verlangte Pakete von se7enxweb | Zählen Sie die Zeilen mit `se7enxweb/` im Abschnitt `require` der `composer.json` |
 | Pakete von se7enxweb auf Packagist | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
 | Öffentliche Repositorys von se7enxweb | Die Zahl der Repositorys auf <https://github.com/se7enxweb> |
-| Locale-Dateien und Übersetzungen | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Locale-Dateien und Übersetzungen | [Sprachen in Exponential](../../sprachen.md) |
 
 Wenn Ihre Zählung von der dokumentierten abweicht, hat sich das Repository wahrscheinlich weiterentwickelt. Drucken
 Sie Ihre, mit Ihrem Datum.

@@ -35,7 +35,7 @@ werden in ihren eigenen Repositorys veröffentlicht.
 
 - Beobachten Sie die GitHub-Releases des Kernels und der Erweiterungen, die Sie nutzen.
 - **Setup > Updates and packages** zeigt, für welche installierten Pakete es neuere Versionen gibt
-  ([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+  ([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 - Lesen Sie die Changelogs vor dem Aktualisieren ([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md) für die
   aktuelle Versionslinie).
 
@@ -58,9 +58,9 @@ Das vollständige Verfahren: [Aktualisieren](../../../anleitungen/aktualisieren.
 ## Härtung und Überwachung
 
 - [Sicherheitshärtung](../../sicherheitshaertung.md) und [13. Sicherheitshärtung](../../../installation/13-sicherheitshaertung.md).
-- Die Zuordnung zu OWASP und der Stand jeder Maßnahme: [Sicherheitsstandards](../../../../eng-us/standards/security.md).
+- Die Zuordnung zu OWASP und der Stand jeder Maßnahme: [Sicherheitsstandards](../../../standards/sicherheit.md).
 - Die Alarmregeln des Prüfprotokolls für Brute-Force-Anmeldeversuche, Rollenvergaben und Massenlöschungen
-  ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+  ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 Rahmenwerke wie das [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) oder in der EU die
 Pflichten, die sich aus der [NIS2-Richtlinie (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) für
@@ -77,7 +77,7 @@ davon.
 ## Verwandte Seiten
 
 - [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)
-- [Updates und Aktualisierungen](../../../../eng-us/help/creators/website-creators/updates-and-upgrades.md)
+- [Updates und Aktualisierungen](../../ersteller/website-ersteller/updates-und-aktualisierungen.md)
 - [Composer-Pakete und Quellcode auf GitHub](composer-pakete-und-quellcode-auf-github.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

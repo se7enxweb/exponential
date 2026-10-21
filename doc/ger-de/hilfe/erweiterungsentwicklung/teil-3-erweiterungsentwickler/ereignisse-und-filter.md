@@ -97,16 +97,16 @@ Im Code des Kernels gefunden mit `grep -rn "getInstance()->notify\|getInstance()
 | `httpcache/store/headers` | filter | Header, die mit einem Eintrag des HTTP-Caches gespeichert werden |
 
 Die Zugriffsfilter und die Schlüssel des View-Caches sind in
-[Filter für Zugriff und View-Cache](../../../../eng-us/features/6.0/access-and-cache-filters.md) dokumentiert,
+[Filter für Zugriff und View-Cache](../../../funktionen/6.0/zugriffs-und-cache-filter.md) dokumentiert,
 Inhaltseinschränkungen in
-[Inhaltseinschränkungen von Richtlinien durch Erweiterungen](../../../../eng-us/features/6.0/content-limitation-handlers.md).
+[Inhaltseinschränkungen von Richtlinien durch Erweiterungen](../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md).
 
 ## Ereignisse von Befehlen, Cronjobs und Views
 
 Runnables kündigen `runnable/<kind>/before` (notify, mit `$runnable, $class, $scope`) und `runnable/<kind>/after`
 (Filter des Ergebnisses) an, wobei `<kind>` `command`, `cronjob` oder `view` ist, und `runcronjobs.php` fragt den
 Filter `cronjob/part/run`, bevor ein Teil ausgeführt wird
-([Einen Cronjob-Teil auslassen](../../../../eng-us/features/6.0/cronjob-part-filter.md)). Sie werden in
+([Einen Cronjob-Teil auslassen](../../../funktionen/6.0/filter-fuer-cronjob-teile.md)). Sie werden in
 `site.ini [RunnableSettings] Listeners[]` registriert, das auch erlaubt, eine Runnable-Klasse mit
 `Implementation[<class>]=<subclass>` zu ersetzen.
 

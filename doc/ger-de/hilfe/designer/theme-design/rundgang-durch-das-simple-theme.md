@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Designer, die das Design simple der Erweiterung `sevenx_themes_simple` (Composer-Paket `se7enxweb/sevenx_themes_simple`)
 verwenden oder anpassen, das leichte und responsive öffentliche Design einer Standardinstallation. Sie beantwortet: wie das Design
 aufgebaut ist, wie es seine Dateien lädt und worauf Sie achten sollten, wenn Sie darauf aufbauen. Die eigene Seite der Erweiterung ist
-[sevenx_themes_simple](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md).
+[sevenx_themes_simple](../../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md).
 
 ## Inhalt
 

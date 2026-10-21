@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektverantwortliche, die Koordination Barrierefreiheit und die Redaktion, die die
 Erklärung veröffentlicht. Exponential liefert **keine Vorlage für eine Erklärung zur Barrierefreiheit** mit; das Projekt
 nennt das als Lücke gegenüber der Richtlinie über barrierefreie Websites
-([Standards zur Barrierefreiheit: EN 301 549](../../../../eng-us/standards/accessibility.md#en-301-549)). Die folgende Gliederung
+([Standards zur Barrierefreiheit: EN 301 549](../../../standards/barrierefreiheit.md#en-301-549)). Die folgende Gliederung
 folgt der Leitlinie von W3C WAI, Developing an Accessibility Statement (<https://www.w3.org/WAI/planning/statements/>).
 Veröffentlicht Ihr Land eine Mustererklärung, verwenden Sie dieses Muster; es hat Vorrang.
 
@@ -67,13 +67,13 @@ Schreiben Sie nie, die Website sei barrierefrei, „weil sie ein barrierefreies 
    Inhaltsbaum), in jedem Sprach-Siteaccess der Website.
 2. Geben Sie ihr einen stabilen, lesbaren URL-Alias, zum Beispiel `/accessibility`, damit sich die Adresse in Ihrer
    Fußzeile und in Berichten nie ändert
-   ([URL-Aliase und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)). Ein globaler Alias
+   ([URL-Aliase und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)). Ein globaler Alias
    lässt sich auch unter Setup > URL-Übersetzer setzen
    ([Globale URL-Aliase](../../../anleitungen/urls-und-aliase.md#3-globale-url-aliase)).
 3. Verlinken Sie sie aus der Fußzeile jeder Seite: in Ihrem Pagelayout oder der gemeinsamen Fußzeile
-   ([Gemeinsamer Kopf- und Fußbereich](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)).
+   ([Gemeinsamer Kopf- und Fußbereich](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)).
 4. Bieten Sie ein Rückmeldeformular an, bauen Sie es mit dem Informationssammler
-   ([Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)) und nennen Sie in der
+   ([Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)) und nennen Sie in der
    Datenschutzerklärung, was mit den Nachrichten geschieht.
 5. Schreiben Sie die Erklärung selbst barrierefrei: echte Überschriften, einfache Sprache, keine Informationen nur in
    einem PDF.
@@ -89,8 +89,8 @@ Schreiben Sie nie, die Website sei barrierefrei, „weil sie ein barrierefreies 
 ## Verwandte Seiten
 
 - W3C WAI, [Eine Erklärung zur Barrierefreiheit entwickeln](https://www.w3.org/WAI/planning/statements/)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

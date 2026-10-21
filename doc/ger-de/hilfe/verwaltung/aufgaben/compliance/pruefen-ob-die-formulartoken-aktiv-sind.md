@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, beim Go-live und nach Upgrades oder Änderungen an Einstellungen. Ohne `ezformtoken` könnte eine
 andere Site den Browser eines angemeldeten Redakteurs dazu bringen, zu veröffentlichen, zu löschen oder Rollen zu
-ändern ([CSRF und Formulartoken](../../../../../eng-us/help/government/security/csrf-and-form-tokens.md)).
+ändern ([CSRF und Formulartoken](../../sicherheit/csrf-und-formular-tokens.md)).
 
 ## Inhalt
 
@@ -49,9 +49,9 @@ andere Site den Browser eines angemeldeten Redakteurs dazu bringen, zu veröffen
 
 ## Verwandte Seiten
 
-- [CSRF und Formulartoken](../../../../../eng-us/help/government/security/csrf-and-form-tokens.md)
+- [CSRF und Formulartoken](../../sicherheit/csrf-und-formular-tokens.md)
 - [13.8 Formulartoken](../../../../installation/13-sicherheitshaertung.md#138-formular-tokens-gegen-cross-site-request-forgery)
-- [Seite für abgelaufene Formulare](../../../../../eng-us/features/6.0/form-expired-page.md)
+- [Seite für abgelaufene Formulare](../../../../funktionen/6.0/seite-abgelaufenes-formular.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

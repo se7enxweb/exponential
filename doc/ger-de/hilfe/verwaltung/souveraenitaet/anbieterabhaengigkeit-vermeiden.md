@@ -41,7 +41,7 @@ nur die erste. Die anderen vermeiden Sie dadurch, wie Sie bauen, hosten und Vert
 | Daten | Exporte als CSV, JSON, XML; Pakete als `.ezpkg`; REST-API; Datenbank-Dumps je Datenbank | siehe „Inhalte und Pakete exportieren“ |
 | Hosting | viele Betriebssysteme und Hostingmodelle, mit Stufen dokumentiert | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
 | Datenbank | sechs unterstützte Datenbanken, darunter drei Server aus freier Software und SQLite | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
-| Kompetenzen | freie Dokumentation, Schulungsmaterial, ein Partnerprogramm, das jedem Unternehmen offensteht | [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md), [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) |
+| Kompetenzen | freie Dokumentation, Schulungsmaterial, ein Partnerprogramm, das jedem Unternehmen offensteht | [Kurskatalog](../../trainer/kurskatalog.md), [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) |
 | Vertrag | überhaupt kein Lizenzvertrag | die Lizenz |
 
 ## Praktiken, die Sie frei halten

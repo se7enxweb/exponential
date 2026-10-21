@@ -17,7 +17,7 @@ Versionsverwaltung halten.
 
 ![Setup, Extensions: die Erweiterungen auf der Festplatte, welche aktiv sind, und die Schaltfläche zum Neuerzeugen der Autoload-Arrays](../../../../eng-us/help/images/hosting/extensions.webp)
 
-Die Referenz ist [Eine PHP-Änderung ausrollen](../../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy);
+Die Referenz ist [Eine PHP-Änderung ausrollen](../../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy);
 die Schritt-für-Schritt-Anleitung ist [Exponential ausrollen](../../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern).
 
 ## Inhalt
@@ -125,7 +125,7 @@ geladen werden.
   ([Wartungsmodus](wartungsmodus.md)).
 - **Mehrere Knoten.** Führen Sie das Ausrollen auf jedem Knoten aus ([Mehrere Web-Knoten](mehrere-web-knoten.md)).
 - **Keine Shell.** Für Kunden ohne Shell-Zugang bietet die Erweiterung `git_manager` ein Git-Dashboard und Backups in der
-  Administration ([git_manager](../../../../eng-us/features/6.0/extensions/git_manager.md)); die Schritte für Caches und Neuladen müssen
+  Administration ([git_manager](../../../funktionen/6.0/erweiterungen/git_manager.md)); die Schritte für Caches und Neuladen müssen
   danach trotzdem erfolgen.
 
 ## Einstellungen je Umgebung
@@ -133,14 +133,14 @@ geladen werden.
 Eine Installation existiert oft als Live-Website, als Staging-Kopie und als Kopie eines Entwicklers. `EXP_ENV` nennt die Umgebung
 einer Maschine in `config.env.php` (kopiert aus `config.env.php.example`, außerhalb der Versionsverwaltung gehalten), und jede
 Einstellungsdatei kann daneben eine Variante dafür haben, etwa `settings/override/site.ini.test.append.php`
-([Einstellungen je Umgebung](../../../../eng-us/features/6.0/environment-settings.md)). Mailtransport, Adressen der Website und
+([Einstellungen je Umgebung](../../../funktionen/6.0/umgebungseinstellungen.md)). Mailtransport, Adressen der Website und
 Debug-Einstellungen unterscheiden sich dann je Maschine ohne Handarbeit nach jedem Ausrollen.
 
 ## Konfiguration über das Ausrollen verwaltet
 
 Auf einer Website, deren Konfiguration in der Versionsverwaltung liegt, landen Änderungen aus der Administration im
 Release-Verzeichnis, wo die Versionsverwaltung sie nicht sieht und das nächste Ausrollen sie verwirft. Ein Schalter pro
-Siteaccess verhindert das ([Konfiguration über das Ausrollen verwaltet](../../../../eng-us/features/6.0/managed-by-deployment.md)):
+Siteaccess verhindert das ([Konfiguration über das Ausrollen verwaltet](../../../funktionen/6.0/durch-deployment-verwaltet.md)):
 
 ```ini
 # settings/siteaccess/<admin siteaccess>/site.ini.append.php

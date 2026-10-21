@@ -70,7 +70,7 @@ wird, Texte selbst zu korrigieren, und entscheiden Sie dann, ob ihre eigenen Bea
 2. Legen Sie die Rolle „Freigebende“ mit den obigen Richtlinien an (**Benutzer > Rollen und Richtlinien > Neue Rolle**) und weisen Sie sie
    der Gruppe zu, mit **Mit Einschränkungen zuordnen: Teilbaum**, wenn es Freigebende je Fachbereich gibt.
 3. Öffnen Sie unter **Setup > Workflows** das Freigabe-Ereignis des Freigabe-Workflows und fügen Sie die Gruppe unter **Gruppen, die
-   Content freigeben** hinzu ([Einen Freigabe-Workflow für eine Sektion einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-an-approval-workflow-for-a-section.md)).
+   Content freigeben** hinzu ([Einen Freigabe-Workflow für eine Sektion einrichten](../../aufgaben/personen-und-berechtigungen/einen-freigabe-workflow-fuer-eine-sektion-einrichten.md)).
 4. Stellen Sie sicher, dass der Workflow-Cronjob läuft: **Setup > Workflow-Prozesse** zeigt in seiner Statusleiste, ob `workflow.php`
    eingeplant ist.
 
@@ -83,7 +83,7 @@ wird, Texte selbst zu korrigieren, und entscheiden Sie dann, ob ihre eigenen Bea
   **Setup > Workflow-Prozesse** verschwunden.
 
 ## Verwandte Seiten
-- [Einer freigebenden Person Rechte geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-approver-rights.md)
+- [Einer freigebenden Person Rechte geben](../../aufgaben/personen-und-berechtigungen/einem-freigebenden-rechte-geben.md)
 - [Überblick über Freigabe-Workflows](../redaktionelle-workflows/freigabe-workflows-im-ueberblick.md)
 - [Posteingang der Zusammenarbeit](../redaktionelle-workflows/posteingang-der-zusammenarbeit.md)
 - [Funktionstrennung](funktionstrennung.md)

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Administratoren, die ihr erstes Formular für eine Site des öffentlichen
 Sektors bauen. Sie fasst zusammen, wie der Information Collector funktioniert, mit den wichtigen Einstellungen, und
 verweist auf die vollständigen Anleitungen:
-[Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)
+[Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)
 und [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md).
 
 ## Inhalt
@@ -45,7 +45,7 @@ und [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.
 | Advanced feedback form | `cjw_feedback_form` | wo die CJW-Erweiterungen installiert sind |
 
 Fügen Sie eine eigene Klasse hinzu, wenn Sie andere Felder brauchen
-([Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)).
+([Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)).
 
 ## Formulartypen und ihre Einstellungen
 
@@ -82,13 +82,13 @@ Eine Weiterleitung verhindert auch, dass ein Neuladen das Formular erneut sendet
 5. Prüfen Sie, dass die Mail angekommen ist (testen Sie zuerst mit dem Datei-Transport:
    [Mail an Empfänger](mail-an-empfaenger.md)).
 
-Für jedes Detail: [Ein Kontaktformular bauen, Schritt für Schritt](../../../../../eng-us/help/creators/website-creators/building-a-contact-form.md).
+Für jedes Detail: [Ein Kontaktformular bauen, Schritt für Schritt](../../../ersteller/website-ersteller/ein-kontaktformular-bauen.md).
 
 ## Verwandte Seiten
 
 - [Formulare aufbauen](README.md)
 - [Barrierefreie Formulare](barrierefreie-formulare.md)
-- [Formulareinsendungen lesen und exportieren](../../../../../eng-us/help/creators/website-creators/form-submissions.md)
+- [Formulareinsendungen lesen und exportieren](../../../ersteller/website-ersteller/formulareinsendungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

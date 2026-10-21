@@ -51,7 +51,7 @@ typische Paketbestellung diese Schritte:
 5. **Completed**, wenn es zugestellt ist, oder bei Abholbestellungen **Ready for pickup** und dann **Completed**.
 
 Nutzen Sie die Spaltensortierung der Bestellliste, um Bestellungen nach Datum, Status oder Wert abzuarbeiten
-([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)).
+([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)).
 
 > **Tipp**
 > Ändern Sie den Status in dem Moment, in dem die Arbeit erledigt ist, nicht am Ende des Tages. Die offenen
@@ -65,7 +65,7 @@ Nutzen Sie die Spaltensortierung der Bestellliste, um Bestellungen nach Datum, S
 4. Setzen Sie **Refunded** oder **Partially refunded**.
 
 Erstattete Bestellungen fallen aus den Umsatzzahlen heraus; teilweise erstattete Bestellungen zählen als abgeschlossen
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md#order-statuses-for-the-whole-lifecycle)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md#bestellstatus-für-den-ganzen-lebenszyklus)).
 Mit ezauthorize gibt es in der Administration ein Erstattungsmodul ([Kartenzahlungen und PCI-Grundlagen](kartenzahlungen-und-pci-grundlagen.md)).
 
 ## Kundenfragen
@@ -76,19 +76,19 @@ Mit ezauthorize gibt es in der Administration ein Erstattungsmodul ([Kartenzahlu
 | „Ich habe meine Bestätigung verloren“ | Schicken Sie den Beleg-Link erneut, wenn dauerhafte Belege eingeschaltet sind ([Bestellbelege und Bestätigungsmails](bestellbelege-und-bestaetigungsmails.md)) |
 | „Mir wurde Geld abgebucht, aber ich habe keine Bestellung“ | Das Konto beim Anbieter, dann die Bestellliste nach Pending oder Payment failed |
 | „Bitte ändern Sie meine Anschrift“ | Prüfen Sie die Anschrift in der Bestellansicht und vereinbaren Sie im Team, wie eine Änderung behandelt wird, bevor die Bestellung auf Shipped steht |
-| „Schicken Sie mir keine Angebote mehr“ | Der Abmeldelink oder die E-Mail-Einstellungen des Kunden ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)) |
+| „Schicken Sie mir keine Angebote mehr“ | Der Abmeldelink oder die E-Mail-Einstellungen des Kunden ([Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)) |
 
 ## Jede Woche
 
 - [ ] Die Viertelstunden-Durchsicht unter [Shop-Dashboard und Berichte](shop-uebersicht-und-berichte.md#eine-wöchentliche-durchsicht).
 - [ ] Archivieren Sie abgeschlossene Bestellungen, die älter als Ihre Rückgabefrist sind (`shop/archiveorder`).
 - [ ] Aktualisieren Sie Produkte: neue Artikel, ausverkaufte Artikel ausgeblendet, Preise geprüft.
-- [ ] Lesen Sie die Logs oder bitten Sie den Hoster um eine Zusammenfassung ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+- [ ] Lesen Sie die Logs oder bitten Sie den Hoster um eine Zusammenfassung ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 
 ## Jeden Monat
 
 - [ ] Monatsabschlusszahlen aus **Shop > Statistik** für Ihre Buchhaltung.
-- [ ] Suchbegriffe ohne Ergebnisse ([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)).
+- [ ] Suchbegriffe ohne Ergebnisse ([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)).
 - [ ] Eine Newsletter-Ausgabe an Abonnenten, die eingewilligt haben ([Newsletter](../newsletter/README.md)).
 - [ ] Prüfen Sie, ob die Backups gelaufen sind und die Cronjobs (einschließlich der Warenkorb-Bereinigung) laufen ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Fragen Sie den Hoster oder Partner nach Updates für Exponential und die Erweiterungen ([Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)).
@@ -117,7 +117,7 @@ Schreiben Sie eine einseitige Übergabe für die Vertretung:
 ## Verwandte Seiten
 
 - [Bestellungen und Bestellstatus](bestellungen-und-bestellstatus.md)
-- [Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)
+- [Ihre Website pflegen](../../ersteller/website-ersteller/ihre-website-pflegen.md)
 - [Betrieb einer Site: Caches, Cronjobs, Sicherungen und Reparaturen](../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

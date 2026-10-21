@@ -1,7 +1,7 @@
 # Die Umschaltung des Administrationsdesigns: Einstellungen, Designs und Rollen
 
 Diese Anleitung richtet sich an Administratoren und Entwickler, die die Wahl des Administrationsdesigns pro Sitzung
-einrichten ([die Funktion](../../eng-us/features/6.0/ui-switch-design.md)). Sie lesen die Einstellungen, fügen der Liste ein
+einrichten ([die Funktion](../funktionen/6.0/ui-umschalter-design.md)). Sie lesen die Einstellungen, fügen der Liste ein
 installiertes Design hinzu, stellen sicher, dass jedes angebotene Design dem Benutzer das Zurückschalten erlaubt, geben
 einer Rolle die Berechtigung, testen das Ergebnis und lösen die üblichen Probleme. Das dauert etwa zwanzig Minuten.
 
@@ -243,9 +243,9 @@ Name einer Cache-Datei ist derselbe wie ohne die Funktion. Eine gespeicherte Wah
 
 ## Siehe auch
 
-- [Funktion: das Administrationsdesign wählen](../../eng-us/features/6.0/ui-switch-design.md)
-- [Hinweise für Entwickler: die Umschaltung des Administrationsdesigns](../../eng-us/bc/6.0/ui-switch-design.md)
-- [UI-Umschaltung](../../eng-us/features/6.0/ui-switch.md) und [ihre Einstellungen](ui-umschalter-einstellungen.md)
+- [Funktion: das Administrationsdesign wählen](../funktionen/6.0/ui-umschalter-design.md)
+- [Hinweise für Entwickler: die Umschaltung des Administrationsdesigns](../bc/6.0/ui-umschalter-design.md)
+- [UI-Umschaltung](../funktionen/6.0/ui-umschalter.md) und [ihre Einstellungen](ui-umschalter-einstellungen.md)
 - [Rollen und Richtlinien](rollen-und-richtlinien.md), [Caches](caches.md), [Templates und Design](templates-und-design.md)
 
 <!-- exp-partner-block:start -->

@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller, die Besucher Inhalte nach Themen 
 `eztags` (in der Administration als **Tags** angezeigt) fügt einen Tag-Baum hinzu, den Sie verwalten, ein Tag-Feld für
 Klassen mit Autovervollständigung und eine Seite je Tag, die alles auflistet, was damit verschlagwortet ist. Sie leistet
 mehr als der Datentyp `ezkeyword` des Kernels: eine Hierarchie, Synonyme sowie geschlossene oder offene Vokabulare
-([eztags](../../../../eng-us/features/6.0/extensions/eztags.md)).
+([eztags](../../../funktionen/6.0/erweiterungen/eztags.md)).
 
 ![Das Tags-Dashboard: der Tag-Baum und die neuesten Tags](../../../../eng-us/help/images/creators/tags-dashboard.webp)
 
@@ -58,7 +58,7 @@ mehr als der Datentyp `ezkeyword` des Kernels: eine Hierarchie, Synonyme sowie g
 
 ## Einstellungen, auf die es ankommt
 
-Aus `eztags.ini` ([eztags, Einstellungen](../../../../eng-us/features/6.0/extensions/eztags.md#settings)):
+Aus `eztags.ini` ([eztags, Einstellungen](../../../funktionen/6.0/erweiterungen/eztags.md#einstellungen)):
 
 | Block | Schlüssel | Standard | Bedeutung |
 |---|---|---|---|

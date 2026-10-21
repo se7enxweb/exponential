@@ -13,7 +13,7 @@ Diese Seite richtet sich an Anwendungsentwickler, die Symfony für einen Teil ei
 Projekt betreuen, das beides ausführt. Die Legacy Bridge ist ein Symfony-Bundle, das den Kernel von Exponential 6
 innerhalb einer Installation der Symfony-Plattform lädt; eine einzige Webanwendung bedient dann die Legacy-Administration
 und die Legacy-Templates sowie den Symfony-Stack, auf derselben Datenbank
-([Legacy Bridge](../../../../eng-us/features/6.0/legacy-bridge.md)).
+([Legacy Bridge](../../../funktionen/6.0/legacy-bridge.md)).
 
 ## Inhalt
 
@@ -41,7 +41,7 @@ Die Spezifikation ist [Legacy-Bridge-Bundle](../../../spezifikationen/6.0/legacy
 
 Das Bundle hat eine Linie je Plattformgeneration (die Linie für Plattform 2.5 auf `master`, spätere Linien auf eigenen
 Branches); die Tabelle mit den Symfony- und PHP-Versionen steht unter
-[Legacy Bridge](../../../../eng-us/features/6.0/legacy-bridge.md#which-version-for-which-platform). Prüfen Sie die Produktfamilie,
+[Legacy Bridge](../../../funktionen/6.0/legacy-bridge.md#welche-version-für-welche-plattform). Prüfen Sie die Produktfamilie,
 bevor Sie einen Stack zusagen: Nicht jedes Plattformprodukt enthält den Legacy-Kernel oder den Layouts-Editor
 ([Was Exponential ist: die Produktfamilie](../../fuehrung/was-exponential-ist.md)).
 
@@ -57,7 +57,7 @@ bevor Sie einen Stack zusagen: Nicht jedes Plattformprodukt enthält den Legacy-
 
 - [Architektur für Anwendungsentwickler](architektur-fuer-anwendungsentwickler.md)
 - [Migration von eZ Platform und Ibexa](../../../installation/16-migration-von-ez-platform-und-ibexa.md)
-- [Site-Bundles der Plattform](../../../../eng-us/features/6.0/platform-site-bundles.md)
+- [Site-Bundles der Plattform](../../../funktionen/6.0/plattform-site-bundles.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

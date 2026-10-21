@@ -6,12 +6,12 @@ neuen Einstellungen und die Korrekturen, die Ihnen auffallen könnten. Das Relea
 alles Folgende gehört zur Linie 6.0.15. Für September und Oktober siehe
 [Verhaltensänderungen vom 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md) und
 [Verhaltensänderungen vom Oktober 2026](verhaltensaenderungen-2026-10.md). Die Geschichten der Monate sind
-[Juli](../../../eng-us/history/2026/2026-07.md) und [August](../../../eng-us/history/2026/2026-08.md).
+[Juli](../../geschichte/2026/2026-07.md) und [August](../../geschichte/2026/2026-08.md).
 
 ## Kurze Checkliste
 
 1. Stellen Sie sicher, dass jedes Benutzerkonto eine Zeile in `ezuser_setting` hat
-   ([wie Sie die finden, die keine haben](../../../eng-us/specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in)).
+   ([wie Sie die finden, die keine haben](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md#f-06-konten-finden-die-sich-nicht-anmelden-können)).
 2. Wenn Sie die Erweiterungen `bciconextensions` oder `bciconextensions_share_icons` verwenden, entfernen Sie sie aus
    `ActiveExtensions[]`.
 3. Wenn Sie Templates haben, die sich auf selbstschließende XHTML-Tags oder `type="text/css"` verlassen, lesen Sie
@@ -33,13 +33,13 @@ ohne Einstellungszeile als aktiviert. Jetzt wird er als deaktiviert behandelt. I
 haben die Zeile immer; Konten, die per SQL, Paketen oder Migrationen angelegt wurden, vielleicht nicht.
 
 **So prüfen und beheben Sie es.** Finden und reparieren Sie solche Konten mit den Abfragen in der
-[Sicherheitsspezifikation](../../../eng-us/specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in).
+[Sicherheitsspezifikation](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md#f-06-konten-finden-die-sich-nicht-anmelden-können).
 
 ### Die Reihenfolge der Overrides folgt `Priority` (12. Juli)
 
 **Was sich geändert hat.** Die Template-Engine sortiert Override-Blöcke nach dem Schlüssel `Priority` von
 `override.ini`: Die niedrigste Zahl wird zuerst geprüft, und ein Block ohne `Priority` kommt zuletzt. Ein im
-[Template-Editor](../../../eng-us/features/6.0/template-editor-overrides.md) angelegter Block erhält `Priority=0`.
+[Template-Editor](../../funktionen/6.0/template-editor-ueberschreibungen.md) angelegter Block erhält `Priority=0`.
 
 **Wer betroffen ist.** Mischen Sie von Hand geschriebene Blöcke ohne `Priority` mit Blöcken aus dem Editor, gewinnen
 jetzt die Blöcke des Editors.
@@ -67,11 +67,11 @@ siehe den [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) und [YUI-Entfern
 
 - `kickstart.ini` wird nicht mehr aktiv ausgeliefert. Das Beispiel ist `kickstart.ini--example`, die Vorlage
   `kickstart.ini-dist`. Wenn Sie sich auf ein ausgeliefertes `kickstart.ini` verlassen haben, kopieren Sie das Beispiel
-  nach `kickstart.ini` und bearbeiten Sie es. Siehe [Kickstarter](../../../eng-us/features/6.0/kickstarter-cli.md).
+  nach `kickstart.ini` und bearbeiten Sie es. Siehe [Kickstarter](../../funktionen/6.0/kickstarter-cli.md).
 - Eine Kickstart-Installation legt immer die Siteaccesses `site` und `admin` an.
 - Eine neue Installation verwendet standardmäßig `eng-US` und die Exponential-Inhalte aus `share/db_data.dba`;
   bestehende Installationen werden nicht angefasst. Siehe
-  [Standardwerte einer sauberen Installation](../../../eng-us/features/6.0/clean-install-defaults.md).
+  [Standardwerte einer sauberen Installation](../../funktionen/6.0/standardwerte-einer-sauberen-installation.md).
 
 ### Der Autoload-Generator
 
@@ -85,11 +85,11 @@ still bleibt wie vorgesehen. Fehlt eine Klasse, nachdem Sie Erweiterungsordner u
 
 | Datei | Block | Schlüssel | Standard | Geltungsbereich | Bedeutung |
 |---|---|---|---|---|---|
-| `site.ini` | `[TemplateSettings]` | `ShowTemplatePathComments` | `disabled` | global/Siteaccess | START/STOP-Kommentare, die jedes Template nennen. [Funktion](../../../eng-us/features/6.0/template-path-comments.md). |
-| `site.ini` | `[ExtensionSettings]` | `AdditionalExtensionDirectories[]` | leer | global | Weitere Wurzelverzeichnisse für Erweiterungen. [Funktion](../../../eng-us/features/6.0/additional-extension-directories.md). |
-| `site.ini` | `[SiteSettings]` | `EzInstallationName`, `ProductionInstallationList[]` | nicht gesetzt | global | Filter nach dem Namen der Installation. [Funktion](../../../eng-us/features/6.0/installation-name-in-pages.md). |
+| `site.ini` | `[TemplateSettings]` | `ShowTemplatePathComments` | `disabled` | global/Siteaccess | START/STOP-Kommentare, die jedes Template nennen. [Funktion](../../funktionen/6.0/template-pfad-kommentare.md). |
+| `site.ini` | `[ExtensionSettings]` | `AdditionalExtensionDirectories[]` | leer | global | Weitere Wurzelverzeichnisse für Erweiterungen. [Funktion](../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md). |
+| `site.ini` | `[SiteSettings]` | `EzInstallationName`, `ProductionInstallationList[]` | nicht gesetzt | global | Filter nach dem Namen der Installation. [Funktion](../../funktionen/6.0/installationsname-in-seiten.md). |
 | `ezscript.ini` | `[eZScriptSettings]` | `RootDelay` | `10` | global | Sekunden, die ein als root mit `--allow-root-user` ausgeführtes Skript wartet, damit Sie Strg-C drücken können. `0` entfernt die Wartezeit. |
-| `icon.ini` | `[ExtensionSettings]` | `IconExtensions[]` | leer | global/Siteaccess | Erweiterungen, deren Ordner `icons/` durchsucht wird. [Funktion](../../../eng-us/features/6.0/icon-themes-in-extensions.md). |
+| `icon.ini` | `[ExtensionSettings]` | `IconExtensions[]` | leer | global/Siteaccess | Erweiterungen, deren Ordner `icons/` durchsucht wird. [Funktion](../../funktionen/6.0/icon-themes-in-extensions.md). |
 | `menu.ini` | `[Leftmenu_design]` | `Links[template_editor]` | `visual/templatelist` | global | Der Template-Editor im Menü Design. |
 | `transform.ini` | `[search]` | `Commands[]=lowercase` | hinzugefügt | global | Die Umwandlung in Kleinbuchstaben in der Gruppe search. |
 
@@ -104,7 +104,7 @@ RootDelay=0
 ## Korrekturen, die Ihnen auffallen könnten
 
 - **Ausgabe der Konsole:** Jeder Eintrag von `bin/php/console` zeigt eine Beschreibung; `ezpm` ist ein Konsolenbefehl
-  ([ezpm](../../../eng-us/features/6.0/ezpm-package-manager-cli.md)).
+  ([ezpm](../../funktionen/6.0/ezpm-paketmanager-cli.md)).
 - **PHP 7.4 bis 8.5:** String-Offsets mit geschweiften Klammern (Datentyp ISBN13, WebDAV-Backend);
   `#[AllowDynamicProperties]` an `eZINI`, `eZPersistentObject` und `eZWorkflowProcess` (PHP 8.2); nullable
   Array-Typhinweise (`generateUrl`, `fetchRelatedObjects`); ein Integer-Cast für die nächste Bestellnummer (PHP 8.4);
@@ -129,12 +129,12 @@ RootDelay=0
   (`dfba7274e8`, `24c03393db`, `9678728ccc`).
 - **MongoDB:** Der Treiber meldet Fehler über `eZDebug::writeError()` mit dem Präfix `expMongoDB`, nicht über
   `error_log` (`888297a0ca`).
-- **Paketwerkzeuge:** siehe [ezpm](../../../eng-us/features/6.0/ezpm-package-manager-cli.md) zur Installationssperre,
+- **Paketwerkzeuge:** siehe [ezpm](../../funktionen/6.0/ezpm-paketmanager-cli.md) zur Installationssperre,
   zur verzögerten Indizierung und zu gebündelten Commits.
 
 ## Kleinere Änderungen, erklärt
 
-Jede davon hat einen Commit im [Ledger](../../../eng-us/history/ledger/exponential-root.md) und eine kleine, sichtbare
+Jede davon hat einen Commit im [Ledger](../../geschichte/aenderungsverzeichnis/exponential-root.md) und eine kleine, sichtbare
 Wirkung.
 
 | Änderung | Was Sie sehen | Was zu tun ist |
@@ -184,16 +184,16 @@ läuft (`04d17780ae`, `84ebe2f59f`).
 - [Sicherheitsspezifikation vom August 2026](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md) und die
   [CI-Spezifikation](../../spezifikationen/6.0/kontinuierliche-integration.md)
 - [Konsole](konsole.md), [Unterstützung für PHP 8](php8.md), [Kickstarter-CLI](kickstartercli.md), [YUI-Entfernung](yui-entfernung.md)
-- Funktionen des Zeitraums: [ezpm](../../../eng-us/features/6.0/ezpm-package-manager-cli.md),
-  [Template-Editor](../../../eng-us/features/6.0/template-editor-overrides.md),
-  [Kommentare mit Template-Pfaden](../../../eng-us/features/6.0/template-path-comments.md),
-  [Kickstarter](../../../eng-us/features/6.0/kickstarter-cli.md), [Standardwerte einer sauberen Installation](../../../eng-us/features/6.0/clean-install-defaults.md),
-  [Ein Benutzerpasswort zurücksetzen](../../../eng-us/features/6.0/reset-user-password.md),
-  [Redis- und Valkey-Caches](../../../eng-us/features/6.0/valkey-cache-hooks.md),
-  [Erweiterungsliste](../../../eng-us/features/6.0/extension-list-and-downloads.md),
-  [Zusätzliche Erweiterungsverzeichnisse](../../../eng-us/features/6.0/additional-extension-directories.md),
-  [Icon-Themes](../../../eng-us/features/6.0/icon-themes-in-extensions.md),
-  [Name der Installation](../../../eng-us/features/6.0/installation-name-in-pages.md),
-  [jQuery 4 und YUI](../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- Funktionen des Zeitraums: [ezpm](../../funktionen/6.0/ezpm-paketmanager-cli.md),
+  [Template-Editor](../../funktionen/6.0/template-editor-ueberschreibungen.md),
+  [Kommentare mit Template-Pfaden](../../funktionen/6.0/template-pfad-kommentare.md),
+  [Kickstarter](../../funktionen/6.0/kickstarter-cli.md), [Standardwerte einer sauberen Installation](../../funktionen/6.0/standardwerte-einer-sauberen-installation.md),
+  [Ein Benutzerpasswort zurücksetzen](../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md),
+  [Redis- und Valkey-Caches](../../funktionen/6.0/valkey-cache-hooks.md),
+  [Erweiterungsliste](../../funktionen/6.0/extension-liste-und-downloads.md),
+  [Zusätzliche Erweiterungsverzeichnisse](../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md),
+  [Icon-Themes](../../funktionen/6.0/icon-themes-in-extensions.md),
+  [Name der Installation](../../funktionen/6.0/installationsname-in-seiten.md),
+  [jQuery 4 und YUI](../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Verhaltensänderungen vom 16. bis 30. September 2026 (nächste)](verhaltensaenderungen-2026-09b.md)

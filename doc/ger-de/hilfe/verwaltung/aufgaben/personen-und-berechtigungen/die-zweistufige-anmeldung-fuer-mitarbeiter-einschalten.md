@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren. Am Ende melden sich Mitarbeiter mit einem Passwort und einem Code aus einer
 Authenticator-App an. Jede Einstellung steht in [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md); der Plan
 für die Einführung steht auf
-[Zweistufige Anmeldung für Mitarbeiter](../../../../../eng-us/help/government/operations/people-and-permissions/two-factor-for-staff.md).
+[Zweistufige Anmeldung für Mitarbeiter](../../betrieb/personen-und-berechtigungen/zwei-faktor-anmeldung-fuer-beschaeftigte.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -96,7 +96,7 @@ Geht der Schlüssel verloren, richten alle die App neu ein.
 
 ## Verwandte Seiten
 - [Einem Benutzer helfen, der sein Telefon verloren hat](einem-benutzer-helfen-der-sein-telefon-verloren-hat.md)
-- [Zweistufige Anmeldung für Mitarbeiter](../../../../../eng-us/help/government/operations/people-and-permissions/two-factor-for-staff.md)
+- [Zweistufige Anmeldung für Mitarbeiter](../../betrieb/personen-und-berechtigungen/zwei-faktor-anmeldung-fuer-beschaeftigte.md)
 - [Zwei-Faktor-Anmeldung (Hosting)](../../../hosting/sicherheit/zweistufige-anmeldung.md)
 - [Sicherheit und Audit, Schritt 5](../../../../anleitungen/sicherheit-und-audit.md#5-zwei-faktor-anmeldung-optional-10-minuten)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

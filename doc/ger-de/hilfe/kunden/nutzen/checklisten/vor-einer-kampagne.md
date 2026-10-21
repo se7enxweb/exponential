@@ -59,11 +59,11 @@ AFTER
 
 | Punkt | Lesen Sie |
 |---|---|
-| Landingpages und Layouts | [Der Layouts-Editor](../../../layout-editor.md), [Landingpages mit Layouts](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md), [Layout-Regeln](../../../../../eng-us/help/creators/website-creators/layout-rules.md) |
+| Landingpages und Layouts | [Der Layouts-Editor](../../../layout-editor.md), [Landingpages mit Layouts](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md), [Layout-Regeln](../../../ersteller/website-ersteller/layout-regeln.md) |
 | Entwürfe und Vorschau | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Adressen | [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md) |
-| Metadaten und Teilen | [Metadaten und Teilen in sozialen Netzwerken](../../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md) |
-| Newsletter und Einwilligung | [Newsletter versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md), [Opt-in und Einwilligung](../../../unternehmen/newsletter/opt-in-und-einwilligung.md) |
+| Metadaten und Teilen | [Metadaten und Teilen in sozialen Netzwerken](../../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md) |
+| Newsletter und Einwilligung | [Newsletter versenden](../../../ersteller/website-ersteller/newsletter-versenden.md), [Opt-in und Einwilligung](../../../unternehmen/newsletter/opt-in-und-einwilligung.md) |
 | Shop | [Rabatte](../../handel/rabatte.md), [Vorbereitung auf die Hochsaison](../../handel/vorbereitung-auf-die-hochsaison.md) |
 | Kapazität | [Planung für Lastspitzen](../../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md) |
 

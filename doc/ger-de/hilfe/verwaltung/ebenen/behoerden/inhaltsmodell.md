@@ -14,7 +14,7 @@ Regulierungsbehörde, Aufsichtsbehörde oder nachgeordneten Behörde entwerfen. 
 versioniert und mit ihrem Status gekennzeichnet sind. Die genannten Klassen und Datentypen gibt es in Exponential
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md), `kernel/classes/datatypes/`, genannte
 Erweiterungen); der Klasseneditor ist unter
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) beschrieben.
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) beschrieben.
 
 ## Inhalt
 
@@ -108,7 +108,7 @@ Attribut in `content.ini [HideSettings] HideDateAttributeList[]` und den Ordner 
 
 - [Behörden](README.md)
 - [Leitfäden für regulierte Akteure](leitfaeden-fuer-regulierte-akteure.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

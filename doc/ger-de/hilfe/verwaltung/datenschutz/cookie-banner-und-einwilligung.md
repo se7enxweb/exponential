@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen, Datenschutzbeauftragte, Designer und Entwickler. Exponential liefert
 **weder ein Cookie-Einwilligungsbanner noch einen Consent-Manager** im Kernel oder in den mitgelieferten Designs aus;
 laut der Aussage des Projekts wurde in `kernel/`, `design/` oder `settings/` keines gefunden
-([Datenschutzstandards: ePrivacy-Richtlinie](../../../../eng-us/standards/privacy.md#eprivacy-directive-cookies)). Die eigenen
+([Datenschutzstandards: ePrivacy-Richtlinie](../../../standards/datenschutz.md#eprivacy-richtlinie-cookies)). Die eigenen
 Cookies des Kernels sind funktional. Ein Banner wird zu Ihrer Aufgabe, wenn Sie Speicherung oder Dienste hinzufügen,
 die eine Einwilligung erfordern. ePrivacy-Richtlinie: <https://eur-lex.europa.eu/eli/dir/2002/58/oj>.
 
@@ -52,7 +52,7 @@ die eine Einwilligung erfordern. ePrivacy-Richtlinie: <https://eur-lex.europa.eu
 ## Alternativen, die es vermeiden
 
 - Nutzen Sie die betrieblichen Statistiken, die Exponential führt (Suchstatistiken, Aufrufzähler), wo sie die Frage
-  beantworten ([Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
+  beantworten ([Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
 - Selbst betriebene Webanalyse ohne Cookies, wo Ihre Rechtsberatung zustimmt.
 - Einbettungen mit zwei Klicks: Zeigen Sie einen Platzhalter mit einem Link; laden Sie die Karte oder das Video erst
   beim Klick.
@@ -63,7 +63,7 @@ die eine Einwilligung erfordern. ePrivacy-Richtlinie: <https://eur-lex.europa.eu
 
 - [Von Exponential gesetzte Cookies](cookies.md)
 - [Erweiterungen von Drittanbietern](erweiterungen-von-drittanbietern.md)
-- [Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)
+- [Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite beantwortet die Fragen öffentlicher Stellen zur Aufbewahrung von Schriftgut und zum Audit in Exponential. Die
 Antworten stammen aus [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md),
-[Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) und [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md).
+[Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) und [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Archiv- und Schriftgutrecht mit Ihrer Rechtsberatung.
@@ -34,14 +34,14 @@ auf ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 ## Sind gelöschte Inhalte weg?
 
 Nicht sofort. Entfernte Objekte kommen in den Papierkorb, der zeigt, wer sie von wo entfernt hat, bis sie endgültig
-gelöscht werden ([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)). Benutzerobjekte kommen nie in den
-Papierkorb ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
+gelöscht werden ([Papierkorb](../../../funktionen/6.0/papierkorb-wer-und-wo.md)). Benutzerobjekte kommen nie in den
+Papierkorb ([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
 
 ## Was zeichnet das Prüfprotokoll auf?
 
 Sicherheitsrelevante Ereignisse in fünf Kanälen (content, access, system, commerce, read): Anmeldungen,
 Inhaltsänderungen, Schreiben von Einstellungen, Leeren von Caches, Umschalten der Wartung und mehr
-([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md), [das Glossar von Exponential](../../../../eng-us/glossary.md#a)). Es ist
+([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md), [das Glossar von Exponential](../../../glossar.md#a)). Es ist
 standardmäßig eingeschaltet.
 
 ## Kann das Prüfprotokoll manipuliert werden?
@@ -55,8 +55,8 @@ und gesichert auf
 ## Wie lange werden Audit-Einträge aufbewahrt?
 
 Standardmäßig pro Kanal 90 Tage aktiv und zwei Jahre archiviert, dann werden sie automatisch entfernt; Felder werden
-nach einer festgelegten Anzahl von Tagen pseudonymisiert ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr),
-[Audit-Leitfaden 4.3](../../../../eng-us/bc/6.0/audit.md#43-retention)). Legen Sie die Fristen fest, die Ihre Regeln verlangen.
+nach einer festgelegten Anzahl von Tagen pseudonymisiert ([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo),
+[Audit-Leitfaden 4.3](../../../bc/6.0/audit.md#43-aufbewahrung)). Legen Sie die Fristen fest, die Ihre Regeln verlangen.
 
 ## Ist Exponential ein Schriftgutverwaltungssystem?
 

@@ -60,7 +60,7 @@ Eine Behörde eines Ministeriums kann sich auch eine Plattform mit diesem teilen
 | Daten | Register und Statistiken werden oft als offene Daten erwartet |
 
 Die Produktfunktionen, die darauf antworten: Versionen mit Vergleich und das Audit-Protokoll
-([Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)),
+([Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)),
 Objektzustände für den Status eines Dokuments ([Objektzustände](../../../../anleitungen/objektzustaende.md)),
 Benachrichtigungen für Abonnenten ([Benachrichtigungen](../../../../anleitungen/benachrichtigungen-administrator.md)) und RSS
 ([RSS-Feeds](../../../../anleitungen/rss-feeds.md)).
@@ -69,7 +69,7 @@ Benachrichtigungen für Abonnenten ([Benachrichtigungen](../../../../anleitungen
 
 - [Verwaltungsebenen](../README.md)
 - [Nationale Regierung](../national/README.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

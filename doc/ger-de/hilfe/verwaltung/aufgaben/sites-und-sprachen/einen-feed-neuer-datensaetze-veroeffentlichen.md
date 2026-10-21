@@ -39,7 +39,7 @@ dasselbe.
 
 ## Verwandte Seiten
 
-- [RSS-Feeds für Ihre Site](../../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
+- [RSS-Feeds für Ihre Site](../../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

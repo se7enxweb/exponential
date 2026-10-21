@@ -10,7 +10,7 @@ type: help
 # Profiling und Leistung
 
 Diese Seite richtet sich an Anwendungsentwickler, die Code schneller machen. Messen, eine Sache ändern, erneut messen
-([Benchmarking](../../../anleitungen/benchmarking.md), [Benchmark-Referenz](../../../../eng-us/features/6.0/benchmark.md)).
+([Benchmarking](../../../anleitungen/benchmarking.md), [Benchmark-Referenz](../../../funktionen/6.0/benchmark.md)).
 
 ## Inhalt
 
@@ -36,9 +36,9 @@ Der Befehl ruft die Startseite, Menüseiten, die Suche und die Anmeldung der Adm
 - `exp:benchmark kernel --repeat=30` misst im selben Prozess den Start, das Rendern (kalt und warm), das Laden der INI,
   einen Inhaltsabruf, einen Datenbank-Roundtrip sowie Schreib- und Lesevorgänge im Cache.
 - `exp:benchmark micro` misst reine PHP-Hotpaths ohne HTTP und ohne Datenbank.
-- Die Debug-Leiste zeigt für jede Anfrage die SQL-Abfragen, Templates und Zeiten ([Exp-Debug-Leiste](../../../../eng-us/features/6.0/exp-debug-bar.md)).
+- Die Debug-Leiste zeigt für jede Anfrage die SQL-Abfragen, Templates und Zeiten ([Exp-Debug-Leiste](../../../funktionen/6.0/exp-debug-leiste.md)).
 - Unter Velocity zeigt das Profil des Opcode-Caches, warum eine Seite so viel kostet, wie sie kostet
-  ([Velocity und der Opcode-Cache](../../../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md)).
+  ([Velocity und der Opcode-Cache](../../../funktionen/6.0/velocity-opcode-cache-und-profil.md)).
 
 ## Fair vergleichen
 

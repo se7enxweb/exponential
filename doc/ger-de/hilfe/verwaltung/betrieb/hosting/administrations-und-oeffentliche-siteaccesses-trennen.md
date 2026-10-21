@@ -96,7 +96,7 @@ Eine Rollenseite zeigt sie als Satz wie *Darf sich anmelden, in den Siteaccesses
   [Rollenentwurf für externe Dienstleister](../personen-und-berechtigungen/rollenentwurf-externe-dienstleister.md)).
 
 Exponential hat außerdem einen **Redaktions-Siteaccess**, eine vereinfachte Bearbeitungsoberfläche für die Redaktion
-([Einrichtungsassistent und Redaktions-Siteaccess](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)). Er
+([Einrichtungsassistent und Redaktions-Siteaccess](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md)). Er
 verweigert das Rollenmodul, sodass Rollen immer im Siteaccess der Administration verwaltet werden. Geben Sie ihm
 dieselbe Netzwerkbeschränkung wie der Administration.
 

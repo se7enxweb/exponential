@@ -65,9 +65,9 @@ XML gespeichert, das für ein anderes Produkt gerendert oder in HTML umgewandelt
 
 ## Den Ausstieg testen, bevor Sie ihn brauchen
 
-Der Schulungskurs [Migration zu Exponential](../../../../../eng-us/help/trainers/migration/README.md) hat eine Lektion, die den
+Der Schulungskurs [Migration zu Exponential](../../../trainer/migration/README.md) hat eine Lektion, die den
 vollständigen Export auf einer Schulungsinstallation durchführt und prüft
-([Lektion 8.1: Von Exponential migrieren](../../../../../eng-us/help/trainers/migration/module-08-leaving-and-capstone/leaving-exponential.md)).
+([Lektion 8.1: Von Exponential migrieren](../../../trainer/migration/modul-08-wechsel-weg-und-abschlussprojekt/von-exponential-wechseln.md)).
 Verwenden Sie dieselben Schritte für EXI-07: Erstellen Sie das Archiv, vergleichen Sie die Zeilen je Klasse mit
 **Setup > Klassen** und bestätigen Sie, dass kein Passwort-Hash darin ist.
 

@@ -87,7 +87,7 @@ definiert, und der erste Aufruf einer neuen Seite kann CPU kosten, während ihre
 | `AllowedMIMETypes[]` | JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP, SVG | eine abgelehnte Datei wird nicht gespeichert |
 | `SanitizeSVG` | `enabled` | ein SVG wird als Ausgabe des Bereinigers gespeichert, ohne Skript, Ereignisattribute, `foreignObject` oder externe Verweise; SVG-Aliase werden nie skaliert |
 
-Liefern Sie SVG-Dateien mit den Headern aus [SVG-Bilder](../../../../eng-us/bc/6.0/svg-images.md) aus.
+Liefern Sie SVG-Dateien mit den Headern aus [SVG-Bilder](../../../bc/6.0/svg-bilder.md) aus.
 
 **Die Upload-Größe** ist die von PHP: `upload_max_filesize` und `post_max_size` müssen so groß sein wie die größte Datei,
 die Kunden hochladen; Exponential prüft sie nicht. Nennen Sie die Grenze im Tarif und setzen Sie sie im Pool
@@ -96,7 +96,7 @@ die Kunden hochladen; Exponential prüft sie nicht. Nennen Sie die Grenze im Tar
 ## Die Bildverarbeitung von Velocity
 
 Wenn Velocity die Website ausliefert, beantwortet er statische Dateien selbst und kann Bilder auf Anfrage in der Größe
-ändern ([Statische Dateien und Bilder in Velocity](../../../../eng-us/features/6.0/velocity-static-files-and-images.md)):
+ändern ([Statische Dateien und Bilder in Velocity](../../../funktionen/6.0/velocity-statische-dateien-und-bilder.md)):
 
 - `?w=400` oder `?h=300` an einer Bild-URL ändert die Größe, nie über die Größe der Quelle hinaus; für Browser, die es
   akzeptieren, wird AVIF oder WebP gewählt; `Save-Data: on` senkt die Qualität.
@@ -145,7 +145,7 @@ jedes Backup enthalten muss ([Was gesichert werden muss](../betrieb/backups-was-
 
 - [Kapitel 10.8: Suchindizierung und Bildverarbeitung](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung)
 - [Medien und Uploads](../../medien-und-uploads.md) (für Redakteure)
-- [Statische Dateien und Bilder in Velocity](../../../../eng-us/features/6.0/velocity-static-files-and-images.md)
+- [Statische Dateien und Bilder in Velocity](../../../funktionen/6.0/velocity-statische-dateien-und-bilder.md)
 - [Speicher, CPU und Festplatte dimensionieren](speicher-cpu-und-festplatte-dimensionieren.md)
 - [CDN](../leistung/cdn.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

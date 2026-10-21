@@ -11,7 +11,7 @@ type: help
 
 **Wer:** der Projektleiter oder Vertragsverantwortliche. **Wann:** vor oder nach dem Aufbau, für die Betriebsphase.
 Hintergrund: [Unterstützung erhalten](../../../projekt/unterstuetzung-erhalten.md),
-[Einen Supportpartner bewerten](../../../../../eng-us/help/government/procurement/evaluation/evaluating-a-support-partner.md).
+[Einen Supportpartner bewerten](../../beschaffung/bewertung/einen-support-partner-bewerten.md).
 
 > **Hinweis** Diese Seite beschreibt gängige Praxis; sie ist keine Rechtsberatung. Folgen Sie den Vergaberegeln Ihrer
 > Organisation, die oberhalb einer Schwelle eine förmliche Ausschreibung verlangen können.
@@ -74,8 +74,8 @@ Vergleichbare Angebote, die dieselben Fragen beantworten.
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Supportverträge](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/support-contracts.md)
-- [Klausel zu Support und Wartung](../../../../../eng-us/help/government/procurement/tender-templates/support-and-maintenance-clause.md)
+- [Supportverträge](../../beschaffung/gesamtbetriebskosten/supportvertraege.md)
+- [Klausel zu Support und Wartung](../../beschaffung/ausschreibungsvorlagen/klausel-support-und-wartung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

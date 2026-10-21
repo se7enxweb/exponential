@@ -36,7 +36,7 @@ GitHub-Konto ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#einen-fehler-i
 
 - **Watch > Custom > Releases** bei einem Repository, um nur über neue Releases benachrichtigt zu werden.
 - Die [Seite der Releases](https://github.com/se7enxweb/exponential/releases) listet die veröffentlichten Versionen auf.
-- Die Liste der Commits auf `main` zeigt die tägliche Arbeit; die [Geschichte](../../../eng-us/history/README.md) erklärt sie Monat
+- Die Liste der Commits auf `main` zeigt die tägliche Arbeit; die [Geschichte](../../geschichte/README.md) erklärt sie Monat
   für Monat.
 - Schalten Sie Benachrichtigungen nicht für alles ein, es sei denn, Sie möchten Hunderte E-Mails.
 

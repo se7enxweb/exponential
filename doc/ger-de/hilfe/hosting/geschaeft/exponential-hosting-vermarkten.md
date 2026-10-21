@@ -37,8 +37,8 @@ Jeder Fakt hat eine Quelle, die ein Kunde prüfen kann.
 | Läuft auf PHP 8.0 bis 8.5 | [Kapitel 2](../../../installation/02-voraussetzungen.md) |
 | Sechs unterstützte Datenbanken: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
 | Läuft auf fast jedem Betriebssystem, das PHP 8 ausführt | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
-| Bringt seinen eigenen Webserver und seine eigene Engine mit, Exponential Velocity, mit eigenen HTTPS-Zertifikaten | [Kapitel 8](../../../installation/08-die-website-ausliefern.md), [HTTPS-Zertifikate](../../../../eng-us/features/6.0/velocity-https-certificates.md) |
-| Eine durchgesetzte Content Security Policy in der Administration | [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) |
+| Bringt seinen eigenen Webserver und seine eigene Engine mit, Exponential Velocity, mit eigenen HTTPS-Zertifikaten | [Kapitel 8](../../../installation/08-die-website-ausliefern.md), [HTTPS-Zertifikate](../../../funktionen/6.0/velocity-https-zertifikate.md) |
+| Eine durchgesetzte Content Security Policy in der Administration | [Content Security Policy](../../../funktionen/6.0/content-security-policy.md) |
 | Sicherheitsmeldungen erhalten eine erste Antwort innerhalb eines Werktags; veröffentlichte Versionen ändern sich nie | `SECURITY.md` |
 | Eine lange Geschichte: führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat | [Wer ist 7x?](../../wer-ist-7x.md) |
 | Gepflegt von 7x und der Exponential Foundation | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md) |

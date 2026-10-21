@@ -126,7 +126,7 @@ fehlenden Prüfung die Lektionen dahinter zur Wiederholung.
 3. Am Bildelement: in seinem Reiter **Ansehen** oder im Feld **Alternativer Bildtext** seines
    Bearbeitungsformulars.
 4. Das Design der Website und die Breiten eines Telefons, eines Tablets und eines Desktops.
-5. [Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md#link-checks-when-the-text-is-saved),
+5. [Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md#linkprüfungen-beim-speichern-des-textes),
    Abschnitt „Linkprüfungen beim Speichern des Texts“.
 
 </details>

@@ -32,12 +32,12 @@ Anfragen geladen und „begann als Fork der Webserver-Engine Qbix“. Er steht u
 
 | Sagen Sie | Quelle |
 |---|---|
-| „Velocity ist die empfohlene Engine für jede Phase, von der Entwicklung bis zum Produktivbetrieb. FrankenPHP ist die produktionsreife Alternative.“ | [Velocity, Warum Sie ihn nutzen würden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
+| „Velocity ist die empfohlene Engine für jede Phase, von der Entwicklung bis zum Produktivbetrieb. FrankenPHP ist die produktionsreife Alternative.“ | [Velocity, Warum Sie ihn nutzen würden](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden) |
 | „Es hält die Anwendung zwischen Anfragen geladen, sodass nicht jede Anfrage bei null beginnt.“ | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
-| „HTTPS vom ersten Start an, mit einem für Sie erzeugten selbstsignierten Zertifikat; HTTP/2 ist eingebaut.“ | [Velocity, Warum Sie ihn nutzen würden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
+| „HTTPS vom ersten Start an, mit einem für Sie erzeugten selbstsignierten Zertifikat; HTTP/2 ist eingebaut.“ | [Velocity, Warum Sie ihn nutzen würden](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden) |
 | „Ganze Seiten können beantwortet werden, bevor der Kernel startet, aus dem rollenbewussten HTTP-Cache und dem Antwort-Cache des Servers.“ | ebenda |
 | „Ein SQL-Abfrage-Cache verringert die Datenbankabfragen pro Seite.“ | ebenda |
-| „Ein Befehl rollt eine PHP-Änderung aus.“ | [Velocity, Eine PHP-Änderung mit einem Befehl ausrollen](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#deploy-a-php-change-in-one-command) |
+| „Ein Befehl rollt eine PHP-Änderung aus.“ | [Velocity, Eine PHP-Änderung mit einem Befehl ausrollen](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#eine-php-änderung-mit-einem-befehl-ausrollen) |
 | „Es gibt einen Benchmark-Befehl, sodass Sie Ihre eigene Website messen können.“ | [Benchmarks](../../anleitungen/benchmarking.md) |
 | „Velocity ist jung: erste Commits im Juli 2026, erstes Release im September 2026.“ | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
 
@@ -78,16 +78,16 @@ Caveats        <anything unusual>
 
 | Frage | Antwort |
 |---|---|
-| „Muss ich Velocity nutzen?“ | Nein. FrankenPHP, Apache oder nginx mit PHP-FPM liefern Exponential ebenfalls aus ([Engines im Vergleich](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#engines-side-by-side)). |
-| „Was ist die Standard-Engine?“ | Der mitgelieferte Standard in `settings/velocity.ini` ist der eingebaute Server von PHP, weil er keine Installation braucht; ändern Sie ihn für jede echte Website ([Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it)). |
+| „Muss ich Velocity nutzen?“ | Nein. FrankenPHP, Apache oder nginx mit PHP-FPM liefern Exponential ebenfalls aus ([Engines im Vergleich](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#engines-nebeneinander)). |
+| „Was ist die Standard-Engine?“ | Der mitgelieferte Standard in `settings/velocity.ini` ist der eingebaute Server von PHP, weil er keine Installation braucht; ändern Sie ihn für jede echte Website ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden)). |
 | „Wo melde ich einen Fehler in Velocity?“ | Im Tracker von Velocity ([Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md)). |
-| „Gibt es Grenzen?“ | Ja, dokumentiert in [Grenzen und Vorsichtsmaßnahmen](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#limits-and-cautions). |
+| „Gibt es Grenzen?“ | Ja, dokumentiert in [Grenzen und Vorsichtsmaßnahmen](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#grenzen-und-vorsichtsmaßnahmen). |
 
 ## Verwandte Seiten
 
 - [Gesprächspunkte für Administratoren](gespraechspunkte-fuer-administratoren.md)
 - [Aussagen, die Sie nicht machen dürfen](aussagen-die-sie-nicht-machen-duerfen.md)
-- [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

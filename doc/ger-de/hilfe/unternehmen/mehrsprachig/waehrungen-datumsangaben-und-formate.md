@@ -28,13 +28,13 @@ Zahlungsanbieter bleiben.
 
 Jede Locale-Datei nennt unter anderem die Datums- und Zeitformate, die Tages- und Monatsnamen, den ersten Tag der Woche
 sowie die Zahlen- und Währungsformate ihres Landes
-([Sprachen, Abschnitt 1](../../../../eng-us/languages.md#1-locales-translations-content-languages-and-siteaccesses)). Eine
+([Sprachen, Abschnitt 1](../../../sprachen.md#1-locales-übersetzungen-inhaltssprachen-und-siteaccesses)). Eine
 Website-Adresse formatiert mit der Locale, auf die sie eingestellt ist (`site.ini [RegionalSettings] Locale`), sodass
 ein deutscher Siteaccess deutsche und ein US-Siteaccess amerikanische Datumsangaben zeigt, ganz ohne Änderung am
 Template.
 
 Die Gruppen einer Locale-Datei im Überblick
-([Sprachen, Abschnitt 7](../../../../eng-us/languages.md#7-adding-a-locale)):
+([Sprachen, Abschnitt 7](../../../sprachen.md#7-eine-locale-hinzufügen)):
 
 | Gruppe | Was sie festlegt |
 |---|---|
@@ -45,7 +45,7 @@ Die Gruppen einer Locale-Datei im Überblick
 | `[CountryNames]` | Ländernamen in der Sprache |
 
 Templates formatieren Werte über die Locale-Operatoren wie `l10n` und `datetime`
-([Locale-Operatoren](../../../../eng-us/help/template-operators/locale-operators.md)).
+([Locale-Operatoren](../../template-operatoren/locale-operatoren.md)).
 
 ## Beispiele aus den mitgelieferten Locales
 
@@ -63,7 +63,7 @@ Werte aus den Dateien in `share/locale/`:
 
 ## Preise in mehreren Währungen
 
-Aus [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#currencies-and-rounding):
+Aus [Produkte, Preise und Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md#währungen-und-rundung):
 
 | Was | Wie |
 |---|---|
@@ -91,7 +91,7 @@ Zahlungsanbieter fest; siehe [Zahlungsanbieter für Unternehmen](../shops/zahlun
 
 Die Mehrwertsteuerregeln des Shops legen fest, welcher USt-Typ je Kundenland und Produktkategorie gilt; benannte
 USt-Typen (Normalsatz, ermäßigter Satz, Nullsatz) werden unter **Shop > USt-Typen** verwaltet
-([Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#vat)). Dieselbe Seite sagt es deutlich:
+([Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md#mehrwertsteuer)). Dieselbe Seite sagt es deutlich:
 „Das Mehrwertsteuerrecht ist von Land zu Land verschieden. Der Shop berechnet, was Sie einrichten; ob das für Ihr
 Unternehmen richtig ist, ist eine Frage für Ihren Steuerberater.“ Der [Bereich zu Shops](../shops/ust-regeln-und-ust-typen.md)
 erklärt es für Unternehmen.
@@ -99,7 +99,7 @@ erklärt es für Unternehmen.
 ## Länderlisten
 
 Jede Länderauswahl zeigt zwei Gruppen: eine Rangliste der meistgenutzten Länder, dann alle Länder von A bis Z nach ihrem
-übersetzten Namen ([Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md)). Sie wird von Länderfeldern,
+übersetzten Namen ([Die gruppierte Länderliste](../../../funktionen/6.0/laendergruppen.md)). Sie wird von Länderfeldern,
 dem Kontoformular des Shops und den Mehrwertsteuerregeln verwendet. Prüfen Sie bei internationalen Shops die
 Rangliste, damit Ihre wichtigsten Märkte oben stehen; die [Seite zu Ländergruppen für Unternehmen](../shops/laendergruppen-und-regionen.md)
 erklärt, wie.
@@ -120,8 +120,8 @@ erklärt, wie.
 - [Sprachen und Locales](sprachen-und-locales.md)
 - [Checkliste Mehrsprachigkeit](checkliste-mehrsprachigkeit.md)
 - [Online-Shops und kleine Geschäfte](../shops/README.md)
-- [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Produkte, Preise und Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

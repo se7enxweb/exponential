@@ -139,14 +139,14 @@ Verwenden Sie Ihre eigene Schulungsinstallation aus Lektion 2.1, ausgeliefert vo
 - [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md): Dienst für den Systemstart, Watchdog und Logs.
 - [Velocity startet nicht](../../../hosting/runbooks/velocity-startet-nicht.md): was zu tun ist, wenn es nicht
   hochkommt.
-- [Velocity-Bedienfeld und Dashboard](../../../../../eng-us/features/6.0/velocity-control-panel.md): die `/Q/`-Seiten.
-- [Velocity-Scheduler](../../../../../eng-us/features/6.0/velocity-scheduler.md): Aufgaben, die der Server nach Zeitplan ausführt.
+- [Velocity-Bedienfeld und Dashboard](../../../../funktionen/6.0/velocity-control-panel.md): die `/Q/`-Seiten.
+- [Velocity-Scheduler](../../../../funktionen/6.0/velocity-zeitplaner.md): Aufgaben, die der Server nach Zeitplan ausführt.
 
 ## Verwandte Seiten
 
 - [Modul 2: Velocity](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

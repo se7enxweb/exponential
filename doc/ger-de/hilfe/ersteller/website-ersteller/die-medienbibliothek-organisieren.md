@@ -27,7 +27,7 @@ Inhalten verwendet werden: Bilder, Dateien, Videos. Eine klare Struktur dort ers
 Ein hochgeladenes Bild ist ein Objekt der Klasse `image`, eine Datei ein Objekt der Klasse `file`. Das heißt, Medien
 haben Versionen, Übersetzungen ihrer Namen und Alternativtexte, Sektionen und Relationen: Ein Artikel, der ein Bild
 einbettet, ist mit ihm verknüpft, und die Administration warnt, bevor Sie ein Bild entfernen, das noch verwendet wird
-([Prüfung umgekehrter Relationen](../../../../eng-us/features/6.0/reverse-relation-check.md)).
+([Prüfung umgekehrter Relationen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)).
 
 ## Eine Ordnerstruktur, die mitwächst
 
@@ -61,7 +61,7 @@ Halten Sie sie höchstens drei Ebenen tief; der Upload-Dialog durchsucht höchst
 ## Viele Dateien auf einmal hochladen
 
 Die Erweiterung `ezmultiupload` lädt viele Dateien in einem Durchgang in einen Ordner hoch
-([ezmultiupload](../../../../eng-us/features/6.0/extensions/ezmultiupload.md)); die Redaktion findet die Schritte in
+([ezmultiupload](../../../funktionen/6.0/erweiterungen/ezmultiupload.md)); die Redaktion findet die Schritte in
 [Medien und Uploads](../../medien-und-uploads.md).
 
 ## Rechte

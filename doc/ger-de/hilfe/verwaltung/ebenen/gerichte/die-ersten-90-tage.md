@@ -42,7 +42,7 @@ Prüfung: Die Richtlinie nennt die Personen mit jeder Rolle im Veröffentlichung
 | Den Prüf-Workflow für Entscheidungen einrichten und bestätigen, dass der Workflow-Cronjob läuft | eine Testentscheidung wartet unter **Setup > Workflow-Prozesse** |
 | Die zweistufige Anmeldung für das Team für Entscheidungen und die Administration verpflichtend machen | `Enforce2FA` getestet |
 | Die Kontosperre einschalten und die Härtungs-Checkliste durchgehen | [Sicherheitshärtung](../../../sicherheitshaertung.md#checkliste) |
-| Über eine CSP für die Website entscheiden und sie zuerst im Report-only-Modus testen | [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md) |
+| Über eine CSP für die Website entscheiden und sie zuerst im Report-only-Modus testen | [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md) |
 
 ## Tage 61 bis 90: Hinweise, Probelauf, Start
 
@@ -51,8 +51,8 @@ Prüfung: Die Richtlinie nennt die Personen mit jeder Rolle im Veröffentlichung
 | Die wichtigsten Hinweise in einfacher Sprache neu schreiben | [Schwerpunkte der Anforderungen](schwerpunkte-der-anforderungen.md) |
 | Einen vollständigen Zyklus einer Entscheidung proben: vorbereiten, prüfen, veröffentlichen, berichtigen, zurückziehen | [Entscheidungen mit Sorgfalt veröffentlichen](entscheidungen-mit-sorgfalt-fuer-personenbezogene-daten-veroeffentlichen.md) |
 | Einen Hinweis auf eine Schließung durch das diensthabende Team proben | der Ordner für Hinweise |
-| Die Barrierefreiheit der Templates testen | [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
-| Start | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Die Barrierefreiheit der Templates testen | [Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
+| Start | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 Prüfungen beim Start:
 
@@ -74,7 +74,7 @@ Prüfungen beim Start:
 
 - [Gerichte](README.md)
 - [Entscheidungen mit Sorgfalt für personenbezogene Daten veröffentlichen](entscheidungen-mit-sorgfalt-fuer-personenbezogene-daten-veroeffentlichen.md)
-- [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

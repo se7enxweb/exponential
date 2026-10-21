@@ -52,7 +52,7 @@ herunterladen (Dateien), abonnieren (Feeds oder Newsletter) oder drucken (PDF-Ex
 ## Arten von Einträgen
 
 Jede Art von Eintrag wird eine **Inhaltsklasse** mit eigenen Feldern
-([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)). Halten Sie die Zahl
+([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)). Halten Sie die Zahl
 der Klassen klein; eine Art von Eintrag verdient eine eigene Klasse, wenn sich ihre Felder unterscheiden, nicht wenn
 sich ihr Thema unterscheidet. Ein typischer Satz:
 
@@ -71,7 +71,7 @@ Entscheiden Sie, welche Listen kontrolliert sind und wer sie verantwortet:
 | Vokabular | Werkzeug |
 |---|---|
 | Schlagwörter mit Ober- und Unterbegriffen | Tag-Baum von `eztags` ([Tags und Schlagwörter](tags-und-schlagwoerter.md)) |
-| Eine kurze feste Liste (Format, Sprache des Objekts) | Feld `ezselection` ([Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)) |
+| Eine kurze feste Liste (Format, Sprache des Objekts) | Feld `ezselection` ([Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md)) |
 | Freie Schlüsselwörter | offenes Vokabular von `eztags` oder `ezkeyword` |
 | Wo ein Objekt im Menü steht | der Inhaltsbaum, nicht Tags |
 
@@ -80,19 +80,19 @@ Entscheiden Sie, welche Listen kontrolliert sind und wer sie verantwortet:
 | Weg | Wann | Wo er dokumentiert ist |
 |---|---|---|
 | Von Katalogisierenden in der Administration eingegeben | Kleine Sammlungen, besondere Objekte | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) |
-| Von einem Entwickler per Skript importiert | Ein vorhandener Export aus einem anderen System | [Inhalte im Code anlegen und aktualisieren](../../../../eng-us/help/creators/app-creators/creating-content-in-code.md) |
+| Von einem Entwickler per Skript importiert | Ein vorhandener Export aus einem anderen System | [Inhalte im Code anlegen und aktualisieren](../../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md) |
 | Über die REST API angelegt | Ein anderes System schiebt Einträge herein | [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md) |
 | Aus dem RSS-Feed einer anderen Website gelesen | Ein Partner veröffentlicht einen Feed von Objekten | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
-| Hochgeladene Writer-Dokumente | Berichte, die in LibreOffice oder OpenOffice geschrieben sind | [ezodf](../../../../eng-us/features/6.0/extensions/ezodf.md) |
+| Hochgeladene Writer-Dokumente | Berichte, die in LibreOffice oder OpenOffice geschrieben sind | [ezodf](../../../funktionen/6.0/erweiterungen/ezodf.md) |
 
 Für Importe empfiehlt die Anleitung für Entwickler Remote-IDs für wiederholbare Importe, damit ein zweiter Lauf des
 Imports Einträge aktualisiert, statt sie zu verdoppeln
-([Inhalte im Code anlegen und aktualisieren](../../../../eng-us/help/creators/app-creators/creating-content-in-code.md)).
+([Inhalte im Code anlegen und aktualisieren](../../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md)).
 
 ## Wer katalogisiert und wer prüft
 
 - Katalogisierende brauchen Rechte zum Anlegen und Bearbeiten im Teilbaum des Katalogs und `tags/add` nur unterhalb der
-  Tags, die sie betreuen ([Verschlagworten mit eztags, Permissions](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md#permissions)).
+  Tags, die sie betreuen ([Verschlagworten mit eztags, Permissions](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md#rechte)).
 - Wenn Einträge geprüft werden müssen, bevor sie öffentlich werden, verwenden Sie einen Freigabe-Workflow
   ([Workflows](../../../anleitungen/workflows.md)).
 - Jede Veröffentlichung behält ihre Versionen, sodass Sie sehen können, wer einen Eintrag wann geändert hat
@@ -102,15 +102,15 @@ Imports Einträge aktualisiert, statt sie zu verdoppeln
 
 Trennen Sie mit Sektionen, was alle lesen dürfen, von dem, was nur Mitglieder oder Mitarbeiter lesen dürfen
 ([Sektionen](../../../anleitungen/sektionen.md),
-[Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)). Downloads durchlaufen
+[Sektionen und Objektzustände](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)). Downloads durchlaufen
 eine Berechtigungsprüfung; eine Datei in einer Sektion nur für Mitglieder können also nur Mitglieder herunterladen
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#how-a-download-works)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#wie-ein-download-funktioniert)).
 
 ## Sprachen
 
 Wenn Sie Einträge in mehreren Sprachen beschreiben, entscheiden Sie, welche Felder übersetzbar sind (Titel und
 Beschreibungen meist, Kennungen wie eine ISBN nicht) und ob Tags übersetzt werden
-([Mehrsprachige Websites](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)).
+([Mehrsprachige Websites](../../ersteller/website-ersteller/mehrsprachige-websites.md)).
 
 ## Erfolg messen
 
@@ -139,7 +139,7 @@ Measures reviewed monthly:    ...
 
 - [Bibliotheken und Kataloge](README.md)
 - [Katalogeinträge modellieren](katalogeintraege-modellieren.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Workshops zur Inhaltsmodellierung](../../fuehrung/workshops-zur-inhaltsmodellierung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

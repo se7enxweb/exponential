@@ -79,7 +79,7 @@ unterscheidet sich. Um das Kopieren der Siteaccess-Einstellungen des Themes zu v
 Seit Januar 2026 kann eine Erweiterung, die eine ganze Website enthält, Einstellungen mitbringen, die für alle ihre Siteaccesses
 gelten, in `extension/<site extension>/settings/override/`, und für eine Gruppe davon in `settings/override__<group>/`; diese werden
 nur gelesen, während einer der Siteaccesses der Erweiterung läuft
-([Einstellungen pro Website in Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)). Die Design-Zeilen einer Website
+([Einstellungen pro Website in Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)). Die Design-Zeilen einer Website
 können dort liegen:
 
 ```ini

@@ -41,7 +41,7 @@ unter <https://www.plainlanguage.gov/> eine kostenlose Referenz. Siehe „Sprach
 | Redaktion | Links auf Dokumente und neue Fenster mit einem Hinweis im Text |
 
 Gemeinsame Kopf- und Fußbereiche halten die Navigation konsistent
-([Gemeinsamer Kopf- und Fußbereich](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)).
+([Gemeinsamer Kopf- und Fußbereich](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)).
 
 ## 3.3 Hilfestellung bei der Eingabe
 

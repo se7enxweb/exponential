@@ -22,7 +22,7 @@ jeder.
 | Dauer | 6 Stunden Einheiten (9:00 bis 16:30 mit Pausen und Mittagspause) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Neue Website-Administratoren, 4 bis 12 Teilnehmende |
-| Voraussetzungen | Ein Laptop pro Person, der die [Anforderungen](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/requirements-for-a-training-machine.md) erfüllt; Grundkenntnisse der Kommandozeile |
+| Voraussetzungen | Ein Laptop pro Person, der die [Anforderungen](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/anforderungen-an-einen-schulungsrechner.md) erfüllt; Grundkenntnisse der Kommandozeile |
 
 ## Lernziele
 
@@ -37,13 +37,13 @@ Am Ende des Tages können die Teilnehmenden:
 
 | Zeit | Block | Verwendet | Kontrollpunkt |
 |---|---|---|---|
-| 9:00 | Begrüßung; installieren und ausliefern (60 Min.) | [Eine Installation pro Person](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md), [Die Websites der Übungsumgebung ausliefern](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md) | Website ausgeliefert; Passwort geändert |
+| 9:00 | Begrüßung; installieren und ausliefern (60 Min.) | [Eine Installation pro Person](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md), [Die Websites der Übungsumgebung ausliefern](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md) | Website ausgeliefert; Passwort geändert |
 | 10:00 | Der Rundgang durch die Administration für Administratoren (30 Min.) | [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md) | Bereich Setup geöffnet |
 | 10:30 | Pause (15 Min.) | | |
 | 10:45 | Benutzer, Gruppen, Rollen und Richtlinien (75 Min.) | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md) | Eine Rolle „News editors“, einer Gruppe zugewiesen |
 | 12:00 | Mittagspause (45 Min.) | | |
 | 12:45 | Sektionen (30 Min.) | [Sektionen](../../../../anleitungen/sektionen.md) | Eine Sektion angelegt und zugewiesen |
-| 13:15 | Caches und Logs (60 Min.) | [Caches](../../../../anleitungen/caches.md), [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md) | Ein Cache unter **Setup > Caches** geleert; `error.log` geöffnet |
+| 13:15 | Caches und Logs (60 Min.) | [Caches](../../../../anleitungen/caches.md), [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md) | Ein Cache unter **Setup > Caches** geleert; `error.log` geöffnet |
 | 14:15 | Pause (15 Min.) | | |
 | 14:30 | Cronjobs (40 Min.) | [Cronjobs](../../../../anleitungen/cronjobs.md) | Cronjobs einmal von Hand ausgeführt |
 | 15:10 | Systeminformationen und Upgrade-Prüfung (35 Min.) | [Systeminformationen](../../../../anleitungen/systeminformationen.md), [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) | Version und PHP abgelesen; Upgrade-Prüfung geöffnet |
@@ -90,7 +90,7 @@ Auf der eigenen Installation der Person:
 
 1. Nichts ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)).
 2. Den Template-Cache: `php bin/php/ezcache.php --clear-tag=template` oder unter **Setup > Caches**.
-3. **Setup > Logdateien** ([Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md)).
+3. **Setup > Logdateien** ([Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md)).
 4. Jedes Mitglied, jetzt und später, bekommt die Rolle.
 
 </details>
@@ -105,7 +105,7 @@ Auf der eigenen Installation der Person:
 
 - [Modul 2: Eintägige Agenden](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

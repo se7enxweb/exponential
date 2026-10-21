@@ -61,7 +61,7 @@ mehreren Marken jede Variante prüfen kann.
 
 Wo ein Unternehmen einen Entwurf auch so sehen muss, wie er gedruckt oder exportiert wird (zum Beispiel ein PDF-Layout
 eines Rundschreibens), kann die Vorschau weitere View-Modi anbieten, die in `content.ini [VersionView] ViewModes[]`
-aufgeführt sind ([Versionsvorschau in anderen View-Modi](../../../../eng-us/features/6.0/version-preview-view-modes.md)). Um eine
+aufgeführt sind ([Versionsvorschau in anderen View-Modi](../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md)). Um eine
 Version zu sehen, braucht es die Richtlinie `content/versionread`.
 
 ## Freigabe vor dem Veröffentlichen
@@ -119,7 +119,7 @@ Das Entfernen, Kopieren oder Verschieben eines großen Teilbaums lief früher in
 konnte an Zeit- oder Speicherlimits scheitern. Ab 6.0.15 bietet die Administration an, es als **Inhaltsjob** auszuführen,
 der in Stapeln arbeitet, nach jedem Stapel einen Checkpoint setzt und dort weitermacht, wo er aufgehört hat. Die
 Bestätigungsseite zeigt vor dem Start, was die Operation betrifft, und schlägt ab 50 Knoten den Hintergrund vor
-([Inhaltsjobs](../../../../eng-us/features/6.0/content-jobs.md)). Siehe
+([Inhaltsjobs](../../../funktionen/6.0/inhaltsauftraege.md)). Siehe
 [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md).
 
 ## Regeln für das Unternehmen

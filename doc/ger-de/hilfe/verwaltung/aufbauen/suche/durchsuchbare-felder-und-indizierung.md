@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Site-Ersteller und Administratoren. Was Besucher finden können, hängt davon ab, welche
 Attribute im Klasseneditor als **Durchsuchbar** markiert sind und ob der Index aktuell ist
-([Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#attribute-settings)).
+([Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#attributeinstellungen)).
 
 ## Inhalt
 
@@ -62,7 +62,7 @@ Führen Sie es auf einer großen Site zu einer ruhigen Zeit aus; mit Solr füllt
 ## Verwandte Seiten
 
 - [Eingebaute Suche für öffentliche Sites](eingebaute-suche-fuer-oeffentliche-sites.md)
-- [Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)
+- [Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

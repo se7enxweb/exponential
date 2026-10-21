@@ -69,7 +69,7 @@ Quellen: [Sicherheitshärtung](../../../sicherheitshaertung.md) und
 ist. Ein Leck ist es nur, wenn der INI-Text zurückkommt. Sehen Sie sich den Inhalt einmal an.
 
 **Können wir Adressen wie `/content/view/full/123` verbergen?** Ja, mit einer Request Rule, die System-URLs auf ihren
-Alias umleitet; siehe [Request Rules](../../../../../eng-us/features/6.0/request-rules.md). Probieren Sie es zuerst auf einer
+Alias umleitet; siehe [Request Rules](../../../../funktionen/6.0/anfrageregeln.md). Probieren Sie es zuerst auf einer
 Schulungs-Website aus; es gibt eine Regel, die nur protokolliert, damit Sie sehen, wer betroffen wäre.
 
 **Blockiert Exponential Angreifer?** Der Classifier nicht; die Seite zur Härtung beschreibt den Schutzschild und den
@@ -155,7 +155,7 @@ ihre Adresse.
 - [Sicherheitshärtung](../../../sicherheitshaertung.md): jede Bedrohung mit ihrer Abwehr.
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../../../../installation/13-sicherheitshaertung.md): die
   Referenz Einstellung für Einstellung und die Checkliste für den Go-live.
-- [Request Rules](../../../../../eng-us/features/6.0/request-rules.md): Anfragen erlauben, ablehnen, umleiten oder umschreiben.
+- [Request Rules](../../../../funktionen/6.0/anfrageregeln.md): Anfragen erlauben, ablehnen, umleiten oder umschreiben.
 - [Härtung für Hoster](../../../hosting/sicherheit/haertung-fuer-hoster.md) und
   [Request Shield und Request Rules](../../../hosting/sicherheit/request-shield-und-request-regeln.md).
 

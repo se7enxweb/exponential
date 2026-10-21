@@ -52,8 +52,8 @@ Beide werden wie Intranets eingerichtet (siehe den [Bereich Intranets](../intran
 
 ## Verwandte Seiten
 
-- [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
+- [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

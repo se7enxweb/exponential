@@ -69,8 +69,8 @@ den Änderungsnachweis ein; das Audit-Protokoll hat `system.maintenance.change` 
 ## Verwandte Seiten
 - [Die Site für ein Upgrade in den Wartungsmodus versetzen](die-site-fuer-ein-upgrade-in-den-wartungsmodus-versetzen.md)
 - [Die Caches nach einem Deployment vorwärmen](die-caches-nach-einem-deployment-vorwaermen.md)
-- [Wartungsfenster](../../../../../eng-us/help/government/operations/upgrades-and-change/maintenance-windows.md)
-- [Veralteter Cache](../../../../../eng-us/help/government/operations/incidents/stale-cache.md)
+- [Wartungsfenster](../../betrieb/aktualisierungen-und-aenderungen/wartungsfenster.md)
+- [Veralteter Cache](../../betrieb/vorfaelle/veralteter-cache.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

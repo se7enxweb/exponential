@@ -23,7 +23,7 @@ Besucher nicht sichtbar: Es sind Werkzeuge für die Menschen, die Websites am La
 
 Der Wartungsmodus „nimmt die gesamte öffentliche Website vom Netz, zeigt Besuchern eine freundliche Seite und bringt
 sie mit einem Befehl oder einer Schaltfläche zurück“, und die Installer nutzen ihn, damit „eine Website, die gerade
-installiert wird, nie eine halb gebaute Seite ausliefert“ ([Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md)).
+installiert wird, nie eine halb gebaute Seite ausliefert“ ([Wartungsmodus](../../funktionen/6.0/wartungsmodus.md)).
 Darum herum ergänzt die Linie 6.0.x einen Log-Viewer, Anfrage-Logs, Inhaltsprüfungen, eine Prüfung der
 Dateikonsistenz, die Steuerung der Cronjobs, eine Debug-Leiste und einen Konsolenbefehl für Einstellungen, jedes mit
 einer eigenen Seite dokumentiert.
@@ -32,16 +32,16 @@ einer eigenen Seite dokumentiert.
 
 | Werkzeug | Was es tut | Seite |
 |---|---|---|
-| Wartungsmodus | Nimmt die Website vom Netz und wieder online, aus der Konsole oder der Administration | [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md) |
-| Log-Viewer | Liest die Logs in der Administration | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
-| Anfrage-Logs | Zeichnet Anfragen zur Diagnose auf | [Anfrage-Logs](../../../eng-us/features/6.0/request-logs.md) |
-| Log-Rotation | Hält Logdateien in Grenzen | [Log-Rotation](../../../eng-us/features/6.0/log-rotation.md) |
-| Inhaltsprüfungen | Findet Probleme in Inhalten | [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md) |
-| Prüfung der Dateikonsistenz | Vergleicht Dateien mit dem Manifest des Releases | [Prüfung der Dateikonsistenz](../../../eng-us/features/6.0/file-consistency-check.md) |
-| Cronjobs | Geplante Jobs pausieren, filtern und ausführen | [Cronjob-Konsole](../../../eng-us/features/6.0/cronjobs-console.md), [Cronjobs pausieren](../../../eng-us/features/6.0/cronjob-pause.md) |
-| Debug-Leiste | Debug-Informationen für Entwickler | [Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md) |
-| `exp:ini` | Liest und ändert Einstellungen aus der Konsole | [Der Befehl exp:ini](../../../eng-us/features/6.0/exp-ini-command.md) |
-| Reparatur aus dem Browser | Behebt bekannte Probleme ohne Shell | [Reparatur aus dem Browser](../../../eng-us/features/6.0/repair-from-the-browser.md) |
+| Wartungsmodus | Nimmt die Website vom Netz und wieder online, aus der Konsole oder der Administration | [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md) |
+| Log-Viewer | Liest die Logs in der Administration | [Log-Viewer](../../funktionen/6.0/log-betrachter.md) |
+| Anfrage-Logs | Zeichnet Anfragen zur Diagnose auf | [Anfrage-Logs](../../funktionen/6.0/anfrageprotokolle.md) |
+| Log-Rotation | Hält Logdateien in Grenzen | [Log-Rotation](../../funktionen/6.0/log-rotation.md) |
+| Inhaltsprüfungen | Findet Probleme in Inhalten | [Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md) |
+| Prüfung der Dateikonsistenz | Vergleicht Dateien mit dem Manifest des Releases | [Prüfung der Dateikonsistenz](../../funktionen/6.0/dateikonsistenzpruefung.md) |
+| Cronjobs | Geplante Jobs pausieren, filtern und ausführen | [Cronjob-Konsole](../../funktionen/6.0/cronjobs-in-der-konsole.md), [Cronjobs pausieren](../../funktionen/6.0/cronjobs-pausieren.md) |
+| Debug-Leiste | Debug-Informationen für Entwickler | [Exp-Debug-Leiste](../../funktionen/6.0/exp-debug-leiste.md) |
+| `exp:ini` | Liest und ändert Einstellungen aus der Konsole | [Der Befehl exp:ini](../../funktionen/6.0/exp-ini-befehl.md) |
+| Reparatur aus dem Browser | Behebt bekannte Probleme ohne Shell | [Reparatur aus dem Browser](../../funktionen/6.0/reparatur-im-browser.md) |
 
 ## Was Sie nicht behaupten sollten
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Führungskräfte und Administratoren öffentlicher Stellen, die die Öffentlichkeit in zwei
 oder drei Amtssprachen bedienen müssen. Sie fasst die anderen Seiten dieses Bereichs zu einer Einrichtung zusammen.
-Die zugrunde liegende Anleitung ist [Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md).
+Die zugrunde liegende Anleitung ist [Eine mehrsprachige Website bauen](../../ersteller/website-ersteller/mehrsprachige-websites.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

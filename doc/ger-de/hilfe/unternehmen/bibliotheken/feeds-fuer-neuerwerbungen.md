@@ -47,7 +47,7 @@ anderer Websites schon (`rssimport.php`).
 
 Feed-Adressen werden aus dem eigenen Siteaccess des Feeds aufgelöst; Feeds bewerben also die öffentliche Website und
 nicht den Host der Administration
-([Feed-Adressen verwenden die öffentliche Website](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md#feed-addresses-use-the-public-site)).
+([Feed-Adressen verwenden die öffentliche Website](../../../funktionen/6.0/rss-podcast-und-feed-liste.md#feed-adressen-verwenden-die-öffentliche-website)).
 
 ## Feeds, die eine Bibliothek typischerweise anbietet
 
@@ -77,7 +77,7 @@ Ihrem Website-Ersteller.
    seine Links zeigen.
 5. Aktivieren Sie ihn, drücken Sie **Feed öffnen** und prüfen Sie das Ergebnis in einem Feedreader.
 
-Quelle: [RSS-Feeds für Ihre Website, Publishing a feed](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md#publishing-a-feed).
+Quelle: [RSS-Feeds für Ihre Website, Publishing a feed](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md#einen-feed-veröffentlichen).
 Bilder in Feeds verwenden den Bildalias `rss` (88 x 31 in `settings/image.ini`); wenn Cover wichtig sind, fragen Sie
 Ihren Designer nach der Größe des Alias.
 
@@ -91,7 +91,7 @@ Ihren Designer nach der Größe des Alias.
 
 - Fügen Sie dem `<head>` des Pagelayouts einen Autodiscovery-Link hinzu, damit Browser und Feedreader den Feed finden,
   und einen sichtbaren Link auf der Seite, um die es im Feed geht
-  ([RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md#letting-browsers-and-readers-find-it)).
+  ([RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md#browser-und-feedreader-ihn-finden-lassen)).
 - Stellen Sie sicher, dass `robots.txt` `/rss/feed/` nicht sperrt, wenn Feeds gefunden werden sollen (dieselbe Seite,
   Checkliste).
 - Nennen Sie Partnerinstitutionen die Adresse; sie können den Feed mit ihren eigenen Systemen importieren, oder mit
@@ -102,7 +102,7 @@ Ihren Designer nach der Größe des Alias.
 Ein RSS-Export kann als **Apple Podcasts (RSS 2.0 + iTunes)** geschrieben werden, „so a show published here can be
 submitted to Apple without a hand written feed“ (damit eine hier veröffentlichte Sendung ohne handgeschriebenen Feed bei
 Apple eingereicht werden kann). Die Quelle braucht ein Audiodateifeld, das als Enclosure zugeordnet ist
-([RSS: Feeds für Apple Podcasts](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md#apple-podcasts-as-a-feed-format)).
+([RSS: Feeds für Apple Podcasts](../../../funktionen/6.0/rss-podcast-und-feed-liste.md#apple-podcasts-als-feed-format)).
 Autorengespräche, Lesungen oder Vorträge, die die Bibliothek aufzeichnet, lassen sich so veröffentlichen.
 
 ## Ein Newsletter der Neuerwerbungen
@@ -125,8 +125,8 @@ Einwilligung, Versand und alles Weitere stehen im Bereich [Newsletter](../newsle
 - Die vollständige Ansicht eines Ordners kann seine neuesten Unterelemente auflisten; eine Tag-Seite listet Einträge zu
   einem Thema auf ([Tags und Schlagwörter](tags-und-schlagwoerter.md#themenseiten-und-listen-nach-thema)).
 - Ein Layout-Block mit einer dynamischen Sammlung hält sich selbst aktuell, zum Beispiel „die neuesten fünf Artikel in
-  dieser Sektion“ ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md),
-  [Referenz zu Layouts](../../../../eng-us/bc/6.0/LAYOUTS.md)).
+  dieser Sektion“ ([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md),
+  [Referenz zu Layouts](../../../bc/6.0/layouts.md)).
 - Ein gespeichertes PDF der Neuerwerbungen des Monats kann zum Herunterladen angeboten werden
   ([PDF- und Druckexporte](pdf-und-druckexporte.md)).
 
@@ -144,7 +144,7 @@ Einwilligung, Versand und alles Weitere stehen im Bereich [Newsletter](../newsle
 
 - [Bibliotheken und Kataloge](README.md)
 - [RSS-Feeds (Anleitung)](../../../anleitungen/rss-feeds.md)
-- [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
+- [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
 - [Feeds und Syndication](../mobil-und-headless/feeds-und-syndication.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

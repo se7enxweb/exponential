@@ -37,7 +37,7 @@ by VAT charging rules“) und die Wahl den Regeln überlässt.
 | USt-Typen und USt-Regeln eingeben | Eigentümer, oder eine vertrauenswürdige Person mit `shop/setup` |
 | Den USt-Typ oder die Kategorie eines Produkts setzen | Produktredaktion, nach einer schriftlichen Liste |
 | Testbestellungen nach einer Änderung prüfen | Shop-Leitung |
-| Festhalten, was sich wann geändert hat | Eigentümer; das Prüfprotokoll hält Mehrwertsteuer-Änderungen in seinem Kanal `commerce` fest ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Festhalten, was sich wann geändert hat | Eigentümer; das Prüfprotokoll hält Mehrwertsteuer-Änderungen in seinem Kanal `commerce` fest ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 
 Geben Sie `shop/setup` so wenigen Personen wie möglich. Ein einziger falscher Prozentsatz ändert den Preis jedes
 Produkts, das diesen Typ verwendet.
@@ -84,17 +84,17 @@ Produktklasse als Standard verwendet, und das Entfernen des letzten verbliebenen
 stattdessen einen Typ mit null Prozent zu behalten (`kernel/private/classes/views/shop/vattype.php`).
 
 Das Shop-Dashboard warnt, wenn ein USt-Typ mit 0 Prozent in Gebrauch ist, sodass ein Nullsatz nie ein Versehen ist
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Testen nach jeder Änderung an der Mehrwertsteuer
 
 Verwenden Sie zwei Testbestellungen, idealerweise aus zwei Ländern und mit zwei Produktkategorien
-([Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)):
+([Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)):
 
 - [ ] Die Bestätigungsseite zeigt auf jeder Position die erwartete Mehrwertsteuer.
 - [ ] Der Versand wird so behandelt, wie Ihr Steuerberater es Ihnen gesagt hat.
 - [ ] Die Bestellliste zeigt Summen mit und ohne Mehrwertsteuer, die übereinstimmen
-  ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)).
+  ([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)).
 - [ ] Stornieren oder entfernen Sie die Testbestellungen so, wie Ihr Team es vereinbart hat, damit sie nicht als Umsatz zählen.
 
 Die wiederkehrende Fassung dieser Prüfungen ist die [Mehrwertsteuer-Checkliste](mehrwertsteuer-checkliste.md).
@@ -103,7 +103,7 @@ Die wiederkehrende Fassung dieser Prüfungen ist die [Mehrwertsteuer-Checkliste]
 
 - [Mehrwertsteuer-Checkliste](mehrwertsteuer-checkliste.md)
 - [USt-Regeln und USt-Typen für Unternehmen](../../unternehmen/shops/ust-regeln-und-ust-typen.md)
-- [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
+- [Produkte, Preise und Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)
 - [Preise und Währungen](preise-und-waehrungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

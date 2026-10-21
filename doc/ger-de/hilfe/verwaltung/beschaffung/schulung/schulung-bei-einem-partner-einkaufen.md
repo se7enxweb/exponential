@@ -44,7 +44,7 @@ Ergebnissen, nicht nach einem Etikett.
 | Die Version von Exponential, die der Kurs verwendet | Übungen unterscheiden sich zwischen Versionen | die Version, die Ihre Website betreibt |
 | Das Lab: wer es bereitstellt, worauf | damit die Teilnehmenden an etwas üben, das Ihrer Website ähnelt | [Lab-Kurzkarte](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md) |
 | Die Erfahrung der Trainerin oder des Trainers mit Exponential | die Qualität hängt von der Person ab | Referenzen, die Sie selbst prüfen |
-| Wie der Kurs Barrierefreiheit abdeckt | öffentliche Websites haben gesetzliche Pflichten | [Modul 8 von Editors 201](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md) |
+| Wie der Kurs Barrierefreiheit abdeckt | öffentliche Websites haben gesetzliche Pflichten | [Modul 8 von Editors 201](../../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md) |
 | Vorkehrungen für Teilnehmende mit Behinderungen | Ihre Pflicht als Arbeitgeber | [Vorkehrungen und inklusive Praxis](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md) |
 | Prüfung und was eine Bescheinigung aussagt | ehrlicher Wortlaut, kein Anspruch auf offiziellen Status | [Teilnahmebescheinigungen, die Sie ausstellen](../../../trainer/pruefungen/modul-01-pruefungen-gestalten/abschlusszertifikate-die-sie-ausstellen.md) |
 | Material, das Sie behalten | für spätere Einarbeitung | siehe unten |

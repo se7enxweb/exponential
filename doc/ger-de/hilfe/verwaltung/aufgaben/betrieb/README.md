@@ -12,7 +12,7 @@ type: help
 Dieser Ordner enthält kurze, nummerierte Abläufe für die Administratoren, die eine öffentliche Website betreiben. Jede
 Aufgabe nennt, was Sie vor dem Beginn brauchen, gibt die genauen Befehle und Seiten der Administration an, sagt, wie Sie
 das Ergebnis prüfen, und vermerkt, was in einen Änderungsnachweis gehört. Die Erklärungen dahinter stehen in
-[Exponential im öffentlichen Sektor betreiben](../../../../../eng-us/help/government/operations/README.md); die Fassungen für Hosting-Unternehmen in
+[Exponential im öffentlichen Sektor betreiben](../../betrieb/README.md); die Fassungen für Hosting-Unternehmen in
 [Betrieb für Hoster](../../../hosting/betrieb/README.md).
 
 ## Inhalt
@@ -98,12 +98,12 @@ Cronjobs, eine Sicherung und ein Test der Wiederherstellung, ManagedByDeployment
 Fehlerübersicht, wöchentlich das Sicherheits-Log, die monatliche Überprüfung. Halten Sie die Aufgaben für Wartung,
 Deployment und Wiederherstellung für Änderungsfenster bereit.
 
-Nach oben: [Aufgaben](../README.md) und [Exponential im öffentlichen Sektor betreiben](../../../../../eng-us/help/government/operations/README.md). Die
+Nach oben: [Aufgaben](../README.md) und [Exponential im öffentlichen Sektor betreiben](../../betrieb/README.md). Die
 Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 - [Aufgaben zu Personen und Berechtigungen](../personen-und-berechtigungen/README.md)
-- [Vorfälle](../../../../../eng-us/help/government/operations/incidents/README.md)
+- [Vorfälle](../../betrieb/vorfaelle/README.md)
 - [Eine Site betreiben](../../../../anleitungen/betrieb-einer-website.md)
 - [Checklisten für Hoster](../../../hosting/checklisten/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

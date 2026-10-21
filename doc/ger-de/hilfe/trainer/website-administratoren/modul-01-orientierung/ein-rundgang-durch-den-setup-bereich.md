@@ -138,7 +138,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
   das Dashboard.
 - [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md): wofür die System-Seiten im Alltag verwendet
   werden.
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): das Design, das dieser Kurs beschreibt.
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md): das Design, das dieser Kurs beschreibt.
 
 ## Verwandte Seiten
 

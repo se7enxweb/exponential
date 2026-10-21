@@ -60,7 +60,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 - [ ] Wenn Konten bis zur Freigabe zurückgehalten werden: in einem Test eines freigegeben und eines abgelehnt, bei
   laufendem Cronjob des Workflows.
 - [ ] CAPTCHA im Registrierungsformular
-  ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+  ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 - [ ] Das Registrierungsformular und der Datenschutzhinweis sagen, welche Daten aufbewahrt werden und warum
   ([Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)).
 
@@ -71,7 +71,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 - [ ] Zweistufige Anmeldung entschieden: freiwillig, für alle vorgeschrieben oder für sensible Stufen vorgeschrieben
   ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - [ ] Zurücksetzen des Passworts von der Anmeldeseite aus getestet
-  ([Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+  ([Das Passwort eines Benutzers zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 - [ ] Ansprechpartner im Support für ausgesperrte Partner benannt.
 
 ## Dateien
@@ -88,7 +88,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 - [ ] Ermäßigungsgruppen und -regeln entsprechen der Preispolitik.
 - [ ] USt-Regeln und Währungen geprüft.
 - [ ] Eine vollständige Testbestellung aufgegeben und im Tab Shop bearbeitet
-  ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+  ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Mail und Benachrichtigungen
 
@@ -105,7 +105,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 - [ ] Backups eingeplant und eine Wiederherstellung getestet
   ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - [ ] Prüfprotokoll läuft: `./console exp:audit status`
-  ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+  ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)).
 - [ ] Monitoring der Portaladresse ([Health-Checks und Monitoring](../zuverlaessigkeit/health-checks-und-monitoring.md)).
 - [ ] Plan für Aktualisierungen vereinbart
   ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).

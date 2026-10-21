@@ -60,7 +60,7 @@ Mitarbeitenden und Abläufen, nicht nur nach seiner Stufe.
 Nie öffentlich. Melden Sie Schwachstellen vertraulich an die Adresse in `SECURITY.md`; lassen Sie Passwörter, Geheimnisse
 und personenbezogene Daten weg ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md#sicherheitsprobleme)).
 Korrekturen kommen mit dem nächsten Release 6.0.x
-([Sicherheitsupdates und Patch-Rhythmus](../../../../eng-us/help/government/procurement/lifecycle/security-updates-and-patching-cadence.md)).
+([Sicherheitsupdates und Patch-Rhythmus](../beschaffung/lebenszyklus/sicherheitsupdates-und-patch-rhythmus.md)).
 
 ## Wie bitten wir gut um Hilfe?
 
@@ -74,7 +74,7 @@ Issue-Tracker; die Seite **Fehler melden** der Hilfe bereitet das Issue vor
 ## Können wir es selbst betreuen?
 
 Ja, mit geschulten Mitarbeitenden: Die Kurse Website-Administration sowie Hosting und Betrieb in dieser Hilfe behandeln
-die Routine ([Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)). Viele öffentliche Stellen kombinieren einen eigenen
+die Routine ([Kurskatalog](../../trainer/kurskatalog.md)). Viele öffentliche Stellen kombinieren einen eigenen
 First-Level-Support mit einem Dienstleister für Entwicklung und Notfälle.
 
 ## Verwandte Seiten

@@ -82,7 +82,7 @@ Website, auf der die Redaktion während eines Vorfalls weiterarbeiten muss, den 
 Ein kürzeres `SessionTimeout` für die Administration kann eine Anforderung Ihrer Sicherheitsrichtlinie sein; setzen
 Sie es in den Einstellungen des Administrations-Siteaccess. Eine Abmeldung beendet die Sitzung unter jedem Handler
 endgültig, und eine Passwortänderung beendet andere Sitzungen (`[PasswordSettings] EndOtherSessions=enabled`)
-([Sicherheitsstandards](../../../../../eng-us/standards/security.md)).
+([Sicherheitsstandards](../../../../standards/sicherheit.md)).
 
 ## Checkliste
 

@@ -28,15 +28,15 @@ innerhalb der Administration suchen, ist ein anderes Thema: [Suchen](../../suche
 
 - Die eingebaute Suchmaschine hält ihren Index in der Datenbank und indexiert beim Veröffentlichen die Felder, die in
   jeder Klasse als **Durchsuchbar** markiert sind. Besucher finden nur, was sie lesen dürfen
-  ([Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md)).
+  ([Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md)).
 - Große Websites oder Websites, die Facetten und eine Feinabstimmung der Relevanz brauchen, verwenden Solr über
-  `ezfind` ([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)).
+  `ezfind` ([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)).
 - Verborgene Inhalte und Inhalte in einer Sektion, die Besucher nicht lesen dürfen, werden von Besuchern nicht gefunden.
 
 ## Suchstatistiken einschalten
 
 Suchstatistiken sind **standardmäßig ausgeschaltet** (`site.ini [SearchSettings] LogSearchStats=disabled`), weil
-Suchbegriffe personenbezogene Daten sein können ([Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md)). Um
+Suchbegriffe personenbezogene Daten sein können ([Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md)). Um
 sie zu nutzen:
 
 1. Entscheiden Sie mit der Person, die für den Datenschutz verantwortlich ist, ob und wie lange Sie Suchbegriffe
@@ -63,7 +63,7 @@ Siteaccess Suchen aufzeichnet, sagt die Seite das ([URL-Aliase, Wildcards und Su
 
 Die meisten Suchprobleme sind Inhaltsprobleme: Titel mit internen Begriffen, leer gelassene Einleitungen, Informationen
 nur in einem PDF. Bevor Sie um geänderte Sucheinstellungen bitten, ändern Sie die Wörter. Redakteure bestimmen Titel
-und Einleitungen; der Website-Ersteller entscheidet, welche Felder durchsuchbar sind ([Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md)).
+und Einleitungen; der Website-Ersteller entscheidet, welche Felder durchsuchbar sind ([Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md)).
 
 > **Tipp**
 > Die Suchstatistiken sind auch eine gute Themenliste für den [Redaktionskalender](redaktionskalender.md).
@@ -76,7 +76,7 @@ Fragen Sie Ihren Partner, wenn:
 - Besucher Filter wie Typ, Datum oder Kategorie brauchen (Facetten);
 - die Suche auf einer großen Website langsam ist;
 - eine neu veröffentlichte Seite überhaupt nicht gefunden wird: Der Index muss möglicherweise neu aufgebaut werden,
-  oder die Indexierung wird durch Cron verzögert (`DelayedIndexing`) ([Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md)).
+  oder die Indexierung wird durch Cron verzögert (`DelayedIndexing`) ([Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md)).
 
 ## Eine monatliche Routine
 
@@ -87,7 +87,7 @@ Fragen Sie Ihren Partner, wenn:
 
 ## Verwandte Seiten
 
-- [Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md)
+- [Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md)
 - [Suchen (für Redakteure)](../../suchen.md)
 - [Suche im Intranet](../../unternehmen/intranets/suche-im-intranet.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

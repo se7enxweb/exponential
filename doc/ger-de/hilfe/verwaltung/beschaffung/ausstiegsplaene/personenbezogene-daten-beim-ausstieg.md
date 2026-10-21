@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen und Datenschutzbeauftragte, die den Teil eines Ausstiegs planen, der
 personenbezogene Daten betrifft. Ein Ausstieg bewegt Daten zwischen Parteien und lässt Kopien zurück; beides sind
 Momente, in denen personenbezogene Daten verloren gehen oder offengelegt werden können. Die Fakten dazu, wo Exponential
-personenbezogene Daten speichert und was es exportiert, stammen aus [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) und
+personenbezogene Daten speichert und was es exportiert, stammen aus [Datenschutzstandards](../../../../standards/datenschutz.md) und
 [Exponential verlassen, Abschnitt 5](../../../../installation/migration/exponential-verlassen.md#5-benutzer-und-personenbezogene-daten).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -50,7 +50,7 @@ getrennte Werkzeuge.
 - Exportieren Sie diese Teilmenge; bewahren Sie den Rest mit Zugriffskontrollen in Ihrem eigenen Archiv auf oder löschen
   Sie ihn nach Ihren Aufbewahrungsregeln, wie es die Seite zum Verlassen empfiehlt.
 - Entfernen Sie inaktive Konten vor dem Umzug; **Benutzer > Benutzerkonten prüfen** (`/user/hygiene`) findet Konten,
-  die seit einer Anzahl von Tagen nicht benutzt wurden ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+  die seit einer Anzahl von Tagen nicht benutzt wurden ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 - Eine Test- oder Staging-Kopie beim neuen Lieferanten sollte erfundene oder minimierte Daten enthalten.
 
 ## Passwörter
@@ -66,7 +66,7 @@ Datenschutzberatung zu entscheiden. Erwägen Sie auch, auf dem Zielsystem erneut
   (`exp:mailconsent`) und bewahren Sie sie so lange auf, wie Sie die Einwilligung womöglich nachweisen müssen; das
   empfangende System muss Widerrufe beachten.
 - **Audit-Einträge** werden für ihre Aufbewahrungsdauer aufbewahrt und nach einer festgelegten Zeit pseudonymisiert
-  ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)). Exportieren Sie sie mit ihrem signierten Manifest, damit
+  ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)). Exportieren Sie sie mit ihrem signierten Manifest, damit
   sie verifizierbar bleiben, und bewahren Sie die Schlüssel in `settings/override/audit.ini.append.php` mit ihnen auf
   ([Übergabe von Schlüsseln und Geheimnissen](uebergabe-von-schluesseln-und-geheimnissen.md)).
 
@@ -92,7 +92,7 @@ Datenschutzberatung zu entscheiden. Erwägen Sie auch, auf dem Zielsystem erneut
 
 ## Verwandte Seiten
 - [Ausstiegspläne: Übersicht](README.md)
-- [Datenschutzstandards](../../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../../standards/datenschutz.md)
 - [Partner: Kundendaten schützen](../../../partner/kundendaten-schuetzen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

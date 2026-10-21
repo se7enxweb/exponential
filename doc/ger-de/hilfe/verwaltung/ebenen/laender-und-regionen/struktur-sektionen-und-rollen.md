@@ -70,7 +70,7 @@ Themen verteilt sind.
 Konten kommunaler Beschäftigter legen Ihre Administratorinnen und Administratoren an (oder eine Registrierung in eine
 Gruppe, die Sie freigeben), und sie werden in die Gruppe Kommunale Benutzer gesetzt. Lassen Sie öffentliche
 Registrierungen nie Benutzer dorthin setzen; Registrierungen gehen nach `[UserSettings] DefaultUserPlacement`
-([Registrierung von Mitgliedern und Mitgliederbereiche](../../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)).
+([Registrierung von Mitgliedern und Mitgliederbereiche](../../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)).
 
 ## Das Sekretariat der Volksvertretung
 
@@ -98,7 +98,7 @@ Das Sekretariat veröffentlicht die amtliche Aufzeichnung. Zwei Regeln schützen
 
 - [Länder und Regionen](README.md)
 - [Schwerpunkte der Anforderungen für Länder und Regionen](schwerpunkte-der-anforderungen.md)
-- [Berechtigungen für Besucher](../../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Berechtigungen für Besucher](../../../ersteller/website-ersteller/rechte-fuer-besucher.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

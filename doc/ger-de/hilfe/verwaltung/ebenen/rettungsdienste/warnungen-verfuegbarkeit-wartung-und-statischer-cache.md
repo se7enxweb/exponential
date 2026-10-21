@@ -31,9 +31,9 @@ verlinkten Seiten dokumentiert; testen Sie jedes auf Ihrer eigenen Installation,
 | Schicht | Was sie tut | Geleert oder aufgefrischt durch | Lesen |
 |---|---|---|---|
 | Ansichts-Cache | speichert dargestellte Inhaltsseiten | Veröffentlichen (das Objekt und verwandte Seiten), **Cache leeren** an einem Knoten | [Caches](../../../../anleitungen/caches.md) |
-| Statischer Cache | Seiten als einfache Dateien gespeichert, die der Webserver sendet, ohne Exponential zu starten | Veröffentlichen frischt berührte Seiten auf; **Setup > Cache-Verwaltung**, *Statischer Inhalts-Cache* | [Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md) |
-| Antwort-Cache von Velocity | vom Webserver Velocity gehaltene Antworten | `./console exp:velocity cache clear` | [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md) |
-| CDN oder Reverse Proxy | Kopien am Netzrand | das Purge des CDN | [HTTP-Caching und CDNs](../../../../../eng-us/help/creators/website-creators/http-caching-and-cdns.md) |
+| Statischer Cache | Seiten als einfache Dateien gespeichert, die der Webserver sendet, ohne Exponential zu starten | Veröffentlichen frischt berührte Seiten auf; **Setup > Cache-Verwaltung**, *Statischer Inhalts-Cache* | [Generator für den statischen Cache](../../../../funktionen/6.0/generator-fuer-den-statischen-cache.md) |
+| Antwort-Cache von Velocity | vom Webserver Velocity gehaltene Antworten | `./console exp:velocity cache clear` | [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md) |
+| CDN oder Reverse Proxy | Kopien am Netzrand | das Purge des CDN | [HTTP-Caching und CDNs](../../../ersteller/website-ersteller/http-caching-und-cdns.md) |
 
 ## Der statische Cache
 
@@ -108,7 +108,7 @@ Diese Punkte abzudecken gehört zu Ihrem Hosting- und Betriebskonzept
 ## Verwandte Seiten
 
 - [Rettungsdienste](README.md)
-- [Statischer Cache und Velocity](../../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md)
+- [Statischer Cache und Velocity](../../../ersteller/website-ersteller/statischer-cache-und-velocity.md)
 - [Warnungen in vielen Sprachen und in einfacher Sprache](../oeffentliche-gesundheit/warnungen-mehrsprachig-und-in-einfacher-sprache.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

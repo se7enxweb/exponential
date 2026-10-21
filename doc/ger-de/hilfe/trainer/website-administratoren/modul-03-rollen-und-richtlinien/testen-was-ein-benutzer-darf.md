@@ -133,7 +133,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): Der Abschnitt zu
   Problemen nennt weitere Symptome.
-- [Berechtigungsprüfungen für Benutzer mit vielen Rollenzuweisungen](../../../../../eng-us/features/6.0/permission-checks-for-many-assignments.md):
+- [Berechtigungsprüfungen für Benutzer mit vielen Rollenzuweisungen](../../../../funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md):
   große Websites.
 - [Konten und Anmeldung](../../../konten-und-anmeldung.md): was ein Benutzer bei der Anmeldung sieht.
 

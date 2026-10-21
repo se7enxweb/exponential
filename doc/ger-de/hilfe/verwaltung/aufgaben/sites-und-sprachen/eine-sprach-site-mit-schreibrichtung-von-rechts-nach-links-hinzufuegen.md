@@ -47,7 +47,7 @@ Diese Aufgabe richtet sich an Administratoren und Site-Ersteller. Hintergrund:
 
 ## Verwandte Seiten
 
-- [Sites mit Schreibrichtung von rechts nach links](../../../../../eng-us/help/creators/website-creators/right-to-left-sites.md)
+- [Sites mit Schreibrichtung von rechts nach links](../../../ersteller/website-ersteller/websites-von-rechts-nach-links.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

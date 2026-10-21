@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Stylesheets und Skripte für Ihre Website, der Packer](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md#the-packer)
+Quellen: [Stylesheets und Skripte für Ihre Website, der Packer](../../../ersteller/website-ersteller/stylesheets-und-skripte.md#der-packer)
 und `extension/ezjscore/settings/ezjscore.ini` (zeigen Sie die Datei am Projektor).
 
 1. **Was er tut** (5 Minuten). Die Stufen, wie der Code sie anwendet:
@@ -150,10 +150,10 @@ Auf Ihrer Schulungsinstallation, `<site>` wird von `training_theme` gezeichnet.
 
 ## Weiterführende Literatur
 
-- [Stylesheets und Skripte für Ihre Website](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md): die
+- [Stylesheets und Skripte für Ihre Website](../../../ersteller/website-ersteller/stylesheets-und-skripte.md): die
   Einstellungen des Packers in einer Tabelle.
-- [ezjscore](../../../../../eng-us/features/6.0/extensions/ezjscore.md): die Erweiterung hinter dem Packer.
-- [Leistung und Caching für Websites](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md): was der Packer
+- [ezjscore](../../../../funktionen/6.0/erweiterungen/ezjscore.md): die Erweiterung hinter dem Packer.
+- [Leistung und Caching für Websites](../../../ersteller/website-ersteller/leistung-und-caching.md): was der Packer
   für die Ladezeit tut.
 
 ## Verwandte Seiten

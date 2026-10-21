@@ -36,8 +36,8 @@ Redakteure, die das Objekt bearbeiten und das eingebettete Objekt lesen dürfen.
 
 ## Verwandte Seiten
 
-- [Relationen und Wiederverwendung](../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
-- [Entfernen und Verbergen: die Prüfung umgekehrter Relationen](../../../eng-us/features/6.0/reverse-relation-check.md)
+- [Relationen und Wiederverwendung](../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
+- [Entfernen und Verbergen: die Prüfung umgekehrter Relationen](../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

@@ -113,8 +113,8 @@ Sobald Sie die Erweiterung kennen, beantwortet ihr Ordner den Rest:
 | `git -C extension/<ext> log --oneline` | Ihre Historie, wenn sie ein Klon ist |
 
 Viele Erweiterungen, die mit der Distribution ausgeliefert werden, haben auch eine Seite in der Dokumentation:
-[der Erweiterungskatalog](../../../../eng-us/features/6.0/extensions/README.md) und
-[was eine neue Installation mitbringt](../../../../eng-us/features/6.0/default-extension-distribution.md).
+[der Erweiterungskatalog](../../../funktionen/6.0/erweiterungen/README.md) und
+[was eine neue Installation mitbringt](../../../funktionen/6.0/standard-extension-auslieferung.md).
 
 ## Aus Templates
 
@@ -141,7 +141,7 @@ Jetzt kennen Sie einen weiteren Baustein, der schon auf Ihrer Festplatte liegt.
 - Zurück: [Den Code lesen, den Sie schon haben](den-vorhandenen-code-lesen.md)
 - Weiter: [Der Erweiterungskatalog von se7enxweb](der-se7enxweb-erweiterungskatalog.md)
 - [Die Extensions-Seite](../../../anleitungen/extensions-seite.md)
-- [Erweiterungsliste: sortieren, untersuchen und herunterladen](../../../../eng-us/features/6.0/extension-list-and-downloads.md)
+- [Erweiterungsliste: sortieren, untersuchen und herunterladen](../../../funktionen/6.0/extension-liste-und-downloads.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

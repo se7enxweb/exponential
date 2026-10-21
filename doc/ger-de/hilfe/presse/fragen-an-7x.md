@@ -34,7 +34,7 @@ Bereits dokumentiert: die Selbstbeschreibung, Brookins Consulting, die drei Etap
 
 ## Die Verantwortung für das Projekt
 
-Bereits dokumentiert: Dezember 2023, die ersten Änderungen, 6.0.0 am 1. Januar 2024 ([Dezember 2023](../../../eng-us/history/2023/2023-12.md)).
+Bereits dokumentiert: Dezember 2023, die ersten Änderungen, 6.0.0 am 1. Januar 2024 ([Dezember 2023](../../geschichte/2023/2023-12.md)).
 
 - Warum eine Codebasis übernehmen, deren ursprünglicher Entwickler aufgehört hatte?
 - Was war im ersten Monat am schwierigsten?

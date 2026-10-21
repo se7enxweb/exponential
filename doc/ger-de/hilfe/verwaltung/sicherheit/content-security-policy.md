@@ -15,7 +15,7 @@ Seite verwenden darf; mit einer strengen Richtlinie läuft ein Skript nicht, das
 reflektierten Wert eingeschleust wurde, selbst wenn ein Template vergisst, ihn zu maskieren. Öffentliche Websites sind
 attraktive Ziele für Defacement und für das Einschleusen von Skripten in vertrauenswürdige Seiten, daher ist die
 Richtlinie eine starke zweite Verteidigungslinie
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Inhalt
 
@@ -34,7 +34,7 @@ Richtlinie eine starke zweite Verteidigungslinie
 
 Das Projekt bewertet seine CSP-Unterstützung mit **Teilweise erfüllt** gegenüber CSP Level 3
 (<https://www.w3.org/TR/CSP3/>); das Durchsetzen ist eine Entscheidung des Betreibers je Siteaccess
-([Sicherheitsstandards: Content Security Policy Level 3](../../../../eng-us/standards/security.md#content-security-policy-level-3)).
+([Sicherheitsstandards: Content Security Policy Level 3](../../../standards/sicherheit.md#content-security-policy-level-3)).
 Unabhängig davon begrenzt `SecurityHeaders[Content-Security-Policy]=frame-ancestors 'self'` das Einbetten in Frames auf
 jeder Seite.
 
@@ -75,8 +75,8 @@ admin4l fehl.
 
 ## Verwandte Seiten
 
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Content Security Policy für Hoster](../../hosting/sicherheit/content-security-policy.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

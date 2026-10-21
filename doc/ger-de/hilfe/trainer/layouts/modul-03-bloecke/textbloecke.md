@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#blocks-by-purpose)
-und [Exponential Layouts: Blockkatalog](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-catalogue).
+Quellen: [Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#blöcke-nach-zweck)
+und [Exponential Layouts: Blockkatalog](../../../../bc/6.0/layouts.md#blockkatalog).
 
 1. **Die Familie** (4 Minuten):
 
@@ -133,7 +133,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout.
 
 1. **C.**
 2. Er gibt rohes Markup aus, das die Seite beschädigen kann; eine Content Security Policy blockiert Inline-Skripte darin
-   ([Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#blocks-by-purpose)).
+   ([Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#blöcke-nach-zweck)).
 3. `[Contact us](https://example.invalid/contact)` (mit der echten Adresse).
 4. In einem Inhaltselement: Er ist eigenständiger Inhalt, durchsuchbar und wiederverwendbar; das Layout listet oder
    zeigt ihn.
@@ -143,15 +143,15 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout.
 
 ## Weiterführende Informationen
 
-- [Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md): jeder Block nach
+- [Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md): jeder Block nach
   Zweck.
-- [Exponential Layouts: Blockkatalog](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-catalogue)
+- [Exponential Layouts: Blockkatalog](../../../../bc/6.0/layouts.md#blockkatalog)
 
 ## Verwandte Seiten
 
 - [Modul 3: Blöcke](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

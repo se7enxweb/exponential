@@ -16,7 +16,7 @@ funktionieren mit Apache und PHP-FPM; die Unterschiede sind vermerkt.
 
 Die Demo läuft im **Demomodus** (die Umgebungsvariable `EXP_DEMO_MODE=1`): Niemand kann ein Administratorpasswort ändern oder
 zurücksetzen, sodass der nächste Besucher sich weiterhin anmelden kann, und die Installer akzeptieren das veröffentlichte Passwort. Was der
-Demomodus tut und was nicht: [Demomodus](../../../../eng-us/bc/6.0/demo-mode.md).
+Demomodus tut und was nicht: [Demomodus](../../../bc/6.0/demomodus.md).
 
 > **Warnung:** Eine öffentliche Demo übergibt ihre Administration Fremden. Geben Sie ihr eine eigene Domain, einen eigenen Systembenutzer,
 > einen eigenen PHP-Handler und eine eigene Datenbankdatei, keine Zustellung von Mail an echte Adressen, keine Zugangsdaten, die irgendwo
@@ -145,10 +145,10 @@ Wenn eines davon fehlt: [Probleme mit dem Demomodus](../runbooks/probleme-mit-de
 
 ## Verwandte Seiten
 
-- [Demomodus: der Hinweis zum Upgrade](../../../../eng-us/bc/6.0/demo-mode.md)
+- [Demomodus: der Hinweis zum Upgrade](../../../bc/6.0/demomodus.md)
 - [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md),
   [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
-- [Beispiele für den Demomodus](../../../../eng-us/examples/demo-mode/README.md)
+- [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md)
 - [LiteSpeed und OpenLiteSpeed](litespeed-und-openlitespeed.md), [Plesk](../control-panels/plesk.md)
 - [exp:install für Hoster](../bereitstellung/exp-install-fuer-hoster.md), [Cronjobs](../betrieb/cronjobs.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

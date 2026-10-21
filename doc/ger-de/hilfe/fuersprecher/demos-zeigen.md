@@ -34,7 +34,7 @@ diese Seite passt sie an die Situation eines Fürsprechers an.
 ## Bauen Sie Ihre Demo-Installation
 
 Ein Befehl installiert eine vollständige Website auf SQLite
-([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)):
+([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)):
 
 ```bash
 ./console exp:install --dry-run
@@ -58,7 +58,7 @@ Eine vollständige Checkliste steht in [Demo-Skripte, Vor jeder Demo](../geschae
 | Redakteure | „Damit könnte ich arbeiten.“ | Weg Bearbeiten |
 | Designer | „Seiten lassen sich visuell bauen.“ | Weg Layouts |
 | Mehrsprachige Teams | „Unsere Sprachen sind abgedeckt.“ | Weg Sprachen |
-| Entwickler | „Das könnte ich erweitern.“ | Weg Bearbeiten, dann **Setup > RAD** und ein Template-Override ([RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md)) |
+| Entwickler | „Das könnte ich erweitern.“ | Weg Bearbeiten, dann **Setup > RAD** und ein Template-Override ([RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md)) |
 | Gemischte Gruppe | „Es ist ausgereift, offen und gut dokumentiert.“ | Weg Bearbeiten, dann die Hilfe |
 
 ## Drei fertige Demo-Wege

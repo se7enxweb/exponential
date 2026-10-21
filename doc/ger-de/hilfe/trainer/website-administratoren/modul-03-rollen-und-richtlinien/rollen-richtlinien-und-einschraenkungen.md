@@ -131,7 +131,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
   Rollenseite, der Editor.
 - [Sektionen](../../../../anleitungen/sektionen.md): Einschränkungen nach Sektion und auf eine Sektion beschränkte
   Zuweisungen.
-- [Handler für Inhaltseinschränkungen](../../../../../eng-us/features/6.0/content-limitation-handlers.md): wie Einschränkungen
+- [Handler für Inhaltseinschränkungen](../../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md): wie Einschränkungen
   ausgewertet werden.
 
 ## Verwandte Seiten

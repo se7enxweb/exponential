@@ -58,7 +58,7 @@ Die Fußzeile der Website verlinkt außerdem Spenden über PayPal. Andere Wege u
 | Ein Benutzer, dessen Site auf Exponential läuft | Ein kleines monatliches Sponsoring für 7x oder die Foundation |
 | Ein Unternehmen, das mit Exponential Geld verdient | Ein größeres dauerhaftes Sponsoring ([Sponsoring als Unternehmen](../sponsoren/als-unternehmen-sponsern.md)) oder eine Partnerschaft |
 | Ein Unternehmen, das eine Funktion braucht | Gesponserte Entwicklung bei 7x; das Ergebnis kann allen zugutekommen |
-| Eine Agentur, ein Hoster oder ein Schulungsanbieter | Das Partnerprogramm ([Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)) |
+| Eine Agentur, ein Hoster oder ein Schulungsanbieter | Das Partnerprogramm ([Partner: Hier beginnen](../partner/partner-hier-beginnen.md)) |
 | Jemand, der in den Vereinigten Staaten eine mögliche Steuerermäßigung möchte | Die Foundation, eine gemeinnützige Organisation nach 501(c)(3); fragen Sie Ihren eigenen Steuerberater |
 
 ## Warum es wichtig ist

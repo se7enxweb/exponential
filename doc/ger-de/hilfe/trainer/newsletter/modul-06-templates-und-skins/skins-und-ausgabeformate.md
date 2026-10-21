@@ -45,8 +45,8 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: die Rendering-Anleitung der Erweiterung (verlinkt von der
-[Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)) und
-[Anmeldeformulare auf der Website](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#subscribe-forms-on-the-site).
+[Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)) und
+[Anmeldeformulare auf der Website](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#abonnementformulare-auf-der-website).
 
 1. **Die Skins** (5 Minuten). **Vorschau der Layouts** (Dashboard, Block **Layouts, Sprachen und Interessen**) zeigt
    *Default*, *Company*, *News site* und *Shop*, jeweils mit **HTML-Teil** und **Text-Teil**. `default` ist der Skin
@@ -131,7 +131,7 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 <details>
 <summary>Antworten</summary>
 
-1. default, company, news, shop (Rendering-Anleitung, verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+1. default, company, news, shop (Rendering-Anleitung, verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 2. **B.** (Rendering-Anleitung).
 3. Damit sie in Outlook, Gmail und Apple Mail und bei blockierten Bildern gleich aussehen (Rendering-Anleitung).
 4. Eingeschaltete Personalisierung in der Liste (und die Daten des Abonnenten) (Rendering-Anleitung; Lektion 2.2).
@@ -141,18 +141,18 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 
 ## Weiterführende Informationen
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420):
   die Rendering-Anleitung mit jedem Platzhalter.
-- [Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#subscribe-forms-on-the-site):
+- [Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#abonnementformulare-auf-der-website):
   Skins und wo sie liegen.
-- [Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#consent):
+- [Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#einwilligung):
   der Abmeldelink in jeder Ausgabe.
 
 ## Verwandte Seiten
 
 - [Modul 6: Templates und Skins](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -50,7 +50,7 @@ Dokumente außerhalb von Exponential geschwärzt und geprüft wurden (siehe „S
    Eintrag verschieben.
 
 Nennen Sie den Besuchern bei jedem Link Format und Größe; der Datentyp für Dateien liefert beides
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#download-links-in-templates)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#download-links-in-templates)).
 
 ## Freigabe und Veröffentlichung
 

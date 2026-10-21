@@ -43,9 +43,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Bounces und die Sperrliste](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#bounces-and-the-blacklist),
+Quellen: [Bounces und die Sperrliste](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#bounces-und-die-sperrliste),
 [Cronjob-Teile](../../../../spezifikationen/6.0/cjw_newsletter.md#cronjob-teile) und die Anleitung zur Zustellbarkeit
-der Erweiterung (verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+der Erweiterung (verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 
 1. **Der Weg zurück** (5 Minuten). Eine zurückkommende Mail geht an den **E-Mail Rücksendepfad (Return-Path)** der
    Liste (Lektion 2.2). Dieses Postfach wird entweder von einem **Mailkonto** des Newsletters gelesen (der Teil
@@ -138,18 +138,18 @@ Verwenden Sie die Schulungsinstallation. Speichern Sie kein Mailkonto.
 <details>
 <summary>Antworten</summary>
 
-1. An den Return-Path (Lektion 2.2; [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts)).
+1. An den Return-Path (Lektion 2.2; [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile)).
 2. **C.** ([Cronjob-Teile](../../../../spezifikationen/6.0/cjw_newsletter.md#cronjob-teile)).
 3. Sie kommt auf die Unterdrückungsliste und die Sperrliste des Newsletters (Anleitung zur Zustellbarkeit, verlinkt
-   von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
-4. 3; der Benutzer erhält nichts mehr ([Bounces und die Sperrliste](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#bounces-and-the-blacklist)).
+   von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
+4. 3; der Benutzer erhält nichts mehr ([Bounces und die Sperrliste](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#bounces-und-die-sperrliste)).
 5. Damit keine zurückgekommene Mail verloren geht, solange nicht nachgewiesen ist, dass das Untersuchen funktioniert.
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#bounces-and-the-blacklist):
+- [Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#bounces-und-die-sperrliste):
   Bounces und die Sperrliste.
 - [E-Mail-Einstellungen: einrichten und betreiben](../../../../anleitungen/mail-einstellungen-administrator.md): der
   Bounce-Leser und die Unterdrückungsliste des Kernels.
@@ -160,7 +160,7 @@ Verwenden Sie die Schulungsinstallation. Speichern Sie kein Mailkonto.
 
 - [Modul 5: Bounces und Transporte](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

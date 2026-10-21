@@ -48,7 +48,7 @@ eine Prüfung auf ein Bild bleibt während der Wartung also grün.
 Richten Sie die Überwachung auf die Adresse, die Besucher verwenden, mit HTTPS, damit ein ablaufendes Zertifikat oder
 eine fehlerhafte Weiterleitung eine Warnung auslöst. Unter Velocity gibt `qbixconsole ssl:show` das verwendete
 Zertifikat aus; Zertifikate von Let's Encrypt erneuert der Server selbst
-([Velocity: HTTPS und Zertifikate](../../../../../eng-us/features/6.0/velocity-https-certificates.md)). Siehe
+([Velocity: HTTPS und Zertifikate](../../../../funktionen/6.0/velocity-https-zertifikate.md)). Siehe
 [Ablauf von Zertifikaten](../vorfaelle/ablauf-von-zertifikaten.md).
 
 ## Wo die Prüfungen laufen
@@ -68,7 +68,7 @@ Exponential liefert keinen eigenen Verfügbarkeitsprozentsatz
 ## Verwandte Seiten
 - [Website nicht erreichbar](../vorfaelle/website-nicht-erreichbar.md)
 - [Überwachung im Überblick](ueberwachung-im-ueberblick.md)
-- [Sicherheits-Header prüfen](../../../../../eng-us/help/government/tasks/operations/check-security-headers.md)
+- [Sicherheits-Header prüfen](../../aufgaben/betrieb/die-sicherheitsheader-pruefen.md)
 - [Mehrere Webserver hinter einem Load Balancer](../verfuegbarkeit/mehrere-webserver-hinter-einem-load-balancer.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

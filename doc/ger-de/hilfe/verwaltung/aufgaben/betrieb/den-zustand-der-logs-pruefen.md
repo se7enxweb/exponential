@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren bei einer wöchentlichen Prüfung. Am Ende wissen Sie, dass die Logs im Budget
 liegen, rotieren und beschreibbar sind. Referenz:
-[Log-Viewer, „Zustand der Logs“](../../../../../eng-us/features/6.0/log-viewer.md#log-health).
+[Log-Viewer, „Zustand der Logs“](../../../../funktionen/6.0/log-betrachter.md#zustand-der-logs).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -45,8 +45,8 @@ liegen, rotieren und beschreibbar sind. Referenz:
 
 ## Verwandte Seiten
 - [Die Fehlerübersicht lesen](die-fehleruebersicht-lesen.md)
-- [Aufbewahrung und Rotation der Logs](../../../../../eng-us/help/government/operations/monitoring/log-retention-and-rotation.md)
-- [Datenträger voll](../../../../../eng-us/help/government/operations/incidents/disk-full.md)
+- [Aufbewahrung und Rotation der Logs](../../betrieb/ueberwachung/aufbewahrung-und-rotation-von-protokollen.md)
+- [Datenträger voll](../../betrieb/vorfaelle/festplatte-voll.md)
 - [Log-Viewer und Rotation (Hosting)](../../../hosting/betrieb/log-viewer-und-log-rotation.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

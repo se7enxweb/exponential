@@ -154,7 +154,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Führen Sie jeden Befehl im Wur
 
 - [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md): Anforderungen, Einstellungen und Betrieb.
 - [Kapitel 8, Befehlsreferenz](../../../../installation/08-die-website-ausliefern.md#8316-befehlsreferenz): jedes Verb.
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../../../eng-us/features/6.0/velocity-persistent-worker-server.md):
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md):
   die Funktionsseite.
 - [Velocity startet nicht](../../../hosting/runbooks/velocity-startet-nicht.md): das Runbook für einen
   fehlgeschlagenen Start.
@@ -163,7 +163,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Führen Sie jeden Befehl im Wur
 
 - [Modul 2: Velocity](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

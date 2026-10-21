@@ -34,7 +34,7 @@ einer Quelle für jeden Punkt, damit Sie mit Ihren Beratern entscheiden können,
 
 Ein Besucher, der auf der Website abonniert, bekommt eine Bestätigungsmail und wird erst gezählt, wenn er auf ihren
 Link klickt („der Abonnent bestätigt per Mail (Double-Opt-in), bevor das Abonnement zählt“,
-[Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#subscribe-forms-on-the-site)).
+[Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#abonnementformulare-auf-der-website)).
 Bis dahin ist das Abonnement **wartend** und erhält nichts.
 
 Das Abonnieren per E-Mail (Release 4.2.0, standardmäßig aus mit `[MailInSettings] MailIn=disabled`) folgt derselben
@@ -50,9 +50,9 @@ abgeglichen; optionale Mails gehen nur an Menschen, die sie eingeschaltet haben,
 die Person sie bekommt und wie sie sich abmeldet
 ([der Leitfaden für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md#1-was-das-system-tut-in-einem-absatz)).
 Release 4.2.0 des Newsletters „arbeitet mit den E-Mail-Einstellungen von 6.0.15, statt ein eigenes System zu führen“
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 
-Was ein Abonnent sieht ([E-Mail-Einstellungen: der Leitfaden für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md)):
+Was ein Abonnent sieht ([E-Mail-Einstellungen: der Leitfaden für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md)):
 
 - optionale E-Mails sind „aus, bis Sie sie einschalten“;
 - eine Seite listet jede Art von E-Mail mit einem eigenen Schalter auf, dazu einen Hauptschalter für alle optionalen
@@ -67,12 +67,12 @@ Jede optionale E-Mail endet mit dem Grund, warum die Person sie bekommen hat, ei
 ihrer Einstellungsseite; für beides ist keine Anmeldung nötig. Das bloße Öffnen des Links ändert nichts, sodass ein
 Virenscanner, der Links öffnet, niemanden abmelden kann; die Person drückt eine Schaltfläche. Mail-Programme, die ihre
 eigene Schaltfläche zum Abmelden zeigen, verwenden denselben Link
-([Von einer E-Mail abmelden](../../../../eng-us/features/6.0/mail-preferences.md#unsubscribing-from-an-e-mail)). Der Leitfaden für
+([Von einer E-Mail abmelden](../../../funktionen/6.0/e-mail-einstellungen.md#eine-e-mail-abbestellen)). Der Leitfaden für
 Administratoren nennt die One-Click-Header nach RFC 8058.
 
 Auch die Skins der Erweiterung drucken einen Abmeldelink: Die Checkliste für Website-Ersteller verlangt „einen
 Abmeldelink in jeder Ausgabe (die mitgelieferten Skins `news` und `company` drucken einen)“
-([Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#consent)).
+([Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#einwilligung)).
 
 ## Das Einwilligungsprotokoll
 
@@ -99,7 +99,7 @@ Einwilligungsprotokoll geschrieben, und „Sie sind dafür verantwortlich, diese
 > Importieren Sie nur Menschen, die dem Empfang dieses Newsletters zugestimmt haben, und bewahren Sie die Nachweise (das
 > Formular, das Datum, den Wortlaut) auch außerhalb der Website auf. „Importieren Sie nur Menschen, die dem Empfang des
 > Newsletters zugestimmt haben; halten Sie fest, woher die Einwilligung stammt“
-> ([Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#importing-and-exporting)).
+> ([Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#importieren-und-exportieren)).
 
 ## Statistiken nur mit Einwilligung
 
@@ -121,10 +121,10 @@ SMS sind ausgeschaltet, bis sie in den Einstellungen eingeschaltet werden.
 - Eine Person kann ihren Verlauf auf ihrer Einstellungsseite sehen und herunterladen.
 - Zum Löschen wendet sich eine Person an den Administrator: Die Einstellungen werden entfernt und der Verlauf wird
   anonymisiert; ein Vermerk, dass die Person widerrufen hat, bleibt ohne ihre Adresse erhalten, damit die Website
-  nachweisen kann, dass sie nicht mehr schreibt ([Ihre Rechte](../../../../eng-us/features/6.0/mail-preferences.md#your-rights)).
+  nachweisen kann, dass sie nicht mehr schreibt ([Ihre Rechte](../../../funktionen/6.0/e-mail-einstellungen.md#ihre-rechte)).
 - Hatte eine gelöschte Person Newsletter-Daten, entfernen die Handler der Kategorien ihren Newsletter-Benutzer, ihre
   Interessen, SMS-Daten und personenbezogenen Statistiken
-  ([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+  ([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 
 Wie Sie solche Anfragen Schritt für Schritt bearbeiten:
 [Anfragen nach dem Datenschutzrecht](../../../anleitungen/mail-einstellungen-administrator.md#6-anfragen-nach-dem-datenschutzrecht).

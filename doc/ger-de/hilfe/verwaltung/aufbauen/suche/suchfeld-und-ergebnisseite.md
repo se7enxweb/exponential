@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Site-Ersteller. Das Suchfeld ist ein Formular, das `SearchText` an `content/search` sendet;
 die Ergebnisseite ist das Template `content/search.tpl` Ihres Designs
-([Site-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md)).
+([Site-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md)).
 
 ## Inhalt
 
@@ -46,7 +46,7 @@ ihn als verstecktes Feld senden:
 ## Die Ergebnisseite
 
 Überschreiben Sie `content/search.tpl` in Ihrem Design
-([Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)). Es erhält die Ergebnisse und den
+([Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)). Es erhält die Ergebnisse und den
 Suchtext. Zeigen Sie:
 
 - den Suchtext und die Zahl der Ergebnisse;
@@ -69,11 +69,11 @@ der Leistungen, die Kontaktseite. Begriffe ohne Treffer helfen Ihnen **Setup > S
 - Die Überschrift der Ergebnisse erhält den Fokus oder kündigt die Zahl der Ergebnisse an.
 - Ergebnislinks, die für sich allein verständlich sind (der Titel).
 - Prüfen Sie die Seite nur mit der Tastatur und bei 200 % Zoom
-  ([Barrierefreiheit für Site-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+  ([Barrierefreiheit für Site-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 
 ## Verwandte Seiten
 
-- [Site-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md)
+- [Site-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md)
 - [Eingebaute Suche für öffentliche Sites](eingebaute-suche-fuer-oeffentliche-sites.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -38,7 +38,7 @@ einheitlich gezeigt und gefiltert werden können.
 ## Sie sicher hinzufügen
 
 Attribute einer Klasse hinzuzufügen, die Objekte hat, ist sicher: Bestehende Objekte erhalten leere Werte
-([Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#changing-a-class-on-a-live-site)).
+([Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#eine-klasse-auf-einer-live-website-ändern)).
 
 1. Machen Sie die Änderung zuerst auf einer Testinstallation; übertragen Sie sie mit einem Paket
    ([Pakete](../../../../anleitungen/pakete.md)).
@@ -46,7 +46,7 @@ Attribute einer Klasse hinzuzufügen, die Objekte hat, ist sicher: Bestehende Ob
    **Übersetzbar** für Booking, Booking link und Place aus; **OK**.
 3. Aktualisieren Sie die Templates (`full/event.tpl`, die Kalender- und Programmansicht, Ihre Listen), damit sie die
    neuen Felder zeigen; die mitgelieferten Templates von ezwebin kennen sie nicht
-   ([Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)).
+   ([Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)).
 4. Leeren Sie die Caches: `php bin/php/ezcache.php --clear-tag=template` und
    `php bin/php/ezcache.php --clear-id=content` ([Caches](../../../../anleitungen/caches.md)).
 
@@ -80,7 +80,7 @@ Sie die Bezeichner von Klasse und Attribut in den Templates an.
 
 - [Veranstaltungen](README.md)
 - [Barrierefreie Informationen zu Veranstaltungen](barrierefreie-informationen-zu-veranstaltungen.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

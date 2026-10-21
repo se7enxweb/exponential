@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Beschaffungsteams und Verantwortliche für Barrierefreiheit, die den Teil zur
 Barrierefreiheit einer Ausschreibung für ein CMS schreiben müssen. Sie erklärt, welche Teile eines CMS eine Anforderung
 an die Barrierefreiheit abdecken muss, bietet Formulierungen für Anforderungen und gibt an, was Exponential zu jedem
-dokumentiert, ausschließlich mit den Statusangaben der [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
+dokumentiert, ausschließlich mit den Statusangaben der [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -68,7 +68,7 @@ ACC-06 (Should) Accessibility is regression-tested; describe the tests and how o
 
 ## Der dokumentierte Status von Exponential
 
-Aus [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md):
+Aus [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md):
 
 | Standard | Status | Was das für Ihre Ausschreibung bedeutet |
 |---|---|---|
@@ -82,8 +82,8 @@ Prüfung der Barrierefreiheit in der CI (axe wird von Hand ausgeführt); Alterna
 nichts zwingt sie, ihn auszufüllen.
 
 Für Exponential lässt sich ACC-02 also für admin4 und admin4l mit Nachweisen beantworten, ACC-01 ist die Arbeit dessen,
-der das öffentliche Design baut ([Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md),
-[Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)), und ACC-04 wird mit „es gibt
+der das öffentliche Design baut ([Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md),
+[Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)), und ACC-04 wird mit „es gibt
 keinen“ beantwortet.
 
 ## Nachweise, nach denen Sie fragen sollten
@@ -100,15 +100,15 @@ keinen“ beantwortet.
   eines hat; machen Sie es zu einem bewerteten Kriterium und fragen Sie stattdessen nach einer gleichwertigen
   Bewertung.
 - Die Inhalte vergessen: Keine Software bringt die Redaktion dazu, guten Alternativtext zu schreiben. Planen Sie
-  Schulungen ([Editors 201, Qualität und Barrierefreiheit](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md)).
+  Schulungen ([Editors 201, Qualität und Barrierefreiheit](../../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md)).
 - Dokumente vergessen: Von der Software erzeugte PDFs sind nicht getaggt (PDF/UA **Nicht erfüllt** in
-  [Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md)).
+  [Standards zu Dokumentation und Veröffentlichung](../../../../standards/dokumentation-und-veroeffentlichung.md)).
 
 ## Verwandte Seiten
 - [Anforderungen an ein CMS für den öffentlichen Sektor](README.md)
 - [Was Exponential nachweisen kann und was nicht](was-exponential-nachweisen-kann-und-was-nicht.md)
 - [Ausschreibungsvorlage: Klausel zur Barrierefreiheit](../ausschreibungsvorlagen/klausel-barrierefreiheit.md)
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

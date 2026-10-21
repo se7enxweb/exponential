@@ -10,8 +10,8 @@ type: help
 # FAQ: Suche
 
 Diese Seite beantwortet die Suchfragen öffentlicher Stellen zu Exponential. Die Antworten stammen aus
-[Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md),
-[Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md) und [Suchen](../../suchen.md).
+[Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md),
+[Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md) und [Suchen](../../suchen.md).
 
 ## Inhalt
 
@@ -26,19 +26,19 @@ Diese Seite beantwortet die Suchfragen öffentlicher Stellen zu Exponential. Die
 
 Ja. Exponential hat eine eingebaute Suchmaschine mit einem Suchfeld und Templates für Ergebnisse, Einstellungen, um sie
 zu begrenzen und abzustimmen, verzögerte Indexierung und den Neuaufbau des Index
-([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)).
+([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)).
 
 ## Wann brauchen wir Solr?
 
 Wenn Sie Facetten, bessere Relevanz, den Inhalt von Dateien oder mehr Skalierung brauchen. Die Erweiterung ezfind stellt
 die Suche der Website auf Apache Solr um; `exp:solr` steuert sie
-([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md),
+([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md),
 [Such-Backends](../../hosting/grundlagen/such-backends.md)). Solr ist ein eigener Dienst, den Ihr Hoster betreiben muss.
 
 ## Können Besucher in Dokumenten suchen?
 
 Mit Solr über ezfind lassen sich Dateiinhalte indexieren
-([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)). Klären Sie mit Ihrem
+([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)). Klären Sie mit Ihrem
 Dienstleister, welche Dateitypen Ihre Konfiguration indexiert.
 
 ## Können wir sehen, wonach Menschen suchen?
@@ -46,23 +46,23 @@ Dienstleister, welche Dateitypen Ihre Konfiguration indexiert.
 Ja: **Setup > Suchstatistiken** listet die Suchbegriffe auf
 ([Links, URL-Aliasse, Platzhalter und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)). Suchbegriffe können
 personenbezogene Daten enthalten; nehmen Sie sie in Ihre Aufbewahrungsregeln auf
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
+([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
 
 ## Wie finden Redaktionen Inhalte?
 
 Die Administration hat eine Schnellsuche, einen Suchbereich, eine erweiterte Suche und das Öffnen eines Eintrags über
 seine Nummer oder Adresse ([Suchen](../../suchen.md)); **Setup > Inhaltsfinder** findet Inhalte im ganzen Baum
-([Inhaltsfinder](../../../../eng-us/features/6.0/content-finder.md)).
+([Inhaltsfinder](../../../funktionen/6.0/inhalts-finder.md)).
 
 ## Gibt es eine Schulung?
 
-Ja: der [Kurs Suche](../../../../eng-us/help/trainers/search/README.md), 20 Lektionen, etwa 10 Stunden, für Administratoren und Entwickler.
+Ja: der [Kurs Suche](../../trainer/suche/README.md), 20 Lektionen, etwa 10 Stunden, für Administratoren und Entwickler.
 
 ## Verwandte Seiten
 
 - [FAQ für Verwaltungen](README.md)
 - [FAQ: Integrationen und APIs](faq-integrationen.md)
-- [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)
+- [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

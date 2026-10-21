@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Administration, Informationssicherheitsbeauftragte und Prüfende, die sich auf das
 Prüfprotokoll als Beweismittel stützen. Das Prüfprotokoll macht Manipulationen erkennbar: Jeder Eintrag trägt den Hash des
 vorherigen, Tagesdateien werden archiviert und in signierten Manifesten aufgeführt, und eine Prüfung zeigt Ihnen, ob
-etwas bearbeitet oder gekürzt wurde ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md);
+etwas bearbeitet oder gekürzt wurde ([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md);
 [Audit-Leitfaden, Abschnitt 4.4](../../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)).
 
 ## Inhalt
@@ -75,7 +75,7 @@ letzte Zeile einer Datei beschädigen kann; Abschnitt 5.3 des Leitfadens erklär
   Risikobereitschaft.
 
 ## Verwandte Seiten
-- [Das Prüfprotokoll prüfen](../../../../../eng-us/help/government/tasks/operations/verify-the-audit-trail.md)
+- [Das Prüfprotokoll prüfen](../../aufgaben/betrieb/das-audit-protokoll-verifizieren.md)
 - [Audit-Warnungen](audit-warnungen.md)
 - [Prüfprotokollarchive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
 - [Rollenentwurf: Prüfende](../personen-und-berechtigungen/rollenentwurf-pruefende.md)

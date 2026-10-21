@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Infrastruktur- und Sicherheitsteams einer öffen
 Exponential-Website vorbereiten und bewerten. Sie beantwortet, welche Härtung die Software vom Host erwartet, wie Sie
 jede Ebene prüfen und wie Sie das Ergebnis in einer Sicherheitsbewertung darstellen. Die Referenz ist
 [Kapitel 13: Sicherheitshärtung](../../../../installation/13-sicherheitshaertung.md); die Seite der Anwendung behandeln
-[Sicherheitshärtung](../../../sicherheitshaertung.md) und [Sicherheitsstandards](../../../../../eng-us/standards/security.md).
+[Sicherheitshärtung](../../../sicherheitshaertung.md) und [Sicherheitsstandards](../../../../standards/sicherheit.md).
 Hoster haben ihre eigene Fassung: [Härtung für Hoster](../../../hosting/sicherheit/haertung-fuer-hoster.md).
 
 ## Inhalt
@@ -90,13 +90,13 @@ ISO/IEC 27001 ([ISO/IEC 27001](https://www.iso.org/standard/27001)), des
 [NIS2-Richtlinie](https://eur-lex.europa.eu/eli/dir/2022/2555/oj). Exponential beansprucht keine Zertifizierung nach
 einem davon. Was hilft:
 
-- [Sicherheitsstandards](../../../../../eng-us/standards/security.md) ordnet die Software den
+- [Sicherheitsstandards](../../../../standards/sicherheit.md) ordnet die Software den
   [OWASP Top 10](https://owasp.org/Top10/) und dem [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)
   zu, mit ehrlichen Statusangaben „Teilweise erfüllt“ und „Nicht geprüft“ und den bekannten Lücken (zum Beispiel die
   standardmäßig ausgeschaltete Kontosperre und eine Mindestlänge für Passwörter von 10, unter den 12 der ASVS-Stufe 1).
 - Die Prüfungen auf dieser Seite erzeugen Nachweise, die Sie der Bewertung beilegen können.
 - Das Prüfprotokoll zeichnet Schreibvorgänge an Einstellungen, das Leeren von Caches und Bereitstellungen auf, was
-  Änderungs- und Zugriffskontrollen unterstützt ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+  Änderungs- und Zugriffskontrollen unterstützt ([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Checkliste
 
@@ -106,7 +106,7 @@ einem davon. Was hilft:
 - [ ] `EZP_DIR_MODE_MAX` und `EZP_FILE_MODE_MAX` gesetzt; ein Benutzer oder eine Gruppe schreibt `var/`.
 - [ ] `settings/override/` ist nur für den Benutzer der Website und Administratoren lesbar.
 - [ ] Der Einrichtungsassistent ist geschlossen und die Administration beschränkt.
-- [ ] Die in [Sicherheitsstandards](../../../../../eng-us/standards/security.md) aufgeführten Lücken sind geprüft und entschieden.
+- [ ] Die in [Sicherheitsstandards](../../../../standards/sicherheit.md) aufgeführten Lücken sind geprüft und entschieden.
 
 ## Verwandte Seiten
 

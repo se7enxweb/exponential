@@ -43,7 +43,7 @@ Benutzer, deren Rolle `content/translations` hat (Administratoren). Damit Besuch
 
 - [Inhaltssprachen](../../anleitungen/inhaltssprachen.md)
 - [Eine Sprache hinzufügen](../kunden/wachstum/eine-sprache-hinzufuegen.md)
-- [Mehrsprachige Websites](../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Mehrsprachige Websites](../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

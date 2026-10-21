@@ -36,7 +36,7 @@ dann nicht mehr sagen, wer was getan hat.
 | 6 | Das Konto beim Zahlungsanbieter | Zahlungen ohne Bestellung, wartende Erstattungen | Eigentümer oder wer erstatten darf |
 | 7 | Statusänderungen | Jede Bestellung in den Status gesetzt, der der tatsächlichen Arbeit entspricht | Wer die Arbeit erledigt hat |
 
-Was das Dashboard zeigt, ist unter [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+Was das Dashboard zeigt, ist unter [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 beschrieben: Bestellungen heute sowie in 7 und 30 Tagen, offene Bestellungen, zu lange wartende Bestellungen,
 abgebrochene Warenkörbe, Bestseller und die Liste „Nächste Schritte“, die aus Ihren Daten und Einstellungen ermittelt wird.
 
@@ -53,11 +53,11 @@ Zahlungsanbieter nicht funktioniert.
 Die Liste „Work to do“ stellt die Bestellungen, die am längsten warten, an den Anfang. Öffnen Sie jede, prüfen Sie
 Artikel, Optionen, Adresse und einen eventuellen Kommentar des Kunden, und setzen Sie sie weiter. Bestellungen, die auf
 den Kunden warten (Pending, Awaiting payment, Payment failed, Ready for pickup), werden nach einer kürzeren Frist
-hervorgehoben als die anderen ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+hervorgehoben als die anderen ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ### 3. Fehlgeschlagene Zahlungen ansehen
 
-Sortieren Sie die Bestellliste nach Status ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)). Eine
+Sortieren Sie die Bestellliste nach Status ([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)). Eine
 fehlgeschlagene Zahlung liegt meist an der Karte eines Kunden. Mehrere an einem Vormittag deuten auf den
 Zahlungsschritt oder den Anbieter hin; siehe [Zahlungsanbieter](zahlungsanbieter.md).
 

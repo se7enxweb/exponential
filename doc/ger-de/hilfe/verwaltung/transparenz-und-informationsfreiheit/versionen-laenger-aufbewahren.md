@@ -66,7 +66,7 @@ Versionen sind weg.
 `content/versionremove` erlaubt einem Benutzer, Entwürfe sowie archivierte und abgelehnte Versionen auf der
 Versionsseite zu entfernen; die veröffentlichte Version und Versionen in einem laufenden Workflow werden dort nie
 entfernt. Für aktenrelevante Sektionen geben Sie dieses Recht nur Administratoren, und beachten Sie, dass Entfernungen
-im Kanal `content` des Prüfprotokolls aufgezeichnet werden ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+im Kanal `content` des Prüfprotokolls aufgezeichnet werden ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Entwürfe
 

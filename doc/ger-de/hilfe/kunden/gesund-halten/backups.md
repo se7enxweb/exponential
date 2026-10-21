@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber, der dafür verantwortlich ist, dass keine Inhalte, Bestellungen und
 Mitgliederdaten verloren gehen. Das Backup selbst erstellt meist der Hoster oder ein Betreiber; die Befehle stehen unter
 [Eine Website betreiben, sichern und wiederherstellen](../../../anleitungen/betrieb-einer-website.md) und
-[Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md). Ihre Aufgabe ist es zu
+[Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md). Ihre Aufgabe ist es zu
 entscheiden, was gut genug ist, und sicherzustellen, dass es wirklich geschieht.
 
 ## Ein Backup hat zwei Hälften
@@ -49,7 +49,7 @@ Schreiben Sie die Antworten auf und geben Sie sie Ihrem Hoster; er macht daraus 
 
 > **Hinweis**
 > Das Projekt veröffentlicht keine empfohlene Häufigkeit oder Aufbewahrungsdauer; die Leitfäden geben nur ein
-> Beispiel, „täglich für eine Woche, wöchentlich für einen Monat“ ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+> Beispiel, „täglich für eine Woche, wöchentlich für einen Monat“ ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 > Wählen Sie anhand Ihrer eigenen Antworten.
 
 ## Was Sie Ihren Hoster fragen sollten

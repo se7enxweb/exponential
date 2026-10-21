@@ -143,10 +143,10 @@ mit dem Passwort der externen Datenbank. Fragen Sie die Maintainer nach dem Test
 
 ## Verwandte Seiten
 
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md)
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md)
 - [RAD-Erweiterungspunkte](rad-erweiterungspunkte.md) und [die RAD-Erweiterungsoberfläche](rad-erweiterungsoberflaeche.md)
 - [Spezifikation: die Sicherheits- und Stabilitätshärtung von 6.0.13](../../spezifikationen/6.0/sicherheitshaertung-6.0.13.md)
 - [Spezifikation: die Sicherheitspatches vom August 2026](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md)
 - [Sicherheitsvorgaben vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Härtung von Datentypen und Eingaben (27. September 2026)](../../spezifikationen/6.0/datentyp-eingabehaertung.md)
-- [Februar 2026](../../../eng-us/history/2026/2026-02.md)
+- [Februar 2026](../../geschichte/2026/2026-02.md)

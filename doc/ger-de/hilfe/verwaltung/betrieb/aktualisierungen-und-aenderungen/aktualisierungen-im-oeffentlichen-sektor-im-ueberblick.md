@@ -92,8 +92,8 @@ angelegt; prüfen Sie das mit `./console exp:user-login-check --allow-root-user`
 ## Verwandte Seiten
 - [Kunden-Websites aktualisieren (Hosting)](../../../hosting/betrieb/kunden-websites-aktualisieren.md)
 - [Aktualisierungen von PHP und Datenbank](php-und-datenbank-aktualisierungen.md)
-- [Konsistenz nach der Aktualisierung prüfen](../../../../../eng-us/help/government/tasks/operations/check-upgrade-consistency.md)
-- [Kurs für Website-Administratoren, Modul Aktualisierungen](../../../../../eng-us/help/trainers/site-administrators/README.md)
+- [Konsistenz nach der Aktualisierung prüfen](../../aufgaben/betrieb/die-konsistenz-nach-einem-upgrade-pruefen.md)
+- [Kurs für Website-Administratoren, Modul Aktualisierungen](../../../trainer/website-administratoren/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

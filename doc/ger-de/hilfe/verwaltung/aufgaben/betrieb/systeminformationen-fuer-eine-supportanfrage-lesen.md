@@ -50,7 +50,7 @@ Wer Exponential unterstützt: [Partner: hier beginnen](../../../partner/partner-
 [Wer ist 7x](../../../wer-ist-7x.md).
 
 ## Verwandte Seiten
-- [Systeminformationen und Zustandsprüfungen](../../../../../eng-us/help/government/operations/monitoring/system-information-and-health-checks.md)
+- [Systeminformationen und Zustandsprüfungen](../../betrieb/ueberwachung/systeminformationen-und-zustandspruefungen.md)
 - [Wenn etwas schiefgeht (Hilfe)](../../../wenn-etwas-schiefgeht.md)
 - [Anleitung zu den Systeminformationen](../../../../anleitungen/systeminformationen.md)
 - [Support-Stufen (Hosting)](../../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)

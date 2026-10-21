@@ -28,7 +28,7 @@ Projekts und seine veröffentlichten Supportstufen sind im Bereich Partner besch
 | Community-Support | Issue-Tracker, Dokumentation, Community-Kanäle; keine garantierte Antwort | [Supportstufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md) |
 | Ein Partner | vertraglich vereinbarte Leistungen eines Unternehmens im Partnerprogramm | [Was ist ein Exponential-Partner](../../partner/was-ein-exponential-partner-ist.md) |
 | 7x | das Unternehmen, das die Entwicklung leitet; bezahlter Support | [Mit 7x zusammenarbeiten](../../partner/mit-7x-zusammenarbeiten.md) |
-| Eigenes Personal | Ihre eigenen Mitarbeitenden, geschult mit dem freien Material | [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md) |
+| Eigenes Personal | Ihre eigenen Mitarbeitenden, geschult mit dem freien Material | [Kurskatalog](../../trainer/kurskatalog.md) |
 
 ## Welche Partnerprofile es gibt
 

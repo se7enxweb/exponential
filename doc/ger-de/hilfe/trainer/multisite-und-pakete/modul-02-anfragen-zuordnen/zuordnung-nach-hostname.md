@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)
+Quellen: [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)
 und [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md#zuordnung-nach-url-host-oder-port).
 
 1. **Die Host-Zuordnung** (5 Minuten). Zeigen Sie das Beispiel:
@@ -170,7 +170,7 @@ Ihrer Übungsumgebung.
 1. `HostMatchMapItems[]=www.example.org;site_org` in `[SiteAccessSettings]`, mit `HostMatchType=map` und `host` in
    `MatchOrder`.
 2. **B.** `start` trifft einen Host, der mit dem Eintrag beginnt
-   ([Siteaccess nach Host-Präfix](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md#the-host-map-by-the-start-of-a-host)).
+   ([Siteaccess nach Host-Präfix](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md#die-host-zuordnungstabelle-nach-dem-anfang-eines-hosts)).
 3. Er nimmt auch Hosts, die Sie nicht gemeint haben (`a.www.example.com.b`); verwenden Sie ihn nur dort, wo der
    Webserver für Ihre eigenen Hosts antwortet.
 4. Ja: Hosts werden ohne Rücksicht auf Groß- und Kleinschreibung und den abschließenden Punkt verglichen.
@@ -181,17 +181,17 @@ Ihrer Übungsumgebung.
 
 ## Weiterführende Informationen
 
-- [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
+- [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
 - [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md): Host-Zuordnung
   für Hoster.
-- [Live gehen: Hosts, HTTPS und Siteaccesses](../../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md).
+- [Live gehen: Hosts, HTTPS und Siteaccesses](../../../ersteller/website-ersteller/livegang-hosts-und-https.md).
 - [8. Die Website ausliefern](../../../../installation/08-die-website-ausliefern.md): Konfiguration von Webserver und Velocity.
 
 ## Verwandte Seiten
 
 - [Modul 2: Anfragen Siteaccesses zuordnen](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

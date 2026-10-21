@@ -16,7 +16,7 @@ Routine, und um diese Routine geht es auf dieser Seite und in ihrem Lesepfad.
 
 Diese Seite ist für den Shop-Eigentümer, die Shop-Leitung und alle, die Bestellungen und Kundenfragen bearbeiten. Die
 Auswahl und Planung eines Shops behandelt [Onlineshops für Unternehmen](../../unternehmen/shops/README.md); den Bau eines
-Shops behandelt für Website-Ersteller [Shop-Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md).
+Shops behandelt für Website-Ersteller [Shop-Überblick](../../ersteller/website-ersteller/shop-ueberblick.md).
 
 ## Wo der Shop in der Administration liegt
 
@@ -78,7 +78,7 @@ Folgen Sie dem [Lesepfad für Onlineshops](lesepfad-onlineshops.md).
 
 - [Lesepfad für Onlineshops](lesepfad-onlineshops.md)
 - [Einen Shop im Alltag betreiben (Unternehmen)](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md)
-- [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+- [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 - [Sicherheits-Checkliste für den Shop](../../unternehmen/shops/sicherheitscheckliste-fuer-shops.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

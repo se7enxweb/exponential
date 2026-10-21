@@ -25,7 +25,7 @@ Fokus ist. WCAG 2.2 behandelt das unter 2.1.1, 2.1.2, 2.4.3, 2.4.7 und 2.4.11 (<
 ## In der Administration
 
 admin4 ist für die Bedienung per Tastatur gebaut und getestet
-([Das Design admin4: Tastatur](../../../../eng-us/features/6.0/admin4-design.md#keyboard),
+([Das Design admin4: Tastatur](../../../funktionen/6.0/admin4-design.md#tastatur),
 `tests/tests/design/AdminKeyboardTest.php`, `AdminTreeViewTest.php`, `AdminContextMenuTest.php`):
 
 - „Zum Hauptinhalt springen“ ist der erste Tabulatorstopp.
@@ -64,14 +64,14 @@ Die Benutzerseite [Tastenkürzel](../../tastenkuerzel.md) listet sie auf; die n�
 
 Legen Sie die Maus beiseite und bedienen Sie die Seite mit Tab, Umschalt+Tab, Enter, Leertaste, Escape und den
 Pfeiltasten, nach dem Tastaturdurchgang unter
-[Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md#keyboard-pass).
+[Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md#durchgang-mit-der-tastatur).
 Tun Sie das für jedes Seiten-Template, jedes Formular und jeden interaktiven Block.
 
 ## Verwandte Seiten
 
 - [Tastenkürzel](../../tastenkuerzel.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
-- [Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
+- [Menüs und Navigation](../../ersteller/website-ersteller/menues-und-navigation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

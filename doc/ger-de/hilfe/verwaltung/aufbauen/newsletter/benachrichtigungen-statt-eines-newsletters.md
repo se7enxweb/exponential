@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Redakteure, die möchten, dass Menschen von Änderungen erfahren, ohne
 jedes Mal eine Ausgabe zu schreiben. Die Benachrichtigungen von Exponential schreiben Benutzern mit einem Konto eine
 E-Mail, wenn sich Inhalte ändern, denen sie folgen
-([Benachrichtigungen: die Anleitung für Benutzer](../../../../../eng-us/features/6.0/notifications.md),
+([Benachrichtigungen: die Anleitung für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md),
 [Benachrichtigungen für Administratoren](../../../../anleitungen/benachrichtigungen-administrator.md)).
 
 ## Inhalt
@@ -56,7 +56,7 @@ Benachrichtigungsmails laufen wie alle Mails durch das Mail-Gateway.
 
 ## Verwandte Seiten
 
-- [Benachrichtigungen: die Anleitung für Benutzer](../../../../../eng-us/features/6.0/notifications.md)
+- [Benachrichtigungen: die Anleitung für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md)
 - [Listen für Warnmeldungen zu öffentlichen Bekanntmachungen](listen-fuer-warnmeldungen-zu-oeffentlichen-bekanntmachungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

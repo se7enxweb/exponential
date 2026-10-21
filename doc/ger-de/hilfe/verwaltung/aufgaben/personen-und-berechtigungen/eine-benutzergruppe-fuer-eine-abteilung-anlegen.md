@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren. Am Ende hat eine Abteilung eine Benutzergruppe, die ihre Rollen trägt; um den
 Zugang einer Person zu ändern, genügt es dann, sie hinzuzufügen oder zu entfernen. Hintergrund:
-[Rollen, Richtlinien und Einschränkungen](../../../../../eng-us/help/government/operations/people-and-permissions/roles-policies-and-limitations.md#assigning-roles).
+[Rollen, Richtlinien und Einschränkungen](../../betrieb/personen-und-berechtigungen/rollen-richtlinien-und-einschraenkungen.md#rollen-zuweisen).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -73,7 +73,7 @@ wählen Sie die neue Gruppe ([Eine Rolle mit einer Einschränkung auf einen Teil
 
 ## Verwandte Seiten
 - [Eine Redakteursrolle einer Abteilung für einen Teilbaum anlegen](eine-redakteursrolle-einer-abteilung-fuer-einen-teilbaum-anlegen.md)
-- [Eintritte, Wechsel und Austritte](../../../../../eng-us/help/government/operations/people-and-permissions/joiners-movers-leavers.md)
+- [Eintritte, Wechsel und Austritte](../../betrieb/personen-und-berechtigungen/eintritt-wechsel-austritt.md)
 - [Anleitung zu Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)
 - [Kurs für Site-Administratoren](../../../trainer/website-administratoren/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

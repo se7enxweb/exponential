@@ -77,7 +77,7 @@ bearbeitet wurden, gehen verloren: Sagen Sie der Redaktion, was sie neu machen m
   ([Staging und Freigabe](../aktualisierungen-und-aenderungen/staging-und-freigabe.md)).
 
 ## Verwandte Seiten
-- [Eine PHP-Änderung bereitstellen](../../../../../eng-us/help/government/tasks/operations/deploy-a-php-change.md)
+- [Eine PHP-Änderung bereitstellen](../../aufgaben/betrieb/eine-php-aenderung-ausrollen.md)
 - [Website nicht erreichbar](website-nicht-erreichbar.md)
 - [Änderungen bereitstellen (Hosting)](../../../hosting/betrieb/aenderungen-ausrollen.md)
 - [Leitfaden zur Bereitstellung, Abschnitt 7](../../../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern)

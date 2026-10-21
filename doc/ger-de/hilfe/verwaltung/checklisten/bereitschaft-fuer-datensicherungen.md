@@ -62,7 +62,7 @@ Datensicherung ist erst durch eine Wiederherstellung bewiesen. Die Angaben stamm
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
-- [Datensicherungen und Wiederherstellungen (für Websiteersteller)](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)
+- [Datensicherungen und Wiederherstellungen (für Websiteersteller)](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)
 - [Bereitschaft für Vorfälle](bereitschaft-fuer-vorfaelle.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

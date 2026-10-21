@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren während eines Datenbankausfalls, wenn ein Standby vorhanden ist. **Exponential
 hat kein automatisches Failover der Datenbank** für PostgreSQL, MariaDB oder MySQL: Der Standby wird mit den Werkzeugen
 des Datenbankherstellers hochgestuft, und Exponential wird dann darauf verwiesen. Hintergrund:
-[Hochverfügbarkeit der Datenbank](../../../../../eng-us/help/government/operations/availability/database-high-availability.md).
+[Hochverfügbarkeit der Datenbank](../../betrieb/verfuegbarkeit/hochverfuegbarkeit-der-datenbank.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -24,7 +24,7 @@ des Datenbankherstellers hochgestuft, und Exponential wird dann darauf verwiesen
 ## Bevor Sie beginnen
 
 - Die Leitung des Vorfalls hat das Umschalten beschlossen
-  ([Datenbank nicht erreichbar](../../../../../eng-us/help/government/operations/incidents/database-unreachable.md)).
+  ([Datenbank nicht erreichbar](../../betrieb/vorfaelle/datenbank-nicht-erreichbar.md)).
 - Das Datenbankteam hat den Standby hochgestuft und Ihnen seinen Hostnamen genannt; der Datenbankbenutzer der Site
   existiert dort mit denselben Rechten.
 - Wissen Sie, wie weit der Standby zurücklag: Inhalte, die nach diesem Punkt bearbeitet wurden, sind verloren.
@@ -73,7 +73,7 @@ des Datenbankherstellers hochgestuft, und Exponential wird dann darauf verwiesen
 
 ## Verwandte Seiten
 - [Ein Lese-Replikat hinzufügen](ein-lese-replikat-hinzufuegen.md)
-- [Plan für die Notfallwiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/disaster-recovery-plan.md)
+- [Plan für die Notfallwiederherstellung](../../betrieb/datensicherung-und-wiederherstellung/notfallwiederherstellungsplan.md)
 - [Datenbanken in der offiziellen Reihenfolge (Hosting)](../../../hosting/grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)
 - [PostgreSQL für Hoster](../../../hosting/grundlagen/postgresql-fuer-hoster.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

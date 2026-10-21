@@ -84,7 +84,7 @@ Sprung verdient eine Nachfrage.
 ## Schritt 3: Konten
 
 **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) beantwortet die Fragen zu Konten mit Filtern
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md#the-filters)):
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md#die-filter)):
 
 | Filter | Frage |
 |---|---|
@@ -100,7 +100,7 @@ Sitzungen, behält aber Inhalte und Gruppen.
 
 Mit `[UserSettings] DeactivateAndMove=enabled` deaktiviert **Deaktivieren und verschieben** Konten und verschiebt alle
 ihre Orte in eine verborgene Gruppe ohne Rollen, wobei vermerkt wird, wo sie waren; **Reaktivieren und
-zurückverschieben** stellt sie wieder her ([Deaktivieren und verschieben](../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move)).
+zurückverschieben** stellt sie wieder her ([Deaktivieren und verschieben](../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben)).
 Für ein Portal ist das der sauberste Weg, Konten stillzulegen, ohne sie zu löschen. Das Entfernen eines Benutzerobjekts
 ist endgültig; für Benutzer gibt es keinen Papierkorb.
 
@@ -124,13 +124,13 @@ verwenden, und kennzeichnet Sektionen, die Aufmerksamkeit brauchen
   muss „Zugriff verweigert“ erscheinen.
 - Suchen Sie als jeder Testbenutzer nach einem Wort aus den Dokumenten des anderen; es darf nichts erscheinen.
 - `./console exp:access:check` fragt die Berechtigungsprüfungen für einen anderen Benutzer auf der Kommandozeile ab
-  ([Einschränkungen von Inhaltsrichtlinien](../../../../eng-us/features/6.0/content-limitation-handlers.md#checking-access-for-another-user)).
+  ([Einschränkungen von Inhaltsrichtlinien](../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md#zugriff-für-einen-anderen-benutzer-prüfen)).
 
 ## Schritt 6: die Prüfung festhalten
 
 Das Prüfprotokoll zeichnet Rollenzuordnungen, Kontosperren, Anmeldungen und Inhaltsänderungen in einem
 manipulationssicheren Log auf, und `./console exp:audit verify` belegt, dass die Aufzeichnung unversehrt ist
-([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Schreiben Sie zu jeder Prüfung eine kurze Notiz: Datum,
+([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Schreiben Sie zu jeder Prüfung eine kurze Notiz: Datum,
 prüfende Person, was geändert wurde. Die Seite
 [Compliance-Nachweise](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md) zeigt, wie Sie das Prüfprotokoll als
 Nachweis verwenden.
@@ -146,7 +146,7 @@ Nachweis verwenden.
 ## Verwandte Seiten
 
 - [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)
-- [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
 - [Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

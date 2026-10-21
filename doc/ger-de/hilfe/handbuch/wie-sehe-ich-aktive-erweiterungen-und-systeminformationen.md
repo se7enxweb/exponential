@@ -46,7 +46,7 @@ braucht `setup/system_info`.
 
 - [Die Seite Extensions](../../anleitungen/extensions-seite.md)
 - [Systeminformationen](../../anleitungen/systeminformationen.md)
-- [Setup > Extensions: Ladereihenfolge und sicheres Speichern](../../../eng-us/features/6.0/extension-loading-order.md)
+- [Setup > Extensions: Ladereihenfolge und sicheres Speichern](../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

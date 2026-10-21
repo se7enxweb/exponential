@@ -121,7 +121,7 @@ Im Verzeichnis `editor-course` aus Lektion 2.2 (oder in einem beliebigen frische
 ## Weiterführende Literatur
 
 - [Die Installation über die Konsole: exp:install](../../../../installation/07-installation-ueber-die-konsole.md): jede Option.
-- [Installation mit einem Befehl](../../../../../eng-us/features/6.0/install-in-one-command.md): die Funktionsseite.
+- [Installation mit einem Befehl](../../../../funktionen/6.0/installation-mit-einem-befehl.md): die Funktionsseite.
 - [Der Kickstarter](../../../../installation/06-kickstarter.md): dieselbe Installation aus einer geprüften `kickstart.ini`.
 - [Nach der Installation](../../../../installation/10-nach-der-installation.md): was als Nächstes zu tun ist.
 

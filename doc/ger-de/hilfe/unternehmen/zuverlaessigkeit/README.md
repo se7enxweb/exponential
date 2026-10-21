@@ -124,7 +124,7 @@ alle drei ab:
 - [Hosting und Partner auswählen](../auswahl/README.md): wer die Server für Sie betreibt.
 - [Vorlagen für Unternehmen](../vorlagen/README.md): Checklisten zum Kopieren, darunter eine monatliche
   Betriebs-Checkliste.
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 - Die technische Seite für Hosting-Mitarbeiter: [Betrieb](../../hosting/betrieb/README.md) und
   [Runbooks für Hoster: Überblick](../../hosting/runbooks/README.md).
 - Für Führungskräfte: [Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md) und

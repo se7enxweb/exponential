@@ -63,7 +63,7 @@ Cluster-Datenbank (Wiederholungen: `DBConnectRetries`, `DBExecuteRetries`). Lege
 ## Verwandte Seiten
 
 - [Anwendungen skalieren](anwendungen-skalieren.md)
-- [Log- und Cache-Pfade bei Multisite](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)
+- [Log- und Cache-Pfade bei Multisite](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)
 - [Fehlende Dateien](../../../anleitungen/fehlende-dateien.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

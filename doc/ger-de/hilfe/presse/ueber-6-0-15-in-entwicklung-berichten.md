@@ -42,10 +42,10 @@ Exponential Layouts, Exponential Intelligence, the help system and much more". D
 
 | Zeitraum | Was laut Geschichte geschah | Monatsseite |
 |---|---|---|
-| Juli 2026 | "The command line grew up": `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern | [Juli 2026](../../../eng-us/history/2026/2026-07.md) |
-| August 2026 | Template-Debugging, sechs Sicherheitspatches, Tests bei jeder Änderung | [August 2026](../../../eng-us/history/2026/2026-08.md) |
-| September 2026 | Seitenweise lange Listen, Velocity (ab 22. September), eine Installation mit einem Befehl, eine Härtungsrunde | [Erste Hälfte](../../../eng-us/history/2026/2026-09a.md), [zweite Hälfte](../../../eng-us/history/2026/2026-09b.md) |
-| Oktober 2026 | "jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8" | [Oktober 2026](../../../eng-us/history/2026/2026-10.md) |
+| Juli 2026 | "The command line grew up": `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern | [Juli 2026](../../geschichte/2026/2026-07.md) |
+| August 2026 | Template-Debugging, sechs Sicherheitspatches, Tests bei jeder Änderung | [August 2026](../../geschichte/2026/2026-08.md) |
+| September 2026 | Seitenweise lange Listen, Velocity (ab 22. September), eine Installation mit einem Befehl, eine Härtungsrunde | [Erste Hälfte](../../geschichte/2026/2026-09a.md), [zweite Hälfte](../../geschichte/2026/2026-09b.md) |
+| Oktober 2026 | "jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8" | [Oktober 2026](../../geschichte/2026/2026-10.md) |
 
 Exponential Intelligence und die Job-Warteschlange kommen „inaktiv“ in die Distribution und werden vom Inhaber der Website
 eingeschaltet ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).

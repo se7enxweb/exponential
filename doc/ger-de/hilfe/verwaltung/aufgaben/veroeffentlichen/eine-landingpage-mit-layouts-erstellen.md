@@ -64,8 +64,8 @@ Bilder. Der Reiter **Layouts** wird nur Rollen angezeigt, die mit Layouts arbeit
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Landingpages mit Layouts](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)
-- [Layout-Regeln](../../../../../eng-us/help/creators/website-creators/layout-rules.md)
+- [Landingpages mit Layouts](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)
+- [Layout-Regeln](../../../ersteller/website-ersteller/layout-regeln.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

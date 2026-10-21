@@ -14,7 +14,7 @@ Gemeinde oder eines Rats entwerfen. Ein kleines Team pflegt die Website, daher b
 hinzugefügte Klassen neben den mitgelieferten. Jede genannte Klasse und jeder genannte Datentyp existiert in Exponential
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md), `kernel/classes/datatypes/`, die genannten
 Erweiterungen); der Klasseneditor ist unter
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) beschrieben.
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) beschrieben.
 
 ## Inhalt
 
@@ -123,7 +123,7 @@ lieber, wenn Sie nachweisen müssen, dass sie veröffentlicht waren.
 
 - [Kommunen](README.md)
 - [Struktur, Sektionen und Rollen für Kommunen](struktur-sektionen-und-rollen.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

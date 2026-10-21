@@ -37,7 +37,7 @@ des Projekts funktioniert, was meist nicht, wie eine Website ohne Shell installi
   womöglich nicht erlaubt ist; nutzen Sie Apache oder LiteSpeed mit `.htaccess` ([Stufe 3](../../betriebssystemunterstuetzung.md#stufe-3-voraussichtlich-lauffähig)).
 - Seit 6.0.15 arbeitet der Setup-Assistent nur mit Ihrer eigenen Datenbank: Er führt kein `SHOW DATABASES` mehr aus und
   öffnet die Systemdatenbank `mysql` nicht mehr, was Rechte bräuchte, die ein Shared Host nicht vergibt
-  ([Eine saubere Installation, die zu Shared Hosting passt](../../../../eng-us/features/6.0/clean-install-defaults.md)).
+  ([Eine saubere Installation, die zu Shared Hosting passt](../../../funktionen/6.0/standardwerte-einer-sauberen-installation.md)).
 
 ## Auslieferung: Apache oder LiteSpeed mit .htaccess
 
@@ -86,7 +86,7 @@ beschreibbaren Verzeichnisse und die `php.ini`-Werte und gibt für jeden Fehler 
 > Ein langer Schritt des Assistenten kann an die Zeitgrenze für Anfragen von PHP-FPM des Kontos stoßen. Die Notizen zur
 > MongoDB-Portierung beschreiben, wie der Assistent durch das `request_terminate_timeout` des Pools abgebrochen wird, das
 > `set_time_limit()` von PHP selbst nicht überschreiben kann
-> ([MongoDB-Unterstützung im Kernel](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)). Wenn die Installationen auf
+> ([MongoDB-Unterstützung im Kernel](../../../bc/6.0/mongodb-kernel-unterstuetzung.md)). Wenn die Installationen auf
 > Ihrer Plattform lange laufen, erhöhen Sie die Grenze für die Installation und senken Sie sie danach wieder.
 
 ## PHP-Einstellungen pro Konto

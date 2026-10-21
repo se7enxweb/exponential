@@ -102,10 +102,10 @@ Was die Sprache ohne installierte Erweiterung bietet, mit der Seite, die es beha
 - **Objekte mit Attributen.** Ein Knoten ist ein PHP-Objekt, und doch liest sich `$node.parent.name` oder `$node.data_map.title.content` wie
   ein Array. Siehe [Zugriff auf Attribute](zugriff-auf-attribute.md).
 - **Das Override-System** wählt ein Template nach Klasse, Sektion, Knoten, Ansichtsmodus und mehr, statt dass Templates einander erweitern
-  ([Grundlagen der Overrides](../../../eng-us/help/designers/templates/override-ini-basics.md)).
+  ([Grundlagen der Overrides](../designer/vorlagen/override-grundlagen.md)).
 - **Namensräume** halten die Variablen eingebundener Templates auseinander ([Namensräume](namensraeume.md)).
 - **Ein Compiler**, der für jedes Template PHP schreibt, und **Cache-Blöcke**, die fertiges HTML speichern
-  ([Kompilierung und Cache von Templates](../../../eng-us/help/designers/templates/template-compilation-and-cache.md)).
+  ([Kompilierung und Cache von Templates](../designer/vorlagen/template-kompilierung-und-cache.md)).
 - **Übersetzung und Lokalisierung** eingebaut: `i18n`, `l10n`, `datetime`.
 
 Ein zweites Beispiel nutzt mehrere davon an einem Artikel (Knoten 90, „Privacy Policy“):
@@ -142,10 +142,10 @@ Seite auch, was die Engine protokolliert hat.
 ## Verwandte Seiten
 
 - Weiter: [Geschichte der Template-Sprache](geschichte-der-template-sprache.md)
-- [Überblick über Templates](../../../eng-us/help/designers/templates/templates-overview.md) für Designer
-- [Grundlagen der TPL-Syntax](../../../eng-us/help/designers/templates/tpl-syntax-basics.md)
-- [Referenz der Operatoren](../../../eng-us/help/designers/templates/operator-reference.md) und [Referenz der Funktionen](../../../eng-us/help/designers/templates/function-reference.md)
-- [Jeder Template-Operator](../../../eng-us/examples/template-operators/README.md) und [jede Template-Funktion](../../../eng-us/examples/template-functions/README.md), aus dem Code erzeugt
+- [Überblick über Templates](../designer/vorlagen/templates-ueberblick.md) für Designer
+- [Grundlagen der TPL-Syntax](../designer/vorlagen/tpl-syntax-grundlagen.md)
+- [Referenz der Operatoren](../designer/vorlagen/operatorreferenz.md) und [Referenz der Funktionen](../designer/vorlagen/funktionsreferenz.md)
+- [Jeder Template-Operator](../../beispiele/template-operatoren/README.md) und [jede Template-Funktion](../../beispiele/template-funktionen/README.md), aus dem Code erzeugt
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

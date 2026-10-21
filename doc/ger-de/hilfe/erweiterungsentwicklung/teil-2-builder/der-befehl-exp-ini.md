@@ -125,7 +125,7 @@ Lesen Sie die Felder `ok` und `data`, statt Text zu parsen.
 
 - Zurück: [Einstellungen in einer Erweiterung](erweiterungseinstellungen-fuer-builder.md)
 - Weiter: [Einstellungen in der Administration](einstellungen-in-der-administration.md)
-- [Einstellungen auf der Kommandozeile ändern](../../../../eng-us/features/6.0/exp-ini-command.md)
+- [Einstellungen auf der Kommandozeile ändern](../../../funktionen/6.0/exp-ini-befehl.md)
 - [Konsole: exp:ini](../../../bc/6.0/console-exp-ini.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

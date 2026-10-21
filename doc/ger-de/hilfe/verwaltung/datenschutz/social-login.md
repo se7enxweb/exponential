@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen, Administratoren und Datenschutzbeauftragte. Die Erweiterung
 `sevenx_authentication_2fa` enthält Social-Login-Handler, beschrieben als „Gerüste, bereit zum Anpassen“, für Google,
 Facebook, Twitter/X, Instagram, Meta und ID.me, eine Basisklasse und einen Kommandozeilen-Generator für weitere Anbieter
-([sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md)). Schaltflächen wie
+([sevenx_authentication_2fa](../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md)). Schaltflächen wie
 „Continue with Google“ erscheinen auf der Anmeldeseite für jeden in `sevenxauthentication2fa.ini` aktivierten Anbieter
 ([Zweistufige Anmeldung: Social Login](../../../anleitungen/zwei-faktor-anmeldung.md#social-login)).
 
@@ -37,7 +37,7 @@ Facebook, Twitter/X, Instagram, Meta und ID.me, eine Basisklasse und einen Komma
 
 Die Datenschutzaussage des Projekts führt Social Login unter den Diensten von Drittanbietern: „Der Benutzer wählt ihn;
 in der Datenschutzerklärung erwähnen“
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)).
+([Datenschutzstandards](../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)).
 
 ## Zu klärende Fragen
 
@@ -54,7 +54,7 @@ in der Datenschutzerklärung erwähnen“
 
 - [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)
 - [Erweiterungen von Drittanbietern und Datenschutz](erweiterungen-von-drittanbietern.md)
-- [Zweistufige Anmeldung für Beschäftigte im öffentlichen Dienst](../../../../eng-us/help/government/security/two-step-sign-in.md)
+- [Zweistufige Anmeldung für Beschäftigte im öffentlichen Dienst](../sicherheit/zweistufige-anmeldung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

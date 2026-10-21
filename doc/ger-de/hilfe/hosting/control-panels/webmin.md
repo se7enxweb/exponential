@@ -92,7 +92,7 @@ Exponential schützen Sie diese:
 | Der `user` des PHP-FPM-Pools | ein Benutzer schreibt `var/` ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)) |
 | `AllowOverride` für den Document Root (Apache) | `.htaccess` muss gelesen werden |
 | Die Crontab-Zeilen des Benutzers der Website | geplantes Veröffentlichen, Benachrichtigungen, Aufräumen |
-| Firewall-Regeln für die Ports von Velocity, wenn Besucher Velocity direkt erreichen | fügen Sie den Port mit dem Werkzeug hinzu, dem der Regelsatz auf der Maschine gehört ([FrankenPHP](../../../../eng-us/bc/6.0/frankenphp.md)) |
+| Firewall-Regeln für die Ports von Velocity, wenn Besucher Velocity direkt erreichen | fügen Sie den Port mit dem Werkzeug hinzu, dem der Regelsatz auf der Maschine gehört ([FrankenPHP](../../../bc/6.0/frankenphp.md)) |
 
 > **Tipp**
 > Führen Sie nach jeder Konfigurationsänderung über eine Oberfläche erneut die Prüfung auf offengelegte Dateien aus

@@ -65,7 +65,7 @@ Einstellungen gebildet wird; mit `UseCache` wird eine vorhandene Datei wiederver
 
 Eingabe: der Text, über die Pipe. Gibt ein `eZImageTextLayer` zurück. Wird die Schrift nicht gefunden, gibt der
 Operator nichts zurück; kann die Schrift nicht geöffnet werden, protokolliert er "Could not open font". Generierte
-Referenz: [texttoimage](../../../eng-us/examples/template-operators/texttoimage.md).
+Referenz: [texttoimage](../../beispiele/template-operatoren/texttoimage.md).
 
 **Er schreibt Dateien.** Das folgende Template wurde beim Vorbereiten dieser Seite einmal auf alpha gerendert und hat
 das Verzeichnis `var/cache/texttoimage/imagetext/` mit der PNG-Datei angelegt (ein Cache-Verzeichnis: Es kann geleert
@@ -100,7 +100,7 @@ geschrieben (mit `UseCache` wiederverwendet).
 |---|---|---|---|
 | Ebenen und Alternativtext | `array( layer, hash( options ) )` oder Zeichenkette, beliebig viele | ja | keiner |
 
-Eingabe: keine. Gibt ein `eZImageObject` zurück. Generierte Referenz: [image](../../../eng-us/examples/template-operators/image.md).
+Eingabe: keine. Gibt ein `eZImageObject` zurück. Generierte Referenz: [image](../../beispiele/template-operatoren/image.md).
 
 **Er schreibt Dateien**, wie `texttoimage`. Dieses Template, ebenfalls einmal auf alpha gerendert, hat
 `var/cache/texttoimage/imageobject/` angelegt:
@@ -130,7 +130,7 @@ ohne Endung.
 | `options` | Array | nein | `array()` |
 
 Eingabe: keine. Gibt ein `eZImageLayer` zurück, das als Ebene von `image` verwendet werden kann. Generierte Referenz:
-[imagefile](../../../eng-us/examples/template-operators/imagefile.md).
+[imagefile](../../beispiele/template-operatoren/imagefile.md).
 
 ```tpl
 {def $img = imagefile( 'design/standard/images/add.png' )}
@@ -155,8 +155,8 @@ kein zweites Mal ausgeführt, weder interpretiert noch kompiliert.
 ## Verwandte Seiten
 
 - [Icon-Operatoren](icon-operatoren.md): Icons für Klassen, MIME-Typen und Flaggen
-- [Beispiele zum Bild-Datentyp](../../../eng-us/examples/datatypes/ezimage.md): Bilder von Inhaltsobjekten
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Beispiele zum Bild-Datentyp](../../beispiele/datentypen/ezimage.md): Bilder von Inhaltsobjekten
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

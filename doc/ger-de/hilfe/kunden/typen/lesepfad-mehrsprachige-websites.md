@@ -39,7 +39,7 @@ Lesepfad des Typs Ihrer Website (Nachrichtenredaktion, Shop, Intranet ...). Jede
 |---|---|---|---|
 | 12 | [Unterstützte Übersetzung mit Exponential Intelligence](../../unternehmen/mehrsprachig/unterstuetzte-uebersetzung-mit-exponential-intelligence.md) | Website-Betreiber | Entwürfe von Übersetzungen, nach Ihren Regeln |
 | 13 | [KI-Entwürfe verantwortungsvoll nutzen](../wachstum/ki-entwuerfe-verantwortungsvoll-nutzen.md) | Übersetzer | Eine Person liest jeden Entwurf |
-| 14 | [Von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md) | Website-Betreiber | Wenn Sie Arabisch, Hebräisch oder eine andere Sprache mit Schreibrichtung von rechts nach links hinzufügen |
+| 14 | [Von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md) | Website-Betreiber | Wenn Sie Arabisch, Hebräisch oder eine andere Sprache mit Schreibrichtung von rechts nach links hinzufügen |
 | 15 | [Eine Sprache hinzufügen](../wachstum/eine-sprache-hinzufuegen.md) | Website-Betreiber | Das Projekt hinter einer neuen Sprache |
 | 16 | [Inhalts-Audits](../alltag/inhalts-audits.md) | Übersetzungskoordination | Übersetzungen, die zurückgefallen sind |
 | 17 | [Barrierefreiheit pflegen](../alltag/barrierefreiheit-pflegen.md) | Redaktion | Die Sprache einer Seite ist Teil der Barrierefreiheit |

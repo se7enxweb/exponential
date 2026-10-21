@@ -64,7 +64,7 @@ Richtlinie sie erlaubt.
 
 - [Sektionen](../../../anleitungen/sektionen.md)
 - [Alte Bekanntmachungen archivieren](alte-bekanntmachungen-archivieren.md)
-- [Rechte der Besucher](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Rechte der Besucher](../../ersteller/website-ersteller/rechte-fuer-besucher.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

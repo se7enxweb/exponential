@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an den Geschäftsinhaber und den Projektleiter, die einen Shop eröffnen. Arbeiten Sie sie
 einige Wochen vor dem Start mit der Person durch, die den Shop gebaut hat. Jede Zeile nennt die Seite mit den
-Einzelheiten. Die allgemeine Checkliste für Websites ist [Die Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md);
+Einzelheiten. Die allgemeine Checkliste für Websites ist [Die Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md);
 diese Seite ergänzt, was ein Shop braucht.
 
 ## Inhalt
@@ -59,7 +59,7 @@ diese Seite ergänzt, was ein Shop braucht.
 - [ ] Das Bestellformular fragt jedes Adressfeld ab, das Ihr Versanddienstleister braucht.
 - [ ] `RedirectAfterAddToBasket` und der Adressname des Warenkorbs sind so, wie Sie es möchten ([Warenkorb und Bestellablauf](warenkorb-und-bestellablauf.md)).
 - [ ] Warenkorb-, Kassen- und Kontoseiten werden von keinem CDN oder Proxy gecacht ([Shop-Leistung zu Spitzenzeiten](shop-leistung-zu-spitzenzeiten.md#seiten-die-sich-nicht-cachen-lassen)).
-- [ ] Warenkorb-, Kassen- und Kontoseiten werden aus Suchmaschinen herausgehalten ([robots.txt](../../../../eng-us/help/creators/website-creators/robots-txt.md)).
+- [ ] Warenkorb-, Kassen- und Kontoseiten werden aus Suchmaschinen herausgehalten ([robots.txt](../../ersteller/website-ersteller/robots-txt.md)).
 
 ## Zahlung
 
@@ -95,12 +95,12 @@ diese Seite ergänzt, was ein Shop braucht.
 - [ ] Cronjobs laufen, einschließlich der Warenkorb-Bereinigung ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Ein Benchmark-Ausgangswert ist gespeichert ([Shop-Leistung zu Spitzenzeiten](shop-leistung-zu-spitzenzeiten.md#vor-der-spitze-messen)).
 - [ ] Die Überwachung prüft die Startseite, eine Produktseite und den Warenkorb ([Zustandsprüfungen und Verfügbarkeit](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)).
-- [ ] Der Wartungsmodus ist bekannt und getestet, für spätere geplante Arbeiten ([Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md)).
+- [ ] Der Wartungsmodus ist bekannt und getestet, für spätere geplante Arbeiten ([Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md)).
 
 ## Testbestellungen
 
 Geben Sie diese im Testmodus des Zahlungsanbieters auf, am Desktop und auf einem Smartphone
-([Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#test-order-checklist)):
+([Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md#checkliste-für-eine-testbestellung)):
 
 - [ ] Gastbestellung, ein Produkt, Standardland.
 - [ ] Angemeldeter Kunde, mehrere Produkte mit Optionen, ein zweites Land.
@@ -132,8 +132,8 @@ Eine allgemeine Vorlage für den Go-live steht unter [Checkliste: Go-live](../vo
 
 ## Verwandte Seiten
 
-- [Die Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
-- [Live gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)
+- [Die Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
+- [Live gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)
 - [Checkliste für den Start einer Kunden-Website](../../hosting/checklisten/checkliste-fuer-den-start-einer-kunden-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

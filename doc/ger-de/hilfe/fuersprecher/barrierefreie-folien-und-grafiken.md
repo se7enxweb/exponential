@@ -27,7 +27,7 @@ Räumen, auf kleinen Telefonen und für Menschen, die in einer Zweitsprache lese
 
 - **Große Schrift**: etwa 24 Punkt oder mehr für Fließtext; eine Idee pro Folie.
 - **Kontrast**: dunkler Text auf hellem Hintergrund oder umgekehrt; die eigene Regel der Administration für Text ist ein
-  Kontrast von mindestens 4,5:1 ([Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md)), auch für Folien ein
+  Kontrast von mindestens 4,5:1 ([Die Administration gestalten](../../bc/6.0/admin4-gestaltung.md)), auch für Folien ein
   gutes Ziel.
 - **Schriften**: schlichte serifenlose Schriften; kein Text über unruhigen Fotos.
 - **Verlassen Sie sich nicht auf Farbe**: „die rote“ bedeutet für farbenblinde Zuschauer nichts; fügen Sie eine
@@ -55,7 +55,7 @@ Räumen, auf kleinen Telefonen und für Menschen, die in einer Zweitsprache lese
 - Heben Sie die wichtige Zeile so hervor, dass es nicht nur von der Farbe abhängt (ein Pfeil, Fettdruck, ein Rahmen).
 - Stellen Sie den vollständigen, kopierbaren Code auf eine verlinkte Seite oder in die Sprechernotizen; von einem
   Projektor kann niemand kopieren.
-- Bleiben Sie echt: Befehle, die es gibt, wie in [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md).
+- Bleiben Sie echt: Befehle, die es gibt, wie in [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md).
 
 ## Diagramme und Grafiken
 

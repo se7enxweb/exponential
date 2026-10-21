@@ -55,9 +55,9 @@ Vollständige Schritte: [Veröffentlichen, Versionen und der Papierkorb](../../v
 |---|---|---|
 | **Papierkorb leeren**, oder Elemente aus dem Papierkorb entfernen | löscht endgültig | im Zweifel zuerst wiederherstellen |
 | Die **Übersetzung** eines Elements entfernen | löscht alle seine Felder in dieser Sprache, in jeder Version ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)) | zuerst übersetzen, die Hauptsprache ändern, dann entfernen |
-| Einen **Benutzer** entfernen | Benutzer kommen nie in den Papierkorb ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)) | das Konto deaktivieren |
+| Einen **Benutzer** entfernen | Benutzer kommen nie in den Papierkorb ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)) | das Konto deaktivieren |
 | **Formulareinsendungen** entfernen | die Sammlungen werden gelöscht; die Formulare bleiben ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) | zuerst als CSV exportieren |
-| Änderungen an einem **Layout** nach dem Veröffentlichen | Layouts haben Entwürfe, aber nicht die Versionshistorie der Elemente; zwei Personen, die dasselbe Layout bearbeiten, überschreiben sich gegenseitig ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)) | jeweils nur eine Person pro Layout |
+| Änderungen an einem **Layout** nach dem Veröffentlichen | Layouts haben Entwürfe, aber nicht die Versionshistorie der Elemente; zwei Personen, die dasselbe Layout bearbeiten, überschreiben sich gegenseitig ([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)) | jeweils nur eine Person pro Layout |
 
 ## Alte Entwürfe
 

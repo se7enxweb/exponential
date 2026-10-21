@@ -117,7 +117,7 @@ ausgelassen hat. Was das für die Layoutdaten bedeutet, steht auf [Layoutdaten u
 - [sevenx_multisite](README.md)
 - [Das Skript des Multisite-Installers](das-skript-des-multisite-installers.md)
 - [Siteaccesses und Sprachen](siteaccesses-und-sprachen-von-sevenx-multisite.md)
-- [Links zwischen Websites einer Multisite](../../../../eng-us/features/6.0/multisite-cross-site-links.md)
+- [Links zwischen Websites einer Multisite](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

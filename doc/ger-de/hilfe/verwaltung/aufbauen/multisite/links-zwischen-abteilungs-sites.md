@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Site-Ersteller einer Installation, in der ein Inhaltsbaum mehrere Sites
 bedient. Eine Seite einer Site, die Inhalte einer anderen listet (eine Schlagwortseite, ein Suchergebnis, ein
 verwandtes Element), kann sonst Adressen erzeugen, die es nicht gibt
-([Links auf Inhalte einer anderen Site](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)).
+([Links auf Inhalte einer anderen Site](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)).
 
 ## Inhalt
 
@@ -54,7 +54,7 @@ muss auf den Host von Site B zeigen und das Element öffnen. Prüfen Sie auch di
 
 ## Verwandte Seiten
 
-- [Links auf Inhalte einer anderen Site](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)
+- [Links auf Inhalte einer anderen Site](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
 - [Gemeinsame Inhalte über Sites hinweg](gemeinsame-inhalte-ueber-sites-hinweg.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

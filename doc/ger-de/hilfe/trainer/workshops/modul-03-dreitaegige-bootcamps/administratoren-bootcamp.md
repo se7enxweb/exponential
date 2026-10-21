@@ -21,7 +21,7 @@ kaputtgeht. Drei Tage bieten Raum für jede Routineaufgabe und am Ende für eine
 | Dauer | 3 Tage mit je 6 Stunden Einheiten |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Website-Administratoren, 4 bis 12 Teilnehmende |
-| Voraussetzungen | Ein Laptop pro Teilnehmer, der die [Anforderungen](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/requirements-for-a-training-machine.md) erfüllt; Grundkenntnisse der Kommandozeile |
+| Voraussetzungen | Ein Laptop pro Teilnehmer, der die [Anforderungen](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/anforderungen-an-einen-schulungsrechner.md) erfüllt; Grundkenntnisse der Kommandozeile |
 
 ## Lernziele
 
@@ -37,8 +37,8 @@ Am Ende des Bootcamps können die Teilnehmenden:
 
 | Tag | Vormittag (3 Std.) | Nachmittag (3 Std.) |
 |---|---|---|
-| 1 | Installieren und ausliefern ([Lektion 2.3](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md), [2.4](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md)); [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md) | Benutzer, Gruppen, Rollen und Richtlinien ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)) |
-| 2 | Sektionen ([Sektionen](../../../../anleitungen/sektionen.md)); Einstellungen und INI ([Einstellungsseite](../../../../anleitungen/einstellungsseite.md), [exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md)) | Caches ([Caches](../../../../anleitungen/caches.md)), Cronjobs ([Cronjobs](../../../../anleitungen/cronjobs.md)), Logs ([Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md)) |
+| 1 | Installieren und ausliefern ([Lektion 2.3](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md), [2.4](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md)); [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md) | Benutzer, Gruppen, Rollen und Richtlinien ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)) |
+| 2 | Sektionen ([Sektionen](../../../../anleitungen/sektionen.md)); Einstellungen und INI ([Einstellungsseite](../../../../anleitungen/einstellungsseite.md), [exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md)) | Caches ([Caches](../../../../anleitungen/caches.md)), Cronjobs ([Cronjobs](../../../../anleitungen/cronjobs.md)), Logs ([Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md)) |
 | 3 | Sicherheit ([Sicherheitshärtung](../../../sicherheitshaertung.md)), Zwei-Faktor-Anmeldung ([Zwei-Faktor-Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)), Sicherungen | Upgrades ([Upgrades](../../../../anleitungen/aktualisieren.md), [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md)); Störfallübung |
 
 Pausen: jeden Tag 15 Minuten am Vormittag und am Nachmittag, 45 Minuten Mittagspause.
@@ -46,7 +46,7 @@ Pausen: jeden Tag 15 Minuten am Vormittag und am Nachmittag, 45 Minuten Mittagsp
 ## Hinweise für Trainer
 
 - **Jeder Teilnehmer hat drei Tage lang eine eigene Installation**; halten Sie eine Referenzkopie für schnelles
-  Zurücksetzen bereit ([Lektion 2.6](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/resetting-the-lab.md)).
+  Zurücksetzen bereit ([Lektion 2.6](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-uebungsumgebung-zuruecksetzen.md)).
 - **Die Störfallübung** (Tag 3, letzte 90 Minuten): Der Trainer bereitet vorab auf jeder Installation einen Fehler vor
   (zum Beispiel ein Cache-Verzeichnis, das root gehört, oder einen eingeschalteten Wartungsmodus); die Teilnehmenden
   finden und beheben ihn mit der [Fehlerbehebung](../../../../installation/12-fehlerbehebung.md).
@@ -95,7 +95,7 @@ Pausen: jeden Tag 15 Minuten am Vormittag und am Nachmittag, 45 Minuten Mittagsp
 
 - [Modul 3: Dreitägige Bootcamps](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

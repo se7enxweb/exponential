@@ -37,21 +37,21 @@ Funktionen, die sie nennt, werden in [Inhalte bearbeiten](../../inhalte-bearbeit
 - [ ] Listen für Aufzählungen, Tabellen nur für Daten, mit Kopfzeilen.
 - [ ] Linktexte, die sagen, wohin sie führen („Eine Genehmigung beantragen“, nicht „hier klicken“).
 - [ ] Keine Information allein über Farbe; kein Text in Bildern.
-- [ ] Mehr in [Redaktion 201, Modul 8: Qualität und Barrierefreiheit](../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md).
+- [ ] Mehr in [Redaktion 201, Modul 8: Qualität und Barrierefreiheit](../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md).
 
 ## Links, Bilder und Dokumente
 
 - [ ] Jeder Link in der Vorschau getestet.
-- [ ] Bilder: Informative haben einen Alternativtext; dekorative sind als solche gekennzeichnet; die Größen passen ([Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)). Nichts in der Software erzwingt, dass das Feld ausgefüllt wird ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#known-gaps)).
-- [ ] Dokumente sind barrierefrei, aktuell und klar benannt; erwägen Sie eine HTML-Seite statt eines PDFs ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
+- [ ] Bilder: Informative haben einen Alternativtext; dekorative sind als solche gekennzeichnet; die Größen passen ([Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md)). Nichts in der Software erzwingt, dass das Feld ausgefüllt wird ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#bekannte-lücken)).
+- [ ] Dokumente sind barrierefrei, aktuell und klar benannt; erwägen Sie eine HTML-Seite statt eines PDFs ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
 - [ ] Die Nutzungsrechte an jedem Bild und Dokument sind geklärt.
 
 ## Metadaten und Platzierung
 
-- [ ] Titel und Zusammenfassung ergeben in Suchergebnissen und in sozialen Medien Sinn ([Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md)).
-- [ ] Tags gesetzt, wo Ihre Website sie verwendet ([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)).
-- [ ] In der richtigen Sektion und an der richtigen Stelle platziert; zusätzliche Platzierungen hinzugefügt, wo Leser suchen werden ([Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
-- [ ] Die Adresse (URL-Alias) ist lesbar ([URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)).
+- [ ] Titel und Zusammenfassung ergeben in Suchergebnissen und in sozialen Medien Sinn ([Metadaten und Teilen in sozialen Medien](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md)).
+- [ ] Tags gesetzt, wo Ihre Website sie verwendet ([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)).
+- [ ] In der richtigen Sektion und an der richtigen Stelle platziert; zusätzliche Platzierungen hinzugefügt, wo Leser suchen werden ([Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
+- [ ] Die Adresse (URL-Alias) ist lesbar ([URL-Aliasse und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)).
 
 ## Prüfen und veröffentlichen
 
@@ -63,14 +63,14 @@ Funktionen, die sie nennt, werden in [Inhalte bearbeiten](../../inhalte-bearbeit
 ## Nach dem Veröffentlichen
 
 - [ ] Prüfen Sie die veröffentlichte Seite als Besucher (abgemeldet).
-- [ ] Wenn eine alte Seite ersetzt wird, leiten Sie sie weiter oder verlinken Sie sie ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+- [ ] Wenn eine alte Seite ersetzt wird, leiten Sie sie weiter oder verlinken Sie sie ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 - [ ] Unfertige Entwürfe aufgeräumt ([Meine Entwürfe und meine Warteliste](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)).
 - [ ] Ein Prüfdatum für Inhalte gesetzt, die veralten werden.
 
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
-- [Redaktion 101](../../../../eng-us/help/trainers/editors-101/README.md)
+- [Redaktion 101](../../trainer/redakteure-101/README.md)
 - [Checkliste Barrierefreiheit](checkliste-barrierefreiheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

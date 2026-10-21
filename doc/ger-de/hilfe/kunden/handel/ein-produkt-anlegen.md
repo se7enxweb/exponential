@@ -71,10 +71,10 @@ Sehen Sie sich zuerst die Vorschau des Entwurfs an ([Veröffentlichen und Versio
 - [ ] **Zum Warenkorb hinzufügen** funktioniert, mit jeder Option.
 - [ ] Der Warenkorb zeigt den richtigen Preis; die Bestätigungsseite zeigt die richtige Mehrwertsteuer und die richtigen Versandkosten.
 - [ ] Das Shop-Dashboard zählt es nicht zu den „Produkten ohne Preis“
-  ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+  ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 Sie müssen nicht für jedes Produkt eine echte Bestellung aufgeben. Eine Testbestellung lohnt sich bei einer neuen Art
-von Produkt, einem neuen USt-Typ oder einem neuen Optionsfeld ([Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)).
+von Produkt, einem neuen USt-Typ oder einem neuen Optionsfeld ([Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)).
 
 ## Wer freigibt
 
@@ -92,7 +92,7 @@ Person, sobald die Redaktion veröffentlicht ([Workflows](../../../anleitungen/w
 - [Produkte und Katalog](produkte-und-katalog.md)
 - [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)
 - [Produktklassen und Katalog (für Unternehmen)](../../unternehmen/shops/produktklassen-und-katalog.md)
-- [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
+- [Produkte, Preise und Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

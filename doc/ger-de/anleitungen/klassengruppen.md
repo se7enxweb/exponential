@@ -8,7 +8,7 @@ Sie richtet sich an Administratoren, die das Inhaltsmodell pflegen. Jede Angabe 
 Demonstrationsserver am Code geprüft (`kernel/private/classes/views/class/grouplist.php` und `removegroup.php`).
 
 [Anleitungen](README.md) · Siehe auch: [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md),
-[Blättern in Listen der Administration](../../eng-us/features/6.0/admin-list-paging.md)
+[Blättern in Listen der Administration](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 

@@ -38,8 +38,8 @@ ein Administrator fügt es unter **Setup** > **Klassen** hinzu.
 ## Verwandte Seiten
 
 - [Wie nehme ich eine Seite in die Sitemap auf oder aus ihr heraus?](wie-steuere-ich-die-sitemap.md)
-- [xrowmetadata](../../../eng-us/features/6.0/extensions/xrowmetadata.md)
-- [SEO-Grundlagen](../../../eng-us/help/creators/website-creators/seo-basics.md)
+- [xrowmetadata](../../funktionen/6.0/erweiterungen/xrowmetadata.md)
+- [SEO-Grundlagen](../ersteller/website-ersteller/seo-grundlagen.md)
 - [SEO-Prüfungen](../kunden/alltag/seo-pruefungen.md)
 - [Benutzerhandbuch](README.md)
 

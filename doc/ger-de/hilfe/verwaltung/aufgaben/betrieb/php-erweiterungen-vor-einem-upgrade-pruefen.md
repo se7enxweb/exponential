@@ -54,7 +54,7 @@ sie zu installieren ([Bereitstellung, Abschnitt 2](../../../../anleitungen/berei
 - `php -m | grep fileinfo` (fileinfo ist für die Prüfungen beim Upload wichtig).
 
 ## Verwandte Seiten
-- [Upgrades von PHP und Datenbank](../../../../../eng-us/help/government/operations/upgrades-and-change/php-and-database-upgrades.md)
+- [Upgrades von PHP und Datenbank](../../betrieb/aktualisierungen-und-aenderungen/php-und-datenbank-aktualisierungen.md)
 - [PHP-Versionen und Erweiterungen (Hosting)](../../../hosting/grundlagen/php-versionen-und-erweiterungen.md)
 - [PHP-Upgrade (Runbook für Hoster)](../../../hosting/runbooks/php-upgrade.md)
 - [Anforderungen](../../../../installation/02-voraussetzungen.md)

@@ -138,7 +138,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): Zuweisungen und die
   Prüfung auf Rechteausweitung.
 - [Sektionen](../../../../anleitungen/sektionen.md): auf Sektionen eingeschränkte Rollen, mit ausgearbeiteten Beispielen.
-- [Seitenweise Anzeige von Rollenzuweisungen](../../../../../eng-us/features/6.0/role-assignment-paging.md): Rollen mit vielen
+- [Seitenweise Anzeige von Rollenzuweisungen](../../../../funktionen/6.0/seitenweise-rollenzuweisungen.md): Rollen mit vielen
   Zuweisungen.
 
 ## Verwandte Seiten

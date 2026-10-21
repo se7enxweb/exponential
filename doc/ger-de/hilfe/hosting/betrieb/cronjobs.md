@@ -85,7 +85,7 @@ Aus [10.3, Eine Crontab](../../../installation/10-nach-der-installation.md#eine-
   Systems, da der Kernel sie nicht schreibt.
 - Das Repository liefert eine Beispieldatei mit, `exponential.cron` (der alte Name `ezpublish.cron` ist eine erhaltene Kopie),
   mit einer Variablen für das Wurzelverzeichnis der Installation und die PHP-Binärdatei
-  ([ExponentialSDK und exponential.cron](../../../../eng-us/bc/6.0/exponentialsdk-and-exponential-cron.md)).
+  ([ExponentialSDK und exponential.cron](../../../bc/6.0/exponentialsdk-und-exponential-cron.md)).
 - **Setup > Cronjobs** schlägt eine Crontab-Zeile für jeden Teil vor, den noch nichts ausführt, geschrieben mit dem
   Wurzelverzeichnis und der PHP-Binärdatei der Installation; der Zeitplan kommt aus
   `cronjob.ini [AdminSettings] CrontabSchedule_<part>` ([Cronjobs, Abschnitt 12](../../../anleitungen/cronjobs.md#12-planen-mit-der-crontab)).
@@ -113,7 +113,7 @@ Manche Hosting-Tarife erlauben wenige Cron-Einträge oder ein Mindestintervall. 
 - **Die Cron-Funktion eines Panels** funktioniert genauso, solange sie den Befehl im Wurzelverzeichnis der Installation als
   Benutzer der Website ausführt; siehe [Cron und Shell-Zugang](../control-panels/cron-und-shell-zugang.md).
 - **Der Planer von Velocity** ist kein Ersatz: Er führt kein beliebiges PHP-Skript der Kommandozeile aus; dafür nutzen Sie
-  weiter den Cron des Systems ([Planer von Velocity](../../../../eng-us/features/6.0/velocity-scheduler.md)).
+  weiter den Cron des Systems ([Planer von Velocity](../../../funktionen/6.0/velocity-zeitplaner.md)).
 
 ## Cron während der Wartung und auf mehreren Knoten
 

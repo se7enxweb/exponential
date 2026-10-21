@@ -18,30 +18,30 @@ Team und Ihrem Partner, wenn Sie fragen, was eingeschaltet werden soll.
 
 | Werkzeug | Was es erspart | Wo | Braucht |
 |---|---|---|---|
-| **Auswahl kopieren** in der Liste der Unterelemente | Viele Elemente einzeln zu kopieren | Die Liste der Unterelemente eines Knotens ([Ausgewählte Unterelemente kopieren](../../../../eng-us/features/6.0/subitems-copy-selected.md)) | Inhaltsberechtigungen |
-| **Einstellungen** der Unterelemente-Tabelle mit Spalten, Voreinstellungen und CSV-Export | Listen für einen Bericht von Hand zu erstellen | Die Liste der Unterelemente ([Die Liste der Unterelemente](../../../../eng-us/features/6.0/subitems-table-options.md)) | Nichts weiter |
-| Inhaltsaufträge für große Entfernungen, Kopien und Verschiebungen | Vorgänge, die an Zeitlimits scheiterten | Von der Administration für große Teilbäume angeboten ([Inhaltsaufträge](../../../../eng-us/features/6.0/content-jobs.md)) | Nichts weiter |
-| **Ohne Benachrichtigung veröffentlichen** | E-Mails an jeden Abonnenten wegen einer Tippfehlerkorrektur | Neben der Schaltfläche zum Veröffentlichen ([Ohne Benachrichtigung veröffentlichen](../../../../eng-us/features/6.0/publish-without-notification.md)) | Einstellung in `notification.ini` und die Richtlinie `content/publish_without_notification` |
-| Versionsvorschau in anderen View-Modi | Nur zu veröffentlichen, um ein Druck- oder PDF-Layout zu sehen | `content/versionview` mit einem View-Modus ([Versionsvorschau in anderen View-Modi](../../../../eng-us/features/6.0/version-preview-view-modes.md)) | Nichts weiter |
-| Lesezeichenordner | Jeden Tag nach denselben Orten zu suchen | Die Seitenleiste und der Auswahldialog ([Lesezeichenordner](../../../../eng-us/features/6.0/bookmark-folders.md)) | Nichts weiter |
+| **Auswahl kopieren** in der Liste der Unterelemente | Viele Elemente einzeln zu kopieren | Die Liste der Unterelemente eines Knotens ([Ausgewählte Unterelemente kopieren](../../../funktionen/6.0/unterelemente-auswahl-kopieren.md)) | Inhaltsberechtigungen |
+| **Einstellungen** der Unterelemente-Tabelle mit Spalten, Voreinstellungen und CSV-Export | Listen für einen Bericht von Hand zu erstellen | Die Liste der Unterelemente ([Die Liste der Unterelemente](../../../funktionen/6.0/optionen-der-unterelementtabelle.md)) | Nichts weiter |
+| Inhaltsaufträge für große Entfernungen, Kopien und Verschiebungen | Vorgänge, die an Zeitlimits scheiterten | Von der Administration für große Teilbäume angeboten ([Inhaltsaufträge](../../../funktionen/6.0/inhaltsauftraege.md)) | Nichts weiter |
+| **Ohne Benachrichtigung veröffentlichen** | E-Mails an jeden Abonnenten wegen einer Tippfehlerkorrektur | Neben der Schaltfläche zum Veröffentlichen ([Ohne Benachrichtigung veröffentlichen](../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)) | Einstellung in `notification.ini` und die Richtlinie `content/publish_without_notification` |
+| Versionsvorschau in anderen View-Modi | Nur zu veröffentlichen, um ein Druck- oder PDF-Layout zu sehen | `content/versionview` mit einem View-Modus ([Versionsvorschau in anderen View-Modi](../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md)) | Nichts weiter |
+| Lesezeichenordner | Jeden Tag nach denselben Orten zu suchen | Die Seitenleiste und der Auswahldialog ([Lesezeichenordner](../../../funktionen/6.0/lesezeichenordner.md)) | Nichts weiter |
 | Tastenkürzel, etwa `/` für die Suche | Wege mit der Maus | Überall in der Administration ([Tastenkürzel](../../tastenkuerzel.md)) | Funktioniert im Design Admin 4; die anderen Designs haben die meisten davon |
 
 ## Aufräumen
 
 | Werkzeug | Was es erspart | Wo | Braucht |
 |---|---|---|---|
-| Der Inhaltsfinder | Die Suche nach den Inhalten hinter einer ID, einer Adresse oder einem Dateipfad | **Setup > Inhaltsfinder** ([Der Inhaltsfinder](../../../../eng-us/features/6.0/content-finder.md)) | `contentfinder/search` |
-| Inhaltsprüfungen: nicht referenzierte Dateien, kaputte Beziehungen, fehlende Dateien | Zu raten, welche Bilder und Dateien niemand nutzt | `/contentcheck/...` ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)) | `contentcheck/unreferenced`, `contentcheck/brokenrelations` |
-| Die Prüfung umgekehrter Beziehungen vor dem Entfernen oder Verbergen | Kaputte Links nach einer Entfernung | Auf der Seite zum Entfernen angezeigt, ausgeliefert als `warn` ([Entfernen und Verbergen](../../../../eng-us/features/6.0/reverse-relation-check.md)) | Nichts weiter |
-| Der Papierkorb zeigt, wer ein Element entfernt hat und wo es lag | Herumzufragen, wer etwas entfernt hat | Der Papierkorb ([Die Ansicht des Papierkorbs](../../../../eng-us/bc/6.0/trash.md)) | Nichts weiter |
-| **Benutzerkonten prüfen** | Konten einzeln zu öffnen, um ungenutzte oder doppelte zu finden | **Benutzer > Benutzerkonten prüfen** ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)) | Rechte zur Benutzerverwaltung |
+| Der Inhaltsfinder | Die Suche nach den Inhalten hinter einer ID, einer Adresse oder einem Dateipfad | **Setup > Inhaltsfinder** ([Der Inhaltsfinder](../../../funktionen/6.0/inhalts-finder.md)) | `contentfinder/search` |
+| Inhaltsprüfungen: nicht referenzierte Dateien, kaputte Beziehungen, fehlende Dateien | Zu raten, welche Bilder und Dateien niemand nutzt | `/contentcheck/...` ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)) | `contentcheck/unreferenced`, `contentcheck/brokenrelations` |
+| Die Prüfung umgekehrter Beziehungen vor dem Entfernen oder Verbergen | Kaputte Links nach einer Entfernung | Auf der Seite zum Entfernen angezeigt, ausgeliefert als `warn` ([Entfernen und Verbergen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)) | Nichts weiter |
+| Der Papierkorb zeigt, wer ein Element entfernt hat und wo es lag | Herumzufragen, wer etwas entfernt hat | Der Papierkorb ([Die Ansicht des Papierkorbs](../../../bc/6.0/papierkorb.md)) | Nichts weiter |
+| **Benutzerkonten prüfen** | Konten einzeln zu öffnen, um ungenutzte oder doppelte zu finden | **Benutzer > Benutzerkonten prüfen** ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)) | Rechte zur Benutzerverwaltung |
 
 ## Der Shop
 
 | Werkzeug | Was es erspart | Wo | Braucht |
 |---|---|---|---|
-| Sortieren der Bestellliste nach jeder Spalte, in der Adresse gespeichert | Scrollen nach den größten oder ältesten Bestellungen | **Shop > Bestellungen** ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)) | `shop/administrate` |
-| „So funktioniert Ihr Shop“ im Dashboard | Einem neuen Kollegen oder Partner die Kasse zu erklären | **Shop** ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)) | `shop/administrate` |
+| Sortieren der Bestellliste nach jeder Spalte, in der Adresse gespeichert | Scrollen nach den größten oder ältesten Bestellungen | **Shop > Bestellungen** ([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)) | `shop/administrate` |
+| „So funktioniert Ihr Shop“ im Dashboard | Einem neuen Kollegen oder Partner die Kasse zu erklären | **Shop** ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)) | `shop/administrate` |
 | Dauerhafte Bestellbelege | Anrufe von Gästen wegen „Ich habe meine Bestellung verloren“ | Eine Einstellung ([Rechnungen und Belege](../handel/rechnungen-und-belege.md)) | `shop.ini [OrderViewSettings] OrderLinkView=orderreceipt` |
 | Grenzen für Statusänderungen | Fehler von Mitarbeitenden, die nur verpacken und versenden sollen | Rollen mit `shop/setstatus`, nach Status eingeschränkt ([Bestellungen im Alltag](../handel/bestellungen-im-alltag.md)) | Ein Administrator legt die Rolle an |
 
@@ -49,12 +49,12 @@ Team und Ihrem Partner, wenn Sie fragen, was eingeschaltet werden soll.
 
 | Werkzeug | Was es erspart | Wo | Braucht |
 |---|---|---|---|
-| Das Hilfe-Center in der Administration | Im Internet nach Anleitungen zu suchen | `/exphelp/dashboard` und die Schaltfläche **Hilfe** auf jeder Seite ([Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)) | Die Richtlinie `exphelp/read` |
+| Das Hilfe-Center in der Administration | Im Internet nach Anleitungen zu suchen | `/exphelp/dashboard` und die Schaltfläche **Hilfe** auf jeder Seite ([Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)) | Die Richtlinie `exphelp/read` |
 | Die Meldeseite der Hilfe | Einen Fehlerbericht von Grund auf zu schreiben | `/exphelp/report`, mit einem vorausgefüllten Issue und Diagnosedaten zum Kopieren (dieselbe Seite) | `exphelp/read` |
-| Signierte Links in der E-Mail „New user registered“ | Nach einem neuen Konto zu suchen, um es zu genehmigen | Die E-Mail selbst ([Signierte Links in der Registrierungs-E-Mail](../../../../eng-us/features/6.0/registration-admin-links.md)) | Rückmeldung zu Registrierungen per E-Mail |
+| Signierte Links in der E-Mail „New user registered“ | Nach einem neuen Konto zu suchen, um es zu genehmigen | Die E-Mail selbst ([Signierte Links in der Registrierungs-E-Mail](../../../funktionen/6.0/admin-links-der-registrierung.md)) | Rückmeldung zu Registrierungen per E-Mail |
 | Wartungsmodus mit Vorschau | Eine leere oder kaputte Website während geplanter Arbeiten | **Setup > Wartung**, oder ein Befehl ([Wartungsmodus](../../../anleitungen/wartungsmodus.md)) | Administrator |
-| Cronjob-Teile pausieren | Bei einem Release auf jedem Server die Crontab zu bearbeiten | **Setup > Cronjobs** ([Cronjob-Teile pausieren](../../../../eng-us/features/6.0/cronjob-pause.md)) | Administrator |
-| PDF-Export mit eigener Fußzeile | Inhalte für ein PDF in eine Textverarbeitung zu kopieren | **Setup > PDF export** ([PDF-Export](../../../../eng-us/features/6.0/pdf-export.md)) | Die Richtlinie `pdf/edit` |
+| Cronjob-Teile pausieren | Bei einem Release auf jedem Server die Crontab zu bearbeiten | **Setup > Cronjobs** ([Cronjob-Teile pausieren](../../../funktionen/6.0/cronjobs-pausieren.md)) | Administrator |
+| PDF-Export mit eigener Fußzeile | Inhalte für ein PDF in eine Textverarbeitung zu kopieren | **Setup > PDF export** ([PDF-Export](../../../funktionen/6.0/pdf-export.md)) | Die Richtlinie `pdf/edit` |
 
 ## Wie Sie sie einführen
 

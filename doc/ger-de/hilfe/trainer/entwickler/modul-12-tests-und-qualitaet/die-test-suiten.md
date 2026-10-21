@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Tests und Continuous Integration](../../../../../eng-us/standards/testing-and-ci.md).
+Quelle: [Tests und Continuous Integration](../../../../standards/tests-und-ci.md).
 
 1. **Wo** (3 Minuten). `phpunit.xml` im Wurzelverzeichnis definiert die Suites; `tests/tests/` enthält die Tests,
    gegliedert wie der Code (`kernel/`, `lib/`, `extension/`, `design/`, `bin/`). `tests/bootstrap.php` lädt die
@@ -117,8 +117,8 @@ Auf der Entwicklungsinstallation, aus ihrem Wurzelverzeichnis.
 
 ## Weiterführende Literatur
 
-- [Tests und Continuous Integration](../../../../../eng-us/standards/testing-and-ci.md).
-- [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-checks.md): Hooks, Manifest, Codestil, PHPStan, die Tests
+- [Tests und Continuous Integration](../../../../standards/tests-und-ci.md).
+- [Qualitätsprüfungen](../../../../funktionen/6.0/qualitaetspruefungen.md): Hooks, Manifest, Codestil, PHPStan, die Tests
   einer Änderung.
 - [Continuous Integration](../../../../bc/6.0/ci.md).
 

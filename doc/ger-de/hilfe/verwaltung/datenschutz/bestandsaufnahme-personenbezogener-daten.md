@@ -44,11 +44,11 @@ Verzeichnis von Verarbeitungstätigkeiten, für Auskunftsanträge und für den A
 | Versionen | frühere Versionen von Inhalten | Seite der Versionen | Versionen entfernen | Grenze der Versionsgeschichte |
 | Datensicherungen | alles oben Genannte | Ihr Sicherungssystem | Ihre Rotation | Ihre Rotation |
 
-Quellen: [Datenschutzstandards](../../../../eng-us/standards/privacy.md), [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md),
+Quellen: [Datenschutzstandards](../../../standards/datenschutz.md), [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md),
 [Sitzungen](../../../anleitungen/sitzungen.md), [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md),
-[E-Mail-Einstellungen für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md), [Audit](../../../../eng-us/bc/6.0/audit.md),
-[Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md), [URLs und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#5-suchstatistiken),
-[Die Ansicht des Papierkorbs](../../../../eng-us/bc/6.0/trash.md).
+[E-Mail-Einstellungen für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md), [Audit](../../../bc/6.0/audit.md),
+[Protokollrotation](../../../funktionen/6.0/log-rotation.md), [URLs und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#5-suchstatistiken),
+[Die Ansicht des Papierkorbs](../../../bc/6.0/papierkorb.md).
 
 ## Orte außerhalb von Exponential
 
@@ -68,7 +68,7 @@ eine Zeile in Ihrem Verzeichnis von Verarbeitungstätigkeiten.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Die DSGVO und Exponential](dsgvo-zuordnung.md)
 - [Verantwortlicher, Auftragsverarbeiter und die Software](verantwortlicher-auftragsverarbeiter-und-exponential.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -10,7 +10,7 @@ type: help
 # Layout-Regeln
 
 Diese Seite ist für Designer, die sich fragen, warum eine Seite ein bestimmtes Layout zeigt. Regeln (im Editor Zuordnungen genannt)
-entscheiden das. Vollständige Referenz: [Exponential Layouts](../../../../eng-us/bc/6.0/LAYOUTS.md), „Rules“.
+entscheiden das. Vollständige Referenz: [Exponential Layouts](../../../bc/6.0/layouts.md), „Rules“.
 
 ## Inhalt
 

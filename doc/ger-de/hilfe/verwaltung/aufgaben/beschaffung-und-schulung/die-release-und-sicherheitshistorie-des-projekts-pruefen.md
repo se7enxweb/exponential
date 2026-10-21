@@ -11,7 +11,7 @@ type: help
 
 **Wer:** eine IT-Fachkraft oder der Sicherheitsbeauftragte im Bewertungsteam. **Wann:** vor der Ausschreibung oder
 während der Bewertung. Die Methode steht in
-[Den Zustand eines Open-Source-Projekts bewerten](../../../../../eng-us/help/government/procurement/evaluation/evaluating-open-source-project-health.md).
+[Den Zustand eines Open-Source-Projekts bewerten](../../beschaffung/bewertung/den-zustand-eines-open-source-projekts-bewerten.md).
 
 ## Inhalt
 
@@ -37,19 +37,19 @@ Sie brauchen einen Klon des Repositorys oder einen Browser auf GitHub
    ```
 
    Die Seite der Standards verzeichnet die Tags `v6.0.0` bis `v6.0.14` und GitHub-Releases ab `v6.0.10`
-   ([Versionsverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#the-kernels-versions)).
+   ([Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-versionen-des-kernels)).
 2. **Notieren Sie die Daten** der jüngsten Releases; die Seite der Roadmap verzeichnet `v6.0.11` bis `v6.0.14` zwischen
    Dezember 2025 und Juni 2026 ([Die Roadmap](../../../projekt/roadmap.md#was-bereits-geliefert-wurde)).
 3. **Lesen Sie das Changelog** der aktuellen Linie und überfliegen Sie, was sich geändert hat
-   ([Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md); [Ein Changelog lesen](../../../../../eng-us/help/press/reading-a-changelog.md)).
+   ([Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md); [Ein Changelog lesen](../../../presse/ein-changelog-lesen.md)).
 4. **Lesen Sie `SECURITY.md`**: unterstützte Versionen, vertrauliche Meldung, erste Antwort innerhalb eines Werktags,
    Korrekturen als nächstes Release.
 5. **Lesen Sie die Nachweise zur Härtung**: Die Seite der Sicherheitsstandards verlinkt drei dokumentierte Durchgänge
-   der Härtung ([Sicherheitsstandards](../../../../../eng-us/standards/security.md#status)).
+   der Härtung ([Sicherheitsstandards](../../../../standards/sicherheit.md#status)).
 6. **Prüfen Sie die Lücken in den Richtlinien**, die das Projekt selbst nennt: keine signierten Commits oder Tags, kein
    Schutz der Branches, keine Prüfung der Abhängigkeiten in der CI
-   ([Versionsverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#known-gaps),
-   [Sicherheitsstandards](../../../../../eng-us/standards/security.md#known-gaps)).
+   ([Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#bekannte-lücken),
+   [Sicherheitsstandards](../../../../standards/sicherheit.md#bekannte-lücken)).
 7. **Prüfen Sie die Erweiterungen, die Sie verwenden werden**, auf dieselbe Weise: ihre Tags und
    `doc/changelogs/extensions/<name>.md`.
 
@@ -73,10 +73,10 @@ Ein datierter Nachweis, von Ihren eigenen Mitarbeitern aus Primärquellen erstel
 
 - Tags nach Name sortieren und das falsche „neueste“ wählen.
 - Die Roadmap als geleistete Arbeit nehmen: Das Changelog ist der Nachweis
-  ([Die Roadmap als Behörde lesen](../../../../../eng-us/help/government/procurement/lifecycle/reading-the-roadmap.md)).
+  ([Die Roadmap als Behörde lesen](../../beschaffung/lebenszyklus/die-roadmap-lesen.md)).
 
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Release-Richtlinie und Versionsnummern](../../../../../eng-us/help/government/procurement/lifecycle/release-policy-and-version-numbers.md)
-- [Nachweise zur Sicherheit bewerten](../../../../../eng-us/help/government/procurement/evaluation/evaluating-security-evidence.md)
+- [Release-Richtlinie und Versionsnummern](../../beschaffung/lebenszyklus/release-richtlinie-und-versionsnummern.md)
+- [Nachweise zur Sicherheit bewerten](../../beschaffung/bewertung/sicherheitsnachweise-bewerten.md)

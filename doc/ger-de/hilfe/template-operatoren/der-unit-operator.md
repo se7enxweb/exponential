@@ -35,7 +35,7 @@ Wahl zwischen binären und dezimalen Präfixen aus `[UnitSettings]` in `site.ini
 
 Eingabe: die Zahl, über die Pipe. Gibt eine Zeichenkette zurück: die Zahl, ein Leerzeichen, das Präfixsymbol und das
 Einheitensymbol. Eine unbekannte Einheit protokolliert "No such unit" und lässt die Zahl unverändert; ein unbekanntes
-Präfix protokolliert "Prefix ... not found". Generierte Referenz: [si](../../../eng-us/examples/template-operators/si.md).
+Präfix protokolliert "Prefix ... not found". Generierte Referenz: [si](../../beispiele/template-operatoren/si.md).
 
 ## Einheiten und Präfixe
 
@@ -127,7 +127,7 @@ Die Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe.
 
 - [Locale-Operatoren](locale-operatoren.md): `l10n( 'number' )` ohne Einheit
 - [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md): `number_format`
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -72,8 +72,8 @@ Die Rollen selbst richtet Ihr Administrator ein ([Rollen und Richtlinien](../../
 
 - [Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)
 - [Einen Shop im Alltag betreiben (für Unternehmen)](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md)
-- [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)
-- [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+- [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)
+- [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

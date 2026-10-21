@@ -75,7 +75,7 @@ damit sie keinen Platz für eine Inhaltssprache belegt.
 
 - [Die Testsprache Lorem Ipsum](../../../anleitungen/testsprache-lorem-ipsum.md)
 - [Checkliste Sprachen](checkliste-sprachen.md)
-- [Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

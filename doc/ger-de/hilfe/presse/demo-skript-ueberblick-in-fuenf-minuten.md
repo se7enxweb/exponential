@@ -71,7 +71,7 @@ Mehr: [Aussagen, die Sie nicht machen dürfen](../fuersprecher/aussagen-die-sie-
 | Inhalt des Dashboards | [Ein Rundgang durch die Administration, Das Dashboard](../rundgang-durch-die-administration.md#das-dashboard) |
 | Entwürfe, Vorschau, Veröffentlichen, Versionen | [In der Praxis: einen Ordner bearbeiten](../rundgang-durch-die-administration.md#in-der-praxis-einen-ordner-bearbeiten) |
 | Layouts, Zonen, Blöcke, die Tabs Content und Design | [In der Praxis: der Layout-Editor](../rundgang-durch-die-administration.md#in-der-praxis-der-layout-editor) |
-| Die Schaltfläche Hilfe öffnet die Seite zum Bildschirm | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Die Schaltfläche Hilfe öffnet die Seite zum Bildschirm | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | Die Geschichte in einem Satz | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
 
 ```text

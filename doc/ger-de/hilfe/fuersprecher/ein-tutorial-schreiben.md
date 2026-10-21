@@ -36,7 +36,7 @@ geschrieben ist (jeder Teil „endet mit etwas, das Sie prüfen können“, wie 
 ## Den Ausgangspunkt wählen
 
 Der einfachste nachvollziehbare Start ist eine frische Installation auf SQLite
-([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)):
+([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)):
 
 ```bash
 ./console exp:install --dry-run

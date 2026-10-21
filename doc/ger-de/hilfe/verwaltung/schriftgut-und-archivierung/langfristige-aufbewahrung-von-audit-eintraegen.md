@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren und Hosting-Teams öffentlicher Stel
 Audit-Einträge länger als die standardmäßigen zwei Jahre verlangt. Die Referenzkonfiguration „Compliance: long
 retention“ des Audit-Leitfadens bewahrt zehn Jahre Nachweise komprimiert auf einmal beschreibbarem Speicher auf, mit
 täglichen signierten Prüfpunkten, die vom Server weggeschickt werden
-([6.6 Compliance: lange Aufbewahrung](../../../../eng-us/bc/6.0/audit.md#66-compliance-long-retention)).
+([6.6 Compliance: lange Aufbewahrung](../../../bc/6.0/audit.md#66-compliance-lange-aufbewahrung)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -83,7 +83,7 @@ Handel und Daten ein, sowie eine Webhook-Senke, die die Prüfpunkte, Bereinigung
 
 ## Verwandte Seiten
 
-- [Audit-Leitfaden, 4.2 Rotation und Archive](../../../../eng-us/bc/6.0/audit.md#42-rotation-and-archives)
+- [Audit-Leitfaden, 4.2 Rotation und Archive](../../../bc/6.0/audit.md#42-rotation-und-archive)
 - [Audit-Einträge als Nachweis](audit-eintraege-als-nachweis.md)
 - [Einordnung nach OAIS](einordnung-nach-oais.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

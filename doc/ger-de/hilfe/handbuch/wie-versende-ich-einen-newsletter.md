@@ -42,10 +42,10 @@ neuen Installation die Erweiterung cjw_newsletter). Wo Ausgaben eine Freigabe br
 
 ## Verwandte Seiten
 
-- [Newsletter sicher versenden](../../../eng-us/help/creators/website-creators/sending-newsletters.md)
+- [Newsletter sicher versenden](../ersteller/website-ersteller/newsletter-versenden.md)
 - [Newsletter](../kunden/wachstum/newsletter.md)
 - [Newsletter-Routine](../kunden/wachstum/newsletter-routine.md)
-- [cjw_newsletter](../../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [cjw_newsletter](../../funktionen/6.0/erweiterungen/cjw_newsletter.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

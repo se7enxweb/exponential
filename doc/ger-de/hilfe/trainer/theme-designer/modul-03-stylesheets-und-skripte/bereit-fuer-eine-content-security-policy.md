@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md) und
-[Stylesheets und Skripte für Ihre Website, CSP](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md#scripts-that-work-under-a-content-security-policy).
+Quellen: [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md) und
+[Stylesheets und Skripte für Ihre Website, CSP](../../../ersteller/website-ersteller/stylesheets-und-skripte.md#skripte-die-unter-einer-content-security-policy-funktionieren).
 
 1. **Die Modi** (4 Minuten). `site.ini [ContentSecurityPolicy] Mode`:
 
@@ -152,7 +152,7 @@ Auf Ihrer Schulungsinstallation, mit geöffneter Entwicklerkonsole des Browsers.
 <summary>Antworten</summary>
 
 1. Nichts: `auto` ist in öffentlichen Siteaccesses ausgeschaltet und in Administrationen im Nur-Bericht-Modus
-   ([Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)).
+   ([Content Security Policy](../../../../funktionen/6.0/content-security-policy.md)).
 2. **B.**
 3. In einem `data-*`-Attribut (oder einem JSON-Datenblock), das eine Skriptdatei liest.
 4. Ja; der Nur-Bericht-Modus meldet und blockiert nichts.
@@ -162,13 +162,13 @@ Auf Ihrer Schulungsinstallation, mit geöffneter Entwicklerkonsole des Browsers.
 
 ## Weiterführende Literatur
 
-- [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md): Direktiven, Berichte und die
+- [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md): Direktiven, Berichte und die
   Schritte zum Erzwingen.
-- [Content Security Policy für Ihren Code](../../../../../eng-us/help/creators/app-creators/content-security-policy.md): die Sicht der
+- [Content Security Policy für Ihren Code](../../../ersteller/anwendungsentwickler/content-security-policy.md): die Sicht der
   Entwickler.
-- [Inline-Skripte und Inline-Stile entfernen](../../../../../eng-us/help/designers/lifecycle/removing-inline-scripts-and-styles.md): ein
+- [Inline-Skripte und Inline-Stile entfernen](../../../designer/lebenszyklus/inline-skripte-und-styles-entfernen.md): ein
   älteres Theme aufräumen.
-- [CSP-Prüfung bei jeder Veröffentlichung](../../../../../eng-us/help/designers/lifecycle/csp-audit-per-release.md): ein Theme auf Dauer
+- [CSP-Prüfung bei jeder Veröffentlichung](../../../designer/lebenszyklus/csp-pruefung-pro-release.md): ein Theme auf Dauer
   sauber halten.
 
 ## Verwandte Seiten

@@ -745,8 +745,8 @@ der Daten braucht, die die Datenbank nicht hat, wird übersprungen, nicht als fe
 
 ## Verwandte Seiten
 
-- [Einstellungen der Liste der Unterelemente (Funktion)](../../../eng-us/features/6.0/subitems-table-options.md)
-- [Unterelemente: Auswahl kopieren](../../../eng-us/features/6.0/subitems-copy-selected.md)
+- [Einstellungen der Liste der Unterelemente (Funktion)](../../funktionen/6.0/optionen-der-unterelementtabelle.md)
+- [Unterelemente: Auswahl kopieren](../../funktionen/6.0/unterelemente-auswahl-kopieren.md)
 - [Unterelemente: Verstecken und Einblenden unter Weitere Aktionen](unterelemente-weitere-aktionen-verstecken-einblenden.md)
 - [Mehrere Elemente auf einmal bearbeiten](mehrere-elemente-bearbeiten.md)
 - [Wo die Seitengrößen stehen](einstellungen-fuer-seitengroessen.md)

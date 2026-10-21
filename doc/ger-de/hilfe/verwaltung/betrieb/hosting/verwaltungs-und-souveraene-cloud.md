@@ -34,13 +34,13 @@ Exponential ist eine PHP-Anwendung. Sie nimmt keinen Kontakt zum Hersteller auf,
 keinen eigenen Cloud-Dienst, von dem eine Website abhängt. Die Administration liefert ihre Skripte lokal aus: jQuery
 und die anderen Skripte der Administration werden aus der Installation geladen, nicht aus einem CDN
 (`ezjscore.ini [eZJSCore] LoadFromCDN=disabled`), und das Design admin4 lädt keine Webschriften oder Skripte von
-anderen Hosts ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)). Virtuelle Maschinen in der Cloud sind
+anderen Hosts ([Datenschutzstandards](../../../../standards/datenschutz.md)). Virtuelle Maschinen in der Cloud sind
 „gewöhnliche Linux-Maschinen, in der Stufe ihrer Distribution“
 ([Betriebssysteme für Hosts](../../../hosting/grundlagen/betriebssysteme-fuer-hoster.md)).
 
 Einige Erweiterungen, die mit dem Code ausgeliefert werden, nehmen Kontakt zu Dritten auf, sobald Sie sie aktivieren
 (Statistiken, Captchas, Anmeldung über soziale Netzwerke). Sie sind ausgeschaltet, bis eine Website sie einschaltet;
-die Liste steht in den [Datenschutzstandards](../../../../../eng-us/standards/privacy.md). Prüfen Sie `ActiveExtensions[]` vor
+die Liste steht in den [Datenschutzstandards](../../../../standards/datenschutz.md). Prüfen Sie `ActiveExtensions[]` vor
 dem Livegang.
 
 ## Welches Hosting-Modell passt

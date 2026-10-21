@@ -84,7 +84,7 @@ Seiten behalten ihren Platz im Index“
 **Was muss gesichert werden?**
 Die Datenbank und die Dateien (`var/storage`, `settings/override`, `settings/siteaccess`, Ihre eigenen Erweiterungen und
 Designs), zur selben Zeit gesichert
-([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md#what-to-back-up)). Siehe
+([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md#was-gesichert-wird)). Siehe
 [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md).
 
 **Woher wissen wir, dass unsere Backups funktionieren?**
@@ -161,7 +161,7 @@ Anfrage ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehle
 
 **Wer hat diese Einstellung geändert, und wann?**
 Das Prüfprotokoll zeichnet geschriebene Einstellungen, Deployments, geleerte Caches, Wartung und Änderungen an Inhalten auf
-und kann nachweisen, dass die Aufzeichnung nicht verändert wurde ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+und kann nachweisen, dass die Aufzeichnung nicht verändert wurde ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 Siehe [Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md).
 
 **Die Website ist nicht erreichbar. Wo fangen wir an?**

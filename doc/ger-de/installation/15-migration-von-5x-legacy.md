@@ -140,7 +140,7 @@ Site, die weiter gegangen ist und auf eZ Platform oder Ibexa läuft, behandelt [
 
 **Voraussetzungen des Ziels.** PHP 8.0 bis 8.5 (`composer.json`: `^8.0`), auch für Velocity (ab seinem Release 0.0.4.54); die alte Site lief
 auf PHP 5.3.17 oder höher (das Minimum des Community-Projekts), daher durchläuft jede PHP-Datei Ihrer eigenen Extensions
-den Sprung über PHP 7 und 8. Siehe [Kapitel 2](02-voraussetzungen.md), [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md) und die
+den Sprung über PHP 7 und 8. Siehe [Kapitel 2](02-voraussetzungen.md), [PHP-8-Unterstützung](../bc/6.0/php8.md) und die
 PHP-Migrationsanleitungen in den Referenzen. Datenbanken: [Kapitel 9](09-datenbanken.md).
 
 **Zuerst eine Bestandsaufnahme.** Listen Sie vor jeder Änderung aus der alten Site auf:
@@ -217,7 +217,7 @@ php bin/php/console exp:checkclasses
 Dateiberechtigungen: [8.7](08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer).
 
 Wenn Sie lieber ein Symfony-Frontend behalten und Exponential darin betreiben möchten, leistet die se7enxweb-Legacy-Bridge
-das auf aktuellen Symfony-Versionen: [Legacy-Bridge](../../eng-us/features/6.0/legacy-bridge.md). Der Rest dieses Kapitels geht
+das auf aktuellen Symfony-Versionen: [Legacy-Bridge](../funktionen/6.0/legacy-bridge.md). Der Rest dieses Kapitels geht
 davon aus, dass Exponential eigenständig läuft.
 
 ## 15.6 Die Symfony-Konfiguration in INI übertragen
@@ -591,7 +591,7 @@ Führen Sie sie zuerst an der Kopie aus und vergleichen Sie einige Adressen vorh
 Extension (`extension/<name>/modules/<module>/module.php` und die View-Datei; siehe
 [Extensions](../anleitungen/extensions.md)), erreichbar als `/<module>/<view>`; eine sprechende Adresse dafür ist ein eigener
 URL-Alias oder ein Platzhalter (**Setup > URL-Übersetzer**). Eine Route, die nur weitergeleitet hat, wird zu einem
-URL-Alias oder einer [Anfrageregel](../../eng-us/features/6.0/request-rules.md), die nach der Übersetzung des Alias erlauben,
+URL-Alias oder einer [Anfrageregel](../funktionen/6.0/anfrageregeln.md), die nach der Übersetzung des Alias erlauben,
 verweigern, weiterleiten, umschreiben oder protokollieren kann. Die eigenen Routen des New Stack
 (`/content/location/...`, `/_fragment`, `/api/ezp/v2/...`) verschwinden; suchen Sie in Logs und externen Links danach.
 
@@ -621,7 +621,7 @@ als Rückfallebene, daher sind die Twig-Templates oft das gesamte Frontend.
 `ngsymfonytools` (`symfony_include`) stellt ein Twig-Template aus einer `.tpl` heraus dar, aber nur innerhalb einer
 Symfony-Anwendung über die Bridge; einer eigenständigen Site hilft es nicht. Wie Templates gefunden, überschrieben und
 untersucht werden: [Templates und Design](../anleitungen/templates-und-design.md); welches Template welches Markup geschrieben
-hat, zeigen die [Template-Pfad-Kommentare](../../eng-us/features/6.0/template-path-comments.md).
+hat, zeigen die [Template-Pfad-Kommentare](../funktionen/6.0/template-pfad-kommentare.md).
 
 ## 15.13 REST
 
@@ -645,16 +645,16 @@ Remote-Dienste: [Remote-Dienste und Apps](../anleitungen/entfernte-dienste-und-a
 
 | 5.x | Exponential |
 |---|---|
-| Symfony-HTTP-Cache (der PHP-Reverse-Proxy in `ezpublish/`) oder Varnish, vom Legacy-Bundle bei `content/cache`-Ereignissen gepurgt | der Inhalts-View-Cache und der Template-Block-Cache in `var/`; optional der rollenbewusste HTTP-Cache ([HTTP-Cache](../../eng-us/bc/6.0/httpcache.md), standardmäßig aus) und unter Velocity der Antwort-Cache ([8.3.8](08-die-website-ausliefern.md#838-der-antwort-cache)) |
+| Symfony-HTTP-Cache (der PHP-Reverse-Proxy in `ezpublish/`) oder Varnish, vom Legacy-Bundle bei `content/cache`-Ereignissen gepurgt | der Inhalts-View-Cache und der Template-Block-Cache in `var/`; optional der rollenbewusste HTTP-Cache ([HTTP-Cache](../bc/6.0/httpcache.md), standardmäßig aus) und unter Velocity der Antwort-Cache ([8.3.8](08-die-website-ausliefern.md#838-der-antwort-cache)) |
 | der Persistenz-Cache (SPI), Stash | nicht nötig; der Kernel hat eigene Caches innerhalb der Anfrage |
-| `ezpublish/console cache:clear` | `php bin/php/ezcache.php --clear-all` oder `./console exp:cache` ([Cache-Konsole](../../eng-us/bc/6.0/cache-console.md)) |
+| `ezpublish/console cache:clear` | `php bin/php/ezcache.php --clear-all` oder `./console exp:cache` ([Cache-Konsole](../bc/6.0/cache-konsole.md)) |
 
 **Varnish.** Das Legacy-Bundle hängte den Purger des HTTP-Caches an die Kernel-Ereignisse `content/cache` und
 `content/cache/all`. Exponential sendet keine Purge- oder Ban-Anfragen an einen Proxy (kein `PURGE` oder `BAN` im Kernel),
 daher liefert ein für 5.x konfiguriertes Varnish weiterhin veraltete Seiten aus. Verzichten Sie entweder auf Varnish (der
 HTTP-Cache oder der Antwort-Cache von Velocity erledigt dieselbe Aufgabe innerhalb von Exponential), oder lassen Sie es
 anonyme Seiten nur kurz cachen ([HTTP-Caching für anonyme
-Besucher](../../eng-us/bc/6.0/http-caching.md)), oder purgen Sie es selbst: Der HTTP-Cache kann die Purge-Tags jeder Seite in einem Header nennen (`[HttpCacheSettings] TagHeader=xkey` für das
+Besucher](../bc/6.0/http-caching.md)), oder purgen Sie es selbst: Der HTTP-Cache kann die Purge-Tags jeder Seite in einem Header nennen (`[HttpCacheSettings] TagHeader=xkey` für das
 Varnish-Modul xkey), und der Kernel löst bei jeder Veröffentlichung weiterhin `content/cache` mit den Knoten- und
 Objekt-IDs aus (`kernel/classes/ezcontentcachemanager.php`), was ein Listener in `site.ini [Event] Listeners[]` in Purges
 umsetzen kann. Die Reihenfolge nach jeder Codeänderung und welcher Cache wann zu leeren ist:
@@ -671,7 +671,7 @@ Suchmaschine des New Stack oder eines alten ezfind gegen ein altes Solr-Schema w
 php bin/php/updatesearchindex.php --clean
 ```
 
-`exp:solr` startet, stoppt und prüft einen lokalen Solr-Server ([Solr-Befehle](../../eng-us/features/6.0/web-server-and-solr-commands.md));
+`exp:solr` startet, stoppt und prüft einen lokalen Solr-Server ([Solr-Befehle](../funktionen/6.0/befehle-fuer-webserver-und-solr.md));
 er ist aus, bis `settings/solr.ini [SolrSettings] Enabled=true` gesetzt ist. Einzelheiten zur Indizierung:
 [10.8](10-nach-der-installation.md#108-suchindex-und-bildverarbeitung).
 
@@ -687,7 +687,7 @@ php runcronjobs.php --list
 ```
 
 Die Cronjob-Teile und eine Crontab: [10.3](10-nach-der-installation.md#103-cronjobs); Ausführen und Überwachen aus der
-Administration: [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md).
+Administration: [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md).
 
 Legacy-Workflows (`ezworkflow*`-Tabellen, Trigger, der Cronjob `workflow.php`) werden unverändert übernommen.
 Reaktionen auf Inhaltsänderungen auf der Symfony-Seite (Signal-Slot-Listener, Event-Subscriber Ihrer Bundles) nicht:
@@ -730,8 +730,8 @@ php bin/php/dfscleanup.php -B
 
 `-S` prüft die Dateien auf der Freigabe gegen die Datenbank, `-B` in umgekehrter Richtung; fügen Sie `-D` erst hinzu,
 nachdem Sie das Ergebnis gelesen haben. `php bin/php/clusterize.php` verschiebt `var/` in den Cluster und mit `-u` wieder
-heraus. Hintergrund: [konfigurierbares DFS-Backend](../../eng-us/features/5.4/configurable_dfs_cluster_backend.md),
-[Cluster-Index](../../eng-us/features/4.7/cluster_index.md).
+heraus. Hintergrund: [konfigurierbares DFS-Backend](../funktionen/5.4/konfigurierbares-dfs-cluster-backend.md),
+[Cluster-Index](../funktionen/4.7/cluster-index.md).
 
 ## 15.18 Die Site ausliefern
 
@@ -767,7 +767,7 @@ Dann auf der neuen Site:
 - [ ] Das Veröffentlichen eines Objekts aktualisiert die Seite für einen anonymen Besucher (Caches, Proxy).
 - [ ] `php runcronjobs.php --list` zeigt die Cronjob-Teile, die Ihre Crontab aufruft; ein Lauf jedes Teils endet ohne Fehler.
 - [ ] **Setup > Upgrade-Prüfung**, Dateikonsistenz, listet nur Dateien auf, die Sie absichtlich geändert haben
-      ([Dateikonsistenzprüfung](../../eng-us/features/6.0/file-consistency-check.md)).
+      ([Dateikonsistenzprüfung](../funktionen/6.0/dateikonsistenzpruefung.md)).
 
 ## 15.20 Häufige Probleme
 
@@ -795,7 +795,7 @@ Und die Probleme des 5.x-Wegs, die der Hersteller nicht aufführt:
 | Die Startseite eines Siteaccess zeigt den falschen Baum | `PathPrefix`, `IndexPage`, `RootNode` stammten aus `content.tree_root` | [15.6](#156-die-symfony-konfiguration-in-ini-übertragen) |
 | Ein Bild-Alias ist unbekannt oder hat andere Abmessungen | die Aliasliste stammte aus YAML | [15.10](#1510-bildvariationen-und-bild-aliase) |
 | Ein Attribut wird in einer Klasse als nichts dargestellt | `ezrichtext` oder ein Feldtyp ohne Legacy-Datentyp | [15.8](#158-feldtypen-und-datentypen) |
-| `Class ... not found` oder ein fataler Fehler in einer Extension | PHP-5-Code oder keine Class Map | `php bin/php/ezpgenerateautoloads.php -e`, `exp:checkclasses`, [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md) |
+| `Class ... not found` oder ein fataler Fehler in einer Extension | PHP-5-Code oder keine Class Map | `php bin/php/ezpgenerateautoloads.php -e`, `exp:checkclasses`, [PHP-8-Unterstützung](../bc/6.0/php8.md) |
 | `SET storage_engine=InnoDB;` schlägt fehl | Eine Update-Datei von vor Oktober 2026 auf MySQL ab 5.7.5 oder MariaDB ab 12.0 | die aktuelle Datei verwenden, die `SET default_storage_engine` enthält ([15.7](#157-die-datenbank-schritt-für-schritt)) |
 | Seiten bleiben hinter Varnish veraltet | Exponential sendet keine Purges | [15.14](#1514-caches) |
 | Cron tut nichts | die Crontab ruft noch `ezpublish/console` auf | [15.16](#1516-cron-workflows-und-ereignisse) |
@@ -867,26 +867,26 @@ In diesem Repository:
 - Anleitungen: [Upgrade](../anleitungen/aktualisieren.md), [Templates und Design](../anleitungen/templates-und-design.md),
   [Extensions](../anleitungen/extensions.md), [Remote-Dienste und Apps](../anleitungen/entfernte-dienste-und-apps.md),
   [Betrieb einer Site](../anleitungen/betrieb-einer-website.md).
-- Die Legacy-Bridge: [Legacy-Bridge](../../eng-us/features/6.0/legacy-bridge.md),
+- Die Legacy-Bridge: [Legacy-Bridge](../funktionen/6.0/legacy-bridge.md),
   [Bridge-Spezifikation](../spezifikationen/6.0/legacy-bridge-bundle.md),
-  [Paket-Forks und Umbenennungen von Befehlen](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md).
+  [Paket-Forks und Umbenennungen von Befehlen](../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md).
 - Hinweise zu 5.x: [Änderungen in 5.1](../../eng-us/bc/5.1/changes-5.1.txt), [5.2](../../eng-us/bc/5.2/changes-5.2.txt),
-  [5.4](../../eng-us/bc/5.4/changes-5.4.txt), [5.90](../../eng-us/bc/5.90/README.md),
-  [Passwortlänge](../../eng-us/bc/5.90/password_length.md), [PHP 7](../../eng-us/bc/5.90/php7.md).
+  [5.4](../../eng-us/bc/5.4/changes-5.4.txt), [5.90](../bc/5.90/README.md),
+  [Passwortlänge](../bc/5.90/passwortlaenge.md), [PHP 7](../bc/5.90/php7.md).
 - 6.0: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md), [6.0.9](../../changelogs/6.0/6.0.9.md),
-  [6.0.15](../../changelogs/6.0/6.0.15.md); [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md),
-  [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md); [HTTP-Cache](../../eng-us/bc/6.0/httpcache.md),
-  [HTTP-Caching für anonyme Besucher](../../eng-us/bc/6.0/http-caching.md),
-  [Antwort-Cache von Velocity](../../eng-us/features/6.0/velocity-response-cache.md),
-  [Cache-Konsole](../../eng-us/bc/6.0/cache-console.md); [Anfrageregeln](../../eng-us/features/6.0/request-rules.md);
-  [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md);
-  [Solr-Befehle](../../eng-us/features/6.0/web-server-and-solr-commands.md);
-  [Standardverteilung der Extensions](../../eng-us/features/6.0/default-extension-distribution.md);
+  [6.0.15](../../changelogs/6.0/6.0.15.md); [PHP-8-Unterstützung](../bc/6.0/php8.md),
+  [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md); [HTTP-Cache](../bc/6.0/httpcache.md),
+  [HTTP-Caching für anonyme Besucher](../bc/6.0/http-caching.md),
+  [Antwort-Cache von Velocity](../funktionen/6.0/velocity-antwort-cache.md),
+  [Cache-Konsole](../bc/6.0/cache-konsole.md); [Anfrageregeln](../funktionen/6.0/anfrageregeln.md);
+  [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md);
+  [Solr-Befehle](../funktionen/6.0/befehle-fuer-webserver-und-solr.md);
+  [Standardverteilung der Extensions](../funktionen/6.0/standard-extension-auslieferung.md);
   [Sicherheitsspezifikation vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md);
-  [Dateikonsistenzprüfung](../../eng-us/features/6.0/file-consistency-check.md);
-  [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md).
-- Cluster: [konfigurierbares DFS-Backend](../../eng-us/features/5.4/configurable_dfs_cluster_backend.md),
-  [Cluster-Index](../../eng-us/features/4.7/cluster_index.md).
+  [Dateikonsistenzprüfung](../funktionen/6.0/dateikonsistenzpruefung.md);
+  [Wartungsmodus](../funktionen/6.0/wartungsmodus.md).
+- Cluster: [konfigurierbares DFS-Backend](../funktionen/5.4/konfigurierbares-dfs-cluster-backend.md),
+  [Cluster-Index](../funktionen/4.7/cluster-index.md).
 - Code: `update/database/`, `update/common/scripts/`, `kernel/classes/datatypes/ezuser/ezuser.php`,
   `kernel/classes/ezcontentobjecttreenode.php`, `kernel/classes/eznodeviewfunctions.php`,
   `kernel/classes/ezcontentcachemanager.php`, `kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php`,

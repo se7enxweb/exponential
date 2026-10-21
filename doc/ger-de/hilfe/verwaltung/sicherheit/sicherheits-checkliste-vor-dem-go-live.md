@@ -81,7 +81,7 @@ Audits.
 
 - [13.16 Go-live-Checkliste](../../../installation/13-sicherheitshaertung.md#1316-checkliste-für-den-livegang)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
-- [Start-Checkliste für Websites](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Start-Checkliste für Websites](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

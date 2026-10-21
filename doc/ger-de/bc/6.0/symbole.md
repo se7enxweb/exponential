@@ -173,7 +173,7 @@ Früher in der Linie 6.0.15 war das Theme pro Admin-Siteaccess optional (`Theme=
 bleiben oder entfallen. Das `icon_info` des Inhaltsbaums nicht: Es liest das erste gefundene Theme (Abbruch beim ersten
 Theme-Verzeichnis) und liefert für eine Klasse, die es nicht zuordnet, das `Default` dieses Themes; eine eigene Klasse
 gehört daher in `ClassMap`. Siehe
-[das Design admin4: Icons](../../../eng-us/features/6.0/admin4-design.md#icons).
+[das Design admin4: Icons](../../funktionen/6.0/admin4-design.md#symbole).
 
 ## Template-Operatoren
 
@@ -316,6 +316,6 @@ ansehen.
 
 ## Verwandte Seiten
 
-- [Icon-Themes in Erweiterungen](../../../eng-us/features/6.0/icon-themes-in-extensions.md)
+- [Icon-Themes in Erweiterungen](../../funktionen/6.0/icon-themes-in-extensions.md)
 - [Erweiterungen: Verhaltensänderungen](verhaltensaenderungen-von-erweiterungen.md)
 - [Anleitung zum Upgrade](../../anleitungen/aktualisieren.md)

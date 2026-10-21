@@ -28,7 +28,7 @@ Rest planen können.
 | Eine Karte auf der Seite | dieselbe, mit einem API-Schlüssel für Google Maps | ohne Schlüssel werden Koordinaten und Adresse ohne Karte gezeigt |
 | Inhalte nach Entfernung zu einem Punkt abrufen, nach Nähe sortiert | erweiterter Attributfilter `ezgmlLocationFilter` | in Templates |
 
-Dokumentation: [ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md) und das README der Erweiterung
+Dokumentation: [ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md) und das README der Erweiterung
 in `extension/ezgmaplocation/`.
 
 ## Was es nicht gibt

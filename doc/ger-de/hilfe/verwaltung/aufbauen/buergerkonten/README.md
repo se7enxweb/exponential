@@ -63,14 +63,14 @@ und [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md), der Anfang 
 - [ ] Nutzt die Öffentlichkeit denselben Siteaccess wie die Mitarbeiter? (Mitarbeiter sollten sich in der
   Administration anmelden, die Öffentlichkeit auf der Site.)
 
-Allgemeine Anleitungen: [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md),
+Allgemeine Anleitungen: [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md),
 [Ihr Konto und die Anmeldung](../../../konten-und-anmeldung.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md).
 
 ## Verwandte Seiten
 
 - [Formulare aufbauen](../formulare/README.md)
-- [Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)
-- [Standards zur Sicherheit](../../../../../eng-us/standards/security.md)
+- [Standards zum Datenschutz](../../../../standards/datenschutz.md)
+- [Standards zur Sicherheit](../../../../standards/sicherheit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -203,7 +203,7 @@ Siteaccess; ziehen Sie einen neuen Funktionsnamen vor.
 ## Verwandte Seiten
 
 - [Funktionen und Operatoren](funktionen-und-operatoren.md)
-- [Referenz der Funktionen](../../../eng-us/help/designers/templates/function-reference.md): jede Funktion der Bibliothek und des Kernels
+- [Referenz der Funktionen](../designer/vorlagen/funktionsreferenz.md): jede Funktion der Bibliothek und des Kernels
 - [Operatoren registrieren](../template-operatoren/operatoren-registrieren.md)
 - [Die Schnittstelle der Operatorklasse](../template-operatoren/referenz-der-operatorklassen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

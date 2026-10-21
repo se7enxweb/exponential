@@ -82,7 +82,7 @@ Der Tod eines Workers kostet nie eine Anfrage, die hätte bedient werden können
 | `debug` | `false` | Ob Meldung, Datei, Zeile und Stacktrace eines nicht abgefangenen Fehlers in der Antwort gezeigt werden |
 | `Q.compat.statTtl` | `0` | Sekunden (höchstens 10), die ein Worker Dateiinformationen über Anfragen hinweg behält |
 
-Aus Exponential heraus wird der Pool in `settings/velocity.ini` eingestellt (`[ServerSettings]`: `Workers`, `SpareWorkers`, `Instances`, `Zygote`); siehe [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md).
+Aus Exponential heraus wird der Pool in `settings/velocity.ini` eingestellt (`[ServerSettings]`: `Workers`, `SpareWorkers`, `Instances`, `Zygote`); siehe [Velocity-Engines](../../bc/6.0/velocity-engines.md).
 
 ## Wann ein Worker ersetzt wird
 
@@ -167,7 +167,7 @@ Von der Schicht garantiertes Verhalten (jeweils in einer genannten Release behob
 
 ## Siehe auch
 
-- Funktionen: [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../../eng-us/features/6.0/velocity-scheduler.md), [Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md)
+- Funktionen: [Velocity-Webserver](../../funktionen/6.0/velocity-webserver.md), [Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md), [Scheduler](../../funktionen/6.0/velocity-zeitplaner.md), [Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md)
 - Spezifikationen: [Engine-Einstellungen](velocity-engine-einstellungen.md) (Event-Loop, Vorwärm-Cache beim Start), [HTTP/2 und Sicherheit](velocity-http2-und-sicherheit.md)
-- Upgrade und Betrieb: [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) (`[ServerSettings]` in `settings/velocity.ini`), [Upgrade-Hinweise zur Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
-- Geschichte: [August 2026](../../../eng-us/history/velocity/2026-08.md) (Octane), [7. bis 21. September](../../../eng-us/history/velocity/2026-09a.md) (Kompatibilitätsschicht), [23. September](../../../eng-us/history/velocity/2026-09c.md) (Speicherkorrekturen), [24. September](../../../eng-us/history/velocity/2026-09d.md), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (Zygote, Worker ohne root); [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)
+- Upgrade und Betrieb: [Velocity-Engines](../../bc/6.0/velocity-engines.md) (`[ServerSettings]` in `settings/velocity.ini`), [Upgrade-Hinweise zur Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md)
+- Geschichte: [August 2026](../../geschichte/velocity/2026-08.md) (Octane), [7. bis 21. September](../../geschichte/velocity/2026-09a.md) (Kompatibilitätsschicht), [23. September](../../geschichte/velocity/2026-09c.md) (Speicherkorrekturen), [24. September](../../geschichte/velocity/2026-09d.md), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (Zygote, Worker ohne root); [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)

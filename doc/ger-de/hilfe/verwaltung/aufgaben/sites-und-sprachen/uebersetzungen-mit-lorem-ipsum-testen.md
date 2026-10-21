@@ -41,7 +41,7 @@ damit sie keinen der 62 Plätze für Inhaltssprachen belegt.
 
 ## Verwandte Seiten
 
-- [Sprachen in Exponential, Abschnitt 12](../../../../../eng-us/languages.md#12-test-languages-lorem-ipsum)
+- [Sprachen in Exponential, Abschnitt 12](../../../../sprachen.md#12-testsprachen-lorem-ipsum)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

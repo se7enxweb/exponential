@@ -136,7 +136,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem private
 
 - [Sektionen](../../../../anleitungen/sektionen.md): die vollständige Anleitung mit weiteren durchgerechneten Beispielen
   (Abteilungen im Intranet, Staging).
-- [Inhaltsaufträge](../../../../../eng-us/features/6.0/content-jobs.md): große Zuweisungen im Hintergrund.
+- [Inhaltsaufträge](../../../../funktionen/6.0/inhaltsauftraege.md): große Zuweisungen im Hintergrund.
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): Sektionseinschränkungen.
 
 ## Verwandte Seiten

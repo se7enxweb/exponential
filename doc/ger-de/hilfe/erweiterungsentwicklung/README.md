@@ -85,7 +85,7 @@ ihn arbeiten können.
 
 - [Mit Git entwickeln: vom Benutzer zum Entwickler wachsen](../mit-git-entwickeln.md)
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../anleitungen/extensions.md)
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md)
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md)
 - [Geben Sie Ihre Erweiterungen zurück](../erweiterungen-zurueckgeben.md)
 - [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Dieses Buch darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

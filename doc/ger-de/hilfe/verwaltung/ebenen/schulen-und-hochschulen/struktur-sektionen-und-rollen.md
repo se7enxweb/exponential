@@ -67,7 +67,7 @@ Users
 Konten für Beschäftigte und Lernende werden meist durch Import oder einen an das Verzeichnis der Einrichtung
 angebundenen Login-Handler angelegt, was Entwicklungsarbeit ist; manuelle Konten sind nur für kleine Schulen
 realistisch. Lernende gehen jedes Jahr: Planen Sie die Deaktivierung ein
-([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md), **Deaktivieren und verschieben**).
+([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md), **Deaktivieren und verschieben**).
 
 ## Rollen
 
@@ -93,7 +93,7 @@ Eine Freigabe wird oft nur für Seiten zur Zulassung und für Richtlinien verlan
 
 - [Schulen und Hochschulen](README.md)
 - [Intranets und Subsites von Fachbereichen](intranets-und-fachbereichs-subsites.md)
-- [Berechtigungen für Besucher](../../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Berechtigungen für Besucher](../../../ersteller/website-ersteller/rechte-fuer-besucher.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -25,9 +25,9 @@ Routine von Prüfungen; die Administration zeigt, was Aufmerksamkeit braucht. Da
 
 | Wie oft | Aufgabe | Lesen |
 |---|---|---|
-| Täglich | einen Blick auf das Fehlerlog und fehlgeschlagene Cronjobs werfen | [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md), [Cronjobs](../../../anleitungen/cronjobs.md) |
+| Täglich | einen Blick auf das Fehlerlog und fehlgeschlagene Cronjobs werfen | [Log-Viewer](../../../funktionen/6.0/log-betrachter.md), [Cronjobs](../../../anleitungen/cronjobs.md) |
 | Wöchentlich | Backups sind gelaufen; Formulareinsendungen bearbeitet; defekte Links | [Backups und Wiederherstellungen](backups-und-wiederherstellungen.md), [Link- und Inhaltsprüfungen](link-und-inhaltspruefungen.md) |
-| Monatlich | Updates von Exponential und Erweiterungen; ungenutzte Medien; Benutzerkonten | [Updates und Aktualisierungen](updates-und-aktualisierungen.md), [Pflege der Benutzerkonten](../../../../eng-us/features/6.0/user-hygiene.md) |
+| Monatlich | Updates von Exponential und Erweiterungen; ungenutzte Medien; Benutzerkonten | [Updates und Aktualisierungen](updates-und-aktualisierungen.md), [Pflege der Benutzerkonten](../../../funktionen/6.0/benutzerpflege.md) |
 | Vierteljährlich | Wiederherstellungstest; erneute Prüfung der Barrierefreiheit; Überprüfung der Rollen | [Barrierefreiheit testen](barrierefreiheit-testen.md), [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 | Jährlich | Zertifikate und Domains; PHP-Version; Inhaltsüberprüfung mit den Verantwortlichen | [Livegang: Hosts und HTTPS](livegang-hosts-und-https.md), [Anforderungen](../../../installation/02-voraussetzungen.md) |
 
@@ -47,7 +47,7 @@ Routine von Prüfungen; die Administration zeigt, was Aufmerksamkeit braucht. Da
 
 - Veraltete Seiten entfernen oder archivieren; ihre Adressen weiterleiten
   ([Weiterleitungen und verschobene Inhalte](weiterleitungen-und-verschobene-inhalte.md)).
-- Den Papierkorb nach seiner Prüffrist leeren ([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)).
+- Den Papierkorb nach seiner Prüffrist leeren ([Papierkorb](../../../funktionen/6.0/papierkorb-wer-und-wo.md)).
 - Alte Versionen mit `exp:cleanupversions` aufräumen (lesen Sie zuerst `--help`).
 - Ungenutzte Medien entfernen, die die Inhaltsprüfungen gefunden haben.
 

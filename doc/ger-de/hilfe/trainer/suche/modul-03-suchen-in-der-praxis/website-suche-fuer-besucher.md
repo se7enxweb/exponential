@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md), [Eine nützliche robots.txt ab Werk](../../../../../eng-us/features/6.0/robots-txt.md)
+Quelle: [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md), [Eine nützliche robots.txt ab Werk](../../../../funktionen/6.0/robots-txt.md)
 und die View `kernel/content/search.php`.
 
 1. **Die Anfrage** (3 Minuten). Das Suchfeld ist ein Formular, das `SearchText` an `content/search` schickt, zum
@@ -124,22 +124,22 @@ damit Sie ein anonymer Besucher sind. Ersetzen Sie `<site>` durch die Adresse Ih
 3. Höchstens 30: `MaximumSearchLimit` begrenzt die Anzahl pro Anfrage.
 4. Wenn der Siteaccess einen `PathPrefix` hat und kein Teilbaum angegeben ist, ist die Suche auf den Baum dieses
    Siteaccess beschränkt.
-5. Suchergebnisse fügen dem Index einer Suchmaschine keinen Wert hinzu ([Eine nützliche robots.txt ab Werk](../../../../../eng-us/features/6.0/robots-txt.md)).
+5. Suchergebnisse fügen dem Index einer Suchmaschine keinen Wert hinzu ([Eine nützliche robots.txt ab Werk](../../../../funktionen/6.0/robots-txt.md)).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md): das Suchfeld, die Ergebnisseite und die
+- [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md): das Suchfeld, die Ergebnisseite und die
   Einstellungen.
-- [Eine nützliche robots.txt ab Werk](../../../../../eng-us/features/6.0/robots-txt.md): was Suchmaschinen crawlen dürfen.
+- [Eine nützliche robots.txt ab Werk](../../../../funktionen/6.0/robots-txt.md): was Suchmaschinen crawlen dürfen.
 - [Suchen](../../../suchen.md#die-site-durchsuchen): was Besucher sehen, in der Hilfe für Redakteure.
 
 ## Verwandte Seiten
 
 - [Modul 3: Suchen in der Praxis](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

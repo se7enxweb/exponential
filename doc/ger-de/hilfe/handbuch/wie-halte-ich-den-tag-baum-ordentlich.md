@@ -42,8 +42,8 @@ Personen pflegen den Baum.
 ## Verwandte Seiten
 
 - [Wie verschlagworte ich Inhalte?](wie-verschlagworte-ich-inhalte.md)
-- [Verschlagworten mit eztags](../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)
-- [eztags](../../../eng-us/features/6.0/extensions/eztags.md)
+- [Verschlagworten mit eztags](../ersteller/website-ersteller/verschlagworten-mit-eztags.md)
+- [eztags](../../funktionen/6.0/erweiterungen/eztags.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

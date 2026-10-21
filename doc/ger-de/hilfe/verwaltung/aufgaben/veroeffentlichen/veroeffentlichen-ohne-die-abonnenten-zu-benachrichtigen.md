@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, die einen Tippfehler oder Metadaten in einer Seite korrigieren, der Menschen per E-Mail
 folgen. Wo die Site es anbietet, veröffentlicht **Ohne Benachrichtigung veröffentlichen** die Version, ohne ein
 Benachrichtigungsereignis zu erzeugen, sodass die Folgenden dafür keine E-Mail erhalten
-([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)).
+([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)).
 
 ## Inhalt
 

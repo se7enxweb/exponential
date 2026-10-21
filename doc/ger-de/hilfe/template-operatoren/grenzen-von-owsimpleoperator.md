@@ -44,7 +44,7 @@ entfernte Eintrag der zehnte, unbenutzte ist, und `{1|example_sum( 2 )}` funktio
 Bei einer **PHP-Funktion** enthält die Liste nur die Argumente, die Sie angegeben haben (siehe den nächsten Abschnitt),
 sodass der entfernte Eintrag Ihr letztes Argument ist. `{'This is a great example!'|str_replace( 'great', 'very good' )}`
 ruft `str_replace( 'This is a great example!', 'great' )` auf, und PHP wirft einen `ArgumentCountError`; siehe
-[das Beispiel auf der ersten Seite](owsimpleoperator.md#calling-a-php-function-operator). Bei einer Funktion mit
+[das Beispiel auf der ersten Seite](owsimpleoperator.md#einen-php-funktionsoperator-aufrufen). Bei einer Funktion mit
 optionalen Parametern gibt es keinen Fehler, sondern ein falsches Ergebnis, was schlimmer ist. Regel: Rufen Sie
 PHP-Funktionsoperatoren in der Aufrufform mit allen Argumenten in den Klammern auf, und pipen Sie nur in Funktionen mit
 genau einem Argument (`{$text|str_rot13}`).

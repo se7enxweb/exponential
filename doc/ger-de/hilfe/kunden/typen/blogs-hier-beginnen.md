@@ -21,12 +21,12 @@ verantwortlich ist.
 
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
-| Beiträge in einem Blog | Inhaltsklassen; die Demo-Installation hat *Blog* und *Blog post* | [Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) |
+| Beiträge in einem Blog | Inhaltsklassen; die Demo-Installation hat *Blog* und *Blog post* | [Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) |
 | Schreiben und Veröffentlichen | Entwürfe, Veröffentlichen, Versionskontrolle | [Inhalte bearbeiten](../../inhalte-bearbeiten.md), [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Beiträge, die erscheinen, während Sie unterwegs sind | Zeitgesteuerte Veröffentlichung | [Zeitgesteuertes Veröffentlichen](../alltag/zeitgesteuertes-veroeffentlichen.md) |
 | Leser, die dem Blog folgen | RSS- und ATOM-Feeds | [RSS- und Podcast-Feeds](../wachstum/rss-und-podcast-feeds.md) |
-| Themen und Tags | Tags (die Erweiterung eZ Tags, wo Ihre Website sie verwendet) | [Verschlagworten mit eZ Tags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md) |
-| Kommentare von Lesern | Eine Klasse *Comment* in der Demo-Installation; der Umgang mit Kommentaren hängt davon ab, wie Ihre Website gebaut wurde | Fragen Sie Ihren Partner; [Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md) |
+| Themen und Tags | Tags (die Erweiterung eZ Tags, wo Ihre Website sie verwendet) | [Verschlagworten mit eZ Tags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md) |
+| Kommentare von Lesern | Eine Klasse *Comment* in der Demo-Installation; der Umgang mit Kommentaren hängt davon ab, wie Ihre Website gebaut wurde | Fragen Sie Ihren Partner; [Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md) |
 | Hilfe bei einem ersten Entwurf | Exponential Intelligence (nur Entwürfe) | [KI-Entwürfe verantwortungsvoll nutzen](../wachstum/ki-entwuerfe-verantwortungsvoll-nutzen.md) |
 
 Die Klassennamen sind die von <https://alpha.se7enx.com>; die Funktionen sind in der `README.md` des Repositorys
@@ -52,7 +52,7 @@ Ihrem Partner:
 - ob Kommentare sofort veröffentlicht oder zur Prüfung zurückgehalten werden;
 - wer sie prüft, und wie oft;
 - welchen Schutz die Formulare gegen automatisierten Spam haben
-  ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md));
+  ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md));
 - was Sie mit einem Kommentar tun, der personenbezogene Daten enthält, deren Entfernung jemand wünscht
   ([DSGVO-Anfragen](../handel/dsgvo-anfragen.md) gilt für Blogkommentare ebenso wie für Bestellungen).
 
@@ -76,8 +76,8 @@ Folgen Sie dem [Lesepfad für Blogs](lesepfad-blogs.md).
 
 - [Lesepfad für Blogs](lesepfad-blogs.md)
 - [Magazine: hier beginnen](magazine-hier-beginnen.md)
-- [RSS-Feeds für Ihre Website (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
-- [SEO-Grundlagen (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/seo-basics.md)
+- [RSS-Feeds für Ihre Website (Website-Ersteller)](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
+- [SEO-Grundlagen (Website-Ersteller)](../../ersteller/website-ersteller/seo-grundlagen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

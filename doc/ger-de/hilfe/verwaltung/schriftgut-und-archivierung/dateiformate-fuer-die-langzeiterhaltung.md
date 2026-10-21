@@ -68,9 +68,9 @@ Sie mit einem Werkzeug, das Ihr Archiv akzeptiert, wenn Sie PDF/A brauchen.
 
 ## Verwandte Seiten
 
-- [Dokumente und PDFs (Barrierefreiheit)](../../../../eng-us/help/government/accessibility/documents-and-pdfs.md)
+- [Dokumente und PDFs (Barrierefreiheit)](../barrierefreiheit/dokumente-und-pdfs.md)
 - [Inhalte exportieren](inhalte-exportieren.md)
-- [SVG-Bilder](../../../../eng-us/bc/6.0/svg-images.md)
+- [SVG-Bilder](../../../bc/6.0/svg-bilder.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

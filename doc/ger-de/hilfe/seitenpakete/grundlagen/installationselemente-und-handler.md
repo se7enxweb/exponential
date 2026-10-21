@@ -159,7 +159,7 @@ InstallBatchTimeBudgetSeconds=6
 
 Sie liegen in `kernel/classes/packageinstallers/` und fügen der Installation Seiten hinzu (zum Beispiel die Wahl, wohin Inhalte gehen).
 `InstallBatchMaxItems` und `InstallBatchTimeBudgetSeconds` teilen eine lange Installation in Stapel; siehe
-[Stapelverarbeitung im Paket-Installer](../../../../eng-us/features/6.0/package-installer-batching.md).
+[Stapelverarbeitung im Paket-Installer](../../../funktionen/6.0/paketinstallation-in-teilschritten.md).
 
 ## Verwandte Seiten
 

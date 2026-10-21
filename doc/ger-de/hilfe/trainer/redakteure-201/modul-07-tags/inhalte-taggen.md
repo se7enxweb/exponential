@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md).
+Quelle: [eztags](../../../../funktionen/6.0/erweiterungen/eztags.md).
 
 1. **Was Tags sind** (4 Minuten). eztags fügt Inhaltstypen ein Tag-Feld hinzu und einen Baum von Tags, der unter
    **Tags** verwaltet wird. Tags können vordefiniert sein (eine geschlossene Liste) oder offen (Redakteure fügen neue
@@ -114,7 +114,7 @@ Verwenden Sie die Schulungsinstallation; der Trainer hat dem Typ *Article* ein T
 
 1. Ein Tag ordnet Inhalte ein, ohne sie zu platzieren; ein Element kann viele Tags haben, ein Ordner dagegen ist eine
    Stelle im Baum.
-2. **B.** ([eztags](../../../../../eng-us/features/6.0/extensions/eztags.md#use-it): Die Autovervollständigung schlägt vorhandene
+2. **B.** ([eztags](../../../../funktionen/6.0/erweiterungen/eztags.md#verwenden): Die Autovervollständigung schlägt vorhandene
    Tags vor).
 3. Das Feld erlaubt nur vordefinierte Tags, oder die Rolle darf keine Tags hinzufügen.
 4. Auf der Seite des Tags (standardmäßig `/tags/view/<tag>`).
@@ -124,13 +124,13 @@ Verwenden Sie die Schulungsinstallation; der Trainer hat dem Typ *Article* ein T
 
 ## Weiterführende Informationen
 
-- [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md): was die Erweiterung leistet und ihre Einstellungen.
+- [eztags](../../../../funktionen/6.0/erweiterungen/eztags.md): was die Erweiterung leistet und ihre Einstellungen.
 
 ## Verwandte Seiten
 
 - [Modul 7: Tags](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

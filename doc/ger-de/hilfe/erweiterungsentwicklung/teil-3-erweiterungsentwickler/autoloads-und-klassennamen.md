@@ -71,7 +71,7 @@ dieses Ökosystems:
 Warum 7x zwei Präfixe hat: `sevenx` ist das offizielle öffentliche Präfix für PHP-Code von 7x, weil ein Klassenname
 nicht mit einer Ziffer beginnen kann und "7x" deshalb keines sein kann; `exp` wird bewusst verwendet, um die Marke
 Exponential aufzubauen und die Zuständigkeit dem Projekt Exponential und der Exponential Foundation zuzuordnen. Siehe
-[Namenspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md).
+[Namenspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md).
 
 Eine Klasse pro Datei. Deklarieren Sie in einer Klassendatei keine Funktionen oder Konstanten auf Dateiebene:
 Autoloading funktioniert nur für Klassen.

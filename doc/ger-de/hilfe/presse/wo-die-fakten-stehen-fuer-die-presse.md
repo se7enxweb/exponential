@@ -38,18 +38,18 @@ um zur Quelle zu gehen und zu entscheiden, welche Quelle Vorrang hat, wenn sich 
 | Was Exponential ist | [README.md](https://github.com/se7enxweb/exponential/blob/main/README.md), „What is Exponential?“ |
 | Release-Nummern und Daten | Git-Tags (`git tag -l 'v6.0.*' --sort=version:refname`); [Release-Übersicht](../../../eng-us/release-overview) |
 | Was sich in einem Release geändert hat | [Changelogs](../../../changelogs/README.md); der Changelog 6.0.15 für die Linie in Entwicklung |
-| Die Geschichte Monat für Monat | [Die Geschichte](../../../eng-us/history/README.md) |
+| Die Geschichte Monat für Monat | [Die Geschichte](../../geschichte/README.md) |
 | Inhaber des Urheberrechts | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
-| Lizenz | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE); [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
+| Lizenz | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE); [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
 | Sicherheitsprozess | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 | Wie man beiträgt | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | PHP-Versionen, Pakete | [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json); README, „Requirements“ |
 | Datenbanken, Betriebssysteme | [Unterstützte Datenbanken](../datenbankunterstuetzung.md); [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
-| Das Verhalten einer Funktion | Die Funktionsseite in `doc/eng-us/features/6.0/`, zum Beispiel [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) |
-| Begriffe | [Das Glossar](../../../eng-us/glossary.md) |
+| Das Verhalten einer Funktion | Die Funktionsseite in `doc/eng-us/features/6.0/`, zum Beispiel [Content Security Policy](../../funktionen/6.0/content-security-policy.md) |
+| Begriffe | [Das Glossar](../../glossar.md) |
 | 7x | <https://se7enx.com/about>; [Wer ist 7x?](../wer-ist-7x.md) |
 | Die Foundation | <https://foundation.exponential.earth/>; [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
-| Die Umbenennung | <https://exponential.earth/about/project>; [August 2025](../../../eng-us/history/2025/2025-08.md) |
+| Die Umbenennung | <https://exponential.earth/about/project>; [August 2025](../../geschichte/2025/2025-08.md) |
 | Pressekit, frühere Berichte | [Das Pressekit](das-pressekit.md); [Frühere Pressemitteilungen und Berichte](fruehere-pressemitteilungen-und-berichte.md) |
 
 Die Fürsprecher führen eine ähnliche Karte für Gesprächspunkte: [Wo die Fakten stehen](../fuersprecher/wo-die-fakten-stehen.md).

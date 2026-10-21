@@ -13,7 +13,7 @@ Dieser Ordner richtet sich an Administratoren, die den Zugang der Beschäftigten
 und an Führungskräfte, die ihn gegenüber einem Prüfer begründen müssen. Er erklärt das Berechtigungsmodell von
 Exponential und bietet fertige Rollenentwürfe für die Teams, die öffentliche Stellen üblicherweise haben, aufgebaut
 ausschließlich aus Richtlinienfunktionen, die es im Kernel gibt. Die Vorgehensweisen stehen unter
-[Aufgaben zu Personen und Berechtigungen](../../../../../eng-us/help/government/tasks/people-and-permissions/README.md).
+[Aufgaben zu Personen und Berechtigungen](../../aufgaben/personen-und-berechtigungen/README.md).
 
 ## Inhalt
 1. [Seiten](#seiten)
@@ -56,7 +56,7 @@ Nach oben: [Exponential im öffentlichen Sektor betreiben](../README.md). Die Ei
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md)
 - [Leitfaden zu Sektionen](../../../../anleitungen/sektionen.md) und [Leitfaden zu Objektzuständen](../../../../anleitungen/objektzustaende.md)
 - [Redaktionelle Workflows](../redaktionelle-workflows/README.md)
-- [Kurs für Website-Administratoren: Rollen und Richtlinien](../../../../../eng-us/help/trainers/site-administrators/README.md)
+- [Kurs für Website-Administratoren: Rollen und Richtlinien](../../../trainer/website-administratoren/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -36,12 +36,12 @@ Person zeigen, wie sie sie prüft.
 | „Sicherheitsprobleme werden vertraulich per E-Mail gemeldet, nicht öffentlich, und Sie bekommen innerhalb eines Werktags eine erste Antwort.“ | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 | „6.0.x ist die gepflegte Linie. Korrekturen werden auf `main` gemacht und mit dem nächsten Release 6.0.x veröffentlicht.“ | [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen) |
 | „Eine veröffentlichte Version ändert sich nie. Eine Korrektur erreicht Sie als nächstes Release, sodass das, was Sie abgenommen haben, bleibt, was es war.“ | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
-| „Die Administration kann eine Content Security Policy senden; standardmäßig ist sie dort nur meldend, mit dokumentierten Schritten zur Durchsetzung.“ | [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) |
-| „Neue Templates der Administration enthalten keine Inline-Styles oder -Skripte, sodass eine strenge Richtlinie durchgesetzt werden kann.“ | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md), [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md) |
-| „Ein manipulationssicheres Prüfprotokoll hält fest, wer was getan hat; jeder Eintrag trägt den Hash des vorherigen.“ | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| „Die Administration kann eine Content Security Policy senden; standardmäßig ist sie dort nur meldend, mit dokumentierten Schritten zur Durchsetzung.“ | [Content Security Policy](../../funktionen/6.0/content-security-policy.md) |
+| „Neue Templates der Administration enthalten keine Inline-Styles oder -Skripte, sodass eine strenge Richtlinie durchgesetzt werden kann.“ | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md), [Die Administration gestalten](../../bc/6.0/admin4-gestaltung.md) |
+| „Ein manipulationssicheres Prüfprotokoll hält fest, wer was getan hat; jeder Eintrag trägt den Hash des vorherigen.“ | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
 | „Zweistufige Anmeldung mit einer Authenticator-App oder einem Code per E-Mail.“ | [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md) |
 | „Neue Installationen erzeugen ein zufälliges Administratorpasswort, wenn keines oder ein allgemein bekanntes angegeben wird.“ | [Das Standardpasswort des Administrators](../standard-administratorpasswort.md) |
-| „Sondierungen und Angriffe werden in ein Sicherheitslog eingeordnet, mit maskierten Adressen.“ | [Request-Logs](../../../eng-us/features/6.0/request-logs.md) |
+| „Sondierungen und Angriffe werden in ein Sicherheitslog eingeordnet, mit maskierten Adressen.“ | [Request-Logs](../../funktionen/6.0/anfrageprotokolle.md) |
 | „Administratoren bekommen eine Anleitung zur Härtung, Bedrohung für Bedrohung, und eine Checkliste.“ | [Sicherheitshärtung](../sicherheitshaertung.md) |
 | „Das Projekt gibt Sicherheitskorrekturen auch an die Upstream-Projekte: 14 Pull Requests an die Zeta Components im April 2026, wie das Profil von se7enxweb berichtet.“ | [Der PHP-Stack, auf dem es steht](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt) |
 
@@ -62,7 +62,7 @@ Zeigen Sie nie Einstellungsdateien, Schlüssel, Passwörter oder Serveradressen 
 - „Es ist sicher“, „nicht zu hacken“, „Sicherheit wie bei Banken“, „Sicherheit auf Militärniveau“.
 - „Es hatte nie eine Sicherheitslücke.“ Keine Quelle sagt das, und jedes ernsthafte Projekt hatte welche.
 - „Die CSP schützt Sie.“ Sie ist in der Administration standardmäßig nur meldend und auf den Websites aus
-  ([Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)); der Administrator entscheidet.
+  ([Content Security Policy](../../funktionen/6.0/content-security-policy.md)); der Administrator entscheidet.
 - Irgendetwas über eine bestimmte Sicherheitslücke, die nicht öffentlich ist.
 
 ## Wenn Ihnen jemand eine Sicherheitslücke meldet

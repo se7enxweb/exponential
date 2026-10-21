@@ -36,7 +36,7 @@ Eine Kopfzeile, eine Fußzeile, viele Seiten. Dieses Modul zeigt, wie Layouts Zo
 - Für Lektion 5.3 ein eigenes veröffentlichtes gemeinsames Layout `Training footer` (Typ `layout_1`, ein Rich-text-Block),
   damit niemand an der echten Fußzeile übt. Finden Sie heraus, wie Ihre Installation ein neues Layout als gemeinsam
   kennzeichnet (die Option **Gemeinsames Layout** im Anlegeformular, wo es sie gibt); siehe
-  [Gemeinsame Layouts: Bauen](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md#build-it).
+  [Gemeinsame Layouts: Bauen](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md#aufbauen).
 - Die Kurs-Layouts der Teilnehmenden aus den Modulen 2 bis 4.
 
 ## Zeitplan
@@ -52,7 +52,7 @@ Eine Kopfzeile, eine Fußzeile, viele Seiten. Dieses Modul zeigt, wie Layouts Zo
 ## Verwandte Seiten
 
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

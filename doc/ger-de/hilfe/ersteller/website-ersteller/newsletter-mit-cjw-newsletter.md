@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Website-Ersteller, die einer Website einen Newsletter hinzufügen. `cjw_newsletter` ist ein
 vollständiges Newsletter-System: Ausgaben werden als Inhalte geschrieben, Besucher abonnieren Listen mit Double Opt-in,
 Ausgaben werden per Cron im Hintergrund versendet, Bounces und eine Sperrliste halten die Listen sauber, und jeder
-Versand wird archiviert ([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)). Es wird in der
+Versand wird archiviert ([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)). Es wird in der
 Administration unter **Newsletter** geöffnet (`/newsletter/index`).
 
 ## Inhalt

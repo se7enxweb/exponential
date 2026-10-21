@@ -135,7 +135,7 @@ Vertraulich, an die Adresse in [SECURITY.md](https://github.com/se7enxweb/expone
 
 - [Online-Shops und kleine Geschäfte](README.md)
 - [FAQ für Unternehmen](../faq-fuer-unternehmen.md)
-- [FAQ für Website-Ersteller](../../../../eng-us/help/creators/website-creators/website-creator-faq.md)
+- [FAQ für Website-Ersteller](../../ersteller/website-ersteller/faq-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

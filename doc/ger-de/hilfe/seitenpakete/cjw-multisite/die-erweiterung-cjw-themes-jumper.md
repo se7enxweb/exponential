@@ -149,9 +149,9 @@ dieses Servers für Kacheln.
 - [cjw_multisite](README.md)
 - [Das Demo-Inhaltspaket](das-demo-inhaltspaket-cjw-multisite-democontent.md)
 - [Die Installerskripte](die-installerskripte-von-cjw-multisite.md)
-- [Was eine Theme-Erweiterung ist](../../../../eng-us/help/designers/extensions/what-a-theme-extension-is.md)
-- [Siteaccess-Einstellungen in einer Erweiterung](../../../../eng-us/help/designers/extensions/siteaccess-settings-in-an-extension.md)
-- [Assets im Ordner share](../../../../eng-us/help/designers/extensions/share-folder-assets.md)
+- [Was eine Theme-Erweiterung ist](../../designer/erweiterungen/was-eine-theme-erweiterung-ist.md)
+- [Siteaccess-Einstellungen in einer Erweiterung](../../designer/erweiterungen/siteaccess-einstellungen-in-einem-theme.md)
+- [Assets im Ordner share](../../designer/erweiterungen/der-share-ordner.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

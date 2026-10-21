@@ -247,8 +247,8 @@ Prüfungen der Anfrage ab.
 
 - [Betrieb einer Site](betrieb-einer-website.md)
 - [Upgrade](aktualisieren.md)
-- [Sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md)
-- [Dateiberechtigungen beim Speichern von INI-Dateien](../../eng-us/bc/6.0/ini-save-file-permissions.md)
+- [Sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md)
+- [Dateiberechtigungen beim Speichern von INI-Dateien](../bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

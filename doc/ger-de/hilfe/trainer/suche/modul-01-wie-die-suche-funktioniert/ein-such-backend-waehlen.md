@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Such-Backends](../../../hosting/grundlagen/such-backends.md#suche-in-einem-tarif-anbieten) und
-[Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md#when-solr-is-worth-it).
+[Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md#wann-sich-solr-lohnt).
 
 1. **Fünf Fragen** (5 Minuten). Schreiben Sie sie an die Tafel:
    1. Müssen Besucher Ergebnisse filtern (nach Typ, Tag, Datum), also Facetten? Nur Solr hat sie.
@@ -129,7 +129,7 @@ Arbeiten Sie zu zweit, auf Papier oder in einer Textdatei. Es wird keine Install
 ## Weiterführende Informationen
 
 - [Such-Backends](../../../hosting/grundlagen/such-backends.md): die Optionen und die Checkliste des Hosters.
-- [Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md): wann sich Solr
+- [Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md): wann sich Solr
   lohnt.
 - [Speicher, CPU und Festplatte bemessen](../../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md): die Serverseite
   planen.
@@ -138,7 +138,7 @@ Arbeiten Sie zu zweit, auf Papier oder in einer Textdatei. Es wird keine Install
 
 - [Modul 1: Wie die Suche funktioniert](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)
-und [Exponential Layouts: Gemeinsame Layouts und verknüpfte Zonen](../../../../../eng-us/bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones).
+Quellen: [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)
+und [Exponential Layouts: Gemeinsame Layouts und verknüpfte Zonen](../../../../bc/6.0/layouts.md#gemeinsame-layouts-und-verknüpfte-zonen).
 
 1. **Die Idee** (4 Minuten). Ein als **gemeinsam** gekennzeichnetes Layout existiert, um ausgeliehen zu werden. Jede
    Zone eines anderen Layouts kann mit einer seiner Zonen verknüpft werden und zeigt dann dessen Blöcke statt der
@@ -108,7 +108,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto.
 <summary>Antworten</summary>
 
 1. Die Fußzeile wird einmal definiert; das Ändern und Veröffentlichen des gemeinsamen Layouts ändert jede Seite
-   ([Gemeinsame Layouts](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md#why-shared-layouts)).
+   ([Gemeinsame Layouts](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md#warum-gemeinsame-layouts)).
 2. Wie viele Zonen anderer Layouts damit verknüpft sind.
 3. An einem rot gestrichelten Rahmen und schraffierten Blöcken ([Rundgang durch die Administration](../../../rundgang-durch-die-administration.md#2-zonen-und-blöcke)).
 4. **Falsch.** Nur veröffentlichte gemeinsame Layouts lassen sich verknüpfen.
@@ -118,14 +118,14 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto.
 
 ## Weiterführende Informationen
 
-- [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)
+- [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)
 - [Rundgang durch die Administration: verknüpfte und gemeinsame Zonen](../../../rundgang-durch-die-administration.md#6-verknüpfte-und-gemeinsame-zonen)
 
 ## Verwandte Seiten
 
 - [Modul 5: Gemeinsame Layouts und Zonenverknüpfung](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

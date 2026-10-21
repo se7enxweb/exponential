@@ -72,8 +72,8 @@ ab. Fragen Sie das Web-Team, was jeder Zustand auf Ihrer Site bewirkt.
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Leitfäden für regulierte Akteure](../../../../../eng-us/help/government/levels/agencies/guidance-for-regulated-parties.md)
-- [Sektionen und Objektzustände](../../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Leitfäden für regulierte Akteure](../../ebenen/behoerden/leitfaeden-fuer-regulierte-akteure.md)
+- [Sektionen und Objektzustände](../../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

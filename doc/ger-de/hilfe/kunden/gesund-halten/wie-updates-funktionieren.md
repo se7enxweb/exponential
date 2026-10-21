@@ -62,7 +62,7 @@ Lassen Sie sich diese drei Ergebnisse nach jedem Update schriftlich geben.
 
 Jedes Release hat ein Changelog mit einem Abschnitt „Upgrading“, und die Hinweise zu Verhaltensänderungen sagen, was
 sich anders verhält ([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md),
-[Verhaltensänderungen vom Oktober 2026](../../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)). Bitten Sie Ihren Anbieter um
+[Verhaltensänderungen vom Oktober 2026](../../../bc/6.0/verhaltensaenderungen-2026-10.md)). Bitten Sie Ihren Anbieter um
 eine kurze Zusammenfassung in Ihren eigenen Worten: was sich für die Redaktion ändert, was sich für Besucher ändert und
 alles, was Ihr Team tun muss.
 

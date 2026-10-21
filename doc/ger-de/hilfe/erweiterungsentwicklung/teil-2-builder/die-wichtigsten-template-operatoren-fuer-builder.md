@@ -144,7 +144,7 @@ Siehe [Templates debuggen](templates-debuggen.md).
 - Zurück: [Inhalte in Templates abrufen](fetch-fuer-builder.md)
 - Weiter: [Templates debuggen](templates-debuggen.md)
 - [Eingebaute Template-Operatoren](../teil-8-referenz/referenz-der-template-operatoren.md)
-- [Template-Operatoren für Zeichenketten](../../../../eng-us/features/6.0/string-template-operators.md)
+- [Template-Operatoren für Zeichenketten](../../../funktionen/6.0/template-operatoren-fuer-zeichenketten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

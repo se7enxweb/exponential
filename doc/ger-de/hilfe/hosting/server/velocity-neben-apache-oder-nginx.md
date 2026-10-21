@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, deren Maschi
 hinzufügen. Sie beantwortet: welche Formen funktionieren, was jede braucht (vertrauenswürdige Proxys, ein Benutzer für die Dateien,
 geteilte Sitzungen, ein Ausrollen) und wie Sie prüfen, dass sich ein weitergeleiteter Header nicht fälschen lässt. Die Quellen sind
 [Kapitel 8, Abschnitte 8.7 und 8.8](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy) und
-[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../eng-us/bc/6.0/trusted-proxies.md).
+[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../bc/6.0/vertrauenswuerdige-proxys.md).
 
 ## Inhalt
 
@@ -109,7 +109,7 @@ Wenn Apache (PHP-FPM) und Velocity dieselbe Installation ausliefern, teilen sie 
   `PhpFpmService=disabled`.
 - **Sitzungen.** Mit eingeschaltetem rollenbewusstem HTTP-Cache müssen beide Server Sitzungen im selben Verzeichnis halten: das
   `session.save_path` des PHP-FPM-Pools und `[PHPSettings] IniOptions[]=session.save_path=0;0660;<dir>` von Velocity
-  ([HTTP-Cache](../../../../eng-us/bc/6.0/httpcache.md#switching-it-on)).
+  ([HTTP-Cache](../../../bc/6.0/httpcache.md#einschalten)).
 - **Caches.** Das Leeren eines Caches unter **Setup > Caches** erreicht beide, weil die Dateien geteilt sind. Zwei Dinge nicht: Velocity
   hält Einstellungen im Speicher (starten Sie ihn nach dem Leeren der INI-Caches neu) und beantwortet Seiten aus seinem eigenen
   Antwort-Cache (`exp:velocity cache clear`) ([Caches](../../../anleitungen/caches.md#4-velocity)).
@@ -167,7 +167,7 @@ die der Kernel für den Besucher nutzt.
 - [Varnish und Reverse Proxys](../leistung/varnish-und-reverse-proxys.md)
 - [Apache mit PHP-FPM](apache-mit-php-fpm.md)
 - [nginx mit PHP-FPM](nginx-mit-php-fpm.md)
-- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../eng-us/bc/6.0/trusted-proxies.md)
+- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../bc/6.0/vertrauenswuerdige-proxys.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

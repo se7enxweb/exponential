@@ -46,7 +46,7 @@ Benutzer, deren Rolle `shop/administrate` hat, um die Bestellliste zu sehen, und
 
 - [Bestellstatus](../kunden/handel/bestellstatus.md)
 - [Bestellungen im Alltag](../kunden/handel/bestellungen-im-alltag.md)
-- [Die Bestellliste nach jeder Spalte sortieren](../../../eng-us/features/6.0/order-list-sorting.md)
+- [Die Bestellliste nach jeder Spalte sortieren](../../funktionen/6.0/sortierung-der-bestellliste.md)
 - [Wie archiviere ich abgeschlossene Bestellungen?](wie-archiviere-ich-abgeschlossene-bestellungen.md)
 - [Benutzerhandbuch](README.md)
 

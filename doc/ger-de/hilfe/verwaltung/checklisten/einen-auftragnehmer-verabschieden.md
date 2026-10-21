@@ -23,12 +23,12 @@ letzten Tag, nicht Wochen später.
 ## Vor dem letzten Tag
 
 - [ ] Listen Sie jeden Zugang des Auftragnehmers auf: Konten in Exponential, Server-Logins, Datenbankbenutzer, Repositorys, Hosting-Panel, DNS, Überwachung, E-Mail.
-- [ ] Nehmen Sie die Übergabe entgegen: Code in Ihrem Repository, Dokumentation, offene Punkte, angelegte Zugangsdaten ([Das Ende eines Vertrags](../../../../eng-us/help/government/procurement/lifecycle/end-of-a-contract.md#what-to-hand-over-in-every-case)).
+- [ ] Nehmen Sie die Übergabe entgegen: Code in Ihrem Repository, Dokumentation, offene Punkte, angelegte Zugangsdaten ([Das Ende eines Vertrags](../beschaffung/lebenszyklus/ende-eines-vertrags.md#was-in-jedem-fall-zu-übergeben-ist)).
 - [ ] Stellen Sie sicher, dass benannte Mitarbeitende Ihrer Organisation Administratorzugang haben, bevor der des Auftragnehmers entfernt wird.
 
 ## In Exponential
 
-- [ ] Deaktivieren oder entfernen Sie die Konten des Auftragnehmers; bei eingeschaltetem **Deaktivieren und verschieben** wandern Konten in eine verborgene Gruppe ohne Rollen und können wiederhergestellt werden ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] Deaktivieren oder entfernen Sie die Konten des Auftragnehmers; bei eingeschaltetem **Deaktivieren und verschieben** wandern Konten in eine verborgene Gruppe ohne Rollen und können wiederhergestellt werden ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Inhalte, deren Eigentümer er ist, können einer Mitarbeiterin oder einem Mitarbeiter übertragen werden ([Den Eigentümer von Inhalten ändern](../../../anleitungen/eigentuemer-aendern.md)).
 - [ ] Entfernen Sie seine Rollenzuweisungen; prüfen Sie Rollen, die er möglicherweise angelegt hat ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 - [ ] Widerrufen Sie seine persönlichen API-Schlüssel ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)) und alle OAuth-Clients (**Setup > oAuth-Verwaltung**).

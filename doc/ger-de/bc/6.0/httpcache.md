@@ -255,12 +255,12 @@ jeder Besucher desselben Berechtigungskontexts erhält dieselbe Kopie. Filter-Er
 
 ## Verwandte Seiten
 
-- [Verhaltensänderungen vom 16. bis 30. September 2026: HTTP-Cache](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md#http-cache-httpcacheini)
+- [Verhaltensänderungen vom 16. bis 30. September 2026: HTTP-Cache](verhaltensaenderungen-2026-09b.md#http-cache-httpcacheini)
   (Kompression einmal, Header auf gecachten Seiten, Zuordnung der Siteaccesses)
 - [Sicherheitsstandards](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
-- [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [HTTP-Caching für anonyme Besucher](http-caching.md) und [Cache-Steuerung über die Konsole](cache-konsole.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../eng-us/features/6.0/cache-clear-rename-aside.md)
-- [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
+- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../funktionen/6.0/cache-leeren-durch-umbenennen.md)
+- [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)

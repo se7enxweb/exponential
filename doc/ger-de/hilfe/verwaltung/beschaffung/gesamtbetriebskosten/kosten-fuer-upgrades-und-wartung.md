@@ -13,7 +13,7 @@ Diese Seite richtet sich an Projektleitungen und Personen mit Budgetverantwortun
 planen, eine Website sicher und aktuell zu halten. Sie erklärt die Arten von Updates, die eine Exponential-Website
 erhält, die Werkzeuge, die sie günstiger machen, was sie teuer macht und wie Sie sie in ein Budget aufnehmen. Die Fakten
 stammen aus `SECURITY.md`, [Aktualisieren](../../../../anleitungen/aktualisieren.md)
-und [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md).
+und [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md).
 
 ![Die Upgrade-Prüfung mit den Prüfungen der Konsistenz von Dateien und Datenbank](../../../../../eng-us/help/images/government/gov-upgrade.webp)
 
@@ -29,7 +29,7 @@ und [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-co
 
 | Update | Häufigkeit | Quelle |
 |---|---|---|
-| Sicherheits- und Fehlerkorrekturen von Exponential | als nächste Version 6.0.x veröffentlicht; veröffentlichte Tags ändern sich nie | `SECURITY.md`, [Tags sind dauerhaft](../../../../../eng-us/standards/source-control-and-releases.md#tags-are-permanent) |
+| Sicherheits- und Fehlerkorrekturen von Exponential | als nächste Version 6.0.x veröffentlicht; veröffentlichte Tags ändern sich nie | `SECURITY.md`, [Tags sind dauerhaft](../../../../standards/versionsverwaltung-und-releases.md#tags-sind-dauerhaft) |
 | Erweiterungen | jede hat eigene Releases und ein eigenes Changelog | [Leitfaden zu Erweiterungen](../../../../anleitungen/extensions.md) |
 | PHP | PHP-Versionen verlieren mit der Zeit die Sicherheitsunterstützung; Exponential 6.0.15 läuft unter PHP 8.0 bis 8.5 | [Anforderungen](../../../../installation/02-voraussetzungen.md#22-php) |
 | Betriebssystem und Datenbank | wie Ihre Plattform es verlangt | [Runbook zum PHP-Upgrade](../../../hosting/runbooks/php-upgrade.md) |
@@ -46,7 +46,7 @@ Website auf einer alten Linie bringt ein Upgrade-Projekt als Kostenposten in Ihr
 | **Setup > Updates and packages** (ezupdate) | findet, prüft und installiert Updates von Composer-Paketen mit Probeläufen | [Automatisierte Updates mit ezupdate](../../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |
 | Wartungsmodus | nimmt die Website für das Upgrade-Fenster sauber vom Netz | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
 | Changelogs | sagen, was sich je Version geändert hat | [Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md) |
-| Vom Deployment verwaltete Konfiguration | sperrt Einstellungen und Templates im Produktivbetrieb, sodass Änderungen über Releases laufen | [Vom Deployment verwaltet](../../../../../eng-us/features/6.0/managed-by-deployment.md) |
+| Vom Deployment verwaltete Konfiguration | sperrt Einstellungen und Templates im Produktivbetrieb, sodass Änderungen über Releases laufen | [Vom Deployment verwaltet](../../../../funktionen/6.0/durch-deployment-verwaltet.md) |
 
 ## Was Upgrades teuer macht
 
@@ -82,7 +82,7 @@ mit Ihrem Lieferanten.
   ([SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)).
 - Kleinere Updates innerhalb von 6.0.x sind in der Wartungsgebühr enthalten; größere Upgrades werden gesondert angeboten.
 - Eigener Code wird in Git aufbewahrt, an Sie geliefert und folgt den Coding Standards des Projekts
-  ([Coding Standards](../../../../../eng-us/standards/coding-standards.md)).
+  ([Coding Standards](../../../../standards/programmierstandards.md)).
 - Keine Bearbeitung mitgelieferter Kernel-Dateien.
 - Eine Staging-Umgebung für jedes Update.
 

@@ -39,7 +39,7 @@ Schreiben Sie die Regeln in den Leitfaden für Redakteure: Sie gelten für jeden
 
 ## Verwandte Seiten
 
-- [Barrierefreiheit für Site-Entwickler](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Barrierefreiheit für Site-Entwickler](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

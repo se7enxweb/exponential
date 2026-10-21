@@ -29,7 +29,7 @@ in jeder Abteilung. Die Planung eines Intranets behandelt [Intranets für Untern
 | Dokumente, die Menschen finden | Dateien, eine Dateibibliothek und die Suche | [Dokumente und Dateibibliotheken](../../unternehmen/intranets/dokumente-und-dateibibliotheken.md), [Suche im Intranet](../../unternehmen/intranets/suche-im-intranet.md) |
 | Mitarbeitende über Änderungen informieren | Benachrichtigungen | [Benachrichtigungen für Mitarbeitende](../../unternehmen/intranets/benachrichtigungen-fuer-mitarbeiter.md) |
 | Änderungen werden geprüft, bevor sie erscheinen | Freigabe-Workflows | [Freigabe-Workflows](../../unternehmen/intranets/freigabe-workflows.md) |
-| Nachweis, wer was geändert hat | Das manipulationssichere Prüfprotokoll | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis, wer was geändert hat | Das manipulationssichere Prüfprotokoll | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 ## Wer wofür zuständig ist
 

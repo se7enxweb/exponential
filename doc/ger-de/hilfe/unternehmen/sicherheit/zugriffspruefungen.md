@@ -59,7 +59,7 @@ standardmäßig eingeschaltet (`settings/site.ini`), sodass niemand mehr vergebe
    Vergleichen Sie mit der Mitarbeiterliste. Achten Sie am meisten auf Administratoren.
 4. **Finden Sie ungenutzte Konten.** Öffnen Sie **Benutzer > Benutzerkonten prüfen** und verwenden Sie die Filter
    **Nie angemeldet** und **Seit N Tagen nicht gesehen** (standardmäßig 180)
-   ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+   ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 5. **Finden Sie geteilte und defekte Konten.** Verwenden Sie die Filter **Doppelter Benutzername**, **Doppelte
    E-Mail-Adresse** und **Verwaist**.
 6. **Handeln Sie.** Deaktivieren Sie Konten, die nicht gebraucht werden (die Seite fragt nach einer Bestätigung und
@@ -82,20 +82,20 @@ standardmäßig eingeschaltet (`settings/site.ini`), sodass niemand mehr vergebe
 | Modul `role` | kann sich selbst jeden Zugriff geben | dieselbe |
 | `infocollector/read` | liest jede Formulareingabe | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | `mailpreferences/export` | exportiert die Mail-Daten von Menschen | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#anfragen-betroffener-personen) |
-| `audit/read`, `audit/manage` | liest oder verwaltet das Prüfprotokoll; in einer neuen Installation hat sie nur Administrator | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#who-may-look) |
+| `audit/read`, `audit/manage` | liest oder verwaltet das Prüfprotokoll; in einer neuen Installation hat sie nur Administrator | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#wer-hineinsehen-darf) |
 | `user/register` | wer sich überhaupt registrieren darf | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md#8-festlegen-wer-sich-registrieren-und-wer-knotendaten-lesen-darf) |
 | Autorisierung von OAuth-Clients | wer Apps verbinden darf | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md#9-festlegen-wer-oauth-clients-autorisieren-darf) |
-| Shop-Administration | sieht Kunden und Bestellungen | [Shop-Dashboard](../../../../eng-us/features/6.0/store-dashboard.md) |
+| Shop-Administration | sieht Kunden und Bestellungen | [Shop-Dashboard](../../../funktionen/6.0/shop-dashboard.md) |
 
 Um in Benutzerkonten prüfen selbst E-Mail-Adressen zu sehen, braucht man das Recht `role/assign`
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Zwischen den Prüfungen
 
 - Deaktivieren Sie Konten am letzten Arbeitstag einer Person; warten Sie nicht auf die jährliche Prüfung.
 - Lassen Sie die Alarmregeln des Prüfprotokolls darauf achten, ob eine Administratorrolle vergeben wird; prüfen Sie mit
   `./console exp:audit alerts recipients`, wer die Alarmmail bekommt
-  ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+  ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)).
 - Versehen Sie vorübergehenden Zugriff in Ihren Notizen mit einem Enddatum und entfernen Sie ihn an diesem Datum.
 - Für Extranets mit Partnerkonten siehe [Prüfung der Berechtigungen im Extranet](../extranets/berechtigungen-im-extranet-pruefen.md).
 

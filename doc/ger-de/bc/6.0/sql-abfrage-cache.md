@@ -531,9 +531,9 @@ Profilers für eine Testanfrage nennt die Anweisungen; keine Zeile bedeutet, das
 
 ## Verwandte Seiten
 
-- [Verhaltensänderungen, 16. bis 30. September 2026: SQL-Abfrage-Cache](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md#sql-query-cache-querycacheini) (Abfrage vor dem Parsen, Schlüssel mit `xxh128`, Katalog nie gecacht)
+- [Verhaltensänderungen, 16. bis 30. September 2026: SQL-Abfrage-Cache](verhaltensaenderungen-2026-09b.md#sql-abfrage-cache-querycacheini) (Abfrage vor dem Parsen, Schlüssel mit `xxh128`, Katalog nie gecacht)
 - [HTTP-Cache](httpcache.md)
-- [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) und der [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
-- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../eng-us/features/6.0/cache-clear-rename-aside.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und der [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)
+- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../funktionen/6.0/cache-leeren-durch-umbenennen.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

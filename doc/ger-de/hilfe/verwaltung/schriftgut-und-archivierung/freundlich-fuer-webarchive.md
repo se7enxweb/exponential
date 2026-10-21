@@ -27,7 +27,7 @@ Sicherheitsmaßnahmen brauchen eine Ausnahme für den Crawler des Archivs.
 
 Eine neue Installation liefert im Wurzelverzeichnis des Webservers eine `robots.txt` mit, die über die Rewrite-Regel
 `RewriteRule ^robots\.txt - [L]` direkt ausgeliefert wird
-([Eine brauchbare robots.txt ab Werk](../../../../eng-us/features/6.0/robots-txt.md)). Ihre Anweisungen:
+([Eine brauchbare robots.txt ab Werk](../../../funktionen/6.0/robots-txt.md)). Ihre Anweisungen:
 
 ```
 User-agent: *
@@ -49,14 +49,14 @@ Crawl-delay: 1
 ## Sitemaps
 
 Zwei Erweiterungen schreiben Sitemaps als Cronjob-Teile: `bcgooglesitemaps` (Teil der Distribution) und `xrowmetadata`
-([Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)). Tragen Sie die Sitemap in die `robots.txt` ein.
+([Sitemaps](../../ersteller/website-ersteller/sitemaps.md)). Tragen Sie die Sitemap in die `robots.txt` ein.
 
 ## Sicherheitsmaßnahmen und Crawler
 
 - **request-shield** bremst, wenn eingesetzt, Clients über 120 Seiten pro Minute mit einer Browserprüfung und sperrt
   nach wiederholten Ablehnungen; verifizierte Suchmaschinen werden nie gesperrt, aber der Crawler eines Archivs wird
   möglicherweise nicht erkannt. Vereinbaren Sie mit dem Archiv dessen Adressbereich oder User-Agent und fügen Sie eine
-  Regel dafür hinzu ([request-shield](../../../../eng-us/help/government/security/request-shield.md)).
+  Regel dafür hinzu ([request-shield](../sicherheit/request-shield.md)).
 - System-URLs (`/content/view/full/<id>`) können Besuchern durch Anfrageregeln oder request-shield verweigert werden;
   Crawler folgen dann den Aliassen, was Sie auch wollen.
 - Der Antwort-Cache von Velocity und der HTTP-Cache bedienen Crawler schnell; keine Änderung nötig.
@@ -80,9 +80,9 @@ konnte.
 
 ## Verwandte Seiten
 
-- [Eine brauchbare robots.txt ab Werk](../../../../eng-us/features/6.0/robots-txt.md)
-- [robots.txt für Websiteersteller](../../../../eng-us/help/creators/website-creators/robots-txt.md)
-- [Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)
+- [Eine brauchbare robots.txt ab Werk](../../../funktionen/6.0/robots-txt.md)
+- [robots.txt für Websiteersteller](../../ersteller/website-ersteller/robots-txt.md)
+- [Sitemaps](../../ersteller/website-ersteller/sitemaps.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

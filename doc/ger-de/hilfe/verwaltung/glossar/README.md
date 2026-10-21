@@ -13,7 +13,7 @@ Dieses Glossar richtet sich an alle in einer öffentlichen Stelle, die den Berei
 Beschaffungsverantwortliche, Führungskräfte, Redaktionen und Administratoren. Es erklärt Begriffe des öffentlichen
 Sektors (Ausschreibung, Verantwortlicher, Erklärung zur Barrierefreiheit) und die Exponential-Begriffe, denen sie
 begegnen (Siteaccess, Sektion, Rolle), jeweils in ein bis drei Sätzen mit einem Link auf die Seite, die den Begriff
-erklärt. Die vollständige Liste der Produktbegriffe finden Sie im [Exponential-Glossar](../../../../eng-us/glossary.md); dieses
+erklärt. Die vollständige Liste der Produktbegriffe finden Sie im [Exponential-Glossar](../../../glossar.md); dieses
 Glossar verlinkt darauf, statt es zu kopieren.
 
 ## Die Seiten
@@ -44,8 +44,8 @@ lesen. Verwenden Sie die Seiten A bis Z, um einzelne Begriffe nachzuschlagen.
 ## Verwandte Seiten
 
 - Verwaltungen: hier beginnen (government-start-here.md, die Einstiegsseite dieses Bereichs der Hilfe)
-- [Das Exponential-Glossar](../../../../eng-us/glossary.md)
-- [Exponential im öffentlichen Sektor beschaffen](../../../../eng-us/help/government/procurement/README.md)
+- [Das Exponential-Glossar](../../../glossar.md)
+- [Exponential im öffentlichen Sektor beschaffen](../beschaffung/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

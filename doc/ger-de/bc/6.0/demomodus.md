@@ -303,25 +303,25 @@ Jede Seite unten sagt, was sie über den Demo-Modus sagen muss, und verlinkt hie
   [Demo-Modus für Entwickler](../../hilfe/erweiterungsentwicklung/teil-8-referenz/demomodus-fuer-entwickler.md).
 - **Rezepte und Fehlerbehebung:** [Rezept: eine öffentliche Demo unter LiteSpeed und Plesk betreiben](../../hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md),
   [Runbook: Probleme mit dem Demo-Modus](../../hilfe/hosting/runbooks/probleme-mit-dem-demomodus.md),
-  [Beispiele zum Demo-Modus](../../../eng-us/examples/demo-mode/README.md) (`.htaccess`, virtueller Host, PHP-FPM-Pool, nginx,
+  [Beispiele zum Demo-Modus](../../beispiele/demomodus/README.md) (`.htaccess`, virtueller Host, PHP-FPM-Pool, nginx,
   systemd-Drop-in, Crontab, Container-Umgebung, ein Skript für den Neubau), [Umgebungsvariablen](../../anleitungen/umgebungsvariablen.md).
-- **Installation:** [der Überblick](../../../eng-us/INSTALL.md), [der Index der Kapitel](../../installation/README.md),
+- **Installation:** [der Überblick](../../INSTALL.md), [der Index der Kapitel](../../installation/README.md),
   [2 Anforderungen](../../installation/02-voraussetzungen.md), [4 Eine Installationsmethode wählen](../../installation/04-installationsweg-waehlen.md),
   [5 Setup-Assistent](../../installation/05-setup-assistent.md), [6 Kickstarter](../../installation/06-kickstarter.md),
   [7 exp:install](../../installation/07-installation-ueber-die-konsole.md), [8 Die Website ausliefern](../../installation/08-die-website-ausliefern.md),
   [9 Datenbanken](../../installation/09-datenbanken.md), [10 Nach der Installation](../../installation/10-nach-der-installation.md),
   [11 Aktualisieren](../../installation/11-aktualisieren.md), [12 Fehlerbehebung](../../installation/12-fehlerbehebung.md),
-  [13 Sicherheitshärtung](../../installation/13-sicherheitshaertung.md), [Mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md).
-- **Upgrade und Einstellungen:** [Aktualisieren](../../anleitungen/aktualisieren.md), [Umgebungseinstellungen](../../../eng-us/features/6.0/environment-settings.md),
+  [13 Sicherheitshärtung](../../installation/13-sicherheitshaertung.md), [Mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md).
+- **Upgrade und Einstellungen:** [Aktualisieren](../../anleitungen/aktualisieren.md), [Umgebungseinstellungen](../../funktionen/6.0/umgebungseinstellungen.md),
   `config.php-RECOMMENDED` und `config.env.php.example` (der Demo-Modus ist keine Konstante),
   [Bekannte Passwörter werden abgelehnt](schwache-passwoerter-und-gueltigkeit-von-reset-links.md).
-- **Benutzer, Passwörter und Rollen:** [Ihr Passwort ändern](../../../eng-us/features/6.0/modern-password-change.md),
-  [Ein Benutzerpasswort zurücksetzen](../../../eng-us/features/6.0/reset-user-password.md), [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md),
+- **Benutzer, Passwörter und Rollen:** [Ihr Passwort ändern](../../funktionen/6.0/moderne-passwortaenderung.md),
+  [Ein Benutzerpasswort zurücksetzen](../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md), [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md),
   [Das Administratorpasswort ändern](../../hilfe/administratorpasswort-aendern.md),
   [Das Standard-Administratorpasswort](../../hilfe/standard-administratorpasswort.md),
   [Konten und Anmeldung](../../hilfe/konten-und-anmeldung.md), [In der Administration anmelden](../../hilfe/anmelden-in-der-administration.md).
 - **Sicherheit, Audit und Logs:** [Audit](audit.md), [Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md),
-  [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md), [Sicherheitshärtung](../../hilfe/sicherheitshaertung.md),
+  [Log-Viewer](../../funktionen/6.0/log-betrachter.md), [Sicherheitshärtung](../../hilfe/sicherheitshaertung.md),
   [Härtung für Hoster](../../hilfe/hosting/sicherheit/haertung-fuer-hoster.md),
   [Audit-Protokoll für Hoster](../../hilfe/hosting/sicherheit/pruefprotokoll.md), [security.log](../../hilfe/hosting/betrieb/sicherheitslog.md),
   [Erste Anmeldung und Standardpasswörter](../../hilfe/hosting/sicherheit/erste-anmeldung-und-standardpasswoerter.md).
@@ -341,15 +341,15 @@ Jede Seite unten sagt, was sie über den Demo-Modus sagen muss, und verlinkt hie
   [expservices](../../hilfe/erweiterungsentwicklung/teil-8-referenz/expservices.md),
   [eZUser und Zugriff](../../hilfe/erweiterungsentwicklung/teil-8-referenz/ezuser-und-zugriff.md),
   [Konsolenbefehle](../../hilfe/erweiterungsentwicklung/teil-8-referenz/konsolenbefehle-fuer-entwickler.md).
-- **Glossare:** [Glossar](../../../eng-us/glossary.md), [für Hoster](../../hilfe/hosting/glossar-fuer-hoster.md),
+- **Glossare:** [Glossar](../../glossar.md), [für Hoster](../../hilfe/hosting/glossar-fuer-hoster.md),
   [für Erweiterungsentwickler](../../hilfe/erweiterungsentwicklung/teil-8-referenz/glossar-fuer-erweiterungsentwickler.md),
   [für Fürsprecher](../../hilfe/fuersprecher/glossar-fuer-fuersprecher.md), [für Partner](../../hilfe/partner/glossar-fuer-partner.md).
 - **Presse, Fürsprecher, Trainer, Partner und Vertrieb:** [Eine Demo-Installation einrichten](../../hilfe/presse/eine-demo-installation-einrichten.md),
   [Presse: hier beginnen](../../hilfe/presse/presse-hier-beginnen.md), [Sicherheit bei Live-Demos](../../hilfe/fuersprecher/sicherheit-bei-live-demos.md),
   [Fürsprecher: hier beginnen](../../hilfe/fuersprecher/fuersprecher-hier-beginnen.md), [FAQ für Neulinge](../../hilfe/fuersprecher/faq-fuer-neue.md),
-  [Trainer: hier beginnen](../../../eng-us/help/trainers/trainers-start-here.md), [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md),
+  [Trainer: hier beginnen](../../hilfe/trainer/trainer-hier-beginnen.md), [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md),
   [Vertrieb und Marketing: hier beginnen](../../hilfe/geschaeft/vertrieb-und-marketing-hier-beginnen.md), [Demo-Skripte](../../hilfe/geschaeft/demo-drehbuecher.md),
-  [Demo-Websites für Designer](../../../eng-us/help/designers/distribution/demo-sites.md).
+  [Demo-Websites für Designer](../../hilfe/designer/veroeffentlichung/demo-websites.md).
 
 ## Verwandte Seiten
 

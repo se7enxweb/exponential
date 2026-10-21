@@ -12,7 +12,7 @@ type: help
 Diese Seite ist eine **Checkliste** für jeden Redakteur, die vor dem Klick auf **Zur Veröffentlichung schicken**
 durchzugehen ist. Sie behandelt, was Redakteure beeinflussen können; die Seite der Templates ist Aufgabe Ihres
 Partners ([Barrierefreiheit pflegen](barrierefreiheit-pflegen.md)). Die Regeln stammen aus
-[Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) und den
+[Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md) und den
 Seiten der Hilfe für Redakteure.
 
 ## Inhalt
@@ -40,7 +40,7 @@ Seiten der Hilfe für Redakteure.
 - [ ] Eine Hauptüberschrift: der Name der Seite.
 - [ ] Überschriften in der richtigen Reihenfolge, ohne eine Ebene zu überspringen; für die Struktur verwendet, nicht für die Schriftgröße.
 - [ ] Keine fett gesetzten Absätze, die so tun, als wären sie Überschriften
-      ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+      ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 - [ ] Kurze Absätze; je ein Gedanke.
 
 ## Links

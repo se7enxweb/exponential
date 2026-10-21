@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratorinnen und Administratoren, Informations
 Verantwortlichen für das Schriftgut öffentlicher Stellen. Von öffentlichen Stellen wird allgemein erwartet, dass
 Änderungen an amtlichen Informationen nachvollziehbar sind. Das Audit-Protokoll von Exponential zeichnet in
 manipulationssicheren Dateien auf, was in einer Installation geschieht, und ist **in jeder Installation standardmäßig
-eingeschaltet** ([Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md), [Audit-Leitfaden](../../../bc/6.0/audit.md)).
+eingeschaltet** ([Audit-Protokoll](../../../funktionen/6.0/pruefprotokoll.md), [Audit-Leitfaden](../../../bc/6.0/audit.md)).
 
 ## Inhalt
 
@@ -89,7 +89,7 @@ nichts vom Audit, und eine eingetippte URL wird abgewiesen und aufgezeichnet
 
 ## Verwandte Seiten
 
-- [Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md)
+- [Audit-Protokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Audit: was in Exponential geschieht, aufgezeichnet](../../../bc/6.0/audit.md)
 - [13.14 Das Audit-Protokoll](../../../installation/13-sicherheitshaertung.md#1314-das-audit-protokoll)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

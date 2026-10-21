@@ -42,9 +42,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Der Assistent für Design-Erweiterungen](../../../../../eng-us/help/designers/extensions/design-extension-wizard.md),
-[Die Ordnerstruktur einer Theme-Erweiterung](../../../../../eng-us/help/designers/extensions/extension-folder-structure.md) und
-[Ein Theme aktivieren](../../../../../eng-us/help/designers/extensions/activating-a-theme-extension.md).
+Quellen: [Der Assistent für Design-Erweiterungen](../../../designer/erweiterungen/der-design-erweiterungs-assistent.md),
+[Die Ordnerstruktur einer Theme-Erweiterung](../../../designer/erweiterungen/ordnerstruktur-einer-theme-erweiterung.md) und
+[Ein Theme aktivieren](../../../designer/erweiterungen/eine-theme-erweiterung-aktivieren.md).
 
 1. **Warum eine Erweiterung** (3 Minuten). Ein Theme in einer eigenen Erweiterung lässt sich ein- und ausschalten, mit
    git versionieren, ohne Eingriff in den Kernel aktualisieren und an andere weitergeben (Modul 7). Der Name der
@@ -78,11 +78,11 @@ alles Sichtbare schreiben Sie selbst. Der Rückgriff auf ein anderes Design (zum
 Templates mit. Wählen Sie für diesen Kurs `standard`: Dann ist jedes sichtbare Teil das eigene Werk der Teilnehmenden.
 
 **Die erzeugte `page_head.tpl` hat `implode_key` im Titel.** Ihre Installation hat einen älteren Assistenten. Nehmen
-Sie die drei Änderungen aus [Die Teile des Design-Assistenten](../../../../../eng-us/help/designers/extensions/design-wizard-parts-reference.md#three-edits-the-generated-head-and-layout-need)
+Sie die drei Änderungen aus [Die Teile des Design-Assistenten](../../../designer/erweiterungen/die-teile-des-design-assistenten.md#drei-änderungen-die-der-erzeugte-kopf-und-das-layout-brauchen)
 vor.
 
 **Geht das auch ohne den Assistenten?** Ja:
-[Legen Sie das Gerüst von Hand an](../../../../../eng-us/help/designers/extensions/extension-folder-structure.md#step-by-step-create-the-skeleton-by-hand).
+[Legen Sie das Gerüst von Hand an](../../../designer/erweiterungen/ordnerstruktur-einer-theme-erweiterung.md#schritt-für-schritt-das-gerüst-von-hand-anlegen).
 Der Assistent ist schneller und macht in der Schulung weniger Fehler.
 
 ### Stolperfallen
@@ -161,7 +161,7 @@ in einer Shell im Stammverzeichnis der Installation. `<site>` ist Ihr öffentlic
 <summary>Antworten</summary>
 
 1. Den Ordner `extension/<name>` und das Design `design/<name>`
-   ([Der Assistent für Design-Erweiterungen](../../../../../eng-us/help/designers/extensions/design-extension-wizard.md)).
+   ([Der Assistent für Design-Erweiterungen](../../../designer/erweiterungen/der-design-erweiterungs-assistent.md)).
 2. `settings/design.ini.append.php` mit `DesignExtensions[]=training_theme`.
 3. Ein globaler Wert gilt für jeden Siteaccess, auch für die Administration.
 4. **B.** Der INI-Cache enthält das alte `SiteDesign`; danach die Template-Caches.
@@ -171,15 +171,15 @@ in einer Shell im Stammverzeichnis der Installation. `<site>` ist Ihr öffentlic
 
 ## Weiterführende Literatur
 
-- [Der Assistent für Design-Erweiterungen (Setup > RAD)](../../../../../eng-us/help/designers/extensions/design-extension-wizard.md):
+- [Der Assistent für Design-Erweiterungen (Setup > RAD)](../../../designer/erweiterungen/der-design-erweiterungs-assistent.md):
   jedes Feld.
-- [Die Teile des Design-Assistenten](../../../../../eng-us/help/designers/extensions/design-wizard-parts-reference.md): was jedes
+- [Die Teile des Design-Assistenten](../../../designer/erweiterungen/die-teile-des-design-assistenten.md): was jedes
   Kontrollkästchen schreibt.
-- [Das Design registrieren: DesignExtensions[]](../../../../../eng-us/help/designers/extensions/registering-the-design.md): Symptome,
+- [Das Design registrieren: DesignExtensions[]](../../../designer/erweiterungen/das-design-registrieren.md): Symptome,
   wenn es fehlt.
-- [Die Design-Einstellungen, die ein Theme mitliefert](../../../../../eng-us/help/designers/extensions/design-settings-a-theme-ships.md):
+- [Die Design-Einstellungen, die ein Theme mitliefert](../../../designer/erweiterungen/design-einstellungen-eines-themes.md):
   welche Einstellungen ins Theme gehören und welche in die Installation.
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): die anderen Assistenten unter **Setup > RAD**.
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md): die anderen Assistenten unter **Setup > RAD**.
 
 ## Verwandte Seiten
 

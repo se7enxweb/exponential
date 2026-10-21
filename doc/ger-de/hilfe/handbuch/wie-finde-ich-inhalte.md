@@ -41,7 +41,7 @@ Jeder Benutzer mit `content/read`. Sie finden nur, was Ihre Rolle lesen darf.
 ## Verwandte Seiten
 
 - [Suchen](../suchen.md)
-- [Der Inhaltsfinder](../../../eng-us/features/6.0/content-finder.md)
+- [Der Inhaltsfinder](../../funktionen/6.0/inhalts-finder.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

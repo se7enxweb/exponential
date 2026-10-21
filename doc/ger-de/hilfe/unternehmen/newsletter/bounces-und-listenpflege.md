@@ -31,7 +31,7 @@ oder Menschen, die die Mail als Spam markieren, macht es wahrscheinlicher, dass 
 auch die Bestellbestätigungen von derselben Domain im Spam-Ordner landen. Die Tabelle zur Fehlerbehebung für
 Website-Ersteller nennt „Mail wird als Spam markiert“ mit den Ursachen „DNS-Einträge der Absenderdomain, Inhalt und
 Ruf des sendenden Servers“ und „Viele Bounces“ mit der Maßnahme „das Bounce-Postfach prüfen; die Liste bereinigen“
-([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#when-something-goes-wrong)).
+([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#wenn-etwas-schiefgeht)).
 
 ## Die Begriffe
 
@@ -58,7 +58,7 @@ Zurückkommende Mails landen in einem Postfach. Der Newsletter liest sie auf ein
 
 So oder so muss jemand das Postfach und den Cron-Teil einrichten. Tut das niemand, werden Bounces nie gelesen, und die
 Liste füllt sich langsam mit toten Adressen. Die Cron-Zeilen stehen in
-[Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#setting-it-up).
+[Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#einrichten).
 
 ## Was mit jeder Art geschieht
 
@@ -82,7 +82,7 @@ Wiederholungsversuch.
 ## Die Blacklist und die Sperrliste
 
 - Die **Blacklist** (`newsletter/blacklist_item_list`) enthält Adressen, die den Newsletter nie bekommen dürfen; „sie
-  hat Vorrang vor jeder Liste“ ([Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#bounces-and-the-blacklist)).
+  hat Vorrang vor jeder Liste“ ([Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#bounces-und-die-sperrliste)).
 - Die **Sperrliste** (Setup > E-Mail-Einstellungen > Sperrliste) enthält Hard Bounces, Beschwerden, Anfragen „alle
   optionalen E-Mails stoppen“, rechtliche Anfragen, Einträge eines Administrators und die Blacklist des Newsletters.
   „Gespeichert wird nur ein Hash der Adresse, die Liste lässt sich also nicht lesen; Sie finden einen Eintrag, indem Sie
@@ -109,7 +109,7 @@ Versand auf diese Weise, damit Menschen, die sich dort abgemeldet haben, hier ni
 Das Dashboard unter `/newsletter/index` listet Probleme auf, „jeweils mit dem, was dagegen zu tun ist (zum Beispiel
 ‚3 Abonnements gehören zu Newsletter-Benutzern, die es nicht mehr gibt‘, mit einer Schaltfläche **Entfernen**)“. Auf der
 Shell zeigt `./console ext:cjw_newsletter:repair --dry-run` dieselbe Art von Reparaturen, ohne etwas zu ändern
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117)).
 
 ## Eine monatliche Pflegeroutine
 

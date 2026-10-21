@@ -43,8 +43,8 @@ Inhalt braucht.
 | Unter Last erreichbar bleiben | Ansichts-Cache, statischer Cache, Antwort-Cache von Velocity | [Warnungen, Verfügbarkeit, Wartungsmodus und statischer Cache](warnungen-verfuegbarkeit-wartung-und-statischer-cache.md) |
 | Alte Meldungen beenden | `hide.php` mit einer Endzeit | [Cronjobs](../../../../anleitungen/cronjobs.md) |
 | Feeds für Medien und Partner | RSS-Export der Einsatzmeldungen | [RSS-Feeds](../../../../anleitungen/rss-feeds.md) |
-| Meldungen an Folgende | Benachrichtigungen | [Benachrichtigungen: der Leitfaden für Benutzer](../../../../../eng-us/features/6.0/notifications.md) |
-| Orte | zuerst Text; ein Datentyp für Kartenorte existiert (`ezgmaplocation`, Google Maps, ein Dritter) | [ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md) |
+| Meldungen an Folgende | Benachrichtigungen | [Benachrichtigungen: der Leitfaden für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md) |
+| Orte | zuerst Text; ein Datentyp für Kartenorte existiert (`ezgmaplocation`, Google Maps, ein Dritter) | [ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md) |
 | Mehrere Sprachen | Übersetzungen je Objekt | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
 
 ## Was die Website nicht ist
@@ -67,7 +67,7 @@ Inhalt braucht.
 
 - [Rettungsdienste](README.md)
 - [Inhaltsmodell für Rettungsdienste](inhaltsmodell.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

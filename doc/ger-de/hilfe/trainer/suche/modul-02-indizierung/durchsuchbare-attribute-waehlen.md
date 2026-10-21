@@ -43,7 +43,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md#settings-that-matter),
+Quelle: [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md#einstellungen-auf-die-es-ankommt),
 [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#2-eine-klasse-anlegen) und
 das Bearbeitungsformular für Klassen (admin4).
 
@@ -130,14 +130,14 @@ Wurzelverzeichnis.
 2. **B.** Die Markierung gilt, wenn ein Objekt erneut indiziert wird.
 3. Der Datentyp unterstützt keine Suchindizierung.
 4. Zum Beispiel der Titel und der Haupttext (oder die Einleitung); interne Codes oder Notizen für Redakteure meist nicht
-   ([Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md#settings-that-matter)).
+   ([Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md#einstellungen-auf-die-es-ankommt)).
 5. **Falsch.** Es verhindert nur, dass die Wörter von der Suche gefunden werden.
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md): welche Attribute als durchsuchbar markiert werden
+- [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md): welche Attribute als durchsuchbar markiert werden
   sollten.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md): Klassen und ihre
   Attribute.
@@ -147,7 +147,7 @@ Wurzelverzeichnis.
 
 - [Modul 2: Indizierung](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

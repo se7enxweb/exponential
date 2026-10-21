@@ -50,9 +50,9 @@ umgekehrt ([13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitsh
 
 ## Verwandte Seiten
 
-- [Sitzungen und Cookies](../../../../../eng-us/help/government/security/sessions-and-cookies.md)
+- [Sitzungen und Cookies](../../sicherheit/sitzungen-und-cookies.md)
 - [Sichere Sitzungscookies setzen](sichere-sitzungscookies-setzen.md)
-- [Die Administration trennen](../../../../../eng-us/help/government/security/separating-the-administration.md)
+- [Die Administration trennen](../../sicherheit/die-administration-abtrennen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

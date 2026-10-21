@@ -38,15 +38,15 @@ Am Ende des Tages können die Teilnehmenden:
 
 | Zeit | Block | Verwendet | Kontrollpunkt |
 |---|---|---|---|
-| 9:00 | Begrüßung; Git-Installation (60 Min.) | [Mit Git entwickeln](../../../mit-git-entwickeln.md), [Den Code beschaffen](../../../../installation/03-den-code-beschaffen.md), [Eine Installation pro Person](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md) | Website aus einem Klon auf dem Branch `training` ausgeliefert |
-| 10:00 | Das Inhaltsmodell (30 Min.) | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md), [Die Kernkonzepte unterrichten](../../../../../eng-us/help/trainers/teaching-the-core-concepts.md) | Objekt, Knoten, Version erklärt |
+| 9:00 | Begrüßung; Git-Installation (60 Min.) | [Mit Git entwickeln](../../../mit-git-entwickeln.md), [Den Code beschaffen](../../../../installation/03-den-code-beschaffen.md), [Eine Installation pro Person](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md) | Website aus einem Klon auf dem Branch `training` ausgeliefert |
+| 10:00 | Das Inhaltsmodell (30 Min.) | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md), [Die Kernkonzepte unterrichten](../../die-kernkonzepte-unterrichten.md) | Objekt, Knoten, Version erklärt |
 | 10:30 | Pause (15 Min.) | | |
 | 10:45 | Eine Inhaltsklasse „Event“ (60 Min.) | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md) | Ein Event angelegt |
 | 11:45 | Mittagspause (45 Min.) | | |
 | 12:30 | Templates, Debug und ein Override (80 Min.) | [Templates und Design](../../../../anleitungen/templates-und-design.md) | Override sichtbar, dann entfernt |
 | 13:50 | Pause (10 Min.) | | |
 | 14:00 | Die Konsole (30 Min.) | [Die Installation über die Konsole, 7.1](../../../../installation/07-installation-ueber-die-konsole.md#71-die-konsole-im-überblick) | `php bin/php/console list` gelesen |
-| 14:30 | Eine erste Erweiterung mit den RAD-Werkzeugen (60 Min.) | [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md), [Erweiterungen](../../../../anleitungen/extensions.md) | Erweiterung unter **Setup > RAD** gezählt |
+| 14:30 | Eine erste Erweiterung mit den RAD-Werkzeugen (60 Min.) | [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md), [Erweiterungen](../../../../anleitungen/extensions.md) | Erweiterung unter **Setup > RAD** gezählt |
 | 15:30 | Optional: eine Korrektur der Dokumentation als Pull Request; Abschluss (60 Min.) | [Mit Git entwickeln](../../../mit-git-entwickeln.md) | Ein Link zu einem Pull Request oder ein vorbereiteter Commit |
 | 16:30 | Ende | | |
 
@@ -60,7 +60,7 @@ einbauen).
   geschrieben hat (`settings/siteaccess/<siteaccess>/override.ini.append.php`).
 - **Erweiterungen**: Führen Sie nach dem Aktivieren `php bin/php/ezpgenerateautoloads.php -e` aus und leeren Sie die
   Caches, wie es die Seite zu den RAD-Werkzeugen sagt.
-- **Nach dem Tag** verweisen Sie auf den vollständigen Kurs Entwickler und das Buch [Entwicklung von Erweiterungen](../../../../../eng-us/help/extension-development/README.md).
+- **Nach dem Tag** verweisen Sie auf den vollständigen Kurs Entwickler und das Buch [Entwicklung von Erweiterungen](../../../erweiterungsentwicklung/README.md).
 
 ## Praktische Übung: das Abschlussprojekt des Tages
 
@@ -88,14 +88,14 @@ einbauen).
 
 1. `php bin/php/console list`.
 2. `settings/siteaccess/<siteaccess>/override.ini.append.php` ([Templates und Design](../../../../anleitungen/templates-und-design.md)).
-3. `php bin/php/ezpgenerateautoloads.php -e`, dann die Caches leeren ([RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md)).
+3. `php bin/php/ezpgenerateautoloads.php -e`, dann die Caches leeren ([RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md)).
 4. Updates überschreiben nie Ihre eigenen Commits, und Sie können Änderungen als Pull Requests zurückschicken.
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Entwicklung von Erweiterungen](../../../../../eng-us/help/extension-development/README.md)
+- [Entwicklung von Erweiterungen](../../../erweiterungsentwicklung/README.md)
 - [Mit Git entwickeln](../../../mit-git-entwickeln.md)
 - [Templates und Design](../../../../anleitungen/templates-und-design.md)
 
@@ -103,7 +103,7 @@ einbauen).
 
 - [Modul 2: Eintägige Agenden](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

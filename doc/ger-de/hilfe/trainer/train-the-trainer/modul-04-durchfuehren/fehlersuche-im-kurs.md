@@ -107,14 +107,14 @@ Auf Ihrer Schulungsinstallation:
 2. Cache- oder Speicherdateien, die root gehören; `chown -R <web user>:<web group> var`.
 3. `php bin/php/ezcache.php --clear-all`.
 4. `php bin/php/resetuserpassword.php -u admin -g --allow-root-user` (als root), siehe
-   [Ein Benutzerpasswort zurücksetzen](../../../../../eng-us/features/6.0/reset-user-password.md).
+   [Ein Benutzerpasswort zurücksetzen](../../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md).
 
 </details>
 
 ## Weiterführende Literatur
 
 - [Fehlerbehebung](../../../../installation/12-fehlerbehebung.md)
-- [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md)
+- [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md)
 - [Einen Fehler über seine Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md)
 - [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md)
 

@@ -27,50 +27,50 @@ bevor die Ausschreibung veröffentlicht wird. Sie verweist für jeden Schritt au
 ## Bedarf
 
 - [ ] Ziele der Website schriftlich festgehalten: Zielgruppen, Leistungen, Sprachen, Umfang der Inhalte.
-- [ ] Bestehende Website und Inhalte erfasst ([Sitemap und Inhaltsbestandsaufnahme](../../../../eng-us/help/creators/website-creators/site-map-and-content-inventory.md)).
+- [ ] Bestehende Website und Inhalte erfasst ([Sitemap und Inhaltsbestandsaufnahme](../../ersteller/website-ersteller/sitemap-und-inhaltsbestandsaufnahme.md)).
 - [ ] Rechtliche Pflichten mit der Rechtsberatung aufgelistet: Barrierefreiheit, Datenschutz, Schriftgut, Sprachen, Informationsfreiheit.
-- [ ] Entschieden, was Sie einkaufen: Softwareleistungen, Umsetzung, Hosting, Support, Schulung oder eine Kombination ([Exponential im öffentlichen Sektor beschaffen](../../../../eng-us/help/government/procurement/README.md)).
+- [ ] Entschieden, was Sie einkaufen: Softwareleistungen, Umsetzung, Hosting, Support, Schulung oder eine Kombination ([Exponential im öffentlichen Sektor beschaffen](../beschaffung/README.md)).
 
 ## Anforderungen
 
-- [ ] Anforderungen so formuliert, dass jede überprüfbar ist ([Anforderungen](../../../../eng-us/help/government/procurement/requirements/README.md)).
-- [ ] Jede Anforderung dem Nachweis zugeordnet, den Sie verlangen werden; wo das Open-Source-Projekt keinen hat (VPAT, ASVS-Bewertung, SLA), verlangen Sie ihn von den Bietern ([Exponential beschaffen](../../../../eng-us/help/government/procurement/README.md#what-the-repository-can-and-cannot-evidence)).
-- [ ] Ziel für die Barrierefreiheit angegeben (zum Beispiel WCAG 2.2 AA für die öffentliche Website) ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)).
+- [ ] Anforderungen so formuliert, dass jede überprüfbar ist ([Anforderungen](../beschaffung/anforderungen/README.md)).
+- [ ] Jede Anforderung dem Nachweis zugeordnet, den Sie verlangen werden; wo das Open-Source-Projekt keinen hat (VPAT, ASVS-Bewertung, SLA), verlangen Sie ihn von den Bietern ([Exponential beschaffen](../beschaffung/README.md#was-das-repository-belegen-kann-und-was-nicht)).
+- [ ] Ziel für die Barrierefreiheit angegeben (zum Beispiel WCAG 2.2 AA für die öffentliche Website) ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)).
 - [ ] Hosting und Datenstandort angegeben.
 - [ ] Keine Anforderung, die ohne Grund nur ein einziges Produkt oder ein einziger Anbieter erfüllen kann.
 
 ## Markt und Nachweise
 
-- [ ] Eine Testinstallation von Ihrem eigenen Team ausprobiert: `./console exp:install` mit SQLite ([Exponential mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md)).
-- [ ] Die Standardseiten gelesen: [Barrierefreiheit](../../../../eng-us/standards/accessibility.md), [Sicherheit](../../../../eng-us/standards/security.md), [Datenschutz](../../../../eng-us/standards/privacy.md).
-- [ ] Unterstützte Versionen und Release-Richtlinie verstanden ([Unterstützte Versionen](../../../../eng-us/help/government/procurement/lifecycle/supported-versions.md)).
+- [ ] Eine Testinstallation von Ihrem eigenen Team ausprobiert: `./console exp:install` mit SQLite ([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)).
+- [ ] Die Standardseiten gelesen: [Barrierefreiheit](../../../standards/barrierefreiheit.md), [Sicherheit](../../../standards/sicherheit.md), [Datenschutz](../../../standards/datenschutz.md).
+- [ ] Unterstützte Versionen und Release-Richtlinie verstanden ([Unterstützte Versionen](../beschaffung/lebenszyklus/unterstuetzte-versionen.md)).
 - [ ] Mögliche Anbieter und Partner bekannt ([Partner: hier beginnen](../../partner/partner-hier-beginnen.md)); Markterkundung im Rahmen Ihrer Regeln durchgeführt.
 
 ## Bewertung
 
-- [ ] Kriterien und Gewichtungen festgelegt und mit der Ausschreibung veröffentlicht ([Bewertung](../../../../eng-us/help/government/procurement/evaluation/README.md)).
+- [ ] Kriterien und Gewichtungen festgelegt und mit der Ausschreibung veröffentlicht ([Bewertung](../beschaffung/bewertung/README.md)).
 - [ ] Bewertungsgremium benannt, Interessenkonflikte erklärt.
 - [ ] Drehbuch für die Vorführung und Aufgaben für einen Machbarkeitsnachweis vorbereitet.
 - [ ] Fragen für die Referenzprüfung vorbereitet.
 
 ## Geld und Zeit
 
-- [ ] Budget auf Grundlage der Gesamtbetriebskosten über die ganze Laufzeit aufgestellt, nicht nur für das erste Jahr ([Gesamtbetriebskosten](../../../../eng-us/help/government/procurement/total-cost-of-ownership/README.md)).
-- [ ] Budget für Schulungen ([Den Schulungsaufwand budgetieren](../../../../eng-us/help/government/procurement/training/budgeting-training-effort.md)).
-- [ ] Aufwand für Aktualisierungen und Sicherheitsupdates pro Jahr ([Aktualisierungen im Haushalt planen](../../../../eng-us/help/government/procurement/lifecycle/planning-upgrades-in-the-budget.md)).
+- [ ] Budget auf Grundlage der Gesamtbetriebskosten über die ganze Laufzeit aufgestellt, nicht nur für das erste Jahr ([Gesamtbetriebskosten](../beschaffung/gesamtbetriebskosten/README.md)).
+- [ ] Budget für Schulungen ([Den Schulungsaufwand budgetieren](../beschaffung/schulung/schulungsaufwand-budgetieren.md)).
+- [ ] Aufwand für Aktualisierungen und Sicherheitsupdates pro Jahr ([Aktualisierungen im Haushalt planen](../beschaffung/lebenszyklus/upgrades-im-haushalt-planen.md)).
 - [ ] Zeitplan mit Angebotsfrist, Bewertung, Wartefrist und Aufbau.
 
 ## Das Ende, zu Beginn geplant
 
-- [ ] Anforderungen und Klauseln zum Ausstieg in der Ausschreibung ([Ausstiegspläne](../../../../eng-us/help/government/procurement/exit-plans/README.md)).
+- [ ] Anforderungen und Klauseln zum Ausstieg in der Ausschreibung ([Ausstiegspläne](../beschaffung/ausstiegsplaene/README.md)).
 - [ ] Eigentum an eigens entwickeltem Code und an der Dokumentation angegeben; eigene Erweiterungen werden unter der GPL in ein Repository geliefert, das Sie kontrollieren ([Fragen zur Lizenzierung](../../projekt/lizenz-faq.md)).
-- [ ] Ausschreibungsklauseln aus den [Ausschreibungsvorlagen](../../../../eng-us/help/government/procurement/tender-templates/README.md) entworfen.
+- [ ] Ausschreibungsklauseln aus den [Ausschreibungsvorlagen](../beschaffung/ausschreibungsvorlagen/README.md) entworfen.
 
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
 - [Vor der Unterzeichnung eines Vertrags](vor-der-unterzeichnung.md)
-- [Exponential im öffentlichen Sektor beschaffen](../../../../eng-us/help/government/procurement/README.md)
+- [Exponential im öffentlichen Sektor beschaffen](../beschaffung/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

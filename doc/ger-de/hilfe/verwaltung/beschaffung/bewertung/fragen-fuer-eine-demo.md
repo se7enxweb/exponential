@@ -28,7 +28,7 @@ Produkt sollte er nie eine stärkere Antwort geben als dessen Dokumentation.
 
 | Frage | Was die Dokumentation stützt |
 |---|---|
-| Welche WCAG-Stufe erfüllt die Administration? | admin4 und admin4l: WCAG 2.2 AA „Teilweise erfüllt“, gegen AA-Kriterien entworfen und durch Regressionstests abgesichert; kein Konformitätsanspruch ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
+| Welche WCAG-Stufe erfüllt die Administration? | admin4 und admin4l: WCAG 2.2 AA „Teilweise erfüllt“, gegen AA-Kriterien entworfen und durch Regressionstests abgesichert; kein Konformitätsanspruch ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)) |
 | Haben Sie ein VPAT oder einen Accessibility Conformance Report? | für das Produkt gibt es keinen; ein Bieter kann einen für die gelieferte Website erstellen |
 | Ist das öffentliche Design barrierefrei? | öffentliche Designs prüft das Projekt nicht; es liegt in der Verantwortung des Website-Erstellers |
 | Ist der Rich-Text-Editor barrierefrei? | die Integrationen von TinyMCE wurden nicht geprüft: „Nicht geprüft“ |
@@ -38,7 +38,7 @@ Produkt sollte er nie eine stärkere Antwort geben als dessen Dokumentation.
 
 | Frage | Was die Dokumentation stützt |
 |---|---|
-| Wie bilden Sie die OWASP Top 10 ab? | Gegenmaßnahmen je Kategorie, „Teilweise erfüllt“ ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)) |
+| Wie bilden Sie die OWASP Top 10 ab? | Gegenmaßnahmen je Kategorie, „Teilweise erfüllt“ ([Sicherheitsstandards](../../../../standards/sicherheit.md)) |
 | Wurde eine Bewertung nach ASVS durchgeführt? | nein: „Nicht geprüft“; die Standard-Mindestlänge des Passworts (10) liegt unter ASVS Stufe 1 (12), sofern nicht geändert |
 | Gibt es eine zweistufige Anmeldung? | ja, als Erweiterung auf Wunsch ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)) |
 | Ist die Kontosperre an? | standardmäßig aus (`MaxNumberOfFailedLogin=0`); Brute-Force wird von Alarmregeln des Audits erkannt |
@@ -49,17 +49,17 @@ Produkt sollte er nie eine stärkere Antwort geben als dessen Dokumentation.
 
 | Frage | Was die Dokumentation stützt |
 |---|---|
-| Haben Sie ein Cookie-Banner? | nein; der Kernel setzt nur funktionale Cookies, und eine Website, die Analyse hinzufügt, muss eine Einwilligung ergänzen ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)) |
+| Haben Sie ein Cookie-Banner? | nein; der Kernel setzt nur funktionale Cookies, und eine Website, die Analyse hinzufügt, muss eine Einwilligung ergänzen ([Datenschutzstandards](../../../../standards/datenschutz.md)) |
 | Können wir alle Daten zu einer Person exportieren? | keine einzelne Funktion; E-Mail-Einstellungen und Audit-Einträge haben Exporte, andere Daten über eigene Werkzeuge |
-| Was wird über Beschäftigte protokolliert? | das Audit-Protokoll, mit gekürzten Adressen und Pseudonymisierung nach einer festgelegten Zeit ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
-| Wie lange werden Protokolle aufbewahrt? | Audit je Kanal 90 Tage live und 2 Jahre archiviert; einige Protokolle haben Altersgrenzen, andere rotieren nach Größe ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md#known-gaps)) |
+| Was wird über Beschäftigte protokolliert? | das Audit-Protokoll, mit gekürzten Adressen und Pseudonymisierung nach einer festgelegten Zeit ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
+| Wie lange werden Protokolle aufbewahrt? | Audit je Kanal 90 Tage live und 2 Jahre archiviert; einige Protokolle haben Altersgrenzen, andere rotieren nach Größe ([Datenschutzstandards](../../../../standards/datenschutz.md#bekannte-lücken)) |
 
 ## Sprachen
 
 | Frage | Was die Dokumentation stützt |
 |---|---|
 | Kann jede Seite in mehreren Sprachen existieren? | ja, mit Übersetzungen je Objekt ([Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md)) |
-| Schriften von rechts nach links? | `dir="rtl"` in Inhalten und Administration ([Rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)) |
+| Schriften von rechts nach links? | `dir="rtl"` in Inhalten und Administration ([Rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md)) |
 | Welche Sprachen der Administration sind vollständig? | siehe [Sprachen](../../../sprachen.md); fragen Sie gezielt nach Ihrer Sprache |
 
 ## Hosting und Betrieb

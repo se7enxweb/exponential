@@ -103,7 +103,7 @@ die der Besucher lesen darf; `ignore_visibility` steuert versteckte Inhalte.
 ## Verwandte Inhalte sicher entfernen
 
 Bevor ein Objekt entfernt oder versteckt wird, prüft die Administration die Rückwärtsrelationen und warnt, wenn andere
-Inhalte darauf verweisen ([Prüfung der Rückwärtsrelationen](../../../../eng-us/features/6.0/reverse-relation-check.md)). Prüfen Sie
+Inhalte darauf verweisen ([Prüfung der Rückwärtsrelationen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)). Prüfen Sie
 diese Liste, bevor Sie bestätigen: Ein entferntes Bild hinterlässt eine Lücke in jedem Artikel, der es eingebettet hat.
 
 ## Verwandte Seiten

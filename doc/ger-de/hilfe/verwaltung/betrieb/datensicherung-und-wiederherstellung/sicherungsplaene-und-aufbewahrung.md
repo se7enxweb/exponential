@@ -106,7 +106,7 @@ vorgeschrieben ist, ist eine Rechtsfrage für Ihre Organisation.
 ## Verwandte Seiten
 
 - [Datensicherung und Wiederherstellung](README.md): Übersicht dieses Ordners
-- [Datenschutzstandards](../../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

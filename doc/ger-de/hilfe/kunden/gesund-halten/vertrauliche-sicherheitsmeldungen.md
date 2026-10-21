@@ -74,7 +74,7 @@ Diese erste Antwort ist die einzige Zusage zur Reaktionszeit in den eigenen Date
 Eine Erweiterung, die nicht Teil des Projekts ist, hat ihren eigenen Autor und gegebenenfalls einen eigenen
 Sicherheitskontakt. Prüfen Sie das Repository der Erweiterung auf eine Sicherheitsrichtlinie; hat es keine, wenden Sie
 sich vertraulich an den Autor statt öffentlich. Die Seite **Info > Über** nennt die Website jeder Erweiterung
-([Die Seiten Über und Copyright](../../../../eng-us/features/6.0/about-and-package-pages.md)).
+([Die Seiten Über und Copyright](../../../funktionen/6.0/info-und-paketseiten.md)).
 
 ## Personenbezogene Daten
 

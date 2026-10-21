@@ -31,7 +31,7 @@ Die Beispiele liefen auf der Kommandozeile als anonymer Benutzer.
 
 ### ezpreference
 
-Generierte Seite: [ezpreference](../../../eng-us/examples/template-operators/ezpreference.md).
+Generierte Seite: [ezpreference](../../beispiele/template-operatoren/ezpreference.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -60,7 +60,7 @@ Ausgabe auf alpha:
 
 ### ezmodule
 
-Generierte Seite: [ezmodule](../../../eng-us/examples/template-operators/ezmodule.md).
+Generierte Seite: [ezmodule](../../beispiele/template-operatoren/ezmodule.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -78,7 +78,7 @@ Berechtigungen verwenden Sie `fetch( 'user', 'has_access_to', ... )`.
 
 ### module_params
 
-Generierte Seite: [module_params](../../../eng-us/examples/template-operators/module_params.md).
+Generierte Seite: [module_params](../../beispiele/template-operatoren/module_params.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** `$GLOBALS['eZRequestedModuleParams']`, ein Hash mit `module_name`, `function_name` (die Ansicht) und `parameters` (die benannten Ansichtsparameter), den `eZModule` beim Ausführen einer Ansicht speichert,
@@ -104,7 +104,7 @@ Ausgabe auf alpha:
 
 ### ezpackage
 
-Generierte Seite: [ezpackage](../../../eng-us/examples/template-operators/ezpackage.md).
+Generierte Seite: [ezpackage](../../beispiele/template-operatoren/ezpackage.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -143,7 +143,7 @@ ezstarrating_extension: thumbnail= dir=var/storage/packages/ez-systems/ezstarrat
 
 ### pdf
 
-Generierte Seite: [pdf](../../../eng-us/examples/template-operators/pdf.md).
+Generierte Seite: [pdf](../../beispiele/template-operatoren/pdf.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -189,8 +189,8 @@ Ausgabe auf alpha:
 ## Verwandte Seiten
 
 - [PDF-Exporte](../../anleitungen/pdf-exporte.md)
-- [Rollen- und Richtlinien-Operatoren](../../../eng-us/help/designers/templates/role-and-policy-operators.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Rollen- und Richtlinien-Operatoren](../designer/vorlagen/rollen-und-richtlinien-operatoren.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

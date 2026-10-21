@@ -61,7 +61,7 @@ und für Besucher einen sichtbaren Link auf der Seite News.
 ## Podcasts
 
 Das Format **Apple Podcasts** schreibt RSS 2.0 mit den iTunes-Tags. Quellen brauchen ein Feld mit einer Audiodatei; die
-Funktionsseite [RSS, Podcast und Feedliste](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md) listet auf, was jedes
+Funktionsseite [RSS, Podcast und Feedliste](../../../funktionen/6.0/rss-podcast-und-feed-liste.md) listet auf, was jedes
 Format braucht.
 
 ## Einen Feed importieren

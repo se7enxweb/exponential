@@ -12,7 +12,7 @@ type: help
 Dieser Abschnitt richtet sich an Beschaffungsstellen, Projektleitungen und Fachleute, die die Anforderungen einer
 Ausschreibung für ein Web-Content-Management-System schreiben. Jede Seite gibt Formulierungen für Anforderungen, die
 Sie anpassen können, erklärt, was sie prüfbar macht, und nennt die Dokumentation von Exponential, die sie beantwortet,
-mit den Statusangaben der [Seiten zu den Standards](../../../../../eng-us/standards/README.md) und den dort aufgeführten Lücken.
+mit den Statusangaben der [Seiten zu den Standards](../../../../standards/README.md) und den dort aufgeführten Lücken.
 Die Klauseltexte, die in den Vertrag selbst gehören, stehen in den [Ausschreibungsvorlagen](../ausschreibungsvorlagen/README.md).
 
 ## Seiten in diesem Abschnitt
@@ -58,7 +58,7 @@ Die Klauseltexte, die in den Vertrag selbst gehören, stehen in den [Ausschreibu
 - [Beschaffung](../README.md)
 - [Ausschreibungsvorlagen](../ausschreibungsvorlagen/README.md)
 - Verwaltungen: hier beginnen (`government-start-here.md`, die Einstiegsseite dieses Abschnitts)
-- [Standards](../../../../../eng-us/standards/README.md)
+- [Standards](../../../../standards/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -145,7 +145,7 @@ Verwenden Sie die Spielwiese aus Lektion 2.1 und führen Sie sie nach jedem Schr
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): die Template-Suche und Overrides.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md): Klassen,
   Attribute und Datentypen hinter `data_map`.
-- [View-Modi in der Versionsvorschau](../../../../../eng-us/features/6.0/version-preview-view-modes.md): View-Modi in der
+- [View-Modi in der Versionsvorschau](../../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md): View-Modi in der
   Vorschau.
 
 ## Verwandte Seiten

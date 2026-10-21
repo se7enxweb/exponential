@@ -13,8 +13,8 @@ Die Erweiterung `ezjscore` (im Kernel-Repository enthalten, `extension/ezjscore/
 `extension/ezjscore/autoloads/eztemplateautoload.php` zwölf Operatoren; ihre `settings/site.ini.append.php` fügt die Erweiterung zu
 `[TemplateSettings] ExtensionAutoloadPath[]` hinzu. Sie existieren nur, solange ezjscore eine aktive Erweiterung ist, was jedes
 mitgelieferte Design voraussetzt. Für die Sicht des Designers lesen Sie zuerst
-[ezjscore template operators](../../../eng-us/help/designers/templates/ezjscore-template-operators.md) und
-[The ezcss and ezscript operators](../../../eng-us/help/designers/theme-design/ezcss-and-ezscript-operators.md); diese Seite dokumentiert jeden
+[ezjscore template operators](../designer/vorlagen/ezjscore-template-operatoren.md) und
+[The ezcss and ezscript operators](../designer/theme-design/die-operatoren-ezcss-und-ezscript.md); diese Seite dokumentiert jeden
 Parameter.
 
 | Klasse | Datei | Operatoren |
@@ -62,7 +62,7 @@ Packer setting: [enabled]
 
 ### ezscript
 
-Generierte Seite: [ezscript](../../../eng-us/examples/template-operators/ezscript.md).
+Generierte Seite: [ezscript](../../beispiele/template-operatoren/ezscript.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -77,7 +77,7 @@ Generierte Seite: [ezscript](../../../eng-us/examples/template-operators/ezscrip
 
 ### ezcss
 
-Generierte Seite: [ezcss](../../../eng-us/examples/template-operators/ezcss.md).
+Generierte Seite: [ezcss](../../beispiele/template-operatoren/ezcss.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -92,7 +92,7 @@ Generierte Seite: [ezcss](../../../eng-us/examples/template-operators/ezcss.md).
 
 ### ezscriptfiles
 
-Generierte Seite: [ezscriptfiles](../../../eng-us/examples/template-operators/ezscriptfiles.md).
+Generierte Seite: [ezscriptfiles](../../beispiele/template-operatoren/ezscriptfiles.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -105,7 +105,7 @@ Generierte Seite: [ezscriptfiles](../../../eng-us/examples/template-operators/ez
 
 ### ezcssfiles
 
-Generierte Seite: [ezcssfiles](../../../eng-us/examples/template-operators/ezcssfiles.md).
+Generierte Seite: [ezcssfiles](../../beispiele/template-operatoren/ezcssfiles.md).
 
 Dasselbe für Stylesheets: `css_array`, `pack_level` (Standard 3), `ignore_loaded`.
 
@@ -129,7 +129,7 @@ Ausgabe auf alpha:
 
 ### ezscript_require
 
-Generierte Seite: [ezscript_require](../../../eng-us/examples/template-operators/ezscript_require.md).
+Generierte Seite: [ezscript_require](../../beispiele/template-operatoren/ezscript_require.md).
 
 Die Parameter von `ezscript`. Solange `ezscript_load` auf der Seite noch nicht gelaufen ist, gibt der Operator nichts aus und hängt
 die Dateien an `js_files` in der **persistenten Variablen** an, sodass ein View-Template ein Skript anfordern kann, das der
@@ -137,13 +137,13 @@ Pagelayout später ausgibt. Nachdem `ezscript_load` gelaufen ist, gibt er Tags f
 
 ### ezcss_require
 
-Generierte Seite: [ezcss_require](../../../eng-us/examples/template-operators/ezcss_require.md).
+Generierte Seite: [ezcss_require](../../beispiele/template-operatoren/ezcss_require.md).
 
 Dasselbe für Stylesheets (`css_files`), mit den Parametern von `ezcss`.
 
 ### ezscript_load
 
-Generierte Seite: [ezscript_load](../../../eng-us/examples/template-operators/ezscript_load.md).
+Generierte Seite: [ezscript_load](../../beispiele/template-operatoren/ezscript_load.md).
 
 Die Parameter von `ezscript`, wobei `script_array` optional ist. Der erste Aufruf auf einer Seite stellt seine eigenen Dateien
 **vor** die angeforderten, gibt Tags für alle aus und markiert die Skripte als geladen; spätere Aufrufe geben nur Dateien aus, die
@@ -151,7 +151,7 @@ noch nicht geladen sind.
 
 ### ezcss_load
 
-Generierte Seite: [ezcss_load](../../../eng-us/examples/template-operators/ezcss_load.md).
+Generierte Seite: [ezcss_load](../../beispiele/template-operatoren/ezcss_load.md).
 
 Dasselbe für Stylesheets, mit den Parametern von `ezcss`, wobei `css_array` optional ist.
 
@@ -188,7 +188,7 @@ Zeile 5 ist leer, weil `pagelayout.css` bereits in Zeile 4 ausgegeben wurde.
 
 ### json_encode
 
-Generierte Seite: [json_encode](../../../eng-us/examples/template-operators/json_encode.md).
+Generierte Seite: [json_encode](../../beispiele/template-operatoren/json_encode.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -202,14 +202,14 @@ richtig; in einem Attribut maskieren Sie es mit wash.
 
 ### xml_encode
 
-Generierte Seite: [xml_encode](../../../eng-us/examples/template-operators/xml_encode.md).
+Generierte Seite: [xml_encode](../../beispiele/template-operatoren/xml_encode.md).
 
 Derselbe Parameter. **Gibt zurück:** ein XML-Dokument mit einem Element `<root>` und einem Element pro Schlüssel
 (`ezjscAjaxContent::xmlEncode()`; Listeneinträge werden zu Elementen `<child>`).
 
 ### node_encode
 
-Generierte Seite: [node_encode](../../../eng-us/examples/template-operators/node_encode.md).
+Generierte Seite: [node_encode](../../beispiele/template-operatoren/node_encode.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -249,7 +249,7 @@ Ausgabe auf alpha:
 
 ### has_access_to_limitation
 
-Generierte Seite: [has_access_to_limitation](../../../eng-us/examples/template-operators/has_access_to_limitation.md).
+Generierte Seite: [has_access_to_limitation](../../beispiele/template-operatoren/has_access_to_limitation.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -287,10 +287,10 @@ anonymous content/read: yes
 
 ## Verwandte Seiten
 
-- [ezjscore-Template-Operatoren für Designer](../../../eng-us/help/designers/templates/ezjscore-template-operators.md)
-- [JSON-Endpunkte mit ezjscore](../../../eng-us/help/creators/app-creators/json-endpoints-with-ezjscore.md)
-- [Die persistente Variable](../../../eng-us/help/designers/templates/persistent-variable.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [ezjscore-Template-Operatoren für Designer](../designer/vorlagen/ezjscore-template-operatoren.md)
+- [JSON-Endpunkte mit ezjscore](../ersteller/anwendungsentwickler/json-endpunkte-mit-ezjscore.md)
+- [Die persistente Variable](../designer/vorlagen/die-persistent-variable.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

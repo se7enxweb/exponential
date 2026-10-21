@@ -54,7 +54,7 @@ Installationen, die den Anwendungsserver Velocity verwenden, haben einen Befehl,
 ```
 
 `--packer` leert `ezjscore-packer` direkt vor `template-block` und nirgends sonst. Einzelheiten:
-[Velocity engines](../../../../eng-us/bc/6.0/velocity-engines.md).
+[Velocity engines](../../../bc/6.0/velocity-engines.md).
 
 ## Nach dem Deploy
 

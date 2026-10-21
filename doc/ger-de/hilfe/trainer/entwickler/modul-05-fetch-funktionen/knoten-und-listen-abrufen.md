@@ -138,7 +138,7 @@ Schritt aus.
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): die Sprache und ein vollständiges Listen-Template.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten, Teil 9](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#standard-klassenfilter-für-fetches-template-entwickler):
   der Standard-Klassenfilter für Fetches.
-- [Zugriffs- und Cache-Filter](../../../../../eng-us/features/6.0/access-and-cache-filters.md): wie Erweiterungen an
+- [Zugriffs- und Cache-Filter](../../../../funktionen/6.0/zugriffs-und-cache-filter.md): wie Erweiterungen an
   Zugriffsprüfungen und am View-Caching teilnehmen können.
 
 ## Verwandte Seiten

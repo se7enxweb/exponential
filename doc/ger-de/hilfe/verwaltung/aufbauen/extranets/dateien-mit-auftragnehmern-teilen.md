@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Redakteure und Administratoren. Dateien sind Inhaltsobjekte mit einem Dateifeld; Downloads
 laufen über `content/download`, das prüft, ob der Besucher das Objekt lesen darf, bevor es die Datei sendet. Eine Datei
 in einer Sektion, die nur die Gruppe eines Auftragnehmers lesen darf, kann also nur von dieser Gruppe heruntergeladen
-werden ([Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads)).
+werden ([Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads)).
 
 ## Inhalt
 
@@ -48,7 +48,7 @@ zum Veröffentlichen im Web, kein Dienst zur sicheren Dateiübertragung.
 
 ## Verwandte Seiten
 
-- [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Benutzergruppen und Sektionen für Extranets](benutzergruppen-und-sektionen-fuer-extranets.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

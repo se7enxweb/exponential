@@ -30,7 +30,7 @@ gehalten, und ein Weg zurück, wenn etwas schiefgeht.
 | Produktivumgebung | die Live-Website | die Basiseinstellungen |
 
 `EXP_ENV` benennt die Umgebung, und jede Einstellungsdatei kann eine Variante dafür haben (`site.ini.test.append.php`)
-([Umgebungseinstellungen und Geheimnisse](umgebungseinstellungen-und-geheimnisse.md), [Einstellungen pro Umgebung](../../../../eng-us/features/6.0/environment-settings.md)).
+([Umgebungseinstellungen und Geheimnisse](umgebungseinstellungen-und-geheimnisse.md), [Einstellungen pro Umgebung](../../../funktionen/6.0/umgebungseinstellungen.md)).
 
 ## Was wie übertragen wird
 
@@ -73,7 +73,7 @@ gehalten, und ein Weg zurück, wenn etwas schiefgeht.
 
 - [Mit Velocity ausliefern](mit-velocity-ausliefern.md)
 - [Ein Team mit Git führen](../../fuehrung/ein-team-mit-git-fuehren.md)
-- [Kompatibilität, Releases und Deployment](../../../../eng-us/standards/architecture/compatibility-releases-deployment.md)
+- [Kompatibilität, Releases und Deployment](../../../standards/architektur/kompatibilitaet-releases-deployment.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

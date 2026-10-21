@@ -26,7 +26,7 @@ sendet, ohne Exponential zu starten. In einer neuen Installation ist er ausgesch
 - Nur Siteaccesses, die keine Anmeldung brauchen, werden angeboten, weil ihre Seiten für alle gleich sind.
 - Die Regeln des Webservers Ihrer Installation, die die statischen Dateien ausliefern, sind aktiv (Apache mit der
   mitgelieferten `.htaccess`); unter Velocity ist der Antwort-Cache die übliche Alternative
-  ([Antwort-Cache von Velocity und HTTP-Cache](../../../../../eng-us/help/government/operations/availability/velocity-response-cache-and-http-cache.md)).
+  ([Antwort-Cache von Velocity und HTTP-Cache](../../betrieb/verfuegbarkeit/velocity-antwortcache-und-http-cache.md)).
 - Eine genehmigte Änderung für eine Änderung an Einstellungen.
 
 ## Schritte
@@ -67,10 +67,10 @@ sendet, ohne Exponential zu starten. In einer neuen Installation ist er ausgesch
 - Entfernen Sie die Dateien mit `php bin/php/cache.php static clear --allow-root-user`, wenn Sie ihn wieder ausschalten.
 
 ## Verwandte Seiten
-- [Statischer Cache](../../../../../eng-us/help/government/operations/availability/static-cache.md)
-- [Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md)
+- [Statischer Cache](../../betrieb/verfuegbarkeit/statischer-cache.md)
+- [Generator für den statischen Cache](../../../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
 - [Statischer Cache (Hosting)](../../../hosting/leistung/statischer-cache.md)
-- [DDoS und Fluten von Sondierungen](../../../../../eng-us/help/government/operations/incidents/ddos-and-probe-floods.md)
+- [DDoS und Fluten von Sondierungen](../../betrieb/vorfaelle/ddos-und-flut-von-sondierungsanfragen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

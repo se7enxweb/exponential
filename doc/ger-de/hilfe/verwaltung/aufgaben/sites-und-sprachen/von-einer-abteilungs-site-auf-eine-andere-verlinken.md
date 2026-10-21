@@ -51,7 +51,7 @@ und die Seite öffnen.
 
 ## Verwandte Seiten
 
-- [Links auf Inhalte einer anderen Site](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)
+- [Links auf Inhalte einer anderen Site](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

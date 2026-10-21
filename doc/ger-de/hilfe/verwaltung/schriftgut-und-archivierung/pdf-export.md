@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Zuständige für Schriftgut. **Setup > PDF-Export** (`/pdf/list`,
 Richtlinie `pdf/edit`) erzeugt ein PDF-Dokument aus einem **Quellknoten** oder aus einem Baum von Knoten ausgewählter
-Klassen ([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../../../eng-us/features/6.0/pdf-export.md)).
+Klassen ([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../../funktionen/6.0/pdf-export.md)).
 
 ![PDF-Exporte: Exporte von Teilen des Inhaltsbaums, gespeichert oder für jeden Download erzeugt](../../../../eng-us/help/images/government/gov-pdf.webp)
 
@@ -42,7 +42,7 @@ Klassen ([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../
 
 Für Sprachen außerhalb der lateinischen Schrift muss in `settings/override/pdf.ini.append.php` eine TrueType-Schrift
 eingerichtet werden
-([PDF-Export: Jede Sprache drucken](../../../../eng-us/features/6.0/pdf-export.md#print-any-language-use-a-truetype-font)).
+([PDF-Export: Jede Sprache drucken](../../../funktionen/6.0/pdf-export.md#jede-sprache-drucken-eine-truetype-schrift-verwenden)).
 
 ## Öffentlich über die Adresse
 

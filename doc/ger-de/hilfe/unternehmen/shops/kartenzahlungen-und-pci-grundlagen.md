@@ -133,8 +133,8 @@ Weiterleitung geschrieben werden kann ([Zahlungsanbieter für Unternehmen](zahlu
 
 ## Verwandte Seiten
 
-- [Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
-- [Sicherheit für Anwendungen](../../../../eng-us/help/creators/app-creators/security-for-applications.md)
+- [Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md)
+- [Sicherheit für Anwendungen](../../ersteller/anwendungsentwickler/sicherheit-fuer-anwendungen.md)
 - [Sicherheitsgrundlagen für Unternehmen](../sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

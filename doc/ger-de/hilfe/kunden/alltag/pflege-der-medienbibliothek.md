@@ -25,12 +25,12 @@ füllt sie sich mit Duplikaten und Dateien, die niemand verwendet; mit ihnen fin
 
 | Regel | Warum | Quelle |
 |---|---|---|
-| Eine Ordnerstruktur, höchstens drei Ebenen tief | der Upload-Dialog durchsucht höchstens drei Ebenen (`MaxDepth=3` in `settings/upload.ini`) | [Die Medienbibliothek organisieren](../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md) |
+| Eine Ordnerstruktur, höchstens drei Ebenen tief | der Upload-Dialog durchsucht höchstens drei Ebenen (`MaxDepth=3` in `settings/upload.ini`) | [Die Medienbibliothek organisieren](../../ersteller/website-ersteller/die-medienbibliothek-organisieren.md) |
 | Ordner nach Thema, nach Jahr und Monat oder nach Website | wählen Sie die Ordnung, in der Ihre Redakteure denken | ebenda |
 | Ein Ordner `Shared` für Logos und Icons | überall verwendet, von einer Person verantwortet | ebenda |
 | Bilder nach dem benennen, was sie zeigen | der Name wird zum Titel des Elements und zum Vorschlag für den Alternativtext | ebenda |
 | Jedes Bild mit einem Alternativtext | für Screenreader und wenn ein Bild nicht laden kann | [Bilder, Medien und Uploads](../../medien-und-uploads.md) |
-| Einmal hochladen, per Beziehung wiederverwenden | eine zweite Kopie ist ein zweites Element, das aktuell gehalten werden muss | [Beziehungen und Wiederverwendung von Inhalten](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md) |
+| Einmal hochladen, per Beziehung wiederverwenden | eine zweite Kopie ist ein zweites Element, das aktuell gehalten werden muss | [Beziehungen und Wiederverwendung von Inhalten](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md) |
 
 Schreiben Sie die Regeln in Ihren Leitfaden für die Redaktion und in die [Richtlinien für Bilder und Dateien](richtlinien-fuer-bilder-und-dateien.md).
 
@@ -49,7 +49,7 @@ Sie sie überspringen ([Bilder, Medien und Uploads](../../medien-und-uploads.md)
 
 ## Das vierteljährliche Aufräumen
 
-Die Inhaltsprüfungen finden, was ungenutzt oder kaputt ist ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+Die Inhaltsprüfungen finden, was ungenutzt oder kaputt ist ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 Sie stehen im Menü Setup und im Kontextmenü des Inhaltsbaums (**Fortgeschritten**), und auf einer neuen Installation
 hat nur Administrator Zugriff darauf; erledigen Sie das also mit Ihrem Administrator oder bitten Sie um die Richtlinien.
 
@@ -67,15 +67,15 @@ hat nur Administrator Zugriff darauf; erledigen Sie das also mit Ihrem Administr
 
 > **Tipp**
 > Öffnen Sie vor dem Entfernen eines Bildes seine umgekehrten Beziehungen: Die Administration warnt, bevor Sie ein
-> Bild entfernen, das noch verwendet wird ([Prüfung umgekehrter Beziehungen](../../../../eng-us/features/6.0/reverse-relation-check.md)).
+> Bild entfernen, das noch verwendet wird ([Prüfung umgekehrter Beziehungen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)).
 
 ## Worum Sie Ihren Administrator bitten sollten
 
 - Die Richtlinien `contentcheck/unreferenced` und `contentcheck/brokenrelations` für die Medienverantwortlichen, wenn
   diese die Prüfungen selbst ausführen sollen.
 - Welche Dateitypen und -größen Uploads annehmen. Die Upload-Seite zeigt die größte Datei, die sie annimmt; die
-  erlaubten Bildtypen sind in `settings/image.ini` festgelegt ([SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md)).
-- Dass `var/<site>/storage` in den Backups enthalten ist ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+  erlaubten Bildtypen sind in `settings/image.ini` festgelegt ([SVG und Bildformate](../../ersteller/website-ersteller/svg-und-bildformate.md)).
+- Dass `var/<site>/storage` in den Backups enthalten ist ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 - Dass der Bericht der Inhaltsprüfungen über die Kommandozeile laufen kann (`./console exp:content-check`), wenn Sie
   ihn monatlich haben möchten.
 
@@ -83,7 +83,7 @@ hat nur Administrator Zugriff darauf; erledigen Sie das also mit Ihrem Administr
 
 - [Bilder, Medien und Uploads](../../medien-und-uploads.md)
 - [Richtlinien für Bilder und Dateien](richtlinien-fuer-bilder-und-dateien.md)
-- [Kaputte Links und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Kaputte Links und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

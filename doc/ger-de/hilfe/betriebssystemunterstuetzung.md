@@ -280,9 +280,9 @@ Erweiterungen, den Velocity erwartet.
 
 - [Kapitel 2, Voraussetzungen](../installation/02-voraussetzungen.md) und [Kapitel 8, Die Site ausliefern](../installation/08-die-website-ausliefern.md).
 - [Unterstützte Datenbanken](datenbankunterstuetzung.md): die unterstützten Datenbanken, in Reihenfolge.
-- [Velocity-Pakete und -Binaries](../../eng-us/features/6.0/velocity-packages-and-binaries.md),
-  [Der Webserver Velocity](../../eng-us/features/6.0/velocity-web-server.md), [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
-- [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md), [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md).
+- [Velocity-Pakete und -Binaries](../funktionen/6.0/velocity-pakete-und-binaerdateien.md),
+  [Der Webserver Velocity](../funktionen/6.0/velocity-webserver.md), [Velocity-Engines](../bc/6.0/velocity-engines.md).
+- [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md), [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md).
 - [Deployment](../anleitungen/bereitstellung.md).
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seiten dürfen frei kopiert, übersetzt und verbessert werden.
 

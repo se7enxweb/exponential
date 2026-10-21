@@ -70,7 +70,7 @@ Zustandsänderungen werden im Audit als `content.object.state` aufgezeichnet (st
 ## Verwandte Seiten
 
 - [Objektzustände](../../../anleitungen/objektzustaende.md)
-- [Sektionen und Objektzustände für Websiteersteller](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Sektionen und Objektzustände für Websiteersteller](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Aufbewahrungssperren](aufbewahrungssperren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

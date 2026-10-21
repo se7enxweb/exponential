@@ -55,14 +55,14 @@ einrichten. Probieren Sie das zuerst.
 - Halten Sie fest: Datum, wer die Person wie geprüft hat, was umgestellt wurde.
 - Wenn das Telefon gestohlen statt verloren wurde, behandeln Sie es als mögliche Kompromittierung: Ändern Sie das
   Passwort und prüfen Sie die jüngsten Anmeldungen des Kontos
-  ([Vermutete Kompromittierung eines Kontos](../../../../../eng-us/help/government/operations/incidents/suspected-account-compromise.md)).
+  ([Vermutete Kompromittierung eines Kontos](../../betrieb/vorfaelle/verdacht-auf-kompromittiertes-konto.md)).
 - Prüfen Sie, dass die Person nicht auf *Deaktiviert* geblieben ist: Ihre Kontoseite zeigt einen Hinweis, wenn die
   zweistufige Anmeldung aus ist.
 
 ## Verwandte Seiten
 - [Die zweistufige Anmeldung für Mitarbeiter einschalten](die-zweistufige-anmeldung-fuer-mitarbeiter-einschalten.md)
 - [Das Passwort eines Mitarbeiters zurücksetzen](das-passwort-eines-mitarbeiters-zuruecksetzen.md)
-- [Zweistufige Anmeldung für Mitarbeiter](../../../../../eng-us/help/government/operations/people-and-permissions/two-factor-for-staff.md)
+- [Zweistufige Anmeldung für Mitarbeiter](../../betrieb/personen-und-berechtigungen/zwei-faktor-anmeldung-fuer-beschaeftigte.md)
 - [Anleitung zur zweistufigen Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

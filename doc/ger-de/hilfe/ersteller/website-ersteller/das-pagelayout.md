@@ -109,7 +109,7 @@ Ohne `keys` ist ein Block für jede Seite gleich. Die Caches werden beim Veröff
 ## Skripte ohne Inline-Code
 
 Öffentliche Siteaccesses können unter einer Content Security Policy laufen (`[ContentSecurityPolicy] Mode` in
-`site.ini`; siehe [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Halten Sie das
+`site.ini`; siehe [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)). Halten Sie das
 Pagelayout dafür bereit: kein `<script>` mit Code, kein `onclick=`, kein `style=""`. Übergeben Sie Daten an Skripte so,
 wie es das Theme simple tut, als JSON-Datenblock, den eine Skriptdatei liest:
 

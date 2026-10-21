@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Vertragsverantwortliche in öffentlichen Stellen, die eine externe Agentur, einen
 Lieferanten oder befristet Beschäftigte an der Website arbeiten lassen. Ziel ist ein Zugang, der zum Vertrag passt und mit ihm endet.
 Alles nutzt das Rollenmodell aus [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md) und die
-Kontenwerkzeuge aus [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md).
+Kontenwerkzeuge aus [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md).
 
 ## Inhalt
 1. [Grundsätze](#grundsätze)
@@ -81,7 +81,7 @@ Debug-Ausgabe nur für die eigene Adresse ist mit einem Ablaufdatum in `DebugIPL
 2. **Benutzer > Benutzerkonten prüfen**: Suchen Sie die Konten, markieren Sie sie und klicken Sie auf **Deaktivieren**; ihre Sitzungen enden.
 3. Wenn Ihre Website es nutzt, wenden Sie stattdessen **Deaktivieren und verschieben** auf die Konten an: Sie werden deaktiviert und in eine
    verborgene Gruppe ohne Rollen verschoben, wobei ihre Inhalte und der Nachweis dessen, was sie getan haben, erhalten bleiben
-   ([Deaktivieren und verschieben](../../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move)).
+   ([Deaktivieren und verschieben](../../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben)).
 4. Exportieren Sie die Liste als CSV für die Vertragsakte (**Liste als CSV exportieren**).
 5. Entfernen Sie IP-Adressen des Dienstleisters aus allen Freigabelisten für Debug-Ausgabe oder Netzwerkzugang.
 
@@ -89,7 +89,7 @@ Das Entfernen eines Benutzerkontos ist endgültig (Benutzerobjekte kommen nie in
 Deaktivieren und verschieben bevorzugt: Das Prüfprotokoll und die Inhalte behalten einen gültigen Eigentümer.
 
 ## Verwandte Seiten
-- [Einen Dienstleister nur einen Ordner bearbeiten lassen](../../../../../eng-us/help/government/tasks/people-and-permissions/let-a-contractor-edit-only-one-folder.md)
+- [Einen Dienstleister nur einen Ordner bearbeiten lassen](../../aufgaben/personen-und-berechtigungen/einen-auftragnehmer-nur-einen-ordner-bearbeiten-lassen.md)
 - [Eintritt, Wechsel und Austritt](eintritt-wechsel-austritt.md)
 - [Checkliste für das Ausscheiden von Kunden (Hosting)](../../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)
 - [Grundsätze der geringsten Rechte](prinzip-der-geringsten-rechte.md)

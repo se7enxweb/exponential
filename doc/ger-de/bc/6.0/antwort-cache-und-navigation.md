@@ -239,10 +239,10 @@ Die Einstellungen, die diese Konfiguration nachbilden, stehen in `settings/veloc
 
 ## Verwandte Seiten
 
-- [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
-- [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) und [Velocity-Engines](velocity-engines.md)
+- [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)
+- [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und [Velocity-Engines](velocity-engines.md)
 - [Middle-Out-Kompression](middle-out-kompression.md) und [HTTP-Caching für anonyme Besucher](http-caching.md)
-- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../eng-us/features/6.0/cache-clear-rename-aside.md)
+- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../funktionen/6.0/cache-leeren-durch-umbenennen.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

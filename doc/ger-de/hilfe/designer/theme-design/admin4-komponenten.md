@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Designer und Entwickler, die eine Seite der Administration bauen, im Kernel oder in einer Erweiterung. Die
 Administration hat eine kleine Komponentenbibliothek: Klassen mit dem Präfix `.a4-` in `design/admin4/stylesheets/components.css`
 (identische Kopie in `design/admin`). Die vollständige Referenz ist der Abschnitt „Components“ von
-[Gestaltung der Administration](../../../../eng-us/bc/6.0/admin4-styling.md); diese Seite ist der Überblick.
+[Gestaltung der Administration](../../../bc/6.0/admin4-gestaltung.md); diese Seite ist der Überblick.
 
 ## Inhalt
 

@@ -54,7 +54,7 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 - Halten Sie Zugangsdaten aus Dokumenten und E-Mails heraus; Schlüssel und Tokens werden einmal angezeigt, und
   gespeichert wird nur ein Hash ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Jedes Ereignis zu API-Schlüsseln und jeder Schreibvorgang über Remote-Dienste steht im Prüfprotokoll, das Ihnen einen
-  Nachweis dessen gibt, was die Integration getan hat ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+  Nachweis dessen gibt, was die Integration getan hat ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Wenn sie ausfällt
 

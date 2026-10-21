@@ -48,7 +48,7 @@ URIMatchElement=1
   `https://example.com/eng/news` ist der Siteaccess `eng`. Andere Typen sind `map`, `text` und `regexp`.
 - **host**: `HostMatchType=map` mit `HostMatchMapItems[]=<host>;<siteaccess>` ordnet Hostnamen zu. Seit 6.0 lässt sich pro Eintrag
   eine Methode angeben (`strict`, `start`, `end`, `part`), siehe
-  [Siteaccess über ein Host-Präfix](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
+  [Siteaccess über ein Host-Präfix](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
 - **port**: Eine Portnummer wird einem Siteaccess zugeordnet.
 
 Wenn nichts passt, wird `site.ini [SiteSettings] DefaultAccess` verwendet.
@@ -121,7 +121,7 @@ seine Design-Zeilen) für `starter` und `starter_ger` gleichermaßen gelten. Die
   `kernel/private/classes/ezpkernelweb.php` gesetzt).
 - Mit `site.ini [TemplateSettings] ShowTemplatePathComments=enabled` schreibt jedes Template einen HTML-Kommentar mit seinem Dateipfad,
   sodass der Seitenquelltext zeigt, aus welchem Design jeder Teil stammt
-  ([Kommentare mit Template-Pfaden](../../../../eng-us/features/6.0/template-path-comments.md)).
+  ([Kommentare mit Template-Pfaden](../../../funktionen/6.0/template-pfad-kommentare.md)).
 - Mit `ShowUsedTemplates=enabled` (Debug-Ausgabe eingeschaltet) listet der Debug-Bereich jedes verwendete Template.
 
 ## Häufige Fragen
@@ -131,7 +131,7 @@ seine Design-Zeilen) für `starter` und `starter_ger` gleichermaßen gelten. Die
 `--clear-id=template-override`.
 
 **Kann ein angemeldeter Benutzer das Design wechseln?** In der Administration ja: Der Oberflächenschalter lässt einen Benutzer ein
-anderes Admin-Design wählen ([Oberflächenschalter: Design](../../../../eng-us/features/6.0/ui-switch-design.md)).
+anderes Admin-Design wählen ([Oberflächenschalter: Design](../../../funktionen/6.0/ui-umschalter-design.md)).
 
 **Können zwei Websites Templates teilen, sich aber in der Farbe unterscheiden?** Ja: Legen Sie die gemeinsamen Templates in ein
 Design und geben Sie jedem Siteaccess ein kleines eigenes Design mit nur seinem Stylesheet als `SiteDesign` und das gemeinsame Design
@@ -142,7 +142,7 @@ in `AdditionalSiteDesignList[]` (siehe [Designs in einer Multisite-Installation]
 - [Was ein Design ist](was-ein-design-ist.md)
 - [Die Design-Kaskade](die-design-kaskade.md)
 - [Ein Design auf einem Siteaccess in der Vorschau ansehen](design-vorschau-auf-einem-siteaccess.md)
-- [INI-Overrides für mehrere Websites](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
+- [INI-Overrides für mehrere Websites](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

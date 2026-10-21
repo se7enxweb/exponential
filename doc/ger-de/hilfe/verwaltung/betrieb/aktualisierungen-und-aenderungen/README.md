@@ -50,10 +50,10 @@ Eine Ebene höher: [Exponential im öffentlichen Sektor betreiben](../README.md)
 [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
-- [Betriebsaufgaben](../../../../../eng-us/help/government/tasks/operations/README.md)
+- [Betriebsaufgaben](../../aufgaben/betrieb/README.md)
 - [Kunden-Websites aktualisieren (Hosting)](../../../hosting/betrieb/kunden-websites-aktualisieren.md)
 - [Leitfaden zum Bereitstellen](../../../../anleitungen/bereitstellung.md)
-- [Standard für Versionsverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md)
+- [Standard für Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

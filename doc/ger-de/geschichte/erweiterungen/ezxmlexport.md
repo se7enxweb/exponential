@@ -1,8 +1,8 @@
 # ezxmlexport (XML-Export): Chronik
 
-Der XML-Export erhielt zwischen Dezember 2023 und März 2026 nur Paket-Metadaten und Angaben zur Finanzierung. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezxmlexport.md).
+Der XML-Export erhielt zwischen Dezember 2023 und März 2026 nur Paket-Metadaten und Angaben zur Finanzierung. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezxmlexport.md).
 
-Diese Seite führt **jede der 4 Änderungen** des Repositorys `ezxmlexport` zwischen 2023-12-25 und 2026-03-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezxmlexport.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezxmlexport.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezxmlexport.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 4 Änderungen** des Repositorys `ezxmlexport` zwischen 2023-12-25 und 2026-03-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezxmlexport.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezxmlexport.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezxmlexport.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -32,7 +32,7 @@ Der Monat über alle Erweiterungen: [März 2026](monate/2026-03.md). [Änderungs
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezxmlexport.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezxmlexport.md)
 - [Release Notes](../../../changelogs/extensions/ezxmlexport.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezxmlexport.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

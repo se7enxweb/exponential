@@ -115,7 +115,7 @@ Auf alpha gab `content/view/full/99999999` zurück:
 | `path` | `Error` / `kernel (3)` |
 
 `errorType` und `errorNumber` werden außerdem zu den Override-Schlüsseln `error_type` und `error_number`, sodass Fehlerseiten eigene Templates
-haben können (siehe [Fehler-Templates](../../../eng-us/help/designers/templates/error-templates.md)).
+haben können (siehe [Fehler-Templates](../designer/vorlagen/fehler-templates.md)).
 
 ## Es im Pagelayout lesen
 
@@ -147,8 +147,8 @@ Ausführen der Ansicht stammen.
 - [Templates von Modulansichten](templates-von-modulansichten.md)
 - [Ansichtsparameter](ansichtsparameter.md)
 - [Die persistente Variable, von innen](die-persistente-variable-von-innen.md)
-- [Modulergebnis und content_info](../../../eng-us/help/designers/templates/module-result-and-content-info.md)
-- [Brotkrumennavigation](../../../eng-us/help/designers/templates/breadcrumbs.md)
+- [Modulergebnis und content_info](../designer/vorlagen/module-result-und-content-info.md)
+- [Brotkrumennavigation](../designer/vorlagen/brotkrumen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

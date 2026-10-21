@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Die Barrierefreiheit Ihrer Website testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md).
+Quelle: [Die Barrierefreiheit Ihrer Website testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md).
 
 1. **Welche Seiten** (2 Minuten). Eine Seite pro Template: die Startseite, eine Vollansicht pro Klasse, eine
    Ordnerliste mit Seitenumschaltung, Suchergebnisse mit und ohne Treffer, jedes Formular, die Fehlerseiten, jeder
@@ -121,7 +121,7 @@ Partners.
 <summary>Antworten</summary>
 
 1. Seiten, die dasselbe Template zeichnet, haben dasselbe Markup; eine Seite testet sie alle
-   ([Die Barrierefreiheit Ihrer Website testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md#choose-the-pages)).
+   ([Die Barrierefreiheit Ihrer Website testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md#die-seiten-auswählen)).
 2. **C.**
 3. 200 % Zoom und 320 CSS-Pixel Breite, ohne horizontales Scrollen.
 4. Inhalt: Die Redakteurin oder der Redakteur ergänzt den Alternativtext.
@@ -132,9 +132,9 @@ Partners.
 
 ## Weiterführende Literatur
 
-- [Die Barrierefreiheit Ihrer Website testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md): die
+- [Die Barrierefreiheit Ihrer Website testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md): die
   vollständige Routine und was nach dem Start zu tun ist.
-- [Prüfung der Barrierefreiheit bei jedem Release](../../../../../eng-us/help/designers/lifecycle/accessibility-audit-per-release.md): dieselbe
+- [Prüfung der Barrierefreiheit bei jedem Release](../../../designer/lebenszyklus/barrierefreiheitspruefung-pro-release.md): dieselbe
   Routine als Teil jedes Theme-Releases.
 - [Barrierefreie Kursmaterialien](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/barrierefreie-kursmaterialien.md):
   das eigene Material des Trainers.

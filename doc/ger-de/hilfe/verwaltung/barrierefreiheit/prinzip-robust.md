@@ -26,7 +26,7 @@ müssen, um von einer Vielzahl von Benutzeragenten, einschließlich assistiver T
 - **Native Elemente zuerst.** Das Projekt folgt der ersten Regel von ARIA: Native Elemente werden bevorzugt; ein
   `title` zählt nicht als Name, und `aria-label` darf eine sichtbare Beschriftung mit Text nicht ersetzen
   (`AdminFormLabelsTest.php`;
-  [WAI-ARIA 1.2](../../../../eng-us/standards/accessibility.md#wai-aria-12-and-the-aria-authoring-practices)).
+  [WAI-ARIA 1.2](../../../standards/barrierefreiheit.md#wai-aria-12-und-die-aria-authoring-practices)).
 - **Muster.** Wo eigene Widgets nötig sind, folgt admin4 den ARIA Authoring Practices: Reiter, Baumansicht,
   aufklappbare Navigation (das optionale Mega-Menü), Menüs, Umschaltflächen mit `aria-pressed`. WAI-ARIA 1.2 finden Sie
   unter <https://www.w3.org/TR/wai-aria-1.2/>.
@@ -46,7 +46,7 @@ und Skript-Einstiegspunkte, nicht das Laufzeitverhalten in einem Screenreader.
 ## Warum strukturierte Inhalte helfen
 
 Exponential speichert Rich Text als XML und gibt ihn über Templates aus, statt freies HTML zu speichern
-([Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#exponential-features-that-help)).
+([Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#funktionen-von-exponential-die-helfen)).
 Das bedeutet:
 
 - eine Korrektur an einem Template ändert das Markup jeder Überschrift, Tabelle oder jedes Links auf einmal;
@@ -56,8 +56,8 @@ Das bedeutet:
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
 - [WCAG 2.2 AA auf Exponential abgebildet](wcag-2-2-zuordnung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

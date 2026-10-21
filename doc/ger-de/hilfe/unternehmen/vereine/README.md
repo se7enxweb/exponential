@@ -68,13 +68,13 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 - [Newsletter](../newsletter/README.md): Mails an Mitglieder und Unterstützer.
 - [Bibliotheken und Kataloge](../bibliotheken/README.md): für Gruppen, die eine Sammlung pflegen.
 - [Sicherheit und Datenschutz](../sicherheit/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.
-- Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
 - [Welcher Bereich passt zu Ihrer Organisation?](../welcher-bereich-zu-ihrer-organisation-passt.md)
-- [Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)
+- [Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

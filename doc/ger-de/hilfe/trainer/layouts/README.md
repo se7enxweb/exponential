@@ -45,14 +45,14 @@ Zuordnungen anlegen und Fehler darin finden; und eine Kampagnenseite planen und 
   Redakteure 201 hilft, ist aber nicht nötig.
 - Trainer: Erfahrung mit dem Layout-Editor in der Version, die sie unterrichten, und Administratorrechte auf der
   Schulungsinstallation, um Rollen, ein gemeinsames Layout und Fehler für die Lektion zur Fehlersuche vorzubereiten
-  ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  ([Train the Trainer: Kursüberblick](../train-the-trainer/README.md)).
 
 ## Übungsumgebung
 
 - Eine Schulungsinstallation mit aktiven Layouts-Erweiterungen (`explayouts`, `explayouts_ui`, `explayouts_ui_api`
   und die Standardblöcke), einer öffentlichen Startseite, die mit einem Layout gebaut ist, einem veröffentlichten
   gemeinsamen Kopf-/Fußzeilen-Layout und einigen Beispiel-Layouts und -Zuordnungen. Aufbauen und zurücksetzen:
-  [Modul 2: Die Übungsumgebung aufbauen](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md) von Train the
+  [Modul 2: Die Übungsumgebung aufbauen](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md) von Train the
   Trainer und [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md).
 - Ein Konto pro Teilnehmerin oder Teilnehmer mit Lese- und Bearbeitungsrecht auf den drei Layouts-Modulen; gearbeitet
   wird in der Administration (der Editor-Siteaccess bietet keine Layouts an); E-Mail-Adressen unter `example.invalid`.
@@ -79,13 +79,13 @@ Für Trainer, die den Kurs vorbereiten, in dieser Reihenfolge:
 
 1. [Der Layout-Editor](../../layout-editor.md) und der Layouts-Teil von
    [Rundgang durch die Administration](../../rundgang-durch-die-administration.md#in-der-praxis-der-layout-editor): was die Teilnehmenden sehen werden.
-2. [Landingpages mit dem Layout-Editor](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md) und
-   [Layout-Typen, Zonen und Blöcke](../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md).
-3. [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md) und
-   [Layout-Regeln: welche Seite welches Layout bekommt](../../../../eng-us/help/creators/website-creators/layout-rules.md).
-4. [explayouts_ui](../../../../eng-us/features/6.0/extensions/explayouts_ui.md) und
-   [explayouts_ui_api](../../../../eng-us/features/6.0/extensions/explayouts_ui_api.md): die Bildschirme und der Editor.
-5. [Exponential Layouts](../../../../eng-us/bc/6.0/LAYOUTS.md): die vollständige Referenz; lesen Sie mindestens die Abschnitte zu
+2. [Landingpages mit dem Layout-Editor](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md) und
+   [Layout-Typen, Zonen und Blöcke](../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md).
+3. [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md) und
+   [Layout-Regeln: welche Seite welches Layout bekommt](../../ersteller/website-ersteller/layout-regeln.md).
+4. [explayouts_ui](../../../funktionen/6.0/erweiterungen/explayouts_ui.md) und
+   [explayouts_ui_api](../../../funktionen/6.0/erweiterungen/explayouts_ui_api.md): die Bildschirme und der Editor.
+5. [Exponential Layouts](../../../bc/6.0/layouts.md): die vollständige Referenz; lesen Sie mindestens die Abschnitte zu
    Editor, Layouts, Zonen, Blöcken, Collections, Anheften, Regeln, Entwürfen, gemeinsamen Layouts und Fehlersuche.
 6. [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md): um die Kursrolle vorzubereiten.
 7. Danach die Module der Reihe nach: zuerst jeweils die Modulübersicht (Vorbereitungsliste und Zeitplan), dann ihre
@@ -125,8 +125,8 @@ Teilnehmenden ihr Kurs-Layout.
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -12,9 +12,9 @@ type: help
 Diese Seite richtet sich an Administratoren, Site-Ersteller und Entwickler, die wissen müssen, wie öffentliche Formulare
 und Formulare der Administration gegen gefälschte Einsendungen geschützt sind. Exponential fügt jedem POST-Formular ein
 geheimes Token hinzu und lehnt Sendungen ohne es ab; das ist die Erweiterung `ezformtoken` im Kernel. Quellen:
-[Die Seite „Formular abgelaufen“](../../../../../eng-us/features/6.0/form-expired-page.md),
-[Spamschutz für Formulare](../../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md#form-tokens) und
-[Standards zur Sicherheit](../../../../../eng-us/standards/security.md).
+[Die Seite „Formular abgelaufen“](../../../../funktionen/6.0/seite-abgelaufenes-formular.md),
+[Spamschutz für Formulare](../../../ersteller/website-ersteller/spamschutz-fuer-formulare.md#formular-tokens) und
+[Standards zur Sicherheit](../../../../standards/sicherheit.md).
 
 ## Inhalt
 
@@ -35,7 +35,7 @@ Seite kam, abgelehnt. Es schützt:
 - öffentliche Formulare (Sendungen an den Information Collector).
 
 Es ist eine Schicht der Maßnahmen zu A01 und A08 der [OWASP Top 10](https://owasp.org/Top10/), die in
-[Standards zur Sicherheit](../../../../../eng-us/standards/security.md) aufgeführt sind. Es hält eine Person oder ein Skript, das
+[Standards zur Sicherheit](../../../../standards/sicherheit.md) aufgeführt sind. Es hält eine Person oder ein Skript, das
 zuerst Ihr Formular lädt, nicht davon ab, Spam zu senden; das behandelt
 [Spamschutz und Drittanbieter](spamschutz-und-drittanbieter.md).
 
@@ -86,7 +86,7 @@ Lassen Sie die Erweiterung `ezformtoken` aktiv; der Installer richtet sie ein.
 
 - [Formulare aufbauen](README.md)
 - [Sicherheitshärtung: CSRF](../../../sicherheitshaertung.md#cross-site-request-forgery-csrf)
-- [Formulare, CSRF-Schutz und HTTP-Eingaben](../../../../../eng-us/help/creators/app-creators/forms-csrf-and-http-input.md)
+- [Formulare, CSRF-Schutz und HTTP-Eingaben](../../../ersteller/anwendungsentwickler/formulare-csrf-und-http-eingaben.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

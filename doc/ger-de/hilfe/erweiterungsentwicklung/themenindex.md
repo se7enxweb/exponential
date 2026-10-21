@@ -103,7 +103,7 @@ erklären, das wichtigste zuerst. Die Bedeutung der Begriffe finden Sie im
 - **RAD-Werkzeuge**: [Rundgang durch die RAD-Werkzeuge](teil-3-erweiterungsentwickler/tutorials/rundgang-durch-die-rad-werkzeuge.md), [Ein Theme mit dem RAD-Assistenten](teil-6-theme-entwickler/ein-theme-mit-dem-rad-assistenten.md)
 - **Sicherheit**: [Sicherheit in Erweiterungen](teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md), [ezformtoken und CSRF](teil-8-referenz/ezformtoken-und-csrf.md)
 - **Siteaccesses**: [Siteaccess-Einstellungen](teil-2-builder/siteaccess-einstellungen.md), [Themes und Siteaccesses](teil-6-theme-entwickler/themes-und-siteaccesses.md)
-- **Systemkarte (exp:expfetch)**: [Fakten, Themes und Logos für die Systemkarte](teil-3-erweiterungsentwickler/fakten-themes-und-logos-fuer-die-systemkarte.md), [Die Systemkarte](../../../eng-us/features/6.0/system-card.md)
+- **Systemkarte (exp:expfetch)**: [Fakten, Themes und Logos für die Systemkarte](teil-3-erweiterungsentwickler/fakten-themes-und-logos-fuer-die-systemkarte.md), [Die Systemkarte](../../funktionen/6.0/systemkarte.md)
 
 ## T
 

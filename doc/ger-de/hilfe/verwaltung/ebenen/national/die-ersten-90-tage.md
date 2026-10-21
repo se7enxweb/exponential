@@ -28,7 +28,7 @@ Sie eine Installation haben, an der Sie arbeiten können.
 |---|---|---|
 | Product Owner, Webteam und je veröffentlichender Einheit einen Kontakt benennen | Leitung | ein Organigramm der Steuerung |
 | Vereinbaren, wer was veröffentlichen darf und wer freigibt | Einheiten, Webteam | eine Freigabematrix |
-| Bestandsaufnahme der aktuellen Website: Seiten, Dokumente, Verantwortliche, letzte Änderung | Webteam | eine Tabelle ([Sitemap und Inhaltsinventar](../../../../../eng-us/help/creators/website-creators/site-map-and-content-inventory.md)) |
+| Bestandsaufnahme der aktuellen Website: Seiten, Dokumente, Verantwortliche, letzte Änderung | Webteam | eine Tabelle ([Sitemap und Inhaltsinventar](../../../ersteller/website-ersteller/sitemap-und-inhaltsbestandsaufnahme.md)) |
 | Entscheiden, was nicht migriert wird | Einheiten | eine Liste aufzugebender Seiten, mit Umleitungen |
 | Anforderungen mit den Beauftragten für Barrierefreiheit, Sicherheit, Datenschutz und Schriftgut sammeln | Projektverantwortliche | die Anforderungstabelle ([Schwerpunkte der Anforderungen](schwerpunkte-der-anforderungen.md)) |
 | Installationen für Entwicklung, Test und Produktion einrichten | Betrieb | drei Installationen, dieselbe Version ([Bereitstellen](../../../../anleitungen/bereitstellung.md)) |
@@ -46,7 +46,7 @@ Sie eine Installation haben, an der Sie arbeiten können.
 | Die Inhaltsklassen (Publikation, Konsultation, Pressemitteilung ...) auf der Entwicklung anlegen | Klassen unter **Setup > Klassen** | [Inhaltsmodell](inhaltsmodell.md) |
 | Baum, Sektionen und Rollen bauen | die Struktur | [Struktur, Sektionen und Rollen](struktur-sektionen-und-rollen.md) |
 | Den Freigabe-Workflow und seinen Trigger sowie die Crontab einrichten | eine ausstehende Version, die nach der Freigabe veröffentlicht wird | [Workflows](../../../../anleitungen/workflows.md), [Cronjobs](../../../../anleitungen/cronjobs.md) |
-| Das öffentliche Design bauen oder anpassen; auf Barrierefreiheit testen | Templates | [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md), [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
+| Das öffentliche Design bauen oder anpassen; auf Barrierefreiheit testen | Templates | [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md), [Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
 | Sprachen und Siteaccesses konfigurieren | ein Siteaccess je Sprache | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
 | Die zweistufige Anmeldung für Beschäftigte einschalten | über `Enforce2FA` entschieden | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Klassen als Paket von der Entwicklung in den Test übertragen | ein getestetes Paket | [Pakete](../../../../anleitungen/pakete.md) |
@@ -65,10 +65,10 @@ Sie eine Installation haben, an der Sie arbeiten können.
 |---|---|---|
 | Inhalte Einheit für Einheit in die Sektion Staging migrieren | Inhalte vorhanden, für Besucher unsichtbar | [Sektionen 13.3](../../../../anleitungen/sektionen.md#133-inhalte-vorbereiten-bevor-sie-öffentlich-werden) |
 | Redaktion und Freigebende schulen | alle haben eine Testseite veröffentlicht | [Editors 101](../../../trainer/redakteure-101/README.md) |
-| Umleitungen für alte Adressen einrichten | Platzhalter und Aliase | [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
-| Lasttest mit eingeschalteten Caches | ein gemessenes Ergebnis | [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
-| Wartungsmodus und eine Wiederherstellung aus der Sicherung proben | ein Probelauf mit Zeitmessung | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md), [Sicherungen und Wiederherstellungen](../../../../../eng-us/help/creators/website-creators/backups-and-restores.md) |
-| Start: die Inhalte aus Staging Standard zuweisen, DNS umstellen | die Website ist live | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Umleitungen für alte Adressen einrichten | Platzhalter und Aliase | [Umleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
+| Lasttest mit eingeschalteten Caches | ein gemessenes Ergebnis | [Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md) |
+| Wartungsmodus und eine Wiederherstellung aus der Sicherung proben | ein Probelauf mit Zeitmessung | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md), [Sicherungen und Wiederherstellungen](../../../ersteller/website-ersteller/backups-und-wiederherstellungen.md) |
+| Start: die Inhalte aus Staging Standard zuweisen, DNS umstellen | die Website ist live | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 **Prüfungen an Tag 90**
 
@@ -91,7 +91,7 @@ Sie eine Installation haben, an der Sie arbeiten können.
 
 - [Nationale Regierung](README.md)
 - [Viele Ministerien auf einer Plattform](viele-ministerien-auf-einer-plattform.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

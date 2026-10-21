@@ -56,7 +56,7 @@ und [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt). Das Urheberrecht l
 | Punkt | Quelle |
 |---|---|
 | Code unter GNU GPL v2 oder später; Beiträge unter derselben Lizenz | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Dokumentation unter GNU FDL 1.3 oder später | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
+| Dokumentation unter GNU FDL 1.3 oder später | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
 | Velocity unter MIT; DXP "GPL-2.0-or-later or proprietary" | [Wer ist 7x?](../wer-ist-7x.md#open-source-lizenzen), [DXP](../wer-ist-die-exponential-foundation.md#exponential-platform-dxp) |
 | Sechs Datenbanken, mehrere Betriebssysteme und Webserver | [Briefing für die Fachpresse](briefing-fuer-fachpresse.md) |
 

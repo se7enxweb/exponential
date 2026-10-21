@@ -6,7 +6,7 @@ Installation, die `sevenx_themes_admin_classic` verwendet. Sie führt die neue K
 Cache-Schlüssel, das Verhalten auf den persistenten Workern von Velocity und was die Kernel-Overrides von
 `sevenx_themes_admin_classic` ersetzt. Gültig seit dem 15. Oktober 2026.
 
-Die Seite für Benutzer ist [die Funktionsseite](../../../eng-us/features/6.0/ui-switch-design.md), die Einstellungen
+Die Seite für Benutzer ist [die Funktionsseite](../../funktionen/6.0/ui-umschalter-design.md), die Einstellungen
 stehen in [der Anleitung](../../anleitungen/ui-umschalter-design.md). Das Framework, auf dem dies aufbaut (Registry,
 Modul `uiswitch`, Richtlinien, Speicherung in der Sitzung, Varianten-Schlüssel des Caches), ist in
 [UI-Umschaltung: Hinweise für Entwickler](ui-umschalter.md) beschrieben.
@@ -196,7 +196,7 @@ In einer Installation, die die Overrides verwendet hat:
 
 ## Verwandte Seiten
 
-- [Funktion: das Administrationsdesign wählen](../../../eng-us/features/6.0/ui-switch-design.md)
+- [Funktion: das Administrationsdesign wählen](../../funktionen/6.0/ui-umschalter-design.md)
 - [Anleitung: die Umschaltung des Administrationsdesigns](../../anleitungen/ui-umschalter-design.md)
 - [UI-Umschaltung: Hinweise für Entwickler](ui-umschalter.md)
 - [Velocity-Engines und das Bereitstellen einer PHP-Änderung](velocity-engines.md)

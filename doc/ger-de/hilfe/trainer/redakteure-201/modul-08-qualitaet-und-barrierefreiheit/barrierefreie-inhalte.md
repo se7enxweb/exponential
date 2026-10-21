@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Standards für Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) und
+Quellen: [Standards für Barrierefreiheit](../../../../standards/barrierefreiheit.md) und
 [Bilder, Medien und Uploads](../../../medien-und-uploads.md#bewährte-vorgehensweise).
 
 1. **Warum Redakteure wichtig sind** (3 Minuten). Die Erklärung zur Barrierefreiheit des Projekts sagt es klar:
@@ -129,13 +129,13 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *Our team, two places*
    Größe fest.
 4. Zum Beispiel: „Unsere Öffnungszeiten ansehen“.
 5. Alternativtext, Überschriftenreihenfolge und Linktext
-   ([Standards für Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
+   ([Standards für Barrierefreiheit](../../../../standards/barrierefreiheit.md)).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Standards für Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): was das Projekt einhält und die bekannten
+- [Standards für Barrierefreiheit](../../../../standards/barrierefreiheit.md): was das Projekt einhält und die bekannten
   Lücken.
 - [Bilder, Medien und Uploads](../../../medien-und-uploads.md#bewährte-vorgehensweise): Alternativtext und Titel.
 - [Für Barrierefreiheit eintreten](../../../fuersprecher/fuer-barrierefreiheit-eintreten.md): über barrierefreies
@@ -145,7 +145,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *Our team, two places*
 
 - [Modul 8: Qualität und Barrierefreiheit](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

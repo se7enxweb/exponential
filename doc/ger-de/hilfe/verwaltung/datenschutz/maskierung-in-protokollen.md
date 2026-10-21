@@ -11,8 +11,8 @@ type: help
 
 Diese Seite richtet sich an Administratoren. Protokolle sind voller personenbezogener Daten: Adressen, E-Mail-Adressen
 in URLs, User-Agents. Exponential maskiert sie an zwei Stellen, beim Schreiben der Anfrageprotokolle und beim Anzeigen
-jedes Protokolls ([Protokollbetrachter: Datenschutz](../../../../eng-us/features/6.0/log-viewer.md#privacy-what-is-masked),
-[Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).
+jedes Protokolls ([Protokollbetrachter: Datenschutz](../../../funktionen/6.0/log-betrachter.md#datenschutz-was-maskiert-wird),
+[Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -68,8 +68,8 @@ wurde. Geben Sie die Richtlinie nur sehr wenigen Personen, für Untersuchungen.
 
 ## Verwandte Seiten
 
-- [Der Protokollbetrachter](../../../../eng-us/features/6.0/log-viewer.md)
-- [Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)
+- [Der Protokollbetrachter](../../../funktionen/6.0/log-betrachter.md)
+- [Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)
 - [Aufbewahrung von Protokollen](aufbewahrung-von-protokollen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

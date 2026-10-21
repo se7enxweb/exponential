@@ -107,7 +107,7 @@ die Website von außen erreichbar ist.
 - [Leistung](../leistung/README.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
-- [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)
+- [Velocity-Engines](../../../bc/6.0/velocity-engines.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Befehle zur Serversteuerung](../../../../../eng-us/features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)
+Quelle: [Befehle zur Serversteuerung](../../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver)
 und [Such-Backends](../../../hosting/grundlagen/such-backends.md#der-befehl-expsolr).
 
 1. **Zwei Blöcke** (4 Minuten). Schreiben Sie beide an die Tafel:
@@ -137,7 +137,7 @@ Terminal läuft. Fügen Sie `--allow-root-user` nur hinzu, wenn Sie als root arb
 
 1. **B.** `SearchServerURI` in `[SolrBase]` von ezfind.
 2. Sie melden, dass Solr anderswo verwaltet wird, und tun nichts
-   ([Befehle zur Serversteuerung](../../../../../eng-us/features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)).
+   ([Befehle zur Serversteuerung](../../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver)).
 3. `false`.
 4. Damit eine Überwachungsprüfung „nicht konfiguriert“ nie mit „läuft“ verwechselt.
 5. In `settings/override/solr.ini.append.php` (oder die Einstellungen eines Siteaccess), nie in `settings/solr.ini`.
@@ -146,7 +146,7 @@ Terminal läuft. Fügen Sie `--allow-root-user` nur hinzu, wenn Sie als root arb
 
 ## Weiterführende Informationen
 
-- [Befehle zur Serversteuerung](../../../../../eng-us/features/6.0/web-server-and-solr-commands.md): die Referenz zu `exp:solr`
+- [Befehle zur Serversteuerung](../../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md): die Referenz zu `exp:solr`
   und die Tabelle zu `[SolrSettings]`.
 - [Zustandsprüfungen und Verfügbarkeit](../../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md): Prüfungen in die
   Überwachung aufnehmen.
@@ -156,7 +156,7 @@ Terminal läuft. Fügen Sie `--allow-root-user` nur hinzu, wenn Sie als root arb
 
 - [Modul 4: Solr und ezfind](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

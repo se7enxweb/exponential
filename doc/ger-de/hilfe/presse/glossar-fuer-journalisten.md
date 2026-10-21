@@ -11,7 +11,7 @@ type: help
 # Glossar für Journalisten
 
 Diese Seite ist für Journalisten und ihre Leser. Jeder Begriff wird in ein oder zwei einfachen Sätzen erklärt, mit einem
-Link auf die Seite, die tiefer geht. Die eigenen Glossare des Projekts sind [das Glossar](../../../eng-us/glossary.md) für
+Link auf die Seite, die tiefer geht. Die eigenen Glossare des Projekts sind [das Glossar](../../glossar.md) für
 technische Begriffe und das [Glossar der Foundation](../wer-ist-die-exponential-foundation.md#glossar) für die Familie
 und die Geschichte.
 
@@ -110,7 +110,7 @@ und die Geschichte.
 ## Verwandte Seiten
 
 - [FAQ für Reporter](faq-fuer-reporter.md)
-- [Das Glossar](../../../eng-us/glossary.md)
+- [Das Glossar](../../glossar.md)
 - [Glossar für Fürsprecher](../fuersprecher/glossar-fuer-fuersprecher.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

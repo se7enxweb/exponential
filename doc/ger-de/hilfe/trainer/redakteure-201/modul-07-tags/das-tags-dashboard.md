@@ -37,7 +37,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md).
+Quelle: [eztags](../../../../funktionen/6.0/erweiterungen/eztags.md).
 
 1. **Das Dashboard** (4 Minuten). Der Reiter **Tags** (`/tags/dashboard`) öffnet das **Tags dashboard**: den Tag-Baum
    in der linken Spalte, eine Liste mit **ID**, **Tag name**, **Parent tag name** und **Modified**, **Children tags
@@ -109,7 +109,7 @@ Verwenden Sie die Schulungsinstallation mit einer Rolle, die Tags lesen und hinz
 <details>
 <summary>Antworten</summary>
 
-1. Unter dem Reiter **Tags** (`/tags/dashboard`) ([eztags](../../../../../eng-us/features/6.0/extensions/eztags.md#use-it)).
+1. Unter dem Reiter **Tags** (`/tags/dashboard`) ([eztags](../../../../funktionen/6.0/erweiterungen/eztags.md#verwenden)).
 2. **B.**
 3. Das Zusammenführen macht aus zwei Tags einen (die Inhalte bekommen den verbleibenden Tag); ein Synonym lässt beide
    Wörter zu einem Haupt-Tag führen.
@@ -120,14 +120,14 @@ Verwenden Sie die Schulungsinstallation mit einer Rolle, die Tags lesen und hinz
 
 ## Weiterführende Informationen
 
-- [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md): die Erweiterung, ihre Richtlinien und Einstellungen.
+- [eztags](../../../../funktionen/6.0/erweiterungen/eztags.md): die Erweiterung, ihre Richtlinien und Einstellungen.
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md): Redakteuren die Tags-Richtlinien geben.
 
 ## Verwandte Seiten
 
 - [Modul 7: Tags](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

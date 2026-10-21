@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen, Kommunikationsteams und Datenschutzbeauftragte. Öffentliche Stellen
 müssen wissen, welche Dienste die Menschen nutzen und was sie nicht finden; zugleich müssen sie die Privatsphäre der
 Besucher achten. Exponential bietet einige eigene Statistiken; ein vollständiger Analysedienst ist eine Erweiterung
-und ein Drittanbieter ([Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
+und ein Drittanbieter ([Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -38,7 +38,7 @@ Diese Quellen beantworten betriebliche Fragen; sie sind kein Analysedienst.
 ## bcwebsitestatistics und Google Analytics
 
 Die Erweiterung fügt das Google-Analytics-Skript in die Seiten ein und kann Shop-Bestellungen über den Workflow-Typ
-`ezreceipt` melden ([bcwebsitestatistics](../../../../eng-us/features/6.0/extensions/bcwebsitestatistics.md)). Die Einstellungen
+`ezreceipt` melden ([bcwebsitestatistics](../../../funktionen/6.0/erweiterungen/bcwebsitestatistics.md)). Die Einstellungen
 stehen in `settings/override/bcwebsitestatistics.ini.append.php`; setzen Sie `Urchin` immer auf Ihre eigene Property.
 Laut der Datenschutzerklärung des Projekts hat sie **keine eigene Einwilligungsabfrage**.
 
@@ -59,7 +59,7 @@ Exponential (regelmäßig zurückgesetzt).
 
 ## Verwandte Seiten
 
-- [Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)
+- [Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)
 - [Erweiterungen von Drittanbietern und Datenschutz](erweiterungen-von-drittanbietern.md)
 - [Suchbegriffe](suchbegriffe.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

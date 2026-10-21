@@ -54,7 +54,7 @@ einen tieferen, wo auch immer er liegt.
 
 `DesignExtensions[]` füllen die Erweiterungen selbst: Jede Theme-Erweiterung hat eine `settings/design.ini.append.php` mit
 `DesignExtensions[]=<its own name>`. Ihre Position in der Liste folgt der Reihenfolge, in der Erweiterungen geladen werden (siehe
-[Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)).
+[Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)).
 
 ## Ein ausgearbeitetes Beispiel
 

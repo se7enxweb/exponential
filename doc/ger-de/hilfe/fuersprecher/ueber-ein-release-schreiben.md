@@ -42,7 +42,7 @@ veröffentlicht“.
 | Quelle | Was sie Ihnen gibt |
 |---|---|
 | [Änderungsprotokolle](../../../changelogs/README.md), z. B. [6.0.15](../../../changelogs/6.0/6.0.15.md) | Die Liste der Änderungen einer Version |
-| [Die Geschichte](../../../eng-us/history/README.md) | Monatsseiten, die erklären, was jede Änderung möglich macht |
+| [Die Geschichte](../../geschichte/README.md) | Monatsseiten, die erklären, was jede Änderung möglich macht |
 | Funktionsseiten in `doc/eng-us/features/6.0/` | Wie man jede neue Funktion nutzt |
 | Hinweise zur Abwärtskompatibilität in `doc/eng-us/bc/6.0/` | Was beim Upgrade zu prüfen ist |
 | [Upgrade](../../installation/11-aktualisieren.md) | Wie man sicher aktualisiert |

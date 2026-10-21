@@ -35,7 +35,7 @@ Schreiben Sie in je einem Satz die zwei oder drei Dinge auf, die die Website lei
 - Kontaktanfragen, Anmeldungen oder Rückmeldungen sammeln.
 
 Alles andere ist optional. Die allgemeine Methode steht in
-[Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md).
+[Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md).
 
 ## Die wenigen Seiten, die eine Gruppe braucht
 
@@ -65,7 +65,7 @@ Die Website-Oberfläche `ezwebin` bringt fertige Klassenpakete mit (`extension/e
 
 Wenn Sie diese statt eigener Klassen verwenden, gibt es bei jeder Übergabe weniger zu erklären. Wenn Ihre Website mit
 einem Website-Paket installiert wurde, prüfen Sie, welche Klassen es schon hat, bevor Sie welche hinzufügen
-([Website-Pakete und mitgelieferte Themes](../../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md)).
+([Website-Pakete und mitgelieferte Themes](../../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md)).
 
 ## Wer was tut
 
@@ -85,8 +85,8 @@ Einzelheiten in [Gemeinsam bearbeiten mit Ehrenamtlichen](gemeinsam-bearbeiten-m
 
 Legen Sie fest, welche Inhalte öffentlich sind, welche für Mitglieder und welche nur für den Vorstand (Entwürfe von
 Protokollen, Kontaktlisten). Sektionen und Rollen halten sie auseinander, und bei Downloads werden die Berechtigungen
-geprüft ([Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md),
-[Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads)). Halten Sie
+geprüft ([Sektionen und Objektzustände](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md),
+[Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads)). Halten Sie
 personenbezogene Daten von Mitgliedern vollständig von öffentlichen Seiten fern.
 
 ## Für Kontinuität planen
@@ -111,7 +111,7 @@ in Einstellungsdateien, die in die Versionsverwaltung gehen. Die Übergabe selbs
 - Bevorzugen Sie gehostetes oder verwaltetes Hosting, wenn kein Ehrenamtlicher einen Server aktualisieren kann
   ([Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md#hosting-möglichkeiten)).
 - SQLite, die Standarddatenbank, braucht keinen Datenbankserver, was zu einer Gruppe mit wenigen Redakteuren passt
-  ([SQLite-Datenbankunterstützung](../../../../eng-us/features/6.0/sqlite-database.md)).
+  ([SQLite-Datenbankunterstützung](../../../funktionen/6.0/sqlite-datenbank.md)).
 - Entfernen Sie bei jeder jährlichen Prüfung Funktionen, die niemand nutzt.
 
 ## Ein Planungsarbeitsblatt
@@ -135,7 +135,7 @@ Yearly review month:        ...
 - [Vereine und kleine Gruppen](README.md)
 - [Checkliste für kleine Gruppen](checkliste-fuer-kleine-gruppen.md)
 - [Website-Planung für gemeinnützige Organisationen](../gemeinnuetzige/website-planung-fuer-gemeinnuetzige.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

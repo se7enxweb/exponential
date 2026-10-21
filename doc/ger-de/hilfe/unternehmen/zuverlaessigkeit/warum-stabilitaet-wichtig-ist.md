@@ -81,7 +81,7 @@ Produkts, keine kostenpflichtigen Zusätze:
 |---|---|---|
 | Zustandsprüfungen unter **Setup > Systeminformationen** | Listen auf, was Aufmerksamkeit braucht, mit dem, was zu tun ist, bevor ein Ausfall daraus wird | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
 | Fehlerreferenzen | Die Fehlerseite eines Kunden zeigt eine Referenz, die direkt zu den Log-Zeilen führt | [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
-| Prüfprotokoll | Zeichnet auf, wer was getan hat, und beweist, dass die Aufzeichnung nicht verändert wurde | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Prüfprotokoll | Zeichnet auf, wer was getan hat, und beweist, dass die Aufzeichnung nicht verändert wurde | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Wartungsmodus | Nimmt die Website mit einer sauberen Seite und einem Status 503, den Suchmaschinen verstehen, vom Netz | [Wartungsmodus](../../../anleitungen/wartungsmodus.md) |
 | Upgrade-Prüfung | Vergleicht Dateien und Datenbank vor der Aktualisierung mit dem Release | [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Caches und Velocity | Halten die Website antwortfähig, wenn viele Menschen gleichzeitig kommen | [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md) |

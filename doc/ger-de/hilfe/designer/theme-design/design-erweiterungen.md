@@ -126,7 +126,7 @@ zurückfällt, die Administration eingeschlossen.
 - [Die Design-Kaskade](die-design-kaskade.md)
 - [Der Aufbau des Design-Verzeichnisses](aufbau-des-design-verzeichnisses.md)
 - [Tutorial: eine Theme-Erweiterung anlegen](tutorial-eine-theme-erweiterung-anlegen.md)
-- [Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)
+- [Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

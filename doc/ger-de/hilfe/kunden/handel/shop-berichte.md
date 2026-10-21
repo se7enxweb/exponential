@@ -20,7 +20,7 @@ Monatsbericht. Was jede Zahl bedeutet, ist unter [Shop-Dashboard und Berichte f�
 | Shop-Dashboard | `shop/dashboard` | Bestellungen heute, in 7 und 30 Tagen mit Trend; Umsatz und durchschnittliche Bestellung pro Währung; neue, wiederkehrende und alle bisherigen Kunden; offene Bestellungen; laufende und abgebrochene Warenkörbe; Produkte ohne Preis; Umsatz pro Tag; Aufschlüsselung nach Status; Bestseller | `shop/administrate` |
 | Produkt-Statistiken | `shop/statistics` | Verkäufe pro Produkt für ein Jahr und einen Monat Ihrer Wahl | `shop/administrate` |
 
-Quellen: [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md), `kernel/shop/module.php`,
+Quellen: [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md), `kernel/shop/module.php`,
 `kernel/private/classes/views/shop/orderstatistics.php`. Die Summen verwenden die Rechenweise der Bestellliste, und
 fehlgeschlagene, stornierte und erstattete Bestellungen zählen als Bestellungen, aber nicht als Umsatz.
 
@@ -78,13 +78,13 @@ __________________________________________________________________
 - Kein Export in eine Tabellenkalkulation: Die Shop-Ansichten haben keinen CSV-Export der Bestellungen. Übertragen Sie
   Zahlen von Hand, oder bitten Sie Ihren Partner um einen Export ([Shop-Dashboard und Berichte für Unternehmen](../../unternehmen/shops/shop-uebersicht-und-berichte.md)).
 - Keine Besucherauswertung: Für Besucherzahlen und Konversion siehe
-  [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md).
+  [Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md).
 - Keine Lagerzahlen: Der Shop hat keine Lagerverwaltung.
 
 ## Verwandte Seiten
 
 - [Shop-Dashboard und Berichte für Unternehmen](../../unternehmen/shops/shop-uebersicht-und-berichte.md)
-- [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+- [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 - [Monatliche Shop-Checkliste](monatliche-shop-checkliste.md)
 - [Den ROI messen](../nutzen/den-roi-messen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Administratorinnen und -Administratoren in �
 Änderung eine Datensicherung brauchen, aber keine Shell auf dem Server haben, zum Beispiel weil eine zentrale
 IT-Abteilung die Maschinen betreibt. Sie beantwortet, was die Sicherungsseite der Extension `git_manager` tut, wie Sie
 sie verwenden und warum sie das Sicherungssystem der Organisation ergänzt, aber nicht ersetzt. Die Funktionsseite ist
-[git_manager](../../../../../eng-us/features/6.0/extensions/git_manager.md).
+[git_manager](../../../../funktionen/6.0/erweiterungen/git_manager.md).
 
 ## Inhalt
 

@@ -28,7 +28,7 @@ entscheiden. Sie enthält keine Marktzahlen; messen Sie Ihre eigenen Besucher, b
 Bevor Sie einen Kanal wählen, finden Sie aus Ihren eigenen Daten heraus:
 
 - [ ] Welcher Anteil der Besuche und Bestellungen von Telefonen kommt (Ihre Analysen; die Optionen von Exponential für
-      Statistiken stehen unter [Besucherstatistiken und Analysen](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
+      Statistiken stehen unter [Besucherstatistiken und Analysen](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
 - [ ] Was Kunden auf einem Telefon tun: Öffnungszeiten nachsehen, Neuigkeiten lesen, nachbestellen, eine Bestellung
       prüfen, einen Katalog durchstöbern.
 - [ ] Was sie mit einer App öfter tun würden: Offline-Nutzung, Benachrichtigungen, eine Kundenkarte, Scannen.
@@ -50,14 +50,14 @@ Die Dokumentation für App-Entwickler empfiehlt: „Many projects keep the site 
 That keeps preview, layouts and SEO simple for the site, and gives the app the same content. Start hybrid unless there
 is a reason not to“ (Viele Projekte behalten die Website in Templates und fügen eine App auf der API hinzu. Das hält
 Vorschau, Layouts und SEO für die Website einfach und gibt der App dieselben Inhalte. Beginnen Sie hybrid, wenn nichts
-dagegen spricht, [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md#hybrid-templates-and-api-together)).
+dagegen spricht, [Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md#hybrid-templates-und-api-zusammen)).
 
 ## Warum eine Quelle für Inhalte wichtig ist
 
 Welche Option Sie auch wählen, Redakteure behalten einen Arbeitsort: Inhaltsklassen, Bearbeitung, Versionen,
 Übersetzungen, Workflows und Berechtigungen bleiben in Exponential, und jeder API-Aufruf wird gegen die Richtlinien des
 Benutzers geprüft
-([Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md#what-you-keep-and-what-you-replace)).
+([Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md#was-sie-behalten-und-was-sie-ersetzen)).
 Für ein Unternehmen bedeutet das:
 
 - eine Produktbeschreibung, ein Preis und ein Foto, auf der Website und in der App gezeigt;
@@ -84,11 +84,11 @@ Auch Redakteure können von Telefonen aus arbeiten:
 - Das Design **admin4** hat ein Telefonlayout mit einem Hamburger-Menü, das „always fits the visible screen“ (immer auf
   den sichtbaren Bildschirm passt), Kacheln von 44 px für die Tabs und eine Anmeldeseite, die „fast on phones“ (auf
   Telefonen schnell) ist, mit Text von 16 px, „so mobile Safari does not zoom“ (damit das mobile Safari nicht zoomt,
-  [Design admin4](../../../../eng-us/features/6.0/admin4-design.md)).
+  [Design admin4](../../../funktionen/6.0/admin4-design.md)).
 - **admin3** ist die klassische Administration „with a sidebar that collapses, menus that work by touch, and content
   forms that stack instead of overflowing“ (mit einer einklappbaren Seitenleiste, Menüs, die per Berührung
   funktionieren, und Inhaltsformularen, die sich stapeln, statt überzulaufen,
-  [Das responsive Design der Administration](../../../../eng-us/features/6.0/admin3-responsive-admin.md)).
+  [Das responsive Design der Administration](../../../funktionen/6.0/admin3-responsives-admin.md)).
 
 Das zählt für kleine Teams: Eine Neuigkeit, eine Änderung der Öffnungszeiten oder eine Preiskorrektur lässt sich
 unterwegs erledigen.
@@ -110,7 +110,7 @@ unterwegs erledigen.
 - [Responsive Websites](responsive-websites.md)
 - [Headless mit der REST API](headless-mit-der-rest-api.md)
 - [Checkliste mobil](checkliste-mobil.md)
-- [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md)
+- [Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md)
 - [Wie Unternehmen online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

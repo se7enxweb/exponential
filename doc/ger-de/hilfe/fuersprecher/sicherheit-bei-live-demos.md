@@ -37,7 +37,7 @@ Die Demo-Skripte enthalten dieselbe Warnung ([Demo-Skripte](../geschaeft/demo-dr
 
 ## Eine saubere Demo-Installation vorbereiten
 
-1. Installieren Sie eine frische Kopie mit erfundenen Inhalten ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)).
+1. Installieren Sie eine frische Kopie mit erfundenen Inhalten ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 2. Ändern Sie das erzeugte Passwort; löschen Sie `var/log/initial-admin-password`
    ([Das Standardpasswort des Administrators](../standard-administratorpasswort.md)).
 3. Legen Sie Demo-Konten mit erfundenen Namen an (zum Beispiel „Demo Redakteur“), nie für echte Menschen.

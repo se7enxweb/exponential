@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren und Entwickler, die Entwicklungs-, Test- und Produktionskopien einer öffentlichen
 Website betreiben. Am Ende kennt jede Maschine ihre Umgebung und liest automatisch die richtigen Einstellungen
-([Einstellungen je Umgebung](../../../../../eng-us/features/6.0/environment-settings.md)).
+([Einstellungen je Umgebung](../../../../funktionen/6.0/umgebungseinstellungen.md)).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -81,9 +81,9 @@ gibt auf der Testmaschine `file` und in der Produktion Ihren E-Mail-Transport au
   von PHP vermerkt).
 
 ## Verwandte Seiten
-- [Umgebungen: Entwicklung, Test und Produktion](../../../../../eng-us/help/government/operations/hosting/environments-dev-test-prod.md)
-- [Staging und Genehmigung](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md)
-- [Probleme mit E-Mails](../../../../../eng-us/help/government/operations/incidents/mail-problems.md)
+- [Umgebungen: Entwicklung, Test und Produktion](../../betrieb/hosting/umgebungen-entwicklung-test-produktion.md)
+- [Staging und Genehmigung](../../betrieb/aktualisierungen-und-aenderungen/staging-und-freigabe.md)
+- [Probleme mit E-Mails](../../betrieb/vorfaelle/probleme-mit-e-mails.md)
 - [Die Konfiguration mit ManagedByDeployment sperren](die-konfiguration-mit-managedbydeployment-sperren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

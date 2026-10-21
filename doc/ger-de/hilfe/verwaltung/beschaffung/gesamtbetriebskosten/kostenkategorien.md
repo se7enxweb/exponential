@@ -36,11 +36,11 @@ Arbeit beschreibt, damit Sie Lieferanten die richtigen Dinge bepreisen lassen. S
 
 | Zeile | Treiber | Dokumentation |
 |---|---|---|
-| Inhaltsmodell | Zahl und Komplexität der Inhaltstypen | [Ihr Inhaltsmodell entwerfen](../../../../../eng-us/help/creators/website-creators/designing-your-content-model.md) |
-| Design und Templates | eigenes Design gegenüber einem mitgelieferten Theme | [Ein Design oder Theme wählen](../../../../../eng-us/help/creators/website-creators/choosing-a-design-or-theme.md) |
+| Inhaltsmodell | Zahl und Komplexität der Inhaltstypen | [Ihr Inhaltsmodell entwerfen](../../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md) |
+| Design und Templates | eigenes Design gegenüber einem mitgelieferten Theme | [Ein Design oder Theme wählen](../../../ersteller/website-ersteller/ein-design-oder-theme-waehlen.md) |
 | Integrationen | anzubindende andere Systeme | [REST API v1 und v2](../../../../anleitungen/rest-api-v1-und-v2.md) |
 | Migration der Inhalte | Menge und Struktur der alten Inhalte | [Übersicht zur Migration](../../../../installation/migration/README.md) |
-| Multisite und Sprachen | Zahl der Websites und Sprachen | [Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md), [Mehrsprachige Websites](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md) |
+| Multisite und Sprachen | Zahl der Websites und Sprachen | [Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md), [Mehrsprachige Websites](../../../ersteller/website-ersteller/mehrsprachige-websites.md) |
 
 ## Infrastruktur und Hosting
 
@@ -72,10 +72,10 @@ Arbeit beschreibt, damit Sie Lieferanten die richtigen Dinge bepreisen lassen. S
 
 | Zeile | Treiber | Dokumentation |
 |---|---|---|
-| Audit der Barrierefreiheit und Erklärung | öffentliche Designs werden vom Projekt nicht geprüft | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) |
-| Sicherheitstests | Penetrationstest, Wiederholungstests | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
-| Datenschutzarbeit | verarbeitete personenbezogene Daten, Dritte | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
-| Schriftgut und Archivierung | Aufbewahrungsregeln | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Audit der Barrierefreiheit und Erklärung | öffentliche Designs werden vom Projekt nicht geprüft | [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) |
+| Sicherheitstests | Penetrationstest, Wiederholungstests | [Sicherheitsstandards](../../../../standards/sicherheit.md) |
+| Datenschutzarbeit | verarbeitete personenbezogene Daten, Dritte | [Datenschutzstandards](../../../../standards/datenschutz.md) |
+| Schriftgut und Archivierung | Aufbewahrungsregeln | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 
 ## Ausstieg
 

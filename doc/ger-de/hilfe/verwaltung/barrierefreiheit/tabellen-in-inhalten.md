@@ -64,7 +64,7 @@ Sie es in Ihrem Editor (siehe „Der Online-Editor und die Barrierefreiheit“).
 ## Verwandte Seiten
 
 - [Barrierefreie Inhalte für die Redaktion](barrierefreie-inhalte-fuer-die-redaktion.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

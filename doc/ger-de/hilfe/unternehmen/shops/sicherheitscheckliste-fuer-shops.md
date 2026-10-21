@@ -44,7 +44,7 @@ Sicht des Projekts auf die Bedrohungen steht unter [Sicherheitshärtung](../../s
 |---|---|---|
 | Das anfängliche Administratorpasswort der Installation wurde geändert | Hoster oder Partner | [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md) |
 | Jede Person hat ihr eigenes Konto; niemand teilt eines | Inhaber | [Sicherheitshärtung](../../sicherheitshaertung.md#checkliste) |
-| Für Administratoren und Shop-Mitarbeiter ist die zweistufige Anmeldung Pflicht | Hoster oder Partner | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md), [sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md) |
+| Für Administratoren und Shop-Mitarbeiter ist die zweistufige Anmeldung Pflicht | Hoster oder Partner | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md), [sevenx_authentication_2fa](../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md) |
 | Konten ausgeschiedener Personen werden am selben Tag deaktiviert | Inhaber | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md) |
 | Die Administration läuft auf einem eigenen Host und ist eingeschränkt | Hoster | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md) |
 
@@ -71,7 +71,7 @@ Die Funktionen des Shops sind `buy`, `administrate`, `setup`, `edit_status` und 
 - [ ] Testmodus und Sandbox-Adressen des Anbieters am Starttag entfernt.
 - [ ] Geheimnisse (Schlüssel der Zahlungsanbindung, das Beleg-Geheimnis) liegen in Override-Dateien, nie in
   ausgelieferten Dateien oder in der Versionsverwaltung
-  ([Umgebungseinstellungen und Geheimnisse](../../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md)).
+  ([Umgebungseinstellungen und Geheimnisse](../../ersteller/anwendungsentwickler/umgebungseinstellungen-und-geheimnisse.md)).
 
 ## Die Website und der Server
 
@@ -80,11 +80,11 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 - [ ] Überall HTTPS, mit HSTS und sicheren Cookies ([TLS und HTTPS](../../hosting/sicherheit/tls-und-https.md)).
 - [ ] `ezformtoken` aktiv, sodass Formulare ein Token pro Sitzung gegen Cross-Site-Request-Forgery tragen.
 - [ ] Content Security Policy durchgesetzt, zuerst in der Administration, dann auf den Websites
-  ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+  ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 - [ ] Debug-Ausgabe aus, und PHP-Fehler werden nicht angezeigt.
 - [ ] Der Installationsassistent kann auf der installierten Website nicht laufen.
 - [ ] Der Code ist für den Benutzer des Webservers nur lesbar.
-- [ ] Ein request-shield oder Request-Regeln davor ([Request-Regeln](../../../../eng-us/features/6.0/request-rules.md)).
+- [ ] Ein request-shield oder Request-Regeln davor ([Request-Regeln](../../../funktionen/6.0/anfrageregeln.md)).
 
 ## Updates
 
@@ -98,14 +98,14 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 - [ ] Die Datenbank wird mindestens täglich gesichert; dort liegen die Bestellungen.
 - [ ] Backups werden außerhalb des Servers und geschützt aufbewahrt, da sie Kundendaten enthalten.
 - [ ] Eine Wiederherstellung wurde getestet ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md),
-  [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+  [Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 
 ## Überwachen
 
 - [ ] Das Prüfprotokoll ist eingeschaltet (das ist es standardmäßig), und jemand liest es. Es zeichnet in seiner
-  Kategorie `commerce` Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte auf ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+  Kategorie `commerce` Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte auf ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 - [ ] Audit-Warnungen erreichen eine Person, und das Prüfprotokoll wird von der Maschine weg weitergeleitet (Härtungs-Checkliste).
-- [ ] Die Logs werden wöchentlich gelesen ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+- [ ] Die Logs werden wöchentlich gelesen ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 
 ## Kundendaten
 

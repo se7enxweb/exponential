@@ -87,7 +87,7 @@ Templates `$item.title` lesen können ([Persistente Objekte und eigene Tabellen]
 ## Verwandte Seiten
 
 - [Fetch-Funktionen: Daten in Templates lesen](fetch-funktionen.md)
-- [Muster für Fetch-Funktionen](../../../../eng-us/standards/patterns/fetch-function.md)
+- [Muster für Fetch-Funktionen](../../../standards/muster/fetch-funktion.md)
 - [Template-Operatoren schreiben](template-operatoren-schreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

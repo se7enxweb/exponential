@@ -54,7 +54,7 @@ Aus [8.1 Die Wahl in einer Tabelle](../../../installation/08-die-website-auslief
 Also:
 
 - **Ein Server oder VPS, den Sie kontrollieren:** Velocity
-  ([Exponential Velocity](../../../../eng-us/features/6.0/velocity-web-server.md)).
+  ([Exponential Velocity](../../../funktionen/6.0/velocity-webserver.md)).
 - **Shared Hosting:** Apache mit PHP-FPM und den mitgelieferten Regeln aus `.htaccess_root`
   ([8.5 Apache mit PHP-FPM](../../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm)).
 - **Ein nginx, den Sie bereits betreiben:**
@@ -80,7 +80,7 @@ Einzelheiten, Grenzen und die Reihenfolge der Unterstützung: [Datenbankunterst�
 | Beschreibbare Verzeichnisse `var/` und `settings/` für den Benutzer des Webservers | Caches, Uploads, Logs, die SQLite-Datei | [8.7 Dateirechte und Eigentümer](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer) |
 | Ein Cronjob alle paar Minuten | `runcronjobs.php` führt die periodischen Jobs aus: Benachrichtigungen, Linkprüfungen, Aufräumen | [10.3 Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs) |
 | Ausgehende Mail | Formulare, Registrierung, Zurücksetzen von Passwörtern, Newsletter | [10.4 Mail](../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand) |
-| HTTPS | jede öffentliche Website; Velocity kann Zertifikate selbst beziehen | [Velocity: HTTPS-Zertifikate](../../../../eng-us/features/6.0/velocity-https-certificates.md) |
+| HTTPS | jede öffentliche Website; Velocity kann Zertifikate selbst beziehen | [Velocity: HTTPS-Zertifikate](../../../funktionen/6.0/velocity-https-zertifikate.md) |
 | Backups der Datenbank, von `var/storage` und Ihren Einstellungen | Wiederherstellung nach einem Fehler | [Backups und Wiederherstellungen](backups-und-wiederherstellungen.md) |
 | Speicherplatz für Medien | Bilder und Dateien wachsen mit der Website | [Bilder und Bildvarianten](bilder-und-bildvarianten.md) |
 | Optional: ein Solr-Server | Suche für große Websites mit `ezfind` | [Suche mit ezfind und Solr](suche-mit-ezfind-und-solr.md) |

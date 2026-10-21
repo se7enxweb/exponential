@@ -111,7 +111,7 @@ Auch ein stark genutzter Bestellvorgang im Shop schreibt; siehe
    Verwenden Sie den Namen Ihres eigenen öffentlichen Siteaccess.
 2. **Beobachten Sie**: den externen Monitor, die Fehlerübersicht und unter Velocity das Dashboard unter `/Q/dashboard`,
    das laufende Anfragen, Worker und Statuscodes zeigt
-   ([Velocity Control Panel](../../../../eng-us/features/6.0/velocity-control-panel.md)).
+   ([Velocity Control Panel](../../../funktionen/6.0/velocity-control-panel.md)).
 3. **Leeren Sie nicht alle Caches** während der Spitze, es sei denn, etwas stimmt nicht; jedes vollständige Leeren lässt
    die nächsten Besucher auf das Rendern warten.
 4. **Halten Sie eine Ausweichnachricht bereit**: Wenn die Website nicht mithalten kann, ist ein kurzes Wartungsfenster

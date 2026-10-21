@@ -12,7 +12,7 @@ type: help
 Teil 8, Referenz 24. Template-Funktionen sind die Konstrukte `{name ...}...{/name}` der Template-Sprache. Wie die
 Operatoren auf der vorigen Seite wurde diese Liste der Template-Engine einer laufenden Installation entnommen
 (Oktober 2026). Die Verwendung mit Beispielen steht in der Hilfe für Designer:
-[Funktionsreferenz](../../../../eng-us/help/designers/templates/function-reference.md).
+[Funktionsreferenz](../../designer/vorlagen/funktionsreferenz.md).
 
 ## Variablen
 

@@ -51,7 +51,7 @@ Exponential hat kein eingebautes Feld „zuständiger Fachbereich“. Möglichke
 |---|---|---|
 | Der Baum | die Seiten jedes Fachbereichs liegen in einem eigenen Ordner | die Verantwortung folgt dem Teilbaum; passt zu den Rollen der Fachbereichsredaktionen ([Rollenentwurf: Redaktionen der Fachbereiche](../personen-und-berechtigungen/rollenentwurf-fachredaktionen.md)) |
 | Ein Feld an der Klasse | fügen Sie Ihren Seitenklassen ein Attribut wie „Zuständige Einheit“ hinzu | wird den Redaktionen angezeigt; kann mit Fetches aufgelistet werden; eine Änderung durch die Website-Entwicklung |
-| Tags | die Extension eztags, falls aktiv, mit einem Tag je Einheit | durchsuchbar; siehe [Tags](../../../../../eng-us/features/6.0/extensions/eztags.md) |
+| Tags | die Extension eztags, falls aktiv, mit einem Tag je Einheit | durchsuchbar; siehe [Tags](../../../../funktionen/6.0/erweiterungen/eztags.md) |
 | Ein Objektzustand | eine Zustandsgruppe je verantwortlicher Stelle ist möglich, skaliert aber schlecht | bevorzugen Sie die obigen Möglichkeiten |
 
 Eine Funktion (zum Beispiel „Leitung Kommunikation, Fachbereich Beispiel“) ist eine bessere verantwortliche Stelle als der Name einer Person:

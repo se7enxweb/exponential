@@ -31,7 +31,7 @@ Mal neu ein. Exponential lässt Ihnen die Wahl, und die Wahl ist eine einzige Ei
 ## Die Shop-Account-Handler
 
 Wie der Shop Kundendaten erfasst, entscheidet der **Shop-Account-Handler**, festgelegt in `settings/shopaccount.ini`,
-`[AccountSettings] Handler` ([Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#checkout)).
+`[AccountSettings] Handler` ([Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md#kasse)).
 Der Kernel liefert diese in `kernel/classes/shopaccounthandlers/` mit:
 
 | Handler | Was der Kunde tut | Passt zu |
@@ -70,7 +70,7 @@ Mit `ezdefault` prüft der Shop, ob der Kunde ein registrierter Benutzer ist, un
 aus seinem Benutzerkonto.
 
 Kundenkonten sind gewöhnliche Exponential-Benutzer. Registrierung, Aktivierung, Freigabe und Mitgliederbereiche sind
-unter [Mitgliederregistrierung und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
+unter [Mitgliederregistrierung und Mitgliederbereiche](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
 und, für den geschäftlichen Einsatz, unter [Registrierung und Kontofreigabe](../extranets/registrierung-und-kontofreigabe.md)
 beschrieben. Die Bestellung nur mit Konto passt gut zu einem Katalog für **Händler oder den Großhandel**, den nur
 angemeldete Kunden sehen dürfen ([Händler- und Lieferantenportale](../extranets/haendler-und-lieferantenportale.md)).
@@ -84,14 +84,14 @@ angemeldete Kunden sehen dürfen ([Händler- und Lieferantenportale](../extranet
 | Wunschliste | nicht sinnvoll: Die Wunschliste wird pro Benutzerkonto geführt | ja ([Rabatte und Wunschlisten](rabatte-und-wunschlisten.md)) |
 | Rabattgruppen | nein | ja, Rabatte folgen der Gruppe des Benutzers |
 | Beleg ohne den Link | nein | ja, der Kunde, der die Bestellung aufgegeben hat, kann sie angemeldet öffnen |
-| Seite mit E-Mail-Einstellungen | über den Link in einer Mail | ja, im Profil ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)) |
-| Zweistufige Anmeldung | entfällt | verfügbar mit der 2FA-Erweiterung ([sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md)) |
+| Seite mit E-Mail-Einstellungen | über den Link in einer Mail | ja, im Profil ([Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)) |
+| Zweistufige Anmeldung | entfällt | verfügbar mit der 2FA-Erweiterung ([sevenx_authentication_2fa](../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md)) |
 
 ## Kundendaten und Datenschutz
 
 Ganz gleich, welcher Handler: Die Bestellung behält Name, E-Mail-Adresse und Anschrift des Kunden. Das sind
 personenbezogene Daten. Die Funktion der Mail-Einstellungen behandelt Bestellmails als notwendige E-Mails, die immer
-gesendet werden und nie Werbung enthalten ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)); Werbung an
+gesendet werden und nie Werbung enthalten ([Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)); Werbung an
 Kunden braucht deren Opt-in ([Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)).
 
 > **Hinweis**
@@ -111,7 +111,7 @@ Kunden braucht deren Opt-in ([Opt-in und Einwilligung](../newsletter/opt-in-und-
 ## Verwandte Seiten
 
 - [Warenkorb und Bestellablauf](warenkorb-und-bestellablauf.md)
-- [Mitgliederregistrierung und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
+- [Mitgliederregistrierung und Mitgliederbereiche](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
 - [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

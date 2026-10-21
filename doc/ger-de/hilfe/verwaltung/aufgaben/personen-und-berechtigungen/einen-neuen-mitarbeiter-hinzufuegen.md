@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren und Mitarbeiter des Service Desks. Am Ende hat die neue Kollegin oder der neue
 Kollege ein persönliches Konto in der richtigen Gruppe, mit dem Zugang, den die Rollen dieser Gruppe geben.
-Hintergrund: [Eintritte, Wechsel und Austritte](../../../../../eng-us/help/government/operations/people-and-permissions/joiners-movers-leavers.md).
+Hintergrund: [Eintritte, Wechsel und Austritte](../../betrieb/personen-und-berechtigungen/eintritt-wechsel-austritt.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -39,7 +39,7 @@ Hintergrund: [Eintritte, Wechsel und Austritte](../../../../../eng-us/help/gover
 
 Das Passwort muss `site.ini [UserSettings] MinPasswordLength` erfüllen (10 auf einer neuen Installation) und wird ab
 6.0.15 gegen häufige Passwörter geprüft (`WeakPasswordCheck=enabled`)
-([Das eigene Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md)).
+([Das eigene Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md)).
 
 ## Erste Anmeldung
 
@@ -69,7 +69,7 @@ Das Passwort muss `site.ini [UserSettings] MinPasswordLength` erfüllen (10 auf 
 ## Verwandte Seiten
 - [Einen Mitarbeiter in eine andere Abteilung verschieben](einen-mitarbeiter-in-eine-andere-abteilung-verschieben.md)
 - [Das Passwort eines Mitarbeiters zurücksetzen](das-passwort-eines-mitarbeiters-zuruecksetzen.md)
-- [Pflege der Benutzerkonten](../../../../../eng-us/help/government/operations/people-and-permissions/user-account-hygiene.md)
+- [Pflege der Benutzerkonten](../../betrieb/personen-und-berechtigungen/pflege-von-benutzerkonten.md)
 - [Konten und Anmeldung (Hilfe)](../../../konten-und-anmeldung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

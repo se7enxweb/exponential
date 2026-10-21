@@ -26,7 +26,7 @@ und schwer zu beweisen“. Messen Sie, was Sie beobachten können, erfinden Sie 
 | Dieselbe Frage kommt nicht mehr, nachdem Sie eine Hilfeseite verbessert haben | Die Foren, der Chat |
 | Ihre Pull Requests wurden übernommen | GitHub |
 | Neue, denen Sie geholfen haben, haben einen ersten Beitrag geleistet | GitHub (öffentlich) |
-| Übersetzungsfortschritt Ihrer Sprache | `ezchecktranslation.php` ([Sprachen, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)) |
+| Übersetzungsfortschritt Ihrer Sprache | `ezchecktranslation.php` ([Sprachen, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)) |
 | Issues, die Sie bestätigt haben, wurden behoben | GitHub |
 | Menschen kommen wieder zu Ihren Treffen | Ihre eigene Zählung, ohne Namen |
 

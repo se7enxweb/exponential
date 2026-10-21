@@ -60,9 +60,9 @@ beiden Seiten denselben Zeitraum (meist ein Jahr oder die fünf Jahre Ihrer
 | Langes Leben | „Exponential has made it beyond it's end of life in 2021 and survived“ (Exponential hat sein Lebensende 2021 überdauert und überlebt) | `README.md`, „Exponential Project Status“ |
 | Aktuelles PHP | PHP 8.0 bis 8.5 werden unterstützt; die Testsuite läuft bei jedem Push auf PHP 8.1 bis 8.5 | `README.md`, [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 | Weniger Ausfälle | Velocity kann von einem Watchdog bewacht werden, der ihn nach einem Absturz neu startet | [SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md) |
-| Geplante Arbeit ohne Fehler | Der Wartungsmodus zeigt Besuchern eine freundliche Seite und antwortet mit 503 | [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md) |
+| Geplante Arbeit ohne Fehler | Der Wartungsmodus zeigt Besuchern eine freundliche Seite und antwortet mit 503 | [Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md) |
 | Schnellere Diagnose | Der Log-Viewer und Fehlerreferenzen finden einen Fehler schnell | [Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
-| Nachweis nach einem Vorfall | Ein manipulationssicheres Prüfprotokoll zeichnet auf, wer was getan hat | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis nach einem Vorfall | Ein manipulationssicheres Prüfprotokoll zeichnet auf, wer was getan hat | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Sichere Aktualisierungen | Die Upgrade-Prüfung vergleicht die Dateien mit ihren Prüfsummen und die Datenbank mit dem Schema und ändert nichts | [Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 
 Der Bereich [Zuverlässigkeit](../zuverlaessigkeit/README.md) erklärt jede dieser Praktiken für Unternehmen.

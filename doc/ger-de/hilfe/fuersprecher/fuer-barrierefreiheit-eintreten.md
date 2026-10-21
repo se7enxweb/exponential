@@ -41,12 +41,12 @@ machen.
    erwartet haben.
 4. Melden Sie es als Fehler und nennen Sie Ihre assistive Technologie und Ihren Browser ([Fehler gut melden](fehler-gut-melden.md)).
 
-Was das Design bieten soll, ist in [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md#landmarks-and-names) und
-[Tastatur](../../../eng-us/features/6.0/admin4-design.md#keyboard) dokumentiert: Nutzen Sie es als erwartetes Ergebnis.
+Was das Design bieten soll, ist in [Das Design admin4](../../funktionen/6.0/admin4-design.md#landmarks-und-namen) und
+[Tastatur](../../funktionen/6.0/admin4-design.md#tastatur) dokumentiert: Nutzen Sie es als erwartetes Ergebnis.
 
 ## Beiträge an den Regeln messen
 
-CONTRIBUTING.md verlangt, dass jedes Template der Administration [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md)
+CONTRIBUTING.md verlangt, dass jedes Template der Administration [Die Administration gestalten](../../bc/6.0/admin4-gestaltung.md)
 folgt: keine Inline-Styles, gemeinsame Komponenten, Tokens mit Werten für den Dunkelmodus; ein Test prüft das
 ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)). Wenn Sie einen Pull Request
 prüfen, achten Sie auf:
@@ -63,7 +63,7 @@ prüfen, achten Sie auf:
 - Ermutigen Sie dazu, verpflichtenden Alternativtext für Bildklassen einzuschalten
   ([Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit)).
 - Zeigen Sie Redakteuren den Bericht „Fehlender Alternativtext“ von Exponential Intelligence, wo er eingerichtet ist
-  ([expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors)).
+  ([expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure)).
 - Schreiben Sie ein Tutorial über barrierefreie Inhalte: Überschriften, Linktext, Alternativtext, Tabellen
   ([Ein Tutorial schreiben, das funktioniert](ein-tutorial-schreiben.md)).
 

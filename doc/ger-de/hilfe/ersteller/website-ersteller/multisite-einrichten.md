@@ -30,7 +30,7 @@ Name, seine Einstellungen in `settings/siteaccess/<name>/` und eine Regel, welch
 | Getrennte Inhalte pro Website | ein Ordner pro Website unter der Wurzel; jeder Siteaccess verwendet seinen Ordner als Wurzel |
 | Gemeinsame Inhalte, verschiedene Designs | dieselbe Wurzel, ein anderes `SiteDesign` pro Siteaccess |
 | Eine Website in mehreren Sprachen | ein Siteaccess pro Sprache ([Eine mehrsprachige Website bauen](mehrsprachige-websites.md)) |
-| Jede Website in ihrer eigenen Erweiterung | Einstellungen, die nur gelten, während die Siteaccesses der Website laufen ([Einstellungen pro Website](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)) |
+| Jede Website in ihrer eigenen Erweiterung | Einstellungen, die nur gelten, während die Siteaccesses der Website laufen ([Einstellungen pro Website](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)) |
 
 Das Standard-Seitenpaket `sevenx_multisite` ist selbst eine Multisite-Installation.
 
@@ -73,7 +73,7 @@ Das Standard-Seitenpaket `sevenx_multisite` ist selbst eine Multisite-Installati
 
    Behalten Sie die Einträge, die der Installer für die anderen Siteaccesses geschrieben hat; fügen Sie Ihre hinzu.
    `HostMatchMethod=start` lässt auch einen Testhost wie `www.site-b.example.test.local` denselben Siteaccess erreichen
-   ([Siteaccess nach Host-Präfix](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+   ([Siteaccess nach Host-Präfix](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 4. **Webserver und DNS.** Tragen Sie den Hostnamen im DNS, im Webserver oder in Velocity und im Zertifikat ein
    ([Livegang: Hosts und HTTPS](livegang-hosts-und-https.md)).
 5. **Caches leeren und prüfen.**
@@ -91,14 +91,14 @@ Das Standard-Seitenpaket `sevenx_multisite` ist selbst eine Multisite-Installati
 Wenn jede Website eine Erweiterung ist (`extension/site_b/`), kann sie Dateien in `settings/override/` mitbringen, die nur
 gelten, während einer ihrer eigenen Siteaccesses läuft, plus `settings/siteaccess/<name>/` pro Siteaccess. Das Leeren
 des INI-Caches leert ihn für jede Website
-([Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)). So bleiben
+([Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)). So bleiben
 Design, Einstellungen und Templates jeder Website zusammen in einem Git-Repository.
 
 ## Links zwischen den Websites
 
 Ein Link im Inhalt von Website A auf eine Seite, die im Ordner von Website B liegt, muss auf den Host von Website B
 zeigen. Die Erweiterung `ezurlmultisite` löst solche Links auf
-([Links auf Inhalte einer anderen Website](../../../../eng-us/features/6.0/multisite-cross-site-links.md)).
+([Links auf Inhalte einer anderen Website](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)).
 
 ## Redaktion und Administration
 

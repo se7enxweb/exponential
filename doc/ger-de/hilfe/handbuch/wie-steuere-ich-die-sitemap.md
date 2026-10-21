@@ -37,9 +37,9 @@ Klassen und Teile des Baums aufgenommen werden (die Einstellungen von bcgooglesi
 ## Verwandte Seiten
 
 - [Wie setze ich SEO-Titel und -Beschreibung einer Seite?](wie-setze-ich-seo-titel-und-beschreibung.md)
-- [bcgooglesitemaps](../../../eng-us/features/6.0/extensions/bcgooglesitemaps.md)
-- [Sitemaps](../../../eng-us/help/creators/website-creators/sitemaps.md)
-- [robots.txt](../../../eng-us/help/creators/website-creators/robots-txt.md)
+- [bcgooglesitemaps](../../funktionen/6.0/erweiterungen/bcgooglesitemaps.md)
+- [Sitemaps](../ersteller/website-ersteller/sitemaps.md)
+- [robots.txt](../ersteller/website-ersteller/robots-txt.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

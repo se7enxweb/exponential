@@ -63,14 +63,14 @@ Was immer Sie bauen, diese Dinge kommen mit dem Kernel und sind vom ersten Tag a
   ([Leistung und Caching](leistung-und-caching.md)).
 - **Suche** eingebaut, mit Solr als Option für große Websites ([Suche auf der Website](suche-auf-der-website.md)).
 - **Eine Content Security Policy** für die Administration und die Werkzeuge, um Ihrer Website eine zu geben
-  ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+  ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 - **Diese Hilfe**, in der Administration, für Sie und Ihre Redaktion.
 
 ## Was Sie mit Erweiterungen ergänzen
 
 Erweiterungen sind Composer-Pakete, die Funktionen hinzufügen ([Erweiterungen](../../../anleitungen/extensions.md)).
 Diejenigen, denen ein Website-Ersteller am häufigsten begegnet, sind jeweils unter
-[Erweiterungen](../../../../eng-us/features/6.0/extensions/README.md) dokumentiert:
+[Erweiterungen](../../../funktionen/6.0/erweiterungen/README.md) dokumentiert:
 
 | Bedarf | Erweiterung |
 |---|---|

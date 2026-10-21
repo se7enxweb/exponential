@@ -167,7 +167,7 @@ leert (den View-Cache auf der Festplatte berührt er nicht). Nützlich in langen
 - [Die swark-Operatoren](swark-operatoren.md)
 - [Swark-Operatoren: Arrays, Zeichenketten und URLs](swark-operatoren-arrays-und-zeichenketten.md)
 - [URL-, Design-, INI- und HTTP-Operatoren](url-operatoren.md) (`ezhttp`, `ezsys`)
-- [Fehlersuche in Templates](../../../eng-us/help/designers/templates/template-debugging.md)
+- [Fehlersuche in Templates](../designer/vorlagen/template-debugging.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

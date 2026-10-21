@@ -112,7 +112,7 @@ zutreffenden Teile in Ihr Werkzeug zur Projektverfolgung. Jeder Punkt verlinkt d
 - [Mobile Apps, Headless und Netzwerke](README.md)
 - [Checkliste für mehrere Marken](../multisite/checkliste-fuer-mehrere-marken.md)
 - [Vorlage Checkliste Go-live](../vorlagen/checkliste-go-live.md)
-- [Die Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Die Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

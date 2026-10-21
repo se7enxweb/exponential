@@ -14,34 +14,34 @@ Hilfe hat einen ganzen Bereich für Designer, mit Hunderten von Seiten über Tem
 Verteilung, den Verkauf von Themes und ihre Pflege. Dieses Kapitel ist die Brücke: Für jedes Thema aus Teil 6 steht
 hier, wo Sie weiterlesen.
 
-Beginnen Sie bei [Designer: hier beginnen](../../../../eng-us/help/designers/designers-start-here.md) oder blättern Sie durch
-[alle Seiten der Hilfe für Designer](../../../../eng-us/help/designers/README.md).
+Beginnen Sie bei [Designer: hier beginnen](../../designer/designer-hier-beginnen.md) oder blättern Sie durch
+[alle Seiten der Hilfe für Designer](../../designer/README.md).
 
 ## Von jedem Kapitel aus Teil 6
 
 | Sie haben gelesen | Lesen Sie weiter mit |
 |---|---|
-| [Themes sind Erweiterungen](themes-sind-erweiterungen.md) | [Design-Erweiterungen](../../../../eng-us/help/designers/theme-design/design-extensions.md), [Theme-Erweiterungen: hier beginnen](../../../../eng-us/help/designers/extensions/theme-extensions-start-here.md) |
-| [Der Aufbau einer Design-Erweiterung](aufbau-einer-design-erweiterung.md) | [Der Verzeichnisaufbau eines Designs](../../../../eng-us/help/designers/theme-design/design-directory-layout.md), [Die Ordnerstruktur einer Erweiterung](../../../../eng-us/help/designers/extensions/extension-folder-structure.md) |
-| [Ein Theme mit dem RAD-Assistenten](ein-theme-mit-dem-rad-assistenten.md) | [Der Assistent für Design-Erweiterungen](../../../../eng-us/help/designers/extensions/design-extension-wizard.md), [Referenz der Teile des Design-Assistenten](../../../../eng-us/help/designers/extensions/design-wizard-parts-reference.md), [Von der Ausgabe des Assistenten zum ersten Commit](../../../../eng-us/help/designers/extensions/from-wizard-output-to-first-commit.md) |
-| [Ein Theme von Hand](ein-theme-von-hand.md) | [Das Design registrieren](../../../../eng-us/help/designers/extensions/registering-the-design.md), [Ein Ausgangs-Theme wählen](../../../../eng-us/help/designers/theme-design/choosing-a-starting-theme.md) |
-| [Themes und Siteaccesses](themes-und-siteaccesses.md) | [Designs und Siteaccesses](../../../../eng-us/help/designers/theme-design/designs-and-siteaccesses.md), [Designs in einer Multisite](../../../../eng-us/help/designers/theme-design/designs-in-multisite.md) |
-| [Theme-Assets, der Packer und CSP](theme-assets-der-packer-und-csp.md) | [Die Operatoren ezcss und ezscript](../../../../eng-us/help/designers/theme-design/ezcss-and-ezscript-operators.md), [CSP-sicheres Design](../../../../eng-us/help/designers/theme-design/csp-safe-design.md), [Schriften in einem Design](../../../../eng-us/help/designers/theme-design/fonts-in-a-design.md), [Bilder in einem Design](../../../../eng-us/help/designers/theme-design/images-in-a-design.md) |
-| [Dunkler Modus und Design-Tokens in Themes](dunkler-modus-und-tokens-in-themes.md) | [Design-Tokens](../../../../eng-us/help/designers/theme-design/design-tokens.md), [Dunkler Modus mit prefers-color-scheme](../../../../eng-us/help/designers/theme-design/dark-mode-with-prefers-color-scheme.md), [Farbkontrast](../../../../eng-us/help/designers/theme-design/color-contrast.md) |
-| [Ein Theme verteilen](ein-theme-verteilen.md) | [Verteilung: hier beginnen](../../../../eng-us/help/designers/distribution/distribution-start-here.md), [Schriften, Symbole und Bibliotheken Dritter](../../../../eng-us/help/designers/distribution/third-party-fonts-icons-and-libraries.md), [Screenshots für ein Theme](../../../../eng-us/help/designers/distribution/screenshots-for-a-theme.md) |
+| [Themes sind Erweiterungen](themes-sind-erweiterungen.md) | [Design-Erweiterungen](../../designer/theme-design/design-erweiterungen.md), [Theme-Erweiterungen: hier beginnen](../../designer/erweiterungen/theme-erweiterungen-hier-beginnen.md) |
+| [Der Aufbau einer Design-Erweiterung](aufbau-einer-design-erweiterung.md) | [Der Verzeichnisaufbau eines Designs](../../designer/theme-design/aufbau-des-design-verzeichnisses.md), [Die Ordnerstruktur einer Erweiterung](../../designer/erweiterungen/ordnerstruktur-einer-theme-erweiterung.md) |
+| [Ein Theme mit dem RAD-Assistenten](ein-theme-mit-dem-rad-assistenten.md) | [Der Assistent für Design-Erweiterungen](../../designer/erweiterungen/der-design-erweiterungs-assistent.md), [Referenz der Teile des Design-Assistenten](../../designer/erweiterungen/die-teile-des-design-assistenten.md), [Von der Ausgabe des Assistenten zum ersten Commit](../../designer/erweiterungen/vom-assistenten-zum-ersten-commit.md) |
+| [Ein Theme von Hand](ein-theme-von-hand.md) | [Das Design registrieren](../../designer/erweiterungen/das-design-registrieren.md), [Ein Ausgangs-Theme wählen](../../designer/theme-design/ein-ausgangs-theme-waehlen.md) |
+| [Themes und Siteaccesses](themes-und-siteaccesses.md) | [Designs und Siteaccesses](../../designer/theme-design/designs-und-siteaccesses.md), [Designs in einer Multisite](../../designer/theme-design/designs-in-einer-multisite-installation.md) |
+| [Theme-Assets, der Packer und CSP](theme-assets-der-packer-und-csp.md) | [Die Operatoren ezcss und ezscript](../../designer/theme-design/die-operatoren-ezcss-und-ezscript.md), [CSP-sicheres Design](../../designer/theme-design/csp-sicheres-design.md), [Schriften in einem Design](../../designer/theme-design/schriften-in-einem-design.md), [Bilder in einem Design](../../designer/theme-design/bilder-in-einem-design.md) |
+| [Dunkler Modus und Design-Tokens in Themes](dunkler-modus-und-tokens-in-themes.md) | [Design-Tokens](../../designer/theme-design/design-tokens.md), [Dunkler Modus mit prefers-color-scheme](../../designer/theme-design/dunkelmodus-mit-prefers-color-scheme.md), [Farbkontrast](../../designer/theme-design/farbkontrast.md) |
+| [Ein Theme verteilen](ein-theme-verteilen.md) | [Verteilung: hier beginnen](../../designer/veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md), [Schriften, Symbole und Bibliotheken Dritter](../../designer/veroeffentlichung/schriften-icons-und-bibliotheken-dritter.md), [Screenshots für ein Theme](../../designer/veroeffentlichung/screenshots-fuer-ein-theme.md) |
 
 ## Die Template-Sprache
 
 Teil 2 dieses Buchs führt Builder in Templates ein. Die Hilfe für Designer hat eine Seite für jedes Sprachelement und
 die Operatoren, die Sie am häufigsten verwenden:
 
-- [Funktionsreferenz](../../../../eng-us/help/designers/templates/function-reference.md)
-- [Knoten und Listen abrufen](../../../../eng-us/help/designers/templates/fetching-nodes-and-lists.md),
-  [Fetch-Filter und Sortierung](../../../../eng-us/help/designers/templates/fetch-filters-and-sorting.md)
-- [Vollansicht](../../../../eng-us/help/designers/templates/full-view.md), [Listenansicht](../../../../eng-us/help/designers/templates/line-view.md),
-  [eigene View-Modi](../../../../eng-us/help/designers/templates/custom-view-modes.md)
-- [Menüs und Navigation](../../../../eng-us/help/designers/templates/menus-and-navigation.md)
-- [Häufige Fehler in Templates](../../../../eng-us/help/designers/templates/common-template-mistakes.md)
+- [Funktionsreferenz](../../designer/vorlagen/funktionsreferenz.md)
+- [Knoten und Listen abrufen](../../designer/vorlagen/knoten-und-listen-abrufen.md),
+  [Fetch-Filter und Sortierung](../../designer/vorlagen/fetch-filter-und-sortierung.md)
+- [Vollansicht](../../designer/vorlagen/vollansicht.md), [Listenansicht](../../designer/vorlagen/zeilenansicht.md),
+  [eigene View-Modi](../../designer/vorlagen/eigene-ansichtsmodi.md)
+- [Menüs und Navigation](../../designer/vorlagen/menues-und-navigation.md)
+- [Häufige Fehler in Templates](../../designer/vorlagen/haeufige-template-fehler.md)
 
 ## Über das Bauen hinaus
 
@@ -49,16 +49,16 @@ Themen, die dieses Buch gar nicht behandelt:
 
 | Thema | Beginnen Sie bei |
 |---|---|
-| Barrierefreiheit von Themes | [Grundlagen der Barrierefreiheit für Themes](../../../../eng-us/help/designers/theme-design/accessibility-basics-for-themes.md) |
-| Themes und Theme-Arbeit verkaufen | [Verkaufen: hier beginnen](../../../../eng-us/help/designers/sales/selling-start-here.md), [Die GPL und der Verkauf](../../../../eng-us/help/designers/sales/gpl-and-selling.md) |
-| Das Leben eines Themes nach dem Release | [Lebenszyklus: hier beginnen](../../../../eng-us/help/designers/lifecycle/lifecycle-start-here.md), [Richtlinie für Abkündigungen](../../../../eng-us/help/designers/lifecycle/deprecation-policy.md) |
-| Checklisten für den Start | [Checkliste für den Start eines Themes](../../../../eng-us/help/designers/theme-design/checklist-theme-launch.md), [Checkliste für die Verteilung](../../../../eng-us/help/designers/distribution/distribution-checklist.md) |
+| Barrierefreiheit von Themes | [Grundlagen der Barrierefreiheit für Themes](../../designer/theme-design/barrierefreiheit-grundlagen-fuer-themes.md) |
+| Themes und Theme-Arbeit verkaufen | [Verkaufen: hier beginnen](../../designer/verkauf/verkaufen-hier-beginnen.md), [Die GPL und der Verkauf](../../designer/verkauf/gpl-und-verkauf.md) |
+| Das Leben eines Themes nach dem Release | [Lebenszyklus: hier beginnen](../../designer/lebenszyklus/lebenszyklus-hier-beginnen.md), [Richtlinie für Abkündigungen](../../designer/lebenszyklus/abkuendigungsrichtlinie.md) |
+| Checklisten für den Start | [Checkliste für den Start eines Themes](../../designer/theme-design/checkliste-theme-start.md), [Checkliste für die Verteilung](../../designer/veroeffentlichung/checkliste-vor-der-veroeffentlichung.md) |
 
 ## Verwandte Seiten
 
 - Zurück: [Ein Theme verteilen](ein-theme-verteilen.md)
 - Weiter: [Teil 7: Ihre Erweiterung veröffentlichen](../teil-7-veroeffentlichen/README.md)
-- [Designer: hier beginnen](../../../../eng-us/help/designers/designers-start-here.md)
+- [Designer: hier beginnen](../../designer/designer-hier-beginnen.md)
 - [Templates und Design](../../../anleitungen/templates-und-design.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

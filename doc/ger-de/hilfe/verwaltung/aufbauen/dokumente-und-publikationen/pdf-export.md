@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Site-Ersteller, die ein druckbares PDF eines Handbuchs, einer Reihe von
 Leitfadenseiten oder eines anderen Teils der Site möchten. **Setup > PDF-Export** (`/pdf/list`) erzeugt ein PDF aus
 einem Quellknoten und, bei einem Baumexport, den Knoten darunter. Es braucht die Richtlinie `pdf/edit`. Quellen:
-[PDF-Exporte](../../../../anleitungen/pdf-exporte.md) und [PDF-Export](../../../../../eng-us/features/6.0/pdf-export.md).
+[PDF-Exporte](../../../../anleitungen/pdf-exporte.md) und [PDF-Export](../../../../funktionen/6.0/pdf-export.md).
 
 ## Inhalt
 
@@ -69,7 +69,7 @@ PDF/UA oder Konformität zur Barrierefreiheit. Behandeln Sie ein exportiertes PD
 | Erzeugen Sie ein förmliches barrierefreies PDF mit einem Autorenwerkzeug, das getaggte PDFs schreibt | und laden Sie es als File hoch |
 
 Siehe [Barrierefreie Dokumente](barrierefreie-dokumente.md) und
-[Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
+[Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md).
 
 ## Verwandte Seiten
 

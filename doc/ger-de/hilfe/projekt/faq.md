@@ -40,7 +40,7 @@ hält fest, dass der Name am 11. August 2025 auf Wunsch des Inhabers des alten N
 „Exponential (CMS)“) geändert wurde und dass das Projekt nicht mit dem Entwickler der ursprünglichen Software
 verbunden ist. Der Code, die Template-Sprache und die Erweiterungs-API blieben kompatibel: Die Dokumentationsseite der
 Website merkt an, dass für eZ Publish geschriebene Beispiele mit Exponential funktionieren. Die Geschichte erzählen
-[die Chronik](../../../eng-us/history/README.md) und [Wer ist 7x?](../wer-ist-7x.md).
+[die Chronik](../../geschichte/README.md) und [Wer ist 7x?](../wer-ist-7x.md).
 
 ### Warum Exponential wählen?
 
@@ -106,7 +106,7 @@ Die FAQ der Website nennt die Ergänzungen, die Exponential erweitern, „Module
 ist die Einheit, die Sie installieren, eine **Erweiterung**: ein Ordner unter `extension/`, der Module (Gruppen von
 Seiten wie `/content/view`), Datentypen, Template-Operatoren, Workflow-Ereignisse, Designs, Einstellungen und
 Übersetzungen enthalten kann. Sie können Erweiterungen installieren, die andere geteilt haben, oder eigene schreiben
-([Was eine Erweiterung ist](../../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md),
+([Was eine Erweiterung ist](../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md),
 [Erweiterungen](../../anleitungen/extensions.md)).
 
 ### Was ist ein Design?
@@ -183,7 +183,7 @@ Der Artikel
 der Website empfiehlt Hosting-Anbieter, die Exponential bereits installiert anbieten, damit Sie mit Inhalten statt
 mit der Servereinrichtung beginnen können. Installieren Sie es selbst, deckt das [Installationsbuch](../../installation/README.md)
 jeden Schritt ab, und [Erste Schritte](../erste-schritte.md) zeigt die Administration. Hosting-Unternehmen haben
-einen eigenen Bereich in dieser Hilfe ([Hosting-Unternehmen: Hier beginnen](../../../eng-us/help/hosting/hosting-companies-start-here.md)).
+einen eigenen Bereich in dieser Hilfe ([Hosting-Unternehmen: Hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md)).
 
 ### Kann ich es vor der Installation ausprobieren?
 

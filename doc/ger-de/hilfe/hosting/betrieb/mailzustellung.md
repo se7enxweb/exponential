@@ -122,14 +122,14 @@ ls -lt var/log/mail/ | head
 
 Alternativ stellt `DebugSending=enabled` mit `DebugReceiverEmail=<test address>` jede Mail an ein Testpostfach zu. Eine
 Variantendatei pro Maschine hält das aus den Live-Einstellungen heraus
-([Einstellungen je Umgebung](../../../../eng-us/features/6.0/environment-settings.md)). Lassen Sie auf einer Kopie auch die Crontab weg,
+([Einstellungen je Umgebung](../../../funktionen/6.0/umgebungseinstellungen.md)). Lassen Sie auf einer Kopie auch die Crontab weg,
 sonst gehen Benachrichtigungen an echte Menschen ([Wiederherstellung und Wiederherstellungstests](wiederherstellung-und-wiederherstellungstests.md)).
 
 > **Warnung**
 > `Transport` kann in mehreren Dateien gesetzt sein (der globalen Überschreibung, einem Siteaccess, einer Erweiterung), und eine
 > Kopie behält sie alle. Prüfen Sie, welche Datei gewinnt, bevor Sie einer Testkopie vertrauen:
 > `./console exp:ini where site.ini/MailSettings/Transport` listet jede Datei auf, die ihn setzt, in Ladereihenfolge, und den
-> wirksamen Wert ([exp:ini](../../../../eng-us/bc/6.0/console-exp-ini.md)).
+> wirksamen Wert ([exp:ini](../../../bc/6.0/console-exp-ini.md)).
 
 ## Wenn Mail nicht ankommt
 

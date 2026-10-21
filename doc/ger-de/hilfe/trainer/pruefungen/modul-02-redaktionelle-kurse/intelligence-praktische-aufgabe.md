@@ -45,7 +45,7 @@ Wer diese Aufgabe besteht, hat gezeigt, dass er Folgendes kann:
 ### So führen Sie sie durch
 
 1. **Vorher**: Schalten Sie den Assistenten auf der Schulungsinstallation ein, wie in
-   [expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md#switch-it-on) beschrieben: die
+   [expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md#einschalten) beschrieben: die
    Erweiterung für den Siteaccess der Administration aktiv, der Schlüssel in
    `settings/override/expai.ini.append.php`, die Tabellen angelegt, die Richtlinien `expai/write` und `ezjscore/call`
    für die Rolle der Teilnehmenden und die Cronjob-Teile `expqueue` und `expai` bei Bedarf von Hand ausgeführt. Setzen
@@ -133,19 +133,19 @@ Fragen für die Nachbesprechung nach der Bewertung.
 <summary>Antworten</summary>
 
 1. Sie. Der Assistent veröffentlicht nie von sich aus
-   ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#in-short)).
+   ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt)).
 2. Ein Modell kann flüssigen Text schreiben, der falsch ist; die Redakteurin bleibt verantwortlich für das, was
    veröffentlicht wird.
 3. Nichts änderte sich, bis Sie veröffentlicht haben; Vorschläge ändern nichts, bis sie angenommen und gespeichert sind
    ([Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#exponential-intelligence)).
 4. Im Audit, Kanal `ai`, und im Nutzungsprotokoll, das nur Benutzer-IDs enthält
-   ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)).
+   ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)).
 
 </details>
 
 ## Weiterführende Literatur
 
-- [expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md): was vor dem Unterricht
+- [expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md): was vor dem Unterricht
   einzuschalten ist.
 - [Eine Prüfungssitzung durchführen](../modul-01-pruefungen-gestalten/eine-pruefung-durchfuehren.md): ausgefallene
   Übungsumgebungen und verlorene Zeit.

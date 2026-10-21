@@ -193,8 +193,8 @@ Schulungs-Administrator.
 
 - [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#komponenten): die vollständige
   Komponententabelle, Karten, Tabellen und die Code-Review-Checkliste.
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): was admin4 rund um die Komponenten bereitstellt.
-- [Template-Operatoren in einem Theme](../../../../../eng-us/help/designers/extensions/template-operators-in-a-theme.md): wenn ein Block
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md): was admin4 rund um die Komponenten bereitstellt.
+- [Template-Operatoren in einem Theme](../../../designer/erweiterungen/template-operatoren-in-einem-theme.md): wenn ein Block
   mehr als einen Fetch braucht.
 
 ## Verwandte Seiten

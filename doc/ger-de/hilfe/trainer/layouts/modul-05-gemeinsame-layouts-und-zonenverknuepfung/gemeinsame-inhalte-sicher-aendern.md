@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Gemeinsame Layouts: Ändern und Entfernen](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md#changing-and-removing)
-und [Exponential Layouts: Gemeinsame Layouts und verknüpfte Zonen](../../../../../eng-us/bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones).
+Quellen: [Gemeinsame Layouts: Ändern und Entfernen](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md#ändern-und-entfernen)
+und [Exponential Layouts: Gemeinsame Layouts und verknüpfte Zonen](../../../../bc/6.0/layouts.md#gemeinsame-layouts-und-verknüpfte-zonen).
 
 1. **Die Routine** (5 Minuten). Schreiben Sie sie an die Tafel:
    1. die Verweise unter **Gemeinsame Layouts** nachsehen;
@@ -118,7 +118,7 @@ Lektion 5.2).
 1. Seine Verweise auf dem Bildschirm **Gemeinsame Layouts**.
 2. Blöcke eines veröffentlichten gemeinsamen Layouts werden im eigenen Entwurf dieses Layouts geändert; das
    verknüpfende Layout leiht sie nur aus.
-3. **B.** ([Gemeinsame Layouts](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md#changing-and-removing)).
+3. **B.** ([Gemeinsame Layouts](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md#ändern-und-entfernen)).
 4. Verweise prüfen, im Entwurf ändern, veröffentlichen, Seiten kontrollieren.
 5. Jede Zone, die damit verknüpft ist, wird getrennt.
 
@@ -126,14 +126,14 @@ Lektion 5.2).
 
 ## Weiterführende Informationen
 
-- [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)
-- [Exponential Layouts: Gemeinsame Layouts und verknüpfte Zonen](../../../../../eng-us/bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones)
+- [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)
+- [Exponential Layouts: Gemeinsame Layouts und verknüpfte Zonen](../../../../bc/6.0/layouts.md#gemeinsame-layouts-und-verknüpfte-zonen)
 
 ## Verwandte Seiten
 
 - [Modul 5: Gemeinsame Layouts und Zonenverknüpfung](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

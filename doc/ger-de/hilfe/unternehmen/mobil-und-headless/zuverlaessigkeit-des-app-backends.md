@@ -33,7 +33,7 @@ selbst tun muss.
 | Geplante Wartung | Der Wartungsmodus antwortet mit 503 und `Retry-After` | unten |
 | Zu viele Anfragen | Caching, Ratenbegrenzungen pro Schlüssel, mehr Kapazität | unten |
 | Abgelaufene oder widerrufene Zugangsdaten | Lebensdauern der Schlüssel und die Übersicht der API-Schlüssel | unten |
-| Eine geänderte Serverkonfiguration | Der Header `Authorization` muss PHP weiterhin erreichen | [REST API v1 und v2 für Anwendungen](../../../../eng-us/help/creators/app-creators/rest-api.md#configuration) |
+| Eine geänderte Serverkonfiguration | Der Header `Authorization` muss PHP weiterhin erreichen | [REST API v1 und v2 für Anwendungen](../../ersteller/anwendungsentwickler/rest-api.md#konfiguration) |
 | Eine Aktualisierung, die Antworten geändert hat | Release Notes; für die REST API blieben die Antworten in 6.0.15 „byte for byte the same“ (Byte für Byte gleich) | [REST API v1 und v2 für Unternehmen](rest-api-v1-und-v2-fuer-unternehmen.md#was-6015-für-bestehende-apps-geändert-hat) |
 
 Der Bereich Zuverlässigkeit behandelt die Plattform als Ganzes ([Zuverlässigkeit](../zuverlaessigkeit/README.md)); diese
@@ -77,12 +77,12 @@ die mit Ihnen integriert sind.
 
 | Hebel | Wirkung | Quelle |
 |---|---|---|
-| Der Antwortcache der REST API | Wiederholte Lesezugriffe aus dem Cache beantwortet; mit dem Tag content geleert | [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md#caching-and-performance) |
+| Der Antwortcache der REST API | Wiederholte Lesezugriffe aus dem Cache beantwortet; mit dem Tag content geleert | [Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md#caching-und-leistung) |
 | Caching in der App oder in einem CDN, beim Veröffentlichen geleert | Weniger Anfragen erreichen den Server | dieselbe |
 | Blätterbare Listen mit Grenzen | Keine Anfrage holt alles | dieselbe; expservices blättert höchstens 200 Einträge |
 | Ratenbegrenzung pro API-Schlüssel | Standardmäßig 120 Anfragen pro Schlüssel und Minute, in APCu gezählt; ohne APCu nicht durchgesetzt | [Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md#8-audit-und-grenzen) |
-| Velocity und seine dauerhaften Worker | Die Anwendung bleibt zwischen Anfragen warm | [Anwendungen skalieren](../../../../eng-us/help/creators/app-creators/scaling-applications.md) |
-| Mehrere Webserver | Horizontale Kapazität, mit gemeinsamem Speicher und einer Datenbank | [Anwendungen skalieren](../../../../eng-us/help/creators/app-creators/scaling-applications.md#several-web-servers) |
+| Velocity und seine dauerhaften Worker | Die Anwendung bleibt zwischen Anfragen warm | [Anwendungen skalieren](../../ersteller/anwendungsentwickler/anwendungen-skalieren.md) |
+| Mehrere Webserver | Horizontale Kapazität, mit gemeinsamem Speicher und einer Datenbank | [Anwendungen skalieren](../../ersteller/anwendungsentwickler/anwendungen-skalieren.md#mehrere-webserver) |
 
 Bitten Sie Ihre Entwickler, vor dem Skalieren zu messen: Die Anleitung für App-Entwickler beginnt mit „Measure first“.
 

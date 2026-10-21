@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Webverantwortliche und Kommunikationsleitungen, die dringende öffentliche Informationen sofort veröffentlichen können
 müssen, auch wenn keine freigebende Person erreichbar ist, und dabei trotzdem ihre Steuerungsregeln einhalten. Exponential hat keinen eigenen
 Notfallmodus; die Umgehung wird aus dem Feld **Gruppen ausschließen** des Freigabe-Ereignisses und dem Prüfprotokoll gebaut.
-Quellen: [Workflows](../../../../anleitungen/workflows.md) und [Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md).
+Quellen: [Workflows](../../../../anleitungen/workflows.md) und [Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md).
 
 ## Inhalt
 1. [Der Entwurf: erst Notfallzugriff, dann Prüfung](#der-entwurf-erst-notfallzugriff-dann-prüfung)
@@ -86,7 +86,7 @@ Freigabe in Ihrem Ticket fest.
 - [Vier-Augen-Prinzip beim Veröffentlichen](vier-augen-prinzip-beim-veroeffentlichen.md)
 - [Überblick über Freigabe-Workflows](freigabe-workflows-im-ueberblick.md)
 - [Grundlagen der Reaktion auf Vorfälle](../vorfaelle/grundlagen-der-vorfallsbehandlung.md)
-- [Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

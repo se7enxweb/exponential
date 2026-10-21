@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md#what-the-tinymce-8-engine-does)
-und [Linkprüfungen beim Speichern des Texts](../../../../../eng-us/features/6.0/online-editor-tinymce8.md#link-checks-when-the-text-is-saved).
+Quelle: [Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md#was-die-engine-tinymce-8-leistet)
+und [Linkprüfungen beim Speichern des Texts](../../../../funktionen/6.0/online-editor-tinymce8.md#linkprüfungen-beim-speichern-des-textes).
 
 1. **Interne Links** (5 Minuten). Markieren Sie ein Wort und klicken Sie auf die Link-Schaltfläche. Der Link-Dialog von
    ezoe hat die Reiter **Durchsuchen**, **Suchen** und **Lesezeichen** (Ihre eigenen Lesezeichen), um ein Element der
@@ -122,7 +122,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 <summary>Antworten</summary>
 
 1. **Durchsuchen**, **Suchen** und **Lesezeichen**
-   ([Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md#what-the-tinymce-8-engine-does)).
+   ([Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md#was-die-engine-tinymce-8-leistet)).
 2. Er zeigt auf das Element und funktioniert deshalb weiter, wenn das Element umbenannt oder verschoben wird.
 3. **B.** Skript-Links werden entfernt und gemeldet.
 4. Er behält den Link und zeigt über dem Formular eine Meldung, die ihn nennt und sagt, wie er zu reparieren ist.
@@ -132,7 +132,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 
 ## Weiterführende Literatur
 
-- [Linkprüfungen beim Speichern des Texts](../../../../../eng-us/features/6.0/online-editor-tinymce8.md#link-checks-when-the-text-is-saved):
+- [Linkprüfungen beim Speichern des Texts](../../../../funktionen/6.0/online-editor-tinymce8.md#linkprüfungen-beim-speichern-des-textes):
   jede Meldung im Detail.
 - [Lesezeichen](../../../../anleitungen/lesezeichen.md): Ihre Lesezeichen erscheinen auch im Link-Dialog.
 - [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#rich-text): Rich-Text-Felder.

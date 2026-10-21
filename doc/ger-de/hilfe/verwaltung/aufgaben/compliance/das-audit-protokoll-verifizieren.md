@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren und Hosting-Teams. Die Hash-Ketten des Audit-Protokolls machen Manipulationen sichtbar, aber nur,
 wenn jemand prüft. Der Teil der Cronjobs verifiziert täglich; diese Aufgabe behandelt Prüfungen auf Abruf und im
-Monitoring ([Integrität und Verifikation des Audits](../../../../../eng-us/help/government/security/audit-integrity-and-verification.md)).
+Monitoring ([Integrität und Verifikation des Audits](../../sicherheit/audit-integritaet-und-pruefung.md)).
 
 ## Inhalt
 
@@ -52,16 +52,16 @@ Laufs mit `--archives` auf.
 1. Bearbeiten oder entfernen Sie nichts.
 2. Notieren Sie Datei, Zeile und Art; kopieren Sie das Audit-Verzeichnis auf schreibgeschützten Speicher.
 3. Vergleichen Sie mit Kopien, die den Server verlassen haben (SIEM, Webhook-Empfänger, Checkpoints).
-4. Behandeln Sie es als Sicherheitsvorfall ([Reaktion auf Vorfälle](../../../../../eng-us/help/government/security/incident-response.md)).
+4. Behandeln Sie es als Sicherheitsvorfall ([Reaktion auf Vorfälle](../../sicherheit/reaktion-auf-sicherheitsvorfaelle.md)).
 
 Eine abgerissene letzte Zeile, gefolgt von einer aufgezeichneten Reparatur, erscheint als `repaired`; das ist kein
 Bruch.
 
 ## Verwandte Seiten
 
-- [Integrität und Verifikation des Audits](../../../../../eng-us/help/government/security/audit-integrity-and-verification.md)
+- [Integrität und Verifikation des Audits](../../sicherheit/audit-integritaet-und-pruefung.md)
 - [Anleitung zum Audit, 4.4 Verifizieren und wiederherstellen](../../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)
-- [Das Audit-Protokoll an ein SIEM weiterleiten](../../../../../eng-us/help/government/security/forwarding-audit-to-a-siem.md)
+- [Das Audit-Protokoll an ein SIEM weiterleiten](../../sicherheit/audit-an-ein-siem-weiterleiten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

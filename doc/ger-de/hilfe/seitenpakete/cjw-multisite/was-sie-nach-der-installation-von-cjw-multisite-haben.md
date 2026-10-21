@@ -43,7 +43,7 @@ oder einen Standard behalten haben. Der Commit vom 11.10.2026 ließ die Startinh
 in den Seiteninformationen auf Englisch und Deutsch, den Titel und Meta-Titel der Startseite, den Footer, das Impressum und den Titel der
 Cookie-Richtlinie.
 
-Ein laufendes Beispiel für das Ergebnis ist auf [Demo-Websites](../../../../eng-us/help/designers/distribution/demo-sites.md) aufgeführt.
+Ein laufendes Beispiel für das Ergebnis ist auf [Demo-Websites](../../designer/veroeffentlichung/demo-websites.md) aufgeführt.
 
 ## Der Inhaltsbaum
 
@@ -142,7 +142,7 @@ die Layouts der Administration aus ihrem eigenen Fragment.
 - [Siteaccesses und Sprachen](siteaccesses-und-sprachen-von-cjw-multisite.md)
 - [Die Installerskripte](die-installerskripte-von-cjw-multisite.md)
 - [Was Sie nach der Installation von sevenx_multisite haben](../sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md)
-- [Links auf Inhalte einer anderen Website](../../../../eng-us/features/6.0/multisite-cross-site-links.md)
+- [Links auf Inhalte einer anderen Website](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

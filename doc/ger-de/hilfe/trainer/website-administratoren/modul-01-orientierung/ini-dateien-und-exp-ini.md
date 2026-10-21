@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md) und die
+Quelle: [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md) und die
 vollständige Referenz [console exp:ini](../../../../bc/6.0/console-exp-ini.md).
 
 1. **Wo INI-Dateien liegen** (3 Minuten). Zeigen Sie den Baum in einem Terminal: `settings/` (die Standardwerte,
@@ -156,7 +156,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 <details>
 <summary>Antworten</summary>
 
-1. **B.** ([Geltungsbereiche von exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md#scopes)).
+1. **B.** ([Geltungsbereiche von exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md#geltungsbereiche)).
 2. Es gibt als Diff aus, was sich ändern würde, und schreibt nichts.
 3. In `var/backup/ini/<timestamp>/`.
 4. `php bin/php/ezcache.php --clear-tag=ini`, und `exp:velocity restart` für eine Einstellung, die Velocity nur beim
@@ -167,7 +167,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 
 ## Weiterführende Literatur
 
-- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): die Aktionen und
+- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): die Aktionen und
   Geltungsbereiche.
 - [console exp:ini](../../../../bc/6.0/console-exp-ini.md): die vollständige Referenz mit der Ausgabe jeder Aktion.
 - [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md): dieselben Einstellungen im Browser.

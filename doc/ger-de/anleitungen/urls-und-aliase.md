@@ -9,7 +9,7 @@ Sie richtet sich an Administratoren und Redakteure, die die Links und Adressen e
 jedes Feld und jede Regel unten wurde am 6. Oktober 2026 mit dem Code dieses Repositorys abgeglichen; die Dateien sind
 unter [Quellen](#quellen) aufgeführt.
 
-[Anleitungen](README.md) · Siehe auch: [Seitenweise Listen in der Administration](../../eng-us/features/6.0/admin-list-paging.md) ·
+[Anleitungen](README.md) · Siehe auch: [Seitenweise Listen in der Administration](../funktionen/6.0/seitenweise-listen-im-admin.md) ·
 [Cronjobs](cronjobs.md) · [Betrieb einer Site](betrieb-einer-website.md)
 
 ## Kurz gesagt
@@ -85,7 +85,7 @@ Linkprüfung testet die Links erneut und kann den Zustand wieder zurücksetzen.
 
 Die Seitengröße wird unter der Liste gewählt (10, 25 oder 50, je Benutzer gespeichert). Die angebotenen Größen sind
 die Einstellung `ItemsPerPageList_url_list[]` in `admininterface.ini [PaginationSettings]`, wie bei jeder Liste der
-Administration ([Blättern](../../eng-us/features/6.0/admin-list-paging.md)).
+Administration ([Blättern](../funktionen/6.0/seitenweise-listen-im-admin.md)).
 
 ## 2. Wie Links geprüft werden
 

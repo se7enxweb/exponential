@@ -27,7 +27,7 @@ ein Datumsattribut an der Klasse und eine Einstellung ([Cronjobs](../../../../an
 
 - Ihre Klasse für Bekanntmachungen hat ein Attribut vom Typ Datum und Uhrzeit für das Ende, zum Beispiel
   **Hide after** (`hide_date`), wie in
-  [Inhaltsmodell für Kommunen](../../../../../eng-us/help/government/levels/municipal-and-local/content-model.md#class-to-add-public-notice).
+  [Inhaltsmodell für Kommunen](../../ebenen/kommunen/inhaltsmodell.md#hinzuzufügende-klasse-öffentliche-bekanntmachung).
 - Das automatische Verstecken ist für den Ordner der Bekanntmachungen eingerichtet (fragen Sie das Web-Team;
   Einrichtung unten).
 - Sie kennen die Bekanntmachungsfrist, die Ihre Regeln verlangen.

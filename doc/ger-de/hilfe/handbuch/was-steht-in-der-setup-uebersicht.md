@@ -53,7 +53,7 @@ ihrer eigenen Seite, zum Beispiel `class/*` für **Klassen**, `section/*` für *
 
 - [Rundgang durch die Administration](../rundgang-durch-die-administration.md)
 - [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)
-- [Links in der Administration folgen den Berechtigungen](../../../eng-us/features/6.0/admin-links-follow-permissions.md)
+- [Links in der Administration folgen den Berechtigungen](../../funktionen/6.0/admin-links-folgen-den-berechtigungen.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

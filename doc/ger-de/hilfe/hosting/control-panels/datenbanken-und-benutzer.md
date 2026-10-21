@@ -46,7 +46,7 @@ Installer legen weder Datenbanken noch Benutzer an ([2.6 Datenbanken](../../../i
 | 6. MySQL | ja, `utf8mb4` | ja | `mysqli` |
 
 Seit 6.0.15 arbeitet der Setup-Assistent nur mit Ihrer eigenen Datenbank: Sie brauchen nur noch Rechte auf Ihre eigene Datenbank
-([Eine saubere Installation, die zu Shared Hosting passt](../../../../eng-us/features/6.0/clean-install-defaults.md)).
+([Eine saubere Installation, die zu Shared Hosting passt](../../../funktionen/6.0/standardwerte-einer-sauberen-installation.md)).
 
 ## 1. SQLite 3
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Bewertende, die wissen müssen, was sie finden werden und was nicht, und an Bieter, die
 ehrlich antworten möchten. Jeder Punkt stammt aus den Abschnitten „Known gaps“ und den Statuszeilen der
-[Seiten zu den Standards](../../../../../eng-us/standards/README.md). Eine Lücke allein ist kein Grund, ein Produkt auszuschließen:
+[Seiten zu den Standards](../../../../standards/README.md). Eine Lücke allein ist kein Grund, ein Produkt auszuschließen:
 Viele Lücken werden durch Konfiguration oder durch die Arbeit des Lieferanten geschlossen. Ein Angebot, das behauptet,
 was das Repository nicht zeigen kann, sollte aber Punkte verlieren.
 
@@ -25,39 +25,39 @@ was das Repository nicht zeigen kann, sollte aber Punkte verlieren.
 
 | Bereich | Nachweise, die Sie selbst prüfen können |
 |---|---|
-| Barrierefreiheit der Administration admin4 und admin4l | Design-Tests in `tests/tests/design/`, in der CI ausgeführt; dokumentierte Kriterien je WCAG-Bereich ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
-| Gegenmaßnahmen zur Sicherheit je Kategorie der OWASP Top 10 | Einstellungen, Klassen und Tests je Zeile benannt ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)) |
-| Ein manipulationssicheres Audit-Protokoll | `./console exp:audit verify` ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
-| Datenschutzfunktionen (Einwilligungsprotokoll, Löschung beim Entfernen eines Kontos, Maskierung in Protokollen, Aufbewahrung) | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
-| Unicode, Locales, rechts nach links | [Standards zur Internationalisierung](../../../../../eng-us/standards/internationalization.md) |
+| Barrierefreiheit der Administration admin4 und admin4l | Design-Tests in `tests/tests/design/`, in der CI ausgeführt; dokumentierte Kriterien je WCAG-Bereich ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)) |
+| Gegenmaßnahmen zur Sicherheit je Kategorie der OWASP Top 10 | Einstellungen, Klassen und Tests je Zeile benannt ([Sicherheitsstandards](../../../../standards/sicherheit.md)) |
+| Ein manipulationssicheres Audit-Protokoll | `./console exp:audit verify` ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
+| Datenschutzfunktionen (Einwilligungsprotokoll, Löschung beim Entfernen eines Kontos, Maskierung in Protokollen, Aufbewahrung) | [Datenschutzstandards](../../../../standards/datenschutz.md) |
+| Unicode, Locales, rechts nach links | [Standards zur Internationalisierung](../../../../standards/internationalisierung.md) |
 | Open-Source-Lizenz | `LICENSE`, `COPYRIGHT.md`, `composer.json` ([Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md)) |
-| Release-Richtlinie und unterstützte Versionen | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) |
+| Release-Richtlinie und unterstützte Versionen | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md) |
 | Export aller Inhalte in offenen Formaten | [Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md) |
-| Automatisierte Tests und CI | [Tests und kontinuierliche Integration](../../../../../eng-us/standards/testing-and-ci.md) |
+| Automatisierte Tests und CI | [Tests und kontinuierliche Integration](../../../../standards/tests-und-ci.md) |
 
 ## Was es nicht nachweisen kann
 
 | Lücke | Quelle |
 |---|---|
-| **Kein VPAT und kein Accessibility Conformance Report**; Status für Section 508 „Nicht geprüft“ | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) |
+| **Kein VPAT und kein Accessibility Conformance Report**; Status für Section 508 „Nicht geprüft“ | [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) |
 | **Keine Bewertung nach EN 301 549**; Status „Nicht geprüft“; Klausel 11.8 für Autorenwerkzeuge nicht geprüft | ebenda |
 | **Öffentliche Designs nicht** auf Barrierefreiheit **geprüft**; Online-Editor nicht geprüft | ebenda |
 | **Keine Vorlage für eine Erklärung zur Barrierefreiheit** für Websites | ebenda |
 | **Keine automatisierte Prüfung der Barrierefreiheit in der CI**; Läufe mit axe erfolgen manuell | ebenda |
-| **Keine Bewertung nach OWASP ASVS**; Status „Nicht geprüft“; Standard-Mindestlänge des Passworts (10) unter ASVS Stufe 1 (12) | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| **Keine Bewertung nach OWASP ASVS**; Status „Nicht geprüft“; Standard-Mindestlänge des Passworts (10) unter ASVS Stufe 1 (12) | [Sicherheitsstandards](../../../../standards/sicherheit.md) |
 | **Keine externe Sicherheitsbewertung** dokumentiert („Erfüllt“ bräuchte eine) | ebenda |
 | **Kontosperre standardmäßig aus**; zweistufige Anmeldung auf Wunsch | ebenda |
 | **Keine Prüfung der Abhängigkeiten auf Schwachstellen in der CI** | ebenda |
 | **Keine `security.txt`** mitgeliefert | ebenda |
 | **CSP standardmäßig nicht durchgesetzt** (Report-only in der Administration, aus auf Websites) | ebenda |
-| **Kein Cookie-Einwilligungsbanner** | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
+| **Kein Cookie-Einwilligungsbanner** | [Datenschutzstandards](../../../../standards/datenschutz.md) |
 | **Keine einzelne Funktion „alle meine Daten exportieren“ oder „mich löschen“** | ebenda |
 | **Kernel-Protokolle ohne Altersgrenze** in der Standardeinstellung | ebenda |
-| **Kein getaggtes PDF** (PDF/UA Nicht erfüllt) | [Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md) |
-| **Keine Unterstützung von Pluralformen** in Übersetzungen der Oberfläche | [Standards zur Internationalisierung](../../../../../eng-us/standards/internationalization.md) |
-| **Keine OpenAPI-Beschreibung** der REST API des Kernels | [Standards zu APIs und Protokollen](../../../../../eng-us/standards/apis-and-protocols.md) |
-| **Unsignierte Commits und Tags**; kein Branch-Schutz auf `main` | [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) |
-| **Keine veröffentlichte Codeabdeckung** | [Tests und kontinuierliche Integration](../../../../../eng-us/standards/testing-and-ci.md) |
+| **Kein getaggtes PDF** (PDF/UA Nicht erfüllt) | [Standards zu Dokumentation und Veröffentlichung](../../../../standards/dokumentation-und-veroeffentlichung.md) |
+| **Keine Unterstützung von Pluralformen** in Übersetzungen der Oberfläche | [Standards zur Internationalisierung](../../../../standards/internationalisierung.md) |
+| **Keine OpenAPI-Beschreibung** der REST API des Kernels | [Standards zu APIs und Protokollen](../../../../standards/apis-und-protokolle.md) |
+| **Unsignierte Commits und Tags**; kein Branch-Schutz auf `main` | [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md) |
+| **Keine veröffentlichte Codeabdeckung** | [Tests und kontinuierliche Integration](../../../../standards/tests-und-ci.md) |
 | **Kein veröffentlichtes SLA** des Projekts | [SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md) |
 
 ## Wie Sie jede Lücke in einer Ausschreibung behandeln

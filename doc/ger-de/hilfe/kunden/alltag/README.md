@@ -30,8 +30,8 @@ schaut sich an, wonach Besucher suchen und was sie nicht finden. Exponential unt
 eingebauten Werkzeugen: Rollen und Richtlinien ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)),
 Freigabe-Workflows ([Workflows](../../../anleitungen/workflows.md)), Versionen und der Papierkorb
 ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)), die Inhaltsprüfungen
-([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)) und die Seite zur Überprüfung der Konten
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)) und die Seite zur Überprüfung der Konten
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Die Seiten dieses Bereichs
 
@@ -72,13 +72,13 @@ Freigabe-Workflows ([Workflows](../../../anleitungen/workflows.md)), Versionen u
 - Die Klicks in der Administration: siehe [Erste Schritte](../../erste-schritte.md),
   [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md) und [Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md).
 - Die Templates und Klassen der Website bauen oder ändern: siehe
-  [Website-Ersteller: hier beginnen](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md).
+  [Website-Ersteller: hier beginnen](../../ersteller/website-ersteller/website-ersteller-hier-beginnen.md).
 - Die Website mit Newslettern, Kampagnen, Sprachen, Apps und mehr ausbauen: siehe [Ihre Website ausbauen](../wachstum/README.md).
 
 ## Verwandte Seiten
 
 - [Ihre Website ausbauen](../wachstum/README.md)
-- [Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)
+- [Ihre Website pflegen](../../ersteller/website-ersteller/ihre-website-pflegen.md)
 - [Unternehmen: hier beginnen](../../unternehmen/unternehmen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

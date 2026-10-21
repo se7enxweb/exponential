@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Creator, die Exponential Intelligence zeigen, den Schreibassistenten der Administration. Die eine
 Botschaft, die jeden Schnitt Ihres Videos überstehen muss: **Er schreibt nur Entwürfe**, als der angemeldete Redakteur
 und mit dessen Rechten, und veröffentlicht nie von sich aus (`README.md`, „Exponential Intelligence“;
-[Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md)).
+[Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md)).
 
 Es ist die Erweiterung `se7enxweb/expai`, Release 0.0.1.0, die seit 6.0.15 in `composer.json` verlangt wird, das in
 Entwicklung ist. Sagen Sie das: „die Entwicklungslinie 6.0.15“ oder die Version, die Sie wirklich verwenden. Das Skript
@@ -31,7 +31,7 @@ dauert etwa sechs Minuten; die Einrichtung geschieht **außerhalb der Kamera**.
 Auf einer neuen Installation der Entwicklungslinie ist der Assistent laut README für die Siteaccesses der Administration
 bereits aktiv, seine Tabellen existieren und die Rolle Administrator hat seine Richtlinien; er "sends nothing anywhere
 until you add a provider key". Auf einer älteren Installation folgen Sie den Upgrade-Schritten in der README oder
-[Einschalten](../../../eng-us/features/6.0/extensions/expai.md#switch-it-on).
+[Einschalten](../../funktionen/6.0/erweiterungen/expai.md#einschalten).
 
 ```text
 [ ] Ein Anbieterschlüssel mit niedrigem Ausgabelimit, nur für diese Aufnahme erstellt, den Sie danach widerrufen können

@@ -113,7 +113,7 @@ zum Anmeldeformular.
 - Der QR-Code wird auf dem Server gezeichnet; der Schlüssel geht an keinen anderen Dienst. Seiten mit einem Schlüssel
   oder einer laufenden Anmeldung werden nicht gecacht.
 - Jede Adresse, an die die Anmeldung einen Besucher weiterleitet, durchläuft die
-  [Regeln für sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md).
+  [Regeln für sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md).
 - Der Social Login prüft einen einmaligen, an den Anbieter gebundenen State und lehnt Adressen ab, die der Anbieter
   nicht verifiziert hat.
 - Jeder Schritt wird in `var/log/auth.log` geschrieben (nie ein Code oder ein Geheimnis).

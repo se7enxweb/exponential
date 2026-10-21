@@ -77,6 +77,6 @@ Einschränkung nach Klasse aus; vermeiden Sie „die Redaktion entscheidet im Ei
 ## Verwandte Seiten
 - [Vier-Augen-Prinzip beim Veröffentlichen](vier-augen-prinzip-beim-veroeffentlichen.md)
 - [Objektzustände in Berechtigungen](../personen-und-berechtigungen/objektzustaende-in-berechtigungen.md)
-- [Eine Zustandsgruppe für Prüfungen einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-a-review-state-group.md)
+- [Eine Zustandsgruppe für Prüfungen einrichten](../../aufgaben/personen-und-berechtigungen/eine-zustandsgruppe-fuer-die-pruefung-einrichten.md)
 - [Das Freigabe-Ereignis einrichten](das-freigabe-ereignis-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

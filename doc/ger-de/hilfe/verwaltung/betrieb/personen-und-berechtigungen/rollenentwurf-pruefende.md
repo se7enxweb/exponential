@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren, die einer internen Revision, einer oder einem Informationssicherheitsbeauftragten oder
 den Schriftgutverantwortlichen Zugang zu den Belegen geben müssen, ohne jedes Recht, sie zu ändern. Das Prüfprotokoll von Exponential
 ist dafür gemacht: zwei Richtlinien, `audit/read` (optional nach Kanal eingeschränkt) und `audit/manage`, und ein Log-Viewer, der
-personenbezogene Daten standardmäßig maskiert ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md#who-may-look), [Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md#who-may-use-it)).
+personenbezogene Daten standardmäßig maskiert ([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md#wer-hineinsehen-darf), [Log-Viewer](../../../../funktionen/6.0/log-betrachter.md#wer-ihn-verwenden-darf)).
 
 ## Inhalt
 1. [Was eine Prüferin oder ein Prüfer sehen muss](#was-eine-prüferin-oder-ein-prüfer-sehen-muss)
@@ -75,12 +75,12 @@ nicht zu dieser Rolle.
 - Auf der Kommandozeile kann ein Administrator `./console exp:audit verify --allow-root-user` ausführen und die Ausgabe zusammen mit dem
   Export übergeben, als Beleg, dass die Kette intakt war ([Überprüfung des Prüfprotokolls](../ueberwachung/pruefung-des-audit-trails.md)).
 - Personenbezogene Daten: Das Audit kürzt Adressen, hasht Sitzungen, entfernt Werte aus Abfragen und erfasst nie Passwörter oder Tokens
-  ([Prüfprotokoll, „Warum Sie es wollen“](../../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Exporte können dennoch
+  ([Prüfprotokoll, „Warum Sie es wollen“](../../../../funktionen/6.0/pruefprotokoll.md#warum-sie-es-wollen)). Exporte können dennoch
   Benutzernamen enthalten; behandeln Sie sie nach Ihren Datenschutzregeln.
 
 ## Verwandte Seiten
-- [Einer prüfenden Person Lesezugriff auf das Prüfprotokoll geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-auditor-read-access-to-the-audit-trail.md)
-- [Audit-Einträge für eine Prüfung exportieren](../../../../../eng-us/help/government/tasks/operations/export-audit-records-for-an-auditor.md)
+- [Einer prüfenden Person Lesezugriff auf das Prüfprotokoll geben](../../aufgaben/personen-und-berechtigungen/einem-pruefer-lesezugriff-auf-das-audit-protokoll-geben.md)
+- [Audit-Einträge für eine Prüfung exportieren](../../aufgaben/betrieb/audit-eintraege-fuer-einen-pruefer-exportieren.md)
 - [Audit-Alarme](../ueberwachung/audit-warnungen.md)
 - [Leitfaden zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md#3-das-audit-protokoll-lesen-5-minuten)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

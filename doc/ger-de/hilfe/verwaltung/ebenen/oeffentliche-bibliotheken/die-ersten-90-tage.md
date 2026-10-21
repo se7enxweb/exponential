@@ -29,7 +29,7 @@ Bibliotheksverbunds, die eine Website mit Exponential beginnen. Sie stellt das, 
 | Beim Lieferanten des Bibliothekssystems die Suchadresse und die Anmeldeadresse des Katalogs erfragen | die Links, die die Website verwenden wird |
 | Entscheiden: zentraler Kalender oder einer je Zweigstelle | eine Entscheidung ([Struktur](struktur-sektionen-und-rollen.md)) |
 | Entscheiden, welche Beschäftigten Veranstaltungen veröffentlichen | eine Liste der Redaktion Veranstaltungen |
-| Ein Design wählen, das Templates für den Veranstaltungskalender hat oder erhalten kann | ezwebin hat Kalender- und Programmansicht; andere Designs brauchen Templates ([Ein Design oder Theme wählen](../../../../../eng-us/help/creators/website-creators/choosing-a-design-or-theme.md)) |
+| Ein Design wählen, das Templates für den Veranstaltungskalender hat oder erhalten kann | ezwebin hat Kalender- und Programmansicht; andere Designs brauchen Templates ([Ein Design oder Theme wählen](../../../ersteller/website-ersteller/ein-design-oder-theme-waehlen.md)) |
 
 Prüfung: Sie können sich in der Administration anmelden; **Setup > Klassen** listet Event und Event calendar.
 
@@ -42,7 +42,7 @@ Prüfung: Sie können sich in der Administration anmelden; **Setup > Klassen** l
 | Den Veranstaltungskalender anlegen und seine Ansicht wählen | der Kalender zeigt die Testveranstaltung |
 | Die Rolle und die Gruppe Redaktion Veranstaltungen anlegen ([Struktur](struktur-sektionen-und-rollen.md)) | eine Testredaktion kann nur Veranstaltungen anlegen |
 | Die zweistufige Anmeldung für Beschäftigte einschalten | die Testredaktion hat sie eingerichtet |
-| Tags für Zielgruppen und Themen | Veranstaltungen lassen sich nach Tag auflisten ([Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) |
+| Tags für Zielgruppen und Themen | Veranstaltungen lassen sich nach Tag auflisten ([Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)) |
 
 ## Tage 61 bis 90: Inhalte und Start
 
@@ -52,8 +52,8 @@ Prüfung: Sie können sich in der Administration anmelden; **Setup > Klassen** l
 | Die Veranstaltungen der nächsten zwei Monate eintragen | [Veranstaltungen und Kataloge](veranstaltungen-und-verlinkte-kataloge.md) |
 | Die Redaktion Veranstaltungen mit je einer echten Veranstaltung schulen | [Editors 101](../../../trainer/redakteure-101/README.md) |
 | Das Suchfeld und die Links zum Katalog hinzufügen | [Veranstaltungen und Kataloge](veranstaltungen-und-verlinkte-kataloge.md#der-katalog-verlinken) |
-| Die Barrierefreiheit von Kalender und Seiten der Zweigstellen testen | [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
-| Start | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Die Barrierefreiheit von Kalender und Seiten der Zweigstellen testen | [Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
+| Start | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 Prüfungen beim Start:
 
@@ -73,7 +73,7 @@ Prüfungen beim Start:
 
 - [Öffentliche Bibliotheken](README.md)
 - [Veranstaltungen und Kataloge, verlinkt statt nachgebaut](veranstaltungen-und-verlinkte-kataloge.md)
-- [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

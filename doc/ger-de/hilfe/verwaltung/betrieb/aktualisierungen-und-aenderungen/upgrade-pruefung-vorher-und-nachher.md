@@ -72,9 +72,9 @@ Website. Ein Exit-Code ungleich null macht ihn für die Überwachung nutzbar
 ([Upgrade-Prüfung als Überwachung](../ueberwachung/upgrade-pruefung-als-ueberwachung.md)).
 
 ## Verwandte Seiten
-- [Konsistenz nach der Aktualisierung prüfen](../../../../../eng-us/help/government/tasks/operations/check-upgrade-consistency.md)
-- [Das Datenbankschema prüfen](../../../../../eng-us/help/government/tasks/operations/check-the-database-schema.md)
-- [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md)
+- [Konsistenz nach der Aktualisierung prüfen](../../aufgaben/betrieb/die-konsistenz-nach-einem-upgrade-pruefen.md)
+- [Das Datenbankschema prüfen](../../aufgaben/betrieb/das-datenbankschema-pruefen.md)
+- [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md)
 - [Überblick über Aktualisierungen für den öffentlichen Sektor](aktualisierungen-im-oeffentlichen-sektor-im-ueberblick.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

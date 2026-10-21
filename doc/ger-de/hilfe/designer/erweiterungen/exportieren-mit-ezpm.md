@@ -61,7 +61,7 @@ Lesen Sie die Ausgabe von `check` vor `install`: Sie listet Konflikte auf (zum B
 
 ## Verwandte Seiten
 
-- [ezpm: der Paketmanager auf der Kommandozeile](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md)
+- [ezpm: der Paketmanager auf der Kommandozeile](../../../funktionen/6.0/ezpm-paketmanager-cli.md)
 - [Ihr Paket auf einer Testseite installieren](ihr-paket-auf-einer-testseite-installieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

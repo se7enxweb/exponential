@@ -47,14 +47,14 @@ geprüft, und jede Lücke wird benannt.
 5. **Multisite**, **Intranets** und **Extranets**, wenn mehr als eine Zielgruppe oder Organisation die Plattform teilt.
 
 Nach oben: [Behörden: hier beginnen](../verwaltungen-hier-beginnen.md). Die Planung je Art von Organisation steht in
-[Verwaltungsebenen](../../../../eng-us/help/government/levels/README.md).
+[Verwaltungsebenen](../ebenen/README.md).
 
 ## Wiederkehrende Themen
 
 | Thema | Wo es wiederkehrt | Lesen |
 |---|---|---|
-| Barrierefreiheit dessen, was Sie bauen | Formulare, Veranstaltungen, Dokumente, Bekanntmachungen | [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) |
-| Personenbezogene Daten und Aufbewahrung | Formulare, Konten, Veranstaltungen, Newsletter | [Standards zum Datenschutz](../../../../eng-us/standards/privacy.md) |
+| Barrierefreiheit dessen, was Sie bauen | Formulare, Veranstaltungen, Dokumente, Bekanntmachungen | [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) |
+| Personenbezogene Daten und Aufbewahrung | Formulare, Konten, Veranstaltungen, Newsletter | [Standards zum Datenschutz](../../../standards/datenschutz.md) |
 | Drittanbieter (CAPTCHA, Karten, Analyse, Teilen in sozialen Netzwerken) | Formulare, Karten, Nachrichten | die Datenschutzhinweise der jeweiligen Seite |
 | Caches und dringende Inhalte | Bekanntmachungen, Veranstaltungen, Warnmeldungen | [Caches](../../../anleitungen/caches.md) |
 | Rollen und Sektionen | jeder Ordner | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md), [Sektionen](../../../anleitungen/sektionen.md) |
@@ -62,9 +62,9 @@ Nach oben: [Behörden: hier beginnen](../verwaltungen-hier-beginnen.md). Die Pla
 
 ## Verwandte Seiten
 
-- [Verwaltungsebenen](../../../../eng-us/help/government/levels/README.md)
-- [Website-Ersteller: hier beginnen](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Verwaltungsebenen](../ebenen/README.md)
+- [Website-Ersteller: hier beginnen](../../ersteller/website-ersteller/website-ersteller-hier-beginnen.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

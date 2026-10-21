@@ -108,7 +108,7 @@ hinzu, aufgebaut wie das Paket-Repository von 7x), und die beiden Pakete erreich
 Repository 16 Commits; die späteren ändern den Installer (expqueue und expai, ezoracle, ezurlmultisite, die Oberflächenwahl der Redaktion,
 exp_adminui, ezownerchange).
 
-Eine laufende Kopie der Startseite ist auf [Demo-Websites](../../../../eng-us/help/designers/distribution/demo-sites.md) aufgeführt:
+Eine laufende Kopie der Startseite ist auf [Demo-Websites](../../designer/veroeffentlichung/demo-websites.md) aufgeführt:
 [site.cjw.demo.exponential.earth](https://site.cjw.demo.exponential.earth/).
 
 ## Die Seiten dieses Teils

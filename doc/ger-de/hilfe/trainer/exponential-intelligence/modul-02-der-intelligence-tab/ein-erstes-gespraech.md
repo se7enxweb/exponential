@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [expai: Für Redakteure](../../../../../eng-us/features/6.0/extensions/expai.md#for-editors) und die Seite zum Tab
+Quelle: [expai: Für Redakteure](../../../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) und die Seite zum Tab
 Intelligence unter **EI: Help** (`extension/expai/doc/full-view-panel.md`).
 
 1. **Zwei Wege hinein** (3 Minuten). Auf der Dashboard-Seite **Start writing**: ein Ort (**change**), *What should
@@ -127,14 +127,14 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 
 ## Weiterführende Informationen
 
-- [expai: Für Redakteure](../../../../../eng-us/features/6.0/extensions/expai.md#for-editors)
+- [expai: Für Redakteure](../../../../funktionen/6.0/erweiterungen/expai.md#für-redakteure)
 - Die Bedienungsanleitung und die Seite zum Tab Intelligence unter **EI: Help**.
 
 ## Verwandte Seiten
 
 - [Modul 2: Der Tab Intelligence](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

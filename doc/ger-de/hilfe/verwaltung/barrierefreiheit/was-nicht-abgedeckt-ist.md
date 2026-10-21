@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Projektverantwortliche und die Koordination Barrierefreiheit, die ein Risikoregister oder
 einen Plan zur Barrierefreiheit führen. Sie listet die Lücken auf, die die eigene Erklärung des Projekts nennt
-([Standards zur Barrierefreiheit: bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)), und für jede, was
+([Standards zur Barrierefreiheit: bekannte Lücken](../../../standards/barrierefreiheit.md#bekannte-lücken)), und für jede, was
 eine öffentliche Stelle dagegen tun kann. Zu sagen, wo die Grenzen liegen, gehört zu einer ehrlichen Erklärung zur
 Barrierefreiheit.
 
@@ -40,7 +40,7 @@ Barrierefreiheit.
 
 **Öffentliche Designs.** Planen Sie eine Prüfung Ihres Designs vor dem Start und nach jeder Neugestaltung ein. Bauen Sie
 bevorzugt auf einem Design auf, dessen Templates Sie steuern, und geben Sie Ihrem Design die Checkliste aus
-[Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md).
+[Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md).
 
 **Klassische Administration und admin3.** Setzen Sie `SiteDesign=admin4` im Administrations-Siteaccess und beschränken
 Sie den Designwechsel, wo möglich, auf admin4 und admin4l
@@ -49,7 +49,7 @@ Sie den Designwechsel, wo möglich, auf admin4 und admin4l
 **Online-Editor.** Nehmen Sie den Editor in Ihre Bewertung auf: Fügen Sie nur mit der Tastatur eine Überschrift, eine
 Liste, eine Tabelle mit Kopfzeile und Beschriftung, einen Link und ein Bild mit Alternativtext ein; untersuchen Sie dann
 das veröffentlichte HTML. TinyMCE 3 ist die Standard-Engine; TinyMCE 8 ist je Benutzer oder je Siteaccess wählbar
-([Der Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md)). Bewerten Sie die Engine, die Sie
+([Der Online-Editor auf TinyMCE 8](../../../funktionen/6.0/online-editor-tinymce8.md)). Bewerten Sie die Engine, die Sie
 einsetzen.
 
 **Erweiterungen.** Führen Sie eine Liste der aktivierten Erweiterungen (Setup > Extensions) und testen Sie die
@@ -79,9 +79,9 @@ erforderlich“), schulen Sie die Redaktion und prüfen Sie die Inhalte jeden Mo
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

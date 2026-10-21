@@ -28,7 +28,7 @@ Bilder und Dokumente. Pakete lassen sich aus einer Installation erstellen und al
 Ihre Rolle verwenden darf, darunter **Export von Inhaltsobjekten** und **Export von Inhaltsklassen**. Der Assistent
 fragt nach den Bestandteilen, dann nach Name, Zusammenfassung, Version, Lizenz und Maintainer sowie dem Speicherformat
 (Classic XML oder JSON) und schreibt das Paket in das Repository `local`. Auf der Website ändert sich nichts
-([Der Paketassistent](../../../../eng-us/features/6.0/package-wizard.md)).
+([Der Paketassistent](../../../funktionen/6.0/paketassistent.md)).
 
 ## Es herunterladen
 
@@ -47,7 +47,7 @@ fragt nach den Bestandteilen, dann nach Name, Zusammenfassung, Version, Lizenz u
 
 Mit `ManagedByDeployment=enabled` im Siteaccess der Administration sind das Erstellen, Exportieren, Hochladen,
 Installieren und Deinstallieren von Paketen in der Weboberfläche gesperrt; die Kommandozeile funktioniert weiterhin
-([Vom Deployment verwaltete Konfiguration](../../../../eng-us/features/6.0/managed-by-deployment.md)).
+([Vom Deployment verwaltete Konfiguration](../../../funktionen/6.0/durch-deployment-verwaltet.md)).
 
 ## Nutzen und Grenzen für Schriftgut
 
@@ -61,7 +61,7 @@ Installieren und Deinstallieren von Paketen in der Weboberfläche gesperrt; die 
 ## Verwandte Seiten
 
 - [Pakete](../../../anleitungen/pakete.md)
-- [Das JSON-Paketformat](../../../../eng-us/bc/6.0/package-json-format.md)
+- [Das JSON-Paketformat](../../../bc/6.0/package-json-format.md)
 - [Inhalte exportieren](inhalte-exportieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

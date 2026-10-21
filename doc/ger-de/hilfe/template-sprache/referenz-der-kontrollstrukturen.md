@@ -306,9 +306,9 @@ Ausgabe auf alpha:
 
 - Zurück: [Funktionen und Operatoren](funktionen-und-operatoren.md)
 - Weiter: [Sections und foreach](sections-und-foreach.md)
-- [If und Bedingungen](../../../eng-us/help/designers/templates/if-and-conditions.md), [Switch und case](../../../eng-us/help/designers/templates/switch-case.md)
-- [Foreach-Schleifen](../../../eng-us/help/designers/templates/foreach-loops.md), [For-Schleifen](../../../eng-us/help/designers/templates/for-loops.md), [While- und do-Schleifen](../../../eng-us/help/designers/templates/while-and-do-loops.md)
-- [foreach](../../../eng-us/examples/template-functions/foreach.md), [switch](../../../eng-us/examples/template-functions/switch.md), aus dem Code erzeugt
+- [If und Bedingungen](../designer/vorlagen/if-und-bedingungen.md), [Switch und case](../designer/vorlagen/switch-und-case.md)
+- [Foreach-Schleifen](../designer/vorlagen/foreach-schleifen.md), [For-Schleifen](../designer/vorlagen/for-schleifen.md), [While- und do-Schleifen](../designer/vorlagen/while-und-do-schleifen.md)
+- [foreach](../../beispiele/template-funktionen/foreach.md), [switch](../../beispiele/template-funktionen/switch.md), aus dem Code erzeugt
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

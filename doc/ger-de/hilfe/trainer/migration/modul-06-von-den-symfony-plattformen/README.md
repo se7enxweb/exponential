@@ -59,7 +59,7 @@ Legacy-Kernel von Exponential 6 wählt und wie jeder Weg geplant wird. Es folgt 
   das Kapitel, auf dem dieses Modul aufbaut.
 - [Kapitel 17: Migrationsreferenz](../../../../installation/17-migrationsreferenz.md): die Nachschlagetabellen für beide
   Wege.
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

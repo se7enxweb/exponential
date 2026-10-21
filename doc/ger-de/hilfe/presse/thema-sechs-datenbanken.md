@@ -32,7 +32,7 @@ this time“ ([README, Requirements](https://github.com/se7enxweb/exponential/bl
 unterstützten Datenbanken in der bevorzugten Reihenfolge, wobei Microsoft SQL Server derzeit mit zusätzlichem Aufwand
 möglich ist. Die Reihenfolge ist schon eine Aussage für sich: eine Dateidatenbank ohne Server zuerst, eine
 Dokumentendatenbank an dritter Stelle und MySQL, lange die übliche Wahl für PHP-Anwendungen, zuletzt. Ein Befehl
-installiert eine Website auf fünf davon ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md#choose-a-database)).
+installiert eine Website auf fünf davon ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md#eine-datenbank-wählen)).
 
 ## Die sechs, der Reihe nach
 
@@ -40,7 +40,7 @@ installiert eine Website auf fünf davon ([Installation mit einem Befehl](../../
 |---|---|---|---|
 | 1 | SQLite 3 | Die Voreinstellung; eine Datei, kein Server | [Datenbankunterstützung](../datenbankunterstuetzung.md#1-sqlite-3-der-standard) |
 | 2 | PostgreSQL | Der empfohlene Datenbankserver | [Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting-datenbanken-freiheit.md#die-datenbanken-in-je-einer-zeile) |
-| 3 | MongoDB | Unterstützt seit 6.0.14, mit dokumentierten Grenzen | [MongoDB als Datenbank](../../../eng-us/features/6.0/mongodb-database-support.md) |
+| 3 | MongoDB | Unterstützt seit 6.0.14, mit dokumentierten Grenzen | [MongoDB als Datenbank](../../funktionen/6.0/mongodb-datenbankunterstuetzung.md) |
 | 4 | MariaDB | Unterstützt; teilt einen Treiber mit MySQL | [Datenbankunterstützung, Auf einen Blick](../datenbankunterstuetzung.md#auf-einen-blick) |
 | 5 | Oracle | Unterstützt über die Erweiterung `ezoracle` | ebenda |
 | 6 | MySQL | Unterstützt; teilt einen Treiber mit MariaDB | ebenda |
@@ -49,8 +49,8 @@ installiert eine Website auf fünf davon ([Installation mit einem Befehl](../../
 
 | Was | Wann | Quelle |
 |---|---|---|
-| SQLite kommt als Datenbank hinzu, die keinen Server braucht | Januar 2024 | [Januar 2024](../../../eng-us/history/2024/2024-01a.md) |
-| MongoDB 8 als Datenbank, in 6.0.14 | Juni 2026 (6.0.14 am 7. Juni) | [Juni 2026](../../../eng-us/history/2026/2026-06a.md) |
+| SQLite kommt als Datenbank hinzu, die keinen Server braucht | Januar 2024 | [Januar 2024](../../geschichte/2024/2024-01a.md) |
+| MongoDB 8 als Datenbank, in 6.0.14 | Juni 2026 (6.0.14 am 7. Juni) | [Juni 2026](../../geschichte/2026/2026-06a.md) |
 | Korrekturen an Treibern und Installationsprogrammen für alle Engines; SQLite ist die Voreinstellung des Setup-Assistenten | 16. bis 30. September 2026 | [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | Oracle 11g und 12.1 (ezoracle 2.3.7) | 14. Oktober 2026 | [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#14-october-2026-oracle-11g-and-121-ezoracle-237) |
 
@@ -69,7 +69,7 @@ Die Änderungen von September und Oktober gehören zur Produktlinie 6.0.15, die 
 ## Was Sie nicht behaupten sollten
 
 - „Jede Funktion läuft auf jeder Datenbank.“ MongoDB hat eine dokumentierte Liste von Grenzen, und `eztags` ist dort
-  nicht nutzbar ([MongoDB, Was funktioniert und was nicht](../../../eng-us/features/6.0/mongodb-database-support.md#what-works-and-what-does-not-june-2026)).
+  nicht nutzbar ([MongoDB, Was funktioniert und was nicht](../../funktionen/6.0/mongodb-datenbankunterstuetzung.md#was-funktioniert-und-was-nicht-juni-2026)).
 - „In der CI auf allen sechs getestet.“ Nur PostgreSQL und MySQL durchlaufen in der CI vollständige Datenbanktests.
 - „Unterstützt SQL Server.“ Heute nicht.
 - Jede Leistungsrangliste der Datenbanken: Die Quellen veröffentlichen keine.

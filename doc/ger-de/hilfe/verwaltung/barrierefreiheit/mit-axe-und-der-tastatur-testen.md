@@ -32,7 +32,7 @@ für seine eigene Administration folgt.
 - **axe läuft von Hand** bei Reviews, nicht in der CI; Befunde und Korrekturen werden im
   [Changelog von 6.0.15](../../../../changelogs/6.0/6.0.15.md) festgehalten.
 - Seiten werden im hellen und dunklen Modus geprüft, bei 1440 px und bei 960 px mit 200 % Zoom, und allein mit der
-  Tastatur ([Standards zur Barrierefreiheit: Für Template-Autoren](../../../../eng-us/standards/accessibility.md#for-template-authors)).
+  Tastatur ([Standards zur Barrierefreiheit: Für Template-Autoren](../../../standards/barrierefreiheit.md#für-template-autoren)).
 
 Wenn Sie die Administration erweitern, führen Sie nach Template-Änderungen die Suite des Projekts aus:
 
@@ -54,7 +54,7 @@ oder ob ein Linktext klar ist.
 
 ## Die manuellen Durchgänge
 
-Folgen Sie [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md):
+Folgen Sie [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md):
 
 - **Tastatur**: Sprunglink, Reihenfolge, sichtbarer Fokus, Menüs, keine Fallen.
 - **Screenreader**: Seitentitel, Landmarks und Überschriften, Bilder, Formularbeschriftungen und Fehler,
@@ -82,8 +82,8 @@ Bewahren Sie die Tabelle bei den Nachweisen für die Erklärung zur Barrierefrei
 
 ## Verwandte Seiten
 
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

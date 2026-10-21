@@ -87,7 +87,7 @@ im ersten Zustand der Gruppe beginnt.
   nicht von einem Zeitgeber. Siehe [Prüftermine mit Objektzuständen](../redaktionelle-workflows/pruefdaten-mit-objektzustaenden.md).
 
 ## Verwandte Seiten
-- [Eine Zustandsgruppe für Prüfungen einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-a-review-state-group.md)
+- [Eine Zustandsgruppe für Prüfungen einrichten](../../aufgaben/personen-und-berechtigungen/eine-zustandsgruppe-fuer-die-pruefung-einrichten.md)
 - [Rollen, Richtlinien und Einschränkungen](rollen-richtlinien-und-einschraenkungen.md)
 - [Funktionstrennung](funktionstrennung.md)
 - [Leitfaden zu Objektzuständen](../../../../anleitungen/objektzustaende.md)

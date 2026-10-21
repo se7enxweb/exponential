@@ -41,7 +41,7 @@ um sie zu prüfen.
 | `config.php`, `config.env.php` | Konfiguration auf PHP-Ebene, der Name der Umgebung | nein | ja, falls vorhanden |
 
 `config.env.php` nennt die Umgebung einer Maschine (`EXP_ENV`), und `.gitignore` hält sie aus der Versionsverwaltung heraus
-([Einstellungen je Umgebung](../../../../eng-us/features/6.0/environment-settings.md)).
+([Einstellungen je Umgebung](../../../funktionen/6.0/umgebungseinstellungen.md)).
 
 ## Das Verzeichnis var
 
@@ -114,7 +114,7 @@ Details für eine Hosting-Plattform stehen auf [Beschreibbare Verzeichnisse und 
 ## Mehrere Websites in einer Installation
 
 Eine Installation kann viele Websites ausliefern, jede mit eigenem `VarDir`. Sechs Einstellungen in `[FileSettings]` entscheiden,
-wohin ihre Logs und Caches gehen ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)):
+wohin ihre Logs und Caches gehen ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)):
 
 | Einstellung | Mitgeliefert | Wirkung |
 |---|---|---|

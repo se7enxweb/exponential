@@ -50,8 +50,8 @@ vorzuleben, was Sie veröffentlichen.
 | Sie fragen | Verweisen Sie auf |
 |---|---|
 | „Wo fange ich an?“ | [Sicherheitshärtung](../sicherheitshaertung.md) und [Kapitel 13 des Installationsbuchs](../../installation/13-sicherheitshaertung.md) |
-| „Wie sehe ich Angriffe?“ | [Request-Logs](../../../eng-us/features/6.0/request-logs.md), [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
-| „Wie setze ich eine CSP durch?“ | [Content Security Policy, Auf Durchsetzung umstellen](../../../eng-us/features/6.0/content-security-policy.md#switching-to-enforce-step-by-step) |
+| „Wie sehe ich Angriffe?“ | [Request-Logs](../../funktionen/6.0/anfrageprotokolle.md), [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
+| „Wie setze ich eine CSP durch?“ | [Content Security Policy, Auf Durchsetzung umstellen](../../funktionen/6.0/content-security-policy.md#schritt-für-schritt-auf-enforce-umstellen) |
 | „Kann ein Schutzschild davor sitzen?“ | [Ein Schutzschild davor: request-shield](../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield) |
 | „Wie aktualisieren wir sicher?“ | [Upgrade](../../installation/11-aktualisieren.md) |
 

@@ -116,12 +116,12 @@ Hinweise stehen im [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md).
 
 - **Sie wollen eine Funktion nutzen:** Folgen Sie dem Link von ihrem Monat zur Funktionsseite, oder beginnen Sie bei den [Anleitungen](../anleitungen/README.md).
 - **Sie machen ein Upgrade:** Lesen Sie das [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md), dann die dort verlinkten Hinweise zu Verhaltensänderungen, die neuesten zuletzt.
-- **Sie stoßen auf ein Wort, das Sie nicht kennen:** [Glossar](../../eng-us/glossary.md).
+- **Sie stoßen auf ein Wort, das Sie nicht kennen:** [Glossar](../glossar.md).
 - **Sie suchen einen einzelnen Commit:** Durchsuchen Sie das Änderungsverzeichnis des Repositorys, oder führen Sie in der Installation `git log --oneline -S"text"` aus.
 
 ## Verwandte Seiten
 
 - [Anleitungen: der Lernpfad](../anleitungen/README.md)
-- [Glossar](../../eng-us/glossary.md)
+- [Glossar](../glossar.md)
 - [Abdeckung: jede Änderung nachgewiesen](abdeckung.md)
 - [Änderungsverzeichnis aller Repositorys](aenderungsverzeichnis/README.md)

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Inhaber und Projektleiter, die arbeitsreiche Tage erwarten: einen Ausverkauf, eine
 Feiertagssaison, einen Newsletter, der an alle Kunden gleichzeitig geht. Sie erklärt, warum sich Shop-Seiten unter
 Last anders verhalten als andere Seiten, was Sie vorbereiten und was Sie tun, wenn die Website langsamer wird. Die
-technischen Einzelheiten stehen unter [Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md).
+technischen Einzelheiten stehen unter [Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md).
 
 ## Inhalt
 
@@ -34,13 +34,13 @@ Kontoseiten, die persönlich sind. Spitzen treffen beide, und mit den persönlic
 ## Seiten, die sich cachen lassen
 
 Produktseiten, Kategorieseiten, Landingpages und die Startseite können aus dem Cache ausgeliefert werden. Exponential
-hat mehrere Cache-Schichten ([Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md#the-layers)):
+hat mehrere Cache-Schichten ([Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md#die-ebenen)):
 den Velocity-Response-Cache für ganze öffentliche Seiten, den Content-View-Cache für den Hauptbereich jeder Seite, den
 Template-Block-Cache für Menüs und Fußzeilen, kompilierte Templates und OPcache.
 
 Der Velocity-Response-Cache beantwortet öffentliche Seiten, ohne PHP auszuführen, und überspringt Anfragen, die ein
 Sitzungs-Cookie oder einen `Authorization`-Header tragen, oder Antworten, die ein Cookie setzen
-([Velocity-Response-Cache](../../../../eng-us/features/6.0/velocity-response-cache.md)).
+([Velocity-Response-Cache](../../../funktionen/6.0/velocity-antwort-cache.md)).
 
 ## Seiten, die sich nicht cachen lassen
 
@@ -52,7 +52,7 @@ Sitzungs-Cookie oder einen `Authorization`-Header tragen, oder Antworten, die ei
 | Zahlungsbenachrichtigungen des Anbieters | Müssen jedes Mal die Anwendung erreichen |
 
 Die CDN-Seite nennt dasselbe: Seiten für angemeldete Benutzer, Warenkörbe, Kasse, Kontoseiten und Formulare mit einem
-Formular-Token dürfen nicht von einem CDN gecacht werden ([HTTP-Caching, Proxys und CDNs](../../../../eng-us/help/creators/website-creators/http-caching-and-cdns.md)).
+Formular-Token dürfen nicht von einem CDN gecacht werden ([HTTP-Caching, Proxys und CDNs](../../ersteller/website-ersteller/http-caching-und-cdns.md)).
 
 Die Kapazität, auf die es in der Spitze ankommt, lautet also: Wie viele persönliche Anfragen pro Sekunde kann der
 Server bewältigen, nachdem ihm die gecachten Seiten abgenommen wurden?
@@ -78,7 +78,7 @@ Veröffentlichen zu verlangsamen (dieselbe Seite). Die Abstimmung auf Seiten des
 ## Vor der Spitze messen
 
 Exponential liefert einen Benchmark-Befehl mit, der Median, p90 und p99 der Antwortzeiten pro Seite ausgibt und Läufe
-mit einem Ausgangswert vergleicht ([Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md#measure)).
+mit einem Ausgangswert vergleicht ([Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md#messen)).
 Bitten Sie Ihren Hoster oder Entwickler,
 
 - [ ] ihn einige Wochen vor der Spitze auf dem Live-System auszuführen und das Ergebnis als Ausgangswert zu speichern;
@@ -110,7 +110,7 @@ Die Kapazitätsplanung im Allgemeinen steht unter [Lastspitzen planen](../zuverl
 | Bezahlte Bestellungen nicht als bezahlt markiert | Benachrichtigungsadresse blockiert? ([Zahlungen mit PayPal](zahlungen-mit-paypal.md#wenn-etwas-schiefgeht)) |
 
 Vermeiden Sie es, während der Spitze alle Caches zu leeren: Jede Seite muss dann im ungünstigsten Moment neu aufgebaut
-werden. Leeren Sie nur, was eine Änderung braucht ([Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md#clearing-caches-in-the-right-order)).
+werden. Leeren Sie nur, was eine Änderung braucht ([Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md#caches-in-der-richtigen-reihenfolge-leeren)).
 
 ## Nach der Spitze
 
@@ -120,8 +120,8 @@ werden. Leeren Sie nur, was eine Änderung braucht ([Leistung und Caching für W
 
 ## Verwandte Seiten
 
-- [Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
-- [Statischer Cache und der Velocity-Response-Cache](../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md)
+- [Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md)
+- [Statischer Cache und der Velocity-Response-Cache](../../ersteller/website-ersteller/statischer-cache-und-velocity.md)
 - [Caching für Verfügbarkeit](../zuverlaessigkeit/caching-fuer-verfuegbarkeit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

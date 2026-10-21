@@ -34,7 +34,7 @@ teilen, ohne nach der nächsten Erneuerung ein abgelaufenes auszuliefern.
 | Velocity oder FrankenPHP hinter dem Webserver des Panels | dem Webserver des Panels | dem Panel; dem Proxy muss vertraut werden |
 
 Quellen: [8.1](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle),
-[Vertrauenswürdige Proxys](../../../../eng-us/bc/6.0/trusted-proxies.md), [FrankenPHP](../../../../eng-us/bc/6.0/frankenphp.md).
+[Vertrauenswürdige Proxys](../../../bc/6.0/vertrauenswuerdige-proxys.md), [FrankenPHP](../../../bc/6.0/frankenphp.md).
 
 ## Das Zertifikat des Panels für Apache oder nginx
 
@@ -93,12 +93,12 @@ eigenes Zertifikat. Drei Wege:
 ACME von Velocity braucht einen erreichbaren Port 80 des Servers für die Challenge HTTP-01. Auf einem Server mit Panel gehört Port 80
 meist dem Webserver des Panels; die Quellen nennen für diesen Fall `webroot` (wenn ein anderer Server Port 80 belegt) und die
 Challenge `dns-01` als Möglichkeiten ([8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity),
-[HTTPS und Zertifikate in Velocity](../../../../eng-us/features/6.0/velocity-https-certificates.md)).
+[HTTPS und Zertifikate in Velocity](../../../funktionen/6.0/velocity-https-zertifikate.md)).
 
 **Die Falle bei der Erneuerung.** Die Testinstallation des Projekts teilt das Let's-Encrypt-Zertifikat, das Plesk für den Host hält, mit
 FrankenPHP und Velocity. Plesk erneuert das Let's-Encrypt-Zertifikat nach eigenem Zeitplan und schreibt dabei eine **neue Datei unter
 einem neuen Namen**; die exportierte Kopie veraltet dann. Der Export muss nach jeder Erneuerung wiederholt werden, gefolgt von einem
-Neuladen ([FrankenPHP, Erneuerung](../../../../eng-us/bc/6.0/frankenphp.md)):
+Neuladen ([FrankenPHP, Erneuerung](../../../bc/6.0/frankenphp.md)):
 
 ```bash
 # after copying the renewed certificate and key into place:

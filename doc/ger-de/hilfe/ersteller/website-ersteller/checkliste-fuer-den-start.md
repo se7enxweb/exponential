@@ -57,7 +57,7 @@ Verantwortlichen durch; jeder Punkt nennt die Seite, die ihn erklärt. Projektle
 - [ ] `[HTMLForms] Secret` gesetzt; Debug-Ausgabe auf öffentlichen Siteaccesses aus.
 - [ ] HTTPS auf jedem Host, HTTP leitet auf HTTPS weiter ([Livegang: Hosts und HTTPS](livegang-hosts-und-https.md)).
 - [ ] Die Content Security Policy auf der Website mindestens im Modus report-only
-  ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+  ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Leistung
 
@@ -72,7 +72,7 @@ Verantwortlichen durch; jeder Punkt nennt die Seite, die ihn erklärt. Projektle
   ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Ein Backup wurde erstellt und auf einem anderen Rechner wiederhergestellt
   ([Backups und Wiederherstellungen](backups-und-wiederherstellungen.md)).
-- [ ] Logs werden rotiert; jemand liest das Fehlerlog ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+- [ ] Logs werden rotiert; jemand liest das Fehlerlog ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 - [ ] Wen man anruft, wenn die Website ausfällt, ist schriftlich festgehalten.
 - [ ] Die Redaktion ist geschult ([Die Website an die Redaktion übergeben](die-website-an-die-redaktion-uebergeben.md)).
 

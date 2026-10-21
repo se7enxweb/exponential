@@ -107,7 +107,7 @@ Element an eine feste Position einer dynamischen Collection
 
 - [Landingpages mit dem Layouts-Editor](landingpages-mit-dem-layouts-editor.md)
 - [Layout-Regeln](layout-regeln.md)
-- [explayouts_ui_api](../../../../eng-us/features/6.0/extensions/explayouts_ui_api.md)
+- [explayouts_ui_api](../../../funktionen/6.0/erweiterungen/explayouts_ui_api.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

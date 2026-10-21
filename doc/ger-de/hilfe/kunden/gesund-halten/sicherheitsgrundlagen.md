@@ -27,7 +27,7 @@ vertrauen“ ([Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-un
 | Eine echte Abmeldung | Die alte Sitzungs-ID meldet niemanden mehr an |
 | Upload-Prüfungen nach Inhalt | Ein Bild wird anhand dessen angenommen, was es enthält, nicht anhand seines Namens |
 | Ein zufälliges erstes Administratorpasswort | Wenn der Installer keines oder ein allgemein bekanntes erhalten hat |
-| Das Prüfprotokoll, standardmäßig eingeschaltet | Ein manipulationssicherer Nachweis von Anmeldungen, Inhaltsänderungen, Einstellungen und Deployments ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Das Prüfprotokoll, standardmäßig eingeschaltet | Ein manipulationssicherer Nachweis von Anmeldungen, Inhaltsänderungen, Einstellungen und Deployments ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 
 Bitten Sie Ihren Anbieter, die Prüfungen aus [Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md)
 einmal durchzuführen und Ihnen das Ergebnis zu schicken.

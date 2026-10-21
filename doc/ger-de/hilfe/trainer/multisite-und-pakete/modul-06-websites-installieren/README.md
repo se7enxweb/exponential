@@ -36,8 +36,8 @@ Abschlussprojekt, in dem jede Person selbstständig eine Multisite in einem leer
 ## Dieses Modul vorbereiten
 
 - Jede Person braucht drei frische Code-Verzeichnisse (Lektionen 6.2, 6.3 und 6.5), vorbereitet wie in
-  [Train the Trainer, Lektion 2.2](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/getting-the-code-for-a-class.md),
-  und eine Möglichkeit, sie auf freien Ports auszuliefern ([Lektion 2.4](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md)).
+  [Train the Trainer, Lektion 2.2](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/den-code-fuer-einen-kurs-beschaffen.md),
+  und eine Möglichkeit, sie auf freien Ports auszuliefern ([Lektion 2.4](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md)).
 - Der Rechner braucht Netzwerkzugang zum Paketindex für die Standard-Seitenpakete, oder die Pakete sind bereits
   importiert (eine Offline-Installation); testen Sie vor dem Kurs ein `exp:install --dry-run`.
 - Installationen dauern jeweils einige Minuten; staffeln Sie sie auf einem gemeinsamen Server und führen Sie sie mit
@@ -63,7 +63,7 @@ Abschlussprojekt, in dem jede Person selbstständig eine Multisite in einem leer
 ## Verwandte Seiten
 
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

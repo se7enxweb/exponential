@@ -69,10 +69,10 @@ Arbeit erledigen.
 |---|---|
 | Passwörter als bcrypt-Hashes gespeichert; gängige Passwörter abgelehnt | [Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung) |
 | Sicherheits-Header auf jeder Seite, einschließlich der Administration | [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md) |
-| Eine Content Security Policy, in der Administration im Nur-Bericht-Modus | [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) |
-| Ein manipulationssicheres Prüfprotokoll, standardmäßig eingeschaltet | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Eine Content Security Policy, in der Administration im Nur-Bericht-Modus | [Content Security Policy](../../../funktionen/6.0/content-security-policy.md) |
+| Ein manipulationssicheres Prüfprotokoll, standardmäßig eingeschaltet | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Client-Adressen in Anfrage-Logs maskiert (`MaskIP=enabled`) | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#datenschutz-als-standard-in-den-logs) |
-| Optionale Mails nur mit Einwilligung, Abmeldung mit einem Klick | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
+| Optionale Mails nur mit Einwilligung, Abmeldung mit einem Klick | [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md) |
 | Kein Installer hinterlässt das alte Standard-Administratorpasswort | [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md) |
 | Zweistufige Anmeldung über `sevenx_authentication_2fa` verfügbar | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 
@@ -86,7 +86,7 @@ bleiben Ihre.
   [Kartenzahlungen und PCI-Grundlagen](../shops/kartenzahlungen-und-pci-grundlagen.md).
 - [Newsletter: Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md).
 - [Kosten](../kosten/README.md) und [Hosting und Partner auswählen](../auswahl/README.md).
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 

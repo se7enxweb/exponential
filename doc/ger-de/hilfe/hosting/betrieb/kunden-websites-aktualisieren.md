@@ -152,9 +152,9 @@ erwartet ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)).
 |---|---|
 | Eine weiße Seite nach der Codeänderung | `var/log/error.log`; führen Sie Schritt 2 erneut aus; `vendor/` muss zur neuen `composer.json` passen |
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, dann die Caches leeren |
-| Bibliotheken fehlen nach einem gescheiterten Lauf von Composer | [Eine Installation reparieren](../../../../eng-us/bc/6.0/repair.md) |
+| Bibliotheken fehlen nach einem gescheiterten Lauf von Composer | [Eine Installation reparieren](../../../bc/6.0/reparatur.md) |
 | Eine SQL-Datei scheiterte auf halbem Weg | das Backup wiederherstellen und die Datei erneut von vorn einspielen; nie von Hand reparieren und erneut ausführen |
-| Jemand kann sich nicht anmelden | der Punkt zu `ezuser_setting` in den [Verhaltensänderungen von Juli und August 2026](../../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md) |
+| Jemand kann sich nicht anmelden | der Punkt zu `ezuser_setting` in den [Verhaltensänderungen von Juli und August 2026](../../../bc/6.0/verhaltensaenderungen-2026-07-08.md) |
 
 Quelle: [Wenn etwas schiefgeht](../../../anleitungen/aktualisieren.md#wenn-etwas-schiefgeht).
 

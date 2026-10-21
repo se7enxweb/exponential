@@ -35,7 +35,7 @@ Seite ist der Weg des Website-Erstellers hindurch.
   Siteaccess hat `ShowUntranslatedObjects=enabled`.
 - **Jedes Objekt hat eine Hauptsprache.**
 - Exponential kennt eine große Zahl von Locales, einschließlich solcher mit Schreibrichtung von rechts nach links
-  ([Sprachen in Exponential](../../../../eng-us/languages.md)). Mehr als 30 Inhaltssprachen erfordern ein 64-Bit-PHP, weil die
+  ([Sprachen in Exponential](../../../sprachen.md)). Mehr als 30 Inhaltssprachen erfordern ein 64-Bit-PHP, weil die
   Sprachen eines Objekts als Bits einer einzigen Ganzzahl gespeichert werden
   ([2.2 PHP](../../../installation/02-voraussetzungen.md#22-php)).
 

@@ -48,7 +48,7 @@ meisten Unternehmen brauchen:
 |---|---|---|
 | Produkte verkaufen | „Advanced e-Commerce Stores (Built in)“: Produkte, Warenkorb, Bestellungen, USt, Währungen | [Online-Shops](shops/README.md) |
 | Zahlungen annehmen | Zahlungsanbieter über das Workflow-System, zum Beispiel PayPal mit `ezpaypal` | [Zahlungsanbieter für Unternehmen](shops/zahlungsanbieter-fuer-unternehmen.md) |
-| Interessenten und Anfragen sammeln | „Contact forms“ und der Informationssammler | [Formulare mit dem Informationssammler](../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
+| Interessenten und Anfragen sammeln | „Contact forms“ und der Informationssammler | [Formulare mit dem Informationssammler](../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
 | Zugang verkaufen | Registrierung und Bereiche nur für Mitglieder über Rollen und Sektionen | [Mitgliederwebsites](mitglieder/README.md) |
 | Partner und Händler bedienen | Extranets auf derselben Installation | [Extranets und Partnerportale](extranets/README.md) |
 | Landingpages schnell bauen | Exponential Layouts, ein visueller Seitenbaukasten mit Regeln, die Layouts Inhalten zuordnen | [Der Layout-Editor](../layout-editor.md) |
@@ -71,7 +71,7 @@ Für ein Unternehmen bedeutet das:
 Eine mobilfreundliche Website ist oft der erste Schritt und braucht gar keine App. Die Möglichkeiten werden in
 [Mobile Strategie](mobil-und-headless/mobile-strategie.md) verglichen; die technische Seite steht in
 [Headless mit der REST API](mobil-und-headless/headless-mit-der-rest-api.md) und
-[Headless Exponential](../../../eng-us/help/creators/app-creators/headless-exponential.md).
+[Headless Exponential](../ersteller/anwendungsentwickler/headless-exponential.md).
 
 ## Kanal 3: Netzwerke von Websites und Partnern
 
@@ -81,7 +81,7 @@ Viele Organisationen verdienen über die Websites anderer und über mehrere eige
 |---|---|---|
 | Feedreader, Podcast-Apps, Aggregatoren | „RSS feeds“, „ATOM feeds“, „iTunes RSS feeds“, „OPML feeds“ | [RSS-Feeds: Exporte veröffentlichen und Importe einlesen](../../anleitungen/rss-feeds.md), [Feeds und Syndication](mobil-und-headless/feeds-und-syndication.md) |
 | Ihre eigenen Marken oder Länder | „Multi-site support“ aus einer Installation | [Marken mit Multisite](multisite/README.md) |
-| Websites von Partnern und Händlern, die Ihre Inhalte tragen | Die Erweiterung `syndication` exportiert einen Teil des Inhaltsbaums als Feed, den eine andere Installation importiert, in eine Richtung oder in beide, auch für „große E-Commerce-Netzwerke“ | [syndication](../../../eng-us/features/6.0/extensions/syndication.md) |
+| Websites von Partnern und Händlern, die Ihre Inhalte tragen | Die Erweiterung `syndication` exportiert einen Teil des Inhaltsbaums als Feed, den eine andere Installation importiert, in eine Richtung oder in beide, auch für „große E-Commerce-Netzwerke“ | [syndication](../../funktionen/6.0/erweiterungen/syndication.md) |
 | Andere Systeme und Dienste | Entfernte Dienste und die REST API | [Entfernte Dienste](mobil-und-headless/entfernte-dienste.md) |
 
 Wie Sie diese planen, steht in [Verkaufen über Netzwerke und Partner](mobil-und-headless/verkaufen-ueber-netzwerke-und-partner.md).
@@ -92,7 +92,7 @@ Die Software liefert die Werkzeuge; die Strategie ist Ihre Sache. Die Werkzeuge,
 
 - **Newsletter** mit `cjw_newsletter`: Listen, Abonnements und Ausgaben ([Newsletter](newsletter/README.md)).
 - **Suchmaschinen**: lesbare URL-Aliase, Sitemaps, `robots.txt` und Metadaten
-  ([SEO-Grundlagen](../../../eng-us/help/creators/website-creators/seo-basics.md), [Sitemaps](../../../eng-us/help/creators/website-creators/sitemaps.md)).
+  ([SEO-Grundlagen](../ersteller/website-ersteller/seo-grundlagen.md), [Sitemaps](../ersteller/website-ersteller/sitemaps.md)).
 - **Viele Sprachen**: Inhalte in den Sprachen Ihrer Kunden ([Mehrsprachige Unternehmen](mehrsprachig/README.md)).
 - **Feeds**, die andere Websites und Apps aufgreifen (siehe oben).
 

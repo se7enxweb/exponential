@@ -27,18 +27,18 @@ Seite erklärt das Thema, wann es passt und was Sie nicht versprechen sollten.
 ## Das Thema in einem Absatz
 
 „With SQLite, a complete Exponential site runs from one file on disk, with no database server to install, configure
-or secure“ ([Unterstützung der SQLite-Datenbank](../../../eng-us/features/6.0/sqlite-database.md)). Es kam in den ersten Monaten
+or secure“ ([Unterstützung der SQLite-Datenbank](../../funktionen/6.0/sqlite-datenbank.md)). Es kam in den ersten Monaten
 der Linie 6.0 im Januar 2024 und wurde zum Standard: des Einrichtungsassistenten im September 2026 und des
 Installationsprogramms mit einem Befehl (`./console exp:install`), das auf SQLite installiert, sofern nichts anderes
-angegeben ist ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)). Das README nennt es „an
+angegeben ist ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)). Das README nennt es „an
 incredible improvement to the kernel“ ([README, Recent improvements](https://github.com/se7enxweb/exponential/blob/main/README.md#recent-improvements-to-exponential)).
 
 ## Was neu ist, und seit wann
 
 | Was | Wann | Quelle |
 |---|---|---|
-| 6.0.0 ist stabil, und SQLite kommt als Datenbank, die keinen Server braucht | Januar 2024 | [Januar 2024](../../../eng-us/history/2024/2024-01a.md) |
-| SQLite-Unterstützung in den Releases 6.0.1 bis 6.0.3, seitdem verfeinert | Januar bis April 2024 | [Unterstützung der SQLite-Datenbank](../../../eng-us/features/6.0/sqlite-database.md) |
+| 6.0.0 ist stabil, und SQLite kommt als Datenbank, die keinen Server braucht | Januar 2024 | [Januar 2024](../../geschichte/2024/2024-01a.md) |
+| SQLite-Unterstützung in den Releases 6.0.1 bis 6.0.3, seitdem verfeinert | Januar bis April 2024 | [Unterstützung der SQLite-Datenbank](../../funktionen/6.0/sqlite-datenbank.md) |
 | SQLite ist der Standard des Einrichtungsassistenten; Installation mit einem Befehl auf SQLite | 16. bis 30. September 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | Eine Schreibwarteschlange: Gleichzeitige Veröffentlichungen warten, bis sie an der Reihe sind, statt mit „database is locked“ zu scheitern | 1. und 2. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
 
@@ -64,7 +64,7 @@ Die Änderungen von 2026 sind in der Entwicklungslinie 6.0.15, die nicht veröff
 | Ein Hosting-Tarif ohne MySQL | Sie brauchen Replikation oder Benutzer und Berechtigungen auf Datenbankebene |
 
 Quelle: [Unterstützte Datenbanken, SQLite 3](../datenbankunterstuetzung.md#1-sqlite-3-der-standard) und
-[SQLite, Grenzen und gute Praxis](../../../eng-us/features/6.0/sqlite-database.md#limits-and-good-practice).
+[SQLite, Grenzen und gute Praxis](../../funktionen/6.0/sqlite-datenbank.md#grenzen-und-gute-praxis).
 
 ## Was Sie nicht behaupten sollten
 
@@ -91,7 +91,7 @@ Quelle: [Unterstützte Datenbanken, SQLite 3](../datenbankunterstuetzung.md#1-sq
 
 - [Thema: sechs Datenbanken](thema-sechs-datenbanken.md)
 - [Thema: Installation mit einem Befehl](thema-installation-mit-einem-befehl.md)
-- [Unterstützung der SQLite-Datenbank](../../../eng-us/features/6.0/sqlite-database.md)
+- [Unterstützung der SQLite-Datenbank](../../funktionen/6.0/sqlite-datenbank.md)
 - [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

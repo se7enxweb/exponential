@@ -12,7 +12,7 @@ type: help
 Dieser Bereich richtet sich an öffentliche Stellen, die eine Website mit Exponential betreiben und sie barrierefrei
 gestalten müssen: Projektverantwortliche, Koordinatorinnen und Koordinatoren für Barrierefreiheit, Redaktion, Design,
 Entwicklung und Administration. Jede Aussage über das Produkt stützt sich auf die eigene Erklärung des Projekts,
-[Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md), deren Statusangaben unverändert übernommen
+[Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md), deren Statusangaben unverändert übernommen
 werden: WCAG 2.2 AA **Teilweise erfüllt** (Administration admin4 und admin4l), EN 301 549 und Section 508
 **Nicht geprüft**, öffentliche Designs nicht geprüft, kein VPAT und kein Accessibility Conformance Report und keine
 Vorlage für eine Erklärung zur Barrierefreiheit. Dieser Bereich behauptet nie Konformität.
@@ -79,14 +79,14 @@ Vorlage für eine Erklärung zur Barrierefreiheit. Dieser Bereich behauptet nie 
 Aufgaben, die diese Seiten in die Praxis umsetzen (Alternativtext für ein Bildfeld verpflichtend machen, eine
 Stichprobe zur Barrierefreiheit durchführen, eine Seite mit der Erklärung zur Barrierefreiheit veröffentlichen,
 Alternativtexte über alle Bilder prüfen), finden Sie in den Compliance-Aufgaben dieser Hilfe
-([Compliance-Aufgaben](../../../../eng-us/help/government/tasks/compliance/README.md)).
+([Compliance-Aufgaben](../aufgaben/compliance/README.md)).
 
 ## Verwandte Seiten
 
 - Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

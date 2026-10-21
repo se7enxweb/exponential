@@ -126,7 +126,7 @@ Unter Velocity führen Sie die Proxys in Velocitys eigenem `Q.webserver.proxy.tr
 `/etc/vc/conf-available/`, eingeschaltet mit `exp:velocity conf enable <name>`; Velocity gibt dann den Besucher als `REMOTE_ADDR` weiter
 und setzt `$_SERVER['HTTPS']` selbst (ab Engine-Release 0.0.4.44 nur für vertrauenswürdige Gegenstellen). Details:
 [13.10, Unter Velocity](../../../installation/13-sicherheitshaertung.md#unter-velocity) und
-[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../eng-us/bc/6.0/trusted-proxies.md).
+[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../bc/6.0/vertrauenswuerdige-proxys.md).
 
 ## Zertifikate überwachen
 

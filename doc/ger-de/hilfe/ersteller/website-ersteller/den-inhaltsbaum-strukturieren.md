@@ -86,9 +86,9 @@ Sie sie auf die Hauptadresse ([SEO-Grundlagen](seo-grundlagen.md)).
 
 **Verstecken** nimmt einen Knoten und seinen Teilbaum für Besucher von der Website; die Redaktion sieht ihn weiterhin,
 als versteckt markiert. Das Verstecken wird mit **Aufdecken** rückgängig gemacht. Das Entfernen eines Knotens
-verschiebt ihn in den Papierkorb ([Papierkorb: wer und wo](../../../../eng-us/features/6.0/trash-who-and-where.md)). Vor dem
+verschiebt ihn in den Papierkorb ([Papierkorb: wer und wo](../../../funktionen/6.0/papierkorb-wer-und-wo.md)). Vor dem
 Verstecken oder Entfernen warnt die Administration vor Inhalten, die darauf verweisen
-([Prüfung der Rückwärtsrelationen](../../../../eng-us/features/6.0/reverse-relation-check.md)).
+([Prüfung der Rückwärtsrelationen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)).
 
 ## Mehrere Websites in einem Baum
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren, die ein geplantes Wartungsfenster eröffnen. Am Ende erhalten Besucher eine
 Wartungsseite mit Ihrer Meldung und der Antwort `503`, während Sie und Ihre Tester die Site weiterhin sehen.
-Hintergrund: [Wartungsfenster](../../../../../eng-us/help/government/operations/upgrades-and-change/maintenance-windows.md); Referenz:
+Hintergrund: [Wartungsfenster](../../betrieb/aktualisierungen-und-aenderungen/wartungsfenster.md); Referenz:
 [Wartungsmodus](../../../../anleitungen/wartungsmodus.md).
 
 ## Inhalt
@@ -70,8 +70,8 @@ Aus einem anderen Netz (ein Telefon ohne WLAN) erscheint die Wartungsseite; von 
 
 ## Verwandte Seiten
 - [Die Site wieder online bringen](die-site-wieder-online-bringen.md)
-- [Wartungsmodus und geplante Ausfallzeiten](../../../../../eng-us/help/government/operations/availability/maintenance-mode-and-planned-downtime.md)
-- [Die Funktion Wartungsmodus](../../../../../eng-us/features/6.0/maintenance-mode.md)
+- [Wartungsmodus und geplante Ausfallzeiten](../../betrieb/verfuegbarkeit/wartungsmodus-und-geplante-ausfallzeiten.md)
+- [Die Funktion Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.md)
 - [Wartungsmodus (Hosting)](../../../hosting/betrieb/wartungsmodus.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

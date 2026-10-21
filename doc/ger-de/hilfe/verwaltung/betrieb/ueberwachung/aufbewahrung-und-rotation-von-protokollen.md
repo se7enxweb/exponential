@@ -14,8 +14,8 @@ type: help
 
 Diese Seite richtet sich an die Administration, die Zuständigen für Schriftgut und Datenschutzzuständige, die Logs lange
 genug für Sicherheit und Audit aufbewahren müssen und nicht länger als erlaubt. Quellen:
-[Rotation und Bereinigung von Logs](../../../../../eng-us/features/6.0/log-rotation.md),
-[Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded) und
+[Rotation und Bereinigung von Logs](../../../../funktionen/6.0/log-rotation.md),
+[Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md#was-aufgezeichnet-wird) und
 [Aufbewahrung von Logs und Daten (Hosting)](../../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md).
 
 ## Inhalt
@@ -90,9 +90,9 @@ Schreiben Sie die Fristen in Ihren Aufbewahrungsplan und konfigurieren Sie sie i
 Änderungskontrolle.
 
 ## Verwandte Seiten
-- [Logs rotieren und bereinigen](../../../../../eng-us/help/government/tasks/operations/rotate-and-prune-logs.md)
+- [Logs rotieren und bereinigen](../../aufgaben/betrieb/logs-rotieren-und-bereinigen.md)
 - [Prüfprotokollarchive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
-- [Datenschutzstandard](../../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandard](../../../../standards/datenschutz.md)
 - [Fehlerübersicht und Zustand der Logs](fehleruebersicht-und-zustand-der-logs.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

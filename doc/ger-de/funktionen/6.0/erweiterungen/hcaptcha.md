@@ -28,7 +28,7 @@ NewObjectsOnly=false
 
 4. Leeren Sie die Caches und fügen Sie dann der Klasse ein Attribut **hCaptcha** hinzu.
 
-Die Einstellungen bedeuten dasselbe wie bei [recaptcha](recaptcha.md#set-it-up): Schlüssel pro Host als Arrays,
+Die Einstellungen bedeuten dasselbe wie bei [recaptcha](recaptcha.md#einrichten): Schlüssel pro Host als Arrays,
 `Theme`, `OverrideLang` und `NewObjectsOnly`.
 
 ## Einstellungen
@@ -52,7 +52,7 @@ grep -n hcaptcha.com extension/hcaptcha/classes/hcaptchalib.php
 ## Grenze: Die Formular-Überschreibungen sind die von recaptcha
 
 `design/standard/override/templates/full/feedback_form.tpl` und `request_form.tpl` sind dieselben Dateien wie in
-[recaptcha](recaptcha.md#the-v3-form-overrides). Sie lesen `ezini( 'Keys', 'PublicKey', 'recaptcha.ini' )` und laden
+[recaptcha](recaptcha.md#die-formular-überschreibungen-für-v3). Sie lesen `ezini( 'Keys', 'PublicKey', 'recaptcha.ini' )` und laden
 `recaptcha/api.js` von Google, **nicht** das von hCaptcha. Sind beide Extensions aktiv und verwenden Sie diese
 Formularklassen, verwenden die Formulare die Einstellungen von reCAPTCHA; der Datentyp hCaptcha hat sein eigenes
 Template. Prüfen:

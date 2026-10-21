@@ -135,7 +135,7 @@ Auf der Entwicklungsinstallation.
 ## Weiterführende Literatur
 
 - [Was eine Erweiterung ist](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md).
-- [Die Ordnerstruktur einer Theme-Erweiterung](../../../../../eng-us/help/designers/extensions/extension-folder-structure.md).
+- [Die Ordnerstruktur einer Theme-Erweiterung](../../../designer/erweiterungen/ordnerstruktur-einer-theme-erweiterung.md).
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../../../anleitungen/extensions.md).
 
 ## Verwandte Seiten

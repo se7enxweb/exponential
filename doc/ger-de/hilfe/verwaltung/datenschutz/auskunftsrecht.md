@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Datenschutzbeauftragte und Administratoren, die Auskunftsanträge beantworten. Exponential
 hat eigene Exporte für E-Mail-Einstellungen und Audit-Einträge; der Rest wird über einzelne Administrationswerkzeuge
 zusammengetragen, weil es keine einheitliche Funktion „alle meine Daten exportieren“ gibt
-([Datenschutzstandards: Bekannte Lücken](../../../../eng-us/standards/privacy.md#known-gaps)).
+([Datenschutzstandards: Bekannte Lücken](../../../standards/datenschutz.md#bekannte-lücken)).
 
 ![Gesammelte Informationen: was Besucher über Formulare gesendet haben, für einen Auskunftsantrag aufzufinden](../../../../eng-us/help/images/government/gov-forms.webp)
 
@@ -45,7 +45,7 @@ zusammengetragen, weil es keine einheitliche Funktion „alle meine Daten export
 | Audit-Einträge von oder über den Benutzer | `./console exp:audit export --subject-user=<id> --format=jsonl --out=var/tmp/<case>/audit.jsonl --allow-root-user`; enthält pseudonymisierte Einträge |
 
 Quellen: [E-Mail-Einstellungen für Administratoren: Anträge](../../../anleitungen/mail-einstellungen-administrator.md#6-anfragen-nach-dem-datenschutzrecht),
-[Audit-Leitfaden 4.12](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks).
+[Audit-Leitfaden 4.12](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben).
 
 ## Den Rest zusammentragen
 

@@ -61,9 +61,9 @@ abgelehnt. Bestehende Passwörter funktionieren weiter, bis sie geändert werden
 
 ## Verwandte Seiten
 
-- [Passwortrichtlinie](../../../../../eng-us/help/government/security/password-policy.md)
+- [Passwortrichtlinie](../../sicherheit/passwortrichtlinie.md)
 - [Die Mindestlänge für Passwörter auf 12 setzen](die-mindestlaenge-fuer-passwoerter-auf-12-setzen.md)
-- [Das eigene Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md)
+- [Das eigene Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

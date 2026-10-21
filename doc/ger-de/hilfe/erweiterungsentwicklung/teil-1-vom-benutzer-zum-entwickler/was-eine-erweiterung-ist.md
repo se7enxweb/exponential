@@ -141,7 +141,7 @@ verwenden, damit das Einschalten einer davon eine Änderung der Einstellungen is
 - Weiter: [Die Leiter: Benutzer, Builder, Erweiterungsentwickler, Theme-Entwickler](die-leiter-vom-benutzer-zum-entwickler.md)
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../../anleitungen/extensions.md)
 - [Die Extensions-Seite](../../../anleitungen/extensions-seite.md)
-- [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
+- [RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

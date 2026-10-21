@@ -69,7 +69,7 @@ THE WEEK AHEAD
 Manche Prüfungen gehören zum Monat oder zum Jahr: Mehrwertsteuer ([Mehrwertsteuer-Checkliste](mehrwertsteuer-checkliste.md)),
 Monatszahlen ([Monatliche Shop-Checkliste](monatliche-shop-checkliste.md)), Aufbewahrung ([Datenexport und Löschung](datenexport-und-loeschung.md)).
 Logs und Serverprüfungen sind Sache des Hosters; bitten Sie ihn um eine wöchentliche Zusammenfassung, wenn Sie eine
-wünschen ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+wünschen ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 
 > **Tipp**
 > Wenn die Checkliste deutlich länger als eine halbe Stunde dauert, wird wahrscheinlich die tägliche Routine

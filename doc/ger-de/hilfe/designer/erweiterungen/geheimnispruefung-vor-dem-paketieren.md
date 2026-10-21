@@ -59,7 +59,7 @@ Einstellungsdatei und ein Link werden immer verweigert. Platzhalter (`...`, `<yo
 
 ## Verwandte Seiten
 
-- [Die Geheimnisprüfung von Erweiterungspaketen](../../../../eng-us/bc/6.0/extension-package-secret-check.md)
+- [Die Geheimnisprüfung von Erweiterungspaketen](../../../bc/6.0/geheimnispruefung-fuer-erweiterungspakete.md)
 - [Eine .gitignore für Themes](gitignore-fuer-themes.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

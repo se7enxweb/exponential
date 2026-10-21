@@ -82,7 +82,7 @@ dass der Webhook des Repositorys zu Packagist fehlen kann, wenn eine neue Versio
 
 | Frage | Wie Sie es prüfen |
 |---|---|
-| Ist Funktion X in Version Y? | Durchsuchen Sie den Changelog von Y ([Einen Changelog lesen](ein-changelog-lesen.md)), dann das Ledger, dessen Spalte „Release“ „the release tag that first contained the change“ nennt ([Geschichte](../../../eng-us/history/README.md#how-to-read-the-ledger)) |
+| Ist Funktion X in Version Y? | Durchsuchen Sie den Changelog von Y ([Einen Changelog lesen](ein-changelog-lesen.md)), dann das Ledger, dessen Spalte „Release“ „the release tag that first contained the change“ nennt ([Geschichte](../../geschichte/README.md#so-lesen-sie-das-änderungsverzeichnis)) |
 | Ist ein Commit in einem Release? | `git tag --contains <hash>` in einem Klon listet jeden Tag auf, der ihn enthält |
 | Was hat sich zwischen zwei Releases geändert? | `git log --oneline v6.0.13..v6.0.14` |
 | Welche Version betreibt eine Website? | Sicher weiß das nur ihr Betreiber; raten Sie nicht anhand von Bildschirmfotos |

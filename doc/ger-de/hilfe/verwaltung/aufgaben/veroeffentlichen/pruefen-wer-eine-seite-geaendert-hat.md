@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure und Teamleitungen, die wissen müssen, wer eine Seite wann geändert hat: um eine Frage zu
 stellen, eine Beschwerde zu beantworten oder für die Rechenschaft. Es gibt zwei Quellen: die Versionen der Seite und
 das Audit-Protokoll ([Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md),
-[Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+[Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Inhalt
 

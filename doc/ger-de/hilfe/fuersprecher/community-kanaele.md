@@ -33,7 +33,7 @@ Dokumentation nennt. Schicken Sie Menschen nicht im Namen des Projekts woandersh
 | eZpedia | [ezpedia.exponential.earth](https://ezpedia.exponential.earth/) | Die Community-Enzyklopädie, unter der GNU FDL | [Zu eZpedia beitragen](zu-ezpedia-beitragen.md) |
 | Projects | [projects.exponential.earth](https://projects.exponential.earth/) | Community-Projekte und Erweiterungen | [Auf Share und Projects veröffentlichen](auf-share-und-projects-veroeffentlichen.md) |
 | Dokumentation | [doc.exponential.earth](https://doc.exponential.earth/) | „Die offizielle Dokumentation für Exponential 6 CMS“ | [Wo die Fakten stehen](wo-die-fakten-stehen.md) |
-| Die Hilfe im Produkt | das „?“ in der Administration | Diese Hilfe | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Die Hilfe im Produkt | das „?“ in der Administration | Diese Hilfe | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | Issues zur Software | [github.com/se7enxweb/exponential/issues](https://github.com/se7enxweb/exponential/issues) | Fehler und Verbesserungen der Software | [Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md) |
 | Issues zu Velocity | [github.com/se7enxweb/exponential-velocity/issues](https://github.com/se7enxweb/exponential-velocity/issues) | Fehler des Velocity-Servers | ebenda |
 | Issues der Community | [github.com/se7enxweb/exponential-community/issues](https://github.com/se7enxweb/exponential-community/issues) | Das Projekt, die Website, das Ökosystem, alles, was kein Softwarefehler ist | ebenda |
@@ -49,7 +49,7 @@ Quellen: [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-
 | Jemand möchte | Schicken Sie ihn zu |
 |---|---|
 | Erfahren, was Exponential ist | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
-| Es ausprobieren | [Erste Schritte](../erste-schritte.md), [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Es ausprobieren | [Erste Schritte](../erste-schritte.md), [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Fragen „Wie mache ich ...?“ | Zuerst zur Hilfe, dann in die Foren oder zu Telegram |
 | Einen Fehler melden | Zur Seite **Fehler melden** der Hilfe und zum richtigen Tracker |
 | Ein Sicherheitsproblem melden | Vertraulich, wie `SECURITY.md` es beschreibt |

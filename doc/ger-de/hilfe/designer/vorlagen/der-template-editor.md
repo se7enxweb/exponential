@@ -10,7 +10,7 @@ type: help
 # Der Template-Editor
 
 Diese Seite ist für Designer, die Overrides in der Administration statt in INI-Dateien verwalten. Die vollständige Beschreibung
-ist die Funktionsseite [Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../../eng-us/features/6.0/template-editor-overrides.md).
+ist die Funktionsseite [Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../funktionen/6.0/template-editor-ueberschreibungen.md).
 
 ## Inhalt
 

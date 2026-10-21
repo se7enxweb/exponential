@@ -96,7 +96,7 @@ und von jeder Erweiterung abgedeckt ist:
 ./console exp:i18n check
 ```
 
-Siehe [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md) und
+Siehe [Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md) und
 [Sprachen](../../sprachen.md).
 
 ## Die Dateien erzeugen
@@ -122,7 +122,7 @@ Text, der nicht mit `i18n` gekennzeichnet ist, in der Datei fehlt oder dessen Ca
 - Zurück: [Ajax mit ezjscore-Serverfunktionen](ajax-mit-ezjscore-serverfunktionen.md)
 - Weiter: [Persistente Objekte und Ihre eigenen Tabellen](persistente-objekte-und-tabellen.md)
 - [Von Hand: eine Erweiterung übersetzen](tutorials/von-hand-uebersetzung.md)
-- [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)
+- [Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

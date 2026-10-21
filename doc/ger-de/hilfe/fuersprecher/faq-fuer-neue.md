@@ -27,9 +27,9 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 
 | Frage | Antwort | Seite |
 |---|---|---|
-| Wie probiere ich es aus? | `./console exp:install`: eine vollständige Website auf SQLite mit einem Befehl | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Wie probiere ich es aus? | `./console exp:install`: eine vollständige Website auf SQLite mit einem Befehl | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Was braucht es? | PHP 8.0 oder später; eine Datenbank (SQLite braucht keinen Server) | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Datenbankunterstützung](../datenbankunterstuetzung.md) |
-| Welcher Webserver? | Velocity wird empfohlen; FrankenPHP oder Apache/nginx mit PHP-FPM funktionieren auch | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
+| Welcher Webserver? | Velocity wird empfohlen; FrankenPHP oder Apache/nginx mit PHP-FPM funktionieren auch | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 | Shared Hosting? | Möglich mit Apache oder LiteSpeed; Velocity meist nicht | [Container, Cloud und Hosting-Panels](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
 | Wird meine Sprache unterstützt? | 268 Locale-Dateien für Inhalte; 32 Übersetzungen der Administration, zehn davon vollständig | [Gesprächspunkte: Sprachen](gespraechspunkte-sprachen-und-rtl.md) |
 
@@ -37,7 +37,7 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 
 | Frage | Antwort | Seite |
 |---|---|---|
-| Wo ist die Dokumentation? | In der Administration (die Schaltfläche „?“) und auf doc.exponential.earth | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Wo ist die Dokumentation? | In der Administration (die Schaltfläche „?“) und auf doc.exponential.earth | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | Wo frage ich? | In den Foren oder im Telegram-Chat | [Die Community-Kanäle](community-kanaele.md) |
 | Ich habe einen Fehler gefunden | Nutzen Sie die Seite **Fehler melden** der Hilfe und den richtigen Tracker | [Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md) |
 | Ich habe ein Sicherheitsproblem gefunden | Vertraulich, wie SECURITY.md es beschreibt | [Sicherheitsmeldungen bleiben vertraulich](sicherheitsmeldungen-bleiben-vertraulich.md) |

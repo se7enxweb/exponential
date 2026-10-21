@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Site-Ersteller, die die Registrierung für die Öffentlichkeit öffnen.
 Sie zeigt die beteiligten Seiten, Einstellungen und Bildschirme der Administration. Quellen:
-[Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
+[Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
 und [Rollen und Richtlinien, 7](../../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen).
 
 ## Inhalt
@@ -56,7 +56,7 @@ Die Benutzerklasse entscheidet über die Felder: Vor- und Nachname, Benutzername
 Standardklasse, dazu Felder, die Sie hinzufügen. Fragen Sie nichts, was Sie nicht brauchen. Seit 6.0 kann die
 Registrierung **E-Mails von uns (optional)** zeigen: Auswahlmöglichkeiten zur Einwilligung in Mail-Kategorien, die mit
 dem angezeigten Text in einem Einwilligungsprotokoll festgehalten werden
-([E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md),
+([E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md),
 [Ihr Konto und die Anmeldung](../../../konten-und-anmeldung.md#ein-konto-registrieren)).
 
 Schützen Sie das Formular gegen automatisierte Registrierungen: Das Formular-Token ist automatisch; die Bestätigung der
@@ -70,7 +70,7 @@ Registrierung frei:
 
 | Weg | Wie |
 |---|---|
-| Die Mail „Neuer Benutzer registriert“ | mit `RegistrationFeedback=email` erhält der Administrator eine Mail mit signierten Links: **Konto ansehen**, **Konto aktivieren** (oder **Freigeben**), **Ablehnen und entfernen**; jeder Link öffnet eine Bestätigung in der Administration, funktioniert einmal und läuft ab (`RegistrationActionTTL`, 7 Tage) ([Signierte Links](../../../../../eng-us/features/6.0/registration-admin-links.md)) |
+| Die Mail „Neuer Benutzer registriert“ | mit `RegistrationFeedback=email` erhält der Administrator eine Mail mit signierten Links: **Konto ansehen**, **Konto aktivieren** (oder **Freigeben**), **Ablehnen und entfernen**; jeder Link öffnet eine Bestätigung in der Administration, funktioniert einmal und läuft ab (`RegistrationActionTTL`, 7 Tage) ([Signierte Links](../../../../funktionen/6.0/admin-links-der-registrierung.md)) |
 | Ein Workflow | ein Freigabe-Ereignis bei der Registrierung, entschieden im Posteingang der Zusammenarbeit |
 | **Benutzer > Nicht aktivierte Benutzer** | **Ausgewählte Benutzer aktivieren** für wartende Registrierungen |
 
@@ -86,7 +86,7 @@ monatlich aus: Eine nie bestätigte Registrierung sind personenbezogene Daten oh
 
 - [Bürgerkonten](README.md)
 - [Anmeldung und Sitzungen](anmeldung-und-sitzungen.md)
-- [Links für Administratoren bei der Registrierung](../../../../../eng-us/features/6.0/registration-admin-links.md)
+- [Links für Administratoren bei der Registrierung](../../../../funktionen/6.0/admin-links-der-registrierung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

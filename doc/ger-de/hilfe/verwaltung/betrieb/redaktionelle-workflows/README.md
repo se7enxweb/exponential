@@ -56,8 +56,8 @@ Nach oben: [Exponential im öffentlichen Sektor betreiben](../README.md). Die Ei
 
 ## Verwandte Seiten
 - [Personen und Berechtigungen](../personen-und-berechtigungen/README.md)
-- [Einen Freigabe-Workflow für eine Sektion einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-an-approval-workflow-for-a-section.md)
-- [Kurs Redaktion 101](../../../../../eng-us/help/trainers/editors-101/README.md)
+- [Einen Freigabe-Workflow für eine Sektion einrichten](../../aufgaben/personen-und-berechtigungen/einen-freigabe-workflow-fuer-eine-sektion-einrichten.md)
+- [Kurs Redaktion 101](../../../trainer/redakteure-101/README.md)
 - [Veröffentlichen und Versionen (Hilfe)](../../../veroeffentlichen-und-versionen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

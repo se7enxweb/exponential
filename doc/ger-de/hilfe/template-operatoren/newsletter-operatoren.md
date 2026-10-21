@@ -210,8 +210,8 @@ Ausgabe auf alpha:
 
 ## Verwandte Seiten
 
-- [Benachrichtigungen und Mail für Anwendungen](../../../eng-us/help/creators/app-creators/notifications-and-mail.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Benachrichtigungen und Mail für Anwendungen](../ersteller/anwendungsentwickler/benachrichtigungen-und-mail.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

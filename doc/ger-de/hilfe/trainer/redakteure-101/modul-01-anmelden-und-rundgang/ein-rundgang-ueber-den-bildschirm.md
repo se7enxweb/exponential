@@ -159,7 +159,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md): jeder Teil des Bildschirms, mit Bildern.
 - [Tastenkürzel](../../../tastenkuerzel.md): die Tasten der Kopfzeile, der Menüs und des Baums.
 - [Sprachen](../../../sprachen.md): die Sprache der Oberfläche und die Inhaltssprachen.
-- [Das Design der Administration wählen](../../../../../eng-us/features/6.0/ui-switch-design.md): die Designs, die eine Rolle
+- [Das Design der Administration wählen](../../../../funktionen/6.0/ui-umschalter-design.md): die Designs, die eine Rolle
   wählen darf.
 
 ## Verwandte Seiten

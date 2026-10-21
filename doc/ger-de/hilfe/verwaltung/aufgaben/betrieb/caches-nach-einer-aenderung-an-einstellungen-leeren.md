@@ -76,7 +76,7 @@ Prüfen Sie dann das Verhalten im Browser.
 ## Verwandte Seiten
 - [Caches nach einer Änderung an Templates leeren](caches-nach-einer-aenderung-an-templates-leeren.md)
 - [Eine PHP-Änderung ausrollen](eine-php-aenderung-ausrollen.md)
-- [Der INI-Befehl](../../../../../eng-us/features/6.0/exp-ini-command.md)
+- [Der INI-Befehl](../../../../funktionen/6.0/exp-ini-befehl.md)
 - [Anleitung zu den Caches](../../../../anleitungen/caches.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

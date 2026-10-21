@@ -34,11 +34,11 @@ Datenbank-Roundtrips ([Benchmarking](../../../anleitungen/benchmarking.md), [Pro
 | Schritt | Wirkung | Lesen |
 |---|---|---|
 | 1. Caches an und mit den richtigen Cache-Schlüsseln | die meisten Anfragen werden nie gerendert | [Caching in Anwendungen](caching-in-anwendungen.md) |
-| 2. Velocity mit seinem Antwort-Cache | wiederholte anonyme Anfragen werden ohne PHP beantwortet; persistente Worker halten die Anwendung warm | [Antwort-Cache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md) |
+| 2. Velocity mit seinem Antwort-Cache | wiederholte anonyme Anfragen werden ohne PHP beantwortet; persistente Worker halten die Anwendung warm | [Antwort-Cache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md) |
 | 3. Langsame Arbeit aus den Anfragen heraus | Anfragen bleiben unter Last schnell | [Muster für Hintergrundarbeit](muster-fuer-hintergrundarbeit.md) |
 | 4. Die Datenbank abgestimmt; Abfrage-Cache | weniger und günstigere Abfragen | [Datenbanken](../../../installation/09-datenbanken.md), [SQL-Abfrage-Cache](../../../bc/6.0/sql-abfrage-cache.md) |
 | 5. Suche mit Solr | Suchlast weg von der Datenbank | [Suche mit ezfind und Solr](../website-ersteller/suche-mit-ezfind-und-solr.md) |
-| 6. Gemeinsames Cache-Backend | Inhalts- und INI-Caches in Redis oder Valkey | [sevenx_valkey_cache](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md) |
+| 6. Gemeinsames Cache-Backend | Inhalts- und INI-Caches in Redis oder Valkey | [sevenx_valkey_cache](../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md) |
 | 7. Mehrere Webserver | horizontale Kapazität | [Clustering und gemeinsamer Speicher](clustering-und-gemeinsamer-speicher.md) |
 
 Der Worker-Pool von Velocity und seine dynamische Größe werden in `velocity.ini` eingestellt

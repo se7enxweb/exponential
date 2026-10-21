@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Einstellungen über die Kommandozeile ändern: exp:ini, Einstellungen in eine Erweiterung verschieben](../../../../../eng-us/bc/6.0/console-exp-ini.md#moving-settings-into-an-extension).
+Quelle: [Einstellungen über die Kommandozeile ändern: exp:ini, Einstellungen in eine Erweiterung verschieben](../../../../bc/6.0/console-exp-ini.md#einstellungen-in-eine-erweiterung-verschieben).
 
 1. **Warum eine Erweiterung pro Website** (4 Minuten). Ein Verzeichnis pro Website: Einstellungen, Templates, Design
    und Übersetzungen reisen zusammen, können versioniert und einzeln bereitgestellt werden, und ein neues Teammitglied
@@ -164,7 +164,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Modul 2. Die Befehle laufen im Wurz
 1. Die Einstellungen einer Erweiterung, dann `settings/siteaccess/<sa>`, dann das globale Override, das das letzte
    Wort hat.
 2. **B.** Sofern nicht `--force` angegeben ist
-   ([exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md#moving-settings-into-an-extension)).
+   ([exp:ini](../../../../bc/6.0/console-exp-ini.md#einstellungen-in-eine-erweiterung-verschieben)).
 3. Eine Erweiterung kann sich nicht selbst aktivieren: Ihre Einstellungen werden erst gelesen, wenn sie aktiv ist.
 4. In `var/backup/ini/<timestamp>/<path>`, Modus 0600.
 5. Nein: Sie hat keine Klassen. Sie braucht Autoloads, sobald sie PHP-Klassen bekommt.
@@ -173,18 +173,18 @@ Verwenden Sie Ihre Schulungsinstallation aus Modul 2. Die Befehle laufen im Wurz
 
 ## Weiterführende Informationen
 
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md): jede Aktion, Option
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../bc/6.0/console-exp-ini.md): jede Aktion, Option
   und jeder Exit-Code.
-- [Konsole: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): die Feature-Seite.
-- [Einstellungsdateien in einer Erweiterung](../../../../../eng-us/help/designers/extensions/settings-files-in-an-extension.md) und
-  [Siteaccess-Einstellungen in einer Erweiterung](../../../../../eng-us/help/designers/extensions/siteaccess-settings-in-an-extension.md).
-- [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md).
+- [Konsole: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): die Feature-Seite.
+- [Einstellungsdateien in einer Erweiterung](../../../designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md) und
+  [Siteaccess-Einstellungen in einer Erweiterung](../../../designer/erweiterungen/siteaccess-einstellungen-in-einem-theme.md).
+- [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md).
 
 ## Verwandte Seiten
 
 - [Modul 3: Einstellungen, Logs und Caches pro Website](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

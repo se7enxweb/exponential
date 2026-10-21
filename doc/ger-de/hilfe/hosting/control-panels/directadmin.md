@@ -49,7 +49,7 @@ Beantworten Sie diese für Ihren eigenen Server-Aufbau, bevor Sie eine Produktbe
 | Welche PHP-Versionen 8.x kann ein Konto wählen, und sind `intl` und `xsl` eingebaut? | beide sind kritische Tests des Setup-Assistenten ([2.4](../../../installation/02-voraussetzungen.md#24-der-systemtest-des-setup-assistenten)) |
 | Läuft PHP als eigener Benutzer des Kontos (PHP-FPM pro Konto oder Gleichwertiges)? | die Regel eines Benutzers für `var/` und die Abschottung zwischen Konten ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)) |
 | Welcher Webserver liefert die Konten aus, und liest er `.htaccess`? | die Rewrite-Regeln werden als `.htaccess_root` mitgeliefert |
-| Ist `open_basedir` pro Konto gesetzt? | der Assistent warnt nur, aber Werkzeuge, die nach Binärdateien des Systems suchen, sind betroffen ([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)) |
+| Ist `open_basedir` pro Konto gesetzt? | der Assistent warnt nur, aber Werkzeuge, die nach Binärdateien des Systems suchen, sind betroffen ([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)) |
 | Welche Funktionen stehen in `disable_functions`? | die Seite Cronjobs braucht `proc_open`, `exec` und `posix_kill` ([Cronjobs](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen)) |
 | Erhalten Konten eine Shell? | Composer und die Konsole brauchen eine; ohne sie installiert der Setup-Assistent |
 | Auf welchen Datenbankservern können Konten Datenbanken anlegen? | die offizielle Reihenfolge und ihre praktischen Mindestwerte |

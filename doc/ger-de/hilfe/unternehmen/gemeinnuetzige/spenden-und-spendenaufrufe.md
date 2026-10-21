@@ -30,9 +30,9 @@ beschreibt eine gute Spendenseite. Lesen Sie sie, bevor Sie Ihrem Vorstand Onlin
   Funktion für Gift Aid oder Steuerquittungen. Eine Suche in Code und Dokumentation nach Spendenfunktionen findet nur die
   Seiten über Spenden an das Exponential-Projekt selbst.
 - **Der eingebaute Shop** verkauft Produkte mit einem Preis, den Redakteure festlegen (`ezprice` oder `ezmultiprice`),
-  über Warenkorb, Kasse und einen Zahlungsschritt ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)).
+  über Warenkorb, Kasse und einen Zahlungsschritt ([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)).
 - **`ezpaypal`** ist ein Zahlungs-Gateway für den Shop, das von `composer.json` verlangt wird: Der Kunde wird zum Bezahlen
-  zu PayPal geschickt, und PayPal ruft die Website zurück ([ezpaypal](../../../../eng-us/features/6.0/extensions/ezpaypal.md)).
+  zu PayPal geschickt, und PayPal ruft die Website zurück ([ezpaypal](../../../funktionen/6.0/erweiterungen/ezpaypal.md)).
 - **Regelmäßige Zahlungen** sind weder für den Shop noch für `ezpaypal` dokumentiert.
 
 ## Möglichkeit A: auf eine externe Spendenplattform verlinken
@@ -46,8 +46,8 @@ So bauen Sie das in Exponential:
 1. Legen Sie eine Seite „Spenden“ an, die erklärt, warum man geben sollte und was eine Spende bewirkt.
 2. Setzen Sie den Link zur Plattform darauf und eine Schaltfläche **Spenden** in den Kopfbereich oder auf die
    Startseite. In Exponential Layouts erledigt das der Standardblock `button` („Button / Link“) ohne Entwickler
-   ([Referenz zu Layouts](../../../../eng-us/bc/6.0/LAYOUTS.md)); ein Linkfeld (`ezurl`) an einer Seitenklasse funktioniert ebenso
-   ([Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)).
+   ([Referenz zu Layouts](../../../bc/6.0/layouts.md)); ein Linkfeld (`ezurl`) an einer Seitenklasse funktioniert ebenso
+   ([Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md)).
 3. Für eine Kampagne setzen Sie die Schaltfläche auf die Kampagnenseite ([Kampagnen und Landingpages](kampagnen-und-landingpages.md)).
 4. Sagen Sie Spendern vor dem Klick, dass sie Ihre Website verlassen, und nennen Sie die Plattform in Ihrem
    Datenschutzhinweis.
@@ -61,18 +61,18 @@ Wenn Sie bereits Artikel (T-Shirts, Eintrittskarten, Publikationen) über den Sh
 Spendenartikel hinzufügen:
 
 1. Ein Produkt der mitgelieferten Klasse `product`, zum Beispiel „Spende 10“, „Spende 25“, „Spende 50“, jeweils mit
-   seinem Preis ([Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)).
+   seinem Preis ([Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)).
    Optionen wie `ezoption` oder `ezrangeoption` „lassen Besucher Optionen wählen ..., die den Preis ändern können“; sie
    bieten Auswahlmöglichkeiten, die Sie festlegen, keinen freien Betrag.
 2. `ezpaypal` ist eingerichtet: `Business` in `settings/override/paypal.ini.append.php`, gegen die Sandbox von PayPal
    getestet, das PayPal-Ereignis in den Workflow der Kasse aufgenommen
-   ([Zahlungs-Gateways](../../../../eng-us/help/creators/website-creators/payment-gateways.md#setting-up-paypal)).
+   ([Zahlungs-Gateways](../../ersteller/website-ersteller/payment-gateways.md#paypal-einrichten)).
 3. Die USt-Typen für diese Artikel sind so gesetzt, wie Ihr Steuerberater es empfiehlt
-   ([USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#vat)).
+   ([USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md#mehrwertsteuer)).
 4. Bestellquittungen sind eingeschaltet, damit Spender ihre Quittung jederzeit abrufen können
-   ([Bestellquittungen](../../../../eng-us/features/6.0/order-receipts.md)).
+   ([Bestellquittungen](../../../funktionen/6.0/bestellbelege.md)).
 5. Das Shop-Dashboard ist geprüft: Es sagt, wenn ein Zahlungsschritt fehlt
-   ([Shop-Dashboard](../../../../eng-us/features/6.0/store-dashboard.md)).
+   ([Shop-Dashboard](../../../funktionen/6.0/shop-dashboard.md)).
 
 Was Sie gewinnen: Spenden erscheinen als Bestellungen in der Administration, mit ihrem Zahlungsstatus
 (`PaymentMadeOrderStatusID`, standardmäßig `1000`). Was Sie aufgeben: Spender gehen durch einen Warenkorb und eine Kasse,
@@ -116,9 +116,9 @@ Buchhaltung.
 
 ## Sicherheit und Vertrauen
 
-- Liefern Sie die gesamte Website über HTTPS aus ([Online gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+- Liefern Sie die gesamte Website über HTTPS aus ([Online gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - Beim Shop „muss die Benachrichtigungs-URL von PayPal aus dem Internet erreichbar sein und darf keine Anmeldung
-  verlangen“ ([Zahlungs-Gateways](../../../../eng-us/help/creators/website-creators/payment-gateways.md#setting-up-paypal)).
+  verlangen“ ([Zahlungs-Gateways](../../ersteller/website-ersteller/payment-gateways.md#paypal-einrichten)).
 - Halten Sie Administratorkonten wenige und schützen Sie sie mit zweistufiger Anmeldung
   ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - Zum Umgang mit Karten allgemein lesen Sie [Kartenzahlungen und PCI-Grundlagen](../shops/kartenzahlungen-und-pci-grundlagen.md).
@@ -137,7 +137,7 @@ Buchhaltung.
 ## Verwandte Seiten
 
 - [Gemeinnützige Organisationen](README.md)
-- [Zahlungs-Gateways](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
+- [Zahlungs-Gateways](../../ersteller/website-ersteller/payment-gateways.md)
 - [Zahlungs-Gateways für Unternehmen](../shops/zahlungsanbieter-fuer-unternehmen.md)
 - [Wie Unternehmen mit Exponential online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

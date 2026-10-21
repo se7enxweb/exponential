@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Sicherheitsbeauftragte. Das Audit-Protokoll zeichnet
 sicherheitsrelevante Ereignisse auf, voreingestellt eingeschaltet, in einem manipulationssicheren Protokoll
-([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Inhalt
 

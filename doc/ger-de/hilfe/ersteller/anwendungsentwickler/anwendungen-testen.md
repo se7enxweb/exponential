@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Anwendungsentwickler, die Code ohne Angst ändern möchten. Die eigenen Tests und
 Qualitätsschranken des Kernels sind das Vorbild: Die meisten Tests laufen ohne Datenbank, einige gegen eine
 Wegwerf-Datenbank, und Prüfungen von Templates, Links und im Browser vervollständigen das Bild
-([Standard für Tests und CI](../../../../eng-us/standards/testing-and-ci.md)).
+([Standard für Tests und CI](../../../standards/tests-und-ci.md)).
 
 ## Inhalt
 
@@ -73,7 +73,7 @@ php bin/php/eztemplatecheck.php -s<siteaccess> extension/expdemo/design/   # eve
 ## Verwandte Seiten
 
 - [PHPUnit-Tests ohne Datenbank](phpunit-tests-ohne-datenbank.md)
-- [Qualitätsprüfungen](../../../../eng-us/features/6.0/quality-checks.md)
+- [Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspruefungen.md)
 - [Qualitätsschranken und Abnahme](../../fuehrung/qualitaetsschranken-und-abnahme.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Website-Ersteller, die den Crawlern der Suchmaschinen sagen, was sie auslassen sollen. Eine
 neue Installation liefert im Web-Root eine `robots.txt` mit sinnvollen Regeln aus
-([Eine nützliche robots.txt ab Werk](../../../../eng-us/features/6.0/robots-txt.md)).
+([Eine nützliche robots.txt ab Werk](../../../funktionen/6.0/robots-txt.md)).
 
 ## Inhalt
 

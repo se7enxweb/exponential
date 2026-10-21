@@ -12,9 +12,9 @@ einem Teil einer Site ein eigenes Aussehen geben. Lesen Sie zuerst die Abschnitt
 Abschnitt für sich. Jede Seite, jedes Feld, jede Regel und jeder Befehl unten wurde am 5. Oktober 2026 am Code dieses
 Repositorys geprüft; die Dateinamen stehen unter [Quellen](#quellen), damit sich jede Aussage erneut prüfen lässt.
 
-[Anleitungen](README.md) · Siehe auch: [Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md) ·
-[Remote-Dienste (expsection)](../../eng-us/bc/6.0/backend_ezjscore_services.md#sections-expsection-17-services-5-writes) ·
-[Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md) · [Sicherheit und Audit](sicherheit-und-audit.md)
+[Anleitungen](README.md) · Siehe auch: [Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md) ·
+[Remote-Dienste (expsection)](../bc/6.0/backend-dienste-ueber-ezjscore.md#sektionen-expsection-17-dienste-5-schreibvorgänge) ·
+[Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md) · [Sicherheit und Audit](sicherheit-und-audit.md)
 
 ## Kurz gesagt
 
@@ -221,7 +221,7 @@ Der Server weist drei Arten von Bezeichnern zurück, mit der Meldung über dem F
 Der Name wird nicht geprüft; ein leerer Name wird so gespeichert, wie er ist, weshalb das Formular nach einem fragt.
 
 Jedes Speichern wird im Audit-Protokoll als `content.section.change` festgehalten, mit den Werten vorher und nachher
-([Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md)).
+([Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md)).
 
 ## 6. Eine Sektion bearbeiten und was eine Änderung betrifft
 
@@ -315,7 +315,7 @@ Das ist der übliche Weg, vorhandene Inhalte in eine Sektion zu bringen.
    **Auswählen**.
 3. Für ein einzelnes Element mit einem großen Teilbaum (ab `content.ini [ContentJobSettings] SynchronousLimit`
    Elementen, standardmäßig 50) bietet eine Bestätigung an, es **sofort** oder **im Hintergrund** als Inhaltsjob
-   auszuführen, mit einer Fortschrittsseite ([Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md)). Kleinere Teilbäume werden
+   auszuführen, mit einer Fortschrittsseite ([Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md)). Kleinere Teilbäume werden
    sofort zugewiesen.
 4. Sofort ausgeführt, öffnet sich die Liste der Sektionen wieder, und jeder Inhalts-View-Cache wird geleert
    (`eZContentCacheManager::clearAllContentCache()`). Als Job ausgeführt, öffnet sich seine Fortschrittsseite; der Job
@@ -508,12 +508,12 @@ php bin/php/expcontentjob.php list                                         # wha
 
 Der Job läuft als der mit `--login` angegebene Benutzer, sonst als `site.ini [UserSettings] UserCreatorID`, und die
 Berechtigungen dieses Benutzers gelten für jedes Objekt. Der Cronjob-Teil `contentjobs` startet wartende Jobs und setzt
-unterbrochene fort ([Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md)).
+unterbrochene fort ([Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md)).
 
 **Remote-Dienste** der Extension expservices, unter `/ezjscore/call/expsection::<method>`: `list`, `count`, `get`,
 `getByIdentifier`, `objects`, `objectCount`, `usage`, `canRemove`, `assignable`, `navigationParts`, `ofObject`,
 `ofNode` und die schreibenden `create`, `update`, `remove`, `assign` und `assignSubtree`, jeweils mit der Richtlinie,
-die sie brauchen ([die Liste der Dienste](../../eng-us/bc/6.0/backend_ezjscore_services.md#sections-expsection-17-services-5-writes)).
+die sie brauchen ([die Liste der Dienste](../bc/6.0/backend-dienste-ueber-ezjscore.md#sektionen-expsection-17-dienste-5-schreibvorgänge)).
 
 **PHP**, in einer Extension oder einem mit `php bin/php/ezexec.php <script> --allow-root-user` gestarteten Skript:
 
@@ -623,7 +623,7 @@ Sektionen bearbeiten dürfen, und Inhalt zuweisen nur dort, wo es erlaubt ist.
 - Caches: `eZContentCacheManager::clearContentCacheIfNeededBySectionID()` und `clearAllContentCache()` in
   `kernel/classes/ezcontentcachemanager.php`; das Ereignis `content/section/cache`.
 - Standarddaten: `share/db_data.dba`, `kernel/sql/common/cleandata.sql`.
-- Seitenaufteilung: `settings/admininterface.ini [PaginationSettings]`, [Seitenaufteilung der Admin-Listen](../../eng-us/features/6.0/admin-list-paging.md).
+- Seitenaufteilung: `settings/admininterface.ini [PaginationSettings]`, [Seitenaufteilung der Admin-Listen](../funktionen/6.0/seitenweise-listen-im-admin.md).
 - Tests: `tests/tests/kernel/classes/expSectionOverviewTest.php` (die Übersicht ohne Datenbank und gegen die eigenen
   Abfragen des Kernels auf einer laufenden Installation).
 

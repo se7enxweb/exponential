@@ -529,6 +529,6 @@ haben — eine einzelne URL zeigt es nicht.
 - [Velocity-Engines — Qbix, FrankenPHP, der eingebaute Server von PHP](velocity-engines.md)
 - [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md)
 - [Antwort-Cache und Navigation](antwort-cache-und-navigation.md)
-- [Velocity, der Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) und [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
+- [Velocity, der Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)
 - [Preloader für den Cache der Website](preload.md)
 - [Anleitung zum Bereitstellen](../../anleitungen/bereitstellung.md)

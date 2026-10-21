@@ -149,7 +149,7 @@ hinzufügen, wenn Messungen den Bedarf zeigen
 - [ ] Was kostet ein Wechsel weg von Ihnen, und in welchem Format bekomme ich meine Daten?
 
 Weitere Fragen: [Fragen an einen Partner](../auswahl/fragen-an-einen-partner.md) und
-[Hosting-Anforderungen für eine Website](../../../../eng-us/help/creators/website-creators/hosting-for-a-website.md#questions-for-a-hosting-provider).
+[Hosting-Anforderungen für eine Website](../../ersteller/website-ersteller/hosting-fuer-eine-website.md#fragen-an-einen-hosting-anbieter).
 
 ## Verwandte Seiten
 

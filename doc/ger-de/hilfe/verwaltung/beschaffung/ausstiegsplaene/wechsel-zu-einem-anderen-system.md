@@ -86,7 +86,7 @@ Für ein nicht aufgeführtes Ziel sind CSV und Manifest des Website-Archivs der 
 - [ ] Letzter Export und Datenbank-Dump nach Ihren Regeln zum Schriftgut archiviert.
 - [ ] Ein statisches Archiv der alten öffentlichen Website aufbewahrt, wenn Ihre Regeln eines verlangen:
       `exp:makestaticcache` schreibt statische Seiten, wie der Migrationskurs erklärt
-      ([Exponential verlassen, Lektion](../../../../../eng-us/help/trainers/migration/module-08-leaving-and-capstone/leaving-exponential.md)).
+      ([Exponential verlassen, Lektion](../../../trainer/migration/modul-08-wechsel-weg-und-abschlussprojekt/von-exponential-wechseln.md)).
 - [ ] Audit-Protokoll mit signiertem Manifest exportiert und für seine Aufbewahrungsdauer aufbewahrt.
 - [ ] Personenbezogene Daten wie vereinbart behandelt ([Personenbezogene Daten beim Ausstieg](personenbezogene-daten-beim-ausstieg.md)).
 - [ ] Server, Cronjobs, Zertifikate und Konten entfernt; Löschung schriftlich bestätigt.

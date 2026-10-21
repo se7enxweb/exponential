@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Leitung, die einen neuen Redakteur willkommen heißt, und für den Kollegen, der ihn herumführt.
 Eine gute erste Woche gibt der Person ein persönliches Konto mit der richtigen Rolle, die zweistufige Anmeldung, eine
 begleitete erste Aufgabe und die Hausregeln Ihrer Website. Die eingebaute Hilfe ist das Handbuch für die Redaktion:
-Sie müssen keines von Grund auf schreiben ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+Sie müssen keines von Grund auf schreiben ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ Sie müssen keines von Grund auf schreiben ([Die Website an die Redaktion überg
 - Legen Sie die Rolle und ihre Einschränkungen fest: [Rollen für neue Mitarbeitende wählen](rollen-fuer-neue-mitarbeitende-waehlen.md).
 - Die Person, die Konten verwaltet, legt **ein persönliches Konto** in der richtigen Benutzergruppe an. Keine geteilten Anmeldungen.
 - Entscheiden Sie, ob für diese Person die zweistufige Anmeldung verpflichtend ist; für alle, die veröffentlichen
-  können, wird sie empfohlen ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+  können, wird sie empfohlen ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 - Bereiten Sie eine kleine erste Aufgabe an einem sicheren Ort vor: einen Artikelentwurf in ihrer eigenen Sektion oder
   eine verborgene Seite.
 
@@ -39,7 +39,7 @@ Sie müssen keines von Grund auf schreiben ([Die Website an die Redaktion überg
    ([Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)).
 3. **Machen Sie den Rundgang.** Gehen Sie [Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md) mit Ihren
    eigenen Inhalten durch. Eine Schulung, die dem Rundgang mit den eigenen Inhalten der Website folgt, bringt die
-   meisten Redakteure von null zur Arbeitsfähigkeit ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+   meisten Redakteure von null zur Arbeitsfähigkeit ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 4. **Nehmen Sie eine erste Änderung vor**, als Entwurf, sehen Sie sich die Vorschau an und veröffentlichen oder
    verwerfen Sie sie ([Erste Schritte](../../erste-schritte.md), [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)).
 
@@ -60,7 +60,7 @@ Zeigen Sie, wie man ein Problem mit der Seite **Report an error** der Hilfe meld
 
 > **Tipp**
 > Sammeln Sie die Fragen, die neue Personen in ihren ersten Wochen stellen. Wiederholte Fragen gehören in den eigenen
-> Leitfaden Ihrer Website für die Redaktion ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+> Leitfaden Ihrer Website für die Redaktion ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Nach einem Monat
 

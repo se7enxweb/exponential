@@ -17,8 +17,8 @@ mitgelieferten Erweiterungen können Ihre Templates betreffen; früh davon zu wi
 | Quelle | Was sie enthält |
 |---|---|
 | `doc/changelogs/6.0/<version>.md` im Repository | Das Changelog jedes Releases; das in Entwicklung (6.0.15) wird fortgeschrieben, sobald Arbeit hinzukommt |
-| `doc/eng-us/bc/6.0/` | Upgrade-Hinweise zu Änderungen, die Handeln verlangen, zum Beispiel [Entfernung von YUI](../../../../eng-us/bc/6.0/yui-removal.md) |
-| `doc/eng-us/features/6.0/` | Was eine neue Funktion tut, zum Beispiel [jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md) |
+| `doc/eng-us/bc/6.0/` | Upgrade-Hinweise zu Änderungen, die Handeln verlangen, zum Beispiel [Entfernung von YUI](../../../bc/6.0/yui-entfernung.md) |
+| `doc/eng-us/features/6.0/` | Was eine neue Funktion tut, zum Beispiel [jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md) |
 | Releases und Tags von `se7enxweb/exponential` und der Erweiterungen, die Sie verwenden | Versionen, wie veröffentlicht |
 | Neuigkeiten und RSS von [projects.exponential.earth](https://projects.exponential.earth/) (`/rss/feed/projects-news`, `/rss/feed/git`) | Ankündigungen und neueste Git-Änderungen |
 | Blogs auf [share.exponential.earth](https://share.exponential.earth/) | Release-Ankündigungen |

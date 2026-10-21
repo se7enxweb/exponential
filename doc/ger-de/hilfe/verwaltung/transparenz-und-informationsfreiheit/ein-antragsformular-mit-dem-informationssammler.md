@@ -13,7 +13,7 @@ Diese Seite richtet sich an Websiteersteller und Administratoren, die der Öffen
 Anträge auf Informationszugang anbieten. Exponential baut Formulare mit dem **Informationssammler**: eine Klasse, deren
 Attribute als *Informationssammler* markiert sind, ein Objekt davon, das als Formular angezeigt wird, und eine
 gespeicherte *Sammlung* für jede Einsendung
-([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -77,8 +77,8 @@ vergeben, stammt es aus Ihrem Vorgangssystem; die ID der Sammlung ist intern.
 
 - Lassen Sie die Erweiterung `ezformtoken` aktiv; sie schützt POST-Formulare.
 - CAPTCHA-Erweiterungen (`recaptcha`, `hcaptcha`) senden Besucherdaten an einen Drittanbieter und brauchen einen
-  Datenschutzhinweis ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md),
-  [Datenschutzstandards](../../../../eng-us/standards/privacy.md)).
+  Datenschutzhinweis ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md),
+  [Datenschutzstandards](../../../standards/datenschutz.md)).
 - `[CollectionSettings] CollectAnonymousData=enabled` lässt nicht angemeldete Besucher senden; lassen Sie es für ein
   öffentliches Antragsformular eingeschaltet.
 
@@ -87,7 +87,7 @@ vergeben, stammt es aus Ihrem Vorgangssystem; die ID der Sammlung ist intern.
 Sagen Sie neben dem Formular, was erhoben wird, warum, wer es erhält, wie lange es aufbewahrt wird und wie man seine
 Löschung verlangen kann. Beschränken Sie die Richtlinie `infocollector/read` auf das Team, das Anträge bearbeitet. Der
 Datenschutzstandard führt auf, dass Formulare speichern, was Besucher eingeben, und dass Einwilligungstexte und
-Aufbewahrungsregeln der Website überlassen bleiben ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
+Aufbewahrungsregeln der Website überlassen bleiben ([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
 
 ## Testen
 
@@ -98,8 +98,8 @@ Aufbewahrungsregeln der Website überlassen bleiben ([Datenschutzstandards](../.
 
 ## Verwandte Seiten
 
-- [Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)
-- [Formulareinsendungen lesen und exportieren](../../../../eng-us/help/creators/website-creators/form-submissions.md)
+- [Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)
+- [Formulareinsendungen lesen und exportieren](../../ersteller/website-ersteller/formulareinsendungen.md)
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

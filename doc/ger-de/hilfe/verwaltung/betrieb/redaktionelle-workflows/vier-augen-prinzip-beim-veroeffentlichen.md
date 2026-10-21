@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Führungskräfte und Administratoren, deren Richtlinie vorschreibt, dass jede Veröffentlichung von einer zweiten Person
 gesehen wird (das „Vier-Augen-Prinzip“). Sie zeigt, wie nah Exponential dieser Regel von Haus aus kommt, welche Einstellungen zählen und wo ein
 schriftlich festgelegter Prozess die Lücke schließen muss. Quellen: [Workflows](../../../../anleitungen/workflows.md) und
-[Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md).
+[Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md).
 
 ## Inhalt
 1. [Warum ein Veröffentlichungsrecht nicht genügt](#warum-ein-veröffentlichungsrecht-nicht-genügt)
@@ -25,7 +25,7 @@ schriftlich festgelegter Prozess die Lücke schließen muss. Quellen: [Workflows
 ## Warum ein Veröffentlichungsrecht nicht genügt
 
 Im Bearbeitungsformular entscheidet `content/edit`, ob ein Benutzer einen Entwurf veröffentlichen darf
-([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)): Wer bearbeiten darf, kann auf die Schaltfläche
+([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)): Wer bearbeiten darf, kann auf die Schaltfläche
 zum Veröffentlichen klicken. Die Kontrolle ist daher der **Freigabe-Workflow** am Trigger **Vor dem Veröffentlichen von Inhalten**, der jede
 Version zurückhält, bis eine freigebende Person entscheidet.
 
@@ -75,7 +75,7 @@ Diese Aktionen stehen im Kanal `content` des Prüfprotokolls, sodass eine zweite
 - Die Trigger-Liste und die Seite des Workflows dokumentieren die Konfiguration; bewahren Sie eine datierte Kopie in Ihrem Änderungsnachweis auf.
 
 Exponential erzeugt keinen einzelnen Bericht „freigegeben von“ je Seite; wenn Ihre Prüfer einen brauchen, kombinieren Sie die Versionsgeschichte mit
-dem Audit-Export ([Audit-Einträge für eine Prüfung exportieren](../../../../../eng-us/help/government/tasks/operations/export-audit-records-for-an-auditor.md)).
+dem Audit-Export ([Audit-Einträge für eine Prüfung exportieren](../../aufgaben/betrieb/audit-eintraege-fuer-einen-pruefer-exportieren.md)).
 
 ## Verwandte Seiten
 - [Funktionstrennung](../personen-und-berechtigungen/funktionstrennung.md)

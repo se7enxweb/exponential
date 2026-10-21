@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Designer, die eine Seite ansehen und das Template hinter einem Teil davon brauchen. Mit eingeschalteten
 Template-Pfadkommentaren wird jedes gerenderte Template von zwei HTML-Kommentaren umschlossen, die seine Datei nennen. Die
-Funktionsseite ist [Template-Pfadkommentare](../../../../eng-us/features/6.0/template-path-comments.md).
+Funktionsseite ist [Template-Pfadkommentare](../../../funktionen/6.0/template-pfad-kommentare.md).
 
 ## Inhalt
 
@@ -30,7 +30,7 @@ ShowTemplatePathComments=enabled
 ```
 
 und dann den Template-Cache leeren (`php bin/php/ezcache.php --clear-tag=template`), weil kompilierte Templates die Prüfung
-tragen. Die [Exp-Debugleiste](../../../../eng-us/features/6.0/exp-debug-bar.md) kann dieselbe Einstellung umschalten.
+tragen. Die [Exp-Debugleiste](../../../funktionen/6.0/exp-debug-leiste.md) kann dieselbe Einstellung umschalten.
 
 ## Lesen
 

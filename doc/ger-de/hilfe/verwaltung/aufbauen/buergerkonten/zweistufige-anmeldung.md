@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren und Site-Ersteller, die entscheiden,
 sind. Die zweistufige Anmeldung macht ein gestohlenes Passwort allein nutzlos. Sie wird von der Erweiterung
 `sevenx_authentication_2fa` bereitgestellt, die der Installer im freiwilligen Modus aktiviert. Quellen:
 [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) und
-[sevenx_authentication_2fa](../../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md).
+[sevenx_authentication_2fa](../../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md).
 
 ## Inhalt
 

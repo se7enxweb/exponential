@@ -10,7 +10,7 @@ type: help
 # Glossar für Hoster
 
 Die Begriffe, die die Seiten zum Hosting verwenden, in alphabetischer Reihenfolge, jeweils mit der Seite, die sie
-erklärt. Das allgemeine Glossar der Dokumentation ist [doc/eng-us/glossary.md](../../../eng-us/glossary.md).
+erklärt. Das allgemeine Glossar der Dokumentation ist [doc/eng-us/glossary.md](../../glossar.md).
 
 | Begriff | Bedeutung | Mehr |
 |---|---|---|

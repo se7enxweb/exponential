@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren, die möchten, dass jede Änderung an der Konfiguration in der Produktion die
 Versionsverwaltung und das Änderungsgremium durchläuft. Hintergrund:
-[Konfiguration, die vom Deployment verwaltet wird](../../../../../eng-us/help/government/operations/upgrades-and-change/managed-by-deployment.md).
+[Konfiguration, die vom Deployment verwaltet wird](../../betrieb/aktualisierungen-und-aenderungen/verwaltet-durch-bereitstellung.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -64,9 +64,9 @@ Versionsverwaltung und das Änderungsgremium durchläuft. Hintergrund:
   ([Datei- und Verzeichnisberechtigungen prüfen](datei-und-verzeichnisberechtigungen-pruefen.md)).
 
 ## Verwandte Seiten
-- [Änderungsmanagement und Änderungsgremien](../../../../../eng-us/help/government/operations/upgrades-and-change/change-management-and-advisory-boards.md)
-- [Konfiguration unter Versionsverwaltung](../../../../../eng-us/help/government/operations/hosting/configuration-under-version-control.md)
-- [Vom Deployment verwaltet (Funktion)](../../../../../eng-us/features/6.0/managed-by-deployment.md)
+- [Änderungsmanagement und Änderungsgremien](../../betrieb/aktualisierungen-und-aenderungen/aenderungsmanagement-und-aenderungsbeiraete.md)
+- [Konfiguration unter Versionsverwaltung](../../betrieb/hosting/konfiguration-unter-versionskontrolle.md)
+- [Vom Deployment verwaltet (Funktion)](../../../../funktionen/6.0/durch-deployment-verwaltet.md)
 - [Die Administration beschränken (Hosting)](../../../hosting/sicherheit/die-administration-einschraenken.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

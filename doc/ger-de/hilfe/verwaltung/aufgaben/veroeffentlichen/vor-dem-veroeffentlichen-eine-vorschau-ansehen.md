@@ -62,7 +62,7 @@ Prüfen Sie diese nach dem Veröffentlichen, abgemeldet.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Seite zur Freigabe schicken](eine-seite-zur-freigabe-schicken.md)
-- [Ansichtsmodi der Versionsvorschau](../../../../../eng-us/features/6.0/version-preview-view-modes.md)
+- [Ansichtsmodi der Versionsvorschau](../../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

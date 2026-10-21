@@ -74,7 +74,7 @@ Ob der Benutzer eine Rolle mit genau diesem Namen hat (verglichen mit `==`, Gro�
 | `role_name` | Zeichenkette | ja | `''` |
 | `user_id` | Ganzzahl | nein | `0` (der aktuelle Benutzer) |
 
-Generierte Referenz: [has_role](../../../eng-us/examples/template-operators/has_role.md).
+Generierte Referenz: [has_role](../../beispiele/template-operatoren/has_role.md).
 
 ### has_role_id
 
@@ -85,7 +85,7 @@ Dasselbe 체ber die ID der Rolle.
 | `role_id` | Ganzzahl | ja | `0` |
 | `user_id` | Ganzzahl | nein | `0` (der aktuelle Benutzer) |
 
-Generierte Referenz: [has_role_id](../../../eng-us/examples/template-operators/has_role_id.md).
+Generierte Referenz: [has_role_id](../../beispiele/template-operatoren/has_role_id.md).
 
 ### has_any_role
 
@@ -98,7 +98,7 @@ wenn er eine Ganzzahl oder eine Zeichenkette aus Ziffern ist, sonst ein Rollenna
 | `user_id` | Ganzzahl | nein | `0` (der aktuelle Benutzer) |
 | `match_all` | boolescher Wert | nein | `false` |
 
-Generierte Referenz: [has_any_role](../../../eng-us/examples/template-operators/has_any_role.md).
+Generierte Referenz: [has_any_role](../../beispiele/template-operatoren/has_any_role.md).
 
 ```tpl
 has_role( 'Anonymous' ) = {has_role( 'Anonymous' )|choose( 'false', 'true' )}
@@ -130,7 +130,7 @@ Das Objekt muss ein `eZUser` sein: Die Methode liest sein Attribut `contentobjec
 | `user` | eZUser-Objekt | ja | `null` |
 | `role_id` | Ganzzahl | ja | `0` |
 
-Generierte Referenz: [has_role_by_user](../../../eng-us/examples/template-operators/has_role_by_user.md).
+Generierte Referenz: [has_role_by_user](../../beispiele/template-operatoren/has_role_by_user.md).
 
 ### has_role_by_user_id
 
@@ -141,7 +141,7 @@ Dasselbe mit der Inhaltsobjekt-ID des Benutzers.
 | `user_id` | Ganzzahl | ja | `0` |
 | `role_id` | Ganzzahl | ja | `0` |
 
-Generierte Referenz: [has_role_by_user_id](../../../eng-us/examples/template-operators/has_role_by_user_id.md).
+Generierte Referenz: [has_role_by_user_id](../../beispiele/template-operatoren/has_role_by_user_id.md).
 
 ```tpl
 {def $me = fetch( 'user', 'current_user' )}
@@ -170,7 +170,7 @@ einer Richtlinie auf alles passt. Einschr채nkungen werden nicht betrachtet (sieh
 | `function` | Zeichenkette, etwa `read` | ja | `''` |
 | `user_id` | Ganzzahl | nein | `0` (der aktuelle Benutzer) |
 
-Generierte Referenz: [has_policy](../../../eng-us/examples/template-operators/has_policy.md).
+Generierte Referenz: [has_policy](../../beispiele/template-operatoren/has_policy.md).
 
 ### has_policy_by_user
 
@@ -182,7 +182,7 @@ Dasselbe f체r ein 체bergebenes `eZUser`-Objekt; alles andere ergibt false.
 | `module` | Zeichenkette | ja | `''` |
 | `function` | Zeichenkette | ja | `''` |
 
-Generierte Referenz: [has_policy_by_user](../../../eng-us/examples/template-operators/has_policy_by_user.md).
+Generierte Referenz: [has_policy_by_user](../../beispiele/template-operatoren/has_policy_by_user.md).
 
 ```tpl
 {def $me = fetch( 'user', 'current_user' )}
@@ -203,10 +203,10 @@ Alle Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe
 
 ## Verwandte Seiten
 
-- [Rollen- und Richtlinien-Operatoren f체r Designer](../../../eng-us/help/designers/templates/role-and-policy-operators.md)
-- [Richtlinienfunktionen und Einschr채nkungen](../../../eng-us/help/creators/app-creators/policy-functions-and-limitations.md)
-- [Zugriffskontrolle im Code](../../../eng-us/help/creators/app-creators/access-control-in-code.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Rollen- und Richtlinien-Operatoren f체r Designer](../designer/vorlagen/rollen-und-richtlinien-operatoren.md)
+- [Richtlinienfunktionen und Einschr채nkungen](../ersteller/anwendungsentwickler/richtlinienfunktionen-und-einschraenkungen.md)
+- [Zugriffskontrolle im Code](../ersteller/anwendungsentwickler/zugriffskontrolle-im-code.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, 체bersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -106,7 +106,7 @@ Match[object]=1234
 
 **Design > Template editor** (`/visual/templatelist`) zeigt die Regeln in der Reihenfolge, in der sie probiert werden,
 und lässt Sie sie per Drag-and-drop umordnen; siehe
-[Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../../eng-us/features/6.0/template-editor-overrides.md).
+[Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../funktionen/6.0/template-editor-ueberschreibungen.md).
 
 ## Häufige Fehler
 
@@ -122,7 +122,7 @@ und lässt Sie sie per Drag-and-drop umordnen; siehe
 
 - Zurück: [Die Design-Kette: wo ein Template gefunden wird](die-design-kette.md)
 - Weiter: [Override-Bedingungen](override-bedingungen.md)
-- [Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../../eng-us/features/6.0/template-editor-overrides.md)
+- [Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../funktionen/6.0/template-editor-ueberschreibungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

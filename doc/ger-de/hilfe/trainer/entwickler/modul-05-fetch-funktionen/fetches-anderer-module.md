@@ -61,7 +61,7 @@ Quellen: `kernel/*/function_definition.php` und
 
 **Wie verberge ich einen Bearbeiten-Link vor Besuchern?** Verwenden Sie `$node.can_edit` am Knoten oder
 `has_access_to` für Rechte auf Modulebene;
-[Template-Operatoren für Rollen und Richtlinien](../../../../../eng-us/features/6.0/role-and-policy-template-operators.md) fügt
+[Template-Operatoren für Rollen und Richtlinien](../../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md) fügt
 Operatoren wie `has_policy` hinzu.
 
 **Was gibt `current_user` für einen Besucher zurück?** Den anonymen Benutzer mit dem Login `anonymous`.
@@ -137,7 +137,7 @@ Benutzer.
 
 - [Templates und Design, Teil 9](../../../../anleitungen/templates-und-design.md#9-site-daten-in-templates): Website-Daten in
   Templates.
-- [Template-Operatoren für Rollen und Richtlinien](../../../../../eng-us/features/6.0/role-and-policy-template-operators.md).
+- [Template-Operatoren für Rollen und Richtlinien](../../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md).
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md): die Berechtigungen, die die Fetches beachten.
 
 ## Verwandte Seiten

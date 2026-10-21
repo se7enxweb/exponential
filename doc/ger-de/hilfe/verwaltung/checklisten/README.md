@@ -67,7 +67,7 @@ Checkliste das.
 ## Verwandte Seiten
 
 - Verwaltungen: hier beginnen (government-start-here.md, die Einstiegsseite dieses Bereichs der Hilfe)
-- [Exponential im öffentlichen Sektor beschaffen](../../../../eng-us/help/government/procurement/README.md)
+- [Exponential im öffentlichen Sektor beschaffen](../beschaffung/README.md)
 - [Checklisten für Hoster](../../hosting/checklisten/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

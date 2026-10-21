@@ -146,7 +146,7 @@ Verwenden Sie die Spielwiese aus Lektion 2.1. Ersetzen Sie bei jedem Schritt den
 ## Weiterführende Literatur
 
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): die Sprache in zehn Minuten und die Fehlersuche.
-- [Template-Operatoren für Rollen und Richtlinien](../../../../../eng-us/features/6.0/role-and-policy-template-operators.md):
+- [Template-Operatoren für Rollen und Richtlinien](../../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md):
   Bedingungen darüber, was der aktuelle Benutzer darf.
 
 ## Verwandte Seiten

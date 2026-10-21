@@ -53,7 +53,7 @@ Für eine öffentliche Stelle heißt das:
 Bevor Sie sich auf eine Aussage über eine Funktion verlassen, prüfen Sie sie:
 
 1. Durchsuchen Sie das Changelog der aktuellen Linie ([Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md)).
-2. Suchen Sie eine Funktionsseite in `doc/eng-us/features/6.0/` (zum Beispiel [Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)).
+2. Suchen Sie eine Funktionsseite in `doc/eng-us/features/6.0/` (zum Beispiel [Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 3. Verlangen Sie eine Vorführung auf einer Testinstallation; siehe den Teil zur Bewertung dieses Abschnitts zur
    Beschaffung.
 

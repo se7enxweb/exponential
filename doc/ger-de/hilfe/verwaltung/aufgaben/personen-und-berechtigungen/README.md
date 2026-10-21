@@ -12,8 +12,8 @@ type: help
 Dieser Ordner enthält kurze, nummerierte Abläufe für Administratoren und Mitarbeiter des Service Desks, die den Zugang
 von Mitarbeitern zu einer öffentlichen Website verwalten. Jede Aufgabe nennt die nötigen Rechte, die genauen Seiten und
 Befehle, wie Sie das Ergebnis prüfen und was in einen Änderungsnachweis gehört. Die Erklärungen dahinter stehen in
-[Personen und Berechtigungen](../../../../../eng-us/help/government/operations/people-and-permissions/README.md) und
-[Redaktionelle Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/README.md).
+[Personen und Berechtigungen](../../betrieb/personen-und-berechtigungen/README.md) und
+[Redaktionelle Workflows](../../betrieb/redaktionelle-workflows/README.md).
 
 ## Inhalt
 1. [Rollen und Zuweisungen](#rollen-und-zuweisungen)
@@ -87,7 +87,7 @@ Freigabe-Workflow anlegen; dann die Anmeldung absichern (Redakteure aus der Admi
 Anmeldung, bei Bedarf Kontosperre); dann Mitarbeiter hinzufügen. Nach dem Go-live werden die Aufgaben zu Konten und
 Überprüfungen zur Routine.
 
-Nach oben: [Aufgaben](../README.md) und [Exponential im öffentlichen Sektor betreiben](../../../../../eng-us/help/government/operations/README.md). Die
+Nach oben: [Aufgaben](../README.md) und [Exponential im öffentlichen Sektor betreiben](../../betrieb/README.md). Die
 Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten

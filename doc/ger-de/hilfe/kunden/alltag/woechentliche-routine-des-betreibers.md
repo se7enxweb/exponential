@@ -31,7 +31,7 @@ wenn Ihre Rolle sie nicht anzeigt, erledigen Sie diese Schritte mit Ihrem Admini
 | 5 | *Meine Warteliste* der freigebenden Personen, oder fragen Sie sie | nichts wartet, was erscheinen sollte | [Freigabe und Prüfung](freigabe-und-pruefung.md) |
 | 5 | **Setup > Workflow-Prozesse** | kein Prozess wartet seit Tagen; die Statusleiste meldet, dass der Workflow-Cronjob eingeplant ist | [Workflows](../../../anleitungen/workflows.md) |
 | 5 | Der Papierkorb, gefiltert auf diese Woche | nichts versehentlich entfernt | [Archivieren und der Papierkorb](archivieren-und-der-papierkorb.md) |
-| 5 | **Benutzer > Benutzerkonten prüfen**, neue Konten und **Gesperrt** | jedes Konto gehört einer Person, die aktuell dazugehört | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
+| 5 | **Benutzer > Benutzerkonten prüfen**, neue Konten und **Gesperrt** | jedes Konto gehört einer Person, die aktuell dazugehört | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 | 10 | **Setup > Suchstatistiken**, Begriffe ohne Treffer | Ideen für Inhalte | [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md) |
 | 5 | Formulareinsendungen, wenn Ihre Website welche sammelt | jemand beantwortet sie | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | 5 | Die Website selbst, abgemeldet, auf einem Smartphone | die Startseite und eine neue Seite sehen richtig aus | [Barrierefreiheit pflegen](barrierefreiheit-pflegen.md) |

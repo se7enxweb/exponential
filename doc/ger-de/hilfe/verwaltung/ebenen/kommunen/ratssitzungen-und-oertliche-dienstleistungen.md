@@ -81,7 +81,7 @@ Datenschutzbeauftragten.
 | Ein Überprüfungsdatum | das verpflichtende Attribut `review_date` der Klasse Dienstleistung |
 | Eine Quelle für Kontaktdaten | Objekte der Klasse Anlaufstelle, mit den Dienstleistungsseiten verknüpft |
 | Eine Quelle für Gebühren | jährlich wechselnde Gebühren an einer Stelle (eine Seite oder ein verknüpftes Objekt), nicht in viele Seiten kopiert |
-| Rückmeldung | ein kurzes Formular „War diese Seite hilfreich?“ ([Formulare mit dem Informationssammler](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)) |
+| Rückmeldung | ein kurzes Formular „War diese Seite hilfreich?“ ([Formulare mit dem Informationssammler](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)) |
 
 ## Eine monatliche Routine
 
@@ -98,7 +98,7 @@ Datenschutzbeauftragten.
 
 - [Kommunen](README.md)
 - [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)
-- [Link- und Inhaltsprüfungen](../../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Link- und Inhaltsprüfungen](../../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

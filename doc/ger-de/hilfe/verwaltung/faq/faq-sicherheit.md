@@ -11,7 +11,7 @@ type: help
 
 Diese Seite beantwortet die Sicherheitsfragen, die Informationssicherheitsbeauftragte und Bewertungsgremien
 öffentlicher Stellen zu Exponential stellen. Die Antworten stammen aus den
-[Sicherheitsstandards](../../../../eng-us/standards/security.md), `SECURITY.md` und den Anleitungen zur Härtung.
+[Sicherheitsstandards](../../../standards/sicherheit.md), `SECURITY.md` und den Anleitungen zur Härtung.
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ Diese Seite beantwortet die Sicherheitsfragen, die Informationssicherheitsbeauft
 ## Wie behandelt Exponential die OWASP Top 10?
 
 Jede Kategorie der OWASP Top 10 (2021) hat eingebaute Gegenmaßnahmen, einzeln zugeordnet in den
-[Sicherheitsstandards](../../../../eng-us/standards/security.md#owasp-top-10-2021): rollenbasierte Zugriffsprüfungen,
+[Sicherheitsstandards](../../../standards/sicherheit.md#owasp-top-10-2021): rollenbasierte Zugriffsprüfungen,
 Passwort-Hashing mit `password_hash()`, Maskierung der Ausgabe, CSRF-Token in Formularen, Sicherheits-Header, ein
 manipulationssicheres Prüfprotokoll, SSRF-Prüfungen und mehr. Der Status ist **Teilweise erfüllt**:
 „Erfüllt“ würde eine externe Bewertung erfordern, die nicht durchgeführt wurde.
@@ -36,7 +36,7 @@ manipulationssicheres Prüfprotokoll, SSRF-Prüfungen und mehr. Der Status ist *
 
 Es wurde keine Bewertung nach ASVS durchgeführt; Status **Nicht geprüft**. Die voreingestellte
 Mindestlänge für Passwörter (10) liegt unter den 12 von ASVS Level 1, sodass Level 1 eine Änderung der Einstellungen
-erfordert ([Sicherheitsstandards](../../../../eng-us/standards/security.md#owasp-asvs-403)). Im Repository ist kein Bericht eines
+erfordert ([Sicherheitsstandards](../../../standards/sicherheit.md#owasp-asvs-403)). Im Repository ist kein Bericht eines
 Penetrationstests veröffentlicht. Der Kernel hat drei dokumentierte Härtungsdurchgänge hinter sich. Wenn Ihre Regeln
 einen Test verlangen, geben Sie einen für Ihre Website in Auftrag.
 
@@ -50,14 +50,14 @@ Authenticator-App oder per E-Mail ([Zweistufige Anmeldung](../../../anleitungen/
 Nicht standardmäßig: `MaxNumberOfFailedLogin=0`. Sie können eine Grenze setzen, mit einer Liste vertrauenswürdiger
 Adressen. Brute-Force-Versuche werden von den Alarmregeln des Audits erkannt, und die Ratenbegrenzung bleibt dem
 Webserver oder einem Anfragefilter wie request-shield überlassen
-([Sicherheitsstandards](../../../../eng-us/standards/security.md#known-gaps),
+([Sicherheitsstandards](../../../standards/sicherheit.md#bekannte-lücken),
 [Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 
 ## Können wir sehen, wer was getan hat?
 
 Ja. Das Prüfprotokoll ist standardmäßig eingeschaltet und mit einer Hash-Kette gesichert, zeichnet Anmeldungen,
 Inhaltsänderungen, das Schreiben von Einstellungen und mehr auf und hat Alarmregeln
-([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Es lässt sich mit `./console exp:audit verify` prüfen
+([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Es lässt sich mit `./console exp:audit verify` prüfen
 ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 
 ## Sendet es eine Content Security Policy?
@@ -65,16 +65,16 @@ Inhaltsänderungen, das Schreiben von Einstellungen und mehr auf und hat Alarmre
 Ja, aufgebaut aus `site.ini [ContentSecurityPolicy]` mit Nonces pro Anfrage und einem Sammler für Berichte. In der
 Auslieferung ist sie **in der Administration nur im Berichtsmodus und auf öffentlichen Websites ausgeschaltet**; das
 Erzwingen entscheidet der Betreiber pro Siteaccess
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Wie werden Schwachstellen gemeldet und behoben?
 
 Vertraulich per E-Mail an die Adresse in `SECURITY.md`, mit „a first answer within one business day“ (einer ersten
 Antwort innerhalb eines Werktags). Angenommene Probleme werden auf `main` behoben und mit dem nächsten Release 6.0.x
 veröffentlicht; veröffentlichte Versionen werden nie geändert. Eine Frist für die Behebung wird nicht zugesagt. Eine
-`security.txt` wird nicht mitgeliefert ([Sicherheitsstandards](../../../../eng-us/standards/security.md#vulnerability-disclosure)).
+`security.txt` wird nicht mitgeliefert ([Sicherheitsstandards](../../../standards/sicherheit.md#offenlegung-von-schwachstellen)).
 Wie Sie das einplanen:
-[Sicherheitsupdates und Patch-Rhythmus](../../../../eng-us/help/government/procurement/lifecycle/security-updates-and-patching-cadence.md).
+[Sicherheitsupdates und Patch-Rhythmus](../beschaffung/lebenszyklus/sicherheitsupdates-und-patch-rhythmus.md).
 
 ## Was müssen wir selbst härten?
 
@@ -88,7 +88,7 @@ CI des Projekts nicht ausgeführt) und die Härtung des Servers. Die Anleitungen
 ## Verwandte Seiten
 
 - [FAQ für Verwaltungen](README.md)
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Checkliste Sicherheit](../checklisten/checkliste-sicherheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

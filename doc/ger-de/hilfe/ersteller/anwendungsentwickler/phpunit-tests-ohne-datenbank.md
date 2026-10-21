@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Anwendungsentwickler, die Unit-Tests schreiben, die überall in Sekunden laufen. Die `phpunit.xml`
 von Exponential lädt `tests/bootstrap.php`, das den Autoloader von Composer und das Test-Toolkit lädt, den Kernel aber
-nicht startet; Tests, die nichts weiter brauchen, laufen ohne Datenbank ([PHPUnit](../../../../eng-us/standards/testing-and-ci.md#phpunit)).
+nicht startet; Tests, die nichts weiter brauchen, laufen ohne Datenbank ([PHPUnit](../../../standards/tests-und-ci.md#phpunit)).
 
 ## Inhalt
 
@@ -79,7 +79,7 @@ Zuordnungsdatei und ein Skript, das die Tests der geänderten Dateien auswählt.
 ## Verwandte Seiten
 
 - [Anwendungen testen](anwendungen-testen.md)
-- [Standard für Tests und CI](../../../../eng-us/standards/testing-and-ci.md)
+- [Standard für Tests und CI](../../../standards/tests-und-ci.md)
 - [PHPUnit-Versionen](../../../bc/6.0/phpunitv13.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -79,7 +79,7 @@ führen Sie `./console exp:audit verify --allow-root-user` aus und bewahren Sie 
 
 ## Abschluss
 
-Bringen Sie die Website zurück ([Die Website wieder online bringen](../../../../../eng-us/help/government/tasks/operations/bring-the-site-back-online.md)),
+Bringen Sie die Website zurück ([Die Website wieder online bringen](../../aufgaben/betrieb/die-site-wieder-online-bringen.md)),
 bestätigen Sie das Ergebnis von außen, leeren Sie die Caches vor der Website, informieren Sie die Öffentlichkeit und
 halten Sie innerhalb weniger Tage eine Nachbetrachtung ab
 ([Nachbetrachtung eines Vorfalls](nachbetrachtung-eines-vorfalls.md)).

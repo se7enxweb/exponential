@@ -59,7 +59,7 @@ Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs f�
 | Wechsel | Lernende und Beschäftigte wechseln jedes Jahr; die Konten müssen folgen |
 
 Exponential bedient viele Websites aus einer Installation
-([Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md)) und hält eingeschränkte Bereiche hinter
+([Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md)) und hält eingeschränkte Bereiche hinter
 Sektionen und Rollen ([Sektionen](../../../../anleitungen/sektionen.md)). Es ersetzt kein Lernmanagementsystem und kein
 System der Schüler- und Studierendenverwaltung; verlinken Sie auf diese.
 
@@ -67,7 +67,7 @@ System der Schüler- und Studierendenverwaltung; verlinken Sie auf diese.
 
 - [Verwaltungsebenen](../README.md)
 - [Öffentliche Bibliotheken](../oeffentliche-bibliotheken/README.md)
-- [Registrierung von Mitgliedern und Mitgliederbereiche](../../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
+- [Registrierung von Mitgliedern und Mitgliederbereiche](../../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

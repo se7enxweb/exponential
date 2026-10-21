@@ -30,7 +30,7 @@ dem entspricht.
    der Website bestehen. Öffnen Sie gemeinsam **Benutzer > Rollen und Richtlinien**: Jede Rollenseite listet ihre
    Richtlinien als Sätze wie *Darf Inhalte lesen, in der Sektion Standard, der Klassen Article und Folder*.
 3. Füllen Sie Teil 2 anhand der Personalliste aus. Vergleichen Sie mit **Benutzer > Benutzerkonten prüfen**
-   ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+   ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 4. Markieren Sie jede Abweichung und vereinbaren Sie, wer sie behebt.
 5. Überprüfen Sie das Blatt einmal im Jahr ([Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)).
 

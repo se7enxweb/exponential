@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen und Architekten, die festlegen müssen, wie das CMS Daten mit dem Rest der
 Organisation austauscht: einem Bürgerportal, einem Verzeichnisdienst, einem Schriftgutsystem, einer mobilen App, einer
 Suchplattform. Sie gibt Formulierungen für Anforderungen und den Status jedes Protokolls, wie er in den
-[Standards zu APIs und Protokollen](../../../../../eng-us/standards/apis-and-protocols.md) dokumentiert ist.
+[Standards zu APIs und Protokollen](../../../../standards/apis-und-protokolle.md) dokumentiert ist.
 
 ## Inhalt
 1. [Gehen Sie von Ihrer Integrationslandkarte aus](#gehen-sie-von-ihrer-integrationslandkarte-aus)
@@ -55,14 +55,14 @@ sind es nicht.
 | INT-02 | OAuth-2.0-Token-Endpunkt; persönliche API-Schlüssel ([Persönliche API-Schlüssel](../../../../anleitungen/api-schluessel.md)); entfernte Dienste ([Entfernte Dienste und Apps](../../../../anleitungen/entfernte-dienste-und-apps.md)) | OAuth 2.0 **Teilweise erfüllt** (kein PKCE auf Serverseite) |
 | INT-03 | LDAP-Authentifizierung im Kernel; Anmeldung über soziale Netzwerke und OpenID Connect über `sevenx_authentication_2fa` | LDAP **Teilweise erfüllt** (standardmäßig LDAPv2, kein StartTLS); OIDC-Client **Teilweise erfüllt** (ID-Tokens nicht validiert) |
 | INT-04 | Export von RSS 1.0/2.0 und Atom, Import von RSS ([RSS-Feeds](../../../../anleitungen/rss-feeds.md)); Sitemaps mit `bcgooglesitemaps` | RSS **Erfüllt**, Atom **Teilweise erfüllt**, Sitemaps **Erfüllt** |
-| INT-05 | Audit-Senken einschließlich eines signierten ausgehenden Webhooks (HMAC-SHA-256) ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) | **Erfüllt** mit seinem eigenen dokumentierten Vertrag |
+| INT-05 | Audit-Senken einschließlich eines signierten ausgehenden Webhooks (HMAC-SHA-256) ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) | **Erfüllt** mit seinem eigenen dokumentierten Vertrag |
 | INT-06 | SMTP-Transport mit STARTTLS | **Erfüllt** |
 | INT-07 | Exportwerkzeuge (Website-Archiv, CSV, JSON, Pakete) ([Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md)); Importwerkzeuge ([Die Werkzeuge von Exponential](../../../../installation/migration/exponential-tools.md)) | dokumentiert |
 | INT-08 | Die API-Leitfäden und Seiten zu den Standards oben sind öffentlich in `doc/` unter der GNU FDL | kein OpenAPI-Dokument für die REST API des Kernels |
 
 ## Lücken, nach denen Sie fragen sollten
 
-Aus den [Standards zu APIs und Protokollen](../../../../../eng-us/standards/apis-and-protocols.md):
+Aus den [Standards zu APIs und Protokollen](../../../../standards/apis-und-protokolle.md):
 
 - **Keine OpenAPI-Beschreibung** der REST API des Kernels; fragen Sie den Bieter, wie er die Endpunkte dokumentiert, die
   er baut.

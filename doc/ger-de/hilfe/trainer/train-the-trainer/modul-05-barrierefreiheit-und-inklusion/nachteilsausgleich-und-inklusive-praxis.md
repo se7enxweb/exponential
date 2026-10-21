@@ -97,7 +97,7 @@ Sie nie eine Person alles tippen.
 
 - [Die Privatsphäre von Menschen schützen](../../../fuersprecher/privatsphaere-schuetzen.md)
 - [Sich für Barrierefreiheit einsetzen](../../../fuersprecher/fuer-barrierefreiheit-eintreten.md)
-- [Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md)
+- [Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md)
 
 ## Verwandte Seiten
 

@@ -46,7 +46,7 @@ Suchen Sie auf der öffentlichen Site nach einem Wort, das nur in einem PDF vork
 
 ## Verwandte Seiten
 
-- [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

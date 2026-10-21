@@ -11,8 +11,8 @@ type: help
 
 **Wer:** der Vertragsverantwortliche, mit dem Site-Administrator, der jeden Punkt prüfen wird. **Wann:** während der
 Übergabezeit am Ende eines Vertrags. Hintergrund:
-[Übergabe der Dokumentation](../../../../../eng-us/help/government/procurement/exit-plans/documentation-handover.md),
-[Das Ende eines Vertrags](../../../../../eng-us/help/government/procurement/lifecycle/end-of-a-contract.md).
+[Übergabe der Dokumentation](../../beschaffung/ausstiegsplaene/uebergabe-der-dokumentation.md),
+[Das Ende eines Vertrags](../../beschaffung/lebenszyklus/ende-eines-vertrags.md).
 
 ## Inhalt
 
@@ -25,7 +25,7 @@ type: help
 ## Bevor Sie beginnen
 
 - Der Ausstiegsplan und die Dokumentationsklausel des Vertrags
-  ([Klausel zur Dokumentation](../../../../../eng-us/help/government/procurement/tender-templates/documentation-clause.md)).
+  ([Klausel zur Dokumentation](../../beschaffung/ausschreibungsvorlagen/klausel-dokumentation.md)).
 - Benannte Personen auf Ihrer Seite, die jeden Teil entgegennehmen und prüfen.
 
 ## Schritte

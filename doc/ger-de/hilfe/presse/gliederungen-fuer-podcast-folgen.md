@@ -61,7 +61,7 @@ Legen Sie es offen, wenn Sie das Projekt selbst sponsern.
 | Zeit | Segment | Material |
 |---|---|---|
 | 0:00 | Schriften von rechts nach links und warum sie schwierig sind | [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) |
-| 10:00 | Übersetzungen durch die Community | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| 10:00 | Übersetzungen durch die Community | [Sprachen in Exponential](../../sprachen.md) |
 | 20:00 | Barrierefreiheit, durch Tests geprüft | [Thema: Barrierefreiheit](thema-barrierefreiheit.md) |
 
 ## Folge: ein in PHP geschriebener Webserver

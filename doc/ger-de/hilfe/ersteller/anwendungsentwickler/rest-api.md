@@ -85,7 +85,7 @@ Controller-Aktion; das Framework authentifiziert, es autorisiert nicht.
 
 - [OAuth und API-Schlüssel](oauth-und-api-schluessel.md)
 - [Headless Exponential](headless-exponential.md)
-- [Standard für APIs und Protokolle](../../../../eng-us/standards/apis-and-protocols.md)
+- [Standard für APIs und Protokolle](../../../standards/apis-und-protokolle.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

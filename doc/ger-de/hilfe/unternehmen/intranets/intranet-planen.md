@@ -37,7 +37,7 @@ einem oder zwei Sätzen auf, wofür das Intranet da ist. Typische Zwecke sind:
 
 Jeder Zweck führt zu einer Seite dieses Bereichs. Halten Sie die Liste für das erste Release kurz; Exponential lässt
 Sie später Sektionen, Klassen und Rollen hinzufügen, ohne die Website neu zu bauen
-([Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)).
+([Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)).
 
 ## Die Entscheidungen, die das Projekt prägen
 
@@ -62,7 +62,7 @@ Drei Dinge machen es privat:
 1. **Jede Anfrage braucht eine Anmeldung.** `site.ini [SiteAccessSettings] RequireUserLogin=true` schickt jeden
    Besucher, der nicht angemeldet ist, auf die Anmeldeseite. Nur die Ansichten in `AnonymousAccessList[]` bleiben
    offen, etwa die Seite für vergessene Passwörter
-   ([Was Besucher sehen dürfen](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#siteaccess-settings)).
+   ([Was Besucher sehen dürfen](../../ersteller/website-ersteller/rechte-fuer-besucher.md#einstellungen-des-siteaccess)).
 2. **Nur Mitarbeiter dürfen sich dort anmelden.** Die Richtlinie `user/login` lässt sich nach Siteaccess einschränken
    (`kernel/user/module.php` definiert die Einschränkung `SiteAccess` für `login`); eine Rolle für Mitarbeiter kann
    also die Anmeldung im Intranet erlauben, eine öffentliche Mitgliederrolle nicht.
@@ -72,7 +72,7 @@ Drei Dinge machen es privat:
 Ein Intranet kann in einer eigenen Installation liegen oder neben einer öffentlichen Website in derselben Installation.
 Eine Installation mit mehreren Siteaccesses teilt sich den Inhaltsbaum, die Benutzer und die Betriebsarbeit; getrennte
 Installationen halten alles auseinander. Beide Formen sind unter
-[Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md) und im Bereich
+[Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md) und im Bereich
 [Multisite](../multisite/README.md) beschrieben.
 
 > **Tipp**

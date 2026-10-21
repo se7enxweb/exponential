@@ -104,7 +104,7 @@ erhöhen, siehe [ezinfo.php und extension.xml hochzählen](../teil-7-veroeffentl
 - Zurück: [Fallstudie: der Layout-Editor auf jQuery 4](fallstudie-der-layout-editor-auf-jquery-4.md)
 - Weiter: [Fallstudie: kleine PHP-8-Korrekturen in vielen Erweiterungen](fallstudie-kleine-korrekturen-in-vielen-erweiterungen.md)
 - [Von Inline-CSS zu Stylesheets](inline-css-in-stylesheets.md)
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

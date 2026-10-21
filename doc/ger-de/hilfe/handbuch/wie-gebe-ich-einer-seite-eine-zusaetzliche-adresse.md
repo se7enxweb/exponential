@@ -43,7 +43,7 @@ Benutzer, deren Rolle `content/urltranslator` hat, oder `content/edit` für die 
 ## Verwandte Seiten
 
 - [URLs und Aliase](../../anleitungen/urls-und-aliase.md)
-- [URL-Aliase und sprechende URLs](../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)
+- [URL-Aliase und sprechende URLs](../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)
 - [URLs, Weiterleitungen und verschobene Seiten](../kunden/alltag/urls-weiterleitungen-und-verschobene-seiten.md)
 - [Benutzerhandbuch](README.md)
 

@@ -109,15 +109,15 @@ Updated: The multisite installer of the sevenx_multisite package activates ezown
 ```
 
 Ein gutes Release hält beides im Gleichschritt: Die Zeilen `<change>` des neuen Eintrags fassen die Commits seit dem letzten Release
-zusammen. Für eine Changelog-Datei im Repository selbst siehe [Eine Changelog-Datei führen](../../../../eng-us/help/designers/distribution/keeping-a-changelog-file.md)
-und [Präfixe im Changelog](../../../../eng-us/help/designers/distribution/changelog-prefixes.md).
+zusammen. Für eine Changelog-Datei im Repository selbst siehe [Eine Changelog-Datei führen](../../designer/veroeffentlichung/eine-changelog-datei-fuehren.md)
+und [Präfixe im Changelog](../../designer/veroeffentlichung/changelog-praefixe.md).
 
 ## Verwandte Seiten
 
 - [Anforderungen an die Dokumentation von Seitenpaketen](README.md)
 - [Versionsnummern](versionsnummern.md)
 - [README und Dokumentation im Repository](readme-und-dokumentation-im-repository.md)
-- [Release-Hinweise schreiben](../../../../eng-us/help/designers/distribution/writing-release-notes.md)
+- [Release-Hinweise schreiben](../../designer/veroeffentlichung/release-notes-schreiben.md)
 - [Referenz zu package.xml](../grundlagen/referenz-zu-package-xml.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,7 +11,7 @@ type: help
 
 Ein Template einer Knotenansicht läuft vor dem Pagelayout und, wenn die Seite aus dem View-Cache kommt, überhaupt nicht. Die persistente
 Variable ist der eine Kanal vom Ansichts-Template zum Pagelayout, der in beiden Fällen funktioniert. Die Anleitung für Designer ist
-[Die persistente Variable](../../../eng-us/help/designers/templates/persistent-variable.md); diese Seite zeigt den Kernel-Code dahinter.
+[Die persistente Variable](../designer/vorlagen/die-persistent-variable.md); diese Seite zeigt den Kernel-Code dahinter.
 
 ## Inhalt
 
@@ -141,10 +141,10 @@ Anfrage variiert, darf nicht hinein; es würde jedem späteren Besucher ausgelie
 
 ## Verwandte Seiten
 
-- [Die persistente Variable](../../../eng-us/help/designers/templates/persistent-variable.md)
+- [Die persistente Variable](../designer/vorlagen/die-persistent-variable.md)
 - [Templates von Modulansichten](templates-von-modulansichten.md)
 - [Referenz des Modulergebnisses](referenz-des-modulergebnisses.md)
-- [Variablen und def](../../../eng-us/help/designers/templates/variables-and-def.md)
+- [Variablen und def](../designer/vorlagen/variablen-und-def.md)
 - [Template-Caches](template-caches.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

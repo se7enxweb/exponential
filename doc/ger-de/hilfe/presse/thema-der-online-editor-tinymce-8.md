@@ -27,7 +27,7 @@ sich im Oktober 2026 geändert hat, was gleich bleibt und welche Fakten Sie mit 
 Der Online-Editor von Exponential hat eine zweite Engine bekommen. „Exponential 6.0.15 ships TinyMCE 8.9.2 as a second
 engine of the eZ Online Editor. TinyMCE 3.5.12 stays the default, and nothing changes for existing installations. The
 new engine writes the same XHTML that the ezoe input handler reads, so stored XML is identical with both engines and
-editors can switch back and forth“ ([Der Online-Editor auf TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md)).
+editors can switch back and forth“ ([Der Online-Editor auf TinyMCE 8](../../funktionen/6.0/online-editor-tinymce8.md)).
 Es ist die Geschichte eines behutsamen Upgrades: ein moderner Editor, angeboten neben dem alten, ohne Umwandlung von
 Inhalten und mit einem Umschalter unter dem Editor, sodass jeder Redakteur selbst wählen kann. („eZ Online Editor“ ist
 der Name der Erweiterung `ezoe`, ein Bezeichner im Code.)
@@ -38,7 +38,7 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht; die Daten sind Da
 
 | Was | Wann | Quelle |
 |---|---|---|
-| TinyMCE 8.9.2 als optionale zweite Engine, mit den ezoe-Dialogen und Browsertests | 2. Oktober 2026 | [Der Online-Editor auf TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
+| TinyMCE 8.9.2 als optionale zweite Engine, mit den ezoe-Dialogen und Browsertests | 2. Oktober 2026 | [Der Online-Editor auf TinyMCE 8](../../funktionen/6.0/online-editor-tinymce8.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
 | Die Engine-Seite `/ezoe/engine` | 11. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#11-october-2026-the-online-editors-engine-page) |
 | Der Engine-Umschalter als ein einziges Bedienelement | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-online-editors-engine-switch-is-one-control) |
 | Eine klarere Meldung bei einem toten Link | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-online-editors-message-for-a-dead-link) |
@@ -48,14 +48,14 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht; die Daten sind Da
 
 | Fakt | Quelle |
 |---|---|
-| TinyMCE 8.9.2 ist optional; TinyMCE 3.5.12 bleibt der Standard. | [Funktionsseite TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md) |
+| TinyMCE 8.9.2 ist optional; TinyMCE 3.5.12 bleibt der Standard. | [Funktionsseite TinyMCE 8](../../funktionen/6.0/online-editor-tinymce8.md) |
 | Beide Engines speichern identisches XML, sodass Redakteure hin- und herwechseln können. | ebenda |
-| Ein Redakteur kann die Engine persönlich wählen, ohne dass eine Einstellung geändert wird. | [TinyMCE 8, In einer Minute ausprobieren](../../../eng-us/features/6.0/online-editor-tinymce8.md#try-it-in-one-minute) |
-| Links auf entfernte Inhalte und Script-Links werden beim Speichern des Textes geprüft. | [TinyMCE 8, Linkprüfungen](../../../eng-us/features/6.0/online-editor-tinymce8.md#link-checks-when-the-text-is-saved) |
-| Der Upload lehnt ausführbare Dateinamen wie `shell.php.jpg` ab. | [TinyMCE 8, Sicherheit](../../../eng-us/features/6.0/online-editor-tinymce8.md#security) |
-| „Upload von einer URL“ holt nur öffentliche `http`- und `https`-Adressen, mit höchstens 3 Weiterleitungen, die jeweils erneut geprüft werden. | [TinyMCE 8, Upload von einer URL](../../../eng-us/features/6.0/online-editor-tinymce8.md#upload-from-a-url) |
-| Ein Wechsel der Engine wird im Prüfprotokoll festgehalten. | [TinyMCE 8, Sicherheit](../../../eng-us/features/6.0/online-editor-tinymce8.md#security) |
-| Das mitgelieferte TinyMCE 8.9.2 wird unter der GPL (Version 2 oder später) verwendet. | [TinyMCE 8, Tests](../../../eng-us/features/6.0/online-editor-tinymce8.md#tests) |
+| Ein Redakteur kann die Engine persönlich wählen, ohne dass eine Einstellung geändert wird. | [TinyMCE 8, In einer Minute ausprobieren](../../funktionen/6.0/online-editor-tinymce8.md#in-einer-minute-ausprobieren) |
+| Links auf entfernte Inhalte und Script-Links werden beim Speichern des Textes geprüft. | [TinyMCE 8, Linkprüfungen](../../funktionen/6.0/online-editor-tinymce8.md#linkprüfungen-beim-speichern-des-textes) |
+| Der Upload lehnt ausführbare Dateinamen wie `shell.php.jpg` ab. | [TinyMCE 8, Sicherheit](../../funktionen/6.0/online-editor-tinymce8.md#sicherheit) |
+| „Upload von einer URL“ holt nur öffentliche `http`- und `https`-Adressen, mit höchstens 3 Weiterleitungen, die jeweils erneut geprüft werden. | [TinyMCE 8, Upload von einer URL](../../funktionen/6.0/online-editor-tinymce8.md#hochladen-von-einer-url) |
+| Ein Wechsel der Engine wird im Prüfprotokoll festgehalten. | [TinyMCE 8, Sicherheit](../../funktionen/6.0/online-editor-tinymce8.md#sicherheit) |
+| Das mitgelieferte TinyMCE 8.9.2 wird unter der GPL (Version 2 oder später) verwendet. | [TinyMCE 8, Tests](../../funktionen/6.0/online-editor-tinymce8.md#tests) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -89,7 +89,7 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht; die Daten sind Da
 ## Verwandte Seiten
 
 - [Thema: Inhalte bearbeiten](thema-inhalte-bearbeiten.md)
-- [ezoe und TinyMCE 8 (Hinweise zum Upgrade)](../../../eng-us/bc/6.0/ezoe-tinymce8.md)
+- [ezoe und TinyMCE 8 (Hinweise zum Upgrade)](../../bc/6.0/ezoe-tinymce8.md)
 - [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

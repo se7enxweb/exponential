@@ -12,7 +12,7 @@ type: reference
 Diese Seite richtet sich an Projektverantwortliche, Informationssicherheitsbeauftragte und Administratorinnen und
 Administratoren öffentlicher Stellen, die einen Überblick über die Sicherheit von Exponential auf einer Seite brauchen,
 bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung des Projekts,
-[Sicherheitsstandards](../../../../eng-us/standards/security.md); die Bezeichnungen „Teilweise erfüllt“, „Nicht geprüft“ und
+[Sicherheitsstandards](../../../standards/sicherheit.md); die Bezeichnungen „Teilweise erfüllt“, „Nicht geprüft“ und
 „Erfüllt“ werden so übernommen, wie sie dort stehen. Das Projekt beansprucht keine externe Bewertung.
 
 ## Inhalt
@@ -34,7 +34,7 @@ bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung
 | Koordinierte Offenlegung von Schwachstellen | **Teilweise erfüllt** | `SECURITY.md` mit einem vertraulichen Kanal; keine mitgelieferte `security.txt` |
 
 „Erfüllt“ würde eine externe Bewertung erfordern, die nicht vorgenommen wurde
-([Sicherheitsstandards: Status](../../../../eng-us/standards/security.md#status)).
+([Sicherheitsstandards: Status](../../../standards/sicherheit.md#status)).
 
 ## Standardmäßig an
 
@@ -66,7 +66,7 @@ bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung
 
 ## Bekannte Lücken
 
-Aus [Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/security.md#known-gaps):
+Aus [Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken):
 
 - Kontosperre standardmäßig aus; Brute-Force wird von Alarmregeln erkannt, nicht vom Kernel gebremst;
 - die zweistufige Anmeldung muss eigens eingeschaltet werden;
@@ -78,7 +78,7 @@ Aus [Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/securi
 
 ## Verwandte Seiten
 
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../../../installation/13-sicherheitshaertung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

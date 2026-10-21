@@ -42,7 +42,7 @@ Teamunterlagen auf; sie ist der Nachweis, dass der Zugriff bewusst gewährt wurd
 - [ ] Die zweistufige Anmeldung ist unter *Mein Konto* eingerichtet, wenn Ihre Website sie anbietet
       ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - [ ] Benachrichtigungs- und E-Mail-Einstellungen sind gesetzt
-      ([Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md)).
+      ([Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md)).
 - [ ] Der Rundgang ist mit den eigenen Inhalten der Website gemacht ([Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md)).
 - [ ] Ein erster Entwurf ist erstellt, in der Vorschau angesehen und dann veröffentlicht oder verworfen.
 

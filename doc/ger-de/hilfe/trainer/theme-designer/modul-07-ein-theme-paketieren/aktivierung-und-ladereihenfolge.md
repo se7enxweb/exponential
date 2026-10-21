@@ -39,9 +39,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Ein Theme aktivieren](../../../../../eng-us/help/designers/extensions/activating-a-theme-extension.md),
-[Die Ladereihenfolge und welches Theme gewinnt](../../../../../eng-us/help/designers/extensions/loading-order-for-themes.md),
-[Die Design-Einstellungen, die ein Theme mitliefert](../../../../../eng-us/help/designers/extensions/design-settings-a-theme-ships.md) und
+Quellen: [Ein Theme aktivieren](../../../designer/erweiterungen/eine-theme-erweiterung-aktivieren.md),
+[Die Ladereihenfolge und welches Theme gewinnt](../../../designer/erweiterungen/ladereihenfolge-von-themes.md),
+[Die Design-Einstellungen, die ein Theme mitliefert](../../../designer/erweiterungen/design-einstellungen-eines-themes.md) und
 [Die Seite Extensions](../../../../anleitungen/extensions-seite.md).
 
 1. **Zwei Schalter** (3 Minuten). `site.ini [ExtensionSettings] ActiveExtensions[]` für die ganze Installation (der
@@ -128,10 +128,10 @@ Auf Ihrer eigenen Schulungsinstallation, in der Administration angemeldet mit Ih
 <summary>Antworten</summary>
 
 1. `ActiveAccessExtensions[]` in den Einstellungen dieses Siteaccess
-   ([Ein Theme aktivieren](../../../../../eng-us/help/designers/extensions/activating-a-theme-extension.md)).
+   ([Ein Theme aktivieren](../../../designer/erweiterungen/eine-theme-erweiterung-aktivieren.md)).
 2. Es würde für jeden Siteaccess gelten, in dem das Theme aktiv ist, einschließlich der Administration.
 3. **C.** `<extends>` lässt das Theme vor `base_theme` laden, sodass es gewinnt
-   ([Die Ladereihenfolge und welches Theme gewinnt](../../../../../eng-us/help/designers/extensions/loading-order-for-themes.md)).
+   ([Die Ladereihenfolge und welches Theme gewinnt](../../../designer/erweiterungen/ladereihenfolge-von-themes.md)).
 4. Sie zeigt die entstehenden Zeilen von `ActiveExtensions[]` und die Risiken, bevor etwas geschrieben wird.
 5. Nein; nur die Einstellung ändert sich.
 
@@ -140,10 +140,10 @@ Auf Ihrer eigenen Schulungsinstallation, in der Administration angemeldet mit Ih
 ## Weiterführende Literatur
 
 - [Die Seite Extensions](../../../../anleitungen/extensions-seite.md): jeder Teil von **Setup > Extensions**.
-- [Abhängigkeiten in extension.xml angeben](../../../../../eng-us/help/designers/extensions/dependencies-in-extension-xml.md).
-- [Siteaccess-Einstellungen in einem Theme](../../../../../eng-us/help/designers/extensions/siteaccess-settings-in-an-extension.md): wenn
+- [Abhängigkeiten in extension.xml angeben](../../../designer/erweiterungen/abhaengigkeiten-in-extension-xml.md).
+- [Siteaccess-Einstellungen in einem Theme](../../../designer/erweiterungen/siteaccess-einstellungen-in-einem-theme.md): wenn
   das Theme eine eigene Website mitbringt.
-- [Einstellungsdateien in einer Erweiterung](../../../../../eng-us/help/designers/extensions/settings-files-in-an-extension.md).
+- [Einstellungsdateien in einer Erweiterung](../../../designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md).
 
 ## Verwandte Seiten
 

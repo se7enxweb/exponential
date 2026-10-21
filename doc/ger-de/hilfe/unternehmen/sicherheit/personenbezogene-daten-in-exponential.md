@@ -35,17 +35,17 @@ haben, können Sie weder schützen noch exportieren noch löschen. Jede Zeile un
 | Daten | Wo | Typischer Inhalt | Lesen |
 |---|---|---|---|
 | Benutzerkonten | Tabelle `ezuser` und das Inhaltsobjekt des Benutzers | Benutzername, E-Mail-Adresse, Passwort-Hash; Name und andere Felder der Benutzerklasse | [Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md) |
-| Anmeldeaktivität | `ezuservisit` | letzter Besuch, Zahl der Anmeldungen, fehlgeschlagene Versuche | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
+| Anmeldeaktivität | `ezuservisit` | letzter Besuch, Zahl der Anmeldungen, fehlgeschlagene Versuche | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 | Sitzungen | `ezsession` (Datenbank-Handler) oder die Sitzungsdateien von PHP | Benutzer-ID, Sitzungsdaten | [Sitzungen](../../../anleitungen/sitzungen.md) |
-| Bestellungen | `ezorder` | E-Mail-Adresse, Benutzer-ID und ein Kontodatensatz mit Name, Adresse, Telefon und Kommentar | [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md) |
+| Bestellungen | `ezorder` | E-Mail-Adresse, Benutzer-ID und ein Kontodatensatz mit Name, Adresse, Telefon und Kommentar | [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md) |
 | Formulareingaben | `ezinfocollection`, `ezinfocollection_attribute` | was Besucher eingegeben haben, oft Namen und E-Mail-Adressen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | E-Mail-Einstellungen und Einwilligung | `expmail_preference`, `expmail_consent_log`, `expmail_pending` | Entscheidungen pro Kategorie; Einwilligungsverlauf mit Zeit, Quelle, angezeigtem Text, IP-Adresse, handelndem Benutzer | [E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md) |
 | Sperrliste | `expmail_suppression` | ein gesalzener Hash jeder Adresse, nie die Adresse | dieselbe |
-| Newsletter-Abonnenten | `cjwnl_user`, `cjwnl_subscription`, `cjwnl_blacklist_item` | E-Mail, Anrede, Vor- und Nachname, Organisation, Geburtstag, Telefonnummer, Bounce-Status | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
+| Newsletter-Abonnenten | `cjwnl_user`, `cjwnl_subscription`, `cjwnl_blacklist_item` | E-Mail, Anrede, Vor- und Nachname, Organisation, Geburtstag, Telefonnummer, Bounce-Status | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
 | Abonnements von Benachrichtigungen | `ezsubtree_notification_rule` | welcher Benutzer welchen Inhalten folgt | [Benachrichtigungen](../../../anleitungen/benachrichtigungen-administrator.md) |
 | Suchbegriffe | `ezsearch_search_phrase` | Begriffe, die Besucher eingegeben haben und die personenbezogene Daten enthalten können | [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#datenschutz-und-privatsphäre-zu-beantwortende-fragen) |
-| Anfrage- und Sicherheits-Logs | `var/<site>/log/` | maskierte Adressen, gekürzte User-Agents | [Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md) |
-| Prüfprotokoll | `var/<site>/log/audit/` und die Index-Tabellen `expaudit_*` | wer was getan hat; Adressen gekürzt, Sitzungen gehasht | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Anfrage- und Sicherheits-Logs | `var/<site>/log/` | maskierte Adressen, gekürzte User-Agents | [Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md) |
+| Prüfprotokoll | `var/<site>/log/audit/` und die Index-Tabellen `expaudit_*` | wer was getan hat; Adressen gekürzt, Sitzungen gehasht | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Exporte | Dateien, die Sie herunterladen, und Dateien in `var/tmp/` | CSV- und JSON-Exporte von Formularen, Mail-Daten, Audit-Datensätzen | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md) |
 | Backups | wo auch immer Ihr Hoster sie aufbewahrt | alles oben Genannte | [Backups: was zu sichern ist](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
 
@@ -56,13 +56,13 @@ haben, können Sie weder schützen noch exportieren noch löschen. Jede Zeile un
   werden als bcrypt-Hashes gespeichert
   ([Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung)).
 - **Aktivität**: `ezuservisit` hält den letzten Besuch, die Zahl der Anmeldungen und fehlgeschlagene Versuche fest;
-  **Benutzer > Benutzerkonten prüfen** liest sie aus ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  **Benutzer > Benutzerkonten prüfen** liest sie aus ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - **Schlüssel**: Aktivierungsschlüssel und Schlüssel zum Zurücksetzen des Passworts haben eigene Tabellen
   (`ezuser_accountkey`, `ezforgot_password`).
 - **Zweistufige Anmeldung**: Das Geheimnis des Authenticators wird beim Benutzer gespeichert; ein `SecretKey`
   verschlüsselt es in der Datenbank ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - **Entfernen**: Ein Benutzerobjekt kommt nie in den Papierkorb; es zu entfernen ist endgültig. Das Entfernen eines
-  Kontos löscht auch seine E-Mail-Einstellungen ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md),
+  Kontos löscht auch seine E-Mail-Einstellungen ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md),
   [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#anfragen-betroffener-personen)).
 
 ## Shop: Warenkörbe und Bestellungen
@@ -72,10 +72,10 @@ haben, können Sie weder schützen noch exportieren noch löschen. Jede Zeile un
   (`kernel/private/classes/views/shop/userregister.php`).
 - `ezbasket` verbindet einen Warenkorb mit einer Sitzung; `ezwishlist` mit einem Benutzer.
 - Bestellungen lassen sich in der Administration archivieren und entfernen (`shop/archiveorder`, `shop/removeorder`,
-  [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)). Ihre
+  [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)). Ihre
   Buchführungspflichten können verlangen, Bestellungen eine Zeit lang aufzubewahren; entscheiden Sie mit Ihrem
   Steuerberater.
-- Kartendaten: Das Prüfprotokoll zeichnet Zahlungen auf, „nie Kartendaten“ ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md));
+- Kartendaten: Das Prüfprotokoll zeichnet Zahlungen auf, „nie Kartendaten“ ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md));
   siehe [Kartenzahlungen und PCI-Grundlagen](../shops/kartenzahlungen-und-pci-grundlagen.md).
 
 ## Formulare: der Informationssammler
@@ -85,7 +85,7 @@ Jedes Mal, wenn ein Besucher ein Formular absendet, wird eine Sammlung mit einem
 Richtlinie `infocollector/read`. Jeder Export wird mit der Zahl der Zeilen im Prüfprotokoll festgehalten, nie mit den
 Werten ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)). Eine Mail an einen Empfänger legt dieselben
 Daten zusätzlich in einem Posteingang ab
-([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 
 ## E-Mail-Einstellungen und Newsletter
 
@@ -104,7 +104,7 @@ Daten zusätzlich in einem Posteingang ab
 - Das Zugriffslog von Velocity steht im kombinierten Format von Apache und „nennt Besucher“; seine Dateien sind nur für
   Eigentümer und Gruppe lesbar (dieselbe Quelle).
 - Das Prüfprotokoll kürzt Adressen, hasht Sitzungen, kürzt User-Agents und zeichnet nie Passwörter, Tokens oder Geheimnisse
-  auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+  auf ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 - Logs von Webserver, Mail-Server und Panel außerhalb von Exponential folgen den Einstellungen Ihres Hosters.
 
 ## Alles andere, was zu prüfen ist
@@ -115,7 +115,7 @@ Daten zusätzlich in einem Posteingang ab
 - [ ] Private Nachrichten, wenn `ezpm` aktiv ist (es fügt Posteingänge und Postausgänge hinzu; Beschreibung in
       `composer.json`).
 - [ ] Exponential Intelligence, wenn eingeschaltet: welcher Anbieter welchen Text erhält
-      ([expai](../../../../eng-us/features/6.0/extensions/expai.md)).
+      ([expai](../../../funktionen/6.0/erweiterungen/expai.md)).
 - [ ] Dienste Dritter, die Templates einbetten: Schriften, Karten, Webanalyse, Videos.
 - [ ] Exportierte Dateien auf Computern der Mitarbeiter.
 - [ ] Backups und ihre Aufbewahrung.
@@ -142,7 +142,7 @@ Backups            |  |  | (host)                |  |  |
 
 - [DSGVO-Grundlagen](dsgvo-grundlagen.md)
 - [Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md)
-- [Formulareingaben](../../../../eng-us/help/creators/website-creators/form-submissions.md)
+- [Formulareingaben](../../ersteller/website-ersteller/formulareinsendungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

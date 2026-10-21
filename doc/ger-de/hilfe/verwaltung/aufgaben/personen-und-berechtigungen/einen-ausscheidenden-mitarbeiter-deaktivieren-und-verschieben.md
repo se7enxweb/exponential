@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren. Am Ende ist das Konto eines ausscheidenden Mitarbeiters deaktiviert, und alle
 seine Orte liegen in einer versteckten Gruppe ohne Rollen; wo es war, wird gespeichert, sodass
 **Reaktivieren und zurückverschieben** es wiederherstellen kann. Nichts wird entfernt. Die Funktion ist vollständig in
-[Deaktivieren und verschieben](../../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move) beschrieben.
+[Deaktivieren und verschieben](../../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben) beschrieben.
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -87,8 +87,8 @@ wird aktiviert und zu seinem gespeicherten übergeordneten Hauptelement zurückv
 
 ## Verwandte Seiten
 - [Einen ausscheidenden Mitarbeiter entfernen](einen-ausscheidenden-mitarbeiter-entfernen.md)
-- [Eintritte, Wechsel und Austritte](../../../../../eng-us/help/government/operations/people-and-permissions/joiners-movers-leavers.md)
-- [Pflege der Benutzerkonten](../../../../../eng-us/help/government/operations/people-and-permissions/user-account-hygiene.md)
+- [Eintritte, Wechsel und Austritte](../../betrieb/personen-und-berechtigungen/eintritt-wechsel-austritt.md)
+- [Pflege der Benutzerkonten](../../betrieb/personen-und-berechtigungen/pflege-von-benutzerkonten.md)
 - [Anleitung zu Rollen und Richtlinien, Abschnitt 7](../../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

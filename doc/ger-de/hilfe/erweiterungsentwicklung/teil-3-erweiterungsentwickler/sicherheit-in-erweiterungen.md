@@ -67,7 +67,7 @@ Längen. Die Datentypen des Kernels wurden im September 2026 auf dieselbe Weise 
 Ein Weiterleitungsziel aus einem Formularfeld, der Sitzung oder der Adresse kann einen Besucher auf eine andere Website
 schicken. Verwenden Sie die Regeln des Kernels: `eZRedirectManager` (`kernel/classes/ezredirectmanager.php`) wählt ein
 sicheres Ziel für „zurück“ (`redirectTo()`, `returnURI()`), und seine Regeln gelten für jedes Ziel, das nicht aus dem
-Code selbst stammt. Siehe [Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md).
+Code selbst stammt. Siehe [Sichere Weiterleitungen](../../../funktionen/6.0/sichere-weiterleitungen.md).
 
 ## 7. Dateien und Pfade
 

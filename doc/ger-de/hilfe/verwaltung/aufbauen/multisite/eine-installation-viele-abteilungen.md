@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Führungskräfte und Administratoren, die mehrere Sites (Abteilungen, nachgeordnete Behörden,
 Programme, Kampagnen) auf einer Installation betreiben. Jede Site ist ein oder mehrere **Siteaccesses**: ein Name, seine
 Einstellungen in `settings/siteaccess/<name>/` und eine Regel, auf welche Anfragen er antwortet
-([Mehrere Sites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md)).
+([Mehrere Sites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md)).
 
 ## Inhalt
 
@@ -64,7 +64,7 @@ Schreiben Sie die Abwägung in den Plan
 ## Verwandte Seiten
 
 - [Eine Abteilungs-Site hinzufügen](eine-abteilungs-site-hinzufuegen.md)
-- [Mehrere Sites einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- [Mehrere Sites einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

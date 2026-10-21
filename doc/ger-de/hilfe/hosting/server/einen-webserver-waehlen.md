@@ -72,7 +72,7 @@ auf einer Maschine durch das Betriebssystem voneinander getrennt sein müssen.
 | Shared Hosting mit einem Control Panel | Apache (oder LiteSpeed) mit PHP-FPM und `.htaccess` | keine langlebigen Prozesse von Kunden; die Regeln werden als `.htaccess_root` ausgeliefert |
 | VPS oder dedizierter Server pro Kunde | Velocity | eine Website pro Maschine, root für die Ports 80 und 443 verfügbar |
 | Mehrere Kunden auf einem VPS oder dedizierten Server | Velocity pro Website (eigener Benutzer, eigene Ports, ein Proxy davor) oder PHP-FPM-Pool pro Website | Trennung durch das Betriebssystem |
-| Container | Velocity oder FrankenPHP im Container | ein Prozessbaum pro Website; für Velocity gibt es Images ([Pakete und Binärdateien von Velocity](../../../../eng-us/features/6.0/velocity-packages-and-binaries.md)) |
+| Container | Velocity oder FrankenPHP im Container | ein Prozessbaum pro Website; für Velocity gibt es Images ([Pakete und Binärdateien von Velocity](../../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)) |
 | Windows-Hosting | IIS oder Apache mit FastCGI-PHP | `pcntl` und `posix` gibt es unter Windows nicht ([Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#windows)) |
 
 Die Modelle selbst werden auf [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md) verglichen.

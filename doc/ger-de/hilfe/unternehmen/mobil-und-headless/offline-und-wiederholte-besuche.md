@@ -43,7 +43,7 @@ Ob Ihre Website ihn verwendet, hängt also von Ihrem Design und Ihrem Server ab:
 ## Warum er hilft
 
 Die Quelle erklärt es mit zwei gemessenen Zahlen aus einer Installation
-([Der Antwortcache, und dem Netzwerk aus dem Weg gehen](../../../../eng-us/bc/6.0/response-cache-and-navigation.md#added-a-navigation-cache-in-the-browser-indexjs)):
+([Der Antwortcache, und dem Netzwerk aus dem Weg gehen](../../../bc/6.0/antwort-cache-und-navigation.md#hinzugefügt-ein-navigations-cache-im-browser-indexjs)):
 
 | Messung | Wert |
 |---|---|
@@ -124,7 +124,7 @@ letzten Kopie des alten Workers lassen, Dateikopf von `sw.js`).
 - [Responsive Websites](responsive-websites.md)
 - [Statischer Cache und Antwortcache](../zuverlaessigkeit/statischer-cache-und-antwortcache.md)
 - [Antwortcache von Velocity](../../hosting/leistung/antwort-cache-von-velocity.md)
-- [Der Antwortcache, und dem Netzwerk aus dem Weg gehen](../../../../eng-us/bc/6.0/response-cache-and-navigation.md)
+- [Der Antwortcache, und dem Netzwerk aus dem Weg gehen](../../../bc/6.0/antwort-cache-und-navigation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

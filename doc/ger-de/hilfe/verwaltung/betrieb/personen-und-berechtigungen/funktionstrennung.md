@@ -49,7 +49,7 @@ ein Prozess die Software absichern muss.
 |---|---|---|
 | Autorin oder Autor und einzige freigebende Person desselben Bereichs | Selbstfreigabe | eigene Inhalte von Freigebenden lässt das Freigabe-Ereignis durch; halten Sie Freigebende dort vom Erstellen fern, oder geben Sie ihnen einen getrennten Weg über ein Autorenkonto, den eine andere freigebende Person abdeckt ([Vier-Augen-Prinzip](../redaktionelle-workflows/vier-augen-prinzip-beim-veroeffentlichen.md)) |
 | Kontenadministration und Rollenvergabe | ein Konto anlegen und ihm beliebige Rechte geben | Modul `role` nur für Systemadministratoren; `PreventPrivilegeEscalation=enabled` begrenzt, was andere vergeben könnten |
-| Voller Zugriff und Verwaltung des Audits | Einstellungen ändern und den Nachweis darüber auch | das Audit ist hashverkettet und wird geprüft (`exp:audit verify`); senden Sie Einträge an ein Syslog- oder Webhook-Ziel außerhalb des Servers ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)) |
+| Voller Zugriff und Verwaltung des Audits | Einstellungen ändern und den Nachweis darüber auch | das Audit ist hashverkettet und wird geprüft (`exp:audit verify`); senden Sie Einträge an ein Syslog- oder Webhook-Ziel außerhalb des Servers ([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md#sinks-alarme-und-archive)) |
 | Betrieb und unmaskierte Logs | beiläufiger Zugriff auf personenbezogene Daten | `setup/unmasklogs` nur während Untersuchungen |
 
 ## Wo die Software Ihren Prozess braucht
@@ -57,7 +57,7 @@ ein Prozess die Software absichern muss.
 - **Administratoren können alles.** Eine Richtlinie über alle Module kann nicht eingeschränkt werden. Halten Sie Administratorkonten
   persönlich und wenige, verlangen Sie die zweistufige Anmeldung, und verlassen Sie sich auf das Prüfprotokoll und den Alarm `admin_role_granted`.
 - **Der Serverbetreiber steht außerhalb der Rollen.** Befehle auf der Kommandozeile prüfen keine Richtlinie; zum Beispiel ist
-  `./console exp:logs` „der Betreiber des Servers: Es wird keine Richtlinie geprüft“ ([Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md#on-the-command-line)).
+  `./console exp:logs` „der Betreiber des Servers: Es wird keine Richtlinie geprüft“ ([Log-Viewer](../../../../funktionen/6.0/log-betrachter.md#auf-der-kommandozeile)).
   Der Zugang zur Kommandozeile ist eine eigene Aufgabe, geregelt durch Ihre Regeln für den Serverzugang.
 - **Das Prüfprotokoll macht Manipulationen sichtbar, verhindert sie aber nicht.** Wer Zugang zur Kommandozeile hat, könnte Dateien löschen; die
   Hash-Kette und signierte Manifeste zeigen das, und ein externes Ziel bewahrt eine Kopie auf

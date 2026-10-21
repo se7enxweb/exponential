@@ -100,7 +100,7 @@ Admin 4.
 
 - [Tastenkürzel](../../../tastenkuerzel.md)
 - [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md)
-- [Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md)
+- [Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md)
 
 ## Verwandte Seiten
 

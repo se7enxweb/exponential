@@ -39,7 +39,7 @@ Die Registrierung über `user/register` legt neue Benutzer in `[UserSettings] De
 ## Erste Anmeldung
 
 Lassen Sie die Person ihr eigenes Passwort mit **Passwort vergessen** (`user/forgotpassword`) setzen, dessen Schlüssel
-ablaufen ([Benutzerpasswort zurücksetzen](../../../../../eng-us/features/6.0/reset-user-password.md)). Ist die zweistufige
+ablaufen ([Benutzerpasswort zurücksetzen](../../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)). Ist die zweistufige
 Anmeldung verlangt, richtet sie sie direkt nach dem Passwort ein (siehe „Zweistufige Anmeldung für Mitarbeiter“ im
 Bereich Intranets). Prüfen Sie mit ihr, dass sie ihr Projekt sieht und sonst nichts.
 

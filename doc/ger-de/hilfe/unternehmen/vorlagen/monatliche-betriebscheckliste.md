@@ -77,12 +77,12 @@ Offene Risiken: ______________________________________________
 | Updates der Erweiterungen | **Setup > Updates und Pakete** (`ezupdate`), die Prüfung ändert nichts | [Automatische Updates mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |
 | Upgrade-Prüfung | **Setup > Upgrade-Prüfung** | [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Backups | der Backup-Bericht Ihres Hosters | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
-| Logs und 404-Fehler | der Log-Viewer | [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md), [Request-Logs](../../../../eng-us/features/6.0/request-logs.md) |
+| Logs und 404-Fehler | der Log-Viewer | [Log-Viewer](../../../funktionen/6.0/log-betrachter.md), [Request-Logs](../../../funktionen/6.0/anfrageprotokolle.md) |
 | Speicherplatz und Zustand | **Systeminformationen** | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
-| Audit | der Tab **Audit**; `exp:audit verify` | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
-| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
-| Cronjobs | die Cronjob-Seite | [Cronjob-Konsole](../../../../eng-us/features/6.0/cronjobs-console.md) |
-| Inhaltsprüfungen | Link- und Inhaltsprüfungen | [Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md) |
+| Audit | der Tab **Audit**; `exp:audit verify` | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
+| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
+| Cronjobs | die Cronjob-Seite | [Cronjob-Konsole](../../../funktionen/6.0/cronjobs-in-der-konsole.md) |
+| Inhaltsprüfungen | Link- und Inhaltsprüfungen | [Link- und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md) |
 | Formulare | **Setup > Gesammelte Informationen** | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | Mail | `exp:mail:status` | [E-Mail-Einstellungen: Leitfaden für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md) |
 
@@ -104,7 +104,7 @@ und der Nachweis für Ihre [ROI](../kosten/rendite-der-stabilitaet.md)-Zahlen.
 
 ## Verwandte Seiten
 
-- [Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)
+- [Ihre Website pflegen](../../ersteller/website-ersteller/ihre-website-pflegen.md)
 - [Verfügbarkeit in der Praxis](../zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md)
 - [Betrieb einer Website](../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

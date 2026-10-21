@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Administratoren, die entscheiden, wohin Formulareinsendungen per Mail
 gehen. Sammlungen werden immer in der Datenbank gespeichert (**Setup > Gesammelte Informationen**); die Mail ist eine
 Kopie für das Team, das sie bearbeitet. Quellen:
-[Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md#mail-to-a-receiver)
+[Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md#mail-an-einen-empfänger)
 und [10.4 Mail](../../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand).
 
 ## Inhalt
@@ -44,7 +44,7 @@ die Mail dorthin.
 | `content/collectedinfo/<type>.tpl` | die Seite, die der Besucher nach dem Senden sieht (mit `Display=result`) |
 
 Überschreiben Sie sie in Ihrem Design
-([Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)), um der Mail einen klaren Betreff
+([Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)), um der Mail einen klaren Betreff
 („Neue Meldung: <Formularname>“), die Werte in einer lesbaren Reihenfolge und einen Link auf die Sammlung in der
 Administration zu geben.
 

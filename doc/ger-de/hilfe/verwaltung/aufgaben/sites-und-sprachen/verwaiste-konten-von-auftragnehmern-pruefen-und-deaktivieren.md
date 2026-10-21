@@ -37,7 +37,7 @@ Der Filter **Deaktiviert** zeigt nun die Konten; sie können sich nicht anmelden
 
 ## Verwandte Seiten
 
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)
 - [Den Zugang beenden](../../aufbauen/extranets/den-zugang-beenden.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

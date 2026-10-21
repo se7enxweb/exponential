@@ -55,13 +55,13 @@ angemeldet.
 
 - **Auf jeder Seite abgemeldet**: Der Kernel hält die Anfragen für einfaches HTTP (Proxy nicht vertrauenswürdig oder
   kein `X-Forwarded-Proto`); korrigieren Sie die Einstellungen des Proxys
-  ([Proxys und vertrauenswürdige Header](../../../../../eng-us/help/government/security/proxies-and-trusted-headers.md)).
+  ([Proxys und vertrauenswürdige Header](../../sicherheit/proxys-und-vertrauenswuerdige-header.md)).
 - `SameSite=Strict` verliert die Sitzung beim ersten Klick aus einer E-Mail; behalten Sie `Lax`, sofern Sie nicht
   wissen, dass Sie `Strict` brauchen.
 
 ## Verwandte Seiten
 
-- [Sitzungen und Cookies](../../../../../eng-us/help/government/security/sessions-and-cookies.md)
+- [Sitzungen und Cookies](../../sicherheit/sitzungen-und-cookies.md)
 - [Getrennte Sitzungscookies für die Administration](getrennte-sitzungscookies-fuer-die-administration.md)
 - [HSTS hinzufügen](hsts-hinzufuegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

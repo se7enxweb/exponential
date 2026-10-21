@@ -13,7 +13,7 @@ Diese Seite richtet sich an Site-Ersteller, die festlegen, wie Veranstaltungen g
 Redakteure, die es tun. Menschen verlassen sich auf Veranstaltungsseiten; eine Änderung muss für alle sichtbar sein,
 die die Seite öffnen, nicht nur für die, denen die Bearbeitung auffällt. Die genannten Funktionen sind in
 [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md) und
-[Benachrichtigungen: die Anleitung für Benutzer](../../../../../eng-us/features/6.0/notifications.md) dokumentiert.
+[Benachrichtigungen: die Anleitung für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md) dokumentiert.
 
 ## Inhalt
 

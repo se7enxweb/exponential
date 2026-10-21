@@ -104,8 +104,8 @@ Definition für jede Datenbank vor ([Schema und .dba-Dateien](schema-und-dba-dat
 ## Verwandte Seiten
 
 - [Datenbankzugriff](datenbankzugriff.md)
-- [Active-Record-Muster](../../../../eng-us/standards/patterns/active-record.md)
-- [Standard für Datenbanken und SQL](../../../../eng-us/standards/databases-and-sql.md)
+- [Active-Record-Muster](../../../standards/muster/active-record.md)
+- [Standard für Datenbanken und SQL](../../../standards/datenbanken-und-sql.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

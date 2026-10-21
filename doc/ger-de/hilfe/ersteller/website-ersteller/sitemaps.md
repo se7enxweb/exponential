@@ -25,13 +25,13 @@ ausliefert.
 
 | | `bcgooglesitemaps` | `xrowmetadata` |
 |---|---|---|
-| Teil der Distribution | ja ([Funktion robots.txt](../../../../eng-us/features/6.0/robots-txt.md)) | ja |
+| Teil der Distribution | ja ([Funktion robots.txt](../../../funktionen/6.0/robots-txt.md)) | ja |
 | Cronjob-Teile | `googlesitemaps`, `googlesitemapsmultilingual` | `sitemap`, `archivesitemap`, `newssitemap`, `mobilesitemap` |
 | Wählen, wenn | Sie eine einfache Sitemap wollen | Sie xrowmetadata bereits für Seitenmetadaten verwenden |
 
 ## bcgooglesitemaps
 
-Nach [bcgooglesitemaps](../../../../eng-us/features/6.0/extensions/bcgooglesitemaps.md):
+Nach [bcgooglesitemaps](../../../funktionen/6.0/erweiterungen/bcgooglesitemaps.md):
 
 ```bash
 php runcronjobs.php googlesitemaps
@@ -60,7 +60,7 @@ php runcronjobs.php sitemap
 
 schreibt Dateien unter `var/storage/sitemap/<siteaccess>/` (Namen in `xrowsitemap.ini`) und gibt jeden Dateinamen aus;
 die Rewrite-Regeln müssen sie durchlassen (`RewriteRule ^sitemap[^/]*\.xml - [L]`)
-([xrowmetadata, Sitemaps](../../../../eng-us/features/6.0/extensions/xrowmetadata.md#sitemaps)).
+([xrowmetadata, Sitemaps](../../../funktionen/6.0/erweiterungen/xrowmetadata.md#sitemaps)).
 
 ## Ausliefern und eintragen
 

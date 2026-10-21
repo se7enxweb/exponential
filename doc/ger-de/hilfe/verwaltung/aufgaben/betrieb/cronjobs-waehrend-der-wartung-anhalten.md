@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren, die ein Wartungsfenster, eine Datenmigration oder einen Neuaufbau eines Index
 eröffnen. Ein angehaltener Teil wird von `runcronjobs.php` ausgelassen, wer ihn auch startet (die Crontab, die Konsole,
-Velocity), ohne die Crontab zu bearbeiten ([Teile der Cronjobs anhalten](../../../../../eng-us/features/6.0/cronjob-pause.md)).
+Velocity), ohne die Crontab zu bearbeiten ([Teile der Cronjobs anhalten](../../../../funktionen/6.0/cronjobs-pausieren.md)).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -58,7 +58,7 @@ Gleich nach dem Fenster setzen Sie die Teile auf derselben Seite fort; führen S
 ## Verwandte Seiten
 - [Die Site für ein Upgrade in den Wartungsmodus versetzen](die-site-fuer-ein-upgrade-in-den-wartungsmodus-versetzen.md)
 - [Die Site wieder online bringen](die-site-wieder-online-bringen.md)
-- [Überwachung der Cronjobs](../../../../../eng-us/help/government/operations/monitoring/cronjob-monitoring.md)
+- [Überwachung der Cronjobs](../../betrieb/ueberwachung/ueberwachung-der-cronjobs.md)
 - [Anleitung zu den Cronjobs](../../../../anleitungen/cronjobs.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

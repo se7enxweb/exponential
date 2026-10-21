@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Sicherheitsbeauftragte und Vertragsmanagement einer öffentlichen Stelle. Sie erklärt, wie
 eine Schwachstelle in Exponential von der Meldung bis zur Korrektur behandelt wird, was das Projekt verspricht und was
 nicht, und wie Sie daraus eine Pflicht zum Einspielen von Patches für einen Lieferanten machen. Die Quellen sind [`SECURITY.md`](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md),
-[Sicherheitsstandards](../../../../../eng-us/standards/security.md#vulnerability-disclosure) und
+[Sicherheitsstandards](../../../../standards/sicherheit.md#offenlegung-von-schwachstellen) und
 [SLA-Optionen für das Hosting von Exponential](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md).
 
 ## Inhalt
@@ -42,7 +42,7 @@ nicht, und wie Sie daraus eine Pflicht zum Einspielen von Patches für einen Lie
 | Unterstützte Linie: 6.0.x; 5.x und älter nicht | `SECURITY.md` |
 
 Nicht versprochen: eine Frist für die Korrektur, eine Vorabinformation der Nutzer, ein Feed mit Sicherheitshinweisen. Es
-wird keine Datei `security.txt` mitgeliefert ([Sicherheitsstandards](../../../../../eng-us/standards/security.md#vulnerability-disclosure)). Die
+wird keine Datei `security.txt` mitgeliefert ([Sicherheitsstandards](../../../../standards/sicherheit.md#offenlegung-von-schwachstellen)). Die
 SLA-Seite für das Hosting rät: Versprechen Sie, eine veröffentlichte Korrektur innerhalb einer Frist einzuspielen, nicht,
 dass eine Schwachstelle innerhalb einer Frist behoben wird; „das Zweite hängt vom Projekt ab, das Erste von Ihnen“
 ([SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md#sicherheitsupdates)).
@@ -57,7 +57,7 @@ dass eine Schwachstelle innerhalb einer Frist behoben wird; „das Zweite hängt
   ([Mit Git aktualisieren](../../../mit-git-aktualisieren.md#weg-b-die-administration)).
 - Hoster: [Sicherheitsupdates und Offenlegung](../../../hosting/sicherheit/sicherheitsupdates-und-offenlegung.md) und
   [Mit dem Projekt und 7x arbeiten](../../../hosting/geschaeft/mit-dem-projekt-und-7x-zusammenarbeiten.md).
-- Hinweise für die Presse dazu, wie Korrekturen angekündigt werden: [Über Sicherheitskorrekturen berichten](../../../../../eng-us/help/press/covering-security-fixes.md).
+- Hinweise für die Presse dazu, wie Korrekturen angekündigt werden: [Über Sicherheitskorrekturen berichten](../../../presse/ueber-sicherheitskorrekturen-berichten.md).
 
 Machen Sie eine benannte Rolle für das Verfolgen verantwortlich. Ohne verantwortliche Person bemerkt niemand ein Release.
 

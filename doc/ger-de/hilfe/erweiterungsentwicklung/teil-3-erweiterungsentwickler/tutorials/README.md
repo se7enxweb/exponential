@@ -75,7 +75,7 @@ Erweiterungsnamen `mysite_hello`; wählen Sie für echte Arbeit Ihr eigenes Prä
 
 - Zurück: [Ihre Erweiterung dokumentieren, einschließlich Hilfeseiten](../ihre-erweiterung-dokumentieren.md)
 - Weiter: [Der Rundgang durch die RAD-Werkzeuge: Setup > RAD](rundgang-durch-die-rad-werkzeuge.md)
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md)
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

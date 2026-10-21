@@ -80,7 +80,7 @@ eine andere Installation sie anlegen kann), gibt es zwei Wege:
 - exportieren Sie sie als **Paket** (`Setup > Pakete`, Klassenexport) und legen Sie das Paket in die Erweiterung; siehe
   [Pakete](../../../anleitungen/pakete.md),
 - schreiben Sie sie als **Skript**, das die Klasse anlegt: Der RAD-Assistent **Content extension**
-  (`/setup/contentextension`) schreibt eines für Sie ([RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)).
+  (`/setup/contentextension`) schreibt eines für Sie ([RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md)).
 
 ## Verwandte Seiten
 

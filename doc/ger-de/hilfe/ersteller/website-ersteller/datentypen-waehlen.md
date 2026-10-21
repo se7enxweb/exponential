@@ -67,11 +67,11 @@ Die Implementierungen liegen in `kernel/classes/datatypes/<name>/`.
 ## Datentypen aus Erweiterungen
 
 Erweiterungen fügen Datentypen hinzu; sie registrieren sie in ihren eigenen Einstellungen. Hier dokumentierte Beispiele:
-[eztags](../../../../eng-us/features/6.0/extensions/eztags.md) (ein Tag-Baum mit Autovervollständigung),
-[enhancedselection2](../../../../eng-us/features/6.0/extensions/enhancedselection2.md),
-[enhancedezbinaryfile](../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md),
-[ezgmaplocation](../../../../eng-us/features/6.0/extensions/ezgmaplocation.md) (ein Kartenstandort),
-[ezstarrating](../../../../eng-us/features/6.0/extensions/ezstarrating.md). Ein eigener Datentyp ist eine Aufgabe für
+[eztags](../../../funktionen/6.0/erweiterungen/eztags.md) (ein Tag-Baum mit Autovervollständigung),
+[enhancedselection2](../../../funktionen/6.0/erweiterungen/enhancedselection2.md),
+[enhancedezbinaryfile](../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md),
+[ezgmaplocation](../../../funktionen/6.0/erweiterungen/ezgmaplocation.md) (ein Kartenstandort),
+[ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md). Ein eigener Datentyp ist eine Aufgabe für
 Anwendungsentwickler ([Einen eigenen Datentyp schreiben](../anwendungsentwickler/eigene-datentypen.md)).
 
 ## Ein Feld in einem Template anzeigen

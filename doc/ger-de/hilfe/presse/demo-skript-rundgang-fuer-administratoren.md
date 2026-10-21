@@ -42,10 +42,10 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 1. **Benutzer > Rollen und Richtlinien**: Öffnen Sie die Rolle *Editor*. Sagen Sie: „Was jede Gruppe tun darf, ist eine
    Menge von Richtlinien.“ Quelle: [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md).
 2. Zeigen Sie auf die Richtlinie, die die Hilfe öffnet: „Die Hilfe ist für Redakteure auf einer neuen Installation über
-   die Richtlinie `exphelp/read` lesbar.“ ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md#who-may-read-it))
+   die Richtlinie `exphelp/read` lesbar.“ ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md#wer-sie-lesen-darf))
 3. **Setup > Sprachen**: Zeigen Sie die Inhaltssprachen. Nennen Sie die dokumentierten Zahlen mit ihrer Quelle:
    268 Locale-Dateien können als Inhaltssprachen verwendet werden; es gibt 33 Übersetzungen der Administration, neunzehn
-   davon vollständig (19. Oktober 2026) ([Sprachen in Exponential](../../../eng-us/languages.md)).
+   davon vollständig (19. Oktober 2026) ([Sprachen in Exponential](../../sprachen.md)).
 
 ![Rollen, gezeigt in Teil 2](../../../eng-us/help/images/help/pr-admin-roles.webp)
 
@@ -53,7 +53,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 
 1. **Setup > Logdateien**: der Navigator und eine Suche. Sagen Sie: „Datenschutz zuerst: E-Mail-Adressen, IP-Adressen,
    Passwörter, Tokens, Schlüssel und Sitzungs-IDs werden in dieser Ansicht maskiert.“ Klicken Sie vor der Kamera nie auf
-   **Unmaskiert zeigen**, und lesen Sie trotzdem jede Zeile, die Sie zeigen ([Log-Viewer](../../../eng-us/features/6.0/log-viewer.md)).
+   **Unmaskiert zeigen**, und lesen Sie trotzdem jede Zeile, die Sie zeigen ([Log-Viewer](../../funktionen/6.0/log-betrachter.md)).
 2. **Setup > Upgrade-Prüfung**: „Vor einem Upgrade vergleicht dies jede Datei mit dem Release.“
    ([Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md))
 3. **Setup > Caches**: Zeigen Sie auf die Schaltflächen; sagen Sie, wozu das Leeren eines Caches dient. Leeren Sie
@@ -68,13 +68,13 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 
 1. Öffnen Sie den Tab **Audit** (`/audit/dashboard`), dann **Konsole**. Sagen Sie: „Meine Anmeldung ist bereits
    festgehalten. Jeder Eintrag trägt den Hash des vorherigen, sodass eine Änderung am Protokoll auffällt.“
-   ([Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md))
+   ([Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md))
 2. In einem Terminal, außerhalb des geteilten Bildschirms, wenn es einen Prompt zeigt, der Sie stört:
    `./console exp:audit verify --allow-root-user`.
 3. Öffnen Sie `/user2fa/setup` mit dem Demo-Konto: Zeigen Sie die Wahl zwischen einer Authenticator-App und einem Code per
    E-Mail. **Schließen Sie die Einrichtung nicht vor der Kamera ab**: Der QR-Code und das Geheimnis sind der zweite
    Faktor ([Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md)).
-4. Öffnen Sie in der Hilfe [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) und sagen Sie:
+4. Öffnen Sie in der Hilfe [Content Security Policy](../../funktionen/6.0/content-security-policy.md) und sagen Sie:
    „Standardmäßig ist sie in der Administration auf report-only und auf den Websites aus; die Seite erklärt, wie man sie
    erzwingt.“
 5. Schließen Sie mit der [Checkliste der Sicherheitshärtung](../sicherheitshaertung.md#checkliste).

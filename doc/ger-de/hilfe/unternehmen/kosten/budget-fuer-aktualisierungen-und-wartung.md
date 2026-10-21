@@ -62,7 +62,7 @@ Eine Version, die Sie getestet haben, bleibt die Version, die Sie betreiben. Die
 ([Automatische Aktualisierungen mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md)).
 
 Verwenden Sie den Wartungsmodus für die Minuten, in denen die Website offline sein muss
-([Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md)), und lesen Sie
+([Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md)), und lesen Sie
 [Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md) für die Sicht des Unternehmens.
 
 ## PHP- und Serveraktualisierungen
@@ -132,7 +132,7 @@ und behalten Sie die Reserve für Arbeiten außerhalb des Vertrags.
 - [ ] Halten Sie eine Staging-Kopie, die der Produktion entspricht.
 - [ ] Verfolgen Sie Releases auf GitHub und im Issue-Tracker, der in `README.md`, „Issue tracker“, genannt ist.
 - [ ] Schreiben Sie jede Aktualisierung mit Datum und Ergebnis auf; das Prüfprotokoll zeichnet Deployments und
-      Schreibvorgänge in den Einstellungen ebenfalls auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+      Schreibvorgänge in den Einstellungen ebenfalls auf ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 

@@ -143,14 +143,14 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Benutzer der Website, und b
 
 - [Sicherungen: was gesichert wird](../../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Datenbanksicherungen pro Datenbanksystem](../../../hosting/betrieb/datenbank-backups-je-engine.md)
-- [git_manager](../../../../../eng-us/features/6.0/extensions/git_manager.md): Sicherungen aus der Administration.
+- [git_manager](../../../../funktionen/6.0/erweiterungen/git_manager.md): Sicherungen aus der Administration.
 - [Speicheraufbau](../../../hosting/betrieb/aufbau-des-speichers.md): wo jede Website ihre Dateien ablegt.
 
 ## Verwandte Seiten
 
 - [Modul 6: Sicherungen und Wiederherstellung](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

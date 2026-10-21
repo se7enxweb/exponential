@@ -106,7 +106,7 @@ steht in [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehru
 **Dokumentierte Gelegenheiten für Leitungen.**
 
 - Übersetzungen: Zehn Übersetzungen der Administration sind vollständig; für jede andere Sprache ist das Übersetzen der
-  seit 6.0 hinzugekommenen Texte „die nützlichste Arbeit“ ([Sprachen in Exponential, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)).
+  seit 6.0 hinzugekommenen Texte „die nützlichste Arbeit“ ([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 - Dokumentation: Jede Hilfeseite lässt sich mit **Auf GitHub bearbeiten** verbessern ([Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)).
 - Erweiterungen: Eine Erweiterung nennt ihre Version in ihren eigenen Dateien und wird als Composer-Paket veröffentlicht
   ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).

@@ -13,7 +13,7 @@ Diese Seite richtet sich an IT-Teams in öffentlichen Stellen, die gebeten werde
 einzuschalten“, oft weil eine ältere Anleitung ihn empfohlen hat. Sie beantwortet, was der statische Cache ist, warum
 er ausgeschaltet ausgeliefert wird, wann er für eine öffentliche Stelle noch sinnvoll sein kann und wie Sie ihn
 erzeugen, ausliefern und entfernen. Die Quellen sind
-[Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md) und die Hosting-Seite
+[Generator für den statischen Cache](../../../../funktionen/6.0/generator-fuer-den-statischen-cache.md) und die Hosting-Seite
 [Statischer Cache](../../../hosting/leistung/statischer-cache.md).
 
 ## Inhalt

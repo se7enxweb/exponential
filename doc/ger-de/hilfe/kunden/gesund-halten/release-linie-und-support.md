@@ -33,7 +33,7 @@ ein Upgrade-Projekt; [Upgrade](../../../anleitungen/aktualisieren.md) hat einen 
 - In der Administration: **Setup > Systeminformationen** nennt die Version
   ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 - **Info > Über** listet die Version von Exponential und von jeder Erweiterung
-  ([Die Seiten Über und Copyright](../../../../eng-us/features/6.0/about-and-package-pages.md)).
+  ([Die Seiten Über und Copyright](../../../funktionen/6.0/info-und-paketseiten.md)).
 - Fragen Sie Ihren Anbieter: Ein Anbieter, der ein Verzeichnis der Websites seiner Kunden führt, kann sofort antworten
   ([Kunden aktuell halten](../../partner/kunden-websites-aktuell-halten.md)).
 
@@ -59,7 +59,7 @@ Fragen Sie Ihren Hoster, welche PHP-Versionen er anbietet und wann er eine einst
 ## Erweiterungen haben eigene Versionen
 
 Jede Erweiterung trägt ihre eigene Version, angezeigt unter **Setup > Extensions** und **Info > Über**
-([Liste der Erweiterungen](../../../../eng-us/features/6.0/extension-list-and-downloads.md)). Eine Erweiterung, die nicht mehr
+([Liste der Erweiterungen](../../../funktionen/6.0/extension-liste-und-downloads.md)). Eine Erweiterung, die nicht mehr
 gepflegt wird, kann ein Upgrade aufhalten. Fragen Sie Ihren Anbieter einmal im Jahr, welche Erweiterungen die Website
 verwendet und ob jede noch gepflegt wird.
 

@@ -55,7 +55,7 @@ PHP line (Exponential 6)                    Symfony line (Exponential Platform)
 „Legacy“ und „Nexus“ betreiben Exponential 6 neben Symfony; „Platform 3.2.9“ und „DXP“ nicht
 ([Die Plattform-Linie](../wer-ist-7x.md#die-platform-linie-exponential-platform-legacy-nexus-und-dxp)). Eine Ausnahme:
 Die Nexus-Linie 1.3.0.x für Platform v5 und der v5-Starter haben keinen Legacy-Kernel
-([Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md)).
+([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md)).
 
 ## Stand am 18. Oktober 2026
 
@@ -63,7 +63,7 @@ Die Nexus-Linie 1.3.0.x für Platform v5 und der v5-Starter haben keinen Legacy-
 |---|---|---|
 | Exponential 6 | 6.0.14 veröffentlicht am 7. Juni 2026; 6.0.15 in Entwicklung | [Release-Übersicht](../../../eng-us/release-overview) |
 | Exponential Basic | v2.4.0.3 | Beschreibung des Repositorys |
-| Velocity | Teil von Exponential seit dem 22. September 2026; das README nennt es als erforderlich in `~0.0.4.54` | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
+| Velocity | Teil von Exponential seit dem 22. September 2026; das README nennt es als erforderlich in `~0.0.4.54` | [Chronik von Velocity](../../geschichte/velocity/README.md) |
 | Intelligence, Layouts, AdminUI | Vom Kernel verlangt seit der Linie 6.0.15 | composer.json |
 | Platform DXP | „Stable; Open Source“ | seine composer.json |
 | Nexus-Starter | „Currently In Public Beta“ | die Beschreibung seines Repositorys |

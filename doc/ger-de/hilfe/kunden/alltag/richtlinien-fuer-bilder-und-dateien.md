@@ -27,18 +27,18 @@ also einmal nach und notieren Sie die Antwort unten.
 ## Was mit einem Upload geschieht
 
 - Ein Bild wird zu einem Element *Image*, die meisten anderen Dateien zu einem Element *File*; eine MP4-Datei zu einem
-  Element *Video* ([Die Medienbibliothek organisieren](../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md)).
+  Element *Video* ([Die Medienbibliothek organisieren](../../ersteller/website-ersteller/die-medienbibliothek-organisieren.md)).
 - Die Website bewahrt die hochgeladene Datei als `original` auf und erzeugt kleinere **Varianten** für die Seiten, etwa
   `reference` (passt in 600 x 600), `medium` und `large`. Varianten werden konvertiert: WebP und GIF nach PNG, alles
-  andere nach JPEG ([Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)).
+  andere nach JPEG ([Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md)).
 - Ein SVG wird nie so gespeichert, wie es hochgeladen wurde: Es wird zuerst von Skripten und unsicheren Teilen
-  bereinigt und nie skaliert ([SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md)).
+  bereinigt und nie skaliert ([SVG und Bildformate](../../ersteller/website-ersteller/svg-und-bildformate.md)).
 
 Sie müssen also nicht jede Größe von Hand vorbereiten. Laden Sie ein gutes Bild hoch; den Rest erledigt die Website.
 
 ## Welches Format wofür
 
-Aus [SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md):
+Aus [SVG und Bildformate](../../ersteller/website-ersteller/svg-und-bildformate.md):
 
 | Bild | Format |
 |---|---|
@@ -87,7 +87,7 @@ werden übersprungen, wo die Website einen Alternativtext verlangt, weil eine ZI
 - Fragen Sie vor dem Veröffentlichen von Fotos, auf denen Personen erkennbar sind, gemäß den Regeln Ihrer
   Organisation. Dies ist keine Rechtsberatung.
 - Entfernen Sie Bilder, wenn eine Lizenz endet; die Inhaltsprüfungen zeigen, wo ein Bild noch verwendet wird
-  ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+  ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 
 ## Die Werte Ihrer Website
 
@@ -101,7 +101,7 @@ Who to ask: ______________ (role)
 
 - [Bilder, Medien und Uploads](../../medien-und-uploads.md)
 - [Pflege der Medienbibliothek](pflege-der-medienbibliothek.md)
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

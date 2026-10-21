@@ -37,9 +37,9 @@ Finanzabteilung akzeptiert.
 | Freigabe vor dem Veröffentlichen | „Content approval and scheduled publication“ (Freigabe von Inhalten und zeitgesteuerte Veröffentlichung), Workflows | `README.md`; [Workflows](../../../anleitungen/workflows.md) |
 | Sicherere Anmeldung | Zweistufige Anmeldung mit einer Authenticator-App oder E-Mail-Codes | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Anmeldung über das Firmenverzeichnis | Ein LDAP-Login-Handler (`settings/ldap.ini`, `kernel/classes/datatypes/ezuser/ezldapuser.php`) | [Verzeichnisanmeldung und LDAP](../intranets/verzeichnisanmeldung-und-ldap.md) |
-| Dokumente | Datei-Uploads, Versionsverwaltung, Suche | `README.md`; [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
+| Dokumente | Datei-Uploads, Versionsverwaltung, Suche | `README.md`; [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md) |
 | Benachrichtigungen für Mitarbeiter | Abonnements neuer Inhalte per E-Mail | [Benachrichtigungen](../../../anleitungen/benachrichtigungen-administrator.md) |
-| Nachweis, wer was geändert hat | Das Prüfprotokoll | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis, wer was geändert hat | Das Prüfprotokoll | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 Es gilt keine Lizenz pro Benutzer, die Kosten wachsen also nicht mit der Zahl der Mitarbeiterkonten
 ([Wofür Sie nicht bezahlen](wofuer-sie-nicht-bezahlen.md)).

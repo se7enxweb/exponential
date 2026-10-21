@@ -66,8 +66,8 @@ markiert. Verwenden Sie **Alle unaktivierten Benutzer entfernen** (oder entferne
 - Öffnen Sie `/user/register` direkt: abgelehnt.
 
 ## Verwandte Seiten
-- [Pflege der Benutzerkonten](../../../../../eng-us/help/government/operations/people-and-permissions/user-account-hygiene.md)
-- [Spamschutz für Formulare](../../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)
+- [Pflege der Benutzerkonten](../../betrieb/personen-und-berechtigungen/pflege-von-benutzerkonten.md)
+- [Spamschutz für Formulare](../../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)
 - [Anleitung zu Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)
 - [Sicherheitshärtung](../../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

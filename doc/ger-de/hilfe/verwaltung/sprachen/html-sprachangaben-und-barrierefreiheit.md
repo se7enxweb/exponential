@@ -26,9 +26,9 @@ verlangt die Angabe der Sprache der Seite (3.1.1) und von Passagen in einer ande
 Pagelayouts geben `eZLocale::httpLocaleCode()` aus, also `[HTTP] ContentLanguage` aus der Locale-Datei des Siteaccess.
 Seit 6.0.15 nennt jede mitgelieferte Locale eine gültige BCP-47-Angabe (`fr-FR`, `nb-NO`, `he-IL`), die frühere
 nicht standardkonforme Werte wie `no-bokmaal` ersetzt
-([Übersetzungen und Sprachen, HTML-Sprachangaben](../../../../eng-us/features/6.0/translations-and-languages.md#html-language-tags)).
+([Übersetzungen und Sprachen, HTML-Sprachangaben](../../../funktionen/6.0/uebersetzungen-und-sprachen.md#html-sprach-tags)).
 Interne Locale-Codes (`fre-FR`) sind kein BCP 47; nur die HTTP-Angabe ist es
-([Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md#language-tags-bcp-47-and-iso-639)).
+([Standards zur Internationalisierung](../../../standards/internationalisierung.md#sprach-tags-bcp-47-und-iso-639)).
 
 ## Die Sprache der Seite
 
@@ -38,7 +38,7 @@ In Ihrem öffentlichen Pagelayout:
 <html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
 ```
 
-Die Pagelayouts der Administration tun das bereits ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)).
+Die Pagelayouts der Administration tun das bereits ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)).
 
 ## Teile in einer anderen Sprache
 
@@ -52,11 +52,11 @@ Die Pagelayouts der Administration tun das bereits ([Standards zur Barrierefreih
 
 ## Was geprüft ist und was nicht
 
-Die [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) nennen den Stand des Projekts: WCAG 2.2 Stufe
+Die [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) nennen den Stand des Projekts: WCAG 2.2 Stufe
 AA **Teilweise erfüllt** für die Administration admin4 und admin4l; Designs öffentlicher Websites und
 der Online-Editor sind nicht geprüft; EN 301 549 und Section 508 sind **nicht geprüft**; es gibt weder
 ein VPAT noch einen Accessibility Conformance Report. Die Konformität Ihres öffentlichen Designs müssen Sie selbst
-testen ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+testen ([Barrierefreiheit testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)).
 
 ## Prüfungen
 
@@ -68,8 +68,8 @@ testen ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creat
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Barrierefreiheit für Websiteersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Barrierefreiheit für Websiteersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Rechts-nach-links-Sprachen auf öffentlichen Websites](rechts-nach-links-sprachen-auf-oeffentlichen-websites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -154,7 +154,7 @@ Auf der Schulungsinstallation, als Administrator an der Administration angemelde
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md): Klassen,
   Objekte, Versionen und der Editor.
 - [Klassengruppen](../../../../anleitungen/klassengruppen.md): Klassen ordnen.
-- [Inhaltsklassenpakete bündeln](../../../../../eng-us/help/designers/extensions/bundling-content-class-packages.md): Klassen mit einer
+- [Inhaltsklassenpakete bündeln](../../../designer/erweiterungen/inhaltsklassen-pakete-beilegen.md): Klassen mit einer
   Erweiterung ausliefern.
 
 ## Verwandte Seiten

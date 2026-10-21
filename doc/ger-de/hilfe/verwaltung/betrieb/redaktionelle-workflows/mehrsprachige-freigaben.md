@@ -71,7 +71,7 @@ Spracheinschränkung für jedes Bearbeitungsrecht, das sie haben.
   angezeigt werden; das ist eine Anzeigeregel, keine Freigabe.
 - **Das Entfernen einer Sprache** entfernt Inhalte; lesen Sie zuerst [Sprachen von Inhalten, Abschnitt 9](../../../../anleitungen/inhaltssprachen.md#9-übersetzungen-und-sprachen-sicher-entfernen).
 - **Sprachen mit Schreibrichtung von rechts nach links** werden in der Administration und in Designs unterstützt, die damit umgehen können;
-  siehe [Von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md).
+  siehe [Von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md).
 
 ## Verwandte Seiten
 - [Das Freigabe-Ereignis einrichten](das-freigabe-ereignis-einrichten.md)

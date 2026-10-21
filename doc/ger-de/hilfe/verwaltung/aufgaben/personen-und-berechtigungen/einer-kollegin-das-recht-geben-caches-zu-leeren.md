@@ -29,7 +29,7 @@ ohne irgendein anderes Setup-Recht. **Setup > Cache-Verwaltung** (`/setup/cache`
 
 1. **Benutzer > Rollen und Richtlinien > Neue Rolle**, nennen Sie sie „Cache operator“ (oder fügen Sie die Richtlinie
    Ihrer bestehenden Rolle „Web team“ hinzu:
-   [Rollengestaltung: das zentrale Web-Team](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-web-team.md)).
+   [Rollengestaltung: das zentrale Web-Team](../../betrieb/personen-und-berechtigungen/rollenentwurf-webteam.md)).
 2. **Neue Richtlinie**: Modul `setup`, Funktion `managecache`, **Vollen Zugriff gewähren** für diese Funktion.
 3. Optional `setup` / `system_info`, damit sie **Setup > Systeminformationen** lesen können; deren Schaltflächen für
    HTTP-Cache, Abfrage-Cache und SQL-Profil brauchen ebenfalls `setup/managecache`.
@@ -51,8 +51,8 @@ ohne irgendein anderes Setup-Recht. **Setup > Cache-Verwaltung** (`/setup/cache`
 - Andere Setup-Seiten (Wartung, Cronjobs, Ini Einstellungen) werden nicht angeboten.
 
 ## Verwandte Seiten
-- [Veralteter Cache](../../../../../eng-us/help/government/operations/incidents/stale-cache.md)
-- [Grundsätze der minimalen Rechte](../../../../../eng-us/help/government/operations/people-and-permissions/least-privilege-principles.md)
+- [Veralteter Cache](../../betrieb/vorfaelle/veralteter-cache.md)
+- [Grundsätze der minimalen Rechte](../../betrieb/personen-und-berechtigungen/prinzip-der-geringsten-rechte.md)
 - [Caches leeren und vorwärmen (Hosting)](../../../hosting/leistung/caches-leeren-und-vorwaermen.md)
 - [Anleitung zu den Caches](../../../../anleitungen/caches.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

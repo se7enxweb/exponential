@@ -41,7 +41,7 @@ bcwebsitestatistics fügt seinen Ordner stattdessen zu `AutoloadPathList[]` hinz
 
 ### ezoe_ini_section
 
-Generierte Seite: [ezoe_ini_section](../../../eng-us/examples/template-operators/ezoe_ini_section.md).
+Generierte Seite: [ezoe_ini_section](../../beispiele/template-operatoren/ezoe_ini_section.md).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -252,8 +252,8 @@ weil er eine Datei schreibt.
 ## Verwandte Seiten
 
 - [URL-, Design-, INI- und HTTP-Operatoren](url-operatoren.md) (`ezini` für einzelne Einstellungen)
-- [Content Security Policy für Anwendungen](../../../eng-us/help/creators/app-creators/content-security-policy.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Content Security Policy für Anwendungen](../ersteller/anwendungsentwickler/content-security-policy.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

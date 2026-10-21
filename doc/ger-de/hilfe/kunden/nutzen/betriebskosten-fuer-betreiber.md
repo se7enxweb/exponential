@@ -54,7 +54,7 @@ TOTAL                       |          |                   |           |        
 
 | Kosten | Wie sie wachsen | Was zu tun ist |
 |---|---|---|
-| Hosting | Die Festplatte füllt sich mit Medien, Logs und Backups | Bitten Sie den Hoster jedes Quartal um die Nutzung; räumen Sie ungenutzte Medien auf ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)) |
+| Hosting | Die Festplatte füllt sich mit Medien, Logs und Backups | Bitten Sie den Hoster jedes Quartal um die Nutzung; räumen Sie ungenutzte Medien auf ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)) |
 | KI-Anbieter | Redakteure nutzen den Assistenten mehr | Exponential Intelligence hat ein Nutzungsprotokoll mit den geschätzten Kosten jeder Anfrage und Grenzen pro Benutzer, Tag, Monat und Website (`README.md`, „Exponential Intelligence“) |
 | Zahlungsgebühren | Wachsen mit den Verkäufen und mit Preisänderungen des Anbieters | Vergleichen Sie die Abrechnungen jährlich |
 | Änderungsanfragen | Viele kleine Anfragen, jede einzeln abgerechnet | Sammeln Sie sie und bitten Sie um ein Angebot pro Quartal |

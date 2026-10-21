@@ -140,7 +140,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation und ein Terminal in ihrem Wurzel
 
 - [Such-Backends](../../../hosting/grundlagen/such-backends.md#den-index-neu-aufbauen): der Neuaufbau aus Sicht eines
   Hosters.
-- [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md): was das Audit aufzeichnet und wo man es liest.
+- [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md): was das Audit aufzeichnet und wo man es liest.
 - [Sicherungen: was gesichert werden muss](../../../hosting/betrieb/backups-was-gesichert-werden-muss.md): Bei der eingebauten
   Suchmaschine wird der Index neu aufgebaut statt gesichert, da er in der Datenbank liegt.
 
@@ -148,7 +148,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation und ein Terminal in ihrem Wurzel
 
 - [Modul 2: Indizierung](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

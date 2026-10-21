@@ -38,9 +38,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md) („Kurz gesagt“),
-[Anfrage-Logs: 404.log und security.log](../../../../../eng-us/features/6.0/request-logs.md) und
-[Log-Rotation und Bereinigung](../../../../../eng-us/features/6.0/log-rotation.md).
+Quellen: [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md) („Kurz gesagt“),
+[Anfrage-Logs: 404.log und security.log](../../../../funktionen/6.0/anfrageprotokolle.md) und
+[Log-Rotation und Bereinigung](../../../../funktionen/6.0/log-rotation.md).
 
 1. **Wo die Logs liegen** (3 Minuten). Die Kernel-Logs liegen in `var/log`: `error.log`, `warning.log`, `notice.log`,
    `debug.log`, `strict.log`, `deprecated.log` und `auth.log`, dazu die Cronjob-Logs. Eine Website kann ihre eigenen
@@ -146,7 +146,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, in einem Terminal im Wurzelverz
 <summary>Antworten</summary>
 
 1. **B.** Antworten „nicht gefunden“ gehen mit ihrem Grund in `404.log`
-   ([Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md)).
+   ([Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md)).
 2. Etwa 2 MB (`LogFileMaxSize=2097152`), und drei Archive (`LogFileRotateCount=3`).
 3. Nur in `security.log`: Der Klassifikator stuft sie als Sondierung ein, und eine klassifizierte Anfrage wird nur in
    ein Log geschrieben.
@@ -157,8 +157,8 @@ Verwenden Sie Ihre eigene Schulungsinstallation, in einem Terminal im Wurzelverz
 
 ## Weiterführende Literatur
 
-- [Anfrage-Logs: 404.log und security.log](../../../../../eng-us/features/6.0/request-logs.md): jedes Feld und jede Einstellung.
-- [Log-Rotation und Bereinigung](../../../../../eng-us/features/6.0/log-rotation.md): Rotation, Bereinigung und Grenzen pro Log.
+- [Anfrage-Logs: 404.log und security.log](../../../../funktionen/6.0/anfrageprotokolle.md): jedes Feld und jede Einstellung.
+- [Log-Rotation und Bereinigung](../../../../funktionen/6.0/log-rotation.md): Rotation, Bereinigung und Grenzen pro Log.
 - [Der Log-Viewer und die Rotation für Hoster](../../../hosting/betrieb/log-viewer-und-log-rotation.md): die Sicht des
   Hosters.
 - [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md): die ersten Schritte bei jedem Problem.

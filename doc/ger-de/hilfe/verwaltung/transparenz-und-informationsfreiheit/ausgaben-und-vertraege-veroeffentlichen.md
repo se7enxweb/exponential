@@ -45,7 +45,7 @@ aus Inhaltsobjekten oder beides veröffentlichen.
 
 ## Ein Vertragsregister als Inhalt
 
-Eine Klasse `contract` ([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)):
+Eine Klasse `contract` ([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)):
 
 | Attribut | Datentyp |
 |---|---|
@@ -62,7 +62,7 @@ Datensätze für das Register: Exportieren Sie es mit `xrowextract` (siehe „In
 im Bereich offene Daten). Das Prüfprotokoll zeichnet Änderungen an jedem Eintrag auf.
 
 Masseneingabe: `xrowextract` kann CSV-, JSON- oder XML-Dateien mit einer Spaltenzuordnung und einem Probelauf in
-Inhaltsobjekte importieren ([xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md)). Probieren Sie einen Import
+Inhaltsobjekte importieren ([xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md)). Probieren Sie einen Import
 zuerst auf einer Testinstallation aus.
 
 ## Maschinenlesbare Kopien
@@ -83,8 +83,8 @@ Vertrag und in jedem Zeitraum mit denselben Spaltennamen. Das macht die Veröffe
 ## Verwandte Seiten
 
 - [Proaktive Veröffentlichung](proaktive-veroeffentlichung.md)
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md)
-- [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md): der Datentyp Preis im Shop-Kontext
+- [xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md)
+- [Produkte, Preise und Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md): der Datentyp Preis im Shop-Kontext
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

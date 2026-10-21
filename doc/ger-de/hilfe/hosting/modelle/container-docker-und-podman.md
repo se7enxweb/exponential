@@ -46,7 +46,7 @@ Zwei Wege:
 | Das veröffentlichte Image von Velocity als Basis | den Server und ein PHP mit einer festgelegten Erweiterungsausstattung | prüfen Sie die Variante gegen das, was Exponential braucht |
 
 Die Images von Velocity sind nach Release, PHP-Version und Variante getaggt
-([Velocity-Pakete, Docker-Images und Binärdateien](../../../../eng-us/features/6.0/velocity-packages-and-binaries.md#docker)):
+([Velocity-Pakete, Docker-Images und Binärdateien](../../../funktionen/6.0/velocity-pakete-und-binaerdateien.md#docker)):
 
 ```text
 ghcr.io/se7enxweb/exponential-velocity:<release>-php<version>-<variant>   fixed
@@ -167,7 +167,7 @@ Was das Kapitel dazu erklärt:
 
 - [Kubernetes](kubernetes.md), [Platform as a Service](platform-as-a-service.md)
 - [exp:install](../bereitstellung/exp-install-fuer-hoster.md), [Bereitstellung automatisieren](../bereitstellung/bereitstellung-automatisieren.md)
-- [Mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md)
+- [Mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

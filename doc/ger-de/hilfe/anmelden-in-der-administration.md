@@ -88,7 +88,7 @@ Die rechte Spalte enthält den Kasten **Oberfläche**:
 - **Administrationsdesign**: für Rollen mit der entsprechenden Berechtigung das Design, in dem Sie arbeiten, zum
   Beispiel **Admin 4 (layouts)** (`admin4l`), **Admin 4** (`admin4`), **AdminUI**, **Admin 3** oder **Classic**
   (`admin`). Die Wahl gilt nur für Sie und für die Dauer der Sitzung. Siehe
-  [Das Design der Administration wählen](../../eng-us/features/6.0/ui-switch-design.md).
+  [Das Design der Administration wählen](../funktionen/6.0/ui-umschalter-design.md).
 
 ## Fehlgeschlagene Anmeldungen und Sperre
 

@@ -66,9 +66,9 @@ NEXT MONTH
 | Abgleich | Das Konto beim Anbieter, die nach Status sortierte Bestellliste | [Zahlungsanbieter](zahlungsanbieter.md), [Retouren und Erstattungen](retouren-und-erstattungen.md) |
 | Versand | Die Rechnungen des Versanddienstleisters | [Versand und Abwicklung](versand-und-abwicklung.md) |
 | Währungen | **Shop > Währungen** | [Preise und Währungen](preise-und-waehrungen.md) |
-| Ungenutzte Dateien | Inhaltsprüfungen | [Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md) |
+| Ungenutzte Dateien | Inhaltsprüfungen | [Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md) |
 | Datenschutzanfragen | Ihr Anfragenprotokoll | [DSGVO-Anfragen](dsgvo-anfragen.md), [Vorlage für ein DSGVO-Anfragenprotokoll](vorlage-dsgvo-anfragenprotokoll.md) |
-| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
+| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 | Backups, Cronjobs, Updates | Der Hoster | [Cronjobs](../../../anleitungen/cronjobs.md), [Upgrade](../../../anleitungen/aktualisieren.md) |
 
 ## Fragen an den Hoster, jeden Monat
@@ -79,7 +79,7 @@ NEXT MONTH
   ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - Ist ein neues Release von Exponential 6.0.x mit Sicherheitskorrekturen erschienen? Korrekturen werden mit dem
   nächsten Release 6.0.x veröffentlicht (`SECURITY.md`).
-- Gibt es etwas in den Logs, das wir wissen sollten ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md))?
+- Gibt es etwas in den Logs, das wir wissen sollten ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md))?
 
 ## Verwandte Seiten
 

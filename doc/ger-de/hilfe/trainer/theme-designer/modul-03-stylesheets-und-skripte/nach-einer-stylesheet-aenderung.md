@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Stylesheets und Skripte für Ihre Website, nach einer Änderung](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md#after-a-change)
+Quellen: [Stylesheets und Skripte für Ihre Website, nach einer Änderung](../../../ersteller/website-ersteller/stylesheets-und-skripte.md#nach-einer-änderung)
 und [Die Administration gestalten, nach einer Änderung am Stylesheet](../../../../bc/6.0/admin4-gestaltung.md#nach-einer-änderung-an-einem-stylesheet).
 
 1. **Drei Gedächtnisse** (4 Minuten). Zeichnen Sie sie an die Tafel:
@@ -134,7 +134,7 @@ Auf Ihrer Schulungsinstallation, Packer eingeschaltet.
 <summary>Antworten</summary>
 
 1. `ezjscore-packer`, den Template-Cache und `template-block`
-   ([Stylesheets und Skripte für Ihre Website](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md#after-a-change)).
+   ([Stylesheets und Skripte für Ihre Website](../../../ersteller/website-ersteller/stylesheets-und-skripte.md#nach-einer-änderung)).
 2. Ein Cache-Block im Pagelayout verlinkt noch den alten Namen der gepackten Datei, die es nicht mehr gibt.
 3. **C.** Versionsparameter werden nicht verwendet; der Änderungszeitpunkt im Namen ändert ihn bereits.
 4. `php bin/php/console exp:velocity deploy --packer`.
@@ -144,10 +144,10 @@ Auf Ihrer Schulungsinstallation, Packer eingeschaltet.
 
 ## Weiterführende Literatur
 
-- [Stylesheets und Skripte für Ihre Website](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md): die
+- [Stylesheets und Skripte für Ihre Website](../../../ersteller/website-ersteller/stylesheets-und-skripte.md): die
   Checkliste.
 - [Caches](../../../../anleitungen/caches.md): jeder Cache und seine ID.
-- [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md): der zusätzliche Cache auf
+- [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md): der zusätzliche Cache auf
   Velocity-Servern.
 
 ## Verwandte Seiten

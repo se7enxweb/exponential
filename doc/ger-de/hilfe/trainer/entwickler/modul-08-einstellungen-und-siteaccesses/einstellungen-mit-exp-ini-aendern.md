@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md) und die
+Quellen: [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md) und die
 vollständige Referenz [Konsole exp:ini](../../../../bc/6.0/console-exp-ini.md).
 
 1. **Fünf Befehle für den Alltag** (4 Minuten). `set`, `get`, `toggle`, `where`, `rem`. Eine Einstellung wird als
@@ -144,9 +144,9 @@ Auf der Entwicklungsinstallation.
 
 ## Weiterführende Literatur
 
-- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md).
+- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md).
 - [Konsole exp:ini](../../../../bc/6.0/console-exp-ini.md): jede Aktion, Option und jeder Exit-Code, mit Ausgabe.
-- [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md): wo Schreibvorgänge in Einstellungen festgehalten werden.
+- [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md): wo Schreibvorgänge in Einstellungen festgehalten werden.
 
 ## Verwandte Seiten
 

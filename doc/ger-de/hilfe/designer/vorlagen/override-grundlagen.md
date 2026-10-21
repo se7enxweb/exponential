@@ -73,7 +73,7 @@ allgemeinen (eine Klasse), damit sie zuerst geprüft werden. Siehe [Override-Rei
 
 **Design > Template-Editor** (`/visual/templatelist`) listet die Templates eines Siteaccess mit ihren Overrides, legt neue an
 (mit `Priority=0` geschrieben), ordnet sie per Drag-and-drop und bearbeitet die Dateien
-([Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../../eng-us/features/6.0/template-editor-overrides.md)). Bei einem
+([Template-Editor: Overrides anlegen, ordnen und bearbeiten](../../../funktionen/6.0/template-editor-ueberschreibungen.md)). Bei einem
 Theme in einer Erweiterung halten Sie die Regeln in den Dateien der Erweiterung, unter Versionsverwaltung.
 
 ## Caches

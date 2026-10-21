@@ -127,7 +127,7 @@ Installer des Seitenpakets seine Dateien nutzen kann, und es allein zu installie
 - [Grundlagen der Seitenpakete](README.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Was ein Seiteninstallationspaket ist](was-ein-seiteninstallationspaket-ist.md)
-- [Seitenstil-Paket](../../../../eng-us/help/designers/extensions/site-style-package.md): der Typ `sitestyle` aus der Sicht eines Designers
+- [Seitenstil-Paket](../../designer/erweiterungen/das-site-style-paket.md): der Typ `sitestyle` aus der Sicht eines Designers
 - [Berechtigungen für Pakete](../admin-oberflaeche/berechtigungen-fuer-pakete.md)
 - [Anleitung zu Paketen, 10. Berechtigungen](../../../anleitungen/pakete.md#10-berechtigungen)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)

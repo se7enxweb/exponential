@@ -11,7 +11,7 @@ type: help
 
 Diese Seite beantwortet die Leistungsfragen öffentlicher Stellen zu Exponential. Sie nennt keine eigenen Zahlen zur
 Geschwindigkeit: Messen Sie Ihre eigene Website. Die Antworten stammen aus
-[Der Webserver Velocity](../../../../eng-us/features/6.0/velocity-web-server.md), [Caches](../../../anleitungen/caches.md) und
+[Der Webserver Velocity](../../../funktionen/6.0/velocity-webserver.md), [Caches](../../../anleitungen/caches.md) und
 [Benchmarking](../../../anleitungen/benchmarking.md).
 
 ## Inhalt
@@ -36,13 +36,13 @@ gemessen werden, ist für die Presse unter
 Ein in PHP geschriebener Webserver, der Exponential aus einem Pool langlebiger PHP-Prozesse ausführt. Er spricht
 HTTP/1.1, HTTP/2 über TLS und WebSockets, liefert statische Dateien aus und speichert Seiten in seinem eigenen Prozess
 zwischen; er braucht kein Apache, nginx oder PHP-FPM davor, funktioniert aber auch dahinter
-([Der Webserver Velocity](../../../../eng-us/features/6.0/velocity-web-server.md)).
+([Der Webserver Velocity](../../../funktionen/6.0/velocity-webserver.md)).
 
 ## Müssen wir Velocity verwenden?
 
 Nein. Apache oder nginx mit PHP-FPM und FrankenPHP werden ebenfalls unterstützt
 ([8. Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)). Das Projekt empfiehlt Velocity
-([das Glossar von Exponential](../../../../eng-us/glossary.md#v)). Velocity läuft unter PHP 8.0 oder später (ab seinem Release
+([das Glossar von Exponential](../../../glossar.md#v)). Velocity läuft unter PHP 8.0 oder später (ab seinem Release
 0.0.4.54; bis dahin 8.1).
 
 ## Wie funktioniert das Caching?
@@ -72,7 +72,7 @@ Mit `exp:benchmark`: Seiten über HTTP, Vergleiche zwischen Engines und Schutz v
 ## Verwandte Seiten
 
 - [FAQ für Verwaltungen](README.md)
-- [Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching](../../ersteller/website-ersteller/leistung-und-caching.md)
 - [Velocity für Hoster](../../hosting/server/velocity-fuer-hoster.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

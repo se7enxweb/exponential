@@ -26,7 +26,7 @@ Sie ist Teil der Standarddistribution.
 ## Was es ist, aus Sicht des Betreibers
 
 Ein Dienst wird über seinen Namen aufgerufen, `exp<domain>::<method>`, unter `/ezjscore/call/`
-([Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md)). Die Dienste umfassen:
+([Remote-Dienste](../../../funktionen/6.0/entfernte-dienste-expservices.md)). Die Dienste umfassen:
 
 | Gruppe | Beispiele |
 |---|---|
@@ -37,12 +37,12 @@ Ein Dienst wird über seinen Namen aufgerufen, `exp<domain>::<method>`, unter `/
 | Medien und Sonstiges | Bilder, Dateien, Tags, Layouts, Prüfprotokoll (nur lesen), Newsletter, Sitemaps, Statistik |
 
 Beispiel-Frontends für Portale, die auf den Diensten aufbauen, werden mit der Erweiterung ausgeliefert
-([Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md)). Um Inhalte in eine separate App zu lesen, ist
+([Remote-Dienste](../../../funktionen/6.0/entfernte-dienste-expservices.md)). Um Inhalte in eine separate App zu lesen, ist
 die REST-API möglicherweise die einfachere Wahl ([Die REST-API für Betreiber](rest-api-fuer-betreiber.md)).
 
 ## Was es sicher hält
 
-Aus [Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md):
+Aus [Remote-Dienste](../../../funktionen/6.0/entfernte-dienste-expservices.md):
 
 - Jeder Dienst ist `public`, braucht einen angemeldeten Benutzer oder braucht eine Richtlinie; ohne Anmeldung antwortet
   er mit 401, ohne die Richtlinie mit 403. Ein Skript kann nie mehr als das Konto, das es verwendet.
@@ -57,7 +57,7 @@ Ein angemeldeter Benutzer kann ein persönliches Token für ein Skript erzeugen:
 wird nur sein Hash, es gilt 1 bis 365 Tage (standardmäßig 90), und Anfragen damit laufen mit denselben Richtlinien wie
 der Benutzer. Abgelaufene, widerrufene Tokens oder Tokens deaktivierter Benutzer antworten mit 401, und ein Token kann
 keine Tokens erzeugen. Erzeugen, Widerrufen und fehlgeschlagene Nutzung gehen ins Prüfprotokoll
-([Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md)).
+([Remote-Dienste](../../../funktionen/6.0/entfernte-dienste-expservices.md)).
 
 > **Tipp**
 > Wie bei API-Schlüsseln: Geben Sie jedem Skript ein **eigenes Konto** mit einer eng gefassten Rolle und ein Token mit
@@ -80,7 +80,7 @@ Kopieren Sie die Tabelle in den Plan der Integration ([Eine Integration planen](
 ## Es abschalten
 
 Der Schalter für die ganze Installation ist `[Services] Enabled` in `extension/expservices/settings/expservices.ini`;
-steht er auf `disabled`, antwortet jeder Dienst mit 403 ([Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md)).
+steht er auf `disabled`, antwortet jeder Dienst mit 403 ([Remote-Dienste](../../../funktionen/6.0/entfernte-dienste-expservices.md)).
 Ihr Administrator kann auch ein einzelnes Token widerrufen oder das Konto deaktivieren, das ein Skript verwendet
 ([Ausscheiden von Mitarbeitenden](../alltag/ausscheiden-von-mitarbeitenden.md)). Wissen Sie, welche dieser Möglichkeiten Sie
 nutzen würden, bevor Sie sie brauchen.

@@ -13,7 +13,7 @@ type: help
 Diese Seite ist für Designer, deren Templates unter einer Content Security Policy (CSP) funktionieren müssen. Eine strenge Richtlinie
 verhindert, dass ein eingeschleustes Skript läuft, selbst wo ein Template vergisst, einen Wert zu maskieren. Die Administration
 sendet eine; öffentliche Websites können eine einschalten. Die Einstellungen sind in
-[Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) beschrieben.
+[Content Security Policy](../../../funktionen/6.0/content-security-policy.md) beschrieben.
 
 ## Inhalt
 

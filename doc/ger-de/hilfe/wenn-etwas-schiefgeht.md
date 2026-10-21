@@ -100,7 +100,7 @@ Finden Sie ein Sicherheitsproblem, etwa eine Möglichkeit, etwas zu sehen oder z
 Repository. Nennen Sie die Version, die Sie betreiben, was ein Angreifer tun könnte und wie es sich nachstellen
 lässt. Die vollständige Richtlinie steht in der Datei `SECURITY.md` im Hauptverzeichnis der Installation.
 
-**„Diese Installation ist eine öffentliche Demo“.** Diese Meldung oder ein Hinweisbalken **Demo-Modus** bedeutet, dass die Site absichtlich im Demo-Modus läuft: Administratorpasswörter lassen sich dort weder ändern noch zurücksetzen. Erscheint sie auf einer echten Site, informieren Sie sofort die Betreiber des Servers. [Demo-Modus: häufige Fragen](demomodus-faq.md), [Probleme mit dem Demo-Modus](../../eng-us/help/hosting/runbooks/demo-mode-problems.md).
+**„Diese Installation ist eine öffentliche Demo“.** Diese Meldung oder ein Hinweisbalken **Demo-Modus** bedeutet, dass die Site absichtlich im Demo-Modus läuft: Administratorpasswörter lassen sich dort weder ändern noch zurücksetzen. Erscheint sie auf einer echten Site, informieren Sie sofort die Betreiber des Servers. [Demo-Modus: häufige Fragen](demomodus-faq.md), [Probleme mit dem Demo-Modus](hosting/runbooks/probleme-mit-dem-demomodus.md).
 
 ## Um Hilfe bitten
 

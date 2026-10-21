@@ -55,7 +55,7 @@ in der [Übersicht zur Beschaffung](../README.md) aufgeführt.
 
 - **Nur dokumentierte Fakten.** Der Status des Produkts gegenüber jedem Standard stammt aus `doc/eng-us/standards/`,
   deren Statusangaben unter
-  [Standards: wie der Status zu lesen ist](../../../../../eng-us/standards/README.md#how-to-read-the-status) erklärt sind.
+  [Standards: wie der Status zu lesen ist](../../../../standards/README.md#wie-sie-den-status-lesen) erklärt sind.
 - **Keine erfundenen Referenzen, Kunden oder Zahlen.** Wo ein Gewicht oder eine Punktzahl nötig ist, lässt die Vorlage
   ein Feld frei.
 - **Software und Leistung werden getrennt bewertet.** Die freie Software hat keine Lizenzgebühr; die Arbeit, das Hosting
@@ -67,9 +67,9 @@ Die Einstiegsseite für Lesende aus dem öffentlichen Sektor ist
 
 ## Verwandte Seiten
 - [Beschaffung: Übersicht](../README.md)
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)
-- [Sicherheitsstandards](../../../../../eng-us/standards/security.md)
-- [Datenschutzstandards](../../../../../eng-us/standards/privacy.md)
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)
+- [Sicherheitsstandards](../../../../standards/sicherheit.md)
+- [Datenschutzstandards](../../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

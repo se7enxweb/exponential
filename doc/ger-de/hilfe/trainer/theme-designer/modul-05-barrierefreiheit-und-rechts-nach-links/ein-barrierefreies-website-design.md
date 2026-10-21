@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Barrierefreiheit für Website-Bauer, was die Template-Autorin oder der Template-Autor bestimmt](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#what-the-template-author-controls).
+Quelle: [Barrierefreiheit für Website-Bauer, was die Template-Autorin oder der Template-Autor bestimmt](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#was-der-template-autor-steuert).
 
 1. **Die Liste** (6 Minuten). Gehen Sie die Tabelle durch: Sprache (`<html lang="...">` aus
    `$site.http_equiv.Content-language`), Landmarks (`header`, `nav` mit `aria-label`, wenn es mehrere gibt, `main`,
@@ -132,7 +132,7 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 <summary>Antworten</summary>
 
 1. `$site.http_equiv.Content-language`
-   ([Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#what-the-template-author-controls)).
+   ([Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#was-der-template-autor-steuert)).
 2. Einen Namen mit `aria-label`, damit Screenreader-Nutzer sie unterscheiden können.
 3. **B.**
 4. Es entfernt den sichtbaren Fokus, sodass Tastaturnutzer nicht sehen, wo sie sich befinden; entfernen Sie ihn nie
@@ -143,11 +143,11 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 
 ## Weiterführende Literatur
 
-- [Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md): die
+- [Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md): die
   vollständige Liste, Formulare und die Checkliste.
-- [Menüs und Navigation](../../../../../eng-us/help/creators/website-creators/menus-and-navigation.md): Menüs, die die aktuelle Seite
+- [Menüs und Navigation](../../../ersteller/website-ersteller/menues-und-navigation.md): Menüs, die die aktuelle Seite
   kennzeichnen.
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): wie die Administration es macht.
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md): wie die Administration es macht.
 
 ## Verwandte Seiten
 

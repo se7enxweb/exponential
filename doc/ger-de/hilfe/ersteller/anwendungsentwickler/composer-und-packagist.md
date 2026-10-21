@@ -67,7 +67,7 @@ Aktivieren Sie die Erweiterung anschließend ([3.5 Erweiterungen sind Composer-P
 ## Verwandte Seiten
 
 - [Ihre Anwendung als Erweiterung paketieren](als-erweiterung-paketieren.md)
-- [Standard für PHP und Composer](../../../../eng-us/standards/php-and-composer.md)
+- [Standard für PHP und Composer](../../../standards/php-und-composer.md)
 - [Den Code beschaffen](../../../installation/03-den-code-beschaffen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

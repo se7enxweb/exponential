@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Designer, die auf dem Design ezwebin („Exponential Website Interface LS“, Erweiterung `ezwebin`) aufbauen,
 entweder direkt oder über das Design simple, das dieselben Klassen verwendet. Sie beantwortet: wie der Rahmen von ezwebin in Teile
 geschnitten ist, wie ein View-Template den Rahmen mit `ezpagedata_set` ändern kann und wie Sie Teile in Ihrem Design überschreiben.
-Die eigene Seite der Erweiterung ist [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md).
+Die eigene Seite der Erweiterung ist [ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md).
 
 ## Inhalt
 

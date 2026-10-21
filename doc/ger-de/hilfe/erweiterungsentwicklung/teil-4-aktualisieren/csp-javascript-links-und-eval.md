@@ -125,7 +125,7 @@ ohne den Callback und fügen Sie den Host stattdessen zu `connect-src` hinzu.
 Manches lässt sich nicht in Ihre eigenen Dateien verschieben, zum Beispiel das Skript eines Kartendienstes. Fügen Sie
 dafür den genauen Host zur Policy der Siteaccesses hinzu, die ihn brauchen, und zwar in den Einstellungen, nicht indem
 Sie die Policy für alle lockern. Wie die Einstellungen funktionieren, einschließlich zusätzlicher Quellen pro
-Direktive, steht in [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md).
+Direktive, steht in [Content Security Policy](../../../funktionen/6.0/content-security-policy.md).
 
 ## Verwandte Seiten
 

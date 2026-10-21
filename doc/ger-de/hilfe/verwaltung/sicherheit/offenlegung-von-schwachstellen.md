@@ -14,7 +14,7 @@ Projektverantwortliche. Für eine öffentliche Website zählen zwei Meldewege: d
 Exponential selbst und Ihr eigener für Schwachstellen in Ihrer Website. Das Projekt bewertet seine koordinierte
 Offenlegung mit **Teilweise erfüllt**: `SECURITY.md` mit einem vertraulichen Kanal existiert, eine `security.txt` wird
 nicht mitgeliefert
-([Sicherheitsstandards: Offenlegung von Schwachstellen](../../../../eng-us/standards/security.md#vulnerability-disclosure)).
+([Sicherheitsstandards: Offenlegung von Schwachstellen](../../../standards/sicherheit.md#offenlegung-von-schwachstellen)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

@@ -35,8 +35,8 @@ mit ezfind“ nur, wenn die eingebaute Suchmaschine nicht genügt. Mehrsprachige
 
 ## Verwandte Seiten
 
-- [Site-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md)
-- [Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)
+- [Site-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md)
+- [Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

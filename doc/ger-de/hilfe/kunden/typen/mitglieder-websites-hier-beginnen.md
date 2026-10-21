@@ -22,13 +22,13 @@ und die Ehrenamtlichen, die helfen. Die Planung einer Mitglieder-Website behande
 
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
-| Menschen registrieren sich selbst | Registrierung von Benutzern, wo gewünscht mit einem Genehmigungsschritt | [Registrierung von Mitgliedern und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
-| Sie erfahren von neuen Registrierungen | Die E-Mail „New user registered“ mit signierten Links zum Ansehen, Genehmigen oder Ablehnen des Kontos (6.0.15) | [Administratorlinks bei Registrierungen](../../../../eng-us/features/6.0/registration-admin-links.md) |
+| Menschen registrieren sich selbst | Registrierung von Benutzern, wo gewünscht mit einem Genehmigungsschritt | [Registrierung von Mitgliedern und Mitgliederbereiche](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md) |
+| Sie erfahren von neuen Registrierungen | Die E-Mail „New user registered“ mit signierten Links zum Ansehen, Genehmigen oder Ablehnen des Kontos (6.0.15) | [Administratorlinks bei Registrierungen](../../../funktionen/6.0/admin-links-der-registrierung.md) |
 | Inhalte nur für Mitglieder | Sektionen und Rollen: Anonyme Besucher sehen einen Teil, Mitglieder einen anderen | [Inhalte nur für Mitglieder](../../unternehmen/mitglieder/inhalte-nur-fuer-mitglieder.md), [Sektionen](../../../anleitungen/sektionen.md) |
-| Mitglieder wählen ihre E-Mails | E-Mail-Einstellungen: eine Seite pro Person, um E-Mails zu wählen und zu beenden und ihre Daten herunterzuladen | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
+| Mitglieder wählen ihre E-Mails | E-Mail-Einstellungen: eine Seite pro Person, um E-Mails zu wählen und zu beenden und ihre Daten herunterzuladen | [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md) |
 | Newsletter an Mitglieder | Die Erweiterung CJW Newsletter | [Newsletter](../wachstum/newsletter.md) |
 | Veranstaltungen, Foren | Klassen für Veranstaltungskalender und Foren in der Demo-Installation | [Veranstaltungen und Kalender](../../unternehmen/mitglieder/veranstaltungen-und-kalender.md) |
-| Alte und doppelte Konten finden | **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
+| Alte und doppelte Konten finden | **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 
 Die Demo-Installation unter <https://alpha.se7enx.com> hat die Klassen Event calendar, Event, Forums, Forum, Forum topic
 und Forum reply; ob Ihre Website sie verwendet, hängt davon ab, wie sie gebaut wurde.

@@ -13,7 +13,7 @@ Dieser Teil des Abschnitts zur Beschaffung richtet sich an Projektleitungen, Ver
 Sicherheitsbeauftragte einer öffentlichen Stelle, die eine Exponential-Website über einen Vertrag von mehreren Jahren
 planen müssen. Er erklärt, was eine Versionsnummer verspricht, welche Versionen Korrekturen erhalten, wie die Plattform
 unter der Software altert und wie Sie Budget und Vertrag so gestalten, dass die Website aktuell bleibt. Die wichtigsten
-Quellen sind [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md),
+Quellen sind [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md),
 [`SECURITY.md`](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) und [Aktualisieren](../../../../anleitungen/aktualisieren.md).
 
 ## Die Seiten

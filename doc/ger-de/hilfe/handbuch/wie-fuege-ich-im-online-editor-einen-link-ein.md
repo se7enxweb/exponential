@@ -38,7 +38,7 @@ Redakteure, die das Objekt bearbeiten dürfen.
 ## Verwandte Seiten
 
 - [Inhalte bearbeiten](../inhalte-bearbeiten.md)
-- [Link- und Inhaltsprüfungen](../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Link- und Inhaltsprüfungen](../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

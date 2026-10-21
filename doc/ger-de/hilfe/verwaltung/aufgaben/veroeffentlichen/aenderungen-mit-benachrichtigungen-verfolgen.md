@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, die wissen möchten, wann Kollegen in einem Bereich veröffentlichen (Freigebende,
 Teamleitungen), und für Kontoinhaber der öffentlichen Site, die Nachrichten oder Bekanntmachungen folgen. Exponential
 schickt Ihnen eine E-Mail, wenn unter einem Element, dem Sie folgen, etwas veröffentlicht wird
-([Benachrichtigungen: das Handbuch für Benutzer](../../../../../eng-us/features/6.0/notifications.md)).
+([Benachrichtigungen: das Handbuch für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md)).
 
 ## Inhalt
 

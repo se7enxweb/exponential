@@ -63,8 +63,8 @@ Manche Ergebnisse zeigen sich im System selbst. Das sind Indikatoren, die Sie be
 |---|---|
 | Unfertig liegengebliebene Entwürfe | Dashboard > Meine Entwürfe je Redaktionsmitglied ([Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)) |
 | Elemente, die lange auf eine Freigabe warten | Meine Warteliste und die Workflow-Prozesse ([Workflows](../../../../anleitungen/workflows.md)) |
-| Defekte Links und Beziehungen | Setup > URL-Verwaltung und Ungültige Relationen ([Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md)) |
-| Bilder ohne Alternativtext | eine Prüfung der veröffentlichten Inhalte; nichts in der Software zwingt die Redaktion, das Feld auszufüllen ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#known-gaps)) |
+| Defekte Links und Beziehungen | Setup > URL-Verwaltung und Ungültige Relationen ([Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md)) |
+| Bilder ohne Alternativtext | eine Prüfung der veröffentlichten Inhalte; nichts in der Software zwingt die Redaktion, das Feld auszufüllen ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#bekannte-lücken)) |
 | Wiederholte Fragen an den Servicedesk | Ihr Ticketsystem |
 
 ## Ergebnisse in einem Vertrag

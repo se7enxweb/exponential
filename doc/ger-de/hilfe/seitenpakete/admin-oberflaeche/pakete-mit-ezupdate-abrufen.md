@@ -104,7 +104,7 @@ Aus `extension/ezupdate/classes/ezupdatepackageservers.php`:
 - [Paketserver in ezupdate](paketserver-in-ezupdate.md)
 - [Ein Paket importieren](ein-paket-importieren.md)
 - [Ein Paket von Hand herunterladen](../paketserver/ein-paket-von-hand-herunterladen.md)
-- [ezupdate: Updates und Pakete in der Administration](../../../../eng-us/features/6.0/extensions/ezupdate.md)
+- [ezupdate: Updates und Pakete in der Administration](../../../funktionen/6.0/erweiterungen/ezupdate.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -99,7 +99,7 @@ gezeichnet werden, gehören zum Cache dieser Seite. Die Regeln für das Leeren d
 
 - Zurück: [Override-Bedingungen: Klasse, Knoten, Sektion, View-Modus und mehr](override-bedingungen.md)
 - Weiter: [Inhalte in Templates abrufen](fetch-fuer-builder.md)
-- [Versionsvorschau in anderen View-Modi](../../../../eng-us/features/6.0/version-preview-view-modes.md)
+- [Versionsvorschau in anderen View-Modi](../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

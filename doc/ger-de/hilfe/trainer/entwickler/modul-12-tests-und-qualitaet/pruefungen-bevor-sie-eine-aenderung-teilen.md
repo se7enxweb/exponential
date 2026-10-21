@@ -40,8 +40,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-checks.md) und
-[Tests und Continuous Integration](../../../../../eng-us/standards/testing-and-ci.md).
+Quellen: [Qualitätsprüfungen](../../../../funktionen/6.0/qualitaetspruefungen.md) und
+[Tests und Continuous Integration](../../../../standards/tests-und-ci.md).
 
 1. **Was CI prüft** (4 Minuten). Der Quality-Workflow: PHP-Syntax geänderter Dateien, JavaScript-Syntax, das
    Dateimanifest, Commit-Nachrichten, PHPStan (blockierend), Codestil (Warnung). Der PHPUnit-Workflow: die Suites
@@ -55,7 +55,7 @@ Quellen: [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-check
    führt für vorgemerkte Dateien `php -l`, die Manifest- und die Codestil-Prüfung aus; commit-msg prüft den Betreff;
    pre-push führt PHPStan aus, wenn die Werkzeuge installiert sind. `make devtools` installiert PHP_CodeSniffer und
    PHPStan nach `.devtools/`.
-5. **Tests einer Änderung** (3 Minuten). Die Befehle in [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-checks.md)
+5. **Tests einer Änderung** (3 Minuten). Die Befehle in [Qualitätsprüfungen](../../../../funktionen/6.0/qualitaetspruefungen.md)
    wählen die Testdateien aus, die die geänderten Dateien abdecken, und führen jede in einem eigenen Prozess aus.
 
 ### Häufige Fragen
@@ -125,9 +125,9 @@ Im Kernel-Klon Ihrer Entwicklungsinstallation, auf Ihrem Zweig `my-dev`.
 
 ## Weiterführende Literatur
 
-- [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-checks.md).
-- [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md): wofür das Manifest da ist.
-- [Versionsverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md).
+- [Qualitätsprüfungen](../../../../funktionen/6.0/qualitaetspruefungen.md).
+- [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md): wofür das Manifest da ist.
+- [Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md).
 
 ## Verwandte Seiten
 

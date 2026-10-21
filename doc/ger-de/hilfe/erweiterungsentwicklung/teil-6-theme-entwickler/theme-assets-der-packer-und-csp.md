@@ -106,7 +106,7 @@ Website. Sie verweigert:
 | Skripte, Styles und Schriften von anderen Hosts | lokale Dateien oder der Host, in die Richtlinie für diesen Siteaccess aufgenommen |
 
 Die öffentlichen Siteaccesses des Kernels haben die Richtlinie standardmäßig ausgeschaltet; Administratoren können sie
-einschalten ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Ein Theme, das bereits darunter
+einschalten ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)). Ein Theme, das bereits darunter
 funktioniert, ist ein Hindernis weniger. Die Umstellungen werden in Teil 4 erklärt:
 [Inline-Skripte](../teil-4-aktualisieren/csp-inline-skripte-auslagern.md),
 [Ereignisattribute](../teil-4-aktualisieren/csp-event-handler-zu-data-attributen.md),
@@ -121,7 +121,7 @@ Skript im `<head>` geladen wird, kein Inline-Skript.
 - Zurück: [Themes und Siteaccesses](themes-und-siteaccesses.md)
 - Weiter: [Dunkler Modus und Design-Tokens in Themes](dunkler-modus-und-tokens-in-themes.md)
 - [CSS und JavaScript in einer Erweiterung](../teil-3-erweiterungsentwickler/css-und-javascript-in-einer-erweiterung.md)
-- [ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md)
+- [ezjscore](../../../funktionen/6.0/erweiterungen/ezjscore.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

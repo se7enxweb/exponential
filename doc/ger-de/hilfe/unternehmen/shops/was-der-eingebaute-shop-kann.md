@@ -30,7 +30,7 @@ Der Shop ist Teil von Exponential selbst, kein Zusatz: Das README nennt „Advan
 definiert. Produkte sind Inhalte wie jede andere Seite, mit einem Preisfeld. Kunden füllen einen Warenkorb, gehen zur
 Kasse, bestätigen, bezahlen über einen Zahlungsanbieter und erhalten eine Bestätigungsmail. Die Mitarbeiter verwalten
 Bestellungen, Kunden, USt, Währungen und Rabatte im Tab **Shop** der Administration, der mit einem Dashboard öffnet
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Die Teile des Shops
 
@@ -59,7 +59,7 @@ Bestellungen, Kunden, USt, Währungen und Rabatte im Tab **Shop** der Administra
 6. Die aufgegebene Bestellung, eine Bestätigungsmail und, wenn Sie es einschalten, einen Beleg-Link, der nie abläuft.
 
 Die mitgelieferten Designs enthalten diese Seiten: Die Themes ezwebin und simple bringen die Shop-Templates mit
-([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)), und das Design standard hat den
+([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)), und das Design standard hat den
 vollständigen Satz der `shop/`-Templates in `design/standard/templates/shop/`.
 
 ## Was Ihre Mitarbeiter verwenden
@@ -67,7 +67,7 @@ vollständigen Satz der `shop/`-Templates in `design/standard/templates/shop/`.
 - **Shop-Dashboard**: Bestellungen heute, in 7 und 30 Tagen, Umsatz pro Währung, offene Bestellungen, abgebrochene
   Warenkörbe, meistverkaufte Produkte und Vorschläge unter „Nächste Schritte“, die aus Ihren Daten und Einstellungen
   abgeleitet sind.
-- **Bestellliste**: nach jeder Spalte sortierbar ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)).
+- **Bestellliste**: nach jeder Spalte sortierbar ([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)).
 - **Bestellansicht** mit Statusänderungen und Statusverlauf (`eZOrderStatusHistory`, `kernel/classes/ezorderstatushistory.php`).
 - **Archiv** für abgeschlossene Bestellungen, **Kundenliste**, **Statistik** pro Jahr und Monat.
 - **USt-Typen und -Regeln**, **Währungen**, **Produktkategorien**, **Rabattgruppen**.
@@ -75,7 +75,7 @@ vollständigen Satz der `shop/`-Templates in `design/standard/templates/shop/`.
 
 Jede Aktion braucht eine Richtlinie, Sie entscheiden also, wer was sieht ([Shop-Planung für kleine Unternehmen](shop-planung-fuer-kleine-unternehmen.md#personen-und-rollen)).
 Das Prüfprotokoll zeichnet Handelsereignisse auf: Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte
-([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Erweiterungen, die ihn ergänzen
 
@@ -83,16 +83,16 @@ Das Prüfprotokoll zeichnet Handelsereignisse auf: Bestellungen, Zahlungen (nie 
 |---|---|---|
 | `ezpaypal` | Zahlungen mit PayPal | vom `composer.json` des Hauptverzeichnisses verlangt (`se7enxweb/ezpaypal`) |
 | `ezauthorize` | Kartenzahlungen über Authorize.Net | im `composer.json` vorgeschlagen |
-| `ezstarrating` | Sternebewertungen, auch für Produkte | [ezstarrating](../../../../eng-us/features/6.0/extensions/ezstarrating.md) |
+| `ezstarrating` | Sternebewertungen, auch für Produkte | [ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md) |
 | `ezfind` | Solr-Suche mit Facetten | im `composer.json` vorgeschlagen |
-| `cjw_newsletter` | Newsletter an Kunden | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
-| `xrowmetadata` | Seitenmetadaten und Sitemaps | [xrowmetadata](../../../../eng-us/features/6.0/extensions/xrowmetadata.md) |
+| `cjw_newsletter` | Newsletter an Kunden | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
+| `xrowmetadata` | Seitenmetadaten und Sitemaps | [xrowmetadata](../../../funktionen/6.0/erweiterungen/xrowmetadata.md) |
 
 ## Was nicht enthalten ist
 
 Ehrlichkeit spart Geld. Der technische Überblick nennt diese Punkte als Dinge, die als Erweiterungen oder
 Integrationen zu planen sind: **Lagerverwaltung, Rechnungen in einem Buchhaltungssystem, Versandetiketten und
-Marktplätze** ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)). Im Code des
+Marktplätze** ([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)). Im Code des
 Kernels haben wir außerdem festgestellt:
 
 - keine Gutschein- oder Aktionscodes: Rabatte sind an Kundengruppen gebunden, nicht an Codes, die an der Kasse
@@ -104,7 +104,7 @@ Kernels haben wir außerdem festgestellt:
   ([Versand und Bearbeitung](versand-und-bearbeitung.md)).
 
 Jeder dieser Punkte lässt sich mit einer Erweiterung, einem Workflow-Ereignis oder einem eigenen Handler ergänzen;
-das ist Arbeit für Anwendungsentwickler ([App-Entwickler: hier beginnen](../../../../eng-us/help/creators/app-creators/app-creators-start-here.md))
+das ist Arbeit für Anwendungsentwickler ([App-Entwickler: hier beginnen](../../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md))
 oder eine Aufgabe für einen Partner ([Einen Partner auswählen](../auswahl/einen-partner-auswaehlen.md)).
 
 ## Warum er zu kleinen Unternehmen passt
@@ -119,7 +119,7 @@ oder eine Aufgabe für einen Partner ([Einen Partner auswählen](../auswahl/eine
 
 ## Verwandte Seiten
 
-- [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)
+- [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)
 - [Wie Unternehmen mit Exponential online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Shop-FAQ](shop-faq.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

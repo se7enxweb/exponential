@@ -62,7 +62,7 @@ Was das Ereignis *Approve* eingrenzen kann
 
 Eine freigebende Person braucht nie eine Freigabe für ihre eigenen Inhalte. Freigebende erfahren per Mail von
 wartenden Elementen, wenn sie auf ihrer Benachrichtigungsseite die Einstellung zur Zusammenarbeit **Freigabe**
-markieren ([Benachrichtigungen: die Anleitung für Benutzer, Collaboration notification](../../../../eng-us/features/6.0/notifications.md#collaboration-notification)).
+markieren ([Benachrichtigungen: die Anleitung für Benutzer, Collaboration notification](../../../funktionen/6.0/benachrichtigungen.md#benachrichtigung-zur-zusammenarbeit)).
 
 **Setup > Workflow-Prozesse** (`/workflow/processlist`) listet jeden wartenden Prozess in Worten auf, mit einer
 Statusleiste, die sagt, ob der Workflow-Cronjob eingeplant ist und wann er als Nächstes läuft. **Abbrechen...** stoppt
@@ -122,7 +122,7 @@ aufgezeichneten Freigabeschritt; der Weg passt also eher zu Neustarts als zur t�
 ## Nachweis, wer was freigegeben hat
 
 Das Prüfprotokoll zeichnet Inhaltsänderungen, einschließlich Sektionen und Zuständen, in einem manipulationssicheren Log
-auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Zusammen mit der Versionsseite jedes Objekts
+auf ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Zusammen mit der Versionsseite jedes Objekts
 ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)) kann die Organisation zeigen, wer einen Text wann
 geändert hat.
 

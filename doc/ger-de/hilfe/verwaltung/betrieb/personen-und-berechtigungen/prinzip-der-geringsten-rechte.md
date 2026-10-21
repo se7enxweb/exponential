@@ -37,7 +37,7 @@ die sie unterstützt.
    zuordnen** zugewiesen; Personen treten Gruppen bei und verlassen sie, Rollen bleiben stabil.
 5. **Trennen Sie die Anmeldung.** `user/login` nimmt eine Einschränkung `SiteAccess` an: Beschäftigten, die nur bearbeiten, kann der
    Redaktions- oder öffentliche Siteaccess erlaubt und der Administrations-Siteaccess verwehrt werden
-   ([Redaktionen aus dem Administrations-Siteaccess heraushalten](../../../../../eng-us/help/government/tasks/people-and-permissions/keep-editors-out-of-the-admin-siteaccess.md)).
+   ([Redaktionen aus dem Administrations-Siteaccess heraushalten](../../aufgaben/personen-und-berechtigungen/redakteure-aus-dem-siteaccess-der-administration-heraushalten.md)).
 6. **Vergeben Sie Betriebsrechte einzeln.** Das Modul `setup` hat getrennte Funktionen: `logs` (Logs lesen), `managelogs`,
    `unmasklogs`, `managecache`, `managecronjobs`, `system_info`, `administrate`. Wer Caches leert, braucht `setup/managecache`,
    nicht das ganze Modul.
@@ -51,7 +51,7 @@ die sie unterstützt.
 | jede Richtlinie über alle Module | voller Zugriff, Kennzeichen *Voller Zugriff* | wenige namentlich benannte Administratorkonten |
 | das Modul `role` | lässt die Inhaberin oder den Inhaber Rollen ändern und sich damit mehr geben; Kennzeichen *Kann Rollen ändern* | nur Administratoren |
 | `setup/unmasklogs` | zeigt E-Mail- und IP-Adressen in Logs unmaskiert | die Personen, die Vorfälle untersuchen, wenn nötig |
-| `user/hygiene` | wer es hat, sieht Name, Anmeldenamen, Zustand, Gruppen und Rollen jedes Kontos | Kontenadministratoren, nicht Redaktionen ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md#who-may-use-it)) |
+| `user/hygiene` | wer es hat, sieht Name, Anmeldenamen, Zustand, Gruppen und Rollen jedes Kontos | Kontenadministratoren, nicht Redaktionen ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md#wer-sie-verwenden-darf)) |
 | `role/assign` | nötig, um unter Benutzerkonten prüfen E-Mail-Adressen zu sehen; das Modul `role` definiert in `kernel/role/module.php` keine getrennten Funktionen, in der Praxis bedeutet das also eine Richtlinie über das ganze Modul `role` | nur Administratoren; Kontenadministratoren ohne dieses Recht sehen Konten ohne Adressen |
 | `audit/manage` | Archive, Audit-Einstellungen, „Jetzt prüfen“ | die verantwortliche Person für das Audit |
 | `content/cleantrash` | leert den Papierkorb endgültig | Administratoren |
@@ -85,7 +85,7 @@ Eine Vorlage für die Regeln, die Sie übernehmen (tragen Sie Ihre eigenen Werte
 - [Rollen, Richtlinien und Einschränkungen](rollen-richtlinien-und-einschraenkungen.md)
 - [Funktionstrennung](funktionstrennung.md)
 - [Die Administration einschränken (Hosting)](../../../hosting/sicherheit/die-administration-einschraenken.md)
-- [Sicherheitsstandard](../../../../../eng-us/standards/security.md)
+- [Sicherheitsstandard](../../../../standards/sicherheit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

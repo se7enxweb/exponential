@@ -144,8 +144,8 @@ Installation. Nichts wird installiert oder entfernt.
 ## Weiterführende Literatur
 
 - [Pakete](../../../../anleitungen/pakete.md): jede Seite, die Prüfungen eines Uploads und die Fehlerbehebung.
-- [Pakete vergleichen und importieren](../../../../../eng-us/features/6.0/package-compare-and-import.md).
-- [Der Paketmanager ezpm auf der Kommandozeile](../../../../../eng-us/features/6.0/ezpm-package-manager-cli.md).
+- [Pakete vergleichen und importieren](../../../../funktionen/6.0/pakete-vergleichen-und-importieren.md).
+- [Der Paketmanager ezpm auf der Kommandozeile](../../../../funktionen/6.0/ezpm-paketmanager-cli.md).
 - [Seitenpakete für Hoster](../../../hosting/bereitstellung/seitenpakete-fuer-hoster.md).
 
 ## Verwandte Seiten

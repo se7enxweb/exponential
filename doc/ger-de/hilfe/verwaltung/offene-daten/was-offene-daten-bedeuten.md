@@ -89,16 +89,16 @@ Exponential ist ein Content-Management-System. Bei offenen Daten ist es auf der 
 
 - **Dateien unter stabilen Adressen.** Eine Datensatzdatei ist ein Inhaltsobjekt mit einem Dateifeld; die
   Download-Adresse `content/download/<object ID>/<attribute ID>` prüft die Rechte und funktioniert, solange das Objekt
-  existiert ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
+  existiert ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
 - **Beschreibungen als strukturierte Inhalte.** Sie können eine Inhaltsklasse „Datensatz“ mit Feldern für Titel,
   Beschreibung, Herausgeber, Lizenz, Aktualisierungshäufigkeit und Dateien festlegen
-  ([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)).
+  ([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)).
 - **Feeds neuer und geänderter Datensätze.** RSS-2.0- oder Atom-Exporte listen die neuesten Objekte unterhalb eines
   Ordners auf ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 - **Eine JSON-Schnittstelle.** Die REST-API liefert Knoten, Unterknoten und Felder als JSON unter `/api/ezp/v1/...` und
   `/api/ezp/v2/...` ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)).
 - **Versionen und ein Prüfprotokoll**, damit Sie zeigen können, was sich wann geändert hat
-  ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+  ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Was Exponential nicht tut
 
@@ -127,7 +127,7 @@ Die anderen Seiten dieses Bereichs behandeln jeden Schritt der Reihe nach.
 
 ## Verwandte Seiten
 
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
 - [RSS-Feeds](../../../anleitungen/rss-feeds.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

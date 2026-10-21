@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Datenschutzbeauftragte, Administratoren und Entwickler. Erheben Sie nur, was Sie brauchen,
 bewahren Sie nur auf, was Sie müssen, und maskieren Sie, was Sie anzeigen. Exponential minimiert mehrere seiner
 eigenen Aufzeichnungen standardmäßig; der Rest ist eine Frage von Konfiguration und Gestaltung
-([Datenschutzstandards: DSGVO](../../../../eng-us/standards/privacy.md#gdpr)).
+([Datenschutzstandards: DSGVO](../../../standards/datenschutz.md#dsgvo)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -66,7 +66,7 @@ eigenen Aufzeichnungen standardmäßig; der Rest ist eine Frage von Konfiguratio
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Wo personenbezogene Daten in Exponential liegen](bestandsaufnahme-personenbezogener-daten.md)
 - [Checkliste Datenschutz durch Technikgestaltung](checkliste-datenschutz-durch-technikgestaltung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren von Sites, die von Exponential Velocity ausgeliefert werden. Velocity prüft ein
 Zertifikat vor der Verwendung, beobachtet die Dateien, erneuert ACME-Zertifikate im Hintergrund und tauscht ein
 erneuertes Zertifikat ohne Neustart ein
-([HTTPS und Zertifikate in Velocity](../../../../../eng-us/features/6.0/velocity-https-certificates.md)).
+([HTTPS und Zertifikate in Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md)).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -62,7 +62,7 @@ Sichern Sie das Verzeichnis `ssl/` von Velocity: Die ACME-Kontoschlüssel darin 
 
 ## Verwandte Seiten
 - [Velocity auf Let's Encrypt umstellen](velocity-auf-lets-encrypt-umstellen.md)
-- [Ablauf von Zertifikaten](../../../../../eng-us/help/government/operations/incidents/certificate-expiry.md)
+- [Ablauf von Zertifikaten](../../betrieb/vorfaelle/ablauf-von-zertifikaten.md)
 - [HTTPS-Zertifikate in Velocity (Hosting)](../../../hosting/server/https-zertifikate-in-velocity.md)
 - [Bereitstellung, Abschnitt 6](../../../../anleitungen/bereitstellung.md#6-https)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

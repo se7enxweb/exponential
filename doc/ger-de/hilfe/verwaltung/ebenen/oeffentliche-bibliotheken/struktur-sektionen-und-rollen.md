@@ -81,7 +81,7 @@ einem Ereignis *Freigeben* ergänzen, das auf diese Sektionen eingeschränkt ist
 
 - [Öffentliche Bibliotheken](README.md)
 - [Schwerpunkte der Anforderungen für öffentliche Bibliotheken](schwerpunkte-der-anforderungen.md)
-- [Berechtigungen für Besucher](../../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Berechtigungen für Besucher](../../../ersteller/website-ersteller/rechte-fuer-besucher.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

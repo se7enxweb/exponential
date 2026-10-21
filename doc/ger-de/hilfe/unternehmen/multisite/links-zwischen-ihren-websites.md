@@ -29,7 +29,7 @@ eigenen Websites nie auf einer Fehlerseite landen.
 Jede Marke blendet den Pfad ihres eigenen Ordners in ihren Adressen aus. Eine Seite der Marke B behält den Pfad der
 Marke B in ihrer Adresse, und der Link-Generator der aktuellen Website setzt die aktuelle Marke davor. Das Ergebnis ist
 eine Adresse auf Marke A, die es nicht gibt, und der Besucher erhält einen 404
-([Links zu Inhalten einer anderen Website einer Multisite-Installation](../../../../eng-us/features/6.0/multisite-cross-site-links.md#in-short)).
+([Links zu Inhalten einer anderen Website einer Multisite-Installation](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md#kurz-gesagt)).
 
 Die Funktionsseite verwendet die Multisite-Demo als Beispiel: Fit & Healthy unter `/site` oder `/`, Bold Agency unter
 `/bold` und ihre Übersetzungen. Ein Link von Bold Agency zu einem Video von Fit & Healthy würde zu
@@ -105,9 +105,9 @@ Nehmen Sie diese Tests in die Start-Checkliste jeder neuen Marke auf ([Checklist
 ## Verwandte Seiten
 
 - [Inhalte zwischen Marken teilen](inhalte-zwischen-marken-teilen.md)
-- [Links zu Inhalten einer anderen Website einer Multisite-Installation](../../../../eng-us/features/6.0/multisite-cross-site-links.md)
-- [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#links-between-the-sites)
-- [Fehlerhafte Links und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Links zu Inhalten einer anderen Website einer Multisite-Installation](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
+- [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md#links-zwischen-den-websites)
+- [Fehlerhafte Links und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

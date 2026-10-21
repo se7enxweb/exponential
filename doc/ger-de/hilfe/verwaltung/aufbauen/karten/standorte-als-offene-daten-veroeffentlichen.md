@@ -31,10 +31,10 @@ zur Seite.
 
 - Mit `xrowextract`: **Export > One class of content export**, die Klasse (zum Beispiel `service_point`), der Ordner,
   CSV; prüfen Sie in der Vorschau die Spalten und wie das Standortfeld erscheint, und speichern Sie die Einstellungen
-  als Vorlage für die nächste Aktualisierung ([xrowextract](../../../../../eng-us/features/6.0/extensions/xrowextract.md)).
+  als Vorlage für die nächste Aktualisierung ([xrowextract](../../../../funktionen/6.0/erweiterungen/xrowextract.md)).
 - Mit dem Befehl des Kernels: `./console exp:ezcsvexport --storage-dir=var/export/csv <node id>` schreibt eine
   CSV-Datei je Klasse; prüfen Sie die Standortspalten vor dem Veröffentlichen
-  ([exp:ezcsvexport](../../../../../eng-us/examples/commands/ezcsvexport.md)).
+  ([exp:ezcsvexport](../../../../beispiele/befehle/ezcsvexport.md)).
 - Ein Entwickler kann auch eine Template-Ansicht schreiben, die die Koordinaten als GeoJSON ausgibt; das ist Ihr
   eigener Code.
 

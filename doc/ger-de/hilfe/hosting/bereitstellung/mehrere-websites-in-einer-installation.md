@@ -63,7 +63,7 @@ Schema und Adresse des Proxys ([10.2](../../../installation/10-nach-der-installa
 ## Logs und Caches pro Website
 
 Wenn jede Website ein eigenes `VarDir` hat, halten diese Einstellungen in `site.ini [FileSettings]` ihre Dateien getrennt
-([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)):
+([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)):
 
 | Einstellung | Standard | Wirkung |
 |---|---|---|
@@ -73,7 +73,7 @@ Wenn jede Website ein eigenes `VarDir` hat, halten diese Einstellungen in `site.
 | `INICacheDir` | `global` | `site` speichert die INI-Dateien jeder Website in ihrem eigenen Cache-Verzeichnis, sodass das Leeren einer die anderen in Ruhe lässt |
 
 Jede Einstellung behält das bisherige Verhalten, sofern Sie sie nicht setzen. Einstellungen pro Website innerhalb von Erweiterungen sind
-in [Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md) beschrieben.
+in [Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) beschrieben.
 
 ## Eine Installation oder mehrere?
 

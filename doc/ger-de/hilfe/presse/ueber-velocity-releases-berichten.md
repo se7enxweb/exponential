@@ -27,7 +27,7 @@ Leistungszahlen sind mit ihren Bedingungen dokumentiert, und diese Bedingungen g
 |---|---|
 | "Velocity is a web server written in PHP, bundled with Exponential, that keeps the application loaded between requests." | [README.md](https://github.com/se7enxweb/exponential/blob/main/README.md), „Exponential Velocity — the fast option“ |
 | "It began as a fork of the Qbix web server engine, and the two projects have since drifted far apart" | Die README des Pakets, zitiert in [Wer ist 7x?, Exponential Velocity](../wer-ist-7x.md#exponential-velocity) |
-| Der PHP-Anwendungsserver, "that Exponential recommends for every stage from development to production" | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
+| Der PHP-Anwendungsserver, "that Exponential recommends for every stage from development to production" | [Chronik von Velocity](../../geschichte/velocity/README.md) |
 | MIT-lizenziert | Seine `composer.json`, laut [Wer ist 7x?](../wer-ist-7x.md#open-source-lizenzen) |
 | Ein eigenes Composer-Paket, das die `composer.json` des Kernels "requires it at `~0.0.4.54`"; ab diesem Release läuft es auf PHP 8.0 bis 8.5 (bis dahin brauchte es 8.1 und wurde nur empfohlen) | [Den Code beschaffen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket) |
 | Erste Commits am 20. Juli 2026, erstes Release `v0.0.1` im September 2026, Teil von Exponential seit dem 22. September 2026 | [Wer ist 7x?](../wer-ist-7x.md#exponential-velocity) |
@@ -43,11 +43,11 @@ des Kernels verlangt `~0.0.4.54`, was jedes spätere 0.0.4.x akzeptiert
 Sie schreiben ([Ein Release selbst prüfen](ein-release-selbst-pruefen.md)).
 
 Viele Releases können auf einen Tag fallen: Die Chronik führt allein für den 22. September 2026 `v0.0.2.1` bis
-`v0.0.4.14` auf ([Chronik von Velocity](../../../eng-us/history/velocity/README.md#month-pages)). Berichten Sie über das Release,
+`v0.0.4.14` auf ([Chronik von Velocity](../../geschichte/velocity/README.md#monatsseiten)). Berichten Sie über das Release,
 über das Sie schreiben, mit seinen eigenen Notes; stellen Sie nicht jedes als große Neuigkeit dar.
 
 Der alte Name lebt in Bezeichnern weiter: "In the code you will still see `Q_WebServer`, `qbixserver.php`, `qbixctl` ...
-these are identifiers and stay as they are. The product is called Velocity" ([Chronik von Velocity](../../../eng-us/history/velocity/README.md#a-note-on-names)).
+these are identifiers and stay as they are. The product is called Velocity" ([Chronik von Velocity](../../geschichte/velocity/README.md#ein-hinweis-zu-den-namen)).
 
 ## Wo die Fakten zu Releases stehen
 
@@ -55,9 +55,9 @@ these are identifiers and stay as they are. The product is called Velocity" ([Ch
 |---|---|
 | Releases bis v0.0.4.42, vollständig | [Release Notes von Velocity](../../../changelogs/extensions/exponential-velocity.md) |
 | Releases ab v0.0.4.43 | Eine Übersichtstabelle auf derselben Seite, vollständige Notes unter [GitHub Releases](https://github.com/se7enxweb/exponential-velocity/releases) |
-| Die Geschichte, Monat für Monat | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
-| Wie Sie aktualisieren | [Upgrade-Hinweise zur Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) |
-| Pakete (deb, rpm, Docker, Binärdateien) | [Velocity-Pakete und -Binärdateien](../../../eng-us/features/6.0/velocity-packages-and-binaries.md) |
+| Die Geschichte, Monat für Monat | [Chronik von Velocity](../../geschichte/velocity/README.md) |
+| Wie Sie aktualisieren | [Upgrade-Hinweise zur Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md) |
+| Pakete (deb, rpm, Docker, Binärdateien) | [Velocity-Pakete und -Binärdateien](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md) |
 | Das Composer-Paket | [se7enxweb/exponential-velocity auf Packagist](https://packagist.org/packages/se7enxweb/exponential-velocity) |
 
 Drei Tags, `v0.0.4.21`, `v0.0.4.22` und `v0.0.4.26`, haben keine Release-Seite, weil "their builds did not produce a

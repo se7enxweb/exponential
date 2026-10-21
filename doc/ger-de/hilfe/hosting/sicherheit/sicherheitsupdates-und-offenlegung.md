@@ -62,7 +62,7 @@ composer show se7enxweb/exponential   # the version a site runs
 
 Führen Sie diese pro Installation aus einem zentralen Job aus und sammeln Sie die Ergebnisse, oder nutzen Sie den Bildschirm
 **Setup > Updates and packages** der Erweiterung ezupdate, dessen Suche nach Updates nichts ändert
-([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md),
+([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md),
 [Automatische Updates mit ezupdate](../betrieb/automatische-updates-mit-ezupdate.md)). Halten Sie `composer.lock` in der
 Versionsverwaltung jeder Website, damit das Ergebnis auf jeder Maschine dasselbe ist.
 
@@ -106,8 +106,8 @@ Eine veränderte Datei des Kernels, die niemand geändert hat, verdient einen Bl
   sie zusammen.
 - **Die eigenen Erweiterungen des Kunden**: Prüfen Sie sie auf die Muster, die im Kernel korrigiert wurden (SQL aus Anfragedaten gebaut,
   Shell-Befehle ohne `escapeshellarg()`, Ausgabe ohne Maskierung), und erzeugen Sie Erweiterungen neu, die von den RAD-Assistenten vor
-  deren Korrektur erstellt wurden ([RAD-Werkzeuge: Sicherheit](../../../../eng-us/bc/6.0/rad-security.md),
-  [Hinweise zur Härtung in 6.0.13](../../../../eng-us/bc/6.0/hardening.md)).
+  deren Korrektur erstellt wurden ([RAD-Werkzeuge: Sicherheit](../../../bc/6.0/rad-sicherheit.md),
+  [Hinweise zur Härtung in 6.0.13](../../../bc/6.0/haertung.md)).
 - **request-shield**, wenn installiert, als eigenes Paket.
 
 ## Eine Schwachstelle melden

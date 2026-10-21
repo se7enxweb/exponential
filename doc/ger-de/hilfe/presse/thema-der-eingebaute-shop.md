@@ -26,19 +26,19 @@ wichtigsten Funktionen: Produkte, Warenkörbe, Bestellungen, Mehrwertsteuer, Wä
 Erweiterung `ezpaypal` ([Wer ist 7x?, Ein CMS, ein CMF und ein Shop in einem](../wer-ist-7x.md#cms-cmf-und-shop-in-einem)).
 Die Produktlinie 6.0.x hat ihn verbessert: Der Reiter **Shop** öffnet ein Dashboard, das „auf einer Seite zeigt, ...
 wie es dem Shop geht, welche Bestellungen Aufmerksamkeit brauchen und wie die Kasse eingerichtet ist“, mit einem
-Bestellstatus für jede Stufe ([Shop-Dashboard und Bestellstatus](../../../eng-us/features/6.0/store-dashboard.md)), und jede
-Bestellung kann einen Beleg „mit einer Adresse, die nie abläuft“ haben ([Dauerhafte Bestellbelege](../../../eng-us/features/6.0/order-receipts.md)).
+Bestellstatus für jede Stufe ([Shop-Dashboard und Bestellstatus](../../funktionen/6.0/shop-dashboard.md)), und jede
+Bestellung kann einen Beleg „mit einer Adresse, die nie abläuft“ haben ([Dauerhafte Bestellbelege](../../funktionen/6.0/bestellbelege.md)).
 
 ## Fakten, die Sie drucken können
 
 | Fakt | Quelle |
 |---|---|
 | E-Commerce ist in den Kernel eingebaut | README, „Main Exponential features“ |
-| Zahlungen mit PayPal über `ezpaypal` | [ezpaypal](../../../eng-us/features/6.0/extensions/ezpaypal.md) |
-| Ein Shop-Dashboard und Bestellstatus für jede Stufe | [Shop-Dashboard und Bestellstatus](../../../eng-us/features/6.0/store-dashboard.md) |
-| Dauerhafte Bestellbelege, die Kunden als Lesezeichen speichern, drucken oder herunterladen können, mit oder ohne Konto | [Dauerhafte Bestellbelege](../../../eng-us/features/6.0/order-receipts.md) |
-| Bestelllisten lassen sich sortieren | [Sortieren der Bestellliste](../../../eng-us/features/6.0/order-list-sorting.md) |
-| Ländergruppen für Shop-Einstellungen | [Ländergruppen](../../../eng-us/features/6.0/country-groups.md) |
+| Zahlungen mit PayPal über `ezpaypal` | [ezpaypal](../../funktionen/6.0/erweiterungen/ezpaypal.md) |
+| Ein Shop-Dashboard und Bestellstatus für jede Stufe | [Shop-Dashboard und Bestellstatus](../../funktionen/6.0/shop-dashboard.md) |
+| Dauerhafte Bestellbelege, die Kunden als Lesezeichen speichern, drucken oder herunterladen können, mit oder ohne Konto | [Dauerhafte Bestellbelege](../../funktionen/6.0/bestellbelege.md) |
+| Bestelllisten lassen sich sortieren | [Sortieren der Bestellliste](../../funktionen/6.0/sortierung-der-bestellliste.md) |
+| Ländergruppen für Shop-Einstellungen | [Ländergruppen](../../funktionen/6.0/laendergruppen.md) |
 
 ## Was Sie nicht behaupten sollten
 

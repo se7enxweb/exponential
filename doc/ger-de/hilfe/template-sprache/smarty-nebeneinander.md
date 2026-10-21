@@ -195,9 +195,9 @@ Fields: 18
 - Zurück: [Geschichte der Template-Sprache](geschichte-der-template-sprache.md)
 - Weiter: [Smarty und die Template-Sprache: die Unterschiede im Detail](smarty-unterschiede-im-detail.md)
 - [Ein Template von Smarty umziehen](ein-template-von-smarty-umziehen.md)
-- [Grundlagen der TPL-Syntax](../../../eng-us/help/designers/templates/tpl-syntax-basics.md)
-- [Set-block und append-block](../../../eng-us/help/designers/templates/set-block-and-append-block.md)
-- [Wash und Maskierung](../../../eng-us/help/designers/templates/wash-and-escaping.md)
+- [Grundlagen der TPL-Syntax](../designer/vorlagen/tpl-syntax-grundlagen.md)
+- [Set-block und append-block](../designer/vorlagen/set-block-und-append-block.md)
+- [Wash und Maskierung](../designer/vorlagen/wash-und-maskierung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

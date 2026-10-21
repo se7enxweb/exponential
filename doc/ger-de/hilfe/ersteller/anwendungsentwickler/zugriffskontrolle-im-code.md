@@ -61,13 +61,13 @@ oder OAuth-Client, damit er sich einzeln widerrufen lässt ([OAuth und API-Schl�
 
 Schreiben Sie sicherheitsrelevante Aktionen und Ablehnungen in das Prüfprotokoll, mit IDs und niemals mit Geheimnissen
 oder personenbezogenen Inhalten, damit Administratoren sie prüfen können
-([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md), [Audit](../../../bc/6.0/audit.md)).
+([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md), [Audit](../../../bc/6.0/audit.md)).
 
 ## Verwandte Seiten
 
 - [Richtlinienfunktionen und Einschränkungen](richtlinienfunktionen-und-einschraenkungen.md)
 - [Sicherheit für Anwendungen](sicherheit-fuer-anwendungen.md)
-- [Rechteprüfungen bei vielen Zuweisungen](../../../../eng-us/features/6.0/permission-checks-for-many-assignments.md)
+- [Rechteprüfungen bei vielen Zuweisungen](../../../funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

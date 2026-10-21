@@ -58,7 +58,7 @@ kürzer ([Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md
 
 - **Mehrere Websites in einer Installation**: Jede kann ihr eigenes `VarDir` haben, und `LogVarDir` oder
   `CacheVarDir` können Logs und Caches in separate Verzeichnisbäume verlegen
-  ([Logs, INI-Cache und Ablaufzeitstempel je Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)).
+  ([Logs, INI-Cache und Ablaufzeitstempel je Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)).
   Führen Sie den Speicher und das Audit-Verzeichnis jeder Website auf.
 - **DFS-Cluster**: Die Referenzkopie der hochgeladenen Dateien liegt auf dem NFS-Export, ihre Metadaten in der
   Tabelle `ezdfsfile`. Sichern Sie den Export und die Metadatendatenbank gemeinsam, im selben Zeitfenster wie die

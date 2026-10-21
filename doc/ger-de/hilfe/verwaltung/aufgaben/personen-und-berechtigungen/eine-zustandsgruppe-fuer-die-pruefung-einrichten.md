@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren. Am Ende tragen Inhalte eine Prüfstufe, Besucher sehen nur Inhalte im Zustand
 *Approved*, Autoren können ihre Entwürfe zur Prüfung schicken, und Prüfer geben frei. Sie folgt
 [Objektzustände, Abschnitte 4 und 9](../../../../anleitungen/objektzustaende.md#9-ein-durchgearbeitetes-beispiel-ein-prüf-workflow).
-Hintergrund: [Objektzustände in Berechtigungen](../../../../../eng-us/help/government/operations/people-and-permissions/object-states-in-permissions.md).
+Hintergrund: [Objektzustände in Berechtigungen](../../betrieb/personen-und-berechtigungen/objektzustaende-in-berechtigungen.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -28,7 +28,7 @@ Hintergrund: [Objektzustände in Berechtigungen](../../../../../eng-us/help/gove
   sie.
 - Ein ruhiger Moment: Schritt 3 läuft über die ganze Site.
 - Erwägen Sie stattdessen den Freigabe-Workflow, wenn Sie nur eine Abzeichnung vor dem Veröffentlichen brauchen
-  ([Überblick über Freigabe-Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/approval-workflows-overview.md)).
+  ([Überblick über Freigabe-Workflows](../../betrieb/redaktionelle-workflows/freigabe-workflows-im-ueberblick.md)).
 
 ## Die Gruppe und die Zustände anlegen
 
@@ -69,10 +69,10 @@ Jede Änderung: die Rolle, **Bearbeiten**, **Neue Richtlinie** oder **Einschrän
 - Zustandsänderungen erscheinen im Audit-Protokoll als `content.object.state`.
 
 ## Verwandte Seiten
-- [Prüfdaten mit Objektzuständen](../../../../../eng-us/help/government/operations/editorial-workflows/review-dates-with-object-states.md)
-- [Juristischer Prüfschritt](../../../../../eng-us/help/government/operations/editorial-workflows/legal-review-step.md)
+- [Prüfdaten mit Objektzuständen](../../betrieb/redaktionelle-workflows/pruefdaten-mit-objektzustaenden.md)
+- [Juristischer Prüfschritt](../../betrieb/redaktionelle-workflows/rechtliche-pruefung-als-schritt.md)
 - [Anleitung zu den Objektzuständen](../../../../anleitungen/objektzustaende.md)
-- [Inhaltsaufträge](../../../../../eng-us/features/6.0/content-jobs.md)
+- [Inhaltsaufträge](../../../../funktionen/6.0/inhaltsauftraege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

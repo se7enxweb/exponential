@@ -47,7 +47,7 @@ Prüfen Sie es selbst, statt sich auf Behauptungen zu verlassen: Die Releases `v
 Dezember 2025 und Juni 2026 getaggt, und 6.0.15 ist in Entwicklung
 ([Die Roadmap](../../projekt/roadmap.md#was-bereits-geliefert-wurde)); jede Version hat ein Changelog
 ([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)); die Geschichte verzeichnet Änderungen seit Dezember 2023
-([die Geschichte](../../../../eng-us/history/README.md)). Der Bewertungsteil des Bereichs Beschaffung enthält eine Methode, um den
+([die Geschichte](../../../geschichte/README.md)). Der Bewertungsteil des Bereichs Beschaffung enthält eine Methode, um den
 Zustand eines Projekts zu beurteilen.
 
 ## Wie werden Entscheidungen getroffen, und können wir mitwirken?

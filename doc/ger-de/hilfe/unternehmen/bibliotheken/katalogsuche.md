@@ -36,7 +36,7 @@ wonach Leser suchen, und wann sich der zusätzliche Aufwand eines Solr-Servers �
 | Sehr viele Objekte | Wird langsamer | Dafür gebaut |
 | Tag-Wolken aus der Suche | Nein | Ja |
 
-Quellen: [Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md#when-solr-is-worth-it)
+Quellen: [Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md#wann-sich-solr-lohnt)
 und der Block `suggest` von `composer.json`.
 
 ## Die eingebaute Suche
@@ -49,7 +49,7 @@ und der Block `suggest` von `composer.json`.
 - Zu den ausgelieferten Grenzen gehören `MaximumSearchLimit=30` Ergebnisse pro Seite und ausgeschaltete Platzhalter
   (`EnableWildcard=false`), weil Suchen mit `term*` „costly on large sites“ (auf großen Websites aufwendig) sind.
 
-Quelle: [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md).
+Quelle: [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md).
 
 ## Was indiziert wird
 
@@ -69,14 +69,14 @@ php bin/php/updatesearchindex.php --clean --allow-root-user
 
 Mit eingeschaltetem `DelayedIndexing` werden Inhalte per Cron statt beim Veröffentlichen indiziert, was das
 Veröffentlichen während Importen schnell hält
-([Suche auf der Website, Indexing](../../../../eng-us/help/creators/website-creators/site-search.md#indexing)).
+([Suche auf der Website, Indexing](../../ersteller/website-ersteller/suche-auf-der-website.md#indexierung)).
 
 ## In Dateien suchen
 
 `settings/binaryfile.ini` hat Handler, die für den Suchindex Text aus PDF- und Word-Dateien extrahieren
 (`[PDFHandlerSettings]`, `[WordHandlerSettings]`), „using external programs you install“ (mit externen Programmen, die
 Sie installieren). Mit Solr lassen sich auch Dateiinhalte indizieren
-([Dateien und Downloads, Searching inside files](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#searching-inside-files)).
+([Dateien und Downloads, Searching inside files](../../ersteller/website-ersteller/dateien-und-downloads.md#in-dateien-suchen)).
 Bitten Sie Ihren Hosting-Partner, die Extraktionsprogramme zu installieren, wenn digitalisierte Dokumente über ihren
 Text gefunden werden sollen.
 
@@ -91,7 +91,7 @@ Mit `LogSearchStats=enabled` im öffentlichen Siteaccess zeigt **Setup > Suchsta
 Suchbegriff, wie oft danach gesucht wurde und die durchschnittliche Zahl der Ergebnisse; „phrases that found nothing
 show what content is missing“ (Begriffe ohne Treffer zeigen, welche Inhalte fehlen). Suchbegriffe können
 personenbezogene Daten sein, deshalb ist die Aufzeichnung standardmäßig aus
-([Suche auf der Website, Search statistics](../../../../eng-us/help/creators/website-creators/site-search.md#search-statistics)).
+([Suche auf der Website, Search statistics](../../ersteller/website-ersteller/suche-auf-der-website.md#suchstatistiken)).
 
 Nutzen Sie sie monatlich: Suchen ohne Ergebnisse weisen auf fehlende Einträge, fehlende Synonyme oder
 Schreibvarianten hin, die Sie als Tag-Synonyme hinzufügen. Entscheiden Sie mit Ihrer Ansprechperson für den
@@ -109,7 +109,7 @@ Ziehen Sie Solr in Betracht, wenn einer dieser Punkte zutrifft:
 Und wägen Sie die Kosten ab: „Solr is a separate server (Java) to install, run, monitor and back up. For a small site
 the built-in engine is fine“ (Solr ist ein eigener Java-Server, der installiert, betrieben, überwacht und gesichert
 werden muss; für eine kleine Website reicht die eingebaute Suchmaschine,
-[Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md#when-solr-is-worth-it)).
+[Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md#wann-sich-solr-lohnt)).
 Zum Hosting siehe [Such-Backends](../../hosting/grundlagen/such-backends.md).
 
 ## Der Wechsel zu Solr in Umrissen
@@ -121,8 +121,8 @@ Zum Hosting siehe [Such-Backends](../../hosting/grundlagen/such-backends.md).
    um.
 5. Leeren Sie den INI-Cache und bauen Sie den Index neu auf.
 
-Quelle: [Suche mit ezfind und Solr, Switching it on](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md#switching-it-on)
-und [Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md). `content/search` funktioniert
+Quelle: [Suche mit ezfind und Solr, Switching it on](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md#einschalten)
+und [Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md). `content/search` funktioniert
 weiter; Facetten brauchen Templates, die die eigenen Fetch-Funktionen von ezfind verwenden.
 
 ## Stöbern ergänzt das Suchen
@@ -147,8 +147,8 @@ Viele Leser stöbern, statt zu suchen. Geben Sie ihnen:
 ## Verwandte Seiten
 
 - [Bibliotheken und Kataloge](README.md)
-- [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)
-- [Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)
+- [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)
+- [Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)
 - [Suchen (für Redakteure)](../../suchen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

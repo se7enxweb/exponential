@@ -90,13 +90,13 @@ Caches beantworten die meisten Anfragen, also hat jeder Knoten seine eigenen. Wa
 Caches auf einem Knoten die anderen erreicht:
 
 - **Mit dem DFS-Cluster** sind Cache-Dateien und `expiry.php` (die Zeitstempel, die Caches ungültig machen) Cluster-Dateien, sodass
-  ein Leeren auf einem Knoten von allen gesehen wird ([Cluster (DFS)](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#cluster-dfs)).
+  ein Leeren auf einem Knoten von allen gesehen wird ([Cluster (DFS)](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#cluster-dfs)).
 - **Die Caches vor PHP** sind lokal: der HTTP-Cache in `var/<site>/cache/exphttpcache` und der Antwort-Cache von Velocity. Leeren
   Sie sie nach einer Änderung auf jedem Knoten (`./console exp:velocity cache clear` für Velocity;
   [Caches](../../../anleitungen/caches.md)).
 - **Ein gemeinsames Cache-Backend.** Die Erweiterung `sevenx_valkey_cache` hält Template-Blöcke, den Content-View-Cache und den
   kompilierten INI-Cache in Redis oder Valkey, was INI-Caches für Cluster sicher macht
-  ([sevenx_valkey_cache](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md)). Siehe
+  ([sevenx_valkey_cache](../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md)). Siehe
   [Valkey und Redis](../leistung/valkey-und-redis.md).
 
 Ein Reverse Proxy oder CDN vor allen Knoten ist eine weitere, gemeinsame Cache-Schicht; siehe
@@ -106,7 +106,7 @@ Ein Reverse Proxy oder CDN vor allen Knoten ist eine weitere, gemeinsame Cache-S
 
 Hinter einem Load Balancer kommt jede Anfrage von der Adresse des Balancers. Exponential glaubt weitergeleiteten Headern nur von
 den Proxys, denen es vertrauen soll ([8.8 Hinter einem Reverse Proxy](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy),
-[Vertrauenswürdige Proxys](../../../../eng-us/bc/6.0/trusted-proxies.md)):
+[Vertrauenswürdige Proxys](../../../bc/6.0/vertrauenswuerdige-proxys.md)):
 
 ```ini
 # settings/override/site.ini.append.php
@@ -131,7 +131,7 @@ Die Adresse `192.0.2.10` oben ist eine Adresse für Dokumentation; verwenden Sie
 - **Cron von einem Knoten.** Richten Sie die Crontab nur auf einem Knoten ein, sonst führen mehrere Knoten dieselben Jobs aus. Jedes
   Skript nimmt eine Sperre (`eZMutex`), aber diese Sperre ist eine gesperrte Datei im eigenen Cache-Verzeichnis des Knotens und hält
   daher keinen anderen Knoten auf. Um Teile für alle Knoten anzuhalten, richten Sie `cronjob.ini [PauseSettings] Directory` auf ein
-  gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../../eng-us/features/6.0/cronjob-pause.md)).
+  gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../funktionen/6.0/cronjobs-pausieren.md)).
 - **Ausrollen auf jedem Knoten.** Führen Sie das Ausrollen (`./console exp:velocity deploy`, siehe
   [Änderungen ausrollen](aenderungen-ausrollen.md)) auf jedem Knoten aus, damit alle den neuen Code ausführen und ihre Caches neu
   aufbauen. Nehmen Sie einen Knoten aus dem Balancer, während auf ihn ausgerollt wird, wenn die Änderung nicht halb ausgeliefert

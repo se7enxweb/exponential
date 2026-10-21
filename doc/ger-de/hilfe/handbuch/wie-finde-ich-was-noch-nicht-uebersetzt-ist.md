@@ -39,7 +39,7 @@ Redakteure mit `content/read` sehen das Fenster **Übersetzungen**. **Setup** > 
 ## Verwandte Seiten
 
 - [Inhaltssprachen](../../anleitungen/inhaltssprachen.md)
-- [Übersetzungen und Sprachen](../../../eng-us/features/6.0/translations-and-languages.md)
+- [Übersetzungen und Sprachen](../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Übersetzungsroutine](../kunden/alltag/uebersetzungsroutine.md)
 - [Benutzerhandbuch](README.md)
 

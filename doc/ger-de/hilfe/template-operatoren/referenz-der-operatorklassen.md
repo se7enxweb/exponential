@@ -319,7 +319,7 @@ zurückgegebenen Wert als Konstante in das kompilierte Template (die Template-Bi
 - [Operatoren registrieren](operatoren-registrieren.md)
 - [Kernel-Operatoren überschreiben](kernel-operatoren-ueberschreiben.md)
 - [Der Template-Compiler](../template-sprache/der-template-compiler.md)
-- [Template-Operatoren schreiben](../../../eng-us/help/creators/app-creators/template-operators.md) (Einführung für Anwendungsentwickler)
+- [Template-Operatoren schreiben](../ersteller/anwendungsentwickler/template-operatoren-schreiben.md) (Einführung für Anwendungsentwickler)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

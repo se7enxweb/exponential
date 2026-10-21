@@ -39,7 +39,7 @@ SanitizeSVG=enabled
 Ein SVG kann Skript enthalten, daher speichert der Kernel einen Upload nie so, wie er kam: `expSvgSanitizer` behält nur Elemente, Attribute
 und CSS aus einer Positivliste, und die gespeicherte Datei ist seine Ausgabe. Hochgeladene SVGs werden mit Headern ausgeliefert, die
 verhindern, dass sie beim direkten Öffnen etwas ausführen. `SanitizeSVG=disabled` lehnt SVG-Uploads ab; es gibt keinen Weg, eines
-unbereinigt zu speichern. Einzelheiten: [SVG-Bilder (Verhaltensänderung)](../../../../eng-us/bc/6.0/svg-images.md).
+unbereinigt zu speichern. Einzelheiten: [SVG-Bilder (Verhaltensänderung)](../../../bc/6.0/svg-bilder.md).
 
 ## Was das für Ihre Templates bedeutet
 

@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [RAD-Werkzeuge: Erweiterungsassistenten, Katalog, Übersicht und Zustandsprüfung](../../../../../eng-us/features/6.0/rad-tools.md).
+Quelle: [RAD-Werkzeuge: Erweiterungsassistenten, Katalog, Übersicht und Zustandsprüfung](../../../../funktionen/6.0/rad-werkzeuge.md).
 
 1. **Der Katalog** (4 Minuten). **Setup** > **RAD** (`/setup/rad`, Überschrift „Werkzeuge zur schnellen
    Anwendungs-Entwicklung“) listet die Erweiterungspunkte in Gruppen: Inhalt, Templates und Design, Module und Views,
@@ -137,7 +137,7 @@ Auf der Schulungsinstallation, als Administrator an der Administration angemelde
 
 ## Weiterführende Literatur
 
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md).
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md).
 - [Erweiterungspunkte](../../../../bc/6.0/rad-erweiterungspunkte.md) und [Die Erweiterungsoberfläche](../../../../bc/6.0/rad-erweiterungsoberflaeche.md).
 - [Sicherheit der RAD-Werkzeuge](../../../../bc/6.0/rad-sicherheit.md).
 

@@ -13,7 +13,7 @@ Diese Seite richtet sich an Leserinnen und Leser in einer öffentlichen Stelle, 
 Ausschreibung auf einen unbekannten Begriff stoßen. Jeder Eintrag hat ein bis drei Sätze und einen Link auf die Seite,
 die ihn erklärt. Die Einträge sind nach dem englischen Fachbegriff geordnet, der in Klammern steht. Einträge über
 Exponential wurden mit der Dokumentation abgeglichen; das vollständige Produktglossar finden Sie im
-[Exponential-Glossar](../../../../eng-us/glossary.md).
+[Exponential-Glossar](../../../glossar.md).
 
 > **Hinweis** Die Definitionen von Rechtsbegriffen sind Beschreibungen in einfacher Sprache, keine Legaldefinitionen.
 > Prüfen Sie das für Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -33,28 +33,28 @@ Arbeit abnimmt und bezahlt. Stützen Sie sie auf die Anforderungen der Ausschrei
 
 **Zugriffsprüfung (Access review).** Eine regelmäßige Prüfung, wer welche Rechte hat, bei der nicht mehr benötigte
 entfernt werden. In Exponential sind die Rollen unter `/role/list` aufgeführt, und **Benutzerkonten prüfen**
-(`/user/hygiene`) findet ungenutzte Konten ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+(`/user/hygiene`) findet ungenutzte Konten ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 **Konformitätsbericht zur Barrierefreiheit (Accessibility conformance report, ACR).** Der Bericht eines Anbieters
 darüber, wie ein Produkt eine Norm zur Barrierefreiheit erfüllt, oft mit einem VPAT erstellt. Für Exponential gibt es
-keinen ACR ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#section-508)).
+keinen ACR ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#section-508)).
 
 **Erklärung zur Barrierefreiheit (Accessibility statement).** Eine öffentliche Erklärung auf einer Website über ihre
 Barrierefreiheit, ihre bekannten Probleme und wie man Rückmeldung geben kann; die EU-Richtlinie über den barrierefreien
 Zugang zu Websites verlangt sie von öffentlichen Stellen. Exponential liefert keine Vorlage dafür mit
-([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#known-gaps-2); Leitfaden des W3C:
+([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#bekannte-lücken-2); Leitfaden des W3C:
 [w3.org/WAI/planning/statements](https://www.w3.org/WAI/planning/statements/)).
 
 **admin4.** Das Design der Administration von Exponential, auf das sich die Arbeit an der Barrierefreiheit
 konzentriert, mit hellem und dunklem Modus; sein Stand gegenüber WCAG 2.2 AA ist „Teilweise erfüllt“
-([Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)).
+([Das Design admin4](../../../funktionen/6.0/admin4-design.md)).
 
 **Freigabe-Workflow (Approval workflow).** Ein Ablauf, in dem eine Version wartet, bis jemand sie freigibt, bevor sie
 veröffentlicht wird. In Exponential wird er mit Workflows und Triggern gebaut ([Workflows](../../../anleitungen/workflows.md)).
 
 **Prüfprotokoll (Audit trail).** Ein manipulationssicheres Protokoll sicherheitsrelevanter Ereignisse wie Anmeldungen,
 Inhaltsänderungen und das Schreiben von Einstellungen. In Exponential ist es standardmäßig eingeschaltet und mit einer
-Hash-Kette gesichert ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+Hash-Kette gesichert ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## B und C
 
@@ -69,14 +69,14 @@ Cache-Verwaltung** (`/setup/cache`) listet sie auf ([Caches](../../../anleitunge
 
 **Einwilligungsnachweis (Consent record).** Der Nachweis, wozu eine Person wann und mit welchem Text eingewilligt hat.
 Exponential führt einen für E-Mail-Kategorien in der Tabelle `expmail_consent_log`
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
+([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
 
 **Inhaltsklasse (Content class).** Die Definition einer Inhaltsart, etwa eines Artikels oder einer Pressemitteilung,
 als Liste von Feldern ([Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md)).
 
 **Content Security Policy (CSP).** Ein von der Website gesendeter Regelsatz für den Browser, der einschränkt, woher
 Skripte und Stile kommen dürfen. Exponential sendet sie standardmäßig in der Administration nur im Berichtsmodus und auf
-öffentlichen Websites gar nicht ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+öffentlichen Websites gar nicht ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 **Cronjob.** Eine Aufgabe, die nach einem Zeitplan auf dem Server läuft, etwa das Versenden von Benachrichtigungen oder
 das Veröffentlichen zeitgesteuerter Inhalte ([Cronjobs](../../../anleitungen/cronjobs.md)).
@@ -85,7 +85,7 @@ das Veröffentlichen zeitgesteuerter Inhalte ([Cronjobs](../../../anleitungen/cr
 
 **Verantwortlicher (Data controller).** Nach der DSGVO die Organisation, die entscheidet, warum und wie
 personenbezogene Daten verarbeitet werden; bei einer öffentlichen Website meist die öffentliche Stelle. Exponential ist
-Software, kein Verantwortlicher ([Datenschutzstandards](../../../../eng-us/standards/privacy.md);
+Software, kein Verantwortlicher ([Datenschutzstandards](../../../standards/datenschutz.md);
 [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj)).
 
 **Auftragsverarbeiter (Data processor).** Nach der DSGVO eine Organisation, die personenbezogene Daten im Auftrag des
@@ -97,7 +97,7 @@ gespeichert werden. Sie ist eine Eigenschaft des Hostings, nicht der Software; E
 installieren, wo Sie hosten ([Ein Hostingmodell wählen](../../hosting/modelle/ein-hosting-modell-waehlen.md)).
 
 **Datentyp (Datatype).** Der Code, der eine Art von Feld speichert, prüft und anzeigt, etwa Text, Bild oder Relation
-([das Exponential-Glossar](../../../../eng-us/glossary.md#d)).
+([das Exponential-Glossar](../../../glossar.md#d)).
 
 **Entwurf (Draft).** Eine Version eines Inhalts, die bearbeitet wird und noch nicht veröffentlicht ist
 ([Meine Entwürfe und meine ausstehenden Einträge](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)).
@@ -105,11 +105,11 @@ installieren, wo Sie hosten ([Ein Hostingmodell wählen](../../hosting/modelle/e
 ## E und F
 
 **Editor-Siteaccess (Editor siteaccess).** Eine vereinfachte Administration für Redaktionen, vom Einrichtungsassistenten
-installiert ([Einrichtungsassistent und Editor-Siteaccess](../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)).
+installiert ([Einrichtungsassistent und Editor-Siteaccess](../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md)).
 
 **Löschung (Erasure).** Das Löschen der personenbezogenen Daten einer Person auf deren Verlangen. Das Entfernen eines
 Benutzerkontos in Exponential löscht dessen E-Mail-Einstellungen und anonymisiert dessen Einwilligungsprotokoll; andere
-Daten erreichen Sie über getrennte Werkzeuge ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
+Daten erreichen Sie über getrennte Werkzeuge ([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
 
 **Bewertungsgremium (Evaluation panel).** Die Gruppe, die Angebote nach veröffentlichten Kriterien bewertet.
 
@@ -131,7 +131,7 @@ dazu, wie gut (Leistung, Sicherheit, Barrierefreiheit).
 
 - [Glossar für Verwaltungen](README.md)
 - [Glossar für Verwaltungen: G bis L](begriffe-g-bis-l.md)
-- [Das Exponential-Glossar](../../../../eng-us/glossary.md)
+- [Das Exponential-Glossar](../../../glossar.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

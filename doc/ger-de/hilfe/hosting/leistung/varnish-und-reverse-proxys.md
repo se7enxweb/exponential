@@ -14,7 +14,7 @@ oder einen Load Balancer vor Kunden-Websites betreiben. Sie beantwortet: ob Expo
 muss und wofür ihm vertraut werden muss, was ein zwischenspeichernder Proxy speichern darf und wie Sie ihn leeren. Die eigene
 Konfigurationssprache von Varnish wird hier nicht beschrieben; lesen Sie in seiner Dokumentation nach. Die Quellen sind
 [Kapitel 8, Abschnitt 8.8](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy),
-[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../eng-us/bc/6.0/trusted-proxies.md) und
+[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../bc/6.0/vertrauenswuerdige-proxys.md) und
 [Kapitel 15, Abschnitt 15.14](../../../installation/15-migration-von-5x-legacy.md#1514-caches).
 
 ## Inhalt
@@ -109,7 +109,7 @@ Seiten länger als ihr `max-age` behält, liefert nach einer Bearbeitung veralte
 1. **Nur kurze Lebensdauern:** Lassen Sie den Proxy anonyme Seiten für das konfigurierte `max-age` behalten, und nicht länger.
 2. **Nach Tag leeren:** `httpcache.ini [HttpCacheSettings] TagHeader=xkey` nennt die Purge-Tags jeder Seite in einem Header für das
    Modul xkey von Varnish (`Surrogate-Key` für Fastly, `Cache-Tag` für Cloudflare). Die Einstellung und die Tags gehören zum
-   rollenbewussten HTTP-Cache ([HTTP-Cache](../../../../eng-us/bc/6.0/httpcache.md)); testen Sie, dass Seiten sie tragen.
+   rollenbewussten HTTP-Cache ([HTTP-Cache](../../../bc/6.0/httpcache.md)); testen Sie, dass Seiten sie tragen.
 3. **Beim Veröffentlichen selbst leeren:** Der Kernel löst bei jeder Veröffentlichung `content/cache` mit den IDs von Knoten und
    Objekten aus (`kernel/classes/ezcontentcachemanager.php`), was ein Listener in `site.ini [Event] Listeners[]` in ein Leeren umsetzen
    kann.
@@ -146,7 +146,7 @@ curl -s -o /dev/null -w '%{redirect_url}\n' -H 'X-Forwarded-Proto: https' http:/
 - [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md)
 - [HTTP-Cache-Header](http-cache-header.md)
 - [CDN](cdn.md)
-- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../eng-us/bc/6.0/trusted-proxies.md)
+- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../bc/6.0/vertrauenswuerdige-proxys.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

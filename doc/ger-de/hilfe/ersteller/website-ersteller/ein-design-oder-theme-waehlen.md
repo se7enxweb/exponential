@@ -35,11 +35,11 @@ vergleicht die drei Wege und zeigt, wie ein Siteaccess auf ein Design gerichtet 
 
 | Theme (Erweiterung) | Design-Name | Was es ist | Lesen |
 |---|---|---|---|
-| `sevenx_themes_simple` | `simple` | das helle, responsive öffentliche Design der Standardinstallation; Kopfbereich mit mehrstufigem Menü und Warenkorb, Templates für Artikel, Blog, Galerie, Produkt und Warenkorb | [sevenx_themes_simple](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md) |
-| `ezwebin` | `ezwebin` | das klassische Website Interface: Seiten für Artikel, Blogs, Veranstaltungen, Foren, Galerien, Produkte, RSS und Shop | [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md) |
-| `ezdemo` | `ezdemo` | das Design mit Demo-Inhalten | [ezdemo](../../../../eng-us/features/6.0/extensions/ezdemo.md) |
+| `sevenx_themes_simple` | `simple` | das helle, responsive öffentliche Design der Standardinstallation; Kopfbereich mit mehrstufigem Menü und Warenkorb, Templates für Artikel, Blog, Galerie, Produkt und Warenkorb | [sevenx_themes_simple](../../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md) |
+| `ezwebin` | `ezwebin` | das klassische Website Interface: Seiten für Artikel, Blogs, Veranstaltungen, Foren, Galerien, Produkte, RSS und Shop | [ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md) |
+| `ezdemo` | `ezdemo` | das Design mit Demo-Inhalten | [ezdemo](../../../funktionen/6.0/erweiterungen/ezdemo.md) |
 | `sevenx_themes_media` | `media` | das Design der Media-Site, das mit dem Layouts-Editor verwendet wird | [Layouts](../../../bc/6.0/layouts.md) |
-| `ezflow` | `ezflow` | blockbasierte Seiten der klassischen Erweiterung flow | [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md) |
+| `ezflow` | `ezflow` | blockbasierte Seiten der klassischen Erweiterung flow | [ezflow](../../../funktionen/6.0/erweiterungen/ezflow.md) |
 
 `sevenx_themes_simple` und `ezwebin` teilen sich die ezwebin-Klassen, sodass Inhalte ohne Änderungen zwischen ihnen
 wechseln können.
@@ -47,7 +47,7 @@ wechseln können.
 ## Ein Theme sicher anpassen
 
 Ein von Composer installiertes Theme wird bei jedem Update ersetzt. Bearbeiten Sie seine Dateien niemals an Ort und
-Stelle ([sevenx_themes_simple, „Use it“](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md#use-it)). Stattdessen:
+Stelle ([sevenx_themes_simple, „Use it“](../../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md#verwenden)). Stattdessen:
 
 1. Legen Sie Ihre eigene Design-Erweiterung an, zum Beispiel `extension/mysite_design/` mit
    `design/simple/templates/` (derselbe Design-Name wie das Theme) und `settings/design.ini.append.php`:
@@ -77,7 +77,7 @@ Stelle ([sevenx_themes_simple, „Use it“](../../../../eng-us/features/6.0/ext
 
 Warum das funktioniert: Designs werden in der Reihenfolge der Erweiterungen durchsucht, und die erste gefundene Datei
 gewinnt ([Designs und die Fallback-Kette](designs-und-die-fallback-kette.md),
-[Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)).
+[Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)).
 
 ## Ihr eigenes Design
 

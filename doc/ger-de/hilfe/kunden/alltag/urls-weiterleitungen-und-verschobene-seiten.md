@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Betreiber und Redakteure, die Seiten umbenennen, verschieben und entfernen und möchten, dass
 Besucher und Suchmaschinen sie weiterhin finden. Exponential erzeugt lesbare Adressen aus den Namen der Inhalte und hält
-alte Adressen nach den meisten Änderungen funktionsfähig ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+alte Adressen nach den meisten Änderungen funktionsfähig ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 Der einzige Fall, der eine Entscheidung erfordert, ist das Entfernen einer Seite.
 
 ## Inhalt
@@ -24,7 +24,7 @@ Der einzige Fall, der eine Entscheidung erfordert, ist das Entfernen einer Seite
 
 ## Was von selbst geschieht
 
-Aus [Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md):
+Aus [Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md):
 
 | Ereignis | Ergebnis |
 |---|---|
@@ -60,13 +60,13 @@ zeigt, zu welcher Wildcard eine Adresse passt, ohne etwas zu ändern
 
 Für einen gedruckten Flyer oder einen Radiospot möchten Sie vielleicht `/autumn` statt eines langen Pfades. Ihr
 Administrator kann unter **Setup > URL-Übersetzer** einen **globalen URL-Alias** anlegen, mit „Alias should redirect“
-für eine dauerhafte Weiterleitung ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+für eine dauerhafte Weiterleitung ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 Notieren Sie jede kurze Adresse mit dem Datum, ab dem sie entfernt werden darf, in Ihrem [Redaktionskalender](redaktionskalender.md).
 
 ## Ein Relaunch oder eine große Umstrukturierung
 
 Wenn sich viele Adressen auf einmal ändern, bitten Sie Ihren Partner vor dem Start um einen Weiterleitungsplan
-([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)):
+([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)):
 
 1. Exportieren Sie die alten Adressen (Sitemap, die Liste der indexierten Seiten der Suchmaschine, Serverlogs).
 2. Legen Sie jedes neue Ziel fest: dieselbe Seite, eine bessere Seite oder keine.
@@ -87,8 +87,8 @@ Ihr Teil als Betreiber ist Schritt 2: Nur Sie wissen, welche neue Seite die rich
 
 ## Verwandte Seiten
 
-- [URL-Aliase und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)
-- [URL-Wildcards und eigene Aliase](../../../../eng-us/help/creators/website-creators/url-wildcards.md)
+- [URL-Aliase und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)
+- [URL-Wildcards und eigene Aliase](../../ersteller/website-ersteller/url-platzhalter.md)
 - [SEO-Prüfungen](seo-pruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

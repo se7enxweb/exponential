@@ -28,11 +28,11 @@ sagt klar, was sie nicht tut, und verweist für jede Aussage auf die technische 
 - Sie ist Teil der Installation: `se7enxweb/cjw_newsletter` wird vom `composer.json` von Exponential verlangt.
 - Ausgaben sind Inhalte im Inhaltsbaum, sodass Redakteure die Werkzeuge nutzen, die sie schon kennen.
 - Abonnenten bestätigen per Mail (Double-Opt-in); jede optionale Mail trägt über die E-Mail-Einstellungen der Website
-  einen Abmeldelink ([E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)).
+  einen Abmeldelink ([E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)).
 - Der Versand läuft im Hintergrund per Cron, mit einem Archiv jedes Versands.
 - Alles lässt sich proben, ohne eine einzige Mail zu senden, indem Mails in Dateien geschrieben werden.
 
-Quelle: [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md).
+Quelle: [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md).
 
 ## Woher sie kommt
 
@@ -40,7 +40,7 @@ Die Erweiterung wurde zwischen 2007 und 2015 vom CJW Network, coolscreen.de, JAC
 Das Projekt se7enxweb hat sie im August 2026 für PHP 8.5 und Exponential 6 übernommen (4.0.0.0 am 13. August). Die
 Releases 4.1.0 bis 4.1.17 brachten sie auf PHP 8, auf persistente Worker (Velocity) und auf jede Datenbank und
 schlossen Fehler, die eine systematische Prüfung gefunden hatte; 4.2.0 folgte am 5. Oktober 2026
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)). Für ein Unternehmen bedeutet das ein
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)). Für ein Unternehmen bedeutet das ein
 langlebiges Werkzeug mit einer gepflegten aktuellen Linie, kein neues Experiment.
 
 ## Die Teile in geschäftlichen Begriffen
@@ -56,8 +56,8 @@ langlebiges Werkzeug mit einer gepflegten aktuellen Linie, kein neues Experiment
 | Versenden, ohne die Website zu blockieren | Cron-Teile `cjw_newsletter_mailqueue_create` und `cjw_newsletter_mailqueue_process` | Cron des Servers |
 | Ein Überblick für die verantwortliche Person | Dashboard unter `/newsletter/index` (4.1.17) mit Problemen und dem, was dagegen zu tun ist | Newsletter-Menü |
 
-Quellen: [cjw_newsletter, Die Teile](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts) und
-[Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#the-parts).
+Quellen: [cjw_newsletter, Die Teile](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile) und
+[Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#die-bestandteile).
 
 ## Was 4.2.0 hinzugefügt hat
 
@@ -73,7 +73,7 @@ Die eigenen Leitfäden der Erweiterung beschreiben jeden Bereich (Ordner `doc/` 
 | SMS | Newsletter per SMS über einen anbieterneutralen Transport, ein Double-Opt-in per Code, STOP |
 | Import, Export, Migration | CSV-Import mit Spaltenzuordnung, Export der Abonnenten, Migration von der alten Erweiterung eznewsletter |
 
-Quelle: [cjw_newsletter, Die Funktionen von 4.2.0](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420).
+Quelle: [cjw_newsletter, Die Funktionen von 4.2.0](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420).
 Tracking und SMS sind ausgeschaltet, bis sie in `settings/override/cjw_newsletter.ini.append.php` eingeschaltet werden
 (dieselbe Seite).
 
@@ -91,7 +91,7 @@ Seien Sie sich über diese Punkte im Klaren, bevor Sie einem Marketingteam etwas
 
 - **Sie stellt Mails nicht selbst zu.** Sie übergibt Mails an `sendmail` oder einen SMTP-Server. Ob Mails in den
   Posteingängen ankommen, hängt von diesem Server, den DNS-Einträgen Ihrer Absenderdomain (SPF, DKIM) und Ihren Inhalten
-  ab ([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)).
+  ab ([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md)).
 - **Sie ist kein gehosteter Mailing-Dienst.** Sie oder Ihr Hosting-Partner betreiben Cron, das Bounce-Postfach und den
   Mail-Transport ([Zustellung der Newsletter-Mails](zustellung-der-newsletter-mails.md)).
 - **Sie zählt Öffnungen und Klicks nicht standardmäßig.** Das Tracking ist in den mitgelieferten Einstellungen
@@ -118,7 +118,7 @@ Seien Sie sich über diese Punkte im Klaren, bevor Sie einem Marketingteam etwas
 
 - [Newsletter für Unternehmen](README.md)
 - [Einen Newsletter planen](einen-newsletter-planen.md)
-- [Funktionsseite cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [Funktionsseite cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)
 - [Funktionshöhepunkte für Kunden](../../geschaeft/funktionshighlights-fuer-kunden.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

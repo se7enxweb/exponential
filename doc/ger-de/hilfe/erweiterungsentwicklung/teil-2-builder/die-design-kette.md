@@ -131,7 +131,7 @@ listet jede Cache-ID auf.
 - Zurück: [Templates für Builder](templates-fuer-builder.md)
 - Weiter: [Template-Overrides: die Grundlagen](grundlagen-der-template-overrides.md)
 - [Templates und Design](../../../anleitungen/templates-und-design.md)
-- [Template-Pfadkommentare](../../../../eng-us/features/6.0/template-path-comments.md)
+- [Template-Pfadkommentare](../../../funktionen/6.0/template-pfad-kommentare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

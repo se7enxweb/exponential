@@ -42,20 +42,20 @@ Barrierefreiheit getrennt, weil sie aus derselben Demo zu unterschiedlichen Schl
 | Rolle | Liest zuerst | Testet in der Demo oder im Proof of Concept |
 |---|---|---|
 | Redaktionelle Leitung | [Inhaltsmodell und Bearbeitung](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md), [Versionen](../../../../anleitungen/inhaltsverlauf.md), [Workflows](../../../../anleitungen/workflows.md) | eine Seite anlegen, in der Vorschau ansehen, freigeben und veröffentlichen |
-| Fachkraft für Barrierefreiheit | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) | Bedienung der Administration nur mit der Tastatur; das öffentliche Design des Bieters; siehe die Seite zur Bewertung von Nachweisen zur Barrierefreiheit |
-| Fachkraft für Sicherheit | [Sicherheitsstandards](../../../../../eng-us/standards/security.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) | zweistufige Anmeldung, Rollen, Einträge im Audit-Protokoll |
-| Fachkraft für Datenschutz | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md), [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md) | Einwilligungsnachweise, Entfernen eines Kontos, Maskierung in Protokollen |
+| Fachkraft für Barrierefreiheit | [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) | Bedienung der Administration nur mit der Tastatur; das öffentliche Design des Bieters; siehe die Seite zur Bewertung von Nachweisen zur Barrierefreiheit |
+| Fachkraft für Sicherheit | [Sicherheitsstandards](../../../../standards/sicherheit.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) | zweistufige Anmeldung, Rollen, Einträge im Audit-Protokoll |
+| Fachkraft für Datenschutz | [Datenschutzstandards](../../../../standards/datenschutz.md), [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md) | Einwilligungsnachweise, Entfernen eines Kontos, Maskierung in Protokollen |
 | Technische Leitung | [Anforderungen](../../../../installation/02-voraussetzungen.md), [Bereitstellen](../../../../anleitungen/bereitstellung.md), [Exponential verlassen](../../../../installation/migration/exponential-verlassen.md) | Installation mit einem Befehl, Export eines Website-Archivs |
-| Sprachliche Leitung | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md), [Rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md) | eine Seite übersetzen; eine Seite von rechts nach links |
+| Sprachliche Leitung | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md), [Rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md) | eine Seite übersetzen; eine Seite von rechts nach links |
 
 ## Das Gremium vorbereiten
 
 1. **Einweisung.** Gehen Sie die Kriterien der Ausschreibung und die Bewertungsskala durch. Zeigen Sie, wo die eigene
    Dokumentation des Produkts ihren Status angibt und was diese Statusangaben bedeuten
-   ([Standards: wie der Status zu lesen ist](../../../../../eng-us/standards/README.md#how-to-read-the-status)).
+   ([Standards: wie der Status zu lesen ist](../../../../standards/README.md#wie-sie-den-status-lesen)).
 2. **Praktische Zeit vor den Demos.** Wer eine Stunde mit einem CMS gearbeitet hat, stellt bessere Fragen. Eine
    Testinstallation mit SQLite braucht einen Befehl
-   ([Installation mit einem Befehl](../../../../../eng-us/features/6.0/install-in-one-command.md)).
+   ([Installation mit einem Befehl](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 3. **Lesen im eigenen Tempo.** Die ersten Module von [Editors 101](../../../trainer/redakteure-101/README.md) vermitteln
    die Grundlagen, die Bewertende brauchen; der [Rundgang durch die Administration](../../../rundgang-durch-die-administration.md) ist kürzer.
 4. **Das Demo-Skript vereinbaren.** Geben Sie jedem Bieter dasselbe Skript; siehe die Seite zu Demo-Skripten für

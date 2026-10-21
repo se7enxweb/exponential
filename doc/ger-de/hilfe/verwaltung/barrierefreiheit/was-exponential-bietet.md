@@ -11,7 +11,7 @@ type: reference
 
 Diese Seite richtet sich an Projektverantwortliche, die Koordination Barrierefreiheit und die Administration einer
 öffentlichen Stelle, die angeben müssen, wie weit Exponential ihre Pflichten zur Barrierefreiheit unterstützt. Sie fasst
-die eigene Erklärung des Projekts zusammen, [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md),
+die eigene Erklärung des Projekts zusammen, [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md),
 übernimmt deren Statusangaben genau so, wie sie dort stehen, und sagt, was das für eine Website bedeutet, die Sie bauen
 und betreiben.
 
@@ -30,7 +30,7 @@ und betreiben.
 ## Der Status in einer Tabelle
 
 Die Tabelle wiederholt die Zusammenfassung von
-[Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#summary). Werten Sie diese Angaben in Ihren
+[Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#zusammenfassung). Werten Sie diese Angaben in Ihren
 eigenen Dokumenten nicht auf.
 
 | Standard | Version | Status in der Erklärung des Projekts | Umfang der Nachweise |
@@ -103,10 +103,10 @@ Eine faire, belastbare Antwort, in Ihren eigenen Worten:
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md), die Quelle jedes Status auf dieser Seite
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md), die Quelle jedes Status auf dieser Seite
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

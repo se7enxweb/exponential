@@ -48,7 +48,7 @@ Der erste zeigt auf `/fr`, der zweite auf `/en`. Adressen mit einem Sprachsegmen
 
 ## Verwandte Seiten
 
-- [Siteaccess über Host-Präfix und die Umleitung auf die Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)
+- [Siteaccess über Host-Präfix und die Umleitung auf die Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

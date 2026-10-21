@@ -72,7 +72,7 @@ Erwartet: die Positivliste so, wie Sie sie beabsichtigen, und dreimal `404`.
 
 - [SVG-Bilder](../../../bc/6.0/svg-bilder.md)
 - [13.2 Was der Webserver nie herausgeben darf](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)
-- [SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md)
+- [SVG und Bildformate](../../ersteller/website-ersteller/svg-und-bildformate.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

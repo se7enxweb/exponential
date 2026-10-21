@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Entwickler einer Installation mit vielen Sites. Seit Januar 2026 kann
 eine Erweiterung, die eine Site enthält, Override-Einstellungen mitbringen, die nur aktiv sind, während einer ihrer
 Siteaccesses läuft, und das Leeren des INI-Caches leert ihn für jedes Projekt
-([Einstellungen je Site in Erweiterungen](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md)).
+([Einstellungen je Site in Erweiterungen](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)).
 
 ## Inhalt
 
@@ -49,11 +49,11 @@ extension/site_dept_example/
 
 Ein Sprach-Siteaccess, der wie die Hauptsite der Abteilung aussehen soll, erhält
 `[SiteAccessSettings] ExtensionSettingsSiteAccess=<main siteaccess>`
-([Reihenfolge beim Laden von Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md)).
+([Reihenfolge beim Laden von Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md)).
 
 ## Verwandte Seiten
 
-- [Einstellungen je Site in Erweiterungen](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
+- [Einstellungen je Site in Erweiterungen](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)
 - [Eine Abteilungs-Site hinzufügen](eine-abteilungs-site-hinzufuegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

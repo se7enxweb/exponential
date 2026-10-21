@@ -221,7 +221,7 @@ geschrieben wurde.
 - Weiter: [Debug-Ausgabe und Logs für Entwickler](debug-ausgabe-und-logs-fuer-entwickler.md)
 - [Template-Operatoren](../teil-3-erweiterungsentwickler/template-operatoren.md)
 - [Von Hand: ein Template-Operator](../teil-3-erweiterungsentwickler/tutorials/von-hand-template-operator.md)
-- [owsimpleoperator im Erweiterungskatalog](../../../../eng-us/features/6.0/extensions/owsimpleoperator.md)
+- [owsimpleoperator im Erweiterungskatalog](../../../funktionen/6.0/erweiterungen/owsimpleoperator.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

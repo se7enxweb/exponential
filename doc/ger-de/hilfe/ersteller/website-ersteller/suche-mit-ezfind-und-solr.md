@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Website-Ersteller, deren Website der eingebauten Suche entwächst. Die Erweiterung `ezfind`
 verbindet Exponential mit einem Apache-Solr-Server; Solr ist optional, und nichts ändert sich, bis Sie es einschalten
-([exp:solr](../../../../eng-us/features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)).
+([exp:solr](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver)).
 
 ## Inhalt
 
@@ -72,7 +72,7 @@ Suchdialoge des Online-Editors verwenden Solr, wenn es aktiv ist
 ## Verwandte Seiten
 
 - [Suche auf der Website](suche-auf-der-website.md)
-- [Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md)
+- [Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md)
 - [Anwendungen skalieren](../anwendungsentwickler/anwendungen-skalieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

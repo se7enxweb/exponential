@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Site-Ersteller und Entwickler. Die Erweiterung `ezgmaplocation` enthält einen erweiterten
 Attributfilter, `ezgmlLocationFilter`, der Inhalte nach Entfernung von einem Punkt abruft und nach Nähe sortiert
-([ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md)). Er braucht weder eine Karte noch einen
+([ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md)). Er braucht weder eine Karte noch einen
 Google-Dienst: Er ist eine Datenbankabfrage über gespeicherte Koordinaten.
 
 ## Inhalt

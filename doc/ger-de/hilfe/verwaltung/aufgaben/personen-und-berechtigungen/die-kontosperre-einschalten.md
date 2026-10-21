@@ -13,7 +13,7 @@ Diese Aufgabe ist für Administratoren, deren Sicherheitsrichtlinie verlangt, da
 fehlgeschlagenen Anmeldungen gesperrt werden. Die Sperre ist standardmäßig **aus**:
 `settings/site.ini [UserSettings] MaxNumberOfFailedLogin=0`. Der Sicherheitsstandard führt das als bekannte Lücke: Brute
 Force wird von den Audit-Warnungen erkannt, nicht vom Kernel gebremst
-([Sicherheitsstandard, „Bekannte Lücken“](../../../../../eng-us/standards/security.md#known-gaps)).
+([Sicherheitsstandard, „Bekannte Lücken“](../../../../standards/sicherheit.md#bekannte-lücken)).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -81,7 +81,7 @@ Alle in `site.ini [UserSettings]`:
 
 ## Verwandte Seiten
 - [Ein gesperrtes Konto entsperren](ein-gesperrtes-konto-entsperren.md)
-- [Pflege der Benutzerkonten](../../../../../eng-us/help/government/operations/people-and-permissions/user-account-hygiene.md)
+- [Pflege der Benutzerkonten](../../betrieb/personen-und-berechtigungen/pflege-von-benutzerkonten.md)
 - [Die Administration beschränken (Hosting)](../../../hosting/sicherheit/die-administration-einschraenken.md)
 - [Sicherheitshärtung](../../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

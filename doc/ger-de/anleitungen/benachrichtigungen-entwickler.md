@@ -130,7 +130,7 @@ class examplealerthandler extends eZNotificationEventHandler
 fügen Sie einen Eintrag ohne Sendedatum hinzu und senden die Einträge, die keines haben (wie das Beispiel). Um eine Nachricht für eine Zusammenfassung zurückzuhalten, geben Sie
 dem Eintrag ein Sendedatum (`eZNotificationSchedule::setDateForItem( $item, array( 'frequency' => 'day', 'hour' => 8 ) )`,
 danach `$item->store()`) und senden nicht: Der Handler für die allgemeine Zusammenfassung sendet ihn, wenn ein Zeitereignis dieses Datum überschreitet.
-Senden Sie zuerst und entfernen Sie die Einträge erst, wenn `send()` true zurückgegeben hat; bei false rufen Sie `eZNotificationEventFilter::noteDeliveryFailure()` auf und lassen die Einträge stehen, damit der nächste Lauf sie erneut versucht (siehe [die Upgrade-Hinweise](../../eng-us/bc/6.0/notification-ui-and-commands.md#mail-the-transport-refuses-is-kept-and-tried-again)). Entfernen Sie keinen wartenden Eintrag. Der Filter entfernt das Ereignis, wenn kein Eintrag mehr dafür übrig ist, und behält es andernfalls (als behandelt).
+Senden Sie zuerst und entfernen Sie die Einträge erst, wenn `send()` true zurückgegeben hat; bei false rufen Sie `eZNotificationEventFilter::noteDeliveryFailure()` auf und lassen die Einträge stehen, damit der nächste Lauf sie erneut versucht (siehe [die Upgrade-Hinweise](../bc/6.0/benachrichtigungen-oberflaeche-und-befehle.md#e-mails-die-der-transport-ablehnt-werden-behalten-und-erneut-versucht)). Entfernen Sie keinen wartenden Eintrag. Der Filter entfernt das Ereignis, wenn kein Eintrag mehr dafür übrig ist, und behält es andernfalls (als behandelt).
 
 ### Die Einstellungen
 
@@ -231,10 +231,10 @@ für jeden `notification/handler/<handler>/view/digest_plain.tpl` einbindet; das
 Verzeichnis pro Typ, `ezapprove/`).
 
 Die Templates sind gewöhnliche Templates. Um eine Mail zu ändern, überschreiben Sie sie in Ihrem Design mit dem üblichen Override-Mechanismus
-(siehe [Reihenfolge der Template-Overrides](../../eng-us/features/6.0/template-override-ordering.md)): Kopieren Sie die Datei nach
+(siehe [Reihenfolge der Template-Overrides](../funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md)): Kopieren Sie die Datei nach
 `design/<yours>/override/templates/` mit einer Override-Regel für `notification/handler/ezsubtree/view/plain.tpl`, oder legen Sie eine
 geänderte Datei mit demselben Pfad im Ordner `templates/` Ihres Designs ab. Behalten Sie die `set-block`-Zeilen für die Variablen, die Sie benötigen.
-Für diese Anleitung wurde kein Override ausgeführt; ausgeführt wurden die Standard-Templates, und ihre Ausgabe ist in [der Anleitung für Benutzer](../../eng-us/features/6.0/notifications.md) gezeigt.
+Für diese Anleitung wurde kein Override ausgeführt; ausgeführt wurden die Standard-Templates, und ihre Ausgabe ist in [der Anleitung für Benutzer](../funktionen/6.0/benachrichtigungen.md) gezeigt.
 
 Die Einstellungsseite verwendet `notification/handler/<id_string>/settings/edit.tpl`, das `handler` erhält, und in admin4 außerdem
 die Variablen, die die Einstellungsansicht übergibt (`subscriptions`, `subscription_total`, `confirm_remove`, ...). Ein Handler, der nicht zu den
@@ -299,7 +299,7 @@ Ein Test der Zusammenfassung erfordert kein Warten: Legen Sie das Ereignis mit e
 ## Verwandte Seiten
 
 - [Die Spezifikation](../spezifikationen/6.0/benachrichtigungen.md), [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md), [die Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md)
-- [Die Anleitung für Administratoren](benachrichtigungen-administrator.md), [die Anleitung für Benutzer](../../eng-us/features/6.0/notifications.md)
+- [Die Anleitung für Administratoren](benachrichtigungen-administrator.md), [die Anleitung für Benutzer](../funktionen/6.0/benachrichtigungen.md)
 - [Extensions](extensions.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
 
 <!-- exp-partner-block:start -->

@@ -9,9 +9,9 @@ Sie richtet sich an Administratoren, die Klassen, Inhalte oder Extensions zwisch
 alle, die sich um die Pakete kümmern, aus denen neue Installationen gebaut werden. Jede Seite, jedes Feld und jede
 Regel unten wurde am 6. Oktober 2026 mit dem Code dieses Repositorys abgeglichen; die Dateien sind unter [Quellen](#quellen) aufgeführt.
 
-[Anleitungen](README.md) · Siehe auch: [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md) ·
-[Seitenweise Anzeige in der Administrationsoberfläche](../../eng-us/features/6.0/admin-list-paging.md) ·
-[Sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md) · [Extensions](extensions.md)
+[Anleitungen](README.md) · Siehe auch: [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md) ·
+[Seitenweise Anzeige in der Administrationsoberfläche](../funktionen/6.0/seitenweise-listen-im-admin.md) ·
+[Sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md) · [Extensions](extensions.md)
 
 ## Kurz gesagt
 
@@ -93,7 +93,7 @@ Verzeichnisnamen (`eZ systems` wird zu `ez-systems`); ein Paket ohne Hersteller 
    **Anzeigen** öffnet seine Seite, **Herunterladen** seine `.ezpkg`-Datei.
 5. **Pro Seite** und die Seiten. Die angebotenen Größen sind `admininterface.ini [PaginationSettings]
    ItemsPerPageList_package_list` (10, 25, 50, 100, wenn nicht gesetzt); Ihre Auswahl wird als Präferenz gespeichert.
-   Ohne Auswahl verwendet die Liste `ItemsPerPage[package/list]` (25). Siehe [seitenweise Anzeige](../../eng-us/features/6.0/admin-list-paging.md).
+   Ohne Auswahl verwendet die Liste `ItemsPerPage[package/list]` (25). Siehe [seitenweise Anzeige](../funktionen/6.0/seitenweise-listen-im-admin.md).
 6. **Ausgewählte entfernen**, **Neues Paket importieren** und **Neues Paket erstellen**, jeweils ausgegraut, wenn Ihre
    Rolle es nicht erlaubt.
 
@@ -153,7 +153,7 @@ dasselbe. Das Paket wird als gzip-komprimiertes tar (`<name>-<version>.ezpkg`) i
 **JSON** (auf einer Karte) und **Als JSON herunterladen** (auf der Seite eines Pakets) senden dasselbe Paket im
 JSON-Format (`package.json`, `<name>-<version>.json.ezpkg`); **Herunterladen** dort ist das klassische Format. Der
 View-Parameter ist `(format)/json` oder `(format)/xml`. Die Seite des Pakets zeigt das Format, in dem es gespeichert
-ist. Beide Formate werden auf dieselbe Weise hochgeladen und installiert; siehe [das JSON-Paketformat](../../eng-us/bc/6.0/package-json-format.md).
+ist. Beide Formate werden auf dieselbe Weise hochgeladen und installiert; siehe [das JSON-Paketformat](../bc/6.0/package-json-format.md).
 
 Die Datei wird in Stücken von 256 KiB gesendet, nie vollständig eingelesen, nachdem jeder Ausgabepuffer der Seite
 geschlossen wurde. Ein `Range`-Header (`bytes=a-b`, `bytes=a-`, `bytes=-n`) erhält `206 Partial Content`, ein Bereich
@@ -182,7 +182,7 @@ Dateien aus einem Paket (Herunterladen im Inhalt) kommen auf dieselbe Weise von
 5. in keinem Repository existiert ein Paket dieses Namens.
 
 Die Seite nennt die erste Regel, die nicht erfüllt war. Danach wird das Paket selbst validiert: jedes Dokument auf
-Wohlgeformtheit, die JSON-Dokumente eines [JSON-Pakets](../../eng-us/bc/6.0/package-json-format.md) gegen sein Schema und die
+Wohlgeformtheit, die JSON-Dokumente eines [JSON-Pakets](../bc/6.0/package-json-format.md) gegen sein Schema und die
 Prüfsummen seiner `package.json`. Ein Paket, das durchfällt, wird mit der Liste dessen abgelehnt, was fehlgeschlagen
 ist. Sind alle Bedingungen erfüllt, wird das Paket in sein Repository entpackt; bei einem Paket mit
 Installationselementen öffnet sich als Nächstes sein Installationsschritt, bei jedem anderen seine Seite, und beide
@@ -221,16 +221,16 @@ seine Remote-ID (neu, vorhanden, ein Konflikt oder ohne seine Klasse). **Als Ent
 Inhaltsobjekte stattdessen als Entwürfe: Nichts wird veröffentlicht, ein vorhandenes Objekt erhält einen neuen Entwurf
 (oder bleibt unverändert), Klassen, Einstellungen und Design-Dateien werden nicht installiert, und die Ergebnisseite
 verlinkt jeden Entwurf zur Prüfung. Siehe
-[Als Entwürfe installieren](../../eng-us/bc/6.0/package-json-format.md#install-as-drafts).
+[Als Entwürfe installieren](../bc/6.0/package-json-format.md#als-entwürfe-installieren).
 
 Der Bericht führt jedes Objekt auf, mit dem, was die Installation damit tut, und wohin sein Hauptort kommt (ganz oben,
 unter einen Knoten hier, unter einen Knoten des Pakets oder unter einen fehlenden), jeweils mit ihrer Anzahl.
 
-**Im Hintergrund installieren** führt dieselbe Installation als [Inhaltsauftrag](../../eng-us/bc/6.0/content-jobs.md) (`packageinstall`)
+**Im Hintergrund installieren** führt dieselbe Installation als [Inhaltsauftrag](../bc/6.0/inhaltsjobs.md) (`packageinstall`)
 in Ihrem Namen und mit Ihren Auswahlen aus; die Seite schlägt dies für ein Paket mit mehr Objekten als
 `[ContentJobSettings] SynchronousLimit` vor. Die Seite des Pakets zeigt dann den Fortschritt Objekt für Objekt und
 listet die Entwürfe auf, wenn der Vorgang abgeschlossen ist. Eine Extension kann über das Ereignis
-`package/install/drafts` auf jede Installation als Entwürfe reagieren ([das JSON-Paketformat](../../eng-us/bc/6.0/package-json-format.md#setup--packages)).
+`package/install/drafts` auf jede Installation als Entwürfe reagieren ([das JSON-Paketformat](../bc/6.0/package-json-format.md#setup--pakete)).
 
 **Deinstallieren** öffnet `/package/uninstall/<name>`: was die Deinstallation von der Site entfernt, Inhalte
 eingeschlossen, mit **Deinstalliere Paket** und **Deinstallation auslassen**. Eine Deinstallation kann nicht
@@ -246,7 +246,7 @@ dann nach Name, Zusammenfassung, Version, Lizenz und Betreuer sowie dem Format, 
 (klassisches XML oder JSON), und schreibt das Paket nach `local`. Auf der Site ändert sich nichts. Jeder Schritt zeigt,
 wo Sie sich im Assistenten befinden, und markiert Fehler an ihren Feldern, und der
 letzte Schritt zeigt das gesamte Paket zur Prüfung, bevor **Paket erstellen** es schreibt: siehe [Der
-Paket-Assistent](../../eng-us/features/6.0/package-wizard.md).
+Paket-Assistent](../funktionen/6.0/paketassistent.md).
 
 ## 9. Pakete entfernen
 

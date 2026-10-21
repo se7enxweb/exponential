@@ -41,7 +41,7 @@ ExtensionDocDirs[]=mysite_hello
 Die Hilfe liest dann `extension/mysite_hello/doc`, die Dateien, die vom eigenen Git-Repository der Erweiterung verfolgt
 werden, und gibt ihren Seiten die ID `ext/mysite_hello/<path below doc>`. Nur verfolgte Dateien werden ausgeliefert;
 nichts außerhalb des Ordners wird je gelesen. Siehe
-[Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md).
+[Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md).
 
 ## Front Matter
 
@@ -101,7 +101,7 @@ verwendet die GNU FDL 1.3, die es jedem erlaubt, sie zu kopieren, zu übersetzen
 
 - Zurück: [Leistung in Erweiterungen](leistung-in-erweiterungen.md)
 - Weiter: [Tutorials: echte Erweiterungen Schritt für Schritt bauen](tutorials/README.md)
-- [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md), [Spezifikation des Hilfesystems](../../../spezifikationen/6.0/hilfesystem.md)
+- [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md), [Spezifikation des Hilfesystems](../../../spezifikationen/6.0/hilfesystem.md)
 - [Das Hilfesystem für Erweiterungen](../teil-8-referenz/hilfesystem-fuer-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

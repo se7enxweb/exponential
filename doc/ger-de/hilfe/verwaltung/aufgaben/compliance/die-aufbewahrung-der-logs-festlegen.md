@@ -58,7 +58,7 @@ Nach der ersten Nacht zeigt das Audit `system.log.delete` für bereinigte Archiv
 ## Verwandte Seiten
 
 - [Aufbewahrung der Logs](../../datenschutz/aufbewahrung-von-protokollen.md)
-- [Rotation und Bereinigung der Logs](../../../../../eng-us/features/6.0/log-rotation.md)
+- [Rotation und Bereinigung der Logs](../../../../funktionen/6.0/log-rotation.md)
 - [Aufbewahrung personenbezogener Daten: ein Überblick](../../datenschutz/aufbewahrung-im-ueberblick.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

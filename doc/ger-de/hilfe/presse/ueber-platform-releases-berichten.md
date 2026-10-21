@@ -25,7 +25,7 @@ bevor Sie schreiben.
 ## Die Familie in einer Tabelle
 
 Beschreibungen aus [Wer ist die Exponential Foundation?, Die Produkte im Einzelnen](../wer-ist-die-exponential-foundation.md#die-produkte-im-einzelnen);
-die Nexus-Linien aus [Exponential Platform Nexus: eine fertige Website in Minuten](../../../eng-us/features/6.0/platform-nexus-starter.md).
+die Nexus-Linien aus [Exponential Platform Nexus: eine fertige Website in Minuten](../../funktionen/6.0/plattform-nexus-starter.md).
 
 | Produkt | Was es ist | Enthält Exponential 6? |
 |---|---|---|
@@ -56,10 +56,10 @@ Manche Tags tragen ein `v`, manche nicht (`1.0.0.6`); drucken Sie die Nummer im 
 
 - Die Release Notes der Platform führen "Releases made by the se7enxweb team"; "Upstream history carried by the fork is
   not repeated here" (zum Beispiel die [Release Notes von Nexus](../../../changelogs/extensions/exponential-platform-nexus.md)).
-  Die Upstream-Geschichte wird auf den Repository-Seiten des [Platform-Ökosystems](../../../eng-us/history/ecosystem.md) erzählt.
-- Wie die Platform-Repositorys mit Exponential zusammenhängen: [Das Platform-Ökosystem](../../../eng-us/history/ecosystem.md).
-- Wie Sie ein Projekt beginnen: [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md),
-  [DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md).
+  Die Upstream-Geschichte wird auf den Repository-Seiten des [Platform-Ökosystems](../../geschichte/oekosystem.md) erzählt.
+- Wie die Platform-Repositorys mit Exponential zusammenhängen: [Das Platform-Ökosystem](../../geschichte/oekosystem.md).
+- Wie Sie ein Projekt beginnen: [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md),
+  [DXP-Skeleton](../../funktionen/6.0/plattform-dxp-skeleton.md).
 
 ## Verwechslungen, die Sie vermeiden sollten
 
@@ -67,8 +67,8 @@ Manche Tags tragen ein `v`, manche nicht (`1.0.0.6`); drucken Sie die Nummer im 
 |---|---|---|
 | „DXP enthält den Layout-Editor von Exponential Layouts“ | DXP liefert keinen Layout-Editor, keinen Freigabe-Workflow, keinen Scheduler und keinen Legacy-Kernel; "For Exponential 6 beside Symfony, choose Legacy or Nexus" | [Exponential Platform DXP](../wer-ist-die-exponential-foundation.md#exponential-platform-dxp) |
 | „Ein Platform-Release ist ein Release von Exponential 6“ | Der Kernel hat eigene Versionen (6.0.x); die Platform-Pakete zählen getrennt | [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md) |
-| „Nexus ist dasselbe wie DXP“ | Nexus ist eine vollständige Website mit Demo-Inhalten und Netgen Layouts, und die meisten seiner Linien enthalten Exponential 6; DXP ist eine reine Symfony-Plattform | [Exponential Platform Nexus](../wer-ist-die-exponential-foundation.md#exponential-platform-nexus), [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md) |
-| „Jedes Nexus-Release enthält Exponential 6“ | Die Linie 1.3.0.x und der v5-Starter haben keinen Legacy-Kernel | [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md) |
+| „Nexus ist dasselbe wie DXP“ | Nexus ist eine vollständige Website mit Demo-Inhalten und Netgen Layouts, und die meisten seiner Linien enthalten Exponential 6; DXP ist eine reine Symfony-Plattform | [Exponential Platform Nexus](../wer-ist-die-exponential-foundation.md#exponential-platform-nexus), [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md) |
+| „Jedes Nexus-Release enthält Exponential 6“ | Die Linie 1.3.0.x und der v5-Starter haben keinen Legacy-Kernel | [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md) |
 | „Der Starter ist fertig“ | Seine Beschreibung sagt "Currently In Public Beta" | Derselbe Abschnitt |
 | „DXP steht nur unter der GPL“ | Seine `composer.json` sagt "GPL-2.0-or-later or proprietary" | [Exponential Platform DXP](../wer-ist-die-exponential-foundation.md#exponential-platform-dxp) |
 

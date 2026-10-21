@@ -36,7 +36,7 @@ Inhalte anhand ihres Knotens oder Objekts ([1. Die Linkliste](../../../anleitung
 `/contentcheck/unreferenced/<node id>` listet veröffentlichte Bilder, Dateien und Medien unterhalb eines Knotens auf,
 die nichts verwendet: kein Objekt, Layout, keine Einstellung, kein Template, keine Rolle, kein Shop- oder
 Newsletter-Eintrag. Markieren Sie sie und verschieben Sie sie nach einer Bestätigung in den Papierkorb
-([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 
 ![Nicht referenzierte Objekte: Bilder und Dateien, die nichts verwendet, zum Aufräumen oder Verschieben in den Papierkorb](../../../../eng-us/help/images/creators/unreferenced-objects.webp)
 
@@ -70,7 +70,7 @@ Die Prüfungen stehen im Setup-Menü und im Kontextmenü des Inhaltsbaums (**For
 
 - [Ihre Website pflegen](ihre-website-pflegen.md)
 - [Relationen und Wiederverwendung](relationen-und-wiederverwendung.md)
-- [Prüfung umgekehrter Relationen](../../../../eng-us/features/6.0/reverse-relation-check.md)
+- [Prüfung umgekehrter Relationen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

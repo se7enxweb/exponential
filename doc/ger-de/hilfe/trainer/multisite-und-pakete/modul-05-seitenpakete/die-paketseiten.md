@@ -139,15 +139,15 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto. Klicken Sie
 ## Weiterführende Informationen
 
 - [Pakete: was sie enthalten, wo sie liegen und wie man sicher mit ihnen umgeht](../../../../anleitungen/pakete.md).
-- [Das JSON-Paketformat](../../../../../eng-us/bc/6.0/package-json-format.md).
-- [Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md).
-- [Ein Paket validieren](../../../../../eng-us/help/designers/extensions/validating-a-package.md).
+- [Das JSON-Paketformat](../../../../bc/6.0/package-json-format.md).
+- [Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md).
+- [Ein Paket validieren](../../../designer/erweiterungen/ein-paket-pruefen.md).
 
 ## Verwandte Seiten
 
 - [Modul 5: Seitenpakete](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md), `kernel/classes/datatypes/ezstring/ezstringtype.php`
+Quellen: [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md), `kernel/classes/datatypes/ezstring/ezstringtype.php`
 und `settings/content.ini [DataTypeSettings]`.
 
 1. **Die Klasse** (5 Minuten). Öffnen Sie `ezstringtype.php`: `class eZStringType extends eZDataType`, die Konstante
@@ -150,7 +150,7 @@ Wurzelverzeichnis der Installation.
 
 ## Weiterführende Literatur
 
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): die Assistenten, der Katalog und die Zustandsprüfung.
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md): die Assistenten, der Katalog und die Zustandsprüfung.
 - [Erweiterungspunkte](../../../../bc/6.0/rad-erweiterungspunkte.md): jede Stelle, an der sich der Kernel erweitern
   lässt.
 - [Sicherheit der RAD-Werkzeuge](../../../../bc/6.0/rad-sicherheit.md): was die Assistenten schreiben und niemals

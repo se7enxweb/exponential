@@ -42,7 +42,7 @@ arbeitet in dieser Erweiterung.
   [Das Seitenpaket für eine Schulung wählen](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/das-seitenpaket-fuer-den-kurs-waehlen.md)).
 - Führen Sie den Assistenten einmal auf einer Kopie der Übungsumgebung aus und prüfen Sie seine `page_head.tpl`: Wenn
   der Titel `implode_key` verwendet, bereiten Sie die drei Änderungen aus
-  [Die Teile des Design-Assistenten](../../../../../eng-us/help/designers/extensions/design-wizard-parts-reference.md#three-edits-the-generated-head-and-layout-need)
+  [Die Teile des Design-Assistenten](../../../designer/erweiterungen/die-teile-des-design-assistenten.md#drei-änderungen-die-der-erzeugte-kopf-und-das-layout-brauchen)
   vor.
 - Wenn die Übungsumgebung von Velocity bereitgestellt wird, schreiben Sie den Befehl zum Neustart an die Tafel:
   `php bin/php/console exp:velocity restart`.

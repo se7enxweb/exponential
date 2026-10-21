@@ -45,7 +45,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md), die Abschnitte
+Quelle: [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md), die Abschnitte
 „Einstellungen“, „Einschalten“ und „Berichte“.
 
 1. **Wofür sie da ist** (3 Minuten). Eine Richtlinie wie `script-src 'self'` ohne `'unsafe-inline'` bedeutet, dass ein
@@ -149,7 +149,7 @@ Sie die Adresse und die Namen der Siteaccesses durch Ihre eigenen.
 <summary>Antworten</summary>
 
 1. **C.** `auto` bedeutet report-only auf Siteaccesses der Administration und ausgeschaltet auf allen anderen
-   ([Content Security Policy, Einstellungen](../../../../../eng-us/features/6.0/content-security-policy.md#settings)).
+   ([Content Security Policy, Einstellungen](../../../../funktionen/6.0/content-security-policy.md#einstellungen)).
 2. `var/log/csp.log`, im Log-Viewer als **Content-Security-Policy-Berichte** aufgeführt.
 3. Im Modus report-only arbeiten und die Berichte aus der echten Nutzung sammeln.
 4. `Mode=report-only` (oder `disabled`) setzen und den INI-Cache erneut leeren; PHP neu laden oder Velocity per Deploy
@@ -160,7 +160,7 @@ Sie die Adresse und die Namen der Siteaccesses durch Ihre eigenen.
 
 ## Weiterführende Literatur
 
-- [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md): jede Einstellung, die Berichte und
+- [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md): jede Einstellung, die Berichte und
   das Durchsetzen mit einer Nonce.
 - [Kapitel 13, 13.9 Sicherheits-Header und HTTPS](../../../../installation/13-sicherheitshaertung.md#139-sicherheits-header-und-https).
 - [Content Security Policy für Hoster](../../../hosting/sicherheit/content-security-policy.md).

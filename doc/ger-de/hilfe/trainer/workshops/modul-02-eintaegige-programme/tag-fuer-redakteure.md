@@ -10,7 +10,7 @@ type: help
 # Agenda 2.1: Der Tag für Redakteure
 
 Ein Tag genügt, damit neue Redakteure allein echt wirkende Inhalte veröffentlichen, wenn sich der Tag auf die
-Kernaufgaben konzentriert und jede einmal übt. Diese Agenda ist aus [Redakteure 101](../../../../../eng-us/help/trainers/editors-101/README.md)
+Kernaufgaben konzentriert und jede einmal übt. Diese Agenda ist aus [Redakteure 101](../../redakteure-101/README.md)
 aufgebaut; jeder Block nennt die Lektion, die er verwendet.
 
 ## Auf einen Blick
@@ -37,16 +37,16 @@ Am Ende des Tages können die Teilnehmenden:
 
 | Zeit | Block | Verwendet | Kontrollpunkt |
 |---|---|---|---|
-| 9:00 | Begrüßung, Anmeldung, der Rundgang (60 Min.) | [Modul 1](../../../../../eng-us/help/trainers/editors-101/module-01-signing-in-and-the-tour/README.md) | Alle angemeldet; „?“ gefunden |
-| 10:00 | Der Inhaltsbaum (45 Min.) | [Der Baum und die Seite eines Elements](../../../../../eng-us/help/trainers/editors-101/module-02-the-content-tree/the-tree-and-an-items-page.md) | Alle haben ihren eigenen Ordner geöffnet |
+| 9:00 | Begrüßung, Anmeldung, der Rundgang (60 Min.) | [Modul 1](../../redakteure-101/modul-01-anmelden-und-rundgang/README.md) | Alle angemeldet; „?“ gefunden |
+| 10:00 | Der Inhaltsbaum (45 Min.) | [Der Baum und die Seite eines Elements](../../redakteure-101/modul-02-der-inhaltsbaum/der-baum-und-die-seite-eines-elements.md) | Alle haben ihren eigenen Ordner geöffnet |
 | 10:45 | Pause (15 Min.) | | |
-| 11:00 | Erster Ordner und erster Artikel (75 Min.) | [Ihren ersten Ordner anlegen](../../../../../eng-us/help/trainers/editors-101/module-03-creating-and-editing/creating-your-first-folder.md), [Ihren ersten Artikel anlegen](../../../../../eng-us/help/trainers/editors-101/module-03-creating-and-editing/creating-your-first-article.md) | Artikel in Version 2 |
+| 11:00 | Erster Ordner und erster Artikel (75 Min.) | [Ihren ersten Ordner anlegen](../../redakteure-101/modul-03-erstellen-und-bearbeiten/ihren-ersten-ordner-erstellen.md), [Ihren ersten Artikel anlegen](../../redakteure-101/modul-03-erstellen-und-bearbeiten/ihren-ersten-artikel-erstellen.md) | Artikel in Version 2 |
 | 12:15 | Mittagspause (45 Min.) | | |
-| 13:00 | Der Online-Editor: formatierter Text und Links (60 Min.) | [Grundlagen des formatierten Texts](../../../../../eng-us/help/trainers/editors-101/module-04-the-online-editor/rich-text-basics.md), [Links und Anker](../../../../../eng-us/help/trainers/editors-101/module-04-the-online-editor/links-and-anchors.md) | Ein Link und eine Überschrift im Haupttext |
-| 14:00 | Bilder mit Alternativtext (45 Min.) | [Bilder in Artikeln und Alternativtext](../../../../../eng-us/help/trainers/editors-101/module-05-images-and-media/images-in-articles-and-alternative-text.md) | Bild mit Alternativtext im Artikel |
+| 13:00 | Der Online-Editor: formatierter Text und Links (60 Min.) | [Grundlagen des formatierten Texts](../../redakteure-101/modul-04-der-online-editor/grundlagen-des-rich-text.md), [Links und Anker](../../redakteure-101/modul-04-der-online-editor/links-und-anker.md) | Ein Link und eine Überschrift im Haupttext |
+| 14:00 | Bilder mit Alternativtext (45 Min.) | [Bilder in Artikeln und Alternativtext](../../redakteure-101/modul-05-bilder-und-medien/bilder-in-artikeln-und-alternativtext.md) | Bild mit Alternativtext im Artikel |
 | 14:45 | Pause (15 Min.) | | |
-| 15:00 | Versionen, Vorschau und Inhalte finden (45 Min.) | [Versionen und Vergleichen](../../../../../eng-us/help/trainers/editors-101/module-06-publishing-and-versions/versions-and-comparing.md), [Die Schnellsuche](../../../../../eng-us/help/trainers/editors-101/module-07-finding-content/the-quick-search.md) | Zwei Versionen verglichen; Element gefunden und mit Lesezeichen versehen |
-| 15:45 | Abschlussprojekt und Abschluss (45 Min.) | [Abschlussprojekt: eine Seite von Anfang bis Ende](../../../../../eng-us/help/trainers/editors-101/module-09-the-editor-siteaccess/capstone-a-page-from-start-to-finish.md) | Element des Abschlussprojekts veröffentlicht; Rückmeldezettel |
+| 15:00 | Versionen, Vorschau und Inhalte finden (45 Min.) | [Versionen und Vergleichen](../../redakteure-101/modul-06-veroeffentlichen-und-versionen/versionen-und-vergleichen.md), [Die Schnellsuche](../../redakteure-101/modul-07-inhalte-finden/die-schnellsuche.md) | Zwei Versionen verglichen; Element gefunden und mit Lesezeichen versehen |
+| 15:45 | Abschlussprojekt und Abschluss (45 Min.) | [Abschlussprojekt: eine Seite von Anfang bis Ende](../../redakteure-101/modul-09-der-editor-siteaccess/abschluss-eine-seite-von-anfang-bis-ende.md) | Element des Abschlussprojekts veröffentlicht; Rückmeldezettel |
 | 16:30 | Ende | | |
 
 Streichpunkte, in dieser Reihenfolge: der Vergleich der Versionen; das Lesezeichen; der Link auf einen Anker.
@@ -57,7 +57,7 @@ Streichpunkte, in dieser Reihenfolge: der Vergleich der Versionen; das Lesezeich
 - **Bilder brauchen eine vorbereitete Datei.** Legen Sie vor dem Tag zwei kleine, frei lizenzierte Bilder auf jeden
   Rechner oder auf ein gemeinsames Laufwerk.
 - **Gemeinsame Website?** Prüfen Sie am Vortag die Einschränkung der Rolle jeder Person
-  ([Lektion 2.7 von Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/shared-server-or-one-per-learner.md)).
+  ([Lektion 2.7 von Train the Trainer](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/gemeinsamer-server-oder-einer-pro-teilnehmer.md)).
 - **Nach dem Tag** verweisen Sie die Teilnehmenden auf den Rest von Redakteure 101 und auf Redakteure 201.
 
 ## Praktische Übung: das Abschlussprojekt des Tages
@@ -96,7 +96,7 @@ Jede Person allein, in ihrem eigenen Ordner:
 
 ## Weiterführende Informationen
 
-- [Redakteure 101: Kursüberblick](../../../../../eng-us/help/trainers/editors-101/README.md)
+- [Redakteure 101: Kursüberblick](../../redakteure-101/README.md)
 - [Inhalte anlegen und bearbeiten](../../../inhalte-bearbeiten.md)
 - [Medien und Uploads](../../../medien-und-uploads.md)
 
@@ -104,7 +104,7 @@ Jede Person allein, in ihrem eigenen Ordner:
 
 - [Modul 2: Eintägige Agenden](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

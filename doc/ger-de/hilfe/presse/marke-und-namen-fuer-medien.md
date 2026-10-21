@@ -54,7 +54,7 @@ Bezeichner, und sie bleiben, wie sie sind. Wenn Sie Code zitieren, zitieren Sie 
 schreiben Sie Exponential. Paketnamen werden in Code-Schrift und klein geschrieben: `expai`, `explayouts`. Im Code wird
 7x als `sevenx` geschrieben (sein offizielles öffentliches PHP-Code-Präfix, weil ein Name im Code nicht mit einer Ziffer
 beginnen kann) oder als `exp`, das Präfix, das 7x mit der Absicht verwendet, Arbeit dem Exponential-Projekt und der
-Exponential Foundation zuzuordnen ([Namenspräfixe](../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md)). Im Fließtext ist
+Exponential Foundation zuzuordnen ([Namenspräfixe](../../standards/namenspraefixe-sevenx-und-exp.md)). Im Fließtext ist
 es immer 7x.
 
 ## Andere Unternehmen

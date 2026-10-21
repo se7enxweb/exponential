@@ -89,7 +89,7 @@ Termine. Ein Import aus Ihrem eigenen Veranstaltungssystem ist eine Entwicklungs
 
 - [Veranstaltungen](README.md)
 - [Kalenderansichten](kalenderansichten.md)
-- [ezwebin](../../../../../eng-us/features/6.0/extensions/ezwebin.md)
+- [ezwebin](../../../../funktionen/6.0/erweiterungen/ezwebin.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

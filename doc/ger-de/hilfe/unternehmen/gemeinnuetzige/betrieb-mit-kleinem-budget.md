@@ -50,7 +50,7 @@ Es gibt keine Gebühr pro Redakteur, pro Website oder pro Sprache, die Sie budge
 
 SQLite 3 ist die erste Datenbank in der offiziellen Reihenfolge und der Standard. „Mit SQLite läuft eine vollständige
 Exponential-Website aus einer Datei auf der Platte, ohne Datenbankserver, der installiert, konfiguriert oder abgesichert
-werden müsste“ ([Unterstützung für SQLite-Datenbanken](../../../../eng-us/features/6.0/sqlite-database.md)). Für eine kleine
+werden müsste“ ([Unterstützung für SQLite-Datenbanken](../../../funktionen/6.0/sqlite-datenbank.md)). Für eine kleine
 gemeinnützige Organisation bedeutet das einen Dienst weniger, den man bezahlen, patchen und sichern muss.
 
 Kennen Sie ihre Grenze: „SQLite erlaubt jeweils nur einen Schreibenden. Viele Redakteure, die im selben Moment
@@ -69,14 +69,14 @@ liegt meist gut darunter. Ein späterer Wechsel ist möglich; siehe
 
 Exponential Velocity, der mitgelieferte Server, „braucht außer PHP nichts Installiertes“ (README, Requirements), was zu
 einem kleinen virtuellen Server passt. Was eine Website von jedem Hoster braucht, steht in
-[Hosting für eine Website](../../../../eng-us/help/creators/website-creators/hosting-for-a-website.md); siehe auch
+[Hosting für eine Website](../../ersteller/website-ersteller/hosting-fuer-eine-website.md); siehe auch
 [Hosting auswählen](../auswahl/hosting-auswaehlen.md).
 
 ## Günstig anfangen
 
 `./console exp:install` „installiert das Multisite-Paket auf **SQLite**, in `eng-US`“, mit einer Website und einer
 Administration, und gibt die Anmeldeadressen aus
-([Exponential mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md)). Ein Ehrenamtlicher kann
+([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)). Ein Ehrenamtlicher kann
 so das ganze Produkt auf einem Laptop ausprobieren, bevor irgendetwas gekauft wird.
 
 Die mitgelieferten `ezwebin`-Klassen (Artikel, Veranstaltung, Veranstaltungskalender, Feedback-Formular, Datei, Ordner,
@@ -87,17 +87,17 @@ Frontpage, Blog) decken die meisten Seiten einer gemeinnützigen Organisation oh
 
 Die meisten teuren Vorfälle auf kleinen Websites kommen von fehlenden Backups, nicht eingespielten Updates und davon,
 dass niemand hinschaut. Die Routine für Website-Ersteller ist kurz
-([Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)):
+([Ihre Website pflegen](../../ersteller/website-ersteller/ihre-website-pflegen.md)):
 
 - [ ] **Backups** von Datenbank und Speicher, mit einer tatsächlich getesteten Wiederherstellung. Bei SQLite sichern Sie
       mit `sqlite3 <file> ".backup <target>"`, „nicht indem Sie die Datei kopieren, während die Website beschäftigt ist“
-      ([Unterstützung für SQLite-Datenbanken](../../../../eng-us/features/6.0/sqlite-database.md#limits-and-good-practice),
-      [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+      ([Unterstützung für SQLite-Datenbanken](../../../funktionen/6.0/sqlite-datenbank.md#grenzen-und-gute-praxis),
+      [Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 - [ ] **Updates** von Exponential, Erweiterungen und PHP, zuerst auf einer Kopie getestet
-      ([Updates und Upgrades](../../../../eng-us/help/creators/website-creators/updates-and-upgrades.md)).
+      ([Updates und Upgrades](../../ersteller/website-ersteller/updates-und-aktualisierungen.md)).
 - [ ] **Cron** läuft, damit Newsletter, Indexierung und Aufräumarbeiten stattfinden ([Cronjobs](../../../anleitungen/cronjobs.md)).
-- [ ] **Logs** werden monatlich angesehen ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
-- [ ] **Konten** ausgeschiedener Ehrenamtlicher werden deaktiviert ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] **Logs** werden monatlich angesehen ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
+- [ ] **Konten** ausgeschiedener Ehrenamtlicher werden deaktiviert ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 Setzen Sie einen Namen und ein Datum neben jede Zeile; siehe die [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md).
 

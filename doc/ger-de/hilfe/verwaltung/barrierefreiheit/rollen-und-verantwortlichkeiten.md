@@ -58,7 +58,7 @@ R = führt aus, A = verantwortlich, C = wird konsultiert.
   Beispielen. Der Schulungsbereich dieser Hilfe hat Kurse für die Redaktion
   ([Kurskatalog](../../trainer/kurskatalog.md)).
 - Administration: Klasseneinstellungen, Designeinstellungen, Rollen.
-- Design und Entwicklung: [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- Design und Entwicklung: [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
   und [Styling von admin4](../../../bc/6.0/admin4-gestaltung.md) für Erweiterungen der Administration.
 - Trainerinnen und Trainer, die ihre eigenen Materialien barrierefrei gestalten: Der Kurs für Trainerinnen und Trainer
   hat ein Modul zu Barrierefreiheit und Inklusion

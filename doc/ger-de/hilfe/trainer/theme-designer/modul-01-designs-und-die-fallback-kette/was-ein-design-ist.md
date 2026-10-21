@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Templates und Design, Teil 1](../../../../anleitungen/templates-und-design.md#1-wie-ein-template-gefunden-wird) und
-[Designs, Siteaccesses und die Fallback-Kette der Designs](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md).
+[Designs, Siteaccesses und die Fallback-Kette der Designs](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md).
 
 1. **Zuerst ein Satz** (2 Minuten). Ein Design ist ein Verzeichnis; ein Siteaccess verwendet eine Kette von Designs;
    die erste in der Kette gefundene Datei gewinnt. Schreiben Sie den Satz an die Tafel und kommen Sie in jeder Lektion
@@ -163,10 +163,10 @@ der Installation, dem Verzeichnis mit der `index.php`. Nichts in dieser Übung �
 
 - [Templates und Design: das Aussehen einer Seite ändern](../../../../anleitungen/templates-und-design.md): der Leitfaden,
   dem dieses Modul folgt.
-- [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md):
+- [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md):
   die Kette, erklärt für Website-Bauer.
-- [Was eine Theme-Erweiterung ist](../../../../../eng-us/help/designers/extensions/what-a-theme-extension-is.md): wo dieser Kurs endet.
-- [Ein Design oder Theme wählen](../../../../../eng-us/help/creators/website-creators/choosing-a-design-or-theme.md): die mitgelieferten
+- [Was eine Theme-Erweiterung ist](../../../designer/erweiterungen/was-eine-theme-erweiterung-ist.md): wo dieser Kurs endet.
+- [Ein Design oder Theme wählen](../../../ersteller/website-ersteller/ein-design-oder-theme-waehlen.md): die mitgelieferten
   Themes.
 
 ## Verwandte Seiten

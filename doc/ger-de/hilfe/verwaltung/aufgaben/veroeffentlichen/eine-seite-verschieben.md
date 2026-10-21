@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Redakteure, die Inhalte umstrukturieren. **Verschieben** setzt ein Element mit allem darunter
 unter ein neues übergeordnetes Element. Die alte Adresse funktioniert weiter: Sie leitet auf die neue weiter
-([Weiterleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+([Weiterleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Inhalt
 

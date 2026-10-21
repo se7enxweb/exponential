@@ -38,7 +38,7 @@ Nutzen Sie diese Tabelle, um Ihren Aufbewahrungsplan in Einstellungen umzusetzen
 | Sitzungen | Ablauf | 3 Tage | `site.ini [Session] SessionTimeout` |
 | Inhaltsversionen | wenn eine neue Version die Grenze überschreitet, wird die älteste archivierte Version entfernt | 45 pro Objekt (75 für Klasse 1) | `content.ini [VersionManagement]` |
 
-Quellen: [Audit-Leitfaden 4.3](../../../../eng-us/bc/6.0/audit.md#43-retention), [Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md),
+Quellen: [Audit-Leitfaden 4.3](../../../bc/6.0/audit.md#43-aufbewahrung), [Protokollrotation](../../../funktionen/6.0/log-rotation.md),
 [E-Mail-Einstellungen: Aufbewahrung](../../../anleitungen/mail-einstellungen-administrator.md#9-aufbewahrung-und-der-cronjob),
 [Sitzungen](../../../anleitungen/sitzungen.md), [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md).
 

@@ -35,7 +35,7 @@ Stellen Sie eine Frage: „Was möchten Sie mit Exponential tun?“
 | Sie sagen | Sie sind | Als Nächstes |
 |---|---|---|
 | „Ich bearbeite Inhalte auf unserer Website“ | Redakteur | [Hilfe für Redakteure und Benutzer](../README.md), [Erste Schritte](../erste-schritte.md) |
-| „Ich möchte es ausprobieren“ | Jemand, der bewertet | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| „Ich möchte es ausprobieren“ | Jemand, der bewertet | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | „Wir betreiben eine alte Website aus der Zeit von eZ Publish“ | Administrator mit einer Migration | [Migration von 4.x](../../installation/14-migration-von-4x.md), [Upgrade](../../installation/11-aktualisieren.md) |
 | „Ich bin PHP-Entwickler“ | Entwickler | [Gesprächspunkte für Entwickler](gespraechspunkte-fuer-entwickler.md), [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | „Ich möchte helfen“ | Künftige beitragende Person | [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md) |

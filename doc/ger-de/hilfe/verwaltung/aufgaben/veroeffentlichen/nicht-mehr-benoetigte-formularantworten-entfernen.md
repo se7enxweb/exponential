@@ -66,7 +66,7 @@ lange wie nötig aufbewahrt werden
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Formularantworten als CSV exportieren](formularantworten-als-csv-exportieren.md)
-- [Datenschutzstandards](../../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

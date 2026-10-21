@@ -72,7 +72,7 @@ halten Sie die Felder, die amtliche Rollen zeigen, an einer Stelle, die sie nich
 | Einträge der Aufzeichnung werden von der Parlamentsverwaltung ohne Verzögerung durch eine Freigabe veröffentlicht | kein Ereignis *Freigeben* für die Sektion `record`, oder die Gruppe der Parlamentsverwaltung unter **Gruppen ausschließen** |
 | Berichtigungen hinterlassen eine Spur | eine neue Version mit einem Berichtigungshinweis; die frühere Version bleibt im Versionsverlauf |
 | Entfernen von Versionen nur aus rechtlichen Gründen (zum Beispiel rechtswidrig veröffentlichte personenbezogene Daten) | die Rolle Berichtigungen der Aufzeichnung, verwendet nach einem schriftlichen Verfahren |
-| Jede Handlung zuordenbar | das Audit-Protokoll, standardmäßig an ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
+| Jede Handlung zuordenbar | das Audit-Protokoll, standardmäßig an ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
 
 Inhalte der Kommunikation können ein Ereignis *Freigeben* durchlaufen, das auf die Sektion Standard eingeschränkt ist.
 

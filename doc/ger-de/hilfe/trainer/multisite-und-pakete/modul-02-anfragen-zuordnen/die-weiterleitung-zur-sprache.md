@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md#the-redirect-to-the-language).
+Quelle: [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md#die-weiterleitung-zur-sprache).
 
 1. **Wann sie greift** (4 Minuten). Nur dort, wo keine Prüfung aus `MatchOrder` gepasst hat, also wo `DefaultAccess`
    antworten würde: typischerweise die Adresse ohne Siteaccess- oder Sprachsegment. Eine Adresse, die eine Prüfung
@@ -159,17 +159,17 @@ Ihrer Übungsumgebung.
 
 ## Weiterführende Informationen
 
-- [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md):
+- [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md):
   die vollständigen Regeln, die Caches und wie es funktioniert.
-- [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md).
+- [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md).
 - [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md).
-- [Sprachumschalter und Adressen pro Sprache](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md).
+- [Sprachumschalter und Adressen pro Sprache](../../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md).
 
 ## Verwandte Seiten
 
 - [Modul 2: Anfragen Siteaccesses zuordnen](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

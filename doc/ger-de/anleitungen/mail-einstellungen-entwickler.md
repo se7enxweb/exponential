@@ -288,7 +288,7 @@ schickt `./console exp:mail:gate --category=events --to=a@docs.invalid --write` 
 - [Die rechtliche Checkliste](../spezifikationen/6.0/mail-einstellungen-compliance.md)
 - [Die Anleitung für Administratoren](mail-einstellungen-administrator.md)
 - [Benachrichtigungen: Architektur, Erweiterung und Tests](benachrichtigungen-entwickler.md)
-- [Upgrade-Hinweise](../../eng-us/bc/6.0/mail-preferences.md)
+- [Upgrade-Hinweise](../bc/6.0/e-mail-einstellungen.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

@@ -29,7 +29,7 @@ die Leistung nicht in Anspruch nehmen. WCAG 2.2 behandelt Formulare unter 1.3.1,
 
 Öffentliche Formulare sind meist Inhaltsobjekte, deren Klasse Attribute vom Typ **Informationssammler** hat; das
 Template der Vollansicht zeichnet das Formular, der Kernel validiert jedes Attribut und speichert eine Sammlung
-([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 Das Markup des Formulars steht daher in **Ihren** Templates (der Vollansicht der Formularklasse und den Templates der
 Datentypen), die das Projekt für die öffentlichen Designs nicht geprüft hat.
 
@@ -60,7 +60,7 @@ nutzen Sie sie als Vorbild.
 ## CAPTCHAs
 
 Die optionalen Erweiterungen `recaptcha` (Google reCAPTCHA) und `hcaptcha` (hCaptcha) fügen einer Klasse ein
-CAPTCHA-Attribut hinzu ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+CAPTCHA-Attribut hinzu ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 Ein CAPTCHA ist für viele Menschen eine Barriere und für den Datenschutz ein Dienst eines Dritten (siehe den
 Datenschutzbereich dieser Hilfe). Bevorzugen Sie das Formular-Token (`ezformtoken`, standardmäßig aktiv) und
 serverseitige Prüfungen; setzen Sie ein CAPTCHA nur ein, wo Missbrauch tatsächlich vorkommt, testen Sie es mit der
@@ -69,7 +69,7 @@ Tastatur und einem Screenreader und bieten Sie neben dem Formular einen anderen 
 ## Zeitlimits und abgelaufene Formulare
 
 - Ein Formular-Token gehört zur Sitzung; ein abgewiesenes Token zeigt die Seite „Formular abgelaufen“
-  ([Seite „Formular abgelaufen“](../../../../eng-us/features/6.0/form-expired-page.md)). Prüfen Sie, dass die Seite verständlich
+  ([Seite „Formular abgelaufen“](../../../funktionen/6.0/seite-abgelaufenes-formular.md)). Prüfen Sie, dass die Seite verständlich
   ist und den Besucher nach Möglichkeit ohne Verlust seiner Arbeit zurückgehen lässt.
 - Sitzungen enden nach `[Session] SessionTimeout` (standardmäßig drei Tage). Wenn Sie den Wert aus Sicherheitsgründen
   verkürzen, denken Sie an Menschen, die lange zum Ausfüllen eines Formulars brauchen (WCAG 2.2.1 Zeiteinteilung
@@ -83,9 +83,9 @@ Tastatur und einem Screenreader und bieten Sie neben dem Formular einen anderen 
 
 ## Verwandte Seiten
 
-- [Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)
-- [Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)
-- [Barrierefreiheit für Website-Ersteller: Formulare](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#forms)
+- [Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)
+- [Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)
+- [Barrierefreiheit für Website-Ersteller: Formulare](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#formulare)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

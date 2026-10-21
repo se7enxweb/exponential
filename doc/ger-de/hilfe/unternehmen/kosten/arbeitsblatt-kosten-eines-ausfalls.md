@@ -31,7 +31,7 @@ halten.
 
 - **Geplante Ausfallzeit** ist angekündigte Arbeit: eine Aktualisierung, ein Datenimport. Der Wartungsmodus von
   Exponential nimmt die öffentliche Website mit einer freundlichen Seite und einer Antwort HTTP 503 vom Netz und holt
-  sie mit einem Befehl oder einer Schaltfläche zurück ([Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md)).
+  sie mit einem Befehl oder einer Schaltfläche zurück ([Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md)).
   Geplante Arbeit in einer ruhigen Stunde kostet wenig.
 - **Ungeplante Ausfallzeit** ist ein Ausfall: eine volle Festplatte, ein abgelaufenes Zertifikat, eine
   fehlgeschlagene Aktualisierung, ein Angriff. Sie kostet am meisten, weil sie zu jeder Stunde eintritt und niemand
@@ -127,7 +127,7 @@ Geprüft von: ______________   Nächste Prüfung: ____________
 | Caching | Hält die Website bei Lastspitzen erreichbar | [Caching-Ebenen](../../hosting/leistung/cache-schichten.md) |
 | Fehlerreferenzen | Die Fehlerseiten für Besucher tragen eine Referenz, die den Logeintrag findet | [Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 | Runbooks | Hilfe Schritt für Schritt bei einer ausgefallenen Website, einer vollen Festplatte oder einem abgelaufenen Zertifikat | [Website ausgefallen](../../hosting/runbooks/website-nicht-erreichbar.md), [Festplatte voll](../../hosting/runbooks/festplatte-voll.md), [Zertifikat abgelaufen](../../hosting/runbooks/ablauf-von-zertifikaten.md) |
-| Wartungsmodus | Macht aus riskanter Arbeit geplante Ausfallzeit | [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md) |
+| Wartungsmodus | Macht aus riskanter Arbeit geplante Ausfallzeit | [Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md) |
 
 Der Bereich [Zuverlässigkeit](../zuverlaessigkeit/README.md) erklärt jede Praxis für Unternehmen, einschließlich der
 [Störungsbehandlung für kleine Teams](../zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md).

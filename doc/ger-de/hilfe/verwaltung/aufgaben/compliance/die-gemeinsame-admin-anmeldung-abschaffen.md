@@ -61,7 +61,7 @@ Wenn sich niemand anmelden kann, verwenden Sie das Notfallverfahren; alle Wege d
 
 ## Verwandte Seiten
 
-- [Rollen und minimale Rechte](../../../../../eng-us/help/government/security/roles-and-least-privilege.md)
+- [Rollen und minimale Rechte](../../sicherheit/rollen-und-minimale-rechte.md)
 - [Das Standard-Administratorpasswort](../../../standard-administratorpasswort.md)
 - [Sicherheitshärtung: Standard- und gemeinsame Zugangsdaten](../../../sicherheitshaertung.md#standard--und-geteilte-zugangsdaten)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

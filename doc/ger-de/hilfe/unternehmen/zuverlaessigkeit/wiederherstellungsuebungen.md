@@ -36,7 +36,7 @@ einmal:
 - **Das Vorgehen funktioniert**: Die diensthabenden Personen können ihm folgen, und die Anleitung ist aktuell.
 - **Die Wiederherstellungszeit ist bekannt**: „Schreiben Sie auf, wie lange es gedauert hat; das ist Ihre
   Wiederherstellungszeit“
-  ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md#the-restore-test)).
+  ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md#der-wiederherstellungstest)).
 
 Ohne den letzten Punkt ist jedes Versprechen, wie schnell Sie wiederherstellen, eine Vermutung.
 
@@ -83,7 +83,7 @@ Die Schritte entsprechen dem Wiederherstellungsvorgehen des Installationsbuchs
 ## Prüfungen, die die Wiederherstellung belegen
 
 Aus [Wiederherstellung und Wiederherstellungstests, Prüfungen nach einer Wiederherstellung](../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md#prüfungen-nach-einer-wiederherstellung)
-und [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md#the-restore-test):
+und [Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md#der-wiederherstellungstest):
 
 | Prüfung | Gutes Ergebnis |
 |---|---|

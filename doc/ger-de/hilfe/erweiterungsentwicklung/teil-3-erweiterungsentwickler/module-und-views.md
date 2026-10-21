@@ -185,7 +185,7 @@ Fehlerseite an.
 ## Ein Kernel-Modul ersetzen
 
 Eine Erweiterung kann ein ganzes Kernel-Modul durch ein eigenes ersetzen; siehe
-[Eine Erweiterung kann ein Kernel-Modul ersetzen](../../../../eng-us/features/6.0/extension-module-override.md).
+[Eine Erweiterung kann ein Kernel-Modul ersetzen](../../../funktionen/6.0/modulueberschreibung-durch-extensions.md).
 Eine View zu einem vorhandenen Modul fügen Sie mit dem RAD-Werkzeug **View für ein vorhandenes Modul** hinzu.
 
 ## RAD

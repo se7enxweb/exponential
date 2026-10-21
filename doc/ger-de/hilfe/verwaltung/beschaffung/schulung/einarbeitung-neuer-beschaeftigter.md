@@ -34,7 +34,7 @@ und mit Workflows, die eine Version zur Freigabe zurückhalten ([Workflows](../.
 
 1. **Legen Sie das Konto** in der richtigen Benutzergruppe an. Verwenden Sie die dienstliche E-Mail-Adresse der Person;
    teilen Sie nie ein Konto zwischen Personen, damit das Audit-Protokoll zeigen kann, wer was getan hat
-   ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+   ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 2. **Weisen Sie zuerst eine eingeschränkte Rolle zu** oder auf der Live-Website gar keine; geben Sie Zugang zur
    Schulungsinstallation.
 3. **Bitten Sie die Person, sich anzumelden und das erste Passwort zu ändern** ([Konten und Anmeldung](../../../konten-und-anmeldung.md)).
@@ -47,7 +47,7 @@ und mit Workflows, die eine Version zur Freigabe zurückhalten ([Workflows](../.
    - [Medien und Uploads](../../../medien-und-uploads.md);
    - der eigene redaktionelle Leitfaden Ihrer Organisation.
 5. Zeigen Sie der Person die Hilfe: Die Schaltfläche „?“ öffnet die Hilfe zu der Seite, auf der sie sich befindet
-   ([Hilfesystem](../../../../../eng-us/features/6.0/help-system.md)).
+   ([Hilfesystem](../../../../funktionen/6.0/hilfesystem.md)).
 
 ## Wochen 2 bis 4: Kurs und begleitete Arbeit
 
@@ -56,7 +56,7 @@ und mit Workflows, die eine Version zur Freigabe zurückhalten ([Workflows](../.
 | Kurs | Editors 101, in einer Gruppe oder als Lektionen im eigenen Tempo mit einer Mentorin oder einem Mentor | [Editors 101](../../../trainer/redakteure-101/README.md) |
 | Übung | der Abschlussartikel von Editors 101 auf der Schulungsinstallation | [Modul 9: der Siteaccess Editor](../../../trainer/redakteure-101/modul-09-der-editor-siteaccess/README.md) |
 | Erste Arbeit live | vorhandene Seiten in der eigenen Sektion der Person bearbeiten; eine leitende Redakteurin oder ein leitender Redakteur prüft vor der Veröffentlichung | [Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md) |
-| Grundlagen der Barrierefreiheit | Alternativtext, Überschriften, Linktext | [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) |
+| Grundlagen der Barrierefreiheit | Alternativtext, Überschriften, Linktext | [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md) |
 
 Führt Ihre Organisation Editors 101 nicht oft genug für Neuankömmlinge durch, kann eine Mentorin oder ein Mentor die
 Person Modul für Modul durch die Lektionen führen; jede Lektion ist eine Seite mit einer eigenen Übung.

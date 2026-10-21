@@ -99,7 +99,7 @@ Das Modul content bietet mehr Einschränkungen als Sektion und Teilbaum (`kernel
 | `user/login` SiteAccess | Mitarbeiter dürfen sich im Siteaccess des Intranets anmelden (`kernel/user/module.php`) |
 
 Erweiterungen können eigene Einschränkungen hinzufügen; eine Einschränkung, die kein Handler auswertet, verweigert den
-Zugriff ([Einschränkungen von Inhaltsrichtlinien aus Erweiterungen](../../../../eng-us/features/6.0/content-limitation-handlers.md)).
+Zugriff ([Einschränkungen von Inhaltsrichtlinien aus Erweiterungen](../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md)).
 
 ## Prüfen, was eine Rolle wirklich gibt
 
@@ -118,7 +118,7 @@ ein ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 ## Fehler, die Sie vermeiden sollten
 
 - `content/read` ohne Sektions-Einschränkung vergeben: Mitarbeiter könnten Benutzerkonten und Setup-Objekte öffnen
-  ([Was Besucher sehen dürfen, Common mistakes](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#common-mistakes)).
+  ([Was Besucher sehen dürfen, Common mistakes](../../ersteller/website-ersteller/rechte-fuer-besucher.md#häufige-fehler)).
 - Eine Rolle pro Person anlegen, statt eine Rolle einer Gruppe zuzuordnen.
 - Die neue Sektion in der Rolle Mitarbeiter vergessen: Ihre Seiten zeigen dann allen „Zugriff verweigert“.
 - Redakteure einer Abteilung in zwei Gruppen setzen, deren Rollen zusammen mehr ergeben als beabsichtigt; Richtlinien
@@ -138,7 +138,7 @@ ein ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 
 - [Sektionen](../../../anleitungen/sektionen.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
-- [Sektionen und Objektzustände für Website-Ersteller](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Sektionen und Objektzustände für Website-Ersteller](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Freigabe-Workflows](freigabe-workflows.md)
 - [Kunden- und Partnerbereiche](../extranets/kunden-und-partnerbereiche.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -145,9 +145,9 @@ Auf der Schulungsinstallation, in `extension/mysite_hello`, und in der Administr
 
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md): Rollen, Richtlinien, Einschränkungen und
   Zuweisungen.
-- [Reihenfolge von Rollen und Richtlinien](../../../../../eng-us/features/6.0/role-policy-order.md) und
-  [Berechtigungsprüfungen bei vielen Zuweisungen](../../../../../eng-us/features/6.0/permission-checks-for-many-assignments.md).
-- [Handler für Inhaltseinschränkungen](../../../../../eng-us/features/6.0/content-limitation-handlers.md): Einschränkungen, in
+- [Reihenfolge von Rollen und Richtlinien](../../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md) und
+  [Berechtigungsprüfungen bei vielen Zuweisungen](../../../../funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md).
+- [Handler für Inhaltseinschränkungen](../../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md): Einschränkungen, in
   PHP geschrieben.
 
 ## Verwandte Seiten

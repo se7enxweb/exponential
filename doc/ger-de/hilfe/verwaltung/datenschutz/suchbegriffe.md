@@ -55,7 +55,7 @@ Erwähnen Sie in der Datenschutzerklärung, dass Suchbegriffe zur Verbesserung d
 
 - [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)
 - [Datenminimierung](datenminimierung.md)
-- [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)
+- [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

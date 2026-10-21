@@ -53,7 +53,7 @@ php bin/php/ezsqlinsertschema.php --type=mysql --user=<user> extension/expdemo/s
 ## Ein Installationsbefehl
 
 Geben Sie Ihrer Erweiterung einen idempotenten Befehl, der ihre Tabellen anlegt, falls sie fehlen, so wie expqueue es
-mit `./console ext:expqueue:install-schema` tut ([expqueue](../../../../eng-us/features/6.0/extensions/expqueue.md)):
+mit `./console ext:expqueue:install-schema` tut ([expqueue](../../../funktionen/6.0/erweiterungen/expqueue.md)):
 
 ```text
 extension/expdemo/bin/php/install-schema.php   ->   ./console ext:expdemo:install-schema

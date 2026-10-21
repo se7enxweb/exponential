@@ -57,7 +57,7 @@ geschrieben).
 
 ## Verwandte Seiten
 
-- [Setup > Extensions: Ladereihenfolge und sicheres Speichern](../../../../eng-us/features/6.0/extension-loading-order.md)
+- [Setup > Extensions: Ladereihenfolge und sicheres Speichern](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Die Design-Kaskade](../theme-design/die-design-kaskade.md)
 - [Override-Reihenfolge](../vorlagen/override-reihenfolge.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

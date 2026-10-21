@@ -64,7 +64,7 @@ Dienst nicht online nutzen können.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Dienstleistungsseite veröffentlichen](eine-dienstleistungsseite-veroeffentlichen.md)
-- [Link- und Inhaltsprüfungen](../../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Link- und Inhaltsprüfungen](../../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -91,7 +91,7 @@ Administration über jeden Server, den Sie betreiben, um die Prüfungen des PHP 
 ## Velocity: Zustandsendpunkt und Watchdog
 
 Eine Website, die Exponential Velocity ausliefert, hat einen Zustandsendpunkt des Servers selbst
-([Kontrollzentrum von Velocity](../../../../eng-us/features/6.0/velocity-control-panel.md)):
+([Kontrollzentrum von Velocity](../../../funktionen/6.0/velocity-control-panel.md)):
 
 ```bash
 curl -s http://127.0.0.1:8088/Q/health
@@ -113,7 +113,7 @@ Absturz, ein Abbruch wegen Speichermangels, ein Neustart, dessen Aufrufer beende
 
 Er prüft alle `[WatchdogSettings] Interval` Sekunden (mitgeliefert `45`), rührt nie einen laufenden Server an, ob er antwortet
 oder nicht, und hält sich nach drei gescheiterten Starts in Folge zurück. Er schreibt `var/log/velocity-watchdog.log` und
-Audit-Ereignisse ([Der Watchdog](../../../../eng-us/bc/6.0/velocity-engines.md#the-watchdog-expvelocity-watchdog)). Einen Server, der läuft,
+Audit-Ereignisse ([Der Watchdog](../../../bc/6.0/velocity-engines.md#der-watchdog-expvelocity-watchdog)). Einen Server, der läuft,
 aber nicht antwortet, muss Ihre Überwachung erkennen.
 
 ## Zustandsprüfungen des Load Balancers

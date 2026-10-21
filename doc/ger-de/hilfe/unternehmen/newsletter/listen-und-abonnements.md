@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Menschen, denen eine Newsletter-Zielgruppe gehö
 Mitgliederbeauftragte, Führungskräfte. Sie erklärt, wie die Erweiterung `cjw_newsletter` Abonnenten organisiert, was die
 Status in der Praxis bedeuten, wie Sie Abonnenten übernehmen und herausgeben und wer Zugriff haben sollte. Die
 Einzelheiten für Redakteure stehen in
-[Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md).
+[Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md).
 
 ## Inhalt
 
@@ -35,7 +35,7 @@ Einzelheiten für Redakteure stehen in
 | Abonnement | Eine Person auf einer Liste, mit einem Status | „Abonniert Monatliche Angebote, bestätigt“ |
 
 Systeme und Listen liegen im Inhaltsbaum unterhalb des Knotens, der in `[NewsletterSettings] RootFolderNodeId` gesetzt
-ist ([cjw_newsletter, Die Teile](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts)). Weil sie Inhalte sind,
+ist ([cjw_newsletter, Die Teile](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile)). Weil sie Inhalte sind,
 können Sie sie wie alle anderen Inhalte platzieren, umbenennen und mit Berechtigungen versehen.
 
 ## Was die Status bedeuten
@@ -50,7 +50,7 @@ können Sie sie wie alle anderen Inhalte platzieren, umbenennen und mit Berechti
 | Auf der Blacklist | Die Adresse bekommt nie Mails | Nein |
 
 „Nur bestätigte oder freigegebene Abonnenten erhalten Ausgaben“
-([Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#statuses)).
+([Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#status)).
 Für ein Unternehmen bedeutet das: Die entscheidende Zahl ist „bestätigt“ plus „freigegeben“, nicht die Summe aller
 Zeilen.
 
@@ -70,7 +70,7 @@ Zeilen.
 
 Seit 4.1.17 blättert, sortiert und filtert die Benutzerliste (vorher zeigte sie nur die ersten zehn Benutzer); die
 Blacklist, die Importe und die Bounces haben dieselben Filter, Sortierungen und Seiten
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117)).
 
 ## Importieren und exportieren
 
@@ -135,7 +135,7 @@ Wie Rollen und Richtlinien allgemein funktionieren: [Rollen, Richtlinien und nic
 - [Newsletter für Unternehmen](README.md)
 - [Opt-in und Einwilligung](opt-in-und-einwilligung.md)
 - [Bounces und Listenpflege](bounces-und-listenpflege.md)
-- [Newsletter-Listen und Abonnements (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md)
+- [Newsletter-Listen und Abonnements (Website-Ersteller)](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

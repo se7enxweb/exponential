@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren von Sites, die von Exponential Velocity ausgeliefert werden. Der Antwort-Cache von
 Velocity beantwortet wiederholte Anfragen nach öffentlichen Seiten innerhalb des Servers, noch vor PHP; nach einer
 Änderung können diese Antworten veraltet sein. Referenz:
-[Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md).
+[Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -49,8 +49,8 @@ Die erste Anfrage nach dem Leeren ist ein Fehltreffer (dargestellt); die nächst
 
 ## Verwandte Seiten
 - [Caches nach einer Änderung an Templates leeren](caches-nach-einer-aenderung-an-templates-leeren.md)
-- [Veralteter Cache](../../../../../eng-us/help/government/operations/incidents/stale-cache.md)
-- [Antwort-Cache von Velocity und HTTP-Cache](../../../../../eng-us/help/government/operations/availability/velocity-response-cache-and-http-cache.md)
+- [Veralteter Cache](../../betrieb/vorfaelle/veralteter-cache.md)
+- [Antwort-Cache von Velocity und HTTP-Cache](../../betrieb/verfuegbarkeit/velocity-antwortcache-und-http-cache.md)
 - [Antwort-Cache von Velocity (Hosting)](../../../hosting/leistung/antwort-cache-von-velocity.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

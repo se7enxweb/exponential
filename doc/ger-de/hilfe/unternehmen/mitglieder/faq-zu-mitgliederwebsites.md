@@ -50,7 +50,7 @@ Legen Sie sie in eine Mitgliedersektion, die die Rolle Anonymous nicht liest; Be
 
 **Können Nichtmitglieder Dokumente herunterladen, wenn ein Link weitergegeben wird?**
 Nein. Jeder Download prüft, ob die Person die Datei lesen darf
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads)).
 
 **Können manche Mitglieder mehr sehen als andere?**
 Ja, mit einer Sektion und einer Rolle pro Mitgliedschaftsstufe
@@ -69,15 +69,15 @@ Ja, `cjw_newsletter`: Listen, Double-Opt-in, Versand per Cron, Bounces, Sperrlis
 **Können sich Mitglieder leicht abmelden?**
 Ja. Jede optionale Mail hat einen Link zum Abmelden mit einem Klick und einen Link zur Seite der E-Mail-Einstellungen
 der Person; eine Anmeldung ist nicht nötig
-([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md)).
+([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 **Können Mitglieder informiert werden, wenn neue Dokumente erscheinen?**
 Ja, mit Benachrichtigungen für die Bereiche, denen sie folgen, sofort oder als Digest
-([Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md)).
+([Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md)).
 
 **Können wir einen Newsletter testen, ohne ihn an alle zu schicken?**
 Ja. `cjw_newsletter` kann für eine vollständige Generalprobe alle Mails in Dateien schreiben
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 
 ## Veranstaltungen und Gemeinschaft
 
@@ -101,7 +101,7 @@ Im Repository wurde kein Export von Kalenderdateien gefunden; das wäre eine Erw
 
 **Können Mitglieder ihren Beitrag online bezahlen?**
 Eine einmalige Zahlung lässt sich als Produkt über den eingebauten Shop mit einem Zahlungsanbieter verkaufen
-([Shops](../shops/README.md), [Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md)). Wiederkehrende
+([Shops](../shops/README.md), [Zahlungsanbieter](../../ersteller/website-ersteller/payment-gateways.md)). Wiederkehrende
 Beiträge und ein automatisches Ende der Mitgliedschaft sind keine dokumentierten Funktionen
 ([Mitgliederwebsite planen, Was nicht eingebaut ist](mitgliederwebsite-planen.md#was-nicht-eingebaut-ist)).
 
@@ -113,7 +113,7 @@ Rechtsberatung.
 
 **Kann ein Mitglied herunterladen, was die Website über seine Mail-Einstellungen weiß?**
 Ja, seine E-Mail-Einstellungen und jede Änderung als JSON oder CSV
-([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md)).
+([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 ## Die Website betreiben
 
@@ -123,7 +123,7 @@ Ja, mit einer Redakteursrolle, die mit einer Sektions-Einschränkung zugeordnet 
 
 **Wie gehen wir mit Mitgliedern um, die austreten?**
 Deaktivieren Sie ihre Konten, oder verwenden Sie, wenn eingeschaltet, Deaktivieren und verschieben
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 **Was geschieht, wenn unsere Ehrenamtlichen wechseln?**
 Siehe [Übergabe bei Wechsel der Ehrenamtlichen](../vereine/uebergabe-bei-wechsel-der-ehrenamtlichen.md).

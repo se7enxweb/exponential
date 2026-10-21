@@ -37,8 +37,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Layout-Regeln: Fehlersuche](../../../../../eng-us/help/creators/website-creators/layout-rules.md#troubleshooting) und
-[Exponential Layouts: Fehlersuche](../../../../../eng-us/bc/6.0/LAYOUTS.md#troubleshooting).
+Quellen: [Layout-Regeln: Fehlersuche](../../../ersteller/website-ersteller/layout-regeln.md#fehlersuche) und
+[Exponential Layouts: Fehlersuche](../../../../bc/6.0/layouts.md#fehlerbehebung).
 
 1. **Die Tabelle** (6 Minuten). Zeigen Sie sie am Beamer:
 
@@ -122,7 +122,7 @@ Arten (notiert auf einer Karte, die die Person nicht sieht):
    zwischengespeicherte Kopie der Seite; ein Pfadziel nach einer Umbenennung; eine deaktivierte Zuordnung.
 2. Zuordnungen, dann Veröffentlichungsstatus, dann Caches.
 3. Einen falsch geschriebenen Bedingungstyp (er passt auf alles) oder ein breites Teilbaumziel
-   ([Layout-Regeln](../../../../../eng-us/help/creators/website-creators/layout-rules.md#troubleshooting)).
+   ([Layout-Regeln](../../../ersteller/website-ersteller/layout-regeln.md#fehlersuche)).
 4. Es verdeckt ein Prioritäts- oder Veröffentlichungsproblem, das wiederkommen würde.
 5. **B.**
 
@@ -130,14 +130,14 @@ Arten (notiert auf einer Karte, die die Person nicht sieht):
 
 ## Weiterführende Informationen
 
-- [Layout-Regeln: Fehlersuche](../../../../../eng-us/help/creators/website-creators/layout-rules.md#troubleshooting)
-- [Exponential Layouts: Resolver-Caching](../../../../../eng-us/bc/6.0/LAYOUTS.md#resolver-caching)
+- [Layout-Regeln: Fehlersuche](../../../ersteller/website-ersteller/layout-regeln.md#fehlersuche)
+- [Exponential Layouts: Resolver-Caching](../../../../bc/6.0/layouts.md#caching-des-resolvers)
 
 ## Verwandte Seiten
 
 - [Modul 7: Zuordnungsregeln](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

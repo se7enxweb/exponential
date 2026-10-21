@@ -113,8 +113,8 @@ beiden Stylesheets leere Dateien, sodass seine Prüfsummen nicht das Einzige sin
 Ein Paket hat kein Feld für Screenshots. Das Vorschaubild ist ein kleines Bild zum Auswählen; es ist keine Vorschau der Website. Setzen Sie
 Screenshots eines Seitenpakets dorthin, wo Menschen entscheiden, ob sie es nutzen: in das README seines Quell-Repositorys und in den Pull
 Request, der es einreicht ([Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)). Wie Sie sie gut aufnehmen, behandeln
-[Screenshots für ein Theme](../../../../eng-us/help/designers/distribution/screenshots-for-a-theme.md) und die
-[Checkliste für Screenshots](../../../../eng-us/help/designers/distribution/screenshot-checklist.md).
+[Screenshots für ein Theme](../../designer/veroeffentlichung/screenshots-fuer-ein-theme.md) und die
+[Checkliste für Screenshots](../../designer/veroeffentlichung/screenshot-checkliste.md).
 
 ## Checkliste
 

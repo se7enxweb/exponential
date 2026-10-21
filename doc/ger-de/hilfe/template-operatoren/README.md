@@ -21,7 +21,7 @@ aktiven Erweiterungen; auf alpha registriert die Engine 400 davon. Dieser Abschn
   Templates;
 - [OW Simple Operator](owsimpleoperator.md), die Erweiterung, mit der sich kleine Operatoren schnell schreiben lassen.
 
-Die generierten Seiten unter [Beispiele: Template-Operatoren](../../../eng-us/examples/template-operators/README.md) führen jeden
+Die generierten Seiten unter [Beispiele: Template-Operatoren](../../beispiele/template-operatoren/README.md) führen jeden
 Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in einem mitgelieferten Template auf.
 
 ## Verzeichnisse
@@ -98,8 +98,8 @@ Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in 
 ## Verwandte Seiten
 
 - [Die Template-Sprache](../template-sprache/README.md)
-- [Überblick über die Operatoren für Designer](../../../eng-us/help/designers/templates/operators-overview.md)
-- [Template-Operatoren schreiben](../../../eng-us/help/creators/app-creators/template-operators.md) (für Anwendungsentwickler)
+- [Überblick über die Operatoren für Designer](../designer/vorlagen/operatoren-ueberblick.md)
+- [Template-Operatoren schreiben](../ersteller/anwendungsentwickler/template-operatoren-schreiben.md) (für Anwendungsentwickler)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -68,7 +68,7 @@ Namen, die in `design.ini [AdminDesignSettings] IconList[]` aufgeführt sind; ei
 
 Die kleinen Symbole für Inhaltsklassen und Dateitypen kommen aus **Symbol-Themes** (`settings/icon.ini`). admin4 und admin4l
 verwenden das Theme `bootstrap-icons` über `[IconSettings] DesignTheme[]`. Eine Erweiterung kann ihr eigenes Symbol-Theme mitliefern;
-siehe [Symbol-Themes in Erweiterungen](../../../../eng-us/features/6.0/icon-themes-in-extensions.md).
+siehe [Symbol-Themes in Erweiterungen](../../../funktionen/6.0/icon-themes-in-extensions.md).
 
 ## Barrierefreie Symbole
 

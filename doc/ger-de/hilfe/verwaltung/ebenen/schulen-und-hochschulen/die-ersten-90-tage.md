@@ -49,9 +49,9 @@ einer Bewerbungsfrist oder zu Beginn des Halbjahres. Der Plan setzt voraus, dass
 |---|---|
 | Zuerst die Seiten zu Zulassung und Studiengängen schreiben | [Was Schulen und Hochschulen veröffentlichen](was-veroeffentlicht-wird.md) |
 | Die Redaktion der Fachbereiche je Fachbereich schulen | [Editors 101](../../../trainer/redakteure-101/README.md) |
-| Alte Adressen zu Studiengängen und Zulassung umleiten (künftige Lernende speichern sie als Lesezeichen) | [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
-| Die Erklärung zur Barrierefreiheit und die Datenschutzerklärung veröffentlichen | [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) |
-| Start | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Alte Adressen zu Studiengängen und Zulassung umleiten (künftige Lernende speichern sie als Lesezeichen) | [Umleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
+| Die Erklärung zur Barrierefreiheit und die Datenschutzerklärung veröffentlichen | [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md) |
+| Start | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 Prüfungen beim Start:
 
@@ -72,7 +72,7 @@ Prüfungen beim Start:
 
 - [Schulen und Hochschulen](README.md)
 - [Intranets und Subsites von Fachbereichen](intranets-und-fachbereichs-subsites.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -1,6 +1,6 @@
 # user/password: Was sich für Templates, Einstellungen und Session-Handler geändert hat (6.0.15)
 
-Die Anleitung für Benutzer ist [Ihr Passwort ändern](../../../eng-us/features/6.0/modern-password-change.md).
+Die Anleitung für Benutzer ist [Ihr Passwort ändern](../../funktionen/6.0/moderne-passwortaenderung.md).
 Diese Seite beschreibt, was eine Website, ein Design oder eine Erweiterung nach dem Upgrade bemerken kann.
 
 ## Unverändert

@@ -62,7 +62,7 @@ existiert.
 | **Im Hintergrund installieren** | dieselbe Installation als Inhaltsjob (`packageinstall`) unter Ihrem Benutzer; die Paketseite und die Jobseite zeigen den Fortschritt, nichts wartet auf diese Seite | viele Objekte; die Seite schlägt es oberhalb von `[ContentJobSettings] SynchronousLimit` vor |
 
 **Installation auslassen** führt ohne Installation zur Seite des Pakets zurück. Die Installation als Entwürfe ist auf
-[Das JSON-Paketformat](../../../../eng-us/bc/6.0/package-json-format.md#install-as-drafts) beschrieben.
+[Das JSON-Paketformat](../../../bc/6.0/package-json-format.md#als-entwürfe-installieren) beschrieben.
 
 ## Konflikte und Schritte
 
@@ -82,8 +82,8 @@ InstallBatchTimeBudgetSeconds=6
 ```
 
 Ein Stapel endet nach so vielen Elementen oder so vielen Sekunden, und die Seite fährt mit dem nächsten fort. Siehe
-[Ein Paket-Installer, der große Pakete übersteht](../../../../eng-us/features/6.0/package-installer-batching.md). Für sehr große Pakete ist die
-Kommandozeile oft besser: `php ezpm.php install <name>` ([ezpm](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md#install-a-package)).
+[Ein Paket-Installer, der große Pakete übersteht](../../../funktionen/6.0/paketinstallation-in-teilschritten.md). Für sehr große Pakete ist die
+Kommandozeile oft besser: `php ezpm.php install <name>` ([ezpm](../../../funktionen/6.0/ezpm-paketmanager-cli.md#ein-paket-installieren)).
 
 ## Deinstallieren
 
@@ -103,7 +103,7 @@ zu deinstallieren.“
 - [Pakete, Abschnitt 7](../../../anleitungen/pakete.md#7-installieren-und-deinstallieren)
 - [Importieren oder installieren](../grundlagen/importieren-oder-installieren.md)
 - [Installationselemente und Handler](../grundlagen/installationselemente-und-handler.md)
-- [In ein Paket hineinsehen, es mit Ihrer Website vergleichen](../../../../eng-us/features/6.0/package-compare-and-import.md)
+- [In ein Paket hineinsehen, es mit Ihrer Website vergleichen](../../../funktionen/6.0/pakete-vergleichen-und-importieren.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -140,8 +140,8 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator angemeldet. D
 
 - [Die Seite der Erweiterungen](../../../../anleitungen/extensions-seite.md): Karten, Überprüfung, Anwenden und häufige
   Probleme.
-- [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md).
-- [Liste der Erweiterungen und Downloads](../../../../../eng-us/features/6.0/extension-list-and-downloads.md).
+- [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md).
+- [Liste der Erweiterungen und Downloads](../../../../funktionen/6.0/extension-liste-und-downloads.md).
 - [Erweiterungen](../../../../anleitungen/extensions.md): die Anleitung für Entwickler.
 
 ## Verwandte Seiten

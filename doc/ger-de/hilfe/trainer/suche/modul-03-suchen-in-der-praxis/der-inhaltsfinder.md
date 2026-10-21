@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Der Inhaltsfinder](../../../../../eng-us/features/6.0/content-finder.md).
+Quelle: [Der Inhaltsfinder](../../../../funktionen/6.0/inhalts-finder.md).
 
 1. **Was er annimmt** (4 Minuten). Ein Feld, **ID, Pfad oder URL**, und **Suchen nach** mit *Automatisch erkennen*
    (Standard), *Objekt-ID*, *Knoten-ID*, *Attribut-ID*, *Versions-ID*, *Remote-ID*, *URL-Alias*, *Dateipfad*. Eine
@@ -121,7 +121,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator angemeldet. D
 <summary>Antworten</summary>
 
 1. Vier beliebige aus: Objekt-ID, Knoten-ID, Attribut-ID, Versions-ID, Remote-ID, URL-Alias, Seitenadresse, Dateipfad
-   unter `var/` ([Der Inhaltsfinder](../../../../../eng-us/features/6.0/content-finder.md)).
+   unter `var/` ([Der Inhaltsfinder](../../../../funktionen/6.0/inhalts-finder.md)).
 2. **Falsch.** Er schlägt IDs, Aliase und Pfade nach, keinen Text.
 3. **B.**
 4. **Nichts gefunden, oder Sie haben keinen Zugriff auf das Gefundene.**, dasselbe wie bei einer ID, die es nicht gibt.
@@ -131,16 +131,16 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator angemeldet. D
 
 ## Weiterführende Informationen
 
-- [Der Inhaltsfinder](../../../../../eng-us/features/6.0/content-finder.md): jede Eingabe, jedes Ergebnisfeld und jede Aktion.
+- [Der Inhaltsfinder](../../../../funktionen/6.0/inhalts-finder.md): jede Eingabe, jedes Ergebnisfeld und jede Aktion.
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): einer Support-Rolle
   den Finder geben.
-- [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md): die Audit-Einträge des Finders lesen.
+- [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md): die Audit-Einträge des Finders lesen.
 
 ## Verwandte Seiten
 
 - [Modul 3: Suchen in der Praxis](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

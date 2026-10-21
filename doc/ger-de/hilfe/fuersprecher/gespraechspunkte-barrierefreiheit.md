@@ -32,15 +32,15 @@ Barrierefreiheit einer öffentlichen Website hängt von ihren eigenen Templates 
 
 | Sagen Sie | Quelle |
 |---|---|
-| „Das Design admin4 folgt WCAG-Regeln, die durch Tests geprüft werden: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus.“ | [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
+| „Das Design admin4 folgt WCAG-Regeln, die durch Tests geprüft werden: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus.“ | [Die Administration gestalten](../../bc/6.0/admin4-gestaltung.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | „Bedienziele sind mindestens 24 mal 24 Pixel groß (WCAG 2.5.8), und jedes Formularfeld hat einen Namen.“ | [Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit) |
-| „Ein Sprunglink ist der erste Tab-Stopp, mit Landmarks für Kopfbereich, Menüs, Brotkrumenpfad und Hauptinhalt.“ | [Das Design admin4, Landmarks und Namen](../../../eng-us/features/6.0/admin4-design.md#landmarks-and-names) |
-| „Die Administration und die Hilfe lassen sich allein mit der Tastatur bedienen.“ | [Tastenkürzel](../tastenkuerzel.md), [Das Design admin4, Tastatur](../../../eng-us/features/6.0/admin4-design.md#keyboard) |
+| „Ein Sprunglink ist der erste Tab-Stopp, mit Landmarks für Kopfbereich, Menüs, Brotkrumenpfad und Hauptinhalt.“ | [Das Design admin4, Landmarks und Namen](../../funktionen/6.0/admin4-design.md#landmarks-und-namen) |
+| „Die Administration und die Hilfe lassen sich allein mit der Tastatur bedienen.“ | [Tastenkürzel](../tastenkuerzel.md), [Das Design admin4, Tastatur](../../funktionen/6.0/admin4-design.md#tastatur) |
 | „Helles und dunkles Theme, der hohe Kontrast von Windows (erzwungene Farben) und reduzierte Bewegung werden unterstützt.“ | [Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit) |
-| „Sprachen mit Schreibrichtung von rechts nach links drehen die Administration um, und darin geschriebene Inhalte bekommen die richtige Richtung.“ | [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
+| „Sprachen mit Schreibrichtung von rechts nach links drehen die Administration um, und darin geschriebene Inhalte bekommen die richtige Richtung.“ | [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
 | „Bildfelder können pro Klasse einen Alternativtext verlangen; das ist aus, bis es eingeschaltet wird.“ | [Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit) |
-| „Exponential Intelligence hat einen Bericht ‚Fehlender Alternativtext‘, der Vorschläge für einen Teilbaum in die Warteschlange stellt.“ | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
-| „Sofortsuchergebnisse in der Hilfe werden Screenreadern angesagt.“ | [Das Hilfesystem, Sprachen und Barrierefreiheit](../../../eng-us/features/6.0/help-system.md#languages-and-accessibility) |
+| „Exponential Intelligence hat einen Bericht ‚Fehlender Alternativtext‘, der Vorschläge für einen Teilbaum in die Warteschlange stellt.“ | [expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
+| „Sofortsuchergebnisse in der Hilfe werden Screenreadern angesagt.“ | [Das Hilfesystem, Sprachen und Barrierefreiheit](../../funktionen/6.0/hilfesystem.md#sprachen-und-barrierefreiheit) |
 | „Beitragende müssen denselben Regeln folgen: keine Inline-Styles, gemeinsame Komponenten, Tokens mit Werten für den Dunkelmodus; ein Test setzt das durch.“ | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 
 ## In einer Minute zeigen

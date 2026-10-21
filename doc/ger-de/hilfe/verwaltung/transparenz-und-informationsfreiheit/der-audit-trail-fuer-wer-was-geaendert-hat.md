@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an Administratoren, Informationssicherheitsbeauftragte und Führungskräfte, die die Frage „wer
 war das?“ beantworten und zeigen müssen, dass man der Antwort trauen kann. Exponential zeichnet sicherheitsrelevante
 Ereignisse in einem manipulationssicheren Protokoll auf, standardmäßig eingeschaltet, lesbar in der Administration und
-auf der Kommandozeile ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md); vollständige Referenz:
-[der Audit-Leitfaden](../../../../eng-us/bc/6.0/audit.md)).
+auf der Kommandozeile ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md); vollständige Referenz:
+[der Audit-Leitfaden](../../../bc/6.0/audit.md)).
 
 ## Inhalt
 
@@ -88,11 +88,11 @@ diese Rechte. Ein verweigerter Versuch wird selbst aufgezeichnet.
 Adressen werden gekürzt, Sitzungen gehasht, Passwörter und Token nie aufgezeichnet; Einträge werden nach einer
 gewissen Zeit pseudonymisiert. Um ein Auskunftsersuchen einer betroffenen Person zu beantworten, liefert
 `./console exp:audit export --subject-user=<id>` die Einträge von oder über einen Benutzer
-([Audit-Leitfaden 4.12](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)).
+([Audit-Leitfaden 4.12](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)).
 
 ## Verwandte Seiten
 
-- [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)
 - [Versionsgeschichte als Rechenschaft](versionsgeschichte-als-rechenschaft.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

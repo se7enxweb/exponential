@@ -60,7 +60,7 @@ deaktivieren Sie es oder verwenden Sie stattdessen Deaktivieren und verschieben
 ## Verwandte Seiten
 
 - [Das Recht auf Löschung](../../datenschutz/recht-auf-loeschung.md)
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)
 - [E-Mail-Daten zu einer Adresse löschen](e-mail-daten-zu-einer-adresse-loeschen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -29,7 +29,7 @@ betreiben. Das Hilfesystem von Exponential zeigt die Dokumentation, die mit der 
 wird: jede von git verwaltete Markdown-Datei unter `doc/`, dargestellt mit Überschriften, Tabellen, Hinweisboxen und
 hervorgehobenem Code, durchsuchbar, nach Zielgruppe gefiltert (Redakteure, Administratoren, Entwickler, Benutzer der
 Website und viele mehr, jetzt auch die Presse) und im Kontext geöffnet über eine Schaltfläche **Hilfe** auf jeder Seite
-der Administration ([Hilfesystem](../../../eng-us/features/6.0/help-system.md)). Die Seiten sind freie Dokumentation unter der
+der Administration ([Hilfesystem](../../funktionen/6.0/hilfesystem.md)). Die Seiten sind freie Dokumentation unter der
 GNU FDL ([Thema: freie Dokumentation](thema-freie-dokumentation.md)).
 
 ![Das Hilfezentrum in der Administration](../../../eng-us/help/images/help/pr-help-dash.webp)
@@ -38,8 +38,8 @@ GNU FDL ([Thema: freie Dokumentation](thema-freie-dokumentation.md)).
 
 | Was | Wann | Quelle |
 |---|---|---|
-| Das Hilfesystem in der Administration | Oktober 2026, in der Linie 6.0.15 (in Entwicklung) | [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
-| Hilfeseiten als Inhalte in der Datenbank, Phase 1 | Linie 6.0.15 | [Hilfe als Inhalt](../../../eng-us/features/6.0/help-content.md) |
+| Das Hilfesystem in der Administration | Oktober 2026, in der Linie 6.0.15 (in Entwicklung) | [Oktober 2026](../../geschichte/2026/2026-10.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| Hilfeseiten als Inhalte in der Datenbank, Phase 1 | Linie 6.0.15 | [Hilfe als Inhalt](../../funktionen/6.0/hilfeinhalte.md) |
 
 ![Eine Seite der Hilfe mit Inhaltsverzeichnis und Überschriften](../../../eng-us/help/images/help/pr-help-page.webp)
 
@@ -47,20 +47,20 @@ GNU FDL ([Thema: freie Dokumentation](thema-freie-dokumentation.md)).
 
 | Fakt | Quelle |
 |---|---|
-| Ein Hilfe-Dashboard mit Suche, Hilfe pro Zielgruppe, Kategorien, hervorgehobenen Seiten, letzten Änderungen und dem Weg, einen Fehler zu melden | [Hilfesystem, Kurz gesagt](../../../eng-us/features/6.0/help-system.md#in-short) |
+| Ein Hilfe-Dashboard mit Suche, Hilfe pro Zielgruppe, Kategorien, hervorgehobenen Seiten, letzten Änderungen und dem Weg, einen Fehler zu melden | [Hilfesystem, Kurz gesagt](../../funktionen/6.0/hilfesystem.md#kurz-gesagt) |
 | Hilfeseiten zeigen jede von git verwaltete Markdown- und Textdatei unter `doc/`, mit Inhaltsverzeichnis und einem Link auf die Datei auf GitHub | ebenda |
 | Suche nach Titel, Überschriften und Text, mit Filtern für Zielgruppe, Kategorie und Typ; `/` setzt den Fokus ins Suchfeld | ebenda |
 | Eine Schaltfläche **Hilfe** in der Kopfzeile öffnet die Seite für das aktuelle Modul und die aktuelle Ansicht, oder das Dashboard | ebenda |
 | **„Report an error“** füllt ein Issue mit Diagnosedaten vor, „never passwords, keys, database hosts or personal data“ | ebenda |
-| Seiten lassen sich drucken und als PDF exportieren | [Hilfesystem, Drucken und PDF](../../../eng-us/features/6.0/help-system.md#print-and-pdf) |
-| Erweiterungen können ihre eigene Hilfe beisteuern | [Hilfe aus Erweiterungen](../../../eng-us/features/6.0/help-system.md#help-from-extensions) |
+| Seiten lassen sich drucken und als PDF exportieren | [Hilfesystem, Drucken und PDF](../../funktionen/6.0/hilfesystem.md#drucken-und-pdf) |
+| Erweiterungen können ihre eigene Hilfe beisteuern | [Hilfe aus Erweiterungen](../../funktionen/6.0/hilfesystem.md#hilfe-aus-extensions) |
 
 ## Was Sie nicht behaupten sollten
 
 | Sagen Sie nicht | Sagen Sie stattdessen |
 |---|---|
 | „KI-generierte Dokumentation“ | Die Hilfe zeigt die geschriebene Dokumentation des Projekts |
-| „In allen Sprachen verfügbar“ | Die Hilfe zeigt die Sprache der Dokumentation; prüfen Sie [Hilfesystem, Sprachen und Barrierefreiheit](../../../eng-us/features/6.0/help-system.md#languages-and-accessibility) |
+| „In allen Sprachen verfügbar“ | Die Hilfe zeigt die Sprache der Dokumentation; prüfen Sie [Hilfesystem, Sprachen und Barrierefreiheit](../../funktionen/6.0/hilfesystem.md#sprachen-und-barrierefreiheit) |
 | „Veröffentlicht“ | Teil der Linie 6.0.15, in Entwicklung |
 
 ## Blickwinkel und Ideen für Überschriften
@@ -78,7 +78,7 @@ eine Demo ([Eine Demo-Installation einrichten](eine-demo-installation-einrichten
 
 - [Thema: freie Dokumentation](thema-freie-dokumentation.md)
 - [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
-- [Hilfesystem](../../../eng-us/features/6.0/help-system.md)
+- [Hilfesystem](../../funktionen/6.0/hilfesystem.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

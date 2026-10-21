@@ -27,7 +27,7 @@ nachgehen. Sie liefert das Thema, die Fakten mit Quellen und die Aussagen, die S
 
 Exponential hat eine „Built in search engine“ ([README, Main Exponential features](https://github.com/se7enxweb/exponential/blob/main/README.md#main-exponential-features))
 und braucht keinen Suchserver: „Exponential searches with its built-in index ... until Solr is installed and switched
-on“ ([Befehle zur Serversteuerung](../../../eng-us/features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)).
+on“ ([Befehle zur Serversteuerung](../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver)).
 Die Entwicklungslinie 6.0.15 hat den **Inhaltsfinder** hinzugefügt, der die Inhalte hinter einer ID, einem URL-Alias,
 einer Seitenadresse oder einem Dateipfad findet, und die Suche der Administration gehärtet, sodass fehlerhafte oder
 sehr lange Suchanfragen sie nicht mehr zum Absturz bringen
@@ -52,10 +52,10 @@ Alles in der Linie 6.0.15, die in Entwicklung und nicht veröffentlicht ist.
 
 | Fakt | Quelle |
 |---|---|
-| Solr ist optional; ohne Solr wird der eingebaute Index verwendet. | [Befehle zur Serversteuerung](../../../eng-us/features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server) |
+| Solr ist optional; ohne Solr wird der eingebaute Index verwendet. | [Befehle zur Serversteuerung](../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver) |
 | Redakteure drücken irgendwo in der Administration `/`, um ins Suchfeld zu springen. | [Suchen, Die Schnellsuche](../suchen.md#die-schnellsuche) |
 | Besucher finden nur veröffentlichte, sichtbare Elemente, die sie lesen dürfen. | [Suchen, Die Website durchsuchen](../suchen.md#die-site-durchsuchen) |
-| Der Inhaltsfinder findet ein Objekt anhand einer Objekt-, Knoten-, Attribut- oder Versions-ID, einer Remote-ID, eines URL-Alias, einer Seiten-URL oder eines Dateipfads. | [Der Inhaltsfinder, Kurz gesagt](../../../eng-us/features/6.0/content-finder.md#in-short) |
+| Der Inhaltsfinder findet ein Objekt anhand einer Objekt-, Knoten-, Attribut- oder Versions-ID, einer Remote-ID, eines URL-Alias, einer Seiten-URL oder eines Dateipfads. | [Der Inhaltsfinder, Kurz gesagt](../../funktionen/6.0/inhalts-finder.md#kurz-gefasst) |
 | Ein Suchtext wird standardmäßig auf 16 Wörter und 1024 Zeichen gekürzt, mit einem Hinweis auf der Seite. | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration) |
 | Die Suche der Hilfe zeigt passende Seiten schon während der Eingabe, mit Filtern nach Zielgruppe und Thema. | [Suchen, Die Hilfeseiten](../suchen.md#die-hilfeseiten) |
 

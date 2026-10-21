@@ -162,8 +162,8 @@ das Beispiel-Template unten aus (oder projiziert es).
 
 - [Die Administration gestalten: ein Komponenten-Stylesheet, Tokens, kein Inline-CSS](../../../../bc/6.0/admin4-gestaltung.md):
   die Referenz für dieses ganze Modul.
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): das Design, für das die Regeln gemacht wurden.
-- [Inline-Skripte und Inline-Stile entfernen](../../../../../eng-us/help/designers/lifecycle/removing-inline-scripts-and-styles.md): ein
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md): das Design, für das die Regeln gemacht wurden.
+- [Inline-Skripte und Inline-Stile entfernen](../../../designer/lebenszyklus/inline-skripte-und-styles-entfernen.md): ein
   älteres Template migrieren.
 
 ## Verwandte Seiten

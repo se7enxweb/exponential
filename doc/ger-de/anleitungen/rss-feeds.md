@@ -9,8 +9,8 @@ und jede Meldung unten wurde am Code geprüft (`kernel/private/classes/views/rss
 `kernel/classes/ezrssexport.php`, `kernel/classes/ezrssimport.php`, `kernel/private/classes/cronjobs/rssimport.php`
 und `kernel/private/classes/views/rss/feed.php`), und zwar am 6. Oktober 2026 auf dem Demonstrationsserver.
 
-[Anleitungen](README.md) · Siehe auch: [RSS: Feeds für Apple Podcasts, eine seitenweise Feed-Liste und sicherere Exporte](../../eng-us/features/6.0/rss-podcast-and-feed-list.md),
-[OPML-Exporte](../../eng-us/bc/6.0/opml.md), [Cronjobs](cronjobs.md)
+[Anleitungen](README.md) · Siehe auch: [RSS: Feeds für Apple Podcasts, eine seitenweise Feed-Liste und sicherere Exporte](../funktionen/6.0/rss-podcast-und-feed-liste.md),
+[OPML-Exporte](../bc/6.0/opml.md), [Cronjobs](cronjobs.md)
 
 ## Kurz gesagt
 

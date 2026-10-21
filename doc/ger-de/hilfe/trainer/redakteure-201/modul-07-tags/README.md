@@ -33,7 +33,7 @@ verwenden.
 
 - Die Schulungsinstallation braucht eztags und ein Tags-Feld im Typ *Article*: als Administrator **Setup** >
   **Klassen**, *Article* bearbeiten, ein Tags-Attribut hinzufügen und seine Bearbeitungsansicht wählen
-  ([eztags: Verwenden](../../../../../eng-us/features/6.0/extensions/eztags.md#use-it)). Erlauben Sie im Feld neue Tags, wenn die
+  ([eztags: Verwenden](../../../../funktionen/6.0/erweiterungen/eztags.md#verwenden)). Erlauben Sie im Feld neue Tags, wenn die
   Teilnehmenden **Add new** ausprobieren sollen.
 - Legen Sie im Dashboard **Tags** einige Tags an (zum Beispiel *Training*, *Events*, *Climate*) und zwei Duplikate für
   die Vorführung der Zusammenführung.
@@ -53,7 +53,7 @@ verwenden.
 ## Verwandte Seiten
 
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

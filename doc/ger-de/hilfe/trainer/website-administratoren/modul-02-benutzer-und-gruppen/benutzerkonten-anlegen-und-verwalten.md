@@ -141,7 +141,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 
 - [Das Administratorpasswort ändern](../../../administratorpasswort-aendern.md): das Passwort und die Kontoeinstellungen
   eines anderen Benutzers.
-- [Ihr Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md): die Passwortregeln.
+- [Ihr Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md): die Passwortregeln.
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): was Gruppen vergeben.
 
 ## Verwandte Seiten

@@ -116,7 +116,7 @@ den gemeinsamen Komponenten neu
 (`[NavigationPartMenu_ezsetupnavigationpart]` mit `Menu[]=hello`, `MenuTitle[hello]` und `MenuURL[hello]=/hello/world`).
 Prüfen Sie das Ergebnis in Ihrem Administrationsdesign und passen Sie es an; das linke Menü von admin4 gruppiert Links
 so, wie es in
-[Admin-Seiten im admin4-Stil](../../../../../eng-us/help/extension-development/part-3-extension-developer/admin-pages-in-admin4-style.md#the-left-menu)
+[Admin-Seiten im admin4-Stil](../admin-seiten-im-admin4-stil.md#das-linke-menü)
 beschrieben ist.
 
 ## 5. Einschalten, gewähren, öffnen

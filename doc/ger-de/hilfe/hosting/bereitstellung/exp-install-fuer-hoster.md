@@ -138,7 +138,7 @@ Bereichs, von [SQLite für Hoster](../grundlagen/sqlite-fuer-hoster.md) bis [MyS
 
 - [Ein-Klick-Installer](ein-klick-installer-fuer-exponential.md)
 - [Bereitstellung automatisieren](bereitstellung-automatisieren.md)
-- [Mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md)
+- [Mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

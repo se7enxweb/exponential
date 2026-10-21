@@ -39,11 +39,11 @@ Versammlung, die den Umfang einer Website festlegen. Sie listet auf, was Parlame
 
 | Bedarf | Exponential | Lesen |
 |---|---|---|
-| Gesetzentwürfe mit ihren Fassungen, Abstimmungen und Ausschüssen verknüpft | Beziehungen zwischen Objekten | [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md) |
+| Gesetzentwürfe mit ihren Fassungen, Abstimmungen und Ausschüssen verknüpft | Beziehungen zwischen Objekten | [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md) |
 | Seiten der Mitglieder überall wiederverwendet, wo ein Mitglied erscheint | eine Klasse Mitglied, verknüpft aus Abstimmungen und Ausschüssen | [Inhaltsmodell für Parlamente](inhaltsmodell.md) |
 | Amtliche Dokumente nach der Veröffentlichung unverändert | Versionen, das Audit-Protokoll, eine eingeschränkte Rolle für Berichtigungen | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md) |
 | Listen nach Datum (Tagesordnungen, Abstimmungen) | Datumsattribute und Fetches; RSS-Exporte | [RSS-Feeds](../../../../anleitungen/rss-feeds.md) |
-| Last bei wichtigen Abstimmungen | Caches und Velocity | [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
+| Last bei wichtigen Abstimmungen | Caches und Velocity | [Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md) |
 | Daten zur Weiterverwendung | Datendateien als Objekte der Klasse File; REST-API | [REST API v1 und v2](../../../../anleitungen/rest-api-v1-und-v2.md) |
 | Mehrere Amtssprachen | Übersetzungen je Objekt | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
 
@@ -72,7 +72,7 @@ kopieren.
 
 - [Parlamente](README.md)
 - [Tagesordnungen, Gesetzentwürfe und Abstimmungsergebnisse](tagesordnungen-gesetzentwuerfe-und-abstimmungsergebnisse.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

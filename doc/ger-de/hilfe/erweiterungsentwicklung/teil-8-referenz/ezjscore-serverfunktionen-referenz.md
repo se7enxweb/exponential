@@ -72,7 +72,7 @@ Beide senden bei POST-Requests von Seiten, die das Formular-Token tragen, dieses
 
 - Zurück: [Inhaltsfunktionen aus PHP](inhaltsfunktionen-aus-php.md)
 - Weiter: [ezformtoken und CSRF-Schutz](ezformtoken-und-csrf.md)
-- [ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md)
+- [ezjscore](../../../funktionen/6.0/erweiterungen/ezjscore.md)
 - [Die JavaScript-API von expui](expui-javascript-api.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

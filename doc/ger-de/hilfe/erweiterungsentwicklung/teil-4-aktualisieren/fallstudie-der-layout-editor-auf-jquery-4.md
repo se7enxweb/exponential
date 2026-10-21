@@ -108,7 +108,7 @@ Drei Dinge machen das zu einem guten Test:
 Diese beiden Commits betrafen jQuery. Das Shell-Template des Editors hatte noch Inline-Skripte (die Übersetzungen und
 einige Werte), und seine Skript-Links trugen noch Versionsabfragen; die CSP-Messung vom 17. Oktober 2026 führte
 explayouts_ui_api noch unter den Erweiterungen mit Inline-Code auf
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Ein großes Upgrade nach dem
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)). Ein großes Upgrade nach dem
 anderen ist in Ordnung, solange jedes fertig und veröffentlicht ist, bevor das nächste beginnt.
 
 Der Commit nannte außerdem eine Voraussetzung: „Braucht ezjscore 1.4.0 oder neuer.“ Wenn Ihre Erweiterung von einer
@@ -120,7 +120,7 @@ Anforderung in `composer.json`.
 - Zurück: [Fallstudie: von eZChangeclass zu expchangeclass](fallstudie-expchangeclass.md)
 - Weiter: [Fallstudie: Zwei-Faktor-Authentifizierung ohne Inline-Skripte](fallstudie-zwei-faktor-authentifizierung.md)
 - [Vom alten jQuery zu jQuery 4](altes-jquery-zu-jquery-4.md)
-- [jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

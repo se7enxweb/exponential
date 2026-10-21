@@ -15,7 +15,7 @@ Besucher und Suchmaschinen sehen, wer die Website noch erreicht, worauf Sie auf 
 Hostnamen für die Administration, Proxys, Caches, Cron) und wie Sie wieder hineinkommen, wenn etwas schiefging.
 
 Die vollständige Anleitung ist [Wartungsmodus: die Website vom Netz nehmen und zurückbringen](../../../anleitungen/wartungsmodus.md);
-die Referenz der Funktion ist [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md).
+die Referenz der Funktion ist [Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md).
 
 ## Inhalt
 

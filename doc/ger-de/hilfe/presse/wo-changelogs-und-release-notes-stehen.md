@@ -54,10 +54,10 @@ Mehr dazu: [Über ein Release einer Erweiterung berichten](ueber-ein-erweiterung
 
 | Nachweis | Wo | Was er Ihnen liefert |
 |---|---|---|
-| Die Chronik | [Die Geschichte](../../../eng-us/history/README.md) | Monatsseiten ab Dezember 2023: was sich geändert hat, warum es wichtig ist, mit Commits |
-| Das Ledger | [Ledger aller Repositorys](../../../eng-us/history/ledger/README.md) | Jeder Commit jedes Repositorys, mit Datum, Art, Umfang und dem Release-Tag, der ihn zuerst enthielt |
-| Die Seite zur Abdeckung | [Abdeckung](../../../eng-us/history/coverage.md) | Der Beleg, pro Repository und Monat, dass jede Änderung erklärt oder aufgeführt ist |
-| Die eigene Chronik von Velocity | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) | Der Webserver ab seinem ersten Commit im Juli 2026 |
+| Die Chronik | [Die Geschichte](../../geschichte/README.md) | Monatsseiten ab Dezember 2023: was sich geändert hat, warum es wichtig ist, mit Commits |
+| Das Ledger | [Ledger aller Repositorys](../../geschichte/aenderungsverzeichnis/README.md) | Jeder Commit jedes Repositorys, mit Datum, Art, Umfang und dem Release-Tag, der ihn zuerst enthielt |
+| Die Seite zur Abdeckung | [Abdeckung](../../geschichte/abdeckung.md) | Der Beleg, pro Repository und Monat, dass jede Änderung erklärt oder aufgeführt ist |
+| Die eigene Chronik von Velocity | [Chronik von Velocity](../../geschichte/velocity/README.md) | Der Webserver ab seinem ersten Commit im Juli 2026 |
 
 Wie Sie sie zitieren, steht unter [Die Geschichtsseiten als Quelle](die-geschichtsseiten-als-quelle.md).
 

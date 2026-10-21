@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Debug-Ausgabe und Logs für Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md),
-[Die Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md) und [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md).
+[Die Exp Debug bar](../../../../funktionen/6.0/exp-debug-leiste.md) und [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md).
 
 1. **Die Einstellungen** (4 Minuten). Alle in `site.ini`; zeigen Sie die Standardwerte:
 
@@ -141,7 +141,7 @@ Auf der Entwicklungsinstallation aus Lektion 1.2, aus ihrem Wurzelverzeichnis.
 3. Das Leeren des INI-Caches, `php bin/php/ezcache.php --clear-tag=ini`.
 4. `eZDebug::writeError()`: Fehler werden immer geloggt (`AlwaysLog[]=error`).
 5. **Falsch.** Sie fügen jedem Template Markup hinzu; nur für die Entwicklung
-   ([Template-Pfadkommentare](../../../../../eng-us/features/6.0/template-path-comments.md)).
+   ([Template-Pfadkommentare](../../../../funktionen/6.0/template-pfad-kommentare.md)).
 
 </details>
 
@@ -149,8 +149,8 @@ Auf der Entwicklungsinstallation aus Lektion 1.2, aus ihrem Wurzelverzeichnis.
 
 - [Debug-Ausgabe und Logs für Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md):
   jede Einstellung und jede Logdatei.
-- [Die Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md): ihre Tabs und ihr Einstellungs-Tab.
-- [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md) und
+- [Die Exp Debug bar](../../../../funktionen/6.0/exp-debug-leiste.md): ihre Tabs und ihr Einstellungs-Tab.
+- [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md) und
   [Einen Fehler über seine Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md).
 
 ## Verwandte Seiten

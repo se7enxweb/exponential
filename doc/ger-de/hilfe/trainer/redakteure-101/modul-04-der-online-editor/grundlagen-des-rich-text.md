@@ -44,7 +44,7 @@ schreiben denselben gespeicherten Text, sodass Redakteure jederzeit wechseln kö
 Website, pro Siteaccess oder pro Benutzer festgelegt; eine Installation kann außerdem weitere Editoren anbieten (zum
 Beispiel **Tiptap**). Prüfen Sie vor dem Kurs, welche auf Ihrer Schulungsinstallation voreingestellt ist, und zeigen
 Sie nach Möglichkeit TinyMCE 8. Quelle:
-[Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md).
+[Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md).
 
 ### So präsentieren Sie es
 
@@ -137,14 +137,14 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article* (Le
 2. **B.** `Ctrl+I` (`Cmd+I` auf einem Mac) ([Tastenkürzel](../../../tastenkuerzel.md#das-bearbeitungsformular)).
 3. Unter der Schaltfläche **Hilfe** von TinyMCE.
 4. **Falsch.** Beide schreiben dasselbe gespeicherte XML, sodass Redakteure hin und her wechseln können
-   ([Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md)).
+   ([Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md)).
 5. Rückgängig machen, als reinen Text erneut einfügen und mit der Werkzeugleiste formatieren.
 
 </details>
 
 ## Weiterführende Literatur
 
-- [Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md): die Engines, der
+- [Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md): die Engines, der
   Wechsel und jeder Dialog.
 - [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#rich-text): Rich Text im Bearbeitungsformular.
 - [Tastenkürzel](../../../tastenkuerzel.md): die Tasten des Bearbeitungsformulars.

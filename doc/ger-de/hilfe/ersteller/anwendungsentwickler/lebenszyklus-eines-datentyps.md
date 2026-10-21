@@ -103,7 +103,7 @@ Sorgen Sie dafür, dass `fromString( toString( x ) )` wieder `x` ergibt; testen 
 ## Verwandte Seiten
 
 - [Einen eigenen Datentyp schreiben](eigene-datentypen.md)
-- [Muster Datentyp](../../../../eng-us/standards/patterns/datatype.md)
+- [Muster Datentyp](../../../standards/muster/datentyp.md)
 - [Inhalte im Code anlegen und aktualisieren](inhalte-im-code-anlegen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

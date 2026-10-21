@@ -62,7 +62,7 @@ Eine von einer Kommune betriebene Bibliothek kann sich deren Plattform teilen; s
 
 - [Verwaltungsebenen](../README.md)
 - [Schulen und Hochschulen](../schulen-und-hochschulen/README.md)
-- [Was Sie bauen können](../../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
+- [Was Sie bauen können](../../../ersteller/website-ersteller/was-sie-bauen-koennen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -23,7 +23,7 @@ womöglich dieselbe Behandlung brauchen.
 | Release | PHP-Thema | Was sich geändert hat |
 |---|---|---|
 | 6.0.0 (Dez. 2023) | 8.3 | Korrekturen für `eZTemplateForFunction` (die Template-Funktion `{for}`) und weitere Inkompatibilitäten mit PHP 8.3; der Setup-Assistent gibt bei der Installation keine PHP-8-Warnungen mehr aus; der Autoload-Code der Installation wurde neu geschrieben, sodass kein Fehlertext erscheint. |
-| 6.0.1 (Jan. 2024) | 8.0 | `count()` wird nur noch nach `is_countable()` aufgerufen, an Stellen, die `null` oder Skalare erhielten; uneinheitliches Prüfen von Daten vor der Verwendung behoben. Gefunden beim Testen des [SQLite-Treibers](../../../eng-us/features/6.0/sqlite-database.md). |
+| 6.0.1 (Jan. 2024) | 8.0 | `count()` wird nur noch nach `is_countable()` aufgerufen, an Stellen, die `null` oder Skalare erhielten; uneinheitliches Prüfen von Daten vor der Verwendung behoben. Gefunden beim Testen des [SQLite-Treibers](../../funktionen/6.0/sqlite-datenbank.md). |
 | 6.0.4 (Aug. 2024) | 8.2 | Dynamische Eigenschaften von `eZPersistentObject`-Klassen verursachen keine Warnungen mehr in der Debug-Ausgabe. |
 | 6.0.11 (Commit vom Dez. 2024, zuerst in 6.0.11) | 8.0 | Der Datentyp `ezmatrix` endet nicht mehr in einem fatalen Fehler (`f433a08cf9`; der Commit liegt auf einem Branch, der erst mit 6.0.11 ein Release erreichte). Eine kleinere Korrektur eines PHP-8-Hinweises vom Dezember 2024 (`21d2c6b4f5`) ist in 6.0.6. |
 | 6.0.7 (Jan. 2025) | 8.0 und 8.2 | Die Warnung der Template-Schleife `{for}`, die Erweiterung für Sternbewertungen und Warnungen der PostgreSQL-Bibliothek behoben; das Löschen einer bereits entfernten Datei warnt nicht mehr. |
@@ -70,7 +70,7 @@ Das PHP-Handbuch führt jede inkompatible Änderung pro Version auf:
 - [Sicherheitshärtung](haertung.md)
 - [PHPUnit 10](phpunitv10.md), [PHPUnit 13](phpunitv13.md) und [PHPUnit 13 unter PHP 8.4](phpunitv13-fuer-php841.md)
 - [Kompatibilitätskorrekturen und Tests von `ezpSessionHandlerDB` für PHP 8](ezpsessionhandlerdb-php8-korrektur-und-tests.md)
-- [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
-- Geschichte: [April 2025](../../../eng-us/history/2025/2025-04.md), [September 2025](../../../eng-us/history/2025/2025-09.md),
-  [Dezember 2025](../../../eng-us/history/2025/2025-12.md), [Februar 2026](../../../eng-us/history/2026/2026-02.md),
-  [März 2026](../../../eng-us/history/2026/2026-03.md)
+- [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md)
+- Geschichte: [April 2025](../../geschichte/2025/2025-04.md), [September 2025](../../geschichte/2025/2025-09.md),
+  [Dezember 2025](../../geschichte/2025/2025-12.md), [Februar 2026](../../geschichte/2026/2026-02.md),
+  [März 2026](../../geschichte/2026/2026-03.md)

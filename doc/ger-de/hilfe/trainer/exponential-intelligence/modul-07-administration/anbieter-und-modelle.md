@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [expai: Für Administratoren](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators) und die Seiten zu
+Quellen: [expai: Für Administratoren](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren) und die Seiten zu
 Anbietern, zur Probe und zu lokalen Modellen unter **EI: Help** (`extension/expai/doc/providers.md`,
 `extension/expai/doc/probe.md`, `extension/expai/doc/local-models.md`).
 
@@ -131,14 +131,14 @@ Verwenden Sie die Schulungsinstallation mit einem Administratorkonto (oder folge
 
 ## Weiterführende Informationen
 
-- [expai: Für Administratoren](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)
+- [expai: Für Administratoren](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)
 - Die Seiten zu Anbietern, zur Probe, zu lokalen Modellen und zur Anbieterunterstützung unter **EI: Help**.
 
 ## Verwandte Seiten
 
 - [Modul 7: Administration](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

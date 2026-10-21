@@ -34,7 +34,7 @@ ihre Einstellungen enthalten und was bewusst ausgeschaltet ist.
 
 Beide nutzen das Design `media` von `sevenx_themes_media`. Die Siteaccesses von Bold werden über den Pfad auf der Hauptadresse erreicht
 (`/bold/`, `/bold_ger/`). Links zwischen den beiden Websites werden für den Siteaccess geschrieben, der das Ziel ausliefert, über
-`ezurlmultisite` (siehe [Links zwischen Websites einer Multisite](../../../../eng-us/features/6.0/multisite-cross-site-links.md)).
+`ezurlmultisite` (siehe [Links zwischen Websites einer Multisite](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)).
 
 ## Siteaccesses und Einstellungsdateien
 
@@ -115,7 +115,7 @@ ihn einschalten: zuerst den Cache erzeugen, dann die eine Einstellung setzen.
 
 - [sevenx_multisite](README.md)
 - [Siteaccesses und Sprachen](siteaccesses-und-sprachen-von-sevenx-multisite.md)
-- [Generator für den statischen Cache](../../../../eng-us/features/6.0/static-cache-generator.md)
+- [Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
 - [Erste Schritte](../../erste-schritte.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

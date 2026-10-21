@@ -52,7 +52,7 @@ Aus [RSS-Feeds](../../../anleitungen/rss-feeds.md):
 
 Ein Export kann als **Apple Podcasts (RSS 2.0 + iTunes)** geschrieben werden, sodass eine auf der Website
 veröffentlichte Sendung ohne handgeschriebenen Feed bei Apple eingereicht werden kann
-([RSS, Podcast und die Feed-Liste](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)). Aus Sicht des Betreibers:
+([RSS, Podcast und die Feed-Liste](../../../funktionen/6.0/rss-podcast-und-feed-liste.md)). Aus Sicht des Betreibers:
 
 | Sie liefern | Warum |
 |---|---|
@@ -74,7 +74,7 @@ eigenen Websites. Bevor Sie einen anfordern:
 - Haben Sie das Recht, die Inhalte erneut zu veröffentlichen?
 - Wohin sollen die Elemente, und wer prüft sie?
 - Ein entfernter Import behält die Elemente, die er angelegt hat ([RSS-Feeds](../../../anleitungen/rss-feeds.md)); die
-  Feed-Liste kann aufräumen, was ein Import angelegt hat ([RSS, Podcast und die Feed-Liste](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)).
+  Feed-Liste kann aufräumen, was ein Import angelegt hat ([RSS, Podcast und die Feed-Liste](../../../funktionen/6.0/rss-podcast-und-feed-liste.md)).
 
 Für das Teilen in beide Richtungen zwischen Ihren eigenen Installationen siehe
 [Feeds und Syndikation](../../unternehmen/mobil-und-headless/feeds-und-syndication.md).
@@ -85,7 +85,7 @@ Jedes Quartal:
 
 - [ ] Öffnen Sie jede Feed-Adresse, von der Sie wissen, dass sie genutzt wird: Sie antwortet und listet aktuelle Elemente.
 - [ ] Die Feed-Adressen verwenden die öffentliche Website, nicht die Administration
-      ([RSS, Podcast und die Feed-Liste](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)).
+      ([RSS, Podcast und die Feed-Liste](../../../funktionen/6.0/rss-podcast-und-feed-liste.md)).
 - [ ] **Setup > RSS**, Filter **Need attention**: Beheben oder stilllegen, was aufgelistet ist.
 - [ ] Importe: Das neueste importierte Element ist aktuell; wenn nicht, läuft der Cronjob `rssimport` vielleicht nicht
       ([Cronjobs](../../../anleitungen/cronjobs.md)).
@@ -94,7 +94,7 @@ Jedes Quartal:
 ## Verwandte Seiten
 
 - [RSS-Feeds](../../../anleitungen/rss-feeds.md)
-- [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
+- [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
 - [Feeds für Neuerwerbungen](../../unternehmen/bibliotheken/feeds-fuer-neuerwerbungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Koordination Barrierefreiheit, an Designerinnen und Designer und an Prüferinnen und
 Prüfer, die eine mit Exponential gebaute öffentliche Website bewerten. Das Projekt hat die öffentlichen Designs
 **nicht** geprüft; diese Bewertung ist Ihre Aufgabe
-([Standards zur Barrierefreiheit: bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)). Das folgende
+([Standards zur Barrierefreiheit: bekannte Lücken](../../../standards/barrierefreiheit.md#bekannte-lücken)). Das folgende
 Vorgehen folgt der Website Accessibility Conformance Evaluation Methodology des W3C, WCAG-EM
 (<https://www.w3.org/TR/WCAG-EM/>), und überträgt ihre Schritte auf die Art, wie Exponential Seiten aufbaut.
 
@@ -30,8 +30,8 @@ Vorgehen folgt der Website Accessibility Conformance Evaluation Methodology des 
 
 Jede Seite einer Exponential-Website wird von einer kleinen Zahl von Templates gezeichnet: dem Pagelayout, einer
 Vollansicht je Inhaltsklasse, Zeilen- und Einbettungsansichten und den Templates der Datentypen und Rich-Text-Tags
-([Designs und die Fallback-Kette](../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md),
-[Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)). Ein Befund in einem Template betrifft
+([Designs und die Fallback-Kette](../../ersteller/website-ersteller/designs-und-die-fallback-kette.md),
+[Template-Overrides](../../ersteller/website-ersteller/template-overrides.md)). Ein Befund in einem Template betrifft
 meist jede Seite, die es verwendet, und eine Korrektur dort behebt ihn überall. Wählen Sie die Stichprobe nach
 Templates und ergänzen Sie dann Inhalte, die die Redaktion erstellt hat.
 
@@ -54,7 +54,7 @@ Sammeln Sie die Bausteine:
 |---|---|
 | Verwendete Inhaltsklassen | Setup > Klassen (`/class/grouplist`) |
 | Templates und Overrides | die `override.ini` und die Ordner `templates/` des Designs; Setup > Extensions für aktivierte Designs |
-| Layouts und Blöcke (falls der Layout-Editor verwendet wird) | [Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md) |
+| Layouts und Blöcke (falls der Layout-Editor verwendet wird) | [Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md) |
 | Formulare | Objekte von Klassen mit Informationssammler-Attributen, Setup > Gesammelte Informationen |
 | Allgemeine Funktionen | Suche, Anmeldung, Fehlerseiten (nicht gefunden, Zugriff verweigert) |
 
@@ -72,7 +72,7 @@ Eine praktische Stichprobe für eine Exponential-Website:
 8. eine zufällige Auswahl von etwa zehn von der Redaktion geschriebenen Inhaltsseiten, für die Qualität der Inhalte.
 
 Das entspricht der Liste unter
-[Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md#choose-the-pages).
+[Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md#die-seiten-auswählen).
 
 ## Schritt 4: Bewerten
 
@@ -105,9 +105,9 @@ erneut.
 
 ## Verwandte Seiten
 
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - W3C, [WCAG-EM](https://www.w3.org/TR/WCAG-EM/)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

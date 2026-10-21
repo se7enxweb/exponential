@@ -66,7 +66,7 @@ Ein praktischer Aufbau für eine öffentliche Stelle:
 
 Wöchentlich: Vergleichen Sie den Plan mit **Setup > Workflow-Prozesse** (was wartet und warum) und mit dem, was live gegangen ist. Führen Sie
 vor einer Veröffentlichung zu fester Uhrzeit den Cronjob-Teil frequent direkt nach dieser Uhrzeit von Hand aus, wenn es auf Minuten ankommt
-([Einen Cronjob-Teil von Hand ausführen](../../../../../eng-us/help/government/tasks/operations/run-a-cronjob-part-by-hand.md)), und leeren Sie die Caches, wenn Seiten den alten
+([Einen Cronjob-Teil von Hand ausführen](../../aufgaben/betrieb/einen-teil-der-cronjobs-von-hand-ausfuehren.md)), und leeren Sie die Caches, wenn Seiten den alten
 Stand zeigen ([Veralteter Cache](../vorfaelle/veralteter-cache.md)).
 
 ## Verwandte Seiten

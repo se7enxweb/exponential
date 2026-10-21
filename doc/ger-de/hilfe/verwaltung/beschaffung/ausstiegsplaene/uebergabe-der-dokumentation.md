@@ -30,7 +30,7 @@ der Installation selbst erzeugen; der Rest ist Wissen, das nur der bisherige Lie
 | Rollen, Richtlinien und Zuweisungen | **Benutzerkonten** > Rollen; die Seite jeder Rolle | [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
 | Sektionen und Objektzustände | **Setup > Sektionen**, **Setup > Zustände** | [Sektionen](../../../../anleitungen/sektionen.md), [Objektzustände](../../../../anleitungen/objektzustaende.md) |
 | Workflows und Trigger | **Setup > Workflows**, **Setup > Trigger** | [Workflows](../../../../anleitungen/workflows.md) |
-| Einstellungen und woher jeder Wert stammt | die Einstellungsseite; oder `exp:ini` | [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md), [exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md) |
+| Einstellungen und woher jeder Wert stammt | die Einstellungsseite; oder `exp:ini` | [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md), [exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md) |
 | Aktive Erweiterungen und ihre Reihenfolge | **Setup > Extensions** | [Die Seite Extensions](../../../../anleitungen/extensions-seite.md) |
 | Geplante Aufgaben | **Setup > Cronjobs** | [Cronjobs](../../../../anleitungen/cronjobs.md) |
 | URL-Aliase und Platzhalter | **URL-Übersetzer**, **URL Platzhalter** | [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md) |
@@ -52,12 +52,12 @@ Verlangen Sie eine schriftliche, während des Vertrags aktuell gehaltene Dokumen
   wiederkehrende Probleme und ihre Behebung (Betriebshandbücher im Stil der [Hosting-Runbooks](../../../hosting/runbooks/README.md)).
 - **Entscheidungen**: warum das Inhaltsmodell so aufgebaut ist, Entscheidungen zur Barrierefreiheit des Designs,
   Sicherheitseinstellungen, die von den Standardwerten abweichen.
-- **Redaktionelle Leitfäden**, die für Ihre Redaktion geschrieben wurden ([Übergabe an die Redaktion](../../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+- **Redaktionelle Leitfäden**, die für Ihre Redaktion geschrieben wurden ([Übergabe an die Redaktion](../../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Die Produktdokumentation
 
 Die Produktdokumentation muss nicht übergeben werden: Sie wird mit jeder Installation in `doc/` ausgeliefert und in der
-Administration als Hilfe angezeigt ([Hilfesystem](../../../../../eng-us/features/6.0/help-system.md)). Sie ist freie Dokumentation
+Administration als Hilfe angezeigt ([Hilfesystem](../../../../funktionen/6.0/hilfesystem.md)). Sie ist freie Dokumentation
 unter der GNU FDL 1.3 oder neuer, Ihre eigenen Handbücher dürfen sie also kopieren und anpassen ([Freie Dokumentation](../../../freie-dokumentation.md)).
 Ihre Übergabedokumente müssen nur abdecken, was für Ihre Website spezifisch ist.
 

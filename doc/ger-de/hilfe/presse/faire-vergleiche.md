@@ -41,7 +41,7 @@ dieselbe Disziplin auf Ihre Berichterstattung an.
 | PHP-Versionen | README, „What version of PHP is required“ |
 | Datenbanken | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Betriebssysteme | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
-| Sprachen, Rechts-nach-links | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen, Rechts-nach-links | [Sprachen in Exponential](../../sprachen.md) |
 | Inhaltsmodell | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | Multisite | [Thema: Multisite](thema-multisite.md) |
 | Eingebauter Shop | README, „Main Exponential features“ |

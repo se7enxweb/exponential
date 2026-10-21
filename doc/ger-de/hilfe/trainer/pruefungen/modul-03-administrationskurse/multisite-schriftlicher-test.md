@@ -91,7 +91,7 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
    ([10.2](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).
 5. `HostMatchMethod=start` (oder die Methode `start` bei diesem einen Eintrag); `start` nimmt auch Hosts an, die Sie
    nicht gemeint haben, verwenden Sie es daher nur, wo der Webserver nur für Ihre eigenen Hosts antwortet
-   ([Host- und Sprach-Matching für Siteaccesses](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+   ([Host- und Sprach-Matching für Siteaccesses](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 6. Die Adresse des Load Balancers in `[HTTPHeaderSettings] TrustedProxies[]`
    ([10.2](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).
 7. Die Adresse der Website, verwendet in E-Mails, Feeds, Sitemaps und von `exp:benchmark`
@@ -100,8 +100,8 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
    ([Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md#logs-und-caches-pro-website)).
 9. In `settings/override__example/` der Erweiterung (für die Gruppe) oder in `settings/override/` (für jeden
    Siteaccess der Erweiterung)
-   ([Einstellungen pro Website in Erweiterungen](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md)).
-10. `ezurlmultisite` ([Websiteübergreifende Links in Multisite](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)).
+   ([Einstellungen pro Website in Erweiterungen](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)).
+10. `ezurlmultisite` ([Websiteübergreifende Links in Multisite](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)).
 11. Zwei Installationen: Verschiedene Kunden brauchen Isolation auf Betriebssystemebene, getrennte Last und getrennte
     Sicherungen
     ([Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md#eine-installation-oder-mehrere)).
@@ -119,8 +119,8 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
 
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)
 - [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md)
-- [Einstellungen pro Website in Erweiterungen](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md) und
-  [Websiteübergreifende Links in Multisite](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)
+- [Einstellungen pro Website in Erweiterungen](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) und
+  [Websiteübergreifende Links in Multisite](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
 
 ## Verwandte Seiten
 

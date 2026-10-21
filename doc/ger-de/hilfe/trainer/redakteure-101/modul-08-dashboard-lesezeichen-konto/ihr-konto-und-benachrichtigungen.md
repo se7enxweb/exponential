@@ -143,7 +143,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 
 - [Ihr Konto und die Anmeldung](../../../konten-und-anmeldung.md): das Konto, Passwörter und die zweistufige Anmeldung.
 - [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md): für Administratoren, die sie einrichten.
-- [Benachrichtigungen](../../../../../eng-us/features/6.0/notifications.md): wie Benachrichtigungen und Zusammenfassungen
+- [Benachrichtigungen](../../../../funktionen/6.0/benachrichtigungen.md): wie Benachrichtigungen und Zusammenfassungen
   funktionieren.
 
 ## Verwandte Seiten

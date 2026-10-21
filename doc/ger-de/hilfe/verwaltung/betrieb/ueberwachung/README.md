@@ -50,7 +50,7 @@ Nach oben: [Exponential im öffentlichen Sektor betreiben](../README.md). Die Ei
 
 ## Verwandte Seiten
 - [Vorfälle](../vorfaelle/README.md)
-- [Aufgaben im Betrieb](../../../../../eng-us/help/government/tasks/operations/README.md)
+- [Aufgaben im Betrieb](../../aufgaben/betrieb/README.md)
 - [Überwachung im Überblick (Hosting)](../../../hosting/betrieb/ueberblick-ueber-die-ueberwachung.md)
 - [Leitfaden zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

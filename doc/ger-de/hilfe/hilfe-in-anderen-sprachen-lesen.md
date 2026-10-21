@@ -63,7 +63,7 @@ die es für Sie gibt.
 
 Englisch ist das Original. Deutsch wird gerade übersetzt. Ihr Administrator kann in den Einstellungen eine Sprache
 hinzufügen (`exphelp.ini`, `[DocLanguages]`); Entwickler und Übersetzer finden unter
-[Übersetzte Dokumentation](../../eng-us/bc/6.0/translated-documentation.md), wie das geht.
+[Übersetzte Dokumentation](../bc/6.0/uebersetzte-dokumentation.md), wie das geht.
 
 ## Siehe auch
 

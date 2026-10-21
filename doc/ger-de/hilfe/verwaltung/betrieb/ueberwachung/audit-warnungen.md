@@ -77,13 +77,13 @@ Dienstzeiten passend zu Ihren Servicezeiten; das Sicherheitsteam als Empfänger 
 
 Wenn Ihre Organisation ein Security Operations Center oder ein SIEM betreibt, versorgen Sie es über die Syslog-Senke
 oder die signierte Webhook-Senke (HMAC-SHA-256 über Zeitstempel und Inhalt, zwischengespeichert mit Wiederholungen)
-statt per E-Mail ([Prüfprotokoll, „Sinks, alerts and archives“](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)).
+statt per E-Mail ([Prüfprotokoll, „Sinks, alerts and archives“](../../../../funktionen/6.0/pruefprotokoll.md#sinks-alarme-und-archive)).
 Vereinbaren Sie, was jede Warnung für das Team bedeutet und wer wen anruft; die [Seiten zu Vorfällen](../vorfaelle/README.md)
 beschreiben die ersten Schritte.
 
 ## Verwandte Seiten
 - [Prüfung des Prüfprotokolls](pruefung-des-audit-trails.md)
-- [Prüfen, wer Audit-Warnungen erhält](../../../../../eng-us/help/government/tasks/operations/check-who-gets-audit-alerts.md)
+- [Prüfen, wer Audit-Warnungen erhält](../../aufgaben/betrieb/pruefen-wer-audit-warnungen-erhaelt.md)
 - [Verdacht auf ein kompromittiertes Konto](../vorfaelle/verdacht-auf-kompromittiertes-konto.md)
 - [Prüfprotokoll (Hosting)](../../../hosting/sicherheit/pruefprotokoll.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

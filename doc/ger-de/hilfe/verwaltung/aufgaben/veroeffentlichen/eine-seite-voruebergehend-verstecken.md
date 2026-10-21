@@ -40,7 +40,7 @@ Administration, wird aber auf der Site nicht angezeigt, ebenso wenig wie alles d
    anderen Orte bleiben sichtbar.
 4. Wenn andere Inhalte auf das Element verweisen, listet eine Warnung sie auf (die Prüfung der Rückwärtsverknüpfungen):
    Diese Seiten verweisen dann auf etwas, das Besucher nicht sehen können
-   ([Prüfung der Rückwärtsverknüpfungen](../../../../../eng-us/features/6.0/reverse-relation-check.md)).
+   ([Prüfung der Rückwärtsverknüpfungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)).
 
 Zum Zurückholen: noch einmal **Verstecken / Zeigen** oder **Auswahl einblenden**.
 

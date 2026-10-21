@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für den Betreiber und die Marketingleitung, die möchten, dass die Website gefunden wird. Das meiste,
 was Suchmaschinen brauchen, ist eingebaut oder eine Erweiterung entfernt; der Rest ist gutes Schreiben durch die
-Redaktion. Die Checkliste für Website-Ersteller ist [SEO-Grundlagen für Exponential-Websites](../../../../eng-us/help/creators/website-creators/seo-basics.md);
+Redaktion. Die Checkliste für Website-Ersteller ist [SEO-Grundlagen für Exponential-Websites](../../ersteller/website-ersteller/seo-grundlagen.md);
 diese Seite ist die Sicht des Betreibers: was zu prüfen ist, wer was behebt und wie oft. Die monatliche Routine ist die
 [Monatliche SEO-Checkliste](monatliche-seo-checkliste.md).
 
@@ -25,7 +25,7 @@ diese Seite ist die Sicht des Betreibers: was zu prüfen ist, wer was behebt und
 
 ## Was die Software bereits tut
 
-Aus [SEO-Grundlagen für Exponential-Websites](../../../../eng-us/help/creators/website-creators/seo-basics.md):
+Aus [SEO-Grundlagen für Exponential-Websites](../../ersteller/website-ersteller/seo-grundlagen.md):
 
 | Bedarf | Wie |
 |---|---|
@@ -42,16 +42,16 @@ Fragen Sie Ihren Website-Ersteller oder Partner einmal, und schreiben Sie die An
 
 | Frage | Warum | Lesen Sie |
 |---|---|---|
-| Hat jede Seite ihren eigenen Titel und ihre eigene Beschreibung? Welches Feld wird zur Beschreibung? | der Ausschnitt in den Suchergebnissen | [Seitenmetadaten und Teilen in sozialen Netzwerken](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md) |
-| Gibt es eine XML-Sitemap, per Cron neu erzeugt, in `robots.txt` aufgeführt? | hilft Suchmaschinen, jede Seite zu finden | [XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md) |
-| Geben Inhaltselemente mit mehreren Orten eine kanonische Adresse aus? | eine Adresse pro Seite | [SEO-Grundlagen](../../../../eng-us/help/creators/website-creators/seo-basics.md) |
-| Gibt es einen einzigen Hostnamen, mit HTTPS, und werden die anderen weitergeleitet? | keine doppelten Websites | [Live gehen: Hosts, HTTPS und Siteaccesses](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md) |
-| Hat jede Sprache ihre eigene Adresse? | Suchmaschinen zeigen die richtige Sprache | [Sprachumschalter und Sprach-URLs](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
+| Hat jede Seite ihren eigenen Titel und ihre eigene Beschreibung? Welches Feld wird zur Beschreibung? | der Ausschnitt in den Suchergebnissen | [Seitenmetadaten und Teilen in sozialen Netzwerken](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md) |
+| Gibt es eine XML-Sitemap, per Cron neu erzeugt, in `robots.txt` aufgeführt? | hilft Suchmaschinen, jede Seite zu finden | [XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md) |
+| Geben Inhaltselemente mit mehreren Orten eine kanonische Adresse aus? | eine Adresse pro Seite | [SEO-Grundlagen](../../ersteller/website-ersteller/seo-grundlagen.md) |
+| Gibt es einen einzigen Hostnamen, mit HTTPS, und werden die anderen weitergeleitet? | keine doppelten Websites | [Live gehen: Hosts, HTTPS und Siteaccesses](../../ersteller/website-ersteller/livegang-hosts-und-https.md) |
+| Hat jede Sprache ihre eigene Adresse? | Suchmaschinen zeigen die richtige Sprache | [Sprachumschalter und Sprach-URLs](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md) |
 
 ## Was die Redaktion beeinflusst
 
 Redakteure schreiben, was Suchmaschinen lesen: Titel, Einleitungen, Alternativtexte und Linktexte
-([SEO-Grundlagen](../../../../eng-us/help/creators/website-creators/seo-basics.md)).
+([SEO-Grundlagen](../../ersteller/website-ersteller/seo-grundlagen.md)).
 
 - [ ] **Titel** kurz und klar. Der Name eines Elements wird zu seinem Titel und zu seiner Adresse.
 - [ ] **Einleitung oder Beschreibung** ausgefüllt: Sie wird zur Beschreibung, wenn kein Metadatenfeld ausgefüllt ist.
@@ -67,9 +67,9 @@ Redakteure schreiben, was Suchmaschinen lesen: Titel, Einleitungen, Alternativte
 |---|---|---|
 | **Setup > Suchstatistiken** | wonach Besucher auf Ihrer Website suchen und was sie nicht finden (standardmäßig aus) | [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md) |
 | **Setup > URL-Verwaltung**, Filter ungültig | kaputte ausgehende Links | [URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md) |
-| Kaputte Beziehungen | Seiten, die auf etwas Entferntes oder Verborgenes verweisen | [Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md) |
-| Die Webmaster-Tools der Suchmaschinen | Indexierungs- und Crawl-Fehler | [SEO-Grundlagen](../../../../eng-us/help/creators/website-creators/seo-basics.md) |
-| Das Fehlerlog nach einem Relaunch | alte Adressen, die ins Leere laufen | [Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
+| Kaputte Beziehungen | Seiten, die auf etwas Entferntes oder Verborgenes verweisen | [Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md) |
+| Die Webmaster-Tools der Suchmaschinen | Indexierungs- und Crawl-Fehler | [SEO-Grundlagen](../../ersteller/website-ersteller/seo-grundlagen.md) |
+| Das Fehlerlog nach einem Relaunch | alte Adressen, die ins Leere laufen | [Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
 
 ## Wer was behebt
 
@@ -78,13 +78,13 @@ Redakteure schreiben, was Suchmaschinen lesen: Titel, Einleitungen, Alternativte
 | Schwache Titel, fehlende Beschreibungen oder Alternativtexte | Redaktion |
 | Eine entfernte Seite ohne Weiterleitung | ein Redakteur mit Zugriff auf URL-Aliase, oder der Administrator |
 | Keine Sitemap, kein kanonischer Link, mehrere Hostnamen | Website-Ersteller oder Partner |
-| Langsame Seiten | Hoster oder Partner ([Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)) |
+| Langsame Seiten | Hoster oder Partner ([Leistung und Caching](../../ersteller/website-ersteller/leistung-und-caching.md)) |
 
 ## Verwandte Seiten
 
 - [Monatliche SEO-Checkliste](monatliche-seo-checkliste.md)
 - [URLs, Weiterleitungen und verschobene Seiten](urls-weiterleitungen-und-verschobene-seiten.md)
-- [SEO-Grundlagen für Exponential-Websites](../../../../eng-us/help/creators/website-creators/seo-basics.md)
+- [SEO-Grundlagen für Exponential-Websites](../../ersteller/website-ersteller/seo-grundlagen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

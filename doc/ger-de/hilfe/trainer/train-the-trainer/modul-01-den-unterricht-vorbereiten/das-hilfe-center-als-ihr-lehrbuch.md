@@ -120,7 +120,7 @@ Arbeiten Sie auf Ihrer eigenen Schulungsinstallation, in der Administration ange
 <details>
 <summary>Antworten</summary>
 
-1. `exphelp/read` ([Das Hilfesystem](../../../../../eng-us/features/6.0/help-system.md#who-may-read-it)).
+1. `exphelp/read` ([Das Hilfesystem](../../../../funktionen/6.0/hilfesystem.md#wer-sie-lesen-darf)).
 2. Eine Stöberadresse mit Ansichtsparametern, zum Beispiel `/exphelp/search/(category)/layouts/(audience)/editor`;
    diese Adressen lassen sich als Lesezeichen speichern und verlinken.
 3. Die Schaltfläche „?“ in der Kopfzeile (**Hilfemenü**), Eintrag **Hilfe zu dieser Seite**.
@@ -132,7 +132,7 @@ Arbeiten Sie auf Ihrer eigenen Schulungsinstallation, in der Administration ange
 
 ## Weiterführende Literatur
 
-- [Das Hilfesystem](../../../../../eng-us/features/6.0/help-system.md): jede Ansicht, Einstellung und jeder Befehl des
+- [Das Hilfesystem](../../../../funktionen/6.0/hilfesystem.md): jede Ansicht, Einstellung und jeder Befehl des
   Hilfe-Centers.
 - [Suchen](../../../suchen.md): das Durchsuchen der Inhalte der Website, das etwas anderes ist als das Durchsuchen
   der Hilfe.

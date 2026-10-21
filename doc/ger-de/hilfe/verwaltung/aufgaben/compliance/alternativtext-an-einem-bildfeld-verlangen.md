@@ -47,9 +47,9 @@ Bearbeitungsformular verweigert dann das Speichern eines Bildes ohne ihn
 
 ## Verwandte Seiten
 
-- [Alternativtext für Bilder](../../../../../eng-us/help/government/accessibility/alternative-text-for-images.md)
+- [Alternativtext für Bilder](../../barrierefreiheit/alternativtext-fuer-bilder.md)
 - [Den Alternativtext aller Bilder prüfen](den-alternativtext-aller-bilder-pruefen.md)
-- [Datentypen wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

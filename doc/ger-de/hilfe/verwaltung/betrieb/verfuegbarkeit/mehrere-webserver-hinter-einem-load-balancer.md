@@ -68,7 +68,7 @@ kann, und HTTPS-Seiten können `http`-Links erzeugen.
 Installieren Sie die Crontab nur auf einem Knoten. Jedes Skript setzt eine Sperre, aber diese Sperre ist eine Datei
 im eigenen Cache-Verzeichnis des Knotens und hält daher einen anderen Knoten nicht davon ab, denselben Job
 auszuführen. Um Cronjob-Teile für alle Knoten anzuhalten, richten Sie `cronjob.ini [PauseSettings] Directory` auf ein
-gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../../../eng-us/features/6.0/cronjob-pause.md)). Dokumentieren Sie,
+gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../../funktionen/6.0/cronjobs-pausieren.md)). Dokumentieren Sie,
 welcher Knoten die Cronjobs ausführt und wie ein anderer Knoten übernimmt, wenn er ausfällt.
 
 ## Bereitstellungen und Cache-Leerungen auf jedem Knoten

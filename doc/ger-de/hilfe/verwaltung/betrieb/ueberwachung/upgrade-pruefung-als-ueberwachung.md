@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Administration und Informationssicherheitsbeauftragte, die wissen möchten, wenn sich der
 Code einer öffentlichen Website außerhalb einer Bereitstellung ändert. Die Prüfung der Dateikonsistenz vergleicht die
 Dateien der Installation mit dem Release-Manifest `share/filelist.md5`; nach Zeitplan ausgeführt, ist sie eine einfache
-Integritätsüberwachung. Referenz: [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md) und
+Integritätsüberwachung. Referenz: [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md) und
 [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md).
 
 ## Inhalt
@@ -63,7 +63,7 @@ Die Überwachung ist nur nützlich, wenn „nichts geändert“ der Normalzustan
 ## Verwandte Seiten
 - [Upgrade-Prüfung vorher und nachher](../aktualisierungen-und-aenderungen/upgrade-pruefung-vorher-und-nachher.md)
 - [Verunstaltung der Website](../vorfaelle/verunstaltung-der-website.md)
-- [Die Konsistenz nach einer Aktualisierung prüfen](../../../../../eng-us/help/government/tasks/operations/check-upgrade-consistency.md)
+- [Die Konsistenz nach einer Aktualisierung prüfen](../../aufgaben/betrieb/die-konsistenz-nach-einem-upgrade-pruefen.md)
 - [Kompromittierte Website (Hosting-Runbook)](../../../hosting/runbooks/kompromittierte-website.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

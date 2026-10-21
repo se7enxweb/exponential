@@ -26,9 +26,9 @@ Steuerungsmöglichkeiten, die es gibt.
 
 | Sie sagen | Antwort | Quelle |
 |---|---|---|
-| „Die KI veröffentlicht falsche Inhalte.“ | Sie schreibt nur Entwürfe und veröffentlicht nie selbst; ein Mensch veröffentlicht, und Workflows gelten weiterhin | [expai, Kurz gesagt](../../../eng-us/features/6.0/extensions/expai.md#in-short), [Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
-| „Sie gibt unsere Daten preis.“ | Sie sendet nichts, bis ein Anbieterschlüssel hinzugefügt wird; Sie wählen die Region (USA, EU) oder ein lokales Modell | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence), [Für Administratoren](../../../eng-us/features/6.0/extensions/expai.md#for-administrators) |
-| „Wir wollen überhaupt keine KI.“ | Es gibt einen Hauptschalter, auch pro Siteaccess | [Für Administratoren](../../../eng-us/features/6.0/extensions/expai.md#for-administrators) |
+| „Die KI veröffentlicht falsche Inhalte.“ | Sie schreibt nur Entwürfe und veröffentlicht nie selbst; ein Mensch veröffentlicht, und Workflows gelten weiterhin | [expai, Kurz gesagt](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt), [Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
+| „Sie gibt unsere Daten preis.“ | Sie sendet nichts, bis ein Anbieterschlüssel hinzugefügt wird; Sie wählen die Region (USA, EU) oder ein lokales Modell | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence), [Für Administratoren](../../funktionen/6.0/erweiterungen/expai.md#für-administratoren) |
+| „Wir wollen überhaupt keine KI.“ | Es gibt einen Hauptschalter, auch pro Siteaccess | [Für Administratoren](../../funktionen/6.0/erweiterungen/expai.md#für-administratoren) |
 | „Die Kosten laufen aus dem Ruder.“ | Die Nutzung wird protokolliert, mit Grenzen pro Benutzer, Tag, Monat, Website und Anbieter sowie mit Budgets | ebenda |
 | „Niemand wird wissen, was die KI getan hat.“ | Jede Anfrage, jeder Entwurf und jede Zustandsänderung eines Entwurfs ist ein Ereignis im Prüfprotokoll; Prompts, Antworten und Schlüssel werden nie aufgezeichnet | ebenda |
 | „Unser Datenschutzbeauftragter braucht Details.“ | **EI: Summary** ist eine druckbare Seite mit Region, Aufbewahrung und Datum der Bedingungen jedes Anbieters | ebenda |
@@ -37,15 +37,15 @@ Steuerungsmöglichkeiten, die es gibt.
 
 | Sie sagen | Antwort | Quelle |
 |---|---|---|
-| „Kann sie ganze Seiten schreiben?“ | Sie kann Felder aus einer Vorgabe füllen und Inhalte entwerfen; eine redaktionelle Person prüft und veröffentlicht | [Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
+| „Kann sie ganze Seiten schreiben?“ | Sie kann Felder aus einer Vorgabe füllen und Inhalte entwerfen; eine redaktionelle Person prüft und veröffentlicht | [Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
 | „Kann sie übersetzen?“ | Ja, als Aktion pro Feld und als Ketten über die Job-Warteschlange | ebenda |
 | „Kann sie bei der Barrierefreiheit helfen?“ | Sie schlägt Alternativtext vor und meldet Bilder, denen er fehlt | ebenda |
-| „Kann ich mein eigenes Modell nutzen?“ | Ein lokales Modell mit offenen Gewichten über Ollama wird unterstützt | [expai, Kurz gesagt](../../../eng-us/features/6.0/extensions/expai.md#in-short) |
+| „Kann ich mein eigenes Modell nutzen?“ | Ein lokales Modell mit offenen Gewichten über Ollama wird unterstützt | [expai, Kurz gesagt](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt) |
 | „Warum veröffentlicht sie nicht automatisch?“ | Absichtlich: nur Entwürfe, ein Mensch entscheidet | ebenda |
 
 ## Die Steuerungsmöglichkeiten der Administratoren
 
-Aus [expai, Für Administratoren](../../../eng-us/features/6.0/extensions/expai.md#for-administrators):
+Aus [expai, Für Administratoren](../../funktionen/6.0/erweiterungen/expai.md#für-administratoren):
 
 - Anbieter und Modelle, mit einer Probe, damit nur getestete Modelle Entwürfe schreiben dürfen;
 - eine Datenrichtlinie: Region und Aufbewahrung pro Anbieter, Regeln pro Sektion und Klasse;

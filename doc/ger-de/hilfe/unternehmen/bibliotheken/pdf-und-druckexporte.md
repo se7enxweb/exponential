@@ -32,7 +32,7 @@ und was öffentlich wird. Die vollständige Anleitung für Administratoren ist [
 Namen als erster Überschrift und dann seinen Attributen. Ein Export als **Baum** fügt die Knoten darunter hinzu, auf
 jeder Ebene, aber nur die der **Klassen**, die Sie markieren ([PDF-Exporte, In short](../../../anleitungen/pdf-exporte.md#kurz-gesagt)).
 Die Seiten liegen unter **Setup > PDF-Export** (`/pdf/list`, Richtlinie `pdf/edit`)
-([PDF-Export](../../../../eng-us/features/6.0/pdf-export.md)).
+([PDF-Export](../../../funktionen/6.0/pdf-export.md)).
 
 ## Gute Verwendungen in einer Bibliothek
 
@@ -94,10 +94,10 @@ sind, oder planen Sie das als Routineaufgabe für eine benannte Person ein.
 
 - **Fußzeile**: Markieren Sie **Show footer** und geben Sie Ihren Text ein, zum Beispiel den Namen der Bibliothek; jede
   Seite trägt ihn statt „Exponential PDF export“
-  ([PDF-Export](../../../../eng-us/features/6.0/pdf-export.md#make-an-export-with-your-own-footer)).
+  ([PDF-Export](../../../funktionen/6.0/pdf-export.md#einen-export-mit-eigener-fußzeile-erstellen)).
 - **Jede Sprache**: „The bundled fonts hold one single-byte character set. For Unicode text, point `Font` at a `.ttf`
   file“ (Die mitgelieferten Schriften enthalten einen Ein-Byte-Zeichensatz; für Unicode-Text lassen Sie `Font` auf eine
-  Datei `.ttf` zeigen, [PDF-Export, Print any language](../../../../eng-us/features/6.0/pdf-export.md#print-any-language-use-a-truetype-font)).
+  Datei `.ttf` zeigen, [PDF-Export, Print any language](../../../funktionen/6.0/pdf-export.md#jede-sprache-drucken-eine-truetype-schrift-verwenden)).
   Ein Katalog mit Titeln in mehreren Schriften braucht diese Einstellung.
 
 ## Wenn das PDF leer oder falsch ist
@@ -117,9 +117,9 @@ Abschnitt [Problems](../../../anleitungen/pdf-exporte.md#5-probleme).
 ## Andere Wege zu drucken
 
 - Leser können jede Seite aus ihrem Browser drucken; ein Druck-Stylesheet in Ihrem Design bestimmt, wie sie aussieht
-  ([Stylesheets und Skripte](../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md)).
+  ([Stylesheets und Skripte](../../ersteller/website-ersteller/stylesheets-und-skripte.md)).
 - In Writer geschriebene Dokumente lassen sich mit `ezodf` zurück nach Writer exportieren
-  ([ezodf](../../../../eng-us/features/6.0/extensions/ezodf.md)).
+  ([ezodf](../../../funktionen/6.0/erweiterungen/ezodf.md)).
 - Ein Feed neuer Einträge bedient Leser, die einen Feedreader bevorzugen
   ([Feeds für Neuerwerbungen](feeds-fuer-neuerwerbungen.md)).
 
@@ -137,7 +137,7 @@ Abschnitt [Problems](../../../anleitungen/pdf-exporte.md#5-probleme).
 
 - [Bibliotheken und Kataloge](README.md)
 - [PDF-Exporte (Anleitung)](../../../anleitungen/pdf-exporte.md)
-- [PDF-Export (Funktion)](../../../../eng-us/features/6.0/pdf-export.md)
+- [PDF-Export (Funktion)](../../../funktionen/6.0/pdf-export.md)
 - [Dateien und digitale Sammlungen](dateien-und-digitale-sammlungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

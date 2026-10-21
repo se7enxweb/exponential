@@ -64,7 +64,7 @@ einziger Ordner ist:
 
 Sie werden nur für einen Siteaccess registriert, der seinen Ordner `extension/<ext>/settings/siteaccess/<sa>/` hat;
 dieser Ordner macht die Erweiterung zu seiner Eigentümerin. Einzelheiten und ein Beispiel stehen in
-[Einstellungen je Website in Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md).
+[Einstellungen je Website in Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 
 ## Platzierungen: Woher kommt ein Wert?
 
@@ -124,7 +124,7 @@ entspricht, was Sie wollen. Die nächsten Kapitel bauen damit eine Website-Erwei
 - Zurück: [Wie INI-Einstellungen funktionieren](wie-ini-einstellungen-funktionieren.md)
 - Weiter: [Siteaccess-Einstellungen](siteaccess-einstellungen.md)
 - [INI-Override-Verzeichnisse und Platzierungen](../../../spezifikationen/6.0/ini-override-platzierungen.md)
-- [Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)
+- [Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

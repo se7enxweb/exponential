@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen, Administratoren und Datenschutzbeauftragte. Zwei optionale Erweiterungen
 fügen Formularen einen CAPTCHA-Datentyp hinzu: `recaptcha` (Google reCAPTCHA, v2, mit einem v3-Template für das
 Feedback-Formular) und `hcaptcha`
-([recaptcha](../../../../eng-us/features/6.0/extensions/recaptcha.md), [hcaptcha](../../../../eng-us/features/6.0/extensions/hcaptcha.md)).
+([recaptcha](../../../funktionen/6.0/erweiterungen/recaptcha.md), [hcaptcha](../../../funktionen/6.0/erweiterungen/hcaptcha.md)).
 Beide laden ein Skript des Anbieters, sodass der Browser des Besuchers mit einem Drittanbieter kommuniziert.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -36,13 +36,13 @@ Beide laden ein Skript des Anbieters, sodass der Browser des Besuchers mit einem
    annimmt.
 
 `[PublishSettings] NewObjectsOnly=true` prüft nur neue Objekte (bei der Registrierung ja, beim Bearbeiten des Profils
-nein) ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+nein) ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 
 ## Folgen für den Datenschutz
 
 - Die Aussage des Projekts: Eine Einwilligung oder ein Hinweis ist „in den meisten Lesarten von Art. 5 Abs. 3“ nötig;
   nennen Sie den Anbieter in Ihrer Datenschutzerklärung
-  ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)).
+  ([Datenschutzstandards](../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)).
 - Der Anbieter erhält Browser- und Interaktionsdaten jedes Besuchers, der ein geschütztes Formular öffnet, auch von
   Menschen, die sich in persönlichen Angelegenheiten an eine öffentliche Stelle wenden.
 - Unter einer Content Security Policy müssen die Hosts des Anbieters auf diesem Siteaccess erlaubt sein.
@@ -67,7 +67,7 @@ mit tatsächlichem Missbrauch hinzu.
 
 ## Verwandte Seiten
 
-- [Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)
+- [Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)
 - [Erweiterungen von Drittanbietern und Datenschutz](erweiterungen-von-drittanbietern.md)
 - [Cookie-Banner und Einwilligung](cookie-banner-und-einwilligung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

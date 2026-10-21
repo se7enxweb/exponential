@@ -144,9 +144,9 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 ## Weiterführende Literatur
 
 - [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md): jede Zahl, jedes Abzeichen und jede Schaltfläche.
-- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): dieselbe Arbeit
+- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): dieselbe Arbeit
   in einem Terminal (Lektion 1.5).
-- [INI-Overrides für mehrere Websites](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md): Einstellungen für
+- [INI-Overrides für mehrere Websites](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md): Einstellungen für
   mehrere Websites in einer Installation.
 
 ## Verwandte Seiten

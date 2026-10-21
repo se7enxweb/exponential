@@ -29,34 +29,34 @@ ob sie herausgegeben werden müssen, ist eine rechtliche Frage.
 ## Wissen, wo Informationen liegen
 
 - [ ] Veröffentlichte und unveröffentlichte Inhalte: Objekte, ihre Versionen und Übersetzungen ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
-- [ ] Entfernte Inhalte im Papierkorb, bis er geleert wird ([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)).
+- [ ] Entfernte Inhalte im Papierkorb, bis er geleert wird ([Papierkorb](../../../funktionen/6.0/papierkorb-wer-und-wo.md)).
 - [ ] Formulareinsendungen unter **Setup > Gesammelte Informationen** ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
-- [ ] Wer was geändert hat: das Prüfprotokoll ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
-- [ ] Inhalte von Newslettern und Daten von Abonnenten, falls genutzt ([Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)).
+- [ ] Wer was geändert hat: das Prüfprotokoll ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
+- [ ] Inhalte von Newslettern und Daten von Abonnenten, falls genutzt ([Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)).
 - [ ] Datensicherungen, die Inhalte enthalten können, die von der Website gelöscht wurden ([Sicherungspläne und Aufbewahrung](../../hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md)).
 - [ ] Die Übersicht dokumentiert, mit einer verantwortlichen Person für jede Quelle.
 
 ## Sie finden
 
 - [ ] Suche in der Administration und erweiterte Suche nach Inhalten ([Suchen](../../suchen.md)).
-- [ ] Der Inhaltsfinder, um Objekte im ganzen Baum zu finden (**Setup > Inhaltsfinder**) ([Inhaltsfinder](../../../../eng-us/features/6.0/content-finder.md)).
+- [ ] Der Inhaltsfinder, um Objekte im ganzen Baum zu finden (**Setup > Inhaltsfinder**) ([Inhaltsfinder](../../../funktionen/6.0/inhalts-finder.md)).
 - [ ] Audit-Suche nach Name, Benutzer und Zeitraum: `./console exp:audit search --query=<text> --limit=<n>` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 - [ ] Entwürfe und ausstehende Versionen: Fragen Sie die Eigentümer; Entwürfe gehören ihren Autoren ([Meine Entwürfe und meine Warteliste](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)).
 - [ ] Eine Person aus dem eigenen Haus ist dafür geschult, nicht nur der Dienstleister.
 
 ## Sie bereitstellen
 
-- [ ] Eine Seite oder Version so, wie Besucher sie sahen: Vorschau einer Version ([Ansichtsmodi der Versionsvorschau](../../../../eng-us/features/6.0/version-preview-view-modes.md)).
+- [ ] Eine Seite oder Version so, wie Besucher sie sahen: Vorschau einer Version ([Ansichtsmodi der Versionsvorschau](../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md)).
 - [ ] Viele Objekte einer Klasse: Export mit xrowextract als CSV, XML oder JSON ([Von Exponential weg migrieren](../../../installation/migration/exponential-verlassen.md#1-was-sie-exportieren-sollten)).
 - [ ] Formulareinsendungen als CSV: `./console ext:bccie:export --object=<id> --format=csv` (dieselbe Seite).
-- [ ] Audit-Einträge: der Audit-Export (`/audit/export`) oder `./console exp:audit export` ([Audit-Leitfaden](../../../../eng-us/bc/6.0/audit.md)).
+- [ ] Audit-Einträge: der Audit-Export (`/audit/export`) oder `./console exp:audit export` ([Audit-Leitfaden](../../../bc/6.0/audit.md)).
 - [ ] Eine Aufzeichnung, was wann von wem gesucht wurde.
 
 ## Personenbezogene Daten in Auskünften
 
 - [ ] Auskünfte vor der Herausgabe auf personenbezogene Daten Dritter geprüft.
 - [ ] Exporte von Formulareinsendungen und Benutzerdaten unter Zugriffskontrolle behandelt und gelöscht, wenn der Antrag abgeschlossen ist.
-- [ ] Audit-Einträge enthalten nach der eingestellten Zeit pseudonymisierte Felder; wissen Sie, was sie zeigen können und was nicht ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Audit-Einträge enthalten nach der eingestellten Zeit pseudonymisierte Felder; wissen Sie, was sie zeigen können und was nicht ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Proaktiv veröffentlichen
 

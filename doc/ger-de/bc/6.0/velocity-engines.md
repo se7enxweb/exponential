@@ -794,8 +794,8 @@ was jedes ihrer Releases geändert hat, ist an anderer Stelle dokumentiert:
 |---|---|
 | Was sich in einem Release geändert hat | [Changelog der Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md) |
 | Was Sie beim Upgrade der Engine ändern müssen (0.0.4.27 bis 0.0.4.42) | [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md) |
-| Die Geschichte Monat für Monat | [Velocity-Chronik](../../../eng-us/history/velocity/README.md) |
-| Webserver, Control Panel, Cache, HTTPS, Shell, Pakete | [Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md), [Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md), [HTTPS](../../../eng-us/features/6.0/velocity-https-certificates.md), [Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md), [Pakete und Binärdateien](../../../eng-us/features/6.0/velocity-packages-and-binaries.md) |
+| Die Geschichte Monat für Monat | [Velocity-Chronik](../../geschichte/velocity/README.md) |
+| Webserver, Control Panel, Cache, HTTPS, Shell, Pakete | [Webserver](../../funktionen/6.0/velocity-webserver.md), [Control Panel](../../funktionen/6.0/velocity-control-panel.md), [Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md), [HTTPS](../../funktionen/6.0/velocity-https-zertifikate.md), [Q-Shell](../../funktionen/6.0/velocity-q-shell.md), [Pakete und Binärdateien](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md) |
 | Jede Einstellung der Engine | [Einstellungen der Engine](../../spezifikationen/6.0/velocity-engine-einstellungen.md), [Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md) |
 
 Die Zugriffsregeln unter „Ansichten und wer sie öffnen darf“ oben sind diejenigen, die `exp:velocity` in die
@@ -812,7 +812,7 @@ Datei. Die Datei kann `PATH`, `LD_*`, `PHPRC` und die anderen Variablen des Load
 
 ## Verwandte Seiten
 
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md)
 - [Die Verzeichnisstruktur von Velocity](velocity-verzeichnisstruktur.md)
 - [HTTP/2 und das Vorwärmen von Caches](http2-und-cache-vorwaermen.md)

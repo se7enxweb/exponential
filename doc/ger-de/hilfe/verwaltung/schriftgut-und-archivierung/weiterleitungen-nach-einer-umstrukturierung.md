@@ -14,7 +14,7 @@ Abteilungen werden zusammengelegt, Leistungen ziehen um, Websites werden neu auf
 Gesetzen zitiert werden, müssen weiter irgendwohin führen. Verschiebungen und Umbenennungen innerhalb einer
 Exponential-Website leiten von selbst weiter; Umstrukturierungen, die Seiten entfernen oder Websites wechseln, brauchen
 einen Weiterleitungsplan
-([Weiterleitungen und verschobene Inhalte: Eine Website neu aufsetzen](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md#relaunching-a-site-a-redirect-plan)).
+([Weiterleitungen und verschobene Inhalte: Eine Website neu aufsetzen](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md#relaunch-einer-website-ein-weiterleitungsplan)).
 
 ## Inhalt
 
@@ -62,14 +62,14 @@ Jede Zeile sollte `301` zeigen (oder `200`, wo die Adresse selbst noch existiert
 ## Nach der Änderung
 
 - Beobachten Sie **Setup > Logdateien** > „Nicht gefundene Anfragen (404)“ auf Fehlgriffe; das Feld `reason=` zeigt,
-  warum der Kernel nichts gefunden hat ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).
+  warum der Kernel nichts gefunden hat ([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)).
 - Behalten Sie die Weiterleitungen über Jahre: Zitierte Dokumente leben lange.
 - Halten Sie den Plan zusammen mit der Änderung in Ihrem Schriftgut fest.
 
 ## Verwandte Seiten
 
 - [URLs erhalten](urls-erhalten.md)
-- [Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)
+- [Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)
 - [Links, URL-Aliasse, Platzhalter](../../../anleitungen/urls-und-aliase.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

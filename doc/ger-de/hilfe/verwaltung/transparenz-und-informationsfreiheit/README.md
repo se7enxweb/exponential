@@ -65,7 +65,7 @@ ungeeignet. Jede Seite sagt, wie Sie mit diesen Grenzen arbeiten.
 ## Verwandte Seiten
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
-- [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

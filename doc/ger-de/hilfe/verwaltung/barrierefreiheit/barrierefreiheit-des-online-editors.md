@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Administration, die den Rich-Text-Editor auswäh
 Barrierefreiheit, die die Autorenumgebung bewertet, und an Redakteurinnen und Redakteure mit Behinderungen, die ihn
 nutzen. Der Online-Editor ist der Teil der Administration, den das Projekt **nicht** geprüft hat: Sein Status ist
 **Nicht geprüft**, und die Barrierefreiheit der Editor-Engine ist die des Projekts TinyMCE
-([Standards zur Barrierefreiheit: bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)).
+([Standards zur Barrierefreiheit: bekannte Lücken](../../../standards/barrierefreiheit.md#bekannte-lücken)).
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ nutzen. Der Online-Editor ist der Teil der Administration, den das Projekt **nic
 ## Welchen Editor Ihre Beschäftigten erhalten
 
 Die Erweiterung eZ Online Editor (`extension/ezoe`) liefert zwei Engines mit
-([Der Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md)):
+([Der Online-Editor auf TinyMCE 8](../../../funktionen/6.0/online-editor-tinymce8.md)):
 
 | Engine | Status in einer neuen Installation | Wie Sie sie wählen |
 |---|---|---|
@@ -39,7 +39,7 @@ Mit `EngineSwitch=enabled` zeigt der Editor unter sich einen Engine-Wechsel, ein
 
 Wo die Content Security Policy ohne `'unsafe-inline'` in `script-src` durchgesetzt wird, wird TinyMCE 3 nicht
 angeboten, und der Editor weicht auf TinyMCE 8 aus
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Was das Projekt sagt
 
@@ -87,8 +87,8 @@ Für die Öffentlichkeit zählt am meisten das HTML, das die Inhalte des Editors
 
 ## Verwandte Seiten
 
-- [Der Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Der Online-Editor auf TinyMCE 8](../../../funktionen/6.0/online-editor-tinymce8.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -103,7 +103,7 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 | Mehrere Marken | [README Multisite](multisite/README.md), [Mehrere Marken planen](multisite/mehrere-marken-planen.md) |
 | Mehrere Sprachen | [README Mehrsprachig](mehrsprachig/README.md), [Übersetzungsablauf](mehrsprachig/uebersetzungsablauf.md) |
 | Mobile App oder andere Systeme | [README Mobil und headless](mobil-und-headless/README.md), [Mobile Strategie](mobil-und-headless/mobile-strategie.md), [Zuverlässigkeit des App-Backends](mobil-und-headless/zuverlaessigkeit-des-app-backends.md) |
-| Behörde | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
+| Behörde | Der eigene Bereich [Behörden](../verwaltung/verwaltungen-hier-beginnen.md) |
 
 ## Wer was lesen sollte
 
@@ -112,7 +112,7 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 | Inhaber oder Geschäftsführer | 1 und 2 | Der Einstundenpfad reicht für die Entscheidung |
 | Projektleiter | 2 und 3 | [Projektleiter: hier beginnen](../fuehrung/projektleiter-hier-beginnen.md) |
 | Person, die die Website betreiben wird | 4 | [Hosting-Anbieter: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md) enthält die technischen Einzelheiten |
-| Entwickler oder Website-Ersteller | 3 und 4 | [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md), [Anwendungsentwickler](../../../eng-us/help/creators/app-creators/app-creators-start-here.md) |
+| Entwickler oder Website-Ersteller | 3 und 4 | [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md), [Anwendungsentwickler](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) |
 | Redakteure | Nach dem Start | [Erste Schritte](../erste-schritte.md), [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md) |
 
 ## Verwandte Seiten

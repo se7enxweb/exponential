@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Designer, die ein Design in Sprachen von rechts nach links funktionsfähig machen. Die Administration tut das bereits
 (seit 6.0.15); ihre Regeln gelten für jedes Design. Die vollständige Beschreibung der Funktion ist
-[Sprachen von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md).
+[Sprachen von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md).
 
 ## Inhalt
 

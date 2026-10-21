@@ -45,18 +45,18 @@ Suche von Exponential bauen, und wo das Produkt endet.
 Nach oben: [Eine Site für den öffentlichen Sektor aufbauen](../README.md), der Index aller Anleitungen zum Aufbauen,
 und [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md), der Anfang des Bereichs für Behörden. Die Seiten zu den
 Verwaltungsebenen beschreiben Leistungen für jede Art von Organisation, zum Beispiel
-[Ratssitzungen und kommunale Leistungen](../../../../../eng-us/help/government/levels/municipal-and-local/council-meetings-and-local-services.md).
+[Ratssitzungen und kommunale Leistungen](../../ebenen/kommunen/ratssitzungen-und-oertliche-dienstleistungen.md).
 
 ## Was Exponential bietet und was nicht
 
 | Geboten | Lesen |
 |---|---|
-| Inhaltsklassen mit Pflichtfeldern | [Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) |
-| Schlagworte mit Baum und Synonymen (eztags) | [Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md) |
-| Beziehungen und mehrere Orte je Objekt | [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md) |
-| Eingebaute Suche, oder eZ Find mit Solr | [Site-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md) |
+| Inhaltsklassen mit Pflichtfeldern | [Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) |
+| Schlagworte mit Baum und Synonymen (eztags) | [Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md) |
+| Beziehungen und mehrere Orte je Objekt | [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md) |
+| Eingebaute Suche, oder eZ Find mit Solr | [Site-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md) |
 | Suchstatistik | **Setup > Suchstatistiken** |
-| Formulare mit dem Information Collector | [Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
+| Formulare mit dem Information Collector | [Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
 
 | Nicht geboten | Übliche Antwort |
 |---|---|
@@ -66,9 +66,9 @@ Verwaltungsebenen beschreiben Leistungen für jede Art von Organisation, zum Bei
 
 ## Verwandte Seiten
 
-- [Verwaltungsebenen](../../../../../eng-us/help/government/levels/README.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
+- [Verwaltungsebenen](../../ebenen/README.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
+- [Ihr Inhaltsmodell entwerfen](../../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

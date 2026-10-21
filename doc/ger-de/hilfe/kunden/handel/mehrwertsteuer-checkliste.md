@@ -75,11 +75,11 @@ Signed off: __________________   Next check due: __________
 |---|---|---|
 | USt-Typen | **Shop > USt-Typen** | `shop/vattype`, Richtlinie `shop/setup` (`kernel/shop/module.php`) |
 | USt-Regeln und Kategorien | **Shop > USt-Regeln**, **Shop > Produktkategorien** | `shop/vatrules`, `shop/productcategories` |
-| Warnung bei 0 Prozent | Shop-Dashboard, „Nächste Schritte“ | [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md) |
+| Warnung bei 0 Prozent | Shop-Dashboard, „Nächste Schritte“ | [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md) |
 | Name des dynamischen USt-Typs | `settings/shop.ini [VATSettings] DynamicVatTypeName` | ausgeliefert „Determined by VAT charging rules“ |
-| Summen mit und ohne Mehrwertsteuer | **Shop > Bestellungen**, sortierbare Spalten | [Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md) |
+| Summen mit und ohne Mehrwertsteuer | **Shop > Bestellungen**, sortierbare Spalten | [Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md) |
 | Monatszahlen | **Shop > Produkt-Statistiken** (`shop/statistics`) | [Shop-Berichte](shop-berichte.md) |
-| Nachweis der Änderungen | Das Prüfprotokoll, Kanal `commerce` | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis der Änderungen | Das Prüfprotokoll, Kanal `commerce` | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 ## Wenn etwas nicht stimmt
 

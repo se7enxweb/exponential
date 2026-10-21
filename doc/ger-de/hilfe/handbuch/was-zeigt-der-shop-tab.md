@@ -47,7 +47,7 @@ Benutzer, deren Rolle die Richtlinie `shop/administrate` hat. Ohne sie wird der 
 
 ## Verwandte Seiten
 
-- [Shop-Dashboard und Bestellstatus](../../../eng-us/features/6.0/store-dashboard.md)
+- [Shop-Dashboard und Bestellstatus](../../funktionen/6.0/shop-dashboard.md)
 - [Bestellungen im Alltag](../kunden/handel/bestellungen-im-alltag.md)
 - [Die tägliche Routine im Shop](../kunden/handel/taegliche-shop-routine.md)
 - [Berichte des Shops](../kunden/handel/shop-berichte.md)

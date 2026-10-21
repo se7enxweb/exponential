@@ -13,7 +13,7 @@ Diese Seite ist für Eigentümer und Shop-Leitungen, deren Shop PayPal über die
 um den Betrieb: die Prüfungen, die eine Einstellung, die die meisten Shops falsch haben, und was zu tun ist, wenn etwas
 nicht übereinstimmt. Wie die Erweiterung funktioniert und was sie prüft, bevor sie eine Bestellung als bezahlt
 markiert, steht unter [PayPal-Zahlungen für Unternehmen](../../unternehmen/shops/zahlungen-mit-paypal.md); die Referenz der
-Einstellungen ist [ezpaypal](../../../../eng-us/features/6.0/extensions/ezpaypal.md).
+Einstellungen ist [ezpaypal](../../../funktionen/6.0/erweiterungen/ezpaypal.md).
 
 ## Was in Ihrem Shop läuft
 
@@ -29,7 +29,7 @@ Kartendaten werden auf der Seite von PayPal eingegeben, nie auf Ihrer ([Kartenza
 
 `paypal.ini [OrderSettings] PaymentMadeOrderStatusID` ist der Bestellstatus, der gesetzt wird, wenn PayPal eine
 Zahlung bestätigt. Ihr ausgelieferter Wert ist `1000`, die erste Nummer für eigene Status, nicht der ausgelieferte
-Status **Paid** (5) ([ezpaypal](../../../../eng-us/features/6.0/extensions/ezpaypal.md)). Fragen Sie Ihren Partner, welchen
+Status **Paid** (5) ([ezpaypal](../../../funktionen/6.0/erweiterungen/ezpaypal.md)). Fragen Sie Ihren Partner, welchen
 Wert Ihr Shop verwendet, und stellen Sie sicher, dass es ein Status aus Ihrem Ablauf ist ([Bestellstatus](bestellstatus.md)):
 
 | Ihre Wahl | Dann |
@@ -89,7 +89,7 @@ beeinträchtigen. Nach jeder solchen Änderung:
 
 - [Zahlungsanbieter](zahlungsanbieter.md)
 - [PayPal-Zahlungen für Unternehmen](../../unternehmen/shops/zahlungen-mit-paypal.md)
-- [ezpaypal](../../../../eng-us/features/6.0/extensions/ezpaypal.md)
+- [ezpaypal](../../../funktionen/6.0/erweiterungen/ezpaypal.md)
 - [Bestellstatus](bestellstatus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

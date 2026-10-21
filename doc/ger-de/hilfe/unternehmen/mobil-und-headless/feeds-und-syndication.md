@@ -35,7 +35,7 @@ RSS, ATOM, iTunes RSS und OPML unter den Hauptfunktionen von Exponential auf.
 
 ## Feeds veröffentlichen
 
-Aus [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md):
+Aus [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md):
 
 | | Export | Import |
 |---|---|---|
@@ -56,13 +56,13 @@ als RSS, Atom und JSON Feed, [Entfernte Dienste](entfernte-dienste.md#was-sich-d
 > **Tipp**
 > Fügen Sie im Seitenkopf einen Autodiscovery-Link und auf Ihrer Nachrichtenseite einen sichtbaren Feed-Link hinzu,
 > damit Leser und Browser den Feed finden
-> ([Browser und Leser ihn finden lassen](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md#letting-browsers-and-readers-find-it)).
+> ([Browser und Leser ihn finden lassen](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md#browser-und-feedreader-ihn-finden-lassen)).
 
 ## Podcasts
 
 Ein RSS-Export kann als **Apple Podcasts (RSS 2.0 + iTunes)** geschrieben werden, damit „a show published here can be
 submitted to Apple without a hand written feed“ (eine hier veröffentlichte Sendung ohne handgeschriebenen Feed bei Apple
-eingereicht werden kann, [RSS: Feeds für Apple Podcasts](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)).
+eingereicht werden kann, [RSS: Feeds für Apple Podcasts](../../../funktionen/6.0/rss-podcast-und-feed-liste.md)).
 Kanalfelder wie Inhaber, Artwork und Kategorie werden im Exportformular ausgefüllt; die Kennung jeder Folge ist die
 Remote-ID des Objekts, die „never changes, so readers do not see old episodes as new“ (sich nie ändert, sodass Leser alte
 Folgen nicht als neu sehen). Eine Folge ohne abspielbare Audiodatei wird ausgelassen, da Apple sie ablehnt.
@@ -73,14 +73,14 @@ Ein Import liest den Feed einer anderen Website und legt daraus gewöhnliche Obj
 braucht den Cronjob `rssimport`, und „nothing is read without it“ (ohne ihn wird nichts gelesen). Das Entfernen des
 Imports behält die Objekte. Der Rat der Anleitung ist klar: „Only import feeds you are allowed to republish“
 (importieren Sie nur Feeds, die Sie weiterveröffentlichen dürfen,
-[Einen Feed importieren](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md#importing-a-feed)).
+[Einen Feed importieren](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md#einen-feed-importieren)).
 
 ## Syndication zwischen Installationen
 
 Die Erweiterung `syndication`, die die `composer.json` im Wurzelverzeichnis verlangt, „exports part of the content tree
 of one site as a feed, and another site imports it, kept in step by cron“ (exportiert einen Teil des Inhaltsbaums einer
 Website als Feed, eine andere Website importiert ihn, per Cron synchron gehalten,
-[syndication](../../../../eng-us/features/6.0/extensions/syndication.md)). Sie unterstützt:
+[syndication](../../../funktionen/6.0/erweiterungen/syndication.md)). Sie unterstützt:
 
 - **Syndication in eine Richtung**, „for example shared content or authentication data between separate databases and
   client sites“ (zum Beispiel gemeinsame Inhalte oder Authentifizierungsdaten zwischen getrennten Datenbanken und
@@ -109,7 +109,7 @@ Produktinhalte an Händler liefert, die eigene Exponential-Websites betreiben
 |---|---|
 | Jeder darf Ihre neuesten Einträge lesen | Einen Export als RSS oder Atom |
 | Ihre Sendung in Podcast-Apps | Einen Export für Apple Podcasts |
-| Eine Liste Ihrer Feeds für Leser | Einen OPML-Export ([OPML-Exporte](../../../../eng-us/bc/6.0/opml.md)) |
+| Eine Liste Ihrer Feeds für Leser | Einen OPML-Export ([OPML-Exporte](../../../bc/6.0/opml.md)) |
 | Die Neuigkeiten einer anderen Website auf Ihrer zeigen | Einen RSS-Import |
 | Inhalte mit einer anderen Exponential-Installation teilen, synchron gehalten | `syndication` |
 | Inhalte für Ihre eigene App | Die REST API ([Headless mit der REST API](headless-mit-der-rest-api.md)) |
@@ -128,9 +128,9 @@ Produktinhalte an Händler liefert, die eigene Exponential-Websites betreiben
 ## Verwandte Seiten
 
 - [Verkaufen über Netzwerke und Partner](verkaufen-ueber-netzwerke-und-partner.md)
-- [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
+- [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)
 - [RSS-Feeds: Exporte veröffentlichen und Importe lesen](../../../anleitungen/rss-feeds.md)
-- [syndication](../../../../eng-us/features/6.0/extensions/syndication.md)
+- [syndication](../../../funktionen/6.0/erweiterungen/syndication.md)
 - [Feeds für Neuerwerbungen (Bibliotheken)](../bibliotheken/feeds-fuer-neuerwerbungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

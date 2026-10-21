@@ -13,7 +13,7 @@ Diese Seite richtet sich an Site-Ersteller und Administratoren, bei denen Besuch
 müssen, zum Beispiel ein Foto eines beschädigten Verkehrsschilds oder ein Nachweisdokument. Der Datentyp Datei des
 Kernels (`ezbinaryfile`) ist für Redakteure gedacht; für das Sammeln von Informationen verwendet Exponential den
 Datentyp **Enhanced File** der Erweiterung `enhancedezbinaryfile`
-([enhancedezbinaryfile](../../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md)). Dateien von beliebigen Menschen
+([enhancedezbinaryfile](../../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md)). Dateien von beliebigen Menschen
 im Internet anzunehmen, ist ein Risiko; lesen Sie die ganze Seite, bevor Sie es einschalten.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -64,7 +64,7 @@ anonymen Uploads abrät. Die Standardinstallation aktiviert die Erweiterung
 
 Exponential bereinigt SVG-Uploads und lehnt gefährliche Dateinamen wie `shell.php.jpg` beim Upload im Editor ab
 ([Inhaltsmodell und Bearbeitung](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#4-der-online-editor-und-tinymce-8),
-[Standards zur Sicherheit](../../../../../eng-us/standards/security.md)); es prüft Dateien nicht auf Schadsoftware.
+[Standards zur Sicherheit](../../../../standards/sicherheit.md)); es prüft Dateien nicht auf Schadsoftware.
 
 ## Wann ein anderes System sinnvoll ist
 
@@ -82,7 +82,7 @@ Dokumente einen getrennten Weg anzubieten, als Uploads anzunehmen.
 
 - [Formulare aufbauen](README.md)
 - [Aufbewahrung gesammelter Informationen](aufbewahrung-gesammelter-informationen.md)
-- [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

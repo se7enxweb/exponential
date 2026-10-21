@@ -44,7 +44,7 @@ und gibt false zurück.
 |---|---|---|---|
 | Werte | beliebig | ja, einer (mit Eingabe) oder zwei und mehr | keiner |
 
-Gibt einen booleschen Wert zurück. Erzeugte Referenz: [eq](../../../eng-us/examples/template-operators/eq.md).
+Gibt einen booleschen Wert zurück. Erzeugte Referenz: [eq](../../beispiele/template-operatoren/eq.md).
 
 ### ne
 
@@ -55,7 +55,7 @@ Nachbarn unterscheiden. Dieselbe Warnung ohne Parameter.
 |---|---|---|---|
 | Werte | beliebig | ja | keiner |
 
-Gibt einen booleschen Wert zurück. Erzeugte Referenz: [ne](../../../eng-us/examples/template-operators/ne.md).
+Gibt einen booleschen Wert zurück. Erzeugte Referenz: [ne](../../beispiele/template-operatoren/ne.md).
 
 ```tpl
 5|eq( 5 ) = {5|eq( 5 )|choose( 'false', 'true' )}
@@ -105,9 +105,9 @@ Templates rufen zur Laufzeit `compareCounts()` auf und wenden dieselbe Regel an.
 |---|---|---|---|
 | `threshold` | beliebig | ja | `false` |
 
-Gibt einen booleschen Wert zurück. Erzeugte Referenzen: [lt](../../../eng-us/examples/template-operators/lt.md),
-[gt](../../../eng-us/examples/template-operators/gt.md), [le](../../../eng-us/examples/template-operators/le.md),
-[ge](../../../eng-us/examples/template-operators/ge.md).
+Gibt einen booleschen Wert zurück. Erzeugte Referenzen: [lt](../../beispiele/template-operatoren/lt.md),
+[gt](../../beispiele/template-operatoren/gt.md), [le](../../beispiele/template-operatoren/le.md),
+[ge](../../beispiele/template-operatoren/ge.md).
 
 ```tpl
 3|lt( 5 ) = {3|lt( 5 )|choose( 'false', 'true' )}
@@ -148,7 +148,7 @@ Gibt beim ersten falschen Operanden `false` zurück; sind alle wahr, gibt er den
 |---|---|---|---|
 | Operanden | beliebig | nein | keiner |
 
-Erzeugte Referenz: [and](../../../eng-us/examples/template-operators/and.md).
+Erzeugte Referenz: [and](../../beispiele/template-operatoren/and.md).
 
 ### or
 
@@ -159,7 +159,7 @@ eines Ersatzwerts, auch wenn [first_set](steueroperatoren.md#first_set) dafür k
 |---|---|---|---|
 | Operanden | beliebig | nein | keiner |
 
-Erzeugte Referenz: [or](../../../eng-us/examples/template-operators/or.md).
+Erzeugte Referenz: [or](../../beispiele/template-operatoren/or.md).
 
 ```tpl
 and( 1, 'yes', array( 1 ) ) = {and( 1, 'yes', array( 1 ) )|implode( ',' )}
@@ -203,18 +203,18 @@ eine leere Zeichenkette. Gibt einen booleschen Wert zurück.
 |---|---|---|---|
 | Wert | beliebig | nein | die Eingabe |
 
-Erzeugte Referenz: [not](../../../eng-us/examples/template-operators/not.md).
+Erzeugte Referenz: [not](../../beispiele/template-operatoren/not.md).
 
 ### null
 
 Ob die Eingabe über die Pipe genau `null` ist (`===`). Ein Fetch, der nichts findet, gibt `null` zurück. Keine
-Parameter. Erzeugte Referenz: [null](../../../eng-us/examples/template-operators/null.md).
+Parameter. Erzeugte Referenz: [null](../../beispiele/template-operatoren/null.md).
 
 ### true und false
 
 Geben die booleschen Werte `true` und `false` zurück. So schreiben Sie ein boolesches Literal: `true()`, `false()`.
-Keine Parameter. Erzeugte Referenzen: [true](../../../eng-us/examples/template-operators/true.md),
-[false](../../../eng-us/examples/template-operators/false.md).
+Keine Parameter. Erzeugte Referenzen: [true](../../beispiele/template-operatoren/true.md),
+[false](../../beispiele/template-operatoren/false.md).
 
 ```tpl
 {def $empty = array()
@@ -254,7 +254,7 @@ boolean values"; ein Index außerhalb der Parameter protokolliert "Index ... out
 |---|---|---|---|
 | Auswahlmöglichkeiten | beliebig | ja | keiner |
 
-Erzeugte Referenz: [choose](../../../eng-us/examples/template-operators/choose.md).
+Erzeugte Referenz: [choose](../../beispiele/template-operatoren/choose.md).
 
 ```tpl
 {def $n = 2
@@ -295,11 +295,11 @@ natürlicher.
 
 ## Verwandte Seiten
 
-- [Logik- und Vergleichsoperatoren für Designer](../../../eng-us/help/designers/templates/logic-and-comparison-operators.md)
-- [If und Bedingungen](../../../eng-us/help/designers/templates/if-and-conditions.md)
+- [Logik- und Vergleichsoperatoren für Designer](../designer/vorlagen/logik-und-vergleichsoperatoren.md)
+- [If und Bedingungen](../designer/vorlagen/if-und-bedingungen.md)
 - [Steueroperatoren: cond und first_set](steueroperatoren.md)
 - [Typ-Operatoren](typ-operatoren.md): `is_set`, `is_array` und die anderen Prüfungen
-- [Alle Template-Operatoren (erzeugt)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (erzeugt)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

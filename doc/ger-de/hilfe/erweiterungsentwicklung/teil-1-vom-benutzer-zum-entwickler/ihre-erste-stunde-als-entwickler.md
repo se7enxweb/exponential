@@ -84,7 +84,7 @@ Schalten Sie dann die Pfadkommentare ein, laden Sie neu und sehen Sie sich den S
 
 Jeder Teil des HTML ist jetzt von Kommentaren umschlossen, die seine Template-Datei nennen. Wenn Sie etwas auf einer
 Seite ändern möchten, finden Sie so die Datei, die Sie ändern müssen. Mehr dazu in
-[Template-Pfadkommentare](../../../../eng-us/features/6.0/template-path-comments.md).
+[Template-Pfadkommentare](../../../funktionen/6.0/template-pfad-kommentare.md).
 
 ## Übung 4: die Debug-Ausgabe lesen (10 Minuten)
 
@@ -110,7 +110,7 @@ tail -n 20 var/log/error.log
 ```
 
 Die Administration hat einen Viewer für dieselben Dateien: **Setup > Logs**, erklärt in
-[Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md). Jede Fehlerzeile trägt eine Referenz, nach der Sie suchen
+[Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md). Jede Fehlerzeile trägt eine Referenz, nach der Sie suchen
 können; siehe [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md).
 
 ## Übung 6: ein Skript mit geladenem Kernel ausführen (10 Minuten)

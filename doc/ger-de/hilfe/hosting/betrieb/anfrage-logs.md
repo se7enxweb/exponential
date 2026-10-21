@@ -14,7 +14,7 @@ fehlenden Seite und eine Anfrage, die wie ein Angriff aussieht, festgehalten wer
 personenbezogene Daten aus den Dateien herausgehalten werden, wie viel Festplatte sie belegen und wie Sie sie nutzen, wenn ein
 Kunde fragt, warum Besucher Fehler bekommen.
 
-Jedes Format und jede Einstellung unten stammt aus [Anfrage-Logs: 404.log und security.log](../../../../eng-us/features/6.0/request-logs.md),
+Jedes Format und jede Einstellung unten stammt aus [Anfrage-Logs: 404.log und security.log](../../../funktionen/6.0/anfrageprotokolle.md),
 wo auch die Schnittstellen für Entwickler beschrieben sind. Die Sicherheitsseite hat eine eigene Seite: [Sicherheitslog](sicherheitslog.md).
 
 ## Inhalt
@@ -40,7 +40,7 @@ echten Fehler enthält:
 | `security.log` | Anfragen, die der Request-Klassifizierer als Abtastung, Traversal, Injection, Angriffswerkzeug oder Häufung von Antworten „nicht gefunden“ einstuft, mit jedem Status | warning |
 
 Jede Anfrage wird in eines davon geschrieben, nie in zwei: Eine Abtastung, die mit 404 endet, steht nur in `security.log`.
-Nichts wird blockiert; der Klassifizierer stuft nur ein ([Anfrage-Logs, kurz gesagt](../../../../eng-us/features/6.0/request-logs.md#in-short)).
+Nichts wird blockiert; der Klassifizierer stuft nur ein ([Anfrage-Logs, kurz gesagt](../../../funktionen/6.0/anfrageprotokolle.md#kurz-gesagt)).
 
 > **Hinweis**
 > Auf einer Website, auf der der Webserver (oder ein Schutz davor) eine Anfrage ablehnt, bevor Exponential startet, steht diese
@@ -102,7 +102,7 @@ Beide Logs sind Kernel-Logs des Log-Viewers, mit eigenen Rotationseinstellungen 
 je 5 Archive, komprimiert, eine Größengrenze von 10 MB für den Cronjob-Teil `logs` und eine Bereinigung, die Archive von
 `404.log` nach 30 Tagen und von `security.log` nach 90 Tagen entfernt. Während eine Zeile geschrieben wird, rotiert der Schreiber
 die Datei außerdem bei `site.ini [FileSettings] LogFileMaxSize` wie jedes andere Log
-([Log-Rotation](../../../../eng-us/features/6.0/log-rotation.md)).
+([Log-Rotation](../../../funktionen/6.0/log-rotation.md)).
 
 ```ini
 # settings/override/logviewer.ini.append.php: keep security.log longer
@@ -142,7 +142,7 @@ Aus einer Shell lassen sich dieselben Dateien mit dem Befehl des Log-Viewers dur
 - [Log-Viewer und Log-Rotation](log-viewer-und-log-rotation.md)
 - [Überblick über die Überwachung](ueberblick-ueber-die-ueberwachung.md)
 - [request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md)
-- [Anfrage-Logs: 404.log und security.log](../../../../eng-us/features/6.0/request-logs.md) (Referenz der Funktion)
+- [Anfrage-Logs: 404.log und security.log](../../../funktionen/6.0/anfrageprotokolle.md) (Referenz der Funktion)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

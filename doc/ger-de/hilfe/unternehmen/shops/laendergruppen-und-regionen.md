@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Geschäftsinhaber, die an Kunden in mehr als einem Land verkaufen. Sie erklärt die
 Länderliste, die Ihre Kunden an der Kasse sehen, wie Sie Ihre eigenen Märkte nach oben stellen und was sich sonst
 ändert, wenn Sie über Grenzen hinweg verkaufen. Die technische Beschreibung steht unter
-[Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md).
+[Die gruppierte Länderliste](../../../funktionen/6.0/laendergruppen.md).
 
 ## Inhalt
 
@@ -32,7 +32,7 @@ eine Bestellung, die Sie von Hand korrigieren müssen. Eine kurze Rangliste oben
 
 ## Was Kunden sehen
 
-Jede Länderauswahl zeigt zwei Gruppen ([Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md)):
+Jede Länderauswahl zeigt zwei Gruppen ([Die gruppierte Länderliste](../../../funktionen/6.0/laendergruppen.md)):
 
 1. **Häufig gewählte Länder**, eine Rangliste.
 2. **Alle Länder**, jedes Land aus `settings/country.ini`, von A bis Z sortiert nach dem übersetzten Namen in der
@@ -56,7 +56,7 @@ Siteaccess überschreiben lässt. Ein Shop, der überwiegend in deutschsprachige
 - weitere Gruppen vor „Alle Länder“ einfügen, jede mit ihrer eigenen Bezeichnung (`GroupList[]`, `GroupName_<group>`);
 - festlegen, ob die Länder der Rangliste in der Liste von A bis Z wiederholt werden (`RepeatInAllCountries`);
 - jeder Website einer Multisite-Installation über Siteaccess-Einstellungen ihre eigene Rangliste geben
-  ([Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)).
+  ([Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)).
 
 > **Tipp**
 > Führen Sie die Länder auf, in die Sie tatsächlich liefern, in der Reihenfolge Ihres Bestellvolumens. Sehen Sie im
@@ -66,7 +66,7 @@ Siteaccess überschreiben lässt. Ein Shop, der überwiegend in deutschsprachige
 ## Automatisches Ausfüllen und weniger Fehler
 
 Browser füllen Anschriften aus dem Profil des Kunden aus. Die gruppierte Liste wurde gebaut, damit das funktioniert
-([Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md#autofill)):
+([Die gruppierte Länderliste](../../../funktionen/6.0/laendergruppen.md#automatisches-ausfüllen)):
 
 - ein Kunde mit einer Anschrift in den Vereinigten Staaten landet nicht mehr bei „United States Minor Outlying Islands“;
 - die Auswahl des Shops beginnt mit einer leeren Option „Land wählen“, statt stillschweigend ein Land vorzuwählen;
@@ -95,7 +95,7 @@ nur in einige Länder liefert, hat diese Möglichkeiten:
 
 - es deutlich auf den Produktseiten, im Warenkorb und in den Geschäftsbedingungen sagen;
 - das Land im Bestätigungsschritt mit einem Workflow-Ereignis an `before_shop_confirmorder` prüfen
-  ([Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#workflow-triggers));
+  ([Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md#workflow-trigger));
 - einen eigenen Shop-Account-Handler verwenden, dessen Formular nur Ihre Länder anbietet
   (`shopaccount.ini [AccountSettings]`, [Kundenkonten und Gastbestellung](kundenkonten-und-gastbestellung.md)).
 
@@ -112,7 +112,7 @@ Länder liefern“.
 
 ## Verwandte Seiten
 
-- [Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md)
+- [Die gruppierte Länderliste](../../../funktionen/6.0/laendergruppen.md)
 - [USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md)
 - [Versand und Bearbeitung](versand-und-bearbeitung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

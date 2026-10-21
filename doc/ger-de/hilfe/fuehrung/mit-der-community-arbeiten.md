@@ -86,7 +86,7 @@ Aus [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#einen-fehler-in-exponent
 
 Die Seite **Fehler melden** der Hilfe (`/exphelp/report` in der Administration) führt die meldende Person: Sie sagt,
 welcher Tracker zu verwenden ist, füllt eine Zusammenfassung der Installation aus und öffnet ein neues Issue mit
-vorbereitetem Titel und Text ([Hilfesystem](../../../eng-us/features/6.0/help-system.md)). Die Seite listet auch die eigenen
+vorbereitetem Titel und Text ([Hilfesystem](../../funktionen/6.0/hilfesystem.md)). Die Seite listet auch die eigenen
 Tracker der Erweiterungen auf.
 
 ### Was eine Meldung nützlich macht
@@ -153,7 +153,7 @@ Für den Kernel ergänzt CONTRIBUTING.md:
 - Einmal `make hooks` in Ihrem Klon: Der Commit-Hook prüft Syntax, Dateimanifest und Codestil.
 - Jeder Commit, der eine Datei hinzufügt, ändert oder entfernt, aktualisiert ihre Zeile in `share/filelist.md5`
   (`make manifest-fix`).
-- Templates und Stylesheets der Administration folgen [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md):
+- Templates und Stylesheets der Administration folgen [Die Administration gestalten](../../bc/6.0/admin4-gestaltung.md):
   kein Inline-CSS, gemeinsame Komponenten und Tokens.
 - Halten Sie einen Pull-Request fokussiert; mehrere Beiträge sind mehrere Pull-Requests.
 
@@ -165,7 +165,7 @@ Für den Kernel ergänzt CONTRIBUTING.md:
 ## Wie das Projekt mit Pull-Requests umgeht
 
 Aus [Mitwirkende und Pull-Requests](../wer-ist-die-exponential-foundation.md#mitwirkende-und-pull-requests) und
-[Kontinuierliche Integration](../../../eng-us/bc/6.0/ci.md):
+[Kontinuierliche Integration](../../bc/6.0/ci.md):
 
 - **Jeder Pull-Request wird gemergt.** „Jeder Pull-Request wird gemergt, und seine Commits bleiben so erhalten, wie
   der Mitwirkende sie geschrieben hat, und werden nie umgeschrieben.“ Was korrigiert werden muss, wird in Commits
@@ -197,8 +197,8 @@ Gute erste Dokumentationsbeiträge für ein Projektteam:
 - ein durchgespieltes Beispiel aus Ihrem Projekt, ohne die Angaben des Kunden.
 
 **Übersetzungen.** Die Administration hat 32 Übersetzungen, zehn davon vollständig, und es gibt 268 Locale-Dateien
-([Sprachen](../../../eng-us/languages.md)). Wie Sie eine Übersetzung der Administration hinzufügen oder vervollständigen, steht
-in [Abschnitt 8 von „Sprachen“](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation). Ein Team,
+([Sprachen](../../sprachen.md)). Wie Sie eine Übersetzung der Administration hinzufügen oder vervollständigen, steht
+in [Abschnitt 8 von „Sprachen“](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen). Ein Team,
 das eine Site in einer Sprache baut, deren Übersetzung der Administration unvollständig ist, kann sie für alle
 vervollständigen.
 

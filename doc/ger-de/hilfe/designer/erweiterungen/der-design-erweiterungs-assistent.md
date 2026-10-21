@@ -75,7 +75,7 @@ Assistent schreibt den Ordner, das Design, die Einstellungen, die Metadaten, ein
 ## Verwandte Seiten
 
 - [Vom Ergebnis des Assistenten zum ersten Commit](vom-assistenten-zum-ersten-commit.md)
-- [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md), [RAD-Sicherheit](../../../../eng-us/bc/6.0/rad-security.md)
+- [RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md), [RAD-Sicherheit](../../../bc/6.0/rad-sicherheit.md)
 - [Tutorial: eine Theme-Erweiterung anlegen](../theme-design/tutorial-eine-theme-erweiterung-anlegen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

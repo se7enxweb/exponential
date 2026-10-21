@@ -73,8 +73,8 @@ neben den bestehenden Sektionen, **OK**, **Speichern**. Bearbeitungsrechte funkt
 ## Verwandte Seiten
 - [Besucher eine neue Sektion lesen lassen](besucher-eine-neue-sektion-lesen-lassen.md)
 - [Eine Rolle mit einer Einschränkung auf eine Sektion zuweisen](eine-rolle-mit-einer-einschraenkung-auf-eine-sektion-zuweisen.md)
-- [Sektionen und Einschränkungen auf Teilbäume](../../../../../eng-us/help/government/operations/people-and-permissions/sections-and-subtree-limits.md)
-- [Inhaltsaufträge](../../../../../eng-us/features/6.0/content-jobs.md)
+- [Sektionen und Einschränkungen auf Teilbäume](../../betrieb/personen-und-berechtigungen/sektionen-und-teilbaum-einschraenkungen.md)
+- [Inhaltsaufträge](../../../../funktionen/6.0/inhaltsauftraege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -38,9 +38,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [ezinfo.php](../../../../../eng-us/help/designers/extensions/ezinfo-php.md),
-[extension.xml](../../../../../eng-us/help/designers/extensions/extension-xml.md) und
-[Alle Versionsfelder synchron halten](../../../../../eng-us/help/designers/extensions/keeping-version-fields-in-sync.md).
+Quellen: [ezinfo.php](../../../designer/erweiterungen/ezinfo-php.md),
+[extension.xml](../../../designer/erweiterungen/extension-xml.md) und
+[Alle Versionsfelder synchron halten](../../../designer/erweiterungen/versionsfelder-synchron-halten.md).
 
 1. **ezinfo.php** (4 Minuten). Die Klasse heißt wie der Ordner, gefolgt von `Info`, `info()` ist `static` und liefert
    `Name`, `Version` (ohne `v`), `Copyright`, `License` (genau das, was in `LICENSE` steht) und `Info_url`, optional
@@ -63,7 +63,7 @@ Wahl. Der Assistent hat die Datei `LICENSE` dafür geschrieben.
 **Setup > Extensions**.
 
 **Was, wenn das Theme eine andere Erweiterung braucht?** Ein Block `<dependencies>` in `extension.xml`
-([Abhängigkeiten angeben](../../../../../eng-us/help/designers/extensions/dependencies-in-extension-xml.md)).
+([Abhängigkeiten angeben](../../../designer/erweiterungen/abhaengigkeiten-in-extension-xml.md)).
 
 ### Stolperfallen
 
@@ -119,7 +119,7 @@ Auf Ihrer Schulungsinstallation, in `extension/training_theme/`.
 <details>
 <summary>Antworten</summary>
 
-1. `extension.xml` ([extension.xml](../../../../../eng-us/help/designers/extensions/extension-xml.md)).
+1. `extension.xml` ([extension.xml](../../../designer/erweiterungen/extension-xml.md)).
 2. `training_themeInfo`.
 3. **D.** Ohne `v`, nie ein Wert, den ein Build-Skript hinterlassen hat.
 4. `xmllint --noout extension/training_theme/extension.xml`.
@@ -130,11 +130,11 @@ Auf Ihrer Schulungsinstallation, in `extension/training_theme/`.
 
 ## Weiterführende Literatur
 
-- [ezinfo.php: was die Seite „Über“ liest](../../../../../eng-us/help/designers/extensions/ezinfo-php.md).
-- [extension.xml: die paketierte Beschreibung](../../../../../eng-us/help/designers/extensions/extension-xml.md).
-- [Eine README, die erklärt und überzeugt](../../../../../eng-us/help/designers/distribution/readme-that-explains-and-sells.md) und
-  [Eine README für ein Theme](../../../../../eng-us/help/designers/extensions/readme-for-a-theme.md).
-- [Die Datei LICENSE](../../../../../eng-us/help/designers/extensions/license-file.md).
+- [ezinfo.php: was die Seite „Über“ liest](../../../designer/erweiterungen/ezinfo-php.md).
+- [extension.xml: die paketierte Beschreibung](../../../designer/erweiterungen/extension-xml.md).
+- [Eine README, die erklärt und überzeugt](../../../designer/veroeffentlichung/ein-readme-das-erklaert-und-verkauft.md) und
+  [Eine README für ein Theme](../../../designer/erweiterungen/readme-fuer-ein-theme.md).
+- [Die Datei LICENSE](../../../designer/erweiterungen/die-license-datei.md).
 
 ## Verwandte Seiten
 

@@ -39,9 +39,9 @@ Die Reihenfolge, in der ein Intranet-Team seine Website kennenlernt. Jeder Schri
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 15 | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) | Intranet-Verantwortliche | Konten, die niemand nutzt |
+| 15 | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) | Intranet-Verantwortliche | Konten, die niemand nutzt |
 | 16 | [Inhalts-Audits](../alltag/inhalts-audits.md) | Redakteure der Abteilungen | Seiten, die noch stimmen |
-| 17 | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) | Intranet-Verantwortliche, IT | Wer was geändert hat |
+| 17 | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) | Intranet-Verantwortliche, IT | Wer was geändert hat |
 | 18 | [Barrierefreiheit pflegen](../alltag/barrierefreiheit-pflegen.md) | Redakteure der Abteilungen | Ein Intranet, das alle Mitarbeitenden nutzen können |
 | 19 | [Sicherheitsgrundlagen](../gesund-halten/sicherheitsgrundlagen.md) | Intranet-Verantwortliche | Intern bedeutet nicht sicher |
 | 20 | [Wie Updates funktionieren](../gesund-halten/wie-updates-funktionieren.md) | Intranet-Verantwortliche, IT | Upgrades nach Plan |

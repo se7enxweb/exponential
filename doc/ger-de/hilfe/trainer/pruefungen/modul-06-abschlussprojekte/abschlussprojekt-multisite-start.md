@@ -127,7 +127,7 @@ Fragen für die Nachbesprechung nach den Präsentationen.
 3. Große Anbieter weisen Mails aus einer Adressfamilie ab, die der SPF-Eintrag nicht aufführt
    ([10.4](../../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand)).
 4. Dass nur Menschen den Newsletter erhalten, die ihn wirklich angefordert haben
-   ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+   ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
 </details>
 

@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Eine Rolle mit eingeschränkten Richtlinien anlegen](../../../../anleitungen/rollen-und-richtlinien.md#3-eine-rolle-mit-eingeschränkten-richtlinien-anlegen)
-und [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](../../../../../eng-us/features/6.0/role-policy-order.md).
+und [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](../../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md).
 
 1. **Der Entwurf** (2 Minuten). Jede Änderung im Rolleneditor geschieht in einem Entwurf. Für niemanden ändert sich
    etwas bis **Speichern**; **Abbrechen** verwirft den Entwurf. Solange es Änderungen gibt, zeigt der Editor
@@ -141,9 +141,9 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): Editor und Assistent
   im Detail.
-- [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](../../../../../eng-us/features/6.0/role-policy-order.md):
+- [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](../../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md):
   Reihenfolge und Sortierung.
-- [Rollen- und Richtlinienprüfungen in Templates](../../../../../eng-us/features/6.0/role-and-policy-template-operators.md): wie
+- [Rollen- und Richtlinienprüfungen in Templates](../../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md): wie
   Designs nach Berechtigungen fragen.
 
 ## Verwandte Seiten

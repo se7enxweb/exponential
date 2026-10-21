@@ -168,13 +168,13 @@ stattdessen Einstellungen durch).
   die vollständige Tabelle der zu ändernden Einstellungen.
 - [Kapitel 14.9: Eigene Erweiterungen portieren](../../../../installation/14-migration-von-4x.md#149-eigene-extensions-von-php-5-auf-php-8-portieren):
   jeder Bruch durch PHP 8 mit Code vorher und nachher.
-- [YUI entfernt](../../../../../eng-us/bc/6.0/yui-removal.md): YUI in eigenen Templates ersetzen.
+- [YUI entfernt](../../../../bc/6.0/yui-entfernung.md): YUI in eigenen Templates ersetzen.
 
 ## Verwandte Seiten
 
 - [Modul 4: Von der 4.x-Linie](README.md)
 - [Migration zu Exponential: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

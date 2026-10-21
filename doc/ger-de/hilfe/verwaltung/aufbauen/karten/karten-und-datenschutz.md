@@ -36,7 +36,7 @@ Browsern von Redakteuren und Besuchern.
 
 Prüfen Sie es wie jeden Dienst eines Drittanbieters (siehe „Zu prüfende Dienste von Drittanbietern“ im Bereich
 Souveränität): Zweck, Daten, Rechtsgrundlage und Einwilligung, Vertrag mit dem Anbieter, Alternativen. Exponential
-liefert kein Cookie- oder Einwilligungsbanner mit ([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)).
+liefert kein Cookie- oder Einwilligungsbanner mit ([Standards zum Datenschutz](../../../../standards/datenschutz.md)).
 
 ## Wenn Sie Google-Karten verwenden
 
@@ -55,8 +55,8 @@ Kartendienst nach Wahl des Besuchers hinzu.
 ## Verwandte Seiten
 
 - [Was es für Karten gibt](was-es-fuer-karten-gibt.md)
-- [Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)
-- [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)
+- [Standards zum Datenschutz](../../../../standards/datenschutz.md)
+- [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

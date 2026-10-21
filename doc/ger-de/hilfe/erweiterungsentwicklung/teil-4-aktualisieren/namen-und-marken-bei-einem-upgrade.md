@@ -27,7 +27,7 @@ Benennen Sie um, was **Menschen lesen**; benennen Sie nie um, worauf **Code oder
 | Namen, Abschnitte und Einstellungen von INI-Dateien | nein | Websites haben Overrides dafür |
 | Datenbanktabellen und -spalten | nein | Umbenennen braucht ein Upgrade-Skript und bricht andere Leser |
 | Übersetzungskontexte (`'extension/myoldext'`) | nein | bestehende Übersetzungen sind danach verschlüsselt |
-| Neue Klassen, Dateien, Operatoren und Einstellungen, die Sie hinzufügen | `exp` für Code des Exponential-Projekts, sonst Ihr eigenes Präfix | die Konvention für neuen Code; siehe [Namenspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md) |
+| Neue Klassen, Dateien, Operatoren und Einstellungen, die Sie hinzufügen | `exp` für Code des Exponential-Projekts, sonst Ihr eigenes Präfix | die Konvention für neuen Code; siehe [Namenspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md) |
 
 ## Produktnamen in Texten
 
@@ -59,7 +59,7 @@ Lizenzhinweises).
 Alte Erweiterungen benennen alles mit `ez`, weil der Kernel es tat. In Exponential 6 ist die Konvention für **neuen**
 Code `exp` (oder für die eigenen Erweiterungen von 7x `sevenx`): Ein neues Modul, eine neue Klasse, ein neuer
 Template-Operator oder eine neue Einstellung heißt `exp...`, niemals `ez...`; Ihre eigene Erweiterung verwendet Ihr
-eigenes Präfix. Die Gründe stehen in [Namenspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md).
+eigenes Präfix. Die Gründe stehen in [Namenspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md).
 Bestehende Namen behalten ihr Präfix: `ezmyoperator` in `expmyoperator` umzubenennen, bricht jedes Template, das dafür
 geschrieben wurde.
 

@@ -172,7 +172,7 @@ das Pixel mit `[TrackingSettings] OpenPixel=disabled` aus, oder lassen Sie das T
 
 - [E-Mail-Einstellungen: die Spezifikation](mail-einstellungen.md)
 - [Befehle für die E-Mail-Einstellungen](mail-einstellungen-cli.md)
-- [E-Mail-Einstellungen: die Anleitung für Benutzer](../../../eng-us/features/6.0/mail-preferences.md)
+- [E-Mail-Einstellungen: die Anleitung für Benutzer](../../funktionen/6.0/e-mail-einstellungen.md)
 - [E-Mail-Einstellungen: die Anleitung für Administratoren](../../anleitungen/mail-einstellungen-administrator.md)
 - [E-Mail-Einstellungen: die Anleitung für Entwickler](../../anleitungen/mail-einstellungen-entwickler.md)
-- [Upgrade-Hinweise: E-Mail-Einstellungen](../../../eng-us/bc/6.0/mail-preferences.md)
+- [Upgrade-Hinweise: E-Mail-Einstellungen](../../bc/6.0/e-mail-einstellungen.md)

@@ -35,12 +35,12 @@ die Seite, die ihn erklärt.
 
 - [ ] Das Element der Landingpage existiert dort im Baum, wo die Kampagne ihren Platz hat.
 - [ ] Ein Layout ist mit einem passenden Layout-Typ angelegt; der Typ lässt sich später nicht ändern
-      ([Landingpages mit dem Layouts-Editor](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+      ([Landingpages mit dem Layouts-Editor](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 - [ ] Zonen gefüllt: ein Hero oder Titel, die Hauptbotschaft, eine klare Handlungsaufforderung, ergänzende Inhalte.
 - [ ] Listenblöcke verwenden dynamische Sammlungen, wo die Inhalte aktuell bleiben sollen.
 - [ ] Blöcke klar benannt.
 - [ ] Eine Regel ordnet das Layout der Seite mit einer Bedingung `time` (`from`, `to`) zu, mit höherer Priorität als
-      die normale Regel der Seite ([Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)).
+      die normale Regel der Seite ([Layout-Regeln](../../ersteller/website-ersteller/layout-regeln.md)).
 - [ ] In der Vorschau angesehen; der Entwurf ist noch nicht veröffentlicht, oder die Zeitregel hält ihn bis zum Start zurück.
 
 ## Der Tag vor dem Start

@@ -60,7 +60,7 @@ Hauptübersetzung lässt sich nicht entfernen, solange sie die Hauptübersetzung
 Die Richtlinien zum Bearbeiten (`content/edit`), Übersetzen (`content/translate`) und Anlegen (`content/create`) von
 Inhalten lassen sich im Rolleneditor jeweils nach **Sprache** beschränken, sodass ein Übersetzer etwa Deutsch darf und
 sonst nichts. Geben Sie ihm außerdem Lesezugriff auf die Inhalte
-([Übersetzer](../../../../eng-us/help/creators/website-creators/multilingual-sites.md#translators),
+([Übersetzer](../../ersteller/website-ersteller/mehrsprachige-websites.md#übersetzer),
 [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)).
 
 Kombinieren Sie die Sprachbeschränkung mit einer Teilbaumbeschränkung, wenn ein Übersetzer nur für eine Marke arbeitet

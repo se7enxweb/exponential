@@ -43,7 +43,7 @@ Serverkonfiguration; halten Sie sie in der Dokumentation Ihrer Installation fest
 ## Synonyme mit eztags
 
 Mit `eztags` kann ein Schlagwort Synonyme haben; Inhalte, die mit dem Hauptschlagwort versehen sind, werden über seine
-Schlagwortseite unter jedem Synonym gefunden ([Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)).
+Schlagwortseite unter jedem Synonym gefunden ([Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)).
 Das hilft beim Stöbern nach Thema mit jeder Suchmaschine.
 
 ## Mit der eingebauten Suchmaschine

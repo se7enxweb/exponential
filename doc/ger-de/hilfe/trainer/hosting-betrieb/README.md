@@ -32,7 +32,7 @@ wiederherstellen und ihre Leistung messen und verbessern.
 | Dauer | 28 Lektionen, etwa 20 Stunden Lektionen (mit Pausen drei bis vier Tage) |
 | Form | Präsenz oder online; praxisorientiert im Terminal |
 | Niveau | Fortgeschrittene bis Experten |
-| Voraussetzungen | [Website-Administration](../../../../eng-us/help/trainers/site-administrators/README.md) (mindestens die Module zu Caches, Cronjobs, Logs und Upgrades); Grundlagen der Linux-Kommandozeile, eines Webservers und von PHP |
+| Voraussetzungen | [Website-Administration](../website-administratoren/README.md) (mindestens die Module zu Caches, Cronjobs, Logs und Upgrades); Grundlagen der Linux-Kommandozeile, eines Webservers und von PHP |
 | Übungsumgebung | Ein Linux-Rechner oder eine virtuelle Maschine pro Person mit root-Zugang, PHP 8.0 oder neuer, Composer 2 und Git; eine Schulungsinstallation, angelegt mit `php bin/php/console exp:install` und ausgeliefert mit `exp:velocity start`; für die Lektionen 1.2, 1.3 und 3.3 außerdem Apache oder nginx mit PHP-FPM und ein MariaDB- oder PostgreSQL-Server |
 
 ## Module
@@ -51,7 +51,7 @@ wiederherstellen und ihre Leistung messen und verbessern.
 
 Für Trainer, die diesen Kurs vorbereiten, in dieser Reihenfolge:
 
-1. [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md) und der [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md).
+1. [Trainer: hier beginnen](../trainer-hier-beginnen.md) und der [Kurskatalog](../kurskatalog.md).
 2. [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md) und
    [Was das Hosting von Exponential umfasst](../../hosting/grundlagen/was-das-hosting-von-exponential-umfasst.md).
 3. [Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md) und
@@ -93,8 +93,8 @@ weiteres Material.
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

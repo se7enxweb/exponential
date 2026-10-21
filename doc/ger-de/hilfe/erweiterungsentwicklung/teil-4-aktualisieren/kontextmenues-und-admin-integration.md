@@ -155,7 +155,7 @@ Betracht, ihn beim Upgrade nach Setup zu verschieben, und erwähnen Sie das im C
 
 - Zurück: [admin4-Styling für Erweiterungsseiten](admin4-styling-fuer-erweiterungsseiten.md)
 - Weiter: [Namen und Marken bei einem Upgrade](namen-und-marken-bei-einem-upgrade.md)
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
 - [Richtlinienfunktionen und Zugriff](../teil-3-erweiterungsentwickler/richtlinienfunktionen-und-zugriff.md)
 - [Module und Views](../teil-3-erweiterungsentwickler/module-und-views.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -32,7 +32,7 @@ Redakteur und mit dessen eigenen Berechtigungen“ ([README, Exponential Intelli
 Er arbeitet mit gehosteten Anbietern in den USA oder in der EU oder mit einem lokalen Open-Weight-Modell auf demselben
 Server; er hält jede Anfrage im Prüfprotokoll fest, ohne den Prompt oder die Antwort; und er zeigt bei jedem Klick das
 Modell, die Region und die Kosten. Er ist die Erweiterung `se7enxweb/expai`, die der Kernel ab der Entwicklungslinie
-6.0.15 voraussetzt ([Funktionsseite zu expai](../../../eng-us/features/6.0/extensions/expai.md)).
+6.0.15 voraussetzt ([Funktionsseite zu expai](../../funktionen/6.0/erweiterungen/expai.md)).
 
 ## Was neu ist, und seit wann
 
@@ -41,7 +41,7 @@ Modell, die Region und die Kosten. Er ist die Erweiterung `se7enxweb/expai`, die
 | Das Repository `expai` wird angelegt | 11. Oktober 2026 | [Wer ist 7x?, Zeitleiste](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
 | Lesedienste als Werkzeuge des Assistenten | 11. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#11-october-2026-read-services-as-tools-of-the-assistant) |
 | `composer.json` setzt `se7enxweb/expai` voraus, ebenso die Job-Warteschlange `expqueue` | 12. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
-| Erstes Release der Erweiterung, 0.0.1.0 | die Quellen nennen kein Datum | [expai, Kurz gesagt](../../../eng-us/features/6.0/extensions/expai.md#in-short) |
+| Erstes Release der Erweiterung, 0.0.1.0 | die Quellen nennen kein Datum | [expai, Kurz gesagt](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt) |
 
 Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
 
@@ -49,14 +49,14 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
 
 | Fakt | Quelle |
 |---|---|
-| Er schreibt Entwürfe und veröffentlicht nie von sich aus. | [expai, Kurz gesagt](../../../eng-us/features/6.0/extensions/expai.md#in-short) |
+| Er schreibt Entwürfe und veröffentlicht nie von sich aus. | [expai, Kurz gesagt](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt) |
 | Er arbeitet als der angemeldete Redakteur, mit dessen Berechtigungen. | ebenda |
 | Anbieter: Anthropic, jeder OpenAI-kompatible Dienst (Melious.ai in der EU, Hugging Face, OpenRouter, Mistral und andere) oder ein lokales Modell über Ollama. | ebenda |
-| Jeder Anbieter gibt eine Region (`us`, `eu`, `local`) und eine Aufbewahrungsdauer an; Regeln pro Sektion und Inhaltsklasse entscheiden, welche Inhalte wohin gehen dürfen. | [expai, Für Administratoren](../../../eng-us/features/6.0/extensions/expai.md#for-administrators) |
+| Jeder Anbieter gibt eine Region (`us`, `eu`, `local`) und eine Aufbewahrungsdauer an; Regeln pro Sektion und Inhaltsklasse entscheiden, welche Inhalte wohin gehen dürfen. | [expai, Für Administratoren](../../funktionen/6.0/erweiterungen/expai.md#für-administratoren) |
 | Prompts, Antworten und Schlüssel werden nie im Prüfprotokoll festgehalten. | ebenda |
 | Nutzungsgrenzen pro Benutzer, Tag, Monat, Website und Anbieter sowie Budgets für Arbeit in der Warteschlange. | ebenda |
 | „EI: Summary“ ist eine druckbare Seite für einen Datenschutzbeauftragten. | ebenda |
-| Er kann Alternativtexte für Bilder vorschlagen und Bilder melden, denen einer fehlt. | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
+| Er kann Alternativtexte für Bilder vorschlagen und Bilder melden, denen einer fehlt. | [expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
 | Auf einer neuen Installation ist er für die Administration aktiv, aber „Ohne Schlüssel bleibt er untätig und sendet nichts.“ | [README, How to enable it](https://github.com/se7enxweb/exponential/blob/main/README.md#how-to-enable-it) |
 | Auf einer aktualisierten Installation kommt er inaktiv an, bis ein Administrator ihn aktiviert. | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
 

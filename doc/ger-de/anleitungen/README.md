@@ -12,8 +12,8 @@ Anleitung auf die Funktionsseite, die Spezifikation oder den Upgrade-Hinweis.
 
 - Beginnen Sie mit [Erste Schritte](erste-schritte.md). In zehn bis fünfzehn Minuten haben Sie eine installierte Site, einen Login und eine erste Template-Änderung.
 - Wählen Sie dann unten Ihren Weg: **Redakteure**, **Site-Gestalter**, **Entwickler** oder **Betreiber**.
-- Ein Wort unklar? [Das Glossar](../../eng-us/glossary.md) erklärt jeden Begriff in einer Zeile und verweist auf die Seite, die ihn vermittelt.
-- Sie möchten wissen, warum etwas so ist, wie es ist? [Die Geschichte](../../eng-us/history/README.md) erzählt sie Monat für Monat.
+- Ein Wort unklar? [Das Glossar](../glossar.md) erklärt jeden Begriff in einer Zeile und verweist auf die Seite, die ihn vermittelt.
+- Sie möchten wissen, warum etwas so ist, wie es ist? [Die Geschichte](../geschichte/README.md) erzählt sie Monat für Monat.
 
 ## Die eigene Einrichtung in zwei Minuten prüfen
 
@@ -110,17 +110,17 @@ Sie schreiben und verwalten Inhalte in der Administrationsoberfläche.
 1. [Erste Schritte](erste-schritte.md): Abschnitte 4 bis 6 (die Site ansehen, erste Anmeldung, erste Inhalte).
 2. [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md): Klassen, Objekte, der Online-Editor, die Tabelle der Unterelemente, das Bearbeiten mehrerer Knoten, der Papierkorb, Inhaltsjobs.
 3. Vertiefung, wenn Sie sie brauchen:
-   - [Die Tabelle der Unterelemente: Optionen und Spalten](../../eng-us/features/6.0/subitems-table-options.md) und [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
-   - [Mehrere Einträge auf einmal bearbeiten](../../eng-us/bc/6.0/multi-node-edit.md)
-   - [Online-Editor: TinyMCE 8](../../eng-us/features/6.0/online-editor-tinymce8.md)
-   - [Der Papierkorb: wer es gelöscht hat und wo es war](../../eng-us/features/6.0/trash-who-and-where.md)
-   - [Große Vorgänge als Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md)
-   - [Exponential Intelligence](../../eng-us/features/6.0/extensions/expai.md): der Schreibassistent, der Entwürfe im Tab Intelligence, im Bearbeitungsformular und in Vector schreibt
-   - [Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md): Seiten im Layout-Editor aus Layouts, Zonen und Blöcken zusammenstellen
+   - [Die Tabelle der Unterelemente: Optionen und Spalten](../funktionen/6.0/optionen-der-unterelementtabelle.md) und [Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
+   - [Mehrere Einträge auf einmal bearbeiten](../bc/6.0/mehrere-elemente-bearbeiten.md)
+   - [Online-Editor: TinyMCE 8](../funktionen/6.0/online-editor-tinymce8.md)
+   - [Der Papierkorb: wer es gelöscht hat und wo es war](../funktionen/6.0/papierkorb-wer-und-wo.md)
+   - [Große Vorgänge als Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md)
+   - [Exponential Intelligence](../funktionen/6.0/erweiterungen/expai.md): der Schreibassistent, der Entwürfe im Tab Intelligence, im Bearbeitungsformular und in Vector schreibt
+   - [Exponential Layouts](../bc/6.0/layouts.md): Seiten im Layout-Editor aus Layouts, Zonen und Blöcken zusammenstellen
    - [Objektzustände](objektzustaende.md): eine Stufe wie „In Prüfung“ oder „Freigegeben“ für Inhalte setzen
-   - [PDF-Export](../../eng-us/features/6.0/pdf-export.md), [Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md), [Inhaltssprachen](inhaltssprachen.md) (die Anleitung)
-   - [Ihre E-Mail-Einstellungen](../../eng-us/features/6.0/mail-preferences.md): welche E-Mails Sie erhalten, Abmelden mit einem Klick, Ihre Daten
-   - [Shop-Dashboard](../../eng-us/features/6.0/store-dashboard.md) und [Bestellbelege](../../eng-us/features/6.0/order-receipts.md), wenn Sie einen Shop betreiben
+   - [PDF-Export](../funktionen/6.0/pdf-export.md), [Übersetzungen und Sprachen](../funktionen/6.0/uebersetzungen-und-sprachen.md), [Inhaltssprachen](inhaltssprachen.md) (die Anleitung)
+   - [Ihre E-Mail-Einstellungen](../funktionen/6.0/e-mail-einstellungen.md): welche E-Mails Sie erhalten, Abmelden mit einem Klick, Ihre Daten
+   - [Shop-Dashboard](../funktionen/6.0/shop-dashboard.md) und [Bestellbelege](../funktionen/6.0/bestellbelege.md), wenn Sie einen Shop betreiben
 
 ## Weg 2: Site-Gestalter
 
@@ -130,51 +130,51 @@ Sie bestimmen, wie die Site aussieht und welche Extensions sie verwendet.
 2. [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md): das Modell, das Ihre Templates rendern.
 3. [Templates und Design](templates-und-design.md): das Template finden, überschreiben, prüfen, das Design der Administration wechseln.
    Vertiefung:
-   - [Template-Pfad-Kommentare](../../eng-us/features/6.0/template-path-comments.md): sehen, welche Datei welches Markup geschrieben hat
-   - [Template-Editor](../../eng-us/features/6.0/template-editor-overrides.md) und [Reihenfolge der Overrides](../../eng-us/features/6.0/template-override-ordering.md)
-   - [Die Exp-Debug-Leiste](../../eng-us/features/6.0/exp-debug-bar.md)
-   - [Exponential Admin UI](../../eng-us/features/6.0/exp-adminui.md): das Aussehen der Admin UI für die Administration, als eigener Siteaccess `adminui`
-   - [Das Design der Administration wählen](../../eng-us/features/6.0/ui-switch-design.md): admin4l, admin4, AdminUI oder das klassische Design je Benutzer und Sitzung, und [die zugehörige Anleitung](ui-umschalter-design.md)
-   - [Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md): Blöcke, Zonen und Regeln, im Browser gebaut
+   - [Template-Pfad-Kommentare](../funktionen/6.0/template-pfad-kommentare.md): sehen, welche Datei welches Markup geschrieben hat
+   - [Template-Editor](../funktionen/6.0/template-editor-ueberschreibungen.md) und [Reihenfolge der Overrides](../funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md)
+   - [Die Exp-Debug-Leiste](../funktionen/6.0/exp-debug-leiste.md)
+   - [Exponential Admin UI](../funktionen/6.0/exp-adminui.md): das Aussehen der Admin UI für die Administration, als eigener Siteaccess `adminui`
+   - [Das Design der Administration wählen](../funktionen/6.0/ui-umschalter-design.md): admin4l, admin4, AdminUI oder das klassische Design je Benutzer und Sitzung, und [die zugehörige Anleitung](ui-umschalter-design.md)
+   - [Exponential Layouts](../bc/6.0/layouts.md): Blöcke, Zonen und Regeln, im Browser gebaut
 4. [Extensions](extensions.md): eine Extension finden, installieren, einschalten und konfigurieren. Vertiefung:
-   - [Was eine neue Installation mitbringt](../../eng-us/features/6.0/default-extension-distribution.md), [die Liste der Extensions](../../eng-us/features/6.0/extension-list-and-downloads.md), [Ladereihenfolge](../../eng-us/features/6.0/extension-loading-order.md)
-   - [Einstellungen über die Kommandozeile ändern](../../eng-us/features/6.0/exp-ini-command.md), [INI-Overrides für mehrere Sites](../../eng-us/features/6.0/multi-site-ini-overrides.md)
-   - [Anfrageregeln](../../eng-us/features/6.0/request-rules.md), [robots.txt](../../eng-us/features/6.0/robots-txt.md)
-   - [Rollen und Richtlinien in Reihenfolge](../../eng-us/features/6.0/role-policy-order.md), [ausgeblendete Tabs der Administration](../../eng-us/features/6.0/hidden-admin-tabs.md), [Objektzustände](objektzustaende.md) (Stufen wie Entwurf, in Prüfung und freigegeben, die Rollen berücksichtigen)
-   - Eine Seite je Extension: [Index der Extensions](../../eng-us/features/6.0/extensions/README.md)
+   - [Was eine neue Installation mitbringt](../funktionen/6.0/standard-extension-auslieferung.md), [die Liste der Extensions](../funktionen/6.0/extension-liste-und-downloads.md), [Ladereihenfolge](../funktionen/6.0/ladereihenfolge-der-extensions.md)
+   - [Einstellungen über die Kommandozeile ändern](../funktionen/6.0/exp-ini-befehl.md), [INI-Overrides für mehrere Sites](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)
+   - [Anfrageregeln](../funktionen/6.0/anfrageregeln.md), [robots.txt](../funktionen/6.0/robots-txt.md)
+   - [Rollen und Richtlinien in Reihenfolge](../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md), [ausgeblendete Tabs der Administration](../funktionen/6.0/ausgeblendete-admin-reiter.md), [Objektzustände](objektzustaende.md) (Stufen wie Entwurf, in Prüfung und freigegeben, die Rollen berücksichtigen)
+   - Eine Seite je Extension: [Index der Extensions](../funktionen/6.0/erweiterungen/README.md)
 
 ## Weg 3: Entwickler
 
 Sie schreiben Extensions, Templates mit Logik, Befehle und Integrationen.
 
-1. [Erste Schritte](erste-schritte.md), dann das Einstellungswerkzeug: [exp:ini](../../eng-us/features/6.0/exp-ini-command.md).
+1. [Erste Schritte](erste-schritte.md), dann das Einstellungswerkzeug: [exp:ini](../funktionen/6.0/exp-ini-befehl.md).
 2. [Extensions](extensions.md), Abschnitte 6 und 7: eine Extension von Hand oder mit den RAD-Assistenten bauen und veröffentlichen.
-   Erweiterungspunkte (RAD): [RAD-Werkzeuge](../../eng-us/features/6.0/rad-tools.md), [die Erweiterungspunkte](../../eng-us/bc/6.0/rad-extension-points.md), [die Erweiterungsoberfläche](../../eng-us/bc/6.0/rad-extension-surface.md), [RAD-Sicherheit](../../eng-us/bc/6.0/rad-security.md).
-3. Befehle, Cronjobs und Modul-Views als Klassen: [Befehle, Cronjob-Teile und Modul-Views](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md) und die [Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md); [Konsole](../../eng-us/bc/6.0/console.md).
-4. Metadaten und Dienste: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md) (die Anleitung), [Persönliche API-Schlüssel](api-schluessel.md) (REST mit einem Schlüssel), [Metadaten von Extensions](../spezifikationen/6.0/extension-metadaten.md), [Backend-Dienste über ezjscore](../../eng-us/bc/6.0/backend_ezjscore_services.md).
+   Erweiterungspunkte (RAD): [RAD-Werkzeuge](../funktionen/6.0/rad-werkzeuge.md), [die Erweiterungspunkte](../bc/6.0/rad-erweiterungspunkte.md), [die Erweiterungsoberfläche](../bc/6.0/rad-erweiterungsoberflaeche.md), [RAD-Sicherheit](../bc/6.0/rad-sicherheit.md).
+3. Befehle, Cronjobs und Modul-Views als Klassen: [Befehle, Cronjob-Teile und Modul-Views](../bc/6.0/cli-cronjob-und-view-abstraktionen.md) und die [Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md); [Konsole](../bc/6.0/konsole.md).
+4. Metadaten und Dienste: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md) (die Anleitung), [Persönliche API-Schlüssel](api-schluessel.md) (REST mit einem Schlüssel), [Metadaten von Extensions](../spezifikationen/6.0/extension-metadaten.md), [Backend-Dienste über ezjscore](../bc/6.0/backend-dienste-ueber-ezjscore.md).
 5. Benachrichtigungen: [Architektur, Erweiterung und Tests](benachrichtigungen-entwickler.md), [die Spezifikation](../spezifikationen/6.0/benachrichtigungen.md), [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md), [die Befehle](../spezifikationen/6.0/benachrichtigungen-cli.md).
    E-Mail-Einstellungen: [Kategorien, die E-Mail-Schranke und Tests](mail-einstellungen-entwickler.md), [die Spezifikation](../spezifikationen/6.0/mail-einstellungen.md), [die Befehle](../spezifikationen/6.0/mail-einstellungen-cli.md), [die rechtliche Checkliste](../spezifikationen/6.0/mail-einstellungen-compliance.md).
-6. Tests und Kompatibilität: [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md), [Unterstützung für PHP 8](../../eng-us/bc/6.0/php8.md).
-7. Brücken zur Symfony-Plattform: [Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md), [die Repositorys der Plattform](../../eng-us/history/ecosystem.md).
+6. Tests und Kompatibilität: [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md), [Unterstützung für PHP 8](../bc/6.0/php8.md).
+7. Brücken zur Symfony-Plattform: [Legacy Bridge](../funktionen/6.0/legacy-bridge.md), [die Repositorys der Plattform](../geschichte/oekosystem.md).
 
 ## Weg 4: Betreiber
 
 Sie betreiben die Installation: Server, Caches, Sicherungen, Upgrades, Sicherheit.
 
 1. [Erste Schritte](erste-schritte.md), dann [Bereitstellung](bereitstellung.md) und [Betrieb einer Site](betrieb-einer-website.md).
-2. Gezielt installieren: [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md), [Kickstarter](../../eng-us/features/6.0/kickstarter-cli.md) für wiederholbare Installationen, [SQLite](../../eng-us/features/6.0/sqlite-database.md), [MongoDB](../../eng-us/features/6.0/mongodb-database-support.md).
-3. Der Webserver: [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md), [sein Control Panel](../../eng-us/features/6.0/velocity-control-panel.md), [HTTPS-Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md), [Engines im Vergleich](../../eng-us/bc/6.0/velocity-engines.md), [FrankenPHP](../../eng-us/bc/6.0/frankenphp.md).
-4. Caches und Geschwindigkeit: [Cache-Steuerung](../../eng-us/bc/6.0/cache-console.md), [HTTP-Caching](../../eng-us/bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md), [statischer Cache](../../eng-us/features/6.0/static-cache-generator.md), [Preload](../../eng-us/features/6.0/preload-sites-view.md), [Benchmark](../../eng-us/features/6.0/benchmark.md) und die Anleitung [Benchmarks](benchmarking.md).
-5. Gesund halten: [Benachrichtigungen](benachrichtigungen-administrator.md) (der Cronjob, die Statusseite, Fehlerbehebung), [E-Mail-Einstellungen](mail-einstellungen-administrator.md) (die Fußzeile, Einwilligung, Sperrliste, Aufbewahrung), [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md), [Reparatur aus dem Browser](../../eng-us/features/6.0/repair-from-the-browser.md), [Prüfung der Dateikonsistenz](../../eng-us/features/6.0/file-consistency-check.md), [fehlende Dateien und Bild-Aliase](fehlende-dateien.md), [Cronjobs](../../eng-us/features/6.0/cronjobs-console.md), [der Log-Viewer](../../eng-us/features/6.0/log-viewer.md) und [einen Fehler anhand seiner Referenz finden](fehler-anhand-der-referenz-finden.md), [Workflows und ihre wartenden Prozesse](workflows.md), [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md).
+2. Gezielt installieren: [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md), [Kickstarter](../funktionen/6.0/kickstarter-cli.md) für wiederholbare Installationen, [SQLite](../funktionen/6.0/sqlite-datenbank.md), [MongoDB](../funktionen/6.0/mongodb-datenbankunterstuetzung.md).
+3. Der Webserver: [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md), [sein Control Panel](../funktionen/6.0/velocity-control-panel.md), [HTTPS-Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md), [Engines im Vergleich](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md).
+4. Caches und Geschwindigkeit: [Cache-Steuerung](../bc/6.0/cache-konsole.md), [HTTP-Caching](../bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md), [statischer Cache](../funktionen/6.0/generator-fuer-den-statischen-cache.md), [Preload](../funktionen/6.0/ansicht-websites-vorladen.md), [Benchmark](../funktionen/6.0/benchmark.md) und die Anleitung [Benchmarks](benchmarking.md).
+5. Gesund halten: [Benachrichtigungen](benachrichtigungen-administrator.md) (der Cronjob, die Statusseite, Fehlerbehebung), [E-Mail-Einstellungen](mail-einstellungen-administrator.md) (die Fußzeile, Einwilligung, Sperrliste, Aufbewahrung), [Wartungsmodus](../funktionen/6.0/wartungsmodus.md), [Reparatur aus dem Browser](../funktionen/6.0/reparatur-im-browser.md), [Prüfung der Dateikonsistenz](../funktionen/6.0/dateikonsistenzpruefung.md), [fehlende Dateien und Bild-Aliase](fehlende-dateien.md), [Cronjobs](../funktionen/6.0/cronjobs-in-der-konsole.md), [der Log-Viewer](../funktionen/6.0/log-betrachter.md) und [einen Fehler anhand seiner Referenz finden](fehler-anhand-der-referenz-finden.md), [Workflows und ihre wartenden Prozesse](workflows.md), [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md).
 6. Sicherheit: [Sicherheit und Audit](sicherheit-und-audit.md) (die Anleitung), [Zweistufige Anmeldung](zwei-faktor-anmeldung.md), [Sicherheitsvorgaben vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [die Patches vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [die Härtung in 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md).
-7. Upgrade: Folgen Sie [Upgrade](aktualisieren.md); lesen Sie das [Changelog zu 6.0.15](../../changelogs/6.0/6.0.15.md), dann die Verhaltensänderungen von [Juli und August](../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md), [16. bis 30. September](../../eng-us/bc/6.0/behaviour-changes-2026-09b.md) und [Oktober](../../eng-us/bc/6.0/behaviour-changes-2026-10.md), in dieser Reihenfolge.
+7. Upgrade: Folgen Sie [Upgrade](aktualisieren.md); lesen Sie das [Changelog zu 6.0.15](../../changelogs/6.0/6.0.15.md), dann die Verhaltensänderungen von [Juli und August](../bc/6.0/verhaltensaenderungen-2026-07-08.md), [16. bis 30. September](../bc/6.0/verhaltensaenderungen-2026-09b.md) und [Oktober](../bc/6.0/verhaltensaenderungen-2026-10.md), in dieser Reihenfolge.
 
 ## Verwandte Seiten
 
-- Ein Wort, das Sie nicht kennen: [Glossar](../../eng-us/glossary.md).
-- Was sich geändert hat und warum: [Geschichte](../../eng-us/history/README.md); der Nachweis, dass nichts fehlt: [Abdeckung](../../eng-us/history/coverage.md).
+- Ein Wort, das Sie nicht kennen: [Glossar](../glossar.md).
+- Was sich geändert hat und warum: [Geschichte](../geschichte/README.md); der Nachweis, dass nichts fehlt: [Abdeckung](../geschichte/abdeckung.md).
 - Release Notes: [Changelogs von 6.0](../../changelogs/6.0/6.0.15.md) und [der Extensions](../../changelogs/extensions/README.md).
-- Der Installationstext an einem Ort: [INSTALL](../../eng-us/INSTALL.md).
+- Der Installationstext an einem Ort: [INSTALL](../INSTALL.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

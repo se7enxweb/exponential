@@ -41,7 +41,7 @@ niemals `$_POST` oder `$_GET` direkt; unter Velocity bereitet der Kernel sie fü
 POST-Anfragen ohne gültiges Token ab: mit einem 403 und einer Zeile in `var/log/warning.log` (`site.ini [HTMLForms]`).
 Ihre Formulare sind geschützt, solange sie von Templates gerendert werden und an dieselbe Website senden. Setzen Sie
 `[HTMLForms] Secret` für jede Installation eigens. Ist ein Token abgelaufen, sehen Besucher die Seite für abgelaufene
-Formulare ([Seite für abgelaufene Formulare](../../../../eng-us/features/6.0/form-expired-page.md)).
+Formulare ([Seite für abgelaufene Formulare](../../../funktionen/6.0/seite-abgelaufenes-formular.md)).
 
 JavaScript, das mit `fetch()` sendet, muss das Token ebenfalls mitschicken; lesen Sie es aus der Seite (die Skripte
 von ezjscore und der Administration tun das), statt die Prüfung abzuschalten.
@@ -59,7 +59,7 @@ if ( $Module->isCurrentAction( 'Store' ) && $errors === array() )
 ```
 
 Weiterleitungen auf eine Adresse aus der Anfrage (eine `RedirectURI`) müssen auf der Website bleiben; verwenden Sie
-die Prüfungen des Kernels für sichere Weiterleitungen ([Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md)).
+die Prüfungen des Kernels für sichere Weiterleitungen ([Sichere Weiterleitungen](../../../funktionen/6.0/sichere-weiterleitungen.md)).
 
 ## Validierungsfehler anzeigen
 
@@ -94,7 +94,7 @@ expservices mit Tokens, die statt Formular-Tokens ihre eigene Authentifizierung 
 
 - [Eingabeprüfung und Escaping](eingabepruefung-und-escaping.md)
 - [Sicherheit für Anwendungen](sicherheit-fuer-anwendungen.md)
-- [Sicherheitsstandard](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandard](../../../standards/sicherheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

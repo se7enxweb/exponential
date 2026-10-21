@@ -45,7 +45,7 @@ meldet Befunde im Produkt an das Projekt.
 | Aktivierte Erweiterungen | Setup > Extensions |
 | Siteaccesses und Hostnamen | Ihre Konfiguration |
 | Testkonten, eines je Rolle (anonym, Mitglied, Redaktion, Veröffentlichende, Administration) | für den Test angelegt, danach deaktiviert |
-| Bekannte Lücken und akzeptierte Risiken | [Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/security.md#known-gaps) und Ihr Risikoregister |
+| Bekannte Lücken und akzeptierte Risiken | [Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken) und Ihr Risikoregister |
 | Die geltenden Sicherheitseinstellungen | Passwortrichtlinie, Kontosperre, CSP-Modus, HSTS |
 
 Wenn Sie den Testenden die bekannten Lücken mitteilen (zum Beispiel „Kontosperre bewusst aus, Entscheidung

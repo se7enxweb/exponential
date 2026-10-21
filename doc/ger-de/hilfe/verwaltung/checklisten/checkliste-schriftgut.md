@@ -29,14 +29,14 @@ was Sie darum herum organisieren müssen.
 ## Entscheiden, was Schriftgut ist
 
 - [ ] Ihr Aufbewahrungsplan nennt, welche Website-Inhalte Schriftgut sind (zum Beispiel Beschlüsse, Bekanntmachungen, Unterlagen zu Beteiligungsverfahren).
-- [ ] Jede solche Art von Inhalt hat eine eigene Inhaltsklasse, damit sie nach Klasse gefunden und exportiert werden kann ([Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)).
+- [ ] Jede solche Art von Inhalt hat eine eigene Inhaltsklasse, damit sie nach Klasse gefunden und exportiert werden kann ([Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)).
 - [ ] Die Aufbewahrungsfrist jeder Klasse ist schriftlich festgehalten.
 
 ## Was Exponential aufbewahrt
 
 - [ ] **Versionen.** Jedes Objekt behält seine Versionen; sie können auf der Versionsseite verglichen und wiederhergestellt werden ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)). Prüfen Sie, wie viele Versionen Ihre Einstellungen aufbewahren, bevor ältere entfernt werden.
-- [ ] **Papierkorb.** Entfernte Objekte warten im Papierkorb, mit Angabe, wer sie entfernt hat und von wo, bis sie endgültig gelöscht werden ([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)).
-- [ ] **Prüfprotokoll.** Wer hat wann was geändert, mit Hash-Kette; standardmäßig 90 Tage aktiv und 2 Jahre archiviert pro Kanal ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md), [Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
+- [ ] **Papierkorb.** Entfernte Objekte warten im Papierkorb, mit Angabe, wer sie entfernt hat und von wo, bis sie endgültig gelöscht werden ([Papierkorb](../../../funktionen/6.0/papierkorb-wer-und-wo.md)).
+- [ ] **Prüfprotokoll.** Wer hat wann was geändert, mit Hash-Kette; standardmäßig 90 Tage aktiv und 2 Jahre archiviert pro Kanal ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md), [Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
 - [ ] **Objektzustände.** Kennzeichnen Sie Inhalte zum Beispiel als „Schriftgut“ oder „archiviert“ und beschränken Sie, wer sie ändern darf ([Objektzustände](../../../anleitungen/objektzustaende.md)).
 
 ## Was Exponential nicht tut

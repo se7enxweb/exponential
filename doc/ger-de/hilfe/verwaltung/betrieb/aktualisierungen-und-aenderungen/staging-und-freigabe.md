@@ -40,7 +40,7 @@ eingeschaltetem [ManagedByDeployment](verwaltet-durch-bereitstellung.md) in der 
 
 Seit Oktober 2026 benennt die Konstante `EXP_ENV` in `config.env.php` die Umgebung einer Maschine, und jede
 Einstellungsdatei kann dafür eine Variante haben, zum Beispiel `settings/override/site.ini.test.append.php`
-([Einstellungen pro Umgebung](../../../../../eng-us/features/6.0/environment-settings.md)). Typische Unterschiede:
+([Einstellungen pro Umgebung](../../../../funktionen/6.0/umgebungseinstellungen.md)). Typische Unterschiede:
 
 | Einstellung | Staging | Produktion |
 |---|---|---|
@@ -59,7 +59,7 @@ Formulareinsendungen, Newsletter-Abonnenten). Entscheiden Sie mit Ihrer oder Ihr
 Staging eine vollständige Kopie, eine Kopie ohne personenbezogene Daten oder nur Testinhalte enthalten darf. Die
 Sicherungsverwaltung `git_manager` kann einen „AGPL-kompatiblen Datenbank-Dump“ erzeugen, aus dem Passwörter,
 E-Mail-Adressen, Schlüssel und Pfade entfernt sind (nur MySQL und MariaDB)
-([git_manager](../../../../../eng-us/features/6.0/extensions/git_manager.md)). Abläufe zur Wiederherstellung:
+([git_manager](../../../../funktionen/6.0/erweiterungen/git_manager.md)). Abläufe zur Wiederherstellung:
 [Auf einem Testserver wiederherstellen](../datensicherung-und-wiederherstellung/wiederherstellung-auf-einem-testserver.md).
 
 ## Was auf dem Staging zu testen ist
@@ -82,7 +82,7 @@ bereit ([Wartungsfenster](wartungsfenster.md)).
 
 ## Verwandte Seiten
 - [Umgebungen: Entwicklung, Test und Produktion](../hosting/umgebungen-entwicklung-test-produktion.md)
-- [Umgebungsspezifische Einstellungen einrichten](../../../../../eng-us/help/government/tasks/operations/set-up-environment-specific-settings.md)
+- [Umgebungsspezifische Einstellungen einrichten](../../aufgaben/betrieb/umgebungsspezifische-einstellungen-einrichten.md)
 - [Rücknahme planen](planung-der-ruecknahme.md)
 - [Leitfaden zum Bereitstellen](../../../../anleitungen/bereitstellung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

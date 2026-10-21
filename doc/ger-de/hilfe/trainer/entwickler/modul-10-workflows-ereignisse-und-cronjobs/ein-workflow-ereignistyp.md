@@ -176,7 +176,7 @@ Auf Ihrer Schulungsinstallation, in `extension/mysite_hello`.
 ## Weiterführende Literatur
 
 - [Workflows: Freigaben, Trigger und die Prozesse, die warten](../../../../anleitungen/workflows.md).
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): der Assistent für Workflow-Ereignisse.
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md): der Assistent für Workflow-Ereignisse.
 - [Debug-Ausgabe und Logs für Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md):
   `eZLog::write()`.
 

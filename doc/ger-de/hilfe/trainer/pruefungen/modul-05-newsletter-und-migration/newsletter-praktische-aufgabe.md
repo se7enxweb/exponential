@@ -148,7 +148,7 @@ Fragen für die Nachbesprechung nach der Bewertung.
 2. Der erste hat die Mail-Warteschlange der fälligen Ausgaben aufgebaut; der zweite hat versendet, was in der
    Warteschlange wartete ([10.5](../../../../installation/10-nach-der-installation.md#newsletter-cjw_newsletter)).
 3. Der Datei-Transport hat die Bestätigungsmail als Datei mit dem Link darin geschrieben
-   ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+   ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 4. Die Transporte auf `smtp` oder `sendmail` gesetzt, mit einem Absender aus einer Domain, die Sie kontrollieren, und
    SPF-Einträgen für jede Adressfamilie, über die der Server sendet, dazu Einwilligungsnachweise und eine
    Bounce-Verarbeitung
@@ -159,7 +159,7 @@ Fragen für die Nachbesprechung nach der Bewertung.
 
 ## Weiterführende Literatur
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md): die
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md): die
   Probe, ohne eine einzige Mail zu versenden.
 - [Eine Prüfungssitzung durchführen](../modul-01-pruefungen-gestalten/eine-pruefung-durchfuehren.md): Transporte
   vor der Sitzung vorbereiten.

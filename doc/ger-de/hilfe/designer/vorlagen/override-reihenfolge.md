@@ -67,7 +67,7 @@ gelesen werden, was schwer vorherzusagen ist: Geben Sie jeder Regel eines Themes
 
 **Design > Template-Editor** zeigt die Overrides eines Templates in ihrer Auswertungsreihenfolge und lässt Sie sie per
 Drag-and-drop umordnen; er schreibt `Priority`-Werte (10, 20, 30 ...) für die Regeln dieses Templates, und neue Regeln erhalten
-`Priority=0` ([Overrides im Template-Editor](../../../../eng-us/features/6.0/template-editor-overrides.md)).
+`Priority=0` ([Overrides im Template-Editor](../../../funktionen/6.0/template-editor-ueberschreibungen.md)).
 
 ## Debuggen
 

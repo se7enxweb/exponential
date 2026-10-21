@@ -34,7 +34,7 @@ der Anfrage des Redakteurs neu, sodass ein Veröffentlichen Sekunden dauerte
 Er hält gerenderte öffentliche Seiten vor und beantwortet wiederholte Anfragen im Serverprozess, bevor ein Worker
 ausgewählt wird. Er verhält sich wie ein kleiner Reverse Proxy: bedingte Anfragen (`304`), `ETag`, `Age`,
 stale-while-revalidate, Negativ-Caching, komprimierte Speicherung und Invalidierung über eine berührte Datei
-([Antwort-Cache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md)). Er greift nur, wenn Velocity die
+([Antwort-Cache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md)). Er greift nur, wenn Velocity die
 Website ausliefert, und nur für anonyme Anfragen.
 
 ## Einschalten
@@ -66,7 +66,7 @@ Eine zweite anonyme Anfrage nach derselben Seite sollte einen Header `Age` zeige
 
 - [Leistung und Caching](leistung-und-caching.md)
 - [Mit Velocity ausliefern](../anwendungsentwickler/mit-velocity-ausliefern.md)
-- [Velocity-Webserver](../../../../eng-us/features/6.0/velocity-web-server.md)
+- [Velocity-Webserver](../../../funktionen/6.0/velocity-webserver.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

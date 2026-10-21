@@ -71,7 +71,7 @@ dedizierter MySQL-Server bei großen Websites die Leistung deutlich verbessern k
 Quelle: [15.17 Cluster und DFS](../../../installation/15-migration-von-5x-legacy.md#1517-cluster-und-dfs) und die in
 `config.php-RECOMMENDED` aufgeführten Backends (`dfsmysqli`, `dfspostgres`, `dfsoracle`). Auch die Speicherseite lässt sich
 ersetzen: `[eZDFSClusteringSettings] DFSBackend` nennt eine Klasse, die `eZDFSFileHandlerDFSBackendInterface` implementiert
-([Konfigurierbares Backend für den DFS-Cluster](../../../../eng-us/features/5.4/configurable_dfs_cluster_backend.md)).
+([Konfigurierbares Backend für den DFS-Cluster](../../../funktionen/5.4/konfigurierbares-dfs-cluster-backend.md)).
 
 > **Hinweis**
 > Die eigene Datenbank der Website und die Metadaten-Datenbank des Clusters sind getrennte Entscheidungen. Eine Website auf
@@ -113,14 +113,14 @@ Bei einem Upgrade spielen Sie die Datei `dbupdate-cluster-...` jedes Schritts ei
 ## Dateien ausliefern: index_cluster.php
 
 Seit 4.7 liefert eine Datei im Document Root, `index_cluster.php`, Cluster-Dateien über HTTP aus
-([Überarbeiteter Cluster-Index](../../../../eng-us/features/4.7/cluster_index.md)). Sie liest `config.php` und, falls vorhanden,
+([Überarbeiteter Cluster-Index](../../../funktionen/4.7/cluster-index.md)). Sie liest `config.php` und, falls vorhanden,
 `config.cluster.php` und erwartet die Konstanten `CLUSTER_*`, die `config.php-RECOMMENDED` dokumentiert:
 `CLUSTER_STORAGE_BACKEND` (zum Beispiel `dfsmysqli`), `CLUSTER_STORAGE_HOST`, `CLUSTER_STORAGE_PORT`,
 `CLUSTER_STORAGE_USER`, `CLUSTER_STORAGE_PASS`, `CLUSTER_STORAGE_DB` und `CLUSTER_MOUNT_POINT_PATH`, dazu optionale
 Schalter wie `CLUSTER_ENABLE_HTTP_CACHE` und `CLUSTER_EXPIRY_TIMEOUT`.
 
 Der Webserver schickt ihr nur die Pfade, die seine Rewrite-Regeln nennen. Mit Caches pro Website in `CacheVarDir` fügen Sie
-auch deren öffentliche Caches hinzu ([Cluster (DFS)](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#cluster-dfs)):
+auch deren öffentliche Caches hinzu ([Cluster (DFS)](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#cluster-dfs)):
 
 ```apache
 RewriteRule ^/var_cache/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.php [L]
@@ -152,10 +152,10 @@ Führen Sie `dfscleanup.php` zuerst mit `-S` und `-B` aus und lesen Sie das Erge
   Überwachung wie die Datenbank der Website.
 - **Konsistenz.** Führen Sie `dfscleanup.php -S` und `-B` nach einem Vorfall und vor einer Migration aus.
 - **Cron pausieren.** Die Pausendateien der Cronjobs sind auf jedem Server lokal, es sei denn, `cronjob.ini [PauseSettings] Directory`
-  zeigt auf ein gemeinsames Verzeichnis ([Cronjob-Teile pausieren](../../../../eng-us/features/6.0/cronjob-pause.md)).
+  zeigt auf ein gemeinsames Verzeichnis ([Cronjob-Teile pausieren](../../../funktionen/6.0/cronjobs-pausieren.md)).
 - **Cluster-Ereignisse.** `file.ini [ClusterEventsSettings] ClusterEvents=disabled` ist ausgeschaltet ausgeliefert; mit einer
   Listener-Klasse lassen sie eine Erweiterung auf Cluster-Operationen reagieren, nur für den DFS-Cluster mit dem
-  MySQLi-Backend ([Cluster-Ereignisse](../../../../eng-us/features/4.7/cluster_events.md)).
+  MySQLi-Backend ([Cluster-Ereignisse](../../../funktionen/4.7/cluster-ereignisse.md)).
 
 ## Checkliste
 

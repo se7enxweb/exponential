@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Links auf Inhalte einer anderen Website einer Multisite-Installation](../../../../../eng-us/features/6.0/multisite-cross-site-links.md).
+Quelle: [Links auf Inhalte einer anderen Website einer Multisite-Installation](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md).
 
 1. **Das Beispiel** (5 Minuten). Die Multisite-Demo liefert Fit & Healthy unter `/site` (oder `/`) und Bold Agency
    unter `/bold` aus, aus einem Baum. Jede Website blendet den Pfad ihres Teilbaums mit `PathPrefix` aus. Ein Knoten
@@ -129,7 +129,7 @@ Gegeben ist eine Installation mit den Siteaccesses `site` (`PathPrefix=fit-healt
 
 1. Der `PathPrefix` der anderen Website bleibt im URL-Alias des Knotens, und `ezurl` setzt den aktuellen Siteaccess
    davor.
-2. **D.** ([Links auf Inhalte einer anderen Website](../../../../../eng-us/features/6.0/multisite-cross-site-links.md#in-short))
+2. **D.** ([Links auf Inhalte einer anderen Website](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md#kurz-gesagt))
 3. Die Website, deren Wurzelknoten auf dem Pfad des Knotens am tiefsten liegt, aus `RootNodeList`.
 4. Wenn die `SiteURL` der anderen Website auf einem anderen Host liegt; auf dem aktuellen Host ist er hostrelativ.
 5. Nein; die Siteaccess-Tabelle wird einmal pro Anfrage gelesen (unter Velocity einmal pro Worker).
@@ -138,17 +138,17 @@ Gegeben ist eine Installation mit den Siteaccesses `site` (`PathPrefix=fit-healt
 
 ## Weiterführende Informationen
 
-- [Links auf Inhalte einer anderen Website einer Multisite-Installation](../../../../../eng-us/features/6.0/multisite-cross-site-links.md).
-- [Mehrere Websites in einer Installation einrichten: Links zwischen den Websites](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#links-between-the-sites).
-- [URL-Aliase und sprechende URLs](../../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md).
-- [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md): woher
+- [Links auf Inhalte einer anderen Website einer Multisite-Installation](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md).
+- [Mehrere Websites in einer Installation einrichten: Links zwischen den Websites](../../../ersteller/website-ersteller/multisite-einrichten.md#links-zwischen-den-websites).
+- [URL-Aliase und sprechende URLs](../../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md).
+- [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md): woher
   websiteübergreifende Links kommen.
 
 ## Verwandte Seiten
 
 - [Modul 4: Links zwischen Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

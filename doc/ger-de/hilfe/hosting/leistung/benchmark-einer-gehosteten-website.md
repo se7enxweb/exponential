@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Produktmanager bei Hosting-Anbiet
 Kunden-Website ist, zwei Server-Einrichtungen vergleichen, beweisen, dass ein Ausrollen nichts langsamer gemacht hat, oder die Grenzen
 eines Tarifs festlegen. Sie beantwortet: was `exp:benchmark` misst, wie Sie es sicher auf Produktionsmaschinen nutzen, wie Sie fair
 vergleichen und wie Sie aus den Zahlen Entscheidungen machen. Die Quellen sind [Benchmark von Exponential](../../../anleitungen/benchmarking.md)
-und [Benchmark: exp:benchmark](../../../../eng-us/features/6.0/benchmark.md).
+und [Benchmark: exp:benchmark](../../../funktionen/6.0/benchmark.md).
 
 ## Inhalt
 
@@ -164,7 +164,7 @@ Eigenschaft des Servers und sollten nicht als solche zitiert werden. Nehmen Sie 
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Hosting-Tarife gestalten](../geschaeft/hosting-tarife-gestalten.md)
 - [Benchmark von Exponential](../../../anleitungen/benchmarking.md)
-- [Benchmark: exp:benchmark](../../../../eng-us/features/6.0/benchmark.md)
+- [Benchmark: exp:benchmark](../../../funktionen/6.0/benchmark.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

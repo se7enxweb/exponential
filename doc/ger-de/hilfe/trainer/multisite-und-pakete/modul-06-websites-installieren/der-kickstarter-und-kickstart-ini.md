@@ -148,15 +148,15 @@ ausliefern wird.
 ## Weiterführende Informationen
 
 - [6. Der Kickstarter](../../../../installation/06-kickstarter.md): jeder Schlüssel, Beispieldateien, CI und Container.
-- [Kickstarter: eine ganze Website aus einer Datei installieren](../../../../../eng-us/features/6.0/kickstarter-cli.md).
+- [Kickstarter: eine ganze Website aus einer Datei installieren](../../../../funktionen/6.0/kickstarter-cli.md).
 - [Der Kickstarter für Hoster](../../../hosting/bereitstellung/der-kickstarter-fuer-hoster.md).
-- [Wartungsmodus](../../../../../eng-us/features/6.0/maintenance-mode.md).
+- [Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.md).
 
 ## Verwandte Seiten
 
 - [Modul 6: Websites mit dem Kickstarter und exp:install installieren](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

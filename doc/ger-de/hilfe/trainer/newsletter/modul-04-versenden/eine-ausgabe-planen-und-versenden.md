@@ -43,11 +43,11 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Wie ein Versand abläuft](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#how-a-send-runs),
-[Vor jedem Versand](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#before-every-send) und das
+Quellen: [Wie ein Versand abläuft](../../../ersteller/website-ersteller/newsletter-versenden.md#wie-ein-versand-abläuft),
+[Vor jedem Versand](../../../ersteller/website-ersteller/newsletter-versenden.md#vor-jedem-versand) und das
 [Beispiel in der Spezifikation](../../../../spezifikationen/6.0/cjw_newsletter.md#beispiel-einen-newsletter-aus-der-shell-versenden-und-das-ergebnis-ansehen).
 
-1. **Die Checkliste** (4 Minuten). Lesen Sie [Vor jedem Versand](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#before-every-send)
+1. **Die Checkliste** (4 Minuten). Lesen Sie [Vor jedem Versand](../../../ersteller/website-ersteller/newsletter-versenden.md#vor-jedem-versand)
    laut vor: Test geprüft, Betreff und Absender richtig, Links funktionieren, Bilder haben Alternativtexte, die
    richtige Liste, ein guter Zeitpunkt. Ein Versand lässt sich nicht zurückholen.
 2. **Die Versandseite** (6 Minuten). **Newsletter versenden** bei der Ausgabe öffnet die Seite `Newsletter verschicken
@@ -136,29 +136,29 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 <details>
 <summary>Antworten</summary>
 
-1. Bestätigte und angenommene Abonnenten ([Status](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#statuses)).
-2. **C.** ([Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#the-transports)).
-3. Die Warteschlange ist noch nicht gelaufen: Cron oder **Jetzt senden** auf dem Dashboard ([Wie ein Versand abläuft](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#how-a-send-runs)).
+1. Bestätigte und angenommene Abonnenten ([Status](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#status)).
+2. **C.** ([Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md#die-transporte)).
+3. Die Warteschlange ist noch nicht gelaufen: Cron oder **Jetzt senden** auf dem Dashboard ([Wie ein Versand abläuft](../../../ersteller/website-ersteller/newsletter-versenden.md#wie-ein-versand-abläuft)).
 4. Einen der Skins, die die Liste erlaubt; ein Versand in einem anderen Skin wird darin erneut gerendert
-   (Rendering-Anleitung, verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
-5. Drei beliebige aus [Vor jedem Versand](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#before-every-send).
+   (Rendering-Anleitung, verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
+5. Drei beliebige aus [Vor jedem Versand](../../../ersteller/website-ersteller/newsletter-versenden.md#vor-jedem-versand).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md): die Transporte, wie ein
+- [Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md): die Transporte, wie ein
   Versand abläuft, die Checkliste.
 - [Spezifikation: die Erweiterung cjw_newsletter](../../../../spezifikationen/6.0/cjw_newsletter.md#beispiel-einen-newsletter-aus-der-shell-versenden-und-das-ergebnis-ansehen):
   ein Versand, in der Shell verfolgt.
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md): die
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md): die
   Bestandteile des Versands.
 
 ## Verwandte Seiten
 
 - [Modul 4: Versand](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

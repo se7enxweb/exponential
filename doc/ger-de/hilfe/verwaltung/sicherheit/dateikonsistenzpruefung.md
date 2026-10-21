@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratorinnen und Administratoren sowie Hosting-Teams. Jedes Release von Exponential
 liefert `share/filelist.md5` mit, eine Liste der Prüfsummen seiner Dateien. Der Vergleich der Installation mit ihr
 zeigt, ob eine Datei geändert, entfernt oder zurückgelassen wurde, sei es durch ein misslungenes Upgrade oder durch
-einen Eindringling ([Dateikonsistenzprüfung](../../../../eng-us/features/6.0/file-consistency-check.md)).
+einen Eindringling ([Dateikonsistenzprüfung](../../../funktionen/6.0/dateikonsistenzpruefung.md)).
 
 ## Inhalt
 
@@ -73,7 +73,7 @@ Manifest einer Version immer dieselben Dateien beschreibt
 
 ## Verwandte Seiten
 
-- [Dateikonsistenzprüfung](../../../../eng-us/features/6.0/file-consistency-check.md)
+- [Dateikonsistenzprüfung](../../../funktionen/6.0/dateikonsistenzpruefung.md)
 - [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)
 - [Patch-Rhythmus](patch-rhythmus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

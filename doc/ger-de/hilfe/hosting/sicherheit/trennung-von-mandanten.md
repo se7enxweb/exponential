@@ -66,7 +66,7 @@ getrennte Instanzen tun es.
 
 Exponential kann viele Websites aus einer Installation ausliefern: jede Website ein Siteaccess oder eine Website-Erweiterung mit eigenem
 `VarDir`, eigenen Logs (`UseGlobalLogDir=disabled`, `LogVarDir`), Caches (`CacheVarDir`) und INI-Cache (`INICacheDir=site`)
-([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)). Das hält die Daten der
+([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)). Das hält die Daten der
 Websites für den Betrieb auseinander, nicht für die Sicherheit: Ein PHP-Benutzer schreibt sie alle, und ein Administrator mit Richtlinien
 `setup/*` auf einem Siteaccess arbeitet an der geteilten Installation. Nutzen Sie es für die Websites eines Kunden oder einer
 Organisation, nicht, um Kunden ohne Bezug zueinander zu trennen. Einrichtung:

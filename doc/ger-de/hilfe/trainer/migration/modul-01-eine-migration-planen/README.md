@@ -59,7 +59,7 @@ die späteren Module zu bestimmten Quellen darauf aufbauen können.
 - [Migration zu Exponential: Kursüberblick](../README.md)
 - [Migration zu und von Exponential](../../../../installation/migration/README.md): der Migrations-Hub, auf dem dieses
   Modul aufbaut.
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

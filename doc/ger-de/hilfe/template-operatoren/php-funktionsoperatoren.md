@@ -68,9 +68,9 @@ derselbe Eintrag an zwei Stellen nicht.
 Die URL-Kodierer von PHP. `urlencode` macht aus einem Leerzeichen ein `+` (für Query-Strings); `rawurlencode` folgt
 RFC 3986 und macht daraus `%20` (für Pfadsegmente). Eingabe: die Zeichenkette, gepipt oder als Parameter. Gibt eine
 Zeichenkette zurück.
-Generierte Referenzen: [urlencode](../../../eng-us/examples/template-operators/urlencode.md),
-[urldecode](../../../eng-us/examples/template-operators/urldecode.md), [rawurlencode](../../../eng-us/examples/template-operators/rawurlencode.md),
-[rawurldecode](../../../eng-us/examples/template-operators/rawurldecode.md).
+Generierte Referenzen: [urlencode](../../beispiele/template-operatoren/urlencode.md),
+[urldecode](../../beispiele/template-operatoren/urldecode.md), [rawurlencode](../../beispiele/template-operatoren/rawurlencode.md),
+[rawurldecode](../../beispiele/template-operatoren/rawurldecode.md).
 
 ```tpl
 {def $q = 'fit & healthy recipes'}
@@ -99,7 +99,7 @@ ihn der Eintrag in `PHPOperatorList` aus cjw_newsletter, weil `kernel/common/` i
 `site.ini` nach `lib/eztemplate/classes/` geladen wird und eine spätere Registrierung eines Namens gewinnt. Für eine
 Zeichenkette liefern beide dasselbe Ergebnis: PHP `nl2br()`, das nicht maskiert; wenden Sie also zuerst wash an
 (`$text|wash|nl2br`) oder verwenden Sie den Zeichenketten-Operator [break](zeichenketten-operatoren.md#break), der dasselbe tut.
-Generierte Referenz: [nl2br](../../../eng-us/examples/template-operators/nl2br.md).
+Generierte Referenz: [nl2br](../../beispiele/template-operatoren/nl2br.md).
 
 ```tpl
 {"first line
@@ -177,7 +177,7 @@ lesen kann. Die Erweiterung owsimpleoperator sagt in ihren Einstellungen dasselb
 - [Operatoren registrieren](operatoren-registrieren.md)
 - [PHP-Zeichenkettenfunktionen: umwandeln](php-zeichenkettenfunktionen-umwandeln.md)
 - [owsimpleoperator](owsimpleoperator.md): PHP-Funktionen mit mehreren Parametern
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

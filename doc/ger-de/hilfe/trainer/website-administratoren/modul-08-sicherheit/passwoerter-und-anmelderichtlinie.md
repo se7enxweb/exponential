@@ -152,7 +152,7 @@ Browserfenstern.
    wird.
 4. Mit `EndOtherSessions=enabled` wird sie bei ihrer nächsten Anfrage abgemeldet.
 5. **B.** Mit dem Filter **Gesperrt** und **Angehakte Konten entsperren**
-   ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+   ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 
 </details>
 
@@ -160,8 +160,8 @@ Browserfenstern.
 
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../../../../installation/13-sicherheitshaertung.md): die
   Abschnitte 13.6 und 13.7.
-- [Ihr Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md): was Benutzer sehen.
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md): jeder Filter und jede Aktion.
+- [Ihr Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md): was Benutzer sehen.
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md): jeder Filter und jede Aktion.
 - [Erste Anmeldung und Standardpasswörter für Hoster](../../../hosting/sicherheit/erste-anmeldung-und-standardpasswoerter.md).
 
 ## Verwandte Seiten

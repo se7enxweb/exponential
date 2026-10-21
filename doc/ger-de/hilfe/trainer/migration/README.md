@@ -50,7 +50,7 @@ Plattform oder einem anderen System planen und einen vollständigen Migrationspl
 - Jede Person hat einen Kursordner im Inhaltsbaum und kennt dessen Knoten-ID.
 - Keine echten Kundendaten auf einer Schulungsinstallation. Testkonten verwenden Adressen unter `example.invalid`.
 - Modul 6 ist ein Planungsmodul: Es wird keine Installation von eZ Platform, Ibexa oder Nexus benötigt.
-- Die Hinweise für Trainer zu Übungsumgebungen: [Train the Trainer](../../../../eng-us/help/trainers/train-the-trainer/README.md), Modul 2.
+- Die Hinweise für Trainer zu Übungsumgebungen: [Train the Trainer](../train-the-trainer/README.md), Modul 2.
 
 ## Module
 
@@ -131,14 +131,14 @@ Planungsszenario (ohne den Nachweisschritt).
 
 Jede Lektion endet mit einem Quiz mit belegten Antworten, und Lektion 8.2 enthält ein Abschlussprojekt mit einem
 Bewertungsraster. Für einen schriftlichen Test und eine praktische Aufgabe zur Migration siehe
-[Prüfungen und praktische Übungen](../../../../eng-us/help/trainers/assessments/README.md).
+[Prüfungen und praktische Übungen](../pruefungen/README.md).
 Jede Prüfung, die Sie durchführen, ist Ihr eigenes Kursmaterial; das ist keine offizielle Zertifizierung; die Zertifizierungen des Partnerprogramms sind davon getrennt ([Zertifizierungen](../../partner/zertifizierungen.md)).
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
-- [Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
+- [Train the Trainer: Kursüberblick](../train-the-trainer/README.md)
 - [Migration zu und von Exponential](../../../installation/migration/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

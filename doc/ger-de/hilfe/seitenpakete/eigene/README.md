@@ -71,7 +71,7 @@ das Paket-Repository von 7x aufgebaut.
 - [ ] Eine Shell mit `tar` und `gzip`; `xmllint` hilft beim Prüfen von XML-Dateien.
 - [ ] Zum Veröffentlichen: einen Ort, der statische Dateien über HTTPS ausliefert (GitHub Pages funktioniert, wie der Server von 7x zeigt).
 - [ ] Eine Entscheidung über die Lizenz für Code, Dokumentation und Demo-Bilder
-      ([Lizenzwahl](../../../../eng-us/help/designers/distribution/licensing-choices-overview.md)).
+      ([Lizenzwahl](../../designer/veroeffentlichung/lizenzwahl-ueberblick.md)).
 
 > **Hinweis**
 > Der Installer liest Seitenpakete; wie sie gemacht wurden, ist ihm gleich. Alles in diesem Abschnitt funktioniert gleich, ob Sie die Archive

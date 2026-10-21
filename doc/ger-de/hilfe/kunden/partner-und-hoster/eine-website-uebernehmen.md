@@ -19,7 +19,7 @@ Betreibers. Wenn eine ordentliche Übergabe noch möglich ist, verwenden Sie zue
 1. **Verschaffen Sie sich Administratorzugang auf Ihren eigenen Namen**, mit zweistufiger Anmeldung
    ([Administratorkonten und Zugriff](../gesund-halten/administratorkonten-und-zugriff.md)).
 2. **Listen Sie auf, wer sonst Administratorrechte hat**, unter **Benutzer** und in den Zuweisungen der Rolle
-   Administrator, und unter **Benutzer > Benutzerkonten prüfen** ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+   Administrator, und unter **Benutzer > Benutzerkonten prüfen** ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
    Deaktivieren Sie Konten von Personen, die gegangen sind.
 3. **Finden Sie heraus, wo die Website gehostet wird**, wer das Hosting-Konto und die Domain hat und ob Sie diese
    Personen erreichen können.
@@ -48,10 +48,10 @@ Eine Website auf 5.x oder älter braucht ein Upgrade-Projekt ([Upgrade](../../..
 ## Dritte Woche: Historie und Personen
 
 - **Lesen Sie die jüngste Historie.** Das Prüfprotokoll hält fest, wer was getan hat: Anmeldungen, Inhaltsänderungen,
-  Einstellungen, Deployments ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Bitten Sie Ihren Administrator
+  Einstellungen, Deployments ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Bitten Sie Ihren Administrator
   um eine Zusammenfassung der letzten Monate.
 - **Lesen Sie die Fehler.** Die Fehlerübersicht unter **Setup > Logdateien** fasst die verschiedenen Fehler der letzten
-  24 Stunden zusammen ([Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+  24 Stunden zusammen ([Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 - **Erfassen Sie die beteiligten Personen**: Redakteure, den Hoster, einen etwaigen Partner und wer was getan hat.
   Füllen Sie [Wer was macht](wer-was-macht.md) und die [Eskalationskontakte](vorlage-eskalationskontakte.md) aus.
 - **Finden Sie die Dokumente**: Verträge, ein Übergabedokument, das Repository mit dem Code der Website.

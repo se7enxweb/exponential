@@ -19,7 +19,7 @@ es Ihnen bietet und wie Sie Nachweise übergeben.
 > **Warnung**
 > Grundlagen, keine Rechtsberatung. Ob Audit-Aufzeichnungen ein bestimmtes Gesetz, eine Norm oder einen Vertrag
 > erfüllen, entscheiden Sie mit Ihrem Berater oder Prüfer. Der Audit-Leitfaden selbst sagt dasselbe über seine Aufgaben
-> zum Datenschutz ([Audit: Aufgaben zu Datenschutz und DSGVO](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)).
+> zum Datenschutz ([Audit: Aufgaben zu Datenschutz und DSGVO](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)).
 
 ## Inhalt
 
@@ -35,7 +35,7 @@ es Ihnen bietet und wie Sie Nachweise übergeben.
 
 Seit 6.0.15 zeichnet Exponential sicherheitsrelevante Ereignisse in einem manipulationssicheren Log auf. „Das Log ist
 standardmäßig eingeschaltet, braucht keine Einrichtung und lässt sich in der Administration oder auf der Kommandozeile
-lesen.“ Es wird im Reiter **Audit** gelesen (`/audit/dashboard`) ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+lesen.“ Es wird im Reiter **Audit** gelesen (`/audit/dashboard`) ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Was es aufzeichnet
 
@@ -47,7 +47,7 @@ lesen.“ Es wird im Reiter **Audit** gelesen (`/audit/dashboard`) ([Das Prüfpr
 | `commerce` | Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen, Rabatte, Exporte und Importe |
 | `read` | stichprobenartige Aufrufe, Suchen und Downloads, nur wenn eingeschaltet |
 
-Quelle: [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded). Passwörter, Tokens,
+Quelle: [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#was-aufgezeichnet-wird). Passwörter, Tokens,
 Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet; Adressen werden gekürzt und Sitzungen gehasht.
 
 ## Warum man dem Protokoll vertrauen kann
@@ -63,7 +63,7 @@ Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet; Adressen werden ge
   protokolliert und angezeigt; `OnWriteFailure=refuse` verweigert stattdessen sicherheitsrelevante Aktionen, für
   Organisationen, in denen eine nicht aufgezeichnete Änderung schlimmer ist als eine verweigerte.
 
-Quelle: [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md).
+Quelle: [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md).
 
 ## Nachweise an einen Prüfer übergeben
 
@@ -72,7 +72,7 @@ Quelle: [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md).
 3. Exportieren Sie die Datensätze. In der Administration liefert **Audit > Export** CSV, JSON Lines oder JSON, gestreamt
    oder im Hintergrund. Auf der Kommandozeile enthält ein **Paket** die Datensätze so, wie sie geschrieben wurden, und ein
    Manifest mit dem Filter, der Anzahl, einem sha256 und einem HMAC: „Das ist es, was Sie einem Prüfer übergeben“
-   ([Audit-Leitfaden, Exportieren](../../../../eng-us/bc/6.0/audit.md#exporting)).
+   ([Audit-Leitfaden, Exportieren](../../../bc/6.0/audit.md#exportieren)).
 4. Prüfen Sie den Export, bevor Sie ihn herausgeben: Er kann personenbezogene Daten von Mitarbeitern und Benutzern
    enthalten. Geben Sie nur heraus, was die Frage braucht.
 5. Halten Sie fest, was Sie wem und wann übergeben haben, und löschen Sie lokale Kopien, wenn sie nicht mehr gebraucht
@@ -91,9 +91,9 @@ Handed to: ______________ on: __________   Copies deleted on: __________
 
 Alarmregeln achten auf Brute-Force-Anmeldungen, die Vergabe einer Administratorrolle, außerhalb der Arbeitszeit
 geschriebene Einstellungen, Massenlöschungen, das Ausschalten des Audits und eine gebrochene Kette
-([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Alarmmails gehen an die `AdminEmail` der
+([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#warum-sie-es-wollen)). Alarmmails gehen an die `AdminEmail` der
 Website, sofern Sie keine anderen Empfänger nennen: Benutzer, Gruppen, Rollen oder Adressen
-([Audit-Leitfaden, Alarme](../../../../eng-us/bc/6.0/audit.md#45-alerts-and-their-recipients)).
+([Audit-Leitfaden, Alarme](../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger)).
 
 - [ ] Alarme erreichen eine namentlich benannte Person oder Gruppe, die sie liest.
 - [ ] Jeder Alarm wird beantwortet, und die Antwort wird festgehalten (zum Beispiel in Ihrem Ticketsystem).
@@ -104,10 +104,10 @@ Website, sofern Sie keine anderen Empfänger nennen: Benutzer, Gruppen, Rollen o
 | Thema | Standard | Möglichkeiten | Quelle |
 |---|---|---|---|
 | Aufbewahrung | 90 Tage live, 730 Tage archiviert | länger für Compliance (die Referenzkonfiguration bewahrt zehn Jahre auf), kürzer für strengen Datenschutz | [Aufbewahrung von Logs und Daten](../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md#das-prüfprotokoll) |
-| Datenschutz | standardmäßig Datenminimierung, Pseudonymisierung nach 90 Tagen | strenger pro Feld | [Audit: strenger Datenschutz](../../../../eng-us/bc/6.0/audit.md#64-strict-privacy) |
-| Langfristige Nachweise | Archive auf dem Server | Write-once-Speicher, signierte Prüfpunkte, die vom Server weg gesendet werden | [Audit: Compliance](../../../../eng-us/bc/6.0/audit.md#66-compliance-long-retention) |
-| Zentrale Überwachung | keine | Syslog, signierter Webhook, Mail; Weiterleitung an ein SIEM | [Audit: Weiterleitung an ein SIEM](../../../../eng-us/bc/6.0/audit.md#65-siem-forwarding) |
-| Schlüssel | in `settings/override/audit.ini.append.php` | sichern Sie sie; bewahren Sie jeden Signaturschlüssel so lange auf wie die Archive, die er signiert hat | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes) |
+| Datenschutz | standardmäßig Datenminimierung, Pseudonymisierung nach 90 Tagen | strenger pro Feld | [Audit: strenger Datenschutz](../../../bc/6.0/audit.md#64-strenger-datenschutz) |
+| Langfristige Nachweise | Archive auf dem Server | Write-once-Speicher, signierte Prüfpunkte, die vom Server weg gesendet werden | [Audit: Compliance](../../../bc/6.0/audit.md#66-compliance-lange-aufbewahrung) |
+| Zentrale Überwachung | keine | Syslog, signierter Webhook, Mail; Weiterleitung an ein SIEM | [Audit: Weiterleitung an ein SIEM](../../../bc/6.0/audit.md#65-weiterleitung-an-ein-siem) |
+| Schlüssel | in `settings/override/audit.ini.append.php` | sichern Sie sie; bewahren Sie jeden Signaturschlüssel so lange auf wie die Archive, die er signiert hat | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren) |
 
 Aufbewahrung und Datenschutz ziehen in entgegengesetzte Richtungen; legen Sie das Gleichgewicht mit Ihrem Berater fest
 und schreiben Sie es in Ihren Aufbewahrungsplan ([Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md)).

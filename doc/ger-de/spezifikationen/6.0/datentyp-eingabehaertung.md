@@ -113,6 +113,6 @@ Alles andere auf dieser Seite ist festes Verhalten ohne Einstellung.
 ## Verwandte Seiten
 
 - Spezifikationen: [Sicherheitsvorgaben vom September 2026](sicherheitsvorgaben-2026-09.md), [Sicherheitshärtung 6.0.13](sicherheitshaertung-6.0.13.md), [Die Sicherheitspatches vom August 2026](sicherheitshaertung-2026-08.md)
-- Hinweise zum Upgrade: [Härtungsanleitung](../../../eng-us/bc/6.0/hardening.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md), [RAD-Werkzeuge – Sicherheit](../../../eng-us/bc/6.0/rad-security.md)
-- Funktionen: [Seite „Formular abgelaufen“](../../../eng-us/features/6.0/form-expired-page.md) (ein abgelehntes Formular ist eine 403-Seite)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md), [Februar 2026](../../../eng-us/history/2026/2026-02.md)
+- Hinweise zum Upgrade: [Härtungsanleitung](../../bc/6.0/haertung.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md), [RAD-Werkzeuge – Sicherheit](../../bc/6.0/rad-sicherheit.md)
+- Funktionen: [Seite „Formular abgelaufen“](../../funktionen/6.0/seite-abgelaufenes-formular.md) (ein abgelehntes Formular ist eine 403-Seite)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md), [Februar 2026](../../geschichte/2026/2026-02.md)

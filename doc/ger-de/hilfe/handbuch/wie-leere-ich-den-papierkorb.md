@@ -40,9 +40,9 @@ Wiederherstellen braucht `content/restore`. Administratoren haben beides.
 
 ## Verwandte Seiten
 
-- [Der Papierkorb zeigt, wer ein Element hineingelegt hat und wo es war](../../../eng-us/features/6.0/trash-who-and-where.md)
+- [Der Papierkorb zeigt, wer ein Element hineingelegt hat und wo es war](../../funktionen/6.0/papierkorb-wer-und-wo.md)
 - [Archivieren und der Papierkorb](../kunden/alltag/archivieren-und-der-papierkorb.md)
-- [Entfernen und Verbergen: die Prüfung umgekehrter Relationen](../../../eng-us/features/6.0/reverse-relation-check.md)
+- [Entfernen und Verbergen: die Prüfung umgekehrter Relationen](../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

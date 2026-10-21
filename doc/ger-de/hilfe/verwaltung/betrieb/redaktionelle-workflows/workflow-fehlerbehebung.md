@@ -35,7 +35,7 @@ sehen Sie unter **Angehalten** und **Alle** nach.
 Ursache: Der Workflow-Cronjob (`workflow.php`, Teil frequent) ist seit der Entscheidung nicht gelaufen.
 
 1. Die Statusleiste zeigt **nicht in der Crontab eingeplant**: Installieren Sie die Zeile aus **Setup > Cronjobs**
-   ([Prüfen, ob Cronjobs laufen](../../../../../eng-us/help/government/tasks/operations/check-that-cronjobs-run.md)).
+   ([Prüfen, ob Cronjobs laufen](../../aufgaben/betrieb/pruefen-ob-die-cronjobs-laufen.md)).
 2. Führen Sie ihn jetzt aus: **Setup > Cronjobs**, die Karte *Frequent*, **Teil starten**; oder auf der Kommandozeile:
 
    ```bash

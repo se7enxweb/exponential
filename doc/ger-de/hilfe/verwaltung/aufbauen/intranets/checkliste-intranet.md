@@ -41,7 +41,7 @@ dieses Bereichs, die ihn erklärt.
 
 - [ ] Ausscheidende: Verzeichniskonto und Exponential-Konto am selben Tag deaktiviert; **Benutzer > Benutzerkonten
   prüfen** monatlich auf lange nicht gesehene Konten überprüft.
-- [ ] Das Audit-Protokoll eingeschaltet und von jemandem gelesen ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Das Audit-Protokoll eingeschaltet und von jemandem gelesen ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 - [ ] Sicherungen umfassen die Inhalte und Dateien des Intranets.
 
 ## Inhalte

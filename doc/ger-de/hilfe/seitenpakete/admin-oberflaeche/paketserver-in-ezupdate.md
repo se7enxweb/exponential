@@ -38,7 +38,7 @@ Die Seite hat zwei Listen:
 
 Diese Seite behandelt die zweite Liste. Die Seite braucht die Richtlinie `update/manage` (`extension/ezupdate/modules/update/module.php`);
 ezupdate wird mit `ActiveExtensions[]=ezupdate` eingeschaltet
-([ezupdate: Updates und Pakete in der Administration](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+([ezupdate: Updates und Pakete in der Administration](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 
 ## Der eingebaute Server
 
@@ -115,7 +115,7 @@ Pakete beim Server von 7x ein ([Ihr Seitenpaket beitragen](../ihr-seitenpaket-be
 
 - [Pakete in der Administration](README.md)
 - [Pakete mit ezupdate abrufen](pakete-mit-ezupdate-abrufen.md)
-- [ezupdate: Updates und Pakete in der Administration](../../../../eng-us/features/6.0/extensions/ezupdate.md)
+- [ezupdate: Updates und Pakete in der Administration](../../../funktionen/6.0/erweiterungen/ezupdate.md)
 - [Einstellungen des Paketservers](../paketserver/einstellungen-des-paketservers.md)
 - [Einen eigenen Paketserver betreiben](../eigene/einen-eigenen-paketserver-betreiben.md)
 - [Seitenpakete: hier beginnen](../README.md)

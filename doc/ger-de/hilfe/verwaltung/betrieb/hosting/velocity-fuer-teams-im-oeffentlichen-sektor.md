@@ -14,8 +14,8 @@ PHP-Anwendungsserver, der mit Exponential ausgeliefert wird und dessen empfohlen
 Velocity startet, wie er nach einem Absturz zurückkommt, wie eine Änderung ihn erreicht, wo er protokolliert, wie Sie ihn
 beobachten und welche seiner Teile eine Sicherheitsbewertung betrachten wird. Die vollständige Seite für den Betrieb
 ist [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md); die Funktionsseiten sind
-[Velocity-Webserver](../../../../../eng-us/features/6.0/velocity-web-server.md) und
-[Velocity-Server mit dauerhaften Workern](../../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
+[Velocity-Webserver](../../../../funktionen/6.0/velocity-webserver.md) und
+[Velocity-Server mit dauerhaften Workern](../../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md).
 
 ## Inhalt
 
@@ -102,11 +102,11 @@ eignet sich für eine externe Verfügbarkeitsprüfung ([Velocity für Hoster](..
 | Thema | Was die Quellen sagen |
 |---|---|
 | Benutzer der Worker | `[ServerSettings] User` und `Group`; Worker dürfen niemals als root laufen ([Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md)) |
-| Bedienfeld `/Q/panel` | nur diese Maschine, danach ein Passwort mit mindestens 16 Zeichen; aus der Ferne über einen SSH-Tunnel erreichbar ([Velocity-Bedienfeld](../../../../../eng-us/features/6.0/velocity-control-panel.md)) |
+| Bedienfeld `/Q/panel` | nur diese Maschine, danach ein Passwort mit mindestens 16 Zeichen; aus der Ferne über einen SSH-Tunnel erreichbar ([Velocity-Bedienfeld](../../../../funktionen/6.0/velocity-control-panel.md)) |
 | Dashboard `/Q/dashboard` | diese Maschine, anderswo nur mit `[DashboardSettings] Token`; lassen Sie `Remote` ausgeschaltet, sofern keine Firewall den Port beschränkt |
 | Dateimodi der Logs | ausgeliefert `0640` und `0750`, weil ein Zugriffs-Log Besucher nennt |
 | Antwort-Cache | liefert niemals an angemeldete Besucher aus; braucht Engine 0.0.4.26 oder neuer ([Antwort-Cache von Velocity](../../../hosting/leistung/antwort-cache-von-velocity.md)) |
-| HTTPS | Zertifikate werden vor der Verwendung geprüft; ein selbstsignierter Platzhalter, bis ein echtes nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../../../eng-us/features/6.0/velocity-https-certificates.md)) |
+| HTTPS | Zertifikate werden vor der Verwendung geprüft; ein selbstsignierter Platzhalter, bis ein echtes nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md)) |
 | Trennung von Websites | ein Server für mehrere Websites „ist eine Bequemlichkeit beim Routing, keine Sicherheitsgrenze“; betreiben Sie einen Velocity-Server pro getrennter Organisation ([Isolation von Mandanten](../../../hosting/sicherheit/trennung-von-mandanten.md)) |
 
 ## Checkliste

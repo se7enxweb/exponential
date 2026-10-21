@@ -48,7 +48,7 @@ brauchen `content/edit` für die Objekte.
 
 ## Verwandte Seiten
 
-- [Link- und Inhaltsprüfungen](../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Link- und Inhaltsprüfungen](../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Wie füge ich im Online-Editor einen Link ein?](wie-fuege-ich-im-online-editor-einen-link-ein.md)
 - [URLs und Aliase](../../anleitungen/urls-und-aliase.md)
 - [Benutzerhandbuch](README.md)

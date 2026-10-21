@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, deren Sicherheitsrichtlinie oder ein Audit mindestens 12 Zeichen verlangt. Exponential liefert
 `[UserSettings] MinPasswordLength=10` aus, unter OWASP ASVS 4.0.3 V2.1.1, das 12 verlangt
-([OWASP ASVS zuordnen](../../../../../eng-us/help/government/security/owasp-asvs-mapping.md)). Viele Organisationen wählen 15, da die
+([OWASP ASVS zuordnen](../../sicherheit/owasp-asvs-zuordnung.md)). Viele Organisationen wählen 15, da die
 Installationsanleitung empfiehlt, NIST SP 800-63B-4 zu folgen.
 
 ## Inhalt
@@ -63,7 +63,7 @@ Installationsanleitung empfiehlt, NIST SP 800-63B-4 zu folgen.
 
 ## Verwandte Seiten
 
-- [Passwortrichtlinie](../../../../../eng-us/help/government/security/password-policy.md)
+- [Passwortrichtlinie](../../sicherheit/passwortrichtlinie.md)
 - [13.6 Passwörter und Anmeldung](../../../../installation/13-sicherheitshaertung.md#136-passwörter-und-anmeldung)
 - [Eigene Wörter zur Liste schwacher Passwörter hinzufügen](eigene-woerter-zur-liste-schwacher-passwoerter-hinzufuegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,7 +11,7 @@ type: reference
 
 Diese Seite richtet sich an Datenschutzbeauftragte, Administratoren und Entwickler, die einen Cookie-Hinweis schreiben
 oder eine Website anhand der ePrivacy-Regeln prüfen. Der Kernel setzt nur funktionale Cookies; keines davon dient dem
-Tracking ([Datenschutzstandards: ePrivacy-Richtlinie](../../../../eng-us/standards/privacy.md#eprivacy-directive-cookies)). Was
+Tracking ([Datenschutzstandards: ePrivacy-Richtlinie](../../../standards/datenschutz.md#eprivacy-richtlinie-cookies)). Was
 Ihr Design und Ihre Erweiterungen hinzufügen, müssen Sie selbst auflisten.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -61,9 +61,9 @@ Benutzereinstellungen und auf Seiten ohne angemeldeten Benutzer im `localStorage
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Cookie-Banner und Einwilligung](cookie-banner-und-einwilligung.md)
-- [Sitzungen und Cookies](../../../../eng-us/help/government/security/sessions-and-cookies.md)
+- [Sitzungen und Cookies](../sicherheit/sitzungen-und-cookies.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

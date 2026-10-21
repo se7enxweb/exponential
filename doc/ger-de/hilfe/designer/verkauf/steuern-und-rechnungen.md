@@ -26,7 +26,7 @@ sich; **diese Seite gibt keine Steuerberatung**. Sie listet Fragen auf, die Sie 
 
 Der Shop von Exponential berechnet die Mehrwertsteuer über einen Mehrwertsteuer-Handler und den Versand über einen
 Versand-Handler, beide durch Erweiterungen ersetzbar; die RAD-Werkzeuge können für beide Handler-Erweiterungen erzeugen
-([RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)). Richten Sie sie so ein, wie Ihr Steuerberater es Ihnen sagt, und
+([RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md)). Richten Sie sie so ein, wie Ihr Steuerberater es Ihnen sagt, und
 testen Sie mit echten Fällen, bevor Sie live gehen.
 
 ## Schritt für Schritt

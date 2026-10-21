@@ -139,7 +139,7 @@ beantwortet, was ein Benutzer mit einem Knoten oder Objekt tun darf und welche E
 - Weiter: [View-Ergebnisse, der Pfad und das Pagelayout](view-ergebnisse-und-das-pagelayout.md)
 - [Sektionen, Rollen und Zugriff für Builder](../teil-2-builder/sektionen-rollen-und-zugriff-fuer-builder.md)
 - [eZUser und Zugriffsprüfungen](../teil-8-referenz/ezuser-und-zugriff.md)
-- [Inhaltsrichtlinien-Einschränkungen von Erweiterungen](../../../../eng-us/features/6.0/content-limitation-handlers.md)
+- [Inhaltsrichtlinien-Einschränkungen von Erweiterungen](../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

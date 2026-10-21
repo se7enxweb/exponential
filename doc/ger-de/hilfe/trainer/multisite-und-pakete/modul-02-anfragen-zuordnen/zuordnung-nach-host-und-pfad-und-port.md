@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: die Kommentare von `settings/site.ini [SiteAccessSettings]` und `[PortAccessSettings]`,
-[Siteaccess nach Host-Präfix](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md) und
+[Siteaccess nach Host-Präfix](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md) und
 [7.8 Der Editor-Siteaccess mit exp:install](../../../../installation/07-installation-ueber-die-konsole.md#78-der-editor-siteaccess-mit-expinstall).
 
 1. **Ein Eintrag, drei Felder** (5 Minuten). `HostUriMatchMapItems[]=www.example.com;de;site_de` ordnet den Host und
@@ -160,16 +160,16 @@ Ihrer Übungsumgebung.
 
 ## Weiterführende Informationen
 
-- [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
+- [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
 - [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md#73-optionen): die Zugangsoptionen.
-- [Sprachumschalter und Adressen pro Sprache](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md).
-- [Statischer Cache und Velocity](../../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md).
+- [Sprachumschalter und Adressen pro Sprache](../../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md).
+- [Statischer Cache und Velocity](../../../ersteller/website-ersteller/statischer-cache-und-velocity.md).
 
 ## Verwandte Seiten
 
 - [Modul 2: Anfragen Siteaccesses zuordnen](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

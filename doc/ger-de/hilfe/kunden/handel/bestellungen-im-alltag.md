@@ -26,7 +26,7 @@ steht unter [Tägliche Shop-Routine](taegliche-shop-routine.md).
 
 Quelle: `kernel/shop/module.php`. Die Sortierung der Bestellliste ist Teil der Adresse, zum Beispiel
 `/shop/orderlist/(sort)/created/(dir)/asc` für die ältesten zuerst, sodass jede Person die Ansicht, mit der sie
-arbeitet, als Lesezeichen speichern kann ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)).
+arbeitet, als Lesezeichen speichern kann ([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)).
 
 ## Der Weg einer Bestellung
 
@@ -93,7 +93,7 @@ lieber archivieren als entfernen ([Datenexport und Löschung](datenexport-und-lo
 - [Bestellstatus](bestellstatus.md)
 - [Tägliche Shop-Routine](taegliche-shop-routine.md)
 - [Bestellungen und Bestellstatus für Unternehmen](../../unternehmen/shops/bestellungen-und-bestellstatus.md)
-- [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
+- [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Change-Manager, die wollen, dass jede Konfigurationsänderung an einer
 öffentlichen Website über die Versionsverwaltung und einen Änderungsbeirat läuft, nicht über einen Browser auf dem
 Live-Server. Exponential hat dafür einen Schalter, `[ConfigurationSettings] ManagedByDeployment`, beschrieben unter
-[Durch die Bereitstellung verwaltete Konfiguration](../../../../../eng-us/features/6.0/managed-by-deployment.md).
+[Durch die Bereitstellung verwaltete Konfiguration](../../../../funktionen/6.0/durch-deployment-verwaltet.md).
 
 ## Inhalt
 1. [Warum öffentliche Stellen ihn wollen](#warum-öffentliche-stellen-ihn-wollen)
@@ -97,7 +97,7 @@ bearbeitbar bleiben ([Umgebungen: Entwicklung, Test und Produktion](../hosting/u
 - [Änderungsmanagement und Änderungsbeiräte](aenderungsmanagement-und-aenderungsbeiraete.md)
 - [Staging und Freigabe](staging-und-freigabe.md)
 - [Konfiguration unter Versionsverwaltung](../hosting/konfiguration-unter-versionskontrolle.md)
-- [Konfiguration mit ManagedByDeployment sperren](../../../../../eng-us/help/government/tasks/operations/lock-configuration-with-managed-by-deployment.md)
+- [Konfiguration mit ManagedByDeployment sperren](../../aufgaben/betrieb/die-konfiguration-mit-managedbydeployment-sperren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

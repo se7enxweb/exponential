@@ -159,7 +159,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity auf d
 - [Velocity-Antwort-Cache](../../../hosting/leistung/antwort-cache-von-velocity.md): Einstellungen und Antworten für den
   Support.
 - [Velocity-HTTPS-Zertifikate](../../../hosting/server/https-zertifikate-in-velocity.md): jede Zertifikatsquelle.
-- [Velocity, HTTPS und Zertifikate](../../../../../eng-us/features/6.0/velocity-https-certificates.md): die Funktionsseite.
+- [Velocity, HTTPS und Zertifikate](../../../../funktionen/6.0/velocity-https-zertifikate.md): die Funktionsseite.
 - [Ablauf von Zertifikaten](../../../hosting/runbooks/ablauf-von-zertifikaten.md): das Runbook.
 - [TLS und HTTPS](../../../hosting/sicherheit/tls-und-https.md): HTTPS für Hoster allgemein.
 
@@ -167,7 +167,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity auf d
 
 - [Modul 2: Velocity](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

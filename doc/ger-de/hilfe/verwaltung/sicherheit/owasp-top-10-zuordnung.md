@@ -12,7 +12,7 @@ type: reference
 Diese Seite richtet sich an Informationssicherheitsbeauftragte, Prüferinnen und Prüfer sowie Administratorinnen und
 Administratoren, die die OWASP Top 10 (<https://owasp.org/Top10/>) als Checkliste verwenden. Für jede Kategorie
 wiederholt sie, was Exponential mitliefert, aus
-[Sicherheitsstandards: OWASP Top 10](../../../../eng-us/standards/security.md#owasp-top-10-2021), und ergänzt, was der Betreiber
+[Sicherheitsstandards: OWASP Top 10](../../../standards/sicherheit.md#owasp-top-10-2021), und ergänzt, was der Betreiber
 einer öffentlichen Website tun muss und welche Nachweise er aufbewahrt. Das Projekt bewertet das Ganze mit
 **Teilweise erfüllt**.
 
@@ -51,7 +51,7 @@ einer öffentlichen Website tun muss und welche Nachweise er aufbewahrt. Das Pro
 
 ## Verwandte Seiten
 
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - OWASP, [Top 10](https://owasp.org/Top10/)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Designer, die eine Seite der Administration oder die Admin-Ansicht einer Erweiterung gestalten. Jede Farbe,
 jede Größe und jeder Abstand in der Administration stammt aus einer CSS-Custom-Property `--a4-*`, definiert in
 `design/admin4/stylesheets/components.css` (eine identische Kopie liegt in `design/admin`). Die vollständige Tabelle steht im
-Gestaltungsleitfaden der Administration, [Gestaltung der Administration](../../../../eng-us/bc/6.0/admin4-styling.md), Abschnitt „Tokens“;
+Gestaltungsleitfaden der Administration, [Gestaltung der Administration](../../../bc/6.0/admin4-gestaltung.md), Abschnitt „Tokens“;
 diese Seite ist die Zusammenfassung für Designer.
 
 ## Inhalt

@@ -92,7 +92,7 @@ Jedes Modul mit einer `function_definition.php` bietet Fetch-Funktionen an: `use
 ## Verwandte Seiten
 
 - [Eine eigene Fetch-Funktion schreiben](eine-eigene-fetch-funktion-schreiben.md)
-- [Muster Fetch-Funktion](../../../../eng-us/standards/patterns/fetch-function.md)
+- [Muster Fetch-Funktion](../../../standards/muster/fetch-funktion.md)
 - [Templates und Design](../../../anleitungen/templates-und-design.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

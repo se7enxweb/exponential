@@ -63,7 +63,7 @@ Nachdem sich das Handbuch geändert hat: **Neu erzeugen** auf der Karte.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Barrierefreie Dokumente](../../aufbauen/dokumente-und-publikationen/barrierefreie-dokumente.md)
-- [Die Funktion PDF-Export](../../../../../eng-us/features/6.0/pdf-export.md)
+- [Die Funktion PDF-Export](../../../../funktionen/6.0/pdf-export.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

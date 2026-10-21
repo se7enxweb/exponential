@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an öffentliche Stellen in der Europäischen Union, die eine Website mit Exponential
 betreiben. Sie beschreibt die Pflichten der Richtlinie über barrierefreie Websites allgemein und für jede, was die
-Software laut [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) bietet. Verbindlich sind die Regeln
+Software laut [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) bietet. Verbindlich sind die Regeln
 der Umsetzung in Ihrem Mitgliedstaat.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -50,7 +50,7 @@ Feedback-Mechanismus sowie Überwachung und Berichterstattung durch die Mitglied
 
 1. **Legen Sie das Ziel fest.** WCAG 2.2 AA für neue Arbeiten; es deckt ab, was Abschnitt 9 von EN 301 549 verlangt.
 2. **Wählen Sie das Administrationsdesign.** Lassen Sie die Redaktion bei admin4 (oder admin4l), dem Design, das das
-   Projekt testet ([Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)).
+   Projekt testet ([Das Design admin4](../../../funktionen/6.0/admin4-design.md)).
 3. **Prüfen Sie das öffentliche Design** mit einer repräsentativen Stichprobe, wie WCAG-EM es beschreibt
    (<https://www.w3.org/TR/WCAG-EM/>). Halten Sie Befunde mit dem Erfolgskriterium und dem zu korrigierenden Template
    fest.
@@ -75,9 +75,9 @@ Feedback-Mechanismus sowie Überwachung und Berichterstattung durch die Mitglied
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit: EN 301 549](../../../../eng-us/standards/accessibility.md#en-301-549)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Standards zur Barrierefreiheit: EN 301 549](../../../standards/barrierefreiheit.md#en-301-549)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - W3C WAI, [Eine Erklärung zur Barrierefreiheit entwickeln](https://www.w3.org/WAI/planning/statements/)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

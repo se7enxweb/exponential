@@ -30,7 +30,7 @@ Nostalgie, und versprechen Sie nie die Zukunft.
 | „Exponential hat es über sein Lebensende 2021 hinaus geschafft und überlebt.“ (im Original wörtlich zitiert) | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
 | „7x hat 2023 die Leitung übernommen und seit dem 1. Januar 2024 fünfzehn Releases 6.0.x veröffentlicht.“ | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
 | „Eine gemeinnützige Organisation, die Exponential Foundation, wurde im März 2026 gegründet, um das Projekt zu betreiben.“ | [Was die Foundation ist](../wer-ist-die-exponential-foundation.md#was-die-foundation-ist) |
-| „Jede Änderung seit Dezember 2023 wird Monat für Monat in der Geschichte erzählt und in Änderungsbüchern festgehalten.“ | [Die Geschichte](../../../eng-us/history/README.md), [Dokumentation](../wer-ist-die-exponential-foundation.md#dokumentation) |
+| „Jede Änderung seit Dezember 2023 wird Monat für Monat in der Geschichte erzählt und in Änderungsbüchern festgehalten.“ | [Die Geschichte](../../geschichte/README.md), [Dokumentation](../wer-ist-die-exponential-foundation.md#dokumentation) |
 | „Die GPL bedeutet, dass der Code jedes Unternehmen überleben kann. Er hat seinen ursprünglichen Hersteller schon einmal überlebt.“ | [Mit Einwänden umgehen, Langlebigkeit](../geschaeft/einwandbehandlung.md#langlebigkeit-gibt-es-das-in-zehn-jahren-noch) |
 
 ## Eine Zeitleiste zum Zeigen
@@ -80,7 +80,7 @@ git tag -l 'v6.0.*' --sort=version:refname          # the 6.0.x releases
 git log -5 --format='%ad %s'                        # this week's changes
 ```
 
-Oder verweisen Sie auf einen Monat in [der Geschichte](../../../eng-us/history/README.md) und lassen Sie lesen, was sich geändert hat.
+Oder verweisen Sie auf einen Monat in [der Geschichte](../../geschichte/README.md) und lassen Sie lesen, was sich geändert hat.
 
 ## Verwandte Seiten
 

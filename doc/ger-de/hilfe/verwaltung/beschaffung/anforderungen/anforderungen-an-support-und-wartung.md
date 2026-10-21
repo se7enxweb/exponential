@@ -57,7 +57,7 @@ und `SECURITY.md`:
 - **Gepflegte Linie**: Exponential 6.0. Sicherheitskorrekturen werden auf `main` vorgenommen und mit dem nächsten
   Release 6.0.x veröffentlicht. 5.x, 4.x, 3.x und älter werden nicht unterstützt.
 - **Veröffentlichte Versionen ändern sich nie**: Eine Korrektur kommt als nächste Version, nicht als korrigierte Kopie
-  einer alten ([Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md)).
+  einer alten ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md)).
 - **Vertrauliche Meldungen von Schwachstellen**: eine erste Antwort innerhalb eines Werktags.
 - **PHP**: 8.0 bis 8.5 unterstützt; die CI führt die Tests unter 8.1 bis 8.5 aus und prüft, dass 8.0 startet.
 - **Kein SLA** wird vom Projekt für den allgemeinen Support veröffentlicht ([SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)).

@@ -46,7 +46,7 @@ und [Kapitel 13.11](../../../../installation/13-sicherheitshaertung.md#1311-date
    find var/storage -name '*.php'
    ```
 
-   Jedes Ergebnis ist verdächtig ([Defacement](../../../../../eng-us/help/government/operations/incidents/defacement.md)).
+   Jedes Ergebnis ist verdächtig ([Defacement](../../betrieb/vorfaelle/verunstaltung-der-website.md)).
 4. Führen Sie Cronjobs und Konsolenbefehle von nun an als Benutzer der Site aus, nicht als root.
 
 ## Gehärtete Modi
@@ -70,7 +70,7 @@ für PHP überhaupt nicht beschreibbar sein.
 - `find var/storage -name '*.php'` findet nichts.
 
 ## Verwandte Seiten
-- [Den Host härten](../../../../../eng-us/help/government/operations/hosting/hardening-the-host.md)
+- [Den Host härten](../../betrieb/hosting/den-host-haerten.md)
 - [Den Zustand der Logs prüfen](den-zustand-der-logs-pruefen.md)
 - [Sicherheit und Audit, Schritt 1](../../../../anleitungen/sicherheit-und-audit.md#1-die-bereits-aktive-härtung-prüfen-5-minuten)
 - [Härtung für Hoster](../../../hosting/sicherheit/haertung-fuer-hoster.md)

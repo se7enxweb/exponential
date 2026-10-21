@@ -75,7 +75,7 @@ grep -rn "ezjsc::yui2\|ezjsc::yui3\|YUI(" extension/mytheme/design
 ```
 
 und ersetzen Sie jede Verwendung durch jQuery, die Exponential-UI-Module von `expui` oder reines JavaScript
-([ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md), „Upgrade to 1.5“).
+([ezjscore](../../../funktionen/6.0/erweiterungen/ezjscore.md), „Upgrade to 1.5“).
 
 ## Brauchen Sie jQuery überhaupt?
 

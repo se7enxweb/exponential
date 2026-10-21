@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren. Manchmal müssen Daten erhalten bleiben, ihre Nutzung aber aufhören: ein
 strittiges Konto, eine laufende Untersuchung, ausscheidende Beschäftigte, deren Inhalte und Verlauf aufbewahrt werden
 müssen. Exponential bietet das Deaktivieren und, als Opt-in, **Deaktivieren und verschieben**
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md), [Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md), [Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -64,7 +64,7 @@ anonyme Benutzer, der Ersteller der Benutzer, das Administratorkonto und Ihr eig
 
 ## Verwandte Seiten
 
-- [Benutzerkonten prüfen: Deaktivieren und verschieben](../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move)
+- [Benutzerkonten prüfen: Deaktivieren und verschieben](../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben)
 - [Das Recht auf Löschung](recht-auf-loeschung.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -42,7 +42,7 @@ Alles in der Linie 6.0.15, die in Entwicklung und nicht veröffentlicht ist.
 | Was | Wann | Quelle |
 |---|---|---|
 | Sicherheitsvorgaben: Header auf jeder Seite, das Sitzungscookie, einheitliche Antworten bei der Anmeldung | 16. bis 30. September 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
-| Das Prüfprotokoll, standardmäßig eingeschaltet | 2. Oktober 2026 | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| Das Prüfprotokoll, standardmäßig eingeschaltet | 2. Oktober 2026 | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
 | Die zweistufige Anmeldung im Changelog | 6. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
 | Härtung der Administration | 14. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#14-october-2026-administration-hardening) |
 | SVG-Bilder werden beim Hochladen bereinigt | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-svg-images-sanitized-on-upload) |

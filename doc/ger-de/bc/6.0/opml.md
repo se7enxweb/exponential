@@ -303,9 +303,9 @@ Führen Sie `php vendor/bin/phpunit --list-tests --testsuite security` aus, um d
 
 ## Verwandte Seiten
 
-- [RSS: Feeds für Apple Podcasts, eine Feed-Liste mit Seiten und sicherere Exporte](../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)
+- [RSS: Feeds für Apple Podcasts, eine Feed-Liste mit Seiten und sicherere Exporte](../../funktionen/6.0/rss-podcast-und-feed-liste.md)
 - [Spezifikation der Syndication](../../spezifikationen/6.0/syndikation.md)
 - [Aufräumen von RSS-Importen](cleanuprss.md)
 - [Der Tab Orte: Blättern und Sortieren](tab-orte-blaettern-und-sortieren.md) (teilt die sortierbare Überschrift)
-- [September 2026, erste Hälfte: 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [September 2026, erste Hälfte: 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

@@ -59,7 +59,7 @@ zeigt seinen Fehler darunter.
 
 ## Verwandte Seiten
 
-- [Der Paket-Assistent](../../../../eng-us/features/6.0/package-wizard.md)
+- [Der Paket-Assistent](../../../funktionen/6.0/paketassistent.md)
 - [Pakete, Abschnitt 8](../../../anleitungen/pakete.md#8-ein-paket-erstellen)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

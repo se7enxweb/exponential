@@ -143,7 +143,7 @@ Die Checkliste des Trainers; jeder Punkt wird durch den Befehl oder die Anfrage 
 ## Weiterführende Informationen
 
 - Der ganze Kurs: [Multisite und Seitenpakete: Kursüberblick](../README.md).
-- [Mehrere Websites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md).
+- [Mehrere Websites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md).
 - [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md).
 - [10. Nach der Installation](../../../../installation/10-nach-der-installation.md).
 
@@ -151,7 +151,7 @@ Die Checkliste des Trainers; jeder Punkt wird durch den Befehl oder die Anfrage 
 
 - [Modul 6: Websites mit dem Kickstarter und exp:install installieren](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

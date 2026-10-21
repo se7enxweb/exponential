@@ -54,7 +54,7 @@ Der tatsächliche Katalog jedes Erweiterungspunkts, mit der INI-Zeile, die ihn r
 | `composer.json` | das Composer-Paket, Typ `ezpublish-legacy-extension`, Lizenz, Anforderungen |
 
 Die Seite "Über" (`/ezinfo/about`) liest zuerst `extension.xml`, daher müssen beide Dateien dieselbe Version angeben
-([Seiten "Über" und Pakete](../../../../eng-us/features/6.0/about-and-package-pages.md),
+([Seiten "Über" und Pakete](../../../funktionen/6.0/info-und-paketseiten.md),
 [Versionen und Releases](versionen-und-releases.md)).
 
 ## Aktivierung
@@ -72,7 +72,7 @@ Siteaccess bedeutet, dass jedes Skript `-s <siteaccess>` braucht.
 Erweiterungen werden in der Reihenfolge ihrer Aktivierung gelesen (mit `ExtensionOrdering=enabled` werden die
 Abhängigkeiten aus `extension.xml` berücksichtigt). Die Reihenfolge entscheidet, welches Template oder welche
 Einstellung welcher Erweiterung gewinnt. Ändern Sie sie unter **Setup > Extensions**
-([Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)).
+([Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)).
 
 ## Checkliste für eine neue Erweiterung
 
@@ -86,7 +86,7 @@ Einstellung welcher Erweiterung gewinnt. Ändern Sie sie unter **Setup > Extensi
 
 - [Ihre erste Erweiterung](ihre-erste-erweiterung.md)
 - [Ihre Anwendung als Erweiterung paketieren](als-erweiterung-paketieren.md)
-- [Schichten und Benennung](../../../../eng-us/standards/architecture/layering-and-naming.md)
+- [Schichten und Benennung](../../../standards/architektur/schichten-und-benennung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

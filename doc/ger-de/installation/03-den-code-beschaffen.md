@@ -89,7 +89,7 @@ Der empfohlene Weg für alle, die Websites mit Exponential bauen. Mit Git-Klonen
 (`git status`, `git diff`), warum eine Zeile dasteht (`git log`, `git blame`) und welche Änderung etwas kaputt gemacht
 hat (`git bisect`); Sie können eine Korrektur nutzen, bevor sie veröffentlicht ist, Ihre eigenen Änderungen auf einem
 Branch halten, den Updates nie überschreiben, und Korrekturen als Pull Requests zurückschicken.
-[Mit Git entwickeln](../../eng-us/help/develop-with-git.md) erklärt jeden dieser Punkte Schritt für Schritt.
+[Mit Git entwickeln](../hilfe/mit-git-entwickeln.md) erklärt jeden dieser Punkte Schritt für Schritt.
 
 Weisen Sie Composer zuerst, einmal pro Benutzerkonto, an, jedes `se7enxweb/*`-Paket als Git-Klon und alles andere
 (die Zeta Components und andere Bibliotheken) als Release-Archiv zu installieren:
@@ -124,7 +124,7 @@ git -C extension/eztags log --oneline -3
 ```
 
 Ohne die Einstellung `preferred-install` kommen die Extensions als Archive an; `composer reinstall 'se7enxweb/*'`
-macht sie später zu Klonen ([Mit Git entwickeln](../../eng-us/help/develop-with-git.md#the-extensions)). Um die Einstellung beim
+macht sie später zu Klonen ([Mit Git entwickeln](../hilfe/mit-git-entwickeln.md#die-erweiterungen)). Um die Einstellung beim
 Projekt statt bei Ihrem Konto zu halten, führen Sie den Befehl `composer config` ohne `--global` innerhalb des Klons
 aus; er wird dann auf Ihrem Branch in `composer.json` geschrieben.
 
@@ -138,12 +138,12 @@ composer update
 
 `composer update`, nicht `composer install`: Die `composer.json` des Kernels hat sich geändert, und die Lock-Datei
 (Ihre eigene, sie gehört nicht zum Repository) muss ihr folgen. `composer update se7enxweb/<package>` aktualisiert eine
-einzelne Extension. Immer zuerst Git, dann Composer. [Mit Git aktualisieren](../../eng-us/help/update-with-git.md) beschreibt
+einzelne Extension. Immer zuerst Git, dann Composer. [Mit Git aktualisieren](../hilfe/mit-git-aktualisieren.md) beschreibt
 das Vorgehen auf der Kommandozeile und in der Administration (Git Manager, dann „Updates und Pakete“), für jeden
 Rhythmus von stündlich bis nur zu jeder Release, sowie ein automatisches Update mit cron oder einem systemd-Timer.
 Composer verweigert das Aktualisieren eines Klons mit nicht committeten Änderungen oder mit Commits, die nur auf Ihrem
 Rechner existieren, sodass Ihre Arbeit nie überschrieben wird;
-[Wenn Composer sich weigert](../../eng-us/help/develop-with-git.md#when-composer-refuses) führt die Meldungen auf und was zu tun
+[Wenn Composer sich weigert](../hilfe/mit-git-entwickeln.md#wenn-composer-sich-weigert) führt die Meldungen auf und was zu tun
 ist. Den Code zu bewegen ist nur die Hälfte eines Upgrades: Die Datenbank-Update-Dateien aus
 [Kapitel 11](11-aktualisieren.md) sind die andere Hälfte.
 
@@ -179,7 +179,7 @@ composer create-project se7enxweb/exponential exponential --prefer-source --keep
 ```
 
 Ohne `--keep-vcs` löscht Composer am Ende den `.git`-Ordner des Kernels. Eine aus Archiven installierte Website lässt
-sich später ohne Neuinstallation in Klone umwandeln: [Mit Git entwickeln](../../eng-us/help/develop-with-git.md#step-3-turn-an-existing-site-into-clones).
+sich später ohne Neuinstallation in Klone umwandeln: [Mit Git entwickeln](../hilfe/mit-git-entwickeln.md#schritt-3-eine-bestehende-site-auf-klone-umstellen).
 
 ### C. composer require in ein leeres Verzeichnis
 
@@ -300,8 +300,8 @@ php bin/php/console exp:velocity start --engine=php
 ```
 
 Velocity wird auch als Betriebssystempakete (`.deb`, `.rpm`) und als eigenständige Binärdatei veröffentlicht; siehe
-[Velocity-Pakete und -Binärdateien](../../eng-us/features/6.0/velocity-packages-and-binaries.md). Bevor Sie es aktualisieren,
-lesen Sie die [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md).
+[Velocity-Pakete und -Binärdateien](../funktionen/6.0/velocity-pakete-und-binaerdateien.md). Bevor Sie es aktualisieren,
+lesen Sie die [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md).
 
 ## 3.5 Extensions sind Composer-Pakete
 
@@ -345,9 +345,9 @@ Leeren Sie danach den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und 
 Website ausliefert.
 
 Zwei Pakete aus `composer.json` kommen absichtlich inaktiv an und werden eingeschaltet, wenn Sie sie brauchen: die
-Job-Warteschlange `se7enxweb/expqueue` (`extension/expqueue`, [expqueue](../../eng-us/features/6.0/extensions/expqueue.md)) und
+Job-Warteschlange `se7enxweb/expqueue` (`extension/expqueue`, [expqueue](../funktionen/6.0/erweiterungen/expqueue.md)) und
 Exponential Intelligence, der Schreibassistent der Administration, `se7enxweb/expai` (`extension/expai`,
-[expai](../../eng-us/features/6.0/extensions/expai.md)). Beide brauchen eigene Tabellen und eine Cron-Zeile; der Assistent
+[expai](../funktionen/6.0/erweiterungen/expai.md)). Beide brauchen eigene Tabellen und eine Cron-Zeile; der Assistent
 außerdem einen Anbieterschlüssel in `settings/override/expai.ini.append.php`.
 [Abschnitt 10.13](10-nach-der-installation.md#1013-verwaltung-von-extensions) beschreibt die Schritte.
 
@@ -366,10 +366,10 @@ Extension-Liste der Administration zeigt sie an.
 > Commits. Um ein Archiv in einen Klon umzuwandeln, überlassen Sie das Composer mit `composer reinstall <package>`,
 > nachdem Sie `preferred-install` gesetzt haben ([Weg A](#a-git-clone-und-composer-install-empfohlen)).
 
-Mehr: [Anleitung zu Extensions](../anleitungen/extensions.md), [Extension-Liste und Downloads](../../eng-us/features/6.0/extension-list-and-downloads.md),
-[Standardverteilung der Extensions](../../eng-us/features/6.0/default-extension-distribution.md),
-[Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md),
-[Zusätzliche Extension-Verzeichnisse](../../eng-us/features/6.0/additional-extension-directories.md).
+Mehr: [Anleitung zu Extensions](../anleitungen/extensions.md), [Extension-Liste und Downloads](../funktionen/6.0/extension-liste-und-downloads.md),
+[Standardverteilung der Extensions](../funktionen/6.0/standard-extension-auslieferung.md),
+[Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md),
+[Zusätzliche Extension-Verzeichnisse](../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md).
 
 ## 3.6 Ein Rundgang durch das Installationsverzeichnis
 
@@ -415,7 +415,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `.htaccess_root` | Apache-Rewrite-Regeln; kopieren Sie die Datei nach `.htaccess` (`cp .htaccess_root .htaccess`). `.htaccess_root_static` ist dieselbe Datei mit den Regeln, die den statischen Cache vor der Anwendung ausliefern. |
 | `kickstart.ini-dist` | Die kommentierte Vorlage für `kickstart.ini`; `kickstart.ini--example` ist ein Beispiel. |
 | `config.php-RECOMMENDED` | Eine dokumentierte Liste der Einstellungen, die `config.php` vornehmen kann; benennen Sie die Datei in `config.php` um und entfernen Sie die Kommentarzeichen vor den Einstellungen, die Sie brauchen. |
-| `config.env.php.example` | Kopieren Sie die Datei nach `config.env.php`, um die Umgebung des Rechners zu benennen (`EXP_ENV`); siehe [Einstellungen pro Umgebung](../../eng-us/features/6.0/environment-settings.md). |
+| `config.env.php.example` | Kopieren Sie die Datei nach `config.env.php`, um die Umgebung des Rechners zu benennen (`EXP_ENV`); siehe [Einstellungen pro Umgebung](../funktionen/6.0/umgebungseinstellungen.md). |
 | `exponential.cron`, `ezpublish.cron` | Beispiel-Crontabs für die Cronjobs (`crontab exponential.cron`, nachdem Sie die beiden Variablen `EXPONENTIALROOT` und `PHP` gesetzt haben). |
 | `sw.js`, `index.js` | Der Service Worker der Website. |
 | `robots.txt`, `favicon.ico` | Wie bei jeder Website üblich. |
@@ -447,16 +447,16 @@ geben Sie beiden eine gemeinsame Gruppe, die dieselben Dateien schreiben darf, s
 
 In diesem Repository:
 
-- [Installationsüberblick](../../eng-us/INSTALL.md), Abschnitt 3.
+- [Installationsüberblick](../INSTALL.md), Abschnitt 3.
 - [Aktualisieren](../anleitungen/aktualisieren.md): eine bestehende Website auf neuen Code umstellen.
-- [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md): Installation mit Composer unter PHP 8.0.
-- [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md) und [Qualitätsprüfungen](../../eng-us/features/6.0/quality-checks.md).
-- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md), [Velocity-Pakete und -Binärdateien](../../eng-us/features/6.0/velocity-packages-and-binaries.md),
-  [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md).
-- [Anleitung zu Extensions](../anleitungen/extensions.md), [Extensions](../../eng-us/features/6.0/extensions/README.md),
+- [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md): Installation mit Composer unter PHP 8.0.
+- [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md) und [Qualitätsprüfungen](../funktionen/6.0/qualitaetspruefungen.md).
+- [Velocity-Engines](../bc/6.0/velocity-engines.md), [Velocity-Pakete und -Binärdateien](../funktionen/6.0/velocity-pakete-und-binaerdateien.md),
+  [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md).
+- [Anleitung zu Extensions](../anleitungen/extensions.md), [Extensions](../funktionen/6.0/erweiterungen/README.md),
   [Extension-Metadaten](../spezifikationen/6.0/extension-metadaten.md).
-- [Eine Installation reparieren](../../eng-us/bc/6.0/repair.md): wenn `vendor/` fehlt.
-- [Konsole](../../eng-us/bc/6.0/console.md).
+- [Eine Installation reparieren](../bc/6.0/reparatur.md): wenn `vendor/` fehlt.
+- [Konsole](../bc/6.0/konsole.md).
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) und die [Release Notes der Extensions](../../changelogs/extensions/README.md).
 - Code: `composer.json`, `lib/version.php`, `.github/workflows/quality.yml` (Job `php80`),
   `vendor/se7enxweb/exponential-legacy-installer/src/eZ/Publish/Composer/` (`LegacyKernelInstaller`,

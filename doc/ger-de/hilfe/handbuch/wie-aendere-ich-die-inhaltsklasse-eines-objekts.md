@@ -37,7 +37,7 @@ Regel nur Administratoren, weil eine falsche Zuordnung Feldinhalte verliert.
 
 ## Verwandte Seiten
 
-- [Inhaltsklassen für Websites](../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)
+- [Inhaltsklassen für Websites](../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)
 - [Inhaltsmodell und Bearbeitung](../../anleitungen/inhaltsmodell-und-bearbeitung.md)
 - [Benutzerhandbuch](README.md)
 

@@ -120,12 +120,12 @@ Fragen für die Nachbesprechung nach den Präsentationen.
 1. Damit jemand bei der Installation auf einen eigenen Ordner verweisen kann, ohne Code zu ändern
    ([Erweiterungen](../../../../anleitungen/extensions.md#64-eigene-einstellungen-inhalte-und-cronjobs)).
 2. Davor, dass etwas kaputtgeht, wenn eine Website eine Content Security Policy einschaltet
-   ([Inline-Skripte und -Styles entfernen](../../../../../eng-us/help/designers/lifecycle/removing-inline-scripts-and-styles.md)).
+   ([Inline-Skripte und -Styles entfernen](../../../designer/lebenszyklus/inline-skripte-und-styles-entfernen.md)).
 3. Lassen Sie sie stehen; veröffentlichen Sie `0.1.1` mit der Korrektur und schreiben Sie in deren Hinweise, was
    falsch war ([Erweiterungen](../../../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 4. Die, die in der Liste weiter vorn steht (oder die durch die Abhängigkeiten in `extension.xml` eingeordnet ist); sie
    gewinnt bei Einstellungen und Templates
-   ([Ladereihenfolge und welches Theme gewinnt](../../../../../eng-us/help/designers/extensions/loading-order-for-themes.md)).
+   ([Ladereihenfolge und welches Theme gewinnt](../../../designer/erweiterungen/ladereihenfolge-von-themes.md)).
 
 </details>
 
@@ -133,7 +133,7 @@ Fragen für die Nachbesprechung nach den Präsentationen.
 
 - [Entwickler, praktische Aufgabe](../modul-04-technische-kurse/entwickler-praktische-aufgabe.md) und
   [Theme-Designer, praktische Aufgabe](../modul-04-technische-kurse/theme-designer-praktische-aufgabe.md)
-- [Checkliste: Theme-Erweiterung bereit](../../../../../eng-us/help/designers/extensions/checklist-theme-extension-ready.md)
+- [Checkliste: Theme-Erweiterung bereit](../../../designer/erweiterungen/checkliste-theme-erweiterung-bereit.md)
 - [Erweiterungsentwicklung](../../../erweiterungsentwicklung/README.md)
 
 ## Verwandte Seiten

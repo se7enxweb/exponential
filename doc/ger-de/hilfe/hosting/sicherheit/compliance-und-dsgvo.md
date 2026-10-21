@@ -50,20 +50,20 @@ Kunde darum bittet.
 | `auth.log` | jeden Schritt der zweistufigen Anmeldung, nie einen Code oder ein Geheimnis | |
 | Zugriffslog von Velocity | das Format combined von Apache, Dateien `0640` in einem Verzeichnis `0750`: ein Zugriffslog nennt Besucher | `velocity.ini [LogSettings]` |
 
-`MaskIP=disabled` schreibt volle Adressen; [Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md#privacy) sagt, das nur für eine Website
+`MaskIP=disabled` schreibt volle Adressen; [Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md#datenschutz) sagt, das nur für eine Website
 zu nutzen, die einen Grund und eine Rechtsgrundlage dafür hat. Die eigenen Zugriffslogs des Webservers (Apache, nginx, die des Panels)
 liegen außerhalb von Exponential und folgen den Einstellungen des Hosters.
 
 ## Das Prüfprotokoll und personenbezogene Daten
 
-Aus [4.12 Datenschutz- und DSGVO-Aufgaben](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks) der Anleitung zum Audit, die ebenfalls
+Aus [4.12 Datenschutz- und DSGVO-Aufgaben](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben) der Anleitung zum Audit, die ebenfalls
 sagt, dass sie keine Rechtsberatung ist:
 
 - **Datenminimierung als Standard**: Adressen auf /24 (IPv6 /48) gekürzt, Sitzungen gehasht, User Agents auf Familie von Browser und
   Betriebssystem reduziert, E-Mail-Adressen und Anmeldeversuche unbekannter Benutzer gehasht; nie Passwörter, Tokens, Schlüssel zum
   Zurücksetzen, Geheimnisse oder POST-Inhalte; Lesezugriffe aus.
 - **Strenger**: pro Feld `full | truncate | hash | off` in `[AuditPrivacySettings] Field[]`, `BeforeAfter=keys`, kürzere Aufbewahrung;
-  die [Konfiguration für strengen Datenschutz](../../../../eng-us/bc/6.0/audit.md#64-strict-privacy).
+  die [Konfiguration für strengen Datenschutz](../../../bc/6.0/audit.md#64-strenger-datenschutz).
 - **Pseudonymisierung**: Der Index ersetzt personenbezogene Felder nach `PseudonymiseAfterDays` (90) durch ihre gehashte Form; die Dateien
   werden nicht umgeschrieben, weil das die Kette brechen würde.
 - **Auskunftsersuchen**: `exp:audit export --subject-user=<id>` exportiert jeden Eintrag von oder über einen Benutzer; prüfen Sie ihn vor
@@ -152,5 +152,5 @@ werden ([Trennung von Mandanten](trennung-von-mandanten.md)).
 - [Aufbewahrung von Logs und Daten](aufbewahrung-von-logs-und-daten.md)
 - [E-Mail-Einstellungen: die rechtliche Checkliste](../../../spezifikationen/6.0/mail-einstellungen-compliance.md)
 - [E-Mail-Einstellungen: die Anleitung für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md)
-- [Audit: Datenschutz- und DSGVO-Aufgaben](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)
+- [Audit: Datenschutz- und DSGVO-Aufgaben](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

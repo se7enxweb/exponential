@@ -88,7 +88,7 @@ ohne den Benutzer in den Schlüsseln.
 | Nach einer Template-Änderung ändert sich nichts | der Template-Cache, dann der Inhalts-Cache, dann der Cache von Velocity |
 
 Die Debug-Leiste zeigt, welche Caches für eine Seite verwendet wurden
-([Exp-Debug-Leiste](../../../../eng-us/features/6.0/exp-debug-bar.md)).
+([Exp-Debug-Leiste](../../../funktionen/6.0/exp-debug-leiste.md)).
 
 ## Verwandte Seiten
 

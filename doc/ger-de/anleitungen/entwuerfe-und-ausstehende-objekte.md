@@ -9,8 +9,8 @@ Sie richtet sich an Redakteure und Freigebende. Jede Seite, jedes Feld und jede 
 am Code dieses Repositorys geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 
 [Anleitungen](README.md) · Siehe auch: [Versionen eines Objekts](inhaltsverlauf.md) ·
-[Bearbeitungszugriff auf nie veröffentlichte Objekte](../../eng-us/bc/6.0/draft-edit-access.md) ·
-[Workflows](workflows.md) · [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
+[Bearbeitungszugriff auf nie veröffentlichte Objekte](../bc/6.0/zugriff-auf-entwuerfe.md) ·
+[Workflows](workflows.md) · [Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 

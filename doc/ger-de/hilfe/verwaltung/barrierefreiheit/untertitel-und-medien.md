@@ -69,7 +69,7 @@ Das Einbetten des Players einer Videoplattform bringt dessen Barrierefreiheit (u
 Content Security Policy) auf Ihre Seite. Prüfen Sie, dass der Player mit der Tastatur bedienbar ist, dass sich
 Untertitel einschalten lassen und dass der Fokus ihn wieder verlassen kann. Nennen Sie den Dritten in Ihrer
 Datenschutzerklärung und erlauben Sie seinen Host in Ihrer Content Security Policy, wenn Sie eine durchsetzen
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Eine Checkliste
 
@@ -83,7 +83,7 @@ Datenschutzerklärung und erlauben Sie seinen Host in Ihrer Content Security Pol
 
 - [Barrierefreie Inhalte für die Redaktion](barrierefreie-inhalte-fuer-die-redaktion.md)
 - [Bilder, Medien und Uploads](../../medien-und-uploads.md)
-- [Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)
+- [Template-Overrides](../../ersteller/website-ersteller/template-overrides.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

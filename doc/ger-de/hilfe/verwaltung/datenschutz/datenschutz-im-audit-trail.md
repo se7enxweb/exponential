@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Datenschutzbeauftragte und Administratoren. Das Prüfprotokoll zeichnet auf, was Beschäftigte
 und Besucher tun; das sind personenbezogene Daten über sie, häufig über Beschäftigte. Exponential gestaltet es
 datenschutzfreundlich voreingestellt und lässt Sie es verschärfen
-([4.12 Datenschutz- und DSGVO-Aufgaben](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)).
+([4.12 Datenschutz- und DSGVO-Aufgaben](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -67,7 +67,7 @@ Datenschutzbeauftragten und dokumentieren Sie es.
 ## Ein strengeres Profil
 
 Die Referenzkonfiguration des Leitfadens für strengen Datenschutz
-([6.4 Strenger Datenschutz](../../../../eng-us/bc/6.0/audit.md#64-strict-privacy)) in
+([6.4 Strenger Datenschutz](../../../bc/6.0/audit.md#64-strenger-datenschutz)) in
 `settings/override/audit.ini.append.php`:
 
 ```ini
@@ -100,8 +100,8 @@ aufgezeichnet (`system.audit.read`).
 
 ## Verwandte Seiten
 
-- [Audit-Leitfaden, 4.12](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)
-- [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)
+- [Audit-Leitfaden, 4.12](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)
+- [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Aufbewahrung von Audit-Einträgen](aufbewahrung-von-audit-eintraegen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

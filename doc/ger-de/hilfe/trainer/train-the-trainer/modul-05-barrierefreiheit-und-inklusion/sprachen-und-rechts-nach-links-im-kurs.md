@@ -89,7 +89,7 @@ Verwenden Sie ein Testkonto auf Ihrer Schulungsinstallation.
 <details>
 <summary>Antworten</summary>
 
-1. In der rechten Spalte unter **Oberfläche** ([Die Liste der Oberflächensprachen](../../../../../eng-us/features/6.0/ui-switch-languages.md)).
+1. In der rechten Spalte unter **Oberfläche** ([Die Liste der Oberflächensprachen](../../../../funktionen/6.0/ui-umschalter-sprachen.md)).
 2. Datumsangaben, Uhrzeiten und Zahlen folgen ihrer Locale; die Texte bleiben englisch.
 3. Nein. Inhaltssprachen sind etwas anderes ([Sprachen](../../../sprachen.md)).
 4. Einstellungen werden pro Konto gespeichert; ändern Sie niemals die Einstellungen eines gemeinsamen Kontos.
@@ -98,8 +98,8 @@ Verwenden Sie ein Testkonto auf Ihrer Schulungsinstallation.
 
 ## Weiterführende Literatur
 
-- [Die Liste der Oberflächensprachen](../../../../../eng-us/features/6.0/ui-switch-languages.md)
-- [Rechts-nach-links-Sprachen in der Administration](../../../../../eng-us/features/6.0/right-to-left.md)
+- [Die Liste der Oberflächensprachen](../../../../funktionen/6.0/ui-umschalter-sprachen.md)
+- [Rechts-nach-links-Sprachen in der Administration](../../../../funktionen/6.0/rechts-nach-links.md)
 - [Sprachen](../../../sprachen.md)
 
 ## Verwandte Seiten

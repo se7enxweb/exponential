@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Führungskräfte und Trainer. Auch mit einem Dienstleister braucht eine öffentliche Stelle
 Menschen, die ihre Website gut genug verstehen, um Prioritäten zu setzen, Arbeiten zu prüfen und Anbieter zu wechseln.
 Das gesamte Schulungsmaterial für Exponential ist freie Dokumentation, die die Stelle kopieren und anpassen darf
-([Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)).
+([Kurskatalog](../../trainer/kurskatalog.md)).
 
 ## Inhalt
 
@@ -24,9 +24,9 @@ Das gesamte Schulungsmaterial für Exponential ist freie Dokumentation, die die 
 
 | Rolle | Muss Folgendes können | Schulung |
 |---|---|---|
-| Leitende Redaktion | Redakteure schulen, das Veröffentlichen steuern, das Inhaltsmodell verantworten | [Redaktion 101](../../../../eng-us/help/trainers/editors-101/README.md), [Redaktion 201](../../../../eng-us/help/trainers/editors-201/README.md) |
-| Website-Administration | Rollen, Sektionen, Sprachen, Workflows, Caches, das Prüfprotokoll | [Website-Administratoren](../../../../eng-us/help/trainers/site-administrators/README.md) |
-| Technische Verantwortung | das Code-Repository lesen, Änderungen von Dienstleistern beurteilen, ein Update auf einem Testsystem durchführen | [Entwickler](../../../../eng-us/help/trainers/developers/README.md), [Hosting-Betrieb](../../../../eng-us/help/trainers/hosting-operations/README.md) |
+| Leitende Redaktion | Redakteure schulen, das Veröffentlichen steuern, das Inhaltsmodell verantworten | [Redaktion 101](../../trainer/redakteure-101/README.md), [Redaktion 201](../../trainer/redakteure-201/README.md) |
+| Website-Administration | Rollen, Sektionen, Sprachen, Workflows, Caches, das Prüfprotokoll | [Website-Administratoren](../../trainer/website-administratoren/README.md) |
+| Technische Verantwortung | das Code-Repository lesen, Änderungen von Dienstleistern beurteilen, ein Update auf einem Testsystem durchführen | [Entwickler](../../trainer/entwickler/README.md), [Hosting-Betrieb](../../trainer/hosting-betrieb/README.md) |
 | Produktverantwortung | entscheiden, was die Website leisten soll, Lieferungen abnehmen | [Projektleitungen: hier beginnen](../../fuehrung/projektleiter-hier-beginnen.md) |
 
 Mindestens zwei Personen pro Rolle, damit eine Abwesenheit die Arbeit nicht aufhält.
@@ -46,11 +46,11 @@ Mindestens zwei Personen pro Rolle, damit eine Abwesenheit die Arbeit nicht aufh
 - Runbooks für die regelmäßigen Aufgaben (Updates, Wiederherstellungen, eine Sprache hinzufügen, eine Website
   hinzufügen).
 - Konten pro Person, nie geteilt, entfernt, wenn Menschen gehen (**Benutzer > Benutzerkonten prüfen** findet
-  ungenutzte Konten: [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  ungenutzte Konten: [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer/trainer-hier-beginnen.md)
 - [Einen Supportanbieter wählen](einen-supportanbieter-waehlen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

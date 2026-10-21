@@ -34,7 +34,7 @@ Eine responsive Website funktioniert auf jedem Smartphone ohne Installation. Pr�
 
 Der Testplan für Unternehmen steht unter [Responsive Websites](../../unternehmen/mobil-und-headless/responsive-websites.md).
 Auch Redakteure können auf dem Smartphone arbeiten: Die Administration hat responsive Designs
-([admin3, die responsive Administration](../../../../eng-us/features/6.0/admin3-responsive-admin.md)).
+([admin3, die responsive Administration](../../../funktionen/6.0/admin3-responsives-admin.md)).
 
 ## Die Kanäle im Überblick
 

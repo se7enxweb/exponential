@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren, Projektleitungen und Beschäftigte in Beschaffung oder Prüfung, die genau
 wissen müssen, welche Software eine öffentliche Website betreibt, und sicher sein wollen, dass es derselbe Code ist,
 den alle anderen unter dieser Version kennen. Die Richtlinie steht im
-[Standard für Versionsverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#releases).
+[Standard für Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#releases).
 
 ![Die Seite „Über“ zeigt das Release, das die Installation betreibt](../../../../../eng-us/help/images/government/gov-about.webp)
 
@@ -39,7 +39,7 @@ Dasselbe gilt für Erweiterungen, die das Projekt veröffentlicht; sie tragen ih
 ## Wie Versionen nummeriert werden
 
 - Die Kernlinie ist 6.0.x; die veröffentlichten Tags reichen von `v6.0.0` bis `v6.0.14`, und 6.0.15 ist auf `main` in
-  Entwicklung (`6.0.x-dev`) ([Standard, „Releases“](../../../../../eng-us/standards/source-control-and-releases.md#releases)).
+  Entwicklung (`6.0.x-dev`) ([Standard, „Releases“](../../../../standards/versionsverwaltung-und-releases.md#releases)).
 - Die letzte Stelle zählt weiter: Nach `.9` kommt `.10`. Composer und Packagist vergleichen jede Stelle als Zahl. Eine
   einfache alphabetische Sortierung macht das falsch; verwenden Sie in Skripten `--sort=version:refname` oder `sort -V`.
 - Die `composer.json` im Wurzelverzeichnis hat kein Feld `version`; Composer übernimmt die Version aus dem Tag.
@@ -72,7 +72,7 @@ Commit fest, sodass Staging und Produktion denselben Code installieren.
 ## Verwandte Seiten
 - [Versionshinweise lesen](versionshinweise-lesen.md)
 - [Upgrade-Prüfung vorher und nachher](upgrade-pruefung-vorher-und-nachher.md)
-- [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md)
+- [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md)
 - [Lizenzierung für Hoster](../../../hosting/geschaeft/lizenzierung-fuer-hoster.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

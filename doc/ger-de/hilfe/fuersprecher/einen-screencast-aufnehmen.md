@@ -28,12 +28,12 @@ Ein Video, eine Aufgabe. Gute Themen sind Aufgaben, die die Hilfe bereits beschr
 
 | Thema | Länge | Hilfeseite zum Verlinken |
 |---|---|---|
-| Exponential mit einem Befehl installieren | 3 Min. | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Exponential mit einem Befehl installieren | 3 Min. | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Einen Artikel veröffentlichen und Versionen vergleichen | 3 Min. | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
 | Eine Seite mit dem Layouts-Editor bauen | 4 Min. | [Der Layouts-Editor](../layout-editor.md) |
 | Einen Inhalt übersetzen | 2 Min. | [Sprachen](../sprachen.md) |
 | Die zweistufige Anmeldung einschalten | 2 Min. | [Ihr Konto und die Anmeldung](../konten-und-anmeldung.md) |
-| Ihre erste Erweiterung mit den RAD-Werkzeugen | 6 Min. | [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md) |
+| Ihre erste Erweiterung mit den RAD-Werkzeugen | 6 Min. | [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md) |
 | Eine Hilfeseite mit Auf GitHub bearbeiten korrigieren | 3 Min. | [Die Hilfe verbessern](die-hilfe-verbessern.md) |
 
 ## Ein Skript schreiben

@@ -45,7 +45,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 Quellen: [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site),
 [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md) und
-[Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md).
+[Einstellungen über die Kommandozeile ändern: exp:ini](../../../../bc/6.0/console-exp-ini.md).
 
 1. **Die Definition** (5 Minuten). Schreiben Sie an die Tafel: *Siteaccess = Name + Einstellungen in
    `settings/siteaccess/<name>/` + eine Regel, welche Anfragen er beantwortet.* Jede Installation hat mindestens einen
@@ -182,18 +182,18 @@ Wurzelverzeichnis (dem, das `index.php` enthält).
 
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site):
   die Referenz für dieses Modul.
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md): jede Aktion und jeder
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../bc/6.0/console-exp-ini.md): jede Aktion und jeder
   Scope.
 - [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md): die Sicht des
   Hosters.
-- [Mehrere Websites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md): die Sicht
+- [Mehrere Websites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md): die Sicht
   der Website-Ersteller.
 
 ## Verwandte Seiten
 
 - [Modul 1: Siteaccesses für mehrere Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -40,10 +40,10 @@ Zahlen. Fakten zur Dimensionierung:
 4. **Listen Sie die Kostenpositionen** im Arbeitsblatt unten auf, für jedes Jahr der Laufzeit.
 5. **Rechnen Sie Personal hinzu**: Eigenes Hosting braucht Arbeitszeit für Betrieb, Updates und Bereitschaft;
    Managed Hosting enthält einen Teil davon
-   ([Hostingkosten](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/hosting-costs.md)).
+   ([Hostingkosten](../../beschaffung/gesamtbetriebskosten/hostingkosten.md)).
 6. **Rechnen Sie Wachstum hinzu**: Der Speicher wächst mit den Uploads; Logs und Sicherungen wachsen ebenfalls.
 7. **Vergleichen Sie** eigenen Betrieb und Auslagerung auf denselben Positionen
-   ([Eigener Betrieb oder Cloud](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/on-premise-vs-cloud.md)).
+   ([Eigener Betrieb oder Cloud](../../beschaffung/gesamtbetriebskosten/eigenbetrieb-oder-cloud.md)).
 
 ## Arbeitsblatt
 
@@ -79,7 +79,7 @@ Eine jährliche Position für das Hosting im Modell der Gesamtkosten, mit aufges
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Hosting-Angebote vergleichen](hosting-angebote-vergleichen.md)
-- [Vorlage für das Arbeitsblatt der Gesamtkosten](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/tco-worksheet-template.md)
+- [Vorlage für das Arbeitsblatt der Gesamtkosten](../../beschaffung/gesamtbetriebskosten/vorlage-fuer-ein-tco-arbeitsblatt.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

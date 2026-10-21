@@ -154,7 +154,7 @@ Auf der Entwicklungsinstallation, mit `mysite_hello` aktiv aus Lektion 3.1. `<sa
 3. Mit „und“: Jedes `Match[...]` muss zutreffen.
 4. `ini` (für die neue Regel), `template-override`, `template` und `content` für bereits zwischengespeicherte Seiten.
 5. Die Regel mit `Priority=10`: Regeln ohne Priorität werden zuletzt eingeordnet
-   ([Template-Editor](../../../../../eng-us/features/6.0/template-editor-overrides.md)).
+   ([Template-Editor](../../../../funktionen/6.0/template-editor-ueberschreibungen.md)).
 
 </details>
 
@@ -162,9 +162,9 @@ Auf der Entwicklungsinstallation, mit `mysite_hello` aktiv aus Lektion 3.1. `<sa
 
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): Overrides per Klick und per Datei, der Schlüssel
   `layout`.
-- [Template-Editor](../../../../../eng-us/features/6.0/template-editor-overrides.md): Match-Schlüssel, Prioritäten und wie der
+- [Template-Editor](../../../../funktionen/6.0/template-editor-ueberschreibungen.md): Match-Schlüssel, Prioritäten und wie der
   Editor Regeln schreibt.
-- [Modul-Override aus einer Erweiterung](../../../../../eng-us/features/6.0/extension-module-override.md): die Templates eines
+- [Modul-Override aus einer Erweiterung](../../../../funktionen/6.0/modulueberschreibung-durch-extensions.md): die Templates eines
   Moduls aus einer Erweiterung überschreiben.
 
 ## Verwandte Seiten

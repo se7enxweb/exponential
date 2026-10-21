@@ -62,9 +62,9 @@ Schalten Sie HSTS erst ein, wenn jeder Name der Site dauerhaft HTTPS ist:
 Halten Sie die Ausgabe der Prüfungen mit Ihrer Sicherheitsüberprüfung fest.
 
 ## Verwandte Seiten
-- [Den Host härten](../../../../../eng-us/help/government/operations/hosting/hardening-the-host.md)
-- [CSP-Berichte](../../../../../eng-us/help/government/operations/monitoring/csp-reports.md)
-- [Sicherheitsstandard](../../../../../eng-us/standards/security.md)
+- [Den Host härten](../../betrieb/hosting/den-host-haerten.md)
+- [CSP-Berichte](../../betrieb/ueberwachung/csp-berichte.md)
+- [Sicherheitsstandard](../../../../standards/sicherheit.md)
 - [Checkliste zur Sicherheitsüberprüfung (Hosting)](../../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

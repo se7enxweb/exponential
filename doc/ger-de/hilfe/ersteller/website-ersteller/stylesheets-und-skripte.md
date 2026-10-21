@@ -97,7 +97,7 @@ Dateinamen erledigt das bereits.
 
 Die mitgelieferte Policy erlaubt, wenn Sie sie für eine Website einschalten, nur Skript- und Stylesheet-Dateien der
 Website selbst (`script-src 'self'`, `style-src 'self'`): kein Inline-Code in `<script>`, keine Attribute `on...=`,
-kein `style=""` ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Schreiben Sie die Website
+kein `style=""` ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)). Schreiben Sie die Website
 von Anfang an so:
 
 | Statt | Schreiben Sie |
@@ -118,8 +118,8 @@ von Anfang an so:
 ## Verwandte Seiten
 
 - [Das Pagelayout](das-pagelayout.md)
-- [ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md)
-- [jQuery 4 und die Entfernung von YUI](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [ezjscore](../../../funktionen/6.0/erweiterungen/ezjscore.md)
+- [jQuery 4 und die Entfernung von YUI](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
 - [Content Security Policy für Anwendungen](../anwendungsentwickler/content-security-policy.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

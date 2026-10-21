@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller und Projektverantwortliche, die di
 oder einer gesetzgebenden Versammlung entwerfen. Die genannten Klassen und Datentypen gibt es in Exponential
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md), `kernel/classes/datatypes/`, die genannten
 Erweiterungen); der Klasseneditor ist unter
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) beschrieben.
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) beschrieben.
 
 ## Inhalt
 
@@ -112,13 +112,13 @@ Sitting ──< Bill (on the agenda) ──< Vote record >── Member (sponsor
 
 Umgekehrte Beziehungen beantworten „Wo erscheint das?“ (der Reiter **Verknüpfungen** eines Objekts). Prüfen Sie sie,
 bevor Sie ein Mitglied oder einen Gesetzentwurf entfernen
-([Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md#reverse-relations)).
+([Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md#rückwärtsrelationen)).
 
 ## Verwandte Seiten
 
 - [Parlamente](README.md)
 - [Tagesordnungen, Gesetzentwürfe und Abstimmungsergebnisse](tagesordnungen-gesetzentwuerfe-und-abstimmungsergebnisse.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

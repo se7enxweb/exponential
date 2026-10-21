@@ -64,7 +64,7 @@ Nach `package/export_extension` wird gefragt, wenn eine Erweiterung in der Admin
 `package.ini [ExtensionExportSettings] RequirePolicy=enabled` (der Standard) gilt. Unabhängig von Rollen muss die Erweiterung auch in
 `AllowedExtensions[]` stehen (standardmäßig leer: keine), und eine Erweiterung mit geheimen Werten oder Schlüsselmaterial wird immer
 abgewiesen. Die Kommandozeile läuft ohne Benutzer, und nach der Richtlinie wird dort nicht gefragt
-([Eine Erweiterung als Paket exportieren](../../../../eng-us/help/designers/extensions/extension-export-package.md)).
+([Eine Erweiterung als Paket exportieren](../../designer/erweiterungen/eine-erweiterung-als-paket-exportieren.md)).
 
 ## Das Modul update (ezupdate)
 
@@ -102,7 +102,7 @@ machen.
 
 - [Pakete in der Administration](README.md)
 - [Pakete, Abschnitt 10](../../../anleitungen/pakete.md#10-berechtigungen)
-- [ezupdate: Updates und Pakete in der Administration](../../../../eng-us/features/6.0/extensions/ezupdate.md)
+- [ezupdate: Updates und Pakete in der Administration](../../../funktionen/6.0/erweiterungen/ezupdate.md)
 - [Der Paketassistent](der-paketassistent.md)
 - [Pakettypen](../grundlagen/pakettypen.md)
 - [Seitenpakete: hier beginnen](../README.md)

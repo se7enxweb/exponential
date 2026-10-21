@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) und
-[Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md).
+Quellen: [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) und
+[Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md).
 
 1. **Die Übersichtstabelle** (8 Minuten). Zeigen Sie sie am Projektor:
 
@@ -88,13 +88,13 @@ erhalten.
 
 ## Praktische Übung
 
-Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
+Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md).
 
 1. Lesen Sie die Tabelle „Zusammenfassung“ und schreiben Sie die vier Einstufungen auf eine Karte.
 2. Wählen Sie im Abschnitt zu WCAG drei Zeilen der Tabelle „Wie Exponential die Kriterien erfüllt“ und notieren Sie zu
    jeder den Test, der sie absichert.
 3. Lesen Sie „Bekannte Lücken“ und listen Sie die Lücken auf, die ein öffentliches Theme betreffen.
-4. Öffnen Sie [Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+4. Öffnen Sie [Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
    und übertragen Sie die Tabelle „Was die Template-Autorin oder der Template-Autor bestimmt“ auf Ihr Blatt mit drei
    Spalten (Produkt, Theme, Redakteure).
 5. Ergänzen Sie die Punkte aus „Was Redakteure bestimmen“ in der Spalte der Redakteure.
@@ -125,7 +125,7 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 <details>
 <summary>Antworten</summary>
 
-1. **B.** ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#summary))
+1. **B.** ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#zusammenfassung))
 2. Die Administrationsdesigns admin4 und admin4l.
 3. Die Website-Bauer: Öffentliche Designs sind nicht geprüft, und ihre Barrierefreiheit hängt vom Theme und von den
    Inhalten ab.
@@ -137,11 +137,11 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 
 ## Weiterführende Literatur
 
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): die Aussage des Projekts, mit Belegen und
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md): die Aussage des Projekts, mit Belegen und
   Lücken.
-- [Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md): der
+- [Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md): der
   Anteil des Themes und der Redakteure.
-- [Prüfung der Barrierefreiheit bei jedem Release](../../../../../eng-us/help/designers/lifecycle/accessibility-audit-per-release.md): ein
+- [Prüfung der Barrierefreiheit bei jedem Release](../../../designer/lebenszyklus/barrierefreiheitspruefung-pro-release.md): ein
   Theme über seine ganze Lebensdauer barrierefrei halten.
 
 ## Verwandte Seiten

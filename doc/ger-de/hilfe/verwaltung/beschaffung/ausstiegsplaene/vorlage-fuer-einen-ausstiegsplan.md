@@ -66,7 +66,7 @@ Third-party services:            <analytics, captcha, maps, mail, ...>
 | D6 | Layouts (falls verwendet) | ZIP aus `exp:layouts export` | [Exponential verlassen](../../../../installation/migration/exponential-verlassen.md) |
 | D7 | Formulareingaben | CSV aus `ext:bccie:export` | ebenda |
 | D8 | Einwilligungsnachweise | CSV aus `exp:mailconsent` | ebenda |
-| D9 | Audit-Protokoll | Audit-Verzeichnis mit signierten Manifesten; Export mit `exp:audit` | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| D9 | Audit-Protokoll | Audit-Verzeichnis mit signierten Manifesten; Export mit `exp:audit` | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | D10 | Adressliste für Umleitungen | aus dem Archiv plus `ezurlalias_ml`, `ezurlwildcard` | [URL-Umleitungen nach dem Ausstieg](url-umleitungen-nach-dem-ausstieg.md) |
 | D11 | Dokumentation | Inhaltsmodell, Einstellungen, Integrationen, Betriebshandbücher | [Übergabe der Dokumentation](uebergabe-der-dokumentation.md) |
 | D12 | Versionsvermerk | Exponential, PHP, Datenbank, Engine, Erweiterungen | [Kunden-Offboarding](../../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md) |

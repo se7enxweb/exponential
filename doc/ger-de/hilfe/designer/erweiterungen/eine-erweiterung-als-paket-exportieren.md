@@ -17,7 +17,7 @@ eine Installation, die Composer nicht verwendet.
 `settings/package.ini [ExtensionExportSettings]` sagt: Das Exportieren einer Erweiterung als Paket (Setup > Extensions,
 der Paket-Assistent, ezpm.php add) ist standardmäßig ausgeschaltet. Bis ein Administrator es einschaltet, listet der
 Assistent jede Erweiterung auf, aber keine lässt sich wählen, jeweils mit dem Grund. Wie Sie es einschalten, beschreibt
-[Erweiterungsliste und Downloads](../../../../eng-us/features/6.0/extension-list-and-downloads.md); tun Sie es auf einer
+[Erweiterungsliste und Downloads](../../../funktionen/6.0/extension-liste-und-downloads.md); tun Sie es auf einer
 Entwicklungsinstallation.
 
 Jeder Weg des Exportierens verweigert außerdem eine Erweiterung, die geheime Werte oder Schlüsselmaterial enthält

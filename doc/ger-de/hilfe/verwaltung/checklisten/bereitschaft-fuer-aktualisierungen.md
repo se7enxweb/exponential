@@ -46,7 +46,7 @@ Aktualisierung innerhalb der Versionslinie 6.0.x plant. Die Schritte stammen aus
 
 - [ ] **Setup > Systeminformationen** zeigt die neue Version und keine offenen Zustandsprüfungen.
 - [ ] Wichtige Abläufe getestet: Startseite, Suche, ein Formular, Anmeldung, Veröffentlichen eines Artikels, ein Download.
-- [ ] **Setup > Logdateien** auf neue Fehler geprüft ([Protokollanzeige](../../../../eng-us/features/6.0/log-viewer.md)).
+- [ ] **Setup > Logdateien** auf neue Fehler geprüft ([Protokollanzeige](../../../funktionen/6.0/log-betrachter.md)).
 - [ ] Stichprobe zur Barrierefreiheit an den Haupttemplates.
 - [ ] Der Redaktion mitgeteilt, was sich in der Administration geändert hat; Schulungsmaterial aktualisiert.
 - [ ] Die Aktualisierung festgehalten: von, auf, Datum, wer, Probleme.
@@ -54,17 +54,17 @@ Aktualisierung innerhalb der Versionslinie 6.0.x plant. Die Schritte stammen aus
 ## Aktualisierungen von älteren Versionslinien
 
 Eine Website auf 5.x, 4.x oder den Symfony-Plattformen wird nicht unterstützt und braucht ein Migrationsprojekt, keine
-routinemäßige Aktualisierung ([Unterstützte Versionen](../../../../eng-us/help/government/procurement/lifecycle/supported-versions.md)):
+routinemäßige Aktualisierung ([Unterstützte Versionen](../beschaffung/lebenszyklus/unterstuetzte-versionen.md)):
 
 - [ ] Lesen Sie [14. Migration von der Versionslinie 4.x](../../../installation/14-migration-von-4x.md), [15. Migration vom Legacy-Stack 5.x](../../../installation/15-migration-von-5x-legacy.md) oder [16. Migration von eZ Platform und Ibexa](../../../installation/16-migration-von-ez-platform-und-ibexa.md).
 - [ ] Verwenden Sie die [Checkliste zur Migration](../../../installation/migration/checkliste.md).
-- [ ] Budgetieren Sie es als Projekt ([Aktualisierungen im Haushalt planen](../../../../eng-us/help/government/procurement/lifecycle/planning-upgrades-in-the-budget.md)).
+- [ ] Budgetieren Sie es als Projekt ([Aktualisierungen im Haushalt planen](../beschaffung/lebenszyklus/upgrades-im-haushalt-planen.md)).
 
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
 - [Kundenwebsites aktualisieren (für Hoster)](../../hosting/betrieb/kunden-websites-aktualisieren.md)
-- [Updates und Aktualisierungen (für Websiteersteller)](../../../../eng-us/help/creators/website-creators/updates-and-upgrades.md)
+- [Updates und Aktualisierungen (für Websiteersteller)](../../ersteller/website-ersteller/updates-und-aktualisierungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

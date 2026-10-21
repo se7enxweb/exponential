@@ -18,7 +18,7 @@ Sie sie weitergeben.
 Diese Seite erklärt in einfachen Worten, was Ihnen das erlaubt. Sie ist eine Zusammenfassung, keine Rechtsberatung:
 Maßgeblich ist der Text der Lizenz. Lesen Sie ihn in der Hilfe ([GNU Free Documentation License 1.3](../../eng-us/LICENSE-GFDL-1.3.txt))
 oder im Web unter <https://www.gnu.org/licenses/fdl-1.3.html>. Wer das Urheberrecht hält und welche älteren Seiten
-andere Bedingungen behalten, steht unter [Die Lizenz dieser Dokumentation](../../eng-us/README-LICENSE.md).
+andere Bedingungen behalten, steht unter [Die Lizenz dieser Dokumentation](../README-LIZENZ.md).
 
 ## Was Sie tun dürfen
 
@@ -109,4 +109,4 @@ erklärt, wie diese Rechte zurückkehren, sobald das Problem behoben ist.
 
 Einige ältere Dateien in `doc/`, übernommen aus der Dokumentation der ursprünglichen Software von eZ Systems, stehen
 nicht unter dieser Lizenz; die Hilfe zeigt auf diesen Seiten ihren eigenen Hinweis.
-[Die Lizenz dieser Dokumentation](../../eng-us/README-LICENSE.md) listet sie auf.
+[Die Lizenz dieser Dokumentation](../README-LIZENZ.md) listet sie auf.

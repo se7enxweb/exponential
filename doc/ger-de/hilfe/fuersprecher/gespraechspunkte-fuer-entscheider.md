@@ -42,7 +42,7 @@ eines Gleichgestellten, mit Quellen. Für Material, das sich an Käufer richtet,
 | „Keine Bindung an ein Hosting: sechs Datenbanken, viele Betriebssysteme, dokumentierte Umzüge zwischen Datenbanken.“ | [Exponential sachlich vergleichen, Keine Bindung](../geschaeft/exponential-sachlich-vergleichen.md#keine-herstellerbindung-punkt-für-punkt) |
 | „Sicherheit hat einen schriftlichen Prozess: vertrauliche Meldungen, eine erste Antwort innerhalb eines Werktags, Korrekturen im nächsten Release.“ | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 | „Support kommt aus dokumentierten Zusagen, der Community und bezahlten Anbietern Ihrer Wahl.“ | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
-| „Ihre Mitarbeitenden bekommen Hilfe im Werkzeug selbst: Dokumentation und kontextbezogene Hilfe in der Administration.“ | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| „Ihre Mitarbeitenden bekommen Hilfe im Werkzeug selbst: Dokumentation und kontextbezogene Hilfe in der Administration.“ | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | „Für die Software gibt es keine Lizenzgebühr. Ihre Kosten sind Menschen, Hosting und Dienstleistungen.“ | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE); die Kosten hängen von Ihrem Projekt ab |
 | „Sie können helfen, es gesund zu halten: die Foundation oder 7x sponsern und Zeit einplanen, um Korrekturen zurückzugeben.“ | [Wie Sie unterstützen oder beitreten](../wer-ist-die-exponential-foundation.md#unterstützen-oder-mitmachen), [Schätzen und Abgrenzen](../fuehrung/schaetzen-und-abgrenzen-mit-erweiterungen.md) |
 

@@ -101,7 +101,7 @@ umgeleitet wird. Enden Sie mit einer Zusammenfassungszeile und einem Exit-Code: 
 
 - [Konsolenbefehle](konsolenbefehle.md)
 - [Ein Cronjob-Skript schreiben](einen-cronjob-teil-schreiben.md)
-- [Muster Command](../../../../eng-us/standards/patterns/command.md)
+- [Muster Command](../../../standards/muster/befehl.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

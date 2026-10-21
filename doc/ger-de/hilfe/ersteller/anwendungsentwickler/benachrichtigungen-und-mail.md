@@ -74,8 +74,8 @@ anmelden und versendet im Cronjob-Teil `frequent`
 
 ## Verwandte Seiten
 
-- [Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)
-- [Benachrichtigungen](../../../../eng-us/features/6.0/notifications.md)
+- [Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)
+- [Benachrichtigungen](../../../funktionen/6.0/benachrichtigungen.md)
 - [Warteschlangen mit expqueue](warteschlangen-mit-expqueue.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

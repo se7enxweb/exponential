@@ -42,7 +42,7 @@ Verzeichnis je Anbieter (`7x` ...). Seitenpakete, die der Installer verwendet, s
 Export von Inhaltsklassen, Export von Erweiterungen, Seitenstil. Sie geben die Bestandteile, den Namen, die
 Zusammenfassung, die Version, die Lizenz und den Betreuer an sowie das Format (klassisches XML oder JSON); der letzte
 Schritt zeigt alles noch einmal zur Prüfung, bevor in `local` geschrieben wird
-([Der Paket-Assistent](../../../../eng-us/features/6.0/package-wizard.md)).
+([Der Paket-Assistent](../../../funktionen/6.0/paketassistent.md)).
 
 ## Auf der Kommandozeile
 
@@ -75,7 +75,7 @@ zuerst auf Staging. Pakete können Inhalte auch als Entwürfe installieren
 
 - [Inhaltsklassen für Websites](../website-ersteller/inhaltsklassen-fuer-websites.md)
 - [Als Erweiterung paketieren](als-erweiterung-paketieren.md)
-- [Kommandozeile des Paketmanagers ezpm](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md)
+- [Kommandozeile des Paketmanagers ezpm](../../../funktionen/6.0/ezpm-paketmanager-cli.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

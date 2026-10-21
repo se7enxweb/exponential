@@ -17,7 +17,7 @@ Diese Aufgabe richtet sich an Administratoren. Hintergrund:
 
 - Die Richtlinie `content/translations` (Administratoren haben sie).
 - Der Locale-Code, zum Beispiel `cym-GB` für Walisisch; prüfen Sie, dass es ihn gibt, in
-  [Sprachen in Exponential](../../../../../eng-us/languages.md#3-every-locale).
+  [Sprachen in Exponential](../../../../sprachen.md#3-alle-locales).
 
 ## Schritte
 

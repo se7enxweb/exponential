@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren vor einem Upgrade, einer Migration oder jeder Änderung, die die Datenbank
 berührt. Am Ende haben Sie einen Datenbank-Dump und ein Dateiarchiv vom selben Zeitpunkt, und das ist Ihr Weg zurück.
-Hintergrund: [Was zu sichern ist](../../../../../eng-us/help/government/operations/backups-and-recovery/what-to-back-up.md).
+Hintergrund: [Was zu sichern ist](../../betrieb/datensicherung-und-wiederherstellung/was-gesichert-werden-muss.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -39,7 +39,7 @@ Hintergrund: [Was zu sichern ist](../../../../../eng-us/help/government/operatio
    | PostgreSQL | `pg_dump -U USER DATABASE > backup-before-change.sql` |
    | SQLite | `sqlite3 var/storage/sqlite3/exponential.db ".backup 'backup-before-change.db'"` (Ihr Dateiname) |
 
-   Andere Engines: [Sicherungen je Datenbank-Engine](../../../../../eng-us/help/government/operations/backups-and-recovery/backups-per-database-engine.md).
+   Andere Engines: [Sicherungen je Datenbank-Engine](../../betrieb/datensicherung-und-wiederherstellung/datensicherungen-je-datenbank-engine.md).
 3. Archivieren Sie die Dateien:
 
    ```bash
@@ -50,7 +50,7 @@ Hintergrund: [Was zu sichern ist](../../../../../eng-us/help/government/operatio
 
 Auf MySQL- oder MariaDB-Sites mit der Erweiterung git_manager ist **Setup > Backup**, **Create full site backup** eine
 Alternative aus dem Browser; ihre Archive bleiben auf demselben Server, bis Sie sie verschieben
-([Sicherungen aus der Administration mit git_manager](../../../../../eng-us/help/government/operations/backups-and-recovery/backups-from-the-admin-with-git-manager.md)).
+([Sicherungen aus der Administration mit git_manager](../../betrieb/datensicherung-und-wiederherstellung/datensicherungen-aus-der-administration-mit-git-manager.md)).
 
 ## Prüfen, ob es funktioniert hat
 
@@ -62,14 +62,14 @@ Alternative aus dem Browser; ihre Archive bleiben auf demselben Server, bis Sie 
 ## Fallstricke
 
 - Die Audit-Schlüssel stehen in `settings/override/audit.ini.append.php`: Das Archiv oben enthält sie, also schützen Sie
-  es wie ein Geheimnis ([Schlüssel und Geheimnisse in Sicherungen](../../../../../eng-us/help/government/operations/backups-and-recovery/keys-and-secrets-in-backups.md)).
+  es wie ein Geheimnis ([Schlüssel und Geheimnisse in Sicherungen](../../betrieb/datensicherung-und-wiederherstellung/schluessel-und-geheimnisse-in-datensicherungen.md)).
 - Kopieren Sie niemals eine SQLite-Datei, während die Site läuft; verwenden Sie `.backup`.
 - Eine Sicherung, die Sie nie wiederhergestellt haben, ist eine Hoffnung:
   [Die Sicherung der letzten Nacht auf einem Testserver wiederherstellen](die-sicherung-der-letzten-nacht-auf-einem-testserver-wiederherstellen.md).
 
 ## Verwandte Seiten
 - [Eine SQLite-Site sicher sichern](eine-sqlite-site-sicher-sichern.md)
-- [Planung des Zurückrollens](../../../../../eng-us/help/government/operations/upgrades-and-change/rollback-planning.md)
+- [Planung des Zurückrollens](../../betrieb/aktualisierungen-und-aenderungen/planung-der-ruecknahme.md)
 - [Aktualisieren, Schritt 1](../../../../anleitungen/aktualisieren.md#schritt-1-immer-eine-datensicherung)
 - [Sicherungen: was zu sichern ist (Hosting)](../../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

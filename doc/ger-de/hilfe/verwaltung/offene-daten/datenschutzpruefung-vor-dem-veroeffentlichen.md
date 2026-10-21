@@ -66,7 +66,7 @@ solche Eigenschaften (CSV hat keine). Exponential speichert die Datei unverände
 | Der Eigentümer des Objekts | Objektinformationen | hängt von Ihren Templates ab; geben Sie ihn auf öffentlichen Seiten nicht aus |
 
 Wählen Sie Dateinamen ohne personenbezogene Daten, weil sie in der Download-Adresse erscheinen
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
 
 ## Wenn personenbezogene Daten veröffentlicht wurden
 
@@ -77,12 +77,12 @@ Wählen Sie Dateinamen ohne personenbezogene Daten, weil sie in der Download-Adr
 3. Informieren Sie Ihre Datenschutzbeauftragten; sie entscheiden über Meldepflichten.
 4. Finden Sie heraus, wohin die Daten gegangen sind: Die Anfrageprotokolle und, wenn das Aufzeichnen von Lesezugriffen
    eingeschaltet ist, der Kanal `read` des Prüfprotokolls können Downloads zeigen
-   ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md), [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+   ([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md), [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 5. Veröffentlichen Sie die berichtigte Datei und einen Hinweis auf der Datensatzseite.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Datensätze versionieren und aktualisieren](datensaetze-versionieren-und-aktualisieren.md)
 - [Wer Datensätze veröffentlichen darf](wer-datensaetze-veroeffentlichen-darf.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Site-Ersteller, deren Site der eingebauten Suche entwächst. Die
 Erweiterung `ezfind` verbindet Exponential mit einem Apache-Solr-Server; Solr ist optional, und nichts ändert sich,
 bis Sie es einschalten
-([Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)).
+([Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)).
 
 ## Inhalt
 
@@ -49,7 +49,7 @@ Suchmaschine.
 5. Leeren Sie den INI-Cache und bauen Sie den Index auf: `php bin/php/updatesearchindex.php --clean`.
 
 `exp:solr` hat die Aktionen `status`, `start`, `stop`, `restart` und `ping`
-([Befehle zur Serversteuerung](../../../../../eng-us/features/6.0/web-server-and-solr-commands.md)).
+([Befehle zur Serversteuerung](../../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md)).
 
 ## Wissenswerte Einstellungen
 
@@ -60,7 +60,7 @@ Suchmaschine.
 
 ## Verwandte Seiten
 
-- [Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)
+- [Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)
 - [Such-Backends beim Hosting](../../../hosting/grundlagen/such-backends.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -50,13 +50,13 @@ ausgeliefert sein, bevor die Einstellung, die sie verwendet, live geht.
   offizielle öffentliche PHP-Code-Präfix von 7x (ein Klassenname kann nicht mit einer Ziffer beginnen, daher kann "7x"
   keines sein), und 7x verwendet `exp` bewusst für Arbeit, die es dem Exponential-Projekt und der Exponential
   Foundation überträgt. Verwenden Sie `exp` nur für Code, den Sie zum Projekt beitragen. Siehe
-  [Benennungspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md).
+  [Benennungspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md).
 - Eine Klasse pro Datei; Dateiname in Kleinbuchstaben: `classes/acmedemolist.php`.
 - Verwenden Sie für eine neue Klasse nie einen Kernel-Namen (`eZ...`) wieder; benennen Sie nie einen bestehenden
   Kernel-Bezeichner um.
 
-Siehe [Schichten und Benennung](../../../../eng-us/standards/architecture/layering-and-naming.md) und
-[Coding-Standards](../../../../eng-us/standards/coding-standards.md).
+Siehe [Schichten und Benennung](../../../standards/architektur/schichten-und-benennung.md) und
+[Coding-Standards](../../../standards/programmierstandards.md).
 
 ## Klassen mit Namensraum
 

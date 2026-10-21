@@ -59,8 +59,8 @@ Verwenden Sie für `--siteaccess` den Namen des öffentlichen Siteaccess Ihrer S
 
 ## Verwandte Seiten
 - [Eine PHP-Änderung ausrollen](eine-php-aenderung-ausrollen.md)
-- [Caches nach Änderungen vorwärmen](../../../../../eng-us/help/government/operations/availability/cache-warming-after-changes.md)
-- [Die Ansicht Seiten vorladen](../../../../../eng-us/features/6.0/preload-sites-view.md)
+- [Caches nach Änderungen vorwärmen](../../betrieb/verfuegbarkeit/caches-nach-aenderungen-vorwaermen.md)
+- [Die Ansicht Seiten vorladen](../../../../funktionen/6.0/ansicht-websites-vorladen.md)
 - [Caches leeren und vorwärmen (Hosting)](../../../hosting/leistung/caches-leeren-und-vorwaermen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

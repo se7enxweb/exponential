@@ -13,7 +13,7 @@ type: help
 Diese Seite ist für Designer, deren Websites den Layout-Editor verwenden, den Page Builder, in dem Redakteure Seiten aus Blöcken
 zusammenstellen. Redakteure entscheiden, **was** auf eine Seite kommt; Designer entscheiden, **wie jeder Block aussieht**. Die Seite
 erklärt die Begriffe, die Kette des Renderns und wo Ihre Templates ansetzen. Die Seite der Redakteure:
-[Der Layout-Editor](../../layout-editor.md); die vollständige Referenz: [Exponential Layouts](../../../../eng-us/bc/6.0/LAYOUTS.md).
+[Der Layout-Editor](../../layout-editor.md); die vollständige Referenz: [Exponential Layouts](../../../bc/6.0/layouts.md).
 
 ## Inhalt
 

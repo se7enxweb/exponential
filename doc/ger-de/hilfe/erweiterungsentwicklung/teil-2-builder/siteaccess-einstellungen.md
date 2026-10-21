@@ -42,7 +42,7 @@ Die Regeln stehen in `site.ini [SiteAccessSettings]`:
 
 Mit URI-Matching verwendet `https://example.com/ger/about` den Siteaccess `ger` und zeigt `/about`. Mit Host-Matching
 hat jeder Siteaccess seinen eigenen Hostnamen. Jede Regel und ihr Werkzeug zur Fehlersuche sind in
-[Siteaccess-Zuordnung nach Host und Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md) und beim
+[Siteaccess-Zuordnung nach Host und Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md) und beim
 Befehl für die Anfrageregeln beschrieben:
 
 ```bash
@@ -123,8 +123,8 @@ In einem Template steht der aktuelle Siteaccess im Pagelayout als `$access_type.
 
 - Zurück: [Einstellungsebenen und die Reihenfolge, in der sie gewinnen](einstellungsebenen-und-ihre-reihenfolge.md)
 - Weiter: [Einstellungen in einer Erweiterung](erweiterungseinstellungen-fuer-builder.md)
-- [Siteaccess-Zuordnung nach Host und Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)
-- [Anfrageregeln](../../../../eng-us/features/6.0/request-rules.md)
+- [Siteaccess-Zuordnung nach Host und Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)
+- [Anfrageregeln](../../../funktionen/6.0/anfrageregeln.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

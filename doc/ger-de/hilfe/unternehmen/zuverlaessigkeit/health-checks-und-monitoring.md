@@ -133,7 +133,7 @@ Eine Prüfung, die niemand liest, ist kein Monitoring. Legen Sie im Voraus fest:
   ([Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md)).
 - **Wohin Alarme gehen**: Mail, ein Chat-Kanal, ein Telefon. Das Prüfprotokoll verschickt außerdem eigene Alarm-Mails bei
   Ereignissen wie Brute-Force-Anmeldungen oder der Vergabe einer Administratorrolle; prüfen Sie die Empfänger mit
-  `php bin/php/console exp:audit alerts recipients` ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+  `php bin/php/console exp:audit alerts recipients` ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)).
 - **Was kein Alarm ist**: ein geplantes Wartungsfenster, eine einzelne langsame Anfrage. Zu viele Fehlalarme gewöhnen
   Menschen daran, echte zu übersehen.
 

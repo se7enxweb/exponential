@@ -81,7 +81,7 @@ darauf verlassen ([8.6](../../../installation/08-die-website-ausliefern.md#86-ng
 `open_basedir`; die Seite Cronjobs braucht `proc_open`, `exec` und `posix_kill` für ihre Funktionen zum Starten, zur Crontab und zum
 Anhalten ([Cronjobs, Bevor Sie beginnen](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen)); ezupdate sucht Composer zuerst unterhalb
 des Wurzelverzeichnisses der Installation, weil `open_basedir` Systemordner verbergen kann
-([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 
 ## Ein Testplan
 

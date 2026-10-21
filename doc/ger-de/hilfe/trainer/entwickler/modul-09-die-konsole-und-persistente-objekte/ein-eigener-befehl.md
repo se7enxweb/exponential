@@ -164,7 +164,7 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 
 - [Exponential Console](../../../../bc/6.0/konsole.md).
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md).
-- [Inhaltsjobs](../../../../../eng-us/features/6.0/content-jobs.md): lange Operationen in Stapeln.
+- [Inhaltsjobs](../../../../funktionen/6.0/inhaltsauftraege.md): lange Operationen in Stapeln.
 
 ## Verwandte Seiten
 

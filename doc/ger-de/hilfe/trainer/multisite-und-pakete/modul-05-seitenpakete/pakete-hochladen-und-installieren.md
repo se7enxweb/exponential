@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Pakete, 6. Hochladen und 7. Installieren](../../../../anleitungen/pakete.md#6-ein-paket-hochladen) und
-[Ein Paket-Installer, der große Pakete übersteht](../../../../../eng-us/features/6.0/package-installer-batching.md).
+[Ein Paket-Installer, der große Pakete übersteht](../../../../funktionen/6.0/paketinstallation-in-teilschritten.md).
 
 1. **Das Hochladen** (4 Minuten). **Neues Paket importieren** in der Liste öffnet **Paket hochladen**. Die Seite listet
    **Was zuerst geprüft wird**: ein gzip-komprimiertes tar mit einem erlaubten Namen; höchstens 50000 Einträge, die
@@ -151,16 +151,16 @@ eigenen Installation oder auf einer zweiten, mit `exp:install` in einem anderen 
 ## Weiterführende Informationen
 
 - [Pakete: was sie enthalten, wo sie liegen und wie man sicher mit ihnen umgeht](../../../../anleitungen/pakete.md).
-- [Ein Paket-Installer, der große Pakete übersteht](../../../../../eng-us/features/6.0/package-installer-batching.md).
-- [Das JSON-Paketformat](../../../../../eng-us/bc/6.0/package-json-format.md): als Entwürfe installieren.
-- [Ihr Paket auf einer Testwebsite installieren](../../../../../eng-us/help/designers/extensions/installing-your-package-on-a-test-site.md).
+- [Ein Paket-Installer, der große Pakete übersteht](../../../../funktionen/6.0/paketinstallation-in-teilschritten.md).
+- [Das JSON-Paketformat](../../../../bc/6.0/package-json-format.md): als Entwürfe installieren.
+- [Ihr Paket auf einer Testwebsite installieren](../../../designer/erweiterungen/ihr-paket-auf-einer-testseite-installieren.md).
 - [Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md).
 
 ## Verwandte Seiten
 
 - [Modul 5: Seitenpakete](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren und Sicherheitsbeauftragte, einmal beim Go-live und nach Personalwechseln. Am Ende
 erreicht jede Warnung die Menschen, die darauf reagieren müssen. Hintergrund:
-[Audit-Warnungen](../../../../../eng-us/help/government/operations/monitoring/audit-alerts.md).
+[Audit-Warnungen](../../betrieb/ueberwachung/audit-warnungen.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -69,8 +69,8 @@ Personalwechsel die Warnungen nicht unterbrechen. Leeren Sie danach den INI-Cach
 
 ## Verwandte Seiten
 - [Das Audit-Protokoll verifizieren](das-audit-protokoll-verifizieren.md)
-- [Audit-Warnungen](../../../../../eng-us/help/government/operations/monitoring/audit-alerts.md)
-- [Probleme mit E-Mails](../../../../../eng-us/help/government/operations/incidents/mail-problems.md)
+- [Audit-Warnungen](../../betrieb/ueberwachung/audit-warnungen.md)
+- [Probleme mit E-Mails](../../betrieb/vorfaelle/probleme-mit-e-mails.md)
 - [Anleitung zum Audit, Abschnitt 4.5](../../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

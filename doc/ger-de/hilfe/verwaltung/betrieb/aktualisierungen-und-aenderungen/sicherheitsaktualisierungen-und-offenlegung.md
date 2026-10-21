@@ -47,14 +47,14 @@ Erweiterungen folgen in ihren eigenen Repositorys derselben Regel.
 | Quelle | Was sie Ihnen sagt |
 |---|---|
 | Der Changelog der Linie ([6.0.15](../../../../../changelogs/6.0/6.0.15.md)) | jede Änderung, einschließlich sicherheitsrelevanter Änderungen |
-| [Sicherheitsstandard](../../../../../eng-us/standards/security.md) | die Zuordnung zu OWASP und die bekannten Lücken |
+| [Sicherheitsstandard](../../../../standards/sicherheit.md) | die Zuordnung zu OWASP und die bekannten Lücken |
 | **Setup > Updates und Pakete** (ezupdate), **Nach Updates suchen** | welche installierten Pakete neuere Versionen haben (`composer outdated`); ändert nichts |
 | **Setup > Upgrade-Prüfung** | ob Dateien von dem Release abweichen, das Sie betreiben |
 | Die eigenen Sicherheitshinweise Ihres Betriebssystems und von PHP | die Plattform unter Exponential |
 
 Der Sicherheitsstandard hält fest, dass die CI des Projekts keine Prüfung der Abhängigkeiten auf Schwachstellen
 ausführt; verlangt Ihre Richtlinie eine solche, führen Sie Ihre eigene aus (zum Beispiel `composer audit` in Ihrer
-Pipeline) ([Sicherheitsstandard, „Bekannte Lücken“](../../../../../eng-us/standards/security.md#known-gaps)).
+Pipeline) ([Sicherheitsstandard, „Bekannte Lücken“](../../../../standards/sicherheit.md#bekannte-lücken)).
 
 Einige öffentliche Stellen haben gesetzliche Pflichten zum Umgang mit Schwachstellen und zur Meldung von Vorfällen,
 zum Beispiel nach der [NIS2-Richtlinie](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) der EU, soweit sie für sie gilt;

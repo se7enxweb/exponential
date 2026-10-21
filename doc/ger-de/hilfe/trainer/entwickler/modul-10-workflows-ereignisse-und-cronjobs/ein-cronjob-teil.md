@@ -144,9 +144,9 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`, mit der Tabelle `
 ## Weiterführende Literatur
 
 - [Cronjobs: ausführen, planen und verfolgen](../../../../anleitungen/cronjobs.md).
-- [Die Cronjob-Konsole](../../../../../eng-us/features/6.0/cronjobs-console.md) und
-  [Cronjobs pausieren](../../../../../eng-us/features/6.0/cronjob-pause.md).
-- [Content-Jobs](../../../../../eng-us/features/6.0/content-jobs.md): große Aufgaben in Stapeln.
+- [Die Cronjob-Konsole](../../../../funktionen/6.0/cronjobs-in-der-konsole.md) und
+  [Cronjobs pausieren](../../../../funktionen/6.0/cronjobs-pausieren.md).
+- [Content-Jobs](../../../../funktionen/6.0/inhaltsauftraege.md): große Aufgaben in Stapeln.
 
 ## Verwandte Seiten
 

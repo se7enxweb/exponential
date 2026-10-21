@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [explayouts_ui](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md#find-your-way) und
+Quellen: [explayouts_ui](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md#sich-zurechtfinden) und
 [Der Layout-Editor](../../../layout-editor.md#ein-layout-finden).
 
 1. **Der Reiter** (2 Minuten). **Layouts** im oberen Menü (`/explayouts_ui/dashboard`), angezeigt für Rollen mit der
@@ -65,7 +65,7 @@ Quellen: [explayouts_ui](../../../../../eng-us/features/6.0/extensions/explayout
 formularbasierten Bildschirme enthalten die Listen, die Zuordnungen und die Verwaltungswerkzeuge.
 
 **Was zeigt die Vorschau?** Das Layout, dargestellt mit einem repräsentativen Inhaltselement, sodass inhaltsgesteuerte
-Blöcke echte Inhalte zeigen ([explayouts_ui](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md#preview-a-layout)).
+Blöcke echte Inhalte zeigen ([explayouts_ui](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md#ein-layout-in-der-vorschau-ansehen)).
 
 **Warum fehlt der Reiter?** Der Rolle fehlen die Layouts-Richtlinien (Lektion 1.3), oder Sie sind im
 Editor-Siteaccess.
@@ -118,25 +118,25 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto. In diese
 <summary>Antworten</summary>
 
 1. **Layouts**, **Zonen**, **Blöcke**, **Regeln** und **Collections**.
-2. **B.** ([explayouts_ui](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md#map-a-layout-to-a-page)).
+2. **B.** ([explayouts_ui](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md#ein-layout-einer-seite-zuordnen)).
 3. Der visuelle Editor öffnet das Layout, und Sie arbeiten an einem Entwurf davon.
 4. Mit **Vorschau**.
 5. **Falsch.** Seine Layouts-Module antworten dort mit „nicht gefunden“
-   ([Das neue Aussehen des Einrichtungsassistenten und der Editor-Siteaccess](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md#the-three-siteaccesses)).
+   ([Das neue Aussehen des Einrichtungsassistenten und der Editor-Siteaccess](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md#die-drei-siteaccesses)).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [explayouts_ui](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md): jeder Bildschirm des Reiters Layouts.
-- [explayouts_ui_api](../../../../../eng-us/features/6.0/extensions/explayouts_ui_api.md): der visuelle Editor und seine API.
+- [explayouts_ui](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md): jeder Bildschirm des Reiters Layouts.
+- [explayouts_ui_api](../../../../funktionen/6.0/erweiterungen/explayouts_ui_api.md): der visuelle Editor und seine API.
 - [Der Layout-Editor](../../../layout-editor.md): ein Layout finden.
 
 ## Verwandte Seiten
 
 - [Modul 1: Exponential Layouts kennenlernen](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

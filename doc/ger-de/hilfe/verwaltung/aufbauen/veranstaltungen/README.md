@@ -45,7 +45,7 @@ Buchungssystem für Veranstaltungen voraus: Exponential enthält keines.
 Nach oben: [Eine Site für den öffentlichen Sektor aufbauen](../README.md), der Index aller Anleitungen zum Aufbauen,
 und [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md), der Anfang des Bereichs für Behörden. Bibliotheken haben
 eine eigene Seite zu Veranstaltungen:
-[Veranstaltungen und Kataloge verlinken statt bauen](../../../../../eng-us/help/government/levels/public-libraries/events-and-linked-catalogs.md).
+[Veranstaltungen und Kataloge verlinken statt bauen](../../ebenen/oeffentliche-bibliotheken/veranstaltungen-und-verlinkte-kataloge.md).
 
 ## Was mitgeliefert wird und was nicht
 

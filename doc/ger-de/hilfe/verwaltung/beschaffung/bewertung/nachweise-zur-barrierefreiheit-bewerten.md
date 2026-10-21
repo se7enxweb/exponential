@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Fachkraft für Barrierefreiheit in einem Bewertu
 Barrierefreiheit der **Software** (die Administration, die die Redaktion verwendet) von der Barrierefreiheit der
 **Website** (die öffentlichen Seiten, die Bürgerinnen und Bürger nutzen), gibt an, was die Dokumentation von Exponential
 für beide belegt, und listet die Tests auf, die Sie selbst durchführen können. Die Fakten stammen aus
-[Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md); diese Seite wertet deren Statusangaben nie auf.
+[Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md); diese Seite wertet deren Statusangaben nie auf.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -55,7 +55,7 @@ festgehalten; axe läuft nicht in der CI.
 
 ## Was nicht belegt ist
 
-Aus den bekannten Lücken der [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md):
+Aus den bekannten Lücken der [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md):
 
 - Designs öffentlicher Websites (standard, base, plain, die Websitepakete und Themes) sind **nicht geprüft**.
 - Die klassische Administration und admin3 sind nicht von den Tests für Kontrast, Landmarks und Formularfehler
@@ -72,8 +72,8 @@ des Produkts. Halten Sie es als nicht belegte Behauptung fest.
 ## Was der Bieter liefern soll
 
 1. Einen Plan zur Barrierefreiheit für das öffentliche Design: die Kriterien von WCAG 2.2 AA, die es anstrebt, und wie
-   es sie testet ([Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md),
-   [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+   es sie testet ([Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md),
+   [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 2. Einen Konformitätsbericht für die gelieferte Website, erstellt mit einer Methode wie
    [WCAG-EM](https://www.w3.org/TR/WCAG-EM/), vor der Abnahme.
 3. Einen Entwurf einer Erklärung zur Barrierefreiheit für die Website, nach dem
@@ -81,7 +81,7 @@ des Produkts. Halten Sie es als nicht belegte Behauptung fest.
 4. Welches Administrationsdesign Ihre Redaktion verwenden wird (admin4 ist das getestete), und jede Erweiterung, die das
    Angebot hinzufügt, mit eigenen Nachweisen zur Barrierefreiheit.
 5. Schulung der Redaktion zu barrierefreien Inhalten
-   ([Editors 201, Qualität und Barrierefreiheit](../../../../../eng-us/help/trainers/editors-201/README.md)).
+   ([Editors 201, Qualität und Barrierefreiheit](../../../trainer/redakteure-201/README.md)).
 
 ## Tests, die Sie selbst durchführen können
 
@@ -105,8 +105,8 @@ des Produkts. Halten Sie es als nicht belegte Behauptung fest.
 ## Verwandte Seiten
 - [Bewertung: Übersicht](README.md)
 - [Beschaffung: Übersicht](../README.md)
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md)
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -153,7 +153,7 @@ Sie die Adresse durch Ihre eigene.
 
 - [Wartungsmodus](../../../../anleitungen/wartungsmodus.md): die vollständige Anleitung, einschließlich Caches und
   Deploys.
-- [Funktionsreferenz Wartungsmodus](../../../../../eng-us/features/6.0/maintenance-mode.md).
+- [Funktionsreferenz Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.md).
 - [Wartungsmodus für Hoster](../../../hosting/betrieb/wartungsmodus.md).
 
 ## Verwandte Seiten

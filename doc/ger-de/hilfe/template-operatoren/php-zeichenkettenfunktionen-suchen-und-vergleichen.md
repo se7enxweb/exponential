@@ -47,7 +47,7 @@ In den Beispielen gibt `choose( 'false', 'true' )` einen Boolean-Wert als Wort a
 ### strlen
 
 PHP `strlen()`: die Länge in **Bytes**. Für Zeichen verwenden Sie [count_chars](zeichenketten-operatoren.md#count_chars).
-Keine Parameter. Gibt eine Ganzzahl zurück. Generierte Referenz: [strlen](../../../eng-us/examples/template-operators/strlen.md).
+Keine Parameter. Gibt eine Ganzzahl zurück. Generierte Referenz: [strlen](../../beispiele/template-operatoren/strlen.md).
 
 ### strpos, stripos, strrpos, strripos
 
@@ -59,9 +59,9 @@ der Groß- und Kleinschreibung `strripos`) Vorkommens einer Suchzeichenkette, in
 | needle | Zeichenkette | ja | keiner |
 | offset | Ganzzahl | nein | PHPs 0 |
 
-Gibt eine Ganzzahl oder `false` zurück. Generierte Referenzen: [strpos](../../../eng-us/examples/template-operators/strpos.md),
-[stripos](../../../eng-us/examples/template-operators/stripos.md), [strrpos](../../../eng-us/examples/template-operators/strrpos.md),
-[strripos](../../../eng-us/examples/template-operators/strripos.md).
+Gibt eine Ganzzahl oder `false` zurück. Generierte Referenzen: [strpos](../../beispiele/template-operatoren/strpos.md),
+[stripos](../../beispiele/template-operatoren/stripos.md), [strrpos](../../beispiele/template-operatoren/strrpos.md),
+[strripos](../../beispiele/template-operatoren/strripos.md).
 
 ```tpl
 {def $s = 'Fit & Healthy: healthy eating'}
@@ -96,17 +96,17 @@ Der Teil der Eingabe ab dem ersten Vorkommen der Suchzeichenkette (`strstr`; ohn
 | needle | Zeichenkette | ja | keiner |
 | before_needle | Boolean | nein | PHPs `false` |
 
-Generierte Referenzen: [strstr](../../../eng-us/examples/template-operators/strstr.md), [stristr](../../../eng-us/examples/template-operators/stristr.md).
+Generierte Referenzen: [strstr](../../beispiele/template-operatoren/strstr.md), [stristr](../../beispiele/template-operatoren/stristr.md).
 
 ### strrchr
 
 Der Teil ab dem **letzten** Vorkommen eines Zeichens oder `false`. Parameter: needle (Zeichenkette, erforderlich).
-Generierte Referenz: [strrchr](../../../eng-us/examples/template-operators/strrchr.md).
+Generierte Referenz: [strrchr](../../beispiele/template-operatoren/strrchr.md).
 
 ### strpbrk
 
 Der Teil ab dem ersten Zeichen, das in der Liste vorkommt, oder `false`. Parameter: char_list (Zeichenkette, erforderlich).
-Generierte Referenz: [strpbrk](../../../eng-us/examples/template-operators/strpbrk.md).
+Generierte Referenz: [strpbrk](../../beispiele/template-operatoren/strpbrk.md).
 
 ### strspn und strcspn
 
@@ -119,8 +119,8 @@ Zeichen besteht, die **nicht** in der Maske vorkommen.
 | offset | Ganzzahl | nein | PHPs 0 |
 | length | Ganzzahl | nein | PHPs `null` (bis zum Ende) |
 
-Gibt eine Ganzzahl zurück. Generierte Referenzen: [strspn](../../../eng-us/examples/template-operators/strspn.md),
-[strcspn](../../../eng-us/examples/template-operators/strcspn.md).
+Gibt eine Ganzzahl zurück. Generierte Referenzen: [strspn](../../beispiele/template-operatoren/strspn.md),
+[strcspn](../../beispiele/template-operatoren/strcspn.md).
 
 ### substr_count
 
@@ -132,7 +132,7 @@ Wie oft die Suchzeichenkette vorkommt (nicht überlappend).
 | offset | Ganzzahl | nein | PHPs 0 |
 | length | Ganzzahl | nein | PHPs `null` |
 
-Gibt eine Ganzzahl zurück. Generierte Referenz: [substr_count](../../../eng-us/examples/template-operators/substr_count.md).
+Gibt eine Ganzzahl zurück. Generierte Referenz: [substr_count](../../beispiele/template-operatoren/substr_count.md).
 
 ```tpl
 {def $s = 'recipes/pasta/almond-french-toast'}
@@ -173,9 +173,9 @@ immer gefunden.
 
 Gibt einen Boolean-Wert zurück. Die Array-Operatoren `contains`, `begins_with` und `ends_with` tun dasselbe für Zeichenketten mit
 `mb_*`-Funktionen ([Array-Operatoren](array-operatoren.md)). Generierte Referenzen:
-[str_contains](../../../eng-us/examples/template-operators/str_contains.md),
-[str_starts_with](../../../eng-us/examples/template-operators/str_starts_with.md),
-[str_ends_with](../../../eng-us/examples/template-operators/str_ends_with.md).
+[str_contains](../../beispiele/template-operatoren/str_contains.md),
+[str_starts_with](../../beispiele/template-operatoren/str_starts_with.md),
+[str_ends_with](../../beispiele/template-operatoren/str_ends_with.md).
 
 ```tpl
 {def $file = 'Healthy-Breakfast.JPG'}
@@ -204,8 +204,8 @@ denn die logischen Operatoren `lt` und `gt` vergleichen Zeichenketten nach ihrer
 ### strcmp und strcasecmp
 
 Binärer Vergleich, mit (`strcmp`) oder ohne (`strcasecmp`) Unterscheidung der Groß- und Kleinschreibung. Parameter: string2
-(Zeichenkette, erforderlich). Generierte Referenzen: [strcmp](../../../eng-us/examples/template-operators/strcmp.md),
-[strcasecmp](../../../eng-us/examples/template-operators/strcasecmp.md).
+(Zeichenkette, erforderlich). Generierte Referenzen: [strcmp](../../beispiele/template-operatoren/strcmp.md),
+[strcasecmp](../../beispiele/template-operatoren/strcasecmp.md).
 
 ### strncmp und strncasecmp
 
@@ -217,18 +217,18 @@ Dasselbe, nur für die ersten n Bytes.
 | n | Ganzzahl | ja | keiner |
 
 Fehlt einer der beiden, protokolliert der Operator „Missing required parameters: string2 and n“. Generierte Referenzen:
-[strncmp](../../../eng-us/examples/template-operators/strncmp.md), [strncasecmp](../../../eng-us/examples/template-operators/strncasecmp.md).
+[strncmp](../../beispiele/template-operatoren/strncmp.md), [strncasecmp](../../beispiele/template-operatoren/strncasecmp.md).
 
 ### strnatcmp und strnatcasecmp
 
 Vergleich in „natürlicher Reihenfolge“, der Ziffernfolgen als Zahlen behandelt: `img2` kommt vor `img10`. Parameter: string2
-(Zeichenkette, erforderlich). Generierte Referenzen: [strnatcmp](../../../eng-us/examples/template-operators/strnatcmp.md),
-[strnatcasecmp](../../../eng-us/examples/template-operators/strnatcasecmp.md).
+(Zeichenkette, erforderlich). Generierte Referenzen: [strnatcmp](../../beispiele/template-operatoren/strnatcmp.md),
+[strnatcasecmp](../../beispiele/template-operatoren/strnatcasecmp.md).
 
 ### strcoll
 
 Vergleich nach dem aktuellen Locale (`LC_COLLATE`). Parameter: string2 (Zeichenkette, erforderlich).
-Generierte Referenz: [strcoll](../../../eng-us/examples/template-operators/strcoll.md).
+Generierte Referenz: [strcoll](../../beispiele/template-operatoren/strcoll.md).
 
 ### substr_compare
 
@@ -241,7 +241,7 @@ Vergleicht die Eingabe ab einem Offset mit einer anderen Zeichenkette.
 | length | Ganzzahl | nein | PHPs `null` |
 | case_insensitive | Boolean | nein | PHPs `false` |
 
-Generierte Referenz: [substr_compare](../../../eng-us/examples/template-operators/substr_compare.md).
+Generierte Referenz: [substr_compare](../../beispiele/template-operatoren/substr_compare.md).
 
 ```tpl
 'apple'|strcmp( 'banana' ) = {'apple'|strcmp( 'banana' )}
@@ -310,18 +310,18 @@ WARNING strcmp: Missing required parameter: string2
 ### levenshtein
 
 Der Editierabstand zwischen der Eingabe und einer anderen Zeichenkette. Parameter: string2 (Zeichenkette, erforderlich). Gibt eine
-Ganzzahl zurück. Generierte Referenz: [levenshtein](../../../eng-us/examples/template-operators/levenshtein.md).
+Ganzzahl zurück. Generierte Referenz: [levenshtein](../../beispiele/template-operatoren/levenshtein.md).
 
 ### similar_text
 
 Die Anzahl übereinstimmender Zeichen (PHP `similar_text()` ohne sein Prozent-Argument). Parameter: string2 (Zeichenkette,
-erforderlich). Gibt eine Ganzzahl zurück. Generierte Referenz: [similar_text](../../../eng-us/examples/template-operators/similar_text.md).
+erforderlich). Gibt eine Ganzzahl zurück. Generierte Referenz: [similar_text](../../beispiele/template-operatoren/similar_text.md).
 
 ### soundex und metaphone
 
 Phonetische Schlüssel für englische Wörter: `soundex` (keine Parameter) und `metaphone` (optional max_phonemes, Ganzzahl). Geben
-Zeichenketten zurück. Generierte Referenzen: [soundex](../../../eng-us/examples/template-operators/soundex.md),
-[metaphone](../../../eng-us/examples/template-operators/metaphone.md).
+Zeichenketten zurück. Generierte Referenzen: [soundex](../../beispiele/template-operatoren/soundex.md),
+[metaphone](../../beispiele/template-operatoren/metaphone.md).
 
 ```tpl
 'recipe'|levenshtein( 'recipes' ) = {'recipe'|levenshtein( 'recipes' )}
@@ -346,8 +346,8 @@ Ausgabe auf alpha:
 - [PHP-Zeichenkettenfunktionen: umwandeln](php-zeichenkettenfunktionen-umwandeln.md)
 - [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md)
 - [Zeichenketten-Operatoren](zeichenketten-operatoren.md): `wash`, `shorten`, `upcase` und die anderen nativen Operatoren
-- [Zeichenketten-Operatoren für Designer](../../../eng-us/help/designers/templates/string-template-operators.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Zeichenketten-Operatoren für Designer](../designer/vorlagen/php-zeichenkettenfunktionen-als-operatoren.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

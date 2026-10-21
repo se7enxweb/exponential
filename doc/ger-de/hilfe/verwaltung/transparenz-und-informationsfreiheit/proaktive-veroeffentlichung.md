@@ -46,7 +46,7 @@ Kategorien, die Transparenzprogramme häufig proaktiv veröffentlichen:
 Legen Sie unterhalb eines Ordners „Transparenz“ einen Ordner pro Kategorie an und legen Sie jede Kategorie in eine
 eigene Sektion, wenn verschiedene Teams sie veröffentlichen ([Sektionen](../../../anleitungen/sektionen.md)). Die
 Ordnernamen werden zu den Adressen (`/Transparency/What-we-spend`), die auch nach Umbenennungen gültig bleiben, weil
-alte Aliasse weiterleiten ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+alte Aliasse weiterleiten ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Ein fester Ablauf für jede Kategorie
 
@@ -84,7 +84,7 @@ die Aufbewahrung. Richten Sie es dann in Exponential ein:
 
 - [Veröffentlichungspläne](veroeffentlichungsplaene.md)
 - [Offenlegungsprotokolle](offenlegungsprotokolle.md)
-- [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)
+- [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

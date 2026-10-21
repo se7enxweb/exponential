@@ -41,7 +41,7 @@ für sie ändert sich nichts, bis sie es tun.
 | Notes, die im eigenen Repository der Erweiterung geführt werden | expai (Exponential Intelligence) und expqueue, verlinkt vom Index |
 | Die auf einer Website installierte Version | `ezinfo.php` und `extension.xml` der Erweiterung sowie **Setup > Extensions** ([Index, How to find the version you run](../../../changelogs/extensions/README.md#how-to-find-the-version-you-run)) |
 | Welche Version die Entwicklungslinie des Kernels verlangt | [Changelog 6.0.15, benötigte Pakete](../../../changelogs/6.0/6.0.15.md#required-packages-root-composerjson-2026-10-10-to-2026-10-12) |
-| Die Geschichte einer Erweiterung über die Zeit | [Chroniken der Erweiterungen](../../../eng-us/history/extensions/README.md) |
+| Die Geschichte einer Erweiterung über die Zeit | [Chroniken der Erweiterungen](../../geschichte/erweiterungen/README.md) |
 
 Die Release-Regel für Erweiterungen ist schriftlich festgehalten: Die Version wird in `ezinfo.php` und `extension.xml`
 geschrieben, committet und dann getaggt; eine falsche Version wird durch die nächste korrigiert

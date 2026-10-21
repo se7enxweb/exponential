@@ -41,7 +41,7 @@ veröffentlichen (allgemeine Praxis im öffentlichen Sektor), und was jede Art v
 | Ein Status je Dokument (in Kraft, ersetzt, zurückgezogen) | Objektzustände, in Templates angezeigt und in Rollen verwendbar | [Objektzustände](../../../../anleitungen/objektzustaende.md) |
 | Rechtliche Prüfung vor dem Veröffentlichen | ein Ereignis *Freigeben* mit dem Rechtsteam als Freigebenden | [Workflows](../../../../anleitungen/workflows.md) |
 | Abonnenten über Änderungen informieren | Benachrichtigungen für einen Teilbaum; RSS | [Benachrichtigungen](../../../../anleitungen/benachrichtigungen-administrator.md), [RSS-Feeds](../../../../anleitungen/rss-feeds.md) |
-| Getrennte Einstiege für Öffentlichkeit und Fachleute | zwei Ordner oder zwei Siteaccesses über gemeinsamen Inhalten | [Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md) |
+| Getrennte Einstiege für Öffentlichkeit und Fachleute | zwei Ordner oder zwei Siteaccesses über gemeinsamen Inhalten | [Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md) |
 | Konsultationen | der Informationssammler | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
 | Warnungen auf der Startseite | ein Ordner oder ein Block des Layout-Editors, den die Startseite zeigt | [Der Layout-Editor](../../../layout-editor.md) |
 

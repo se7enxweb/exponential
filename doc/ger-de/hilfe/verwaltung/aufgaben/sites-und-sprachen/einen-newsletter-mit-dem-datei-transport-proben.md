@@ -38,7 +38,7 @@ Alle Mails sind Dateien; nichts hat den Server verlassen. Das Abonnement war aus
 
 ## Verwandte Seiten
 
-- [Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md)
+- [Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -72,11 +72,11 @@ untätig oder nicht (`settings/velocity.ini`).
 > **Warnung**
 > Beurteilen Sie Speicher nach PSS oder privatem Speicher, nie nach RSS. RSS zählt jede geteilte Copy-on-Write-Seite einmal pro Worker und
 > überschätzt einen Pool um ein Vielfaches. Die Karte **Worker Memory** des Kontrollzentrums zeigt PSS
-> ([Kontrollzentrum von Velocity](../../../../eng-us/features/6.0/velocity-control-panel.md#the-dashboard)). Ein Überwachungssystem, das RSS
+> ([Kontrollzentrum von Velocity](../../../funktionen/6.0/velocity-control-panel.md#das-dashboard)). Ein Überwachungssystem, das RSS
 > aufsummiert, meldet Speicher, den die Maschine nicht nutzt.
 
 Der Wert pro Worker hängt von der Website ab. Eine andere Messung in den Quellen, auf einer Testinstallation ohne Aufwärmen, fand 167,6 MB
-PSS pro Worker ([HTTP/2 und Vorwärmen von Caches](../../../../eng-us/bc/6.0/http2-and-cache-warming.md#what-it-found-on-the-test-installation)).
+PSS pro Worker ([HTTP/2 und Vorwärmen von Caches](../../../bc/6.0/http2-und-cache-vorwaermen.md#was-es-auf-der-testinstallation-fand)).
 Messen Sie Ihre eigenen Websites, bevor Sie die Grenzen eines Tarifs festlegen.
 
 ## Fester oder dynamischer Pool
@@ -108,7 +108,7 @@ immer hat.
 Ein Server beantwortet zwischengespeicherte Seiten in seinem eigenen Prozess und ist durch einen Kern begrenzt. `Instances=N` betreibt N
 Server auf denselben Ports; der Kernel verteilt neue Verbindungen auf sie. Gemessen auf einer Testinstallation mit 12 Kernen,
 zwischengespeicherte Startseite über TLS: etwa 2.950 Seiten pro Sekunde mit einer Instanz, 11.985 mit vier
-([Velocity-Engines, Instanzen](../../../../eng-us/bc/6.0/velocity-engines.md#several-qbix-servers-on-one-port-instances)).
+([Velocity-Engines, Instanzen](../../../bc/6.0/velocity-engines.md#mehrere-qbix-server-auf-einem-port-instances)).
 
 - Jede Instanz hat einen eigenen Pool: Teilen Sie `Workers` und `SpareWorkers` durch `Instances`, um denselben Speicher zu behalten.
 - Jede hat eine eigene PID-Datei und ein eigenes Log (`server.pid`, `server.1.pid`, ...); `graceful` lädt sie nacheinander neu.
@@ -146,13 +146,13 @@ Worker, Apache auf denselben Dateien) kann dann bis zu so lange brauchen, bis si
 Ab Engine 0.0.4.49 streamt ein Worker Server-Sent Events und ungepufferte Antworten. Jeder offene Stream hält einen Worker für seine ganze
 Lebensdauer. `[ServerSettings] StreamTimeout` (Standard der Engine 300 s), `StreamShare` (0,25 von `Workers`) und `MaxStreams` begrenzen
 sie; jenseits der Grenze bekommt ein Event-Stream `503` mit `Retry-After`, sodass Seiten den Rest des Pools behalten
-([Velocity-Engines, Streaming-Antworten](../../../../eng-us/bc/6.0/velocity-engines.md#streaming-responses)). Halten Sie die Grenze deutlich unter
+([Velocity-Engines, Streaming-Antworten](../../../bc/6.0/velocity-engines.md#gestreamte-antworten)). Halten Sie die Grenze deutlich unter
 `Workers`.
 
 ## Die Zahl für einen Tarif finden
 
 Die Quellen warnen davor, Zahlen zu übernehmen: Die Werte beschreiben die Templates dieser Website auf dieser Maschine und sind keine
-Eigenschaft des Servers ([HTTP/2 und Vorwärmen von Caches](../../../../eng-us/bc/6.0/http2-and-cache-warming.md#two-caveats-on-all-of-it)). Messen Sie
+Eigenschaft des Servers ([HTTP/2 und Vorwärmen von Caches](../../../bc/6.0/http2-und-cache-vorwaermen.md#zwei-vorbehalte-zu-allem)). Messen Sie
 stattdessen:
 
 1. Messen Sie eine repräsentative Kunden-Website gerendert (`--cold`) bei der erwarteten Parallelität, mit `exp:benchmark`

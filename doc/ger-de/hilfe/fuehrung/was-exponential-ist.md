@@ -52,7 +52,7 @@ Anwendungs-Framework (CMF) und ein eingebauter Shop kommen in einem Paket
   ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#zeitleiste)).
 - **Unabhängig.** „Dieses Projekt steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder zu ihrem
   ursprünglichen Entwickler, eZ Systems oder Ibexa“ (README, zitiert unter [Wer ist 7x?](../wer-ist-7x.md#kurz-gesagt)).
-- **Jede Änderung seit Dezember 2023 wird erzählt**, in [der Chronik](../../../eng-us/history/README.md), und die vollständige
+- **Jede Änderung seit Dezember 2023 wird erzählt**, in [der Chronik](../../geschichte/README.md), und die vollständige
   Git-Historie bleibt erhalten ([Mit Git entwickeln](../mit-git-entwickeln.md)).
 
 ## Wer dahintersteht
@@ -83,13 +83,13 @@ Was das für ein Projekt bedeutet, mit der Seite, die jeden Teil erklärt:
 | Berechtigungen | Rollen aus Richtlinien, begrenzt nach Sektion, Klasse, Teilbaum, Sprache oder Siteaccess | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md) |
 | Freigabe | Workflows, die eine Version zurückhalten, bis sie freigegeben ist | [Workflows](../../anleitungen/workflows.md) |
 | Seitenaufbau | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln | [Der Layout-Editor](../layout-editor.md) |
-| Schreibunterstützung | Exponential Intelligence: nur Entwürfe, veröffentlicht nie von sich aus | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
+| Schreibunterstützung | Exponential Intelligence: nur Entwürfe, veröffentlicht nie von sich aus | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
 | Multisite | Mehrere Sites aus einer Installation, jede ein Siteaccess | [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md) |
-| Sprachen | 268 Gebietsschema-Dateien als Inhaltssprachen; 32 Übersetzungen der Administration, zehn davon vollständig | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen | 268 Gebietsschema-Dateien als Inhaltssprachen; 32 Übersetzungen der Administration, zehn davon vollständig | [Sprachen in Exponential](../../sprachen.md) |
 | E-Commerce | Produkte, Warenkörbe, Bestellungen, Mehrwertsteuer, Währungen, PayPal | [Wer ist 7x?](../wer-ist-7x.md#cms-cmf-und-shop-in-einem) |
 | Integration | REST-API v1 und v2 | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
-| Sicherheit und Prüfung | Content Security Policy, zweistufige Anmeldung, ein manipulationssicheres Audit-Protokoll | [Sicherheitshärtung](../sicherheitshaertung.md), [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
-| Hilfe | Diese Hilfe: die Dokumentation des Repositorys innerhalb der Administration | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Sicherheit und Prüfung | Content Security Policy, zweistufige Anmeldung, ein manipulationssicheres Audit-Protokoll | [Sicherheitshärtung](../sicherheitshaertung.md), [Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md) |
+| Hilfe | Diese Hilfe: die Dokumentation des Repositorys innerhalb der Administration | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 
 ## Die Produktfamilie
 
@@ -124,11 +124,11 @@ Beschreibungen, mit Quellen und dem Stand jedes Produkts, finden Sie unter
 |---|---|---|
 | Ein CMS mit Shop, Multisite und vielen Sprachen, nur PHP, ohne Datenbankserver | Exponential 6 mit SQLite | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Redakteure, die Seiten selbst aufbauen | Exponential 6 mit Exponential Layouts | [Der Layout-Editor](../layout-editor.md) |
-| Hilfe beim Schreiben und Übersetzen von Inhalten | Exponential Intelligence | [expai](../../../eng-us/features/6.0/extensions/expai.md) |
-| Den schnellsten Weg, die Site auszuliefern | Exponential Velocity | [Der Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
-| Ein Symfony-Projekt mit REST und GraphQL, ohne Legacy-Kernel | Exponential Platform DXP | [DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md) |
-| Eine vollständige Demo-Site mit Layouts auf der Symfony-Plattform | Exponential Platform Nexus | [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md) |
-| Eine Site mit Exponential 6 behalten und Symfony daneben hinzufügen | Exponential Platform Legacy | [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md) |
+| Hilfe beim Schreiben und Übersetzen von Inhalten | Exponential Intelligence | [expai](../../funktionen/6.0/erweiterungen/expai.md) |
+| Den schnellsten Weg, die Site auszuliefern | Exponential Velocity | [Der Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
+| Ein Symfony-Projekt mit REST und GraphQL, ohne Legacy-Kernel | Exponential Platform DXP | [DXP-Skeleton](../../funktionen/6.0/plattform-dxp-skeleton.md) |
+| Eine vollständige Demo-Site mit Layouts auf der Symfony-Plattform | Exponential Platform Nexus | [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md) |
+| Eine Site mit Exponential 6 behalten und Symfony daneben hinzufügen | Exponential Platform Legacy | [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md) |
 | Ein kleines, einfaches CMS zum Lernen | Exponential Basic | [Wer ist 7x?](../wer-ist-7x.md#exponential-basic) |
 
 Diese Tabelle folgt „Which product is for you“ unter
@@ -152,13 +152,13 @@ Die Entscheidung zwischen ihnen ist Thema von
 
 - **268 Gebietsschema-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten) in 32 Schriften,
   40 davon von rechts nach links geschrieben, können als Inhaltssprachen gewählt werden; es gibt
-  **32 Übersetzungen der Administration**, zehn davon vollständig ([Sprachen in Exponential](../../../eng-us/languages.md)).
+  **32 Übersetzungen der Administration**, zehn davon vollständig ([Sprachen in Exponential](../../sprachen.md)).
 - Eine Installation enthält auf 64-Bit-PHP höchstens 62 Inhaltssprachen gleichzeitig
-  ([Sprachen](../../../eng-us/languages.md#11-the-limit-of-62-content-languages)).
+  ([Sprachen](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen)).
 - Die Administration dreht sich für Sprachen der Oberfläche um, die von rechts nach links geschrieben werden, und
-  Inhalte in einer solchen Sprache werden entsprechend ausgezeichnet ([Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md)).
+  Inhalte in einer solchen Sprache werden entsprechend ausgezeichnet ([Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md)).
 - Das Design admin4 wird durch Tests auf WCAG-Regeln geprüft: den Farbkontrast der Tokens im hellen und im dunklen Modus
-  und Zielgrößen von mindestens 24 mal 24 Pixeln ([Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md)).
+  und Zielgrößen von mindestens 24 mal 24 Pixeln ([Die Administration gestalten](../../bc/6.0/admin4-gestaltung.md)).
 
 ## Lizenzen
 
@@ -166,7 +166,7 @@ Die Entscheidung zwischen ihnen ist Thema von
 |---|---|---|
 | Die Software | GNU General Public License, Version 2 oder jede spätere Version. „Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos. Die Professional License ist nicht mehr erhältlich.“ | README; `LICENSE` |
 | Beiträge | Unter derselben GPL v2 oder höher veröffentlicht | `CONTRIBUTING.md` |
-| Die Dokumentation, einschließlich dieser Seite | GNU Free Documentation License 1.3 oder höher | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
+| Die Dokumentation, einschließlich dieser Seite | GNU Free Documentation License 1.3 oder höher | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
 | Exponential Velocity | MIT | seine `composer.json` ([Wer ist 7x?](../wer-ist-7x.md#open-source-lizenzen)) |
 
 Dies ist eine Zusammenfassung, keine Rechtsberatung. Fragen von Käufern werden unter
@@ -184,8 +184,8 @@ benannten Stelle festgehalten ([Die Support-Zusage](../wer-ist-die-exponential-f
 - **Veröffentlichte Versionen ändern sich nie.** Eine Korrektur erreicht Sie als nächstes Release, nie als korrigierte
   Kopie eines alten (`SECURITY.md`).
 - **Aktuelles PHP.** Die Continuous Integration führt die Testsuite auf PHP 8.1 bis 8.5 aus und prüft bei jedem Push
-  und jedem Pull-Request, dass PHP 8.0 noch startet ([CI](../../../eng-us/bc/6.0/ci.md)).
-- **Die Dokumentation lebt beim Code** und wird in dieser Hilfe angezeigt ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)).
+  und jedem Pull-Request, dass PHP 8.0 noch startet ([CI](../../bc/6.0/ci.md)).
+- **Die Dokumentation lebt beim Code** und wird in dieser Hilfe angezeigt ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)).
 
 ## Es erklären: drei Fassungen
 
@@ -223,7 +223,7 @@ Datenbanken, die Support-Zusage und die Tabelle der Lizenzen. Verweisen Sie für
 | **Dual Kernel** | Eine Distribution, die die Symfony-Plattform und Exponential 6 zusammen betreibt |
 | **Velocity** | Der eigene PHP-Web- und Anwendungsserver von Exponential |
 
-Alle weiteren Begriffe finden Sie im [Glossar](../../../eng-us/glossary.md) und im Glossar von
+Alle weiteren Begriffe finden Sie im [Glossar](../../glossar.md) und im Glossar von
 [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#glossar).
 
 ## Verwandte Seiten

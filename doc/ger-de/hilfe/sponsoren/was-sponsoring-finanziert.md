@@ -32,7 +32,7 @@ keine Budgets, die die Quellen nicht veröffentlichen.
 ## Arbeit, die Sie sehen können
 
 Die Ergebnisse der finanzierten Arbeit sind öffentlich: die Release-Historie in `doc/eng-us/release-overview`, die
-Changelogs in `doc/changelogs/`, die Geschichte jeder Änderung seit Dezember 2023 in [der Chronik](../../../eng-us/history/README.md)
+Changelogs in `doc/changelogs/`, die Geschichte jeder Änderung seit Dezember 2023 in [der Chronik](../../geschichte/README.md)
 und die Commit-Historie auf GitHub. Allein die Linie 6.0.15 brachte, neben vielem anderen, Velocity, das Design admin4,
 Exponential Layouts, Exponential Intelligence und dieses Hilfesystem ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
 

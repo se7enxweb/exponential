@@ -15,7 +15,7 @@ andere betreiben. Sie beantwortet: wie die eingebaute Suche funktioniert und was
 Sie den Index neu aufbauen und was Solr über die Erweiterung eZ Find umfasst. Quellen:
 [Kapitel 10.8](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung),
 `settings/site.ini [SearchSettings]`, `settings/solr.ini` und
-[Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md).
+[Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md).
 
 ## Inhalt
 
@@ -133,7 +133,7 @@ php bin/php/console exp:solr start --allow-root-user      # local instance only
 | `ping` | Solr fragen, ob es läuft |
 
 Solange Solr nicht konfiguriert ist, sagt jedes Verb das, und `start` endet mit einem Wert ungleich null, sodass eine
-Überwachungsprüfung „nicht konfiguriert“ nie für „läuft“ hält ([Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)).
+Überwachungsprüfung „nicht konfiguriert“ nie für „läuft“ hält ([Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver)).
 
 ## Suche in einem Tarif anbieten
 
@@ -163,7 +163,7 @@ Optionen, aus denen ein Hoster wählen kann:
 - [Kapitel 10.8: Suchindizierung und Bildverarbeitung](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung)
 - [Suchen](../../suchen.md) (für Redakteure)
 - [Cronjobs](../betrieb/cronjobs.md) und [Zustandsprüfungen und Verfügbarkeit](../betrieb/zustandspruefungen-und-verfuegbarkeit.md)
-- [Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md)
+- [Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md)
 - [Composer und Git auf Servern](composer-und-git-auf-servern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

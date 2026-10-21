@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Anfrage-Logs](../../../hosting/betrieb/anfrage-logs.md), [Sicherheitslog](../../../hosting/betrieb/sicherheitslog.md)
-und [Anfrage-Logs: 404.log und security.log](../../../../../eng-us/features/6.0/request-logs.md).
+und [Anfrage-Logs: 404.log und security.log](../../../../funktionen/6.0/anfrageprotokolle.md).
 
 1. **Drei Logs statt einem** (4 Minuten). `error.log` für echte Fehler, `404.log` für 404 und 410 mit dem Grund,
    `notice.log` für 401 und 403, `security.log` für klassifizierte Anfragen mit beliebigem Status. Jede Anfrage wird in
@@ -147,7 +147,7 @@ durch Ihre eigene.
 
 - [Modul 5: Monitoring und Logs](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

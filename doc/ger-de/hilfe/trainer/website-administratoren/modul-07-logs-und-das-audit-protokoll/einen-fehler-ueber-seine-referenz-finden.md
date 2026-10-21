@@ -142,7 +142,7 @@ Installation am Beamer.
 
 - [Einen Fehler über seine Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md): die Anleitung,
   der diese Lektion folgt.
-- [Der Log-Viewer, Suchen](../../../../../eng-us/features/6.0/log-viewer.md#searching): jede Suchoption.
+- [Der Log-Viewer, Suchen](../../../../funktionen/6.0/log-betrachter.md#suchen): jede Suchoption.
 - [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md): was Redakteure und Besucher zuerst tun können.
 - [Runbook: Website nicht erreichbar](../../../hosting/runbooks/website-nicht-erreichbar.md): wenn die ganze Website ausfällt, nicht
   nur eine Anfrage.

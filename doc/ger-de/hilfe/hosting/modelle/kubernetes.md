@@ -83,7 +83,7 @@ Clustering wird in [Clustering und gemeinsamer Speicher](../betrieb/clustering-u
 Caches (`var/cache`, `var/<site>/cache`) können gemeinsam oder lokal pro Replikat sein; ein lokaler Cache bedeutet, dass
 ein Leeren des Caches jedes Replikat erreichen muss. Pfade für Logs und Caches pro Website (`LogVarDir`, `CacheVarDir`)
 erlauben es, Logs und Caches auf andere Dateisysteme als den Speicher zu legen
-([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)).
+([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)).
 
 ## Sitzungen
 
@@ -127,7 +127,7 @@ des Besuchers mitteilen dürfen:
   ([13.10 Hinter einem Proxy](../../../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header)).
 - Unter Velocity konfigurieren Sie die vertrauenswürdigen Proxys in der eigenen Liste von Velocity,
   `Q.webserver.proxy.trusted`; Proxys vor Velocity werden **dort** konfiguriert
-  ([Vertrauenswürdige Proxys](../../../../eng-us/bc/6.0/trusted-proxies.md)).
+  ([Vertrauenswürdige Proxys](../../../bc/6.0/vertrauenswuerdige-proxys.md)).
 - Stellen Sie sicher, dass der Anwendungsserver nicht an ihnen vorbei erreichbar ist.
 
 > **Warnung**

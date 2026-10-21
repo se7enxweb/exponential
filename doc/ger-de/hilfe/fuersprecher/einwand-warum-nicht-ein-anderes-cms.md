@@ -52,7 +52,7 @@ besten passt.
 | Strukturierte Inhalte vieler Typen | Ein vollständig anpassbares Inhaltsmodell, in der Administration definiert | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | Mehrere Websites und viele Sprachen aus einer Installation | Siteaccesses, Übersetzungen pro Inhalt, von rechts nach links | [Funktions-Highlights](../geschaeft/funktionshighlights-fuer-kunden.md#mehrere-sites-aus-einer-installation) |
 | Redaktionelle Kontrolle | Entwürfe, Versionen, Freigabe-Workflows, ein Prüfprotokoll | [Funktions-Highlights](../geschaeft/funktionshighlights-fuer-kunden.md#strukturierte-inhalte-freigabe-und-versionen) |
-| Ein Shop im selben System | Der eingebaute Shop | [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md) |
+| Ein Shop im selben System | Der eingebaute Shop | [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md) |
 | Freie Wahl beim Hosting | Sechs Datenbanken, Betriebssysteme in Stufen | [Gesprächspunkte: Hosting](gespraechspunkte-hosting-datenbanken-freiheit.md) |
 | Langes Leben und keine Bindung an einen Anbieter | GPL-Code mit öffentlicher Geschichte seit 2002 | [Gesprächspunkte: Langlebigkeit](gespraechspunkte-langlebigkeit-und-geschichte.md) |
 

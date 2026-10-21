@@ -61,7 +61,7 @@ Administration installiert; `settings/` bleibt beschreibbar, wenn Administratore
 > Auf einer PaaS gehören Einstellungen in das Code-Repository. Der Schalter `[ConfigurationSettings] ManagedByDeployment=enabled`
 > sorgt dafür, dass die Konfiguration dieses Siteaccess nur aus dem Ausrollen (der Versionsverwaltung) kommt: Die
 > Administration schreibt keine `*.ini.append.php`- oder `.tpl`-Dateien mehr auf den Server
-> ([Konfiguration über das Ausrollen verwaltet](../../../../eng-us/features/6.0/managed-by-deployment.md)).
+> ([Konfiguration über das Ausrollen verwaltet](../../../funktionen/6.0/durch-deployment-verwaltet.md)).
 
 ## Schreibgeschützte oder flüchtige Dateisysteme
 
@@ -71,7 +71,7 @@ absolute Verzeichnisse werden NICHT UNTERSTÜTZT. **Hängen Sie den persistenten
 Installation ein**, statt `VarDir` anderswohin zeigen zu lassen.
 
 Innerhalb von `var/` bieten die Quellen feinere Steuerung (`site.ini [FileSettings]`,
-[Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)):
+[Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)):
 
 | Einstellung | Was sie erlaubt |
 |---|---|

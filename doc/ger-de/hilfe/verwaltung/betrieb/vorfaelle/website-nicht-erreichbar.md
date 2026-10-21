@@ -40,7 +40,7 @@ Eine volle Festplatte verursacht die meisten Symptome; siehe [Festplatte voll](f
 |---|---|---|
 | „We'll be right back“ (503) | die Datenbank war nicht erreichbar | [Datenbank nicht erreichbar](datenbank-nicht-erreichbar.md) |
 | „Down for maintenance“ (503) | der Wartungsmodus ist eingeschaltet | `php bin/php/maintenance.php status --allow-root-user`; wenn die Arbeiten abgeschlossen sind, `php bin/php/maintenance.php off --allow-root-user` |
-| „The site is missing the software libraries it needs“ (503) | `vendor/` fehlt | stellen Sie es wieder her, oder reparieren Sie: `php bin/php/exprepair.php --create-key` und den Schlüssel auf der Seite eingeben ([Reparatur aus dem Browser](../../../../../eng-us/features/6.0/repair-from-the-browser.md)) |
+| „The site is missing the software libraries it needs“ (503) | `vendor/` fehlt | stellen Sie es wieder her, oder reparieren Sie: `php bin/php/exprepair.php --create-key` und den Schlüssel auf der Seite eingeben ([Reparatur aus dem Browser](../../../../funktionen/6.0/reparatur-im-browser.md)) |
 | „Something went wrong on our side“ (500) mit `ERR-...` | ein nicht abgefangener Fehler | `./console exp:logs --reference=ERR-...` |
 | Eine leere Seite, oder 500 ohne Eintrag in `error.log` | PHP ist gescheitert, bevor Exponential protokollieren konnte | die Fehlerlogs des Webservers und von PHP-FPM; `php -l` für eine kürzlich geänderte Datei |
 | 404 für jede Seite unter Apache | `.htaccess` wird nicht gelesen oder `mod_rewrite` ist aus | `AllowOverride` und Module des virtuellen Hosts |

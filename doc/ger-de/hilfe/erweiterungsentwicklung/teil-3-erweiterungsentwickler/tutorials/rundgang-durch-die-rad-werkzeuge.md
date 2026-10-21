@@ -126,7 +126,7 @@ es weitergeht, dazu `doc/examples.php` mit sofort ausführbaren Beispielen für 
 
 - Zurück: [Tutorials: echte Erweiterungen Schritt für Schritt bauen](README.md)
 - Weiter: [Mit RAD: ein Template-Operator in fünf Minuten](rad-template-operator.md)
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md)
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

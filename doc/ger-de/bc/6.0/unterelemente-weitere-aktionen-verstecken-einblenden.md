@@ -58,11 +58,11 @@ Wenn Sie dieses Menü erneut ändern, ändern Sie all diese Teile gemeinsam:
 
 ## Verwandte Seiten
 
-- [Das responsive Admin-Design (admin3)](../../../eng-us/features/6.0/admin3-responsive-admin.md)
-- [Die Liste der Unterelemente: 129 Spalten, Voreinstellungen und CSV-Export](../../../eng-us/features/6.0/subitems-table-options.md)
-- [Ausgewählte Unterelemente kopieren](../../../eng-us/features/6.0/subitems-copy-selected.md)
-- [Breite und Schriftgröße der linken Seitenleiste](../../../eng-us/features/6.0/admin3-sidebar-width-and-font-size.md)
-- [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
-- Geschichte: [August 2024](../../../eng-us/history/2024/2024-08.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md),
-  [November 2024](../../../eng-us/history/2024/2024-11.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md),
-  [Juni 2025](../../../eng-us/history/2025/2025-06.md), [Juni 2026, 16. bis 30.](../../../eng-us/history/2026/2026-06b.md)
+- [Das responsive Admin-Design (admin3)](../../funktionen/6.0/admin3-responsives-admin.md)
+- [Die Liste der Unterelemente: 129 Spalten, Voreinstellungen und CSV-Export](../../funktionen/6.0/optionen-der-unterelementtabelle.md)
+- [Ausgewählte Unterelemente kopieren](../../funktionen/6.0/unterelemente-auswahl-kopieren.md)
+- [Breite und Schriftgröße der linken Seitenleiste](../../funktionen/6.0/admin3-seitenleistenbreite-und-schriftgroesse.md)
+- [Das Design admin4](../../funktionen/6.0/admin4-design.md)
+- Geschichte: [August 2024](../../geschichte/2024/2024-08.md), [Oktober 2024](../../geschichte/2024/2024-10.md),
+  [November 2024](../../geschichte/2024/2024-11.md), [Januar 2025](../../geschichte/2025/2025-01.md),
+  [Juni 2025](../../geschichte/2025/2025-06.md), [Juni 2026, 16. bis 30.](../../geschichte/2026/2026-06b.md)

@@ -38,7 +38,7 @@ Die Ausgabe jedes Templates wird dann in Kommentare eingeschlossen wie
 Element-Inspektor des Browsers und lesen Sie den Kommentar um das Markup, das Sie interessiert. Es funktioniert mit ein- und
 ausgeschaltetem Template-Compiler. Die Einstellung fügt jedem Template Markup hinzu und muss daher in der Produktion aus bleiben,
 ebenso auf jedem Siteaccess, der JSON, XML oder RSS ausliefert (Kommentar in `settings/site.ini`). Einzelheiten:
-[Kommentare mit Template-Pfaden](../../../../eng-us/features/6.0/template-path-comments.md).
+[Kommentare mit Template-Pfaden](../../../funktionen/6.0/template-pfad-kommentare.md).
 
 ## Welche Templates wurden überhaupt verwendet?
 

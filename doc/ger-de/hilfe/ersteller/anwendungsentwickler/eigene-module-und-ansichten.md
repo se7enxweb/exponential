@@ -104,7 +104,7 @@ Pagelayouts: [Ergebnisse von Ansichten, Templates und das Pagelayout](ergebnisse
 | Zugriff verweigert | `return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );` |
 
 Weiterleitungsziele, die aus der Anfrage stammen, müssen geprüft werden; die Hilfsfunktionen des Kernels für sichere
-Weiterleitungen folgen nur Adressen der Website ([Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md)).
+Weiterleitungen folgen nur Adressen der Website ([Sichere Weiterleitungen](../../../funktionen/6.0/sichere-weiterleitungen.md)).
 
 ## Die klassenbasierte Ansicht
 
@@ -115,14 +115,14 @@ ersetzen ([Eine Modulansicht](../../../bc/6.0/cli-cronjob-und-view-abstraktionen
 ## Eine Ansicht des Kernels überschreiben
 
 Eine Erweiterung kann die Templates oder die Ansichten eines Kernel-Moduls überschreiben
-([Override von Modulen durch Erweiterungen](../../../../eng-us/features/6.0/extension-module-override.md)). Fügen Sie lieber ein
+([Override von Modulen durch Erweiterungen](../../../funktionen/6.0/modulueberschreibung-durch-extensions.md)). Fügen Sie lieber ein
 eigenes Modul hinzu; ein Override muss jedem Kernel-Update folgen.
 
 ## Verwandte Seiten
 
 - [Ihre erste Erweiterung](ihre-erste-erweiterung.md)
 - [Richtlinienfunktionen und Einschränkungen](richtlinienfunktionen-und-einschraenkungen.md)
-- [Muster Modul und Ansicht](../../../../eng-us/standards/patterns/module-view.md)
+- [Muster Modul und Ansicht](../../../standards/muster/modulansicht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

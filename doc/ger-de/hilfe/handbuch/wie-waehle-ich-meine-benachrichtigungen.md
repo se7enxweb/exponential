@@ -46,8 +46,8 @@ Benutzer, deren Rolle `notification/use` hat.
 ## Verwandte Seiten
 
 - [Wie folge ich einem Teil der Website?](wie-folge-ich-einem-teil-der-website.md)
-- [Benachrichtigungen: die Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md)
-- [E-Mail-Einstellungen: die Anleitung für Benutzer](../../../eng-us/features/6.0/mail-preferences.md)
+- [Benachrichtigungen: die Anleitung für Benutzer](../../funktionen/6.0/benachrichtigungen.md)
+- [E-Mail-Einstellungen: die Anleitung für Benutzer](../../funktionen/6.0/e-mail-einstellungen.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

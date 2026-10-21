@@ -112,7 +112,7 @@ Site-Entwickler.
 
 ## Mehr erfahren
 
-- [Exponential Layouts in der Administration](../../eng-us/features/6.0/admin4l.md), für die Layouts, die die Administration
+- [Exponential Layouts in der Administration](../funktionen/6.0/admin4l.md), für die Layouts, die die Administration
   selbst anordnen.
 - [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md)
 

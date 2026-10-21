@@ -51,7 +51,7 @@ aus einem Ergebnis, das mit `/` beginnt, eine vollständige Adresse.
 
 ### ezurl
 
-Generierte Seite: [ezurl](../../../eng-us/examples/template-operators/ezurl.md).
+Generierte Seite: [ezurl](../../beispiele/template-operatoren/ezurl.md).
 
 - **Eingabe:** ein Pfad, ein URL-Alias oder eine vollständige Adresse (der Wert vor `|`). Mit der Erweiterung auch ein
   Knoten oder ein Inhaltsobjekt.
@@ -87,7 +87,7 @@ Ausgabe auf alpha:
 
 ### ezroot
 
-Generierte Seite: [ezroot](../../../eng-us/examples/template-operators/ezroot.md).
+Generierte Seite: [ezroot](../../beispiele/template-operatoren/ezroot.md).
 
 - **Eingabe:** ein Pfad. **Parameter:** `quote_val`, `server_url`. **Rückgabe:** die Adresse in Anführungszeichen.
 
@@ -97,7 +97,7 @@ Web-Root ausgeliefert werden.
 
 ### ezdesign
 
-Generierte Seite: [ezdesign](../../../eng-us/examples/template-operators/ezdesign.md).
+Generierte Seite: [ezdesign](../../beispiele/template-operatoren/ezdesign.md).
 
 - **Eingabe:** ein Pfad innerhalb eines Designs (`stylesheets/core.css`). **Parameter:** `quote_val`.
   **Rückgabe:** der Pfad des ersten Treffers in Anführungszeichen.
@@ -110,7 +110,7 @@ Warnungen ("Design element ... does not exist in any design" und die versuchten 
 
 ### ezimage
 
-Generierte Seite: [ezimage](../../../eng-us/examples/template-operators/ezimage.md).
+Generierte Seite: [ezimage](../../beispiele/template-operatoren/ezimage.md).
 
 - **Eingabe:** ein Bildname. **Parameter:** `quote_val`; ein zweiter Positionswert `true()` verlangt den Pfad ohne das
   führende `/`, wenn die Installation im Web-Root läuft (leeres www-Verzeichnis). **Rückgabe:** der Pfad in
@@ -142,7 +142,7 @@ das ezwebin-Design einer Erweiterung.
 
 ### exturl
 
-Generierte Seite: [exturl](../../../eng-us/examples/template-operators/exturl.md).
+Generierte Seite: [exturl](../../beispiele/template-operatoren/exturl.md).
 
 - **Eingabe:** eine externe Adresse. **Parameter:** `quote_val`. **Rückgabe:** die Adresse in Anführungszeichen, wie
   sie in der Link-Tabelle gespeichert ist.
@@ -157,7 +157,7 @@ Tabelle `ezurl`, und diese Beispiele verändern nichts. Verwendet wird es als `{
 
 ### ezsys
 
-Generierte Seite: [ezsys](../../../eng-us/examples/template-operators/ezsys.md).
+Generierte Seite: [ezsys](../../beispiele/template-operatoren/ezsys.md).
 
 - **Eingabe:** keine (es wird als Funktion aufgerufen). **Parameter:** der Attributname als Positionsparameter.
   **Rückgabe:** der Wert von `eZSys::attribute()`.
@@ -169,7 +169,7 @@ Anfrage, daher sind `wwwdir`, `indexfile` und `querystring` auf der Kommandozeil
 
 ### ezhttp
 
-Generierte Seite: [ezhttp](../../../eng-us/examples/template-operators/ezhttp.md).
+Generierte Seite: [ezhttp](../../beispiele/template-operatoren/ezhttp.md).
 
 | Position | Bedeutung | Standardwert |
 |---|---|---|
@@ -187,7 +187,7 @@ Der Wert ist der unbearbeitete Wert der Anfrage: Bereinigen Sie ihn vor der Ausg
 
 ### ezhttp_hasvariable
 
-Generierte Seite: [ezhttp_hasvariable](../../../eng-us/examples/template-operators/ezhttp_hasvariable.md).
+Generierte Seite: [ezhttp_hasvariable](../../beispiele/template-operatoren/ezhttp_hasvariable.md).
 
 Derselbe Code wie `ezhttp` mit stets eingeschalteter Existenzprüfung: Parameter 1 (Name) und 2 (Typ, Standardwert
 `post`), keine Eingabe, Rückgabe `true` oder `false` (oder `null` bei einer noch nicht gestarteten Sitzung). Die Zeilen
@@ -215,7 +215,7 @@ Ausgabe auf alpha:
 
 ### ezini
 
-Generierte Seite: [ezini](../../../eng-us/examples/template-operators/ezini.md).
+Generierte Seite: [ezini](../../beispiele/template-operatoren/ezini.md).
 
 | Position | Bedeutung | Standardwert |
 |---|---|---|
@@ -235,7 +235,7 @@ Generierte Seite: [ezini](../../../eng-us/examples/template-operators/ezini.md).
 
 ### ezini_hasvariable
 
-Generierte Seite: [ezini_hasvariable](../../../eng-us/examples/template-operators/ezini_hasvariable.md).
+Generierte Seite: [ezini_hasvariable](../../beispiele/template-operatoren/ezini_hasvariable.md).
 
 `ezini` mit stets eingeschalteter Existenzprüfung: Parameter 1 bis 5 wie oben, Rückgabe `true` oder `false`, nie ein
 Fehler. Die Zeilen 6 und 7 unten; Zeile 5 ist dieselbe Prüfung über Parameter 6 von `ezini`.
@@ -375,11 +375,11 @@ zu dem ein Link gehört, vom Siteaccess abhängt, der das kompilierte Template a
 
 - [Registrierungsreihenfolge und Überschreibungen](registrierungsreihenfolge-und-ueberschreibungen.md): die allgemeinen Regeln hinter der Übernahme durch ezurlmultisite
 - [Kernel-Operatoren überschreiben](kernel-operatoren-ueberschreiben.md)
-- [URL-Operatoren für Designer](../../../eng-us/help/designers/templates/url-operators.md)
-- [Der Operator ezini](../../../eng-us/help/designers/templates/ezini-operator.md)
-- [Der Operator ezhttp](../../../eng-us/help/designers/templates/ezhttp-operator.md)
-- [Operatorreferenz](../../../eng-us/help/designers/templates/operator-reference.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [URL-Operatoren für Designer](../designer/vorlagen/url-operatoren.md)
+- [Der Operator ezini](../designer/vorlagen/der-ezini-operator.md)
+- [Der Operator ezhttp](../designer/vorlagen/der-ezhttp-operator.md)
+- [Operatorreferenz](../designer/vorlagen/operatorreferenz.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

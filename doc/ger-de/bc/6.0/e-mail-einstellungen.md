@@ -4,7 +4,7 @@ Was sich ändert, wenn eine Installation auf ein 6.0.15 mit den E-Mail-Einstellu
 Mail-Schranke, die jetzt jede E-Mail passiert, die E-Mail, die pro Empfänger aufgeteilt wird, die E-Mail, die als ohne
 Kategorie gezählt wird, und wie Sie das alte Verhalten dort behalten, wo Sie es brauchen. Lesen Sie die Seite, wenn Sie
 aktualisieren, wenn Ihr Code oder Ihre Erweiterung E-Mails sendet oder wenn Ihr Design das Registrierungsformular
-überschreibt. Das System, wie es jetzt ist: [die Anleitung für Benutzer](../../../eng-us/features/6.0/mail-preferences.md),
+überschreibt. Das System, wie es jetzt ist: [die Anleitung für Benutzer](../../funktionen/6.0/e-mail-einstellungen.md),
 [die Anleitung für Administratoren](../../anleitungen/mail-einstellungen-administrator.md),
 [die Spezifikation](../../spezifikationen/6.0/mail-einstellungen.md).
 

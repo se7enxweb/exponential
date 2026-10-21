@@ -60,7 +60,7 @@ commit-msg: the subject must start with 'Added: ', 'Updated: ', 'Fixed: ', 'Remo
 
 Merge-Commits und die von Git erzeugten Betreffs `Revert`, `fixup!` und `squash!` sind erlaubt. Die CI prüft die
 Commits eines Pushs oder Pull Requests mit `.githooks/check-commit-range`
-([Qualitätsprüfungen](../../../../eng-us/features/6.0/quality-checks.md), auf Englisch); laut dieser Seite führt der
+([Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspruefungen.md), auf Englisch); laut dieser Seite führt der
 Commit eines Beitragenden dort nur zu einer Warnung.
 
 Sie können den `commit-msg`-Hook in das Repository Ihrer Erweiterung kopieren: Es ist ein kurzes Shell-Skript.
@@ -104,7 +104,7 @@ Jahren liest, weiß, ob er der Änderung trauen kann.
 - Zurück: [Gute Issues schreiben](gute-issues-schreiben.md)
 - Weiter: [Die Arbeit anderer prüfen](die-arbeit-anderer-pruefen.md)
 - [Changelogs](../teil-7-veroeffentlichen/changelogs.md)
-- [Qualitätsprüfungen](../../../../eng-us/features/6.0/quality-checks.md) (auf Englisch)
+- [Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspruefungen.md) (auf Englisch)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

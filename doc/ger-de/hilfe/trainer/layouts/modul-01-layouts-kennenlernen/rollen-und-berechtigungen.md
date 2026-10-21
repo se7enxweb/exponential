@@ -37,8 +37,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Exponential Layouts: Berechtigungen](../../../../../eng-us/bc/6.0/LAYOUTS.md#permissions) und
-[explayouts_ui: Einstellungen](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md#settings).
+Quellen: [Exponential Layouts: Berechtigungen](../../../../bc/6.0/layouts.md#berechtigungen) und
+[explayouts_ui: Einstellungen](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md#einstellungen).
 
 1. **Drei Module** (4 Minuten). Die Layouts-Suite hat drei Module, jedes mit Richtlinien im Rolleneditor:
    - `explayouts` (der Kern): **read** und **edit**;
@@ -121,23 +121,23 @@ arbeiten auf Papier.
 2. **B.**
 3. **transfer_export** und **transfer_import** von `explayouts_ui`.
 4. Sie überschreiben sich gegenseitig: Entwürfe gehören zum Layout, nicht zu einer Person
-   ([Landingpages mit dem Layout-Editor](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#drafts-and-publishing)).
-5. Die Layouts-Richtlinien des Kontos ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#permissions)).
+   ([Landingpages mit dem Layout-Editor](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#entwürfe-und-veröffentlichen)).
+5. Die Layouts-Richtlinien des Kontos ([Exponential Layouts](../../../../bc/6.0/layouts.md#berechtigungen)).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Berechtigungen](../../../../../eng-us/bc/6.0/LAYOUTS.md#permissions)
+- [Exponential Layouts: Berechtigungen](../../../../bc/6.0/layouts.md#berechtigungen)
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md): der Rolleneditor.
-- [Landingpages mit dem Layout-Editor](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#handing-over-to-editors):
+- [Landingpages mit dem Layout-Editor](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#übergabe-an-die-redaktion):
   die Übergabe-Checkliste.
 
 ## Verwandte Seiten
 
 - [Modul 1: Exponential Layouts kennenlernen](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

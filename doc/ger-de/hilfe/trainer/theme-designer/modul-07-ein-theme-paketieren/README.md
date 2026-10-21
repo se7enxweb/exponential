@@ -57,7 +57,7 @@ denen der Installation, einen Export als `.ezpkg` und ein eigenes Git-Repository
 ## Verwandte Seiten
 
 - [Modul 6: Icons](../modul-06-icons/README.md)
-- [Theme-Erweiterungen: hier beginnen](../../../../../eng-us/help/designers/extensions/theme-extensions-start-here.md)
+- [Theme-Erweiterungen: hier beginnen](../../../designer/erweiterungen/theme-erweiterungen-hier-beginnen.md)
 - [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -262,9 +262,9 @@ Diese Skizze wurde nicht auf alpha ausgeführt; sie zeigt die Form, auf die die 
 
 - Zurück: [Namensräume](namensraeume.md)
 - Weiter: [Operatoren in Ausdrücken](operatoren-in-ausdruecken.md)
-- [Attribute und Punktschreibweise](../../../eng-us/help/designers/templates/attributes-and-dot-notation.md)
-- [Knoten, Objekte und Attribute](../../../eng-us/help/designers/templates/nodes-objects-attributes.md)
-- [attribute](../../../eng-us/examples/template-operators/attribute.md) und [dump](../../../eng-us/examples/template-operators/dump.md)
+- [Attribute und Punktschreibweise](../designer/vorlagen/attribute-und-punktnotation.md)
+- [Knoten, Objekte und Attribute](../designer/vorlagen/knoten-objekte-und-attribute.md)
+- [attribute](../../beispiele/template-operatoren/attribute.md) und [dump](../../beispiele/template-operatoren/dump.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

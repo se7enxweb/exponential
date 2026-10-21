@@ -82,7 +82,7 @@ oder das Leeren der Caches `ezjscore-packer` und `template-block`.
 
 - [Eine Deployment-Pipeline](deployment-pipeline.md)
 - [Velocity-Engines: eine PHP-Änderung ausliefern](../../../bc/6.0/velocity-engines.md)
-- [Velocity-Webserver](../../../../eng-us/features/6.0/velocity-web-server.md)
+- [Velocity-Webserver](../../../funktionen/6.0/velocity-webserver.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -5,7 +5,7 @@ Mit der UI-Umschaltung kann ein angemeldeter Benutzer eine Einstellung der Admin
 Entwickler: der Vertrag der Provider, die Registry und ihr Lebenszyklus pro Anfrage, der Varianten-Schlüssel des
 Caches, das Modul, die Fetch-Funktion, ein vollständiges Beispiel eines Providers in einer Erweiterung, die Regeln für
 Exponential Velocity und die Hinweise zur Kompatibilität. Was Benutzer sehen, steht auf
-[der Funktionsseite](../../../eng-us/features/6.0/ui-switch.md); die Einstellungen stehen in
+[der Funktionsseite](../../funktionen/6.0/ui-umschalter.md); die Einstellungen stehen in
 [der Anleitung zu den Einstellungen](../../anleitungen/ui-umschalter-einstellungen.md).
 
 ## Überblick

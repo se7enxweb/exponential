@@ -37,8 +37,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Collections](../../../../../eng-us/bc/6.0/LAYOUTS.md#collections-giving-a-block-its-content) und
-[Anheften: von Hand ausgewählte und dynamische Inhalte mischen](../../../../../eng-us/bc/6.0/LAYOUTS.md#pinning-mixing-hand-picked-and-dynamic-content).
+Quellen: [Collections](../../../../bc/6.0/layouts.md#collections-einem-block-seine-inhalte-geben) und
+[Anheften: von Hand ausgewählte und dynamische Inhalte mischen](../../../../bc/6.0/layouts.md#anheften-ausgewählte-und-dynamische-inhalte-mischen).
 
 1. **Offset und Limit** (4 Minuten). Sie wirken, nachdem die Abfrage gelaufen ist: Offset überspringt Elemente am
    Anfang, Limit zeigt höchstens so viele. Ein Block „Featured“ mit Limit 1 und ein Block „Weitere Beiträge“ mit
@@ -108,7 +108,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout mit dem Block *Newes
 
 1. Das erste Element überspringen und danach höchstens sechs zeigen.
 2. Zwei Blöcke mit derselben Abfrage und Sortierung: der erste mit Limit 1, der zweite mit Offset 1
-   ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#collections-giving-a-block-its-content)).
+   ([Exponential Layouts](../../../../bc/6.0/layouts.md#collections-einem-block-seine-inhalte-geben)).
 3. **B.**
 4. Damit der nächste Redakteur weiß, warum sich diese Position nie ändert.
 5. Seine Position liegt hinter dem Limit der Collection.
@@ -117,14 +117,14 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout mit dem Block *Newes
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Anheften](../../../../../eng-us/bc/6.0/LAYOUTS.md#pinning-mixing-hand-picked-and-dynamic-content)
-- [Layout-Typen, Zonen und Blöcke: Collections](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#collections)
+- [Exponential Layouts: Anheften](../../../../bc/6.0/layouts.md#anheften-ausgewählte-und-dynamische-inhalte-mischen)
+- [Layout-Typen, Zonen und Blöcke: Collections](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#collections)
 
 ## Verwandte Seiten
 
 - [Modul 4: Collections](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

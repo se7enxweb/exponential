@@ -13,7 +13,7 @@ Diese Seite richtet sich an Sicherheitsbeauftragte, Verantwortliche für das Sch
 öffentlichen Stellen, die das Prüfprotokoll einer Website als Nachweis aufbewahren müssen. Sie beantwortet, wie das
 Prüfprotokoll seine Einträge speichert, wie lange es sie standardmäßig aufbewahrt, wie Sie sie länger auf Speicher
 aufbewahren, den der Webserver nicht ändern kann, wie Sie sie sichern und ihre Unversehrtheit nachweisen und wie Sie
-einen alten Tag lesen. Die Referenzen sind [Das Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md) und der
+einen alten Tag lesen. Die Referenzen sind [Das Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md) und der
 [Audit-Leitfaden](../../../../bc/6.0/audit.md).
 
 ## Inhalt

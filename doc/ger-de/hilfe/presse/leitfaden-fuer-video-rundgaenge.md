@@ -33,9 +33,9 @@ diesem Bereich:
 | Was Exponential ist, in fünf Minuten gezeigt | 5 Min. | [Überblick in fünf Minuten](demo-skript-ueberblick-in-fuenf-minuten.md) | [Erste Schritte](../erste-schritte.md) |
 | Bearbeiten, Entwürfe, Vorschau und Versionen | 8 bis 10 Min. | [Rundgang für Redakteure](demo-skript-rundgang-fuer-redakteure.md) | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | Eine Seite mit dem Seitenbaukasten bauen | 6 bis 8 Min. | [Exponential Layouts](demo-skript-exponential-layouts.md) | [Der Layout-Editor](../layout-editor.md) |
-| Der Schreibassistent, der nur Entwürfe schreibt | 6 Min. | [Exponential Intelligence](demo-skript-exponential-intelligence.md) | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
-| Eine Website unter Velocity betreiben | 8 Min. | [Velocity](demo-skript-velocity.md) | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
-| Von einem leeren Ordner zu einer laufenden Website | 10 Min. | [Installation von null](demo-skript-installation-von-null.md) | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Der Schreibassistent, der nur Entwürfe schreibt | 6 Min. | [Exponential Intelligence](demo-skript-exponential-intelligence.md) | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
+| Eine Website unter Velocity betreiben | 8 Min. | [Velocity](demo-skript-velocity.md) | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
+| Von einem leeren Ordner zu einer laufenden Website | 10 Min. | [Installation von null](demo-skript-installation-von-null.md) | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Was ein Administrator sieht | 10 Min. | [Rundgang für Administratoren](demo-skript-rundgang-fuer-administratoren.md) | [Sicherheitshärtung](../sicherheitshaertung.md) |
 
 Schreiben Sie vor allem anderen das Versprechen in einem Satz auf: „Nach diesem Video können Sie <Aufgabe>.“

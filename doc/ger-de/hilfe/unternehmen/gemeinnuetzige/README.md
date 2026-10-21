@@ -13,7 +13,7 @@ Dieser Bereich richtet sich an Hilfsorganisationen, Stiftungen, Organisationen v
 Organisationen, die ihre öffentliche Website, ihre Kampagnen und die Gewinnung von Ehrenamtlichen mit Exponential
 betreiben. Er erklärt, was es für Spenden, die Anmeldung von Ehrenamtlichen, Kampagnen und Barrierefreiheit gibt, wie Sie
 die laufenden Kosten niedrig halten, und er sagt klar, wo Sie einen externen Dienst brauchen. Behörden haben einen
-eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Inhalt
 
@@ -30,7 +30,7 @@ eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/g
   ([Lizenzierung für Käufer](../../geschaeft/lizenzen-fuer-kaeufer.md#keine-lizenzgebühren-und-wofür-käufer-tatsächlich-bezahlen)).
 - **Geringe Anforderungen an das Hosting sind möglich.** SQLite 3 ist die erste unterstützte Datenbank, und „eine
   vollständige Exponential-Website läuft aus einer Datei auf der Platte, ohne Datenbankserver, der installiert,
-  konfiguriert oder abgesichert werden müsste“ ([Unterstützung für SQLite-Datenbanken](../../../../eng-us/features/6.0/sqlite-database.md)).
+  konfiguriert oder abgesichert werden müsste“ ([Unterstützung für SQLite-Datenbanken](../../../funktionen/6.0/sqlite-datenbank.md)).
 - **Formulare, Newsletter und Landingpages sind enthalten.** Der Informationssammler, `cjw_newsletter` und Exponential
   Layouts kommen mit dem Produkt (`composer.json`).
 - **Das Projekt selbst hat ein gemeinnütziges Zuhause**: Es wird von der Exponential Foundation betrieben, einer
@@ -82,13 +82,13 @@ eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/g
 - [Mitglieder](../mitglieder/README.md): Mitgliederbereiche und Registrierung.
 - [Kosten](../kosten/README.md), einschließlich eines [durchgerechneten Beispiels für eine gemeinnützige Organisation](../kosten/durchgerechnetes-beispiel-gemeinnuetzige-organisation.md).
 - [Sicherheit und Datenschutz](../sicherheit/README.md): Grundlagen der DSGVO, Einwilligung und Formulare.
-- [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md) für öffentliche Stellen.
+- [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md) für öffentliche Stellen.
 
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
 - [Welcher Bereich passt zu Ihrer Organisation?](../welcher-bereich-zu-ihrer-organisation-passt.md)
-- [Was Sie bauen können](../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
+- [Was Sie bauen können](../../ersteller/website-ersteller/was-sie-bauen-koennen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

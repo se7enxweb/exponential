@@ -163,7 +163,7 @@ Template-Funktionen verwenden dieselben Dateien und dieselben Listen: Einträge 
 - [Registrierungsreihenfolge und Überschreibungen](registrierungsreihenfolge-und-ueberschreibungen.md)
 - [Die Schnittstelle der Operatorklasse](referenz-der-operatorklassen.md)
 - [Einen Operator Schritt für Schritt anlegen](einen-operator-schritt-fuer-schritt-anlegen.md)
-- [Einstellungen und INI-Dateien](../../../eng-us/help/creators/app-creators/settings-and-ini-files.md)
+- [Einstellungen und INI-Dateien](../ersteller/anwendungsentwickler/einstellungen-und-ini-dateien.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

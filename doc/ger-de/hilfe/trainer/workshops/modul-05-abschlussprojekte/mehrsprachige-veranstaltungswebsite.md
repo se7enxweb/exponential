@@ -50,7 +50,7 @@ Die Teilnehmenden zeigen, dass sie:
 
 ## Hinweise für Trainer
 
-- **Begutachten Sie den Code** anhand der [Programmierrichtlinien](../../../../../eng-us/standards/coding-standards.md) und der
+- **Begutachten Sie den Code** anhand der [Programmierrichtlinien](../../../../standards/programmierstandards.md) und der
   Template-Regeln: Ausgabe mit `|wash` maskiert, keine zwischen Templates kopierte Logik.
 - **Prüfen Sie die Grenze der Erweiterung**: Außerhalb von `extension/lakesidemusic` wurde nichts geändert, abgesehen
   von der Aktivierung.
@@ -101,15 +101,15 @@ offiziellen Status.
 
 ## Weiterführende Informationen
 
-- [Entwicklung von Erweiterungen](../../../../../eng-us/help/extension-development/README.md)
+- [Entwicklung von Erweiterungen](../../../erweiterungsentwicklung/README.md)
 - [Templates und Design](../../../../anleitungen/templates-und-design.md)
-- [Übersetzungen und Sprachen](../../../../../eng-us/features/6.0/translations-and-languages.md)
+- [Übersetzungen und Sprachen](../../../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 
 ## Verwandte Seiten
 
 - [Modul 5: Abschlussprojekte](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

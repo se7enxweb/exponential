@@ -57,7 +57,7 @@ Ein Wert wird in dieser Reihenfolge gelesen; der letzte gewinnt:
    Erweiterung)
 2. `settings/<file>.ini.append.php` der aktiven Erweiterungen
 3. `settings/siteaccess/<siteaccess>/` und `settings/siteaccess/<siteaccess>/` der Erweiterungen
-4. `settings/override/` der Erweiterungen für ihre eigenen Siteaccesses ([Einstellungen je Website](../../../../eng-us/features/6.0/multi-site-ini-overrides.md))
+4. `settings/override/` der Erweiterungen für ihre eigenen Siteaccesses ([Einstellungen je Website](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md))
 5. `settings/override/<file>.ini.append.php` der Installation
 
 Arrays addieren sich über die Schichten; eine leere Zeile `Key[]` löscht, was vorher kam.
@@ -78,7 +78,7 @@ wenn ein Schlüssel fehlen kann.
 ## Einstellungen ändern
 
 `exp:ini` liest und schreibt jeden Geltungsbereich Zeile für Zeile und behält Kommentare bei
-([Einstellungen auf der Kommandozeile ändern](../../../../eng-us/features/6.0/exp-ini-command.md)):
+([Einstellungen auf der Kommandozeile ändern](../../../funktionen/6.0/exp-ini-befehl.md)):
 
 ```bash
 ./console exp:ini get expdemo.ini/ListSettings/DefaultLimit

@@ -2537,7 +2537,7 @@ Administrator aus `expaccount.forgotRequest`. [Demomodus](demomodus.md).
 
 ## Verwandte Seiten
 
-- [Funktionsseite zu den entfernten Diensten (expservices)](../../../eng-us/features/6.0/remote-services-expservices.md)
+- [Funktionsseite zu den entfernten Diensten (expservices)](../../funktionen/6.0/entfernte-dienste-expservices.md)
 - [Anleitung zu entfernten Diensten und Apps](../../anleitungen/entfernte-dienste-und-apps.md)
 - [Inhaltsjobs](inhaltsjobs.md)
 - [Audit](audit.md)

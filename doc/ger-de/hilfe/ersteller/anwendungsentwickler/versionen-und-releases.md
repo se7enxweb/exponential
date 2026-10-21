@@ -60,8 +60,8 @@ Sie inkompatible Änderungen klar.
 ## Verwandte Seiten
 
 - [Als Erweiterung paketieren](als-erweiterung-paketieren.md)
-- [Standard für Versionsverwaltung und Releases](../../../../eng-us/standards/source-control-and-releases.md)
-- [Kompatibilität, Releases und Deployment](../../../../eng-us/standards/architecture/compatibility-releases-deployment.md)
+- [Standard für Versionsverwaltung und Releases](../../../standards/versionsverwaltung-und-releases.md)
+- [Kompatibilität, Releases und Deployment](../../../standards/architektur/kompatibilitaet-releases-deployment.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

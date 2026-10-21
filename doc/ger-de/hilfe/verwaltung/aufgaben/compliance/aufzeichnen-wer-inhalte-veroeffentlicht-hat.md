@@ -56,7 +56,7 @@ Das Schreiben der Einstellung selbst wird als `system.setting.write` aufgezeichn
 
 ## Verwandte Seiten
 
-- [Das Audit-Protokoll für Behörden](../../../../../eng-us/help/government/security/audit-trail-for-public-bodies.md)
+- [Das Audit-Protokoll für Behörden](../../sicherheit/audit-protokoll-fuer-oeffentliche-stellen.md)
 - [Versionen und Inhaltsverlauf](../../schriftgut-und-archivierung/versionen-und-inhaltsgeschichte.md)
 - [Anleitung zum Audit, 8 Referenz der Ereignisse](../../../../bc/6.0/audit.md#8-referenz-der-ereignisse)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

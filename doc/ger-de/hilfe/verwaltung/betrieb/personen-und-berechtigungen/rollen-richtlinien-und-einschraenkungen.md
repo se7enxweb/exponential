@@ -54,7 +54,7 @@ Modul `role` lässt ihre Inhaber Rollen ändern, was die Rollenliste gelb als *K
 ist *Voller Zugriff*, rot markiert.
 
 Für Freigaben zählt eine Tatsache: Im Bearbeitungsformular entscheidet `content/edit`, ob ein Benutzer einen Entwurf veröffentlichen darf
-([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)). Eine Freigabe vor dem Veröffentlichen
+([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)). Eine Freigabe vor dem Veröffentlichen
 wird daher durch einen Workflow durchgesetzt, nicht durch das Vorenthalten eines Veröffentlichungsrechts; siehe
 [Vier-Augen-Prinzip beim Veröffentlichen](../redaktionelle-workflows/vier-augen-prinzip-beim-veroeffentlichen.md).
 
@@ -91,10 +91,10 @@ der Gruppe verschoben wird. Eine Rolle kann mehrmals mit verschiedenen Einschrä
   bearbeiten darf, nur vergeben, was seine eigenen Rollen abdecken; eine weitergehende Richtlinie wird mit *Die Richtlinie wurde nicht
   hinzugefügt* oder *Die Rolle wurde nicht gespeichert* abgewiesen ([Leitfaden, „Wer das tun darf“](../../../../anleitungen/rollen-und-richtlinien.md#wer-das-darf)).
 - **Alles wird erfasst.** Rollenzuweisungen und Änderungen an Berechtigungen sind Ereignisse des Kanals `access` des
-  [Prüfprotokolls](../../../../../eng-us/features/6.0/audit-trail.md), und die Vergabe einer Administratorrolle löst die Alarmregel
+  [Prüfprotokolls](../../../../funktionen/6.0/pruefprotokoll.md), und die Vergabe einer Administratorrolle löst die Alarmregel
   `admin_role_granted` aus (`settings/audit.ini`).
 - **Links folgen den Berechtigungen.** Die Administration verbirgt Links, die ein Benutzer nicht öffnen könnte
-  ([Administrationslinks folgen den Berechtigungen](../../../../../eng-us/features/6.0/admin-links-follow-permissions.md)).
+  ([Administrationslinks folgen den Berechtigungen](../../../../funktionen/6.0/admin-links-folgen-den-berechtigungen.md)).
 
 ## Zugriff für ein Audit dokumentieren
 
@@ -114,9 +114,9 @@ die Benutzer, die die Rolle erreicht, was sie zu einer guten Quelle für diesen 
 ## Verwandte Seiten
 - [Grundsätze der geringsten Rechte](prinzip-der-geringsten-rechte.md)
 - [Funktionstrennung](funktionstrennung.md)
-- [Prüfen, was eine Rolle erlaubt](../../../../../eng-us/help/government/tasks/people-and-permissions/check-what-a-role-allows.md)
+- [Prüfen, was eine Rolle erlaubt](../../aufgaben/personen-und-berechtigungen/pruefen-was-eine-rolle-erlaubt.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md)
-- [Reihenfolge der Richtlinien einer Rolle](../../../../../eng-us/features/6.0/role-policy-order.md)
+- [Reihenfolge der Richtlinien einer Rolle](../../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

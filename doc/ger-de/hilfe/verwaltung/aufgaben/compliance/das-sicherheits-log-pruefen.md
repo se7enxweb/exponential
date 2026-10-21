@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren und Hosting-Teams, wöchentlich. Der Anfrageklassifizierer schreibt jede Anfrage, die er für eine
 Sondierung oder einen Angriff hält, maskiert in `var/log/security.log`; er blockiert nichts
-([Anfrage-Logs und das Sicherheits-Log](../../../../../eng-us/help/government/security/request-logs-and-the-security-log.md)).
+([Anfrage-Logs und das Sicherheits-Log](../../sicherheit/anfrageprotokolle-und-das-sicherheitsprotokoll.md)).
 
 ## Inhalt
 
@@ -49,8 +49,8 @@ Sondierung oder einen Angriff hält, maskiert in `var/log/security.log`; er bloc
 
 ## Verwandte Seiten
 
-- [Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md)
-- [Routine zur Prüfung der Logs](../../../../../eng-us/help/government/security/log-review-routine.md)
+- [Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md)
+- [Routine zur Prüfung der Logs](../../sicherheit/routine-zur-protokollpruefung.md)
 - [Sicherheits-Log für Hoster](../../../hosting/betrieb/sicherheitslog.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

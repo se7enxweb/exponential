@@ -46,7 +46,7 @@ Lesen Sie in dieser Reihenfolge:
 ## Tag 2: das Produkt ausprobieren
 
 Installieren Sie es auf Ihrem eigenen Rechner. Ein Befehl installiert eine vollständige Website auf SQLite, ohne
-Datenbankserver ([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)):
+Datenbankserver ([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)):
 
 ```bash
 ./console exp:install --dry-run    # checks, installs nothing

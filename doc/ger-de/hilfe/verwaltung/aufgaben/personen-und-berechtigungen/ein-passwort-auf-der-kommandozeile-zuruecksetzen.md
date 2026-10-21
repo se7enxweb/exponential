@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Systemadministratoren mit Shell-Zugang, typischerweise wenn das Administratorpasswort verloren ist
 oder eine Installation übernommen wird. `bin/php/resetuserpassword.php` setzt ein neues Passwort für jeden Benutzer; es
-ist unter [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../../../eng-us/features/6.0/reset-user-password.md)
+ist unter [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)
 beschrieben.
 
 ## Inhalt
@@ -54,7 +54,7 @@ php bin/php/resetuserpassword.php -a <admin login> -ap '<admin password>' -u <lo
 - Melden Sie sich mit dem neuen Passwort an.
 - Die anderen Sitzungen des Kontos werden bei ihrer nächsten Anfrage abgemeldet, und eine E-Mail „Ihr Passwort wurde
   geändert“ geht an die Adresse des Kontos
-  ([Das eigene Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md#in-short)).
+  ([Das eigene Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md#kurz-gefasst)).
 - Die Änderung steht im Audit-Protokoll; das Passwort wird nie aufgezeichnet.
 
 ## Fallstricke
@@ -73,7 +73,7 @@ Shell-Historie sichtbar. Bevorzugen Sie `-g`, und leeren Sie danach die Historie
 - [Das Passwort eines Mitarbeiters zurücksetzen](das-passwort-eines-mitarbeiters-zuruecksetzen.md)
 - [Standard-Administratorpasswort (Hilfe)](../../../standard-administratorpasswort.md)
 - [Erste Anmeldung und Standardpasswörter (Hosting)](../../../hosting/sicherheit/erste-anmeldung-und-standardpasswoerter.md)
-- [Vermutete Kompromittierung eines Kontos](../../../../../eng-us/help/government/operations/incidents/suspected-account-compromise.md)
+- [Vermutete Kompromittierung eines Kontos](../../betrieb/vorfaelle/verdacht-auf-kompromittiertes-konto.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

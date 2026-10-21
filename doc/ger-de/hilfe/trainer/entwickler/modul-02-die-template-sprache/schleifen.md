@@ -158,7 +158,7 @@ Schritt `php bin/php/ezexec.php extension/mysite_hello/scripts/play.php` aus.
 
 - [Templates und Design, Teil 6](../../../../anleitungen/templates-und-design.md#6-die-template-sprache-in-zehn-minuten):
   die Sprache in zehn Minuten, mit einem vollständigen Listen-Template.
-- [String-Template-Operatoren](../../../../../eng-us/features/6.0/string-template-operators.md): Operatoren für die Elemente.
+- [String-Template-Operatoren](../../../../funktionen/6.0/template-operatoren-fuer-zeichenketten.md): Operatoren für die Elemente.
 
 ## Verwandte Seiten
 

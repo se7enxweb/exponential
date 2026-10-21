@@ -50,7 +50,7 @@ Befehle, die mit einem aussagekräftigen Exit-Code oder JSON enden und sich für
 | die Syslog-Senke des Audits | Einträge im Syslog, `journalctl -t exponential` mit `Transport=local` |
 
 Die Warnungssenken des Audits (Syslog, ein signierter Webhook, E-Mail) schicken Ihnen Ereignisse zu
-([Prüfprotokoll, „Sinks, alerts and archives“](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)).
+([Prüfprotokoll, „Sinks, alerts and archives“](../../../../funktionen/6.0/pruefprotokoll.md#sinks-alarme-und-archive)).
 
 ## Eine Routine
 
@@ -58,8 +58,8 @@ Die Warnungssenken des Audits (Syslog, ein signierter Webhook, E-Mail) schicken 
 |---|---|
 | Laufend | Prüfungen der öffentlichen Website und der Anmeldeseite von außen; E-Mails und Syslog der Audit-Warnungen |
 | Täglich | **Fehlerübersicht** der letzten 24 Stunden; ausgelöste Audit-Warnungen |
-| Wöchentlich | Durchsicht von `security.log` ([Das Sicherheitslog wöchentlich durchsehen](../../../../../eng-us/help/government/tasks/operations/review-the-security-log-weekly.md)); Läufe der Cronjobs; `exp:audit verify`; Zustandsprüfungen der Systeminformationen |
-| Monatlich | Upgrade-Prüfung; Zustand der Logs und Festplatte; Pflege der Konten; Wiederherstellungstest einer Datensicherung, wie es Ihr Plan vorsieht ([Monatliche Betriebsüberprüfung](../../../../../eng-us/help/government/tasks/operations/monthly-operations-review.md)) |
+| Wöchentlich | Durchsicht von `security.log` ([Das Sicherheitslog wöchentlich durchsehen](../../aufgaben/betrieb/das-sicherheits-log-woechentlich-pruefen.md)); Läufe der Cronjobs; `exp:audit verify`; Zustandsprüfungen der Systeminformationen |
+| Monatlich | Upgrade-Prüfung; Zustand der Logs und Festplatte; Pflege der Konten; Wiederherstellungstest einer Datensicherung, wie es Ihr Plan vorsieht ([Monatliche Betriebsüberprüfung](../../aufgaben/betrieb/monatliche-betriebsueberpruefung.md)) |
 
 Die [wöchentliche Checkliste des Betriebsleitfadens](../../../../anleitungen/betrieb-einer-website.md#10-eine-wöchentliche-checkliste) ist
 ein gutes Minimum.
@@ -75,7 +75,7 @@ eine organisatorische Angelegenheit außerhalb der Software.
 - [Vorfälle](../vorfaelle/README.md)
 - [Zustandsprüfungen und Verfügbarkeit (Hosting)](../../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)
 - [Betrieb einer Website](../../../../anleitungen/betrieb-einer-website.md)
-- [Kursmodul Logs und Prüfprotokoll](../../../../../eng-us/help/trainers/site-administrators/README.md)
+- [Kursmodul Logs und Prüfprotokoll](../../../trainer/website-administratoren/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

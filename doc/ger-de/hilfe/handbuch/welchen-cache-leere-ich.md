@@ -52,7 +52,7 @@ Benutzer, deren Rolle `setup/managecache` hat.
 
 - [Caches](../../anleitungen/caches.md)
 - [Geschwindigkeit und Caching](../kunden/gesund-halten/geschwindigkeit-und-caching.md)
-- [Caches nach einer Änderung](../../../eng-us/help/build-two-ways/caches-after-a-change.md)
+- [Caches nach einer Änderung](../zwei-wege-zum-bauen/caches-nach-einer-aenderung.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

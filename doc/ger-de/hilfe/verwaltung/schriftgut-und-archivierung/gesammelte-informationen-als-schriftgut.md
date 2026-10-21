@@ -59,7 +59,7 @@ wieder her, um sie zu erreichen.
 ## Verwandte Seiten
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
-- [Formulareinsendungen](../../../../eng-us/help/creators/website-creators/form-submissions.md)
+- [Formulareinsendungen](../../ersteller/website-ersteller/formulareinsendungen.md)
 - [Formulare zur Informationssammlung und Datenschutz](../datenschutz/formulare-des-information-collectors.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

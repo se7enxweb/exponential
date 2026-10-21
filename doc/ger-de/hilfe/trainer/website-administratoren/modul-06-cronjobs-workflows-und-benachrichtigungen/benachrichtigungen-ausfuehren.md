@@ -45,7 +45,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Benachrichtigungen: ausführen, die Statusseite lesen und Probleme beheben](../../../../anleitungen/benachrichtigungen-administrator.md),
-Abschnitte 1 bis 5. Was Benutzer sehen, steht unter [Benachrichtigungen](../../../../../eng-us/features/6.0/notifications.md).
+Abschnitte 1 bis 5. Was Benutzer sehen, steht unter [Benachrichtigungen](../../../../funktionen/6.0/benachrichtigungen.md).
 
 1. **So funktioniert es, in einer Minute** (4 Minuten). Das Veröffentlichen schreibt ein *Ereignis*. Ein *Lauf* gibt
    jedes wartende Ereignis an die Handler, die die Folgenden finden und für jeden eine *Nachricht* schreiben, die sofort
@@ -164,7 +164,7 @@ alle Testkonten verwenden Adressen unter `example.invalid`.
 
 - [Benachrichtigungen: ausführen, die Statusseite lesen und Probleme beheben](../../../../anleitungen/benachrichtigungen-administrator.md):
   jede Kennzahl, die Problemliste und die Fehlersuche.
-- [Benachrichtigungen](../../../../../eng-us/features/6.0/notifications.md): was Benutzer sehen und einstellen.
+- [Benachrichtigungen](../../../../funktionen/6.0/benachrichtigungen.md): was Benutzer sehen und einstellen.
 - [Befehle für Benachrichtigungen](../../../../spezifikationen/6.0/benachrichtigungen-cli.md): jede Option der Konsolenbefehle.
 - [E-Mail-Zustellung für Hoster](../../../hosting/betrieb/mailzustellung.md): Transporte und Zustellung auf einem
   Server.

@@ -79,7 +79,7 @@ CrontabSchedule_nightly=30 3 * * *
 
 **Während eines Releases anhalten**: **Setup > Cronjobs** hält einen Teil (**Anhalten** auf seiner Karte) oder alle Teile
 an, bis jemand sie fortsetzt, und `runcronjobs.php` überspringt sie dann (`[PauseSettings] Pause=disabled` schaltet die
-Prüfung ab); siehe [Cronjobs anhalten](../../../../eng-us/features/6.0/cronjob-pause.md).
+Prüfung ab); siehe [Cronjobs anhalten](../../../funktionen/6.0/cronjobs-pausieren.md).
 
 ## Prüfungen
 
@@ -94,7 +94,7 @@ Prüfung ab); siehe [Cronjobs anhalten](../../../../eng-us/features/6.0/cronjob-
 
 - Zurück: [Workflows für Builder](workflows-fuer-builder.md)
 - Weiter: [Eine Website bauen, ohne Code zu schreiben](eine-website-ohne-code-bauen.md)
-- [Cronjobs](../../../anleitungen/cronjobs.md), [Cronjobs auf der Konsole](../../../../eng-us/features/6.0/cronjobs-console.md)
+- [Cronjobs](../../../anleitungen/cronjobs.md), [Cronjobs auf der Konsole](../../../funktionen/6.0/cronjobs-in-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -39,7 +39,7 @@ Die Seiten hier machen aus diesen Fakten unternehmerische Entscheidungen.
 
 ## Die Zahlen auf einen Blick
 
-Aus [Sprachen in Exponential](../../../../eng-us/languages.md), der Referenzseite für alle Zahlen zu Sprachen (gezählt am
+Aus [Sprachen in Exponential](../../../sprachen.md), der Referenzseite für alle Zahlen zu Sprachen (gezählt am
 15. Oktober 2026 für die Locales und am 18. Oktober 2026 für die Übersetzungen der Administration, Exponential 6.0.15):
 
 | Was | Zahl |
@@ -84,14 +84,14 @@ Aus [Sprachen in Exponential](../../../../eng-us/languages.md), der Referenzseit
 - [Online-Shops und kleine Geschäfte](../shops/README.md), besonders [Preise und Währungen](../shops/preise-und-waehrungen.md)
 - [Mobile Apps, Headless und Netzwerke](../mobil-und-headless/README.md)
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
-- Organisationen des öffentlichen Sektors: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
+- Organisationen des öffentlichen Sektors: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md)
 
 ## Verwandte Seiten
 
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
 - [Multisite- und mehrsprachige Projekte planen](../../fuehrung/multisite-und-mehrsprachigkeit-planen.md)
-- [Eine mehrsprachige Website aufbauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Eine mehrsprachige Website aufbauen](../../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

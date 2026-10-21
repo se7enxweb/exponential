@@ -45,7 +45,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Cronjobs: ausführen, einplanen und verfolgen](../../../../anleitungen/cronjobs.md), Abschnitte 3 bis 12, und
-[Cronjob-Teile anhalten](../../../../../eng-us/features/6.0/cronjob-pause.md). Beschrieben wird die Seite des Designs admin4.
+[Cronjob-Teile anhalten](../../../../funktionen/6.0/cronjobs-pausieren.md). Beschrieben wird die Seite des Designs admin4.
 
 1. **Der Weg hinein** (2 Minuten). **Setup** im oberen Menü, dann **Cronjobs** in der linken Spalte
    (`/setup/cronjobs`). Nur Rollen mit der Richtlinie `setup/managecronjobs` sehen sie; eine neue Installation gibt sie
@@ -142,7 +142,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator in der Admini
 
 1. `setup/managecronjobs` ([Cronjobs, Abschnitt 2](../../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen)).
 2. **Falsch.** Ein angehaltener Teil wird von jedem Lauf ausgelassen, egal wer ihn startet, bis er fortgesetzt wird
-   ([Cronjob-Teile anhalten](../../../../../eng-us/features/6.0/cronjob-pause.md)).
+   ([Cronjob-Teile anhalten](../../../../funktionen/6.0/cronjobs-pausieren.md)).
 3. **B.** Damit das Skript seine Sperre freigeben und sauber enden kann.
 4. Er steht in `[AdminSettings] ForbiddenParts[]`, weil er destruktiv ist; führen Sie ihn, wenn es sein muss, in einer
    Shell aus.
@@ -155,8 +155,8 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator in der Admini
 
 - [Cronjobs: ausführen, einplanen und verfolgen](../../../../anleitungen/cronjobs.md): jeder Bereich der Seite und eine
   Tabelle zur Fehlersuche.
-- [Cronjob-Teile anhalten](../../../../../eng-us/features/6.0/cronjob-pause.md): wie Pausen gespeichert und gemeldet werden.
-- [Die Cronjob-Konsole](../../../../../eng-us/features/6.0/cronjobs-console.md): die Referenz zur Funktion.
+- [Cronjob-Teile anhalten](../../../../funktionen/6.0/cronjobs-pausieren.md): wie Pausen gespeichert und gemeldet werden.
+- [Die Cronjob-Konsole](../../../../funktionen/6.0/cronjobs-in-der-konsole.md): die Referenz zur Funktion.
 - [Die Cronjob-Konsole für Hoster](../../../hosting/betrieb/die-cronjob-konsole.md): dieselbe Seite aus Sicht eines
   Hosters.
 

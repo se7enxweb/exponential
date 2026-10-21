@@ -8,7 +8,7 @@ Ihre Inhalte verwenden.
 Sie wird nur als Locale-Datei mitgeliefert, `share/locale/qlo-ZZ.ini`. **Keine Installation fügt sie hinzu**: weder
 die leeren Daten noch die Startdaten des Installers, weder ein Paket noch der Kickstart. Sie belegt keinen Platz für
 eine Inhaltssprache, bis Sie sie hinzufügen (siehe
-[die Grenze von 62 Inhaltssprachen](../../eng-us/languages.md#11-the-limit-of-62-content-languages)), und Sie sollten sie
+[die Grenze von 62 Inhaltssprachen](../sprachen.md#11-die-grenze-von-62-inhaltssprachen)), und Sie sollten sie
 wieder entfernen, wenn Ihr Test abgeschlossen ist.
 
 ## Inhalt
@@ -94,7 +94,7 @@ Siehe [Übersetzungen und Sprachen sicher entfernen](inhaltssprachen.md#9-übers
   aufgeführt, nie gewichtet. Ihre Oberfläche bleibt englisch (es gibt keine Übersetzung), mit eigenen Datumsformaten.
 - **Installation**: Keine der mitgelieferten Daten, Startdaten, Pakete oder Kickstart-Einstellungen fügt sie hinzu.
 
-Quelle: [Sprachen in Exponential](../../eng-us/languages.md#12-test-languages-lorem-ipsum),
+Quelle: [Sprachen in Exponential](../sprachen.md#12-testsprachen-lorem-ipsum),
 [Inhaltssprachen](inhaltssprachen.md).
 
 <!-- exp-partner-block:start -->

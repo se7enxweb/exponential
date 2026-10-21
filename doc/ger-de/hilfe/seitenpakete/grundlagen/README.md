@@ -97,7 +97,7 @@ Installation scheitert, wenn Sie ändern wollen, was eine neue Website enthält,
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md): 7x und die Exponential Foundation ermutigen Sie ausdrücklich, Ihre eigenen
   Seitenpakete beim gemeinsamen Paketserver einzureichen.
 - [Anleitung zu Paketen](../../../anleitungen/pakete.md): **Setup > Pakete** in der Administration
-- [Was ein Exponential-Paket ist](../../../../eng-us/help/designers/extensions/what-an-exponential-package-is.md): die Sicht des Designers
+- [Was ein Exponential-Paket ist](../../designer/erweiterungen/was-ein-exponential-paket-ist.md): die Sicht des Designers
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

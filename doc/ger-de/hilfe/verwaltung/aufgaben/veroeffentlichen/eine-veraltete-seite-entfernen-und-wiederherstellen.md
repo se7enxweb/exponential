@@ -68,7 +68,7 @@ anderes als Verstecken: Die Adresse funktioniert nicht mehr.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen)
-- [Papierkorb: wer und wo](../../../../../eng-us/features/6.0/trash-who-and-where.md)
+- [Papierkorb: wer und wo](../../../../funktionen/6.0/papierkorb-wer-und-wo.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

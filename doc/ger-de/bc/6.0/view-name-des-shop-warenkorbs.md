@@ -261,6 +261,6 @@ kennzeichnet, sollte es verschieben.
 
 ## Verwandte Seiten
 
-- [Der Shop-Warenkorb in der Chronik vom September 2026](../../../eng-us/history/2026/2026-09a.md#11-september-the-basket-gets-a-name-you-choose)
-- [Bestellbelege](../../../eng-us/features/6.0/order-receipts.md) und [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md)
+- [Der Shop-Warenkorb in der Chronik vom September 2026](../../geschichte/2026/2026-09a.md#11-september-der-warenkorb-erhält-einen-namen-den-sie-wählen)
+- [Bestellbelege](../../funktionen/6.0/bestellbelege.md) und [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

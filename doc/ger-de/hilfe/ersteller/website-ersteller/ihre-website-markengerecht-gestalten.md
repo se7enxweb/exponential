@@ -87,7 +87,7 @@ Beschreibungen und Schlüsselwörter pro Seite brauchen ein Metadatenfeld am Inh
 
 Das Theme simple gibt in `page_footer.tpl` einen Hinweis „Powered by Exponential“ aus, es sei denn, das Attribut
 **Hide powered by** (`hide_powered_by`) des Seitendesign-Objekts ist gesetzt; bearbeiten Sie dieses Objekt, eine
-Template-Änderung ist nicht nötig ([sevenx_themes_simple](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md)).
+Template-Änderung ist nicht nötig ([sevenx_themes_simple](../../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md)).
 Den Hinweis stehen zu lassen ist eine freundliche Art, das Projekt zu unterstützen.
 
 ## Checkliste

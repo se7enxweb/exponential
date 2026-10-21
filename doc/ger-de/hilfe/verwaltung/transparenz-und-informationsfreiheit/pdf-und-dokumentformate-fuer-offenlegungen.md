@@ -59,7 +59,7 @@ Viele öffentliche Stellen müssen Dokumente barrierefrei bereitstellen; in der 
 die Websites öffentlicher Stellen und die Dokumente darauf, mit den in der Richtlinie festgelegten Ausnahmen.
 Praktische Prüfungen: echter Text (keine Scans), Überschriften, Alternativtext für Bilder, eine Dokumentsprache,
 Tabellen mit Kopfzeilen. Der eigene Stand der Barrierefreiheit von Exponential ist in den
-[Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) beschrieben; er umfasst nicht die Dateien, die
+[Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) beschrieben; er umfasst nicht die Dateien, die
 Sie hochladen.
 
 ## Checkliste
@@ -73,8 +73,8 @@ Sie hochladen.
 ## Verwandte Seiten
 
 - [PDF-Exporte](../../../anleitungen/pdf-exporte.md)
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -33,7 +33,7 @@ unter [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) beschrieben; die
 - **Datensicherung** erstellt und geprüft ([Was zu sichern ist](../datensicherung-und-wiederherstellung/was-gesichert-werden-muss.md)).
 - **Shell-Zugang** geprüft, damit Sie die Wartung immer beenden können, auch wenn ein Browser es nicht kann.
 - **Cronjobs**: Entscheiden Sie, welche während des Wartungsfensters nicht laufen dürfen
-  ([Cronjobs während der Wartung pausieren](../../../../../eng-us/help/government/tasks/operations/pause-cronjobs-during-maintenance.md)).
+  ([Cronjobs während der Wartung pausieren](../../aufgaben/betrieb/cronjobs-waehrend-der-wartung-anhalten.md)).
 
 ## Das Wartungsfenster öffnen
 
@@ -52,7 +52,7 @@ curl -sI https://www.example.gov/ | head -1      # HTTP/1.1 503 Service Unavaila
 
 Besucher erhalten eine 503 mit `Retry-After`, `Cache-Control: no-store` und `noindex`, sodass Suchmaschinen die echte
 Seite behalten. Das Einschalten leert die Caches vor `index.php`; unter Velocity pausieren die Antwort-Caches während
-der Wartung ([Funktion Wartungsmodus](../../../../../eng-us/features/6.0/maintenance-mode.md)).
+der Wartung ([Funktion Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.md)).
 
 ## Während des Wartungsfensters
 
@@ -87,8 +87,8 @@ Halten Sie das eigene Design der Wartungsseite barrierefrei und in den Sprachen 
 
 ## Verwandte Seiten
 - [Wartungsmodus und geplante Ausfallzeiten](../verfuegbarkeit/wartungsmodus-und-geplante-ausfallzeiten.md)
-- [Die Website für eine Aktualisierung in den Wartungsmodus versetzen](../../../../../eng-us/help/government/tasks/operations/take-the-site-into-maintenance-for-an-upgrade.md)
-- [Die Website wieder online bringen](../../../../../eng-us/help/government/tasks/operations/bring-the-site-back-online.md)
+- [Die Website für eine Aktualisierung in den Wartungsmodus versetzen](../../aufgaben/betrieb/die-site-fuer-ein-upgrade-in-den-wartungsmodus-versetzen.md)
+- [Die Website wieder online bringen](../../aufgaben/betrieb/die-site-wieder-online-bringen.md)
 - [Wartungsmodus (Hosting)](../../../hosting/betrieb/wartungsmodus.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

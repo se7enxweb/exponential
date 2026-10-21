@@ -13,7 +13,7 @@ Teil 3, Kapitel 32. Eine Content Security Policy (CSP) sagt dem Browser, welche 
 darf. Eine strenge Richtlinie verhindert, dass eingeschleuste Skripte ausgeführt werden, selbst wenn ein Template
 vergessen hat, etwas zu maskieren. Exponential sendet eine solche Richtlinie aus `site.ini [ContentSecurityPolicy]`;
 die vollständige Referenz ist
-[Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md). Dieses Kapitel enthält, was
+[Content Security Policy](../../../funktionen/6.0/content-security-policy.md). Dieses Kapitel enthält, was
 ein Autor von Erweiterungen wissen muss.
 
 ## Die Richtlinie
@@ -94,7 +94,7 @@ immer die bessere Lösung.
 
 - Zurück: [Sicherheit in Erweiterungen](sicherheit-in-erweiterungen.md)
 - Weiter: [Admin-Seiten im admin4-Stil](admin-seiten-im-admin4-stil.md)
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
 - [CSP: Inline-Skripte in Dateien verschieben](../teil-4-aktualisieren/csp-inline-skripte-auslagern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

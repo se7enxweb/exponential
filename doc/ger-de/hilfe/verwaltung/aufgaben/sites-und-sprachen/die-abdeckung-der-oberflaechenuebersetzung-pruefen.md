@@ -31,7 +31,7 @@ Hintergrund: [Oberflächensprachen der Administration](../../sprachen/sprachen-d
    ```
 
 4. Vergleichen Sie mit der veröffentlichten Tabelle in
-   [Sprachen in Exponential, Abschnitt 4](../../../../../eng-us/languages.md#4-every-administration-translation).
+   [Sprachen in Exponential, Abschnitt 4](../../../../sprachen.md#4-alle-übersetzungen-der-administrationsoberfläche).
 
 ## Prüfen
 
@@ -47,7 +47,7 @@ und welche Erweiterungen Englisch zeigen.
 
 ## Verwandte Seiten
 
-- [Sprachen in Exponential](../../../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../../../sprachen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

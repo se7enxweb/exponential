@@ -27,22 +27,22 @@ zu berühren.
 - [ ] Inhalte, die die Abteilung veröffentlichen wird, ihre Arten (vorhandene Inhaltsklassen oder benötigte neue) und ihr Umfang.
 - [ ] Verantwortliche Person in der Abteilung und eine Vertretung.
 - [ ] Sprachen ([Checkliste Mehrsprachigkeit](checkliste-mehrsprachigkeit.md)).
-- [ ] Ein Teilbaum der Hauptwebsite oder eine eigene Website in derselben Installation ([Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)).
+- [ ] Ein Teilbaum der Hauptwebsite oder eine eigene Website in derselben Installation ([Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)).
 
 ## Struktur
 
-- [ ] Legen Sie den Teilbaum der Abteilung im Inhaltsbaum an ([Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)).
+- [ ] Legen Sie den Teilbaum der Abteilung im Inhaltsbaum an ([Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)).
 - [ ] Legen Sie unter **Setup > Sektionen** eine Sektion dafür an und weisen Sie ihr den Teilbaum zu ([Sektionen](../../../anleitungen/sektionen.md)).
-- [ ] Menüs und Navigation enthalten den neuen Bereich ([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)).
-- [ ] Für eine eigene Website: Siteaccess, Design und Einstellungen ([INI-Overrides für mehrere Websites](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)).
+- [ ] Menüs und Navigation enthalten den neuen Bereich ([Menüs und Navigation](../../ersteller/website-ersteller/menues-und-navigation.md)).
+- [ ] Für eine eigene Website: Siteaccess, Design und Einstellungen ([INI-Overrides für mehrere Websites](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)).
 
 ## Menschen und Rechte
 
 - [ ] Eine Benutzergruppe für die Redaktion der Abteilung.
 - [ ] Eine Rolle, beschränkt auf die Sektion oder den Teilbaum der Abteilung, der Gruppe zugewiesen ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 - [ ] Eine Rolle für Freigebende, wenn eine Freigabe verlangt ist.
-- [ ] Konten für namentlich bekannte Personen angelegt; niemand erhält die Rolle vor der Schulung ([Neue Mitarbeitende einarbeiten](../../../../eng-us/help/government/procurement/training/onboarding-new-staff.md)).
-- [ ] Prüfen Sie später mit **Benutzerkonten prüfen** (`/user/hygiene`), ob die Konten genutzt werden ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] Konten für namentlich bekannte Personen angelegt; niemand erhält die Rolle vor der Schulung ([Neue Mitarbeitende einarbeiten](../beschaffung/schulung/einarbeitung-neuer-beschaeftigter.md)).
+- [ ] Prüfen Sie später mit **Benutzerkonten prüfen** (`/user/hygiene`), ob die Konten genutzt werden ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Ablauf
 
@@ -53,7 +53,7 @@ zu berühren.
 
 ## Schulung und Start
 
-- [ ] Redaktion geschult (Redaktion 101), Freigebende in Freigaben ([Rollen und Kurse](../../../../eng-us/help/government/procurement/training/roles-to-courses.md)).
+- [ ] Redaktion geschult (Redaktion 101), Freigebende in Freigaben ([Rollen und Kurse](../beschaffung/schulung/rollen-und-kurse.md)).
 - [ ] Erste Inhalte angelegt und geprüft, bevor der Bereich sichtbar ist.
 - [ ] Barrierefreiheit und Links geprüft ([Checkliste Barrierefreiheit](checkliste-barrierefreiheit.md)).
 - [ ] Bereich sichtbar gemacht; Abteilung angekündigt.
@@ -62,8 +62,8 @@ zu berühren.
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
-- [Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
-- [An die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)
+- [Sektionen und Objektzustände](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
+- [An die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -188,8 +188,8 @@ design:node/view/full.tpl with keys class_identifier=ng_article;remote_id=showca
 ```
 
 Im dritten Fall passen zwei Regeln; `showcase_s1_tour` kommt zuerst und gewinnt daher gegen die Klassenregel. Die Match-Schlüssel und ihre
-Bedeutung stehen auf [Match-Schlüssel der Overrides](../../../eng-us/help/designers/templates/override-match-keys.md), die Regeln der Reihenfolge auf
-[Reihenfolge der Overrides](../../../eng-us/help/designers/templates/override-ordering.md).
+Bedeutung stehen auf [Match-Schlüssel der Overrides](../designer/vorlagen/override-match-schluessel.md), die Regeln der Reihenfolge auf
+[Reihenfolge der Overrides](../designer/vorlagen/override-reihenfolge.md).
 
 ## Wer die Schlüssel setzt
 
@@ -212,10 +212,10 @@ Bedeutung stehen auf [Match-Schlüssel der Overrides](../../../eng-us/help/desig
 
 ## Verwandte Seiten
 
-- [Grundlagen von override.ini](../../../eng-us/help/designers/templates/override-ini-basics.md)
-- [Match-Schlüssel der Overrides](../../../eng-us/help/designers/templates/override-match-keys.md)
-- [Reihenfolge der Overrides](../../../eng-us/help/designers/templates/override-ordering.md)
-- [Include](../../../eng-us/help/designers/templates/include.md)
+- [Grundlagen von override.ini](../designer/vorlagen/override-grundlagen.md)
+- [Match-Schlüssel der Overrides](../designer/vorlagen/override-match-schluessel.md)
+- [Reihenfolge der Overrides](../designer/vorlagen/override-reihenfolge.md)
+- [Include](../designer/vorlagen/include.md)
 - [Template-Caches](template-caches.md) (die Caches für Overrides und Design-Basen)
 - [Templates von Modulansichten](templates-von-modulansichten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

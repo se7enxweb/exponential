@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Redaktionen und Websiteersteller, die Datensätze einordnen. Eine kontrollierte
 Themenliste macht einen Katalog durchstöberbar und erlaubt Ihnen, Ihre Themen später denen eines nationalen oder
 europäischen Portals zuzuordnen. Exponential bietet zwei Wege: die Erweiterung `eztags`
-([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) und den Datentyp Auswahl des
+([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)) und den Datentyp Auswahl des
 Kernels.
 
 ## Inhalt
@@ -46,7 +46,7 @@ und bietet im Bearbeitungsformular eine automatische Vervollständigung an.
 4. Verschlagworten Sie jeden Datensatz; verlinken Sie die Seiten der Themen-Tags von der Katalogseite aus.
 
 Mit Solr lassen sich Tag-Wolken aus der Suche erstellen (`eztags` `TagCloudOverSolr`)
-([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)).
+([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)).
 
 ## Möglichkeit 2: ein Auswahlfeld
 
@@ -72,9 +72,9 @@ Portals mit.
 
 ## Verwandte Seiten
 
-- [Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)
-- [eztags](../../../../eng-us/features/6.0/extensions/eztags.md)
-- [Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)
+- [eztags](../../../funktionen/6.0/erweiterungen/eztags.md)
+- [Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

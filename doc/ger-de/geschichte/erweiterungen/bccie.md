@@ -1,8 +1,8 @@
 # bccie (Export gesammelter Informationen): Chronik
 
-Der Export gesammelter Informationen wurde im Januar 2024 neu paketiert und im September 2026 im Menü in **CIE** umbenannt, mit Übersetzungen, einer Korrektur einer Konstante für PHP 8 und dem Namen Exponential. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/bccie.md).
+Der Export gesammelter Informationen wurde im Januar 2024 neu paketiert und im September 2026 im Menü in **CIE** umbenannt, mit Übersetzungen, einer Korrektur einer Konstante für PHP 8 und dem Namen Exponential. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/bccie.md).
 
-Diese Seite führt **jede der 19 Änderungen** des Repositorys `bccie` zwischen 2024-01-28 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/bccie.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/bccie.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/bccie.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 19 Änderungen** des Repositorys `bccie` zwischen 2024-01-28 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/bccie.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/bccie.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/bccie.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -70,7 +70,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/bccie.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/bccie.md)
 - [Release Notes](../../../changelogs/extensions/bccie.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/bccie.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

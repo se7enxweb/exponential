@@ -32,7 +32,7 @@ werden in Text umgewandelt.
 
 Eingabe: optional, sie kommt zuerst. Gibt eine Zeichenkette zurück. `concat` maskiert nicht; wenden Sie daher `wash`
 auf das Ergebnis oder auf jeden nicht vertrauenswürdigen Teil an, bevor Sie es in HTML ausgeben. Generierte Referenz:
-[concat](../../../eng-us/examples/template-operators/concat.md).
+[concat](../../beispiele/template-operatoren/concat.md).
 
 Das Beispiel verwendet das Thema Running auf alpha (Knoten 163):
 
@@ -84,7 +84,7 @@ Setzt ein Füllzeichen vor die erste Zeile und hinter jeden Zeilenumbruch der Ei
 Jeder andere Typ ergibt Leerzeichen. Eine negative Anzahl schreibt den Fehler "The value of the "count" argument is
 negative" in das Debug-Protokoll und lässt den Text unverändert. Gibt eine Zeichenkette zurück. Nützlich für
 Klartextausgabe wie den Text von E-Mails; in HTML werden Leerräume zusammengefasst. Generierte Referenz:
-[indent](../../../eng-us/examples/template-operators/indent.md).
+[indent](../../beispiele/template-operatoren/indent.md).
 
 ```tpl
 {def $text = "line one
@@ -109,7 +109,7 @@ Ausgabe auf alpha:
 - [Zeichenketten-Operatoren](zeichenketten-operatoren.md): `wash`, `shorten`, `trim`
 - [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md): `sprintf` für formatierten Text
 - [Array-Operatoren](array-operatoren.md): `append` bei Zeichenketten und `implode`
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Icon-Themes in Erweiterungen](../../../../../eng-us/features/6.0/icon-themes-in-extensions.md) und
-[Das Design admin4, Icons](../../../../../eng-us/features/6.0/admin4-design.md#icons).
+Quellen: [Icon-Themes in Erweiterungen](../../../../funktionen/6.0/icon-themes-in-extensions.md) und
+[Das Design admin4, Icons](../../../../funktionen/6.0/admin4-design.md#symbole).
 
 1. **Die Suche** (4 Minuten). Ein Icon wird gesucht: im aktuellen Theme (`Theme`), zuerst in den Ordnern der in
    `IconExtensions[]` aufgeführten Erweiterungen, dann in `Repository` (`share/icons`); in jedem Theme aus
@@ -149,7 +149,7 @@ in einem Ordner liegen (zum Beispiel `article`), und notieren Sie ihn als `<clas
 <summary>Antworten</summary>
 
 1. `Theme`, `AdditionalThemeList[]`, `StandardTheme`, `Default`
-   ([Icon-Themes in Erweiterungen](../../../../../eng-us/features/6.0/icon-themes-in-extensions.md#how-an-icon-is-found)).
+   ([Icon-Themes in Erweiterungen](../../../../funktionen/6.0/icon-themes-in-extensions.md#wie-ein-icon-gefunden-wird)).
 2. `icon.ini [ExtensionSettings] IconExtensions[]=<extension>`.
 3. `icon.ini [IconSettings] DesignTheme[admin4]=bootstrap-icons` gibt dem Design ein eigenes Theme.
 4. Elemente der Klasse `job` verwenden `apps/job.png` aus dem Ordner der angeforderten Größe.
@@ -159,11 +159,11 @@ in einem Ordner liegen (zum Beispiel `article`), und notieren Sie ihn als `<clas
 
 ## Weiterführende Literatur
 
-- [Icon-Themes, die in Ihrer Erweiterung liegen](../../../../../eng-us/features/6.0/icon-themes-in-extensions.md): die Tabelle der
+- [Icon-Themes, die in Ihrer Erweiterung liegen](../../../../funktionen/6.0/icon-themes-in-extensions.md): die Tabelle der
   Einstellungen.
 - [Unterstützung für Icons (Leitfaden)](../../../../bc/6.0/symbole.md): die zugrunde liegende Klasse und Hinweise zum
   Upgrade.
-- [Schriften, Icons und Bibliotheken von Dritten](../../../../../eng-us/help/designers/distribution/third-party-fonts-icons-and-libraries.md):
+- [Schriften, Icons und Bibliotheken von Dritten](../../../designer/veroeffentlichung/schriften-icons-und-bibliotheken-dritter.md):
   Lizenzen der Icons, die Sie mitliefern (Modul 8).
 
 ## Verwandte Seiten

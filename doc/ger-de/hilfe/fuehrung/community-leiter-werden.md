@@ -103,11 +103,11 @@ wertvoll.
 ### Stufe 3 im Detail: Dokumentierender
 
 - Jede Hilfeseite hat einen Link **Auf GitHub bearbeiten** zu ihrer Quelldatei unter `doc/`
-  ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)).
+  ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)).
 - Eine Änderung an der Dokumentation wird unter der GNU Free Documentation License 1.3 oder einer späteren Version
   angenommen, damit sie für alle frei bleibt ([Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)).
 - Übersetzungen zählen: Die Administration hat 32 Übersetzungen, zehn davon vollständig, und Inhalte können in 268
-  Locales verfasst werden ([Sprachen in Exponential](../../../eng-us/languages.md)). Eine Übersetzung zu vervollständigen ist ein
+  Locales verfasst werden ([Sprachen in Exponential](../../sprachen.md)). Eine Übersetzung zu vervollständigen ist ein
   Beitrag, den jeder zweisprachige Redakteur leisten kann.
 - Gute erste Dokumentationsaufgaben: eine Seite, die Sie verwirrt hat, ein fehlendes Beispiel, eine Schritt-für-Schritt-
   Anleitung ohne Screenshots für eine Aufgabe, die Sie gerade erledigt haben.
@@ -126,14 +126,14 @@ wertvoll.
   später veröffentlicht“ (`CONTRIBUTING.md`).
 - Die Praxis des Projekts ist großzügig gegenüber Mitwirkenden: „Jeder Pull-Request wird gemergt, und seine Commits
   bleiben so erhalten, wie der Mitwirkende sie geschrieben hat, und werden nie umgeschrieben“; was korrigiert werden
-  muss, wird in Commits obendrauf korrigiert ([Continuous Integration](../../../eng-us/bc/6.0/ci.md)).
+  muss, wird in Commits obendrauf korrigiert ([Continuous Integration](../../bc/6.0/ci.md)).
 
 ### Stufe 5 im Detail: Reviewer und Maintainer
 
 - „Alle Beiträge werden vor dem Mergen geprüft“ (`CONTRIBUTING.md`). Jeder kann öffentlich prüfen: einen Pull-Request
   lesen, ihn auf der eigenen Installation ausprobieren und kommentieren, was man gefunden hat.
 - Lernen Sie die Prüfungen kennen, die ein Pull-Request bestehen muss: Die Workflows **Quality** und **PHPUnit**
-  blockieren, **Performance** warnt, **CI health** berichtet ([Continuous Integration](../../../eng-us/bc/6.0/ci.md)).
+  blockieren, **Performance** warnt, **CI health** berichtet ([Continuous Integration](../../bc/6.0/ci.md)).
 - Lernen Sie die Release-Regeln, bevor Sie eine Erweiterung betreuen: Veröffentlichte Versionen ändern sich nie, die
   letzte Stelle einer Version zählt weiter (auf `0.1.9` folgt `0.1.10`), und eine Erweiterung gibt ihre Version in
   `ezinfo.php` und `extension.xml` an ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).

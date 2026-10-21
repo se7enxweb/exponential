@@ -40,9 +40,9 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: `settings/site.ini [SiteAccessSettings]`,
-[Was ein Siteaccess ist](../../../../../eng-us/help/trainers/multisite-and-packages/module-01-siteaccesses-for-several-sites/what-a-siteaccess-is.md)
+[Was ein Siteaccess ist](../../multisite-und-pakete/modul-01-siteaccesses-fuer-mehrere-websites/was-ein-siteaccess-ist.md)
 (Kurs Multisite und Seitenpakete) und
-[Siteaccess-Matching nach Host und Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
+[Siteaccess-Matching nach Host und Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
 
 1. **Was er ist** (3 Minuten). Ein Siteaccess ist ein Ordner `settings/siteaccess/<name>/` mit Einstellungen für
    einen Zugang zur Installation, aufgeführt in `[SiteAccessSettings] AvailableSiteAccessList[]`.
@@ -134,10 +134,10 @@ Auf der Entwicklungsinstallation.
 
 ## Weiterführende Literatur
 
-- [Was ein Siteaccess ist](../../../../../eng-us/help/trainers/multisite-and-packages/module-01-siteaccesses-for-several-sites/what-a-siteaccess-is.md):
+- [Was ein Siteaccess ist](../../multisite-und-pakete/modul-01-siteaccesses-fuer-mehrere-websites/was-ein-siteaccess-ist.md):
   der Kurs Multisite und Seitenpakete.
-- [Siteaccess-Matching nach Host und Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
-- [INI-Overrides für mehrere Websites](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md): Einstellungen pro
+- [Siteaccess-Matching nach Host und Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
+- [INI-Overrides für mehrere Websites](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md): Einstellungen pro
   Website innerhalb von Erweiterungen.
 
 ## Verwandte Seiten

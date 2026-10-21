@@ -124,7 +124,7 @@ Halten Sie kurz fest, was Sie auf welchem Release getestet haben: Es gehört in 
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Ein Paket vor der Veröffentlichung prüfen](../anforderungen/ein-paket-vor-der-veroeffentlichung-pruefen.md)
 - [Wie der Kickstarter und die Konsole Pakete nutzen](../grundlagen/wie-der-kickstarter-und-die-konsole-pakete-nutzen.md)
-- [Ihr Paket auf einer Testwebsite installieren](../../../../eng-us/help/designers/extensions/installing-your-package-on-a-test-site.md)
+- [Ihr Paket auf einer Testwebsite installieren](../../designer/erweiterungen/ihr-paket-auf-einer-testseite-installieren.md)
 - [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

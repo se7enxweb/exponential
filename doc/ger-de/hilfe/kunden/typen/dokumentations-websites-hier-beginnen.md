@@ -22,12 +22,12 @@ Dokumentation einstehen.
 
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
-| Seiten in einer klaren Hierarchie | Der Inhaltsbaum und Container-Klassen; die Demo-Installation hat eine Klasse *Documentation page* | [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md) |
+| Seiten in einer klaren Hierarchie | Der Inhaltsbaum und Container-Klassen; die Demo-Installation hat eine Klasse *Documentation page* | [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md) |
 | Prüfung vor der Freigabe | Entwürfe, Freigabe-Workflows, Objektzustände | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md), [Objektzustände](../../../anleitungen/objektzustaende.md) |
 | Wissen, was eine Seite vorher gesagt hat | Versionskontrolle | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
-| Antworten schnell finden | Die eingebaute Suchmaschine, oder Solr über eZ Find, wo installiert | [Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md), [Suche mit eZ Find und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md) |
+| Antworten schnell finden | Die eingebaute Suchmaschine, oder Solr über eZ Find, wo installiert | [Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md), [Suche mit eZ Find und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md) |
 | Dieselbe Seite in mehreren Sprachen | Übersetzungen jedes Elements | [Sprachen](../../sprachen.md), [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) |
-| Druckbare Handbücher | Der PDF-Export (**Setup > PDF export**) | [PDF-Export](../../../../eng-us/features/6.0/pdf-export.md) |
+| Druckbare Handbücher | Der PDF-Export (**Setup > PDF export**) | [PDF-Export](../../../funktionen/6.0/pdf-export.md) |
 | Links, die nicht kaputtgehen | URL-Aliase und Weiterleitungen, Linkprüfungen | [URLs, Weiterleitungen und verschobene Seiten](../alltag/urls-weiterleitungen-und-verschobene-seiten.md) |
 
 ## Ein ausgearbeitetes Modell: die Hilfe, die Sie gerade lesen
@@ -75,8 +75,8 @@ Sprachen sollte den [Lesepfad für mehrsprachige Websites](lesepfad-mehrsprachig
 ## Verwandte Seiten
 
 - [Lesepfad für Dokumentations-Websites](lesepfad-dokumentations-websites.md)
-- [Hilfe als Inhalt gepflegt](../../../../eng-us/features/6.0/help-content.md)
-- [Beziehungen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
+- [Hilfe als Inhalt gepflegt](../../../funktionen/6.0/hilfeinhalte.md)
+- [Beziehungen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

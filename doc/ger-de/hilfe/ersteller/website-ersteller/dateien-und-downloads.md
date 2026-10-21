@@ -79,7 +79,7 @@ lassen sich Dateiinhalte ebenfalls indizieren ([Suche mit ezfind und Solr](suche
 - Ein Dateifeld kann in der Klasse eine maximale Größe haben.
 - Sehr große Dateien (Videos) liegen besser bei einem dafür gebauten Dienst und werden eingebettet.
 - Die Erweiterung `enhancedezbinaryfile` fügt dem Datei-Datentyp Optionen hinzu
-  ([enhancedezbinaryfile](../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md)).
+  ([enhancedezbinaryfile](../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md)).
 
 ## Checkliste
 

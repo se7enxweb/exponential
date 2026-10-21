@@ -71,7 +71,7 @@ Sie eine Möglichkeit:
 | Ein Ablauf für den Teilbaum des Kalenders | das Veröffentlichen einer Veranstaltung erneuert die Liste |
 | `cache_ttl` in der vollständigen Ansicht der Seite | die Seite wird nach so vielen Sekunden neu aufgebaut |
 
-[View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md) erklärt die
+[View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md) erklärt die
 Möglichkeiten; kombinieren Sie einen Ablauf (für die vergehende Zeit) mit einem Ablauf für den Teilbaum (für neue
 Veranstaltungen).
 
@@ -85,7 +85,7 @@ Datum der Veranstaltung; sagen Sie das dort, wo Sie ihn anbieten. Ein iCalendar-
 
 - [Veranstaltungen](README.md)
 - [Kalenderansichten](kalenderansichten.md)
-- [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
+- [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

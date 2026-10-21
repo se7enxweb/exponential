@@ -45,7 +45,7 @@ nutzen.
 
 - [ ] **Wartungsmodus**: **Setup > Wartung** oder von einer Shell `php bin/php/maintenance.php on --message="..." --until=2h --allow-admin`; das Löschen von `var/maintenance.json` beendet ihn, wenn nichts anderes mehr funktioniert ([Wartungsmodus](../../../anleitungen/wartungsmodus.md)).
 - [ ] **Sitzungen**: Melden Sie nach einer vermuteten Kompromittierung eines Kontos unter **Setup > Sitzungen** jeden Browser ab ([Sitzungen](../../../anleitungen/sitzungen.md)).
-- [ ] **Konten**: Deaktivieren Sie ein kompromittiertes Konto ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] **Konten**: Deaktivieren Sie ein kompromittiertes Konto ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] **Caches**: Leeren Sie nach einer Korrektur den richtigen Cache, `php bin/php/ezcache.php --clear-id=<id>` oder **Setup > Cache-Verwaltung** ([Caches](../../../anleitungen/caches.md)).
 - [ ] **Fehlerreferenzen**: Fehlermeldungen für Besucher tragen eine Referenz, die Sie nachschlagen können ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)).
 - [ ] **Anfragefilter**: request-shield kann missbräuchliche Clients vor dem Kernel sperren oder bremsen ([Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
@@ -53,15 +53,15 @@ nutzen.
 ## Beweise
 
 - [ ] Das Prüfprotokoll ist eingeschaltet und seine Schlüssel sind gesichert; prüfen Sie seine Kette mit `./console exp:audit verify` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
-- [ ] `var/log/security.log` zeichnet Sondierungen und Angriffe auf ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).
-- [ ] Protokolle werden lange genug für eine Untersuchung aufbewahrt und während eines Vorfalls vom Server kopiert ([Protokollanzeige](../../../../eng-us/features/6.0/log-viewer.md)).
+- [ ] `var/log/security.log` zeichnet Sondierungen und Angriffe auf ([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)).
+- [ ] Protokolle werden lange genug für eine Untersuchung aufbewahrt und während eines Vorfalls vom Server kopiert ([Protokollanzeige](../../../funktionen/6.0/log-betrachter.md)).
 - [ ] Bekannt ist, dass ein kompromittierter Server nicht gelöscht wird, bevor die Beweise gesichert sind ([Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md)).
 
 ## Kommunikation und Meldung
 
 - [ ] Ein vorbereiteter Hinweis für die Wartungsseite der Website und für soziale Medien.
 - [ ] Ihre Meldepflichten aufgelistet, mit Fristen und Empfängern.
-- [ ] Ein Weg, Schwachstellen der Software vertraulich an das Projekt zu melden, wie `SECURITY.md` es beschreibt ([Sicherheitsstandards](../../../../eng-us/standards/security.md#vulnerability-disclosure)).
+- [ ] Ein Weg, Schwachstellen der Software vertraulich an das Projekt zu melden, wie `SECURITY.md` es beschreibt ([Sicherheitsstandards](../../../standards/sicherheit.md#offenlegung-von-schwachstellen)).
 
 ## Übung
 

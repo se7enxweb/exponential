@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Anwendungsentwickler, deren Anwendung Arbeit hat, die nicht in einer Web-Anfrage stattfinden
 darf: Aufrufe langsamer Dienste, Massenaktualisierungen, Versand, KI-Anfragen. `expqueue` ist eine Job-Warteschlange in
 der Datenbank: Erzeuger reihen einen Job mit einem einzigen Aufruf ein; Worker führen ihn auf der Kommandozeile aus
-([expqueue](../../../../eng-us/features/6.0/extensions/expqueue.md)). Die vollständige Dokumentation steht in
+([expqueue](../../../funktionen/6.0/erweiterungen/expqueue.md)). Die vollständige Dokumentation steht in
 `extension/expqueue/doc/` (`api.md`, `scheduling.md`, `workers-cron-systemd.md`).
 
 ![Die Job-Warteschlange in der Administration: wartende, laufende, erledigte und fehlgeschlagene Jobs je Warteschlange](../../../../eng-us/help/images/creators/job-queue-dashboard.webp)

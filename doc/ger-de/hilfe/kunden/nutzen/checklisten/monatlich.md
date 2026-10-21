@@ -61,12 +61,12 @@ STORE (if you sell)
 | Neue Releases | Partner; Sicherheitskorrekturen werden mit dem nächsten Release 6.0.x veröffentlicht | `SECURITY.md`, [Upgrade](../../../../anleitungen/aktualisieren.md) |
 | Upgrade-Prüfung | **Setup > Upgrade-Prüfung**; beide Prüfungen lesen nur | [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
 | Backups und Wiederherstellungstests | Hoster | [Backups, die sich wiederherstellen lassen](../../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) |
-| Alarme des Prüfprotokolls | Das Dashboard des Prüfprotokolls, Richtlinie `audit/read` | [Das Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Alarme des Prüfprotokolls | Das Dashboard des Prüfprotokolls, Richtlinie `audit/read` | [Das Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | HTTPS | Hoster | [TLS und HTTPS](../../../hosting/sicherheit/tls-und-https.md) |
-| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) |
+| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen** | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
 | Datenschutzanfragen | Ihr Anfragenprotokoll | [DSGVO-Anfragen](../../handel/dsgvo-anfragen.md) |
-| Inhaltsprüfungen | `/contentcheck/...` | [Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md) |
+| Inhaltsprüfungen | `/contentcheck/...` | [Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md) |
 | Kosten | Ihr Kostenregister | [Betriebskosten für Betreiber](../betriebskosten-fuer-betreiber.md) |
 | Shop | **Shop** | [Monatliche Shop-Checkliste](../../handel/monatliche-shop-checkliste.md) |
 

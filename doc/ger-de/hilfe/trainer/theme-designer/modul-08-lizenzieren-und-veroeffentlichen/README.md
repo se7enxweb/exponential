@@ -55,7 +55,7 @@ Modul endet der Kurs.
 ## Verwandte Seiten
 
 - [Modul 7: Ein Theme paketieren](../modul-07-ein-theme-paketieren/README.md)
-- [Ein Theme verteilen: hier beginnen](../../../../../eng-us/help/designers/distribution/distribution-start-here.md)
+- [Ein Theme verteilen: hier beginnen](../../../designer/veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md)
 - [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

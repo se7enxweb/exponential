@@ -37,7 +37,7 @@ wenn Sie keinen Zugriff haben.
       in dem Inhalt, der ihn verwendet. Die Linkprüfung läuft im Cron-Teil `infrequent`
       ([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)).
 - [ ] **Kaputte Beziehungen** ab der Inhaltswurzel: Beheben Sie jede Quelle
-      ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+      ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 - [ ] In diesem Monat entfernte Seiten: Jede hat eine Ersatzadresse (einen Alias auf der neuen Seite oder eine
       Wildcard), oder ist bewusst weg ([URLs, Weiterleitungen und verschobene Seiten](urls-weiterleitungen-und-verschobene-seiten.md)).
 - [ ] Testen Sie zwei oder drei alte Adressen, von denen Sie wissen, dass sie verschoben wurden: Sie sollten auf der
@@ -62,9 +62,9 @@ Sagen Sie den Autoren, was Sie gefunden haben, freundlich und konkret. Die Regel
 
 - [ ] Die Webmaster-Tools der Suchmaschinen: neue Crawl-Fehler, aus dem Index ausgeschlossene Seiten.
 - [ ] Die Sitemap, wenn Ihre Website eine hat: Sie öffnet sich, listet die neuen Seiten dieses Monats und listet keine
-      verborgenen Seiten oder Seiten nur für Mitglieder ([XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)).
+      verborgenen Seiten oder Seiten nur für Mitglieder ([XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md)).
 - [ ] `robots.txt` nennt weiterhin die Sitemap und wurde nicht versehentlich geändert
-      ([robots.txt für Ihre Website](../../../../eng-us/help/creators/website-creators/robots-txt.md)).
+      ([robots.txt für Ihre Website](../../ersteller/website-ersteller/robots-txt.md)).
 - [ ] Die Website öffnet sich unter einem einzigen Hostnamen mit HTTPS; die anderen Schreibweisen leiten weiter.
 - [ ] Alles, was langsam oder kaputt ist, geht mit Adresse und Uhrzeit an den Hoster oder Partner.
 

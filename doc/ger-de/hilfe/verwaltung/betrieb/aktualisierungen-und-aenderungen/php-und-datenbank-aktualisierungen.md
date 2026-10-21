@@ -77,7 +77,7 @@ Erweiterungen sind die übliche Quelle.
 
 ## Verwandte Seiten
 - [Überblick über Aktualisierungen für den öffentlichen Sektor](aktualisierungen-im-oeffentlichen-sektor-im-ueberblick.md)
-- [PHP-Erweiterungen vor einer Aktualisierung prüfen](../../../../../eng-us/help/government/tasks/operations/check-php-extensions-before-an-upgrade.md)
+- [PHP-Erweiterungen vor einer Aktualisierung prüfen](../../aufgaben/betrieb/php-erweiterungen-vor-einem-upgrade-pruefen.md)
 - [PHP-Versionen und -Erweiterungen (Hosting)](../../../hosting/grundlagen/php-versionen-und-erweiterungen.md)
 - [Datenbankwahl in der offiziellen Reihenfolge](../hosting/datenbankwahl-in-der-offiziellen-reihenfolge.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

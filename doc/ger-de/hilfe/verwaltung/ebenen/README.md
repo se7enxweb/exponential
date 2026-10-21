@@ -60,20 +60,20 @@ veröffentlichen, geben allgemeine Praxis im öffentlichen Sektor wieder, keine 
 1. Beginnen Sie mit dem Ordner, der zu Ihrer Organisation passt, und lesen Sie sein README und **Was veröffentlicht
    wird**.
 2. Lesen Sie **Inhaltsmodell** zusammen mit
-   [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md) und
-   [Datentypen für Ihre Felder wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md).
+   [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md) und
+   [Datentypen für Ihre Felder wählen](../../ersteller/website-ersteller/datentypen-waehlen.md).
 3. Lesen Sie **Struktur, Sektionen und Rollen** zusammen mit [Sektionen](../../../anleitungen/sektionen.md) und
    [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md).
 4. Lesen Sie **Schwerpunkte der Anforderungen** zusammen mit den Seiten zu den Standards:
-   [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md),
-   [Sicherheitsstandards](../../../../eng-us/standards/security.md), [Datenschutzstandards](../../../../eng-us/standards/privacy.md) und
-   [Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md).
+   [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md),
+   [Sicherheitsstandards](../../../standards/sicherheit.md), [Datenschutzstandards](../../../standards/datenschutz.md) und
+   [Standards zur Internationalisierung](../../../standards/internationalisierung.md).
 5. Verwenden Sie **Die ersten 90 Tage** als Gerüst Ihres Projektplans.
 
 Die Bereiche zu den Anforderungen in dieser Hilfe für Verwaltungen ([Barrierefreiheit](../barrierefreiheit/README.md),
 [Sicherheit](../sicherheit/README.md), [Datenschutz](../datenschutz/README.md) und
-[Schriftgut und Archivierung](../schriftgut-und-archivierung/README.md)) und die [Bauanleitungen](../../../../eng-us/help/government/building/README.md)
-gehen bei jedem Thema tiefer. Die schrittweisen [Aufgaben zum Veröffentlichen](../../../../eng-us/help/government/tasks/publishing/README.md) für die
+[Schriftgut und Archivierung](../schriftgut-und-archivierung/README.md)) und die [Bauanleitungen](../aufbauen/README.md)
+gehen bei jedem Thema tiefer. Die schrittweisen [Aufgaben zum Veröffentlichen](../aufgaben/veroeffentlichen/README.md) für die
 Redaktion stehen im Aufgabenordner dieses Bereichs. Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 
 ## Organisationen über mehrere Ebenen
@@ -81,7 +81,7 @@ Redaktion stehen im Aufgabenordner dieses Bereichs. Nach oben: [Verwaltungen: hi
 Viele öffentliche Stellen passen nicht in einen Ordner. Eine Stadt kann eine Bibliothek, Schulen und eine Feuerwehr
 betreiben; ein Ministerium kann Behörden führen; ein Universitätsklinikum kann Informationen zur öffentlichen Gesundheit
 veröffentlichen. Exponential kann mehrere Websites aus einer Installation bedienen, jede mit eigenem Siteaccess, Design
-und eigenen Sprachen ([Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)), und Sektionen und
+und eigenen Sprachen ([Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)), und Sektionen und
 Rollen können die Redaktion jeder Organisation auf ihren eigenen Teil des Inhaltsbaums beschränken
 ([Sektionen](../../../anleitungen/sektionen.md#132-ein-intranet-mit-abteilungen)). Lesen Sie den Ordner jedes Teils und
 entscheiden Sie dann, ob eine Installation oder mehrere zu Ihrer Steuerung passen.
@@ -97,9 +97,9 @@ Sicherheitsbeauftragten entscheiden sie.
 
 ## Verwandte Seiten
 
-- [Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
-- [Website-Ersteller: hier beginnen](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md)
+- [Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
+- [Website-Ersteller: hier beginnen](../../ersteller/website-ersteller/website-ersteller-hier-beginnen.md)
 - [Kurskatalog für Trainerinnen und Trainer](../../trainer/kurskatalog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

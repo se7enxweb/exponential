@@ -75,7 +75,7 @@ dekorativ kennzeichnet.
   **Missing alt text** (Fehlender Alternativtext; `/expai/alttext`, Richtlinie `expai/write`) listet Bilder ohne
   Alternativtext unterhalb eines Knotens auf; **Queue suggestions as drafts** (Vorschläge als Entwürfe einreihen)
   schreibt Vorschläge in neue Entwürfe, nie veröffentlicht, zur Prüfung durch die Redaktion
-  ([Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)). Bilder werden an einen KI-Anbieter gesendet,
+  ([Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md)). Bilder werden an einen KI-Anbieter gesendet,
   nach der Datenrichtlinie der Erweiterung; entscheiden Sie das vor dem Einschalten mit Ihrer oder Ihrem
   Datenschutzbeauftragten.
 - Im Kernel listet nichts die Bilder ohne Alternativtext über die gesamte Website auf.
@@ -83,8 +83,8 @@ dekorativ kennzeichnet.
 ## Verwandte Seiten
 
 - [Bilder, Medien und Uploads](../../medien-und-uploads.md)
-- [Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

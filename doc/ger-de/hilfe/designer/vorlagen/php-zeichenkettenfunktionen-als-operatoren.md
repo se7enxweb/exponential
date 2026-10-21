@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Designer, die eine Textfunktion brauchen, die die klassischen Operatoren nicht haben. Seit Release 6.0.13
 stellt die Klasse `eZTemplateStringsOperator` (`lib/eztemplate/classes/eztemplatestringsoperator.php`) etwa sechzig
 PHP-Zeichenkettenfunktionen in Templates bereit. Die vollständige Liste und die Einzelheiten stehen auf der Funktionsseite
-[PHP-Zeichenkettenfunktionen als Template-Operatoren](../../../../eng-us/features/6.0/string-template-operators.md).
+[PHP-Zeichenkettenfunktionen als Template-Operatoren](../../../funktionen/6.0/template-operatoren-fuer-zeichenketten.md).
 
 ## Inhalt
 

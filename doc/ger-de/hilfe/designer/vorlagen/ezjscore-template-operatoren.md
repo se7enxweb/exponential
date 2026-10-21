@@ -52,7 +52,7 @@ auf Basis von ezjscore verwendet. Für Designs sind die Fetch-Funktionen für Be
 ## Verwandte Seiten
 
 - [Kein Inline-JavaScript](../theme-design/kein-inline-javascript.md)
-- [ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md)
+- [ezjscore](../../../funktionen/6.0/erweiterungen/ezjscore.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -199,8 +199,8 @@ same data_map: yes
   Prüfungen `can_*` dieses Orts.
 - Beginnen Sie beim **Objekt** für alles, was das Inhaltselement betrifft: Klasse, Sektion, Eigentümer, Zustände, Versionen, Sprachen,
   Beziehungen, alle seine Orte (`assigned_nodes`).
-- `content_view_gui` nimmt ein Objekt, `node_view_gui` einen Knoten (siehe [Node view gui](../../../eng-us/help/designers/templates/node-view-gui.md) und
-  [Content view gui](../../../eng-us/help/designers/templates/content-view-gui.md)).
+- `content_view_gui` nimmt ein Objekt, `node_view_gui` einen Knoten (siehe [Node view gui](../designer/vorlagen/node-view-gui.md) und
+  [Content view gui](../designer/vorlagen/content-view-gui.md)).
 
 ## Verwandte Seiten
 
@@ -208,9 +208,9 @@ same data_map: yes
 - [Referenz der Attribute von Inhaltsobjekten](referenz-der-objektattribute.md)
 - [Referenz von Inhaltsattribut und Version](referenz-von-inhaltsattribut-und-version.md)
 - [Data Map und Inhalt](data-map-und-inhalt.md)
-- [Knoten, Objekte und Attribute](../../../eng-us/help/designers/templates/nodes-objects-attributes.md) (die Einführung für Designer)
-- [Attribute und Punktschreibweise](../../../eng-us/help/designers/templates/attributes-and-dot-notation.md)
-- [Die Content-API](../../../eng-us/help/creators/app-creators/the-content-api.md) (dieselben Objekte aus PHP)
+- [Knoten, Objekte und Attribute](../designer/vorlagen/knoten-objekte-und-attribute.md) (die Einführung für Designer)
+- [Attribute und Punktschreibweise](../designer/vorlagen/attribute-und-punktnotation.md)
+- [Die Content-API](../ersteller/anwendungsentwickler/die-content-api.md) (dieselben Objekte aus PHP)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -23,7 +23,7 @@ bringen. Ein Befehl führt jeden Schritt in der richtigen Reihenfolge aus und h�
 ## Bevor Sie beginnen
 
 - Die Änderung ist genehmigt und auf Staging getestet
-  ([Staging und Genehmigung](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md)).
+  ([Staging und Genehmigung](../../betrieb/aktualisierungen-und-aenderungen/staging-und-freigabe.md)).
 - Der neue Code liegt auf dem Server (Ihr Deployment des genehmigten Commits).
 - Shell-Zugang im Installationsverzeichnis.
 
@@ -66,7 +66,7 @@ Hostnamen der Installation benannt ist): `./console exp:velocity config get Depl
 
 - Jeder Schritt PASS; bewahren Sie die Ausgabe mit dem Änderungsnachweis auf.
 - Das geänderte Verhalten ist sichtbar; `./console exp:logs --tail=var/log/error.log --lines=20` zeigt nichts Neues.
-- Wenn etwas kaputtgegangen ist: [Ein fehlerhaftes Deployment zurückrollen](../../../../../eng-us/help/government/operations/incidents/broken-deploy-rollback.md).
+- Wenn etwas kaputtgegangen ist: [Ein fehlerhaftes Deployment zurückrollen](../../betrieb/vorfaelle/fehlerhafte-bereitstellung-zuruecknehmen.md).
 
 ## Verwandte Seiten
 - [Die Caches nach einem Deployment vorwärmen](die-caches-nach-einem-deployment-vorwaermen.md)

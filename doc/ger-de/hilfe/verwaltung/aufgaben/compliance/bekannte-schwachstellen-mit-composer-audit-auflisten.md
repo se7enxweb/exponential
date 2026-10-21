@@ -10,7 +10,7 @@ type: help
 # Bekannte Schwachstellen mit composer audit auflisten
 
 Für Administratoren, Entwickler und Hosting-Teams. Die Workflows des Projekts führen keine Prüfung der Abhängigkeiten
-auf Schwachstellen aus ([Sicherheitsstandards: bekannte Lücken](../../../../../eng-us/standards/security.md#known-gaps)); die
+auf Schwachstellen aus ([Sicherheitsstandards: bekannte Lücken](../../../../standards/sicherheit.md#bekannte-lücken)); die
 Anleitung zur Härtung empfiehlt stattdessen `composer audit`
 ([Sicherheitshärtung: veraltete Abhängigkeiten](../../../sicherheitshaertung.md#veraltete-abhängigkeiten-und-die-lieferkette)).
 
@@ -52,7 +52,7 @@ Nach jedem Update: Prüfung der Dateikonsistenz, Smoke-Test, Verifikation des Au
 
 ## Verwandte Seiten
 
-- [Patch-Rhythmus](../../../../../eng-us/help/government/security/patching-cadence.md)
+- [Patch-Rhythmus](../../sicherheit/patch-rhythmus.md)
 - [Die Prüfung der Dateikonsistenz ausführen](die-pruefung-der-dateikonsistenz-ausfuehren.md)
 - [Aktualisieren](../../../../anleitungen/aktualisieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

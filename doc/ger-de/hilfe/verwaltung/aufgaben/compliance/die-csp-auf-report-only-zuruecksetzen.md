@@ -11,7 +11,7 @@ type: help
 
 Für diensthabende Administratoren, wenn eine durchgesetzte Content Security Policy eine Seite zerstört, die Redakteure
 brauchen. Das Zurücksetzen ändert eine Einstellung; sonst ändert sich nichts
-([Content Security Policy: Zurücksetzen](../../../../../eng-us/features/6.0/content-security-policy.md#enforcing-nonce-more-sources-a-stricter-companion-rollback)).
+([Content Security Policy: Zurücksetzen](../../../../funktionen/6.0/content-security-policy.md#durchsetzen-nonce-weitere-quellen-ein-strengerer-begleiter-rückkehr)).
 
 ## Inhalt
 
@@ -53,9 +53,9 @@ zeigt `Content-Security-Policy-Report-Only:` für die Richtlinie (der eigene Hea
 
 ## Verwandte Seiten
 
-- [Von report-only zu einer durchgesetzten CSP](../../../../../eng-us/help/government/security/csp-from-report-only-to-enforce.md)
+- [Von report-only zu einer durchgesetzten CSP](../../sicherheit/csp-von-report-only-zur-durchsetzung.md)
 - [CSP-Berichte prüfen](csp-berichte-pruefen.md)
-- [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -160,7 +160,7 @@ php ezpm.php validate sevenx_multisite.ezpkg
 
 `ezpm validate` prüft die Definition, jedes Dokument, das die Installationselemente nennen, und bei einem JSON-Paket das Schema und die
 Prüfsummen; es gibt `PASS` oder `FAIL` aus und endet bei einem Fehlschlag mit 1 (siehe
-[das JSON-Paketformat](../../../../eng-us/bc/6.0/package-json-format.md)). Um ein Archiv in eine Installation zu bringen, siehe
+[das JSON-Paketformat](../../../bc/6.0/package-json-format.md)). Um ein Archiv in eine Installation zu bringen, siehe
 [Ein Paket von Hand herunterladen](../paketserver/ein-paket-von-hand-herunterladen.md) und
 [Importieren oder installieren](importieren-oder-installieren.md).
 

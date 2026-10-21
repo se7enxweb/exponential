@@ -65,7 +65,7 @@ oder durch Einfügen ([Medien und Uploads](../../../medien-und-uploads.md#dateie
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Fotogalerie veröffentlichen](eine-fotogalerie-veroeffentlichen.md)
-- [ezmultiupload](../../../../../eng-us/features/6.0/extensions/ezmultiupload.md)
+- [ezmultiupload](../../../../funktionen/6.0/erweiterungen/ezmultiupload.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

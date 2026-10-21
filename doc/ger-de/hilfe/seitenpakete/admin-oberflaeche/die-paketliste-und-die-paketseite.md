@@ -97,7 +97,7 @@ Die Seite zeigt:
   ganze Datei.“) und herunterladbar.
 
 **Vergleichen** zeigt den Inhalt des Pakets neben dem der Website, ohne an der Website etwas zu ändern; siehe
-[In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../../eng-us/features/6.0/package-compare-and-import.md).
+[In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../funktionen/6.0/pakete-vergleichen-und-importieren.md).
 **Prüfen** prüft jedes Dokument des Pakets und im JSON-Format das Schema und die Prüfsummen.
 
 ## Pakete entfernen

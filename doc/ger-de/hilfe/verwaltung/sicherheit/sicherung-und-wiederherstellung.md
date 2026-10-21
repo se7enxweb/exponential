@@ -85,7 +85,7 @@ Nicht jeder Verlust erfordert eine vollständige Wiederherstellung:
 
 - [10.9 Sicherung und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)
 - [Runbook: aus einer Sicherung wiederherstellen](../../hosting/runbooks/aus-einem-backup-wiederherstellen.md)
-- [Sicherungen und Wiederherstellungen für Website-Ersteller](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)
+- [Sicherungen und Wiederherstellungen für Website-Ersteller](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

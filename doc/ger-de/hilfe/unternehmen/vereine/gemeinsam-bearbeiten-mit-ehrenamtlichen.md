@@ -29,7 +29,7 @@ wenigen Funktionen, die eine kleine Gruppe braucht; die vollständigen Anleitung
 ## Ein Konto pro Person
 
 „Ein persönliches Konto pro Person; keine gemeinsam genutzten Zugangsdaten“
-([Die Website an Redakteure übergeben, Konten und Rollen](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md#accounts-and-roles)).
+([Die Website an Redakteure übergeben, Konten und Rollen](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md#konten-und-rollen)).
 Für eine Gruppe ist das wichtiger als für ein Unternehmen: Wenn ein Ehrenamtlicher geht, deaktivieren Sie ein Konto,
 statt ein Passwort zu ändern, das alle kannten, und das Prüfprotokoll kann zeigen, wer was getan hat.
 
@@ -86,16 +86,16 @@ Bearbeiten zu haben.
 
 Inhalte, die in den Papierkorb verschoben wurden, lassen sich mit der Schaltfläche **Wiederherstellen**
 zurückholen, und die Papierkorbansicht zeigt, wer ein Element in den Papierkorb gelegt hat und wo es war
-([Die Papierkorbansicht](../../../../eng-us/bc/6.0/trash.md)). Benutzerkonten sind die Ausnahme: „Ein Benutzerobjekt kommt nie
+([Die Papierkorbansicht](../../../bc/6.0/papierkorb.md)). Benutzerkonten sind die Ausnahme: „Ein Benutzerobjekt kommt nie
 in den Papierkorb“, das Entfernen eines Kontos ist also endgültig
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Wer was getan hat
 
 Das Prüfprotokoll hält „Anmeldungen und Abweisungen, Änderungen an Inhalten, Schreibvorgänge an Einstellungen, das
 Leeren von Caches, Deployments, Bestellungen und Änderungen an der USt“ in einem manipulationssicheren Protokoll fest,
 das „standardmäßig eingeschaltet ist und keine Einrichtung braucht“
-([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Für eine Gruppe beantwortet es die Frage „Wer hat den
+([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Für eine Gruppe beantwortet es die Frage „Wer hat den
 Termin des Treffens geändert?“ ohne Schuldzuweisung, und es zeigt dem nächsten Administrator, was vor ihm geschah.
 
 ## Dieselbe Seite zur selben Zeit bearbeiten
@@ -103,12 +103,12 @@ Termin des Treffens geändert?“ ohne Schuldzuweisung, und es zeigt dem nächst
 - Inhalte: Jeder Redakteur arbeitet in seinem eigenen Entwurf; die Versionsseite zeigt Entwürfe anderer.
 - Layouts: „Entwürfe gelten pro Layout, nicht pro Benutzer: Zwei Personen, die dasselbe Layout bearbeiten,
   überschreiben einander“
-  ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#drafts-and-publishing)).
+  ([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#entwürfe-und-veröffentlichen)).
   Vereinbaren Sie, dass immer nur eine Person zur selben Zeit das Layout der Startseite bearbeitet.
 
 ## Hausregeln
 
-Aus [Die Website an Redakteure übergeben, Hausregeln für Inhalte](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md#house-rules-for-content),
+Aus [Die Website an Redakteure übergeben, Hausregeln für Inhalte](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md#hausregeln-für-inhalte),
 plus zwei für Gruppen:
 
 - [ ] Titel kurz und klar; aus ihnen werden Adressen.
@@ -126,11 +126,11 @@ plus zwei für Gruppen:
 2. Gehen Sie den Rundgang durch die Administration mit Ihren eigenen Inhalten durch
    ([Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md)); „eine Schulung, die dem Rundgang durch die
    Administration mit den eigenen Inhalten der Website folgt, bringt die meisten Redakteure von null zur Arbeitsfähigkeit“
-   ([Die Website an Redakteure übergeben, Schulung](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md#training)).
+   ([Die Website an Redakteure übergeben, Schulung](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md#schulung)).
 3. Geben Sie ihnen die Hausregeln und die Hilfeseiten [Erste Schritte](../../erste-schritte.md) und
    [Inhalte erstellen und bearbeiten](../../inhalte-bearbeiten.md).
 4. Lassen Sie sie den Seiten folgen, für die sie zuständig sind, damit sie über Änderungen benachrichtigt werden
-   ([Benachrichtigungen](../../../../eng-us/features/6.0/notifications.md)).
+   ([Benachrichtigungen](../../../funktionen/6.0/benachrichtigungen.md)).
 
 ## Verwandte Seiten
 

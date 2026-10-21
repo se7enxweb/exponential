@@ -46,7 +46,7 @@ nie geändert.
 
 ## Verwandte Seiten
 
-- [Benutzerkonten prüfen](../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../funktionen/6.0/benutzerpflege.md)
 - [Wenn Mitarbeiter ausscheiden](../kunden/alltag/ausscheiden-von-mitarbeitenden.md)
 - [Das Administratorpasswort ändern](../administratorpasswort-aendern.md)
 - [Sitzungen](../../anleitungen/sitzungen.md)

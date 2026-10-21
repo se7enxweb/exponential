@@ -74,7 +74,7 @@ wer sie umgeschaltet hat, sind also für Ihren Monatsbericht festgehalten.
 
 - [Checkliste für den Upgrade-Tag](checkliste-upgrade-tag.md)
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
-- [Wartungsmodus (Funktionsreferenz)](../../../../eng-us/features/6.0/maintenance-mode.md)
+- [Wartungsmodus (Funktionsreferenz)](../../../funktionen/6.0/wartungsmodus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

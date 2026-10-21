@@ -29,7 +29,7 @@ das gehört in vertrauliche Kanäle.
 
 ## Es nachstellen
 
-1. Legen Sie eine frische Installation mit erfundenen Daten an ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md))
+1. Legen Sie eine frische Installation mit erfundenen Daten an ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md))
    oder nutzen Sie Ihre Testinstallation. Nie eine Produktiv-Website oder die Website eines anderen.
 2. Verwenden Sie wenn möglich die gemeldete Version, dann die aktuelle.
 3. Folgen Sie den Schritten genau.

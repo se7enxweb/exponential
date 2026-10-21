@@ -137,7 +137,7 @@ Für Ihren eigenen Server siehe [Einen eigenen Paketserver betreiben](einen-eige
 - [Die Datei .ezpkg](../grundlagen/die-datei-ezpkg.md)
 - [Ein Paket vor der Veröffentlichung prüfen](../anforderungen/ein-paket-vor-der-veroeffentlichung-pruefen.md)
 - [Die Quell-Repositorys](../paketserver/die-quell-repositorys.md)
-- [Ein Paket prüfen](../../../../eng-us/help/designers/extensions/validating-a-package.md)
+- [Ein Paket prüfen](../../designer/erweiterungen/ein-paket-pruefen.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

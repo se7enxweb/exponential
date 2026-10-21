@@ -28,7 +28,7 @@ zum Beispiel eine zweite Amtssprache. Die Schritte und Meldungen stammen aus
 - Sie brauchen die Richtlinie `content/translations` (Administratoren haben sie).
 - Legen Sie den Locale-Code fest: drei Buchstaben für die Sprache, ein Bindestrich, zwei für das Land, etwa `fre-CA`,
   `esl-MX` (Spanisch ist in den Codes von Exponential `esl`) oder `cym-GB`. Die vollständige Liste mit den Namen in
-  der jeweiligen Sprache steht in [Sprachen in Exponential](../../../../eng-us/languages.md#3-every-locale).
+  der jeweiligen Sprache steht in [Sprachen in Exponential](../../../sprachen.md#3-alle-locales).
 
 ## Die Sprache hinzufügen
 
@@ -65,8 +65,8 @@ Es übersetzt nichts und ändert keinen Siteaccess: Noch sieht kein Besucher etw
 ## Verwandte Seiten
 
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
-- [Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Eine mehrsprachige Website bauen](../../ersteller/website-ersteller/mehrsprachige-websites.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

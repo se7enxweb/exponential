@@ -63,7 +63,7 @@ keine Prüfung hochgeladener Datendateien. Jede Seite sagt, wie Sie die Lücke u
 
 - [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
 - [RSS-Feeds](../../../anleitungen/rss-feeds.md)
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

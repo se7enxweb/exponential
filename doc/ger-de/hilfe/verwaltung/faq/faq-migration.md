@@ -63,13 +63,13 @@ zu ([Zuordnung des Inhaltsmodells](../../../installation/migration/inhaltsmodell
 ## Wie halten wir alte Adressen funktionsfähig?
 
 Mit Weiterleitungen: URL-Platzhalter und eigene URL-Aliasse in Exponential oder Regeln auf dem Webserver
-([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md),
-[URL-Platzhalter](../../../../eng-us/help/creators/website-creators/url-wildcards.md)). Erstellen Sie die Liste aus der alten Website, bevor
+([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md),
+[URL-Platzhalter](../../ersteller/website-ersteller/url-platzhalter.md)). Erstellen Sie die Liste aus der alten Website, bevor
 Sie umschalten.
 
 ## Gibt es eine Schulung für ein Migrationsteam?
 
-Ja: [Migration zu Exponential](../../../../eng-us/help/trainers/migration/README.md), 25 Lektionen, von der Planung bis zum Verlassen, mit
+Ja: [Migration zu Exponential](../../trainer/migration/README.md), 25 Lektionen, von der Planung bis zum Verlassen, mit
 einem Migrationsplan als Abschlussarbeit. Verwenden Sie für das Projekt die
 [Checkliste zur Migration](../../../installation/migration/checkliste.md).
 

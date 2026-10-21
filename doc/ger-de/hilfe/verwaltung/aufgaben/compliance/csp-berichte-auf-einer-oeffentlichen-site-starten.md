@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren und Entwickler. Mit `Mode=auto` senden öffentliche Siteaccesses **keine** Richtlinie; ihre Designs
 und der Rich Text, den sie darstellen (Stile aus Inhalten, eingebettete Player), werden vom Test des Projekts nicht
-geprüft ([Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md#switching-to-enforce-step-by-step)).
+geprüft ([Content Security Policy](../../../../funktionen/6.0/content-security-policy.md#schritt-für-schritt-auf-enforce-umstellen)).
 report-only ist der sichere erste Schritt: Nichts wird blockiert.
 
 ## Inhalt
@@ -63,9 +63,9 @@ Drittanbieter-Hosts. Setzen Sie durch, wenn sie ruhig sind, wie bei der Administ
 
 ## Verwandte Seiten
 
-- [Content Security Policy für öffentliche Sites](../../../../../eng-us/help/government/security/content-security-policy.md)
+- [Content Security Policy für öffentliche Sites](../../sicherheit/content-security-policy.md)
 - [CSP-Berichte prüfen](csp-berichte-pruefen.md)
-- [Besucherstatistiken und Analyse: unter einer CSP](../../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md#under-a-content-security-policy)
+- [Besucherstatistiken und Analyse: unter einer CSP](../../../ersteller/website-ersteller/besucherstatistik-und-analyse.md#unter-einer-content-security-policy)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

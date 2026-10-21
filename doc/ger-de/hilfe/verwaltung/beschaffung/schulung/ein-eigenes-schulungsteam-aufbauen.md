@@ -58,7 +58,7 @@ Einstieg ist das Konsolen-Installationsprogramm auf SQLite, das keinen Datenbank
 ./console exp:install
 ```
 
-([Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)). Das generierte
+([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)). Das generierte
 Administratorpasswort wird einmal ausgegeben und nach `var/log/initial-admin-password` geschrieben; ändern Sie es nach
 der ersten Anmeldung.
 

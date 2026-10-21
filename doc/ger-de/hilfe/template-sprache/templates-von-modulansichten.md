@@ -71,7 +71,7 @@ $Result['path'] = array( array( 'url' => 'section/list',
 - `$Result['path']` wird zur Brotkrumennavigation; jeder Eintrag hat `text` und `url` (false für die aktuelle Seite).
 
 Eine eigene Ansicht in einer Erweiterung folgt demselben Muster; der Durchgang steht in
-[Eigene Module und Ansichten](../../../eng-us/help/creators/app-creators/custom-modules-and-views.md).
+[Eigene Module und Ansichten](../ersteller/anwendungsentwickler/eigene-module-und-ansichten.md).
 
 ## Was content/view auf alpha zurückgibt
 
@@ -256,10 +256,10 @@ In der URL angegebene Benutzerparameter werden außerdem als eigene Variablen ge
 - [Referenz des Modulergebnisses](referenz-des-modulergebnisses.md)
 - [Ansichtsparameter](ansichtsparameter.md)
 - [Die persistente Variable, von innen](die-persistente-variable-von-innen.md)
-- [Modulergebnis und content_info](../../../eng-us/help/designers/templates/module-result-and-content-info.md)
-- [Eigene Module und Ansichten](../../../eng-us/help/creators/app-creators/custom-modules-and-views.md)
-- [Ergebnisse von Ansichten und das Pagelayout](../../../eng-us/help/creators/app-creators/view-results-and-the-pagelayout.md)
-- [Referenz der Moduldefinition](../../../eng-us/help/creators/app-creators/module-definition-reference.md)
+- [Modulergebnis und content_info](../designer/vorlagen/module-result-und-content-info.md)
+- [Eigene Module und Ansichten](../ersteller/anwendungsentwickler/eigene-module-und-ansichten.md)
+- [Ergebnisse von Ansichten und das Pagelayout](../ersteller/anwendungsentwickler/ergebnisse-von-ansichten-und-das-pagelayout.md)
+- [Referenz der Moduldefinition](../ersteller/anwendungsentwickler/referenz-der-moduldefinition.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

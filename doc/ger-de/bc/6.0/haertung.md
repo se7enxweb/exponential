@@ -1150,4 +1150,4 @@ php tests/bin/ezptestrunner_all_tests.php --list-categories
 - [Sicherheitsstandards vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Härtung von Datentypen und Eingaben (27. September 2026)](../../spezifikationen/6.0/datentyp-eingabehaertung.md)
 - [RAD-Werkzeuge — Sicherheit](rad-sicherheit.md)
-- [Februar 2026](../../../eng-us/history/2026/2026-02.md)
+- [Februar 2026](../../geschichte/2026/2026-02.md)

@@ -127,14 +127,14 @@ Verwenden Sie die Schulungsinstallation und die Beispielbilder aus Ihrem Kursord
 ## Weiterführende Informationen
 
 - Die Seite zum Alternativtext unter **EI: Help** (`extension/expai/doc/alt-text.md`).
-- [Standards für Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): was von den Redakteuren abhängt.
+- [Standards für Barrierefreiheit](../../../../standards/barrierefreiheit.md): was von den Redakteuren abhängt.
 - [Bilder, Medien und Uploads](../../../medien-und-uploads.md#bewährte-vorgehensweise)
 
 ## Verwandte Seiten
 
 - [Modul 3: Das Bearbeitungsformular](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

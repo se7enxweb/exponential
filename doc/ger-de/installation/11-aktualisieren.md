@@ -53,7 +53,7 @@ php bin/php/maintenance.php off
 
 Solange der Wartungsmodus eingeschaltet ist, wird jede Seitenanfrage mit der Wartungsseite beantwortet (HTTP 503, nie
 zwischengespeichert); Bilder, Stylesheets und Skripte werden weiterhin ausgeliefert. Mit `--allow-ip=` und
-`--allow-admin` kommen Sie zum Prüfen hinein. Siehe [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md).
+`--allow-admin` kommen Sie zum Prüfen hinein. Siehe [Wartungsmodus](../funktionen/6.0/wartungsmodus.md).
 
 ## 11.2 Welche Version betreiben Sie?
 
@@ -115,7 +115,7 @@ Version **auf** die nächste, und die Kette muss der Reihe nach durchlaufen werd
 | PostgreSQL | `update/database/postgresql/` | dieselbe Kette; der Schritt ab 5.4 ist `6.0/dbupdate-5.4-to-6.0.sql`, dann `6.0/dbupdate-6.0.0-6.0.15.sql` |
 | SQLite | `update/database/sqlite/` | nur `6.0/dbupdate-6.0.0-6.0.15.sql`: Die SQLite-Unterstützung beginnt mit 6.0.1 |
 | Oracle | `extension/ezoracle/update/database/` (in der Extension `ezoracle`): `ezpublish/` für die Kernel-Kette, `ezoracle/` für die eigenen Tabellen des Treibers | die Kernel-Kette bis 5.3 |
-| MongoDB | keine | der MongoDB-Treiber kam mit 6.0.14; die Audit-Tabellen von 6.0.15 legt `createaudittables.php` an (unten); die Papierkorbfelder `trashed_by` und `trashed_via` brauchen kein Update ([Papierkorb](../../eng-us/bc/6.0/trash.md#where-trashed-by-is-kept)) |
+| MongoDB | keine | der MongoDB-Treiber kam mit 6.0.14; die Audit-Tabellen von 6.0.15 legt `createaudittables.php` an (unten); die Papierkorbfelder `trashed_by` und `trashed_via` brauchen kein Update ([Papierkorb](../bc/6.0/papierkorb.md#wo-verschoben-von-gehalten-wird)) |
 
 ### Die Kette von 4.0 bis 5.4 (Dateinamen für MySQL; PostgreSQL hat dieselben Namen)
 
@@ -222,8 +222,8 @@ Sein Schema hatte die Spalte schon immer, und es hat keine Sequenzen.
    [4.7](../../eng-us/bc/4.7/changes-4.7.0.txt), [5.0](../../eng-us/bc/5.0/changes-5.0.txt), [5.1](../../eng-us/bc/5.1/changes-5.1.txt),
    [5.2](../../eng-us/bc/5.2/changes-5.2.txt), [5.3](../../eng-us/bc/5.3/changes-5.3.txt), [5.4](../../eng-us/bc/5.4/changes-5.4.txt).
 5. Lesen Sie die Hinweise zur Linie 5.90, die den Wechsel zu PHP 7 und eine längere Passwortregel vorbereitet hat:
-   [Übersicht 5.90](../../eng-us/bc/5.90/README.md), [PHP 7](../../eng-us/bc/5.90/php7.md), [Passwortlänge](../../eng-us/bc/5.90/password_length.md),
-   [Indizierung von Verknüpfungen](../../eng-us/bc/5.90/relation_indexing.md).
+   [Übersicht 5.90](../bc/5.90/README.md), [PHP 7](../bc/5.90/php7.md), [Passwortlänge](../bc/5.90/passwortlaenge.md),
+   [Indizierung von Verknüpfungen](../bc/5.90/indizierung-von-beziehungen.md).
 6. Fahren Sie mit [11.5](#115-von-54-oder-590-auf-600) fort.
 
 ### Die Skripte zur Datenreparatur
@@ -262,7 +262,7 @@ Eine 5.x-Site, die den Legacy-Kernel innerhalb eines Symfony-Projekts betrieb, h
 Installer-Plugin installiert ihn weiterhin dort, wenn das `composer.json` des Projekts `extra.symfony-app-dir` setzt.
 Die Datenbank sowie die Legacy-Einstellungen, -Extensions und -Designs sind die der Legacy-Installation, und der oben
 beschriebene Weg gilt für sie. Um Exponential 6 weiterhin innerhalb einer Symfony-Plattform zu betreiben, siehe
-[Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md) und die
+[Legacy Bridge](../funktionen/6.0/legacy-bridge.md) und die
 [Spezifikation des Legacy-Bridge-Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md).
 
 ## 11.5 Von 5.4 (oder 5.90) auf 6.0.0
@@ -298,12 +298,12 @@ beschriebene Weg gilt für sie. Um Exponential 6 weiterhin innerhalb einer Symfo
 3. **PHP.** Die aktuelle Linie läuft unter PHP 8.0 bis 8.5 (`composer.json`: `^8.0`), Velocity ab seinem Release 0.0.4.54 eingeschlossen. Die
    Releases 6.0.8 bis 6.0.14 verlangten 8.1. Eine Site, die auf PHP 7.4 bleiben muss, bleibt auf 6.0.7. Prüfen Sie Ihre
    eigenen Extensions auf Probleme mit PHP 8: Klassen, die `eZPersistentObject` oder `eZDataType` erweitern, sind die
-   üblichen Fälle. Siehe [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md) und [PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md).
+   üblichen Fälle. Siehe [PHP-8-Unterstützung](../bc/6.0/php8.md) und [PHP-8.0-Unterstützung](../bc/6.0/php-8.0-unterstuetzung.md).
 4. Fahren Sie mit [11.6](#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) fort.
 
 6.0.8 bis 6.0.14 verlangten in `composer.json` 8.1; ab 6.0.15 wird 8.0 wieder akzeptiert, sodass ein Server, dessen
 Betriebssystem PHP 8.0 mitliefert, die aktuelle Linie unter Apache, nginx oder Velocity betreiben kann (Velocity ab seinem Release 0.0.4.54)
-([PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md)). Composer setzt den Bereich durch: Unter einem älteren PHP bricht
+([PHP-8.0-Unterstützung](../bc/6.0/php-8.0-unterstuetzung.md)). Composer setzt den Bereich durch: Unter einem älteren PHP bricht
 `composer install` mit „Your requirements could not be resolved to an installable set of packages“ ab und nennt die
 PHP-Version, bevor irgendetwas geändert wird.
 
@@ -347,7 +347,7 @@ benötigten Zeit aus und hält beim ersten Fehler an. Fügen Sie `--kernel` hinz
 hinzugefügt oder umbenannt hat (die Release Notes sagen es). Die Reihenfolge ist wichtig: Ein Cache dargestellter
 Seiten, der geleert wird, bevor PHP den neuen Code ausführt, füllt sich wieder mit Seiten des alten Codes. Siehe
 [Kapitel 8](08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy) und
-[Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
+[Velocity-Engines](../bc/6.0/velocity-engines.md).
 
 ### Schritt 2: das Datenbank-Update anwenden
 
@@ -364,7 +364,7 @@ E-Mail-Einstellungen (`expmail_category`, `expmail_consent_log`, `expmail_pendin
 `expmail_suppression`) und wer ein Objekt in den Papierkorb verschoben hat (`ezcontentobject_trash.trashed_by`,
 `trashed_via`; solange diese nicht existieren, schreibt der Kernel weiterhin `<VarDir>/trash/trashed.json`, danach
 führen Sie `php update/common/scripts/6.0/movetrashrecords.php` aus, siehe
-[die Papierkorbansicht](../../eng-us/bc/6.0/trash.md#where-trashed-by-is-kept)).
+[die Papierkorbansicht](../bc/6.0/papierkorb.md#wo-verschoben-von-gehalten-wird)).
 
 Wenden Sie sie **einmal, vollständig und der Reihe nach** an. Hat die Datenbank eine Spalte bereits, schlägt die
 Anweisung fehl und nennt sie; überspringen Sie nur diese Anweisung.
@@ -391,7 +391,7 @@ php update/common/scripts/6.0/createaudittables.php
 Das Skript funktioniert mit jeder Engine (MySQL/MariaDB, PostgreSQL, SQLite, Oracle und MongoDB, jeweils über ihren
 Schema-Handler) und lässt vorhandene Tabellen unangetastet, sodass es erneut ausgeführt werden kann. `--dry-run` zeigt,
 welche Tabellen fehlen; `--no-index` legt nur die Tabellen an. Bricht es mit „The audit index classes are not in the
-autoload array“ ab, führen Sie zuerst `php bin/php/ezpgenerateautoloads.php -k` aus. Siehe [Audit](../../eng-us/bc/6.0/audit.md).
+autoload array“ ab, führen Sie zuerst `php bin/php/ezpgenerateautoloads.php -k` aus. Siehe [Audit](../bc/6.0/audit.md).
 
 Prüfen Sie anschließend die Versionszeile (die Abfrage in [11.2](#112-welche-version-betreiben-sie)); erwartet wird
 `6.0.15stable`.
@@ -409,14 +409,14 @@ Lesen Sie jede Release Note zwischen Ihrer Version und dem heutigen Stand; jede 
 | 6.0.4 | [6.0.5](../../changelogs/6.0/6.0.5.md): eine fehlgeschlagene 6.0.4-Installation, Datentypen von Extensions |
 | 6.0.5 | [6.0.6](../../changelogs/6.0/6.0.6.md): `admin3` auf Smartphones und Tablets |
 | 6.0.6 | [6.0.7](../../changelogs/6.0/6.0.7.md): die letzte Release für PHP 7.4 |
-| 6.0.7 | [6.0.8](../../changelogs/6.0/6.0.8.md): **braucht PHP 8.1**; und [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md) |
+| 6.0.7 | [6.0.8](../../changelogs/6.0/6.0.8.md): **braucht PHP 8.1**; und [PHP-8-Unterstützung](../bc/6.0/php8.md) |
 | 6.0.8 | [6.0.9](../../changelogs/6.0/6.0.9.md): PostgreSQL, REST-Zugriff auf Inhalte |
-| 6.0.9 | [6.0.10](../../changelogs/6.0/6.0.10.md): der Produktname in Templates, Übersetzungen und Overrides; [Das Produkt heißt Exponential](../../eng-us/features/6.0/rebranding-to-exponential.md) |
+| 6.0.9 | [6.0.10](../../changelogs/6.0/6.0.10.md): der Produktname in Templates, Übersetzungen und Overrides; [Das Produkt heißt Exponential](../funktionen/6.0/umbenennung-in-exponential.md) |
 | 6.0.10 | [6.0.11](../../changelogs/6.0/6.0.11.md): PHP 8.5, Benachrichtigungs-E-Mails, Zählen von Seitenaufrufen |
 | 6.0.11 | [6.0.12](../../changelogs/6.0/6.0.12.md): rollenbasierte Template-Operatoren, mehrere Sites in einer Installation |
-| 6.0.12 | [6.0.13](../../changelogs/6.0/6.0.13.md): **Sicherheitskorrekturen**, Prüfungen der Sortierspalten; [Sicherheitshärtung 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md), [Härtung](../../eng-us/bc/6.0/hardening.md) |
+| 6.0.12 | [6.0.13](../../changelogs/6.0/6.0.13.md): **Sicherheitskorrekturen**, Prüfungen der Sortierspalten; [Sicherheitshärtung 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md), [Härtung](../bc/6.0/haertung.md) |
 | 6.0.13 | [6.0.14](../../changelogs/6.0/6.0.14.md): MongoDB, die Prüfung der Upgrade-Dateien |
-| 6.0.14 | [6.0.15](../../changelogs/6.0/6.0.15.md), dann der Reihe nach: [Juli und August 2026](../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md), [16. bis 30. September 2026](../../eng-us/bc/6.0/behaviour-changes-2026-09b.md) mit [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [1. und 2. Oktober 2026](../../eng-us/bc/6.0/behaviour-changes-2026-10.md), [E-Mail-Einstellungen und die Mail-Sperre](../../eng-us/bc/6.0/mail-preferences.md) |
+| 6.0.14 | [6.0.15](../../changelogs/6.0/6.0.15.md), dann der Reihe nach: [Juli und August 2026](../bc/6.0/verhaltensaenderungen-2026-07-08.md), [16. bis 30. September 2026](../bc/6.0/verhaltensaenderungen-2026-09b.md) mit [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [1. und 2. Oktober 2026](../bc/6.0/verhaltensaenderungen-2026-10.md), [E-Mail-Einstellungen und die Mail-Sperre](../bc/6.0/e-mail-einstellungen.md) |
 
 Die Änderungen, auf die man beim Erreichen von 6.0.15 am häufigsten stößt:
 
@@ -433,13 +433,13 @@ Die Änderungen, auf die man beim Erreichen von 6.0.15 am häufigsten stößt:
   sobald die Anfrage über HTTPS kam. Wenn ein anderer Host Ihre Administration in einen Frame einbettet, setzen Sie den
   Header bewusst.
 - **Legacy-Extensions** wurden zwischen dem 22. September und dem 2. Oktober 2026 auf einen gemeinsamen Standard
-  gebracht: [Verhaltensänderungen der Legacy-Extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md).
-- **Die Standardwerte des Static Cache** haben sich geändert: [Standardwerte des Static Cache](../../eng-us/bc/6.0/static-cache-defaults.md).
-- **Velocity**, falls Sie ihn betreiben: [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
-  und [Verzeichnisstruktur auf der Festplatte](../../eng-us/bc/6.0/velocity-ondisk-layout.md).
+  gebracht: [Verhaltensänderungen der Legacy-Extensions](../bc/6.0/verhaltensaenderungen-von-erweiterungen.md).
+- **Die Standardwerte des Static Cache** haben sich geändert: [Standardwerte des Static Cache](../bc/6.0/standardwerte-des-statischen-caches.md).
+- **Velocity**, falls Sie ihn betreiben: [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md)
+  und [Verzeichnisstruktur auf der Festplatte](../bc/6.0/velocity-verzeichnisstruktur.md).
 
 Die Geschichte nach Monaten finden Sie in der [Chronik](../../eng-us/history/2026/); jede einzelne Änderung im
-[Hauptbuch des Root-Repositorys](../../eng-us/history/ledger/exponential-root.md).
+[Hauptbuch des Root-Repositorys](../geschichte/aenderungsverzeichnis/exponential-root.md).
 
 ### Schritt 4: die eigenen Extensions prüfen
 
@@ -451,8 +451,8 @@ php bin/php/console exp:checkclasses
 `exp:checkclasses` lädt jede deklarierte Klasse und meldet diejenigen, die PHP nicht laden will; so zeigt sich eine
 Inkompatibilität mit PHP 8 in einer Extension. Extensions tragen ihre eigene Version in `ezinfo.php` und
 `extension.xml`, und die Liste **Setup > Extensions** der Administration zeigt sie an
-([Extension-Liste](../../eng-us/features/6.0/extension-list-and-downloads.md)). Die Reihenfolge, in der Extensions geladen werden,
-hat sich 2026 geändert: [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md).
+([Extension-Liste](../funktionen/6.0/extension-liste-und-downloads.md)). Die Reihenfolge, in der Extensions geladen werden,
+hat sich 2026 geändert: [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md).
 Mit Composer installierte Extensions werden mit ihrem Paket aktualisiert: `composer update se7enxweb/<package>`,
 nachdem Sie die Hinweise zum Paket in den [Release Notes der Extensions](../../changelogs/extensions/README.md)
 gelesen haben.
@@ -484,7 +484,7 @@ gibt dafür eine `C`-Zeile aus; ignorieren Sie sie oder fügen Sie die Option hi
 Dann im Browser: Die Startseite lädt; Sie können sich an der Administration anmelden; **Setup > Systeminformationen**
 zeigt die neue Version; ein Testelement lässt sich veröffentlichen und erscheint auf der Site. **Setup >
 Upgrade-Prüfung** mit **Überprüfe Dateikonsistenz** vergleicht die installierten Dateien mit dem Dateimanifest
-`share/filelist.md5` und listet die abweichenden auf ([Prüfung der Dateikonsistenz](../../eng-us/features/6.0/file-consistency-check.md)).
+`share/filelist.md5` und listet die abweichenden auf ([Prüfung der Dateikonsistenz](../funktionen/6.0/dateikonsistenzpruefung.md)).
 Dateien, die Sie absichtlich geändert haben, sind dort zu erwarten.
 
 Weitere Werkzeuge, die nach einem Upgrade helfen:
@@ -509,7 +509,7 @@ php bin/php/console exp:velocity cache clear
 | Symptom | Was zu tun ist |
 |---|---|
 | Eine weiße Seite oder HTTP 500 nach dem Austausch des Codes | Lesen Sie `var/log/error.log`; führen Sie Schritt 1 aus 11.6 erneut aus; `vendor/` muss zum neuen `composer.json` passen. |
-| „The site is missing the software libraries it needs“ (HTTP 503) | `vendor/` fehlt: `composer install`; siehe [Eine Installation reparieren](../../eng-us/bc/6.0/repair.md). |
+| „The site is missing the software libraries it needs“ (HTTP 503) | `vendor/` fehlt: `composer install`; siehe [Eine Installation reparieren](../bc/6.0/reparatur.md). |
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, dann die Caches leeren. |
 | Eine SQL-Datei ist mittendrin fehlgeschlagen | Stellen Sie die Sicherung wieder her und wenden Sie die Datei erneut von Anfang an an. |
 | `SET storage_engine=InnoDB;` schlägt fehl | Eine Update-Datei von vor Oktober 2026: In den aktuellen Dateien steht `SET default_storage_engine=InnoDB;`. Nehmen Sie die aktuelle Datei, oder überspringen Sie diese eine Zeile. |
@@ -521,7 +521,7 @@ Mehr in [Kapitel 12](12-fehlerbehebung.md).
 Eine veröffentlichte Release ändert sich nie; eine Korrektur kommt immer als nächste Version. Um zu sehen, was eine
 Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](../../changelogs/6.0/6.0.15.md).
 
-**Demo-Modus (6.0.15).** Auf einer aktualisierten Site ändert sich nichts, solange die Umgebungsvariable `EXP_DEMO_MODE=1` nicht gesetzt ist, die nur für öffentliche Demos gedacht ist. Prüfen Sie nach dem Upgrade eines Produktivservers, dass kein Prozess einer echten Site sie hat (`grep -r EXP_DEMO_MODE` über die PHP-FPM-Pools, virtuellen Hosts, `.htaccess`-Dateien, Service-Units und Crontabs). [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
+**Demo-Modus (6.0.15).** Auf einer aktualisierten Site ändert sich nichts, solange die Umgebungsvariable `EXP_DEMO_MODE=1` nicht gesetzt ist, die nur für öffentliche Demos gedacht ist. Prüfen Sie nach dem Upgrade eines Produktivservers, dass kein Prozess einer echten Site sie hat (`grep -r EXP_DEMO_MODE` über die PHP-FPM-Pools, virtuellen Hosts, `.htaccess`-Dateien, Service-Units und Crontabs). [Demo-Modus](../bc/6.0/demomodus.md).
 
 **Icon-Themes von Erweiterungen (6.0.15).** Die mitgelieferten Umschreiberegeln liefern jetzt `extension/<name>/icons/` (SVG-, PNG- und GIF-Bilder, deren Name genau eine Dateiendung hat) als Datei aus. Ein Upgrade schreibt Ihre eigene `.htaccess` oder Serverkonfiguration nie um: Wenn eine Erweiterung der Site Icons mitbringt (`icon.ini [ExtensionSettings] IconExtensions[]`), kopieren Sie die Regel hinein, vor die Regel des Front-Controllers. Apache `.htaccess`: `RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]`; ein virtueller Host nimmt `^/extension/...`, nginx `location ~ ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ { try_files $uri =404; }`. Velocity und die erzeugte Konfiguration von FrankenPHP haben sie nach `exp:velocity deploy`. Alle Server: [Regeln für den Webserver](../bc/6.0/symbole.md#regeln-für-den-webserver).
 
@@ -533,25 +533,25 @@ In diesem Repository:
 - Release Notes: [Changelogs von 6.0](../../changelogs/6.0/6.0.15.md) ([6.0.0](../../changelogs/6.0/6.0.0.md) bis
   [6.0.14](../../changelogs/6.0/6.0.14.md)), die [Release Notes der Extensions](../../changelogs/extensions/README.md),
   [alle Changelogs](../../changelogs/README.md).
-- Verhaltensänderungen: [Juli und August 2026](../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md),
-  [16. bis 30. September 2026](../../eng-us/bc/6.0/behaviour-changes-2026-09b.md),
-  [1. und 2. Oktober 2026](../../eng-us/bc/6.0/behaviour-changes-2026-10.md),
-  [Legacy-Extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md),
-  [E-Mail-Einstellungen](../../eng-us/bc/6.0/mail-preferences.md), [Standardwerte des Static Cache](../../eng-us/bc/6.0/static-cache-defaults.md),
-  [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md).
-- PHP: [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md), [PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md),
-  [5.90 und PHP 7](../../eng-us/bc/5.90/php7.md).
-- Sicherheit: [Härtung in 6.0.13](../../eng-us/bc/6.0/hardening.md),
+- Verhaltensänderungen: [Juli und August 2026](../bc/6.0/verhaltensaenderungen-2026-07-08.md),
+  [16. bis 30. September 2026](../bc/6.0/verhaltensaenderungen-2026-09b.md),
+  [1. und 2. Oktober 2026](../bc/6.0/verhaltensaenderungen-2026-10.md),
+  [Legacy-Extensions](../bc/6.0/verhaltensaenderungen-von-erweiterungen.md),
+  [E-Mail-Einstellungen](../bc/6.0/e-mail-einstellungen.md), [Standardwerte des Static Cache](../bc/6.0/standardwerte-des-statischen-caches.md),
+  [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md).
+- PHP: [PHP-8-Unterstützung](../bc/6.0/php8.md), [PHP-8.0-Unterstützung](../bc/6.0/php-8.0-unterstuetzung.md),
+  [5.90 und PHP 7](../bc/5.90/php7.md).
+- Sicherheit: [Härtung in 6.0.13](../bc/6.0/haertung.md),
   [Sicherheitshärtung 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md),
   [Sicherheitshärtung August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md),
   [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md).
-- [Audit](../../eng-us/bc/6.0/audit.md), [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md),
-  [Prüfung der Dateikonsistenz](../../eng-us/features/6.0/file-consistency-check.md),
-  [Eine Installation reparieren](../../eng-us/bc/6.0/repair.md), [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
-- [Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md).
+- [Audit](../bc/6.0/audit.md), [Wartungsmodus](../funktionen/6.0/wartungsmodus.md),
+  [Prüfung der Dateikonsistenz](../funktionen/6.0/dateikonsistenzpruefung.md),
+  [Eine Installation reparieren](../bc/6.0/reparatur.md), [Velocity-Engines](../bc/6.0/velocity-engines.md).
+- [Legacy Bridge](../funktionen/6.0/legacy-bridge.md).
 - [Eine Site betreiben](../anleitungen/betrieb-einer-website.md): Sicherungen, Caches und Reparaturen.
-- [Geschichte](../../eng-us/history/README.md): die [Chronik 2026](../../eng-us/history/2026/) und das
-  [Hauptbuch](../../eng-us/history/ledger/exponential-root.md).
+- [Geschichte](../geschichte/README.md): die [Chronik 2026](../../eng-us/history/2026/) und das
+  [Hauptbuch](../geschichte/aenderungsverzeichnis/exponential-root.md).
 - Code: `update/database/`, `update/common/scripts/`, `bin/php/checkdbfiles.php`, `bin/php/checkclasses.php`,
   `bin/php/ezsqldiff.php`, `lib/version.php`.
 

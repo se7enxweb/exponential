@@ -19,7 +19,7 @@ installierte Dateien mit ihren erfassten Prüfsummen und listet jede abweichende
 Erweiterung, die `share/filelist.md5` mitliefert, gehören deren Zeilen zu diesem Vergleich. So kann ein Administrator
 sehen, ob jemand die Dateien des Themes auf dem Server geändert hat.
 
-Die Prüfung ist in [Prüfung der Dateikonsistenz](../../../../eng-us/features/6.0/file-consistency-check.md) beschrieben.
+Die Prüfung ist in [Prüfung der Dateikonsistenz](../../../funktionen/6.0/dateikonsistenzpruefung.md) beschrieben.
 
 ## Die Regel
 

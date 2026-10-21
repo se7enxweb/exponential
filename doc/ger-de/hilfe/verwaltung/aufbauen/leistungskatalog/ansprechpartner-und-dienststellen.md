@@ -13,7 +13,7 @@ Diese Seite richtet sich an Site-Ersteller und Redakteure, die Kontaktinformatio
 Leistungsseite ihre eigene Telefonnummer und ihre eigenen Öffnungszeiten eintippt, bedeutet eine Änderung der Zeiten
 das Bearbeiten von Dutzenden Seiten. Mit einem Objekt je Ansprechpartner, von jeder Leistung verknüpft, wird die
 Änderung einmal gemacht. Beziehungen erklärt
-[Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md).
+[Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md).
 
 ## Inhalt
 
@@ -26,7 +26,7 @@ das Bearbeiten von Dutzenden Seiten. Mit einem Objekt je Ansprechpartner, von je
 ## Die Klasse für Ansprechpartner
 
 Legen Sie sie unter **Setup > Klassen** an
-([Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)):
+([Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)):
 
 | Attribut | Bezeichner | Datentyp | Erforderlich |
 |---|---|---|---|
@@ -45,7 +45,7 @@ Halten Sie Ansprechpartner in einem Ordner „Ansprechpartner“ (oder unter der
 nicht in Menüs erscheinen.
 
 Der Datentyp für Kartenstandorte verwendet Google Maps, einen Dienst eines Drittanbieters, und braucht einen Schlüssel
-([ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md)); eine Adresse als Text plus ein Link zu Ihrem
+([ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md)); eine Adresse als Text plus ein Link zu Ihrem
 eigenen Kartendienst passt vielleicht besser zu Ihrer Datenschutzrichtlinie.
 
 ## Leistungen mit Ansprechpartnern verknüpfen
@@ -59,7 +59,7 @@ Um zu sehen, welche Leistungen einen Ansprechpartner verwenden, öffnen Sie ihn 
 **Verknüpfungen** an: **Rückwärts verknüpfte Objekte** listet die Objekte, die auf ihn verweisen (umgekehrte
 Beziehungen). Prüfen Sie das, bevor Sie einen Ansprechpartner entfernen; die Prüfung umgekehrter Beziehungen warnt vor
 Inhalten, die noch auf ein zu entfernendes Objekt zeigen
-([Prüfung umgekehrter Beziehungen](../../../../../eng-us/features/6.0/reverse-relation-check.md)).
+([Prüfung umgekehrter Beziehungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)).
 
 ## Den Kontakt auf der Leistungsseite zeigen
 
@@ -98,7 +98,7 @@ Ansprechpartner nennen Schalter, Teams und gemeinsame Postfächer, nicht einzeln
 
 - [Einen Leistungskatalog aufbauen](README.md)
 - [Leistungen modellieren](leistungen-modellieren.md)
-- [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
+- [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

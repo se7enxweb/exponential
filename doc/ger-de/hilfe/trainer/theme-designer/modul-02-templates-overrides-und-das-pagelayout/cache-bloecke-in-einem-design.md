@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md) und
-[Das Pagelayout, Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/the-pagelayout.md#cache-blocks).
+Quellen: [View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md) und
+[Das Pagelayout, Cache-Blöcke](../../../ersteller/website-ersteller/das-pagelayout.md#cache-blöcke).
 
 1. **Zwei Caches** (4 Minuten). `site.ini [ContentSettings] ViewCaching=enabled` bewahrt die Ausgabe von
    `content/view` pro Knoten, Ansichtsmodus, Sprache, Siteaccess, Rollen und mehr auf. Das Pagelayout gehört nicht
@@ -68,7 +68,7 @@ Quellen: [View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/webs
 ### Häufige Fragen
 
 **Woran sehe ich, ob ein Block verwendet wurde?** Bei eingeschalteter Debug-Ausgabe zeigt die Exp Debug bar eine Zahl
-**CB** (verwendete und auf der Seite vorhandene Cache-Blöcke) ([Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md)).
+**CB** (verwendete und auf der Seite vorhandene Cache-Blöcke) ([Exp Debug bar](../../../../funktionen/6.0/exp-debug-leiste.md)).
 
 **Sollte das ganze Pagelayout ein einziger Block sein?** Mitgelieferte Themes legen oft den größten Teil in einen Block
 mit Adresse und Benutzer als Schlüssel. Mehrere kleinere Blöcke mit passenden Schlüsseln sind in der Schulung leichter
@@ -147,7 +147,7 @@ Auf Ihrer Schulungsinstallation. Die Dateien liegen unterhalb von
 <summary>Antworten</summary>
 
 1. Der Hauptbereich der Seiten von `content/view` wird aufbewahrt; das Pagelayout läuft jedes Mal
-   ([View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)).
+   ([View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md)).
 2. Sie werden geleert, damit Menüs neue Inhalte zeigen.
 3. Die Begrüßung des ersten Besuchers wird pro Adresse gespeichert und allen anderen Besuchern dieser Seite gezeigt.
 4. **C.**
@@ -157,9 +157,9 @@ Auf Ihrer Schulungsinstallation. Die Dateien liegen unterhalb von
 
 ## Weiterführende Literatur
 
-- [View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md): Parameter und
+- [View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md): Parameter und
   Fehlersuche bei veralteter Ausgabe.
-- [Leistung und Caching für Websites](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md): das größere
+- [Leistung und Caching für Websites](../../../ersteller/website-ersteller/leistung-und-caching.md): das größere
   Bild.
 - [Caches](../../../../anleitungen/caches.md): alle Caches einer Installation und wie Sie sie leeren.
 

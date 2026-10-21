@@ -144,7 +144,7 @@ Inhalte.
 - [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md#die-seite-eines-objekts): die Teile der Seite eines Elements.
 - [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#viele-objekte-auf-einmal): die Liste Unterelemente und ihre
   Aktionen.
-- [Tabelleneinstellungen der Unterelemente](../../../../../eng-us/features/6.0/subitems-table-options.md): jede Einstellung der
+- [Tabelleneinstellungen der Unterelemente](../../../../funktionen/6.0/optionen-der-unterelementtabelle.md): jede Einstellung der
   Tabelle.
 
 ## Verwandte Seiten

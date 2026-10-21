@@ -54,7 +54,7 @@ Für ein deutschsprachiges Publikum übersetzen Sie die Zeilen und behalten die 
 | Sicherheit | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Sprachen | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | Geschichte | [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md) |
-| Ausprobieren | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Ausprobieren | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Community, Unterstützung | [Die Community-Kanäle](community-kanaele.md) |
 
 ## Verwendung

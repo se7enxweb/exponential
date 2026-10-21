@@ -128,8 +128,8 @@ Auf der Entwicklungsinstallation.
 ## Weiterführende Literatur
 
 - [Velocity-Engines](../../../../bc/6.0/velocity-engines.md): Engines, Deploy, Neustart und der Watchdog.
-- [Der Velocity-Server mit persistenten Workern](../../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
-- [Der Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md).
+- [Der Velocity-Server mit persistenten Workern](../../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md).
+- [Der Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md).
 
 ## Verwandte Seiten
 

@@ -22,7 +22,7 @@ Erstattungen vor, die Geld, Ware und Bestellstatus in Einklang hält. Die Bedeut
 ## Die Status für die Zeit nach dem Abschluss
 
 Seit 6.0.15 liefert der Shop vier Status für das aus, was nach dem Abschluss einer Bestellung geschieht
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)):
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)):
 
 | Status (ID) | Gesetzt, wenn | Wirkung im Dashboard |
 |---|---|---|

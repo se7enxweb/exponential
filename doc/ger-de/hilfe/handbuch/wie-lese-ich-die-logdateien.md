@@ -43,8 +43,8 @@ Klartext) braucht `setup/unmasklogs`; **Logs verwalten** (rotieren, entfernen) b
 
 ## Verwandte Seiten
 
-- [Der Log-Viewer](../../../eng-us/features/6.0/log-viewer.md)
-- [Rotation und Bereinigung der Logs](../../../eng-us/features/6.0/log-rotation.md)
+- [Der Log-Viewer](../../funktionen/6.0/log-betrachter.md)
+- [Rotation und Bereinigung der Logs](../../funktionen/6.0/log-rotation.md)
 - [Logs für Inhaber](../kunden/gesund-halten/logs-fuer-betreiber.md)
 - [Benutzerhandbuch](README.md)
 

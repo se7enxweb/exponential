@@ -117,14 +117,14 @@ Prüfpunkt die zugehörigen Lektionen zur Wiederholung.
 2. Im Tab **Orte**.
 3. Den Kommentar lesen, den Entwurf bearbeiten und erneut zur Veröffentlichung schicken; eine neue Freigabe ist nötig.
 4. Informative Bilder haben einen Alternativtext, der sagt, was sie zeigen; dekorative Bilder haben einen leeren.
-5. **Ungültige Relationen** ([Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md)).
+5. **Ungültige Relationen** ([Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md)).
 
 </details>
 
 ## Weiterführende Informationen
 
 - [Sprachen](../../../sprachen.md), [Workflows](../../../../anleitungen/workflows.md) und
-  [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md): die drei Themen, die die Teilnehmenden im Abschlussprojekt
+  [eztags](../../../../funktionen/6.0/erweiterungen/eztags.md): die drei Themen, die die Teilnehmenden im Abschlussprojekt
   am häufigsten nachschlagen.
 - [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md): was nach dem Kurs zu tun ist, wenn man nicht
   weiterkommt.
@@ -133,7 +133,7 @@ Prüfpunkt die zugehörigen Lektionen zur Wiederholung.
 
 - [Modul 8: Qualität und Barrierefreiheit](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

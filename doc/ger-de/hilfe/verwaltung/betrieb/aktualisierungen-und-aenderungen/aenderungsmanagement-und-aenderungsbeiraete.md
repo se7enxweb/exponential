@@ -36,7 +36,7 @@ Kategorien an Ihre an.
 | Änderung an einer Exponential-Website | Übliche Art | Warum |
 |---|---|---|
 | Inhalte veröffentlichen | keine Änderung; durch den redaktionellen Workflow gesteuert | [Überblick über Freigabe-Workflows](../redaktionelle-workflows/freigabe-workflows-im-ueberblick.md) |
-| Caches leeren, einen Cronjob-Teil ausführen, Logs rotieren | Standard | umkehrbar, dokumentiert ([Betriebsaufgaben](../../../../../eng-us/help/government/tasks/operations/README.md)) |
+| Caches leeren, einen Cronjob-Teil ausführen, Logs rotieren | Standard | umkehrbar, dokumentiert ([Betriebsaufgaben](../../aufgaben/betrieb/README.md)) |
 | Einen Benutzer hinzufügen, einer Gruppe eine vorhandene Rolle zuweisen | Standard (nach Ihrem Eintrittsablauf) | im Prüfprotokoll aufgezeichnet |
 | Eine neue Rolle, eine neue Sektion, ein geänderter Workflow | normal | ändert, wer was tun darf |
 | Eine Änderung an Einstellungen (INI) | normal | ändert das Verhalten; mit [ManagedByDeployment](verwaltet-durch-bereitstellung.md) kommt sie über die Versionsverwaltung |

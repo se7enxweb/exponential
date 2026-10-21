@@ -66,8 +66,8 @@ UseSlaveServer=enabled` gehen Lesezugriffe an ein je Anfrage zufällig gewählte
   verwenden Sie Ihren Prozess für Geheimnisse.
 
 ## Verwandte Seiten
-- [Lese-Replikate](../../../../../eng-us/help/government/operations/availability/read-replicas.md)
-- [Hochverfügbarkeit der Datenbank](../../../../../eng-us/help/government/operations/availability/database-high-availability.md)
+- [Lese-Replikate](../../betrieb/verfuegbarkeit/lese-replikate.md)
+- [Hochverfügbarkeit der Datenbank](../../betrieb/verfuegbarkeit/hochverfuegbarkeit-der-datenbank.md)
 - [Mehrere Webknoten (Hosting)](../../../hosting/betrieb/mehrere-web-knoten.md)
 - [MariaDB für Hoster](../../../hosting/grundlagen/mariadb-fuer-hoster.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

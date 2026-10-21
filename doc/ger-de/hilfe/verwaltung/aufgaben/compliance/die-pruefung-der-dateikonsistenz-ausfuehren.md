@@ -10,7 +10,7 @@ type: help
 # Die Prüfung der Dateikonsistenz ausführen
 
 Für Administratoren und Hosting-Teams, nach jedem Update, nach einem Vorfall und als regelmäßige Prüfung
-([Prüfung der Dateikonsistenz](../../../../../eng-us/help/government/security/file-consistency-check.md)).
+([Prüfung der Dateikonsistenz](../../sicherheit/dateikonsistenzpruefung.md)).
 
 ## Inhalt
 
@@ -49,9 +49,9 @@ Für das Monitoring: `bash bin/shell/verifyfiles.sh --quiet || <your alert comma
 
 ## Verwandte Seiten
 
-- [Prüfung der Dateikonsistenz](../../../../../eng-us/help/government/security/file-consistency-check.md)
+- [Prüfung der Dateikonsistenz](../../sicherheit/dateikonsistenzpruefung.md)
 - [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md)
-- [Reaktion auf Vorfälle](../../../../../eng-us/help/government/security/incident-response.md)
+- [Reaktion auf Vorfälle](../../sicherheit/reaktion-auf-sicherheitsvorfaelle.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

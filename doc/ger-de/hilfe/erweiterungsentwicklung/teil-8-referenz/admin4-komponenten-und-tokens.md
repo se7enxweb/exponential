@@ -65,7 +65,7 @@ die aus Tokens aufgebaut ist, braucht für den dunklen Modus nichts weiter.
 - Zurück: [Die JavaScript-API von expui](expui-javascript-api.md)
 - Weiter: [Das Hilfesystem für Erweiterungen](hilfesystem-fuer-erweiterungen.md)
 - [Administrationsseiten im admin4-Stil](../teil-3-erweiterungsentwickler/admin-seiten-im-admin4-stil.md)
-- [admin4-Tokens](../../../../eng-us/help/designers/theme-design/admin4-tokens.md), [admin4-Komponenten](../../../../eng-us/help/designers/theme-design/admin4-components.md)
+- [admin4-Tokens](../../designer/theme-design/admin4-tokens.md), [admin4-Komponenten](../../designer/theme-design/admin4-komponenten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

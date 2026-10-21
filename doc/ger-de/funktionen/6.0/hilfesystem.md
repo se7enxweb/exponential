@@ -488,7 +488,7 @@ an der Seite oder den Einstellungen erzeugt eine neue Datei.
 Die Beispiele unterhalb von `doc/eng-us/examples/`, die aus dem Code generiert werden (Template-Operatoren,
 Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs,
 Konsolenbefehle, Erweiterungspunkte), schreibt `./console exp:help:examples`; `--check` meldet Seiten, die nicht
-aktuell sind. Siehe [Beispiele](../../../eng-us/examples/README.md#how-the-generated-pages-are-made). Sie haben den Seitentyp
+aktuell sind. Siehe [Beispiele](../../beispiele/README.md#so-entstehen-die-generierten-seiten). Sie haben den Seitentyp
 `generated`, der unter den geschriebenen Seiten eingestuft wird (`[SearchSettings] TypeBoost[generated]`) und nicht auf
 den Zielgruppenkarten des Dashboards erscheint.
 

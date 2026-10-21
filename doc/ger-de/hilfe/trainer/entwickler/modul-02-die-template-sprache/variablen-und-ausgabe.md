@@ -159,7 +159,7 @@ Auf der Entwicklungsinstallation, aus ihrem Wurzelverzeichnis.
 
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): wie Templates gefunden werden, Overrides,
   Fehlersuche.
-- [String-Template-Operatoren](../../../../../eng-us/features/6.0/string-template-operators.md): die String-Operatoren von
+- [String-Template-Operatoren](../../../../funktionen/6.0/template-operatoren-fuer-zeichenketten.md): die String-Operatoren von
   Exponential 6.
 
 ## Verwandte Seiten

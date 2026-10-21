@@ -54,8 +54,8 @@ auf dieselbe Weise entfernen. Entfernen Sie sie bei Überprüfungen des Zugangs;
 ## Verwandte Seiten
 - [Prüfen, wer Administratorrechte hat](pruefen-wer-administratorrechte-hat.md)
 - [Einen Mitarbeiter in eine andere Abteilung verschieben](einen-mitarbeiter-in-eine-andere-abteilung-verschieben.md)
-- [Überprüfungen des Administratorzugangs](../../../../../eng-us/help/government/operations/people-and-permissions/admin-access-reviews.md)
-- [Seitenweise Anzeige der Rollenzuweisungen](../../../../../eng-us/features/6.0/role-assignment-paging.md)
+- [Überprüfungen des Administratorzugangs](../../betrieb/personen-und-berechtigungen/ueberpruefung-administrativer-zugaenge.md)
+- [Seitenweise Anzeige der Rollenzuweisungen](../../../../funktionen/6.0/seitenweise-rollenzuweisungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

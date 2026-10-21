@@ -34,7 +34,7 @@ den Dateispeicher in Ordnung halten.
 - Die Download-Adresse ist `content/download/<object ID>/<attribute ID>`. Die Ansicht prüft, ob der Besucher das Objekt
   lesen darf, und schickt dann die Datei.
 
-Quelle: [Dateien und Downloads, How a download works](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#how-a-download-works).
+Quelle: [Dateien und Downloads, How a download works](../../ersteller/website-ersteller/dateien-und-downloads.md#wie-ein-download-funktioniert).
 Nennen Sie Lesern Format und Größe, bevor sie klicken: „it is also an accessibility requirement for many sites“ (für
 viele Websites ist das auch eine Anforderung der Barrierefreiheit, dieselbe Seite).
 
@@ -47,7 +47,7 @@ viele Websites ist das auch eine Anforderung der Barrierefreiheit, dieselbe Seit
 | Nur für Mitarbeiter (interne Kopien, Master-Scans) | Eine Sektion, die nur Mitarbeiterrollen lesen dürfen |
 | Für eine begrenzte Zeit verfügbar | Verbergen Sie es oder verschieben Sie es in eine Sektion, die Besucher nicht lesen können, wenn die Zeit vorbei ist |
 
-Quelle: [Dateien und Downloads, Protected downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads).
+Quelle: [Dateien und Downloads, Protected downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads).
 
 > **Warnung**
 > „Do not link files directly from `var/.../storage/`: that bypasses the permission check“ (Verlinken Sie Dateien nicht
@@ -55,7 +55,7 @@ Quelle: [Dateien und Downloads, Protected downloads](../../../../eng-us/help/cre
 > `content/download`, wie es das eigene Template des Dateifelds tut.
 
 Leserkonten und Bereiche nur für Mitglieder erklären [Mitglieder](../mitglieder/README.md) und
-[Mitgliederregistrierung und Bereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md).
+[Mitgliederregistrierung und Bereiche](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md).
 
 ## Die Lizenz jedes Objekts angeben
 
@@ -84,8 +84,8 @@ Informationssammlung gebaut ist. Er legt hochgeladene Dateien mit einer Begrenzu
 (`[RemoveFiles] MaxFiles`, Standard 25, „0 keeps an unlimited number, which is not advisable for a site with anonymous
 uploads“ – 0 behält eine unbegrenzte Zahl, was für eine Website mit anonymen Uploads nicht ratsam ist) und verschickt
 gesammelte Informationen als mehrteilige Mail, wenn eine Datei angehängt ist
-([enhancedezbinaryfile](../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md)). Schützen Sie solche Formulare gegen
-Spam ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+([enhancedezbinaryfile](../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md)). Schützen Sie solche Formulare gegen
+Spam ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 
 ## Große Dateien und Formate
 
@@ -94,9 +94,9 @@ Spam ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creat
 - „Very large files (videos) are better hosted on a service built for them and embedded“: Sehr große Dateien (Videos)
   liegen besser bei einem Dienst, der dafür gebaut ist, und werden eingebettet.
 
-Quelle: [Dateien und Downloads, Large files](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#large-files). Zu
-Bildern und ihren Größen siehe [Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md);
-zu den funktionierenden Bildformaten [SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md).
+Quelle: [Dateien und Downloads, Large files](../../ersteller/website-ersteller/dateien-und-downloads.md#große-dateien). Zu
+Bildern und ihren Größen siehe [Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md);
+zu den funktionierenden Bildformaten [SVG und Bildformate](../../ersteller/website-ersteller/svg-und-bildformate.md).
 Planen Sie Speicherplatz und Backups mit Ihrem Hoster
 ([Speicher, CPU und Festplatte dimensionieren](../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)).
 
@@ -105,12 +105,12 @@ Planen Sie Speicherplatz und Backups mit Ihrem Hoster
 Wenn Mitarbeiter Berichte in LibreOffice oder OpenOffice Writer schreiben, importiert die Erweiterung `ezodf` eine Datei
 `.odt` als Inhaltsobjekt (Titel, Überschriften, Absätze, Listen, Tabellen und Bilder werden auf Klassenattribute
 abgebildet) und exportiert Objekte zurück nach Writer. Für Konvertierungen braucht sie OpenOffice oder LibreOffice 2.4
-oder neuer ([ezodf](../../../../eng-us/features/6.0/extensions/ezodf.md)).
+oder neuer ([ezodf](../../../funktionen/6.0/erweiterungen/ezodf.md)).
 
 ## Den Speicher in Ordnung halten
 
 Die **Inhaltsprüfungen** (Menü Setup) helfen einer Sammlung, in Ordnung zu bleiben
-([Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)):
+([Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)):
 
 | Prüfung | Findet |
 |---|---|
@@ -122,7 +122,7 @@ Die **Inhaltsprüfungen** (Menü Setup) helfen einer Sammlung, in Ordnung zu ble
 Verwaiste Speicherdateien können in eine Quarantäne verschoben und wiederhergestellt werden; „nothing is ever deleted
 from the storage itself“ (aus dem Speicher selbst wird nie etwas gelöscht, dieselbe Seite). Führen Sie diese Prüfungen
 bei einer digitalen Sammlung nach Migrationen und vor dem Archivieren eines Backups aus. Linkprüfungen für externe
-Links beschreibt [Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md).
+Links beschreibt [Link- und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md).
 
 ## Checkliste für Sammlungen
 
@@ -135,13 +135,13 @@ Links beschreibt [Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/
 - [ ] Upload-Formulare für Besucher verwenden `enhancedezbinaryfile` mit einem vernünftigen `MaxFiles` und Spamschutz.
 - [ ] Inhaltsprüfungen nach jeder Migration ausgeführt; fehlenden Dateien nachgegangen.
 - [ ] Speicher in Backups enthalten und eine Wiederherstellung getestet
-      ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+      ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 
 ## Verwandte Seiten
 
 - [Bibliotheken und Kataloge](README.md)
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
-- [Die Medien-Bibliothek ordnen](../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
+- [Die Medien-Bibliothek ordnen](../../ersteller/website-ersteller/die-medienbibliothek-organisieren.md)
 - [Medien und Uploads (für Redakteure)](../../medien-und-uploads.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

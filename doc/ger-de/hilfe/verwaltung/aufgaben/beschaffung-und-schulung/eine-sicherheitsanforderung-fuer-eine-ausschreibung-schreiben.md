@@ -10,7 +10,7 @@ type: help
 # Eine Sicherheitsanforderung für eine Ausschreibung schreiben
 
 **Wer:** die Beschaffungsverantwortlichen mit dem Sicherheitsbeauftragten. **Wann:** beim Entwurf der Anforderungen.
-Die Fakten stammen aus den [Sicherheitsstandards](../../../../../eng-us/standards/security.md) und der
+Die Fakten stammen aus den [Sicherheitsstandards](../../../../standards/sicherheit.md) und der
 [Sicherheitshärtung](../../../sicherheitshaertung.md).
 
 ## Inhalt
@@ -23,7 +23,7 @@ Die Fakten stammen aus den [Sicherheitsstandards](../../../../../eng-us/standard
 
 ## Bevor Sie beginnen
 
-- Lesen Sie die Zusammenfassung der [Sicherheitsstandards](../../../../../eng-us/standards/security.md#summary): OWASP Top 10
+- Lesen Sie die Zusammenfassung der [Sicherheitsstandards](../../../../standards/sicherheit.md#zusammenfassung): OWASP Top 10
   **Teilweise erfüllt**, ASVS **Nicht geprüft**, CSP **Teilweise erfüllt**.
 - Kennen Sie den Sicherheitsrahmen Ihrer Organisation (zum Beispiel das
   [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) oder ISO/IEC 27001,
@@ -35,14 +35,14 @@ Die Fakten stammen aus den [Sicherheitsstandards](../../../../../eng-us/standard
    [13. Sicherheitshärtung für die Produktion](../../../../installation/13-sicherheitshaertung.md) und
    [Sicherheitshärtung](../../../sicherheitshaertung.md), mit dokumentierter Abweichung.
 2. **Nennen Sie die Voreinstellungen, die geändert werden sollen**, weil sie ausgeschaltet oder offen ausgeliefert
-   werden ([Sicherheitsstandards](../../../../../eng-us/standards/security.md#known-gaps)):
+   werden ([Sicherheitsstandards](../../../../standards/sicherheit.md#bekannte-lücken)):
    - zweistufige Anmeldung für Administratoren ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md));
    - Kontosperre oder Ratenbegrenzung vor der Site;
    - Mindestlänge für Passwörter (ASVS Stufe 1 verlangt 12; die Voreinstellung ist 10);
    - HSTS, sobald die Site nur noch über HTTPS läuft;
    - Durchsetzen der Content Security Policy auf der öffentlichen Site, wo das Design es erlaubt.
 3. **Verlangen Sie das Patchen**: veröffentlichte Sicherheitskorrekturen innerhalb einer von Ihnen festgelegten Zeit
-   eingespielt ([Sicherheitsupdates und Patch-Rhythmus](../../../../../eng-us/help/government/procurement/lifecycle/security-updates-and-patching-cadence.md)).
+   eingespielt ([Sicherheitsupdates und Patch-Rhythmus](../../beschaffung/lebenszyklus/sicherheitsupdates-und-patch-rhythmus.md)).
 4. **Verlangen Sie Protokollierung**: Audit-Protokoll eingeschaltet, Warnungen an benannte Personen, Kette regelmäßig
    verifiziert ([Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md)).
 5. **Verlangen Sie Tests**: wenn Ihre Regeln es verlangen, einen Penetrationstest der gelieferten Site durch einen
@@ -78,8 +78,8 @@ Anforderungen, die ein Bieter mit einem Plan beantwortet und die Sie bei der Abn
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Sicherheitsanforderungen](../../../../../eng-us/help/government/procurement/requirements/security-requirements.md)
-- [Klausel zur Sicherheit](../../../../../eng-us/help/government/procurement/tender-templates/security-clause.md)
+- [Sicherheitsanforderungen](../../beschaffung/anforderungen/sicherheitsanforderungen.md)
+- [Klausel zur Sicherheit](../../beschaffung/ausschreibungsvorlagen/klausel-sicherheit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

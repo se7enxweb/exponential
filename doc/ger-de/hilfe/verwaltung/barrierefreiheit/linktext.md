@@ -49,7 +49,7 @@ Der Link im Rich Text hat eine Option für das Ziel; das Standarddesign schreibt
 Benutzer. Verwenden Sie es selten, und wenn, dann sagen Sie es im Text: „Karte des Stadtteils (öffnet in einem neuen
 Fenster)“. Die eigenen Hilfeseiten von Exponential folgen derselben Regel und ergänzen Links, die ein neues Fenster
 öffnen, um einen Hinweis
-([Hilfesystem: Sprachen und Barrierefreiheit](../../../../eng-us/features/6.0/help-system.md#languages-and-accessibility)).
+([Hilfesystem: Sprachen und Barrierefreiheit](../../../funktionen/6.0/hilfesystem.md#sprachen-und-barrierefreiheit)).
 
 ## Regeln für das Design
 
@@ -67,12 +67,12 @@ Fenster)“. Die eigenen Hilfeseiten von Exponential folgen derselben Regel und 
   `cronjob.ini [linkCheckSettings]`
   ([Links, URL-Aliase, Platzhalter](../../../anleitungen/urls-und-aliase.md#2-wie-links-geprüft-werden)).
 - **Defekte Beziehungen** (`/contentcheck/brokenrelations/<node id>`) findet Inhalte, die auf entfernte, verborgene oder
-  unveröffentlichte Inhalte verlinken oder sie einbetten ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+  unveröffentlichte Inhalte verlinken oder sie einbetten ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 
 ## Verwandte Seiten
 
 - [Barrierefreie Inhalte für die Redaktion](barrierefreie-inhalte-fuer-die-redaktion.md)
-- [Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Link- und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

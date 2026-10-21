@@ -38,9 +38,9 @@ und [10. Nach der Installation: das Betriebshandbuch](../../../../installation/1
 - **Zustand.** **Setup > Systeminformationen** (`/setup/info`) zeigt Zustandsprüfungen und was Aufmerksamkeit braucht
   ([Systeminformationen](../../../../anleitungen/systeminformationen.md)).
 - **Logdateien.** **Setup > Logdateien** listet die Logdateien mit einer Fehlerübersicht und dem Zustand der Logs
-  ([Log-Betrachter](../../../../../eng-us/features/6.0/log-viewer.md)).
+  ([Log-Betrachter](../../../../funktionen/6.0/log-betrachter.md)).
 - **Audit.** Das Audit-Dashboard (`/audit/dashboard`) zeigt Sicherheitsereignisse und Alarme
-  ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+  ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 - **Sicherungen.** Prüfen Sie, dass sie gelaufen sind, und stellen Sie hin und wieder eine wieder her
   ([Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md)).
 - **Cronjobs.** **Setup > Cronjobs** zeigt, ob die geplanten Teile gelaufen sind ([Cronjobs](../../../../anleitungen/cronjobs.md)).
@@ -50,11 +50,11 @@ Hoster haben eine passende Liste: [Monatlicher Betrieb](../../../hosting/checkli
 ## Jedes Quartal
 
 - **Überprüfung der Zugänge.** Wer hat welche Rolle; Ausgeschiedene entfernen. **Benutzerkonten prüfen**
-  (`/user/hygiene`) findet Konten, die seit einer Anzahl von Tagen nicht benutzt wurden ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)); Rollen stehen unter
+  (`/user/hygiene`) findet Konten, die seit einer Anzahl von Tagen nicht benutzt wurden ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)); Rollen stehen unter
   `/role/list` ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)). Der Abschnitt mit den Checklisten
   für Verwaltungen hat eine Checkliste für die vierteljährliche Überprüfung der Zugänge.
 - **Inhaltsprüfungen.** Defekte Links und Beziehungen, nicht referenzierte Objekte, fehlende Dateien
-  ([Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md), [Fehlende Dateien](../../../../anleitungen/fehlende-dateien.md)).
+  ([Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md), [Fehlende Dateien](../../../../anleitungen/fehlende-dateien.md)).
 - **Routinemäßiges Update** auf das neueste 6.0.x, falls noch nicht geschehen ([Upgrades im Haushalt planen](upgrades-im-haushalt-planen.md)).
 
 ## Jedes Jahr
@@ -63,7 +63,7 @@ Hoster haben eine passende Liste: [Monatlicher Betrieb](../../../hosting/checkli
 - **Sicherheitsüberprüfung.** Härtungseinstellungen noch wie vereinbart ([Sicherheitshärtung](../../../sicherheitshaertung.md));
   Hoster: [Sicherheitsüberprüfung](../../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md).
 - **Barrierefreiheit.** Wichtige Seiten und Templates nach Designänderungen erneut testen
-  ([Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)); Ihre Erklärung zur
+  ([Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)); Ihre Erklärung zur
   Barrierefreiheit aktualisieren.
 - **Dokumentation.** Ist die Dokumentation der Website (Inhaltsmodell, Rollen, Einstellungen, Betriebshandbücher)
   aktuell? Liegt sie in Ihren Händen, nicht nur bei dem Lieferanten?
@@ -107,7 +107,7 @@ Next period: <planned work>
 
 - [Der Lebenszyklus des Produkts](README.md)
 - [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md)
-- [Ihre Website pflegen](../../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)
+- [Ihre Website pflegen](../../../ersteller/website-ersteller/ihre-website-pflegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

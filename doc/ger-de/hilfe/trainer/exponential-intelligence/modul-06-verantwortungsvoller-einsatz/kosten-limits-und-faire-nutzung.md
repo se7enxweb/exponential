@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [expai: Für Administratoren](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators) und die Seiten
+Quellen: [expai: Für Administratoren](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren) und die Seiten
 zur Nutzung und zu Budgets unter **EI: Help** (`extension/expai/doc/usage-tracking.md`, `extension/expai/doc/budgets.md`).
 
 1. **Überall Schätzungen** (3 Minuten). Die Zeile mit den Standardwerten im Bearbeitungsformular (Kosten pro Klick),
@@ -123,14 +123,14 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto.
 
 ## Weiterführende Informationen
 
-- [expai: Für Administratoren](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)
+- [expai: Für Administratoren](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)
 - Die Seiten zur Nutzungserfassung, zu Budgets und zu Spuren unter **EI: Help**.
 
 ## Verwandte Seiten
 
 - [Modul 6: Verantwortungsvoller Einsatz](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -28,7 +28,7 @@ Die Reihenfolge, in der ein Dokumentationsteam seine Website kennenlernt. Jeder 
 |---|---|---|---|
 | 7 | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md) | Dokumentationsleitung | Prüfung vor der Freigabe |
 | 8 | [Objektzustände](../../../anleitungen/objektzustaende.md) | Dokumentationsleitung | Ein Freigabezustand, getrennt vom Veröffentlichen |
-| 9 | [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md) | Dokumentationsleitung | Eine Hierarchie, die wachsen kann |
+| 9 | [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md) | Dokumentationsleitung | Eine Hierarchie, die wachsen kann |
 | 10 | [Suchen](../../suchen.md) | Alle | Wie Redakteure Seiten finden |
 | 11 | [Website-Suche und wonach Besucher suchen](../alltag/website-suche-und-wonach-besucher-suchen.md) | Dokumentationsleitung | Fehlende Seiten und fehlende Wörter |
 | 12 | [URLs, Weiterleitungen und verschobene Seiten](../alltag/urls-weiterleitungen-und-verschobene-seiten.md) | Autoren | Lesezeichen, die weiter funktionieren |
@@ -39,8 +39,8 @@ Die Reihenfolge, in der ein Dokumentationsteam seine Website kennenlernt. Jeder 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 14 | [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) | Dokumentationsleitung | Übersetzungen, die Schritt halten |
-| 15 | [PDF-Export](../../../../eng-us/features/6.0/pdf-export.md) | Dokumentationsleitung | Druckbare Handbücher |
-| 16 | [Hilfe als Inhalt gepflegt](../../../../eng-us/features/6.0/help-content.md) | Dokumentationsleitung | Ein Modell für Thementypen, Zustände und E-Books |
+| 15 | [PDF-Export](../../../funktionen/6.0/pdf-export.md) | Dokumentationsleitung | Druckbare Handbücher |
+| 16 | [Hilfe als Inhalt gepflegt](../../../funktionen/6.0/hilfeinhalte.md) | Dokumentationsleitung | Ein Modell für Thementypen, Zustände und E-Books |
 | 17 | [Inhalts-Audits](../alltag/inhalts-audits.md) | Dokumentationsleitung | Seiten, die noch stimmen |
 | 18 | [Barrierefreiheit pflegen](../alltag/barrierefreiheit-pflegen.md) | Autoren | Dokumentation, die alle nutzen können |
 | 19 | [Die REST-API für Betreiber](../wachstum/rest-api-fuer-betreiber.md) | Produktverantwortliche | Dokumentation in Ihrem Produkt oder Ihrer App |

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Website-Ersteller, die Websites auf dem klassischen Design mit `ezflow` pflegen oder bauen,
 dem Seitenbaukasten, der vor dem Layouts-Editor kam. Sie beschreibt, wie ezflow-Seiten funktionieren, was zu
 konfigurieren ist und wie Sie für neue Arbeiten zwischen ezflow und dem Layouts-Editor entscheiden. Referenz:
-[ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md).
+[ezflow](../../../funktionen/6.0/erweiterungen/ezflow.md).
 
 ## Inhalt
 
@@ -100,8 +100,8 @@ Bestehende ezflow-Websites funktionieren weiter; neue Landingpages sind mit dem 
 
 ## Verwandte Seiten
 
-- [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md)
-- [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md)
+- [ezflow](../../../funktionen/6.0/erweiterungen/ezflow.md)
+- [ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md)
 - [Cronjobs für Anwendungen](../anwendungsentwickler/cronjobs-fuer-anwendungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -37,12 +37,12 @@ Zahlungsobjekt, Callback-Prüfer und ein PayPal-Beispiel).
 
 | Erweiterung | Anbieter | Lesen |
 |---|---|---|
-| `ezpaypal` | PayPal (Weiterleitung, NVP-API, Notify-URL `/paypal/notify_url`) | [ezpaypal](../../../../eng-us/features/6.0/extensions/ezpaypal.md) |
+| `ezpaypal` | PayPal (Weiterleitung, NVP-API, Notify-URL `/paypal/notify_url`) | [ezpaypal](../../../funktionen/6.0/erweiterungen/ezpaypal.md) |
 | `ezauthorize` | Authorize.Net | die eigene Dokumentation in `extension/ezauthorize/` |
 
 ## PayPal einrichten
 
-Aus [ezpaypal](../../../../eng-us/features/6.0/extensions/ezpaypal.md):
+Aus [ezpaypal](../../../funktionen/6.0/erweiterungen/ezpaypal.md):
 
 1. Aktivieren Sie die Erweiterung.
 2. Legen Sie `settings/override/paypal.ini.append.php` an und setzen Sie mindestens `[PaypalSettings] Business` (Ihr

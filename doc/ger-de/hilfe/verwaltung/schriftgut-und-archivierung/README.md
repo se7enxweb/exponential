@@ -64,13 +64,13 @@ keine Aufbewahrungssperre; die Seiten sagen, wie Sie diese Abläufe mit den vorh
 
 Schritt-für-Schritt-Aufgaben (die Bekanntmachungen des Vorjahres archivieren, eine archivierte Seite wiederherstellen,
 einen Eintrag aus dem Papierkorb wiederherstellen, eine frühere Version zurückholen) stehen in den Compliance-Aufgaben
-dieser Hilfe ([Compliance-Aufgaben](../../../../eng-us/help/government/tasks/compliance/README.md)).
+dieser Hilfe ([Compliance-Aufgaben](../aufgaben/compliance/README.md)).
 
 ## Verwandte Seiten
 
 - Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md)
 - [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)
-- [Audit](../../../../eng-us/bc/6.0/audit.md)
+- [Audit](../../../bc/6.0/audit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

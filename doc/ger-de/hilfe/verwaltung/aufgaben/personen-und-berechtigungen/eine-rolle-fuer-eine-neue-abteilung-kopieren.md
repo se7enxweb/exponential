@@ -63,8 +63,8 @@ Jede Kopie ist eine weitere Rolle, die überprüft werden muss; weniger Rollen s
 ## Verwandte Seiten
 - [Eine Redakteursrolle einer Abteilung für einen Teilbaum anlegen](eine-redakteursrolle-einer-abteilung-fuer-einen-teilbaum-anlegen.md)
 - [Prüfen, was eine Rolle erlaubt](pruefen-was-eine-rolle-erlaubt.md)
-- [Rollengestaltung: Redakteure der Abteilungen](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-department-editors.md)
-- [Reihenfolge der Richtlinien einer Rolle](../../../../../eng-us/features/6.0/role-policy-order.md)
+- [Rollengestaltung: Redakteure der Abteilungen](../../betrieb/personen-und-berechtigungen/rollenentwurf-fachredaktionen.md)
+- [Reihenfolge der Richtlinien einer Rolle](../../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

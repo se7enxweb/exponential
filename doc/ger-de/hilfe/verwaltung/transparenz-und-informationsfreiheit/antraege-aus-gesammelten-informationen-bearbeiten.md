@@ -80,7 +80,7 @@ berechnet keine gesetzlichen Fristen.
 
 - [Ein Antragsformular mit dem Informationssammler](ein-antragsformular-mit-dem-informationssammler.md)
 - [Objektzustände](../../../anleitungen/objektzustaende.md)
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

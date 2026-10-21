@@ -114,7 +114,7 @@ xrowextract (`extension/xrowextract/settings/fetchalias.ini.append.php`).
 | `xrowextract_recent_content` | `content/tree` | `parent_node_id`, `limit` | `sort_by` modified, absteigend |
 | `xrowextract_by_section` | `content/tree` | `parent_node_id`, `attribute_filter` | `sort_by` name, aufsteigend |
 
-Die Parameter der Fetch-Funktionen sind unter [den Fetch-Funktionen von content](../../../eng-us/examples/fetch-functions/content/README.md)
+Die Parameter der Fetch-Funktionen sind unter [den Fetch-Funktionen von content](../../beispiele/fetch-funktionen/content/README.md)
 dokumentiert.
 
 ### object
@@ -382,8 +382,8 @@ Namen an.
 
 - [Wie Fetch-Funktionen arbeiten](wie-fetch-funktionen-arbeiten.md)
 - [Execute-Operatoren](execute-operatoren.md): `fetch` und `fetch_alias` als Operatoren
-- [Grundlagen von fetch](../../../eng-us/help/designers/templates/fetch-basics.md)
-- [Die Referenz der Fetch-Funktionen](../../../eng-us/examples/fetch-functions/README.md)
+- [Grundlagen von fetch](../designer/vorlagen/fetch-grundlagen.md)
+- [Die Referenz der Fetch-Funktionen](../../beispiele/fetch-funktionen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

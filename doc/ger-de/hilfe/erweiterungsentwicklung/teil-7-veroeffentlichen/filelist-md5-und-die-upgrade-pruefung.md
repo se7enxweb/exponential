@@ -70,7 +70,7 @@ werden (Tests, CI-Konfiguration), wenn die `.gitattributes` Ihrer Erweiterung si
 
 Der Kernel hält sein Manifest mit jedem Commit aktuell: `make manifest-fix` schreibt die Zeilen geänderter Dateien neu,
 und der pre-commit-Hook und die CI prüfen es
-([Qualitätsprüfungen](../../../../eng-us/features/6.0/quality-checks.md), auf Englisch). Eine Erweiterung kann dasselbe
+([Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspruefungen.md), auf Englisch). Eine Erweiterung kann dasselbe
 mit einer kleinen Prüfung in ihrer eigenen CI tun.
 
 ## Verwandte Seiten

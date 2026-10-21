@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: die Sicherheitsseite unter **EI: Help** (`extension/expai/doc/security.md`, „Prompt injection“) und
-[expai](../../../../../eng-us/features/6.0/extensions/expai.md).
+[expai](../../../../funktionen/6.0/erweiterungen/expai.md).
 
 1. **Warum prüfen** (4 Minuten). Modelle schreiben flüssigen Text, der erfundene Fakten, falsche Zahlen, veraltete
    Informationen oder Namen enthalten kann, die es nicht gibt. Der Entwurf trägt die Kennzeichnung des Assistenten,
@@ -133,13 +133,13 @@ einer Anweisung an einen Assistenten), oder die Teilnehmenden verwenden ihre eig
 ## Weiterführende Informationen
 
 - Die Sicherheitsseite unter **EI: Help**, Abschnitt „Prompt injection“.
-- [Standards für Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): was von den Redakteuren abhängt.
+- [Standards für Barrierefreiheit](../../../../standards/barrierefreiheit.md): was von den Redakteuren abhängt.
 
 ## Verwandte Seiten
 
 - [Modul 6: Verantwortungsvoller Einsatz](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

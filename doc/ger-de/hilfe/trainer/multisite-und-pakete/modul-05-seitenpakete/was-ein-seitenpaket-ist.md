@@ -147,16 +147,16 @@ Verwenden Sie Ihre Schulungsinstallation. Die Befehle laufen in ihrem Wurzelverz
 
 - [4.3 Seitenpakete: was installiert wird](../../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird).
 - [Seitenpakete für Hoster](../../../hosting/bereitstellung/seitenpakete-fuer-hoster.md).
-- [Seitenpakete und die mitgelieferten Themes](../../../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md).
-- [Inhaltspakete (.ezpkg)](../../../../../eng-us/help/creators/app-creators/packages-and-ezpkg.md) und
-  [Was ein Exponential-Paket ist](../../../../../eng-us/help/designers/extensions/what-an-exponential-package-is.md).
-- Train the Trainer: [Das Seitenpaket für einen Kurs wählen](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/choosing-the-site-package-for-class.md).
+- [Seitenpakete und die mitgelieferten Themes](../../../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md).
+- [Inhaltspakete (.ezpkg)](../../../ersteller/anwendungsentwickler/pakete-und-ezpkg.md) und
+  [Was ein Exponential-Paket ist](../../../designer/erweiterungen/was-ein-exponential-paket-ist.md).
+- Train the Trainer: [Das Seitenpaket für einen Kurs wählen](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/das-seitenpaket-fuer-den-kurs-waehlen.md).
 
 ## Verwandte Seiten
 
 - [Modul 5: Seitenpakete](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

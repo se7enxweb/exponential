@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Anbietern, die nach dem statischen Cache gefragt werden oder ihn in alten
 Hosting-Anleitungen erwähnt sehen. Sie beantwortet: was er ist, warum er ausgeschaltet ausgeliefert wird, wann er noch sinnvoll ist und
 wie Sie ihn erzeugen und ausliefern, wenn ein Kunde ihn braucht. Die Quellen sind
-[Generator für den statischen Cache](../../../../eng-us/features/6.0/static-cache-generator.md),
-[Standardwerte des statischen Caches](../../../../eng-us/bc/6.0/static-cache-defaults.md) und
+[Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md),
+[Standardwerte des statischen Caches](../../../bc/6.0/standardwerte-des-statischen-caches.md) und
 [Kapitel 10, Abschnitt 10.12](../../../installation/10-nach-der-installation.md#1012-performance-tuning).
 
 ## Inhalt
@@ -43,7 +43,7 @@ Seite auf jedem öffentlichen Siteaccess über HTTP innerhalb der Anfrage des Re
 Die Arbeit an 6.0 hat das Auffrischen günstiger gemacht (jede Seite einmal abgerufen, mehrere gleichzeitig: eine Veröffentlichung ohne
 Änderung, die 24 Seiten in 4975 ms auffrischte, frischt jetzt 14 Seiten in etwa 0,5 s auf), aber die Kosten fallen weiterhin in der
 Anfrage des Redakteurs an
-([Generator für den statischen Cache](../../../../eng-us/features/6.0/static-cache-generator.md#refreshing-on-publish-once-each-in-parallel-2026-10-01)).
+([Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md#erneuern-beim-veröffentlichen-jede-einmal-parallel-01102026)).
 
 | | Statischer Cache | Antwort-Cache von Velocity | Rollenbewusster HTTP-Cache |
 |---|---|---|---|
@@ -107,7 +107,7 @@ eine Standardinstallation (`var/site`) braucht keine Änderung.
 | `FetchConcurrency` | `8` (im Code) | gleichzeitig abgerufene Seiten beim Auffrischen |
 
 Installationen, die von älteren Releases aktualisiert wurden, haben vielleicht Überschreibungen, die sich auf die alten Standardwerte
-verließen; siehe [Standardwerte des statischen Caches](../../../../eng-us/bc/6.0/static-cache-defaults.md).
+verließen; siehe [Standardwerte des statischen Caches](../../../bc/6.0/standardwerte-des-statischen-caches.md).
 
 ## Checkliste
 
@@ -121,7 +121,7 @@ verließen; siehe [Standardwerte des statischen Caches](../../../../eng-us/bc/6.
 - [Cache-Schichten](cache-schichten.md)
 - [Antwort-Cache von Velocity](antwort-cache-von-velocity.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
-- [Generator für den statischen Cache](../../../../eng-us/features/6.0/static-cache-generator.md)
+- [Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

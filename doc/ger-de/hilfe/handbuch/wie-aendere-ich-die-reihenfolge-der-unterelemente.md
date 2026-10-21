@@ -36,8 +36,8 @@ Benutzer mit `content/edit` für das übergeordnete Element.
 ## Verwandte Seiten
 
 - [Inhalte bearbeiten](../inhalte-bearbeiten.md)
-- [Blättern, Sortieren und Seitengrößen in der Administration](../../../eng-us/features/6.0/admin-list-paging.md)
-- [Menüs und Navigation](../../../eng-us/help/creators/website-creators/menus-and-navigation.md)
+- [Blättern, Sortieren und Seitengrößen in der Administration](../../funktionen/6.0/seitenweise-listen-im-admin.md)
+- [Menüs und Navigation](../ersteller/website-ersteller/menues-und-navigation.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

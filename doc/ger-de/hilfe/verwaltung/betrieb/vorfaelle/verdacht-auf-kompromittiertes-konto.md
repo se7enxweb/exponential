@@ -46,7 +46,7 @@ Kontoinhaber nicht vorgenommen hat. Beginnen Sie mit den [Grundlagen der Vorfall
 Achten Sie auf: Anmeldungen (`access.session.*`) und ihre maskierten Netze; Rollenzuweisungen; geschriebene
 Einstellungen; Veröffentlichungen, Entfernungen, Verschiebungen; Exporte (`data.export.csv`). Im Browser: Reiter
 **Audit**, **Konsole**, nach Benutzer filtern. Bewahren Sie einen Export der Ergebnisse als Beweis auf
-([Audit-Einträge für eine Prüfung exportieren](../../../../../eng-us/help/government/tasks/operations/export-audit-records-for-an-auditor.md)).
+([Audit-Einträge für eine Prüfung exportieren](../../aufgaben/betrieb/audit-eintraege-fuer-einen-pruefer-exportieren.md)).
 
 ## Rückgängig machen
 
@@ -61,10 +61,10 @@ Einstellungen; Veröffentlichungen, Entfernungen, Verschiebungen; Exporte (`data
 ## Das Konto seiner Inhaberin oder seinem Inhaber zurückgeben
 
 1. Prüfen Sie die Identität der Person über Ihren Service-Desk.
-2. Setzen Sie ein neues Passwort ([Das Passwort von Beschäftigten zurücksetzen](../../../../../eng-us/help/government/tasks/people-and-permissions/reset-a-staff-password.md));
+2. Setzen Sie ein neues Passwort ([Das Passwort von Beschäftigten zurücksetzen](../../aufgaben/personen-und-berechtigungen/das-passwort-eines-mitarbeiters-zuruecksetzen.md));
    eine Passwortänderung meldet die anderen Sitzungen des Kontos ab.
 3. Setzen Sie den zweiten Schritt zurück, wenn Telefon oder Postfach kompromittiert sein könnten
-   ([Jemandem helfen, der sein Telefon verloren hat](../../../../../eng-us/help/government/tasks/people-and-permissions/help-a-user-who-lost-their-phone.md)),
+   ([Jemandem helfen, der sein Telefon verloren hat](../../aufgaben/personen-und-berechtigungen/einem-benutzer-helfen-der-sein-telefon-verloren-hat.md)),
    und verlangen Sie die Anmeldung in zwei Schritten, falls sie ausgeschaltet war.
 4. **Aktivieren** Sie das Konto.
 5. Fragen Sie die Person, wie die Zugangsdaten offengelegt wurden (Phishing, Wiederverwendung); informieren Sie Ihr
@@ -82,7 +82,7 @@ Daten zugegriffen worden sein könnte, siehe [Meldung von Datenschutzverletzunge
 ## Verwandte Seiten
 - [Audit-Warnungen](../ueberwachung/audit-warnungen.md)
 - [Anmeldung in zwei Schritten für Beschäftigte](../personen-und-berechtigungen/zwei-faktor-anmeldung-fuer-beschaeftigte.md)
-- [Ein gesperrtes Konto entsperren](../../../../../eng-us/help/government/tasks/people-and-permissions/unlock-a-locked-account.md)
+- [Ein gesperrtes Konto entsperren](../../aufgaben/personen-und-berechtigungen/ein-gesperrtes-konto-entsperren.md)
 - [Leitfaden zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

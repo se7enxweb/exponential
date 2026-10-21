@@ -104,7 +104,7 @@ mkdir -p var/tmp/unpacked && tar -xzf var/tmp/acme_classes_export-*.ezpkg -C var
 
 Pakete finden Dinge über die Remote-ID. Der Klassenhandler sucht eine vorhandene Klasse mit `eZContentClass::fetchByRemoteID()` und fragt,
 was zu tun ist, wenn sie existiert; die Installation von Inhalten ordnet Objekte nach Remote-ID in neu, vorhanden und im Konflikt ein
-([In ein Paket hineinsehen, es mit Ihrer Website vergleichen](../../../../eng-us/features/6.0/package-compare-and-import.md)). Auch der Installer von 7x
+([In ein Paket hineinsehen, es mit Ihrer Website vergleichen](../../../funktionen/6.0/pakete-vergleichen-und-importieren.md)). Auch der Installer von 7x
 verlässt sich auf feste Remote-IDs: `mainSiteaccessHomeRemoteID()` gibt die Remote-ID des Startknotens der Hauptwebsite zurück, wie sie das
 Demo-Inhaltspaket mitbringt.
 
@@ -140,8 +140,8 @@ Inhaltspaket zu ändern lässt die Seite ohne sie.
 - [Ein eigenes Seitenpaket erstellen](README.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Installationselemente und Handler](../grundlagen/installationselemente-und-handler.md)
-- [Pakete mit Inhaltsklassen bündeln](../../../../eng-us/help/designers/extensions/bundling-content-class-packages.md)
-- [Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)
+- [Pakete mit Inhaltsklassen bündeln](../../designer/erweiterungen/inhaltsklassen-pakete-beilegen.md)
+- [Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

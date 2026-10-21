@@ -172,7 +172,7 @@ owner is a user:     yes
 - [Referenz der Knotenattribute](referenz-der-knotenattribute.md)
 - [Referenz von Inhaltsattribut und Version](referenz-von-inhaltsattribut-und-version.md)
 - [Data Map und Inhalt](data-map-und-inhalt.md)
-- [Content view gui](../../../eng-us/help/designers/templates/content-view-gui.md)
+- [Content view gui](../designer/vorlagen/content-view-gui.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

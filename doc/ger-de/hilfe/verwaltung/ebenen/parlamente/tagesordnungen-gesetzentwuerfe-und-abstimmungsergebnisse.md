@@ -85,14 +85,14 @@ was Sie brauchen).
 | Ein falsches Dokument verknüpft | das richtige verknüpfen, veröffentlichen; das falsche Objekt der Klasse File verborgen halten, nicht entfernen, sofern es nicht weg muss |
 | Rechtswidrig veröffentlichte personenbezogene Daten | sie und die Versionen, die sie enthalten, nach dem Verfahren für Berichtigungen der Aufzeichnung entfernen ([Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md)) |
 
-Jede Änderung steht im Audit-Protokoll ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+Jede Änderung steht im Audit-Protokoll ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Feeds und Weiterverwendung
 
 | Feed | Wie |
 |---|---|
 | Tagesordnungen, Gesetzentwürfe, Abstimmungen | ein RSS-Export je Ordner unter **Setup > RSS** ([RSS-Feeds](../../../../anleitungen/rss-feeds.md)) |
-| Benachrichtigungen | Personen mit einem Konto folgen einem Ordner oder einem Gesetzentwurf mit **Benachrichtigen** ([Benachrichtigungen: der Leitfaden für Benutzer](../../../../../eng-us/features/6.0/notifications.md)) |
+| Benachrichtigungen | Personen mit einem Konto folgen einem Ordner oder einem Gesetzentwurf mit **Benachrichtigen** ([Benachrichtigungen: der Leitfaden für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md)) |
 | Daten | die Dateien der amtlichen Aufzeichnung; die REST-API |
 
 ## Verwandte Seiten

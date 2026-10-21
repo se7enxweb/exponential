@@ -112,7 +112,7 @@ Seitenpakete im Setup-Assistenten. Die Sicht eines Hosters auf dieselbe Wahl ste
 - [sevenx_multisite](README.md)
 - [Die Demo-Inhaltspakete](die-demo-inhaltspakete.md)
 - [cjw_multisite im Vergleich](../cjw-multisite/sevenx-multisite-und-cjw-multisite-im-vergleich.md)
-- [Seitenpakete und die mitgelieferten Themes](../../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md)
+- [Seitenpakete und die mitgelieferten Themes](../../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

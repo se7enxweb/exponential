@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [10.8 Suchindizierung und Bildverarbeitung](../../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung),
-[Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md#indexing) und
+[Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md#indexieren) und
 `ezfind.ini [IndexOptions]` und `cronjob.ini.append.php` der Erweiterung.
 
 1. **Das Skript zum Neuindizieren** (3 Minuten). Die Hinweise der Erweiterung indizieren neu mit
@@ -148,7 +148,7 @@ Ihr Admin-Siteaccess. Fügen Sie `--allow-root-user` nur hinzu, wenn Sie als roo
 
 - [10.8 Suchindizierung und Bildverarbeitung](../../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung):
   was jeder Vorgang für eine Suchmaschine mit Pfaden in die Warteschlange stellt.
-- [Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md#indexing): Indizierung
+- [Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md#indexieren): Indizierung
   für Website-Ersteller.
 - [Cronjobs: ausführen, planen und verfolgen](../../../../anleitungen/cronjobs.md): von Erweiterungen hinzugefügte Teile.
 
@@ -156,7 +156,7 @@ Ihr Admin-Siteaccess. Fügen Sie `--allow-root-user` nur hinzu, wenn Sie als roo
 
 - [Modul 4: Solr und ezfind](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

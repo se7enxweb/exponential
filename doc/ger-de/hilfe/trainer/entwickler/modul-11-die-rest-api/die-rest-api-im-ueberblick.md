@@ -119,7 +119,7 @@ Auf der Entwicklungsinstallation.
 
 - [REST-API v1 und v2: eine Erweiterung](../../../../anleitungen/rest-api-v1-und-v2.md).
 - [Entfernte Dienste und Apps](../../../../anleitungen/entfernte-dienste-und-apps.md).
-- [API- und Protokollstandards](../../../../../eng-us/standards/apis-and-protocols.md).
+- [API- und Protokollstandards](../../../../standards/apis-und-protokolle.md).
 
 ## Verwandte Seiten
 

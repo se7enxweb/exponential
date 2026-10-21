@@ -11,8 +11,8 @@ type: help
 
 **Wer:** der Projektleiter mit dem Schulungskoordinator. **Wann:** beim Aufstellen des Budgets. Die interne Zeit ist
 oft der größte Kostenblock, und der einzige, der nicht in Rechnung gestellt wird. Hintergrund:
-[Personal und Fähigkeiten](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/staff-and-skills.md),
-[Schulungsaufwand budgetieren](../../../../../eng-us/help/government/procurement/training/budgeting-training-effort.md).
+[Personal und Fähigkeiten](../../beschaffung/gesamtbetriebskosten/personal-und-kompetenzen.md),
+[Schulungsaufwand budgetieren](../../beschaffung/schulung/schulungsaufwand-budgetieren.md).
 
 ## Inhalt
 
@@ -25,7 +25,7 @@ oft der größte Kostenblock, und der einzige, der nicht in Rechnung gestellt wi
 ## Bevor Sie beginnen
 
 - Die Liste der Menschen, die mit der Site arbeiten werden, nach Rolle
-  ([Rollen und Kurse](../../../../../eng-us/help/government/procurement/training/roles-to-courses.md)).
+  ([Rollen und Kurse](../../beschaffung/schulung/rollen-und-kurse.md)).
 - Ihre internen Stundenkosten je Rolle (von der Finanzabteilung).
 
 ## Schritte
@@ -34,12 +34,12 @@ oft der größte Kostenblock, und der einzige, der nicht in Rechnung gestellt wi
    Systemadministratoren, Entwickler.
 2. **Schätzen Sie die Routinestunden je Rolle und Monat** aus den Aufgaben, die sie erledigen. Für Administratoren
    nehmen Sie die Routine aus
-   [Eine Site über einen mehrjährigen Vertrag aktuell halten](../../../../../eng-us/help/government/procurement/lifecycle/keeping-a-site-current.md)
+   [Eine Site über einen mehrjährigen Vertrag aktuell halten](../../beschaffung/lebenszyklus/eine-website-aktuell-halten.md)
    und der [Vierteljährlichen Überprüfung des Zugangs](../../checklisten/vierteljaehrliche-zugriffspruefung.md).
 3. **Nehmen Sie die Schulungsstunden aus dem Katalog**: Redakteure 101 etwa 19,5 Stunden, Redakteure 201 etwa 16,
    Site-Administration etwa 30, Hosting und Betrieb etwa 20 ([Kurskatalog](../../../trainer/kurskatalog.md)).
 4. **Rechnen Sie die Fluktuation hinzu**: wie viele neue Personen je Jahr, von denen jede eine Einarbeitung braucht
-   ([Neue Mitarbeiter einarbeiten](../../../../../eng-us/help/government/procurement/training/onboarding-new-staff.md)).
+   ([Neue Mitarbeiter einarbeiten](../../beschaffung/schulung/einarbeitung-neuer-beschaeftigter.md)).
 5. **Rechnen Sie einmalige Arbeit hinzu**: Migration der Inhalte durch Redakteure, Abnahmetests, die Ausstiegsübung.
 6. **Multiplizieren Sie** mit den internen Sätzen und übernehmen Sie die Summe in das Kostenmodell.
 
@@ -72,8 +72,8 @@ Eine Position für Arbeitszeit und eine für Schulung im Budget, mit Annahmen, d
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Schulungskosten](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/training-costs.md)
-- [Ein Schulungsplan für eine Behörde](../../../../../eng-us/help/government/procurement/training/training-plan-for-a-public-body.md)
+- [Schulungskosten](../../beschaffung/gesamtbetriebskosten/schulungskosten.md)
+- [Ein Schulungsplan für eine Behörde](../../beschaffung/schulung/schulungsplan-fuer-eine-oeffentliche-stelle.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

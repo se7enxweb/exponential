@@ -41,7 +41,7 @@ von Änderungen zusammenpassen. Die technischen Einzelheiten stehen auf den Host
 ## Images und festgelegte Tags
 
 Die Images von Velocity sind nach Release, PHP-Version und Variante getaggt
-([Velocity-Pakete und -Binärdateien](../../../../../eng-us/features/6.0/velocity-packages-and-binaries.md)):
+([Velocity-Pakete und -Binärdateien](../../../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)):
 
 ```text
 ghcr.io/se7enxweb/exponential-velocity:<release>-php<version>-<variant>   fixed

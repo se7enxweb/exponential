@@ -35,7 +35,7 @@ Jahren, freier Dokumentation und einem Projekt, das jeden Beitrag übernimmt.
 
 | Material | Wo |
 |---|---|
-| Diese Hilfe, in der Administration und im Repository | [Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Diese Hilfe, in der Administration und im Repository | [Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | Die offizielle Dokumentationswebsite | <https://doc.exponential.earth/> |
 | Die Community-Enzyklopädie | <https://ezpedia.exponential.earth/> |
 | Schulungsbücher, "eZ Publish Training Books (100% Compatible With Exponential)", kostenlose PDFs | <https://github.com/se7enxweb/mirror.exponential.se7enx.com> |
@@ -55,7 +55,7 @@ Sie sie, wie sie sind ([Über die eZ-Publish-Jahre schreiben](ueber-die-ez-publi
 
 - Einen Fehler gut melden ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md)).
 - Eine Hilfeseite mit **Auf GitHub bearbeiten** korrigieren ([Die Hilfe verbessern](../fuersprecher/die-hilfe-verbessern.md)).
-- Eine Übersetzung vervollständigen ([Sprachen in Exponential](../../../eng-us/languages.md)).
+- Eine Übersetzung vervollständigen ([Sprachen in Exponential](../../sprachen.md)).
 - Einen ersten Pull Request schicken ([Mit Git entwickeln](../mit-git-entwickeln.md)); jeder Pull Request wird übernommen
   ([Thema: jeder Pull Request wird übernommen](thema-jeder-pull-request-wird-uebernommen.md)).
 

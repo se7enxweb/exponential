@@ -146,13 +146,13 @@ php bin/php/console exp:velocity deploy --no-velocity --dry-run --allow-root-use
 `exp:velocity deploy` funktioniert auch auf Websites nur mit Apache: `--no-velocity` überspringt die Schritte für Velocity.
 `[DeploySettings] PhpFpmService=auto` (in `settings/velocity.ini`) sucht den Pool, der nach der Hosting-Domain der Installation benannt ist
 oder ihr Verzeichnis nennt, in `/opt/plesk/php/*/etc/php-fpm.d`, `/etc/php-fpm.d`, `/etc/php/*/fpm/pool.d` und
-`/etc/opt/remi/php*/php-fpm.d` ([Velocity-Engines, Welches PHP-FPM](../../../../eng-us/bc/6.0/velocity-engines.md#which-php-fpm)).
+`/etc/opt/remi/php*/php-fpm.d` ([Velocity-Engines, Welches PHP-FPM](../../../bc/6.0/velocity-engines.md#welches-php-fpm)).
 
 > **Hinweis**
 > Ein Neuladen bleibt nicht auf eine Website beschränkt. Der Master bittet jeden Kindprozess jedes Pools, fertig zu werden, und Anfragen an
 > andere Websites derselben PHP-Version warten währenddessen. Deshalb wartet `[DeploySettings] PhpFpmReload=auto` darauf, dass OPcache die
 > geänderten Dateien neu prüft, statt neu zu laden, wenn die OPcache-Einstellungen des Pools es erlauben
-> ([Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy)).
+> ([Velocity-Engines](../../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy)).
 
 ## Plesk
 
@@ -193,7 +193,7 @@ diese Regeln nie dem vhost der Administration hinzu. Siehe [Statischer Cache](..
 - [ ] Die vier Prüfungen des Routings aus [Webserver und Engines](README.md#was-jede-einrichtung-gemeinsam-hat) bestehen.
 - [ ] Der Support weiß, welche FPM-Unit die Website ausliefert (`exp:velocity deploy --no-velocity --dry-run`).
 
-**Demomodus mit Apache und PHP-FPM.** Für eine öffentliche Demo erreicht `SetEnv EXP_DEMO_MODE 1` in ihrem virtuellen Host oder ihrer `.htaccess` PHP-FPM als FastCGI-Parameter über `mod_proxy_fcgi`, den `getenv()` liest; `env[EXP_DEMO_MODE] = 1` im Pool der Demo tut dasselbe. [Beispiele für den Demomodus](../../../../eng-us/examples/demo-mode/README.md), [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md).
+**Demomodus mit Apache und PHP-FPM.** Für eine öffentliche Demo erreicht `SetEnv EXP_DEMO_MODE 1` in ihrem virtuellen Host oder ihrer `.htaccess` PHP-FPM als FastCGI-Parameter über `mod_proxy_fcgi`, den `getenv()` liest; `env[EXP_DEMO_MODE] = 1` im Pool der Demo tut dasselbe. [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md), [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md).
 
 ## Verwandte Seiten
 

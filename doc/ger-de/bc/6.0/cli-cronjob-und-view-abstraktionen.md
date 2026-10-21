@@ -486,8 +486,8 @@ php vendor/bin/phpunit tests/tests/kernel/classes/runnable/
 ## Verwandte Seiten
 
 - [Exponential-Konsole — `bin/php/console`](konsole.md)
-- [Konsole für Cronjobs](../../../eng-us/features/6.0/cronjobs-console.md)
-- [Juni 2026, erste Hälfte (1. bis 15. Juni)](../../../eng-us/history/2026/2026-06a.md)
+- [Konsole für Cronjobs](../../funktionen/6.0/cronjobs-in-der-konsole.md)
+- [Juni 2026, erste Hälfte (1. bis 15. Juni)](../../geschichte/2026/2026-06a.md)
 - [Spezifikation: Befehle, Cronjob-Teile und Views](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
 - [RAD-Erweiterungspunkte](rad-erweiterungspunkte.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)

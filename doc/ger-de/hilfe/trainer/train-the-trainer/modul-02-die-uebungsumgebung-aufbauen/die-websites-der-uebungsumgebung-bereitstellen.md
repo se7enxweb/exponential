@@ -112,7 +112,7 @@ Auf dem Rechner mit der Installation aus Lektion 2.3:
 ## Weiterführende Literatur
 
 - [Die Website bereitstellen](../../../../installation/08-die-website-ausliefern.md): Velocity, FrankenPHP, Apache und nginx.
-- [Der Webserver Velocity](../../../../../eng-us/features/6.0/velocity-web-server.md): die Funktionsseite.
+- [Der Webserver Velocity](../../../../funktionen/6.0/velocity-webserver.md): die Funktionsseite.
 - [Wartungsmodus](../../../../anleitungen/wartungsmodus.md): wann eine Website die Wartungsseite zeigt.
 
 ## Verwandte Seiten

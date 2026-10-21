@@ -37,8 +37,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Abfragetypen und ihre Parameter](../../../../../eng-us/bc/6.0/LAYOUTS.md#query-types-and-their-parameters) und
-[Die Exponential-Inhaltssuche](../../../../../eng-us/bc/6.0/LAYOUTS.md#the-exponential-content-search).
+Quellen: [Abfragetypen und ihre Parameter](../../../../bc/6.0/layouts.md#abfragetypen-und-ihre-parameter) und
+[Die Exponential-Inhaltssuche](../../../../bc/6.0/layouts.md#die-inhaltssuche-von-exponential).
 
 1. **Abfragetypen** (5 Minuten). Zwölf werden mitgeliefert: **Children of a node**, **Parent of a node**, **Subtree
    of a node**, **Siblings of a node**, **Latest content**, **Random content**, **Manual collection**, Relationsliste
@@ -113,7 +113,7 @@ Beispiel **Training** mit den Kursordnern der Teilnehmenden darunter).
 
 1. Vier beliebige aus: Unterelemente, übergeordnetes Element, Teilbaum, Geschwister, neueste, zufällige, manuelle,
    Relationsliste, umgekehrte Relationsliste, Tags, die Exponential-Inhaltssuche, Themen
-   ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#query-types-and-their-parameters)).
+   ([Exponential Layouts](../../../../bc/6.0/layouts.md#abfragetypen-und-ihre-parameter)).
 2. Die Abfrage verwendet die angezeigte Seite als Ort statt eines festen Ortes.
 3. **B.**
 4. Sie ist später leichter zu lesen und zu verstehen.
@@ -123,14 +123,14 @@ Beispiel **Training** mit den Kursordnern der Teilnehmenden darunter).
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Abfragetypen und ihre Parameter](../../../../../eng-us/bc/6.0/LAYOUTS.md#query-types-and-their-parameters)
-- [Exponential Layouts: Durchgang B](../../../../../eng-us/bc/6.0/LAYOUTS.md#walkthrough-b-building-a-new-layout-from-scratch)
+- [Exponential Layouts: Abfragetypen und ihre Parameter](../../../../bc/6.0/layouts.md#abfragetypen-und-ihre-parameter)
+- [Exponential Layouts: Durchgang B](../../../../bc/6.0/layouts.md#durchgang-b-ein-neues-layout-von-grund-auf-bauen)
 
 ## Verwandte Seiten
 
 - [Modul 4: Collections](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -60,7 +60,7 @@ Sites brechen, wenn sich diese Sites ändern. Exponential prüft Links mit einem
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Einen Link zu einem externen Dienst hinzufügen](einen-link-zu-einem-externen-dienst-hinzufuegen.md)
-- [Link- und Inhaltsprüfungen](../../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Link- und Inhaltsprüfungen](../../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

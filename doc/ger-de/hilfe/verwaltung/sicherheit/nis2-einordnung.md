@@ -60,7 +60,7 @@ und das Projekt erhebt keinen NIS2-Anspruch.
 
 ## Verwandte Seiten
 
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Die Sicherheitslage von Exponential auf einen Blick](sicherheitslage-auf-einen-blick.md)
 - [Compliance und DSGVO für Hoster](../../hosting/sicherheit/compliance-und-dsgvo.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

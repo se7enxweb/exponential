@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen und Administratoren. Eine öffentliche Stelle sollte jeden Dienstleister
 und am Ende auch jede Plattform geordnet verlassen können. Bei Exponential erlaubt die Lizenz das; der Plan macht es
 praktikabel. Der Bereich Beschaffung dieser Hilfe enthält Vorlagen für Ausstiegspläne
-([Ausstiegspläne](../../../../eng-us/help/government/procurement/exit-plans/README.md)).
+([Ausstiegspläne](../beschaffung/ausstiegsplaene/README.md)).
 
 ## Inhalt
 
@@ -55,7 +55,7 @@ alten Host für eine gewisse Zeit schreibgeschützt behalten. Die Datenbank kann
 2. Exportieren Sie die Inhalte pro Klasse (siehe „Inhalte und Pakete exportieren“) und die Dateien.
 3. Planen Sie die Konvertierung des Rich-Text-XML in das Zielformat.
 4. Behalten Sie die Adressen: Erstellen Sie eine Weiterleitungstabelle von den alten URL-Aliassen zu den neuen Adressen
-   ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md#relaunching-a-site-a-redirect-plan)).
+   ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md#relaunch-einer-website-ein-weiterleitungsplan)).
 5. Archivieren Sie, was als Schriftgut aufbewahrt werden muss, bevor das alte System abgeschaltet wird.
 
 ## Den Plan testen

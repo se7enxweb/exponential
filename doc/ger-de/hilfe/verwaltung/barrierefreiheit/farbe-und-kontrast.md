@@ -38,7 +38,7 @@ Die Administration admin4 definiert alle ihre Farben als Tokens (Custom Properti
 `design/admin4/stylesheets/components.css`) mit einem hellen und einem dunklen Wert, und der Test
 `tests/tests/design/AdminTokenContrastTest.php` berechnet den Kontrast nach WCAG 2 für die Paare, die zusammen
 verwendet werden: Text 4,5:1 auf jeder Fläche, Fokusrahmen und Feldränder 3:1, Diagrammfarben 3:1, in beiden Modi
-([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#wcag-22)). Die Designregeln verbieten fest
+([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#wcag-22)). Die Designregeln verbieten fest
 codierte Farben in Templates und verlangen für jedes neue Token einen dunklen Wert
 ([Styling von admin4](../../../bc/6.0/admin4-gestaltung.md)). Außerdem beachtet sie `@media (forced-colors: active)` und
 `prefers-color-scheme`.
@@ -70,9 +70,9 @@ codierte Farben in Templates und verlangen für jedes neue Token einen dunklen W
 
 ## Verwandte Seiten
 
-- [Ihre Website mit Ihrer Marke versehen](../../../../eng-us/help/creators/website-creators/branding-your-site.md)
-- [Stylesheets und Skripte](../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Ihre Website mit Ihrer Marke versehen](../../ersteller/website-ersteller/ihre-website-markengerecht-gestalten.md)
+- [Stylesheets und Skripte](../../ersteller/website-ersteller/stylesheets-und-skripte.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

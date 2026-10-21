@@ -37,9 +37,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Composer-Paket oder .ezpkg](../../../../../eng-us/help/designers/extensions/composer-or-ezpkg.md),
-[Eine Erweiterung als Paket exportieren](../../../../../eng-us/help/designers/extensions/extension-export-package.md) und
-[Exportieren und importieren mit ezpm](../../../../../eng-us/help/designers/extensions/exporting-with-ezpm.md).
+Quellen: [Composer-Paket oder .ezpkg](../../../designer/erweiterungen/composer-oder-ezpkg.md),
+[Eine Erweiterung als Paket exportieren](../../../designer/erweiterungen/eine-erweiterung-als-paket-exportieren.md) und
+[Exportieren und importieren mit ezpm](../../../designer/erweiterungen/exportieren-mit-ezpm.md).
 
 1. **Die Entscheidungstabelle** (5 Minuten).
 
@@ -67,10 +67,10 @@ ein Export würde sie in eine Datei schreiben, die weitergereicht wird. Die Prü
 Erweiterungen, und die Freigabeliste macht den Export zu einer bewussten Entscheidung.
 
 **Kann ich die Inhaltsklassen des Themes mit Composer ausliefern?** Ja, als `.ezpkg`-Klassenpakete im Ordner
-`packages/` des Themes, die das Installationsprogramm importiert ([Pakete mit Inhaltsklassen beilegen](../../../../../eng-us/help/designers/extensions/bundling-content-class-packages.md)).
+`packages/` des Themes, die das Installationsprogramm importiert ([Pakete mit Inhaltsklassen beilegen](../../../designer/erweiterungen/inhaltsklassen-pakete-beilegen.md)).
 
 **Was braucht die `composer.json`?** `type: ezpublish-legacy-extension` und `extra.ezpublish-legacy-extension-name`
-mit dem Ordnernamen ([composer.json für ein Theme](../../../../../eng-us/help/designers/extensions/composer-json-for-a-theme.md)).
+mit dem Ordnernamen ([composer.json für ein Theme](../../../designer/erweiterungen/composer-json-fuer-ein-theme.md)).
 
 ### Stolperfallen
 
@@ -136,22 +136,22 @@ Auf Ihrer eigenen Schulungsinstallation, im Stammverzeichnis der Installation.
 <summary>Antworten</summary>
 
 1. Composer mit den Klassenpaketen darin (`packages/`) oder ein `.ezpkg`, das sie mitbringt
-   ([Composer-Paket oder .ezpkg](../../../../../eng-us/help/designers/extensions/composer-or-ezpkg.md)).
+   ([Composer-Paket oder .ezpkg](../../../designer/erweiterungen/composer-oder-ezpkg.md)).
 2. `package.ini [ExtensionExportSettings] AllowedExtensions[]` ist standardmäßig leer.
 3. Export von Inhaltsobjekten, Export von Inhaltsklassen, Extension-Export, Seitenstil.
 4. **C.** `export <package> -d <dir>`.
 5. Den Befund lesen und das Geheimnis aus dem Theme entfernen; die Prüfung nie abschwächen
-   ([Die Prüfung auf Geheimnisse](../../../../../eng-us/help/designers/extensions/package-secret-check.md)).
+   ([Die Prüfung auf Geheimnisse](../../../designer/erweiterungen/geheimnispruefung-vor-dem-paketieren.md)).
 
 </details>
 
 ## Weiterführende Literatur
 
-- [Was ein Exponential-Paket ist](../../../../../eng-us/help/designers/extensions/what-an-exponential-package-is.md).
-- [Der Assistent zum Erstellen von Paketen, Schritt für Schritt](../../../../../eng-us/help/designers/extensions/package-creator-wizard-step-by-step.md):
+- [Was ein Exponential-Paket ist](../../../designer/erweiterungen/was-ein-exponential-paket-ist.md).
+- [Der Assistent zum Erstellen von Paketen, Schritt für Schritt](../../../designer/erweiterungen/paketerstellungs-assistent-schritt-fuer-schritt.md):
   dasselbe im Browser.
-- [Das Seitenstil-Paket](../../../../../eng-us/help/designers/extensions/site-style-package.md): nur ein Farbschema weitergeben.
-- [ezpm: die Paketverwaltung auf der Kommandozeile](../../../../../eng-us/features/6.0/ezpm-package-manager-cli.md).
+- [Das Seitenstil-Paket](../../../designer/erweiterungen/das-site-style-paket.md): nur ein Farbschema weitergeben.
+- [ezpm: die Paketverwaltung auf der Kommandozeile](../../../../funktionen/6.0/ezpm-paketmanager-cli.md).
 
 ## Verwandte Seiten
 

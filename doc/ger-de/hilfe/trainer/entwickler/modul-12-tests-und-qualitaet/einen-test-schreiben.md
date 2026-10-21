@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Tests und Continuous Integration](../../../../../eng-us/standards/testing-and-ci.md) und ein Kernel-Test eines
+Quellen: [Tests und Continuous Integration](../../../../standards/tests-und-ci.md) und ein Kernel-Test eines
 Template-Operators, zum Beispiel in `tests/tests/kernel/common/`.
 
 1. **Aufbau** (4 Minuten). Eine Klasse mit dem Namen `<Something>Test`, die `TestCase` erweitert; öffentliche
@@ -161,9 +161,9 @@ Auf der Entwicklungsinstallation, aus ihrem Wurzelverzeichnis.
 
 ## Weiterführende Literatur
 
-- [Tests und Continuous Integration](../../../../../eng-us/standards/testing-and-ci.md).
-- [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-checks.md).
-- [Programmierrichtlinien](../../../../../eng-us/standards/coding-standards.md).
+- [Tests und Continuous Integration](../../../../standards/tests-und-ci.md).
+- [Qualitätsprüfungen](../../../../funktionen/6.0/qualitaetspruefungen.md).
+- [Programmierrichtlinien](../../../../standards/programmierstandards.md).
 
 ## Verwandte Seiten
 

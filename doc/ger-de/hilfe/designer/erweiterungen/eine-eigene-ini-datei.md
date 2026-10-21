@@ -70,7 +70,7 @@ die für Open Graph als Artikel gelten, aus `cjw_jumper.ini [OpenGraph] ArticleC
 ## Verwandte Seiten
 
 - [Einstellungsdateien in einer Erweiterung](einstellungsdateien-in-einer-erweiterung.md)
-- [Einstellungen auf der Kommandozeile ändern](../../../../eng-us/features/6.0/exp-ini-command.md)
+- [Einstellungen auf der Kommandozeile ändern](../../../funktionen/6.0/exp-ini-befehl.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

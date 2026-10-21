@@ -84,7 +84,7 @@ Passwörter hervorbringen; halten Sie den Grund fest, wenn Sie sie verwenden.
 ## Verwandte Seiten
 
 - [13.6 Passwörter und Anmeldung](../../../installation/13-sicherheitshaertung.md#136-passwörter-und-anmeldung)
-- [Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md)
+- [Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md)
 - [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

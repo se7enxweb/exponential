@@ -147,7 +147,7 @@ Verwenden Sie die Spielwiese aus Lektion 2.1 und führen Sie sie nach jedem Schr
 
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): die Design-Kette und Overrides.
 - [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md): wie lesbare Adressen entstehen.
-- [Sichere Weiterleitungen](../../../../../eng-us/features/6.0/safe-redirects.md): Adressen, die von Benutzern kommen.
+- [Sichere Weiterleitungen](../../../../funktionen/6.0/sichere-weiterleitungen.md): Adressen, die von Benutzern kommen.
 
 ## Verwandte Seiten
 

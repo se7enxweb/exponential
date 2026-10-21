@@ -34,19 +34,19 @@ Eingaben, die sie nicht dekodieren können, `false` zurückgeben (die PHP-Warnun
 ### bin2hex und hex2bin
 
 `bin2hex()`: jedes Byte als zwei Hexadezimalziffern. `hex2bin()`: die Umkehrung oder `false`.
-Generierte Referenzen: [bin2hex](../../../eng-us/examples/template-operators/bin2hex.md), [hex2bin](../../../eng-us/examples/template-operators/hex2bin.md).
+Generierte Referenzen: [bin2hex](../../beispiele/template-operatoren/bin2hex.md), [hex2bin](../../beispiele/template-operatoren/hex2bin.md).
 
 ### convert_uuencode und convert_uudecode
 
 Die uuencode-Kodierung und -Dekodierung von PHP (`convert_uudecode` gibt bei fehlerhafter Eingabe `false` zurück).
-Generierte Referenzen: [convert_uuencode](../../../eng-us/examples/template-operators/convert_uuencode.md),
-[convert_uudecode](../../../eng-us/examples/template-operators/convert_uudecode.md).
+Generierte Referenzen: [convert_uuencode](../../beispiele/template-operatoren/convert_uuencode.md),
+[convert_uudecode](../../beispiele/template-operatoren/convert_uudecode.md).
 
 ### quoted_printable_encode und quoted_printable_decode
 
 Die Quoted-Printable-Kodierung von Mail-Inhalten (RFC 2045).
-Generierte Referenzen: [quoted_printable_encode](../../../eng-us/examples/template-operators/quoted_printable_encode.md),
-[quoted_printable_decode](../../../eng-us/examples/template-operators/quoted_printable_decode.md).
+Generierte Referenzen: [quoted_printable_encode](../../beispiele/template-operatoren/quoted_printable_encode.md),
+[quoted_printable_decode](../../beispiele/template-operatoren/quoted_printable_decode.md).
 
 ```tpl
 'Fit'|bin2hex = {'Fit'|bin2hex}
@@ -82,7 +82,7 @@ Buchstaben wie `é` um, was in UTF-8-Seiten selten gewünscht ist.
 | encoding | Zeichenkette | nein | `'UTF-8'` |
 | double_encode | boolescher Wert | nein | PHPs `true` |
 
-Generierte Referenz: [htmlentities](../../../eng-us/examples/template-operators/htmlentities.md).
+Generierte Referenz: [htmlentities](../../beispiele/template-operatoren/htmlentities.md).
 
 ### html_entity_decode
 
@@ -94,7 +94,7 @@ UTF-8. Ein dekodierter Wert muss erneut maskiert werden, bevor er in HTML ausgeg
 | flags | Ganzzahl | nein | `ENT_QUOTES \| ENT_HTML5` |
 | encoding | Zeichenkette | nein | `'UTF-8'` |
 
-Generierte Referenz: [html_entity_decode](../../../eng-us/examples/template-operators/html_entity_decode.md).
+Generierte Referenz: [html_entity_decode](../../beispiele/template-operatoren/html_entity_decode.md).
 
 ### htmlspecialchars_decode
 
@@ -105,7 +105,7 @@ PHP `htmlspecialchars_decode()`: nur `&amp;`, `&quot;`, `&#039;`, `&lt;` und `&g
 |---|---|---|---|
 | flags | Ganzzahl | nein | `ENT_QUOTES` (3) |
 
-Generierte Referenz: [htmlspecialchars_decode](../../../eng-us/examples/template-operators/htmlspecialchars_decode.md).
+Generierte Referenz: [htmlspecialchars_decode](../../beispiele/template-operatoren/htmlspecialchars_decode.md).
 
 ```tpl
 'Café & "Bar"'|htmlentities = {'Café & "Bar"'|htmlentities}
@@ -136,7 +136,7 @@ Die Eingabe über die Pipe ist das **Format**; jeder Parameter ist ein Argument.
 |---|---|---|---|
 | Argumente | beliebig | nein | keine |
 
-Generierte Referenz: [sprintf](../../../eng-us/examples/template-operators/sprintf.md).
+Generierte Referenz: [sprintf](../../beispiele/template-operatoren/sprintf.md).
 
 ### vsprintf
 
@@ -147,7 +147,7 @@ protokolliert es „Missing required parameter: args_array“.
 |---|---|---|---|
 | Argumente | Array | ja | keine |
 
-Generierte Referenz: [vsprintf](../../../eng-us/examples/template-operators/vsprintf.md).
+Generierte Referenz: [vsprintf](../../beispiele/template-operatoren/vsprintf.md).
 
 Die erste Zeile verwendet die Kategorie Recipes von alpha (Knoten 144):
 
@@ -186,7 +186,7 @@ Eigenheit: Mit **zwei** Parametern ist das Tausendertrennzeichen fest auf `,` ge
 | Tausendertrennzeichen | Zeichenkette | nein | `,` |
 
 Gibt eine Zeichenkette zurück. Für Zahlen in der Locale des Besuchers verwenden Sie stattdessen `l10n( 'number' )`
-([Locale-Operatoren](locale-operatoren.md)). Generierte Referenz: [number_format](../../../eng-us/examples/template-operators/number_format.md).
+([Locale-Operatoren](locale-operatoren.md)). Generierte Referenz: [number_format](../../beispiele/template-operatoren/number_format.md).
 
 ```tpl
 1234567.891|number_format = {1234567.891|number_format}
@@ -212,7 +212,7 @@ Ausgabe auf alpha:
 - [PHP-Zeichenkettenfunktionen: umwandeln](php-zeichenkettenfunktionen-umwandeln.md)
 - [Zeichenketten-Operatoren](zeichenketten-operatoren.md): `wash`
 - [Locale-Operatoren](locale-operatoren.md): Zahlen, Währung und Datum für eine Locale
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

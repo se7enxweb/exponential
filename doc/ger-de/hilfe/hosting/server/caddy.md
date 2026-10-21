@@ -41,7 +41,7 @@ Für einen Hoster, der Caddy mag, ist FrankenPHP der Weg, den das Projekt dokume
 Eigentümer gehört ([Kapitel 8, FrankenPHP](../../../installation/08-die-website-ausliefern.md#84-frankenphp)). Der Kopf der Datei sagt, dass sie jedes
 Mal neu geschrieben wird; bearbeiten Sie sie also nie, sondern setzen Sie Ihre eigenen Direktiven in eine Datei, die
 `[FrankenPHPSettings] SiteInclude` nennt und die in jeden Site-Block importiert wird
-([FrankenPHP als Web-Engine von Exponential](../../../../eng-us/bc/6.0/frankenphp.md)).
+([FrankenPHP als Web-Engine von Exponential](../../../bc/6.0/frankenphp.md)).
 
 ```bash
 php bin/php/console exp:velocity ctl caddyfile --engine=frankenphp --allow-root-user   # print the generated Caddyfile
@@ -58,7 +58,7 @@ also Sie, wie bei nginx.
 > **Warnung**
 > Nutzen Sie keine Direktive, die jede vorhandene Datei unterhalb der Wurzel ausliefert. Die Integration von FrankenPHP meidet bewusst
 > `php_server` von Caddy, weil dessen Standard `settings/*.ini`, die SQLite-Datenbank und Quellen des Kernels ausliefern würde
-> ([FrankenPHP, Das erzeugte Caddyfile](../../../../eng-us/bc/6.0/frankenphp.md#5-the-generated-caddyfile)). Was Sie auch für PHP-FPM schreiben, es
+> ([FrankenPHP, Das erzeugte Caddyfile](../../../bc/6.0/frankenphp.md#5-das-erzeugte-caddyfile)). Was Sie auch für PHP-FPM schreiben, es
 > darf nur die aufgeführten Asset-Pfade als Dateien senden und alles andere an einen Front-Controller. Prüfen Sie in der Dokumentation
 > Ihrer Caddy-Version, wie deren PHP-Direktiven vorhandene Dateien behandeln.
 
@@ -69,7 +69,7 @@ PHP-FPM-Handler nach.
 ## Das Routing, das jede Caddy-Konfiguration braucht
 
 Das erzeugte Caddyfile setzt `.htaccess_root` so um
-([FrankenPHP, Was es enthält](../../../../eng-us/bc/6.0/frankenphp.md#what-it-contains-verified-output)):
+([FrankenPHP, Was es enthält](../../../bc/6.0/frankenphp.md#was-es-enthält-überprüfte-ausgabe)):
 
 | Schritt | Matcher | Aktion |
 |---|---|---|
@@ -107,7 +107,7 @@ HTTPS war: direkt (`HTTPS` an PHP übergeben) oder von einem vertrauenswürdigen
 - [FrankenPHP](frankenphp.md)
 - [nginx mit PHP-FPM](nginx-mit-php-fpm.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
-- [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)
+- [Velocity-Engines](../../../bc/6.0/velocity-engines.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Das Design admin4, Icons](../../../../../eng-us/features/6.0/admin4-design.md#icons) und die Icon-Komponente in
+Quellen: [Das Design admin4, Icons](../../../../funktionen/6.0/admin4-design.md#symbole) und die Icon-Komponente in
 [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#komponenten).
 
 1. **Das Icon** (4 Minuten). `<span class="a4-icon a4-bi-pencil" aria-hidden="true"></span>`: ein Quadrat von 1em, das
@@ -147,7 +147,7 @@ Auf Ihrer Schulungsinstallation, Administration in admin4, Dateien aus Modul 4.
 <summary>Antworten</summary>
 
 1. `<span class="a4-icon a4-bi-pencil" aria-hidden="true"></span>`
-   ([Das Design admin4, Icons](../../../../../eng-us/features/6.0/admin4-design.md#icons)).
+   ([Das Design admin4, Icons](../../../../funktionen/6.0/admin4-design.md#symbole)).
 2. **B.** Mit `.a4-icon-btn` für das Aussehen.
 3. Es ist eine Maske über `currentColor`, die der Textfarbe und damit den Tokens folgt.
 4. Der Reiter zeigt nur seinen Namen, ohne Icon.
@@ -158,10 +158,10 @@ Auf Ihrer Schulungsinstallation, Administration in admin4, Dateien aus Modul 4.
 
 ## Weiterführende Literatur
 
-- [Das Design admin4, Icons](../../../../../eng-us/features/6.0/admin4-design.md#icons): jede Stelle, an der admin4 Icons zeichnet.
+- [Das Design admin4, Icons](../../../../funktionen/6.0/admin4-design.md#symbole): jede Stelle, an der admin4 Icons zeichnet.
 - [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#checkliste-für-das-code-review): der Punkt zu Icons in der
   Checkliste.
-- [Schriften, Icons und Bibliotheken von Dritten](../../../../../eng-us/help/designers/distribution/third-party-fonts-icons-and-libraries.md):
+- [Schriften, Icons und Bibliotheken von Dritten](../../../designer/veroeffentlichung/schriften-icons-und-bibliotheken-dritter.md):
   Icons lizenzieren, die Sie nicht selbst gezeichnet haben.
 
 ## Verwandte Seiten

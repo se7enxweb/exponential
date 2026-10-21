@@ -11,8 +11,8 @@ type: help
 
 Diese Seite ist für Designer, deren Theme JavaScript hat. Am 1. und 2. Oktober 2026 ist die Administration auf jQuery 4
 umgestiegen, und YUI wurde aus den Designs der Administration, dem Design `standard` und dem mitgelieferten ezjscore
-entfernt. Die Einzelheiten stehen in [jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
-und [Entfernung von YUI](../../../../eng-us/bc/6.0/yui-removal.md).
+entfernt. Die Einzelheiten stehen in [jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
+und [Entfernung von YUI](../../../bc/6.0/yui-entfernung.md).
 
 ## Was ezjscore mitliefert
 
@@ -28,7 +28,7 @@ Dateien von jQuery 3.7.1, Migrate 3.4.1 und jQuery UI 1.10.3 wurden am 14. Oktob
    grep -rn "ezjsc::yui\|YUI(" extension/mytheme
    ```
 
-   Keine Ausgabe bedeutet, dass nichts zu portieren ist. Sonst folgen Sie [Entfernung von YUI](../../../../eng-us/bc/6.0/yui-removal.md).
+   Keine Ausgabe bedeutet, dass nichts zu portieren ist. Sonst folgen Sie [Entfernung von YUI](../../../bc/6.0/yui-entfernung.md).
 2. **Suchen Sie nach alten jQuery-Mustern**:
 
    ```bash

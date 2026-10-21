@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Redakteure und Site-Ersteller einer Multisite-Installation. Weil alle Sites einen
 Inhaltsbaum teilen, kann ein Objekt auf mehreren Sites erscheinen, ohne kopiert zu werden; Korrekturen erreichen dann
-jede Site zugleich ([Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+jede Site zugleich ([Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Inhalt
 
@@ -60,7 +60,7 @@ ihrem eigenen Design.
 
 ## Verwandte Seiten
 
-- [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
+- [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
 - [Links zwischen Abteilungs-Sites](links-zwischen-abteilungs-sites.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

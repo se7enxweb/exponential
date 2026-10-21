@@ -43,9 +43,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Von der Probe zur echten Mail](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#from-rehearsal-to-real-mail),
+Quellen: [Von der Probe zur echten Mail](../../../ersteller/website-ersteller/newsletter-versenden.md#von-der-probe-zur-echten-mail),
 [10.5](../../../../installation/10-nach-der-installation.md#105-benachrichtigungen-und-newsletter) und die Anleitungen der
-Erweiterung zu Zustellbarkeit und Rendering (verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+Erweiterung zu Zustellbarkeit und Rendering (verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 
 1. **Zuerst den Transport prüfen** (3 Minuten). Öffnen Sie **INI Einstellungen** am Beamer und zeigen Sie
    `TransportMethodPreview=file`. Sagen Sie laut, warum: Der mitgelieferte Wert sendet.
@@ -135,7 +135,7 @@ durch Ihren Vornamen.
 2. Beide in das Testformular eingeben, durch ein Semikolon getrennt.
 3. **A.** Tests werden nicht gezählt, nicht in die Warteschlange gestellt, und jede Adresse bekommt ihre eigene Mail
    (Anleitung zur Zustellbarkeit, verlinkt von der
-   [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+   [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 4. Die Ausgabe mit der Sprache, den bedingten Teilen und den Interessen dieses Abonnenten (Rendering-Anleitung).
 5. **Falsch.** Ein Test wird sofort gerendert und gesendet.
 
@@ -143,18 +143,18 @@ durch Ihren Vornamen.
 
 ## Weiterführende Informationen
 
-- [Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#from-rehearsal-to-real-mail):
+- [Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md#von-der-probe-zur-echten-mail):
   Testen vor dem echten Versand.
 - [10.5 Benachrichtigungen und Newsletter](../../../../installation/10-nach-der-installation.md#105-benachrichtigungen-und-newsletter):
   die drei Transportmethoden.
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420):
   die Anleitungen zu Testgruppen und Rendering.
 
 ## Verwandte Seiten
 
 - [Modul 4: Versand](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

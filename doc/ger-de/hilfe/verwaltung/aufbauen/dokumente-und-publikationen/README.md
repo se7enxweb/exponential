@@ -45,7 +45,7 @@ wer sie herunterladen darf.
 Nach oben: [Eine Site für den öffentlichen Sektor aufbauen](../README.md), der Index aller Anleitungen zum Aufbauen,
 und [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md), der Anfang des Bereichs für Behörden. Klassen für
 Publikationen bestimmter Organisationen werden in
-[Inhaltsmodell für die Bundesebene](../../../../../eng-us/help/government/levels/national/content-model.md) und den Seiten der anderen Ebenen
+[Inhaltsmodell für die Bundesebene](../../ebenen/national/inhaltsmodell.md) und den Seiten der anderen Ebenen
 vorgeschlagen.
 
 ## HTML zuerst
@@ -63,7 +63,7 @@ eine Webseite. Die übliche Praxis im öffentlichen Sektor:
 ## Verwandte Seiten
 
 - [Einen Leistungskatalog aufbauen](../leistungskatalog/README.md)
-- [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Medien und Uploads](../../../medien-und-uploads.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

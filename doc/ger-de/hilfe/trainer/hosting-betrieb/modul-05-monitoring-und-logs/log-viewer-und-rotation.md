@@ -42,8 +42,8 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Log-Viewer und Rotation](../../../hosting/betrieb/log-viewer-und-log-rotation.md),
-[Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md) und
-[Log-Rotation und Aufräumen](../../../../../eng-us/features/6.0/log-rotation.md).
+[Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md) und
+[Log-Rotation und Aufräumen](../../../../funktionen/6.0/log-rotation.md).
 
 1. **Der Viewer** (5 Minuten). **Setup**, **Logdateien** zeigt jedes Log der Installation (`error.log`, `warning.log`,
    `404.log`, `security.log`, Cronjob- und Erweiterungslogs, Rotationen). Im Design admin4 sind die Log-Werkzeuge
@@ -142,8 +142,8 @@ als Benutzer der Website.
 ## Weiterführende Informationen
 
 - [Log-Viewer und Rotation](../../../hosting/betrieb/log-viewer-und-log-rotation.md): die Anleitung für Hoster.
-- [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md): jede Ansicht und Einstellung.
-- [Log-Rotation und Aufräumen](../../../../../eng-us/features/6.0/log-rotation.md): Rotation, Komprimierung und Aufräumen.
+- [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md): jede Ansicht und Einstellung.
+- [Log-Rotation und Aufräumen](../../../../funktionen/6.0/log-rotation.md): Rotation, Komprimierung und Aufräumen.
 - [Einen Fehler über seine Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md): von der
   Fehlerseite zum Log.
 
@@ -151,7 +151,7 @@ als Benutzer der Website.
 
 - [Modul 5: Monitoring und Logs](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -51,7 +51,7 @@ Addiert alle Operanden: die Eingabe über die Pipe (wenn vorhanden) und jeden Pa
 | beliebig viele Werte | Zahl oder numerische Zeichenkette | nein | keiner |
 
 Eingabe: optional; wenn vorhanden, ist sie der erste Operand. Gibt eine Ganzzahl oder eine Gleitkommazahl zurück.
-Erzeugte Referenz: [sum](../../../eng-us/examples/template-operators/sum.md).
+Erzeugte Referenz: [sum](../../beispiele/template-operatoren/sum.md).
 
 ### sub
 
@@ -63,7 +63,7 @@ Zieht jeden folgenden Operanden vom ersten ab. Der erste Operand ist die Eingabe
 | beliebig viele Werte | Zahl oder numerische Zeichenkette | nein | keiner |
 
 Eingabe: optional. Gibt eine Ganzzahl oder eine Gleitkommazahl zurück.
-Erzeugte Referenz: [sub](../../../eng-us/examples/template-operators/sub.md).
+Erzeugte Referenz: [sub](../../beispiele/template-operatoren/sub.md).
 
 ```tpl
 sum( 2, 3, 4 ) = {sum( 2, 3, 4 )}
@@ -95,7 +95,7 @@ Multipliziert die Eingabe (wenn vorhanden) mit jedem Parameter. Ganz ohne Parame
 | Werte | Zahl | ja, mindestens einer | keiner |
 
 Eingabe: optional. Gibt eine Ganzzahl oder eine Gleitkommazahl zurück.
-Erzeugte Referenz: [mul](../../../eng-us/examples/template-operators/mul.md).
+Erzeugte Referenz: [mul](../../beispiele/template-operatoren/mul.md).
 
 ### div
 
@@ -107,7 +107,7 @@ Fehlers. Braucht wie `mul` mindestens einen Parameter.
 | Werte | Zahl | ja, mindestens einer | keiner |
 
 Eingabe: optional; wenn vorhanden, ist sie der Dividend. Gibt eine Ganzzahl oder eine Gleitkommazahl zurück.
-Erzeugte Referenz: [div](../../../eng-us/examples/template-operators/div.md).
+Erzeugte Referenz: [div](../../beispiele/template-operatoren/div.md).
 
 ### mod
 
@@ -121,7 +121,7 @@ protokolliert er "Missing dividend and divisor". Es gibt keine Prüfung auf null
 | Divisor | Ganzzahl | nein | keiner |
 
 Gibt eine Ganzzahl zurück.
-Erzeugte Referenz: [mod](../../../eng-us/examples/template-operators/mod.md).
+Erzeugte Referenz: [mod](../../beispiele/template-operatoren/mod.md).
 
 ```tpl
 mul( 4, 2.5 ) = {mul( 4, 2.5 )}
@@ -154,7 +154,7 @@ Gibt den Wert plus eins zurück: die Eingabe über die Pipe oder, wenn nichts ü
 |---|---|---|---|
 | `value` | beliebig | nein | `false` |
 
-Erzeugte Referenz: [inc](../../../eng-us/examples/template-operators/inc.md).
+Erzeugte Referenz: [inc](../../beispiele/template-operatoren/inc.md).
 
 ### dec
 
@@ -164,7 +164,7 @@ Dasselbe, minus eins.
 |---|---|---|---|
 | `value` | beliebig | nein | `false` |
 
-Erzeugte Referenz: [dec](../../../eng-us/examples/template-operators/dec.md).
+Erzeugte Referenz: [dec](../../beispiele/template-operatoren/dec.md).
 
 ```tpl
 {def $i = 5}
@@ -192,7 +192,7 @@ erste Parameter. Braucht mindestens einen Parameter.
 |---|---|---|---|
 | Werte | beliebig | ja, mindestens einer | keiner |
 
-Erzeugte Referenz: [max](../../../eng-us/examples/template-operators/max.md).
+Erzeugte Referenz: [max](../../beispiele/template-operatoren/max.md).
 
 ### min
 
@@ -205,7 +205,7 @@ bezieht die Eingabe ein und liefert 7.
 |---|---|---|---|
 | Werte | beliebig | ja, mindestens einer | keiner |
 
-Erzeugte Referenz: [min](../../../eng-us/examples/template-operators/min.md).
+Erzeugte Referenz: [min](../../beispiele/template-operatoren/min.md).
 
 ```tpl
 max( 3, 9, 4 ) = {max( 3, 9, 4 )}
@@ -251,9 +251,9 @@ Jeder nimmt einen Wert: den ersten Parameter, wenn es einen gibt, sonst die Eing
 
 Keiner von ihnen hat benannte Parameter. `round` hat keinen Parameter für die Genauigkeit; für zwei Nachkommastellen
 verwenden Sie `mul( $x, 100 )|round|div( 100 )` oder die Locale-Operatoren (`l10n( 'number' )`).
-Erzeugte Referenzen: [abs](../../../eng-us/examples/template-operators/abs.md), [ceil](../../../eng-us/examples/template-operators/ceil.md),
-[floor](../../../eng-us/examples/template-operators/floor.md), [round](../../../eng-us/examples/template-operators/round.md),
-[int](../../../eng-us/examples/template-operators/int.md), [float](../../../eng-us/examples/template-operators/float.md).
+Erzeugte Referenzen: [abs](../../beispiele/template-operatoren/abs.md), [ceil](../../beispiele/template-operatoren/ceil.md),
+[floor](../../beispiele/template-operatoren/floor.md), [round](../../beispiele/template-operatoren/round.md),
+[int](../../beispiele/template-operatoren/int.md), [float](../../beispiele/template-operatoren/float.md).
 
 ```tpl
 -4.6|abs = {-4.6|abs}
@@ -297,7 +297,7 @@ Ein zweiter Parameter protokolliert eine Warnung über "extra parameters".
 |---|---|---|---|
 | Wert | beliebig | nein | die Eingabe |
 
-Erzeugte Referenz: [count](../../../eng-us/examples/template-operators/count.md).
+Erzeugte Referenz: [count](../../beispiele/template-operatoren/count.md).
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )}
@@ -331,7 +331,7 @@ Schreibt eine positive Ganzzahl als römische Zahl, erzeugt von `buildRoman()`. 
 |---|---|---|---|
 | `value` | beliebig | nein | `false` (die Eingabe verwenden) |
 
-Erzeugte Referenz: [roman](../../../eng-us/examples/template-operators/roman.md).
+Erzeugte Referenz: [roman](../../beispiele/template-operatoren/roman.md).
 
 ### rand
 
@@ -344,7 +344,7 @@ bleibt der Wert gleich, bis der Cache neu aufgebaut wird.
 | Minimum | Ganzzahl | nein | keiner |
 | Maximum | Ganzzahl | nein | keiner |
 
-Erzeugte Referenz: [rand](../../../eng-us/examples/template-operators/rand.md).
+Erzeugte Referenz: [rand](../../beispiele/template-operatoren/rand.md).
 
 ```tpl
 {def $r = rand( 1, 6 )}
@@ -382,10 +382,10 @@ Ausgabe auf alpha:
 
 ## Verwandte Seiten
 
-- [Mathematische Operatoren](../../../eng-us/help/designers/templates/math-operators.md): der Überblick für Designer, mit Rezepten für Seitenumbruch und Raster
+- [Mathematische Operatoren](../designer/vorlagen/mathematische-operatoren.md): der Überblick für Designer, mit Rezepten für Seitenumbruch und Raster
 - [Logische Operatoren](logische-operatoren.md), um die Ergebnisse zu vergleichen
-- [Seitenumbruch](../../../eng-us/help/designers/templates/pagination.md)
-- [Alle Template-Operatoren (erzeugt)](../../../eng-us/examples/template-operators/README.md)
+- [Seitenumbruch](../designer/vorlagen/seitenumbruch.md)
+- [Alle Template-Operatoren (erzeugt)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -25,7 +25,7 @@ Sprache kann sehr Verschiedenes bedeuten.
 
 | Stufe | Was funktioniert | Quelle |
 |---|---|---|
-| Vollständig: Oberfläche und Inhalte | Die Administration spricht die Sprache vollständig; Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale | [Sprachen in Exponential, Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
+| Vollständig: Oberfläche und Inhalte | Die Administration spricht die Sprache vollständig; Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
 | Teilweise Oberfläche, vollständige Inhalte | Eine ältere Übersetzung deckt einen Teil der heutigen Texte ab; der Rest erscheint auf Englisch | ebenda |
 | Nur Inhalte | Keine Übersetzung der Administration; Inhalte können in der Sprache geschrieben und für sie formatiert werden | ebenda |
 
@@ -36,14 +36,14 @@ beantworten.
 
 | Sagen Sie | Quelle |
 |---|---|
-| „268 Locale-Dateien können als Inhaltssprachen genutzt werden.“ | [Sprachen in Exponential](../../../eng-us/languages.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
+| „268 Locale-Dateien können als Inhaltssprachen genutzt werden.“ | [Sprachen in Exponential](../../sprachen.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | „40 davon werden von rechts nach links geschrieben.“ | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | „Es gibt 32 Übersetzungen der Administration, zehn davon vollständig.“ | ebenda |
 | „Jede Übersetzung eines Inhalts wird einzeln veröffentlicht, und Kennzeichen zeigen, was es gibt und was fehlt.“ | [Sprachen](../sprachen.md) |
 | „Jede redaktionelle Person wählt die Sprache ihrer eigenen Administration.“ | [Sprachen](../sprachen.md) |
-| „Ein Land ohne eigene Übersetzung fällt auf eine verwandte zurück, zum Beispiel jedes deutschsprachige Land auf Deutsch.“ | [Sprachen in Exponential, Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
-| „In einer Sprache mit Schreibrichtung von rechts nach links dreht sich die Administration um, und Inhalte bekommen `dir=\"rtl\"`.“ | [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
-| „Für die Sprachen wird zur Laufzeit keine PHP-Erweiterung gebraucht.“ | [Sprachen in Exponential, Abschnitt 10](../../../eng-us/languages.md#10-no-php-extension-at-run-time) |
+| „Ein Land ohne eigene Übersetzung fällt auf eine verwandte zurück, zum Beispiel jedes deutschsprachige Land auf Deutsch.“ | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
+| „In einer Sprache mit Schreibrichtung von rechts nach links dreht sich die Administration um, und Inhalte bekommen `dir=\"rtl\"`.“ | [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
+| „Für die Sprachen wird zur Laufzeit keine PHP-Erweiterung gebraucht.“ | [Sprachen in Exponential, Abschnitt 10](../../sprachen.md#10-keine-php-extension-zur-laufzeit) |
 
 ## Zeigen
 
@@ -62,15 +62,15 @@ Fassung mit Zeitangaben: [Demo-Skripte, Teil 3: Sprachen und von rechts nach lin
 - „Exponential gibt es in 268 Sprachen.“ Sagen Sie: „268 Locale-Dateien als Inhaltssprachen; 32 Übersetzungen der
   Administration, zehn vollständig.“
 - „Alle Übersetzungen sind perfekt.“ Mehrere vollständige Übersetzungen wurden maschinell unterstützt erstellt; ein
-  Gegenlesen ist „der schnellste Gewinn“ ([Sprachen in Exponential, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)).
+  Gegenlesen ist „der schnellste Gewinn“ ([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 - „Sie können so viele Inhaltssprachen nutzen, wie Sie möchten.“ Es gibt eine dokumentierte Grenze von 62 Inhaltssprachen
-  pro Installation auf 64-Bit-PHP ([Abschnitt 11](../../../eng-us/languages.md#11-the-limit-of-62-content-languages)).
+  pro Installation auf 64-Bit-PHP ([Abschnitt 11](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen)).
 
 ## Aus einer Sprachgemeinschaft Beitragende machen
 
 Sprachgemeinschaften sind natürliche Fürsprecher. Wenn Sie einer begegnen:
 
-1. Zeigen Sie ihr den Stand ihrer Sprache ([Abschnitt 4](../../../eng-us/languages.md#4-every-administration-translation)).
+1. Zeigen Sie ihr den Stand ihrer Sprache ([Abschnitt 4](../../sprachen.md#4-alle-übersetzungen-der-administrationsoberfläche)).
 2. Wenn sie vollständig, aber maschinell unterstützt ist, laden Sie Gegenleser ein
    ([Eine maschinell unterstützte Übersetzung gegenlesen](maschinell-unterstuetzte-uebersetzung-gegenlesen.md)).
 3. Wenn sie teilweise vorhanden ist oder fehlt, laden Sie Übersetzer ein ([Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md)).
@@ -81,7 +81,7 @@ Sprachgemeinschaften sind natürliche Fürsprecher. Wenn Sie einer begegnen:
 ## Verwandte Seiten
 
 - [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md)
-- [Sprachen in Exponential](../../../eng-us/languages.md)
+- [Sprachen in Exponential](../../sprachen.md)
 - [Mehrere Websites und Sprachen planen](../fuehrung/multisite-und-mehrsprachigkeit-planen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

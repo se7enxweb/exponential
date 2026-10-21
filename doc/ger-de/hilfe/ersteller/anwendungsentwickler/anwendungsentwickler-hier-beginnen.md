@@ -136,7 +136,7 @@ Der [Lesepfad](lesepfad-fuer-anwendungsentwickler.md) bringt alle folgenden Seit
 
 | Für | Lesen Sie |
 |---|---|
-| Regeln und Muster der Codebasis | [Standards](../../../../eng-us/standards/README.md), [Muster](../../../../eng-us/standards/patterns/README.md) |
+| Regeln und Muster der Codebasis | [Standards](../../../standards/README.md), [Muster](../../../standards/muster/README.md) |
 | Jeden Erweiterungspunkt und wie er registriert wird | [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md) |
 | Bau von Websites (Templates, Layouts, SEO) | [Website-Ersteller: hier beginnen](../website-ersteller/website-ersteller-hier-beginnen.md) |
 | Arbeit mit Git und Beiträge zum Projekt | [Mit Git entwickeln](../../mit-git-entwickeln.md) |

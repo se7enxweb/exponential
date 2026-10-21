@@ -60,7 +60,7 @@ Installieren führt das Paket auf der Website aus (`eZPackage::installUnaudited(
 Jede Installation wird im Prüfprotokoll als `system.package.install` festgehalten. Mit `as_drafts` (`ezpm install --as-drafts`, **Als
 Entwürfe installieren** in der Administration) laufen nur Elemente für Inhaltsobjekte, als Entwürfe, und das Paket wird nicht als
 installiert markiert, sodass es erneut als Entwürfe installiert werden kann
-([Als Entwürfe installieren](../../../../eng-us/bc/6.0/package-json-format.md#install-as-drafts)).
+([Als Entwürfe installieren](../../../bc/6.0/package-json-format.md#als-entwürfe-installieren)).
 
 > **Hinweis**
 > Ein Paket erneut zu installieren führt seine Elemente erneut aus; `install()` überspringt kein bereits installiertes Paket. Die
@@ -132,7 +132,7 @@ Der Teil von ezupdate ist in [Pakete mit ezupdate abrufen](../admin-oberflaeche/
 - [Ein Paket importieren](../admin-oberflaeche/ein-paket-importieren.md)
 - [Installieren und Deinstallieren](../admin-oberflaeche/installieren-und-deinstallieren.md)
 - [Anleitung zu Paketen, 7. Installieren und Deinstallieren](../../../anleitungen/pakete.md#7-installieren-und-deinstallieren)
-- [ezpm, der Paketmanager auf der Kommandozeile](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md)
+- [ezpm, der Paketmanager auf der Kommandozeile](../../../funktionen/6.0/ezpm-paketmanager-cli.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

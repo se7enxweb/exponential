@@ -129,7 +129,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 ## Weiterführende Literatur
 
 - [Lesezeichen](../../../../anleitungen/lesezeichen.md): die Seite, Ordner, Reihenfolgen und jede Aktion.
-- [Lesezeichenordner](../../../../../eng-us/features/6.0/bookmark-folders.md): die Funktion in Kürze.
+- [Lesezeichenordner](../../../../funktionen/6.0/lesezeichenordner.md): die Funktion in Kürze.
 
 ## Verwandte Seiten
 

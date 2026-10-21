@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Site-Ersteller, deren öffentliche Site viele Dokumente veröffentlicht:
 Berichte, Protokolle, Beschlüsse. Ohne Textextraktion sind nur der Name des Dokuments und die Felder seines Objekts
-durchsuchbar ([Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md#searching-inside-files)).
+durchsuchbar ([Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md#in-dateien-suchen)).
 
 ## Inhalt
 
@@ -45,7 +45,7 @@ Die mitgelieferten Werte nennen alte Werkzeuge; setzen Sie das Werkzeug, das Sie
 ## Mit Solr
 
 Mit der Erweiterung `ezfind` und einem Solr-Server können auch Dateiinhalte indiziert werden
-([Suche mit ezfind und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)); prüfen Sie die
+([Suche mit ezfind und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)); prüfen Sie die
 Dokumentation der Erweiterung in `extension/ezfind/` auf die Einstellung in Ihrer Version.
 
 ## Gescannte Dokumente
@@ -61,7 +61,7 @@ als Benutzer des Webservers läuft, dass das Dateiattribut durchsuchbar ist und 
 
 ## Verwandte Seiten
 
-- [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Durchsuchbare Felder und Indizierung](durchsuchbare-felder-und-indizierung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

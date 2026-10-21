@@ -71,7 +71,7 @@ etwas kaputt, das keine Wiederherstellung von Inhalten reparieren kann:
 
 | Datei | Enthält | Wenn sie verloren geht |
 |---|---|---|
-| `settings/override/audit.ini.append.php` | die Signatur- und Pseudonymschlüssel des Prüfprotokolls | die vorhandenen Aufzeichnungen lassen sich nicht mehr als unversehrt prüfen ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| `settings/override/audit.ini.append.php` | die Signatur- und Pseudonymschlüssel des Prüfprotokolls | die vorhandenen Aufzeichnungen lassen sich nicht mehr als unversehrt prüfen ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 | `settings/override/mailpreferences.ini.append.php` | `[SecretSettings] TokenSecret`, das Website-Geheimnis der E-Mail-Einstellungen | ein neues Geheimnis macht jeden Link in jeder bereits versandten Mail ungültig, und kein Eintrag der Unterdrückungsliste passt mehr ([E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md)) |
 | Der Konfigurationsbaum von Velocity (`/etc/vc` oder `var/vc/qbix/etc`, wenn `/etc/vc` nicht genutzt wird) | die Konfiguration der Website und, in seinem Verzeichnis `ssl/`, private Schlüssel von Zertifikaten (Modus `0600`) | HTTPS auf Velocity muss neu eingerichtet werden ([8.3.10](../../../installation/08-die-website-ausliefern.md#8310-der-konfigurationsbaum-etcvc-im-debian-stil)) |
 
@@ -127,7 +127,7 @@ Optionen dar.
 Für Kunden ohne Shell fügt die Erweiterung `git_manager` **Setup > Backup** (`/git_manager/backup`) hinzu: Backups mit
 Zeitstempel („Captions“) von Datenbank und Dateien, optionale Verschlüsselung mit GnuPG und bereinigte SQL-Dumps. Für den
 Datenbankteil braucht sie `mysqldump`, sie deckt also Websites auf MySQL und MariaDB ab
-([git_manager](../../../../eng-us/features/6.0/extensions/git_manager.md)). Ein Backup jeder Engine auf Seiten des Hosters bleibt die
+([git_manager](../../../funktionen/6.0/erweiterungen/git_manager.md)). Ein Backup jeder Engine auf Seiten des Hosters bleibt die
 eigene Aufgabe des Hosters.
 
 ## Checkliste

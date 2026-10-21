@@ -57,7 +57,7 @@ und eigene Anwendungen; Trainer können daraus nach demselben Muster zusätzlich
 - [Migration zu Exponential: Kursüberblick](../README.md)
 - [Migration zu und von Exponential, Abschnitt 4](../../../../installation/migration/README.md#4-migrationen-von-und-zu-anderen-systemen):
   alle Anleitungen für andere Systeme.
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

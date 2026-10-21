@@ -46,7 +46,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../../../anleitungen/urls-und-aliase.md#5-suchstatistiken)
-und [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md#search-statistics).
+und [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md#suchstatistiken).
 
 1. **Einschalten** (3 Minuten). Eine Suche zählt nur, wenn der Siteaccess, in dem der Besucher sucht,
    `LogSearchStats=enabled` hat, meist gesetzt in `settings/siteaccess/<public siteaccess>/site.ini.append.php`. Die
@@ -153,7 +153,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. `<public siteaccess>` ist der N
 
 - [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../../../anleitungen/urls-und-aliase.md#5-suchstatistiken):
   die Seite im Detail.
-- [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md#search-statistics): Statistiken für
+- [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md#suchstatistiken): Statistiken für
   Website-Ersteller.
 - [Aufbewahrung von Logs und Daten](../../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md): aufgezeichnete Daten nur so
   lange aufbewahren wie nötig.
@@ -162,7 +162,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. `<public siteaccess>` ist der N
 
 - [Modul 3: Suchen in der Praxis](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

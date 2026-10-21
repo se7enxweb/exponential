@@ -24,18 +24,18 @@ zeigt und verwaltet sich selbst im Browser.
 „Every Velocity server has two built-in web views of itself“: ein **Dashboard** unter `/Q/dashboard` mit Anfragen,
 Workern, Speicher, Statuscodes und den häufigsten Pfaden live über einen WebSocket, und ein **Control Panel** unter
 `/Q/panel`, „a password-protected admin page that manages apps, domains, certificates, the response cache, logs,
-workers and settings“ ([Velocity Control Panel und Dashboard](../../../eng-us/features/6.0/velocity-control-panel.md)). „They
+workers and settings“ ([Velocity Control Panel und Dashboard](../../funktionen/6.0/velocity-control-panel.md)). „They
 answer to the server, not to your application, so they keep working when the application is broken.“
 
 ## Fakten, die Sie drucken können
 
 | Fakt | Quelle |
 |---|---|
-| Dashboard und Control Panel sind in jeden Velocity-Server eingebaut | [Velocity Control Panel und Dashboard](../../../eng-us/features/6.0/velocity-control-panel.md) |
-| Eine neue Installation verlangt ein echtes Passwort vor jeder anderen Aktion im Panel | [Erste Anmeldung](../../../eng-us/features/6.0/velocity-control-panel.md#first-sign-in) |
-| Für das Panel ist eine Zwei-Faktor-Authentifizierung verfügbar | [Zwei-Faktor-Authentifizierung](../../../eng-us/features/6.0/velocity-control-panel.md#two-factor-authentication-optional) |
-| Administratoren können im Browser ein Zertifikat erneuern, den Cache leeren oder gefilterte Logs lesen | [Velocity Control Panel und Dashboard](../../../eng-us/features/6.0/velocity-control-panel.md) |
-| Die Seiten des Servers lassen sich umgestalten, ohne die Engine anzufassen | [Die Seiten des Servers umgestalten](../../../eng-us/features/6.0/velocity-control-panel.md#restyle-the-servers-pages-designs) |
+| Dashboard und Control Panel sind in jeden Velocity-Server eingebaut | [Velocity Control Panel und Dashboard](../../funktionen/6.0/velocity-control-panel.md) |
+| Eine neue Installation verlangt ein echtes Passwort vor jeder anderen Aktion im Panel | [Erste Anmeldung](../../funktionen/6.0/velocity-control-panel.md#erste-anmeldung) |
+| Für das Panel ist eine Zwei-Faktor-Authentifizierung verfügbar | [Zwei-Faktor-Authentifizierung](../../funktionen/6.0/velocity-control-panel.md#zwei-faktor-authentifizierung-optional) |
+| Administratoren können im Browser ein Zertifikat erneuern, den Cache leeren oder gefilterte Logs lesen | [Velocity Control Panel und Dashboard](../../funktionen/6.0/velocity-control-panel.md) |
+| Die Seiten des Servers lassen sich umgestalten, ohne die Engine anzufassen | [Die Seiten des Servers umgestalten](../../funktionen/6.0/velocity-control-panel.md#die-seiten-des-servers-neu-gestalten-designs) |
 | Gilt für Exponential Velocity 0.0.4.x | ebenda |
 
 ## Was Sie nicht behaupten sollten

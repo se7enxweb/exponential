@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Inhaber und Verantwortliche, die wissen möchten, wie es um ihren Shop steht, ohne Berichte
 zu bauen. Sie erklärt, was das Shop-Dashboard zeigt, wie Sie es lesen und wie Sie es in einer kurzen wöchentlichen
-Durchsicht nutzen. Die Referenz ist [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md).
+Durchsicht nutzen. Die Referenz ist [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md).
 
 ## Inhalt
 
@@ -95,7 +95,7 @@ Vergleich von Saisons.
 Das Dashboard berechnet seine Zahlen mit einer festen Menge von etwa zwanzig Aggregatabfragen, unabhängig von der Größe
 des Shops, geschrieben so, dass sie auf Oracle, MySQL, PostgreSQL und SQLite gleich laufen; es bleibt also schnell,
 während der Bestellverlauf wächst
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md#what-is-on-the-page)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md#was-auf-der-seite-steht)).
 
 ## Eine wöchentliche Durchsicht
 
@@ -114,7 +114,7 @@ Eine Vorlage für die monatliche Fassung steht unter [Monatliche Betriebscheckli
 
 - Es exportiert keine Zahlen in eine Tabellenkalkulation; die Shop-Ansichten des Kernels haben keinen CSV-Export der
   Bestellungen.
-- Es erfasst keine Besucher; zum Besucheraufkommen siehe [Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md).
+- Es erfasst keine Besucher; zum Besucheraufkommen siehe [Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md).
 - Es ersetzt nicht Ihre Buchhaltung: Der Umsatz auf dem Dashboard ist Bestellwert, nicht verbuchte Einnahmen.
 
 Wenn Sie Exporte oder Anbindungen an die Buchhaltung brauchen, planen Sie sie als Erweiterung oder Integration
@@ -122,8 +122,8 @@ Wenn Sie Exporte oder Anbindungen an die Buchhaltung brauchen, planen Sie sie al
 
 ## Verwandte Seiten
 
-- [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
-- [Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)
+- [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
+- [Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)
 - [Einen Shop im Alltag betreiben](einen-shop-im-alltag-betreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

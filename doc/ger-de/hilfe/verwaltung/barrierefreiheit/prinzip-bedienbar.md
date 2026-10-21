@@ -41,7 +41,7 @@ Siehe „Tastatur und Fokus“.
 | Redaktion | keine Inhalte, die sich von selbst bewegen, ohne Steuerung zum Anhalten |
 
 Abgelaufene Formulare zeigen die Seite „Formular abgelaufen“
-([Seite „Formular abgelaufen“](../../../../eng-us/features/6.0/form-expired-page.md)).
+([Seite „Formular abgelaufen“](../../../funktionen/6.0/seite-abgelaufenes-formular.md)).
 
 ## 2.3 Anfälle und körperliche Reaktionen
 

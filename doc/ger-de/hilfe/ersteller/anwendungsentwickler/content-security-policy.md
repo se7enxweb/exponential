@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Anwendungsentwickler, deren Templates und Skripte unter einer Content Security Policy funktionieren
 müssen. Die Administration läuft unter einer solchen Richtlinie und blockiert Inline-Code, sobald sie durchgesetzt wird;
-öffentliche Websites können sie einschalten ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+öffentliche Websites können sie einschalten ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Inhalt
 
@@ -75,7 +75,7 @@ AdditionalSources[]=connect-src https://api.example.org
 
 - [Stylesheets und Skripte für Ihre Website](../website-ersteller/stylesheets-und-skripte.md)
 - [Sicherheit für Anwendungen](sicherheit-fuer-anwendungen.md)
-- [Standard für die Webplattform](../../../../eng-us/standards/web-platform.md)
+- [Standard für die Webplattform](../../../standards/webplattform.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

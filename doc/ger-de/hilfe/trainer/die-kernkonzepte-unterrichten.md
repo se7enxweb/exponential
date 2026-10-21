@@ -12,7 +12,7 @@ type: help
 Jeder Exponential-Kurs, ob für Redakteure, Administratoren oder Entwickler, beruht auf demselben Dutzend Ideen.
 Teilnehmende, die sie früh verstehen, begreifen alles Weitere schneller; wer sie verpasst, stellt in jedem Modul
 dieselbe Frage. Diese Seite gibt Trainern einen einfachen Satz pro Konzept, ein Bild, das im Unterricht funktioniert,
-und eine einstündige Einheit, die sie alle vermittelt. Die Definitionen folgen dem [Glossar](../../../eng-us/glossary.md).
+und eine einstündige Einheit, die sie alle vermittelt. Die Definitionen folgen dem [Glossar](../../glossar.md).
 
 ## Die Konzepte
 
@@ -55,7 +55,7 @@ Zwei Unterscheidungen bringen Teilnehmende am häufigsten durcheinander; sagen S
 
 Für Redakteure hören Sie nach 0:45 auf und nutzen die letzten 15 Minuten für Fragen. Für Entwickler erweitern Sie
 0:50 um einen Blick auf `settings/site.ini` und `php bin/php/console exp:ini`
-([exp:ini](../../../eng-us/features/6.0/exp-ini-command.md)).
+([exp:ini](../../funktionen/6.0/exp-ini-befehl.md)).
 
 ## Praktische Übung
 
@@ -89,7 +89,7 @@ sagen, was eine Richtlinie der Rolle Editor erlaubt, und auf den Siteaccess-Teil
    (ein ausgefülltes Formular).
 2. Ein Objekt, zwei Knoten.
 3. Nein. Entwurf ist ein Status einer Version; Objektzustände sind Kennzeichnungen aus einer Objektzustandsgruppe
-   ([Glossar](../../../eng-us/glossary.md)).
+   ([Glossar](../../glossar.md)).
 4. Nichts; eine Rolle gewährt erst dann Zugriff, wenn sie Benutzern oder Gruppen zugewiesen ist
    ([Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)).
 5. Zum Beispiel `site` und `admin` (und auf neuen Installationen der Siteaccess des Editors).
@@ -98,7 +98,7 @@ sagen, was eine Richtlinie der Rolle Editor erlaubt, und auf den Siteaccess-Teil
 
 ## Weiterführende Literatur
 
-- [Glossar](../../../eng-us/glossary.md): jeder Begriff mit einem Link auf die Seite, die ihn erklärt.
+- [Glossar](../../glossar.md): jeder Begriff mit einem Link auf die Seite, die ihn erklärt.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md)
 - [Erste Schritte](../erste-schritte.md) und [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md)
 

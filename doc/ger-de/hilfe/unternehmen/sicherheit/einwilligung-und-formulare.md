@@ -70,7 +70,7 @@ Zustand Ihrer Website mit `php bin/php/console exp:mail:status`.
 
 Die Newsletter-Erweiterung `cjw_newsletter`, die von `composer.json` verlangt wird, lässt Besucher Listen „mit einem
 Double-Opt-in“ abonnieren und bietet Seiten zum Abonnieren, Bestätigen, Ändern und Abmelden
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)). Öffnungen und Klicks werden nur gezählt, wenn die
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)). Öffnungen und Klicks werden nur gezählt, wenn die
 Website das Tracking einschaltet (standardmäßig `[TrackingSettings] Tracking=disabled`), und pro Person nur mit
 Einwilligung ([Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#was-bei-hoster-und-kunde-bleibt)).
 Die geschäftliche Seite steht in [Newsletter: Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md).
@@ -78,7 +78,7 @@ Die geschäftliche Seite steht in [Newsletter: Opt-in und Einwilligung](../newsl
 ## Formulare, die Daten erheben
 
 Kontakt-, Feedback- und Lead-Formulare verwenden den Informationssammler: Jedes Absenden wird als Sammlung gespeichert
-([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 
 | Gute Praxis | Wie in Exponential |
 |---|---|
@@ -87,7 +87,7 @@ Kontakt-, Feedback- und Lead-Formulare verwenden den Informationssammler: Jedes 
 | Zustimmung festhalten, wo Sie sie brauchen | Ein Kontrollkästchen-Attribut (`ezboolean`) kann Informationen sammeln, sodass ein angekreuztes Kästchen mit dem Absenden gespeichert wird |
 | Beschränken, wer Eingaben liest | Geben Sie `infocollector/read` nur den Menschen, die sie bearbeiten |
 | Entfernen, was Sie nicht mehr brauchen | **Setup > Gesammelte Informationen** entfernt Sammlungen nach einer Bestätigung ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) |
-| Spam und gefälschte Absendungen stoppen | Formular-Tokens (`ezformtoken`) und reCAPTCHA oder hCaptcha ([Spam-Schutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)) |
+| Spam und gefälschte Absendungen stoppen | Formular-Tokens (`ezformtoken`) und reCAPTCHA oder hCaptcha ([Spam-Schutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)) |
 
 > **Hinweis**
 > Ein Kontrollkästchen in einem Formular wird als ein Wert dieses Absendens gespeichert. Es wird nicht in das
@@ -124,7 +124,7 @@ Aus [Der Website überlassen](../../../spezifikationen/6.0/mail-einstellungen-co
 
 - [DSGVO-Grundlagen](dsgvo-grundlagen.md)
 - [Personenbezogene Daten in Exponential](personenbezogene-daten-in-exponential.md)
-- [Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)
+- [Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)
 - [Listen und Abonnements](../newsletter/listen-und-abonnements.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

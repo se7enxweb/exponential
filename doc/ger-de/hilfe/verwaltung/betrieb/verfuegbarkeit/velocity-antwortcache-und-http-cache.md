@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an IT-Teams in öffentlichen Stellen, deren Websites Lastspitzen erleben: ein Wahlabend, eine
 Unwetterwarnung, eine Antragsfrist. Sie beantwortet, welche Caches antworten, bevor Exponential eine Seite rendert,
 was sie nie speichern, wie aktuell die ausgelieferten Seiten sind und wie Sie die Caches prüfen und leeren. Die
-Referenzen sind [Velocity-Antwort-Cache](../../../../../eng-us/features/6.0/velocity-response-cache.md),
+Referenzen sind [Velocity-Antwort-Cache](../../../../funktionen/6.0/velocity-antwort-cache.md),
 [Der rollenbewusste HTTP-Cache](../../../../bc/6.0/httpcache.md) und die Hosting-Seiten
 [Velocity-Antwort-Cache](../../../hosting/leistung/antwort-cache-von-velocity.md) und
 [Cache-Ebenen](../../../hosting/leistung/cache-schichten.md).
@@ -94,7 +94,7 @@ php bin/php/cache.php httpcache clear --allow-root-user
 Bei mehreren Webservern leeren Sie den Antwort-Cache und den HTTP-Cache auf jedem Knoten; sie sind lokal
 ([Mehrere Webserver hinter einem Load Balancer](mehrere-webserver-hinter-einem-load-balancer.md)). Der Wartungsmodus
 setzt die Antwort-Caches von Velocity aus, solange er eingeschaltet ist
-([Wartungsmodus](../../../../../eng-us/features/6.0/maintenance-mode.md)).
+([Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.md)).
 
 ## Checkliste
 

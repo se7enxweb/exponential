@@ -140,7 +140,7 @@ Was daraus folgt:
 - Ein `def` innerhalb eines Blocks läuft bei einem Cache-Treffer nicht: Variablen, die der Rest des Templates braucht, müssen außerhalb
   definiert werden.
 
-Die Anleitung für Designer ist [Cache-Block](../../../eng-us/help/designers/templates/cache-block.md).
+Die Anleitung für Designer ist [Cache-Block](../designer/vorlagen/cache-block.md).
 
 ## Der INI-Cache
 
@@ -174,11 +174,11 @@ Was Sie nach welcher Änderung leeren:
 ## Verwandte Seiten
 
 - [Der Template-Compiler](der-template-compiler.md)
-- [Kompilierung und Cache von Templates](../../../eng-us/help/designers/templates/template-compilation-and-cache.md)
-- [Cache-Block](../../../eng-us/help/designers/templates/cache-block.md)
+- [Kompilierung und Cache von Templates](../designer/vorlagen/template-kompilierung-und-cache.md)
+- [Cache-Block](../designer/vorlagen/cache-block.md)
 - [Template-Ressourcen und Overrides](template-ressourcen-und-overrides.md)
-- [Caching in Anwendungen](../../../eng-us/help/creators/app-creators/caching-in-applications.md)
-- [ezcache](../../../eng-us/examples/commands/ezcache.md)
+- [Caching in Anwendungen](../ersteller/anwendungsentwickler/caching-in-anwendungen.md)
+- [ezcache](../../beispiele/befehle/ezcache.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

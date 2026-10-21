@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: die redaktionelle Anleitung der Erweiterung (`extension/cjw_newsletter/doc/editorial.md`, verlinkt von der
-[Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+[Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 
 1. **Wiederkehrende Versände** (8 Minuten). Öffnen Sie **Wiederkehrende Versände** im Block **Redaktion** des
    Dashboards. Ein wiederkehrender Versand gehört zu einer Liste und läuft an gewählten Wochentagen, wöchentlich an
@@ -134,7 +134,7 @@ Arbeiten Sie in Paaren, A und B.
 <summary>Antworten</summary>
 
 1. Die neueste noch nicht versendete Ausgabe der Liste versenden oder eine Vorlage-Ausgabe kopieren und die Kopie
-   versenden (redaktionelle Anleitung, verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+   versenden (redaktionelle Anleitung, verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 2. **B.** Ein Tag jenseits des Monatsendes bedeutet dessen letzten Tag (redaktionelle Anleitung).
 3. `newsletter/approve` (redaktionelle Anleitung; siehe auch [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)).
 4. **Falsch.** Die Freigabe gilt pro Version; eine neue Version braucht ihre eigene Freigabe.
@@ -144,7 +144,7 @@ Arbeiten Sie in Paaren, A und B.
 
 ## Weiterführende Informationen
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420):
   die Bereiche aus 4.2 und ihre Anleitungen.
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md): `newsletter/editorial` und
   `newsletter/approve` gewähren.
@@ -154,7 +154,7 @@ Arbeiten Sie in Paaren, A und B.
 
 - [Modul 2: Systeme, Listen und Ausgaben](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

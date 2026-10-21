@@ -167,8 +167,8 @@ Ihres Kursordners (in der Administration angezeigt).
 
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md): Versionen und
   Entwürfe.
-- [Inhaltsjobs](../../../../../eng-us/features/6.0/content-jobs.md): große Operationen in Stapeln.
-- [Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md): das Argument
+- [Inhaltsjobs](../../../../funktionen/6.0/inhaltsauftraege.md): große Operationen in Stapeln.
+- [Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md): das Argument
   `$notify`.
 
 ## Verwandte Seiten

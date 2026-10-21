@@ -54,8 +54,8 @@ Auf MongoDB vergleicht die Prüfung Collections und bietet für fehlende den Bef
 
 ## Verwandte Seiten
 - [Die Konsistenz nach einem Upgrade prüfen](die-konsistenz-nach-einem-upgrade-pruefen.md)
-- [Überblick über Upgrades für den öffentlichen Sektor](../../../../../eng-us/help/government/operations/upgrades-and-change/upgrade-overview-for-public-sector.md)
-- [Upgrades von PHP und Datenbank](../../../../../eng-us/help/government/operations/upgrades-and-change/php-and-database-upgrades.md)
+- [Überblick über Upgrades für den öffentlichen Sektor](../../betrieb/aktualisierungen-und-aenderungen/aktualisierungen-im-oeffentlichen-sektor-im-ueberblick.md)
+- [Upgrades von PHP und Datenbank](../../betrieb/aktualisierungen-und-aenderungen/php-und-datenbank-aktualisierungen.md)
 - [Datenbankunterstützung](../../../datenbankunterstuetzung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

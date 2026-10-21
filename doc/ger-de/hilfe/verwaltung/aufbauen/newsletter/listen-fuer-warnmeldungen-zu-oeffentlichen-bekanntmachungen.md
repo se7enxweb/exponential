@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Redakteure, die kurze Warnmeldungen per E-Mail senden, wenn etwas
 veröffentlicht wird: ein neues Beteiligungsverfahren, Baustellen in einem Stadtteil, eine Bekanntmachung der
 Bauleitplanung. Mit `cjw_newsletter` ist jedes Thema der Warnmeldungen eine Liste, die Menschen abonnieren
-([Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)).
+([Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)).
 
 ## Inhalt
 
@@ -34,7 +34,7 @@ Newsletters (folder, RootFolderNodeId)
 
 Eine Liste je Thema oder Gebiet lässt Menschen genau wählen, was sie möchten; zu viele Listen verwirren. Die Funktion
 der Interessen der Erweiterung ist ein weiterer Weg, Inhalte innerhalb einer Liste anzupassen (siehe die Anleitung zur
-Darstellung der Erweiterung, verlinkt von [cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+Darstellung der Erweiterung, verlinkt von [cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
 ## Eine Liste einrichten
 
@@ -65,7 +65,7 @@ Darstellung der Erweiterung). Bieten Sie das Anmeldeformular auf jeder Sprach-Si
 ## Verwandte Seiten
 
 - [Newsletter für Behörden](newsletter-fuer-behoerden.md)
-- [Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md)
+- [Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -55,7 +55,7 @@ Prüfen Sie diese Angaben am Tag der Veröffentlichung erneut; bis dahin kann ei
 2. **Lesen Sie das Changelog dieser Version.** Jede 6.0.x-Version hat eine Seite in `doc/changelogs/6.0/`, zum Beispiel
    [6.0.14](../../../changelogs/6.0/6.0.14.md). Lesen Sie zuerst „In short“, dann „Upgrading“
    ([Ein Changelog lesen](ein-changelog-lesen.md)).
-3. **Lesen Sie die Geschichte für den Zusammenhang.** Die [Geschichte](../../../eng-us/history/README.md) erzählt Monat für Monat,
+3. **Lesen Sie die Geschichte für den Zusammenhang.** Die [Geschichte](../../geschichte/README.md) erzählt Monat für Monat,
    was jede Änderung möglich macht, mit dem Commit dahinter ([Die Geschichtsseiten als Quelle](die-geschichtsseiten-als-quelle.md)).
 4. **Öffnen Sie die Funktionsseite** jedes Punkts, den Sie beschreiben wollen. Das Changelog verlinkt sie.
 5. **Bitten Sie um eine Stellungnahme, wenn Sie ein Zitat wollen.** Zitate kommen nur von 7x oder der Exponential

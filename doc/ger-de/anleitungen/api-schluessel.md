@@ -16,9 +16,9 @@ Port 443 und Velocity auf 8080) mit Wegwerfkonten ausgeführt, die danach entfer
 Hostnamen sind gekürzt oder durch Dokumentationswerte ersetzt (`example.com`, `203.0.113.0/24`).
 
 [Anleitungen](README.md) · Siehe auch: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md) (die `expservices`-Tokens) ·
-[ezprestapi](../../eng-us/features/6.0/extensions/ezprestapi.md) (die REST-Routen für Inhalte) ·
+[ezprestapi](../funktionen/6.0/erweiterungen/ezprestapi.md) (die REST-Routen für Inhalte) ·
 [REST-API v1 und v2](rest-api-v1-und-v2.md) ·
-[Sicherheit und Audit](sicherheit-und-audit.md) · Änderungshinweis: [doc/eng-us/bc/6.0/api-keys.md](../../eng-us/bc/6.0/api-keys.md)
+[Sicherheit und Audit](sicherheit-und-audit.md) · Änderungshinweis: [doc/eng-us/bc/6.0/api-keys.md](../bc/6.0/api-schluessel.md)
 
 ## Kurz gesagt
 
@@ -384,7 +384,7 @@ eines Benutzers werden nur solchen Benutzern angezeigt.
 
 ## 8. Audit und Grenzen
 
-Vier Ereignisse des Audit-Kanals `access`, standardmäßig eingeschaltet ([Audit](../../eng-us/bc/6.0/audit.md#8-event-reference)):
+Vier Ereignisse des Audit-Kanals `access`, standardmäßig eingeschaltet ([Audit](../bc/6.0/audit.md#8-referenz-der-ereignisse)):
 
 | Ereignis | Wann | Zeichnet auf |
 |---|---|---|
@@ -412,7 +412,7 @@ keinen Schlüssel (Grund `transport`). Gekürzt: die Anfrage- und Ereignis-IDs.
 **Letzte Benutzung.** Die letzte Benutzung und die Adresse eines Schlüssels werden höchstens einmal pro Minute
 geschrieben (`LastUsedInterval`), sodass ein viel benutzter Schlüssel keinen Datenbank-Schreibzugriff pro Anfrage
 kostet. Die Adresse ist die des Clients, über vertrauenswürdige Proxys hinweg (`eZSys::clientIP()`, siehe
-[vertrauenswürdige Proxys](../../eng-us/bc/6.0/trusted-proxies.md)).
+[vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md)).
 
 **Grenzen.**
 

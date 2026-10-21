@@ -13,7 +13,7 @@ Diese Aufgabenseiten sind für die Menschen in einer Behörde, die Dienstleistun
 System bei den Mitarbeitern einführen: Beschaffungsverantwortliche, Projektleiter, Schulungskoordinatoren und
 Site-Administratoren. Jede Seite sagt, wer die Aufgabe wann erledigt, was bereitzuhalten ist, die nummerierten Schritte,
 das Ergebnis und die üblichen Fallstricke. Der Hintergrund jeder Aufgabe steht im
-[Bereich Beschaffung](../../../../../eng-us/help/government/procurement/README.md) und in den [Checklisten](../../checklisten/README.md).
+[Bereich Beschaffung](../../beschaffung/README.md) und in den [Checklisten](../../checklisten/README.md).
 
 ## Die Aufgaben
 
@@ -54,7 +54,7 @@ Ausstiegsübung, Übergabe).
 
 - [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md)
 - [Aufgaben für Behörden](../README.md), der Index jeder Aufgabengruppe
-- [Exponential im öffentlichen Sektor beschaffen](../../../../../eng-us/help/government/procurement/README.md)
+- [Exponential im öffentlichen Sektor beschaffen](../../beschaffung/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

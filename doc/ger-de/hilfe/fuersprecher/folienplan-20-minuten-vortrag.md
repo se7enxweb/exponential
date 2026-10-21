@@ -53,7 +53,7 @@ für eine fünfminütige Live-Demo und einen Katalog von Fragen, die Sie wahrsch
 | 13 | Freie Software | GPL + GFDL | Code und Dokumentation sind frei | [Gesprächspunkte: Open Source](gespraechspunkte-open-source-und-lizenzierung.md) |
 | 14 | Jeder Pull Request wird übernommen | Ein Screenshot eines übernommenen PR (öffentlich) | Die Regel des Projekts | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | 15 | Machen Sie mit | Foren, Telegram, eZpedia, GitHub, Projects | Nur dokumentierte Kanäle | [Die Community-Kanäle](community-kanaele.md) |
-| 16 | Probieren Sie es aus | `./console exp:install` + Links | Ein Befehl, SQLite | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| 16 | Probieren Sie es aus | `./console exp:install` + Links | Ein Befehl, SQLite | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 
 ## Der Abschnitt mit der Live-Demo
 

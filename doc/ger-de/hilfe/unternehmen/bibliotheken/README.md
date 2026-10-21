@@ -45,7 +45,7 @@ keine Vormerkungen und keine Mahngebühren. Eine Suche in Code und Dokumentation
 Wenn Sie sie brauchen, behalten Sie dafür Ihr integriertes Bibliothekssystem und verwenden Sie Exponential für die
 öffentliche Website, die digitale Sammlung und die Neuigkeiten drumherum. Einträge kann ein Entwickler per Skript oder
 über die REST API hereinholen
-([Inhalte im Code anlegen und aktualisieren](../../../../eng-us/help/creators/app-creators/creating-content-in-code.md),
+([Inhalte im Code anlegen und aktualisieren](../../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md),
 [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)).
 
 > **Hinweis**
@@ -84,13 +84,13 @@ Wenn Sie sie brauchen, behalten Sie dafür Ihr integriertes Bibliothekssystem un
   Viele Bibliotheken werden von einer solchen Organisation betrieben oder unterstützen eine.
 - [Mehrsprachige Websites](../mehrsprachig/README.md): Kataloge in mehreren Sprachen.
 - Öffentliche Bibliotheken in Trägerschaft einer Behörde: siehe auch
-  [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+  [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
-- [Was Sie bauen können](../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
+- [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
+- [Was Sie bauen können](../../ersteller/website-ersteller/was-sie-bauen-koennen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

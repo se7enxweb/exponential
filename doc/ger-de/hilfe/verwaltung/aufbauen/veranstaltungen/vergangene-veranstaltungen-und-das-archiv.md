@@ -62,7 +62,7 @@ Nehmen Sie Veranstaltungen, die Sie behalten möchten, aus, indem Sie sie in ein
 |---|---|
 | Legen Sie unter Events einen Ordner „Archiv <Jahr>“ an | zu Jahresbeginn |
 | Verschieben Sie die Veranstaltungen des Vorjahres dorthin | markieren Sie sie in der Liste **Unterelemente**, **Weitere Aktionen** > **Ausgewähltes verschieben**; eine große Verschiebung kann als Content-Job laufen ([Inhaltsmodell und Bearbeitung, 8](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#8-große-operationen-als-inhaltsjobs)) |
-| Alte Adressen funktionieren weiter | das Verschieben behält Weiterleitungen von den alten Aliasen ([Weiterleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)) |
+| Alte Adressen funktionieren weiter | das Verschieben behält Weiterleitungen von den alten Aliasen ([Weiterleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)) |
 | Kennzeichnen Sie sie | ein Hinweis „archiviert“ im Template für Veranstaltungen in Archivordnern |
 
 ## Nach der Veranstaltung

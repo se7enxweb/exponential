@@ -169,7 +169,7 @@ Attribut-ID und Version sind und die in `deleteStoredObjectAttribute()` aufgerä
 ## Verwandte Seiten
 
 - [Der Lebenszyklus eines Datentyps](lebenszyklus-eines-datentyps.md)
-- [Muster Datentyp](../../../../eng-us/standards/patterns/datatype.md)
+- [Muster Datentyp](../../../standards/muster/datentyp.md)
 - [Erweiterungspunkte: Datentyp](../../../bc/6.0/rad-erweiterungspunkte.md#datentyp)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

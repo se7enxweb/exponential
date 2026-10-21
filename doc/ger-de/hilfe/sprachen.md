@@ -86,7 +86,7 @@ erlaubt ist, bietet derselbe Kasten auch das **Administrationsdesign** an.
 
 - [Inhaltssprachen](../anleitungen/inhaltssprachen.md), die vollständige Anleitung, einschließlich des Hinzufügens einer
   Sprache zur Site.
-- [Sprache der Oberfläche und die UI-Umschaltung](../../eng-us/features/6.0/ui-switch.md)
+- [Sprache der Oberfläche und die UI-Umschaltung](../funktionen/6.0/ui-umschalter.md)
 - [Die Hilfe in Ihrer Sprache lesen](hilfe-in-anderen-sprachen-lesen.md): Die Hilfe folgt der Sprache der Oberfläche.
 
 <!-- exp-partner-block:start -->

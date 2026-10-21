@@ -119,7 +119,7 @@ Durchschnitt von 4,3, weil eine `.dba` keinen Bruchwert mitbringen kann.
 Schritt 36, `postInstallImportAdminLayouts()`, lädt `extension/explayouts/share/fragments/admin_layouts_db_data.dba`: drei Layouts mit IDs ab
 100001, `Admin: left, main, right` (`admin_3col`), `Admin: left, main` (`admin_2col`) und `Admin: main only` (`admin_full`), mit ihren Zonen,
 Blöcken und sechs Regeln. Es tut nichts, wenn bereits ein Layout der Administration existiert oder das Fragment fehlt. Das Design `admin4l`
-baut die Seiten der Administration aus diesen Layouts; siehe [admin4l](../../../../eng-us/features/6.0/admin4l.md).
+baut die Seiten der Administration aus diesen Layouts; siehe [admin4l](../../../funktionen/6.0/admin4l.md).
 
 > **Hinweis**
 > Der eigene Kopfkommentar des Fragments sagt noch, es sei ein vorbereitetes Fragment, das der Installer nicht lese. Dieser Kommentar ist

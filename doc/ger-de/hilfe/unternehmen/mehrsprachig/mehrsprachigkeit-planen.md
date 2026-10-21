@@ -53,7 +53,7 @@ Aus [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md):
   sie verwendet, deshalb löscht das nie Inhalte.
 
 Die meisten mehrsprachigen Websites haben deshalb einen öffentlichen Siteaccess je Sprache, die alle eine Datenbank
-und einen Inhaltsbaum teilen ([Eine mehrsprachige Website aufbauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)).
+und einen Inhaltsbaum teilen ([Eine mehrsprachige Website aufbauen](../../ersteller/website-ersteller/mehrsprachige-websites.md)).
 
 ## Adressen je Sprache
 
@@ -63,15 +63,15 @@ und einen Inhaltsbaum teilen ([Eine mehrsprachige Website aufbauen](../../../../
 | Host je Sprache | `example.de`, `de.example.com` | Länderdomains |
 | Host und Pfad | `example.com/de` auf einem Host, andere Hosts anderswo | Gemischte Einrichtungen |
 
-Aus [Sprachumschalter und Adressen je Sprache](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md#addresses-per-language).
+Aus [Sprachumschalter und Adressen je Sprache](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md#adressen-pro-sprache).
 Die Startseite kann außerdem einmalig auf die Sprache des Besuchers weiterleiten, gewählt nach Host und
 Browsersprache, mit einer Adresse je Sprache und ohne Cookie
-([Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+([Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 
 > **Hinweis**
 > Suchmaschinen verstehen `hreflang`-Links zwischen Sprachversionen. Exponential gibt sie nicht von sich aus aus; das
 > Design erzeugt sie aus dem Ergebnis des Sprachumschalters
-> ([Suchmaschinen informieren](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md#telling-search-engines)).
+> ([Suchmaschinen informieren](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md#suchmaschinen-informieren)).
 > Setzen Sie das auf die Aufgabenliste des Designteams.
 
 ## Was Besucher sehen, wenn eine Übersetzung fehlt
@@ -85,7 +85,7 @@ Entscheiden Sie das je Sprach-Siteaccess:
 | Alles in seiner Hauptsprache zeigen, wenn nichts anderes passt | `ShowUntranslatedObjects=enabled` |
 | Ein Logo oder ein PDF erscheint in jeder Sprache unverändert | Das Objekt als „immer verfügbar“ markieren |
 
-Quelle: [Ausweichsprachen und nicht übersetzte Inhalte](../../../../eng-us/help/creators/website-creators/multilingual-sites.md#fallbacks-and-untranslated-content).
+Quelle: [Ausweichsprachen und nicht übersetzte Inhalte](../../ersteller/website-ersteller/mehrsprachige-websites.md#fallbacks-und-nicht-übersetzte-inhalte).
 Bei einem Shop kann das Verbergen nicht übersetzter Produkte Dinge verbergen, die Kunden kaufen möchten; sie in einer
 anderen Sprache zu zeigen, kann verwirren. Entscheiden Sie notfalls je Produktkategorie.
 
@@ -103,9 +103,9 @@ anderen Sprache zu zeigen, kann verwirren. Entscheiden Sie notfalls je Produktka
 
 | Grenze | Wert | Quelle |
 |---|---|---|
-| Inhaltssprachen je Installation | höchstens 62 unter 64-Bit-PHP, 30 unter 32-Bit-PHP | [Sprachen, Abschnitt 11](../../../../eng-us/languages.md#11-the-limit-of-62-content-languages) |
+| Inhaltssprachen je Installation | höchstens 62 unter 64-Bit-PHP, 30 unter 32-Bit-PHP | [Sprachen, Abschnitt 11](../../../sprachen.md#11-die-grenze-von-62-inhaltssprachen) |
 | Eine Sprache, die hinzugefügt und nie verwendet wurde | belegt ihren Platz trotzdem, bis sie entfernt wird | ebenda |
-| Administration in der eigenen Sprache des Redakteurs | vollständig bei 19 Übersetzungen; teilweise oder Englisch bei den übrigen | [Sprachen, Abschnitt 2](../../../../eng-us/languages.md#2-support-levels) |
+| Administration in der eigenen Sprache des Redakteurs | vollständig bei 19 Übersetzungen; teilweise oder Englisch bei den übrigen | [Sprachen, Abschnitt 2](../../../sprachen.md#2-unterstützungsstufen) |
 | Die Standard-Inhaltssprache einer Website mit Inhalten ändern | kann Objekte verbergen, die es in der neuen Sprache nicht gibt | [10.14 Mehrsprachige Websites](../../../installation/10-nach-der-installation.md#1014-mehrsprachige-sites) |
 
 ## Die Entscheidungstabelle

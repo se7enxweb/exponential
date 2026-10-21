@@ -97,8 +97,8 @@ Einen Link auszublenden ist Komfort, keine Sicherheit: Die Ansicht muss erneut p
 ## Verwandte Seiten
 
 - [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)
-- [Template-Operatoren für Rollen und Richtlinien](../../../../eng-us/features/6.0/role-and-policy-template-operators.md)
-- [Sicherheitsstandard](../../../../eng-us/standards/security.md)
+- [Template-Operatoren für Rollen und Richtlinien](../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md)
+- [Sicherheitsstandard](../../../standards/sicherheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

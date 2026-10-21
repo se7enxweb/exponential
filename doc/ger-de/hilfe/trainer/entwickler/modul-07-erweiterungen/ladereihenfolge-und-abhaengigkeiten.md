@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Abhängigkeiten in extension.xml deklarieren](../../../../../eng-us/help/designers/extensions/dependencies-in-extension-xml.md),
-[Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md) und
+Quellen: [Abhängigkeiten in extension.xml deklarieren](../../../designer/erweiterungen/abhaengigkeiten-in-extension-xml.md),
+[Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md) und
 [Die Seite Extensions](../../../../anleitungen/extensions-seite.md).
 
 1. **Wer gewinnt** (4 Minuten). Die Reihenfolge von `ActiveExtensions[]` entscheidet: Eine früher geladene
@@ -138,9 +138,9 @@ Auf der Entwicklungsinstallation.
 
 ## Weiterführende Literatur
 
-- [Abhängigkeiten in extension.xml deklarieren](../../../../../eng-us/help/designers/extensions/dependencies-in-extension-xml.md).
-- [Die Ladereihenfolge und welches Theme gewinnt](../../../../../eng-us/help/designers/extensions/loading-order-for-themes.md).
-- [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md).
+- [Abhängigkeiten in extension.xml deklarieren](../../../designer/erweiterungen/abhaengigkeiten-in-extension-xml.md).
+- [Die Ladereihenfolge und welches Theme gewinnt](../../../designer/erweiterungen/ladereihenfolge-von-themes.md).
+- [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md).
 
 ## Verwandte Seiten
 

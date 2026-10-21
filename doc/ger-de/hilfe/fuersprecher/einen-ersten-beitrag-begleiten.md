@@ -44,13 +44,13 @@ zwei Stunden fertig sein.
 3. Die Änderung vorschlagen und den Pull Request eröffnen.
 
 Details: [Die Hilfe verbessern](die-hilfe-verbessern.md). Die Änderung wird unter der GNU FDL 1.3 oder später angenommen
-([Zur Dokumentation beitragen](../../../eng-us/README-LICENSE.md#contributing-to-the-documentation)).
+([Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumentation-beitragen)).
 
 ## Weg B: Übersetzung
 
 Folgen Sie [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md): Die Übersetzungsdateien liegen in
 `share/translations/<code>/translation.ts` und werden mit Qt Linguist oder einem XML-Editor bearbeitet
-([Sprachen in Exponential, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)).
+([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 
 ## Weg C: Code
 

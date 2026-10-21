@@ -158,7 +158,7 @@ auf den Server von 7x zeigen). Siehe [Abhängigkeiten angeben](../anforderungen/
 - [Was ein Seiteninstallationspaket ist](../grundlagen/was-ein-seiteninstallationspaket-ist.md)
 - [Woraus sevenx_multisite besteht](../sevenx-multisite/woraus-sevenx-multisite-besteht.md)
 - [sevenx und CJW im Vergleich](../cjw-multisite/sevenx-multisite-und-cjw-multisite-im-vergleich.md)
-- [Das GitHub-Repository anlegen](../../../../eng-us/help/designers/distribution/creating-the-github-repository.md)
+- [Das GitHub-Repository anlegen](../../designer/veroeffentlichung/das-github-repository-anlegen.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

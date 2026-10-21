@@ -45,7 +45,7 @@ Jede Angabe stammt aus dieser Dokumentation, aus dem Code oder aus einer echten 
 | [Kurskatalog](kurskatalog.md) | Jeder Kurs mit Zielgruppe, Dauer, Voraussetzungen und Modulen |
 | [Train the Trainer](train-the-trainer/README.md) | Der Kurs für Trainer: Vorbereitung, Übungsumgebung, Kursgestaltung, Durchführung, Barrierefreiheit, Prüfung |
 | Die Fachkurse | Zwölf Kurse für Redakteure, Administratoren, Entwickler, Designer und Hosting-Mitarbeiter: im Katalog aufgeführt |
-| [Workshops und Bootcamps](../../../eng-us/help/trainers/workshops/README.md), [Prüfungen](pruefungen/README.md) | Fertige Ablaufpläne für einen, drei und fünf Tage sowie Prüfungsmaterial |
+| [Workshops und Bootcamps](workshops/README.md), [Prüfungen](pruefungen/README.md) | Fertige Ablaufpläne für einen, drei und fünf Tage sowie Prüfungsmaterial |
 
 ## Wie ein Kurs aufgebaut ist
 
@@ -64,13 +64,13 @@ erklärt den Aufbau im Detail.
 | Ihre Teilnehmenden | Beginnen Sie mit |
 |---|---|
 | Menschen, die Exponential unterrichten werden | [Train the Trainer](train-the-trainer/README.md) |
-| Menschen, die Inhalte schreiben und veröffentlichen | [Redakteure 101](redakteure-101/README.md), danach [Redakteure 201](../../../eng-us/help/trainers/editors-201/README.md) |
+| Menschen, die Inhalte schreiben und veröffentlichen | [Redakteure 101](redakteure-101/README.md), danach [Redakteure 201](redakteure-201/README.md) |
 | Menschen, die eine Website betreiben | [Website-Administration](website-administratoren/README.md) |
 | Menschen, die auf Exponential aufbauen | [Entwickler](entwickler/README.md) |
 | Menschen, die Themes gestalten | [Theme-Design](theme-designer/README.md) |
-| Menschen, die Seiten aus Blöcken bauen | [Exponential Layouts](../../../eng-us/help/trainers/layouts/README.md) |
-| Menschen, die Server betreiben | [Hosting und Betrieb](../../../eng-us/help/trainers/hosting-operations/README.md) |
-| Ein Team, das eine Website zu Exponential umzieht | [Migration zu Exponential](../../../eng-us/help/trainers/migration/README.md) |
+| Menschen, die Seiten aus Blöcken bauen | [Exponential Layouts](layouts/README.md) |
+| Menschen, die Server betreiben | [Hosting und Betrieb](hosting-betrieb/README.md) |
+| Ein Team, das eine Website zu Exponential umzieht | [Migration zu Exponential](migration/README.md) |
 
 Der [Kurskatalog](kurskatalog.md) enthält alle Kurse: auch Exponential Intelligence, Suche, Multisite und
 Seitenpakete, Newsletter, Workshops und Bootcamps sowie Prüfungen.

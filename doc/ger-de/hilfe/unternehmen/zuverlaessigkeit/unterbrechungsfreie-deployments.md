@@ -103,7 +103,7 @@ Nicht jede Änderung braucht ein vollständiges Deployment (dieselbe Seite):
 | Ein Template oder ein Stylesheet | Template-Cache und Antwortcache von Velocity leeren; kein Neustart |
 | Eine Einstellungsdatei, eine PHP-Klasse oder ein Operator | `exp:velocity deploy` |
 | Eine neue oder umbenannte Kernel-Klasse | `exp:velocity deploy --kernel` |
-| Inhalte | Kein Deployment: Das Veröffentlichen leert die gecachten Ansichten des Elements, seiner übergeordneten Elemente und verwandter Objekte ([View-Cache und Cache-Blöcke](../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md#what-a-publish-clears)) |
+| Inhalte | Kein Deployment: Das Veröffentlichen leert die gecachten Ansichten des Elements, seiner übergeordneten Elemente und verwandter Objekte ([View-Cache und Cache-Blöcke](../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md#was-ein-veröffentlichen-leert)) |
 
 ## Wann ein Deployment ein Wartungsfenster braucht
 

@@ -42,7 +42,7 @@ einrichten.
 
 Eine Ausgabe (Klasse `cjw_newsletter_edition`) wird unterhalb ihrer Liste angelegt und enthält Artikel
 (`cjw_newsletter_article`). „Sie ist ein Inhalt, also hat sie Entwürfe und eine Vorschau“
-([Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#writing-and-sending-an-edition)).
+([Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#eine-ausgabe-schreiben-und-versenden)).
 
 Release 4.2.0 bringt **Artikel-Pools** und eine Artikelauswahl: Auf der Versandseite einer Ausgabe bietet „Artikel
 auswählen“ Inhalte aus dem Pool der Liste an, zum Beispiel die neuesten Artikel Ihres Nachrichtenordners. Für das
@@ -50,7 +50,7 @@ automatische Befüllen werden nur Inhalte angeboten, die der anonyme Benutzer le
 ist“ ([editorial.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/editorial.md)).
 
 Gute Praxis für Autoren, aus der Checkliste für Website-Ersteller
-([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#before-every-send)):
+([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#vor-jedem-versand)):
 
 - [ ] Betreff, Vorschauzeile und Absendername stimmen.
 - [ ] Jeder Link funktioniert und zeigt auf die öffentliche Website.
@@ -64,7 +64,7 @@ Mail gleich aussehen, auch mit blockierten Bildern“. Eine Liste kann einschrä
 und ein Versand kann einen anderen erlaubten Skin wählen
 ([rendering.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/rendering.md)). Ein Designer kann in Ihrem
 Design einen eigenen Skin schreiben (`design:newsletter/skin/<name>`,
-[cjw_newsletter, Einstellungen, die Sie verwenden werden](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+[cjw_newsletter, Einstellungen, die Sie verwenden werden](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 
 ## Testen, bevor jemand anderes sie sieht
 
@@ -102,14 +102,14 @@ siehe [Workflows](../../../anleitungen/workflows.md).
 
 ## Versenden
 
-1. **Versenden** plant die Ausgabe ein ([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#how-a-send-runs)).
+1. **Versenden** plant die Ausgabe ein ([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#wie-ein-versand-abläuft)).
 2. Der Cron-Teil `cjw_newsletter_mailqueue_create` baut die Warteschlange auf: ein Eintrag pro Abonnent.
 3. `cjw_newsletter_mailqueue_process` sendet, was wartet.
 4. Die Ausgabe wird archiviert (`newsletter/archive`).
 
 Seit 4.1.17 startet **Jetzt senden** im Dashboard die Arbeit im Hintergrund und zeigt ihren Fortschritt, „sodass ein
 langsamer Mail-Server die Anfrage nicht mehr aufhält“
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117)).
 
 > **Tipp**
 > Wählen Sie einen Versandzeitpunkt, der zu Ihren Lesern passt, und versenden Sie nicht kurz bevor Sie das Büro
@@ -144,7 +144,7 @@ zur Verfügung, wenn Sie sich für Statistiken entschieden haben
 | Der gesamte Versand muss pausieren | Pausieren Sie den Transport unter Newsletter > Mengengrenzen und Pakete (gilt auch, wenn die Drosselung aus ist) |
 | Nichts wird gesendet | Prüfen Sie, ob Cron für den richtigen Siteaccess läuft und der Transport nicht `file` ist |
 
-Quellen: [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#when-something-goes-wrong)
+Quellen: [Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#wenn-etwas-schiefgeht)
 und [deliverability.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/deliverability.md).
 
 ## Verwandte Seiten
@@ -152,7 +152,7 @@ und [deliverability.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/d
 - [Newsletter für Unternehmen](README.md)
 - [Zustellung der Newsletter-Mails](zustellung-der-newsletter-mails.md)
 - [Bounces und Listenpflege](bounces-und-listenpflege.md)
-- [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)
+- [Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

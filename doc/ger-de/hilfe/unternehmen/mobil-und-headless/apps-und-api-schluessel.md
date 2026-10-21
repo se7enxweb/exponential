@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Führungskräfte und Administratoren, die entscheiden müssen, wie Programme mit Exponential sprechen
 dürfen: eine mobile App, das System eines Partners, ein Importskript, das Werkzeug einer Agentur. Sie erklärt die drei
 Arten von Zugangsdaten, die die Plattform bietet, wie jede gesteuert wird, was aufgezeichnet wird, und eine Reihe von
-Hausregeln. Die technische Seite ist [OAuth und API-Schlüssel](../../../../eng-us/help/creators/app-creators/oauth-and-api-keys.md).
+Hausregeln. Die technische Seite ist [OAuth und API-Schlüssel](../../ersteller/anwendungsentwickler/oauth-und-api-schluessel.md).
 
 ![oAuth-Verwaltung: die Anwendungen mit Zugriff](../../../../eng-us/help/images/help/bu-oauth.webp)
 
@@ -27,7 +27,7 @@ Hausregeln. Die technische Seite ist [OAuth und API-Schlüssel](../../../../eng-
 
 ## Drei Arten von Zugangsdaten, gewählt danach, für wen das Programm handelt
 
-Aus [OAuth und API-Schlüssel](../../../../eng-us/help/creators/app-creators/oauth-and-api-keys.md#which-credential):
+Aus [OAuth und API-Schlüssel](../../ersteller/anwendungsentwickler/oauth-und-api-schluessel.md#welche-zugangsdaten):
 
 | Das Programm | Verwenden |
 |---|---|
@@ -49,7 +49,7 @@ an der Website noch in der Administration anmelden,
 Quelle: [3.1 OAuth2-Tokens](../../../anleitungen/rest-api-v1-und-v2.md#31-oauth2-tokens). Wichtig für ein Unternehmen: „The
 client secret belongs on a server; an app that cannot keep a secret should go through a back end of yours“ (Das
 Client-Geheimnis gehört auf einen Server; eine App, die kein Geheimnis bewahren kann, sollte über ein Backend von Ihnen
-gehen, [OAuth2 für Anwendungen Dritter](../../../../eng-us/help/creators/app-creators/oauth-and-api-keys.md#oauth2-for-third-party-applications)).
+gehen, [OAuth2 für Anwendungen Dritter](../../ersteller/anwendungsentwickler/oauth-und-api-schluessel.md#oauth2-für-anwendungen-von-drittanbietern)).
 Das Entfernen einer App in der Administration entfernt auch ihre Autorisierungen und Tokens
 ([7. Die Administration](../../../anleitungen/api-schluessel.md#7-die-administration-jeder-schlüssel-ein-benutzer-widerruf)).
 
@@ -76,7 +76,7 @@ ausgeliefert. Ein Schlüssel für eine Integration, die nur liest, bekommt nur d
 Die Remote-Dienste haben eigene persönliche Tokens, pro Benutzer angelegt, mit einer Lebensdauer von 1 bis 365 Tagen
 (standardmäßig 90). Anfragen melden sich nur für diese Anfrage als Benutzer des Tokens an, mit denselben Richtlinien; „a
 token cannot create tokens“ (ein Token kann keine Tokens anlegen,
-[Remote-Dienste: persönliche API-Tokens](../../../../eng-us/features/6.0/remote-services-expservices.md#personal-api-tokens-for-scripts-and-apps)).
+[Remote-Dienste: persönliche API-Tokens](../../../funktionen/6.0/entfernte-dienste-expservices.md#persönliche-api-tokens-für-skripte-und-anwendungen)).
 Siehe [Entfernte Dienste](entfernte-dienste.md).
 
 ## Steuerung, Begrenzungen und das Prüfprotokoll
@@ -88,10 +88,10 @@ Siehe [Entfernte Dienste](entfernte-dienste.md).
 | Anfragen pro Schlüssel und Minute | 120, in APCu gezählt; ohne APCu nicht durchgesetzt, und die Seite der API-Schlüssel sagt das | dieselbe |
 | Übersicht über jeden Schlüssel | **Setup > oAuth-Verwaltung > API-Schlüssel**: aktiv, innerhalb von sieben Tagen ablaufend, nie benutzt, abgelaufen, widerrufen; suchen, filtern, einen oder viele mit Bestätigung widerrufen | [7. Die Administration](../../../anleitungen/api-schluessel.md#7-die-administration-jeder-schlüssel-ein-benutzer-widerruf) |
 | Audit-Ereignisse | jeder angelegte, widerrufene, erstmals benutzte und abgelehnte Schlüssel, mit dem Grund (zum Beispiel widerrufen, abgelaufen, Bereich, ratenbegrenzt); nie das Geheimnis | [8. Auditing and limits](../../../anleitungen/api-schluessel.md#8-audit-und-grenzen) |
-| Tokens für expservices | Ereignisse für angelegte, widerrufene und fehlgeschlagene Tokens im Prüfprotokoll | [Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md#personal-api-tokens-for-scripts-and-apps) |
+| Tokens für expservices | Ereignisse für angelegte, widerrufene und fehlgeschlagene Tokens im Prüfprotokoll | [Remote-Dienste](../../../funktionen/6.0/entfernte-dienste-expservices.md#persönliche-api-tokens-für-skripte-und-anwendungen) |
 
 Für ein Unternehmen beantwortet das die Fragen der Prüfer „Wer konnte unsere Inhalte per Programm erreichen, und was
-hat er getan?“ aus dem [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md).
+hat er getan?“ aus dem [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md).
 
 ## Hausregeln für ein Unternehmen
 
@@ -113,7 +113,7 @@ Angepasst aus der guten Praxis der technischen Seite:
 
 - [REST API v1 und v2 für Unternehmen](rest-api-v1-und-v2-fuer-unternehmen.md)
 - [Entfernte Dienste](entfernte-dienste.md)
-- [OAuth und API-Schlüssel](../../../../eng-us/help/creators/app-creators/oauth-and-api-keys.md)
+- [OAuth und API-Schlüssel](../../ersteller/anwendungsentwickler/oauth-und-api-schluessel.md)
 - [Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)
 - [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

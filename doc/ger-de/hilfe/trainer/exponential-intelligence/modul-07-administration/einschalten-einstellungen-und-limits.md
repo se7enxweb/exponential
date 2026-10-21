@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [expai: Einschalten](../../../../../eng-us/features/6.0/extensions/expai.md#switch-it-on) und die Seiten zur
+Quellen: [expai: Einschalten](../../../../funktionen/6.0/erweiterungen/expai.md#einschalten) und die Seiten zur
 Konfiguration und zu Budgets unter **EI: Help** (`extension/expai/doc/configuration.md`,
 `extension/expai/doc/budgets.md`).
 
@@ -149,15 +149,15 @@ Nie auf einer Live-Website.
 
 ## Weiterführende Informationen
 
-- [expai: Einschalten](../../../../../eng-us/features/6.0/extensions/expai.md#switch-it-on)
-- [expqueue](../../../../../eng-us/features/6.0/extensions/expqueue.md): die Auftragswarteschlange.
+- [expai: Einschalten](../../../../funktionen/6.0/erweiterungen/expai.md#einschalten)
+- [expqueue](../../../../funktionen/6.0/erweiterungen/expqueue.md): die Auftragswarteschlange.
 - Die Installationsanleitung und die Seiten zur Konfiguration und zu Budgets unter **EI: Help**.
 
 ## Verwandte Seiten
 
 - [Modul 7: Administration](README.md)
 - [Exponential Intelligence: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

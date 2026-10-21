@@ -69,7 +69,7 @@ einen Datenbankserver und gemeinsamen Speicher ([Mehrere Webknoten](../../hostin
 ## Meldet sich die Software beim Hersteller?
 
 Kein Dokument im Repository beschreibt, dass Exponential Daten an das Projekt sendet. Die Administration lädt ihre
-Skripte lokal ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)). Einige Funktionen bauen Verbindungen nach
+Skripte lokal ([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)). Einige Funktionen bauen Verbindungen nach
 außen auf, wenn Sie sie nutzen: Prüfungen auf Updates bei Paketservern (**Setup > Updates and packages**), der
 KI-Assistent zu seinem Anbieter und Erweiterungen von Drittanbietern, wenn sie aktiviert sind. Bitten Sie Ihren
 Dienstleister, jede ausgehende Verbindung Ihrer Konfiguration aufzulisten, und beschränken Sie den ausgehenden Verkehr

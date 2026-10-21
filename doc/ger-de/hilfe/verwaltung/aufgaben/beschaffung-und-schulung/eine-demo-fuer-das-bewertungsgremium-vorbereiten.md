@@ -12,7 +12,7 @@ type: help
 **Wer:** der Projektleiter, mit dem Bewertungsteam. **Wann:** bevor die Angebote geöffnet werden; das Skript wird den
 Bietern vorab geschickt. Die für die Presse geschriebenen Demo-Skripte sind eine gute Grundlage: Sie verwenden nur
 dokumentierte Fakten und genaue Klicks
-([Demo-Skripte für Bewertende](../../../../../eng-us/help/government/procurement/evaluation/demo-scripts-for-evaluators.md)).
+([Demo-Skripte für Bewertende](../../beschaffung/bewertung/demo-skripte-fuer-bewertende.md)).
 
 ## Inhalt
 
@@ -25,10 +25,10 @@ dokumentierte Fakten und genaue Klicks
 ## Bevor Sie beginnen
 
 - Bewertungsbogen fertig ([Den Bewertungsbogen schreiben](den-bewertungsbogen-schreiben.md)).
-- Lesen Sie die vorhandenen Skripte: [Überblick in fünf Minuten](../../../../../eng-us/help/press/demo-script-five-minute-overview.md),
-  [Rundgang für Redakteure](../../../../../eng-us/help/press/demo-script-editor-tour.md),
-  [Rundgang für Administratoren](../../../../../eng-us/help/press/demo-script-administrator-tour.md),
-  [Layouts](../../../../../eng-us/help/press/demo-script-layouts.md).
+- Lesen Sie die vorhandenen Skripte: [Überblick in fünf Minuten](../../../presse/demo-skript-ueberblick-in-fuenf-minuten.md),
+  [Rundgang für Redakteure](../../../presse/demo-skript-rundgang-fuer-redakteure.md),
+  [Rundgang für Administratoren](../../../presse/demo-skript-rundgang-fuer-administratoren.md),
+  [Layouts](../../../presse/demo-skript-exponential-layouts.md).
 
 ## Schritte
 
@@ -74,8 +74,8 @@ Vergleichbare Vorführungen, nach Nachweisen bewertet, nicht nach Präsentations
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Fragen für eine Demo](../../../../../eng-us/help/government/procurement/evaluation/questions-to-ask-in-a-demo.md)
-- [Eine Demo-Installation einrichten](../../../../../eng-us/help/press/setting-up-a-demo-installation.md)
+- [Fragen für eine Demo](../../beschaffung/bewertung/fragen-fuer-eine-demo.md)
+- [Eine Demo-Installation einrichten](../../../presse/eine-demo-installation-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

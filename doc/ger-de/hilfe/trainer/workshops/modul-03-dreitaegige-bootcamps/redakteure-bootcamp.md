@@ -10,7 +10,7 @@ type: help
 # Bootcamp 3.1: Das dreitägige Redakteurs-Bootcamp
 
 Drei Tage geben Redakteuren Zeit, jede Aufgabe so lange zu üben, bis sie sie ohne Handout erledigen. Das Bootcamp
-behandelt den gesamten Kurs [Redakteure 101](../../../../../eng-us/help/trainers/editors-101/README.md) in verdichteter Form und ergänzt Übersetzungen
+behandelt den gesamten Kurs [Redakteure 101](../../redakteure-101/README.md) in verdichteter Form und ergänzt Übersetzungen
 und einen ersten Blick auf Layouts.
 
 ## Auf einen Blick
@@ -38,9 +38,9 @@ Am Ende des Bootcamps können die Teilnehmenden:
 
 | Tag | Vormittag (3 Std.) | Nachmittag (3 Std.) | Zwischenstand des Abschlussprojekts |
 |---|---|---|---|
-| 1 | [Redakteure 101, Module 1 und 2](../../../../../eng-us/help/trainers/editors-101/module-01-signing-in-and-the-tour/README.md): Anmeldung, Rundgang, der Baum | [Modul 3](../../../../../eng-us/help/trainers/editors-101/module-03-creating-and-editing/README.md): Ordner, Artikel, das Bearbeitungsformular | Eigener Ordner mit zwei Artikeln |
-| 2 | [Modul 4](../../../../../eng-us/help/trainers/editors-101/module-04-the-online-editor/README.md) und [Modul 5](../../../../../eng-us/help/trainers/editors-101/module-05-images-and-media/README.md): Online-Editor, Bilder | [Modul 6](../../../../../eng-us/help/trainers/editors-101/module-06-publishing-and-versions/README.md) und [Modul 7](../../../../../eng-us/help/trainers/editors-101/module-07-finding-content/README.md): Versionen, Papierkorb, Suche | Ein Artikel aus dem Papierkorb wiederhergestellt |
-| 3 | [Modul 8](../../../../../eng-us/help/trainers/editors-101/module-08-dashboard-bookmarks-account/README.md); Übersetzungen ([Sprachen](../../../sprachen.md)) | Grundlagen der Layouts ([Der Layout-Editor](../../../layout-editor.md)); [Abschlussprojekt in Modul 9](../../../../../eng-us/help/trainers/editors-101/module-09-the-editor-siteaccess/README.md) | Abschlussbereich veröffentlicht |
+| 1 | [Redakteure 101, Module 1 und 2](../../redakteure-101/modul-01-anmelden-und-rundgang/README.md): Anmeldung, Rundgang, der Baum | [Modul 3](../../redakteure-101/modul-03-erstellen-und-bearbeiten/README.md): Ordner, Artikel, das Bearbeitungsformular | Eigener Ordner mit zwei Artikeln |
+| 2 | [Modul 4](../../redakteure-101/modul-04-der-online-editor/README.md) und [Modul 5](../../redakteure-101/modul-05-bilder-und-medien/README.md): Online-Editor, Bilder | [Modul 6](../../redakteure-101/modul-06-veroeffentlichen-und-versionen/README.md) und [Modul 7](../../redakteure-101/modul-07-inhalte-finden/README.md): Versionen, Papierkorb, Suche | Ein Artikel aus dem Papierkorb wiederhergestellt |
+| 3 | [Modul 8](../../redakteure-101/modul-08-dashboard-lesezeichen-konto/README.md); Übersetzungen ([Sprachen](../../../sprachen.md)) | Grundlagen der Layouts ([Der Layout-Editor](../../../layout-editor.md)); [Abschlussprojekt in Modul 9](../../redakteure-101/modul-09-der-editor-siteaccess/README.md) | Abschlussbereich veröffentlicht |
 
 Pausen: jeden Tag 15 Minuten am Vormittag und am Nachmittag, 45 Minuten Mittagspause.
 
@@ -88,7 +88,7 @@ Jeder Teilnehmer baut in seinem Ordner einen kleinen Bereich „Bike Day 2027“
 
 ## Weiterführende Informationen
 
-- [Redakteure 101: Kursüberblick](../../../../../eng-us/help/trainers/editors-101/README.md)
+- [Redakteure 101: Kursüberblick](../../redakteure-101/README.md)
 - [Sprachen](../../../sprachen.md)
 - [Der Layout-Editor](../../../layout-editor.md)
 
@@ -96,7 +96,7 @@ Jeder Teilnehmer baut in seinem Ordner einen kleinen Bereich „Bike Day 2027“
 
 - [Modul 3: Dreitägige Bootcamps](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

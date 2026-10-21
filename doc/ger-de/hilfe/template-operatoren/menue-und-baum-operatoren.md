@@ -27,7 +27,7 @@ Arrays zurück; das Template macht daraus Markup.
 
 ### treemenu
 
-Erzeugte Seite: [treemenu](../../../eng-us/examples/template-operators/treemenu.md).
+Erzeugte Seite: [treemenu](../../beispiele/template-operatoren/treemenu.md).
 
 | Parameter | Typ | Pflicht | Standard |
 |---|---|---|---|
@@ -87,7 +87,7 @@ aktuellen Knoten-ID vergleichen.
 
 ### content_structure_tree
 
-Erzeugte Seite: [content_structure_tree](../../../eng-us/examples/template-operators/content_structure_tree.md).
+Erzeugte Seite: [content_structure_tree](../../beispiele/template-operatoren/content_structure_tree.md).
 
 | Parameter | Typ | Pflicht | Standard |
 |---|---|---|---|
@@ -138,7 +138,7 @@ root: 89 Fit & Healthy (ng_frontpage), 16 children
 
 ### topmenu
 
-Erzeugte Seite: [topmenu](../../../eng-us/examples/template-operators/topmenu.md).
+Erzeugte Seite: [topmenu](../../beispiele/template-operatoren/topmenu.md).
 
 | Parameter | Typ | Pflicht | Standard |
 |---|---|---|---|
@@ -201,10 +201,10 @@ shown to this user: 0
 
 ## Verwandte Seiten
 
-- [Menüs und Navigation](../../../eng-us/help/designers/templates/menus-and-navigation.md)
-- [Modulergebnis und Inhaltsinformationen](../../../eng-us/help/designers/templates/module-result-and-content-info.md)
-- [Cache-Blöcke](../../../eng-us/help/designers/templates/cache-block.md)
-- [Alle Template-Operatoren (erzeugt)](../../../eng-us/examples/template-operators/README.md)
+- [Menüs und Navigation](../designer/vorlagen/menues-und-navigation.md)
+- [Modulergebnis und Inhaltsinformationen](../designer/vorlagen/module-result-und-content-info.md)
+- [Cache-Blöcke](../designer/vorlagen/cache-block.md)
+- [Alle Template-Operatoren (erzeugt)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

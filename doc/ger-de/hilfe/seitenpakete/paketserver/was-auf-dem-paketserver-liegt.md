@@ -151,7 +151,7 @@ Das Attribut `version` in `index.xml` wiederholt die Version der eigenen `packag
 `<version><number>6.0</number><release>15-stable</release></version>` und wird als `6.0-15-stable` aufgeführt. Der Setup-Assistent
 vergleicht die Version im Index mit einer importierten Kopie, um zu entscheiden, welchen Eintrag er zeigt: Eine gleiche Version behält die
 importierte Kopie, eine höhere Version im Index bietet den Download an. Der Kickstarter zieht immer den Eintrag des Index vor
-([Die Kommandozeile des Kickstarters](../../../../eng-us/bc/6.0/kickstartercli.md#why-does-the-remote-package-index-use-a-different-version)). Siehe
+([Die Kommandozeile des Kickstarters](../../../bc/6.0/kickstartercli.md#warum-verwendet-der-entfernte-paketindex-eine-andere-version)). Siehe
 [Versionsnummern](../anforderungen/versionsnummern.md).
 
 > **Hinweis**

@@ -86,21 +86,21 @@ Für Trainer, die den Kurs vorbereiten, in dieser Reihenfolge:
 
 1. [Templates und Design: das Aussehen einer Seite ändern](../../../anleitungen/templates-und-design.md): die gesamte
    technische Grundlage in einem Leitfaden.
-2. [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md),
-   [Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md),
-   [Template-Overrides für Website-Bauer](../../../../eng-us/help/creators/website-creators/template-overrides.md) und
-   [View-Cache und Cache-Blöcke](../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md).
-3. [Stylesheets und Skripte für Ihre Website](../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md) und
-   [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md).
-4. [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md) und [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md):
+2. [Designs, Siteaccesses und die Fallback-Kette der Designs](../../ersteller/website-ersteller/designs-und-die-fallback-kette.md),
+   [Das Pagelayout](../../ersteller/website-ersteller/das-pagelayout.md),
+   [Template-Overrides für Website-Bauer](../../ersteller/website-ersteller/template-overrides.md) und
+   [View-Cache und Cache-Blöcke](../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md).
+3. [Stylesheets und Skripte für Ihre Website](../../ersteller/website-ersteller/stylesheets-und-skripte.md) und
+   [Content Security Policy](../../../funktionen/6.0/content-security-policy.md).
+4. [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md) und [Das Design admin4](../../../funktionen/6.0/admin4-design.md):
    Lesen Sie das erste vollständig; die Module 4 und 6 bauen darauf auf.
-5. [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md),
-   [Barrierefreiheit für Website-Bauer](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) und
-   [Rechts-nach-links-Sprachen in der Administration](../../../../eng-us/features/6.0/right-to-left.md).
-6. [Icon-Themes in Erweiterungen](../../../../eng-us/features/6.0/icon-themes-in-extensions.md).
-7. Die Leitfäden für Designer: [Theme-Erweiterungen: hier beginnen](../../../../eng-us/help/designers/extensions/theme-extensions-start-here.md),
-   [Ein Theme verteilen: hier beginnen](../../../../eng-us/help/designers/distribution/distribution-start-here.md) und
-   [Der Lebenszyklus eines Themes](../../../../eng-us/help/designers/lifecycle/the-life-cycle-of-a-theme.md).
+5. [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md),
+   [Barrierefreiheit für Website-Bauer](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md) und
+   [Rechts-nach-links-Sprachen in der Administration](../../../funktionen/6.0/rechts-nach-links.md).
+6. [Icon-Themes in Erweiterungen](../../../funktionen/6.0/icon-themes-in-extensions.md).
+7. Die Leitfäden für Designer: [Theme-Erweiterungen: hier beginnen](../../designer/erweiterungen/theme-erweiterungen-hier-beginnen.md),
+   [Ein Theme verteilen: hier beginnen](../../designer/veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md) und
+   [Der Lebenszyklus eines Themes](../../designer/lebenszyklus/der-lebenszyklus-eines-themes.md).
 8. Dann die Module der Reihe nach: zuerst jeweils der Überblick des Moduls (seine Vorbereitungsliste und sein
    Zeitplan), dann seine Lektionen. Bauen Sie `training_theme` einmal selbst auf einer Schulungsinstallation, genau
    wie die Übungen es beschreiben.

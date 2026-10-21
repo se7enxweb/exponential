@@ -97,7 +97,7 @@ Blocktyp passt.
 - [Layouttypen, Zonen und Blöcke](layouttypen-zonen-und-bloecke.md)
 - [Layout-Regeln](layout-regeln.md)
 - [Gemeinsamer Kopf- und Fußbereich](gemeinsamer-kopf-und-fussbereich.md)
-- [explayouts_ui](../../../../eng-us/features/6.0/extensions/explayouts_ui.md)
+- [explayouts_ui](../../../funktionen/6.0/erweiterungen/explayouts_ui.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

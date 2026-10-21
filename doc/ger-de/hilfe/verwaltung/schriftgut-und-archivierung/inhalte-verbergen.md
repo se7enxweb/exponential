@@ -39,7 +39,7 @@ In der Administration, beim Eintrag: die Aktion **Verstecken** (oder **Verstecke
 ## Sehen, was versteckt ist
 
 admin4 kennzeichnet die Sichtbarkeit auf einen Blick
-([Das Design admin4: Sichtbarkeit und Kontostatus](../../../../eng-us/features/6.0/admin4-design.md#visibility-and-account-status)):
+([Das Design admin4: Sichtbarkeit und Kontostatus](../../../funktionen/6.0/admin4-design.md#sichtbarkeit-und-kontostatus)):
 
 | Kennzeichen | Bedeutung |
 |---|---|
@@ -68,7 +68,7 @@ Bekanntmachungen archivieren“.
 ## Verwandte Seiten
 
 - [Alte Bekanntmachungen archivieren](alte-bekanntmachungen-archivieren.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

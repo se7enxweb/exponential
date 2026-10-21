@@ -24,9 +24,9 @@ werden leicht verwechselt. Diese Seite zeigt, wo jede Art von Datum steht und wi
 | Datum | Primäre Quelle |
 |---|---|
 | Ein Release | Sein Git-Tag; [Release-Übersicht](../../../eng-us/release-overview) |
-| Eine Änderung | Der Commit; die Monatsseite in [der Geschichte](../../../eng-us/history/README.md) |
+| Eine Änderung | Der Commit; die Monatsseite in [der Geschichte](../../geschichte/README.md) |
 | Eine Funktion in 6.0.15 | Die datierten Abschnitte des [Changelogs 6.0.15](../../../changelogs/6.0/6.0.15.md) |
-| Die Umbenennung | <https://exponential.earth/about/project> (11. August 2025); [August 2025](../../../eng-us/history/2025/2025-08.md) (12. August 2025) |
+| Die Umbenennung | <https://exponential.earth/about/project> (11. August 2025); [August 2025](../../geschichte/2025/2025-08.md) (12. August 2025) |
 | Die Foundation | <https://foundation.exponential.earth/> (19. März 2026) |
 | Die Etappen von 7x | [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) |
 | Angelegte Repositorys | Die GitHub-API, zitiert auf [Wer ist 7x?](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |

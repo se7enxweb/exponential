@@ -34,7 +34,7 @@ an einem Tag schulen?“) einen Plan, der am Tag selbst funktioniert.
 ## Dieses Modul vorbereiten
 
 - Die Agenden der Module 2 bis 4 ausgedruckt oder geöffnet.
-- Der [Trainer-Werkzeugkasten](../../../../../eng-us/help/trainers/trainer-toolkit.md) und die [Kurzkarte für die Übungsumgebung](../../../../../eng-us/help/trainers/lab-quick-card.md).
+- Der [Trainer-Werkzeugkasten](../../trainer-werkzeugkasten.md) und die [Kurzkarte für die Übungsumgebung](../../kurzkarte-fuer-die-uebungsumgebung.md).
 
 ## Zeitplan
 
@@ -48,7 +48,7 @@ an einem Tag schulen?“) einen Plan, der am Tag selbst funktioniert.
 ## Verwandte Seiten
 
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

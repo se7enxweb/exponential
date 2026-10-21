@@ -12,7 +12,7 @@ type: help
 **Wer:** der Site-Administrator, beobachtet vom Vertragsverantwortlichen. **Wann:** einmal im Jahr und vor einer
 Vertragsverlängerung. Die Befehle stammen aus
 [Von Exponential weg migrieren](../../../../installation/migration/exponential-verlassen.md) und der Lektion für Trainer
-[Exponential verlassen](../../../../../eng-us/help/trainers/migration/module-08-leaving-and-capstone/leaving-exponential.md).
+[Exponential verlassen](../../../trainer/migration/modul-08-wechsel-weg-und-abschlussprojekt/von-exponential-wechseln.md).
 
 ## Inhalt
 
@@ -84,7 +84,7 @@ Der Nachweis, dass Ihre Daten in offenen Formaten gehen können, und eine gemess
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Einen Ausstiegsplan schreiben](einen-ausstiegsplan-schreiben.md)
-- [Formate für den Datenexport](../../../../../eng-us/help/government/procurement/exit-plans/data-export-formats.md)
+- [Formate für den Datenexport](../../beschaffung/ausstiegsplaene/formate-fuer-den-datenexport.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

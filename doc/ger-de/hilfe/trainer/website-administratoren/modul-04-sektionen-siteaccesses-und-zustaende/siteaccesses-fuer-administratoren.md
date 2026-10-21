@@ -43,7 +43,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 Quelle: [Systeminformationen, Siteaccesses](../../../../anleitungen/systeminformationen.md#5a-siteaccesses),
 [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site) und
-[Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
+[Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
 
 1. **Die Definition** (3 Minuten). *Siteaccess = Name + Einstellungen in `settings/siteaccess/<name>/` + eine Regel.*
    Eine mit `exp:install` erstellte Installation hat `site`, `admin` und `editor`.
@@ -136,7 +136,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 4. **Setup > Systeminformationen**, Teil **Siteaccesses**, *Diese Anfrage*
    ([Systeminformationen](../../../../anleitungen/systeminformationen.md#5a-siteaccesses)).
 5. Die Host-Tabelle trifft einen Host, der mit dem eingetragenen Host beginnt, nicht nur den exakten Host
-   ([Host-Zuordnung](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md#the-host-map-by-the-start-of-a-host)).
+   ([Host-Zuordnung](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md#die-host-zuordnungstabelle-nach-dem-anfang-eines-hosts)).
 
 </details>
 
@@ -144,8 +144,8 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site):
   wie die Zuordnung eingerichtet wird.
-- [Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
-- [INI-Overrides für mehrere Websites](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md): Einstellungen für mehrere
+- [Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
+- [INI-Overrides für mehrere Websites](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md): Einstellungen für mehrere
   Websites.
 - Der Kurs Multisite und Seitenpakete setzt hier an (siehe den [Kurskatalog](../../kurskatalog.md)).
 

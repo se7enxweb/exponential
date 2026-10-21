@@ -6,7 +6,7 @@ Varianten fehlen oder mit anderen Einstellungen in `image.ini` erzeugt wurden. S
 den Speicher zwischen Servern verschieben, Sicherungen wiederherstellen oder Festplatten aufräumen, und an alle, die
 auf der Site defekte Bilder sehen.
 
-[Anleitungen](README.md) · Siehe auch: [Die Inhaltsprüfungen](../../eng-us/features/6.0/content-checks.md#missing-files),
+[Anleitungen](README.md) · Siehe auch: [Die Inhaltsprüfungen](../funktionen/6.0/inhaltspruefungen.md#fehlende-dateien),
 [Die Upgrade-Prüfung](upgrade-pruefung.md)
 
 ## Kurz gesagt

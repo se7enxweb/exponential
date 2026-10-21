@@ -71,7 +71,7 @@ NEXT YEAR
 | Verträge | [Grundlagen zu Verträgen und SLAs](../../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md), [Scorecard zur Bewertung von Anbietern](../../../unternehmen/vorlagen/bewertungsbogen-fuer-anbieter.md) |
 | Zugriff | [Zugriffsüberprüfungen](../../../unternehmen/sicherheit/zugriffspruefungen.md) |
 | Datenschutz | [DSGVO-Grundlagen](../../../unternehmen/sicherheit/dsgvo-grundlagen.md), [Datenaufbewahrung und Löschung](../../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md) |
-| Barrierefreiheit | [Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
+| Barrierefreiheit | [Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
 | Shop | [Mehrwertsteuer-Checkliste](../../handel/mehrwertsteuer-checkliste.md), [Kartenzahlungen und PCI](../../handel/kartenzahlungen-und-pci.md), [Ländergruppen und Regionen](../../../unternehmen/shops/laendergruppen-und-regionen.md) |
 | Budget | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
 

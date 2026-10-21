@@ -59,8 +59,8 @@ mit dem Teilbaum des Medienordners dieses Fachbereichs.
 
 ## Zuweisung je Fachbereich
 
-1. Legen Sie die Rolle einmal an ([Eine Rolle für Fachbereichsredaktionen für einen Teilbaum anlegen](../../../../../eng-us/help/government/tasks/people-and-permissions/create-a-department-editor-role-for-a-subtree.md)).
-2. Legen Sie je Fachbereich eine Benutzergruppe an ([Eine Benutzergruppe für einen Fachbereich anlegen](../../../../../eng-us/help/government/tasks/people-and-permissions/create-a-user-group-for-a-department.md)).
+1. Legen Sie die Rolle einmal an ([Eine Rolle für Fachbereichsredaktionen für einen Teilbaum anlegen](../../aufgaben/personen-und-berechtigungen/eine-redakteursrolle-einer-abteilung-fuer-einen-teilbaum-anlegen.md)).
+2. Legen Sie je Fachbereich eine Benutzergruppe an ([Eine Benutzergruppe für einen Fachbereich anlegen](../../aufgaben/personen-und-berechtigungen/eine-benutzergruppe-fuer-eine-abteilung-anlegen.md)).
 3. Wählen Sie auf der Rollenseite in der Auswahl der Einschränkung **Teilbaum**, klicken Sie auf **Mit Einschränkungen zuordnen**, wählen
    Sie die oberste Seite des Fachbereichs und dann die Gruppe des Fachbereichs.
 4. Wiederholen Sie das für jeden Fachbereich. Die Rollenseite listet dann jede Gruppe mit *Nur im Teilbaum ...*.
@@ -96,8 +96,8 @@ mit dem Teilbaum des Medienordners dieses Fachbereichs.
 ## Verwandte Seiten
 - [Sektionen und Teilbaum-Einschränkungen](sektionen-und-teilbaum-einschraenkungen.md)
 - [Rollenentwurf: das zentrale Web-Team](rollenentwurf-webteam.md)
-- [Eine Rolle mit einer Teilbaum-Einschränkung zuweisen](../../../../../eng-us/help/government/tasks/people-and-permissions/assign-a-role-with-a-subtree-limitation.md)
-- [Eine Rolle für einen neuen Fachbereich kopieren](../../../../../eng-us/help/government/tasks/people-and-permissions/copy-a-role-for-a-new-department.md)
+- [Eine Rolle mit einer Teilbaum-Einschränkung zuweisen](../../aufgaben/personen-und-berechtigungen/eine-rolle-mit-einer-einschraenkung-auf-einen-teilbaum-zuweisen.md)
+- [Eine Rolle für einen neuen Fachbereich kopieren](../../aufgaben/personen-und-berechtigungen/eine-rolle-fuer-eine-neue-abteilung-kopieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -55,7 +55,7 @@ ausführen (bevorzugt, damit die geschriebenen Dateien für die Site beschreibba
 
 ## Verwandte Seiten
 - [Prüfen, ob die Cronjobs laufen](pruefen-ob-die-cronjobs-laufen.md)
-- [Fehlersuche bei Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/workflow-troubleshooting.md)
+- [Fehlersuche bei Workflows](../../betrieb/redaktionelle-workflows/workflow-fehlerbehebung.md)
 - [Konsole der Cronjobs (Hosting)](../../../hosting/betrieb/die-cronjob-konsole.md)
 - [Anleitung zu den Cronjobs](../../../../anleitungen/cronjobs.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

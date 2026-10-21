@@ -49,7 +49,7 @@ Ihrer Rolle ab: Die meisten Redakteure sehen nur **Look And Feel** und **Missing
 
 - [Templates und Design](../../anleitungen/templates-und-design.md)
 - [Einstellungen der klassischen Menüs](../../anleitungen/klassische-menueeinstellungen.md)
-- [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](../../funktionen/6.0/admin4-design.md)
 - [Wie baue ich eine Seite mit Layouts?](wie-baue-ich-eine-seite-mit-layouts.md)
 - [Benutzerhandbuch](README.md)
 

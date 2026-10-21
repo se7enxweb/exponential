@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 Quellen: eine echte Operator-Erweiterung, `extension/str_replace/` (falls installiert), die Warnung zu
 Template-Operatoren in [Templates und Design, Teil 7](../../../../anleitungen/templates-und-design.md#ein-operator-parameter-ohne-standardwert)
-und [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md).
+und [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md).
 
 1. **Die Registrierung** (3 Minuten). `autoloads/eztemplateautoload.php` füllt `$eZTemplateOperatorArray[]` mit
    `script`, `class` und `operator_names`. Die `settings/site.ini.append.php` der Erweiterung fügt
@@ -183,10 +183,10 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [Template-Operatoren in einem Theme](../../../../../eng-us/help/designers/extensions/template-operators-in-a-theme.md).
+- [Template-Operatoren in einem Theme](../../../designer/erweiterungen/template-operatoren-in-einem-theme.md).
 - [Templates und Design, Teil 7](../../../../anleitungen/templates-und-design.md#7-templates-debuggen): die Warnung bei
   fehlenden Standardwerten.
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): der Assistent für Template-Erweiterungen.
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md): der Assistent für Template-Erweiterungen.
 
 ## Verwandte Seiten
 

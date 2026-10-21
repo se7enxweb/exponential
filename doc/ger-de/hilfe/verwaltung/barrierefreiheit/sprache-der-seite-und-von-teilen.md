@@ -26,7 +26,7 @@ Sprache der Seite (3.1.1, Stufe A) und von Passagen in einer anderen Sprache (3.
 ## In der Administration
 
 Jedes Pagelayout von admin4 schreibt `<html lang="...">` aus dem Locale des Siteaccess
-(`design/admin4/templates/pagelayout.tpl`; [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#wcag-22)).
+(`design/admin4/templates/pagelayout.tpl`; [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#wcag-22)).
 Benutzer, die die Sprache der Oberfläche wechseln, erhalten das passende `lang` und, für Sprachen von rechts nach links,
 `dir="rtl"`.
 
@@ -34,14 +34,14 @@ Benutzer, die die Sprache der Oberfläche wechseln, erhalten das passende `lang`
 
 - Jede Sprache einer Website ist meist ein eigener Siteaccess mit eigenem Locale, und jedes Inhaltsobjekt hat eine
   Übersetzung je Sprache ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md),
-  [Mehrsprachige Websites](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)).
+  [Mehrsprachige Websites](../../ersteller/website-ersteller/mehrsprachige-websites.md)).
 - Ihr Pagelayout schreibt `<html lang>` aus dem Siteaccess, zum Beispiel aus `$site.http_equiv.Content-language`
-  ([Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+  ([Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 - Fehlt eine Übersetzung und zeigt die Website den Inhalt in einer anderen Sprache (ein Fallback, der durch die
   Sprachliste der Website konfiguriert ist), ist dieser Inhalt in einer anderen Sprache als die Seite: Kennzeichnen Sie
   ihn, oder zeigen Sie einen Hinweis und verlinken Sie auf die vorhandene Fassung.
 - Sprachumschalter nennen jede Sprache in dieser Sprache („Deutsch“, „Français“) und tragen an jedem Eintrag `lang`
-  ([Sprachumschalter und Sprach-URLs](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md)).
+  ([Sprachumschalter und Sprach-URLs](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md)).
 
 ## Passagen in einer anderen Sprache
 
@@ -50,7 +50,7 @@ Benutzer, die die Sprache der Oberfläche wechseln, erhalten das passende `lang`
   setzen kann, hängt von der Editor-Engine und den Custom Tags ab, die Ihre Website anbietet; die Entwicklung kann in
   Templates, die Inhalte aus einer anderen Sprache zeigen, `parts/exp_content_direction.tpl` einbinden, das `lang` und,
   für Sprachen von rechts nach links, `dir` schreibt
-  ([Sprachen von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md#content)).
+  ([Sprachen von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md#inhalte)).
 - Eigennamen und Fachbegriffe müssen nicht gekennzeichnet werden.
 
 ## Prüfen

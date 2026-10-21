@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Website-Ersteller, die über eine Exponential-Website verkaufen. Der Kernel enthält einen
 Shop: Produkte sind Inhalte mit einem Preisfeld, Besucher legen sie in einen Warenkorb, gehen zur Kasse, bestätigen,
 bezahlen über ein Payment-Gateway, und Bestellungen werden im Reiter **Shop** der Administration verwaltet, der das
-Shop-Dashboard öffnet ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+Shop-Dashboard öffnet ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Inhalt
 
@@ -48,7 +48,7 @@ Modul und Ansichten des Shops sind in `kernel/shop/module.php` definiert, seine 
 4. Die Bestätigungsseite (`shop/confirmorder`) zeigt Versand und Mehrwertsteuer.
 5. Zahlung: Der Kassen-Workflow schickt den Besucher zum Gateway.
 6. Die Bestellung wird aufgegeben; eine Bestätigungsmail geht hinaus, und der Besucher sieht die Bestellung (oder einen
-   dauerhaften Beleg, [Bestellbelege](../../../../eng-us/features/6.0/order-receipts.md)).
+   dauerhaften Beleg, [Bestellbelege](../../../funktionen/6.0/bestellbelege.md)).
 
 Details: [Warenkorb, Kasse und Bestellungen](warenkorb-kasse-und-bestellungen.md).
 

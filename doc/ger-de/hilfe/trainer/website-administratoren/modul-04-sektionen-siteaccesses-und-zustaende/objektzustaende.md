@@ -137,7 +137,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem private
 ## Weiterführende Literatur
 
 - [Objektzustände](../../../../anleitungen/objektzustaende.md): die vollständige Anleitung mit dem ganzen Prüf-Workflow.
-- [Inhaltsaufträge](../../../../../eng-us/features/6.0/content-jobs.md): Zustände für große Teilbäume.
+- [Inhaltsaufträge](../../../../funktionen/6.0/inhaltsauftraege.md): Zustände für große Teilbäume.
 - [Sektionen](../../../../anleitungen/sektionen.md): der andere Weg, Inhalte für Berechtigungen zu gruppieren.
 
 ## Verwandte Seiten

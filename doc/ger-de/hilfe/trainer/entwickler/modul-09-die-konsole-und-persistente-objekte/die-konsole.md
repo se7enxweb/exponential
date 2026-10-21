@@ -126,7 +126,7 @@ Auf der Entwicklungsinstallation, aus ihrem Wurzelverzeichnis.
 ## Weiterführende Literatur
 
 - [Exponential Console](../../../../bc/6.0/konsole.md): Namen, Optionen, Cronjob-Teile und Befehle von Erweiterungen.
-- [Die Cronjob-Konsole](../../../../../eng-us/features/6.0/cronjobs-console.md): die Browseransicht der Cronjob-Teile.
+- [Die Cronjob-Konsole](../../../../funktionen/6.0/cronjobs-in-der-konsole.md): die Browseransicht der Cronjob-Teile.
 
 ## Verwandte Seiten
 

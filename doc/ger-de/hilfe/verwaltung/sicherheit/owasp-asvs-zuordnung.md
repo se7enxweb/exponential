@@ -13,7 +13,7 @@ Diese Seite richtet sich an Sicherheitsarchitektinnen und -architekten sowie Ent
 öffentlicher Stellen und an Lieferanten, die Anforderungen auf Basis des ASVS beantworten. Der OWASP Application Security
 Verification Standard (<https://owasp.org/www-project-application-security-verification-standard/>) ist ein Katalog
 prüfbarer Anforderungen in drei Stufen. Das Projekt hat **keine** Bewertung Anforderung für Anforderung vorgenommen: Sein
-Status ist **Nicht geprüft** ([Sicherheitsstandards: OWASP ASVS 4.0.3](../../../../eng-us/standards/security.md#owasp-asvs-403)).
+Status ist **Nicht geprüft** ([Sicherheitsstandards: OWASP ASVS 4.0.3](../../../standards/sicherheit.md#owasp-asvs-403)).
 Das Projekt verwendet die Ausgabe 4.0.3, wie die meisten aktuellen Fragebögen; OWASP hat inzwischen 5.0 veröffentlicht.
 
 ## Inhalt
@@ -68,7 +68,7 @@ Damit ist eine bekannte Lücke geschlossen; die Installation erfüllt dadurch ni
 
 ## Verwandte Seiten
 
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Sicherheitshärtung von 6.0.13](../../../bc/6.0/haertung.md)
 - [Sicherheitsvoreinstellungen vom September 2026](../../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

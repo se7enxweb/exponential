@@ -58,7 +58,7 @@ ein Problem mit dem einen hält den anderen nicht auf.
 ## 3. Prüfen Sie es
 
 Führen Sie die Prüfungen des Projekts aus, bevor Sie pushen. Für den Kernel listen `CONTRIBUTING.md` und
-[Qualitätsprüfungen](../../../../eng-us/features/6.0/quality-checks.md) (auf Englisch) sie auf; bei einer Erweiterung
+[Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspruefungen.md) (auf Englisch) sie auf; bei einer Erweiterung
 zeigen ihr Verzeichnis `tests/` oder ihr CI-Workflow, was sie ausführt. Verwenden Sie die Funktion danach von Hand.
 
 ## 4. Schreiben Sie die Beschreibung

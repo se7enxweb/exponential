@@ -150,10 +150,10 @@ Im Kernel-Klon Ihrer Entwicklungsinstallation (oder im Klon einer Erweiterung, d
 ## Weiterführende Literatur
 
 - [Mit Git entwickeln](../../../mit-git-entwickeln.md): Klone, Zweige, Pull Requests und auf dem Laufenden bleiben.
-- [Versionsverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md).
+- [Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md).
 - [Freie Dokumentation](../../../freie-dokumentation.md): diese Seiten verbessern.
-- [Umgangsformen bei Pull Requests](../../../../../eng-us/help/designers/lifecycle/pull-request-etiquette.md) und
-  [Beiträge an das Upstream-Projekt zurückgeben](../../../../../eng-us/help/designers/lifecycle/contributing-back-upstream.md).
+- [Umgangsformen bei Pull Requests](../../../designer/lebenszyklus/pull-requests-an-fremde-themes.md) und
+  [Beiträge an das Upstream-Projekt zurückgeben](../../../designer/lebenszyklus/an-upstream-zurueckgeben.md).
 
 ## Verwandte Seiten
 

@@ -168,11 +168,11 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [Modul-Override durch Erweiterungen](../../../../../eng-us/features/6.0/extension-module-override.md): Views und Templates von
+- [Modul-Override durch Erweiterungen](../../../../funktionen/6.0/modulueberschreibung-durch-extensions.md): Views und Templates von
   Modulen in Erweiterungen.
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md):
   die Klassenform einer View.
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): Der Modul-Assistent schreibt Module mit Views.
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md): Der Modul-Assistent schreibt Module mit Views.
 
 ## Verwandte Seiten
 

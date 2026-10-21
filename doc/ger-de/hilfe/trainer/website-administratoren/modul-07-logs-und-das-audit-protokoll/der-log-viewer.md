@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md). Beschrieben wird die Seite des Designs admin4.
+Quelle: [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md). Beschrieben wird die Seite des Designs admin4.
 
 1. **Der Weg hinein** (2 Minuten). **Setup**, dann **Logdateien** in der linken Spalte. Die Seite öffnet `error.log`
    an seinem Ende. Über den Zeilen liegen die Reiter **Logs**, **Fehlerübersicht**, **Zustand der Logs** und
@@ -135,20 +135,20 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator in der Admini
 <details>
 <summary>Antworten</summary>
 
-1. **C.** ([Der Log-Viewer, Wer ihn verwenden darf](../../../../../eng-us/features/6.0/log-viewer.md#who-may-use-it)).
+1. **C.** ([Der Log-Viewer, Wer ihn verwenden darf](../../../../funktionen/6.0/log-betrachter.md#wer-ihn-verwenden-darf)).
 2. Die verschiedenen Fehler und Warnungen der letzten 24 Stunden (oder eines anderen Zeitfensters), gruppiert und
-   gezählt, die häufigsten zuerst ([Fehlerübersicht](../../../../../eng-us/features/6.0/log-viewer.md#error-digest)).
+   gezählt, die häufigsten zuerst ([Fehlerübersicht](../../../../funktionen/6.0/log-betrachter.md#fehlerübersicht)).
 3. Den Permalink aus **Permalink kopieren**; er öffnet dieselbe Ansicht, immer maskiert.
 4. **Falsch.** Rotieren, Leeren und Entfernen sind aus, bis `logviewer.ini [ActionSettings]` sie einschaltet.
-5. **Zustand der Logs** ([Zustand der Logs](../../../../../eng-us/features/6.0/log-viewer.md#log-health)).
+5. **Zustand der Logs** ([Zustand der Logs](../../../../funktionen/6.0/log-betrachter.md#zustand-der-logs)).
 
 </details>
 
 ## Weiterführende Literatur
 
-- [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md): jeder Bereich, jede Einstellung und jedes
+- [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md): jeder Bereich, jede Einstellung und jedes
   Tastenkürzel.
-- [Log-Rotation und Bereinigung](../../../../../eng-us/features/6.0/log-rotation.md): was **Logs verwalten** tut.
+- [Log-Rotation und Bereinigung](../../../../funktionen/6.0/log-rotation.md): was **Logs verwalten** tut.
 - [Einen Fehler über seine Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md): die Anleitung der
   nächsten Lektion.
 

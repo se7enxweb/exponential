@@ -168,7 +168,7 @@ alten Weg, wenn Sie diese Releases nicht mehr unterstützen.
 - Zurück: [Von Inline-CSS zu Stylesheets](inline-css-in-stylesheets.md)
 - Weiter: [Vom alten jQuery zu jQuery 4](altes-jquery-zu-jquery-4.md)
 - [YUI aus Exponential entfernt](../../../bc/6.0/yui-entfernung.md)
-- [jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
 - [Ajax mit Server-Funktionen von ezjscore](../teil-3-erweiterungsentwickler/ajax-mit-ezjscore-serverfunktionen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

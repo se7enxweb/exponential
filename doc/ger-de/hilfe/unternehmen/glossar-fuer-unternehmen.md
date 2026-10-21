@@ -11,7 +11,7 @@ type: help
 
 Die Begriffe, die im Bereich Unternehmen verwendet werden, erklärt für Inhaber und Führungskräfte. Jeder Eintrag
 verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar der gesamten Dokumentation steht unter
-[Glossar](../../../eng-us/glossary.md).
+[Glossar](../../glossar.md).
 
 ## Inhalt
 
@@ -32,14 +32,14 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 | Version | Jeder gespeicherte Stand eines Objekts. Ältere Versionen lassen sich vergleichen und wiederherstellen | [Versionen eines Objekts: vergleichen, wiederherstellen, aufräumen](../../anleitungen/inhaltsverlauf.md) |
 | Workflow | Schritte, die ablaufen, wenn etwas geschieht, zum Beispiel eine Freigabe vor dem Veröffentlichen oder die Zahlung an der Kasse | [Workflows](../../anleitungen/workflows.md) |
 | Exponential Layouts | Der visuelle Seitenbaukasten: Layouts, Zonen und Blöcke, die Redakteure anordnen | [Der Layout-Editor](../layout-editor.md) |
-| Exponential Intelligence | Der Schreibassistent; schreibt nur Entwürfe und veröffentlicht nie selbst | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
+| Exponential Intelligence | Der Schreibassistent; schreibt nur Entwürfe und veröffentlicht nie selbst | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
 | Informationssammler | Lässt eine Seite Formulareingaben von Besuchern sammeln (Kontaktformulare, Anmeldungen) | [Gesammelte Informationen](../../anleitungen/gesammelte-informationen.md) |
 
 ## Websites, Benutzer und Berechtigungen
 
 | Begriff | Bedeutung | Lesen |
 |---|---|---|
-| Siteaccess | Ein Zugang zur Installation: eine öffentliche Website, eine Sprachversion, die Administration, ein Partnerportal. Gewählt über Hostnamen, Pfad oder Port | [Siteaccess-Zuordnung nach Host und Sprache](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md) |
+| Siteaccess | Ein Zugang zur Installation: eine öffentliche Website, eine Sprachversion, die Administration, ein Partnerportal. Gewählt über Hostnamen, Pfad oder Port | [Siteaccess-Zuordnung nach Host und Sprache](../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md) |
 | Multisite | Mehrere Websites aus einer Installation | [Marken mit Multisite](multisite/README.md) |
 | Rolle | Eine benannte Menge von Berechtigungen, Benutzern oder Gruppen zugewiesen | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md) |
 | Richtlinie | Eine Berechtigung innerhalb einer Rolle, etwa „Inhalte lesen“, auf Wunsch eingeschränkt | ebenda |
@@ -55,14 +55,14 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 |---|---|---|
 | Shop | Der eingebaute E-Commerce: Produkte, Warenkorb, Bestellungen | [Online-Shops](shops/README.md) |
 | USt-Typ | Ein Steuersatz, dem Produkte zugeordnet werden | [USt-Regeln und USt-Typen](shops/ust-regeln-und-ust-typen.md) |
-| Ländergruppe | Eine Menge von Ländern, die gleich behandelt werden, zum Beispiel bei der USt | [Ländergruppen](../../../eng-us/features/6.0/country-groups.md) |
+| Ländergruppe | Eine Menge von Ländern, die gleich behandelt werden, zum Beispiel bei der USt | [Ländergruppen](../../funktionen/6.0/laendergruppen.md) |
 | Zahlungsanbieter | Die Anbindung an einen Zahlungsdienstleister, ausgeführt als Workflow-Ereignis an der Kasse | [Zahlungsanbieter für Unternehmen](shops/zahlungsanbieter-fuer-unternehmen.md) |
 | Bestellstatus | Wo eine Bestellung in ihrem Ablauf steht: ausstehend, in Bearbeitung, geliefert und weitere, die Sie festlegen | [Bestellungen und Bestellstatus](shops/bestellungen-und-bestellstatus.md) |
 | Headless | Die Inhalte ohne die Website nutzen, zum Beispiel aus einer App | [Mobil und headless](mobil-und-headless/README.md) |
 | REST API | Die Schnittstelle, über die Apps und andere Systeme Inhalte lesen und schreiben | [REST API v1 und v2: eine Extension](../../anleitungen/rest-api-v1-und-v2.md) |
 | API-Schlüssel / OAuth | Zwei Wege, auf denen eine App sich gegenüber der REST API ausweist | [Persönliche API-Schlüssel: über REST veröffentlichen, ohne Passwort](../../anleitungen/api-schluessel.md) |
 | Feed (RSS, ATOM) | Eine maschinenlesbare Liste neuer Inhalte, die andere Websites und Apps aufgreifen | [RSS-Feeds: Exporte veröffentlichen und Importe einlesen](../../anleitungen/rss-feeds.md) |
-| Syndication | Einen Teil des Inhaltsbaums mit einer anderen Installation teilen | [syndication](../../../eng-us/features/6.0/extensions/syndication.md) |
+| Syndication | Einen Teil des Inhaltsbaums mit einer anderen Installation teilen | [syndication](../../funktionen/6.0/erweiterungen/syndication.md) |
 
 ## Die Website betreiben
 
@@ -74,7 +74,7 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 | Statischer Cache | Seiten, die als einfache Dateien auf die Festplatte geschrieben werden | [Statischer Cache und Antwortcache](zuverlaessigkeit/statischer-cache-und-antwortcache.md) |
 | Cronjob | Eine Aufgabe, die nach Zeitplan läuft, zum Beispiel das Versenden von Benachrichtigungen | [Cronjobs: ausführen, planen und verfolgen](../../anleitungen/cronjobs.md) |
 | Wartungsmodus | Eine Seite, die Besuchern angezeigt wird, während gearbeitet wird | [Wartungsmodus: die Site vom Netz nehmen und zurückholen](../../anleitungen/wartungsmodus.md) |
-| Prüfprotokoll | Ein manipulationssicheres Protokoll darüber, wer was geändert hat | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| Prüfprotokoll | Ein manipulationssicheres Protokoll darüber, wer was geändert hat | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
 | Upgrade-Prüfung | Eine Prüfung der Datenbank und der Dateien gegen das Release vor einem Upgrade | [Die Upgrade-Prüfung: Dateien und Datenbank vor einem Upgrade](../../anleitungen/upgrade-pruefung.md) |
 | Erweiterung | Ein Paket, das Funktionen hinzufügt | [Extensions: finden, installieren, konfigurieren, bauen und veröffentlichen](../../anleitungen/extensions.md) |
 | Cluster | Mehrere Server, die sich die Arbeit und die Dateien teilen | [Clustering und Hochverfügbarkeit](zuverlaessigkeit/clustering-und-hochverfuegbarkeit.md) |

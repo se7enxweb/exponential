@@ -13,7 +13,7 @@ Teil 4, Kapitel 14. Ein `onclick="..."`-Attribut ist Inline-Code, genau wie ein 
 Security Policy ohne `'unsafe-inline'` verweigert seine Ausführung. Alte Templates haben weit mehr davon als
 Skriptblöcke: Eine Messung auf einer Installation mit vielen Erweiterungen im Oktober 2026 zählte 165 bis 167
 Event-Handler-Attribute pro Administrationsseite, bevor die eigenen Templates des Kernels umgestellt wurden
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Dieses Kapitel macht daraus
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)). Dieses Kapitel macht daraus
 data-Attribute, die von einer Skriptdatei verarbeitet werden.
 
 ## Sie finden

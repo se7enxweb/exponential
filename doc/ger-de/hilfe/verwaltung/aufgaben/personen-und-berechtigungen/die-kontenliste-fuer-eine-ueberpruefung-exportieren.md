@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren, die eine Überprüfung des Zugangs oder ein Audit vorbereiten. Am Ende haben Sie
 eine CSV-Datei der Konten mit ihrem Zustand, dem letzten Besuch, den Gruppen und Rollen. Der Export ist Teil von
-**Benutzer > Benutzerkonten prüfen** ([Benutzerkonten prüfen, „Die CSV“](../../../../../eng-us/features/6.0/user-hygiene.md#the-csv)).
+**Benutzer > Benutzerkonten prüfen** ([Benutzerkonten prüfen, „Die CSV“](../../../../funktionen/6.0/benutzerpflege.md#die-csv)).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -57,13 +57,13 @@ damit eine Tabellenkalkulation sie als Text zeigt.
 Die Datei enthält personenbezogene Daten (Namen, Logins, eventuell E-Mail-Adressen). Bewahren Sie sie nur so lange auf,
 wie die Überprüfung es braucht, an einem Ort mit eingeschränktem Zugang, und mailen Sie sie nicht herum; lassen Sie die
 Spalte E-Mail weg (exportieren Sie als Benutzer ohne `role/assign`), wenn die Überprüfung sie nicht braucht. Die
-Datenschutzmaßnahmen der Plattform sind im [Datenschutzstandard](../../../../../eng-us/standards/privacy.md) beschrieben.
+Datenschutzmaßnahmen der Plattform sind im [Datenschutzstandard](../../../../standards/datenschutz.md) beschrieben.
 
 ## Verwandte Seiten
 - [Prüfen, wer Administratorrechte hat](pruefen-wer-administratorrechte-hat.md)
 - [Konten finden, die seit Monaten nicht genutzt wurden](konten-finden-die-seit-monaten-nicht-genutzt-wurden.md)
-- [Überprüfungen des Administratorzugangs](../../../../../eng-us/help/government/operations/people-and-permissions/admin-access-reviews.md)
-- [Pflege der Benutzerkonten](../../../../../eng-us/help/government/operations/people-and-permissions/user-account-hygiene.md)
+- [Überprüfungen des Administratorzugangs](../../betrieb/personen-und-berechtigungen/ueberpruefung-administrativer-zugaenge.md)
+- [Pflege der Benutzerkonten](../../betrieb/personen-und-berechtigungen/pflege-von-benutzerkonten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

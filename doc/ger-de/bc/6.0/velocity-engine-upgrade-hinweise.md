@@ -8,7 +8,7 @@ auf der Festplatte [Die Verzeichnisstruktur von Velocity](velocity-verzeichnisst
 [phar](phar.md); was Exponential selbst geändert hat,
 [Verhaltensänderungen vom Oktober 2026](verhaltensaenderungen-2026-10.md). Die Release Notes stehen
 im [Changelog](../../../changelogs/extensions/exponential-velocity.md), die Geschichte in der
-[Velocity-Chronik](../../../eng-us/history/velocity/README.md).
+[Velocity-Chronik](../../geschichte/velocity/README.md).
 
 ## Kurz gesagt
 
@@ -39,11 +39,11 @@ Betroffen: alle, die das Control Panel betreiben, das Zugriffsprotokoll lesen od
 verwenden.
 
 - **Die Zugangsdaten und Sitzungen des Panels sind umgezogen und werden nur vertraut, wenn niemand anderes sie ändern kann.** Mit einem Konfigurationsbaum liegen sie in `<conf>/acl/panel.json` und `<state>/sessions/`; ohne einen in `local/` neben der Anwendung. Ein vorhandenes Passwort wird beim ersten Start übernommen (die alte Datei bleibt erhalten, umbenannt in `panel.json.migrated-<time>`, mit einer Kopie `panel.json.pre-migration-<time>`). Jedes Verzeichnis vom Speicherort bis hinauf zu `/` muss root oder dem Benutzer des Servers gehören und darf für Gruppe und andere nicht beschreibbar sein; sonst ist **das Panel gesperrt** (Anmeldung, Standardschlüssel und jede Sitzung werden abgelehnt). Prüfen: `qbixctl panel:check --root=...`. Übliche Lösung nach einem Upgrade (ein Anwendungsverzeichnis, das durch eine umask von `002` als `0775` hinterlassen wurde): `chmod g-w,o-w <dir>`, für das Verzeichnis, das die Ablehnung nennt. Oder setzen Sie `Q.panel.aclDir` und `Q.panel.sessionsDir` (oder starten Sie mit `--conf-dir`), um die Dateien an anderer Stelle abzulegen.
-- **Das Panel startet mit einem Standardschlüssel, der bei der ersten Anmeldung geändert werden muss, und Passwörter werden nach Regeln geprüft und mit bcrypt gespeichert.** Ein vorhandenes Passwort funktioniert weiter. Setzen Sie auf jedem von außen erreichbaren Server sofort eines: `qbixctl panel:password --root=... --generate`. Siehe [Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md).
+- **Das Panel startet mit einem Standardschlüssel, der bei der ersten Anmeldung geändert werden muss, und Passwörter werden nach Regeln geprüft und mit bcrypt gespeichert.** Ein vorhandenes Passwort funktioniert weiter. Setzen Sie auf jedem von außen erreichbaren Server sofort eines: `qbixctl panel:password --root=... --generate`. Siehe [Control Panel](../../funktionen/6.0/velocity-control-panel.md).
 - **Das Standardformat des Zugriffsprotokolls ist `vhost`**: das Format `qbix` plus der Host in Anführungszeichen am Ende jeder Zeile. Ein Log-Leser, der am Zeilenende verankert ist (fail2ban, ein eigenes Format von GoAccess), muss angepasst werden, oder Sie behalten die alten Zeilen: `{"Q":{"webserver":{"log":{"format":"qbix"}}}}`.
 - **Aufgeführte Skripte, Front-Controller und statische Pfade sind optional.** Nichts ändert sich, bis Sie `Q.webserver.scripts`, `Q.webserver.frontControllers` oder `Q.web.static.paths` setzen. Wenn Sie es tun, laufen nur aufgeführte Skripte über ihren Namen, und nur passende Dateien werden unverändert gesendet; der Antwort-Cache beginnt eine neue Generation. Verankern Sie die Muster der statischen Pfade und nennen Sie Skripte exakt.
 - **Die Ereignisschleife `iopoll` ist optional.** `auto` wählt Revolt, wenn es installiert ist, sonst wie bisher `stream_select`.
-- **Das Betriebssystempaket wurde in `exponential-velocity` umbenannt** (deb und rpm; Unit `exponential-velocity.service`; `/usr/share/exponential-velocity`, `/var/lib/exponential-velocity`, `/etc/default/exponential-velocity`). Die Installation über `qbix-webserver` aktualisiert an Ort und Stelle (Replaces/Obsoletes, Einstellungen und Zustand werden übernommen, der Dienst wird wieder aktiviert und neu gestartet, `/usr/share/qbix-webserver` bleibt als symbolischer Link). Wo apt den alten Dienst vor dem Entpacken entfernt hat, führen Sie `sudo systemctl enable --now exponential-velocity` aus. Das Docker-Image ist `ghcr.io/se7enxweb/exponential-velocity`; der alte Image-Name ist veraltet und erhält keine neuen Tags. Siehe [Pakete](../../../eng-us/features/6.0/velocity-packages-and-binaries.md).
+- **Das Betriebssystempaket wurde in `exponential-velocity` umbenannt** (deb und rpm; Unit `exponential-velocity.service`; `/usr/share/exponential-velocity`, `/var/lib/exponential-velocity`, `/etc/default/exponential-velocity`). Die Installation über `qbix-webserver` aktualisiert an Ort und Stelle (Replaces/Obsoletes, Einstellungen und Zustand werden übernommen, der Dienst wird wieder aktiviert und neu gestartet, `/usr/share/qbix-webserver` bleibt als symbolischer Link). Wo apt den alten Dienst vor dem Entpacken entfernt hat, führen Sie `sudo systemctl enable --now exponential-velocity` aus. Das Docker-Image ist `ghcr.io/se7enxweb/exponential-velocity`; der alte Image-Name ist veraltet und erhält keine neuen Tags. Siehe [Pakete](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md).
 - **Der Standard-Branch ist `main`** (war `maintain`); das Composer-Paket ist `se7enxweb/exponential-velocity`.
 - Ein vergessenes Passwort des Panels: `qbixctl panel:password --root=...`; ein gesperrtes Panel: siehe oben.
 
@@ -61,7 +61,7 @@ verwenden.
 
 ## Auf 0.0.4.33
 
-- Eine PHP-Datei, die mit `file_get_contents()`, `md5_file()` oder `fopen()` gelesen wird, liefert die eigenen Bytes der Datei. Unter 0.0.4.32 und älter führte die Upgrade-Prüfung von Exponential (Setup, System-Upgrade, Dateikonsistenz) etwa 330 Dateien von Kernel und Bibliotheken als geändert auf, wenn Velocity sie auslieferte. Führen Sie die Prüfung nach dem Upgrade erneut aus ([Prüfung der Dateikonsistenz](../../../eng-us/features/6.0/file-consistency-check.md)).
+- Eine PHP-Datei, die mit `file_get_contents()`, `md5_file()` oder `fopen()` gelesen wird, liefert die eigenen Bytes der Datei. Unter 0.0.4.32 und älter führte die Upgrade-Prüfung von Exponential (Setup, System-Upgrade, Dateikonsistenz) etwa 330 Dateien von Kernel und Bibliotheken als geändert auf, wenn Velocity sie auslieferte. Führen Sie die Prüfung nach dem Upgrade erneut aus ([Prüfung der Dateikonsistenz](../../funktionen/6.0/dateikonsistenzpruefung.md)).
 
 ## Auf 0.0.4.34
 
@@ -70,7 +70,7 @@ verwenden.
 
 ## Auf 0.0.4.35
 
-- Von selbst ändert sich nichts. Neu und optional: `Q.webserver.headers`, `headersOnScripts`, `hsts` ([Sicherheits-Header](../../../eng-us/specifications/6.0/velocity-http2-and-security.md#headers-on-every-response)).
+- Von selbst ändert sich nichts. Neu und optional: `Q.webserver.headers`, `headersOnScripts`, `hsts` ([Sicherheits-Header](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md#header-auf-jeder-antwort)).
 - Das Preset `exponential` bringt jetzt eigene Listen von Skripten, Front-Controllern und statischen Pfaden mit, wenn keine konfiguriert sind: Damit laufen nur Einstiegspunkte, und nur aufgeführte Dateien werden ausgeliefert. Engere Listen, die Sie setzen, werden nie erweitert; haben Sie bisher andere Dateien über das Preset ausgeliefert, führen Sie sie auf.
 - `header('WWW-Authenticate: ...')` antwortet mit `401`, wie in PHP.
 
@@ -120,7 +120,7 @@ Es muss sich nichts ändern. Der Daemon und die Administrationsbefehle liegen in
 
 ## Templates der Installationsprogramme (HTML5)
 
-Nicht Teil der Engine, aber im selben Zeitraum: Die Templates des Site-Pakets `ezwebin` (Repository `ezwebin-ezpackage`, Juli 2026) geben keine selbstschließenden XHTML-Schrägstriche und keine veralteten `type`-Attribute mehr aus (`<input ... />` wird zu `<input ...>`, `<script type="text/javascript">` wird zu `<script>`). Browser sind nicht betroffen. Prüfen Sie angepasste Websites auf Stylesheets, Skripte oder Tests, die das alte Markup exakt abgleichen. Das Installationsprogramm des Legacy-Kernels (`exponential-legacy-installer` 2.2.3) behebt Fehler von `composer update` mit Composer 2.10, wenn das Legacy-Wurzelverzeichnis `.` ist; aktualisieren Sie es, wenn der Kopierschritt fehlschlägt. Geschichte: [Installationsprogramme und Pakete](../../../eng-us/history/velocity/installers-and-packages.md).
+Nicht Teil der Engine, aber im selben Zeitraum: Die Templates des Site-Pakets `ezwebin` (Repository `ezwebin-ezpackage`, Juli 2026) geben keine selbstschließenden XHTML-Schrägstriche und keine veralteten `type`-Attribute mehr aus (`<input ... />` wird zu `<input ...>`, `<script type="text/javascript">` wird zu `<script>`). Browser sind nicht betroffen. Prüfen Sie angepasste Websites auf Stylesheets, Skripte oder Tests, die das alte Markup exakt abgleichen. Das Installationsprogramm des Legacy-Kernels (`exponential-legacy-installer` 2.2.3) behebt Fehler von `composer update` mit Composer 2.10, wenn das Legacy-Wurzelverzeichnis `.` ist; aktualisieren Sie es, wenn der Kopierschritt fehlschlägt. Geschichte: [Installationsprogramme und Pakete](../../geschichte/velocity/installer-und-pakete.md).
 
 ## Wenn Sie das alte Verhalten brauchen
 
@@ -147,6 +147,6 @@ curl -s https://your-host/Q/health
 ## Verwandte Seiten
 
 - [Velocity-Engines](velocity-engines.md) und [Die Verzeichnisstruktur von Velocity](velocity-verzeichnisstruktur.md)
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Einstellungen und Programme der Velocity-Engine](../../spezifikationen/6.0/velocity-engine-einstellungen.md)
-- [Velocity-Chronik: September 2026, 25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md)
+- [Velocity-Chronik: September 2026, 25. bis 30. September](../../geschichte/velocity/2026-09e.md)

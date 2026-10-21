@@ -133,7 +133,7 @@ Inhalte.
 
 - [Tastenkürzel](../../../tastenkuerzel.md): jede Taste der Administration.
 - [Suchen](../../../suchen.md): der Inhaltsfinder und die Suche.
-- [Inhaltsfinder](../../../../../eng-us/features/6.0/content-finder.md): was der Finder annimmt, im Detail.
+- [Inhaltsfinder](../../../../funktionen/6.0/inhalts-finder.md): was der Finder annimmt, im Detail.
 
 ## Verwandte Seiten
 

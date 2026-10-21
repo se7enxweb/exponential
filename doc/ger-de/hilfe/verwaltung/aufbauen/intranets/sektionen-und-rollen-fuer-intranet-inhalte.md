@@ -27,7 +27,7 @@ in einer neuen Sektion vor Besuchern verborgen sind, bis eine Richtlinie sie erl
 2. Legen Sie den Intranet-Ordner an und **Inhalt zuweisen**: Der Ordner und alles darunter erhalten die Sektion. Neue
    Inhalte übernehmen die Sektion ihres übergeordneten Elements.
 3. Prüfen Sie, dass die Rolle Anonymous `intranet` nicht liest
-   ([Berechtigungen für Besucher](../../../../../eng-us/help/creators/website-creators/visitor-permissions.md)).
+   ([Berechtigungen für Besucher](../../../ersteller/website-ersteller/rechte-fuer-besucher.md)).
 
 ## Rollen
 
@@ -52,11 +52,11 @@ Beispiel „Intranet eingeschränkt“), die nur eine Gruppe liest. Denken Sie d
 - Angemeldet mit einem Testkonto für Mitarbeiter (nicht dem einer echten Person): Intranet-Seiten öffnen sich,
   eingeschränkte Seiten nicht.
 - Verweigerte Aufrufe werden im Kanal `access` des Audit-Protokolls als `access.permission.refused` festgehalten
-  ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+  ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 
-- [Sektionen und Objektzustände für Site-Ersteller](../../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Sektionen und Objektzustände für Site-Ersteller](../../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

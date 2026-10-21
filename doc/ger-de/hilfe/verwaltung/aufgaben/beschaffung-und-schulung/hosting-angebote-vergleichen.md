@@ -25,7 +25,7 @@ beschreibt, was Hoster anbieten können
 ## Bevor Sie beginnen
 
 - Ihre Anforderungen an Hosting und Datenstandort
-  ([Anforderungen an Hosting und Datenstandort](../../../../../eng-us/help/government/procurement/requirements/hosting-and-data-location-requirements.md)).
+  ([Anforderungen an Hosting und Datenstandort](../../beschaffung/anforderungen/anforderungen-an-hosting-und-datenstandort.md)).
 - Die technischen Anforderungen von Exponential
   ([Anforderungen auf einen Blick](../../../hosting/grundlagen/anforderungen-auf-einen-blick.md)).
 
@@ -78,8 +78,8 @@ Ein Blatt, das das Gremium bewerten kann, auf dem jede Lücke sichtbar ist.
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Hostingkosten](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/hosting-costs.md)
-- [Klausel zu Hosting und Datenstandort](../../../../../eng-us/help/government/procurement/tender-templates/hosting-and-data-location-clause.md)
+- [Hostingkosten](../../beschaffung/gesamtbetriebskosten/hostingkosten.md)
+- [Klausel zu Hosting und Datenstandort](../../beschaffung/ausschreibungsvorlagen/klausel-hosting-und-datenstandort.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

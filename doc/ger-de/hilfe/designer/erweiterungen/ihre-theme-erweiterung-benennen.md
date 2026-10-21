@@ -47,7 +47,7 @@ Name der Erweiterung und Design-Name dürfen sich unterscheiden. `cjw_themes_jum
   offizielle öffentliche PHP-Code-Präfix von 7x ist (ein Name kann nicht mit einer Ziffer beginnen, also kann „7x“ keines
   sein); 7x verwendet `exp` bewusst für Arbeit, die es dem Projekt Exponential und der Exponential Foundation zuordnet.
   Ihr Theme verwendet Ihr eigenes Präfix und benennt nie bestehende Kernel-Bezeichner wie `eZINI` oder `eZTemplate` um.
-  Siehe [Namenspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md).
+  Siehe [Namenspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md).
 - **Suchen Sie, bevor Sie wählen**: Packagist, GitHub und
   [projects.exponential.earth](https://projects.exponential.earth/) (nach Typ durchsuchen).
 

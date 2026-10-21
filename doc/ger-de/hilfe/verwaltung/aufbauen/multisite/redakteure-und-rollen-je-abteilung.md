@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren. In einer gemeinsamen Installation kann eine Administration alle Sites
 bedienen; nach Teilbaum eingeschränkte Rollen halten jedes Team im Ordner seiner Site
-([Mehrere Sites einrichten, Redakteure und die Administration](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#editors-and-the-administration),
+([Mehrere Sites einrichten, Redakteure und die Administration](../../../ersteller/website-ersteller/multisite-einrichten.md#redaktion-und-administration),
 [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)).
 
 ## Inhalt
@@ -55,9 +55,9 @@ eigenen Einstellungen; der Zugang wird dennoch von Rollen entschieden, also schr
 
 - Listen Sie zweimal im Jahr die Rollenzuweisungen je Gruppe auf (**Benutzer > Rollen und Richtlinien**).
 - Verwenden Sie **Benutzer > Benutzerkonten prüfen**, um lange nicht genutzte Konten zu finden
-  ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+  ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 - Rollenzuweisungen werden im Kanal `access` des Audit-Protokolls festgehalten
-  ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+  ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 

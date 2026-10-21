@@ -14,7 +14,7 @@ eine andere Domain umziehen. Die Adressen einer Verwaltungswebsite stehen in ged
 und auf den Seiten anderer Organisationen; eine defekte Adresse schickt Bürgerinnen und Bürger auf eine Fehlerseite.
 Eine Umleitungstabelle ordnet jeder alten Adresse die Adresse desselben Inhalts auf dem neuen System zu. Die Quellen
 sind [Exponential verlassen, Abschnitt 4](../../../../installation/migration/exponential-verlassen.md#4-adressen-für-die-weiterleitungen)
-und [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md).
+und [Umleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md).
 
 ## Inhalt
 1. [Wo Exponential Adressen speichert](#wo-exponential-adressen-speichert)
@@ -33,8 +33,8 @@ und [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/we
 | Platzhalter (Muster wie `old/*`) | Tabelle `ezurlwildcard` |
 | Adressen von Dateien | Links über `content/download`; die Dateien liegen im Speicherverzeichnis |
 
-Wie Aliase und Platzhalter auf der Website funktionieren, erklären [URL-Aliase und sprechende URLs](../../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)
-und [URL-Platzhalter](../../../../../eng-us/help/creators/website-creators/url-wildcards.md). Administratoren sehen sie unter
+Wie Aliase und Platzhalter auf der Website funktionieren, erklären [URL-Aliase und sprechende URLs](../../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)
+und [URL-Platzhalter](../../../ersteller/website-ersteller/url-platzhalter.md). Administratoren sehen sie unter
 **URL-Übersetzer** und **URL Platzhalter** ([URLs und Aliase](../../../../anleitungen/urls-und-aliase.md)).
 
 ## Die Umleitungstabelle aufbauen
@@ -71,7 +71,7 @@ old_path                                   new_url                              
 - Beobachten Sie in den Wochen danach das 404-Protokoll des neuen Systems auf verpasste Adressen; ergänzen Sie sie in
   der Tabelle.
 - Unter Exponential helfen das 404-Protokoll und der Log-Betrachter bei einem gewöhnlichen Relaunch auf dieselbe Weise
-  ([Log-Betrachter](../../../../../eng-us/features/6.0/log-viewer.md)).
+  ([Log-Betrachter](../../../../funktionen/6.0/log-betrachter.md)).
 
 ## Umleitungen auf Dauer erhalten
 

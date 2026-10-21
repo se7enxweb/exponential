@@ -71,7 +71,7 @@ PRESSE         info@se7enx.com   Pressekit: exponential.earth/about/press-kit
 | Läuft auf | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen); [Datenbankunterstützung](../datenbankunterstuetzung.md); [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Neu in 6.0.15 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Sicherheit | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md); [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen) |
-| Sprachen | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen | [Sprachen in Exponential](../../sprachen.md) |
 | Nicht verbunden | README, „Exponential Project Notice : 2025.08.12“ |
 | Pressekontakt | Fußzeile von <https://exponential.earth/>; [Pressekontakte](pressekontakte.md) |
 
@@ -82,7 +82,7 @@ PRESSE         info@se7enx.com   Pressekit: exponential.earth/about/press-kit
 | Releases | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) oder den Tags auf GitHub |
 | Läuft auf | Dem README-Abschnitt „Requirements“ |
 | Neu in 6.0.15 | Dem Changelog; sobald 6.0.15 getaggt ist, ist es nicht mehr „in Entwicklung“ |
-| Sprachen | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen | [Sprachen in Exponential](../../sprachen.md) |
 
 ## Das Faktenblatt verwenden
 

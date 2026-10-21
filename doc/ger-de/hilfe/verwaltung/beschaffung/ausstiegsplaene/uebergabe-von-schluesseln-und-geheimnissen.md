@@ -27,7 +27,7 @@ und [Eine Website zwischen Hostern umziehen](../../../hosting/migrationen/eine-w
 
 | Geheimnis | Wo | Bei Verlust |
 |---|---|---|
-| Signatur- und Pseudonymschlüssel des Audits | `settings/override/audit.ini.append.php` | bestehende Audit-Einträge lassen sich nicht mehr als unverändert verifizieren ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
+| Signatur- und Pseudonymschlüssel des Audits | `settings/override/audit.ini.append.php` | bestehende Audit-Einträge lassen sich nicht mehr als unverändert verifizieren ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
 | Website-Geheimnis der E-Mail-Einstellungen | `settings/override/mailpreferences.ini.append.php`, `[SecretSettings] TokenSecret` | jeder Abmeldelink in jeder bereits versandten E-Mail funktioniert nicht mehr, und die Sperrliste passt nicht mehr ([E-Mail-Einstellungen für Administratoren](../../../../anleitungen/mail-einstellungen-administrator.md)) |
 | Private Zertifikatsschlüssel von Velocity | der Konfigurationsbaum von Velocity, `ssl/` (`/etc/vc` oder `var/vc/qbix/etc`) | HTTPS auf Velocity muss neu eingerichtet werden |
 
@@ -60,7 +60,7 @@ Diese lassen sich ändern und sollten geändert werden, weil der bisherige Liefe
 
 - Administrationskonten der Beschäftigten des bisherigen Lieferanten: Entfernen Sie sie oder deaktivieren Sie sie, wenn
   Ihre Regeln zum Schriftgut verlangen, sie aufzubewahren. **Benutzerkonten prüfen** (`/user/hygiene`) hilft, Konten zu
-  finden, die eine Zeit lang nicht benutzt wurden ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+  finden, die eine Zeit lang nicht benutzt wurden ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 - Ihre Rollenzuweisungen, API-Schlüssel und Sitzungen (**Setup > Sitzungen**, [Sitzungen](../../../../anleitungen/sitzungen.md)).
 - Ihren Zugang zu Servern, Panels, Überwachung und Repositorys.
 

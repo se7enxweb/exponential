@@ -53,28 +53,28 @@ Die fünf Such-Operatoren teilen ihre Parameter und ihren Code; sie unterscheide
 
 ### class_icon
 
-Generierte Seite: [class_icon](../../../eng-us/examples/template-operators/class_icon.md). Eingabe: ein Klassenbezeichner, gesucht
+Generierte Seite: [class_icon](../../beispiele/template-operatoren/class_icon.md). Eingabe: ein Klassenbezeichner, gesucht
 in `[ClassIcons] ClassMap[]`. Zeilen 1 und 2 des Beispiels unten.
 
 ### classgroup_icon
 
-Generierte Seite: [classgroup_icon](../../../eng-us/examples/template-operators/classgroup_icon.md). Eingabe: der Name einer
+Generierte Seite: [classgroup_icon](../../beispiele/template-operatoren/classgroup_icon.md). Eingabe: der Name einer
 Klassengruppe, gesucht in `[ClassGroupIcons] ClassGroupMap[]`. Zeile 5.
 
 ### mimetype_icon
 
-Generierte Seite: [mimetype_icon](../../../eng-us/examples/template-operators/mimetype_icon.md). Eingabe: ein MIME-Typ, gesucht in
+Generierte Seite: [mimetype_icon](../../beispiele/template-operatoren/mimetype_icon.md). Eingabe: ein MIME-Typ, gesucht in
 `[MimeIcons] MimeMap[]`; hat der vollständige Typ keinen Eintrag, wird die Gruppe vor dem `/` (`image`) versucht.
 Zeilen 3 und 4.
 
 ### action_icon
 
-Generierte Seite: [action_icon](../../../eng-us/examples/template-operators/action_icon.md). Eingabe: der Name einer Aktion, gesucht
+Generierte Seite: [action_icon](../../beispiele/template-operatoren/action_icon.md). Eingabe: der Name einer Aktion, gesucht
 in `[ActionIcons] ActionMap[]`. Zeile 6.
 
 ### icon
 
-Generierte Seite: [icon](../../../eng-us/examples/template-operators/icon.md). Eingabe: ein Icon-Name, gesucht in
+Generierte Seite: [icon](../../beispiele/template-operatoren/icon.md). Eingabe: ein Icon-Name, gesucht in
 `[Icons] IconMap[]` (`role`, `section`, `translation`, `pdfexport`, `url` im Thema crystal). Zeile 9.
 ```tpl
 1 {'folder'|class_icon( 'small' )}
@@ -107,7 +107,7 @@ und die Adresse endet beim Größenordner. Zeile 8 zeigt den Ausweichweg für Fl
 
 ### flag_icon
 
-Generierte Seite: [flag_icon](../../../eng-us/examples/template-operators/flag_icon.md).
+Generierte Seite: [flag_icon](../../beispiele/template-operatoren/flag_icon.md).
 
 - **Eingabe:** ein Locale-Code (`ger-DE`). **Parameter:** keine. **Rückgabe:** die Adresse des Flaggenbildes (kein Tag).
 
@@ -118,7 +118,7 @@ oben.
 
 ### icon_info
 
-Generierte Seite: [icon_info](../../../eng-us/examples/template-operators/icon_info.md).
+Generierte Seite: [icon_info](../../beispiele/template-operatoren/icon_info.md).
 
 - **Eingabe:** keine. **Parameter:** der Typ, `mimetype`, `class`, `classgroup`, `action` oder `icon` (erforderlich: ohne ihn wird die Warnung "Missing parameter type" protokolliert und nichts zurückgegeben; ein unbekannter Typ protokolliert die Warnung "Unknown icon type").
 - **Rückgabe:** ein Hash, der das verwendete Thema beschreibt: `repository`, `theme`, `theme_path`,
@@ -149,7 +149,7 @@ mapped classes=31
 
 ### wordtoimage
 
-Generierte Seite: [wordtoimage](../../../eng-us/examples/template-operators/wordtoimage.md).
+Generierte Seite: [wordtoimage](../../beispiele/template-operatoren/wordtoimage.md).
 
 - **Eingabe:** ein Text. **Parameter:** keine. **Rückgabe:** der Text, in dem jedes `ReplaceText[]` aus `wordtoimage.ini`
   `[WordToImageSettings]` durch ein `<img>` des passenden `ReplaceIcon[]` unterhalb von `IconRoot` ersetzt ist, mit dem
@@ -170,8 +170,8 @@ Nice day <img src="/share/icons/happy.gif" alt="happy"/>
 
 ## Verwandte Seiten
 
-- [Operator-Referenz](../../../eng-us/help/designers/templates/operator-reference.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Operator-Referenz](../designer/vorlagen/operatorreferenz.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

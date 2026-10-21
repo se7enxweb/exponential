@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratorinnen und Administratoren sowie Hosting
 Textdatei unter `/.well-known/security.txt`, die Sicherheitsforschenden mitteilt, wie sie eine Schwachstelle melden
 können; definiert ist sie in RFC 9116 (<https://www.rfc-editor.org/rfc/rfc9116>). **Exponential liefert keine mit**;
 das Projekt führt dies als Lücke, die der Betreiber schließen kann
-([Sicherheitsstandards: Offenlegung von Schwachstellen](../../../../eng-us/standards/security.md#vulnerability-disclosure)).
+([Sicherheitsstandards: Offenlegung von Schwachstellen](../../../standards/sicherheit.md#offenlegung-von-schwachstellen)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -97,8 +97,8 @@ Offenlegungsrichtlinie. Eine Datei nach ihrem Ablaufdatum sollen Forschende laut
 ## Verwandte Seiten
 
 - [Offenlegung von Schwachstellen](offenlegung-von-schwachstellen.md)
-- [Eine brauchbare robots.txt ab Werk](../../../../eng-us/features/6.0/robots-txt.md) (wird genauso ausgeliefert)
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Eine brauchbare robots.txt ab Werk](../../../funktionen/6.0/robots-txt.md) (wird genauso ausgeliefert)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

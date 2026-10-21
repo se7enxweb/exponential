@@ -142,7 +142,7 @@ composer install
 Die Erweiterung `ezupdate`, die `composer.json` verlangt, ist ein Paketmanager in der Administration (**Setup >
 Updates and packages**) und auf der Kommandozeile. **Aktualisieren und Installieren sind aus, bis sie eingeschaltet
 werden**, in `settings/override/ezupdate.ini.append.php` (`[UpdateSettings] AllowUpdate`, `AllowInstall`), weil
-Composer `vendor/` und jedes Paket, das es verwaltet, neu schreibt ([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+Composer `vendor/` und jedes Paket, das es verwaltet, neu schreibt ([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 
 Für einen Hoster ist das eine Grundsatzentscheidung pro Tarif: aus lassen, wo der Hoster die Updates verwaltet, oder
 einschalten für Kunden, die ihre eigenen verwalten. Siehe [Automatische Updates mit ezupdate](../betrieb/automatische-updates-mit-ezupdate.md).

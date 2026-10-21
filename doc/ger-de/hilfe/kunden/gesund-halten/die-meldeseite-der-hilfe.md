@@ -12,14 +12,14 @@ type: help
 Jede Exponential-Administration hat ein Hilfe-Center und darin eine Seite namens **Fehler melden** unter
 `/exphelp/report`. Sie führt eine Person durch die Meldung eines Fehlers in der Software: welcher Tracker zu verwenden
 ist, was zu schreiben ist, ein vorausgefülltes Issue und eine Zusammenfassung der Installation zum Kopieren, und wo ein
-Sicherheitsproblem vertraulich zu melden ist ([Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)). Diese Seite
+Sicherheitsproblem vertraulich zu melden ist ([Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)). Diese Seite
 erklärt aus Sicht des Betreibers, wofür sie da ist.
 
 ## Wer sie öffnen kann
 
 Die Meldeseite ist Teil der Hilfe, die die Richtlinie `exphelp/read` erfordert. Die Rolle Administrator hat sie, eine
 neue Installation gibt sie der Rolle Editor, und die Hilfe wird nie Besuchern gezeigt, die nicht angemeldet sind
-([Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)). Auf einer Installation aus der Zeit vor dem Hilfesystem
+([Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)). Auf einer Installation aus der Zeit vor dem Hilfesystem
 vergibt ein Administrator sie mit einem Befehl, der auf derselben Seite beschrieben ist.
 
 Das Dashboard der Hilfe befindet sich unter `/exphelp/dashboard`; die Schaltfläche **Hilfe** in der Kopfzeile der
@@ -38,7 +38,7 @@ Administration öffnet die Hilfeseite, die zu der Seite gehört, auf der Sie ger
 Wenn die Meldung geschrieben ist, bereitet die Seite im gewählten Tracker ein neues Issue mit diesem Text vor, fertig
 zum Öffnen. Zum Absenden brauchen Sie ein kostenloses GitHub-Konto ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 Die Diagnosedaten und der Text des Issues bleiben bewusst auf Englisch, „weil die Maintainer sie lesen“
-([Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)).
+([Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)).
 
 ## Welcher Tracker
 

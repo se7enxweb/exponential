@@ -55,8 +55,8 @@ Führen Sie mindestens einmal im Jahr einen Exporttest auf einer Kopie durch:
 
 ## Vertrag
 
-- [ ] Ausstiegsklauseln: Übergabezeitraum, Zusammenarbeit mit einem Nachfolger, Rückgabe und Löschung der Daten ([Ausstiegspläne](../../../../eng-us/help/government/procurement/exit-plans/README.md)).
-- [ ] Kündigungsfristen und Enddaten bekannt ([Das Ende eines Vertrags](../../../../eng-us/help/government/procurement/lifecycle/end-of-a-contract.md)).
+- [ ] Ausstiegsklauseln: Übergabezeitraum, Zusammenarbeit mit einem Nachfolger, Rückgabe und Löschung der Daten ([Ausstiegspläne](../beschaffung/ausstiegsplaene/README.md)).
+- [ ] Kündigungsfristen und Enddaten bekannt ([Das Ende eines Vertrags](../beschaffung/lebenszyklus/ende-eines-vertrags.md)).
 - [ ] Keine Klausel, die das Eigentum an dem Code beansprucht, den Sie bezahlt haben, oder verbietet, ihn an einen anderen Dienstleister zu geben.
 
 ## Plan
@@ -71,7 +71,7 @@ Führen Sie mindestens einmal im Jahr einen Exporttest auf einer Kopie durch:
 
 - [Checklisten für Verwaltungen](README.md)
 - [Vor der Unterzeichnung eines Vertrags](vor-der-unterzeichnung.md)
-- [Exponential verlassen (Lektion für Trainer)](../../../../eng-us/help/trainers/migration/module-08-leaving-and-capstone/leaving-exponential.md)
+- [Exponential verlassen (Lektion für Trainer)](../../trainer/migration/modul-08-wechsel-weg-und-abschlussprojekt/von-exponential-wechseln.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -54,8 +54,8 @@ noch gebraucht werden. Der Pseudonym-Schlüssel ist ein anderer Schlüssel und w
 
 ## Verwandte Seiten
 
-- [Integrität und Verifikation des Audits](../../../../../eng-us/help/government/security/audit-integrity-and-verification.md)
-- [Geheimnisse in settings/override](../../../../../eng-us/help/government/security/secrets-in-settings-override.md)
+- [Integrität und Verifikation des Audits](../../sicherheit/audit-integritaet-und-pruefung.md)
+- [Geheimnisse in settings/override](../../sicherheit/geheimnisse-in-settings-override.md)
 - [Langfristige Aufbewahrung des Audits](../../schriftgut-und-archivierung/langfristige-aufbewahrung-von-audit-eintraegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

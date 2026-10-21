@@ -94,7 +94,7 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 | Eine Marke oder Gruppe mit mehreren Websites | [Marken mit Multisite](multisite/README.md) |
 | Ein Unternehmen, das in mehreren Sprachen verkauft | [Mehrsprachige Unternehmen](mehrsprachig/README.md) |
 | Ein Unternehmen mit einer mobilen App oder anderen Systemen, die die Inhalte nutzen | [Mobil und headless](mobil-und-headless/README.md) |
-| Eine Behörde oder öffentliche Stelle | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
+| Eine Behörde oder öffentliche Stelle | Der eigene Bereich [Behörden](../verwaltung/verwaltungen-hier-beginnen.md) |
 
 Nicht sicher? [Welcher Bereich passt zu Ihrer Organisation?](welcher-bereich-zu-ihrer-organisation-passt.md) stellt einige
 Fragen und weist Ihnen den richtigen Ort. [Wie Unternehmen mit Exponential online verkaufen](wie-unternehmen-online-verkaufen.md)
@@ -143,8 +143,8 @@ Die vollständige Lesereihenfolge steht im [Lesepfad](lesepfad-fuer-unternehmen.
 |---|---|
 | [Vertrieb und Marketing](../geschaeft/vertrieb-und-marketing-hier-beginnen.md) | Menschen, die Exponential und Exponential-Projekte verkaufen |
 | [Projektleiter](../fuehrung/projektleiter-hier-beginnen.md) | Ein Exponential-Projekt planen und durchführen |
-| [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) | Die Website bauen |
-| [Anwendungsentwickler](../../../eng-us/help/creators/app-creators/app-creators-start-here.md) | Eigene Anwendungen und Integrationen bauen |
+| [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md) | Die Website bauen |
+| [Anwendungsentwickler](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) | Eigene Anwendungen und Integrationen bauen |
 | [Hosting-Anbieter](../hosting/hosting-anbieter-hier-beginnen.md) | Exponential für Kunden betreiben |
 | [Presse](../presse/presse-hier-beginnen.md) | Journalisten und Rezensenten |
 

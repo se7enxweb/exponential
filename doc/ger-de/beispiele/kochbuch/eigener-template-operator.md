@@ -192,10 +192,10 @@ Signaturen wie `extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php`.
 
 - [Kochbuch](README.md)
 - [Template-Operatoren](../template-operatoren/README.md): jeder Operator mit seinen Parametern
-- [Template-Operatoren für Zeichenketten](../../../eng-us/features/6.0/string-template-operators.md)
+- [Template-Operatoren für Zeichenketten](../../funktionen/6.0/template-operatoren-fuer-zeichenketten.md)
 - [Templates und Design](../../anleitungen/templates-und-design.md), [Ein Template-Override](template-override.md)
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md): `/setup/templateoperator` schreibt ein Gerüst für einen
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md): `/setup/templateoperator` schreibt ein Gerüst für einen
   Operator
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

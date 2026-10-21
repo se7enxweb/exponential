@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Die Administration gestalten, Tokens und Dunkelmodus](../../../../bc/6.0/admin4-gestaltung.md#tokens) und
-[Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md).
+[Das Design admin4](../../../../funktionen/6.0/admin4-design.md).
 
 1. **Die Gruppen** (6 Minuten). Aus der Token-Tabelle: Akzent (`--a4-accent`, `--a4-accent-strong` für gefüllte
    Bedienelemente mit weißem Text, `--a4-accent-text` für Text in Akzentfarbe, `--a4-accent-soft` für Tönungen);
@@ -169,9 +169,9 @@ Lektion 4.2.
 ## Weiterführende Literatur
 
 - [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#tokens): jedes Token mit seinem Zweck.
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): heller, dunkler und System-Modus und die gemerkte
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md): heller, dunkler und System-Modus und die gemerkte
   Auswahl.
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): der Kontrasttest, der die Tokens prüft.
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md): der Kontrasttest, der die Tokens prüft.
 
 ## Verwandte Seiten
 

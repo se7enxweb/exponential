@@ -170,7 +170,7 @@ Auf Maschinen mit mehreren PHP-Versionen rufen Sie die richtige Binärdatei übe
 
 - [Anforderungen auf einen Blick](anforderungen-auf-einen-blick.md) und [PHP-Einstellungen für Exponential](php-einstellungen-fuer-exponential.md)
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
-- [Unterstützung für PHP 8.0](../../../../eng-us/bc/6.0/php-8.0-support.md)
+- [Unterstützung für PHP 8.0](../../../bc/6.0/php-8.0-unterstuetzung.md)
 - [Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

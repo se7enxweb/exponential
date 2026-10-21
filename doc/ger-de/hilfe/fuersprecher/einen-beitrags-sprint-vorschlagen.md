@@ -36,7 +36,7 @@ offizielle Veranstaltungen dokumentiert. Sein Ergebnis sind echte Pull Requests 
 
 - Eine Liste kleiner, echter Aufgaben, jede in unter einer Stunde machbar, mit einem Link (eine zu prüfende Hilfeseite,
   eine Gruppe von Texten, ein nachzustellendes Issue).
-- Eine Testinstallation pro teilnehmender Person oder eine Anleitung, eine anzulegen ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)).
+- Eine Testinstallation pro teilnehmender Person oder eine Anleitung, eine anzulegen ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - GitHub-Konten bereit (mit Zwei-Faktor-Authentifizierung).
 - Eine gemeinsame, öffentliche Aufgabenliste (eine Forendiskussion genügt) ohne personenbezogene Daten.
 

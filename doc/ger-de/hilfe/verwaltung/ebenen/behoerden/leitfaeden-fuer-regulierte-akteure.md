@@ -61,7 +61,7 @@ Exponential: die Klasse Leitfaden und die Zustandsgruppe für den Status aus
 Kleine Korrekturen (ein Tippfehler, ein defekter Link) gehen denselben Weg; vereinbaren Sie, ob sie geprüft werden
 müssen. **Ohne Benachrichtigung veröffentlichen** kann, wo eingeschaltet, verhindern, dass kleine Korrekturen
 Abonnenten per E-Mail erreichen
-([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)).
+([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)).
 
 ## Ersetzen und zurückziehen
 
@@ -80,9 +80,9 @@ anzeigen und aus Listen „aktueller Leitfäden“ heraushalten.
 
 | Kanal | Einrichtung |
 |---|---|
-| E-Mail bei Änderung | regulierte Akteure mit einem Konto folgen der Leitfadenbibliothek oder einem Themenordner mit **Benachrichtigen**; unter **Meine Benachrichtigungseinstellungen** wählen sie sofortige Benachrichtigung oder eine Zusammenfassung ([Benachrichtigungen: der Leitfaden für Benutzer](../../../../../eng-us/features/6.0/notifications.md)) |
+| E-Mail bei Änderung | regulierte Akteure mit einem Konto folgen der Leitfadenbibliothek oder einem Themenordner mit **Benachrichtigen**; unter **Meine Benachrichtigungseinstellungen** wählen sie sofortige Benachrichtigung oder eine Zusammenfassung ([Benachrichtigungen: der Leitfaden für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md)) |
 | RSS | ein RSS-Export der Leitfadenbibliothek (**Setup > RSS**) ([RSS-Feeds](../../../../anleitungen/rss-feeds.md)) |
-| Newsletter | eine regelmäßige Zusammenfassung mit cjw_newsletter ([Newsletter mit CJW Newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)) |
+| Newsletter | eine regelmäßige Zusammenfassung mit cjw_newsletter ([Newsletter mit CJW Newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)) |
 | Eine Seite „Letzte Änderungen“ | ein Template, das Leitfäden nach Änderungsdatum mit ihrem Änderungshinweis auflistet |
 
 Benachrichtigungen brauchen den Cronjob für Benachrichtigungen und Konten mit `notification/use`.
@@ -94,7 +94,7 @@ Benachrichtigungen brauchen den Cronjob für Benachrichtigungen und Konten mit `
    (jede Karte zeigt Erstellungs- und Änderungsdatum).
 3. **Ansehen** zeigt den Text dieser Version; **Vergleichen** zeigt die Unterschiede zur aktuellen.
 4. Das Audit-Protokoll bestätigt, wann jede Version von wem veröffentlicht wurde
-   ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+   ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 Das funktioniert nur für Versionen, die noch aufbewahrt sind: Heben Sie die Grenze des Versionsverlaufs für die Objekte
 der Klasse Leitfaden an oder bewahren Sie in Ihrem Schriftgutverwaltungssystem von jeder Version ein datiertes PDF auf

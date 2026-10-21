@@ -87,11 +87,11 @@ Aus [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md
 
 ## Start
 
-- [ ] Die [Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md) des Website-Erstellers
+- [ ] Die [Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md) des Website-Erstellers
   bestanden.
 - [ ] HTTPS auf jedem Host.
 - [ ] Redakteure mit einem kurzen Leitfaden für Redakteure eingewiesen
-      ([Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+      ([Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Jeden Monat
 
@@ -99,7 +99,7 @@ Aus [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md
 - [ ] Formulareinsendungen beantwortet; alte nach Plan entfernt.
 - [ ] Logs angesehen; Backups überprüft.
 - [ ] Konten, die lange nicht gesehen wurden, unter **Benutzerkonten > Benutzerkonten prüfen** geprüft
-      ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+      ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Jedes Jahr und bei jeder Übergabe
 

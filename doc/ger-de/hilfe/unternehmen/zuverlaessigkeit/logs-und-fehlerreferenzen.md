@@ -14,7 +14,7 @@ Fehlermeldungen beantworten. Sie erklärt, wie eine Fehlerseite zu den genauen L
 führt, welche Logs es gibt und wofür jedes da ist und wie Logs klein und frei von personenbezogenen Daten der Kunden
 gehalten werden. Die technischen Anleitungen sind
 [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) und
-[Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md).
+[Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md).
 
 ![Die Fehlerübersicht der Logdateien](../../../../eng-us/help/images/help/bu-logs.webp)
 
@@ -72,7 +72,7 @@ passiert: Jeder Server führt sein eigenes `var/log`
 ## Die Logs und wofür jedes da ist
 
 Exponential trennt echte Fehler vom Rauschen, damit es sich weiterhin lohnt, `error.log` zu lesen
-([Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md)):
+([Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md)):
 
 | Log | Was es enthält | Wen es betrifft |
 |---|---|---|
@@ -88,7 +88,7 @@ Exponential trennt echte Fehler vom Rauschen, damit es sich weiterhin lohnt, `er
 **Setup > Logdateien** (Richtlinie `setup/logs`) zeigt jedes Log der Installation in der Administration: die
 Kernel-Logs, die Logs jeder Website, die Logs, die Erweiterungen schreiben, und ihre Rotationen. Die Seite hat einen
 Navigator über alle Dateien, Filter nach Zeit, Stufe und Adresse, eine Suche und für jede Ansicht einen **Permalink**,
-den Sie einer Kollegin oder einem Kollegen schicken können ([Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md#in-short)).
+den Sie einer Kollegin oder einem Kollegen schicken können ([Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md#kurz-gesagt)).
 
 Zwei Übersichtsseiten sparen Zeit
 ([Überblick über die Überwachung](../../hosting/betrieb/ueberblick-ueber-die-ueberwachung.md#seiten-für-einen-menschen)):
@@ -100,7 +100,7 @@ Zwei Übersichtsseiten sparen Zeit
 ## Logs bleiben klein
 
 Ein Log, das die Festplatte füllt, kann eine Website lahmlegen. Exponential rotiert jedes Log für Sie
-([Log-Rotation](../../../../eng-us/features/6.0/log-rotation.md#in-short)):
+([Log-Rotation](../../../funktionen/6.0/log-rotation.md#kurz-gesagt)):
 
 - Wenn ein Log über `site.ini [FileSettings] LogFileMaxSize` (ab Werk 2 MB) hinauswächst, wird es nach `.1`, `.2`, `.3`
   rotiert.
@@ -123,7 +123,7 @@ standardmäßig:
   Demaskierung nie mit
   ([Einen Fehler finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md#kurz-gesagt)).
 - Das Prüfprotokoll kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter oder Tokens auf
-  ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)).
+  ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#warum-sie-es-wollen)).
 
 Das ist eine technische Schutzmaßnahme, keine Rechtsberatung. Zu Ihren Pflichten siehe
 [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md) und fragen Sie Ihren Datenschutzbeauftragten oder Ihren Anwalt.

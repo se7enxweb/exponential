@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Administration und die Entwicklung, die den Schutz einer Content Security Policy
 ([CSP Level 3](https://www.w3.org/TR/CSP3/)) auf einer öffentlichen Website nutzen möchten und vor der Durchsetzung
 Belege brauchen. Exponential sammelt die Berichte der Browser selbst. Referenz:
-[Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md); Sicht des Hostings:
+[Content Security Policy](../../../../funktionen/6.0/content-security-policy.md); Sicht des Hostings:
 [Content Security Policy (Hosting)](../../../hosting/sicherheit/content-security-policy.md).
 
 ## Inhalt
@@ -29,7 +29,7 @@ Belege brauchen. Exponential sammelt die Berichte der Browser selbst. Referenz:
 ausgelieferten Direktiven erlauben nur die eigenen Dateien der Website (`script-src 'self'`, `style-src 'self'`,
 `object-src 'none'`, `frame-ancestors 'self'` ...), mit einer Nonce je Anfrage. Im Auslieferungszustand wird also für
 niemanden etwas blockiert. Der Sicherheitsstandard zählt die fehlende CSP öffentlicher Websites zu seinen bekannten
-Lücken ([Sicherheitsstandard](../../../../../eng-us/standards/security.md)).
+Lücken ([Sicherheitsstandard](../../../../standards/sicherheit.md)).
 
 ## Berichte einschalten
 
@@ -72,8 +72,8 @@ Die Schritt-für-Schritt-Anleitung steht im Abschnitt „Switching to enforce, s
 ## Verwandte Seiten
 - [Anfrage-Logs: 404 und Sicherheit](anfrageprotokolle-404-und-sicherheit.md)
 - [Fehlerübersicht und Zustand der Logs](fehleruebersicht-und-zustand-der-logs.md)
-- [Sicherheitsstandard](../../../../../eng-us/standards/security.md)
-- [CSP-Checkliste für Theme-Designer](../../../../../eng-us/help/designers/theme-design/checklist-csp.md)
+- [Sicherheitsstandard](../../../../standards/sicherheit.md)
+- [CSP-Checkliste für Theme-Designer](../../../designer/theme-design/checkliste-csp.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

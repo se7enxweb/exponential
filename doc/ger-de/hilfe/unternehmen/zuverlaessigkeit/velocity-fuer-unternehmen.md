@@ -13,7 +13,7 @@ Diese Seite richtet sich an Inhaber und Führungskräfte, die von ihrem Entwickl
 und wissen wollen, was das für das Unternehmen bedeutet. Sie erklärt, was Velocity ist, welche Zahlen das Projekt
 dokumentiert und wie Sie sie lesen, was es für die Verfügbarkeit tut, was es von Ihrem Hosting braucht und wann ein
 klassischer Webserver die bessere Antwort bleibt. Der technische Einstieg ist
-[Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
+[Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md).
 
 ## Inhalt
 
@@ -91,7 +91,7 @@ nutzbar ist.
 | Neustart, der von selbst abschließt | Ein Neustart, dessen Aufrufer zwischen Stopp und Start beendet wird, lässt den Server nicht mehr ausgefallen zurück | [Velocity-Engines](../../../bc/6.0/velocity-engines.md#ein-abgeschnittener-neustart-oder-deploy) |
 | Deployment mit einem Befehl | `exp:velocity deploy` führt jeden Schritt zum Ausliefern einer PHP-Änderung in der richtigen Reihenfolge aus | [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md) |
 | Eigenes HTTPS | Liefert HTTPS selbst aus und tauscht ein erneuertes Zertifikat ohne Neustart ein | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#when-a-traditional-server-is-still-the-right-answer) |
-| Control Panel und Dashboard | Ansichten des Servers, die weiter funktionieren, wenn die Anwendung defekt ist | [Velocity Control Panel](../../../../eng-us/features/6.0/velocity-control-panel.md) |
+| Control Panel und Dashboard | Ansichten des Servers, die weiter funktionieren, wenn die Anwendung defekt ist | [Velocity Control Panel](../../../funktionen/6.0/velocity-control-panel.md) |
 
 ## Was es von Ihrem Hosting braucht
 

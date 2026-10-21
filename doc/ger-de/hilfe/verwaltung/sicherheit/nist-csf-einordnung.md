@@ -41,7 +41,7 @@ Einordnungshilfe, kein Profil und keine Bewertung; das Projekt erhebt keinen CSF
 
 - Bestandsaufnahme: Version von Exponential (`composer show se7enxweb/exponential`), aktivierte Erweiterungen
   (Setup > Extensions), Composer-Lock-Datei, Versionen von PHP und Datenbank (Setup > Systeminformationen).
-- Bekannte Lücken aus der Erklärung des Projekts ([Sicherheitsstandards](../../../../eng-us/standards/security.md#known-gaps))
+- Bekannte Lücken aus der Erklärung des Projekts ([Sicherheitsstandards](../../../standards/sicherheit.md#bekannte-lücken))
   gehören in das Risikoregister.
 
 ## Protect (Schützen)

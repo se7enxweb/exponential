@@ -12,7 +12,7 @@ type: reference
 Diese Seite richtet sich an Bewertende, die ein Angebot prüfen, und an Bieter, die eine Ausschreibung mit Exponential
 beantworten. Sie ordnet die Anforderungsbereiche dieses Ordners den Nachweisen zu, die das Repository tatsächlich
 enthält: einer Dokumentationsseite, einer Einstellung, einem Test, einem Befehl. Die Statusspalte übernimmt die
-Statusangaben der [Seiten zu den Standards](../../../../../eng-us/standards/README.md) genau; werten Sie sie in einem Angebot nicht
+Statusangaben der [Seiten zu den Standards](../../../../standards/README.md) genau; werten Sie sie in einem Angebot nicht
 auf.
 
 ## Inhalt
@@ -29,27 +29,27 @@ auf.
 - **Bieter**: Nennen Sie Seite und Abschnitt und zitieren Sie den Status wie geschrieben. Wo der Status „Teilweise
   erfüllt“ oder „Nicht geprüft“ lautet, sagen Sie, was Sie für diesen Kunden gegen die Lücke tun.
 - **Bewertende**: Öffnen Sie den Link und prüfen Sie, ob er sagt, was das Angebot behauptet. Einstellungen lassen sich
-  in einer mit `./console exp:install` erstellten Testinstallation prüfen ([Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)).
+  in einer mit `./console exp:install` erstellten Testinstallation prüfen ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ## Barrierefreiheit
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| WCAG 2.2 AA, Administration | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md); `tests/tests/design/` (Beschriftungen, Landmarks, Kontrast, Tastatur) | Teilweise erfüllt |
+| WCAG 2.2 AA, Administration | [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md); `tests/tests/design/` (Beschriftungen, Landmarks, Kontrast, Tastatur) | Teilweise erfüllt |
 | WCAG 2.2 AA, öffentliche Website | keiner für mitgelieferte öffentliche Designs | nicht geprüft |
 | WAI-ARIA 1.2 | dieselbe Seite, Muster von admin4 | Teilweise erfüllt |
 | EN 301 549 | dieselbe Seite | Nicht geprüft |
 | Section 508 / VPAT | dieselbe Seite; kein VPAT oder ACR | Nicht geprüft |
-| Rechts nach links | [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md) | dokumentiert |
+| Rechts nach links | [Sprachen von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md) | dokumentiert |
 
 ## Sicherheit
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| OWASP Top 10 (2021) | [Sicherheitsstandards](../../../../../eng-us/standards/security.md), Tabelle A01 bis A10 | Teilweise erfüllt |
+| OWASP Top 10 (2021) | [Sicherheitsstandards](../../../../standards/sicherheit.md), Tabelle A01 bis A10 | Teilweise erfüllt |
 | OWASP ASVS 4.0.3 | dieselbe Seite | Nicht geprüft (keine Bewertung durchgeführt) |
-| Content Security Policy | [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md); `settings/site.ini [ContentSecurityPolicy]` | Teilweise erfüllt |
-| Sicherheitsprotokollierung | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md); `settings/audit.ini [AuditSettings] Audit=enabled` | Erfüllt (A09) |
+| Content Security Policy | [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md); `settings/site.ini [ContentSecurityPolicy]` | Teilweise erfüllt |
+| Sicherheitsprotokollierung | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md); `settings/audit.ini [AuditSettings] Audit=enabled` | Erfüllt (A09) |
 | Zweistufige Anmeldung | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) | Erweiterung auf Wunsch |
 | Schritte zur Härtung | [Sicherheitshärtung für den Produktivbetrieb](../../../../installation/13-sicherheitshaertung.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) | dokumentiert |
 | Offenlegung von Schwachstellen | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) | Teilweise erfüllt (keine security.txt) |
@@ -58,22 +58,22 @@ auf.
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| Funktionen für die DSGVO | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) | Teilweise erfüllt (Funktionen bereitgestellt) |
+| Funktionen für die DSGVO | [Datenschutzstandards](../../../../standards/datenschutz.md) | Teilweise erfüllt (Funktionen bereitgestellt) |
 | Cookies (ePrivacy) | dieselbe Seite, Cookie-Tabelle | Teilweise erfüllt (kein Einwilligungsbanner) |
-| Einwilligungsnachweise, Abmeldung | [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md) | CAN-SPAM: Erfüllt; RFC 8058: Erfüllt |
-| Datensparsamkeit in Protokollen | [Log-Betrachter](../../../../../eng-us/features/6.0/log-viewer.md), [Anfrageprotokolle](../../../../../eng-us/features/6.0/request-logs.md) | dokumentiert |
-| Bereinigung von Konten | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) | dokumentiert |
+| Einwilligungsnachweise, Abmeldung | [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md) | CAN-SPAM: Erfüllt; RFC 8058: Erfüllt |
+| Datensparsamkeit in Protokollen | [Log-Betrachter](../../../../funktionen/6.0/log-betrachter.md), [Anfrageprotokolle](../../../../funktionen/6.0/anfrageprotokolle.md) | dokumentiert |
+| Bereinigung von Konten | [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md) | dokumentiert |
 
 ## Sprachen und Webstandards
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| UTF-8 | [Standards zur Internationalisierung](../../../../../eng-us/standards/internationalization.md) | Erfüllt |
+| UTF-8 | [Standards zur Internationalisierung](../../../../standards/internationalisierung.md) | Erfüllt |
 | 4-Byte-UTF-8 unter MySQL/MariaDB | dieselbe Seite | Teilweise erfüllt |
 | Pluralformen | dieselbe Seite | Nicht erfüllt |
-| HTTP, HTML, CSS, Cookies, robots | [Standards der Webplattform](../../../../../eng-us/standards/web-platform.md) | je Zeile dieser Seite |
-| APIs (REST, OAuth, LDAP, RSS, SMTP) | [Standards zu APIs und Protokollen](../../../../../eng-us/standards/apis-and-protocols.md) | je Zeile dieser Seite |
-| Barrierefreiheit von PDF (PDF/UA) | [Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md) | Nicht erfüllt |
+| HTTP, HTML, CSS, Cookies, robots | [Standards der Webplattform](../../../../standards/webplattform.md) | je Zeile dieser Seite |
+| APIs (REST, OAuth, LDAP, RSS, SMTP) | [Standards zu APIs und Protokollen](../../../../standards/apis-und-protokolle.md) | je Zeile dieser Seite |
+| Barrierefreiheit von PDF (PDF/UA) | [Standards zu Dokumentation und Veröffentlichung](../../../../standards/dokumentation-und-veroeffentlichung.md) | Nicht erfüllt |
 
 ## Betrieb, Schriftgut und Ausstieg
 
@@ -84,15 +84,15 @@ auf.
 | Upgrade-Prüfungen | [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
 | Versionsgeschichte | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md) |
 | Exporte | [Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md) |
-| Datenbanken | [Standards zu Datenbanken und SQL](../../../../../eng-us/standards/databases-and-sql.md), [Datenbankunterstützung](../../../datenbankunterstuetzung.md) |
+| Datenbanken | [Standards zu Datenbanken und SQL](../../../../standards/datenbanken-und-sql.md), [Datenbankunterstützung](../../../datenbankunterstuetzung.md) |
 
 ## Release- und Qualitätspraxis
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| Dauerhafte Release-Tags | [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) | Erfüllt (per Richtlinie) |
+| Dauerhafte Release-Tags | [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md) | Erfüllt (per Richtlinie) |
 | Signierte Commits oder Tags | dieselbe Seite | Nicht erfüllt |
-| Automatisierte Tests und CI | [Tests und kontinuierliche Integration](../../../../../eng-us/standards/testing-and-ci.md) | Erfüllt |
+| Automatisierte Tests und CI | [Tests und kontinuierliche Integration](../../../../standards/tests-und-ci.md) | Erfüllt |
 | Berichte zur Codeabdeckung | dieselbe Seite | Nicht erfüllt |
 
 ## Verwandte Seiten

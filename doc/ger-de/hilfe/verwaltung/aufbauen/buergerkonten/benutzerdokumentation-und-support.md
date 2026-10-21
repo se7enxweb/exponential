@@ -41,8 +41,8 @@ Die Hilfe dieses Repositorys ist freie Dokumentation unter der GNU FDL 1.3
 | Seite | Für |
 |---|---|
 | [Ihr Konto und die Anmeldung](../../../konten-und-anmeldung.md) | alle mit einem Konto |
-| [Benachrichtigungen: die Anleitung für Benutzer](../../../../../eng-us/features/6.0/notifications.md) | Menschen, die Inhalten folgen |
-| [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md) | alle, die Mail erhalten |
+| [Benachrichtigungen: die Anleitung für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md) | Menschen, die Inhalten folgen |
+| [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md) | alle, die Mail erhalten |
 | [Anmelden im Editor](../../../anmelden-im-editor.md) | gelegentliche Redakteure unter den Mitarbeitern |
 
 Machen Sie Ihre angepasste Hilfe barrierefrei und in den Sprachen Ihrer Benutzer verfügbar; halten Sie sie auf der

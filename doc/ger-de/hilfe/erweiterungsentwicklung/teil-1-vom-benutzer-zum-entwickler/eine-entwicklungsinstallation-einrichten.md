@@ -134,7 +134,7 @@ git -C extension/mysite_hello init
 ```
 
 Wenn Sie Ihre eigenen Erweiterungen lieber außerhalb von `extension/` aufbewahren, kann der Kernel zusätzliche Ordner
-durchsuchen; siehe [Erweiterungen in mehr als einem Ordner](../../../../eng-us/features/6.0/additional-extension-directories.md).
+durchsuchen; siehe [Erweiterungen in mehr als einem Ordner](../../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md).
 
 ## Regeln, die Entwicklung und Live-Betrieb getrennt halten
 

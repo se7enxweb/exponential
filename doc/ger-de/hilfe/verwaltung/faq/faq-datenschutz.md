@@ -10,7 +10,7 @@ type: help
 # FAQ: Datenschutz
 
 Diese Seite beantwortet die Fragen, die Datenschutzbeauftragte öffentlicher Stellen zu Exponential stellen. Die Antworten
-stammen aus den [Datenschutzstandards](../../../../eng-us/standards/privacy.md), die festhalten, dass Exponential Software ist und
+stammen aus den [Datenschutzstandards](../../../standards/datenschutz.md), die festhalten, dass Exponential Software ist und
 kein Verantwortlicher: Die Einhaltung liegt in der Verantwortung der Organisation, die die Website betreibt.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -32,7 +32,7 @@ Software kann für sich allein nicht konform sein; die Organisation ist es. Expo
 ein Einwilligungsprotokoll für E-Mails, E-Mail-Kategorien mit Opt-in, Löschung beim Entfernen eines Kontos,
 Pseudonymisierung im Audit, Maskierung von IP-Adressen in Protokollen und keine Ressourcen von Drittanbietern in der
 Administration. Der Status ist **Teilweise erfüllt (Funktionen bereitgestellt)**
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)). Zwecke, Rechtsgrundlagen, die Datenschutzerklärung, das
+([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)). Zwecke, Rechtsgrundlagen, die Datenschutzerklärung, das
 Verzeichnis von Verarbeitungstätigkeiten und Auftragsverarbeitungsverträge bleiben bei Ihnen.
 
 ## Welche Cookies setzt es? Brauchen wir ein Banner?
@@ -40,7 +40,7 @@ Verzeichnis von Verarbeitungstätigkeiten und Auftragsverarbeitungsverträge ble
 Der Kernel setzt nur funktionale Cookies: das Sitzungscookie, `is_logged_in`, das eigene Cookie des
 Einrichtungsassistenten während der Installation, ein optionales Cookie zur Erkennung mobiler Geräte und Cookies für den
 Zustand der Oberfläche in der Administration
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#eprivacy-directive-cookies)). Es gibt **kein Cookie-Banner zur
+([Datenschutzstandards](../../../standards/datenschutz.md#eprivacy-richtlinie-cookies)). Es gibt **kein Cookie-Banner zur
 Einwilligung**. Wenn Ihre Website Webanalyse, Einbettungen oder Werbung hinzufügt, müssen Sie eines hinzufügen.
 
 ## Sendet es Daten an Drittanbieter?
@@ -48,7 +48,7 @@ Einwilligung**. Wenn Ihre Website Webanalyse, Einbettungen oder Werbung hinzufü
 Nicht aus der Administration: Ihre Skripte und Schriften werden lokal ausgeliefert. Einige mitgelieferte Erweiterungen
 tun es, wenn sie aktiviert sind: Google Analytics (`bcwebsitestatistics`), reCAPTCHA und hCaptcha sowie Anbieter für
 Social Login. Sie sind installiert, aber **nicht aktiv**, bis eine Website sie aktiviert
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)). Prüfen Sie
+([Datenschutzstandards](../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)). Prüfen Sie
 `ActiveExtensions[]` auf Ihrer Website.
 
 ## Wie beantworten wir einen Auskunfts- oder Löschantrag?
@@ -60,35 +60,35 @@ Social Login. Sie sind installiert, aber **nicht aktiv**, bis eine Website sie a
 
 Es gibt **keine einzelne Funktion „alle meine Daten exportieren“ oder „mich löschen“**: Inhalte, Formulareinsendungen
 und Bestellungen erreichen Sie über getrennte Werkzeuge der Administration, und Konten werden einzeln entfernt
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
+([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken)).
 
 ## Wie lange werden Protokolle aufbewahrt, und was enthalten sie?
 
 Das Prüfprotokoll behält pro Kanal 90 Tage aktiv und zwei Jahre archiviert, mit gekürzten Adressen und ohne Passwörter
 oder Token. Die Protokolle für 404, Sicherheit und CSP haben Altersgrenzen; andere Protokolle des Kernels werden nach
-Größe rotiert, ohne Altersgrenze, sofern Sie keine festlegen ([Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)).
-Der Protokollbetrachter maskiert IP- und E-Mail-Adressen ([Protokollbetrachter](../../../../eng-us/features/6.0/log-viewer.md)).
+Größe rotiert, ohne Altersgrenze, sofern Sie keine festlegen ([Protokollrotation](../../../funktionen/6.0/log-rotation.md)).
+Der Protokollbetrachter maskiert IP- und E-Mail-Adressen ([Protokollbetrachter](../../../funktionen/6.0/log-betrachter.md)).
 Die Zugriffsprotokolle des Webservers liegen außerhalb von Exponential.
 
 ## Wie wird die Einwilligung für E-Mails gehandhabt?
 
 Optionale E-Mail-Kategorien sind ausgeschaltet, bis die Person sie einschaltet; jede Änderung wird mit dem angezeigten
 Text protokolliert; jede optionale E-Mail hat eine Abmeldung mit einem Klick
-([E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)).
+([E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 ## Wie steht es um den KI-Assistenten?
 
 Exponential Intelligence ist eine Erweiterung, die bis zur Aktivierung inaktiv ist. Bei der Nutzung geht die Anfrage der
 Redaktion an den gewählten Anbieter: Anthropic, einen OpenAI-kompatiblen Dienst (die Funktionsseite nennt darunter einen
 Dienst in der EU) oder ein lokales Modell über Ollama, das die Daten auf Ihrem eigenen Server hält
-([Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)). Wählen Sie den Anbieter mit Ihren
+([Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md)). Wählen Sie den Anbieter mit Ihren
 Datenschutzbeauftragten und nennen Sie ihn in Ihren Aufzeichnungen.
 
 ## Verwandte Seiten
 
 - [FAQ für Verwaltungen](README.md)
 - [Checkliste Datenschutz](../checklisten/checkliste-datenschutz.md)
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

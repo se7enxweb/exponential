@@ -93,7 +93,7 @@ git commit -m "Added: The theme skeleton written by the design extension wizard"
 - Zurück: [Der Aufbau einer Design-Erweiterung](aufbau-einer-design-erweiterung.md)
 - Weiter: [Ein Theme von Hand](ein-theme-von-hand.md)
 - [Mit RAD: eine Design-Erweiterung](../teil-3-erweiterungsentwickler/tutorials/rad-design-erweiterung.md)
-- [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
+- [RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

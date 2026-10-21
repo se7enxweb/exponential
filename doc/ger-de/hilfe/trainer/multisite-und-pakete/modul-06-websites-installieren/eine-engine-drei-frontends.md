@@ -144,7 +144,7 @@ lesende Befehle auf der Schulungsinstallation.
 
 - [4. Eine Installationsmethode wählen](../../../../installation/04-installationsweg-waehlen.md).
 - [5. Der Einrichtungsassistent](../../../../installation/05-setup-assistent.md).
-- [Eine Installationsmethode wählen](../../../../../eng-us/help/creators/website-creators/choosing-an-install-method.md): die Sicht der
+- [Eine Installationsmethode wählen](../../../ersteller/website-ersteller/eine-installationsmethode-waehlen.md): die Sicht der
   Website-Ersteller.
 - [Bereitstellung: Überblick](../../../hosting/bereitstellung/README.md): die Sicht des Hosters.
 
@@ -152,7 +152,7 @@ lesende Befehle auf der Schulungsinstallation.
 
 - [Modul 6: Websites mit dem Kickstarter und exp:install installieren](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

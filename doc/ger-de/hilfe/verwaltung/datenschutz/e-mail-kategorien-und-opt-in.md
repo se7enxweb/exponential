@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren, Kommunikationsteams und Entwickler.
 Exponential-Website versendet, durchläuft ein E-Mail-Gate, das ihre **Kategorie** kennt: Notwendige E-Mails gehen immer
 hinaus, optionale nur an Personen, die sie eingeschaltet haben
 ([13.13 E-Mail: Einwilligung und Sperrung](../../../installation/13-sicherheitshaertung.md#1313-mail-einwilligung-und-sperrliste),
-[E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)).
+[E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -39,7 +39,7 @@ hinaus, optionale nur an Personen, die sie eingeschaltet haben
 Optionale Kategorien sind standardmäßig aus (`[Category_*] DefaultOn=false`). `DefaultOn=true` wird abgelehnt, sofern
 nicht `[CategorySettings] AllowDefaultOn=enabled` gesetzt ist; der Leitfaden für Administratoren warnt davor, es je für
 eine optionale Kategorie zu setzen, weil es E-Mails an Menschen senden würde, die nicht darum gebeten haben
-([Datenschutzstandards: DSGVO](../../../../eng-us/standards/privacy.md#gdpr)).
+([Datenschutzstandards: DSGVO](../../../standards/datenschutz.md#dsgvo)).
 
 ## Double-Opt-in
 
@@ -71,7 +71,7 @@ Bitten Sie die Entwickler, jeder optionalen E-Mail eine Kategorie zu geben. Prü
 
 ## Verwandte Seiten
 
-- [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)
+- [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)
 - [E-Mail-Einstellungen für Entwickler](../../../anleitungen/mail-einstellungen-entwickler.md)
 - [Einwilligungsnachweise für E-Mail](einwilligungsnachweise-fuer-e-mail.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

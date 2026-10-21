@@ -11,7 +11,7 @@ type: help
 
 **Wer:** eine IT-Fachkraft im Bewertungsteam oder jeder mit einem Terminal. **Wann:** vor der Ausschreibung (um das
 Produkt kennenzulernen) oder während der Bewertung. Der Befehl stammt aus
-[Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md) und
+[Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md) und
 [7. Die Installation auf der Konsole](../../../../installation/07-installation-ueber-die-konsole.md).
 
 ## Inhalt
@@ -63,12 +63,12 @@ Nehmen Sie die Aufgaben aus Ihren Anforderungen, zum Beispiel:
 - einen Freigabe-Workflow einrichten ([Workflows](../../../../anleitungen/workflows.md));
 - eine auf eine Sektion eingeschränkte Rolle anlegen ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md));
 - auf das Design admin4 umschalten und es nur mit der Tastatur ausprobieren
-  ([Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md));
+  ([Das Design admin4](../../../../funktionen/6.0/admin4-design.md));
 - sich das Audit-Protokoll und **Setup > Systeminformationen** ansehen;
 - einen Export ausführen ([Eine Ausstiegsübung durchführen](eine-ausstiegsuebung-durchfuehren.md)).
 
 Der Plan für den Proof of Concept im Teil zur Bewertung hat eine strukturierte Fassung
-([Plan für den Proof of Concept](../../../../../eng-us/help/government/procurement/evaluation/proof-of-concept-plan.md)).
+([Plan für den Proof of Concept](../../beschaffung/bewertung/plan-fuer-einen-proof-of-concept.md)).
 
 ## Ergebnis
 
@@ -86,7 +86,7 @@ etwaige Lücken.
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Erste Schritte](../../../../anleitungen/erste-schritte.md)
-- [Installation von null (Demo-Skript)](../../../../../eng-us/help/press/demo-script-install-from-zero.md)
+- [Installation von null (Demo-Skript)](../../../presse/demo-skript-installation-von-null.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

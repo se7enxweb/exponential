@@ -55,7 +55,7 @@ die unter der Hauptdomain liegen.
 Jeder Siteaccess nennt die Seite, auf der er öffnet (`IndexPage`), und den Knoten, den er als Wurzel seines
 Inhaltsbaums behandelt (`content.ini [NodeSettings] RootNode`). Für getrennte Marken ist die übliche Einrichtung ein
 Ordner pro Marke unter der Wurzel, wobei jeder Siteaccess seinen Ordner als Wurzel nutzt
-([Schritt für Schritt: eine zweite Website](../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site)).
+([Schritt für Schritt: eine zweite Website](../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website)).
 
 Für das Unternehmen bedeutet das:
 
@@ -78,13 +78,13 @@ Die technischen Schritte, zusammengefasst aus dem Leitfaden für Website-Erstell
 | 6. Die Administration informieren | Administrator | Die Marke wird in die `SiteList[]` der Administration aufgenommen, damit Vorschauen und Links sie nutzen können |
 
 Die vollständigen Schritte mit den genauen Einstellungen stehen unter
-[Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site).
+[Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website).
 
 ## Was das Unternehmen regeln muss
 
 - [ ] **Domainnamen**: registriert und auf den Server zeigend.
 - [ ] **Zertifikate**: Jeder Hostname, den die Marke nutzt, ist durch HTTPS abgedeckt
-      ([Online gehen: Hosts, HTTPS und Siteaccesses](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+      ([Online gehen: Hosts, HTTPS und Siteaccesses](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] **Konten für Webanalyse und Search Console** pro Marke, wenn Sie Marken getrennt messen.
 - [ ] **Rechtliche Seiten** pro Marke (Impressum, Datenschutzhinweis, Nutzungsbedingungen), vom Markenverantwortlichen
       verfasst.
@@ -95,7 +95,7 @@ Die vollständigen Schritte mit den genauen Einstellungen stehen unter
 Eine Einstellung namens `HostMatchMethod` lässt die Host-Zuordnung nach dem Anfang, dem Ende oder einem Teil eines Hosts
 vergleichen. Mit `start` erreicht ein Test-Host wie `www.example.com.test.local` denselben Siteaccess wie
 `www.example.com`, ohne zusätzliche Einträge
-([Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+([Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 Dieselbe Seite warnt, dass `start` und `part` auch Hosts akzeptieren, die Sie nicht gemeint haben; sie gehören daher
 dorthin, wo der Webserver nur für Ihre eigenen Hosts antwortet. Fragen Sie Ihr technisches Team, welche Methode Ihre
 Installation verwendet.
@@ -107,7 +107,7 @@ Installation verwendet.
 
 - [Mehrere Marken planen](mehrere-marken-planen.md)
 - [Einstellungen, Logs und Caches pro Website](einstellungen-logs-und-caches-pro-website.md)
-- [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)
 - [Multisite in einer Installation (für Hoster)](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md)
 - [Kapitel 10: Nach der Installation](../../../installation/10-nach-der-installation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

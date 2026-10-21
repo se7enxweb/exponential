@@ -54,7 +54,7 @@ seiner Erweiterung ([Betrieb einer Website, Abschnitt 7](../../../../anleitungen
 4. **Festplatte auf dem Datenbankserver voll**: Schaffen Sie gemeinsam mit dem Datenbankteam Platz.
 5. **Es gibt einen Standby-Server**: Wenn der Primärserver nicht bald zurückkommt, stufen Sie den Standby-Server mit den
    Werkzeugen des Herstellers hoch und richten Sie Exponential darauf aus
-   ([Auf eine Standby-Datenbank umschalten](../../../../../eng-us/help/government/tasks/operations/fail-over-to-a-standby-database.md)).
+   ([Auf eine Standby-Datenbank umschalten](../../aufgaben/betrieb/auf-eine-standby-datenbank-umschalten.md)).
 
 `ConnectRetries` (Standard `0`) lässt den Treiber nach einer gescheiterten ersten Verbindung erneut versuchen; einen
 Standby-Server ersetzt das nicht.

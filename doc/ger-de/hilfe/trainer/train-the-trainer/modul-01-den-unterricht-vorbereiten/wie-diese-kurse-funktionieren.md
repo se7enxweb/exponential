@@ -137,7 +137,7 @@ Verwenden Sie eine beliebige Installation, auf der Sie sich in der Administratio
 
 ## Weiterführende Literatur
 
-- [Das Hilfesystem](../../../../../eng-us/features/6.0/help-system.md): was das Hilfe-Center zeigt und wie es Seiten findet.
+- [Das Hilfesystem](../../../../funktionen/6.0/hilfesystem.md): was das Hilfe-Center zeigt und wie es Seiten findet.
 - [Freie Dokumentation](../../../freie-dokumentation.md): was die Lizenz Ihnen mit diesen Seiten erlaubt.
 - [Ablauf eines praktischen Workshops](../../../fuersprecher/ablaufplan-praxis-workshop.md): die kurzen Workshop-Formate
   der Fürsprecher, ein guter Vergleich für Ihre eigenen Kurse.

@@ -14,7 +14,7 @@ Templates lesen Daten mit `fetch`, das ein Operator ist, kein Funktions-Tag: Er 
 `eZTemplateExecuteOperator` (`lib/eztemplate/classes/eztemplateexecuteoperator.php`) über
 `lib/eztemplate/classes/eztemplateautoload.php` registriert. Die Fetch-Funktionen selbst (content `node`, `list`,
 `tree`, user `current_user` und so weiter) sind einzeln in der
-[Referenz der Fetch-Funktionen](../../../eng-us/examples/fetch-functions/README.md) dokumentiert.
+[Referenz der Fetch-Funktionen](../../beispiele/fetch-funktionen/README.md) dokumentiert.
 
 ## Inhalt
 
@@ -38,7 +38,7 @@ Ruft eine Funktion eines Moduls auf und gibt ihr Ergebnis zurück.
 | `function_parameters` | Hash der Parameter der Funktion | nein | `array()` |
 
 Eingabe: keine. Gibt zurück, was die Funktion in den Schlüssel `result` ihrer Antwort legt: ein Objekt, eine Liste,
-eine Zahl, oder `null`, wenn der Aufruf fehlschlägt. Generierte Referenz: [fetch](../../../eng-us/examples/template-operators/fetch.md).
+eine Zahl, oder `null`, wenn der Aufruf fehlschlägt. Generierte Referenz: [fetch](../../beispiele/template-operatoren/fetch.md).
 
 Die Kategorie Recipes auf alpha (Knoten 144) und ihre Unterknoten:
 
@@ -110,7 +110,7 @@ der Alias nicht zuordnet, werden unverändert weitergegeben (`eZFunctionHandler:
 | `function_parameters` | Hash | nein | `array()` |
 
 Eingabe: keine. Gibt das Ergebnis des fetch hinter dem Alias zurück. Generierte Referenz:
-[fetch_alias](../../../eng-us/examples/template-operators/fetch_alias.md). Der Kernel definiert acht Aliase (`object`,
+[fetch_alias](../../beispiele/template-operatoren/fetch_alias.md). Der Kernel definiert acht Aliase (`object`,
 `news_list`, `by_identifier`, `comments`, `children`, `children_count`, `subtree`, `reviews`); jeden Alias, seine
 Zuordnung und wie Sie eigene hinzufügen, finden Sie unter [Fetch-Aliase](fetch-aliase.md).
 
@@ -143,7 +143,7 @@ children: Almond French Toast; Avocado Kale Pesto Grilled Cheese;
    optionaler Parameter erhält seinen deklarierten Standardwert.
 4. Die Methode gibt ein Array zurück; sein Schlüssel `result` ist das, was das Template erhält.
 
-Eine solche Funktion schreiben: [Eine eigene Fetch-Funktion schreiben](../../../eng-us/help/creators/app-creators/writing-a-fetch-function.md).
+Eine solche Funktion schreiben: [Eine eigene Fetch-Funktion schreiben](../ersteller/anwendungsentwickler/eine-eigene-fetch-funktion-schreiben.md).
 
 ## Wenn ein fetch fehlschlägt
 
@@ -180,11 +180,11 @@ Beispiele auf dieser Seite ergaben auf alpha interpretiert und kompiliert diesel
 
 ## Verwandte Seiten
 
-- [Fetch-Funktionen: Daten in Templates lesen](../../../eng-us/help/creators/app-creators/fetch-functions.md)
-- [Fetch-Grundlagen für Designer](../../../eng-us/help/designers/templates/fetch-basics.md) und [Leistung von fetch](../../../eng-us/help/designers/templates/fetch-performance.md)
+- [Fetch-Funktionen: Daten in Templates lesen](../ersteller/anwendungsentwickler/fetch-funktionen.md)
+- [Fetch-Grundlagen für Designer](../designer/vorlagen/fetch-grundlagen.md) und [Leistung von fetch](../designer/vorlagen/fetch-leistung.md)
 - [Fetch-Aliase](fetch-aliase.md)
-- [Die Referenz der Fetch-Funktionen (generiert)](../../../eng-us/examples/fetch-functions/README.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Die Referenz der Fetch-Funktionen (generiert)](../../beispiele/fetch-funktionen/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

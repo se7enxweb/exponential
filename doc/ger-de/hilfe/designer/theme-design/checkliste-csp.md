@@ -55,7 +55,7 @@ grep -rn -E "<script>|on(click|change|load|submit|input|keyup|keydown|focus|blur
 ## Verwandte Seiten
 
 - [CSP-sicheres Design](csp-sicheres-design.md)
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

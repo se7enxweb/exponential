@@ -45,7 +45,7 @@ für Sie bestehen, bis Sie eine andere Stufe wählen oder Ihr Abonnement kündig
 
 **Garantiert ein Sponsoring eine Funktion?**
 Nein. Stufen erhöhen die Priorität; garantierte Arbeit braucht eine schriftliche Vereinbarung.
-[Funktionswünsche und gesponserte Funktionen](../../../eng-us/help/partners/feature-requests-and-sponsored-features.md)
+[Funktionswünsche und gesponserte Funktionen](../partner/funktionswuensche-und-gesponserte-funktionen.md)
 
 **Ich nutze GitHub nicht.**
 [Weitere Wege, Geld zu geben](weitere-wege-zu-geben.md)

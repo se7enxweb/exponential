@@ -149,14 +149,14 @@ Der Trainer bewertet jeden Plan mit diesem Bewertungsraster (drei Stufen pro Kri
 
 - [Die gemeinsame Migrations-Checkliste](../../../../installation/migration/checkliste.md): der Rahmen jedes Plans.
 - [Migration zu und von Exponential](../../../../installation/migration/README.md): der Hub und jede Anleitung.
-- [Quizze und praktische Aufgaben](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md):
+- [Quizze und praktische Aufgaben](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/quizze-und-praktische-aufgaben.md):
   wie man faire Prüfungen und Bewertungsraster erstellt.
 
 ## Verwandte Seiten
 
 - [Modul 8: Exponential verlassen und das Abschlussprojekt](README.md)
 - [Migration zu Exponential: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

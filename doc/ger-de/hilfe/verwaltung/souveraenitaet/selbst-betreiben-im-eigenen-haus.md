@@ -45,7 +45,7 @@ Sie im Kapitel der gewählten Methode, was sie herunterlädt.
 Zwei Wege, beide dokumentiert:
 
 - **Velocity**, der PHP-Anwendungsserver des Projekts (MIT-lizenziert), der Exponential selbst ausliefert
-  ([Velocity-Funktionen](../../../../eng-us/features/6.0/velocity-packages-and-binaries.md)).
+  ([Velocity-Funktionen](../../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)).
 - **Ein klassischer Webserver** mit PHP-FPM, zum Beispiel Apache mit den mitgelieferten Rewrite-Regeln
   ([8. Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)).
 
@@ -70,7 +70,7 @@ Alle sechs unterstützten Datenbanken können auf Ihren eigenen Rechnern laufen
 
 Mindestens zwei Personen, die Folgendes können: Linux-Server und PHP betreiben, die Datenbank betreiben und
 wiederherstellen, Updates mit Composer oder über die Seite **Updates and packages** einspielen und die Protokolle
-lesen. Schulungen sind im [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md) aufgeführt. Wenn Sie den Betrieb
+lesen. Schulungen sind im [Kurskatalog](../../trainer/kurskatalog.md) aufgeführt. Wenn Sie den Betrieb
 vergeben, behalten Sie eine Person im Haus, die den Dienstleister steuern kann (siehe „Das Wissen im Haus halten“).
 
 ## Verwandte Seiten

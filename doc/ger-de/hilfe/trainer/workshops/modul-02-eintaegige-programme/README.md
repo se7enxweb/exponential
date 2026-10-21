@@ -35,7 +35,7 @@ Hilfeseite, die er verwendet, den Kontrollpunkt, der zeigt, dass er funktioniert
 ## Dieses Modul vorbereiten
 
 - Machen Sie aus der gewählten Agenda einen Ablaufplan ([Lektion 1.4](../modul-01-einen-workshop-planen/der-ablaufplan.md)).
-- Bauen Sie die Übungsumgebung auf ([Modul 2 von Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md)).
+- Bauen Sie die Übungsumgebung auf ([Modul 2 von Train the Trainer](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md)).
 - Proben Sie jedes Abschlussprojekt auf dem Release, das Sie verwenden werden.
 
 ## Zeitplan
@@ -46,7 +46,7 @@ zwei Pausen zu 15 Minuten und eine Mittagspause von 45 Minuten.
 ## Verwandte Seiten
 
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

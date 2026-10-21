@@ -33,11 +33,11 @@ und Container.
 
 | Fakt | Quelle |
 |---|---|
-| Vier Stufen, mit Definitionen | [Die vier Stufen](../../../eng-us/help/os-support.md#the-four-tiers) |
-| Stufe 1: AlmaLinux 9 (der Entwicklungsserver) und Ubuntu auf GitHub Actions (CI auf PHP 8.1 bis 8.5) | [Stufe 1: hier getestet](../../../eng-us/help/os-support.md#tier-1-tested-here) |
-| Stufe 2: RHEL 9 und 10 und Verwandte, Debian 12 und 13, Ubuntu 22.04 und 24.04, Alpine, Plesk-Hosts, FreeBSD 14, DragonFly BSD, macOS, Windows, Docker und Podman | [Stufe 2: funktioniert nachweislich](../../../eng-us/help/os-support.md#tier-2-known-to-work) |
+| Vier Stufen, mit Definitionen | [Die vier Stufen](../betriebssystemunterstuetzung.md#die-vier-stufen) |
+| Stufe 1: AlmaLinux 9 (der Entwicklungsserver) und Ubuntu auf GitHub Actions (CI auf PHP 8.1 bis 8.5) | [Stufe 1: hier getestet](../betriebssystemunterstuetzung.md#stufe-1-hier-getestet) |
+| Stufe 2: RHEL 9 und 10 und Verwandte, Debian 12 und 13, Ubuntu 22.04 und 24.04, Alpine, Plesk-Hosts, FreeBSD 14, DragonFly BSD, macOS, Windows, Docker und Podman | [Stufe 2: funktioniert nachweislich](../betriebssystemunterstuetzung.md#stufe-2-bekanntermaßen-lauffähig) |
 | Velocity liefert `.deb`-Pakete für Debian und Ubuntu, ein Binary für macOS arm64 und Container-Images für amd64 und arm64 | ebenda |
-| Wer es auf einem System der Stufe 3 betreibt, wird gebeten, das zu melden, damit die Zeile aufsteigen kann | [Die vier Stufen](../../../eng-us/help/os-support.md#the-four-tiers) |
+| Wer es auf einem System der Stufe 3 betreibt, wird gebeten, das zu melden, damit die Zeile aufsteigen kann | [Die vier Stufen](../betriebssystemunterstuetzung.md#die-vier-stufen) |
 
 ## Was Sie nicht behaupten sollten
 

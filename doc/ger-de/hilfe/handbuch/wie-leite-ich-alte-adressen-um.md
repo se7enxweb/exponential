@@ -41,8 +41,8 @@ Benutzer, deren Rolle `content/urltranslator` hat.
 ## Verwandte Seiten
 
 - [Wie gebe ich einer Seite eine zusätzliche Adresse?](wie-gebe-ich-einer-seite-eine-zusaetzliche-adresse.md)
-- [URL-Platzhalter](../../../eng-us/help/creators/website-creators/url-wildcards.md)
-- [Weiterleitungen und verschobene Inhalte](../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)
+- [URL-Platzhalter](../ersteller/website-ersteller/url-platzhalter.md)
+- [Weiterleitungen und verschobene Inhalte](../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->

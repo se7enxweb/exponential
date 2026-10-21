@@ -58,7 +58,7 @@ die mit *(no handler, denies)* markiert ist, gewährt keinen Zugriff und sollte 
   gefundenen Administratoren.
 - **Doppelte E-Mail-Adresse**: gemeinsam genutzte Konten, die persönlich sein sollten.
 - **Liste als CSV exportieren** für die Prüfakte
-  ([Die Kontenliste für eine Überprüfung exportieren](../../../../../eng-us/help/government/tasks/people-and-permissions/export-the-account-list-for-a-review.md)).
+  ([Die Kontenliste für eine Überprüfung exportieren](../../aufgaben/personen-und-berechtigungen/die-kontenliste-fuer-eine-ueberpruefung-exportieren.md)).
 
 Prüfen Sie auf der Kontoseite jedes Administrators (`/user/edit/<id>`) den Hinweis zur zweistufigen Anmeldung und das Datum
 der letzten Passwortänderung ([Sicherheit und Audit, Schritt 6](../../../../anleitungen/sicherheit-und-audit.md#6-ein-konto-auf-seiner-kontoseite-prüfen-2-minuten)).
@@ -96,7 +96,7 @@ für alles andere und sofort, wenn ein Vertrag endet oder ein Team umorganisiert
 in Ihre Zugriffsrichtlinie ein ([Grundsätze der geringsten Rechte](prinzip-der-geringsten-rechte.md#eine-zugriffsrichtlinie-auf-einer-seite)).
 
 ## Verwandte Seiten
-- [Prüfen, wer Administrationsrechte hat](../../../../../eng-us/help/government/tasks/people-and-permissions/audit-who-has-admin-rights.md)
+- [Prüfen, wer Administrationsrechte hat](../../aufgaben/personen-und-berechtigungen/pruefen-wer-administratorrechte-hat.md)
 - [Pflege der Benutzerkonten](pflege-von-benutzerkonten.md)
 - [Funktionstrennung](funktionstrennung.md)
 - [Checkliste zur Sicherheitsprüfung (Hosting)](../../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)

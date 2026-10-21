@@ -43,7 +43,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Der Layout-Editor](../../../layout-editor.md#layouts-zonen-und-blöcke) und
-[Landingpages mit dem Layout-Editor](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#the-five-ideas).
+[Landingpages mit dem Layout-Editor](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#die-fünf-grundbegriffe).
 
 1. **Layout** (3 Minuten). Ein benannter Plan einer Seite, beruhend auf einem **Layout-Typ**, der ihre Zonen festlegt;
    der Typ lässt sich später nicht ändern. Beispiel: *Landing Page / Home*.
@@ -121,7 +121,7 @@ Verwenden Sie Papier und die öffentliche Website der Schulungsinstallation.
 <summary>Antworten</summary>
 
 1. **B.** Der Typ legt die Zonen fest und lässt sich später nicht ändern
-   ([Landingpages mit dem Layout-Editor](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#the-five-ideas)).
+   ([Landingpages mit dem Layout-Editor](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#die-fünf-grundbegriffe)).
 2. Eine Regel (Zuordnung), über ihre Ziele, Bedingungen und Priorität.
 3. Manuell: von Hand ausgewählte Elemente. Dynamisch: eine Abfrage, die die Elemente findet, wenn die Seite angezeigt
    wird.
@@ -133,15 +133,15 @@ Verwenden Sie Papier und die öffentliche Website der Schulungsinstallation.
 ## Weiterführende Informationen
 
 - [Der Layout-Editor](../../../layout-editor.md): der Editor für Redakteure.
-- [Landingpages mit dem Layout-Editor](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md): die Sicht
+- [Landingpages mit dem Layout-Editor](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md): die Sicht
   der Website-Ersteller.
-- [Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md): die vollständige Referenz, für den Trainer.
+- [Exponential Layouts](../../../../bc/6.0/layouts.md): die vollständige Referenz, für den Trainer.
 
 ## Verwandte Seiten
 
 - [Modul 1: Exponential Layouts kennenlernen](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

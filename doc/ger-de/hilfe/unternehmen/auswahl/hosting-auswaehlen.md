@@ -25,7 +25,7 @@ ausführliche Fassung für Projektleiter ist
 
 ## Was die Website braucht
 
-Aus [Hosting-Anforderungen für eine Website](../../../../eng-us/help/creators/website-creators/hosting-for-a-website.md#the-checklist)
+Aus [Hosting-Anforderungen für eine Website](../../ersteller/website-ersteller/hosting-fuer-eine-website.md#die-checkliste)
 und `README.md`, „Requirements“:
 
 | Bedarf | Minimum | Hinweise |
@@ -88,7 +88,7 @@ Kopieren und abschicken; mehr in [Fragen an einen Partner](fragen-an-einen-partn
 - [ ] Wie bekomme ich alle meine Daten und Dateien, wenn ich gehe?
 
 Die vollständige technische Liste für Hoster steht in
-[Hosting-Anforderungen für eine Website: Fragen](../../../../eng-us/help/creators/website-creators/hosting-for-a-website.md#questions-for-a-hosting-provider).
+[Hosting-Anforderungen für eine Website: Fragen](../../ersteller/website-ersteller/hosting-fuer-eine-website.md#fragen-an-einen-hosting-anbieter).
 
 ## Ein Entscheidungsprotokoll
 

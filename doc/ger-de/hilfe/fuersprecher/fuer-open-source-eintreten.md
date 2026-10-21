@@ -25,7 +25,7 @@ Dokumentation unter der GNU FDL ([Gesprächspunkte: Open Source und Lizenzierung
 | Wert | Wie Exponential ihn zeigt | Quelle |
 |---|---|---|
 | Freiheit, zu nutzen, zu studieren, zu ändern, zu teilen | GPL v2 oder später | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) |
-| Transparenz | Eine öffentliche Geschichte seit 2002; seit 2023 wird jeder Monat erzählt | [Die Geschichte](../../../eng-us/history/README.md) |
+| Transparenz | Eine öffentliche Geschichte seit 2002; seit 2023 wird jeder Monat erzählt | [Die Geschichte](../../geschichte/README.md) |
 | Beiträge bleiben frei | Änderungen werden unter derselben GPL veröffentlicht | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | Respekt vor Beitragenden | Jeder Pull Request wird übernommen, Commits bleiben, wie sie geschrieben wurden | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | Nennung | Die Arbeit von Netgen, Mugo Web, CJW Network wird namentlich genannt | [Andere Projekte respektieren](andere-projekte-respektieren.md) |

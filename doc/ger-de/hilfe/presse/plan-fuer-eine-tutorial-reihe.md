@@ -45,7 +45,7 @@ Hilfe gehören zur Entwicklungslinie 6.0.15, die kein Veröffentlichungsdatum ha
 
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
-| B1 | Von null auf SQLite installieren | 10 Min. | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) | [Installation von null](demo-skript-installation-von-null.md) |
+| B1 | Von null auf SQLite installieren | 10 Min. | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) | [Installation von null](demo-skript-installation-von-null.md) |
 | B2 | Layouts, Zonen und Blöcke | 8 Min. | [Der Layout-Editor](../layout-editor.md) | [Exponential Layouts](demo-skript-exponential-layouts.md) |
 | B3 | Inhaltstypen: Klassen und Attribute | 8 Min. | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) | [Rundgang für Administratoren, Teil 1](demo-skript-rundgang-fuer-administratoren.md#teil-1-das-inhaltsmodell-2-minuten) |
 | B4 | Arbeiten mit Git: der eigene Branch, Updates und ein erster Pull Request | 10 Min. | [Mit Git entwickeln](../mit-git-entwickeln.md) | Ihr eigenes, nach der Hilfeseite |
@@ -54,7 +54,7 @@ Hilfe gehören zur Entwicklungslinie 6.0.15, die kein Veröffentlichungsdatum ha
 
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
-| C1 | Die Website unter Velocity betreiben | 8 Min. | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) | [Velocity](demo-skript-velocity.md) |
+| C1 | Die Website unter Velocity betreiben | 8 Min. | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) | [Velocity](demo-skript-velocity.md) |
 | C2 | Rollen, zweistufige Anmeldung und das Prüfprotokoll | 8 Min. | [Sicherheitshärtung](../sicherheitshaertung.md) | [Rundgang für Administratoren, Teil 4](demo-skript-rundgang-fuer-administratoren.md#teil-4-sicherheit-3-minuten) |
 | C3 | Logs, Upgrade-Prüfung und Caches | 8 Min. | [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md) | [Rundgang für Administratoren, Teil 3](demo-skript-rundgang-fuer-administratoren.md#teil-3-betrieb-3-minuten) |
 

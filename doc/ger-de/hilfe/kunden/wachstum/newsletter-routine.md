@@ -57,7 +57,7 @@ Hinweise, die Ärger ersparen:
       ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)).
 
 Die ersten drei stammen aus der Checkliste für Website-Ersteller
-([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)).
+([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md)).
 
 ## Wenn etwas nicht hinausgehen soll
 
@@ -72,7 +72,7 @@ beschreibt, wie Sie einen Versand abbrechen, der nicht hinausgehen soll. Dann:
 
 | Ansehen | Warum | Lesen Sie |
 |---|---|---|
-| Die Problemliste im Newsletter-Dashboard | Probleme bei Transport, Cron und Konfiguration | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
+| Die Problemliste im Newsletter-Dashboard | Probleme bei Transport, Cron und Konfiguration | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
 | Bounces, Blacklist und Sperrliste | eine saubere Liste hält die Zustellung gesund | [Bounces und Listenpflege](../../unternehmen/newsletter/bounces-und-listenpflege.md) |
 | An- und Abmeldungen | wächst die Liste, und warum gehen Menschen? | [Listen und Abonnements](../../unternehmen/newsletter/listen-und-abonnements.md) |
 | Statistik, wo Abonnenten eingewilligt haben | welche Artikel geöffnet wurden | [Opt-in und Einwilligung](../../unternehmen/newsletter/opt-in-und-einwilligung.md) |

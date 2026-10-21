@@ -53,7 +53,7 @@ sehen.
   ([Sicherheitshärtung](../../sicherheitshaertung.md)).
 - Legen Sie keine Kundendaten und kein privates Material auf eine Demo.
 
-**Demo-Websites mit veröffentlichter Anmeldung.** Betreiben Sie sie im Demomodus (`EXP_DEMO_MODE=1`), damit Besucher das Administratorpasswort nicht ändern können. Ein Theme, das `user/forgotpassword.tpl` oder `user/password.tpl` überschreibt, sollte den Hinweis des Kernels anzeigen (`demo_mode_text`, `demo_mode_locked`, gelesen mit `first_set()`). [Demomodus für Entwickler](../../../../eng-us/help/extension-development/part-8-reference/demo-mode-for-developers.md).
+**Demo-Websites mit veröffentlichter Anmeldung.** Betreiben Sie sie im Demomodus (`EXP_DEMO_MODE=1`), damit Besucher das Administratorpasswort nicht ändern können. Ein Theme, das `user/forgotpassword.tpl` oder `user/password.tpl` überschreibt, sollte den Hinweis des Kernels anzeigen (`demo_mode_text`, `demo_mode_locked`, gelesen mit `first_set()`). [Demomodus für Entwickler](../../erweiterungsentwicklung/teil-8-referenz/demomodus-fuer-entwickler.md).
 
 ## Verwandte Seiten
 

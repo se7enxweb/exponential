@@ -67,7 +67,7 @@ Ersatz folgen (siehe „Mehrsprachige Suche“).
 
 - [Immer verfügbare Inhalte](immer-verfuegbare-inhalte.md)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
-- [Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md#fallbacks-and-untranslated-content)
+- [Eine mehrsprachige Website bauen](../../ersteller/website-ersteller/mehrsprachige-websites.md#fallbacks-und-nicht-übersetzte-inhalte)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

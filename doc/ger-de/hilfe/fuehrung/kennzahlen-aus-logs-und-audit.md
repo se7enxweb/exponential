@@ -39,8 +39,8 @@ Ausgangsbasis, und berichtet wird der Verlauf über die Zeit.
 - **Gleicher Zeitraum, gleiche Quelle.** Vergleichen Sie Gleiches mit Gleichem: dieselbe Anzahl Tage, von derselben
   Seite abgelesen.
 - **Datenschutz zuerst.** Die Logs und das Audit-Protokoll maskieren Client-Adressen, hashen Sitzungen und entfernen Werte
-  von Abfrageparametern ([Request-Logs, „Privacy“](../../../eng-us/features/6.0/request-logs.md#privacy),
-  [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)). Berichten Sie zusammengefasste Werte, nicht einzelne
+  von Abfrageparametern ([Request-Logs, „Privacy“](../../funktionen/6.0/anfrageprotokolle.md#datenschutz),
+  [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)). Berichten Sie zusammengefasste Werte, nicht einzelne
   Personen. Eine Liste der „aktivsten Akteure“ ist für den Administrator, nicht für eine Präsentationsfolie.
 - **Eine Zahl ist ein Hinweis.** Die Seite zu den Cronjobs sagt das über ihre eigene Zahl der Probleme: „Sie ist ein
   Hinweis, kein Urteil“ ([Cronjobs](../../anleitungen/cronjobs.md#10-letzte-ausführungen-und-wie-probleme-gezählt-werden)). Lesen Sie die
@@ -50,12 +50,12 @@ Ausgangsbasis, und berichtet wird der Verlauf über die Zeit.
 
 | Quelle | Benötigte Richtlinie | Quellseite |
 |---|---|---|
-| Tab Audit: Dashboard, Konsole, Diagramme, Alarme, Export | `audit/read` (wahlweise nach Kanal eingeschränkt); in einer neuen Installation hat sie nur Administrator | [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| Tab Audit: Dashboard, Konsole, Diagramme, Alarme, Export | `audit/read` (wahlweise nach Kanal eingeschränkt); in einer neuen Installation hat sie nur Administrator | [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md) |
 | Audit-Archive und -Einstellungen, „Jetzt prüfen“ | `audit/manage` | ebenda |
-| Log-Viewer, Fehlerübersicht, Zustand der Logs | `setup/logs` | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
+| Log-Viewer, Fehlerübersicht, Zustand der Logs | `setup/logs` | [Log-Viewer](../../funktionen/6.0/log-betrachter.md) |
 | Systeminformationen | `setup/system_info` | [Systeminformationen](../../anleitungen/systeminformationen.md) |
 | Upgrade-Prüfung | `setup/setup` | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
-| Inhaltsprüfungen | Richtlinien des Moduls `contentcheck` | [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md) |
+| Inhaltsprüfungen | Richtlinien des Moduls `contentcheck` | [Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md) |
 
 Eine Berichtsrolle für einen Projektleiter kann `audit/read`, eingeschränkt auf die benötigten Kanäle, enthalten, ohne
 das Recht, irgendetwas zu ändern. Legen Sie sie an, wie [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)
@@ -65,7 +65,7 @@ es beschreibt.
 
 Das Audit-Protokoll ist ab Werk eingeschaltet und zeichnet Inhaltsänderungen, Anmeldungen, geschriebene Einstellungen,
 geleerte Caches, Cronjob-Läufe und Bestellungen in den Kanälen `content`, `access`, `system`, `commerce` und, wenn
-eingeschaltet, `read` auf ([Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)). Es braucht die Cronjob-Gruppe
+eingeschaltet, `read` auf ([Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)). Es braucht die Cronjob-Gruppe
 `frequent`, deren Teil `audit` die Ereignisse indiziert, die die Diagramme und die Konsole lesen.
 
 | Kennzahl | Wo | Wie |
@@ -75,11 +75,11 @@ eingeschaltet, `read` auf ([Das Audit-Protokoll](../../../eng-us/features/6.0/au
 | In einem Zeitraum veröffentlichte Objekte | **Audit > Konsole**, gefiltert auf den Namen `content.object.publish` und einen Zeitraum; **Export** sagt, wie viele Einträge der Filter umfasst | Oder `./console exp:audit search --name=content.object.publish --from=<time> --to=<time>` |
 | In einem Zeitraum entfernte Inhalte | Konsole oder Suche mit Namen `content.node.*` und `content.object.*` (zum Beispiel `content.node.remove`) | Das Entfernen eines Teilbaums ist ein übergeordnetes Ereignis mit einem untergeordneten pro Knoten |
 | Aktivste Redakteure und am häufigsten geänderte Objekte | **Audit > Dashboard**, Karte *Aktivität* (heute); **Diagramme**, „top actors“ und „top event names“ | Für den Administrator; berichten Sie Zahlen, keine Namen |
-| Massenbearbeitung | Inhaltsjobs sind übergeordnete Ereignisse von allem, was ihre Stapel getan haben | [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) |
+| Massenbearbeitung | Inhaltsjobs sind übergeordnete Ereignisse von allem, was ihre Stapel getan haben | [Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md) |
 
 **Die Zahlen erheben.** **Audit > Export** schreibt den aktuellen Filter der Konsole als CSV, JSON Lines oder JSON;
 **Jetzt herunterladen** liefert ihn direkt aus, **Im Hintergrund exportieren** startet für einen großen Filter einen
-Inhaltsjob. In einer Shell tut `./console exp:audit export` dasselbe ([Audit-Referenz](../../../eng-us/bc/6.0/audit.md)). Eine
+Inhaltsjob. In einer Shell tut `./console exp:audit export` dasselbe ([Audit-Referenz](../../bc/6.0/audit.md)). Eine
 monatliche CSV-Datei, die bei den Berichten des Projekts abgelegt wird, ergibt eine Reihe, die Sie in jeder
 Tabellenkalkulation als Diagramm darstellen können.
 
@@ -99,8 +99,8 @@ brauchbares Maß dafür, ob die Freigaben Schritt halten.
 | Rollenzuweisungen | **Audit > Dashboard**, Karte *Sicherheit*: die letzten Rollenzuweisungen | Jede sollte zu einer Anfrage passen, die Sie kennen |
 | Ausgelöste Alarme | **Audit > Alarme** (`audit/alerts`): Regel, Anzahl, Zeitfenster | Regeln für Brute-Force-Angriffe, vergebene Administratorrollen, außerhalb der Arbeitszeit geschriebene Einstellungen, Massenlöschungen, abgeschaltetes Audit, unterbrochene Kette |
 | Audit-Kette intakt | **Audit > Dashboard**, *Zustand*; `./console exp:audit verify` (Exit-Status 1, wenn unterbrochen) | Berichten Sie „intakt am <Datum>“ |
-| Sondierungen und Angriffe, nach Art | **Setup > Logdateien > Fehlerübersicht**, `security.log` gruppiert nach `<category>/<rule>` (zum Beispiel `probe/wp-login`) | Der Klassifizierer klassifiziert nur; nichts wird blockiert ([Request-Logs](../../../eng-us/features/6.0/request-logs.md)) |
-| Verstöße gegen die Content Security Policy | Fehlerübersicht des Logs `csp`, gruppiert nach Direktive und blockierter Quelle | Die Grundlage, um eine Richtlinie auf Erzwingen umzustellen ([Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md#reports)) |
+| Sondierungen und Angriffe, nach Art | **Setup > Logdateien > Fehlerübersicht**, `security.log` gruppiert nach `<category>/<rule>` (zum Beispiel `probe/wp-login`) | Der Klassifizierer klassifiziert nur; nichts wird blockiert ([Request-Logs](../../funktionen/6.0/anfrageprotokolle.md)) |
+| Verstöße gegen die Content Security Policy | Fehlerübersicht des Logs `csp`, gruppiert nach Direktive und blockierter Quelle | Die Grundlage, um eine Richtlinie auf Erzwingen umzustellen ([Content Security Policy](../../funktionen/6.0/content-security-policy.md#berichte)) |
 
 > **Hinweis**
 > Ein Anstieg in `security.log` sagt meist mehr über das Internet als über Ihre Site aus. Die Hilfe rät, sich die
@@ -111,9 +111,9 @@ brauchbares Maß dafür, ob die Freigaben Schritt halten.
 
 | Kennzahl | Wo | Wie gezählt wird |
 |---|---|---|
-| Unterschiedliche Fehler und Warnungen der letzten 24 Stunden | **Setup > Logdateien > Fehlerübersicht** | Meldungen maskiert, normalisiert, gruppiert und gezählt, die häufigsten zuerst; ein anderer Zeitraum mit `/(hours)/N`, 1 bis 168 ([Log-Viewer](../../../eng-us/features/6.0/log-viewer.md#error-digest)) |
+| Unterschiedliche Fehler und Warnungen der letzten 24 Stunden | **Setup > Logdateien > Fehlerübersicht** | Meldungen maskiert, normalisiert, gruppiert und gezählt, die häufigsten zuerst; ein anderer Zeitraum mit `/(hours)/N`, 1 bis 168 ([Log-Viewer](../../funktionen/6.0/log-betrachter.md#fehlerübersicht)) |
 | Neue Fehlergruppen seit dem letzten Bericht | Fehlerübersicht mit **Als bekannt markieren** für die bereits erklärten Gruppen | Bekannte Gruppen werden für den Betrachter ausgeblendet |
-| Fehlende Seiten (404 und 410), nach Grund | Fehlerübersicht von `404.log`, gruppiert nach seinem Feld `reason=` (`module:...`, `node:#`, `view:...`) | „Warum Seiten fehlen, nicht eine Liste jeder fehlenden Adresse“ ([Request-Logs](../../../eng-us/features/6.0/request-logs.md#the-log-viewer-rotation-and-the-error-digest)) |
+| Fehlende Seiten (404 und 410), nach Grund | Fehlerübersicht von `404.log`, gruppiert nach seinem Feld `reason=` (`module:...`, `node:#`, `view:...`) | „Warum Seiten fehlen, nicht eine Liste jeder fehlenden Adresse“ ([Request-Logs](../../funktionen/6.0/anfrageprotokolle.md#der-log-viewer-die-rotation-und-die-fehlerübersicht)) |
 | Von Redakteuren gemeldete Fehler | Die von Redakteuren weitergegebenen Fehlerreferenzen (`ERR-...`) | [Einen Fehler anhand seiner Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 
 Nach einer Migration sind die 404-Gruppen nach Grund ein direktes Maß dafür, wie viele alte Adressen noch eine
@@ -127,7 +127,7 @@ Weiterleitung oder einen URL-Alias brauchen ([URLs und Aliase](../../anleitungen
 | Cronjob-Läufe und ihr Ergebnis | **Setup > Cronjobs**, *Letzte Läufe*: die letzten 20 von der Seite gestarteten Läufe, mit Dauer und *OK* oder *n Probleme* | Probleme sind Zeilen mit *error*, *fatal*, *exception*, *failed*, *failure* oder *warning* ([Cronjobs](../../anleitungen/cronjobs.md#10-letzte-ausführungen-und-wie-probleme-gezählt-werden)) |
 | Jeder Cronjob-Lauf, auch aus der Crontab | Audit, `system.cronjob.run` und `system.cronjob.fail` | Anzahl pro Tag in der Konsole |
 | Aktualität der Cronjobs | Die Cronjob-Prüfung der Systeminformationen (ein letzter Lauf vor mehr als zwei Tagen wird markiert); das Audit-Dashboard warnt, wenn sein Teil eine Stunde lang nicht gelaufen ist | |
-| Speicherplatz der Logs im Verhältnis zum Budget | **Setup > Logdateien > Zustand der Logs**: Speicherplatz im Verhältnis zu `[HealthSettings] DiskBudget` (Voreinstellung 256 MB; Warnung ab 80 %) | Außerdem die am schnellsten wachsenden Logs und Logs über ihrer Größengrenze ([Zustand der Logs](../../../eng-us/features/6.0/log-viewer.md#log-health)) |
+| Speicherplatz der Logs im Verhältnis zum Budget | **Setup > Logdateien > Zustand der Logs**: Speicherplatz im Verhältnis zu `[HealthSettings] DiskBudget` (Voreinstellung 256 MB; Warnung ab 80 %) | Außerdem die am schnellsten wachsenden Logs und Logs über ihrer Größengrenze ([Zustand der Logs](../../funktionen/6.0/log-betrachter.md#zustand-der-logs)) |
 | Größe von `var/` und der Caches | **Setup > Systeminformationen > Größen messen** | Zehn Minuten lang gespeichert; **Erneut messen** misst neu |
 | Cache-Status | `php bin/php/cache.php status` endet mit `PASS` | [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md#10-eine-wöchentliche-checkliste) |
 
@@ -137,7 +137,7 @@ Cron-Einträge vorhanden, ein Backup aus den letzten sieben Tagen, das mindesten
 
 ## Inhaltsqualität
 
-Aus [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md), im Setup-Menü:
+Aus [Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md), im Setup-Menü:
 
 | Kennzahl | Wo | Was gezählt wird |
 |---|---|---|
@@ -180,7 +180,7 @@ PHP-Konfiguration“ (Abschnitt 10 enthält eine Checkliste). Berichten Sie die 
 Für Teams, deren Repositorys auf GitHub Actions laufen, funktioniert das Berichtsskript des Projekts auch für sie:
 `python3 .github/scripts/ci_health_report.py --days 14` gibt die Erfolgsquote pro Workflow und Ereignis aus, die am
 häufigsten fehlschlagenden Schritte und Tests sowie instabile Läufe
-([CI, „How healthy CI is“](../../../eng-us/bc/6.0/ci.md#how-healthy-ci-is-the-report)). Das Projekt hat seine eigene Ausgangsbasis
+([CI, „How healthy CI is“](../../bc/6.0/ci.md#wie-gesund-die-ci-ist-der-bericht)). Das Projekt hat seine eigene Ausgangsbasis
 veröffentlicht: 61,7 % von 1.540 abgeschlossenen Läufen waren vom 2026-10-03 bis 2026-10-17 erfolgreich, vor den
 Reparaturen jener Woche.
 
@@ -198,9 +198,9 @@ Seien Sie in Ihren Berichten hierzu ehrlich:
 
 - **Besucherverkehr.** Die hier verwendeten Quellen beschreiben keinen eingebauten Bericht zur Besucheranalyse. Was es
   gibt: Der Audit-Kanal `read` zeichnet stichprobenartig Knotenaufrufe, Suchen und Downloads auf, aber nur, wenn
-  Lesezugriffe eingeschaltet sind ([Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)); den Cronjob
+  Lesezugriffe eingeschaltet sind ([Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)); den Cronjob
   `updateviewcount` (genannt im [Changelog 6.0.11](../../../changelogs/6.0/6.0.11.md)); und die Erweiterung
-  [bcwebsitestatistics](../../../eng-us/features/6.0/extensions/bcwebsitestatistics.md), die das Skript eines externen
+  [bcwebsitestatistics](../../funktionen/6.0/erweiterungen/bcwebsitestatistics.md), die das Skript eines externen
   Analysedienstes einbindet. Wählen Sie bewusst und mit Blick auf den Datenschutz.
 - **Zufriedenheit der Redakteure, eingesparte Zeit, Konversionen.** Messen Sie sie mit eigenen Umfragen oder Werkzeugen,
   und sagen Sie das auch.
@@ -255,10 +255,10 @@ Comments and actions:
 
 ## Verwandte Seiten
 
-- [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) und die [Audit-Referenz](../../../eng-us/bc/6.0/audit.md)
-- [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md), [Request-Logs](../../../eng-us/features/6.0/request-logs.md)
-- [Cronjobs](../../anleitungen/cronjobs.md), [Systeminformationen](../../anleitungen/systeminformationen.md), [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md)
-- [Benchmarking](../../anleitungen/benchmarking.md), [Continuous Integration](../../../eng-us/bc/6.0/ci.md)
+- [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md) und die [Audit-Referenz](../../bc/6.0/audit.md)
+- [Log-Viewer](../../funktionen/6.0/log-betrachter.md), [Request-Logs](../../funktionen/6.0/anfrageprotokolle.md)
+- [Cronjobs](../../anleitungen/cronjobs.md), [Systeminformationen](../../anleitungen/systeminformationen.md), [Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md)
+- [Benchmarking](../../anleitungen/benchmarking.md), [Continuous Integration](../../bc/6.0/ci.md)
 - [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md), [Risikomanagement](risikomanagement.md), [Projektvorlagen](projektvorlagen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -53,7 +53,7 @@ Hoster steht unter [Einen Webserver wählen](../../../hosting/server/einen-webse
 | E-Mail | sendmail, SMTP, Datei (Test) | | | | [E-Mail-Zustellung](../../../hosting/betrieb/mailzustellung.md) |
 | Suche | eingebaut; Solr über ezfind | | | | [Such-Backends](../../../hosting/grundlagen/such-backends.md) |
 | Speicherort der Daten | Inventar jedes Orts, an dem Daten liegen | | | | [Speicherort der Daten und was wo gespeichert wird](datenstandort-und-was-wo-gespeichert-wird.md) |
-| Aktive Erweiterungen mit Kontakt zu Dritten | keine, oder aufgeführt und begründet | | | | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
+| Aktive Erweiterungen mit Kontakt zu Dritten | keine, oder aufgeführt und begründet | | | | [Datenschutzstandards](../../../../standards/datenschutz.md) |
 | Überwachung | externe Verfügbarkeitsprüfung; interne Statusbefehle | | | | [Zustandsprüfungen und Verfügbarkeit](../../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md) |
 
 ## Fakten, die Sie von der laufenden Website sammeln

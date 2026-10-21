@@ -10,7 +10,7 @@ type: help
 # Demo-Skript: Velocity
 
 Diese Seite ist für Creator, die **Exponential Velocity** zeigen, den Anwendungsserver, der "boots once and keeps a pool
-of workers alive" ([Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)). Geschwindigkeit ist das Thema,
+of workers alive" ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)). Geschwindigkeit ist das Thema,
 bei dem Videos am häufigsten mehr sagen als die Quellen. Dieses Skript zeigt, wie Velocity funktioniert, und zitiert nur
 die dokumentierten Zahlen, mit ihrer Methode. Es dauert etwa acht Minuten, in einem Terminal und einem Browser.
 
@@ -43,7 +43,7 @@ Die ausgelieferte Standard-Engine ist `php` (der eingebaute Server von PHP, nur 
 empfohlene Engine und FrankenPHP die produktionsreife Alternative. Ausgelieferte Ports: `qbix` 8088 (HTTP) und 8080
 (HTTPS), `frankenphp` 8089 und 8444, `php` 8087. Starten Sie ihn einmal außerhalb der Kamera und setzen Sie das Passwort
 des Control Panels über die Befehlszeile, damit das Passwort nie auf dem Bildschirm erscheint
-([Velocity Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md#first-sign-in)).
+([Velocity Control Panel](../../funktionen/6.0/velocity-control-panel.md#erste-anmeldung)).
 
 ## Das Skript
 
@@ -54,7 +54,7 @@ des Control Panels über die Befehlszeile, damit das Passwort nie auf dem Bildsc
 | 1:00 | Terminal | `./console exp:velocity start` | „Ein Befehl startet den Server und zeigt seinen Status.“ |
 | 1:30 | Terminal | `./console exp:velocity status` | „Er listet jede Adresse auf, die man öffnen kann, die HTTPS-Adresse neben der unverschlüsselten, und ob die Caches gemeinsamen Speicher bekommen.“ |
 | 2:15 | Browser | Die HTTPS-Adresse der Website öffnen | „HTTPS vom ersten Start an: Für mich wird ein selbstsigniertes Zertifikat erzeugt; meine eigenen Zertifikate werden verwendet, wenn ich sie angebe.“ Akzeptieren Sie die Browserwarnung möglichst außerhalb der Kamera |
-| 3:00 | Entwicklerwerkzeuge des Browsers, Netzwerk | Die Startseite zweimal neu laden | „Die erste Antwort wird gerendert; die zweite hat `X-Cache: HIT`: beantwortet aus dem Antwort-Cache des Servers.“ ([Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md#read-it-headers-and-health)) |
+| 3:00 | Entwicklerwerkzeuge des Browsers, Netzwerk | Die Startseite zweimal neu laden | „Die erste Antwort wird gerendert; die zweite hat `X-Cache: HIT`: beantwortet aus dem Antwort-Cache des Servers.“ ([Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md#ablesen-header-und-zustand)) |
 | 4:00 | Browser | `/Q/dashboard` öffnen (im Panel angemeldet) | „Das eigene Dashboard des Servers: laufende Anfragen, Worker, Speicher, Statuscodes, häufigste Pfade, ohne Neuladen.“ |
 | 5:00 | Terminal | `./console exp:velocity graceful` | „Die Worker laden einer nach dem anderen neu; der Port antwortet weiter.“ |
 | 5:45 | Terminal | `./console exp:velocity cache clear` | „Nach einer Änderung an einem Template oder Stylesheet leert dies jeden Cache.“ |
@@ -103,7 +103,7 @@ Exponential und seinen Caches, was überall hilft, wo es läuft.“
 
 ## Verwandte Seiten
 
-- [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Gesprächspunkte: Geschwindigkeit und Velocity](../fuersprecher/gespraechspunkte-geschwindigkeit-und-velocity.md)
 - [Benchmarking](../../anleitungen/benchmarking.md)
 - [Demo-Skript: Installation von null](demo-skript-installation-von-null.md)

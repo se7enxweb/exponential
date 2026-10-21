@@ -19,7 +19,7 @@ arbeiten.
   bleiben so erhalten, wie der Mitwirkende sie geschrieben hat, und werden niemals umgeschrieben“
   (`doc/eng-us/bc/6.0/ci.md`). `git shortlog -sn` zeigt alle, die beigetragen haben.
 - **Der Urheberrechtsvermerk der Dokumentation** nennt „the Exponential contributors“ neben 7x und der Foundation
-  ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+  ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).
 - **Nennung im README** für die Arbeit anderer Projekte, zum Beispiel „with full credit to Mugo Web“ (README).
 
 ## Sponsoren
@@ -41,7 +41,7 @@ Ihr Sponsoring öffentlich angezeigt wird (GitHub Docs, „About sponsorships, f
 ## Partner
 
 Partner werden durch Stufen, Einträge und Punkte für ihre Arbeit in der Community gewürdigt
-([Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)).
+([Partner: Hier beginnen](../partner/partner-hier-beginnen.md)).
 
 ## Noch nicht festgelegt
 

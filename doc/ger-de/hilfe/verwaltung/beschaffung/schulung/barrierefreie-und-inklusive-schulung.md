@@ -14,7 +14,7 @@ deren Beschäftigten Exponential beibringen. Öffentliche Arbeitgeber haben Pfli
 Behinderungen, und Redaktionsmitglieder, die assistive Technologien nutzen, müssen das System erlernen können, mit dem
 sie arbeiten werden. Die Hinweise stammen aus
 [Modul 5 von Train the Trainer: Barrierefreiheit und Inklusion](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)
-und den Nachweisen zur Barrierefreiheit in den [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
+und den Nachweisen zur Barrierefreiheit in den [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -33,18 +33,18 @@ Exponential hat mehrere Administrationsdesigns. Die Arbeit an der Barrierefreihe
 seine Layout-Variante **admin4l**: Sprunglink, Landmarks, Tastaturunterstützung für Tabs und Menüs, beschriftete
 Formularelemente, Fehlerzusammenfassungen, auf Kontrast geprüfte Farben im hellen und dunklen Modus und Zielflächen von
 mindestens 24 mal 24 Pixeln. Sein Status gegenüber WCAG 2.2 AA ist **Teilweise erfüllt**; die klassische Administration
-ist nicht durch dieselben Tests abgedeckt ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
+ist nicht durch dieselben Tests abgedeckt ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)).
 
 Für Teilnehmende, die einen Screenreader, nur die Tastatur, starken Zoom oder den dunklen Modus verwenden, unterrichten
 Sie auf admin4:
 
 - zeigen Sie die [Tastaturkürzel](../../../tastenkuerzel.md);
 - zeigen Sie den hellen, dunklen und systemabhängigen Modus, die der Einstellung des Benutzers folgen
-  ([Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md));
+  ([Das Design admin4](../../../../funktionen/6.0/admin4-design.md));
 - prüfen Sie Übungen bei 200 % Zoom, wie das Projekt es bei seinen eigenen Seiten tut.
 
 Der Online-Editor (TinyMCE) wurde **nicht** auf WCAG **geprüft**; planen Sie zusätzliche Zeit und eine Ausweichlösung für
-Teilnehmende ein, denen die Nutzung mit assistiven Technologien schwerfällt ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#known-gaps)).
+Teilnehmende ein, denen die Nutzung mit assistiven Technologien schwerfällt ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#bekannte-lücken)).
 [Mit der barrierefreien Administration unterrichten](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/mit-der-barrierefreien-administration-unterrichten.md)
 enthält die Lektion.
 
@@ -53,16 +53,16 @@ enthält die Lektion.
 - Handouts mit echten Überschriften, Alternativtext für Screenshots und lesbarem Kontrast
   ([Barrierefreie Kursmaterialien](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/barrierefreie-kursmaterialien.md)).
 - Die Hilfe selbst folgt denselben Regeln: eine Hauptüberschrift je Seite, benannte Navigation, beschriftete Suche
-  ([Hilfesystem](../../../../../eng-us/features/6.0/help-system.md#languages-and-accessibility)), sodass die Teilnehmenden sie mit
+  ([Hilfesystem](../../../../funktionen/6.0/hilfesystem.md#sprachen-und-barrierefreiheit)), sodass die Teilnehmenden sie mit
   assistiven Technologien nutzen können.
-- Untertitel für aufgezeichnete Termine ([Untertitel und barrierefreie Videos](../../../../../eng-us/help/press/captions-and-accessible-video.md)
+- Untertitel für aufgezeichnete Termine ([Untertitel und barrierefreie Videos](../../../presse/untertitel-und-barrierefreie-videos.md)
   gibt Praxis für Videos).
 - Versenden Sie Vorarbeiten und das Lab-Blatt vor dem Kurs, damit die Teilnehmenden ihre Werkzeuge einrichten können.
 
 ## Sprachen und rechts nach links
 
 Die Administration ist in mehreren Sprachen der Oberfläche verfügbar, und Sprachen, die von rechts nach links
-geschrieben werden, setzen die Schreibrichtung der Seite ([Sprachen](../../../sprachen.md), [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)).
+geschrieben werden, setzen die Schreibrichtung der Seite ([Sprachen](../../../sprachen.md), [Sprachen von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md)).
 Arbeitet Ihr Personal in einer anderen Sprache als Englisch, prüfen Sie vor dem Kurs, welche Übersetzungen der
 Administration vollständig sind, und planen Sie für Begriffe, die Englisch bleiben. [Sprachen und rechts nach links im Unterricht](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/sprachen-und-rechts-nach-links-im-kurs.md)
 behandelt den Unterricht in gemischtsprachigen Gruppen.
@@ -86,13 +86,13 @@ und [Vorkehrungen bei Prüfungen](../../../trainer/pruefungen/modul-01-pruefunge
 - Barrierefreie Handouts und untertitelte Aufzeichnungen.
 - Ein Verfahren, um vor jedem Kurs Vorkehrungen zu erfragen und bereitzustellen.
 - Die Barrierefreiheit veröffentlichter Inhalte als Thema in Kursen für die Redaktion
-  ([Modul 8 von Editors 201](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md)).
+  ([Modul 8 von Editors 201](../../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md)).
 
 ## Verwandte Seiten
 
 - [Schulung in der Beschaffung](README.md)
 - [Train the Trainer, Modul 5](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

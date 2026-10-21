@@ -29,7 +29,7 @@ E-Mail-Einstellungen einer Person
 
 ## Was aufgezeichnet wird
 
-Tabelle `expmail_consent_log`, eine Zeile pro Änderung ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)):
+Tabelle `expmail_consent_log`, eine Zeile pro Änderung ([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)):
 
 | Feld | Beispiel |
 |---|---|

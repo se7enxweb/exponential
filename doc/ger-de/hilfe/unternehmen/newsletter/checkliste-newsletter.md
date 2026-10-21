@@ -39,7 +39,7 @@ Aus [Einen Newsletter planen](einen-newsletter-planen.md):
 
 ## Einrichtung
 
-Aus [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#setting-it-up):
+Aus [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#einrichten):
 
 - [ ] `cjw_newsletter` ist aktiv, und seine Klassenpakete sind installiert.
 - [ ] Ein Ordner für Newsletter existiert, und `[NewsletterSettings] RootFolderNodeId` ist in
@@ -91,7 +91,7 @@ Aus [Zustellung der Newsletter-Mails](zustellung-der-newsletter-mails.md#erst-di
 
 ## Vor jedem Versand
 
-Aus [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#before-every-send) und
+Aus [Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#vor-jedem-versand) und
 [Ausgaben schreiben und versenden](ausgaben-schreiben-und-versenden.md):
 
 - [ ] Die Vorschau als Abonnent ist geprüft; die Mail an die Testgruppe ist angekommen.
@@ -134,7 +134,7 @@ Aus [Bounces und Listenpflege](bounces-und-listenpflege.md#eine-monatliche-pfleg
 - [Newsletter für Unternehmen](README.md)
 - [Checkliste: Go-live](../vorlagen/checkliste-go-live.md)
 - [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)
-- [Start-Checkliste für Websites](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Start-Checkliste für Websites](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

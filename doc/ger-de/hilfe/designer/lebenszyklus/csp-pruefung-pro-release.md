@@ -16,7 +16,7 @@ muss jedes Release das so halten.
 ## Die Routine
 
 1. **Richtlinie an, nur melden**, für den Test-Siteaccess (`site.ini [ContentSecurityPolicy] Mode=report-only` in den
-   Einstellungen dieses Siteaccess; siehe [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+   Einstellungen dieses Siteaccess; siehe [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 2. **Gehen Sie die Seitenliste durch**, mit geöffneter Browserkonsole. Erwartet: keine CSP-Meldungen. Verwenden Sie
    `ReportURI`, um Meldungen aus einer längeren Sitzung zu sammeln.
 3. **Durchsuchen Sie den Diff** des Releases nach Inline-Code:

@@ -77,7 +77,7 @@ das macht, wurde beim Aufbau entschieden
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine öffentliche Bekanntmachung mit Ablaufdatum veröffentlichen](eine-oeffentliche-bekanntmachung-mit-ablaufdatum-veroeffentlichen.md)
-- [Warnmeldungen, Verfügbarkeit, Wartungsmodus und statischer Cache](../../../../../eng-us/help/government/levels/emergency-services/alerts-availability-maintenance-and-static-cache.md)
+- [Warnmeldungen, Verfügbarkeit, Wartungsmodus und statischer Cache](../../ebenen/rettungsdienste/warnungen-verfuegbarkeit-wartung-und-statischer-cache.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -12,8 +12,8 @@ type: help
 Diese Seite beantwortet die Fragen öffentlicher Stellen dazu, wie sie mit Exponential Informationen von Bürgerinnen und
 Bürgern erheben und Newsletter versenden. Die Antworten stammen aus
 [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md),
-[Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md) und
-[E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md).
+[Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md) und
+[E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -31,8 +31,8 @@ Bürgern erheben und Newsletter versenden. Die Antworten stammen aus
 ## Können wir Formulare auf die Website stellen?
 
 Ja. Die Informationssammlung macht aus Inhaltsklassen Formulare, Umfragen und Abstimmungen; die Redaktion platziert sie
-als Inhalt ([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md),
-[Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)).
+als Inhalt ([Formulare mit dem Informationssammler](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md),
+[Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)).
 
 ## Wohin gehen die Einsendungen?
 
@@ -45,33 +45,33 @@ Sie werden unter **Setup > Gesammelte Informationen** gespeichert und aufgeliste
 
 Jedes Formular trägt ein CSRF-Token. Gegen Bots gibt es die Erweiterungen recaptcha und hcaptcha; sie sind Dienste von
 Drittanbietern, die in Ihrer Datenschutzerklärung erwähnt werden müssen und eine barrierefreie Alternative brauchen
-([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 
 ## Wie lange werden Einsendungen aufbewahrt?
 
 Bis jemand sie entfernt. Die Website muss einen Einwilligungstext und eine Aufbewahrungsregel selbst hinzufügen
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps),
-[Formulareinsendungen](../../../../eng-us/help/creators/website-creators/form-submissions.md)).
+([Datenschutzstandards](../../../standards/datenschutz.md#bekannte-lücken),
+[Formulareinsendungen](../../ersteller/website-ersteller/formulareinsendungen.md)).
 
 ## Können wir Newsletter versenden?
 
 Ja, mit `cjw_newsletter`: Ausgaben als Inhalt geschrieben, Listen mit Double-Opt-in, Versand per Cron im Hintergrund,
 Bearbeitung von Unzustellbarkeiten und eine Sperrliste sowie ein Archiv jedes Versands
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)). Für Redaktionen und Administratoren gibt es einen
-Kurs ([Kurs Newsletter](../../../../eng-us/help/trainers/newsletter/README.md)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)). Für Redaktionen und Administratoren gibt es einen
+Kurs ([Kurs Newsletter](../../trainer/newsletter/README.md)).
 
 ## Wie melden sich Menschen ab?
 
 Optionale E-Mails, die das E-Mail-Gate von Exponential passieren, tragen einen Header `List-Unsubscribe` mit Abmeldung
 per Klick und einen Link in der Fußzeile, die ohne Anmeldung funktionieren
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe)). Menschen verwalten ihre
-Kategorien auf der Seite der E-Mail-Einstellungen ([E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)).
+([Datenschutzstandards](../../../standards/datenschutz.md#can-spam-act-und-abmeldung-mit-einem-klick)). Menschen verwalten ihre
+Kategorien auf der Seite der E-Mail-Einstellungen ([E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 ## Werden Öffnungen und Klicks erfasst?
 
 Die Newsletter-Erweiterung kann Öffnungen und Klicks pro Person auf Ihrem eigenen Server zählen; das erfordert die
 vorherige Einwilligung der Person in die Kategorie Newsletter-Statistik
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)).
+([Datenschutzstandards](../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)).
 
 ## Verwandte Seiten
 

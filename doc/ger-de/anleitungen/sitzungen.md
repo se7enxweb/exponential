@@ -8,7 +8,7 @@ Sie richtet sich an Administratoren. Jede Seite, jedes Feld und jede Regel unten
 geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 
 [Anleitungen](README.md) · Siehe auch: [Sicherheit und Audit](sicherheit-und-audit.md) ·
-[Betrieb einer Site](betrieb-einer-website.md) · [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
+[Betrieb einer Site](betrieb-einer-website.md) · [Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 

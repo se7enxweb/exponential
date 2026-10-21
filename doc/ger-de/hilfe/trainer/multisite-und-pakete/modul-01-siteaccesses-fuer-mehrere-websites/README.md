@@ -36,7 +36,7 @@ Die hier angelegten Siteaccesses `site_b` und `site_b_ger` werden in den Modulen
 
 - Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install` (URL-Zuordnung, die
   Voreinstellung), mit Shell-Zugang und einem Administratorkonto. Wie man eine solche Übungsumgebung aufbaut:
-  [Lektion 2.3 von Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md).
+  [Lektion 2.3 von Train the Trainer](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md).
 - Die Teilnehmenden können `php bin/php/console` im Wurzelverzeichnis der Installation als der Benutzer ausführen,
   der die Website ausliefert; wenn sie als root arbeiten müssen, sagen Sie ihnen, dass sie `--allow-root-user`
   hinzufügen sollen.
@@ -62,7 +62,7 @@ Die hier angelegten Siteaccesses `site_b` und `site_b_ger` werden in den Modulen
 ## Verwandte Seiten
 
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

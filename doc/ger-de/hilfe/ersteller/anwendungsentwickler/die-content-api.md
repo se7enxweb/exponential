@@ -103,7 +103,7 @@ Seite zeigt, folgt der `SiteLanguageList` des Siteaccess ([Inhaltssprachen](../.
 
 - [Inhalte im Code anlegen](inhalte-im-code-anlegen.md)
 - [Persistente Objekte und eigene Tabellen](persistente-objekte-und-eigene-tabellen.md)
-- [Active-Record-Muster](../../../../eng-us/standards/patterns/active-record.md)
+- [Active-Record-Muster](../../../standards/muster/active-record.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

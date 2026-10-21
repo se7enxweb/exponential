@@ -10,8 +10,8 @@ type: help
 # Die Aussagen eines Anbieters zur Barrierefreiheit prüfen
 
 **Wer:** die Verantwortlichen für Barrierefreiheit im Bewertungsteam. **Wann:** während der Bewertung der Angebote. Die
-Referenz sind die [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md); die Methode steht in
-[Nachweise zur Barrierefreiheit bewerten](../../../../../eng-us/help/government/procurement/evaluation/evaluating-accessibility-evidence.md).
+Referenz sind die [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md); die Methode steht in
+[Nachweise zur Barrierefreiheit bewerten](../../beschaffung/bewertung/nachweise-zur-barrierefreiheit-bewerten.md).
 
 ## Inhalt
 

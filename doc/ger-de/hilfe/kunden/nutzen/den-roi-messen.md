@@ -36,13 +36,13 @@ Berichten, die niemand liest.
 
 | Zahl | Wo in Exponential | Quelle |
 |---|---|---|
-| Bestellungen, Umsatz, Kunden, abgebrochene Warenkörbe | Shop-Dashboard; Produkt-Statistiken pro Monat | [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md), [Shop-Berichte](../handel/shop-berichte.md) |
+| Bestellungen, Umsatz, Kunden, abgebrochene Warenkörbe | Shop-Dashboard; Produkt-Statistiken pro Monat | [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md), [Shop-Berichte](../handel/shop-berichte.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen**, mit CSV-Export | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
-| Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
+| Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
 | Wonach Besucher suchen | Suchbegriffe werden gespeichert (`ezsearch_search_phrase`) | [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md) |
 | Veröffentlichte Inhalte | Versionen und Veröffentlichungshistorie der Inhalte | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Kosten eines KI-Anbieters, falls genutzt | Das Dashboard von Exponential Intelligence zeigt Kosten, Tokens und Anfragen | `README.md`, „Exponential Intelligence“ |
-| Besucherzahlen | Nicht als Bericht eingebaut; ein Statistikwerkzeug | [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md) |
+| Besucherzahlen | Nicht als Bericht eingebaut; ein Statistikwerkzeug | [Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md) |
 
 Zahlen von außerhalb der Website: Ihre Buchhaltung (tatsächliche Einnahmen, Gebühren, Erstattungen), die Rechnungen
 Ihres Hosters und Partners, die Zeiterfassung Ihrer Mitarbeitenden und Ihre Telefon- oder E-Mail-Statistik zu Fragen,

@@ -14,7 +14,7 @@ Bundeslands, einer Provinz, einer Region oder eines Kreises entwerfen. Sie liste
 passen, und gibt vier Rezepte für Klassen. Die genannten Klassen und Datentypen gibt es in Exponential
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md), die Datentypen in
 `kernel/classes/datatypes/` und die genannten Erweiterungen); der Klasseneditor ist unter
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) beschrieben.
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) beschrieben.
 
 ## Inhalt
 
@@ -57,7 +57,7 @@ Anschrift mit einem Link auf Ihr eigenes Kartenportal.
 | Themen | `themes` | Tags (`eztags`) | |
 
 Ein Tag-Baum der Gebiete (Region > Kreis > Gemeinde) lässt Besucher jeden Plan für einen Ort auflisten; er braucht kein
-GIS ([eztags](../../../../../eng-us/features/6.0/extensions/eztags.md)).
+GIS ([eztags](../../../../funktionen/6.0/erweiterungen/eztags.md)).
 
 ## Hinzuzufügende Klasse: Förderprogramm
 
@@ -113,8 +113,8 @@ Informationssammler eignet sich für kurze Fragen, nicht für Förderanträge mi
 
 - [Länder und Regionen](README.md)
 - [Struktur, Sektionen und Rollen für Länder und Regionen](struktur-sektionen-und-rollen.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
-- [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
+- [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

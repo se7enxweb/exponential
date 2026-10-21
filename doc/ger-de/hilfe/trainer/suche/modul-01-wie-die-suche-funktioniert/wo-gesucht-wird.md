@@ -43,8 +43,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Suchen](../../../suchen.md), [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md) und
-[Der Inhaltsfinder](../../../../../eng-us/features/6.0/content-finder.md).
+Quelle: [Suchen](../../../suchen.md), [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md) und
+[Der Inhaltsfinder](../../../../funktionen/6.0/inhalts-finder.md).
 
 1. **Die Landkarte** (4 Minuten). Zeichnen Sie fünf Kästen an die Tafel:
    - **Schnellsuche**: das Feld **Suchen...** in der Kopfzeile der Administration (admin4). Durchsucht alle Inhalte,
@@ -133,7 +133,7 @@ Administration angemeldet.
 1. **B.** `site.ini [SearchSettings] SearchEngine` ([Such-Backends](../../../hosting/grundlagen/such-backends.md)).
 2. Ihre Rollen unterscheiden sich: Die Suchmaschine gibt nur Inhalte zurück, die der Benutzer lesen darf.
 3. **Falsch.** Er schlägt IDs, Remote-IDs, URL-Aliase und Dateipfade nach
-   ([Der Inhaltsfinder](../../../../../eng-us/features/6.0/content-finder.md)).
+   ([Der Inhaltsfinder](../../../../funktionen/6.0/inhalts-finder.md)).
 4. Die Website-Suche: die View `content/search` des öffentlichen Siteaccess, über das Suchfeld des Designs.
 5. `eZSearchEngine`, die eingebaute Suchmaschine.
 
@@ -143,14 +143,14 @@ Administration angemeldet.
 
 - [Suchen](../../../suchen.md): die Sicht der Redakteure auf die Schnellsuche, den Suchbereich und die erweiterte
   Suche.
-- [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md): die Suche der Besucher, für Website-Ersteller.
+- [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md): die Suche der Besucher, für Website-Ersteller.
 - [Such-Backends](../../../hosting/grundlagen/such-backends.md): die beiden Suchmaschinen aus Sicht eines Hosters.
 
 ## Verwandte Seiten
 
 - [Modul 1: Wie die Suche funktioniert](README.md)
 - [Suche: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

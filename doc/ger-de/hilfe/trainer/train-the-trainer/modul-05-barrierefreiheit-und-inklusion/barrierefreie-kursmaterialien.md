@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 2. Zeigen Sie die Hilfe als Handout (4 Minuten): Jede Hilfeseite hat Überschriften, ein Inhaltsverzeichnis und
    **Als PDF herunterladen**; mit einer TrueType-Schrift lässt sich der Text des PDFs markieren und durchsuchen, und
    die Überschriften werden zu Links.
-3. Erwähnen Sie den Standard (3 Minuten): [Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md) zeigt,
+3. Erwähnen Sie den Standard (3 Minuten): [Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md) zeigt,
    wie Exponential gegenüber WCAG 2.2 AA abschneidet, und nennt seine Lücken ehrlich.
 
 ### Häufige Fragen
@@ -91,7 +91,7 @@ nach Möglichkeit in Admin 4.
 <summary>Antworten</summary>
 
 1. Sie lassen sich weder kopieren noch von einem Screenreader lesen.
-2. WCAG 2.2, Stufe AA ([Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md)).
+2. WCAG 2.2, Stufe AA ([Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md)).
 3. Was im Bild für die Aufgabe wichtig ist, nicht jedes Pixel.
 4. Es verlässt sich allein auf die Farbe; nennen Sie die Beschriftung der Schaltfläche.
 
@@ -100,8 +100,8 @@ nach Möglichkeit in Admin 4.
 ## Weiterführende Literatur
 
 - [Barrierefreie Folien und Grafiken](../../../fuersprecher/barrierefreie-folien-und-grafiken.md)
-- [Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md)
-- [Das Hilfesystem: Drucken und PDF](../../../../../eng-us/features/6.0/help-system.md#print-and-pdf)
+- [Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md)
+- [Das Hilfesystem: Drucken und PDF](../../../../funktionen/6.0/hilfesystem.md#drucken-und-pdf)
 
 ## Verwandte Seiten
 

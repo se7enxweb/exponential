@@ -41,7 +41,7 @@ Themen, die an dokumentierte Fakten gebunden sind, altern gut:
 
 | Thema | Quelle als Grundlage |
 |---|---|
-| „Was ich bei der Installation von Exponential mit einem Befehl gelernt habe“ | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| „Was ich bei der Installation von Exponential mit einem Befehl gelernt habe“ | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | „Fünf Dinge, die Redakteure ohne Entwickler tun können“ | [Gesprächspunkte für Redakteure](gespraechspunkte-fuer-redakteure.md) |
 | „Was in <Release> neu ist“ | [Über ein Release schreiben](ueber-ein-release-schreiben.md) |
 | „Diesen Monat in der Geschichte von Exponential“ | [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md) |

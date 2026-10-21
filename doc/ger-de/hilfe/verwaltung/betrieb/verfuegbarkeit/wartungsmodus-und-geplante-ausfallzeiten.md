@@ -14,7 +14,7 @@ Aktualisierungen, Importe oder Wiederherstellungen planen und die Öffentlichkei
 beantwortet, wie der Wartungsmodus funktioniert, was Besucher, Überwachungssysteme und Suchmaschinen sehen, wer
 weiterhin hineinkommt und wie ein Wartungsfenster in Ihren Änderungskalender passt. Die vollständige Anleitung ist
 [Wartungsmodus: die Website offline nehmen und zurückholen](../../../../anleitungen/wartungsmodus.md); die
-Funktionsseite ist [Wartungsmodus](../../../../../eng-us/features/6.0/maintenance-mode.md).
+Funktionsseite ist [Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.md).
 
 ## Inhalt
 

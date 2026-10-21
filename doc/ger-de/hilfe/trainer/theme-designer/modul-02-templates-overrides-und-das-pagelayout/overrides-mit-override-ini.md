@@ -40,8 +40,8 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Templates und Design, Teil 4](../../../../anleitungen/templates-und-design.md#4-eine-änderung-mit-einem-override-vornehmen),
-[Template-Overrides für Website-Bauer](../../../../../eng-us/help/creators/website-creators/template-overrides.md) und
-[Template-Editor](../../../../../eng-us/features/6.0/template-editor-overrides.md).
+[Template-Overrides für Website-Bauer](../../../ersteller/website-ersteller/template-overrides.md) und
+[Template-Editor](../../../../funktionen/6.0/template-editor-ueberschreibungen.md).
 
 1. **Die Regel** (6 Minuten). Öffnen Sie `extension/training_theme/settings/override.ini.append.php`:
 
@@ -174,7 +174,7 @@ Auf Ihrer Schulungsinstallation, mit eingeschalteten Template-Pfadkommentaren f�
    gezeichnet werden (und der INI-Cache, wenn die Regel neu ist).
 4. Die zuerst versuchte Regel gewinnt; prüfen Sie die Reihenfolge im **Template-Editor** und geben Sie den Regeln eine
    `Priority` (die niedrigste zuerst) oder ordnen Sie sie dort um
-   ([Template-Editor](../../../../../eng-us/features/6.0/template-editor-overrides.md)).
+   ([Template-Editor](../../../../funktionen/6.0/template-editor-ueberschreibungen.md)).
 5. In der `settings/override.ini.append.php` der Erweiterung, mit den Templates in `override/templates/` ihres
    Designs.
 
@@ -182,12 +182,12 @@ Auf Ihrer Schulungsinstallation, mit eingeschalteten Template-Pfadkommentaren f�
 
 ## Weiterführende Literatur
 
-- [Template-Overrides für Website-Bauer](../../../../../eng-us/help/creators/website-creators/template-overrides.md): Bedingungen und
+- [Template-Overrides für Website-Bauer](../../../ersteller/website-ersteller/template-overrides.md): Bedingungen und
   gängige Regeln.
-- [Template-Editor](../../../../../eng-us/features/6.0/template-editor-overrides.md): der Klickpfad, das Umordnen, Sicherungen.
-- [Reihenfolge der Template-Overrides](../../../../../eng-us/features/6.0/template-override-ordering.md): wie die Reihenfolge
+- [Template-Editor](../../../../funktionen/6.0/template-editor-ueberschreibungen.md): der Klickpfad, das Umordnen, Sicherungen.
+- [Reihenfolge der Template-Overrides](../../../../funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md): wie die Reihenfolge
   entschieden wird.
-- [Overrides mit dem Standard vergleichen](../../../../../eng-us/help/designers/lifecycle/comparing-overrides-with-the-standard.md):
+- [Overrides mit dem Standard vergleichen](../../../designer/lebenszyklus/overrides-mit-dem-standard-vergleichen.md):
   Overrides nach einem Upgrade aktuell halten.
 
 ## Verwandte Seiten

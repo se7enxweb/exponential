@@ -68,13 +68,13 @@ AdditionalExtensionDirectories[]=extension_src
 `extension/` bleibt der erste Ordner; die zusätzlichen Ordner werden danach durchsucht. Eine typische Aufteilung hält
 installierte Erweiterungen in `extension/` und Ihre eigenen in `extension_src/`. Aktivierung und Ladereihenfolge
 ändern sich dadurch nicht: Eine Erweiterung wird über ihren Ordnernamen benannt, wo immer sie liegt. Siehe
-[Erweiterungen in mehr als einem Ordner](../../../../eng-us/features/6.0/additional-extension-directories.md).
+[Erweiterungen in mehr als einem Ordner](../../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md).
 
 ## Verwandte Seiten
 
 - Zurück: [Eine Erweiterung aktivieren](eine-erweiterung-aktivieren.md)
 - Weiter: [composer.json für eine Erweiterung](composer-json-fuer-erweiterungen.md)
-- [Ladereihenfolge der Erweiterungen und sicheres Speichern](../../../../eng-us/features/6.0/extension-loading-order.md)
+- [Ladereihenfolge der Erweiterungen und sicheres Speichern](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [extension.xml: Metadaten und Abhängigkeiten](extension-xml.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

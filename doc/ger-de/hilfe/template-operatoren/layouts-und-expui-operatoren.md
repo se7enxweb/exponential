@@ -172,7 +172,7 @@ Ausgabe auf alpha:
 
 - [ezjscore-Operatoren im Detail](ezjscore-operatoren.md) (`json_encode` für denselben Zweck ohne die zusätzliche Maskierung)
 - [Der Layout-Editor](../layout-editor.md)
-- [Content Security Policy für Anwendungen](../../../eng-us/help/creators/app-creators/content-security-policy.md)
+- [Content Security Policy für Anwendungen](../ersteller/anwendungsentwickler/content-security-policy.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

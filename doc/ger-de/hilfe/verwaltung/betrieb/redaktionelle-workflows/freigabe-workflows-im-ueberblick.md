@@ -82,7 +82,7 @@ Das Ereignis Feld für Feld einrichten: [Das Freigabe-Ereignis einrichten](das-f
 ## Verwandte Seiten
 - [Das Freigabe-Ereignis einrichten](das-freigabe-ereignis-einrichten.md)
 - [Posteingang der Zusammenarbeit](posteingang-der-zusammenarbeit.md)
-- [Einen Freigabe-Workflow für eine Sektion einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-an-approval-workflow-for-a-section.md)
+- [Einen Freigabe-Workflow für eine Sektion einrichten](../../aufgaben/personen-und-berechtigungen/einen-freigabe-workflow-fuer-eine-sektion-einrichten.md)
 - [Leitfaden zu Workflows](../../../../anleitungen/workflows.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

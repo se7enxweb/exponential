@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Templates und Design, Teile 1 und 2](../../../../anleitungen/templates-und-design.md#1-wie-ein-template-gefunden-wird)
-und [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md).
+und [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md).
 
 1. **Die Suche** (4 Minuten). Für ein Template wie `node/view/full.tpl` gewinnt die erste gefundene Datei:
    1. Override-Templates, deren Regeln in `override.ini` passen (Lektion 3.2);
@@ -151,9 +151,9 @@ Siteaccess (bei einem `exp:install` mit Standardwerten `site`).
 ## Weiterführende Literatur
 
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): das Design finden, Overrides, Fehlersuche.
-- [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md): welche Erweiterung gewinnt.
-- [Das Design registrieren](../../../../../eng-us/help/designers/extensions/registering-the-design.md): dieselben Schritte für ein Theme.
-- [Zusätzliche Erweiterungsverzeichnisse](../../../../../eng-us/features/6.0/additional-extension-directories.md): Erweiterungen
+- [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md): welche Erweiterung gewinnt.
+- [Das Design registrieren](../../../designer/erweiterungen/das-design-registrieren.md): dieselben Schritte für ein Theme.
+- [Zusätzliche Erweiterungsverzeichnisse](../../../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md): Erweiterungen
   außerhalb von `extension/`.
 
 ## Verwandte Seiten

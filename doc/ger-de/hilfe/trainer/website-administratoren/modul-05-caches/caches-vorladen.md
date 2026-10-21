@@ -131,7 +131,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 ## Weiterführende Literatur
 
 - [Caches vorab füllen](../../../../anleitungen/caches-vorwaermen.md): die Seite, der Befehl und die Adresse eines Siteaccess.
-- [Seiten vorladen](../../../../../eng-us/features/6.0/preload-sites-view.md): die Referenz zur Funktion.
+- [Seiten vorladen](../../../../funktionen/6.0/ansicht-websites-vorladen.md): die Referenz zur Funktion.
 - [Caches leeren und aufwärmen](../../../hosting/leistung/caches-leeren-und-vorwaermen.md): die Sicht des Hosters.
 
 ## Verwandte Seiten

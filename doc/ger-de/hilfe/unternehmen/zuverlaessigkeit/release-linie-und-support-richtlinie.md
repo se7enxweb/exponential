@@ -116,9 +116,9 @@ Aus [Wer ist die Exponential Foundation?, Releases und Versionsnummern](../../we
 | Dokument | Wofür Sie es nutzen |
 |---|---|
 | [Changelogs je Release](../../../../changelogs/6.0/6.0.15.md) | Was eine Version enthält, mit einem Abschnitt „Upgrading“ |
-| [Hinweise zu Verhaltensänderungen](../../../../eng-us/bc/6.0/behaviour-changes-2026-10.md) | Was sich anders verhält und was zu prüfen ist, je Zeitraum |
+| [Hinweise zu Verhaltensänderungen](../../../bc/6.0/verhaltensaenderungen-2026-10.md) | Was sich anders verhält und was zu prüfen ist, je Zeitraum |
 | [Release Notes der Erweiterungen](../../../../changelogs/extensions/README.md) | Was ein Release einer Erweiterung geändert hat |
-| [Die Geschichte](../../../../eng-us/history/README.md) | Die Geschichte jeder Änderung seit Dezember 2023, nach Monaten |
+| [Die Geschichte](../../../geschichte/README.md) | Die Geschichte jeder Änderung seit Dezember 2023, nach Monaten |
 
 Geben Sie einer Person in Ihrem Team die Aufgabe, diese vor jeder Aktualisierung zu lesen.
 

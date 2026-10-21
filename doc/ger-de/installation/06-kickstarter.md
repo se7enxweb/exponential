@@ -339,7 +339,7 @@ Typen: *bool* ist `true`/`false`, *Auswahl* eines der aufgeführten Wörter, *in
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Empfehlung:** 1. SQLite 3 (der Standard) ·
 > 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../../eng-us/help/database-support.md).
+> zusätzlichem Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
 
 | Schlüssel | Typ | Standard | Wirkung |
 |---|---|---|---|
@@ -423,7 +423,7 @@ Sie alle drei an, um sicherzugehen.
 
 Die **Verzeichnisse** der Siteaccesses sind immer `site`, `admin` und `editor`, dazu `adminui`, wenn die Extension
 `exp_adminui` in der Installation vorhanden ist (sie wird nur über den Pfad `/adminui` erreicht und hat daher hier
-keinen Schlüssel; siehe [Exponential Admin UI](../../eng-us/features/6.0/exp-adminui.md)). `Access`, `AdminAccess` und
+keinen Schlüssel; siehe [Exponential Admin UI](../funktionen/6.0/exp-adminui.md)). `Access`, `AdminAccess` und
 `EditorAccess` sind die Werte, die sie auswählen, nicht ihre Namen. Anders als der Browser-Assistent lehnt die
 Kommandozeile `admin` als Pfad nicht ab, sodass `AdminAccess=admin` das gewohnte `/admin` ergibt.
 
@@ -459,7 +459,7 @@ löschen Sie die Datei. Es gelten dieselben Regeln wie bei `exp:install` ([Kapit
 run`) wird ein bekanntes oder kurzes Passwort (`publish`) so installiert, wie es ist, damit eine öffentliche Demo das
 Passwort erhält, das sie veröffentlicht; ein leeres wird weiterhin ersetzt. Der Kindprozess des Durchlaufs erbt die
 Variable. Die Site muss die Variable danach für ihr PHP behalten, sonst kann ihr Administratorpasswort wieder geändert
-werden: [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md). Setzen Sie sie niemals für eine echte Site.
+werden: [Demo-Modus](../bc/6.0/demomodus.md). Setzen Sie sie niemals für eine echte Site.
 
 **`[security]`**
 
@@ -896,22 +896,22 @@ Was Sie beachten sollten:
 
 ## 6.12 Hinweise zu den anderen Dokumenten über den Kickstarter
 
-Die früheren Dokumente [Kickstarter CLI](../../eng-us/bc/6.0/kickstartercli.md) und
-[Kickstarter: eine ganze Site aus einer Datei installieren](../../eng-us/features/6.0/kickstarter-cli.md) bleiben nützlicher
+Die früheren Dokumente [Kickstarter CLI](../bc/6.0/kickstartercli.md) und
+[Kickstarter: eine ganze Site aus einer Datei installieren](../funktionen/6.0/kickstarter-cli.md) bleiben nützlicher
 Hintergrund. Wo sie von diesem Kapitel abweichen, folgt dieses Kapitel dem Code dieser Version:
 
 - **Paket-Download.** Der Kickstarter bevorzugt den Eintrag des entfernten Index, verwendet aber ein bereits
   importiertes Paket und lädt nur herunter, was fehlt ([6.4.2](#642-abschnitte-und-schlüssel), `[site_types]`). Ein
   Probelauf lädt immer herunter, und zwar in das temporäre Repository `dryrun`.
-  [Kickstarter CLI](../../eng-us/bc/6.0/kickstartercli.md) sagt inzwischen dasselbe.
+  [Kickstarter CLI](../bc/6.0/kickstartercli.md) sagt inzwischen dasselbe.
 - **`--stop-step=CreateSites`.** Hält nicht an, bevor die Datenbank geschrieben wird: `CreateSites` ist der Schritt,
   der sie schreibt. Halten Sie bei `Registration` oder früher an, um die Datenbank unberührt zu lassen.
 - **`[registration] Comments`.** Wird nicht gelesen; `Send` ist standardmäßig `false`.
 - **Fortsetzen mit `--start-step=SiteDetails`.** Ältere Dokumente schlugen vor, einen fehlgeschlagenen Durchlauf dort
   fortzusetzen. Ein solcher Start wird abgelehnt, weil die Schritte davor Werte setzen, die `SiteDetails` und
   `CreateSites` im selben Prozess lesen; führen Sie die ganze Abfolge erneut aus
-  ([6.10](#610-erneut-ausführen-und-fortsetzen)). [Kickstarter CLI](../../eng-us/bc/6.0/kickstartercli.md) und
-  [Exponential 6.0 installieren](../../eng-us/INSTALL.md) sagen inzwischen dasselbe.
+  ([6.10](#610-erneut-ausführen-und-fortsetzen)). [Kickstarter CLI](../bc/6.0/kickstartercli.md) und
+  [Exponential 6.0 installieren](../INSTALL.md) sagen inzwischen dasselbe.
 - **`ini --yes`.** Bis zum 5. Oktober 2026 schrieb es `Database=ezp`, was SQLite als Dateinamen ablehnt, und
   `DatabaseAction=skip`, was nichts installiert, und zwar mit dem normalen Dateimodus des Prozesses. Jetzt schreibt es
   `exponential.db`, `ignore` und den Modus `0600` und markiert die zu prüfenden Werte mit `# REVIEW`
@@ -921,15 +921,15 @@ Hintergrund. Wo sie von diesem Kapitel abweichen, folgt dieses Kapitel dem Code 
 
 In diesem Repository:
 
-- [Exponential 6.0 installieren](../../eng-us/INSTALL.md), Abschnitt 6
-- [Kickstarter CLI](../../eng-us/bc/6.0/kickstartercli.md) und [Kickstarter: eine ganze Site aus einer Datei installieren](../../eng-us/features/6.0/kickstarter-cli.md)
-- [Exponential mit einem Befehl installieren](../../eng-us/features/6.0/install-in-one-command.md)
-- [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md)
+- [Exponential 6.0 installieren](../INSTALL.md), Abschnitt 6
+- [Kickstarter CLI](../bc/6.0/kickstartercli.md) und [Kickstarter: eine ganze Site aus einer Datei installieren](../funktionen/6.0/kickstarter-cli.md)
+- [Exponential mit einem Befehl installieren](../funktionen/6.0/installation-mit-einem-befehl.md)
+- [Wartungsmodus](../funktionen/6.0/wartungsmodus.md)
 - [Installer-Logs und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
-- [Standardwerte einer sauberen Installation](../../eng-us/features/6.0/clean-install-defaults.md)
-- [SQLite-Datenbank](../../eng-us/features/6.0/sqlite-database.md), [SQLite-Installer](../spezifikationen/6.0/platform-sqlite-installer.md),
+- [Standardwerte einer sauberen Installation](../funktionen/6.0/standardwerte-einer-sauberen-installation.md)
+- [SQLite-Datenbank](../funktionen/6.0/sqlite-datenbank.md), [SQLite-Installer](../spezifikationen/6.0/platform-sqlite-installer.md),
   [Datenbanktreiber, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md)
-- [Die Konsole](../../eng-us/bc/6.0/console.md) und [Abstraktionen für CLI, Cronjobs und Views](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+- [Die Konsole](../bc/6.0/konsole.md) und [Abstraktionen für CLI, Cronjobs und Views](../bc/6.0/cli-cronjob-und-view-abstraktionen.md)
   (warum `bin/php/kickstarter.php` ein einziger Aufruf von `kernel/private/classes/commands/kickstarter.php` ist)
 - [Bereitstellung](../anleitungen/bereitstellung.md)
 - Code: `kernel/private/classes/commands/kickstarter.php`, `kernel/classes/expkickstarter.php`,

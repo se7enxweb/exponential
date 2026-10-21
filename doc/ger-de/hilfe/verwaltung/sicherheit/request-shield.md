@@ -76,7 +76,7 @@ lässt.
 ## Verwandte Seiten
 
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
-- [Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)
+- [Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)
 - [request-shield und Anfrageregeln für Hoster](../../hosting/sicherheit/request-shield-und-request-regeln.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

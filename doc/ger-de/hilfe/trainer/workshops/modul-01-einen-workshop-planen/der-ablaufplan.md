@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
    | Zeit | Block | Verantwortlich | Material | Kontrollpunkt | Streichpunkt |
    |---|---|---|---|---|---|
-   | 10:30 | Einen Artikel anlegen und veröffentlichen | Trainer; Helfer gehen durch den Raum | [Ihren ersten Artikel anlegen](../../../../../eng-us/help/trainers/editors-101/module-03-creating-and-editing/creating-your-first-article.md) | Der Artikel jeder Person in Version 2 | Der Schritt mit der Sprache |
+   | 10:30 | Einen Artikel anlegen und veröffentlichen | Trainer; Helfer gehen durch den Raum | [Ihren ersten Artikel anlegen](../../redakteure-101/modul-03-erstellen-und-bearbeiten/ihren-ersten-artikel-erstellen.md) | Der Artikel jeder Person in Version 2 | Der Schritt mit der Sprache |
 
 ### Häufige Fragen
 
@@ -87,14 +87,14 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ## Weiterführende Informationen
 
-- [Zeitplanung und Tempo](../../../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/timing-and-pacing.md)
-- [Trainer-Werkzeugkasten](../../../../../eng-us/help/trainers/trainer-toolkit.md)
+- [Zeitplanung und Tempo](../../train-the-trainer/modul-03-einen-kurs-gestalten/zeitplanung-und-tempo.md)
+- [Trainer-Werkzeugkasten](../../trainer-werkzeugkasten.md)
 
 ## Verwandte Seiten
 
 - [Modul 1: Einen Workshop planen](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

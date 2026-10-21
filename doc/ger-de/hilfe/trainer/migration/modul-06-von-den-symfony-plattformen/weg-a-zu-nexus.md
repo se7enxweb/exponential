@@ -145,14 +145,14 @@ sowie 35 Landing Pages, die mit dem Page Builder gebaut wurden.
   jeder Schritt mit den Details der Generation.
 - [Exponential Platform Nexus](../../../../installation/migration/exponential-platform-nexus.md): die Anleitung zur
   Familie.
-- [Paket-Forks und umbenannte Befehle](../../../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md): was sich in
+- [Paket-Forks und umbenannte Befehle](../../../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md): was sich in
   den Forks geändert hat.
 
 ## Verwandte Seiten
 
 - [Modul 6: Von den Symfony-basierten Plattformen](README.md)
 - [Migration zu Exponential: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

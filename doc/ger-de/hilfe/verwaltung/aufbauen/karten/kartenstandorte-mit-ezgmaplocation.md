@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Site-Ersteller. `ezgmaplocation` ist ein Datentyp, der einen Breiten-
 und Längengrad (Dezimalgrad) und eine Adresse an einem Objekt speichert; Redakteure finden den Punkt, indem sie unter
-einer Google-Karte eine Adresse eingeben ([ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md)).
+einer Google-Karte eine Adresse eingeben ([ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md)).
 
 ## Inhalt
 
@@ -46,7 +46,7 @@ Ohne Schlüssel laden Bearbeitungsformular und Ansicht kein Skript von Google un
 Eine Site oder Administration, die eine Content Security Policy sendet (`site.ini [ContentSecurityPolicy]`), muss die
 Hosts von Google erlauben; das README listet die Zeilen `AdditionalSources[]` für `script-src`, `img-src`,
 `connect-src`, `font-src`, `style-src`, `frame-src` und `worker-src`. Ohne Schlüssel muss nichts erlaubt werden
-([Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../../funktionen/6.0/content-security-policy.md)).
 
 ## Das Feld einer Klasse hinzufügen
 

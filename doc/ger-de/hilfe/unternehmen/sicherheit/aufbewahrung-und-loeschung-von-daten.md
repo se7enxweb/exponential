@@ -66,11 +66,11 @@ dass Ihr Administrator oder Hoster sie einplant ([Cronjobs und Hintergrundjobs](
 |---|---|---|
 | E-Mail-Einstellungen und wartende Bestätigungen | `./console exp:mail:preferences erase --email=<address> --yes`; das Einwilligungsprotokoll wird anonymisiert und der Widerruf als Nachweis behalten | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#anfragen-betroffener-personen) |
 | Alle Mails stoppen | `exp:mail:suppression add --email=<address> --reason=legal` oder der eigene Abmeldelink der Person | dieselbe |
-| Ein Benutzerkonto | das Benutzerobjekt entfernen; das ist endgültig (kein Papierkorb) und löscht seine E-Mail-Einstellungen | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md), dieselbe |
+| Ein Benutzerkonto | das Benutzerobjekt entfernen; das ist endgültig (kein Papierkorb) und löscht seine E-Mail-Einstellungen | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md), dieselbe |
 | Formulareingaben | **Setup > Gesammelte Informationen**: die Sammlungen eines Formulars oder einzelne Sammlungen entfernen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
-| Bestellungen | in der Shop-Administration archivieren oder entfernen; prüfen Sie zuerst die Buchführungspflichten | [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md) |
-| Datensätze von Newsletter-Abonnenten | in der Newsletter-Administration (Benutzerliste von `cjw_newsletter`) | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
-| Audit-Datensätze | werden nicht einzeln gelöscht; siehe unten | [Audit: Aufgaben zu Datenschutz und DSGVO](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks) |
+| Bestellungen | in der Shop-Administration archivieren oder entfernen; prüfen Sie zuerst die Buchführungspflichten | [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md) |
+| Datensätze von Newsletter-Abonnenten | in der Newsletter-Administration (Benutzerliste von `cjw_newsletter`) | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
+| Audit-Datensätze | werden nicht einzeln gelöscht; siehe unten | [Audit: Aufgaben zu Datenschutz und DSGVO](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben) |
 
 > **Hinweis**
 > Das Prüfprotokoll ist eine Hash-Kette: Einen Datensatz zu entfernen, würde den Nachweis brechen, dass niemand das Log

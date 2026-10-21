@@ -30,7 +30,7 @@ Die Frage „Was stand an diesem Datum in Ihrem Leitfaden?“ muss sich beantwor
 | Bedarf | Exponential | Lücke oder Ihre Arbeit |
 |---|---|---|
 | Jede veröffentlichte Version bleibt erhalten | archivierte Versionen je Objekt | die Grenze `[VersionManagement] DefaultVersionHistoryLimit` (45 in der mitgelieferten `settings/content.ini`) entfernt beim Erreichen die älteste archivierte Version; heben Sie sie für die Leitfadenklasse mit `VersionHistoryClass[<class id>]` an oder archivieren Sie Versionen anderswo ([Inhaltsmodell und Bearbeitung](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md)) |
-| Wer veröffentlicht und freigegeben hat | das Audit-Protokoll, standardmäßig an, hash-verkettet; Elemente der Zusammenarbeit für Freigaben | die Aufbewahrung auf Ihren Aktenplan einstellen ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
+| Wer veröffentlicht und freigegeben hat | das Audit-Protokoll, standardmäßig an, hash-verkettet; Elemente der Zusammenarbeit für Freigaben | die Aufbewahrung auf Ihren Aktenplan einstellen ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
 | Was sich geändert hat | **Vergleichen** auf der Versionsseite; ein Attribut für den Änderungshinweis | Änderungshinweise schreiben |
 | Eine datierte Kopie außerhalb des CMS | PDF-Export eines Teilbaums; Ihr Schriftgutverwaltungssystem | [PDF-Exporte](../../../../anleitungen/pdf-exporte.md) |
 
@@ -45,7 +45,7 @@ Barrierefreiheit: der EU-Richtlinie über barrierefreie Websites,
 [Richtlinie (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj), und in den Vereinigten Staaten
 [Section 508](https://www.section508.gov/) für Bundesbehörden. Status von Exponential: WCAG 2.2 AA **Teilweise erfüllt**
 für die Administration admin4, EN 301 549 und Section 508 **Nicht geprüft**, öffentliche Designs nicht geprüft, kein VPAT
-([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Lange Leitfäden brauchen strukturierte
+([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)). Lange Leitfäden brauchen strukturierte
 Überschriften in HTML, nicht nur ein PDF.
 
 ## Sicherheit
@@ -54,8 +54,8 @@ für die Administration admin4, EN 301 549 und Section 508 **Nicht geprüft**, �
 |---|---|---|
 | Konten der Beschäftigten | zweistufige Anmeldung, verpflichtend einstellbar | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Minimale Rechte | Rollen mit Einschränkungen nach Sektion und Zustand | [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
-| Überwachung | Alarmregeln des Audits wie `brute_force`; Anfrageprotokolle | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md), [Anfrageprotokolle](../../../../../eng-us/features/6.0/request-logs.md) |
-| Status | OWASP Top 10 **Teilweise erfüllt**; ASVS **Nicht geprüft** | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| Überwachung | Alarmregeln des Audits wie `brute_force`; Anfrageprotokolle | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md), [Anfrageprotokolle](../../../../funktionen/6.0/anfrageprotokolle.md) |
+| Status | OWASP Top 10 **Teilweise erfüllt**; ASVS **Nicht geprüft** | [Sicherheitsstandards](../../../../standards/sicherheit.md) |
 
 Behörden gelten je nach nationalem Recht oft als wesentliche oder wichtige Einrichtungen im Sinne von NIS2,
 [Richtlinie (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj).
@@ -74,7 +74,7 @@ Veröffentlichungsrichtlinie: was veröffentlicht wird, wie lange und was geschw
   Auslieferung durch die Website an Besucher, nicht anderswo angefertigte Kopien.
 
 In der EU gilt die [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
-([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)).
+([Datenschutzstandards](../../../../standards/datenschutz.md)).
 
 ## Offene Daten
 

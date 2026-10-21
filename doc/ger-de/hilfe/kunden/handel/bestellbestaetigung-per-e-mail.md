@@ -30,7 +30,7 @@ ist leer. Ihr Partner setzt beide in einem Override.
 
 > **Hinweis**
 > Bestell-E-Mails sind notwendige E-Mails: Die Funktion für E-Mail-Einstellungen versendet sie immer, und sie enthalten
-> nie Werbung ([E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)). Kunden können sie nicht abbestellen,
+> nie Werbung ([E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)). Kunden können sie nicht abbestellen,
 > und sie sollten nicht für Angebote genutzt werden.
 
 ## Wer was tut
@@ -79,7 +79,7 @@ Postfach des Shops.
 - [Rechnungen und Belege](rechnungen-und-belege.md)
 - [Bestellbelege und Bestellbestätigung für Unternehmen](../../unternehmen/shops/bestellbelege-und-bestaetigungsmails.md)
 - [E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md)
-- [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)
+- [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

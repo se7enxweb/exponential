@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Einstellungen pro Website in Erweiterungen (Multi-Site-Hosting)](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md).
+Quelle: [Einstellungen pro Website in Erweiterungen (Multi-Site-Hosting)](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 
 1. **Die drei Verzeichnisse** (6 Minuten). Für eine Erweiterung `site_example`, gelesen während einer **ihrer**
    Siteaccesses aktiv ist, höchste Priorität zuerst:
@@ -151,7 +151,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.1.
 <summary>Antworten</summary>
 
 1. Zuerst das globale `settings/override/`, dann das `override/` der Erweiterung, dann ihr `siteaccess/site_b/`
-   ([Einstellungen pro Website in Erweiterungen](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md#where-the-files-go)).
+   ([Einstellungen pro Website in Erweiterungen](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md#wohin-die-dateien-gehören)).
 2. **B.**
 3. Die Erweiterung hat kein Verzeichnis `settings/siteaccess/site/`, deshalb ist `site` keiner ihrer Siteaccesses.
 4. `ext-siteaccess-override:<extension>`.
@@ -162,16 +162,16 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.1.
 
 ## Weiterführende Informationen
 
-- [Einstellungen pro Website in Erweiterungen (Multi-Site-Hosting)](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md).
+- [Einstellungen pro Website in Erweiterungen (Multi-Site-Hosting)](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 - [Spezifikation: Platzierungen von INI-Overrides](../../../../spezifikationen/6.0/ini-override-platzierungen.md).
-- [Erweiterungen in mehr als einem Ordner](../../../../../eng-us/features/6.0/additional-extension-directories.md).
-- [Ihre eigene INI-Datei](../../../../../eng-us/help/designers/extensions/your-own-ini-file.md).
+- [Erweiterungen in mehr als einem Ordner](../../../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md).
+- [Ihre eigene INI-Datei](../../../designer/erweiterungen/eine-eigene-ini-datei.md).
 
 ## Verwandte Seiten
 
 - [Modul 3: Einstellungen, Logs und Caches pro Website](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
