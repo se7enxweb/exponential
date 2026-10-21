@@ -43,7 +43,7 @@ StartPage=help/getting-started.md
 
 ## Related
 
-Default: a list of 3: `user`, `admin`, `website-creator`.
+Default: a list of 4: `user`, `admin`, `website-creator`, `non-technical`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -54,6 +54,7 @@ Related[]
 Related[]=user
 Related[]=admin
 Related[]=website-creator
+Related[]=non-technical
 */ ?>
 ```
 

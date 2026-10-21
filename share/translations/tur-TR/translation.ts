@@ -73454,5 +73454,397 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Search the whole help</source>
         <translation>Tüm yardımda ara</translation>
     </message>
+    <message>
+        <source>Community</source>
+        <translation>Topluluk</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>Exponential'ı dünya genelinde kullanın, tanıtın ve onunla geliştirin: katılım, kanallar, etkinlikler, davranış kuralları ve katkılar.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>Exponential topluluğu: katılım, kanallar, etkinlikler, davranış kuralları ve katkılar.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>Ekosistem</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>PHP yığınındaki geniş Exponential dünyası: ürünleri, uzantıları, dağıtımları, iş ortakları, kullanıcıları ve üreticileri.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>PHP yığınındaki Exponential ekosistemi: ürünler, uzantılar, dağıtımlar, iş ortakları, kullanıcılar ve üreticiler.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>PHP geliştiricileri</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Exponential üzerinde PHP ile çalışın: çekirdek ve sınıfları, otomatik yükleme, komut satırı, Composer, testler ve kodlama standartları.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>PHP geliştirme</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Exponential üzerinde PHP geliştirme: çekirdek, sınıflar, otomatik yükleme, komut satırı, Composer, testler ve kodlama standartları.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>Tema tasarımcıları</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>Exponential için tema tasarlayın: tasarımlar ve geçersiz kılmalar, şablonlar, stil sayfaları ve varlıklar, bir temayı paketlemek ve güncel tutmak.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>Bayiler</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Exponential'ı ve çevresindeki hizmetleri yeniden satın: barındırma, destek ve uygulama paketleri, fiyatlandırma, lisanslama ve iş ortakları.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>Yeniden satış</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>Exponential'ın yeniden satışı: hizmet paketleri, barındırma ve destek, fiyatlandırma, lisanslama ve iş ortaklarıyla çalışma.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>Paketleyiciler</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Exponential'ı paketleyin: dağıtımlar, site paketleri, uzantılar ve yükleyiciler; sürümleri, lisansları ve güncellemeleriyle.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>Paketler ve dağıtımlar</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>Exponential'ı paketleme: dağıtımlar, site paketleri, uzantılar, yükleyiciler, sürümler ve lisanslar.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>Yapay zekâ, ajanlar ve ajan tabanlı çalışma</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>Exponential'da yapay zekâ ve ajanlarla çalışın: yazma asistanı expai, API'ler üzerinden ajan erişimi, ajan tabanlı iş akışları ve güvenlik.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>Yapay zekâ ve ajanlar</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>Exponential ile yapay zekâ, ajanlar ve ajan tabanlı çalışma: yazma asistanı expai, API'ler, iş akışları ve güvenlik.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>Yazılım mühendisleri</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>Exponential üzerinde yazılım geliştirin: mimari, istek döngüsü, önbellekleme, test, kalite kontrolleri ve sürdürülebilirlik.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>Yazılım mühendisliği</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>Exponential üzerinde yazılım mühendisliği: mimari, istek döngüsü, önbellekleme, test ve kalite.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>Benimseyenler</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Exponential'ı benimseyin: değerlendirin, geçişi planlayın, içeriği taşıyın, ekibinizi eğitin ve güvenle işletin.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>Exponential'ı benimsemek</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>Exponential'ı benimsemek: değerlendirme, planlama, geçiş, eğitim ve işletme.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>Mobil uygulama geliştiricileri</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>Exponential içeriği üzerinde mobil uygulamalar geliştirin: REST API'leri, kimlik doğrulama, JSON olarak içerik, görseller ve önbellekleme.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>Mobil uygulamalar</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>Exponential içeriği üzerinde mobil uygulamalar: REST API'leri, kimlik doğrulama, JSON içerik, görseller ve önbellekleme.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>Web çatısı geliştiricileri</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential'ı web çatılarıyla birleştirin: Composer, API'ler, içerik yerleştirme ve yan yana çalıştırma.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>Web çatıları</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Web çatılarıyla Exponential: Composer, API'ler, içerik yerleştirme ve yan yana çalıştırma.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>CMS geliştiricileri</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Bir içerik yönetim sistemi üzerinde geliştirin: içerik sınıfları, şablonlar, iş akışları, izinler, çoklu site ve diller.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>CMS geliştirme</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Exponential ile CMS geliştirme: içerik sınıfları, şablonlar, iş akışları, izinler, çoklu site ve diller.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>DXP geliştiricileri</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP için geliştirin: Symfony dağıtımı, yönetim arayüzü, REST ve GraphQL ve Exponential 6'dan farkları.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>DXP geliştirme</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: Symfony dağıtımı, yönetim arayüzü, REST ve GraphQL API'leri ve Exponential 6'dan farkları.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>E-ticaret</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>Exponential ile çevrimiçi satış yapın: mağaza, ürünler ve fiyatlar, KDV, siparişler, ödemeler ve mağazanın günlük işleyişi.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>Exponential ile e-ticaret: mağaza, ürünler, fiyatlar, KDV, siparişler ve ödemeler.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>Entegratörler</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Exponential'ı diğer sistemlere bağlayın: REST API'leri, RSS beslemeleri, içe ve dışa aktarma ve arama.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>Entegrasyon</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>Exponential'ı diğer sistemlerle entegre etme: API'ler, beslemeler, içe aktarma, dışa aktarma ve arama.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>Veritabanı yöneticileri</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>Exponential'ın arkasındaki veritabanını işletin: desteklenen veritabanları, şema ve yükseltmeler, yedekler ve geri yükleme ve performans.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>Veritabanı yönetimi</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>Exponential için veritabanı yönetimi: desteklenen veritabanları, şema, yükseltmeler, yedekler ve performans.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>Podcast yapımcıları, radyo ve yayın</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Exponential ile podcast, radyo ve canlı yayın yayımlayın: ses ve video, beslemeler, yerleştirmeler, bölüm notları, zamanlama ve haklar.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>Podcast ve canlı yayın</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Exponential ile podcast, radyo ve canlı yayın: ses ve video medyası, beslemeler, yerleştirmeler, bölüm notları, zamanlama ve haklar.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>Kâr amacı gütmeyen kuruluşlar</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>Kâr amacı gütmeyen bir kuruluşun web sitesini Exponential ile yönetin: üyeler ve gönüllüler, bağış sayfaları, erişilebilirlik, şeffaflık ve küçük bütçeler.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>Kâr amacı gütmeyen kuruluşlar</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Kâr amacı gütmeyen kuruluşlar için Exponential: üyeler, gönüllüler, bağış sayfaları, erişilebilirlik ve şeffaflık.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>Yerel işletmeler</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>Yerel bir işletmeyi Exponential ile çevrimiçi hale getirin: çalışma saatleri, konum ve iletişim sayfaları, yerel arama, basit bir mağaza ve küçük bir bütçe.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>Yerel işletme</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Yerel işletmeler için Exponential: çalışma saatleri, konum sayfaları, yerel arama ve basit bir mağaza.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>Bireyler</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>Exponential ile kendi sitenizi oluşturun: kişisel site, portfolyo, blog, aile ya da kulüp sitesi, adım adım.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>Kişisel siteler</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>Exponential ile kişisel siteler: portfolyolar, bloglar, aile ve kulüp siteleri.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>Teknik olmayan kişiler</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Sade dille Exponential: komut satırı yok, barındırma seçimi, karşılaşacağınız terimler ve basit nasıl yapılır rehberleri.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>Sade dille yardım</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Sade dille Exponential: komut satırı gerektirmeyen rehberler, barındırma seçenekleri ve bir sözlük.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>Öğrenciler ve öğrenenler</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
+        <translation>Exponential'ı öğrenin: öğrenme yolları, ilk siteniz, çalışma projeleri, sertifikalar ve Student iş ortaklığı seviyesi.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>Exponential'ı öğrenmek</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>Exponential'ı öğrenmek: öğrenme yolları, ilk siteler, çalışma projeleri ve sertifikalar.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>Exponential'ı kullanmak ve işletmek</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>Editörler, yöneticiler, geliştiriciler ve kullanıcılar ile kendi sitesi olan herkes.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>Kuruluşlar</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>İşletmeler, kamu kurumları ve kâr amacı gütmeyen kuruluşlar ile onların projelerini yöneten ve satan kişiler.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>Exponential ile geliştirmek</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>Site, tema, uygulama ve entegrasyon geliştiren tasarımcılar, geliştiriciler ve mühendisler.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>Barındırma, satış ve iş ortaklığı</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>Exponential'ı müşterilerine ulaştıran iş ortakları, barındırma şirketleri, bayiler ve paketleyiciler.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>Topluluk ve öğrenme</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>Topluluk ve ekosistem, destekçiler ve sponsorlar, medya, eğitmenler ve öğrenciler.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>Exponential iş ortakları projenin kalıcı geleceğine maddi katkı sağlar, projeye kod ve daha fazlasını geri kazandırır ve 7x ile Exponential Foundation ile doğrudan çalışır.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>Exponential topluluğunun üyeleri dünya genelinde Exponential'ı kullanır, ona katkıda bulunur, onu tanıtır ve onunla yazılım geliştirir.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>Daha geniş ekosistem topluluğun ötesine geçer ve PHP yığınındaki Exponential dünyasının tüm yönlerini kapsar: kullanıcılarını ve üreticilerini.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>%count hedef kitle</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>Diğer hedef kitleler</translation>
+    </message>
 </context>
 </TS>

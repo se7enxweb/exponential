@@ -31,7 +31,7 @@ StartPage=help/hosting/hosting-companies-start-here.md
 
 ## Related
 
-Default: a list of 3: `admin`, `partner`, `developer`.
+Default: a list of 6: `admin`, `partner`, `developer`, `reseller`, `bundler`, `dba`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,9 @@ Related[]
 Related[]=admin
 Related[]=partner
 Related[]=developer
+Related[]=reseller
+Related[]=bundler
+Related[]=dba
 */ ?>
 ```
 

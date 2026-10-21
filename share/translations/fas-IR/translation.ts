@@ -73447,5 +73447,397 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Search the whole help</source>
         <translation>جستجو در کل راهنما</translation>
     </message>
+    <message>
+        <source>Community</source>
+        <translation>جامعه</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>از Exponential در سراسر جهان استفاده کنید، آن را معرفی کنید و با آن بسازید: مشارکت، کانال‌ها، رویدادها، آیین‌نامهٔ رفتاری و مشارکت‌ها.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>جامعهٔ Exponential: مشارکت، کانال‌ها، رویدادها، آیین‌نامهٔ رفتاری و مشارکت‌ها.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>اکوسیستم</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>دنیای گسترده‌تر Exponential در پشتهٔ PHP: محصولات، افزونه‌ها، توزیع‌ها، شرکا، کاربران و سازندگان آن.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>اکوسیستم Exponential در پشتهٔ PHP: محصولات، افزونه‌ها، توزیع‌ها، شرکا، کاربران و سازندگان.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>توسعه‌دهندگان PHP</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>روی Exponential با PHP کار کنید: هسته و کلاس‌های آن، بارگذاری خودکار، خط فرمان، Composer، آزمون‌ها و استانداردهای کدنویسی.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>توسعهٔ PHP</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>توسعهٔ PHP روی Exponential: هسته، کلاس‌ها، بارگذاری خودکار، خط فرمان، Composer، آزمون‌ها و استانداردهای کدنویسی.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>طراحان پوسته</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>برای Exponential پوسته طراحی کنید: طرح‌ها و بازنویسی‌ها، قالب‌ها، شیوه‌نامه‌ها و منابع، بسته‌بندی پوسته و به‌روز نگه داشتن آن.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>فروشندگان مجدد</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Exponential و خدمات پیرامون آن را دوباره بفروشید: بسته‌های میزبانی، پشتیبانی و پیاده‌سازی، قیمت‌گذاری، مجوزدهی و شرکا.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>فروش مجدد</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>فروش مجدد Exponential: بسته‌های خدمات، میزبانی و پشتیبانی، قیمت‌گذاری، مجوزدهی و همکاری با شرکا.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>بسته‌سازان</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Exponential را بسته‌بندی کنید: توزیع‌ها، بسته‌های سایت، افزونه‌ها و نصب‌کننده‌ها، همراه با نسخه‌ها، مجوزها و به‌روزرسانی‌هایشان.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>بسته‌ها و توزیع‌ها</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>بسته‌بندی Exponential: توزیع‌ها، بسته‌های سایت، افزونه‌ها، نصب‌کننده‌ها، نسخه‌ها و مجوزها.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>هوش مصنوعی، عامل‌ها و کار عامل‌محور</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>با هوش مصنوعی و عامل‌ها در Exponential کار کنید: دستیار نگارش expai، دسترسی عامل‌ها از راه APIها، گردش‌کارهای عامل‌محور و ایمنی.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>هوش مصنوعی و عامل‌ها</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>هوش مصنوعی، عامل‌ها و کار عامل‌محور با Exponential: دستیار نگارش expai، APIها، گردش‌کارها و ایمنی.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>مهندسان نرم‌افزار</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>روی Exponential نرم‌افزار بسازید: معماری، چرخهٔ درخواست، کش، آزمون، کنترل‌های کیفیت و نگهداشت‌پذیری.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>مهندسی نرم‌افزار</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>مهندسی نرم‌افزار روی Exponential: معماری، چرخهٔ درخواست، کش، آزمون و کیفیت.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>پذیرندگان</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Exponential را به کار بگیرید: آن را ارزیابی کنید، مهاجرت را برنامه‌ریزی کنید، محتوا را منتقل کنید، تیم خود را آموزش دهید و با اطمینان آن را اداره کنید.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>به‌کارگیری Exponential</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>به‌کارگیری Exponential: ارزیابی، برنامه‌ریزی، مهاجرت، آموزش و بهره‌برداری.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>توسعه‌دهندگان اپ موبایل</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>اپ‌های موبایل را روی محتوای Exponential بسازید: REST APIها، احراز هویت، محتوا به صورت JSON، تصاویر و کش.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>اپ‌های موبایل</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>اپ‌های موبایل روی محتوای Exponential: REST APIها، احراز هویت، محتوای JSON، تصاویر و کش.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>توسعه‌دهندگان چارچوب‌های وب</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential را با چارچوب‌های وب ترکیب کنید: Composer، APIها، جاسازی محتوا و اجرای هم‌زمان در کنار هم.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>چارچوب‌های وب</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential با چارچوب‌های وب: Composer، APIها، جاسازی محتوا و اجرای هم‌زمان در کنار هم.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>توسعه‌دهندگان CMS</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>روی یک سامانهٔ مدیریت محتوا توسعه دهید: کلاس‌های محتوا، قالب‌ها، گردش‌کارها، مجوزها، چندسایتی و زبان‌ها.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>توسعهٔ CMS</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>توسعهٔ CMS با Exponential: کلاس‌های محتوا، قالب‌ها، گردش‌کارها، مجوزها، چندسایتی و زبان‌ها.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>توسعه‌دهندگان DXP</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>برای Exponential Platform DXP توسعه دهید: توزیع Symfony، رابط مدیریت آن، REST و GraphQL و تفاوت آن با Exponential 6.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>توسعهٔ DXP</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: توزیع Symfony، رابط مدیریت آن، APIهای REST و GraphQL و تفاوت آن با Exponential 6.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>تجارت الکترونیک</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>با Exponential آنلاین بفروشید: فروشگاه، محصولات و قیمت‌ها، مالیات بر ارزش افزوده، سفارش‌ها، پرداخت‌ها و ادارهٔ روزانهٔ فروشگاه.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>تجارت الکترونیک با Exponential: فروشگاه، محصولات، قیمت‌ها، مالیات بر ارزش افزوده، سفارش‌ها و پرداخت‌ها.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>یکپارچه‌سازان</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Exponential را به سامانه‌های دیگر وصل کنید: REST APIها، خوراک‌های RSS، ورود و خروج داده و جست‌وجو.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>یکپارچه‌سازی</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>یکپارچه‌سازی Exponential با سامانه‌های دیگر: APIها، خوراک‌ها، ورود داده، خروج داده و جست‌وجو.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>مدیران پایگاه داده</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>پایگاه دادهٔ پشت Exponential را اداره کنید: پایگاه‌های دادهٔ پشتیبانی‌شده، طرح‌واره و ارتقاها، پشتیبان‌گیری و بازیابی، و کارایی.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>مدیریت پایگاه داده</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>مدیریت پایگاه داده برای Exponential: پایگاه‌های دادهٔ پشتیبانی‌شده، طرح‌واره، ارتقاها، پشتیبان‌گیری و کارایی.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>پادکسترها، رادیو و پخش زنده</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>پادکست، رادیو و پخش زنده را با Exponential منتشر کنید: صدا و ویدئو، خوراک‌ها، جاسازی‌ها، یادداشت‌های قسمت، زمان‌بندی و حقوق.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>پادکست و پخش زنده</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>پادکست، رادیو و پخش زنده با Exponential: رسانه‌های صوتی و تصویری، خوراک‌ها، جاسازی‌ها، یادداشت‌های قسمت، زمان‌بندی و حقوق.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>سازمان‌های غیرانتفاعی</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>وب‌سایت یک سازمان غیرانتفاعی را با Exponential اداره کنید: اعضا و داوطلبان، صفحه‌های جمع‌آوری کمک، دسترس‌پذیری، شفافیت و بودجه‌های کوچک.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>سازمان‌های غیرانتفاعی</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Exponential برای سازمان‌های غیرانتفاعی: اعضا، داوطلبان، صفحه‌های جمع‌آوری کمک، دسترس‌پذیری و شفافیت.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>کسب‌وکارهای محلی</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>یک کسب‌وکار محلی را با Exponential آنلاین کنید: ساعات کاری، صفحه‌های مکان و تماس، جست‌وجوی محلی، یک فروشگاه ساده و بودجه‌ای کوچک.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>کسب‌وکار محلی</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Exponential برای کسب‌وکارهای محلی: ساعات کاری، صفحه‌های مکان، جست‌وجوی محلی و یک فروشگاه ساده.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>افراد</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>سایت خودتان را با Exponential بسازید: سایت شخصی، نمونه‌کار، وبلاگ، سایت خانواده یا باشگاه، گام به گام.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>سایت‌های شخصی</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>سایت‌های شخصی با Exponential: نمونه‌کارها، وبلاگ‌ها، سایت‌های خانواده و باشگاه.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>افراد غیرفنی</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential به زبان ساده: بدون خط فرمان، انتخاب میزبانی، واژه‌هایی که با آن‌ها روبه‌رو می‌شوید و راهنماهای ساده.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>راهنما به زبان ساده</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential به زبان ساده: راهنماهای بدون خط فرمان، گزینه‌های میزبانی و یک واژه‌نامه.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>دانشجویان و یادگیرندگان</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
+        <translation>Exponential را یاد بگیرید: مسیرهای یادگیری، نخستین سایت شما، پروژه‌های درسی، گواهی‌نامه‌ها و سطح شراکت Student.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>یادگیری Exponential</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>یادگیری Exponential: مسیرهای یادگیری، نخستین سایت‌ها، پروژه‌های درسی و گواهی‌نامه‌ها.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>استفاده و اداره کردن Exponential</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>ویراستاران، مدیران، توسعه‌دهندگان و کاربران، و هر کسی که سایت خودش را دارد.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>سازمان‌ها</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>کسب‌وکارها، نهادهای عمومی و سازمان‌های غیرانتفاعی، و کسانی که پروژه‌هایشان را رهبری می‌کنند و می‌فروشند.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>ساختن با Exponential</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>طراحان، توسعه‌دهندگان و مهندسانی که سایت، پوسته، برنامه و یکپارچه‌سازی می‌سازند.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>میزبانی، فروش و شراکت</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>شرکا، شرکت‌های میزبانی، فروشندگان مجدد و بسته‌سازانی که Exponential را به مشتریان خود می‌رسانند.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>جامعه و یادگیری</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>جامعه و اکوسیستم، حامیان و اسپانسرها، رسانه‌ها، مربیان و دانشجویان.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>شرکای Exponential به‌صورت مالی به آیندهٔ پایدار پروژه کمک می‌کنند، کد و بیش از آن را به پروژه بازمی‌گردانند و مستقیماً با 7x و Exponential Foundation همکاری می‌کنند.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>اعضای جامعهٔ Exponential در سراسر جهان از Exponential استفاده می‌کنند، در آن مشارکت می‌کنند، آن را معرفی می‌کنند و با آن نرم‌افزار می‌سازند.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>اکوسیستم گسترده‌تر فراتر از جامعه می‌رود و همهٔ جنبه‌های دنیای Exponential را در پشتهٔ PHP دربرمی‌گیرد: کاربران و سازندگانش.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>%count مخاطب</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>مخاطبان بیشتر</translation>
+    </message>
 </context>
 </TS>
