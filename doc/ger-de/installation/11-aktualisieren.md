@@ -523,6 +523,8 @@ Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](../../changelogs
 
 **Demo-Modus (6.0.15).** Auf einer aktualisierten Site ändert sich nichts, solange die Umgebungsvariable `EXP_DEMO_MODE=1` nicht gesetzt ist, die nur für öffentliche Demos gedacht ist. Prüfen Sie nach dem Upgrade eines Produktivservers, dass kein Prozess einer echten Site sie hat (`grep -r EXP_DEMO_MODE` über die PHP-FPM-Pools, virtuellen Hosts, `.htaccess`-Dateien, Service-Units und Crontabs). [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
 
+**Icon-Themes von Erweiterungen (6.0.15).** Die mitgelieferten Umschreiberegeln liefern jetzt `extension/<name>/icons/` (SVG-, PNG- und GIF-Bilder, deren Name genau eine Dateiendung hat) als Datei aus. Ein Upgrade schreibt Ihre eigene `.htaccess` oder Serverkonfiguration nie um: Wenn eine Erweiterung der Site Icons mitbringt (`icon.ini [ExtensionSettings] IconExtensions[]`), kopieren Sie die Regel hinein, vor die Regel des Front-Controllers. Apache `.htaccess`: `RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]`; ein virtueller Host nimmt `^/extension/...`, nginx `location ~ ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ { try_files $uri =404; }`. Velocity und die erzeugte Konfiguration von FrankenPHP haben sie nach `exp:velocity deploy`. Alle Server: [Regeln für den Webserver](../bc/6.0/symbole.md#regeln-für-den-webserver).
+
 ## Referenzen
 
 In diesem Repository:

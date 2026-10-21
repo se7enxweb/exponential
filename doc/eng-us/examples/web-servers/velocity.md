@@ -13,7 +13,9 @@ type: example
 every stage. With its `qbix` engine **no separate web server and no separate HTTPS server is needed**: Velocity
 listens on the HTTP and HTTPS ports itself, keeps the application loaded in persistent workers, answers repeat pages
 from its own response cache and manages its certificates. Its routing is `.htaccess_root`'s, built in
-(`expVelocity::STATIC_PATHS`, `FRONT_CONTROLLERS`, `ENTRY_SCRIPTS`), so there are no rewrite rules to copy.
+(`expVelocity::STATIC_PATHS`, `FRONT_CONTROLLERS`, `ENTRY_SCRIPTS`), so there are no rewrite rules to copy. The list
+also serves the icon themes of extensions (`extension/<name>/icons/`, SVG, PNG and GIF images with exactly one
+extension); after an upgrade it takes effect with the restart that `exp:velocity deploy` does.
 
 Everything is configured in `velocity.ini`; the `/etc/vc` tree is generated from it on every start.
 

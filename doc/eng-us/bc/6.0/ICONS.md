@@ -206,20 +206,41 @@ theme does not include it.
 
 ## Web server rules
 
-Icons under `extension/<name>/icons/` are static files. The default Exponential `.htaccess` and nginx rules already
-serve static files under `extension/`. A custom vhost must not send `/extension/*/icons/*` to `index.php`; add:
+Icons under `extension/<name>/icons/` are static files, and the icon operators point the browser straight at them.
+The web server rules only send a fixed list of asset paths as files and everything else to `index.php`, so the list
+needs a rule for them, or every such icon is a broken image. Since 6.0.15 (20 October 2026) the shipped rules have
+it: `.htaccess_root`, `.htaccess_root_static`, every example in
+[the web server examples](../../examples/web-servers/README.md), and the static list of Velocity, FrankenPHP and the
+PHP built-in server (`expVelocity::STATIC_PATHS`).
 
-Apache:
+The rule takes only SVG, PNG and GIF images whose name has **exactly one extension**: a name like `a.php.svg` could
+otherwise be handed to PHP by an Apache `AddHandler` mapping. Keep that restriction when you write it for another
+server.
+
+Apache `.htaccess` (directory context, the line of `.htaccess_root`), before `RewriteRule .* index.php`:
 
 ```apache
-RewriteRule ^/extension/[^/]+/icons/[^/]+/[^/]+/[^/]+/.* - [L]
+RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
 ```
 
-Nginx:
+Apache virtual host (server context, the path starts with `/`; LiteSpeed takes `^/?`):
+
+```apache
+RewriteRule ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
+```
+
+nginx, next to the other asset locations:
 
 ```nginx
-rewrite "^/extension/([^/]+)/icons/([^/]+)/([^/]+)/([^/]+)/(.*)" "/extension/$1/icons/$2/$3/$4" break;
+location ~ ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ { try_files $uri =404; }
 ```
+
+Caddy, FrankenPHP and IIS: add `extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$` as one more alternative of
+the static path expression, as the examples show.
+
+**Upgrading**: an installed `.htaccess` or a server configuration of your own is never rewritten by an upgrade. Copy
+the rule into it, before the front controller rule, if an extension of the site ships icons. Velocity and the
+generated FrankenPHP `Caddyfile` take it from the code with their next restart (`exp:velocity deploy`).
 
 ## Check it in two minutes
 

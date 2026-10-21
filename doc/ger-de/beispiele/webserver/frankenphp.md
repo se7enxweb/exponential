@@ -183,7 +183,7 @@ gehören in die Datei, die `SiteInclude` nennt; sie wird in beide Site-Blöcke i
 
 		# As generated: expVelocity::STATIC_PATHS, never a script or a dot path
 		@static {
-			path_regexp static ^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)
+			path_regexp static ^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)
 			not path_regexp (?i)(\.(php\d?|phtml|phar)$|/\.)
 		}
 		header @static Cache-Control "public, max-age=31536000"

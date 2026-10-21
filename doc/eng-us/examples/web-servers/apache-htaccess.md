@@ -126,6 +126,10 @@ RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 #RewriteRule ^var_cache/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 RewriteRule ^design/[^/]+/(stylesheets|images|javascript|fonts)/.* - [L]
 RewriteRule ^share/icons/.* - [L]
+# Icon themes shipped by extensions (icon.ini [ExtensionSettings] IconExtensions[],
+# extension/<name>/icons/). Only images with exactly one extension: a name like
+# a.php.svg could otherwise be handed to PHP by an AddHandler mapping.
+RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
 RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.* - [L]
 RewriteRule ^packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
 RewriteRule ^packages/styles/.+/thumbnail/.* - [L]
@@ -212,7 +216,7 @@ RewriteRule .* index.php
         ExpiresActive On
         ExpiresDefault "access plus 7 days"
     </ElseIf>
-    <ElseIf "%{REQUEST_URI} =~ m#^/share/icons/#">
+    <ElseIf "%{REQUEST_URI} =~ m#^/(share|extension/[^/]+)/icons/#">
         ExpiresActive On
         ExpiresDefault "access plus 7 days"
     </ElseIf>
@@ -235,6 +239,7 @@ RewriteRule .* index.php
 | `^var/([^/]+/)?cache/(texttoimage\|public)/.*` | the public caches (packed scripts and styles) | `ezjscore`'s packer writes there |
 | `^var_cache/...` (commented) | the public caches in a tree of their own | only with `site.ini [FileSettings] CacheVarDir=var_cache` |
 | `^design/...`, `^share/icons/.*`, `^extension/[^/]+/design/...` | stylesheets, images, scripts, fonts of the designs | each listed directory type only; an extension's `vendor` and `media` too |
+| `^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg\|png\|gif)$` | the icon themes of extensions (`icon.ini [ExtensionSettings] IconExtensions[]`) | SVG, PNG and GIF images with exactly one extension only: a name like `a.php.svg` could otherwise be handed to PHP by an `AddHandler` mapping |
 | `^packages/styles/...`, `^var/storage/packages/.+\.(png\|jpe?g\|gif\|webp)$` | package styles and preview images | a package's XML, SQL and settings are not for the web; SVG is not listed, it can carry script |
 | `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml` | sent from the root | the service worker must be served from the root |
 | `RewriteRule .* index.php` | everything else runs `index.php` | URL aliases and modules; also `settings/site.ini`, `composer.json`, `var/log/...`, which `index.php` answers with a page or a 404, never the file |

@@ -100,7 +100,8 @@ rule for rule (`expVelocity::STATIC_PATHS`, `FRONT_CONTROLLERS` and `ENTRY_SCRIP
           |                                                               |
    a listed asset path (design and extension stylesheets, images,        |
    scripts and fonts; var/*/storage/images; image originals;              |
-   stored PDF exports; public caches; share/icons; package previews;      |
+   stored PDF exports; public caches; share/icons; extension/<name>/icons |
+   (images with one extension only); package previews;                    |
    favicon.ico, robots.txt, index.js, sw.js, w3c/p3p.xml)  --------------> sent as a file
           |                                                               |
    everything else (URL aliases, modules, /settings/site.ini, ...)  -----> index.php
@@ -1053,6 +1054,7 @@ server {
     #location ~ ^/var_cache/([^/]+/)?cache/(texttoimage|public)/                               { try_files $uri =404; }
     location ~ ^/design/[^/]+/(stylesheets|images|javascript|fonts)/                            { try_files $uri =404; }
     location ~ ^/share/icons/                                                                   { try_files $uri =404; }
+    location ~ ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$                          { try_files $uri =404; }
     location ~ ^/extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/ { try_files $uri =404; }
     location ~ ^/packages/styles/.+/(stylesheets|images|javascript)/[^/]+/                      { try_files $uri =404; }
     location ~ ^/packages/styles/.+/thumbnail/                                                  { try_files $uri =404; }

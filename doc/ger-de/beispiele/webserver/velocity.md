@@ -14,7 +14,9 @@ empfohlene Weg, es auszuliefern. Mit seiner Engine `qbix` wird **weder ein separ
 HTTPS-Server gebraucht**: Velocity lauscht selbst auf den Ports für HTTP und HTTPS, hält die Anwendung in persistenten
 Workern geladen, beantwortet wiederholte Seitenaufrufe aus seinem eigenen Antwort-Cache und verwaltet seine
 Zertifikate. Sein Routing ist das von `.htaccess_root`, fest eingebaut (`expVelocity::STATIC_PATHS`,
-`FRONT_CONTROLLERS`, `ENTRY_SCRIPTS`), daher gibt es keine Umschreiberegeln zu kopieren.
+`FRONT_CONTROLLERS`, `ENTRY_SCRIPTS`), daher gibt es keine Umschreiberegeln zu kopieren. Die Liste
+liefert auch die Icon-Themes der Erweiterungen aus (`extension/<name>/icons/`, SVG-, PNG- und GIF-Bilder mit genau
+einer Dateiendung); nach einem Upgrade gilt sie mit dem Neustart, den `exp:velocity deploy` ausführt.
 
 Alles wird in `velocity.ini` eingestellt; der Baum `/etc/vc` wird bei jedem Start daraus erzeugt.
 

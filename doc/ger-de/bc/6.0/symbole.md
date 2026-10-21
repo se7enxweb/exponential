@@ -213,21 +213,42 @@ hinzu. Das Standard-Theme `crystal` enthält es nicht.
 
 ## Regeln für den Webserver
 
-Icons unter `extension/<name>/icons/` sind statische Dateien. Die Standardregeln von Exponential für `.htaccess` und
-nginx liefern statische Dateien unter `extension/` bereits aus. Ein eigener vhost darf `/extension/*/icons/*` nicht an
-`index.php` senden; fügen Sie hinzu:
+Icons unter `extension/<name>/icons/` sind statische Dateien, und die Icon-Operatoren verweisen den Browser direkt
+darauf. Die Webserver-Regeln senden nur eine feste Liste von Asset-Pfaden als Datei und alles andere an `index.php`;
+die Liste braucht also eine Regel dafür, sonst ist jedes solche Icon ein kaputtes Bild. Seit 6.0.15 (20. Oktober
+2026) haben die mitgelieferten Regeln sie: `.htaccess_root`, `.htaccess_root_static`, jedes Beispiel unter
+[Webserver-Beispiele](../../beispiele/webserver/README.md) und die Liste der statischen Pfade von Velocity,
+FrankenPHP und dem eingebauten PHP-Server (`expVelocity::STATIC_PATHS`).
 
-Apache:
+Die Regel nimmt nur SVG-, PNG- und GIF-Bilder, deren Name **genau eine Dateiendung** hat: ein Name wie `a.php.svg`
+könnte sonst über ein `AddHandler`-Mapping von Apache an PHP gehen. Behalten Sie diese Einschränkung bei, wenn Sie
+die Regel für einen anderen Server schreiben.
+
+Apache `.htaccess` (Verzeichniskontext, die Zeile aus `.htaccess_root`), vor `RewriteRule .* index.php`:
 
 ```apache
-RewriteRule ^/extension/[^/]+/icons/[^/]+/[^/]+/[^/]+/.* - [L]
+RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
 ```
 
-Nginx:
+Virtueller Host von Apache (Serverkontext, der Pfad beginnt mit `/`; LiteSpeed nimmt `^/?`):
+
+```apache
+RewriteRule ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
+```
+
+nginx, neben den anderen Asset-Locations:
 
 ```nginx
-rewrite "^/extension/([^/]+)/icons/([^/]+)/([^/]+)/([^/]+)/(.*)" "/extension/$1/icons/$2/$3/$4" break;
+location ~ ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ { try_files $uri =404; }
 ```
+
+Caddy, FrankenPHP und IIS: `extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$` als weitere Alternative des
+Ausdrucks der statischen Pfade, wie es die Beispiele zeigen.
+
+**Upgrade**: Eine installierte `.htaccess` oder eine eigene Serverkonfiguration wird von einem Upgrade nie
+umgeschrieben. Kopieren Sie die Regel hinein, vor die Regel des Front-Controllers, wenn eine Erweiterung der Site
+Icons mitbringt. Velocity und die erzeugte `Caddyfile` von FrankenPHP übernehmen sie aus dem Code beim nächsten
+Neustart (`exp:velocity deploy`).
 
 ## In zwei Minuten prüfen
 
