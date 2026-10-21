@@ -60,9 +60,9 @@ AFTER THE COURSE
 | Den Code beschaffen | [Lektion 2.2: Den Code für einen Kurs beschaffen](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/den-code-fuer-einen-kurs-beschaffen.md), [Den Code beschaffen](../../installation/03-den-code-beschaffen.md) |
 | Installieren | [Lektion 2.3: Eine Installation pro Teilnehmer](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md), [Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md) |
 | Bereitstellen | [Lektion 2.4: Die Websites der Übungsumgebung bereitstellen](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md), [Die Website bereitstellen](../../installation/08-die-website-ausliefern.md) |
-| Fehler beheben | [Lektion 4.4: Fehlersuche im Kurs](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/troubleshooting-in-class.md), [Fehlerbehebung](../../installation/12-fehlerbehebung.md) |
+| Fehler beheben | [Lektion 4.4: Fehlersuche im Kurs](train-the-trainer/modul-04-durchfuehren/fehlersuche-im-kurs.md), [Fehlerbehebung](../../installation/12-fehlerbehebung.md) |
 | Zurücksetzen | [Lektion 2.6: Die Übungsumgebung zurücksetzen](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-uebungsumgebung-zuruecksetzen.md) |
-| Aufräumen | [Lektion 4.5: Sicherheit und Datenschutz im Kurs](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/security-and-privacy-in-class.md) |
+| Aufräumen | [Lektion 4.5: Sicherheit und Datenschutz im Kurs](train-the-trainer/modul-04-durchfuehren/sicherheit-und-datenschutz-im-kurs.md) |
 
 > **Warnung**
 > `exp:install --force` ersetzt die Datenbank und die Einstellungen der Installation, in der es läuft. Führen Sie es

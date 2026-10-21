@@ -26,13 +26,13 @@ erklärt.
 
 - [ ] Übungsumgebungen installiert oder die Installation auf jedem Rechnertyp getestet
 - [ ] Konten der Teilnehmenden mit Adressen unter `example.invalid` angelegt ([Lektion 2.5](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/konten-und-rollen-der-teilnehmenden.md))
-- [ ] Browserprofil für die Vorführung ohne gespeicherte Anmeldungen; Benachrichtigungen aus ([Lektion 4.2](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/demonstrating-safely.md))
+- [ ] Browserprofil für die Vorführung ohne gespeicherte Anmeldungen; Benachrichtigungen aus ([Lektion 4.2](train-the-trainer/modul-04-durchfuehren/sicher-vorfuehren.md))
 - [ ] Kurzkarte der Übungsumgebung für die Helfer gedruckt ([Kurzkarte für die Übungsumgebung](kurzkarte-fuer-die-uebungsumgebung.md))
 - [ ] Fragentafel bereit
 
 ## Checkliste: am Kurstag
 
-- [ ] Erste Stunde: Alle sind angemeldet, haben ein eigenes Passwort und haben das Hilfe-Center gefunden ([Lektion 4.1](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/running-the-first-hour.md))
+- [ ] Erste Stunde: Alle sind angemeldet, haben ein eigenes Passwort und haben das Hilfe-Center gefunden ([Lektion 4.1](train-the-trainer/modul-04-durchfuehren/die-erste-stunde-gestalten.md))
 - [ ] Mindestens jede Stunde eine Pause; Puffer nach Installationen ([Lektion 3.3](train-the-trainer/modul-03-einen-kurs-gestalten/zeitplanung-und-tempo.md))
 - [ ] Erwartete Ergebnisse auf jedem Bildschirm geprüft ([Lektion 6.1](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/checking-understanding-during-class.md))
 - [ ] Feedbackzettel am Ende eingesammelt ([Lektion 6.3](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md))

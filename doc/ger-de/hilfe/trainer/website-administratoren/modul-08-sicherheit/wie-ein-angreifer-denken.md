@@ -28,7 +28,7 @@ Prüfung, die jeder Administrator in zwei Minuten ausführen kann.
 | Dauer | 40 Minuten (20 Präsentation, 20 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Website-Administratoren, Sicherheitsbeauftragte |
-| Voraussetzungen | [Modul 7](../../../../../eng-us/help/trainers/site-administrators/module-07-logs-and-the-audit-trail/README.md); eine über HTTP ausgelieferte Schulungsinstallation und ein Terminal |
+| Voraussetzungen | [Modul 7](../modul-07-logs-und-das-audit-protokoll/README.md); eine über HTTP ausgelieferte Schulungsinstallation und ein Terminal |
 
 ## Lernziele
 

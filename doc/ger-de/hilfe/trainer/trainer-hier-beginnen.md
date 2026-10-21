@@ -94,7 +94,7 @@ zeigt, wie Sie herausfinden, wer Ihre Teilnehmenden sind.
    Lektion und die Software nicht übereinstimmen, hat die Software recht, und die Lektion wird korrigiert
    ([Diese Kurse anpassen und verbessern](train-the-trainer/modul-03-einen-kurs-gestalten/diese-kurse-anpassen-und-verbessern.md)).
 2. **Verwenden Sie Schulungsinstallationen.** Niemals eine Live-Website, niemals echte Kundendaten, niemals ein
-   gemeinsam genutztes Administratorkonto ([Sicher vorführen](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/demonstrating-safely.md)).
+   gemeinsam genutztes Administratorkonto ([Sicher vorführen](train-the-trainer/modul-04-durchfuehren/sicher-vorfuehren.md)).
 3. **Testkonten verwenden `example.invalid`.** Keine Übung darf E-Mails an eine echte Person senden.
 4. **Verwenden Sie die richtigen Namen.** Das Produkt heißt Exponential; 7x ist das Unternehmen, das es führt; die
    Exponential Foundation ist die gemeinnützige Organisation; der alte Name ist Geschichte

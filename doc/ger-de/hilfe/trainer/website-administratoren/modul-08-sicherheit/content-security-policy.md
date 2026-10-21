@@ -29,7 +29,7 @@ sicher durchsetzen.
 | Dauer | 40 Minuten (15 Präsentation, 25 Übung) |
 | Niveau | Fortgeschrittene bis Experten |
 | Zielgruppe | Website-Administratoren; Entwickler sind willkommen |
-| Voraussetzungen | [Lektion 8.1](wie-ein-angreifer-denken.md); [Lektion 7.2](../../../../../eng-us/help/trainers/site-administrators/module-07-logs-and-the-audit-trail/the-log-viewer.md); ein Browser mit Entwicklerwerkzeugen; eine Shell |
+| Voraussetzungen | [Lektion 8.1](wie-ein-angreifer-denken.md); [Lektion 7.2](../modul-07-logs-und-das-audit-protokoll/der-log-viewer.md); ein Browser mit Entwicklerwerkzeugen; eine Shell |
 
 ## Lernziele
 

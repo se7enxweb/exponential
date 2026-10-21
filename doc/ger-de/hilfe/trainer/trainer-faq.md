@@ -65,7 +65,7 @@ Adressen unter `example.invalid`, die niemals E-Mails empfangen können.
 
 **Darf ich unsere echten Inhalte verwenden, damit es anschaulich wird?**
 Keine echten Kunden- oder personenbezogenen Daten, auch nicht vorübergehend. Verwenden Sie erfundene Inhalte
-([Lektion 4.2](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/demonstrating-safely.md)).
+([Lektion 4.2](train-the-trainer/modul-04-durchfuehren/sicher-vorfuehren.md)).
 
 **Eine Teilnehmerin oder ein Teilnehmer hat ein Sicherheitsproblem gefunden.**
 Es wird vertraulich gemeldet, wie `SECURITY.md` es beschreibt, niemals in einem öffentlichen Issue
