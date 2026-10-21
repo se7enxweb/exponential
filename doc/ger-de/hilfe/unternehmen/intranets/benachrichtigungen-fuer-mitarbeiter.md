@@ -111,7 +111,7 @@ Die Mailzustellung selbst (Absenderadresse, SPF und DKIM bei Ihrem Mailanbieter)
   ([Ohne Benachrichtigung veröffentlichen](../../../anleitungen/benachrichtigungen-administrator.md#8-veröffentlichen-ohne-benachrichtigung)).
 - Halten Sie unternehmensweite Ankündigungen in einem Nachrichtenordner, damit das Folgen eine klare Entscheidung ist.
 - Verwenden Sie für eine kuratierte wöchentliche Zusammenfassung einen Newsletter statt vieler einzelner Mails
-  ([Newsletter](../newsletter/README.md)).
+  ([Newsletter](../newsletters/README.md)).
 - Prüfen Sie einmal im Monat auf der Statusseite, ob es Abonnements für Inhalte gibt, die nicht mehr existieren.
 
 ## Checkliste

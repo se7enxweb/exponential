@@ -107,7 +107,7 @@ Aus [PDF- und Druckexporte](pdf-und-druckexporte.md) und [Feeds für Neuerwerbun
 - [ ] Feeds für neue Einträge aktiv, eine Quelle pro Eintragsklasse, Links auf die öffentliche Website.
 - [ ] Autodiscovery-Links im Pagelayout; `/rss/feed/` in `robots.txt` nicht gesperrt.
 - [ ] Ein wiederkehrender Newsletter der Neuerwerbungen, falls geplant, mit Einwilligung eingerichtet
-      ([Newsletter](../newsletter/README.md)).
+      ([Newsletter](../newsletters/README.md)).
 
 ## Barrierefreiheit und Leser
 

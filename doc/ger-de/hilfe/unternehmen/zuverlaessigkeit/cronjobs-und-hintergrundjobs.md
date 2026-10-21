@@ -42,7 +42,7 @@ Ausfälle, wenn sie stoppen:
 | Benachrichtigungen | Abonnenten bekommen keine Mails über Aktualisierungen mehr |
 | Der Teil `audit` | Das Audit wird nicht indiziert, Alarmregeln werden nicht ausgewertet, Tagesarchive werden nicht geschrieben ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)) |
 | Inhaltsjobs | Im Hintergrund gestartete umfangreiche Entfernungen oder Kopien kommen nicht voran |
-| Newsletter-Teile | Ausgaben werden nicht versendet ([Newsletter](../newsletter/README.md)) |
+| Newsletter-Teile | Ausgaben werden nicht versendet ([Newsletter](../newsletters/README.md)) |
 | Sitemap-Teile | Suchmaschinen sehen eine veraltete Sitemap |
 
 ## Was läuft, in Teilen

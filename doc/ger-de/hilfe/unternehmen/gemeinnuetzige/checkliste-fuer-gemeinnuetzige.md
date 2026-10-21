@@ -72,7 +72,7 @@ Aus [Kampagnen und Landingpages](kampagnen-und-landingpages.md):
 
 ## Newsletter
 
-Aus dem Bereich [Newsletter](../newsletter/README.md):
+Aus dem Bereich [Newsletter](../newsletters/README.md):
 
 - [ ] Das Versprechen an die Unterstützer ist aufgeschrieben; das Double-Opt-in ist eingeschaltet.
 - [ ] Die Probe mit dem Datei-Transport ist bestanden (alle drei Transporte auf `file`).

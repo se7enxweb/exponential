@@ -114,7 +114,7 @@ Quelle: [Formulareingaben lesen und exportieren](../../ersteller/website-erstell
 |---|---|
 | Anmeldung zu einer Veranstaltung | Ein Formularobjekt auf der Seite der Veranstaltung |
 | Eine schnelle Umfrage unter Unterstützern | Den Formulartyp `poll`: „Eine Umfrage kann pro Benutzer einmal beantwortet werden“ (`CollectionUserDataList[poll]=unique`) |
-| Einen Newsletter für Unterstützer | `cjw_newsletter` mit Double-Opt-in, kein Formular ([Newsletter](../newsletter/README.md)) |
+| Einen Newsletter für Unterstützer | `cjw_newsletter` mit Double-Opt-in, kein Formular ([Newsletter](../newsletters/README.md)) |
 | Konten für Ehrenamtliche mit einem Mitgliederbereich | Benutzerregistrierung ([Mitgliederregistrierung und Mitgliederbereiche](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)) |
 
 Formulartypen werden in `settings/collect.ini` festgelegt

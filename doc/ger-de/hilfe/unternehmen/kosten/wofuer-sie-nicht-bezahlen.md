@@ -73,7 +73,7 @@ Aus `README.md`, „Main Exponential features“, und den Erweiterungen, die `co
 | Bedarf | Enthalten | Mehr lesen |
 |---|---|---|
 | Online-Shop | „Advanced e-Commerce Stores (Built in)“ mit USt, Währungen, Bestellungen; PayPal über `ezpaypal` | [Shops](../shops/README.md) |
-| Newsletter | `cjw_newsletter` wird von `composer.json` verlangt | [Newsletter](../newsletter/README.md) |
+| Newsletter | `cjw_newsletter` wird von `composer.json` verlangt | [Newsletter](../newsletters/README.md) |
 | Zweistufige Anmeldung | `sevenx_authentication_2fa` wird verlangt, und die Installer aktivieren es | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Prüfprotokoll | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicheres Prüfprotokoll mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Suche | „Built in search engine“ (eingebaute Suchmaschine); Solr über `ezfind` ist optional | [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md) |

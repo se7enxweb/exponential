@@ -10,7 +10,7 @@ type: help
 # Einen Newsletter mit dem Datei-Transport proben
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[Mit dem Datei-Transport proben](../../aufbauen/newsletter/mit-dem-datei-transport-proben.md).
+[Mit dem Datei-Transport proben](../../aufbauen/newsletters/mit-dem-datei-transport-proben.md).
 
 ## Schritte
 

@@ -112,7 +112,7 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 - [ ] Nur Mitarbeiter, die es brauchen, können die Kundenliste und die Bestellungen öffnen.
 - [ ] Bestellunterlagen werden so lange aufbewahrt, wie Ihre Buchhaltung es verlangt, und nicht länger
   ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
-- [ ] Werbemails nur mit Einwilligung ([Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)).
+- [ ] Werbemails nur mit Einwilligung ([Opt-in und Einwilligung](../newsletters/opt-in-und-einwilligung.md)).
 - [ ] Ihr Datenschutzhinweis beschreibt, was der Shop speichert ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
 ## Wenn etwas passiert

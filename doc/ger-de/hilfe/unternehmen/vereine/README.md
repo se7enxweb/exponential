@@ -65,7 +65,7 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md): Spenden, Anmeldung von Ehrenamtlichen, Kampagnen,
   Barrierefreiheit, kleine Budgets.
 - [Mitglieder](../mitglieder/README.md): Registrierung von Mitgliedern und Inhalte nur für Mitglieder.
-- [Newsletter](../newsletter/README.md): Mails an Mitglieder und Unterstützer.
+- [Newsletter](../newsletters/README.md): Mails an Mitglieder und Unterstützer.
 - [Bibliotheken und Kataloge](../bibliotheken/README.md): für Gruppen, die eine Sammlung pflegen.
 - [Sicherheit und Datenschutz](../sicherheit/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.
 - Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).

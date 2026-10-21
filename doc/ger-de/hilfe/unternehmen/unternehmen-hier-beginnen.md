@@ -87,7 +87,7 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 | Ein Unternehmen, das ein Intranet für seine Mitarbeiter braucht | [Intranets](intranets/README.md) |
 | Ein Unternehmen, das Informationen mit Partnern, Händlern, Lieferanten oder Kunden teilt | [Extranets und Partnerportale](extranets/README.md) |
 | Ein Verein, ein Berufsverband oder jemand mit Mitgliedern | [Mitgliederwebsites](mitglieder/README.md) |
-| Herausgeber eines Newsletters | [Newsletter](newsletter/README.md) |
+| Herausgeber eines Newsletters | [Newsletter](newsletters/README.md) |
 | Eine Bibliothek, ein Archiv oder jemand mit einem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md) |
 | Eine gemeinnützige oder wohltätige Organisation | [Gemeinnützige Organisationen](gemeinnuetzige/README.md) |
 | Eine kleine Gruppe oder ein Verein, von Ehrenamtlichen geführt | [Kleine Gruppen und Vereine](vereine/README.md) |

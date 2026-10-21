@@ -84,7 +84,7 @@ bleiben Ihre.
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md): Backups, Wiederherstellungen und Reaktion auf Vorfälle.
 - [Shops: Sicherheitscheckliste](../shops/sicherheitscheckliste-fuer-shops.md) und
   [Kartenzahlungen und PCI-Grundlagen](../shops/kartenzahlungen-und-pci-grundlagen.md).
-- [Newsletter: Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md).
+- [Newsletter: Opt-in und Einwilligung](../newsletters/opt-in-und-einwilligung.md).
 - [Kosten](../kosten/README.md) und [Hosting und Partner auswählen](../auswahl/README.md).
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 

@@ -34,7 +34,7 @@ Schreiben Sie drei bis fünf Ziele auf, denen die Website dient, jedes mit etwas
 | Den Auftrag erklären | Besucher erreichen die Seiten „Über uns“ und „Unsere Arbeit“ |
 | Geld sammeln | Klicks auf die Spendenschaltfläche oder Bestellungen im Shop, wenn Sie Spendenartikel verkaufen |
 | Ehrenamtliche gewinnen | Eingegangene Formulare von Ehrenamtlichen ([Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md)) |
-| Unterstützer informiert halten | Abonnenten des Newsletters ([Newsletter](../newsletter/README.md)) |
+| Unterstützer informiert halten | Abonnenten des Newsletters ([Newsletter](../newsletters/README.md)) |
 | Kampagnen durchführen | Besuche der Kampagnenseiten während der Kampagne ([Kampagnen und Landingpages](kampagnen-und-landingpages.md)) |
 
 Exponential setzt diese Ziele nicht für Sie und berichtet nicht darüber; die Werkzeuge zum Messen sind unter

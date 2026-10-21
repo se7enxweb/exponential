@@ -33,7 +33,7 @@ Viele Spitzen verursacht das Unternehmen selbst, und das heißt, sie lassen sich
 | Spitze | Wer zuerst davon weiß |
 |---|---|
 | Ein Sale oder eine Rabattaktion | Vertrieb und Marketing |
-| Ein Newsletter oder Mailing an alle Mitglieder ([Newsletter](../newsletter/README.md)) | Wer ihn versendet; der Versand lässt sich auf eine ruhige Stunde legen |
+| Ein Newsletter oder Mailing an alle Mitglieder ([Newsletter](../newsletters/README.md)) | Wer ihn versendet; der Versand lässt sich auf eine ruhige Stunde legen |
 | Eine Produkteinführung oder der Start einer Veranstaltungsanmeldung | Die Projektleitung |
 | Eine Erwähnung in Presse oder Rundfunk | Die Kommunikation; oft mit wenig Vorlauf |
 | Saisongeschäft (Feiertage, Beginn eines Schuljahres, Steuerfristen) | Alle, aus dem Vorjahr |

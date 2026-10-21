@@ -118,7 +118,7 @@ verschicken:
 
 Quelle: [editorial.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/editorial.md). Es werden nur Inhalte
 übernommen, die der anonyme Benutzer lesen darf; eingeschränkte Einträge erreichen den Newsletter also nie.
-Einwilligung, Versand und alles Weitere stehen im Bereich [Newsletter](../newsletter/README.md).
+Einwilligung, Versand und alles Weitere stehen im Bereich [Newsletter](../newsletters/README.md).
 
 ## Neuerwerbungen auf der Website
 

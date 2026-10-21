@@ -89,7 +89,7 @@ Mit ezauthorize gibt es in der Administration ein Erstattungsmodul ([Kartenzahlu
 
 - [ ] Monatsabschlusszahlen aus **Shop > Statistik** für Ihre Buchhaltung.
 - [ ] Suchbegriffe ohne Ergebnisse ([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)).
-- [ ] Eine Newsletter-Ausgabe an Abonnenten, die eingewilligt haben ([Newsletter](../newsletter/README.md)).
+- [ ] Eine Newsletter-Ausgabe an Abonnenten, die eingewilligt haben ([Newsletter](../newsletters/README.md)).
 - [ ] Prüfen Sie, ob die Backups gelaufen sind und die Cronjobs (einschließlich der Warenkorb-Bereinigung) laufen ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Fragen Sie den Hoster oder Partner nach Updates für Exponential und die Erweiterungen ([Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)).
 - [ ] Die Vorlage [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md).

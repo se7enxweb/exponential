@@ -33,7 +33,7 @@ geprüft, und jede Lücke wird benannt.
 | [Dokumente und Publikationen](dokumente-und-publikationen/README.md) | Dateien, eine Dokumentenbibliothek, Versionen, Metadaten, PDF-Export, barrierefreie Dokumente, OpenDocument, Download-Berechtigungen |
 | [Suche](suche/README.md) | Die eingebaute Suchmaschine, durchsuchbare Felder, Solr mit ezfind, Statistiken und die damit verbundenen Datenschutzpflichten |
 | [Karten](karten/README.md) | Das Feld `ezgmaplocation` mit Google Maps und was es nicht gibt |
-| [Newsletter](newsletter/README.md) | cjw_newsletter, Double-Opt-in, Probe, Listenpflege, Abmeldung mit einem Klick |
+| [Newsletter](newsletters/README.md) | cjw_newsletter, Double-Opt-in, Probe, Listenpflege, Abmeldung mit einem Klick |
 | [Multisite](multisite/README.md) | Eine Installation für viele Abteilungen: Sites, Designs, gemeinsame Inhalte, Rollen, Betrieb |
 | [Intranets](intranets/README.md) | Ein Siteaccess nur für Mitarbeiter, Sektionen und Rollen, Anmeldeoptionen, Sitzungen |
 | [Extranets](extranets/README.md) | Auftragnehmer und Partner mit Zugang nur zu ihren eigenen Inhalten, Konten und deren Ende |

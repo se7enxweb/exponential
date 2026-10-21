@@ -63,7 +63,7 @@ AFTER
 | Entwürfe und Vorschau | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Adressen | [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md) |
 | Metadaten und Teilen | [Metadaten und Teilen in sozialen Netzwerken](../../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md) |
-| Newsletter und Einwilligung | [Newsletter versenden](../../../ersteller/website-ersteller/newsletter-versenden.md), [Opt-in und Einwilligung](../../../unternehmen/newsletter/opt-in-und-einwilligung.md) |
+| Newsletter und Einwilligung | [Newsletter versenden](../../../ersteller/website-ersteller/newsletter-versenden.md), [Opt-in und Einwilligung](../../../unternehmen/newsletters/opt-in-und-einwilligung.md) |
 | Shop | [Rabatte](../../handel/rabatte.md), [Vorbereitung auf die Hochsaison](../../handel/vorbereitung-auf-die-hochsaison.md) |
 | Kapazität | [Planung für Lastspitzen](../../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md) |
 

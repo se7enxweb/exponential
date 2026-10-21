@@ -78,7 +78,7 @@ Wenn Sie sie brauchen, behalten Sie dafür Ihr integriertes Bibliothekssystem un
 
 ## Benachbarte Bereiche
 
-- [Newsletter](../newsletter/README.md): ein Newsletter über Neuerwerbungen.
+- [Newsletter](../newsletters/README.md): ein Newsletter über Neuerwerbungen.
 - [Mitglieder](../mitglieder/README.md): Leserkonten und Inhalte nur für Mitglieder.
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md) und [Vereine und kleine Gruppen](../vereine/README.md):
   Viele Bibliotheken werden von einer solchen Organisation betrieben oder unterstützen eine.

@@ -67,12 +67,12 @@ und [Feeds und Syndication](../mobil-und-headless/feeds-und-syndication.md).
 
 Bestehende Kunden sind am günstigsten wieder zu erreichen. Die Newsletter-Erweiterung `cjw_newsletter` von Exponential
 verwaltet Listen, Abonnements, Ausgaben und Bounces ([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md),
-[Newsletter](../newsletter/README.md)).
+[Newsletter](../newsletters/README.md)).
 
 > **Warnung**
 > Ein Kauf bei Ihnen ist keine Einwilligung in Werbemails. Bestellmails sind notwendige Mails; Angebote sind optionale
 > Mails, die das Opt-in des Kunden brauchen ([Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md),
-> [Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)). Dies ist keine Rechtsberatung; prüfen Sie die für
+> [Opt-in und Einwilligung](../newsletters/opt-in-und-einwilligung.md)). Dies ist keine Rechtsberatung; prüfen Sie die für
 > Sie geltenden Regeln mit Ihrem Anwalt.
 
 Bieten Sie den Newsletter an der Kasse oder auf der Belegseite als nicht angekreuzte Auswahl an, und auf den
@@ -123,7 +123,7 @@ sein; beides behandelt die Seite zur Webanalyse.
 
 - [SEO-Grundlagen für Exponential-Websites](../../ersteller/website-ersteller/seo-grundlagen.md)
 - [Fallstudien und Content-Marketing schreiben](../../geschaeft/fallstudien-und-content-marketing.md)
-- [Einen Newsletter planen](../newsletter/einen-newsletter-planen.md)
+- [Einen Newsletter planen](../newsletters/einen-newsletter-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

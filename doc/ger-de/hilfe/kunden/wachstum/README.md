@@ -53,7 +53,7 @@ wöchentlicher Blick auf die Website. Planen Sie dann mit dem [Arbeitsblatt für
 
 | Fähigkeit | Wird mit Exponential geliefert | Braucht meist einen Partner für |
 |---|---|---|
-| Newsletter (`cjw_newsletter`) | ja, in `composer.json` ([Newsletter für Unternehmen](../../unternehmen/newsletter/README.md)) | Klassen, Cronjobs, E-Mail-Transport, Absenderdomain |
+| Newsletter (`cjw_newsletter`) | ja, in `composer.json` ([Newsletter für Unternehmen](../../unternehmen/newsletters/README.md)) | Klassen, Cronjobs, E-Mail-Transport, Absenderdomain |
 | Landingpages (Exponential Layouts) | ja ([Der Layouts-Editor](../../layout-editor.md)) | neue Layout-Typen oder Block-Typen |
 | Weitere Inhaltssprachen | ja ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)) | Siteaccess-Einstellungen, Sprachumschalter |
 | Weitere Websites in einer Installation | ja ([Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md)) | Siteaccess, DNS, Zertifikate |

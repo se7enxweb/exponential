@@ -44,7 +44,7 @@ eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-b
 | Regelmäßige Spenden | Für den Shop oder `ezpaypal` nicht dokumentiert; nutzen Sie die regelmäßigen Spenden der externen Plattform | dieselbe Seite |
 | Anmeldung von Ehrenamtlichen | Formulare mit dem Informationssammler; Dateien mit `enhancedezbinaryfile`; CAPTCHA | [Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md) |
 | Kampagnenseiten | Exponential Layouts, mit zeitlich begrenzten Regeln | [Kampagnen und Landingpages](kampagnen-und-landingpages.md) |
-| Newsletter für Unterstützer | `cjw_newsletter` mit Double-Opt-in | [Newsletter](../newsletter/README.md) |
+| Newsletter für Unterstützer | `cjw_newsletter` mit Double-Opt-in | [Newsletter](../newsletters/README.md) |
 | Barrierefreie Website | Anleitungen für Templates, verpflichtende Alternativtexte, ein barrierefreies Administrationsdesign | [Barrierefreiheit für gemeinnützige Organisationen](barrierefreiheit-fuer-gemeinnuetzige.md) |
 | Geringe laufende Kosten | SQLite, Velocity ohne separaten Webserver, keine Lizenzgebühr | [Betrieb mit kleinem Budget](betrieb-mit-kleinem-budget.md) |
 
@@ -78,7 +78,7 @@ eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-b
 ## Benachbarte Bereiche
 
 - [Vereine und kleine Gruppen](../vereine/README.md): von Ehrenamtlichen geführte Vereine und Gruppen.
-- [Newsletter](../newsletter/README.md): Neuigkeiten für Unterstützer per Mail.
+- [Newsletter](../newsletters/README.md): Neuigkeiten für Unterstützer per Mail.
 - [Mitglieder](../mitglieder/README.md): Mitgliederbereiche und Registrierung.
 - [Kosten](../kosten/README.md), einschließlich eines [durchgerechneten Beispiels für eine gemeinnützige Organisation](../kosten/durchgerechnetes-beispiel-gemeinnuetzige-organisation.md).
 - [Sicherheit und Datenschutz](../sicherheit/README.md): Grundlagen der DSGVO, Einwilligung und Formulare.

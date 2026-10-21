@@ -83,7 +83,7 @@ einer bestimmten Person:
 |---|---|---|
 | Benachrichtigungen | Mitglieder mit einem Konto folgen dem Ordner „Neuigkeiten“ oder dem Kalender und erhalten eine E-Mail, „wenn unterhalb eines Elements, dem Sie folgen, etwas veröffentlicht wird“, sofort oder als tägliche, wöchentliche oder monatliche Zusammenfassung | [Benachrichtigungen: das Handbuch für Benutzer](../../../funktionen/6.0/benachrichtigungen.md) |
 | Feeds | Ein RSS- oder Atom-Export des Ordners „Neuigkeiten“ und des Kalenders unter `/rss/feed/<address>` | [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md) |
-| Newsletter | Ein regelmäßiger Newsletter mit `cjw_newsletter`, auf Wunsch automatisch aus neuen Artikeln befüllt | [Newsletter](../newsletter/README.md) |
+| Newsletter | Ein regelmäßiger Newsletter mit `cjw_newsletter`, auf Wunsch automatisch aus neuen Artikeln befüllt | [Newsletter](../newsletters/README.md) |
 
 Benachrichtigungen brauchen ein Konto mit der Richtlinie `notification/use` (dieselbe Seite zu Benachrichtigungen).
 Jede optionale Mail durchläuft die E-Mail-Einstellungen der Website, sodass Mitglieder wählen, was sie bekommen, und

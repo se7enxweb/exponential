@@ -87,7 +87,7 @@ diese Seite ergänzt, was ein Shop braucht.
 ## Sicherheit und Daten
 
 - [ ] Die [Sicherheitscheckliste für Shops](sicherheitscheckliste-fuer-shops.md) ist abgearbeitet.
-- [ ] Datenschutzhinweis veröffentlicht; das Opt-in für Werbung ist vom Kauf getrennt ([Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)).
+- [ ] Datenschutzhinweis veröffentlicht; das Opt-in für Werbung ist vom Kauf getrennt ([Opt-in und Einwilligung](../newsletters/opt-in-und-einwilligung.md)).
 - [ ] Backups laufen, und eine Wiederherstellung wurde getestet ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 
 ## Leistung und Betrieb

@@ -123,7 +123,7 @@ Wer auch immer die Administratorrolle innehat: Sorgen Sie dafür, dass eine zwei
   [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md).
 - **Eine Person weiß alles.** Wenn sie geht, ist die Website verwaist.
 - **Newsletter von einer nicht authentifizierten Domain versenden.** Die Mails landen im Spam, und die Unterstützer
-  sehen sie nie ([Zustellung der Newsletter-Mails](../newsletter/zustellung-der-newsletter-mails.md#absenderdomain-und-ruf)).
+  sehen sie nie ([Zustellung der Newsletter-Mails](../newsletters/zustellung-der-newsletter-mails.md#absenderdomain-und-ruf)).
 - **Unbegrenzte anonyme Uploads.** Die Platte läuft voll, und die Backups wachsen
   ([Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md#das-anhängen-einer-datei-erlauben)).
 

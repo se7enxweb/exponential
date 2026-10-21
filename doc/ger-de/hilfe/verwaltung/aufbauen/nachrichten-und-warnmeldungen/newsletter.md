@@ -16,7 +16,7 @@ Rückläufern und ein Archiv. Diese Seite behandelt ihre Verwendung für Nachric
 Newslettern sind [Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md),
 [Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md) und
 [Newsletter versenden](../../../ersteller/website-ersteller/newsletter-versenden.md). Die Hilfe für Behörden hat im
-Bereich Aufbauen eine eigene Anleitung zu Newslettern ([Newsletter](../newsletter/README.md)).
+Bereich Aufbauen eine eigene Anleitung zu Newslettern ([Newsletter](../newsletters/README.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
