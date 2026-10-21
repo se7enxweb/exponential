@@ -33,6 +33,10 @@
  *   through JSON_ESCAPE, and that chain, rendered by eZTemplate, leaves no < or > of a value in the block.
  * - CSP-07: the TinyMCE 8 editor (ezoe) starts from ezoe8_start.js: the edit template writes its settings as JSON
  *   data blocks and each textarea's toolbar in data-ezoe8-* attributes; run in node (js/csp_tinymce8.js).
+ * - CSP-10: the classic administration designs (design/admin, design/admin3 and the admin* designs of the shipped
+ *   extensions), which run no policy, still carry no on...= attribute in their templates beyond
+ *   CLASSIC_HANDLER_ALLOWLIST (only shrinks): their small actions use the data-a4-* attributes of a4_actions.js, which
+ *   their page_head_script.tpl loads (design/admin/javascript/a4_actions.js, the same file as admin4's).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminContentSecurityPolicyTest.php
  *
@@ -79,6 +83,22 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         'design/standard/templates/content/datatype/view/ezimage.tpl' => array( 'style' => 1 ),
         // the receipt's styles, shared with the receipt as a file to keep (orderreceipt_document.tpl)
         'design/standard/templates/shop/orderreceipt_style.tpl' => array( 'styleblock' => 1 ),
+    );
+
+    /**
+     * CSP-10: event handler attributes still left in the classic administration designs, path => count. Each needs
+     * more than a4_actions.js offers (the context menus, the date picker, the register buttons).
+     * This list only shrinks.
+     */
+    const CLASSIC_HANDLER_ALLOWLIST = array(
+        'design/admin/templates/content/datatype/edit/ezdate.tpl' => 1,
+        'design/admin/templates/content/datatype/edit/ezdatetime.tpl' => 1,
+        'design/admin/templates/content/view/versionview.tpl' => 1,
+        'design/admin/templates/node/view/full.tpl' => 1,
+        'design/admin/templates/node/view/line.tpl' => 1,
+        'design/admin/templates/node/view/thumbnail.tpl' => 1,
+        'design/admin/templates/user/register.tpl' => 4,
+        'design/admin3/templates/content/view/versionview.tpl' => 1,
     );
 
     /** The extensions this repository ships (share/filelist.md5): checked always; an allowlisted one missing fails under CI=1 */
@@ -599,6 +619,54 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             $cases[$row['name']] = $row;
         }
         return $cases;
+    }
+
+    /** CSP-10 */
+    public function testTheClassicAdministrationTemplatesCarryNoInlineHandlers()
+    {
+        $root = self::root();
+        $bases = array( 'design/admin', 'design/admin3' );
+        foreach ( self::SHIPPED_EXTENSIONS as $extension )
+        {
+            foreach ( glob( "$root/extension/$extension/design/admin*", GLOB_ONLYDIR ) ?: array() as $dir )
+            {
+                if ( !preg_match( '#/design/admin4l?$#', $dir ) )
+                    $bases[] = substr( $dir, strlen( $root ) + 1 );
+            }
+        }
+        $unexpected = array();
+        $fewer = array();
+        $seen = 0;
+        foreach ( $bases as $base )
+        {
+            foreach ( self::baseTemplates( $base ) as $path )
+            {
+                $seen++;
+                $found = self::findings( (string)file_get_contents( "$root/$path" ) );
+                $now = isset( $found['handler'] ) ? $found['handler'] : 0;
+                $listed = isset( self::CLASSIC_HANDLER_ALLOWLIST[$path] ) ? self::CLASSIC_HANDLER_ALLOWLIST[$path] : 0;
+                if ( $now > $listed )
+                    $unexpected[] = "$path: $now handler (allowed: $listed)";
+                else if ( $now < $listed )
+                    $fewer[] = "$path: $now handler, listed with $listed - lower or remove its CLASSIC_HANDLER_ALLOWLIST entry";
+            }
+        }
+        $this->assertGreaterThan( 400, $seen, 'the classic administration templates were not read' );
+        $this->assertSame( array(), $unexpected,
+            'An on...= attribute in a classic administration template: use the data-a4-* actions of a4_actions.js '
+            . '(data-a4-submit-on-change, data-a4-confirm, data-a4-toggle-checkboxes, ...)' );
+        $this->assertSame( array(), $fewer );
+
+        $this->assertFileEquals( "$root/design/admin4/javascript/a4_actions.js", "$root/design/admin/javascript/a4_actions.js",
+            'the classic administration loads the same a4_actions.js as admin4' );
+        foreach ( array( 'design/admin', 'design/admin3' ) as $design )
+        {
+            $script = (string)preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( "$root/$design/templates/page_head_script.tpl" ) );
+            $this->assertStringContainsString( "{ezscript_load( array( 'a4_actions.js' ) )}", $script, "$design/templates/page_head_script.tpl loads a4_actions.js" );
+        }
+        $settings = (string)file_get_contents( "$root/design/admin/templates/settings/edit.tpl" );
+        $this->assertMatchesRegularExpression( '/<select name="SettingType"[^>]*\sdata-a4-submit-on-change[\s>]/', $settings,
+            'the setting type of settings/edit submits its form through a4_actions.js' );
     }
 
     /** CSP-04 */

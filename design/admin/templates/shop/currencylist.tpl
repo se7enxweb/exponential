@@ -41,7 +41,7 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )}" onclick="ezjs_toggleCheckboxes( document.currencylist, 'DeleteCurrencyList[]' ); return false;" /></th>
+    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )}" data-a4-toggle-checkboxes="DeleteCurrencyList[]" data-a4-form="currencylist" /></th>
     <th class="name">{'Name'|i18n( 'design/admin/shop/currencylist' )}</th>
     <th class="nowrap">{'Code'|i18n( 'design/admin/shop/currencylist' )}</th>
     <th class="nowrap">{'Symbol'|i18n( 'design/admin/shop/currencylist' )}</th>

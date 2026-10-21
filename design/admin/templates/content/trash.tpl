@@ -135,7 +135,7 @@
 <div class="content-navigation-childlist admin-dt">
     <table class="list" cellspacing="0">
     <tr>
-        <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/trash' )}" onclick="ezjs_toggleCheckboxes( document.trashform, 'DeleteIDArray[]' ); return false;" title="{'Invert selection.'|i18n( 'design/admin/content/trash' )}" /></th>
+        <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/trash' )}" data-a4-toggle-checkboxes="DeleteIDArray[]" data-a4-form="trashform" title="{'Invert selection.'|i18n( 'design/admin/content/trash' )}" /></th>
         {* Name, Type and Section: sort link & asc/desc icon *}
         {foreach $sort_columns as $column}
         {set
