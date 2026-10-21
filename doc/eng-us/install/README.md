@@ -15,7 +15,7 @@ In a hurry? [The short installation guide](../INSTALL.md) has the quick start an
 |---|---|
 | [1. Introduction: what you are installing](01-introduction.md) | The kernel, extensions, siteaccesses (site, admin, editor) and designs; the three install methods; conventions and glossary |
 | [2. Requirements](02-requirements.md) | PHP 8.0 to 8.5, every extension and why, the php.ini settings the setup checks, databases, Composer, web server, operating systems, sizing; the overviews [Database support](../help/database-support.md) and [Operating system support](../help/os-support.md) |
-| [3. Getting the code](03-getting-the-code.md) | Versions and tags, Git clones with history (recommended), `composer create-project`, installing on PHP 8.0 to 8.3, the Velocity package, extensions as packages, a tour of the installation root |
+| [3. Getting the code](03-getting-the-code.md) | Versions and tags, Git clones with history (recommended), `composer create-project`, installing on PHP 8.0 to 8.3, the Velocity package (required as of 6.0.15), extensions as packages, a tour of the installation root |
 
 ### Part II: Installing
 
@@ -30,7 +30,7 @@ In a hurry? [The short installation guide](../INSTALL.md) has the quick start an
 
 | Chapter | What it covers |
 |---|---|
-| [8. Serving the site](08-serving-the-site.md) | Exponential Velocity, which serves HTTP and HTTPS itself with no separate web server; FrankenPHP; Apache and nginx with PHP-FPM; permissions; reverse proxies |
+| [8. Serving the site](08-serving-the-site.md) | Exponential Velocity, part of Exponential as of 6.0.15 and installed with it, which serves HTTP and HTTPS itself with no separate web server; FrankenPHP; Apache and nginx with PHP-FPM; permissions; reverse proxies |
 | [9. Databases](09-databases.md) | The supported databases in their official order (SQLite 3, the default; PostgreSQL; MongoDB; MariaDB; Oracle; MySQL): SQLite 3 as a production database under heavy load (WAL, queued writes, caching, scaling, backups), each server engine, a comparison, switching engines, and Microsoft SQL Server |
 | [10. After installing: the operations handbook](10-after-installing.md) | First login, siteaccesses, cron, mail, notifications and newsletters, caches, autoloads, backups, logs, monitoring, performance, extensions |
 

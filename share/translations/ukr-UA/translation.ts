@@ -73128,6 +73128,78 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Help Start</source>
         <translation>Початок довідки</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Цю сторінку ще не перекладено (мова: %reader). Її показано в оригіналі (мова: %original).</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Англійська</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Німецька</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Мова читання:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Вибір мови змінює мову всієї адміністрації.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count з %total сторінок</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Довідка іншими мовами</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Відкрити оригінал (мова: %language)</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Ви читаєте оригінал цієї сторінки (мова: %language).</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Назад до сторінки (мова: %language)</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Ця сторінка є перекладом.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Читати оригінал (мова: %language)</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Документація, яку приносять із собою активні розширення: їхні посібники, README, журнал змін і ліцензія.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Пошук у документації %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Жодне активне розширення не має власної документації.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Лише документація розширення %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Його сторінки</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Пошук у всій довідці</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

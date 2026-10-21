@@ -74,7 +74,7 @@
 
 {if $sort}
 <div class="a4-pdf-controls">
-    <form class="a4-pdf-search" method="get" action={$pdfexport_search_action|ezurl} role="search">
+    <form class="a4-pdf-search" method="post" action={$pdfexport_search_action|ezurl} role="search">
         <div class="a4-field">
             <label for="pdf-search">{'Find an export'|i18n( 'design/admin/pdf/list' )}</label>
             <input type="search" id="pdf-search" name="search" value="{$search|wash}" maxlength="100" autocomplete="off" spellcheck="false" aria-describedby="pdf-search-help" />

@@ -30,7 +30,7 @@ Rollenseite), sowie ihren Aktionen: Ansehen, Bearbeiten, Zuweisen, Kopieren.
 - **Eine Rolle finden**: ein beliebiger Teil des Namens oder die ID. Groß- und Kleinschreibung spielen keine Rolle.
 - **Reihenfolge**: nach Name, ID, Anzahl der Richtlinien oder Anzahl der Zuweisungen. Klicken Sie erneut auf die
   aktuelle Reihenfolge, um sie umzukehren. Reihenfolge und Suche bleiben in der Adresse erhalten
-  (`/role/list/(sort)/policies/(dir)/desc?q=edit`), sodass Sie sie als Lesezeichen speichern können. Die
+  (`/role/list/(sort)/policies/(dir)/desc/(q)/edit`), sodass Sie sie als Lesezeichen speichern können. Die
   Sortierungen nach Anzahl werden bis zu 500 Rollen angeboten.
 - **Abzeichen**: *Voller Zugriff* (rot), *Kann Rollen ändern* (gelb), *Nicht zugewiesen* (die Rolle gewährt
   niemandem etwas).

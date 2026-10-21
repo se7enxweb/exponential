@@ -101,7 +101,7 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
   ausgeliefert; alles andere geht an `index.php`
   ([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)). Eine allgemeine
   Konfiguration „Datei ausliefern, wenn sie existiert“ würde `settings/*.ini` ausliefern.
-- **Velocity** braucht einen lang laufenden Prozess und PHP 8.1 mit `sockets`. Eine Plattform, die einen Prozess pro
+- **Velocity** braucht einen lang laufenden Prozess und PHP 8.0 oder später mit `sockets`. Eine Plattform, die einen Prozess pro
   Container ausführt und HTTP an einen Port leitet, kann es betreiben; eine, die PHP nur pro Anfrage ausführt, nicht.
 - **Cron.** `runcronjobs.php` muss nach Zeitplan laufen, einmal pro Website, mit demselben Code und denselben Einstellungen
   ([Cronjobs](../betrieb/cronjobs.md)). Fragen Sie, ob die Plattform einen Planer hat.

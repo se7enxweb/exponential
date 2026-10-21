@@ -25,6 +25,9 @@ namespace Exponential\View\Kernel\Settings
 
 class View extends \Exponential\Runnable\ModuleView
 {
+    /** The fields of the search form (posted, then answered with a 303 to the view parameters) */
+    const FORM_FIELDS = array( 'q', 'scope', 'changed', 'compare' );
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -63,12 +66,19 @@ class View extends \Exponential\Runnable\ModuleView
             return $this->viewResult( null, $module->redirectTo( '/settings/view/' . $currentSiteAccess . '/' . $settingFile ) );
         }
 
-        // What to show: a search, the settings changed from the default, a comparison with another siteaccess
-        $query = $http->hasGetVariable( 'q' ) && is_string( $http->getVariable( 'q' ) ) ? trim( $http->getVariable( 'q' ) ) : '';
-        $query = mb_substr( (string)preg_replace( '/[\x00-\x1F\x7F]/u', '', $query ), 0, 100 );
-        $searchAll = $http->hasGetVariable( 'scope' ) && $http->getVariable( 'scope' ) === 'all' && $query !== '';
-        $changedOnly = $http->hasGetVariable( 'changed' ) && $http->getVariable( 'changed' ) === '1';
-        $compareWith = $http->hasGetVariable( 'compare' ) ? \expSettingsTarget::siteAccess( $http->getVariable( 'compare' ), $siteAccessList ) : null;
+        // What to show: a search, the settings changed from the default, a comparison with another siteaccess. They are
+        // view parameters only ((q), (scope)/all, (changed)/1, (compare)/<siteaccess>); the search form is posted and
+        // answered with a 303 to that address.
+        if ( $settingFile !== null && \expViewParameters::redirectsPost( $_POST, self::FORM_FIELDS ) )
+            \expViewParameters::redirect( self::viewURI( $currentSiteAccess, $settingFile, $_POST, $siteAccessList ) );
+        $options = self::options( array( 'q' => \Exponential\View\Kernel\Contentfinder\Search::textFromParameter( \expViewParameters::get( $Params, 'q', 'Query' ) ),
+                                         'scope' => \expViewParameters::get( $Params, 'scope', 'Scope' ),
+                                         'changed' => \expViewParameters::get( $Params, 'changed', 'Changed' ),
+                                         'compare' => \expViewParameters::get( $Params, 'compare', 'Compare' ) ), $siteAccessList );
+        $query = $options['q'];
+        $searchAll = $options['scope'] === 'all';
+        $changedOnly = $options['changed'] === '1';
+        $compareWith = $options['compare'] !== '' ? $options['compare'] : null;
         if ( $compareWith === $currentSiteAccess )
             $compareWith = null;
 
@@ -163,6 +173,48 @@ class View extends \Exponential\Runnable\ModuleView
                                         'url' => false ) );
 
         return $this->viewResult( $Result, null );
+    }
+
+    /**
+     * The search options, checked: q (at most 100 characters, no control characters), scope ('all' only with a
+     * search), changed ('1' or ''), compare (a siteaccess of the list, or '').
+     *
+     * @param array $in q, scope, changed, compare (strings, or false when not given)
+     * @param string[] $siteAccessList
+     * @return array
+     */
+    public static function options( array $in, array $siteAccessList )
+    {
+        $query = isset( $in['q'] ) && is_string( $in['q'] ) ? trim( $in['q'] ) : '';
+        $query = mb_substr( (string)preg_replace( '/[\x00-\x1F\x7F]/u', '', $query ), 0, 100 );
+        $compare = isset( $in['compare'] ) && is_string( $in['compare'] ) && $in['compare'] !== ''
+                 ? \expSettingsTarget::siteAccess( $in['compare'], $siteAccessList ) : null;
+        return array( 'q' => $query,
+                      'scope' => isset( $in['scope'] ) && $in['scope'] === 'all' && $query !== '' ? 'all' : '',
+                      'changed' => isset( $in['changed'] ) && (string)$in['changed'] === '1' ? '1' : '',
+                      'compare' => $compare !== null ? $compare : '' );
+    }
+
+    /**
+     * The address of the page with its options: settings/view/<siteaccess>/<file>/(q)/.../(scope)/all/(changed)/1/(compare)/...
+     * The search text is plain, or "~" and its base64url when it is not (Contentfinder\Search::textParameter()).
+     *
+     * @param string $siteAccess checked
+     * @param string $file checked
+     * @param array $in the posted form (q, scope, changed, compare)
+     * @param string[] $siteAccessList
+     * @return string
+     */
+    public static function viewURI( $siteAccess, $file, array $in, array $siteAccessList )
+    {
+        $options = self::options( $in, $siteAccessList );
+        if ( $options['compare'] === $siteAccess )
+            $options['compare'] = '';
+        $uri = '/settings/view/' . $siteAccess . '/' . $file;
+        if ( $options['q'] !== '' )
+            $uri .= '/(q)/' . \Exponential\View\Kernel\Contentfinder\Search::textParameter( $options['q'] );
+        unset( $options['q'] );
+        return $uri . \expViewParameters::suffix( $options );
     }
 
     /**

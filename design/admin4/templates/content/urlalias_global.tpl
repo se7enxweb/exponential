@@ -294,7 +294,7 @@
 
 </form>
 {* The search is a form of its own (GET), so it never sends the creation fields; its fields point to it with form="" *}
-<form id="alias-search-form" method="get" action={concat( 'content/urltranslator/', $kind_part )|ezurl}></form>
+<form id="alias-search-form" method="post" action={concat( 'content/urltranslator/', $kind_part )|ezurl}></form>
 
 </div></div></div>
 </div>

@@ -2,10 +2,10 @@
 
    Variables: result (node, count, rows, error), params (node_id, class_ids, sort, order, containers, offset,
    limit), scope (the start location, see scope.tpl), class_options, sorts, page_uri, page_uri_suffix, view_parameters, limit, limit_choices,
-   limit_preference, feedback (the outcome of a move to the trash, or null), select_all (GET SelectAll: every box of the page ticked, the
+   limit_preference, feedback (the outcome of a move to the trash, or null), select_all ((selectall)/1: every box of the page ticked, the
    way without JavaScript; contentcheck_select.js adds the master box), can_trash, batch_limit, form_token,
    token_field. Only what the user may read is in result.rows; a row can be ticked only when the user may move it
-   to the trash. The filters are a GET form; the ticked rows are posted to contentcheck/trash, which asks for a
+   to the trash. The filters are a posted form, answered with a 303 to the view parameters; the ticked rows are posted to contentcheck/trash, which asks for a
    confirmation first. The same file is in design/admin and design/admin4. *}
 {def $sort_names = hash( 'name', 'Name'|i18n( 'kernel/contentcheck' ),
                          'class', 'Class'|i18n( 'kernel/contentcheck' ),
@@ -56,7 +56,7 @@
 
 <section aria-labelledby="cc-filter-title">
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
-<form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
+<form class="a4-filterbar" method="post" action={$page_uri|ezurl}>
     {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <div class="a4-field">
         <label for="cc-class">{'Classes'|i18n( 'kernel/contentcheck' )}</label>

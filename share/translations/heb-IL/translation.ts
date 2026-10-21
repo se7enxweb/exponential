@@ -73174,6 +73174,78 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Help Start</source>
         <translation>דף הבית של העזרה</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>דף זה עדיין לא תורגם ל%reader. הוא מוצג ב%original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>אנגלית</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>גרמנית</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>שפת קריאה:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>בחירת שפה משנה את השפה של כל הניהול.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count מתוך %total דפים</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>העזרה בשפות אחרות</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>פתיחת המקור ב%language</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>אתם קוראים את המקור של דף זה ב%language.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>חזרה לדף ב%language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>דף זה הוא תרגום.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>קריאת המקור ב%language</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>התיעוד שההרחבות הפעילות מביאות איתן: המדריכים שלהן, README, יומן השינויים והרישיון.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>חיפוש בתיעוד של %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>אף הרחבה פעילה אינה מביאה תיעוד משלה.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>רק התיעוד של ההרחבה %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>הדפים שלה</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>חיפוש בכל העזרה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

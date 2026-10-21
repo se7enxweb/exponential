@@ -63,7 +63,7 @@
 
 <section aria-labelledby="draft-find-title">
 <h2 class="a4-sr-only" id="draft-find-title">{'Find drafts'|i18n( 'design/admin/content/draft' )}</h2>
-<form class="a4-filterbar" method="get" action={concat( $base, $suffix )|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={concat( $base, $suffix )|ezurl} role="search">
     <div class="a4-field a4-field-wide">
         <label for="draft-search">{'Find a draft'|i18n( 'design/admin/content/draft' )}</label>
         <div class="a4-searchrow">

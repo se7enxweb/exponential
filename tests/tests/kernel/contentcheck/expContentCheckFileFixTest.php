@@ -129,9 +129,9 @@ class expContentCheckFileFixTest extends PHPUnit\Framework\TestCase
         $d = Fixfiles::decide( 'POST', $post + array( 'FixAction' => 'nonsense', 'AllResultsButton' => 1 ), 'tok' );
         $this->assertFalse( $d['all_results'] );
         $back = Fixfiles::backURI( 58 );
-        $this->assertStringStartsWith( '/contentcheck/brokenrelations/58?', $back );
-        $this->assertStringContainsString( 'Kind%5B%5D=deleted', $back );
-        $this->assertStringEndsWith( 'Kind%5B%5D=missing_file', $back );
+        $this->assertStringStartsWith( '/contentcheck/brokenrelations/58/(kind)/', $back );
+        $this->assertStringContainsString( 'deleted,', $back );
+        $this->assertStringEndsWith( ',missing_file', $back );
     }
 
     /** CX-05 */

@@ -295,14 +295,14 @@ beschriebene Weg gilt für sie. Um Exponential 6 weiterhin innerhalb einer Symfo
    hinzu (`ALTER TABLE ezcontentobject_trash ADD ( trashed INTEGER DEFAULT 0 NOT NULL );`), falls die Tabelle die
    Spalte nicht hat. Die MySQL-Datei läuft auf jedem MySQL ab 5.5.3 und auf MariaDB (siehe die Hinweise je Datenbank
    oben). Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
-3. **PHP.** Die aktuelle Linie läuft unter PHP 8.0 bis 8.5 (`composer.json`: `^8.0`); Velocity braucht 8.1. Die
+3. **PHP.** Die aktuelle Linie läuft unter PHP 8.0 bis 8.5 (`composer.json`: `^8.0`), Velocity ab seinem Release 0.0.4.54 eingeschlossen. Die
    Releases 6.0.8 bis 6.0.14 verlangten 8.1. Eine Site, die auf PHP 7.4 bleiben muss, bleibt auf 6.0.7. Prüfen Sie Ihre
    eigenen Extensions auf Probleme mit PHP 8: Klassen, die `eZPersistentObject` oder `eZDataType` erweitern, sind die
    üblichen Fälle. Siehe [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md) und [PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md).
 4. Fahren Sie mit [11.6](#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) fort.
 
 6.0.8 bis 6.0.14 verlangten in `composer.json` 8.1; ab 6.0.15 wird 8.0 wieder akzeptiert, sodass ein Server, dessen
-Betriebssystem PHP 8.0 mitliefert, die aktuelle Linie unter Apache oder nginx betreiben kann
+Betriebssystem PHP 8.0 mitliefert, die aktuelle Linie unter Apache, nginx oder Velocity betreiben kann (Velocity ab seinem Release 0.0.4.54)
 ([PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md)). Composer setzt den Bereich durch: Unter einem älteren PHP bricht
 `composer install` mit „Your requirements could not be resolved to an installable set of packages“ ab und nennt die
 PHP-Version, bevor irgendetwas geändert wird.

@@ -65,7 +65,8 @@ $ViewList['admin'] = array(
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array( 'Page', 'ID' ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'export' => 'Export', 'person' => 'Person', 'category' => 'Category',
+                                 'source' => 'Source', 'from' => 'From', 'to' => 'To', 'q' => 'Q' ) );
 
 $FunctionList = array();
 $FunctionList['administrate'] = array();

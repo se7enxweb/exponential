@@ -34,7 +34,7 @@ Aus [Kapitel 8, Die Wahl in einer Tabelle](../../../installation/08-die-website-
 | | Exponential Velocity (`qbix`) | FrankenPHP (über Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Rolle | für jede Phase **empfohlen** | produktionsreife Alternative | klassisch | klassisch |
-| PHP | 8.1 oder neuer | das in die Binärdatei eingebaute PHP | 8.0 oder neuer | 8.0 oder neuer |
+| PHP | 8.0 oder neuer (ab Velocity 0.0.4.54) | das in die Binärdatei eingebaute PHP | 8.0 oder neuer | 8.0 oder neuer |
 | Eigener Webserver nötig | nein | nein (Caddy ist eingebaut) | ja | ja |
 | Eigenes Werkzeug für HTTPS oder Zertifikate nötig | nein: eigene Zertifikate, selbstsignierter Rückfall, ACME | nein: Ihr Zertifikat oder ein selbstsigniertes | ja (`mod_ssl` plus certbot oder ein Panel) | ja |
 | Anwendung zwischen Anfragen im Speicher gehalten | ja (persistente Worker) | nein (sauberer Zustand pro Anfrage) | nein | nein |
@@ -56,7 +56,7 @@ mit PHP-FPM, IIS und lighttpd in Stufe 3 ein: sollte funktionieren.
 | Frage | Wenn die Antwort ... ist | Dann |
 |---|---|---|
 | Darf die Website eines Kunden in diesem Tarif einen langlebigen Prozess betreiben? | nein (typisches Shared Hosting) | Apache oder LiteSpeed mit `.htaccess`. Shared Hosting erlaubt das meist nicht (`README.md`) |
-| Hat die Maschine PHP 8.0? | ja (das Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) | ein klassischer Server; Velocity braucht 8.1 ([Kapitel 2](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen)) |
+| Hat die Maschine PHP 8.0? | ja (das Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) | jede Engine; Velocity läuft ab seinem Release 0.0.4.54 auf 8.0, mit dem el9-RPM oder mit Composer ([Kapitel 2](../../../installation/02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux)) |
 | Müssen Kunden auf einer Maschine durch das Betriebssystem voneinander getrennt sein? | ja | eine Velocity pro Website, jede als eigener Benutzer, oder ein PHP-FPM-Pool pro Website |
 | Betreiben Sie bereits ein abgestimmtes Apache oder nginx, das Sie behalten wollen? | ja | behalten Sie es; Velocity kann dahinter oder daneben stehen |
 | Wollen Sie die schnellste Antwort für wiederholte Seiten, ohne einen Cache-Server hinzuzufügen? | ja | Velocity mit seinem Antwort-Cache |
@@ -129,7 +129,7 @@ Tested on staging on:           <date>, by <role>
 ## Checkliste
 
 - [ ] Die Antwort des Tarifs auf die Frage, ob ein langlebiger Prozess laufen darf, ist aufgeschrieben.
-- [ ] Die PHP-Version auf der Maschine ist 8.1 oder neuer, wenn Velocity angeboten wird.
+- [ ] Die PHP-Version auf der Maschine ist 8.0 oder neuer, auch wo Velocity angeboten wird.
 - [ ] Trennung zwischen Kunden entschieden: pro Maschine, pro Velocity-Instanz oder pro PHP-FPM-Pool.
 - [ ] Die vier Prüfungen des Routings aus [Webserver und Engines](README.md#was-jede-einrichtung-gemeinsam-hat) bestehen.
 - [ ] Der Support weiß, wie eine PHP-Änderung den Server erreicht (`exp:velocity deploy` oder das Neuladen von FPM).

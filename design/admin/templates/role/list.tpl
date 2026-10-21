@@ -1,6 +1,6 @@
 {* The role list (role/list).
 
-   What roles are, a search by name or id (?q=), the order (name, id, number of policies, number of assignments,
+   What roles are, a search by name or id (/(q)/..., the search form is posted and answered with the address), the order (name, id, number of policies, number of assignments,
    either way round, as (sort) and (dir) in the address), then one card per role: its name, how many policies it
    has and how many users and groups it is assigned to, a warning when a policy gives access to everything or lets
    its users change roles, and its View, Edit, Assign and Copy actions. Remove selected asks first, in place.
@@ -38,7 +38,7 @@
 
 <section aria-labelledby="role-find-title">
 <h2 class="a4-sr-only" id="role-find-title">{'Find roles'|i18n( 'design/admin/role/list' )}</h2>
-<form class="a4-filterbar" method="get" action={concat( '/role/list', $sort_part )|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={concat( '/role/list', $sort_part )|ezurl} role="search">
     <div class="a4-field a4-field-wide">
         <label for="role-search">{'Find a role'|i18n( 'design/admin/role/list' )}</label>
         <div class="a4-searchrow">

@@ -1,12 +1,13 @@
 {* The content jobs list (content/jobs): the subtree removes and copies running or run in the background,
    the current user's own, or everybody's for a user with the content/jobs policy. Filters, sorting and paging
-   are query parameters (state, type, user, sort, order, offset). *}
+   are view parameters, /(state)/, /(type)/, /(user)/, /(sort)/, /(order)/, /(offset)/; the filter form is
+   sent with POST and answered with the canonical address. *}
 {def $state_names = hash( 'queued',    'Waiting'|i18n( 'design/admin/content/job' ),
                           'running',   'Running'|i18n( 'design/admin/content/job' ),
                           'done',      'Done'|i18n( 'design/admin/content/job' ),
                           'failed',    'Failed'|i18n( 'design/admin/content/job' ),
                           'cancelled', 'Cancelled'|i18n( 'design/admin/content/job' ) )
-     $sort_url = concat( $base_url, '?', cond( $filter.state, concat( 'state=', $filter.state, '&' ), '' ), cond( $filter.type, concat( 'type=', $filter.type, '&' ), '' ), cond( $filter.user, concat( 'user=', $filter.user, '&' ), '' ) )
+     $sort_url = concat( $filter_url, '/(sort)/' )
      $flip = cond( eq( $filter.order, 'desc' ), 'asc', 'desc' )}
 <style type="text/css">
 {literal}
@@ -58,11 +59,11 @@
 
 <ul class="cj-totals" aria-label="{'Jobs per state'|i18n( 'design/admin/content/job' )|wash}">
 {foreach $states as $st}
-    <li><a href={concat( $base_url, '?state=', $st )|ezurl}><span class="cj-state {$st}">{$state_names[$st]|wash}</span> {$totals[$st]}</a></li>
+    <li><a href={concat( $base_url, '/(state)/', $st )|ezurl}><span class="cj-state {$st}">{$state_names[$st]|wash}</span> {$totals[$st]}</a></li>
 {/foreach}
 </ul>
 
-<form class="cj-filters" method="get" action={$base_url|ezurl}>
+<form class="cj-filters" method="post" action={$base_url|ezurl}>
     <label>{'State'|i18n( 'design/admin/content/job' )}
         <select name="state"><option value="">{'All'|i18n( 'design/admin/content/job' )}</option>
         {foreach $states as $st}<option value="{$st}"{if eq( $filter.state, $st )} selected="selected"{/if}>{$state_names[$st]|wash}</option>{/foreach}</select></label>
@@ -89,9 +90,9 @@
     {if $show_all}<th>{'User'|i18n( 'design/admin/content/job' )}</th>{/if}
     <th>{'Operation'|i18n( 'design/admin/content/job' )}</th>
     <th>{'Source and target'|i18n( 'design/admin/content/job' )}</th>
-    <th><a href={concat( $sort_url, 'sort=state&order=', $flip )|ezurl}>{'State'|i18n( 'design/admin/content/job' )}</a></th>
-    <th><a href={concat( $sort_url, 'sort=items&order=', $flip )|ezurl}>{'Progress and items'|i18n( 'design/admin/content/job' )}</a></th>
-    <th><a href={concat( $sort_url, 'sort=started&order=', $flip )|ezurl}>{'Started'|i18n( 'design/admin/content/job' )}</a>, <a href={concat( $sort_url, 'sort=duration&order=', $flip )|ezurl}>{'duration'|i18n( 'design/admin/content/job' )}</a></th>
+    <th><a href={concat( $sort_url, 'state/(order)/', $flip )|ezurl}>{'State'|i18n( 'design/admin/content/job' )}</a></th>
+    <th><a href={concat( $sort_url, 'items/(order)/', $flip )|ezurl}>{'Progress and items'|i18n( 'design/admin/content/job' )}</a></th>
+    <th><a href={concat( $sort_url, 'started/(order)/', $flip )|ezurl}>{'Started'|i18n( 'design/admin/content/job' )}</a>, <a href={concat( $sort_url, 'duration/(order)/', $flip )|ezurl}>{'duration'|i18n( 'design/admin/content/job' )}</a></th>
     <th>{'Server'|i18n( 'design/admin/content/job' )}</th>
     <th>{'Actions'|i18n( 'design/admin/content/job' )}</th>
 </tr>
@@ -120,9 +121,9 @@
 </form>
 {if gt( $count, $page )}
 <p class="cj-pages">
-    {if gt( $offset, 0 )}<a href={concat( $base_url, '?', $query, '&offset=', max( 0, sub( $offset, $page ) ) )|ezurl}>{'Newer'|i18n( 'design/admin/content/job' )}</a>{/if}
+    {if gt( $offset, 0 )}<a href={concat( $page_url, '/(offset)/', max( 0, sub( $offset, $page ) ) )|ezurl}>{'Newer'|i18n( 'design/admin/content/job' )}</a>{/if}
     <span>{'%from to %to of %count'|i18n( 'design/admin/content/job',, hash( '%from', inc( $offset ), '%to', min( $count, sum( $offset, $page ) ), '%count', $count ) )}</span>
-    {if lt( sum( $offset, $page ), $count )}<a href={concat( $base_url, '?', $query, '&offset=', sum( $offset, $page ) )|ezurl}>{'Older'|i18n( 'design/admin/content/job' )}</a>{/if}
+    {if lt( sum( $offset, $page ), $count )}<a href={concat( $page_url, '/(offset)/', sum( $offset, $page ) )|ezurl}>{'Older'|i18n( 'design/admin/content/job' )}</a>{/if}
 </p>
 {/if}
 {else}

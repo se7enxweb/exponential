@@ -13,7 +13,7 @@ Jeder Befehl wird im Wurzelverzeichnis der Installation ausgeführt (dem Verzeic
 
 | Voraussetzung | Einzelheiten |
 |---|---|
-| PHP | 8.0 oder neuer; `composer.json` erlaubt 8.0 bis 8.8. Exponential Velocity, der eingebaute Server aus Schritt 4, braucht 8.1 oder neuer. Das PHP der Kommandozeile braucht den PDO-Treiber Ihrer Datenbank (für den Anfang genügt SQLite). |
+| PHP | 8.0 oder neuer; `composer.json` erlaubt 8.0 bis 8.8. Exponential Velocity, der eingebaute Server aus Schritt 4, läuft ebenfalls unter 8.0 (ab seinem Release 0.0.4.54). Das PHP der Kommandozeile braucht den PDO-Treiber Ihrer Datenbank (für den Anfang genügt SQLite). |
 | Composer | Version 2.x, nur für die unten beschriebenen Installationswege mit Composer |
 | Eine Datenbank | für den Anfang keine: Standard ist SQLite in einer Datei. MySQL oder MariaDB, PostgreSQL, MongoDB und Oracle wählen Sie mit `--db=`. |
 | Ein Webserver | für den Produktivbetrieb ein beliebiger (Apache mit der mitgelieferten `.htaccess` oder PHP-FPM hinter einem Server). Um die Site sofort auszuprobieren, bringt Exponential einen eigenen mit, siehe Schritt 4. |
@@ -217,7 +217,7 @@ und [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading
 | Symptom | Prüfen |
 |---|---|
 | `exp:install` meldet, dass eine Installation existiert | Geben Sie `--force` nur an, wenn Sie sie wirklich ersetzen wollen. |
-| Eine weiße Seite oder ein Fehler 500 | Lesen Sie `var/log/error.log`. Prüfen Sie, ob `php -v` 8.0 oder neuer zeigt (8.1 für Velocity) und ob `vendor/` existiert (führen Sie `composer install` aus). |
+| Eine weiße Seite oder ein Fehler 500 | Lesen Sie `var/log/error.log`. Prüfen Sie, ob `php -v` 8.0 oder neuer zeigt und ob `vendor/` existiert (führen Sie `composer install` aus). |
 | Die Site-Adresse antwortet nicht | Läuft der Server (`./console exp:velocity status --engine=php`)? Passt der Port zu `--url`? |
 | Sie haben das Passwort vergessen | `exp:install` hat es einmal angezeigt. Ein Passwort, das `exp:install` oder der Kickstarter erzeugt hat (keines angegeben oder ein allgemein bekanntes), steht außerdem in `var/log/initial-admin-password`; der Setup-Assistent im Browser schreibt keine solche Datei, weil Sie das Passwort dort selbst eingeben. Setzen Sie ein neues mit `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, siehe [Benutzerpasswort zurücksetzen](../../eng-us/features/6.0/reset-user-password.md). |
 | Eine Änderung wird nicht angezeigt | Leeren Sie den Inhalts-Cache (Schritt 6) und laden Sie die Seite neu. |

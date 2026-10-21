@@ -45,7 +45,7 @@ for everybody: it is only downloaded through `/pdf/edit/<id>/generate`, by users
 |---|---|
 | Figures | Exports; generated once; generated on the fly; stored files; their size together; exports that need attention |
 | Unfinished drafts | New exports that were started and never saved. They are removed once `content.ini [PDFExportSettings] DraftTimeout` (7200 seconds) has passed and somebody starts a new export |
-| Find an export | Title, file name, ID, source node or class; every word must match. The search is part of the address (`?search=`) |
+| Find an export | Title, file name, ID, source node or class; every word must match. The search is part of the address (`/(search)/<text>`) |
 | Show | All, Generated once, On the fly, With a stored file, Need attention, each with its count |
 | Sort by | Title, Modified, Generated (date of the stored file), File size, ID; a second click reverses |
 | Per page | The sizes of `admininterface.ini [PaginationSettings]` (`ItemsPerPage[pdf/list]`, `ItemsPerPageList_pdf_list[]`); your choice is remembered |

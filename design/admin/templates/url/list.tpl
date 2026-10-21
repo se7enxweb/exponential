@@ -60,7 +60,7 @@
 
 <section aria-labelledby="url-find-title">
 <h2 class="a4-sr-only" id="url-find-title">{'Find links'|i18n( 'design/admin/url/list' )}</h2>
-<form class="a4-filterbar" method="get" action={concat( '/url/list/', $view_mode, $sort_part )|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={concat( '/url/list/', $view_mode, $sort_part )|ezurl} role="search">
     <div class="a4-field a4-field-wide">
         <label for="url-search">{'Find a link'|i18n( 'design/admin/url/list' )}</label>
         <div class="a4-searchrow">

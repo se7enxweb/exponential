@@ -6,11 +6,13 @@
    log_unmasked, log_masking, log_client, log_token_field, log_token, log_done, log_done_ok, log_siteaccesses,
    log_max_download, log_groups, log_state_json, log_permalink (setup/logs/view/<key>... of this view, without done, ok
    and unmask), log_share_permalink (the same with the request and client address filters as the masks show them: the
-   link to copy and share; log_permalink when not set), log_key, log_view_state.
+   link to copy and share; log_permalink when not set), log_key, log_view_state, log_feed_search (the search as view
+   parameters of setup/logsfeed), log_more_url (the permalink of the next results).
 
-   Every link of the page is a permalink by log key (expLogPermalink): setup/logs/view/<key>/(name)/value. The search
-   form and the paging link go through setup/logs?key=<key>&..., which answers 303 with the permalink, so they work
-   without JavaScript; the script keeps the address in step with the view (paused, wrapped, the focused entry).
+   Every link of the page is a permalink by log key (expLogPermalink): setup/logs/view/<key>/(name)/value, never a
+   query string. The search form and the file chooser are sent with POST to setup/logs (with the form token), which
+   answers 303 with the permalink, so they work without JavaScript; the script keeps the address in step with the
+   view (paused, wrapped, the focused entry).
 
    Without JavaScript the page shows the end of the file (or the results of the search) as a list, the search form,
    paging of the results and the actions. page/setup_logs.js follows the file through setup/logsfeed (short
@@ -29,9 +31,6 @@
                               'webserver',  'Web server'|i18n( 'design/admin/setup/logs' ),
                               'archives',   'Rotated archives'|i18n( 'design/admin/setup/logs' ) )
      $log_entries = array()
-     $log_q = ''
-     $log_crit = ''
-     $log_page_q = ''
      $log_base = 'setup/logs'
      $log_label = ''
      $log_has_file = is_set( $log_file.id )
@@ -43,25 +42,10 @@
 {elseif is_set( $log_initial.entries )}
     {set $log_entries = $log_initial.entries}
 {/if}
-{* The criteria of this page's search: for the feed ($log_q, by file id) and for the paging link ($log_page_q, by key:
-   setup/logs?key=... answers 303 with the permalink). $log_base is the plain permalink of the log. *}
-{if $log_criteria.q|ne( '' )}{set $log_crit = concat( $log_crit, '&q=', $log_criteria.q|rawurlencode )}{/if}
-{if $log_criteria.regex}{set $log_crit = concat( $log_crit, '&regex=1' )}{/if}
-{if $log_criteria.case}{set $log_crit = concat( $log_crit, '&case=1' )}{/if}
-{if $log_criteria.levels|count}{set $log_crit = concat( $log_crit, '&levels=', $log_criteria.levels|implode( ',' ) )}{/if}
-{if $log_criteria.from_text|ne( '' )}{set $log_crit = concat( $log_crit, '&from=', $log_criteria.from_text|rawurlencode )}{/if}
-{if $log_criteria.to_text|ne( '' )}{set $log_crit = concat( $log_crit, '&to=', $log_criteria.to_text|rawurlencode )}{/if}
-{if $log_criteria.siteaccess|ne( '' )}{set $log_crit = concat( $log_crit, '&siteaccess=', $log_criteria.siteaccess|rawurlencode )}{/if}
-{if $log_criteria.uri|ne( '' )}{set $log_crit = concat( $log_crit, '&uri=', $log_criteria.uri|rawurlencode )}{/if}
-{if $log_criteria.ip|ne( '' )}{set $log_crit = concat( $log_crit, '&ip=', $log_criteria.ip|rawurlencode )}{/if}
-{if $log_criteria.reference|ne( '' )}{set $log_crit = concat( $log_crit, '&reference=', $log_criteria.reference|rawurlencode )}{/if}
-{set $log_crit = concat( $log_crit, '&scope=', $log_scope|rawurlencode )}
-{if $log_rotations}{set $log_crit = concat( $log_crit, '&rotations=1' )}{/if}
-{if $log_unmasked}{set $log_crit = concat( $log_crit, '&unmask=1' )}{/if}
+{* $log_base is the plain permalink of the log. The search of this page is built by the view: $log_feed_search (the
+   view parameters of the feed, by file id) and $log_more_url (the permalink of the next results). *}
 {if $log_has_file}
-    {set $log_q = concat( 'file=', $log_file.id|rawurlencode, $log_crit )
-         $log_page_q = concat( 'key=', $log_file.key|rawurlencode, cond( $log_file.rotation|ne( 0 ), concat( '&archive=', $log_file.rotation ), '' ), $log_crit )
-         $log_base = concat( 'setup/logs/view/', $log_file.key, cond( $log_file.rotation|ne( 0 ), concat( '/(archive)/', $log_file.rotation ), '' ) )
+    {set $log_base = concat( 'setup/logs/view/', $log_file.key, cond( $log_file.rotation|ne( 0 ), concat( '/(archive)/', $log_file.rotation ), '' ) )
          $log_label = cond( $log_file.label|ne( '' ), $log_file.label, $log_file.name )}
 {/if}
 
@@ -118,8 +102,9 @@
 {else}
 
 {* The file: a compact chooser for narrow windows, where the left menu is folded away. Without JavaScript it sends the
-   key (setup/logs?key=..., answered 303 with the permalink); the script opens the option's permalink at once. *}
-<form method="get" action={'setup/logs'|ezurl} class="a4-setup-log-picker" id="log-picker-form">
+   file with POST (answered 303 with the permalink); the script opens the option's permalink at once. *}
+<form method="post" action={'setup/logs'|ezurl} class="a4-setup-log-picker" id="log-picker-form">
+    <input type="hidden" name="{$log_token_field|wash}" value="{$log_token|wash}" />
     <label for="log-picker">{'File'|i18n( 'design/admin/setup/logs' )}</label>
     <select id="log-picker" name="file">
     {foreach $log_groups as $log_group => $log_list}
@@ -193,7 +178,8 @@
 <details class="a4-fold a4-setup-log-search"{if $log_searching} open{/if}>
 <summary>{'Search'|i18n( 'design/admin/setup/logs' )}</summary>
 <div class="a4-fold-body">
-<form method="get" action={'setup/logs'|ezurl} class="a4-filterbar a4-setup-log-searchform" role="search" aria-label="{'Search the log files'|i18n( 'design/admin/setup/logs' )|wash}">
+<form method="post" action={'setup/logs'|ezurl} class="a4-filterbar a4-setup-log-searchform" role="search" aria-label="{'Search the log files'|i18n( 'design/admin/setup/logs' )|wash}">
+    <input type="hidden" name="{$log_token_field|wash}" value="{$log_token|wash}" />
     <input type="hidden" name="key" value="{$log_file.key|wash}" />
     {if $log_file.rotation|ne( 0 )}<input type="hidden" name="rotation" value="{$log_file.rotation|wash}" />{/if}
     {if $log_unmasked}<input type="hidden" name="unmask" value="1" />{/if}
@@ -310,7 +296,7 @@
 </div>
 
 {if and( $log_searching, is_set( $log_search.cursor ), $log_search.cursor|ne( '' ) )}
-<p class="a4-setup-log-more"><a class="a4-btn" id="log-more" href={concat( 'setup/logs?', $log_page_q, '&cursor=', $log_search.cursor|rawurlencode )|ezurl}>{'More results'|i18n( 'design/admin/setup/logs' )}</a></p>
+<p class="a4-setup-log-more"><a class="a4-btn" id="log-more" href={$log_more_url|ezurl}>{'More results'|i18n( 'design/admin/setup/logs' )}</a></p>
 {/if}
 
 {* ---- one entry, opened by the script ---- *}
@@ -378,7 +364,7 @@
      data-finder-url={if $log_can_finder}{'contentfinder/search'|ezurl}{else}""{/if}
      data-template-url={if $log_can_templates}{'setup/templateview'|ezurl}{else}""{/if}
      data-audit-url={if $log_can_audit}{'audit/console'|ezurl}{else}""{/if}
-     data-search-query="{$log_q|wash}"
+     data-search-query="{$log_feed_search|wash}"
      data-permalink-url={$log_permalink|ezurl}
      data-share-url={$log_share_link|ezurl}
      data-base-url={$log_base|ezurl}
@@ -434,4 +420,4 @@
 
 </div></div></div>
 </div>
-{undef $log_level_names $log_group_names $log_entries $log_q $log_crit $log_page_q $log_base $log_label $log_has_file $log_can_templates $log_can_finder $log_can_audit $log_share_link}
+{undef $log_level_names $log_group_names $log_entries $log_base $log_label $log_has_file $log_can_templates $log_can_finder $log_can_audit $log_share_link}

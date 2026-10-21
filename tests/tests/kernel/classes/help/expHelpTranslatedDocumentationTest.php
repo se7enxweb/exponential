@@ -43,14 +43,16 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
     /** What may be tracked directly below doc/ besides the language directories */
     const DOC_ROOT_ALLOWED = array( 'doc/README.md' );
 
-    /** Files whose text may keep the old paths: they record history (path prefixes) */
-    const HISTORY_PREFIXES = array( 'doc/changelogs/', 'doc/eng-us/history/', 'share/filelist.md5' );
+    /** Files whose text may keep the old paths: they record history (path prefixes), the German translation of the
+     *  history pages (doc/ger-de/geschichte/) like the English ones, since it quotes the same commit subjects */
+    const HISTORY_PREFIXES = array( 'doc/changelogs/', 'doc/eng-us/history/', 'doc/ger-de/geschichte/', 'share/filelist.md5' );
 
     /** ... except the changelog of the release being prepared */
     const HISTORY_EXCEPTIONS = array( 'doc/changelogs/6.0/6.0.15.md' );
 
     /** Files that describe the move itself and name the old paths on purpose */
     const DESCRIBE_THE_MOVE = array( 'doc/eng-us/bc/6.0/translated-documentation.md',
+                                     'doc/ger-de/bc/6.0/uebersetzte-dokumentation.md',
                                      'tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php' );
 
     /** Files that name doc/en/us or doc/de on purpose: the old directories the help still answers for */
