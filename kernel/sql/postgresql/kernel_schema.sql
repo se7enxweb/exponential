@@ -2317,6 +2317,8 @@ CREATE TABLE ezpreferences (
 
 CREATE TABLE ezprest_authcode (
     client_id character varying(200) DEFAULT ''::character varying NOT NULL,
+    code_challenge character varying(128),
+    code_challenge_method character varying(10),
     expirytime bigint DEFAULT '0' NOT NULL,
     id character varying(200) DEFAULT ''::character varying NOT NULL,
     scope character varying(200),

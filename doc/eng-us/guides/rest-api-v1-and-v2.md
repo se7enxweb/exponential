@@ -97,18 +97,24 @@ For an application that lets *other* users sign in and act for them.
 1. An administrator registers the application at **Setup > oAuth admin** (`/oauthadmin/list`). It gets a client
    identifier, a secret and the redirect address of the application.
 2. The application sends the user to the authorize page of the site:
-   `https://example.com/oauth/authorize?client_id=<client id>&redirect_uri=<redirect uri>&response_type=code`.
-   The user signs in and allows the application; the site redirects back with `code=<code>`. The user needs the
+   `https://example.com/oauth/authorize?client_id=<client id>&redirect_uri=<redirect uri>&response_type=code&state=<random>`,
+   with PKCE also `&code_challenge=<challenge>&code_challenge_method=S256`.
+   The user signs in and allows the application; the site redirects back with `code=<code>` and the `state` of the
+   request, unchanged (the application checks it). The user needs the
    policy *OAuth / Authorize* (`oauth/authorize`); without it the site redirects back with `error=access_denied`
    ([upgrade note](../bc/6.0/oauth-authorize-policy.md)).
 3. The application exchanges the code for a token at the token endpoint,
    `POST /api/auth/v1/oauth/token`, with `grant_type=authorization_code`, `client_id`, `client_secret`, `code` and
-   `redirect_uri`.
+   `redirect_uri`, plus `code_verifier` when it sent a challenge. A public client (stored without a secret, such as a
+   mobile app) sends no `client_secret` and must use PKCE ([PKCE and state](../bc/6.0/oauth-pkce.md)).
 4. It sends the token with every request (`Authorization: OAuth <token>`, or the `oauth_token` parameter).
 5. When the token has expired (`rest.ini [OAuthSettings] TokenTTL`, one hour by default), the application asks for a
    new one with `grant_type=refresh_token` and `refresh_token=<refresh token>`.
 
 The token endpoint supports the grants `authorization_code` and `refresh_token`.
+
+A page in a browser on another host (a single page application) can call the API only when CORS is switched on
+for its origin, `rest.ini [CorsSettings]`; it is off by default ([CORS for the REST API](../bc/6.0/rest-cors.md)).
 
 ### 3.2 Personal API keys
 

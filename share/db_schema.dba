@@ -6264,16 +6264,28 @@ $schema = array (
   'ezprest_authcode' => 
   array (
     'name' => 'ezprest_authcode',
-    'fields' => 
+    'fields' =>
     array (
-      'client_id' => 
+      'client_id' =>
       array (
         'length' => 200,
         'type' => 'varchar',
         'not_null' => '1',
         'default' => '',
       ),
-      'expirytime' => 
+      'code_challenge' =>
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'code_challenge_method' =>
+      array (
+        'length' => 10,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'expirytime' =>
       array (
         'length' => 20,
         'type' => 'bigint',

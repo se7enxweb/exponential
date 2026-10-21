@@ -668,6 +668,8 @@ CREATE TABLE `ezpreferences` (
 );
 CREATE TABLE `ezprest_authcode` (
   `client_id` varchar(200) NOT NULL DEFAULT ''
+,  `code_challenge` varchar(128) DEFAULT NULL
+,  `code_challenge_method` varchar(10) DEFAULT NULL
 ,  `expirytime` integer NOT NULL DEFAULT '0'
 ,  `id` varchar(200) NOT NULL DEFAULT ''
 ,  `scope` varchar(200) DEFAULT NULL

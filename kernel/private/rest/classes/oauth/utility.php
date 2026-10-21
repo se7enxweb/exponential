@@ -200,7 +200,8 @@ class ezpOauthUtility extends ezpRestModel
         if (! ( $client instanceof ezpRestClient ) )
             throw new ezpOauthInvalidRequestException( ezpOauthTokenEndpointErrorType::INVALID_CLIENT );
 
-        if ( !$client->validateSecret( $clientSecret ) )
+        // a confidential client sends its secret; a public client (no secret) is identified by its client_id
+        if ( !expOAuthPkce::clientAuthenticates( $client, $clientSecret ) )
             throw new ezpOauthInvalidRequestException( ezpOauthTokenEndpointErrorType::INVALID_CLIENT );
 
         $session = ezcPersistentSessionInstance::get();
@@ -215,6 +216,10 @@ class ezpOauthUtility extends ezpRestModel
         }
 
         $refreshInfo = array_shift( $refreshInfo );
+
+        // a refresh token is redeemed only by the client it was issued to
+        if ( (string)$refreshInfo->client_id !== (string)$clientId )
+            throw self::invalidGrant( 'Specified refresh-token does not exist.' );
 
         // Validate client is still authorized, then validate code is not expired
         $authorized = ezpRestAuthorizedClient::fetchForClientUser( $client, eZUser::fetch( $refreshInfo->user_id ) );
@@ -247,20 +252,23 @@ class ezpOauthUtility extends ezpRestModel
      * @param string $clientSecret Client secret key
      * @param string $authCode Authorization code provided by the client
      * @param string $redirectUri Redirect URI. Must be the same as registered in admin
+     * @param string|null $codeVerifier PKCE code_verifier (RFC 7636), null when the request has none
      * @return ezpRestToken
      * @throws ezpOauthInvalidRequestException
      * @throws ezpOauthInvalidTokenException
      * @throws ezpOauthExpiredTokenException
      */
-    public static function doRefreshTokenWithAuthorizationCode( $clientId, $clientSecret, $authCode, $redirectUri )
+    public static function doRefreshTokenWithAuthorizationCode( $clientId, $clientSecret, $authCode, $redirectUri, $codeVerifier = null )
     {
         $client = ezpRestClient::fetchByClientId( $clientId );
-        $tokenTTL = (int)eZINI::instance( 'rest.ini' )->variable( 'OAuthSettings', 'TokenTTL' );
+        $restINI = eZINI::instance( 'rest.ini' );
+        $tokenTTL = (int)$restINI->variable( 'OAuthSettings', 'TokenTTL' );
 
         if (! ( $client instanceof ezpRestClient ) )
             throw new ezpOauthInvalidRequestException( ezpOauthTokenEndpointErrorType::INVALID_CLIENT );
 
-        if ( !$client->validateSecret( $clientSecret ) )
+        // a confidential client sends its secret; a public client (no secret) is bound to its code by PKCE below
+        if ( !expOAuthPkce::clientAuthenticates( $client, $clientSecret ) )
             throw new ezpOauthInvalidRequestException( ezpOauthTokenEndpointErrorType::INVALID_CLIENT );
 
         if ( !$client->isEndPointValid( $redirectUri ) )
@@ -277,6 +285,19 @@ class ezpOauthUtility extends ezpRestModel
             throw new ezpOauthInvalidTokenException( "Specified authorization code does not exist." );
         }
         $codeInfo = array_shift( $codeInfo );
+
+        // a code is redeemed only by the client it was issued to
+        if ( (string)$codeInfo->client_id !== (string)$clientId )
+            throw self::invalidGrant( 'Specified authorization code does not exist.' );
+
+        // PKCE (RFC 7636, section 4.6): the code_verifier must match the challenge stored with the code. A failed
+        // attempt uses the code up, so a verifier cannot be guessed over many requests.
+        $pkceError = expOAuthPkce::checkRedemption( $client, $codeInfo, $codeVerifier, $restINI );
+        if ( $pkceError !== null )
+        {
+            $session->delete( $codeInfo );
+            throw self::invalidGrant( $pkceError );
+        }
 
         // Validate client is still authorized, then validate code is not expired
         $authorized = ezpRestAuthorizedClient::fetchForClientUser( $client, eZUser::fetch( $codeInfo->user_id ) );
@@ -314,6 +335,17 @@ class ezpOauthUtility extends ezpRestModel
         $session->delete( $codeInfo );
 
         return $token;
+    }
+
+    /**
+     * A refused grant (RFC 6749, section 5.2): 400 Bad Request, the body names invalid_grant and the reason.
+     *
+     * @param string $description
+     * @return ezpOauthInvalidRequestException
+     */
+    protected static function invalidGrant( $description )
+    {
+        return new ezpOauthInvalidRequestException( ezpOauthTokenEndpointErrorType::INVALID_GRANT . ': ' . $description );
     }
 }
 ?>

@@ -20,7 +20,7 @@ says what the standard is, what Exponential implements, where the code, settings
 
 | Standard | Version | Status | Evidence (short) |
 |---|---|---|---|
-| OAuth 2.0, authorization server for the REST API | RFC 6749 (2012) | **Partly complies** | `kernel/private/modules/oauth/`, `kernel/private/rest/classes/oauth/`, token endpoint `POST /api/auth/v1/oauth/token`; no `state`, no PKCE, no `token_type` |
+| OAuth 2.0, authorization server for the REST API | RFC 6749 (2012) | **Partly complies** | `kernel/private/modules/oauth/`, `kernel/private/rest/classes/oauth/`, token endpoint `POST /api/auth/v1/oauth/token`; `state` and PKCE (RFC 7636, S256) since 6.0.15; no `token_type` |
 | OAuth 2.0 Bearer tokens | RFC 6750 (2012) | **Partly complies** | `Authorization: Bearer` and `OAuth` accepted (`ezpOauthUtility`); token also accepted as a query parameter |
 | OAuth 2.0 / OpenID Connect, client for social login | RFC 6749, RFC 7636, OIDC Core 1.0 | **Partly complies** | `sevenx_authentication_2fa` extension: authorization code flow with `state` and PKCE S256; ID tokens not validated |
 | REST over HTTP | HTTP semantics, RFC 9110 | **Partly complies** | `ezprestapi` routes `/api/ezp/v1`, `/api/ezp/v2`; status classes in `kernel/private/rest/classes/` |
@@ -77,9 +77,11 @@ or recommended parts are missing.
 
 ### Known gaps
 
-- `state` is not returned to the client (comment in `authorize.php`: "state, not implemented yet"). RFC 6749
-  recommends it against cross-site request forgery; clients cannot rely on it.
-- No PKCE (RFC 7636) on the server side.
+- Since 6.0.15 `state` is returned unchanged with the code, the token and the error, and PKCE (RFC 7636) is
+  supported: `S256`, `plain` only when `AllowPlainPkce` is enabled, required for public clients (stored without a
+  secret) by default ([PKCE and state](../bc/6.0/oauth-pkce.md)). These are no longer gaps.
+- CORS for the REST interface exists since 6.0.15 and is off by default (`rest.ini [CorsSettings]`,
+  [CORS for the REST API](../bc/6.0/rest-cors.md)).
 - `response_type=token` (the implicit grant, discouraged by RFC 9700) is still accepted, and it returns the tokens in
   the query string instead of the URL fragment that RFC 6749 section 4.2.2 requires.
 - The token response has no `token_type` (required by RFC 6749 section 5.1); `Cache-Control: no-store` is not set

@@ -39,6 +39,11 @@ templates: a mobile app, a single-page application, a static site generator, ano
 | expservices | the administration's functions as services, with discovery and tokens ([Remote services](remote-services-expservices.md)) |
 | ezjscore server functions | small JSON endpoints you write yourself ([JSON endpoints](json-endpoints-with-ezjscore.md)) |
 
+A front end that runs in the browser on another host calls the REST API only after CORS is switched on for its
+origin in `rest.ini [CorsSettings]`; it is off by default ([CORS for the REST API](../../../bc/6.0/rest-cors.md)).
+A browser or mobile app that signs users in is a public OAuth client and uses PKCE
+([PKCE and state](../../../bc/6.0/oauth-pkce.md)).
+
 ## Reading content
 
 ```bash

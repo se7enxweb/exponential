@@ -34,6 +34,15 @@ ALTER TABLE ezcontentobject_trash ADD COLUMN trashed_by integer NOT NULL DEFAULT
 ALTER TABLE ezcontentobject_trash ADD COLUMN trashed_via varchar(100) NOT NULL DEFAULT '';
 
 --
+-- ezprest_authcode: PKCE (RFC 7636) for the OAuth authorization code flow.
+-- oauth/authorize stores the code_challenge and code_challenge_method of the request with the code; the token end
+-- point checks the code_verifier against them. Without these columns no authorization code can be issued.
+-- Run once; a second run stops at "duplicate column name", which means the columns are there.
+--
+ALTER TABLE ezprest_authcode ADD COLUMN code_challenge varchar(128) DEFAULT NULL;
+ALTER TABLE ezprest_authcode ADD COLUMN code_challenge_method varchar(10) DEFAULT NULL;
+
+--
 -- An index on ezcontentobject_trash.trashed_by: the trash view counts the
 -- items per user and filters by user. On a trash of 100,000 rows the list of
 -- users took 100 ms without it and 16 ms with it. Created only when missing.

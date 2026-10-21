@@ -575,3 +575,11 @@ $$;
 --
 -- DROP INDEX ezuser_login;
 -- CREATE UNIQUE INDEX ezuser_login ON ezuser ( login );
+
+--
+-- ezprest_authcode: PKCE (RFC 7636) for the OAuth authorization code flow.
+-- oauth/authorize stores the code_challenge and code_challenge_method of the request with the code; the token end
+-- point checks the code_verifier against them. Without these columns no authorization code can be issued.
+--
+ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge character varying(128);
+ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge_method character varying(10);

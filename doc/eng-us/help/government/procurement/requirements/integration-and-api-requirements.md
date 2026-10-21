@@ -51,7 +51,7 @@ that list are concrete; requirements written as "must have an open API" are not.
 | Id | Evidence | Status |
 |---|---|---|
 | INT-01 | REST API v1 and v2 from one extension ([REST API v1 and v2](../../../../guides/rest-api-v1-and-v2.md)); JSON | REST **Partly complies**, JSON **Complies** |
-| INT-02 | OAuth 2.0 token endpoint; personal API keys ([Personal API keys](../../../../guides/api-keys.md)); remote services ([Remote services and apps](../../../../guides/remote-services-and-apps.md)) | OAuth 2.0 **Partly complies** (no PKCE on the server side) |
+| INT-02 | OAuth 2.0 token endpoint; personal API keys ([Personal API keys](../../../../guides/api-keys.md)); remote services ([Remote services and apps](../../../../guides/remote-services-and-apps.md)) | OAuth 2.0 **Partly complies** (state and PKCE S256 since 6.0.15; no `token_type` in the token response) |
 | INT-03 | LDAP authentication in the kernel; social and OpenID Connect sign-in through `sevenx_authentication_2fa` | LDAP **Partly complies** (default LDAPv2, no StartTLS); OIDC client **Partly complies** (ID tokens not validated) |
 | INT-04 | RSS 1.0/2.0 and Atom export, RSS import ([RSS feeds](../../../../guides/rss-feeds.md)); sitemaps with `bcgooglesitemaps` | RSS **Complies**, Atom **Partly complies**, sitemaps **Complies** |
 | INT-05 | Audit sinks including a signed outgoing webhook (HMAC-SHA-256) ([Audit trail](../../../../features/6.0/audit-trail.md)) | **Complies** with its own documented contract |

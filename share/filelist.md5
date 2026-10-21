@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-d369a2c807802b4f5cdd1f92b647a238  autoload/ezp_kernel.php
+19b2aeca82da55ca91b20af04083bf30  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d3059d5aa33cfcda698bf29e95084c66  doc/changelogs/6.0/6.0.15.md
+335d5d82f52e7aca3b35e961c7718df4  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3383,6 +3383,7 @@ abb94091360a905fee43c0792bbf9d39  doc/eng-us/bc/6.0/middle-out-compression.md
 aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands.md
 09126e5f8caee5c1c7e418680e6f5e4f  doc/eng-us/bc/6.0/oauth-authorize-policy.md
+5915e407aa7a9cce550d626cc726e267  doc/eng-us/bc/6.0/oauth-pkce.md
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
@@ -3401,6 +3402,7 @@ fb1fc98da050946003d9f5471b75257d  doc/eng-us/bc/6.0/phpunitv10.md
 4a8181eadee679b8558fe125d10df9c1  doc/eng-us/bc/6.0/redirect-query-and-image-alias-guards.md
 01f79c49e39df4f269035addc4c504cd  doc/eng-us/bc/6.0/repair.md
 fd1f9244614a625c905ac4186088718b  doc/eng-us/bc/6.0/response-cache-and-navigation.md
+32fecff4dc4fca7d6cd3480e44f1b157  doc/eng-us/bc/6.0/rest-cors.md
 0785742cb6ad30c25657d8d3a4363ac9  doc/eng-us/bc/6.0/role-policy-paging.md
 981cb46d02cc504b4d483962e3e5f0ed  doc/eng-us/bc/6.0/shop-basket-view-name.md
 60039ee545481e1d04fdc0979ea8846d  doc/eng-us/bc/6.0/sql-query-cache.md
@@ -6359,7 +6361,7 @@ c1af1e57aab428c892c4e04cfe7c6cb4  doc/eng-us/guides/notifications-developer.md
 ff27a9b53a75e48c42e57661cd03eddf  doc/eng-us/guides/pdf-exports.md
 970baf1fe67bc723695c6fb1bb358f96  doc/eng-us/guides/preloading-caches.md
 a18d1933d4f72ad93e278381d78e827f  doc/eng-us/guides/remote-services-and-apps.md
-d0bfa4674fe32cd9835754347f245172  doc/eng-us/guides/rest-api-v1-and-v2.md
+ddc6c4fbe3bd9236974b19bc53884ee6  doc/eng-us/guides/rest-api-v1-and-v2.md
 73b431620545776f5b07f75bbb73a1fa  doc/eng-us/guides/roles-and-policies.md
 f337e682866a0c40c31e27575e8f3a38  doc/eng-us/guides/rss-feeds.md
 42435e08c0a7f984fcdbf0d90de17942  doc/eng-us/guides/sections.md
@@ -6903,7 +6905,7 @@ d35d7ec6ed40a32018293e3174f31bf8  doc/eng-us/help/businesses/members/member-site
 0ca81b4f709924d356ad8bc40e5b262a  doc/eng-us/help/businesses/members/members-only-content.md
 f653fa0e490fb359623ea48f70adfa62  doc/eng-us/help/businesses/mobile-and-headless/README.md
 25010ebcc251aee809e7caef410d5312  doc/eng-us/help/businesses/mobile-and-headless/app-backend-reliability.md
-f2897e66f39ddc15ac5fe18d9b15abda  doc/eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md
+1d198241e995ab922e268b198c1226da  doc/eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md
 38ef1a9fb63e093294ec91e401edb226  doc/eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md
 18a704786799f88a43d716a1f317bd30  doc/eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md
 f66132278f117d2683669d0161a6b128  doc/eng-us/help/businesses/mobile-and-headless/mobile-checklist.md
@@ -7104,12 +7106,12 @@ cb41b39b38102b539cff85e472bfa5a5  doc/eng-us/help/creators/app-creators/extendin
 627a840b5a00a8a953a71b7033bf083f  doc/eng-us/help/creators/app-creators/extension-anatomy.md
 c3329393cbdc5146b456c028d7730612  doc/eng-us/help/creators/app-creators/fetch-functions.md
 3aa8f9bb3addc7c770a7af4d07a75551  doc/eng-us/help/creators/app-creators/forms-csrf-and-http-input.md
-5e34f8d420091cf9a15b9fd772d3e17b  doc/eng-us/help/creators/app-creators/headless-exponential.md
+c14e7c52816e86af62c87f85e137837d  doc/eng-us/help/creators/app-creators/headless-exponential.md
 9aba3db529ad513e6b654571355bdd8a  doc/eng-us/help/creators/app-creators/input-validation-and-escaping.md
 f8f71afd540d4d5ea6f537568ce208c1  doc/eng-us/help/creators/app-creators/json-endpoints-with-ezjscore.md
 9d3bac7d742c8e97e7d01ee4929379c4  doc/eng-us/help/creators/app-creators/module-definition-reference.md
 754379f43bdadf3775be6337e1f4f95d  doc/eng-us/help/creators/app-creators/notifications-and-mail.md
-7e5ae877a012d338cb6e1a308903df80  doc/eng-us/help/creators/app-creators/oauth-and-api-keys.md
+e6b612dabdf5018fa4d4b292106f02e6  doc/eng-us/help/creators/app-creators/oauth-and-api-keys.md
 d93141b2aa4c4c40994c67d11b3e6494  doc/eng-us/help/creators/app-creators/packages-and-ezpkg.md
 dcdba8cd8c4c18000a537ccea46b76eb  doc/eng-us/help/creators/app-creators/packaging-as-an-extension.md
 7d252b02aab345271b57d8d7f469bee7  doc/eng-us/help/creators/app-creators/persistent-objects-and-custom-tables.md
@@ -8489,7 +8491,7 @@ a5e7141fc48fccc6a91fa9c5259fe0ee  doc/eng-us/help/government/procurement/require
 f1aceef3a44c844d975a51cb8a42230e  doc/eng-us/help/government/procurement/requirements/functional-requirements-for-a-public-cms.md
 2e4dc94d6b8dba16cf308d298dc3dfb3  doc/eng-us/help/government/procurement/requirements/hosting-and-data-location-requirements.md
 4520731ef7240ee5a9505d03c01f09d1  doc/eng-us/help/government/procurement/requirements/how-to-write-verifiable-requirements.md
-9e4d22eab7f9049b55552bfcfb8a9f72  doc/eng-us/help/government/procurement/requirements/integration-and-api-requirements.md
+44bb32a99629e3efdca783901ebb969d  doc/eng-us/help/government/procurement/requirements/integration-and-api-requirements.md
 372c0f8ec5b27c2604e25134787f4214  doc/eng-us/help/government/procurement/requirements/language-and-multilingual-requirements.md
 7ddf7ad2fb7909815a0b71ff48bb1972  doc/eng-us/help/government/procurement/requirements/mapping-requirements-to-evidence.md
 18d9525163fa1c5d09bbdf673e1dc535  doc/eng-us/help/government/procurement/requirements/open-source-and-licensing-requirements.md
@@ -11378,7 +11380,7 @@ f215c05198661b115822ecf85b049791  doc/eng-us/specifications/trunk/webdav/design.
 5437549b02cb05d98a6c0e9faa2a9d6e  doc/eng-us/specifications/trunk/webdav/testing.txt
 063ce552bc878f747754fe24aeba8d5b  doc/eng-us/standards/README.md
 252df4ad929147a4f4291beb83c99f09  doc/eng-us/standards/accessibility.md
-8d189a14b6a389a554147cd1b96e3049  doc/eng-us/standards/apis-and-protocols.md
+e3fc31889b0d5bf593609c3c695c112b  doc/eng-us/standards/apis-and-protocols.md
 76b1855ff6528d0dced746e1ff7e1e5c  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
 0ddceb8d256796c6e6944fc21d5e17b1  doc/eng-us/standards/architecture/kernel-architecture.md
 c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
@@ -11582,7 +11584,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 d8ec17ec6fcc8d49b62f81830d2d61b8  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-87e474ed1001381621ff5ff283be7b31  doc/ger-de/.paths.json
+0bd6890e36b2c7305c3f559dada60d7f  doc/ger-de/.paths.json
 cda223dc1e4d14ac9943e964893cf0ea  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -11617,7 +11619,7 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 7d327f243481e36aa04751b585b4b346  doc/ger-de/anleitungen/objektzustaende.md
 e284dbffe107486bd07fb059fa282962  doc/ger-de/anleitungen/pakete.md
 16520e397aa690a6f6867e3fcd1f2f4e  doc/ger-de/anleitungen/pdf-exporte.md
-3621cc377562f46144b66a048f95bdef  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
+3a7b4029ca75ca7490d355d1869927f4  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
 b7e5959e0be69985584f9459039a77e6  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 37c2c3c11cba75b58506c2f043a06ee7  doc/ger-de/anleitungen/sektionen.md
@@ -11651,6 +11653,7 @@ db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
 995ca76c7c8d1c45c8762bbfbe3ca567  doc/ger-de/bc/6.0/cleanuprss.md
 7c8fc03f63aca0660cd5253f9b7e96e6  doc/ger-de/bc/6.0/cli-cronjob-und-view-abstraktionen.md
 2318db44688c4209c1afb835dc867d9b  doc/ger-de/bc/6.0/console-exp-ini.md
+3359e5f2f7c679769b1229d71a8a6631  doc/ger-de/bc/6.0/cors-fuer-die-rest-api.md
 d527c9c3be81d72feeef5dbf964c5964  doc/ger-de/bc/6.0/dateimodi.md
 85d63574c52a9a89e437d0fe39f629b6  doc/ger-de/bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md
 e137fe4e902234cdafca7b2be9179b58  doc/ger-de/bc/6.0/debug-leiste.md
@@ -11694,6 +11697,7 @@ d5c8b87ad96b7a1bb586d0719143abce  doc/ger-de/bc/6.0/menue-inhalte-exportieren.md
 4f12263b8a31f5bf2435964918d4c6f6  doc/ger-de/bc/6.0/middle-out-kompression.md
 cb44c3fa0a4efd14dafd0a022f422ef5  doc/ger-de/bc/6.0/mongodb-kernel-unterstuetzung.md
 675bd63c1c146c02ff9d08e3bd2a1855  doc/ger-de/bc/6.0/oauth-autorisierungsrichtlinie.md
+3adff359762b0e0403b89d0bfef2f0be  doc/ger-de/bc/6.0/oauth-pkce-und-state.md
 b561173941e1bd7cf5e7da6de12c3eb9  doc/ger-de/bc/6.0/opml.md
 e64015b83ef1461c77168bd9f4938cf3  doc/ger-de/bc/6.0/package-json-format.md
 fa6582156c1ac5cda7f7f9673bf80b0a  doc/ger-de/bc/6.0/papierkorb.md
@@ -15081,7 +15085,7 @@ c9438d97354f04b93c369d8371aa2eb4  doc/ger-de/hilfe/ersteller/anwendungsentwickle
 73e64f7ada63f0789fccbffbce9b91b8  doc/ger-de/hilfe/ersteller/anwendungsentwickler/fehlersuche-und-logs.md
 10221462eb8f991e00a83b06462c0a54  doc/ger-de/hilfe/ersteller/anwendungsentwickler/fetch-funktionen.md
 245e0168a7f85aaaac4e4ce3fd722ad6  doc/ger-de/hilfe/ersteller/anwendungsentwickler/formulare-csrf-und-http-eingaben.md
-75cc8807d2810ed83f83ea60b316389c  doc/ger-de/hilfe/ersteller/anwendungsentwickler/headless-exponential.md
+bbae5c10e91c4c544b70d1e6799f7614  doc/ger-de/hilfe/ersteller/anwendungsentwickler/headless-exponential.md
 4d6878c1383e247fa2803f15a25b977b  doc/ger-de/hilfe/ersteller/anwendungsentwickler/ihre-erste-erweiterung.md
 8338e7a1eae7f8b9f3c3cd8522951637  doc/ger-de/hilfe/ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md
 b94be3b7cd0423d3f38fc197db965e14  doc/ger-de/hilfe/ersteller/anwendungsentwickler/inhalts-jobs.md
@@ -15091,7 +15095,7 @@ e3bb49366ee337eedec7eaf460aa91be  doc/ger-de/hilfe/ersteller/anwendungsentwickle
 b72ce9c35aa71a2eae79ec35165dc82e  doc/ger-de/hilfe/ersteller/anwendungsentwickler/lesepfad-fuer-anwendungsentwickler.md
 13fd5db93dd7e3df9b06cb63395df495  doc/ger-de/hilfe/ersteller/anwendungsentwickler/mit-velocity-ausliefern.md
 96bdb45cff847e4d6d00fd1fcd3d00c7  doc/ger-de/hilfe/ersteller/anwendungsentwickler/muster-fuer-hintergrundarbeit.md
-ecf3dcbd93bfd38ca52c3fbafc102d5d  doc/ger-de/hilfe/ersteller/anwendungsentwickler/oauth-und-api-schluessel.md
+1d4bbe342e745b79b9da04ea0318b5ab  doc/ger-de/hilfe/ersteller/anwendungsentwickler/oauth-und-api-schluessel.md
 6617b65f53414ebf97b82d63c84809e6  doc/ger-de/hilfe/ersteller/anwendungsentwickler/pakete-und-ezpkg.md
 2d98c43f8df4746668288d3cd3a4fa35  doc/ger-de/hilfe/ersteller/anwendungsentwickler/persistente-objekte-und-eigene-tabellen.md
 b3bf635f91d1aa88aeddcdd59cff5748  doc/ger-de/hilfe/ersteller/anwendungsentwickler/phpunit-tests-ohne-datenbank.md
@@ -16938,7 +16942,7 @@ bf1ed315dfd79f351d680f761fdef545  doc/ger-de/hilfe/unternehmen/mitglieder/mitgli
 e55094068ec60ef7ae499a30e2be1cd0  doc/ger-de/hilfe/unternehmen/mitglieder/registrierung-von-mitgliedern.md
 fe42bb89b9455e1652b29ec979c2dee8  doc/ger-de/hilfe/unternehmen/mitglieder/veranstaltungen-und-kalender.md
 f82d882788e0f26dcce81ad7d51ee3b6  doc/ger-de/hilfe/unternehmen/mobil-und-headless/README.md
-5e715100308ac9667a35ffd43ec460e3  doc/ger-de/hilfe/unternehmen/mobil-und-headless/apps-und-api-schluessel.md
+3ef6044e3011befb06345b5aea57a18c  doc/ger-de/hilfe/unternehmen/mobil-und-headless/apps-und-api-schluessel.md
 704c98995d311e53fde38a695fc34251  doc/ger-de/hilfe/unternehmen/mobil-und-headless/checkliste-mobil.md
 bef588e60f890a1b0b38c3d4493d26ba  doc/ger-de/hilfe/unternehmen/mobil-und-headless/entfernte-dienste.md
 44e5326440a6b276960993792e3bfbf9  doc/ger-de/hilfe/unternehmen/mobil-und-headless/feeds-und-syndication.md
@@ -17453,7 +17457,7 @@ e2d88a307a202fb908776ec757912c95  doc/ger-de/hilfe/verwaltung/beschaffung/anford
 4da954b45fc75ed4454ed9afd9430abf  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-datenschutz.md
 c4db741aad3ee14660813e07f8b3d89c  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-die-barrierefreiheit.md
 6992e3914530b92eadf1f4ec8b30a332  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-hosting-und-datenstandort.md
-a0ce6cedc0091783a1fb15533694d087  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-integration-und-api.md
+333f3597806bb5d94e992be5bad9427e  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-integration-und-api.md
 3d9dcae1b29e040a053cd4b9228495a7  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-open-source-und-lizenzierung.md
 a52ce9a035f2da20c380463cd99814ac  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-schriftgut-und-audit.md
 aaa1785cc1a4306155fe0dfde9b9704c  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-sprache-und-mehrsprachigkeit.md
@@ -18291,7 +18295,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
 b2225c1b2406f8c1101b4573f27c43bb  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
-cdc68be1cb1c1a7e315f10a4b4dc1b77  doc/ger-de/standards/apis-und-protokolle.md
+3bbe24a9e587469ea526adca93a99a10  doc/ger-de/standards/apis-und-protokolle.md
 96b6c91884cc3a41ab3dd3aa6c5eb43e  doc/ger-de/standards/architektur/kernel-architektur.md
 8b6b6fca0836e5563e177dc55378dc84  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
 43a2f1d024a49dcd7669c76add1cc44a  doc/ger-de/standards/architektur/schichten-und-benennung.md
@@ -20573,7 +20577,7 @@ e172decb6e12d8dbd0f3a528954692a4  kernel/private/interfaces/ezplanguageswitcherc
 f8ea2ae835fdbf95fbe09d6d1eb52948  kernel/private/interfaces/ezpsearchengine.php
 b2afc49bae090915d16fdcc404247c32  kernel/private/interfaces/ezpstaticcache.php
 d9ea7b3e09c41a33b6f413b7f8548a21  kernel/private/interfaces/ezpwebbasedkernelhandler.php
-ddf882805b1725d664a23004718fa4df  kernel/private/modules/oauth/authorize.php
+e33c6ad6788762fb422b6def2cf05146  kernel/private/modules/oauth/authorize.php
 489a41c9976f119ce14c0380b4e01dcd  kernel/private/modules/oauth/module.php
 be4a17b10277a3d00570033aa92efab2  kernel/private/modules/oauthadmin/action.php
 f287ce2859dafe0cd64e6284b69980c2  kernel/private/modules/oauthadmin/edit.php
@@ -20616,8 +20620,9 @@ b70ab5d832559492657ceb94c8d63faa  kernel/private/rest/classes/cache/options/stor
 f688b66dbcc427e808dc90540217df12  kernel/private/rest/classes/content_renderer.php
 034de641ec3c65d1f61c99c1e12abd46  kernel/private/rest/classes/controllers/auth.php
 0b6574eea43984924b4c4b7069581232  kernel/private/rest/classes/controllers/error.php
-697c78b2796188771e7d6f2978f95532  kernel/private/rest/classes/controllers/oauth_token.php
+049553eab199ebdc8c52f82ff3accf7c  kernel/private/rest/classes/controllers/oauth_token.php
 9d1e29271766054745de281a4dc8b649  kernel/private/rest/classes/controllers/rest_controller.php
+b3b653fbe08e028ebeeeac286ccb6e60  kernel/private/rest/classes/cors.php
 690a78e18937a4139eafd518d526f754  kernel/private/rest/classes/debug/debug.php
 14cfa6812d869e32ad0947000d4b40f1  kernel/private/rest/classes/debug/formatters/php_formatter.php
 dca5311534b43adcbb52331cfe94f028  kernel/private/rest/classes/default_regexp_prefix_filter.php
@@ -20641,7 +20646,7 @@ b04fcbcf55bb615fce083e7d78e4d6fa  kernel/private/rest/classes/exceptions/rest_ex
 a7a3a48e8aa0ffa966c7745b1ba7747f  kernel/private/rest/classes/exceptions/route_method_not_allowed.php
 eea847e390dc5e21472d82ff300dc73d  kernel/private/rest/classes/exceptions/route_security_filter_not_found.php
 921db2077b416e88d0cba7479a2927d0  kernel/private/rest/classes/exceptions/user_not_found.php
-0a8c69744bb8963b4321d193c7d7e6f1  kernel/private/rest/classes/ezpkernelrest.php
+91df1cdf81adb89ed34ba9ead1e9db39  kernel/private/rest/classes/ezpkernelrest.php
 56513fc16a223f6494dff2b9529218fa  kernel/private/rest/classes/http_response_codes.php
 849fec2e35afcb50302dc0bb5000a358  kernel/private/rest/classes/interfaces/content_renderer.php
 138b0dfa23a5968c02dea3d43ff692bd  kernel/private/rest/classes/interfaces/prerouting_filter.php
@@ -20652,17 +20657,18 @@ ad9bf4d6701be45e48cc2fefe9ade3e9  kernel/private/rest/classes/interfaces/respons
 a099abbb41c3a02a1d3ffdc72309f12f  kernel/private/rest/classes/interfaces/route_filter.php
 be63381744b2541c61008256dbcca8ff  kernel/private/rest/classes/interfaces/view_controller.php
 289c1a87dca02d254f678efca811db27  kernel/private/rest/classes/lazy.php
-237593cc91066425e3e34fce3fbafc8a  kernel/private/rest/classes/models/ezprest_authcode.php
+00a6ed866a00cb5ac886c356144b01ff  kernel/private/rest/classes/models/ezprest_authcode.php
 6b00486ab2c179f94faca4124ed596a6  kernel/private/rest/classes/models/ezprest_token.php
 f18bde4e8acf59d184759eb494239a0d  kernel/private/rest/classes/models/rest_model.php
 d18b0c46a501fb27380f2229539815c8  kernel/private/rest/classes/mvc_configuration.php
 7ce787be69b6557fc858ea8987cbc933  kernel/private/rest/classes/oauth/authorize_policy.php
 c7af38bc5a082e7290758290a6343792  kernel/private/rest/classes/oauth/authorize_policy_grant.php
 2699aed333387d9f87475e2e520a4aa3  kernel/private/rest/classes/oauth/oauth_filter.php
-128ea423d29aefe0794e3b609d19ce5c  kernel/private/rest/classes/oauth/utility.php
+dd293dec8b400f87c0dd3945dc70e43a  kernel/private/rest/classes/oauth/pkce.php
+dbda4b72b7ab97d845353ed14223e14a  kernel/private/rest/classes/oauth/utility.php
 7c1d17b1d2ab1f285872833ee383b650  kernel/private/rest/classes/oauth_token_endpoint_error.php
 541be1bf9c18d55d21b799a142fede84  kernel/private/rest/classes/outh_error_type.php
-b7c60eb155071b78e066053ae8b4a693  kernel/private/rest/classes/po_maps/ezprestauthcode.php
+036d75534b75d27f30b21f5f64404a77  kernel/private/rest/classes/po_maps/ezprestauthcode.php
 ce50f25391d9dd8e98f1d410ff08953d  kernel/private/rest/classes/po_maps/ezpresttoken.php
 dc1cda9b7ce21d3df2e9604c5a0d74df  kernel/private/rest/classes/prefix_filter.php
 ac570c24c81bad138fa6f3fa2e697f12  kernel/private/rest/classes/renderers/xhtml_content_renderer.php
@@ -20864,12 +20870,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-01c6fd8e0cd0ca8cab73c869c1344306  kernel/sql/mysql/kernel_schema.sql
-cefb08a5c6cb183fcedfe83bc70858c3  kernel/sql/postgresql/kernel_schema.sql
+e2675be86c12836749501b976f3bf35d  kernel/sql/mysql/kernel_schema.sql
+97fc0e2588c6f7f991b07f1f3a5d9223  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
 ce03b8330af52b5e601c91208fee1ffd  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-583adf289b8333c9acc929f4c2cb6cd3  kernel/sql/sqlite/schema.sql
+14b2cad11e2265a15ececd7afe1033d4  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
 dada858accc356c23164e35bcc5d26b1  kernel/state/group.php
@@ -21216,7 +21222,7 @@ bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
 21696fbd63b02afd759ad1e39c5a8e8a  settings/rad.ini
 a5de15343b43044c3212fdc6953d813f  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
-a932983b3f8b0b12ed18deccc2fbb3ef  settings/rest.ini
+9a8e812661c23ad6b1dffe863ade3c43  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
@@ -21294,7 +21300,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-2f401f8da6b03bb3f6badf20964a4e87  share/db_schema.dba
+95dc22f8bc40318a4d8c66b55e5e58ca  share/db_schema.dba
 0d2dc77620a59815f0f637d7099cc90b  share/help/seed-glossary.json
 e5c09d9e4932f30d364759d243eb01df  share/help/seed-topics.json
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
@@ -23177,8 +23183,10 @@ d7ca0190a449ce3e4d3bf7e6a05c2aaf  tests/tests/kernel/private/ezpmobiledevicedete
 259d772ffe9317ad662e839a06834ca7  tests/tests/kernel/private/eztopologicalsort_test.php
 2f24eb646f6124026ae2852dc88113f6  tests/tests/kernel/private/oauth/expOAuthAuthorizePolicyGrantTest.php
 6e9929ec5915091d3d4302fba8ab0fe2  tests/tests/kernel/private/oauth/expOAuthAuthorizePolicyTest.php
-a8821288ba6fa2117419906c4f3f14ec  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
-5f6d0a3f2a885c9ef9938ef6240dff0b  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
+779770b1ad4be22559129affdc36e217  tests/tests/kernel/private/oauth/expOAuthPkceSchemaTest.php
+699d73f401ca04ffa5493af0b72ed31f  tests/tests/kernel/private/oauth/expOAuthPkceTest.php
+cae49764ee1f00d1405608edaae31640  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
+a3beb6daaccda7385398be0409c86cd8  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
 ff5fd6c8ea38ccd01786dc6beab3d757  tests/tests/kernel/private/rest/abstract_test.php
 7374c5861a8fe2feadb136468fb39a0d  tests/tests/kernel/private/rest/application_cache_test.php
 d4f322bfaa51c8aa4da2382f366dcb40  tests/tests/kernel/private/rest/controller_test.php
@@ -23204,6 +23212,7 @@ cb03165c75d5bae854a4602fb41692d4  tests/tests/kernel/private/rest/suite.php
 149203a3554b279242b3a0b2a2c78584  tests/tests/kernel/private/rest/testfiles/rest_provider.php
 58d85671f9161547dbf3c50eb39defa4  tests/tests/kernel/private/rest/tools/generate_test_data.php
 411503c060f24286fc314cd792b2f1bb  tests/tests/kernel/private/restapi/expRestContentPermissionTest.php
+230a02440109a6c210b1a3195241ac4f  tests/tests/kernel/private/restapi/expRestCorsTest.php
 e92b23a8b19a5157df8e6413cc5e874f  tests/tests/kernel/private/restapi/ezpRestAnswerCacheTest.php
 26a9c2d6a657e89e2b6b5bbc0a696d5a  tests/tests/kernel/private/restapi/ezpRestDbConfigTest.php
 fa7de453db2f950cf99c949a777e46fd  tests/tests/kernel/private/restapi/ezpRestDebugPHPFormatterTest.php
@@ -23746,7 +23755,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-3677d7d4468a29f1c07eaaadfbf28a4f  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+f40cdd7fb8a94f18915d91c5b115cc92  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -23805,9 +23814,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-ceec41077c3658c240eadc0460ee5a32  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+185ba3036e3a5c569666ef73c1c57254  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-5f2155ac7bbe6044f92f37e9e2a991ee  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+980cf4f41e6b4ef4bb7f90ac06b998e1  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9e2db96d75614e14c654a873ac90fdd6  webdav.php
