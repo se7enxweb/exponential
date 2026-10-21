@@ -90,5 +90,5 @@ Reported by:     <name, role, how to reach you>
 
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
 - [Logs für Betreiber](logs-fuer-betreiber.md)
-- [Logs und Fehlerreferenzen (für Unternehmen)](../../../../eng-us/help/businesses/reliability/logs-and-error-references.md)
+- [Logs und Fehlerreferenzen (für Unternehmen)](../../unternehmen/zuverlaessigkeit/logs-und-fehlerreferenzen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

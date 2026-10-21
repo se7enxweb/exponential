@@ -16,7 +16,7 @@ Geschäftsleitung oder einen Prüfer. Ersetzen Sie jede Zeile in spitzen Klammer
 ## Warum Sie es aufschreiben sollten
 
 Der Plan für kleine Teams bittet die leitende Person, „die Zeit festzuhalten“ und, wenn nur eine Person da ist, „die
-Uhrzeit jedes“ Schritts aufzuschreiben ([Vorfallreaktion für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)).
+Uhrzeit jedes“ Schritts aufzuschreiben ([Vorfallreaktion für kleine Teams](../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)).
 Mit Ihren Notizen können Sie außerdem die Darstellung Ihres Anbieters mit dem abgleichen, was Sie gesehen haben, und mit
 den vereinbarten Reaktionszeiten.
 
@@ -74,7 +74,7 @@ INCIDENT NOTES                                    Reference: <your own number or
 
 | Fakt | Quelle |
 |---|---|
-| Genaue Zeiten von Deployments, Einstellungsänderungen, Ein- und Ausschalten der Wartung | Der Kanal `system` des Prüfprotokolls; Umschaltungen der Wartung werden als `system.maintenance.change` festgehalten ([Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Prüfprotokoll für den Betrieb](../../../../eng-us/help/businesses/reliability/audit-trail-for-operations.md)) |
+| Genaue Zeiten von Deployments, Einstellungsänderungen, Ein- und Ausschalten der Wartung | Der Kanal `system` des Prüfprotokolls; Umschaltungen der Wartung werden als `system.maintenance.change` festgehalten ([Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Prüfprotokoll für den Betrieb](../../unternehmen/zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)) |
 | Der technische Fehler hinter einer Referenz | **Setup > Logdateien**, Feld **Fehlerreferenz** ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)) |
 | Wer sich angemeldet oder Inhalte geändert hat | Das Prüfprotokoll ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
 | Verfügbarkeit und Zeitpunkte von Alarmen | Ihre externe Überwachung ([Überwachung](ueberwachung.md)) |
@@ -88,9 +88,9 @@ Bitten Sie Ihren Administrator oder Hoster nach dem Vorfall um diese Fakten; Sie
 
 ## Nach der Auswertung
 
-Übernehmen Sie die Maßnahmen in Ihre regelmäßige Routine: die [Zuverlässigkeits-Scorecard](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md)
+Übernehmen Sie die Maßnahmen in Ihre regelmäßige Routine: die [Zuverlässigkeits-Scorecard](../../unternehmen/zuverlaessigkeit/bewertungsbogen-zuverlaessigkeit.md)
 und das [Risikoregister](../../fuehrung/risikomanagement.md). Wenn der Vorfall Sie Geld gekostet hat, hilft Ihnen das
-[Arbeitsblatt zu den Kosten von Ausfällen](../../../../eng-us/help/businesses/costs/cost-of-downtime-worksheet.md), für die nächste
+[Arbeitsblatt zu den Kosten von Ausfällen](../../unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md), für die nächste
 Vertragsverhandlung eine Zahl zu nennen.
 
 ## Verwandte Seiten

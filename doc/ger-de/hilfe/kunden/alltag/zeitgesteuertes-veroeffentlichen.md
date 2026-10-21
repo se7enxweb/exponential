@@ -31,7 +31,7 @@ Website hat, bevor Sie ein Datum zusagen.
 | Ein Element zu einem Datum verbergen | der Cronjob `hide.php` mit einem Datumsfeld pro Klasse | Administrator (`settings/content.ini [HideSettings]`) |
 | Ein Element zu einem Datum entfernen | der Cronjob `unpublish.php` und ein Feld `unpublish_date` | Administrator (`settings/content.ini [UnpublishSettings]`) |
 | Ein Kampagnen-Layout für einen Zeitraum anzeigen | eine Layout-Regel mit einer Bedingung `time` | Layout-Redaktion ([Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)) |
-| Einen Newsletter zu einer Uhrzeit oder jede Woche versenden | geplanter und wiederkehrender Versand | wer den Newsletter versendet ([Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md)) |
+| Einen Newsletter zu einer Uhrzeit oder jede Woche versenden | geplanter und wiederkehrender Versand | wer den Newsletter versendet ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)) |
 
 ## Zu einem Datum veröffentlichen
 

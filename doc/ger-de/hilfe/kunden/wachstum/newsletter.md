@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber oder die Marketingleitung, die einen Newsletter von der Website aus versenden oder
 einen bestehenden auf eine bessere Grundlage stellen möchte. Exponential installiert die Newsletter-Erweiterung
 `cjw_newsletter` mit dem Produkt (sie steht im Block `require` der `composer.json`), es gibt also nichts zusätzlich zu
-kaufen oder zu lizenzieren ([Newsletter für Unternehmen](../../../../eng-us/help/businesses/newsletters/README.md)). Die wöchentliche
+kaufen oder zu lizenzieren ([Newsletter für Unternehmen](../../unternehmen/newsletter/README.md)). Die wöchentliche
 Arbeit steht unter [Newsletter-Routine](newsletter-routine.md).
 
 ## Inhalt
@@ -26,7 +26,7 @@ Arbeit steht unter [Newsletter-Routine](newsletter-routine.md).
 
 ## Was Sie bekommen
 
-Aus [Newsletter für Unternehmen](../../../../eng-us/help/businesses/newsletters/README.md) und der
+Aus [Newsletter für Unternehmen](../../unternehmen/newsletter/README.md) und der
 [Funktionsseite zu cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md):
 
 - Ausgaben werden als Inhalte geschrieben, mit Entwürfen und Vorschau wie jede andere Seite.
@@ -42,13 +42,13 @@ Aus [Newsletter für Unternehmen](../../../../eng-us/help/businesses/newsletters
 
 | Frage | Warum sie wichtig ist | Lesen Sie |
 |---|---|---|
-| Wofür ist der Newsletter da, und für wen? | Inhalt, Häufigkeit und Erfolg ergeben sich daraus | [Einen Newsletter planen](../../../../eng-us/help/businesses/newsletters/newsletter-planning.md) |
-| Eine Liste oder mehrere (nach Thema, nach Sprache)? | Abonnenten wählen, was sie erhalten | [Listen und Abonnements](../../../../eng-us/help/businesses/newsletters/lists-and-subscriptions.md) |
-| Wie oft? | ein Versprechen an die Leser; wiederkehrende Versände helfen, es zu halten | [Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md) |
+| Wofür ist der Newsletter da, und für wen? | Inhalt, Häufigkeit und Erfolg ergeben sich daraus | [Einen Newsletter planen](../../unternehmen/newsletter/einen-newsletter-planen.md) |
+| Eine Liste oder mehrere (nach Thema, nach Sprache)? | Abonnenten wählen, was sie erhalten | [Listen und Abonnements](../../unternehmen/newsletter/listen-und-abonnements.md) |
+| Wie oft? | ein Versprechen an die Leser; wiederkehrende Versände helfen, es zu halten | [Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md) |
 | Müssen Ausgaben freigegeben werden? | die Freigabe wird pro Liste eingeschaltet | ebenda |
 | Welches Aussehen (Skin)? | 4.2.0 liefert `default`, `company`, `news` und `shop` mit | ebenda |
-| Statistik, und mit welcher Einwilligung? | die Auswertung beruht auf Einwilligung | [Opt-in und Einwilligung](../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) |
-| Eine bestehende Liste übernehmen? | die Einwilligungsnachweise müssen mitkommen | [Listen und Abonnements](../../../../eng-us/help/businesses/newsletters/lists-and-subscriptions.md) |
+| Statistik, und mit welcher Einwilligung? | die Auswertung beruht auf Einwilligung | [Opt-in und Einwilligung](../../unternehmen/newsletter/opt-in-und-einwilligung.md) |
+| Eine bestehende Liste übernehmen? | die Einwilligungsnachweise müssen mitkommen | [Listen und Abonnements](../../unternehmen/newsletter/listen-und-abonnements.md) |
 
 ## Rollen im Team
 
@@ -61,12 +61,12 @@ Aus [Newsletter für Unternehmen](../../../../eng-us/help/businesses/newsletters
 
 Freigebende Personen sind die Benutzer und Gruppen, die in den Freigabeeinstellungen der Erweiterung genannt sind,
 standardmäßig die Gruppe Administrator users einer Standardinstallation; niemand gibt seine eigene Anfrage frei, es sei
-denn, die Selbstfreigabe ist eingeschaltet ([Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md)).
+denn, die Selbstfreigabe ist eingeschaltet ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)).
 
 ## Einwilligung und Recht
 
 Double-Opt-in, ein Einwilligungsprotokoll, ein Abmeldelink in jeder E-Mail und Statistik nur mit Einwilligung sind
-unter [Opt-in und Einwilligung](../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) beschrieben. Die anderen optionalen
+unter [Opt-in und Einwilligung](../../unternehmen/newsletter/opt-in-und-einwilligung.md) beschrieben. Die anderen optionalen
 E-Mails der Website folgen demselben Gedanken: aus, bis die Person sie einschaltet, mit einer Abmeldung per Klick
 ([E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)). Die Seiten beschreiben, was die Software
 aufzeichnet; was Ihr Recht verlangt, ist eine Frage für Ihren Anwalt oder Datenschutzbeauftragten. Dies ist keine
@@ -77,12 +77,12 @@ Rechtsberatung.
 > **Warnung**
 > Test-E-Mails verwenden den Vorschau-Transport, der in der ausgelieferten `cjw_newsletter.ini` tatsächlich versendet.
 > Lassen Sie ihn während einer Probe auf die Zustellung in Dateien stellen, sonst verlassen Testversände den Server
-> ([Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md),
-> [E-Mail-Zustellung von Newslettern](../../../../eng-us/help/businesses/newsletters/newsletter-mail-delivery.md)).
+> ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md),
+> [E-Mail-Zustellung von Newslettern](../../unternehmen/newsletter/zustellung-der-newsletter-mails.md)).
 
 Eine gute Zustellung hängt von einer echten Absenderadresse auf Ihrer eigenen Domain ab, mit den DNS-Einträgen, die
 Ihr E-Mail-Anbieter verlangt, und von Versandlimits, die zu Ihrem Mailserver passen
-([E-Mail-Zustellung von Newslettern](../../../../eng-us/help/businesses/newsletters/newsletter-mail-delivery.md)).
+([E-Mail-Zustellung von Newslettern](../../unternehmen/newsletter/zustellung-der-newsletter-mails.md)).
 
 ## Was Sie Ihren Partner fragen sollten
 
@@ -98,6 +98,6 @@ und [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creat
 ## Verwandte Seiten
 
 - [Newsletter-Routine](newsletter-routine.md)
-- [Newsletter-Checkliste](../../../../eng-us/help/businesses/newsletters/newsletter-checklist.md)
-- [Kommunikation mit Mitgliedern](../../../../eng-us/help/businesses/members/member-communications.md)
+- [Newsletter-Checkliste](../../unternehmen/newsletter/checkliste-newsletter.md)
+- [Kommunikation mit Mitgliedern](../../unternehmen/mitglieder/kommunikation-mit-mitgliedern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

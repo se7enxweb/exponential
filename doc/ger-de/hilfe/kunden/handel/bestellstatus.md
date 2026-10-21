@@ -42,7 +42,7 @@ Seit 6.0.15 hat jede neue Installation, und jede Installation nach dem Datenbank
 ## Ihren Ablauf wählen
 
 Verwenden Sie nur die Status, die Ihr Ablauf braucht. Wenige Status, die zuverlässig gesetzt werden, sind mehr wert als
-viele, die willkürlich gesetzt werden. Beispiele aus [Bestellungen und Bestellstatus für Unternehmen](../../../../eng-us/help/businesses/stores/orders-and-order-statuses.md):
+viele, die willkürlich gesetzt werden. Beispiele aus [Bestellungen und Bestellstatus für Unternehmen](../../unternehmen/shops/bestellungen-und-bestellstatus.md):
 
 | Art des Shops | Ablauf |
 |---|---|
@@ -109,5 +109,5 @@ Rolle nur die Wechsel erlauben kann, die zur Aufgabe der Person passen. Die Vors
 - [Bestellungen im Alltag](bestellungen-im-alltag.md)
 - [Retouren und Erstattungen](retouren-und-erstattungen.md)
 - [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
-- [Bestellungen und Bestellstatus für Unternehmen](../../../../eng-us/help/businesses/stores/orders-and-order-statuses.md)
+- [Bestellungen und Bestellstatus für Unternehmen](../../unternehmen/shops/bestellungen-und-bestellstatus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

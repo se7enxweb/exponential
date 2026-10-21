@@ -10,7 +10,7 @@ type: help
 # Betriebskosten für Betreiber
 
 Diese Seite ist für den Betreiber oder die Leitung, die die Rechnungen einer bereits laufenden Website bezahlt. Vor dem
-Start sind die Gesamtbetriebskosten eine Schätzung ([Gesamtbetriebskosten](../../../../eng-us/help/businesses/costs/total-cost-of-ownership.md)).
+Start sind die Gesamtbetriebskosten eine Schätzung ([Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)).
 Nach dem Start sind sie eine Aufzeichnung: was Sie tatsächlich bezahlen, an wen und wofür. Diese Seite hilft Ihnen, diese
 Aufzeichnung zu führen und Kosten zu erkennen, die wachsen, ohne dass jemand es entschieden hat.
 
@@ -19,9 +19,9 @@ Aufzeichnung zu führen und Kosten zu erkennen, die wachsen, ohne dass jemand es
 | Posten | Abgerechnet von | Wie oft | Hinweis |
 |---|---|---|---|
 | Lizenz für Exponential | Niemand | Nie | „Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos.“ (`README.md`, „License“) |
-| Hosting | Ihr Hoster | Monatlich oder jährlich | Server oder ein Tarif, Backups, Überwachung ([Kostentreiber beim Hosting](../../../../eng-us/help/businesses/costs/hosting-cost-drivers.md)) |
+| Hosting | Ihr Hoster | Monatlich oder jährlich | Server oder ein Tarif, Backups, Überwachung ([Kostentreiber beim Hosting](../../unternehmen/kosten/kostentreiber-beim-hosting.md)) |
 | Updates auf neue Releases 6.0.x | Partner oder eigenes Personal | Mehrmals im Jahr | Korrekturen kommen mit dem nächsten Release 6.0.x (`SECURITY.md`) |
-| Updates von Erweiterungen, PHP und Server | Partner oder Hoster | Wenn sie erscheinen | ([Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)) |
+| Updates von Erweiterungen, PHP und Server | Partner oder Hoster | Wenn sie erscheinen | ([Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)) |
 | Support und Änderungen | Partner | Vertrag oder pro Anfrage | Eine Gewährleistung oder garantierte Reaktionszeit fügt ein Vertrag hinzu; die GPL hat keine (`LICENSE.md`, Abschnitte 11 und 12) |
 | Inhaltsarbeit | Eigenes Personal | Laufend | Auf jeder Plattform meist der größte Posten |
 | Dienste von Drittanbietern | Jeder Anbieter | Monatlich oder pro Nutzung | Zahlungsgebühren, E-Mail-Zustellung, CAPTCHA, ein gehosteter KI-Anbieter, wenn Sie einen nutzen |
@@ -58,7 +58,7 @@ TOTAL                       |          |                   |           |        
 | KI-Anbieter | Redakteure nutzen den Assistenten mehr | Exponential Intelligence hat ein Nutzungsprotokoll mit den geschätzten Kosten jeder Anfrage und Grenzen pro Benutzer, Tag, Monat und Website (`README.md`, „Exponential Intelligence“) |
 | Zahlungsgebühren | Wachsen mit den Verkäufen und mit Preisänderungen des Anbieters | Vergleichen Sie die Abrechnungen jährlich |
 | Änderungsanfragen | Viele kleine Anfragen, jede einzeln abgerechnet | Sammeln Sie sie und bitten Sie um ein Angebot pro Quartal |
-| Ausgelassene Updates | Ein ein Jahr lang ausgelassenes Update wird zu einer größeren Aufgabe | Halten Sie Updates im Plan ([Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)) |
+| Ausgelassene Updates | Ein ein Jahr lang ausgelassenes Update wird zu einer größeren Aufgabe | Halten Sie Updates im Plan ([Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)) |
 | Arbeitszeit | Manuelle Routinen, die eine Funktion erledigen könnte | Siehe [Funktionen, die Kunden oft übersehen](oft-uebersehene-funktionen.md) |
 
 ## Fragen, die Rechnungen ehrlich halten
@@ -84,8 +84,8 @@ An Ihren Hoster:
 
 ## Verwandte Seiten
 
-- [Gesamtbetriebskosten](../../../../eng-us/help/businesses/costs/total-cost-of-ownership.md)
-- [Wofür Sie nicht bezahlen](../../../../eng-us/help/businesses/costs/what-you-do-not-pay-for.md)
-- [Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)
+- [Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)
+- [Wofür Sie nicht bezahlen](../../unternehmen/kosten/wofuer-sie-nicht-bezahlen.md)
+- [Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)
 - [Den ROI messen](den-roi-messen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

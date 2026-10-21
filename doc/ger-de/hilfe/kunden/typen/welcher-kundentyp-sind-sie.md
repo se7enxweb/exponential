@@ -46,7 +46,7 @@ Wenn nichts passt (eine Kampagnen-Website, ein Portfolio, ein Katalog ohne Shop)
 ## Was Sie nicht sind
 
 Diese Seiten setzen voraus, dass Ihre Website bereits läuft. Wenn Sie noch ein System oder einen Partner auswählen,
-ist der Bereich [Unternehmen](../../../../eng-us/help/businesses/businesses-start-here.md) für Sie geschrieben. Wenn Sie die Website selbst
+ist der Bereich [Unternehmen](../../unternehmen/unternehmen-hier-beginnen.md) für Sie geschrieben. Wenn Sie die Website selbst
 bauen oder ändern, ist es der Bereich [Website-Ersteller](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md).
 Wenn Sie Inhalte schreiben und veröffentlichen und die Schritte im Editor brauchen, beginnen Sie mit der Seite
 [Inhalte bearbeiten](../../inhalte-bearbeiten.md).
@@ -55,5 +55,5 @@ Wenn Sie Inhalte schreiben und veröffentlichen und die Schritte im Editor brauc
 
 - [Kundentypen](README.md)
 - [Kunden: hier beginnen](../kunden-hier-beginnen.md)
-- [Welcher Bereich zu Ihrer Organisation passt](../../../../eng-us/help/businesses/which-section-fits-your-organization.md)
+- [Welcher Bereich zu Ihrer Organisation passt](../../unternehmen/welcher-bereich-zu-ihrer-organisation-passt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

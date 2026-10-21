@@ -92,5 +92,5 @@ Geben Sie Besuchern eine Möglichkeit, Barrieren zu melden, zum Beispiel ein Kon
 
 - [Checkliste zur Barrierefreiheit für Redakteure](checkliste-barrierefreiheit-fuer-redakteure.md)
 - [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md)
-- [Barrierefreiheit für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/accessibility-for-nonprofits.md)
+- [Barrierefreiheit für gemeinnützige Organisationen](../../unternehmen/gemeinnuetzige/barrierefreiheit-fuer-gemeinnuetzige.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -16,7 +16,7 @@ Inhalte) und bringt eine neue Art von Frage mit sich: Ist diese Änderung für e
 
 Diese Seite ist für den Betreiber einer Gruppe von Websites (Marken, Regionen, Abteilungen, Kampagnen-Websites) und die
 Personen, die jede davon leiten. Die Planung einer solchen Einrichtung behandelt
-[Mehrere Marken für Unternehmen](../../../../eng-us/help/businesses/multisite/README.md).
+[Mehrere Marken für Unternehmen](../../unternehmen/multisite/README.md).
 
 ## Was geteilt wird und was pro Website gilt
 
@@ -57,7 +57,7 @@ einzuschalten, wenn Ihre Browser-Tabs gleich aussehen.
 
 - **Eine verantwortliche Person pro Website**, schriftlich festgehalten, dazu eine für die gemeinsamen Teile.
 - **Eine Regel für gemeinsame Inhalte**: Wer darf ein Element ändern, das auf mehreren Websites erscheint
-  ([Gemeinsame Inhalte über Marken hinweg](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md)).
+  ([Gemeinsame Inhalte über Marken hinweg](../../unternehmen/multisite/inhalte-zwischen-marken-teilen.md)).
 - **Ein Upgrade-Kalender für alle Websites**, mit allen Website-Verantwortlichen vereinbart, da ein Upgrade alle auf
   einmal erreicht ([Wie Updates funktionieren](../gesund-halten/wie-updates-funktionieren.md)).
 - **Eine Regel für neue Websites**: Was eine neue Marke oder Region braucht, bevor sie startet
@@ -71,7 +71,7 @@ Websites sind auch mehrsprachig: Ergänzen Sie den [Lesepfad für mehrsprachige 
 ## Verwandte Seiten
 
 - [Lesepfad für Betreiber mehrerer Websites](lesepfad-mehrere-websites.md)
-- [Eine Installation, viele Websites (Unternehmen)](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md)
-- [Einstellungen und Logs pro Website (Unternehmen)](../../../../eng-us/help/businesses/multisite/per-site-settings-and-logs.md)
+- [Eine Installation, viele Websites (Unternehmen)](../../unternehmen/multisite/eine-installation-viele-websites.md)
+- [Einstellungen und Logs pro Website (Unternehmen)](../../unternehmen/multisite/einstellungen-logs-und-caches-pro-website.md)
 - [Multisite-Einrichtung (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

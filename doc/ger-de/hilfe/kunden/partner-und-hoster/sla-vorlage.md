@@ -12,7 +12,7 @@ type: help
 **Vorlage. Keine Rechtsberatung.** Dies ist eine Struktur für ein Service Level Agreement (SLA) für eine
 Exponential-Website, aus Sicht des Betreibers geschrieben. Sie folgt den Zusagen, die unter
 [SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md) und
-[Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md) beschrieben sind. Jeder Wert
+[Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md) beschrieben sind. Jeder Wert
 in eckigen Klammern ist ein Feld, das Sie mit Ihrem Anbieter vereinbaren; diese Seite nennt keine Zahlen, weil die
 richtigen von Ihrer Website, Ihrem Budget und dem abhängen, was Ihr Anbieter personell leisten kann. Lassen Sie das
 Ergebnis von Ihrer Rechtsberatung prüfen.
@@ -20,7 +20,7 @@ Ergebnis von Ihrer Rechtsberatung prüfen.
 ## Wie Sie sie verwenden
 
 1. Legen Sie zuerst Ihren Bedarf fest: wie viel Datenverlust und Ausfallzeit Sie hinnehmen können
-   ([Backups](../gesund-halten/backups.md), [Arbeitsblatt zu den Kosten von Ausfällen](../../../../eng-us/help/businesses/costs/cost-of-downtime-worksheet.md)).
+   ([Backups](../gesund-halten/backups.md), [Arbeitsblatt zu den Kosten von Ausfällen](../../unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md)).
 2. Füllen Sie die Felder mit Ihrem Anbieter aus. Löschen Sie Abschnitte, die nicht zutreffen.
 3. Fügen Sie die Tabelle [Wer was macht](wer-was-macht.md) und die
    [Support-Vereinbarung](vorlage-support-vereinbarung.md) bei.
@@ -52,7 +52,7 @@ Ergebnis von Ihrer Rechtsberatung prüfen.
 
 > **Tipp**
 > Für Sicherheit lautet die messbare Formulierung „Eine veröffentlichte Korrektur wird innerhalb einer bestimmten Zeit
-> eingespielt“ ([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)).
+> eingespielt“ ([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)).
 
 ## Ausschlüsse
 

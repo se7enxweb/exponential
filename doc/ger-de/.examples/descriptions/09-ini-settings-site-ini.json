@@ -1,0 +1,802 @@
+{
+    "ini:settings/site.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/site.ini.append or\n      settings/override/site.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/site.ini.append oder\n      settings/override/site.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/site.ini [AdminEnvironment] BadgeDisplay": {
+        "en": "hover (the default): the badge shows only while a mouse or trackpad pointer\nrests on the logo, or the logo has the keyboard focus (Escape hides it); on\ntouch screens, which cannot hover, beside the logo as with always. Screen\nreaders read it with the logo link. always: beside the logo\nat all times",
+        "de": "hover (der Standard): Die Plakette erscheint nur, solange ein Maus- oder Trackpad-Zeiger\nauf dem Logo ruht oder das Logo den Tastaturfokus hat (Escape blendet sie aus); auf\nTouchscreens, die kein Hover kennen, neben dem Logo wie bei always. Screenreader\nlesen sie mit dem Logo-Link. always: neben dem Logo\njederzeit"
+    },
+    "ini:settings/site.ini [AdminEnvironment] Level": {
+        "en": "The environment badge of the administration (designs admin4 and admin4l): the\nname of this installation's environment in the header, on the sign-in page and\nbefore the page title, so a live site is not taken for a test copy.\nSet it per environment, for example in the variant files of EXP_ENV\n(settings/override/site.ini.prod.append.php, see config.env.php.example).\nThe header's cache-blocks are keyed by the badge: a changed setting shows on\nthe next request (clear the INI cache where EZP_INI_FILEMTIME_CHECK is false).\n\ndevelopment, test, staging or production: the color and the default name.\nauto takes the level from EXP_ENV: dev and development, test, stage and\nstaging, prod, production and live. Empty (the default): no badge.",
+        "de": "Die Umgebungsplakette der Administration (Designs admin4 und admin4l): der\nName der Umgebung dieser Installation im Kopf, auf der Anmeldeseite und\nvor dem Seitentitel, damit eine Live-Website nicht für eine Testkopie gehalten wird.\nSetzen Sie sie pro Umgebung, zum Beispiel in den Variantendateien von EXP_ENV\n(settings/override/site.ini.prod.append.php, siehe config.env.php.example).\nDie Cache-Blöcke des Kopfes werden nach der Plakette unterschieden: Eine geänderte Einstellung erscheint bei der\nnächsten Anfrage (leeren Sie den INI-Cache, wo EZP_INI_FILEMTIME_CHECK false ist).\n\ndevelopment, test, staging oder production: die Farbe und der Standardname.\nauto übernimmt die Stufe aus EXP_ENV: dev und development, test, stage und\nstaging, prod, production und live. Leer (der Standard): keine Plakette."
+    },
+    "ini:settings/site.ini [AdminEnvironment] Name": {
+        "en": "The badge's text; empty takes the level's name (Development, Test, Staging,\nProduction, translated)",
+        "de": "Der Text der Plakette; leer übernimmt den Namen der Stufe (Development, Test, Staging,\nProduction, übersetzt)"
+    },
+    "ini:settings/site.ini [AdminEnvironment] Release": {
+        "en": "Free text after the name, for example a release or build; shown to signed-in\nusers only, not on the sign-in page",
+        "de": "Freier Text nach dem Namen, zum Beispiel ein Release oder Build; nur angemeldeten\nBenutzern angezeigt, nicht auf der Anmeldeseite"
+    },
+    "ini:settings/site.ini [AdminEnvironment] ShortName": {
+        "en": "The text where the header is narrow (up to 767px, phones too) with\nBadgeDisplay=always or on touch screens; empty takes the level's code (DEV, TEST, STAGE, PROD).\nThe name is read out.",
+        "de": "Der Text, wo der Kopf schmal ist (bis 767px, auch Telefone), mit\nBadgeDisplay=always oder auf Touchscreens; leer übernimmt den Code der Stufe (DEV, TEST, STAGE, PROD).\nDer Name wird vorgelesen."
+    },
+    "ini:settings/site.ini [AdminEnvironment] ShowInTitle": {
+        "en": "The name before the page title: \"[PRODUCTION] Dashboard - Site\"; disabled\nleaves the title as it is",
+        "de": "Der Name vor dem Seitentitel: \"[PRODUCTION] Dashboard - Site\"; disabled\nlässt den Titel, wie er ist"
+    },
+    "ini:settings/site.ini [AdminEnvironment] ShowVersion": {
+        "en": "enabled adds the Exponential version after the release (signed-in users only)",
+        "de": "enabled fügt nach dem Release die Version von Exponential hinzu (nur für angemeldete Benutzer)"
+    },
+    "ini:settings/site.ini [AdminSiteAccessMenu] AdminSiteAccessList": {
+        "en": "The siteaccesses that count as administrations. Empty: those whose\n[DesignSettings] SiteDesign begins with \"admin\", or that set a\n[SiteSettings] FrontSiteAccess.",
+        "de": "Die Siteaccesses, die als Administrationen gelten. Leer: die, deren\n[DesignSettings] SiteDesign mit \"admin\" beginnt oder die eine\n[SiteSettings] FrontSiteAccess setzen."
+    },
+    "ini:settings/site.ini [AdminSiteAccessMenu] HiddenSiteAccessList": {
+        "en": "Siteaccesses left out of the menu. The site the globe opens (FrontSiteAccess,\nelse DefaultAccess) is always its first entry.",
+        "de": "Siteaccesses, die im Menü ausgelassen werden. Die Website, die der Globus öffnet (FrontSiteAccess,\nsonst DefaultAccess), ist immer sein erster Eintrag."
+    },
+    "ini:settings/site.ini [AdminSiteAccessMenu] List": {
+        "en": "related: [SiteAccessSettings] RelatedSiteAccessList[] of this siteaccess (the\nsiteaccesses sharing its database), or this siteaccess alone where it is\nempty; available: AvailableSiteAccessList[]. Only siteaccesses of\nAvailableSiteAccessList[] are listed either way. An installation that serves\nseveral sites sets RelatedSiteAccessList[] for each administration to list\nits own site's siteaccesses.",
+        "de": "related: [SiteAccessSettings] RelatedSiteAccessList[] dieses Siteaccess (die\nSiteaccesses, die seine Datenbank teilen), oder dieser Siteaccess allein, wo sie\nleer ist; available: AvailableSiteAccessList[]. In beiden Fällen werden nur Siteaccesses aus\nAvailableSiteAccessList[] aufgeführt. Eine Installation, die\nmehrere Websites bedient, setzt RelatedSiteAccessList[] für jede Administration, damit sie\ndie Siteaccesses ihrer eigenen Website auflistet."
+    },
+    "ini:settings/site.ini [AdminSiteAccessMenu] ListAdministrations": {
+        "en": "disabled: the menu lists sites only; enabled: the administrations too, as a\ngroup of their own",
+        "de": "disabled: Das Menü listet nur Websites auf; enabled: auch die Administrationen, als\neigene Gruppe"
+    },
+    "ini:settings/site.ini [AdminSiteAccessMenu] Show": {
+        "en": "The site menu of the administration (designs admin4 and admin4l): the globe\nbutton in the header opens a list of this installation's siteaccesses with\ntheir addresses. Its first entry opens the site, as the globe did; the\nothers are grouped into sites and administrations, and the siteaccess in use\nis marked. Signed-in users only. The addresses are worked out as\nsiteaccess_url() does (MatchOrder, URIMatchType, HostMatchMapItems, SiteURL),\nwith the scheme, host and port of the request.\nRead from the settings of the administration siteaccess.\n\nenabled or disabled; disabled leaves the globe a plain link to the site",
+        "de": "Das Website-Menü der Administration (Designs admin4 und admin4l): Die Globus-\nSchaltfläche im Kopf öffnet eine Liste der Siteaccesses dieser Installation mit\nihren Adressen. Ihr erster Eintrag öffnet die Website, wie es der Globus tat; die\nanderen sind in Websites und Administrationen gruppiert, und der verwendete Siteaccess\nist markiert. Nur für angemeldete Benutzer. Die Adressen werden so ermittelt wie\nvon siteaccess_url() (MatchOrder, URIMatchType, HostMatchMapItems, SiteURL),\nmit Schema, Host und Port der Anfrage.\nAus den Einstellungen des Administrations-Siteaccess gelesen.\n\nenabled oder disabled; disabled lässt den Globus einen einfachen Link zur Website sein"
+    },
+    "ini:settings/site.ini [AppendNodeIDFilterSettings]": {
+        "en": "This configuration group is related\nto the eZURLAliasFilterAppendNodeID URL filter\nThis makes it possible to filter on which type of\ncontent the node id will be appended.\n\nFor example if you want to append the nodeID\nfor folder and article content objects you could\nuse the following configuration\n\nApplyOnClass[]\nApplyOnClass[]=folder\nApplyOnClass[]=article",
+        "de": "Diese Konfigurationsgruppe gehört\nzum URL-Filter eZURLAliasFilterAppendNodeID\nDamit lässt sich filtern, an welche Art von\nInhalten die Knoten-ID angehängt wird.\n\nWenn Sie zum Beispiel die Knoten-ID\nfür Inhaltsobjekte vom Typ folder und article anhängen wollen, könnten Sie\ndie folgende Konfiguration verwenden\n\nApplyOnClass[]\nApplyOnClass[]=folder\nApplyOnClass[]=article"
+    },
+    "ini:settings/site.ini [BackwardCompatibilitySettings]": {
+        "en": "eg: DefaultFeedItemClasses[folder]=article\n# Default class attribute to rss/atom feed attribute mapping\n[RSSSettings_<class_identifier>]\n# Requried to be able to map title attribute\nFeedObjectAttributeMap[title]=<class_attribute_identifier>\n# Optional to map description field\nFeedObjectAttributeMap[description]=<class_attribute_identifier>\n# Optional to map category field\nFeedObjectAttributeMap[category]=<class_attribute_identifier>\n# Optional to fetch subtree of these items\nSubnodes[<source_class_identifier>]=true\nEg:\n[RSSSettings_article]\nFeedObjectAttributeMap[title]=title\nFeedObjectAttributeMap[description]=intro\nFeedObjectAttributeMap[category]=tags",
+        "de": "z. B.: DefaultFeedItemClasses[folder]=article\n# Default class attribute to rss/atom feed attribute mapping\n[RSSSettings_<class_identifier>]\n# Requried to be able to map title attribute\nFeedObjectAttributeMap[title]=<class_attribute_identifier>\n# Optional to map description field\nFeedObjectAttributeMap[description]=<class_attribute_identifier>\n# Optional to map category field\nFeedObjectAttributeMap[category]=<class_attribute_identifier>\n# Optional to fetch subtree of these items\nSubnodes[<source_class_identifier>]=true\nZ. B.:\n[RSSSettings_article]\nFeedObjectAttributeMap[title]=title\nFeedObjectAttributeMap[description]=intro\nFeedObjectAttributeMap[category]=tags"
+    },
+    "ini:settings/site.ini [BackwardCompatibilitySettings] AdvancedObjectRelationList": {
+        "en": "Enables or disables the advanced edit interface for the\n\"ezobjectrelationlist\" (aka \"Object relations\") datatype.\nThe default setting is \"disabled\", which means that the\nsystem will provide an interface that is consistent with the\n\"ezobjectrelation\" datatype. When \"enabled\", the old/advanced\ninterface will be shown, and thus the datatype will allow\nembedded editing of objects. In addition, it will also allow\nthe creation of new objects (without node assignments).",
+        "de": "Aktiviert oder deaktiviert die erweiterte Bearbeitungsoberfläche für den\nDatentyp \"ezobjectrelationlist\" (alias \"Objektverknüpfungen\").\nDie Standardeinstellung ist \"disabled\": Das\nSystem bietet dann eine Oberfläche, die zum\nDatentyp \"ezobjectrelation\" passt. Bei \"enabled\" wird die alte/erweiterte\nOberfläche angezeigt, und der Datentyp erlaubt\neingebettetes Bearbeiten von Objekten. Außerdem erlaubt er dann\ndas Anlegen neuer Objekte (ohne Platzierungen)."
+    },
+    "ini:settings/site.ini [BackwardCompatibilitySettings] ObjectRelationTyped": {
+        "en": "Enables or disables compatibility with typed object relations\nfrom Exponential 3.9. If disabled, the system will skip relations\nof the \"XML linked\" type when fetching/inspecting all relations.",
+        "de": "Aktiviert oder deaktiviert die Kompatibilität mit typisierten Objektverknüpfungen\naus Exponential 3.9. Wenn deaktiviert, überspringt das System Verknüpfungen\nvom Typ \"XML linked\", wenn es alle Verknüpfungen holt oder untersucht."
+    },
+    "ini:settings/site.ini [BackwardCompatibilitySettings] UsingDesignAdmin34": {
+        "en": "Enables or disables compatibility with admin design from\neZPublish 3.4. Since some of the new features are unavailable from\n3.4 design you can set this setting to 'enabled' to turn\n'new features' off ( e.g. 'locations' will always be visible\nduring editing an object ) to prevent unexpected situations.",
+        "de": "Aktiviert oder deaktiviert die Kompatibilität mit dem Administrations-Design von\neZPublish 3.4. Da manche neuen Funktionen im Design 3.4 nicht verfügbar sind,\nkönnen Sie diese Einstellung auf 'enabled' setzen, um\ndie 'neuen Funktionen' abzuschalten (z. B. sind 'Platzierungen' dann beim Bearbeiten\neines Objekts immer sichtbar), um unerwartete Situationen zu vermeiden."
+    },
+    "ini:settings/site.ini [Cache] CacheItems": {
+        "en": "Array with cache items to extend ezcache\nExample of use:\nCacheItems[]=custom\n\n[Cache_custom]\n\n[optional] Name of the cache item, key (custom) is used camel-cased if not set\nname=Custom cache\n[optional] Id of cache item, to be used from command line, key (custom) is used if not set\nid=custom\n[optional] If cache item should be cleared using cluster instead of plain file handler, def: false\nisClustered=true\n[optional] tags that will trigger clearing of this item, default: empty array\ntags[]=content\ntags[]=custom\n[optional] If cache uses eZExpiryHandler, then this is the key to get expiry time\nexpiryKey=global-custom-cache\n[optional] (bool) If this cache is enabled or not, default: true\nenabled=false\n[optional] Path where cache is stored, either directory or file if class/purgeClass\nvariables are unset, relative to current cache directory is assumed\npath=custom_cache.php\n[optional] custom cache clear function \"<class>::clearCache()\" to be called\nclass=eZSomeClassName\n[optional] custom cache purge function \"<class>::purgeCache()\" to be called\npurgeClass=eZSomeClassName",
+        "de": "Array mit Cache-Einträgen zur Erweiterung von ezcache\nBeispiel:\nCacheItems[]=custom\n\n[Cache_custom]\n\n[optional] Name des Cache-Eintrags; wenn nicht gesetzt, wird der Schlüssel (custom) in CamelCase verwendet\nname=Custom cache\n[optional] ID des Cache-Eintrags für die Kommandozeile; wenn nicht gesetzt, wird der Schlüssel (custom) verwendet\nid=custom\n[optional] Ob der Cache-Eintrag über den Cluster statt über den einfachen Datei-Handler geleert wird, Standard: false\nisClustered=true\n[optional] Tags, die das Leeren dieses Eintrags auslösen, Standard: leeres Array\ntags[]=content\ntags[]=custom\n[optional] Wenn der Cache eZExpiryHandler verwendet, ist dies der Schlüssel für die Ablaufzeit\nexpiryKey=global-custom-cache\n[optional] (bool) Ob dieser Cache aktiviert ist, Standard: true\nenabled=false\n[optional] Pfad, unter dem der Cache gespeichert wird, Verzeichnis oder Datei, wenn die Variablen class/purgeClass\nnicht gesetzt sind; relativ zum aktuellen Cache-Verzeichnis\npath=custom_cache.php\n[optional] eigene Funktion zum Leeren des Caches \"<class>::clearCache()\", die aufgerufen wird\nclass=eZSomeClassName\n[optional] eigene Funktion zum endgültigen Löschen des Caches \"<class>::purgeCache()\", die aufgerufen wird\npurgeClass=eZSomeClassName"
+    },
+    "ini:settings/site.ini [ConfigurationSettings] ManagedByDeployment": {
+        "en": "enabled: the configuration of this siteaccess is managed by the deployment\n(version control) and the admin interface does not change it on the server.\nIn a web request the views that write settings, templates, generated code or\npackages (settings/edit, toolbar and menu editors, template editor, setup\nwizards and code generators, package upload/install/uninstall/create/export;\nthe list is expManagedConfiguration::LOCKED_VIEWS) answer like a view switched\noff in [SiteAccessRules] and are hidden from the menus, and neither\neZINI::save() nor expIniEditor::save() writes a settings file. This holds\nfor PHP-FPM, Apache and the application servers that run PHP on the command\nline (Velocity, the built-in server). Read-only views stay available. Command\nline scripts are not affected. Set it in a versioned settings file, never\nfrom the admin. See doc/eng-us/features/6.0/managed-by-deployment.md.",
+        "de": "enabled: Die Konfiguration dieses Siteaccess wird vom Deployment verwaltet\n(Versionskontrolle), und die Administrationsoberfläche ändert sie auf dem Server nicht.\nIn einer Web-Anfrage antworten die Ansichten, die Einstellungen, Templates, erzeugten Code oder\nPakete schreiben (settings/edit, Editoren für Werkzeugleisten und Menüs, Template-Editor, Setup-\nAssistenten und Code-Generatoren, Paket hochladen/installieren/deinstallieren/erstellen/exportieren;\ndie Liste ist expManagedConfiguration::LOCKED_VIEWS), wie eine in [SiteAccessRules] abgeschaltete\nAnsicht und sind in den Menüs ausgeblendet, und weder\neZINI::save() noch expIniEditor::save() schreibt eine Einstellungsdatei. Das gilt\nfür PHP-FPM, Apache und die Anwendungsserver, die PHP auf der Kommando-\nzeile ausführen (Velocity, der eingebaute Server). Nur lesende Ansichten bleiben verfügbar. Kommando-\nzeilenskripte sind nicht betroffen. Setzen Sie es in einer versionierten Einstellungsdatei, nie\naus der Administration. Siehe doc/eng-us/features/6.0/managed-by-deployment.md."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] AdditionalSources": {
+        "en": "Sources added to a directive of Directives[], one entry per directive and\nsources: AdditionalSources[]=<directive> <sources>. A list, so an extension and\nthe siteaccess can each add a host without restating the directive. An entry\nfor a directive that Directives[] does not have is ignored.\nExample: AdditionalSources[]=script-src https://maps.googleapis.com",
+        "de": "Quellen, die einer Direktive aus Directives[] hinzugefügt werden, ein Eintrag pro Direktive und\nQuellen: AdditionalSources[]=<directive> <sources>. Eine Liste, damit eine Erweiterung und\nder Siteaccess jeweils einen Host hinzufügen können, ohne die Direktive zu wiederholen. Ein Eintrag\nfür eine Direktive, die Directives[] nicht hat, wird ignoriert.\nBeispiel: AdditionalSources[]=script-src https://maps.googleapis.com"
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] Directives": {
+        "en": "The policy, Directives[<directive>]=<sources>. Set a value empty in an override\nto leave that directive out; an override that starts with \"Directives[]\" alone\nreplaces the whole list. Values with \";\" or \",\" are ignored. frame-ancestors\nand sandbox are sent only with Mode=enforce (browsers ignore them in a\nreport-only policy). object-src 'none' blocks <object>/<embed> (the legacy\nFlash, Windows Media, RealVideo and QuickTime previews, a PDF shown inline).\nscript-src 'self' allows script files of this site only: no inline <script>,\nno on...= attributes, no javascript: links, no eval(). style-src 'self' allows\nstylesheet files only: no <style> elements and no style=\"\" attributes (setting\nelement.style from a script file stays allowed).\nWorkers (new Worker, a service worker) of this site only: no blob: or data: worker,\nwhich would run code built from a string. Named here (it would otherwise fall back\nto script-src) so AdditionalSources[] can add a host or blob: where a feature needs it.",
+        "de": "Die Richtlinie, Directives[<directive>]=<sources>. Setzen Sie einen Wert in einem Override leer,\num diese Direktive wegzulassen; ein Override, das mit \"Directives[]\" allein beginnt,\nersetzt die ganze Liste. Werte mit \";\" oder \",\" werden ignoriert. frame-ancestors\nund sandbox werden nur mit Mode=enforce gesendet (Browser ignorieren sie in einer\nreinen Berichtsrichtlinie). object-src 'none' blockiert <object>/<embed> (die alten\nVorschauen für Flash, Windows Media, RealVideo und QuickTime, ein eingebettet angezeigtes PDF).\nscript-src 'self' erlaubt nur Skriptdateien dieser Website: kein Inline-<script>,\nkeine on...=-Attribute, keine javascript:-Links, kein eval(). style-src 'self' erlaubt\nnur Stylesheet-Dateien: keine <style>-Elemente und keine style=\"\"-Attribute (element.style\naus einer Skriptdatei zu setzen bleibt erlaubt).\nWorker (new Worker, ein Service Worker) nur dieser Website: kein blob:- oder data:-Worker,\nder aus einer Zeichenkette gebauten Code ausführen würde. Hier genannt (sonst fiele es\nauf script-src zurück), damit AdditionalSources[] einen Host oder blob: hinzufügen kann, wo eine Funktion es braucht."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] LogFile": {
+        "en": "The log file, in the log directory (var/log).",
+        "de": "Die Logdatei, im Log-Verzeichnis (var/log)."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] MaxReportBytes": {
+        "en": "The biggest report body taken, in bytes (413 above it).",
+        "de": "Der größte angenommene Berichtsinhalt, in Bytes (darüber 413)."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] MaxViolationsPerReport": {
+        "en": "The most violations written from one report (the Reporting API sends several).",
+        "de": "Die meisten Verstöße, die aus einem Bericht geschrieben werden (die Reporting API sendet mehrere)."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] Mode": {
+        "en": "The Content Security Policy of the pages (doc/eng-us/features/6.0/content-security-policy.md):\nwhich scripts, stylesheets, images and connections a page may use. It is sent\nbeside the security headers of [HTTPHeaderSettings] SecurityHeaders[].\n\ndisabled: no policy\nreport-only: Content-Security-Policy-Report-Only; the browser reports what the\n  policy would block (developer console, ReportURI) and blocks nothing\nenforce: Content-Security-Policy; the browser blocks it. Sent as a second\n  policy after SecurityHeaders[Content-Security-Policy], both apply\nauto (the default): report-only on administration siteaccesses (those whose\n  [DesignSettings] SiteDesign begins with \"admin\"), disabled on the others",
+        "de": "Die Content Security Policy der Seiten (doc/eng-us/features/6.0/content-security-policy.md):\nwelche Skripte, Stylesheets, Bilder und Verbindungen eine Seite verwenden darf. Sie wird\nneben den Sicherheits-Headern aus [HTTPHeaderSettings] SecurityHeaders[] gesendet.\n\ndisabled: keine Richtlinie\nreport-only: Content-Security-Policy-Report-Only; der Browser meldet, was die\n  Richtlinie blockieren würde (Entwicklerkonsole, ReportURI), und blockiert nichts\nenforce: Content-Security-Policy; der Browser blockiert es. Als zweite\n  Richtlinie nach SecurityHeaders[Content-Security-Policy] gesendet, beide gelten\nauto (der Standard): report-only in Administrations-Siteaccesses (denen, deren\n  [DesignSettings] SiteDesign mit \"admin\" beginnt), in den anderen disabled"
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] Nonce": {
+        "en": "enabled: a nonce of the request, 'nonce-...', is added to the directives of\nNonceDirectives[], for an inline script a template cannot move into a file:\n<script nonce=\"{csp_nonce()}\">. Not added where the directive allows\n'unsafe-inline' (browsers would ignore 'unsafe-inline' next to it). Never print\ncsp_nonce() inside a cache-block or a view-cached template.",
+        "de": "enabled: Eine Nonce der Anfrage, 'nonce-...', wird den Direktiven aus\nNonceDirectives[] hinzugefügt, für ein Inline-Skript, das ein Template nicht in eine Datei verlagern kann:\n<script nonce=\"{csp_nonce()}\">. Nicht hinzugefügt, wo die Direktive\n'unsafe-inline' erlaubt (Browser würden 'unsafe-inline' daneben ignorieren). Geben Sie\ncsp_nonce() nie in einem Cache-Block oder einem im View-Cache gecachten Template aus."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] ReportEndpoint": {
+        "en": "enabled: with ReportURI empty, the reports go to csp/report of the\nsiteaccess (the kernel module csp), which logs them to var/log/csp.log",
+        "de": "enabled: Mit leerem ReportURI gehen die Berichte an csp/report des\nSiteaccess (das Kernel-Modul csp), das sie in var/log/csp.log protokolliert"
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] ReportOnlyDesigns": {
+        "en": "Designs whose requests stay report-only under Mode=enforce: the classic\nadministration, with inline code, which a user can pick with the UI switch.\nThe design of the request (after the UI switch) decides.",
+        "de": "Designs, deren Anfragen unter Mode=enforce bei report-only bleiben: die klassische\nAdministration mit Inline-Code, die ein Benutzer mit dem Oberflächenschalter wählen kann.\nDas Design der Anfrage (nach dem Oberflächenschalter) entscheidet."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] ReportOnlyDirectives": {
+        "en": "With Mode=enforce: a second, stricter policy sent as\nContent-Security-Policy-Report-Only (Directives[] with these entries in their\nplace), to measure what it would still block while the enforced policy\nallows it. Empty: none.\nExample: ReportOnlyDirectives[style-src]='self'",
+        "de": "Mit Mode=enforce: eine zweite, strengere Richtlinie, gesendet als\nContent-Security-Policy-Report-Only (Directives[] mit diesen Einträgen an ihrer\nStelle), um zu messen, was sie noch blockieren würde, während die durchgesetzte Richtlinie\nes erlaubt. Leer: keine.\nBeispiel: ReportOnlyDirectives[style-src]='self'"
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] ReportOnlyViews": {
+        "en": "Views (module/view) that send a policy of their own for their own inline\nscripts, such as a bundled database tool: report-only under Mode=enforce, so\nthe kernel's policy cannot block them where a server keeps both headers.\nExample: ReportOnlyViews[]=dse/adminneo",
+        "de": "Ansichten (module/view), die für ihre eigenen Inline-Skripte eine eigene Richtlinie senden,\nwie ein mitgeliefertes Datenbankwerkzeug: report-only unter Mode=enforce, damit\ndie Richtlinie des Kernels sie nicht blockieren kann, wo ein Server beide Header behält.\nBeispiel: ReportOnlyViews[]=dse/adminneo"
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] ReportURI": {
+        "en": "Where the browser sends its reports (report-uri), e.g. a collector of your\nown; empty: the developer console only, or with ReportEndpoint=enabled the\ncsp/report view of the siteaccess. An absolute address is also announced as\nthe Reporting-Endpoints endpoint csp-endpoint (report-to).",
+        "de": "Wohin der Browser seine Berichte sendet (report-uri), z. B. an einen eigenen\nSammler; leer: nur die Entwicklerkonsole oder, mit ReportEndpoint=enabled, die\nAnsicht csp/report des Siteaccess. Eine absolute Adresse wird außerdem als\nReporting-Endpoints-Endpunkt csp-endpoint angekündigt (report-to)."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] ReportsPerMinute": {
+        "en": "The reports the view csp/report takes (one line per violation in var/log/csp.log,\nSetup > Log files, key csp). Per client (the salted address hash of the\nrequest classifier), per minute; over it the view answers 429 and the\nrequest classifier writes one abuse/csp-report-flood line to security.log.",
+        "de": "Die Berichte, die die Ansicht csp/report annimmt (eine Zeile pro Verstoß in var/log/csp.log,\nSetup > Logdateien, Schlüssel csp). Pro Client (der gesalzene Adress-Hash des\nAnfrage-Klassifizierers), pro Minute; darüber antwortet die Ansicht mit 429, und der\nAnfrage-Klassifizierer schreibt eine Zeile abuse/csp-report-flood in security.log."
+    },
+    "ini:settings/site.ini [ContentSecurityPolicy] ReportsPerMinuteTotal": {
+        "en": "All clients together, per minute.",
+        "de": "Alle Clients zusammen, pro Minute."
+    },
+    "ini:settings/site.ini [ContentSettings]": {
+        "en": "CompileIncludeNodeTree[]=final\nCompileIncludeNodeTree[]=transformed\nCompileIncludeNodeTree[]=static\nCompileIncludeNodeTree[]=combined\nCompileIncludeNodeTree[]=original",
+        "de": "CompileIncludeNodeTree[]=final\nCompileIncludeNodeTree[]=transformed\nCompileIncludeNodeTree[]=static\nCompileIncludeNodeTree[]=combined\nCompileIncludeNodeTree[]=original"
+    },
+    "ini:settings/site.ini [ContentSettings] CacheDir": {
+        "en": "Where to place view cache files, it's a subdir of the global cache dir.",
+        "de": "Wo die Dateien des View-Caches abgelegt werden; ein Unterverzeichnis des globalen Cache-Verzeichnisses."
+    },
+    "ini:settings/site.ini [ContentSettings] CacheGenerationTimeout": {
+        "en": "maximum cache generation time. If a file stays in generation mode for more than\nthis value in seconds, it is considered timed out (process died, for instance),\nand generation is taken over by the requesting process",
+        "de": "Höchste Zeit für die Erzeugung eines Caches. Bleibt eine Datei länger als\ndiesen Wert in Sekunden im Erzeugungsmodus, gilt sie als abgelaufen (der Prozess ist zum Beispiel gestorben),\nund der anfragende Prozess übernimmt die Erzeugung"
+    },
+    "ini:settings/site.ini [ContentSettings] CacheThreshold": {
+        "en": "The threshold for file cleanup, if it is exceeded a global expiry is used instead\nThe value is the number of affected nodes",
+        "de": "Die Schwelle für das Aufräumen von Dateien; wird sie überschritten, wird stattdessen ein globaler Ablauf verwendet\nDer Wert ist die Zahl der betroffenen Knoten"
+    },
+    "ini:settings/site.ini [ContentSettings] CachedViewModes": {
+        "en": "A list of viewmodes which will be cached",
+        "de": "Eine Liste der Ansichtsmodi, die gecacht werden"
+    },
+    "ini:settings/site.ini [ContentSettings] CachedViewPreferences": {
+        "en": "A semicolon separated list of the user preferences (possibly with the default value after the '=' sign)\non which the viewmode, determined by an array key, dependes.\nEx.: CachedViewPreferences[full]=show_more_info=0;show_right_menu",
+        "de": "Eine durch Semikolons getrennte Liste der Benutzereinstellungen (eventuell mit dem Standardwert nach dem '='),\nvon denen der durch einen Array-Schlüssel bestimmte Ansichtsmodus abhängt.\nBsp.: CachedViewPreferences[full]=show_more_info=0;show_right_menu"
+    },
+    "ini:settings/site.ini [ContentSettings] ComplexDisplayViewModes": {
+        "en": "A list of viewmodes which displays more than just it's immediate children\nThese viewmodes are too complex to cleanup file by file and needs to\nbe expired globally.",
+        "de": "Eine Liste der Ansichtsmodi, die mehr als nur ihre unmittelbaren Unterknoten anzeigen\nDiese Ansichtsmodi sind zu komplex, um Datei für Datei aufgeräumt zu werden, und müssen\nglobal ablaufen."
+    },
+    "ini:settings/site.ini [ContentSettings] ContentClassEditHandler": {
+        "en": "Handler responsible of storing changes made on a content class when objects exist\nand require an update. This might be a huge task that can lead to time out,\nyou may consider using the 'eZContentClassEditDeferredHandler' provided with the\neZ Script Monitor extension.",
+        "de": "Handler, der Änderungen an einer Inhaltsklasse speichert, wenn Objekte existieren\nund aktualisiert werden müssen. Das kann eine riesige Aufgabe sein, die zu Zeitüberschreitungen führt;\nerwägen Sie den 'eZContentClassEditDeferredHandler' aus der\nErweiterung eZ Script Monitor."
+    },
+    "ini:settings/site.ini [ContentSettings] ContentObjectNameLimit": {
+        "en": "Length limit on contentObjectName, must be between 1 and 255.",
+        "de": "Längengrenze für contentObjectName, muss zwischen 1 und 255 liegen."
+    },
+    "ini:settings/site.ini [ContentSettings] ContentObjectNameLimitSequence": {
+        "en": "End sequence for object name when reaching length limit.",
+        "de": "Endsequenz für den Objektnamen, wenn die Längengrenze erreicht ist."
+    },
+    "ini:settings/site.ini [ContentSettings] DatatypeBlackListForExternal": {
+        "en": "List of datatypes that should not expose their content through external calls (Ajax/REST)",
+        "de": "Liste der Datentypen, die ihren Inhalt nicht über externe Aufrufe (Ajax/REST) preisgeben sollen"
+    },
+    "ini:settings/site.ini [ContentSettings] EditDirtyObjectAction": {
+        "en": "What to do when editing an object that has draft versions newer than the current version.\nUse 'showversions' to select which version to edit, or 'usecurrent' to always edit the current version.",
+        "de": "Was beim Bearbeiten eines Objekts geschieht, das Entwurfsversionen hat, die neuer als die aktuelle Version sind.\nVerwenden Sie 'showversions', um die zu bearbeitende Version zu wählen, oder 'usecurrent', um immer die aktuelle Version zu bearbeiten."
+    },
+    "ini:settings/site.ini [ContentSettings] PreCacheSiteaccessArray": {
+        "en": "List of siteaccesses that will have preview cache generated on publish.",
+        "de": "Liste der Siteaccesses, für die beim Veröffentlichen der Vorschau-Cache erzeugt wird."
+    },
+    "ini:settings/site.ini [ContentSettings] PreViewCache": {
+        "en": "Set to 'enabled' to make Exponential pre-cache the view cache files on publishing",
+        "de": "Auf 'enabled' setzen, damit Exponential die Dateien des View-Caches beim Veröffentlichen vorab erzeugt"
+    },
+    "ini:settings/site.ini [ContentSettings] PreviewCacheUsers": {
+        "en": "A list of users to pre-generate the content cache for\nThe list should contain the User ID or a special identifier, possible identifiers are:\n- 'anonymous' for the anonymous user.\n- 'current' for the currently logged in user\nThe default is to pregenerate for anonymous users",
+        "de": "Eine Liste der Benutzer, für die der Inhalts-Cache vorab erzeugt wird\nDie Liste sollte die Benutzer-ID oder einen besonderen Bezeichner enthalten, mögliche Bezeichner sind:\n- 'anonymous' für den anonymen Benutzer.\n- 'current' für den aktuell angemeldeten Benutzer\nStandard ist, für anonyme Benutzer vorab zu erzeugen"
+    },
+    "ini:settings/site.ini [ContentSettings] RedirectAfterPublish": {
+        "en": "Use this setting to change the redirection after publishing a node.\nIt can contain the following values:\n- parentNode - redirect to the parent of the edited object's main node (default value)\n- node       - redirect to the edited object's main node\n- rootNode   - redirect to siteaccess root node (ie. content.ini/NodeSettings/rootNode )\n- uri        - redirect to a specific URI (see RedirectAfterPublishUri settings below)",
+        "de": "Mit dieser Einstellung ändern Sie die Weiterleitung nach dem Veröffentlichen eines Knotens.\nSie kann folgende Werte enthalten:\n- parentNode - zum Elternknoten des Hauptknotens des bearbeiteten Objekts weiterleiten (Standardwert)\n- node       - zum Hauptknoten des bearbeiteten Objekts weiterleiten\n- rootNode   - zum Wurzelknoten des Siteaccess weiterleiten (d. h. content.ini/NodeSettings/rootNode )\n- uri        - auf eine bestimmte URI weiterleiten (siehe die Einstellung RedirectAfterPublishUri unten)"
+    },
+    "ini:settings/site.ini [ContentSettings] StaticCache": {
+        "en": "Set to 'enabled' to make Exponential store all published objects as static\nHTML. This requires also settings in staticcache.ini and special URL rewrite\nrules.",
+        "de": "Auf 'enabled' setzen, damit Exponential alle veröffentlichten Objekte als statisches\nHTML speichert. Das erfordert außerdem Einstellungen in staticcache.ini und besondere URL-Rewrite-\nRegeln."
+    },
+    "ini:settings/site.ini [ContentSettings] StaticCacheHandler": {
+        "en": "Sets a Cache Handler",
+        "de": "Setzt einen Cache-Handler"
+    },
+    "ini:settings/site.ini [ContentSettings] SurplusNode": {
+        "en": "Node where all new related objects are default placed\nOBSOLETE: See content.ini for more advanced settings",
+        "de": "Knoten, unter dem alle neuen verknüpften Objekte standardmäßig abgelegt werden\nVERALTET: Erweiterte Einstellungen stehen in content.ini"
+    },
+    "ini:settings/site.ini [ContentSettings] ViewCacheTweaks": {
+        "en": "View cache tweaks for cache strategy on specific node id's\nViewCacheTweaks[<node_id>]=<setting>[;<setting2>]\ncurrently supported settings:\ndisabled: Same as setting cache_ttl=0 in template, just a bit more efficient by knowing about it in advance\npr_user: cache page pr user, more efficient then disabling view cache and using cache-blocks\nprotocol: builds different cache based on the request protocol (http vs https)\nignore_discountlist do not include users shop discountlist in cache hash\nignore_userroles do not include users roles in cache hash\nignore_userlimitedlist do not include users limted policy assignement list in cache hash\nignore_viewparameters do not include view parameters in cache hash\nignore_userpreferences do not include users preferencest in cache hash\nignore_siteaccess_name do not include siteaccess name in cache path, use default siteaccess instead\nignore_siteaccess_type do not include siteaccess type in cache hash\nNote: you can also set 'global' as <node_id> to set tweaks globally for all tweaks but 'disabled' as you have other settings for that",
+        "de": "Anpassungen des View-Caches für die Cache-Strategie bestimmter Knoten-IDs\nViewCacheTweaks[<node_id>]=<setting>[;<setting2>]\nderzeit unterstützte Einstellungen:\ndisabled: wie cache_ttl=0 im Template, nur etwas effizienter, weil es vorab bekannt ist\npr_user: Seite pro Benutzer cachen, effizienter, als den View-Cache abzuschalten und Cache-Blöcke zu verwenden\nprotocol: baut je nach Protokoll der Anfrage (http oder https) einen anderen Cache\nignore_discountlist die Rabattliste des Shops des Benutzers nicht in den Cache-Hash aufnehmen\nignore_userroles die Rollen des Benutzers nicht in den Cache-Hash aufnehmen\nignore_userlimitedlist die Liste eingeschränkter Richtlinienzuweisungen des Benutzers nicht in den Cache-Hash aufnehmen\nignore_viewparameters die View-Parameter nicht in den Cache-Hash aufnehmen\nignore_userpreferences die Benutzereinstellungen nicht in den Cache-Hash aufnehmen\nignore_siteaccess_name den Namen des Siteaccess nicht in den Cache-Pfad aufnehmen, stattdessen den Standard-Siteaccess verwenden\nignore_siteaccess_type den Typ des Siteaccess nicht in den Cache-Hash aufnehmen\nHinweis: Sie können als <node_id> auch 'global' setzen, um Anpassungen global für alle zu setzen, außer 'disabled', wofür es andere Einstellungen gibt"
+    },
+    "ini:settings/site.ini [ContentSettings] ViewCaching": {
+        "en": "Whether to use view caching or not",
+        "de": "Ob der View-Cache verwendet wird"
+    },
+    "ini:settings/site.ini [DatabaseSettings] Charset": {
+        "en": "The charset to use for the database connection\nIf left empty the charset set in i18n.ini will be used,\nwhich is often the most reasonable setting.",
+        "de": "Der Zeichensatz für die Datenbankverbindung\nWenn leer, wird der in i18n.ini gesetzte Zeichensatz verwendet,\nwas oft die vernünftigste Einstellung ist."
+    },
+    "ini:settings/site.ini [DatabaseSettings] ConnectRetries": {
+        "en": "SlaveServerArray[]=localhost\nSlaveServerPort[]=\nSlaverServerUser[]=nextgen\nSlaverServerPassword[]=nextgen\nSlaverServerDatabase[]=nextgen\nThe number of times to reconnect if the first fails",
+        "de": "SlaveServerArray[]=localhost\nSlaveServerPort[]=\nSlaverServerUser[]=nextgen\nSlaverServerPassword[]=nextgen\nSlaverServerDatabase[]=nextgen\nWie oft neu verbunden wird, wenn die erste Verbindung scheitert"
+    },
+    "ini:settings/site.ini [DatabaseSettings] DebugTransactions": {
+        "en": "If enabled the system will store stack traces for all begin/commits in the\nsystem. When an unbalanced nested transactions are detected it will output\nall begin/commits with information on where it occured as a deep tree.\nThis tree can be used to debug the code and find the missing commit.",
+        "de": "Wenn aktiviert, speichert das System Stacktraces für alle begin/commit im\nSystem. Werden unausgeglichene verschachtelte Transaktionen erkannt, gibt es\nalle begin/commit mit der Stelle, an der sie auftraten, als tiefen Baum aus.\nMit diesem Baum lässt sich der Code debuggen und das fehlende commit finden."
+    },
+    "ini:settings/site.ini [DatabaseSettings] ImplementationAlias": {
+        "en": "Alias for implementations",
+        "de": "Alias für Implementierungen"
+    },
+    "ini:settings/site.ini [DatabaseSettings] QueryAnalysisOutput": {
+        "en": "This controls if the queries should have an analysis done\nfor the debug output (Requires SQLOutput=enabled)\nNOTE: Currently this only works for MySQL.",
+        "de": "Steuert, ob die Abfragen für die Debug-Ausgabe\nanalysiert werden (erfordert SQLOutput=enabled)\nHINWEIS: Funktioniert derzeit nur mit MySQL."
+    },
+    "ini:settings/site.ini [DatabaseSettings] SQLitePragmas": {
+        "en": "SQLite (DatabaseImplementation=sqlite3) only: the connection's PRAGMAs, one\nper line as name=value, over the driver's defaults:\n  synchronous=NORMAL     with WAL still crash-safe; FULL synced every commit\n  cache_size=-65536      64 MB page cache (SQLite's default is 2 MB)\n  mmap_size=268435456    read the file through 256 MB of mapped memory\n  temp_store=MEMORY      sorts and temporary tables in memory\n  busy_timeout=5000      wait up to 5 s for a lock instead of failing at once\nRun php bin/php/ezexec.php on an ANALYZE script (or sqlite3 <file> ANALYZE)\nafter an install, so the query planner has statistics.",
+        "de": "Nur SQLite (DatabaseImplementation=sqlite3): die PRAGMAs der Verbindung, eines\npro Zeile als name=value, über den Standards des Treibers:\n  synchronous=NORMAL     mit WAL weiterhin absturzsicher; FULL synchronisierte jeden Commit\n  cache_size=-65536      64 MB Seiten-Cache (Standard von SQLite ist 2 MB)\n  mmap_size=268435456    die Datei über 256 MB eingeblendeten Speicher lesen\n  temp_store=MEMORY      Sortierungen und temporäre Tabellen im Speicher\n  busy_timeout=5000      bis zu 5 s auf eine Sperre warten, statt sofort zu scheitern\nFühren Sie nach einer Installation php bin/php/ezexec.php mit einem ANALYZE-Skript (oder sqlite3 <file> ANALYZE) aus,\ndamit der Abfrageplaner Statistiken hat."
+    },
+    "ini:settings/site.ini [DatabaseSettings] SQLiteTransactionWait": {
+        "en": "SQLite only: how many seconds a transaction (a publish, a save) waits at its\nstart for the other writers ahead of it, queued on <database>.writer-lock\nnext to the database file, before it gives up. Waiting there is safe: the\ntransaction has written nothing yet, and once it has started it cannot fail\nfor a lock. Keep it below the web server's request timeout, or the request\nis killed before the driver can report \"database is busy\": Velocity ends a\nrequest after its engine setting Q.webserver.requestTimeout, 30 s unless\nchanged (the client gets a 504), hence 25 here; under PHP-FPM the limit is\nthe pool's request_terminate_timeout. Raise both together.",
+        "de": "Nur SQLite: wie viele Sekunden eine Transaktion (ein Veröffentlichen, ein Speichern) zu ihrem\nBeginn auf die anderen Schreiber vor ihr wartet, eingereiht in <database>.writer-lock\nneben der Datenbankdatei, bevor sie aufgibt. Dort zu warten ist sicher: Die\nTransaktion hat noch nichts geschrieben, und sobald sie begonnen hat, kann sie nicht mehr\nan einer Sperre scheitern. Halten Sie den Wert unter dem Anfrage-Timeout des Webservers, sonst wird die Anfrage\nbeendet, bevor der Treiber \"database is busy\" melden kann: Velocity beendet eine\nAnfrage nach seiner Engine-Einstellung Q.webserver.requestTimeout, 30 s, sofern nicht\ngeändert (der Client erhält 504), daher hier 25; unter PHP-FPM ist die Grenze\nrequest_terminate_timeout des Pools. Erhöhen Sie beide gemeinsam."
+    },
+    "ini:settings/site.ini [DatabaseSettings] SlowQueriesOutput": {
+        "en": "When this setting is larger than 0 the Queries would only be shown in the\nSQLOutput if the execution time took more than <setting> miliseconds.",
+        "de": "Ist diese Einstellung größer als 0, werden Abfragen nur dann in der\nSQLOutput angezeigt, wenn ihre Ausführung länger als <setting> Millisekunden dauerte."
+    },
+    "ini:settings/site.ini [DatabaseSettings] Transactions": {
+        "en": "Use transactions to ensure that integrity of a database is maintained.\nMySQL needs transaction safe-tables like the InnoDB table handler.",
+        "de": "Transaktionen verwenden, um die Integrität der Datenbank zu wahren.\nMySQL braucht transaktionssichere Tabellen wie den Tabellen-Handler InnoDB."
+    },
+    "ini:settings/site.ini [DatabaseSettings] UseBuiltinEncoding": {
+        "en": "Use charset conversion routines in DB if possible",
+        "de": "Wenn möglich die Routinen der Datenbank für die Zeichensatzumwandlung verwenden"
+    },
+    "ini:settings/site.ini [DatabaseSettings] UseSlaveServer": {
+        "en": "Enable slave servers\nThe slave servers will only be used for read queries\nUseful for load balanced environments",
+        "de": "Slave-Server aktivieren\nDie Slave-Server werden nur für lesende Abfragen verwendet\nNützlich in lastverteilten Umgebungen"
+    },
+    "ini:settings/site.ini [DebugSettings] AlwaysLog": {
+        "en": "Controls which debug types to always log.\nThis ensures logging even if debug output is off\n\nAvailable debug types are:\nerror - For major errors, very important to log\nwarning - Smaller errors, important for development but not for live site\ndebug - Temporary debug, usually only important to see in the web browser\nnotice - General notices, enabling this can fill up the log files quickly\nstrict - Strict notices, suggests changes to your code which will ensure the best interoperability and forward compatibility\ndeprecated - PHP deprecations (with DeprecatedLog=enabled), each distinct message once per request",
+        "de": "Steuert, welche Debug-Typen immer protokolliert werden.\nDas stellt die Protokollierung sicher, auch wenn die Debug-Ausgabe aus ist\n\nVerfügbare Debug-Typen sind:\nerror - für schwere Fehler, sehr wichtig zu protokollieren\nwarning - kleinere Fehler, wichtig für die Entwicklung, aber nicht für eine Live-Website\ndebug - vorübergehendes Debugging, meist nur im Webbrowser wichtig\nnotice - allgemeine Hinweise; das Aktivieren kann die Logdateien schnell füllen\nstrict - strikte Hinweise, schlagen Änderungen an Ihrem Code für beste Interoperabilität und Zukunftssicherheit vor\ndeprecated - Veraltungen von PHP (mit DeprecatedLog=enabled), jede eindeutige Meldung einmal pro Anfrage"
+    },
+    "ini:settings/site.ini [DebugSettings] Debug": {
+        "en": "Examples\nDebugUserIDList[]=14\nControls how debug is displayed, inline means that the debug is displayed in\npage itself while popup will create a new popup window with the debug.\nPopup window might not work in all browsers.\nUse either disabled, inline or popup\nIf you use popup you must make sure that a rewrite rules exists for .html files\nor that your site is running in non-virtual host mode. Also some browsers\nhave problems with this feature.",
+        "de": "Beispiele\nDebugUserIDList[]=14\nSteuert, wie das Debugging angezeigt wird: inline bedeutet, dass das Debugging\nin der Seite selbst angezeigt wird, popup öffnet ein neues Popup-Fenster mit dem Debugging.\nDas Popup-Fenster funktioniert eventuell nicht in allen Browsern.\nVerwenden Sie disabled, inline oder popup\nWenn Sie popup verwenden, muss es eine Rewrite-Regel für .html-Dateien geben,\noder Ihre Website muss im Modus ohne virtuellen Host laufen. Außerdem haben manche Browser\nProbleme mit dieser Funktion."
+    },
+    "ini:settings/site.ini [DebugSettings] DebugByIP": {
+        "en": "Whether debug is set per IP address. If set to enabled it will user\nDebugIPList for valid ips otherwise all ips get debug.\nUse either enabled or disabled",
+        "de": "Ob das Debugging pro IP-Adresse gesetzt wird. Wenn enabled, verwendet es\nDebugIPList für gültige IPs, sonst erhalten alle IPs Debugging.\nVerwenden Sie enabled oder disabled"
+    },
+    "ini:settings/site.ini [DebugSettings] DebugByUser": {
+        "en": "Examples\nDebugIPList[]=1.2.3.4\nDebugIPList[]=192.0.0.42\nDebugIPList[]=192.0.0.0/27\nWhether debug is set per UserID. If set to enabled only users with\nIDs (in DebugUserIDList) can get debug.\nUse either enabled or disabled",
+        "de": "Beispiele\nDebugIPList[]=1.2.3.4\nDebugIPList[]=192.0.0.42\nDebugIPList[]=192.0.0.0/27\nOb das Debugging pro Benutzer-ID gesetzt wird. Wenn enabled, erhalten nur Benutzer\nmit IDs (in DebugUserIDList) Debugging.\nVerwenden Sie enabled oder disabled"
+    },
+    "ini:settings/site.ini [DebugSettings] DebugIPList": {
+        "en": "A array with IP addresses or networks which will get debug information",
+        "de": "Ein Array mit IP-Adressen oder Netzen, die Debug-Informationen erhalten"
+    },
+    "ini:settings/site.ini [DebugSettings] DebugLogOnly": {
+        "en": "Whether to skip showing debug strings in the debug output.",
+        "de": "Ob das Anzeigen von Debug-Zeichenketten in der Debug-Ausgabe übersprungen wird."
+    },
+    "ini:settings/site.ini [DebugSettings] DebugOutput": {
+        "en": "Master switch for debug, if disabled no debug will be shown\nIf enabled it's up to the DebugByIP and DebugIPList to decide what to do.\nUse either enabled or disabled",
+        "de": "Hauptschalter für das Debugging; wenn deaktiviert, wird kein Debugging angezeigt\nWenn aktiviert, entscheiden DebugByIP und DebugIPList, was geschieht.\nVerwenden Sie enabled oder disabled"
+    },
+    "ini:settings/site.ini [DebugSettings] DebugRedirection": {
+        "en": "Controls if redirects should be debuggable, set to enable to get a redirect\npage with debug info.\nThis is useful for development while production sites should have it off",
+        "de": "Steuert, ob Weiterleitungen debuggbar sein sollen; auf enable setzen, um eine Weiterleitungs-\nseite mit Debug-Informationen zu erhalten.\nNützlich für die Entwicklung; Produktivsysteme sollten es aus haben"
+    },
+    "ini:settings/site.ini [DebugSettings] DebugToolbar": {
+        "en": "Developer toolbar with clear cache and quick settings features",
+        "de": "Entwickler-Werkzeugleiste mit Funktionen zum Leeren des Caches und für Schnelleinstellungen"
+    },
+    "ini:settings/site.ini [DebugSettings] DebugUserIDList": {
+        "en": "An array with UserIDs which will get debug information",
+        "de": "Ein Array mit Benutzer-IDs, die Debug-Informationen erhalten"
+    },
+    "ini:settings/site.ini [DebugSettings] DeprecatedLog": {
+        "en": "PHP deprecations (E_DEPRECATED, E_USER_DEPRECATED, eZDebug::writeDeprecated()).\nenabled: written to var/log/deprecated.log, each distinct message once per\nrequest, and only counted in the debug output (the debug bar's summary and\nthe warning count); none is kept in memory or listed with the messages.\ndisabled: warnings in warning.log and the debug output, as before.",
+        "de": "Veraltungen von PHP (E_DEPRECATED, E_USER_DEPRECATED, eZDebug::writeDeprecated()).\nenabled: in var/log/deprecated.log geschrieben, jede eindeutige Meldung einmal pro\nAnfrage, und in der Debug-Ausgabe nur gezählt (die Zusammenfassung der Debug-Leiste und\ndie Zahl der Warnungen); keine wird im Speicher gehalten oder mit den Meldungen aufgeführt.\ndisabled: Warnungen in warning.log und der Debug-Ausgabe, wie bisher."
+    },
+    "ini:settings/site.ini [DebugSettings] DisplayDebugWarnings": {
+        "en": "Whether debug warnings/errors should be displayed on the page or not.\nIf not they will appear in debug log only.",
+        "de": "Ob Debug-Warnungen/-Fehler auf der Seite angezeigt werden.\nWenn nicht, erscheinen sie nur im Debug-Log."
+    },
+    "ini:settings/site.ini [DebugSettings] DisplayIncludedFiles": {
+        "en": "Display list of php included files used to render the current page",
+        "de": "Liste der eingebundenen PHP-Dateien anzeigen, die zum Rendern der aktuellen Seite verwendet wurden"
+    },
+    "ini:settings/site.ini [DebugSettings] QuickSettingsList": {
+        "en": "Quick settings list for the developer toolbar\nYou can use any enabled/disabled setting",
+        "de": "Liste der Schnelleinstellungen für die Entwickler-Werkzeugleiste\nSie können jede Einstellung mit enabled/disabled verwenden"
+    },
+    "ini:settings/site.ini [DebugSettings] ScriptDebugOutput": {
+        "en": "Debug switch for scripts, will only take place if DebugOutput is set to enabled\nBy default it is off to not give debug for scripts.\nUse either enabled or disabled",
+        "de": "Debug-Schalter für Skripte, wirkt nur, wenn DebugOutput auf enabled steht\nStandardmäßig aus, um für Skripte kein Debugging auszugeben.\nVerwenden Sie enabled oder disabled"
+    },
+    "ini:settings/site.ini [DebugSettings] UsedTemplateEditUrl": {
+        "en": "The link of each template's \"Edit\" icon in the debug output's list of used\ntemplates (TemplateSettings ShowUsedTemplates), as a sprintf() format:\n %1$s the address of visual/templateedit in the current siteaccess followed\n      by the template file, e.g. /visual/templateedit/design/standard/templates/page.tpl\n %2$s the current siteaccess\n %3$s the template file, for example design/standard/templates/page.tpl\nEmpty (the default): %1$s/(siteAccess)/%2$s, the link the list always had.\nExample, the editor of the admin siteaccess from a public siteaccess:\nUsedTemplateEditUrl=/admin/visual/templateedit/%3$s/(siteAccess)/%2$s",
+        "de": "Der Link des Symbols „Bearbeiten“ jedes Templates in der Liste der verwendeten\nTemplates der Debug-Ausgabe (TemplateSettings ShowUsedTemplates), als sprintf()-Format:\n %1$s die Adresse von visual/templateedit im aktuellen Siteaccess, gefolgt\n      von der Template-Datei, z. B. /visual/templateedit/design/standard/templates/page.tpl\n %2$s der aktuelle Siteaccess\n %3$s die Template-Datei, zum Beispiel design/standard/templates/page.tpl\nLeer (der Standard): %1$s/(siteAccess)/%2$s, der Link, den die Liste immer hatte.\nBeispiel, der Editor des Administrations-Siteaccess aus einem öffentlichen Siteaccess:\nUsedTemplateEditUrl=/admin/visual/templateedit/%3$s/(siteAccess)/%2$s"
+    },
+    "ini:settings/site.ini [DesignSettings]": {
+        "en": "# Set access policy to allowed\nRules[]=access;enable\n# Special syntax which means any module\n# This means that for now all modules are enabled\nRules[]=moduleall\n# Set policy to denied\nRules[]=access;disable\n# If content/search module use current policy (denied)\nRules[]=module;content/search\n# If rss module use current policy (denied)\nRules[]=module;rss",
+        "de": "# Set access policy to allowed\nRules[]=access;enable\n# Special syntax which means any module\n# This means that for now all modules are enabled\nRules[]=moduleall\n# Set policy to denied\nRules[]=access;disable\n# If content/search module use current policy (denied)\nRules[]=module;content/search\n# If rss module use current policy (denied)\nRules[]=module;rss"
+    },
+    "ini:settings/site.ini [DesignSettings] AdditionalSiteDesignList": {
+        "en": "AdditionalSiteDesignArray contains an array\nof sitedesigns. These sitedesigns will be used\nif the design was not found in the main\nsitedesign. StandardDesign is the fallback design.",
+        "de": "AdditionalSiteDesignArray enthält ein Array\nvon Website-Designs. Diese Designs werden verwendet,\nwenn das Design im Haupt-Website-Design\nnicht gefunden wurde. StandardDesign ist das Ausweich-Design."
+    },
+    "ini:settings/site.ini [DesignSettings] DesignLocationCache": {
+        "en": "Whether to cache location of design directories",
+        "de": "Ob der Ort der Design-Verzeichnisse gecacht wird"
+    },
+    "ini:settings/site.ini [DesignSettings] SiteDesign": {
+        "en": "The design of the site",
+        "de": "Das Design der Website"
+    },
+    "ini:settings/site.ini [DesignSettings] StandardDesign": {
+        "en": "The standard design, is used as fallback design\nif the element is not in the sitedesign",
+        "de": "Das Standard-Design, verwendet als Ausweich-Design,\nwenn das Element nicht im Website-Design ist"
+    },
+    "ini:settings/site.ini [Event] Listeners": {
+        "en": "(This is private api and might change in future versions)\nList of global event listeners/filters in the form:\nListeners[]=<event>@<callback>\neg:\nListeners[]=request/input@ezxFormHandler::input",
+        "de": "(Dies ist eine private API und kann sich in künftigen Versionen ändern)\nListe globaler Event-Listener/-Filter in der Form:\nListeners[]=<event>@<callback>\nz. B.:\nListeners[]=request/input@ezxFormHandler::input"
+    },
+    "ini:settings/site.ini [ExtensionSettings] ActiveAccessExtensions": {
+        "en": "Same as ActiveExtensions but will be loaded after the siteaccess is chosen.\nThis allows for activating different extensions on different siteaccesses",
+        "de": "Wie ActiveExtensions, wird aber geladen, nachdem der Siteaccess gewählt ist.\nDamit lassen sich in verschiedenen Siteaccesses verschiedene Erweiterungen aktivieren"
+    },
+    "ini:settings/site.ini [ExtensionSettings] ActiveExtensions": {
+        "en": "A list of active extensions, add new ones to activate them\nThe extension itself will then have it's settings directory read (if any)\nand any extra configurability is done automatically.",
+        "de": "Eine Liste der aktiven Erweiterungen; fügen Sie neue hinzu, um sie zu aktivieren\nDas settings-Verzeichnis der Erweiterung wird dann gelesen (falls vorhanden),\nund jede weitere Konfiguration geschieht automatisch."
+    },
+    "ini:settings/site.ini [ExtensionSettings] AdditionalExtensionDirectories": {
+        "en": "Further places extensions may live, searched after ExtensionDirectory above.\nA second root separates what this project wrote from what it took from\nelsewhere, so who owns a package is readable off the directory layout rather\nthan off a list somebody has to maintain.\n\nAn extension of the same name in a later root shadows the one before it. That\nis how a package is forked without being edited - copy it across and change\nit there - and also how one gets shadowed by accident.\n\nThe directory has to exist, and the autoload generator scans every configured\nroot, so after adding one:\n\n    php bin/php/ezpgenerateautoloads.php\n\nNothing else: moving a package between roots is a copy, with no manifest to\nedit and no composer dump-autoload to run.\n\nCode should never build a path out of \"extension/\" and a name. Use\neZExtension::extensionPath() and eZExtension::expandedPathList(), which\nresolve across every root. eZExtension::filterExtensionRootDirectories() is\nthe last word, for a root that has to be worked out at runtime.\n\nSee doc/eng-us/bc/6.0/AdditionalExtensionDirectories.md",
+        "de": "Weitere Orte, an denen Erweiterungen liegen können, durchsucht nach ExtensionDirectory oben.\nEine zweite Wurzel trennt, was dieses Projekt geschrieben hat, von dem, was es von\nanderswo übernommen hat, sodass sich der Eigentümer eines Pakets an der Verzeichnisstruktur ablesen lässt\nstatt an einer Liste, die jemand pflegen muss.\n\nEine Erweiterung gleichen Namens in einer späteren Wurzel verdeckt die davor. So\nwird ein Paket geforkt, ohne es zu bearbeiten (hinüberkopieren und dort\nändern), und so wird eines auch versehentlich verdeckt.\n\nDas Verzeichnis muss existieren, und der Autoload-Generator durchsucht jede konfigurierte\nWurzel; nach dem Hinzufügen einer also:\n\n    php bin/php/ezpgenerateautoloads.php\n\nSonst nichts: Ein Paket zwischen Wurzeln zu verschieben ist eine Kopie, ohne Manifest zum\nBearbeiten und ohne composer dump-autoload.\n\nCode sollte nie einen Pfad aus \"extension/\" und einem Namen zusammensetzen. Verwenden Sie\neZExtension::extensionPath() und eZExtension::expandedPathList(), die\nüber alle Wurzeln auflösen. eZExtension::filterExtensionRootDirectories() hat\ndas letzte Wort, für eine Wurzel, die zur Laufzeit ermittelt werden muss.\n\nSiehe doc/eng-us/bc/6.0/AdditionalExtensionDirectories.md"
+    },
+    "ini:settings/site.ini [ExtensionSettings] ExtensionOrdering": {
+        "en": "AdditionalExtensionDirectories[]=extension_src\nUse extension reordering to avoid issues because of ActiveExtensions and\nActiveAccessExtensions not being correctly defined\nKnown issues:\n  - Breaks clustering settings in siteaccess and extensions support\n    Only known workaround is to disable this setting and order manually\n  - Still loads an extension even if dependant extension is not loaded\n  - Does not fix order issues across the two extensions settings\n    ( ActiveExtensions and ActiveAccessExtensions )",
+        "de": "AdditionalExtensionDirectories[]=extension_src\nUmsortieren der Erweiterungen verwenden, um Probleme zu vermeiden, weil ActiveExtensions und\nActiveAccessExtensions nicht korrekt definiert sind\nBekannte Probleme:\n  - Zerstört Cluster-Einstellungen in Siteaccess und die Unterstützung von Erweiterungen\n    Einzige bekannte Umgehung: diese Einstellung deaktivieren und von Hand sortieren\n  - Lädt eine Erweiterung auch dann, wenn eine Erweiterung, von der sie abhängt, nicht geladen ist\n  - Behebt keine Reihenfolgeprobleme zwischen den beiden Erweiterungseinstellungen\n    ( ActiveExtensions und ActiveAccessExtensions )"
+    },
+    "ini:settings/site.ini [FileSettings] AllowedDeletionDirs": {
+        "en": "Directories eZDir is allowed to delete from (see eZDir::recursiveDelete()).\nBy default, it is only possible to delete from inside Exponential root directory.\nDirectories listed will be added as authorized directory prefixes.\nValues must be absolute paths; one that does not exist allows nothing.\nInside the cache, log, expiry and INI cache directories of the site, and the\ncache directory itself, are always allowed, also when CacheDir, LogDir,\nCacheVarDir, LogVarDir or ExpiryDir put them outside the root (never one\nthat contains the installation).",
+        "de": "Verzeichnisse, aus denen eZDir löschen darf (siehe eZDir::recursiveDelete()).\nStandardmäßig kann nur innerhalb des Wurzelverzeichnisses von Exponential gelöscht werden.\nAufgeführte Verzeichnisse werden als erlaubte Verzeichnispräfixe hinzugefügt.\nDie Werte müssen absolute Pfade sein; einer, der nicht existiert, erlaubt nichts.\nInnerhalb der Cache-, Log-, Ablauf- und INI-Cache-Verzeichnisse der Website und im\nCache-Verzeichnis selbst ist es immer erlaubt, auch wenn CacheDir, LogDir,\nCacheVarDir, LogVarDir oder ExpiryDir sie außerhalb der Wurzel legen (nie eines,\ndas die Installation enthält)."
+    },
+    "ini:settings/site.ini [FileSettings] CacheDir": {
+        "en": "The name of the cache dir, as a subdir of VarDir\nUsing an absolute dir will be accepted, but won't work with some features and is NOT SUPPORTED:\nthe caches are written there, but the public caches in it (packed scripts and\nstyle sheets, text to image) are not served by the web server or Velocity.\nTo keep the cache on another file system, mount that at VarDir/CacheDir, or\nuse CacheVarDir below with a directory inside the installation.",
+        "de": "Der Name des Cache-Verzeichnisses, als Unterverzeichnis von VarDir\nEin absolutes Verzeichnis wird akzeptiert, funktioniert aber mit manchen Funktionen nicht und wird NICHT UNTERSTÜTZT:\nDie Caches werden dort geschrieben, aber die öffentlichen Caches darin (gepackte Skripte und\nStylesheets, Text als Bild) liefern weder der Webserver noch Velocity aus.\nUm den Cache auf einem anderen Dateisystem zu halten, hängen Sie dieses unter VarDir/CacheDir ein oder\nverwenden Sie CacheVarDir unten mit einem Verzeichnis innerhalb der Installation."
+    },
+    "ini:settings/site.ini [FileSettings] DirDepth": {
+        "en": "Directory depth for storing files, this means that it will create\ndirectories out of the first n characters to make sure not too\nmany files are placed in one directory. For instance a file name\nnewfile.png will be placed in n/e/w/newfile.png.",
+        "de": "Verzeichnistiefe für das Speichern von Dateien; das bedeutet, dass aus den ersten n Zeichen\nVerzeichnisse angelegt werden, damit nicht zu\nviele Dateien in einem Verzeichnis liegen. Zum Beispiel wird eine Datei namens\nnewfile.png in n/e/w/newfile.png abgelegt."
+    },
+    "ini:settings/site.ini [FileSettings] ExpiryDir": {
+        "en": "Where expiry.php is kept: its timestamps decide whether the caches and the\nimage aliases in the storage are still valid. Empty: in the cache directory,\nas before. A directory inside VarDir (e.g. expiry) or an absolute path keeps\nit when the cache directory is on a file system that is emptied at a restart\n(a memory file system mounted at var/<site>/cache).",
+        "de": "Wo expiry.php gehalten wird: Ihre Zeitstempel entscheiden, ob die Caches und die\nBild-Aliase im Speicher noch gültig sind. Leer: im Cache-Verzeichnis,\nwie bisher. Ein Verzeichnis innerhalb von VarDir (z. B. expiry) oder ein absoluter Pfad behält\nsie, wenn das Cache-Verzeichnis auf einem Dateisystem liegt, das bei einem Neustart geleert wird\n(ein unter var/<site>/cache eingehängtes Speicher-Dateisystem)."
+    },
+    "ini:settings/site.ini [FileSettings] INICacheDir": {
+        "en": "Where the INI files of the site are cached. global: var/cache/ini, shared by\nevery site, as before. site: the cache directory of the site\n(VarDir/CacheDir/ini), so clearing the INI cache of one site of a multi-site\ninstallation leaves the others alone. The INI files read before the\nsiteaccess is known stay in var/cache/ini.",
+        "de": "Wo die INI-Dateien der Website gecacht werden. global: var/cache/ini, gemeinsam für\njede Website, wie bisher. site: das Cache-Verzeichnis der Website\n(VarDir/CacheDir/ini), sodass das Leeren des INI-Caches einer Website einer Multisite-\nInstallation die anderen in Ruhe lässt. Die INI-Dateien, die gelesen werden, bevor der\nSiteaccess bekannt ist, bleiben in var/cache/ini."
+    },
+    "ini:settings/site.ini [FileSettings] LogDir": {
+        "en": "The name of the log dir, it's a subdir of VarDir. An absolute path puts the\nlogs of the site on another file system (multi-site hosting); the logs are\nnever served, so unlike CacheDir this is supported.",
+        "de": "Der Name des Log-Verzeichnisses, ein Unterverzeichnis von VarDir. Ein absoluter Pfad legt die\nLogs der Website auf ein anderes Dateisystem (Multisite-Hosting); die Logs werden\nnie ausgeliefert, daher wird dies anders als bei CacheDir unterstützt."
+    },
+    "ini:settings/site.ini [FileSettings] LogFileCompress": {
+        "en": "enabled: the rotated files from .2 on are compressed to .2.gz, .3.gz ...\n(.1 never is: a request that opened the log before it was rotated may still\nbe writing to it). The log viewer reads compressed rotations too.",
+        "de": "enabled: Die rotierten Dateien ab .2 werden zu .2.gz, .3.gz ... komprimiert\n(.1 nie: Eine Anfrage, die das Log vor der Rotation geöffnet hat, kann noch\ndarin schreiben). Der Log-Viewer liest auch komprimierte Rotationen."
+    },
+    "ini:settings/site.ini [FileSettings] LogFileMaxAge": {
+        "en": "The age in days after which \"./console exp:logs --prune\" (and the log\nviewer's prune action) removes a rotated file, whatever its number. 0: no\nage limit, only LogFileRotateCount counts. A rotation never removes by age.\ndoc/eng-us/features/6.0/log-rotation.md",
+        "de": "Das Alter in Tagen, nach dem \"./console exp:logs --prune\" (und die Bereinigungsaktion des Log-\nViewers) eine rotierte Datei entfernt, egal welche Nummer sie hat. 0: keine\nAltersgrenze, nur LogFileRotateCount zählt. Eine Rotation entfernt nie nach Alter.\ndoc/eng-us/features/6.0/log-rotation.md"
+    },
+    "ini:settings/site.ini [FileSettings] LogFileMaxSize": {
+        "en": "The size in bytes at which a log file is rotated (the debug logs error.log,\nwarning.log, deprecated.log ... and the logs written with eZLog, such as\nstorage.log and the cronjob logs): it is renamed .1, older ones move on.\nThe constants EZPUBLISH_LOG_MAX_FILE_SIZE and CUSTOM_LOG_MAX_FILE_SIZE in\nconfig.php win over it. 2097152 is 2 MB (was 200 KB).",
+        "de": "Die Größe in Bytes, bei der eine Logdatei rotiert wird (die Debug-Logs error.log,\nwarning.log, deprecated.log ... und die mit eZLog geschriebenen Logs, etwa\nstorage.log und die Cronjob-Logs): Sie wird in .1 umbenannt, ältere rücken weiter.\nDie Konstanten EZPUBLISH_LOG_MAX_FILE_SIZE und CUSTOM_LOG_MAX_FILE_SIZE in\nconfig.php haben Vorrang. 2097152 sind 2 MB (früher 200 KB)."
+    },
+    "ini:settings/site.ini [FileSettings] LogFilePermissions": {
+        "en": "Permission for log files, setting it to 0666 means that anyone\ncan read and write the files and can be considered a security risk.\nIt's preferred to use 0660 and make sure the web server has correct\nuser/group access.",
+        "de": "Berechtigung für Logdateien; 0666 bedeutet, dass jeder\ndie Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0660, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
+    },
+    "ini:settings/site.ini [FileSettings] LogFileRotateCount": {
+        "en": "How many rotated files of each log are kept (.1 to .3). 0 turns the\nrotation off. The constants EZPUBLISH_LOG_ROTATE_FILES and\nCUSTOM_LOG_ROTATE_FILES in config.php win over it.",
+        "de": "Wie viele rotierte Dateien jedes Logs behalten werden (.1 bis .3). 0 schaltet die\nRotation ab. Die Konstanten EZPUBLISH_LOG_ROTATE_FILES und\nCUSTOM_LOG_ROTATE_FILES in config.php haben Vorrang."
+    },
+    "ini:settings/site.ini [FileSettings] LogVarDir": {
+        "en": "A tree of their own for the logs or the caches of every site of a multi-site\ninstallation, set once for all of them: the first directory of VarDir is\nreplaced. With LogVarDir=var_log a site with VarDir=var/example logs to\nvar_log/example/log, with CacheVarDir=var_cache its cache is in\nvar_cache/example/cache (one memory file system for all sites; set ExpiryDir\nthen). LogVarDir may be an absolute path (logs are never served).\nCacheVarDir is a directory inside the installation: Velocity serves the\npublic caches below it (it reads CacheVarDir of every siteaccess when it\nstarts); for Apache and nginx enable the var_cache rule in .htaccess_root or\nthe server configuration. An absolute CacheVarDir is used, but its public\ncaches are not served, as with an absolute CacheDir. Empty: inside VarDir, as\nbefore. Audit records stay in VarDir (audit.ini [AuditSettings] LogDir).",
+        "de": "Ein eigener Baum für die Logs oder die Caches jeder Website einer Multisite-\nInstallation, einmal für alle gesetzt: Das erste Verzeichnis von VarDir wird\nersetzt. Mit LogVarDir=var_log protokolliert eine Website mit VarDir=var/example nach\nvar_log/example/log, mit CacheVarDir=var_cache liegt ihr Cache in\nvar_cache/example/cache (ein Speicher-Dateisystem für alle Websites; setzen Sie dann\nExpiryDir). LogVarDir darf ein absoluter Pfad sein (Logs werden nie ausgeliefert).\nCacheVarDir ist ein Verzeichnis innerhalb der Installation: Velocity liefert die\nöffentlichen Caches darunter aus (es liest beim Start CacheVarDir jedes Siteaccess);\nfür Apache und nginx aktivieren Sie die Regel var_cache in .htaccess_root oder\nder Serverkonfiguration. Ein absolutes CacheVarDir wird verwendet, aber seine öffentlichen\nCaches werden nicht ausgeliefert, wie bei einem absoluten CacheDir. Leer: innerhalb von VarDir, wie\nbisher. Audit-Einträge bleiben in VarDir (audit.ini [AuditSettings] LogDir)."
+    },
+    "ini:settings/site.ini [FileSettings] RenameBeforeDelete": {
+        "en": "Clearing a cache that is deleted from disk -- compiled templates, override,\nINI and others -- first renames its directory into .cleanup-trash in the cache\ndirectory, named after the cache with the time appended, and deletes it only\nafter the last cache of the clear. The rename is\ninstant, so nothing generated while the delete runs is caught by it.\ndisabled deletes file by file, as before. Only for directories on the local\nfile system; a cache kept in a cluster database is not affected.",
+        "de": "Das Leeren eines Caches, der von der Festplatte gelöscht wird (kompilierte Templates, Override,\nINI und andere), benennt sein Verzeichnis zuerst in .cleanup-trash im Cache-\nverzeichnis um, benannt nach dem Cache mit angehängter Zeit, und löscht es erst\nnach dem letzten Cache des Leerens. Die Umbenennung geschieht\nsofort, sodass nichts, was während des Löschens erzeugt wird, davon erfasst wird.\ndisabled löscht wie bisher Datei für Datei. Nur für Verzeichnisse auf dem lokalen\nDateisystem; ein in einer Cluster-Datenbank gehaltener Cache ist nicht betroffen."
+    },
+    "ini:settings/site.ini [FileSettings] RenameExpiredCaches": {
+        "en": "The view cache, cache-block, user info and translation cache are cleared by a\ntimestamp in expiry.php: their files stop being served, but stay on disk until\nthe cache_cleanup cronjob removes them. enabled moves their directories into\n.cleanup-trash as well when such a cache is cleared in the administration\ninterface or with bin/php/ezcache.php, and deletes them after the last cache\nof the clear, so a clear leaves nothing behind. The timestamp is still set\nfirst. Needs RenameBeforeDelete: deleting them file by file in the request is\nwhat the timestamp is there to avoid, so with it disabled nothing is removed.\nPublishing content only moves the timestamps, as before.",
+        "de": "View-Cache, Cache-Block, Benutzerinformationen und Übersetzungs-Cache werden über einen\nZeitstempel in expiry.php geleert: Ihre Dateien werden nicht mehr ausgeliefert, bleiben aber auf der Festplatte, bis\nder Cronjob cache_cleanup sie entfernt. enabled verschiebt ihre Verzeichnisse ebenfalls in\n.cleanup-trash, wenn ein solcher Cache in der Administrations-\noberfläche oder mit bin/php/ezcache.php geleert wird, und löscht sie nach dem letzten Cache\ndes Leerens, sodass ein Leeren nichts zurücklässt. Der Zeitstempel wird weiterhin zuerst\ngesetzt. Braucht RenameBeforeDelete: Sie in der Anfrage Datei für Datei zu löschen ist genau,\nwas der Zeitstempel vermeiden soll; ist es deaktiviert, wird also nichts entfernt.\nDas Veröffentlichen von Inhalten verschiebt wie bisher nur die Zeitstempel."
+    },
+    "ini:settings/site.ini [FileSettings] StorageDir": {
+        "en": "Where to place new files for storage, it's relative to var directory",
+        "de": "Wo neue Dateien gespeichert werden, relativ zum var-Verzeichnis"
+    },
+    "ini:settings/site.ini [FileSettings] StorageDirPermissions": {
+        "en": "Permission for storage directories, setting it to 0777 means that anyone\ncan read and write the directories and can be considered a security risk.\nIt's preferred to use 0770 and make sure the web server has correct\nuser/group access.",
+        "de": "Berechtigung für Speicherverzeichnisse; 0777 bedeutet, dass jeder\ndie Verzeichnisse lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0770, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
+    },
+    "ini:settings/site.ini [FileSettings] StorageFilePermissions": {
+        "en": "Permission for storage files, setting it to 0666 means that anyone\ncan read and write the files and can be considered a security risk.\nIt's preferred to use 0660 and make sure the web server has correct\nuser/group access.",
+        "de": "Berechtigung für Speicherdateien; 0666 bedeutet, dass jeder\ndie Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0660, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
+    },
+    "ini:settings/site.ini [FileSettings] TemporaryDir": {
+        "en": "The directory Exponential should use when creating temporary files.\ne.g when creating an image variation",
+        "de": "Das Verzeichnis, das Exponential für temporäre Dateien verwendet,\nz. B. beim Erzeugen einer Bildvariante"
+    },
+    "ini:settings/site.ini [FileSettings] TemporaryPermissions": {
+        "en": "The permissions below are limited by EZP_DIR_MODE_MAX / EZP_FILE_MODE_MAX in\nconfig.php where set (doc/eng-us/bc/6.0/file-modes.md): a mode here is never wider\nthan those.\nPermission for temporary files, setting it to 0777 means that anyone\ncan read and write the files and can be considered a security risk.\nIt's preferred to use 0770 and make sure the web server has correct\nuser/group access.",
+        "de": "Die Berechtigungen unten werden durch EZP_DIR_MODE_MAX / EZP_FILE_MODE_MAX in\nconfig.php begrenzt, wo gesetzt (doc/eng-us/bc/6.0/file-modes.md): Ein Modus hier ist nie weiter\nals diese.\nBerechtigung für temporäre Dateien; 0777 bedeutet, dass jeder\ndie Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0770, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
+    },
+    "ini:settings/site.ini [FileSettings] UseGlobalLogDir": {
+        "en": "Where the debug logs (error.log, warning.log, ...) and the default logs of\neZLog go. enabled: var/log for every site, as before. disabled: the log\ndirectory of the site (VarDir/LogDir), from the moment its siteaccess is\nknown; messages written before that still go to var/log.",
+        "de": "Wohin die Debug-Logs (error.log, warning.log, ...) und die Standard-Logs von\neZLog gehen. enabled: var/log für jede Website, wie bisher. disabled: das Log-\nverzeichnis der Website (VarDir/LogDir), sobald ihr Siteaccess\nbekannt ist; Meldungen, die vorher geschrieben werden, gehen weiterhin nach var/log."
+    },
+    "ini:settings/site.ini [FileSettings] VarDir": {
+        "en": "The root directory where all log files, cache files\nand other stored files are created.\nOnly directories relative to the Exponential root are supported. Absolute directories are NOT SUPPORTED",
+        "de": "Das Wurzelverzeichnis, in dem alle Logdateien, Cache-Dateien\nund anderen gespeicherten Dateien angelegt werden.\nNur Verzeichnisse relativ zum Wurzelverzeichnis von Exponential werden unterstützt. Absolute Verzeichnisse werden NICHT UNTERSTÜTZT"
+    },
+    "ini:settings/site.ini [FormProcessSettings] Module": {
+        "en": "Whether the form module is allowed or not\nThe form is by design insecure so don't enable unless you know\nwhat you are doing.",
+        "de": "Ob das Modul form erlaubt ist\nDas Formular ist von Grund auf unsicher; aktivieren Sie es nur, wenn Sie wissen,\nwas Sie tun."
+    },
+    "ini:settings/site.ini [HTMLForms] RefusalLogCollapseSeconds": {
+        "en": "A POST without its form token, or with a wrong one, is answered with a 403\nand one line in var/log/warning.log. The same refusal again (same check,\nsiteaccess, path and client) within this many seconds is counted instead of\nwritten; the next line for it gives the count. 0 writes every one.",
+        "de": "Ein POST ohne sein Formular-Token oder mit einem falschen wird mit 403\nund einer Zeile in var/log/warning.log beantwortet. Dieselbe Ablehnung erneut (gleiche Prüfung,\nSiteaccess, Pfad und Client) innerhalb so vieler Sekunden wird gezählt statt\ngeschrieben; die nächste Zeile dazu nennt die Zahl. 0 schreibt jede."
+    },
+    "ini:settings/site.ini [HTMLForms] Secret": {
+        "en": "# Settings dealing with HTML forms and security aspects of it.\nSetting to specify a secret for the csrf protection, it\nis highly recommended that you specify this pr project.",
+        "de": "# Einstellungen zu HTML-Formularen und ihren Sicherheitsaspekten.\nEinstellung für ein Geheimnis des CSRF-Schutzes; es wird\ndringend empfohlen, es pro Projekt anzugeben."
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] Cache-Control": {
+        "en": "Default Cache-Control header\nHTTP Headers are specified using the following format :\n<HTTP header>[<Exponential path|module{/view}>]=<value>{;<depth>{;<level>}}\nNote: to use a semicolon in the value, you need to escape it with a backslash.\n\nExample :\n# Set Pragma HTTP header to no-cache for whole site, except /news, and 2 levels below news.\nPragma[]\nPragma[/]=no-cache;2\nPragma[/news]=;2;0\nCache-Control values are set directly",
+        "de": "Standard-Header Cache-Control\nHTTP-Header werden in folgendem Format angegeben:\n<HTTP header>[<Exponential path|module{/view}>]=<value>{;<depth>{;<level>}}\nHinweis: Um ein Semikolon im Wert zu verwenden, maskieren Sie es mit einem Backslash.\n\nBeispiel:\n# Set Pragma HTTP header to no-cache for whole site, except /news, and 2 levels below news.\nPragma[]\nPragma[/]=no-cache;2\nPragma[/news]=;2;0\nWerte von Cache-Control werden direkt gesetzt"
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] ClientIpByCustomHTTPHeader": {
+        "en": "Use a custom HTTP header to get the client IP\nfalse is the default value\nThe header is read only for a request from one of the TrustedProxies below,\nand from the right: trusted proxies are skipped and the first other address\nis the client. Entries further left are what the client sent and are ignored.",
+        "de": "Einen eigenen HTTP-Header verwenden, um die IP des Clients zu ermitteln\nfalse ist der Standardwert\nDer Header wird nur für eine Anfrage von einem der TrustedProxies unten gelesen,\nund von rechts: Vertrauenswürdige Proxys werden übersprungen, und die erste andere Adresse\nist der Client. Einträge weiter links sind das, was der Client gesendet hat, und werden ignoriert."
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] CustomHeader": {
+        "en": "Enable/disable custom HTTP header data.",
+        "de": "Eigene HTTP-Header-Daten aktivieren/deaktivieren."
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] Expires": {
+        "en": "Expires specifies time offset compared to current time\nDefault expired 2 hours ago ( no caching )",
+        "de": "Expires gibt einen Zeitversatz zur aktuellen Zeit an\nStandard ist vor 2 Stunden abgelaufen (kein Caching)"
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] HeaderList": {
+        "en": "Header list. Contains all HTTP which should override standard ones.",
+        "de": "Header-Liste. Enthält alle HTTP-Header, die die Standard-Header überschreiben sollen."
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] OnlyForAnonymous": {
+        "en": "Only apply custom headers for anonymous users",
+        "de": "Eigene Header nur für anonyme Benutzer anwenden"
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] OnlyForContent": {
+        "en": "Only apply the fallback root [/] custom headers for the content/view module\nIf disabled, custom headers for the root path will be applied to all modules and their views",
+        "de": "Die eigenen Ausweich-Header der Wurzel [/] nur für das Modul content/view anwenden\nWenn deaktiviert, werden die eigenen Header des Wurzelpfads auf alle Module und ihre Ansichten angewendet"
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] Pragma": {
+        "en": "Pragma values are set directly",
+        "de": "Werte von Pragma werden direkt gesetzt"
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] SecurityHeaders": {
+        "en": "Security headers sent with every page, SecurityHeaders[<header>]=<value>.\nSet a value empty in an override to drop that header. HeaderList above\nstill overrides these per path.\n - frame-ancestors / X-Frame-Options: pages may only be framed by the\n   same site (clickjacking); allow a trusted editor host explicitly, e.g.\n   SecurityHeaders[Content-Security-Policy]=frame-ancestors 'self' https://edit.example.com\n - Strict-Transport-Security is only sent over HTTPS and is off by\n   default: enable it once the whole site is HTTPS-only, e.g.\n   SecurityHeaders[Strict-Transport-Security]=max-age=31536000",
+        "de": "Sicherheits-Header, die mit jeder Seite gesendet werden, SecurityHeaders[<header>]=<value>.\nSetzen Sie einen Wert in einem Override leer, um diesen Header wegzulassen. HeaderList oben\nüberschreibt diese weiterhin pro Pfad.\n - frame-ancestors / X-Frame-Options: Seiten dürfen nur von derselben Website\n   eingerahmt werden (Clickjacking); erlauben Sie einen vertrauenswürdigen Editor-Host ausdrücklich, z. B.\n   SecurityHeaders[Content-Security-Policy]=frame-ancestors 'self' https://edit.example.com\n - Strict-Transport-Security wird nur über HTTPS gesendet und ist standardmäßig\n   aus: Aktivieren Sie es, sobald die ganze Website nur noch HTTPS verwendet, z. B.\n   SecurityHeaders[Strict-Transport-Security]=max-age=31536000"
+    },
+    "ini:settings/site.ini [HTTPHeaderSettings] TrustedProxies": {
+        "en": "Useful example when client get connected via (reverse-)proxy\nClientIpByCustomHTTPHeader=X-Forwarded-For\nThe reverse proxies and load balancers in front of this site whose forwarded\nheaders can be believed: X-Forwarded-For (with ClientIpByCustomHTTPHeader),\nX-Forwarded-Proto, X-Forwarded-Port, X-Forwarded-Server and X-Forwarded-Host.\nThey are request headers any visitor can send, so they count only when the\nconnection comes from one of these addresses (REMOTE_ADDR). Addresses and\naddress/prefix ranges, IPv4 and IPv6, e.g.\n TrustedProxies[]=10.0.0.0/8\n TrustedProxies[]=192.0.2.10\n TrustedProxies[]=2001:db8::/32\nThe default trusts a proxy on this machine only. A trusted proxy must set\nthese headers itself, not pass on what the visitor sent.\nAn override that starts with \"TrustedProxies[]\" alone replaces the list;\nleave it empty to trust no proxy at all.\nSee doc/eng-us/bc/6.0/trusted-proxies.md.",
+        "de": "Nützliches Beispiel, wenn sich Clients über einen (Reverse-)Proxy verbinden\nClientIpByCustomHTTPHeader=X-Forwarded-For\nDie Reverse-Proxys und Lastverteiler vor dieser Website, deren weitergeleiteten\nHeadern man glauben kann: X-Forwarded-For (mit ClientIpByCustomHTTPHeader),\nX-Forwarded-Proto, X-Forwarded-Port, X-Forwarded-Server und X-Forwarded-Host.\nEs sind Anfrage-Header, die jeder Besucher senden kann, sie zählen also nur, wenn die\nVerbindung von einer dieser Adressen kommt (REMOTE_ADDR). Adressen und\nAdress-/Präfixbereiche, IPv4 und IPv6, z. B.\n TrustedProxies[]=10.0.0.0/8\n TrustedProxies[]=192.0.2.10\n TrustedProxies[]=2001:db8::/32\nDer Standard vertraut nur einem Proxy auf diesem Rechner. Ein vertrauenswürdiger Proxy muss\ndiese Header selbst setzen, nicht weitergeben, was der Besucher gesendet hat.\nEin Override, das mit \"TrustedProxies[]\" allein beginnt, ersetzt die Liste;\nlassen Sie sie leer, um gar keinem Proxy zu vertrauen.\nSiehe doc/eng-us/bc/6.0/trusted-proxies.md."
+    },
+    "ini:settings/site.ini [InformationCollectionSettings] EmailReceiver": {
+        "en": "Which email collected information is sent to",
+        "de": "An welche E-Mail-Adresse gesammelte Informationen gesendet werden"
+    },
+    "ini:settings/site.ini [LinkCheck] ConnectTimeout": {
+        "en": "Used by the linkcheck cronjob, ConnectTimeout specifies the limit (in seconds) to wait for a valid connection.",
+        "de": "Vom Cronjob linkcheck verwendet; ConnectTimeout gibt die Grenze (in Sekunden) an, die auf eine gültige Verbindung gewartet wird."
+    },
+    "ini:settings/site.ini [MailSettings]": {
+        "en": "If RedirectAfterPublish=uri, indicates to which URI user will be redirected\nafter publishing a node.\nexample : RedirectAfterPublishUri=/content/dashboard\nif empty : will be redirected to parent node\nRedirectAfterPublishUri=",
+        "de": "Bei RedirectAfterPublish=uri gibt dies an, auf welche URI der Benutzer\nnach dem Veröffentlichen eines Knotens weitergeleitet wird.\nBeispiel: RedirectAfterPublishUri=/content/dashboard\nwenn leer: Weiterleitung zum Elternknoten\nRedirectAfterPublishUri="
+    },
+    "ini:settings/site.ini [MailSettings] AllowedCharsets": {
+        "en": "Which charset are allowed to send directly, those that do not match\nis converted to OutputCharset before being sent.",
+        "de": "Welche Zeichensätze direkt gesendet werden dürfen; die, die nicht passen,\nwerden vor dem Senden in OutputCharset umgewandelt."
+    },
+    "ini:settings/site.ini [MailSettings] ContentType": {
+        "en": "Content type of mails, for instance text/plain or text/html",
+        "de": "Inhaltstyp von Mails, zum Beispiel text/plain oder text/html"
+    },
+    "ini:settings/site.ini [MailSettings] DebugReceiverEmail": {
+        "en": "Receiver email address to use when DebugSending is enabled",
+        "de": "Empfängeradresse, die verwendet wird, wenn DebugSending aktiviert ist"
+    },
+    "ini:settings/site.ini [MailSettings] DebugSending": {
+        "en": "If enabled, all emails will be sent to DebugReceiverEmail instead of to their original recipient(s)",
+        "de": "Wenn aktiviert, werden alle E-Mails an DebugReceiverEmail statt an ihre ursprünglichen Empfänger gesendet"
+    },
+    "ini:settings/site.ini [MailSettings] EmailReplyTo": {
+        "en": "The address which will be set as the Reply-To header of the e-mail, unless\noverridden by the template variable email_reply_to. If not set, the senders\naddress will be used, either from the template, or the EmailSender setting.",
+        "de": "Die Adresse, die als Header Reply-To der E-Mail gesetzt wird, sofern\nnicht die Template-Variable email_reply_to sie überschreibt. Wenn nicht gesetzt, wird die Adresse\ndes Absenders verwendet, entweder aus dem Template oder aus der Einstellung EmailSender."
+    },
+    "ini:settings/site.ini [MailSettings] EmailSender": {
+        "en": "The address which will be set as the From header of the e-mail, unless\noverridden by the template variable email_sender.",
+        "de": "Die Adresse, die als Header From der E-Mail gesetzt wird, sofern\nnicht die Template-Variable email_sender sie überschreibt."
+    },
+    "ini:settings/site.ini [MailSettings] ExcludeHeaders": {
+        "en": "Headers to exclude from the sent message, case insensitive, only relevant when using SMTP\nYou might want to add bcc here, if your mail server does not hide bcc recipients from each other",
+        "de": "Header, die aus der gesendeten Nachricht entfernt werden, ohne Beachtung der Groß-/Kleinschreibung, nur bei SMTP relevant\nSie können hier bcc hinzufügen, wenn Ihr Mailserver bcc-Empfänger nicht voreinander verbirgt"
+    },
+    "ini:settings/site.ini [MailSettings] HeaderLineEnding": {
+        "en": "The line endings used for headers in mail messages. If you need to use\ncontrol characters like LF or CR you need to use it's urlencoded value, for\nexample %0A for LF and %0D for CR. The default setting is what RFC 2045\nrequires: CRLF\nIf it contains auto the system will try to determine the line-ending\nbased on the current operating system.",
+        "de": "Die Zeilenenden der Header in Mailnachrichten. Wenn Sie\nSteuerzeichen wie LF oder CR verwenden müssen, verwenden Sie ihren URL-kodierten Wert, zum\nBeispiel %0A für LF und %0D für CR. Die Standardeinstellung ist das, was RFC 2045\nverlangt: CRLF\nEnthält sie auto, versucht das System, das Zeilenende\nanhand des aktuellen Betriebssystems zu bestimmen."
+    },
+    "ini:settings/site.ini [MailSettings] OutputCharset": {
+        "en": "Which charset to convert emails to if they are not in correct format",
+        "de": "In welchen Zeichensatz E-Mails umgewandelt werden, wenn sie nicht im richtigen Format sind"
+    },
+    "ini:settings/site.ini [MailSettings] SenderHost": {
+        "en": "The FQDN, used by extended HELO\nSee part \"4.1.1.1  Extended HELLO (EHLO) or HELLO (HELO)\" of http://www.faqs.org/rfcs/rfc2821.html",
+        "de": "Der FQDN, verwendet vom erweiterten HELO\nSiehe Abschnitt \"4.1.1.1  Extended HELLO (EHLO) or HELLO (HELO)\" von http://www.faqs.org/rfcs/rfc2821.html"
+    },
+    "ini:settings/site.ini [MailSettings] SendmailEnvelopeSender": {
+        "en": "Whether sendmail is given the sender as envelope sender with -f <sender>.\ndisabled: no -f. A mail without a sender of its own (no sender address and no\nFrom extra header) gets a From header with EmailSender, else AdminEmail, when one\nof them is a valid address (\"address\" or \"Name <address>\"). Needed for msmtp with\n--read-envelope-from, which refuses -f together with that option and reads the\nenvelope sender from the From header.",
+        "de": "Ob sendmail den Absender mit -f <sender> als Umschlag-Absender erhält.\ndisabled: kein -f. Eine Mail ohne eigenen Absender (keine Absenderadresse und kein\nzusätzlicher Header From) erhält einen Header From mit EmailSender, sonst AdminEmail, wenn eine\ndavon eine gültige Adresse ist (\"address\" oder \"Name <address>\"). Nötig für msmtp mit\n--read-envelope-from, das -f zusammen mit dieser Option ablehnt und den\nUmschlag-Absender aus dem Header From liest."
+    },
+    "ini:settings/site.ini [MailSettings] SendmailInsertUndisclosedRecipient": {
+        "en": "Allows inserting undisclosed-recipients into the \"TO:\" of email headers.\nAs this is not a standard, some MTA might reject it, in that case you can set it to \"disabled\"",
+        "de": "Erlaubt, undisclosed-recipients in das \"TO:\" der E-Mail-Header einzufügen.\nDa dies kein Standard ist, lehnen manche MTAs es ab; dann können Sie es auf \"disabled\" setzen"
+    },
+    "ini:settings/site.ini [MailSettings] SendmailOptions": {
+        "en": "Set additional sendmail options here.\n-f <sender> is default in PHP SafeMode.\nPlease use a line for every (sub)option. e.g.\nSendmailOptions[]=-r\nSendmailOptions[]=muchspam@example.com",
+        "de": "Setzen Sie hier zusätzliche Optionen für sendmail.\n-f <sender> ist im SafeMode von PHP der Standard.\nBitte verwenden Sie eine Zeile pro (Unter-)Option, z. B.\nSendmailOptions[]=-r\nSendmailOptions[]=muchspam@example.com"
+    },
+    "ini:settings/site.ini [MailSettings] Transport": {
+        "en": "The type of transport for emails, can be either: sendmail, SMTP or file\nWindow users should probably use SMTP\nFor debug purposes you can use file for sending mail to a log file",
+        "de": "Die Art des Transports für E-Mails, kann sendmail, SMTP oder file sein\nWindows-Benutzer sollten wahrscheinlich SMTP verwenden\nZum Debuggen können Sie file verwenden, um Mails in eine Logdatei zu schreiben"
+    },
+    "ini:settings/site.ini [MailSettings] TransportAlias": {
+        "en": "A list of possible handlers for sending mails, use the setting Transport to specify which one to use",
+        "de": "Eine Liste möglicher Handler zum Senden von Mails; mit der Einstellung Transport geben Sie an, welcher verwendet wird"
+    },
+    "ini:settings/site.ini [MailSettings] TransportConnectionType": {
+        "en": "Connection type in SMTP: <empty>(no encryption)|ssl|sslv2|sslv3|tls",
+        "de": "Verbindungstyp bei SMTP: <empty>(keine Verschlüsselung)|ssl|sslv2|sslv3|tls"
+    },
+    "ini:settings/site.ini [MailSettings] TransportPort": {
+        "en": "Default SMTP port is 25, default Secure SMTP port(SSL,TLS) is 465",
+        "de": "Der Standardport für SMTP ist 25, der Standardport für sicheres SMTP (SSL, TLS) 465"
+    },
+    "ini:settings/site.ini [MailSettings] TransportServer": {
+        "en": "Configuration for SMTP",
+        "de": "Konfiguration für SMTP"
+    },
+    "ini:settings/site.ini [MailSettings] UserAgent": {
+        "en": "The User-Agent header of every mail sent through eZMail (sendmail, SMTP and file\ntransports), e.g. the name of the portal; ASCII only, it is not encoded.\nEmpty: \"Exponential, Version <version>\" (sendmail, file) and the default of the\nmail library (SMTP), as before. eZMail::setUserAgent() still overrides it per mail.",
+        "de": "Der Header User-Agent jeder über eZMail gesendeten Mail (Transporte sendmail, SMTP und\nfile), z. B. der Name des Portals; nur ASCII, er wird nicht kodiert.\nLeer: \"Exponential, Version <version>\" (sendmail, file) und der Standard der\nMail-Bibliothek (SMTP), wie bisher. eZMail::setUserAgent() überschreibt ihn weiterhin pro Mail."
+    },
+    "ini:settings/site.ini [OverrideSettings]": {
+        "en": "since 5.3 it is possible to define a list with the dataypes containing prices\nThis will allow you to define your own price datatypes and work with them\nin the shop module\nSetting is commented out by default\nProductDatatypeStringList[]\nProductDatatypeStringList[]=ezprice\nProductDatatypeStringList[]=ezmultiprice\nProductDatatypeStringList[]=customprice",
+        "de": "Seit 5.3 lässt sich eine Liste der Datentypen definieren, die Preise enthalten\nDamit können Sie eigene Preis-Datentypen definieren und mit ihnen\nim Modul shop arbeiten\nDie Einstellung ist standardmäßig auskommentiert\nProductDatatypeStringList[]\nProductDatatypeStringList[]=ezprice\nProductDatatypeStringList[]=ezmultiprice\nProductDatatypeStringList[]=customprice"
+    },
+    "ini:settings/site.ini [PasswordSettings] ChangeNotificationMail": {
+        "en": "After a change: mail \"your password was changed\" to the user (mail category\nsecurity, essential; template design:user/password_changed_mail.tpl). The mail never\ncontains the password.",
+        "de": "Nach einer Änderung: die Mail „Ihr Passwort wurde geändert“ an den Benutzer (Mailkategorie\nsecurity, essential; Template design:user/password_changed_mail.tpl). Die Mail enthält nie\ndas Passwort."
+    },
+    "ini:settings/site.ini [PasswordSettings] EndOtherSessions": {
+        "en": "After a password change: the user's other sessions are signed out on their next\nrequest (a sign-in keeps a stamp of the password in the session, checked by\neZUser::currentUser()); this one stays signed in, with a new session id. The database\nsession handler also deletes them at once. Sessions from before the upgrade (no stamp)\nand accounts without a password of their own (LDAP, SSO) are not checked.\ndisabled: no stamp, no check, other sessions stay.",
+        "de": "Nach einer Passwortänderung: Die anderen Sitzungen des Benutzers werden bei ihrer nächsten\nAnfrage abgemeldet (eine Anmeldung behält einen Stempel des Passworts in der Sitzung, geprüft von\neZUser::currentUser()); diese bleibt angemeldet, mit einer neuen Sitzungs-ID. Der Sitzungs-Handler\nder Datenbank löscht sie außerdem sofort. Sitzungen von vor dem Upgrade (kein Stempel)\nund Konten ohne eigenes Passwort (LDAP, SSO) werden nicht geprüft.\ndisabled: kein Stempel, keine Prüfung, andere Sitzungen bleiben."
+    },
+    "ini:settings/site.ini [PasswordSettings] ForbidCurrentPassword": {
+        "en": "The new password must differ from the current one",
+        "de": "Das neue Passwort muss sich vom aktuellen unterscheiden"
+    },
+    "ini:settings/site.ini [PasswordSettings] ForbidLogin": {
+        "en": "The new password must not contain the user's login name (logins of 3 or more characters)",
+        "de": "Das neue Passwort darf den Anmeldenamen des Benutzers nicht enthalten (Anmeldenamen ab 3 Zeichen)"
+    },
+    "ini:settings/site.ini [PasswordSettings] MinCharacterClasses": {
+        "en": "At least this many of the four kinds above (0 to 4; 0 = no such rule)",
+        "de": "Mindestens so viele der vier Arten oben (0 bis 4; 0 = keine solche Regel)"
+    },
+    "ini:settings/site.ini [PasswordSettings] RequireDigit": {
+        "en": "At least one digit",
+        "de": "Mindestens eine Ziffer"
+    },
+    "ini:settings/site.ini [PasswordSettings] RequireLowercase": {
+        "en": "The rules a new password must meet (user/password, registration, the user account in\ncontent/edit, bin/php/resetuserpassword.php), besides the length\n([UserSettings] MinPasswordLength), and what happens after a change.\nEvery rule is off by default: a site keeps the rules it had.\nGuide: doc/eng-us/features/6.0/modern-password-change.md\n\nAt least one lowercase letter (any script, not only a-z)",
+        "de": "Die Regeln, die ein neues Passwort erfüllen muss (user/password, Registrierung, das Benutzerkonto in\ncontent/edit, bin/php/resetuserpassword.php), neben der Länge\n([UserSettings] MinPasswordLength), und was nach einer Änderung geschieht.\nJede Regel ist standardmäßig aus: Eine Website behält die Regeln, die sie hatte.\nAnleitung: doc/eng-us/features/6.0/modern-password-change.md\n\nMindestens ein Kleinbuchstabe (jede Schrift, nicht nur a-z)"
+    },
+    "ini:settings/site.ini [PasswordSettings] RequireSymbol": {
+        "en": "At least one character that is neither a letter nor a digit (a space counts)",
+        "de": "Mindestens ein Zeichen, das weder Buchstabe noch Ziffer ist (ein Leerzeichen zählt)"
+    },
+    "ini:settings/site.ini [PasswordSettings] RequireUppercase": {
+        "en": "At least one uppercase letter",
+        "de": "Mindestens ein Großbuchstabe"
+    },
+    "ini:settings/site.ini [PasswordSettings] StrengthMeter": {
+        "en": "For the page's script: show the strength meter, offer \"Generate a strong password\"\n(its length is [UserSettings] GeneratePasswordLength, at least 12)",
+        "de": "Für das Skript der Seite: die Stärkeanzeige zeigen, „Starkes Passwort erzeugen“ anbieten\n(seine Länge ist [UserSettings] GeneratePasswordLength, mindestens 12)"
+    },
+    "ini:settings/site.ini [PortAccessSettings] 1337": {
+        "en": "MatchOrder : port\nAdd entries here if you have port in MatchOrder\nEach entry consists of the port=accessname",
+        "de": "MatchOrder : port\nFügen Sie hier Einträge hinzu, wenn Sie port in MatchOrder haben\nJeder Eintrag besteht aus port=accessname"
+    },
+    "ini:settings/site.ini [ProxySettings] ProxyServer": {
+        "en": "If an user wants to use proxy in linkcheck.php/rssimport.php or downloading site packages in \"setup wizard\".\nIf empty proxy will not be used.\nExample:  http://<host>:<port>",
+        "de": "Wenn ein Benutzer in linkcheck.php/rssimport.php oder beim Herunterladen von Seitenpaketen im „Setup-Assistenten“ einen Proxy verwenden will.\nWenn leer, wird kein Proxy verwendet.\nBeispiel:  http://<host>:<port>"
+    },
+    "ini:settings/site.ini [RSSSettings]": {
+        "en": "Settings for RSS",
+        "de": "Einstellungen für RSS"
+    },
+    "ini:settings/site.ini [RSSSettings] ActiveExtensions": {
+        "en": "RSS import handler Extension settings\nMust be placed in <extension directory>/<active extension>/rss/ezrssimporthandler.php",
+        "de": "Einstellungen der Erweiterungen für RSS-Import-Handler\nMuss in <extension directory>/<active extension>/rss/ezrssimporthandler.php liegen"
+    },
+    "ini:settings/site.ini [RSSSettings] AvailableVersionList": {
+        "en": "The list of available RSS versions.\nOPML is a list of feeds rather than a list of articles: an export set to it\nhas no content source, and lists the other exports on this installation, or\ncontent nodes, instead. See kernel/classes/ezrssexportopmlitem.php.\nAn Apple Podcasts feed: RSS 2.0 with the iTunes namespace, which Apple reads\nfor everything RSS has no room for - the show's author, owner, artwork,\ncategory and rating. The episodes come from content sources like any other\nfeed, and each one needs its enclosure mapped to a media or file attribute.\nSee eZRSSExport::generateITunes().",
+        "de": "Die Liste der verfügbaren RSS-Versionen.\nOPML ist eine Liste von Feeds statt einer Liste von Artikeln: Ein darauf gesetzter Export\nhat keine Inhaltsquelle und listet stattdessen die anderen Exporte dieser Installation oder\nInhaltsknoten auf. Siehe kernel/classes/ezrssexportopmlitem.php.\nEin Apple-Podcasts-Feed: RSS 2.0 mit dem iTunes-Namespace, den Apple für alles liest,\nwofür RSS keinen Platz hat: Autor, Eigentümer, Bild,\nKategorie und Einstufung der Sendung. Die Folgen kommen wie bei jedem anderen\nFeed aus Inhaltsquellen, und bei jeder muss das Enclosure einem Medien- oder Dateiattribut zugeordnet sein.\nSiehe eZRSSExport::generateITunes()."
+    },
+    "ini:settings/site.ini [RSSSettings] CacheTime": {
+        "en": "Cache Time in Seconds\n\nThe timespan a RSS feed is served from the cache in seconds.\nAfter the end of the timespan, the RSS feed is regenerated and\nagain served from the cache.\n\nThis means that changes to the content being fed show up\nafter the maximum cache time at the latest.\n\n\"CacheTime = 0\" turns off cacheing.",
+        "de": "Cache-Zeit in Sekunden\n\nDie Zeitspanne in Sekunden, die ein RSS-Feed aus dem Cache ausgeliefert wird.\nNach Ablauf der Zeitspanne wird der RSS-Feed neu erzeugt und\nwieder aus dem Cache ausgeliefert.\n\nDas bedeutet, dass Änderungen an den eingespeisten Inhalten spätestens\nnach der maximalen Cache-Zeit erscheinen.\n\n\"CacheTime = 0\" schaltet das Caching ab."
+    },
+    "ini:settings/site.ini [RSSSettings] DefaultFeedItemClasses": {
+        "en": "Default source to child mapping\nDefaultFeedItemClasses[<source_class>]=<child_class>[;<child_class_2>]",
+        "de": "Standardzuordnung von Quelle zu Unterelement\nDefaultFeedItemClasses[<source_class>]=<child_class>[;<child_class_2>]"
+    },
+    "ini:settings/site.ini [RSSSettings] DefaultVersion": {
+        "en": "Selected by default in the RSS export edit GUI.",
+        "de": "In der Bearbeitungsoberfläche des RSS-Exports standardmäßig ausgewählt."
+    },
+    "ini:settings/site.ini [RSSSettings] NumberOfObjectsList": {
+        "en": "List of numbers of objects being included in the RSS feed.\nThis list is being shown in the RSS export edit admin interface.",
+        "de": "Liste der Anzahlen von Objekten, die in den RSS-Feed aufgenommen werden.\nDiese Liste wird in der Bearbeitungsoberfläche des RSS-Exports in der Administration angezeigt."
+    },
+    "ini:settings/site.ini [RSSSettings] OPMLMaxOutlines": {
+        "en": "The most outlines one OPML document will carry. A document large enough to\nexhaust memory is served from a public address, so it would take the site\ndown rather than just itself. Bounded at 50000 whatever this says.",
+        "de": "Die meisten Gliederungspunkte, die ein OPML-Dokument enthält. Ein Dokument, das groß genug ist,\num den Speicher zu erschöpfen, wird von einer öffentlichen Adresse ausgeliefert und würde daher die Website\nlahmlegen statt nur sich selbst. Begrenzt auf 50000, egal was hier steht."
+    },
+    "ini:settings/site.ini [RegionalSettings] ContentObjectFallbackLocale": {
+        "en": "The content language used as a last resort, when neither a prioritized\ncontent language nor ContentObjectLocale is set: the setup wizard and command\nline scripts create class and attribute names before the site's languages\nexist. Empty or missing means eng-US.",
+        "de": "Die Inhaltssprache, die als letzte Möglichkeit verwendet wird, wenn weder eine priorisierte\nInhaltssprache noch ContentObjectLocale gesetzt ist: Der Setup-Assistent und Kommando-\nzeilenskripte legen Klassen- und Attributnamen an, bevor es die Sprachen der Website\ngibt. Leer oder fehlend bedeutet eng-US."
+    },
+    "ini:settings/site.ini [RegionalSettings] ContentObjectLocale": {
+        "en": "The default language for content objects\nNote: Changing this can have catastrophic consequences\n      since there might not be any content objects with\n      the selected language. Instead the content/translations\n      page should be used for adding/removing translations.",
+        "de": "Die Standardsprache für Inhaltsobjekte\nHinweis: Eine Änderung kann katastrophale Folgen haben,\n      da es eventuell keine Inhaltsobjekte in\n      der gewählten Sprache gibt. Verwenden Sie stattdessen die Seite content/translations,\n      um Übersetzungen hinzuzufügen oder zu entfernen."
+    },
+    "ini:settings/site.ini [RegionalSettings] ContentXMLCharset": {
+        "en": "Controls how xml is stored in content objects.\ndisabled - Store with utf8\nenabled  - Store with current charset\nif any other text is entered it is assumed to be a charset and will be used",
+        "de": "Steuert, wie XML in Inhaltsobjekten gespeichert wird.\ndisabled - mit utf8 speichern\nenabled  - mit dem aktuellen Zeichensatz speichern\nJeder andere eingegebene Text gilt als Zeichensatz und wird verwendet"
+    },
+    "ini:settings/site.ini [RegionalSettings] Debug": {
+        "en": "Use either enabled to see which locale files are loaded or disabled to supress debug",
+        "de": "Verwenden Sie enabled, um zu sehen, welche Locale-Dateien geladen werden, oder disabled, um das Debugging zu unterdrücken"
+    },
+    "ini:settings/site.ini [RegionalSettings] DevelopmentMode": {
+        "en": "By enabling development mode all untranslated texts will be translated\nusing the bork rules.\nSee lib/ezi18n/classes/ezborktranslator.php for more information.",
+        "de": "Im Entwicklungsmodus werden alle unübersetzten Texte\nnach den Bork-Regeln übersetzt.\nMehr dazu in lib/ezi18n/classes/ezborktranslator.php."
+    },
+    "ini:settings/site.ini [RegionalSettings] HTTPLocale": {
+        "en": "Set this if the http locale in the locale is wrong",
+        "de": "Setzen Sie dies, wenn die HTTP-Locale in der Locale falsch ist"
+    },
+    "ini:settings/site.ini [RegionalSettings] LanguageSwitcherClass": {
+        "en": "NOTE: The LanguageSwitcher settings are not frozen, meaning they might still change.\nThe class which is used in the language switcher module to forward users to\nselected translation siteaccesses.",
+        "de": "HINWEIS: Die Einstellungen des LanguageSwitcher sind nicht festgeschrieben und können sich noch ändern.\nDie Klasse, die im Modul der Sprachumschaltung Benutzer auf die\ngewählten Übersetzungs-Siteaccesses weiterleitet."
+    },
+    "ini:settings/site.ini [RegionalSettings] Locale": {
+        "en": "The locale for your site",
+        "de": "Die Locale Ihrer Website"
+    },
+    "ini:settings/site.ini [RegionalSettings] SharedTranslationCacheDir": {
+        "en": "Translation cache files will be stored in the directory located outside of the\nsiteaccess VarDir. Empty value disables sharing of translation cache.\nUseful if you want to share translation cache between siteaccesses that\nonly differes by content, db and var directory.",
+        "de": "Die Cache-Dateien der Übersetzungen werden in einem Verzeichnis außerhalb des\nVarDir des Siteaccess gespeichert. Ein leerer Wert schaltet das Teilen des Übersetzungs-Caches ab.\nNützlich, wenn Sie den Übersetzungs-Cache zwischen Siteaccesses teilen wollen, die sich\nnur in Inhalt, Datenbank und var-Verzeichnis unterscheiden."
+    },
+    "ini:settings/site.ini [RegionalSettings] ShowUntranslatedObjects": {
+        "en": "If enabled, ShowUntranslatedObjects will force showing the objects\nexisting in other languages than those specified in SiteLanguageList",
+        "de": "Wenn aktiviert, erzwingt ShowUntranslatedObjects die Anzeige der Objekte,\ndie in anderen als den in SiteLanguageList angegebenen Sprachen existieren"
+    },
+    "ini:settings/site.ini [RegionalSettings] SiteLanguageList": {
+        "en": "Prioritized list of languages. Only objects existing in these\nlanguages will be shown (unless ShowUntranslatedObjects is enabled).\nIf an object exists in more languages, that one which is first in\nSiteLanguageList will be used to render it.",
+        "de": "Priorisierte Liste der Sprachen. Nur Objekte, die in diesen\nSprachen existieren, werden angezeigt (außer ShowUntranslatedObjects ist aktiviert).\nExistiert ein Objekt in mehreren Sprachen, wird die zum Rendern verwendet, die in\nSiteLanguageList zuerst steht."
+    },
+    "ini:settings/site.ini [RegionalSettings] SystemLocale": {
+        "en": "Set this if you want to run the entire PHP system in a given\nlocale, this means that PHP will be locale aware when dealing\nwith strings (e.g making characters in a string into lowercase). (C is a\nspecial locale meaning 7-bit ASCII). Examples for this setting include\n\"german\", \"de_DE.ISO-8859-1\"; depending on your operating system.",
+        "de": "Setzen Sie dies, wenn Sie das ganze PHP-System in einer bestimmten\nLocale ausführen wollen; PHP berücksichtigt die Locale dann beim Umgang\nmit Zeichenketten (z. B. beim Umwandeln von Zeichen in Kleinbuchstaben). (C ist eine\nbesondere Locale und bedeutet 7-Bit-ASCII). Beispiele für diese Einstellung sind\n\"german\", \"de_DE.ISO-8859-1\"; abhängig von Ihrem Betriebssystem."
+    },
+    "ini:settings/site.ini [RegionalSettings] TextTranslation": {
+        "en": "Use either disabled to disable all text translation (faster) or enabled.\nText translation is automatically disabled when the Locale is set to eng-GB",
+        "de": "Verwenden Sie disabled, um jede Textübersetzung abzuschalten (schneller), oder enabled.\nDie Textübersetzung wird automatisch abgeschaltet, wenn die Locale auf eng-GB steht"
+    },
+    "ini:settings/site.ini [RegionalSettings] TranslationCheckMTime": {
+        "en": "Sets if modified time should be checked or not on ts files when checking\nif translation cache is valid",
+        "de": "Legt fest, ob beim Prüfen der Gültigkeit des Übersetzungs-Caches\ndie Änderungszeit der ts-Dateien geprüft wird"
+    },
+    "ini:settings/site.ini [RequestLogSettings] MaskIP": {
+        "en": "enabled (the default): the address of the client is written with its host\npart hidden (203.0.x.x, 2001:db8:x:x), never in full.",
+        "de": "enabled (der Standard): Die Adresse des Clients wird mit verborgenem Host-\nteil geschrieben (203.0.x.x, 2001:db8:x:x), nie vollständig."
+    },
+    "ini:settings/site.ini [RequestLogSettings] MaxURILength": {
+        "en": "The longest address written; a longer one is cut and ends in \"...\". The\nvalues of the query are always written as ***.",
+        "de": "Die längste geschriebene Adresse; eine längere wird abgeschnitten und endet auf \"...\". Die\nWerte der Query werden immer als *** geschrieben."
+    },
+    "ini:settings/site.ini [RequestLogSettings] NotFoundLog": {
+        "en": "A request for a page that does not exist (404, 410) is written as one line\nin its own log beside error.log, with the reason the kernel found: an\nundefined module or view, a module or view this siteaccess switches off, a\nnode or object that is not there. A request the request classifier names a\nprobe or attack is written to security.log instead (requestclassifier.ini),\nnever to both. Answers 401 and 403 stay notices in notice.log.\nenabled (the default): 404s go to NotFoundLogFile and no longer to error.log,\nwhich keeps the real faults. disabled: error.log as before.",
+        "de": "Eine Anfrage nach einer Seite, die es nicht gibt (404, 410), wird als eine Zeile\nin ein eigenes Log neben error.log geschrieben, mit dem Grund, den der Kernel gefunden hat: ein\nnicht definiertes Modul oder eine nicht definierte Ansicht, ein Modul oder eine Ansicht, die dieser Siteaccess abschaltet, ein\nKnoten oder Objekt, das nicht da ist. Eine Anfrage, die der Anfrage-Klassifizierer als\nSondierung oder Angriff einstuft, wird stattdessen in security.log geschrieben (requestclassifier.ini),\nnie in beide. Antworten 401 und 403 bleiben notices in notice.log.\nenabled (der Standard): 404 gehen nach NotFoundLogFile und nicht mehr nach error.log,\ndas die echten Fehler behält. disabled: error.log wie bisher."
+    },
+    "ini:settings/site.ini [RequestLogSettings] NotFoundLogFile": {
+        "en": "The file in the log directory (var/log, or the site's log directory with\n[FileSettings] UseGlobalLogDir=disabled). Rotated as the other logs are.",
+        "de": "Die Datei im Log-Verzeichnis (var/log oder das Log-Verzeichnis der Website mit\n[FileSettings] UseGlobalLogDir=disabled). Wird wie die anderen Logs rotiert."
+    },
+    "ini:settings/site.ini [RoleSettings] AccessArrayPrefetch": {
+        "en": "How the access array of a user is built when the role cache is rebuilt.\nenabled loads the policies, limitations and values of all the user's roles in\nthree queries and computes the limitations of a policy once for all the\nassignments of its role (a member of 120 teamrooms has every policy of the\nmember role 120 times). disabled asks the database once for every role, policy\nand limitation, as before. The access array is the same either way, in the same\norder.",
+        "de": "Wie das Zugriffs-Array eines Benutzers aufgebaut wird, wenn der Rollen-Cache neu aufgebaut wird.\nenabled lädt die Richtlinien, Einschränkungen und Werte aller Rollen des Benutzers in\ndrei Abfragen und berechnet die Einschränkungen einer Richtlinie einmal für alle\nZuweisungen ihrer Rolle (ein Mitglied von 120 Teamräumen hat jede Richtlinie der\nMitgliederrolle 120-mal). disabled fragt die Datenbank wie bisher einmal für jede Rolle, Richtlinie\nund Einschränkung. Das Zugriffs-Array ist in beiden Fällen gleich, in derselben\nReihenfolge."
+    },
+    "ini:settings/site.ini [RoleSettings] AssignmentsPerPage": {
+        "en": "How many of the users and user groups a role is assigned to role/view shows\nat once, sorted by name and paged on (assignment_offset). A role given to\nthousands of users took long to draw. 0 lists all of them on one page.",
+        "de": "Wie viele der Benutzer und Benutzergruppen, denen eine Rolle zugewiesen ist, role/view\nauf einmal zeigt, nach Namen sortiert und weitergeblättert (assignment_offset). Eine Rolle, die\nTausenden von Benutzern gegeben wurde, brauchte lange zum Zeichnen. 0 listet alle auf einer Seite auf."
+    },
+    "ini:settings/site.ini [RoleSettings] LimitationHandlers": {
+        "en": "Handlers of content policy limitations the kernel does not know itself, one\nclass per limitation name; the class implements ezpContentLimitationHandler.\nAn extension that adds a limitation to a content function (event filter\nmodule/functionlist) registers its handler here. A limitation without a\nhandler denies: in checkAccess() and in the SQL of list and tree fetches.\nLimitationHandlers[MyLimitation]=myLimitationHandler",
+        "de": "Handler für Einschränkungen von Inhaltsrichtlinien, die der Kernel selbst nicht kennt, eine\nKlasse pro Einschränkungsname; die Klasse implementiert ezpContentLimitationHandler.\nEine Erweiterung, die einer Inhaltsfunktion eine Einschränkung hinzufügt (Event-Filter\nmodule/functionlist), registriert ihren Handler hier. Eine Einschränkung ohne\nHandler verweigert: in checkAccess() und im SQL von Listen- und Baum-Fetches.\nLimitationHandlers[MyLimitation]=myLimitationHandler"
+    },
+    "ini:settings/site.ini [RoleSettings] MaxParentDepthLimitation": {
+        "en": "Specifies max level for the 'ParentDepth' limitation.",
+        "de": "Gibt die höchste Ebene für die Einschränkung 'ParentDepth' an."
+    },
+    "ini:settings/site.ini [RoleSettings] PermissionSQLOptimization": {
+        "en": "How the permission condition of a content fetch is built from the read policies\nof the user. enabled merges the policies that differ only in the subtree their\nrole is assigned for (a member of 120 teamrooms has every read policy of the\nmember role 120 times) and leaves out those that cannot give access to a node\nthe fetch returns: subtrees outside the fetched one, classes outside its class\nfilter. The fetch returns the same nodes. disabled ORs every policy as before;\nSQLite refuses that condition from 1000 policies on.",
+        "de": "Wie die Berechtigungsbedingung eines Inhalts-Fetches aus den Leserichtlinien\ndes Benutzers aufgebaut wird. enabled fasst die Richtlinien zusammen, die sich nur im Teilbaum unterscheiden, für den ihre\nRolle zugewiesen ist (ein Mitglied von 120 Teamräumen hat jede Leserichtlinie der\nMitgliederrolle 120-mal), und lässt die weg, die keinen Zugriff auf einen Knoten geben können,\nden der Fetch zurückgibt: Teilbäume außerhalb des abgerufenen, Klassen außerhalb seines Klassen-\nfilters. Der Fetch gibt dieselben Knoten zurück. disabled verknüpft wie bisher jede Richtlinie mit OR;\nSQLite lehnt diese Bedingung ab 1000 Richtlinien ab."
+    },
+    "ini:settings/site.ini [RoleSettings] PoliciesPerPage": {
+        "en": "How many policies a screen shows at once.\n\nA role's policy list is paged. $role.policies is every policy the role has,\nwhich the permission system needs and a screen does not: on an installation\nwhose roles carry policies in the millions, loading them all to draw a\nscreenful exhausts memory before the first row is written.",
+        "de": "Wie viele Richtlinien eine Ansicht auf einmal zeigt.\n\nDie Richtlinienliste einer Rolle wird geblättert. $role.policies ist jede Richtlinie, die die Rolle hat,\nwas das Berechtigungssystem braucht und eine Ansicht nicht: In einer Installation,\nderen Rollen Millionen von Richtlinien tragen, erschöpft das Laden aller, um eine\nBildschirmseite zu zeichnen, den Speicher, bevor die erste Zeile geschrieben ist."
+    },
+    "ini:settings/site.ini [RoleSettings] PolicyOmitList": {
+        "en": "A list of modules to omit policy checking on,\nYou should add 'role' to the list if you loose\naccess to the role module\nYou can also specify views by adding a / and the viewname\nThis is a fake omission: we need a manual policy check, therefore implemented directly in oauth/authorize.php\nOrder receipts decide for themselves: the customer who placed the order, or\nshop/administrate (eZShopReceipt::canView); everyone else gets the login form.\nE-mail preferences: settings and export check the login themselves, manage,\nunsubscribe and confirm work with a signed link, request sends one.\nAPI access: apikey/list checks for itself (signed in to see and revoke one's own keys,\napikey/create to make one).\nadmin4's mega menu: user/megamenu checks for itself (a signed-in user who may log in to the\nsiteaccess, user/login with its SiteAccess limitation, and the tab open to that user), so every\nrefusal is a bare 403 for its script instead of a page.\nThe reports of the Content Security Policy come from browsers, signed in or not; csp/report protects itself\n(content types, size, rate limits, masked log lines).",
+        "de": "Eine Liste der Module, bei denen die Richtlinienprüfung ausgelassen wird;\nfügen Sie 'role' der Liste hinzu, wenn Sie den\nZugriff auf das Modul role verlieren\nSie können auch Ansichten angeben, indem Sie ein / und den Namen der Ansicht anhängen\nDies ist eine scheinbare Auslassung: Wir brauchen eine manuelle Richtlinienprüfung, daher direkt in oauth/authorize.php umgesetzt\nBestellbelege entscheiden selbst: der Kunde, der die Bestellung aufgegeben hat, oder\nshop/administrate (eZShopReceipt::canView); alle anderen erhalten das Anmeldeformular.\nE-Mail-Einstellungen: settings und export prüfen die Anmeldung selbst, manage,\nunsubscribe und confirm arbeiten mit einem signierten Link, request sendet einen.\nAPI-Zugang: apikey/list prüft selbst (angemeldet, um eigene Schlüssel zu sehen und zu widerrufen,\napikey/create, um einen zu erstellen).\nDas Mega-Menü von admin4: user/megamenu prüft selbst (ein angemeldeter Benutzer, der sich am\nSiteaccess anmelden darf, user/login mit seiner Einschränkung SiteAccess, und der für diesen Benutzer offene Reiter), sodass jede\nAblehnung für sein Skript ein bloßes 403 statt einer Seite ist.\nDie Berichte der Content Security Policy kommen von Browsern, angemeldet oder nicht; csp/report schützt sich selbst\n(Inhaltstypen, Größe, Ratenbegrenzung, maskierte Logzeilen)."
+    },
+    "ini:settings/site.ini [RoleSettings] PolicyOmitListExclude": {
+        "en": "Entries taken out of PolicyOmitList[] after every settings file is merged, so a site can\nclose one entry without resetting the list (a reset would also drop the entries the active\nextensions add). New installations write PolicyOmitListExclude[]=user/register in\nsettings/override/site.ini.append.php: registering then needs the user/register policy,\nwhich their Anonymous role has (remove it there to close registration), and the login\npages show the \"register\" link only to a user who has it. An upgraded site keeps user/register open;\nto close it, add the line above to settings/override/site.ini.append.php.",
+        "de": "Einträge, die nach dem Zusammenführen jeder Einstellungsdatei aus PolicyOmitList[] entfernt werden, sodass eine Website\neinen Eintrag schließen kann, ohne die Liste zurückzusetzen (ein Zurücksetzen würde auch die Einträge verwerfen, die die aktiven\nErweiterungen hinzufügen). Neue Installationen schreiben PolicyOmitListExclude[]=user/register in\nsettings/override/site.ini.append.php: Die Registrierung braucht dann die Richtlinie user/register,\ndie ihre Rolle Anonymous hat (entfernen Sie sie dort, um die Registrierung zu schließen), und die Anmelde-\nseiten zeigen den Link „Registrieren“ nur einem Benutzer, der sie hat. Eine aktualisierte Website lässt user/register offen;\num es zu schließen, fügen Sie die Zeile oben in settings/override/site.ini.append.php hinzu."
+    },
+    "ini:settings/site.ini [RoleSettings] PolicyPreviewPerRole": {
+        "en": "How many of a role's policies the summary window on a user or user group\nshows before it stops and links to the role. That window lists every role the\nuser has, so it is the product of two lists rather than one.",
+        "de": "Wie viele Richtlinien einer Rolle das Zusammenfassungsfenster eines Benutzers oder einer Benutzergruppe\nzeigt, bevor es aufhört und auf die Rolle verlinkt. Dieses Fenster listet jede Rolle des\nBenutzers auf, es ist also das Produkt zweier Listen statt einer."
+    },
+    "ini:settings/site.ini [RoleSettings] PreventPrivilegeEscalation": {
+        "en": "Whether a user who may edit roles can give more than they have themselves.\nenabled (the default) refuses, in the role editor, the policy wizard, the\npolicy editor, role/copy and role/assign, any policy or assignment that is\nbroader than the editor's own access: a policy must be covered by one of the\neditor's policies (module, function and every limitation of that policy, a\nsubtree inside one of its subtrees, sections, classes, nodes, languages and\nother values among its values), and a role may only be assigned when the\neditor covers every policy of it, narrowed by the assignment's limitation.\nUsers with access to every function of every module may grant anything.\ndisabled gives back the old behaviour: role editors may grant anything.",
+        "de": "Ob ein Benutzer, der Rollen bearbeiten darf, mehr vergeben kann, als er selbst hat.\nenabled (der Standard) lehnt im Rolleneditor, im Richtlinienassistenten, im\nRichtlinieneditor, in role/copy und role/assign jede Richtlinie oder Zuweisung ab, die\nweiter reicht als der eigene Zugriff des Bearbeiters: Eine Richtlinie muss von einer der\nRichtlinien des Bearbeiters abgedeckt sein (Modul, Funktion und jede Einschränkung dieser Richtlinie, ein\nTeilbaum innerhalb eines ihrer Teilbäume, Sektionen, Klassen, Knoten, Sprachen und\nandere Werte unter ihren Werten), und eine Rolle darf nur zugewiesen werden, wenn der\nBearbeiter jede ihrer Richtlinien abdeckt, eingegrenzt durch die Einschränkung der Zuweisung.\nBenutzer mit Zugriff auf jede Funktion jedes Moduls dürfen alles vergeben.\ndisabled stellt das alte Verhalten wieder her: Rolleneditoren dürfen alles vergeben."
+    },
+    "ini:settings/site.ini [RoleSettings] RolesPerPageList": {
+        "en": "The page sizes the role list offers in its items per page selector.\n\nThe stored preference is the position in this list, counting from one, so a\nsite that changes these keeps everyone's choice rather than resetting it -\nand the old 1, 2 and 3 still mean the first, second and third entry.",
+        "de": "Die Seitengrößen, die die Rollenliste in ihrer Auswahl für Einträge pro Seite anbietet.\n\nDie gespeicherte Einstellung ist die Position in dieser Liste, ab eins gezählt, sodass eine\nWebsite, die diese ändert, die Wahl aller behält statt sie zurückzusetzen,\nund die alten 1, 2 und 3 bedeuten weiterhin den ersten, zweiten und dritten Eintrag."
+    },
+    "ini:settings/site.ini [RoleSettings] ShowAccessDeniedReason": {
+        "en": "Should we try to show reason for access denied in view",
+        "de": "Ob versucht wird, in der Ansicht den Grund für einen verweigerten Zugriff zu zeigen"
+    },
+    "ini:settings/site.ini [RunnableSettings] Implementation": {
+        "en": "Commands (bin/), cronjob parts (cronjobs/) and module views are classes that extend\nExponential\\Runnable\\Command, CronjobPart or ModuleView.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md\n\nRe-implementation: the class to create instead of a runnable class. It must extend\nthe class it replaces; an entry naming anything else is ignored.\nImplementation[<runnable class>]=<subclass>\neg:\nImplementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView\nImplementation[Exponential\\Command\\Kernel\\Trashpurge]=myTrashpurgeCommand",
+        "de": "Befehle (bin/), Cronjob-Teile (cronjobs/) und Modulansichten sind Klassen, die\nExponential\\Runnable\\Command, CronjobPart oder ModuleView erweitern.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md\n\nNeuimplementierung: die Klasse, die statt einer Runnable-Klasse erzeugt wird. Sie muss\ndie Klasse erweitern, die sie ersetzt; ein Eintrag, der etwas anderes nennt, wird ignoriert.\nImplementation[<runnable class>]=<subclass>\nz. B.:\nImplementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView\nImplementation[Exponential\\Command\\Kernel\\Trashpurge]=myTrashpurgeCommand"
+    }
+}

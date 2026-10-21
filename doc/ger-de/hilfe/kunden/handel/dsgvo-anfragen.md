@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für den Eigentümer oder die Person, die Datenschutzanfragen beantwortet, in einer Organisation, die mit
 Exponential verkauft. Sie gibt eine Routine für Anfragen von Kunden zu ihren personenbezogenen Daten vor und nennt für
 jede Art von Anfrage die Werkzeuge, die die Software bietet. Einen Überblick über die Verordnung finden Sie unter
-[DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md), und eine Übersicht, wo Daten gespeichert werden, unter
-[Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md).
+[DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md), und eine Übersicht, wo Daten gespeichert werden, unter
+[Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md).
 
 > **Warnung**
 > Keine Rechtsberatung. Ob und wie Sie eine Anfrage beantworten müssen, in welcher Frist und was Sie aufbewahren dürfen,
@@ -37,18 +37,18 @@ Verwenden Sie für jede Anfrage die [Vorlage für ein DSGVO-Anfragenprotokoll](v
 |---|---|---|
 | Ihre Daten einsehen | Für E-Mail-Daten: der eigene Download der Person, oder `./console exp:mail:preferences export`; Prüfprotokoll-Einträge zu einem Benutzer: `exp:audit export --subject-user=<id>`; Bestellungen: **Shop > Kunden** und die Bestellansicht des Kunden; Belege können als Datei heruntergeladen werden | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md), `kernel/shop/module.php` |
 | Ihre Daten berichtigen | Der Kunde bearbeitet sein eigenes Konto; Mitarbeitende bearbeiten den Benutzer unter **Benutzer** | [Konten und Anmeldung](../../konten-und-anmeldung.md) |
-| Ihre Daten mitnehmen | „Meine E-Mail-Daten herunterladen“ in JSON und CSV für E-Mail-Daten | [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md) |
+| Ihre Daten mitnehmen | „Meine E-Mail-Daten herunterladen“ in JSON und CSV für E-Mail-Daten | [DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md) |
 | Ihre Daten löschen | E-Mail-Daten: `exp:mail:preferences erase`; das Konto: den Benutzer entfernen (endgültig, löscht auch die E-Mail-Einstellungen); Formulardaten: **Setup > Gesammelte Informationen**; Bestellungen: archivieren oder entfernen | [Datenexport und Löschung](datenexport-und-loeschung.md) |
-| Werbung beenden | Der Link „alle optionalen E-Mails abbestellen“, oder `exp:mail:suppression add` | [Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md) |
+| Werbung beenden | Der Link „alle optionalen E-Mails abbestellen“, oder `exp:mail:suppression add` | [Einwilligung und Formulare](../../unternehmen/sicherheit/einwilligung-und-formulare.md) |
 
 Bestelldaten, Abonnentendatensätze des Newsletters in `cjw_newsletter` und Kopien in Backups werden nicht von einem
-einzigen Befehl erfasst ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)). Planen Sie jeden dieser
+einzigen Befehl erfasst ([DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md)). Planen Sie jeden dieser
 Punkte mit Ihrer Beratung und Ihrem Hoster.
 
 ## Bestellungen sind ein Sonderfall
 
 Bestellungen enthalten den Namen des Kunden, seine E-Mail-Adresse und die an der Kasse eingegebene Adresse
-([Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)). Gleichzeitig
+([Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)). Gleichzeitig
 können buchhalterische und steuerliche Vorschriften verlangen, dass Sie Bestellunterlagen über Jahre aufbewahren.
 Entscheiden Sie mit Ihrer Beratung, bevor die erste Anfrage eintrifft, was Sie mit Bestellungen tun, wenn jemand die
 Löschung verlangt:
@@ -67,7 +67,7 @@ Löschung verlangt:
 5. **Handeln** Sie: exportieren, berichtigen oder löschen, wie entschieden.
 6. **Antworten** Sie der Person.
 7. **Räumen** Sie auf: Löschen Sie Exportdateien, sobald die Anfrage erledigt ist; sie enthalten personenbezogene
-   Daten ([Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+   Daten ([Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 8. **Schließen** Sie den Protokolleintrag mit dem Datum und dem, was getan wurde.
 
 > **Tipp**
@@ -78,13 +78,13 @@ Löschung verlangt:
 
 Das Prüfprotokoll ist eine Hash-Kette, daher werden einzelne Einträge nicht gelöscht; personenbezogene Felder in
 seinem Index werden nach einer festgelegten Zeit pseudonymisiert
-([Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)). Ob das in Ihrem Fall
+([Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)). Ob das in Ihrem Fall
 eine Löschanfrage erfüllt, ist eine Rechtsfrage für Ihre Beratung.
 
 ## Verwandte Seiten
 
 - [Vorlage für ein DSGVO-Anfragenprotokoll](vorlage-dsgvo-anfragenprotokoll.md)
 - [Datenexport und Löschung](datenexport-und-loeschung.md)
-- [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)
-- [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)
+- [DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md)
+- [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

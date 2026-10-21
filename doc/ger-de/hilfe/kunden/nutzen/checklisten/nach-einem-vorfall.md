@@ -13,7 +13,7 @@ Diese Seite ist die Checkliste für den Betreiber, sobald das unmittelbare Probl
 erreichbar, Inhalte gingen verloren oder wurden geändert, ein Update ging schief, oder jemand ist möglicherweise
 eingedrungen. Die Arbeit während des Vorfalls gehört Ihrem Hoster oder Partner und ihren Runbooks; diese Seite handelt
 von den Tagen danach, damit dasselbe nicht wieder geschieht. Das allgemeine Vorgehen für kleine Teams steht unter
-[Vorfallreaktion für kleine Teams](../../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md).
+[Vorfallreaktion für kleine Teams](../../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md).
 
 ## Die Checkliste
 
@@ -93,7 +93,7 @@ Reported to the project: no / bug # ______ / security report sent ________
 
 ## Verwandte Seiten
 
-- [Vorfallreaktion für kleine Teams](../../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)
+- [Vorfallreaktion für kleine Teams](../../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)
 - [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md)
 - [Tägliche Checkliste](taeglich.md)
 - [Checklisten für Betreiber](README.md)

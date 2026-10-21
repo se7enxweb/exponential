@@ -39,7 +39,7 @@ Inhaltsmodell, Einstellungen und den Server.
    eigener Schätzung“ ([Schätzen und Abgrenzen mit Erweiterungen](../../fuehrung/schaetzen-und-abgrenzen-mit-erweiterungen.md)).
 2. **Genehmigung** durch die in Ihrem Vertrag genannte Person.
 3. **Gebaut und getestet auf einer Kopie** der Website, nie zuerst auf der Live-Website
-   ([Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md)).
+   ([Unterbrechungsfreie Deployments](../../unternehmen/zuverlaessigkeit/unterbrechungsfreie-deployments.md)).
 4. **Sie prüfen es** auf der Kopie anhand Ihrer Abnahmeprüfung.
 5. **Ein Probelauf des Deployments.** Der Deployment-Befehl kann jeden Schritt ausgeben, ohne etwas zu ändern; der
    Leitfaden für Unternehmen sagt, „verlangen Sie, dass er Teil jeder Änderungsanfrage ist“ (dieselbe Seite).
@@ -57,7 +57,7 @@ Import, brauchen die Website möglicherweise kurz offline; fragen Sie, ob Ihre d
 ## Jede Änderung lässt sich rückgängig machen
 
 Fragen Sie vor der Genehmigung: „Wie kommen wir zurück?“ Die Regel für Unternehmen lautet, dass „die vorherige Version
-des Codes in Git liegt und ein Backup existiert, wenn sich die Datenbank ändert“ ([Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md)).
+des Codes in Git liegt und ein Backup existiert, wenn sich die Datenbank ändert“ ([Unterbrechungsfreie Deployments](../../unternehmen/zuverlaessigkeit/unterbrechungsfreie-deployments.md)).
 
 ## Ein Anfrageformular zum Kopieren
 
@@ -85,5 +85,5 @@ Live:                ____ (date, time)   Checked by: ____
 
 - [Wer was macht](wer-was-macht.md)
 - [Was Sie Ihren Partner fragen sollten](../gesund-halten/was-sie-ihren-partner-fragen-sollten.md)
-- [Vorschau vor dem Veröffentlichen](../../../../eng-us/help/businesses/reliability/preview-before-you-publish.md)
+- [Vorschau vor dem Veröffentlichen](../../unternehmen/zuverlaessigkeit/vorschau-vor-dem-veroeffentlichen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

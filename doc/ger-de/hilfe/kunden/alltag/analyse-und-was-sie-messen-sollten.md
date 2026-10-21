@@ -96,5 +96,5 @@ Vergleichen Sie jede Zahl mit demselben Monat davor; die erste Messung ist Ihr A
 
 - [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md)
 - [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)
-- [Shop-Dashboard und Berichte](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md)
+- [Shop-Dashboard und Berichte](../../unternehmen/shops/shop-uebersicht-und-berichte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

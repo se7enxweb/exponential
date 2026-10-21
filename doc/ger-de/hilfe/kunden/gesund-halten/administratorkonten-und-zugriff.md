@@ -50,7 +50,7 @@ Ihr Hoster und Ihr Partner haben möglicherweise Administratorkonten auf Ihrer W
 - [ ] Wenn der Vertrag endet, werden ihre Konten deaktiviert; die Checkliste für das Ausscheiden von Kunden für Hoster
       sagt, „dem Kunden mitzuteilen, welche Konten die eigenen waren“ ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)).
 - [ ] Hosting-Konten, die Domain und der Administratorzugang gehören Ihnen oder werden auf Anfrage übergeben
-      ([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)).
+      ([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)).
 
 ## Wenn Personal kommt oder geht
 
@@ -68,7 +68,7 @@ deaktiviert oder gesperrt sind oder sich einen Benutzernamen oder eine E-Mail-Ad
 ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)). Bitten Sie Ihren Administrator, die Liste jedes
 Quartal durchzugehen, zusammen mit den Zuweisungen der Rolle Administrator, und Ihnen die vorgenommenen Änderungen zu
 schicken. Eine jährliche, gründlichere Fassung mit einem Protokoll zum Aufbewahren steht unter
-[Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md).
+[Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md).
 
 > **Tipp**
 > Um zu sehen, was sich bei Zugriffen geändert hat: Das Prüfprotokoll hält Rollenzuweisungen fest und schlägt bei einer
@@ -77,7 +77,7 @@ schicken. Eine jährliche, gründlichere Fassung mit einem Protokoll zum Aufbewa
 ## Verwandte Seiten
 
 - [Sicherheitsgrundlagen](sicherheitsgrundlagen.md)
-- [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md)
+- [Benutzerkonten und Passwörter](../../unternehmen/sicherheit/benutzerkonten-und-passwoerter.md)
 - [Konten und Anmeldung](../../konten-und-anmeldung.md)
 - [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

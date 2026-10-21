@@ -1,0 +1,934 @@
+{
+    "ini:settings/content.ini": {
+        "en": "Exponential configuration file for content module\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/content.ini.append or\n      settings/override/content.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für das Modul content\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/content.ini.append oder\n      settings/override/content.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/content.ini [AlphabeticalFilterSettings] AlphabetList": {
+        "en": "ContentFilterList[]=eng-GB\nContentFilterList[]=ger-DE\nAlphabet range in unicode (range of english alphabet is between 97 and 122).\nYou can use range (e.g. 97-122) and/or sequence of letters (e.g. 248,249).",
+        "de": "ContentFilterList[]=eng-GB\nContentFilterList[]=ger-DE\nAlphabetbereich in Unicode (der Bereich des englischen Alphabets liegt zwischen 97 und 122).\nSie können einen Bereich (z. B. 97-122) und/oder eine Folge von Buchstaben (z. B. 248,249) verwenden."
+    },
+    "ini:settings/content.ini [AlphabeticalFilterSettings] ContentFilterList": {
+        "en": "List of alphabets that will be used in alphabetical navigation.\nAlphabets will be fetched from AlphabetList[<name of alphabet>]\nFor example:\n    ContentFilterList[]=<name of alphabet>\nIf array is empty means the alphabetical navigation will be disabled.\nNote: This is currently implemented in new admin interface, as it was in the old one,\nas a full refresh of the page. It might be enhanced by Ajax calls in the future.",
+        "de": "Liste der Alphabete, die in der alphabetischen Navigation verwendet werden.\nDie Alphabete werden aus AlphabetList[<name of alphabet>] geholt\nZum Beispiel:\n    ContentFilterList[]=<name of alphabet>\nIst das Array leer, ist die alphabetische Navigation deaktiviert.\nHinweis: Dies ist in der neuen Administrationsoberfläche derzeit wie in der alten\nals vollständiges Neuladen der Seite umgesetzt. Es könnte künftig durch Ajax-Aufrufe verbessert werden."
+    },
+    "ini:settings/content.ini [AlphabeticalFilterSettings] EnableUnusedLetters": {
+        "en": "If true unused letters in alphabetical navigation (when browsing or fetching subitems)\nwill be disabled.\nFor example:\nif there are no objects with 'a' first letter in the object name 'a' letter will be disabled in alphabetical navigation.",
+        "de": "Wenn true, werden ungenutzte Buchstaben in der alphabetischen Navigation (beim Durchsuchen oder Abrufen von Unterelementen)\ndeaktiviert.\nZum Beispiel:\nGibt es keine Objekte, deren Name mit 'a' beginnt, wird der Buchstabe 'a' in der alphabetischen Navigation deaktiviert."
+    },
+    "ini:settings/content.ini [ClassAttributeSettings] CategoryList": {
+        "en": "List of attribute categories, by default used for grouping\nattributes in edit interface.\nKey is identifier and value is used in UI as name\nNote: Limit on identifier is 25 charters!",
+        "de": "Liste der Attributkategorien, standardmäßig zum Gruppieren\nder Attribute in der Bearbeitungsoberfläche verwendet.\nDer Schlüssel ist der Bezeichner, der Wert wird in der Oberfläche als Name verwendet\nHinweis: Der Bezeichner ist auf 25 Zeichen begrenzt!"
+    },
+    "ini:settings/content.ini [ClassAttributeSettings] DefaultCategory": {
+        "en": "Default Category for attributes without or with invalid category\nNote: Must be defined in CategoryList!",
+        "de": "Standardkategorie für Attribute ohne oder mit ungültiger Kategorie\nHinweis: Muss in CategoryList definiert sein!"
+    },
+    "ini:settings/content.ini [ClassSettings] ApplyButton": {
+        "en": "Controls the presence of the \"Apply\" button in class edit mode.",
+        "de": "Steuert, ob es beim Bearbeiten einer Klasse die Schaltfläche „Anwenden“ gibt."
+    },
+    "ini:settings/content.ini [ClassSettings] DraftTimeout": {
+        "en": "Number of seconds to wait before removing class edit lock.",
+        "de": "Sekunden, bis die Bearbeitungssperre einer Klasse entfernt wird."
+    },
+    "ini:settings/content.ini [ContentJobSettings] BatchPause": {
+        "en": "Pause between batches in milliseconds (0 = none), to leave room for other writers.",
+        "de": "Pause zwischen den Stapeln in Millisekunden (0 = keine), um anderen Schreibern Raum zu lassen."
+    },
+    "ini:settings/content.ini [ContentJobSettings] BatchSize": {
+        "en": "Nodes per batch (one transaction each).",
+        "de": "Knoten pro Stapel (jeder eine Transaktion)."
+    },
+    "ini:settings/content.ini [ContentJobSettings] JobTypes": {
+        "en": "The job types: JobTypes[<name>]=<class implementing expContentJobType>.\nA package install in the background (Setup > Packages > Install, \"Install in the background\"), doc/eng-us/bc/6.0/package-json-format.md\nAn export of the audit console in the background (Audit > Export, \"Export in the background\"), doc/eng-us/bc/6.0/audit.md",
+        "de": "Die Auftragstypen: JobTypes[<name>]=<class implementing expContentJobType>.\nEine Paketinstallation im Hintergrund (Setup > Pakete > Installieren, „Im Hintergrund installieren“), doc/eng-us/bc/6.0/package-json-format.md\nEin Export der Audit-Konsole im Hintergrund (Audit > Export, „Im Hintergrund exportieren“), doc/eng-us/bc/6.0/audit.md"
+    },
+    "ini:settings/content.ini [ContentJobSettings] KeepDays": {
+        "en": "Finished (done or cancelled) jobs are removed by the cronjob part after this many days. 0 = never.",
+        "de": "Abgeschlossene (fertige oder abgebrochene) Aufträge entfernt der Cronjob-Teil nach so vielen Tagen. 0 = nie."
+    },
+    "ini:settings/content.ini [ContentJobSettings] MaxAttempts": {
+        "en": "A job whose worker is started this many times without finishing one batch is failed (with the\nlast error) instead of being retried for ever. Resume it once the cause is fixed.",
+        "de": "Ein Auftrag, dessen Worker so oft gestartet wird, ohne einen Stapel abzuschließen, wird als fehlgeschlagen markiert (mit dem\nletzten Fehler), statt endlos wiederholt zu werden. Setzen Sie ihn fort, sobald die Ursache behoben ist."
+    },
+    "ini:settings/content.ini [ContentJobSettings] NowLimit": {
+        "en": "\"Now\" is refused above this number of nodes, with a message to run it as a job. 0 = no ceiling.",
+        "de": "„Jetzt“ wird über dieser Zahl von Knoten abgelehnt, mit dem Hinweis, es als Auftrag auszuführen. 0 = keine Obergrenze."
+    },
+    "ini:settings/content.ini [ContentJobSettings] PhpBinary": {
+        "en": "The PHP command line binary for the worker; empty = the PHP running the request (PHP_BINDIR/php).",
+        "de": "Die PHP-Kommandozeilen-Binärdatei für den Worker; leer = das PHP, das die Anfrage ausführt (PHP_BINDIR/php)."
+    },
+    "ini:settings/content.ini [ContentJobSettings] QueuedGrace": {
+        "en": "A queued job whose worker has not started within this many seconds is started by the cronjob\npart 'contentjobs' (frequent group); a running job whose worker died is started at once.",
+        "de": "Einen wartenden Auftrag, dessen Worker nicht innerhalb so vieler Sekunden gestartet ist, startet der Cronjob-Teil\n'contentjobs' (Gruppe frequent); ein laufender Auftrag, dessen Worker gestorben ist, wird sofort gestartet."
+    },
+    "ini:settings/content.ini [ContentJobSettings] QueuedTimeout": {
+        "en": "A queued job that no worker started within this many seconds (no cronjob runs, the start was lost) fails\nand gives back its locks if it has done nothing yet, so it never blocks a subtree; resume it to try again.\nA worker that cannot be started at all fails the job at once, with the reason. 0 = never expire.",
+        "de": "Ein wartender Auftrag, den innerhalb so vieler Sekunden kein Worker gestartet hat (keine Cronjob-Läufe, der Start ging verloren), schlägt fehl\nund gibt seine Sperren zurück, wenn er noch nichts getan hat, sodass er nie einen Teilbaum blockiert; setzen Sie ihn fort, um es erneut zu versuchen.\nEin Worker, der gar nicht gestartet werden kann, lässt den Auftrag sofort fehlschlagen, mit dem Grund. 0 = läuft nie ab."
+    },
+    "ini:settings/content.ini [ContentJobSettings] SynchronousLimit": {
+        "en": "Content jobs: large subtree removes (content/removeobject, content/removenode) and subtree copies\n(content/copysubtree) run in batches in a background worker instead of in the web request, so they\nnever fail from a request time limit, a memory limit or one huge transaction. Each batch is a\ntransaction of its own, followed by a checkpoint: a job resumes where it stopped after any\ninterruption (kill -9 included). Classes in kernel/classes/contentjob/; the command\nbin/php/expcontentjob.php (./console exp:expcontentjob list|show|run|resume|cancel|remove|copy).\nJobs live in var/<site var dir>/jobs/content/ (a cluster needs a shared var directory for them).\n\nThe user chooses per operation whether it runs now (in the request) or as a background job; this\nsets the choice offered first: below this number of nodes \"now\", from it on \"job\". 0 = \"job\" always.",
+        "de": "Inhaltsaufträge: Das Entfernen großer Teilbäume (content/removeobject, content/removenode) und das Kopieren von Teilbäumen\n(content/copysubtree) läuft stapelweise in einem Hintergrund-Worker statt in der Web-Anfrage, sodass es\nnie an einer Zeitgrenze der Anfrage, einer Speichergrenze oder einer riesigen Transaktion scheitert. Jeder Stapel ist eine\neigene Transaktion, gefolgt von einem Prüfpunkt: Ein Auftrag macht nach jeder\nUnterbrechung (auch kill -9) dort weiter, wo er aufgehört hat. Klassen in kernel/classes/contentjob/; der Befehl\nbin/php/expcontentjob.php (./console exp:expcontentjob list|show|run|resume|cancel|remove|copy).\nAufträge liegen in var/<site var dir>/jobs/content/ (ein Cluster braucht dafür ein gemeinsames var-Verzeichnis).\n\nDer Benutzer wählt pro Operation, ob sie jetzt (in der Anfrage) oder als Hintergrundauftrag läuft; dies\nlegt die zuerst angebotene Wahl fest: unter dieser Zahl von Knoten „jetzt“, ab ihr „Auftrag“. 0 = immer „Auftrag“."
+    },
+    "ini:settings/content.ini [ContentOverrideSettings] EnableClassGroupOverride": {
+        "en": "Set this to true if you would like to do an override\nbased on the class group of the content",
+        "de": "Setzen Sie dies auf true, wenn Sie ein Override\nnach der Klassengruppe des Inhalts machen wollen"
+    },
+    "ini:settings/content.ini [ContentVersionDiffSettings] UseSimplifiedXML": {
+        "en": "When enabled, diff of eZXMLText will occur in the simplified xml input format, with formatting tags.\nWhen disabled, diff of eZXMLText will occur with just plain text.",
+        "de": "Wenn aktiviert, wird der Vergleich von eZXMLText im vereinfachten XML-Eingabeformat mit Formatierungs-Tags erstellt.\nWenn deaktiviert, wird der Vergleich von eZXMLText nur mit reinem Text erstellt."
+    },
+    "ini:settings/content.ini [CopySettings] ClassRedirect": {
+        "en": "Controls where it will redirect after copying a class\nUse one of:\ngrouplist - Redirect to the main classgroup list\nclasslist - Redirect to group of the copied class\nclassedit - Redirect to edit mode of copied class\nclassview - Redirect to view mode of copied class",
+        "de": "Steuert, wohin nach dem Kopieren einer Klasse weitergeleitet wird\nVerwenden Sie eines von:\ngrouplist - zur Liste der Klassengruppen weiterleiten\nclasslist - zur Gruppe der kopierten Klasse weiterleiten\nclassedit - in den Bearbeitungsmodus der kopierten Klasse weiterleiten\nclassview - in die Ansicht der kopierten Klasse weiterleiten"
+    },
+    "ini:settings/content.ini [CopySettings] CreatorHandling": {
+        "en": "Use either user-defined, keep-unchanged or current to\nset current user as creator of copied contentobjects",
+        "de": "Verwenden Sie user-defined, keep-unchanged oder current, um\nden aktuellen Benutzer als Ersteller kopierter Inhaltsobjekte zu setzen"
+    },
+    "ini:settings/content.ini [CopySettings] MaxNodesCopySubtree": {
+        "en": "Maximum number of nodes to copy using Copy Subtree feature",
+        "de": "Höchstzahl der Knoten, die mit der Funktion Teilbaum kopieren kopiert werden"
+    },
+    "ini:settings/content.ini [CopySettings] ShowCopySubtreeNotification": {
+        "en": "Show or not copy subtree notification after copying subtree",
+        "de": "Ob nach dem Kopieren eines Teilbaums eine Benachrichtigung angezeigt wird"
+    },
+    "ini:settings/content.ini [CopySettings] TimeHandling": {
+        "en": "Use either user-defined, keep-unchanged or current",
+        "de": "Verwenden Sie user-defined, keep-unchanged oder current"
+    },
+    "ini:settings/content.ini [CopySettings] VersionHandling": {
+        "en": "Use either user-defined, last-published or all",
+        "de": "Verwenden Sie user-defined, last-published oder all"
+    },
+    "ini:settings/content.ini [CustomTagSettings] AvailableCustomTags": {
+        "en": "You can use custom tags through the <custom> tag in XML fields.\nExample: <custom name=\"sub\">Sub text</custom>",
+        "de": "Eigene Tags können Sie über das Tag <custom> in XML-Feldern verwenden.\nBeispiel: <custom name=\"sub\">Sub text</custom>"
+    },
+    "ini:settings/content.ini [CustomTagSettings] TeXSource": {
+        "en": "Custom tags whose text is TeX source (e.g. a LaTeX formula). When such a\ntext is opened in the Online Editor, it is read as TeX reads it: an unescaped\n% comment is dropped with the rest of its line, the line break and the\nindentation of the next line (otherwise the line break becomes a space and\nthe comment swallows the rest of the formula), and leading white space is\ndropped instead of being stored as a no-break space. Other custom tags only\nget their line breaks turned into spaces. None is set by default.\nTeXSource[<custom tag name>]=true",
+        "de": "Eigene Tags, deren Text TeX-Quelltext ist (z. B. eine LaTeX-Formel). Wird ein solcher\nText im Online Editor geöffnet, wird er so gelesen, wie TeX ihn liest: Ein nicht maskierter\n%-Kommentar entfällt mit dem Rest seiner Zeile, dem Zeilenumbruch und der\nEinrückung der nächsten Zeile (sonst wird der Zeilenumbruch zu einem Leerzeichen, und\nder Kommentar verschluckt den Rest der Formel), und führende Leerzeichen entfallen,\nstatt als geschützte Leerzeichen gespeichert zu werden. Bei anderen eigenen Tags werden nur\ndie Zeilenumbrüche zu Leerzeichen. Standardmäßig ist keines gesetzt.\nTeXSource[<custom tag name>]=true"
+    },
+    "ini:settings/content.ini [DataTypeSettings] ExtensionDirectories": {
+        "en": "A list of extensions which have content object datatypes\nIt's common to create a settings/content.ini.append file\nin your extension and add the extension name to automatically\nget datatypes from the extension when it's turned on.",
+        "de": "Eine Liste der Erweiterungen, die Datentypen für Inhaltsobjekte haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/content.ini.append\nan und trägt den Namen der Erweiterung ein, um automatisch\ndie Datentypen der Erweiterung zu erhalten, wenn sie eingeschaltet ist."
+    },
+    "ini:settings/content.ini [DataTypeSettings] RepositoryDirectories": {
+        "en": "A list of directories to check for datatypes",
+        "de": "Eine Liste der Verzeichnisse, in denen nach Datentypen gesucht wird"
+    },
+    "ini:settings/content.ini [DataTypeSettings] UserDataTypes": {
+        "en": "datatypes that hold user accounts\nseveral actions on user account objects (removing, moving, etc.)\nrequire clearing of the user policy cache",
+        "de": "Datentypen, die Benutzerkonten enthalten\nmehrere Aktionen an Objekten mit Benutzerkonten (Entfernen, Verschieben usw.)\nerfordern das Leeren des Caches der Benutzerrichtlinien"
+    },
+    "ini:settings/content.ini [EditSettings] AdditionalTemplates": {
+        "en": "A list of additional templates to include from content/edit.tpl template\nFor instance\nAdditionalTemplates[]=content/edit/autosave.tpl\nwill trigger the inclusion of design:content/edit/autosave.tpl",
+        "de": "Eine Liste zusätzlicher Templates, die aus dem Template content/edit.tpl eingebunden werden\nZum Beispiel\nAdditionalTemplates[]=content/edit/autosave.tpl\nbindet design:content/edit/autosave.tpl ein"
+    },
+    "ini:settings/content.ini [EditSettings] AttributeTemplates": {
+        "en": "A list of templates to include in every field of the content edit form of the admin designs\n(content/edit_attribute.tpl), with the field as $attribute and the variables of the edit form: right after the\nfield's label, or first in its block when the field has its own fieldset or is being translated. For the tools an\nextension adds to a field (expai: content/edit/expai_attribute.tpl), so they are drawn with the page and the form\ndoes not move when the scripts start.\nAttributeTemplates[]=content/edit/myextension_attribute.tpl",
+        "de": "Eine Liste von Templates, die in jedes Feld des Bearbeitungsformulars der Administrations-Designs eingebunden werden\n(content/edit_attribute.tpl), mit dem Feld als $attribute und den Variablen des Bearbeitungsformulars: direkt nach der\nBeschriftung des Feldes oder zuerst in seinem Block, wenn das Feld ein eigenes Fieldset hat oder übersetzt wird. Für die Werkzeuge, die eine\nErweiterung einem Feld hinzufügt (expai: content/edit/expai_attribute.tpl), damit sie mit der Seite gezeichnet werden und das Formular\nsich nicht verschiebt, wenn die Skripte starten.\nAttributeTemplates[]=content/edit/myextension_attribute.tpl"
+    },
+    "ini:settings/content.ini [EditSettings] ExtensionDirectories": {
+        "en": "A list of extensions containing custom content edit handlers.\nThese handler must be placed in : <extensions>/<extension-name>/content/<extension-name>handler.php\nAnd contain a class called : <extension-name>Handler, with the function : fetchInput\nThis class must implement eZContentObjectEditHandler ( kernel/classes/ezcontentobjectedithandler.php )",
+        "de": "Eine Liste der Erweiterungen mit eigenen Handlern für das Bearbeiten von Inhalten.\nDiese Handler müssen hier liegen: <extensions>/<extension-name>/content/<extension-name>handler.php\nUnd eine Klasse namens <extension-name>Handler mit der Funktion fetchInput enthalten\nDiese Klasse muss eZContentObjectEditHandler implementieren ( kernel/classes/ezcontentobjectedithandler.php )"
+    },
+    "ini:settings/content.ini [FetchFunctionSettings] InstClassListFilter": {
+        "en": "Setting used by 'can_instantiate_class_list' fetch function to hide\ncertain content classes. Supported are only content class identifiers\nFiltering is only available when 'group_by_class_group' param is used",
+        "de": "Einstellung, mit der die Fetch-Funktion 'can_instantiate_class_list'\nbestimmte Inhaltsklassen ausblendet. Unterstützt werden nur Bezeichner von Inhaltsklassen\nDas Filtern ist nur verfügbar, wenn der Parameter 'group_by_class_group' verwendet wird"
+    },
+    "ini:settings/content.ini [FetchSettings] DefaultClassFilterType": {
+        "en": "The class filter type the fetch functions content/list, content/tree,\ncontent/list_count, content/tree_count and content/calendar use when a fetch\ngives class_filter_array without class_filter_type.\nEmpty (the default): the class filter array is ignored then, as before.\ninclude: only the classes in the array; exclude: every class but those.",
+        "de": "Der Typ des Klassenfilters, den die Fetch-Funktionen content/list, content/tree,\ncontent/list_count, content/tree_count und content/calendar verwenden, wenn ein Fetch\nclass_filter_array ohne class_filter_type angibt.\nLeer (der Standard): Das Array des Klassenfilters wird dann wie bisher ignoriert.\ninclude: nur die Klassen im Array; exclude: jede Klasse außer diesen."
+    },
+    "ini:settings/content.ini [HideSettings] HideDateAttributeList": {
+        "en": "Class attribute map, describing which date/time fields to use.\nThe systems uses the class identifier to determine which classes to hide in the cronjob.",
+        "de": "Zuordnung von Klassenattributen, die festlegt, welche Datums-/Zeitfelder verwendet werden.\nDas System bestimmt über den Klassenbezeichner, welche Klassen der Cronjob verbirgt."
+    },
+    "ini:settings/content.ini [HideSettings] ReverseRelationCheck": {
+        "en": "What content/hide and \"Hide selected\" of the sub items list do before hiding a node that other objects\npoint at (what the hide takes away entirely, counted as for [RemoveSettings] ReverseRelationCheck), or whose\nobject has further locations. The hidecron cronjob is not affected. doc/eng-us/features/6.0/reverse-relation-check.md\n disabled - no check: the hide is done at once, as before\n warn     - (default) a confirmation page lists the references and the further locations first; a hide\n            without either is done as before",
+        "de": "Was content/hide und „Auswahl verbergen“ in der Liste der Unterelemente tun, bevor ein Knoten verborgen wird, auf den andere Objekte\nverweisen (was das Verbergen ganz wegnimmt, gezählt wie bei [RemoveSettings] ReverseRelationCheck) oder dessen\nObjekt weitere Platzierungen hat. Der Cronjob hidecron ist nicht betroffen. doc/eng-us/features/6.0/reverse-relation-check.md\n disabled - keine Prüfung: das Verbergen geschieht wie bisher sofort\n warn     - (Standard) eine Bestätigungsseite listet zuerst die Verweise und die weiteren Platzierungen auf; ein Verbergen\n            ohne beides geschieht wie bisher"
+    },
+    "ini:settings/content.ini [HideSettings] RootNodeList": {
+        "en": "Example:\n\nRootNodeList[]\nRootNodeList[]=2\nHideDateAttributeList[]\nHideDateAttributeList[article]=hide_date\n\nList of root nodes where nodes can be hidden.",
+        "de": "Beispiel:\n\nRootNodeList[]\nRootNodeList[]=2\nHideDateAttributeList[]\nHideDateAttributeList[article]=hide_date\n\nListe der Wurzelknoten, unter denen Knoten verborgen werden können."
+    },
+    "ini:settings/content.ini [ISBNSettings] StrictValidation": {
+        "en": "Will not validate other than registered ISBN13 ranges when this option is set to true.\nWhen the value is false, values that are outside the ISBN13 ranges, will only check the length and check digit.",
+        "de": "Wenn true, werden nur registrierte ISBN-13-Bereiche als gültig akzeptiert.\nBei false wird bei Werten außerhalb der ISBN-13-Bereiche nur die Länge und die Prüfziffer geprüft."
+    },
+    "ini:settings/content.ini [LocationsSettings] LocationsPerPage": {
+        "en": "How many locations the locations tab shows at a time.\n\nAn object can be placed in any number of locations, and a widely reused piece\nof content can reach thousands. Drawing them all meant fetching them all, and\na path lookup for every row, which took the page down before it rendered\nanything. The tab pages them; this is the page size.",
+        "de": "Wie viele Platzierungen der Reiter Platzierungen auf einmal zeigt.\n\nEin Objekt kann beliebig viele Platzierungen haben, und ein vielfach wiederverwendeter\nInhalt kann Tausende erreichen. Sie alle zu zeichnen hieß, sie alle zu holen, mit\neiner Pfadabfrage für jede Zeile, was die Seite lahmlegte, bevor sie\nirgendetwas darstellte. Der Reiter blättert sie; dies ist die Seitengröße."
+    },
+    "ini:settings/content.ini [NamePatternSettings] ResolverClasses": {
+        "en": "PHP classes a content class's object name pattern or URL alias name pattern\nmay name in braces at its start, for example {myNameResolver} or\n{myNameResolver} <title>: the class then makes the name. A listed class must\nimplement expNamePatternResolverInterface; a name that is not listed here is\nignored (and logged), and the pattern is resolved from its attribute tokens.\nEmpty by default.",
+        "de": "PHP-Klassen, die das Namensmuster für Objekte oder für URL-Aliase einer Inhaltsklasse\nam Anfang in geschweiften Klammern nennen darf, zum Beispiel {myNameResolver} oder\n{myNameResolver} <title>: Die Klasse bildet dann den Namen. Eine aufgeführte Klasse muss\nexpNamePatternResolverInterface implementieren; ein Name, der hier nicht steht, wird\nignoriert (und protokolliert), und das Muster wird aus seinen Attribut-Platzhaltern aufgelöst.\nStandardmäßig leer."
+    },
+    "ini:settings/content.ini [NodeSettings] DesignRootNode": {
+        "en": "The node ID for the design tree",
+        "de": "Die Knoten-ID des Design-Baums"
+    },
+    "ini:settings/content.ini [NodeSettings] MediaRootNode": {
+        "en": "The node ID for the media tree",
+        "de": "Die Knoten-ID des Medienbaums"
+    },
+    "ini:settings/content.ini [NodeSettings] RootNode": {
+        "en": "The node ID of the normal content tree",
+        "de": "Die Knoten-ID des normalen Inhaltsbaums"
+    },
+    "ini:settings/content.ini [NodeSettings] SetupRootNode": {
+        "en": "The node ID for the setup tree",
+        "de": "Die Knoten-ID des Setup-Baums"
+    },
+    "ini:settings/content.ini [NodeSettings] UserRootNode": {
+        "en": "The node ID of the user tree",
+        "de": "Die Knoten-ID des Benutzerbaums"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousCleanupAgeLimit": {
+        "en": "How old processes need to be in order to be cleaned (in seconds)\ndefault: 604800 (a week)",
+        "de": "Wie alt Prozesse sein müssen, um aufgeräumt zu werden (in Sekunden)\nStandard: 604800 (eine Woche)"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousCleanupInterval": {
+        "en": "How frequent the daemon cleans the queue (sleep in seconds)\ndefault: 43200 (12 hours)",
+        "de": "Wie oft der Daemon die Warteschlange aufräumt (Pause in Sekunden)\nStandard: 43200 (12 Stunden)"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousPollingInterval": {
+        "en": "How frequent the daemon polls the queue (sleep in seconds)\ndefault: 1",
+        "de": "Wie oft der Daemon die Warteschlange abfragt (Pause in Sekunden)\nStandard: 1"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousPublishing": {
+        "en": "Enable/Disable the asynchronous publishing feature",
+        "de": "Die Funktion des asynchronen Veröffentlichens aktivieren/deaktivieren"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousPublishingFilters": {
+        "en": "Asynchronous Publishing filters\nEach filter must implement the eZAsynchronousPublishinfFilter abstract class,\nand the class name must be added to this array. Ex:\nAsynchronousPublishingFilters[]=MyAPFilterClass",
+        "de": "Filter des asynchronen Veröffentlichens\nJeder Filter muss die abstrakte Klasse eZAsynchronousPublishinfFilter implementieren,\nund der Klassenname muss diesem Array hinzugefügt werden. Bsp.:\nAsynchronousPublishingFilters[]=MyAPFilterClass"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousPublishingPostHandlingHooks": {
+        "en": "Post handling hooks\nThese hooks will be executed right after an item has been processed by asynchronous publishing\nIt can for instance be used to remove custom data added in a Queue hook\nAsynchronousPublishingQueueHooks[]=MyHookClass::postHandle",
+        "de": "Hooks nach der Verarbeitung\nDiese Hooks werden direkt ausgeführt, nachdem das asynchrone Veröffentlichen einen Eintrag verarbeitet hat\nSie lassen sich zum Beispiel verwenden, um eigene Daten zu entfernen, die ein Queue-Hook hinzugefügt hat\nAsynchronousPublishingQueueHooks[]=MyHookClass::postHandle"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousPublishingPreQueueHooks": {
+        "en": "Queue hooks\nYou can have your own code executed before an item is added to the publishing queue\nIt isn't possible to do so after it is added as there is no way to ensure it isn't already being handled\nHooks can either be registered dynamically, using PHP code, or pre-defined in INI settings using the following variable\nAsynchronousPublishingQueueHooks[]=MyHookClass::queue\nThe hook method must accept two parameters: the content object id, and its version (both integers)",
+        "de": "Queue-Hooks\nSie können eigenen Code ausführen lassen, bevor ein Eintrag in die Warteschlange zum Veröffentlichen kommt\nDanach ist es nicht möglich, weil sich nicht sicherstellen lässt, dass er nicht schon verarbeitet wird\nHooks lassen sich entweder dynamisch mit PHP-Code registrieren oder in den INI-Einstellungen mit folgender Variable festlegen\nAsynchronousPublishingQueueHooks[]=MyHookClass::queue\nDie Hook-Methode muss zwei Parameter annehmen: die ID des Inhaltsobjekts und seine Version (beide Ganzzahlen)"
+    },
+    "ini:settings/content.ini [PublishingSettings] AsynchronousPublishingQueueReader": {
+        "en": "Queue reader handler\nExponential comes with a default queue reader handler, but it can be overridden with a custom one\nTo define a new queue reader, override AsynchronousPublishingQueueReader with your class name:\nAsynchronousPublishingQueueReader=myContentPublishingQueue\nThe class configured here must declare a method named next()",
+        "de": "Handler zum Lesen der Warteschlange\nExponential bringt einen Standard-Handler zum Lesen der Warteschlange mit, er kann aber durch einen eigenen ersetzt werden\nUm einen neuen zu definieren, überschreiben Sie AsynchronousPublishingQueueReader mit Ihrem Klassennamen:\nAsynchronousPublishingQueueReader=myContentPublishingQueue\nDie hier konfigurierte Klasse muss eine Methode namens next() deklarieren"
+    },
+    "ini:settings/content.ini [PublishingSettings] PublishingProcessSlots": {
+        "en": "how many parallel publishing operations should be allowed\ndefault: 10",
+        "de": "wie viele parallele Veröffentlichungsvorgänge erlaubt sind\nStandard: 10"
+    },
+    "ini:settings/content.ini [RSSImportCleanupSettings] ClassIdentifiers": {
+        "en": "The classes that may be removed. Class identifiers, and nothing outside this\nlist is touched however old it is - so a folder or a page that happens to sit\nin the destination is safe. Empty means nothing is removed.\nExample:\nClassIdentifiers[]=article",
+        "de": "Die Klassen, die entfernt werden dürfen. Klassenbezeichner; nichts außerhalb dieser\nListe wird angefasst, wie alt es auch ist – ein Ordner oder eine Seite, die zufällig\nim Ziel liegt, ist also sicher. Leer bedeutet, dass nichts entfernt wird.\nBeispiel:\nClassIdentifiers[]=article"
+    },
+    "ini:settings/content.ini [RSSImportCleanupSettings] CleanupUser": {
+        "en": "Removing is permission checked, so it runs as somebody who may remove.",
+        "de": "Das Entfernen wird auf Berechtigungen geprüft, es läuft also als jemand, der entfernen darf."
+    },
+    "ini:settings/content.ini [RSSImportCleanupSettings] Enabled": {
+        "en": "Trims what the RSS import has created, keeping the newest items of each feed.\n\nAn import run adds an object for every item in the feed and never takes one\naway, so a site importing a busy feed grows without limit. Run it from the\ncronjob part 'cleanuprss', or by hand:\n\n  php bin/php/cleanuprss.php --dry-run\n\nNothing happens until Enabled is true AND ClassIdentifiers names at least one\nclass: this removes content, and on an installation that has not been set up\nfor it there is no safe guess about what may go.\nOff until the site says otherwise.",
+        "de": "Kürzt, was der RSS-Import angelegt hat, und behält die neuesten Einträge jedes Feeds.\n\nEin Importlauf legt für jeden Eintrag im Feed ein Objekt an und nimmt nie eines\nweg, eine Website, die einen lebhaften Feed importiert, wächst also unbegrenzt. Führen Sie es über den\nCronjob-Teil 'cleanuprss' oder von Hand aus:\n\n  php bin/php/cleanuprss.php --dry-run\n\nNichts geschieht, bevor Enabled true ist UND ClassIdentifiers mindestens eine\nKlasse nennt: Dies entfernt Inhalte, und bei einer Installation, die nicht dafür\neingerichtet ist, gibt es keine sichere Vermutung darüber, was weg darf.\nAus, bis die Website etwas anderes sagt."
+    },
+    "ini:settings/content.ini [RSSImportCleanupSettings] KeepPerFeed": {
+        "en": "How many items to keep per feed, newest first. Must be at least 1.",
+        "de": "Wie viele Einträge pro Feed behalten werden, die neuesten zuerst. Mindestens 1."
+    },
+    "ini:settings/content.ini [RSSImportCleanupSettings] LogFile": {
+        "en": "Where the run is recorded. Empty writes no file.",
+        "de": "Wo der Lauf festgehalten wird. Leer schreibt keine Datei."
+    },
+    "ini:settings/content.ini [RSSImportCleanupSettings] MoveToTrash": {
+        "en": "Whether removed items go to the trash, where they can be recovered, or are\ndeleted outright. Trash on a busy feed is itself something to empty.",
+        "de": "Ob entfernte Einträge in den Papierkorb kommen, wo sie sich wiederherstellen lassen, oder\nsofort gelöscht werden. Der Papierkorb eines lebhaften Feeds muss seinerseits geleert werden."
+    },
+    "ini:settings/content.ini [RSSListSettings] ItemsPerPageList": {
+        "en": "The page sizes the RSS list offers in its items per page selector. The first\nis the one a visitor who has not chosen gets. A size that is not on this list\ncannot be asked for in the url either, so the list is also what bounds the\nquery.",
+        "de": "Die Seitengrößen, die die RSS-Liste in ihrer Auswahl für Einträge pro Seite anbietet. Die erste\nerhält ein Besucher, der nicht gewählt hat. Eine Größe, die nicht in dieser Liste steht,\nlässt sich auch nicht in der URL anfordern, die Liste begrenzt also auch die\nAbfrage."
+    },
+    "ini:settings/content.ini [RelationAssignmentSettings] ClassSpecificAssignment": {
+        "en": "Automatic assignments for specific classes.\n\nEach line consists of three or two values separated by semi-colon.\nFirst two values are lists of elements which are comma separated.\n\nFirst value is the class identifier, second is the assignment (see above for\nvalues). An optional third is the main node in case you upload to many\nlocations. If the third parameter is not set, then the first element of\nthe value 2 will be used as main node.\n\nClasses are either specified with identifier, ID or group_ID\nThe items are searched in order so the first to match will be used,\nthis means that class IDs should come before class group IDs.\n\nIf the same class is specified in many lines, then will be used the first\nmatch where user has an access to all listed nodes.",
+        "de": "Automatische Platzierungen für bestimmte Klassen.\n\nJede Zeile besteht aus drei oder zwei durch Semikolon getrennten Werten.\nDie ersten beiden Werte sind durch Kommas getrennte Listen von Elementen.\n\nDer erste Wert ist der Klassenbezeichner, der zweite die Platzierung (Werte\nsiehe oben). Ein optionaler dritter ist der Hauptknoten, falls Sie an viele\nPlatzierungen hochladen. Ist der dritte Parameter nicht gesetzt, wird das erste Element\ndes zweiten Werts als Hauptknoten verwendet.\n\nKlassen werden mit Bezeichner, ID oder group_ID angegeben\nDie Einträge werden der Reihe nach durchsucht, der erste Treffer wird verwendet,\nKlassen-IDs sollten also vor IDs von Klassengruppen stehen.\n\nIst dieselbe Klasse in mehreren Zeilen angegeben, wird der erste\nTreffer verwendet, bei dem der Benutzer Zugriff auf alle aufgeführten Knoten hat."
+    },
+    "ini:settings/content.ini [RelationAssignmentSettings] DefaultAssignment": {
+        "en": "Default assignment for new related objects, possible values are\n- A Node ID - Place all new objects under this node\n- A node path - The placement of the parent node by a path, e.g. media/files\n- root - The root of the tree\n- users - The root of the user tree\n- media - The root of the media tree\n- none - DEPRECATED\n\nMultiple assignments are not allowed.",
+        "de": "Standardplatzierung für neue verknüpfte Objekte, mögliche Werte sind\n- eine Knoten-ID - alle neuen Objekte unter diesen Knoten legen\n- ein Knotenpfad - die Platzierung des Elternknotens über einen Pfad, z. B. media/files\n- root - die Wurzel des Baums\n- users - die Wurzel des Benutzerbaums\n- media - die Wurzel des Medienbaums\n- none - VERALTET\n\nMehrere Platzierungen sind nicht erlaubt."
+    },
+    "ini:settings/content.ini [RelationGroupSettings]": {
+        "en": "ClassSpecificAssignment[]=image;33,37;37\nClassSpecificAssignment[]=match;node1,node2;main_node",
+        "de": "ClassSpecificAssignment[]=image;33,37;37\nClassSpecificAssignment[]=match;node1,node2;main_node"
+    },
+    "ini:settings/content.ini [RelationGroupSettings] DefaultGroup": {
+        "en": "The group were all non-match classes are placed\nthis is usually related folders and articles",
+        "de": "Die Gruppe, in die alle nicht passenden Klassen kommen,\nmeist verknüpfte Ordner und Artikel"
+    },
+    "ini:settings/content.ini [RelationGroupSettings] FilesClassList": {
+        "en": "A list of class identifiers that should be placed in the\nrelated files group",
+        "de": "Eine Liste der Klassenbezeichner, die in die\nGruppe der verknüpften Dateien kommen"
+    },
+    "ini:settings/content.ini [RelationGroupSettings] Groups": {
+        "en": "A list of defined relation groups, each entry\nwill have a class definition setting suffixed with ClassList\ne.g. a group called images would have the setting ImagesClassList",
+        "de": "Eine Liste der definierten Verknüpfungsgruppen; jeder Eintrag\nhat eine Einstellung mit der Klassendefinition, mit dem Suffix ClassList\nz. B. hätte eine Gruppe namens images die Einstellung ImagesClassList"
+    },
+    "ini:settings/content.ini [RelationGroupSettings] ImagesClassList": {
+        "en": "A list of class identifiers that should be placed in the\nrelated image group",
+        "de": "Eine Liste der Klassenbezeichner, die in die\nGruppe der verknüpften Bilder kommen"
+    },
+    "ini:settings/content.ini [RemoveSettings] DefaultRemoveAction": {
+        "en": "delete or trash",
+        "de": "delete oder trash"
+    },
+    "ini:settings/content.ini [RemoveSettings] HideRemoveConfirmation": {
+        "en": "true or false",
+        "de": "true oder false"
+    },
+    "ini:settings/content.ini [RemoveSettings] MaxNodesRemoveSubtree": {
+        "en": "Maximum number of nodes to remove using Remove Subtrees feature",
+        "de": "Höchstzahl der Knoten, die mit der Funktion Teilbäume entfernen entfernt werden"
+    },
+    "ini:settings/content.ini [RemoveSettings] ReverseRelationCheck": {
+        "en": "What content/removeobject does when other objects point at an object that the removal takes away (an object\ngoes when every one of its locations lies inside the removed subtrees). References are the rows of\nezcontentobject_link from the published version of a referring object (object relations, embeds and links in\nrich text by object or node id, relation fields), plus what the providers of [ReverseRelationSettings] report\n(Layouts blocks that name a node inside the subtrees). doc/eng-us/features/6.0/reverse-relation-check.md\n disabled - no check\n warn     - (default) the confirmation page lists the referring objects per selected item (link, class, kind\n            of reference and field); it is also shown when every location of such an object is selected,\n            which was removed at once before; with HideRemoveConfirmation=true there is no page\n block    - as warn, and the removal is refused while such references exist: the OK button is disabled, and\n            the server refuses the removal on its own as well: a posted confirmation, HideRemoveConfirmation,\n            a removal as a content job, the removal of the last locations on the Locations tab and a delete\n            over WebDAV. Off by default.",
+        "de": "Was content/removeobject tut, wenn andere Objekte auf ein Objekt verweisen, das das Entfernen wegnimmt (ein Objekt\ngeht, wenn jede seiner Platzierungen in den entfernten Teilbäumen liegt). Verweise sind die Zeilen von\nezcontentobject_link aus der veröffentlichten Version eines verweisenden Objekts (Objektverknüpfungen, Einbettungen und Links in\nRich Text per Objekt- oder Knoten-ID, Verknüpfungsfelder), dazu das, was die Provider von [ReverseRelationSettings] melden\n(Layout-Blöcke, die einen Knoten innerhalb der Teilbäume nennen). doc/eng-us/features/6.0/reverse-relation-check.md\n disabled - keine Prüfung\n warn     - (Standard) die Bestätigungsseite listet die verweisenden Objekte pro ausgewähltem Eintrag auf (Link, Klasse, Art\n            des Verweises und Feld); sie erscheint auch, wenn jede Platzierung eines solchen Objekts ausgewählt ist,\n            das früher sofort entfernt wurde; mit HideRemoveConfirmation=true gibt es keine Seite\n block    - wie warn, und das Entfernen wird abgelehnt, solange solche Verweise bestehen: Die Schaltfläche OK ist deaktiviert, und\n            der Server lehnt das Entfernen auch von sich aus ab: eine abgeschickte Bestätigung, HideRemoveConfirmation,\n            ein Entfernen als Inhaltsauftrag, das Entfernen der letzten Platzierungen im Reiter Platzierungen und ein Löschen\n            über WebDAV. Standardmäßig aus."
+    },
+    "ini:settings/content.ini [ReverseRelationSettings] ProviderClassList": {
+        "en": "Classes that report references kept outside ezcontentobject_link, for the check of [RemoveSettings] and\n[HideSettings] ReverseRelationCheck. Each answers the static method reverseRelations( array $paths, int $limit )\n(see Exponential\\Service\\ReverseRelationCheck::providerReferences()). A class that does not exist is skipped.\nExtensions add theirs in their own content.ini.append.php, e.g. ProviderClassList[]=expLayoutsReverseRelationProvider",
+        "de": "Klassen, die Verweise melden, die außerhalb von ezcontentobject_link gespeichert sind, für die Prüfung von [RemoveSettings] und\n[HideSettings] ReverseRelationCheck. Jede beantwortet die statische Methode reverseRelations( array $paths, int $limit )\n(siehe Exponential\\Service\\ReverseRelationCheck::providerReferences()). Eine Klasse, die es nicht gibt, wird übersprungen.\nErweiterungen fügen ihre in ihrer eigenen content.ini.append.php hinzu, z. B. ProviderClassList[]=expLayoutsReverseRelationProvider"
+    },
+    "ini:settings/content.ini [TestingSettings] EnabledForSiteAccessList": {
+        "en": "List of site accesses multivariate testing is enabled for.",
+        "de": "Liste der Siteaccesses, für die multivariates Testen aktiviert ist."
+    },
+    "ini:settings/content.ini [TestingSettings] MultivariateTesting": {
+        "en": "Enable or disable multivariate testing feature",
+        "de": "Die Funktion für multivariates Testen aktivieren oder deaktivieren"
+    },
+    "ini:settings/content.ini [TestingSettings] MultivariateTestingHandlerClass": {
+        "en": "A handler class which implements <ezpMultivariateTestHandlerInterface> interface",
+        "de": "Eine Handler-Klasse, die die Schnittstelle <ezpMultivariateTestHandlerInterface> implementiert"
+    },
+    "ini:settings/content.ini [TrashSettings]": {
+        "en": "ResolverClasses[]=myNameResolver",
+        "de": "ResolverClasses[]=myNameResolver"
+    },
+    "ini:settings/content.ini [TrashSettings] KeepItemsForDays": {
+        "en": "How many days an item stays in the trash before the cronjob trashpurge\n(cronjobs/trashpurge.php) purges it. Empty or 0: the cronjob purges the whole\ntrash, as before. A value that is not a whole number of days up to 36500 purges\nnothing and reports an error. bin/php/trashpurge.php is not affected; it takes\n--trashed-days=<days>. Items trashed before 6.0 have no trash time (trashed = 0)\nand are purged on the first run whatever the value; see the guide to keep them.\nGuide: doc/eng-us/bc/6.0/trash.md",
+        "de": "Wie viele Tage ein Eintrag im Papierkorb bleibt, bevor der Cronjob trashpurge\n(cronjobs/trashpurge.php) ihn endgültig löscht. Leer oder 0: Der Cronjob leert wie bisher den ganzen\nPapierkorb. Ein Wert, der keine ganze Zahl von Tagen bis 36500 ist, löscht\nnichts und meldet einen Fehler. bin/php/trashpurge.php ist nicht betroffen; es nimmt\n--trashed-days=<days>. Einträge, die vor 6.0 in den Papierkorb kamen, haben keine Papierkorb-Zeit (trashed = 0)\nund werden beim ersten Lauf unabhängig vom Wert gelöscht; wie Sie sie behalten, steht in der Anleitung.\nAnleitung: doc/eng-us/bc/6.0/trash.md"
+    },
+    "ini:settings/content.ini [VersionManagement]": {
+        "en": "ViewModes[]=print\nDefine maximum versions can be managed. Use syntax\nVersionHistoryClass[class_id]=maximum_nr to specify value for particular\nclasses. Or if you prefer to use class_identifier (since 4.1.1)\nVersionHistoryClass[class_identifier]=maximum_nr\nOtherwise, the value of DefaultVersionHistoryLimit will be used.\nWhen decreasing DefaultVersionHistoryLimit or one value in VersionHistoryClass,\nyou can execute bin/php/cleanupversions.php to remove the exceeded archived versions.",
+        "de": "ViewModes[]=print\nLegt fest, wie viele Versionen höchstens verwaltet werden. Verwenden Sie die Syntax\nVersionHistoryClass[class_id]=maximum_nr, um den Wert für bestimmte\nKlassen anzugeben. Oder, wenn Sie lieber class_identifier verwenden (seit 4.1.1),\nVersionHistoryClass[class_identifier]=maximum_nr\nSonst wird der Wert von DefaultVersionHistoryLimit verwendet.\nWenn Sie DefaultVersionHistoryLimit oder einen Wert in VersionHistoryClass verringern,\nkönnen Sie bin/php/cleanupversions.php ausführen, um die überzähligen archivierten Versionen zu entfernen."
+    },
+    "ini:settings/content.ini [VersionManagement] DraftsCleanUpLimit": {
+        "en": "Clean-up limit per one run of the 'old_drafts_cleanup.php' cronjob script",
+        "de": "Grenze für das Aufräumen pro Lauf des Cronjob-Skripts 'old_drafts_cleanup.php'"
+    },
+    "ini:settings/content.ini [VersionManagement] DraftsDuration": {
+        "en": "Time duration (number of days, hours, minutes and seconds)\nbefore a draft is considered old and can be removed",
+        "de": "Zeitspanne (Anzahl der Tage, Stunden, Minuten und Sekunden),\nnach der ein Entwurf als alt gilt und entfernt werden kann"
+    },
+    "ini:settings/content.ini [VersionManagement] InternalDraftsCleanUpLimit": {
+        "en": "Clean-up limit per one run of the 'internal_drafts_cleanup.php' cronjob script",
+        "de": "Grenze für das Aufräumen pro Lauf des Cronjob-Skripts 'internal_drafts_cleanup.php'"
+    },
+    "ini:settings/content.ini [VersionManagement] InternalDraftsDuration": {
+        "en": "Time duration (number of days, hours, minutes and seconds)\nbefore an internal draft is considered old and can be removed",
+        "de": "Zeitspanne (Anzahl der Tage, Stunden, Minuten und Sekunden),\nnach der ein interner Entwurf als alt gilt und entfernt werden kann"
+    },
+    "ini:settings/content.ini [VersionView] AvailableSiteDesignList": {
+        "en": "OBSOLETE: Use AvailableSiteDesignList instead\nSpecify all available site designs\nAvailableSiteDesigns=standard;user;admin;demo\nOBSOLETE: A list of designs the site can use",
+        "de": "VERALTET: Verwenden Sie stattdessen AvailableSiteDesignList\nAlle verfügbaren Website-Designs angeben\nAvailableSiteDesigns=standard;user;admin;demo\nVERALTET: Eine Liste der Designs, die die Website verwenden kann"
+    },
+    "ini:settings/content.ini [VersionView] ViewModes": {
+        "en": "AvailableSiteDesignList[]=base\nThe view modes a version can be shown in, content/versionview/<object>/<version>/(view_mode)/<mode>\n(node/view/<mode>.tpl); another one is not available. Without the parameter it is full.\nWith more than one listed, the View control box of the preview in the admin offers them.\ndesign/standard has node/view/print.tpl as an example of a print layout.",
+        "de": "AvailableSiteDesignList[]=base\nDie Ansichtsmodi, in denen eine Version angezeigt werden kann, content/versionview/<object>/<version>/(view_mode)/<mode>\n(node/view/<mode>.tpl); ein anderer ist nicht verfügbar. Ohne den Parameter ist es full.\nSind mehrere aufgeführt, bietet sie die Box Ansicht der Vorschau in der Administration an.\ndesign/standard hat node/view/print.tpl als Beispiel für ein Drucklayout."
+    },
+    "ini:settings/content.ini [embed-inline] CustomAttributes": {
+        "en": "AvailableClasses[]=embedRed\nAvailableClasses[]=embedBlue",
+        "de": "AvailableClasses[]=embedRed\nAvailableClasses[]=embedBlue"
+    },
+    "ini:settings/content.ini [embed] CustomAttributes": {
+        "en": "AvailableClasses[]=embedRed\nAvailableClasses[]=embedBlue\nHow an embedded gallery is shown: slider or grid (read by the embed view of ng_gallery). Listed here so the online\neditor keeps the attribute when it saves rich text.",
+        "de": "AvailableClasses[]=embedRed\nAvailableClasses[]=embedBlue\nWie eine eingebettete Galerie angezeigt wird: slider oder grid (von der Einbettungsansicht von ng_gallery gelesen). Hier aufgeführt, damit der Online-\nEditor das Attribut beim Speichern des Rich Texts behält."
+    },
+    "ini:settings/content.ini [emphasize] CustomAttributes": {
+        "en": "AvailableClasses[]=italicRed\nAvailableClasses[]=italicBlue",
+        "de": "AvailableClasses[]=italicRed\nAvailableClasses[]=italicBlue"
+    },
+    "ini:settings/content.ini [factbox]": {
+        "en": "TeXSource[math_latex]=true",
+        "de": "TeXSource[math_latex]=true"
+    },
+    "ini:settings/content.ini [factbox] CustomAttributes": {
+        "en": "Custom attributes list",
+        "de": "Liste der eigenen Attribute"
+    },
+    "ini:settings/content.ini [header] AvailableClasses": {
+        "en": "Header classes",
+        "de": "Klassen für Überschriften"
+    },
+    "ini:settings/content.ini [header] CustomAttributes": {
+        "en": "AvailableClasses[]=headerRed\nAvailableClasses[]=headerBlue\nCustom attributes list",
+        "de": "AvailableClasses[]=headerRed\nAvailableClasses[]=headerBlue\nListe der eigenen Attribute"
+    },
+    "ini:settings/content.ini [header] UseStrictHeaderRule": {
+        "en": "UseStrictHeaderRule controls if you can use headers tags\narbitrarily or only properly nested (header 2 must be inside\nheader 1 etc.)",
+        "de": "UseStrictHeaderRule steuert, ob Überschriften-Tags\nbeliebig oder nur korrekt verschachtelt verwendet werden dürfen (Überschrift 2 muss in\nÜberschrift 1 liegen usw.)"
+    },
+    "ini:settings/content.ini [link] AvailableViewModes": {
+        "en": "AvailableViewModes is possible views for the view parameter (used by oe)",
+        "de": "AvailableViewModes sind die möglichen Ansichten für den Parameter view (vom OE verwendet)"
+    },
+    "ini:settings/content.ini [link] CustomAttributes": {
+        "en": "AvailableClasses[]=linkRed\nAvailableClasses[]=linkBlue",
+        "de": "AvailableClasses[]=linkRed\nAvailableClasses[]=linkBlue"
+    },
+    "ini:settings/content.ini [literal] CustomAttributes": {
+        "en": "The class 'html' is disabled by default because it gives editors the\npossibility to insert html and javascript code in XML blocks.\nDon't enable the 'html' class unless you really trust all users who has\nprivileges to edit objects containing XML blocks.\nAvailableClasses[]=html",
+        "de": "Die Klasse 'html' ist standardmäßig deaktiviert, weil sie Redakteuren die\nMöglichkeit gibt, HTML- und JavaScript-Code in XML-Blöcke einzufügen.\nAktivieren Sie die Klasse 'html' nur, wenn Sie allen Benutzern wirklich vertrauen, die\nObjekte mit XML-Blöcken bearbeiten dürfen.\nAvailableClasses[]=html"
+    },
+    "ini:settings/content.ini [object] CustomAttributes": {
+        "en": "AvailableClasses[]=objectRed\nAvailableClasses[]=objectBlue",
+        "de": "AvailableClasses[]=objectRed\nAvailableClasses[]=objectBlue"
+    },
+    "ini:settings/content.ini [ol] CustomAttributes": {
+        "en": "AvailableClasses[]=olRed\nAvailableClasses[]=olBlue",
+        "de": "AvailableClasses[]=olRed\nAvailableClasses[]=olBlue"
+    },
+    "ini:settings/content.ini [paragraph] AllowEmpty": {
+        "en": "AvailableClasses[]=pRed\nAvailableClasses[]=pBlue",
+        "de": "AvailableClasses[]=pRed\nAvailableClasses[]=pBlue"
+    },
+    "ini:settings/content.ini [strong] CustomAttributes": {
+        "en": "AvailableClasses[]=boldRed\nAvailableClasses[]=boldBlue",
+        "de": "AvailableClasses[]=boldRed\nAvailableClasses[]=boldBlue"
+    },
+    "ini:settings/content.ini [table] CustomAttributes": {
+        "en": "AvailableClasses[]=tableRed\nAvailableClasses[]=tableBlue",
+        "de": "AvailableClasses[]=tableRed\nAvailableClasses[]=tableBlue"
+    },
+    "ini:settings/content.ini [td] CustomAttributes": {
+        "en": "AvailableClasses[]=tdRed\nAvailableClasses[]=tdBlue",
+        "de": "AvailableClasses[]=tdRed\nAvailableClasses[]=tdBlue"
+    },
+    "ini:settings/content.ini [th] CustomAttributes": {
+        "en": "AvailableClasses[]=thRed\nAvailableClasses[]=thBlue",
+        "de": "AvailableClasses[]=thRed\nAvailableClasses[]=thBlue"
+    },
+    "ini:settings/content.ini [tr] CustomAttributes": {
+        "en": "AvailableClasses[]=trRed\nAvailableClasses[]=trBlue",
+        "de": "AvailableClasses[]=trRed\nAvailableClasses[]=trBlue"
+    },
+    "ini:settings/content.ini [ul] CustomAttributes": {
+        "en": "AvailableClasses[]=ulRed\nAvailableClasses[]=ulBlue",
+        "de": "AvailableClasses[]=ulRed\nAvailableClasses[]=ulBlue"
+    },
+    "ini:settings/contentcheck.ini": {
+        "en": "The content checks: the assets (images, files, media) below a node that nothing uses, and visible content\nwith links, embeds or relations to deleted, trashed, hidden or unpublished content.\nGuide: doc/eng-us/features/6.0/content-checks.md\n\nDo not edit this file: override it in settings/override/contentcheck.ini.append.php or in\na siteaccess's contentcheck.ini.append.php.\n\nWho may use them is decided by role policies, not here: contentcheck/unreferenced opens the\nlist of unreferenced objects, contentcheck/trash is needed as well to move them to the trash\n(and content/remove on each object), contentcheck/brokenrelations opens the list of broken\nrelations. Every list shows only what content/read lets the user see.",
+        "de": "Die Inhaltsprüfungen: die Assets (Bilder, Dateien, Medien) unter einem Knoten, die nichts verwendet, und sichtbare Inhalte\nmit Links, Einbettungen oder Verknüpfungen zu gelöschten, im Papierkorb liegenden, verborgenen oder unveröffentlichten Inhalten.\nAnleitung: doc/eng-us/features/6.0/content-checks.md\n\nBearbeiten Sie diese Datei nicht: Überschreiben Sie sie in settings/override/contentcheck.ini.append.php oder in\nder contentcheck.ini.append.php eines Siteaccess.\n\nWer sie verwenden darf, entscheiden die Richtlinien der Rollen, nicht diese Datei: contentcheck/unreferenced öffnet die\nListe der nicht referenzierten Objekte, contentcheck/trash wird zusätzlich gebraucht, um sie in den Papierkorb zu verschieben\n(und content/remove für jedes Objekt), contentcheck/brokenrelations öffnet die Liste der defekten\nVerknüpfungen. Jede Liste zeigt nur, was content/read den Benutzer sehen lässt."
+    },
+    "ini:settings/contentcheck.ini [BrokenRelationsSettings] ChunkSize": {
+        "en": "How many objects are checked with one set of queries (10 to 1000)",
+        "de": "Wie viele Objekte mit einem Satz von Abfragen geprüft werden (10 bis 1000)"
+    },
+    "ini:settings/contentcheck.ini [BrokenRelationsSettings] ScanLimit": {
+        "en": "At most this many objects are checked for one page (ChunkSize to 100000); a page with fewer\nfindings than its size then ends early and the next page goes on from there",
+        "de": "Höchstens so viele Objekte werden für eine Seite geprüft (ChunkSize bis 100000); eine Seite mit weniger\nBefunden als ihre Größe endet dann früher, und die nächste Seite macht dort weiter"
+    },
+    "ini:settings/contentcheck.ini [BrokenRelationsSettings] XmlDatatypes": {
+        "en": "The datatypes whose text is read for links and embeds (object_id=\"...\" and node_id=\"...\"\nof <link>, <embed> and <embed-inline>)",
+        "de": "Die Datentypen, deren Text nach Links und Einbettungen durchsucht wird (object_id=\"...\" und node_id=\"...\"\nvon <link>, <embed> und <embed-inline>)"
+    },
+    "ini:settings/contentcheck.ini [ContentCheckSettings] Enabled": {
+        "en": "true | false. With false the checks answer 404 on every siteaccess.",
+        "de": "true | false. Mit false antworten die Prüfungen in jedem Siteaccess mit 404."
+    },
+    "ini:settings/contentcheck.ini [ContentCheckSettings] SiteAccessList": {
+        "en": "The siteaccesses the checks answer on. Empty (the default): every siteaccess whose design\nlist ([DesignSettings] SiteDesign, AdditionalSiteDesignList[]) has an administration design\n(a design whose name starts with admin). Every other siteaccess answers 404.",
+        "de": "Die Siteaccesses, in denen die Prüfungen antworten. Leer (der Standard): jeder Siteaccess, dessen Design-Liste\n([DesignSettings] SiteDesign, AdditionalSiteDesignList[]) ein Administrations-Design enthält\n(ein Design, dessen Name mit admin beginnt). Jeder andere Siteaccess antwortet mit 404."
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] AliasList": {
+        "en": "The aliases of image.ini an image is expected to have when \"Alias never made\" is ticked; empty:\nevery alias of image.ini. Aliases are made when an image is first shown in them, so a\nmissing one is normal and only listed when asked for.",
+        "de": "Die Aliase aus image.ini, die ein Bild haben soll, wenn „Alias nie erzeugt“ angekreuzt ist; leer:\njeder Alias aus image.ini. Aliase entstehen, wenn ein Bild zum ersten Mal in ihnen angezeigt wird, ein\nfehlender ist also normal und wird nur aufgeführt, wenn danach gefragt wird."
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] CronjobReport": {
+        "en": "enabled: the cronjob part contentcheck also counts the missing files and alias problems of\nthe whole tree and writes the count to its output (it never resolves anything)",
+        "de": "enabled: Der Cronjob-Teil contentcheck zählt außerdem die fehlenden Dateien und Alias-Probleme\ndes ganzen Baums und schreibt die Zahl in seine Ausgabe (er behebt nie etwas)"
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] FixBatchSize": {
+        "en": "How many field versions one request resolves; the page then shows the progress and goes on\nwith the next batch (1 to 200)",
+        "de": "Wie viele Feldversionen eine Anfrage behebt; die Seite zeigt dann den Fortschritt und macht\nmit dem nächsten Stapel weiter (1 bis 200)"
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] Handlers": {
+        "en": "Missing files and image aliases (the target \"Missing files\" of contentcheck/brokenrelations,\ndoc/eng-us/features/6.0/content-checks.md, \"Missing files\"). The class that says which files a field\nof a datatype stands for: one implementing expContentCheckFileHandler. An extension adds its\nfile datatype here.",
+        "de": "Fehlende Dateien und Bild-Aliase (das Ziel „Fehlende Dateien“ von contentcheck/brokenrelations,\ndoc/eng-us/features/6.0/content-checks.md, \"Missing files\"). Die Klasse, die sagt, für welche Dateien ein Feld\neines Datentyps steht: eine, die expContentCheckFileHandler implementiert. Eine Erweiterung fügt ihren\nDatei-Datentyp hier hinzu."
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] ListLimit": {
+        "en": "The list of missing files has a total and pages: it walks every object below the node, at\nmost this many (100 to 1000000), and keeps the findings this many seconds for its pages\n(0 to 3600; 0: walked again for every page). A resolution forgets them.",
+        "de": "Die Liste der fehlenden Dateien hat eine Gesamtzahl und Seiten: Sie durchläuft jedes Objekt unter dem Knoten,\nhöchstens so viele (100 bis 1000000), und behält die Befunde so viele Sekunden für ihre Seiten\n(0 bis 3600; 0: für jede Seite neu durchlaufen). Eine Behebung vergisst sie."
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] MaxFixItems": {
+        "en": "At most this many field versions in one resolution (1 to 1000)",
+        "de": "Höchstens so viele Feldversionen in einer Behebung (1 bis 1000)"
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] MaxReplaceSize": {
+        "en": "The largest file \"Re-upload or replace\" takes, in bytes; 0: what PHP takes (upload_max_filesize)",
+        "de": "Die größte Datei, die „Neu hochladen oder ersetzen“ annimmt, in Bytes; 0: was PHP annimmt (upload_max_filesize)"
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] ScanLimit": {
+        "en": "At most this many objects are checked for one page (ChunkSize to 100000)",
+        "de": "Höchstens so viele Objekte werden für eine Seite geprüft (ChunkSize bis 100000)"
+    },
+    "ini:settings/contentcheck.ini [MissingFileSettings] Tables": {
+        "en": "The table of each datatype handled by expContentCheckFileTable (the columns of ezbinaryfile:\ncontentobject_attribute_id, version, filename, original_filename, mime_type)",
+        "de": "Die Tabelle jedes Datentyps, den expContentCheckFileTable behandelt (die Spalten von ezbinaryfile:\ncontentobject_attribute_id, version, filename, original_filename, mime_type)"
+    },
+    "ini:settings/contentcheck.ini [ReferenceSettings] ImportedIdRemotePatterns": {
+        "en": "Content imported from another installation may keep that installation's ids where a field\nor a layout names content by id (an enhanced link's internal id, a layout component's\ncontent parameter). A site whose templates resolve such ids as remote ids or with an offset\nlists the same patterns here, in the order it tries them, so both checks resolve them the\nway the site does. %id is the stored id, %id+N or %id-N the id moved by N. The media site\ndemo resolves them like this:\nImportedIdRemotePatterns[]=media-o-%id+776\nImportedIdRemotePatterns[]=media-o-%id\nImportedIdObjectPatterns[]=%id+776",
+        "de": "Aus einer anderen Installation importierte Inhalte können deren IDs behalten, wo ein Feld\noder ein Layout Inhalte per ID nennt (die interne ID eines erweiterten Links, der Inhaltsparameter\neiner Layout-Komponente). Eine Website, deren Templates solche IDs als Remote-IDs oder mit einem Versatz auflösen,\nlistet hier dieselben Muster in der Reihenfolge, in der sie sie versucht, damit beide Prüfungen sie so auflösen,\nwie die Website es tut. %id ist die gespeicherte ID, %id+N oder %id-N die um N verschobene ID. Die Demo der Media Site\nlöst sie so auf:\nImportedIdRemotePatterns[]=media-o-%id+776\nImportedIdRemotePatterns[]=media-o-%id\nImportedIdObjectPatterns[]=%id+776"
+    },
+    "ini:settings/contentcheck.ini [ScopeSettings] PresetList": {
+        "en": "Where a check starts (doc/eng-us/features/6.0/content-checks.md, \"Where a check starts\"): from the\nnode in its form or address, else the signed-in user's last choice (the preference\nadmin_contentcheck_scope), else content.ini [NodeSettings] RootNode.\nThe quick scope buttons the checks offer, in this order: tree (\"Whole tree\", node 1, for users\nwith an unlimited content/read), content (\"Websites\", content.ini RootNode), media (\"Media\",\nMediaRootNode), users (\"Users\", UserRootNode), setup (SetupRootNode), design (DesignRootNode),\na node id, or a URL alias path such as media/images (these two show the node's name). A button\nwhose node does not exist or that the user may not read is left out. Any other node, Users\namong them, is chosen with the node picker. The content and media roots are the ones of\ncontent.ini [NodeSettings] (RootNode, MediaRootNode); set them there.",
+        "de": "Wo eine Prüfung beginnt (doc/eng-us/features/6.0/content-checks.md, \"Where a check starts\"): beim\nKnoten in ihrem Formular oder ihrer Adresse, sonst bei der letzten Wahl des angemeldeten Benutzers (die Einstellung\nadmin_contentcheck_scope), sonst bei content.ini [NodeSettings] RootNode.\nDie Schnellwahl-Schaltflächen der Prüfungen, in dieser Reihenfolge: tree („Ganzer Baum“, Knoten 1, für Benutzer\nmit unbeschränktem content/read), content („Websites“, content.ini RootNode), media („Medien“,\nMediaRootNode), users („Benutzer“, UserRootNode), setup (SetupRootNode), design (DesignRootNode),\neine Knoten-ID oder ein URL-Alias-Pfad wie media/images (diese beiden zeigen den Namen des Knotens). Eine Schaltfläche,\nderen Knoten nicht existiert oder die der Benutzer nicht lesen darf, entfällt. Jeder andere Knoten, Benutzer\ndarunter, wird mit der Knotenauswahl gewählt. Die Wurzeln der Inhalte und Medien sind die aus\ncontent.ini [NodeSettings] (RootNode, MediaRootNode); setzen Sie sie dort."
+    },
+    "ini:settings/contentcheck.ini [ScopeSettings] SiteRow": {
+        "en": "The second row beneath the buttons: the sites, sections and top folders under the content root,\nso a check can start in one site's subtree. Read live from the content tree: the visible\nchildren (not hidden, not invisible) the user may read, in the content root's sort order.\nSiteRow=disabled hides it. SiteRowParent is a preset key, a node id or a URL alias path\n(default: content). SiteRowLimit buttons at most (1 to 50); with more, \"More...\" opens the\nnode picker at that level.",
+        "de": "Die zweite Zeile unter den Schaltflächen: die Websites, Sektionen und obersten Ordner unter der Inhaltswurzel,\ndamit eine Prüfung im Teilbaum einer Website beginnen kann. Live aus dem Inhaltsbaum gelesen: die sichtbaren\nUnterknoten (nicht verborgen, nicht unsichtbar), die der Benutzer lesen darf, in der Sortierung der Inhaltswurzel.\nSiteRow=disabled blendet sie aus. SiteRowParent ist ein Vorlagenschlüssel, eine Knoten-ID oder ein URL-Alias-Pfad\n(Standard: content). SiteRowLimit Schaltflächen höchstens (1 bis 50); bei mehr öffnet „Mehr ...“ die\nKnotenauswahl auf dieser Ebene."
+    },
+    "ini:settings/contentcheck.ini [ScopeSettings] ViewList": {
+        "en": "The views that take a start location and that the node picker may return to",
+        "de": "Die Ansichten, die einen Startort nehmen und zu denen die Knotenauswahl zurückkehren darf"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] ExpectedOwner": {
+        "en": "The owner every used file should have: a user name or id; empty: the owner of the storage\ndirectory. The mode every used file should have at least (octal); empty: site.ini\n[FileSettings] StorageFilePermissions",
+        "de": "Der Eigentümer, den jede verwendete Datei haben sollte: ein Benutzername oder eine ID; leer: der Eigentümer des Speicher-\nverzeichnisses. Der Modus, den jede verwendete Datei mindestens haben sollte (oktal); leer: site.ini\n[FileSettings] StorageFilePermissions"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] IgnorePathList": {
+        "en": "Paths below the storage that are never listed (prefixes): caches other code keeps there",
+        "de": "Pfade unter dem Speicher, die nie aufgeführt werden (Präfixe): Caches, die anderer Code dort hält"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] MaxActionBatch": {
+        "en": "At most this many files are taken from one confirmation (1 to 1000)",
+        "de": "Höchstens so viele Dateien werden aus einer Bestätigung übernommen (1 bis 1000)"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] MaxListed": {
+        "en": "Orphans and problems kept in the result of a scan (100 to 100000); the totals count on",
+        "de": "Verwaiste Dateien und Probleme, die im Ergebnis eines Durchlaufs behalten werden (100 bis 100000); die Summen zählen weiter"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] MinAge": {
+        "en": "A file younger than this (seconds) is never an orphan: an upload writes the file before\nits row in the database",
+        "de": "Eine Datei, die jünger ist (Sekunden), ist nie verwaist: Ein Upload schreibt die Datei vor\nihrer Zeile in der Datenbank"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] QuarantineDirectory": {
+        "en": "Where orphans are moved: var/<site>/<QuarantineDirectory>/<date>/<path below the storage>",
+        "de": "Wohin verwaiste Dateien verschoben werden: var/<site>/<QuarantineDirectory>/<date>/<path below the storage>"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] ScanBatchSize": {
+        "en": "Files read in one step of the scan (50 to 50000), and how long a step in the browser may\ntake before it stops at the end of a batch (seconds, 1 to 25); the CLI runs the whole scan",
+        "de": "In einem Schritt des Durchlaufs gelesene Dateien (50 bis 50000) und wie lange ein Schritt im Browser dauern darf,\nbevor er am Ende eines Stapels anhält (Sekunden, 1 bis 25); die Kommandozeile führt den ganzen Durchlauf aus"
+    },
+    "ini:settings/contentcheck.ini [StorageSettings] ScanDirectoryList": {
+        "en": "The storage files (doc/eng-us/features/6.0/content-checks.md, \"Storage files\"): files below\nvar/<site>/storage that no content uses, and the file-system problems of those it uses.\nThe directories below the storage that are scanned",
+        "de": "Die Speicherdateien (doc/eng-us/features/6.0/content-checks.md, \"Storage files\"): Dateien unter\nvar/<site>/storage, die kein Inhalt verwendet, und die Dateisystemprobleme der verwendeten.\nDie Verzeichnisse unter dem Speicher, die durchsucht werden"
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] AssetClassList": {
+        "en": "The classes the list covers: assets that only matter when something uses them. A page, a\nfolder, a user or a settings object is reached through the tree (navigation, menus,\nsearch) whether or not anything links to it, so it is never called unreferenced.",
+        "de": "Die Klassen, die die Liste abdeckt: Assets, die nur zählen, wenn etwas sie verwendet. Eine Seite, ein\nOrdner, ein Benutzer oder ein Einstellungsobjekt wird über den Baum erreicht (Navigation, Menüs,\nSuche), ob etwas darauf verlinkt oder nicht, und gilt daher nie als nicht referenziert."
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] BuildOnRequest": {
+        "en": "true: a page builds the index when it is older than IndexTTL (the move to the trash always\nbuilds it). false (very large installations): only bin/php/contentcheck.php --build-index\nor the cronjob part cronjobs/contentcheck.php builds it; the list then shows the last\nindex, and the move to the trash needs one younger than IndexTTL.",
+        "de": "true: Eine Seite baut den Index, wenn er älter als IndexTTL ist (das Verschieben in den Papierkorb baut\nihn immer). false (sehr große Installationen): nur bin/php/contentcheck.php --build-index\noder der Cronjob-Teil cronjobs/contentcheck.php baut ihn; die Liste zeigt dann den letzten\nIndex, und das Verschieben in den Papierkorb braucht einen, der jünger als IndexTTL ist."
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] CandidateLimit": {
+        "en": "At most this many candidates (assets below the node) are judged for one list (100 to\n500000); with more, the list asks for a smaller subtree or fewer classes",
+        "de": "Höchstens so viele Kandidaten (Assets unter dem Knoten) werden für eine Liste beurteilt (100 bis\n500000); bei mehr bittet die Liste um einen kleineren Teilbaum oder weniger Klassen"
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] IndexTTL": {
+        "en": "The reference index: every id, remote id and path that fields, links, layouts, settings,\ntemplates, roles and the tables below use. It is kept this many seconds (0 to 604800).",
+        "de": "Der Referenzindex: jede ID, Remote-ID und jeder Pfad, den Felder, Links, Layouts, Einstellungen,\nTemplates, Rollen und die Tabellen unten verwenden. Er wird so viele Sekunden behalten (0 bis 604800)."
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] MaxTrashBatch": {
+        "en": "At most this many objects are moved to the trash in one confirmation (1 to 200)",
+        "de": "Höchstens so viele Objekte werden in einer Bestätigung in den Papierkorb verschoben (1 bis 200)"
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] NodeColumns": {
+        "en": "subtree notifications and bookmarks\nwhere drafts and pending versions will be placed",
+        "de": "Teilbaum-Benachrichtigungen und Lesezeichen\nwo Entwürfe und ausstehende Versionen platziert werden"
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] ObjectColumns": {
+        "en": "Table columns that hold an object id, a node id, or a list or path of node ids. A row there\nkeeps the object or node from being called unreferenced. A table or column that does not\nexist is skipped, so the tables of extensions can be listed here.\nthe shop: baskets, wish lists and orders hold product collections\ncollected information (forms) belongs to its object\nindexing and other pending actions\nrole assignments to users and groups\nthe newsletter: articles of editions, sends, tracked links, schedules, approvals, lists",
+        "de": "Tabellenspalten, die eine Objekt-ID, eine Knoten-ID oder eine Liste oder einen Pfad von Knoten-IDs enthalten. Eine Zeile dort\nbewahrt das Objekt oder den Knoten davor, als nicht referenziert zu gelten. Eine Tabelle oder Spalte, die nicht\nexistiert, wird übersprungen, die Tabellen von Erweiterungen können also hier aufgeführt werden.\nder Shop: Warenkörbe, Wunschlisten und Bestellungen enthalten Produktsammlungen\ngesammelte Informationen (Formulare) gehören zu ihrem Objekt\nIndizierung und andere ausstehende Aktionen\nRollenzuweisungen an Benutzer und Gruppen\nder Newsletter: Artikel von Ausgaben, Versände, verfolgte Links, Zeitpläne, Freigaben, Listen"
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] ScanChunkSize": {
+        "en": "Fields read per query while building the index (100 to 20000)",
+        "de": "Pro Abfrage gelesene Felder beim Aufbau des Index (100 bis 20000)"
+    },
+    "ini:settings/contentcheck.ini [UnreferencedSettings] StorageParentClassList": {
+        "en": "An asset is listed only when every location's parent is of one of these classes (a folder\nthat only stores it). Below any other parent (a gallery, an article, an event) the\nparent's template shows it, so it counts as used.",
+        "de": "Ein Asset wird nur aufgeführt, wenn der Elternknoten jeder Platzierung zu einer dieser Klassen gehört (ein Ordner,\nder es nur aufbewahrt). Unter jedem anderen Elternknoten (eine Galerie, ein Artikel, eine Veranstaltung) zeigt es das\nTemplate des Elternknotens, es gilt also als verwendet."
+    },
+    "ini:settings/contentfinder.ini": {
+        "en": "The content finder: find content by an object, node, attribute or version id, a remote id,\na URL alias or the path of a file, and act on it. Guide: doc/eng-us/features/6.0/content-finder.md\n\nDo not edit this file: override it in settings/override/contentfinder.ini.append.php or in\na siteaccess's contentfinder.ini.append.php.\n\nWho may use it is decided by role policies, not here: contentfinder/search opens it,\ncontentfinder/delete is needed as well for its actions, and each result shows and allows only\nwhat the content policies of the object allow (content/read, content/versionread,\ncontent/remove, content/restore, content/cleantrash, content/versionremove).",
+        "de": "Der Inhaltsfinder: Inhalte über eine Objekt-, Knoten-, Attribut- oder Versions-ID, eine Remote-ID,\neinen URL-Alias oder den Pfad einer Datei finden und damit arbeiten. Anleitung: doc/eng-us/features/6.0/content-finder.md\n\nBearbeiten Sie diese Datei nicht: Überschreiben Sie sie in settings/override/contentfinder.ini.append.php oder in\nder contentfinder.ini.append.php eines Siteaccess.\n\nWer ihn verwenden darf, entscheiden die Richtlinien der Rollen, nicht diese Datei: contentfinder/search öffnet ihn,\ncontentfinder/delete wird zusätzlich für seine Aktionen gebraucht, und jedes Ergebnis zeigt und erlaubt nur,\nwas die Inhaltsrichtlinien des Objekts erlauben (content/read, content/versionread,\ncontent/remove, content/restore, content/cleantrash, content/versionremove)."
+    },
+    "ini:settings/contentfinder.ini [ContentFinderSettings] Enabled": {
+        "en": "true | false. With false the finder answers 404 on every siteaccess.",
+        "de": "true | false. Mit false antwortet der Finder in jedem Siteaccess mit 404."
+    },
+    "ini:settings/contentfinder.ini [ContentFinderSettings] FileRowLimit": {
+        "en": "At most this many file rows are read for one file path or prefix (1 to 500)",
+        "de": "Höchstens so viele Dateizeilen werden für einen Dateipfad oder ein Präfix gelesen (1 bis 500)"
+    },
+    "ini:settings/contentfinder.ini [ContentFinderSettings] MinimumPartLength": {
+        "en": "The shortest text (in characters, without the separators) searched for as a part (1 to 100)",
+        "de": "Der kürzeste Text (in Zeichen, ohne die Trennzeichen), nach dem als Teil gesucht wird (1 bis 100)"
+    },
+    "ini:settings/contentfinder.ini [ContentFinderSettings] PartRowLimit": {
+        "en": "At most this many alias elements are read for one part; the closest matches are shown first\n(the element itself, then elements starting with it, then whole words, then inside a word)",
+        "de": "Höchstens so viele Alias-Elemente werden für einen Teil gelesen; die nächsten Treffer stehen zuerst\n(das Element selbst, dann Elemente, die damit beginnen, dann ganze Wörter, dann innerhalb eines Wortes)"
+    },
+    "ini:settings/contentfinder.ini [ContentFinderSettings] PartialAliasSearch": {
+        "en": "enabled | disabled. When no URL alias, siteaccess prefix or last part of an alias matches, the\nfinder looks for alias elements that contain the text (\"product\" finds test-product). That is\none LIKE '%...%' over the whole of ezurlalias_ml: disable it where the table is very large.",
+        "de": "enabled | disabled. Wenn kein URL-Alias, kein Siteaccess-Präfix und kein letzter Teil eines Alias passt, sucht der\nFinder nach Alias-Elementen, die den Text enthalten (\"product\" findet test-product). Das ist\nein LIKE '%...%' über die ganze Tabelle ezurlalias_ml: Deaktivieren Sie es, wo die Tabelle sehr groß ist."
+    },
+    "ini:settings/contentfinder.ini [ContentFinderSettings] ResultLimit": {
+        "en": "At most this many objects are shown for one search (1 to 100)",
+        "de": "Höchstens so viele Objekte werden für eine Suche angezeigt (1 bis 100)"
+    },
+    "ini:settings/contentfinder.ini [ContentFinderSettings] SiteAccessList": {
+        "en": "The siteaccesses the finder answers on. Empty (the default): every siteaccess whose design\nlist ([DesignSettings] SiteDesign, AdditionalSiteDesignList[]) has an administration design\n(admin, admin2, admin3, admin4, admin4l, adminui, or any other design starting with admin).\nEvery other siteaccess answers 404.",
+        "de": "Die Siteaccesses, in denen der Finder antwortet. Leer (der Standard): jeder Siteaccess, dessen Design-\nListe ([DesignSettings] SiteDesign, AdditionalSiteDesignList[]) ein Administrations-Design enthält\n(admin, admin2, admin3, admin4, admin4l, adminui oder jedes andere Design, das mit admin beginnt).\nJeder andere Siteaccess antwortet mit 404."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] AutoopenCurrentNode": {
+        "en": "Use enabled or disabled. If enabled then current node\nwill be unfolded( children will be shown )\nautomatically.",
+        "de": "Verwenden Sie enabled oder disabled. Wenn enabled, wird der aktuelle Knoten\nautomatisch aufgeklappt (seine Unterknoten werden\nangezeigt)."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] ChapterClasses": {
+        "en": "which classes are chapter",
+        "de": "welche Klassen Kapitel sind"
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] ClassIconsSize": {
+        "en": "Size of icons in menu: small, normal, large, etc.\nCheck 'Sizes' setting in icon.ini for available sizes",
+        "de": "Größe der Symbole im Menü: small, normal, large usw.\nDie verfügbaren Größen stehen in der Einstellung 'Sizes' in icon.ini"
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] CreateHereMenu": {
+        "en": "ChapterClasses[]=chapter\nChapterClasses[]=lighttoc\nThe \"Create here\" menu when clicking the node icon in the administrator interface.\n  disabled   - Not having the menu.\n  full       - Having the menu with the necessary permission checks - this will most likely slow down the interface.\n  simplified - Having the menu without the necessary permission checks\n               (in other words: the menu will include all classes regardless\n                if the logged in user is allowed to create all those classes at that exact location).\n               Some users might get ACCESS DENIED, but it might just work for the most typical/usual cases\n               (where only one admin or a bunch of admins without limitations are using the interface).",
+        "de": "ChapterClasses[]=chapter\nChapterClasses[]=lighttoc\nDas Menü „Hier anlegen“ beim Klick auf das Knotensymbol in der Administrationsoberfläche.\n  disabled   - kein Menü.\n  full       - das Menü mit den nötigen Berechtigungsprüfungen; das verlangsamt die Oberfläche wahrscheinlich.\n  simplified - das Menü ohne die nötigen Berechtigungsprüfungen\n               (das heißt: Das Menü enthält alle Klassen, unabhängig davon,\n                ob der angemeldete Benutzer alle diese Klassen an genau dieser Stelle anlegen darf).\n               Manche Benutzer erhalten dann ZUGRIFF VERWEIGERT, aber für die häufigsten Fälle kann es genügen\n               (wenn nur ein Administrator oder einige Administratoren ohne Einschränkungen die Oberfläche verwenden)."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] Dynamic": {
+        "en": "If set to enabled, the admin tree menu is fetched and built dynamically on\nfly. Requires a web browser with AJAX support.",
+        "de": "Wenn auf enabled gesetzt, wird das Baummenü der Administration dynamisch\nzur Laufzeit geholt und aufgebaut. Erfordert einen Webbrowser mit AJAX-Unterstützung."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] ItemClickAction": {
+        "en": "url to redirect when clicking on menu item\nif empty then default action(viewing of object) will be performed\nexample: /content/browse, /content/view/full, etc.",
+        "de": "URL, auf die beim Klick auf einen Menüeintrag weitergeleitet wird\nwenn leer, wird die Standardaktion (Ansicht des Objekts) ausgeführt\nBeispiel: /content/browse, /content/view/full usw."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] MaxDepth": {
+        "en": "Maximum number of levels shown below the root node of the menu.\n\"0\" means unlimited: every level of the tree can be opened, down to the\ndeepest node.\n\"1\" shows only the children of the root node, \"2\" also their children, and\nso on. A node at the last allowed level is shown without the open/close\ncontrol.\nWith 'Dynamic' enabled the levels are loaded one at a time when a node is\nopened, so an unlimited depth does not make the menu slower; MaxNodes still\nlimits how many children one level lists.\nThe depth is counted from the root of each tree, so it applies in the same\nway to the Media and Users trees.",
+        "de": "Höchstzahl der unter dem Wurzelknoten des Menüs angezeigten Ebenen.\n\"0\" bedeutet unbegrenzt: Jede Ebene des Baums lässt sich öffnen, bis zum\ntiefsten Knoten.\n\"1\" zeigt nur die Unterknoten des Wurzelknotens, \"2\" auch deren Unterknoten und\nso weiter. Ein Knoten auf der letzten erlaubten Ebene wird ohne das Element zum\nÖffnen/Schließen angezeigt.\nMit aktiviertem 'Dynamic' werden die Ebenen einzeln geladen, wenn ein Knoten\ngeöffnet wird, eine unbegrenzte Tiefe macht das Menü also nicht langsamer; MaxNodes begrenzt weiterhin,\nwie viele Unterknoten eine Ebene auflistet.\nDie Tiefe wird ab der Wurzel jedes Baums gezählt, sie gilt also ebenso\nfür die Bäume Medien und Benutzer."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] MaxNodes": {
+        "en": "max nodes count to fetch\n\"0\" means unlimited",
+        "de": "Höchstzahl der zu holenden Knoten\n\"0\" bedeutet unbegrenzt"
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] MenuPersistence": {
+        "en": "Use cookies to remember opened paths and keep then\nopen until closed by user.\nIf disabled only current path will be opened.",
+        "de": "Cookies verwenden, um geöffnete Pfade zu merken und sie\ngeöffnet zu halten, bis der Benutzer sie schließt.\nWenn deaktiviert, wird nur der aktuelle Pfad geöffnet."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] PreloadClassIcons": {
+        "en": "Controls the pre-loading of class-icons, use\nenabled or disabled. When pre-loading is enabled\nicons of all classes will be loaded before\nmenu will be shown. If disabled icons will be loaded\non demand.",
+        "de": "Steuert das Vorladen der Klassensymbole, verwenden Sie\nenabled oder disabled. Wenn das Vorladen aktiviert ist,\nwerden die Symbole aller Klassen geladen, bevor\ndas Menü angezeigt wird. Wenn deaktiviert, werden die Symbole\nbei Bedarf geladen."
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] RootNodeID": {
+        "en": "ShowClasses[]=foo_folder\nRoot node of the content structure menu (the left tree of the Content\nstructure tab in the administration interface).\n\"1\" is the real top of the content tree, the virtual node every top-level\nsubtree hangs from: Content (2), Users (5), Media (43), Setup (48), Design\n(58) and any other top-level node are then shown as its children, so the\nwhole tree can be browsed from one place. Node 1 has no object; it is\nlabelled \"Top Level Nodes\" (translated) and clicking it opens the dashboard.\nSet it to 2 to start the menu at the Content node, as older releases did,\nor to any other node ID to start it there.\nThe Media and Users tabs keep their own trees, rooted at\n[NodeSettings] MediaRootNode and UserRootNode in content.ini.\nRootNodeID=118\nRootNodeID=2",
+        "de": "ShowClasses[]=foo_folder\nWurzelknoten des Menüs der Inhaltsstruktur (der linke Baum des Reiters\nInhaltsstruktur in der Administrationsoberfläche).\n\"1\" ist die eigentliche Spitze des Inhaltsbaums, der virtuelle Knoten, an dem jeder Teilbaum der\nobersten Ebene hängt: Inhalte (2), Benutzer (5), Medien (43), Setup (48), Design\n(58) und jeder andere Knoten der obersten Ebene erscheinen dann als seine Unterknoten, sodass sich der\nganze Baum von einer Stelle aus durchsuchen lässt. Knoten 1 hat kein Objekt; er ist\nmit „Knoten der obersten Ebene“ (übersetzt) beschriftet, und ein Klick darauf öffnet das Dashboard.\nSetzen Sie ihn auf 2, um das Menü wie in älteren Releases beim Knoten Inhalte zu beginnen,\noder auf eine andere Knoten-ID, um es dort zu beginnen.\nDie Reiter Medien und Benutzer behalten ihre eigenen Bäume, mit den Wurzeln\n[NodeSettings] MediaRootNode und UserRootNode in content.ini.\nRootNodeID=118\nRootNodeID=2"
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] ShowClasses": {
+        "en": "which classes to show",
+        "de": "welche Klassen angezeigt werden"
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] SortBy": {
+        "en": "the value is a pair of \"type/order\".\nfor example:  published/ascending,  name/descending, ...\nusing \"array\" notation it's possible to sort by multiple sort\ncriteria:\n   SortBy[]\n   SortBy[]=name/ascending\n   SortBy[]=published/descending\nif an empty array, it uses the sorting defined for each node instead (from the Ordering tab)",
+        "de": "der Wert ist ein Paar \"type/order\".\nzum Beispiel:  published/ascending,  name/descending, ...\nmit der \"array\"-Schreibweise lässt sich nach mehreren Kriterien\nsortieren:\n   SortBy[]\n   SortBy[]=name/ascending\n   SortBy[]=published/descending\nbei einem leeren Array wird stattdessen die für jeden Knoten festgelegte Sortierung verwendet (aus dem Reiter Sortierung)"
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] ToolTips": {
+        "en": "enabled/disabled",
+        "de": "enabled/disabled"
+    },
+    "ini:settings/contentstructuremenu.ini [TreeMenu] UseCache": {
+        "en": "If set to enabled, the JSON documents will be also cached on the server.",
+        "de": "Wenn auf enabled gesetzt, werden die JSON-Dokumente auch auf dem Server gecacht."
+    },
+    "ini:settings/country.ini": {
+        "en": "Exponential configuration file for content module\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/country.ini.append or\n      settings/override/country.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\nThis file should contain groups of countries only.\nName of group is Alpha-2 code as reserved in ISO 3166-1\nsee http://en.wikipedia.org/wiki/ISO_3166-1\nFor example:\n[<Alpha2>]\nName=<Name of country>\nAlpha2=<Aplha2 code>\nAlpha3=<Alpha3 code>\nIDC=<Internation Dialling Code>\n<Other info>=<value>",
+        "de": "Exponential-Konfigurationsdatei für das Modul content\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/country.ini.append oder\n      settings/override/country.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\nDiese Datei sollte nur Gruppen von Ländern enthalten.\nDer Name der Gruppe ist der Alpha-2-Code nach ISO 3166-1\nsiehe http://en.wikipedia.org/wiki/ISO_3166-1\nZum Beispiel:\n[<Alpha2>]\nName=<Name of country>\nAlpha2=<Aplha2 code>\nAlpha3=<Alpha3 code>\nIDC=<Internation Dialling Code>\n<Other info>=<value>"
+    },
+    "ini:settings/countrygroups.ini": {
+        "en": "Exponential configuration file for the grouped country list\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/countrygroups.ini.append or\n      settings/override/countrygroups.ini.append.php for more security\n      in non-virtualhost modes.\n\nEvery country select (the country attribute, the shop's account form, the\nVAT rules, the user country toolbar) shows these groups first, each in the\norder given here, then \"All countries\" A-Z by the translated name.\nThe countries themselves come from country.ini; a code that is not in it is\nskipped. These settings are not in country.ini because every group of that\nfile is read as a country.\n\nThe ranking of the default list is explained in\ndoc/eng-us/features/6.0/country-groups.md",
+        "de": "Exponential-Konfigurationsdatei für die gruppierte Länderliste\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/countrygroups.ini.append oder\n      settings/override/countrygroups.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host.\n\nJede Länderauswahl (das Länderattribut, das Kontoformular des Shops, die\nMehrwertsteuerregeln, die Länder-Werkzeugleiste des Benutzers) zeigt zuerst diese Gruppen, jede in der\nhier angegebenen Reihenfolge, dann „Alle Länder“ von A bis Z nach dem übersetzten Namen.\nDie Länder selbst kommen aus country.ini; ein Code, der dort nicht steht, wird\nübersprungen. Diese Einstellungen stehen nicht in country.ini, weil jede Gruppe dieser\nDatei als Land gelesen wird.\n\nDie Rangfolge der Standardliste ist erklärt in\ndoc/eng-us/features/6.0/country-groups.md"
+    },
+    "ini:settings/countrygroups.ini [CountrySettings] GroupCountries_common": {
+        "en": "North America, South America, Europe, the United Kingdom, Asia,\nNew Zealand, Australia, Africa",
+        "de": "Nordamerika, Südamerika, Europa, das Vereinigte Königreich, Asien,\nNeuseeland, Australien, Afrika"
+    },
+    "ini:settings/countrygroups.ini [CountrySettings] GroupList": {
+        "en": "The groups shown before \"All countries\", in this order. Each group needs\nGroupName_<group> (its label, translated in the context kernel/country)\nand GroupCountries_<group>[] (ISO 3166-1 alpha-2 codes, ranked).\nAn empty list leaves only \"All countries\".",
+        "de": "Die vor „Alle Länder“ gezeigten Gruppen, in dieser Reihenfolge. Jede Gruppe braucht\nGroupName_<group> (ihre Beschriftung, übersetzt im Kontext kernel/country)\nund GroupCountries_<group>[] (Codes nach ISO 3166-1 alpha-2, nach Rang).\nEine leere Liste lässt nur „Alle Länder“ übrig."
+    },
+    "ini:settings/countrygroups.ini [CountrySettings] RepeatInAllCountries": {
+        "en": "Whether \"All countries\" lists the countries of the groups above again\n(enabled), so the A-Z list stays complete, or leaves them out (disabled).\nA select that allows several countries never repeats them.",
+        "de": "Ob „Alle Länder“ die Länder der Gruppen oben erneut auflistet\n(enabled), damit die Liste von A bis Z vollständig bleibt, oder sie weglässt (disabled).\nEine Auswahl, die mehrere Länder erlaubt, wiederholt sie nie."
+    },
+    "ini:settings/cronjob.ini": {
+        "en": "Exponential configuration file for cronjobs.\n\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/cronjob.ini.append or\n      settings/override/cronjob.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für Cronjobs.\n\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/cronjob.ini.append oder\n      settings/override/cronjob.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/cronjob.ini [AdminSettings] ForbiddenParts": {
+        "en": "Settings for the cronjobs console at Setup > Cronjobs, which launches a\ncronjob part from the administration interface.\nParts that must not be launchable from a browser. Both defaults are\ndestructive and belong to an administrator on a shell: cluster_maintenance\npurges cluster storage, and unlock releases locks other processes hold.",
+        "de": "Einstellungen der Cronjob-Konsole unter Setup > Cronjobs, die einen\nCronjob-Teil aus der Administrationsoberfläche startet.\nTeile, die sich nicht aus einem Browser starten lassen dürfen. Beide Standards sind\ndestruktiv und gehören in die Hand eines Administrators auf einer Shell: cluster_maintenance\nlöscht Cluster-Speicher, und unlock gibt Sperren frei, die andere Prozesse halten."
+    },
+    "ini:settings/cronjob.ini [AdminSettings] LogFile": {
+        "en": "Where a launched cronjob's output and errors are written, relative to the var\ndirectory of the siteaccess. The console reads these, and follows them as they\ngrow while a job runs.",
+        "de": "Wohin Ausgabe und Fehler eines gestarteten Cronjobs geschrieben werden, relativ zum var-\nVerzeichnis des Siteaccess. Die Konsole liest sie und verfolgt sie, während sie\nwachsen, solange ein Auftrag läuft."
+    },
+    "ini:settings/cronjob.ini [AdminSettings] PhpCliPath": {
+        "en": "Full path to the php command line binary used to run runcronjobs.php. Left\nempty the usual locations are tried, which is enough on a normal installation.\nIt has to be a command line binary: the one running the web request cannot run\na script.",
+        "de": "Vollständiger Pfad zur PHP-Kommandozeilen-Binärdatei, mit der runcronjobs.php ausgeführt wird. Bleibt er\nleer, werden die üblichen Orte versucht, was in einer normalen Installation genügt.\nEs muss eine Kommandozeilen-Binärdatei sein: Die, die die Web-Anfrage ausführt, kann kein\nSkript ausführen."
+    },
+    "ini:settings/cronjob.ini [CacheCleanupSettings] IterationSleep": {
+        "en": "Microseconds to sleep after every 1000 files, to go easy on the disk. 0 = none.",
+        "de": "Mikrosekunden Pause nach je 1000 Dateien, um die Festplatte zu schonen. 0 = keine."
+    },
+    "ini:settings/cronjob.ini [CacheCleanupSettings] MaxAge": {
+        "en": "Seconds after which a file is removed whatever its expiry. A cold entry that\nwas still valid costs one regeneration. 0 removes only expired files.",
+        "de": "Sekunden, nach denen eine Datei unabhängig von ihrem Ablauf entfernt wird. Ein kalter Eintrag, der\nnoch gültig war, kostet eine Neuerzeugung. 0 entfernt nur abgelaufene Dateien."
+    },
+    "ini:settings/cronjob.ini [CacheCleanupSettings] RenameAfterClear": {
+        "en": "After a global clear of a cache, move its whole directory aside in one rename\nand delete it from there, instead of looking at every file. Entries stored\nbetween the clear and the run are lost and generated again. disabled removes\nfile by file. A clear in the administration interface or with\nbin/php/ezcache.php already moves the directory aside itself (site.ini\n[FileSettings] RenameExpiredCaches) and records that here, so this run does\nnot move it a second time.",
+        "de": "Nach dem globalen Leeren eines Caches sein ganzes Verzeichnis mit einer Umbenennung beiseiteschieben\nund dort löschen, statt jede Datei anzusehen. Einträge, die zwischen\ndem Leeren und dem Lauf gespeichert wurden, gehen verloren und werden neu erzeugt. disabled entfernt\nDatei für Datei. Ein Leeren in der Administrationsoberfläche oder mit\nbin/php/ezcache.php schiebt das Verzeichnis schon selbst beiseite (site.ini\n[FileSettings] RenameExpiredCaches) und vermerkt das hier, sodass dieser Lauf es\nnicht ein zweites Mal verschiebt."
+    },
+    "ini:settings/cronjob.ini [CronjobPart-audit]": {
+        "en": "The audit on its own: php runcronjobs.php audit (doc/eng-us/bc/6.0/audit.md)",
+        "de": "Das Audit für sich: php runcronjobs.php audit (doc/eng-us/bc/6.0/audit.md)"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-cache_cleanup]": {
+        "en": "Removes view cache and cache-block files that have expired or grown old;\nwithout it they stay on disk until the same key is generated again. Runs for\nthe var directory of the given siteaccess, so once per VarDir:\n  php runcronjobs.php -s <siteaccess> cache_cleanup",
+        "de": "Entfernt View-Cache- und Cache-Block-Dateien, die abgelaufen oder alt geworden sind;\nohne ihn bleiben sie auf der Festplatte, bis derselbe Schlüssel erneut erzeugt wird. Läuft für\ndas var-Verzeichnis des angegebenen Siteaccess, also einmal pro VarDir:\n  php runcronjobs.php -s <siteaccess> cache_cleanup"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-cache_cleanup] Scripts": {
+        "en": "The role-aware HTTP cache (settings/httpcache.ini); does nothing while it is off.\nThe result files of the SQL query cache (settings/querycache.ini Storage=file,\nor auto without APCu); does nothing while there are none.",
+        "de": "Der rollenbewusste HTTP-Cache (settings/httpcache.ini); tut nichts, solange er aus ist.\nDie Ergebnisdateien des SQL-Abfrage-Caches (settings/querycache.ini Storage=file,\noder auto ohne APCu); tut nichts, solange es keine gibt."
+    },
+    "ini:settings/cronjob.ini [CronjobPart-cleanuprss]": {
+        "en": "Trims what the RSS import has created. Does nothing until\ncontent.ini [RSSImportCleanupSettings] says what may be removed, so it is\nsafe to schedule before it is configured:\n  php runcronjobs.php cleanuprss",
+        "de": "Kürzt, was der RSS-Import angelegt hat. Tut nichts, bis\ncontent.ini [RSSImportCleanupSettings] sagt, was entfernt werden darf, es lässt sich also\nschon vor der Konfiguration sicher einplanen:\n  php runcronjobs.php cleanuprss"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-contentcheck]": {
+        "en": "The reference index of the content checks on its own: php runcronjobs.php contentcheck. Only\nneeded with contentcheck.ini [UnreferencedSettings] BuildOnRequest=false (very large\ninstallations); run it more often than IndexTTL. Guide: doc/eng-us/features/6.0/content-checks.md",
+        "de": "Der Referenzindex der Inhaltsprüfungen für sich: php runcronjobs.php contentcheck. Nur\nnötig mit contentcheck.ini [UnreferencedSettings] BuildOnRequest=false (sehr große\nInstallationen); führen Sie ihn öfter als IndexTTL aus. Anleitung: doc/eng-us/features/6.0/content-checks.md"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-frequent] Scripts": {
+        "en": "Content jobs whose worker died, or that nobody started (kernel/classes/contentjob/)\nThe audit: sink spools, alert rules; once a day rotation, archives, retention and the\ncheckpoint (audit.ini [AuditRotationSettings] RotateAfter). Here so that an installation\nrunning only the frequent group needs no extra crontab line.\nThe bounce mailbox (mailpreferences.ini [BounceSettings]; does nothing until it is set up)",
+        "de": "Inhaltsaufträge, deren Worker gestorben ist oder die niemand gestartet hat (kernel/classes/contentjob/)\nDas Audit: Spools der Ziele, Alarmregeln; einmal am Tag Rotation, Archive, Aufbewahrung und der\nPrüfpunkt (audit.ini [AuditRotationSettings] RotateAfter). Hier, damit eine Installation,\ndie nur die Gruppe frequent ausführt, keine zusätzliche Crontab-Zeile braucht.\nDas Postfach für Rückläufer (mailpreferences.ini [BounceSettings]; tut nichts, bis es eingerichtet ist)"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-infrequent] Scripts": {
+        "en": "E-mail preferences retention (mailpreferences.ini [ConsentSettings], [SuppressionSettings])",
+        "de": "Aufbewahrung der E-Mail-Einstellungen (mailpreferences.ini [ConsentSettings], [SuppressionSettings])"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-logs]": {
+        "en": "The logs: rotate those over their MaxSize, prune and compress their archives (doc/eng-us/features/6.0/log-rotation.md).\nIn no default part: run it with php runcronjobs.php logs, or add explogrotate.php to a part the site runs.",
+        "de": "Die Logs: die über ihrer MaxSize rotieren, ihre Archive bereinigen und komprimieren (doc/eng-us/features/6.0/log-rotation.md).\nIn keinem Standardteil: Führen Sie ihn mit php runcronjobs.php logs aus oder fügen Sie explogrotate.php einem Teil hinzu, den die Website ausführt."
+    },
+    "ini:settings/cronjob.ini [CronjobPart-mailbounces]": {
+        "en": "The bounce mailbox on its own: php runcronjobs.php mailbounces",
+        "de": "Das Postfach für Rückläufer für sich: php runcronjobs.php mailbounces"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-mailpreferences]": {
+        "en": "The e-mail preferences retention on its own: php runcronjobs.php mailpreferences",
+        "de": "Die Aufbewahrung der E-Mail-Einstellungen für sich: php runcronjobs.php mailpreferences"
+    },
+    "ini:settings/cronjob.ini [CronjobPart-notification]": {
+        "en": "The notification filter on its own: php runcronjobs.php notification (doc/eng-us/features/6.0/notifications.md)",
+        "de": "Der Benachrichtigungsfilter für sich: php runcronjobs.php notification (doc/eng-us/features/6.0/notifications.md)"
+    },
+    "ini:settings/cronjob.ini [CronjobSettings] ExtensionDirectories": {
+        "en": "Scripts[]=unlock.php\nScripts[]=staticcache_cleanup.php\nScripts[]=updateviewcount.php\nExtension directory for cronjobs.",
+        "de": "Scripts[]=unlock.php\nScripts[]=staticcache_cleanup.php\nScripts[]=updateviewcount.php\nVerzeichnis der Erweiterung für Cronjobs."
+    },
+    "ini:settings/cronjob.ini [CronjobSettings] MaxScriptExecutionTime": {
+        "en": "No more than one instance of a cronjob script can be run at any given time.\nIf a script uses more time than MaxScriptExecutionTime, the next instance of\nit will try to gracefully steal the cronjob script mutex. If the process has\nbeen running for more than two times MaxScriptExecutionTime, the original\nprocess will be killed. The default is 12 hours. MaxScriptExecutionTime can\nalso be set per cronjob part, that will override this global setting.",
+        "de": "Von einem Cronjob-Skript kann jederzeit höchstens eine Instanz laufen.\nBraucht ein Skript länger als MaxScriptExecutionTime, versucht die nächste Instanz,\nden Mutex des Cronjob-Skripts sauber zu übernehmen. Läuft der Prozess schon länger\nals zweimal MaxScriptExecutionTime, wird der ursprüngliche\nProzess beendet. Der Standard ist 12 Stunden. MaxScriptExecutionTime lässt sich\nauch pro Cronjob-Teil setzen, was diese globale Einstellung überschreibt."
+    },
+    "ini:settings/cronjob.ini [CronjobSettings] Scripts": {
+        "en": "Since 4.6 the following script is not activated by default\nScripts[]=subtreeexpirycleanup.php",
+        "de": "Seit 4.6 ist das folgende Skript standardmäßig nicht aktiviert\nScripts[]=subtreeexpirycleanup.php"
+    },
+    "ini:settings/cronjob.ini [PauseSettings] Directory": {
+        "en": "Where the files are, relative to the var directory of the siteaccess. Empty: the\ncronjob_control directory below the cache directory.",
+        "de": "Wo die Dateien liegen, relativ zum var-Verzeichnis des Siteaccess. Leer: das\nVerzeichnis cronjob_control unter dem Cache-Verzeichnis."
+    },
+    "ini:settings/cronjob.ini [PauseSettings] Pause": {
+        "en": "Pausing cronjob parts at Setup > Cronjobs: a paused part (or \"all\") is left out by\nruncronjobs.php, whoever starts it, until it is resumed. The state is a file per part,\ncronpart_deactivated_<part>.txt with \"1\" for paused, the layout extensions that paused\nparts already use, so a page of such an extension shows the same state. disabled ignores them.\nGuide: doc/eng-us/features/6.0/cronjob-pause.md",
+        "de": "Pausieren von Cronjob-Teilen unter Setup > Cronjobs: Einen pausierten Teil (oder \"all\") lässt\nruncronjobs.php aus, egal wer es startet, bis er fortgesetzt wird. Der Zustand ist eine Datei pro Teil,\ncronpart_deactivated_<part>.txt mit \"1\" für pausiert, das Format, das die Layout-Erweiterungen für pausierte\nTeile schon verwenden, sodass eine Seite einer solchen Erweiterung denselben Zustand zeigt. disabled ignoriert sie.\nAnleitung: doc/eng-us/features/6.0/cronjob-pause.md"
+    },
+    "ini:settings/cronjob.ini [ScriptDocumentation] DocumentationBase": {
+        "en": "Where a path is looked up. Empty: the documentation of Exponential on GitHub.\nOnly http and https links are shown.",
+        "de": "Wo ein Pfad nachgeschlagen wird. Leer: die Dokumentation von Exponential auf GitHub.\nEs werden nur http- und https-Links angezeigt."
+    },
+    "ini:settings/cronjob.ini [ScriptDocumentation] Link": {
+        "en": "A \"Docs\" link beside a script at Setup > Cronjobs. A script names its documentation\nwith the @link tag of its header (or of its class file), a URL or a path such as\ndoc/eng-us/guides/sessions.md. An installation can give or replace one per script, by the\nfile name as Scripts[] has it; none removes the link the header gives.\nGuide: doc/eng-us/features/6.0/cronjobs-console.md\nLink[session_gc.php]=https://intranet.example.com/operations/sessions\nLink[sitemap.php]=none",
+        "de": "Ein Link „Doku“ neben einem Skript unter Setup > Cronjobs. Ein Skript nennt seine Dokumentation\nmit dem Tag @link seines Kopfes (oder seiner Klassendatei), eine URL oder einen Pfad wie\ndoc/eng-us/guides/sessions.md. Eine Installation kann pro Skript einen angeben oder ersetzen, über den\nDateinamen, wie ihn Scripts[] hat; none entfernt den Link, den der Kopf angibt.\nAnleitung: doc/eng-us/features/6.0/cronjobs-console.md\nLink[session_gc.php]=https://intranet.example.com/operations/sessions\nLink[sitemap.php]=none"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] AllowedPrivateHosts": {
+        "en": "Addresses on a private, loopback or link-local network are never requested,\nso content cannot make the server reach inside its own network. List the\nhosts, addresses or IPv4 ranges that may be tested anyway.\nExample:\nAllowedPrivateHosts[]=intranet.example.local\nAllowedPrivateHosts[]=10.1.0.0/16",
+        "de": "Adressen in einem privaten, Loopback- oder Link-Local-Netz werden nie angefragt,\ndamit Inhalte den Server nicht in sein eigenes Netz greifen lassen können. Listen Sie die\nHosts, Adressen oder IPv4-Bereiche auf, die trotzdem geprüft werden dürfen.\nBeispiel:\nAllowedPrivateHosts[]=intranet.example.local\nAllowedPrivateHosts[]=10.1.0.0/16"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] HostDelay": {
+        "en": "Milliseconds between two requests to the same host",
+        "de": "Millisekunden zwischen zwei Anfragen an denselben Host"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] MaxRedirects": {
+        "en": "Redirects followed before a link counts as broken",
+        "de": "Weiterleitungen, denen gefolgt wird, bevor ein Link als defekt gilt"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] MaxURLsPerRun": {
+        "en": "Links checked in one run, the ones checked longest ago first; 0 checks all",
+        "de": "In einem Lauf geprüfte Links, die am längsten nicht geprüften zuerst; 0 prüft alle"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] RecheckInterval": {
+        "en": "Seconds before a checked link is checked again; 0 checks every link on every run",
+        "de": "Sekunden, bis ein geprüfter Link erneut geprüft wird; 0 prüft jeden Link bei jedem Lauf"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] SiteURL": {
+        "en": "The link check (linkcheck.php, part infrequent) tests the links of published content.\nGuide: doc/eng-us/guides/urls-and-aliases.md\n\nSpecify full path of all site URL; a path that is not a URL alias or module\nview is tried on these addresses.\nExample:\nSiteURL[]=http://exponential.earth/admin\nSiteURL[]=http://exponential.earth/news",
+        "de": "Die Linkprüfung (linkcheck.php, Teil infrequent) testet die Links veröffentlichter Inhalte.\nAnleitung: doc/eng-us/guides/urls-and-aliases.md\n\nGeben Sie den vollständigen Pfad jeder Website-URL an; ein Pfad, der kein URL-Alias und keine Modul-\nansicht ist, wird an diesen Adressen versucht.\nBeispiel:\nSiteURL[]=http://exponential.earth/admin\nSiteURL[]=http://exponential.earth/news"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] Timeout": {
+        "en": "Seconds a request may take, and seconds to connect",
+        "de": "Sekunden, die eine Anfrage dauern darf, und Sekunden für den Verbindungsaufbau"
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] UserAgent": {
+        "en": "The User-Agent header of the requests",
+        "de": "Der User-Agent-Header der Anfragen"
+    },
+    "ini:settings/dashboard.ini [DashboardBlock_audit]": {
+        "en": "The latest security events (notice or worse, access and system channels), the alerts of the last\nday and, for audit/manage, the \"audit is off\" and \"chain broken\" warnings (doc/eng-us/bc/6.0/audit.md).",
+        "de": "Die neuesten Sicherheitsereignisse (notice oder schlimmer, Kanäle access und system), die Alarme des letzten\nTages und, für audit/manage, die Warnungen „Audit ist aus“ und „Kette defekt“ (doc/eng-us/bc/6.0/audit.md)."
+    },
+    "ini:settings/dashboard.ini [DashboardBlock_pending_list]": {
+        "en": "DashboardBlocks[]=community_activity\nDashboardBlocks[]=wishlist\n[DashboardBlock_example]\nBy default system will load /dashboard/[block_identifier].tpl template\ne.g if INI group is called [Dashboard_example] then system will load /dashboard/example.tpl file\nIf Template variable is specified then it will be used instead of default location\nTemplate=example.tpl\nPriority determines the order in which the blocks will be rendered\nPriority=10\nList of policies, either in \"<node_id>\" or \"<module>/<function>\" form\nIn case of node id, content/read is checked!\nThe block is left out unless the user has every one of them.\nPolicyList[]\nThe addresses the block is about or links to, \"<module>/<view>[/<parameters>]\" or a URL alias.\nThe block is left out unless the user can open every one of them, checked the way the kernel\nchecks the request (expViewAccess: the view's policy functions with their limitations, a module\nwithout functions as a whole, the siteaccess rules, the user/login SiteAccess limitation, and the\nnode or object of content/view and content/edit). Use it for what PolicyList cannot say: a view\nwhose functions are \"a or b\", a view without functions, an extension's module.\nViewList[]\nControls how many items are fetched and displayed in the dashboard block\nValue available as a {$block.number_of_items} variable\nNumberOfItems=10",
+        "de": "DashboardBlocks[]=community_activity\nDashboardBlocks[]=wishlist\n[DashboardBlock_example]\nStandardmäßig lädt das System das Template /dashboard/[block_identifier].tpl\nz. B. lädt das System bei einer INI-Gruppe [Dashboard_example] die Datei /dashboard/example.tpl\nIst die Variable Template angegeben, wird sie statt des Standardorts verwendet\nTemplate=example.tpl\nPriority bestimmt die Reihenfolge, in der die Blöcke gerendert werden\nPriority=10\nListe der Richtlinien, in der Form \"<node_id>\" oder \"<module>/<function>\"\nBei einer Knoten-ID wird content/read geprüft!\nDer Block entfällt, außer der Benutzer hat jede davon.\nPolicyList[]\nDie Adressen, um die es im Block geht oder auf die er verlinkt, \"<module>/<view>[/<parameters>]\" oder ein URL-Alias.\nDer Block entfällt, außer der Benutzer kann jede davon öffnen, geprüft wie der Kernel\ndie Anfrage prüft (expViewAccess: die Richtlinienfunktionen der Ansicht mit ihren Einschränkungen, ein Modul\nohne Funktionen als Ganzes, die Siteaccess-Regeln, die Einschränkung SiteAccess von user/login und der\nKnoten oder das Objekt von content/view und content/edit). Verwenden Sie es für das, was PolicyList nicht sagen kann: eine Ansicht,\nderen Funktionen „a oder b“ sind, eine Ansicht ohne Funktionen, das Modul einer Erweiterung.\nViewList[]\nSteuert, wie viele Einträge im Dashboard-Block geholt und angezeigt werden\nWert verfügbar als Variable {$block.number_of_items}\nNumberOfItems=10"
+    },
+    "ini:settings/dashboard.ini [DashboardSettings] DashboardBlocks": {
+        "en": "DashboardBlocks[]=example",
+        "de": "DashboardBlocks[]=example"
+    },
+    "ini:settings/datatype.ini": {
+        "en": "Exponential configuration file for eZTemplate\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/datatype.ini.append or\n      settings/override/datatype.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für eZTemplate\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/datatype.ini.append oder\n      settings/override/datatype.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/datatype.ini [ClassEditSettings]": {
+        "en": "Settings related to class editing and datatypes",
+        "de": "Einstellungen zum Bearbeiten von Klassen und zu Datentypen"
+    },
+    "ini:settings/datatype.ini [ClassEditSettings] GroupedInput": {
+        "en": "A list of datatypes that needs to group their input fields\nwhen displayed in class edit mode\nNOTE: The datatype may override this using PHP code",
+        "de": "Eine Liste der Datentypen, die ihre Eingabefelder gruppieren müssen,\nwenn sie im Modus Klasse bearbeiten angezeigt werden\nHINWEIS: Der Datentyp kann dies per PHP-Code überschreiben"
+    },
+    "ini:settings/datatype.ini [CollectionSettings]": {
+        "en": "Settings related to content information collection and datatypes",
+        "de": "Einstellungen zur Informationssammlung von Inhalten und zu Datentypen"
+    },
+    "ini:settings/datatype.ini [CollectionSettings] GroupedInput": {
+        "en": "A list of datatypes that needs to group their input fields\nwhen displayed in information collection mode\nNOTE: The datatype may override this using PHP code",
+        "de": "Eine Liste der Datentypen, die ihre Eingabefelder gruppieren müssen,\nwenn sie im Modus Informationssammlung angezeigt werden\nHINWEIS: Der Datentyp kann dies per PHP-Code überschreiben"
+    },
+    "ini:settings/datatype.ini [EditSettings]": {
+        "en": "Settings related to content editing and datatypes",
+        "de": "Einstellungen zum Bearbeiten von Inhalten und zu Datentypen"
+    },
+    "ini:settings/datatype.ini [EditSettings] GroupedInput": {
+        "en": "A list of datatypes that needs to group their input fields\nwhen displayed in edit mode\nNOTE: The datatype may override this using PHP code",
+        "de": "Eine Liste der Datentypen, die ihre Eingabefelder gruppieren müssen,\nwenn sie im Bearbeitungsmodus angezeigt werden\nHINWEIS: Der Datentyp kann dies per PHP-Code überschreiben"
+    },
+    "ini:settings/datatype.ini [ResultSettings]": {
+        "en": "Settings related to results (after infocollection) and datatypes",
+        "de": "Einstellungen zu Ergebnissen (nach der Informationssammlung) und zu Datentypen"
+    },
+    "ini:settings/datatype.ini [ResultSettings] GroupedInput": {
+        "en": "A list of datatypes that needs to group their data\nwhen displayed after information collection\nNOTE: The datatype may override this using PHP code",
+        "de": "Eine Liste der Datentypen, die ihre Daten gruppieren müssen,\nwenn sie nach der Informationssammlung angezeigt werden\nHINWEIS: Der Datentyp kann dies per PHP-Code überschreiben"
+    },
+    "ini:settings/datatype.ini [ViewSettings]": {
+        "en": "Settings related to content view and datatypes",
+        "de": "Einstellungen zur Ansicht von Inhalten und zu Datentypen"
+    },
+    "ini:settings/datatype.ini [ViewSettings] CustomActionMap": {
+        "en": "List of custom datatype actions and corresponding <module>/<view> or\njust <view> in case of content module where they should be executed\neg: CustomActionMap[ActionAddToBasket]=shop/basket\neg: CustomActionMap[ActionCollectInformation]=collectinformation\nNote: Action definition should be defined in contentActionList function\nof the datatype, see ez[multi]pricetype.php for code example.",
+        "de": "Liste eigener Aktionen von Datentypen und des zugehörigen <module>/<view> oder,\nbeim Modul content, nur <view>, wo sie ausgeführt werden sollen\nz. B.: CustomActionMap[ActionAddToBasket]=shop/basket\nz. B.: CustomActionMap[ActionCollectInformation]=collectinformation\nHinweis: Die Definition der Aktion gehört in die Funktion contentActionList\ndes Datentyps; ein Codebeispiel steht in ez[multi]pricetype.php."
+    },
+    "ini:settings/datatype.ini [ViewSettings] GroupedInput": {
+        "en": "A list of datatypes that needs to group output data\nwhen displayed in view mode\nNOTE: The datatype may override this using PHP code",
+        "de": "Eine Liste der Datentypen, die ihre Ausgabedaten gruppieren müssen,\nwenn sie im Ansichtsmodus angezeigt werden\nHINWEIS: Der Datentyp kann dies per PHP-Code überschreiben"
+    },
+    "ini:settings/datetime.ini": {
+        "en": "Exponential configuration file for date and time handling.\n\nNOTE:  It is not recommended to edit this file directly, instead\n       a file in override should be created for setting the\n       values that are required for your site. Either create\n       a file called settings/override/datetime.ini.append or\n       settings/override/datetime.ini.append.php for more security\n       in non-virtualhost modes (the .php file may already be present\n       and can be used for this purpose).\n Element    Example                          Description\n -------    -------                          -----------\n %a         am                               Lowercase Ante meridiem and Post meridiem.\n %A         AM                               Uppercase Ante meridiem and Post meridiem.\n %c         2004-02-12T15:19:21+00:00        ISO 8601 date\n %d         08                               Day of the month, 2 digits with leading zeros.\n %D         Wed                              A short textual representation of a day, in accordance\n                                             with the \"[ShortDayNames]\" section of the language .INI file\n                                             located in the \"share/locale\" directory.\n %F         October                          A full textual representation of a month, such as January or March.\n %g         12                               12-hour format of an hour without leading zeros.\n %G         3                                24-hour format of an hour without leading zeros.\n %h         12                               12-hour format of an hour with leading zeros.\n %H         03                               24-hour format of an hour with leading zeros.\n %i         00                               Minutes with leading zeros\n %j         8                                Day of the month without leading zeros\n %l         Wednesday                        A full textual representation of the day of the week.\n %m         10                               Numeric representation of a month, with leading zeros.\n %M         Oct                              A short textual representation of a month, in accordance\n                                             with the \"[ShortMonthNames]\" section of the language .INI file located\n                                             in the \"share/locale\" directory.\n %n         10                               Numeric representation of a month, without leading zeros.\n %O         -0500                            Difference to Greenwich time (GMT) in hours.\n %r         Thu, 21 Dec 2000 16:01:07 +0200  RFC 2822 formatted date\n %s         00                               Seconds, with leading zeros.\n %T         CDT                              Timezone setting of this machine.\n %U         1065589200                       Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT).\n %w         3                                Numeric representation of the day of the week.\n %W         41                               ISO-8601 week number of year, weeks starting on Monday.\n %Y         2003                             A full numeric representation of a year, 4 digits.\n %y         03                               A two digit representation of a year.\n %z         280                              The day of the year.\n %Z         -18000                           Timezone offset in seconds. The offset for timezones west of UTC is\n                                             always negative, and for those east of UTC is always positive.",
+        "de": "Exponential-Konfigurationsdatei für den Umgang mit Datum und Zeit.\n\nHINWEIS:  Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n       eine Datei in override an, um die Werte zu setzen,\n       die Ihre Website braucht. Legen Sie entweder\n       eine Datei settings/override/datetime.ini.append oder\n       settings/override/datetime.ini.append.php an, für mehr Sicherheit\n       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n       und kann dafür verwendet werden).\n Element    Beispiel                         Beschreibung\n -------    -------                          -----------\n %a         am                               Kleingeschriebenes Ante meridiem und Post meridiem.\n %A         AM                               Großgeschriebenes Ante meridiem und Post meridiem.\n %c         2004-02-12T15:19:21+00:00        Datum nach ISO 8601\n %d         08                               Tag des Monats, zweistellig mit führender Null.\n %D         Wed                              Kurzer Name eines Tages, gemäß\n                                             dem Abschnitt \"[ShortDayNames]\" der Sprach-INI-Datei\n                                             im Verzeichnis \"share/locale\".\n %F         October                          Voller Name eines Monats, etwa January oder March.\n %g         12                               Stunde im 12-Stunden-Format ohne führende Null.\n %G         3                                Stunde im 24-Stunden-Format ohne führende Null.\n %h         12                               Stunde im 12-Stunden-Format mit führender Null.\n %H         03                               Stunde im 24-Stunden-Format mit führender Null.\n %i         00                               Minuten mit führender Null\n %j         8                                Tag des Monats ohne führende Null\n %l         Wednesday                        Voller Name des Wochentags.\n %m         10                               Monat als Zahl, mit führender Null.\n %M         Oct                              Kurzer Name eines Monats, gemäß\n                                             dem Abschnitt \"[ShortMonthNames]\" der Sprach-INI-Datei\n                                             im Verzeichnis \"share/locale\".\n %n         10                               Monat als Zahl, ohne führende Null.\n %O         -0500                            Abweichung von der Greenwich-Zeit (GMT) in Stunden.\n %r         Thu, 21 Dec 2000 16:01:07 +0200  Datum im Format nach RFC 2822\n %s         00                               Sekunden, mit führender Null.\n %T         CDT                              Zeitzoneneinstellung dieses Rechners.\n %U         1065589200                       Sekunden seit der Unix-Epoche (1. Januar 1970 00:00:00 GMT).\n %w         3                                Wochentag als Zahl.\n %W         41                               Kalenderwoche nach ISO 8601, Wochen beginnen am Montag.\n %Y         2003                             Jahr als volle Zahl, vierstellig.\n %y         03                               Jahr zweistellig.\n %z         280                              Der Tag des Jahres.\n %Z         -18000                           Zeitzonenversatz in Sekunden. Der Versatz für Zeitzonen westlich von UTC ist\n                                             immer negativ, für die östlich von UTC immer positiv."
+    },
+    "ini:settings/dbschema.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/dbschema.ini.append or\n      settings/override/dbschema.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/dbschema.ini.append oder\n      settings/override/dbschema.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/dbschema.ini [LintChecker] IgnoredFieldSyntax": {
+        "en": "A list of table + fields which do not get their syntax checked.\nThese are fields which are already in Exponential and\ncannot be changed in the 3.x series.\nThey all have workarounds for the various DB handlers.\n\nEach entry is the table name, a dot and the field name\ne.g ezuser.login",
+        "de": "Eine Liste von Tabellen und Feldern, deren Syntax nicht geprüft wird.\nDas sind Felder, die es in Exponential schon gibt und die\nin der Serie 3.x nicht geändert werden können.\nFür alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.\n\nJeder Eintrag ist der Tabellenname, ein Punkt und der Feldname\nz. B. ezuser.login"
+    },
+    "ini:settings/dbschema.ini [LintChecker] IgnoredFields": {
+        "en": "A list of table + fields which do not get their names checked.\nThese are fields which are already in Exponential and\ncannot be changed in the 3.x series.\nThey all have workarounds for the various DB handlers.\n\nEach entry is the table name, a dot and the field name\ne.g ezuser.login",
+        "de": "Eine Liste von Tabellen und Feldern, deren Namen nicht geprüft werden.\nDas sind Felder, die es in Exponential schon gibt und die\nin der Serie 3.x nicht geändert werden können.\nFür alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.\n\nJeder Eintrag ist der Tabellenname, ein Punkt und der Feldname\nz. B. ezuser.login"
+    },
+    "ini:settings/dbschema.ini [LintChecker] IgnoredIndexes": {
+        "en": "A list of indexes which do not get their names checked.\nThese are indexes which are already in Exponential and\ncannot be changed in the 3.x series.\nThey all have workarounds for the various DB handlers.\n\nEach entry is the index name\ne.g ezuser_role",
+        "de": "Eine Liste von Indizes, deren Namen nicht geprüft werden.\nDas sind Indizes, die es in Exponential schon gibt und die\nin der Serie 3.x nicht geändert werden können.\nFür alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.\n\nJeder Eintrag ist der Name des Index\nz. B. ezuser_role"
+    },
+    "ini:settings/dbschema.ini [LintChecker] IgnoredTables": {
+        "en": "A list of tables which do not get their names checked.\nThese are tables which are already in Exponential and\ncannot be changed in the 3.x series.\nThey all have workarounds for the various DB handlers.\n\nEach entry is the table name\ne.g ezuser",
+        "de": "Eine Liste von Tabellen, deren Namen nicht geprüft werden.\nDas sind Tabellen, die es in Exponential schon gibt und die\nin der Serie 3.x nicht geändert werden können.\nFür alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.\n\nJeder Eintrag ist der Tabellenname\nz. B. ezuser"
+    },
+    "ini:settings/dbschema.ini [LintChecker] NameMap": {
+        "en": "Mapping of long words to short words\nThis will be used whenever an identifier or name is to long\neach entry will be tried in order until the string is short enough.\ne.g. NameMap[notification]=notif\ncombined words that are really shortened\nGeneral word shortening",
+        "de": "Zuordnung langer Wörter zu kurzen Wörtern\nWird verwendet, wann immer ein Bezeichner oder Name zu lang ist;\njeder Eintrag wird der Reihe nach versucht, bis die Zeichenkette kurz genug ist.\nz. B. NameMap[notification]=notif\nzusammengesetzte Wörter, die stark gekürzt werden\nAllgemeine Wortkürzungen"
+    },
+    "ini:settings/dbschema.ini [LintChecker] TableLimit": {
+        "en": "Limitations on names and identifiers in the database\nIn general they should not exceed 30 which is the limit of Oracle\nTable name limit, is 30 minus 4, this reserves room for suffixes",
+        "de": "Grenzen für Namen und Bezeichner in der Datenbank\nIm Allgemeinen sollten sie 30 nicht überschreiten, die Grenze von Oracle\nGrenze für Tabellennamen ist 30 minus 4, das lässt Platz für Suffixe"
+    },
+    "ini:settings/dbschema.ini [mysql]": {
+        "en": "RDBMS specific schema transformation rules\n\nSyntax:\n[RDBMSName]\n\n# Column name transformation:\n# maps the schema field name to a different column name, to avoid identifier length or reserved keywords issues\nColumnNameTranslation[table.column]=transformedColumnName\n\n# Column type transformation:\n# overrides the default field type mapping, so that a different type mapping can be used when required,\n# for instance longtext;varchar2(4000) for oracle if GROUP BY is required on a field\nColumnTypeTranslation[table.column]=sourceType;targetType\n\n# Column options\n# Only NULL is supported now, for ezoracle. Removes the NOT NULL option Oracle does not support if set.\nColumnOptionTranslations[table.column]=options\n\n# Index name translation\n# Maps a different index name, to avoid index identifiers length limitation issues on some RDBMS.\nIndexNameTranslation[table.indexName]=newIndexName\nTransformation rules specific to MySQL",
+        "de": "Regeln zur Schema-Umwandlung je RDBMS\n\nSyntax:\n[RDBMSName]\n\n# Column name transformation:\n# maps the schema field name to a different column name, to avoid identifier length or reserved keywords issues\nColumnNameTranslation[table.column]=transformedColumnName\n\n# Column type transformation:\n# overrides the default field type mapping, so that a different type mapping can be used when required,\n# for instance longtext;varchar2(4000) for oracle if GROUP BY is required on a field\nColumnTypeTranslation[table.column]=sourceType;targetType\n\n# Column options\n# Only NULL is supported now, for ezoracle. Removes the NOT NULL option Oracle does not support if set.\nColumnOptionTranslations[table.column]=options\n\n# Index name translation\n# Maps a different index name, to avoid index identifiers length limitation issues on some RDBMS.\nIndexNameTranslation[table.indexName]=newIndexName\nUmwandlungsregeln speziell für MySQL"
+    },
+    "ini:settings/dbschema.ini [mysql] IndexTranslation": {
+        "en": "Since we do not store length information fields in indexes yet we\nneed to add/remove them for MySQL.",
+        "de": "Da wir noch keine Längenangaben von Feldern in Indizes speichern,\nmüssen wir sie für MySQL hinzufügen/entfernen."
+    },
+    "ini:settings/dbschema.ini [postgresql]": {
+        "en": "Make sure this table has delayed key write set when dumping SQL",
+        "de": "Sorgen Sie dafür, dass diese Tabelle beim Ausgeben von SQL Delayed Key Write gesetzt hat"
+    },
+    "ini:settings/debug.ini": {
+        "en": "Exponential configuration file for debug\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/debug.ini.append or\n      settings/override/debug.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für das Debugging\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/debug.ini.append oder\n      settings/override/debug.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/debug.ini [DebugSettings] ConditionDebug": {
+        "en": "Master switch for conditional debugging, if disabled\nno conditions are checked.",
+        "de": "Hauptschalter für bedingtes Debugging; wenn deaktiviert,\nwerden keine Bedingungen geprüft."
+    },
+    "ini:settings/debug.ini [GeneralCondition] workflow-event": {
+        "en": "Enabled/disabled specific conditions\nDefault is to have everything off and to turn it on\nin override files.",
+        "de": "Bestimmte Bedingungen aktiviert/deaktiviert\nStandard ist, alles aus zu haben und es in\nOverride-Dateien einzuschalten."
+    }
+}

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # The exphelp module
 
-Name `Help`, defined in `kernel/exphelp/module.php`. 12 views.
+Name `Help`, defined in `kernel/exphelp/module.php`. 13 views.
 
 | View | Address | Policy functions |
 |---|---|---|
@@ -20,6 +20,7 @@ Name `Help`, defined in `kernel/exphelp/module.php`. 12 views.
 | [context](context.md) | `/exphelp/context` | context |
 | [dashboard](dashboard.md) | `/exphelp/dashboard` | read |
 | [extensions](extensions.md) | `/exphelp/extensions/<Extension>` | read |
+| [image](image.md) | `/exphelp/image` | read |
 | [manual](manual.md) | `/exphelp/manual` | read |
 | [pdf](pdf.md) | `/exphelp/pdf` | read |
 | [report](report.md) | `/exphelp/report` | read |
