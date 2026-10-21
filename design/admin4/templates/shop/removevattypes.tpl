@@ -16,7 +16,7 @@
         {set $title='Removing VAT type'|i18n( 'design/admin/shop/removevattypes' )}
     {/if}
 {/if}
-<h1 class="context-title">{$title}</h1>
+<h1 class="context-title">{$title|wash}</h1>
 {undef $title}
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
