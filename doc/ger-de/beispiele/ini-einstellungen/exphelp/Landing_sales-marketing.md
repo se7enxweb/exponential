@@ -31,7 +31,7 @@ StartPage=help/business/sales-and-marketing-start-here.md
 
 ## Related
 
-Standard: eine Liste mit 3: `advocate`, `partner`, `project-manager`.
+Standard: eine Liste mit 4: `advocate`, `partner`, `project-manager`, `reseller`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,7 @@ Related[]
 Related[]=advocate
 Related[]=partner
 Related[]=project-manager
+Related[]=reseller
 */ ?>
 ```
 

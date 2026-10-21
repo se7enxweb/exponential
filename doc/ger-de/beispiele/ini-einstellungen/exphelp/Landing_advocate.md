@@ -31,7 +31,7 @@ StartPage=help/advocates/advocates-start-here.md
 
 ## Related
 
-Standard: eine Liste mit 3: `supporter`, `sales-marketing`, `sponsor`.
+Standard: eine Liste mit 4: `supporter`, `sales-marketing`, `sponsor`, `community`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,7 @@ Related[]
 Related[]=supporter
 Related[]=sales-marketing
 Related[]=sponsor
+Related[]=community
 */ ?>
 ```
 

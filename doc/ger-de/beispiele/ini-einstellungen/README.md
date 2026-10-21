@@ -41,7 +41,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [debugbar.ini](debugbar/README.md) | Kernel | 42 |
 | [design.ini](design/README.md) | Kernel | 4 |
 | [error.ini](error/README.md) | Kernel | 7 |
-| [exphelp.ini](exphelp/README.md) | Kernel | 46 |
+| [exphelp.ini](exphelp/README.md) | Kernel | 68 |
 | [extendedattributefilter.ini](extendedattributefilter/README.md) | Kernel | 0 |
 | [ezxml.ini](ezxml/README.md) | Kernel | 4 |
 | [fetchalias.ini](fetchalias/README.md) | Kernel | 8 |
@@ -68,7 +68,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [rad.ini](rad/README.md) | Kernel | 4 |
 | [requestclassifier.ini](requestclassifier/README.md) | Kernel | 7 |
 | [requestrules.ini](requestrules/README.md) | Kernel | 4 |
-| [rest.ini](rest/README.md) | Kernel | 15 |
+| [rest.ini](rest/README.md) | Kernel | 16 |
 | [setup.ini](setup/README.md) | Kernel | 24 |
 | [shop.ini](shop/README.md) | Kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | Kernel | 3 |
