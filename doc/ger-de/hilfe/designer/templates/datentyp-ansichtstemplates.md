@@ -43,7 +43,7 @@ Rich Text gibt das HTML aus, das seine Tag-Templates erzeugt haben:
 {$attribute.content.output.output_text}
 ```
 
-Das eigene Markup des Rich Text kommt aus den Tag-Templates in `ezxmltags/` ([Rich-Text-Templates](../../../../eng-us/help/designers/templates/rich-text-templates.md)).
+Das eigene Markup des Rich Text kommt aus den Tag-Templates in `ezxmltags/` ([Rich-Text-Templates](rich-text-templates.md)).
 
 ## Für das ganze Design umgestalten
 

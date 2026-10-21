@@ -101,7 +101,7 @@ Wechselnde Werte, zum Beispiel Zeilenklassen:
 ## Verwandte Seiten
 
 - [For-Schleifen](for-schleifen.md)
-- [While- und do-Schleifen](../../../../eng-us/help/designers/templates/while-and-do-loops.md)
+- [While- und do-Schleifen](while-und-do-schleifen.md)
 - [Knoten und Listen abrufen](knoten-und-listen-abrufen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

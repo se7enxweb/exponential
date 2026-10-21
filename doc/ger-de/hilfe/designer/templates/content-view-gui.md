@@ -10,7 +10,7 @@ type: help
 # content_view_gui
 
 Diese Seite ist für Designer, die Objekte zeichnen, die ohne Knoten kommen: verwandte Objekte, Objekte in Beziehungsfeldern,
-eingebettete Objekte. `{content_view_gui}` ist das Gegenstück zu [node_view_gui](../../../../eng-us/help/designers/templates/node-view-gui.md) für Objekte.
+eingebettete Objekte. `{content_view_gui}` ist das Gegenstück zu [node_view_gui](node-view-gui.md) für Objekte.
 
 ## Inhalt
 
@@ -49,7 +49,7 @@ Hauptknoten, wenn es einen hat.
 
 ## Verwandte Seiten
 
-- [node_view_gui](../../../../eng-us/help/designers/templates/node-view-gui.md)
+- [node_view_gui](node-view-gui.md)
 - [Embed-Ansicht](embed-ansicht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

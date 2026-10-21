@@ -47,7 +47,7 @@ liegt dieser Code in Dateien unter `stylesheets/` und `javascript/` ([Kein Inlin
 
 ## Verwandte Seiten
 
-- [TPL-Syntax: Grundlagen](../../../../eng-us/help/designers/templates/tpl-syntax-basics.md)
+- [TPL-Syntax: Grundlagen](tpl-syntax-grundlagen.md)
 - [Kommentare](kommentare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

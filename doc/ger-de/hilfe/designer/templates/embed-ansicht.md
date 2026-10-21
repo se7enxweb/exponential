@@ -67,7 +67,7 @@ siehe [Logische CSS-Eigenschaften](../../../../eng-us/help/designers/theme-desig
 ## Verwandte Seiten
 
 - [Embed-Inline-Ansicht](embed-inline-ansicht.md)
-- [Rich-Text-Templates](../../../../eng-us/help/designers/templates/rich-text-templates.md)
+- [Rich-Text-Templates](rich-text-templates.md)
 - [content_view_gui](content-view-gui.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

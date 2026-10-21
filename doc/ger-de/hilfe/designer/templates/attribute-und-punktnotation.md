@@ -30,7 +30,7 @@ Template-Sprache, in einen Wert hineinzusehen.
 
 Kernel-Objekte (Knoten, Objekte, Attribute, Benutzer) stellen eine feste Liste von Attributen bereit; ein Knoten hat zum
 Beispiel `name`, `url_alias`, `data_map`, `children`, `parent`, `path`, `class_identifier`, `can_edit` und mehr
-([Knoten, Objekte und Attribute](../../../../eng-us/help/designers/templates/nodes-objects-attributes.md)).
+([Knoten, Objekte und Attribute](knoten-objekte-und-attribute.md)).
 
 ## Ketten
 
@@ -77,9 +77,9 @@ optionale Werte zuerst:
 
 ## Verwandte Seiten
 
-- [TPL-Syntax: Grundlagen](../../../../eng-us/help/designers/templates/tpl-syntax-basics.md)
-- [Knoten, Objekte und Attribute](../../../../eng-us/help/designers/templates/nodes-objects-attributes.md)
-- [Template-Debugging](../../../../eng-us/help/designers/templates/template-debugging.md)
+- [TPL-Syntax: Grundlagen](tpl-syntax-grundlagen.md)
+- [Knoten, Objekte und Attribute](knoten-objekte-und-attribute.md)
+- [Template-Debugging](template-debugging.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

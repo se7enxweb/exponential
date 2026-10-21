@@ -79,7 +79,7 @@ Zeichenketten.
 ## Verwandte Seiten
 
 - [Foreach-Schleifen](foreach-schleifen.md)
-- [Operatorreferenz](../../../../eng-us/help/designers/templates/operator-reference.md)
+- [Operatorreferenz](operatorreferenz.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

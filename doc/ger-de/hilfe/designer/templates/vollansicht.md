@@ -64,13 +64,13 @@ Locale-Code in `exp_locale_code` ` lang="..." dir="rtl"` für Inhalte von rechts
 {include uri='design:navigator/google.tpl' page_uri=$node.url_alias item_count=$total view_parameters=$view_parameters item_limit=$limit}
 ```
 
-([Seitenumbruch](../../../../eng-us/help/designers/templates/pagination.md)). `offset` ist Teil des Schlüssels des View-Cache, sodass jede Seite der Liste getrennt
+([Seitenumbruch](seitenumbruch.md)). `offset` ist Teil des Schlüssels des View-Cache, sodass jede Seite der Liste getrennt
 gecacht wird.
 
 ## Mit dem Pagelayout sprechen
 
 Die Vollansicht läuft vor dem Pagelayout. Um ihm etwas mitzuteilen (die Seitenspalte ausblenden, eine Klasse für body
-hinzufügen), setzen Sie die [persistent variable](../../../../eng-us/help/designers/templates/persistent-variable.md); um ein Stylesheet nur hier zu verlangen,
+hinzufügen), setzen Sie die [persistent variable](die-persistent-variable.md); um ein Stylesheet nur hier zu verlangen,
 `ezcss_require`.
 
 ## Regeln für das Caching
@@ -88,8 +88,8 @@ Das Standard-`node/view/full.tpl` ist allgemein; geben Sie jeder Klasse mit Over
 
 ## Verwandte Seiten
 
-- [Ansichtsmodi](../../../../eng-us/help/designers/templates/view-modes.md)
-- [Module result und content info](../../../../eng-us/help/designers/templates/module-result-and-content-info.md)
+- [Ansichtsmodi](ansichtsmodi.md)
+- [Module result und content info](module-result-und-content-info.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

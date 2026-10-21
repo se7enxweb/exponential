@@ -100,7 +100,7 @@ Die neuesten drei Nachrichten auf der Startseite:
 
 - [Fetch-Grundlagen](fetch-grundlagen.md)
 - [Fetch-Filter und Sortierung](fetch-filter-und-sortierung.md)
-- [Seitenumbruch](../../../../eng-us/help/designers/templates/pagination.md)
+- [Seitenumbruch](seitenumbruch.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

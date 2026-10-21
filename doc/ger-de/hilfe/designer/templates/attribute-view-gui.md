@@ -58,7 +58,7 @@ Match[class_identifier]=article
 Match[attribute_identifier]=image
 ```
 
-Das Override-Template erhält `$attribute` wie das Original ([Override-Grundlagen](../../../../eng-us/help/designers/templates/override-ini-basics.md)).
+Das Override-Template erhält `$attribute` wie das Original ([Override-Grundlagen](override-grundlagen.md)).
 
 ## Felder des Information Collectors
 
@@ -68,7 +68,7 @@ statt aus `view/` gezeichnet, sodass es als Eingabe dargestellt wird. Siehe [For
 ## Verwandte Seiten
 
 - [Datentyp-Ansichtstemplates](datentyp-ansichtstemplates.md)
-- [Knoten, Objekte und Attribute](../../../../eng-us/help/designers/templates/nodes-objects-attributes.md)
+- [Knoten, Objekte und Attribute](knoten-objekte-und-attribute.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

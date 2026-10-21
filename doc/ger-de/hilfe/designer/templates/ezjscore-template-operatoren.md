@@ -47,7 +47,7 @@ vom Typ `application/json` ist Daten, kein Code, also erlaubt ihn auch eine stri
 
 Sagt, ob der aktuelle Benutzer eine Richtlinie mit einer bestimmten Einschränkung hat; wird von Administrationsoberflächen
 auf Basis von ezjscore verwendet. Für Designs sind die Fetch-Funktionen für Benutzer einfacher
-([Rollen- und Richtlinienoperatoren](../../../../eng-us/help/designers/templates/role-and-policy-operators.md)).
+([Rollen- und Richtlinienoperatoren](rollen-und-richtlinien-operatoren.md)).
 
 ## Verwandte Seiten
 

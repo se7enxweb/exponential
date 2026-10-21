@@ -78,7 +78,7 @@ Für einen Wert statt Markup ist `cond( condition, value, else_value )` kürzer 
 
 ## Verwandte Seiten
 
-- [Switch und case](../../../../eng-us/help/designers/templates/switch-case.md)
+- [Switch und case](switch-und-case.md)
 - [Logik- und Vergleichsoperatoren](logik-und-vergleichsoperatoren.md)
 - [cond und first_set](cond-und-first-set.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

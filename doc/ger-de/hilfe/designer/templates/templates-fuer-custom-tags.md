@@ -68,7 +68,7 @@ sind Eingaben von Redakteuren. Geben Sie jedem Attribut mit `first_set` einen si
 
 ## Verwandte Seiten
 
-- [Rich-Text-Templates](../../../../eng-us/help/designers/templates/rich-text-templates.md)
+- [Rich-Text-Templates](rich-text-templates.md)
 - [Designs und Siteaccesses](../../../../eng-us/help/designers/theme-design/designs-and-siteaccesses.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

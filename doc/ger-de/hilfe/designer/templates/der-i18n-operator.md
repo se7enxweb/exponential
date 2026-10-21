@@ -78,7 +78,7 @@ Der Kernel registriert drei Namen in derselben Klasse:
 
 ## Verwandte Seiten
 
-- [Template-Texte übersetzen](../../../../eng-us/help/designers/templates/translating-template-strings.md)
+- [Template-Texte übersetzen](template-texte-uebersetzen.md)
 - [Tutorial: ein Theme internationalisieren](../../../../eng-us/help/designers/theme-design/tutorial-internationalize-a-theme.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

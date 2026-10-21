@@ -76,7 +76,7 @@ Spalten für ein Raster:
 ## Verwandte Seiten
 
 - [Logik- und Vergleichsoperatoren](logik-und-vergleichsoperatoren.md)
-- [Seitenumbruch](../../../../eng-us/help/designers/templates/pagination.md)
+- [Seitenumbruch](seitenumbruch.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

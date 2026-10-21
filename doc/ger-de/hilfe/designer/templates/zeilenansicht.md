@@ -10,7 +10,7 @@ type: help
 # Zeilenansicht
 
 Diese Seite ist für Designer, die Einträge in Listen gestalten: Kinder eines Ordners, Suchergebnisse, neueste Nachrichten.
-Der Ansichtsmodus `line` zeichnet einen Eintrag; [node_view_gui](../../../../eng-us/help/designers/templates/node-view-gui.md) ruft ihn für jeden Knoten auf.
+Der Ansichtsmodus `line` zeichnet einen Eintrag; [node_view_gui](node-view-gui.md) ruft ihn für jeden Knoten auf.
 
 ## Inhalt
 
@@ -52,13 +52,13 @@ des Kernels gibt ein Icon und den verlinkten Namen aus.
 ## Pro Klasse
 
 Ein Override mit `Source=node/view/line.tpl` und `Match[class_identifier]=article` gibt Artikeln ihr Zeilen-Template
-([Knoten-Templates nach Klasse](../../../../eng-us/help/designers/templates/node-templates-by-class.md)). Halten Sie das Markup aller Zeilen-Templates ähnlich, damit
+([Knoten-Templates nach Klasse](knoten-templates-nach-klasse.md)). Halten Sie das Markup aller Zeilen-Templates ähnlich, damit
 Listen mit gemischten Klassen einheitlich aussehen.
 
 ## Verwandte Seiten
 
-- [Ansichtsmodi](../../../../eng-us/help/designers/templates/view-modes.md)
-- [node_view_gui](../../../../eng-us/help/designers/templates/node-view-gui.md)
+- [Ansichtsmodi](ansichtsmodi.md)
+- [node_view_gui](node-view-gui.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

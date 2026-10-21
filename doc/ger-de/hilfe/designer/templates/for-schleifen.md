@@ -42,7 +42,7 @@ Fünf Sterne, bis zu einer Bewertung gefüllt:
 </span>
 ```
 
-Seitenzahlen (wenn Sie nicht die mitgelieferten Navigator-Templates verwenden, siehe [Seitenumbruch](../../../../eng-us/help/designers/templates/pagination.md)):
+Seitenzahlen (wenn Sie nicht die mitgelieferten Navigator-Templates verwenden, siehe [Seitenumbruch](seitenumbruch.md)):
 
 ```tpl
 {for 1 to $page_count as $page}

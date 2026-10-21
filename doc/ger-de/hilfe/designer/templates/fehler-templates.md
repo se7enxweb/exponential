@@ -57,12 +57,12 @@ Das Pagelayout rahmt Fehlerseiten wie jede andere Seite.
 
 Der Pfad einer Fehlerseite endet auf den Fehlercode („kernel (20)“), was Besuchern nichts sagt. `$module_result` trägt
 `errorType` und `errorNumber`; die `pagelayout/head/title.tpl` des Designs media verwendet ein switch darauf, um jeder
-Fehlerseite einen lesbaren `<title>` zu geben ([Module result und content info](../../../../eng-us/help/designers/templates/module-result-and-content-info.md)).
+Fehlerseite einen lesbaren `<title>` zu geben ([Module result und content info](module-result-und-content-info.md)).
 
 ## Verwandte Seiten
 
-- [Benutzer- und Anmelde-Templates](../../../../eng-us/help/designers/templates/user-and-login-templates.md)
-- [Suchergebnis-Template](../../../../eng-us/help/designers/templates/search-results-template.md)
+- [Benutzer- und Anmelde-Templates](benutzer-und-anmelde-templates.md)
+- [Suchergebnis-Template](suchergebnis-template.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

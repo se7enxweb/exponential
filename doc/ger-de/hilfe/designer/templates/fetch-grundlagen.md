@@ -75,7 +75,7 @@ Prüfen Sie einzelne Ergebnisse immer vor der Verwendung: `{if $node}...{/if}`.
 
 - [Knoten und Listen abrufen](knoten-und-listen-abrufen.md)
 - [Fetch-Filter und Sortierung](fetch-filter-und-sortierung.md)
-- [Knoten, Objekte und Attribute](../../../../eng-us/help/designers/templates/nodes-objects-attributes.md)
+- [Knoten, Objekte und Attribute](knoten-objekte-und-attribute.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

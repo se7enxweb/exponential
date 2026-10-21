@@ -69,7 +69,7 @@ Siteaccess überschrieben, funktioniert genauso ([Einem Theme eine eigene Einste
 
 ## Verwandte Seiten
 
-- [Operatoren im Überblick](../../../../eng-us/help/designers/templates/operators-overview.md)
+- [Operatoren im Überblick](operatoren-ueberblick.md)
 - [Der Operator ezhttp](der-ezhttp-operator.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

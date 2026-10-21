@@ -24,7 +24,7 @@ Seite auch nutzen können, um die Ursache eines Problems zu finden.
 
 | Fehler | Anzeichen | Korrektur |
 |---|---|---|
-| einen Wert ohne `\|wash` ausgeben | HTML aus Inhalten zerstört die Seite; Einschleusen von Skripten möglich | bei der Ausgabe maskieren ([Wash und Maskierung](../../../../eng-us/help/designers/templates/wash-and-escaping.md)) |
+| einen Wert ohne `\|wash` ausgeben | HTML aus Inhalten zerstört die Seite; Einschleusen von Skripten möglich | bei der Ausgabe maskieren ([Wash und Maskierung](wash-und-maskierung.md)) |
 | die Ausgabe von Rich Text maskieren | Tags als Text angezeigt | die Ausgabe von `attribute_view_gui` nicht maskieren |
 | doppelt maskieren | `&amp;amp;` auf der Seite | einmal maskieren, am Ende |
 | Inline-`<script>` oder `onclick` | unter einer Content Security Policy blockiert | Skriptdateien ([Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)) |
@@ -51,9 +51,9 @@ Seite auch nutzen können, um die Ursache eines Problems zu finden.
 
 | Fehler | Anzeichen | Korrektur |
 |---|---|---|
-| Anführungszeichen um `ezurl`: `href="{$x\|ezurl}"` | `href=""/path""`, fehlerhaftes Attribut | `href={$x\|ezurl}` schreiben oder `ezurl( 'no' )` innerhalb Ihrer Anführungszeichen ([URL-Operatoren](../../../../eng-us/help/designers/templates/url-operators.md)) |
+| Anführungszeichen um `ezurl`: `href="{$x\|ezurl}"` | `href=""/path""`, fehlerhaftes Attribut | `href={$x\|ezurl}` schreiben oder `ezurl( 'no' )` innerhalb Ihrer Anführungszeichen ([URL-Operatoren](url-operatoren.md)) |
 | `$a == $b` | Parse-Fehler | `eq( $a, $b )` |
-| `{def}` einer vorhandenen Variablen | Warnung, Wert des Einbindenden überschrieben | Präfixe und `{undef}` ([Variablen und def](../../../../eng-us/help/designers/templates/variables-and-def.md)) |
+| `{def}` einer vorhandenen Variablen | Warnung, Wert des Einbindenden überschrieben | Präfixe und `{undef}` ([Variablen und def](variablen-und-def.md)) |
 | Zeichenketten mit `gt` vergleichen | unerwartete Ergebnisse | `gt` vergleicht bei nicht numerischen Zeichenketten die Längen ([Logik- und Vergleichsoperatoren](logik-und-vergleichsoperatoren.md)) |
 | ein Operator aus einer inaktiven Erweiterung | „Operator '...' is not registered“ in der Debug-Ausgabe, nichts ausgegeben | die Erweiterung aktivieren oder einen anderen Operator verwenden |
 
@@ -64,12 +64,12 @@ Seite auch nutzen können, um die Ursache eines Problems zu finden.
 | ein Template in `design/standard` oder einem mitgelieferten Theme bearbeiten | Änderung beim Upgrade verloren | es in Ihr Design kopieren ([Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)) |
 | ein neues Template oder ein neuer Override erscheint nicht | altes Template weiter verwendet oder leerer Inhaltsbereich | `template-override` leeren ([Ein Design debuggen](../../../../eng-us/help/designers/theme-design/debugging-a-design.md)) |
 | ein Override mit einem Tippfehler in `MatchFile` | Regel ignoriert, Eintrag im Fehlerlog | den Pfad unter `override/templates/` prüfen |
-| zwei Overrides für dieselbe Quelle | der falsche gewinnt | `Priority` ([Override-Reihenfolge](../../../../eng-us/help/designers/templates/override-ordering.md)) |
+| zwei Overrides für dieselbe Quelle | der falsche gewinnt | `Priority` ([Override-Reihenfolge](override-reihenfolge.md)) |
 
 ## Verwandte Seiten
 
-- [Template-Styleguide](../../../../eng-us/help/designers/templates/template-style-guide.md)
-- [Template-Debugging](../../../../eng-us/help/designers/templates/template-debugging.md)
+- [Template-Styleguide](template-styleguide.md)
+- [Template-Debugging](template-debugging.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

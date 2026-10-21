@@ -54,7 +54,7 @@ Geben Sie optionalen Parametern im Teil einen Standardwert:
 
 Der Teil sieht die Variablen seines Einbindenden plus die Parameter. Variablen, die er mit `{def}` definiert, bleiben bis
 `{undef}` im gemeinsamen Namensraum; deshalb sollten Teile mit `{undef}` entfernen, was sie definieren, und Namen mit Präfix
-verwenden ([Variablen und def](../../../../eng-us/help/designers/templates/variables-and-def.md)).
+verwenden ([Variablen und def](variablen-und-def.md)).
 
 ## Dynamische Pfade
 
@@ -72,11 +72,11 @@ Ein Pfad, der nicht existiert, ist ein Template-Fehler: Stellen Sie sicher, dass
 | Verwenden | Wann |
 |---|---|
 | `{include}` | ein Teil des Rahmens oder Markup, das nicht von der Inhaltsklasse abhängt |
-| `{node_view_gui content_node=$child view='line'}` | einen Knoten zeichnen: Das Template des Ansichtsmodus wird über Overrides pro Klasse gewählt ([node_view_gui](../../../../eng-us/help/designers/templates/node-view-gui.md)) |
+| `{node_view_gui content_node=$child view='line'}` | einen Knoten zeichnen: Das Template des Ansichtsmodus wird über Overrides pro Klasse gewählt ([node_view_gui](node-view-gui.md)) |
 
 ## Verwandte Seiten
 
-- [Variablen und def](../../../../eng-us/help/designers/templates/variables-and-def.md)
+- [Variablen und def](variablen-und-def.md)
 - [Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

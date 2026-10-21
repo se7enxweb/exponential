@@ -74,8 +74,8 @@ Das Design media verwendet Modi ohne Rahmen für eigene Zwecke: `payload` (das P
 
 ## Verwandte Seiten
 
-- [Ansichtsmodi](../../../../eng-us/help/designers/templates/view-modes.md)
-- [Knoten-Templates nach Klasse](../../../../eng-us/help/designers/templates/node-templates-by-class.md)
+- [Ansichtsmodi](ansichtsmodi.md)
+- [Knoten-Templates nach Klasse](knoten-templates-nach-klasse.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

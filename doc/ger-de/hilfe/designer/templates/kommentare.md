@@ -51,12 +51,12 @@ Weise. Entfernen Sie toten Code vor einem Release, statt ihn lange auskommentier
 
 `<!-- ... -->` wird an jeden Besucher geschickt, kann interne Notizen verraten und fügt Bytes hinzu. Verwenden Sie ihn nur,
 wenn der Kommentar für den HTML-Quelltext gedacht ist (selten). Um zu debuggen, welches Template was gezeichnet hat,
-verwenden Sie stattdessen Template-Pfadkommentare ([Template-Pfadkommentare](../../../../eng-us/help/designers/templates/template-path-comments.md)).
+verwenden Sie stattdessen Template-Pfadkommentare ([Template-Pfadkommentare](template-pfad-kommentare.md)).
 
 ## Verwandte Seiten
 
-- [Template-Styleguide](../../../../eng-us/help/designers/templates/template-style-guide.md)
-- [TPL-Syntax: Grundlagen](../../../../eng-us/help/designers/templates/tpl-syntax-basics.md)
+- [Template-Styleguide](template-styleguide.md)
+- [TPL-Syntax: Grundlagen](tpl-syntax-grundlagen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

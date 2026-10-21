@@ -34,7 +34,7 @@ Parameter (`kernel/common/ezurloperator.php`): der Variablenname und die Methode
 
 Alles in der Anfrage stammt vom Besucher oder von einem Angreifer in einem präparierten Link:
 
-- **maskieren Sie es immer**, bevor Sie es ausgeben ([Wash und Maskierung](../../../../eng-us/help/designers/templates/wash-and-escaping.md));
+- **maskieren Sie es immer**, bevor Sie es ausgeben ([Wash und Maskierung](wash-und-maskierung.md));
 - wandeln Sie Zahlen um: `ezhttp( 'page', 'get' )|int`;
 - bauen Sie damit nie die Klassenliste oder das Sortierfeld eines Fetch, ohne es gegen eine Liste erlaubter Werte zu prüfen;
 - geben Sie nie Sitzungs- oder Cookie-Werte aus, die etwas Privates enthalten könnten.
@@ -57,7 +57,7 @@ außerhalb gecachter Teile.
 ## Verwandte Seiten
 
 - [Der Operator ezini](der-ezini-operator.md)
-- [Suchergebnis-Template](../../../../eng-us/help/designers/templates/search-results-template.md)
+- [Suchergebnis-Template](suchergebnis-template.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
