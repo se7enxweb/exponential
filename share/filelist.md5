@@ -620,7 +620,7 @@ c4b35c125e7a48af1eed9641b33097a5  design/admin/templates/package/validation.tpl
 9ef992b5bb2e88db3607c6b170822939  design/admin/templates/package/view/files.tpl
 036baea273af00c0fe3a6b5a6fefc023  design/admin/templates/package/view/full.tpl
 7a6a948535c458dc180f686ce55dffee  design/admin/templates/page_copyright.tpl
-4d0ddea0e7ac715b5799bfdd3f0a82de  design/admin/templates/page_head_script.tpl
+86434fabfa6ebf5a472370ef80882fb3  design/admin/templates/page_head_script.tpl
 9b35e3bf7adb0350c55c63dadb305f35  design/admin/templates/page_head_style.tpl
 392a431599e6a36e779733835d00bf18  design/admin/templates/page_head_style_inline.tpl
 e564dcd60747102cd28699dc161aa579  design/admin/templates/page_header.tpl
@@ -908,7 +908,7 @@ baf13e6175651449381af85f8ae7b1c4  design/admin3/templates/content/edit_draft.tpl
 053fba0f5c2868a08d247aebaa864bdb  design/admin3/templates/content/history.tpl
 3d1c7e6f28404ca56bb4b01ea9248f5e  design/admin3/templates/content/view/versionview.tpl
 7f8ecb7c83deb1129284631b7de16cac  design/admin3/templates/loginpagelayout.tpl
-7e88931c34a0c2bf01dee03465027f81  design/admin3/templates/page_head_script.tpl
+082087ec7521efc93220b4ba6e58ff6d  design/admin3/templates/page_head_script.tpl
 b2eb690cdc87ce43c243e5d764bddd39  design/admin3/templates/page_head_style.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 0cc20dc6c8574f20b41e26a7833d57bf  design/admin3/templates/page_leftmenu.tpl
@@ -1382,7 +1382,7 @@ c4b35c125e7a48af1eed9641b33097a5  design/admin4/templates/package/validation.tpl
 9ef992b5bb2e88db3607c6b170822939  design/admin4/templates/package/view/files.tpl
 da85f5df8914b980706127eec5c03f3a  design/admin4/templates/package/view/full.tpl
 bc644f14514239af3bbbc2bc34ea845c  design/admin4/templates/page_copyright.tpl
-e9d114f3da6270d8b361ae7b57202164  design/admin4/templates/page_head_script.tpl
+ec0af028f784c054e96d901a9a61e255  design/admin4/templates/page_head_script.tpl
 7c10a5e1255ce4701b4eb2e4b146548e  design/admin4/templates/page_head_style.tpl
 392a431599e6a36e779733835d00bf18  design/admin4/templates/page_head_style_inline.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
@@ -21655,7 +21655,7 @@ a573d6be2008dff11934660944ca4b8a  tests/tests/design/AdminBaseStylesheetsTest.ph
 ac506b51131ad202029dff2fd1b76284  tests/tests/design/AdminContentJobScriptsTest.php
 210fd685827786bce735656e6f84f4af  tests/tests/design/AdminContentSecurityPolicyTest.php
 98b9cecd8a6f9763c8420e981193033a  tests/tests/design/AdminContextMenuNestedSubmenuTest.php
-4dabcde79d385a6288df492defdb8feb  tests/tests/design/AdminContextMenuTest.php
+a005a1a67aef102ada9c7d25721a1ff9  tests/tests/design/AdminContextMenuTest.php
 1031b7f22212518a4180603bafaf72d7  tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php
 39edc8217670a84ba9f44cfc301e7bd2  tests/tests/design/AdminCreateLanguagesTitleTest.php
 9811db047be7881e1faebb56b853e491  tests/tests/design/AdminCssReviewFixesTest.php

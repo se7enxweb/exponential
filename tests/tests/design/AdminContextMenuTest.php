@@ -249,7 +249,8 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     /**
      * ezpopupmenu.js and setup_logs.js call window.a4SafeURL. admin3 had its own page_head_script.tpl without
      * a4_url.js, so its menu links became '#', redirects were refused and the log selection did nothing. Every
-     * head template that loads BackendJavaScriptList loads a4_url.js before it.
+     * head template that loads BackendJavaScriptList loads a4_url.js before it, in the same
+     * ezscript_load as jQuery and right after it (a call of its own before jQuery broke content/edit: jQuery is not defined).
      */
     public function testEveryPageHeadScriptLoadsTheUrlCheckBeforeTheScriptList()
     {
@@ -262,9 +263,12 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
             if ( $list === false )
                 continue;
             ++$checked;
-            $load = strpos( $tpl, "ezscript_load( array( 'a4_url.js' ) )" );
-            $this->assertNotFalse( $load, "$template loads BackendJavaScriptList but not a4_url.js (outside a comment)" );
-            $this->assertLessThan( $list, $load, "$template loads a4_url.js after BackendJavaScriptList" );
+            // a4_url.js loads in the same ezscript_load as jQuery, right after it: a separate ezscript_load before jQuery
+            // wrote out the page's queued scripts (node_tabs.js, expajaxuploader.js ...) ahead of jQuery
+            $load = strpos( $tpl, "'ezjsc::jqueryio', 'a4_url.js'" );
+            $this->assertNotFalse( $load, "$template loads BackendJavaScriptList but not a4_url.js right after jQuery (outside a comment)" );
+            $this->assertFalse( strpos( $tpl, "ezscript_load( array( 'a4_url.js' ) )" ), "$template loads a4_url.js in a call of its own, which writes the queued page scripts out before jQuery" );
+            $this->assertLessThan( strpos( $tpl, 'BackendJavaScriptList' ) + 200, $load, "$template loads a4_url.js after the script list" );
         }
         $this->assertGreaterThanOrEqual( 3, $checked, 'admin, admin3 and admin4 each load the list' );
         // admin3 and admin2 take the script from design/admin through the design chain
