@@ -16,7 +16,7 @@ Verantwortlichen durch; jeder Punkt nennt die Seite, die ihn erklärt. Projektle
 ## Inhalte
 
 - [ ] Jede Seite der Sitemap existiert und ist veröffentlicht; Platzhaltertext ist verschwunden.
-- [ ] Menüs, Fußbereiche und gemeinsame Layouts sind endgültig ([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)).
+- [ ] Menüs, Fußbereiche und gemeinsame Layouts sind endgültig ([Menüs und Navigation](menues-und-navigation.md)).
 - [ ] Bilder haben Alternativtexte; Downloads zeigen Format und Größe.
 - [ ] Rechtliche Seiten (Impressum, Datenschutz, Cookies) sind veröffentlicht und verlinkt.
 - [ ] Testinhalte und Testbenutzer sind entfernt oder nicht mehr veröffentlicht.
@@ -24,13 +24,13 @@ Verantwortlichen durch; jeder Punkt nennt die Seite, die ihn erklärt. Projektle
 ## Design und Barrierefreiheit
 
 - [ ] Jeder Seitentyp in den Browsern und auf den Geräten getestet, die Ihre Besucher verwenden.
-- [ ] Barrierefreiheit getestet ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+- [ ] Barrierefreiheit getestet ([Barrierefreiheit testen](barrierefreiheit-testen.md)).
 - [ ] Fehlerseiten (nicht gefunden, Zugriff verweigert) sind gestaltet und liefern den richtigen Status.
 - [ ] Druckansicht und Siteaccesses mit Schreibrichtung von rechts nach links geprüft, falls vorhanden.
 
 ## SEO
 
-- [ ] Titel und Beschreibungen auf jedem Seitentyp ([Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md)).
+- [ ] Titel und Beschreibungen auf jedem Seitentyp ([Metadaten und Teilen in sozialen Medien](metadaten-und-teilen-in-sozialen-medien.md)).
 - [ ] `robots.txt` angepasst, Sitemap erzeugt und eingetragen ([robots.txt für Website-Ersteller](robots-txt.md),
   [Sitemaps](sitemaps.md)).
 - [ ] Weiterleitungen von der alten Website getestet
@@ -53,7 +53,7 @@ Verantwortlichen durch; jeder Punkt nennt die Seite, die ihn erklärt. Projektle
 - [ ] Das Administratorpasswort ist geändert und persönlich
   ([Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)).
 - [ ] Härtung durchgeführt ([Sicherheitshärtung](../../sicherheitshaertung.md)).
-- [ ] Die Rolle Anonymous gewährt nur, was Besucher brauchen ([Rechte für Besucher](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)).
+- [ ] Die Rolle Anonymous gewährt nur, was Besucher brauchen ([Rechte für Besucher](rechte-fuer-besucher.md)).
 - [ ] `[HTMLForms] Secret` gesetzt; Debug-Ausgabe auf öffentlichen Siteaccesses aus.
 - [ ] HTTPS auf jedem Host, HTTP leitet auf HTTPS weiter ([Livegang: Hosts und HTTPS](livegang-hosts-und-https.md)).
 - [ ] Die Content Security Policy auf der Website mindestens im Modus report-only
@@ -62,7 +62,7 @@ Verantwortlichen durch; jeder Punkt nennt die Seite, die ihn erklärt. Projektle
 ## Leistung
 
 - [ ] Caches an; statischer Cache aus; Antwort-Cache von Velocity an, wenn Velocity die Website ausliefert
-      ([Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)).
+      ([Leistung und Caching](leistung-und-caching.md)).
 - [ ] Eine Benchmark-Basislinie gespeichert.
 - [ ] Bildaliasse auf das Design abgestimmt.
 

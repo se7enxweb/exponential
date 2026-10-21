@@ -97,8 +97,8 @@ extension/mysite_design/
     └── siteaccess/<site>/override.ini.append.php
 ```
 
-Schreiben Sie zuerst das Pagelayout ([Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md)), dann pro Klasse ein Full- und ein
-Line-Template ([Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)).
+Schreiben Sie zuerst das Pagelayout ([Das Pagelayout](das-pagelayout.md)), dann pro Klasse ein Full- und ein
+Line-Template ([Template-Overrides](template-overrides.md)).
 
 ## Einen Siteaccess auf ein Design richten
 

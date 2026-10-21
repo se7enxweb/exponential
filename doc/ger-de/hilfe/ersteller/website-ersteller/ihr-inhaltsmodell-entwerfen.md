@@ -73,7 +73,7 @@ sind keine Container. Das Full-Template eines Containers listet seine Untereleme
 
 Dasselbe Objekt wird je nach Ort unterschiedlich angezeigt: `full` auf seiner eigenen Seite, `line` in einer Liste,
 `embed` innerhalb von Rich Text, weitere definiert Ihr Design. Jeder Ansichtsmodus ist ein Template, pro Klasse mit einem
-Override ausgewählt ([Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)). Planen Sie die Ansichtsmodi pro Klasse früh:
+Override ausgewählt ([Template-Overrides](template-overrides.md)). Planen Sie die Ansichtsmodi pro Klasse früh:
 
 | Klasse | full | line | embed |
 |---|---|---|---|

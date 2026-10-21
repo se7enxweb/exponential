@@ -35,9 +35,9 @@ geleitet ([Wer ist 7x?](../../wer-ist-7x.md), [Wer ist die Exponential Foundatio
 
 | Tag | Aufgabe | Seite |
 |---|---|---|
-| 1 | Lesen, was die Plattform Ihnen bietet und wie eine Anfrage verläuft | [Exponential als Anwendungsplattform](../../../../eng-us/help/creators/app-creators/exponential-as-an-application-platform.md), [Architektur](architektur-fuer-anwendungsentwickler.md) |
+| 1 | Lesen, was die Plattform Ihnen bietet und wie eine Anfrage verläuft | [Exponential als Anwendungsplattform](exponential-als-anwendungsplattform.md), [Architektur](architektur-fuer-anwendungsentwickler.md) |
 | 2 | Eine lokale Installation einrichten | [Eine Entwicklungsumgebung einrichten](entwicklungsumgebung.md) |
-| 3 | Die erste Erweiterung bauen, dann eine weitere von Setup > RAD bauen lassen | [Ihre erste Erweiterung](../../../../eng-us/help/creators/app-creators/your-first-extension.md), [RAD-Werkzeuge](rad-werkzeuge.md) |
+| 3 | Die erste Erweiterung bauen, dann eine weitere von Setup > RAD bauen lassen | [Ihre erste Erweiterung](ihre-erste-erweiterung.md), [RAD-Werkzeuge](rad-werkzeuge.md) |
 | 4 | Eine Ansicht mit einem Formular und einer Richtlinie hinzufügen | [Eigene Module und Ansichten](eigene-module-und-ansichten.md), [Formulare, CSRF-Schutz und HTTP-Eingaben](formulare-csrf-und-http-eingaben.md) |
 | 5 | Inhalte in PHP lesen und schreiben; einen Test schreiben | [Die Content-API](die-content-api.md), [PHPUnit-Tests ohne Datenbank](phpunit-tests-ohne-datenbank.md) |
 
@@ -45,11 +45,11 @@ Der [Lesepfad](lesepfad-fuer-anwendungsentwickler.md) bringt alle folgenden Seit
 
 ## Grundlagen
 
-- [Exponential als Anwendungsplattform](../../../../eng-us/help/creators/app-creators/exponential-as-an-application-platform.md)
+- [Exponential als Anwendungsplattform](exponential-als-anwendungsplattform.md)
 - [Architektur für Anwendungsentwickler](architektur-fuer-anwendungsentwickler.md)
 - [Eine Entwicklungsumgebung einrichten](entwicklungsumgebung.md)
-- [Ihre erste Erweiterung](../../../../eng-us/help/creators/app-creators/your-first-extension.md)
-- [Aufbau einer Erweiterung](../../../../eng-us/help/creators/app-creators/extension-anatomy.md)
+- [Ihre erste Erweiterung](ihre-erste-erweiterung.md)
+- [Aufbau einer Erweiterung](aufbau-einer-erweiterung.md)
 - [Einstellungen und INI-Dateien in Ihrer Anwendung](einstellungen-und-ini-dateien.md)
 - [Autoloads und Klassenbenennung](autoloads-und-klassenbenennung.md)
 - [RAD-Werkzeuge: schneller bauen](rad-werkzeuge.md)
@@ -58,11 +58,11 @@ Der [Lesepfad](lesepfad-fuer-anwendungsentwickler.md) bringt alle folgenden Seit
 
 - [Eigene Module und Ansichten](eigene-module-und-ansichten.md)
 - [Referenz zu module.php: Ansichten, Parameter und Funktionen](referenz-der-moduldefinition.md)
-- [Ergebnisse von Ansichten, Templates und das Pagelayout](../../../../eng-us/help/creators/app-creators/view-results-and-the-pagelayout.md)
+- [Ergebnisse von Ansichten, Templates und das Pagelayout](ergebnisse-von-ansichten-und-das-pagelayout.md)
 - [Richtlinienfunktionen und Einschränkungen](richtlinienfunktionen-und-einschraenkungen.md)
 - [Formulare, CSRF-Schutz und HTTP-Eingaben](formulare-csrf-und-http-eingaben.md)
-- [Fetch-Funktionen: Daten in Templates lesen](../../../../eng-us/help/creators/app-creators/fetch-functions.md)
-- [Eine eigene Fetch-Funktion schreiben](../../../../eng-us/help/creators/app-creators/writing-a-fetch-function.md)
+- [Fetch-Funktionen: Daten in Templates lesen](fetch-funktionen.md)
+- [Eine eigene Fetch-Funktion schreiben](eine-eigene-fetch-funktion-schreiben.md)
 - [Template-Operatoren schreiben](template-operatoren-schreiben.md)
 - [Template-Funktionen, Includes und Cache-Blöcke](template-funktionen-und-includes.md)
 
@@ -78,10 +78,10 @@ Der [Lesepfad](lesepfad-fuer-anwendungsentwickler.md) bringt alle folgenden Seit
 
 ## Abläufe und Hintergrundarbeit
 
-- [Workflows, Trigger und Ereignisse](../../../../eng-us/help/creators/app-creators/workflows-and-events.md)
-- [Einen Workflow-Ereignistyp schreiben](../../../../eng-us/help/creators/app-creators/writing-a-workflow-event-type.md)
+- [Workflows, Trigger und Ereignisse](workflows-und-ereignisse.md)
+- [Einen Workflow-Ereignistyp schreiben](einen-workflow-ereignistyp-schreiben.md)
 - [Cronjobs für Anwendungen](cronjobs-fuer-anwendungen.md)
-- [Ein Cronjob-Skript schreiben](../../../../eng-us/help/creators/app-creators/writing-a-cronjob-part.md)
+- [Ein Cronjob-Skript schreiben](einen-cronjob-teil-schreiben.md)
 - [Konsolenbefehle](konsolenbefehle.md)
 - [CLI-Skripte mit eZScript](cli-skripte.md)
 - [Inhalts-Jobs](inhalts-jobs.md)
@@ -96,8 +96,8 @@ Der [Lesepfad](lesepfad-fuer-anwendungsentwickler.md) bringt alle folgenden Seit
 - [Entfernte Dienste mit expservices](entfernte-dienste-expservices.md)
 - [Headless Exponential](headless-exponential.md)
 - [Benachrichtigungen und Mail aus Anwendungen](benachrichtigungen-und-mail.md)
-- [Exponential Intelligence (expai) für Anwendungen](../../../../eng-us/help/creators/app-creators/exponential-intelligence.md)
-- [Exponential Intelligence erweitern](../../../../eng-us/help/creators/app-creators/extending-exponential-intelligence.md)
+- [Exponential Intelligence (expai) für Anwendungen](exponential-intelligence.md)
+- [Exponential Intelligence erweitern](exponential-intelligence-erweitern.md)
 
 ## Paketierung und Releases
 
@@ -114,7 +114,7 @@ Der [Lesepfad](lesepfad-fuer-anwendungsentwickler.md) bringt alle folgenden Seit
 - [Fehlersuche und Logs](fehlersuche-und-logs.md)
 - [Mit Velocity ausliefern](mit-velocity-ausliefern.md)
 - [Eine Deployment-Pipeline](deployment-pipeline.md)
-- [Umgebungseinstellungen und Geheimnisse](../../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md)
+- [Umgebungseinstellungen und Geheimnisse](umgebungseinstellungen-und-geheimnisse.md)
 
 ## Sicherheit
 
@@ -138,7 +138,7 @@ Der [Lesepfad](lesepfad-fuer-anwendungsentwickler.md) bringt alle folgenden Seit
 |---|---|
 | Regeln und Muster der Codebasis | [Standards](../../../../eng-us/standards/README.md), [Muster](../../../../eng-us/standards/patterns/README.md) |
 | Jeden Erweiterungspunkt und wie er registriert wird | [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md) |
-| Bau von Websites (Templates, Layouts, SEO) | [Website-Ersteller: hier beginnen](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md) |
+| Bau von Websites (Templates, Layouts, SEO) | [Website-Ersteller: hier beginnen](../website-ersteller/website-ersteller-hier-beginnen.md) |
 | Arbeit mit Git und Beiträge zum Projekt | [Mit Git entwickeln](../../mit-git-entwickeln.md) |
 | Installation und Auslieferung | [Installationshandbuch](../../../installation/README.md) |
 | Das Buch für Erweiterungsentwickler | `doc/eng-us/help/extension-development/`, sofern es in Ihrer Installation vorhanden ist |

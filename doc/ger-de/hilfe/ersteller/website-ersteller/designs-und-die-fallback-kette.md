@@ -91,7 +91,7 @@ php bin/php/ezcache.php --clear-tag=template --allow-root-user
 ```
 
 Um zu ändern, welche Erweiterung bei gleichem Design-Namen gewinnt, ändern Sie die Reihenfolge der Erweiterungen
-([Setup > Erweiterungen: Ladereihenfolge](../../../../eng-us/features/6.0/extension-loading-order.md)).
+([Setup > Extensions: Ladereihenfolge](../../../../eng-us/features/6.0/extension-loading-order.md)).
 
 ## Häufige Fehler
 
@@ -100,13 +100,13 @@ Um zu ändern, welche Erweiterung bei gleichem Design-Namen gewinnt, ändern Sie
 | Eine neue Template-Datei wird ignoriert | der Override-Cache enthält noch die alte Suche | `template-override` und `template` leeren |
 | Ein Theme-Update hat Ihre Änderung gelöscht | Sie haben das Theme an Ort und Stelle bearbeitet | verschieben Sie die Änderung in Ihre eigene Design-Erweiterung |
 | Die Administration zeigt Ihr öffentliches Design | Sie haben `SiteDesign` in `settings/override/` gesetzt, was für jeden Siteaccess gilt | setzen Sie es in `settings/siteaccess/<site>/` |
-| Die Datei Ihrer Erweiterung verliert gegen die des Themes | Ihre Erweiterung wird nach dem Theme geladen | setzen Sie sie in `ActiveAccessExtensions[]` an den Anfang oder ändern Sie die Reihenfolge unter Setup > Erweiterungen |
+| Die Datei Ihrer Erweiterung verliert gegen die des Themes | Ihre Erweiterung wird nach dem Theme geladen | setzen Sie sie in `ActiveAccessExtensions[]` an den Anfang oder ändern Sie die Reihenfolge unter Setup > Extensions |
 | Eine Seite ist nach dem Hinzufügen eines Designs leer | das Pagelayout des neuen Designs hat einen Fehler | `php bin/php/eztemplatecheck.php` auf die Datei ([5. Die Syntax prüfen](../../../anleitungen/templates-und-design.md#5-die-syntax-prüfen-bevor-sie-in-den-browser-schauen)) |
 
 ## Verwandte Seiten
 
 - [Ein Design oder Theme wählen](ein-design-oder-theme-waehlen.md)
-- [Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)
+- [Template-Overrides](template-overrides.md)
 - [Zusätzliche Erweiterungsverzeichnisse](../../../../eng-us/features/6.0/additional-extension-directories.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

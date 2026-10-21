@@ -97,9 +97,9 @@ extension/expdemo/design/standard/templates/expdemo/
 
 ## Verwandte Seiten
 
-- [Ergebnisse von Ansichten und das Pagelayout](../../../../eng-us/help/creators/app-creators/view-results-and-the-pagelayout.md)
+- [Ergebnisse von Ansichten und das Pagelayout](ergebnisse-von-ansichten-und-das-pagelayout.md)
 - [Muster für Template-Funktionen](../../../../eng-us/standards/patterns/template-function.md)
-- [View-Cache und Cache-Blöcke](../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)
+- [View-Cache und Cache-Blöcke](../website-ersteller/view-cache-und-cache-bloecke.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

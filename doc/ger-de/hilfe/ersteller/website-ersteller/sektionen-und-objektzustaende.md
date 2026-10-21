@@ -66,7 +66,7 @@ Nach [13.1 Ein Mitgliederbereich](../../../anleitungen/sektionen.md#131-ein-mitg
 
 Besucher, die nicht angemeldet sind und eine Mitgliederseite öffnen, sehen die Anmeldeseite; nach der Anmeldung kehren
 sie zur Seite zurück. Die Registrierung steht unter
-[Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md).
+[Registrierung von Mitgliedern und Bereiche nur für Mitglieder](mitgliederregistrierung-und-mitgliederbereiche.md).
 
 ## Rezept: Staging vor dem Veröffentlichen
 
@@ -103,7 +103,7 @@ Match[section_identifier]=members_area
 ```
 
 Ein Mitglieder-Design, ein "Entwurf"-Banner auf nicht freigegebenen Seiten, ein anderes Layout für Staging: Jedes davon
-ist eine einzige Regel ([Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)).
+ist eine einzige Regel ([Template-Overrides](template-overrides.md)).
 
 > **Tipp**
 > Templates und Overrides verwenden Bezeichner. Geben Sie jeder Sektion und jeder Zustandsgruppe einen Bezeichner; die
@@ -111,7 +111,7 @@ ist eine einzige Regel ([Template-Overrides](../../../../eng-us/help/creators/we
 
 ## Verwandte Seiten
 
-- [Rechte für Besucher](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Rechte für Besucher](rechte-fuer-besucher.md)
 - [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)
 - [Den Inhaltsbaum strukturieren](den-inhaltsbaum-strukturieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

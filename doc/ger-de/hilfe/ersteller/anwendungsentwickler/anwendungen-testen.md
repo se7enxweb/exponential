@@ -60,7 +60,7 @@ php bin/php/eztemplatecheck.php -s<siteaccess> extension/expdemo/design/   # eve
 - Prüfen Sie jeden Seitentyp Ihrer Erweiterung abgemeldet, als eingeschränkter Benutzer und als Redakteur.
 - Prüfen Sie die Browserkonsole auf Fehler und das CSP-Berichtslog (`var/log/csp.log`) auf blockierten Code
   ([Content Security Policy für Anwendungen](content-security-policy.md)).
-- Lassen Sie auf jeder Seite einen Barrierefreiheitsprüfer laufen ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+- Lassen Sie auf jeder Seite einen Barrierefreiheitsprüfer laufen ([Barrierefreiheit testen](../website-ersteller/barrierefreiheit-testen.md)).
 
 ## Vor jedem Push
 

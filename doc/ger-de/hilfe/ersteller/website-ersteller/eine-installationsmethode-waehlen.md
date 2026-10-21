@@ -71,7 +71,7 @@ Bei `exp:install` hat jede Option einen Standardwert; für eine echte Website se
 | `--url=https://www.example.com` | die Adresse jedes Siteaccess, Mail-Links und Feeds werden daraus gebildet |
 | `--access=url\|host\|port` | wie Besucher jeden Siteaccess erreichen; `host` ist am besten für Produktion und HTTPS ([Livegang: Hosts und HTTPS](livegang-hosts-und-https.md)) |
 | `--host`, `--admin-host` | die Hostnamen der öffentlichen Website und der Administration, mit `--access=host` |
-| `--language`, `--languages` | die Hauptsprache und die weiteren Sprachen ([Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)) |
+| `--language`, `--languages` | die Hauptsprache und die weiteren Sprachen ([Eine mehrsprachige Website bauen](mehrsprachige-websites.md)) |
 | `--title` | der Website-Name, verwendet in Titeln und Mails |
 | `--db=...` mit `--db-user` | die Datenbank; ein Datenbankbenutzer nur für Exponential ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
 | `--email` | eine echte Adresse: sie wird zu `[MailSettings] AdminEmail` |
@@ -106,7 +106,7 @@ einer Option, damit es weder in der Prozessliste noch im Shell-Verlauf erscheint
 
 ## Verwandte Seiten
 
-- [Ihre erste Website Schritt für Schritt](../../../../eng-us/help/creators/website-creators/your-first-site-step-by-step.md)
+- [Ihre erste Website Schritt für Schritt](ihre-erste-website-schritt-fuer-schritt.md)
 - [Hosting für eine Website](hosting-fuer-eine-website.md)
 - [Seitenpakete und die mitgelieferten Themes](seitenpakete-und-mitgelieferte-themes.md)
 - [Installationshandbuch](../../../installation/README.md)

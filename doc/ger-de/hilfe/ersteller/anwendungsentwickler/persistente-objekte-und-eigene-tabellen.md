@@ -94,7 +94,7 @@ $db->commit();`) ([Datenbankzugriff](datenbankzugriff.md)).
 
 Felder und `function_attributes` sind als `$item.title` und `$item.user.login` lesbar. Geben Sie persistente Objekte aus
 Fetch-Funktionen zurück, um Templates Ihre Daten bereitzustellen
-([Eine eigene Fetch-Funktion schreiben](../../../../eng-us/help/creators/app-creators/writing-a-fetch-function.md)).
+([Eine eigene Fetch-Funktion schreiben](eine-eigene-fetch-funktion-schreiben.md)).
 
 ## Die Tabelle anlegen
 

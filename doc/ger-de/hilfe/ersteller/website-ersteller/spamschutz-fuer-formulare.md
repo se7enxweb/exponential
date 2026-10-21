@@ -74,7 +74,7 @@ den Anbieter in Ihrem Datenschutzhinweis.
 ## Weitere Maßnahmen
 
 - Verlangen Sie für Registrierungen eine Bestätigung per E-Mail (`site.ini [UserSettings] VerifyUserType=email`)
-  ([Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)).
+  ([Registrierung von Mitgliedern und Bereiche nur für Mitglieder](mitgliederregistrierung-und-mitgliederbereiche.md)).
 - Begrenzen Sie, was anonyme Besucher anlegen dürfen (`content/create` für Kommentare nur, wo gewünscht).
 - Entfernen Sie Spam-Einsendungen gesammelt unter **Setup > Gesammelte Informationen**.
 
@@ -82,7 +82,7 @@ den Anbieter in Ihrem Datenschutzhinweis.
 
 - [Formulare mit dem Informationssammler](formulare-mit-dem-informationssammler.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
-- [Rechte für Besucher](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Rechte für Besucher](rechte-fuer-besucher.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

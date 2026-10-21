@@ -44,8 +44,8 @@ verwenden; so teilen sich mehrere Websites einen Baum ([Mehrere Websites in eine
 
 | Der Baum bestimmt | Wie |
 |---|---|
-| Menüs | die Unterelemente der Wurzel (oder einer Sektion) werden zu Menüeinträgen ([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)) |
-| Adressen | der URL-Alias ist der Pfad der Namen: `/About-us/Team` ([URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)) |
+| Menüs | die Unterelemente der Wurzel (oder einer Sektion) werden zu Menüeinträgen ([Menüs und Navigation](menues-und-navigation.md)) |
+| Adressen | der URL-Alias ist der Pfad der Namen: `/About-us/Team` ([URL-Aliasse und sprechende URLs](url-aliasse-und-sprechende-urls.md)) |
 | Brotkrumennavigation | der Pfad von der Wurzel zum Knoten |
 | Rechte | Richtlinien lassen sich auf einen Teilbaum einschränken ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)) |
 | Templates | Overrides können auf `parent_node`, `depth` oder `url_alias` passen |
@@ -106,7 +106,7 @@ Root (2)
 └── Site B
 ```
 
-Die gesamte Einrichtung finden Sie unter [Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md).
+Die gesamte Einrichtung finden Sie unter [Multisite einrichten](multisite-einrichten.md).
 
 ## Checkliste
 

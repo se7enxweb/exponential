@@ -92,13 +92,13 @@ oder Template fehlt. Die Zustandsprüfung lädt jede Registrierung und meldet, w
 Die Assistenten schreiben denselben Code, den diese Seiten von Hand zeigen: Beginnen Sie mit einem Assistenten, um ein
 funktionierendes Beispiel zu sehen, und lesen Sie dann die passende Seite
 ([Eigene Module und Ansichten](eigene-module-und-ansichten.md), [Eigene Datentypen](eigene-datentypen.md),
-[Einen Workflow-Ereignistyp schreiben](../../../../eng-us/help/creators/app-creators/writing-a-workflow-event-type.md),
+[Einen Workflow-Ereignistyp schreiben](einen-workflow-ereignistyp-schreiben.md),
 [Template-Operatoren schreiben](template-operatoren-schreiben.md)).
 
 ## Verwandte Seiten
 
-- [Ihre erste Erweiterung](../../../../eng-us/help/creators/app-creators/your-first-extension.md)
-- [Aufbau einer Erweiterung](../../../../eng-us/help/creators/app-creators/extension-anatomy.md)
+- [Ihre erste Erweiterung](ihre-erste-erweiterung.md)
+- [Aufbau einer Erweiterung](aufbau-einer-erweiterung.md)
 - [Muster für Erweiterungspunkte: INI-Plug-in-Punkte](../../../../eng-us/standards/patterns/ini-plugin-point.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -27,7 +27,7 @@ Einstellung aktivieren lässt und sich selbst dokumentiert, wird leicht übernom
 ## Das Repository
 
 Ein Git-Repository je Erweiterung, dessen Wurzel das Erweiterungsverzeichnis ist
-([Aufbau einer Erweiterung](../../../../eng-us/help/creators/app-creators/extension-anatomy.md)):
+([Aufbau einer Erweiterung](aufbau-einer-erweiterung.md)):
 
 ```text
 expdemo/

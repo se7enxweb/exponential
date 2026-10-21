@@ -42,7 +42,7 @@ Objekt anlegen darf. Die Redaktion wählt die Objekte dann im Bearbeitungsformul
 
 In einem Rich-Text-Feld fügt der Online-Editor Objekte (Bilder, Dateien, andere Inhalte) als Einbettungen ein. Das
 Objekt wird mit seinem Ansichtsmodus `embed` dargestellt, den Ihr Design je Klasse überschreiben kann
-([Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)). Auch Einbettungen erzeugen Relationen, die Rückwärtsrelationen unten
+([Template-Overrides](template-overrides.md)). Auch Einbettungen erzeugen Relationen, die Rückwärtsrelationen unten
 schließen sie also ein.
 
 ## Relationen in Templates anzeigen
@@ -110,7 +110,7 @@ diese Liste, bevor Sie bestätigen: Ein entferntes Bild hinterlässt eine Lücke
 
 - [Ihr Inhaltsmodell entwerfen](ihr-inhaltsmodell-entwerfen.md)
 - [Datentypen wählen](datentypen-waehlen.md)
-- [Fetch-Funktionen: Daten in Templates lesen](../../../../eng-us/help/creators/app-creators/fetch-functions.md)
+- [Fetch-Funktionen: Daten in Templates lesen](../anwendungsentwickler/fetch-funktionen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

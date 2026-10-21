@@ -57,7 +57,7 @@ Bewahren Sie das SMTP-Passwort in `settings/override/` auf, niemals in der Versi
 4. Die Ausgabe wird archiviert (`newsletter/archive`).
 
 `php runcronjobs.php -s <siteaccess> cjw_newsletter` führt beide Schritte aus; die Crontab aus
-[Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#setting-it-up) führt ihn alle zehn Minuten aus.
+[Newsletter mit cjw_newsletter](newsletter-mit-cjw-newsletter.md#einrichten) führt ihn alle zehn Minuten aus.
 
 ## Vor jedem Versand
 
@@ -79,8 +79,8 @@ Bewahren Sie das SMTP-Passwort in `settings/override/` auf, niemals in der Versi
 
 ## Verwandte Seiten
 
-- [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)
-- [Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md)
+- [Newsletter mit cjw_newsletter](newsletter-mit-cjw-newsletter.md)
+- [Newsletter-Listen und Abonnements](newsletter-listen-und-abonnements.md)
 - [Cronjobs](../../../anleitungen/cronjobs.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

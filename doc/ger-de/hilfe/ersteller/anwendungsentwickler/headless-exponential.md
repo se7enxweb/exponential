@@ -71,7 +71,7 @@ Sie sie in einer geschützten Vorschau-Route. Planen Sie das früh ein; diesen T
 
 - Das REST-Framework hat einen Antwort-Cache (`rest.ini`); die `rest`-Caches werden mit dem Tag content geleert.
 - Cachen Sie in Ihrem Frontend oder CDN; leeren Sie beim Veröffentlichen mit einem Workflow-Ereignis oder einem
-  Listener, der Ihren Purge-Hook aufruft ([Workflows und Ereignisse](../../../../eng-us/help/creators/app-creators/workflows-and-events.md)).
+  Listener, der Ihren Purge-Hook aufruft ([Workflows und Ereignisse](workflows-und-ereignisse.md)).
 - Holen Sie Listen seitenweise mit Limits.
 
 ## Hybrid: Templates und API zusammen

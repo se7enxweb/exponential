@@ -27,14 +27,14 @@ verweist auf die Seite, die jeden Punkt erklärt.
 
 | Bedarf | Eingebaut oder Erweiterung | Lesen Sie |
 |---|---|---|
-| Lesbare Adressen aus den Namen der Inhalte | eingebaut: URL-Aliasse | [URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md) |
+| Lesbare Adressen aus den Namen der Inhalte | eingebaut: URL-Aliasse | [URL-Aliasse und sprechende URLs](url-aliasse-und-sprechende-urls.md) |
 | Alte Adressen funktionieren nach Umbenennen oder Verschieben weiter | eingebaut: Verlaufs-Aliasse leiten weiter | [Weiterleitungen und verschobene Inhalte](weiterleitungen-und-verschobene-inhalte.md) |
-| Eigene kurze Adressen und Muster | eingebaut: globale Aliasse und Platzhalter | [URL-Platzhalter](../../../../eng-us/help/creators/website-creators/url-wildcards.md) |
+| Eigene kurze Adressen und Muster | eingebaut: globale Aliasse und Platzhalter | [URL-Platzhalter](url-platzhalter.md) |
 | `robots.txt` | im Web-Root mitgeliefert | [robots.txt für Website-Ersteller](robots-txt.md) |
 | XML-Sitemaps | `bcgooglesitemaps` oder `xrowmetadata` | [Sitemaps](sitemaps.md) |
-| Titel, Beschreibungen, Open Graph je Seite | `xrowmetadata` oder eigene Felder | [Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md) |
+| Titel, Beschreibungen, Open Graph je Seite | `xrowmetadata` oder eigene Felder | [Metadaten und Teilen in sozialen Medien](metadaten-und-teilen-in-sozialen-medien.md) |
 | Feeds | eingebaut: RSS-Exporte | [RSS-Feeds für Ihre Website](rss-feeds-fuer-ihre-website.md) |
-| Schnelle Seiten | Caches, Antwort-Cache von Velocity | [Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
+| Schnelle Seiten | Caches, Antwort-Cache von Velocity | [Leistung und Caching](leistung-und-caching.md) |
 
 ## Die Checkliste
 
@@ -48,7 +48,7 @@ verweist auf die Seite, die jeden Punkt erklärt.
 - [ ] Bilder haben Alternativtexte und sinnvolle Dateinamen.
 - [ ] Jede Sprachversion hat eine eigene Adresse, und die anderen sind als Alternativen angegeben
       ([Sprachumschalter und Sprach-URLs](sprachumschalter-und-sprach-urls.md)).
-- [ ] Seiten sind schnell und funktionieren auf Smartphones ([Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)).
+- [ ] Seiten sind schnell und funktionieren auf Smartphones ([Leistung und Caching](leistung-und-caching.md)).
 - [ ] Überall HTTPS, ein Hostname (die anderen leiten weiter) ([Livegang: Hosts und HTTPS](livegang-hosts-und-https.md)).
 - [ ] Fehlerseiten liefern die richtigen Statuscodes
       ([12. Antwort-Header von Fehlerseiten](../../../anleitungen/templates-und-design.md#12-antwort-header-von-fehlerseiten)).
@@ -82,11 +82,11 @@ kein Metadatenfeld ausgefüllt ist; Linktexte sagen, wohin sie führen ("Öffnun
 - Die Suchstatistiken der eigenen Suche der Website zeigen, wonach Besucher suchen und was sie nicht finden
   ([URL-Aliasse, Platzhalter und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)).
 - Die Webmaster-Werkzeuge der Suchmaschinen zeigen Indexierung und Fehler.
-- Die Linkprüfung findet defekte ausgehende Links ([Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)).
+- Die Linkprüfung findet defekte ausgehende Links ([Link- und Inhaltsprüfungen](link-und-inhaltspruefungen.md)).
 
 ## Verwandte Seiten
 
-- [Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md)
+- [Metadaten und Teilen in sozialen Medien](metadaten-und-teilen-in-sozialen-medien.md)
 - [Sitemaps](sitemaps.md)
 - [Barrierefreiheit für Website-Ersteller](barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

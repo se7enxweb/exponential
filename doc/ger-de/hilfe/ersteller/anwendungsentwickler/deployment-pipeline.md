@@ -30,7 +30,7 @@ gehalten, und ein Weg zurück, wenn etwas schiefgeht.
 | Produktivumgebung | die Live-Website | die Basiseinstellungen |
 
 `EXP_ENV` benennt die Umgebung, und jede Einstellungsdatei kann eine Variante dafür haben (`site.ini.test.append.php`)
-([Umgebungseinstellungen und Geheimnisse](../../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md), [Einstellungen pro Umgebung](../../../../eng-us/features/6.0/environment-settings.md)).
+([Umgebungseinstellungen und Geheimnisse](umgebungseinstellungen-und-geheimnisse.md), [Einstellungen pro Umgebung](../../../../eng-us/features/6.0/environment-settings.md)).
 
 ## Was wie übertragen wird
 

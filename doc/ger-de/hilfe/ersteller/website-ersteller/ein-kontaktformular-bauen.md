@@ -93,7 +93,7 @@ dann korrekt (die Dankeseite erscheint). Mit dem Datei-Mailtransport prüfen Sie
 
 - [Formulare mit dem Informationssammler](formulare-mit-dem-informationssammler.md)
 - [Formulareinsendungen](formulareinsendungen.md)
-- [Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)
+- [Template-Overrides](template-overrides.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

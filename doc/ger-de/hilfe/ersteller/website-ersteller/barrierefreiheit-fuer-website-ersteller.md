@@ -28,9 +28,9 @@ Guidelines des W3C ([WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)).
 |---|---|
 | Sprache | `<html lang="...">` aus `$site.http_equiv.Content-language`; `lang` an Inhalten in einer anderen Sprache; `dir="rtl"` für Schreibrichtung von rechts nach links ([Websites mit Schreibrichtung von rechts nach links](websites-von-rechts-nach-links.md)) |
 | Landmarks | `header`, `nav` (mit `aria-label`, wenn es mehrere gibt), `main`, `footer` |
-| Sprunglink | ein Link „Zum Inhalt springen“ als Erstes auf der Seite, auf `#main` ([Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md)) |
+| Sprunglink | ein Link „Zum Inhalt springen“ als Erstes auf der Seite, auf `#main` ([Das Pagelayout](das-pagelayout.md)) |
 | Überschriften | ein `h1` pro Seite (der Seitenname), Überschriften in der richtigen Reihenfolge |
-| Navigation | die aktuelle Seite mit `aria-current="page"` markiert ([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)) |
+| Navigation | die aktuelle Seite mit `aria-current="page"` markiert ([Menüs und Navigation](menues-und-navigation.md)) |
 | Fokus | ein sichtbarer Fokusstil an jedem Link und Bedienelement; niemals `outline: none` ohne Ersatz |
 | Kontrast | Text mindestens 4,5:1 zum Hintergrund, großer Text 3:1 |
 | Bilder | `alt` aus dem Alternativtext des Bildes; dekorative Bilder `alt=""` |
@@ -74,11 +74,11 @@ Geben Sie der Redaktion bei der Übergabe eine kurze Liste dieser Punkte mit
 - [ ] Bilder haben Alternativtexte; dekorative Bilder haben leere.
 - [ ] Formulare beschriftet; Fehler werden angesagt.
 - [ ] 200 % Zoom und Smartphone-Breite funktionieren.
-- [ ] Mit einem automatischen Prüfwerkzeug und von Hand getestet ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+- [ ] Mit einem automatischen Prüfwerkzeug und von Hand getestet ([Barrierefreiheit testen](barrierefreiheit-testen.md)).
 
 ## Verwandte Seiten
 
-- [Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Barrierefreiheit testen](barrierefreiheit-testen.md)
 - [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md)
 - [Websites mit Schreibrichtung von rechts nach links](websites-von-rechts-nach-links.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

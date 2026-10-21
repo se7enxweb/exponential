@@ -87,7 +87,7 @@ also auch kein gemeinsamer Cache
 
 ## Verwandte Seiten
 
-- [View-Cache und Cache-Blöcke](../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)
+- [View-Cache und Cache-Blöcke](../website-ersteller/view-cache-und-cache-bloecke.md)
 - [Caches](../../../anleitungen/caches.md)
 - Caching-Kochbuch (`doc/eng-us/examples/cookbook/caching.md`)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

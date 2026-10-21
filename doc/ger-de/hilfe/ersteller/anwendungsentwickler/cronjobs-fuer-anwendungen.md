@@ -49,7 +49,7 @@ Scripts[]=expdemo_import.php
 */ ?>
 ```
 
-Das Skript liegt in `extension/expdemo/cronjobs/expdemo_import.php` ([Ein Cronjob-Skript schreiben](../../../../eng-us/help/creators/app-creators/writing-a-cronjob-part.md)).
+Das Skript liegt in `extension/expdemo/cronjobs/expdemo_import.php` ([Ein Cronjob-Skript schreiben](einen-cronjob-teil-schreiben.md)).
 Fügen Sie es nur dann einem vorhandenen Teil hinzu, wenn es schnell ist und denselben Rhythmus hat; ein eigener Teil
 lässt sich getrennt planen.
 
@@ -91,7 +91,7 @@ Administrator liest, wenn etwas fehlschlägt.
 
 ## Verwandte Seiten
 
-- [Ein Cronjob-Skript schreiben](../../../../eng-us/help/creators/app-creators/writing-a-cronjob-part.md)
+- [Ein Cronjob-Skript schreiben](einen-cronjob-teil-schreiben.md)
 - [Hintergrundarbeit: Warteschlangen, Cronjobs und Inhalts-Jobs](muster-fuer-hintergrundarbeit.md)
 - Cronjob-Beispiele (`doc/eng-us/examples/cronjobs/`)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

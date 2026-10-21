@@ -64,7 +64,7 @@ Eine zweite anonyme Anfrage nach derselben Seite sollte einen Header `Age` zeige
 
 ## Verwandte Seiten
 
-- [Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching](leistung-und-caching.md)
 - [Mit Velocity ausliefern](../anwendungsentwickler/mit-velocity-ausliefern.md)
 - [Velocity-Webserver](../../../../eng-us/features/6.0/velocity-web-server.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

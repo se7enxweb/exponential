@@ -85,7 +85,7 @@ Versandkosten an `before_shop_confirmorder` ([Workflows](../../../anleitungen/wo
 ## Verwandte Seiten
 
 - [Einen Shop betreiben: Überblick](shop-ueberblick.md)
-- [Payment-Gateways für Website-Ersteller](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
+- [Payment-Gateways für Website-Ersteller](payment-gateways.md)
 - [Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

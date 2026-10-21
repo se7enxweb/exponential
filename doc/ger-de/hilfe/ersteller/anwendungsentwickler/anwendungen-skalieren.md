@@ -61,7 +61,7 @@ Warteschlangen-Worker auf einem dafür bestimmten Server (oder mit Sperre).
 
 ## Verwandte Seiten
 
-- [Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching](../website-ersteller/leistung-und-caching.md)
 - [Clustering und gemeinsamer Speicher](clustering-und-gemeinsamer-speicher.md)
 - [10.12 Leistungsoptimierung](../../../installation/10-nach-der-installation.md#1012-performance-tuning)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

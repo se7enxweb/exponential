@@ -86,8 +86,8 @@ Funktionen ([Formulare, CSRF und HTTP-Eingaben](../anwendungsentwickler/formular
 
 ## Verwandte Seiten
 
-- [URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)
-- [URL-Platzhalter](../../../../eng-us/help/creators/website-creators/url-wildcards.md)
+- [URL-Aliasse und sprechende URLs](url-aliasse-und-sprechende-urls.md)
+- [URL-Platzhalter](url-platzhalter.md)
 - [Umzug von einer älteren Installation](../../../installation/14-migration-von-4x.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -103,7 +103,7 @@ von Anfang an so:
 | Statt | Schreiben Sie |
 |---|---|
 | `<a onclick="openGallery()">` | `<a class="js-gallery">` und `addEventListener` in `main.js` |
-| `<script>var root = "...";</script>` | einen Datenblock `<script type="application/json">`, den `main.js` liest ([Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md#scripts-without-inline-code)) |
+| `<script>var root = "...";</script>` | einen Datenblock `<script type="application/json">`, den `main.js` liest ([Das Pagelayout](das-pagelayout.md#skripte-ohne-inline-code)) |
 | `<div style="width: 40%">` | eine CSS-Klasse oder ein `data-*`-Attribut, das Ihr Skript liest |
 | ein Skript von einem anderen Host | eine Kopie in Ihrem Design oder `AdditionalSources[]=script-src https://<host>` in `[ContentSecurityPolicy]` |
 
@@ -117,7 +117,7 @@ von Anfang an so:
 
 ## Verwandte Seiten
 
-- [Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md)
+- [Das Pagelayout](das-pagelayout.md)
 - [ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md)
 - [jQuery 4 und die Entfernung von YUI](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
 - [Content Security Policy für Anwendungen](../anwendungsentwickler/content-security-policy.md)

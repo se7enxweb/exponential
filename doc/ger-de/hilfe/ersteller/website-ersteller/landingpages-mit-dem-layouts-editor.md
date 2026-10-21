@@ -60,7 +60,7 @@ Aus [Die fünf Grundbegriffe, die Sie brauchen](../../../bc/6.0/layouts.md#die-f
      Products“, Limit 6.
    - `left` und `right`: je ein Block `rich_text` oder eine `card`.
 4. **Zuordnen.** Unter **Mappings** eine Regel mit dem Ziel `node` (die Landingpage) und, für eine zeitlich begrenzte
-   Kampagne, eine Bedingung `time` mit `from` und `to` ([Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)).
+   Kampagne, eine Bedingung `time` mit `from` und `to` ([Layout-Regeln](layout-regeln.md)).
 5. **Preview**, dann **Publish**.
 6. **Prüfen** Sie die Seite auf der Website, abgemeldet.
 
@@ -94,8 +94,8 @@ Blocktyp passt.
 
 ## Verwandte Seiten
 
-- [Layouttypen, Zonen und Blöcke](../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md)
-- [Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)
+- [Layouttypen, Zonen und Blöcke](layouttypen-zonen-und-bloecke.md)
+- [Layout-Regeln](layout-regeln.md)
 - [Gemeinsamer Kopf- und Fußbereich](gemeinsamer-kopf-und-fussbereich.md)
 - [explayouts_ui](../../../../eng-us/features/6.0/extensions/explayouts_ui.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

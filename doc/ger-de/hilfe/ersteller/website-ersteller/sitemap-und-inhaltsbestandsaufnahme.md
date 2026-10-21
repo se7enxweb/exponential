@@ -53,8 +53,8 @@ Die wichtigsten Spalten:
 - **Wie viele** sagt Ihnen, ob ein Ordner eine Seitenaufteilung, eine Struktur nach Datum oder eine Suche braucht.
 - **Wer schreibt sie** wird zu Rollen und vielleicht zu einer Sektion
   ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
-- **Sprachen** bestimmt den Übersetzungsaufwand ([Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)).
-- **Wo angezeigt** bestimmt Ansichtsmodi und Fetches ([Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md)).
+- **Sprachen** bestimmt den Übersetzungsaufwand ([Eine mehrsprachige Website bauen](mehrsprachige-websites.md)).
+- **Wo angezeigt** bestimmt Ansichtsmodi und Fetches ([Das Pagelayout](das-pagelayout.md)).
 
 ## Die Sitemap
 
@@ -83,7 +83,7 @@ Home                         (front page; layout)
    ([Das Inhaltsmodell und das Bearbeiten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md)).
 4. Legen Sie Sektionen für Bereiche mit eigenen Rechten an, und weisen Sie sie dem Teilbaum zu
    ([Sektionen und Objektzustände für Website-Ersteller](sektionen-und-objektzustaende.md)).
-5. Entscheiden Sie, welche Klassen in den Menüs erscheinen ([Menüs und Navigation](../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)).
+5. Entscheiden Sie, welche Klassen in den Menüs erscheinen ([Menüs und Navigation](menues-und-navigation.md)).
 6. Legen Sie vor der Designarbeit je Klasse ein paar echte Elemente an: Templates werden anhand echter Inhalte gestaltet.
 
 ## Prüfungen, bevor Sie bauen
@@ -96,7 +96,7 @@ Home                         (front page; layout)
 - [ ] Listen, die groß werden, haben eine Seitenaufteilung oder eine Struktur nach Datum.
 - [ ] Inhalte, die an mehreren Stellen erscheinen, haben ein Zuhause und werden wiederverwendet, nicht kopiert.
 - [ ] Die Sitemap ist nicht tiefer, als Besucher folgen werden; Adressen wachsen mit der Tiefe
-      ([URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)).
+      ([URL-Aliasse und sprechende URLs](url-aliasse-und-sprechende-urls.md)).
 
 ## Verwandte Seiten
 

@@ -29,7 +29,7 @@ Shop-Dashboard öffnet ([Shop-Dashboard und Bestellstatus](../../../../eng-us/fe
 | Produkte | Inhalte einer Klasse mit einem Feld `ezprice` oder `ezmultiprice` (die mitgelieferte Klasse `product`) ([Produkte, Preise und Mehrwertsteuer](produkte-preise-und-mehrwertsteuer.md)) |
 | Warenkorb | `shop/basket` (der Name seiner Ansicht ist `[BasketSettings] BasketViewName` in `shop.ini`) |
 | Kasse | `shop/register` (Kundendaten), `shop/confirmorder`, `shop/checkout` |
-| Zahlung | ein Workflow am Kassen-Trigger mit einem Gateway-Ereignis ([Payment-Gateways für Website-Ersteller](../../../../eng-us/help/creators/website-creators/payment-gateways.md)) |
+| Zahlung | ein Workflow am Kassen-Trigger mit einem Gateway-Ereignis ([Payment-Gateways für Website-Ersteller](payment-gateways.md)) |
 | Bestellungen | `shop/orderlist`, `shop/orderview`, Status, Archiv, Kunden, Statistiken |
 | Mehrwertsteuer | `shop/vattype`, `shop/vatrules` |
 | Währungen | `shop/currencylist`, Wechselkurse (`[ExchangeRatesSettings]`) |
@@ -81,7 +81,7 @@ fehlt.
 
 - [Produkte, Preise und Mehrwertsteuer](produkte-preise-und-mehrwertsteuer.md)
 - [Warenkorb, Kasse und Bestellungen](warenkorb-kasse-und-bestellungen.md)
-- [Payment-Gateways für Website-Ersteller](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
+- [Payment-Gateways für Website-Ersteller](payment-gateways.md)
 - [Name der Warenkorb-Ansicht im Shop](../../../bc/6.0/view-name-des-shop-warenkorbs.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -71,7 +71,7 @@ speichert; er wird mit den Tags content und template geleert. Siehe [Der HTTP-Ca
 ## Verwandte Seiten
 
 - [Statischer Cache und Velocity](statischer-cache-und-velocity.md)
-- [Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching](leistung-und-caching.md)
 - [HTTP/2 und Cache-Vorwärmung](../../../bc/6.0/http2-und-cache-vorwaermen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

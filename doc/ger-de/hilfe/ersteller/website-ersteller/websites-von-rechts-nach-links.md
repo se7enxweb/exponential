@@ -78,7 +78,7 @@ Mit logischen Eigenschaften dient ein Stylesheet beiden Richtungen; es gibt kein
 
 ## Verwandte Seiten
 
-- [Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Eine mehrsprachige Website bauen](mehrsprachige-websites.md)
 - [Barrierefreiheit für Website-Ersteller](barrierefreiheit-fuer-website-ersteller.md)
 - [Stylesheets und Skripte](stylesheets-und-skripte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

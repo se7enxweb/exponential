@@ -99,7 +99,7 @@ class expDemoTemplateOperators
 
 | Bedarf | Besser |
 |---|---|
-| Daten lesen | eine Fetch-Funktion ([Eine eigene Fetch-Funktion schreiben](../../../../eng-us/help/creators/app-creators/writing-a-fetch-function.md)) |
+| Daten lesen | eine Fetch-Funktion ([Eine eigene Fetch-Funktion schreiben](eine-eigene-fetch-funktion-schreiben.md)) |
 | Zeichenketten formatieren | die mitgelieferten String-Operatoren ([String-Template-Operatoren](../../../../eng-us/features/6.0/string-template-operators.md)) |
 | Rechteprüfungen | [Template-Operatoren für Rollen und Richtlinien](../../../../eng-us/features/6.0/role-and-policy-template-operators.md) |
 | Markup, das in vielen Templates wiederverwendet wird | ein `{include}` eines Template-Teils |

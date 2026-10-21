@@ -92,7 +92,7 @@ $Result = array(
 ```
 
 `content` kommt in das Pagelayout, aus `path` werden Brotkrumennavigation und Titel. Weitere Schlüssel und die Wahl des
-Pagelayouts: [Ergebnisse von Ansichten, Templates und das Pagelayout](../../../../eng-us/help/creators/app-creators/view-results-and-the-pagelayout.md).
+Pagelayouts: [Ergebnisse von Ansichten, Templates und das Pagelayout](ergebnisse-von-ansichten-und-das-pagelayout.md).
 
 ## Weiterleitungen und Fehler
 
@@ -120,7 +120,7 @@ eigenes Modul hinzu; ein Override muss jedem Kernel-Update folgen.
 
 ## Verwandte Seiten
 
-- [Ihre erste Erweiterung](../../../../eng-us/help/creators/app-creators/your-first-extension.md)
+- [Ihre erste Erweiterung](ihre-erste-erweiterung.md)
 - [Richtlinienfunktionen und Einschränkungen](richtlinienfunktionen-und-einschraenkungen.md)
 - [Muster Modul und Ansicht](../../../../eng-us/standards/patterns/module-view.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

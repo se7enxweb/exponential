@@ -93,7 +93,7 @@ wenn ein Schlüssel fehlen kann.
 API-Schlüssel, Passwörter und Tokens gehören niemals in das Repository Ihrer Erweiterung. Lesen Sie sie aus einem
 Schlüssel, den die Installation in `settings/override/<file>.ini.append.php` setzt (Modus 0640, nicht committet), und
 brechen Sie mit einer klaren Meldung ab, wenn er leer ist. Umgebungsspezifische Werte:
-[Umgebungseinstellungen und Geheimnisse](../../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md).
+[Umgebungseinstellungen und Geheimnisse](umgebungseinstellungen-und-geheimnisse.md).
 
 ## Caches
 
@@ -103,7 +103,7 @@ Einstellungen werden gecacht. Nach einer Änderung: `php bin/php/ezcache.php --c
 
 ## Verwandte Seiten
 
-- [Aufbau einer Erweiterung](../../../../eng-us/help/creators/app-creators/extension-anatomy.md)
+- [Aufbau einer Erweiterung](aufbau-einer-erweiterung.md)
 - [Konsole exp:ini](../../../bc/6.0/console-exp-ini.md)
 - [INI-Dateien behalten ihre Kommentare](../../../bc/6.0/ezini-behaelt-kommentare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

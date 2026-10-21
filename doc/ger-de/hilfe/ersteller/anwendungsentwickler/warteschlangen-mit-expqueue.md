@@ -111,7 +111,7 @@ oder Gruppe pausieren.
 
 - [Muster für Hintergrundarbeit](muster-fuer-hintergrundarbeit.md)
 - [Inhalts-Jobs](inhalts-jobs.md)
-- [Exponential Intelligence](../../../../eng-us/help/creators/app-creators/exponential-intelligence.md)
+- [Exponential Intelligence](exponential-intelligence.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

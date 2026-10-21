@@ -37,7 +37,7 @@ leeren ([Einstellungen und INI-Dateien](einstellungen-und-ini-dateien.md)).
 ## Mein neues Template wird nicht verwendet
 
 Leeren Sie `template-override` und `template`; prüfen Sie die Override-Regel mit den Kommentaren zu Template-Pfaden
-([Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)).
+([Template-Overrides](../website-ersteller/template-overrides.md)).
 
 ## Wie gebe ich JSON zurück?
 

@@ -59,7 +59,7 @@ Eine Domäne ist eine Klasse `exp<Domain>Services`, die `expServiceBase` erweite
 der `ezjscore.ini.append.php` Ihrer Erweiterung registriert ist und als `<root>/ezjscore/call/exp<domain>::<function>`
 aufgerufen wird. Orientieren Sie sich bei Antworthülle, Richtliniendeklaration und Discovery-Eintrag an den
 mitgelieferten Domänen in `extension/expservices/classes/`; lesende Dienste lassen sich Exponential Intelligence mit
-`'ai' => true` als Werkzeuge anbieten ([Exponential Intelligence](../../../../eng-us/help/creators/app-creators/exponential-intelligence.md)).
+`'ai' => true` als Werkzeuge anbieten ([Exponential Intelligence](exponential-intelligence.md)).
 
 ## Wann es passt
 
@@ -68,7 +68,7 @@ mitgelieferten Domänen in `extension/expservices/classes/`; lesende Dienste las
 | Ein entfernter Verwaltungs-Client, ein Portal, Skripte, die die Website verwalten | expservices |
 | Inhalte für Apps und Frontends, OAuth für Dritte | REST ([Die REST-API](rest-api.md)) |
 | Das JavaScript Ihrer eigenen Seite | eine ezjscore-Serverfunktion ([JSON-Endpunkte mit ezjscore](json-endpunkte-mit-ezjscore.md)) |
-| KI-Werkzeuge, die innerhalb der Administration handeln | Werkzeuge von Exponential Intelligence ([Exponential Intelligence erweitern](../../../../eng-us/help/creators/app-creators/extending-exponential-intelligence.md)) |
+| KI-Werkzeuge, die innerhalb der Administration handeln | Werkzeuge von Exponential Intelligence ([Exponential Intelligence erweitern](exponential-intelligence-erweitern.md)) |
 
 ## Verwandte Seiten
 

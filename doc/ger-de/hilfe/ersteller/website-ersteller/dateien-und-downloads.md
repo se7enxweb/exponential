@@ -90,7 +90,7 @@ lassen sich Dateiinhalte ebenfalls indizieren ([Suche mit ezfind und Solr](suche
 
 ## Verwandte Seiten
 
-- [Die Medienbibliothek organisieren](../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md)
+- [Die Medienbibliothek organisieren](die-medienbibliothek-organisieren.md)
 - [Medien und Uploads (für die Redaktion)](../../medien-und-uploads.md)
 - [PDF-Exporte](../../../anleitungen/pdf-exporte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

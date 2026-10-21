@@ -58,7 +58,7 @@ $count = eZContentObjectTreeNode::subTreeCountByNodeID( array(
     'ClassFilterType' => 'include', 'ClassFilterArray' => array( 'event' ) ), $parentNodeID );
 ```
 
-Das ist die PHP-Seite der Template-Fetches ([Fetch-Funktionen: Daten in Templates lesen](../../../../eng-us/help/creators/app-creators/fetch-functions.md)). Setzen
+Das ist die PHP-Seite der Template-Fetches ([Fetch-Funktionen: Daten in Templates lesen](fetch-funktionen.md)). Setzen
 Sie immer ein `Limit`.
 
 ## Attribute lesen

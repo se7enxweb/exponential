@@ -42,7 +42,7 @@ MetaDataArray[author]=Example Inc.
 | `MetaDataArray[]` | Meta-Tags, die das Pagelayout ausgibt |
 
 Leeren Sie danach den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`. Mehrere Sprachen? Setzen
-Sie den Namen pro Sprach-Siteaccess ([Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)).
+Sie den Namen pro Sprach-Siteaccess ([Eine mehrsprachige Website bauen](mehrsprachige-websites.md)).
 
 ## Das Logo und das Seitendesign-Objekt
 
@@ -81,7 +81,7 @@ Website wird aus dem Wurzelverzeichnis der Installation ausgeliefert.
 | `og:image`, `twitter:image` | `images/favicon/favicon-banner.png` des Designs |
 
 Beschreibungen und Schlüsselwörter pro Seite brauchen ein Metadatenfeld am Inhalt; siehe
-[Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md).
+[Metadaten und Teilen in sozialen Medien](metadaten-und-teilen-in-sozialen-medien.md).
 
 ## Fußbereich und „Powered by“
 

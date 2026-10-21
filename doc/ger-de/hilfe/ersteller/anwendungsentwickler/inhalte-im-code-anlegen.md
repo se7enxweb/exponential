@@ -101,7 +101,7 @@ Stapeln mit `eZContentObject::clearCache()` und protokollieren Sie den Fortschri
 
 - [Die Content-API in PHP](die-content-api.md)
 - [CLI-Skripte mit eZScript](cli-skripte.md)
-- [Workflows, Trigger und Ereignisse](../../../../eng-us/help/creators/app-creators/workflows-and-events.md)
+- [Workflows, Trigger und Ereignisse](workflows-und-ereignisse.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

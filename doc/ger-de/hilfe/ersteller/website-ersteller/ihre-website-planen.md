@@ -32,7 +32,7 @@ Manche Entscheidungen lassen sich später günstig ändern, andere nicht:
 
 | Entscheidung | Später ändern | Warum |
 |---|---|---|
-| Design, Templates, Stylesheets | Einfach | Templates sind Dateien; ein Override lässt sich entfernen ([Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)) |
+| Design, Templates, Stylesheets | Einfach | Templates sind Dateien; ein Override lässt sich entfernen ([Template-Overrides](template-overrides.md)) |
 | Menüs, Layouts von Landingpages | Einfach | Einstellungen und der Layouts-Editor |
 | Inhaltsklassen (Felder hinzufügen) | Einfach | Ein neues Attribut wird jedem Objekt der Klasse hinzugefügt |
 | Inhaltsklassen (Datentyp eines Feldes ändern) | Schwer | Die gespeicherten Daten gehören zum Datentyp; eine Änderung bedeutet, Inhalte zu migrieren |
@@ -66,11 +66,11 @@ was fehlt. Methode und Beispiele: [Ihr Inhaltsmodell entwerfen](ihr-inhaltsmodel
 Entscheiden Sie:
 
 - **Wie viele öffentliche Websites** (Marken, Regionen) aus einer Installation betrieben werden. Jede ist ein oder
-  mehrere Siteaccesses ([Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)).
+  mehrere Siteaccesses ([Multisite einrichten](multisite-einrichten.md)).
 - **Wie Besucher jede erreichen**: über den Pfad (`/de`), über den Host (`www.example.de`) oder über den Port; der
   Installer bietet alle drei an
   ([10.2 Siteaccesses und Website-Adressen](../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).
-- **Welche Sprachen**, und welche Sprache jede Website zuerst zeigt ([Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)).
+- **Welche Sprachen**, und welche Sprache jede Website zuerst zeigt ([Eine mehrsprachige Website bauen](mehrsprachige-websites.md)).
 - **Von rechts nach links?** Arabische oder hebräische Inhalte brauchen ein RTL-fähiges Design
   ([Websites mit Schreibrichtung von rechts nach links](websites-von-rechts-nach-links.md)).
 
@@ -88,10 +88,10 @@ Haken Sie ab, was die Website braucht; jede Zeile ist eine Seite dieses Abschnit
 |---|---|
 | Visuell bearbeitete Landingpages | [Landingpages mit dem Layouts-Editor](landingpages-mit-dem-layouts-editor.md) |
 | Kontakt- oder Feedbackformulare | [Formulare mit dem Informationssammler](formulare-mit-dem-informationssammler.md) |
-| Newsletter | [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md) |
+| Newsletter | [Newsletter mit cjw_newsletter](newsletter-mit-cjw-newsletter.md) |
 | Shop | [Einen Shop betreiben: Überblick](shop-ueberblick.md) |
 | Suche | [Suche auf der Website](suche-auf-der-website.md) |
-| Mitgliederbereich | [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
+| Mitgliederbereich | [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](mitgliederregistrierung-und-mitgliederbereiche.md) |
 | RSS | [RSS-Feeds für Ihre Website](rss-feeds-fuer-ihre-website.md) |
 | Tags | [Verschlagworten mit eztags](verschlagworten-mit-eztags.md) |
 | Eigene Logik | [Anwendungsentwickler: hier beginnen](../anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) |
@@ -99,7 +99,7 @@ Haken Sie ab, was die Website braucht; jede Zeile ist eine Seite dieses Abschnit
 ## Schritt 7: Hosting und Betrieb
 
 Entscheiden Sie, wo die Website läuft und wer sie betreut: Webserver (Velocity, Apache oder nginx), Datenbank, Backups,
-Cronjobs, Updates ([Hosting für eine Website](hosting-fuer-eine-website.md), [Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)).
+Cronjobs, Updates ([Hosting für eine Website](hosting-fuer-eine-website.md), [Ihre Website pflegen](ihre-website-pflegen.md)).
 
 ## Der Planungsbogen
 
@@ -121,7 +121,7 @@ Kopieren Sie diesen Bogen in Ihre Projektnotizen und füllen Sie ihn aus.
 > **Tipp**
 > Installieren Sie zuerst eine Demo-Website, und klicken Sie sich mit den Personen hindurch, die die Website bearbeiten
 > werden. Wer die Administration gesehen hat, kann die Hälfte der Fragen oben beantworten
-> ([Ihre erste Website Schritt für Schritt](../../../../eng-us/help/creators/website-creators/your-first-site-step-by-step.md)).
+> ([Ihre erste Website Schritt für Schritt](ihre-erste-website-schritt-fuer-schritt.md)).
 
 ## Verwandte Seiten
 

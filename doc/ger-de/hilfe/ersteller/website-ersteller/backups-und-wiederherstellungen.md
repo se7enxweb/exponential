@@ -89,7 +89,7 @@ wöchentlich für einen Monat), und denken Sie daran, dass sie personenbezogene 
 
 ## Verwandte Seiten
 
-- [Wartungsmodus](../../../../eng-us/help/creators/website-creators/maintenance-mode.md)
+- [Wartungsmodus](wartungsmodus.md)
 - [Eine Website betreiben: sichern und wiederherstellen](../../../anleitungen/betrieb-einer-website.md#6-sichern-und-wiederherstellen)
 - [Datenbanken](../../../installation/09-datenbanken.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

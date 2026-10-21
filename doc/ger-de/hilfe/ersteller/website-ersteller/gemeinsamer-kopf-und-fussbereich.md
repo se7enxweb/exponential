@@ -73,7 +73,7 @@ zu bearbeiten. Mit ihnen ist der Fußbereich einmal definiert; ändern Sie ihn, 
 ## Verwandte Seiten
 
 - [Landingpages mit dem Layouts-Editor](landingpages-mit-dem-layouts-editor.md)
-- [Layouttypen, Zonen und Blöcke](../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md)
+- [Layouttypen, Zonen und Blöcke](layouttypen-zonen-und-bloecke.md)
 - [Der Layouts-Editor (für die Redaktion)](../../layout-editor.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

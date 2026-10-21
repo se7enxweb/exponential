@@ -60,7 +60,7 @@ einer Baseline aus einer anderen Umgebung weist darauf hin.
 
 - [Anwendungen skalieren](anwendungen-skalieren.md)
 - [Caching in Anwendungen](caching-in-anwendungen.md)
-- [Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching](../website-ersteller/leistung-und-caching.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -32,7 +32,7 @@ nennt die Kernel-Funktion, die dabei hilft; die Standardseite ordnet sie den OWA
 | Nur innerhalb der Website weiterleiten | Prüfungen für sichere Weiterleitungen | [Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md) |
 | Uploads über den Kernel speichern | Bild- und Datei-Datentypen; SVG-Bereinigung | [SVG-Bilder](../../../bc/6.0/svg-bilder.md) |
 | Keine Inline-Skripte oder -Styles | die Content Security Policy | [Content Security Policy für Anwendungen](content-security-policy.md) |
-| Keine Geheimnisse in Code, Nutzdaten oder Logs | `settings/override/` | [Umgebungseinstellungen und Geheimnisse](../../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md) |
+| Keine Geheimnisse in Code, Nutzdaten oder Logs | `settings/override/` | [Umgebungseinstellungen und Geheimnisse](umgebungseinstellungen-und-geheimnisse.md) |
 | Sicherheitsrelevante Aktionen aufzeichnen | das Audit-Protokoll | [Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | Ausgehende Anfragen nur an erlaubte Hosts | die Regel der Linkprüfung für private Netze als Vorbild | [URLs und Links](../../../anleitungen/urls-und-aliase.md) |
 

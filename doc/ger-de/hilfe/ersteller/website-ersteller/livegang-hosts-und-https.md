@@ -81,7 +81,7 @@ nicht: Der Host muss genau so angegeben sein, wie der Browser ihn sendet, in Kle
 ## Verwandte Seiten
 
 - [Checkliste für den Start](checkliste-fuer-den-start.md)
-- [Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- [Multisite einrichten](multisite-einrichten.md)
 - [Hosting für eine Website](hosting-fuer-eine-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

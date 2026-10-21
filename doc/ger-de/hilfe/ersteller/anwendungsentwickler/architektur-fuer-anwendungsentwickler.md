@@ -47,7 +47,7 @@ index.php          the front controller
    Erweiterungen, prüft die Richtlinienfunktionen der Ansicht und führt das Skript der Ansicht aus, das ein `$Result`
    zurückgibt ([Eigene Module und Ansichten](eigene-module-und-ansichten.md)).
 5. **Templates**: Die Ansicht rendert ein Template, das über die Design-Kette gefunden wird; das Ergebnis landet in
-   `pagelayout.tpl` ([Ergebnisse von Ansichten, Templates und das Pagelayout](../../../../eng-us/help/creators/app-creators/view-results-and-the-pagelayout.md)).
+   `pagelayout.tpl` ([Ergebnisse von Ansichten, Templates und das Pagelayout](ergebnisse-von-ansichten-und-das-pagelayout.md)).
 6. **Caches** kürzen das meiste davon bei wiederholten Anfragen ab: der View-Cache für Inhalte, Cache-Blöcke, der
    Antwort-Cache von Velocity.
 
@@ -85,8 +85,8 @@ Klassen (`Exponential\Runnable\Command`, `CronjobPart`, `ModuleView`), und Ihre 
 
 ## Verwandte Seiten
 
-- [Exponential als Anwendungsplattform](../../../../eng-us/help/creators/app-creators/exponential-as-an-application-platform.md)
-- [Aufbau einer Erweiterung](../../../../eng-us/help/creators/app-creators/extension-anatomy.md)
+- [Exponential als Anwendungsplattform](exponential-als-anwendungsplattform.md)
+- [Aufbau einer Erweiterung](aufbau-einer-erweiterung.md)
 - [Schichten und Benennung](../../../../eng-us/standards/architecture/layering-and-naming.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
