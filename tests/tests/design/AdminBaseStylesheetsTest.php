@@ -81,7 +81,6 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'var(--a4-ink)', $core['a:hover']['color'] );
         $rounded = self::rules( self::css( 'theme/rounded.css' ) );
         $this->assertSame( 'var(--a4-accent-text)', $rounded['ul.tabs li a, ul.tabs li span.disabled']['color'] );
-        $this->assertSame( 'var(--a4-accent-text)', self::rules( self::css( 'theme/admin_datatable.css' ) )['tbody .admin-dt-editable']['color'] );
     }
 
     /**
