@@ -14,9 +14,18 @@ better than any screenshot.
 
 ## Examples from the project
 
-The Exponential project runs public demonstration sites, for example `https://demo.exponential.earth/` and
-`https://site.cjw.demo.exponential.earth/` (the CJW starter site, which shows the `cjw_themes_jumper` design). The
-project rebuilds its demo installations on a schedule, so visitors always see a clean, current state.
+The Exponential project runs public demonstration sites and rebuilds each of them on a schedule from the newest
+sources on GitHub (`se7enxweb/exponential`, branch `main`), on SQLite and in demo mode, so visitors always see a clean,
+current state:
+
+| Demo | Rebuilt | Sign-in |
+|---|---|---|
+| `https://demo.exponential.earth/` | once a day | `admin` / `publish` at `/admin` |
+| `https://latest.demo.exponential.earth/` | every two hours | `admin` at `/admin` |
+| `https://site.cjw.demo.exponential.earth/` (the CJW starter site, `cjw_themes_jumper` design) | every two hours | `admin` at `/admin` |
+
+Everything you change there is gone after the next rebuild. The script of `demo.exponential.earth` is in the
+examples: [`install-demo-sqlite-demo-exponential-earth.sh`](../../../examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh).
 
 ## Options
 
