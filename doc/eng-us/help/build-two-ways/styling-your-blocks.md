@@ -3,13 +3,13 @@ title: Styling your blocks
 audience: designer, developer
 category: build-two-ways
 order: 560
-summary: Where the CSS for your own blocks, view types and template blocks goes on the Fit & Healthy theme - its stylesheet list is in pagelayout/head/style.tpl, not design.ini - and how to add your file so it is packed with the theme's. Tested before and after.
+summary: Where the CSS for your own blocks, view types and template blocks goes on the Fit & Healthy theme - the theme lists its own files in pagelayout/head/style.tpl and then loads what extensions add to design.ini - and how to add your file so it is packed with the theme's. Tested before and after.
 keywords: CSS, stylesheet, styling, ezcss_load, style.tpl, CSSFileList, packer, ezjscore, mysite.css, design stylesheets, block styles
 type: help
 ---
 # Styling your blocks
 
-New markup needs CSS. On the Fit & Healthy theme the place for it is not where you might look first.
+New markup needs CSS. On the Fit & Healthy theme it goes into a stylesheet of your extension, listed in `design.ini` like on any other design.
 
 ## Contents
 
@@ -20,23 +20,28 @@ New markup needs CSS. On the Fit & Healthy theme the place for it is not where y
 
 ## Where the theme lists its stylesheets
 
-The media design loads its CSS in `pagelayout/head/style.tpl` with one call:
+The media design loads its own CSS in `pagelayout/head/style.tpl`, in the order it needs:
 
 ```smarty
-{ezcss_load( array( 'inter.css',
-                    'explayouts_standard/grid.css',
-                    'index.css',
-                    ...
-                    'exp-mobile-layout.css' ) )}
+{def $media_css_own = array( 'inter.css',
+                             'explayouts_standard/grid.css',
+                             'index.css',
+                             ...
+                             'exp-mobile-layout.css' )}
 ```
 
-`ezcss_load` (ezjscore) packs the files into one file under `var/<site>/cache/public/stylesheets/` and links it.
-Paths are resolved through the design fallback, so `mysite.css` is found in
-`extension/mysite/design/media/stylesheets/mysite.css`.
+After those it loads every entry of `[StylesheetSettings] CSSFileList[]` and `FrontendCSSFileList[]` in `design.ini`
+that extensions add, in that order and each file once, and hands the whole list to one `ezcss_load` call. `ezcss_load`
+(ezjscore) packs the files into one file under `var/<site>/cache/public/stylesheets/` and links it. Paths are resolved
+through the design fallback, so `mysite.css` is found in `extension/mysite/design/media/stylesheets/mysite.css`.
 
-On the test copy, adding `CSSFileList[]=mysite.css` to `[StylesheetSettings]` in `design.ini` (as the theme's own
-`design.ini.append.php` does for its files) did **not** put the file into the page's packed CSS: this theme's page
-layout does not read that list.
+The entries the media design replaces are never loaded: the simple theme's base styles (`main.css`, `main.res.css`,
+Font Awesome, `magnific-popup.css`, `websitetoolbar.css`) and the theme's retired files. They are named in
+`MediaReplacedCSSFileList[]` in the theme's `design.ini.append.php`.
+
+Before sevenx_themes_media 1.5.74 the page layout did not read `CSSFileList[]` or `FrontendCSSFileList[]` at all, and
+the only way in was a copy of `style.tpl`. That copy still works, but it stops following the theme's own list when the
+theme changes it.
 
 ## Add your stylesheet
 
@@ -50,16 +55,17 @@ layout does not read that list.
    .notice-warning { border-left-color: #b45309; background: #fffbeb; }
    ```
 
-2. Copy `pagelayout/head/style.tpl` from the theme to `extension/mysite/design/media/templates/pagelayout/head/style.tpl`
-   and add your file at the end of the list:
+2. Add it to `extension/mysite/settings/design.ini.append.php`:
 
-   ```smarty
-                       'exp-mobile-layout.css',
-                       'mysite.css' ) )}
+   ```ini
+   [StylesheetSettings]
+   FrontendCSSFileList[]=mysite.css
    ```
 
-3. Clear **Template & content** (`./console exp:cache clear --tag=template,content`): that also clears the packed files
-   (`ezjscore-packer`).
+   It goes into the same packed file, after the theme's files.
+
+3. Clear the **INI** and **Template & content** caches (`./console exp:cache clear --tag=ini,template,content`): that
+   also clears the packed files (`ezjscore-packer`).
 
 ## Check it
 

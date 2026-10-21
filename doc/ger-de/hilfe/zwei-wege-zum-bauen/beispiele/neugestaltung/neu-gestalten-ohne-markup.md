@@ -26,7 +26,7 @@ Neue Farben, Abstände und Schrift, keine Änderungen an Templates.
 
 ## Mit Templates
 
-1. Nehmen Sie Ihr Stylesheet in die Liste des Media-Designs auf, indem Sie `pagelayout/head/style.tpl` überschreiben ([Ihre Blöcke gestalten](../../bloecke-gestalten.md)), und gestalten Sie die Klassen, die der Wrapper bereits hat.
+1. Tragen Sie Ihr Stylesheet mit `FrontendCSSFileList[]` in die `design.ini` Ihrer Erweiterung ein ([Ihre Blöcke gestalten](../../bloecke-gestalten.md)), und gestalten Sie die Klassen, die der Wrapper bereits hat.
 
 ## Welchen Weg Sie wählen
 
