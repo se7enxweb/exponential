@@ -54,10 +54,18 @@ A VAT rule says: for customers in this country, and products in these categories
 in `shop/vatrules` and `shop/editvatrule`. Product categories are managed in `shop/productcategories` and assigned to
 products through an `ezproductcategory` field.
 
-Two settings connect rules to your content (`shop.ini [VATSettings]`):
+Rules are applied by a VAT handler, and the shipped `settings/shop.ini` sets none: until
+`shop.ini [VATSettings] Handler=ezdefault` is set in an override (`settings/override/shop.ini.append.php`), the rules
+are stored and never read, and every product is charged the fixed VAT type on its price. The **VAT rules** page says
+so when rules exist and no handler applies them. The handler is not switched on in the shipped file because doing so
+changes checkout on a running store: the shop then needs the customer's country (with `RequireUserCountry=true` an
+order without one is stopped), and the "Determined by VAT charging rules" type charges 0 percent where no rule matches.
+
+The other settings connect rules to your content (`shop.ini [VATSettings]`):
 
 | Setting | Meaning |
 |---|---|
+| `Handler` | `ezdefault` for the shipped rules handler; shipped unset, so no rule is applied |
 | `ProductCategoryAttribute` | The identifier of the product field that holds the category |
 | `UserCountryAttribute` | The identifier of the user field that holds the customer's country |
 | `RequireUserCountry` | Shipped `true`: the shop must know the customer's country to apply rules |
@@ -112,6 +120,7 @@ is not covered by the shipped handler and needs a custom VAT handler or an integ
 - [ ] Your tax adviser has confirmed the rates and where they apply.
 - [ ] VAT types are named after their meaning and percentage.
 - [ ] Prices use either a fixed VAT type or "Determined by VAT charging rules", consistently per class.
+- [ ] With rules: `Handler=ezdefault` is set in an override, and the **VAT rules** page shows no "not applied" notice.
 - [ ] With rules: `ProductCategoryAttribute` and `UserCountryAttribute` are set, and every product has a category.
 - [ ] A general "any country, any category" rule exists.
 - [ ] Test orders from two countries and two categories show the expected VAT on the confirmation page.

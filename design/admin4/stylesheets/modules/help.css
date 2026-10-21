@@ -1762,7 +1762,12 @@
 .a4-help-toc-item { margin: 0; padding: 0; }
 .a4-help-toc-link,
 .a4-help-toc-link:visited {
-  display: block;
+  /* at least 24 CSS px high, the target size of WCAG 2.2 2.5.8: the small level-3 entries were 23px; the text stays
+     centred, so a one-line entry grows by a pixel and the contents hardly get taller */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: var(--a4-space-5);
   margin-inline-start: -2px;
   padding: var(--a4-space-1) var(--a4-space-3);
   border-inline-start: 2px solid transparent;
