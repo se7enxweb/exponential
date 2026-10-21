@@ -102,7 +102,7 @@ Nach oben: [Aufgaben](../README.md) und [Exponential im öffentlichen Sektor bet
 Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../../../../eng-us/help/government/government-start-here.md).
 
 ## Verwandte Seiten
-- [Aufgaben zu Personen und Berechtigungen](../../../../../eng-us/help/government/tasks/people-and-permissions/README.md)
+- [Aufgaben zu Personen und Berechtigungen](../personen-und-berechtigungen/README.md)
 - [Vorfälle](../../../../../eng-us/help/government/operations/incidents/README.md)
 - [Eine Site betreiben](../../../../anleitungen/betrieb-einer-website.md)
 - [Checklisten für Hoster](../../../hosting/checklisten/README.md)

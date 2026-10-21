@@ -63,7 +63,7 @@ ein Audit-Ereignis.
 ## Verwandte Seiten
 - [Das Audit-Protokoll verifizieren](das-audit-protokoll-verifizieren.md)
 - [Rollengestaltung: Prüfer](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-auditors.md)
-- [Einem Prüfer Lesezugriff auf das Audit-Protokoll geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-auditor-read-access-to-the-audit-trail.md)
+- [Einem Prüfer Lesezugriff auf das Audit-Protokoll geben](../personen-und-berechtigungen/einem-pruefer-lesezugriff-auf-das-audit-protokoll-geben.md)
 - [Die Funktion Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md#exports-and-the-channels-of-extensions)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

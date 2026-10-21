@@ -16,14 +16,14 @@ Behörden zu Barrierefreiheit, Sicherheit, Datenschutz und Schriftgut; jede Aufg
 Bereichs.
 
 Einige Aufgaben derselben Familie liegen bei den Aufgaben zu Personen und Berechtigungen, weil sie Konten und Rollen
-betreffen: [Die zweistufige Anmeldung für Mitarbeiter einschalten](../../../../../eng-us/help/government/tasks/people-and-permissions/turn-on-two-step-sign-in-for-staff.md),
-[Einem Benutzer helfen, der sein Telefon verloren hat](../../../../../eng-us/help/government/tasks/people-and-permissions/help-a-user-who-lost-their-phone.md),
-[Die Kontosperre einschalten](../../../../../eng-us/help/government/tasks/people-and-permissions/switch-on-account-lockout.md),
-[Ein gesperrtes Konto entsperren](../../../../../eng-us/help/government/tasks/people-and-permissions/unlock-a-locked-account.md),
-[Konten finden, die seit Monaten nicht genutzt wurden](../../../../../eng-us/help/government/tasks/people-and-permissions/find-accounts-not-used-for-months.md),
-[Einen ausscheidenden Mitarbeiter deaktivieren und verschieben](../../../../../eng-us/help/government/tasks/people-and-permissions/deactivate-and-move-a-leaver.md),
-[Die Kontenliste für eine Überprüfung exportieren](../../../../../eng-us/help/government/tasks/people-and-permissions/export-the-account-list-for-a-review.md) und
-[Einem Prüfer Lesezugriff auf das Audit-Protokoll geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-auditor-read-access-to-the-audit-trail.md).
+betreffen: [Die zweistufige Anmeldung für Mitarbeiter einschalten](../personen-und-berechtigungen/die-zweistufige-anmeldung-fuer-mitarbeiter-einschalten.md),
+[Einem Benutzer helfen, der sein Telefon verloren hat](../personen-und-berechtigungen/einem-benutzer-helfen-der-sein-telefon-verloren-hat.md),
+[Die Kontosperre einschalten](../personen-und-berechtigungen/die-kontosperre-einschalten.md),
+[Ein gesperrtes Konto entsperren](../personen-und-berechtigungen/ein-gesperrtes-konto-entsperren.md),
+[Konten finden, die seit Monaten nicht genutzt wurden](../personen-und-berechtigungen/konten-finden-die-seit-monaten-nicht-genutzt-wurden.md),
+[Einen ausscheidenden Mitarbeiter deaktivieren und verschieben](../personen-und-berechtigungen/einen-ausscheidenden-mitarbeiter-deaktivieren-und-verschieben.md),
+[Die Kontenliste für eine Überprüfung exportieren](../personen-und-berechtigungen/die-kontenliste-fuer-eine-ueberpruefung-exportieren.md) und
+[Einem Prüfer Lesezugriff auf das Audit-Protokoll geben](../personen-und-berechtigungen/einem-pruefer-lesezugriff-auf-das-audit-protokoll-geben.md).
 
 ## Inhalt
 

@@ -38,7 +38,7 @@ Eine Passwortänderung meldet die anderen Sitzungen des Kontos bei ihrer nächst
 Sitzungshandler die Site verwendet ([Das eigene Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md#in-short));
 mit `[PasswordSettings] EndOtherSessions=enabled` (der Voreinstellung). Setzen Sie ein neues Passwort auf der Kontoseite
 oder mit `php bin/php/resetuserpassword.php -u <login> -g --allow-root-user`
-([Ein Passwort auf der Kommandozeile zurücksetzen](../../../../../eng-us/help/government/tasks/people-and-permissions/reset-a-password-from-the-command-line.md)).
+([Ein Passwort auf der Kommandozeile zurücksetzen](../personen-und-berechtigungen/ein-passwort-auf-der-kommandozeile-zuruecksetzen.md)).
 Verwenden Sie es bei einem verlorenen Gerät: Die Person meldet sich mit dem neuen Passwort wieder an.
 
 ## Möglichkeit 3: die Sitzungen entfernen
@@ -61,7 +61,7 @@ Kombinieren Sie es mit Möglichkeit 1 oder 2.
 
 ## Verwandte Seiten
 - [Vermutete Kompromittierung eines Kontos](../../../../../eng-us/help/government/operations/incidents/suspected-account-compromise.md)
-- [Einen ausscheidenden Mitarbeiter entfernen](../../../../../eng-us/help/government/tasks/people-and-permissions/remove-a-leaver.md)
+- [Einen ausscheidenden Mitarbeiter entfernen](../personen-und-berechtigungen/einen-ausscheidenden-mitarbeiter-entfernen.md)
 - [Anleitung zu den Sitzungen](../../../../anleitungen/sitzungen.md)
 - [Sicherheitshärtung](../../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

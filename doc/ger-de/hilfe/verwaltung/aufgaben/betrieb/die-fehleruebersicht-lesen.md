@@ -21,7 +21,7 @@ Kernel-Logs ([Fehlerübersicht und Zustand der Logs](../../../../../eng-us/help/
 
 ## Bevor Sie beginnen
 
-- `setup/logs` (siehe [Zugriff auf Logs ohne Administratorrechte geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-log-access-without-admin-rights.md)).
+- `setup/logs` (siehe [Zugriff auf Logs ohne Administratorrechte geben](../personen-und-berechtigungen/zugriff-auf-logs-ohne-administratorrechte-geben.md)).
 
 ## Schritte
 

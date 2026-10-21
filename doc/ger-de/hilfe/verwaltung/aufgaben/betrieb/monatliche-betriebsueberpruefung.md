@@ -38,8 +38,8 @@ Behörden üblicherweise gefragt werden. Die Fassung für Hoster ist
 | Cronjobs | alle Teile laufen, keiner angehalten | [Prüfen, ob die Cronjobs laufen](pruefen-ob-die-cronjobs-laufen.md) |
 | Workflows | nichts wartet seit Tagen | **Setup > Workflow Prozesse**, *Ältester wartender* |
 | Integrität | keine unerwartet geänderten Dateien | `php bin/php/checkmanifest.php --all --extensions` |
-| Konten | ruhende, gesperrte, gemeinsame | **Benutzer > Benutzerkonten prüfen** ([Konten finden, die seit Monaten nicht genutzt wurden](../../../../../eng-us/help/government/tasks/people-and-permissions/find-accounts-not-used-for-months.md)) |
-| Administratoren | Inhaber des Vollzugriffs unverändert | [Prüfen, wer Administratorrechte hat](../../../../../eng-us/help/government/tasks/people-and-permissions/audit-who-has-admin-rights.md) (vierteljährlich) |
+| Konten | ruhende, gesperrte, gemeinsame | **Benutzer > Benutzerkonten prüfen** ([Konten finden, die seit Monaten nicht genutzt wurden](../personen-und-berechtigungen/konten-finden-die-seit-monaten-nicht-genutzt-wurden.md)) |
+| Administratoren | Inhaber des Vollzugriffs unverändert | [Prüfen, wer Administratorrechte hat](../personen-und-berechtigungen/pruefen-wer-administratorrechte-hat.md) (vierteljährlich) |
 | Sicherungen | eine Sicherung der letzten Tage existiert; Test der Wiederherstellung wie geplant | [Die Sicherung der letzten Nacht auf einem Testserver wiederherstellen](die-sicherung-der-letzten-nacht-auf-einem-testserver-wiederherstellen.md) |
 | Zertifikate | mehr als ein Monat verbleibend | `./console exp:velocity ssl show --allow-root-user` oder `openssl` von außen |
 | Updates | neue Releases, Sicherheitskorrekturen | **Setup > Updates and packages**, **Check for updates**; das Changelog ([Sicherheitsupdates und Offenlegung](../../../../../eng-us/help/government/operations/upgrades-and-change/security-updates-and-disclosure.md)) |

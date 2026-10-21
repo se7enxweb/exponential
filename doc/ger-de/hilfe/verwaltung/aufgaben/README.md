@@ -49,7 +49,7 @@ Administration, admin3) zeigen dieselben Funktionen in einer anderen Anordnung; 
 | [Compliance](compliance/README.md) | Administratoren, Sicherheits- und Datenschutzbeauftragte | die zweistufige Anmeldung einschalten, die Content Security Policy durchsetzen, die Aufbewahrung der Logs festlegen, die Bekanntmachungen des Vorjahres archivieren |
 | [Sites und Sprachen](../../../../eng-us/help/government/tasks/sites-and-languages/README.md) | Administratoren, Website-Ersteller | eine Seite in die zweite Amtssprache übersetzen, eine Abteilungs-Site einrichten, eine Sprache mit Schreibrichtung von rechts nach links hinzufügen |
 | [Betrieb](betrieb/README.md) | IT-Betrieb | Wartungsmodus für ein Upgrade, eine Sicherung auf einem Testserver wiederherstellen, prüfen, ob die Cronjobs laufen |
-| [Personen und Berechtigungen](../../../../eng-us/help/government/tasks/people-and-permissions/README.md) | Administratoren | eine Redakteursrolle für eine Abteilung anlegen, einen ausscheidenden Mitarbeiter entfernen, einen Freigabe-Workflow einrichten |
+| [Personen und Berechtigungen](personen-und-berechtigungen/README.md) | Administratoren | eine Redakteursrolle für eine Abteilung anlegen, einen ausscheidenden Mitarbeiter entfernen, einen Freigabe-Workflow einrichten |
 | [Beschaffung und Schulung](../../../../eng-us/help/government/tasks/procurement-and-training/README.md) | Projektleiter, Beschaffungsverantwortliche, Schulungskoordinatoren | eine Anforderung an die Barrierefreiheit schreiben, einen Proof of Concept durchführen, die Schulung der Redakteure planen |
 
 
