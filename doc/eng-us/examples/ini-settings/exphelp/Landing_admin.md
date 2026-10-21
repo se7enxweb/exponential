@@ -31,7 +31,7 @@ StartPage=help/admin-tour.md
 
 ## Related
 
-Default: a list of 3: `editor`, `developer`, `hosting`.
+Default: a list of 4: `editor`, `developer`, `hosting`, `dba`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,7 @@ Related[]
 Related[]=editor
 Related[]=developer
 Related[]=hosting
+Related[]=dba
 */ ?>
 ```
 

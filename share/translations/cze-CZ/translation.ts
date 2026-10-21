@@ -74731,5 +74731,397 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Search the whole help</source>
         <translation>Hledat v celé nápovědě</translation>
     </message>
+    <message>
+        <source>Community</source>
+        <translation>Komunita</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>Používejte, propagujte a tvořte s Exponential po celém světě: zapojení, kanály, akce, kodex chování a příspěvky.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>Komunita Exponential: zapojení, kanály, akce, kodex chování a příspěvky.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>Ekosystém</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>Širší svět Exponential v PHP stacku: jeho produkty, rozšíření, distribuce, partneři, uživatelé a tvůrci.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>Ekosystém Exponential v PHP stacku: produkty, rozšíření, distribuce, partneři, uživatelé a tvůrci.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>Vývojáři PHP</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Pracujte na Exponential v PHP: jádro a jeho třídy, autoload, příkazový řádek, Composer, testy a standardy kódu.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>Vývoj v PHP</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Vývoj v PHP na Exponential: jádro, třídy, autoload, příkazový řádek, Composer, testy a standardy kódu.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>Návrháři motivů</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>Navrhujte motivy pro Exponential: designy a přepisy, šablony, styly a zdroje, zabalení motivu a jeho udržování.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>Prodejci</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Přeprodávejte Exponential a služby kolem něj: balíčky hostingu, podpory a implementace, ceny, licence a partnery.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>Přeprodej</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>Přeprodej Exponential: balíčky služeb, hosting a podpora, ceny, licence a spolupráce s partnery.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>Tvůrci balíčků</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Balte Exponential: distribuce, balíčky webů, rozšíření a instalátory včetně jejich verzí, licencí a aktualizací.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>Balíčky a distribuce</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>Balení Exponential: distribuce, balíčky webů, rozšíření, instalátory, verze a licence.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>AI, agenti a agentní práce</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>Pracujte s AI a agenty v Exponential: asistent psaní expai, přístup agentů přes API, agentní pracovní postupy a bezpečnost.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>AI a agenti</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>AI, agenti a agentní práce s Exponential: asistent psaní expai, API, pracovní postupy a bezpečnost.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>Softwaroví inženýři</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>Vyvíjejte software na Exponential: architektura, průběh požadavku, mezipaměť, testování, kontroly kvality a udržovatelnost.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>Softwarové inženýrství</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>Softwarové inženýrství na Exponential: architektura, průběh požadavku, mezipaměť, testování a kvalita.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>Noví uživatelé</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Zaveďte Exponential: vyhodnoťte ho, naplánujte přechod, převeďte obsah, zaškolte tým a provozujte ho s jistotou.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>Zavedení Exponential</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>Zavedení Exponential: vyhodnocení, plánování, migrace, školení a provoz.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>Vývojáři mobilních aplikací</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>Tvořte mobilní aplikace nad obsahem Exponential: REST API, ověřování, obsah jako JSON, obrázky a mezipaměť.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>Mobilní aplikace</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>Mobilní aplikace nad obsahem Exponential: REST API, ověřování, obsah v JSON, obrázky a mezipaměť.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>Vývojáři webových frameworků</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Kombinujte Exponential s webovými frameworky: Composer, API, vkládání obsahu a souběžný provoz.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>Webové frameworky</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential s webovými frameworky: Composer, API, vkládání obsahu a souběžný provoz.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>Vývojáři CMS</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Vyvíjejte na systému pro správu obsahu: třídy obsahu, šablony, pracovní postupy, oprávnění, více webů a jazyky.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>Vývoj CMS</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Vývoj CMS s Exponential: třídy obsahu, šablony, pracovní postupy, oprávnění, více webů a jazyky.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>Vývojáři DXP</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>Vyvíjejte pro Exponential Platform DXP: distribuce na Symfony, její administrační rozhraní, REST a GraphQL a v čem se liší od Exponential 6.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>Vývoj DXP</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: distribuce na Symfony, její administrační rozhraní, REST a GraphQL API a v čem se liší od Exponential 6.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>Elektronický obchod</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>Prodávejte online s Exponential: obchod, produkty a ceny, DPH, objednávky, platby a každodenní provoz obchodu.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>E-commerce s Exponential: obchod, produkty, ceny, DPH, objednávky a platby.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>Integrátoři</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Propojte Exponential s jinými systémy: REST API, RSS kanály, importy a exporty a vyhledávání.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>Integrace</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>Integrace Exponential s jinými systémy: API, kanály, importy, exporty a vyhledávání.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>Správci databází</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>Provozujte databázi za Exponential: podporované databáze, schéma a upgrady, zálohy a obnovy a výkon.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>Správa databází</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>Správa databází pro Exponential: podporované databáze, schéma, upgrady, zálohy a výkon.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>Podcasteři, rádio a streaming</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Publikujte podcasty, rádio a streamy s Exponential: zvuk a video, kanály, vložený obsah, poznámky k dílům, plánování a práva.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>Podcasting a streaming</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Podcasty, rádio a streaming s Exponential: zvuková a obrazová média, kanály, vložený obsah, poznámky k dílům, plánování a práva.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>Neziskové organizace</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>Provozujte web neziskové organizace na Exponential: členové a dobrovolníci, sbírkové stránky, přístupnost, transparentnost a malé rozpočty.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>Neziskové organizace</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Exponential pro neziskové organizace: členové, dobrovolníci, sbírkové stránky, přístupnost a transparentnost.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>Místní firmy</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>Dostaňte místní firmu na internet s Exponential: otevírací doba, stránky s polohou a kontaktem, místní vyhledávání, jednoduchý obchod a malý rozpočet.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>Místní podnikání</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Exponential pro místní firmy: otevírací doba, stránky s polohou, místní vyhledávání a jednoduchý obchod.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>Jednotlivci</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>Vytvořte si vlastní web s Exponential: osobní web, portfolio, blog, web rodiny nebo klubu, krok za krokem.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>Osobní weby</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>Osobní weby s Exponential: portfolia, blogy, weby rodin a klubů.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>Netechnicky zaměření lidé</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential srozumitelně: bez příkazového řádku, výběr hostingu, pojmy, se kterými se setkáte, a jednoduché návody.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>Nápověda srozumitelným jazykem</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential srozumitelně: návody bez příkazového řádku, výběr hostingu a glosář.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>Studenti a studující</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Naučte se Exponential: vzdělávací cesty, váš první web, studijní projekty, plánované certifikace a partnerská úroveň Student.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>Učení Exponential</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>Učení Exponential: vzdělávací cesty, první weby, studijní projekty a certifikace.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>Používání a provoz Exponential</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>Editoři, administrátoři, vývojáři a uživatelé a všichni, kdo mají vlastní web.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>Organizace</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>Firmy, veřejné instituce a neziskové organizace a lidé, kteří jejich projekty vedou a prodávají.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>Tvorba s Exponential</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>Designéři, vývojáři a inženýři, kteří tvoří weby, motivy, aplikace a integrace.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>Hosting, prodej a partnerství</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>Partneři, hostingové společnosti, prodejci a tvůrci balíčků, kteří přinášejí Exponential svým zákazníkům.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>Komunita a vzdělávání</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>Komunita a ekosystém, podporovatelé a sponzoři, média, školitelé a studenti.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>Partneři Exponential finančně přispívají k udržitelné budoucnosti projektu, vracejí projektu kód a další práci a spolupracují přímo se 7x a Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>Členové komunity Exponential po celém světě Exponential používají, přispívají do něj, propagují ho a vyvíjejí s ním software.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>Širší ekosystém sahá za hranice komunity a zahrnuje všechny oblasti světa Exponential v PHP stacku: jeho uživatele a tvůrce.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>Počet cílových skupin: %count</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>Další cílové skupiny</translation>
+    </message>
 </context>
 </TS>

@@ -24,12 +24,14 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > and grows its community; partner: a company that builds, hosts or sells with Exponential; advocate: a community  
 > advocate (street team); designer: designs themes and templates, builds, ships and maintains extensions;  
 > hosting: a hosting company; app-creator / website-creator: builds applications / websites with it; supporter:  
-> helps the project grow; sponsor: funds it (doc/eng-us/help/<folder>/ of each in PathRules\[\] below). Who a page is for:  
+> helps the project grow; sponsor: funds it; then trainer, press, businesses, government and customer, and from  
+> community to student the audiences that people, organizations and builders of every kind find themselves in (the  
+> dashboard groups their cards) (doc/eng-us/help/<folder>/ of each in PathRules\[\] below). Who a page is for:  
 > its front matter (audience: editor, admin), else the first PathRules\[\]  
 > that matches, else its file name (...-developer.md) or opening lines ("for editors"), else TypeDefaults\[<type>\].  
 > The order here is the order of the dashboard's audience cards and the search filters.  
 
-Default: a list of 19: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator` ....
+Default: a list of 41: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -56,12 +58,14 @@ Audiences[]=press
 Audiences[]=businesses
 Audiences[]=government
 Audiences[]=customer
+Audiences[]=community
+# ... 21 more in the shipped file
 */ ?>
 ```
 
 ## AudienceNames
 
-Default: a hash of 19: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`, `project-manager=Project managers`, `sales-marketing=Sales & marketing`, `partner=Partners`, `advocate=Advocates`, `designer=Designers`, `hosting=Hosting companies`, `app-creator=Application creators`, `website-creator=Website creators` ....
+Default: a hash of 41: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`, `project-manager=Project managers`, `sales-marketing=Sales & marketing`, `partner=Partners`, `advocate=Advocates`, `designer=Designers`, `hosting=Hosting companies`, `app-creator=Application creators`, `website-creator=Website creators` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -88,6 +92,8 @@ AudienceNames[government]=Governments
 AudienceNames[businesses]=Businesses
 AudienceNames[press]=Press, media and influencers
 AudienceNames[trainer]=Trainers
+AudienceNames[community]=Community
+# ... 21 more in the shipped file
 */ ?>
 ```
 
@@ -95,7 +101,7 @@ AudienceNames[trainer]=Trainers
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 19: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`, `partner=building`, `advocate=people`, `designer=palette`, `hosting=database`, `app-creator=phone`, `website-creator=globe` ....
+Default: a hash of 41: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`, `partner=building`, `advocate=people`, `designer=palette`, `hosting=database`, `app-creator=phone`, `website-creator=globe` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -122,6 +128,8 @@ AudienceIcons[government]=bank
 AudienceIcons[businesses]=briefcase
 AudienceIcons[press]=megaphone
 AudienceIcons[trainer]=easel
+AudienceIcons[community]=chat-left-dots
+# ... 21 more in the shipped file
 */ ?>
 ```
 
@@ -129,7 +137,7 @@ AudienceIcons[trainer]=easel
 
 > <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
 
-Default: a list of 78: `doc/eng-us/help/manual/*;editor,admin,user`, `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor` ....
+Default: a list of 100: `doc/eng-us/help/manual/*;editor,admin,user`, `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -154,10 +162,10 @@ PathRules[]=doc/eng-us/help/government/*;government
 PathRules[]=doc/eng-us/help/businesses/*;businesses
 PathRules[]=doc/eng-us/help/press/*;press
 PathRules[]=doc/eng-us/help/trainers/*;trainer
-PathRules[]=doc/eng-us/help/project/*;user,editor,admin,developer,partner,supporter
-PathRules[]=doc/eng-us/help/build-two-ways/*;designer,website-creator,editor,admin,developer
-PathRules[]=doc/eng-us/help/extension-development/*;developer,designer
-# ... 58 more in the shipped file
+PathRules[]=doc/eng-us/help/community/*;community
+PathRules[]=doc/eng-us/help/ecosystem/*;ecosystem
+PathRules[]=doc/eng-us/help/php-developers/*;php-developer
+# ... 80 more in the shipped file
 */ ?>
 ```
 

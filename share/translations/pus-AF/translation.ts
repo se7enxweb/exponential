@@ -73447,5 +73447,397 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Search the whole help</source>
         <translation>په ټوله مرسته کې لټون</translation>
     </message>
+    <message>
+        <source>Community</source>
+        <translation>ټولنه</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>په ټوله نړۍ کې Exponential وکاروئ، معرفي یې کړئ او ورسره جوړونه وکړئ: ګډون، چینلونه، پېښې، د چلند لارښود او ونډې.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>د Exponential ټولنه: ګډون، چینلونه، پېښې، د چلند لارښود او ونډې.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>ایکوسیستم</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>د PHP په سټک کې د Exponential پراخه نړۍ: د هغې محصولات، غځونې، وېشونې، شریکان، کارنان او جوړونکي.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>د PHP په سټک کې د Exponential ایکوسیستم: محصولات، غځونې، وېشونې، شریکان، کارنان او جوړونکي.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>د PHP پراختیا ورکوونکي</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>په PHP کې پر Exponential کار وکړئ: کرنل او ټولګي یې، اتومات بارول، د قوماندې کرښه، Composer، ازموینې او د کوډ معیارونه.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>د PHP پراختیا</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>پر Exponential د PHP پراختیا: کرنل، ټولګي، اتومات بارول، د قوماندې کرښه، Composer، ازموینې او د کوډ معیارونه.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>د تیمونو ډیزاینران</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>د Exponential لپاره تیمونه ډیزاین کړئ: ډیزاینونه او بدلونونه، کينډۍ، د سټایل پاڼې او سرچینې، د تیم بسته کول او تازه ساتل.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>بیا پلورونکي</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Exponential او شاوخوا خدمتونه یې بیا وپلورئ: د کوربه توب، ملاتړ او پلي کولو بستې، بیه ټاکنه، جواز او شریکان.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>بیا پلور</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>د Exponential بیا پلور: د خدمتونو بستې، کوربه توب او ملاتړ، بیه ټاکنه، جواز او له شریکانو سره کار.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>بسته جوړونکي</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Exponential بسته کړئ: وېشونې، د سایټ بستې، غځونې او نصبوونکي، د هغوی له نسخو، جوازونو او تازه کولو سره.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>بستې او وېشونې</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>د Exponential بسته کول: وېشونې، د سایټ بستې، غځونې، نصبوونکي، نسخې او جوازونه.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>مصنوعي ځيرکتيا، اجنټان او اجنټي کار</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>په Exponential کې له مصنوعي ځيرکتيا او اجنټانو سره کار وکړئ: د لیکلو مرستیال expai، د APIs له لارې د اجنټانو لاسرسی، اجنټي کاري بهیرونه او خوندیتوب.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>مصنوعي ځيرکتيا او اجنټان</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>له Exponential سره مصنوعي ځيرکتيا، اجنټان او اجنټي کار: د لیکلو مرستیال expai، APIs، کاري بهیرونه او خوندیتوب.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>د سافټویر انجنیران</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>پر Exponential سافټویر جوړ کړئ: معماري، د غوښتنې دوره، کیش، ازموینه، د کیفیت کنټرولونه او د ساتنې وړتیا.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>د سافټویر انجنیري</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>پر Exponential د سافټویر انجنیري: معماري، د غوښتنې دوره، کیش، ازموینه او کیفیت.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>منونکي</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Exponential ومنئ: ارزونه یې وکړئ، لېږد پلان کړئ، منځپانګه ولېږدوئ، خپل ټیم وروزئ او په ډاډ یې وچلوئ.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>د Exponential منل</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>د Exponential منل: ارزونه، پلان جوړونه، لېږد، روزنه او چلول.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>د موبایل اپلیکېشنونو پراختیا ورکوونکي</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>د Exponential پر منځپانګه د موبایل اپلیکېشنونه جوړ کړئ: REST APIs، تصدیق، منځپانګه د JSON په بڼه، انځورونه او کیش.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>د موبایل اپلیکېشنونه</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>د Exponential پر منځپانګه د موبایل اپلیکېشنونه: REST APIs، تصدیق، JSON منځپانګه، انځورونه او کیش.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>د ویب چوکاټونو پراختیا ورکوونکي</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential له ویب چوکاټونو سره یوځای کړئ: Composer، APIs، د منځپانګې ځای پر ځای کول او یو تر څنګ چلول.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>ویب چوکاټونه</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential له ویب چوکاټونو سره: Composer، APIs، د منځپانګې ځای پر ځای کول او یو تر څنګ چلول.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>د CMS پراختیا ورکوونکي</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>د منځپانګې مدیریت پر سیستم پراختیا وکړئ: د منځپانګې ټولګي، کينډۍ، کاري بهیرونه، اجازې، څو سایټونه او ژبې.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>د CMS پراختیا</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>له Exponential سره د CMS پراختیا: د منځپانګې ټولګي، کينډۍ، کاري بهیرونه، اجازې، څو سایټونه او ژبې.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>د DXP پراختیا ورکوونکي</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>د Exponential Platform DXP لپاره پراختیا وکړئ: د Symfony وېشنه، د هغې د مدیریت انٹرفیس، REST او GraphQL، او له Exponential 6 سره یې توپیر.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>د DXP پراختیا</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: د Symfony وېشنه، د هغې د مدیریت انٹرفیس، د REST او GraphQL APIs، او له Exponential 6 سره یې توپیر.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>برېښنايي سوداګري</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>له Exponential سره آنلاین وپلورئ: هټۍ، محصولات او بیې، ارزښت زیات مالیه، امرونه، تادیې او د هټۍ ورځنی چلول.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>له Exponential سره برېښنايي سوداګري: هټۍ، محصولات، بیې، ارزښت زیات مالیه، امرونه او تادیې.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>یوځای کوونکي</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Exponential له نورو سیستمونو سره وصل کړئ: REST APIs، د RSS فیډونه، راوړل او لېږل، او لټون.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>یوځای کول</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>له نورو سیستمونو سره د Exponential یوځای کول: APIs، فیډونه، راوړل، لېږل او لټون.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>د ډیټابېس مدیران</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>د Exponential تر شا ډیټابېس وچلوئ: ملاتړ شوي ډیټابېسونه، سکیما او لوړونې، بیک اپونه او بیا راګرځونه، او کړنه.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>د ډیټابېس مدیریت</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>د Exponential لپاره د ډیټابېس مدیریت: ملاتړ شوي ډیټابېسونه، سکیما، لوړونې، بیک اپونه او کړنه.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>پوډکاسټران، راډیو او خپرونې</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>له Exponential سره پوډکاسټونه، راډیو او ژوندۍ خپرونې خپرې کړئ: غږ او ویډیو، فیډونه، ځای پر ځای شوي توکي، د برخو یادښتونه، مهالوېش او حقونه.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>پوډکاسټ او ژوندۍ خپرونې</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>له Exponential سره پوډکاسټونه، راډیو او ژوندۍ خپرونې: غږیزې او ویډیويي رسنۍ، فیډونه، ځای پر ځای شوي توکي، د برخو یادښتونه، مهالوېش او حقونه.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>غیر انتفاعي سازمانونه</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>د یوه غیر انتفاعي سازمان وېب پاڼه پر Exponential وچلوئ: غړي او رضاکاران، د مرستو راټولولو پاڼې، لاسرسی، روڼتیا او کوچنۍ بودیجې.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>غیر انتفاعي سازمانونه</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>د غیر انتفاعي سازمانونو لپاره Exponential: غړي، رضاکاران، د مرستو راټولولو پاڼې، لاسرسی او روڼتیا.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>سیمه ییزې سوداګرۍ</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>یوه سیمه ییزه سوداګري له Exponential سره آنلاین کړئ: د کار ساعتونه، د ځای او اړیکې پاڼې، سیمه ییز لټون، یوه ساده هټۍ او کوچنۍ بودیجه.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>سیمه ییزه سوداګري</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>د سیمه ییزو سوداګریو لپاره Exponential: د کار ساعتونه، د ځای پاڼې، سیمه ییز لټون او یوه ساده هټۍ.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>وګړي</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>له Exponential سره خپل سایټ جوړ کړئ: شخصي سایټ، د کارونو ټولګه، بلاګ، د کورنۍ یا کلب سایټ، ګام په ګام.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>شخصي سایټونه</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>له Exponential سره شخصي سایټونه: د کارونو ټولګې، بلاګونه، د کورنیو او کلبونو سایټونه.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>غیر تخنیکي خلک</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential په ساده ژبه: د قوماندې کرښې پرته، د کوربه توب ټاکل، هغه کلمې چې ورسره مخ کېږئ، او ساده لارښوونې.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>په ساده ژبه مرسته</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential په ساده ژبه: د قوماندې کرښې پرته لارښوونې، د کوربه توب انتخابونه او یوه وییپانګه.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>زده کوونکي او زده کړه کوونکي</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential زده کړئ: د زده کړې لارې، ستاسو لومړی سایټ، د زده کړې پروژې، پلان شوي سندونه او د Student د شراکت کچه.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>د Exponential زده کړه</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>د Exponential زده کړه: د زده کړې لارې، لومړني سایټونه، د زده کړې پروژې او سندونه.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>د Exponential کارول او چلول</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>ایډیټران، مدیران، پراختیا ورکوونکي او کارنان، او هر هغه څوک چې خپل سایټ لري.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>سازمانونه</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>سوداګرۍ، عامه ادارې او غیر انتفاعي سازمانونه، او هغه کسان چې د دوی پروژې رهبري کوي او پلوري یې.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>له Exponential سره جوړونه</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>ډیزاینران، پراختیا ورکوونکي او انجنیران چې سایټونه، تیمونه، اپلیکېشنونه او یوځای کېدنې جوړوي.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>کوربه توب، پلور او شراکت</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>شریکان، د کوربه توب شرکتونه، بیا پلورونکي او بسته جوړونکي چې Exponential خپلو پېرودونکو ته رسوي.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>ټولنه او زده کړه</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>ټولنه او ایکوسیستم، ملاتړي او سپانسران، رسنۍ، روزونکي او زده کوونکي.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>د Exponential شریکان د پروژې د دوامداره راتلونکي لپاره مالي ونډه اخلي، پروژې ته کوډ او نور بېرته ورکوي، او مستقیم له 7x او Exponential Foundation سره کار کوي.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>د Exponential د ټولنې غړي په ټوله نړۍ کې Exponential کاروي، ونډه پکې اخلي، معرفي کوي یې او ورسره سافټویر جوړوي.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>لوی ایکوسیستم له ټولنې هاخوا ځي او د PHP په سټک کې د Exponential د نړۍ ټول اړخونه رانغاړي: د هغې کارنان او جوړونکي.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>%count لیدونکې ډلې</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>نورې لیدونکې ډلې</translation>
+    </message>
 </context>
 </TS>

@@ -70,9 +70,9 @@ points first; a kernel class override is the last resort ([Extension points](../
 
 ## Settings and their order
 
-An INI value is read from `settings/<file>.ini`, then the active extensions' `settings/`, then
-`settings/siteaccess/<siteaccess>/` (and extensions' siteaccess directories), then `settings/override/`; the last one
-wins. `./console exp:ini where <file>/<block>/<key> <siteaccess>` shows every file that sets a value
+An INI value is read from `settings/<file>.ini`, then the extensions' siteaccess directories and
+`settings/siteaccess/<siteaccess>/`, then the active extensions' `settings/`, then `settings/override/`; the last one
+wins, so an active extension's `settings/` wins over `settings/siteaccess/<siteaccess>/`. `./console exp:ini where <file>/<block>/<key> <siteaccess>` shows every file that sets a value
 ([Settings and INI files](settings-and-ini-files.md)).
 
 ## Command line and background work

@@ -81,6 +81,29 @@
 .a4-help-tile.is-businesses { color: var(--a4-chart-3); }
 .a4-help-tile.is-press { color: var(--a4-chart-6); }
 .a4-help-tile.is-trainer { color: var(--a4-chart-2); }
+/* the audiences of #645 (community ... students): the chart palette again */
+.a4-help-tile.is-community { color: var(--a4-chart-6); }
+.a4-help-tile.is-ecosystem { color: var(--a4-chart-1); }
+.a4-help-tile.is-php-developer { color: var(--a4-chart-3); }
+.a4-help-tile.is-theme-designer { color: var(--a4-chart-8); }
+.a4-help-tile.is-reseller { color: var(--a4-chart-2); }
+.a4-help-tile.is-bundler { color: var(--a4-chart-4); }
+.a4-help-tile.is-ai-agents { color: var(--a4-chart-7); }
+.a4-help-tile.is-software-engineer { color: var(--a4-chart-1); }
+.a4-help-tile.is-adopter { color: var(--a4-chart-5); }
+.a4-help-tile.is-mobile-app-developer { color: var(--a4-chart-3); }
+.a4-help-tile.is-web-framework-developer { color: var(--a4-chart-6); }
+.a4-help-tile.is-cms-developer { color: var(--a4-chart-8); }
+.a4-help-tile.is-dxp-developer { color: var(--a4-chart-2); }
+.a4-help-tile.is-ecommerce { color: var(--a4-chart-4); }
+.a4-help-tile.is-integrator { color: var(--a4-chart-7); }
+.a4-help-tile.is-dba { color: var(--a4-chart-1); }
+.a4-help-tile.is-podcaster { color: var(--a4-chart-5); }
+.a4-help-tile.is-non-profit { color: var(--a4-chart-3); }
+.a4-help-tile.is-local-business { color: var(--a4-chart-2); }
+.a4-help-tile.is-individual { color: var(--a4-chart-7); }
+.a4-help-tile.is-non-technical { color: var(--a4-chart-4); }
+.a4-help-tile.is-student { color: var(--a4-chart-6); }
 
 /* The audience of a page as a small pill (on top of .a4-tag) */
 .a4-help-pill {
@@ -109,6 +132,28 @@
 .a4-help-pill.is-businesses { border-color: var(--a4-chart-3); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-press { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-trainer { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-community { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-ecosystem { border-color: var(--a4-chart-1); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-php-developer { border-color: var(--a4-chart-3); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-theme-designer { border-color: var(--a4-chart-8); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-reseller { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-bundler { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-ai-agents { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-software-engineer { border-color: var(--a4-chart-1); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-adopter { border-color: var(--a4-chart-5); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-mobile-app-developer { border-color: var(--a4-chart-3); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-web-framework-developer { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-cms-developer { border-color: var(--a4-chart-8); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-dxp-developer { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-ecommerce { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-integrator { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-dba { border-color: var(--a4-chart-1); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-podcaster { border-color: var(--a4-chart-5); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-non-profit { border-color: var(--a4-chart-3); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-local-business { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-individual { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-non-technical { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-student { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
 
 /* ---- dashboard: the search hero ------------------------------------------------------------------------------ */
 
@@ -502,6 +547,28 @@
 .a4-help-audience.is-businesses::before { background-color: var(--a4-chart-3); }
 .a4-help-audience.is-press::before { background-color: var(--a4-chart-6); }
 .a4-help-audience.is-trainer::before { background-color: var(--a4-chart-2); }
+.a4-help-audience.is-community::before { background-color: var(--a4-chart-6); }
+.a4-help-audience.is-ecosystem::before { background-color: var(--a4-chart-1); }
+.a4-help-audience.is-php-developer::before { background-color: var(--a4-chart-3); }
+.a4-help-audience.is-theme-designer::before { background-color: var(--a4-chart-8); }
+.a4-help-audience.is-reseller::before { background-color: var(--a4-chart-2); }
+.a4-help-audience.is-bundler::before { background-color: var(--a4-chart-4); }
+.a4-help-audience.is-ai-agents::before { background-color: var(--a4-chart-7); }
+.a4-help-audience.is-software-engineer::before { background-color: var(--a4-chart-1); }
+.a4-help-audience.is-adopter::before { background-color: var(--a4-chart-5); }
+.a4-help-audience.is-mobile-app-developer::before { background-color: var(--a4-chart-3); }
+.a4-help-audience.is-web-framework-developer::before { background-color: var(--a4-chart-6); }
+.a4-help-audience.is-cms-developer::before { background-color: var(--a4-chart-8); }
+.a4-help-audience.is-dxp-developer::before { background-color: var(--a4-chart-2); }
+.a4-help-audience.is-ecommerce::before { background-color: var(--a4-chart-4); }
+.a4-help-audience.is-integrator::before { background-color: var(--a4-chart-7); }
+.a4-help-audience.is-dba::before { background-color: var(--a4-chart-1); }
+.a4-help-audience.is-podcaster::before { background-color: var(--a4-chart-5); }
+.a4-help-audience.is-non-profit::before { background-color: var(--a4-chart-3); }
+.a4-help-audience.is-local-business::before { background-color: var(--a4-chart-2); }
+.a4-help-audience.is-individual::before { background-color: var(--a4-chart-7); }
+.a4-help-audience.is-non-technical::before { background-color: var(--a4-chart-4); }
+.a4-help-audience.is-student::before { background-color: var(--a4-chart-6); }
 .a4-help-audience:hover,
 .a4-help-audience:focus-within { box-shadow: inset 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-m); transform: translateY(-2px); }
 .a4-help-audience h3 { margin: 0; font-size: var(--a4-text-l); font-weight: 650; line-height: var(--a4-leading-tight); }
@@ -541,6 +608,60 @@
 }
 @container (max-width: 520px) {
   .a4-help-audiences { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* the audience cards in groups (dashboard.tpl, $help_audience_groups): each group a <details>, the first one open */
+.a4-help-audience-groups { display: grid; gap: var(--a4-space-3); }
+.a4-help-audience-group {
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+}
+.a4-help-audience-group-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  padding: var(--a4-space-4) var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  cursor: pointer;
+  list-style: none;
+}
+.a4-help-audience-group-head::-webkit-details-marker { display: none; }
+.a4-help-audience-group-head:hover .a4-help-audience-group-title { text-decoration: underline; }
+.a4-help-audience-group-head:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-help-audience-group-chevron { color: var(--a4-muted); transition: transform .15s ease; }
+.a4-help-audience-group[open] > .a4-help-audience-group-head .a4-help-audience-group-chevron { transform: rotate(90deg); }
+.a4-help-audience-group-title { color: var(--a4-ink); font-size: var(--a4-text-l); font-weight: 650; line-height: var(--a4-leading-tight); }
+.a4-help-audience-group-count { color: var(--a4-muted); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.a4-help-audience-group-text { grid-column: 2 / -1; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-audience-group > .a4-help-audiences { padding: 0 var(--a4-space-5) var(--a4-space-5); }
+@media (max-width: 600px) {
+  .a4-help-audience-group-head { padding: var(--a4-space-3) var(--a4-space-4); }
+  .a4-help-audience-group > .a4-help-audiences { padding: 0 var(--a4-space-3) var(--a4-space-4); }
+}
+
+/* the search hero's audience filters beyond the open group, behind "More audiences" */
+.a4-help-filters-more { flex-basis: 100%; text-align: center; }
+.a4-help-filters-more > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  padding: var(--a4-space-1) 0;
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.a4-help-filters-more > summary::-webkit-details-marker { display: none; }
+.a4-help-filters-more > summary:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-help-filters-more > summary .a4-icon { transition: transform .15s ease; }
+.a4-help-filters-more[open] > summary .a4-icon { transform: rotate(180deg); }
+.a4-help-filters-more-list { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--a4-space-2); padding-top: var(--a4-space-2); text-align: start; }
+@media (prefers-reduced-motion: reduce) {
+  .a4-help-audience-group-chevron,
+  .a4-help-filters-more > summary .a4-icon { transition: none; }
 }
 
 /* ---- dashboard: featured pages and recently changed pages, side by side ------------------------------------- */

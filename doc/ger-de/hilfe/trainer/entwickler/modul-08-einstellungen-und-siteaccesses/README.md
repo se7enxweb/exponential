@@ -30,7 +30,7 @@ mit dokumentierten Standardwerten zu geben.
 | [Lektion 8.1: Wie Einstellungen gelesen werden](wie-einstellungen-gelesen-werden.md) | 45 Minuten | Das Dateiformat, die Reihenfolge der Geltungsbereiche, Arrays und Rücksetzzeilen, `exp:ini where` |
 | [Lektion 8.2: Siteaccess-Einstellungen](siteaccess-einstellungen.md) | 45 Minuten | Siteaccesses, Matching, `-s`, den Geltungsbereich einer Einstellung wählen |
 | [Lektion 8.3: Einstellungen mit exp:ini ändern](einstellungen-mit-exp-ini-aendern.md) | 50 Minuten | Aktionen, Probeläufe, Sicherungen, Exit-Codes, Verschieben in eine Erweiterung |
-| [Lektion 8.4: Eigene Einstellungen](eigene-einstellungen.md) | 45 Minuten | `mysite.ini` mit Standardwerten, aus PHP und Templates gelesen, pro Siteaccess überschrieben |
+| [Lektion 8.4: Eigene Einstellungen](eigene-einstellungen.md) | 45 Minuten | `mysite.ini` mit Standardwerten, aus PHP und Templates gelesen, im globalen Override überschrieben |
 
 ## Dieses Modul vorbereiten
 
