@@ -14,10 +14,10 @@ A view of the `content` module, defined in `kernel/content/module.php` and run b
 ## Address
 
 ```text
-/content/jobs/(all)/<All>
+/content/jobs/(all)/<All>/(state)/<State>/(type)/<Type>/(user)/<User>/(sort)/<Sort>/(order)/<Order>/(offset)/<Offset>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(all)` sets `All`.
+Unordered parameters, in any order as `/(name)/value`: `(all)` sets `All`, `(state)` sets `State`, `(type)` sets `Type`, `(user)` sets `User`, `(sort)` sets `Sort`, `(order)` sets `Order`, `(offset)` sets `Offset`.
 
 ## Who may open it
 

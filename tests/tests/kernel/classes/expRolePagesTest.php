@@ -297,7 +297,7 @@ class expRolePagesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'time', expUnactivatedUsers::normaliseSort( null ) );
         $this->assertSame( 'desc', expUnactivatedUsers::normaliseOrder( 'DeSc' ) );
         $this->assertSame( 'asc', expUnactivatedUsers::normaliseOrder( 'up' ) );
-        $this->assertSame( 'a b c', expUnactivatedUsers::normaliseSearch( "a/(b)\x00 c" ) );
+        $this->assertSame( 'a/(b) c', expUnactivatedUsers::normaliseSearch( "a/(b)\x00 c" ), 'slashes and brackets travel encoded' );
         $this->assertSame( '', expUnactivatedUsers::normaliseSearch( array() ) );
         $this->assertSame( array( 3, 12 ), expUnactivatedUsers::normaliseIDs( array( '3', 12, '3', '-1', '0', 'x', '1e3', array( 5 ), 4.5 ) ) );
         $this->assertSame( array( 7 ), expUnactivatedUsers::normaliseIDs( '7' ) );

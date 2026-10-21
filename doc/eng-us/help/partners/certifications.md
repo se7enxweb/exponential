@@ -12,6 +12,10 @@ type: help
 This page is for partners aiming at Silver or higher, and for anyone who wants to know what "Exponential Certified"
 means. It separates what is published from what is not.
 
+Official Exponential certifications are planned, part of the project's future plans for the community, partners,
+Exponential developers and students; they are not available yet ([Certifications and
+certificates](../students/certifications-and-certificates.md)).
+
 ## What is published
 
 From <https://exponential.earth/partner/requirements> (read 18 October 2026):

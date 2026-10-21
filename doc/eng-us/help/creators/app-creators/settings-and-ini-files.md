@@ -49,13 +49,24 @@ ExtensionRepositories[]=expdemo
 
 ## The layers
 
-A value is read in this order; the last one wins:
+After `settings/<file>.ini` (the kernel's defaults), `eZINI::overrideDirs()` reads the override directories scope by
+scope: `sa-extension`, `siteaccess`, `extension`, `override`. A value is read in this order; the last one wins:
 
-1. `settings/<file>.ini` (the kernel's defaults; for your own file, the extension's `settings/<file>.ini`)
-2. active extensions' `settings/<file>.ini.append.php`
-3. `settings/siteaccess/<siteaccess>/` and extensions' `settings/siteaccess/<siteaccess>/`
-4. extensions' `settings/override/` for their own siteaccesses ([Per-site settings](../../../features/6.0/multi-site-ini-overrides.md))
-5. `settings/override/<file>.ini.append.php` of the installation
+1. `settings/<file>.ini`, the kernel's defaults
+2. `sa-extension`: `settings/` of the extensions the siteaccess switches on in `ActiveAccessExtensions[]`
+3. `siteaccess`: the per-siteaccess directories inside extensions (`settings/siteaccess/<siteaccess>/`, then
+   `settings/override__<group>/` and `settings/override/`, read only for a siteaccess the extension has a
+   `settings/siteaccess/<siteaccess>/` directory for; [Per-site settings](../../../features/6.0/multi-site-ini-overrides.md)),
+   then the installation's `settings/siteaccess/<siteaccess>/`
+4. `extension`: `settings/` of every extension in `ActiveExtensions[]`, so also the `<file>.ini` and
+   `<file>.ini.append.php` your extension ships
+5. `override`: `settings/override/` of the installation
+
+So a value in an active extension's `settings/` wins over the same value in `settings/siteaccess/<siteaccess>/`; only
+`settings/override/` wins over it, and that applies to every siteaccess. If a site must be able to set a key per
+siteaccess, do not ship that key in your extension's `settings/` file; give its default in code with `hasVariable()`
+(below). Inside one layer, an extension listed earlier in `ActiveExtensions[]` wins over a later one.
+`./console exp:ini where <file>/<block>/<key> <siteaccess>` prints the files in this order for one setting.
 
 Arrays add up across layers; an empty `Key[]` line clears what came before.
 

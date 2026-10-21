@@ -39,8 +39,9 @@ its own `var/log`.
 
 Without a reference, search by time and address instead: **From** and **To** a few minutes around the report, the
 address in **Request**, levels **Error** and **Warning**, scope **All kernel logs**. As a permalink:
-`/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17T01~3A00/(to)/2026-10-17T01~3A10/(uri)/~2Fshop/(scope)/kernel`
-(a `:` is `~3A` and a `/` is `~2F` in a value, see [Permalinks](../features/6.0/log-viewer.md#permalinks)).
+`/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17T01:00/(to)/2026-10-17T01:10/(uri)/~2Fshop/(scope)/kernel`
+(a `/` is `~2F` in a value, see [Permalinks](../features/6.0/log-viewer.md#permalinks); a link written before with
+`~3A` for `:` is read the same).
 
 If the server's web server logs are configured ([Web server logs](../features/6.0/log-viewer.md#web-server-logs)),
 `/setup/logs/view/webserver-access` with the same time range shows the request as the web server saw it: its status,

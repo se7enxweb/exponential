@@ -14,10 +14,10 @@ A view of the `role` module, defined in `kernel/role/module.php` and run by `ker
 ## Address
 
 ```text
-/role/list/(offset)/<Offset>
+/role/list/(offset)/<Offset>/(sort)/<Sort>/(dir)/<Dir>/(q)/<Query>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(sort)` sets `Sort`, `(dir)` sets `Dir`, `(q)` sets `Query`.
 
 ## Who may open it
 

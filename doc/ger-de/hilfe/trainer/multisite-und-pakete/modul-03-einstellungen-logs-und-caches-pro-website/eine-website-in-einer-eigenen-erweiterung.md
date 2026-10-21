@@ -58,7 +58,7 @@ Quelle: [Einstellungen über die Kommandozeile ändern: exp:ini, Einstellungen i
 3. **Sicherheit** (6 Minuten). Zuerst wird das Ziel geschrieben, dann verlässt der Block die Quelle; Dateien werden nie
    gelöscht. Vor und nach dem Schreiben liest der Befehl den wirksamen Wert jeder verschobenen Variablen für jeden
    Siteaccess; weicht einer ab, werden beide Dateien zurückgesetzt, und das Verschieben wird mit Exit-Code 3
-   abgelehnt. Die Ladereihenfolge erklärt, warum: Die Einstellungen einer Erweiterung werden vor
+   abgelehnt. Die Ladereihenfolge erklärt, warum: Das Siteaccess-Verzeichnis einer Erweiterung wird vor
    `settings/siteaccess/<sa>` geladen, das vor `settings/override` geladen wird, sodass ein Wert, der aus dem Override
    in eine Erweiterung verschoben wird, gegen eine Siteaccess-Datei verlieren kann. Jede geänderte Datei wird zuerst
    nach `var/backup/ini/<timestamp>/<path>` kopiert (Modus 0600).
@@ -161,8 +161,9 @@ Verwenden Sie Ihre Schulungsinstallation aus Modul 2. Die Befehle laufen im Wurz
 <details>
 <summary>Antworten</summary>
 
-1. Die Einstellungen einer Erweiterung, dann `settings/siteaccess/<sa>`, dann das globale Override, das das letzte
-   Wort hat.
+1. `settings/siteaccess/<sa>`, dann die Einstellungen einer Erweiterung (`extension/<ext>/settings/`), dann das
+   globale Override, das das letzte Wort hat. Nur die Siteaccess-Verzeichnisse einer Erweiterung
+   (`extension/<ext>/settings/siteaccess/<sa>/`) werden vor `settings/siteaccess/<sa>` geladen.
 2. **B.** Sofern nicht `--force` angegeben ist
    ([exp:ini](../../../../bc/6.0/console-exp-ini.md#einstellungen-in-eine-erweiterung-verschieben)).
 3. Eine Erweiterung kann sich nicht selbst aktivieren: Ihre Einstellungen werden erst gelesen, wenn sie aktiv ist.

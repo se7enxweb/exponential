@@ -1,8 +1,9 @@
 <?php
 /**
  * The community audiences of the help: partners, advocates, designers, hosting companies, application creators,
- * website creators, supporters, sponsors, trainers, press, media and influencers, businesses, governments and customers, with their folders and categories (doc/eng-us/features/6.0/help-system.md).
- * No database.
+ * website creators, supporters, sponsors, trainers, press, media and influencers, businesses, governments and customers,
+ * and the audiences of #645 (community, ecosystem, PHP developers ... students and learners), with their folders and
+ * categories (doc/eng-us/features/6.0/help-system.md). No database.
  *
  *  CA-01  expHelpAudience knows the ten audiences and their categories by default, after the first six, with icons
  *         that admin4 and the classic admin draw (an .a4-bi-<icon> class in components.css)
@@ -13,6 +14,13 @@
  *  CA-05  dashboard, search page and viewer pills of both designs (the same files) name each audience; help.css
  *         colors each one from tokens only; no inline CSS or script
  *  CA-06  every new string is in the complete catalogues (twenty-one) under kernel/exphelp
+ *  CA-07  the dashboard puts every audience in exactly one group (forty-one cards, the first group open, the others
+ *         folded) and the filters behind "More audiences"; "Who makes Exponential" links the partners', the
+ *         community's and the ecosystem's landing pages; every audience's start page is written as
+ *         help/<folder>/<folder>-start-here.md and, once that page exists, it says who it is for
+ *
+ *         The start pages of the audiences of #645 are written separately: the test checks one only when its file
+ *         exists, so it passes before and after they arrive.
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
  *
@@ -46,10 +54,33 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         'businesses'      => array( 'Businesses', 'doc/eng-us/help/businesses/why-exponential.md', 'business-solutions' ),
         'government'      => array( 'Governments', 'doc/eng-us/help/government/accessibility.md', 'public-sector' ),
         'customer'        => array( 'Customers', 'doc/eng-us/help/customers/day-to-day/content-calendar.md', 'customer-success' ),
+        'community'       => array( 'Community', 'doc/eng-us/help/community/community-start-here.md', 'community' ),
+        'ecosystem'       => array( 'Ecosystem', 'doc/eng-us/help/ecosystem/ecosystem-start-here.md', 'ecosystem' ),
+        'php-developer'   => array( 'PHP Developers', 'doc/eng-us/help/php-developers/php-developers-start-here.md', 'php-development' ),
+        'theme-designer'  => array( 'Theme designers', 'doc/eng-us/help/theme-designers/theme-designers-start-here.md', 'theme-design' ),
+        'reseller'        => array( 'Resellers', 'doc/eng-us/help/resellers/resellers-start-here.md', 'reselling' ),
+        'bundler'         => array( 'Bundlers', 'doc/eng-us/help/bundlers/bundlers-start-here.md', 'bundling' ),
+        'ai-agents'       => array( 'AI, agents and agentic', 'doc/eng-us/help/ai-agents/ai-agents-start-here.md', 'ai-agents' ),
+        'software-engineer' => array( 'Software Engineers', 'doc/eng-us/help/software-engineers/software-engineers-start-here.md', 'software-engineering' ),
+        'adopter'         => array( 'Adopters', 'doc/eng-us/help/adopters/adopters-start-here.md', 'adoption' ),
+        'mobile-app-developer' => array( 'Mobile App Developers', 'doc/eng-us/help/mobile-app-developers/mobile-app-developers-start-here.md', 'mobile-apps' ),
+        'web-framework-developer' => array( 'Web Framework Developers', 'doc/eng-us/help/web-framework-developers/web-framework-developers-start-here.md', 'web-frameworks' ),
+        'cms-developer'   => array( 'CMS Developers', 'doc/eng-us/help/cms-developers/cms-developers-start-here.md', 'cms-development' ),
+        'dxp-developer'   => array( 'DXP Developers', 'doc/eng-us/help/dxp-developers/dxp-developers-start-here.md', 'dxp-development' ),
+        'ecommerce'       => array( 'E-commerce', 'doc/eng-us/help/e-commerce/e-commerce-start-here.md', 'e-commerce' ),
+        'integrator'      => array( 'Integrators', 'doc/eng-us/help/integrators/integrators-start-here.md', 'integration' ),
+        'dba'             => array( 'Database Administrators', 'doc/eng-us/help/database-administrators/database-administrators-start-here.md', 'database-administration' ),
+        'podcaster'       => array( 'Podcasters, radio and streaming', 'doc/eng-us/help/podcasters/podcasters-start-here.md', 'podcasting-streaming' ),
+        'non-profit'      => array( 'Non-profits', 'doc/eng-us/help/non-profits/non-profits-start-here.md', 'non-profits' ),
+        'local-business'  => array( 'Local businesses', 'doc/eng-us/help/local-businesses/local-businesses-start-here.md', 'local-business' ),
+        'individual'      => array( 'Individuals', 'doc/eng-us/help/individuals/individuals-start-here.md', 'personal-sites' ),
+        'non-technical'   => array( 'Non-technical people', 'doc/eng-us/help/non-technical-people/non-technical-people-start-here.md', 'plain-language' ),
+        'student'         => array( 'Students and learners', 'doc/eng-us/help/students/students-start-here.md', 'learning' ),
     );
     const CATEGORIES = array( 'partnership', 'advocacy', 'theme-design', 'templates', 'extension-development', 'theme-extensions',
                               'theme-distribution', 'theme-sales', 'theme-lifecycle', 'hosting', 'app-creation',
-                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project', 'build-two-ways', 'business-solutions', 'public-sector', 'customer-success' );
+                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project', 'build-two-ways', 'business-solutions', 'public-sector', 'customer-success',
+                              'community', 'ecosystem', 'php-development', 'reselling', 'bundling', 'ai-agents', 'software-engineering', 'adoption', 'mobile-apps', 'web-frameworks', 'cms-development', 'dxp-development', 'e-commerce', 'integration', 'database-administration', 'podcasting-streaming', 'non-profits', 'local-business', 'personal-sites', 'plain-language', 'learning' );
     const CATALOGUES = array( 'ara-SA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dut-NL', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE',
                               'heb-IL', 'ita-IT', 'lat-VA', 'nor-NO', 'pol-PL', 'por-BR', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA',
                               'untranslated' );
@@ -120,6 +151,7 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'partners' => 'partner', 'advocates' => 'advocate', 'designers' => 'designer', 'hosting' => 'hosting',
                          'creators/app-creators' => 'app-creator', 'creators/website-creators' => 'website-creator',
                          'supporters' => 'supporter', 'sponsors' => 'sponsor', 'trainers' => 'trainer', 'press' => 'press', 'businesses' => 'businesses', 'government' => 'government',
+                         'community' => 'community', 'ecosystem' => 'ecosystem', 'php-developers' => 'php-developer', 'theme-designers' => 'theme-designer', 'resellers' => 'reseller', 'bundlers' => 'bundler', 'ai-agents' => 'ai-agents', 'software-engineers' => 'software-engineer', 'adopters' => 'adopter', 'mobile-app-developers' => 'mobile-app-developer', 'web-framework-developers' => 'web-framework-developer', 'cms-developers' => 'cms-developer', 'dxp-developers' => 'dxp-developer', 'e-commerce' => 'ecommerce', 'integrators' => 'integrator', 'database-administrators' => 'dba', 'podcasters' => 'podcaster', 'non-profits' => 'non-profit', 'local-businesses' => 'local-business', 'individuals' => 'individual', 'non-technical-people' => 'non-technical', 'students' => 'student',
                          'extension-development' => 'developer,designer' ) as $folder => $ids )
             $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/eng-us/help/' . preg_quote( $folder, '#' ) . '/\*;' . $ids . '\s*$#m', $section );
     }
@@ -247,6 +279,64 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
                          . ( $lang === 'untranslated' ? '[^>]*>' : '>[^<]+' ) . '</translation>#';
                 $this->assertMatchesRegularExpression( $pattern, $context, $lang . ': ' . $source );
             }
+        }
+    }
+
+    /** CA-07 */
+    public function testDashboardGroupsAboutAndStartPages()
+    {
+        $dashboard = self::read( 'design/admin4/templates/exphelp/dashboard.tpl' );
+        preg_match( "#\\\$help_audience_ids = array\\(([^)]*)\\)#", $dashboard, $m );
+        preg_match_all( "/'([a-z-]+)'/", $m[1], $ids );
+        $this->assertCount( 41, $ids[1] );
+        preg_match_all( "#hash\\( 'id', '([a-z-]+)', 'open', (true|false)\\(\\),[^\n]*\n\\s*'ids', array\\(([^)]*)\\) \\)#", $dashboard, $groups, PREG_SET_ORDER );
+        $this->assertCount( 5, $groups );
+        $this->assertSame( 'true', $groups[0][2], 'the first group is open' );
+        $grouped = array();
+        foreach ( $groups as $i => $group )
+        {
+            if ( $i > 0 )
+                $this->assertSame( 'false', $group[2], $group[1] . ' is folded' );
+            preg_match_all( "/'([a-z-]+)'/", $group[3], $g );
+            $grouped = array_merge( $grouped, $g[1] );
+        }
+        $sorted = $ids[1];
+        sort( $sorted );
+        sort( $grouped );
+        $this->assertSame( $sorted, $grouped, 'every audience in exactly one group' );
+        $this->assertStringContainsString( '<details class="a4-help-audience-group"', $dashboard );
+        $this->assertStringContainsString( "{'More audiences'|i18n( \$help_ctx )}", $dashboard );
+        $this->assertStringContainsString( "{'%count audiences'|i18n( \$help_ctx,, hash( '%count', \$help_group.ids|count ) )|wash}", $dashboard );
+        $css = self::read( 'design/admin4/stylesheets/modules/help.css' );
+        foreach ( array( '.a4-help-audience-group {', '.a4-help-audience-group-head {', '.a4-help-filters-more {' ) as $selector )
+            $this->assertStringContainsString( $selector, $css );
+
+        // Who makes Exponential: 7x, the Foundation, then the partners, the community and the ecosystem
+        $about = self::read( 'design/admin4/templates/exphelp/parts/dashboard_about.tpl' );
+        $this->assertSame( $about, self::read( 'design/admin/templates/exphelp/parts/dashboard_about.tpl' ) );
+        $this->assertDoesNotMatchRegularExpression( '/<style|\sstyle\s*=|<script|\son[a-z]+\s*=/i', $about );
+        $last = 0;
+        foreach ( array( "'Who is 7x?'", "'Who is the Exponential Foundation?'", "'/exphelp/audience/partner'", "'/exphelp/audience/community'", "'/exphelp/audience/ecosystem'" ) as $needle )
+        {
+            $at = strpos( $about, $needle );
+            $this->assertNotFalse( $at, $needle );
+            $this->assertGreaterThan( $last, $at, $needle . ' in order' );
+            $last = $at;
+        }
+
+        // the start page of each audience, and the page itself once it is written
+        $audience = new expHelpAudience();
+        foreach ( array_slice( self::AUDIENCES, 13, null, true ) as $id => $info )
+        {
+            $folder = basename( dirname( $info[1] ) );
+            $landing = self::iniSection( 'settings/exphelp.ini', 'Landing_' . $id );
+            $this->assertMatchesRegularExpression( '#^StartPage=help/' . preg_quote( $folder, '#' ) . '/' . preg_quote( $folder, '#' ) . '-start-here\.md\s*$#m', $landing, $id );
+            $this->assertSame( array( $id ), $audience->classify( $info[1] )['audience'], $id );
+            $file = self::root() . '/' . $info[1];
+            if ( !is_file( $file ) )
+                continue;
+            $text = (string)file_get_contents( $file );
+            $this->assertMatchesRegularExpression( '/^audience:[^\n]*\b' . preg_quote( $id, '/' ) . '\b/m', $text, $info[1] );
         }
     }
 }

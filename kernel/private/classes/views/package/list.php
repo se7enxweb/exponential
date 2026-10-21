@@ -136,8 +136,9 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         // The list
         $userParameters = isset( $scope['Params']['UserParameters'] ) && is_array( $scope['Params']['UserParameters'] ) ? $scope['Params']['UserParameters'] : array();
+        // the search as expViewParameters::encode() writes it, or encoded twice as before (rawurldecode())
         if ( isset( $userParameters['search'] ) )
-            $userParameters['search'] = rawurldecode( $userParameters['search'] );
+            $userParameters['search'] = \expViewParameters::decode( rawurldecode( $userParameters['search'] ) );
         $types = \eZPackageCatalog::types( $cards );
         $query = \eZPackageCatalog::normaliseQuery( $userParameters, $types );
         $filtered = \eZPackageCatalog::sort( \eZPackageCatalog::filter( $cards, $repositoryID, $query ), $query['sort'], $query['dir'] );
@@ -234,16 +235,17 @@ class ListView extends \Exponential\Runnable\ModuleView
 
     /**
      * The address of the list for a repository and a state; only what differs from the defaults is written. The
-     * search is encoded twice: the kernel decodes the whole path once before it splits it.
+     * search is written as every view parameter is (expViewParameters::encode()); run() reads the double encoding
+     * of before (%2520) too.
      *
-     * @return string without the siteaccess, e.g. /package/list/7x/(search)/demo%2520content/(sort)/size
+     * @return string without the siteaccess, e.g. /package/list/7x/(search)/demo%20content~2F/(sort)/size
      */
     static function listURI( $repositoryID, array $query = array(), $offset = 0 )
     {
         $uri = '/package/list' . ( (string)$repositoryID !== '' ? '/' . $repositoryID : '' );
         $search = isset( $query['search'] ) ? trim( (string)$query['search'] ) : '';
         if ( $search !== '' )
-            $uri .= '/(search)/' . rawurlencode( rawurlencode( $search ) );
+            $uri .= '/(search)/' . \expViewParameters::encode( $search );
         foreach ( array( 'type', 'state' ) as $key )
             if ( isset( $query[$key] ) && (string)$query[$key] !== '' && preg_match( '/^[A-Za-z0-9_\-]+$/', (string)$query[$key] ) )
                 $uri .= '/(' . $key . ')/' . $query[$key];

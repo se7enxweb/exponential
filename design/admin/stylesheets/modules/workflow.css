@@ -260,6 +260,7 @@ td.a4-settings-name code { word-break: normal; }
   gap: var(--a4-space-1);
   color: var(--a4-accent-text);
   font-size: var(--a4-text-s);
+  min-height: var(--a4-space-5); /* a 24 CSS px target, WCAG 2.2 2.5.8 */
   cursor: pointer;
 }
 .a4-settings-steps { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; border-inline-start: 2px solid var(--a4-line); }

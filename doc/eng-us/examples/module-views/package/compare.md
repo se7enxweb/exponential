@@ -14,10 +14,12 @@ A view of the `package` module, defined in `kernel/package/module.php` and run b
 ## Address
 
 ```text
-/package/compare/<PackageName>
+/package/compare/<PackageName>/(filter)/<Filter>/(class)/<Class>/(search)/<Search>/(sort)/<Sort>/(dir)/<Dir>/(limit)/<Limit>/(offset)/<Offset>/(item)/<Item>
 ```
 
 Ordered parameters, in this order after the view name: `PackageName`.
+
+Unordered parameters, in any order as `/(name)/value`: `(filter)` sets `Filter`, `(class)` sets `Class`, `(search)` sets `Search`, `(sort)` sets `Sort`, `(dir)` sets `Dir`, `(limit)` sets `Limit`, `(offset)` sets `Offset`, `(item)` sets `Item`.
 
 ## Who may open it
 
@@ -40,6 +42,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/package/compare/packagename'|ezurl}>package/compare</a>
+<a href={concat( '/package/compare/packagename/(filter)/', 1 )|ezurl}>package/compare</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

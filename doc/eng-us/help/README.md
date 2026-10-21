@@ -35,6 +35,7 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Who is 7x?](who-is-7x.md) | Know the company behind Exponential: nearly thirty years with this code, from the eZ Publish years to Exponential 6, the products, the community and how to take part |
 | [Who is the Exponential Foundation?](who-is-the-exponential-foundation.md) | Know the nonprofit that operates the open source project, the whole family of Exponential products and what the project commits to |
+| [Partners](partners/partners-start-here.md) | Know the Exponential Partners: they contribute financially to the sustained future of the project, contribute code and more back to it, and engage directly with 7x and the Exponential Foundation |
 | [The Exponential project](project/README.md) | Find the FAQ, the licensing questions, the roadmap, support, the community channels, how to build, contribute and give, as the project website exponential.earth presents them |
 
 ## Everyday work

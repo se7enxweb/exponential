@@ -722,9 +722,15 @@ berechnet Preise, Steuern und Lieferung eines Warenkorbs und hört beim Einnehme
 nicht mitgeliefert wird. Es wird für eine Bestellung zweimal aufgerufen - einmal, um den Käufer wegzuschicken, einmal,
 wenn er zurückkehrt -, und die beiden Besuche werden durch die Zahlungszeile verbunden, die es dazwischen speichert.
 
+Der Kernel sucht ein Gateway unter `<GatewaysDirectories>/<gateway>/classes/<gateway>gateway.php`, für jeden Namen in
+`AvailableGateways[]`; die Klassendatei liegt also in einem Verzeichnis mit dem Namen ihres Alias. Vor 6.0.15 schrieb
+das Werkzeug `paymentgateways/<alias>gateway.php`, wo niemand sucht, und registrierte die Klasse unter
+`<alias>gateway` statt unter ihrem eigenen Namen: Ein mit einer früheren Version erzeugtes Gateway muss an den Pfad
+oben verschoben werden, und das zweite Argument seines `registerGateway()`-Aufrufs muss der Klassenname werden.
+
 | | |
 |---|---|
-| Code | `extension/<name>/paymentgateways/<alias>gateway.php` |
+| Code | `extension/<name>/paymentgateways/<alias>/classes/<alias>gateway.php` |
 | Registriert durch | paymentgateways.ini [GatewaysSettings] AvailableGateways[] und GatewaysDirectories[], dazu eZPaymentGatewayType::registerGateway() am Ende der Klassendatei, dazu ein Workflow mit einem Ereignis Payment Gateway, gebunden an shop_confirmorder |
 | Vertrag | `extends eZRedirectGateway` oder `eZPaymentGateway` für eines, das die Zahlung annimmt, ohne die Website zu verlassen |
 | Mechanismus | directory |
@@ -741,7 +747,7 @@ gefragt statt geraten werden muss.
 
 | | |
 |---|---|
-| Code | `extension/<name>/paymentgateways/<alias>gateway.php` |
+| Code | `extension/<name>/paymentgateways/<alias>/classes/<alias>gateway.php` |
 | Registriert durch | paymentgateways.ini [GatewaysSettings] AvailableGateways[] und GatewaysDirectories[], dazu eZPaymentGatewayType::registerGateway() am Ende der Klassendatei, dazu ein Workflow mit einem Ereignis Payment Gateway, gebunden an shop_confirmorder |
 | Vertrag | `extends eZPaymentGateway` |
 | Mechanismus | directory |

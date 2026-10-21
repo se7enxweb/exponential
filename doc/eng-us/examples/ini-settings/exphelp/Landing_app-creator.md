@@ -31,7 +31,7 @@ StartPage=help/creators/app-creators/app-creators-start-here.md
 
 ## Related
 
-Default: a list of 3: `developer`, `website-creator`, `designer`.
+Default: a list of 5: `developer`, `website-creator`, `designer`, `php-developer`, `mobile-app-developer`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,8 @@ Related[]
 Related[]=developer
 Related[]=website-creator
 Related[]=designer
+Related[]=php-developer
+Related[]=mobile-app-developer
 */ ?>
 ```
 

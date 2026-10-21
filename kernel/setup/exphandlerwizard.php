@@ -602,18 +602,20 @@ class expHandlerWizard extends expExtensionWizard
             'aliased'  => false,
             'appended' => true,
             'override' => true,
-            'path'     => 'paymentgateways/%alias%gateway.php',
+            // Exactly where eZPaymentGatewayType::loadAndRegisterBuiltInGateways() looks:
+            // <GatewaysDirectories>/<AvailableGateways>/classes/<AvailableGateways>gateway.php
+            'path'     => 'paymentgateways/%alias%/classes/%alias%gateway.php',
             'suffix'   => 'gateway',
             'extra'    => array(
                 array( 'variable' => 'GatewaysDirectories[]',
                        'value'    => 'extension/%extension%/paymentgateways',
-                       'what'     => 'The directory the gateway file is looked for in. A path rather than an extension name, because this setting has always taken one - so a gateway installed under another extension root needs this line changed to match.' ) ),
+                       'what'     => 'The directory the gateways are looked for in. The kernel loads <directory>/<gateway>/classes/<gateway>gateway.php for every name in AvailableGateways, so the file sits in a directory of its own name below this one. A path rather than an extension name, because this setting has always taken one - so a gateway installed under another extension root needs this line changed to match.' ) ),
             'note'     => 'The class registers itself at the foot of its own file, with eZPaymentGatewayType::registerGateway(). Without that line the file is found, loaded, and the gateway never appears in the workflow event - and nothing says why.',
             'registers' => "// This is what makes it a gateway. The file is loaded for this line as\n"
                          . "// much as for the class, and without it nothing knows the gateway\n"
                          . "// exists.\n"
                          . "eZPaymentGatewayType::registerGateway(\n"
-                         . "    %class%::GATEWAY_TYPE, '%alias%gateway', '%title%' );",
+                         . "    %class%::GATEWAY_TYPE, '%class%', '%title%' );",
             'constants' => array(
                 array( 'name' => 'GATEWAY_TYPE', 'value' => '%alias%',
                        'what' => 'The name this gateway is known by, in paymentgateways.ini, in the workflow event, and in every order that was paid through it. It cannot change once an order exists.' ) ),
@@ -646,12 +648,14 @@ class expHandlerWizard extends expExtensionWizard
             'aliased'  => false,
             'appended' => true,
             'override' => true,
-            'path'     => 'paymentgateways/%alias%gateway.php',
+            // Exactly where eZPaymentGatewayType::loadAndRegisterBuiltInGateways() looks:
+            // <GatewaysDirectories>/<AvailableGateways>/classes/<AvailableGateways>gateway.php
+            'path'     => 'paymentgateways/%alias%/classes/%alias%gateway.php',
             'suffix'   => 'gateway',
             'extra'    => array(
                 array( 'variable' => 'GatewaysDirectories[]',
                        'value'    => 'extension/%extension%/paymentgateways',
-                       'what'     => 'The directory the gateway file is looked for in. A path rather than an extension name, because this setting has always taken one.' ) ),
+                       'what'     => 'The directory the gateways are looked for in. The kernel loads <directory>/<gateway>/classes/<gateway>gateway.php for every name in AvailableGateways, so the file sits in a directory of its own name below this one. A path rather than an extension name, because this setting has always taken one.' ) ),
             'note'     => 'Extends eZPaymentGateway rather than eZRedirectGateway, which is the whole difference: no payment object is needed to survive a trip away and back, because there is no trip. It also means the money is taken inside the request the buyer is waiting on, so a slow gateway is a slow checkout and a timeout is a genuinely ambiguous state.',
             'constants' => array(
                 array( 'name' => 'GATEWAY_TYPE', 'value' => '%alias%',
@@ -660,7 +664,7 @@ class expHandlerWizard extends expExtensionWizard
                          . "// much as for the class, and without it nothing knows the gateway\n"
                          . "// exists.\n"
                          . "eZPaymentGatewayType::registerGateway(\n"
-                         . "    %class%::GATEWAY_TYPE, '%alias%gateway', '%title%' );",
+                         . "    %class%::GATEWAY_TYPE, '%class%', '%title%' );",
             'methods'  => array(
                 array( 'name' => 'execute', 'signature' => 'execute( $process, $event )',
                        'returns' => 'eZWorkflowType::STATUS_ACCEPTED',

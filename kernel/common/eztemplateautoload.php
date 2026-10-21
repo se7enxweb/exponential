@@ -84,6 +84,9 @@ $eZTemplateOperatorArray[] = array( 'class' => 'expDemoModeOperator',
 $eZTemplateOperatorArray[] = array( 'class' => 'expContentSecurityPolicyOperator',
                                     'operator_names' => array( 'csp_nonce' ) );
 
+$eZTemplateOperatorArray[] = array( 'class' => 'expViewParameterOperator',
+                                    'operator_names' => array( 'view_parameter' ) );
+
 // Function autoloading
 
 $eZTemplateFunctionArray = array();
