@@ -12,7 +12,7 @@ type: help
 Ihr Hoster und Ihr Partner sind Ihre ersten Ansprechpartner. Hinter ihnen stehen die Menschen, die Exponential machen:
 7x, das Unternehmen, das das Projekt leitet, und die Exponential Foundation, die gemeinnützige Organisation, die es
 betreibt. Diese Seite sagt einem Betreiber, was jede davon bietet und wie man sie erreicht. Die längere Fassung für
-Unternehmen ist [Mit 7x und dem Projekt zusammenarbeiten](../../../../eng-us/help/businesses/choosing/working-with-7x-and-the-project.md).
+Unternehmen ist [Mit 7x und dem Projekt zusammenarbeiten](../../unternehmen/auswahl/zusammenarbeit-mit-7x-und-dem-projekt.md).
 
 ## Wer ist wer
 
@@ -22,7 +22,7 @@ Unternehmen ist [Mit 7x und dem Projekt zusammenarbeiten](../../../../eng-us/hel
 | Rolle | „7x übernahm 2023 die Leitung des Projekts und seiner Entwicklung, seines Supports, seiner Verbreitung und des Wachstums der Community“ (`README.md`) | Betreibt das Projekt |
 | Mehr | [Wer ist 7x?](../../wer-ist-7x.md) | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md) |
 
-Quelle: [Mit 7x und dem Projekt zusammenarbeiten](../../../../eng-us/help/businesses/choosing/working-with-7x-and-the-project.md).
+Quelle: [Mit 7x und dem Projekt zusammenarbeiten](../../unternehmen/auswahl/zusammenarbeit-mit-7x-und-dem-projekt.md).
 
 ## Was Sie kostenlos bekommen
 
@@ -44,7 +44,7 @@ Zahlungen, Schulungen, Migration zu Exponential 6, Support- und Wartungsverträg
 Bedingungen stehen auf der Website von 7x, nicht hier“ ([Wer ist 7x?](../../wer-ist-7x.md)). Wenn Sie nicht warten
 können, empfiehlt die Support-Seite des Projekts bezahlten Support von 7x ([Support erhalten](../../projekt/unterstuetzung-erhalten.md)).
 Andere Unternehmen bieten möglicherweise dieselben Dienstleistungen an; die GPL nennt keinen vorgeschriebenen Lieferanten
-([Einen Partner auswählen](../../../../eng-us/help/businesses/choosing/choosing-a-partner.md)).
+([Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md)).
 
 ## Wie das Projekt Ihre Website beeinflusst
 
@@ -58,14 +58,14 @@ Andere Unternehmen bieten möglicherweise dieselben Dienstleistungen an; die GPL
 ## Etwas zurückgeben
 
 Eine Organisation, die sich auf Exponential verlässt, hat ein Interesse daran, dass das Projekt gesund bleibt.
-Freiwillige Wege zu helfen ([Mit 7x und dem Projekt zusammenarbeiten](../../../../eng-us/help/businesses/choosing/working-with-7x-and-the-project.md)):
+Freiwillige Wege zu helfen ([Mit 7x und dem Projekt zusammenarbeiten](../../unternehmen/auswahl/zusammenarbeit-mit-7x-und-dem-projekt.md)):
 
 - Fehler gut melden, mit Version, Schritten und erwartetem Ergebnis;
 - Ihren Partner allgemeine Korrekturen zurückgeben lassen ([Code zurückgeben](../../partner/code-zurueckgeben.md));
 - die Dokumentation verbessern: Diese Hilfe ist freie Dokumentation unter der GNU FDL;
 - 7x oder die Foundation sponsern ([Geben und spenden](../../projekt/geben-und-spenden.md));
 - Ihre Geschichte als Fallstudie teilen, mit Ihrer Zustimmung
-  ([Vorlage für eine Fallstudie](../../../../eng-us/help/businesses/templates/case-study-template.md)).
+  ([Vorlage für eine Fallstudie](../../unternehmen/vorlagen/vorlage-fuer-fallstudien.md)).
 
 ## Verwandte Seiten
 

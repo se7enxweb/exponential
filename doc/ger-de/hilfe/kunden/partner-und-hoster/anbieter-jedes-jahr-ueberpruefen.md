@@ -39,7 +39,7 @@ Fragen, eine einfache Bewertung und ein Protokoll.
 ## Eine einfache Bewertung
 
 Bewerten Sie jede Zeile mit 0 (nicht erledigt), 1 (teilweise) oder 2 (erledigt, mit Nachweis). Die Idee folgt der
-[Zuverlässigkeits-Scorecard](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md), die dieselben drei Stufen verwendet.
+[Zuverlässigkeits-Scorecard](../../unternehmen/zuverlaessigkeit/bewertungsbogen-zuverlaessigkeit.md), die dieselben drei Stufen verwendet.
 
 | Nr. | Frage | Punkte |
 |---|---|---|

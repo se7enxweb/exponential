@@ -29,7 +29,7 @@ hochgeladenen Bilder oder die Bilder ohne die Datenbank bringen eine Website nic
 | Ihre eigenen Erweiterungen und Designs | Sofern sie nicht in einem Git-Repository liegen |
 | `settings/override/audit.ini.append.php` | Die Signaturschlüssel des Prüfprotokolls |
 
-Quelle: [Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md). Caches
+Quelle: [Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md). Caches
 bauen sich von selbst neu auf und brauchen kein Backup.
 
 ## Die Entscheidungen, die nur Sie treffen können
@@ -70,13 +70,13 @@ Composer-Update“, „vor einem Wechsel der Datenbank-Engine“ und „vor eine
 
 Eine vollständige Wiederherstellung versetzt die ganze Website auf den Zeitpunkt des Backups zurück, und alles, was
 seitdem geschah, geht verloren. Schulen Sie Ihre Redakteure darin, zuerst die Werkzeuge innerhalb von Exponential zu
-nutzen ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)):
+nutzen ([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)):
 
 | Fehler | Verwenden Sie stattdessen |
 |---|---|
 | Ein Element wurde entfernt | Den Papierkorb: wiederherstellen ([Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md)) |
 | Ein Text wurde überschrieben | Versionen: einen neuen Entwurf aus einer früheren machen (dieselbe Seite) |
-| Unklar, wer was geändert hat | Das Prüfprotokoll ([Prüfprotokoll für den Betrieb](../../../../eng-us/help/businesses/reliability/audit-trail-for-operations.md)) |
+| Unklar, wer was geändert hat | Das Prüfprotokoll ([Prüfprotokoll für den Betrieb](../../unternehmen/zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)) |
 
 ## Ihre Checkliste
 
@@ -90,7 +90,7 @@ nutzen ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/busi
 ## Verwandte Seiten
 
 - [Wiederherstellungstest](wiederherstellungstest.md)
-- [Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)
+- [Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)
 - [Was gesichert werden muss (für Hoster)](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
-- [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)
+- [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

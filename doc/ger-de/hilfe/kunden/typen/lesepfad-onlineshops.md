@@ -62,5 +62,5 @@ Zahlungen ankommen.
 
 - [Onlineshops: hier beginnen](onlineshops-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
-- [Checkliste für den Start eines Shops (Unternehmen)](../../../../eng-us/help/businesses/stores/store-launch-checklist.md)
+- [Checkliste für den Start eines Shops (Unternehmen)](../../unternehmen/shops/checkliste-fuer-den-shop-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

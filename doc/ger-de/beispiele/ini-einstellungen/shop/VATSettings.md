@@ -1,0 +1,127 @@
+---
+title: shop.ini [VATSettings]
+audience: developer, admin
+category: examples
+summary: "Die Einstellungen von [VATSettings] in shop.ini: ProductCategoryAttribute, UserCountryAttribute, RequireUserCountry, DynamicVatTypeName, RepositoryDirectories, ExtensionDirectories"
+keywords: Einstellung, shop.ini, VATSettings, INI, setting, ProductCategoryAttribute, UserCountryAttribute, RequireUserCountry, DynamicVatTypeName, RepositoryDirectories, ExtensionDirectories
+type: generated
+generated: exp:help:examples
+---
+# shop.ini [VATSettings]
+
+Der Block `[VATSettings]` von `settings/shop.ini`, mit 6 Einstellung(en).
+
+Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
+
+- `settings/override/shop.ini.append.php` für jeden Siteaccess,
+- `settings/siteaccess/<siteaccess>/shop.ini.append.php` für einen Siteaccess,
+- `extension/<extension>/settings/shop.ini.append.php` in einer Erweiterung (gelesen, wenn die Erweiterung aktiv ist).
+
+## ProductCategoryAttribute
+
+> Gibt den Klassen-/Dateinamen des Mehrwertsteuer-Handlers an. Ist der Wert zum Beispiel  
+> "ezdefault", muss die Handler-Klasse  
+> eZDefaultVATHandler heißen (Groß-/Kleinschreibung egal) und in der Datei  
+> ezdefaultvathandler.php in einem Verzeichnis liegen, das die Einstellungen  
+> "RepositoryDirectories" und "ExtensionDirectories" angeben.  
+> Handler=ezdefault  
+> Bezeichner des Inhaltsattributs für die Produktkategorie.  
+> Z. B. "ProductCategoryAttribute=category".  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/shop.ini.append.php
+[VATSettings]
+ProductCategoryAttribute=
+*/ ?>
+```
+
+## UserCountryAttribute
+
+> Bezeichner des Inhaltsattributs für das Land des Benutzers.  
+> Z. B. "UserCountryAttribute=country".  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/shop.ini.append.php
+[VATSettings]
+UserCountryAttribute=
+*/ ?>
+```
+
+## RequireUserCountry
+
+> Wenn false, werden keine Fehler angezeigt, falls das Land des Benutzers  
+> nicht angegeben ist. Das kann man bei einem eigenen Mehrwertsteuer-Handler wollen.  
+
+Standard: `true`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/shop.ini.append.php
+[VATSettings]
+RequireUserCountry=true
+*/ ?>
+```
+
+## DynamicVatTypeName
+
+> Name des dynamischen Mehrwertsteuertyps, der in der Oberfläche zum Anzeigen/Bearbeiten von Klassen und Objekten angezeigt wird.  
+
+Standard: `Determined by VAT charging rules`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/shop.ini.append.php
+[VATSettings]
+DynamicVatTypeName=Determined by VAT charging rules
+*/ ?>
+```
+
+## RepositoryDirectories
+
+> Verzeichnisse, in denen nach Mehrwertsteuer-Handlern gesucht wird.  
+
+Standard: eine Liste mit 1: `kernel/classes/vathandlers`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/shop.ini.append.php
+[VATSettings]
+# ein leeres "RepositoryDirectories[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+RepositoryDirectories[]
+RepositoryDirectories[]=kernel/classes/vathandlers
+*/ ?>
+```
+
+## ExtensionDirectories
+
+> Wenn Sie Ihren Mehrwertsteuer-Handler in einer Erweiterung umsetzen wollen,  
+> fügen Sie den Namen der Erweiterung der Liste unten hinzu.  
+> Dann werden Mehrwertsteuer-Handler im folgenden Verzeichnis gesucht:  
+> extension/<your\_extension>/vathandlers  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/shop.ini.append.php
+[VATSettings]
+# ein leeres "ExtensionDirectories[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+ExtensionDirectories[]
+*/ ?>
+```
+
+## Siehe auch
+
+- [Alle Blöcke von shop.ini](README.md)
+- [Alle INI-Dateien](../README.md)
+- [Die Einstellungsseite](../../../anleitungen/einstellungsseite.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/shop.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

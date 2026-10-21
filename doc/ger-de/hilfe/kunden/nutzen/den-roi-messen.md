@@ -17,7 +17,7 @@ unter [ROI-Beispielannahmen](roi-beispielannahmen.md) und im [ROI-Arbeitsblatt](
 ## Die Formel
 
 ROI = (Nutzen - Kosten) / Kosten x 100 %, über einen Zeitraum, den Sie wählen, bei einer laufenden Website meist ein
-Jahr. Dieselbe Formel wird im Bereich für Unternehmen verwendet ([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)).
+Jahr. Dieselbe Formel wird im Bereich für Unternehmen verwendet ([Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)).
 
 ## Wenige Kennzahlen wählen
 
@@ -39,7 +39,7 @@ Berichten, die niemand liest.
 | Bestellungen, Umsatz, Kunden, abgebrochene Warenkörbe | Shop-Dashboard; Produkt-Statistiken pro Monat | [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md), [Shop-Berichte](../handel/shop-berichte.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen**, mit CSV-Export | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
-| Wonach Besucher suchen | Suchbegriffe werden gespeichert (`ezsearch_search_phrase`) | [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md) |
+| Wonach Besucher suchen | Suchbegriffe werden gespeichert (`ezsearch_search_phrase`) | [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md) |
 | Veröffentlichte Inhalte | Versionen und Veröffentlichungshistorie der Inhalte | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Kosten eines KI-Anbieters, falls genutzt | Das Dashboard von Exponential Intelligence zeigt Kosten, Tokens und Anfragen | `README.md`, „Exponential Intelligence“ |
 | Besucherzahlen | Nicht als Bericht eingebaut; ein Statistikwerkzeug | [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md) |
@@ -64,9 +64,9 @@ die nun die Website beantwortet.
 - **Bestellwert ist kein Ertrag.** Das Shop-Dashboard zeigt den Bestellwert; Gebühren, Erstattungen und Mehrwertsteuer
   stehen in Ihrer Buchhaltung ([Shop-Berichte](../handel/shop-berichte.md)).
 - **Gesparte Zeit ist kein gespartes Geld**, es sei denn, die Zeit wird für etwas anderes genutzt. Verwenden Sie einen
-  Realisierungsfaktor und sagen Sie, welchen ([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)).
+  Realisierungsfaktor und sagen Sie, welchen ([Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)).
 - **Fehlende Kosten.** Die Arbeitszeit für Inhalte ist meist der größte Kostenposten und der, der am häufigsten
-  weggelassen wird ([Gesamtbetriebskosten](../../../../eng-us/help/businesses/costs/total-cost-of-ownership.md)).
+  weggelassen wird ([Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)).
 - **Testdaten.** Testbestellungen und Testeinsendungen blähen die Zahlen auf; entfernen Sie sie.
 
 ## Zusammenfassen
@@ -78,6 +78,6 @@ werden. Bringen Sie sie zur [jährlichen Überprüfung des Nutzens](jaehrliche-u
 
 - [ROI-Beispielannahmen](roi-beispielannahmen.md)
 - [ROI-Arbeitsblatt](roi-arbeitsblatt.md)
-- [Return on Investment von Stabilität](../../../../eng-us/help/businesses/costs/roi-of-stability.md)
+- [Return on Investment von Stabilität](../../unternehmen/kosten/rendite-der-stabilitaet.md)
 - [Betriebskosten für Betreiber](betriebskosten-fuer-betreiber.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

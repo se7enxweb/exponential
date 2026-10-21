@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Shop-Leitung und den Eigentümer. Sie behandelt den laufenden Shop: wissen, wie Ihre Kasse Gäste
 und Kontoinhaber behandelt, Fragen zu Konten beantworten und die Kundendaten in Ordnung halten. Die Wahl zwischen dem
 Kauf als Gast und dem Kauf mit Konto ist unter
-[Kundenkonten und Gastbestellung für Unternehmen](../../../../eng-us/help/businesses/stores/customer-accounts-and-guest-checkout.md) erklärt.
+[Kundenkonten und Gastbestellung für Unternehmen](../../unternehmen/shops/kundenkonten-und-gastbestellung.md) erklärt.
 
 ## Kennen Sie Ihre Konfiguration
 
@@ -38,7 +38,7 @@ bisherigen Kunden.
 
 > **Warnung**
 > Die Kundenliste und die Bestellansichten zeigen Namen, Adressen und Bestellhistorien. Geben Sie `shop/administrate`
-> nur Personen, die es brauchen, jeder mit einem eigenen Konto ([Sicherheits-Checkliste für den Shop](../../../../eng-us/help/businesses/stores/store-security-checklist.md)).
+> nur Personen, die es brauchen, jeder mit einem eigenen Konto ([Sicherheits-Checkliste für den Shop](../../unternehmen/shops/sicherheitscheckliste-fuer-shops.md)).
 
 ## Fragen von Kunden zu ihrem Konto
 
@@ -65,14 +65,14 @@ gesperrt sind, Konten, die ihr Benutzerobjekt verloren haben, und Konten, die si
 
 ## Was Konten Ihren Kunden bieten
 
-Aus [Kundenkonten und Gastbestellung für Unternehmen](../../../../eng-us/help/businesses/stores/customer-accounts-and-guest-checkout.md):
+Aus [Kundenkonten und Gastbestellung für Unternehmen](../../unternehmen/shops/kundenkonten-und-gastbestellung.md):
 Angemeldete Kunden bekommen ihre Adresse vorausgefüllt, einen Wunschzettel ([Wunschzettel und Warenkörbe](wunschzettel-und-warenkoerbe.md)),
 Ermäßigungsgruppen ([Rabatte](rabatte.md)) und ihre Belege ohne den Link. Gäste bekommen nichts davon, können aber
 ihren Beleg-Link behalten, wenn dauerhafte Belege eingeschaltet sind ([Rechnungen und Belege](rechnungen-und-belege.md)).
 
 ## Verwandte Seiten
 
-- [Kundenkonten und Gastbestellung für Unternehmen](../../../../eng-us/help/businesses/stores/customer-accounts-and-guest-checkout.md)
+- [Kundenkonten und Gastbestellung für Unternehmen](../../unternehmen/shops/kundenkonten-und-gastbestellung.md)
 - [Konten und Anmeldung](../../konten-und-anmeldung.md)
 - [DSGVO-Anfragen](dsgvo-anfragen.md)
 - [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)

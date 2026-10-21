@@ -49,7 +49,7 @@ Prüfprotokoll kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter, To
 
 Ihre Regel: **Fügen Sie nie unmaskierte Logzeilen in ein Ticket ein**, und leiten Sie nie Logs mit Kundendaten an
 jemanden weiter, der sie nicht braucht. Wie lange Logs und Prüfprotokoll-Einträge aufbewahrt werden, behandelt
-[Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md) (keine Rechtsberatung).
+[Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md) (keine Rechtsberatung).
 
 ## Wer was lesen darf
 
@@ -73,7 +73,7 @@ beantworten.
 
 ## Verwandte Seiten
 
-- [Logs und Fehlerreferenzen (für Unternehmen)](../../../../eng-us/help/businesses/reliability/logs-and-error-references.md)
-- [Prüfprotokoll für den Betrieb](../../../../eng-us/help/businesses/reliability/audit-trail-for-operations.md)
+- [Logs und Fehlerreferenzen (für Unternehmen)](../../unternehmen/zuverlaessigkeit/logs-und-fehlerreferenzen.md)
+- [Prüfprotokoll für den Betrieb](../../unternehmen/zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)
 - [Log-Viewer und Rotation (für Hoster)](../../hosting/betrieb/log-viewer-und-log-rotation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

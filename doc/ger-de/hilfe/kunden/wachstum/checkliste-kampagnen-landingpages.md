@@ -60,7 +60,7 @@ die Seite, die ihn erklärt.
 - [ ] Formulare auf der Seite sind ausprobiert, und jemand liest die Einsendungen
       ([Formulare und gesammelte Informationen](formulare-und-gesammelte-informationen.md)).
 - [ ] Ihr Hoster weiß Bescheid, wenn Sie deutlich mehr Besucher als üblich erwarten
-      ([Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)).
+      ([Planung für Lastspitzen](../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md)).
 
 ## Starttag
 
@@ -94,5 +94,5 @@ Lesson for next time: ________________________________________________
 
 - [Landingpages mit Layouts](landingpages-mit-layouts.md)
 - [Vorlage für den Redaktionskalender](../alltag/vorlage-redaktionskalender.md)
-- [Checkliste für den Go-live](../../../../eng-us/help/businesses/templates/go-live-checklist.md)
+- [Checkliste für den Go-live](../../unternehmen/vorlagen/checkliste-go-live.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

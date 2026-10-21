@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für den Eigentümer und die Shop-Leitung, die über den Shop berichten. Der Shop hat zwei Orte mit
 Zahlen: das Shop-Dashboard und die Produkt-Statistiken. Diese Seite macht daraus eine Routine und einen einfachen
-Monatsbericht. Was jede Zahl bedeutet, ist unter [Shop-Dashboard und Berichte für Unternehmen](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md) erklärt.
+Monatsbericht. Was jede Zahl bedeutet, ist unter [Shop-Dashboard und Berichte für Unternehmen](../../unternehmen/shops/shop-uebersicht-und-berichte.md) erklärt.
 
 ## Die zwei Quellen
 
@@ -66,7 +66,7 @@ __________________________________________________________________
 
 - **Umsatz ist Bestellwert, kein gebuchter Ertrag.** Er ist das, was Kunden bestellt haben, nicht das, was nach
   Gebühren und Erstattungen auf Ihrem Bankkonto angekommen ist; Ihre Buchhaltung bleibt der Maßstab
-  ([Shop-Dashboard und Berichte für Unternehmen](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md)).
+  ([Shop-Dashboard und Berichte für Unternehmen](../../unternehmen/shops/shop-uebersicht-und-berichte.md)).
 - **Status bestimmen die Zahlen.** Offene Bestellungen und Wartezeiten sind nur so genau wie die Status, die Ihr Team
   setzt ([Bestellstatus](bestellstatus.md)).
 - **Testbestellungen zählen mit.** Stornieren oder entfernen Sie Testbestellungen, sonst erscheinen sie in den Zahlen.
@@ -76,14 +76,14 @@ __________________________________________________________________
 ## Was die Berichte nicht abdecken
 
 - Kein Export in eine Tabellenkalkulation: Die Shop-Ansichten haben keinen CSV-Export der Bestellungen. Übertragen Sie
-  Zahlen von Hand, oder bitten Sie Ihren Partner um einen Export ([Shop-Dashboard und Berichte für Unternehmen](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md)).
+  Zahlen von Hand, oder bitten Sie Ihren Partner um einen Export ([Shop-Dashboard und Berichte für Unternehmen](../../unternehmen/shops/shop-uebersicht-und-berichte.md)).
 - Keine Besucherauswertung: Für Besucherzahlen und Konversion siehe
   [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md).
 - Keine Lagerzahlen: Der Shop hat keine Lagerverwaltung.
 
 ## Verwandte Seiten
 
-- [Shop-Dashboard und Berichte für Unternehmen](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md)
+- [Shop-Dashboard und Berichte für Unternehmen](../../unternehmen/shops/shop-uebersicht-und-berichte.md)
 - [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
 - [Monatliche Shop-Checkliste](monatliche-shop-checkliste.md)
 - [Den ROI messen](../nutzen/den-roi-messen.md)

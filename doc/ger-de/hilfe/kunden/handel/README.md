@@ -16,7 +16,7 @@ prüfen ist und was Sie Ihren Anbieter fragen sollten.
 
 Der Shop ist Teil von Exponential selbst. Die `README.md` des Repositorys nennt „Advanced e-Commerce Stores (Built in)“
 unter den wichtigsten Funktionen, und alle Shop-Ansichten sind Views eines einzigen Moduls, `kernel/shop/module.php`.
-Was der Shop kann und was nicht, ist für Entscheider unter [Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)
+Was der Shop kann und was nicht, ist für Entscheider unter [Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)
 beschrieben. Diese Seiten wiederholen das nicht; sie sagen Ihnen, wie Sie ihn betreiben.
 
 ## Hier beginnen
@@ -70,8 +70,8 @@ Die Rollen selbst richtet Ihr Administrator ein ([Rollen und Richtlinien](../../
 
 ## Verwandte Seiten
 
-- [Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)
-- [Einen Shop im Alltag betreiben (für Unternehmen)](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md)
+- [Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)
+- [Einen Shop im Alltag betreiben (für Unternehmen)](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md)
 - [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)
 - [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

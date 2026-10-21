@@ -88,7 +88,7 @@ stehen im Upgrade-Hinweis [Demo-Modus: EXP_DEMO_MODE=1](../../eng-us/bc/6.0/demo
 - [Demo-Modus: der Upgrade-Hinweis](../../eng-us/bc/6.0/demo-mode.md)
 - [Das Standard-Administratorpasswort](standard-administratorpasswort.md),
   [Das Administratorpasswort ändern](administratorpasswort-aendern.md)
-- [Eine Demo-Installation einrichten](../../eng-us/help/press/setting-up-a-demo-installation.md),
+- [Eine Demo-Installation einrichten](presse/eine-demo-installation-einrichten.md),
   [Sicherheit bei Live-Demos](../../eng-us/help/advocates/live-demo-safety.md)
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und
   verbessert werden.

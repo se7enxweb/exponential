@@ -11,6 +11,11 @@
  *  HE-06  comments quoted from shipped files are text (escaped), and the link check honors the escapes
  *  HE-07  pageTitles() (included by every admin page for its Help menu) leaves the generated pages out; pageCount()
  *         counts them all
+ *  HE-08  a translation (expHelpExamplesTranslation) writes deterministic pages below doc/<language>/ with translated
+ *         directories, fixed texts, descriptions and keywords, keeps INI keys and values, uses a description only
+ *         while its English text is current, links the language's pages and lists them in its path map
+ *  HE-09  the English pages are byte for byte those of the generator before translations, with or without a
+ *         translation built in the same run
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -163,6 +168,90 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertContains( 'README.md', $targets, 'the page\'s own links are found' );
         $this->assertCount( 1, expHelpLinkCheck::links( "[a](b.md) \\[c\\](d.md)" ) );
     }
+
+    /**
+     * A German translation of the fixture: tables as doc/ger-de/.examples/ holds them.
+     *
+     * @return expHelpExamplesTranslation
+     */
+    protected function german( array $descriptions = array() )
+    {
+        if ( !class_exists( 'expHelpExamplesTranslation' ) )
+            require_once __DIR__ . '/../../../../../kernel/classes/help/exphelpexamplestranslation.php';
+        return new expHelpExamplesTranslation( 'ger-de', array(
+            'strings'      => array( '## Related' => '## Siehe auch', 'Default: {value}.' => 'Standard: {value}.',
+                                     '- [All blocks of {ini}](README.md)' => '- [Alle Blöcke von {ini}](README.md)',
+                                     '- [The settings page](../../../guides/settings-page.md)' => '- [Die Einstellungsseite](../../../guides/settings-page.md)',
+                                     '- [All console commands](README.md)' => '- [Alle Konsolenbefehle](README.md)' ),
+            'keywords'     => array( 'setting' => 'Einstellung' ),
+            'descriptions' => $descriptions,
+            'dirnames'     => array( 'examples' => 'beispiele', 'ini-settings' => 'ini-einstellungen', 'commands' => 'befehle', 'guides' => 'anleitungen' ),
+            'paths'        => array( 'anleitungen/einstellungsseite.md' => 'guides/settings-page.md' ),
+        ) );
+    }
+
+    /** HE-08 a translation: deterministic pages below doc/ger-de/, translated text, local links and path map entries */
+    public function testGermanPagesAreDeterministicAndTranslated()
+    {
+        $descriptions = array(
+            'ini:settings/sample.ini [First] Count' => array( 'en' => 'How many', 'de' => 'Wie viele' ),
+            // the source text changed since it was translated: the English text is shown
+            'ini:settings/sample.ini [First] Names' => array( 'en' => 'Names, in an old order', 'de' => 'Namen, veraltet' ),
+            // an item without an entry of its own takes the translation of the same English text
+            'ini:settings/other.ini [X] Y' => array( 'en' => 'The first block', 'de' => 'Der erste Block' ),
+        );
+        $make = function () use ( $descriptions )
+        {
+            return new expHelpExamplesGenerator( $this->root, null, array( 'bin/php/sample.php', 'kernel/sample/module.php', 'settings/sample.ini' ), $this->german( $descriptions ) );
+        };
+        $generator = $make();
+        $one = $generator->build( array( 'ini-settings', 'commands' ) );
+        $two = $make()->build( array( 'ini-settings', 'commands' ) );
+        $this->assertSame( $one, $two, 'the same sources and tables give the same bytes' );
+        $this->assertSame( 'doc/ger-de/beispiele', $generator->outputDirectory() );
+
+        $page = $one['doc/ger-de/beispiele/ini-einstellungen/sample/First.md'];
+        $this->assertStringContainsString( "> Wie viele  \n", $page );
+        $this->assertStringContainsString( "> Names, in order  \n", $page, 'a stale translation is not used' );
+        $this->assertStringContainsString( "> Der erste Block  \n", $page, 'the translation of the same text is reused' );
+        $this->assertStringContainsString( "Standard: `5`.\n", $page );
+        $this->assertStringContainsString( "Count=5\n", $page, 'INI keys and values stay as they are' );
+        $this->assertStringContainsString( "## Siehe auch\n", $page );
+        $this->assertStringContainsString( '- [Die Einstellungsseite](../../../anleitungen/einstellungsseite.md)', $page, 'a translated page is linked' );
+        $this->assertStringContainsString( 'keywords: Einstellung, sample.ini', $page, 'the German keywords come first' );
+        $this->assertStringContainsString( ', setting, ', $page, 'the English keywords stay' );
+        // a page the translation does not have links the English file
+        $this->assertStringContainsString( '](../../../../eng-us/examples/README.md#how-the-generated-pages-are-made)', $page );
+
+        $missing = $generator->translation()->missingDescriptions();
+        $this->assertArrayHasKey( 'ini:settings/sample.ini [First] Names', $missing );
+        $this->assertArrayNotHasKey( 'ini:settings/sample.ini [First] Count', $missing );
+        $this->assertContains( '## Help text', $generator->translation()->missingStrings(), 'a text the table lacks is noted and shown in English' );
+        $this->assertStringContainsString( "## Help text\n", $one['doc/ger-de/beispiele/befehle/sample.md'] );
+
+        $map = $generator->pathMap();
+        $this->assertSame( 'examples/ini-settings/sample/First.md', $map['beispiele/ini-einstellungen/sample/First.md'] );
+        $this->assertSame( 'examples/commands/sample.md', $map['beispiele/befehle/sample.md'] );
+        $this->assertCount( count( $one ), $map );
+    }
+
+    /** HE-09 the English pages are the same with or without a translation in the same run */
+    public function testEnglishOutputUnchangedByTranslation()
+    {
+        $before = $this->generator()->build();
+        $german = new expHelpExamplesGenerator( $this->root, null, array( 'bin/php/sample.php', 'kernel/sample/module.php', 'settings/sample.ini' ), $this->german() );
+        $german->build();
+        $after = $this->generator()->build();
+        $this->assertSame( $before, $after );
+        $this->assertSame( array(), $this->generator()->pathMap(), 'the original has no path map entries' );
+        // the English page as the generator wrote it before translations existed
+        $this->assertSame( self::ENGLISH_FIRST_PAGE_SHA1, sha1( $before['doc/eng-us/examples/ini-settings/sample/First.md'] ) );
+        $this->assertSame( self::ENGLISH_PAGES_SHA1, sha1( serialize( $before ) ) );
+    }
+
+    /** sha1 of the fixture's English pages, built with the generator of before the translations (6.0.15) */
+    const ENGLISH_FIRST_PAGE_SHA1 = '9e51fd7b90d1b1a57e16ec7925d390aeb12095c3';
+    const ENGLISH_PAGES_SHA1 = 'b646d6a31b50120e40f7abb92ecc3959df7cbb11';
 
     /** HE-07 the page titles every admin page includes for its Help menu leave the generated pages out */
     public function testPageTitlesLeaveGeneratedPagesOut()

@@ -344,8 +344,8 @@ Jede Seite unten sagt, was sie über den Demo-Modus sagen muss, und verlinkt hie
 - **Glossare:** [Glossar](../../../eng-us/glossary.md), [für Hoster](../../hilfe/hosting/glossar-fuer-hoster.md),
   [für Erweiterungsentwickler](../../hilfe/erweiterungsentwicklung/teil-8-referenz/glossar-fuer-erweiterungsentwickler.md),
   [für Fürsprecher](../../hilfe/fuersprecher/glossar-fuer-fuersprecher.md), [für Partner](../../hilfe/partner/glossar-fuer-partner.md).
-- **Presse, Fürsprecher, Trainer, Partner und Vertrieb:** [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md),
-  [Presse: hier beginnen](../../../eng-us/help/press/press-start-here.md), [Sicherheit bei Live-Demos](../../hilfe/fuersprecher/sicherheit-bei-live-demos.md),
+- **Presse, Fürsprecher, Trainer, Partner und Vertrieb:** [Eine Demo-Installation einrichten](../../hilfe/presse/eine-demo-installation-einrichten.md),
+  [Presse: hier beginnen](../../hilfe/presse/presse-hier-beginnen.md), [Sicherheit bei Live-Demos](../../hilfe/fuersprecher/sicherheit-bei-live-demos.md),
   [Fürsprecher: hier beginnen](../../hilfe/fuersprecher/fuersprecher-hier-beginnen.md), [FAQ für Neulinge](../../hilfe/fuersprecher/faq-fuer-neue.md),
   [Trainer: hier beginnen](../../../eng-us/help/trainers/trainers-start-here.md), [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md),
   [Vertrieb und Marketing: hier beginnen](../../hilfe/geschaeft/vertrieb-und-marketing-hier-beginnen.md), [Demo-Skripte](../../hilfe/geschaeft/demo-drehbuecher.md),
@@ -358,4 +358,4 @@ Jede Seite unten sagt, was sie über den Demo-Modus sagen muss, und verlinkt hie
   [FAQ zum Demo-Modus](../../hilfe/demomodus-faq.md), [Probleme mit dem Demo-Modus](../../hilfe/hosting/runbooks/probleme-mit-dem-demomodus.md)
 - [Bekannte Passwörter werden abgelehnt](schwache-passwoerter-und-gueltigkeit-von-reset-links.md)
 - [Kapitel 13: Sicherheitshärtung für die Produktion](../../installation/13-sicherheitshaertung.md)
-- [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md)
+- [Eine Demo-Installation einrichten](../../hilfe/presse/eine-demo-installation-einrichten.md)

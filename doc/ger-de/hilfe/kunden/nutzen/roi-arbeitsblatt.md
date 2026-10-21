@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist eine Vorlage für den Betreiber, der einmal im Jahr prüft, was die Website eingebracht hat. Der Bereich
 für Unternehmen hat ein Arbeitsblatt, um über ein Projekt zu entscheiden, bevor es beginnt
-([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)). Dieses ist für danach: Es
+([Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)). Dieses ist für danach: Es
 stellt das Geplante neben das, was wirklich geschah, damit der Plan für das nächste Jahr besser wird. Die Kennzahlen
 werden unter [Den ROI messen](den-roi-messen.md) gewählt, und ein ausgefülltes Beispiel steht unter
 [ROI-Beispielannahmen](roi-beispielannahmen.md).
@@ -100,5 +100,5 @@ Checked by (someone who redid the arithmetic): ______    Date: ______
 - [Den ROI messen](den-roi-messen.md)
 - [ROI-Beispielannahmen](roi-beispielannahmen.md)
 - [Jährliche Überprüfung des Nutzens](jaehrliche-ueberpruefung-des-nutzens.md)
-- [Vorlage für ein ROI-Arbeitsblatt (vor einem Projekt)](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)
+- [Vorlage für ein ROI-Arbeitsblatt (vor einem Projekt)](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

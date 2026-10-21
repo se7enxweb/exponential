@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Personen, die verpacken und versenden, und für den Eigentümer, der die Versandbedingungen
 festlegt. Sie behandelt die tägliche Routine und die Änderungen, die ein laufender Shop vornimmt. Welche
 Versandwerkzeuge der Shop hat und wie Sie von einer Pauschale zu Regeln nach Zone oder Gewicht wachsen, steht unter
-[Versand und Abwicklung für Unternehmen](../../../../eng-us/help/businesses/stores/shipping-and-handling.md).
+[Versand und Abwicklung für Unternehmen](../../unternehmen/shops/versand-und-bearbeitung.md).
 
 ## Was Ihr Shop berechnet
 
@@ -21,7 +21,7 @@ Bestellung einmal eine feste Versandposition hinzufügt, umgerechnet in die Wäh
 Bestätigungsseite, sodass der Kunde die Kosten vor dem Bezahlen sieht. Betrag und Bezeichnung kommen aus
 `settings/workflow.ini [SimpleShippingWorkflow]`, ausgeliefert als `ShippingCost=12` und
 `ShippingDescription=Shipping`; Ihr Partner setzt Ihre Werte in einem Override
-([Versand und Abwicklung für Unternehmen](../../../../eng-us/help/businesses/stores/shipping-and-handling.md)).
+([Versand und Abwicklung für Unternehmen](../../unternehmen/shops/versand-und-bearbeitung.md)).
 
 Alles Weitere, etwa kostenloser Versand ab einem Bestellwert, Tarife nach Land oder Gewicht oder eine Auswahl für
 Expressversand, erfordert einen Versand-Handler, den ein Entwickler schreibt (`settings/shop.ini [ShippingSettings]`).
@@ -42,7 +42,7 @@ setzen darf, mit `FromStatus` und `ToStatus` an `shop/setstatus` (`kernel/shop/m
 ## Sendungsnummern
 
 Der Shop hat standardmäßig kein Feld für eine Sendungsnummer
-([Einen Shop im Alltag betreiben](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md)). Einigen Sie sich auf einen
+([Einen Shop im Alltag betreiben](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md)). Einigen Sie sich auf einen
 Ort und verwenden Sie ihn jedes Mal, zum Beispiel:
 
 - das eigene Portal des Versanddienstleisters, durchsuchbar nach Ihrer Bestellnummer;
@@ -78,7 +78,7 @@ Anzeichen dafür, dass Sie Versandregeln brauchen:
 - Bestellungen aus Ländern mit sehr unterschiedlichen Zustellkosten.
 
 Bitten Sie Ihren Partner um einen Versand-Handler, und geben Sie ihm die Preisliste Ihres Versanddienstleisters, die
-Länder, in die Sie versenden, und die gewünschte Regel ([Versand und Abwicklung für Unternehmen](../../../../eng-us/help/businesses/stores/shipping-and-handling.md)
+Länder, in die Sie versenden, und die gewünschte Regel ([Versand und Abwicklung für Unternehmen](../../unternehmen/shops/versand-und-bearbeitung.md)
 listet die gängigen Modelle). Etiketten, Buchung beim Versanddienstleister und Sendungsverfolgung bleiben außerhalb
 von Exponential, sofern sie nicht hinzugefügt werden ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)).
 
@@ -90,7 +90,7 @@ von Exponential, sofern sie nicht hinzugefügt werden ([Einen Shop betreiben: Ü
 
 ## Verwandte Seiten
 
-- [Versand und Abwicklung für Unternehmen](../../../../eng-us/help/businesses/stores/shipping-and-handling.md)
+- [Versand und Abwicklung für Unternehmen](../../unternehmen/shops/versand-und-bearbeitung.md)
 - [Bestellungen im Alltag](bestellungen-im-alltag.md)
 - [Retouren und Erstattungen](retouren-und-erstattungen.md)
 - [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Eigentümer und Shop-Leitungen, deren Shop Zahlungen online annimmt. Sie behandelt den laufenden
 Shop: was zu prüfen ist, was kaputtgehen kann und wen Sie fragen. Wie die Zahlung in die Kasse eingebunden ist und wie
-Sie einen Anbieter wählen, steht unter [Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md).
+Sie einen Anbieter wählen, steht unter [Zahlungsanbieter für Unternehmen](../../unternehmen/shops/zahlungsanbieter-fuer-unternehmen.md).
 
 ## Wie es funktioniert, in einem Absatz
 
@@ -20,7 +20,7 @@ aktiven Gateways auf, und ein Workflow mit dem Ereignis für das Payment-Gateway
 verbunden. An der Kasse bezahlt der Kunde, und die Bestellung wird aufgegeben, wenn der Workflow abgeschlossen ist
 ([Payment-Gateways für Website-Ersteller](../../../../eng-us/help/creators/website-creators/payment-gateways.md)). Das Projekt bietet
 `ezpaypal` (eine Weiterleitung zu PayPal) und `ezauthorize` (ein Kartenformular, das an Authorize.Net gesendet wird)
-([Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md)).
+([Zahlungsanbieter für Unternehmen](../../unternehmen/shops/zahlungsanbieter-fuer-unternehmen.md)).
 
 Wenn an der Kasse kein Zahlungsschritt eingerichtet ist, werden Bestellungen ohne Zahlung aufgegeben, und das
 Shop-Dashboard weist unter „Nächste Schritte“ darauf hin ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
@@ -61,7 +61,7 @@ die Anzeichen für jedes Problem unter [PayPal](paypal.md).
 
 > **Warnung**
 > Eine Website hinter einer Anmeldung, einer IP-Freigabeliste oder im Wartungsmodus kann Zahlungen annehmen, die nie
-> als bezahlt markiert werden, weil die Benachrichtigung des Anbieters abgewiesen wird ([PayPal-Zahlungen für Unternehmen](../../../../eng-us/help/businesses/stores/paypal-payments.md)).
+> als bezahlt markiert werden, weil die Benachrichtigung des Anbieters abgewiesen wird ([PayPal-Zahlungen für Unternehmen](../../unternehmen/shops/zahlungen-mit-paypal.md)).
 > Sagen Sie Ihrem Hoster Bescheid, bevor während der Geschäftszeiten des Shops der Wartungsmodus eingeschaltet wird.
 
 ## Wenn der Anbieter etwas ändert
@@ -91,6 +91,6 @@ nicht über Ihre Website laufen ([Kartenzahlungen und PCI](kartenzahlungen-und-p
 
 - [PayPal](paypal.md)
 - [Kartenzahlungen und PCI](kartenzahlungen-und-pci.md)
-- [Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md)
+- [Zahlungsanbieter für Unternehmen](../../unternehmen/shops/zahlungsanbieter-fuer-unternehmen.md)
 - [Payment-Gateways für Website-Ersteller](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

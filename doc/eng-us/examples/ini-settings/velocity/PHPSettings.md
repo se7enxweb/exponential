@@ -51,6 +51,10 @@ Never edit `settings/velocity.ini` itself: an update replaces it. Put the settin
 > the command line then did nothing. With 0 the file is checked on every  
 > include, which costs nothing measurable here: the server takes a stat of each  
 > include anyway.  
+> Memory: 512 MB for scripts and 64 MB for interned strings. The help center's index files are 18-24 MB each  
+> per language, and with 256/32 the interned strings buffer was full after a few help requests (measured on  
+> alpha, 2026-10-20: 32.0 of 32.0 MB, 141.6 of 256 MB used three minutes after a restart). The memory is  
+> shared by every worker of an instance and reserved, not used, until it fills.  
 > file\_update\_protection=0 for the same reason: the cache does not keep a script  
 > changed less than file\_update\_protection seconds before the REQUEST's start,  
 > and a worker's request started when the worker did. Every file written after  

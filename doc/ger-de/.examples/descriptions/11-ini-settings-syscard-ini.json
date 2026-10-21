@@ -1,0 +1,890 @@
+{
+    "ini:settings/syscard.ini": {
+        "en": "The system card of the console: ./console exp:expfetch, and its larger forms exp:info (an inventory) and exp:about\n(the project). The card is built from providers, one class per group of facts, drawn next to the Exponential \"e\"\n(doc/eng-us/features/6.0/system-card.md).\n\nExtensions add their own settings in extension/<ext>/settings/syscard.ini.append.php: a provider\n(ProviderClasses[]=myExtSysCardProvider), a theme ([Theme-<name>] and Themes[]=<name>), a logo directory\n(Directories[]=extension/<ext>/share/syscard/logos) or more settings for exp:info (Settings[]=...).\n\nThe card never shows a password, a key, a token or a full database address: a fact named like one is dropped and\na value that carries one is masked, whatever a provider returns.",
+        "de": "Die Systemkarte der Konsole: ./console exp:expfetch und ihre größeren Formen exp:info (ein Inventar) und exp:about\n(das Projekt). Die Karte wird aus Providern gebaut, eine Klasse pro Gruppe von Fakten, gezeichnet neben dem „e“ von Exponential\n(doc/eng-us/features/6.0/system-card.md).\n\nErweiterungen fügen ihre eigenen Einstellungen in extension/<ext>/settings/syscard.ini.append.php hinzu: einen Provider\n(ProviderClasses[]=myExtSysCardProvider), ein Theme ([Theme-<name>] und Themes[]=<name>), ein Logo-Verzeichnis\n(Directories[]=extension/<ext>/share/syscard/logos) oder weitere Einstellungen für exp:info (Settings[]=...).\n\nDie Karte zeigt nie ein Passwort, einen Schlüssel, ein Token oder eine vollständige Datenbankadresse: Ein so benannter Fakt entfällt, und\nein Wert, der eines enthält, wird maskiert, egal was ein Provider zurückgibt."
+    },
+    "ini:settings/syscard.ini [About] TextFile": {
+        "en": "The text of exp:about: blocks of \"@ <section> | <heading> | from <source>\", paragraphs and \"- Label: value\" rows",
+        "de": "Der Text von exp:about: Blöcke aus \"@ <section> | <heading> | from <source>\", Absätzen und Zeilen \"- Label: value\""
+    },
+    "ini:settings/syscard.ini [Database] AskVersion": {
+        "en": "enabled: connect once and ask the server for its version; disabled: show the type and host from site.ini only",
+        "de": "enabled: einmal verbinden und den Server nach seiner Version fragen; disabled: nur Typ und Host aus site.ini zeigen"
+    },
+    "ini:settings/syscard.ini [Display] Charset": {
+        "en": "auto (UTF-8 locale: block art and dots; else ASCII), unicode or ascii",
+        "de": "auto (UTF-8-Locale: Blockgrafik und Punkte; sonst ASCII), unicode oder ascii"
+    },
+    "ini:settings/syscard.ini [Display] ColorBars": {
+        "en": "The palette rows and the gradient bar at the end of the card (only with colors)",
+        "de": "Die Palettenzeilen und der Verlaufsbalken am Ende der Karte (nur mit Farben)"
+    },
+    "ini:settings/syscard.ini [Display] DefaultWidth": {
+        "en": "The width when the terminal does not say (COLUMNS, stty); --width= wins",
+        "de": "Die Breite, wenn das Terminal sie nicht nennt (COLUMNS, stty); --width= gewinnt"
+    },
+    "ini:settings/syscard.ini [Display] Hints": {
+        "en": "The Hints block at the end of the card",
+        "de": "Der Block Hinweise am Ende der Karte"
+    },
+    "ini:settings/syscard.ini [Display] Wordmark": {
+        "en": "The wordmark \"EXPONENTIAL\" under the big logo, when the terminal is wide enough",
+        "de": "Der Schriftzug \"EXPONENTIAL\" unter dem großen Logo, wenn das Terminal breit genug ist"
+    },
+    "ini:settings/syscard.ini [Inventory] Settings": {
+        "en": "The settings exp:info shows, as <file>/<block>/<name>. A setting whose name looks like a secret (password, key,\ntoken, user, login ...) is never shown, even when it is listed here.",
+        "de": "Die Einstellungen, die exp:info zeigt, als <file>/<block>/<name>. Eine Einstellung, deren Name wie ein Geheimnis aussieht (password, key,\ntoken, user, login ...), wird nie angezeigt, auch wenn sie hier aufgeführt ist."
+    },
+    "ini:settings/syscard.ini [Logo] Logo": {
+        "en": "The drawings: <Logo>-big.txt, <Logo>-small.txt, <Logo>-mini.txt (and .ascii.txt), wordmark.txt, in these\ndirectories (the last listed is looked in first)",
+        "de": "Die Zeichnungen: <Logo>-big.txt, <Logo>-small.txt, <Logo>-mini.txt (und .ascii.txt), wordmark.txt, in diesen\nVerzeichnissen (das zuletzt aufgeführte wird zuerst durchsucht)"
+    },
+    "ini:settings/syscard.ini [Php] SecuritySupportEnds": {
+        "en": "The end of security support of each PHP branch (https://www.php.net/supported-versions.php). A branch past its\ndate is an error on the card, one within WarnDays a warning.",
+        "de": "Das Ende der Sicherheitsunterstützung jedes PHP-Zweigs (https://www.php.net/supported-versions.php). Ein Zweig nach seinem\nDatum ist auf der Karte ein Fehler, einer innerhalb von WarnDays eine Warnung."
+    },
+    "ini:settings/syscard.ini [Providers] Enabled": {
+        "en": "Switch a provider off by its id (exponential, host, php, velocity, webserver, database, site, caches, help, cron,\ncomposer, extensions, siteaccess, settings, queue, about): Enabled[velocity]=disabled",
+        "de": "Einen Provider über seine ID abschalten (exponential, host, php, velocity, webserver, database, site, caches, help, cron,\ncomposer, extensions, siteaccess, settings, queue, about): Enabled[velocity]=disabled"
+    },
+    "ini:settings/syscard.ini [Providers] Priority": {
+        "en": "Change when a provider runs (the higher, the earlier; when the total budget is spent, the lowest are left out)\nand how many seconds it may take: Priority[help]=90, Budget[database]=5",
+        "de": "Ändern, wann ein Provider läuft (je höher, desto früher; ist das Gesamtbudget aufgebraucht, entfallen die niedrigsten),\nund wie viele Sekunden er brauchen darf: Priority[help]=90, Budget[database]=5"
+    },
+    "ini:settings/syscard.ini [Providers] ProviderClasses": {
+        "en": "The providers, in the order their facts are shown. A provider says itself which cards it belongs to: the ones\nof exp:expfetch are on all three cards, the inventory ones only on exp:info, the project ones only on exp:about.",
+        "de": "Die Provider, in der Reihenfolge, in der ihre Fakten angezeigt werden. Ein Provider sagt selbst, zu welchen Karten er gehört: Die\nvon exp:expfetch stehen auf allen drei Karten, die des Inventars nur auf exp:info, die des Projekts nur auf exp:about."
+    },
+    "ini:settings/syscard.ini [Runtime] Isolation": {
+        "en": "enabled: each provider runs in a child process that is ended when its budget is spent, so one that hangs (a\ndatabase that does not answer, a stalled disk) shows \"n/a (timeout)\" and never hangs the card (needs the pcntl and\nposix extensions of the command-line PHP; without them the providers keep their budget themselves)",
+        "de": "enabled: Jeder Provider läuft in einem Kindprozess, der beendet wird, wenn sein Budget aufgebraucht ist, sodass einer, der hängt (eine\nDatenbank, die nicht antwortet, eine blockierte Festplatte), \"n/a (timeout)\" zeigt und die Karte nie aufhält (braucht die Erweiterungen pcntl und\nposix des Kommandozeilen-PHP; ohne sie halten die Provider ihr Budget selbst ein)"
+    },
+    "ini:settings/syscard.ini [Runtime] TotalBudget": {
+        "en": "The seconds all providers together may take; the ones left after that show \"n/a (time)\"",
+        "de": "Die Sekunden, die alle Provider zusammen brauchen dürfen; die danach übrigen zeigen \"n/a (time)\""
+    },
+    "ini:settings/syscard.ini [Sections] Titles": {
+        "en": "Titles of the sections, by id: Titles[engine]=Engine",
+        "de": "Titel der Abschnitte, nach ID: Titles[engine]=Engine"
+    },
+    "ini:settings/syscard.ini [Theme-light]": {
+        "en": "For a terminal with a light background: darker colors",
+        "de": "Für ein Terminal mit hellem Hintergrund: dunklere Farben"
+    },
+    "ini:settings/syscard.ini [Theme-rainbow]": {
+        "en": "A theme: a #RRGGBB color per role (empty: the terminal's own color). Logo and LogoShade shade the \"e\" from the top\nto the bottom; Accent is the title and the section headings; Gradient[] the wordmark and the gradient bar, across\nthe columns or the lines (GradientDirection). <Role>16= names the basic color for a 16-color terminal (black, red,\ngreen, yellow, blue, magenta, cyan, white, bright-<name>) when the nearest one would look wrong.",
+        "de": "Ein Theme: eine Farbe #RRGGBB pro Rolle (leer: die eigene Farbe des Terminals). Logo und LogoShade schattieren das „e“ von oben\nnach unten; Accent ist der Titel und die Abschnittsüberschriften; Gradient[] der Schriftzug und der Verlaufsbalken, über\ndie Spalten oder die Zeilen (GradientDirection). <Role>16= nennt die Grundfarbe für ein Terminal mit 16 Farben (black, red,\ngreen, yellow, blue, magenta, cyan, white, bright-<name>), wenn die nächstliegende falsch aussähe."
+    },
+    "ini:settings/syscard.ini [Theme] Default": {
+        "en": "The theme used without --theme=",
+        "de": "Das ohne --theme= verwendete Theme"
+    },
+    "ini:settings/syscard.ini [Updates] AskUpdateInventory": {
+        "en": "enabled: count the packages that do not agree between composer.json, composer.lock and vendor/ (ezupdate's\ninventory, local files only, when the ezupdate extension is active)",
+        "de": "enabled: die Pakete zählen, die zwischen composer.json, composer.lock und vendor/ nicht übereinstimmen (das Inventar von ezupdate,\nnur lokale Dateien, wenn die Erweiterung ezupdate aktiv ist)"
+    },
+    "ini:settings/syscard.ini [Updates] CacheTime": {
+        "en": "Seconds the count is kept in the cache directory (var/<site>/cache/syscard/); 0 keeps nothing",
+        "de": "Sekunden, die die Zahl im Cache-Verzeichnis (var/<site>/cache/syscard/) behalten wird; 0 behält nichts"
+    },
+    "ini:settings/template.ini": {
+        "en": "Exponential configuration file for eZTemplate\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/template.ini.append or\n      settings/override/template.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für eZTemplate\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/template.ini.append oder\n      settings/override/template.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/template.ini [AttributeOperator]": {
+        "en": "To create custom tag list send the name of this list as the first parameter to\nsimpletags, e.g simpletags( 'mytags' ), then create a list named TagList_<yourname>\nwhere <yourname> is the name of the tag list\nExample:\nTagList_mytags[]\nConfiguration for the 'attribute' template operator",
+        "de": "Um eine eigene Tag-Liste zu erstellen, übergeben Sie den Namen dieser Liste als ersten Parameter an\nsimpletags, z. B. simpletags( 'mytags' ), und legen dann eine Liste namens TagList_<yourname> an,\nwobei <yourname> der Name der Tag-Liste ist\nBeispiel:\nTagList_mytags[]\nKonfiguration des Template-Operators 'attribute'"
+    },
+    "ini:settings/template.ini [AutoLinkOperator] MaxCharacters": {
+        "en": "The maximum number of characters to show in autolink\nlinks. Specify the maxium with a number or turn it\noff by having an empty string as the value.\nIf the link string is longer than the max value it will be shortened",
+        "de": "Die Höchstzahl der Zeichen, die in autolink-\nLinks angezeigt werden. Geben Sie das Maximum als Zahl an oder schalten Sie es\nmit einer leeren Zeichenkette als Wert ab.\nIst die Zeichenkette des Links länger als der Höchstwert, wird sie gekürzt"
+    },
+    "ini:settings/template.ini [AutoLinkOperator] Methods": {
+        "en": "Maximum 72 characters\nMaxCharacters=72\nNo shortening of characters\nMaxCharacters=\nA list of URL methods or protocols that should be matched",
+        "de": "Höchstens 72 Zeichen\nMaxCharacters=72\nKeine Kürzung der Zeichen\nMaxCharacters=\nEine Liste von URL-Methoden oder Protokollen, die erkannt werden sollen"
+    },
+    "ini:settings/template.ini [CharsetSettings] AutoConvertOnSave": {
+        "en": "The following setting will autoconvert the template to the HTTPCharset as set\nin i18n.ini:CharacterSettings:HTTPCharset when saving a template file from\nthe admin interface, and add or adjust the template header when required.",
+        "de": "Die folgende Einstellung wandelt das Template beim Speichern einer Template-Datei aus\nder Administrationsoberfläche automatisch in den HTTPCharset aus\ni18n.ini:CharacterSettings:HTTPCharset um und fügt den Template-Kopf bei Bedarf hinzu oder passt ihn an."
+    },
+    "ini:settings/template.ini [CharsetSettings] DefaultTemplateCharset": {
+        "en": "The charset to use if no charset is specified in the template",
+        "de": "Der Zeichensatz, der verwendet wird, wenn im Template keiner angegeben ist"
+    },
+    "ini:settings/template.ini [CharsetSettings] DefaultTemplateLocale": {
+        "en": "The locale to use for character manipulations if no locale is specified in\nthe template. (C is a special locale meaning 7-bit ASCII). Examples for this\nsetting include \"german\", \"de_DE.ISO-8859-1\"; depending on your operating\nsystem.",
+        "de": "Die Locale für Zeichenoperationen, wenn im Template keine angegeben ist.\n(C ist eine besondere Locale und bedeutet 7-Bit-ASCII). Beispiele für diese\nEinstellung sind \"german\", \"de_DE.ISO-8859-1\"; abhängig von Ihrem Betriebs-\nsystem."
+    },
+    "ini:settings/template.ini [ControlSettings] AllowUserVariables": {
+        "en": "User defined parameter.\nEx: http://example.com/developer/(poll_option)/5\nwill store poll_option 5 into the $view_parameters.poll_option in the template",
+        "de": "Benutzerdefinierter Parameter.\nBsp.: http://example.com/developer/(poll_option)/5\nspeichert poll_option 5 im Template in $view_parameters.poll_option"
+    },
+    "ini:settings/template.ini [ControlSettings] DisplayWarnings": {
+        "en": "Whether warnings from the template engine should be displayed\non the page or not.\nNote: Debug warnings are always shown if debug is on.",
+        "de": "Ob Warnungen der Template-Engine auf der Seite\nangezeigt werden.\nHinweis: Debug-Warnungen werden bei eingeschaltetem Debugging immer angezeigt."
+    },
+    "ini:settings/template.ini [ControlSettings] MaxLevel": {
+        "en": "Max level of template nesting to avoid infinite recursion",
+        "de": "Höchste Verschachtelungstiefe von Templates, um endlose Rekursion zu vermeiden"
+    },
+    "ini:settings/template.ini [PHP] PHPOperatorList": {
+        "en": "A list with php functions and their equivalent template operator names\nGiving the operators a different name from the PHP functions\nare recommended, that way you ensure that all operators follow\nthe same naming guidelines. It also means that you can change the\nphp function later on without doing template changes.\nNote: Only one parameter (the value) is supported and php function must\n      return result by value and not by reference.\nRFC 3986 encoding: a space becomes %20 (urlencode gives +), for path segments and\nfor values another system decodes with rawurldecode",
+        "de": "Eine Liste von PHP-Funktionen und den Namen ihrer gleichwertigen Template-Operatoren\nEs wird empfohlen, den Operatoren einen anderen Namen als den PHP-Funktionen\nzu geben; so stellen Sie sicher, dass alle Operatoren denselben\nBenennungsregeln folgen. Außerdem können Sie dann die\nPHP-Funktion später ändern, ohne Templates zu ändern.\nHinweis: Nur ein Parameter (der Wert) wird unterstützt, und die PHP-Funktion muss\n      das Ergebnis als Wert und nicht als Referenz zurückgeben.\nKodierung nach RFC 3986: Ein Leerzeichen wird zu %20 (urlencode ergibt +), für Pfadsegmente und\nfür Werte, die ein anderes System mit rawurldecode dekodiert"
+    },
+    "ini:settings/template.ini [SimpleTagsOperator]": {
+        "en": "Configuration for the 'simpletags' template operator",
+        "de": "Konfiguration des Template-Operators 'simpletags'"
+    },
+    "ini:settings/template.ini [SimpleTagsOperator] Extensions": {
+        "en": "A list of extension which should be examined for\nextra includes",
+        "de": "Eine Liste der Erweiterungen, die auf zusätzliche\nEinbindungen untersucht werden"
+    },
+    "ini:settings/template.ini [SimpleTagsOperator] IncludeList": {
+        "en": "A list of PHP files that should be included when the\n'simpletags' operator is used.\nIt will look in kernel/classes/simpletags or the simpletags\nsubdirectory of an extension (must be defined in Extensions)",
+        "de": "Eine Liste von PHP-Dateien, die eingebunden werden, wenn der\nOperator 'simpletags' verwendet wird.\nEs wird in kernel/classes/simpletags oder im Unterverzeichnis simpletags\neiner Erweiterung gesucht (muss in Extensions definiert sein)"
+    },
+    "ini:settings/template.ini [SimpleTagsOperator] TagList": {
+        "en": "The default setting for everything that is considered normal text,\nie. text not inside tags.\nDefines literal, strong and emphasize tags",
+        "de": "Die Standardeinstellung für alles, was als normaler Text gilt,\nd. h. Text außerhalb von Tags.\nDefiniert die Tags literal, strong und emphasize"
+    },
+    "ini:settings/template.ini [WashSettings] EmailDotText": {
+        "en": "Replacements strings for the . and @ in an email\nUsed to display emails in a way that SPAM engines\ncannot fetch automatically",
+        "de": "Ersatzzeichenketten für . und @ in einer E-Mail-Adresse\nDient dazu, E-Mail-Adressen so anzuzeigen, dass SPAM-Programme\nsie nicht automatisch auslesen können"
+    },
+    "ini:settings/textfile.ini": {
+        "en": "Exponential configuration file for the textfile based login handler",
+        "de": "Exponential-Konfigurationsdatei für den Login-Handler auf Basis einer Textdatei"
+    },
+    "ini:settings/textfile.ini [TextFileSettings] DefaultUserGroup": {
+        "en": "Default place to store users from textfile. Could be object id or group name,\ndepends on DefaultUserGroupType.",
+        "de": "Standardort für Benutzer aus der Textdatei. Kann die Objekt-ID oder der Gruppenname sein,\nje nach DefaultUserGroupType."
+    },
+    "ini:settings/textfile.ini [TextFileSettings] EmailAttribute": {
+        "en": "Field column nr for email",
+        "de": "Spaltennummer des Feldes für die E-Mail"
+    },
+    "ini:settings/textfile.ini [TextFileSettings] FileFieldSeparator": {
+        "en": "Could be tab, ';', ',', '\\' or other string separator\nExample: FileFieldSeparator=;",
+        "de": "Kann ein Tabulator, ';', ',', '\\' oder ein anderes Trennzeichen sein\nBeispiel: FileFieldSeparator=;"
+    },
+    "ini:settings/textfile.ini [TextFileSettings] FileName": {
+        "en": "textFile name",
+        "de": "Name der Textdatei"
+    },
+    "ini:settings/textfile.ini [TextFileSettings] FilePath": {
+        "en": "Where to find the text file,could be any directory under your Exponential\nroot directory. If the FilePath is root, the file should be saved under\nExponential root directory.\nExample: FilePath=var",
+        "de": "Wo die Textdatei liegt; kann jedes Verzeichnis unter dem Wurzelverzeichnis von Exponential\nsein. Ist FilePath die Wurzel, muss die Datei im\nWurzelverzeichnis von Exponential gespeichert sein.\nBeispiel: FilePath=var"
+    },
+    "ini:settings/textfile.ini [TextFileSettings] FirstNameAttribute": {
+        "en": "Field column nr for First name.",
+        "de": "Spaltennummer des Feldes für den Vornamen."
+    },
+    "ini:settings/textfile.ini [TextFileSettings] LastNameAttribute": {
+        "en": "Field column nr for Last name.",
+        "de": "Spaltennummer des Feldes für den Nachnamen."
+    },
+    "ini:settings/textfile.ini [TextFileSettings] LoginAttribute": {
+        "en": "Field column nr for login.",
+        "de": "Spaltennummer des Feldes für das Login."
+    },
+    "ini:settings/textfile.ini [TextFileSettings] PasswordAttribute": {
+        "en": "Field column nr for password.",
+        "de": "Spaltennummer des Feldes für das Passwort."
+    },
+    "ini:settings/textfile.ini [TextFileSettings] TextFileEnabled": {
+        "en": "Set to true if use the textfile login handler",
+        "de": "Auf true setzen, wenn der Login-Handler textfile verwendet wird"
+    },
+    "ini:settings/texttoimage.ini": {
+        "en": "Exponential configuration file for texttoimage template operator\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/texttoimage.ini.append or\n      settings/override/texttoimage.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für den Template-Operator texttoimage\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/texttoimage.ini.append oder\n      settings/override/texttoimage.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/toolbar.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/toolbar.ini.append or\n      settings/override/toolbar.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/toolbar.ini.append oder\n      settings/override/toolbar.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/transform.ini": {
+        "en": "Exponential configuration file for character transformations\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/transform.ini.append or\n      settings/override/transform.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für Zeichenumwandlungen\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/transform.ini.append oder\n      settings/override/transform.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/transform.ini [Transformation] Charsets": {
+        "en": "Maps from a charset to the unicode group\nThe group identifier can be used to load certain\nextra transformation files when that charset is used.\nEach entry consists of:\n<charset>;<group>\nThe latin group\nThe cyrrilic group\nThe greek group\nThe hebrew group",
+        "de": "Ordnet einem Zeichensatz die Unicode-Gruppe zu\nÜber den Gruppenbezeichner lassen sich bestimmte\nzusätzliche Umwandlungsdateien laden, wenn dieser Zeichensatz verwendet wird.\nJeder Eintrag besteht aus:\n<charset>;<group>\nDie lateinische Gruppe\nDie kyrillische Gruppe\nDie griechische Gruppe\nDie hebräische Gruppe"
+    },
+    "ini:settings/transform.ini [Transformation] Extensions": {
+        "en": "Extensions that have transformation files",
+        "de": "Erweiterungen, die Umwandlungsdateien haben"
+    },
+    "ini:settings/transform.ini [Transformation] Files": {
+        "en": "The standard transformation files to load",
+        "de": "Die zu ladenden Standard-Umwandlungsdateien"
+    },
+    "ini:settings/transform.ini [Transformation] Groups": {
+        "en": "The available transformation groups\neach group can define the rules it uses",
+        "de": "Die verfügbaren Umwandlungsgruppen;\njede Gruppe kann die Regeln festlegen, die sie verwendet"
+    },
+    "ini:settings/transform.ini [Transformation] Repository": {
+        "en": "Where to look for transformation files.\nThe files all end in .tr",
+        "de": "Wo nach Umwandlungsdateien gesucht wird.\nDie Dateien enden alle auf .tr"
+    },
+    "ini:settings/transform.ini [cyrillic]": {
+        "en": "Special transformations for cyrillic",
+        "de": "Besondere Umwandlungen für Kyrillisch"
+    },
+    "ini:settings/transform.ini [cyrillic] Extensions": {
+        "en": "Extensions that have transformation files when cyrillic is used",
+        "de": "Erweiterungen, die Umwandlungsdateien für Kyrillisch haben"
+    },
+    "ini:settings/transform.ini [cyrillic] Files": {
+        "en": "Extra transformation files for cyrillic",
+        "de": "Zusätzliche Umwandlungsdateien für Kyrillisch"
+    },
+    "ini:settings/transform.ini [greek]": {
+        "en": "Special transformations for greek",
+        "de": "Besondere Umwandlungen für Griechisch"
+    },
+    "ini:settings/transform.ini [greek] Extensions": {
+        "en": "Extensions that have transformation files when greek is used",
+        "de": "Erweiterungen, die Umwandlungsdateien für Griechisch haben"
+    },
+    "ini:settings/transform.ini [greek] Files": {
+        "en": "Extra transformation files for greek",
+        "de": "Zusätzliche Umwandlungsdateien für Griechisch"
+    },
+    "ini:settings/transform.ini [hebrew]": {
+        "en": "Special transformations for hebrew",
+        "de": "Besondere Umwandlungen für Hebräisch"
+    },
+    "ini:settings/transform.ini [hebrew] Extensions": {
+        "en": "Extensions that have transformation files when hebrew is used",
+        "de": "Erweiterungen, die Umwandlungsdateien für Hebräisch haben"
+    },
+    "ini:settings/transform.ini [hebrew] Files": {
+        "en": "Extra transformation files for hebrew",
+        "de": "Zusätzliche Umwandlungsdateien für Hebräisch"
+    },
+    "ini:settings/transform.ini [identifier]": {
+        "en": "Rules used by identifiers in Exponential in general.\nThe rules ensures that the text is transformed to\nascii equivalent characters.\nThe most important rules are the transliteration lowercase and\ndiacritical removal.",
+        "de": "Regeln, die allgemein für Bezeichner in Exponential gelten.\nDie Regeln sorgen dafür, dass der Text in gleichwertige\nASCII-Zeichen umgewandelt wird.\nDie wichtigsten Regeln sind Transliteration, Kleinschreibung und\ndas Entfernen diakritischer Zeichen."
+    },
+    "ini:settings/transform.ini [identifier] Commands": {
+        "en": "The commands to use for identifiers",
+        "de": "Die für Bezeichner verwendeten Befehle"
+    },
+    "ini:settings/transform.ini [identifier] Extensions": {
+        "en": "Extensions that have transformation files when identifiers are used",
+        "de": "Erweiterungen, die Umwandlungsdateien für Bezeichner haben"
+    },
+    "ini:settings/transform.ini [identifier] Files": {
+        "en": "Extra transformation files for identifiers",
+        "de": "Zusätzliche Umwandlungsdateien für Bezeichner"
+    },
+    "ini:settings/transform.ini [latin]": {
+        "en": "Special transformations for latin (latin1, latin extended-a, latin extended-b)",
+        "de": "Besondere Umwandlungen für Lateinisch (latin1, latin extended-a, latin extended-b)"
+    },
+    "ini:settings/transform.ini [latin] Extensions": {
+        "en": "Extensions that have transformation files when latin is used",
+        "de": "Erweiterungen, die Umwandlungsdateien für Lateinisch haben"
+    },
+    "ini:settings/transform.ini [latin] Files": {
+        "en": "Extra transformation files for latin",
+        "de": "Zusätzliche Umwandlungsdateien für Lateinisch"
+    },
+    "ini:settings/transform.ini [lowercase]": {
+        "en": "Rules which makes character into lowercase\nThese rules works in similar way to strtolower in PHP but will\nwork regardless of locale used.",
+        "de": "Regeln, die Zeichen in Kleinbuchstaben umwandeln\nDiese Regeln arbeiten ähnlich wie strtolower in PHP, funktionieren aber\nunabhängig von der verwendeten Locale."
+    },
+    "ini:settings/transform.ini [search]": {
+        "en": "[<group>]\nRules[]=<command>(<option>[,<option>])\nor\nRules[]=<command>\n\nCommands:\nnormalize\n- Normalizes multiple characters with similar meaning to one type\n- Looks for rule named <parameter>_normalize for each parameter\n- If no parameters are used it will find all normalize rules\n\nsearch_normalize\n- Runs normalization rules required for search engine\n- Looks for rule named <parameter>_search_normalize for each parameter\n- If no parameters are used it will find all search rules\n\ntransform\n- Transforms one type of character into another\n- Looks for rule named <parameter1>_to_<parameter2>\n- If no parameters are used it will find all transformation rules\n\ndecompose\n- Turns special characters into strings representing the character\n- Looks for rule named <parameter>_decompose for each parameter\n- If no parameters are used it will find all decompose rules\n\nlowercase\n- Turns characters into their lowercase variant if possible\n- Looks for rule named <parameter>_lowercase for each parameter\n- If no parameters are used it will find all lowercase rules\n\nuppercase\n- Turns characters into their uppercase variant if possible\n- Looks for rule named <parameter>_uppercase for each parameter\n- If no parameters are used it will find all uppercase rules\n\ntransliterate\n- Converts from one type of charset to another by finding similar\n  characters or strings\n- Looks for rule named <parameter1>_transliterate_<parameter2>\n- If no parameters are used it will find all transliteration rules\n\ndiacritical\n- Removes diacriticals from characters\n- Looks for rule named <parameter>_diacritical for each parameter\n- If no parameters are used it will find all diacritical rules\n\nrule\n- Runs custom transformation rule\n- Looks for rule named <parameter> for each parameter\n- If no parameters are used it will do nothing\n\nSpecial commands:\nurl_cleanup\n- Performs cleanups to make the text presentable in a URL\n\nidentifier_cleanup\n- Performs cleanups to make the text usable as an identifier\n\nsearch_cleanup:\n- Performs cleanup to make the text parsable by the search engine\n- Looks for rule named <parameter>_search_cleanup for each parameter\nRules used by the search engine, these rules ensures that\nthe index or search text is normalized in such way\nto make it easier for the engine to work with it.",
+        "de": "[<group>]\nRules[]=<command>(<option>[,<option>])\noder\nRules[]=<command>\n\nBefehle:\nnormalize\n- Fasst mehrere Zeichen mit ähnlicher Bedeutung zu einer Art zusammen\n- Sucht für jeden Parameter eine Regel namens <parameter>_normalize\n- Ohne Parameter findet er alle Normalisierungsregeln\n\nsearch_normalize\n- Führt die für die Suchmaschine nötigen Normalisierungsregeln aus\n- Sucht für jeden Parameter eine Regel namens <parameter>_search_normalize\n- Ohne Parameter findet er alle Suchregeln\n\ntransform\n- Wandelt eine Zeichenart in eine andere um\n- Sucht eine Regel namens <parameter1>_to_<parameter2>\n- Ohne Parameter findet er alle Umwandlungsregeln\n\ndecompose\n- Wandelt Sonderzeichen in Zeichenketten um, die das Zeichen darstellen\n- Sucht für jeden Parameter eine Regel namens <parameter>_decompose\n- Ohne Parameter findet er alle Zerlegungsregeln\n\nlowercase\n- Wandelt Zeichen, wenn möglich, in ihre Kleinbuchstabenform um\n- Sucht für jeden Parameter eine Regel namens <parameter>_lowercase\n- Ohne Parameter findet er alle Regeln für Kleinbuchstaben\n\nuppercase\n- Wandelt Zeichen, wenn möglich, in ihre Großbuchstabenform um\n- Sucht für jeden Parameter eine Regel namens <parameter>_uppercase\n- Ohne Parameter findet er alle Regeln für Großbuchstaben\n\ntransliterate\n- Wandelt von einem Zeichensatz in einen anderen um, indem er ähnliche\n  Zeichen oder Zeichenketten findet\n- Sucht eine Regel namens <parameter1>_transliterate_<parameter2>\n- Ohne Parameter findet er alle Transliterationsregeln\n\ndiacritical\n- Entfernt diakritische Zeichen\n- Sucht für jeden Parameter eine Regel namens <parameter>_diacritical\n- Ohne Parameter findet er alle Regeln für diakritische Zeichen\n\nrule\n- Führt eine eigene Umwandlungsregel aus\n- Sucht für jeden Parameter eine Regel namens <parameter>\n- Ohne Parameter tut er nichts\n\nBesondere Befehle:\nurl_cleanup\n- Bereinigt den Text, damit er in einer URL darstellbar ist\n\nidentifier_cleanup\n- Bereinigt den Text, damit er als Bezeichner verwendbar ist\n\nsearch_cleanup:\n- Bereinigt den Text, damit die Suchmaschine ihn parsen kann\n- Sucht für jeden Parameter eine Regel namens <parameter>_search_cleanup\nRegeln der Suchmaschine; diese Regeln sorgen dafür, dass\nder Index- oder Suchtext so normalisiert wird,\ndass die Suchmaschine leichter damit arbeiten kann."
+    },
+    "ini:settings/transform.ini [search] Commands": {
+        "en": "The commands to use for search\nCommands[]=transform",
+        "de": "Die für die Suche verwendeten Befehle\nCommands[]=transform"
+    },
+    "ini:settings/transform.ini [search] Extensions": {
+        "en": "Extensions that have transformation files when search is used",
+        "de": "Erweiterungen, die Umwandlungsdateien für die Suche haben"
+    },
+    "ini:settings/transform.ini [search] Files": {
+        "en": "Extra transformation files for search",
+        "de": "Zusätzliche Umwandlungsdateien für die Suche"
+    },
+    "ini:settings/transform.ini [uppercase]": {
+        "en": "Rules which makes character into uppercase\nThese rules works in similar way to strtoupper in PHP but will\nwork regardless of locale used.",
+        "de": "Regeln, die Zeichen in Großbuchstaben umwandeln\nDiese Regeln arbeiten ähnlich wie strtoupper in PHP, funktionieren aber\nunabhängig von der verwendeten Locale."
+    },
+    "ini:settings/transform.ini [urlalias]": {
+        "en": "Rule for URLAlias without support for IRI.\nAny unicode character not supported by the URI spec will be\ntransformed or removed to produce.\n\nNote: This was the old behaviour in Exponential.",
+        "de": "Regel für URL-Aliase ohne IRI-Unterstützung.\nJedes Unicode-Zeichen, das die URI-Spezifikation nicht unterstützt, wird\numgewandelt oder entfernt.\n\nHinweis: Dies war das alte Verhalten von Exponential."
+    },
+    "ini:settings/transform.ini [urlalias] Commands": {
+        "en": "The commands to use for search",
+        "de": "Die für die Suche verwendeten Befehle"
+    },
+    "ini:settings/transform.ini [urlalias] Extensions": {
+        "en": "Extensions that have transformation files when urlalias is used",
+        "de": "Erweiterungen, die Umwandlungsdateien für urlalias haben"
+    },
+    "ini:settings/transform.ini [urlalias] Files": {
+        "en": "Extra transformation files for urlalias",
+        "de": "Zusätzliche Umwandlungsdateien für urlalias"
+    },
+    "ini:settings/transform.ini [urlalias_compat]": {
+        "en": "Old rules used by the url alias system (nice urls), the rules\nensures that the text is transformed to ascii equivalent\ncharacters. The most important rules are the transliteration\nlowercase and diacritical removal.",
+        "de": "Alte Regeln des URL-Alias-Systems (schöne URLs); die Regeln\nsorgen dafür, dass der Text in gleichwertige ASCII-\nZeichen umgewandelt wird. Die wichtigsten Regeln sind Transliteration,\nKleinschreibung und das Entfernen diakritischer Zeichen."
+    },
+    "ini:settings/transform.ini [urlalias_compat] Commands": {
+        "en": "The commands to use for search\nThis is the old-style of urls with lowercase only and underscore for separators,",
+        "de": "Die für die Suche verwendeten Befehle\nDas ist die alte Form der URLs, nur in Kleinbuchstaben und mit Unterstrich als Trenner,"
+    },
+    "ini:settings/transform.ini [urlalias_iri]": {
+        "en": "Rules used by the url alias system (nice urls), the rules\nensures that the text is transformed to ascii equivalent\ncharacters. The most important rules are the transliteration\nlowercase and diacritical removal.\nRule for URLAlias with support for IRI.\nhttp://www.w3.org/International/O-URL-and-ident.html\n\nThis is highly recommended for most modern sites.\n\nNote: Remember to use utf-8 as your characters set for your site and database",
+        "de": "Regeln des URL-Alias-Systems (schöne URLs); die Regeln\nsorgen dafür, dass der Text in gleichwertige ASCII-\nZeichen umgewandelt wird. Die wichtigsten Regeln sind Transliteration,\nKleinschreibung und das Entfernen diakritischer Zeichen.\nRegel für URL-Aliase mit IRI-Unterstützung.\nhttp://www.w3.org/International/O-URL-and-ident.html\n\nDas wird für die meisten modernen Websites dringend empfohlen.\n\nHinweis: Verwenden Sie utf-8 als Zeichensatz für Ihre Website und Datenbank"
+    },
+    "ini:settings/transform.ini [urlalias_iri] Commands": {
+        "en": "The commands to use for search\nPerform IRI cleanup only, this means that almost all unicode characters\nare allowed in urls, the exceptions are: space, ampersand and semi-colon.",
+        "de": "Die für die Suche verwendeten Befehle\nNur die IRI-Bereinigung ausführen; damit sind in URLs fast alle Unicode-Zeichen\nerlaubt, die Ausnahmen sind: Leerzeichen, Und-Zeichen und Semikolon."
+    },
+    "ini:settings/uiswitch.ini": {
+        "en": "UI switch: choices a signed-in user makes for the administration interface itself (the display\nlanguage first), kept in the session and applied early in every request. Content languages are\nnever changed. Guide: doc/eng-us/guides/ui-switch-settings.md; provider API: doc/eng-us/bc/6.0/ui-switch.md\n\nDo not edit this file: override it in settings/override/uiswitch.ini.append.php, in a siteaccess's\nuiswitch.ini.append.php or in an extension's settings.",
+        "de": "Oberflächenschalter: Entscheidungen, die ein angemeldeter Benutzer für die Administrationsoberfläche selbst trifft (zuerst die Anzeige-\nsprache), in der Sitzung gehalten und früh in jeder Anfrage angewendet. Inhaltssprachen werden\nnie geändert. Anleitung: doc/eng-us/guides/ui-switch-settings.md; Provider-API: doc/eng-us/bc/6.0/ui-switch.md\n\nBearbeiten Sie diese Datei nicht: Überschreiben Sie sie in settings/override/uiswitch.ini.append.php, in der\nuiswitch.ini.append.php eines Siteaccess oder in den Einstellungen einer Erweiterung."
+    },
+    "ini:settings/uiswitch.ini [UISwitchSettings] Enabled": {
+        "en": "true | false. Off: no choice is offered or applied anywhere.",
+        "de": "true | false. Aus: Nirgends wird eine Wahl angeboten oder angewendet."
+    },
+    "ini:settings/uiswitch.ini [UISwitchSettings] ProviderList": {
+        "en": "The providers, in toolbar order. Each needs a [UISwitch_<identifier>] group with Class=, and gets\nthe policy function uiswitch/<identifier>.",
+        "de": "Die Provider, in der Reihenfolge der Werkzeugleiste. Jeder braucht eine Gruppe [UISwitch_<identifier>] mit Class= und erhält\ndie Richtlinienfunktion uiswitch/<identifier>."
+    },
+    "ini:settings/uiswitch.ini [UISwitchSettings] SiteAccessList": {
+        "en": "The siteaccesses where the choices work. Empty: every siteaccess whose design list has an\nadministration design (admin, admin2, admin3, admin4, admin4l, adminui; the editor and adminui\nsiteaccesses fall back to them). Never a public site.",
+        "de": "Die Siteaccesses, in denen die Auswahlen wirken. Leer: jeder Siteaccess, dessen Design-Liste ein\nAdministrations-Design enthält (admin, admin2, admin3, admin4, admin4l, adminui; die Siteaccesses editor und adminui\nfallen auf sie zurück). Nie eine öffentliche Website."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_design] AllowedValues": {
+        "en": "The designs a user may choose, in toolbar order. A design is offered only when it has a\nDesignChain[] entry below and the design exists (design/<design>, or design/<design> of an active\ndesign extension); the siteaccess's own SiteDesign is always offered and choosing it clears the\nswitch. adminui needs the exp_adminui extension active on the siteaccess (its design is then a\ndesign extension), admin_classic the sevenx_themes_admin_classic extension. Every design offered\nmust render the right toolbar (toolbar/full/admin_ui_switch.tpl),\nor a user who chose it cannot choose again. The current designs come first, the older ones\n(AdminUI and the classic designs, labelled \"(older)\") last.",
+        "de": "Die Designs, die ein Benutzer wählen darf, in der Reihenfolge der Werkzeugleiste. Ein Design wird nur angeboten, wenn es unten einen\nEintrag DesignChain[] hat und das Design existiert (design/<design> oder design/<design> einer aktiven\nDesign-Erweiterung); das eigene SiteDesign des Siteaccess wird immer angeboten, und seine Wahl hebt den\nSchalter auf. adminui braucht die im Siteaccess aktive Erweiterung exp_adminui (ihr Design ist dann eine\nDesign-Erweiterung), admin_classic die Erweiterung sevenx_themes_admin_classic. Jedes angebotene Design\nmuss die rechte Werkzeugleiste rendern (toolbar/full/admin_ui_switch.tpl),\nsonst kann ein Benutzer, der es gewählt hat, nicht erneut wählen. Die aktuellen Designs kommen zuerst, die älteren\n(AdminUI und die klassischen Designs, als „(älter)“ beschriftet) zuletzt."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_design] Class": {
+        "en": "The design of the administration interface: site.ini [DesignSettings] SiteDesign and\nAdditionalSiteDesignList[] for this user's requests. Policy: uiswitch/design.",
+        "de": "Das Design der Administrationsoberfläche: site.ini [DesignSettings] SiteDesign und\nAdditionalSiteDesignList[] für die Anfragen dieses Benutzers. Richtlinie: uiswitch/design."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_design] DesignChain": {
+        "en": "The fallback designs each choice runs with (AdditionalSiteDesignList[]), separated by \";\",\nmost specific first. Empty: the design and the standard design only.",
+        "de": "Die Ausweich-Designs, mit denen jede Wahl läuft (AdditionalSiteDesignList[]), durch \";\" getrennt,\ndas spezifischste zuerst. Leer: nur das Design und das Standard-Design."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_design] DesignLabel": {
+        "en": "The names shown in the toolbar (translated in the context kernel/uiswitch).",
+        "de": "Die in der Werkzeugleiste angezeigten Namen (übersetzt im Kontext kernel/uiswitch)."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_design] RememberPreference": {
+        "en": "enabled: the choice is also kept in the user's preferences and comes back at the next sign-in.\ndisabled (default): it ends with the session, at logout.",
+        "de": "enabled: Die Wahl wird auch in den Einstellungen des Benutzers gehalten und kehrt bei der nächsten Anmeldung zurück.\ndisabled (Standard): Sie endet mit der Sitzung, beim Abmelden."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_language] AllLanguages": {
+        "en": "enabled: every locale of share/locale (without the format variants such as eng-GB@euro) is offered and listed\nA-Z after the groups (\"All languages\"). disabled: only the groups and AllowedValues[]; those no group names are\nlisted A-Z as \"More languages\".",
+        "de": "enabled: Jede Locale aus share/locale (ohne die Formatvarianten wie eng-GB@euro) wird angeboten und\nnach den Gruppen von A bis Z aufgeführt („Alle Sprachen“). disabled: nur die Gruppen und AllowedValues[]; die, die keine Gruppe nennt, werden\nvon A bis Z als „Weitere Sprachen“ aufgeführt."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_language] AllowedValues": {
+        "en": "More locales to offer, outside the groups (a format variant such as eng-GB@euro, or a list of its own when\nGroupList[] is empty and AllLanguages=disabled). A test language (TestLanguage=true in its locale file, such as\nLorem Ipsum, qlo-ZZ) is never in a group or in the A-Z list of AllLanguages; only naming it here offers it.",
+        "de": "Weitere anzubietende Locales außerhalb der Gruppen (eine Formatvariante wie eng-GB@euro oder eine eigene Liste, wenn\nGroupList[] leer ist und AllLanguages=disabled). Eine Testsprache (TestLanguage=true in ihrer Locale-Datei, etwa\nLorem Ipsum, qlo-ZZ) steht nie in einer Gruppe oder in der Liste von A bis Z von AllLanguages; nur wer sie hier nennt, bietet sie an."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_language] Class": {
+        "en": "The display language of the interface: site.ini [RegionalSettings] Locale for this user's requests\n(translations, date and number formats). Policy: uiswitch/language.",
+        "de": "Die Anzeigesprache der Oberfläche: site.ini [RegionalSettings] Locale für die Anfragen dieses Benutzers\n(Übersetzungen, Datums- und Zahlenformate). Richtlinie: uiswitch/language."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_language] GroupLabel": {
+        "en": "The group headings (translated in the context kernel/uiswitch/language).",
+        "de": "Die Überschriften der Gruppen (übersetzt im Kontext kernel/uiswitch/language)."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_language] GroupList": {
+        "en": "The languages a user may choose, shown grouped: first the groups of GroupList[] in their order (each\nGroupValues_<group>[] in the order given, ranked by how many administrators worldwide need them; why the\ndefaults are what they are: doc/eng-us/features/6.0/ui-switch-languages.md), then every offered language A-Z by its\nname. A locale is offered only when share/locale/<locale>.ini exists; the siteaccess's own Locale is always\noffered and choosing it clears the switch. A language without a translation of the interface keeps English\ntexts with its own date and number formats, and says so in the list (\"no translation yet\").",
+        "de": "Die Sprachen, die ein Benutzer wählen darf, gruppiert angezeigt: zuerst die Gruppen aus GroupList[] in ihrer Reihenfolge (jede\nGroupValues_<group>[] in der angegebenen Reihenfolge, nach der Zahl der Administratoren weltweit geordnet, die sie brauchen; warum die\nStandards so sind, wie sie sind: doc/eng-us/features/6.0/ui-switch-languages.md), dann jede angebotene Sprache von A bis Z nach ihrem\nNamen. Eine Locale wird nur angeboten, wenn share/locale/<locale>.ini existiert; die eigene Locale des Siteaccess wird immer\nangeboten, und ihre Wahl hebt den Schalter auf. Eine Sprache ohne Übersetzung der Oberfläche behält englische\nTexte mit ihren eigenen Datums- und Zahlenformaten und sagt das in der Liste („noch keine Übersetzung“)."
+    },
+    "ini:settings/uiswitch.ini [UISwitch_language] ListUntranslated": {
+        "en": "enabled: languages without a translation of the interface (share/translations/<locale>/translation.ts) are\noffered too, marked \"no translation yet\". disabled: only English and the translated languages.",
+        "de": "enabled: Sprachen ohne Übersetzung der Oberfläche (share/translations/<locale>/translation.ts) werden\nebenfalls angeboten, als „noch keine Übersetzung“ markiert. disabled: nur Englisch und die übersetzten Sprachen."
+    },
+    "ini:settings/units.ini": {
+        "en": "Base units\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/units.ini.append or\n      settings/override/units.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Basiseinheiten\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/units.ini.append oder\n      settings/override/units.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/units.ini [BinaryPrefixes]": {
+        "en": "Each entry is an array with the factor value and the symbol\nThe factor used for calculating values in the power of 2",
+        "de": "Jeder Eintrag ist ein Array mit dem Faktor und dem Symbol\nDer Faktor für die Berechnung von Werten in Zweierpotenzen"
+    },
+    "ini:settings/units.ini [DecimalPrefixes]": {
+        "en": "Each entry is an array with the factor value and the symbol\nThe factor used for calculating values in the power of 10",
+        "de": "Jeder Eintrag ist ein Array mit dem Faktor und dem Symbol\nDer Faktor für die Berechnung von Werten in Zehnerpotenzen"
+    },
+    "ini:settings/upload.ini": {
+        "en": "Exponential configuration file for content browsing.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/upload.ini.append or\n      settings/override/upload.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\nSettings for the upload page.\nFor start nodes and top level nodes it is possible to use text aliases\nYou can use the following aliases:\n content - Represents the content root node defined NodeSettings/RootNode in content.ini, usually 2\n users   - Represents the users root node defined NodeSettings/UserRootNode in content.ini, usually 5\nOther aliases are also possible by defining them in AliasList below",
+        "de": "Exponential-Konfigurationsdatei für das Durchsuchen von Inhalten.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/upload.ini.append oder\n      settings/override/upload.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\nEinstellungen der Upload-Seite.\nFür Startknoten und Knoten der obersten Ebene können Text-Aliase verwendet werden\nSie können die folgenden Aliase verwenden:\n content - steht für den Wurzelknoten der Inhalte, definiert in NodeSettings/RootNode in content.ini, meist 2\n users   - steht für den Wurzelknoten der Benutzer, definiert in NodeSettings/UserRootNode in content.ini, meist 5\nWeitere Aliase sind möglich, wenn Sie sie unten in AliasList definieren"
+    },
+    "ini:settings/upload.ini [CreateSettings] DefaultClass": {
+        "en": "Example of OpenOffice.org handling\nMimeUploadHandlerMap[application/vnd.sun.xml.writer]=ezopenofficeupload\nThe system will then look for ezopenofficeupload.php\nThe class for all files that are not recognized.\nThe default is to use the file class",
+        "de": "Beispiel für die Behandlung von OpenOffice.org\nMimeUploadHandlerMap[application/vnd.sun.xml.writer]=ezopenofficeupload\nDas System sucht dann nach ezopenofficeupload.php\nDie Klasse für alle Dateien, die nicht erkannt werden.\nStandard ist die Klasse file"
+    },
+    "ini:settings/upload.ini [CreateSettings] MimeClassMap": {
+        "en": "Maps from a mime-type or mime-group to a class identifier",
+        "de": "Ordnet einem MIME-Typ oder einer MIME-Gruppe einen Klassenbezeichner zu"
+    },
+    "ini:settings/upload.ini [CreateSettings] MimeUploadHandlerMap": {
+        "en": "Maps from MIME-Type to the name of an upload handler\nIf the handler is found for the given MIME-Type it will be\nused instead of the normal attribute based upload.\nThe syntax is\nMimeUploadHandlerMap[<mime-type>]=<handler_identifier>\nThe <handler_identifier> will be used for the class name as well\nas the filename of the PHP file.\nThe <mime_type> can either be specified by the full MIME-Type like\nMimeUploadHandlerMap[image/jpeg]\nwith just the group\nMimeUploadHandlerMap[image]\nBy using just the group the handler can take care of a whole set of mime-types",
+        "de": "Ordnet einem MIME-Typ den Namen eines Upload-Handlers zu\nWird für den angegebenen MIME-Typ ein Handler gefunden, wird er\nstatt des normalen attributbasierten Uploads verwendet.\nDie Syntax ist\nMimeUploadHandlerMap[<mime-type>]=<handler_identifier>\nDer <handler_identifier> wird sowohl als Klassenname als auch\nals Dateiname der PHP-Datei verwendet.\nDer <mime_type> lässt sich entweder mit dem vollen MIME-Typ angeben, etwa\nMimeUploadHandlerMap[image/jpeg]\noder nur mit der Gruppe\nMimeUploadHandlerMap[image]\nMit nur der Gruppe kann der Handler eine ganze Reihe von MIME-Typen übernehmen"
+    },
+    "ini:settings/upload.ini [LocationSettings] ClassList": {
+        "en": "A list of class identifiers that should be included in the location dropdown",
+        "de": "Eine Liste der Klassenbezeichner, die in das Auswahlfeld für den Ort aufgenommen werden"
+    },
+    "ini:settings/upload.ini [LocationSettings] MaxDepth": {
+        "en": "The maximum number of levels to look for objects\nA depth of 1 means direct descendants",
+        "de": "Die Höchstzahl der Ebenen, in denen nach Objekten gesucht wird\nEine Tiefe von 1 bedeutet direkte Nachkommen"
+    },
+    "ini:settings/upload.ini [LocationSettings] MaxItems": {
+        "en": "The maxium number of elements in the drop down\nSetting it too high might slow down the system and make the dropdown hard to use.\nA number between 10 to 30 is OK.",
+        "de": "Die Höchstzahl der Elemente im Auswahlfeld\nEin zu hoher Wert kann das System verlangsamen und das Auswahlfeld schwer bedienbar machen.\nEine Zahl zwischen 10 und 30 ist in Ordnung."
+    },
+    "ini:settings/upload.ini [LocationSettings] RootNode": {
+        "en": "Which root node to fetch locations from\nEither use a node ID or a node path (e.g. media )\n- content - The content structure\n- users   - The user tree\n- media   - Media tree for images, files and media",
+        "de": "Von welchem Wurzelknoten die Orte geholt werden\nVerwenden Sie eine Knoten-ID oder einen Knotenpfad (z. B. media )\n- content - die Inhaltsstruktur\n- users   - der Benutzerbaum\n- media   - der Medienbaum für Bilder, Dateien und Medien"
+    },
+    "ini:settings/upload.ini [RelatedObjectUpload]": {
+        "en": "Example of action, the group name is named just what the action is named\n[ExampleAction]\n# The navigation part to use for the page (optional)\nNavigationPartIdentifier=ezcontentnavigationpart\n# The type of the return values, possible values are:\n#   NodeID - Returns the node ids of the selected items\n#   ObjectID - Returns the object ids of the selected items\nReturnType=NodeID\n# An array with nodes where the object should be placed  (optional)\n# Each entry is either an alias or the node ID.\n# Aliases can be defined in the AliasList variable at the top of this file\n# or one of the system defined aliases can be used.\n# The system defined aliases are:\n# content, users, media, setup\nParentNodes[]\nParentNodes[]=media\nAction used when uploading a new file as related object",
+        "de": "Beispiel einer Aktion; die Gruppe heißt genauso wie die Aktion\n[ExampleAction]\n# The navigation part to use for the page (optional)\nNavigationPartIdentifier=ezcontentnavigationpart\n# The type of the return values, possible values are:\n#   NodeID - Returns the node ids of the selected items\n#   ObjectID - Returns the object ids of the selected items\nReturnType=NodeID\n# An array with nodes where the object should be placed  (optional)\n# Each entry is either an alias or the node ID.\n# Aliases can be defined in the AliasList variable at the top of this file\n# or one of the system defined aliases can be used.\n# The system defined aliases are:\n# content, users, media, setup\nParentNodes[]\nParentNodes[]=media\nAktion beim Hochladen einer neuen Datei als verknüpftes Objekt"
+    },
+    "ini:settings/upload.ini [UploadSettings] AliasList": {
+        "en": "A map of node aliases to node ids, here it's possible to define custom alias names\nIt maps from the alias name to a node ID",
+        "de": "Eine Zuordnung von Knoten-Aliasen zu Knoten-IDs; hier lassen sich eigene Alias-Namen definieren\nSie ordnet dem Alias-Namen eine Knoten-ID zu"
+    },
+    "ini:settings/upload.ini [image_ClassSettings]": {
+        "en": "Consists of the class identifier name with _ClassSettings appended\nThis example is the for 'image' identifier.\n[image_ClassSettings]\n\nThe class attribute identifier which will get the file data\nFileAttribute=image\n\nThe class attribute identifier which will get the name,\nthe name is calculated using NamePattern\nNameAttribute=name\n\nA pattern that defines the name of the object, it is\ncontains text and tags enclosed in < and >.\nAvailable tags are:\n- original_filename:        The filename of the uploaded file like it was on the locale machine\n- original_filename_base:   Like original_filename but has just the base of the name (i.e no suffix)\n- original_filename_suffix: Like original_filename but has just suffix\n- mime_type:                The detected MIME-Type of the file\nNamePattern=<original_filename_base>",
+        "de": "Besteht aus dem Namen des Klassenbezeichners mit angehängtem _ClassSettings\nDieses Beispiel ist für den Bezeichner 'image'.\n[image_ClassSettings]\n\nDer Bezeichner des Klassenattributs, das die Dateidaten erhält\nFileAttribute=image\n\nDer Bezeichner des Klassenattributs, das den Namen erhält;\nder Name wird mit NamePattern berechnet\nNameAttribute=name\n\nEin Muster, das den Namen des Objekts festlegt; es\nenthält Text und Tags in < und >.\nVerfügbare Tags sind:\n- original_filename:        der Dateiname der hochgeladenen Datei, wie er auf dem lokalen Rechner war\n- original_filename_base:   wie original_filename, aber nur der Stamm des Namens (d. h. ohne Endung)\n- original_filename_suffix: wie original_filename, aber nur die Endung\n- mime_type:                der erkannte MIME-Typ der Datei\nNamePattern=<original_filename_base>"
+    },
+    "ini:settings/velocity.ini [ApplicationSettings] KeepGlobals": {
+        "en": "Globals the application keeps between requests.\n\nA registry filled by a file the kernel reaches with include_once cannot be\nrefilled once cleared, because include_once will not run that file again.\nFour registries in this kernel are built that way -- datatypes, workflow\nevents, notification events and payment gateways -- and clearing one leaves\na worker unable to resolve it for the rest of its life.\n\nThose are facts about the kernel, so they are exp:velocity's built-in\ndefaults (expVelocity::DEFAULT_KEEP_GLOBALS) and need no setting. This list\nADDS to them, as does --keep-global=Name[,Name] on start, restart and\ncommand; each name is kept once. `exp:velocity command` shows the result.\n\nNothing else belongs here. Request-scoped globals must be cleared, and\nkeeping one leaks a request into the next.",
+        "de": "Globals, die die Anwendung zwischen Anfragen behält.\n\nEin Register, das von einer Datei befüllt wird, die der Kernel mit include_once erreicht, lässt sich\nnach dem Leeren nicht neu befüllen, weil include_once diese Datei nicht erneut ausführt.\nVier Register dieses Kernels werden so aufgebaut (Datentypen, Workflow-\nEreignisse, Benachrichtigungsereignisse und Zahlungs-Gateways), und das Leeren eines davon lässt\neinen Worker für den Rest seines Lebens unfähig, es aufzulösen.\n\nDas sind Tatsachen über den Kernel, sie sind also die eingebauten\nStandards von exp:velocity (expVelocity::DEFAULT_KEEP_GLOBALS) und brauchen keine Einstellung. Diese Liste\nERGÄNZT sie, ebenso --keep-global=Name[,Name] bei start, restart und\ncommand; jeder Name wird einmal behalten. `exp:velocity command` zeigt das Ergebnis.\n\nSonst gehört nichts hierher. Globals mit Anfrage-Gültigkeit müssen geleert werden, und\neines zu behalten lässt eine Anfrage in die nächste durchsickern."
+    },
+    "ini:settings/velocity.ini [ApplicationSettings] KeepGlobalsDefaults": {
+        "en": "enabled (default) keeps the built-in list; disabled starts from nothing,\nfor a kernel that does not build those registries.",
+        "de": "enabled (Standard) behält die eingebaute Liste; disabled beginnt bei nichts,\nfür einen Kernel, der diese Register nicht aufbaut."
+    },
+    "ini:settings/velocity.ini [CacheSettings] APCu": {
+        "en": "Small responses in APCu, shared by every worker; larger ones on disk.\nAPCuMaxSize is the size limit in bytes, 0 leaves the server's 65536.",
+        "de": "Kleine Antworten in APCu, gemeinsam für jeden Worker; größere auf der Festplatte.\nAPCuMaxSize ist die Größengrenze in Bytes, 0 belässt die 65536 des Servers."
+    },
+    "ini:settings/velocity.ini [CacheSettings] DefaultTtl": {
+        "en": "Seconds an anonymous page is kept. Exponential sends\nCache-Control: no-cache, must-revalidate, which the server does not treat as\na refusal, so a page is stored only when it has a lifetime -- its own\nmax-age, or this. 0 caches only responses that bring their own.\n\nThe trade: a visitor may see a page up to this old, and a page that differs\nbetween anonymous visitors without a cookie telling them apart would be\nshared between them. Signed-in visitors are never served from the cache.",
+        "de": "Sekunden, die eine anonyme Seite behalten wird. Exponential sendet\nCache-Control: no-cache, must-revalidate, was der Server nicht als\nAblehnung behandelt; eine Seite wird also nur gespeichert, wenn sie eine Lebensdauer hat, ihr\neigenes max-age oder dieses. 0 cacht nur Antworten, die ihre eigene mitbringen.\n\nDer Preis: Ein Besucher sieht eine Seite eventuell bis zu so alt, und eine Seite, die sich\nzwischen anonymen Besuchern ohne ein sie unterscheidendes Cookie unterscheidet, würde\nzwischen ihnen geteilt. Angemeldete Besucher werden nie aus dem Cache bedient."
+    },
+    "ini:settings/velocity.ini [CacheSettings] Dir": {
+        "en": "Where entries too large for shared memory are kept. Relative paths resolve\nagainst the installation root. Left to itself the server would put them in\nfiles/cache/reverse of the directory above the document root.",
+        "de": "Wo Einträge gehalten werden, die für den gemeinsamen Speicher zu groß sind. Relative Pfade gelten\nab dem Wurzelverzeichnis der Installation. Sich selbst überlassen, würde der Server sie in\nfiles/cache/reverse des Verzeichnisses über dem Dokumentenverzeichnis legen."
+    },
+    "ini:settings/velocity.ini [CacheSettings] Enabled": {
+        "en": "The server's response cache, in front of the workers. A hit is answered by\nthe parent process -- no fork, no PHP, no database. Measured on this\ninstallation, anonymous front page: about 3,500 req/s from the cache\nagainst 27 rendered.\n\nThe settings further down that used to live in [ServerSettings] as\nCacheSkipCookies, CacheStaleWhileRevalidate, CacheNotFoundSeconds,\nMinifyCachedHtml and MiddleOutCompression still work there; a value here\nwins.\n\nNeeds qbix-webserver v0.0.4.26 or later: older versions matched the session\ncookie by its exact name, never recognised eZSESSID<digest>, and served a\nsigned-in visitor's pages to everybody.",
+        "de": "Der Antwort-Cache des Servers, vor den Workern. Einen Treffer beantwortet\nder Elternprozess: kein Fork, kein PHP, keine Datenbank. Gemessen auf dieser\nInstallation, anonyme Startseite: etwa 3.500 Anfragen/s aus dem Cache\ngegenüber 27 gerenderten.\n\nDie Einstellungen weiter unten, die früher in [ServerSettings] als\nCacheSkipCookies, CacheStaleWhileRevalidate, CacheNotFoundSeconds,\nMinifyCachedHtml und MiddleOutCompression standen, funktionieren dort weiterhin; ein Wert hier\ngewinnt.\n\nBraucht qbix-webserver v0.0.4.26 oder später: Ältere Versionen erkannten das Sitzungs-\ncookie an seinem genauen Namen, erkannten eZSESSID<digest> nie und lieferten die Seiten\neines angemeldeten Besuchers an alle aus."
+    },
+    "ini:settings/velocity.ini [CacheSettings] FileMode": {
+        "en": "Permissions, octal, as in [LogSettings]. A cached page is what an anonymous\nvisitor sees, but nothing else on the machine needs to read it.",
+        "de": "Berechtigungen, oktal, wie in [LogSettings]. Eine gecachte Seite ist das, was ein anonymer\nBesucher sieht, aber sonst muss sie auf dem Rechner niemand lesen."
+    },
+    "ini:settings/velocity.ini [CacheSettings] HonorRequestNoCache": {
+        "en": "A request carrying Cache-Control: no-cache (or Pragma: no-cache) is sent to\nPHP instead of being answered from the cache, and the answer is stored again.\nA browser's ordinary reload (max-age=0) is still answered from the cache.\nNeeds exponential-velocity with Q.web.cache.honorRequestNoCache; older\nversions ignore it.",
+        "de": "Eine Anfrage mit Cache-Control: no-cache (oder Pragma: no-cache) wird an\nPHP geschickt, statt aus dem Cache beantwortet zu werden, und die Antwort wird erneut gespeichert.\nEin gewöhnliches Neuladen im Browser (max-age=0) wird weiterhin aus dem Cache beantwortet.\nBraucht exponential-velocity mit Q.web.cache.honorRequestNoCache; ältere\nVersionen ignorieren es."
+    },
+    "ini:settings/velocity.ini [CacheSettings] MiddleOutCompression": {
+        "en": "Compress stored entries against a shared dictionary. Measured and left off:\nentries are stored already gzipped, and a dictionary cannot shrink that.",
+        "de": "Gespeicherte Einträge gegen ein gemeinsames Wörterbuch komprimieren. Gemessen und aus gelassen:\nEinträge werden schon gzip-komprimiert gespeichert, und ein Wörterbuch kann das nicht verkleinern."
+    },
+    "ini:settings/velocity.ini [CacheSettings] MinifyHtml": {
+        "en": "Collapse the templates' indentation in stored pages: 27 % smaller documents.",
+        "de": "Die Einrückung der Templates in gespeicherten Seiten zusammenfassen: 27 % kleinere Dokumente."
+    },
+    "ini:settings/velocity.ini [CacheSettings] NotFoundSeconds": {
+        "en": "Seconds a 404 is remembered, so a crawler walking dead links does not run the\nfull rendering path for each. 0 (the default) remembers none: every 404\nreaches PHP, as under Apache, so 404.log and the request classifier\n(security.log) see each one -- a 404 answered from the cache was seen once a\nminute at most. A 404 the kernel marks private, no-store is never kept anyway.",
+        "de": "Sekunden, die eine 404 gemerkt wird, damit ein Crawler, der tote Links abläuft, nicht für jeden den\nganzen Renderweg ausführt. 0 (der Standard) merkt sich keine: Jede 404\nerreicht PHP, wie unter Apache, sodass 404.log und der Anfrage-Klassifizierer\n(security.log) jede sehen; eine aus dem Cache beantwortete 404 wurde höchstens einmal pro\nMinute gesehen. Eine 404, die der Kernel als private, no-store markiert, wird ohnehin nie behalten."
+    },
+    "ini:settings/velocity.ini [CacheSettings] SkipCookies": {
+        "en": "Which cookies mean \"this response is personal, do not cache it\", matched as\na prefix. Empty means the session cookie plus is_logged_in, which the kernel\nsets for signed-in visitors for exactly this purpose. The session cookie's\nname follows [Session] SessionNameHandler in site.ini: with \"default\" PHP\nnames it (PHPSESSID); with \"custom\" it is SessionNamePrefix, which as a\nprefix also covers every siteaccess's <prefix><digest>.\n\nTo name them yourself, list every one -- a list replaces the default:\n  SkipCookies[]\n  SkipCookies[]=PHPSESSID\n  SkipCookies[]=is_logged_in",
+        "de": "Welche Cookies bedeuten „diese Antwort ist persönlich, nicht cachen“, als\nPräfix verglichen. Leer bedeutet das Sitzungs-Cookie plus is_logged_in, das der Kernel\ngenau zu diesem Zweck für angemeldete Besucher setzt. Der Name des Sitzungs-Cookies\nfolgt [Session] SessionNameHandler in site.ini: Mit \"default\" benennt PHP\nes (PHPSESSID); mit \"custom\" ist es SessionNamePrefix, das als\nPräfix auch <prefix><digest> jedes Siteaccess abdeckt.\n\nUm sie selbst zu benennen, führen Sie jedes auf; eine Liste ersetzt den Standard:\n  SkipCookies[]\n  SkipCookies[]=PHPSESSID\n  SkipCookies[]=is_logged_in"
+    },
+    "ini:settings/velocity.ini [CacheSettings] StaleWhileRevalidate": {
+        "en": "Seconds an expired page may still be served while one request renders the\nreplacement, so that an expiry does not send every visitor to PHP at once.",
+        "de": "Sekunden, die eine abgelaufene Seite noch ausgeliefert werden darf, während eine Anfrage den\nErsatz rendert, damit ein Ablauf nicht alle Besucher auf einmal zu PHP schickt."
+    },
+    "ini:settings/velocity.ini [CacheSettings] SweepEvery": {
+        "en": "Clearing expired entries off the disk, every SweepEvery seconds (0 switches\nit off). SweepMaxAge removes anything older than that regardless of its own\nlifetime -- without it, a response that says max-age=31536000 stays a year.",
+        "de": "Abgelaufene Einträge von der Festplatte räumen, alle SweepEvery Sekunden (0 schaltet\nes ab). SweepMaxAge entfernt alles, was älter ist, unabhängig von seiner eigenen\nLebensdauer; ohne es bleibt eine Antwort mit max-age=31536000 ein Jahr lang."
+    },
+    "ini:settings/velocity.ini [ControlSettings] DetachedRestart": {
+        "en": "restart (and the restart step of deploy) runs as one detached unit: its own\nsession (setsid) and, as root under systemd, a transient scope\nvc-restart-<date>-<token>, so a caller killed between the stop and the start\nno longer leaves the server down. The caller waits and prints the outcome as\nbefore. While it runs, restart-in-progress.json lies next to the pid file.\ndisabled: restart in the calling process, as before.",
+        "de": "restart (und der Neustart-Schritt von deploy) läuft als eine abgekoppelte Einheit: eigene\nSitzung (setsid) und, als root unter systemd, ein flüchtiger Scope\nvc-restart-<date>-<token>, sodass ein Aufrufer, der zwischen Stopp und Start beendet wird,\nden Server nicht mehr unten lässt. Der Aufrufer wartet und gibt das Ergebnis wie\nbisher aus. Solange es läuft, liegt restart-in-progress.json neben der PID-Datei.\ndisabled: Neustart im aufrufenden Prozess, wie bisher."
+    },
+    "ini:settings/velocity.ini [ControlSettings] ExtraOptions": {
+        "en": "Extra options appended to the command line verbatim. The qbix engine only;\nthe frankenphp engine has [FrankenPHPSettings] ExtraOptions[].",
+        "de": "Zusätzliche Optionen, die unverändert an die Befehlszeile angehängt werden. Nur die Engine qbix;\ndie Engine frankenphp hat [FrankenPHPSettings] ExtraOptions[]."
+    },
+    "ini:settings/velocity.ini [ControlSettings] ShutdownTimeout": {
+        "en": "The qbix server's own bound on a graceful stop (Q.webserver.shutdownTimeout):\nafter this many seconds it is killed with every process it started, even\nwhen it is blocked where no signal but SIGKILL reaches it. Keep it below\nStopTimeout. 0 leaves the stop unbounded.",
+        "de": "Die eigene Grenze des qbix-Servers für ein sauberes Beenden (Q.webserver.shutdownTimeout):\nNach so vielen Sekunden wird er mit jedem von ihm gestarteten Prozess beendet, auch\nwenn er dort blockiert ist, wo ihn kein Signal außer SIGKILL erreicht. Halten Sie den Wert unter\nStopTimeout. 0 lässt das Beenden unbegrenzt."
+    },
+    "ini:settings/velocity.ini [ControlSettings] StopTimeout": {
+        "en": "How long stop and restart wait for a graceful stop. The qbix engine's\nprocesses still there after it -- every process of this installation, found\nby the script it runs and the log it writes to, not only the pid files --\nare then killed (SIGKILL), and restart reports success only once a new\nserver answers an HTTP request. The frankenphp and php engines report that\nthe server did not stop.",
+        "de": "Wie lange stop und restart auf ein sauberes Beenden warten. Die Prozesse der Engine qbix,\ndie danach noch da sind (jeder Prozess dieser Installation, gefunden\nüber das Skript, das er ausführt, und das Log, in das er schreibt, nicht nur über die PID-Dateien),\nwerden dann beendet (SIGKILL), und restart meldet Erfolg erst, wenn ein neuer\nServer eine HTTP-Anfrage beantwortet. Die Engines frankenphp und php melden, dass\nder Server nicht angehalten hat."
+    },
+    "ini:settings/velocity.ini [DashboardSettings] Token": {
+        "en": "Who may open the server's own views: /Q/dashboard, /Q/stats, /Q/metrics,\nthe full /Q/health and /Q/phpinfo. By default only this machine.\n\nToken      a secret; when set, it is required from anywhere (?token=...,\n           \"Authorization: Bearer ...\") and opens them remotely. Generate\n           one with: php -r 'echo bin2hex(random_bytes(24));'\nRemote     enabled lets them be opened remotely WITHOUT a token -- only\n           for a port that a firewall already restricts to trusted\n           addresses. /Q/phpinfo stays local-only without a token, as it\n           shows the server process's environment.",
+        "de": "Wer die eigenen Ansichten des Servers öffnen darf: /Q/dashboard, /Q/stats, /Q/metrics,\ndas volle /Q/health und /Q/phpinfo. Standardmäßig nur dieser Rechner.\n\nToken      ein Geheimnis; wenn gesetzt, wird es von überall verlangt (?token=...,\n           \"Authorization: Bearer ...\") und öffnet sie aus der Ferne. Erzeugen Sie\n           eines mit: php -r 'echo bin2hex(random_bytes(24));'\nRemote     enabled lässt sie OHNE Token aus der Ferne öffnen, nur\n           für einen Port, den eine Firewall bereits auf vertrauenswürdige\n           Adressen beschränkt. /Q/phpinfo bleibt ohne Token nur lokal, da es\n           die Umgebung des Serverprozesses zeigt."
+    },
+    "ini:settings/velocity.ini [DeploySettings] PhpFpmReload": {
+        "en": "Whether that reload is done at all:\n\n  auto       only when needed. When the pool's OPcache revalidates the files\n             (opcache.validate_timestamps on, revalidate_freq at most 60 s,\n             read from the php-fpm binary and the pool file), every changed\n             PHP file is recompiled within revalidate_freq seconds; the step\n             waits that long instead of reloading. Without OPcache it waits\n             for nothing.\n  always     reload every time (as before).\n  never      neither reload nor wait.\n\nA reload is not free, and not for this site alone: the master asks every\nchild of every pool to finish its request and starts no new child until the\nlast one has (up to process_control_timeout, 300 s on Plesk). Each request\nthat arrives in between waits for the longest one running on any site of\nthat PHP version: one open 25 s event stream made the next page wait 22 s,\nand a long request elsewhere turned waiting requests into 504s (#374).\ndeploy --fpm-reload forces a reload: after a php.ini or pool change, a new\nPHP extension, or PHP files removed or renamed in place.",
+        "de": "Ob dieses Neuladen überhaupt geschieht:\n\n  auto       nur bei Bedarf. Wenn der OPcache des Pools die Dateien neu prüft\n             (opcache.validate_timestamps an, revalidate_freq höchstens 60 s,\n             aus der php-fpm-Binärdatei und der Pool-Datei gelesen), wird jede geänderte\n             PHP-Datei innerhalb von revalidate_freq Sekunden neu kompiliert; der Schritt\n             wartet so lange, statt neu zu laden. Ohne OPcache wartet er\n             auf nichts.\n  always     jedes Mal neu laden (wie bisher).\n  never      weder neu laden noch warten.\n\nEin Neuladen ist nicht umsonst, und nicht nur für diese Website: Der Master bittet jedes\nKind jedes Pools, seine Anfrage abzuschließen, und startet kein neues Kind, bis das\nletzte das getan hat (bis zu process_control_timeout, 300 s bei Plesk). Jede Anfrage,\ndie dazwischen eintrifft, wartet auf die längste, die auf einer Website dieser\nPHP-Version läuft: Ein offener Event-Stream von 25 s ließ die nächste Seite 22 s warten,\nund eine lange Anfrage anderswo machte aus wartenden Anfragen 504 (#374).\ndeploy --fpm-reload erzwingt ein Neuladen: nach einer Änderung an php.ini oder am Pool, einer neuen\nPHP-Erweiterung oder an Ort und Stelle entfernten oder umbenannten PHP-Dateien."
+    },
+    "ini:settings/velocity.ini [DeploySettings] PhpFpmService": {
+        "en": "exp:velocity deploy: everything a PHP code change needs, in order.\n\nThe PHP-FPM service it reloads, so the web server in front of this\ninstallation (Apache, nginx) runs the new code too:\n\n  auto       find it: the FPM pool named after this installation's hosting\n             domain (/var/www/vhosts/<domain>/..., as Plesk names pools), or\n             one whose configuration names this installation's directory.\n             Looked for in /opt/plesk/php/*/etc/php-fpm.d (Plesk, service\n             plesk-php<XY>-fpm), /etc/php-fpm.d (php-fpm), /etc/php/*/fpm/pool.d\n             (php<X.Y>-fpm) and /etc/opt/remi/php*/php-fpm.d (php<XY>-php-fpm).\n  disabled   reload nothing; for an installation served by Velocity alone.\n  <unit>     that systemd service, or several, comma-separated.\n\nIt is a reload (systemctl reload): the master re-reads its code and replaces\nits workers as each finishes, so no request is dropped. Needs root; run as\nanyone else, the step is skipped with a note naming the service.",
+        "de": "exp:velocity deploy: alles, was eine Änderung am PHP-Code braucht, in Reihenfolge.\n\nDer PHP-FPM-Dienst, den es neu lädt, damit auch der Webserver vor dieser\nInstallation (Apache, nginx) den neuen Code ausführt:\n\n  auto       ihn finden: der FPM-Pool, benannt nach der Hosting-Domain dieser Installation\n             (/var/www/vhosts/<domain>/..., wie Plesk Pools benennt), oder\n             einer, dessen Konfiguration das Verzeichnis dieser Installation nennt.\n             Gesucht in /opt/plesk/php/*/etc/php-fpm.d (Plesk, Dienst\n             plesk-php<XY>-fpm), /etc/php-fpm.d (php-fpm), /etc/php/*/fpm/pool.d\n             (php<X.Y>-fpm) und /etc/opt/remi/php*/php-fpm.d (php<XY>-php-fpm).\n  disabled   nichts neu laden; für eine Installation, die nur Velocity bedient.\n  <unit>     dieser systemd-Dienst, oder mehrere, durch Kommas getrennt.\n\nEs ist ein Neuladen (systemctl reload): Der Master liest seinen Code neu und ersetzt\nseine Worker, sobald jeder fertig ist, sodass keine Anfrage verloren geht. Braucht root; von\njemand anderem ausgeführt, wird der Schritt mit einem Hinweis übersprungen, der den Dienst nennt."
+    },
+    "ini:settings/velocity.ini [DeploySettings] WarmUpURL": {
+        "en": "Pages requested once each, one after the other, by a background process at\nthe end of a deploy, so the first visitor does not wait while the templates\nare compiled and the INI, override, translation, design and packed-file\ncaches are rebuilt (and several first visitors do not rebuild them at the\nsame time). Anonymous requests: a site's front page, an admin's login page.\nThe deploy does not wait for them. Empty: no warm-up.\n\nWarmUpURL[]=https://www.example.com/\nWarmUpURL[]=https://www.example.com/admin/user/login",
+        "de": "Seiten, die am Ende eines Deployments von einem Hintergrundprozess je einmal nacheinander\nangefordert werden, damit der erste Besucher nicht wartet, während die Templates\nkompiliert und die Caches für INI, Override, Übersetzung, Design und gepackte Dateien\nneu aufgebaut werden (und nicht mehrere erste Besucher sie gleichzeitig\nneu aufbauen). Anonyme Anfragen: die Startseite einer Website, die Anmeldeseite einer Administration.\nDas Deployment wartet nicht auf sie. Leer: kein Vorwärmen.\n\nWarmUpURL[]=https://www.example.com/\nWarmUpURL[]=https://www.example.com/admin/user/login"
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] AdminAddress": {
+        "en": "Caddy's admin API, which stop and graceful use. auto is a unix socket at\nvar/vc/frankenphp/run/admin.sock (owner-only, no port to clash), or localhost on the\nHTTP port + 10000 when the installation's path is too long for a socket.\nOtherwise unix/<path> or localhost:<port>.",
+        "de": "Die Admin-API von Caddy, die stop und graceful verwenden. auto ist ein Unix-Socket unter\nvar/vc/frankenphp/run/admin.sock (nur für den Eigentümer, kein Port, der kollidiert), oder localhost auf dem\nHTTP-Port + 10000, wenn der Pfad der Installation für einen Socket zu lang ist.\nSonst unix/<path> oder localhost:<port>."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] AutoInstall": {
+        "en": "Install on the first start when the binary is missing.",
+        "de": "Beim ersten Start installieren, wenn die Binärdatei fehlt."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] BinaryDir": {
+        "en": "Where install puts the binary. Relative paths resolve against the root.",
+        "de": "Wohin install die Binärdatei legt. Relative Pfade gelten ab dem Wurzelverzeichnis."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] BinaryPath": {
+        "en": "An own binary instead of the download: another PHP version, extra Caddy\nmodules, a distribution package. Nothing is downloaded then, and it is\nchecked against BinarySha256 only when that is set.",
+        "de": "Eine eigene Binärdatei statt des Downloads: eine andere PHP-Version, zusätzliche Caddy-\nModule, ein Paket der Distribution. Dann wird nichts heruntergeladen, und sie wird\nnur gegen BinarySha256 geprüft, wenn das gesetzt ist."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] Compression": {
+        "en": "Compress responses for clients that ask: the codecs to offer, in order of\npreference, from zstd, br and gzip; or disabled. Caddy compresses nothing\nunless told to, and skips small bodies and types that do not shrink\n(images, archives). Without it the front page went out at 95.7 KB here;\ngzipped it is about 10 KB.",
+        "de": "Antworten für Clients komprimieren, die danach fragen: die anzubietenden Codecs, in der Reihenfolge der\nBevorzugung, aus zstd, br und gzip; oder disabled. Caddy komprimiert nichts,\nsofern es nicht dazu aufgefordert wird, und überspringt kleine Inhalte und Typen, die nicht schrumpfen\n(Bilder, Archive). Ohne das ging die Startseite hier mit 95,7 KB hinaus;\ngzip-komprimiert sind es etwa 10 KB."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] ConfigFile": {
+        "en": "The generated configuration, the pid file and the server's console output.",
+        "de": "Die erzeugte Konfiguration, die PID-Datei und die Konsolenausgabe des Servers."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] DownloadUrl": {
+        "en": "Where the binary comes from. {version} and {asset} are filled in. ApiUrl is\nread only by install --trust-github-digest, for a version with no Sha256.",
+        "de": "Woher die Binärdatei kommt. {version} und {asset} werden ausgefüllt. ApiUrl wird\nnur von install --trust-github-digest gelesen, für eine Version ohne Sha256."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] ExtraOptions": {
+        "en": "Extra options for `frankenphp run`, appended verbatim.",
+        "de": "Zusätzliche Optionen für `frankenphp run`, unverändert angehängt."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] HTTPS": {
+        "en": "HTTPS on HTTPSPort beside plain HTTP on Port -- on by default, so a\ndevelopment machine has https:// from the first start. It uses\n[HTTPSSettings] Certificate and Key when both are set; with both empty it\nmakes a self-signed certificate for this machine (localhost, 127.0.0.1, ::1,\nthe host name) in var/vc/frankenphp/tls/, valid a year and renewed a month\nbefore it runs out. A browser warns about that one: fine for development and\nbehind a reverse proxy, not for visitors -- a public site names its\ncertificate here or terminates TLS in front. When the self-signed one cannot\nbe made (no openssl extension) the server starts with plain HTTP and says\nwhy. `start --no-https` leaves it off for one start, `start --https` insists\non it; disabled switches it off for good.",
+        "de": "HTTPS auf HTTPSPort neben einfachem HTTP auf Port, standardmäßig an, sodass ein\nEntwicklungsrechner ab dem ersten Start https:// hat. Es verwendet\n[HTTPSSettings] Certificate und Key, wenn beide gesetzt sind; sind beide leer,\nerzeugt es ein selbstsigniertes Zertifikat für diesen Rechner (localhost, 127.0.0.1, ::1,\nder Hostname) in var/vc/frankenphp/tls/, ein Jahr gültig und einen Monat\nvor Ablauf erneuert. Ein Browser warnt davor: in Ordnung für die Entwicklung und\nhinter einem Reverse-Proxy, nicht für Besucher; eine öffentliche Website nennt ihr\nZertifikat hier oder beendet TLS davor. Wenn sich das selbstsignierte nicht\nerzeugen lässt (keine Erweiterung openssl), startet der Server mit einfachem HTTP und sagt,\nwarum. `start --no-https` lässt es für einen Start aus, `start --https` besteht\ndarauf; disabled schaltet es dauerhaft ab."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] IniOptions": {
+        "en": "Interpreter settings, after [PHPSettings] IniOptions[] (a later key wins).\nThese stand in for the php.ini the binary does not read: without them PHP\nshows errors to visitors and stops at 128M. The opcode cache needs no\nrevalidate_freq=0 here -- every request has its own request time.",
+        "de": "Interpreter-Einstellungen, nach [PHPSettings] IniOptions[] (ein späterer Schlüssel gewinnt).\nSie ersetzen die php.ini, die die Binärdatei nicht liest: Ohne sie zeigt PHP\nBesuchern Fehler und hört bei 128M auf. Der Opcode-Cache braucht hier kein\nrevalidate_freq=0: Jede Anfrage hat ihre eigene Anfragezeit."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] LogDir": {
+        "en": "Access and error log: access.log and error.log in LogDir (empty =\nvar/vc/frankenphp/log), or the paths given. A directory of its own\nbecause Caddy writes JSON: switching engines does not leave one file in two\nformats. LogSettings Enabled and FileMode apply.",
+        "de": "Zugriffs- und Fehlerlog: access.log und error.log in LogDir (leer =\nvar/vc/frankenphp/log) oder die angegebenen Pfade. Ein eigenes Verzeichnis,\nweil Caddy JSON schreibt: Ein Wechsel der Engine hinterlässt keine Datei in zwei\nFormaten. Enabled und FileMode aus LogSettings gelten."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] PHPIniFile": {
+        "en": "A php.ini for the server. The binary reads none of the machine's own, so\nwithout one PHP runs on its compiled-in defaults plus the options below.",
+        "de": "Eine php.ini für den Server. Die Binärdatei liest keine der eigenen des Rechners, ohne\neine läuft PHP also mit seinen einkompilierten Standards plus den Optionen unten."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] Port": {
+        "en": "The frankenphp engine (ServerSettings Engine=frankenphp, or --engine=frankenphp):\nthe production engine.\n\nFrankenPHP is one self-contained file: the Caddy web server, PHP and its\nextensions. It runs in classic mode -- a pool of PHP threads in one process,\neach request starting from a clean state, as under php-fpm -- so the Qbix\nserver's ForkPerRequest and KeepGlobals do not apply to it. Workers is the\nnumber of PHP threads; SpareWorkers more are started under load.\nThis engine's own address and pool. Empty = the [ServerSettings] value;\nset, so that it can run beside the other engines. Workers is the number of\nPHP threads.",
+        "de": "Die Engine frankenphp (ServerSettings Engine=frankenphp oder --engine=frankenphp):\ndie Produktions-Engine.\n\nFrankenPHP ist eine eigenständige Datei: der Webserver Caddy, PHP und seine\nErweiterungen. Es läuft im klassischen Modus (ein Pool von PHP-Threads in einem Prozess,\njede Anfrage beginnt mit einem sauberen Zustand, wie unter php-fpm), daher gelten\nForkPerRequest und KeepGlobals des Qbix-Servers dafür nicht. Workers ist die\nZahl der PHP-Threads; unter Last werden SpareWorkers weitere gestartet.\nDie eigene Adresse und der eigene Pool dieser Engine. Leer = der Wert aus [ServerSettings];\ngesetzt, damit sie neben den anderen Engines laufen kann. Workers ist die Zahl der\nPHP-Threads."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] Sha256": {
+        "en": "SHA-256 of every release asset of Version, from the digests GitHub publishes.\nA download that does not match is deleted, never run.",
+        "de": "SHA-256 jedes Release-Assets von Version, aus den Digests, die GitHub veröffentlicht.\nEin Download, der nicht passt, wird gelöscht, nie ausgeführt."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] SiteInclude": {
+        "en": "A Caddyfile fragment imported into every site block, for directives of your\nown (headers, redirects, extra routes). The generated file is rewritten on\nevery start and must not be edited.",
+        "de": "Ein Caddyfile-Fragment, das in jeden Site-Block importiert wird, für eigene Direktiven\n(Header, Weiterleitungen, zusätzliche Routen). Die erzeugte Datei wird bei\njedem Start neu geschrieben und darf nicht bearbeitet werden."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] Variant": {
+        "en": "Which build of that release, on Linux:\n\n  gnu       linked against glibc. The default: glibc's allocator is faster\n            than musl's under PHP, and it can load .so extensions (oci8 ...).\n            Needs glibc 2.17 or later -- any distribution but Alpine.\n  musl      fully static, needs nothing from the system; for Alpine.\n  mimalloc  musl with the mimalloc allocator (x86_64 only).\n\nmacOS always gets the one build there is. The official builds carry the PHP\nversion the project chose for that release (1.12.x: PHP 8.5).",
+        "de": "Welcher Build dieses Releases, unter Linux:\n\n  gnu       gegen glibc gelinkt. Der Standard: Der Allokator von glibc ist unter PHP schneller\n            als der von musl, und er kann .so-Erweiterungen laden (oci8 ...).\n            Braucht glibc 2.17 oder später, jede Distribution außer Alpine.\n  musl      vollständig statisch, braucht nichts vom System; für Alpine.\n  mimalloc  musl mit dem Allokator mimalloc (nur x86_64).\n\nmacOS erhält immer den einen Build, den es gibt. Die offiziellen Builds enthalten die PHP-\nVersion, die das Projekt für dieses Release gewählt hat (1.12.x: PHP 8.5)."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] Version": {
+        "en": "The release `exp:velocity install` downloads, and the checksums it insists\non. Moving to a new release means changing Version and every Sha256[] line\ntogether; the files are named after the version, so the old binary stays\nnext to the new one and going back is only this setting.",
+        "de": "Das Release, das `exp:velocity install` herunterlädt, und die Prüfsummen, auf denen es\nbesteht. Der Wechsel zu einem neuen Release bedeutet, Version und jede Zeile Sha256[]\ngemeinsam zu ändern; die Dateien sind nach der Version benannt, die alte Binärdatei bleibt also\nneben der neuen, und zurück geht es nur über diese Einstellung."
+    },
+    "ini:settings/velocity.ini [FrankenPHPSettings] Workers": {
+        "en": "PHP threads, and extra threads started under load (num_threads and\nmax_threads). Empty = twice the CPU cores and no extra, FrankenPHP's own\ndefault -- never the Qbix server's [ServerSettings] Workers, which counts\nprocesses, most of them idle, where these are threads that all run at once.\nMore threads than that makes heavy load slower: 64 concurrent rendered pages\ndid 16.0 req/s at 12-48 threads on a 12-core machine and 14.6 at 96 or 590,\nwith 24% more CPU per page at 590 (measured 2026-09-26).",
+        "de": "PHP-Threads und zusätzliche Threads, die unter Last gestartet werden (num_threads und\nmax_threads). Leer = das Doppelte der CPU-Kerne und keine zusätzlichen, der eigene Standard von FrankenPHP;\nnie [ServerSettings] Workers des Qbix-Servers, das Prozesse zählt,\ndie meisten davon untätig, wo dies Threads sind, die alle gleichzeitig laufen.\nMehr Threads als das machen hohe Last langsamer: 64 gleichzeitig gerenderte Seiten\nschafften 16,0 Anfragen/s bei 12-48 Threads auf einem Rechner mit 12 Kernen und 14,6 bei 96 oder 590,\nmit 24 % mehr CPU pro Seite bei 590 (gemessen am 2026-09-26)."
+    },
+    "ini:settings/velocity.ini [HTTPSSettings] Enabled": {
+        "en": "manual uses the certificate and key below. Leave Enabled=false to serve\nplain HTTP only.",
+        "de": "manual verwendet das Zertifikat und den Schlüssel unten. Lassen Sie Enabled=false, um nur\neinfaches HTTP auszuliefern."
+    },
+    "ini:settings/velocity.ini [HTTPSSettings] HSTSIncludeSubDomains": {
+        "en": "Also for every subdomain of the host (enabled or disabled).",
+        "de": "Auch für jede Subdomain des Hosts (enabled oder disabled)."
+    },
+    "ini:settings/velocity.ini [HTTPSSettings] HSTSMaxAge": {
+        "en": "Strict-Transport-Security on every answer sent over HTTPS: static files,\nthe server's own pages and the scripts' answers, unless an answer carries\none already. Never over plain HTTP. In seconds; 0 sends none.\n\n300 is what the Apache and nginx front ends of this installation send. A\nbrowser that has seen it refuses plain HTTP to this host name, on every\nport, for that long, and keeps doing so after the setting is lowered: raise\nit (a year is 31536000) only once every name of the site is served over\nHTTPS for good.",
+        "de": "Strict-Transport-Security bei jeder über HTTPS gesendeten Antwort: statische Dateien,\ndie eigenen Seiten des Servers und die Antworten der Skripte, sofern eine Antwort nicht\nschon einen trägt. Nie über einfaches HTTP. In Sekunden; 0 sendet keinen.\n\n300 ist das, was die Frontends Apache und nginx dieser Installation senden. Ein\nBrowser, der ihn gesehen hat, verweigert einfaches HTTP für diesen Hostnamen, auf jedem\nPort, so lange, und tut das auch weiter, nachdem die Einstellung gesenkt wurde: Erhöhen Sie\nihn (ein Jahr sind 31536000) erst, wenn jeder Name der Website dauerhaft über\nHTTPS ausgeliefert wird."
+    },
+    "ini:settings/velocity.ini [HTTPSSettings] HSTSPreload": {
+        "en": "Ask to be put on the browsers' preload lists (enabled or disabled). Needs\nHSTSIncludeSubDomains and a max-age of at least a year to be accepted.",
+        "de": "Darum bitten, in die Preload-Listen der Browser aufgenommen zu werden (enabled oder disabled). Braucht\nHSTSIncludeSubDomains und ein max-age von mindestens einem Jahr, um akzeptiert zu werden."
+    },
+    "ini:settings/velocity.ini [LayoutSettings] ConfDir": {
+        "en": "Where the server's configuration lives, laid out like Debian's /etc/apache2\n(see doc/eng-us/bc/6.0/velocity-ondisk-layout.md):\n  vc.conf, ports.conf, envvars\n  mods-available/  -> mods-enabled/   engine modules\n  conf-available/  -> conf-enabled/   shared snippets\n  sites-available/ -> sites-enabled/  one file per installation\nWritten from these settings on every start and used when, merged the way\nthe server merges, it is exactly the configuration generated -- otherwise\nthe single file var/tmp/velocity-server.json is used, as before.\n\nauto      /etc/vc if it exists or can be created, else an existing\n          /etc/qbix, else var/vc/qbix/etc in this installation (default)\ndisabled  the single file only\n<path>    that directory",
+        "de": "Wo die Konfiguration des Servers liegt, aufgebaut wie /etc/apache2 bei Debian\n(siehe doc/eng-us/bc/6.0/velocity-ondisk-layout.md):\n  vc.conf, ports.conf, envvars\n  mods-available/  -> mods-enabled/   Engine-Module\n  conf-available/  -> conf-enabled/   gemeinsame Schnipsel\n  sites-available/ -> sites-enabled/  eine Datei pro Installation\nBei jedem Start aus diesen Einstellungen geschrieben und verwendet, wenn sie, so zusammengeführt,\nwie der Server zusammenführt, genau die erzeugte Konfiguration ist; sonst wird wie bisher\ndie einzelne Datei var/tmp/velocity-server.json verwendet.\n\nauto      /etc/vc, wenn es existiert oder angelegt werden kann, sonst ein vorhandenes\n          /etc/qbix, sonst var/vc/qbix/etc in dieser Installation (Standard)\ndisabled  nur die einzelne Datei\n<path>    dieses Verzeichnis"
+    },
+    "ini:settings/velocity.ini [LayoutSettings] SiteName": {
+        "en": "This installation's name in sites-available; default: the host of\nsite.ini [SiteSettings] SiteURL.",
+        "de": "Der Name dieser Installation in sites-available; Standard: der Host aus\nsite.ini [SiteSettings] SiteURL."
+    },
+    "ini:settings/velocity.ini [LayoutSettings] StateDir": {
+        "en": "Extended information about each site (root, paths, when it was migrated):\n/var/lib/vc when the configuration is in /etc/vc, else var/vc/qbix/lib.",
+        "de": "Erweiterte Informationen über jede Website (Wurzel, Pfade, wann sie migriert wurde):\n/var/lib/vc, wenn die Konfiguration in /etc/vc liegt, sonst var/vc/qbix/lib."
+    },
+    "ini:settings/velocity.ini [LogSettings] AccessName": {
+        "en": "The file names. Empty names them after the default siteaccess\n([SiteSettings] DefaultAccess in site.ini): site-access.log and\nsite-error.log for a siteaccess called \"site\", which keeps several\ninstallations apart in one directory. Rotation puts the date in front of\nthe extension, so site-access.log becomes site-access.2026-09-24.log.",
+        "de": "Die Dateinamen. Leer benennt sie nach dem Standard-Siteaccess\n([SiteSettings] DefaultAccess in site.ini): site-access.log und\nsite-error.log für einen Siteaccess namens \"site\", was mehrere\nInstallationen in einem Verzeichnis auseinanderhält. Die Rotation setzt das Datum vor\ndie Endung, aus site-access.log wird also site-access.2026-09-24.log."
+    },
+    "ini:settings/velocity.ini [LogSettings] Dir": {
+        "en": "The qbix engine's log directory; relative paths resolve against the\ninstallation root. Everything Velocity writes for one server is kept\ntogether below var/vc/<engine>/: log/ (the frankenphp engine's is\n[FrankenPHPSettings] LogDir, the php engine's [PHPServerSettings] LogFile),\nrun/ (pid file, console output, generated configuration, admin socket), and\nfor qbix the configuration tree etc/ and lib/, for frankenphp bin/, tls/ and\ncaddy/. Until 2026-09 this was var/log/qbix; an installation that sets Dir\nkeeps its own.",
+        "de": "Das Log-Verzeichnis der Engine qbix; relative Pfade gelten ab dem\nWurzelverzeichnis der Installation. Alles, was Velocity für einen Server schreibt, wird\nunter var/vc/<engine>/ zusammengehalten: log/ (das der Engine frankenphp ist\n[FrankenPHPSettings] LogDir, das der Engine php [PHPServerSettings] LogFile),\nrun/ (PID-Datei, Konsolenausgabe, erzeugte Konfiguration, Admin-Socket) und\nfür qbix der Konfigurationsbaum etc/ und lib/, für frankenphp bin/, tls/ und\ncaddy/. Bis 2026-09 war dies var/log/qbix; eine Installation, die Dir setzt,\nbehält ihr eigenes."
+    },
+    "ini:settings/velocity.ini [LogSettings] DirMode": {
+        "en": "Permissions of the log directory, octal, applied to one that already exists\nas well. Empty leaves it to the umask, which in practice is 0755 -- anyone\ncould list the files, and 0640 on each of them hides only their contents.\n0750 goes with 0640. For a group that shares the logs, 2770 with a FileMode\nof 0660: the setgid bit passes the group on to new files, it does not give\nthe group write access. chmod needs ownership, so a directory another user\ncreated keeps its mode, and the server says so on start.",
+        "de": "Berechtigungen des Log-Verzeichnisses, oktal, auch auf ein schon vorhandenes angewendet.\nLeer überlässt es der Umask, was in der Praxis 0755 ist: Jeder\nkönnte die Dateien auflisten, und 0640 auf jeder verbirgt nur ihren Inhalt.\n0750 passt zu 0640. Für eine Gruppe, die die Logs teilt, 2770 mit einem FileMode\nvon 0660: Das setgid-Bit gibt die Gruppe an neue Dateien weiter, es gibt\nder Gruppe keinen Schreibzugriff. chmod braucht den Besitz, ein Verzeichnis, das ein anderer Benutzer\nangelegt hat, behält also seinen Modus, und der Server sagt das beim Start."
+    },
+    "ini:settings/velocity.ini [LogSettings] Enabled": {
+        "en": "The server's own access and error log, one line per request and one per\nfault. LogFile above is only what the process prints to the console.\n\nOn, because without it the server writes nothing at all: no access log,\nno error log, no record of a single request.",
+        "de": "Das eigene Zugriffs- und Fehlerlog des Servers, eine Zeile pro Anfrage und eine pro\nFehler. LogFile oben ist nur das, was der Prozess auf der Konsole ausgibt.\n\nAn, weil der Server ohne es gar nichts schreibt: kein Zugriffslog,\nkein Fehlerlog, keine Aufzeichnung einer einzigen Anfrage."
+    },
+    "ini:settings/velocity.ini [LogSettings] FileMode": {
+        "en": "Permissions of the log files, octal. Empty leaves them to the umask. An\naccess log names the people who visited, so it is not for every account on\nthe machine to read.",
+        "de": "Berechtigungen der Logdateien, oktal. Leer überlässt sie der Umask. Ein\nZugriffslog nennt die Menschen, die die Website besucht haben, es ist also nicht für jedes Konto\nauf dem Rechner zum Lesen da."
+    },
+    "ini:settings/velocity.ini [LogSettings] Format": {
+        "en": "The access line.\n\n  combined   what Apache and nginx write, for tools that read those. The\n             default here.\n  qbix       combined, plus the time the response took. The server's own\n             default.\n  common     combined without referrer and user agent.\n\nAnything else is taken as a format string, with %{Host}i and the like.",
+        "de": "Die Zugriffszeile.\n\n  combined   was Apache und nginx schreiben, für Werkzeuge, die diese lesen. Hier der\n             Standard.\n  qbix       combined, plus die Zeit, die die Antwort brauchte. Der eigene\n             Standard des Servers.\n  common     combined ohne Referrer und User-Agent.\n\nAlles andere wird als Format-Zeichenkette genommen, mit %{Host}i und Ähnlichem."
+    },
+    "ini:settings/velocity.ini [PHPServerSettings] ExtraOptions": {
+        "en": "Extra arguments for php, appended after the router, verbatim.",
+        "de": "Zusätzliche Argumente für php, unverändert nach dem Router angehängt."
+    },
+    "ini:settings/velocity.ini [PHPServerSettings] PHPBinary": {
+        "en": "Another PHP binary than the one running exp:velocity. Empty = the same.",
+        "de": "Eine andere PHP-Binärdatei als die, die exp:velocity ausführt. Leer = dieselbe."
+    },
+    "ini:settings/velocity.ini [PHPServerSettings] PidFile": {
+        "en": "The built-in server prints each request and PHP's errors to its console;\nthis is where that goes -- its access and error log in one.",
+        "de": "Der eingebaute Server gibt jede Anfrage und die Fehler von PHP auf seiner Konsole aus;\ndorthin geht das, sein Zugriffs- und Fehlerlog in einem."
+    },
+    "ini:settings/velocity.ini [PHPServerSettings] Port": {
+        "en": "The php engine (ServerSettings Engine=php, the shipped default, or\n--engine=php): the development engine, PHP's built-in web server,\n`php -S Host:Port -t DocumentRoot bin/php/velocity-router.php`.\n\nThe PHP manual calls it a development server, and it is one: plain HTTP\nonly, no reload (graceful restarts it), files sent without a cache lifetime,\nthe request log on its console (LogFile below). Workers becomes\nPHP_CLI_SERVER_WORKERS, so that many requests are served at once (Linux\nonly; elsewhere one at a time). It runs with this PHP's php.ini and\nextensions plus [PHPSettings] IniOptions[]; keep Host at 127.0.0.1.\nThis engine's own address. Empty = the [ServerSettings] value; set, so that\nit can run beside the other engines. Workers becomes PHP_CLI_SERVER_WORKERS.",
+        "de": "Die Engine php (ServerSettings Engine=php, der ausgelieferte Standard, oder\n--engine=php): die Entwicklungs-Engine, der eingebaute Webserver von PHP,\n`php -S Host:Port -t DocumentRoot bin/php/velocity-router.php`.\n\nDas PHP-Handbuch nennt ihn einen Entwicklungsserver, und er ist einer: nur einfaches HTTP,\nkein Neuladen (graceful startet ihn neu), Dateien ohne Cache-Lebensdauer gesendet,\ndas Anfrage-Log auf seiner Konsole (LogFile unten). Workers wird zu\nPHP_CLI_SERVER_WORKERS, sodass so viele Anfragen gleichzeitig bedient werden (nur\nLinux; anderswo eine nach der anderen). Er läuft mit der php.ini und den\nErweiterungen dieses PHP plus [PHPSettings] IniOptions[]; lassen Sie Host auf 127.0.0.1.\nDie eigene Adresse dieser Engine. Leer = der Wert aus [ServerSettings]; gesetzt, damit\nsie neben den anderen Engines laufen kann. Workers wird zu PHP_CLI_SERVER_WORKERS."
+    },
+    "ini:settings/velocity.ini [PHPSettings] IniOptions": {
+        "en": "Interpreter settings for the server process, one per line, exactly as they\nwould be written after -d.\n\nThe opcode cache is here because /etc/php.d/99-no-opcache-cli.ini disables it\nfor every command-line PHP on this machine. That file is a system-wide\ndecision affecting every site on the box and is deliberately left alone; this\nasks for the cache for this process only.\n\nMeasured on a content page, four workers, requests round-robined between\nservers so that drift during the run hits all of them equally:\n\n  none (today)              526.6 ms    1.9 req/s     baseline\n  opcache                   390.8 ms    2.6 req/s    +25.8%\n  + no timestamp checks     390.0 ms    2.6 req/s    +25.9%\n  + interned strings 32M    387.4 ms    2.6 req/s    +26.4%\n  + tracing JIT             416.7 ms    2.4 req/s    +20.9%\n\nSo: the cache alone is the win. Timestamp checks cost nothing measurable and\nare worth keeping, because turning them off means an edited file is ignored\nuntil the service restarts. Tracing JIT is slower than no JIT on this\nworkload and is deliberately absent.\n\nThe timestamp checks only happen with revalidate_freq=0. The cache compares\ntimestamps once revalidate_freq seconds of request time have passed, and a\ncommand-line process takes that time once, when it starts; every worker\ninherits it from the parent. With the default of 2 no worker ever looked\nagain, so a PHP file the kernel rewrites under the same name -- expiry.php,\nthe content language cache, compiled templates -- was served as it was when\na worker first compiled it, until the service restarted. A cache clear from\nthe command line then did nothing. With 0 the file is checked on every\ninclude, which costs nothing measurable here: the server takes a stat of each\ninclude anyway.\nMemory: 512 MB for scripts and 64 MB for interned strings. The help center's index files are 18-24 MB each\nper language, and with 256/32 the interned strings buffer was full after a few help requests (measured on\nalpha, 2026-10-20: 32.0 of 32.0 MB, 141.6 of 256 MB used three minutes after a restart). The memory is\nshared by every worker of an instance and reserved, not used, until it fills.\nfile_update_protection=0 for the same reason: the cache does not keep a script\nchanged less than file_update_protection seconds before the REQUEST's start,\nand a worker's request started when the worker did. Every file written after\nthat -- the INI caches, the override caches, the compiled templates, all\nregenerated after a deploy or a cache clear -- counted as \"too new\" for the\nworker's whole life and was compiled again on every include: the cache served\n2.7% of includes (PHP-FPM, a fresh request each time: 97%) and a rendered page\ntook about four times the CPU of PHP-FPM. The protection is there so that a\nfile still being written is not kept; the server already sees to that itself,\nagainst the time of each include: it reads an include whole (readWhole) and\ndrops the cache's copy of a file changed in the last two seconds (RACY_SECONDS).\nAPCu for the server process. The command-line default is 32 MB, where the\nPHP-FPM pool beside it on this machine has 1,232 MB. Velocity keeps its\nresponse cache's memory tier in APCu, and the SQL query cache\n(querycache.ini Mode=shared) its results: in 32 MB the two evicted each\nother. Measured on the demonstration server (2026-09-27): with 32 MB the query cache held ~300\nresults at a 51 % hit rate and a rendered front page cost 727 ms of CPU\n(13 pages a second); with 256 MB, 303 ms (29-31 pages a second). The\nmemory is reserved, not used, until it fills.",
+        "de": "Interpreter-Einstellungen für den Serverprozess, eine pro Zeile, genau so, wie sie\nnach -d geschrieben würden.\n\nDer Opcode-Cache steht hier, weil /etc/php.d/99-no-opcache-cli.ini ihn\nfür jedes Kommandozeilen-PHP auf diesem Rechner abschaltet. Diese Datei ist eine systemweite\nEntscheidung, die jede Website auf dem Rechner betrifft, und bleibt bewusst unangetastet; dies\nverlangt den Cache nur für diesen Prozess.\n\nGemessen auf einer Inhaltsseite, vier Worker, Anfragen reihum zwischen den\nServern verteilt, damit Schwankungen während des Laufs alle gleich treffen:\n\n  keiner (heute)            526.6 ms    1.9 req/s     Basis\n  opcache                   390.8 ms    2.6 req/s    +25.8%\n  + keine Zeitstempelprüfung 390.0 ms   2.6 req/s    +25.9%\n  + interned strings 32M    387.4 ms    2.6 req/s    +26.4%\n  + tracing JIT             416.7 ms    2.4 req/s    +20.9%\n\nAlso: Der Cache allein ist der Gewinn. Zeitstempelprüfungen kosten nichts Messbares und\nsind es wert, behalten zu werden, weil ihr Abschalten bedeutet, dass eine bearbeitete Datei ignoriert wird,\nbis der Dienst neu startet. Tracing JIT ist bei dieser Last langsamer als kein JIT\nund fehlt bewusst.\n\nDie Zeitstempelprüfungen geschehen nur mit revalidate_freq=0. Der Cache vergleicht\nZeitstempel, sobald revalidate_freq Sekunden Anfragezeit vergangen sind, und ein\nKommandozeilenprozess nimmt diese Zeit einmal, beim Start; jeder Worker\nerbt sie vom Elternprozess. Mit dem Standard von 2 sah kein Worker je\nwieder nach, sodass eine PHP-Datei, die der Kernel unter demselben Namen neu schreibt (expiry.php,\nder Cache der Inhaltssprachen, kompilierte Templates), so ausgeliefert wurde, wie sie war, als\nein Worker sie zuerst kompilierte, bis der Dienst neu startete. Ein Leeren des Caches von\nder Kommandozeile bewirkte dann nichts. Mit 0 wird die Datei bei jedem\ninclude geprüft, was hier nichts Messbares kostet: Der Server macht ohnehin ein stat jedes\ninclude.\nSpeicher: 512 MB für Skripte und 64 MB für interned strings. Die Indexdateien des Hilfecenters sind je 18-24 MB\npro Sprache, und mit 256/32 war der Puffer der interned strings nach einigen Hilfeanfragen voll (gemessen auf\nalpha, 2026-10-20: 32.0 von 32.0 MB, 141.6 von 256 MB belegt drei Minuten nach einem Neustart). Der Speicher wird\nvon jedem Worker einer Instanz geteilt und reserviert, nicht belegt, bis er sich füllt.\nfile_update_protection=0 aus demselben Grund: Der Cache behält kein Skript, das\nweniger als file_update_protection Sekunden vor dem Start der ANFRAGE geändert wurde,\nund die Anfrage eines Workers begann, als der Worker begann. Jede danach geschriebene Datei\n(die INI-Caches, die Override-Caches, die kompilierten Templates, alle\nnach einem Deployment oder einem Leeren des Caches neu erzeugt) galt für das ganze\nLeben des Workers als „zu neu“ und wurde bei jedem include neu kompiliert: Der Cache lieferte\n2,7 % der includes (PHP-FPM, jedes Mal eine frische Anfrage: 97 %), und eine gerenderte Seite\nbrauchte etwa das Vierfache der CPU von PHP-FPM. Der Schutz ist dazu da, dass eine\nDatei, die noch geschrieben wird, nicht behalten wird; dafür sorgt der Server schon selbst,\ngegen die Zeit jedes include: Er liest ein include ganz (readWhole) und\nverwirft die Kopie des Caches von einer Datei, die in den letzten zwei Sekunden geändert wurde (RACY_SECONDS).\nAPCu für den Serverprozess. Der Kommandozeilen-Standard ist 32 MB, wo der\nPHP-FPM-Pool daneben auf diesem Rechner 1.232 MB hat. Velocity hält die Speicherstufe\nseines Antwort-Caches in APCu und der SQL-Abfrage-Cache\n(querycache.ini Mode=shared) seine Ergebnisse: In 32 MB verdrängten sich die beiden\ngegenseitig. Gemessen auf dem Demonstrationsserver (2026-09-27): Mit 32 MB hielt der Abfrage-Cache ~300\nErgebnisse bei 51 % Trefferquote, und eine gerenderte Startseite kostete 727 ms CPU\n(13 Seiten pro Sekunde); mit 256 MB 303 ms (29-31 Seiten pro Sekunde). Der\nSpeicher wird reserviert, nicht belegt, bis er sich füllt."
+    },
+    "ini:settings/velocity.ini [ServerSettings] Brand": {
+        "en": "Product name shown across the served /Q/ views: the dashboard\nheading and title, the docs chrome, the panel, the manifest. Empty\nkeeps the server's own default (\"Qbix Server\"); an installation\nthat names itself overrides this in settings/override/velocity.ini.",
+        "de": "Produktname in den ausgelieferten /Q/-Ansichten: Überschrift und Titel\ndes Dashboards, der Rahmen der Doku, das Panel, das Manifest. Leer\nbehält den eigenen Standard des Servers (\"Qbix Server\"); eine Installation,\ndie sich selbst benennt, überschreibt dies in settings/override/velocity.ini."
+    },
+    "ini:settings/velocity.ini [ServerSettings] BrandMark": {
+        "en": "Icon and link preview of the /Q/ views (favicon, home-screen icons, web app\nmanifest, the image a shared link shows). All optional.\n  BrandMark        the letter on the drawn icon (default: the brand's first)\n  BrandColor       the letter's colour, #rgb or #rrggbb\n  BrandAccent      the colour of the speed streaks beside it\n  BrandBackground  the icon tile and theme colour\n  BrandIcon        an image file used instead of the drawn mark (.svg/.png/.ico)\n  BrandOgImage     a 1200x630 PNG/JPEG used instead of the drawn preview\n  BrandDescription one line for link previews and the manifest",
+        "de": "Symbol und Linkvorschau der /Q/-Ansichten (Favicon, Startbildschirm-Symbole, Web-App-\nManifest, das Bild, das ein geteilter Link zeigt). Alles optional.\n  BrandMark        der Buchstabe auf dem gezeichneten Symbol (Standard: der erste der Marke)\n  BrandColor       die Farbe des Buchstabens, #rgb oder #rrggbb\n  BrandAccent      die Farbe der Geschwindigkeitsstreifen daneben\n  BrandBackground  die Kachel des Symbols und die Theme-Farbe\n  BrandIcon        eine Bilddatei statt des gezeichneten Zeichens (.svg/.png/.ico)\n  BrandOgImage     ein PNG/JPEG mit 1200x630 statt der gezeichneten Vorschau\n  BrandDescription eine Zeile für Linkvorschauen und das Manifest"
+    },
+    "ini:settings/velocity.ini [ServerSettings] BrandUrl": {
+        "en": "Where the brand name links (the product's home), and the maintainer\ncredit. All optional; empty shows plain text with no link.",
+        "de": "Wohin der Markenname verlinkt (die Startseite des Produkts), und die Nennung des\nMaintainers. Alles optional; leer zeigt einfachen Text ohne Link."
+    },
+    "ini:settings/velocity.ini [ServerSettings] DocumentRoot": {
+        "en": "Document root handed to the server. Empty means the installation root,\nwhich is where index.php lives.",
+        "de": "An den Server übergebenes Dokumentenverzeichnis. Leer bedeutet das Wurzelverzeichnis der Installation,\nwo index.php liegt."
+    },
+    "ini:settings/velocity.ini [ServerSettings] Engine": {
+        "en": "The server start, stop and status drive when no --engine is given:\n\n  php         PHP's own built-in web server (php -S), with the PHP that runs\n              exp:velocity. For development: nothing to install and nothing\n              it could lack, but no TLS and no reload. The shipped default,\n              because it always works. See [PHPServerSettings].\n  frankenphp  FrankenPHP, the Caddy web server with PHP built in, as one\n              binary that `exp:velocity install` downloads. The\n              production-ready alternative.\n              See [FrankenPHPSettings].\n  qbix        the bundled Qbix server (vendor/se7enxweb/exponential-velocity,\n              formerly vendor/se7enxweb/qbix-webserver; either is found), a\n              PHP process with persistent or per-request workers. The\n              recommended engine for every stage -- development, alpha,\n              beta, demo, stable and production -- and the fastest.\n\nSet qbix here for any site; frankenphp is the production-ready\nalternative. The verbs are the same for every\nengine, and --engine=<name> (or --all) reaches the others for one command.\n\nThe engines can run side by side, for tests: each has a port of its own\n(php 8087, qbix 8088 below, frankenphp 8089), a pid file and logs of its own.\n[FrankenPHPSettings] and [PHPServerSettings] may set Port, HTTPSPort, Host,\nWorkers, SpareWorkers and DocumentRoot for their engine; left empty, the\nvalue here applies. Settings only one server has are reported by `status`\nwhen they are set for another. See doc/eng-us/bc/6.0/velocity-engines.md.",
+        "de": "Der Server, den start, stop und status steuern, wenn kein --engine angegeben ist:\n\n  php         der eingebaute Webserver von PHP (php -S), mit dem PHP, das\n              exp:velocity ausführt. Für die Entwicklung: nichts zu installieren und nichts,\n              was fehlen könnte, aber kein TLS und kein Neuladen. Der ausgelieferte Standard,\n              weil er immer funktioniert. Siehe [PHPServerSettings].\n  frankenphp  FrankenPHP, der Webserver Caddy mit eingebautem PHP, als eine\n              Binärdatei, die `exp:velocity install` herunterlädt. Die\n              produktionsreife Alternative.\n              Siehe [FrankenPHPSettings].\n  qbix        der mitgelieferte Qbix-Server (vendor/se7enxweb/exponential-velocity,\n              früher vendor/se7enxweb/qbix-webserver; beide werden gefunden), ein\n              PHP-Prozess mit dauerhaften Workern oder Workern pro Anfrage. Die\n              empfohlene Engine für jede Stufe (Entwicklung, Alpha,\n              Beta, Demo, Stable und Produktion) und die schnellste.\n\nSetzen Sie hier qbix für jede Website; frankenphp ist die produktionsreife\nAlternative. Die Verben sind für jede\nEngine gleich, und --engine=<name> (oder --all) erreicht die anderen für einen Befehl.\n\nDie Engines können zum Testen nebeneinander laufen: Jede hat einen eigenen Port\n(php 8087, qbix 8088 unten, frankenphp 8089), eine eigene PID-Datei und eigene Logs.\n[FrankenPHPSettings] und [PHPServerSettings] dürfen Port, HTTPSPort, Host,\nWorkers, SpareWorkers und DocumentRoot für ihre Engine setzen; leer gelassen, gilt der\nWert hier. Einstellungen, die nur ein Server hat, meldet `status`,\nwenn sie für einen anderen gesetzt sind. Siehe doc/eng-us/bc/6.0/velocity-engines.md."
+    },
+    "ini:settings/velocity.ini [ServerSettings] EnginePhar": {
+        "en": "Run the engine from an archive instead of the files on disk.\n\nThe bootstrap loads the engine out of dist/engine.phar only when the\nEXP_ENGINE_PHAR environment variable names an archive that exists. Nothing\nused to set it, so the archive could be built and inspected but never run --\ntesting it meant exporting the variable by hand into whatever started the\nserver, and Setup > System information could only ever say \"Individual files\non disk\".\n\n  disabled   the files on disk. The default, and what a normal install wants.\n  enabled    dist/engine.phar, wherever expPhar puts it.\n  <path>     that archive, relative to the installation root or absolute.\n\nBuild or refresh the archive first with bin/php/phar.php build. A path that\ndoes not exist stops the server from starting rather than quietly falling\nback, because a silent fall back is indistinguishable from success.\n\nMeasured on this installation, an archive was within noise of the files on\ndisk once the opcode cache was warm. It is worth having for distribution and\nfor knowing the engine is exactly what was built, not for speed.",
+        "de": "Die Engine aus einem Archiv statt aus den Dateien auf der Festplatte ausführen.\n\nDer Bootstrap lädt die Engine nur dann aus dist/engine.phar, wenn die\nUmgebungsvariable EXP_ENGINE_PHAR ein vorhandenes Archiv nennt. Nichts\nsetzte sie früher, das Archiv ließ sich also bauen und untersuchen, aber nie ausführen;\nes zu testen hieß, die Variable von Hand in das zu exportieren, was den\nServer startete, und Setup > Systeminformationen konnte immer nur \"Individual files\non disk\" sagen.\n\n  disabled   die Dateien auf der Festplatte. Der Standard und das, was eine normale Installation will.\n  enabled    dist/engine.phar, wo immer expPhar es ablegt.\n  <path>     dieses Archiv, relativ zum Wurzelverzeichnis der Installation oder absolut.\n\nBauen oder erneuern Sie das Archiv zuerst mit bin/php/phar.php build. Ein Pfad, der\nnicht existiert, hält den Server vom Start ab, statt still\nzurückzufallen, weil ein stilles Zurückfallen nicht von Erfolg zu unterscheiden ist.\n\nGemessen auf dieser Installation lag ein Archiv bei warmem Opcode-Cache im Rauschen\nder Dateien auf der Festplatte. Es lohnt sich für die Verteilung und\num zu wissen, dass die Engine genau das ist, was gebaut wurde, nicht für die Geschwindigkeit."
+    },
+    "ini:settings/velocity.ini [ServerSettings] FollowSymlinks": {
+        "en": "Serve files that a symbolic link inside the document root leads to outside\nof it. disabled refuses them: the qbix engine answers 403, the php engine\n404. A link placed in the document root -- by an upload, an installer or a\nshared asset tree -- would otherwise hand out whatever it points at.\nenabled is for installations that link on purpose, such as extensions\nlinked in from a shared checkout or var/storage on another disk. A path\nthat climbs out with ../ is refused either way, and neither engine ever\nserves a .php file as a file. The frankenphp engine always follows links\n(Caddy's file server has no switch for it).",
+        "de": "Dateien ausliefern, zu denen ein symbolischer Link im Dokumentenverzeichnis außerhalb davon\nführt. disabled lehnt sie ab: Die Engine qbix antwortet mit 403, die Engine php mit\n404. Ein im Dokumentenverzeichnis abgelegter Link (durch einen Upload, einen Installer oder einen\ngemeinsamen Asset-Baum) würde sonst ausliefern, worauf er zeigt.\nenabled ist für Installationen, die absichtlich verlinken, etwa Erweiterungen,\ndie aus einem gemeinsamen Checkout verlinkt sind, oder var/storage auf einer anderen Festplatte. Ein Pfad,\nder mit ../ hinausklettert, wird in beiden Fällen abgelehnt, und keine Engine liefert je\neine .php-Datei als Datei aus. Die Engine frankenphp folgt Links immer\n(der Dateiserver von Caddy hat dafür keinen Schalter)."
+    },
+    "ini:settings/velocity.ini [ServerSettings] ForkPerRequest": {
+        "en": "How long a worker lives.\n\n  enabled    one request per worker, then the parent forks a fresh one.\n             Nothing a request leaves behind can reach the next, as under\n             php-fpm, and KeepGlobals has nothing left to do. The default\n             until 2026-09-30.\n  disabled   persistent workers: each serves requests until it has served\n             the server's maxRequests, with the request's state cleared in\n             between. This is what KeepGlobals below exists for. The\n             shipped default since 2026-09-30 (approved that day), for the\n             reasons at the end of this comment.\n\nMeasured on an installation of the demo site, rendered front page, sixteen\nworkers, sixteen concurrent, the two modes alternated three times on the\nsame server code: 23.6-23.9 req/s with a fresh worker per request against\n17.5-19.8 with persistent ones, p99 0.97-1.10s against 1.35-1.49s. Clearing\na used worker cost more than forking a new one.\n\nNeeds a server that can carry headers and run the request's shutdown\nfunctions in this mode -- qbix-webserver v0.0.4.25 or later. On older\nversions a sign-in is accepted and then forgotten: the response carries\nneither the session cookie nor the redirect.\n\nSet to disabled on 2026-09-30, for the time one request takes rather than\nhow many sixteen concurrent ones get through. A fresh worker starts every\nrequest cold: a new database connection (40-70 ms on Oracle, where a\npersistent one is reused in 0.5 ms), empty stat and realpath caches, and\nnothing the kernel keeps per process. Signed-in admin pages took 256-284 ms\nagainst Apache's 60 ms; with persistent workers 73-80 ms, and a publish went\nfrom 2.0 s to 1.4 s. The state a request leaves is cleared after the response\nhas gone out, so it costs the next request nothing on a quiet server.\nPersistent workers need the server to set REQUEST_TIME_FLOAT per request\n(the kernel keys per-request caches on it), which it does from the\n2026-09-30 engine fix on (Velocity v0.0.4.42 or later).",
+        "de": "Wie lange ein Worker lebt.\n\n  enabled    eine Anfrage pro Worker, dann forkt der Elternprozess einen frischen.\n             Nichts, was eine Anfrage zurücklässt, kann die nächste erreichen, wie unter\n             php-fpm, und KeepGlobals hat nichts mehr zu tun. Der Standard\n             bis 2026-09-30.\n  disabled   dauerhafte Worker: Jeder bedient Anfragen, bis er die\n             maxRequests des Servers erreicht hat, wobei der Zustand der Anfrage\n             dazwischen geleert wird. Dafür gibt es KeepGlobals unten. Der\n             ausgelieferte Standard seit 2026-09-30 (an diesem Tag genehmigt), aus den\n             Gründen am Ende dieses Kommentars.\n\nGemessen auf einer Installation der Demo-Website, gerenderte Startseite, sechzehn\nWorker, sechzehn gleichzeitig, die beiden Modi dreimal abgewechselt mit demselben\nServercode: 23,6-23,9 Anfragen/s mit einem frischen Worker pro Anfrage gegenüber\n17,5-19,8 mit dauerhaften, p99 0,97-1,10 s gegenüber 1,35-1,49 s. Einen\nbenutzten Worker zu leeren kostete mehr, als einen neuen zu forken.\n\nBraucht einen Server, der in diesem Modus Header übertragen und die Shutdown-\nFunktionen der Anfrage ausführen kann, qbix-webserver v0.0.4.25 oder später. Bei älteren\nVersionen wird eine Anmeldung angenommen und dann vergessen: Die Antwort trägt\nweder das Sitzungs-Cookie noch die Weiterleitung.\n\nAm 2026-09-30 auf disabled gesetzt, wegen der Zeit, die eine Anfrage braucht, und nicht wegen\nder Zahl, die sechzehn gleichzeitige schaffen. Ein frischer Worker beginnt jede\nAnfrage kalt: eine neue Datenbankverbindung (40-70 ms bei Oracle, wo eine\ndauerhafte in 0,5 ms wiederverwendet wird), leere stat- und realpath-Caches und\nnichts, was der Kernel pro Prozess behält. Angemeldete Administrationsseiten brauchten 256-284 ms\ngegenüber 60 ms bei Apache; mit dauerhaften Workern 73-80 ms, und ein Veröffentlichen ging\nvon 2,0 s auf 1,4 s. Der Zustand, den eine Anfrage hinterlässt, wird geleert, nachdem die Antwort\nhinausgegangen ist, er kostet die nächste Anfrage auf einem ruhigen Server also nichts.\nDauerhafte Worker brauchen einen Server, der REQUEST_TIME_FLOAT pro Anfrage setzt\n(der Kernel unterscheidet seine Caches pro Anfrage danach), was er ab der\nKorrektur der Engine vom 2026-09-30 tut (Velocity v0.0.4.42 oder später)."
+    },
+    "ini:settings/velocity.ini [ServerSettings] HTTP2": {
+        "en": "Speak HTTP/2 to clients that ask for it during the TLS handshake.\n\nA page on this installation references 41 assets. Over HTTP/1.1 a browser\nfetches them about six at a time in waves; over HTTP/2 they share one\nconnection. Measured here, asset delivery was 393-418ms against 85-104ms\nthrough a front end that spoke it, on identical bytes.\n\nThe protocol is agreed during the handshake and a client does not fall back\nafterwards, so a fault would be a page that never arrives rather than one\nthat arrives slowly. That is why the server answers any stream still open\nwith a readable page instead of closing silently, and why this is a switch\nrather than the default.",
+        "de": "Mit Clients, die beim TLS-Handshake danach fragen, HTTP/2 sprechen.\n\nEine Seite dieser Installation verweist auf 41 Assets. Über HTTP/1.1 holt ein Browser\nsie in Wellen zu etwa sechs auf einmal; über HTTP/2 teilen sie sich eine\nVerbindung. Hier gemessen, dauerte die Auslieferung der Assets 393-418 ms gegenüber 85-104 ms\nüber ein Frontend, das es sprach, bei identischen Bytes.\n\nDas Protokoll wird beim Handshake vereinbart, und ein Client fällt\ndanach nicht zurück; ein Fehler wäre also eine Seite, die nie ankommt, statt einer,\ndie langsam ankommt. Deshalb beantwortet der Server jeden noch offenen Stream\nmit einer lesbaren Seite, statt still zu schließen, und deshalb ist dies ein Schalter\nund nicht der Standard."
+    },
+    "ini:settings/velocity.ini [ServerSettings] HTTP2ErrorImage": {
+        "en": "The picture on that page. Empty uses the one the server draws, which is\ninline and needs no second request -- the page appears exactly when the\nconnection carrying it is unreliable. Point this at an svg, png or jpg to\nchange it, or set the server's own errorPage.image to \"none\" for no picture.",
+        "de": "Das Bild auf dieser Seite. Leer verwendet das, das der Server zeichnet, das\neingebettet ist und keine zweite Anfrage braucht: Die Seite erscheint genau dann, wenn die\nVerbindung, die sie trägt, unzuverlässig ist. Zeigen Sie auf ein svg, png oder jpg, um\nes zu ändern, oder setzen Sie errorPage.image des Servers auf \"none\" für kein Bild."
+    },
+    "ini:settings/velocity.ini [ServerSettings] Host": {
+        "en": "Bind address. 127.0.0.1 keeps the server reachable only through a tunnel or\na reverse proxy, which is the right default: this server has no HTTP auth\nof its own and serves the whole document root.",
+        "de": "Bindeadresse. 127.0.0.1 hält den Server nur über einen Tunnel oder\neinen Reverse-Proxy erreichbar, was der richtige Standard ist: Dieser Server hat keine eigene HTTP-\nAuthentifizierung und liefert das ganze Dokumentenverzeichnis aus."
+    },
+    "ini:settings/velocity.ini [ServerSettings] Instances": {
+        "en": "How many servers to run on the same ports (the qbix engine only). A server\nanswers cached pages in its own process, about 0.3 ms of CPU a page, so one\nserver is bounded by one core: ~3,500 cached pages a second measured on a\n12-core machine. With more than one, every instance listens on the same ports\nwith SO_REUSEPORT and the kernel spreads connections across them: two\nmeasured 6,600-6,900, four 12,200-13,100. Renders are not faster; they are\nbounded by the workers.\n\nEach instance has its own worker pool: Workers and SpareWorkers above are\nper instance, so divide them by Instances to keep the same memory. Each has\nits own pid file and log beside PidFile and LogFile (server.pid,\nserver.1.pid, ...). graceful reloads them one at a time, so the port keeps\nanswering. Linux and the BSDs only.",
+        "de": "Wie viele Server auf denselben Ports laufen (nur die Engine qbix). Ein Server\nbeantwortet gecachte Seiten in seinem eigenen Prozess, etwa 0,3 ms CPU pro Seite, ein\nServer ist also durch einen Kern begrenzt: ~3.500 gecachte Seiten pro Sekunde, gemessen auf einem\nRechner mit 12 Kernen. Bei mehr als einem lauscht jede Instanz mit\nSO_REUSEPORT auf denselben Ports, und der Kernel verteilt die Verbindungen auf sie: zwei\nmaßen 6.600-6.900, vier 12.200-13.100. Rendern wird nicht schneller; es ist\ndurch die Worker begrenzt.\n\nJede Instanz hat ihren eigenen Worker-Pool: Workers und SpareWorkers oben gelten\npro Instanz, teilen Sie sie also durch Instances, um denselben Speicher zu behalten. Jede hat\nihre eigene PID-Datei und ihr eigenes Log neben PidFile und LogFile (server.pid,\nserver.1.pid, ...). graceful lädt sie einzeln neu, sodass der Port weiter\nantwortet. Nur Linux und die BSDs."
+    },
+    "ini:settings/velocity.ini [ServerSettings] Nice": {
+        "en": "The priority (nice value, -20 to 19) the server and its workers run at,\nwhatever the caller of start, restart or deploy runs at: a deploy started\nunder nice -n 19 used to leave every worker at 19. Lowering it below the\ncaller's needs root. inherit keeps the caller's value (the old behavior).\nexp:velocity status reports a running parent at another value.",
+        "de": "Die Priorität (Nice-Wert, -20 bis 19), mit der der Server und seine Worker laufen,\negal mit welchem Wert der Aufrufer von start, restart oder deploy läuft: Ein Deployment, das\nunter nice -n 19 gestartet wurde, ließ früher jeden Worker auf 19. Ihn unter den Wert\ndes Aufrufers zu senken braucht root. inherit behält den Wert des Aufrufers (das alte Verhalten).\nexp:velocity status meldet einen laufenden Elternprozess mit einem anderen Wert."
+    },
+    "ini:settings/velocity.ini [ServerSettings] PreloadWarmup": {
+        "en": "Load the kernel and render a page in the parent before forking, so workers\nshare it copy-on-write instead of each building it. 'enabled' or 'disabled'.\n\nSTATUS: left DISABLED. Do not enable on a site with real content without the\nregression pass below -- it has broken a different feature at each attempt.\n\nThe warm-up shares the warmed arena (~21 MB/worker vs ~209) and, with the\ncomprehensive static reset below, renders correct, styled pages with correct\nbreadcrumbs. But that reset -- resetting every user-class static -- also broke\nthe ezjscore AJAX endpoint (/ezjscore/call/...), so the \"load more\" buttons\nreturned 502; skipping the ezjsc* classes did not fix it, the fatal was in\nanother reset. That is the fourth distinct feature the warm-up has broken\n(wrong pages, missing CSS, wrong breadcrumb, dead load-more), each surfacing\nonly after the last was fixed. The render-in-parent approach couples too much\nof eZ's request-time static state to share safely by resetting it; a viable\nwarm-up needs a different mechanism (e.g. snapshotting the pool BEFORE the\nrender, an engine change) and a regression suite that exercises EVERY feature,\nAJAX included. Its memory saving is not the constraint that matters here --\nthe throughput and event-loop ceilings arrive first -- so it is off.\n\nThe path here was long. Clearing request globals by name fixed three bugs\n(routing, the template override map, ezjscore's CSS \"loaded\" flag) but a\nfourth kept surfacing: the home page read a frozen current-node and showed the\nwrong breadcrumb. Naming leaks did not converge, so bin/php/velocity-warmup.php\nnow does the opposite: after rendering it resets EVERY user-class static\nproperty to its declared default -- the state a freshly bootstrapped worker\nhas -- and clears the request globals, keeping only the pure config and type\nregistries (eZINI, eZDataType, eZWorkflowType, eZModule, eZExtension, eZLocale,\neZCharsetInfo, eZTextCodec). Those are expensive to rebuild and hold no request\nstate; resetting them too timed pages out and doubled memory. Everything else\n-- template engine, design resolver, content-class caches, the current node --\nis reset, which is what finally cleared the breadcrumb and any future leak of\nthe same kind. The database is closed before the fork.\n\nVerify after any change: several distinct urls return distinct content, each\ncarries a resolving stylesheet, the home page has NO breadcrumb, and a deep\npage has its OWN correct breadcrumb. That last pair is the test that catches\nthe current-node leak.\n\nIt renders a representative page in the parent so workers inherit the warmed\nZend arena copy-on-write: measured ~17-24 MB private per warm worker with it,\nversus ~209 MB without. The parent's render leaves eZ request state behind,\nwhich the pool's snapshot would otherwise freeze as every worker's baseline,\nso bin/php/velocity-warmup.php clears it after rendering: the request-routing\nglobals (or every url served the front page), the template override cache map\n(or other page types lost their CSS), and ezjscore's packer \"already loaded\"\nstatic (or packer-loaded stylesheets, e.g. the search page, were skipped).\nThe database is closed before the fork, so no worker shares the connection.\n\nIf you change what the warm-up renders or how it resets, re-verify BEFORE\ntrusting it: several distinct urls must return distinct content AND each must\ncarry a resolving stylesheet.",
+        "de": "Den Kernel laden und eine Seite im Elternprozess rendern, bevor geforkt wird, damit die Worker\nsie per Copy-on-Write teilen, statt sie jeweils aufzubauen. 'enabled' oder 'disabled'.\n\nSTATUS: DEAKTIVIERT gelassen. Aktivieren Sie es auf einer Website mit echten Inhalten nicht ohne den\nRegressionsdurchgang unten; es hat bei jedem Versuch eine andere Funktion beschädigt.\n\nDas Vorwärmen teilt die vorgewärmte Arena (~21 MB/Worker gegenüber ~209) und rendert mit dem\numfassenden Zurücksetzen der statischen Eigenschaften unten korrekte, gestaltete Seiten mit korrekten\nBrotkrumenpfaden. Aber dieses Zurücksetzen (jede statische Eigenschaft der Benutzerklassen) zerstörte\nauch den AJAX-Endpunkt von ezjscore (/ezjscore/call/...), sodass die Schaltflächen „Mehr laden“\n502 zurückgaben; die Klassen ezjsc* auszulassen half nicht, der fatale Fehler lag in\neinem anderen Zurücksetzen. Das ist die vierte verschiedene Funktion, die das Vorwärmen beschädigt hat\n(falsche Seiten, fehlendes CSS, falscher Brotkrumenpfad, totes „Mehr laden“), jede trat\nerst auf, nachdem die vorige behoben war. Der Ansatz, im Elternprozess zu rendern, koppelt zu viel\nvom statischen Anfragezustand von eZ, um ihn durch Zurücksetzen sicher zu teilen; ein brauchbares\nVorwärmen braucht einen anderen Mechanismus (z. B. einen Schnappschuss des Pools VOR dem\nRendern, eine Änderung der Engine) und eine Regressionssuite, die JEDE Funktion prüft,\nAJAX eingeschlossen. Die Speicherersparnis ist hier nicht die entscheidende Grenze,\nder Durchsatz und die Grenzen der Event-Schleife kommen zuerst, daher ist es aus.\n\nDer Weg hierher war lang. Das Leeren der Anfrage-Globals nach Namen behob drei Fehler\n(Routing, die Zuordnung der Template-Overrides, das CSS-Flag „geladen“ von ezjscore), aber ein\nvierter tauchte immer wieder auf: Die Startseite las einen eingefrorenen aktuellen Knoten und zeigte den\nfalschen Brotkrumenpfad. Lecks zu benennen konvergierte nicht, daher macht bin/php/velocity-warmup.php\njetzt das Gegenteil: Nach dem Rendern setzt es JEDE statische Eigenschaft der Benutzerklassen\nauf ihren deklarierten Standard zurück (den Zustand, den ein frisch gestarteter Worker\nhat) und leert die Anfrage-Globals, wobei nur die reinen Konfigurations- und Typ-\nregister behalten werden (eZINI, eZDataType, eZWorkflowType, eZModule, eZExtension, eZLocale,\neZCharsetInfo, eZTextCodec). Diese sind teuer neu aufzubauen und enthalten keinen Anfrage-\nzustand; sie ebenfalls zurückzusetzen ließ Seiten in Zeitüberschreitungen laufen und verdoppelte den Speicher. Alles andere\n(Template-Engine, Design-Auflöser, Caches der Inhaltsklassen, der aktuelle Knoten)\nwird zurückgesetzt, was den Brotkrumenpfad und jedes künftige Leck derselben Art schließlich behob. Die\nDatenbank wird vor dem Fork geschlossen.\n\nPrüfen Sie nach jeder Änderung: mehrere verschiedene URLs liefern verschiedene Inhalte, jede\nträgt ein auflösbares Stylesheet, die Startseite hat KEINEN Brotkrumenpfad, und eine tiefe\nSeite hat ihren EIGENEN korrekten Brotkrumenpfad. Dieses letzte Paar ist der Test, der\ndas Leck des aktuellen Knotens findet.\n\nEs rendert eine repräsentative Seite im Elternprozess, damit die Worker die vorgewärmte\nZend-Arena per Copy-on-Write erben: gemessen ~17-24 MB privat pro warmem Worker damit,\ngegenüber ~209 MB ohne. Das Rendern im Elternprozess hinterlässt Anfragezustand von eZ,\nden der Schnappschuss des Pools sonst als Grundlage jedes Workers einfrieren würde,\ndaher leert bin/php/velocity-warmup.php ihn nach dem Rendern: die Globals des Anfrage-Routings\n(sonst lieferte jede URL die Startseite), die Zuordnung des Template-Override-Caches\n(sonst verloren andere Seitentypen ihr CSS) und die statische Eigenschaft „bereits geladen“ des Packers von ezjscore\n(sonst wurden vom Packer geladene Stylesheets, z. B. der Suchseite, übersprungen).\nDie Datenbank wird vor dem Fork geschlossen, sodass kein Worker die Verbindung teilt.\n\nWenn Sie ändern, was das Vorwärmen rendert oder wie es zurücksetzt, prüfen Sie erneut, BEVOR\nSie ihm vertrauen: Mehrere verschiedene URLs müssen verschiedene Inhalte liefern UND jede muss\nein auflösbares Stylesheet tragen."
+    },
+    "ini:settings/velocity.ini [ServerSettings] ResponseHeaders": {
+        "en": "Headers added to every answer the server builds itself: static files,\nresized images, its own error pages, redirects and 304 answers. The same\nfour the Apache and nginx front ends of this installation send on every\nanswer (\"Header always set\", \"add_header ... always\"), which the server did\nnot send on a static file at all. One \"Name: value\" per line. A header an\nanswer already carries is never replaced or sent twice. An empty list\n(ResponseHeaders[] alone) adds none.\n\nFraming headers (Content-Length, Content-Type, Connection, Date ...) cannot\nbe set here, and Strict-Transport-Security has its own setting, HSTSMaxAge\nin [HTTPSSettings], because it must never go out over plain HTTP.",
+        "de": "Header, die jeder Antwort hinzugefügt werden, die der Server selbst baut: statische Dateien,\nskalierte Bilder, seine eigenen Fehlerseiten, Weiterleitungen und 304-Antworten. Dieselben\nvier, die die Frontends Apache und nginx dieser Installation bei jeder\nAntwort senden (\"Header always set\", \"add_header ... always\"), was der Server bei einer\nstatischen Datei gar nicht sendete. Ein \"Name: value\" pro Zeile. Ein Header, den eine\nAntwort schon trägt, wird nie ersetzt oder doppelt gesendet. Eine leere Liste\n(ResponseHeaders[] allein) fügt keine hinzu.\n\nFraming-Header (Content-Length, Content-Type, Connection, Date ...) lassen sich hier nicht\nsetzen, und Strict-Transport-Security hat eine eigene Einstellung, HSTSMaxAge\nin [HTTPSSettings], weil es nie über einfaches HTTP hinausgehen darf."
+    },
+    "ini:settings/velocity.ini [ServerSettings] ResponseHeadersOnScripts": {
+        "en": "Also add them to what index.php, index_rest.php and index_treemenu.php\nanswer, each one only when the script did not send that header itself: a\npage that sets its own X-Frame-Options keeps it. The kernel sends these four\non its pages already; REST answers and the tree menu carry none of their\nown. enabled or disabled.",
+        "de": "Sie auch dem hinzufügen, was index.php, index_rest.php und index_treemenu.php\nantworten, jeden nur, wenn das Skript diesen Header nicht selbst gesendet hat: Eine\nSeite, die ihr eigenes X-Frame-Options setzt, behält es. Der Kernel sendet diese vier\nauf seinen Seiten schon; REST-Antworten und das Baummenü tragen keine\neigenen. enabled oder disabled."
+    },
+    "ini:settings/velocity.ini [ServerSettings] RetryWithin": {
+        "en": "Seconds after a request reached its worker within which a GET whose worker\ndied without answering is run again, once (never an event stream, never a\nresponse that had started). Empty = the engine's default, 10.",
+        "de": "Sekunden, nachdem eine Anfrage ihren Worker erreicht hat, innerhalb derer ein GET, dessen Worker\nohne Antwort gestorben ist, erneut ausgeführt wird, einmal (nie ein Event-Stream, nie eine\nAntwort, die schon begonnen hatte). Leer = der Standard der Engine, 10."
+    },
+    "ini:settings/velocity.ini [ServerSettings] ScriptPath": {
+        "en": "The Qbix server's script. Relative paths resolve against the installation\nroot. The qbix engine only; Port, HTTPSPort, Host and Workers below are the\nqbix engine's, and the others' when their own blocks leave them empty.\nFrom Exponential Velocity 0.0.4.41 the engine keeps the server in\nsbin/qbixserver.php (its qbixctl and qbixconsole in sbin/ too, its shell in\nbin/), and qbixserver.php at the top of the package is a forwarder that runs\nit in the same process: the value below works with the engine before and\nafter that release, and sbin/qbixserver.php may be named instead (the other\npath is used when the one named is not there). A server started by either\npath is this installation's for status, stop and restart.",
+        "de": "Das Skript des Qbix-Servers. Relative Pfade gelten ab dem Wurzelverzeichnis der\nInstallation. Nur die Engine qbix; Port, HTTPSPort, Host und Workers unten sind die der\nEngine qbix und die der anderen, wenn deren eigene Blöcke sie leer lassen.\nAb Exponential Velocity 0.0.4.41 hält die Engine den Server in\nsbin/qbixserver.php (ihr qbixctl und qbixconsole ebenfalls in sbin/, ihre Shell in\nbin/), und qbixserver.php oben im Paket ist eine Weiterleitung, die ihn\nim selben Prozess ausführt: Der Wert unten funktioniert mit der Engine vor und\nnach diesem Release, und sbin/qbixserver.php kann stattdessen genannt werden (der andere\nPfad wird verwendet, wenn der genannte nicht da ist). Ein über einen der beiden Pfade gestarteter Server\ngehört für status, stop und restart zu dieser Installation."
+    },
+    "ini:settings/velocity.ini [ServerSettings] SpareWorkers": {
+        "en": "Dynamic pool. Workers to keep running when quiet; more are forked when all\nof them are busy, up to Workers, and retired again after IdleWorkerTimeout\nseconds without a request. Each worker holds ~10 MB of real memory of its\nown from the moment it is forked, idle or not, so a large fixed pool pays\nfor workers that never serve anything. 0 = fixed pool (all Workers, always).",
+        "de": "Dynamischer Pool. Worker, die im Ruhezustand laufen; mehr werden geforkt, wenn alle\nbeschäftigt sind, bis zu Workers, und nach IdleWorkerTimeout\nSekunden ohne Anfrage wieder stillgelegt. Jeder Worker hält ab dem Fork ~10 MB echten\neigenen Speicher, untätig oder nicht, ein großer fester Pool bezahlt also\nfür Worker, die nie etwas bedienen. 0 = fester Pool (alle Workers, immer)."
+    },
+    "ini:settings/velocity.ini [ServerSettings] StatTtl": {
+        "en": "How long a worker may keep what it knows about files -- whether a path\nexists, a file's mtime and size -- across requests, in seconds (at most 10),\nthe way opcache.revalidate_freq does for compiles. 0 forgets at the end of\nevery request. Changes the worker makes itself, clearstatcache() and a\nprogram it runs (ImageMagick) are seen at once either way; only a change made\nby another process -- another worker, Apache on the same files, an editor --\ncan take up to this long to show. 1 measured 13% less CPU per rendered page.",
+        "de": "Wie lange ein Worker behalten darf, was er über Dateien weiß (ob ein Pfad\nexistiert, mtime und Größe einer Datei), über Anfragen hinweg, in Sekunden (höchstens 10),\nso wie opcache.revalidate_freq es für Kompilierungen tut. 0 vergisst es am Ende\njeder Anfrage. Änderungen, die der Worker selbst macht, clearstatcache() und ein\nProgramm, das er ausführt (ImageMagick), werden in beiden Fällen sofort gesehen; nur eine Änderung\neines anderen Prozesses (ein anderer Worker, Apache auf denselben Dateien, ein Editor)\nkann bis zu so lange brauchen, um sichtbar zu werden. 1 maß 13 % weniger CPU pro gerenderter Seite."
+    },
+    "ini:settings/velocity.ini [ServerSettings] StaticMaxAge": {
+        "en": "How long a browser may keep a stylesheet, script or image without asking\nagain, in seconds. 0 leaves the server's own default, which permits caching\nand then makes the client revalidate anyway -- so a page with 41 assets costs\n41 conditional requests on every view.\n\nA year is what the other web server in front of this installation already\nsends for the same files. The trade is that a file replaced in place is not\nnoticed until the lifetime expires; clear a browser's cache, or lower this,\nwhile working on a stylesheet.",
+        "de": "Wie lange ein Browser ein Stylesheet, Skript oder Bild behalten darf, ohne erneut\nzu fragen, in Sekunden. 0 belässt den eigenen Standard des Servers, der Caching erlaubt\nund den Client dann trotzdem neu prüfen lässt, sodass eine Seite mit 41 Assets\nbei jedem Aufruf 41 bedingte Anfragen kostet.\n\nEin Jahr ist das, was der andere Webserver vor dieser Installation für dieselben\nDateien schon sendet. Der Preis ist, dass eine an Ort und Stelle ersetzte Datei nicht\nbemerkt wird, bis die Lebensdauer abläuft; leeren Sie den Cache eines Browsers oder senken Sie dies,\nwährend Sie an einem Stylesheet arbeiten."
+    },
+    "ini:settings/velocity.ini [ServerSettings] StreamShare": {
+        "en": "Each open stream holds one worker. StreamShare is the share of Workers that\nevent streams may hold at once (engine default 0.25, at least one);\nMaxStreams the same as a number of workers, used instead when above 0. Past\nthe cap an event stream is answered 503 with Retry-After, so pages always\nkeep the rest of the pool. Empty = the engine's default.",
+        "de": "Jeder offene Stream hält einen Worker. StreamShare ist der Anteil von Workers, den\nEvent-Streams gleichzeitig halten dürfen (Standard der Engine 0.25, mindestens einer);\nMaxStreams dasselbe als Zahl von Workern, stattdessen verwendet, wenn über 0. Über\nder Grenze wird ein Event-Stream mit 503 und Retry-After beantwortet, sodass Seiten immer\nden Rest des Pools behalten. Leer = der Standard der Engine."
+    },
+    "ini:settings/velocity.ini [ServerSettings] StreamTimeout": {
+        "en": "Streaming responses (Server-Sent Events). A response with Content-Type\ntext/event-stream or X-Accel-Buffering: no is sent piece by piece, on every\nflush, from the persistent workers too (Velocity after v0.0.4.48; older\nengines send it whole at the end and ignore these settings).\n\nStreamTimeout: seconds a stream, or a request with Accept: text/event-stream\nbefore its first byte, may run instead of the request timeout (30 s);\nthen the stream ends cleanly and an EventSource reconnects. 0 = no limit.\nEmpty = the engine's default, 300.",
+        "de": "Streaming-Antworten (Server-Sent Events). Eine Antwort mit Content-Type\ntext/event-stream oder X-Accel-Buffering: no wird Stück für Stück gesendet, bei jedem\nflush, auch von den dauerhaften Workern (Velocity ab v0.0.4.48; ältere\nEngines senden sie am Ende ganz und ignorieren diese Einstellungen).\n\nStreamTimeout: Sekunden, die ein Stream oder eine Anfrage mit Accept: text/event-stream\nvor ihrem ersten Byte laufen darf, statt der Zeitgrenze der Anfrage (30 s);\ndann endet der Stream sauber, und eine EventSource verbindet sich neu. 0 = keine Grenze.\nLeer = der Standard der Engine, 300."
+    },
+    "ini:settings/velocity.ini [ServerSettings] User": {
+        "en": "The user and group the workers run as when the server is started as root\n(the qbix engine; Apache's User and Group). The server process itself stays\nroot -- it binds the ports and reads the certificate -- and every worker gives\nroot up before it runs any of the application, so what the site writes\n(image variations, caches, sessions) belongs to the site's user, as it does\nunder Apache and PHP-FPM, and not to root.\n\nEmpty: VC_RUN_USER / VC_RUN_GROUP from the environment or /etc/vc/envvars,\nelse the owner and group of the document root. When the document root\nitself belongs to root the workers stay root, with a warning. A user or\ngroup that does not exist stops the start. root is refused unless\nAllowRootWorkers=enabled. Names or numeric ids (#10009).",
+        "de": "Der Benutzer und die Gruppe, als die die Worker laufen, wenn der Server als root gestartet wird\n(die Engine qbix; User und Group von Apache). Der Serverprozess selbst bleibt\nroot (er bindet die Ports und liest das Zertifikat), und jeder Worker gibt\nroot ab, bevor er irgendetwas der Anwendung ausführt, sodass das, was die Website schreibt\n(Bildvarianten, Caches, Sitzungen), dem Benutzer der Website gehört, wie\nunter Apache und PHP-FPM, und nicht root.\n\nLeer: VC_RUN_USER / VC_RUN_GROUP aus der Umgebung oder /etc/vc/envvars,\nsonst Eigentümer und Gruppe des Dokumentenverzeichnisses. Wenn das Dokumentenverzeichnis\nselbst root gehört, bleiben die Worker root, mit einer Warnung. Ein Benutzer oder\neine Gruppe, die nicht existiert, hält den Start an. root wird abgelehnt, außer bei\nAllowRootWorkers=enabled. Namen oder numerische IDs (#10009)."
+    },
+    "ini:settings/velocity.ini [ServerSettings] Workers": {
+        "en": "Explicit, always. Left to itself the server sizes the pool from the machine\nand can choose a number so large it accepts connections and answers none.\nWith SpareWorkers set this is the most the pool grows to, not what it runs.",
+        "de": "Immer ausdrücklich. Sich selbst überlassen, bemisst der Server den Pool nach dem Rechner\nund kann eine Zahl wählen, die so groß ist, dass er Verbindungen annimmt und keine beantwortet.\nMit gesetztem SpareWorkers ist dies das Höchste, auf das der Pool wächst, nicht das, was er ausführt."
+    },
+    "ini:settings/velocity.ini [ServerSettings] Zygote": {
+        "en": "Fork workers after the start from a zygote -- a process forked before the\nserver accepted its first connection -- instead of from the server itself.\nA worker forked from the server inherits every open TLS connection and cannot\nclose it (that would end it for the server too), so under load each one kept\nvisitors' connections open until it retired: up to 50 in CLOSE-WAIT after a\n20-second burst here. enabled, disabled, or empty for the engine's default\n(enabled). Needs PHP's sockets extension; if the zygote fails, workers are\nforked from the server as before.",
+        "de": "Worker nach dem Start aus einer Zygote forken (einem Prozess, der geforkt wurde, bevor der\nServer seine erste Verbindung angenommen hat) statt aus dem Server selbst.\nEin aus dem Server geforkter Worker erbt jede offene TLS-Verbindung und kann sie nicht\nschließen (das würde sie auch für den Server beenden), daher hielt unter Last jeder\ndie Verbindungen der Besucher offen, bis er stillgelegt wurde: bis zu 50 in CLOSE-WAIT nach einem\n20-sekündigen Ansturm hier. enabled, disabled oder leer für den Standard der Engine\n(enabled). Braucht die PHP-Erweiterung sockets; scheitert die Zygote, werden die Worker\nwie bisher aus dem Server geforkt."
+    },
+    "ini:settings/velocity.ini [WatchdogSettings] Backoff": {
+        "en": "After three starts in a row that failed, seconds to wait before the next.",
+        "de": "Nach drei gescheiterten Starts in Folge Sekunden Wartezeit vor dem nächsten."
+    },
+    "ini:settings/velocity.ini [WatchdogSettings] Interval": {
+        "en": "exp:velocity watchdog: a safety net that starts the default engine again\nwhen it is down and nobody meant it to be (a restart whose caller was killed\nbetween the stop and the start, a crash, an out-of-memory kill). Off until\n`exp:velocity watchdog install` (root, systemd) writes <UnitName>.service\nand .timer and conf-available/<name>.conf in the configuration tree, enables\nthat file (conf-enabled) and starts the timer. Values in the enabled file win\nover these. `exp:velocity conf disable watchdog` pauses it; `watchdog remove`\ntakes it out; `watchdog status` and var/log/velocity-watchdog.log say what it\ndid. It starts the engine only when no process of it runs, nobody stopped it\n(exp:velocity stop/kill leave stopped.json beside the pid file) and no\nrestart is under way (restart-in-progress.json); it never touches a server\nthat runs, whether it answers or not.\n\nSeconds between checks (15 to 3600).",
+        "de": "exp:velocity watchdog: ein Sicherheitsnetz, das die Standard-Engine erneut startet,\nwenn sie unten ist und niemand das wollte (ein Neustart, dessen Aufrufer\nzwischen Stopp und Start beendet wurde, ein Absturz, ein Beenden wegen Speichermangels). Aus, bis\n`exp:velocity watchdog install` (root, systemd) <UnitName>.service\nund .timer und conf-available/<name>.conf im Konfigurationsbaum schreibt,\ndiese Datei aktiviert (conf-enabled) und den Timer startet. Werte in der aktivierten Datei gewinnen\ngegen diese. `exp:velocity conf disable watchdog` pausiert ihn; `watchdog remove`\nnimmt ihn heraus; `watchdog status` und var/log/velocity-watchdog.log sagen, was er\ngetan hat. Er startet die Engine nur, wenn kein Prozess von ihr läuft, niemand sie angehalten hat\n(exp:velocity stop/kill hinterlassen stopped.json neben der PID-Datei) und kein\nNeustart im Gange ist (restart-in-progress.json); einen laufenden Server fasst er nie an,\nob er antwortet oder nicht.\n\nSekunden zwischen den Prüfungen (15 bis 3600)."
+    },
+    "ini:settings/velocity.ini [WatchdogSettings] LockFile": {
+        "en": "A lock file (flock) that, while held, means \"something is deploying, wait\":\na deploy queue of the installation. Empty: none.",
+        "de": "Eine Sperrdatei (flock), die, solange sie gehalten wird, „es wird gerade ausgerollt, warten“ bedeutet:\neine Deployment-Warteschlange der Installation. Leer: keine."
+    },
+    "ini:settings/velocity.ini [WatchdogSettings] RestartTimeout": {
+        "en": "Seconds a restart may take before its marker no longer holds the watchdog\nback (a marker whose process is gone never does). Also how long a held\nLockFile may keep a server that is down from being started.",
+        "de": "Sekunden, die ein Neustart dauern darf, bevor seine Markierung den Watchdog nicht mehr\nzurückhält (eine Markierung, deren Prozess nicht mehr da ist, tut das nie). Auch, wie lange eine gehaltene\nLockFile einen Server, der unten ist, vom Start abhalten darf."
+    },
+    "ini:settings/velocity.ini [WatchdogSettings] UnitDir": {
+        "en": "Where the unit files are written.",
+        "de": "Wohin die Unit-Dateien geschrieben werden."
+    },
+    "ini:settings/velocity.ini [WatchdogSettings] UnitName": {
+        "en": "The systemd unit's name; give each installation on a host its own.",
+        "de": "Der Name der systemd-Unit; geben Sie jeder Installation auf einem Host ihren eigenen."
+    },
+    "ini:settings/viewcache.ini": {
+        "en": "Exponential configuration file for view caching.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/viewcache.ini.append or\n      settings/override/viewcache.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für den View-Cache.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/viewcache.ini.append oder\n      settings/override/viewcache.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/viewcache.ini [ViewCacheSettings] ClearRelationTypes": {
+        "en": "Determines which types of related objects will be choosen to clear view cache\nwhen publishing current object.\nPossible values are:\ncommon                    - common relations made on object level\nembedded                  - embedded objects\nlinked                    - linked objects\nattribute                 - relations made with attributes of 'object relation' or\n                            'object relations' datatypes\nreverse_common            - reverse common relations (objects that relate the one currently\n                            being published) on object level\nreverse_embedded          - objects that have current object as embedded\nreverse_linked            - objects that have linked current object\nreverse_attribute         - objects that have current object as related in their attributes.",
+        "de": "Legt fest, welche Arten verknüpfter Objekte gewählt werden, um beim Veröffentlichen des aktuellen Objekts\nden View-Cache zu leeren.\nMögliche Werte sind:\ncommon                    - allgemeine Verknüpfungen auf Objektebene\nembedded                  - eingebettete Objekte\nlinked                    - verlinkte Objekte\nattribute                 - Verknüpfungen über Attribute der Datentypen 'object relation' oder\n                            'object relations'\nreverse_common            - umgekehrte allgemeine Verknüpfungen (Objekte, die mit dem gerade\n                            veröffentlichten verknüpft sind) auf Objektebene\nreverse_embedded          - Objekte, die das aktuelle Objekt eingebettet haben\nreverse_linked            - Objekte, die das aktuelle Objekt verlinkt haben\nreverse_attribute         - Objekte, die das aktuelle Objekt in ihren Attributen als verknüpft haben."
+    },
+    "ini:settings/viewcache.ini [ViewCacheSettings] KeywordNodesCacheClearLimit": {
+        "en": "The maximum number of linked keyword nodes to go trough\nwhen looking for objects that needs to have its cache cleared.\nSet to integer to activate, 0 to disable keyword clearing globally\nor disabled to not have any limit at all (default value)",
+        "de": "Die Höchstzahl verlinkter Schlüsselwort-Knoten, die durchgegangen werden,\nwenn nach Objekten gesucht wird, deren Cache geleert werden muss.\nSetzen Sie eine Ganzzahl zum Aktivieren, 0, um das Leeren nach Schlüsselwörtern global abzuschalten,\noder disabled für gar keine Grenze (Standardwert)"
+    },
+    "ini:settings/viewcache.ini [ViewCacheSettings] SmartCacheClear": {
+        "en": "Controls the smart viewcache handler, use enabled, disabled or exclusive.\nWhen the handler is disabled the system will clear the viewcache\nfor all published nodes of the current object, its parent(s), reverse\nrelated objects and objects with same keywords (if any).\nWhen enabled it will in addition try to follow the rules set in viewcache.ini\nfor more advanced relations between objects. e.g. to clear a forum\nlisting when a new topic or reply is posted.\nWhen exclusive, settings for specific classes are used exclusively\n(if defined), instead of in addition to the default settings.",
+        "de": "Steuert den intelligenten Handler des View-Caches; verwenden Sie enabled, disabled oder exclusive.\nIst der Handler deaktiviert, leert das System den View-Cache\naller veröffentlichten Knoten des aktuellen Objekts, seines Elternknotens (seiner Elternknoten), umgekehrt\nverknüpfter Objekte und Objekte mit denselben Schlüsselwörtern (falls vorhanden).\nWenn aktiviert, versucht es zusätzlich, den in viewcache.ini gesetzten Regeln\nfür komplexere Beziehungen zwischen Objekten zu folgen, z. B. um eine Forums-\nliste zu leeren, wenn ein neues Thema oder eine Antwort gepostet wird.\nBei exclusive werden die Einstellungen für bestimmte Klassen ausschließlich verwendet\n(falls definiert), statt zusätzlich zu den Standardeinstellungen."
+    },
+    "ini:settings/webdav.ini [FolderSettings]": {
+        "en": "FolderClasses[]=article\nFolderClasses[]=your_custom_class\nDEPRECATED: WebDAV will use the settings in upload.ini\n\nThis setting reveales the ID of the folder class.\nIn addition, it is also used to determine which\nattribute to use when creating/naming/renaming the folder.",
+        "de": "FolderClasses[]=article\nFolderClasses[]=your_custom_class\nVERALTET: WebDAV verwendet die Einstellungen aus upload.ini\n\nDiese Einstellung verrät die ID der Ordnerklasse.\nAußerdem bestimmt sie, welches\nAttribut beim Anlegen, Benennen und Umbenennen des Ordners verwendet wird."
+    },
+    "ini:settings/webdav.ini [GeneralSettings] FolderClasses": {
+        "en": "List of classes that should always be seen as a folder.\nBy default, if a class contains an image attribute it is seen as an image.",
+        "de": "Liste der Klassen, die immer als Ordner gelten sollen.\nStandardmäßig gilt eine Klasse mit einem Bildattribut als Bild."
+    },
+    "ini:settings/webdav.ini [GeneralSettings] StartNode": {
+        "en": "Custom start node for WebDAV operations.\nBy default it is /site/Content (NodeID 2).",
+        "de": "Eigener Startknoten für WebDAV-Operationen.\nStandardmäßig ist es /site/Content (Knoten-ID 2)."
+    },
+    "ini:settings/wordmatch.ini": {
+        "en": "Exponential configuration file for content copied from word document\n\nSyntax under each tag block: MatString[$className]=$matchString, could\nbe multiple lines.\nExample:\n-------------------------------------------------------------------\n[td]\nMatchString[tdBlue]=mso-shading: white; mso-pattern: gray-20 black\nMatchString[tdRed]=mso-shading: white; mso-pattern: gray-30 black\n-------------------------------------------------------------------",
+        "de": "Exponential-Konfigurationsdatei für aus Word-Dokumenten kopierte Inhalte\n\nSyntax unter jedem Tag-Block: MatString[$className]=$matchString, kann\nmehrzeilig sein.\nBeispiel:\n-------------------------------------------------------------------\n[td]\nMatchString[tdBlue]=mso-shading: white; mso-pattern: gray-20 black\nMatchString[tdRed]=mso-shading: white; mso-pattern: gray-30 black\n-------------------------------------------------------------------"
+    },
+    "ini:settings/wordmatch.ini [td] MatchString": {
+        "en": "MatchString[tdBlue]=mso-shading: white; mso-pattern: gray-20 black\nMatchString[tdRed]=mso-shading: white; mso-pattern: gray-30 black",
+        "de": "MatchString[tdBlue]=mso-shading: white; mso-pattern: gray-20 black\nMatchString[tdRed]=mso-shading: white; mso-pattern: gray-30 black"
+    },
+    "ini:settings/wordtoimage.ini": {
+        "en": "Exponential configuration file for word to image conversions.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/wordtoimage.ini.append or\n      settings/override/wordtoimage.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für die Umwandlung von Wörtern in Bilder.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/wordtoimage.ini.append oder\n      settings/override/wordtoimage.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/workflow.ini": {
+        "en": "Exponential configuration file for workflows.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/workflow.ini.append or\n      settings/override/workflow.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für Workflows.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/workflow.ini.append oder\n      settings/override/workflow.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/workflow.ini [EventSettings] AvailableEventTypes": {
+        "en": "A list of events, each entry consists of the group\nand the name with a _ as separator",
+        "de": "Eine Liste von Ereignissen; jeder Eintrag besteht aus der Gruppe\nund dem Namen mit _ als Trenner"
+    },
+    "ini:settings/workflow.ini [EventSettings] ExtensionDirectories": {
+        "en": "A list of extensions which have workflow events\nIt's common to create a settings/workflow.ini.append file\nin your extension and add the extension name to automatically\nget workflow events from the extension when it's turned on.",
+        "de": "Eine Liste der Erweiterungen, die Workflow-Ereignisse haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/workflow.ini.append\nan und trägt den Namen der Erweiterung ein, um automatisch\ndie Workflow-Ereignisse der Erweiterung zu erhalten, wenn sie eingeschaltet ist."
+    },
+    "ini:settings/workflow.ini [EventSettings] RepositoryDirectories": {
+        "en": "A list of directories to check for workflow eventtypes",
+        "de": "Eine Liste der Verzeichnisse, in denen nach Workflow-Ereignistypen gesucht wird"
+    },
+    "ini:settings/workflow.ini [OperationSettings] AvailableOperationList": {
+        "en": "List of available trigger operations.\nOther extra available operations\nNote that the code which is used to\nimplement them may be changed if needed\nwe will not apply BC rules for these ones\nAvailableOperationList[]=content_sort\nAvailableOperationList[]=content_move\nAvailableOperationList[]=content_swap\nAvailableOperationList[]=content_updatemainassignment\nAvailableOperationList[]=content_addlocation\nAvailableOperationList[]=content_removelocation\nAvailableOperationList[]=content_updatepriority\nAvailableOperationList[]=content_hide\nAvailableOperationList[]=content_delete\nAvailableOperationList[]=content_updatesection\nAvailableOperationList[]=content_read\nAvailableOperationList[]=content_updateinitiallanguage\nAvailableOperationList[]=content_updatealwaysavailable\nAvailableOperationList[]=content_removetranslation\nAvailableOperationList[]=content_updateobjectstate\nAvailableOperationList[]=content_createnodefeed\nAvailableOperationList[]=content_removenodefeed\nAvailableOperationList[]=user_activation\nAvailableOperationList[]=user_password\nAvailableOperationList[]=user_forgotpassword\nAvailableOperationList[]=user_preferences\nAvailableOperationList[]=user_setsettings",
+        "de": "Liste der verfügbaren Operationen für Auslöser.\nWeitere verfügbare Operationen\nBeachten Sie, dass der Code, der\nsie umsetzt, bei Bedarf geändert werden kann;\nfür diese gelten keine Regeln zur Rückwärtskompatibilität\nAvailableOperationList[]=content_sort\nAvailableOperationList[]=content_move\nAvailableOperationList[]=content_swap\nAvailableOperationList[]=content_updatemainassignment\nAvailableOperationList[]=content_addlocation\nAvailableOperationList[]=content_removelocation\nAvailableOperationList[]=content_updatepriority\nAvailableOperationList[]=content_hide\nAvailableOperationList[]=content_delete\nAvailableOperationList[]=content_updatesection\nAvailableOperationList[]=content_read\nAvailableOperationList[]=content_updateinitiallanguage\nAvailableOperationList[]=content_updatealwaysavailable\nAvailableOperationList[]=content_removetranslation\nAvailableOperationList[]=content_updateobjectstate\nAvailableOperationList[]=content_createnodefeed\nAvailableOperationList[]=content_removenodefeed\nAvailableOperationList[]=user_activation\nAvailableOperationList[]=user_password\nAvailableOperationList[]=user_forgotpassword\nAvailableOperationList[]=user_preferences\nAvailableOperationList[]=user_setsettings"
+    },
+    "ini:settings/workflow.ini [SimpleShippingWorkflow]": {
+        "en": "Setting for shipping cost for the simple shipping workflow",
+        "de": "Einstellung der Versandkosten für den Workflow Einfacher Versand"
+    }
+}

@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Eigentümer und Shop-Leitungen, die Preise ändern oder in mehreren Währungen verkaufen. Sie behandelt
 den laufenden Shop: eine Preisänderung planen, Wechselkurse und automatische Preise aktuell halten und das Ergebnis
 prüfen. Wie Preise und Währungen funktionieren und was vor dem Start zu entscheiden ist, steht unter
-[Preise und Währungen für Unternehmen](../../../../eng-us/help/businesses/stores/prices-and-currencies.md).
+[Preise und Währungen für Unternehmen](../../unternehmen/shops/preise-und-waehrungen.md).
 
 ## Wo Preise gespeichert sind
 
@@ -48,7 +48,7 @@ Währungseinstellungen sind davon getrennt: Die Währungsliste (**Shop**, `shop/
 
 Mit `ezmultiprice` trägt jedes Produkt einen Preis pro Währung, entweder einen **eigenen Preis**, der von Hand gesetzt
 wird, oder einen **automatischen Preis**, der aus dem Grundpreis und dem Wechselkurs berechnet wird
-([Preise und Währungen für Unternehmen](../../../../eng-us/help/businesses/stores/prices-and-currencies.md)).
+([Preise und Währungen für Unternehmen](../../unternehmen/shops/preise-und-waehrungen.md)).
 
 | Einstellung in `settings/shop.ini` | Ausgelieferter Wert | Was er für Sie bedeutet |
 |---|---|---|
@@ -89,7 +89,7 @@ Ihren Administrator, bevor während geschäftiger Zeiten Caches geleert werden (
 
 ## Verwandte Seiten
 
-- [Preise und Währungen für Unternehmen](../../../../eng-us/help/businesses/stores/prices-and-currencies.md)
+- [Preise und Währungen für Unternehmen](../../unternehmen/shops/preise-und-waehrungen.md)
 - [USt-Typen und USt-Regeln](ust-typen-und-ust-regeln.md)
 - [Rabatte](rabatte.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)

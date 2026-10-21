@@ -1,0 +1,47 @@
+---
+title: Template-Operator le
+audience: developer, admin
+category: examples
+summary: "Der Template-Operator le: 1 Parameter, registriert von eZTemplateLogicOperator."
+keywords: Template-Operator, Operator, le, template operator, operator, tpl, eZTemplateLogicOperator
+type: generated
+generated: exp:help:examples
+---
+# Der Template-Operator le
+
+Registriert in `lib/eztemplate/classes/eztemplateautoload.php` von der Klasse `eZTemplateLogicOperator` (`lib/eztemplate/classes/eztemplatelogicoperator.php`).
+Dieselbe Klasse registriert auch: [lt](lt.md), [gt](gt.md), [ge](ge.md), [eq](eq.md), [ne](ne.md), [null](null.md), [not](not.md), [true](true.md), [false](false.md), [or](or.md), [and](and.md), [choose](choose.md).
+
+## Parameter
+
+| Parameter | Typ | Erforderlich | Standard |
+|---|---|---|---|
+| `threshold` | mixed | ja | `false` |
+
+Der Operator arbeitet mit seiner Eingabe: dem Wert vor `|`.
+
+## Beispiel
+
+Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-Hinweise des Operators entscheiden, ob er eine Eingabe nimmt).
+
+```tpl
+{$value|le( $threshold )}
+```
+
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/audit/dashboard.tpl` Zeile 116:
+
+```tpl
+<ul class="a4-audit-list">{foreach $activity.latest as $e}<li><span><span class="a4-audit-result {if $e.severity_number|le( 3 )}failed{else}refused{/if}">{$e.severity|wash}</span> <a href={concat( 'audit/event/', $e.id )|ezurl} title="{$e.name|wash}">{$e.label|wash}</a></span><span class="a4-audit-sub a4-audit-n">{$e.time|wash}</span></li>{/foreach}</ul>
+```
+
+## Siehe auch
+
+- [Alle Template-Operatoren](README.md)
+- [Templates und Design](../../anleitungen/templates-und-design.md)
+- [Ein eigener Template-Operator](../kochbuch/eigener-template-operator.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `lib/eztemplate/classes/eztemplateautoload.php`, `lib/eztemplate/classes/eztemplatelogicoperator.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

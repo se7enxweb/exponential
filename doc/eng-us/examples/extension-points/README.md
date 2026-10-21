@@ -45,6 +45,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [shopaccount.ini](shopaccount.md) | kernel | 4 | Repositories, ExtensionRepositories, Handler, Handler |
 | [site.ini](site.md) | kernel | 25 | purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners, ExtensionDirectory ... |
 | [subitemscolumns.ini](subitemscolumns.md) | kernel | 112 | Class, Class, Class, Class, Class, Class ... |
+| [syscard.ini](syscard.md) | kernel | 1 | ProviderClasses |
 | [template.ini](template.md) | kernel | 2 | DefaultFormatter, OutputFormatter |
 | [uiswitch.ini](uiswitch.md) | kernel | 2 | Class, Class |
 | [upload.ini](upload.md) | kernel | 2 | ClassList, DefaultClass |
