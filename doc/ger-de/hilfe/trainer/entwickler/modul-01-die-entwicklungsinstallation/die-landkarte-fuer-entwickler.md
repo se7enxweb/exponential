@@ -41,8 +41,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Den Code lesen, den Sie schon haben](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-the-code-you-have.md)
-und [Was eine Erweiterung ist](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md).
+Quelle: [Den Code lesen, den Sie schon haben](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/den-vorhandenen-code-lesen.md)
+und [Was eine Erweiterung ist](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md).
 
 1. **Die Geschichte in einem Satz** (2 Minuten). Exponential führt die Codebasis von eZ Publish fort, die ihr
    Hersteller nach fast 18 Jahren eingestellt hat. Die Bezeichner des Kernels behalten ihre historischen Namen
@@ -150,11 +150,11 @@ Verwenden Sie Ihre Entwicklungsinstallation aus dem Wurzelverzeichnis (dem Ordne
 
 ## Weiterführende Literatur
 
-- [Den Code lesen, den Sie schon haben](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-the-code-you-have.md):
+- [Den Code lesen, den Sie schon haben](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/den-vorhandenen-code-lesen.md):
   die vier Techniken, um Code zu finden.
-- [Was eine Erweiterung ist](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md): die
+- [Was eine Erweiterung ist](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md): die
   Ordner in einer Erweiterung und der Schalter, der sie einschaltet.
-- [Die Leiter vom Benutzer zum Entwickler](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/the-ladder-from-user-to-developer.md):
+- [Die Leiter vom Benutzer zum Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/die-leiter-vom-benutzer-zum-entwickler.md):
   wo dieser Kurs einzuordnen ist.
 
 ## Verwandte Seiten

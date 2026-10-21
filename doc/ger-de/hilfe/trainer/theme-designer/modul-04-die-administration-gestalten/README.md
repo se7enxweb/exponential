@@ -40,7 +40,7 @@ anhand der Code-Review-Checkliste des Projekts ab.
 - Der Siteaccess der Administration jeder Installation der Teilnehmenden in `admin4` (oder `admin4l`); prüfen Sie es
   mit `php bin/php/console exp:ini where site/DesignSettings/SiteDesign admin`.
 - Ausgedruckte oder projizierte Kopien des Beispiel-Templates aus Lektion 4.1 und der Code-Review-Checkliste aus
-  [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#code-review-checklist).
+  [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#checkliste-für-das-code-review).
 - Ein Chromium-basierter Browser auf jedem Computer der Teilnehmenden für die Emulation erzwungener Farben in
   Lektion 4.4.
 - Für Lektion 4.5, Schritt 9: ein Entwicklungs-Checkout mit installierten Entwicklungsabhängigkeiten

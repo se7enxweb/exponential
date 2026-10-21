@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md) und die
-vollständige Referenz [console exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md).
+vollständige Referenz [console exp:ini](../../../../bc/6.0/console-exp-ini.md).
 
 1. **Wo INI-Dateien liegen** (3 Minuten). Zeigen Sie den Baum in einem Terminal: `settings/` (die Standardwerte,
    werden nie bearbeitet), `settings/siteaccess/<siteaccess>/`, `settings/override/` und `extension/<ext>/settings/`.
@@ -169,7 +169,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 
 - [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): die Aktionen und
   Geltungsbereiche.
-- [console exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md): die vollständige Referenz mit der Ausgabe jeder Aktion.
+- [console exp:ini](../../../../bc/6.0/console-exp-ini.md): die vollständige Referenz mit der Ausgabe jeder Aktion.
 - [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md): dieselben Einstellungen im Browser.
 - [Caches](../../../../anleitungen/caches.md): der INI-Cache und die anderen (Modul 5).
 

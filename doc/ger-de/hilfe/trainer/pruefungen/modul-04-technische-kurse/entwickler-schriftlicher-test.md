@@ -125,7 +125,7 @@ einen Punkt.
 - [Erweiterungen](../../../../anleitungen/extensions.md): aktivieren, bauen, veröffentlichen.
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): Suchreihenfolge, Overrides, die Sprache.
 - [Mit Git entwickeln](../../../mit-git-entwickeln.md) und [REST-API v1 und v2](../../../../anleitungen/rest-api-v1-und-v2.md).
-- [Erweiterungsentwicklung](../../../../../eng-us/help/extension-development/README.md): das Buch hinter dem Kurs.
+- [Erweiterungsentwicklung](../../../erweiterungsentwicklung/README.md): das Buch hinter dem Kurs.
 
 ## Verwandte Seiten
 

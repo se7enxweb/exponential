@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md), Abschnitte „Wie die Stylesheets geladen
+Quellen: [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md), Abschnitte „Wie die Stylesheets geladen
 werden“, „Stapelebenen“ und „In CI geprüft“; [Rechts-nach-links-Sprachen](../../../../../eng-us/features/6.0/right-to-left.md).
 
 1. **Zwei Orte** (5 Minuten).
@@ -141,7 +141,7 @@ emulieren).
 <summary>Antworten</summary>
 
 1. In den eigenen Design-Ordner der Erweiterung, aufgeführt in `BackendCSSFileList[]`
-   ([Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#how-the-stylesheets-are-loaded)).
+   ([Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#wie-die-stylesheets-geladen-werden)).
 2. `outline: 2px solid Highlight` im Block `@media (forced-colors: active)` der Datei.
 3. **B.**
 4. Als Token `--a4-z-*`, `z-index: var(--a4-z-...)`; nur 0, 1 und -1 innerhalb einer Komponente.
@@ -151,7 +151,7 @@ emulieren).
 
 ## Weiterführende Literatur
 
-- [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#stacking-layers): die Stapelskala und die in CI
+- [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#stapelebenen): die Stapelskala und die in CI
   ausgeführten Prüfungen.
 - [Rechts-nach-links-Sprachen in der Administration](../../../../../eng-us/features/6.0/right-to-left.md): logische
   Eigenschaften und Spiegelungsregeln.

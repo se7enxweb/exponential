@@ -37,8 +37,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Die Administration gestalten, Code-Review-Checkliste](../../../../../eng-us/bc/6.0/admin4-styling.md#code-review-checklist)
-und [In CI geprüft](../../../../../eng-us/bc/6.0/admin4-styling.md#checked-in-ci).
+Quellen: [Die Administration gestalten, Code-Review-Checkliste](../../../../bc/6.0/admin4-gestaltung.md#checkliste-für-das-code-review)
+und [In CI geprüft](../../../../bc/6.0/admin4-gestaltung.md#in-der-ci-geprüft).
 
 1. **Die Checkliste** (6 Minuten). Projizieren Sie sie und gliedern Sie sie: Markup (kein Inline-CSS, gemeinsame
    Komponenten, Icons als `.a4-icon` mit `.a4-bi-*`, Popups über das gemeinsame Kontextmenü), Namen (jedes
@@ -87,7 +87,7 @@ verwenden Sie die Gerätesymbolleiste der Entwicklerwerkzeuge mit einer Breite v
 Paarweise. Alle prüfen `training_notes.tpl`, `dashboard.ini.append.php` und `training_admin.css` ihres Partners aus den
 Lektionen 4.2 bis 4.4, auf der Installation des Partners oder anhand der geteilten Dateien.
 
-1. Öffnen Sie die Checkliste in [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#code-review-checklist).
+1. Öffnen Sie die Checkliste in [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#checkliste-für-das-code-review).
 2. Template: Prüfen Sie auf einen `<style>`-Block, ein Attribut `style=""` und Inline-Handler (`onclick` und
    Ähnliches).
 3. Template: Prüfen Sie, dass jede Kopfzelle der Tabelle `scope="col"` hat, dass die leere Liste `.a4-empty` verwendet
@@ -126,7 +126,7 @@ Lektionen 4.2 bis 4.4, auf der Installation des Partners oder anhand der geteilt
 <summary>Antworten</summary>
 
 1. Keine helle Karte auf der dunklen Seite, Textkontrast mindestens 4,5:1, kein horizontaler Überlauf, keine
-   Konsolenfehler ([Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#the-rules)).
+   Konsolenfehler ([Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#die-regeln)).
 2. **B.**
 3. Sie listet Templates, die noch migriert werden; sie zu ergänzen würde neues Inline-CSS verstecken, statt es zu
    verschieben.
@@ -137,7 +137,7 @@ Lektionen 4.2 bis 4.4, auf der Installation des Partners oder anhand der geteilt
 
 ## Weiterführende Literatur
 
-- [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#code-review-checklist): die vollständige
+- [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#checkliste-für-das-code-review): die vollständige
   Checkliste.
 - [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): welche Design-Tests welche WCAG-Kriterien
   absichern.

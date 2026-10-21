@@ -67,7 +67,7 @@ Für einen Trainer, der diesen Kurs vorbereitet, in dieser Reihenfolge:
 4. [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md) und
    [Templates und Design](../../../anleitungen/templates-und-design.md).
 5. [Erweiterungen](../../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md) und das Buch
-   [Erweiterungsentwicklung](../../../../eng-us/help/extension-development/README.md).
+   [Erweiterungsentwicklung](../../erweiterungsentwicklung/README.md).
 6. [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md) und [Programmierrichtlinien](../../../../eng-us/standards/coding-standards.md).
 7. Die Module 1 bis 13 der Reihe nach; bauen Sie das Stück jedes Moduls auf Ihrer eigenen Entwicklungsinstallation,
    bevor Sie es unterrichten.
@@ -96,7 +96,7 @@ Material des Trainers, keine offizielle Zertifizierung; die Zertifizierungen des
 
 - [Trainer: hier beginnen](../trainer-hier-beginnen.md)
 - [Kurskatalog](../kurskatalog.md)
-- [Erweiterungsentwicklung](../../../../eng-us/help/extension-development/README.md)
+- [Erweiterungsentwicklung](../../erweiterungsentwicklung/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -37,7 +37,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Was eine Erweiterung ist](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md).
+Quelle: [Was eine Erweiterung ist](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md).
 
 1. **Die Ordner** (6 Minuten). Projizieren Sie die Tabelle und verbinden Sie jede Zeile mit einer Lektion dieses
    Kurses:
@@ -79,7 +79,7 @@ Einstellungen und Templates durchsucht; inaktive Erweiterungen auf der Festplatt
 
 ### Stolperfallen
 
-- **Annehmen, eine Erweiterung sei sicher.** Sie läuft mit den Rechten des Kernels. Lesen Sie [Eine alte Erweiterung bewerten](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/evaluating-an-old-extension.md),
+- **Annehmen, eine Erweiterung sei sicher.** Sie läuft mit den Rechten des Kernels. Lesen Sie [Eine alte Erweiterung bewerten](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/eine-alte-erweiterung-bewerten.md),
   bevor Sie eine unbekannte installieren.
 - **Ordner, die der Kernel nie liest.** Ein Ordner mit einem selbst erfundenen Namen wird ignoriert, sofern keine
   Einstellung auf ihn verweist.
@@ -134,7 +134,7 @@ Auf der Entwicklungsinstallation.
 
 ## Weiterführende Literatur
 
-- [Was eine Erweiterung ist](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md).
+- [Was eine Erweiterung ist](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md).
 - [Die Ordnerstruktur einer Theme-Erweiterung](../../../../../eng-us/help/designers/extensions/extension-folder-structure.md).
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../../../anleitungen/extensions.md).
 

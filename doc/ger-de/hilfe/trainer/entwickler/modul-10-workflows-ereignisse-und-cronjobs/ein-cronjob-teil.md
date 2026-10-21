@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Cronjobs: ausführen, planen und verfolgen](../../../../anleitungen/cronjobs.md) und
-[Exponential Console, Cronjob-Teile](../../../../../eng-us/bc/6.0/console.md#cronjob-parts-and-the-crontab-added-june-2026).
+[Exponential Console, Cronjob-Teile](../../../../bc/6.0/konsole.md#cronjob-teile-und-die-crontab-hinzugefügt-im-juni-2026).
 
 1. **Skripte und Teile** (4 Minuten). Ein Skript ist eine PHP-Datei in `cronjobs/` der Installation oder einer
    Erweiterung aus `[CronjobSettings] ExtensionDirectories[]`. Ein Teil fasst Skripte mit einem gemeinsamen Zeitplan

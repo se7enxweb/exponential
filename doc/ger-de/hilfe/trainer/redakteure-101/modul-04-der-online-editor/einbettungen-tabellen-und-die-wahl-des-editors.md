@@ -149,7 +149,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 
 - [Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md): Einbettungen,
   Tabellen, Engines und Einstellungen.
-- [ezoe und TinyMCE 8](../../../../../eng-us/bc/6.0/ezoe-tinymce8.md): die Referenz für Administratoren.
+- [ezoe und TinyMCE 8](../../../../bc/6.0/ezoe-tinymce8.md): die Referenz für Administratoren.
 - [Bilder, Medien und Uploads](../../../medien-und-uploads.md): wohin hochgeladene Dateien kommen.
 
 ## Verwandte Seiten

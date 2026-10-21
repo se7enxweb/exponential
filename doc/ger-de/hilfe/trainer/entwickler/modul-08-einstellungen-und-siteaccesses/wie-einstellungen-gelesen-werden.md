@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Spezifikation: INI-Override-Verzeichnisse und Ablageorte](../../../../spezifikationen/6.0/ini-override-platzierungen.md),
-[Konsole exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md#where-and-list) und
+[Konsole exp:ini](../../../../bc/6.0/console-exp-ini.md#where-und-list) und
 [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md).
 
 1. **Das Format** (4 Minuten). `settings/site.ini` enthält die Standardwerte: Zeilen `[Block]` und Zeilen

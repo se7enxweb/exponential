@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Die Administration gestalten, Tokens und Dunkelmodus](../../../../../eng-us/bc/6.0/admin4-styling.md#tokens) und
+Quellen: [Die Administration gestalten, Tokens und Dunkelmodus](../../../../bc/6.0/admin4-gestaltung.md#tokens) und
 [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md).
 
 1. **Die Gruppen** (6 Minuten). Aus der Token-Tabelle: Akzent (`--a4-accent`, `--a4-accent-strong` für gefüllte
@@ -159,7 +159,7 @@ Lektion 4.2.
 
 1. `data-a4-theme`, mit dem Wert `dark` (`html[data-a4-theme="dark"]`).
 2. Die Werte der Tokens ändern sich mit dem Modus; jedes Farb-Token hat einen dunklen Wert
-   ([Die Administration gestalten, Dunkelmodus](../../../../../eng-us/bc/6.0/admin4-styling.md#dark-mode)).
+   ([Die Administration gestalten, Dunkelmodus](../../../../bc/6.0/admin4-gestaltung.md#dunkler-modus)).
 3. **C.** `AdminComponentCSSFileList[]` ist für die eigenen Komponenten- und Moduldateien des Kerns.
 4. `var(--a4-space-4)` (16 px): 15 bis 20 nehmen 16.
 5. `--a4-accent-text` für Text; `--a4-accent-strong` für die Füllung eines Bedienelements mit weißem Text.
@@ -168,7 +168,7 @@ Lektion 4.2.
 
 ## Weiterführende Literatur
 
-- [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#tokens): jedes Token mit seinem Zweck.
+- [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#tokens): jedes Token mit seinem Zweck.
 - [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): heller, dunkler und System-Modus und die gemerkte
   Auswahl.
 - [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): der Kontrasttest, der die Tokens prüft.

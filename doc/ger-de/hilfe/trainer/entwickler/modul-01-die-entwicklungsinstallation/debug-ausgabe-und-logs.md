@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Debug-Ausgabe und Logs für Entwickler](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/debug-output-and-logs-for-developers.md),
+Quellen: [Debug-Ausgabe und Logs für Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md),
 [Die Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md) und [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md).
 
 1. **Die Einstellungen** (4 Minuten). Alle in `site.ini`; zeigen Sie die Standardwerte:
@@ -147,7 +147,7 @@ Auf der Entwicklungsinstallation aus Lektion 1.2, aus ihrem Wurzelverzeichnis.
 
 ## Weiterführende Literatur
 
-- [Debug-Ausgabe und Logs für Entwickler](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/debug-output-and-logs-for-developers.md):
+- [Debug-Ausgabe und Logs für Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md):
   jede Einstellung und jede Logdatei.
 - [Die Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md): ihre Tabs und ihr Einstellungs-Tab.
 - [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md) und

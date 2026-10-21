@@ -151,9 +151,9 @@ Wurzelverzeichnis der Installation.
 ## Weiterführende Literatur
 
 - [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): die Assistenten, der Katalog und die Zustandsprüfung.
-- [Erweiterungspunkte](../../../../../eng-us/bc/6.0/rad-extension-points.md): jede Stelle, an der sich der Kernel erweitern
+- [Erweiterungspunkte](../../../../bc/6.0/rad-erweiterungspunkte.md): jede Stelle, an der sich der Kernel erweitern
   lässt.
-- [Sicherheit der RAD-Werkzeuge](../../../../../eng-us/bc/6.0/rad-security.md): was die Assistenten schreiben und niemals
+- [Sicherheit der RAD-Werkzeuge](../../../../bc/6.0/rad-sicherheit.md): was die Assistenten schreiben und niemals
   schreiben.
 
 ## Verwandte Seiten

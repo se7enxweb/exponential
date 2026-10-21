@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md), Abschnitte „Warum“, „Die Regeln“ und
+Quelle: [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md), Abschnitte „Warum“, „Die Regeln“ und
 „Ausnahmen“.
 
 1. **Die Geschichte** (5 Minuten). Nennen Sie die Zahlen aus dem Abschnitt „Warum“: ein `<style>`-Block in jedem von 55
@@ -115,7 +115,7 @@ das Beispiel-Template unten aus (oder projiziert es).
    Token ihn ersetzen sollte (Farbe, Radius, Abstand).
 3. Finden Sie die Hilfsklasse, die kopiert statt wiederverwendet wird (Regel 2). Nennen Sie die gemeinsame Klasse, die
    das bereits leistet, anhand der Komponententabelle aus
-   [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#components).
+   [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#komponenten).
 4. Schreiben Sie für `style="width: {$percent}%"` auf, wie Regel 1 einen Wert pro Element auszudrücken verlangt.
 5. Finden Sie das `onclick`. Gegen welche andere Regel aus Modul 3 verstößt es, und wohin gehört der Code?
 6. Beschreiben Sie für `background: #fff`, was ein Redakteur im Dunkelmodus sehen würde.
@@ -149,7 +149,7 @@ das Beispiel-Template unten aus (oder projiziert es).
 <summary>Antworten</summary>
 
 1. Ein `<style>`-Block und ein Attribut `style=""`
-   ([Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#the-rules)).
+   ([Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#die-regeln)).
 2. **B.** `design/admin4/stylesheets/components.css` (mit einer identischen Kopie in `design/admin`).
 3. Ein Wert für `html[data-a4-theme="dark"]`, in derselben Änderung.
 4. 1440 px bei Skalierung 1 und 960 px bei Skalierung 2 (200 % Zoom), jeweils im hellen und im dunklen Modus.
@@ -160,7 +160,7 @@ das Beispiel-Template unten aus (oder projiziert es).
 
 ## Weiterführende Literatur
 
-- [Die Administration gestalten: ein Komponenten-Stylesheet, Tokens, kein Inline-CSS](../../../../../eng-us/bc/6.0/admin4-styling.md):
+- [Die Administration gestalten: ein Komponenten-Stylesheet, Tokens, kein Inline-CSS](../../../../bc/6.0/admin4-gestaltung.md):
   die Referenz für dieses ganze Modul.
 - [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): das Design, für das die Regeln gemacht wurden.
 - [Inline-Skripte und Inline-Stile entfernen](../../../../../eng-us/help/designers/lifecycle/removing-inline-scripts-and-styles.md): ein

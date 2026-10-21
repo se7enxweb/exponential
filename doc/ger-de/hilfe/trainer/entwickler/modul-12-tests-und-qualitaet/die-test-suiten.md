@@ -120,7 +120,7 @@ Auf der Entwicklungsinstallation, aus ihrem Wurzelverzeichnis.
 - [Tests und Continuous Integration](../../../../../eng-us/standards/testing-and-ci.md).
 - [Qualitätsprüfungen](../../../../../eng-us/features/6.0/quality-checks.md): Hooks, Manifest, Codestil, PHPStan, die Tests
   einer Änderung.
-- [Continuous Integration](../../../../../eng-us/bc/6.0/ci.md).
+- [Continuous Integration](../../../../bc/6.0/ci.md).
 
 ## Verwandte Seiten
 

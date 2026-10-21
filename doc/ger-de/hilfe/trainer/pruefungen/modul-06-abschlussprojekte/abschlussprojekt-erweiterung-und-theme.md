@@ -134,7 +134,7 @@ Fragen für die Nachbesprechung nach den Präsentationen.
 - [Entwickler, praktische Aufgabe](../modul-04-technische-kurse/entwickler-praktische-aufgabe.md) und
   [Theme-Designer, praktische Aufgabe](../modul-04-technische-kurse/theme-designer-praktische-aufgabe.md)
 - [Checkliste: Theme-Erweiterung bereit](../../../../../eng-us/help/designers/extensions/checklist-theme-extension-ready.md)
-- [Erweiterungsentwicklung](../../../../../eng-us/help/extension-development/README.md)
+- [Erweiterungsentwicklung](../../../erweiterungsentwicklung/README.md)
 
 ## Verwandte Seiten
 

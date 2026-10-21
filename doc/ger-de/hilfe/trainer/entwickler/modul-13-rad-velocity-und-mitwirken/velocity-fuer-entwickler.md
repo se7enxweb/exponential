@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Velocity-Engines](../../../../../eng-us/bc/6.0/velocity-engines.md) und
+Quellen: [Velocity-Engines](../../../../bc/6.0/velocity-engines.md) und
 [8. Die Website ausliefern](../../../../installation/08-die-website-ausliefern.md).
 
 1. **Engines** (4 Minuten). `velocity.ini [ServerSettings] Engine` legt den Standard fest: `php` (mitgeliefert; der
@@ -127,7 +127,7 @@ Auf der Entwicklungsinstallation.
 
 ## Weiterführende Literatur
 
-- [Velocity-Engines](../../../../../eng-us/bc/6.0/velocity-engines.md): Engines, Deploy, Neustart und der Watchdog.
+- [Velocity-Engines](../../../../bc/6.0/velocity-engines.md): Engines, Deploy, Neustart und der Watchdog.
 - [Der Velocity-Server mit persistenten Workern](../../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
 - [Der Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md).
 

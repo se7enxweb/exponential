@@ -166,7 +166,7 @@ Auf Ihrer Schulungsinstallation, mit einem Terminal im Wurzelverzeichnis und ein
 - [Statischer Cache](../../../hosting/leistung/statischer-cache.md) und
   [Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md).
 - [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md).
-- [HTTP-Caching](../../../../../eng-us/bc/6.0/http-caching.md).
+- [HTTP-Caching](../../../../bc/6.0/http-caching.md).
 
 ## Verwandte Seiten
 

@@ -156,7 +156,7 @@ Installation.
 - [Das Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md): die Kurzreferenz.
 - [Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md): ein praktischer Rundgang durch die Sicherheit,
   einschließlich des Audits.
-- [Der Leitfaden zum Audit](../../../../../eng-us/bc/6.0/audit.md): der Ereigniskatalog und jede Einstellung.
+- [Der Leitfaden zum Audit](../../../../bc/6.0/audit.md): der Ereigniskatalog und jede Einstellung.
 - [Das Audit-Protokoll für Hoster](../../../hosting/sicherheit/pruefprotokoll.md): Senken und Aufbewahrung auf einem Server.
 
 ## Verwandte Seiten

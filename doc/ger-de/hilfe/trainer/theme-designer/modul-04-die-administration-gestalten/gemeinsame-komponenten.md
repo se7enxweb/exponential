@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Die Administration gestalten, Komponenten](../../../../../eng-us/bc/6.0/admin4-styling.md#components).
+Quelle: [Die Administration gestalten, Komponenten](../../../../bc/6.0/admin4-gestaltung.md#komponenten).
 
 1. **Die Komponententabelle** (6 Minuten). Gehen Sie die Gruppen durch: Seitenbereich (`.a4-page`), Hilfsklassen
    (`.a4-sr-only`, `.a4-muted`, `.a4-meta`), Karten (`.a4-card`, `.a4-card-head`, `.a4-card-body`, `.a4-card-foot`),
@@ -182,7 +182,7 @@ Schulungs-Administrator.
 1. In `extension/<ext>/design/admin4/templates/dashboard/<identifier>.tpl`; die Erweiterung registriert ihre
    Design-Ordner mit `DesignExtensions[]`, und admin4 ist in der Kette der Administration.
 2. `.a4-table-wrap` um `table.a4-table`
-   ([Die Administration gestalten, Komponenten](../../../../../eng-us/bc/6.0/admin4-styling.md#components)).
+   ([Die Administration gestalten, Komponenten](../../../../bc/6.0/admin4-gestaltung.md#komponenten)).
 3. **B.** Eine leere Liste sagt das in `.a4-empty`, nie in einem einfachen Absatz.
 4. Mit einer Zustandsklasse: `.a4-badge.is-ok`, `.is-warn`, `.is-bad`, `.is-info`, `.is-accent`.
 5. Die Komponenten beziehen ihre Farben aus Tokens, und jedes Farb-Token hat einen dunklen Wert.
@@ -191,7 +191,7 @@ Schulungs-Administrator.
 
 ## Weiterführende Literatur
 
-- [Die Administration gestalten](../../../../../eng-us/bc/6.0/admin4-styling.md#components): die vollständige
+- [Die Administration gestalten](../../../../bc/6.0/admin4-gestaltung.md#komponenten): die vollständige
   Komponententabelle, Karten, Tabellen und die Code-Review-Checkliste.
 - [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): was admin4 rund um die Komponenten bereitstellt.
 - [Template-Operatoren in einem Theme](../../../../../eng-us/help/designers/extensions/template-operators-in-a-theme.md): wenn ein Block

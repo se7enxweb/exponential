@@ -151,7 +151,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 ## Weiterführende Literatur
 
 - [Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md): jedes Sicherheitsnetz.
-- [Die Ansicht des Papierkorbs](../../../../../eng-us/bc/6.0/trash.md): die Spalten, Filter und das Wiederherstellen auf der
+- [Die Ansicht des Papierkorbs](../../../../bc/6.0/papierkorb.md): die Spalten, Filter und das Wiederherstellen auf der
   Seite des Papierkorbs.
 - [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md): einen Entwurf aus einer älteren Version machen.
 

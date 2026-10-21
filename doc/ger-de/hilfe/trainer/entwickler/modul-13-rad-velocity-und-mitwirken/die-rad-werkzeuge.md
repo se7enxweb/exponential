@@ -67,7 +67,7 @@ sehen; verstehen Sie jede Datei, die er geschrieben hat, wie in den früheren Mo
 **Wer darf die RAD-Werkzeuge verwenden?** Benutzer mit der Richtlinie `setup/setup`.
 
 **Ist erzeugter Code sicher?** Erzeugte Templates maskieren, was sie ausgeben; die Assistenten folgen der
-[Sicherheit der RAD-Werkzeuge](../../../../../eng-us/bc/6.0/rad-security.md).
+[Sicherheit der RAD-Werkzeuge](../../../../bc/6.0/rad-sicherheit.md).
 
 ### Stolperfallen
 
@@ -138,8 +138,8 @@ Auf der Schulungsinstallation, als Administrator an der Administration angemelde
 ## Weiterführende Literatur
 
 - [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md).
-- [Erweiterungspunkte](../../../../../eng-us/bc/6.0/rad-extension-points.md) und [Die Erweiterungsoberfläche](../../../../../eng-us/bc/6.0/rad-extension-surface.md).
-- [Sicherheit der RAD-Werkzeuge](../../../../../eng-us/bc/6.0/rad-security.md).
+- [Erweiterungspunkte](../../../../bc/6.0/rad-erweiterungspunkte.md) und [Die Erweiterungsoberfläche](../../../../bc/6.0/rad-erweiterungsoberflaeche.md).
+- [Sicherheit der RAD-Werkzeuge](../../../../bc/6.0/rad-sicherheit.md).
 
 ## Verwandte Seiten
 

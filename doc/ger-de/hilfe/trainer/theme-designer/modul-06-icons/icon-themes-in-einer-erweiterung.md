@@ -161,7 +161,7 @@ in einem Ordner liegen (zum Beispiel `article`), und notieren Sie ihn als `<clas
 
 - [Icon-Themes, die in Ihrer Erweiterung liegen](../../../../../eng-us/features/6.0/icon-themes-in-extensions.md): die Tabelle der
   Einstellungen.
-- [Unterstützung für Icons (Leitfaden)](../../../../../eng-us/bc/6.0/ICONS.md): die zugrunde liegende Klasse und Hinweise zum
+- [Unterstützung für Icons (Leitfaden)](../../../../bc/6.0/symbole.md): die zugrunde liegende Klasse und Hinweise zum
   Upgrade.
 - [Schriften, Icons und Bibliotheken von Dritten](../../../../../eng-us/help/designers/distribution/third-party-fonts-icons-and-libraries.md):
   Lizenzen der Icons, die Sie mitliefern (Modul 8).

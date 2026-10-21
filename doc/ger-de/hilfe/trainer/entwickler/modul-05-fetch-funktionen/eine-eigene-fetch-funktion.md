@@ -185,9 +185,9 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 ## Weiterführende Literatur
 
 - [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): der Assistent für Template-Erweiterungen.
-- [Erweiterungspunkte](../../../../../eng-us/bc/6.0/rad-extension-points.md): Fetch-Funktionen unter den Erweiterungspunkten
+- [Erweiterungspunkte](../../../../bc/6.0/rad-erweiterungspunkte.md): Fetch-Funktionen unter den Erweiterungspunkten
   für Templates.
-- [Erweiterungsentwicklung: das Buch](../../../../../eng-us/help/extension-development/README.md): Teil 3 behandelt Fetch-Funktionen
+- [Erweiterungsentwicklung: das Buch](../../../erweiterungsentwicklung/README.md): Teil 3 behandelt Fetch-Funktionen
   ausführlich.
 
 ## Verwandte Seiten

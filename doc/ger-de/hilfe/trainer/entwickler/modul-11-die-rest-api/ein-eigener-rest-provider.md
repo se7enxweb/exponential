@@ -198,7 +198,7 @@ einem API-Schlüssel aus Lektion 11.2 (erzeugen Sie einen neuen, falls Sie ihn w
 ## Weiterführende Literatur
 
 - [REST-API v1 und v2](../../../../anleitungen/rest-api-v1-und-v2.md).
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md) und [Erweiterungspunkte](../../../../../eng-us/bc/6.0/rad-extension-points.md).
+- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md) und [Erweiterungspunkte](../../../../bc/6.0/rad-erweiterungspunkte.md).
 - [API- und Protokollstandards](../../../../../eng-us/standards/apis-and-protocols.md).
 
 ## Verwandte Seiten

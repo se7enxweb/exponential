@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Den Code lesen, den Sie bereits haben, Technik 2](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-the-code-you-have.md#technique-2-from-an-address-to-the-code)
+Quellen: [Den Code lesen, den Sie bereits haben, Technik 2](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/den-vorhandenen-code-lesen.md#technik-2-von-einer-adresse-zum-code)
 und [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md).
 
 1. **Eine Adresse** (4 Minuten). `/admin/content/view/full/2/(offset)/20`: Siteaccess `admin`, Modul `content`,
@@ -135,7 +135,7 @@ Auf der Entwicklungsinstallation, in einer Shell.
 
 ## Weiterführende Literatur
 
-- [Den Code lesen, den Sie bereits haben](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-the-code-you-have.md).
+- [Den Code lesen, den Sie bereits haben](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/den-vorhandenen-code-lesen.md).
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md).
 - [Modul-Override durch Erweiterungen](../../../../../eng-us/features/6.0/extension-module-override.md).
 

@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 2. Wo man fragen kann (3 Minuten): [Die Community-Kanäle](../../../fuersprecher/community-kanaele.md) führt die Foren
    unter share.exponential.earth, den Telegram-Chat und die Issue-Tracker auf.
 3. Vom Anwender zum Mitwirkenden (3 Minuten): [Mit Git entwickeln](../../../mit-git-entwickeln.md) und das Buch zur
-   Entwicklung von Erweiterungen ([Entwicklung von Erweiterungen](../../../../../eng-us/help/extension-development/README.md)).
+   Entwicklung von Erweiterungen ([Entwicklung von Erweiterungen](../../../erweiterungsentwicklung/README.md)).
 
 ### Häufige Fragen
 

@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Mit Git entwickeln](../../../mit-git-entwickeln.md),
-[Eine Entwicklungsinstallation einrichten](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/setting-up-a-development-installation.md)
+[Eine Entwicklungsinstallation einrichten](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/eine-entwicklungsinstallation-einrichten.md)
 und [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md).
 
 1. **Warum Klone** (4 Minuten). Ein Release-Archiv enthält die Dateien einer Version; ein Klon enthält die
@@ -157,7 +157,7 @@ Schulungsserver).
 ## Weiterführende Literatur
 
 - [Mit Git entwickeln](../../../mit-git-entwickeln.md): Klone, Branches, auf dem neuesten Stand bleiben.
-- [Eine Entwicklungsinstallation einrichten](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/setting-up-a-development-installation.md):
+- [Eine Entwicklungsinstallation einrichten](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/eine-entwicklungsinstallation-einrichten.md):
   dieselben Schritte mit Debug-Einstellungen.
 - [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md): jede Option von `exp:install`.
 - [8. Die Website ausliefern](../../../../installation/08-die-website-ausliefern.md): Velocity, Apache, nginx und FrankenPHP.

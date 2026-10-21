@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Exponential Console, Befehle von Erweiterungen](../../../../../eng-us/bc/6.0/console.md#extension-commands) und
+Quellen: [Exponential Console, Befehle von Erweiterungen](../../../../bc/6.0/konsole.md#befehle-von-erweiterungen) und
 [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md).
 
 1. **Das Gerüst** (5 Minuten). Gehen Sie das Skript der Übung durch: `require 'autoload.php'` (das Skript läuft aus
@@ -162,7 +162,7 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [Exponential Console](../../../../../eng-us/bc/6.0/console.md).
+- [Exponential Console](../../../../bc/6.0/konsole.md).
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md).
 - [Inhaltsjobs](../../../../../eng-us/features/6.0/content-jobs.md): lange Operationen in Stapeln.
 

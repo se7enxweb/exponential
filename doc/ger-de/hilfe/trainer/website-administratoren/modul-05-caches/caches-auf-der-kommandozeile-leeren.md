@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 Quelle: [Eine Website betreiben, Teile 1 und 2](../../../../anleitungen/betrieb-einer-website.md),
 [Caches, aus einer Shell](../../../../anleitungen/caches.md#5-in-einer-shell) und
-[Cache-Steuerung über die Konsole](../../../../../eng-us/bc/6.0/cache-console.md).
+[Cache-Steuerung über die Konsole](../../../../bc/6.0/cache-konsole.md).
 
 1. **Erst hinsehen** (3 Minuten). `php bin/php/cache.php list --sizes` listet jeden Cache mit Tag, Zustand,
    Verzeichnis und Größe; `php bin/php/cache.php status` zeigt die Caches vor PHP auf einem Bildschirm.
@@ -154,7 +154,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 1. **B.**
 2. Es zeigt, was geleert würde, mit Größen, und ändert nichts.
 3. Der Tag leert auch den globalen INI-Cache; die ID allein kann alte Einstellungen in Gebrauch lassen
-   ([Cache-Steuerung über die Konsole](../../../../../eng-us/bc/6.0/cache-console.md#in-short)).
+   ([Cache-Steuerung über die Konsole](../../../../bc/6.0/cache-konsole.md#kurz-gesagt)).
 4. `exp:velocity cache clear` (oder `php bin/php/cache.php velocity clear`).
 5. Nur wenn es als root-Benutzer des Betriebssystems läuft.
 
@@ -163,7 +163,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 ## Weiterführende Literatur
 
 - [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md): die Caches, Teil für Teil.
-- [Cache-Steuerung über die Konsole](../../../../../eng-us/bc/6.0/cache-console.md): jede Gruppe und Option von `exp:cache`.
+- [Cache-Steuerung über die Konsole](../../../../bc/6.0/cache-konsole.md): jede Gruppe und Option von `exp:cache`.
 - [Caches](../../../../anleitungen/caches.md#5-in-einer-shell): die Shell-Befehle neben der Seite.
 
 ## Verwandte Seiten

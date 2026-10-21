@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Exponential Console](../../../../../eng-us/bc/6.0/console.md).
+Quelle: [Exponential Console](../../../../bc/6.0/konsole.md).
 
 1. **`list`** (3 Minuten). `php bin/php/console list` gibt jeden Befehl mit einer einzeiligen Beschreibung aus,
    gruppiert nach Namensraum; `list exp`, `list shell`, `list cron`, `list ext:<ext>` filtern.
@@ -125,7 +125,7 @@ Auf der Entwicklungsinstallation, aus ihrem Wurzelverzeichnis.
 
 ## Weiterführende Literatur
 
-- [Exponential Console](../../../../../eng-us/bc/6.0/console.md): Namen, Optionen, Cronjob-Teile und Befehle von Erweiterungen.
+- [Exponential Console](../../../../bc/6.0/konsole.md): Namen, Optionen, Cronjob-Teile und Befehle von Erweiterungen.
 - [Die Cronjob-Konsole](../../../../../eng-us/features/6.0/cronjobs-console.md): die Browseransicht der Cronjob-Teile.
 
 ## Verwandte Seiten

@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Ihre erste Stunde als Entwickler](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/your-first-hour-as-a-developer.md),
+Quelle: [Ihre erste Stunde als Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/ihre-erste-stunde-als-entwickler.md),
 Übung 6.
 
 1. **Die Kurserweiterung** (3 Minuten). Alle Teilnehmenden bauen im Laufe des Kurses eine Erweiterung,
@@ -147,15 +147,15 @@ Auf der Entwicklungsinstallation, aus ihrem Wurzelverzeichnis.
    Inhaltsbaum.
 4. `php -l <file>`.
 5. Erweiterungen sind eigene Repositories; der Kernel wird über Composer und Git aktualisiert, und Ihre Arbeit wird in
-   Ihrer eigenen Erweiterung committet ([Eine Entwicklungsinstallation einrichten](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/setting-up-a-development-installation.md)).
+   Ihrer eigenen Erweiterung committet ([Eine Entwicklungsinstallation einrichten](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/eine-entwicklungsinstallation-einrichten.md)).
 
 </details>
 
 ## Weiterführende Literatur
 
-- [Ihre erste Stunde als Entwickler](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/your-first-hour-as-a-developer.md):
+- [Ihre erste Stunde als Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/ihre-erste-stunde-als-entwickler.md):
   sechs kurze Übungen zu Einstellungen, Templates, Debug-Ausgabe und Skripten.
-- [Die Werkzeuge, die Sie brauchen](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/tools-you-need.md): PHP,
+- [Die Werkzeuge, die Sie brauchen](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/werkzeuge-die-sie-brauchen.md): PHP,
   Composer, Git, ein Editor und die Entwicklerwerkzeuge des Browsers.
 
 ## Verwandte Seiten

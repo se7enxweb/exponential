@@ -141,7 +141,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Jedes Testkonto verwendet eine 
 ## Weiterführende Literatur
 
 - [Das Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md): Senken, Alarme, Archive und Exporte.
-- [Der Leitfaden zum Audit](../../../../../eng-us/bc/6.0/audit.md): der Ereigniskatalog, um den richtigen Ereignisnamen zu
+- [Der Leitfaden zum Audit](../../../../bc/6.0/audit.md): der Ereigniskatalog, um den richtigen Ereignisnamen zu
   finden.
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): die Prüferrolle bauen.
 - [Aufbewahrung von Logs und Daten für Hoster](../../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md): wie lange

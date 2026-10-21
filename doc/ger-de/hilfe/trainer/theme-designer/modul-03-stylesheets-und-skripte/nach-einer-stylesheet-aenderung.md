@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Stylesheets und Skripte für Ihre Website, nach einer Änderung](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md#after-a-change)
-und [Die Administration gestalten, nach einer Änderung am Stylesheet](../../../../../eng-us/bc/6.0/admin4-styling.md#after-a-stylesheet-change).
+und [Die Administration gestalten, nach einer Änderung am Stylesheet](../../../../bc/6.0/admin4-gestaltung.md#nach-einer-änderung-an-einem-stylesheet).
 
 1. **Drei Gedächtnisse** (4 Minuten). Zeichnen Sie sie an die Tafel:
 

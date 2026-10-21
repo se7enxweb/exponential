@@ -92,7 +92,7 @@ Für Trainer, die den Kurs vorbereiten, in dieser Reihenfolge:
    [View-Cache und Cache-Blöcke](../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md).
 3. [Stylesheets und Skripte für Ihre Website](../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md) und
    [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md).
-4. [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md) und [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md):
+4. [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md) und [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md):
    Lesen Sie das erste vollständig; die Module 4 und 6 bauen darauf auf.
 5. [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md),
    [Barrierefreiheit für Website-Bauer](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) und
