@@ -34,7 +34,7 @@ des Shops darauf.
 
 > **Hinweis**
 > Der Shop hat keinen Export aller Bestellungen in eine Tabellenkalkulation und unter seinen Ansichten keinen Befehl,
-> der alle Bestellungen eines Kunden entfernt oder anonymisiert (`kernel/shop/module.php` und [Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)).
+> der alle Bestellungen eines Kunden entfernt oder anonymisiert (`kernel/shop/module.php` und [Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)).
 > Für eine einzelne Anfrage findet die Bestellansicht des Kunden dessen Bestellungen über die E-Mail-Adresse
 > (`shop/customerorderview`).
 

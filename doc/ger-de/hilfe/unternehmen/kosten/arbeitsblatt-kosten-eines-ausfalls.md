@@ -130,7 +130,7 @@ Geprüft von: ______________   Nächste Prüfung: ____________
 | Wartungsmodus | Macht aus riskanter Arbeit geplante Ausfallzeit | [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md) |
 
 Der Bereich [Zuverlässigkeit](../zuverlaessigkeit/README.md) erklärt jede Praxis für Unternehmen, einschließlich der
-[Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md).
+[Störungsbehandlung für kleine Teams](../zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md).
 
 ## Verwandte Seiten
 

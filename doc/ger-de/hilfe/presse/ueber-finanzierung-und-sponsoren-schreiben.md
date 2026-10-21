@@ -72,7 +72,7 @@ Avoid: "The project is struggling for money."   (no source says so)
 Avoid: "Backed by big sponsors."                 (name sponsors only as the pages show them, with consent)
 ```
 
-Wenn Sie das Projekt selbst sponsern, legen Sie das in Ihrem Bericht offen ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
+Wenn Sie das Projekt selbst sponsern, legen Sie das in Ihrem Bericht offen ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)).
 
 ## Verwandte Seiten
 

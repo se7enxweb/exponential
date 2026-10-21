@@ -136,7 +136,7 @@ und behalten Sie die Reserve für Arbeiten außerhalb des Vertrags.
 
 ## Verwandte Seiten
 
-- [Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)
+- [Release-Linie und Support-Richtlinie](../zuverlaessigkeit/release-linie-und-support-richtlinie.md)
 - [Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md)
 - [Kunden-Websites aktualisieren](../../hosting/betrieb/kunden-websites-aktualisieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

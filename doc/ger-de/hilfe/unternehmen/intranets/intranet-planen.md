@@ -51,7 +51,7 @@ Sie später Sektionen, Klassen und Rollen hinzufügen, ohne die Website neu zu b
 | Wie Mitarbeiter Dinge finden | eingebaute Suche; Solr für große Bestände | [Suche im Intranet](suche-im-intranet.md) |
 | Wie Mitarbeiter von Änderungen erfahren | Benachrichtigungen, Digests, ein Newsletter | [Benachrichtigungen für Mitarbeiter](benachrichtigungen-fuer-mitarbeiter.md) |
 | Wo es erreichbar ist | nur aus dem Büronetz; von überall mit einer Anmeldung | [Die Administration einschränken: Network restrictions](../../hosting/sicherheit/die-administration-einschraenken.md#einschränkungen-im-netzwerk) |
-| Sprachen | eine; mehrere | [Mehrsprachig](../../../../eng-us/help/businesses/multilingual/README.md) |
+| Sprachen | eine; mehrere | [Mehrsprachig](../mehrsprachig/README.md) |
 
 ## Wie ein Intranet in Exponential gebaut wird
 

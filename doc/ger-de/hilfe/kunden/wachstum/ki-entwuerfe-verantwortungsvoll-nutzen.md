@@ -63,7 +63,7 @@ raten, wer eine Person auf dem Foto ist?
 
 Der Assistent kann Übersetzungen als Entwürfe vorbereiten und bestehende Übersetzungen nach Änderungen an der Quelle
 auf Stand halten, wobei nur geänderte Passagen angepasst werden
-([Unterstützte Übersetzung mit Exponential Intelligence](../../../../eng-us/help/businesses/multilingual/assisted-translation-with-exponential-intelligence.md)).
+([Unterstützte Übersetzung mit Exponential Intelligence](../../unternehmen/mehrsprachig/unterstuetzte-uebersetzung-mit-exponential-intelligence.md)).
 Eine sprachverantwortliche Person, die die Sprache liest, prüft vor dem Veröffentlichen, über eine Freigabe pro
 Sprache, wo Sie eine haben ([Übersetzungsroutine](../alltag/uebersetzungsroutine.md)).
 

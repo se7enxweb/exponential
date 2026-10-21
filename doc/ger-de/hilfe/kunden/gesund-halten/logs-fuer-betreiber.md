@@ -73,7 +73,7 @@ beantworten.
 
 ## Verwandte Seiten
 
-- [Logs und Fehlerreferenzen (für Unternehmen)](../../../../eng-us/help/businesses/reliability/logs-and-error-references.md)
+- [Logs und Fehlerreferenzen (für Unternehmen)](../../unternehmen/zuverlaessigkeit/logs-und-fehlerreferenzen.md)
 - [Prüfprotokoll für den Betrieb](../../unternehmen/zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)
 - [Log-Viewer und Rotation (für Hoster)](../../hosting/betrieb/log-viewer-und-log-rotation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

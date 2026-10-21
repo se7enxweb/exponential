@@ -41,7 +41,7 @@ Der Kernel setzt das Paket seit der Produktlinie 6.0.15 voraus ([Die Produktfami
 
 | Sagen Sie nicht | Sagen Sie stattdessen |
 |---|---|
-| „Die neue Administration von Netgen für Exponential“ | Eine Portierung der Netgen AdminUI durch 7x, mit Nennung ([Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md)) |
+| „Die neue Administration von Netgen für Exponential“ | Eine Portierung der Netgen AdminUI durch 7x, mit Nennung ([Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md)) |
 | „Ersetzt admin4“ | Eine Alternative; admin4 bleibt das übliche Design |
 | „Funktioniert mit 6.0.14“ | Sie braucht 6.0.15 oder neuer |
 

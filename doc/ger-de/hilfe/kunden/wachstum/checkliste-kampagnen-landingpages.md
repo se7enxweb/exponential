@@ -60,7 +60,7 @@ die Seite, die ihn erklärt.
 - [ ] Formulare auf der Seite sind ausprobiert, und jemand liest die Einsendungen
       ([Formulare und gesammelte Informationen](formulare-und-gesammelte-informationen.md)).
 - [ ] Ihr Hoster weiß Bescheid, wenn Sie deutlich mehr Besucher als üblich erwarten
-      ([Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)).
+      ([Planung für Lastspitzen](../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md)).
 
 ## Starttag
 

@@ -87,7 +87,7 @@ Bitten Sie Ihren Hoster oder Entwickler,
 - [ ] während eines Lasttests einige vollständige Bestellvorgänge im Testmodus des Zahlungsanbieters zu testen, wenn
   Ihr Hoster einen anbietet.
 
-Die Kapazitätsplanung im Allgemeinen steht unter [Lastspitzen planen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md).
+Die Kapazitätsplanung im Allgemeinen steht unter [Lastspitzen planen](../zuverlaessigkeit/lastspitzen-planen.md).
 
 ## Die Woche davor
 
@@ -116,7 +116,7 @@ werden. Leeren Sie nur, was eine Änderung braucht ([Leistung und Caching für W
 
 - Vergleichen Sie den Umsatz pro Tag und die abgebrochenen Warenkörbe im Dashboard mit den Wochen davor.
 - Sehen Sie sich die langsamsten Seiten in den Anfrage-Logs an ([Anfrage-Logs](../../hosting/betrieb/anfrage-logs.md)).
-- Schreiben Sie auf, was schiefgegangen ist und was Sie beim nächsten Mal vorbereiten ([Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)).
+- Schreiben Sie auf, was schiefgegangen ist und was Sie beim nächsten Mal vorbereiten ([Störungsbehandlung für kleine Teams](../zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)).
 
 ## Verwandte Seiten
 

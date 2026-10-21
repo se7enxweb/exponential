@@ -41,7 +41,7 @@ Löschen Sie nicht stillschweigend: Andere haben das Original vielleicht geteilt
 | Funktion | „die KI veröffentlicht“ | Sie schreibt nur Entwürfe ([Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md)) |
 | Zahl | Ein Geschwindigkeitsvergleich | Nur die dokumentierten Zahlen und ihre Bedingungen ([Zahlen prüfen](zahlen-pruefen.md)) |
 | Zugehörigkeit | „von Ibexa“ | Nicht mit eZ Systems oder Ibexa verbunden |
-| Offenlegung | Ein nicht erwähntes Sponsoring | Ergänzen Sie die Offenlegung am Anfang der Beschreibung ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)) |
+| Offenlegung | Ein nicht erwähntes Sponsoring | Ergänzen Sie die Offenlegung am Anfang der Beschreibung ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)) |
 
 ## Vorlagen
 

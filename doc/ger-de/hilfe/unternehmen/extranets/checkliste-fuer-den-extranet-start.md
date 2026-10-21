@@ -106,7 +106,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
   ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - [ ] Audit-Trail läuft: `./console exp:audit status`
   ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
-- [ ] Monitoring der Portaladresse ([Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md)).
+- [ ] Monitoring der Portaladresse ([Health-Checks und Monitoring](../zuverlaessigkeit/health-checks-und-monitoring.md)).
 - [ ] Plan für Aktualisierungen vereinbart
   ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
 

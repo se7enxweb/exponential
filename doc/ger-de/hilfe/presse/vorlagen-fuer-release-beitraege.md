@@ -93,7 +93,7 @@ release notes>). <One or two changes, in the words of the release notes.> It is 
 with its own version numbers; sites update it on its own.
 ```
 
-Für Velocity-Zahlen ergänzen Sie ihre Bedingungen oder lassen Sie sie weg ([Über Velocity-Releases berichten](../../../eng-us/help/press/covering-velocity-releases.md)).
+Für Velocity-Zahlen ergänzen Sie ihre Bedingungen oder lassen Sie sie weg ([Über Velocity-Releases berichten](ueber-velocity-releases-berichten.md)).
 
 ## Social-Media-Beitrag
 

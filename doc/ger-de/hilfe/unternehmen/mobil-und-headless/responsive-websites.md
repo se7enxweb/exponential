@@ -107,8 +107,8 @@ Verwenden Sie ein echtes Telefon, nicht nur ein schmales Desktop-Fenster.
 - [ ] Telefonnummern und Adressen lassen sich antippen.
 - [ ] Die Website funktioniert auf einem Desktop mit Textzoom auf 200 %.
 - [ ] Jede Sprache und jede Marke besteht denselben Test
-      ([Checkliste Mehrsprachigkeit](../../../../eng-us/help/businesses/multilingual/multilingual-checklist.md),
-      [Checkliste für mehrere Marken](../../../../eng-us/help/businesses/multisite/multi-brand-checklist.md)).
+      ([Checkliste Mehrsprachigkeit](../mehrsprachig/checkliste-mehrsprachigkeit.md),
+      [Checkliste für mehrere Marken](../multisite/checkliste-fuer-mehrere-marken.md)).
 
 ## Verwandte Seiten
 

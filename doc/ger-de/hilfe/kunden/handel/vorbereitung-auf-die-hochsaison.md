@@ -76,7 +76,7 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-sp
 - [ ] Alle Bestellungen der Spitze durch ihre Status geführt; nichts hängt in Pending fest.
 - [ ] Die Notizen des Hosters zu den langsamsten Seiten und zu Fehlern.
 - [ ] Festgehalten, was schiefging und was beim nächsten Mal früher vorzubereiten ist, solange es frisch ist
-  ([Vorfallreaktion für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)).
+  ([Vorfallreaktion für kleine Teams](../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)).
 - [ ] Der Änderungsstopp aufgehoben und verschobene Änderungen eingeplant.
 
 ## Was Sie Ihren Hoster fragen sollten
@@ -90,7 +90,7 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-sp
 ## Verwandte Seiten
 
 - [Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-spitzenzeiten.md)
-- [Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)
+- [Planung für Lastspitzen](../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md)
 - [Vor einer Kampagne](../nutzen/checklisten/vor-einer-kampagne.md)
 - [Wöchentliche Shop-Checkliste](woechentliche-shop-checkliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

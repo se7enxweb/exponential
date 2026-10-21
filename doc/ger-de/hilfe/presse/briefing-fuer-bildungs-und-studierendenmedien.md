@@ -67,7 +67,7 @@ sehen Sie auf dieser Seite nach, was darüber veröffentlicht ist.
 | Idee | Ausgangspunkt |
 |---|---|
 | „Wie ein CMS von 1999 noch immer gepflegt wird“ | [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md) |
-| „Der erste Pull Request von Studierenden an ein 20 Jahre altes Projekt“ | Ihre eigene Erfahrung, offengelegt ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)) |
+| „Der erste Pull Request von Studierenden an ein 20 Jahre altes Projekt“ | Ihre eigene Erfahrung, offengelegt ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)) |
 | „Wer bezahlt freie Software?“ | [Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md) |
 | „Ein KI-Assistent, der nur Entwürfe schreiben soll“ | [Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md) |
 

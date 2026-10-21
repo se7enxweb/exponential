@@ -41,7 +41,7 @@ PHP-Worker. Das hat zwei Wirkungen, die einem Unternehmen wichtig sind:
 
 Eine Grenze sollten Sie im Kopf behalten: Eine gecachte Startseite kann grün bleiben, während die Datenbank ausgefallen
 ist. Deshalb lautet die Empfehlung für das Monitoring, auch die Anmeldeseite der Administration zu prüfen
-([Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md#checks-from-outside)).
+([Health-Checks und Monitoring](health-checks-und-monitoring.md#prüfungen-von-außen)).
 
 ## Die Schichten in einfachen Worten
 
@@ -108,7 +108,7 @@ Einschränkungen gehalten wird
 und der rollenbewusste HTTP-Cache kann angemeldete Besucher je Berechtigungskontext bedienen, wenn er eingeschaltet ist.
 
 Wenn der größte Teil Ihres Verkehrs angemeldet ist (ein Intranet, eine Mitgliederwebsite, ein Shop an der Kasse),
-planen Sie die Kapazität für gerenderte Seiten, nicht für gecachte ([Lastspitzen planen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)).
+planen Sie die Kapazität für gerenderte Seiten, nicht für gecachte ([Lastspitzen planen](lastspitzen-planen.md)).
 
 ## Caches sicher leeren
 
@@ -121,7 +121,7 @@ Caches machen nur Ärger, wenn sie unbedacht geleert werden. Drei Regeln:
 3. **Seiten-Caches zuletzt leeren.** „Leeren Sie die HTTP- und Antwortcaches, nachdem PHP-FPM oder Velocity den neuen
    Code ausführt, sonst wird eine in der Zwischenzeit vom alten Code gerenderte Seite erneut gespeichert“ (dieselbe
    Seite). Der Deploy-Befehl erledigt das in der richtigen Reihenfolge
-   ([Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md)).
+   ([Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md)).
 
 Große Caches werden zur Seite verschoben und danach gelöscht, „damit ein Leeren Anfragen nicht warten lässt“
 ([Cache-Leerungen, die Verzeichnisse zur Seite verschieben](../../../../eng-us/features/6.0/cache-clear-rename-aside.md)).
@@ -149,7 +149,7 @@ Verwenden Sie den Namen Ihres eigenen öffentlichen Siteaccess. Dasselbe steht i
 ## Verwandte Seiten
 
 - [Statischer Cache und Antwortcache](../../../../eng-us/help/businesses/reliability/static-and-response-cache.md)
-- [Lastspitzen planen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)
+- [Lastspitzen planen](lastspitzen-planen.md)
 - [Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -84,7 +84,7 @@ Liste, und Benutzernamen können sich ändern.
   ([Aussagen zuordnen](aussagen-zuordnen.md)).
 - Ein offizielles Hashtag ist nicht dokumentiert. Verwenden Sie den Produktnamen im Klartext.
 - Creator: Ein Konto zu markieren ist keine Billigung durch dieses Konto und darf nicht als solche dargestellt werden
-  ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
+  ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)).
 
 ## Verwandte Seiten
 

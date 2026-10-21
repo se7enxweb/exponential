@@ -33,7 +33,7 @@ Notizen; jede Zeile verweist auf die Seite, die sie erklärt.
 
 Seiten: [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md),
 [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md), [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md),
-[Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md), [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md).
+[Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md), [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md).
 
 ## Vor einem Interview
 
@@ -76,7 +76,7 @@ Seiten: [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.
 ```
 
 Seiten: [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md), [Vergleiche, fair gemacht](faire-vergleiche.md),
-[Zahlen überprüfen](zahlen-pruefen.md), [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md),
+[Zahlen überprüfen](zahlen-pruefen.md), [Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md),
 [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md), [Barrierefreie Berichterstattung](barrierefreie-berichterstattung.md).
 
 ## Vor der Veröffentlichung eines Videos oder Streams
@@ -90,7 +90,7 @@ Seiten: [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-gui
 [ ] Title and thumbnail make a claim the video supports
 ```
 
-Seiten: [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.md), [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md),
+Seiten: [Checkliste für Creator](checkliste-fuer-creator.md), [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md),
 [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md), [Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md),
 [Titel, Vorschaubilder und Beschreibungen](titel-vorschaubilder-und-beschreibungen.md).
 

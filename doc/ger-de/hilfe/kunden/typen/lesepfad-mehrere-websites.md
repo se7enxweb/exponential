@@ -17,7 +17,7 @@ kennenlernen. Folgen Sie ihm neben dem Lesepfad des Typs jeder Website. Jeder Sc
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 1 | [Betreiber mehrerer Websites: hier beginnen](mehrere-websites-hier-beginnen.md) | Betreiber, Website-Leitungen | Was geteilt wird und was pro Website gilt |
-| 2 | [Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md) | Betreiber | Wie die Websites zusammenhängen |
+| 2 | [Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md) | Betreiber | Wie die Websites zusammenhängen |
 | 3 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Betreiber | Leitungen und Redakteure pro Website |
 | 4 | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) | Administrator | Eine Rolle auf den Teil einer Website beschränken |
 | 5 | [Wer was macht](../partner-und-hoster/wer-was-macht.md) | Betreiber | Partner, Hoster und Ihr Team |
@@ -26,10 +26,10 @@ kennenlernen. Folgen Sie ihm neben dem Lesepfad des Typs jeder Website. Jeder Sc
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 6 | [Gemeinsame Inhalte über Marken hinweg](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md) | Website-Leitungen | Wer gemeinsame Elemente ändern darf |
+| 6 | [Gemeinsame Inhalte über Marken hinweg](../../unternehmen/multisite/inhalte-zwischen-marken-teilen.md) | Website-Leitungen | Wer gemeinsame Elemente ändern darf |
 | 7 | [Website-übergreifende Links](../../unternehmen/multisite/links-zwischen-ihren-websites.md) | Website-Leitungen | Links, die sich in der richtigen Website öffnen |
-| 8 | [Designs pro Marke](../../../../eng-us/help/businesses/multisite/per-brand-designs.md) | Betreiber | Jede Website mit eigenem Erscheinungsbild |
-| 9 | [Einstellungen und Logs pro Website](../../../../eng-us/help/businesses/multisite/per-site-settings-and-logs.md) | Administrator | Einstellungen und Logs pro Website |
+| 8 | [Designs pro Marke](../../unternehmen/multisite/ein-design-pro-marke.md) | Betreiber | Jede Website mit eigenem Erscheinungsbild |
+| 9 | [Einstellungen und Logs pro Website](../../unternehmen/multisite/einstellungen-logs-und-caches-pro-website.md) | Administrator | Einstellungen und Logs pro Website |
 | 10 | [Redaktionskalender](../alltag/redaktionskalender.md) | Website-Leitungen | Ein Kalender oder einer pro Website |
 | 11 | [Wöchentliche Routine des Betreibers](../alltag/woechentliche-routine-des-betreibers.md) | Website-Leitungen | Dieselben Prüfungen auf jeder Website |
 
@@ -44,7 +44,7 @@ kennenlernen. Folgen Sie ihm neben dem Lesepfad des Typs jeder Website. Jeder Sc
 | 16 | [Eine Website hinzufügen](../wachstum/eine-website-hinzufuegen.md) | Betreiber | Was eine neue Marke oder Region braucht |
 | 17 | [Eine Sprache hinzufügen](../wachstum/eine-sprache-hinzufuegen.md) | Betreiber | Neue Märkte |
 | 18 | [Verträge und SLAs](../partner-und-hoster/vertraege-und-slas.md) | Betreiber | Vereinbarungen, die jede Website abdecken |
-| 19 | [Checkliste für mehrere Marken](../../../../eng-us/help/businesses/multisite/multi-brand-checklist.md) | Betreiber | Eine Überprüfung der ganzen Gruppe |
+| 19 | [Checkliste für mehrere Marken](../../unternehmen/multisite/checkliste-fuer-mehrere-marken.md) | Betreiber | Eine Überprüfung der ganzen Gruppe |
 
 ## Wenn Sie nur eine Stunde haben
 

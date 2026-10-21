@@ -60,7 +60,7 @@ diese Dokumentation zählt sie nicht. Schreiben Sie die Aussage dem README zu, w
 ## Verwandte Seiten
 
 - [Über ein Erweiterungs-Release berichten](ueber-ein-erweiterungs-release-berichten.md)
-- [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md)
+- [Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md)
 - [Entwicklung von Erweiterungen](../../../eng-us/help/extension-development/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

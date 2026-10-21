@@ -87,12 +87,12 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 | Ein Unternehmen, das ein Intranet für seine Mitarbeiter braucht | [Intranets](intranets/README.md) |
 | Ein Unternehmen, das Informationen mit Partnern, Händlern, Lieferanten oder Kunden teilt | [Extranets und Partnerportale](extranets/README.md) |
 | Ein Verein, ein Berufsverband oder jemand mit Mitgliedern | [Mitgliederwebsites](mitglieder/README.md) |
-| Herausgeber eines Newsletters | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md) |
+| Herausgeber eines Newsletters | [Newsletter](newsletter/README.md) |
 | Eine Bibliothek, ein Archiv oder jemand mit einem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md) |
-| Eine gemeinnützige oder wohltätige Organisation | [Gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/README.md) |
+| Eine gemeinnützige oder wohltätige Organisation | [Gemeinnützige Organisationen](gemeinnuetzige/README.md) |
 | Eine kleine Gruppe oder ein Verein, von Ehrenamtlichen geführt | [Kleine Gruppen und Vereine](vereine/README.md) |
 | Eine Marke oder Gruppe mit mehreren Websites | [Marken mit Multisite](multisite/README.md) |
-| Ein Unternehmen, das in mehreren Sprachen verkauft | [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md) |
+| Ein Unternehmen, das in mehreren Sprachen verkauft | [Mehrsprachige Unternehmen](mehrsprachig/README.md) |
 | Ein Unternehmen mit einer mobilen App oder anderen Systemen, die die Inhalte nutzen | [Mobil und headless](mobil-und-headless/README.md) |
 | Eine Behörde oder öffentliche Stelle | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
 
@@ -106,10 +106,10 @@ Der größte Teil der Kosten einer Website liegt nicht im Aufbau, sondern im jah
 [Zuverlässigkeit](zuverlaessigkeit/README.md) behandelt, was eine Website für Kunden erreichbar hält:
 
 - [Warum Stabilität wichtig ist](../../../eng-us/help/businesses/reliability/why-stability-matters.md) und [Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md);
-- [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) und [Wiederherstellungsübungen](../../../eng-us/help/businesses/reliability/restore-drills.md);
-- [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) und [unterbrechungsfreie Deployments](../../../eng-us/help/businesses/reliability/graceful-deploys.md);
-- [Caching für Verfügbarkeit](zuverlaessigkeit/caching-fuer-verfuegbarkeit.md) und [Lastspitzen planen](../../../eng-us/help/businesses/reliability/peak-traffic-planning.md);
-- [Monitoring](../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md) und [Störungsbehandlung für kleine Teams](../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md);
+- [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) und [Wiederherstellungsübungen](zuverlaessigkeit/wiederherstellungsuebungen.md);
+- [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) und [unterbrechungsfreie Deployments](zuverlaessigkeit/unterbrechungsfreie-deployments.md);
+- [Caching für Verfügbarkeit](zuverlaessigkeit/caching-fuer-verfuegbarkeit.md) und [Lastspitzen planen](zuverlaessigkeit/lastspitzen-planen.md);
+- [Monitoring](zuverlaessigkeit/health-checks-und-monitoring.md) und [Störungsbehandlung für kleine Teams](zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md);
 - [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md).
 
 ## Geld: Kosten, Ertrag und Risiko

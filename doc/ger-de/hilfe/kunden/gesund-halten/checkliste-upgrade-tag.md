@@ -20,7 +20,7 @@ dies sind die Schritte auf Ihrer Seite, damit das Upgrade geplant, geprüft und 
 - [ ] Sie haben eine Zusammenfassung dessen erhalten, was sich für die Redaktion und für Besucher ändert.
 - [ ] Das Upgrade wurde auf einer Kopie der Website ausprobiert, oder Sie haben das Risiko akzeptiert, es nicht zu tun.
 - [ ] Für das Zeitfenster ist keine Kampagne, kein Newsletter-Versand und keine Aktion geplant
-      ([Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)).
+      ([Planung für Lastspitzen](../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md)).
 - [ ] Sie haben entschieden, was geschieht, wenn es fehlschlägt: zum Backup zurückkehren oder vorwärts korrigieren.
 
 ## Einen Tag vorher

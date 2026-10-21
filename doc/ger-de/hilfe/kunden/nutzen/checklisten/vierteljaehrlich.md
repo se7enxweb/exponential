@@ -52,7 +52,7 @@ PLAN
 
 | Punkt | Lesen Sie |
 |---|---|
-| Wiederherstellungstest | [Wiederherstellungsübungen](../../../../../eng-us/help/businesses/reliability/restore-drills.md), [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
+| Wiederherstellungstest | [Wiederherstellungsübungen](../../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md), [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
 | Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
 | Zweistufige Anmeldung | [Zwei-Faktor-Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Updates der Erweiterungen | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
@@ -78,6 +78,6 @@ Wiederherstellung funktioniert.
 
 - [Monatliche Checkliste](monatlich.md)
 - [Jährliche Checkliste](jaehrlich.md)
-- [Wiederherstellungsübungen](../../../../../eng-us/help/businesses/reliability/restore-drills.md)
+- [Wiederherstellungsübungen](../../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md)
 - [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

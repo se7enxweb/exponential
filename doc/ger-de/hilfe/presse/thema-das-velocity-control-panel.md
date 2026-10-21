@@ -55,7 +55,7 @@ answer to the server, not to your application, so they keep working when the app
 
 - [Thema: Exponential Velocity](thema-exponential-velocity.md)
 - [Thema: Betriebswerkzeuge für Administratoren](thema-betriebswerkzeuge-fuer-administratoren.md)
-- [Demo-Skript: Velocity](../../../eng-us/help/press/demo-script-velocity.md)
+- [Demo-Skript: Velocity](demo-skript-velocity.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

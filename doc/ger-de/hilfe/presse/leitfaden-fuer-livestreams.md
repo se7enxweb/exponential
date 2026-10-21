@@ -31,7 +31,7 @@ ergänzt, was speziell für das Streaming gilt.
 | Installation | Ihre eigene Demo-Installation mit erfundenen Inhalten ([Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)) |
 | Version | Nennen Sie sie im Titel und zu Beginn: ein Release oder die Entwicklungslinie 6.0.15 mit Datum |
 | Skript | Eines der Demo-Skripte in diesem Bereich, mit Zeit für Fragen |
-| Offenlegung | Im Titel oder im Infobereich und zu Beginn gesprochen ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)) |
+| Offenlegung | Im Titel oder im Infobereich und zu Beginn gesprochen ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)) |
 | Co-Moderation | Eine zweite Person, die die Ausgabe und den Chat beobachtet, hilft, Lecks zu erkennen |
 
 ## Szenen und ein Sicherheitsnetz einrichten

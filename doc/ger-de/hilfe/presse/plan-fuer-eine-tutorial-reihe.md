@@ -35,30 +35,30 @@ Hilfe gehören zur Entwicklungslinie 6.0.15, die kein Veröffentlichungsdatum ha
 
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
-| A1 | Anmelden und sich zurechtfinden | 6 Min. | [Erste Schritte](../erste-schritte.md), [Im Editor anmelden](../anmelden-im-editor.md) | [Rundgang für Redakteure, Teil 1](../../../eng-us/help/press/demo-script-editor-tour.md#part-1-finding-your-way-2-minutes) |
-| A2 | Ein Element bearbeiten: Entwürfe und die Feldleiste | 8 Min. | [Inhalte anlegen und bearbeiten](../inhalte-bearbeiten.md) | [Rundgang für Redakteure, Teil 2](../../../eng-us/help/press/demo-script-editor-tour.md#part-2-editing-a-folder-4-minutes) |
-| A3 | Vorschau, Veröffentlichen, Versionen und Zurückgehen | 6 Min. | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) | [Rundgang für Redakteure, Teil 3](../../../eng-us/help/press/demo-script-editor-tour.md#part-3-versions-1-minute-30) |
+| A1 | Anmelden und sich zurechtfinden | 6 Min. | [Erste Schritte](../erste-schritte.md), [Im Editor anmelden](../anmelden-im-editor.md) | [Rundgang für Redakteure, Teil 1](demo-skript-rundgang-fuer-redakteure.md#teil-1-sich-zurechtfinden-2-minuten) |
+| A2 | Ein Element bearbeiten: Entwürfe und die Feldleiste | 8 Min. | [Inhalte anlegen und bearbeiten](../inhalte-bearbeiten.md) | [Rundgang für Redakteure, Teil 2](demo-skript-rundgang-fuer-redakteure.md#teil-2-einen-ordner-bearbeiten-4-minuten) |
+| A3 | Vorschau, Veröffentlichen, Versionen und Zurückgehen | 6 Min. | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) | [Rundgang für Redakteure, Teil 3](demo-skript-rundgang-fuer-redakteure.md#teil-3-versionen-1-minute-30) |
 | A4 | Bilder und Dateien | 6 Min. | [Medien und Uploads](../medien-und-uploads.md) | Ihr eigenes, nach der Hilfeseite |
-| A5 | Inhalte übersetzen; die Oberfläche in anderen Sprachen | 6 Min. | [Sprachen](../sprachen.md) | [Rundgang für Redakteure, Teil 4](../../../eng-us/help/press/demo-script-editor-tour.md#part-4-languages-and-right-to-left-2-minutes-30) |
+| A5 | Inhalte übersetzen; die Oberfläche in anderen Sprachen | 6 Min. | [Sprachen](../sprachen.md) | [Rundgang für Redakteure, Teil 4](demo-skript-rundgang-fuer-redakteure.md#teil-4-sprachen-und-rechts-nach-links-2-minuten-30) |
 
 ## Strang B: Website-Bauer
 
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
-| B1 | Von null auf SQLite installieren | 10 Min. | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) | [Installation von null](../../../eng-us/help/press/demo-script-install-from-zero.md) |
-| B2 | Layouts, Zonen und Blöcke | 8 Min. | [Der Layout-Editor](../layout-editor.md) | [Exponential Layouts](../../../eng-us/help/press/demo-script-layouts.md) |
-| B3 | Inhaltstypen: Klassen und Attribute | 8 Min. | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) | [Rundgang für Administratoren, Teil 1](../../../eng-us/help/press/demo-script-administrator-tour.md#part-1-the-content-model-2-minutes) |
+| B1 | Von null auf SQLite installieren | 10 Min. | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) | [Installation von null](demo-skript-installation-von-null.md) |
+| B2 | Layouts, Zonen und Blöcke | 8 Min. | [Der Layout-Editor](../layout-editor.md) | [Exponential Layouts](demo-skript-exponential-layouts.md) |
+| B3 | Inhaltstypen: Klassen und Attribute | 8 Min. | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) | [Rundgang für Administratoren, Teil 1](demo-skript-rundgang-fuer-administratoren.md#teil-1-das-inhaltsmodell-2-minuten) |
 | B4 | Arbeiten mit Git: der eigene Branch, Updates und ein erster Pull Request | 10 Min. | [Mit Git entwickeln](../mit-git-entwickeln.md) | Ihr eigenes, nach der Hilfeseite |
 
 ## Strang C: Administratoren
 
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
-| C1 | Die Website unter Velocity betreiben | 8 Min. | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) | [Velocity](../../../eng-us/help/press/demo-script-velocity.md) |
-| C2 | Rollen, zweistufige Anmeldung und der Audit-Trail | 8 Min. | [Sicherheitshärtung](../sicherheitshaertung.md) | [Rundgang für Administratoren, Teil 4](../../../eng-us/help/press/demo-script-administrator-tour.md#part-4-security-3-minutes) |
-| C3 | Logs, Upgrade-Prüfung und Caches | 8 Min. | [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md) | [Rundgang für Administratoren, Teil 3](../../../eng-us/help/press/demo-script-administrator-tour.md#part-3-operations-3-minutes) |
+| C1 | Die Website unter Velocity betreiben | 8 Min. | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) | [Velocity](demo-skript-velocity.md) |
+| C2 | Rollen, zweistufige Anmeldung und der Audit-Trail | 8 Min. | [Sicherheitshärtung](../sicherheitshaertung.md) | [Rundgang für Administratoren, Teil 4](demo-skript-rundgang-fuer-administratoren.md#teil-4-sicherheit-3-minuten) |
+| C3 | Logs, Upgrade-Prüfung und Caches | 8 Min. | [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md) | [Rundgang für Administratoren, Teil 3](demo-skript-rundgang-fuer-administratoren.md#teil-3-betrieb-3-minuten) |
 
-Ein optionaler vierter Strang kann Exponential Intelligence zeigen ([sein Demo-Skript](../../../eng-us/help/press/demo-script-exponential-intelligence.md)),
+Ein optionaler vierter Strang kann Exponential Intelligence zeigen ([sein Demo-Skript](demo-skript-exponential-intelligence.md)),
 sobald Sie einen Anbieterschlüssel haben, den Sie widerrufen können.
 
 ## Eine Vorlage für eine Folge

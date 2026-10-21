@@ -27,7 +27,7 @@ möchten. Jede Antwort ist kurz und verweist auf die Seite mit den Einzelheiten 
 **Ist der Shop ein Zusatz, den ich kaufen muss?**
 Nein. Der Shop ist Teil des Exponential-Kernels (`kernel/shop/`), und das README nennt „Advanced e-Commerce Stores
 (Built in)“ unter den wichtigsten Funktionen. Exponential steht unter der Lizenz GPL v2 oder später.
-Siehe [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md).
+Siehe [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md).
 
 **Können meine Website und mein Shop dieselbe Website sein?**
 Ja. Produkte sind Inhaltsseiten mit einem Preisfeld, bearbeitet mit denselben Werkzeugen wie der Rest der Website.
@@ -35,7 +35,7 @@ Siehe [Produktklassen und Katalog](produktklassen-und-katalog.md).
 
 **Kann ich mehrere Shops betreiben, zum Beispiel einen pro Land oder Marke?**
 Exponential betreibt mehrere Websites aus einer Installation, jede mit eigenen Einstellungen, etwa ihrer Länder-Rangliste.
-Siehe [Mehrere Marken planen](../../../../eng-us/help/businesses/multisite/multi-brand-planning.md) und [Ländergruppen und Regionen](laendergruppen-und-regionen.md).
+Siehe [Mehrere Marken planen](../multisite/mehrere-marken-planen.md) und [Ländergruppen und Regionen](laendergruppen-und-regionen.md).
 
 ## Produkte und Preise
 
@@ -48,7 +48,7 @@ Ja, mit Optionsfeldern, die den Preis ändern können. Siehe [Produktklassen und
 
 **Behandelt der Shop die USt für verschiedene Länder?**
 Er berechnet, was Sie konfigurieren: USt-Typen und USt-Regeln nach Land des Kunden und Produktkategorie. Welche Sätze
-richtig sind, ist eine Frage für Ihren Steuerberater. Siehe [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md).
+richtig sind, ist eine Frage für Ihren Steuerberater. Siehe [USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md).
 
 ## Kasse und Kunden
 
@@ -96,7 +96,7 @@ Siehe [Bestellungen und Bestellstatus](bestellungen-und-bestellstatus.md#wer-ein
 
 **Führt der Shop einen Lagerbestand?**
 Nein. Die Lagerverwaltung gehört zu den Dingen, die als Erweiterung oder Integration ergänzt werden.
-Siehe [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md#what-is-not-included).
+Siehe [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md#was-nicht-enthalten-ist).
 
 **Können Kunden einen Gutscheincode eingeben?**
 Nein. Rabatte folgen Kundengruppen. Gutscheincodes brauchen eine Erweiterung.
@@ -122,7 +122,7 @@ Zahlen durch. Siehe [Gesamtbetriebskosten](../kosten/gesamtbetriebskosten.md) un
 
 **Wie halte ich den Shop sicher?**
 Persönliche Konten mit zweistufiger Anmeldung, eingeschränkte Shop-Berechtigungen, HTTPS, Updates und getestete
-Backups. Siehe [Sicherheitscheckliste für Shops](../../../../eng-us/help/businesses/stores/store-security-checklist.md).
+Backups. Siehe [Sicherheitscheckliste für Shops](sicherheitscheckliste-fuer-shops.md).
 
 **Bleibt der Shop während eines Ausverkaufs schnell?**
 Öffentliche Seiten lassen sich cachen; Warenkorb und Kasse nicht, planen Sie also Kapazität für sie ein und messen Sie

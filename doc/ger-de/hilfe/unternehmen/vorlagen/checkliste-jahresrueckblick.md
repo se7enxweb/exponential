@@ -102,11 +102,11 @@ Wo jeder Teil erklärt wird:
 | Teil | Seite |
 |---|---|
 | 1, 2 | [Rendite der Stabilität](../kosten/rendite-der-stabilitaet.md), [Vorlage: ROI-Arbeitsblatt](vorlage-roi-arbeitsblatt.md) |
-| 3 | [Arbeitsblatt: Kosten eines Ausfalls](../kosten/arbeitsblatt-kosten-eines-ausfalls.md), [Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md) |
+| 3 | [Arbeitsblatt: Kosten eines Ausfalls](../kosten/arbeitsblatt-kosten-eines-ausfalls.md), [Störungsbehandlung für kleine Teams](../zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md) |
 | 4 | [Budget für Aktualisierungen und Wartung](../kosten/budget-fuer-aktualisierungen-und-wartung.md), [Sicherheitsupdates und Offenlegung](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md) |
 | 5 | [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md), [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md), [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) |
 | 6 | [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md), [Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md) |
-| 7 | [Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md) |
+| 7 | [Wiederherstellungsübungen](../zuverlaessigkeit/wiederherstellungsuebungen.md) |
 | 8 | [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md) |
 | 9 | [Bewertungsbogen für Anbieter](bewertungsbogen-fuer-anbieter.md), [Grundlagen zu Verträgen und SLAs](../auswahl/grundlagen-zu-vertraegen-und-slas.md) |
 
@@ -136,7 +136,7 @@ Budget für das nächste Jahr: einmalig ______ laufend ______
 ## Verwandte Seiten
 
 - [Monatliche Betriebscheckliste](monatliche-betriebscheckliste.md)
-- [Bewertungsbogen Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md)
+- [Bewertungsbogen Zuverlässigkeit](../zuverlaessigkeit/bewertungsbogen-zuverlaessigkeit.md)
 - [Der Lesepfad für Führungskräfte](../../fuehrung/lesepfad-fuer-fuehrungskraefte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

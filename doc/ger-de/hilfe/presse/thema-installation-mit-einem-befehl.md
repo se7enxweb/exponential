@@ -57,7 +57,7 @@ Oracle.
 ## Blickwinkel und Ideen für Überschriften
 
 - „Von null zum CMS mit einem Befehl, ohne Datenbankserver.“
-- Video: [Demo-Skript: Installation von null](../../../eng-us/help/press/demo-script-install-from-zero.md).
+- Video: [Demo-Skript: Installation von null](demo-skript-installation-von-null.md).
 
 ## Verwandte Seiten
 

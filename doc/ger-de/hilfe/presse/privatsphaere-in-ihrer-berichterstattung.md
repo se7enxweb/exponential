@@ -43,7 +43,7 @@ Kunden ohne deren Einwilligung.**
 ## Menschen, die Probleme melden
 
 - Wer eine Sicherheitslücke vertraulich gemeldet hat, möchte vielleicht nicht genannt werden; respektieren Sie diese
-  Entscheidung ([Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)).
+  Entscheidung ([Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)).
 - Fehlermeldungen in den öffentlichen Trackern können versehentlich personenbezogene Daten enthalten; geben Sie sie
   nicht wieder.
 

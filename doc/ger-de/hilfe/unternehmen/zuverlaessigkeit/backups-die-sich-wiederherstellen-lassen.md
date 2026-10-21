@@ -36,7 +36,7 @@ zurück.
 
 Die zweite Regel ist genauso wichtig: „Testen Sie mindestens einmal eine Wiederherstellung auf einem anderen Server; ein
 Backup, das Sie nie wiederhergestellt haben, ist eine Hoffnung“ (dieselbe Quelle). Darum geht es in
-[Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md).
+[Wiederherstellungsübungen](wiederherstellungsuebungen.md).
 
 ## Was Sie sichern
 
@@ -61,7 +61,7 @@ einen Zeitplan. Der Hosting-Bereich erklärt jede Option ausführlich:
 | Entscheidung | Zu beantwortende Frage |
 |---|---|
 | Wiederherstellungspunkt | Wie viel Arbeit (Bestellungen, Bearbeitungen, Anmeldungen) können wir uns leisten zu verlieren? Das bestimmt, wie oft die Datenbank gesichert wird. |
-| Wiederherstellungszeit | Wie lange darf die Website während der Wiederherstellung ausfallen? Nur eine [Wiederherstellungsübung](../../../../eng-us/help/businesses/reliability/restore-drills.md) sagt Ihnen, wie lange es wirklich dauert. |
+| Wiederherstellungszeit | Wie lange darf die Website während der Wiederherstellung ausfallen? Nur eine [Wiederherstellungsübung](wiederherstellungsuebungen.md) sagt Ihnen, wie lange es wirklich dauert. |
 | Generationen | Wie weit müssen wir zurückgehen können, wenn ein Fehler spät bemerkt wird? |
 | Ort | Wo werden Kopien abseits des Servers aufbewahrt? Auf einem anderen Server, in einem anderen Rechenzentrum oder bei einem anderen Anbieter? |
 | Verschlüsselung | Sind Backups im Ruhezustand und bei der Übertragung verschlüsselt? Sie enthalten Zugangsdaten und personenbezogene Daten. |
@@ -113,7 +113,7 @@ Legen Sie neben dem Zeitplan direkt vor jeder riskanten Änderung ein Backup an
   sie lesen kann.
 - **Mehrere Generationen.** Eine einzige Kopie, die nach dem Schaden angelegt wurde, hilft nicht.
 - **Überwacht.** Ein fehlgeschlagener Backup-Job muss jemanden alarmieren, genau wie eine fehlgeschlagene
-  Zustandsprüfung ([Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md)).
+  Zustandsprüfung ([Health-Checks und Monitoring](health-checks-und-monitoring.md)).
 - **Datenschutz.** Für Backups gelten dieselben Regeln wie für die Live-Daten. Siehe
   [Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md); dies ist keine Rechtsberatung.
 
@@ -139,12 +139,12 @@ Nutzen Sie bei einem einzelnen Fehler zuerst die Werkzeuge in Exponential:
 - [ ] Vor jeder Aktualisierung, jedem Composer-Update, jedem Engine-Wechsel und jeder Wiederherstellung wird ein Backup
       angelegt.
 - [ ] Im letzten Quartal wurde ein Backup auf einem anderen Rechner wiederhergestellt
-      ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)).
+      ([Wiederherstellungsübungen](wiederherstellungsuebungen.md)).
 - [ ] Redakteure kennen den Papierkorb und die Versionen, sodass kleine Fehler nie eine Wiederherstellung brauchen.
 
 ## Verwandte Seiten
 
-- [Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)
+- [Wiederherstellungsübungen](wiederherstellungsuebungen.md)
 - [Backups und Wiederherstellungen (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)
 - [Backups: was gesichert werden muss (Hosting)](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

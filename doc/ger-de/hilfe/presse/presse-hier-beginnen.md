@@ -100,7 +100,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
 | [Marke und Namen für Medien](marke-und-namen-fuer-medien.md), [Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md) | Jeden Namen richtig schreiben |
-| [Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md), [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md), [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md) | Fair über die Vergangenheit und über andere Unternehmen schreiben |
+| [Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md), [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md), [Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md) | Fair über die Vergangenheit und über andere Unternehmen schreiben |
 | [Logos und Markenmaterial](logos-und-markenmaterial.md), [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md), [Eigene Bildschirmfotos machen](eigene-bildschirmfotos-aufnehmen.md) | Bilder im Rahmen der veröffentlichten Regeln verwenden |
 | [Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md), [Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md) | Text legal wiederverwenden und GPL, GFDL und MIT erklären |
 | [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md), [Versionsnummern im Druck](versionsnummern-im-text.md), [Stil und Schreibweise für die Berichterstattung](stil-und-schreibweise-fuer-berichte.md) | Überschriften und Texte schreiben, die korrekt bleiben |
@@ -120,7 +120,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 | [Über ein Release berichten](ueber-ein-release-berichten.md), [Checkliste für die Release-Berichterstattung](checkliste-release-berichterstattung.md) | Schritt für Schritt über eine neue Version berichten |
 | [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md), [Ein Changelog lesen](ein-changelog-lesen.md) | Die offizielle Aufzeichnung finden und lesen |
 | [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md), [Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md), [Ein Release selbst überprüfen](ein-release-selbst-pruefen.md) | Versionsnummern verstehen und prüfen |
-| [Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md), [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md) | Verantwortungsvoll über unveröffentlichte Arbeit und über Korrekturen berichten |
+| [Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md), [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md) | Verantwortungsvoll über unveröffentlichte Arbeit und über Korrekturen berichten |
 | [Vorlagen für Release-Beiträge](vorlagen-fuer-release-beitraege.md) | Mit einer belegten Vorlage beginnen |
 
 ### Interviews, Briefings und Faktencheck
@@ -137,12 +137,12 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
-| [Creator und Influencer: hier beginnen](../../../eng-us/help/press/creators-and-influencers-start-here.md) | Die Übersicht dieses Bereichs für Creator |
-| [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md), [Bezahlte, geschenkte und Affiliate-Inhalte](bezahlte-geschenkte-und-affiliate-inhalte.md) | Transparent gegenüber Ihrem Publikum sein |
+| [Creator und Influencer: hier beginnen](creator-und-influencer-hier-beginnen.md) | Die Übersicht dieses Bereichs für Creator |
+| [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md), [Bezahlte, geschenkte und Affiliate-Inhalte](bezahlte-geschenkte-und-affiliate-inhalte.md) | Transparent gegenüber Ihrem Publikum sein |
 | [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md), [Leitfaden für Video-Rundgänge](leitfaden-fuer-video-rundgaenge.md), [Leitfaden für Livestreams](leitfaden-fuer-livestreams.md) | Exponential auf einer Installation zeigen, die Sie kontrollieren |
-| [Demo-Skript: Überblick in fünf Minuten](../../../eng-us/help/press/demo-script-five-minute-overview.md), [Rundgang für Redakteure](../../../eng-us/help/press/demo-script-editor-tour.md), [Exponential Layouts](../../../eng-us/help/press/demo-script-layouts.md), [Exponential Intelligence](../../../eng-us/help/press/demo-script-exponential-intelligence.md), [Velocity](../../../eng-us/help/press/demo-script-velocity.md), [Installation von null an](../../../eng-us/help/press/demo-script-install-from-zero.md), [Rundgang für Administratoren](../../../eng-us/help/press/demo-script-administrator-tour.md) | Einem getesteten Demo-Skript folgen |
+| [Demo-Skript: Überblick in fünf Minuten](demo-skript-ueberblick-in-fuenf-minuten.md), [Rundgang für Redakteure](demo-skript-rundgang-fuer-redakteure.md), [Exponential Layouts](demo-skript-exponential-layouts.md), [Exponential Intelligence](demo-skript-exponential-intelligence.md), [Velocity](demo-skript-velocity.md), [Installation von null an](demo-skript-installation-von-null.md), [Rundgang für Administratoren](demo-skript-rundgang-fuer-administratoren.md) | Einem getesteten Demo-Skript folgen |
 | [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md), [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md), [Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md) | Sicher und barrierefrei aufnehmen |
-| [Eine faire Rezension schreiben](eine-faire-rezension-schreiben.md), [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.md), [FAQ für Creator](../../../eng-us/help/press/creator-faq.md) | Fair rezensieren und Ihre Arbeit prüfen |
+| [Eine faire Rezension schreiben](eine-faire-rezension-schreiben.md), [Checkliste für Creator](checkliste-fuer-creator.md), [FAQ für Creator](faq-fuer-creator.md) | Fair rezensieren und Ihre Arbeit prüfen |
 
 ### Nachschlagen
 
@@ -180,7 +180,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 - [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md)
 - [Pressekontakte](pressekontakte.md)
 - [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md)
-- [Creator und Influencer: hier beginnen](../../../eng-us/help/press/creators-and-influencers-start-here.md)
+- [Creator und Influencer: hier beginnen](creator-und-influencer-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

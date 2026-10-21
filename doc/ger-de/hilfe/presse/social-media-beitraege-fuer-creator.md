@@ -74,7 +74,7 @@ Setzen Sie die Offenlegung an den Anfang, wo sie vor „mehr lesen“ zu sehen i
 
 Auf Deutsch entsprechend etwa „[Gesponsert von <wem>]“, „[Werbung]“ oder „[Geschenkt: <was>, ohne Verpflichtung zum
 Posten]“. Verwenden Sie zusätzlich die Kennzeichnungen, die Ihre Plattform anbietet. Einzelheiten:
-[Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md).
+[Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md).
 
 ## Verwandte Seiten
 

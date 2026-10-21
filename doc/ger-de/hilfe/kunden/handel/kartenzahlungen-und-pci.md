@@ -92,6 +92,6 @@ Aus [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/s
 
 - [Zahlungsanbieter](zahlungsanbieter.md)
 - [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md)
-- [Sicherheits-Checkliste für den Shop](../../../../eng-us/help/businesses/stores/store-security-checklist.md)
+- [Sicherheits-Checkliste für den Shop](../../unternehmen/shops/sicherheitscheckliste-fuer-shops.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

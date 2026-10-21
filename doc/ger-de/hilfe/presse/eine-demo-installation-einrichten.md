@@ -83,7 +83,7 @@ php bin/php/console exp:velocity status    # lists the addresses to open
 ```
 
 Das Engine-Paket für den mitgelieferten Server wird separat installiert; das
-[Demo-Skript: Velocity](../../../eng-us/help/press/demo-script-velocity.md) behandelt es.
+[Demo-Skript: Velocity](demo-skript-velocity.md) behandelt es.
 
 ## Kameratauglich machen
 
@@ -152,7 +152,7 @@ Wie Sie sie für jede Art von Server setzen: [Demomodus für Hoster](../hosting/
 - [Demomodus](../demomodus.md)
 
 - [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md)
-- [Demo-Skript: Installation von null an](../../../eng-us/help/press/demo-script-install-from-zero.md)
+- [Demo-Skript: Installation von null an](demo-skript-installation-von-null.md)
 - [Demos als Fürsprecher geben](../fuersprecher/demos-zeigen.md)
 - [Erste Schritte](../erste-schritte.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

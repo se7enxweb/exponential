@@ -100,11 +100,11 @@ kompilierte Templates behalten den alten Link-Code, bis sie erneut kompiliert we
 | Ein Link innerhalb von Marke A | Unverändert, bleibt auf Marke A |
 | Eine Vorschau in der Administration | Unverändert |
 
-Nehmen Sie diese Tests in die Start-Checkliste jeder neuen Marke auf ([Checkliste für mehrere Marken](../../../../eng-us/help/businesses/multisite/multi-brand-checklist.md)).
+Nehmen Sie diese Tests in die Start-Checkliste jeder neuen Marke auf ([Checkliste für mehrere Marken](checkliste-fuer-mehrere-marken.md)).
 
 ## Verwandte Seiten
 
-- [Inhalte zwischen Marken teilen](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md)
+- [Inhalte zwischen Marken teilen](inhalte-zwischen-marken-teilen.md)
 - [Links zu Inhalten einer anderen Website einer Multisite-Installation](../../../../eng-us/features/6.0/multisite-cross-site-links.md)
 - [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#links-between-the-sites)
 - [Fehlerhafte Links und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)

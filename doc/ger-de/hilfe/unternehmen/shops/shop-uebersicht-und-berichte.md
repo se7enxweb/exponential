@@ -118,7 +118,7 @@ Eine Vorlage für die monatliche Fassung steht unter [Monatliche Betriebscheckli
 - Es ersetzt nicht Ihre Buchhaltung: Der Umsatz auf dem Dashboard ist Bestellwert, nicht verbuchte Einnahmen.
 
 Wenn Sie Exporte oder Anbindungen an die Buchhaltung brauchen, planen Sie sie als Erweiterung oder Integration
-([Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md#what-is-not-included)).
+([Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md#was-nicht-enthalten-ist)).
 
 ## Verwandte Seiten
 

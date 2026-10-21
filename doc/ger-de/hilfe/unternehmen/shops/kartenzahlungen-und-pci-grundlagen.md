@@ -52,7 +52,7 @@ nie.
 
 Für ein kleines Unternehmen bedeutet das meist deutlich weniger, das abgesichert werden muss. Ihre Website bleibt
 trotzdem wichtig, weil sie den Kunden zum Anbieter schickt und die Zahlung festhält: Halten Sie sie aktuell, auf HTTPS
-und gegen Manipulation geschützt ([Sicherheitscheckliste für Shops](../../../../eng-us/help/businesses/stores/store-security-checklist.md)).
+und gegen Manipulation geschützt ([Sicherheitscheckliste für Shops](sicherheitscheckliste-fuer-shops.md)).
 
 ## Kartenformular auf der eigenen Website mit ezauthorize
 

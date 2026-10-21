@@ -85,7 +85,7 @@ Veröffentlichungsvorgang aus, sodass die Freigabe sie zurückhält ([Exponentia
 ## Leichtere Alternativen
 
 - **Vorschau vor dem Veröffentlichen**: Mit der Vorschau im Bearbeitungsformular und der Versionsvorschau kann ein
-  Kollege hinsehen, bevor der Autor veröffentlicht ([Vorschau vor dem Veröffentlichen](../../../../eng-us/help/businesses/reliability/preview-before-you-publish.md)).
+  Kollege hinsehen, bevor der Autor veröffentlicht ([Vorschau vor dem Veröffentlichen](../../unternehmen/zuverlaessigkeit/vorschau-vor-dem-veroeffentlichen.md)).
 - **Objektzustände** als Prüfstufen (Entwurf, in Prüfung, freigegeben), die Rollen nutzen können
   ([Objektzustände](../../../anleitungen/objektzustaende.md)).
 - **Nachträgliche Prüfung** mit Versionen und der Vergleichsansicht

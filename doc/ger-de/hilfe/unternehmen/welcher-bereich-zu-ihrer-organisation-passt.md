@@ -41,14 +41,14 @@ Aufwand jeder braucht.
 
 | Sie | Hauptbereich | Oft auch |
 |---|---|---|
-| Verkaufen physische oder digitale Produkte | [Online-Shops](shops/README.md) | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Mobil und headless](mobil-und-headless/README.md) |
-| Geben einen Newsletter oder ein Magazin heraus | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
+| Verkaufen physische oder digitale Produkte | [Online-Shops](shops/README.md) | [Newsletter](newsletter/README.md), [Mobil und headless](mobil-und-headless/README.md) |
+| Geben einen Newsletter oder ein Magazin heraus | [Newsletter](newsletter/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
 | Verleihen, verzeichnen oder archivieren Objekte | [Bibliotheken und Kataloge](bibliotheken/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
-| Sammeln Spenden und organisieren Ehrenamtliche | [Gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/README.md) | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
+| Sammeln Spenden und organisieren Ehrenamtliche | [Gemeinnützige Organisationen](gemeinnuetzige/README.md) | [Newsletter](newsletter/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
 | Führen einen Verein oder einen Berufsverband | [Mitgliederwebsites](mitglieder/README.md) | [Kleine Gruppen und Vereine](vereine/README.md) |
 | Informieren und unterstützen Mitarbeiter | [Intranets](intranets/README.md) | [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
 | Arbeiten mit Händlern, Lieferanten oder Kunden hinter einer Anmeldung | [Extranets und Partnerportale](extranets/README.md) | [Intranets](intranets/README.md) |
-| Führen mehrere Marken oder Länder | [Marken mit Multisite](multisite/README.md) | [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md) |
+| Führen mehrere Marken oder Länder | [Marken mit Multisite](multisite/README.md) | [Mehrsprachige Unternehmen](mehrsprachig/README.md) |
 | Versorgen eine App oder andere Systeme mit Inhalten | [Mobil und headless](mobil-und-headless/README.md) | [Zuverlässigkeit](zuverlaessigkeit/README.md) |
 | Dienen als Behörde der Öffentlichkeit | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) | [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
 
@@ -75,10 +75,10 @@ Das sind Muster, keine Berichte über echte Kunden.
 
 | Muster | Bereiche in dieser Reihenfolge |
 |---|---|
-| Ein kleiner Shop, der wächst | [Shops](shops/README.md), [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md), dann [Mobil und headless](mobil-und-headless/README.md) |
+| Ein kleiner Shop, der wächst | [Shops](shops/README.md), [Newsletter](newsletter/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md), dann [Mobil und headless](mobil-und-headless/README.md) |
 | Ein Unternehmen mit öffentlicher Website, Intranet und Partnerportal auf einer Installation | [Intranets](intranets/README.md), [Extranets](extranets/README.md), [Marken mit Multisite](multisite/README.md), [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
-| Eine Mitgliederorganisation | [Mitgliederwebsites](mitglieder/README.md), [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
-| Eine Marke, die in mehreren Ländern verkauft | [Marken mit Multisite](multisite/README.md), [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md), [Shops](shops/README.md) |
+| Eine Mitgliederorganisation | [Mitgliederwebsites](mitglieder/README.md), [Newsletter](newsletter/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
+| Eine Marke, die in mehreren Ländern verkauft | [Marken mit Multisite](multisite/README.md), [Mehrsprachige Unternehmen](mehrsprachig/README.md), [Shops](shops/README.md) |
 | Eine Bibliothek oder ein Archiv mit öffentlichem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md) |
 
 ## Bereiche, die jede Organisation braucht

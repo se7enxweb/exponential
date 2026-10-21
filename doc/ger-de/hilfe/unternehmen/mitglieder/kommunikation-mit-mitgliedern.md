@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Verantwortlichen der Kommunikation in Mitgliederorganisationen. Mitglieder erwarten, regelmäßig
 von Ihnen zu hören, und mit einem Klick nichts mehr von Ihnen zu hören. Exponential gibt Ihnen drei Kanäle und eine
 Seite, auf der jedes Mitglied entscheidet, was es bekommt. Das Newsletter-System behandelt der Bereich
-[Newsletter](../../../../eng-us/help/businesses/newsletters/README.md) im Detail; diese Seite zeigt, wie die Teile zu einer Mitgliederwebsite passen.
+[Newsletter](../newsletter/README.md) im Detail; diese Seite zeigt, wie die Teile zu einer Mitgliederwebsite passen.
 
 ![Das Newsletter-Dashboard](../../../../eng-us/help/images/help/bu-newsletter.webp)
 
@@ -88,7 +88,7 @@ Jede Änderung einer Einstellung wird mit dem genauen Text, den die Person geseh
 **Einwilligungsprotokoll** geschrieben
 ([E-Mail-Einstellungen: einrichten](../../../anleitungen/mail-einstellungen-administrator.md)). Diese Aufzeichnung hilft, wenn
 jemand fragt, warum er eine Mail bekommen hat. Die rechtliche Seite behandeln
-[Opt-in und Einwilligung](../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) und [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md);
+[Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md) und [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md);
 diese Seiten sind keine Rechtsberatung.
 
 ## Was jede optionale Mail enthält
@@ -136,7 +136,7 @@ Passen Sie den Rhythmus an Ihre Organisation an; weniger, bessere Mails halten d
 
 ## Verwandte Seiten
 
-- [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md)
+- [Newsletter](../newsletter/README.md)
 - [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)
 - [Veranstaltungen und Kalender](veranstaltungen-und-kalender.md)
 - [Benachrichtigungen für Mitarbeiter](../intranets/benachrichtigungen-fuer-mitarbeiter.md)

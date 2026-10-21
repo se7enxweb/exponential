@@ -30,7 +30,7 @@ dieselbe Disziplin auf Ihre Berichterstattung an.
 3. **Gleiches Datum, vergleichbare Versionen.** Nennen Sie die Versionen und das Datum, an dem Sie geprüft haben.
 4. **Fakten in die Tabelle, Meinungen in den Text.** Sagen Sie, was was ist.
 5. **Legen Sie Interessen offen.** Wenn Sie mit einem der Produkte arbeiten, von ihm bezahlt werden oder es sponsern,
-   sagen Sie es ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
+   sagen Sie es ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)).
 6. **Fragen Sie beide Seiten**, wenn eine Zeile unklar ist.
 
 ## Kriterien, die sich prüfen lassen

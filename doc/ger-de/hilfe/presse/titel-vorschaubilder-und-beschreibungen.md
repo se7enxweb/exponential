@@ -106,7 +106,7 @@ License of this video: <your choice>. Help pages quoted are under the GNU FDL 1.
 
 - [Leitfaden für Video-Rundgänge](leitfaden-fuer-video-rundgaenge.md)
 - [Musik, Schriften und Material von Dritten](musik-schriften-und-material-von-dritten.md)
-- [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)
+- [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

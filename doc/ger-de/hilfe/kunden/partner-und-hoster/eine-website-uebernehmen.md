@@ -78,6 +78,6 @@ Anzeichen eines Einbruchs sein. Löschen Sie nichts; rufen Sie den Hoster an und
 ## Verwandte Seiten
 
 - [Sicherheits-Checkliste für Betreiber](../gesund-halten/sicherheits-checkliste-fuer-betreiber.md)
-- [Zuverlässigkeits-Scorecard](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md)
+- [Zuverlässigkeits-Scorecard](../../unternehmen/zuverlaessigkeit/bewertungsbogen-zuverlaessigkeit.md)
 - [Zu Exponential wechseln](../../unternehmen/auswahl/zu-exponential-wechseln.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

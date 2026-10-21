@@ -89,7 +89,7 @@ Text vor der Veröffentlichung mit der Liste ab.
 | Fehler | Richtig | Quelle |
 |---|---|---|
 | „unhackbar“, „hatte nie eine Sicherheitslücke“ | Ein vertrauliches Meldeverfahren und Korrekturen im nächsten Release | [Thema: Sicherheit](thema-sicherheit.md) |
-| Einzelheiten zu einem nicht behobenen Problem | Warten Sie auf das korrigierte Release | [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md) |
+| Einzelheiten zu einem nicht behobenen Problem | Warten Sie auf das korrigierte Release | [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md) |
 
 ## Verwandte Seiten
 

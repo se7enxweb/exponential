@@ -73,8 +73,8 @@ Fragen Sie den Gast, wie sein eigener Name ausgesprochen wird.
 - Lassen Sie unüberprüfbare Behauptungen nicht als Tatsache stehen: Nutzerzahlen, Ranglisten, „das sicherste“
   ([Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)).
 - Wenn ein Gast eine Sicherheitslücke erwähnt, die noch nicht behoben ist, lenken Sie ab und schneiden Sie sie aus der
-  Aufnahme ([Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)).
-- Wenn die Folge gesponsert ist, sagen Sie das am Anfang ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
+  Aufnahme ([Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)).
+- Wenn die Folge gesponsert ist, sagen Sie das am Anfang ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)).
 
 ## Shownotes
 

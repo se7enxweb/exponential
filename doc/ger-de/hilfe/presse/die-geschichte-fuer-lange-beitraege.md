@@ -74,7 +74,7 @@ Die [Geschichte](../../../eng-us/history/README.md) erzählt jede Änderung seit
 | Mehr als zwanzig Jahre einer Codebasis | Commits seit 2002, Urheberrecht seit 1999 | [Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen) |
 | Ein kleines Unternehmen und eine neue gemeinnützige Organisation | Zwei Organisationen mit einem Projekt | [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) |
 | Alter Code, aktuelles PHP | PHP 8.0 bis 8.5 werden unterstützt | [Thema: aktuelles PHP](thema-aktuelles-php.md) |
-| Anerkennung über Unternehmensgrenzen hinweg | Die Arbeit von Netgen, Mugo Web und CJW Network wird namentlich genannt | [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md) |
+| Anerkennung über Unternehmensgrenzen hinweg | Die Arbeit von Netgen, Mugo Web und CJW Network wird namentlich genannt | [Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md) |
 
 ## Grenzen, die Sie nicht überschreiten sollten
 

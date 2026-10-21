@@ -38,7 +38,7 @@ bisherigen Kunden.
 
 > **Warnung**
 > Die Kundenliste und die Bestellansichten zeigen Namen, Adressen und Bestellhistorien. Geben Sie `shop/administrate`
-> nur Personen, die es brauchen, jeder mit einem eigenen Konto ([Sicherheits-Checkliste für den Shop](../../../../eng-us/help/businesses/stores/store-security-checklist.md)).
+> nur Personen, die es brauchen, jeder mit einem eigenen Konto ([Sicherheits-Checkliste für den Shop](../../unternehmen/shops/sicherheitscheckliste-fuer-shops.md)).
 
 ## Fragen von Kunden zu ihrem Konto
 

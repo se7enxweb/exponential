@@ -29,7 +29,7 @@ Menschen lesen werden. Eine Überschrift ist eine Behauptung; sie braucht diesel
 | Eine Funktion | „<Was sie tut> in Exponential“ | „Ein Seitenbaukasten für Redakteure in Exponential“ |
 | Die Organisationen | „<Organisation> <tut was>“ | „Gemeinnützige Exponential Foundation gegründet, um Open-Source-CMS zu finanzieren“ |
 | Geschichte | „<Alte Tatsache>, <neue Tatsache>“ | „Codebasis von 1999 bekommt einen neuen Namen: Exponential“ |
-| Sicherheit | „Exponential <Version> behebt <Art des Problems>“ | Erst wenn das korrigierte Release erschienen ist ([Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)) |
+| Sicherheit | „Exponential <Version> behebt <Art des Problems>“ | Erst wenn das korrigierte Release erschienen ist ([Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)) |
 
 ## Die häufigen Fehler
 
@@ -59,7 +59,7 @@ Menschen lesen werden. Eine Überschrift ist eine Behauptung; sie braucht diesel
 
 - Titel und Vorschaubild stellen zusammen eine Behauptung auf; beide müssen stimmen ([Titel, Vorschaubilder und Beschreibungen](titel-vorschaubilder-und-beschreibungen.md)).
 - Wenn das Video gesponsert ist, sagen Sie das im Titel oder am Anfang der Beschreibung, nicht nur am Ende
-  ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
+  ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)).
 - Versionsnummern in Titeln veralten schnell; nennen Sie die Version, damit die Zuschauer wissen, was sie sehen werden.
 
 ## Bevor sie online geht

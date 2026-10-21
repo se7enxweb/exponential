@@ -36,7 +36,7 @@ Seite trennt Korrekturen von Aktualisierungen und gibt Ihnen Hinweise, die Sie a
 - Eine Zahl ohne Quelle oder mit den falschen Bedingungen ([Zahlen prüfen](zahlen-pruefen.md)).
 - Ein Zitat, das die Person nicht gesagt oder geschrieben hat ([Richtlinie für Zitate](richtlinie-fuer-zitate.md)).
 - Eine angedeutete Verbindung zu eZ Systems oder Ibexa ([Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md)).
-- Eine Einzelheit zur Sicherheit, die vor ihrer Behebung veröffentlicht wurde ([Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)).
+- Eine Einzelheit zur Sicherheit, die vor ihrer Behebung veröffentlicht wurde ([Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)).
 
 ## Änderungen, die eine Aktualisierung brauchen
 

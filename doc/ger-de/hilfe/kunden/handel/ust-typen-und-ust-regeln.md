@@ -13,7 +13,7 @@ Diese Seite ist für den Eigentümer und die Person, die die Buchhaltung macht. 
 Mehrwertsteuer-Konfiguration eines laufenden Shops richtig zu halten: was zu tun ist, wenn sich ein Satz ändert,
 wenn Sie in ein neues Land verkaufen oder wenn eine neue Produktgruppe einen anderen Satz hat. Wie der Shop die
 Mehrwertsteuer berechnet und wie er eine Regel auswählt, ist unter
-[USt-Regeln und USt-Typen für Unternehmen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) erklärt.
+[USt-Regeln und USt-Typen für Unternehmen](../../unternehmen/shops/ust-regeln-und-ust-typen.md) erklärt.
 
 > **Warnung**
 > Diese Seite ist keine Steuer- oder Rechtsberatung. Mehrwertsteuer- und Umsatzsteuerrecht unterscheiden sich von Land
@@ -102,7 +102,7 @@ Die wiederkehrende Fassung dieser Prüfungen ist die [Mehrwertsteuer-Checkliste]
 ## Verwandte Seiten
 
 - [Mehrwertsteuer-Checkliste](mehrwertsteuer-checkliste.md)
-- [USt-Regeln und USt-Typen für Unternehmen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)
+- [USt-Regeln und USt-Typen für Unternehmen](../../unternehmen/shops/ust-regeln-und-ust-typen.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
 - [Preise und Währungen](preise-und-waehrungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

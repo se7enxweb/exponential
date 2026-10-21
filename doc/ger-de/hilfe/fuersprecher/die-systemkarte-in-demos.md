@@ -50,5 +50,5 @@ Demo-Installation zu erwarten; sagen Sie das, wenn jemand fragt.
 - [Die Systemkarte](../../../eng-us/features/6.0/system-card.md)
 - [Demos zeigen](demos-zeigen.md)
 - [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md)
-- [Demo-Skript: Überblick in fünf Minuten](../../../eng-us/help/press/demo-script-five-minute-overview.md)
+- [Demo-Skript: Überblick in fünf Minuten](../presse/demo-skript-ueberblick-in-fuenf-minuten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

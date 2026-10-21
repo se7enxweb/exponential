@@ -38,7 +38,7 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 > **Hinweis**
 > Größere Mitgliederorganisationen mit Registrierung, Bereichen nur für Mitglieder und Kommunikation mit Mitgliedern
 > sollten auch den Bereich [Mitglieder](../mitglieder/README.md) lesen. Wohltätige Organisationen und Stiftungen finden
-> Spenden und Kampagnen unter [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md).
+> Spenden und Kampagnen unter [Gemeinnützige Organisationen](../gemeinnuetzige/README.md).
 
 ## Die Seiten dieses Bereichs
 
@@ -62,10 +62,10 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 
 ## Benachbarte Bereiche
 
-- [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md): Spenden, Anmeldung von Ehrenamtlichen, Kampagnen,
+- [Gemeinnützige Organisationen](../gemeinnuetzige/README.md): Spenden, Anmeldung von Ehrenamtlichen, Kampagnen,
   Barrierefreiheit, kleine Budgets.
 - [Mitglieder](../mitglieder/README.md): Registrierung von Mitgliedern und Inhalte nur für Mitglieder.
-- [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md): Mails an Mitglieder und Unterstützer.
+- [Newsletter](../newsletter/README.md): Mails an Mitglieder und Unterstützer.
 - [Bibliotheken und Kataloge](../bibliotheken/README.md): für Gruppen, die eine Sammlung pflegen.
 - [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.
 - Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).

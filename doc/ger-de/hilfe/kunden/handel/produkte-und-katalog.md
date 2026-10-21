@@ -52,7 +52,7 @@ Freigabe-Workflow für die Produktordner einrichten ([Workflows](../../../anleit
 
 ## Ausverkaufte und saisonale Produkte
 
-Der Shop hat keine Lagerverwaltung ([Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)),
+Der Shop hat keine Lagerverwaltung ([Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)),
 daher ist „ausverkauft“ etwas, das Ihr Team von Hand erledigt. Einigen Sie sich auf einen Weg und verwenden Sie ihn
 jedes Mal:
 
@@ -96,6 +96,6 @@ Mehrere ausgewählte Unterelemente lassen sich in einem Schritt kopieren ([Ausge
 
 - [Ein Produkt anlegen](ein-produkt-anlegen.md)
 - [Produktklassen und Katalog (für Unternehmen)](../../unternehmen/shops/produktklassen-und-katalog.md)
-- [Suche und Navigation im Shop](../../../../eng-us/help/businesses/stores/store-search-and-navigation.md)
+- [Suche und Navigation im Shop](../../unternehmen/shops/suche-und-navigation-im-shop.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

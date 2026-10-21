@@ -62,7 +62,7 @@ Die Währungsliste hat die Aktionen **Auto-Preis aktualisieren** und **Auto-Umre
 > Hauptmärkten sehen dann runde Preise, und die übrigen sehen trotzdem ihre eigene Währung.
 
 Die Wahl der Währung ist ein Teil des Verkaufs in andere Länder; Formate für Datumsangaben und Zahlen behandelt
-[Währungen, Datumsangaben und Formate](../../../../eng-us/help/businesses/multilingual/currencies-dates-and-formats.md).
+[Währungen, Datumsangaben und Formate](../mehrsprachig/waehrungen-datumsangaben-und-formate.md).
 
 ## Wechselkurse
 
@@ -104,7 +104,7 @@ Bei `ezprice` gibt jeder Preis an, ob er die USt enthält und welcher USt-Typ gi
 verkauft, erfasst Preise meist einschließlich USt; ein Shop, der an Unternehmen verkauft, erfasst sie oft ohne. Die
 Bestätigungsseite zeigt die USt, und die Bestellliste zeigt Summen sowohl mit als auch ohne USt
 ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)). Die steuerliche Seite steht unter
-[USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md).
+[USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md).
 
 ## Entscheidungen und Checkliste
 
@@ -119,7 +119,7 @@ Bestätigungsseite zeigt die USt, und die Bestellliste zeigt Summen sowohl mit a
 ## Verwandte Seiten
 
 - [Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
-- [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)
+- [USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md)
 - [Zahlungsanbieter für Unternehmen](zahlungsanbieter-fuer-unternehmen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -63,7 +63,7 @@ es immer 7x.
 |---|---|
 | eZ Systems | Als Geschichte und im Urheberrechtshinweis (1999 bis 2014) |
 | Ibexa, eZ Platform, Ibexa DXP OSS | Sachlich; die Umbenennung erfolgte "At the specific request of Ibexa" |
-| Netgen, Mugo Web, CJW Network | Nennen Sie sie, wo ihre Arbeit verwendet wird ([Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md)) |
+| Netgen, Mugo Web, CJW Network | Nennen Sie sie, wo ihre Arbeit verwendet wird ([Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md)) |
 | Qbix | Die Webserver-Engine, als deren Fork Velocity begann |
 
 ## Slogans

@@ -40,7 +40,7 @@ Rechnungen in einem Buchhaltungssystem gehören zu den Dingen, die der Shop eine
 überlässt ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)). Die Views des
 Shop-Moduls (`kernel/shop/module.php`) enthalten weder eine Rechnungsansicht noch eine Rechnungsnummerierung, keine
 Gutschriften und keinen Export der Bestellungen in eine Tabellendatei
-([Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)).
+([Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)).
 
 ## Rechnungen in der Praxis
 

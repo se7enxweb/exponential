@@ -59,7 +59,7 @@ bevor Sie veröffentlichen.
 
 Betriebssysteme sind in vier Stufen dokumentiert, von "Tested here" bis "Not possible today"; Stufe 3 ist "a reasoned
 expectation, not a test result" ([Unterstützte Betriebssysteme, Die vier Stufen](../../../eng-us/help/os-support.md#the-four-tiers)).
-Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen unter [Über Velocity-Releases berichten](../../../eng-us/help/press/covering-velocity-releases.md).
+Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen unter [Über Velocity-Releases berichten](ueber-velocity-releases-berichten.md).
 
 ## Beschaffen und installieren
 
@@ -86,7 +86,7 @@ Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen un
 |---|---|
 | Eine PHP-Codebasis von 2002 auf PHP 8.5 | [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x), [Dezember 2025](../../../eng-us/history/2025/2025-12.md) |
 | SQLite als Standarddatenbank eines CMS | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
-| Ein in PHP geschriebener Webserver | [Über Velocity-Releases berichten](../../../eng-us/help/press/covering-velocity-releases.md) |
+| Ein in PHP geschriebener Webserver | [Über Velocity-Releases berichten](ueber-velocity-releases-berichten.md) |
 | Ein KI-Assistent, der nur Entwürfe schreibt | [Gesprächspunkte: Exponential Intelligence](../fuersprecher/gespraechspunkte-exponential-intelligence.md) |
 | Jeden Pull Request übernehmen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 

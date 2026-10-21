@@ -53,7 +53,7 @@ Exponential contributors, GNU FDL 1.3 or later.
 ## Offenlegung
 
 Sagen Sie am Anfang des Beitrags, ob er gesponsert ist, ob Sie etwas erhalten haben oder ob Sie mit 7x, der Foundation
-oder einem Partner zusammenarbeiten ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md),
+oder einem Partner zusammenarbeiten ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md),
 [Bezahlte, geschenkte und Affiliate-Inhalte](bezahlte-geschenkte-und-affiliate-inhalte.md)).
 
 ## Beiträge aktuell halten
@@ -67,7 +67,7 @@ oder einem Partner zusammenarbeiten ([Offenlegung und Ethik beim Sponsoring](../
 
 - [Einen Blogbeitrag schreiben](../fuersprecher/einen-blogbeitrag-schreiben.md)
 - [Social-Media-Beiträge für Creator](social-media-beitraege-fuer-creator.md)
-- [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.md)
+- [Checkliste für Creator](checkliste-fuer-creator.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

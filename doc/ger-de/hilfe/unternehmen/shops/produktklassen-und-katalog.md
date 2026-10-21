@@ -68,7 +68,7 @@ Felder, die Unternehmen oft hinzufügen:
 
 | Bedarf | Datentyp | Hinweis |
 |---|---|---|
-| Produktkategorie für USt-Regeln | `ezproductcategory` | Nur nötig, wenn die USt je nach Produktart abweicht ([USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)) |
+| Produktkategorie für USt-Regeln | `ezproductcategory` | Nur nötig, wenn die USt je nach Produktart abweicht ([USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md)) |
 | Preise in mehreren Währungen | `ezmultiprice` statt `ezprice` | ([Preise und Währungen](preise-und-waehrungen.md)) |
 | Handbuch zum Herunterladen | `ezbinaryfile` | ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)) |
 | Marke, Material, Farbe als Filter | `eztags` oder eine Auswahl | ([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) |
@@ -93,7 +93,7 @@ Wann sollte eine Variante stattdessen ein eigenes Produkt sein?
 | Sie den Bestand nicht pro Variante führen | Nach den Varianten getrennt gesucht wird |
 
 > **Hinweis**
-> Der Shop hat keine Lagerverwaltung ([Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md#what-is-not-included)).
+> Der Shop hat keine Lagerverwaltung ([Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md#was-nicht-enthalten-ist)).
 > Wenn der Bestand pro Variante wichtig ist, planen Sie eine Erweiterung oder eine Anbindung an Ihr
 > Warenwirtschaftssystem.
 
@@ -132,7 +132,7 @@ Preisattribut auf ([Shop-Dashboard und Bestellstatus](../../../../eng-us/feature
 ## Verwandte Seiten
 
 - [Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
-- [Suche und Navigation im Shop](../../../../eng-us/help/businesses/stores/store-search-and-navigation.md)
+- [Suche und Navigation im Shop](suche-und-navigation-im-shop.md)
 - [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -74,7 +74,7 @@ NEXT MONTH
 ## Fragen an den Hoster, jeden Monat
 
 - Sind alle Backups gelaufen, und wann wurde zuletzt eine Wiederherstellung getestet
-  ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md))?
+  ([Wiederherstellungsübungen](../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md))?
 - Laufen die Cronjobs planmäßig? **Setup > Cronjobs** zeigt die Teile und ob sie eingeplant sind
   ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - Ist ein neues Release von Exponential 6.0.x mit Sicherheitskorrekturen erschienen? Korrekturen werden mit dem

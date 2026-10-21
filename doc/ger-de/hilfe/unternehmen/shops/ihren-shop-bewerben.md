@@ -67,12 +67,12 @@ und [Feeds und Syndication](../mobil-und-headless/feeds-und-syndication.md).
 
 Bestehende Kunden sind am günstigsten wieder zu erreichen. Die Newsletter-Erweiterung `cjw_newsletter` von Exponential
 verwaltet Listen, Abonnements, Ausgaben und Bounces ([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md),
-[Newsletter](../../../../eng-us/help/businesses/newsletters/README.md)).
+[Newsletter](../newsletter/README.md)).
 
 > **Warnung**
 > Ein Kauf bei Ihnen ist keine Einwilligung in Werbemails. Bestellmails sind notwendige Mails; Angebote sind optionale
 > Mails, die das Opt-in des Kunden brauchen ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md),
-> [Opt-in und Einwilligung](../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md)). Dies ist keine Rechtsberatung; prüfen Sie die für
+> [Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)). Dies ist keine Rechtsberatung; prüfen Sie die für
 > Sie geltenden Regeln mit Ihrem Anwalt.
 
 Bieten Sie den Newsletter an der Kasse oder auf der Belegseite als nicht angekreuzte Auswahl an, und auf den
@@ -83,9 +83,9 @@ Produktseiten.
 Ein Ausverkauf, eine Saison oder eine neue Kollektion verdient eine eigene Seite. Mit Layouts bauen Redakteure solche
 Seiten aus Zonen und Blöcken, mit Entwürfen und einer Vorschau vor dem Veröffentlichen
 ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md),
-[Kampagnen und Landingpages](../../../../eng-us/help/businesses/nonprofits/campaigns-and-landing-pages.md)). Stellen Sie die Produkte der Kampagne als
+[Kampagnen und Landingpages](../gemeinnuetzige/kampagnen-und-landingpages.md)). Stellen Sie die Produkte der Kampagne als
 zusätzliche Platzierungen oder verknüpfte Objekte auf die Seite, damit die Preise an einer Stelle bleiben
-([Suche und Navigation im Shop](../../../../eng-us/help/businesses/stores/store-search-and-navigation.md#one-product-in-several-places)).
+([Suche und Navigation im Shop](suche-und-navigation-im-shop.md#ein-produkt-an-mehreren-stellen)).
 
 Verbinden Sie eine Kampagne mit einer Rabattregel, wenn sie für eine Kundengruppe gedacht ist ([Rabatte und Wunschlisten](rabatte-und-wunschlisten.md)).
 
@@ -123,7 +123,7 @@ sein; beides behandelt die Seite zur Webanalyse.
 
 - [SEO-Grundlagen für Exponential-Websites](../../../../eng-us/help/creators/website-creators/seo-basics.md)
 - [Fallstudien und Content-Marketing schreiben](../../geschaeft/fallstudien-und-content-marketing.md)
-- [Einen Newsletter planen](../../../../eng-us/help/businesses/newsletters/newsletter-planning.md)
+- [Einen Newsletter planen](../newsletter/einen-newsletter-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

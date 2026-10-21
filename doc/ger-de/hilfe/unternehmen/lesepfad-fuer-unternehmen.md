@@ -82,9 +82,9 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 |---|---|
 | [Checkliste Go-live](vorlagen/checkliste-go-live.md) | Der Tag des Starts |
 | [Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md) | Tägliche Gewohnheiten |
-| [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) und [Wiederherstellungsübungen](../../../eng-us/help/businesses/reliability/restore-drills.md) | Das eine, was Sie rettet |
-| [Health Checks und Monitoring](../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md) | Es wissen, bevor die Kunden es merken |
-| [Störungsbehandlung für kleine Teams](../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md) | Wenn es trotzdem passiert |
+| [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) und [Wiederherstellungsübungen](zuverlaessigkeit/wiederherstellungsuebungen.md) | Das eine, was Sie rettet |
+| [Health Checks und Monitoring](zuverlaessigkeit/health-checks-und-monitoring.md) | Es wissen, bevor die Kunden es merken |
+| [Störungsbehandlung für kleine Teams](zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md) | Wenn es trotzdem passiert |
 | [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) | Jedes Release |
 | [Monatliche Betriebscheckliste](vorlagen/monatliche-betriebscheckliste.md) und [Checkliste für den Jahresrückblick](vorlagen/checkliste-jahresrueckblick.md) | Die Routine |
 
@@ -92,16 +92,16 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 
 | Organisation | In dieser Reihenfolge lesen |
 |---|---|
-| Online-Shop | [README Shops](shops/README.md), [Shop-Planung](../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md), [was der eingebaute Shop kann](../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md), [Zahlungsanbieter](shops/zahlungsanbieter-fuer-unternehmen.md), [Checkliste für den Shop-Start](shops/checkliste-fuer-den-shop-start.md) |
+| Online-Shop | [README Shops](shops/README.md), [Shop-Planung](shops/shop-planung-fuer-kleine-unternehmen.md), [was der eingebaute Shop kann](shops/was-der-eingebaute-shop-kann.md), [Zahlungsanbieter](shops/zahlungsanbieter-fuer-unternehmen.md), [Checkliste für den Shop-Start](shops/checkliste-fuer-den-shop-start.md) |
 | Intranet | [README Intranets](intranets/README.md), [Intranet planen](intranets/intranet-planen.md), [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md), [Checkliste für die Einführung](intranets/checkliste-fuer-die-intranet-einfuehrung.md) |
 | Extranet oder Partnerportal | [README Extranets](extranets/README.md), [Partnerportal planen](extranets/partnerportal-planen.md), [Registrierung und Freigabe](extranets/registrierung-und-kontofreigabe.md), [Checkliste für den Start](extranets/checkliste-fuer-den-extranet-start.md) |
 | Mitgliederorganisation | [README Mitgliederwebsites](mitglieder/README.md), [Mitgliederwebsite planen](mitglieder/mitgliederwebsite-planen.md), [Checkliste für Mitgliederwebsites](mitglieder/checkliste-fuer-mitgliederwebsites.md) |
-| Herausgeber eines Newsletters | [README Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Einen Newsletter planen](../../../eng-us/help/businesses/newsletters/newsletter-planning.md), [Opt-in und Einwilligung](../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) |
+| Herausgeber eines Newsletters | [README Newsletter](newsletter/README.md), [Einen Newsletter planen](newsletter/einen-newsletter-planen.md), [Opt-in und Einwilligung](newsletter/opt-in-und-einwilligung.md) |
 | Bibliothek oder Katalog | [README Bibliotheken](bibliotheken/README.md), [Katalog planen](bibliotheken/katalog-planen.md), [Katalogsuche](bibliotheken/katalogsuche.md) |
-| Gemeinnützige Organisation | [README Gemeinnützige](../../../eng-us/help/businesses/nonprofits/README.md), [Website-Planung für gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md), [Betrieb mit kleinem Budget](../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) |
+| Gemeinnützige Organisation | [README Gemeinnützige](gemeinnuetzige/README.md), [Website-Planung für gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md), [Betrieb mit kleinem Budget](../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) |
 | Kleine Gruppe oder Verein | [README Vereine](vereine/README.md), [Übergabe bei Wechsel der Ehrenamtlichen](vereine/uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
-| Mehrere Marken | [README Multisite](multisite/README.md), [Mehrere Marken planen](../../../eng-us/help/businesses/multisite/multi-brand-planning.md) |
-| Mehrere Sprachen | [README Mehrsprachig](../../../eng-us/help/businesses/multilingual/README.md), [Übersetzungsablauf](../../../eng-us/help/businesses/multilingual/translation-workflow.md) |
+| Mehrere Marken | [README Multisite](multisite/README.md), [Mehrere Marken planen](multisite/mehrere-marken-planen.md) |
+| Mehrere Sprachen | [README Mehrsprachig](mehrsprachig/README.md), [Übersetzungsablauf](mehrsprachig/uebersetzungsablauf.md) |
 | Mobile App oder andere Systeme | [README Mobil und headless](mobil-und-headless/README.md), [Mobile Strategie](mobil-und-headless/mobile-strategie.md), [Zuverlässigkeit des App-Backends](mobil-und-headless/zuverlaessigkeit-des-app-backends.md) |
 | Behörde | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
 

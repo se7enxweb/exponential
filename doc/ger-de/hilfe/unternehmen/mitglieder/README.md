@@ -77,8 +77,8 @@ aus Erweiterungen, die in `composer.json` aufgeführt sind:
 ## Benachbarte Bereiche
 
 - [Vereine und kleine Gruppen](../vereine/README.md): eine Website mit Ehrenamtlichen betreiben.
-- [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md): Spenden, Ehrenamtliche und Kampagnen.
-- [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md): das Newsletter-System im Detail.
+- [Gemeinnützige Organisationen](../gemeinnuetzige/README.md): Spenden, Ehrenamtliche und Kampagnen.
+- [Newsletter](../newsletter/README.md): das Newsletter-System im Detail.
 - [Extranets](../extranets/README.md) und [Intranets](../intranets/README.md): dieselben Werkzeuge für Partner und
   Mitarbeiter.
 - [Sicherheit](../../../../eng-us/help/businesses/security/README.md): DSGVO-Grundlagen, Einwilligung und Konten.

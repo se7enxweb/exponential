@@ -83,7 +83,7 @@ Legen Sie es offen, wenn Sie das Projekt selbst sponsern.
 
 - [Gäste in Podcast und Radio](gaeste-in-podcast-und-radio.md)
 - [Fragensammlung für Interviews](fragensammlung-fuer-interviews.md)
-- [Creator und Influencer: hier beginnen](../../../eng-us/help/press/creators-and-influencers-start-here.md)
+- [Creator und Influencer: hier beginnen](creator-und-influencer-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

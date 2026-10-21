@@ -113,7 +113,7 @@ Produktinhalte an Händler liefert, die eigene Exponential-Websites betreiben
 | Die Neuigkeiten einer anderen Website auf Ihrer zeigen | Einen RSS-Import |
 | Inhalte mit einer anderen Exponential-Installation teilen, synchron gehalten | `syndication` |
 | Inhalte für Ihre eigene App | Die REST API ([Headless mit der REST API](headless-mit-der-rest-api.md)) |
-| Mehrere Marken in einer Installation | Kein Feed nötig: Teilen Sie Inhalte direkt ([Inhalte zwischen Marken teilen](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md)) |
+| Mehrere Marken in einer Installation | Kein Feed nötig: Teilen Sie Inhalte direkt ([Inhalte zwischen Marken teilen](../multisite/inhalte-zwischen-marken-teilen.md)) |
 
 ## Checkliste für Feeds
 

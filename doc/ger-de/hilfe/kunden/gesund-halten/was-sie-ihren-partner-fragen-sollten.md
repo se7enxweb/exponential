@@ -45,7 +45,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 - Wie fordern wir eine Änderung an, wie wird sie geschätzt und genehmigt ([Änderungsanfragen](../partner-und-hoster/aenderungsanfragen.md))?
 - Wird jede Änderung auf einer Kopie ausprobiert, bevor sie live geht?
 - Können wir einen Probelauf eines Deployments sehen? Das Deployment mit einem Befehl gibt jeden Schritt zuerst aus
-  ([Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md)).
+  ([Unterbrechungsfreie Deployments](../../unternehmen/zuverlaessigkeit/unterbrechungsfreie-deployments.md)).
 
 ## Schulung und Dokumentation
 

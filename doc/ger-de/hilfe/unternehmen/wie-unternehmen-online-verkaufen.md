@@ -90,10 +90,10 @@ Wie Sie diese planen, steht in [Verkaufen über Netzwerke und Partner](mobil-und
 
 Die Software liefert die Werkzeuge; die Strategie ist Ihre Sache. Die Werkzeuge, die es im Repository gibt:
 
-- **Newsletter** mit `cjw_newsletter`: Listen, Abonnements und Ausgaben ([Newsletter](../../../eng-us/help/businesses/newsletters/README.md)).
+- **Newsletter** mit `cjw_newsletter`: Listen, Abonnements und Ausgaben ([Newsletter](newsletter/README.md)).
 - **Suchmaschinen**: lesbare URL-Aliase, Sitemaps, `robots.txt` und Metadaten
   ([SEO-Grundlagen](../../../eng-us/help/creators/website-creators/seo-basics.md), [Sitemaps](../../../eng-us/help/creators/website-creators/sitemaps.md)).
-- **Viele Sprachen**: Inhalte in den Sprachen Ihrer Kunden ([Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md)).
+- **Viele Sprachen**: Inhalte in den Sprachen Ihrer Kunden ([Mehrsprachige Unternehmen](mehrsprachig/README.md)).
 - **Feeds**, die andere Websites und Apps aufgreifen (siehe oben).
 
 Marketingseiten für Menschen, die Exponential selbst verkaufen, sind ein anderes Thema; sie stehen unter

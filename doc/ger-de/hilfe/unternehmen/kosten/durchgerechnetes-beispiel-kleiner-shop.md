@@ -123,13 +123,13 @@ Tagen erreichbar bleiben.
 - [ ] Fügen Sie die echte Gebührenstruktur Ihres Zahlungsanbieters aus seinem Vertrag hinzu.
 - [ ] Zählen Sie nur die Bestellungen, die der Shop hinzufügt, nicht die, die er aus einem anderen Kanal verlagert.
 - [ ] Prüfen Sie die USt-Pflichten für die Länder, in die Sie verkaufen
-      ([USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)).
+      ([USt-Regeln und USt-Typen](../shops/ust-regeln-und-ust-typen.md)).
 - [ ] Planen Sie den Start mit der [Checkliste für den Shop-Start](../shops/checkliste-fuer-den-shop-start.md).
 
 ## Verwandte Seiten
 
 - [Shops](../shops/README.md)
-- [Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md)
+- [Shop-Planung für kleine Unternehmen](../shops/shop-planung-fuer-kleine-unternehmen.md)
 - [Gesamtbetriebskosten](gesamtbetriebskosten.md)
 - [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

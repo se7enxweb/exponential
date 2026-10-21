@@ -51,58 +51,58 @@ alle drei ab:
 
 | Sie sind | Beginnen Sie mit |
 |---|---|
-| Inhaber oder Führungskraft und entscheiden, ob Sie sich auf Exponential verlassen | [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md), dann [Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md) |
-| Führungskraft, die den Betrieb budgetieren muss | [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md) und dem [Bewertungsbogen Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md) |
-| Die Person, die die Website im Alltag betreibt | [Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md), [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md), [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md) |
-| Ein kleines Team, das reagieren muss, wenn etwas ausfällt | [Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md) |
-| Shop-Inhaber, der einen Sale oder eine Kampagne erwartet | [Lastspitzen planen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md) und [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md) |
+| Inhaber oder Führungskraft und entscheiden, ob Sie sich auf Exponential verlassen | [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md), dann [Release-Linie und Support-Richtlinie](release-linie-und-support-richtlinie.md) |
+| Führungskraft, die den Betrieb budgetieren muss | [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md) und dem [Bewertungsbogen Zuverlässigkeit](bewertungsbogen-zuverlaessigkeit.md) |
+| Die Person, die die Website im Alltag betreibt | [Health-Checks und Monitoring](health-checks-und-monitoring.md), [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md), [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md) |
+| Ein kleines Team, das reagieren muss, wenn etwas ausfällt | [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md) |
+| Shop-Inhaber, der einen Sale oder eine Kampagne erwartet | [Lastspitzen planen](lastspitzen-planen.md) und [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md) |
 
 ## Alle Seiten dieses Bereichs
 
 | Seite | Was sie beantwortet |
 |---|---|
 | [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md) | Was eine instabile Website ein Unternehmen kostet und was Exponential dagegen tut |
-| [Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md) | Welche Versionen gepflegt werden, wie Releases funktionieren, unter welchen PHP-Versionen es läuft |
+| [Release-Linie und Support-Richtlinie](release-linie-und-support-richtlinie.md) | Welche Versionen gepflegt werden, wie Releases funktionieren, unter welchen PHP-Versionen es läuft |
 | [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md) | Die Routine, die eine Website Woche für Woche verfügbar hält |
-| [Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md) | Was Sie von außen und von innen beobachten und mit welchen Befehlen |
-| [Logs und Fehlerreferenzen](../../../../eng-us/help/businesses/reliability/logs-and-error-references.md) | Wie aus dem „Etwas ist schiefgelaufen“ eines Kunden eine Log-Zeile wird, mit der Sie arbeiten können |
+| [Health-Checks und Monitoring](health-checks-und-monitoring.md) | Was Sie von außen und von innen beobachten und mit welchen Befehlen |
+| [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md) | Wie aus dem „Etwas ist schiefgelaufen“ eines Kunden eine Log-Zeile wird, mit der Sie arbeiten können |
 | [Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md) | Wer was geändert hat, und der Nachweis, dass die Aufzeichnung nicht bearbeitet wurde |
 | [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md) | Was Sie sichern, wie und wie oft |
-| [Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md) | Wie Sie beweisen, dass ein Backup funktioniert, bevor Sie es brauchen |
+| [Wiederherstellungsübungen](wiederherstellungsuebungen.md) | Wie Sie beweisen, dass ein Backup funktioniert, bevor Sie es brauchen |
 | [Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) | Was der mitgelieferte Anwendungsserver einem Unternehmen bringt, in einfachen Worten |
-| [Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md) | Änderungen ausliefern, ohne Anfragen von Besuchern zu verlieren |
+| [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md) | Änderungen ausliefern, ohne Anfragen von Besuchern zu verlieren |
 | [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md) | Wie Caches eine Website unter Last antwortfähig halten |
 | [Statischer Cache und Antwortcache](../../../../eng-us/help/businesses/reliability/static-and-response-cache.md) | Die beiden Caches, die antworten, ohne die Anwendung auszuführen |
-| [Lastspitzen planen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md) | Vorbereitung auf einen Sale, eine Kampagne oder einen Newsletter-Versand |
+| [Lastspitzen planen](lastspitzen-planen.md) | Vorbereitung auf einen Sale, eine Kampagne oder einen Newsletter-Versand |
 | [Clustering und Hochverfügbarkeit](clustering-und-hochverfuegbarkeit.md) | Wann ein Server nicht reicht und was weitere Server kosten |
-| [Datenbankwahl für Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/database-choice-for-reliability.md) | Welche Datenbank zu welchem Unternehmen passt, in der offiziellen Reihenfolge des Projekts |
-| [Wartungsmodus und geplante Arbeiten](../../../../eng-us/help/businesses/reliability/maintenance-mode-and-planned-work.md) | Die Website sauber vom Netz nehmen und die Kunden informieren |
+| [Datenbankwahl für Zuverlässigkeit](datenbankwahl-fuer-zuverlaessigkeit.md) | Welche Datenbank zu welchem Unternehmen passt, in der offiziellen Reihenfolge des Projekts |
+| [Wartungsmodus und geplante Arbeiten](wartungsmodus-und-geplante-arbeiten.md) | Die Website sauber vom Netz nehmen und die Kunden informieren |
 | [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) | Eine Aktualisierung planen und proben |
 | [Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md) | Nachweisen, dass die Installation vor und nach einer Aktualisierung dem Release entspricht |
-| [Vorschau vor dem Veröffentlichen](../../../../eng-us/help/businesses/reliability/preview-before-you-publish.md) | Entwürfe, Versionen, Freigabe und Vorschau, damit ein Fehler nie bei den Kunden ankommt |
-| [Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md) | Ein Plan für den schlechten Tag, der zu zwei oder drei Personen passt |
+| [Vorschau vor dem Veröffentlichen](vorschau-vor-dem-veroeffentlichen.md) | Entwürfe, Versionen, Freigabe und Vorschau, damit ein Fehler nie bei den Kunden ankommt |
+| [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md) | Ein Plan für den schlechten Tag, der zu zwei oder drei Personen passt |
 | [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md) | Die Arbeit, auf die niemand wartet, und wie Sie wissen, dass sie gelaufen ist |
-| [Bewertungsbogen Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md) | Eine Checkliste, mit der Sie Ihren eigenen Betrieb bewerten |
-| [FAQ zur Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/reliability-faq.md) | Kurze Antworten auf die Fragen, die Führungskräfte am häufigsten stellen |
+| [Bewertungsbogen Zuverlässigkeit](bewertungsbogen-zuverlaessigkeit.md) | Eine Checkliste, mit der Sie Ihren eigenen Betrieb bewerten |
+| [FAQ zur Zuverlässigkeit](faq-zur-zuverlaessigkeit.md) | Kurze Antworten auf die Fragen, die Führungskräfte am häufigsten stellen |
 
 ## Eine empfohlene Reihenfolge
 
 1. Lesen Sie [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md) und
-   [Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md), um zu verstehen, was Ihnen das Produkt
+   [Release-Linie und Support-Richtlinie](release-linie-und-support-richtlinie.md), um zu verstehen, was Ihnen das Produkt
    bietet.
 2. Lesen Sie [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md), um die ganze Routine auf einer Seite zu sehen.
-3. Richten Sie die Grundlagen ein: [Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md),
+3. Richten Sie die Grundlagen ein: [Health-Checks und Monitoring](health-checks-und-monitoring.md),
    [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md),
    [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md).
-4. Beweisen Sie, dass sie funktionieren: [Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md) und
-   [Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md).
+4. Beweisen Sie, dass sie funktionieren: [Wiederherstellungsübungen](wiederherstellungsuebungen.md) und
+   [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md).
 5. Planen Sie Änderungen: [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md),
-   [Wartungsmodus und geplante Arbeiten](../../../../eng-us/help/businesses/reliability/maintenance-mode-and-planned-work.md),
-   [Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md).
+   [Wartungsmodus und geplante Arbeiten](wartungsmodus-und-geplante-arbeiten.md),
+   [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md).
 6. Planen Sie Wachstum: [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md),
-   [Lastspitzen planen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md),
+   [Lastspitzen planen](lastspitzen-planen.md),
    [Clustering und Hochverfügbarkeit](clustering-und-hochverfuegbarkeit.md).
-7. Bewerten Sie sich jedes Quartal mit dem [Bewertungsbogen Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md).
+7. Bewerten Sie sich jedes Quartal mit dem [Bewertungsbogen Zuverlässigkeit](bewertungsbogen-zuverlaessigkeit.md).
 
 ## Die fünf Gewohnheiten in einer Liste
 

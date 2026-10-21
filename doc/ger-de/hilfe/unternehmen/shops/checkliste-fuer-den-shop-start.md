@@ -31,24 +31,24 @@ diese Seite ergänzt, was ein Shop braucht.
 
 ## Entscheidungen auf Papier
 
-- [ ] Das Planungsarbeitsblatt ist ausgefüllt ([Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md#a-planning-worksheet)).
+- [ ] Das Planungsarbeitsblatt ist ausgefüllt ([Shop-Planung für kleine Unternehmen](shop-planung-fuer-kleine-unternehmen.md#ein-planungsarbeitsblatt)).
 - [ ] Verkaufsbedingungen, Texte zu Versand, Rückgabe und Datenschutz sind geschrieben und von Ihrer rechtlichen
   Beratung freigegeben.
 - [ ] Steuersätze sind von Ihrem Steuerberater bestätigt.
 - [ ] Fehlende Funktionen (Lagerbestand, Rechnungen, Etiketten, Gutscheine) haben eine Antwort: Erweiterung,
-  Integration oder manueller Ablauf ([Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md#what-is-not-included)).
+  Integration oder manueller Ablauf ([Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md#was-nicht-enthalten-ist)).
 
 ## Katalog
 
 - [ ] Jedes Produkt hat Namen, Artikelnummer, Preis, Bild und Beschreibung ([Produktklassen und Katalog](produktklassen-und-katalog.md)).
 - [ ] Das Dashboard zeigt keine Produkte ohne Preis ([Shop-Dashboard und Berichte](shop-uebersicht-und-berichte.md)).
-- [ ] Kategorien, Menüs und Tags funktionieren; die Suche findet Produkte nach Name und Nummer ([Suche und Navigation im Shop](../../../../eng-us/help/businesses/stores/store-search-and-navigation.md)).
+- [ ] Kategorien, Menüs und Tags funktionieren; die Suche findet Produkte nach Name und Nummer ([Suche und Navigation im Shop](suche-und-navigation-im-shop.md)).
 
 ## Preise, Steuern und Versand
 
 - [ ] Die Shop-Währung ist in einem Override gesetzt; andere Währungen sind nur aktiv, wenn gewünscht ([Preise und Währungen](preise-und-waehrungen.md)).
 - [ ] Die Rundung ergibt die Preisendungen, die Sie erwarten.
-- [ ] USt-Typen sind benannt und korrekt; USt-Regeln für jedes Land mit abweichendem Satz ([USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)).
+- [ ] USt-Typen sind benannt und korrekt; USt-Regeln für jedes Land mit abweichendem Satz ([USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md)).
 - [ ] Das Dashboard zeigt keinen unerwarteten USt-Typ mit 0 Prozent.
 - [ ] Die Versandkosten erscheinen auf der Bestätigungsseite ([Versand und Bearbeitung](versand-und-bearbeitung.md)).
 - [ ] Die Länderliste führt Ihre Märkte zuerst auf ([Ländergruppen und Regionen](laendergruppen-und-regionen.md)).
@@ -86,8 +86,8 @@ diese Seite ergänzt, was ein Shop braucht.
 
 ## Sicherheit und Daten
 
-- [ ] Die [Sicherheitscheckliste für Shops](../../../../eng-us/help/businesses/stores/store-security-checklist.md) ist abgearbeitet.
-- [ ] Datenschutzhinweis veröffentlicht; das Opt-in für Werbung ist vom Kauf getrennt ([Opt-in und Einwilligung](../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md)).
+- [ ] Die [Sicherheitscheckliste für Shops](sicherheitscheckliste-fuer-shops.md) ist abgearbeitet.
+- [ ] Datenschutzhinweis veröffentlicht; das Opt-in für Werbung ist vom Kauf getrennt ([Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)).
 - [ ] Backups laufen, und eine Wiederherstellung wurde getestet ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 
 ## Leistung und Betrieb

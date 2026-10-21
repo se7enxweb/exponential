@@ -98,7 +98,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 - [ ] Plan für Aktualisierungen vereinbart
   ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
 - [ ] Monitoring der Adresse des Intranets eingerichtet
-  ([Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md)).
+  ([Health-Checks und Monitoring](../zuverlaessigkeit/health-checks-und-monitoring.md)).
 
 ## Phase 7: Pilotgruppe
 

@@ -96,7 +96,7 @@ published, so I can decide whether and when to write about it.
 ## Nach der Korrektur darüber berichten
 
 Sobald ein Release die Korrektur enthält, können Sie darüber wie über jede andere Sicherheitskorrektur schreiben
-([Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)): Sagen Sie, was das Changelog sagt, welche
+([Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)): Sagen Sie, was das Changelog sagt, welche
 Version es behebt und was die Leser tun sollten. Fragen Sie, bevor Sie sich selbst in den Kanälen des Projekts als
 Melder nennen, und fragen Sie den Melder, bevor Sie ihn in Ihrem Beitrag nennen. Die Dokumente des Projekts beschreiben
 kein Programm für Danksagungen oder Prämien (Bug Bounty); deuten Sie nicht an, dass es eines gibt
@@ -104,7 +104,7 @@ kein Programm für Danksagungen oder Prämien (Bug Bounty); deuten Sie nicht an,
 
 ## Verwandte Seiten
 
-- [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)
+- [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)
 - [Sperrfristen und Zeitpunkt](../../../eng-us/help/press/embargoes-and-timing.md)
 - [Welcher Tracker für welche Meldung](../fuersprecher/welcher-tracker-fuer-welche-meldung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

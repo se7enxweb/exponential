@@ -90,7 +90,7 @@ Ihren Partner, es einzurichten und mit einem Artikel zu testen, bevor Sie sich d
 | Weg | Wie er funktioniert | Quelle |
 |---|---|---|
 | Benachrichtigungen | ein Mitarbeiter folgt dem Nachrichtenordner (**Benachrichtigen**) und bekommt eine Mail, wenn darunter etwas veröffentlicht wird, sofort oder als täglicher, wöchentlicher oder monatlicher Digest | [Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md) |
-| Ein Newsletter | `cjw_newsletter` schickt Ausgaben an Listen mit Double-Opt-in | [Bereich Newsletter](../../../../eng-us/help/businesses/newsletters/README.md) |
+| Ein Newsletter | `cjw_newsletter` schickt Ausgaben an Listen mit Double-Opt-in | [Bereich Newsletter](../newsletter/README.md) |
 | Die Startseite | die neuesten Einträge in einem Block | siehe oben |
 
 Benachrichtigungen verschickt der Lauf der Benachrichtigungen, den die Cronjob-Gruppe `frequent` startet

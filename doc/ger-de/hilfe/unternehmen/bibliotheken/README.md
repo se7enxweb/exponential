@@ -78,11 +78,11 @@ Wenn Sie sie brauchen, behalten Sie dafür Ihr integriertes Bibliothekssystem un
 
 ## Benachbarte Bereiche
 
-- [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md): ein Newsletter über Neuerwerbungen.
+- [Newsletter](../newsletter/README.md): ein Newsletter über Neuerwerbungen.
 - [Mitglieder](../mitglieder/README.md): Leserkonten und Inhalte nur für Mitglieder.
-- [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md) und [Vereine und kleine Gruppen](../vereine/README.md):
+- [Gemeinnützige Organisationen](../gemeinnuetzige/README.md) und [Vereine und kleine Gruppen](../vereine/README.md):
   Viele Bibliotheken werden von einer solchen Organisation betrieben oder unterstützen eine.
-- [Mehrsprachige Websites](../../../../eng-us/help/businesses/multilingual/README.md): Kataloge in mehreren Sprachen.
+- [Mehrsprachige Websites](../mehrsprachig/README.md): Kataloge in mehreren Sprachen.
 - Öffentliche Bibliotheken in Trägerschaft einer Behörde: siehe auch
   [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
 

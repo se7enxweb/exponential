@@ -47,7 +47,7 @@ Jedes Repository, das neben Exponential ausgeliefert wird, hat eigene Release No
 | Plattformpakete | [exponential-platform-nexus](../../../changelogs/extensions/exponential-platform-nexus.md), [exponential-platform-dxp](../../../changelogs/extensions/exponential-platform-dxp.md) | Nur die Änderungen des Teams von se7enxweb; die Upstream-Geschichte wird anderswo erzählt |
 
 Mehr dazu: [Über ein Release einer Erweiterung berichten](ueber-ein-erweiterungs-release-berichten.md),
-[Über Releases von Velocity berichten](../../../eng-us/help/press/covering-velocity-releases.md),
+[Über Releases von Velocity berichten](ueber-velocity-releases-berichten.md),
 [Über Releases von Exponential Platform berichten](ueber-platform-releases-berichten.md).
 
 ## Die Geschichte und das Ledger

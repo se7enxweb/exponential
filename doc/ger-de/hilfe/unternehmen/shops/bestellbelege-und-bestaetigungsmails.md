@@ -48,7 +48,7 @@ Start Ihre echte Bestelladresse in einem Override, sonst gehen die Kopien des Sh
 
 Bestellmails sind notwendige E-Mails: Die Funktion der Mail-Einstellungen sendet sie immer, und sie enthalten nie
 Werbung ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)). Halten Sie Werbung aus dem Template der
-Bestellmail heraus und senden Sie Angebote stattdessen über einen Newsletter mit Einwilligung ([Newsletter](../../../../eng-us/help/businesses/newsletters/README.md)).
+Bestellmail heraus und senden Sie Angebote stattdessen über einen Newsletter mit Einwilligung ([Newsletter](../newsletter/README.md)).
 
 ## Der dauerhafte Beleg
 

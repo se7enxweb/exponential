@@ -122,7 +122,7 @@ die Investition ihr Geld zurückbringt und danach weiter spart.
 ## Verwandte Seiten
 
 - [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md)
-- [Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)
+- [Release-Linie und Support-Richtlinie](../zuverlaessigkeit/release-linie-und-support-richtlinie.md)
 - [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

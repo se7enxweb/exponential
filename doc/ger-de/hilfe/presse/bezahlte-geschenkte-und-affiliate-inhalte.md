@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Creator, denen für Inhalte über Exponential Geld, ein Geschenk oder eine Provision angeboten wird
 oder die mit Links in ihren Inhalten Geld verdienen. Sie ordnet die Fälle, sagt, welche Vereinbarungen die Quellen
 tatsächlich dokumentieren, und gibt Ihnen eine Checkliste, die Sie vor der Veröffentlichung vereinbaren. Wie Sie eine
-Offenlegung formulieren, steht auf [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md).
+Offenlegung formulieren, steht auf [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md).
 
 > **Wichtig**
 > Dies ist ethische Orientierung, keine Rechtsberatung. Die Regeln für Werbung, gesponserte Inhalte und Affiliate-Links
@@ -90,14 +90,14 @@ Werbung für Sie. Sagen Sie das und zeigen Sie das Produkt fair, bevor Sie Ihr A
 | Provisionslink | „Mit Links unten verdiene ich möglicherweise eine Provision.“ | „Provisionslinks sind mit <wie> gekennzeichnet. Sie zahlen in jedem Fall dasselbe.“ |
 | Eigenes Geschäft | „Ich verkaufe <was>.“ | „Offenlegung: Ich bin Autor von <was> und verkaufe <Dienstleistung>.“ |
 
-Vorlagen mit vollständigen Sätzen stehen auf [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md#disclosure-lines-to-copy).
+Vorlagen mit vollständigen Sätzen stehen auf [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md#zeilen-zur-offenlegung-zum-kopieren).
 
 ## Angebote, bei denen Sie vorsichtig sein sollten
 
 | Angebot | Warum | Was Sie tun |
 |---|---|---|
 | „Treten Sie dem offiziellen Creator-Programm von Exponential bei“ | Ein solches Programm ist nicht dokumentiert | Lassen Sie es sich schriftlich geben und prüfen Sie es mit den Kontakten auf exponential.earth |
-| „Sagen Sie, es sei N-mal schneller als X“ | Kein veröffentlichter Vergleich stützt einen Faktor | Lehnen Sie ab; zeigen Sie, wie die Geschwindigkeit gemessen wird ([Demo-Skript: Velocity](../../../eng-us/help/press/demo-script-velocity.md)) |
+| „Sagen Sie, es sei N-mal schneller als X“ | Kein veröffentlichter Vergleich stützt einen Faktor | Lehnen Sie ab; zeigen Sie, wie die Geschwindigkeit gemessen wird ([Demo-Skript: Velocity](demo-skript-velocity.md)) |
 | „Sagen Sie, es werde von eZ Systems oder Ibexa unterstützt“ | Exponential ist nicht mit ihnen verbunden | Lehnen Sie ab ([Regeln für Marke und Namen](../geschaeft/marken-und-namensregeln.md#andere-unternehmen-und-produkte)) |
 | „Sagen Sie, 6.0.15 erscheine am Datum X“ | Es ist in Entwicklung und hat kein Datum | Lehnen Sie ab |
 | „Erwähnen Sie nicht, dass Sie bezahlt wurden“ | Es führt Ihr Publikum in die Irre | Lehnen Sie ab |
@@ -105,7 +105,7 @@ Vorlagen mit vollständigen Sätzen stehen auf [Offenlegung und Ethik beim Spons
 
 ## Verwandte Seiten
 
-- [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)
+- [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)
 - [Eine faire Rezension schreiben](eine-faire-rezension-schreiben.md)
 - [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md)
 - [Empfehlungen und Kontakte](../partner/empfehlungen-und-leads.md)

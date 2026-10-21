@@ -121,16 +121,16 @@ Schreiben Sie das in die Anforderungen der App:
 - [ ] Ratenbegrenzungen eingerichtet, und APCu verfügbar, wo sie durchgesetzt werden müssen.
 - [ ] Ablaufdaten von Schlüsseln und Tokens im Kalender; eine Zugangsberechtigung pro App und Partner.
 - [ ] Backups in einer Übung wiederhergestellt, damit eine Wiederherstellung des Backends ein bekanntes Verfahren ist
-      ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)).
+      ([Wiederherstellungsübungen](../zuverlaessigkeit/wiederherstellungsuebungen.md)).
 - [ ] Eine Ansprechperson für Störungen für das App-Team und für das Server-Team
-      ([Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)).
+      ([Störungsbehandlung für kleine Teams](../zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)).
 
 ## Verwandte Seiten
 
 - [Headless mit der REST API](headless-mit-der-rest-api.md)
 - [Checkliste mobil](checkliste-mobil.md)
-- [Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md)
-- [Wartungsmodus und geplante Arbeiten](../../../../eng-us/help/businesses/reliability/maintenance-mode-and-planned-work.md)
+- [Health-Checks und Monitoring](../zuverlaessigkeit/health-checks-und-monitoring.md)
+- [Wartungsmodus und geplante Arbeiten](../zuverlaessigkeit/wartungsmodus-und-geplante-arbeiten.md)
 - [Health-Checks und Verfügbarkeit](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

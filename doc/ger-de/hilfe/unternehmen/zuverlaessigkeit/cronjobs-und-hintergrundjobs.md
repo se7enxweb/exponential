@@ -42,7 +42,7 @@ Ausfälle, wenn sie stoppen:
 | Benachrichtigungen | Abonnenten bekommen keine Mails über Aktualisierungen mehr |
 | Der Teil `audit` | Das Audit wird nicht indiziert, Alarmregeln werden nicht ausgewertet, Tagesarchive werden nicht geschrieben ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)) |
 | Inhaltsjobs | Im Hintergrund gestartete umfangreiche Entfernungen oder Kopien kommen nicht voran |
-| Newsletter-Teile | Ausgaben werden nicht versendet ([Newsletter](../../../../eng-us/help/businesses/newsletters/README.md)) |
+| Newsletter-Teile | Ausgaben werden nicht versendet ([Newsletter](../newsletter/README.md)) |
 | Sitemap-Teile | Suchmaschinen sehen eine veraltete Sitemap |
 
 ## Was läuft, in Teilen
@@ -94,7 +94,7 @@ Drei Signale, vom günstigsten zum gründlichsten:
 1. **Setup > Systeminformationen** lässt seine Cronjobs-Prüfung fehlschlagen, wenn kein Lauf gefunden wird oder der
    letzte „mehr als zwei Tage her“ ist ([Systeminformationen, Zustandsprüfungen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen)).
    Die Kommandozeilenvariante endet mit dem Exit-Status 1, sodass ein Monitoring es bemerkt
-   ([Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md)).
+   ([Health-Checks und Monitoring](health-checks-und-monitoring.md)).
 2. **Setup > Cronjobs** zeigt den letzten Lauf jedes Teils und unter **Letzte Ausführungen** deren Ergebnisse; Probleme
    sind Zeilen mit Wörtern wie *error* oder *failed*, „ein Hinweis, kein Urteil“
    ([Cronjobs, letzte Ausführungen](../../../anleitungen/cronjobs.md#10-letzte-ausführungen-und-wie-probleme-gezählt-werden)).
@@ -137,7 +137,7 @@ Wartungsfensters auf.
   ([Mehrere Web-Knoten](../../hosting/betrieb/mehrere-web-knoten.md#cron-ausrollen-wartung-und-logs)).
 - **Wiederhergestellte Kopien und Testrechner**: Installieren Sie keine Crontab, „sonst laufen Benachrichtigungen,
   Newsletter und Inhaltsjobs gegen echte Adressen“
-  ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md#keep-the-copy-quiet-and-private)).
+  ([Wiederherstellungsübungen](wiederherstellungsuebungen.md#die-kopie-still-und-vertraulich-halten)).
 
 ## Checkliste
 

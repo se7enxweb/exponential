@@ -47,7 +47,7 @@ einfachere Wahl.“ Bevor Sie Server hinzufügen:
 
 1. **Caches eingeschaltet und vorgewärmt** ([Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md)).
 2. **Messen** Sie mit `exp:benchmark`, um zu wissen, wo die Zeit verloren geht
-   ([Lastspitzen planen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md#measure-before-you-guess)).
+   ([Lastspitzen planen](lastspitzen-planen.md#messen-statt-raten)).
 3. **Velocity** erhöht dort, wo das Hosting es erlaubt, was ein Rechner ausliefern kann
    ([Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md)). Mehrere Velocity-Instanzen können sich auf einem Rechner
    einen Port teilen; `graceful` lädt sie nacheinander neu, „damit der Port weiter antwortet“
@@ -56,7 +56,7 @@ einfachere Wahl.“ Bevor Sie Server hinzufügen:
    [Speicher, CPU und Festplatte dimensionieren](../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md).
 5. **Eine schnelle Wiederherstellung**: Für viele kleine Unternehmen ist eine getestete Wiederherstellung auf einen
    Bereitschaftsserver eine günstigere Form der Verfügbarkeit als ein Cluster
-   ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)).
+   ([Wiederherstellungsübungen](wiederherstellungsuebungen.md)).
 
 > **Hinweis**
 > „Ein einzelner Server braucht keinen Cluster-File-Handler, ganz gleich, wie groß er ist. Clustering ist für eine
@@ -110,7 +110,7 @@ Mehrere Webserver schützen vor dem Verlust eines Webservers. Von sich aus schü
 - ein **inhaltlicher Fehler** passiert, der sofort überallhin repliziert wird.
 
 Jeder dieser Punkte braucht eine eigene Antwort, von Ihrem Hosting-Partner und aus Ihren eigenen Gewohnheiten
-([Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md), [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md)).
+([Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md), [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md)).
 
 ## Fragen an Ihren Hosting-Partner
 
@@ -133,7 +133,7 @@ Jeder dieser Punkte braucht eine eigene Antwort, von Ihrem Hosting-Partner und a
 ## Verwandte Seiten
 
 - [Mehrere Web-Knoten](../../hosting/betrieb/mehrere-web-knoten.md)
-- [Datenbankwahl für Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/database-choice-for-reliability.md)
+- [Datenbankwahl für Zuverlässigkeit](datenbankwahl-fuer-zuverlaessigkeit.md)
 - [Grundlagen zu Verträgen und SLAs](../auswahl/grundlagen-zu-vertraegen-und-slas.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -59,7 +59,7 @@ Halten Sie die Zahl der Personen, die direkt veröffentlichen können, klein und
 - **Jede Woche**: Führen Sie die wöchentliche Routine des Betreibers durch ([Wöchentliche Routine des Betreibers](../alltag/woechentliche-routine-des-betreibers.md)),
   einschließlich kaputter Links und Bilder ohne Alternativtext.
 - **Vor einem großen Nachrichtentag** (eine Wahl, ein Spiel, ein Launch): Fragen Sie Ihren Hoster, ob die Website für die
-  Spitze vorbereitet ist, und vereinbaren Sie, wer Bereitschaft hat ([Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)).
+  Spitze vorbereitet ist, und vereinbaren Sie, wer Bereitschaft hat ([Planung für Lastspitzen](../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md)).
 
 > **Tipp**
 > Eine Korrektur ist eine neue Version, keine Bearbeitung der Geschichte. Wenn eine veröffentlichte Geschichte geändert

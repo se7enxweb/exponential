@@ -63,9 +63,9 @@ AFTER
 | Entwürfe und Vorschau | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Adressen | [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md) |
 | Metadaten und Teilen | [Metadaten und Teilen in sozialen Netzwerken](../../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md) |
-| Newsletter und Einwilligung | [Newsletter versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md), [Opt-in und Einwilligung](../../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) |
+| Newsletter und Einwilligung | [Newsletter versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md), [Opt-in und Einwilligung](../../../unternehmen/newsletter/opt-in-und-einwilligung.md) |
 | Shop | [Rabatte](../../handel/rabatte.md), [Vorbereitung auf die Hochsaison](../../handel/vorbereitung-auf-die-hochsaison.md) |
-| Kapazität | [Planung für Lastspitzen](../../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md) |
+| Kapazität | [Planung für Lastspitzen](../../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md) |
 
 ## Warum der Änderungsstopp
 

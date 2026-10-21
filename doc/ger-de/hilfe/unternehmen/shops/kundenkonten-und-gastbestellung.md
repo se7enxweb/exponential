@@ -92,7 +92,7 @@ angemeldete Kunden sehen dürfen ([Händler- und Lieferantenportale](../extranet
 Ganz gleich, welcher Handler: Die Bestellung behält Name, E-Mail-Adresse und Anschrift des Kunden. Das sind
 personenbezogene Daten. Die Funktion der Mail-Einstellungen behandelt Bestellmails als notwendige E-Mails, die immer
 gesendet werden und nie Werbung enthalten ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)); Werbung an
-Kunden braucht deren Opt-in ([Opt-in und Einwilligung](../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md)).
+Kunden braucht deren Opt-in ([Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)).
 
 > **Hinweis**
 > Dies sind Grundlagen, keine Rechtsberatung. Für Ihre Pflichten nach dem Datenschutzrecht lesen Sie die Verordnung,

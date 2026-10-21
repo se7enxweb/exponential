@@ -67,7 +67,7 @@ zutreffenden Teile in Ihr Werkzeug zur Projektverfolgung. Jeder Punkt verlinkt d
 - [ ] Die App erfährt von Änderungen über einen Purge-Hook oder über begrenzte Abfragen.
 - [ ] Bildaliase für die Größen der App existieren.
 - [ ] Für jede Sprache der App sind die Inhalte übersetzt
-      ([Checkliste Mehrsprachigkeit](../../../../eng-us/help/businesses/multilingual/multilingual-checklist.md)).
+      ([Checkliste Mehrsprachigkeit](../mehrsprachig/checkliste-mehrsprachigkeit.md)).
 
 ## Feeds und Partner
 
@@ -110,7 +110,7 @@ zutreffenden Teile in Ihr Werkzeug zur Projektverfolgung. Jeder Punkt verlinkt d
 ## Verwandte Seiten
 
 - [Mobile Apps, Headless und Netzwerke](README.md)
-- [Checkliste für mehrere Marken](../../../../eng-us/help/businesses/multisite/multi-brand-checklist.md)
+- [Checkliste für mehrere Marken](../multisite/checkliste-fuer-mehrere-marken.md)
 - [Vorlage Checkliste Go-live](../vorlagen/checkliste-go-live.md)
 - [Die Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

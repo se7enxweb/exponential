@@ -84,7 +84,7 @@ responsiven Website. Siehe [Mobil und headless](mobil-und-headless/README.md).
 **Wie viele Sprachen?**
 268 Locale-Dateien lassen sich als Inhaltssprachen und Siteaccess-Locales wählen, 40 davon werden von rechts nach
 links geschrieben; die Administration hat 33 Übersetzungen, neunzehn davon vollständig
-([Sprachen in Exponential](../../../eng-us/languages.md)). Siehe [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md).
+([Sprachen in Exponential](../../../eng-us/languages.md)). Siehe [Mehrsprachige Unternehmen](mehrsprachig/README.md).
 
 **Können wir mehrere Marken aus einer Installation betreiben?**
 Ja, „Multi-site support“ ist eingebaut (`README.md`). Siehe [Marken mit Multisite](multisite/README.md).

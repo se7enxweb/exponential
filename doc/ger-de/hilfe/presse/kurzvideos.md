@@ -27,7 +27,7 @@ die Beschreibung. Ein Clip, eine Idee, eine Quelle.
 2. **Wahr ohne die Bildunterschrift.** Zuschauer sehen Ihre Beschreibung vielleicht nie; die gesprochenen Worte und der
    Text im Bild müssen die Fakten tragen.
 3. **Legen Sie im Clip offen**, wenn jemand bezahlt oder Ihnen etwas gegeben hat: im Bild am Anfang und in der
-   Bildunterschrift ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md#where-to-put-the-disclosure)).
+   Bildunterschrift ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md#wo-die-offenlegung-steht)).
 4. **Nennen Sie die Version** im Bild, wenn Sie eine Funktion der Entwicklungslinie 6.0.15 zeigen.
 5. **Untertitel eingebrannt oder hinzugefügt**, weil die meisten Kurzvideos ohne Ton angesehen werden
    ([Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md)).
@@ -82,7 +82,7 @@ CAPTION  <one sentence> Source: <link>. <disclosure>. #OpenSource
 
 - [Social-Media-Beiträge für Creator](social-media-beitraege-fuer-creator.md)
 - [Titel, Vorschaubilder und Beschreibungen](titel-vorschaubilder-und-beschreibungen.md)
-- [Demo-Skript: Überblick in fünf Minuten](../../../eng-us/help/press/demo-script-five-minute-overview.md)
+- [Demo-Skript: Überblick in fünf Minuten](demo-skript-ueberblick-in-fuenf-minuten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

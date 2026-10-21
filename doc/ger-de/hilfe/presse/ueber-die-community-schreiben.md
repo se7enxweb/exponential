@@ -38,7 +38,7 @@ wie Sie fair über Menschen schreiben.
 - Seit Dezember 2023 kamen Pull Requests von se7enxweb, ekked, fwoldt, netgen, brookinsconsulting, mugoweb und anderen
   (`git log --grep="Merge pull request"`, zitiert auf [Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - Vor 2016 erscheinen in der Geschichte 194 verschiedene Commit-Autoren.
-- Unternehmen, deren Open-Source-Arbeit verwendet wird, werden namentlich genannt ([Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md)).
+- Unternehmen, deren Open-Source-Arbeit verwendet wird, werden namentlich genannt ([Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md)).
 - Übersetzer pflegen 33 Übersetzungen der Administration, neunzehn davon vollständig (19. Oktober 2026)
   ([Sprachen in Exponential](../../../eng-us/languages.md)).
 

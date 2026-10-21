@@ -77,7 +77,7 @@ Die Seiten hinter den Zeilen: [Über ein Release berichten](ueber-ein-release-be
 [Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md),
 [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md), [Regeln für Marke und Namen](../geschaeft/marken-und-namensregeln.md),
 [Zahlen überprüfen](zahlen-pruefen.md), [Richtlinie für Zitate](richtlinie-fuer-zitate.md),
-[Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md), [Offenlegung und Interessenkonflikte](../fuersprecher/offenlegung-und-interessenkonflikte.md),
+[Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md), [Offenlegung und Interessenkonflikte](../fuersprecher/offenlegung-und-interessenkonflikte.md),
 [Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md). Die Zeile zum Upgrade stammt aus
 [Über ein Release schreiben](../fuersprecher/ueber-ein-release-schreiben.md#checkliste): Das Installationsprogramm „must never
 run over an existing site“, darf also nie über eine bestehende Website laufen.

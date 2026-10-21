@@ -59,7 +59,7 @@ erste Besucher für das Rendern“; der Administrator kann die Seiten mit **Seit
 ## Vor einem geschäftigen Tag
 
 Eine Aktion, eine Kampagne, ein Newsletter oder eine Erwähnung in der Presse kann die Zugriffe vervielfachen. Fragen Sie
-Ihren Hoster, Wochen im Voraus ([Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)):
+Ihren Hoster, Wochen im Voraus ([Planung für Lastspitzen](../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md)):
 
 - [ ] Haben Sie unsere wichtigsten Seiten unter Last gemessen ([Benchmarking](../../../anleitungen/benchmarking.md))?
 - [ ] Sind die Caches eingeschaltet, die eingeschaltet sein sollten? **Setup > Systeminformationen** warnt, wenn das
@@ -72,7 +72,7 @@ Ihren Hoster, Wochen im Voraus ([Planung für Lastspitzen](../../../../eng-us/he
 - „Alle Caches leeren“ als routinemäßige Lösung. Das macht die nächsten Seiten langsam und behebt selten das
   eigentliche Problem.
 - Einen Cache abschalten, um Änderungen schneller zu sehen. Redakteure sehen sich ihre Arbeit stattdessen in der
-  Vorschau an ([Vorschau vor dem Veröffentlichen](../../../../eng-us/help/businesses/reliability/preview-before-you-publish.md)).
+  Vorschau an ([Vorschau vor dem Veröffentlichen](../../unternehmen/zuverlaessigkeit/vorschau-vor-dem-veroeffentlichen.md)).
 
 ## Verwandte Seiten
 

@@ -54,7 +54,7 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 | Begriff | Bedeutung | Lesen |
 |---|---|---|
 | Shop | Der eingebaute E-Commerce: Produkte, Warenkorb, Bestellungen | [Online-Shops](shops/README.md) |
-| USt-Typ | Ein Steuersatz, dem Produkte zugeordnet werden | [USt-Regeln und USt-Typen](../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) |
+| USt-Typ | Ein Steuersatz, dem Produkte zugeordnet werden | [USt-Regeln und USt-Typen](shops/ust-regeln-und-ust-typen.md) |
 | Ländergruppe | Eine Menge von Ländern, die gleich behandelt werden, zum Beispiel bei der USt | [Ländergruppen](../../../eng-us/features/6.0/country-groups.md) |
 | Zahlungsanbieter | Die Anbindung an einen Zahlungsdienstleister, ausgeführt als Workflow-Ereignis an der Kasse | [Zahlungsanbieter für Unternehmen](shops/zahlungsanbieter-fuer-unternehmen.md) |
 | Bestellstatus | Wo eine Bestellung in ihrem Ablauf steht: ausstehend, in Bearbeitung, geliefert und weitere, die Sie festlegen | [Bestellungen und Bestellstatus](shops/bestellungen-und-bestellstatus.md) |

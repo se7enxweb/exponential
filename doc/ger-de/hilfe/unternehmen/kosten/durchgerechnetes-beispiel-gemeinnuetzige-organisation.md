@@ -111,14 +111,14 @@ dann entscheiden, ob diese Stunden gut angelegt sind. Gemeinsames Bearbeiten mit
 - [ ] Zuschüsse oder Sachleistungen beim Hosting, die Sie erhalten; fragen Sie Hoster und Partner, ob sie so etwas
       anbieten.
 - [ ] Arbeit für Barrierefreiheit, die eine gemeinnützige Organisation oft leisten muss
-      ([Barrierefreiheit für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/accessibility-for-nonprofits.md)).
+      ([Barrierefreiheit für gemeinnützige Organisationen](../gemeinnuetzige/barrierefreiheit-fuer-gemeinnuetzige.md)).
 - [ ] Datenschutzgrundlagen für die Daten von Spendern und Mitgliedern
       ([Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md)).
 - [ ] Einen Plan für die Jahre mit kleinem Budget: [Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md).
 
 ## Verwandte Seiten
 
-- [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md)
+- [Gemeinnützige Organisationen](../gemeinnuetzige/README.md)
 - [Website-Planung für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md)
 - [Wofür Sie nicht bezahlen](wofuer-sie-nicht-bezahlen.md)
 - [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)

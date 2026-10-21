@@ -134,7 +134,7 @@ Logs und Caches können pro Website geführt werden
 
 - [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
 - [Siteaccess über das Host-Präfix und die Weiterleitung zur Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)
-- [Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md)
+- [Eine Installation, viele Websites](../multisite/eine-installation-viele-websites.md)
 - [Kunden- und Partnerbereiche](kunden-und-partnerbereiche.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

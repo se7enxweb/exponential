@@ -141,7 +141,7 @@ geändert hat.
 - [Objektzustände](../../../anleitungen/objektzustaende.md)
 - [Entwürfe und wartende Versionen](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)
 - [Registrierung und Kontofreigabe](../extranets/registrierung-und-kontofreigabe.md)
-- [Vorschau vor dem Veröffentlichen](../../../../eng-us/help/businesses/reliability/preview-before-you-publish.md)
+- [Vorschau vor dem Veröffentlichen](../zuverlaessigkeit/vorschau-vor-dem-veroeffentlichen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

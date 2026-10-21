@@ -68,7 +68,7 @@ alles, was Ihr Team tun muss.
 
 > **Hinweis**
 > Das Projekt veröffentlicht keinen Release-Kalender. Releases der Linie 6.0 kamen in Abständen von etwa einem bis fünf
-> Monaten ([Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)).
+> Monaten ([Release-Linie und Support-Richtlinie](../../unternehmen/zuverlaessigkeit/release-linie-und-support-richtlinie.md)).
 > Planen Sie mit den Releases, die es gibt, nicht mit einem Datum.
 
 ## Automatische Updates

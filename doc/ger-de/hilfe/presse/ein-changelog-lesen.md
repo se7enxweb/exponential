@@ -81,7 +81,7 @@ Faustregeln:
 | Updated | Geändert oder korrigiert; nicht automatisch eine neue Funktion |
 | Deprecated | Funktioniert noch, soll aber wegfallen; noch nicht entfernt |
 | Removed | Ab dieser Version nicht mehr vorhanden |
-| Hardening | Verbesserungen der Sicherheit (Härtung); beschreiben Sie sie wie das Changelog, nie als „jetzt sicher“ ([Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)) |
+| Hardening | Verbesserungen der Sicherheit (Härtung); beschreiben Sie sie wie das Changelog, nie als „jetzt sicher“ ([Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)) |
 | Required packages | Die Versionen anderer Pakete, die der Kernel braucht; Änderungen dort können für Entwickler eine Nachricht sein |
 | Behavior change notes | Seiten unter `doc/eng-us/bc/6.0/`, die erklären, was beim Upgrade zu prüfen ist |
 

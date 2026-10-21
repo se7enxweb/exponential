@@ -83,7 +83,7 @@ weiter funktionieren.
 - [Shops](../shops/README.md), für den Shop, aus dem Ihre App oder Ihre Partner verkaufen
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md) und [Sicherheit](../../../../eng-us/help/businesses/security/README.md)
 - [Mehrere Marken in einer Installation](../multisite/README.md) und
-  [Verkaufen in mehreren Sprachen und Märkten](../../../../eng-us/help/businesses/multilingual/README.md)
+  [Verkaufen in mehreren Sprachen und Märkten](../mehrsprachig/README.md)
 - Für Entwickler: [App-Entwickler: hier beginnen](../../../../eng-us/help/creators/app-creators/app-creators-start-here.md)
 - Organisationen des öffentlichen Sektors: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
 

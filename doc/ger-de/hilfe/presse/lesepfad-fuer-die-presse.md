@@ -57,10 +57,10 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 
 | Schritt | Seite | Was Sie mitnehmen |
 |---|---|---|
-| 1 | [Creator und Influencer: hier beginnen](../../../eng-us/help/press/creators-and-influencers-start-here.md) | Die Übersicht für Creator |
-| 2 | [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md) | Transparenz gegenüber den Zuschauern |
+| 1 | [Creator und Influencer: hier beginnen](creator-und-influencer-hier-beginnen.md) | Die Übersicht für Creator |
+| 2 | [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md) | Transparenz gegenüber den Zuschauern |
 | 3 | [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md) | Eine sichere Installation |
-| 4 | Ein Demo-Skript, zum Beispiel [Demo-Skript: Überblick in fünf Minuten](../../../eng-us/help/press/demo-script-five-minute-overview.md) | Was Sie zeigen |
+| 4 | Ein Demo-Skript, zum Beispiel [Demo-Skript: Überblick in fünf Minuten](demo-skript-ueberblick-in-fuenf-minuten.md) | Was Sie zeigen |
 | 5 | [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md), [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md) | Eine sichere Aufnahme |
 | 6 | [Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md) | Ein Video, dem alle folgen können |
 

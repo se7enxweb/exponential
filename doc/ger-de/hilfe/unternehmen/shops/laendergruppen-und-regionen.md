@@ -26,7 +26,7 @@ Länderliste, die Ihre Kunden an der Kasse sehen, wie Sie Ihre eigenen Märkte n
 
 ## Warum die Länderliste wichtig ist
 
-Das Land, das ein Kunde wählt, kann den USt-Satz bestimmen ([USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md))
+Das Land, das ein Kunde wählt, kann den USt-Satz bestimmen ([USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md))
 und die Anschrift auf der Bestellung. Eine lange Liste von A bis Z bremst Kunden aus, und eine falsche Auswahl erzeugt
 eine Bestellung, die Sie von Hand korrigieren müssen. Eine kurze Rangliste oben macht den häufigen Fall zu einem Klick.
 
@@ -81,12 +81,12 @@ Das Land ist eine Entscheidung unter mehreren. Ein Shop, der ins Ausland verkauf
 
 | Thema | Lesen Sie |
 |---|---|
-| USt pro Land | [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) |
+| USt pro Land | [USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md) |
 | Preise in anderen Währungen | [Preise und Währungen](preise-und-waehrungen.md) |
 | Versandkosten pro Zone | [Versand und Bearbeitung](versand-und-bearbeitung.md) |
-| Shop-Seiten in anderen Sprachen | [Mehrsprachigkeit planen](../../../../eng-us/help/businesses/multilingual/multilingual-planning.md) |
-| Getrennte Websites pro Land | [Mehrere Marken planen](../../../../eng-us/help/businesses/multisite/multi-brand-planning.md) |
-| Sprachen mit Schrift von rechts nach links | [Märkte mit Schrift von rechts nach links](../../../../eng-us/help/businesses/multilingual/right-to-left-markets.md) |
+| Shop-Seiten in anderen Sprachen | [Mehrsprachigkeit planen](../mehrsprachig/mehrsprachigkeit-planen.md) |
+| Getrennte Websites pro Land | [Mehrere Marken planen](../multisite/mehrere-marken-planen.md) |
+| Sprachen mit Schrift von rechts nach links | [Märkte mit Schrift von rechts nach links](../mehrsprachig/maerkte-mit-rechts-nach-links-schrift.md) |
 
 ## Einschränken, wohin Sie verkaufen
 
@@ -113,7 +113,7 @@ Länder liefern“.
 ## Verwandte Seiten
 
 - [Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md)
-- [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)
+- [USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md)
 - [Versand und Bearbeitung](versand-und-bearbeitung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

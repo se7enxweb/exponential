@@ -68,7 +68,7 @@ Upgrades.
 **Was das für ein Unternehmen bedeutet:** Sie wissen, welche Version Sie betreiben, Sie wissen, dass sich eine Version
 nie unter Ihnen ändert, und Sie können die nächste testen, bevor sie Kunden erreicht. Siehe
 [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) und
-[Release-Linie und Support-Richtlinie](../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md).
+[Release-Linie und Support-Richtlinie](zuverlaessigkeit/release-linie-und-support-richtlinie.md).
 
 ## Wenige bewegliche Teile
 
@@ -87,7 +87,7 @@ eigene Updates brauchen kann.
 Shop, auf einem Server mit PHP und ohne separaten Datenbankserver betreiben und Komponenten (PostgreSQL, Solr-Suche,
 einen Cluster) erst hinzufügen, wenn sie sie braucht. Weniger Komponenten bedeuten weniger Updates, weniger
 Fehlerquellen und geringere Hosting-Kosten. Siehe
-[Datenbankwahl für Zuverlässigkeit](../../../eng-us/help/businesses/reliability/database-choice-for-reliability.md).
+[Datenbankwahl für Zuverlässigkeit](zuverlaessigkeit/datenbankwahl-fuer-zuverlaessigkeit.md).
 
 ## Schnell unter Last
 
@@ -106,7 +106,7 @@ unter Last“ (`README.md`, „The part that matters even if you never run Veloc
 **Was das für ein Unternehmen bedeutet:** Eine Kampagne, ein Newsletter oder ein Ausverkauf, der viele Besucher
 gleichzeitig bringt, ist der Moment, in dem eine langsame Website am meisten Geld verliert. Ein Cache, der die
 vorhandene Kopie ausliefert, während eine Anfrage sie neu aufbaut, hält die Website während dieser Spitze am Antworten.
-Siehe [Lastspitzen planen](../../../eng-us/help/businesses/reliability/peak-traffic-planning.md) und
+Siehe [Lastspitzen planen](zuverlaessigkeit/lastspitzen-planen.md) und
 [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md). Ihre eigenen Werte hängen von Ihrer Hardware und
 Ihren Seiten ab; messen Sie sie mit den Benchmark-Werkzeugen
 ([Benchmarks für Exponential: Geschwindigkeit messen, vergleichen und absichern](../../anleitungen/benchmarking.md)).
@@ -123,7 +123,7 @@ Ihren Seiten ab; messen Sie sie mit den Benchmark-Werkzeugen
 
 **Was das für ein Unternehmen bedeutet:** kürzere Störungen. Die Zeit zwischen „Ein Kunde sagt, die Kasse funktioniert
 nicht“ und „Wir wissen, warum“ ist der Ort, an dem die meiste Ausfallzeit verbracht wird. Siehe
-[Störungsbehandlung für kleine Teams](../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md).
+[Störungsbehandlung für kleine Teams](zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md).
 
 ## Keine Lizenzgebühr und keine Anbieterbindung
 
@@ -142,7 +142,7 @@ Hoster oder den Partner wechseln, ohne die Software zu wechseln. Siehe
 | Langlebige Codebasis | Kein erzwungener Neuaufbau der Website alle paar Jahre | [Gesamtbetriebskosten](kosten/gesamtbetriebskosten.md) |
 | Releases, die sich nie ändern | Vorhersehbarer Aufwand für Upgrades, vorab testbar | [Budget für Aktualisierungen und Wartung](kosten/budget-fuer-aktualisierungen-und-wartung.md) |
 | Wenige bewegliche Teile | Geringere Kosten für Hosting und Administration | [Kostentreiber beim Hosting](kosten/kostentreiber-beim-hosting.md) |
-| Schnell unter Last | Keine verlorenen Verkäufe zu Spitzenzeiten | [Lastspitzen planen](../../../eng-us/help/businesses/reliability/peak-traffic-planning.md) |
+| Schnell unter Last | Keine verlorenen Verkäufe zu Spitzenzeiten | [Lastspitzen planen](zuverlaessigkeit/lastspitzen-planen.md) |
 | Belege, wenn etwas schiefgeht | Kürzere Störungen | [Arbeitsblatt: Kosten eines Ausfalls](kosten/arbeitsblatt-kosten-eines-ausfalls.md) |
 | Keine Lizenzgebühr | Das Budget fließt in Inhalte und Funktionen | [Rendite der Stabilität](kosten/rendite-der-stabilitaet.md) |
 

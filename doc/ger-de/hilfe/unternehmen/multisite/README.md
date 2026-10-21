@@ -57,34 +57,34 @@ Organisationen des öffentlichen Sektors haben einen eigenen Bereich:
 
 | Seite | Was sie beantwortet |
 |---|---|
-| [Mehrere Marken planen](../../../../eng-us/help/businesses/multisite/multi-brand-planning.md) | Die Fragen, die zuerst zu klären sind, und wann eine Installation die falsche Wahl ist |
-| [Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md) | Wie Siteaccesses, Hosts und Pfade aus einer Installation mehrere Websites machen |
-| [Inhalte zwischen Marken teilen](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md) | Ein Inhaltsbaum, getrennte Ordner, Beziehungen, mehrere Platzierungen und Redakteure pro Marke |
-| [Ein Design pro Marke](../../../../eng-us/help/businesses/multisite/per-brand-designs.md) | Wie jede Marke ihr eigenes Erscheinungsbild bekommt und Templates teilt, wo es hilft |
+| [Mehrere Marken planen](mehrere-marken-planen.md) | Die Fragen, die zuerst zu klären sind, und wann eine Installation die falsche Wahl ist |
+| [Eine Installation, viele Websites](eine-installation-viele-websites.md) | Wie Siteaccesses, Hosts und Pfade aus einer Installation mehrere Websites machen |
+| [Inhalte zwischen Marken teilen](inhalte-zwischen-marken-teilen.md) | Ein Inhaltsbaum, getrennte Ordner, Beziehungen, mehrere Platzierungen und Redakteure pro Marke |
+| [Ein Design pro Marke](ein-design-pro-marke.md) | Wie jede Marke ihr eigenes Erscheinungsbild bekommt und Templates teilt, wo es hilft |
 | [Links zwischen Ihren Websites](links-zwischen-ihren-websites.md) | Warum Links in die Inhalte einer anderen Marke brechen und wie `ezurlmultisite` das behebt |
-| [Einstellungen, Logs und Caches pro Website](../../../../eng-us/help/businesses/multisite/per-site-settings-and-logs.md) | Einstellungen, Logs und Caches jeder Marke getrennt halten, für einen sauberen Betrieb |
-| [Checkliste für mehrere Marken](../../../../eng-us/help/businesses/multisite/multi-brand-checklist.md) | Eine Checkliste für Start und Betrieb, wenn eine Marke hinzukommt |
+| [Einstellungen, Logs und Caches pro Website](einstellungen-logs-und-caches-pro-website.md) | Einstellungen, Logs und Caches jeder Marke getrennt halten, für einen sauberen Betrieb |
+| [Checkliste für mehrere Marken](checkliste-fuer-mehrere-marken.md) | Eine Checkliste für Start und Betrieb, wenn eine Marke hinzukommt |
 
 ## Empfohlene Lesereihenfolge
 
-1. Beginnen Sie mit [Mehrere Marken planen](../../../../eng-us/help/businesses/multisite/multi-brand-planning.md), um zu entscheiden, ob eine Installation zu Ihnen
+1. Beginnen Sie mit [Mehrere Marken planen](mehrere-marken-planen.md), um zu entscheiden, ob eine Installation zu Ihnen
    passt.
-2. Lesen Sie [Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md) für das Modell dahinter.
-3. Dann [Inhalte zwischen Marken teilen](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md) und [Ein Design pro Marke](../../../../eng-us/help/businesses/multisite/per-brand-designs.md),
+2. Lesen Sie [Eine Installation, viele Websites](eine-installation-viele-websites.md) für das Modell dahinter.
+3. Dann [Inhalte zwischen Marken teilen](inhalte-zwischen-marken-teilen.md) und [Ein Design pro Marke](ein-design-pro-marke.md),
    die beiden Entscheidungen, die Markenverantwortlichen am wichtigsten sind.
 4. Geben Sie [Links zwischen Ihren Websites](links-zwischen-ihren-websites.md) und
-   [Einstellungen, Logs und Caches pro Website](../../../../eng-us/help/businesses/multisite/per-site-settings-and-logs.md) an Ihr technisches Team weiter.
-5. Nutzen Sie die [Checkliste für mehrere Marken](../../../../eng-us/help/businesses/multisite/multi-brand-checklist.md) jedes Mal, wenn eine Marke hinzukommt.
+   [Einstellungen, Logs und Caches pro Website](einstellungen-logs-und-caches-pro-website.md) an Ihr technisches Team weiter.
+5. Nutzen Sie die [Checkliste für mehrere Marken](checkliste-fuer-mehrere-marken.md) jedes Mal, wenn eine Marke hinzukommt.
 
 > **Tipp**
 > Die meisten Organisationen mit mehreren Marken veröffentlichen auch in mehreren Sprachen. Lesen Sie den
-> [Bereich zur Mehrsprachigkeit](../../../../eng-us/help/businesses/multilingual/README.md) zusammen mit diesem: Eine Sprache ist oft nur ein weiterer
+> [Bereich zur Mehrsprachigkeit](../mehrsprachig/README.md) zusammen mit diesem: Eine Sprache ist oft nur ein weiterer
 > Siteaccess in derselben Installation.
 
 ## Benachbarte Bereiche
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md) und der [Lesepfad](../lesepfad-fuer-unternehmen.md)
-- [Verkaufen in mehreren Sprachen und Märkten](../../../../eng-us/help/businesses/multilingual/README.md)
+- [Verkaufen in mehreren Sprachen und Märkten](../mehrsprachig/README.md)
 - [Mobile Apps, Headless-Nutzung und Netzwerke](../mobil-und-headless/README.md)
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md) und [Kosten](../kosten/README.md) für die betriebliche Seite vieler Websites
 - [Extranets](../extranets/README.md), wenn ein Partnerportal neben Ihren öffentlichen Marken läuft

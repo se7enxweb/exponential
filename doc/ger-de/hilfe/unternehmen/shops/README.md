@@ -46,20 +46,20 @@ Die Seiten dieses Bereichs behandeln:
 
 | Sie sind | Beginnen Sie mit |
 |---|---|
-| Geschäftsinhaber und entscheiden, ob Sie mit Exponential online verkaufen | [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md) |
+| Geschäftsinhaber und entscheiden, ob Sie mit Exponential online verkaufen | [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md) |
 | Shop-Verantwortlicher und bearbeiten täglich Bestellungen | [Einen Shop im Alltag betreiben](einen-shop-im-alltag-betreiben.md) |
-| Projektleiter und planen den Start | [Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md) |
+| Projektleiter und planen den Start | [Shop-Planung für kleine Unternehmen](shop-planung-fuer-kleine-unternehmen.md) |
 | Die Person, die den Shop einrichtet | die technische Seite [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md) |
 
 ## Alle Seiten dieses Bereichs
 
 | Seite | Was sie beantwortet |
 |---|---|
-| [Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md) | Die Entscheidungen, die vor jeder Einrichtungsarbeit fallen müssen |
-| [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md) | Die Teile des Shops und was er ohne Zusätze nicht kann |
+| [Shop-Planung für kleine Unternehmen](shop-planung-fuer-kleine-unternehmen.md) | Die Entscheidungen, die vor jeder Einrichtungsarbeit fallen müssen |
+| [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md) | Die Teile des Shops und was er ohne Zusätze nicht kann |
 | [Produktklassen und Katalog](produktklassen-und-katalog.md) | Wie Produkte modelliert und geordnet werden |
 | [Preise und Währungen](preise-und-waehrungen.md) | Preise in einer und in mehreren Währungen, Wechselkurse und Rundung |
-| [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) | Wie der Shop Mehrwertsteuer und Umsatzsteuer berechnet |
+| [USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md) | Wie der Shop Mehrwertsteuer und Umsatzsteuer berechnet |
 | [Ländergruppen und Regionen](laendergruppen-und-regionen.md) | Die Länderliste, aus der Kunden wählen, und der Verkauf in mehrere Länder |
 | [Versand und Bearbeitung](versand-und-bearbeitung.md) | Pauschale Versandkosten und eigene Versandregeln |
 | [Warenkorb und Bestellablauf](warenkorb-und-bestellablauf.md) | Der Weg des Kunden von der Produktseite bis zur aufgegebenen Bestellung |
@@ -72,18 +72,18 @@ Die Seiten dieses Bereichs behandeln:
 | [Kartenzahlungen und PCI-Grundlagen](kartenzahlungen-und-pci-grundlagen.md) | Weiterleitung oder Kartenformular und was das für die Kartensicherheit bedeutet |
 | [Rabatte und Wunschlisten](rabatte-und-wunschlisten.md) | Rabattgruppen und die Wunschliste des Kunden |
 | [Digitale Produkte und Downloads](digitale-produkte-und-downloads.md) | Dateien verkaufen und was dafür ergänzt werden muss |
-| [Suche und Navigation im Shop](../../../../eng-us/help/businesses/stores/store-search-and-navigation.md) | Kunden helfen, Produkte zu finden |
+| [Suche und Navigation im Shop](suche-und-navigation-im-shop.md) | Kunden helfen, Produkte zu finden |
 | [Ihren Shop bewerben](ihren-shop-bewerben.md) | Suchmaschinen, Teilen in sozialen Netzwerken, Newsletter und Landingpages |
 | [Shop-Leistung zu Spitzenzeiten](shop-leistung-zu-spitzenzeiten.md) | Schnell bleiben während eines Ausverkaufs oder einer arbeitsreichen Saison |
-| [Sicherheitscheckliste für Shops](../../../../eng-us/help/businesses/stores/store-security-checklist.md) | Die Sicherheitsaufgaben, die ein Shop-Inhaber prüfen sollte |
+| [Sicherheitscheckliste für Shops](sicherheitscheckliste-fuer-shops.md) | Die Sicherheitsaufgaben, die ein Shop-Inhaber prüfen sollte |
 | [Checkliste für den Shop-Start](checkliste-fuer-den-shop-start.md) | Alles, was Sie vor der ersten echten Bestellung testen |
 | [Einen Shop im Alltag betreiben](einen-shop-im-alltag-betreiben.md) | Tägliche, wöchentliche und monatliche Routinen |
 | [Shop-FAQ](shop-faq.md) | Kurze Antworten auf häufige Fragen |
 
 ## Empfohlene Lesereihenfolge
 
-1. [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md) und
-   [Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md), für die Entscheidung.
+1. [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md) und
+   [Shop-Planung für kleine Unternehmen](shop-planung-fuer-kleine-unternehmen.md), für die Entscheidung.
 2. Produkte, Preise, USt, Länder und Versand in der Reihenfolge der Tabelle oben, für die Einrichtung.
 3. Kasse, Konten, Bestellungen, Belege und das Dashboard, für die tägliche Arbeit.
 4. Zahlungen, dann die Sicherheits- und die Start-Checkliste, vor der Eröffnung.
@@ -104,10 +104,10 @@ beschreiben nur, was die Software tut.
 ## Benachbarte Bereiche
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md) und [Wie Unternehmen mit Exponential online verkaufen](../wie-unternehmen-online-verkaufen.md)
-- [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md), um Kunden auf dem Laufenden zu halten
+- [Newsletter](../newsletter/README.md), um Kunden auf dem Laufenden zu halten
 - [Kosten und Rendite](../kosten/README.md), darunter [ein durchgerechnetes Beispiel für einen kleinen Shop](../kosten/durchgerechnetes-beispiel-kleiner-shop.md)
 - [Sicherheit](../../../../eng-us/help/businesses/security/README.md) und [Zuverlässigkeit](../zuverlaessigkeit/README.md)
-- [Mehrsprachige Websites](../../../../eng-us/help/businesses/multilingual/README.md) für Shops in mehreren Sprachen
+- [Mehrsprachige Websites](../mehrsprachig/README.md) für Shops in mehreren Sprachen
 - [Mobil und headless](../mobil-und-headless/README.md) für den Verkauf über Apps und Partner
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
 

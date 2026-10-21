@@ -122,7 +122,7 @@ Ihre.
 
 ## Verwandte Seiten
 
-- [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)
+- [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md)
 - [Aussagen, die Sie nicht machen dürfen](../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md)
 - [Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

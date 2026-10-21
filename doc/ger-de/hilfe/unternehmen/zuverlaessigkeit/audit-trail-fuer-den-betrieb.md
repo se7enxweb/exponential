@@ -73,7 +73,7 @@ php bin/php/audit.php status --allow-root-user     # one line per channel, endin
 ```
 
 Führen Sie `verify` nach Zeitplan aus und lassen Sie bei einem Exit-Status ungleich null alarmieren
-([Health-Checks und Monitoring](../../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md#checks-on-the-server)).
+([Health-Checks und Monitoring](health-checks-und-monitoring.md#prüfungen-auf-dem-server)).
 
 ## Nutzung nach einer Störung
 
@@ -83,7 +83,7 @@ Führen Sie `verify` nach Zeitplan aus und lassen Sie bei einem Exit-Status ungl
 3. Suchen Sie in `system` nach Deployments, geschriebenen Einstellungen, Wartung und geleerten Caches und in `content`
    nach umfangreichen Entfernungen oder Verschiebungen.
 4. Von einer Fehlerreferenz aus öffnet der Link **Das Audit dieses Moments** im Log-Viewer dasselbe Zeitfenster direkt
-   ([Logs und Fehlerreferenzen](../../../../eng-us/help/businesses/reliability/logs-and-error-references.md)).
+   ([Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md)).
 5. Schreiben Sie Ihre Erkenntnisse in die Störungsnotiz.
 
 In einer Shell die neuesten Ereignisse eines Kanals:
@@ -147,8 +147,8 @@ Personen, die Störungen und Compliance bearbeiten, und beschränken Sie `audit/
 
 ## Verwandte Seiten
 
-- [Logs und Fehlerreferenzen](../../../../eng-us/help/businesses/reliability/logs-and-error-references.md)
-- [Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)
+- [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md)
+- [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md)
 - [Prüfprotokoll (Hosting)](../../hosting/sicherheit/pruefprotokoll.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

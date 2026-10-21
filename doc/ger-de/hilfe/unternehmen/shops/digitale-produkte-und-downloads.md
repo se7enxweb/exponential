@@ -104,7 +104,7 @@ begrenzten Download-Link schickt (in der Idee ähnlich dem signierten Beleg-Link
 ## Steuern auf digitale Produkte
 
 Digitale Produkte werden oft anders besteuert als physische, manchmal nach dem Land des Käufers. Die USt-Regeln des
-Shops können einen Satz pro Land des Kunden und Produktkategorie ausdrücken ([USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)),
+Shops können einen Satz pro Land des Kunden und Produktkategorie ausdrücken ([USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md)),
 eine Produktkategorie „Digital“ mit eigenen Regeln ist also möglich. Welche Sätze gelten, ist eine Frage für Ihren
 Steuerberater.
 
@@ -121,7 +121,7 @@ Steuerberater.
 
 - [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
 - [Dateien und digitale Sammlungen](../bibliotheken/dateien-und-digitale-sammlungen.md)
-- [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)
+- [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

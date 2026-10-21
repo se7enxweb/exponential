@@ -81,7 +81,7 @@ Zwei Folgen für die Genauigkeit:
 ## Verwandte Seiten
 
 - [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md)
-- [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)
+- [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)
 - [Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md) (dasselbe Prinzip für Ihre eigenen Beiträge)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

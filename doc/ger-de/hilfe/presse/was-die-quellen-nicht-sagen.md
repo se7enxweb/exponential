@@ -71,7 +71,7 @@ wenn es keine Antwort gibt.
 | Frage | Stand |
 |---|---|
 | Konferenzen und Meetups | Keine dokumentiert |
-| Ein Botschafter-, Creator- oder Affiliate-Programm | Keines dokumentiert ([Creator und Influencer: hier beginnen](../../../eng-us/help/press/creators-and-influencers-start-here.md)) |
+| Ein Botschafter-, Creator- oder Affiliate-Programm | Keines dokumentiert ([Creator und Influencer: hier beginnen](creator-und-influencer-hier-beginnen.md)) |
 | Zertifizierungen | Das Exponential Partner Program nennt Zertifizierungen für Partnerteams (Developer, Design, Solution, Sales); wie die Prüfungen ablaufen, ist nicht vollständig veröffentlicht ([Zertifizierungen](../partner/zertifizierungen.md)) |
 
 ## Wie Sie über eine Lücke berichten
