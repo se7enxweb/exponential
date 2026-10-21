@@ -14,7 +14,6 @@ kernel/content/search.php
 # ── Kernel / Undefined vars & null checks (commit 5e93442d) ──────────────────
 kernel/content/upload.php
 kernel/content/versionviewframe.php
-kernel/content/error.php
 kernel/content/view.php
 kernel/content/pdf.php
 kernel/content/browse.php

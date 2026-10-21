@@ -58,7 +58,7 @@ ezpublish_setup:
     security: false
 ```
 
-5. Add the legacy rewrite rules to your Apache virtual host so legacy assets are served as files (storage images, `design`, `share/icons`, extension designs, `packages/styles`, `var/storage/packages`); an Nginx equivalent is in the bridge's `INSTALL.md`.
+5. Add the legacy rewrite rules to your Apache virtual host so legacy assets are served as files (storage images, `design`, `share/icons`, the icon themes of extensions, extension designs, `packages/styles`, `var/storage/packages`); an Nginx equivalent is in the bridge's `INSTALL.md`.
 6. Fix permissions as for any platform project.
 
 Missing legacy extensions that older kernels bundled (`ezfind`, `eztags`, the script monitor, the system info extension) are added to the project's `composer.json` with `composer require`.

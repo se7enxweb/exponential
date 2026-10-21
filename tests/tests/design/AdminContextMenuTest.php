@@ -24,6 +24,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     /** The designs whose copies of the menu script and its openers are kept identical */
     const SCRIPT_COPIES = array(
         'javascript/popupmenu/ezpopupmenu.js',
+        'javascript/a4_url.js',
         'javascript/contentstructuremenu_dynamic.js',
         'javascript/ezajaxsubitems_expdatatable.js',
         'templates/contentstructuremenu/show_content_structure.tpl',
@@ -223,5 +224,75 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
         $body = substr( $js, $start, strpos( $js, 'function _submitForm(' ) - $start );
         $this->assertStringContainsString( "menuElement.style.maxHeight = '';", $body );
         $this->assertStringContainsString( 'var areaTop = screenData.ScrollY + _fixedHeaderHeight();', $body );
+    }
+
+    /** Template source without its {* ... *} and <!-- ... --> comments: a load line inside one loads nothing */
+    private static function withoutComments( $source )
+    {
+        return preg_replace( array( '/\{\*.*?\*\}/s', '/<!--.*?-->/s' ), '', $source );
+    }
+
+    private static function templateCode( $path )
+    {
+        return self::withoutComments( AdminFiles::read( $path ) );
+    }
+
+    public function testALoadLineInsideACommentIsNotALoadLine()
+    {
+        $line = "{ezscript_load( array( 'a4_url.js' ) )}";
+        $this->assertStringContainsString( $line, self::withoutComments( "x $line y" ) );
+        $this->assertStringNotContainsString( 'a4_url.js', self::withoutComments( "{* $line *}" ) );
+        $this->assertStringNotContainsString( 'a4_url.js', self::withoutComments( "<!-- $line -->" ) );
+        $this->assertStringNotContainsString( 'a4_url.js', self::withoutComments( "<!--\n{ezscript( array( 'a4_url.js', 'page/setup_logs.js' ) )}\n-->" ) );
+    }
+
+    /**
+     * ezpopupmenu.js and setup_logs.js call window.a4SafeURL. admin3 had its own page_head_script.tpl without
+     * a4_url.js, so its menu links became '#', redirects were refused and the log selection did nothing. Every
+     * head template that loads BackendJavaScriptList loads a4_url.js before it.
+     */
+    public function testEveryPageHeadScriptLoadsTheUrlCheckBeforeTheScriptList()
+    {
+        $templates = AdminFiles::files( self::root() . '/design/*/templates/page_head_script.tpl' );
+        $checked = 0;
+        foreach ( $templates as $template )
+        {
+            $tpl = self::templateCode( $template );
+            $list = strpos( $tpl, 'BackendJavaScriptList' );
+            if ( $list === false )
+                continue;
+            ++$checked;
+            $load = strpos( $tpl, "ezscript_load( array( 'a4_url.js' ) )" );
+            $this->assertNotFalse( $load, "$template loads BackendJavaScriptList but not a4_url.js (outside a comment)" );
+            $this->assertLessThan( $list, $load, "$template loads a4_url.js after BackendJavaScriptList" );
+        }
+        $this->assertGreaterThanOrEqual( 3, $checked, 'admin, admin3 and admin4 each load the list' );
+        // admin3 and admin2 take the script from design/admin through the design chain
+        $this->assertFileExists( self::root() . '/design/admin/javascript/a4_url.js' );
+    }
+
+    /**
+     * The extension design adminui has its own page_head_script.tpl without a4_url.js, and its setup/logs and
+     * content/job pages come from admin4. A page that loads a script calling a4SafeURL loads a4_url.js itself,
+     * before that script.
+     */
+    public function testPagesWithScriptsThatCallTheUrlCheckLoadItThemselves()
+    {
+        $checked = 0;
+        foreach ( AdminFiles::files( self::root() . '/design/*/templates/{setup/logs,content/job}.tpl', GLOB_BRACE ) as $template )
+        {
+            $tpl = self::templateCode( $template );
+            foreach ( array( 'page/setup_logs.js', 'page/content_job.js' ) as $script )
+            {
+                $at = strpos( $tpl, "'$script'" );
+                if ( $at === false )
+                    continue;
+                ++$checked;
+                $load = strpos( $tpl, "'a4_url.js'" );
+                $this->assertNotFalse( $load, "$template loads $script but not a4_url.js (outside a comment)" );
+                $this->assertLessThan( $at, $load, "$template loads a4_url.js after $script" );
+            }
+        }
+        $this->assertGreaterThanOrEqual( 3, $checked, 'setup/logs in admin and admin4, content/job in admin4' );
     }
 }

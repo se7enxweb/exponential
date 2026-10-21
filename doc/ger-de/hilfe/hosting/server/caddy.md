@@ -78,7 +78,8 @@ Das erzeugte Caddyfile setzt `.htaccess_root` so um
 | 3 | `@treemenu`: `^/([^/]+/)?content/treemenu` | auf `/index_treemenu.php` umschreiben |
 | 4 | `@front`: alles andere | auf `/index.php` umschreiben |
 
-`STATIC_PATHS` trifft Stylesheets, Bilder, Skripte und Schriften von Designs und Erweiterungen, `share/icons/`, `var/*/storage/images`,
+`STATIC_PATHS` trifft Stylesheets, Bilder, Skripte und Schriften von Designs und Erweiterungen, `share/icons/`, die
+Icon-Themes der Erweiterungen (`extension/<name>/icons/`, Bilder mit genau einer Dateiendung), `var/*/storage/images`,
 gespeicherte Originalbilder, gespeicherte PDF-Exporte, die Caches public und texttoimage, Paketstile, `var/storage/packages/`,
 `favicon.ico`, `robots.txt`, `index.js`, `sw.js` und `w3c/p3p.xml`. `NEVER_STATIC` ist `(?i)(\.(php\d?|phtml|phar)$|/\.)`: Keine
 PHP-Quelle und keine Datei mit Punkt wird je als Datei ausgeliefert, auch nicht unterhalb eines Asset-Verzeichnisses. Beide Konstanten

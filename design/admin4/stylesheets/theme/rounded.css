@@ -36,11 +36,6 @@ ul.tabs li a, ul.tabs li span.disabled
     text-decoration: underline;
 }
 
-ul.tabs li a:hover
-{
-    color:var(--a4-ink);
-}
-
 ul.tabs li.selected a
 {
     background: var(--a4-accent-soft) none;
@@ -130,21 +125,6 @@ a.show-hide-tabs:hover
 .tab-block .button-left
 {
     margin: 5px 5px 0 0;
-}
-
-.controlbar form .button-left
-{
-    margin-top:5px;
-}
-
-.controlbar form .button-left .block select
-{
-    height:25px;
-}
-
-.controlbar form .button-left .block input.button, .controlbar form .button-left .block input.button-disabled
-{
-    margin-top: -3px;
 }
 
 #controlbar-top .box-bc
@@ -258,27 +238,9 @@ input.button, input.defaultbutton, input.button-disabled
     transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease;
 }
 
-input.defaultbutton, input.button-disabled, input.button[disabled="disabled"]
-{
-    background-color: var(--a4-soft);
-}
-
 input.button:hover, input.button:focus {
     background-color: var(--a4-soft);
     color: var(--a4-ink);
-}
-
-input.defaultbutton
-{
-    background-color: var(--a4-accent-strong);
-    color: var(--a4-on-accent);
-    font-weight: normal;
-}
-
-input.defaultbutton:hover,
-input.defaultbutton:focus {
-    background-color: var(--a4-accent-press);
-    color: var(--a4-on-accent-hover);
 }
 
 input.defaultbutton:active {

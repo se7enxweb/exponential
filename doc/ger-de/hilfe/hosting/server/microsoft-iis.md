@@ -75,7 +75,7 @@ Welchen Regelsatz Sie für IIS auch schreiben, er muss tun, was `.htaccess_root`
 | eine vorhandene `.php`, `.phtml` oder `.phar` unterhalb der Wurzel | 404 |
 | `/api/...` | `index_rest.php` |
 | `/content/treemenu...`, `/<siteaccess>/content/treemenu...` | `index_treemenu.php` |
-| ein aufgeführter Asset-Pfad (Stylesheets, Bilder, Skripte und Schriften von Designs und Erweiterungen; `var/*/storage/images`; Originalbilder; gespeicherte PDF-Exporte; öffentliche Caches; `share/icons`; Paketvorschauen; `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml`) | als Datei gesendet |
+| ein aufgeführter Asset-Pfad (Stylesheets, Bilder, Skripte und Schriften von Designs und Erweiterungen; `var/*/storage/images`; Originalbilder; gespeicherte PDF-Exporte; öffentliche Caches; `share/icons`; die Icon-Themes der Erweiterungen, `extension/<name>/icons/`, Bilder mit genau einer Dateiendung; Paketvorschauen; `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml`) | als Datei gesendet |
 | alles andere | `index.php` |
 
 Die regulären Ausdrücke jeder Zeile stehen in `.htaccess_root` und, für die Asset-Liste, in `expVelocity::STATIC_PATHS`

@@ -498,6 +498,8 @@ changelog: [6.0.0 to 6.0.15](../../changelogs/6.0/6.0.15.md).
 
 **Demo mode (6.0.15).** Nothing changes on an upgraded site unless the environment variable `EXP_DEMO_MODE=1` is set, which is only for public demos. After upgrading a production server, check that no process of a real site has it (`grep -r EXP_DEMO_MODE` over the PHP-FPM pools, virtual hosts, `.htaccess` files, service units and crontabs). [Demo mode](../bc/6.0/demo-mode.md).
 
+**Icon themes of extensions (6.0.15).** The shipped rewrite rules now serve `extension/<name>/icons/` (SVG, PNG and GIF images whose name has exactly one extension) as files. An upgrade never rewrites your own `.htaccess` or server configuration: if an extension of the site ships icons (`icon.ini [ExtensionSettings] IconExtensions[]`), copy the rule into it, before the front controller rule. Apache `.htaccess`: `RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]`; a virtual host takes `^/extension/...`, nginx `location ~ ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ { try_files $uri =404; }`. Velocity and the generated FrankenPHP configuration have it after `exp:velocity deploy`. Every server: [Web server rules](../bc/6.0/ICONS.md#web-server-rules).
+
 ## References
 
 In this repository:

@@ -23,19 +23,19 @@
             <input type="hidden" name="ContentObjectID" value="{$node.contentobject_id}" />
         {/if}
         
-        <div class="block">{$title}</div>
-        <select id="ezasi-sort-field" name="SortingField" title="{$title}" aria-label="{'Sort by'|i18n( 'design/admin/node/view/full' )|wash}"{$disabled}>
+        <div class="block">{$title|wash}</div>
+        <select id="ezasi-sort-field" name="SortingField" title="{$title|wash}" aria-label="{'Sort by'|i18n( 'design/admin/node/view/full' )|wash}"{$disabled}>
         {foreach $sort_fields as $key => $field}
-            <option value="{$key}" {if eq( $key, $node.sort_field )}selected="selected"{/if}>{$field}</option>
+            <option value="{$key}" {if eq( $key, $node.sort_field )}selected="selected"{/if}>{$field|wash}</option>
         {/foreach}
         </select>
     
-        <select id="ezasi-sort-order" name="SortingOrder" title="{$title}" aria-label="{'Sort order'|i18n( 'design/admin/node/view/full' )|wash}"{$disabled}>
+        <select id="ezasi-sort-order" name="SortingOrder" title="{$title|wash}" aria-label="{'Sort order'|i18n( 'design/admin/node/view/full' )|wash}"{$disabled}>
             <option value="0"{if eq($node.sort_order, 0)} selected="selected"{/if}>{'Descending'|i18n( 'design/admin/node/view/full' )}</option>
             <option value="1"{if eq($node.sort_order, 1)} selected="selected"{/if}>{'Ascending'|i18n( 'design/admin/node/view/full' )}</option>
         </select>
     
-        <input  id="ezasi-sort-set" {if $disabled}class="button-disabled"{else}class="button"{/if} type="submit" name="SetSorting" value="{'Set'|i18n( 'design/admin/node/view/full' )}" title="{$title}" {$disabled} />
+        <input  id="ezasi-sort-set" {if $disabled}class="button-disabled"{else}class="button"{/if} type="submit" name="SetSorting" value="{'Set'|i18n( 'design/admin/node/view/full' )}" title="{$title|wash}" {$disabled} />
     
         {undef}
     </fieldset>

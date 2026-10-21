@@ -58,52 +58,12 @@ table.list th a
 text-decoration:none;
 }
 
-table.list .sort-asc a
-{
-position: relative;
-padding-right:1.5em;
-}
-
-table.list .sort-asc a::after
-{
-content: "";
-position: absolute;
-right: 0.25em;
-top: 50%;
-width: 10px;
-height: 10px;
-margin-top: -5px;
-background-color: currentColor;
--webkit-mask: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg) no-repeat center / contain;
-mask: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg) no-repeat center / contain;
-}
-
-table.list .sort-desc a
-{
-position: relative;
-padding-right:1.5em;
-}
-
-table.list .sort-desc a::after
-{
-content: "";
-position: absolute;
-right: 0.25em;
-top: 50%;
-width: 10px;
-height: 10px;
-margin-top: -5px;
-background-color: currentColor;
--webkit-mask: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg) no-repeat center / contain;
-mask: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg) no-repeat center / contain;
-}
-
 table.special th
 {
     border-top: 1px solid var(--a4-line);
 }
 
-table.list tr.bgdark, table.list tr.bgdark th
+table.list tr.bgdark th
 {
     background-color: var(--a4-soft);
 }

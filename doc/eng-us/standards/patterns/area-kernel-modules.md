@@ -605,11 +605,10 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `fetch( 'workflow', 'workflow_statuses' )` | `eZWorkflowFunctionCollection::fetchWorkflowStatuses()` | `kernel/workflow/function_definition.php:12` |
 | `fetch( 'workflow', 'workflow_type_statuses' )` | `eZWorkflowFunctionCollection::fetchWorkflowTypeStatuses()` | `kernel/workflow/function_definition.php:19` |
 
-## Event hooks (7)
+## Event hooks (6)
 
 | Event | Kind | Called in |
 |---|---|---|
-| `content/class/cache` | notify | `kernel/class/delete.php:32` |
 | `content/cache/version` | notify | `kernel/content/attribute_edit.php:325` |
 | `content/notification/create` | filter | `kernel/content/ezcontentoperationcollection.php:920` |
 | `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1414` |

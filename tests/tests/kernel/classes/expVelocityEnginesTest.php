@@ -490,7 +490,8 @@ class expVelocityEnginesTest extends ezpTestCase
                          '/extension/sevenx_themes_media/design/media/fonts/inter.woff2',
                          '/favicon.ico', '/robots.txt', '/index.js', '/sw.js', '/var/site/storage/original/image/logo.svg',
                          '/var/site/cache/public/javascript/x.js', '/var/storage/packages/7x/a/thumbnail.png', '/var/site/storage/pdf/handbook-2026_1.pdf',
-                         '/extension/explayouts_ui_api/design/standard/vendor/ace-editor/ace.js' ) as $path )
+                         '/extension/explayouts_ui_api/design/standard/vendor/ace-editor/ace.js',
+                         '/extension/myicons/icons/theme/svg/house.svg', '/extension/myicons/icons/theme/16x16/mimetypes/pdf.png' ) as $path )
             $this->assertSame( 1, preg_match( $static, $path ), $path );
 
         // Below var/ only what .htaccess_root serves: never scratch files,
@@ -505,7 +506,10 @@ class expVelocityEnginesTest extends ezpTestCase
                          '/var/storage/packages/7x/a/design/standard/stylesheets/x.css',
                          '/var/site/storage/original/image/x.php', '/var/site/storage/original/image/x.html',
                          '/var/site/storage/pdf/x.php', '/var/site/storage/pdf/.x.pdf', '/var/site/storage/pdf/a/b.pdf', '/var/site/storage/pdf/x.pdf.txt', '/var/site/storage/pdf/x y.pdf',
-                         '/share/filelist.md5', '/extension/x/settings/x.css' ) as $path )
+                         '/share/filelist.md5', '/extension/x/settings/x.css',
+                         // An extension's icon theme: images with exactly one extension only
+                         '/extension/myicons/icons/a.php.svg', '/extension/myicons/icons/run.php', '/extension/myicons/icons/x.svg.bak',
+                         '/extension/myicons/icons/readme.txt', '/extension/a/b/icons/x.svg' ) as $path )
             $this->assertSame( 0, preg_match( $static, $path ), $path );
 
         // Listed directories, but never served: a script's source, dot paths.

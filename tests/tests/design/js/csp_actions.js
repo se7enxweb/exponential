@@ -4,23 +4,34 @@
 'use strict';
 const fs = require('fs');
 const vm = require('vm');
+const path = require('path');
 const { createDocument } = require('./mini_dom.js');
 
 const source = fs.readFileSync(process.argv[2], 'utf8');
+const PAGE = 'https://admin.example/index.php/admin/setup/logs';
+// the shared address check the script finds in the page head (a4_url.js, loaded before the page scripts)
+function loadUrlHelper(sandbox, scriptPath) {
+    const helper = path.join(path.dirname(scriptPath), 'a4_url.js');
+    // a missing helper must fail the run, not leave a4SafeURL undefined and the case passing for the wrong reason
+    vm.runInContext(fs.readFileSync(helper, 'utf8'), sandbox);
+}
+
 
 function run(html, setup) {
     const document = createDocument(html);
-    const log = { confirms: [], prints: 0, location: null, timers: [] };
+    const log = { confirms: [], prints: 0, location: null, timers: [], refused: [] };
     let answer = true;
     const window = {
         confirm: (q) => { log.confirms.push(q); return answer; },
         print: () => { log.prints++; },
         setTimeout: (fn) => { log.timers.push(fn); },
-        location: { set href(v) { log.location = v; } },
+        location: { get href() { return PAGE; }, set href(v) { log.location = v; } },
+        URL, console: { error: (m) => { log.refused.push(String(m)); } },
     };
     window.document = document;
-    const sandbox = { window, document, console };
+    const sandbox = { window, document, console: window.console, URL };
     vm.createContext(sandbox);
+    loadUrlHelper(sandbox, process.argv[2]);
     vm.runInContext(source, sandbox);
     return { document, window, log, answer: (v) => { answer = v; }, flush: () => { log.timers.splice(0).forEach((fn) => fn()); } };
 }
@@ -102,6 +113,18 @@ function out(name, value) { console.log(JSON.stringify(Object.assign({ name }, v
     t.document.dispatch('change', n);
     t.document.dispatch('change', t.document.getElementById('r'));
     out('change', { submitted: t.document.submitted, location: t.log.location, reset: t.document.getElementById('ignore').value });
+}
+// navigate on change goes only to an address of this site (javascript:, data:, another host are refused)
+{
+    const seen = {};
+    for (const [label, value] of [['javascript', 'javascript:window.ran=1'], ['data', 'data:text/html,x'], ['other host', 'https://evil.example/'], ['protocol-relative', '//evil.example/'], ['absolute site', 'https://admin.example/setup/info']]) {
+        const t = run('<select id="n" data-a4-navigate-on-change=""></select>');
+        const n = t.document.getElementById('n');
+        n.value = value;
+        t.document.dispatch('change', n);
+        seen[label] = t.log.location;
+    }
+    out('navigate refused', { seen });
 }
 // removed actions: data-a4-print and data-a4-disable-on-submit are no longer handled (no template used them)
 {

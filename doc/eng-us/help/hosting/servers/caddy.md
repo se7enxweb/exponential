@@ -77,7 +77,8 @@ The generated Caddyfile implements `.htaccess_root` like this
 | 3 | `@treemenu`: `^/([^/]+/)?content/treemenu` | rewrite to `/index_treemenu.php` |
 | 4 | `@front`: everything else | rewrite to `/index.php` |
 
-`STATIC_PATHS` matches design and extension stylesheets, images, scripts and fonts, `share/icons/`,
+`STATIC_PATHS` matches design and extension stylesheets, images, scripts and fonts, `share/icons/`, the icon
+themes of extensions (`extension/<name>/icons/`, images with exactly one extension),
 `var/*/storage/images`, stored image originals, stored PDF exports, the public and texttoimage caches, package styles,
 `var/storage/packages/`, `favicon.ico`, `robots.txt`, `index.js`, `sw.js` and `w3c/p3p.xml`. `NEVER_STATIC` is
 `(?i)(\.(php\d?|phtml|phar)$|/\.)`: no PHP source and no dot file is ever served as a file, even below an asset

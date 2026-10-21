@@ -6,9 +6,18 @@
 'use strict';
 const fs = require('fs');
 const vm = require('vm');
+const path = require('path');
 const { createDocument } = require('./mini_dom.js');
 
 const source = fs.readFileSync(process.argv[2], 'utf8');
+const PAGE = 'https://admin.example/index.php/admin/content/job/abc';
+// the shared address check the script finds in the page head (a4_url.js, loaded before the page scripts)
+function loadUrlHelper(sandbox, scriptPath) {
+    const helper = path.join(path.dirname(scriptPath), '../a4_url.js');
+    // a missing helper must fail the run, not leave a4SafeURL undefined and the case passing for the wrong reason
+    vm.runInContext(fs.readFileSync(helper, 'utf8'), sandbox);
+}
+
 const BOX = '<div id="exp-contentjob" data-status-url="/content/job/abc?json=1" data-state="running"'
     + ' data-text-counts="%done of %total" data-text-elapsed="%seconds s" data-text-opening="Opening in %seconds s"'
     + ' data-text-stopping="Stopping" data-text-waiting="Waiting" data-text-gone="Gone" data-text-signed-out="Signed out" data-text-error="Error"'
@@ -31,9 +40,9 @@ function response(status, body, opts) {
 function run(answers, html) {
     const document = createDocument(html || BOX);
     document.hidden = false;
-    const log = { requests: 0, timers: [], reloads: 0 };
+    const log = { requests: 0, timers: [], reloads: 0, refused: [] };
     const sandbox = {
-        document, console: { error: () => {} },
+        document, console: { error: (m) => { log.refused.push(String(m)); } },
         fetch: () => {
             const a = answers[Math.min(log.requests, answers.length - 1)];
             log.requests++;
@@ -41,10 +50,12 @@ function run(answers, html) {
         },
         setTimeout: (fn, ms) => { log.timers.push({ fn, ms }); return log.timers.length; },
         clearTimeout: () => {},
-        location: { reload: () => { log.reloads++; }, set href(v) { log.href = v; } },
+        location: { reload: () => { log.reloads++; }, get href() { return log.href || PAGE; }, set href(v) { log.href = v; } },
+        URL,
     };
     sandbox.window = sandbox;
     vm.createContext(sandbox);
+    loadUrlHelper(sandbox, process.argv[2]);
     vm.runInContext(source, sandbox);
     const settle = async () => { for (let i = 0; i < 10; i++) await new Promise((r) => setImmediate(r)); };
     return {
@@ -106,6 +117,15 @@ function out(name, value) { console.log(JSON.stringify(Object.assign({ name }, v
         await t.settle();
         await t.next();
         out('script error', { requests: t.log.requests, delays: t.delays(), message: t.message(), stopped: t.document.getElementById('exp-contentjob').getAttribute('data-polling') });
+    }
+    // the finished job's address is followed only when it is of this site: javascript:, data:, another host and
+    // a protocol-relative address are refused (the link keeps its own address, the page does not leave)
+    for (const [label, redirect] of [['site', '/content/view/full/2'], ['javascript', 'javascript:window.ran=1'], ['data', 'data:text/html,x'],
+                                     ['other host', 'https://evil.example/x'], ['protocol-relative', '//evil.example/x']]) {
+        const t = run([response(200, Object.assign({}, RUNNING, { state: 'done', redirect_url: redirect }))]);
+        await t.settle();
+        for (let i = 0; i < 4; i++) { await t.next(); }
+        out('redirect ' + label, { href: t.log.href || null, link: t.document.querySelector('.a4-content-job-open').href, refused: t.log.refused.length });
     }
     // a hidden tab: no request while hidden, one as soon as it is shown again
     {
