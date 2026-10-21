@@ -6399,9 +6399,9 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 70aa7fc3b92e519f91f2dd1a19c12ddb  doc/eng-us/guides/upgrading.md
 1278a8090d45ed8a6c5a9ca73e8c1a5e  doc/eng-us/guides/urls-and-aliases.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
-4d996acccb8a30b13e7ec8a7f8cec24b  doc/eng-us/help/README.md
-d473bbb7f099b90c4fe9d12b44777531  doc/eng-us/help/accounts-and-sign-in.md
-b4e94abf7da18c393cf629df60987d17  doc/eng-us/help/admin-tour.md
+eb5ffb754935beeff276d04045aadd44  doc/eng-us/help/README.md
+c17f8a2ff4c45a64bc6ea4a8ba0ff3d3  doc/eng-us/help/accounts-and-sign-in.md
+a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
 dfe18e99d12c8480f847e86426b27ce4  doc/eng-us/help/adopters/adopters-faq.md
 04ff20877f980fe17316137d932f3e7e  doc/eng-us/help/adopters/adopters-glossary.md
@@ -6457,7 +6457,7 @@ f1c99d54fd7d0f2a3e89455bba457a59  doc/eng-us/help/advocates/accessible-slides-an
 2132f8759f827b00060ec8b19caa785c  doc/eng-us/help/advocates/advocate-faq.md
 fcd6771b79c62841d665ccff6d4ed734  doc/eng-us/help/advocates/advocate-reading-path.md
 737969c823324090f3ec84e6fc9d995c  doc/eng-us/help/advocates/advocate-toolkit.md
-adb09cdd6cf90b976e55962057b1e8ff  doc/eng-us/help/advocates/advocates-start-here.md
+9eb4b96a031cafe98476a6df96b1b063  doc/eng-us/help/advocates/advocates-start-here.md
 027153c7e41db545bfab3557e9625530  doc/eng-us/help/advocates/advocating-for-accessibility.md
 fe4693c78ecea4dca522053ecdc566d3  doc/eng-us/help/advocates/advocating-for-free-documentation.md
 b428f3bf08ef02426f02b492fc7f949c  doc/eng-us/help/advocates/advocating-for-open-source.md
@@ -6956,7 +6956,7 @@ d391d5d69cbc3bbaed22dde550e5e67b  doc/eng-us/help/business/community-and-ecosyst
 7560ca8e21feade329e386354bbaa8e1  doc/eng-us/help/business/licensing-for-buyers.md
 50c8b9471060b02095e6b23d448be8bd  doc/eng-us/help/business/objection-handling.md
 4283e27e5e14cb9e4bb753e93128960b  doc/eng-us/help/business/positioning-and-value-proposition.md
-487d28c80f1bb13c73c597630608aa3f  doc/eng-us/help/business/sales-and-marketing-start-here.md
+4d50aa66b2b85191c63dbe57b4024476  doc/eng-us/help/business/sales-and-marketing-start-here.md
 df36ed5a3b378793e7a4a83ac7e10783  doc/eng-us/help/business/who-exponential-is-for.md
 aeebfc9bd28e0a570157325b4dc7b188  doc/eng-us/help/businesses/associations/README.md
 4f62ade648d8316ca92d2a6f568ef8d0  doc/eng-us/help/businesses/associations/events-and-news-for-groups.md
@@ -6968,7 +6968,7 @@ b4a84e55b899a5cd8ed9a5d21d0de2ae  doc/eng-us/help/businesses/associations/small-
 bcbb58e93dacafc218fa17b6f3c204c2  doc/eng-us/help/businesses/businesses-faq.md
 d5ffef7534b566428a6d9fbf7e4781a6  doc/eng-us/help/businesses/businesses-glossary.md
 6e8e02554acad1992eea11920fb35026  doc/eng-us/help/businesses/businesses-reading-path.md
-88c4b2c241692c5d2b5ff118c22b4b4b  doc/eng-us/help/businesses/businesses-start-here.md
+5b9eab55aa0f38a5887235dbcac10d6f  doc/eng-us/help/businesses/businesses-start-here.md
 e7b31d572ad2808e962b6e59bf405362  doc/eng-us/help/businesses/choosing/README.md
 69779c9e06fa91530e718309773fbf3f  doc/eng-us/help/businesses/choosing/choosing-a-partner.md
 63264fd973fe5165fefd48e731b599e9  doc/eng-us/help/businesses/choosing/choosing-hosting.md
@@ -7249,7 +7249,7 @@ eea975368396b6c51979334d7cb8010f  doc/eng-us/help/contribute-extensions-back.md
 32222de857d2827ea1dca198233d0d62  doc/eng-us/help/creators/app-creators/access-control-in-code.md
 b8c28f2b5c30565caeda153c09c6e826  doc/eng-us/help/creators/app-creators/app-creator-faq.md
 c93ae043b53f73683b2a4e658f834514  doc/eng-us/help/creators/app-creators/app-creators-reading-path.md
-9dde5017ccd685d3910eece80462743b  doc/eng-us/help/creators/app-creators/app-creators-start-here.md
+58f2eeb8ac872d87155dcb9551c12aeb  doc/eng-us/help/creators/app-creators/app-creators-start-here.md
 0df6f28d70e2683b44efb080ee690208  doc/eng-us/help/creators/app-creators/architecture-for-app-creators.md
 169179ce073858f60d98125910c3d398  doc/eng-us/help/creators/app-creators/autoloads-and-class-naming.md
 832ffe006626b2f04024c460b27bdb5f  doc/eng-us/help/creators/app-creators/background-work-patterns.md
@@ -7382,7 +7382,7 @@ dccbc18eaceecd38a68fa7751050d3c7  doc/eng-us/help/creators/website-creators/url-
 02a4634892ff5d6a83f51f8b58debb20  doc/eng-us/help/creators/website-creators/visitor-permissions.md
 56362b5b3f8f143ee7219da4d88b172c  doc/eng-us/help/creators/website-creators/website-creator-faq.md
 7b4295bc19bdf1dc97de65656e1d8beb  doc/eng-us/help/creators/website-creators/website-creators-reading-path.md
-ad0320418473eb7a7a10360b52dcfe39  doc/eng-us/help/creators/website-creators/website-creators-start-here.md
+a81860c92688db4cdf04787fbf82bf6e  doc/eng-us/help/creators/website-creators/website-creators-start-here.md
 d392dcfb0abc601300a69abf21196768  doc/eng-us/help/creators/website-creators/what-you-can-build.md
 a4f8f6b64ceac42cc303bca5e0c2c7e9  doc/eng-us/help/creators/website-creators/your-first-site-step-by-step.md
 567549a83c8353aca78013b1cda75b7f  doc/eng-us/help/customers/commerce/README.md
@@ -7416,7 +7416,7 @@ fa05706842307ec3b4a68b4ab6700376  doc/eng-us/help/customers/customers-faq.md
 2b1199556af886e25a2be34a43234ceb  doc/eng-us/help/customers/customers-glossary.md
 68c640991ca9e84093dbef8aadc50958  doc/eng-us/help/customers/customers-quick-reference.md
 815926b125c04036b7887e4e3e39c7eb  doc/eng-us/help/customers/customers-reading-path.md
-e25224a0a26cbe9682b99e55808d6259  doc/eng-us/help/customers/customers-start-here.md
+e8179b99c8ffc1de75a9d423f720ac20  doc/eng-us/help/customers/customers-start-here.md
 40c0c8df7f9237033c2b534bddb3b911  doc/eng-us/help/customers/day-to-day/README.md
 4d35c5f29c542892a6097094b7d18b71  doc/eng-us/help/customers/day-to-day/accessibility-checklist-for-editors.md
 9b027dcfe7158477e6c28feebdeb3acf  doc/eng-us/help/customers/day-to-day/accessibility-upkeep.md
@@ -7590,7 +7590,7 @@ fdb327bc27340a0fa0f97128e3b57686  doc/eng-us/help/database-administrators/upgrad
 7676d7e11fda9340bb35525a68e36aa3  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
 ad8bd1af5690d00df7cf04d4e5374a6b  doc/eng-us/help/designers/README.md
-aef6b6b4c703633c6c7e66d3bd954b4f  doc/eng-us/help/designers/designers-start-here.md
+55b1e039865af142aa59978a4c3142f2  doc/eng-us/help/designers/designers-start-here.md
 e773e3f7d6e696119b69c7e5a26ac540  doc/eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md
 15da780a556eb5f011694416a88644a7  doc/eng-us/help/designers/distribution/annotated-tags.md
 3ce43979ebe3527ff226962973de6956  doc/eng-us/help/designers/distribution/announcing-on-share-exponential-earth.md
@@ -7904,7 +7904,7 @@ fa886bd17086af4541c0bc26afe100a0  doc/eng-us/help/designers/theme-design/tutoria
 574ff25e97bdc3f6277817e94e2f7092  doc/eng-us/help/designers/theme-design/tutorial-right-to-left-theme.md
 dbbc8d56c5d3bcdbc44d5b2eb2fa80ea  doc/eng-us/help/designers/theme-design/tutorial-two-sites-two-designs.md
 b2a39a02ab74adc16ef0d4cbd602c3fc  doc/eng-us/help/designers/theme-design/what-a-design-is.md
-53e3571e64c17f4347a22ab7626998ba  doc/eng-us/help/develop-with-git.md
+37d0336c376f22bea45473518665b2dd  doc/eng-us/help/develop-with-git.md
 7d0735ca1168bb24f36f9b162e59d291  doc/eng-us/help/dxp-developers/application-cache-and-redis.md
 3c4da8b43248e99c08e44477f5c67e02  doc/eng-us/help/dxp-developers/building-assets-with-yarn-and-encore.md
 e08e88e7605897ea0ddc0daaea08224f  doc/eng-us/help/dxp-developers/choosing-dxp-legacy-nexus-or-exponential-6.md
@@ -8272,7 +8272,7 @@ abae68073f7e901caad77f5e8867aa29  doc/eng-us/help/extension-development/part-8-r
 1147b9dd3530ed2f52a8106dfbd59639  doc/eng-us/help/extension-development/part-8-reference/template-operators-reference.md
 41d53309d3d564e95ea7a8b649c95ce5  doc/eng-us/help/extension-development/reading-paths.md
 87eea8cc93952837b7c7303b9c47531e  doc/eng-us/help/free-documentation.md
-02b35930fffaaddec3fee55adfea13ed  doc/eng-us/help/getting-started.md
+05b0efe606d31a62f6ecda37f2f702c7  doc/eng-us/help/getting-started.md
 3a3f9887f08e32228932fec65b882e41  doc/eng-us/help/government/accessibility/README.md
 bedecfb6dc63425aac8e0ef8d09fb9fa  doc/eng-us/help/government/accessibility/accessible-content-for-editors.md
 05af954e0adf2d3d67fd83ccf6d79e70  doc/eng-us/help/government/accessibility/accessible-forms.md
@@ -8462,7 +8462,7 @@ c01855605fa14bfb59bc31226e98b27f  doc/eng-us/help/government/faq/training-faq.md
 7fb26743e88898a0450586a32929b8da  doc/eng-us/help/government/glossary/terms-g-to-l.md
 1b1dcbd6b28aaf38f1b451e81b3adaf0  doc/eng-us/help/government/glossary/terms-m-to-r.md
 8bfd5096a27a4d742add7249e60a375b  doc/eng-us/help/government/glossary/terms-s-to-z.md
-daaca555083f9cd61a682ae4fbf44dfa  doc/eng-us/help/government/government-start-here.md
+24cd71173477faa253afad9b57d9d04c  doc/eng-us/help/government/government-start-here.md
 f43d7ab7aa67e58725443a2ba9945c3f  doc/eng-us/help/government/languages/README.md
 b5efc8629256b25cb844491dcf765251  doc/eng-us/help/government/languages/a-siteaccess-per-language.md
 c6b27bf939cf1599ec70f852a4f94fbf  doc/eng-us/help/government/languages/adding-a-content-language.md
@@ -9207,7 +9207,7 @@ c140d17abea03ae8aaba964299ce4454  doc/eng-us/help/hosting/checklists/new-custome
 31d32ad60291b4dd4d013dd8ad17fe21  doc/eng-us/help/hosting/checklists/new-server.md
 2d8412936d033b8e3f8dc6a772aa05e6  doc/eng-us/help/hosting/checklists/security-review.md
 7f66d1ee1a3f3d5128bd18e459bfe919  doc/eng-us/help/hosting/glossary-for-hosts.md
-66d325deb7f4d8e52814cfe0cdb15951  doc/eng-us/help/hosting/hosting-companies-start-here.md
+8ca5a04c2760d39290c5d5d575d66316  doc/eng-us/help/hosting/hosting-companies-start-here.md
 4f936fe7d4e22a4ff6fb544c1e18b5c1  doc/eng-us/help/hosting/migrations/README.md
 e540033f8d3fb741f7e5d6b3c21f9514  doc/eng-us/help/hosting/migrations/changing-the-database-engine.md
 468dc119ef3791b572fcf07cc31eb1b3  doc/eng-us/help/hosting/migrations/from-ez-platform-and-ibexa.md
@@ -9911,7 +9911,7 @@ ebacb27d19a0e9fbd099cf508cf4d363  doc/eng-us/help/leadership/estimating-and-scop
 f27b47a6676b1286de1b41b5217defb1  doc/eng-us/help/leadership/leadership-reading-path.md
 8760d50137873302c70deabcb619caeb  doc/eng-us/help/leadership/multisite-and-multilingual-planning.md
 459395b4c0e371be042e824162de2b93  doc/eng-us/help/leadership/planning-an-exponential-project.md
-a98d9e6418f429d0003f888062562463  doc/eng-us/help/leadership/project-managers-start-here.md
+5284b8f84edeffea64e304af553d4df0  doc/eng-us/help/leadership/project-managers-start-here.md
 d9d1b521d4db9e6ae074ffc5479ae0f9  doc/eng-us/help/leadership/project-templates.md
 1f0645735c68cd2bddb5983926613a0e  doc/eng-us/help/leadership/quality-gates-and-acceptance.md
 ce99a7f1ecda63487a4de1959570adeb  doc/eng-us/help/leadership/release-and-upgrade-planning.md
@@ -10262,7 +10262,7 @@ b14018a315f289976fa277a9e3c65dcc  doc/eng-us/help/partners/partner-plans-and-pri
 f102763958261f6c926527d9219bbd06  doc/eng-us/help/partners/partner-program-at-a-glance.md
 fb875dd4d6d302a1729b5585511a0f19  doc/eng-us/help/partners/partner-reading-path.md
 67d54cdbb4daf26b2a1add7272819c75  doc/eng-us/help/partners/partner-requirements.md
-c44eaa335f242fcee70b8475f2b5d869  doc/eng-us/help/partners/partners-start-here.md
+16aec4730494e319a8ca8b703a816e70  doc/eng-us/help/partners/partners-start-here.md
 f3422605db37d4c5c33e253b43df11ed  doc/eng-us/help/partners/powered-by-exponential.md
 f300ebbb1b7c6feee9742c3f5b890d2c  doc/eng-us/help/partners/pre-sales-support.md
 c4cdf249a906c023d49c8da24156b609  doc/eng-us/help/partners/press-releases-and-announcements.md
@@ -10456,7 +10456,7 @@ a0d432410faa2078c0fd57355d3625d1  doc/eng-us/help/press/podcast-and-radio-guests
 6ca46120ae538d3e24ad16703182cba6  doc/eng-us/help/press/press-checklists.md
 65f289b63eb80752c08b7012e640e2d7  doc/eng-us/help/press/press-contacts.md
 d0fcc7cdbd0a54352487ed7bc4567917  doc/eng-us/help/press/press-reading-path.md
-58379791199883f3d6b3d1ce59eca7d7  doc/eng-us/help/press/press-start-here.md
+145cbff72083e4924fb0e10aa7dbab4d  doc/eng-us/help/press/press-start-here.md
 72fc16189e7560dfb798387d56e8267e  doc/eng-us/help/press/privacy-in-coverage.md
 a01332e46c0ad861645c779fbcae6021  doc/eng-us/help/press/privacy-on-camera.md
 262ababeb825f34f708458e25afa9e40  doc/eng-us/help/press/published-versions-never-change.md
@@ -10750,7 +10750,7 @@ df1cf878607a8674de72551448469ad7  doc/eng-us/help/sponsors/sponsor-recognition.m
 c8039cc5c1b49bddded1428e8d7ddab9  doc/eng-us/help/sponsors/sponsoring-7x.md
 28a9ce346a67a80bdd4c722c94394b9f  doc/eng-us/help/sponsors/sponsoring-as-a-company.md
 62db8959f557e647cbce5da15c213003  doc/eng-us/help/sponsors/sponsoring-the-foundation.md
-3058d537e4e2e1d667ab450001a49822  doc/eng-us/help/sponsors/sponsors-start-here.md
+d2efb2d8bc08edc8fd0835d289e88cd3  doc/eng-us/help/sponsors/sponsors-start-here.md
 18b7d3b749ba29f1b1efd2bcb4c4fcbb  doc/eng-us/help/sponsors/two-organizations-two-sponsor-pages.md
 974ea7c86f7bfa06fd31a49b4c612a76  doc/eng-us/help/sponsors/what-sponsorship-funds.md
 0a15a3cdf80e301b1531867ca2882cb8  doc/eng-us/help/students/asking-for-help-and-study-groups.md
@@ -10816,7 +10816,7 @@ b37ae2fb8efd50b36ac682d72a5e6c14  doc/eng-us/help/supporters/contributing-docume
 0e0a9e013ccbb290f9d806b78c33b2aa  doc/eng-us/help/supporters/helping-in-the-community.md
 15fa030b72992e3aadec2c8c46c46944  doc/eng-us/help/supporters/recognition-for-supporters.md
 6d699fcbe3ce1b2cbbb02b0a65be8a15  doc/eng-us/help/supporters/supporter-faq.md
-b2a9ac96fcaf3c7074eec66a314fdd2c  doc/eng-us/help/supporters/supporters-start-here.md
+686d025e457dc02e8c6fa10990cf61bc  doc/eng-us/help/supporters/supporters-start-here.md
 d3cfe57d2b77943ca114e2475d5a166f  doc/eng-us/help/supporters/supporting-as-a-company.md
 cbf80dfedb9360e85e7faa0cc3681cac  doc/eng-us/help/supporters/testing-and-reporting-bugs.md
 e2480a551ccd32045ec618c0cc82ebd2  doc/eng-us/help/supporters/ways-to-support-exponential.md
@@ -11480,7 +11480,7 @@ f6167cc00e61071665ed79e5d4e2c141  doc/eng-us/help/trainers/train-the-trainer/mod
 ab4e333312de8e464f5a88c54353b989  doc/eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md
 86bfff6c07e0e636fb706eebde390516  doc/eng-us/help/trainers/trainer-faq.md
 6c0fc269ca702f480554866bec1ac071  doc/eng-us/help/trainers/trainer-toolkit.md
-9fb6d13edfb029c8f5ad1b125cb09be7  doc/eng-us/help/trainers/trainers-start-here.md
+0e41495d8df18f438b344dc3e4fdf63c  doc/eng-us/help/trainers/trainers-start-here.md
 4cec7302970fe45e180fbc1e937833d7  doc/eng-us/help/trainers/workshops/README.md
 c6301cb7b4f9ce0ba854755a0a7d4b32  doc/eng-us/help/trainers/workshops/module-01-planning-a-workshop/README.md
 f3f0c568e64eb1f8e866ccd6cabde91a  doc/eng-us/help/trainers/workshops/module-01-planning-a-workshop/choosing-a-format.md

@@ -114,6 +114,9 @@ This section links to the other sections instead of repeating them:
 - [Getting started](../getting-started.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
+<!-- exp-see-also-645 -->
+**See also:** [Adopters](../adopters/adopters-start-here.md), [E-commerce](../e-commerce/e-commerce-start-here.md), [Local businesses](../local-businesses/local-businesses-start-here.md), [Individuals](../individuals/individuals-start-here.md), [Non-technical people](../non-technical-people/non-technical-people-start-here.md).
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

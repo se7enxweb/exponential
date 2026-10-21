@@ -138,6 +138,9 @@ first sign-in.
 - [Two-step sign-in](../guides/two-factor-login.md), for administrators who set it up.
 - [Getting started](getting-started.md)
 
+<!-- exp-see-also-645 -->
+**See also:** [Non-technical people](non-technical-people/non-technical-people-start-here.md).
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
