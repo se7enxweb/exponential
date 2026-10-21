@@ -25,7 +25,7 @@ Die vollständige Dokumentation ist [Backend-Dienste über ezjscore](../../../bc
 | Fehler | `error_text` | `{ "ok": false, "error": { "code": 403, "message": ... } }` mit Codes nach HTTP-Art |
 | Listen | Ihr eigenes Format | seitenweise: `data` plus `meta` (`total`, `offset`, `limit`, `count`, `has_more`) |
 | Auffindbarkeit | keine | `expservices::catalog` listet jeden Dienst mit seiner Deklaration |
-| Clients außerhalb des Browsers | das Session-Cookie | zusätzlich persönliche API-Tokens (Header `X-Exp-Token`) |
+| Clients außerhalb des Browsers | das Sitzungs-Cookie | zusätzlich persönliche API-Tokens (Header `X-Exp-Token`) |
 
 ## Einen Dienst schreiben
 

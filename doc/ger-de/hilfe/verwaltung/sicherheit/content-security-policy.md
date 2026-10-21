@@ -32,7 +32,7 @@ Richtlinie eine starke zweite Verteidigungslinie
 | Administration (Design beginnt mit `admin`, oder ein Editor-Siteaccess auf admin4l) | **Report-only**: Der Browser meldet, was er blockieren würde, und blockiert nichts |
 | öffentliche Websites | **keine Richtlinie** |
 
-Das Projekt bewertet seine CSP-Unterstützung mit **Partly complies** gegenüber CSP Level 3
+Das Projekt bewertet seine CSP-Unterstützung mit **Teilweise erfüllt** gegenüber CSP Level 3
 (<https://www.w3.org/TR/CSP3/>); das Durchsetzen ist eine Entscheidung des Betreibers je Siteaccess
 ([Sicherheitsstandards: Content Security Policy Level 3](../../../../eng-us/standards/security.md#content-security-policy-level-3)).
 Unabhängig davon begrenzt `SecurityHeaders[Content-Security-Policy]=frame-ancestors 'self'` das Einbetten in Frames auf

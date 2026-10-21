@@ -60,13 +60,13 @@ Aus den „Rules every service follows“ (Regeln, die jeder Dienst befolgt) und
 - Jeder Dienst erklärt seinen Zugriff: öffentlich, jeder angemeldete Benutzer oder eine bestimmte Richtlinie. „401
   without login, 403 without the policy“ (401 ohne Anmeldung, 403 ohne die Richtlinie).
 - **Schreibzugriffe** brauchen ein POST, das Formular-Token und die Richtlinie, und „every successful write records“
-  (jeder erfolgreiche Schreibzugriff zeichnet) ein Ereignis im Audit-Trail auf.
+  (jeder erfolgreiche Schreibzugriff zeichnet) ein Ereignis im Prüfprotokoll auf.
 - Große Vorgänge gehen in Inhaltsjobs im Hintergrund, statt eine Anfrage zu blockieren.
 - Ein **Hauptschalter** (`expservices.ini [Services] Enabled`): Wenn er ausgeschaltet ist, antwortet jeder Dienst mit
   403.
 - Listen werden seitenweise geliefert: standardmäßig 25 Einträge, höchstens 200.
 - **Persönliche Tokens** für Skripte und Apps werden einmal angezeigt, nur als Hash gespeichert, laufen nach 1 bis 365
-  Tagen ab und werden beim Anlegen, Widerrufen oder Ablehnen im Audit-Trail aufgezeichnet
+  Tagen ab und werden beim Anlegen, Widerrufen oder Ablehnen im Prüfprotokoll aufgezeichnet
   ([Apps und API-Schlüssel](apps-und-api-schluessel.md#tokens-für-expservices)).
 
 > **Hinweis**

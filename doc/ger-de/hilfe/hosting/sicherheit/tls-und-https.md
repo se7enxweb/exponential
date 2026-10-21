@@ -81,7 +81,7 @@ Preload braucht `HSTSIncludeSubDomains` und mindestens ein Jahr
 ## Sichere Cookies
 
 `settings/site.ini [Session]`, mit den Standards, die gelten, solange die Schlüssel nicht gesetzt sind
-([13.7](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)):
+([13.7](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)):
 
 | Schlüssel | Standard | Für eine Website nur mit HTTPS |
 |---|---|---|

@@ -3,7 +3,7 @@ title: Überprüfung der Administrationszugänge
 audience: government, admin, project-manager
 category: public-sector
 order: 150
-summary: Eine regelmäßige Überprüfung, wer auf einer öffentlichen Website welche Rechte hat - Administratoren, Personen, die Rollen ändern, Kontenadministratoren, Prüfer und Fachbereiche - mit den Kennzeichen der Rollenliste, den Rollenseiten, Benutzerkonten prüfen, dem CSV-Export und dem Audit-Trail, mit einem Nachweis, dem ein Prüfer folgen kann.
+summary: Eine regelmäßige Überprüfung, wer auf einer öffentlichen Website welche Rechte hat - Administratoren, Personen, die Rollen ändern, Kontenadministratoren, Prüfer und Fachbereiche - mit den Kennzeichen der Rollenliste, den Rollenseiten, Benutzerkonten prüfen, dem CSV-Export und dem Prüfprotokoll, mit einem Nachweis, dem ein Prüfer folgen kann.
 keywords: Überprüfung der Zugänge, Überprüfung der Benutzerzugänge, Rezertifizierung, Berechtigungsprüfung, Administrationsrechte, voller Zugriff, Kann Rollen ändern, Rollenliste, Audit, CSV-Export, vierteljährliche Überprüfung, ISO 27001, NIST, access review, user access review, recertification, entitlement review, admin rights, full access, Can change roles, role list, CSV export, quarterly review
 type: help
 ---
@@ -74,7 +74,7 @@ Sehen Sie sich im Tab **Audit** (`/audit/console`) oder auf der Kommandozeile de
 
 Die Alarmregel `admin_role_granted` löst jedes Mal aus, wenn eine Administratorrolle vergeben wird; jeder ausgelöste Alarm sollte
 zu einer Anfrage in Ihrem Ticketsystem passen. Prüfen Sie, ob die Kette intakt ist: `./console exp:audit verify --allow-root-user`
-([Überprüfung des Audit-Trails](../ueberwachung/pruefung-des-audit-trails.md)).
+([Überprüfung des Prüfprotokolls](../ueberwachung/pruefung-des-audit-trails.md)).
 
 ## Schritt 4: handeln und festhalten
 
@@ -87,7 +87,7 @@ zu einer Anfrage in Ihrem Ticketsystem passen. Prüfen Sie, ob die Kette intakt 
 | Vergabe ohne Ticket | untersuchen Sie sie; siehe [Verdacht auf ein kompromittiertes Konto](../vorfaelle/verdacht-auf-kompromittiertes-konto.md) |
 
 Nachweis: Datum, prüfende Person, der CSV-Export, die Liste der Rollen mit Kennzeichen, Befunde und Maßnahmen. Rollenänderungen und
-Deaktivierungen stehen selbst im Audit-Trail, was den Nachweis mit den Belegen verbindet.
+Deaktivierungen stehen selbst im Prüfprotokoll, was den Nachweis mit den Belegen verbindet.
 
 ## Zeitplan
 

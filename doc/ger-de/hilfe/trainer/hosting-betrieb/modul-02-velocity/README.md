@@ -3,7 +3,7 @@ title: "Modul 2: Velocity"
 audience: trainer, hosting, admin
 category: training
 order: 20
-summary: Das zweite Modul von Hosting und Betrieb, was Velocity ist, es am Laufen halten, Worker und Pools, der Antwort-Cache und HTTPS-Zertifikate. Vier Lektionen, 3 Stunden.
+summary: Das zweite Modul von Hosting und Betrieb, was Velocity ist, ihn am Laufen halten, Worker und Pools, der Antwort-Cache und HTTPS-Zertifikate. Vier Lektionen, 3 Stunden.
 keywords: hosting und betrieb, modul 2, Velocity, qbix, exp:velocity, worker, pool, antwort-cache, HTTPS, zertifikate, watchdog, systemd, hosting and operations, module 2, workers, response cache, certificates
 type: help
 ---

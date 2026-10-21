@@ -4,7 +4,7 @@ audience: businesses, admin, hosting
 category: business-solutions
 order: 60
 summary: Eine kopierfertige monatliche Checkliste, damit eine laufende Exponential-Website gesund und sicher bleibt - Releases und Updates, Backups, Logs und Fehler, Sicherheit, Konten, Jobs, Inhalte und Formulare - mit dem Ort, an dem jede Prüfung stattfindet, und einem kurzen Bericht für die Geschäftsleitung.
-keywords: monatlicher Betrieb, Checkliste, Wartung, Updates, Backups, Logs, Fehler, Sicherheit, Audit-Trail, Konten, Cronjobs, Festplatte, Bericht, Betrieb, monthly operations, checklist, maintenance, logs, errors, security, audit trail, accounts, cron jobs, disk, report, operations
+keywords: monatlicher Betrieb, Checkliste, Wartung, Updates, Backups, Logs, Fehler, Sicherheit, Prüfprotokoll, Konten, Cronjobs, Festplatte, Bericht, Betrieb, monthly operations, checklist, maintenance, logs, errors, security, audit trail, accounts, cron jobs, disk, report, operations
 type: help
 ---
 # Monatliche Betriebscheckliste
@@ -40,7 +40,7 @@ UPDATES                                                                     Erl.
 
 BACKUPS
 [ ] Backups liefen in diesem Monat jeden Tag                               [ ]   ____
-[ ] Backup umfasst Datenbank, Dateien, Einstellungen, Schlüssel, Audit-Trail [ ] ____
+[ ] Backup umfasst Datenbank, Dateien, Einstellungen, Schlüssel, Prüfprotokoll [ ] ____
 [ ] Wiederherstellungstest in diesem Quartal? (Datum: ______)              [ ]   ____
 
 LOGS UND FEHLER
@@ -56,7 +56,7 @@ SICHERHEIT
 
 KONTEN
 [ ] Konten der Ausgeschiedenen des Monats deaktiviert                      [ ]   ____
-[ ] Neue Administratoren beabsichtigt? (Rollenzuweisungen im Audit-Trail)  [ ]   ____
+[ ] Neue Administratoren beabsichtigt? (Rollenzuweisungen im Prüfprotokoll) [ ]   ____
 
 JOBS UND INHALTE
 [ ] Cronjobs gelaufen (Cronjob-Seite)                                      [ ]   ____
@@ -79,7 +79,7 @@ Offene Risiken: ______________________________________________
 | Backups | der Backup-Bericht Ihres Hosters | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
 | Logs und 404-Fehler | der Log-Viewer | [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md), [Request-Logs](../../../../eng-us/features/6.0/request-logs.md) |
 | Speicherplatz und Zustand | **Systeminformationen** | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
-| Audit | der Tab **Audit**; `exp:audit verify` | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Audit | der Tab **Audit**; `exp:audit verify` | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
 | Cronjobs | die Cronjob-Seite | [Cronjob-Konsole](../../../../eng-us/features/6.0/cronjobs-console.md) |
 | Inhaltsprüfungen | Link- und Inhaltsprüfungen | [Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md) |

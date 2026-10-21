@@ -24,7 +24,7 @@ Kontenwerkzeuge aus [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/
 
 ## Grundsätze
 
-- **Nur persönliche Konten.** Ein Konto je Person, nie ein gemeinsamer Anmeldename für die „Agentur“: Der Audit-Trail erfasst Personen,
+- **Nur persönliche Konten.** Ein Konto je Person, nie ein gemeinsamer Anmeldename für die „Agentur“: Das Prüfprotokoll erfasst Personen,
   und **Benutzerkonten prüfen** kann dann Konten finden, die niemand nutzt. Der Filter **Doppelte E-Mail-Adresse** findet Konten, die
   mit einer gemeinsamen Teamadresse angelegt wurden.
 - **Eine Gruppe je Vertrag.** Legen Sie die Konten des Dienstleisters in eine eigene Benutzergruppe (zum Beispiel „Vertrag 2026-07 -
@@ -71,7 +71,7 @@ Debug-Ausgabe nur für die eigene Adresse ist mit einem Ablaufdatum in `DebugIPL
 ## Während des Vertrags
 
 - Verlangen Sie die zweistufige Anmeldung für die Konten des Vertrags ([Zwei-Faktor für Beschäftigte](zwei-faktor-anmeldung-fuer-beschaeftigte.md)).
-- Sehen Sie sich den Kanal `access` des Audit-Trails für ihre Anmeldungen an, wenn Ihr Vertrag eine Überwachung verlangt.
+- Sehen Sie sich den Kanal `access` des Prüfprotokolls für ihre Anmeldungen an, wenn Ihr Vertrag eine Überwachung verlangt.
 - Wenn sich der Ordner ändert, ändern Sie die eingeschränkte Zuweisung, nicht die Rolle.
 
 ## Am Ende des Vertrags
@@ -86,7 +86,7 @@ Debug-Ausgabe nur für die eigene Adresse ist mit einem Ablaufdatum in `DebugIPL
 5. Entfernen Sie IP-Adressen des Dienstleisters aus allen Freigabelisten für Debug-Ausgabe oder Netzwerkzugang.
 
 Das Entfernen eines Benutzerkontos ist endgültig (Benutzerobjekte kommen nie in den Papierkorb), deshalb wird Deaktivieren oder
-Deaktivieren und verschieben bevorzugt: Der Audit-Trail und die Inhalte behalten einen gültigen Eigentümer.
+Deaktivieren und verschieben bevorzugt: Das Prüfprotokoll und die Inhalte behalten einen gültigen Eigentümer.
 
 ## Verwandte Seiten
 - [Einen Dienstleister nur einen Ordner bearbeiten lassen](../../../../../eng-us/help/government/tasks/people-and-permissions/let-a-contractor-edit-only-one-folder.md)

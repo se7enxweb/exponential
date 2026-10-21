@@ -31,7 +31,7 @@ jeder Frage die Stelle in Exponential zu, die sie beantwortet, und schlägt eine
 | Sondiert uns jemand? | `security.log`, `404.log` | [Anfrage-Logs](anfrageprotokolle-404-und-sicherheit.md) |
 | Würde die Content Security Policy etwas kaputt machen? | `csp.log` | [CSP-Berichte](csp-berichte.md) |
 | Hat jemand etwas Riskantes getan? | die Audit-Warnungen | [Audit-Warnungen](audit-warnungen.md) |
-| Ist die Aufzeichnung unversehrt? | `exp:audit verify` | [Prüfung des Audit-Trails](pruefung-des-audit-trails.md) |
+| Ist die Aufzeichnung unversehrt? | `exp:audit verify` | [Prüfung des Prüfprotokolls](pruefung-des-audit-trails.md) |
 | Laufen die geplanten Jobs? | **Setup > Cronjobs**, die Zustandsprüfung der Cronjobs | [Überwachung der Cronjobs](ueberwachung-der-cronjobs.md) |
 | Haben sich Dateien unerwartet geändert? | **Setup > Upgrade-Prüfung**; `checkmanifest.php` | [Upgrade-Prüfung als Überwachung](upgrade-pruefung-als-ueberwachung.md) |
 | Bleiben die Logs im Rahmen? | **Zustand der Logs**; Rotationseinstellungen | [Aufbewahrung und Rotation von Logs](aufbewahrung-und-rotation-von-protokollen.md) |
@@ -50,7 +50,7 @@ Befehle, die mit einem aussagekräftigen Exit-Code oder JSON enden und sich für
 | die Syslog-Senke des Audits | Einträge im Syslog, `journalctl -t exponential` mit `Transport=local` |
 
 Die Warnungssenken des Audits (Syslog, ein signierter Webhook, E-Mail) schicken Ihnen Ereignisse zu
-([Audit-Trail, „Sinks, alerts and archives“](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)).
+([Prüfprotokoll, „Sinks, alerts and archives“](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)).
 
 ## Eine Routine
 
@@ -75,7 +75,7 @@ eine organisatorische Angelegenheit außerhalb der Software.
 - [Vorfälle](../vorfaelle/README.md)
 - [Zustandsprüfungen und Verfügbarkeit (Hosting)](../../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)
 - [Betrieb einer Website](../../../../anleitungen/betrieb-einer-website.md)
-- [Kursmodul Logs und Audit-Trail](../../../../../eng-us/help/trainers/site-administrators/README.md)
+- [Kursmodul Logs und Prüfprotokoll](../../../../../eng-us/help/trainers/site-administrators/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

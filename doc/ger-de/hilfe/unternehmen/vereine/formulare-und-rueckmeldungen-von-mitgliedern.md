@@ -102,7 +102,7 @@ CAPTCHA-Anbieter in Ihrer Datenschutzerklärung.
 ## Aufräumen
 
 - **CSV exportieren** liefert eine Tabelle mit den Einsendungen eines Formulars; formelähnliche Werte werden
-  entschärft, und jeder Export wird ohne die Werte im Audit-Trail festgehalten.
+  entschärft, und jeder Export wird ohne die Werte im Prüfprotokoll festgehalten.
 - **Ausgewählte entfernen** löscht Einsendungen nach einer Bestätigung; die Formulare bleiben erhalten.
 - Entfernen Sie alte Einsendungen nach einem Zeitplan, den Sie benennen können, und löschen Sie Exporte, wenn Sie
   fertig sind.

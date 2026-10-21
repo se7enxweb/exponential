@@ -47,7 +47,7 @@ letzten Tag, nicht Wochen später.
 
 ## Prüfen und festhalten
 
-- [ ] Prüfen Sie seine letzten Aktionen im Audit-Trail (`/audit/console`).
+- [ ] Prüfen Sie seine letzten Aktionen im Prüfprotokoll (`/audit/console`).
 - [ ] Versuchen Sie, sich in einem Testbrowser mit seinem alten Konto anzumelden: Es muss scheitern.
 - [ ] Halten Sie fest, was von wem wann entfernt wurde.
 - [ ] Lassen Sie sich schriftlich bestätigen, dass der Auftragnehmer alle Kopien Ihrer Daten zurückgegeben oder gelöscht hat, wie der Vertrag es verlangt.

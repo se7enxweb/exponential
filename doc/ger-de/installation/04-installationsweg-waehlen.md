@@ -105,7 +105,7 @@ CheckValidity=true
 ```
 
 Solange dieser Wert `true` ist, leitet der Kernel (`ezpKernelWeb`) jede Anfrage an das Modul `setup`, View `init`,
-mit dem Pagelayout `[SetupSettings] PageLayout=setup_pagelayout.tpl` und ohne Session oder Datenbank. `CreateSites`
+mit dem Pagelayout `[SetupSettings] PageLayout=setup_pagelayout.tpl` und ohne Sitzung oder Datenbank. `CreateSites`
 schreibt `CheckValidity=false` nach `settings/override/site.ini.append.php`, und ab der nächsten Anfrage wird die
 Website ausgeliefert. Der Assistent braucht zuerst einen funktionierenden Webserver ([Kapitel 8](08-die-website-ausliefern.md)),
 und er ist die einzige Methode, die jede Entscheidung auf einer Seite mit einer Erklärung zeigt. Er wird in

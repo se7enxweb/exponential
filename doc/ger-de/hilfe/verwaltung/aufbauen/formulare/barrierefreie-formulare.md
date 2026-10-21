@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Designer, die die Templates öffentlicher Formulare bauen. Ein Formular,
 das sich nicht mit Tastatur oder Screenreader ausfüllen lässt, schließt Menschen von einer öffentlichen Leistung aus.
 Die Formulare der Administration von Exponential wurden nach Kriterien der WCAG 2.2 AA gebaut und getestet
-(Beschriftungen, Fehlerzusammenfassungen, `aria-invalid`), mit dem Status **Partly complies**; die öffentlichen
+(Beschriftungen, Fehlerzusammenfassungen, `aria-invalid`), mit dem Status **Teilweise erfüllt**; die öffentlichen
 Formular-Templates gehören zu Ihrem Design und sind nicht geprüft
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Die Muster der Administration sind ein gutes
 Vorbild.

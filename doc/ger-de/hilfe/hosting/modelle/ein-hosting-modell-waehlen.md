@@ -74,7 +74,7 @@ Für einen Hosting-Anbieter heißt das:
 - **Shared Hosting**: Apache (oder LiteSpeed) mit `.htaccess` und einem PHP-FPM-Pool pro Konto.
 - **VPS und dediziert**: Velocity als Standard; Apache oder nginx, wenn ein Panel die Maschine verwaltet oder der Kunde es
   möchte. Beide können während einer Migration nebeneinander auf denselben Dateien laufen.
-- **Container und Kubernetes**: Velocity als Prozess des Containers, da es keinen getrennten Webserver braucht und HTTPS
+- **Container und Kubernetes**: Velocity als Prozess des Containers, da er keinen getrennten Webserver braucht und HTTPS
   selbst ausliefert; oder ein Webserver-Container vor PHP-FPM.
 
 Details: [Einen Webserver wählen](../server/einen-webserver-waehlen.md) und

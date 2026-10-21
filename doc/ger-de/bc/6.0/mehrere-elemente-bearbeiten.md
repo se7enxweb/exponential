@@ -296,7 +296,7 @@ als auch die Schreibverstärkung einer präparierten Anfrage.
 
 ### Gegen ein echtes eingeschränktes Konto geprüft
 
-Die Prüfungen des Besitzes oben lassen sich mit einem Entwurf zeigen, dessen Ersteller sich vom Benutzer der Session
+Die Prüfungen des Besitzes oben lassen sich mit einem Entwurf zeigen, dessen Ersteller sich vom Benutzer der Sitzung
 unterscheidet, aber das beweist nur die Hälfte. Daher werden die Prüfungen auch als Konto ausgeführt, das **einen
 Teilbaum und sonst nichts** bearbeiten darf:
 

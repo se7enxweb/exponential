@@ -3,7 +3,7 @@ title: Handler, die über Einstellungen benannt werden
 audience: developer, app-creator
 category: extension-development
 order: 290
-summary: Einen Teil des Systems durch eine Klasse ersetzen, die eine Einstellung auswählt - getHandlerClass(), ein geprüfter Mail-Transport und die Handler-Punkte für Anmeldung, Session, Suche, Shop und mehr.
+summary: Einen Teil des Systems durch eine Klasse ersetzen, die eine Einstellung auswählt - getHandlerClass(), ein geprüfter Mail-Transport und die Handler-Punkte für Anmeldung, Sitzung, Suche, Shop und mehr.
 keywords: Handler, Mail-Transport, Anmelde-Handler, Session-Handler, Suchmaschine, Zahlungs-Gateway, Mehrwertsteuer, Versand, handler, getHandlerClass, ezpExtensionOptions, TransportAlias, mail transport, eZMailTransport, login handler, LoginHandler, session handler, search engine, binary file handler, payment gateway, VAT handler, shipping handler, handlerextension
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Teil 3, Kapitel 29. Viele Teile des Systems sind **Handler**: eine Klasse, die eine Einstellung auswählt. Der Kernel
 bringt eine Vorgabe mit, und eine Erweiterung kann eine andere bereitstellen und sie mit einer Zeile Einstellungen
-auswählen. Mail-Transporte, Anmeldung, Sessions, Suche, Speicherung von Binärdateien, Zahlungs-Gateways,
+auswählen. Mail-Transporte, Anmeldung, Sitzungen, Suche, Speicherung von Binärdateien, Zahlungs-Gateways,
 Mehrwertsteuer und Versand sind alles Handler. Dieses Kapitel zeigt den Mechanismus an einem Mail-Transport; seine
 Auflösung wurde bei geladenem Kernel geprüft (es wurde nichts versendet).
 
@@ -90,7 +90,7 @@ Einige Registrierungen aus [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungs
 | Handler | Registriert durch | Vertrag |
 |---|---|---|
 | Anmeldung | `site.ini [UserSettings] LoginHandler[]` und `ExtensionDirectory[]` | erweitert `eZUser`, implementiert `loginUser()` |
-| Session | `site.ini [Session] Handler` | eine Session-Handler-Klasse |
+| Sitzung | `site.ini [Session] Handler` | eine Session-Handler-Klasse |
 | Suchmaschine | `site.ini [SearchSettings] SearchEngine` | implementiert `ezpSearchEngine` |
 | Mail | `site.ini [MailSettings] Transport` und `TransportAlias[]` | erweitert `eZMailTransport`, implementiert `sendMail()` |
 

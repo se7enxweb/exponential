@@ -29,7 +29,7 @@ Diese Seite richtet sich an Administratoren. Jede Mail, die die Installation sen
 - Schreibt `From`, `Reply-To` oder `Subject` nie um.
 - Hält notwendige Mails (Zurücksetzen des Passworts, Aktivierung) von optionalen Mails getrennt.
 
-Der Datenschutzstandard bewertet das für Mails, die durch das Gateway gehen, als **Complies**, wobei die folgenden
+Der Datenschutzstandard bewertet das für Mails, die durch das Gateway gehen, als **Erfüllt**, wobei die folgenden
 Punkte der Site überlassen bleiben.
 
 ## Was die Site ergänzen muss

@@ -48,7 +48,7 @@ OpenAI-kompatible Dienste oder Ollama).
 - Ein Hauptschalter (`[AISettings] Enabled`) und ein Veto-Hook.
 - Pro Anbieter: eine Region (`us`, `eu`, `local`) und eine Aufbewahrungsdauer; Regeln pro Sektion und Klasse.
 - Jede Anfrage in einem Verbrauchsprotokoll (nur Benutzer-IDs), geschätzte Kosten, Limits und Budgets.
-- Jede Anfrage, jeder Entwurf und jede Zustandsänderung eines Entwurfs im Kanal `ai` des Audit-Trails; Prompts,
+- Jede Anfrage, jeder Entwurf und jede Zustandsänderung eines Entwurfs im Kanal `ai` des Prüfprotokolls; Prompts,
   Antworten und Schlüssel werden nie aufgezeichnet. **EI: Übersicht** gibt einer oder einem Datenschutzbeauftragten
   eine druckbare Seite.
 

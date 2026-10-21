@@ -25,9 +25,9 @@ dokumentierte Lage zeigt, sodass Sie dem Bieter eine genaue Frage stellen könne
 
 | Behauptung in einem Angebot | Dokumentierte Lage |
 |---|---|
-| „Exponential ist konform mit WCAG 2.2 AA“ | admin4/admin4l „Partly complies“; öffentliche Designs nicht geprüft ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
-| „Für Exponential ist ein VPAT / Accessibility Conformance Report verfügbar“ | es gibt keinen; Section 508 und EN 301 549 sind „Unverified“ |
-| „Zertifiziert nach OWASP ASVS“ | es wurde keine Bewertung nach ASVS durchgeführt: „Unverified“ ([Sicherheitsstandards](../../../../../eng-us/standards/security.md#owasp-asvs-403)) |
+| „Exponential ist konform mit WCAG 2.2 AA“ | admin4/admin4l „Teilweise erfüllt“; öffentliche Designs nicht geprüft ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
+| „Für Exponential ist ein VPAT / Accessibility Conformance Report verfügbar“ | es gibt keinen; Section 508 und EN 301 549 sind „nicht geprüft“ |
+| „Zertifiziert nach OWASP ASVS“ | es wurde keine Bewertung nach ASVS durchgeführt: „Nicht geprüft“ ([Sicherheitsstandards](../../../../../eng-us/standards/security.md#owasp-asvs-403)) |
 | „Schutz gegen Brute-Force ist eingebaut und eingeschaltet“ | die Kontosperre ist standardmäßig aus; Brute-Force wird von Alarmregeln des Audits erkannt |
 | „Eine strenge Content Security Policy schützt die Website“ | Report-only in der Administration, standardmäßig keine auf Websites |
 | „DSGVO-konform ab Werk“ | Funktionen werden bereitgestellt; die Einhaltung ist Aufgabe der Organisation, und es gibt kein Cookie-Banner ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)) |

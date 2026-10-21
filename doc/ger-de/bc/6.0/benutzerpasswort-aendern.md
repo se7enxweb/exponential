@@ -26,8 +26,8 @@ Diese Seite beschreibt, was eine Website, ein Design oder eine Erweiterung nach 
 - **`$message` ist 0, wenn nur eine der neuen optionalen Regeln nicht erfüllt ist.** Ein Template, das nur die drei
   alten Flags kennt, zeigt in diesem Fall keine Meldung an statt seines Textes „erfolgreich geändert“. Templates
   sollten `$password_changed` und `$has_errors` verwenden.
-- **Die Session-ID wird nach einer Änderung erneuert**, und `[PasswordSettings] EndOtherSessions` beendet die
-  anderen Sessions des Benutzers: Sie werden bei ihrer nächsten Anfrage über den Passwortstempel (siehe unten)
+- **Die Sitzungs-ID wird nach einer Änderung erneuert**, und `[PasswordSettings] EndOtherSessions` beendet die
+  anderen Sitzungen des Benutzers: Sie werden bei ihrer nächsten Anfrage über den Passwortstempel (siehe unten)
   abgemeldet, mit jedem Session-Handler; der Datenbank-Handler löscht sie außerdem sofort.
 - **Nach jeder Änderung wird eine E-Mail gesendet** (`[PasswordSettings] ChangeNotificationMail=enabled`), in der
   unverzichtbaren Kategorie `security`. Sie schalten sie mit `ChangeNotificationMail=disabled` aus.
@@ -46,8 +46,8 @@ Diese Seite beschreibt, was eine Website, ein Design oder eine Erweiterung nach 
 | `$field_ids` | hash | `password-old`, `password-new` und `password-confirm`, mit dem POST-Namen als Schlüssel |
 | `$error_summary` | list | `{field, field_id, text}` für jeden Fehler, in der Reihenfolge der Felder (`field` ist `''` bei einem Fehler des ganzen Formulars) |
 | `$has_errors` | bool | ob die Zusammenfassung Einträge hat |
-| `$sessions_ended` | int oder null | wie viele andere Sessions der Session-Handler sofort gelöscht hat; null, wenn er das nicht kann (der PHP-Handler) |
-| `$other_sessions_signed_out` | bool | die anderen Sessions werden bei ihrer nächsten Anfrage abgemeldet (der Passwortstempel, `EndOtherSessions`) |
+| `$sessions_ended` | int oder null | wie viele andere Sitzungen der Session-Handler sofort gelöscht hat; null, wenn er das nicht kann (der PHP-Handler) |
+| `$other_sessions_signed_out` | bool | die anderen Sitzungen werden bei ihrer nächsten Anfrage abgemeldet (der Passwortstempel, `EndOtherSessions`) |
 | `$notification_sent` | bool | ob die E-Mail an den Transport übergeben wurde |
 | `$redirect_uri` | string | wohin Abbrechen führt, für einen Link „Weiter“ |
 | `$password_js_config`, `$password_js_config_json` | hash, string | die Konfiguration für das gemeinsame Skript; geben Sie sie als `data-exp-password-config="{$password_js_config_json|wash}"` aus |
@@ -59,19 +59,19 @@ Das Skript liest diese Hooks: `data-exp-password-form` (das Formular), `data-exp
 ## Anmeldung und currentUser(): der Passwortstempel
 
 - `eZUser::setCurrentlyLoggedInUser()` (eine echte Anmeldung, kein Wechsel mit `NO_SESSION_REGENERATE`) schreibt die
-  Session-Variable `eZUserPasswordStamp`. `eZUser::logoutCurrent()` entfernt sie.
-- `eZUser::currentUser()` meldet eine Session ab, wenn ihr Stempel zu einem Passwort gehört, das sich seitdem
+  Sitzungsvariable `eZUserPasswordStamp`. `eZUser::logoutCurrent()` entfernt sie.
+- `eZUser::currentUser()` meldet eine Sitzung ab, wenn ihr Stempel zu einem Passwort gehört, das sich seitdem
   geändert hat. Das schließt eine Änderung durch einen Administrator, durch content/edit des Kontos, durch „Passwort
   vergessen?“ oder über die Konsole ein. Code, der das Passwort eines Benutzers ändert und erwartet, dass die anderen
-  Sessions dieses Benutzers angemeldet bleiben, sieht sie abgemeldet; setzen Sie
+  Sitzungen dieses Benutzers angemeldet bleiben, sieht sie abgemeldet; setzen Sie
   `[PasswordSettings] EndOtherSessions=disabled`, um das alte Verhalten beizubehalten.
-- `eZUser::store()` gibt der eigenen Session des gespeicherten Benutzers (wenn er der Benutzer der aktuellen Session
+- `eZUser::store()` gibt der eigenen Sitzung des gespeicherten Benutzers (wenn er der Benutzer der aktuellen Sitzung
   ist) den neuen Stempel und aktualisiert die Benutzerobjekte, die die Anfrage hält
-  (`$GLOBALS['eZUserGlobalInstance_…']`), sodass die Session, die ihr eigenes Passwort ändert, angemeldet bleibt.
-- Eine Session ohne Stempel (vor dem Upgrade angemeldet), der anonyme Benutzer und Konten mit leerem Passwort-Hash
+  (`$GLOBALS['eZUserGlobalInstance_…']`), sodass die Sitzung, die ihr eigenes Passwort ändert, angemeldet bleibt.
+- Eine Sitzung ohne Stempel (vor dem Upgrade angemeldet), der anonyme Benutzer und Konten mit leerem Passwort-Hash
   (LDAP-, Textdatei- und SSO-Benutzer) werden nicht geprüft.
 - Das erneute Hashen mit `UpdateHash` bei der Anmeldung gibt jetzt den Benutzer mit dem neuen Hash zurück und leert
-  den Cache dieses Benutzers, der bisher den alten Hash behielt, bis er ablief. Die anderen Sessions des Benutzers
+  den Cache dieses Benutzers, der bisher den alten Hash behielt, bis er ablief. Die anderen Sitzungen des Benutzers
   werden nach einem solchen erneuten Hashen einmal abgemeldet.
 - Bei einer Abweichung liest `currentUser()` die gespeicherte Zeile einmal, bevor es abmeldet, weil der
   Benutzer-Cache älter als das Passwort sein kann. `eZUser::purgeUserCacheByUserId()` macht die Cache-Datei in
@@ -98,9 +98,9 @@ Das Skript liest diese Hooks: `data-exp-password-form` (das Formular), `data-exp
 ## Session-Handler
 
 `ezpSessionHandler` hat eine neue Methode, `deleteOtherSessionsOfUser( $userID, $keepSessionKey )`, die die Zahl der
-beendeten Sessions zurückgibt oder null, wenn der Handler sie nicht beenden kann. Die Basisklasse gibt null zurück,
+beendeten Sitzungen zurückgibt oder null, wenn der Handler sie nicht beenden kann. Die Basisklasse gibt null zurück,
 sodass sich ein Handler, der die Methode nicht überschreibt, genau wie bisher verhält. `ezpSessionHandlerDB`
-überschreibt sie und beendet jede Session über `destroy()`, sodass die Callbacks `destroy_pre` und `destroy_post`
+überschreibt sie und beendet jede Sitzung über `destroy()`, sodass die Callbacks `destroy_pre` und `destroy_post`
 ausgeführt werden.
 
 ## Übersetzungen

@@ -35,7 +35,7 @@ ist oder nicht zu seinem Schlüssel passt.
 
 ## Unter Velocity
 
-Velocity prüft ein Zertifikat, bevor es es verwendet, und lässt ein selbstsigniertes Zertifikat einspringen, bis das
+Velocity prüft ein Zertifikat, bevor er es verwendet, und lässt ein selbstsigniertes Zertifikat einspringen, bis das
 echte verwendbar ist ([Velocity: HTTPS und Zertifikate](../../../../../eng-us/features/6.0/velocity-https-certificates.md)).
 
 ```bash

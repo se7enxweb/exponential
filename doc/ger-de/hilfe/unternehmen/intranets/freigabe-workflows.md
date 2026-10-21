@@ -121,8 +121,8 @@ aufgezeichneten Freigabeschritt; der Weg passt also eher zu Neustarts als zur t�
 
 ## Nachweis, wer was freigegeben hat
 
-Der Audit-Trail zeichnet Inhaltsänderungen, einschließlich Sektionen und Zuständen, in einem manipulationssicheren Log
-auf ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Zusammen mit der Versionsseite jedes Objekts
+Das Prüfprotokoll zeichnet Inhaltsänderungen, einschließlich Sektionen und Zuständen, in einem manipulationssicheren Log
+auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Zusammen mit der Versionsseite jedes Objekts
 ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)) kann die Organisation zeigen, wer einen Text wann
 geändert hat.
 

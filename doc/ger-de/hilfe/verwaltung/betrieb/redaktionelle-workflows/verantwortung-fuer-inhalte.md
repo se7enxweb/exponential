@@ -66,7 +66,7 @@ Sie überdauert personelle Wechsel und hält personenbezogene Daten von öffentl
 2. **Ein Fachbereich wird umorganisiert**: Verschieben Sie den Teilbaum unter den Ordner des neuen Fachbereichs und passen Sie dann die
    eingeschränkten Rollenzuweisungen an; das Verschieben ändert die Sektion nur bei Objekten, die die Sektion des alten übergeordneten Elements hatten
    ([Sektionen und Teilbaum-Einschränkungen](../personen-und-berechtigungen/sektionen-und-teilbaum-einschraenkungen.md#was-geschieht-wenn-inhalte-verschoben-werden)).
-3. **Halten Sie es fest**: Verschiebungen und Eigentümerwechsel stehen im Kanal `content` des Audit-Trails.
+3. **Halten Sie es fest**: Verschiebungen und Eigentümerwechsel stehen im Kanal `content` des Prüfprotokolls.
 
 ## Verwandte Seiten
 - [Prüftermine mit Objektzuständen](pruefdaten-mit-objektzustaenden.md)

@@ -80,7 +80,7 @@ Seite).
 | **Setup > Upgrade-Prüfung** | Vergleicht Dateien und Datenbank mit dem Release, nur lesend | [Upgrade-Prüfung und Dateikonsistenz](upgrade-pruefung-und-dateikonsistenz.md) |
 | Wartungsmodus | Eine saubere 503-Seite, während die Arbeit läuft | [Wartungsmodus und geplante Arbeiten](wartungsmodus-und-geplante-arbeiten.md) |
 | `exp:velocity deploy` | Führt das Neuladen des Codes und die Cache-Schritte in der richtigen Reihenfolge aus, stoppt beim ersten Fehler | [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md) |
-| Der Audit-Trail | Zeichnet das Wartungsfenster, Deployments und Änderungen an Einstellungen auf | [Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md) |
+| Das Prüfprotokoll | Zeichnet das Wartungsfenster, Deployments und Änderungen an Einstellungen auf | [Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md) |
 | `ezupdate` | Sucht nach Updates und führt Composer aus der Administration aus, mit Probelauf | [Automatische Updates mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |
 
 ## Zwei Wege zum Aktualisieren: Kommandozeile oder Administration

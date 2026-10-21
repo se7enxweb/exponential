@@ -43,7 +43,7 @@ Zurückziehen **entfernt** Inhalte; die meisten öffentlichen Stellen bevorzugen
    ein ganzer Teilbaum auf einmal mit „Auch für alles unterhalb dieses Knotens“).
 3. Nach der Prüfung einer Seite setzen sie **Geprüft** (oder bearbeiten die Seite und setzen **Aktuell**).
 4. Schränken Sie optional `state/assign` mit `NewState` ein, sodass nur inhaltlich Verantwortliche **Geprüft** setzen dürfen.
-5. Jede Änderung wird im Audit-Trail als `content.object.state` erfasst, und das ist Ihr Prüfnachweis.
+5. Jede Änderung wird im Prüfprotokoll als `content.object.state` erfasst, und das ist Ihr Prüfnachweis.
 
 Zustände haben kein Datum: Jemand, oder Ihr eigener Code, setzt **Prüfung fällig**. Exponential tut das nicht zeitgesteuert.
 

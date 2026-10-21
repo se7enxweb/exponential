@@ -150,7 +150,7 @@ Von der Schicht garantiertes Verhalten (jeweils in einer genannten Release behob
 - Dateien, die nach dem Start neu geschrieben werden, werden ohne Neustart übernommen (der Wrapper macht die Kompilierung eines Skripts ungültig, wenn sich die mtime ändert; eingebundene Dateien werden einmal gelesen und behalten, höchstens 4 MB pro Prozess, solange ein echter stat-Aufruf in derselben Anfrage noch übereinstimmt).
 - `compress.zlib://`, `gzopen()` und `copy()` in eine oder aus einer `.gz`-Datei funktionieren über die Dateischicht, ebenso Stream-Optionen (0.0.4.38).
 - Multipart-Felder mit verschachtelten Namen erreichen `$_POST` so, wie PHP sie über `parse_str()` aufbaut; `$_FILES` hat den Aufbau von PHP (0.0.4.37).
-- `session.save_path` wird in der PHP-Form `[N;[MODE;]]/path` gelesen, und Sessions werden mit dessen Modus angelegt (0.0.4.31); jeder Session-Wert wird ohne Warnung aus seinen eigenen Bytes dekodiert (0.0.4.42).
+- `session.save_path` wird in der PHP-Form `[N;[MODE;]]/path` gelesen, und Sitzungen werden mit dessen Modus angelegt (0.0.4.31); jeder Sitzungswert wird ohne Warnung aus seinen eigenen Bytes dekodiert (0.0.4.42).
 - `REQUEST_TIME` und `REQUEST_TIME_FLOAT` werden pro Anfrage gesetzt (0.0.4.42).
 - `Q.compat.statTtl` behält, was ein Worker über Dateien weiß (ob ein Pfad existiert, mtime, Größe), über Anfragen hinweg bis zu dieser Anzahl von Sekunden (wie `opcache.revalidate_freq`); gemessen wurden bei einer Sekunde 13 Prozent weniger CPU pro gerenderter Seite. Die eigenen Schreibvorgänge des Workers, `clearstatcache()` und ein Programm, das er ausführt, werden in jedem Fall sofort gesehen.
 

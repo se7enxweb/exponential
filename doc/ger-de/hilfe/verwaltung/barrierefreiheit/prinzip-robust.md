@@ -33,7 +33,7 @@ müssen, um von einer Vielzahl von Benutzeragenten, einschließlich assistiver T
 - **Ihre Templates.** Jedes eigene Bedienelement in Ihrem öffentlichen Design (ein Menüknopf, ein Akkordeon, ein Filter)
   braucht einen Namen, die richtige Rolle und seinen Zustand (`aria-expanded`, `aria-selected`, `aria-current`).
 
-Der Status des Projekts für WAI-ARIA ist **Partly complies** für admin4, sonst **Unverified**; seine Tests prüfen Markup
+Der Status des Projekts für WAI-ARIA ist **Teilweise erfüllt** für admin4, sonst **Nicht geprüft**; seine Tests prüfen Markup
 und Skript-Einstiegspunkte, nicht das Laufzeitverhalten in einem Screenreader.
 
 ## 4.1.3 Statusmeldungen

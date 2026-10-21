@@ -39,7 +39,7 @@ Die Bausteine gehören alle zum Kernel, den jede Installation hat:
 | Dateien und `content/download` | eine Dokumentenbibliothek, deren Downloads die Berechtigungen beachten | [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
 | Suche | Mitarbeiter finden nur, was sie lesen dürfen | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
 | Benachrichtigungen | eine Mail, wenn unterhalb eines Elements, dem ein Benutzer folgt, etwas veröffentlicht wird | [Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md) |
-| Der Audit-Trail | wer was getan hat, mit einer manipulationssicheren Aufzeichnung | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Das Prüfprotokoll | wer was getan hat, mit einer manipulationssicheren Aufzeichnung | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 
 Zwei weitere Bausteine gibt es als Erweiterungen oder Einstellungen: die zweistufige Anmeldung (die Erweiterung
 `sevenx_authentication_2fa`, in `composer.json` aufgeführt) und die Anmeldung gegen ein Firmenverzeichnis (die

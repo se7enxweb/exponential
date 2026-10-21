@@ -2,7 +2,7 @@
 
 Eine Standardinstallation von Exponential 6.0 ist so gebaut, dass sie ohne zusätzlichen Aufwand sicher ist: Die
 Rewrite-Regeln liefern nur aufgelistete Dateien aus, Sicherheits-Header gehen mit jeder Seite hinaus, das
-Session-Cookie ist `HttpOnly` und `SameSite`, die Debug-Ausgabe ist ausgeschaltet, Formulare tragen ein Token gegen
+Sitzungs-Cookie ist `HttpOnly` und `SameSite`, die Debug-Ausgabe ist ausgeschaltet, Formulare tragen ein Token gegen
 Cross-Site Request Forgery, und ein Audit-Protokoll hält fest, wer was getan hat. Dieses Kapitel geht jede dieser
 Schichten durch, nennt die Einstellung, die sie steuert, und wie Sie sie prüfen, und listet auf, was ein Administrator
 noch entscheiden sollte, bevor eine Site live geht: Geheimnisse in `settings/override`, der Administrations-Siteaccess,
@@ -27,7 +27,7 @@ Administratorkonto [Das Administratorpasswort ändern](../../eng-us/help/change-
 4. [Debug-Ausgabe und Fehleranzeige](#134-debug-ausgabe-und-fehleranzeige)
 5. [Der Administrations-Siteaccess](#135-der-administrations-siteaccess)
 6. [Passwörter und Anmeldung](#136-passwörter-und-anmeldung)
-7. [Sessions und Cookies](#137-sessions-und-cookies)
+7. [Sitzungen und Cookies](#137-sitzungen-und-cookies)
 8. [Formular-Tokens gegen Cross-Site Request Forgery](#138-formular-tokens-gegen-cross-site-request-forgery)
 9. [Sicherheits-Header und HTTPS](#139-sicherheits-header-und-https)
 10. [Hinter einem Proxy: vertrauenswürdige Header](#1310-hinter-einem-proxy-vertrauenswürdige-header)
@@ -76,7 +76,7 @@ INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`), und starten Sie unter Vel
 | Debug-Ausgabe | aus | ausgeschaltet lassen oder nach IP beschränken |
 | Admin-Siteaccess | Anmeldung erforderlich | eigener Hostname, Netzwerkbeschränkung, Request-Regeln |
 | Passwörter | 10 Zeichen, bcrypt | Zeichenregeln, Sperre nach fehlgeschlagenen Anmeldungen |
-| Session-Cookie | `HttpOnly`, `SameSite=Lax`, `Secure` über HTTPS | `CookieSecure=true` auf einer reinen HTTPS-Site |
+| Sitzungs-Cookie | `HttpOnly`, `SameSite=Lax`, `Secure` über HTTPS | `CookieSecure=true` auf einer reinen HTTPS-Site |
 | Formular-Tokens | aktiv (Setup-Assistent) | `ezformtoken` aktiv lassen; eigenes AJAX anpassen |
 | Weitergeleitete Header | nur von `127.0.0.1` und `::1` geglaubt | Ihre Proxys in `TrustedProxies[]` eintragen, und nichts weiter |
 | Sicherheits-Header | fünf Header auf jeder Seite | HSTS, sobald nur noch HTTPS; frame-ancestors für Redakteure |
@@ -142,7 +142,7 @@ ersten Verwendung erzeugt:
 |---|---|---|
 | `site.ini.append.php` | Datenbankbenutzer und -passwort (`[DatabaseSettings]`) | Zugriff auf die Datenbank |
 | `audit.ini.append.php` | Audit-Signaturschlüssel und Pseudonymschlüssel | mit dem Schlüssel signierte Archive lassen sich nicht mehr verifizieren; Pseudonyme lassen sich umkehren |
-| `mailpreferences.ini.append.php` | das Site-Geheimnis (`[SecretSettings] TokenSecret`, bei der ersten Verwendung erzeugt) | jeder Abmelde- und Präferenzlink funktioniert nicht mehr, kein Eintrag der Sperrliste greift mehr, und jeder angemeldete Benutzer wird einmal abgemeldet, weil der Passwortstempel der Sessions (Abschnitt 13.6) mit ihm als Schlüssel gebildet wird |
+| `mailpreferences.ini.append.php` | das Site-Geheimnis (`[SecretSettings] TokenSecret`, bei der ersten Verwendung erzeugt) | jeder Abmelde- und Präferenzlink funktioniert nicht mehr, kein Eintrag der Sperrliste greift mehr, und jeder angemeldete Benutzer wird einmal abgemeldet, weil der Passwortstempel der Sitzungen (Abschnitt 13.6) mit ihm als Schlüssel gebildet wird |
 | `velocity.ini.append.php` | `[DashboardSettings] Token`, falls gesetzt | Fernzugriff auf die Kennzahlen des Servers und `/Q/phpinfo` |
 | `config.env.php` im Wurzelverzeichnis | Maschineneinstellungen wie der Name der Umgebung | (von Git ignoriert) |
 | `var/log/initial-admin-password` | das erzeugte erste Administratorpasswort einer Kickstart- oder Konsoleninstallation | das Administratorkonto |
@@ -332,18 +332,18 @@ Die Regeln gelten für jedes Formular, das ein Passwort setzt (`user/password`, 
 **`EndOtherSessions=enabled`** ist das, was eine Passwortänderung nach der Übernahme eines Kontos wirksam macht. So
 funktioniert es:
 
-- Bei jeder Anmeldung erhält die Session einen **Passwortstempel** (`eZUserPasswordStamp`): einen schlüsselbasierten
+- Bei jeder Anmeldung erhält die Sitzung einen **Passwortstempel** (`eZUserPasswordStamp`): einen schlüsselbasierten
   Hash (HMAC-SHA256) aus der Benutzer-ID und dem gespeicherten Passwort-Hash, gebildet mit einem Schlüssel, der aus
   dem Site-Geheimnis aus Abschnitt 13.3 abgeleitet ist. Er enthält weder das Passwort noch dessen Hash.
-- Bei jeder Anfrage vergleicht `eZUser::currentUser()` den Stempel der Session mit dem Stempel des aktuellen Hashs des
-  Benutzers. Eine Passwortänderung ändert den Hash, sodass jede andere Session dieses Benutzers (andere Browser,
-  andere Geräte, eine von einem Angreifer kopierte Session) nicht mehr passt und bei ihrer nächsten Anfrage abgemeldet
-  wird. Das funktioniert mit jedem Session-Handler, PHPs eigene Datei-Sessions eingeschlossen, weil es geprüft wird,
-  wenn die Session verwendet wird.
-- Die Session, in der das Passwort geändert wurde, bleibt angemeldet, erhält aber eine **neue Session-ID**, sodass
-  jemand, der die alte ID kannte, sie nicht behält. Mit dem Datenbank-Session-Handler werden die anderen Sessions
+- Bei jeder Anfrage vergleicht `eZUser::currentUser()` den Stempel der Sitzung mit dem Stempel des aktuellen Hashs des
+  Benutzers. Eine Passwortänderung ändert den Hash, sodass jede andere Sitzung dieses Benutzers (andere Browser,
+  andere Geräte, eine von einem Angreifer kopierte Sitzung) nicht mehr passt und bei ihrer nächsten Anfrage abgemeldet
+  wird. Das funktioniert mit jedem Session-Handler, PHPs eigene Datei-Sitzungen eingeschlossen, weil es geprüft wird,
+  wenn die Sitzung verwendet wird.
+- Die Sitzung, in der das Passwort geändert wurde, bleibt angemeldet, erhält aber eine **neue Sitzungs-ID**, sodass
+  jemand, der die alte ID kannte, sie nicht behält. Mit dem Datenbank-Session-Handler werden die anderen Sitzungen
   außerdem sofort gelöscht.
-- **Nicht geprüft:** Sessions, die vor dem Upgrade auf 6.0.15 begonnen haben (sie tragen noch keinen Stempel; sie
+- **Nicht geprüft:** Sitzungen, die vor dem Upgrade auf 6.0.15 begonnen haben (sie tragen noch keinen Stempel; sie
   werden ab ihrer nächsten Anmeldung geprüft), und Konten ohne eigenes Passwort (LDAP-, Textdatei- und
   Single-Sign-on-Benutzer).
 - **Was Sie überraschen kann:** Ein neues Site-Geheimnis (eine Kopie der Installation ohne
@@ -394,7 +394,7 @@ bekannte.
 
 ---
 
-## 13.7 Sessions und Cookies
+## 13.7 Sitzungen und Cookies
 
 `settings/site.ini [Session]`; die drei Cookie-Schlüssel sind in der mitgelieferten Datei auskommentiert, und ihre
 Standardwerte gelten, solange sie nicht gesetzt sind:
@@ -402,11 +402,11 @@ Standardwerte gelten, solange sie nicht gesetzt sind:
 | Schlüssel | Standard | Bedeutung |
 |---|---|---|
 | `CookieSecure` | `auto` | `Secure`, sobald die Anfrage selbst über HTTPS kam; `true` erzwingt es |
-| `CookieHttponly` | `true` | Skripte können das Session-Cookie nicht lesen |
+| `CookieHttponly` | `true` | Skripte können das Sitzungs-Cookie nicht lesen |
 | `CookieSameSite` | `Lax` | `Lax`, `Strict`, `None` (nur mit `Secure`) oder leer |
-| `SessionTimeout` | `259200` | Sekunden, die eine Session dauert (3 Tage) |
+| `SessionTimeout` | `259200` | Sekunden, die eine Sitzung dauert (3 Tage) |
 | `RememberMeTimeout` | leer | die Gültigkeitsdauer von „Erinnerung“ (Remember me); leer schaltet sie ab |
-| `SessionNameHandler`, `SessionNamePerSiteAccess` | `default`, `enabled` | `custom` gibt jedem Siteaccess sein eigenes Session-Cookie, sodass eine Anmeldung auf der öffentlichen Site keine Anmeldung in der Administration ist |
+| `SessionNameHandler`, `SessionNamePerSiteAccess` | `default`, `enabled` | `custom` gibt jedem Siteaccess sein eigenes Sitzungs-Cookie, sodass eine Anmeldung auf der öffentlichen Site keine Anmeldung in der Administration ist |
 
 Für eine Site, die nur über HTTPS ausgeliefert wird:
 
@@ -421,10 +421,10 @@ SessionTimeout=28800
 
 `CookieSecure=true` stellt sicher, dass das Cookie nie über einfaches HTTP gesendet wird, auch nicht bei einer
 Anfrage, die fälschlicherweise ohne TLS ankommt. Verwenden Sie `Strict` nur, wenn keine andere Site auf Seiten
-verlinkt, die eine Anmeldung voraussetzen. Ein kürzerer `SessionTimeout` begrenzt, wie lange eine gestohlene Session
+verlinkt, die eine Anmeldung voraussetzen. Ein kürzerer `SessionTimeout` begrenzt, wie lange eine gestohlene Sitzung
 brauchbar bleibt.
 
-Getrennte Session-Cookies je Siteaccess:
+Getrennte Sitzungs-Cookies je Siteaccess:
 
 ```ini
 [Session]
@@ -436,7 +436,7 @@ SessionNamePerSiteAccess=enabled
 Mit `custom` leitet der Antwort-Cache von Velocity sein Cookie „persönlich, nicht cachen“ automatisch aus
 `SessionNamePrefix` ab.
 
-In der eigenen Konfiguration von PHP sorgt `session.use_strict_mode=1` dafür, dass PHP Session-IDs ablehnt, die es
+In der eigenen Konfiguration von PHP sorgt `session.use_strict_mode=1` dafür, dass PHP Sitzungs-IDs ablehnt, die es
 nicht selbst erzeugt hat.
 
 Was schiefgehen kann:
@@ -449,14 +449,14 @@ Was schiefgehen kann:
 - **`CookieSameSite=None` ohne `Secure`** wird von Browsern abgelehnt; der Kernel berücksichtigt `None` nur zusammen
   mit `Secure`. Sie brauchen `None` nur, wenn die Site innerhalb eines Frames oder über ein Cross-Site-Formular auf
   einer anderen Domain verwendet wird.
-- **`Strict`** verwirft die Session beim ersten Klick aus einer E-Mail oder von einer anderen Site auf eine Seite, die
+- **`Strict`** verwirft die Sitzung beim ersten Klick aus einer E-Mail oder von einer anderen Site auf eine Seite, die
   eine Anmeldung voraussetzt, was Benutzer als Abmeldung wahrnehmen.
 
 ---
 
 ## 13.8 Formular-Tokens gegen Cross-Site Request Forgery
 
-Die Extension `ezformtoken` fügt jedem HTML-Formular ein Token je Session hinzu und prüft es bei jedem POST
+Die Extension `ezformtoken` fügt jedem HTML-Formular ein Token je Sitzung hinzu und prüft es bei jedem POST
 (`extension/ezformtoken`, Event-Listener `request/input`, `response/output` und `session/regenerate`). Ein gefälschtes
 Formular auf einer anderen Site kann das Token nicht kennen. Der Setup-Assistent aktiviert sie bei jeder neuen
 Installation.
@@ -499,7 +499,7 @@ SecurityHeaders[Content-Security-Policy]=frame-ancestors 'self' https://edit.exa
 
 Seiten, die aus dem HTTP-Cache des Kernels beantwortet werden, tragen dieselben Header.
 
-**Velocity** sendet vier davon (alle außer der Content Security Policy) bei dem, was es selbst beantwortet (statische
+**Velocity** sendet vier davon (alle außer der Content Security Policy) bei dem, was er selbst beantwortet (statische
 Dateien, skalierte Bilder, seine eigenen Fehlerseiten, Weiterleitungen, 304-Antworten), über
 `[ServerSettings] ResponseHeaders[]` und ergänzt sie bei Skriptantworten, denen sie fehlen
 (`ResponseHeadersOnScripts=enabled`). **Apache und nginx** senden von sich aus bei statischen Dateien nichts
@@ -726,7 +726,7 @@ Grundsätze (die Vorgehensweise steht in
 | Kontrollpanel `/Q/panel` | nur lokal, passwortgeschützt; setzen Sie das Passwort sofort auf einem Rechner, der aus dem Internet erreichbar ist; sein Speicher darf nicht für Gruppe oder andere beschreibbar sein |
 | HTTPS | ein Zertifikat einer Zertifizierungsstelle, HSTS erst erhöht, wenn alles HTTPS ist (Abschnitt 13.9) |
 | Konfigurationsdateien | `/etc/vc/sites-available/<site>.conf` hat `0600` (Zertifikatspfade, Token); belassen Sie es so |
-| Antwort-Cache | persönliche Seiten werden nie gecacht; wenn Sie das Session-Cookie umbenennen, prüfen Sie, dass `[CacheSettings] SkipCookies` abgeleitet bleibt oder es aufführt |
+| Antwort-Cache | persönliche Seiten werden nie gecacht; wenn Sie das Sitzungs-Cookie umbenennen, prüfen Sie, dass `[CacheSettings] SkipCookies` abgeleitet bleibt oder es aufführt |
 | Updates | Engine-Releases beheben auch Sicherheitsprobleme (Abschnitt 13.15); `exp:velocity deploy` nach einem Update |
 
 ---
@@ -795,7 +795,7 @@ Für den Produktivbetrieb:
 4. **Geben Sie `audit/read` nur den Rollen, die es brauchen**; standardmäßig hat nur die Rolle Administrator
    `audit/read` und `audit/manage`.
 5. **Datenschutz.** `[AuditPrivacySettings]` legt je Feld fest, was aufbewahrt wird: Adressen auf /24 und /48
-   gekürzt, die Session gehasht, E-Mail-Adressen gehasht, Passwörter und Tokens nie aufgezeichnet, personenbezogene
+   gekürzt, die Sitzung gehasht, E-Mail-Adressen gehasht, Passwörter und Tokens nie aufgezeichnet, personenbezogene
    Felder nach `PseudonymiseAfterDays` (90) pseudonymisiert. Passen Sie diese Werte an Ihre Datenschutzanforderungen
    an; die Abschnitte 4.12 und 6.4 der Audit-Anleitung beschreiben ein strenges Profil.
 6. **Leiten Sie es weiter** an ein zentrales Log oder SIEM über eine Senke (`[AuditSink_syslog]`,
@@ -866,7 +866,7 @@ Vollständige Anleitung: [Audit](../../eng-us/bc/6.0/audit.md).
 In diesem Repository:
 
 - [Sicherheitsstandards vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md): Header,
-  Session-Cookie, Anmeldung, ausgelieferte Dateien, Caching persönlicher Seiten
+  Sitzungs-Cookie, Anmeldung, ausgelieferte Dateien, Caching persönlicher Seiten
 - [Sicherheitshärtung von 6.0.13](../../eng-us/bc/6.0/hardening.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md),
   [RAD-Werkzeuge: Sicherheit](../../eng-us/bc/6.0/rad-security.md)
 - [Request-Regeln](../../eng-us/bc/6.0/view_full_security.md)
@@ -900,7 +900,7 @@ Extern:
   [Secure Headers Project](https://owasp.org/projects/secure-headers-project)
 - NIST [SP 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management](https://pages.nist.gov/800-63-4/sp800-63b.html) (Revision 4, die Revision 3 ablöst)
 - PHP: [Sicherheit](https://www.php.net/manual/en/security.php),
-  [Session-Konfiguration](https://www.php.net/manual/en/session.configuration.php),
+  [Sitzungskonfiguration](https://www.php.net/manual/en/session.configuration.php),
   [display_errors](https://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors),
   [password_hash](https://www.php.net/manual/en/function.password-hash.php)
 - MDN: [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie),

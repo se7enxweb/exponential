@@ -58,7 +58,7 @@ Benutzerobjekt*, *Nie veröffentlicht* oder *Ohne Platzierung*, *Nie angemeldet*
 
 | Aktion | Was sie tut | Ausgelassen |
 |---|---|---|
-| Deaktivieren | die Operation `user/setsettings` mit ausgeschaltetem *enabled*, wie es **Benutzereinstellungen bearbeiten** tut: Das Konto kann sich nicht anmelden, und seine Sessions enden. Inhalte, Gruppen und Rollen bleiben. | bereits deaktivierte Konten |
+| Deaktivieren | die Operation `user/setsettings` mit ausgeschaltetem *enabled*, wie es **Benutzereinstellungen bearbeiten** tut: Das Konto kann sich nicht anmelden, und seine Sitzungen enden. Inhalte, Gruppen und Rollen bleiben. | bereits deaktivierte Konten |
 | Aktivieren | dieselbe Operation mit eingeschaltetem *enabled* | bereits aktivierte Konten; Konten, die nie aktiviert wurden (sie haben einen Aktivierungsschlüssel): Aktivieren Sie diese unter **Nicht aktivierte Benutzer**, was die Registrierung abschließt |
 | Entsperren | `eZUser::setFailedLoginAttempts( id, 0, true )`, wie es **Fehlgeschlagene Anmeldungen zurücksetzen** tut | Konten ohne fehlgeschlagene Anmeldungen |
 
@@ -88,7 +88,7 @@ der Anzahl der Zeilen, dem Filter und der Angabe, ob E-Mail-Adressen enthalten w
 | E-Mail-Adressen (Spalte, Suche, Sortierung, der Filter *Doppelte E-Mail-Adresse*, CSV) | `role/assign`, dasselbe Recht wie für die E-Mail-Spalte der Unterelement-Tabelle (`settings/subitemscolumns.ini [Column_useremail]`) |
 
 Jede Änderung und die CSV sind POST-Anfragen mit dem Formular-Token von `ezformtoken`; Bestätigen benötigt außerdem das
-Token der Bestätigungsseite (das Feld `HygieneToken`, in der Session als `expUserHygieneToken` gehalten), wie
+Token der Bestätigungsseite (das Feld `HygieneToken`, in der Sitzung als `expUserHygieneToken` gehalten), wie
 Deaktivieren und verschieben, sodass eine Anfrage, die nicht von der Seite stammt, selbst ohne `ezformtoken` nichts
 ändert. Ein Link kann weder ein Konto ändern noch einen Download starten. Jeder, der die Seite öffnen darf, sieht Name, Login, Zustände, Gruppen und Rollen jedes Kontos
 (es gibt keine Leseprüfung pro Konto), geben Sie `user/hygiene` also nur den Personen, die Konten betreuen.
@@ -159,7 +159,7 @@ Für jedes Konto, in einer Transaktion (nichts bleibt, wenn ein Schritt fehlschl
    es aktiviert war. Ein Konto, das bereits in der Gruppe ist und seitdem Platzierungen hinzugewonnen hat, behält
    seinen Eintrag, und die neuen Platzierungen werden ihm hinzugefügt, sodass nichts entfernt wird, ohne festgehalten
    zu sein;
-2. es wird über die Operation `user/setsettings` deaktiviert (wie **Deaktivieren**; seine Sessions enden;
+2. es wird über die Operation `user/setsettings` deaktiviert (wie **Deaktivieren**; seine Sitzungen enden;
    `access.user.disable`); es gilt nur dann als deaktiviert, wenn die Operation fortgesetzt wurde: Ein Workflow, der
    sie abbricht oder anhält, lässt das Konto aktiviert, und der Schritt schlägt fehl (dasselbe gilt für Deaktivieren
    und Aktivieren bei den obigen Aktionen);
@@ -226,7 +226,7 @@ Sie selbst (wie bei den anderen Aktionen). Ein Konto, dessen Objekt Sie nicht le
 oder für Sie nicht sichtbar* beantwortet, genau wie eine nicht existierende ID, sodass die Seite nichts über Objekte
 verrät, die Sie nicht sehen dürfen. Namen werden nur für Konten angezeigt, die Sie ändern dürfen, und für Gruppen, die
 Sie lesen dürfen. Jede Änderung ist ein POST mit dem Formular-Token von `ezformtoken`, und **Bestätigen** trägt
-zusätzlich ein eigenes Token, das in der Session gehalten wird, sodass keine Anfrage außer der Bestätigungsseite selbst
+zusätzlich ein eigenes Token, das in der Sitzung gehalten wird, sodass keine Anfrage außer der Bestätigungsseite selbst
 die Änderung ausführen kann, mit oder ohne `ezformtoken`; der Rückweg nach dem Ergebnis ist die Seite, von der Sie kamen (`user/hygiene` oder der Knoten des Benutzers), nie
 eine Adresse von außen.
 

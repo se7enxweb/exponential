@@ -81,11 +81,11 @@ kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen.
 1. **Zugangsdaten**: Ändern Sie die Administratorpasswörter; das Datenbankpasswort (und aktualisieren Sie
    `settings/override/site.ini.append.php`); API-Schlüssel und Tokens, die die Website hält; Passwörter für SFTP und Panel.
 2. **Sitzungen**: Eine Passwortänderung meldet jede andere Sitzung dieses Benutzers ab (`[PasswordSettings] EndOtherSessions=enabled`);
-   nach einem vermuteten Einbruch entfernen Sie außerdem alle Sitzungen (**Setup** > **Sitzungen**, mit dem Sitzungs-Handler für die
+   nach einem vermuteten Einbruch entfernen Sie außerdem alle Sitzungen (**Setup** > **Sitzungen**, mit dem Session-Handler für die
    Datenbank) ([Sicherheitshärtung](../../sicherheitshaertung.md#sitzungsübernahme)).
 3. **Konten**: Entfernen Sie Konten und Rollenzuweisungen, die der Angreifer angelegt hat.
 4. **Caches**: Leeren Sie alles, damit keine zwischengespeicherte Seite aus dem kompromittierten Zustand ausgeliefert wird:
-   `php bin/php/ezcache.php --clear-all --allow-root-user`, und mit Velocity starten Sie es neu und leeren seinen Antwort-Cache.
+   `php bin/php/ezcache.php --clear-all --allow-root-user`, und mit Velocity starten Sie ihn neu und leeren seinen Antwort-Cache.
 5. Prüfen Sie, und schalten Sie dann den Wartungsmodus aus.
 
 ## Berichten und benachrichtigen

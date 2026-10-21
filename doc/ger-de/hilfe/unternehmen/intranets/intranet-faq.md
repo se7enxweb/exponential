@@ -108,8 +108,8 @@ Ja, mit *Ohne Benachrichtigung veröffentlichen* für Redakteure, die die Richtl
 ## Betrieb und Nachweise
 
 **Können wir sehen, wer etwas geändert oder entfernt hat?**
-Ja. Der Audit-Trail zeichnet Inhalts-, Zugriffs- und Systemereignisse in einem manipulationssicheren Log auf, das
-standardmäßig eingeschaltet ist ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Ja. Das Prüfprotokoll zeichnet Inhalts-, Zugriffs- und Systemereignisse in einem manipulationssicheren Log auf, das
+standardmäßig eingeschaltet ist ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 **Was muss im Hintergrund laufen?**
 Cronjobs, vor allem die Gruppe `frequent` mit den Teilen für Workflow, Benachrichtigungen und Audit

@@ -28,7 +28,7 @@ eigenen Aufzeichnungen standardmäßig; der Rest ist eine Frage von Konfiguratio
 
 | Aufzeichnung | Minimierung in der Voreinstellung |
 |---|---|
-| Audit-Trail | Adressen auf /24 gekürzt (IPv6 /48); Sitzungskennungen gehasht; User-Agents auf Browser- und Betriebssystemfamilie reduziert; E-Mail-Adressen und Anmeldeversuche unbekannter Benutzer gehasht; keine Inhaltswerte, Passwörter, Token oder POST-Inhalte; Lesezugriffe aus; Index nach 90 Tagen pseudonymisiert |
+| Prüfprotokoll | Adressen auf /24 gekürzt (IPv6 /48); Sitzungskennungen gehasht; User-Agents auf Browser- und Betriebssystemfamilie reduziert; E-Mail-Adressen und Anmeldeversuche unbekannter Benutzer gehasht; keine Inhaltswerte, Passwörter, Token oder POST-Inhalte; Lesezugriffe aus; Index nach 90 Tagen pseudonymisiert |
 | `404.log`, `security.log` | Client-Adressen maskiert (`MaskIP=enabled`); jeder Abfragewert in 404.log `***`; User-Agent gehasht und gekürzt |
 | Protokollbetrachter | E-Mail-Adressen, IP-Adressen und Geheimnisse auf dem Bildschirm und in Downloads maskiert |
 | E-Mail-Sperrliste | nur ein gesalzener Hash jeder Adresse |

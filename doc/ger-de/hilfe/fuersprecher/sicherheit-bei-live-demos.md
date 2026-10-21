@@ -26,7 +26,7 @@ dem Rechner, den Sie zeigen, nichts Geheimes liegt.
 ## Was nie auf dem Bildschirm sein darf
 
 - Passwörter, einschließlich des erzeugten Administratorpassworts und der Datei `var/log/initial-admin-password`.
-- Schlüssel von Anbietern (zum Beispiel für Exponential Intelligence), API-Schlüssel, Tokens, Session-Cookies.
+- Schlüssel von Anbietern (zum Beispiel für Exponential Intelligence), API-Schlüssel, Tokens, Sitzungs-Cookies.
 - Der Inhalt von `settings/override/` und jede Datei mit Zugangsdaten zur Datenbank.
 - Serveradressen, Hostnamen von Datenbanken, interne Pfade außerhalb der Installation.
 - Namen, E-Mail-Adressen, Bestellungen oder Nachrichten echter Menschen.

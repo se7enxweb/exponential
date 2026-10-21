@@ -34,11 +34,11 @@ vom Bieter und vom Hoster verlangen. Die Fakten stammen aus [Sicherheitsstandard
 
 | Bereich | Status | Kurz gesagt |
 |---|---|---|
-| OWASP Top 10 (2021) | **Partly complies** | Gegenmaßnahmen je Kategorie genannt, drei dokumentierte Härtungsdurchgänge |
-| OWASP ASVS 4.0.3 | **Unverified** | keine Bewertung; viele Kontrollen der Stufe 1 vorhanden |
-| Content Security Policy Level 3 | **Partly complies** | Nonces je Anfrage und Berichte; standardmäßig Report-only in der Administration, keine auf Websites |
-| Protokollierung und Überwachung (A09) | **Complies** | manipulationssicheres Audit-Protokoll standardmäßig an, Alarmregeln, Sicherheitsprotokoll ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
-| Koordinierte Offenlegung | **Partly complies** | vertrauliche Meldung in `SECURITY.md`; keine mitgelieferte `security.txt` |
+| OWASP Top 10 (2021) | **Teilweise erfüllt** | Gegenmaßnahmen je Kategorie genannt, drei dokumentierte Härtungsdurchgänge |
+| OWASP ASVS 4.0.3 | **Nicht geprüft** | keine Bewertung; viele Kontrollen der Stufe 1 vorhanden |
+| Content Security Policy Level 3 | **Teilweise erfüllt** | Nonces je Anfrage und Berichte; standardmäßig Report-only in der Administration, keine auf Websites |
+| Protokollierung und Überwachung (A09) | **Erfüllt** | manipulationssicheres Audit-Protokoll standardmäßig an, Alarmregeln, Sicherheitsprotokoll ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
+| Koordinierte Offenlegung | **Teilweise erfüllt** | vertrauliche Meldung in `SECURITY.md`; keine mitgelieferte `security.txt` |
 
 Weitere Fakten, auf die sich Bewertende verlassen können: Passwörter werden mit `password_hash()` von PHP gespeichert,
 jedes Formular trägt ein CSRF-Token, Sicherheits-Header werden auf jeder Seite gesendet, und veröffentlichte

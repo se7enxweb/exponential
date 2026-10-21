@@ -147,7 +147,7 @@ Person sie vorher eingeschaltet hatte.
   bisher den ganzen Papierkorb leert; eine Zahl behält Elemente so viele Tage (bis zu 36500). `bin/php/trashpurge.php` nimmt
   `--trashed-days=<days>`.
 - **Inhaltsjobs**: Abgeschlossene Jobs werden nach `[ContentJobSettings] KeepDays=30` entfernt (`0` behält sie).
-- **Sitzungen**: `SessionTimeout` (259200 Sekunden) setzt `session.gc_maxlifetime` beim eigenen Sitzungs-Handler von PHP;
+- **Sitzungen**: `SessionTimeout` (259200 Sekunden) setzt `session.gc_maxlifetime` beim eigenen Session-Handler von PHP;
   `bin/php/ezsessiongc.php` entfernt auf Anforderung abgelaufene Sitzungen nach `SessionTimeout`.
 - **Versionen und Entwürfe** von Inhalten folgen den Inhaltseinstellungen der Website; sie sind Inhalte, und ihre Aufbewahrung ist die
   redaktionelle Entscheidung des Kunden.

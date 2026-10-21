@@ -45,7 +45,7 @@ Für jede Informationsart sagt ein Veröffentlichungsplan üblicherweise:
 4. Lassen Sie die Vollansicht des Ordners die Unterobjekte mit ihrer Zusammenfassung und ihrem Link auflisten.
 
 Da jeder Eintrag ein Objekt ist, hat er Versionen, lässt sich in jede Inhaltssprache übersetzen, und Änderungen stehen
-im Audit-Trail ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+im Prüfprotokoll ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Eine Klasse für die Einträge
 

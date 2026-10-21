@@ -44,7 +44,7 @@ dürfen ([Entwürfe und ausstehende Elemente](../../../../anleitungen/entwuerfe-
 
 ## Was die Autorin oder der Autor sieht
 
-- Nach **Veröffentlichen** wartet die Version; **Meine ausstehenden Elemente** listet sie unter „Von Ihnen geschickt“ mit dem Stand ihrer
+- Nach **Zur Veröffentlichung schicken** wartet die Version; **Meine ausstehenden Elemente** listet sie unter „Von Ihnen geschickt“ mit dem Stand ihrer
   Freigabe und wer freigibt.
 - Nach **Ablehnen** ist die Version wieder ein Entwurf unter **Meine Entwürfe**; der Kommentar steht bei der Freigabe.
 - Nach **Freigeben** und dem Cronjob ist der Inhalt veröffentlicht und verschwindet aus der Liste der ausstehenden Elemente.

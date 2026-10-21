@@ -11,7 +11,7 @@ type: help
 
 Dieser Ordner richtet sich an Webverantwortliche, Chefredaktionen und Administratoren, die entscheiden, wie Inhalte vom Entwurf auf die
 öffentliche Website einer öffentlichen Stelle gelangen. Exponential bietet Freigabe-Workflows, Objektzustände, eine Versionsgeschichte und
-einen Audit-Trail; diese Seiten zeigen, wie Sie sie zu einem dokumentierten redaktionellen Prozess verbinden, und sagen klar, wo Sie einen
+ein Prüfprotokoll; diese Seiten zeigen, wie Sie sie zu einem dokumentierten redaktionellen Prozess verbinden, und sagen klar, wo Sie einen
 eigenen Prozess brauchen. Die zugrunde liegenden Leitfäden sind [Workflows](../../../../anleitungen/workflows.md),
 [Meine Entwürfe und meine ausstehenden Elemente](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md) und [Objektzustände](../../../../anleitungen/objektzustaende.md).
 

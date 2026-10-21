@@ -65,7 +65,7 @@ brauchen einen Datenbankserver und gemeinsamen Speicher
 | Bedarf | Warum | Einzelheiten |
 |---|---|---|
 | PHP 8 (8.0 oder neuer, Velocity eingeschlossen), Kommandozeile und Web | die Anwendung und ihre Cronjobs | [PHP-Versionen und -Erweiterungen](../../../hosting/grundlagen/php-versionen-und-erweiterungen.md) |
-| Dauerhafter Speicher für `var/` und `settings/override` | hochgeladene Dateien, Logs, der Audit-Trail, die SQLite-Datenbank | [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md) |
+| Dauerhafter Speicher für `var/` und `settings/override` | hochgeladene Dateien, Logs, das Prüfprotokoll, die SQLite-Datenbank | [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md) |
 | Eine Datenbank, wenn nicht SQLite | eine der unterstützten Engines; ein verwalteter Datenbankdienst ist in Ordnung, wenn er eine davon ist | [Datenbankwahl in der offiziellen Reihenfolge](datenbankwahl-in-der-offiziellen-reihenfolge.md) |
 | Ein Zeitplaner | `runcronjobs.php` alle paar Minuten oder der eigene Zeitplaner von Velocity | [Cronjobs](../../../hosting/betrieb/cronjobs.md) |
 | Ausgehende E-Mail | Passwort- und Benachrichtigungs-E-Mails | [E-Mail-Zustellung](../../../hosting/betrieb/mailzustellung.md) |

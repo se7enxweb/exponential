@@ -69,7 +69,7 @@ in [Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosi
 | Information | Woher sie kommt |
 |---|---|
 | Erstellungs- und Änderungszeit der Seite | die Versionen des Objekts ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)) |
-| Wer sie veröffentlicht hat | der Ersteller der Version und der Audit-Trail ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Wer sie veröffentlicht hat | der Ersteller der Version und das Prüfprotokoll ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
 | Adresse der Seite | der URL-Alias des Knotens |
 | Größe und MIME-Typ einer Datei | der Datentyp Datei |
 | Sprachen, in denen die Seite existiert | die Übersetzungen des Objekts ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)) |

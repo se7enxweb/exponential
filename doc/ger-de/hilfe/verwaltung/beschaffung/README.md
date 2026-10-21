@@ -80,7 +80,7 @@ veröffentlicht seine Nachweise stattdessen im Repository und sagt deutlich, wo 
 
 | Frage | Was es gibt | Was es nicht gibt |
 |---|---|---|
-| Barrierefreiheit | [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md): WCAG 2.2 AA **Partly complies** für die Administration admin4 und admin4l; EN 301 549 und Section 508 **Unverified** | Kein VPAT und kein Accessibility Conformance Report; öffentliche Website-Designs nicht geprüft; keine Vorlage für eine Erklärung zur Barrierefreiheit |
+| Barrierefreiheit | [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md): WCAG 2.2 AA **Teilweise erfüllt** für die Administration admin4 und admin4l; EN 301 549 und Section 508 **Nicht geprüft** | Kein VPAT und kein Accessibility Conformance Report; öffentliche Website-Designs nicht geprüft; keine Vorlage für eine Erklärung zur Barrierefreiheit |
 | Sicherheit | [Sicherheitsstandards](../../../../eng-us/standards/security.md): Zuordnung zu den OWASP Top 10, drei dokumentierte Härtungsdurchgänge, manipulationssicheres Audit-Protokoll | Keine Bewertung nach OWASP ASVS; kein Bericht eines externen Penetrationstests im Repository; keine mitgelieferte `security.txt` |
 | Datenschutz | [Datenschutzstandards](../../../../eng-us/standards/privacy.md): Einwilligungsnachweise, Löschung beim Entfernen eines Kontos, Maskierung und Aufbewahrung von Protokollen | Keine einzelne Funktion „alle meine Daten exportieren“; kein Cookie-Banner |
 | Umgang mit Schwachstellen | [`SECURITY.md`](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md): vertrauliche Meldung, erste Antwort innerhalb eines Werktags | Keine veröffentlichte Zusage zur Behebungszeit; Korrekturen erscheinen als nächstes Release |

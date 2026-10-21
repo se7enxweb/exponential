@@ -70,7 +70,7 @@ INI-Cache und laden Sie PHP neu.
 
 ## Statische Dateien
 
-- **Velocity** sendet vier davon (alle außer der Content Security Policy) auf dem, was es selbst beantwortet (statische
+- **Velocity** sendet vier davon (alle außer der Content Security Policy) auf dem, was er selbst beantwortet (statische
   Dateien, skalierte Bilder, Fehlerseiten, Umleitungen), über `settings/velocity.ini [ServerSettings] ResponseHeaders[]`.
 - **Apache und nginx** senden auf statischen Dateien von sich aus nichts zusätzlich; ergänzen Sie die Header mit
   `mod_headers` (`Header always set X-Content-Type-Options "nosniff"`) oder `add_header ... always;`, wenn Sie sie dort

@@ -96,7 +96,7 @@ In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3
 ## Ein Entry Point, der einmal installiert
 
 Kapitel 4 nennt einen minimalen Entry Point für Container, der einmal installiert, dann Velocity startet und im
-Vordergrund bleibt, solange es läuft:
+Vordergrund bleibt, solange er läuft:
 
 ```bash
 #!/usr/bin/env bash

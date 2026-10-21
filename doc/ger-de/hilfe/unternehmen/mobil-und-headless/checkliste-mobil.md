@@ -101,7 +101,7 @@ zutreffenden Teile in Ihr Werkzeug zur Projektverfolgung. Jeder Punkt verlinkt d
 ## Nach dem Start
 
 - [ ] Monatlich: die Übersicht der API-Schlüssel nach nie benutzten, bald ablaufenden oder abgelehnten Schlüsseln
-      ([Steuerung, Begrenzungen und der Audit-Trail](apps-und-api-schluessel.md#steuerung-begrenzungen-und-der-audit-trail)).
+      ([Steuerung, Begrenzungen und das Prüfprotokoll](apps-und-api-schluessel.md#steuerung-begrenzungen-und-das-prüfprotokoll)).
 - [ ] Monatlich: Feed-Exporte und -Importe sind gelaufen; der Status der Syndication hat keine fehlgeschlagenen
       Einträge.
 - [ ] Nach jeder Aktualisierung: Die API-Prüfung, eine Prüfung der Feeds und der Telefontest werden wiederholt.

@@ -33,7 +33,7 @@ Regionale und Landesstellen sind in der EU öffentliche Stellen im Sinne der EU-
 verweisen auf [WCAG](https://www.w3.org/TR/WCAG22/).
 
 Der eigene Status von Exponential ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)): WCAG 2.2
-AA **Partly complies** für die Administration admin4 und admin4l; EN 301 549 und Section 508 **Unverified**; öffentliche
+AA **Teilweise erfüllt** für die Administration admin4 und admin4l; EN 301 549 und Section 508 **Nicht geprüft**; öffentliche
 Designs nicht geprüft; kein VPAT und keine Vorlage für eine Erklärung zur Barrierefreiheit. Ihr öffentliches Design und
 Ihre Dokumente müssen Sie selbst testen.
 
@@ -60,7 +60,7 @@ jede Sprachfassung freigegeben wird, und verfolgen Sie fehlende Übersetzungen i
 | Anmeldung der Beschäftigten | zweistufige Anmeldung, verpflichtend einstellbar | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Konten kommunaler Beschäftigter (außerhalb Ihrer Organisation) | Konten in einer Gruppe, regelmäßige Überprüfung | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) |
 | Härtung | Einstellungen und Maßnahmen am Server | [Sicherheitshärtung](../../../sicherheitshaertung.md) |
-| Status gegenüber OWASP | Partly complies | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| Status gegenüber OWASP | Teilweise erfüllt | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
 
 Viele regionale Einrichtungen fallen in der EU je nach nationaler Umsetzung unter NIS2,
 [Richtlinie (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj).

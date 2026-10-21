@@ -83,7 +83,7 @@ curl -sI https://your-host/ | grep -i -E "cache-control|expires|pragma"
 
 Erwartet für einen anonymen Besucher mit den obigen Einstellungen: `Cache-Control: public, max-age=60`, ein
 `Expires`-Datum 60 Sekunden in der Zukunft und kein `Pragma: no-cache`. Wiederholen Sie die Anfrage mit dem
-Session-Cookie eines angemeldeten Benutzers (kopieren Sie es aus dem Browser): Die Antwort muss
+Sitzungs-Cookie eines angemeldeten Benutzers (kopieren Sie es aus dem Browser): Die Antwort muss
 `Cache-Control: no-cache, must-revalidate` zeigen.
 
 ### Die Änderung im Kernel dahinter

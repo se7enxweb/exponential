@@ -376,7 +376,7 @@ Scripts[]=session_gc.php
 ```
 
 Leeren Sie den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`) und laden Sie die Seite neu: Die Karte
-*Sessions* erscheint, *Nicht geplant*, mit einem vorgeschlagenen Zeitplan von stündlich zur Minute 0. Abschnitt 12 plant sie ein.
+*Sitzungen* erscheint, *Nicht geplant*, mit einem vorgeschlagenen Zeitplan von stündlich zur Minute 0. Abschnitt 12 plant sie ein.
 
 Ein eigenes Skript gehört in `cronjobs/` Ihrer Extension, wobei die Extension in
 `[CronjobSettings] ExtensionDirectories[]` genannt ist. Geben Sie seinem Kopf eine `@description`-Zeile; die Seite, die Suche und

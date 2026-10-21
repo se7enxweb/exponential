@@ -3,8 +3,8 @@ title: Der Online-Editor und die Barrierefreiheit
 audience: government, admin, editor, project-manager
 category: public-sector
 order: 110
-summary: Für öffentliche Stellen, deren Beschäftigte Rich Text schreiben - welche Engines für den Online-Editor Exponential mitliefert (TinyMCE 3 als Standard, TinyMCE 8 auf Wunsch), warum ihre Barrierefreiheit Unverified ist und wie Sie den Editor und seine Ausgabe für Ihre eigene Erklärung testen.
-keywords: Online-Editor, Rich Text, Engine-Wechsel, Barrierefreiheit, Tastatur, Screenreader, nicht verifiziert, Autorenwerkzeug, Ausgabe des Rich Text, Überschriften, Tabellen, online editor, rich text, TinyMCE, TinyMCE 3, TinyMCE 8, ezoe, engine switch, accessibility, keyboard, screen reader, unverified, authoring tool, rich text output, headings, tables
+summary: Für öffentliche Stellen, deren Beschäftigte Rich Text schreiben - welche Engines für den Online-Editor Exponential mitliefert (TinyMCE 3 als Standard, TinyMCE 8 auf Wunsch), warum ihre Barrierefreiheit nicht geprüft ist und wie Sie den Editor und seine Ausgabe für Ihre eigene Erklärung testen.
+keywords: Online-Editor, Rich Text, Engine-Wechsel, Barrierefreiheit, Tastatur, Screenreader, nicht geprüft, Autorenwerkzeug, Ausgabe des Rich Text, Überschriften, Tabellen, online editor, rich text, TinyMCE, TinyMCE 3, TinyMCE 8, ezoe, engine switch, accessibility, keyboard, screen reader, unverified, authoring tool, rich text output, headings, tables
 type: help
 ---
 # Der Online-Editor und die Barrierefreiheit
@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Administration, die den Rich-Text-Editor auswählt, an die Koordination
 Barrierefreiheit, die die Autorenumgebung bewertet, und an Redakteurinnen und Redakteure mit Behinderungen, die ihn
 nutzen. Der Online-Editor ist der Teil der Administration, den das Projekt **nicht** geprüft hat: Sein Status ist
-**Unverified**, und die Barrierefreiheit der Editor-Engine ist die des Projekts TinyMCE
+**Nicht geprüft**, und die Barrierefreiheit der Editor-Engine ist die des Projekts TinyMCE
 ([Standards zur Barrierefreiheit: bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)).
 
 ## Inhalt
@@ -43,9 +43,9 @@ angeboten, und der Editor weicht auf TinyMCE 8 aus
 
 ## Was das Projekt sagt
 
-- Die Integrationen von TinyMCE wurden nicht auf WCAG geprüft. **Unverified.**
+- Die Integrationen von TinyMCE wurden nicht auf WCAG geprüft. **Nicht geprüft.**
 - Der Engine-Wechsel ist eine Umschaltgruppe mit `aria-pressed` (dokumentiert auf der Seite zu TinyMCE 8).
-- EN 301 549 Abschnitt 11.8 (Autorenwerkzeuge) wurde nicht überprüft.
+- EN 301 549 Abschnitt 11.8 (Autorenwerkzeuge) wurde nicht geprüft.
 
 Weitere Nachweise gibt es im Repository nicht. Beschreiben Sie den Editor in Ihrer Erklärung nicht ohne eigenen Test
 als barrierefrei.

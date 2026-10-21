@@ -14,7 +14,7 @@ Administratoren, die die OWASP Top 10 (<https://owasp.org/Top10/>) als Checklist
 wiederholt sie, was Exponential mitliefert, aus
 [Sicherheitsstandards: OWASP Top 10](../../../../eng-us/standards/security.md#owasp-top-10-2021), und ergänzt, was der Betreiber
 einer öffentlichen Website tun muss und welche Nachweise er aufbewahrt. Das Projekt bewertet das Ganze mit
-**Partly complies**.
+**Teilweise erfüllt**.
 
 ## Inhalt
 
@@ -34,7 +34,7 @@ einer öffentlichen Website tun muss und welche Nachweise er aufbewahrt. Das Pro
 | A06 | Vulnerable and Outdated Components (verwundbare und veraltete Komponenten) | jQuery 4, YUI entfernt; unterstützte Versionen in `SECURITY.md`; `composer audit` empfohlen | Patch-Rhythmus; `composer audit`; Releases der Erweiterungen verfolgen (kein Abhängigkeitsscan in der CI des Projekts) |
 | A07 | Identification and Authentication Failures (Fehler bei Identifizierung und Authentifizierung) | Mindestlänge 10, Prüfung auf schwache Passwörter, einheitliche Antworten, neue Sitzungs-ID bei der Anmeldung, andere Sitzungen bei Passwortänderung beendet; optionale Kontosperre; optionale zweistufige Anmeldung | zweistufige Anmeldung verlangen, Mindestlänge anheben, über die Kontosperre entscheiden |
 | A08 | Software and Data Integrity Failures (Fehler bei der Integrität von Software und Daten) | unveränderliche Release-Tags; `share/filelist.md5` in der CI und in der Administration geprüft; CSRF-Tokens; SVG-Bereiniger; hash-verkettetes Audit | Dateien nach Updates prüfen; `ezformtoken` aktiv lassen |
-| A09 | Security Logging and Monitoring Failures (Fehler bei Sicherheitsprotokollierung und Überwachung) | Audit-Protokoll standardmäßig an, mit Alarmregeln; `security.log`; `csp.log` — bewertet mit **Complies** | die Cronjob-Gruppe `frequent` ausführen, Alarm-E-Mails an Menschen leiten, an ein SIEM weiterleiten, Protokolle wöchentlich prüfen |
+| A09 | Security Logging and Monitoring Failures (Fehler bei Sicherheitsprotokollierung und Überwachung) | Audit-Protokoll standardmäßig an, mit Alarmregeln; `security.log`; `csp.log` — bewertet mit **Erfüllt** | die Cronjob-Gruppe `frequent` ausführen, Alarm-E-Mails an Menschen leiten, an ein SIEM weiterleiten, Protokolle wöchentlich prüfen |
 | A10 | Server-Side Request Forgery | „Hochladen von URL“ im Online-Editor weist private und reservierte Adressen ab und prüft Umleitungen erneut; die Linkprüfung überspringt private Hosts, sofern sie nicht gelistet sind | `AllowedPrivateHosts` leer lassen, sofern nicht nötig |
 
 ## Aufzubewahrende Nachweise

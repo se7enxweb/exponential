@@ -74,8 +74,8 @@ vollständigen Satz der `shop/`-Templates in `design/standard/templates/shop/`.
 - **Produktübersicht**: die Produkte und ihre Preise in einer Liste (`shop/productsoverview`).
 
 Jede Aktion braucht eine Richtlinie, Sie entscheiden also, wer was sieht ([Shop-Planung für kleine Unternehmen](shop-planung-fuer-kleine-unternehmen.md#personen-und-rollen)).
-Der Audit-Trail zeichnet Handelsereignisse auf: Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Das Prüfprotokoll zeichnet Handelsereignisse auf: Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte
+([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Erweiterungen, die ihn ergänzen
 

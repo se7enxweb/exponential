@@ -93,7 +93,7 @@ aus. Der Schriftgutbereich dieser Hilfe behandelt Audit-Einträge als Nachweis.
 ## Verwandte Seiten
 
 - [Audit-Leitfaden, 4.3 Aufbewahrung](../../../../eng-us/bc/6.0/audit.md#43-retention)
-- [Datenschutz im Audit-Trail](datenschutz-im-audit-trail.md)
+- [Datenschutz im Prüfprotokoll](datenschutz-im-audit-trail.md)
 - [Aufbewahrung personenbezogener Daten im Überblick](aufbewahrung-im-ueberblick.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

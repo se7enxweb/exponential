@@ -80,11 +80,11 @@ Die Sicht für Intranets steht in [Zweistufige Anmeldung für Intranets](../intr
 Aus [Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md):
 
 - Die Seite zum Ändern listet die Anforderungen auf und meldet jedes Problem neben seinem Feld.
-- Nach einer Änderung bleibt der Benutzer mit einer neuen Session-ID angemeldet; andere Sessions auf anderen Geräten
+- Nach einer Änderung bleibt der Benutzer mit einer neuen Sitzungs-ID angemeldet; andere Sitzungen auf anderen Geräten
   werden bei ihrer nächsten Anfrage abgemeldet. Das geschieht auch, wenn ein Administrator das Passwort ändert.
 - Eine E-Mail „Ihr Passwort wurde geändert“ geht an die Adresse des Kontos. Sie enthält nie das Passwort, und niemand
   kann sie ausschalten.
-- Jede Änderung und jede abgelehnte Änderung wird im Audit-Trail festgehalten, nie das Passwort selbst.
+- Jede Änderung und jede abgelehnte Änderung wird im Prüfprotokoll festgehalten, nie das Passwort selbst.
 - „Passwort vergessen?“ antwortet für jede Adresse gleich, verrät also nicht, welche Konten existieren
   ([Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung)).
 
@@ -96,7 +96,7 @@ Ein Administrator, der keinen Zugang mehr hat, kann auf der Kommandozeile ein ne
 - Kein Installer von Exponential 6 lässt das alte Standardpasswort bestehen
   ([Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)).
 - Geben Sie jedem Administrator ein persönliches Konto und stellen Sie die gemeinsam genutzte Anmeldung `admin` ein,
-  damit der Audit-Trail zeigt, wer was getan hat ([Das Administratorpasswort ändern](../../administratorpasswort-aendern.md#kontenhygiene)).
+  damit das Prüfprotokoll zeigt, wer was getan hat ([Das Administratorpasswort ändern](../../administratorpasswort-aendern.md#kontenhygiene)).
 - Halten Sie die Zahl der Administratoren klein; geben Sie anderen Rollen mit nur dem, was sie brauchen
   ([Zugriffsprüfungen](zugriffspruefungen.md)).
 - Erwägen Sie einen eigenen Hostnamen oder eine Netzwerkbeschränkung für die Administration

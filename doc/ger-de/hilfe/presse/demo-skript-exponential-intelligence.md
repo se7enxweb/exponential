@@ -60,7 +60,7 @@ und seine Aufbewahrung, und jede Anfrage hält fest, wohin sie ging (`README.md`
 | 3:30 | **„Rewrite“** oder **„Shorten“** auf ein Feld anwenden | „Der Wert kommt zur Prüfung ins Formular. Nichts ändert sich, bis ich ihn annehme und den Entwurf speichere.“ |
 | 4:10 | Auf die Zeile mit Modell, Region und Kosten zeigen | „Jeder Klick zeigt das Modell, die Region und was er kostet.“ |
 | 4:40 | Zurück zum Tab **Intelligence**; den Entwurf verwerfen | „Ich werfe den Entwurf weg; die Website ist unverändert.“ |
-| 5:10 | Titelkarte | „Jede Anfrage wird im Audit-Trail festgehalten, ohne Prompts, Antworten oder Schlüssel. Die Dokumentation ist unten verlinkt.“ |
+| 5:10 | Titelkarte | „Jede Anfrage wird im Prüfprotokoll festgehalten, ohne Prompts, Antworten oder Schlüssel. Die Dokumentation ist unten verlinkt.“ |
 
 ## Was Sie nie zeigen
 

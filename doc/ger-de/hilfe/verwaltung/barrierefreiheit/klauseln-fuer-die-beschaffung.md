@@ -30,8 +30,8 @@ Formulierungen mit Ihrer Beschaffungs- und Rechtsberatung an.
 ## Grundsätze
 
 - Verlangen Sie prüfbare Ergebnisse (WCAG 2.2 AA auf der gelieferten Website), keine Adjektive („barrierefrei“).
-- Trennen Sie die **Software** (die Erklärung des Projekts: admin4 „Partly complies“, EN 301 549 und Section 508
-  „Unverified“, kein VPAT; [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)) von der
+- Trennen Sie die **Software** (die Erklärung des Projekts: admin4 „Teilweise erfüllt“, EN 301 549 und Section 508
+  „Nicht geprüft“, kein VPAT; [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)) von der
   **Leistung** (Ihr Design, Ihre Konfiguration, Ihr Inhaltsmodell).
 - Machen Sie die Abnahme von einem Test abhängig und Mängel von ihrer Behebung.
 
@@ -51,7 +51,7 @@ Formulierungen mit Ihrer Beschaffungs- und Rechtsberatung an.
 ## Musteranforderungen an Nachweise
 
 - „Beschreiben Sie den Status der Barrierefreiheit des angebotenen CMS mit den eigenen Worten des Herstellers oder
-  Projekts, mit einem Link.“ Eine gute Antwort zu Exponential wiederholt „Partly complies“ und „Unverified“ und
+  Projekts, mit einem Link.“ Eine gute Antwort zu Exponential wiederholt „Teilweise erfüllt“ und „Nicht geprüft“ und
   behauptet kein VPAT.
 - „Beschreiben Sie Ihre Testmethode (Werkzeuge, assistive Technologien, Stichprobe) und legen Sie ein anonymisiertes
   Beispiel eines Testberichts aus einem früheren Projekt vor.“

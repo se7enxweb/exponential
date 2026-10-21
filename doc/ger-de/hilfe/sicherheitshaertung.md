@@ -237,7 +237,7 @@ Anfrage.
 
 **Härten.** `CookieSecure=true` auf einer reinen HTTPS-Site, ein kürzeres `SessionTimeout`, ein eigenes Sitzungscookie
 pro Siteaccess (`SessionNameHandler=custom`), `session.use_strict_mode=1` in PHP
-([13.7](../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)). Nach einer vermuteten Kompromittierung: Ändern
+([13.7](../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)). Nach einer vermuteten Kompromittierung: Ändern
 Sie das Passwort und entfernen Sie alle Sitzungen (**Setup** > **Sitzungen**, mit dem Datenbank-Session-Handler).
 
 ### Offene Weiterleitungen und Phishing über Ihre Domain

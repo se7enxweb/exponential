@@ -36,7 +36,7 @@ mitzureißen.
 | Datenbank | geteilt | ein Datenbankserver, den alle Knoten erreichen |
 | Hochgeladene Dateien (`var/storage`) | geteilt | der DFS-Cluster-Datei-Handler und ein NFS-Mount |
 | Einstellungen, Code, Erweiterungen, Designs | auf jedem Knoten gleich | dasselbe Ausrollen auf jedem Knoten |
-| Sitzungen | geteilt, oder der Benutzer bleibt auf einem Knoten | der Sitzungs-Handler für die Datenbank oder Sticky Sessions |
+| Sitzungen | geteilt, oder der Benutzer bleibt auf einem Knoten | der Session-Handler für die Datenbank oder Sticky Sessions |
 | Caches (`var/cache`, View-Cache, HTTP-Cache) | lokal pro Knoten, im Gleichschritt gehalten | der Cluster-Handler oder ein gemeinsames Cache-Backend |
 | Logs (`var/log`) | lokal pro Knoten | sammeln Sie sie zentral, wenn Sie eine Gesamtsicht brauchen |
 | Cronjobs | ein Knoten | führen Sie die Crontab nur auf einem Knoten aus |

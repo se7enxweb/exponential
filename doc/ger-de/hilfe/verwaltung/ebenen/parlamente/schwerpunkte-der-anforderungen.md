@@ -52,8 +52,8 @@ und veröffentlichen Sie, wenn Sie einen Katalog brauchen, einen aus den Quellsy
 
 Parlamente veröffentlichen lange Dokumente und Video. In der EU erfasst die
 [Richtlinie (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj) die Websites öffentlicher Stellen; der
-eigene Status von Parlamenten hängt von der nationalen Umsetzung ab. Status von Exponential: Administration admin4
-**Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508 **Unverified**; öffentliche Designs nicht geprüft
+eigene Status von Parlamenten hängt von der nationalen Umsetzung ab. Status von Exponential: Administration admin4 erfüllt
+WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508 **Nicht geprüft**; öffentliche Designs nicht geprüft
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
 
 | Inhalt | Praxis |
@@ -73,7 +73,7 @@ eigene Dateien, die aus dem übersetzten Objekt verknüpft sind.
 | Thema | Exponential | Lesen |
 |---|---|---|
 | Konten der Beschäftigten | zweistufige Anmeldung, verpflichtend einstellbar | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Status | OWASP Top 10 **Partly complies** | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| Status | OWASP Top 10 **Teilweise erfüllt** | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
 | Spitzen während wichtiger Abstimmungen | Ansichts-Cache, statischer Cache, Antwort-Cache von Velocity | [Statischer Cache und Velocity](../../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md) |
 | Defacement oder Manipulation erkannt | Audit-Protokoll, Dateikonsistenzprüfung | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md), [Dateikonsistenzprüfung](../../../../../eng-us/features/6.0/file-consistency-check.md) |
 

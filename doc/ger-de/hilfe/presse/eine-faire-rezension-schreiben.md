@@ -52,7 +52,7 @@ Disclosure: <line>
 | Art der Aussage | Wie Sie sie schreiben |
 |---|---|
 | Sie haben es getestet | „In meinem Test blieb beim Veröffentlichen eines Ordners die frühere Version erhalten.“ |
-| Die Dokumentation sagt es | „Laut Dokumentation trägt jeder Eintrag des Audit-Trails den Hash des vorherigen.“ (Link) |
+| Die Dokumentation sagt es | „Laut Dokumentation trägt jeder Eintrag des Prüfprotokolls den Hash des vorherigen.“ (Link) |
 | Jemand hat es Ihnen gesagt | „<Wer> hat mir gesagt ...“ - und prüfen Sie es ([Aussagen, die Sie nicht machen dürfen](../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md)) |
 | Niemand sagt es | „Die Quellen sagen es nicht.“ |
 
@@ -70,7 +70,7 @@ Ihre Methode ([Benchmarking](../../anleitungen/benchmarking.md)).
 | Barrierefreiheit | Nur Tastatur; Kontrast hell und dunkel | [Tastaturkürzel](../tastenkuerzel.md) |
 | Installation | Von einem leeren Ordner aus | [Exponential installieren](../../installation/README.md) |
 | Freiheit beim Hosting | Datenbanken, Betriebssysteme | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Betriebssysteme](../betriebssystemunterstuetzung.md) |
-| Sicherheit | Zweistufige Anmeldung, Audit-Trail, Härtung | [Sicherheitshärtung](../sicherheitshaertung.md) |
+| Sicherheit | Zweistufige Anmeldung, Prüfprotokoll, Härtung | [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Dokumentation | Antworten in der eingebauten Hilfe finden | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
 | Lizenz | GPL für den Code, GNU FDL für die Dokumentation | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
 | Support und Kontinuität | Was zugesagt ist, und von wem | [Die Zusage zur Unterstützung](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |

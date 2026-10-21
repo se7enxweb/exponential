@@ -54,7 +54,7 @@ Ein Fachbereichswechsel ist ein Verschieben des Kontos zwischen Gruppen:
    Freigebenden und aus jedem Feld **Benutzer, die den Inhalt bewilligen** eines Freigabe-Ereignisses.
 
 Siehe [Beschäftigte in einen anderen Fachbereich verschieben](../../../../../eng-us/help/government/tasks/people-and-permissions/move-a-staff-member-to-another-department.md).
-Änderungen an Platzierungen stehen im Audit-Trail: das Entfernen einer Platzierung standardmäßig, das Hinzufügen und das Ändern
+Änderungen an Platzierungen stehen im Prüfprotokoll: das Entfernen einer Platzierung standardmäßig, das Hinzufügen und das Ändern
 der Hauptplatzierung, sobald `content.node.add` und `content.node.main` aktiviert sind
 ([Sicherheit und Audit, Schritt 3](../../../../anleitungen/sicherheit-und-audit.md#3-das-audit-protokoll-lesen-5-minuten)).
 
@@ -75,7 +75,7 @@ Am letzten Arbeitstag:
 
 Das Konto zu entfernen ist möglich, aber endgültig: „Ein Benutzerobjekt kommt in Exponential nie in den Papierkorb: Das Entfernen
 ist endgültig“ ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md#in-short)). Die meisten öffentlichen Stellen behalten
-das Konto deaktiviert, weil die Inhalte, die ihm gehören, und der Audit-Trail darauf verweisen.
+das Konto deaktiviert, weil die Inhalte, die ihm gehören, und das Prüfprotokoll darauf verweisen.
 
 ## Aufzubewahrende Nachweise
 

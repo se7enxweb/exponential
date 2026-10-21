@@ -1,18 +1,18 @@
 ---
-title: Compliance-Nachweise aus dem Audit-Trail
+title: Compliance-Nachweise aus dem Prüfprotokoll
 audience: businesses, admin, project-manager
 category: business-solutions
 order: 90
-summary: Wie ein Unternehmen den manipulationssicheren Audit-Trail von Exponential als Nachweis für Prüfer, Kunden und eigene Prüfungen nutzt - was er aufzeichnet, wie seine Integrität bewiesen wird, wie Sie ein signiertes Paket exportieren, welche Alarme Sie weiterleiten und welche Einstellungen Sie abstimmen. Keine Rechtsberatung.
-keywords: Audit-Trail, Compliance, Nachweis, Prüfer, manipulationssicher, Hash-Kette, prüfen, Export, Paket, signiertes Manifest, Alarme, Aufbewahrung, Rechenschaft, wer hat was getan, audit trail, compliance, evidence, auditor, tamper-evident, hash chain, verify, export, bundle, signed manifest, alerts, retention, SIEM, accountability, who did what
+summary: Wie ein Unternehmen das manipulationssichere Prüfprotokoll von Exponential als Nachweis für Prüfer, Kunden und eigene Prüfungen nutzt - was es aufzeichnet, wie seine Integrität bewiesen wird, wie Sie ein signiertes Paket exportieren, welche Alarme Sie weiterleiten und welche Einstellungen Sie abstimmen. Keine Rechtsberatung.
+keywords: Prüfprotokoll, Compliance, Nachweis, Prüfer, manipulationssicher, Hash-Kette, prüfen, Export, Paket, signiertes Manifest, Alarme, Aufbewahrung, Rechenschaft, wer hat was getan, audit trail, compliance, evidence, auditor, tamper-evident, hash chain, verify, export, bundle, signed manifest, alerts, retention, SIEM, accountability, who did what
 type: help
 ---
-# Compliance-Nachweise aus dem Audit-Trail
+# Compliance-Nachweise aus dem Prüfprotokoll
 
 Diese Seite richtet sich an Inhaber, Compliance-Mitarbeiter und Führungskräfte, die einem Prüfer, einem Kunden oder dem
 eigenen Vorstand zeigen müssen, dass die Website kontrolliert betrieben wird: wer was wann geändert hat und dass das
-Protokoll selbst nicht verändert wurde. Der Audit-Trail von Exponential wurde genau dafür gebaut. Die Seite erklärt, was
-er Ihnen bietet und wie Sie Nachweise übergeben.
+Protokoll selbst nicht verändert wurde. Das Prüfprotokoll von Exponential wurde genau dafür gebaut. Die Seite erklärt, was
+es Ihnen bietet und wie Sie Nachweise übergeben.
 
 ![Das Audit-Dashboard: Zustand der Ketten, Ereignisse und Sicherheit](../../../../eng-us/help/images/help/bu-audit.webp)
 
@@ -23,21 +23,21 @@ er Ihnen bietet und wie Sie Nachweise übergeben.
 
 ## Inhalt
 
-1. [Was der Audit-Trail ist](#was-der-audit-trail-ist)
-2. [Was er aufzeichnet](#was-er-aufzeichnet)
+1. [Was das Prüfprotokoll ist](#was-das-prüfprotokoll-ist)
+2. [Was es aufzeichnet](#was-es-aufzeichnet)
 3. [Warum man dem Protokoll vertrauen kann](#warum-man-dem-protokoll-vertrauen-kann)
 4. [Nachweise an einen Prüfer übergeben](#nachweise-an-einen-prüfer-übergeben)
 5. [Alarme: der Nachweis, dass jemand hinschaut](#alarme-der-nachweis-dass-jemand-hinschaut)
 6. [Abzustimmende Einstellungen](#abzustimmende-einstellungen)
 7. [Häufige Anfragen nach Nachweisen](#häufige-anfragen-nach-nachweisen)
 
-## Was der Audit-Trail ist
+## Was das Prüfprotokoll ist
 
 Seit 6.0.15 zeichnet Exponential sicherheitsrelevante Ereignisse in einem manipulationssicheren Log auf. „Das Log ist
 standardmäßig eingeschaltet, braucht keine Einrichtung und lässt sich in der Administration oder auf der Kommandozeile
-lesen.“ Es wird im Reiter **Audit** gelesen (`/audit/dashboard`) ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+lesen.“ Es wird im Reiter **Audit** gelesen (`/audit/dashboard`) ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
-## Was er aufzeichnet
+## Was es aufzeichnet
 
 | Kanal | Beispiele |
 |---|---|
@@ -47,8 +47,8 @@ lesen.“ Es wird im Reiter **Audit** gelesen (`/audit/dashboard`) ([Der Audit-T
 | `commerce` | Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen, Rabatte, Exporte und Importe |
 | `read` | stichprobenartige Aufrufe, Suchen und Downloads, nur wenn eingeschaltet |
 
-Quelle: [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded). Passwörter, Tokens,
-Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet; Adressen werden gekürzt und Sessions gehasht.
+Quelle: [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded). Passwörter, Tokens,
+Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet; Adressen werden gekürzt und Sitzungen gehasht.
 
 ## Warum man dem Protokoll vertrauen kann
 
@@ -63,7 +63,7 @@ Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet; Adressen werden ge
   protokolliert und angezeigt; `OnWriteFailure=refuse` verweigert stattdessen sicherheitsrelevante Aktionen, für
   Organisationen, in denen eine nicht aufgezeichnete Änderung schlimmer ist als eine verweigerte.
 
-Quelle: [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md).
+Quelle: [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md).
 
 ## Nachweise an einen Prüfer übergeben
 
@@ -91,7 +91,7 @@ Handed to: ______________ on: __________   Copies deleted on: __________
 
 Alarmregeln achten auf Brute-Force-Anmeldungen, die Vergabe einer Administratorrolle, außerhalb der Arbeitszeit
 geschriebene Einstellungen, Massenlöschungen, das Ausschalten des Audits und eine gebrochene Kette
-([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Alarmmails gehen an die `AdminEmail` der
+([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Alarmmails gehen an die `AdminEmail` der
 Website, sofern Sie keine anderen Empfänger nennen: Benutzer, Gruppen, Rollen oder Adressen
 ([Audit-Leitfaden, Alarme](../../../../eng-us/bc/6.0/audit.md#45-alerts-and-their-recipients)).
 
@@ -107,7 +107,7 @@ Website, sofern Sie keine anderen Empfänger nennen: Benutzer, Gruppen, Rollen o
 | Datenschutz | standardmäßig Datenminimierung, Pseudonymisierung nach 90 Tagen | strenger pro Feld | [Audit: strenger Datenschutz](../../../../eng-us/bc/6.0/audit.md#64-strict-privacy) |
 | Langfristige Nachweise | Archive auf dem Server | Write-once-Speicher, signierte Prüfpunkte, die vom Server weg gesendet werden | [Audit: Compliance](../../../../eng-us/bc/6.0/audit.md#66-compliance-long-retention) |
 | Zentrale Überwachung | keine | Syslog, signierter Webhook, Mail; Weiterleitung an ein SIEM | [Audit: Weiterleitung an ein SIEM](../../../../eng-us/bc/6.0/audit.md#65-siem-forwarding) |
-| Schlüssel | in `settings/override/audit.ini.append.php` | sichern Sie sie; bewahren Sie jeden Signaturschlüssel so lange auf wie die Archive, die er signiert hat | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes) |
+| Schlüssel | in `settings/override/audit.ini.append.php` | sichern Sie sie; bewahren Sie jeden Signaturschlüssel so lange auf wie die Archive, die er signiert hat | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes) |
 
 Aufbewahrung und Datenschutz ziehen in entgegengesetzte Richtungen; legen Sie das Gleichgewicht mit Ihrem Berater fest
 und schreiben Sie es in Ihren Aufbewahrungsplan ([Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md)).
@@ -126,8 +126,8 @@ und schreiben Sie es in Ihren Aufbewahrungsplan ([Aufbewahrung und Löschung von
 
 ## Verwandte Seiten
 
-- [Audit-Trail für den Betrieb](../zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)
-- [Audit-Trail für Hoster](../../hosting/sicherheit/pruefprotokoll.md)
+- [Prüfprotokoll für den Betrieb](../zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)
+- [Prüfprotokoll für Hoster](../../hosting/sicherheit/pruefprotokoll.md)
 - [KPIs aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -121,7 +121,7 @@ funktioniert weiterhin, allerdings nur für Schlüssel dieses Benutzers. Jedes F
 |---|---|
 | „Ihr aktueller Session-Handler unterstützt keine Session-Verwaltung.“ | `Handler` ist leer oder `ezpSessionHandlerPHP`. Das ist normal; siehe Abschnitt 3 zum Umstellen. |
 | Die Liste der kürzlichen Anmeldungen ist leer | Niemand hat sich innerhalb des Zeitfensters angemeldet: Wählen Sie die Sitzungsdauer. |
-| „Nicht alle abgelaufenen Sessions konnten entfernt werden.“ | Der Lauf wurde abgebrochen, um eine Zeitüberschreitung zu vermeiden. Wiederholen Sie ihn, führen Sie `php bin/php/ezsessiongc.php` aus oder richten Sie den Cronjob-Teil `session_gc` ein. |
+| „Nicht alle abgelaufenen Sitzungen konnten entfernt werden.“ | Der Lauf wurde abgebrochen, um eine Zeitüberschreitung zu vermeiden. Wiederholen Sie ihn, führen Sie `php bin/php/ezsessiongc.php` aus oder richten Sie den Cronjob-Teil `session_gc` ein. |
 | „Nur die Sitzung, die Sie gerade verwenden, war ausgewählt“ | Ihre eigene aktuelle Sitzung wird nie aus der Liste entfernt. Melden Sie sich ab, um sie zu beenden. |
 | „Zeitversatz erkannt“ bei Letzte Aktivität | Das Ende der Sitzung liegt weiter in der Zukunft als die Sitzungsdauer: Die Uhr eines Webservers weicht ab, oder `SessionTimeout` wurde verringert. |
 

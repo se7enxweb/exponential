@@ -11,8 +11,8 @@ type: help
 # Velocity für Hoster
 
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei Hosting-Unternehmen, die Exponential Velocity für Kunden-Websites
-betreiben. Sie beantwortet: was Velocity von einem Server braucht, wie Sie es installieren und konfigurieren, wie es Neustarts und Abstürze
-übersteht, wie eine Änderung es erreicht, wohin es protokolliert, wie Sie es beobachten und wie Sie jedem Kunden eine eigene Instanz
+betreiben. Sie beantwortet: was Velocity von einem Server braucht, wie Sie ihn installieren und konfigurieren, wie er Neustarts und Abstürze
+übersteht, wie eine Änderung ihn erreicht, wohin er protokolliert, wie Sie ihn beobachten und wie Sie jedem Kunden eine eigene Instanz
 geben. Die Quellen sind [Kapitel 8](../../../installation/08-die-website-ausliefern.md#83-exponential-velocity-der-empfohlene-weg) und
 [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md); jeder Befehl unten wird aus dem Wurzelverzeichnis der Installation ausgeführt.
 
@@ -27,7 +27,7 @@ geben. Die Quellen sind [Kapitel 8](../../../installation/08-die-website-auslief
 7. [Eine Änderung ausrollen](#eine-änderung-ausrollen)
 8. [Logs, Status und Überwachung](#logs-status-und-überwachung)
 9. [Das Dashboard und das Kontrollzentrum](#das-dashboard-und-das-kontrollzentrum)
-10. [Eine Velocity pro Kunde](#eine-velocity-pro-kunde)
+10. [Ein Velocity-Server pro Kunde](#ein-velocity-server-pro-kunde)
 11. [Checkliste](#checkliste)
 
 ## Was Velocity für einen Hoster ist
@@ -232,10 +232,10 @@ Der Reiter **Domains** des Kontrollzentrums kann eine Domain auf `suspended` (an
 (antwortet `404`) setzen; die eigenen Pfade `/Q/` und `/.well-known/` des Servers funktionieren weiter, sodass Erneuerungen von
 Zertifikaten weiterlaufen.
 
-## Eine Velocity pro Kunde
+## Ein Velocity-Server pro Kunde
 
 Ein einzelner Server, der mehrere Websites ausliefert, ist laut `README.md` eine Bequemlichkeit beim Routing, keine Sicherheitsgrenze. Für
-mehrere Kunden auf einer Maschine betreiben Sie eine Installation und eine Velocity pro Kunde:
+mehrere Kunden auf einer Maschine betreiben Sie eine Installation und einen Velocity-Server pro Kunde:
 
 - jede als eigener Benutzer des Kunden (`[ServerSettings] User` und `Group`), nie als der eines anderen Kunden;
 - jede auf eigenen Ports (`Port`, `HTTPSPort`), mit `Host=127.0.0.1` hinter einem Proxy oder auf einer eigenen Adresse;

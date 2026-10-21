@@ -56,7 +56,7 @@ php bin/php/maintenance.php off --allow-root-user
 
 `./console exp:maintenance on|off|status` ist dasselbe über die Konsole. Die Wartung endet nie von selbst: Wenn das
 erwartete Ende verstrichen ist, zeigt die Seite eine Warnung, und jemand muss sie ausschalten. Jede Änderung wird im
-Audit-Trail als `system.maintenance.change` festgehalten, und **Setup > Wartung** listet die letzten Änderungen auf.
+Prüfprotokoll als `system.maintenance.change` festgehalten, und **Setup > Wartung** listet die letzten Änderungen auf.
 
 ## Wer weiterhin hineinkommt
 

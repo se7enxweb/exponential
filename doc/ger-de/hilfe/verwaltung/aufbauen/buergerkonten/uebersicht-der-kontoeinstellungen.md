@@ -4,7 +4,7 @@ audience: government, admin
 category: public-sector
 order: 90
 summary: Jede in den Anleitungen zu Bürgerkonten genannte Einstellung in einer Tabelle - Registrierung, Anmeldung, Sitzungen, Passwörter, Sperre, zweistufige Anmeldung, Deaktivierung und Ablauf von Passwörtern - mit Datei, Block, mitgeliefertem Wert und einer Empfehlung für den öffentlichen Sektor.
-keywords: Übersicht der Einstellungen, Kontoeinstellungen, Registrierung, Sitzungen, Passwörter, Sperre, zweistufige Anmeldung, settings reference, site.ini, UserSettings, PasswordSettings, Session, sevenxauthentication2fa.ini, mbpaex.ini, MinPasswordLength, MaxNumberOfFailedLogin, Enforce2FA, DeactivateAndMove, VerifyUserType
+keywords: Übersicht der Einstellungen, Kontoeinstellungen, Registrierung, Sitzungen, Passwörter, Sperre, zweistufige Anmeldung, settings reference, site.ini, UserSettings, PasswordSettings, Sitzung, sevenxauthentication2fa.ini, mbpaex.ini, MinPasswordLength, MaxNumberOfFailedLogin, Enforce2FA, DeactivateAndMove, VerifyUserType
 type: reference
 ---
 # Übersicht der Kontoeinstellungen

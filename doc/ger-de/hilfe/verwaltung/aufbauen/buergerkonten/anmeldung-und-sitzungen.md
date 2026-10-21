@@ -4,7 +4,7 @@ audience: government, admin, website-creator
 category: public-sector
 order: 30
 summary: Wie Anmeldung und Sitzungen für öffentliche Kontoinhaber und Mitarbeiter auf einer Exponential-Site funktionieren - die Anmeldeseiten, Lebensdauer von Sitzungen und Cookies, das Abmelden anderer Sitzungen nach einer Passwortänderung, die Seite Setup > Sitzungen, fehlgeschlagene Anmeldungen und Sperre.
-keywords: Anmeldung, Abmeldung, Sitzungen, Sitzungs-Handler, Sperre, Brute Force, sign-in, login, logout, sessions, SessionTimeout, ActivityTimeout, CookieSecure, session handler, ezpSessionHandlerDB, EndOtherSessions, lockout, MaxNumberOfFailedLogin, brute force
+keywords: Anmeldung, Abmeldung, Sitzungen, Session-Handler, Sperre, Brute Force, sign-in, login, logout, sessions, SessionTimeout, ActivityTimeout, CookieSecure, session handler, ezpSessionHandlerDB, EndOtherSessions, lockout, MaxNumberOfFailedLogin, brute force
 type: help
 ---
 # Anmeldung und Sitzungen

@@ -39,7 +39,7 @@ seinem Datum auf, nach [doc/eng-us/release-overview](../../../eng-us/release-ove
 | 6.0.12 | 10. Februar 2026 | |
 | 6.0.13 | 18. April 2026 | |
 | 6.0.14 | 7. Juni 2026 | MongoDB 8 als Datenbank |
-| 6.0.15 | nicht veröffentlicht | In Entwicklung: Velocity, admin4, Audit-Trail, Exponential Layouts, Exponential Intelligence, das Hilfesystem und mehr |
+| 6.0.15 | nicht veröffentlicht | In Entwicklung: Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, das Hilfesystem und mehr |
 
 Quelle: [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x). Eine leere Zelle beim Schwerpunkt bedeutet, dass die
 Geschichtsseiten für dieses Release keine einzelne Hauptnachricht nennen; lesen Sie seinen Changelog.

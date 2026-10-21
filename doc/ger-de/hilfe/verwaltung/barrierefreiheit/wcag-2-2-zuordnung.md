@@ -25,7 +25,7 @@ Kriterium auf Ihrer öffentlichen Website verantwortlich ist. Jeder Eintrag für
 
 ## Wie Sie die Tabelle lesen
 
-- **admin4** ist die Administration, die die Redaktion verwendet. Der Status des Ganzen ist **Partly complies**:
+- **admin4** ist die Administration, die die Redaktion verwendet. Der Status des Ganzen ist **Teilweise erfüllt**:
   entworfen und durch Regressionstests abgesichert, nicht Seite für Seite geprüft.
 - **Öffentliche Website** ist Ihr Design. Das Projekt hat die öffentlichen Designs nicht geprüft, daher ist jede Zeile
   dort Ihre Arbeit; die Spalte nennt, wer sie üblicherweise erledigt.
@@ -75,7 +75,7 @@ Einige Fakten, die für diese Kriterien zählen und sich im Repository prüfen l
 - **2.2.1 Zeiteinteilung anpassbar**: Sitzungen enden nach `site.ini [Session] SessionTimeout` (standardmäßig 259200
   Sekunden); ein aus Sicherheitsgründen gewählter kürzerer Wert kann Redakteurinnen und Redakteure betreffen, die
   langsam arbeiten
-  ([13.7 Sitzungen und Cookies](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)).
+  ([13.7 Sitzungen und Cookies](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)).
 - **3.3.8 Barrierefreie Authentifizierung**: Die Anmeldung ist ein Formular mit Benutzername und Passwort; die
   zweistufige Anmeldung fügt, wenn eingeschaltet, einen 6-stelligen Code hinzu
   ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)). Prüfen Sie, dass Passwortmanager und Einfügen in Ihrer

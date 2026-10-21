@@ -55,8 +55,8 @@ Lieferanten heute unabhängig von der Rechtsgrundlage Nachweise nach EN 301 549.
 
 | Frage | Ehrliche Antwort aus der Erklärung des Projekts |
 |---|---|
-| Ist das Bearbeitungswerkzeug gegen WCAG getestet? | Ja: admin4 und admin4l gegen WCAG 2.2 AA; Status **Partly complies** |
-| Konformitätsbericht nach EN 301 549? | Nein; Status **Unverified** |
+| Ist das Bearbeitungswerkzeug gegen WCAG getestet? | Ja: admin4 und admin4l gegen WCAG 2.2 AA; Status **Teilweise erfüllt** |
+| Konformitätsbericht nach EN 301 549? | Nein; Status **Nicht geprüft** |
 | Anforderungen an Autorenwerkzeuge (EN 301 549 Abschnitt 11.8)? | Nicht bewertet |
 | VPAT oder Accessibility Conformance Report? | Nein |
 | Barrierefreiheit der Shop-Erweiterung? | Als Pakete ausgelieferte Erweiterungen (einschließlich Shop) werden einzeln überprüft; es gibt keine Gesamterklärung |

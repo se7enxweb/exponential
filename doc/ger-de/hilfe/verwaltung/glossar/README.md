@@ -20,7 +20,7 @@ Glossar verlinkt darauf, statt es zu kopieren.
 
 | Seite | Behandelt |
 |---|---|
-| [A bis F](begriffe-a-bis-f.md) | Zugriffsprüfung, Erklärung zur Barrierefreiheit, Audit-Trail, Einwilligungsnachweis, Verantwortlicher, Ausstiegsplan, Informationsfreiheit ... |
+| [A bis F](begriffe-a-bis-f.md) | Zugriffsprüfung, Erklärung zur Barrierefreiheit, Prüfprotokoll, Einwilligungsnachweis, Verantwortlicher, Ausstiegsplan, Informationsfreiheit ... |
 | [G bis L](begriffe-g-bis-l.md) | GPL, Livegang, Härtung, Hostingmodell, Informationssammlung, Rechtsgrundlage, Anbieterabhängigkeit, Aufbewahrung von Protokollen ... |
 | [M bis R](begriffe-m-bis-r.md) | Wartungsmodus, Multisite, offene Daten, Paket, einfache Sprache, Auftragsverarbeitungsvertrag, Schriftgutverwaltung, Rolle, RPO und RTO ... |
 | [S bis Z](begriffe-s-bis-z.md) | Sektion, SLA, Siteaccess, unterstützte Version, Ausschreibung, TCO, zweistufige Anmeldung, Velocity, VPAT, WCAG, Workflow ... |

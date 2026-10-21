@@ -93,8 +93,8 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
   ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Backups eingeplant und eine Wiederherstellung getestet
   ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
-- [ ] Status des Audit-Trails geprüft: `./console exp:audit status`
-  ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+- [ ] Status des Prüfprotokolls geprüft: `./console exp:audit status`
+  ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
 - [ ] Plan für Aktualisierungen vereinbart
   ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).
 - [ ] Monitoring der Adresse des Intranets eingerichtet

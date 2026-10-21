@@ -63,8 +63,8 @@ aus und notieren die Uhrzeit jedes Schritts.
 3. **Wurde etwas geändert?** „Fehler, die direkt nach einem Deployment oder einem Update begonnen haben: Die Ursache
    liegt fast immer in dieser Änderung“
    ([Runbook: Website nicht erreichbar](../../hosting/runbooks/website-nicht-erreichbar.md#welche-seite-sieht-der-besucher)). Der Kanal
-   `system` des Audit-Trails zeigt jüngste Deployments, geschriebene Einstellungen und Wartung
-   ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md#nutzung-nach-einer-störung)).
+   `system` des Prüfprotokolls zeigt jüngste Deployments, geschriebene Einstellungen und Wartung
+   ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md#nutzung-nach-einer-störung)).
 4. **Lesen Sie die neuesten Fehler**: `php bin/php/console exp:logs --tail=var/log/error.log --lines=50` oder
    **Setup > Logdateien**, wenn die Administration funktioniert. Hat ein Kunde eine Referenz `ERR-` geschickt, suchen Sie
    danach ([Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md)).
@@ -124,9 +124,9 @@ untersuchen, beseitigen und neu aufbauen, wiederherstellen, berichten und benach
 
 Die Werkzeuge von Exponential helfen dabei:
 
-- Der Audit-Trail zeigt Anmeldungen, Rollenzuweisungen und Änderungen an Einstellungen, und `audit.php verify` zeigt, ob
+- Das Prüfprotokoll zeigt Anmeldungen, Rollenzuweisungen und Änderungen an Einstellungen, und `audit.php verify` zeigt, ob
   seine Aufzeichnung manipuliert wurde
-  ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md#der-nachweis-dass-die-aufzeichnung-nicht-verändert-wurde)).
+  ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md#der-nachweis-dass-die-aufzeichnung-nicht-verändert-wurde)).
 - Die Upgrade-Prüfung zeigt Release-Dateien, die verändert wurden
   ([Upgrade-Prüfung und Dateikonsistenz](upgrade-pruefung-und-dateikonsistenz.md)).
 - `security.log` listet Anfragen auf, die nach Sondierungen oder Angriffen aussahen

@@ -59,8 +59,8 @@ kurze Hinweisseite, statt ihn oder zusätzlich zum Verbergen.
 
 Das Entfernen verschiebt Inhalte in den Papierkorb, wo sie wiederhergestellt werden können, bis der Papierkorb geleert
 wird ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)); das Leeren löscht den Inhalt
-und seine Geschichte. Der Audit-Trail zeichnet das Entfernen und das endgültige Löschen auf
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Für aktenrelevante Inhalte beschränken Sie `content/remove` auf
+und seine Geschichte. Das Prüfprotokoll zeichnet das Entfernen und das endgültige Löschen auf
+([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Für aktenrelevante Inhalte beschränken Sie `content/remove` auf
 Administratoren und bevorzugen das Verbergen.
 
 ## Versehentlich veröffentlicht

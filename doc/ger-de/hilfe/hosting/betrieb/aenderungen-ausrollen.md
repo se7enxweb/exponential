@@ -63,7 +63,7 @@ ausliefert, `--no-fpm` für eine, die nur Velocity ausliefert.
 | 4 | Caches für Templates, Template-Overrides, Übersetzungen und design_base |
 | 5 | das Engine-Archiv von Velocity, wenn sich eine Datei in `kernel/`, `lib/` oder `autoload/` geändert hat (jede Datei wird zuerst geparst) |
 | 6 | PHP-FPM: warten, bis OPcache die geänderten Dateien neu geprüft hat, oder neu laden, wenn man sich darauf nicht verlassen kann |
-| 7 | Velocity neu starten, wenn es läuft |
+| 7 | Velocity neu starten, wenn er läuft |
 | 8 | Caches für Inhalte, HTTP und Template-Blöcke (und der Packer mit `--packer`) |
 | 9 | der Antwort-Cache von Velocity |
 | 10 | Vorwärmen: jede `[DeploySettings] WarmUpURL[]` wird einmal von einem Hintergrundprozess angefragt |

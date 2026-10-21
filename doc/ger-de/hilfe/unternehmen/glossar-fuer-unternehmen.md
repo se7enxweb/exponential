@@ -4,7 +4,7 @@ audience: businesses, project-manager, sales-marketing
 category: business-solutions
 order: 95
 summary: Verständliche Erklärungen der Begriffe, die im Bereich Unternehmen verwendet werden, von Siteaccess und Sektion bis zu Cache, Velocity, REST API, USt-Typ, Ländergruppe, RTO und Gesamtbetriebskosten, jeweils mit einem Link auf die Stelle, an der sie vollständig erklärt sind.
-keywords: Glossar, Begriffe, Definitionen, Siteaccess, Sektion, Rolle, Richtlinie, Inhaltsklasse, Objekt, Knoten, Entwurf, Version, Erweiterung, Cache, View-Cache, statischer Cache, Velocity, REST API, OAuth, API-Schlüssel, USt, Ländergruppe, Workflow, Audit-Trail, SLA, RTO, RPO, TCO, ROI, DSGVO, Extranet, Intranet, headless, glossary, terms, definitions, section, role, policy, content class, object, node, draft, version, extension, view cache, static cache, API key, VAT, country group, audit trail, GDPR
+keywords: Glossar, Begriffe, Definitionen, Siteaccess, Sektion, Rolle, Richtlinie, Inhaltsklasse, Objekt, Knoten, Entwurf, Version, Erweiterung, Cache, View-Cache, statischer Cache, Velocity, REST API, OAuth, API-Schlüssel, USt, Ländergruppe, Workflow, Prüfprotokoll, SLA, RTO, RPO, TCO, ROI, DSGVO, Extranet, Intranet, headless, glossary, terms, definitions, section, role, policy, content class, object, node, draft, version, extension, view cache, static cache, API key, VAT, country group, audit trail, GDPR
 type: help
 ---
 # Glossar für Unternehmen
@@ -74,7 +74,7 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 | Statischer Cache | Seiten, die als einfache Dateien auf die Festplatte geschrieben werden | [Statischer Cache und Antwortcache](zuverlaessigkeit/statischer-cache-und-antwortcache.md) |
 | Cronjob | Eine Aufgabe, die nach Zeitplan läuft, zum Beispiel das Versenden von Benachrichtigungen | [Cronjobs: ausführen, planen und verfolgen](../../anleitungen/cronjobs.md) |
 | Wartungsmodus | Eine Seite, die Besuchern angezeigt wird, während gearbeitet wird | [Wartungsmodus: die Site vom Netz nehmen und zurückholen](../../anleitungen/wartungsmodus.md) |
-| Audit-Trail | Ein manipulationssicheres Protokoll darüber, wer was geändert hat | [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
+| Prüfprotokoll | Ein manipulationssicheres Protokoll darüber, wer was geändert hat | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | Upgrade-Prüfung | Eine Prüfung der Datenbank und der Dateien gegen das Release vor einem Upgrade | [Die Upgrade-Prüfung: Dateien und Datenbank vor einem Upgrade](../../anleitungen/upgrade-pruefung.md) |
 | Erweiterung | Ein Paket, das Funktionen hinzufügt | [Extensions: finden, installieren, konfigurieren, bauen und veröffentlichen](../../anleitungen/extensions.md) |
 | Cluster | Mehrere Server, die sich die Arbeit und die Dateien teilen | [Clustering und Hochverfügbarkeit](zuverlaessigkeit/clustering-und-hochverfuegbarkeit.md) |

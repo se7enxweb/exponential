@@ -12,8 +12,8 @@ type: help
 Diese Checkliste richtet sich an die Verantwortlichen für Barrierefreiheit, die Website-Administration und die leitende
 Redaktion einer öffentlichen Stelle. Sie trennt, was Exponential mitbringt, von dem, was Ihre Organisation tun muss. Die
 Statusangaben stammen aus den [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md): WCAG 2.2 AA
-**Partly complies** (teilweise erfüllt) für die Administration admin4 und admin4l; EN 301 549 und Section 508
-**Unverified** (nicht überprüft); öffentliche Designs nicht geprüft; kein VPAT.
+**Teilweise erfüllt** für die Administration admin4 und admin4l; EN 301 549 und Section 508
+**Nicht geprüft**; öffentliche Designs nicht geprüft; kein VPAT.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung. Amtliche Texte: [WCAG 2.2](https://www.w3.org/TR/WCAG22/),

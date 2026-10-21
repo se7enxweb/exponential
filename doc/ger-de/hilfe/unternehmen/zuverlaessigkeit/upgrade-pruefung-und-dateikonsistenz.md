@@ -125,8 +125,8 @@ Aus [Die Upgrade-Prüfung, Sicherheit](../../../anleitungen/upgrade-pruefung.md#
 
 - Beide Prüfungen und alle Downloads lesen nur; die Seite hat keine Schaltfläche, die eine Datei schreibt oder die
   Datenbank ändert.
-- Jeder Lauf und jeder Download wird im Audit-Trail als `system.upgrade.run` festgehalten, mit dem Ergebnis und der
-  Anzahl der Unterschiede ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)).
+- Jeder Lauf und jeder Download wird im Prüfprotokoll als `system.upgrade.run` festgehalten, mit dem Ergebnis und der
+  Anzahl der Unterschiede ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)).
 
 ## Checkliste
 

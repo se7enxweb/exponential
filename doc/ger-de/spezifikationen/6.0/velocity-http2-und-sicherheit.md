@@ -176,9 +176,9 @@ Sicherheitsregeln:
   Name, der mit einem Zeilenumbruch oder einem Bindestrich endete, kam früher durch).
 - Passwörter für das Panel sind bcrypt, werden gegen Regeln geprüft und durch eine Sperre geschützt. Der
   Zugangsdatenspeicher muss eine Eigentümerregel erfüllen, sonst wird das Panel gesperrt.
-- Der Antwort-Cache liefert nie eine personalisierte Seite aus. Er überspringt Anfragen, die die Session-Cookie-Namen
+- Der Antwort-Cache liefert nie eine personalisierte Seite aus. Er überspringt Anfragen, die die Sitzungs-Cookie-Namen
   aus `skip.cookies` tragen, verglichen nach Präfix. Der Vergleich verlangte früher, dass auf den Namen unmittelbar
-  `=` folgt, und verfehlte das Session-Cookie von Exponential, das nach dem Namen einen Digest trägt; behoben in 0.0.4.26.
+  `=` folgt, und verfehlte das Sitzungs-Cookie von Exponential, das nach dem Namen einen Digest trägt; behoben in 0.0.4.26.
 - Worker geben die Root-Rechte ab ([Worker-Pool](velocity-worker-pool.md)).
 - Befehle der Q-Shell erhalten keinen der Sockets und keine Umgebung des Servers ([Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md)).
 - Cache-Dateien liegen standardmäßig in einem Verzeichnis, das nicht für alle lesbar ist (0.0.4.15), mit

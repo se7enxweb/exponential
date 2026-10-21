@@ -88,7 +88,7 @@ Fragen Sie nach Nachweisen, die es gibt und die Sie selbst prüfen können:
 - **Eine Vorführung** auf einem System, das Sie selbst bedienen können, oder eine Installation für einen Proof of
   Concept, die Sie selbst betreiben. Exponential lässt sich mit einem Befehl auf SQLite installieren ([Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)).
 - **Ehrliche Lücken.** Bitten Sie den Bieter, aufzulisten, was nicht erfüllt ist. Ein Bieter, der jede Zeile ohne
-  Nachweis mit „voll konform“ beantwortet, gibt Ihnen weniger Information als einer, der „Partly complies“ sagt und die
+  Nachweis mit „voll konform“ beantwortet, gibt Ihnen weniger Information als einer, der „Teilweise erfüllt“ sagt und die
   Lücke zeigt.
 
 ## Fallstricke

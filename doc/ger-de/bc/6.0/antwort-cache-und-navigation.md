@@ -196,11 +196,11 @@ server-side answer to the same request     0.36 ms
 Daher wird die Seite aus dem eigenen Speicher des Browsers beantwortet und das Netzwerk danach gefragt. Regeln:
 
 - nur Navigationen per GET vom selben Ursprung;
-- nie eine Seite, die mit einem Session-Cookie abgerufen wurde;
+- nie eine Seite, die mit einem Sitzungs-Cookie abgerufen wurde;
 - nie etwas anderes als 200;
 - nie `/admin`, `/user`, `/explayouts_ui` oder `/api`.
 
-Erscheint ein Session-Cookie, meldet das Skript der Seite den Worker ab und leert seinen Cache, statt ihn einem
+Erscheint ein Sitzungs-Cookie, meldet das Skript der Seite den Worker ab und leert seinen Cache, statt ihn einem
 Besucher die Seite eines anderen ausliefern zu lassen.
 
 **Notschalter:** Liefern Sie `index.js` als `self.registration.unregister()` aus. Jeder Browser entfernt ihn bei seiner

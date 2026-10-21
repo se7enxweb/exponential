@@ -592,7 +592,7 @@ Was Inhalte beim Veröffentlichen indiziert und was antwortet, wenn jemand sucht
 ### Session-Handler  
 *Werkzeug:* `/setup/handlerextension/session`
 
-Wo Sessions aufbewahrt und wie sie aufgeräumt werden.
+Wo Sitzungen aufbewahrt und wie sie aufgeräumt werden.
 
 | | |
 |---|---|

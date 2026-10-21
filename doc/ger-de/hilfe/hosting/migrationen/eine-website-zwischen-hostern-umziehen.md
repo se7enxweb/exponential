@@ -75,7 +75,7 @@ Quelle der Liste: [10.9 Backups und Wiederherstellung](../../../installation/10-
    php bin/php/ezcache.php --clear-all --allow-root-user
    ```
 
-7. **Starten Sie die Engine** (oder laden Sie PHP-FPM neu), leeren Sie den Antwort-Cache von Velocity, wenn es die Website
+7. **Starten Sie die Engine** (oder laden Sie PHP-FPM neu), leeren Sie den Antwort-Cache von Velocity, wenn er die Website
    ausliefert (`php bin/php/console exp:velocity cache clear --allow-root-user`).
 8. **Testen Sie** über einen Eintrag in der hosts-Datei, und schalten Sie dann das DNS um.
 9. **Lassen Sie die alte Maschine im Wartungsmodus**, bis die DNS-Änderung alle erreicht hat. Der Wartungsmodus liegt in

@@ -31,7 +31,7 @@ kein Verantwortlicher: Die Einhaltung liegt in der Verantwortung der Organisatio
 Software kann für sich allein nicht konform sein; die Organisation ist es. Exponential bietet Funktionen, die helfen:
 ein Einwilligungsprotokoll für E-Mails, E-Mail-Kategorien mit Opt-in, Löschung beim Entfernen eines Kontos,
 Pseudonymisierung im Audit, Maskierung von IP-Adressen in Protokollen und keine Ressourcen von Drittanbietern in der
-Administration. Der Status ist **Partly complies (features provided)** (teilweise erfüllt, Funktionen vorhanden)
+Administration. Der Status ist **Teilweise erfüllt (Funktionen bereitgestellt)**
 ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)). Zwecke, Rechtsgrundlagen, die Datenschutzerklärung, das
 Verzeichnis von Verarbeitungstätigkeiten und Auftragsverarbeitungsverträge bleiben bei Ihnen.
 
@@ -64,7 +64,7 @@ und Bestellungen erreichen Sie über getrennte Werkzeuge der Administration, und
 
 ## Wie lange werden Protokolle aufbewahrt, und was enthalten sie?
 
-Der Audit-Trail behält pro Kanal 90 Tage aktiv und zwei Jahre archiviert, mit gekürzten Adressen und ohne Passwörter
+Das Prüfprotokoll behält pro Kanal 90 Tage aktiv und zwei Jahre archiviert, mit gekürzten Adressen und ohne Passwörter
 oder Token. Die Protokolle für 404, Sicherheit und CSP haben Altersgrenzen; andere Protokolle des Kernels werden nach
 Größe rotiert, ohne Altersgrenze, sofern Sie keine festlegen ([Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)).
 Der Protokollbetrachter maskiert IP- und E-Mail-Adressen ([Protokollbetrachter](../../../../eng-us/features/6.0/log-viewer.md)).

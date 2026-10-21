@@ -19,8 +19,8 @@ positiven.
 
 | Seite | Kurze Antwort auf die Hauptfrage |
 |---|---|
-| [Barrierefreiheit](faq-barrierefreiheit.md) | admin4 erfüllt WCAG 2.2 AA teilweise; EN 301 549 und Section 508 nicht überprüft; kein VPAT; öffentliche Designs liegen in der Verantwortung des Websiteerstellers |
-| [Sicherheit](faq-sicherheit.md) | Gegenmaßnahmen für die gesamten OWASP Top 10, manipulationssicherer Audit-Trail; keine ASVS-Bewertung; Kontosperre und 2FA sind Ihre Entscheidungen |
+| [Barrierefreiheit](faq-barrierefreiheit.md) | admin4 erfüllt WCAG 2.2 AA teilweise; EN 301 549 und Section 508 nicht geprüft; kein VPAT; öffentliche Designs liegen in der Verantwortung des Websiteerstellers |
+| [Sicherheit](faq-sicherheit.md) | Gegenmaßnahmen für die gesamten OWASP Top 10, manipulationssicheres Prüfprotokoll; keine ASVS-Bewertung; Kontosperre und 2FA sind Ihre Entscheidungen |
 | [Datenschutz](faq-datenschutz.md) | Einwilligungsnachweise, Löschung und Maskierung in Protokollen sind vorhanden; die Organisation bleibt Verantwortlicher; kein Cookie-Banner |
 | [Hosting und Datenstandort](faq-hosting-und-datenstandort.md) | installieren Sie es, wo Sie wollen: in Ihrem Rechenzentrum, in Ihrem Land, in jedem Hostingmodell |
 | [Lizenzierung und Open Source](faq-lizenzen-und-open-source.md) | GPL Version 2 oder später, keine Lizenzgebühr, Quellcode öffentlich |
@@ -30,7 +30,7 @@ positiven.
 | [Migration von älteren Systemen](faq-migration.md) | Websites der älteren Codebasis, der Symfony-Plattformen und anderer Systeme können umziehen, mit Anleitungen |
 | [Schulung](faq-schulung.md) | fünfzehn kostenlose Kursprogramme; noch keine offizielle Zertifizierung festgelegt |
 | [Integrationen und APIs](faq-integrationen.md) | REST v1 und v2, API-Schlüssel, RSS, Exporte; Single Sign-on und GIS sind Eigenentwicklung |
-| [Schriftgut und Audit](faq-schriftgut-und-audit.md) | Versionen, Papierkorb und ein Audit-Trail mit Hash-Kette; kein Schriftgutverwaltungssystem |
+| [Schriftgut und Audit](faq-schriftgut-und-audit.md) | Versionen, Papierkorb und ein Prüfprotokoll mit Hash-Kette; kein Schriftgutverwaltungssystem |
 | [Das Projekt und seine Maintainer](faq-projekt-und-maintainer.md) | gepflegt von 7x mit der Exponential Foundation; prüfen Sie die Aktivität im Changelog |
 | [Releases und Aktualisierungen](faq-releases-und-aktualisierungen.md) | 6.0.x wird unterstützt; Versionen ändern sich nie; Korrekturen kommen als nächstes Release |
 | [Suche](faq-suche.md) | eingebaute Suche oder Solr über ezfind |

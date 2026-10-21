@@ -31,7 +31,7 @@ API-Referenz: Das sind der Quelltext des Kernels und die Seiten, auf die jedes K
 | [eZContentClass](ezcontentclass.md) | Inhaltsklassen und ihre Attribute |
 | [eZUser und Zugriffsprüfungen](ezuser-und-zugriff.md) | der aktuelle Benutzer und Richtlinien |
 | [Demomodus für Entwickler](demomodus-fuer-entwickler.md) | `EXP_DEMO_MODE`, Passwortänderungen auf einer öffentlichen Demo |
-| [eZHTTPTool](ezhttptool.md) | Request-Variablen, Sessions, Weiterleitungen |
+| [eZHTTPTool](ezhttptool.md) | Request-Variablen, Sitzungen, Weiterleitungen |
 | [eZSys und eZExtension](ezsys-und-ezextension.md) | Pfade, die Umgebung, Erweiterungen |
 | [eZTemplate](eztemplate.md) | Templates aus PHP |
 | [eZModule](ezmodule.md) | Module und View-Ergebnisse |

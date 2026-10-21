@@ -39,7 +39,7 @@ Finanzabteilung akzeptiert.
 | Anmeldung über das Firmenverzeichnis | Ein LDAP-Login-Handler (`settings/ldap.ini`, `kernel/classes/datatypes/ezuser/ezldapuser.php`) | [Verzeichnisanmeldung und LDAP](../intranets/verzeichnisanmeldung-und-ldap.md) |
 | Dokumente | Datei-Uploads, Versionsverwaltung, Suche | `README.md`; [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
 | Benachrichtigungen für Mitarbeiter | Abonnements neuer Inhalte per E-Mail | [Benachrichtigungen](../../../anleitungen/benachrichtigungen-administrator.md) |
-| Nachweis, wer was geändert hat | Der Audit-Trail | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis, wer was geändert hat | Das Prüfprotokoll | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 
 Es gilt keine Lizenz pro Benutzer, die Kosten wachsen also nicht mit der Zahl der Mitarbeiterkonten
 ([Wofür Sie nicht bezahlen](wofuer-sie-nicht-bezahlen.md)).
@@ -107,7 +107,7 @@ Raten Sie die Minuten nicht; messen Sie sie vorher und nachher:
       könnte.
 - [ ] Vergleichen Sie nach dem Start nach drei Monaten dieselben Notizen und Zählungen.
 - [ ] Verwenden Sie die eigenen Zahlen der Website: Suchanfragen und ihre Ergebnisse und die Aufzeichnung der
-      Veröffentlichungen im Audit-Trail ([Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)).
+      Veröffentlichungen im Prüfprotokoll ([Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)).
 - [ ] Tragen Sie den gemessenen Wert beim [Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md) in die Berechnung
       zurück.
 

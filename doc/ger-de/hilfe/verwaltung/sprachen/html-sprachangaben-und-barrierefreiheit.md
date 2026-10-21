@@ -53,8 +53,8 @@ Die Pagelayouts der Administration tun das bereits ([Standards zur Barrierefreih
 ## Was geprüft ist und was nicht
 
 Die [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) nennen den Stand des Projekts: WCAG 2.2 Stufe
-AA **Partly complies** (teilweise erfüllt) für die Administration admin4 und admin4l; Designs öffentlicher Websites und
-der Online-Editor sind nicht geprüft; EN 301 549 und Section 508 sind **Unverified** (nicht überprüft); es gibt weder
+AA **Teilweise erfüllt** für die Administration admin4 und admin4l; Designs öffentlicher Websites und
+der Online-Editor sind nicht geprüft; EN 301 549 und Section 508 sind **nicht geprüft**; es gibt weder
 ein VPAT noch einen Accessibility Conformance Report. Die Konformität Ihres öffentlichen Designs müssen Sie selbst
 testen ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
 

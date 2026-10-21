@@ -178,7 +178,7 @@ Regeln folgen; die Korrekturen der Erweiterungen zeigen jede davon:
 
 ## 8. Die API des Layout-Editors: Tokens, Entwürfe und gesperrte Zonen
 
-- `explayouts_ui_api` 1.3.3 lehnt jede Anfrage außer GET, die das Formular-Token der Session nicht mitbringt (Header
+- `explayouts_ui_api` 1.3.3 lehnt jede Anfrage außer GET, die das Formular-Token der Sitzung nicht mitbringt (Header
   `X-CSRF-Token` oder Feld `ezxform_token`), mit HTTP 403 und dem JSON-Body
   `{"error":{"code":403,"reason":"form_token_missing"}}` ab.
 - 1.3.4 lehnt Schreibvorgänge an Blöcken ab, sofern der Block nicht zu einem Entwurf gehört.

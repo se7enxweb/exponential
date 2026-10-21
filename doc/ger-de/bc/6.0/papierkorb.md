@@ -329,7 +329,7 @@ Admin-Designs; 960 px breit bei Skalierung 2) besteht mit der neuen Seite.
 - **Papierkorb leeren löscht in Stapeln**: jeweils 100 Elemente, jeder Stapel in einer eigenen Transaktion, mit Leeren
   des Inhalts-Caches und einer Pause von einer Sekunde zwischen den Stapeln, genau wie `bin/php/trashpurge.php` und der
   Cronjob-Teil `trashpurge` (`Exponential\Service\Trash::purgeInBatches()`).
-- „Remove timed out sessions“ in Setup entfernt außerdem die Warenkörbe dieser Sessions, wie
+- „Remove timed out sessions“ in Setup entfernt außerdem die Warenkörbe dieser Sitzungen, wie
   `bin/php/ezsessiongc.php` (`SessionGarbageCollector::collect()`).
 - Der Cronjob-Teil `clusterpurge` löscht Dateien, die vor 30 Tagen abgelaufen sind; er übergab eine bloße 30, was
   30 Sekunden bedeutete.

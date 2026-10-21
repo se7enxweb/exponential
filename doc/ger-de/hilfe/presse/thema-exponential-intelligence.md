@@ -30,7 +30,7 @@ führt einen Blickwinkel weiter.
 einfacher Sprache um neue Inhalte oder um Änderungen“, und der Assistent „schreibt **Entwürfe**, als der angemeldete
 Redakteur und mit dessen eigenen Berechtigungen“ ([README, Exponential Intelligence](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-intelligence-new)).
 Er arbeitet mit gehosteten Anbietern in den USA oder in der EU oder mit einem lokalen Open-Weight-Modell auf demselben
-Server; er hält jede Anfrage im Audit-Trail fest, ohne den Prompt oder die Antwort; und er zeigt bei jedem Klick das
+Server; er hält jede Anfrage im Prüfprotokoll fest, ohne den Prompt oder die Antwort; und er zeigt bei jedem Klick das
 Modell, die Region und die Kosten. Er ist die Erweiterung `se7enxweb/expai`, die der Kernel ab der Entwicklungslinie
 6.0.15 voraussetzt ([Funktionsseite zu expai](../../../eng-us/features/6.0/extensions/expai.md)).
 
@@ -53,7 +53,7 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
 | Er arbeitet als der angemeldete Redakteur, mit dessen Berechtigungen. | ebenda |
 | Anbieter: Anthropic, jeder OpenAI-kompatible Dienst (Melious.ai in der EU, Hugging Face, OpenRouter, Mistral und andere) oder ein lokales Modell über Ollama. | ebenda |
 | Jeder Anbieter gibt eine Region (`us`, `eu`, `local`) und eine Aufbewahrungsdauer an; Regeln pro Sektion und Inhaltsklasse entscheiden, welche Inhalte wohin gehen dürfen. | [expai, Für Administratoren](../../../eng-us/features/6.0/extensions/expai.md#for-administrators) |
-| Prompts, Antworten und Schlüssel werden nie im Audit-Trail festgehalten. | ebenda |
+| Prompts, Antworten und Schlüssel werden nie im Prüfprotokoll festgehalten. | ebenda |
 | Nutzungsgrenzen pro Benutzer, Tag, Monat, Website und Anbieter sowie Budgets für Arbeit in der Warteschlange. | ebenda |
 | „EI: Summary“ ist eine druckbare Seite für einen Datenschutzbeauftragten. | ebenda |
 | Er kann Alternativtexte für Bilder vorschlagen und Bilder melden, denen einer fehlt. | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |

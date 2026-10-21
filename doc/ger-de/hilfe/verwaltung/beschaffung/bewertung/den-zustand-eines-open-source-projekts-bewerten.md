@@ -79,7 +79,7 @@ Härtungsdurchgänge und nennt ihre Lücken.
 
 - Die Dokumentation liegt im Repository, unter der GNU Free Documentation License 1.3, und wird in der Administration als
   Hilfe angezeigt ([Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md)).
-- Die Seiten zu den Standards geben die Konformität ehrlich an, mit „Partly complies“ und „Unverified“, wo das die
+- Die Seiten zu den Standards geben die Konformität ehrlich an, mit „Teilweise erfüllt“ und „Nicht geprüft“, wo das die
   Wahrheit ist ([Standards](../../../../../eng-us/standards/README.md)).
 
 ## Community und Roadmap

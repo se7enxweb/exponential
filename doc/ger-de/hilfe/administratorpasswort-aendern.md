@@ -60,7 +60,7 @@ ist der Siteaccess Ihrer Administration). Es ist in jedem Design dieselbe Seite;
    Eingabe ab. **Sicheres Passwort erzeugen** erstellt eines für Sie; **Anzeigen** macht das Eingegebene sichtbar.
 3. Klicken Sie auf **Passwort ändern**.
 
-Sie bleiben angemeldet, mit einer neuen Session-ID. Ihre Sitzungen in anderen Browsern und auf anderen Geräten werden
+Sie bleiben angemeldet, mit einer neuen Sitzungs-ID. Ihre Sitzungen in anderen Browsern und auf anderen Geräten werden
 bei ihrer nächsten Anfrage abgemeldet, und eine E-Mail „Ihr Passwort wurde geändert“ geht an die Adresse des Kontos. Die
 Seite nennt, wie viele andere Sitzungen beendet wurden.
 
@@ -254,8 +254,8 @@ Festgelegt in `site.ini [PasswordSettings]`, beide standardmäßig eingeschaltet
 
 - **`EndOtherSessions=enabled`**: Eine Anmeldung speichert einen Stempel des Passworts in der Sitzung; ändert sich das
   Passwort, passt keine andere Sitzung dieses Benutzers mehr, und jede wird bei ihrer nächsten Anfrage abgemeldet, mit
-  jedem Session-Handler. Die Sitzung, die die Änderung vorgenommen hat, erhält eine neue Session-ID. Das macht eine
-  Passwortänderung nach der Übernahme eines Kontos überhaupt erst wirksam: Wer ein gestohlenes Session-Cookie besitzt,
+  jedem Session-Handler. Die Sitzung, die die Änderung vorgenommen hat, erhält eine neue Sitzungs-ID. Das macht eine
+  Passwortänderung nach der Übernahme eines Kontos überhaupt erst wirksam: Wer ein gestohlenes Sitzungs-Cookie besitzt,
   wird abgemeldet. Es gilt für jeden Weg, ein Passwort zu ändern: `user/password`, das Bearbeitungsformular für
   Benutzer, **Passwort vergessen?** und die Kommandozeile.
 - **`ChangeNotificationMail=enabled`**: Der Benutzer erhält „Ihr Passwort wurde geändert“ (Kategorie *Kontosicherheit*,

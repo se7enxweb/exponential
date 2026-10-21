@@ -49,7 +49,7 @@ Ohne `--allow-admin` ist auch die Administration offline. Dasselbe leistet `./co
 ## Der Weg zurück
 
 Der gesamte Zustand ist eine Datei, `var/maintenance.json`. Wird sie gelöscht, endet die Wartung, ganz gleich, was sonst
-nicht stimmt. Jedes Umschalten wird im Audit-Trail festgehalten.
+nicht stimmt. Jedes Umschalten wird im Prüfprotokoll festgehalten.
 
 ## Bewährte Vorgehensweise
 

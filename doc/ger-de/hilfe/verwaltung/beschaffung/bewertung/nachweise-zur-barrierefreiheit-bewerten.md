@@ -45,10 +45,10 @@ Vereinigten Staaten gilt [Section 508](https://www.section508.gov/) für Bundesb
 
 | Standard | Status in der Dokumentation | Genannte Nachweise |
 |---|---|---|
-| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Stufe AA | **Partly complies** (admin4 und admin4l gegen AA-Kriterien entworfen und durch Regressionstests abgesichert) | Designtests in `tests/tests/design/` für Beschriftungen, Landmarks, Fehler, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße |
-| [WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/) | **Partly complies** für admin4/admin4l | Muster für Reiter, Aufklappen und Menüs an Template-Quellen getestet |
-| EN 301 549 v3.2.1 | **Unverified** | keine Bewertung gegen die Norm; Abschnitt 11.8 (Autorenwerkzeuge) nicht überprüft |
-| Section 508 | **Unverified** | kein VPAT und kein Accessibility Conformance Report |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Stufe AA | **Teilweise erfüllt** (admin4 und admin4l gegen AA-Kriterien entworfen und durch Regressionstests abgesichert) | Designtests in `tests/tests/design/` für Beschriftungen, Landmarks, Fehler, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße |
+| [WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/) | **Teilweise erfüllt** für admin4/admin4l | Muster für Reiter, Aufklappen und Menüs an Template-Quellen getestet |
+| EN 301 549 v3.2.1 | **Nicht geprüft** | keine Bewertung gegen die Norm; Abschnitt 11.8 (Autorenwerkzeuge) nicht geprüft |
+| Section 508 | **Nicht geprüft** | kein VPAT und kein Accessibility Conformance Report |
 
 Manuelle axe-Läufe und ihre Ergebnisse sind im [Changelog von 6.0.15](../../../../../changelogs/6.0/6.0.15.md)
 festgehalten; axe läuft nicht in der CI.
@@ -60,7 +60,7 @@ Aus den bekannten Lücken der [Standards zur Barrierefreiheit](../../../../../en
 - Designs öffentlicher Websites (standard, base, plain, die Websitepakete und Themes) sind **nicht geprüft**.
 - Die klassische Administration und admin3 sind nicht von den Tests für Kontrast, Landmarks und Formularfehler
   abgedeckt.
-- Der Online-Editor (Integrationen von TinyMCE) ist **Unverified**.
+- Der Online-Editor (Integrationen von TinyMCE) ist **nicht geprüft**.
 - Separat ausgelieferte Erweiterungen werden einzeln überprüft; es gibt keine Gesamterklärung.
 - Es gibt keine Bewertung nach WCAG-EM, kein VPAT und keinen Accessibility Conformance Report.
 - Mit dem Produkt wird keine Vorlage für eine Erklärung zur Barrierefreiheit ausgeliefert.

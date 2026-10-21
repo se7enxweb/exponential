@@ -10,7 +10,7 @@ Sie einstellen.
 
 | | |
 |---|---|
-| Was sich geändert hat | Velocity spricht HTTP/2 selbst (`velocity.ini [ServerSettings] HTTP2`, ausgeliefert als `enabled`), mit einer lesbaren Ersatzseite bei einem fehlgeschlagenen Stream. Neuer Befehl `exp:warm` (`bin/php/warm.php`) hält den Antwort-Cache gefüllt. Der Antwort-Cache wird beim eigenen Session-Cookie der Website übersprungen (`CacheSkipCookies`, aus `site.ini` abgeleitet). Ressourcengrenzen für HTTP/2 ab qbix-webserver 0.0.4.9. Optionales Vorwärm-Rendering im Elternprozess (`PreloadWarmup`, Standard `disabled`). |
+| Was sich geändert hat | Velocity spricht HTTP/2 selbst (`velocity.ini [ServerSettings] HTTP2`, ausgeliefert als `enabled`), mit einer lesbaren Ersatzseite bei einem fehlgeschlagenen Stream. Neuer Befehl `exp:warm` (`bin/php/warm.php`) hält den Antwort-Cache gefüllt. Der Antwort-Cache wird beim eigenen Sitzungs-Cookie der Website übersprungen (`CacheSkipCookies`, aus `site.ini` abgeleitet). Ressourcengrenzen für HTTP/2 ab qbix-webserver 0.0.4.9. Optionales Vorwärm-Rendering im Elternprozess (`PreloadWarmup`, Standard `disabled`). |
 | Wer betroffen ist | Benutzer von Velocity. Die Anmeldung über HTTP/2 braucht qbix-webserver 0.0.4.7 oder neuer; das Erneuern durch `exp:warm` braucht 0.0.4.6 oder neuer. Websites mit `SessionNameHandler=default` und eingeschaltetem Antwort-Cache brauchen die korrigierte Liste der Cookies (siehe [Der Antwort-Cache achtet in der Grundeinstellung auf das falsche Cookie](#der-antwort-cache-achtet-in-der-grundeinstellung-auf-das-falsche-cookie)). |
 | Wie Sie es prüfen | `grep -n "^HTTP2\|^Workers\|^PreloadWarmup" settings/velocity.ini` und `php vendor/se7enxweb/exponential-velocity/tests/run-unit.php` |
 | Wie Sie es beheben | Aktualisieren Sie das Engine-Paket; planen Sie `exp:warm` häufiger als das Cache-Fenster; setzen Sie `Workers` anhand einer Lastreihe; lassen Sie `PreloadWarmup` aus, sofern Sie keine vollständige Regressionsprüfung von Seiten und Assets durchgeführt haben. |
@@ -134,8 +134,8 @@ genommen.
 
 Beides gegen diesen Server getestet, beides über die Stream-Schicht von PHP nicht verfügbar:
 
-- **Wiederaufnahme von TLS-Sessions.** Es wird nie ein Session-Ticket ausgestellt, daher bezahlt jede Verbindung einen
-  vollständigen Handshake. `openssl s_client -sess_out` schreibt keine Session-Datei.
+- **Wiederaufnahme von TLS-Sitzungen.** Es wird nie ein Sitzungs-Ticket ausgestellt, daher bezahlt jede Verbindung einen
+  vollständigen Handshake. `openssl s_client -sess_out` schreibt keine Sitzungsdatei.
 - **OCSP-Stapling.** `OCSP response: no response sent`. In diesem Fall kostet das nichts — das verwendete Zertifikat von
   Let's Encrypt trägt überhaupt keinen OCSP-Responder, daher gibt es für einen Browser keine Abfrage der Sperrung.
 
@@ -181,17 +181,17 @@ dieser Widerspruch war die Antwort.
 
 Der eigene Standard des Servers nennt `PHPSESSID` und `Q_sid`. Das sind die Namen von PHP und von Qbix, und ein Browser,
 der ein veraltetes von beiden trug -- von irgendeiner Qbix-Anwendung auf demselben Host --, umging den Cache bei jeder
-Anfrage, während eine echte Session glatt hindurchging. 74 ms aus dem Cache gegenüber etwa 1300 ms gerendert, für
+Anfrage, während eine echte Sitzung glatt hindurchging. 74 ms aus dem Cache gegenüber etwa 1300 ms gerendert, für
 Seiten, die Byte für Byte identisch waren.
 
 `expVelocity` leitet die Liste jetzt aus `site.ini` ab und schreibt sie in die Konfiguration des Servers. Überschreiben
 Sie sie mit `[ServerSettings]CacheSkipCookies`.
 
 **Korrigiert:** Die erste Version dieser Ableitung las allein `[Session]SessionNamePrefix`, was nur mit
-`SessionNameHandler=custom` richtig ist. Mit `default` -- dem Standard von `site.ini` -- benennt PHP das Session-Cookie,
+`SessionNameHandler=custom` richtig ist. Mit `default` -- dem Standard von `site.ini` -- benennt PHP das Sitzungs-Cookie,
 `PHPSESSID`, und das Präfix wird gar nicht verwendet. Eine Installation mit dem Standard-Handler erhielt eine Liste mit
-`eZSESSID`, traf nie ihr eigenes Session-Cookie und beantwortete bei eingeschaltetem Antwort-Cache eine Anfrage eines
-angemeldeten Benutzers aus dem Cache oder speicherte sie für alle anderen. Die Liste ist jetzt das Session-Cookie, wie
+`eZSESSID`, traf nie ihr eigenes Sitzungs-Cookie und beantwortete bei eingeschaltetem Antwort-Cache eine Anfrage eines
+angemeldeten Benutzers aus dem Cache oder speicherte sie für alle anderen. Die Liste ist jetzt das Sitzungs-Cookie, wie
 der Handler es benennt -- `session.name` für `default`, `SessionNamePrefix` für `custom` (als Präfix abgeglichen, sodass
 es `<prefix><digest>` abdeckt) -- plus `is_logged_in`, das der Kernel genau für diesen Zweck bei angemeldeten Besuchern
 setzt.
@@ -200,10 +200,10 @@ setzt.
 
 Cookies, die ein Skript setzt, werden in einer gepoolten Antwort getrennt von seinen Headern getragen, und der Pfad für
 HTTP/2 las sie nie, daher wurde jedes `Set-Cookie` verworfen. Die Anmeldung antwortete mit 302 an die richtige Stelle
-und setzte keine Session.
+und setzte keine Sitzung.
 
-Es verbarg sich gut: Ein Browser, der schon eine Session hielt, arbeitete weiter, und eine über HTTP/1.1 erhaltene
-Session ist über HTTP/2 genauso gut. Nur eine frische Anmeldung auf einer Verbindung, die h2 ausgehandelt hatte, konnte
+Es verbarg sich gut: Ein Browser, der schon eine Sitzung hielt, arbeitete weiter, und eine über HTTP/1.1 erhaltene
+Sitzung ist über HTTP/2 genauso gut. Nur eine frische Anmeldung auf einer Verbindung, die h2 ausgehandelt hatte, konnte
 es sehen -- jedes private Fenster und jeder automatisierte Test.
 
 

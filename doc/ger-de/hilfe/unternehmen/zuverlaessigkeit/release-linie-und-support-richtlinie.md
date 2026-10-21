@@ -55,7 +55,7 @@ Releases, die für die Planung wichtig sind, aus
 | 6.0.10 | Das erste Release mit dem Namen Exponential |
 | 6.0.13 | Sicherheitskorrekturen und Prüfungen der Sortierspalten |
 | 6.0.14 | MongoDB als Datenbank und die Upgrade-Dateiprüfung |
-| Linie 6.0.15 | Velocity, das Design admin4, der Audit-Trail, Exponential Layouts, Exponential Intelligence, das Hilfesystem |
+| Linie 6.0.15 | Velocity, das Design admin4, das Prüfprotokoll, Exponential Layouts, Exponential Intelligence, das Hilfesystem |
 
 > **Hinweis**
 > Das Projekt veröffentlicht keinen festen Release-Kalender. Die 6.0.x-Tags kamen in Abständen von etwa einem bis fünf

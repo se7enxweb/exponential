@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Sitzungsdienste und Websiteersteller, die die Beschlüsse einer öffentlichen Stelle
 veröffentlichen. Ein als Inhalt geführtes Register gibt jedem Beschluss eine stabile Adresse, eine Versionsgeschichte
-und einen Audit-Trail und kann als Datensatz exportiert werden.
+und ein Prüfprotokoll und kann als Datensatz exportiert werden.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -49,7 +49,7 @@ Objektzustände sind Kennzeichnungen, die jedes Objekt trägt, eine aus jeder Zu
 
 - Zeigen Sie den Zustand mit Ihrem Template auf der Seite an.
 - Beschränken Sie `state/assign` mit der Beschränkung `NewState`, damit nur das Team des Sitzungsdienstes ihn ändert.
-- Eine Änderung des Zustands wird im Audit-Trail aufgezeichnet ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- Eine Änderung des Zustands wird im Prüfprotokoll aufgezeichnet ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 Entfernen Sie einen aufgehobenen Beschluss nie; setzen Sie seinen Zustand und verlinken Sie den Beschluss, der ihn
 aufgehoben hat.

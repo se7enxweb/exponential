@@ -98,7 +98,7 @@ Schulungsinstallation; notieren Sie jeden Befehl und seine Ausgabe.
 4. Setzen Sie `[SiteSettings] SiteURL` in der Datei des öffentlichen Siteaccess auf `www.training.test` und in der
    Datei des Administrations-Siteaccess auf `admin.training.test`.
 5. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
-6. Läuft die Website auf Velocity, starten Sie es neu. Testen Sie dann beide Namen gegen Ihren lokalen Port:
+6. Läuft die Website auf Velocity, starten Sie ihn neu. Testen Sie dann beide Namen gegen Ihren lokalen Port:
 
    ```bash
    curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' -H 'Host: admin.training.test' http://127.0.0.1:<port>/
@@ -112,7 +112,7 @@ Schulungsinstallation; notieren Sie jeden Befehl und seine Ausgabe.
    Ehemaligen verwendet Nachrichten der Hauptwebsite wieder.* Eine Installation mit zwei Siteaccesses oder zwei
    Installationen?
 9. Stellen Sie die drei Dateien aus Ihren Sicherungen wieder her, leeren Sie den INI-Cache (starten Sie Velocity neu,
-   wenn es die Website bereitstellt) und prüfen Sie, dass `MatchOrder` wieder dem Wert aus Schritt 1 entspricht.
+   wenn er die Website bereitstellt) und prüfen Sie, dass `MatchOrder` wieder dem Wert aus Schritt 1 entspricht.
 
 ## Erwartetes Ergebnis
 

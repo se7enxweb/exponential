@@ -67,7 +67,7 @@ Einschränkung **Sprache**, bietet der Editor eine neu hinzugefügte Sprache nic
 - Übersetzer mit `content/remove` könnten ganze Objekte entfernen; geben Sie dieses Recht nicht.
 - Das Entfernen einer Übersetzung löscht sie in jeder Version; lassen Sie dieses Recht bei den Administratoren (siehe
   „Eine Übersetzung sicher entfernen“).
-- Rollenzuweisungen werden im Kanal `access` des Audit-Trails festgehalten.
+- Rollenzuweisungen werden im Kanal `access` des Prüfprotokolls festgehalten.
 
 ## Verwandte Seiten
 

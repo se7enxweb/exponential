@@ -3,7 +3,7 @@ title: Cronjobs und Hintergrundjobs
 audience: businesses, admin, project-manager
 category: business-solutions
 order: 210
-summary: Die geplante Arbeit und die Arbeit im Hintergrund, auf die eine Exponential-Website angewiesen ist (Benachrichtigungen, Freigaben, Inhaltsjobs, der Audit-Trail, Newsletter, Sitemaps), was unbemerkt ausfällt, wenn sie stoppt, und wie ein Unternehmen sicherstellt, dass sie läuft, und bemerkt, wenn nicht.
+summary: Die geplante Arbeit und die Arbeit im Hintergrund, auf die eine Exponential-Website angewiesen ist (Benachrichtigungen, Freigaben, Inhaltsjobs, das Prüfprotokoll, Newsletter, Sitemaps), was unbemerkt ausfällt, wenn sie stoppt, und wie ein Unternehmen sicherstellt, dass sie läuft, und bemerkt, wenn nicht.
 keywords: Cronjobs, Cron, Hintergrundjobs, Inhaltsjobs, geplante Aufgaben, Workflow, Benachrichtigungen, Audit, Crontab, anhalten, cronjobs, cron, runcronjobs, background jobs, content jobs, scheduled tasks, workflow, notifications, audit, Setup Cronjobs, crontab, pause, frequent, infrequent
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Führungskräfte, die wissen wollen, was im Hintergrund läuft, und an den Administrator, der es
 einplant. Ein großer Teil der Arbeit einer Website geschieht außerhalb von Seitenanfragen: Benachrichtigungen versenden,
-freigegebene Inhalte veröffentlichen, umfangreiche Entfernungen abschließen, den Audit-Trail indizieren, Newsletter
+freigegebene Inhalte veröffentlichen, umfangreiche Entfernungen abschließen, das Prüfprotokoll indizieren, Newsletter
 versenden, Sitemaps erstellen. Wenn diese Arbeit stoppt, geht zunächst nichts sichtbar kaputt, und genau deshalb braucht
 sie Aufmerksamkeit. Die vollständige Anleitung ist
 [Cronjobs: ausführen, planen und verfolgen](../../../anleitungen/cronjobs.md).
@@ -40,7 +40,7 @@ Ausfälle, wenn sie stoppen:
 |---|---|
 | Der Workflow-Cronjob | Freigegebene Inhalte werden nie veröffentlicht: „Ohne diesen Cronjob werden freigegebene Inhalte nie veröffentlicht“ ([Workflows](../../../anleitungen/workflows.md#kurz-gesagt)) |
 | Benachrichtigungen | Abonnenten bekommen keine Mails über Aktualisierungen mehr |
-| Der Teil `audit` | Das Audit wird nicht indiziert, Alarmregeln werden nicht ausgewertet, Tagesarchive werden nicht geschrieben ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)) |
+| Der Teil `audit` | Das Audit wird nicht indiziert, Alarmregeln werden nicht ausgewertet, Tagesarchive werden nicht geschrieben ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)) |
 | Inhaltsjobs | Im Hintergrund gestartete umfangreiche Entfernungen oder Kopien kommen nicht voran |
 | Newsletter-Teile | Ausgaben werden nicht versendet ([Newsletter](../newsletter/README.md)) |
 | Sitemap-Teile | Suchmaschinen sehen eine veraltete Sitemap |
@@ -98,7 +98,7 @@ Drei Signale, vom günstigsten zum gründlichsten:
 2. **Setup > Cronjobs** zeigt den letzten Lauf jedes Teils und unter **Letzte Ausführungen** deren Ergebnisse; Probleme
    sind Zeilen mit Wörtern wie *error* oder *failed*, „ein Hinweis, kein Urteil“
    ([Cronjobs, letzte Ausführungen](../../../anleitungen/cronjobs.md#10-letzte-ausführungen-und-wie-probleme-gezählt-werden)).
-3. **Der Audit-Trail** zeichnet jeden Lauf eines Teils als `system.cronjob.run` oder `system.cronjob.fail` auf, gleich
+3. **Das Prüfprotokoll** zeichnet jeden Lauf eines Teils als `system.cronjob.run` oder `system.cronjob.fail` auf, gleich
    wer ihn gestartet hat (derselbe Abschnitt).
 
 Nehmen Sie die Prüfung von `crontab:list` und der Datumsangaben im Cron-Log in die wöchentliche Routine auf
@@ -117,7 +117,7 @@ Für ein Unternehmen bedeutet das:
 - **content/jobs** listet alle Jobs mit dem, der sie gestartet hat, dem Fortschritt und der verbleibenden Zeit; ein Job
   lässt sich abbrechen oder fortsetzen.
 - Ein Teilbaum, an dem ein Job arbeitet, wird für einen anderen Job abgelehnt.
-- Der Audit-Trail zeichnet den Job als übergeordnetes Ereignis von allem auf, was seine Stapel getan haben.
+- Das Prüfprotokoll zeichnet den Job als übergeordnetes Ereignis von allem auf, was seine Stapel getan haben.
 - Jobs werden vom Skript `contentjobs` des Teils `frequent` fortgesetzt, der deshalb laufen muss.
 
 ## Anhalten während geplanter Arbeiten

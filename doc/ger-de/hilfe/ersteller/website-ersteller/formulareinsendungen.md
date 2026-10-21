@@ -42,13 +42,13 @@ dass das Formular erkannt wird.
 **CSV exportieren** lädt `<name>-collected.csv` herunter (UTF-8 mit Byte Order Mark): Sammlungs-ID, Sende- und
 Änderungszeit (UTC), Benutzer-ID, dann eine Spalte pro Sammelattribut. Werte, die eine Tabellenkalkulation als Formel
 lesen würde, beginnen mit einem Apostroph. Höchstens 50 000 Zeilen, die neuesten zuerst. Jeder Export wird im
-Audit-Trail festgehalten, mit der Zeilenanzahl und niemals den Werten ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Prüfprotokoll festgehalten, mit der Zeilenanzahl und niemals den Werten ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Einsendungen entfernen
 
 Markieren Sie Formulare in der Übersicht (oder Einsendungen in der Liste eines Formulars) und klicken Sie auf
 **Ausgewählte entfernen**; die Bestätigung nennt, wie viele es sind. Die Formulare selbst bleiben. Entfernungen werden im
-Audit-Trail festgehalten. Exportieren Sie zuerst, wenn die Daten noch gebraucht werden.
+Prüfprotokoll festgehalten. Exportieren Sie zuerst, wenn die Daten noch gebraucht werden.
 
 ## Wer sie sehen darf
 

@@ -160,9 +160,9 @@ Anfrage ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehle
 [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md).
 
 **Wer hat diese Einstellung geändert, und wann?**
-Der Audit-Trail zeichnet geschriebene Einstellungen, Deployments, geleerte Caches, Wartung und Änderungen an Inhalten auf
-und kann nachweisen, dass die Aufzeichnung nicht verändert wurde ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
-Siehe [Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md).
+Das Prüfprotokoll zeichnet geschriebene Einstellungen, Deployments, geleerte Caches, Wartung und Änderungen an Inhalten auf
+und kann nachweisen, dass die Aufzeichnung nicht verändert wurde ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+Siehe [Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md).
 
 **Die Website ist nicht erreichbar. Wo fangen wir an?**
 Mit Ihrem Störungsplan und dem Runbook für eine nicht erreichbare Website. Siehe

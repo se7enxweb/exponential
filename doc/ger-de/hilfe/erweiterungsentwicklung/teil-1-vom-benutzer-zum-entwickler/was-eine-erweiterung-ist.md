@@ -95,7 +95,7 @@ Als diese Seite geschrieben wurde, enthielt dieser Katalog 73 Einträge:
 | Templates und Design | 8 | Template-Operator, Fetch-Funktion, Template-Funktion, Design-Erweiterung, Override-Satz |
 | Module und Views | 11 | Modul, View eines vorhandenen Moduls, Richtlinienfunktion, REST-Anbieter, Ajax-Funktion |
 | Workflow, Events und Jobs | 9 | Workflow-Ereignistyp, Trigger, Benachrichtigungs-Handler, Cronjob-Teil, Event-Listener |
-| Speicherung und Infrastruktur | 12 | Datenbank-Handler, Cluster-Datei-Handler, Suchmaschine, Sitzungs-Handler, Mail-Transport |
+| Speicherung und Infrastruktur | 12 | Datenbank-Handler, Cluster-Datei-Handler, Suchmaschine, Session-Handler, Mail-Transport |
 | Pakete und Shop | 9 | Paket-Handler, Zahlungsanbieter, Handler für Mehrwertsteuer und Versand |
 | Benutzer, Zugriff und Sprache | 15 | Login-Handler, Richtlinienbeschränkung für Inhalte, Übersetzung, Icon-Theme, Siteaccess-Einstellungen |
 

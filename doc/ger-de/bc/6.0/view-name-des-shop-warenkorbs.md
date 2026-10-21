@@ -162,7 +162,7 @@ Diese sind unabhängig von der Einstellung und gelten auch beim Standardwert.
 ### In den Warenkorb legen tat nichts
 
 `kernel/shop/operation_definition.php` deklariert `option_list` als **Pflichtparameter vom Typ `array`**, aber
-`add.php` reichte die Session-Variable direkt durch — und die ist bei einem Produkt ohne Optionen einfach nicht
+`add.php` reichte die Sitzungsvariable direkt durch — und die ist bei einem Produkt ohne Optionen einfach nicht
 gesetzt. Die Parameterprüfung schlug fehl, und `eZOperationHandler::execute()` gab `STATUS_CONTINUE` zurück, *ohne den
 Rumpf der Operation auszuführen*; die Anfrage leitete also auf den Warenkorb weiter, ohne etwas hinzugefügt zu haben,
 und protokollierte keinen Fehler.
@@ -176,13 +176,13 @@ auf. `$optionList` wird jetzt am Anfang der Methode normalisiert, was alle neun 
 
 ### Ein abgeschlossener Warenkorb wurde als der aktuelle ausgeliefert
 
-`eZBasket::currentBasket()` verglich nur mit `session_id`. Ein Warenkorb, dessen Session geleert, der aber schon einer
-Bestellung zugeordnet war, wurde daher jeder Anfrage ohne Session-ID zurückgegeben, sodass Artikel in einen toten
+`eZBasket::currentBasket()` verglich nur mit `session_id`. Ein Warenkorb, dessen Sitzung geleert, der aber schon einer
+Bestellung zugeordnet war, wurde daher jeder Anfrage ohne Sitzungs-ID zurückgegeben, sodass Artikel in einen toten
 Warenkorb gelegt wurden. Die Suche wurde zunächst auf `order_id = 0` verschärft; dadurch ging wiederum der Warenkorb
 während des Bestellvorgangs verloren, weil `createOrder()` die Bestell-ID zu Beginn setzt. Beim aktuellen Stand gibt
 die Suche einen Warenkorb zurück, der keine Bestellung hat oder dessen Bestellung noch vorläufig ist (oder gelöscht
 wurde, in diesem Fall wird der Warenkorb wieder von ihr gelöst), nie einen, dessen Bestellung abgeschlossen ist, und
-eine Anfrage ohne Session-ID passt zu keinem Warenkorb.
+eine Anfrage ohne Sitzungs-ID passt zu keinem Warenkorb.
 
 ### Adresszeile 2 war Pflicht, Zeile 1 nicht
 

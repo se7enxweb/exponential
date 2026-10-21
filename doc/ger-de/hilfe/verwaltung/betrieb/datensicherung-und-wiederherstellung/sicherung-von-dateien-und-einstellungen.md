@@ -3,7 +3,7 @@ title: Sicherung von Dateien und Einstellungen
 audience: government, hosting, admin
 category: public-sector
 order: 40
-summary: Für Betriebsteams in öffentlichen Stellen, die die Dateihälfte einer Exponential-Website sichern. Welche Verzeichnisse Uploads, Einstellungen und den Audit-Trail enthalten, wie Sie Speicher je Website und den Cluster-Mount einbeziehen, Eigentümer und Rechte bei der Wiederherstellung und was einem Unternehmens-Sicherungsagenten mitgeteilt werden muss.
+summary: Für Betriebsteams in öffentlichen Stellen, die die Dateihälfte einer Exponential-Website sichern. Welche Verzeichnisse Uploads, Einstellungen und das Prüfprotokoll enthalten, wie Sie Speicher je Website und den Cluster-Mount einbeziehen, Eigentümer und Rechte bei der Wiederherstellung und was einem Unternehmens-Sicherungsagenten mitgeteilt werden muss.
 keywords: Dateisicherung, var/storage, settings/override, settings/siteaccess, Audit-Verzeichnis, tar, Sicherungsagent, Ausschlüsse, Speicher je Website, DFS-Mount, Eigentümer, Berechtigungen, Wiederherstellung, file backup, audit directory, backup agent, exclusions, per-site storage, DFS mount, owners, permissions, restore
 type: help
 ---
@@ -30,7 +30,7 @@ und worauf Sie achten müssen, wenn Dateien zurückkommen. Der Aufbau wird unter
 |---|---|
 | `var/storage/` | hochgeladene Bilder und Dateien und ihre Varianten (`original/`, `reference/`, `variations/`) |
 | `var/<site>/storage/` | dasselbe je Website, wenn Siteaccesses `VarDir=var/<site>` setzen |
-| `var/<site>/log/audit/` | den Audit-Trail (`audit.ini [AuditSettings] LogDir=log/audit` innerhalb des var-Verzeichnisses) und seine Archive, sofern `ArchiveDir` nicht woandershin zeigt |
+| `var/<site>/log/audit/` | das Prüfprotokoll (`audit.ini [AuditSettings] LogDir=log/audit` innerhalb des var-Verzeichnisses) und seine Archive, sofern `ArchiveDir` nicht woandershin zeigt |
 | `settings/override/` | Einstellungen, Zugangsdaten, erzeugte Schlüssel |
 | `settings/siteaccess/` | Siteaccess-Einstellungen |
 | `extension/`, `design/` | wenn Ihr eigener Code nicht in der Versionsverwaltung liegt |

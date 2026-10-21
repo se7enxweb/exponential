@@ -3,7 +3,7 @@ title: Die DSGVO und Exponential
 audience: government, project-manager, admin, developer
 category: public-sector
 order: 20
-summary: Für öffentliche Stellen in der EU und ihre Datenschutzbeauftragten - Themen der DSGVO (Einwilligung, Einwilligungsnachweise, Auskunft, Löschung, Einschränkung, Datenminimierung, Speicherbegrenzung, Sicherheit, Drittanbieter), zugeordnet zu den Funktionen, die Exponential bereitstellt, mit dem Status des Projekts „Partly complies (features provided)“ und den verbleibenden Pflichten des Betreibers.
+summary: Für öffentliche Stellen in der EU und ihre Datenschutzbeauftragten - Themen der DSGVO (Einwilligung, Einwilligungsnachweise, Auskunft, Löschung, Einschränkung, Datenminimierung, Speicherbegrenzung, Sicherheit, Drittanbieter), zugeordnet zu den Funktionen, die Exponential bereitstellt, mit dem Status des Projekts „Teilweise erfüllt (Funktionen bereitgestellt)“ und den verbleibenden Pflichten des Betreibers.
 keywords: DSGVO, Datenschutz-Grundverordnung, Verordnung 2016/679, Datenschutz, Einwilligung, Auskunftsrecht, Recht auf Löschung, Einschränkung, Datenminimierung, Speicherbegrenzung, Sicherheit der Verarbeitung, Zuordnung, Datenschutzbeauftragte, öffentlicher Sektor, Verantwortlicher, GDPR, consent, right of access, right to erasure, DPO
 type: reference
 ---
@@ -12,7 +12,7 @@ type: reference
 Diese Seite richtet sich an Datenschutzbeauftragte, Projektleitungen und Administratoren öffentlicher Stellen in der EU
 (und anderswo, wo die DSGVO gilt). Sie ordnet Themen der Datenschutz-Grundverordnung dem zu, was Exponential
 bereitstellt, nach [Datenschutzstandards: DSGVO](../../../../eng-us/standards/privacy.md#gdpr). Der Status des Projekts ist
-**„Partly complies“** (teilweise erfüllt), in dem Sinne, dass die Software die aufgeführten Funktionen bereitstellt;
+**„Teilweise erfüllt“**, in dem Sinne, dass die Software die aufgeführten Funktionen bereitstellt;
 die Pflichten der Verordnung bleiben bei der Organisation, die die Website betreibt. Amtlicher Text: Verordnung (EU)
 2016/679, <https://eur-lex.europa.eu/eli/reg/2016/679/oj>.
 
@@ -36,7 +36,7 @@ die Pflichten der Verordnung bleiben bei der Organisation, die die Website betre
 | Auskunft und Datenübertragbarkeit (Art. 15, 20) | E-Mail-Einstellungen und Einwilligungsverlauf als JSON oder CSV; Audit-Einträge von oder über einen Benutzer | Das Auskunftsrecht; Was nicht exportiert werden kann |
 | Löschung (Art. 17) | das Entfernen eines Benutzerkontos löscht seine E-Mail-Einstellungen und anonymisiert sein Einwilligungsprotokoll; `exp:mail:preferences erase`; Audit-Einträge bleiben für ihre Aufbewahrungsfrist erhalten und werden pseudonymisiert | Das Recht auf Löschung |
 | Einschränkung (Art. 18) | „Deaktivieren und verschieben“ (Opt-in); „Benutzerkonten prüfen“ | Einschränkung, Deaktivieren und verschieben |
-| Datenminimierung (Art. 5 Abs. 1 Buchst. c, Art. 25) | Audit: Adressen gekürzt, Sitzungen gehasht, keine Passwörter oder POST-Inhalte, Einstellungen pro Feld; Anfrageprotokolle: maskierte Adressen, Abfragewerte `***`; Maskierung im Protokollbetrachter | Datenminimierung; Maskierung in Protokollen; Datenschutz im Audit-Trail |
+| Datenminimierung (Art. 5 Abs. 1 Buchst. c, Art. 25) | Audit: Adressen gekürzt, Sitzungen gehasht, keine Passwörter oder POST-Inhalte, Einstellungen pro Feld; Anfrageprotokolle: maskierte Adressen, Abfragewerte `***`; Maskierung im Protokollbetrachter | Datenminimierung; Maskierung in Protokollen; Datenschutz im Prüfprotokoll |
 | Speicherbegrenzung (Art. 5 Abs. 1 Buchst. e) | Audit 90 Tage live und 2 Jahre archiviert; 404-, Sicherheits- und CSP-Protokolle nach 30, 90 und 30 Tagen bereinigt; Aufbewahrung des Einwilligungsprotokolls | Aufbewahrung im Überblick |
 | Sicherheit (Art. 32) | siehe den Sicherheitsbereich dieser Hilfe | (Sicherheitsbereich) |
 | Keine Daten an Drittanbieter durch die Administration | Administrationsskripte lokal ausgeliefert; admin4 lädt keine Schriften oder Skripte von anderen Hosts | Erweiterungen von Drittanbietern |

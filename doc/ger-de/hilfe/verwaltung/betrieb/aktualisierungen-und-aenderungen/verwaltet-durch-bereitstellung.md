@@ -28,7 +28,7 @@ Live-Server. Exponential hat dafür einen Schalter, `[ConfigurationSettings] Man
 Ohne den Schalter schreiben der INI-Editor, die Editoren für Werkzeugleiste und Menüs und der Template-Editor Dateien
 `*.ini.append.php` und `.tpl` in das Release-Verzeichnis, wo die Versionsverwaltung sie nicht sieht und die nächste
 Bereitstellung sie verwirft. Eine so vorgenommene Änderung hat kein Ticket, keine Prüfung und keine Historie außer dem
-Audit-Trail. Mit eingeschaltetem Schalter kann die Live-Website nur ausführen, was bereitgestellt wurde, und genau das
+Prüfprotokoll. Mit eingeschaltetem Schalter kann die Live-Website nur ausführen, was bereitgestellt wurde, und genau das
 gibt ein Änderungsbeirat frei.
 
 ## Was der Schalter sperrt
@@ -79,7 +79,7 @@ Einstellungen, bietet aber keine Bearbeitung an; `/settings/edit` antwortet wie 
 | Eine Einstellung | die Datei im Repository bearbeiten, prüfen, freigeben, bereitstellen; `./console exp:ini` auf einer Testkopie, um Werte auszuprobieren |
 | Ein Template | dasselbe; der Template-Editor bleibt auf Entwicklungs- und Test-Siteaccesses verfügbar, wo der Schalter ausgeschaltet ist |
 | Eine Erweiterung | `composer.json` und Einstellungen im Repository; Aktivierung durch die Bereitstellung |
-| Inhalte, Rollen, Workflows | unverändert: Sie sind Daten, werden in der Administration bearbeitet und im Audit-Trail aufgezeichnet |
+| Inhalte, Rollen, Workflows | unverändert: Sie sind Daten, werden in der Administration bearbeitet und im Prüfprotokoll aufgezeichnet |
 
 Die Einstellung kann sich mit Variantendateien für `EXP_ENV` je Umgebung unterscheiden, sodass Test und Entwicklung
 bearbeitbar bleiben ([Umgebungen: Entwicklung, Test und Produktion](../hosting/umgebungen-entwicklung-test-produktion.md)).
@@ -91,7 +91,7 @@ bearbeitbar bleiben ([Umgebungen: Entwicklung, Test und Produktion](../hosting/u
 - Dateirechte auf dem Release-Verzeichnis bleiben die stärkere Maßnahme; der Schalter ist ein Schutz auf
   Anwendungsebene.
 - Rollen, Workflows, Sektionen und Zustände sind Konfiguration in der Datenbank: Sie werden nicht gesperrt. Steuern
-  Sie sie über Rollen (wer sie ändern darf) und den Audit-Trail.
+  Sie sie über Rollen (wer sie ändern darf) und das Prüfprotokoll.
 
 ## Verwandte Seiten
 - [Änderungsmanagement und Änderungsbeiräte](aenderungsmanagement-und-aenderungsbeiraete.md)

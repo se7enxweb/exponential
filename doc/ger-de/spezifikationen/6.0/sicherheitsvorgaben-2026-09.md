@@ -3,7 +3,7 @@
 Zwischen dem 22. und 30. September 2026 wurde eine Reihe von Standardwerten geändert, damit eine **Standardinstallation**
 ohne zusätzlichen Aufwand sicher ist. Diese Seite führt jeden Standardwert auf, die Einstellung, die ihn steuert, was sich
 für eine bestehende Installation geändert hat und wie Sie es prüfen. Lesen Sie sie, bevor Sie eine Installation mit eigener
-`.htaccess`, einem cachenden Proxy oder Skripten, die das Session-Cookie lesen, aktualisieren; die
+`.htaccess`, einem cachenden Proxy oder Skripten, die das Sitzungs-Cookie lesen, aktualisieren; die
 [Upgrade-Checkliste](#upgrade-checkliste) am Ende ist die Kurzfassung. Die Eingabeverarbeitung einzelner Datentypen steht in
 [Härtung von Datentypen und Eingaben](datentyp-eingabehaertung.md).
 
@@ -68,11 +68,11 @@ Prüfen:
 curl -sI https://example.com/ | grep -i -E 'x-content-type|x-frame|referrer|permissions|content-security'
 ```
 
-## 2. Das Session-Cookie
+## 2. Das Sitzungs-Cookie
 
-Das Session-Cookie ist die Anmeldung, und dennoch wurde es ohne `HttpOnly`, `SameSite` oder
+Das Sitzungs-Cookie ist die Anmeldung, und dennoch wurde es ohne `HttpOnly`, `SameSite` oder
 `Secure` versendet, sofern die Site diese nicht gesetzt hatte, was eine Standardinstallation nie tat. Ein
-in eine beliebige Seite eingeschleustes Skript konnte die Session der Administration lesen; ein gefälschtes
+in eine beliebige Seite eingeschleustes Skript konnte die Sitzung der Administration lesen; ein gefälschtes
 Cross-Site-Formular nahm es mit; unter HTTPS wurde es trotzdem auch reinem HTTP angeboten.
 
 `settings/site.ini` `[Session]`:
@@ -84,7 +84,7 @@ Cross-Site-Formular nahm es mit; unter HTTPS wurde es trotzdem auch reinem HTTP 
 | `CookieSameSite` | `Lax` | `Lax`, `Strict`, `None` (wird nur zusammen mit `Secure` beachtet) oder leer, um kein Attribut zu senden. |
 
 `setCookieParams()` verwendet die Array-Form von `session_set_cookie_params()`;
-die Session-Schicht von Velocity beachtet sie bereits, sodass beide Server dasselbe
+die Sitzungsschicht von Velocity beachtet sie bereits, sodass beide Server dasselbe
 Cookie senden. Ausdrückliche Einstellungen haben weiterhin Vorrang. Braucht eine Integration Cross-Site-Cookies,
 setzen Sie `CookieSameSite=None` und `CookieSecure=true`.
 
@@ -132,9 +132,9 @@ Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateie
 - Eine Seite, die ein Formular-Token trägt (Meta-Tag `csrf-token`, verstecktes Feld in jedem
   POST-Formular), wird mit `Cache-Control: private, no-cache, must-revalidate` gesendet. Vorher
   verlangte `no-cache` nur eine Revalidierung, und ein gemeinsam genutzter Cache, der das
-  Session-Cookie nicht kannte, konnte die Seite eines angemeldeten Benutzers mitsamt Token speichern und sie
+  Sitzungs-Cookie nicht kannte, konnte die Seite eines angemeldeten Benutzers mitsamt Token speichern und sie
   jedem anonymen Besucher ausliefern.
-- Velocity teilt seinem Antwort-Cache mit, welche Cookies „persönlich“ bedeuten: das Session-Cookie,
+- Velocity teilt seinem Antwort-Cache mit, welche Cookies „persönlich“ bedeuten: das Sitzungs-Cookie,
   wie der Handler es benennt (`session.name` beim Handler `default`,
   `[Session] SessionNamePrefix` als Präfix bei `custom`), dazu `is_logged_in`. Eine
   ausdrückliche Liste ersetzt die abgeleitete: `SkipCookies[]` in `velocity.ini`
@@ -175,7 +175,7 @@ Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateie
    die `Content-Security-Policy` für einen vertrauenswürdigen Editor-Host lockern müssen.
 3. Wenn ein Proxy vor der Site über `xkey` oder `Surrogate-Key` geleert hat, setzen Sie
    `[HttpCacheSettings] TagHeader` in `settings/override/httpcache.ini.append.php`.
-4. Wenn eines Ihrer Skripte auf ein Session-Cookie ohne HttpOnly oder mit Cross-Site-Versand angewiesen war,
+4. Wenn eines Ihrer Skripte auf ein Sitzungs-Cookie ohne HttpOnly oder mit Cross-Site-Versand angewiesen war,
    setzen Sie `[Session] CookieHttponly` oder `CookieSameSite` ausdrücklich.
 5. Ändern Sie den User-Agent des statischen Caches in jeder Webserver-Regel, die auf den alten
    Namen passte.

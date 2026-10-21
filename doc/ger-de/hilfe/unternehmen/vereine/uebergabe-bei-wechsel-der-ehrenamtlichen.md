@@ -3,8 +3,8 @@ title: Übergabe bei Wechsel der Ehrenamtlichen
 audience: businesses, admin, editor, project-manager
 category: business-solutions
 order: 50
-summary: Wie eine kleine Gruppe ihre Exponential-Website von einem ehrenamtlichen Team an das nächste übergibt, ohne Zugänge oder Wissen zu verlieren - was übergeben wird, Konten mit Benutzerkonten prüfen und Deaktivieren und verschieben stilllegen, Eigentümer von Inhalten ändern, ein verlorenes Administratorpasswort zurücksetzen, den Audit-Trail lesen und eine Checkliste für die Übergabe.
-keywords: Übergabe, Wechsel der Ehrenamtlichen, Vorstandswechsel, Benutzerkonten, deaktivieren, Eigentümer ändern, Passwort zurücksetzen, Audit-Trail, Kontinuität, kleine Gruppe, handover, volunteer change, committee change, user accounts, deactivate, change owner, ezownerchange, reset password, audit trail, continuity, small group
+summary: Wie eine kleine Gruppe ihre Exponential-Website von einem ehrenamtlichen Team an das nächste übergibt, ohne Zugänge oder Wissen zu verlieren - was übergeben wird, Konten mit Benutzerkonten prüfen und Deaktivieren und verschieben stilllegen, Eigentümer von Inhalten ändern, ein verlorenes Administratorpasswort zurücksetzen, das Prüfprotokoll lesen und eine Checkliste für die Übergabe.
+keywords: Übergabe, Wechsel der Ehrenamtlichen, Vorstandswechsel, Benutzerkonten, deaktivieren, Eigentümer ändern, Passwort zurücksetzen, Prüfprotokoll, Kontinuität, kleine Gruppe, handover, volunteer change, committee change, user accounts, deactivate, change owner, ezownerchange, reset password, audit trail, continuity, small group
 type: help
 ---
 # Übergabe bei Wechsel der Ehrenamtlichen
@@ -105,9 +105,9 @@ Dafür braucht es Zugang zum Server, ein Grund mehr, das Hosting-Konto in den H�
 
 ## Nachlesen, was vor Ihnen geschah
 
-Der Audit-Trail hält Anmeldungen und Abweisungen, Änderungen an Inhalten, Schreibvorgänge an Einstellungen und mehr
+Das Prüfprotokoll hält Anmeldungen und Abweisungen, Änderungen an Inhalten, Schreibvorgänge an Einstellungen und mehr
 fest, ist standardmäßig eingeschaltet und lässt sich in der Administration oder auf der Kommandozeile lesen
-([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Ein neuer Administrator sieht, welche Konten zuletzt aktiv
+([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Ein neuer Administrator sieht, welche Konten zuletzt aktiv
 waren und was sich in den letzten Monaten geändert hat, ohne fragen zu müssen. Die Logdateien stehen im Log-Viewer
 ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
 

@@ -131,8 +131,8 @@ und behalten Sie die Reserve für Arbeiten außerhalb des Vertrags.
 - [ ] Aktualisieren Sie oft in kleinen Schritten, statt Releases auszulassen.
 - [ ] Halten Sie eine Staging-Kopie, die der Produktion entspricht.
 - [ ] Verfolgen Sie Releases auf GitHub und im Issue-Tracker, der in `README.md`, „Issue tracker“, genannt ist.
-- [ ] Schreiben Sie jede Aktualisierung mit Datum und Ergebnis auf; der Audit-Trail zeichnet Deployments und
-      Schreibvorgänge in den Einstellungen ebenfalls auf ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Schreiben Sie jede Aktualisierung mit Datum und Ergebnis auf; das Prüfprotokoll zeichnet Deployments und
+      Schreibvorgänge in den Einstellungen ebenfalls auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Verwandte Seiten
 

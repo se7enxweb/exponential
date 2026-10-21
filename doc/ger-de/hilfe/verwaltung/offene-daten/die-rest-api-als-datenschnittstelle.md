@@ -90,8 +90,8 @@ Fügen Sie `-H "Authorization: Bearer expk_..."` hinzu, solange eine Authentifiz
 - [ ] Entscheiden Sie zwischen authentifiziert und anonym, und dokumentieren Sie, wie Clients einen Schlüssel
   erhalten.
 - [ ] Veröffentlichen Sie eine kurze Seite mit der Basisadresse, den Aufrufen oben und der Lizenz der Daten.
-- [ ] Beobachten Sie nach dem Start die Anfrageprotokolle und den Audit-Trail
-  ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md), [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Beobachten Sie nach dem Start die Anfrageprotokolle und das Prüfprotokoll
+  ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md), [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Verwandte Seiten
 

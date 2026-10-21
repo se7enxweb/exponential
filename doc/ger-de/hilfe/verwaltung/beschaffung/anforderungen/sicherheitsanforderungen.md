@@ -56,15 +56,15 @@ Aus [Sicherheitsstandards](../../../../../eng-us/standards/security.md):
 | SEC-01 | Zweistufige Anmeldung mit der Erweiterung `sevenx_authentication_2fa` ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)) | Auf Wunsch: eine Erweiterung und ein Login-Handler zum Konfigurieren |
 | SEC-02 | `password_hash()` (heute bcrypt), neues Hashing bei der Anmeldung; Mindestlänge 10 (`MinPasswordLength`) | Unter ASVS 4.0.3 V2.1.1 (12), sofern nicht erhöht |
 | SEC-03 | Brute-Force wird von Alarmregeln des Audits erkannt; Kontosperre mit `MaxNumberOfFailedLogin` | **Kontosperre standardmäßig aus** (`MaxNumberOfFailedLogin=0`); Drosselung bleibt dem Webserver oder request-shield überlassen ([Sicherheitshärtung](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)) |
-| SEC-04 | Rollen und Richtlinien werden für jede Modulansicht geprüft ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)) | OWASP A01 **Partly complies** |
+| SEC-04 | Rollen und Richtlinien werden für jede Modulansicht geprüft ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)) | OWASP A01 **Teilweise erfüllt** |
 | SEC-05 | Formular-Tokens (`ezformtoken`), Maskierung mit `wash`, Prüfung von Uploads, SVG-Bereinigung | Maskierung in Templates ist nicht automatisch; keine Prepared Statements in der Datenbankschicht |
 | SEC-06 | Sicherheits-Header auf jeder Seite; CSP mit Nonces und Berichten ([Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)) | CSP standardmäßig **Report-only in der Administration, aus auf öffentlichen Websites**; HSTS leer, bis der Betreiber es setzt |
-| SEC-07 | Audit-Protokoll standardmäßig an, per Hash verkettet, signierte Manifeste ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) | OWASP A09 **Complies** |
+| SEC-07 | Audit-Protokoll standardmäßig an, per Hash verkettet, signierte Manifeste ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) | OWASP A09 **Erfüllt** |
 | SEC-08 | `SECURITY.md`: 6.0 ist die gepflegte Linie; Korrekturen auf `main`, veröffentlicht als nächstes 6.0.x; veröffentlichte Tags ändern sich nie | Keine Prüfung der Abhängigkeiten auf Schwachstellen in der CI |
 | SEC-09 | Vertrauliche Meldung per E-Mail, erste Antwort innerhalb eines Werktags ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)) | Keine `security.txt` ([RFC 9116](https://www.rfc-editor.org/rfc/rfc9116)) mitgeliefert; ein Betreiber kann eine hinzufügen |
-| SEC-10 | Drei dokumentierte Härtungsdurchgänge | **Keine Bewertung nach ASVS durchgeführt** (Status Unverified); keine externe Bewertung dokumentiert |
+| SEC-10 | Drei dokumentierte Härtungsdurchgänge | **Keine Bewertung nach ASVS durchgeführt** (Status Nicht geprüft); keine externe Bewertung dokumentiert |
 
-Insgesamt: OWASP Top 10 (2021) **Partly complies**; ASVS 4.0.3 **Unverified**; CSP Level 3 **Partly complies**.
+Insgesamt: OWASP Top 10 (2021) **Teilweise erfüllt**; ASVS 4.0.3 **Nicht geprüft**; CSP Level 3 **Teilweise erfüllt**.
 
 ## Einstellungen, die eine bewertende Person prüfen kann
 

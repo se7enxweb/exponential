@@ -75,7 +75,7 @@ bisher auf die Dateien zurück.
    IniCache=enabled
    ```
 
-3. Erzeugen Sie die Autoloads neu und leeren Sie die Caches (und starten Sie Velocity neu, wenn es die Website ausliefert):
+3. Erzeugen Sie die Autoloads neu und leeren Sie die Caches (und starten Sie Velocity neu, wenn er die Website ausliefert):
 
    ```bash
    php bin/php/ezpgenerateautoloads.php -e
@@ -140,7 +140,7 @@ Servers wird zu Cache-Fehlschlägen; die Erweiterung entscheidet, wie Fehler gem
 
 | Cache | Wo er bleibt |
 |---|---|
-| Sitzungen | der Sitzungs-Handler von PHP (standardmäßig Dateien); der rollenbewusste HTTP-Cache braucht Dateien |
+| Sitzungen | der Session-Handler von PHP (standardmäßig Dateien); der rollenbewusste HTTP-Cache braucht Dateien |
 | Der Antwort-Cache von Velocity | APCu und `var/cache/qbix-reverse` |
 | Der SQL-Abfrage-Cache | APCu oder Dateien (`querycache.ini Storage`) |
 | Kompilierte Templates, Bild-Aliase | Dateien in `var/` |

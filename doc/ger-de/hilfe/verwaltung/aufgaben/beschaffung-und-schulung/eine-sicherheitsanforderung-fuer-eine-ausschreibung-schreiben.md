@@ -24,7 +24,7 @@ Die Fakten stammen aus den [Sicherheitsstandards](../../../../../eng-us/standard
 ## Bevor Sie beginnen
 
 - Lesen Sie die Zusammenfassung der [Sicherheitsstandards](../../../../../eng-us/standards/security.md#summary): OWASP Top 10
-  **Partly complies**, ASVS **Unverified**, CSP **Partly complies**.
+  **Teilweise erfüllt**, ASVS **Nicht geprüft**, CSP **Teilweise erfüllt**.
 - Kennen Sie den Sicherheitsrahmen Ihrer Organisation (zum Beispiel das
   [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) oder ISO/IEC 27001,
   [iso.org](https://www.iso.org/standard/27001)).

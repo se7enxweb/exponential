@@ -108,7 +108,7 @@ Leeren Sie dann den INI-Cache und laden Sie die Seite neu:
 php bin/php/ezcache.php --clear-tag=ini
 ```
 
-Unter Velocity starten Sie es zusätzlich neu (`php bin/php/console exp:velocity restart`), weil die Worker die
+Unter Velocity starten Sie ihn zusätzlich neu (`php bin/php/console exp:velocity restart`), weil die Worker die
 Einstellungen im Speicher halten. Dasselbe lässt sich mit [exp:ini](../../eng-us/features/6.0/exp-ini-command.md) erreichen, das
 den Override schreibt und protokolliert:
 

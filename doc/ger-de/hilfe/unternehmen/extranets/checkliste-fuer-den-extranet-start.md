@@ -104,8 +104,8 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 - [ ] Cronjobs eingeplant, einschließlich der Gruppe `frequent` ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Backups eingeplant und eine Wiederherstellung getestet
   ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
-- [ ] Audit-Trail läuft: `./console exp:audit status`
-  ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+- [ ] Prüfprotokoll läuft: `./console exp:audit status`
+  ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
 - [ ] Monitoring der Portaladresse ([Health-Checks und Monitoring](../zuverlaessigkeit/health-checks-und-monitoring.md)).
 - [ ] Plan für Aktualisierungen vereinbart
   ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).

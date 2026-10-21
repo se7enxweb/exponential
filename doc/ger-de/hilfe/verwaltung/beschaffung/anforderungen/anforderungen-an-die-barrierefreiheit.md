@@ -72,10 +72,10 @@ Aus [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibili
 
 | Standard | Status | Was das für Ihre Ausschreibung bedeutet |
 |---|---|---|
-| WCAG 2.2 AA | **Partly complies** | Die Administrationsdesigns admin4 und admin4l sind gegen AA-Kriterien gebaut und durch Regressionstests abgesichert (Beschriftungen, Landmarks, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße). Öffentliche Designs sind **nicht geprüft**; die klassische Administration, admin3 und der Online-Editor sind nicht vollständig abgedeckt. |
-| WAI-ARIA 1.2 | **Partly complies** | Muster für Tabs, Aufklappbereiche und Menüs in admin4, anhand der Template-Quellen geprüft. |
-| EN 301 549 v3.2.1 | **Unverified** | Keine Bewertung gegen die Norm; Klausel 11.8 (Autorenwerkzeuge) nicht geprüft. |
-| Section 508 | **Unverified** | Es gibt kein VPAT und keinen Accessibility Conformance Report. |
+| WCAG 2.2 AA | **Teilweise erfüllt** | Die Administrationsdesigns admin4 und admin4l sind gegen AA-Kriterien gebaut und durch Regressionstests abgesichert (Beschriftungen, Landmarks, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße). Öffentliche Designs sind **nicht geprüft**; die klassische Administration, admin3 und der Online-Editor sind nicht vollständig abgedeckt. |
+| WAI-ARIA 1.2 | **Teilweise erfüllt** | Muster für Tabs, Aufklappbereiche und Menüs in admin4, anhand der Template-Quellen geprüft. |
+| EN 301 549 v3.2.1 | **Nicht geprüft** | Keine Bewertung gegen die Norm; Klausel 11.8 (Autorenwerkzeuge) nicht geprüft. |
+| Section 508 | **Nicht geprüft** | Es gibt kein VPAT und keinen Accessibility Conformance Report. |
 
 Weitere dokumentierte Lücken: keine Vorlage für eine Erklärung zur Barrierefreiheit für Websites; keine automatisierte
 Prüfung der Barrierefreiheit in der CI (axe wird von Hand ausgeführt); Alternativtext hängt von der Redaktion ab, und
@@ -101,7 +101,7 @@ keinen“ beantwortet.
   Bewertung.
 - Die Inhalte vergessen: Keine Software bringt die Redaktion dazu, guten Alternativtext zu schreiben. Planen Sie
   Schulungen ([Editors 201, Qualität und Barrierefreiheit](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md)).
-- Dokumente vergessen: Von der Software erzeugte PDFs sind nicht getaggt (PDF/UA **Does not comply** in
+- Dokumente vergessen: Von der Software erzeugte PDFs sind nicht getaggt (PDF/UA **Nicht erfüllt** in
   [Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md)).
 
 ## Verwandte Seiten

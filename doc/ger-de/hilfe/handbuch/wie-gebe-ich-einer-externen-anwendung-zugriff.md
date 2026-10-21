@@ -45,7 +45,7 @@ auf die **oAuth-Verwaltung** (Administratoren).
 - **Die Anwendung darf zu viel.** Ein Schlüssel geht nie über die Rechte seines Benutzers hinaus; verwenden Sie also ein
   Konto mit wenigen Rechten, und markieren Sie nur die benötigten Bereiche.
 - **Ein Schlüssel ist nach außen gelangt.** Widerrufen Sie ihn sofort. Administratoren sehen alle Schlüssel unter
-  **Setup** > **oAuth-Verwaltung** > **API-Schlüssel**, und jede Verwendung steht im Audit-Trail.
+  **Setup** > **oAuth-Verwaltung** > **API-Schlüssel**, und jede Verwendung steht im Prüfprotokoll.
 
 ## Verwandte Seiten
 

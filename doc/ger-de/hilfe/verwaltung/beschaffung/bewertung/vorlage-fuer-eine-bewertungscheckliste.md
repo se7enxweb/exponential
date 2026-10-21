@@ -35,9 +35,9 @@ Tests.
    ihn nachverfolgen kann.
 3. Halten Sie für jede Zeile drei Dinge fest: die Antwort des Bieters, den geprüften Nachweis und Ihren Befund (erfüllt,
    teilweise erfüllt, nicht erfüllt, nicht belegt).
-4. Behandeln Sie „Unverified“ in der eigenen Dokumentation eines Herstellers als „nicht belegt“, sofern das Angebot keine
-   Nachweise ergänzt. Die Seiten zu den Standards von Exponential verwenden genau diese Statusangaben: „Complies“,
-   „Partly complies“, „Unverified“ und „Does not comply“
+4. Behandeln Sie „Nicht geprüft“ in der eigenen Dokumentation eines Herstellers als „nicht belegt“, sofern das Angebot keine
+   Nachweise ergänzt. Die Seiten zu den Standards von Exponential verwenden genau diese Statusangaben: „Erfüllt“,
+   „Teilweise erfüllt“, „Nicht geprüft“ und „Nicht erfüllt“
    ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
 5. Vergeben Sie danach die Punkte, mit der Vorlage für einen Bewertungsbogen (eine eigene Seite dieses Ordners).
 
@@ -70,8 +70,8 @@ Sources checked:   repository at tag/commit <...>; demo on <date>; proof of conc
 
 | # | Prüfung | Nachweis |
 |---|---|---|
-| A1 | Status gegenüber WCAG 2.2 AA je Bestandteil angegeben | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): admin4/admin4l „Partly complies“; öffentliche Designs nicht geprüft |
-| A2 | Position zu EN 301 549 und Section 508 | dieselbe Seite: beide „Unverified“; es gibt kein VPAT und keinen Accessibility Conformance Report |
+| A1 | Status gegenüber WCAG 2.2 AA je Bestandteil angegeben | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): admin4/admin4l „Teilweise erfüllt“; öffentliche Designs nicht geprüft |
+| A2 | Position zu EN 301 549 und Section 508 | dieselbe Seite: beide „Nicht geprüft“; es gibt kein VPAT und keinen Accessibility Conformance Report |
 | A3 | Wer die öffentliche Website barrierefrei macht | das eigene Design und der Testplan des Bieters; siehe [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
 | A4 | Erklärung zur Barrierefreiheit für die Website | der Bieter muss sie schreiben; keine Vorlage mitgeliefert ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#known-gaps-2)) |
 
@@ -79,7 +79,7 @@ Sources checked:   repository at tag/commit <...>; demo on <date>; proof of conc
 
 | # | Prüfung | Nachweis |
 |---|---|---|
-| S1 | Zuordnung zu den OWASP Top 10 | [Sicherheitsstandards](../../../../../eng-us/standards/security.md): „Partly complies“; ASVS „Unverified“ |
+| S1 | Zuordnung zu den OWASP Top 10 | [Sicherheitsstandards](../../../../../eng-us/standards/security.md): „Teilweise erfüllt“; ASVS „Nicht geprüft“ |
 | S2 | Zweistufige Anmeldung | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) (Erweiterung, auf Wunsch) |
 | S3 | Audit-Protokoll, wer was getan hat | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md), standardmäßig an |
 | S4 | Offenlegung von Schwachstellen und unterstützte Versionen | `SECURITY.md` im Wurzelverzeichnis des Repositorys, zusammengefasst in [Sicherheitsstandards](../../../../../eng-us/standards/security.md#vulnerability-disclosure) |

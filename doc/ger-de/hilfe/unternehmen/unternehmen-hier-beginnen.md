@@ -76,7 +76,7 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 - **Schnell unter Last.** Die Cache-Korrekturen der Linie 6.0.15 machen die Anwendung auch unter Apache oder Nginx
   schnell, und Velocity hebt die Obergrenze weiter an (`README.md`, „The part that matters even if you never run
   Velocity“).
-- **Belege, wenn etwas schiefgeht.** Ein manipulationssicherer Audit-Trail, Log-Viewer und Fehlerreferenzen
+- **Belege, wenn etwas schiefgeht.** Ein manipulationssicheres Prüfprotokoll, Log-Viewer und Fehlerreferenzen
   ([Zuverlässigkeit](zuverlaessigkeit/README.md)).
 
 ## Finden Sie Ihre Art von Organisation

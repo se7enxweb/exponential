@@ -105,7 +105,7 @@ dieselbe Netzwerkbeschränkung wie der Administration.
 Wenn ein zentraler Reverse Proxy oder Load Balancer TLS terminiert, vertraut Exponential weitergeleiteten Headern nur
 von den Proxys, die in `site.ini [HTTPHeaderSettings] TrustedProxies[]` aufgeführt sind. Ohne diese Einstellung sehen
 HTTPS-Anfragen wie reines HTTP aus, und jeder Besucher hat die Adresse des Proxys, was netzwerkbasierte Regeln und die
-Adressen im Audit-Trail unbrauchbar macht. Siehe
+Adressen im Prüfprotokoll unbrauchbar macht. Siehe
 [Mehrere Webserver hinter einem Load Balancer](../verfuegbarkeit/mehrere-webserver-hinter-einem-load-balancer.md).
 
 ## Prüfen

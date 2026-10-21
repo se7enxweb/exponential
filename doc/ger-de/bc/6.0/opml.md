@@ -252,7 +252,7 @@ Tests: `tests/tests/kernel/classes/security/eZRSSSecurityTest.php`.
 Außerdem:
 
 - Jeder POST, der diese Views erreicht, ist bereits durch `ezformtoken` abgedeckt, das bei jedem POST eines
-  angemeldeten Benutzers ein Token pro Session prüft und das Feld in jedes Formular einfügt. Die Bedienelemente für
+  angemeldeten Benutzers ein Token pro Sitzung prüft und das Feld in jedes Formular einfügt. Die Bedienelemente für
   OPML erben das.
 - Ein Feed, der **nicht aktiv** ist, wird in einem Dokument nicht aufgeführt. Er kann nicht geholt werden; ihn
   aufzuführen gäbe einem Leser eine tote Adresse und würde den Namen eines Feeds veröffentlichen, den jemand bewusst

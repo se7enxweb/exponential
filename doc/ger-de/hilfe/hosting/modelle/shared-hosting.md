@@ -29,7 +29,7 @@ des Projekts funktioniert, was meist nicht, wie eine Website ohne Shell installi
 - Ihr Hosting lässt Sie keinen lang laufenden Prozess ausführen. Shared Hosting tut das meist nicht. Apache oder LiteSpeed
   mit `.htaccess` ist dort die Antwort (`README.md` im Wurzelverzeichnis, Abschnitt dazu, wann ein klassischer Server noch
   die richtige Antwort ist).
-- Velocity passt meist nicht zu Shared Hosting, weil es einen lang laufenden Prozess braucht; Apache mit PHP-FPM passt
+- Velocity passt meist nicht zu Shared Hosting, weil er einen lang laufenden Prozess braucht; Apache mit PHP-FPM passt
   ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 - Shared Hosting ohne Shell-Zugang: der Assistent. Er braucht nur einen Browser und FTP-Zugang
   ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation)).

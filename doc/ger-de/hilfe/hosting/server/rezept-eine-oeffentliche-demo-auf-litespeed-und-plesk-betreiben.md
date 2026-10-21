@@ -139,7 +139,7 @@ Wenn eines davon fehlt: [Probleme mit dem Demomodus](../runbooks/probleme-mit-de
 |---|---|
 | Apache mit PHP-FPM (der FPM-Handler von Plesk) | dieselben Zeilen in `.htaccess` oder `env[EXP_DEMO_MODE] = 1` im Pool der Domain ([`php-fpm-pool-demo.conf`](../../../../eng-us/examples/demo-mode/php-fpm-pool-demo.conf)); Plesk schreibt die Pool-Datei, nutzen Sie also seine PHP-Einstellungen für die Domain, wo es sie anbietet |
 | nginx mit PHP-FPM | der Pool oder `fastcgi_param EXP_DEMO_MODE 1` ([`nginx-fastcgi-demo.conf`](../../../../eng-us/examples/demo-mode/nginx-fastcgi-demo.conf)) |
-| Exponential Velocity | die Umgebung der Unit, die es startet ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)); ein Neustart aus einer Shell ohne die Variable verwirft sie |
+| Exponential Velocity | die Umgebung der Unit, die ihn startet ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)); ein Neustart aus einer Shell ohne die Variable verwirft sie |
 | cPanel | die `.htaccess` der Domain (Apache oder LiteSpeed) und die Zeile mit der Variablen in den Cronjobs des Kontos |
 | Ein Container | [`docker-demo.env`](../../../../eng-us/examples/demo-mode/docker-demo.env) nur für den Dienst der Demo |
 

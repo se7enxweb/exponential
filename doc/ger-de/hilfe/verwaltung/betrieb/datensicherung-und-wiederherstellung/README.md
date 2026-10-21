@@ -3,7 +3,7 @@ title: Datensicherung und Wiederherstellung für Websites des öffentlichen Sekt
 audience: government, hosting, admin, project-manager
 category: public-sector
 order: 10
-summary: Übersicht der Seiten zu Datensicherung und Wiederherstellung für öffentliche Stellen: was zu sichern ist, Datenbanksicherungen je Engine, Dateien und Schlüssel, Sicherungspläne und Aufbewahrung, Datensicherungen aus der Administration, Wiederherstellungstests, Notfallwiederherstellung, RPO und RTO, Archive des Audit-Trails sowie verschlüsselte Kopien außer Haus.
+summary: Übersicht der Seiten zu Datensicherung und Wiederherstellung für öffentliche Stellen: was zu sichern ist, Datenbanksicherungen je Engine, Dateien und Schlüssel, Sicherungspläne und Aufbewahrung, Datensicherungen aus der Administration, Wiederherstellungstests, Notfallwiederherstellung, RPO und RTO, Archive des Prüfprotokolls sowie verschlüsselte Kopien außer Haus.
 keywords: Datensicherung, Wiederherstellung, Wiederherstellungstest, Notfallwiederherstellung, RPO, RTO, Aufbewahrung, Schlüssel, Audit-Archive, außer Haus, Verschlüsselung, git_manager, Kontinuität, backup, recovery, restore, restore test, disaster recovery, retention, keys, audit archives, offsite, encryption, continuity
 type: help
 ---
@@ -14,7 +14,7 @@ Sicherheitsbeauftragte in öffentlichen Stellen, die sicherstellen müssen, dass
 Ausfall, einem Angriff oder einem Fehler wiederhergestellt werden kann. Er behandelt, was zu sichern ist, wie das je
 Datenbank-Engine geht, die Dateien und Schlüssel, Sicherungspläne und Aufbewahrung, Datensicherungen aus der
 Administration, Wiederherstellungstests, die Planung der Notfallwiederherstellung, Wiederherstellungsziele, die
-Archive des Audit-Trails und verschlüsselte Kopien außer Haus. Die Befehle sind dieselben wie in den
+Archive des Prüfprotokolls und verschlüsselte Kopien außer Haus. Die Befehle sind dieselben wie in den
 [Betriebsseiten](../../../hosting/betrieb/README.md) des Hosting-Bereichs; diese Seiten ergänzen die Pflichten des
 öffentlichen Sektors: Kontinuitätspläne, Schriftgutverwaltung, Nachweise und Speicherort der Daten.
 
@@ -32,7 +32,7 @@ Archive des Audit-Trails und verschlüsselte Kopien außer Haus. Die Befehle sin
 | [Wiederherstellung auf einem Testserver](wiederherstellung-auf-einem-testserver.md) | Das Wiederherstellungsverfahren auf einer separaten Maschine, mit stillgelegtem Mailversand und stillgelegten Cronjobs. |
 | [Ein Notfallwiederherstellungsplan](notfallwiederherstellungsplan.md) | Szenarien, die Teile eines Plans, eine Gliederung und die technische Wiederherstellung. |
 | [RPO und RTO als Entscheidungen](rpo-und-rto-als-entscheidungen.md) | Wer Wiederherstellungsziele festlegt und was welchen Wert erfüllt. |
-| [Archive des Audit-Trails und Datensicherung](audit-trail-archive-und-datensicherungen.md) | Audit-Nachweise jahrelang aufbewahren, prüfen und alte Tage lesen. |
+| [Archive des Prüfprotokolls und Datensicherung](audit-trail-archive-und-datensicherungen.md) | Audit-Nachweise jahrelang aufbewahren, prüfen und alte Tage lesen. |
 | [Kopien außer Haus und verschlüsselte Kopien](externe-und-verschluesselte-kopien.md) | Wohin Kopien gehen dürfen, wie Sie sie verschlüsseln und die Schlüssel wiederherstellbar halten. |
 
 ## Lesereihenfolge
@@ -41,7 +41,7 @@ Archive des Audit-Trails und verschlüsselte Kopien außer Haus. Die Befehle sin
    [Dateien und Einstellungen](sicherung-von-dateien-und-einstellungen.md).
 2. [Schlüssel und Geheimnisse in Datensicherungen](schluessel-und-geheimnisse-in-datensicherungen.md) und [Kopien außer Haus und verschlüsselte Kopien](externe-und-verschluesselte-kopien.md).
 3. Die Richtlinie: [RPO und RTO als Entscheidungen](rpo-und-rto-als-entscheidungen.md), dann [Sicherungspläne und Aufbewahrung](sicherungsplaene-und-aufbewahrung.md)
-   und [Archive des Audit-Trails und Datensicherung](audit-trail-archive-und-datensicherungen.md).
+   und [Archive des Prüfprotokolls und Datensicherung](audit-trail-archive-und-datensicherungen.md).
 4. Der Nachweis: [Wiederherstellung testen](wiederherstellungstests.md) und [Wiederherstellung auf einem Testserver](wiederherstellung-auf-einem-testserver.md).
 5. Der Plan: [Ein Notfallwiederherstellungsplan](notfallwiederherstellungsplan.md).
 6. Optional: [git_manager](datensicherungen-aus-der-administration-mit-git-manager.md) für Administratorinnen und Administratoren ohne Shell.

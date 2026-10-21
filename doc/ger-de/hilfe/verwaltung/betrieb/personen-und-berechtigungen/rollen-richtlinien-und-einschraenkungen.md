@@ -91,7 +91,7 @@ der Gruppe verschoben wird. Eine Rolle kann mehrmals mit verschiedenen Einschrä
   bearbeiten darf, nur vergeben, was seine eigenen Rollen abdecken; eine weitergehende Richtlinie wird mit *Die Richtlinie wurde nicht
   hinzugefügt* oder *Die Rolle wurde nicht gespeichert* abgewiesen ([Leitfaden, „Wer das tun darf“](../../../../anleitungen/rollen-und-richtlinien.md#wer-das-darf)).
 - **Alles wird erfasst.** Rollenzuweisungen und Änderungen an Berechtigungen sind Ereignisse des Kanals `access` des
-  [Audit-Trails](../../../../../eng-us/features/6.0/audit-trail.md), und die Vergabe einer Administratorrolle löst die Alarmregel
+  [Prüfprotokolls](../../../../../eng-us/features/6.0/audit-trail.md), und die Vergabe einer Administratorrolle löst die Alarmregel
   `admin_role_granted` aus (`settings/audit.ini`).
 - **Links folgen den Berechtigungen.** Die Administration verbirgt Links, die ein Benutzer nicht öffnen könnte
   ([Administrationslinks folgen den Berechtigungen](../../../../../eng-us/features/6.0/admin-links-follow-permissions.md)).

@@ -251,7 +251,7 @@ Befehle.
 
 Die `expstate`-Dienste (Extension expservices) bieten für Skripte und Apps alles, was die Seiten können: Gruppen und
 Zustände auflisten, Objekte in einem Zustand, anlegen, ändern, ordnen und entfernen sowie einem Objekt oder einem
-Teilbaum zuweisen. Zum Beispiel mit einer angemeldeten Session oder einem persönlichen API-Token:
+Teilbaum zuweisen. Zum Beispiel mit einer angemeldeten Sitzung oder einem persönlichen API-Token:
 
 ```bash
 # the groups with their states

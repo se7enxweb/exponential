@@ -3,7 +3,7 @@ title: Was Exponential für die Barrierefreiheit nicht abdeckt
 audience: government, project-manager, admin, developer
 category: public-sector
 order: 100
-summary: Die bekannten Lücken bei der Barrierefreiheit, die das Projekt selbst nennt - öffentliche Designs nicht geprüft, klassische Administration und admin3 teilweise korrigiert, Online-Editor nicht verifiziert, Erweiterungen ohne Gesamterklärung, keine automatische Engine in der CI, kein Konformitätsbericht, Inhalte der Redaktion überlassen - und wie eine öffentliche Stelle um jede herum plant.
+summary: Die bekannten Lücken bei der Barrierefreiheit, die das Projekt selbst nennt - öffentliche Designs nicht geprüft, klassische Administration und admin3 teilweise korrigiert, Online-Editor nicht geprüft, Erweiterungen ohne Gesamterklärung, keine automatische Engine in der CI, kein Konformitätsbericht, Inhalte der Redaktion überlassen - und wie eine öffentliche Stelle um jede herum plant.
 keywords: Lücken bei der Barrierefreiheit, bekannte Lücken, nicht geprüft, öffentliche Designs, klassische Administration, admin3, Online-Editor, Erweiterungen, Konformitätsbericht, Risikoregister, Plan, accessibility gaps, known gaps, not audited, public designs, classic admin, online editor, TinyMCE, extensions, axe, CI, VPAT, ACR, conformance report, risk register, plan
 type: help
 ---
@@ -28,7 +28,7 @@ Barrierefreiheit.
 |---|---|
 | Designs öffentlicher Websites (`design/standard`, `design/base`, `design/plain`, `design/mysite`, die paketierten Website-Designs) sind nicht geprüft | für die Seiten, die die Öffentlichkeit sieht, gibt es keine Nachweise des Projekts; Sie bewerten sie |
 | Klassische Administration (`design/admin`) und admin3 sind nicht von den Tests für Kontrast, Landmarks und Formularfehler abgedeckt | Beschäftigte, die sie nutzen, arbeiten in einer Umgebung mit weniger Nachweisen |
-| Der Online-Editor (TinyMCE 8 und TinyMCE 3 in `extension/ezoe`) wurde nicht geprüft; Status **Unverified** | das Bearbeiten von Rich Text und seine Ausgabe brauchen Ihre eigene Prüfung |
+| Der Online-Editor (TinyMCE 8 und TinyMCE 3 in `extension/ezoe`) wurde nicht geprüft; Status **Nicht geprüft** | das Bearbeiten von Rich Text und seine Ausgabe brauchen Ihre eigene Prüfung |
 | Als eigene Pakete ausgelieferte Erweiterungen (Layout-Editor, Newsletter, Shop) werden einzeln überprüft; keine Gesamterklärung | jede Erweiterung, die Sie aktivieren, braucht einen Blick |
 | Keine automatische Engine für Barrierefreiheit in der CI; die Tests lesen Quellen und stellen keine Seiten dar; axe läuft manuell | Rückschritte zwischen Releases fallen nur durch die Quelltests und manuelle Reviews auf |
 | Kein veröffentlichter Konformitätsbericht (Bewertung nach WCAG-EM, VPAT oder ACR) | Sie können keinen in einer Ausschreibung oder Erklärung zitieren |

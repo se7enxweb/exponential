@@ -70,7 +70,7 @@ sendet, braucht seine IPv6-Adresse ebenfalls im SPF-Eintrag.
 
 1. Stoppen Sie es: Setzen Sie `Transport=file` für diese Installation, in der Variantendatei der Umgebung
    (`settings/override/site.ini.test.append.php` mit `EXP_ENV=test`), und leeren Sie den INI-Cache.
-2. Finden Sie heraus, was gesendet wurde: das Log des Mailservers; der Audit-Trail für die Aktionen, die E-Mails
+2. Finden Sie heraus, was gesendet wurde: das Log des Mailservers; das Prüfprotokoll für die Aktionen, die E-Mails
    ausgelöst haben.
 3. Informieren Sie Ihre Datenschutzbeauftragte oder Ihren Datenschutzbeauftragten, wenn personenbezogene Daten die
    falschen Personen erreicht haben ([Meldung von Datenschutzverletzungen](meldung-von-datenschutzverletzungen.md)).

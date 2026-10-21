@@ -57,7 +57,7 @@ Die Überwachung ist nur nützlich, wenn „nichts geändert“ der Normalzustan
 - Dateien, die das Manifest nicht aufführt (eine neue Datei, die in einem Verzeichnis abgelegt wurde); kombinieren Sie
   die Prüfung mit der Dateiüberwachung Ihres Servers oder einer Prüfung von `git status`, wenn Sie aus der
   Versionskontrolle bereitstellen ([Konfiguration unter Versionskontrolle](../hosting/konfiguration-unter-versionskontrolle.md)).
-- Änderungen in der Datenbank (Inhalte, dort gespeicherte Einstellungen); diese deckt der Audit-Trail ab.
+- Änderungen in der Datenbank (Inhalte, dort gespeicherte Einstellungen); diese deckt das Prüfprotokoll ab.
 - Hochgeladene Dateien in `var/storage`.
 
 ## Verwandte Seiten

@@ -39,7 +39,7 @@ Feedback-Mechanismus sowie Überwachung und Berichterstattung durch die Mitglied
 
 | Pflicht (allgemein) | Was Exponential bietet | Was Sie tun |
 |---|---|---|
-| Barrierefreie Inhalte der Website (EN 301 549 / WCAG 2.1 AA) | das Bearbeitungswerkzeug (admin4) wird gegen WCAG 2.2 AA getestet, eine Obermenge von 2.1 AA mit Ausnahme von 4.1.1 Syntaxanalyse; Status **Partly complies**; EN 301 549 **Unverified** | ein barrierefreies öffentliches Design bauen oder einkaufen und prüfen; WCAG 2.2 AA ist ein sicheres Ziel, weil es 2.1 AA enthält |
+| Barrierefreie Inhalte der Website (EN 301 549 / WCAG 2.1 AA) | das Bearbeitungswerkzeug (admin4) wird gegen WCAG 2.2 AA getestet, eine Obermenge von 2.1 AA mit Ausnahme von 4.1.1 Syntaxanalyse; Status **Teilweise erfüllt**; EN 301 549 **Nicht geprüft** | ein barrierefreies öffentliches Design bauen oder einkaufen und prüfen; WCAG 2.2 AA ist ein sicheres Ziel, weil es 2.1 AA enthält |
 | Barrierefreie, von Beschäftigten veröffentlichte Inhalte | ein Feld für Alternativtext an Bildern, das eine Klasse verpflichtend machen kann; Überschriften, Tabellenbeschriftungen und Kopfzellen im Rich Text | die Redaktion schulen; Alternativtext an Bildfeldern verlangen; Dokumente vor dem Hochladen prüfen |
 | Erklärung zur Barrierefreiheit | **keine Vorlage mitgeliefert** (in der Erklärung des Projekts als Lücke genannt) | nach dem Muster schreiben, das Ihr Mitgliedstaat veröffentlicht; siehe „Eine Erklärung zur Barrierefreiheit schreiben“ in diesem Bereich |
 | Feedback-Mechanismus | Kontaktformulare lassen sich mit dem Informationssammler bauen ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) | einen Kontaktlink in die Erklärung aufnehmen; innerhalb der gesetzlichen Frist antworten |
@@ -64,13 +64,13 @@ Feedback-Mechanismus sowie Überwachung und Berichterstattung durch die Mitglied
 ## Fallstricke
 
 - **Die Website für konform erklären, weil das CMS „barrierefrei“ ist.** Die eigene Erklärung des Projekts bewertet die
-  Administration mit „Partly complies“ und die öffentlichen Designs als „nicht geprüft“. Ihre Erklärung betrifft Ihre
+  Administration mit „Teilweise erfüllt“ und die öffentlichen Designs als „nicht geprüft“. Ihre Erklärung betrifft Ihre
   Website.
 - **Dokumente vergessen.** Von Seiten aus verlinkte PDF- und Office-Dateien sind ebenfalls Inhalte; siehe „Dokumente
   und PDFs“ in diesem Bereich.
 - **Die Redaktion ohne Anleitung lassen.** Die meisten Rückschritte nach dem Start kommen aus den Inhalten, nicht aus
   den Templates.
-- **Ausgabe des Online-Editors.** Die Integrationen von TinyMCE wurden nicht geprüft (Status **Unverified**); prüfen Sie
+- **Ausgabe des Online-Editors.** Die Integrationen von TinyMCE wurden nicht geprüft (Status **Nicht geprüft**); prüfen Sie
   in Ihrer Stichprobe das HTML, das der Rich Text Ihrer Redaktion erzeugt.
 
 ## Verwandte Seiten

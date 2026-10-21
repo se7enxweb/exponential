@@ -28,7 +28,7 @@ Datenbank so sind, wie sie sein sollen. **Setup > Upgrade-Prüfung** (`/setup/sy
 | Dateikonsistenz | die Dateien auf der Festplatte mit dem Manifest des Releases `share/filelist.md5` (und den Manifesten aktiver Erweiterungen, die eines haben) | **Überprüfe Dateikonsistenz** | **CSV herunterladen**, **Text herunterladen** |
 | Datenbankkonsistenz | das Datenbankschema mit `share/db_schema.dba` und denen aktiver Erweiterungen | **Überprüfe Datenbankkonsistenz** | **SQL herunterladen** |
 
-Beide lesen nur; die Seite hat keine Schaltfläche, die schreibt. Jeder Lauf und jeder Download wird im Audit-Trail als
+Beide lesen nur; die Seite hat keine Schaltfläche, die schreibt. Jeder Lauf und jeder Download wird im Prüfprotokoll als
 `system.upgrade.run` aufgezeichnet.
 
 ## Vor einer Änderung

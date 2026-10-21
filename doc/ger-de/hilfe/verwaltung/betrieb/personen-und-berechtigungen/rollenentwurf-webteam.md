@@ -27,7 +27,7 @@ Baum an.
 Typische Aufgaben: Seiten überall auf der öffentlichen Website anlegen und anordnen, Inhalte anderer Teams korrigieren, die Medienbibliothek
 verwalten, Inhalte zwischen Sektionen und Zuständen bewegen, nach einer Änderung Caches leeren, prüfen, ob Cronjobs gelaufen sind, und die
 Logs lesen, wenn etwas falsch aussieht. Es legt in der Regel **keine** Rollen an, ändert keine Einstellungen, installiert keine Extensions
-und verwaltet nicht den Audit-Trail; das bleibt bei den Systemadministratoren (siehe [Funktionstrennung](funktionstrennung.md)).
+und verwaltet nicht das Prüfprotokoll; das bleibt bei den Systemadministratoren (siehe [Funktionstrennung](funktionstrennung.md)).
 
 ## Die Rolle „Web-Team“
 
@@ -81,8 +81,8 @@ aktiviert ist und das Team häufig Tippfehler korrigiert
 
 - Melden Sie sich in einem privaten Browserfenster als Mitglied an: Das Setup-Menü zeigt Cache-Verwaltung, Cronjobs, Logdateien und
   Systeminformationen, und unter Benutzer gibt es kein Rollen und Richtlinien.
-- Öffnen Sie `/role/list`, indem Sie es eintippen: Die Seite wird abgewiesen, und die Abweisung wird im Audit-Trail als
-  `access.permission.refused` erfasst ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md#who-may-look)).
+- Öffnen Sie `/role/list`, indem Sie es eintippen: Die Seite wird abgewiesen, und die Abweisung wird im Prüfprotokoll als
+  `access.permission.refused` erfasst ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md#who-may-look)).
 - Die Rollenseite zeigt kein Kennzeichen *Voller Zugriff* oder *Kann Rollen ändern*.
 
 ## Verwandte Seiten

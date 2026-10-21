@@ -4,7 +4,7 @@ audience: government, hosting, admin
 category: public-sector
 order: 20
 summary: Für IT-Teams im öffentlichen Sektor, die die Datensicherung einer Exponential-Website festlegen. Die zwei Hälften jeder Datensicherung (Datenbank und Dateien), die Dateien mit Schlüsseln, die sich nicht neu erzeugen lassen, was weggelassen werden kann und wie Sie ein konsistentes Paar erstellen.
-keywords: Datensicherung, was zu sichern ist, Datenbank, var/storage, settings/override, settings/siteaccess, Audit-Trail, Schlüssel, konsistente Datensicherung, Wartungsmodus, Schriftgut, Kontinuität, backup, what to back up, database, audit trail, keys, consistent backup, maintenance mode, records, continuity
+keywords: Datensicherung, was zu sichern ist, Datenbank, var/storage, settings/override, settings/siteaccess, Prüfprotokoll, Schlüssel, konsistente Datensicherung, Wartungsmodus, Schriftgut, Kontinuität, backup, what to back up, database, audit trail, keys, consistent backup, maintenance mode, records, continuity
 type: help
 ---
 # Was zu sichern ist
@@ -29,7 +29,7 @@ im Installationsbuch ist [10.9 Datensicherung und Wiederherstellung](../../../..
 ## Zwei Hälften
 
 Exponential hält seinen Zustand in der **Datenbank** (Inhalte, Versionen, Benutzer, Rollen, in Tabellen gespeicherte
-Einstellungen) und in **Dateien** (Uploads, Einstellungen, der Audit-Trail). „Eine Datensicherung besteht aus der
+Einstellungen) und in **Dateien** (Uploads, Einstellungen, das Prüfprotokoll). „Eine Datensicherung besteht aus der
 Datenbank und den Dateien, zum selben Zeitpunkt erstellt“
 ([10.9](../../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)). Die Datenbankhälfte hängt von der Engine
 ab: [Datensicherung je Datenbank-Engine](datensicherungen-je-datenbank-engine.md).
@@ -42,7 +42,7 @@ ab: [Datensicherung je Datenbank-Engine](datensicherungen-je-datenbank-engine.md
 | `var/storage/sqlite3/` | die Datenbank einer SQLite-Website; sichern Sie sie mit der eigenen Sicherung von SQLite, nie durch Kopieren einer Datei in Gebrauch |
 | `settings/override/` | die Einstellungen, Zugangsdaten und erzeugten Schlüssel der Installation |
 | `settings/siteaccess/` | die Einstellungen jedes Siteaccess |
-| `var/<site>/log/audit/` | der Audit-Trail: Live-Dateien, Archive und ihre signierten Manifeste |
+| `var/<site>/log/audit/` | das Prüfprotokoll: Live-Dateien, Archive und ihre signierten Manifeste |
 | Ihre eigenen Extensions und Designs | wenn sie nicht in der Versionsverwaltung liegen |
 | `config.php`, `config.cluster.php`, `config.env.php` | sofern vorhanden |
 | `composer.json`, `composer.lock` | um `vendor/` mit denselben Versionen neu aufzubauen |
@@ -54,7 +54,7 @@ Einzelheiten zu jedem Punkt: [Sicherung von Dateien und Einstellungen](sicherung
 
 | Datei | Enthält | Bei Verlust |
 |---|---|---|
-| `settings/override/audit.ini.append.php` | Signatur- und Pseudonymschlüssel des Audit-Trails | vorhandene Audit-Einträge lassen sich nicht mehr als unversehrt prüfen |
+| `settings/override/audit.ini.append.php` | Signatur- und Pseudonymschlüssel des Prüfprotokolls | vorhandene Audit-Einträge lassen sich nicht mehr als unversehrt prüfen |
 | `settings/override/mailpreferences.ini.append.php` | das Website-Geheimnis der E-Mail-Einstellungen | jeder bereits versandte Abmeldelink funktioniert nicht mehr |
 | Konfigurationsbaum von Velocity | private Schlüssel der Zertifikate | HTTPS muss neu eingerichtet werden |
 
@@ -96,10 +96,10 @@ dabei ein kleines Zeitfenster in Kauf nehmen, in dem ein neuer Upload nur in ein
 
 - **Pflichten zur Aufrechterhaltung des Betriebs.** Eine Wiederherstellung muss den Dienst zurückbringen, nicht nur
   den Text: Formulare, Konten, Rollen und Einstellungen gehören dazu.
-- **Schriftgut und Nachweise.** Der Audit-Trail kann belegen, wer was veröffentlicht hat; der Verlust seiner
-  Schlüssel macht ihn unprüfbar. Stimmen Sie mit Ihren Verantwortlichen für das Schriftgut ab, wie lange
+- **Schriftgut und Nachweise.** Das Prüfprotokoll kann belegen, wer was veröffentlicht hat; der Verlust seiner
+  Schlüssel macht es unprüfbar. Stimmen Sie mit Ihren Verantwortlichen für das Schriftgut ab, wie lange
   Datensicherungen und Audit-Archive aufbewahrt werden
-  ([Archive des Audit-Trails und Datensicherung](audit-trail-archive-und-datensicherungen.md)).
+  ([Archive des Prüfprotokolls und Datensicherung](audit-trail-archive-und-datensicherungen.md)).
 - **Personenbezogene Daten.** Datensicherungen enthalten Konten und Formulareingaben; sie unterliegen denselben
   Schutzregeln wie die Live-Website ([Kopien außer Haus und verschlüsselte Kopien](externe-und-verschluesselte-kopien.md)).
 

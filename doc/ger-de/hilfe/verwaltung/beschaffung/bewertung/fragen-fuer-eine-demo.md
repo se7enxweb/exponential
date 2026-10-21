@@ -28,18 +28,18 @@ Produkt sollte er nie eine stärkere Antwort geben als dessen Dokumentation.
 
 | Frage | Was die Dokumentation stützt |
 |---|---|
-| Welche WCAG-Stufe erfüllt die Administration? | admin4 und admin4l: WCAG 2.2 AA „Partly complies“, gegen AA-Kriterien entworfen und durch Regressionstests abgesichert; kein Konformitätsanspruch ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
+| Welche WCAG-Stufe erfüllt die Administration? | admin4 und admin4l: WCAG 2.2 AA „Teilweise erfüllt“, gegen AA-Kriterien entworfen und durch Regressionstests abgesichert; kein Konformitätsanspruch ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
 | Haben Sie ein VPAT oder einen Accessibility Conformance Report? | für das Produkt gibt es keinen; ein Bieter kann einen für die gelieferte Website erstellen |
 | Ist das öffentliche Design barrierefrei? | öffentliche Designs prüft das Projekt nicht; es liegt in der Verantwortung des Website-Erstellers |
-| Ist der Rich-Text-Editor barrierefrei? | die Integrationen von TinyMCE wurden nicht geprüft: „Unverified“ |
+| Ist der Rich-Text-Editor barrierefrei? | die Integrationen von TinyMCE wurden nicht geprüft: „Nicht geprüft“ |
 | Wer schreibt unsere Erklärung zur Barrierefreiheit? | keine Vorlage mitgeliefert; der Bieter oder Sie schreiben sie |
 
 ## Sicherheit
 
 | Frage | Was die Dokumentation stützt |
 |---|---|
-| Wie bilden Sie die OWASP Top 10 ab? | Gegenmaßnahmen je Kategorie, „Partly complies“ ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)) |
-| Wurde eine Bewertung nach ASVS durchgeführt? | nein: „Unverified“; die Standard-Mindestlänge des Passworts (10) liegt unter ASVS Stufe 1 (12), sofern nicht geändert |
+| Wie bilden Sie die OWASP Top 10 ab? | Gegenmaßnahmen je Kategorie, „Teilweise erfüllt“ ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)) |
+| Wurde eine Bewertung nach ASVS durchgeführt? | nein: „Nicht geprüft“; die Standard-Mindestlänge des Passworts (10) liegt unter ASVS Stufe 1 (12), sofern nicht geändert |
 | Gibt es eine zweistufige Anmeldung? | ja, als Erweiterung auf Wunsch ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)) |
 | Ist die Kontosperre an? | standardmäßig aus (`MaxNumberOfFailedLogin=0`); Brute-Force wird von Alarmregeln des Audits erkannt |
 | Wird eine Content Security Policy durchgesetzt? | Report-only in Administrations-Siteaccesses, standardmäßig keine auf öffentlichen Websites; das Durchsetzen entscheidet der Betreiber |

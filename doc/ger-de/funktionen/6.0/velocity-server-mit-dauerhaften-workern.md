@@ -241,7 +241,7 @@ bei jeder Anfrage aufgerufen werden: Derselbe Handler wird nur einmal behalten.
 
 Ab Exponential Velocity 0.0.4.51 beendet die Engine außerdem die Anfrage des Warm-ups, bevor
 sie ihre Worker abspaltet: Die Shutdown-Funktionen, die das Rendern des Warm-ups registriert hat, werden
-verworfen, ohne zu laufen, und die Header, Fehler- und Exception-Handler, die Session,
+verworfen, ohne zu laufen, und die Header, Fehler- und Exception-Handler, die Sitzung,
 die ini- und Umgebungsänderungen und die Ausgabepuffer, die es hinterließ, werden zurückgesetzt. Das gilt
 für jede Anwendung auf der Engine; `eZExecution::runForRequest()` bleibt die
 eigene Absicherung des Kernels, für eine ältere Engine. Auch das `$_SESSION` einer Anfrage endet mit

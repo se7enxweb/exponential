@@ -32,7 +32,7 @@ Aus der [README, „How Exponential is served“](https://github.com/se7enxweb/e
 Anfragen geladen hält.“ Er basiert auf dem Qbix-Server und wird zusammen mit Exponential entwickelt.
 
 In einfachen Worten: Ein klassischer Aufbau startet die Anwendung für jede Seitenanfrage neu und wirft die Arbeit danach
-weg. Velocity lädt die Anwendung einmal und hält Worker bereit, und es fügt einen Antwortcache hinzu, der eine
+weg. Velocity lädt die Anwendung einmal und hält Worker bereit, und er fügt einen Antwortcache hinzu, der eine
 wiederholte Anfrage beantwortet, ohne die Anwendung überhaupt zu wecken (README, „Why it is faster“).
 
 Velocity kann drei Engines betreiben, gewählt mit einer einzigen Einstellung

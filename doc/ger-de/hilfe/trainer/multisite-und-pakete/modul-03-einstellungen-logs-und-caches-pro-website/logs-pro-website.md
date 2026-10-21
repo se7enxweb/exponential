@@ -106,7 +106,7 @@ Ihrer Übungsumgebung.
    php bin/php/console exp:ini set site.ini/FileSettings/LogDir log_site_b extension:site_clubb:siteaccess:site_b
    ```
 
-3. Starten Sie Velocity neu, wenn es die Übungsumgebung ausliefert.
+3. Starten Sie Velocity neu, wenn er die Übungsumgebung ausliefert.
 4. Fragen Sie `site_b` nach einer Seite, die nicht existiert, dann die Hauptwebsite:
 
    ```bash

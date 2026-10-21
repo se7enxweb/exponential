@@ -40,7 +40,7 @@ wiederherstellen und ihre Leistung messen und verbessern.
 | Modul | Lektionen | Dauer | Ergebnis |
 |---|---|---|---|
 | [1. Die Website ausliefern](modul-01-die-website-ausliefern/README.md) | 4 | 2 Std. 45 Min. | Liefert eine Website mit Apache oder nginx und PHP-FPM aus, stimmt Pools ab, prüft OPcache und APCu |
-| [2. Velocity](modul-02-velocity/README.md) | 4 | 3 Std. | Startet Velocity und hält es am Laufen, bemisst seine Pools, nutzt den Antwort-Cache und HTTPS |
+| [2. Velocity](modul-02-velocity/README.md) | 4 | 3 Std. | Startet Velocity und hält ihn am Laufen, bemisst seine Pools, nutzt den Antwort-Cache und HTTPS |
 | [3. Datenbanken](modul-03-datenbanken/README.md) | 4 | 2 Std. 55 Min. | Wählt eine Datenbank, betreibt SQLite gut, richtet einen Datenbankserver ein, sichert und verschiebt eine Datenbank |
 | [4. Bereitstellung und Cron](modul-04-bereitstellung-und-cron/README.md) | 4 | 2 Std. 55 Min. | Stellt eine Änderung bereit, richtet Cron ein, nutzt die Cronjob-Konsole, plant ein Upgrade |
 | [5. Monitoring und Logs](modul-05-monitoring-und-logs/README.md) | 4 | 2 Std. 55 Min. | Überwacht eine Website, liest und rotiert Logs, arbeitet die Runbooks für ausgefallene und langsame Websites ab |

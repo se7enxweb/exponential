@@ -48,17 +48,17 @@ und nennt die Seiten von Exponential, die jede Fähigkeit dokumentieren, aus den
 | Id | Nachweis |
 |---|---|
 | LAN-01, LAN-02, LAN-03 | [Sprachen](../../../sprachen.md) (Übersetzungsmarkierungen, „Übersetzen basierend auf“), [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
-| LAN-04 | [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md): `dir="rtl"` in Inhalten und Administration; [Websites von rechts nach links](../../../../../eng-us/help/creators/website-creators/right-to-left-sites.md). Unicode Bidirectional Algorithm: **Complies** (über den Browser) |
-| LAN-05 | [Zuordnung von Siteaccesses nach Host und Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md), [Sprachumschalter und Sprach-URLs](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md); an Browser gesendete BCP-47-Tags: **Complies**; die Pagelayouts der Administration setzen `<html lang>` ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
+| LAN-04 | [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md): `dir="rtl"` in Inhalten und Administration; [Websites von rechts nach links](../../../../../eng-us/help/creators/website-creators/right-to-left-sites.md). Unicode Bidirectional Algorithm: **Erfüllt** (über den Browser) |
+| LAN-05 | [Zuordnung von Siteaccesses nach Host und Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md), [Sprachumschalter und Sprach-URLs](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md); an Browser gesendete BCP-47-Tags: **Erfüllt**; die Pagelayouts der Administration setzen `<html lang>` ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)) |
 | LAN-06 | [UI-Umschalter: Sprachen der Oberfläche](../../../../../eng-us/features/6.0/ui-switch-languages.md); [Sprachen in Exponential](../../../../../eng-us/languages.md) zählt die mitgelieferten Übersetzungen der Administration |
-| LAN-07 | Interne Kodierung UTF-8 **Complies**; 4-Byte-UTF-8 unter MySQL/MariaDB **Partly complies** ([Zusätzliche Zeichen im Rich Text](../../../../../eng-us/features/6.0/rich-text-supplementary-characters-and-tex-source.md)) |
+| LAN-07 | Interne Kodierung UTF-8 **Erfüllt**; 4-Byte-UTF-8 unter MySQL/MariaDB **Teilweise erfüllt** ([Zusätzliche Zeichen im Rich Text](../../../../../eng-us/features/6.0/rich-text-supplementary-characters-and-tex-source.md)) |
 | LAN-08 | Locale-Dateien aus den Daten von Unicode CLDR erzeugt, 268 Locale-Dateien mit Stand Oktober 2026 ([Sprachen in Exponential](../../../../../eng-us/languages.md)) |
 
 ## Bekannte Lücken, nach denen Sie fragen sollten
 
 Aus den [Standards zur Internationalisierung](../../../../../eng-us/standards/internationalization.md):
 
-- **Pluralformen** (CLDR-Pluralregeln): **Does not comply**. Sprachen mit mehr als zwei Pluralformen lesen sich in der
+- **Pluralformen** (CLDR-Pluralregeln): **Nicht erfüllt**. Sprachen mit mehr als zwei Pluralformen lesen sich in der
   Oberfläche bei manchen Anzahlen holprig.
 - **Verbindungen zu MySQL und MariaDB** verwenden Drei-Byte-`utf8`; bevorzugen Sie SQLite oder PostgreSQL, oder fragen
   Sie, wie der Bieter Zeichen wie Emoji und seltene Schriften behandelt ([Datenbanken](../../../../installation/09-datenbanken.md)).

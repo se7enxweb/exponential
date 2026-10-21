@@ -21,8 +21,8 @@ systemctl reload <php-fpm service>      # the PHP-FPM service that serves your s
 
 Die drei Änderungen, bei denen die meisten Websites handeln müssen:
 
-1. **Sicherheits-Header und das Session-Cookie** (die ersten beiden Zeilen unten): Prüfen Sie jeden Host, der die
-   Administration in einen Frame einbettet, und jedes Skript, das das Session-Cookie liest.
+1. **Sicherheits-Header und das Sitzungs-Cookie** (die ersten beiden Zeilen unten): Prüfen Sie jeden Host, der die
+   Administration in einen Frame einbettet, und jedes Skript, das das Sitzungs-Cookie liest.
 2. **Der Inhaltsbaum der Administration beginnt beim obersten Knoten:** Setzen Sie `RootNodeID=2`, wenn Redakteure den
    alten Baum möchten.
 3. **Fügen Sie den Cronjob-Teil `cache_cleanup`** Ihrer crontab hinzu (siehe „Caches und Webserver“).
@@ -32,7 +32,7 @@ Die drei Änderungen, bei denen die meisten Websites handeln müssen:
 | Änderung | Wer betroffen ist | Einstellung | Was zu tun ist |
 |---|---|---|---|
 | Jede Seite wird mit Sicherheits-Headern gesendet; die Administration kann nicht von anderen Websites in einen Frame eingebettet werden. | Alle, die die Administration oder die Website einbetten; Proxys, die Header erneut hinzufügen. | `site.ini [HTTPHeaderSettings] SecurityHeaders[]` | Bettet ein Redaktions-Host die Administration ein, überschreiben Sie `Content-Security-Policy` (siehe [Sicherheitsstandards](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)). |
-| Das Session-Cookie ist `HttpOnly`, `SameSite=Lax` und über HTTPS `Secure`. | Integrationen, die das Cookie per Skript lesen oder seitenübergreifend verwenden. | `site.ini [Session] CookieHttponly`, `CookieSameSite`, `CookieSecure=auto` | Setzen Sie die Werte ausdrücklich, wenn Sie das alte Verhalten brauchen. |
+| Das Sitzungs-Cookie ist `HttpOnly`, `SameSite=Lax` und über HTTPS `Secure`. | Integrationen, die das Cookie per Skript lesen oder seitenübergreifend verwenden. | `site.ini [Session] CookieHttponly`, `CookieSameSite`, `CookieSecure=auto` | Setzen Sie die Werte ausdrücklich, wenn Sie das alte Verhalten brauchen. |
 | Ein POST mit fehlendem oder falschem Formular-Token antwortet mit 403 und der Seite „Formular abgelaufen“, nicht mit 500. | Überwachung, die bei 500 alarmiert; eigene Fehler-Templates. | `site.ini [HTMLForms] RefusalLogCollapseSeconds`; `design:error/kernel/6.tpl` | Siehe [Seite „Formular abgelaufen“](../../../eng-us/features/6.0/form-expired-page.md). Alarmieren Sie stattdessen bei der Menge an 403. |
 | „Passwort vergessen?“ gibt für unbekannte und bekannte Adressen dieselbe Antwort. | Redakteure, die sich auf die Meldung „kein solcher Benutzer“ verlassen haben. | keine | Keine. |
 | Seiten geben `lang="nb-NO"`, `sv-SE`, `nl-NL` ... statt `no-bokmaal`, `swe-SE`, `dut-NL` aus. | CSS oder JavaScript, das nach den alten Werten von `lang` auswählt. | Locale-Dateien `[HTTP] ContentLanguage` | Passen Sie die Selektoren an; Tabelle unter [Übersetzungen](../../../eng-us/features/6.0/translations-and-languages.md). |

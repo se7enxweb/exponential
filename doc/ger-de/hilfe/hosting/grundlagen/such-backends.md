@@ -89,7 +89,7 @@ php bin/php/ezpgenerateautoloads.php -e
 ```
 
 dann `ActiveExtensions[]=ezfind` in `settings/override/site.ini.append.php`, leeren Sie den INI-Cache und starten Sie
-Velocity neu, wenn es die Website ausliefert ([Kapitel 3.5](../../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete)).
+Velocity neu, wenn er die Website ausliefert ([Kapitel 3.5](../../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete)).
 Dieses Repository gibt nicht an, welche Solr-Versionen eZ Find braucht; entnehmen Sie das dem eigenen Repository der
 Erweiterung, bevor Sie Solr anbieten, statt es anzunehmen.
 

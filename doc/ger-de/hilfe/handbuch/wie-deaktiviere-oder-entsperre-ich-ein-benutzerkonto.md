@@ -40,7 +40,7 @@ nie geändert.
 - **Der Benutzer ist nach dem Deaktivieren noch angemeldet.** Offene Sitzungen enden bei ihrer nächsten Anfrage. Um sie
   sofort zu beenden, verwenden Sie **Setup** > **Sitzungen**.
 - **Entsperrt, aber bald wieder gesperrt.** Jemand versucht es immer wieder mit einem falschen Passwort, vielleicht ein
-  altes Skript oder ein Angriff. Sehen Sie sich die Anmeldeereignisse im Audit-Trail an.
+  altes Skript oder ein Angriff. Sehen Sie sich die Anmeldeereignisse im Prüfprotokoll an.
 - **Sie möchten eine Person entfernen, die gegangen ist.** Deaktivieren Sie zuerst; entfernen Sie das Konto erst, wenn
   ihre Inhalte einen neuen Eigentümer haben.
 

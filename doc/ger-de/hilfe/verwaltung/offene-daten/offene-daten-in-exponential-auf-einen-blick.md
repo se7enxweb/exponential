@@ -57,7 +57,7 @@ können.
 | Bedarf | Funktion | Dokumentation |
 |---|---|---|
 | Sehen, was sich wann geändert hat | Versionen jedes Objekts, mit Vergleich | [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md) |
-| Sehen, wer es geändert hat | Der Audit-Trail, standardmäßig eingeschaltet | [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Sehen, wer es geändert hat | Das Prüfprotokoll, standardmäßig eingeschaltet | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | Prüfung vor dem Veröffentlichen | Freigabe-Workflow | [Workflows](../../../anleitungen/workflows.md) |
 | Nur das Datenteam darf Datensätze veröffentlichen | Rollen, beschränkt nach Sektion oder Teilbaum | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 

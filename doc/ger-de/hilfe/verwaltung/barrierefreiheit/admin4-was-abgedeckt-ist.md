@@ -14,7 +14,7 @@ Koordination Barrierefreiheit, die sie bewertet, und an Trainerinnen und Trainer
 ihre Verwendung beibringen. Sie listet auf, was das Administrationsdesign admin4 (und seine Layoutvariante admin4l)
 für die Barrierefreiheit tut, wie es in [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) und
 [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md) dokumentiert ist, und wie Sie admin4 zu dem Design machen,
-das Ihre Redaktion erhält. Das Projekt bewertet admin4 gegenüber WCAG 2.2 AA mit **Partly complies**.
+das Ihre Redaktion erhält. Das Projekt bewertet admin4 gegenüber WCAG 2.2 AA mit **Teilweise erfüllt**.
 
 ## Inhalt
 

@@ -43,8 +43,8 @@ Gesundheitsinformationen müssen alle erreichen. In der EU gilt die
 Staaten gilt [Section 508](https://www.section508.gov/) für Bundesbehörden und die
 [Leitlinie zum Plain Writing Act](https://www.plainlanguage.gov/) für Texte der Bundesverwaltung.
 
-Status von Exponential: Administration admin4 **Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508
-**Unverified**; öffentliche Designs nicht geprüft; kein VPAT
+Status von Exponential: Administration admin4 erfüllt WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508
+**Nicht geprüft**; öffentliche Designs nicht geprüft; kein VPAT
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Für Gesundheitsinhalte:
 
 | Praxis | Warum |

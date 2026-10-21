@@ -3,8 +3,8 @@ title: Berechtigungen im Extranet prüfen
 audience: businesses, admin, project-manager
 category: business-solutions
 order: 70
-summary: Eine wiederkehrende Routine, um zu prüfen, wer in einem Exponential-Extranet was sehen kann - Rollen und Zuordnungen lesen, ungenutzte und verwaiste Konten finden, Konten beendeter Partnerschaften stilllegen, Sektionen und Zustände prüfen und Nachweise mit dem Audit-Trail aufbewahren.
-keywords: Berechtigungsprüfung, Zugriffsprüfung, Rollen, Zuordnungen, Voller Zugriff, Kann Rollen ändern, Benutzerkonten prüfen, Kontenhygiene, nie angemeldet, nicht gesehen, deaktivieren und verschieben, verwaiste Konten, Audit-Trail, exp:access:check, Governance des Extranets, Rezertifizierung, permissions review, access review, roles, assignments, user hygiene, never signed in, orphaned accounts, audit trail, extranet governance, recertification
+summary: Eine wiederkehrende Routine, um zu prüfen, wer in einem Exponential-Extranet was sehen kann - Rollen und Zuordnungen lesen, ungenutzte und verwaiste Konten finden, Konten beendeter Partnerschaften stilllegen, Sektionen und Zustände prüfen und Nachweise mit dem Prüfprotokoll aufbewahren.
+keywords: Berechtigungsprüfung, Zugriffsprüfung, Rollen, Zuordnungen, Voller Zugriff, Kann Rollen ändern, Benutzerkonten prüfen, Kontenhygiene, nie angemeldet, nicht gesehen, deaktivieren und verschieben, verwaiste Konten, Prüfprotokoll, exp:access:check, Governance des Extranets, Rezertifizierung, permissions review, access review, roles, assignments, user hygiene, never signed in, orphaned accounts, audit trail, extranet governance, recertification
 type: help
 ---
 # Berechtigungen im Extranet prüfen
@@ -128,11 +128,11 @@ verwenden, und kennzeichnet Sektionen, die Aufmerksamkeit brauchen
 
 ## Schritt 6: die Prüfung festhalten
 
-Der Audit-Trail zeichnet Rollenzuordnungen, Kontosperren, Anmeldungen und Inhaltsänderungen in einem
+Das Prüfprotokoll zeichnet Rollenzuordnungen, Kontosperren, Anmeldungen und Inhaltsänderungen in einem
 manipulationssicheren Log auf, und `./console exp:audit verify` belegt, dass die Aufzeichnung unversehrt ist
-([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Schreiben Sie zu jeder Prüfung eine kurze Notiz: Datum,
+([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Schreiben Sie zu jeder Prüfung eine kurze Notiz: Datum,
 prüfende Person, was geändert wurde. Die Seite
-[Compliance-Nachweise](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md) zeigt, wie Sie den Audit-Trail als
+[Compliance-Nachweise](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md) zeigt, wie Sie das Prüfprotokoll als
 Nachweis verwenden.
 
 ## Wenn eine Partnerschaft endet

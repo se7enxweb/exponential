@@ -3,8 +3,8 @@ title: "Glossar für Verwaltungen: A bis F"
 audience: government, project-manager, admin, editor
 category: public-sector
 order: 20
-summary: Begriffe des öffentlichen Sektors und von Exponential von A bis F (nach den englischen Fachbegriffen) in jeweils ein bis drei Sätzen - Erklärung zur Barrierefreiheit, Audit-Trail, Inhaltsklasse, Verantwortlicher, Auftragsverarbeiter, Ausstiegsplan, Informationsfreiheit und weitere - mit einem Link auf die Seite, die jeden erklärt.
-keywords: Glossar, Begriffe, Definitionen, Erklärung zur Barrierefreiheit, Abnahmeprüfung, Audit-Trail, Inhaltsklasse, Einwilligung, Verantwortlicher, Auftragsverarbeiter, Datenresidenz, Ausstiegsplan, Informationsfreiheit, öffentlicher Sektor, glossary, terms, definitions, accessibility statement, acceptance testing, audit trail, content class, consent, data controller, data processor, data residency, exit plan, freedom of information, public sector
+summary: Begriffe des öffentlichen Sektors und von Exponential von A bis F (nach den englischen Fachbegriffen) in jeweils ein bis drei Sätzen - Erklärung zur Barrierefreiheit, Prüfprotokoll, Inhaltsklasse, Verantwortlicher, Auftragsverarbeiter, Ausstiegsplan, Informationsfreiheit und weitere - mit einem Link auf die Seite, die jeden erklärt.
+keywords: Glossar, Begriffe, Definitionen, Erklärung zur Barrierefreiheit, Abnahmeprüfung, Prüfprotokoll, Inhaltsklasse, Einwilligung, Verantwortlicher, Auftragsverarbeiter, Datenresidenz, Ausstiegsplan, Informationsfreiheit, öffentlicher Sektor, glossary, terms, definitions, accessibility statement, acceptance testing, audit trail, content class, consent, data controller, data processor, data residency, exit plan, freedom of information, public sector
 type: reference
 ---
 # Glossar für Verwaltungen: A bis F
@@ -46,15 +46,15 @@ Zugang zu Websites verlangt sie von öffentlichen Stellen. Exponential liefert k
 [w3.org/WAI/planning/statements](https://www.w3.org/WAI/planning/statements/)).
 
 **admin4.** Das Design der Administration von Exponential, auf das sich die Arbeit an der Barrierefreiheit
-konzentriert, mit hellem und dunklem Modus; sein Stand gegenüber WCAG 2.2 AA ist „Partly complies“ (teilweise erfüllt)
+konzentriert, mit hellem und dunklem Modus; sein Stand gegenüber WCAG 2.2 AA ist „Teilweise erfüllt“
 ([Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)).
 
 **Freigabe-Workflow (Approval workflow).** Ein Ablauf, in dem eine Version wartet, bis jemand sie freigibt, bevor sie
 veröffentlicht wird. In Exponential wird er mit Workflows und Triggern gebaut ([Workflows](../../../anleitungen/workflows.md)).
 
-**Audit-Trail (Audit trail).** Ein manipulationssicheres Protokoll sicherheitsrelevanter Ereignisse wie Anmeldungen,
-Inhaltsänderungen und das Schreiben von Einstellungen. In Exponential ist er standardmäßig eingeschaltet und mit einer
-Hash-Kette gesichert ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+**Prüfprotokoll (Audit trail).** Ein manipulationssicheres Protokoll sicherheitsrelevanter Ereignisse wie Anmeldungen,
+Inhaltsänderungen und das Schreiben von Einstellungen. In Exponential ist es standardmäßig eingeschaltet und mit einer
+Hash-Kette gesichert ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## B und C
 

@@ -59,7 +59,7 @@ php bin/php/ezcache.php --clear-tag=template --allow-root-user
 php bin/php/ezcache.php --clear-id=content --allow-root-user
 ```
 
-Unter Exponential Velocity starten Sie es neu (`./console exp:velocity deploy` erledigt alles oben Genannte).
+Unter Exponential Velocity starten Sie ihn neu (`./console exp:velocity deploy` erledigt alles oben Genannte).
 
 Die Knoten-IDs unterscheiden sich zwischen Installationen; kopieren Sie sie nie aus einer anderen. Um Ihre zu finden:
 Der Wurzelknoten einer Website ist der Knoten der `IndexPage` ihres Siteaccess (`/content/view/full/<id>`) oder

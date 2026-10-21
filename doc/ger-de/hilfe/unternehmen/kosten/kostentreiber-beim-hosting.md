@@ -88,9 +88,9 @@ Das Projekt vergleicht Shared Hosting, VPS, dedizierte Server, Container und Kub
 - Multisite ist eingebaut: Mehrere Websites können sich eine Installation, einen Satz Aktualisierungen und einen
   Backup-Job teilen ([Eine Installation, viele Websites](../multisite/eine-installation-viele-websites.md)).
 - Der Speicherbedarf wächst mit den Medien: Bilder und Dateien in `var/storage`, Bildvarianten, die beim ersten Aufruf
-  erzeugt werden, Logs und der Audit-Trail
+  erzeugt werden, Logs und das Prüfprotokoll
   ([Speicher, CPU und Festplatte dimensionieren](../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)).
-- Backups brauchen Platz für die Datenbank, hochgeladene Dateien, Einstellungen, Schlüssel und den Audit-Trail
+- Backups brauchen Platz für die Datenbank, hochgeladene Dateien, Einstellungen, Schlüssel und das Prüfprotokoll
   ([Backups: was gesichert wird](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)); die Aufbewahrungsdauer
   vervielfacht das.
 

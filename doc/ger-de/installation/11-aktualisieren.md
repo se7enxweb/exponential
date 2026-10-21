@@ -435,7 +435,7 @@ Die Änderungen, auf die man beim Erreichen von 6.0.15 am häufigsten stößt:
 - **Legacy-Extensions** wurden zwischen dem 22. September und dem 2. Oktober 2026 auf einen gemeinsamen Standard
   gebracht: [Verhaltensänderungen der Legacy-Extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md).
 - **Die Standardwerte des Static Cache** haben sich geändert: [Standardwerte des Static Cache](../../eng-us/bc/6.0/static-cache-defaults.md).
-- **Velocity**, falls Sie es betreiben: [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
+- **Velocity**, falls Sie ihn betreiben: [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
   und [Verzeichnisstruktur auf der Festplatte](../../eng-us/bc/6.0/velocity-ondisk-layout.md).
 
 Die Geschichte nach Monaten finden Sie in der [Chronik](../../eng-us/history/2026/); jede einzelne Änderung im

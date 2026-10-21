@@ -54,7 +54,7 @@ Was die 36 Funktionen sind, gruppiert danach, was sie nach dem Upgrade mit einer
 
 | | Funktion | Was Sie sehen würden |
 |---|---|---|
-| [L03](#l03--das-abmelden-beendet-die-session-und-ihr-cookie) | Das Abmelden beendet die Session wirklich | nach dem Abmelden sind die Session und ihr Cookie weg, statt nur eine neue ID zu erhalten |
+| [L03](#l03--das-abmelden-beendet-die-sitzung-und-ihr-cookie) | Das Abmelden beendet die Sitzung wirklich | nach dem Abmelden sind die Sitzung und ihr Cookie weg, statt nur eine neue ID zu erhalten |
 | [L05](#l05--hochgeladene-bilder-werden-anhand-ihres-inhalts-geprüft) | Hochgeladene Bilder werden anhand ihres Inhalts geprüft | eine Datei, die kein aufgeführter Bildtyp ist (eine umbenannte Datei, HEIC, SVG), wird abgelehnt |
 | [L06](#l06--vorschaubilder-von-paketen-werden-ebenso-geprüft) | Vorschaubilder von Paketen werden ebenso geprüft | ein gefälschtes Bild als Vorschaubild eines Pakets oder Bild eines Styles wird abgelehnt |
 | [L11](#l11--datenbankfehler-tragen-die-fehlernummer-des-treibers) | Datenbankfehler tragen die Fehlernummer des Treibers | Entwickler können im Code „doppelter Schlüssel“ von „Tabelle fehlt“ unterscheiden |
@@ -77,7 +77,7 @@ Was die 36 Funktionen sind, gruppiert danach, was sie nach dem Upgrade mit einer
 | [L09](#l09--eine-warnung-für-einen-operator-parameter-ohne-standardwert) | Eine Warnung, wenn ein Parameter eines Template-Operators keinen Standardwert hat | für Template-Entwickler |
 | [L15](#l15--eine-schaltfläche-kopieren-in-der-vollständigen-admin-ansicht) | Eine Schaltfläche Kopieren in der vollständigen Admin-Ansicht | bisher gab es Kopieren nur im Kontextmenü |
 | [L27](#l27--die-template-operatoren-rawurlencode-und-rawurldecode) | Die Template-Operatoren `rawurlencode` und `rawurldecode` | für Template-Entwickler |
-| [SameSite](#die-session-einstellung-samesite-von-lovestack-wird-ebenfalls-gelesen) | Die Einstellung `[Session] SameSite` von LoveStack wird ebenfalls gelesen | für LoveStack geschriebene Einstellungen funktionieren weiter |
+| [SameSite](#die-sitzungseinstellung-samesite-von-lovestack-wird-ebenfalls-gelesen) | Die Einstellung `[Session] SameSite` von LoveStack wird ebenfalls gelesen | für LoveStack geschriebene Einstellungen funktionieren weiter |
 
 ### Neue Optionen, ausgeschaltet, bis Sie sie einschalten
 
@@ -135,7 +135,7 @@ Siteaccess, nie in die ausgelieferte Datei; leeren Sie danach den INI-Cache
 (`php bin/php/ezcache.php --clear-tag=ini`). Die Testdateien liegen unter `tests/tests/` und laufen für sich:
 `php vendor/bin/phpunit tests/tests/<path>`.
 
-### Sicherheit und Sessions
+### Sicherheit und Sitzungen
 
 #### L01 — Knotendaten-Aufrufe können eine Richtlinie verlangen
 
@@ -173,19 +173,19 @@ Website ohne offene Registrierung keinen toten Link zeigt.
 | LoveStack | [`98854ab935`](https://github.com/mugoweb/ezpublish-legacy/commit/98854ab9352eecbfd00e42b067d0cb3b7d26e6f7) (2021) |
 | Anleitung | [Rollen und Richtlinien, Abschnitt 8](../../../eng-us/guides/roles-and-policies.md#8-decide-who-may-register-and-who-may-read-node-data) |
 
-#### L03 — Das Abmelden beendet die Session und ihr Cookie
+#### L03 — Das Abmelden beendet die Sitzung und ihr Cookie
 
-Für **alle**. Das Abmelden entfernt die Session und ihren Inhalt, statt ihr eine neue ID zu geben und den Inhalt zu
-behalten. Jeder Session-Handler sendet das Session-Cookie abgelaufen, mit demselben Pfad, derselben Domain, `Secure`,
+Für **alle**. Das Abmelden entfernt die Sitzung und ihren Inhalt, statt ihr eine neue ID zu geben und den Inhalt zu
+behalten. Jeder Session-Handler sendet das Sitzungs-Cookie abgelaufen, mit demselben Pfad, derselben Domain, `Secure`,
 `HttpOnly` und `SameSite`, mit denen es gesetzt wurde, sodass der Browser genau dieses Cookie verwirft und die alte
-Session-ID niemanden mehr anmeldet. Eine später in derselben Anfrage gestartete Session erhält eine neue ID, unter
+Sitzungs-ID niemanden mehr anmeldet. Eine später in derselben Anfrage gestartete Sitzung erhält eine neue ID, unter
 PHP-FPM wie unter Velocity.
 
 | | |
 |---|---|
 | Einstellungen | keine |
 | Neue Installation und Upgrade | ein |
-| Hinweis für Entwickler | eigener Code, der nach `eZUser::logoutCurrent()` Session-Variablen liest, findet die Session leer. Neu: `eZSession::expiredCookie()`, `eZSession::expireCookie()` |
+| Hinweis für Entwickler | eigener Code, der nach `eZUser::logoutCurrent()` Sitzungsvariablen liest, findet die Sitzung leer. Neu: `eZSession::expiredCookie()`, `eZSession::expireCookie()` |
 | Test | `kernel/classes/eZUserLogoutTest.php` |
 | LoveStack | [`13ace6c9c8`](https://github.com/mugoweb/ezpublish-legacy/commit/13ace6c9c87ace0869ab234672aeffb377412e29) (2019) |
 | Anleitung | [Sicherheit und Audit, Abschnitt 1](../../../eng-us/guides/security-and-audit.md#1-check-the-hardening-that-is-already-on-5-minutes) |
@@ -239,10 +239,10 @@ Style-Pakets mit derselben Prüfung des Inhalts und derselben Liste erlaubter Ty
 | LoveStack | [`04b3b6985a`](https://github.com/mugoweb/ezpublish-legacy/commit/04b3b6985a0d8b07f1d0f32d0d9840c1b308fb62) (2018) |
 | Anleitung | [Verhaltensänderungen vom Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md#access-and-security) |
 
-#### Die Session-Einstellung `SameSite` von LoveStack wird ebenfalls gelesen
+#### Die Sitzungseinstellung `SameSite` von LoveStack wird ebenfalls gelesen
 
 Für **Administratoren** von Websites, die von LoveStack kommen. `site.ini [Session] SameSite=`, der Name, den
-LoveStack für das Attribut SameSite des Session-Cookies verwendet, wird gelesen, wenn `CookieSameSite` von Exponential
+LoveStack für das Attribut SameSite des Sitzungs-Cookies verwendet, wird gelesen, wenn `CookieSameSite` von Exponential
 nicht gesetzt ist (`CookieSameSite` gewinnt, wenn beide gesetzt sind), und einmal pro Anfrage auf der
 Deprecation-Stufe der Debug-Ausgabe vermerkt. Für Besucher ändert sich nichts; benennen Sie die Einstellung in
 `CookieSameSite` um, damit der Hinweis verschwindet.
@@ -763,7 +763,7 @@ Diese LoveStack-Funktionen waren bereits in Exponential, gleich oder auf die eig
 
 | LoveStack-Funktion | In Exponential |
 |---|---|
-| SameSite-Session-Cookies (2025) | `site.ini [Session] CookieSameSite`, Standard `Lax`, `None` nur mit `Secure`; der Name `SameSite` von LoveStack wird ebenfalls gelesen ([oben](#die-session-einstellung-samesite-von-lovestack-wird-ebenfalls-gelesen)) |
+| SameSite-Sitzungs-Cookies (2025) | `site.ini [Session] CookieSameSite`, Standard `Lax`, `None` nur mit `Secure`; der Name `SameSite` von LoveStack wird ebenfalls gelesen ([oben](#die-sitzungseinstellung-samesite-von-lovestack-wird-ebenfalls-gelesen)) |
 | Passwörter werden nie stillschweigend als MD5 gespeichert | der Standardalgorithmus von PHP, `HashType=php_default` |
 | Längere Mindestpasswörter und generierte Passwörter | 10 und 16 Zeichen |
 | Erhöhte Passwortsicherheit (EZP-24744) | ja |

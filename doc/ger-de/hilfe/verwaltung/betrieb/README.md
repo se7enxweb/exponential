@@ -46,7 +46,7 @@ Pflichten zur Kontinuität, Prüfungen und die Erwartung, dass alles dokumentier
 Zwei Aufgabenordner enthalten kurze, nummerierte Abläufe, die auf die Ordner oben zurückverweisen:
 
 - [Betriebsaufgaben](../../../../eng-us/help/government/tasks/operations/README.md): Wartungsfenster, Datensicherungen und Wiederherstellungen, Caches,
-  Cronjobs, Logs, der Audit-Trail, Upgrade-Prüfungen, Zertifikate, Replikate.
+  Cronjobs, Logs, das Prüfprotokoll, Upgrade-Prüfungen, Zertifikate, Replikate.
 - [Aufgaben zu Personen und Berechtigungen](../../../../eng-us/help/government/tasks/people-and-permissions/README.md): Rollen für einen Fachbereich,
   Freigebende, Eintritte und Austritte, Zurücksetzen von Passwörtern, externe Dienstleister, Überprüfung der
   Administrationszugänge.
@@ -93,7 +93,7 @@ den anderen Teilen des Bereichs Behörden ein.
 ## Verwandte Seiten
 - [Hoster: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md): die Sicht des Hosting-Anbieters auf dieselben Themen.
 - [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md): Caches, Cronjobs, Datensicherungen und Reparaturen im Alltag.
-- [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md): Härtung, Rollen und der Audit-Trail.
+- [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md): Härtung, Rollen und das Prüfprotokoll.
 - [Sicherheitshärtung](../../sicherheitshaertung.md): die Bedrohungen einzeln betrachtet.
 - [Kurs für Website-Administratoren](../../../../eng-us/help/trainers/site-administrators/README.md): ein Schulungskurs zu denselben Aufgaben.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

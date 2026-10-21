@@ -82,7 +82,7 @@ prüft das.
   **Knoten ID**.
 - **Ein Tippfehler im Namen des Siteaccess.** `exp:ini` verweigert einen Scope für einen Siteaccess ohne Verzeichnis;
   kopieren Sie zuerst das Verzeichnis und schreiben Sie dann die Einstellungen.
-- **Velocity.** Läuft die Übungsumgebung auf Exponential Velocity, starten Sie es nach der Einstellungsänderung neu
+- **Velocity.** Läuft die Übungsumgebung auf Exponential Velocity, starten Sie ihn nach der Einstellungsänderung neu
   (`php bin/php/console exp:velocity restart`), sonst behalten die Worker die alten Einstellungen.
 - **Unveröffentlichter Ordner.** Ein Ordner, der nur als Entwurf gespeichert wurde, hat keinen Knoten;
   veröffentlichen Sie ihn zuerst.
@@ -138,7 +138,7 @@ Die Befehle laufen in ihrem Wurzelverzeichnis; fügen Sie `--allow-root-user` nu
    php bin/php/console exp:ini add 'site.ini/SiteSettings/SiteList[]' site_b global
    ```
 
-9. Leeren Sie den INI-Cache (und starten Sie Velocity neu, wenn es die Übungsumgebung ausliefert):
+9. Leeren Sie den INI-Cache (und starten Sie Velocity neu, wenn er die Übungsumgebung ausliefert):
 
    ```bash
    php bin/php/ezcache.php --clear-tag=ini

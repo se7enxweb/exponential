@@ -144,7 +144,7 @@ und gewinnen über die Datei. Nur zehn Einstellungen werden von dort übernommen
 
 ## Der eigene Cache einer Anwendung
 
-Der Antwort-Cache überspringt Anfragen mit einem Session-Cookie, weil er Besucher nicht auseinanderhalten kann. Eine
+Der Antwort-Cache überspringt Anfragen mit einem Sitzungs-Cookie, weil er Besucher nicht auseinanderhalten kann. Eine
 Anwendung, die gerenderte Seiten pro Besucher oder Rolle behält, kann zuerst gefragt werden, im Serverprozess, sodass
 ein Treffer nie einen Worker weckt:
 
@@ -160,7 +160,7 @@ ein Treffer nie einen Worker weckt:
   `[status, headers, body]` zurückgibt und sonst `null`.
 - Die Anfrage trägt `scheme`, `host`, `uri`, `method`, `cookies`, `acceptEncoding`, `ifNoneMatch` und (seit 0.0.4.35)
   `headers` und `port`.
-- Eine Anfrage mit einem Session-Cookie geht nur an den Cache der Anwendung. Jede andere Anfrage wird zuerst vom
+- Eine Anfrage mit einem Sitzungs-Cookie geht nur an den Cache der Anwendung. Jede andere Anfrage wird zuerst vom
   Antwort-Cache beantwortet und bei einem Fehltreffer vom Cache der Anwendung, und diese Antwort wird im Antwort-Cache
   behalten.
 - Da der Antwort-Cache dann zuerst antwortet, richten Sie `Q.web.cache.generationFile` auf eine Datei, die jede

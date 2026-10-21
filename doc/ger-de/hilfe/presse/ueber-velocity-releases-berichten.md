@@ -85,7 +85,7 @@ nicht ([Zahlen prüfen](zahlen-pruefen.md)).
 |---|---|
 | „N-mal schneller als Apache / nginx / FrankenPHP“ | Es gibt keinen veröffentlichten Vergleich ([Aussagen, die Sie nicht machen dürfen](../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md#zahlen)) |
 | „Ihre Website antwortet in 0,36 ms“ | Die Zahl gilt für eine Seite aus dem Cache auf dem gemessenen System |
-| „Velocity ist experimentell“ | Das Projekt nennt es die empfohlene Engine; FrankenPHP ist "the production-ready alternative" ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-velocity)) |
+| „Velocity ist experimentell“ | Das Projekt nennt ihn die empfohlene Engine; FrankenPHP ist "the production-ready alternative" ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-velocity)) |
 | „Velocity ersetzt das Caching von Exponential“ | Es fügt einen Antwort-Cache hinzu; die README schreibt den größten Teil der Geschwindigkeit Korrekturen an Exponential und seinem Cache zu |
 | „Velocity ist Qbix“ | Es begann als Fork; die Projekte "have since drifted far apart" |
 

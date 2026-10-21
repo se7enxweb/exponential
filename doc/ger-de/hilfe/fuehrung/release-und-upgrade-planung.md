@@ -255,7 +255,7 @@ aktuelle Produktlinie bringen.
    Sicherheitsvorgaben) und vom 1. und 2. Oktober 2026, außerdem die Hinweise zu den E-Mail-Einstellungen.
 3. **Befunde, die zu Aufgaben werden.** Das Upgrade-Kapitel nennt die Änderungen, auf die man am häufigsten stößt:
    Konten ohne Zeile in `ezuser_setting` können sich nicht anmelden; Override-Blöcke folgen `Priority`;
-   Sicherheits-Header, Session-Cookies mit `HttpOnly`/`SameSite` und eine strengere Upload-Prüfung sind standardmäßig
+   Sicherheits-Header, Sitzungs-Cookies mit `HttpOnly`/`SameSite` und eine strengere Upload-Prüfung sind standardmäßig
    aktiv; ältere Erweiterungen wurden auf einen einheitlichen Standard gebracht; die Standardwerte des statischen Caches
    haben sich geändert. Jeder Punkt wird zu einer Prüfung mit einem Verantwortlichen: „Konten ohne Einstellungszeile
    finden“ (Administrator), „Prioritäten in override.ini prüfen“ (Entwickler), „prüfen, dass nichts die

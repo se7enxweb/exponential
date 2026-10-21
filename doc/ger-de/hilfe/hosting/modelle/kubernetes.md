@@ -92,7 +92,7 @@ Speicher (Dateien) ([Sitzungen](../../../anleitungen/sitzungen.md)). Dateien auf
 Besucher, der auf einem Replikat angemeldet ist, ist auf einem anderen ein Fremder. Wählen Sie eines:
 
 - `Handler=ezpSessionHandlerDB`, das Sitzungen in der Tabelle `ezsession` der gemeinsamen Datenbank hält; oder
-- einen Sitzungs-Handler von PHP, den jedes Replikat teilt (in PHP konfiguriert, außerhalb von Exponential); oder
+- einen Session-Handler von PHP, den jedes Replikat teilt (in PHP konfiguriert, außerhalb von Exponential); oder
 - Sticky Sessions am Ingress, was das Problem verdeckt, bis ein Pod ersetzt wird.
 
 ```ini

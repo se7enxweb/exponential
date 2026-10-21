@@ -36,7 +36,7 @@ begegnen.
 | Erweiterungspunkt (extension point) | ein registrierter Weg, über den sich eine Erweiterung einklinkt | [Erweiterungspunkte auf einen Blick](erweiterungspunkte-auf-einen-blick.md) |
 | Fetch-Funktion (fetch function) | eine Leseoperation eines Moduls, aus Templates mit `fetch()` aufgerufen | [Eingebaute Fetch-Funktionen nach Modul](referenz-der-fetch-funktionen.md) |
 | Fork | eine Kopie eines Repositorys, die Sie pflegen | [Wann forken und wann nicht](../teil-5-erweitern-forken-zurueckgeben/wann-forken.md) |
-| Formular-Token (form token) | das Geheimnis je Session, das jeder POST eines angemeldeten Benutzers mitführen muss | [ezformtoken und CSRF-Schutz](ezformtoken-und-csrf.md) |
+| Formular-Token (form token) | das Geheimnis je Sitzung, das jeder POST eines angemeldeten Benutzers mitführen muss | [ezformtoken und CSRF-Schutz](ezformtoken-und-csrf.md) |
 | Handler | eine durch eine Einstellung benannte Klasse, die einen Dienst bereitstellt (Mail-Transport, Bild-Handler) | [Durch Einstellungen benannte Handler](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) |
 | Kernel | der Kern von Exponential: `kernel/`, `lib/`, `settings/`, die mitgelieferten Designs | |
 | Kernel-Override (kernel override) | der Ersatz einer Kernel-Klasse durch eine Erweiterung: das letzte Mittel | [Kernel-Overrides: das letzte Mittel](../teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md) |

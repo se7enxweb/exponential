@@ -3,7 +3,7 @@ title: Schlüssel und Geheimnisse in Datensicherungen
 audience: government, hosting, admin
 category: public-sector
 order: 60
-summary: Für Sicherheits- und Betriebsteams in öffentlichen Stellen. Welche kleinen Dateien einer Exponential-Website Schlüssel enthalten, die sich nicht neu erzeugen lassen (Signaturschlüssel des Audit-Trails, das Geheimnis der E-Mail-Einstellungen, Zertifikatsschlüssel), was bei ihrem Verlust nicht mehr funktioniert und wie Sie sie sichern, ohne Zugangsdaten zu verbreiten.
+summary: Für Sicherheits- und Betriebsteams in öffentlichen Stellen. Welche kleinen Dateien einer Exponential-Website Schlüssel enthalten, die sich nicht neu erzeugen lassen (Signaturschlüssel des Prüfprotokolls, das Geheimnis der E-Mail-Einstellungen, Zertifikatsschlüssel), was bei ihrem Verlust nicht mehr funktioniert und wie Sie sie sichern, ohne Zugangsdaten zu verbreiten.
 keywords: Schlüssel, Geheimnisse, Audit-Schlüssel, Signaturschlüssel, Pseudonymschlüssel, Geheimnis der E-Mail-Einstellungen, TokenSecret, Zertifikatsschlüssel, settings/override, Geheimnisspeicher, Schlüsselrotation, GenerateKeys, Verschlüsselung von Datensicherungen, keys, secrets, audit keys, signing key, pseudonym key, mail preference secret, certificate keys, secrets store, key rotation, backup encryption
 type: help
 ---
@@ -28,7 +28,7 @@ und der Abschnitt des Audit-Leitfadens zu [Schlüsseln](../../../../bc/6.0/audit
 
 | Datei | Enthält |
 |---|---|
-| `settings/override/audit.ini.append.php` | die Installations-ID, die Signaturschlüssel und den Pseudonymschlüssel des Audit-Trails, beim ersten Ereignis erzeugt |
+| `settings/override/audit.ini.append.php` | die Installations-ID, die Signaturschlüssel und den Pseudonymschlüssel des Prüfprotokolls, beim ersten Ereignis erzeugt |
 | `settings/override/mailpreferences.ini.append.php` | `[SecretSettings] TokenSecret`, das Website-Geheimnis der E-Mail-Einstellungen |
 | `settings/override/site.ini.append.php` | Datenbank-Zugangsdaten und andere Verbindungseinstellungen |
 | Konfigurationsbaum von Velocity (`/etc/vc` oder `var/vc/qbix/etc`) | Website-Konfiguration und in `ssl/` die privaten Schlüssel der Zertifikate (Modus `0600`) |
@@ -42,12 +42,12 @@ Einstellungsansicht maskieren die Schlüssel und zeigen nur IDs und Fingerabdrü
 
 | Verloren | Auswirkung |
 |---|---|
-| Signaturschlüssel des Audit-Trails | damit signierte Archive und Prüfpunkte lassen sich nicht mehr prüfen (`unknown_key`) |
-| Pseudonymschlüssel des Audit-Trails | neue Pseudonyme stimmen nicht mehr mit alten überein |
+| Signaturschlüssel des Prüfprotokolls | damit signierte Archive und Prüfpunkte lassen sich nicht mehr prüfen (`unknown_key`) |
+| Pseudonymschlüssel des Prüfprotokolls | neue Pseudonyme stimmen nicht mehr mit alten überein |
 | Geheimnis der E-Mail-Einstellungen | jeder Link in jeder bereits versandten E-Mail funktioniert nicht mehr, und Sperreinträge greifen nicht mehr |
 | Zertifikatsschlüssel | HTTPS unter Velocity muss neu eingerichtet werden |
 
-Für eine öffentliche Stelle ist der erste Punkt der gravierendste: Ein Audit-Trail, der sich nicht prüfen lässt, ist
+Für eine öffentliche Stelle ist der erste Punkt der gravierendste: Ein Prüfprotokoll, das sich nicht prüfen lässt, ist
 ein schwächerer Nachweis.
 
 ## Sie sicher sichern
@@ -59,21 +59,21 @@ ein schwächerer Nachweis.
 - **Beschränken Sie, wer sie lesen darf.** Eine Datensicherung mit `settings/override/` ist „so schutzbedürftig wie der
   Server selbst“; geben Sie sie nie an einen externen Dienstleister oder ein Testteam weiter, ohne zu prüfen, was sie
   enthält.
-- **Bewahren Sie eine separate, geschützte Kopie der Schlüssel** in Ihrem Geheimnisspeicher auf, damit der Audit-Trail
+- **Bewahren Sie eine separate, geschützte Kopie der Schlüssel** in Ihrem Geheimnisspeicher auf, damit das Prüfprotokoll
   auch dann prüfbar bleibt, wenn die Datensicherungen der Website verloren gehen.
 - **Testkopien**: Eine aus der Produktion wiederhergestellte Testumgebung trägt dieselben Schlüssel; entscheiden Sie,
   ob das akzeptabel ist, oder geben Sie Testumgebungen eigene Schlüssel.
 
 ## Schlüssel aus Ihrem Geheimnisspeicher
 
-Statt den Audit-Trail seine Schlüssel erzeugen zu lassen, können Sie sie bereitstellen: Setzen Sie
+Statt das Prüfprotokoll seine Schlüssel erzeugen zu lassen, können Sie sie bereitstellen: Setzen Sie
 `[AuditKeySettings] GenerateKeys=disabled` und tragen Sie `InstallationID`, `ActiveSigningKey`, `SigningKey[<id>]`
 (base64, 32 Byte) und `PseudonymKey` selbst in `settings/override` ein
 ([Audit-Leitfaden](../../../../bc/6.0/audit.md#46-schlüssel)). Mehrere Webserver müssen sich eine Schlüsseldatei teilen.
 
 ## Rotation
 
-Rotieren Sie den Signaturschlüssel des Audit-Trails einmal im Jahr (das Dashboard erinnert Sie nach 365 Tagen daran)
+Rotieren Sie den Signaturschlüssel des Prüfprotokolls einmal im Jahr (das Dashboard erinnert Sie nach 365 Tagen daran)
 und sofort, wenn er gelesen worden sein könnte:
 
 ```bash
@@ -96,7 +96,7 @@ kein damit signiertes Archiv mehr vorhanden ist.
 ## Verwandte Seiten
 
 - [Datensicherung und Wiederherstellung](README.md): Übersicht dieses Ordners
-- [Archive des Audit-Trails und Datensicherung](audit-trail-archive-und-datensicherungen.md)
+- [Archive des Prüfprotokolls und Datensicherung](audit-trail-archive-und-datensicherungen.md)
 - [Konfiguration unter Versionsverwaltung](../hosting/konfiguration-unter-versionskontrolle.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

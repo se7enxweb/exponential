@@ -28,7 +28,7 @@ die Dokumente des Projekts zuordnen, und zeigt einen funktionsbasierten Ansatz.
 
 | Gesetz | Was das Projekt dokumentiert | Wo |
 |---|---|---|
-| CAN-SPAM Act (Vereinigte Staaten, 15 U.S.C. 7701 ff.) | **„Complies“** (erfüllt) für E-Mails über das E-Mail-Gate: Abmeldelink und `List-Unsubscribe` werden sofort beachtet; die Postanschrift des Absenders bleibt der Website überlassen | [Datenschutzstandards](../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe) |
+| CAN-SPAM Act (Vereinigte Staaten, 15 U.S.C. 7701 ff.) | **„Erfüllt“** für E-Mails über das E-Mail-Gate: Abmeldelink und `List-Unsubscribe` werden sofort beachtet; die Postanschrift des Absenders bleibt der Website überlassen | [Datenschutzstandards](../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe) |
 | CASL (Kanada) und CCPA/CPRA (Kalifornien) | die Funktionen der E-Mail-Einstellungen, in einer Checkliste zugeordnet | [die Rechts-Checkliste](../../../spezifikationen/6.0/mail-einstellungen-compliance.md) |
 
 E-Mails öffentlicher Stellen sind nicht immer „kommerziell“ im Sinne solcher Gesetze; fragen Sie Ihre Rechtsberatung,

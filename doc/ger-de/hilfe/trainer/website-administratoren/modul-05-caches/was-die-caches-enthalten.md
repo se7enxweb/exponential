@@ -57,7 +57,7 @@ Quelle: [Caches](../../../../anleitungen/caches.md) und [Eine Website betreiben]
    (`content`, `template`, `ini` ...). Ein Tag leert jeden Cache, der ihn trägt. Leeren Sie nach einer Änderung an
    den Einstellungen über den Tag `ini`, nicht über die ID.
 5. **Geteilt oder nicht** (3 Minuten). Die Cache-Dateien liegen in `var/`, das sich Apache mit PHP-FPM und Velocity
-   teilen. Velocity hält die Einstellungen im Speicher (starten Sie es nach dem Leeren der INI-Caches neu) und hat
+   teilen. Velocity hält die Einstellungen im Speicher (starten Sie ihn nach dem Leeren der INI-Caches neu) und hat
    seinen eigenen Antwort-Cache.
 
 ### Häufige Fragen

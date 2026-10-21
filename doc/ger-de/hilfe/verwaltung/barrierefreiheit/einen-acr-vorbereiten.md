@@ -65,7 +65,7 @@ nennt.
 | Supports (unterstützt) | jede getestete Seite und Aufgabe das Kriterium erfüllt |
 | Partially supports (teilweise unterstützt) | manche es erfüllen, manche nicht; nennen Sie welche |
 | Does not support (nicht unterstützt) | die meisten es nicht erfüllen |
-| Not applicable (nicht anwendbar) | das Kriterium nicht auftreten kann (zum Beispiel kein Audio auf der Website) |
+| Nicht anwendbar | das Kriterium nicht auftreten kann (zum Beispiel kein Audio auf der Website) |
 | Not evaluated (nicht bewertet) | Sie es nicht getestet haben; raten Sie nie |
 
 Sagen Sie in den Anmerkungen, woher eine Einschränkung stammt (Ihr Template, ein Inhaltselement, eine Erweiterung, der
@@ -75,13 +75,13 @@ Online-Editor) und was die Umgehung oder der Plan ist.
 
 Sie dürfen, mit dem Link, die eigenen Nachweise des Projekts für die Administration zitieren:
 
-- die Statusangaben der [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) (Partly complies,
-  Unverified);
+- die Statusangaben der [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) (Teilweise erfüllt,
+  Nicht geprüft);
 - die Liste der Designtests und was sie absichern (Formularbeschriftungen, Landmarks, Tastaturmuster, Kontrast-Tokens,
   Fehlerübersichten);
 - die manuellen axe-Ergebnisse, festgehalten im [Changelog von 6.0.15](../../../../changelogs/6.0/6.0.15.md).
 
-Machen Sie aus „Partly complies“ nicht „Supports“. Die Tests des Projekts lesen Template-Quellen; sie sind Nachweise
+Machen Sie aus „Teilweise erfüllt“ nicht „Supports“. Die Tests des Projekts lesen Template-Quellen; sie sind Nachweise
 für Ihre Anmerkungen, kein Ersatz für Ihren Test.
 
 ## Verwandte Seiten

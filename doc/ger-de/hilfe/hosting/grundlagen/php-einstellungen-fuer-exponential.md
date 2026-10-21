@@ -146,7 +146,7 @@ Ein PHP der Kommandozeile für Cron und Velocity hat meist eine eigene `php.ini`
 - Der Konfigurationsschritt des Setup-Assistenten kann auf MongoDB ein bis drei Minuten dauern; erhöhen Sie
   `request_terminate_timeout` für diese Installation oder nutzen Sie die Konsole ([MongoDB für Hoster](mongodb-fuer-hoster.md)).
 - Sitzungen: `site.ini [Session] SessionTimeout` (mitgeliefert `259200` Sekunden, drei Tage) überschreibt
-  `session.gc_maxlifetime` beim eigenen Sitzungs-Handler von PHP.
+  `session.gc_maxlifetime` beim eigenen Session-Handler von PHP.
 
 ## Velocity und FrankenPHP
 

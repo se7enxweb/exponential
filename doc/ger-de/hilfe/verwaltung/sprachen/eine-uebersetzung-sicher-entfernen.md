@@ -57,7 +57,7 @@ die Kernel-API, erprobt an einer Kopie der Datenbank, der richtige Weg.
 ## Wer es dürfen sollte
 
 Geben Sie das Recht, Übersetzungen zu entfernen, nur Administratoren oder leitenden Redakteuren. Entfernungen werden
-im Audit-Trail festgehalten ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)); der entfernte Text selbst ist aus
+im Prüfprotokoll festgehalten ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)); der entfernte Text selbst ist aus
 der Datenbank verschwunden.
 
 ## Verwandte Seiten

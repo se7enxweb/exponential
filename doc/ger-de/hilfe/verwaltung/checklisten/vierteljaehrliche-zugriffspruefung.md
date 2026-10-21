@@ -3,7 +3,7 @@ title: Vierteljährliche Zugriffsprüfung
 audience: government, admin, project-manager
 category: public-sector
 order: 80
-summary: Eine vierteljährliche Checkliste, um zu prüfen, wer auf der Exponential-Website einer öffentlichen Stelle was tun darf - Konten, ungenutzte Konten, Rollen und Zuweisungen, Administratoren, API-Schlüssel, Sitzungen und der Audit-Trail - mit den Seiten der Administration und den Befehlen für jeden Schritt.
+summary: Eine vierteljährliche Checkliste, um zu prüfen, wer auf der Exponential-Website einer öffentlichen Stelle was tun darf - Konten, ungenutzte Konten, Rollen und Zuweisungen, Administratoren, API-Schlüssel, Sitzungen und das Prüfprotokoll - mit den Seiten der Administration und den Befehlen für jeden Schritt.
 keywords: Zugriffsprüfung, Benutzerkonten, Rollen, Richtlinien, geringste Rechte, ungenutzte Konten, Benutzerkonten prüfen, Administratoren, API-Schlüssel, Sitzungen, Audit, vierteljährlich, öffentlicher Sektor, access review, user accounts, roles, policies, least privilege, unused accounts, check user accounts, administrators, API keys, sessions, quarterly, public sector
 type: help
 ---
@@ -24,7 +24,7 @@ aus [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rol
 2. [Konten](#konten)
 3. [Rollen und Zuweisungen](#rollen-und-zuweisungen)
 4. [Schlüssel und Sitzungen](#schlüssel-und-sitzungen)
-5. [Audit-Trail](#audit-trail)
+5. [Prüfprotokoll](#prüfprotokoll)
 6. [Die Prüfung festhalten](#die-prüfung-festhalten)
 
 ## Vorbereiten
@@ -55,7 +55,7 @@ aus [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rol
 - [ ] **Setup > Sitzungen**: Melden Sie die Sitzungen entfernter Konten ab ([Sitzungen](../../../anleitungen/sitzungen.md)).
 - [ ] Die zweistufige Anmeldung ist für jeden Administrator weiterhin eingerichtet, wo Ihre Website sie nutzt ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 
-## Audit-Trail
+## Prüfprotokoll
 
 - [ ] Suchen Sie nach Rollenvergaben in diesem Quartal: Die Alarmregeln überwachen die Vergabe einer Administratorrolle ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 - [ ] Prüfen Sie fehlgeschlagene Anmeldungen und Alarme auf dem Audit-Dashboard (`/audit/dashboard`).

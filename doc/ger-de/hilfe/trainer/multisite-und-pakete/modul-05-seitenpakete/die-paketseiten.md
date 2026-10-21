@@ -56,7 +56,7 @@ Die folgenden Beschriftungen sind die des Designs admin4.
    **Details**, **Was es enthält**, **Logbuch** und **Paketinhalt**, ein seitenweiser Dateibrowser, in dem jede Datei
    angesehen oder heruntergeladen werden kann.
 4. **Entfernen** (2 Minuten). Die Bestätigung listet auf, was wegfällt. Das Verzeichnis wird mit allem darin gelöscht;
-   was das Paket installiert hat, bleibt. Jedes Entfernen wird im Audit-Trail als `system.package.remove`
+   was das Paket installiert hat, bleibt. Jedes Entfernen wird im Prüfprotokoll als `system.package.remove`
    festgehalten. Laden Sie ein Paket zuerst herunter, um eine Kopie zu behalten.
 
 ### Häufige Fragen
@@ -132,7 +132,7 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto. Klicken Sie
 3. `package/export`.
 4. Seine Installationsart ist "import": Ein Seitenpaket wird vom Setup-Assistenten zusammen mit den Paketen, die es
    verlangt, importiert und nicht für sich allein installiert.
-5. Im Audit-Trail, als `system.package.remove`.
+5. Im Prüfprotokoll, als `system.package.remove`.
 
 </details>
 
@@ -140,7 +140,7 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto. Klicken Sie
 
 - [Pakete: was sie enthalten, wo sie liegen und wie man sicher mit ihnen umgeht](../../../../anleitungen/pakete.md).
 - [Das JSON-Paketformat](../../../../../eng-us/bc/6.0/package-json-format.md).
-- [Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md).
+- [Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md).
 - [Ein Paket validieren](../../../../../eng-us/help/designers/extensions/validating-a-package.md).
 
 ## Verwandte Seiten

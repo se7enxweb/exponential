@@ -59,7 +59,7 @@ Eine Klasse `contract` ([Inhaltsklassen für Websites](../../../../eng-us/help/c
 | Vertragsdokument (geschwärzt) | Datei |
 
 Datensätze für das Register: Exportieren Sie es mit `xrowextract` (siehe „Inhalte als CSV, JSON oder XML exportieren“
-im Bereich offene Daten). Der Audit-Trail zeichnet Änderungen an jedem Eintrag auf.
+im Bereich offene Daten). Das Prüfprotokoll zeichnet Änderungen an jedem Eintrag auf.
 
 Masseneingabe: `xrowextract` kann CSV-, JSON- oder XML-Dateien mit einer Spaltenzuordnung und einem Probelauf in
 Inhaltsobjekte importieren ([xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md)). Probieren Sie einen Import

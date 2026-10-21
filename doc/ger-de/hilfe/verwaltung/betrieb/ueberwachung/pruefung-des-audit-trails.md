@@ -1,18 +1,18 @@
 ---
-title: Prüfung des Audit-Trails
+title: Prüfung des Prüfprotokolls
 audience: government, admin, project-manager
 category: public-sector
 order: 80
-summary: Wie Exponential belegt, dass sein Audit-Trail weder bearbeitet noch gekürzt wurde - die Hash-Kette, signierte Manifeste der Archive, exp:audit verify und Jetzt prüfen - wie Sie die Prüfung in die Überwachung aufnehmen und was zu tun ist, wenn eine Kette gebrochen ist.
+summary: Wie Exponential belegt, dass sein Prüfprotokoll weder bearbeitet noch gekürzt wurde - die Hash-Kette, signierte Manifeste der Archive, exp:audit verify und Jetzt prüfen - wie Sie die Prüfung in die Überwachung aufnehmen und was zu tun ist, wenn eine Kette gebrochen ist.
 keywords: Audit-Prüfung, Hash-Kette, manipulationserkennend, exp:audit verify, Jetzt prüfen, Integrität, Beweise, Manifeste, Archive, gebrochene Kette, chain_broken, Forensik, audit verification, hash chain, tamper-evident, Verify now, integrity, evidence, manifests, archives, broken chain, forensic
 type: help
 ---
-# Prüfung des Audit-Trails
+# Prüfung des Prüfprotokolls
 
-Diese Seite richtet sich an die Administration, Informationssicherheitsbeauftragte und Prüfende, die sich auf den
-Audit-Trail als Beweismittel stützen. Der Audit-Trail macht Manipulationen erkennbar: Jeder Eintrag trägt den Hash des
+Diese Seite richtet sich an die Administration, Informationssicherheitsbeauftragte und Prüfende, die sich auf das
+Prüfprotokoll als Beweismittel stützen. Das Prüfprotokoll macht Manipulationen erkennbar: Jeder Eintrag trägt den Hash des
 vorherigen, Tagesdateien werden archiviert und in signierten Manifesten aufgeführt, und eine Prüfung zeigt Ihnen, ob
-etwas bearbeitet oder gekürzt wurde ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md);
+etwas bearbeitet oder gekürzt wurde ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md);
 [Audit-Leitfaden, Abschnitt 4.4](../../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)).
 
 ## Inhalt
@@ -75,9 +75,9 @@ letzte Zeile einer Datei beschädigen kann; Abschnitt 5.3 des Leitfadens erklär
   Risikobereitschaft.
 
 ## Verwandte Seiten
-- [Den Audit-Trail prüfen](../../../../../eng-us/help/government/tasks/operations/verify-the-audit-trail.md)
+- [Das Prüfprotokoll prüfen](../../../../../eng-us/help/government/tasks/operations/verify-the-audit-trail.md)
 - [Audit-Warnungen](audit-warnungen.md)
-- [Audit-Trail-Archive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
+- [Prüfprotokollarchive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
 - [Rollenentwurf: Prüfende](../personen-und-berechtigungen/rollenentwurf-pruefende.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

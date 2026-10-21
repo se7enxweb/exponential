@@ -75,14 +75,14 @@ Anforderungen erfüllen kann. Exponential lässt sich mit einem Befehl auf SQLit
 ([Exponential mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md)).
 
 **Pseudonymisierung (Pseudonymization).** Das Ersetzen von Namen und Kennungen durch Werte, die zusätzliche
-Informationen brauchen, um wieder einer Person zugeordnet zu werden. Der Audit-Trail von Exponential pseudonymisiert
-Einträge nach einer festgelegten Zahl von Tagen ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Informationen brauchen, um wieder einer Person zugeordnet zu werden. Das Prüfprotokoll von Exponential pseudonymisiert
+Einträge nach einer festgelegten Zahl von Tagen ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## R
 
 **Schriftgutverwaltung (Records management).** Die Verwaltung von Schriftgut von der Entstehung bis zur Aussonderung
 nach einem Aufbewahrungsplan; die internationale Norm ist ISO 15489-1 ([iso.org](https://www.iso.org/standard/62542.html)).
-Exponential bewahrt Inhaltsversionen und einen Audit-Trail auf, ist aber für sich kein System zur Schriftgutverwaltung
+Exponential bewahrt Inhaltsversionen und ein Prüfprotokoll auf, ist aber für sich kein System zur Schriftgutverwaltung
 ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 
 **Weiterleitung (Redirect).** Eine Anweisung, die einen Besucher von einer alten Adresse zu einer neuen schickt; in

@@ -3,7 +3,7 @@ title: OWASP ASVS auf Exponential abgebildet
 audience: government, developer, admin
 category: public-sector
 order: 40
-summary: Für öffentliche Stellen, deren Sicherheitsanforderungen auf den OWASP Application Security Verification Standard verweisen - die Kapitel von ASVS 4.0.3, denen das Projekt Maßnahmen zuordnet, der Status Unverified, die eine bekannte Lücke auf Stufe 1 (Passwortlänge) und wie Sie Ihre eigene Prüfung planen.
+summary: Für öffentliche Stellen, deren Sicherheitsanforderungen auf den OWASP Application Security Verification Standard verweisen - die Kapitel von ASVS 4.0.3, denen das Projekt Maßnahmen zuordnet, der Status Nicht geprüft, die eine bekannte Lücke auf Stufe 1 (Passwortlänge) und wie Sie Ihre eigene Prüfung planen.
 keywords: OWASP ASVS, Prüfstandard für Anwendungssicherheit, Stufe 1, Stufe 2, Authentifizierung, Sitzungsverwaltung, Zugangssteuerung, Validierung, Protokollierung, Dateien, Konfiguration, Prüfung, Sicherheitsanforderungen, application security verification standard, 4.0.3, level 1, level 2, V2 authentication, V3 session management, V4 access control, V5 validation, V7 logging, V12 files, V13 API, V14 configuration, verification, security requirements
 type: reference
 ---
@@ -13,7 +13,7 @@ Diese Seite richtet sich an Sicherheitsarchitektinnen und -architekten sowie Ent
 öffentlicher Stellen und an Lieferanten, die Anforderungen auf Basis des ASVS beantworten. Der OWASP Application Security
 Verification Standard (<https://owasp.org/www-project-application-security-verification-standard/>) ist ein Katalog
 prüfbarer Anforderungen in drei Stufen. Das Projekt hat **keine** Bewertung Anforderung für Anforderung vorgenommen: Sein
-Status ist **Unverified** ([Sicherheitsstandards: OWASP ASVS 4.0.3](../../../../eng-us/standards/security.md#owasp-asvs-403)).
+Status ist **Nicht geprüft** ([Sicherheitsstandards: OWASP ASVS 4.0.3](../../../../eng-us/standards/security.md#owasp-asvs-403)).
 Das Projekt verwendet die Ausgabe 4.0.3, wie die meisten aktuellen Fragebögen; OWASP hat inzwischen 5.0 veröffentlicht.
 
 ## Inhalt

@@ -113,8 +113,8 @@ Ja, mit `sevenx_authentication_2fa` und `Enforce2FA=enabled`
 ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 
 **Können wir belegen, wer Zugriff hatte und was sich geändert hat?**
-Der Audit-Trail zeichnet Anmeldungen, Ablehnungen, Rollenzuordnungen und Inhaltsänderungen in einem
-manipulationssicheren Log auf ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Das Prüfprotokoll zeichnet Anmeldungen, Ablehnungen, Rollenzuordnungen und Inhaltsänderungen in einem
+manipulationssicheren Log auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 **Wie oft sollten wir Zugriffe prüfen?**
 In einem festen Rhythmus, den Sie mit Ihrem Sicherheitsbeauftragten vereinbaren; die Routine dafür steht unter

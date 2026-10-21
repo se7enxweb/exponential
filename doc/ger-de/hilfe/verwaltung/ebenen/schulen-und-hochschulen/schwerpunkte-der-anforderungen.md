@@ -31,8 +31,8 @@ Vereinigten Staaten gelten für Einrichtungen, die Bundesmittel erhalten, eigene
 [Section 508](https://www.section508.gov/) gilt für Bundesbehörden). Lernende mit Behinderungen sind auf das Intranet
 ebenso angewiesen wie auf die öffentliche Website.
 
-Status von Exponential: Administration admin4 **Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508
-**Unverified**; öffentliche Designs nicht geprüft; kein VPAT
+Status von Exponential: Administration admin4 erfüllt WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508
+**Nicht geprüft**; öffentliche Designs nicht geprüft; kein VPAT
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Fachbereiche, die ihre eigenen Dokumente
 veröffentlichen, brauchen Schulung: barrierefreie Dokumente und Alternativtexte
 ([Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).

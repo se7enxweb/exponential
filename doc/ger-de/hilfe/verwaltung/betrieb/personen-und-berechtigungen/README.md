@@ -31,13 +31,13 @@ ausschließlich aus Richtlinienfunktionen, die es im Kernel gibt. Die Vorgehensw
 | [Rollenentwurf: das zentrale Web-Team](rollenentwurf-webteam.md) | Website-weite Inhaltsarbeit und Betrieb, ohne Rollen oder Einstellungen. |
 | [Rollenentwurf: Redaktionen der Fachbereiche](rollenentwurf-fachredaktionen.md) | Eine Rolle, je Fachbereich mit einer Teilbaum-Einschränkung zugewiesen. |
 | [Rollenentwurf: Freigebende](rollenentwurf-freigebende.md) | Was eine Freigebende braucht: das Freigabe-Ereignis, den Posteingang, versionread. |
-| [Rollenentwurf: Prüfer](rollenentwurf-pruefende.md) | Nur lesender Zugriff auf den Audit-Trail, maskierte Logs und Versionen. |
+| [Rollenentwurf: Prüfer](rollenentwurf-pruefende.md) | Nur lesender Zugriff auf das Prüfprotokoll, maskierte Logs und Versionen. |
 | [Rollenentwurf: externe Dienstleister und befristet Beschäftigte](rollenentwurf-externe-dienstleister.md) | Zugang, der zu einem Vertrag passt und mit ihm endet. |
 | [Eintritt, Wechsel und Austritt](eintritt-wechsel-austritt.md) | Der Lebenszyklus eines Kontos, abgebildet auf Gruppen, Deaktivieren sowie Deaktivieren und verschieben. |
 | [Pflege der Benutzerkonten](pflege-von-benutzerkonten.md) | Ruhende, gesperrte, verwaiste und gemeinsam genutzte Konten; Sperre; eindeutige Anmeldenamen. |
 | [Zweistufige Anmeldung für Beschäftigte](zwei-faktor-anmeldung-fuer-beschaeftigte.md) | Einführung von Authenticator-Codes und Umgang mit verlorenen Telefonen. |
 | [Funktionstrennung](funktionstrennung.md) | Erstellen, Freigabe, Konten, Administration und Prüfung aufteilen. |
-| [Überprüfung der Administrationszugänge](ueberpruefung-administrativer-zugaenge.md) | Eine regelmäßige Überprüfung mit Rollenliste, Kontenliste und Audit-Trail. |
+| [Überprüfung der Administrationszugänge](ueberpruefung-administrativer-zugaenge.md) | Eine regelmäßige Überprüfung mit Rollenliste, Kontenliste und Prüfprotokoll. |
 
 ## Lesereihenfolge
 

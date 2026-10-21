@@ -119,7 +119,7 @@ eingebauten Antworten des Benchmarks.
 | `--tls-min-version=1.2\|1.3` | `1.2` | Älteste angenommene Version |
 | `--tls-ciphers=LIST`, `--tls-ciphersuites=LIST` | Standards von OpenSSL | Chiffren für TLS 1.2 und Suiten für TLS 1.3, wie OpenSSL sie auflistet |
 
-TLS 1.2 bietet nur AEAD-Chiffren mit Forward Secrecy an; keine Session Tickets, keine Kompression, keine Neuaushandlung.
+TLS 1.2 bietet nur AEAD-Chiffren mit Forward Secrecy an; keine Sitzungs-Tickets, keine Kompression, keine Neuaushandlung.
 
 Weitere Optionen: `--access-log` (common, combined oder json), `--error-log`, `--quiet`, `--verbose`, `--daemon`,
 `--pid-file` (gesperrt), `--user`, `--group`, `--chroot`, `--allow-root`. **Als root liefert er nur mit `--user` (wird

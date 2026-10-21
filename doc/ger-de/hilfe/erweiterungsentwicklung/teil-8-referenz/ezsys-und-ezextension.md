@@ -80,7 +80,7 @@ Metadaten (die Daten der Info-Seite) liest die Kernel-Klasse `expInfo` `extensio
 
 ## Verwandte Seiten
 
-- Zurück: [eZHTTPTool: Requests, Sessions und Weiterleitungen](ezhttptool.md)
+- Zurück: [eZHTTPTool: Requests, Sitzungen und Weiterleitungen](ezhttptool.md)
 - Weiter: [eZTemplate aus PHP](eztemplate.md)
 - [Verzeichnisse unter var/](verzeichnisse-unter-var.md)
 - [Ladereihenfolge der Erweiterungen](../teil-3-erweiterungsentwickler/ladereihenfolge-der-erweiterungen.md)

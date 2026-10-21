@@ -49,19 +49,19 @@ ein Prozess die Software absichern muss.
 |---|---|---|
 | Autorin oder Autor und einzige freigebende Person desselben Bereichs | Selbstfreigabe | eigene Inhalte von Freigebenden lässt das Freigabe-Ereignis durch; halten Sie Freigebende dort vom Erstellen fern, oder geben Sie ihnen einen getrennten Weg über ein Autorenkonto, den eine andere freigebende Person abdeckt ([Vier-Augen-Prinzip](../redaktionelle-workflows/vier-augen-prinzip-beim-veroeffentlichen.md)) |
 | Kontenadministration und Rollenvergabe | ein Konto anlegen und ihm beliebige Rechte geben | Modul `role` nur für Systemadministratoren; `PreventPrivilegeEscalation=enabled` begrenzt, was andere vergeben könnten |
-| Voller Zugriff und Verwaltung des Audits | Einstellungen ändern und den Nachweis darüber auch | das Audit ist hashverkettet und wird geprüft (`exp:audit verify`); senden Sie Einträge an ein Syslog- oder Webhook-Ziel außerhalb des Servers ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)) |
+| Voller Zugriff und Verwaltung des Audits | Einstellungen ändern und den Nachweis darüber auch | das Audit ist hashverkettet und wird geprüft (`exp:audit verify`); senden Sie Einträge an ein Syslog- oder Webhook-Ziel außerhalb des Servers ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)) |
 | Betrieb und unmaskierte Logs | beiläufiger Zugriff auf personenbezogene Daten | `setup/unmasklogs` nur während Untersuchungen |
 
 ## Wo die Software Ihren Prozess braucht
 
 - **Administratoren können alles.** Eine Richtlinie über alle Module kann nicht eingeschränkt werden. Halten Sie Administratorkonten
-  persönlich und wenige, verlangen Sie die zweistufige Anmeldung, und verlassen Sie sich auf den Audit-Trail und den Alarm `admin_role_granted`.
+  persönlich und wenige, verlangen Sie die zweistufige Anmeldung, und verlassen Sie sich auf das Prüfprotokoll und den Alarm `admin_role_granted`.
 - **Der Serverbetreiber steht außerhalb der Rollen.** Befehle auf der Kommandozeile prüfen keine Richtlinie; zum Beispiel ist
   `./console exp:logs` „der Betreiber des Servers: Es wird keine Richtlinie geprüft“ ([Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md#on-the-command-line)).
   Der Zugang zur Kommandozeile ist eine eigene Aufgabe, geregelt durch Ihre Regeln für den Serverzugang.
-- **Der Audit-Trail macht Manipulationen sichtbar, verhindert sie aber nicht.** Wer Zugang zur Kommandozeile hat, könnte Dateien löschen; die
+- **Das Prüfprotokoll macht Manipulationen sichtbar, verhindert sie aber nicht.** Wer Zugang zur Kommandozeile hat, könnte Dateien löschen; die
   Hash-Kette und signierte Manifeste zeigen das, und ein externes Ziel bewahrt eine Kopie auf
-  ([Überprüfung des Audit-Trails](../ueberwachung/pruefung-des-audit-trails.md)).
+  ([Überprüfung des Prüfprotokolls](../ueberwachung/pruefung-des-audit-trails.md)).
 - **Die Freigabe von Einstellungsänderungen** liegt außerhalb von Exponential: Legen Sie Einstellungen in die Versionsverwaltung und sperren Sie
   sie auf der Live-Website mit [ManagedByDeployment](../aktualisierungen-und-aenderungen/verwaltet-durch-bereitstellung.md), damit Änderungen durch Ihren
   Änderungsbeirat gehen.

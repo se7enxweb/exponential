@@ -4,7 +4,7 @@ audience: government, admin
 category: public-sector
 order: 80
 summary: Wie lange Mitarbeiter in einem Exponential-Intranet angemeldet bleiben (SessionTimeout, ActivityTimeout), wie man das verkürzt, wie man Sitzungen unter Setup > Sitzungen mit dem Datenbank-Handler sieht und beendet, und Hinweise zu gemeinsam genutzten Computern und zur Sperre.
-keywords: Sitzungen, Abmeldung, gemeinsam genutzte Computer, Setup Sitzungen, Sperre, sessions, SessionTimeout, ActivityTimeout, sign-out, logout, shared computers, Setup Sessions, ezpSessionHandlerDB, lockout, MaxNumberOfFailedLogin
+keywords: Sitzungen, Abmeldung, gemeinsam genutzte Computer, Setup Sitzungen, Sperre, sessions, SessionTimeout, ActivityTimeout, sign-out, logout, shared computers, Setup Sitzungen, ezpSessionHandlerDB, lockout, MaxNumberOfFailedLogin
 type: help
 ---
 # Sitzungen, Abmeldung und gemeinsam genutzte Computer

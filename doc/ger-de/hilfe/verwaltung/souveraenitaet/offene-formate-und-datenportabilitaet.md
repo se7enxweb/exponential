@@ -31,7 +31,7 @@ welchem Format, und worauf Sie achten sollten.
 | Einstellungen | INI-Dateien in `settings/` und `extension/*/settings/` | ja, reiner Text |
 | Templates | `.tpl`-Textdateien | ja, reiner Text |
 | Übersetzungen der Oberfläche | Qt-Linguist-XML (`.ts`) | ja ([Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md)) |
-| Audit-Einträge | Dateien mit JSON-Zeilen, mit Manifesten archiviert | ja ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Audit-Einträge | Dateien mit JSON-Zeilen, mit Manifesten archiviert | ja ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
 
 ## Exportformate
 

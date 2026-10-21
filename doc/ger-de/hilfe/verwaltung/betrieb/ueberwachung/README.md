@@ -12,7 +12,7 @@ type: help
 Dieser Ordner richtet sich an interne IT-Teams, Informationssicherheitsbeauftragte und die Verantwortlichen für den
 Dienst, die wissen müssen, ob eine öffentliche Website gesund, verfügbar und sicher ist, und dies auch belegen können
 müssen. Exponential bringt einen Großteil der Instrumentierung selbst mit (Logs mit Zusammenfassungen,
-Anfrageklassifizierung, einen per Hash-Kette gesicherten Audit-Trail mit Warnungen, Zustandsprüfungen); diese Seiten
+Anfrageklassifizierung, ein per Hash-Kette gesichertes Prüfprotokoll mit Warnungen, Zustandsprüfungen); diese Seiten
 zeigen, wie Sie sie nutzen und was Sie von außen ergänzen.
 
 ## Inhalt
@@ -30,7 +30,7 @@ zeigen, wie Sie sie nutzen und was Sie von außen ergänzen.
 | [Anfrage-Logs: 404 und Sicherheit](anfrageprotokolle-404-und-sicherheit.md) | Antworten „nicht gefunden“ und vermutete Angriffe, getrennt von echten Fehlern. |
 | [CSP-Berichte](csp-berichte.md) | Berichte zur Content Security Policy sammeln, bevor sie durchgesetzt wird. |
 | [Audit-Warnungen](audit-warnungen.md) | Die sieben ausgelieferten Regeln, Empfänger, Feinabstimmung, Weiterleitung an ein Sicherheitsteam. |
-| [Prüfung des Audit-Trails](pruefung-des-audit-trails.md) | Belegen, dass die Aufzeichnung unversehrt ist; was zu tun ist, wenn eine Kette bricht. |
+| [Prüfung des Prüfprotokolls](pruefung-des-audit-trails.md) | Belegen, dass die Aufzeichnung unversehrt ist; was zu tun ist, wenn eine Kette bricht. |
 | [Überwachung der Cronjobs](ueberwachung-der-cronjobs.md) | Was stehen bleibt, wenn Cron stehen bleibt, und wie Sie es bemerken. |
 | [Systeminformationen und Zustandsprüfungen](systeminformationen-und-zustandspruefungen.md) | Die Zustandsprüfungen und der Support-Bericht. |
 | [Upgrade-Prüfung als Überwachung](upgrade-pruefung-als-ueberwachung.md) | Geplante Prüfungen der Dateiintegrität gegen das Release-Manifest. |
@@ -42,7 +42,7 @@ zeigen, wie Sie sie nutzen und was Sie von außen ergänzen.
 1. [Überwachung im Überblick](ueberwachung-im-ueberblick.md).
 2. [Externe Verfügbarkeitsüberwachung](externe-verfuegbarkeitsueberwachung.md) und [Systeminformationen und Zustandsprüfungen](systeminformationen-und-zustandspruefungen.md): erreichbar und gesund.
 3. [Der Log-Viewer](der-log-viewer.md), [Fehlerübersicht und Zustand der Logs](fehleruebersicht-und-zustand-der-logs.md), [Überwachung der Cronjobs](ueberwachung-der-cronjobs.md): der tägliche Betrieb.
-4. Sicherheit: [Anfrage-Logs](anfrageprotokolle-404-und-sicherheit.md), [Audit-Warnungen](audit-warnungen.md), [Prüfung des Audit-Trails](pruefung-des-audit-trails.md), [CSP-Berichte](csp-berichte.md), [Upgrade-Prüfung als Überwachung](upgrade-pruefung-als-ueberwachung.md).
+4. Sicherheit: [Anfrage-Logs](anfrageprotokolle-404-und-sicherheit.md), [Audit-Warnungen](audit-warnungen.md), [Prüfung des Prüfprotokolls](pruefung-des-audit-trails.md), [CSP-Berichte](csp-berichte.md), [Upgrade-Prüfung als Überwachung](upgrade-pruefung-als-ueberwachung.md).
 5. [Aufbewahrung und Rotation von Logs](aufbewahrung-und-rotation-von-protokollen.md) gemeinsam mit den Zuständigen für Schriftgut und Datenschutz.
 
 Nach oben: [Exponential im öffentlichen Sektor betreiben](../README.md). Die Einstiegsseite des Bereichs ist

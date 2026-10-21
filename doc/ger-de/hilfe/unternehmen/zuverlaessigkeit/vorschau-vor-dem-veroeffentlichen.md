@@ -110,8 +110,8 @@ ab Werk 45 pro Element; wird die Grenze erreicht, wird die älteste archivierte 
 Muss Ihr Unternehmen für bestimmte Inhalte einen längeren Verlauf aufbewahren, bitten Sie Ihren Administrator, die
 Grenze für diese Klassen anzuheben.
 
-Der Audit-Trail zeichnet auf, wer was veröffentlicht, verschoben, entfernt oder wiederhergestellt hat, sodass „Wer hat
-das geändert?“ immer eine Antwort hat ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)).
+Das Prüfprotokoll zeichnet auf, wer was veröffentlicht, verschoben, entfernt oder wiederhergestellt hat, sodass „Wer hat
+das geändert?“ immer eine Antwort hat ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)).
 
 ## Große Änderungen im Hintergrund
 

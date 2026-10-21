@@ -123,8 +123,8 @@ Vereinbaren Sie Folgendes mit Ihrem Team oder Partner und halten Sie es schriftl
 - **Jede Änderung lässt sich rückgängig machen**: Die vorherige Version des Codes liegt in Git, und ein Backup existiert,
   wenn sich die Datenbank ändert ([Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md)).
 - **Jedes Deployment wird geprüft**: Startseite, eine tiefe Unterseite, die Administration, `var/log/error.log`.
-- **Jedes Deployment wird festgehalten**: Der Audit-Trail zeichnet Deployments in seinem Kanal `system` auf
-  ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)); ergänzen Sie auch eine Zeile in Ihrem eigenen
+- **Jedes Deployment wird festgehalten**: Das Prüfprotokoll zeichnet Deployments in seinem Kanal `system` auf
+  ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)); ergänzen Sie auch eine Zeile in Ihrem eigenen
   Änderungsprotokoll.
 
 ## Checkliste

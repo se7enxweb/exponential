@@ -77,7 +77,7 @@ Entfernen Sie den alten Namen nur in einem Major-Release, das vorher angekündig
 
 se7enxweb/explayouts_ui_api hat in Commit 2a95edc einen Text umbenannt, den Menschen sehen: Die Edition der Anwendung
 im Tooltip des Logos wurde zu „Exponential Layouts“. Sein späterer Commit 8273a03 ging weiter und benannte die
-Seiten-Tags, globalen Variablen und den Session-Schlüssel des Editors vom Präfix des Upstream-Projekts in
+Seiten-Tags, globalen Variablen und den Sitzungsschlüssel des Editors vom Präfix des Upstream-Projekts in
 `explayouts`-Namen um, weil das die eigenen Interna der Erweiterung waren, von niemand anderem verwendet, und der
 Editor in diesem Commit als Ganzes geändert wurde.
 

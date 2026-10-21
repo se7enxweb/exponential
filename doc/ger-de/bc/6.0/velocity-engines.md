@@ -79,7 +79,7 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 | 4 | Caches template, template-override, translation und design_base | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, eine ID pro Aufruf |
 | 5 | Engine-Archiv, wenn Velocity aus einem läuft | `php bin/php/phar.php build`: nur neu gebaut, wenn sich eine Datei in `kernel/`, `lib/` oder `autoload/` geändert hat, jede Datei wird vorher geparst |
 | 6 | PHP-FPM: warten, bis sein OPcache die geänderten Dateien neu validiert hat (kein Neuladen), oder es neu laden, wenn darauf kein Verlass ist | `sleep <revalidate_freq + 1>`, oder `systemctl reload <[DeploySettings] PhpFpmService>` |
-| 7 | Velocity neu starten, wenn es läuft | `exp:velocity restart` |
+| 7 | Velocity neu starten, wenn er läuft | `exp:velocity restart` |
 | 8 | Caches content, exphttpcache, ezjscore-packer (nur mit `--packer`) und template-block | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
 | 9 | der Antwort-Cache von Velocity | `exp:velocity cache clear` |
 | 10 | Vorwärmen: `[DeploySettings] WarmUpURL[]`, jede einmal von einem Hintergrundprozess angefragt | `curl URL...` |
@@ -190,12 +190,12 @@ Wurzelverzeichnis der Installation verankert) oder übergeben `--exclude=<dir>`.
 ### Ein abgeschnittener Neustart oder Deploy
 
 `exp:velocity restart` und der Neustart-Schritt von `deploy` führen Stopp und Start als eine abgekoppelte Einheit aus.
-Der Befehl startet sich selbst in einer eigenen Session neu (`setsid -f`) und, als root unter systemd, in einem
+Der Befehl startet sich selbst in einer eigenen Sitzung neu (`setsid -f`) und, als root unter systemd, in einem
 vorübergehenden Scope namens `vc-restart-<date>-<token>` (`systemctl list-units 'vc-restart-*'`), wartet dann darauf
 und gibt aus, was dieser ausgegeben hat, mit dessen Exit-Code. Ein Aufrufer, der zwischen Stopp und Start beendet wird
-(ein Timeout, ein Ausgabenlimit, ein geschlossenes Terminal, das Ende einer Login-Session), lässt den Server nicht mehr
+(ein Timeout, ein Ausgabenlimit, ein geschlossenes Terminal, das Ende einer Login-Sitzung), lässt den Server nicht mehr
 gestoppt zurück: Der Neustart wird von selbst zu Ende geführt. Der Server, den er startet, lebt in diesem Scope, nicht
-in der Session des Aufrufers.
+in der Sitzung des Aufrufers.
 
 Während er läuft, liegt `restart-in-progress.json` neben der PID-Datei (`var/vc/qbix/run/`), mit der PID des
 abgekoppelten Prozesses, seinem Scope und seinem Beginn; die Datei verschwindet, wenn der Start abgeschlossen ist.
@@ -536,7 +536,7 @@ bearbeitete und neu erzeugte PHP-Dateien übernommen.
 
 Jeder Wert erreicht PHP als INI-Text, in dem ein `;` einen Kommentar beginnt; ein Wert, der eines enthält
 (`session.save_path=0;0660;<dir>`), wird daher in Anführungszeichen in das Caddyfile geschrieben. Bevor das so war,
-kam der Session-Pfad als `0` an, keine Session wurde je gefunden, und niemand konnte auf dieser Engine angemeldet
+kam der Sitzungspfad als `0` an, keine Sitzung wurde je gefunden, und niemand konnte auf dieser Engine angemeldet
 bleiben.
 
 `[PHPSettings] IniOptions[]` setzt außerdem `apc.shm_size=256M` für beide Engines: Der Standard der Kommandozeile ist

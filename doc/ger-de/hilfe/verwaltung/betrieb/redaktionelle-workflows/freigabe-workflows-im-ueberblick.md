@@ -36,7 +36,7 @@ erklärt die beweglichen Teile und die Entscheidungen, die eine öffentliche Ste
 
 ## Was mit einem Artikel geschieht
 
-1. Eine Redakteurin oder ein Redakteur klickt auf **Veröffentlichen**. Die Version wird *ausstehend*.
+1. Eine Redakteurin oder ein Redakteur klickt auf **Zur Veröffentlichung schicken**. Die Version wird *ausstehend*.
 2. Der Trigger **Vor dem Veröffentlichen von Inhalten** startet den Freigabe-Workflow; das Freigabe-Ereignis erzeugt ein Element der
    Zusammenarbeit für die Freigebenden, und der Prozess wartet.
 3. Eine freigebende Person öffnet die Anfrage, liest die Vorschau und klickt auf **Freigeben** oder **Ablehnen** (mit einem Kommentar).

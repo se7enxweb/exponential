@@ -55,7 +55,7 @@ Zeitraum, den Ihre Organisation auch für andere Investitionen verwendet.
 |---|---|---|
 | Lizenz | „Using Exponential under the terms of the GNU GPL is free of charge.“ (Die Nutzung unter der GNU GPL ist kostenlos.) | `README.md`, „License“ |
 | Lizenz pro Server, Website oder Benutzer | „The act of running the Program is not restricted“ (Das Ausführen des Programms ist nicht eingeschränkt) | `LICENSE.md` Abschnitt 0; [Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md) |
-| Umsetzung | Shop, Multisite, mehrsprachige Inhalte, Workflows, eine REST API, Kontaktformulare, Feeds und ein Audit-Trail sind eingebaut | `README.md`, „Main Exponential features“ |
+| Umsetzung | Shop, Multisite, mehrsprachige Inhalte, Workflows, eine REST API, Kontaktformulare, Feeds und ein Prüfprotokoll sind eingebaut | `README.md`, „Main Exponential features“ |
 | Hosting | SQLite 3, die Standarddatenbank, braucht keinen Datenbankserver; Velocity braucht außer PHP nichts installiert | `README.md`, „Requirements“ |
 | Hosting | Läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
 | Betrieb | Ein Befehl installiert eine Website; Wartungsmodus, ein Log-Viewer und ein Health-Check sind dabei | [Installation mit einem Befehl](../../../../eng-us/features/6.0/install-in-one-command.md), [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md), [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md) |

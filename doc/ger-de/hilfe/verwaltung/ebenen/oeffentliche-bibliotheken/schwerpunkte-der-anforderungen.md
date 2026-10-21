@@ -30,8 +30,8 @@ sind. Von öffentlichen Stellen betriebene öffentliche Bibliotheken fallen in v
 Barrierefreiheit im öffentlichen Sektor (in der EU die
 [Richtlinie (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj)).
 
-Status von Exponential: Die Administration admin4 ist mit **Partly complies** gegenüber WCAG 2.2 AA bewertet;
-EN 301 549 und Section 508 **Unverified**; öffentliche Designs nicht geprüft
+Status von Exponential: Die Administration admin4 ist mit **Teilweise erfüllt** gegenüber WCAG 2.2 AA bewertet;
+EN 301 549 und Section 508 **Nicht geprüft**; öffentliche Designs nicht geprüft
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Also:
 
 | Bereich | Ihre Arbeit |

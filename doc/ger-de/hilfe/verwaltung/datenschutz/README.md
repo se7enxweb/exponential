@@ -44,7 +44,7 @@ Formulare ohne Aufbewahrungsfrist, kein Cookie-Banner).
 | [Verantwortlicher, Auftragsverarbeiter und die Software](verantwortlicher-auftragsverarbeiter-und-exponential.md) | wer rund um eine Website welche Rolle hat |
 | [Wo personenbezogene Daten in Exponential liegen](bestandsaufnahme-personenbezogener-daten.md) | die Bestandsaufnahme mit Werkzeugen und Aufbewahrung |
 | [Datenminimierung](datenminimierung.md) | standardmäßig minimiert; was Sie selbst minimieren |
-| [Datenschutz im Audit-Trail](datenschutz-im-audit-trail.md) | Voreinstellungen, Pseudonymisierung, strenges Profil |
+| [Datenschutz im Prüfprotokoll](datenschutz-im-audit-trail.md) | Voreinstellungen, Pseudonymisierung, strenges Profil |
 | [Maskierung in Protokollen und im Protokollbetrachter](maskierung-in-protokollen.md) | Maskieren beim Schreiben und beim Anzeigen |
 | [Aufbewahrung personenbezogener Daten im Überblick](aufbewahrung-im-ueberblick.md) | jeder Mechanismus und seine Voreinstellung |
 | [Aufbewahrung von Audit-Einträgen](aufbewahrung-von-audit-eintraegen.md) | 90 / 730 Tage und wie Sie sie ändern |

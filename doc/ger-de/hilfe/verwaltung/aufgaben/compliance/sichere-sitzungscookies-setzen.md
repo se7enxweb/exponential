@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren reiner HTTPS-Sites. Standardmäßig ist das Sitzungscookie nur dann `Secure`, wenn die Anfrage selbst
 über HTTPS kam (`CookieSecure=auto`); `true` erzwingt es, sodass das Cookie nie über einfaches HTTP gesendet wird
-([13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)).
+([13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)).
 
 ## Inhalt
 

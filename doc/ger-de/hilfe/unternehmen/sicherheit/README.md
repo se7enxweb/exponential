@@ -3,8 +3,8 @@ title: Sicherheit und Datenschutz
 audience: businesses, admin, project-manager
 category: business-solutions
 order: 1
-summary: Die Einstiegsseite des Bereichs Sicherheit. Grundlagen für Unternehmen, die Kundendaten in Exponential aufbewahren - Sicherheit, DSGVO, wo personenbezogene Daten liegen, Einwilligung, Konten, Zugriffsprüfungen, Updates, Aufbewahrung und Nachweise aus dem Audit-Trail. Keine Rechtsberatung.
-keywords: Sicherheit, Datenschutz, DSGVO, Privatsphäre, personenbezogene Daten, Einwilligung, Passwörter, zweistufige Anmeldung, Zugriffsprüfung, Sicherheitsupdates, Aufbewahrung, Löschung, Audit-Trail, Compliance, keine Rechtsberatung, security, data protection, GDPR, privacy, personal data, consent, passwords, two-step sign-in, access review, security updates, retention, deletion, audit trail, compliance, not legal advice
+summary: Die Einstiegsseite des Bereichs Sicherheit. Grundlagen für Unternehmen, die Kundendaten in Exponential aufbewahren - Sicherheit, DSGVO, wo personenbezogene Daten liegen, Einwilligung, Konten, Zugriffsprüfungen, Updates, Aufbewahrung und Nachweise aus dem Prüfprotokoll. Keine Rechtsberatung.
+keywords: Sicherheit, Datenschutz, DSGVO, Privatsphäre, personenbezogene Daten, Einwilligung, Passwörter, zweistufige Anmeldung, Zugriffsprüfung, Sicherheitsupdates, Aufbewahrung, Löschung, Prüfprotokoll, Compliance, keine Rechtsberatung, security, data protection, GDPR, privacy, personal data, consent, passwords, two-step sign-in, access review, security updates, retention, deletion, audit trail, compliance, not legal advice
 type: help
 ---
 # Sicherheit und Datenschutz
@@ -35,7 +35,7 @@ Arbeit erledigen.
 - Wo personenbezogene Daten innerhalb einer Exponential-Installation liegen.
 - Einwilligung für Mails und Formulare, Konten und Passwörter und die Prüfung, wer Zugriff hat.
 - Sicherheitsupdates und wie Sie eine Schwachstelle vertraulich melden.
-- Wie lange Daten aufbewahrt werden, wie sie gelöscht werden und wie Sie mit dem Audit-Trail Nachweise vorlegen.
+- Wie lange Daten aufbewahrt werden, wie sie gelöscht werden und wie Sie mit dem Prüfprotokoll Nachweise vorlegen.
 
 ## Die Seiten
 
@@ -43,13 +43,13 @@ Arbeit erledigen.
 |---|---|
 | [Sicherheitsgrundlagen für Unternehmen](sicherheitsgrundlagen-fuer-unternehmen.md) | Die zehn Dinge, die ein Unternehmen eingerichtet haben muss, und wer was tut |
 | [DSGVO-Grundlagen](dsgvo-grundlagen.md) | Die Grundsätze im Überblick und die Funktionen der Software, die sie unterstützen |
-| [Personenbezogene Daten in Exponential](personenbezogene-daten-in-exponential.md) | Wo Konten, Bestellungen, Formulardaten, Newsletter-Abonnenten, Logs und der Audit-Trail gespeichert sind |
+| [Personenbezogene Daten in Exponential](personenbezogene-daten-in-exponential.md) | Wo Konten, Bestellungen, Formulardaten, Newsletter-Abonnenten, Logs und das Prüfprotokoll gespeichert sind |
 | [Einwilligung und Formulare](einwilligung-und-formulare.md) | Einwilligung für Mails, Double-Opt-in, Abmeldung, Formulare, die Daten erheben |
 | [Benutzerkonten und Passwörter](benutzerkonten-und-passwoerter.md) | Passwortregeln, zweistufige Anmeldung, Passwortänderungen, Kontenpflege |
 | [Zugriffsprüfungen](zugriffspruefungen.md) | Eine jährliche Prüfung, wer was tun darf, Schritt für Schritt |
 | [Sicherheitsupdates und Offenlegung](sicherheitsupdates-und-offenlegung.md) | Unterstützte Versionen, Korrekturen einspielen, eine Schwachstelle vertraulich melden |
 | [Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md) | Wie lange Logs und Datensätze aufbewahrt werden und wie Sie auf Anfrage löschen |
-| [Compliance-Nachweise aus dem Audit-Trail](compliance-nachweise-aus-dem-audit-trail.md) | Den manipulationssicheren Audit-Trail als Nachweis verwenden |
+| [Compliance-Nachweise aus dem Prüfprotokoll](compliance-nachweise-aus-dem-audit-trail.md) | Das manipulationssichere Prüfprotokoll als Nachweis verwenden |
 
 ## Eine empfohlene Reihenfolge
 
@@ -61,7 +61,7 @@ Arbeit erledigen.
    hineinkommt.
 5. [Sicherheitsupdates und Offenlegung](sicherheitsupdates-und-offenlegung.md): auf Dauer sicher bleiben.
 6. [Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md) und
-   [Compliance-Nachweise aus dem Audit-Trail](compliance-nachweise-aus-dem-audit-trail.md): es nachweisen.
+   [Compliance-Nachweise aus dem Prüfprotokoll](compliance-nachweise-aus-dem-audit-trail.md): es nachweisen.
 
 ## Was Exponential standardmäßig tut
 
@@ -70,7 +70,7 @@ Arbeit erledigen.
 | Passwörter als bcrypt-Hashes gespeichert; gängige Passwörter abgelehnt | [Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung) |
 | Sicherheits-Header auf jeder Seite, einschließlich der Administration | [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md) |
 | Eine Content Security Policy, in der Administration im Nur-Bericht-Modus | [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) |
-| Ein manipulationssicherer Audit-Trail, standardmäßig eingeschaltet | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Ein manipulationssicheres Prüfprotokoll, standardmäßig eingeschaltet | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | Client-Adressen in Anfrage-Logs maskiert (`MaskIP=enabled`) | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#datenschutz-als-standard-in-den-logs) |
 | Optionale Mails nur mit Einwilligung, Abmeldung mit einem Klick | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
 | Kein Installer hinterlässt das alte Standard-Administratorpasswort | [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md) |

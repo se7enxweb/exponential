@@ -38,7 +38,7 @@ hat dieselben Regeln für Vorträge und Beiträge.
 | Shop: Bestellungen und Kunden | Namen, Adressen, Bestellinhalte | Verwenden Sie Demobestellungen oder lassen Sie ihn weg |
 | Gesammelte Informationen, Formulare | Was Besucher eingegeben haben | Verwenden Sie Ihre eigenen Testeinsendungen |
 | Newsletter | Abonnentenlisten | Weglassen oder Testabonnenten verwenden |
-| Protokolle, der Audit-Trail, die Debug-Leiste | IP-Adressen, Benutzernamen, Pfade, manchmal Hostnamen | Nur auf einer frischen Demo zeigen; zuschneiden |
+| Protokolle, das Prüfprotokoll, die Debug-Leiste | IP-Adressen, Benutzernamen, Pfade, manchmal Hostnamen | Nur auf einer frischen Demo zeigen; zuschneiden |
 | Setup und Systeminformationen | Hostnamen, Pfade, Versionen der Serversoftware | Zuschneiden oder unkenntlich machen; siehe [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md) |
 | E-Mail-Programme neben dem Browser | Echte Posteingänge | Schließen Sie sie |
 

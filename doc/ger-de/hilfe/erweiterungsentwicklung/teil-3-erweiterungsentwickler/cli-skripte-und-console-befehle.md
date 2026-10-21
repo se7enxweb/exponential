@@ -77,7 +77,7 @@ Options:
 
 | Aufruf | Bewirkt |
 |---|---|
-| `eZScript::instance( $settings )` | das Skriptobjekt; `use-extensions` lädt die Einstellungen der aktiven Erweiterungen, `use-modules` das Modulsystem, `use-session` eine Session |
+| `eZScript::instance( $settings )` | das Skriptobjekt; `use-extensions` lädt die Einstellungen der aktiven Erweiterungen, `use-modules` das Modulsystem, `use-session` eine Sitzung |
 | `$script->startup()` | grundlegende Initialisierung |
 | `$script->getOptions( $config, $arguments, $help )` | wertet Optionen der Form `--name=value` aus (`[name:]` nimmt einen Wert, `[flag]` nicht), zeigt `--help` an und beendet sich |
 | `$script->initialize()` | Siteaccess, Datenbank, Erweiterungen |

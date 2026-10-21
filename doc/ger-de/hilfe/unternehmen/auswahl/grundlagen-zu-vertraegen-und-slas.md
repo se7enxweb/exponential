@@ -76,7 +76,7 @@ Stufe, die Sie nie brauchen, ist Geld für nichts.
 | Reaktionszeiten | das Ticketsystem des Lieferanten; verlangen Sie Berichte | |
 | RPO | Zeitstempel der Backups | [SLA-Optionen für Exponential-Hosting](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md#messen-was-sie-versprechen) |
 | RTO | die Dauer des letzten Wiederherstellungstests | [Wiederherstellung und Wiederherstellungstests](../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
-| Eingespielte Updates | die Version der Website und die Deployment-Einträge des Audit-Trails | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Eingespielte Updates | die Version der Website und die Deployment-Einträge des Prüfprotokolls | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 
 Verlangen Sie einen monatlichen oder vierteljährlichen Bericht mit diesen Werten.
 

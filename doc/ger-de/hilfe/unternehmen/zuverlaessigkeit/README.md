@@ -36,7 +36,7 @@ alle drei ab:
 - **Das Produkt**: eine langlebige Release-Linie, veröffentlichte Versionen, die sich nie ändern, ein unterstützter
   PHP-Bereich und eine gepflegte Sicherheitsrichtlinie
   ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
-- **Die mitgelieferten Werkzeuge**: Health-Checks, Logs mit Fehlerreferenzen, ein manipulationssicherer Audit-Trail,
+- **Die mitgelieferten Werkzeuge**: Health-Checks, Logs mit Fehlerreferenzen, ein manipulationssicheres Prüfprotokoll,
   Wartungsmodus, eine Upgrade-Prüfung, Caches, der Server Exponential Velocity und sein Watchdog.
 - **Die Gewohnheiten**: Backups, die gezielt wiederhergestellt werden, Monitoring, das jemand liest, Aktualisierungen,
   die geprobt werden, und ein Notfallplan, der zu einem kleinen Team passt.
@@ -66,7 +66,7 @@ alle drei ab:
 | [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md) | Die Routine, die eine Website Woche für Woche verfügbar hält |
 | [Health-Checks und Monitoring](health-checks-und-monitoring.md) | Was Sie von außen und von innen beobachten und mit welchen Befehlen |
 | [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md) | Wie aus dem „Etwas ist schiefgelaufen“ eines Kunden eine Log-Zeile wird, mit der Sie arbeiten können |
-| [Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md) | Wer was geändert hat, und der Nachweis, dass die Aufzeichnung nicht bearbeitet wurde |
+| [Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md) | Wer was geändert hat, und der Nachweis, dass die Aufzeichnung nicht bearbeitet wurde |
 | [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md) | Was Sie sichern, wie und wie oft |
 | [Wiederherstellungsübungen](wiederherstellungsuebungen.md) | Wie Sie beweisen, dass ein Backup funktioniert, bevor Sie es brauchen |
 | [Velocity für Unternehmen](velocity-fuer-unternehmen.md) | Was der mitgelieferte Anwendungsserver einem Unternehmen bringt, in einfachen Worten |
@@ -111,7 +111,7 @@ alle drei ab:
       einem anderen Rechner wiederhergestellt ([Betrieb einer Site, die wöchentliche Checkliste](../../../anleitungen/betrieb-einer-website.md#10-eine-wöchentliche-checkliste)).
 - [ ] Die Cronjobs laufen, und **Setup > Systeminformationen** zeigt keine fehlgeschlagene Zustandsprüfung.
 - [ ] Jede Aktualisierung beginnt mit einem Backup und der Upgrade-Prüfung, innerhalb eines Wartungsfensters.
-- [ ] Zwei Personen wissen, wo die Logs, der Audit-Trail und die Backups liegen.
+- [ ] Zwei Personen wissen, wo die Logs, das Prüfprotokoll und die Backups liegen.
 
 ## Benachbarte Bereiche
 

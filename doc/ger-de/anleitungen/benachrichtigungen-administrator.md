@@ -215,7 +215,7 @@ E-Mail verlässt den Server. Siehe [die INI-Referenz](../spezifikationen/6.0/ben
 |---|---|---|
 | Der Cronjob | der System-Cron führt `php runcronjobs.php` aus; nicht betroffen | dasselbe, oder der Velocity-Scheduler |
 | Jetzt ausführen / Vorschau | die Seite startet die PHP-Kommandozeile mit `setsid`; sie läuft als Benutzer des Pools (auf der Testinstallation: der Site-Benutzer, PHP aus der Plesk-8.5-Installation) | derselbe Code, gestartet über den eigenen Prozess-Helfer des Servers |
-| Dateien in `var/` | angelegt von dem, der ausführt: dem Benutzer des Pools für das Web, root für einen Konsolen-Lauf | Velocity läuft als root, daher gehören die Dateien, die es anlegt, root |
+| Dateien in `var/` | angelegt von dem, der ausführt: dem Benutzer des Pools für das Web, root für einen Konsolen-Lauf | Velocity läuft als root, daher gehören die Dateien, die er anlegt, root |
 | Nachdem Sie PHP-Code geändert haben | das PHP-FPM neu laden, das die Site bedient (unter Plesk: seine eigene Unit `plesk-php85-fpm`, nicht das System-`php-fpm`), dann den Inhalts-Cache leeren | Velocity neu starten (seine Worker laden Klassen einmal), dann seinen Antwort-Cache leeren |
 | Änderungen an Templates | geleert mit `php bin/php/ezcache.php --clear-all`; neue Template-Dateien erfordern zusätzlich das Leeren des Template-Override-Caches | dasselbe, dann den Antwort-Cache von Velocity leeren |
 
@@ -265,7 +265,7 @@ Redakteure können eine Korrektur veröffentlichen, ohne die Abonnenten zu infor
 2. Geben Sie den Redakteuren die Richtlinie **content / publish_without_notification** (Rollen und Richtlinien, die Redakteursrolle, Neue
    Richtlinie, Modul `content`, Funktion `publish_without_notification`). Administratoren mit `content/*` haben sie bereits.
 
-Leeren Sie den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und starten Sie Velocity neu, falls Sie es verwenden, damit die Worker die
+Leeren Sie den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und starten Sie Velocity neu, falls Sie ihn verwenden, damit die Worker die
 Einstellung lesen. Das Bearbeitungsformular und die Versionsvorschau zeigen dann **Ohne Benachrichtigung veröffentlichen** neben der Schaltfläche zum Veröffentlichen.
 Eine damit veröffentlichte Version erzeugt kein Benachrichtigungsereignis: Die Statusseite zählt kein Ereignis dafür, kein
 Abonnement sendet dafür eine E-Mail oder sammelt einen Digest-Eintrag. Freigabe-E-Mails (Zusammenarbeit) werden weiterhin gesendet, und die

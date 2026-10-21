@@ -16,7 +16,7 @@ Ausgaben enthalten. `exp:velocity deploy` erledigt beides, in der richtigen Reih
 die Beispielerweiterung des Kochbuchs aus.
 
 Voraussetzungen: eine Shell im Wurzelverzeichnis der Installation, als root (der Reload von PHP-FPM und der Neustart
-eines Velocity, das auf Ports unter 1024 lauscht, brauchen das); Velocity installiert oder nicht (ohne Velocity werden
+eines Velocity-Servers, der auf Ports unter 1024 lauscht, brauchen das); Velocity installiert oder nicht (ohne Velocity werden
 die Velocity-Schritte übersprungen).
 
 ## 1. Zuerst nachsehen
@@ -55,7 +55,7 @@ php bin/php/console exp:velocity deploy --allow-root-user
 | 4 | Caches template, template-override, translation und design_base | `--clear-id=<id>`, einer je Aufruf |
 | 5 | Engine-Archiv, wenn Velocity aus einem läuft (nur neu gebaut, wenn sich darin etwas geändert hat) | `php bin/php/console exp:phar build` |
 | 6 | PHP-FPM neu laden | `systemctl reload <[DeploySettings] PhpFpmService>` |
-| 7 | Velocity neu starten, wenn es läuft | `exp:velocity restart` |
+| 7 | Velocity neu starten, wenn er läuft | `exp:velocity restart` |
 | 8 | Caches content, exphttpcache, (`--packer`: ezjscore-packer,) template-block | `--clear-id=<id>` |
 | 9 | der Response-Cache von Velocity | `exp:velocity cache clear` |
 

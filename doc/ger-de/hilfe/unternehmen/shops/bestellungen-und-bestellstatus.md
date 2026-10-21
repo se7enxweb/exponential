@@ -104,8 +104,8 @@ Einen Status zu ändern erfordert `shop/setstatus`, das zwei Beschränkungen hat
 - **Kundenservice**: darf Bestellungen auf Return requested und Returned setzen;
 - **Inhaber**: darf jeden Status setzen, auch Refunded.
 
-Jede Änderung wird im Statusverlauf der Bestellung festgehalten (`kernel/classes/ezorderstatushistory.php`), und der
-Audit-Trail zeichnet Handelsereignisse auf ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Rollen werden wie unter
+Jede Änderung wird im Statusverlauf der Bestellung festgehalten (`kernel/classes/ezorderstatushistory.php`), und das
+Prüfprotokoll zeichnet Handelsereignisse auf ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Rollen werden wie unter
 [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) beschrieben eingerichtet.
 
 > **Hinweis**

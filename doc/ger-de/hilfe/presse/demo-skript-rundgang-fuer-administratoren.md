@@ -3,8 +3,8 @@ title: "Demo-Skript: Rundgang für Administratoren"
 audience: press
 category: press-media
 order: 161
-summary: Ein zehnminütiges Videoskript für das, was ein Administrator in Exponential sieht - das Inhaltsmodell, Rollen, Sprachen, der Log-Viewer mit seiner Maskierung personenbezogener Daten, die Upgrade-Prüfung, Caches und Systeminformationen, der Audit-Trail, die zweistufige Anmeldung und die Checkliste zur Sicherheitshärtung - mit den Bildschirmen, die Daten preisgeben, und wie Sie sie sicher filmen.
-keywords: Demo-Skript, Administrator, Rundgang Administration, Setup, Klassen, Rollen und Richtlinien, Logdateien, Upgrade-Prüfung, Caches, Systeminformationen, Audit-Trail, zweistufige Anmeldung, Sicherheit, Video, Creator, demo script, admin tour, classes, roles and policies, log files, upgrade check, system information, audit trail, two-step sign-in, security
+summary: Ein zehnminütiges Videoskript für das, was ein Administrator in Exponential sieht - das Inhaltsmodell, Rollen, Sprachen, der Log-Viewer mit seiner Maskierung personenbezogener Daten, die Upgrade-Prüfung, Caches und Systeminformationen, das Prüfprotokoll, die zweistufige Anmeldung und die Checkliste zur Sicherheitshärtung - mit den Bildschirmen, die Daten preisgeben, und wie Sie sie sicher filmen.
+keywords: Demo-Skript, Administrator, Rundgang Administration, Setup, Klassen, Rollen und Richtlinien, Logdateien, Upgrade-Prüfung, Caches, Systeminformationen, Prüfprotokoll, zweistufige Anmeldung, Sicherheit, Video, Creator, demo script, admin tour, classes, roles and policies, log files, upgrade check, system information, audit trail, two-step sign-in, security
 type: help
 ---
 # Demo-Skript: Rundgang für Administratoren
@@ -52,7 +52,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 ## Teil 3: Betrieb (3 Minuten)
 
 1. **Setup > Logdateien**: der Navigator und eine Suche. Sagen Sie: „Datenschutz zuerst: E-Mail-Adressen, IP-Adressen,
-   Passwörter, Tokens, Schlüssel und Session-IDs werden in dieser Ansicht maskiert.“ Klicken Sie vor der Kamera nie auf
+   Passwörter, Tokens, Schlüssel und Sitzungs-IDs werden in dieser Ansicht maskiert.“ Klicken Sie vor der Kamera nie auf
    **Unmaskiert zeigen**, und lesen Sie trotzdem jede Zeile, die Sie zeigen ([Log-Viewer](../../../eng-us/features/6.0/log-viewer.md)).
 2. **Setup > Upgrade-Prüfung**: „Vor einem Upgrade vergleicht dies jede Datei mit dem Release.“
    ([Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md))
@@ -68,7 +68,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 
 1. Öffnen Sie den Tab **Audit** (`/audit/dashboard`), dann **Konsole**. Sagen Sie: „Meine Anmeldung ist bereits
    festgehalten. Jeder Eintrag trägt den Hash des vorherigen, sodass eine Änderung am Protokoll auffällt.“
-   ([Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md))
+   ([Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md))
 2. In einem Terminal, außerhalb des geteilten Bildschirms, wenn es einen Prompt zeigt, der Sie stört:
    `./console exp:audit verify --allow-root-user`.
 3. Öffnen Sie `/user2fa/setup` mit dem Demo-Konto: Zeigen Sie die Wahl zwischen einer Authenticator-App und einem Code per

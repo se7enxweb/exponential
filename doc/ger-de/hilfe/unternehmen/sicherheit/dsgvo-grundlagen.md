@@ -50,11 +50,11 @@ jeden unterstützen:
 |---|---|---|
 | Rechtmäßigkeit, Verarbeitung nach Treu und Glauben, Transparenz | Mails sagen, warum sie gesendet wurden; Fußzeilen und die Einstellungsseite können Ihren Datenschutzhinweis verlinken | [Die Checkliste zu den Gesetzen](../../../spezifikationen/6.0/mail-einstellungen-compliance.md) |
 | Zweckbindung | Ein Einwilligungsschalter pro Mail-Kategorie | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
-| Datenminimierung | Anfrage-Logs maskieren Client-Adressen standardmäßig; der Audit-Trail kürzt Adressen und hasht Sessions | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#datenschutz-als-standard-in-den-logs) |
+| Datenminimierung | Anfrage-Logs maskieren Client-Adressen standardmäßig; das Prüfprotokoll kürzt Adressen und hasht Sitzungen | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#datenschutz-als-standard-in-den-logs) |
 | Richtigkeit | Benutzer ändern ihre eigenen Kontodaten; Mitarbeiter bearbeiten Benutzerobjekte in der Administration | [Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md) |
-| Speicherbegrenzung | Aufbewahrungseinstellungen für Logs, den Audit-Trail, das Einwilligungsprotokoll, den Papierkorb und Sessions | [Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md) |
+| Speicherbegrenzung | Aufbewahrungseinstellungen für Logs, das Prüfprotokoll, das Einwilligungsprotokoll, den Papierkorb und Sitzungen | [Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md) |
 | Integrität und Vertraulichkeit | bcrypt-Passwörter, zweistufige Anmeldung, Sicherheits-Header, Rollen | [Benutzerkonten und Passwörter](benutzerkonten-und-passwoerter.md) |
-| Rechenschaftspflicht | Ein Protokoll der Einwilligungsänderungen und ein manipulationssicherer Audit-Trail | [Compliance-Nachweise aus dem Audit-Trail](compliance-nachweise-aus-dem-audit-trail.md) |
+| Rechenschaftspflicht | Ein Protokoll der Einwilligungsänderungen und ein manipulationssicheres Prüfprotokoll | [Compliance-Nachweise aus dem Prüfprotokoll](compliance-nachweise-aus-dem-audit-trail.md) |
 
 ## Die Rechte der Menschen und die Werkzeuge
 
@@ -71,7 +71,7 @@ Kopien in Backups. Planen Sie, wie Sie mit jedem davon umgehen;
 [Personenbezogene Daten in Exponential](personenbezogene-daten-in-exponential.md) listet auf, wo sie liegen.
 
 > **Hinweis**
-> Der Audit-Trail ist so gebaut, dass einzelne Datensätze nicht gelöscht werden können, ohne seine Hash-Kette zu brechen.
+> Das Prüfprotokoll ist so gebaut, dass einzelne Datensätze nicht gelöscht werden können, ohne seine Hash-Kette zu brechen.
 > Der Audit-Leitfaden beschreibt, Datensätze für ihre Aufbewahrungsfrist zu behalten und personenbezogene Felder nach
 > einer festgelegten Zahl von Tagen zu pseudonymisieren
 > ([Audit: Aufgaben zu Datenschutz und DSGVO](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)). Ob das in Ihrem

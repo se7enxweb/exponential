@@ -348,7 +348,7 @@ Gut zu wissen:
   anzeigt, wenn beide sich unterscheiden. „Meine eigene Adresse“ auf der Seite verwendet die Vorstellung der
   Administration von Ihrer Adresse (`eZSys::clientIP()`), und diese wird gespeichert.
 - **Es gibt keine Zulassungsliste nach Benutzer.** Angemeldet zu sein lässt auf der öffentlichen Site niemanden
-  durch: Über den Wartungsmodus wird entschieden, bevor die Session gelesen wird. Geben Sie Testern Zugang über ihre
+  durch: Über den Wartungsmodus wird entschieden, bevor die Sitzung gelesen wird. Geben Sie Testern Zugang über ihre
   Adresse, oder lassen Sie sie über die Vorschau der Administration schauen.
 - **Durchgelassen zu werden heißt: die vollständige Site**, mit ihren Caches. Ein zugelassener Besucher sieht
   womöglich Seiten, die vor dem Fenster gespeichert wurden (Abschnitt 9).

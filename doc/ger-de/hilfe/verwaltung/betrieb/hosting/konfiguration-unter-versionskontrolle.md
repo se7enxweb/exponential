@@ -101,9 +101,9 @@ aus Ihrem Speicher für Geheimnisse bereitgestellt wird. Sichern Sie diese Datei
 ## Nachvollziehbarkeit
 
 Mit Code und Einstellungen in der Versionsverwaltung sagt die Historie des Repositorys, was sich wann und in welchem
-geprüften Commit geändert hat. Exponential steuert seinen Teil bei: Der Audit-Trail zeichnet Schreibvorgänge an
+geprüften Commit geändert hat. Exponential steuert seinen Teil bei: Das Prüfprotokoll zeichnet Schreibvorgänge an
 Einstellungen, das Leeren von Caches, Bereitstellungen und Paketinstallationen im Kanal `system` auf
-([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md)). Zusammen erlauben sie Ihnen, die Frage einer Prüferin oder
+([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md)). Zusammen erlauben sie Ihnen, die Frage einer Prüferin oder
 eines Prüfers zu beantworten: „Wer hat diese Einstellung geändert, und war das freigegeben?“ Der Änderungsprozess
 selbst ist unter [Änderungsmanagement und Änderungsbeiräte](../aktualisierungen-und-aenderungen/aenderungsmanagement-und-aenderungsbeiraete.md)
 beschrieben.

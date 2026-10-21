@@ -31,7 +31,7 @@ falsche Person eine Datei bekommt, und was die Organisation später herausfinden
 |---|---|
 | Eine weitergeleitete Mail erreicht jeden | ein Download prüft, ob die Person die Datei lesen darf |
 | Alte Versionen bleiben in Postfächern | die aktuelle Datei ersetzt die alte unter derselben Adresse; Versionen bleiben erhalten |
-| Keine Aufzeichnung, wer was bekommen hat | Anmeldungen und, wenn eingeschaltet, Downloads werden im Audit-Trail aufgezeichnet |
+| Keine Aufzeichnung, wer was bekommen hat | Anmeldungen und, wenn eingeschaltet, Downloads werden im Prüfprotokoll aufgezeichnet |
 | Der Zugriff endet erst, wenn der Link abläuft | den Zugriff einer Gruppe zu entfernen, beendet ihn sofort |
 
 ## Partnern Dateien anbieten
@@ -93,9 +93,9 @@ Download-Ordner ab und verschickt gesammelte Informationen mit der Datei als Anh
 
 ## Wissen, was geschehen ist
 
-Der Audit-Trail zeichnet standardmäßig Inhaltsänderungen, Anmeldungen und Ablehnungen auf. Sein Kanal `read` zeichnet
+Das Prüfprotokoll zeichnet standardmäßig Inhaltsänderungen, Anmeldungen und Ablehnungen auf. Sein Kanal `read` zeichnet
 stichprobenartig Knotenaufrufe, Suchen und Downloads auf, nur wenn Lesezugriffe eingeschaltet sind
-([Der Audit-Trail, What is recorded](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)). Entscheiden Sie mit Ihrer
+([Das Prüfprotokoll, What is recorded](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)). Entscheiden Sie mit Ihrer
 Ansprechperson für den Datenschutz, ob ein Portal Aufzeichnungen der Downloads braucht und für wie lange, und sagen Sie
 das im Datenschutzhinweis des Portals ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 

@@ -121,7 +121,7 @@ Werkzeug, das Sie neben dem Klon pflegen), bis das Skript hinzugefügt ist.
 - **4. bis 17. April:** Unterstützung für den Branch 4.6.x der Plattform:
   - Korrekturen am Web-Build (Dart Sass 1.x), Favicon und `.htaccess`, REST-API-401, fehlende Icons und das Laden der
     JavaScript-Übersetzungen;
-  - eine Sicherheitskonfiguration mit dem Passwort-Hasher für die Ibexa-Benutzerklasse, Session-Einstellungen und
+  - eine Sicherheitskonfiguration mit dem Passwort-Hasher für die Ibexa-Benutzerklasse, Sitzungseinstellungen und
     Siteaccess der Legacy Bridge, Routen-Importe;
   - das Skript `bin/install-legacy-links`, vorhanden in jedem Slot außer `1.3` (prüfen Sie es mit
     `ls se7enxweb/exponential-platform-dxp/*/bin` in einem Klon);

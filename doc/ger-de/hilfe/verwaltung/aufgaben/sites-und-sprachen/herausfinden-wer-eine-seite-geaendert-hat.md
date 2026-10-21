@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe richtet sich an leitende Redakteure (Versionen) und Administratoren (Audit). Hintergrund:
 [Versionsgeschichte als Rechenschaft](../../transparenz-und-informationsfreiheit/versionsgeschichte-als-rechenschaft.md) und
-[Der Audit-Trail für wer was geändert hat](../../transparenz-und-informationsfreiheit/der-audit-trail-fuer-wer-was-geaendert-hat.md).
+[Das Prüfprotokoll für wer was geändert hat](../../transparenz-und-informationsfreiheit/der-audit-trail-fuer-wer-was-geaendert-hat.md).
 
 ## Der Inhalt: Versionen
 

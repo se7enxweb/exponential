@@ -40,7 +40,7 @@ Velocity-Instanz pro Website hinter einem Proxy, jede als eigener Benutzer des B
 ausliefert, kann jede Datei lesen, die die anderen halten.
 
 Und aus [Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle): wenn mehrere Kunden auf einer Maschine voneinander
-auf Ebene des Betriebssystems getrennt sein müssen (eine Velocity pro Website, jede als eigener Benutzer, oder ein klassischer Server mit
+auf Ebene des Betriebssystems getrennt sein müssen (ein Velocity-Server pro Website, jeder als eigener Benutzer, oder ein klassischer Server mit
 einem PHP-FPM-Pool pro Website).
 
 ## Die Einrichtungen und ihre Grenzen
@@ -80,7 +80,7 @@ Selbst mit einem Benutzer pro Website zeigen einige Standards auf Orte, die jede
 |---|---|---|
 | `site.ini [FileSettings] TemporaryDir` | `/tmp/` | ein eigenes Verzeichnis der Website unter `var/` ([13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)) |
 | Berechtigungen in `[FileSettings]` | `0777` für Verzeichnisse, `0666` für Dateien | `0770` / `0660` mit der Gruppe der Website |
-| Sitzungsspeicher von PHP | `session.save_handler` der `php.ini` (files), wenn `[Session] Handler` leer ist | ein Sitzungsverzeichnis pro Pool oder der Sitzungs-Handler der Datenbank |
+| Sitzungsspeicher von PHP | `session.save_handler` der `php.ini` (files), wenn `[Session] Handler` leer ist | ein Sitzungsverzeichnis pro Pool oder der Session-Handler der Datenbank |
 | `upload_tmp_dir` von PHP | der Standard des Systems | pro Pool, im Bereich der Website |
 | Log- und Cache-Verzeichnisse von Velocity | `var/vc/qbix/log` (Dateien `0640`, Verzeichnis `0750`) | bereits in jeder Installation |
 | Konfiguration von Velocity | `/etc/vc/sites-available/<site>.conf`, Modus `0600`, eine pro Installation | den Modus behalten; sie enthält Pfade zu Zertifikaten und Tokens |

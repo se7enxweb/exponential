@@ -120,7 +120,7 @@ Das Document Root ist `/app`; jede Server-Option lässt sich übergeben, indem S
 
 | Variante | Enthält | Größe (Linux x86-64, PHP 8.3) | Für |
 |---|---|---|---|
-| `mini` | Nur, was der Server braucht: Prozessisolation, Sockets, TLS, Sessions, seinen eigenen Metrikspeicher | 16 MB | Statische Websites, kleine Skripte |
+| `mini` | Nur, was der Server braucht: Prozessisolation, Sockets, TLS, Sitzungen, seinen eigenen Metrikspeicher | 16 MB | Statische Websites, kleine Skripte |
 | `lite` | mini plus, was eine typische Anwendungsplattform verlangt: XML, Bilder (gd), MySQL/MariaDB, SQLite, cURL, intl, zip, opcache | 68 MB | Die meisten Anwendungen |
 | `standard` | lite plus die empfohlene Stufe: PostgreSQL, MongoDB, Caches (apcu, redis, memcached, igbinary), LDAP, SOAP, bcmath und mehr | 73 MB | Der Standard; davon geht die Dokumentation aus |
 | `full` | Alles, was static-php-cli auf dieser Plattform bauen kann, nach bestem Bemühen | etwa 90 bis 120 MB | Eine Extension außerhalb von standard |

@@ -111,7 +111,7 @@ Wenn Apache (PHP-FPM) und Velocity dieselbe Installation ausliefern, teilen sie 
   `session.save_path` des PHP-FPM-Pools und `[PHPSettings] IniOptions[]=session.save_path=0;0660;<dir>` von Velocity
   ([HTTP-Cache](../../../../eng-us/bc/6.0/httpcache.md#switching-it-on)).
 - **Caches.** Das Leeren eines Caches unter **Setup > Caches** erreicht beide, weil die Dateien geteilt sind. Zwei Dinge nicht: Velocity
-  hält Einstellungen im Speicher (starten Sie es nach dem Leeren der INI-Caches neu) und beantwortet Seiten aus seinem eigenen
+  hält Einstellungen im Speicher (starten Sie ihn nach dem Leeren der INI-Caches neu) und beantwortet Seiten aus seinem eigenen
   Antwort-Cache (`exp:velocity cache clear`) ([Caches](../../../anleitungen/caches.md#4-velocity)).
 - **OPcache und APCu** gehören zu den eigenen Prozessen jedes Servers.
 

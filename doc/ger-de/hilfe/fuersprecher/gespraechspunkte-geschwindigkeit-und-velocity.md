@@ -32,9 +32,9 @@ Anfragen geladen und „begann als Fork der Webserver-Engine Qbix“. Er steht u
 
 | Sagen Sie | Quelle |
 |---|---|
-| „Velocity ist die empfohlene Engine für jede Phase, von der Entwicklung bis zum Produktivbetrieb. FrankenPHP ist die produktionsreife Alternative.“ | [Velocity, Warum Sie es nutzen würden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
+| „Velocity ist die empfohlene Engine für jede Phase, von der Entwicklung bis zum Produktivbetrieb. FrankenPHP ist die produktionsreife Alternative.“ | [Velocity, Warum Sie ihn nutzen würden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
 | „Es hält die Anwendung zwischen Anfragen geladen, sodass nicht jede Anfrage bei null beginnt.“ | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
-| „HTTPS vom ersten Start an, mit einem für Sie erzeugten selbstsignierten Zertifikat; HTTP/2 ist eingebaut.“ | [Velocity, Warum Sie es nutzen würden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
+| „HTTPS vom ersten Start an, mit einem für Sie erzeugten selbstsignierten Zertifikat; HTTP/2 ist eingebaut.“ | [Velocity, Warum Sie ihn nutzen würden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
 | „Ganze Seiten können beantwortet werden, bevor der Kernel startet, aus dem rollenbewussten HTTP-Cache und dem Antwort-Cache des Servers.“ | ebenda |
 | „Ein SQL-Abfrage-Cache verringert die Datenbankabfragen pro Seite.“ | ebenda |
 | „Ein Befehl rollt eine PHP-Änderung aus.“ | [Velocity, Eine PHP-Änderung mit einem Befehl ausrollen](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#deploy-a-php-change-in-one-command) |

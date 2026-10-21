@@ -110,7 +110,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.1.
    */ ?>
    ```
 
-3. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini` (starten Sie Velocity neu, wenn es die
+3. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini` (starten Sie Velocity neu, wenn er die
    Übungsumgebung ausliefert).
 4. Lesen Sie den Wert für jeden Siteaccess:
 

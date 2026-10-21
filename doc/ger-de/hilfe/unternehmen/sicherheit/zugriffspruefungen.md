@@ -3,8 +3,8 @@ title: Zugriffsprüfungen
 audience: businesses, admin, project-manager
 category: business-solutions
 order: 60
-summary: Eine jährliche Prüfung Schritt für Schritt, wer auf einer Exponential-Website was tun darf - Rollen mit Vollzugriff, sensible Richtlinien, Konten, die niemand nutzt, Menschen, die gegangen sind - mit den Rollenseiten, Benutzerkonten prüfen und dem Audit-Trail, und mit einem Protokoll, das Sie als Nachweis aufbewahren.
-keywords: Zugriffsprüfung, Berechtigungen, Rollen, Richtlinien, minimale Rechte, Vollzugriff, Administrator, Benutzerkonten, ausgeschiedene Mitarbeiter, Kontenpflege, Audit-Trail, Rollenzuweisung, Nachweis, Rezertifizierung, access review, permissions, roles, policies, least privilege, full access, user accounts, leavers, user hygiene, audit trail, role assignment, evidence, recertification
+summary: Eine jährliche Prüfung Schritt für Schritt, wer auf einer Exponential-Website was tun darf - Rollen mit Vollzugriff, sensible Richtlinien, Konten, die niemand nutzt, Menschen, die gegangen sind - mit den Rollenseiten, Benutzerkonten prüfen und dem Prüfprotokoll, und mit einem Protokoll, das Sie als Nachweis aufbewahren.
+keywords: Zugriffsprüfung, Berechtigungen, Rollen, Richtlinien, minimale Rechte, Vollzugriff, Administrator, Benutzerkonten, ausgeschiedene Mitarbeiter, Kontenpflege, Prüfprotokoll, Rollenzuweisung, Nachweis, Rezertifizierung, access review, permissions, roles, policies, least privilege, full access, user accounts, leavers, user hygiene, audit trail, role assignment, evidence, recertification
 type: help
 ---
 # Zugriffsprüfungen
@@ -46,7 +46,7 @@ standardmäßig eingeschaltet (`settings/site.ini`), sodass niemand mehr vergebe
       Mitarbeiter, Auftragnehmer und Partner.
 - [ ] Vereinbaren Sie, wer die Prüfung unterschreibt (der Verantwortliche der Website) und wer sie vorbereitet (ein
       Administrator).
-- [ ] Notieren Sie das Datum der letzten Prüfung; der Audit-Trail kann zeigen, was sich seitdem geändert hat.
+- [ ] Notieren Sie das Datum der letzten Prüfung; das Prüfprotokoll kann zeigen, was sich seitdem geändert hat.
 
 ## Schritt für Schritt
 
@@ -67,9 +67,9 @@ standardmäßig eingeschaltet (`settings/site.ini`), sodass niemand mehr vergebe
    Einstellung **Deaktivieren und verschieben** sammelt deaktivierte Konten in einer verborgenen Gruppe ohne Rollen.
 7. **Prüfen Sie die zweistufige Anmeldung** für Administratoren und Redakteure, wenn Ihre Richtlinien sie verlangen
    ([Benutzerkonten und Passwörter](benutzerkonten-und-passwoerter.md)).
-8. **Sehen Sie sich das Protokoll an.** Filtern Sie im Audit-Trail den Kanal `access` nach Rollenzuweisungen seit der
+8. **Sehen Sie sich das Protokoll an.** Filtern Sie im Prüfprotokoll den Kanal `access` nach Rollenzuweisungen seit der
    letzten Prüfung und bestätigen Sie, dass jede beabsichtigt war
-   ([Compliance-Nachweise aus dem Audit-Trail](compliance-nachweise-aus-dem-audit-trail.md)).
+   ([Compliance-Nachweise aus dem Prüfprotokoll](compliance-nachweise-aus-dem-audit-trail.md)).
 9. **Exportieren Sie die Nachweise.** Exportieren Sie die Kontenliste aus Benutzerkonten prüfen als CSV und den
    Audit-Filter als CSV.
 10. **Unterschreiben Sie das Protokoll** unten und legen Sie das Datum der nächsten Prüfung fest.
@@ -82,7 +82,7 @@ standardmäßig eingeschaltet (`settings/site.ini`), sodass niemand mehr vergebe
 | Modul `role` | kann sich selbst jeden Zugriff geben | dieselbe |
 | `infocollector/read` | liest jede Formulareingabe | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | `mailpreferences/export` | exportiert die Mail-Daten von Menschen | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#anfragen-betroffener-personen) |
-| `audit/read`, `audit/manage` | liest oder verwaltet den Audit-Trail; in einer neuen Installation hat sie nur Administrator | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#who-may-look) |
+| `audit/read`, `audit/manage` | liest oder verwaltet das Prüfprotokoll; in einer neuen Installation hat sie nur Administrator | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#who-may-look) |
 | `user/register` | wer sich überhaupt registrieren darf | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md#8-festlegen-wer-sich-registrieren-und-wer-knotendaten-lesen-darf) |
 | Autorisierung von OAuth-Clients | wer Apps verbinden darf | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md#9-festlegen-wer-oauth-clients-autorisieren-darf) |
 | Shop-Administration | sieht Kunden und Bestellungen | [Shop-Dashboard](../../../../eng-us/features/6.0/store-dashboard.md) |
@@ -93,9 +93,9 @@ Um in Benutzerkonten prüfen selbst E-Mail-Adressen zu sehen, braucht man das Re
 ## Zwischen den Prüfungen
 
 - Deaktivieren Sie Konten am letzten Arbeitstag einer Person; warten Sie nicht auf die jährliche Prüfung.
-- Lassen Sie die Alarmregeln des Audit-Trails darauf achten, ob eine Administratorrolle vergeben wird; prüfen Sie mit
+- Lassen Sie die Alarmregeln des Prüfprotokolls darauf achten, ob eine Administratorrolle vergeben wird; prüfen Sie mit
   `./console exp:audit alerts recipients`, wer die Alarmmail bekommt
-  ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+  ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
 - Versehen Sie vorübergehenden Zugriff in Ihren Notizen mit einem Enddatum und entfernen Sie ihn an diesem Datum.
 - Für Extranets mit Partnerkonten siehe [Prüfung der Berechtigungen im Extranet](../extranets/berechtigungen-im-extranet-pruefen.md).
 

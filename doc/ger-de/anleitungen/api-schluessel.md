@@ -61,7 +61,7 @@ Hostnamen sind gekürzt oder durch Dokumentationswerte ersetzt (`example.com`, `
 | Ein persönlicher API-Schlüssel ist | Er ist nicht |
 |---|---|
 | Eine lange Zufallszeichenfolge, die ein Benutzer für eines seiner eigenen Programme erstellt: ein Import-Skript, einen CI-Job, ein Desktop-Werkzeug | Ein Passwort: Er kann sich weder an der Site noch an der Administration anmelden und fragt nie nach einem |
-| Wird mit jeder REST-Anfrage im Header `Authorization` gesendet | Eine Session: Es gibt kein Cookie und kein Formular-Token |
+| Wird mit jeder REST-Anfrage im Header `Authorization` gesendet | Eine Sitzung: Es gibt kein Cookie und kein Formular-Token |
 | Für diese Anfrage der Benutzer, innerhalb der Bereiche, die beim Erstellen gewählt wurden | Mehr als der Benutzer: Ein Schlüssel bekommt nie ein Recht, das sein Eigentümer nicht hat |
 | Einzeln widerrufbar, ohne das Passwort des Benutzers oder seine anderen Schlüssel anzurühren | Eine OAuth-Anwendung: Diese registriert ein Administrator für Apps, die *andere* Benutzer anmelden |
 
@@ -70,7 +70,7 @@ Es gibt drei Wege, wie ein Programm in Exponential hineinkommt. Wählen Sie den,
 | Sie möchten | Verwenden Sie |
 |---|---|
 | Ein eigenes Skript liest oder veröffentlicht Inhalte über die REST-Schnittstelle (`/api/...`) | **Einen persönlichen API-Schlüssel** (diese Anleitung) |
-| Ein Skript ruft die Remote-Dienste auf (`/expservices/...`): Lesezeichen, Sessions, Inhaltsaufträge | Ein `expservices`-Token, siehe [Remote-Dienste und Apps](entfernte-dienste-und-apps.md#5-ein-persönliches-api-token-für-skripte-und-apps-3-minuten) |
+| Ein Skript ruft die Remote-Dienste auf (`/expservices/...`): Lesezeichen, Sitzungen, Inhaltsaufträge | Ein `expservices`-Token, siehe [Remote-Dienste und Apps](entfernte-dienste-und-apps.md#5-ein-persönliches-api-token-für-skripte-und-apps-3-minuten) |
 | Eine App oder Partner-Site lässt *viele* Benutzer sich anmelden und handelt für sie | Eine OAuth-Anwendung, registriert unter **Setup > oAuth-Verwaltung** ([Abschnitt 7](#7-die-administration-jeder-schlüssel-ein-benutzer-widerruf)) |
 
 > [!NOTE]

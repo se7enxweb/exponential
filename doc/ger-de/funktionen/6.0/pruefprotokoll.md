@@ -21,7 +21,7 @@ Dies ist die Kurzfassung. Die vollständige Referenz (Ereigniskatalog, Datensatz
 - **Weisen Sie nach, dass der Datensatz unversehrt ist.** Jeder Datensatz trägt den Hash des Datensatzes davor (eine
   Hash-Kette). Tagesdateien werden abgeschlossen, archiviert und in signierten Manifesten aufgeführt. `verify` sagt
   Ihnen, ob etwas bearbeitet oder herausgeschnitten wurde.
-- **Halten Sie Datenschutzregeln ein.** Adressen werden gekürzt, Sessions gehasht, User Agents verkürzt,
+- **Halten Sie Datenschutzregeln ein.** Adressen werden gekürzt, Sitzungen gehasht, User Agents verkürzt,
   Abfragewerte entfernt. Passwörter, Tokens, Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet. Eine
   fehlgeschlagene Anmeldung für ein unbekanntes Konto wird nur gehasht aufgezeichnet.
 

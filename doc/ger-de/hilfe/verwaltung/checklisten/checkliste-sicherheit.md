@@ -4,7 +4,7 @@ audience: government, admin, hosting, project-manager
 category: public-sector
 order: 40
 summary: Eine Sicherheitscheckliste für eine öffentliche Stelle, die Exponential betreibt - Konten und Anmeldung, Härtung, Header und CSP, Protokollierung und Audit, Updates, der Server und Meldewege - aufgebaut auf der Seite zu den Sicherheitsstandards und den Anleitungen zur Härtung, mit den Voreinstellungen, die Sie ändern müssen.
-keywords: Sicherheit, Checkliste, Härtung, zweistufige Anmeldung, Kontosperre, Passwortlänge, CSP, HSTS, Audit-Trail, request-shield, Updates, SECURITY.md, security.txt, öffentlicher Sektor, security, checklist, hardening, two-step sign-in, lockout, password length, audit trail, updates, public sector
+keywords: Sicherheit, Checkliste, Härtung, zweistufige Anmeldung, Kontosperre, Passwortlänge, CSP, HSTS, Prüfprotokoll, request-shield, Updates, SECURITY.md, security.txt, öffentlicher Sektor, security, checklist, hardening, two-step sign-in, lockout, password length, audit trail, updates, public sector
 type: help
 ---
 # Checkliste Sicherheit
@@ -50,7 +50,7 @@ die Sie entscheiden.
 
 ## Protokollierung und Audit
 
-- [ ] Audit-Trail eingeschaltet (standardmäßig eingeschaltet) und Ketten unversehrt: `./console exp:audit status` und `./console exp:audit verify` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
+- [ ] Prüfprotokoll eingeschaltet (standardmäßig eingeschaltet) und Ketten unversehrt: `./console exp:audit status` und `./console exp:audit verify` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 - [ ] Empfänger von Alarmen gesetzt: `./console exp:audit alerts recipients`.
 - [ ] Die Signaturschlüssel des Audits in `settings/override/audit.ini.append.php` sind in den Datensicherungen enthalten ([Datensicherungen: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md#schlüssel-und-geheimnisse-die-sich-nicht-neu-erzeugen-lassen)).
 - [ ] `var/log/security.log` geprüft ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).

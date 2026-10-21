@@ -4,7 +4,7 @@ audience: trainer, designer, developer
 category: training
 order: 51
 summary: Die Teilnehmenden lesen den Stand der Barrierefreiheit von Exponential ehrlich (WCAG 2.2 AA teilweise erfüllt für admin4, öffentliche Designs nicht geprüft), trennen den Anteil des Produkts von dem des Themes und der Redakteure und beantworten die Frage einer Kundin oder eines Kunden, ohne zu viel zu versprechen. 45 Minuten.
-keywords: theme-design, barrierefreiheit, WCAG 2.2, AA, WAI-ARIA, EN 301 549, Section 508, VPAT, teilweise erfüllt, nicht verifiziert, öffentliche designs nicht geprüft, verantwortung des website-bauers, admin4, erklärung zur barrierefreiheit, theme design, accessibility, partly complies, unverified, accessibility statement
+keywords: theme-design, barrierefreiheit, WCAG 2.2, AA, WAI-ARIA, EN 301 549, Section 508, VPAT, teilweise erfüllt, nicht geprüft, öffentliche designs nicht geprüft, verantwortung des website-bauers, admin4, erklärung zur barrierefreiheit, theme design, accessibility, partly complies, unverified, accessibility statement
 type: help
 ---
 # Lektion 5.1: Barrierefreiheit: was Exponential leistet und was Ihr Theme leisten muss
@@ -48,8 +48,8 @@ Quellen: [Standards zur Barrierefreiheit](../../../../../eng-us/standards/access
    |---|---|
    | WCAG 2.2, Stufe AA | Teilweise erfüllt |
    | WAI-ARIA 1.2 und die APG | Teilweise erfüllt |
-   | EN 301 549 v3.2.1 | Nicht verifiziert |
-   | Section 508 (Revised 508 Standards) | Nicht verifiziert |
+   | EN 301 549 v3.2.1 | Nicht geprüft |
+   | Section 508 (Revised 508 Standards) | Nicht geprüft |
 
    „Teilweise erfüllt“ bedeutet: Die Administration in admin4 und admin4l ist nach Kriterien der WCAG 2.2 AA gebaut
    und wird mit Regressionstests dagegen geprüft; das ist keine Konformitätsaussage. Es gibt keine vollständige Prüfung
@@ -105,8 +105,8 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 
 ## Erwartetes Ergebnis
 
-- Die Karte zeigt: WCAG 2.2 AA teilweise erfüllt, WAI-ARIA 1.2 teilweise erfüllt, EN 301 549 nicht verifiziert,
-  Section 508 nicht verifiziert.
+- Die Karte zeigt: WCAG 2.2 AA teilweise erfüllt, WAI-ARIA 1.2 teilweise erfüllt, EN 301 549 nicht geprüft,
+  Section 508 nicht geprüft.
 - Das Blatt mit drei Spalten ordnet die Punkte der Template-Autoren der Spalte des Themes zu.
 - Die Antworten sagen, wogegen die Administration getestet wird, dass die öffentliche Website von Theme und Inhalten
   abhängt, dass es keinen Konformitätsbericht gibt und was das Theme leisten wird. Keine Antwort behauptet volle

@@ -33,7 +33,7 @@ Verwandt: [Einen Fehler über seine Referenz finden](../../anleitungen/fehler-an
 - Zeilen werden **geparst** (`[ time ] [client] [siteaccess] [request] message`), **nach Stufe eingefärbt**, nach
   Anfrage gruppiert und **verknüpft**: die Zeilen derselben Anfrage, die Fehlerreferenz, die Audit-Einträge derselben
   Minute sowie Knoten, Objekte, Benutzer, Klassen, Anfragen und Templates in der Administration.
-- **Datenschutz zuerst**: E-Mail-Adressen, IP-Adressen, Passwörter, Tokens, Schlüssel, Session-IDs und Cookies sind
+- **Datenschutz zuerst**: E-Mail-Adressen, IP-Adressen, Passwörter, Tokens, Schlüssel, Sitzungs-IDs und Cookies sind
   standardmäßig maskiert; die Werte geheimer Einstellungen werden nie angezeigt.
 - **Standardmäßig nur lesend.** Das Herunterladen (eines Bereichs, maskiert und komprimiert) ist eingeschaltet;
   **Jetzt rotieren**, **Leeren** und **Archivierte Rotation entfernen** sind ausgeschaltet, bis
@@ -280,7 +280,7 @@ Der größte Teil der CPU einer wachsenden Abfrage entfällt auf das Maskieren u
 0,25 ms pro Eintrag); die Datei-E/A ist das, was hinzukam, plus die kleine Cache-Datei.
 
 Die gesamte Anfrage über HTTPS, als Administrator, jeweils 30 Abfragen (`server_ms` ist
-die Zeit, die PHP für die Anfrage aufgewendet hat, einschließlich Kernel-Start, Session und Richtlinienprüfung):
+die Zeit, die PHP für die Anfrage aufgewendet hat, einschließlich Kernel-Start, Sitzung und Richtlinienprüfung):
 
 | | Serverzeit, Mittel (p95) | Roundtrip, Mittel (p95) |
 |---|---|---|
@@ -393,7 +393,7 @@ maskiert der Betrachter standardmäßig (`[RedactionSettings]`):
 - **IP-Adressen** (`MaskIPs`): `203.0.113.7` wird zu `203.0.x.x`, eine IPv6-Adresse behält ihre ersten beiden Gruppen.
   Die Client-Spalte wird genauso maskiert. Versionsnummern wie `6.0.15.1` bleiben unberührt.
 - **Geheimnisse** (`MaskSecrets`): Passwörter in Adressen (`mysql://user:***@host`), die Werte von `password=`,
-  `token=`, `api_key=`, `secret=` und ähnlichen Paaren, `Bearer`/`Basic`-Zugangsdaten, JSON Web Tokens, Session-IDs und
+  `token=`, `api_key=`, `secret=` und ähnlichen Paaren, `Bearer`/`Basic`-Zugangsdaten, JSON Web Tokens, Sitzungs-IDs und
   Cookies, lange Folgen aus Buchstaben und Ziffern (Schlüssel, Hashes).
 - **Geheime Einstellungen, immer**: Die Werte von `SecretSettings[]` (standardmäßig das Datenbankpasswort und das
   Passwort des Mail-Transports) und jeder Variable aus `SecretGroups[]`, deren Name besagt, dass sie ein Geheimnis
@@ -419,7 +419,7 @@ angeboten: Es gehört seinem Programm. Nach einer Aktion öffnet die Seite den P
 
 Jede Aktion ist ein POST an `setup/logsaction` mit dem Formular-Token; Rotieren, Leeren und Entfernen zeigen zuerst eine
 Bestätigungsseite, die die Datei, ihre Größe und das, was geschehen wird, nennt. Das Öffnen einer Datei hält
-`system.log.read` einmal pro Datei und Session alle `[ViewerAuditSettings] ReadInterval` Sekunden fest, sodass das
+`system.log.read` einmal pro Datei und Sitzung alle `[ViewerAuditSettings] ReadInterval` Sekunden fest, sodass das
 Verfolgen einer Datei nicht pro Abfrage einen Eintrag schreibt. Die Audit-Namen stehen im Katalog des
 [Prüfprotokolls](../../bc/6.0/audit.md) (Kanal `system`).
 
@@ -571,11 +571,11 @@ außerhalb, sodass der Betrachter nicht zum Abtasten der Festplatte verwendet we
 
 ## Ratenbegrenzung
 
-Jede Anfrage an den Feed (Abfragen, Suchen, verwandte Zeilen) zählt gegen die Session: höchstens
+Jede Anfrage an den Feed (Abfragen, Suchen, verwandte Zeilen) zählt gegen die Sitzung: höchstens
 `[RateLimitSettings] Requests` in `Window` Sekunden. Eine Anfrage über der Grenze wird mit `429` und `Retry-After`
-beantwortet, und die Seite wartet so lange. Der Zähler ist eine kleine Datei pro Session in
-`<cache dir>/logviewer/rate`, benannt nach einem Hash der Session-ID; nichts wird in die Session geschrieben, sodass
-eine Abfrage keinen Session-Schreibvorgang kostet.
+beantwortet, und die Seite wartet so lange. Der Zähler ist eine kleine Datei pro Sitzung in
+`<cache dir>/logviewer/rate`, benannt nach einem Hash der Sitzungs-ID; nichts wird in die Sitzung geschrieben, sodass
+eine Abfrage keinen Sitzungsschreibvorgang kostet.
 
 ## Tastatur und Barrierefreiheit
 
@@ -660,8 +660,8 @@ Administration.
 | `[DigestSettings] LogLevels[<key>]`, `GroupBy[<key>]` | `LogLevels[404]=error,warning,notice`; `GroupBy[404]=reason`, `GroupBy[security]=category-rule` | pro Log: die aufgelisteten Stufen und die Gruppierung (`message`, `category-rule`, `reason`, `reason-kind`, `uri`) |
 | `MaxDownloadBytes` | `52428800` | der größte Bereich eines Downloads |
 | `MaxBundleBytes` | `268435456` | die meisten Bytes an Logs, die ein Archiv von "Alle Logs herunterladen" enthält |
-| `[RateLimitSettings] Requests`, `Window` | `120`, `60` | Feed-Anfragen pro Session und Fenster (Sekunden) |
-| `[ViewerAuditSettings] ReadInterval` | `600` | Sekunden zwischen zwei `system.log.read` derselben Datei und Session |
+| `[RateLimitSettings] Requests`, `Window` | `120`, `60` | Feed-Anfragen pro Sitzung und Fenster (Sekunden) |
+| `[ViewerAuditSettings] ReadInterval` | `600` | Sekunden zwischen zwei `system.log.read` derselben Datei und Sitzung |
 
 Numerische Einstellungen werden innerhalb sicherer Grenzen gehalten, gleichgültig, was in der Datei steht (zum Beispiel
 `PollInterval` mindestens 250 ms, `MaxBytesPerPoll` höchstens 4 MB).

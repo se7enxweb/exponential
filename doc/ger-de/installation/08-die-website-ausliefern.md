@@ -73,7 +73,7 @@ ist nicht für Besucher bestimmt.
 
 Verwenden Sie einen klassischen Server, wenn Ihr Hosting keine dauerhaft laufenden Prozesse erlaubt, wenn Sie bereits
 ein abgestimmtes Apache oder nginx betreiben, das Sie behalten möchten, oder wenn mehrere Kunden auf einem Rechner auf
-Betriebssystemebene voneinander isoliert sein müssen (betreiben Sie dann ein Velocity je Website, jedes unter einem
+Betriebssystemebene voneinander isoliert sein müssen (betreiben Sie dann einen Velocity-Server je Website, jeden unter einem
 eigenen Benutzer, oder einen klassischen Server mit einem PHP-FPM-Pool je Website). Ein Rechner mit nur PHP 8.0 (dem
 Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) führt Velocity ebenfalls aus, ab dem Release
 0.0.4.54 der Engine (siehe [Kapitel 2](02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux)).
@@ -416,11 +416,11 @@ Worker gewählt wird: kein Fork, kein PHP, keine Datenbank. Exponential konfigur
 
 | Einstellung | Ausgeliefert | Bedeutung |
 |---|---|---|
-| `Enabled` | `enabled` | der Cache ist an (er braucht qbix-webserver 0.0.4.26 oder neuer, das das Session-Cookie erkennt) |
+| `Enabled` | `enabled` | der Cache ist an (er braucht qbix-webserver 0.0.4.26 oder neuer, das das Sitzungs-Cookie erkennt) |
 | `DefaultTtl` | `30` | Sekunden, die eine anonyme Seite vorgehalten wird, wenn sie keine eigene Lebensdauer mitbringt |
 | `Dir` | `var/cache/qbix-reverse` | Plattenebene für Einträge, die für den Shared Memory zu groß sind |
 | `APCu`, `APCuMaxSize` | `enabled`, `0` | kleine Einträge in APCu, von den Workern gemeinsam genutzt (`apc.enable_cli` ist für den Serverprozess gesetzt) |
-| `SkipCookies` | leer | Cookies, die „persönlich, nicht cachen“ bedeuten; leer leitet das Session-Cookie und `is_logged_in` ab |
+| `SkipCookies` | leer | Cookies, die „persönlich, nicht cachen“ bedeuten; leer leitet das Sitzungs-Cookie und `is_logged_in` ab |
 | `StaleWhileRevalidate` | `60` | Sekunden, in denen eine abgelaufene Seite noch ausgeliefert wird, während eine Anfrage ihren Ersatz rendert |
 | `NotFoundSeconds` | `0` | Sekunden, die ein 404 gemerkt wird; `0` schickt jedes 404 an PHP, sodass 404.log und security.log jedes einzelne sehen |
 | `HonorRequestNoCache` | `enabled` | eine Anfrage mit `Cache-Control: no-cache` oder `Pragma: no-cache` erreicht PHP, und ihre Antwort wird neu gespeichert |
@@ -782,7 +782,7 @@ php bin/php/console exp:velocity deploy --kernel --allow-root-user    # a kernel
 | 4 | Caches für template, template-override, translation und design_base | `--clear-id=<id>`, eine je Aufruf |
 | 5 | Engine-Archiv, wenn Velocity aus einem solchen läuft (nur neu gebaut, wenn sich darin etwas geändert hat) | `php bin/php/console exp:phar build` |
 | 6 | PHP-FPM neu laden | `systemctl reload <[DeploySettings] PhpFpmService>` |
-| 7 | Velocity neu starten, wenn es läuft | `exp:velocity restart` |
+| 7 | Velocity neu starten, wenn er läuft | `exp:velocity restart` |
 | 8 | Caches für content, exphttpcache, (`--packer`: ezjscore-packer,) template-block | `--clear-id=<id>` |
 | 9 | der Antwort-Cache von Velocity | `exp:velocity cache clear` |
 
@@ -1213,7 +1213,7 @@ Empfohlen, in dieser Reihenfolge:
    `0660` mit dem richtigen Benutzer und der richtigen Gruppe, was die gehärtete Wahl ist (Kapitel 13).
 
 Wenn Apache (PHP-FPM) und Velocity dieselbe Installation nebeneinander ausliefern, teilen sie sich `var/`, die Caches
-und die Sessions: Geben Sie ihnen denselben Benutzer oder das Setup aus Punkt 2. Testen Sie mit beiden im Betrieb und
+und die Sitzungen: Geben Sie ihnen denselben Benutzer oder das Setup aus Punkt 2. Testen Sie mit beiden im Betrieb und
 sehen Sie sich nach einigen Anfragen den Eigentümer neuer Dateien in `var/` an.
 
 ### 8.7.3 Die eigenen Dateien von Velocity
@@ -1248,7 +1248,7 @@ ist genau dafür gemacht: Der Server ist nur vom Rechner selbst aus erreichbar, 
 - **HTTPS.** `eZSys::isSSLNow()` prüft zuerst `$_SERVER['HTTPS']`, dann den Port gegen `site.ini [SiteSettings]
   SSLPort` (443), dann, von einem vertrauenswürdigen Proxy, `X-Forwarded-Proto: https`, dann `X-Forwarded-Port`, dann
   `X-Forwarded-Server` gegen `SSLProxyServerName`. Ein Proxy, der TLS terminiert, muss `X-Forwarded-Proto` setzen; dann
-  stimmen die erzeugten URLs und das `Secure`-Flag des Session-Cookies (`[Session] CookieSecure=auto`).
+  stimmen die erzeugten URLs und das `Secure`-Flag des Sitzungs-Cookies (`[Session] CookieSecure=auto`).
 - **Der Host.** `X-Forwarded-Host` von einem vertrauenswürdigen Proxy ersetzt `Host`; andernfalls lassen Sie den Proxy
   den ursprünglichen `Host` weitergeben (`proxy_set_header Host $host`, `ProxyPreserveHost On`).
 - **Die Adresse des Besuchers.** `[HTTPHeaderSettings] ClientIpByCustomHTTPHeader=X-Forwarded-For` lässt
@@ -1358,7 +1358,7 @@ Was hinter einem Proxy schiefgehen kann:
 | Weiterleitungen und absolute Links führen zu `http://` | dem Proxy wird nicht vertraut (nicht Loopback, nicht in `TrustedProxies[]` bzw. für Velocity nicht in `Q.webserver.proxy.trusted`), oder er sendet kein `X-Forwarded-Proto` | ihn aufführen; den Header im Proxy setzen |
 | jeder Besucher hat die Adresse des Proxys (Anmeldesperre, Logs) | dem Proxy wird nicht vertraut, oder `ClientIpByCustomHTTPHeader` ist unter Apache oder nginx mit PHP-FPM nicht gesetzt | den Proxy aufführen; `ClientIpByCustomHTTPHeader=X-Forwarded-For` setzen |
 | eine Weiterleitungsschleife nach dem Umstellen der Website auf HTTPS | der Proxy spricht mit dem Besucher HTTPS, mit dem Server einfaches HTTP, und der Server weiß es nicht | wie in der ersten Zeile |
-| Seiten angemeldeter Benutzer werden anderen Besuchern ausgeliefert | ein cachender Proxy speichert Seiten mit einem Session-Cookie | Antworten nicht cachen, die das Session-Cookie setzen oder davon abhängen |
+| Seiten angemeldeter Benutzer werden anderen Besuchern ausgeliefert | ein cachender Proxy speichert Seiten mit einem Sitzungs-Cookie | Antworten nicht cachen, die das Sitzungs-Cookie setzen oder davon abhängen |
 
 ---
 

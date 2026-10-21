@@ -66,7 +66,7 @@ October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 
 | 7. Juni 2026 | 6.0.14 | Release-Übersicht |
 | 20. Juli 2026 | Erste Commits des Webservers Velocity | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
 | 22. September 2026 | Velocity kommt zu Exponential | [September 2026](../../../eng-us/history/2026/2026-09b.md) |
-| Oktober 2026 | jQuery 4 und admin4, der Audit-Trail, Exponential Intelligence, die LoveStack-Funktionen von Mugo Web, das Hilfesystem | [Oktober 2026](../../../eng-us/history/2026/2026-10.md) |
+| Oktober 2026 | jQuery 4 und admin4, das Prüfprotokoll, Exponential Intelligence, die LoveStack-Funktionen von Mugo Web, das Hilfesystem | [Oktober 2026](../../../eng-us/history/2026/2026-10.md) |
 
 ## Daten, bei denen man sich leicht irrt
 

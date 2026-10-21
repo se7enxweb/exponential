@@ -50,7 +50,7 @@ letzten Wochen vor dem Start. Sie ergänzt die allgemeinen Startlisten in
 - [ ] Das anfängliche Administratorpasswort ist geändert und `var/log/initial-admin-password` entfernt ([Exponential mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md#safer-first-login)).
 - [ ] Debug-Ausgabe für Besucher ausgeschaltet; Härtung angewendet ([13. Sicherheitshärtung für die Produktion](../../../installation/13-sicherheitshaertung.md)).
 - [ ] Administratorkonten verwenden die zweistufige Anmeldung, wo Ihre Website sie hat ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
-- [ ] Audit-Trail eingeschaltet und Empfänger von Alarmen gesetzt: `./console exp:audit status` und `./console exp:audit alerts recipients` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
+- [ ] Prüfprotokoll eingeschaltet und Empfänger von Alarmen gesetzt: `./console exp:audit status` und `./console exp:audit alerts recipients` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 - [ ] Die vollständige Liste steht in der [Checkliste Sicherheit](checkliste-sicherheit.md).
 
 ## Datenschutz

@@ -24,7 +24,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `lib/ezsession` mit den Mustern, 
 | `ezpSessionHandlerDB` | class extends ezpSessionHandler | – | `lib/ezsession/classes/ezpsessionhandlerdb.php:20` | Klasse für den DB-Session-Handler |
 | `ezpSessionHandlerPHP` | class extends ezpSessionHandler | – | `lib/ezsession/classes/ezpsessionhandlerphp.php:21` | Klasse für den PHP-Session-Handler. Registriert sich im Gegensatz zu den meisten anderen Handlern nicht selbst, denn der Sinn ist, PHP das meiste erledigen zu lassen |
 | `ezpSessionHandlerSymfony` | class extends ezpSessionHandler | – | `lib/ezsession/classes/ezpsessionhandlersymfony.php:22` | Symfony-Session-Handler. |
-| `eZSession` | class | [Registry](registry.md) | `lib/ezsession/classes/ezsession.php:67` | Session-Schnittstellenklasse von Exponential |
+| `eZSession` | class | [Registry](registry.md) | `lib/ezsession/classes/ezsession.php:67` | Sitzungsschnittstellenklasse von Exponential |
 
 ## Ereignis-Hooks (11)
 

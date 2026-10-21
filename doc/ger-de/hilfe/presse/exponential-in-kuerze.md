@@ -71,7 +71,7 @@ vielem anderen ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)):
 | Exponential Layouts | Ein visueller Seitenbaukasten mit Layouts, Zonen, Blöcken und Regeln | [Thema: Exponential Layouts, der Seitenbaukasten](thema-exponential-layouts.md) |
 | Exponential Intelligence | Ein Schreibassistent, der Entwürfe schreibt und nie von sich aus veröffentlicht | [Thema: Exponential Intelligence](thema-exponential-intelligence.md) |
 | admin4 | Ein neues Design der Administration mit hellem und dunklem Theme | [Thema: admin4, das Design der Administration](thema-admin4.md) |
-| Audit-Trail | Ein manipulationssicherer Nachweis dessen, was in der Administration geschah | [Thema: der Audit-Trail](thema-audit-trail.md) |
+| Prüfprotokoll | Ein manipulationssicherer Nachweis dessen, was in der Administration geschah | [Thema: das Prüfprotokoll](thema-audit-trail.md) |
 | Das Hilfesystem | Diese Dokumentation in der Administration, durchsuchbar nach Zielgruppe | [Thema: das Hilfesystem](thema-das-hilfesystem.md) |
 
 Geben Sie 6.0.15 kein Veröffentlichungsdatum: Es ist keines veröffentlicht ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).

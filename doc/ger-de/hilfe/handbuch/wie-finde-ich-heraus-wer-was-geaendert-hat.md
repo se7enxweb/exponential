@@ -4,13 +4,13 @@ audience: admin
 category: manual
 order: 220
 summary: Öffnen Sie Audit > Konsole, filtern Sie nach Login, Objekt (node:275), Ereignisname oder Zeit, und lesen Sie jedes Ereignis mit Akteur, Objekt, Ergebnis und Anfrage; Jetzt prüfen belegt, dass die Aufzeichnung nicht verändert wurde.
-keywords: Audit, Audit-Trail, Audit-Konsole, wer hat geändert, Verlauf, Akteur, Ereignis, Filter, Jetzt prüfen, audit/read, Compliance, audit trail, audit console, who changed, history, actor, event, filter, verify now, compliance
+keywords: Audit, Prüfprotokoll, Audit-Konsole, wer hat geändert, Verlauf, Akteur, Ereignis, Filter, Jetzt prüfen, audit/read, Compliance, audit trail, audit console, who changed, history, actor, event, filter, verify now, compliance
 context: audit/console
 type: help
 ---
 # Wie finde ich heraus, wer was wann geändert hat?
 
-Jede Änderung im System wird in den Audit-Trail geschrieben: wer sie vorgenommen hat, an welchem Objekt, wann, von
+Jede Änderung im System wird in das Prüfprotokoll geschrieben: wer sie vorgenommen hat, an welchem Objekt, wann, von
 welcher Adresse und mit welchem Ergebnis. Die **Audit-Konsole** findet die Ereignisse, die Sie brauchen.
 
 ## Wer das tun kann
@@ -51,7 +51,7 @@ aber nicht `access`), sodass Sie nur die Ereignisse sehen, die Ihre Rolle erlaub
 
 ## Verwandte Seiten
 
-- [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md)
+- [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md)
 - [Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)
 - [Verlauf von Inhalten](../../anleitungen/inhaltsverlauf.md)
 - [Benutzerhandbuch](README.md)

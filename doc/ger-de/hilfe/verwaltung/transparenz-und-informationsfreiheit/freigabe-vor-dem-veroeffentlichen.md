@@ -67,8 +67,8 @@ Freigebende.
 
 ## Was aufgezeichnet wird
 
-Die Versionsgeschichte behält, wer die Version erstellt hat; der Audit-Trail zeichnet das Veröffentlichungsereignis im
-Kanal `content` auf ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Bedenken Sie, dass die Freigabeentscheidung
+Die Versionsgeschichte behält, wer die Version erstellt hat; das Prüfprotokoll zeichnet das Veröffentlichungsereignis im
+Kanal `content` auf ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Bedenken Sie, dass die Freigabeentscheidung
 selbst im Eintrag unter Zusammenarbeit liegt; prüfen Sie in der Audit-Konsole Ihrer Installation, welche Ereignisse
 sie zeigt, bevor Sie sich auf sie als Nachweis der Freigabe verlassen.
 

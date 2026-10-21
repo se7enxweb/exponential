@@ -174,7 +174,7 @@ auf `admin4`, `admin3`, `admin2`, `admin` (`kernel/setup/steps/ezstep_create_sit
   Tastendruck gespeichert und nur, wenn sie sich geändert hat; sie wird außerhalb jedes cache-block auf `<html>`
   geschrieben (die Knotenansicht selbst wird im Ansichts-Cache gehalten und trägt keinen Wert des Benutzers) und
   angewendet, bevor die Seite gezeichnet wird. Eine anonyme Seite und eine Einstellung, die nicht gespeichert werden
-  kann (ein Netzwerkfehler, ein Fehlerstatus, die Anmeldeseite einer abgelaufenen Session), behalten sie im Browser;
+  kann (ein Netzwerkfehler, ein Fehlerstatus, die Anmeldeseite einer abgelaufenen Sitzung), behalten sie im Browser;
   die Einstellung hat Vorrang vor der Kopie im Browser. Ohne JavaScript behält der Bereich den eigenen
   Größengriff des Browsers. Die Ansicht des obersten Knotens hat dieselbe Steuerung.
   `tests/tests/design/AdminNodeTabsHeightTest.php` prüft das.
@@ -820,7 +820,7 @@ einer langen Auswahl kann dasselbe Layout mit `MegaMenuLayout=wide` in seinem `[
 - **Antworten für das Skript.** Die Ansicht antwortet ihrem Skript, nie einer Person, daher ist jede Antwort eine
   nackte Antwort mit
   einem Status und einem Header `X-Exp-Mega`, der das Urteil nennt: `200 ok` (das Fragment), `404 unknown` (ein Tab,
-  den sie nicht bedient), `403 signed-out` (kein angemeldeter Benutzer oder eine Session, die zur erneuten Anmeldung
+  den sie nicht bedient), `403 signed-out` (kein angemeldeter Benutzer oder eine Sitzung, die zur erneuten Anmeldung
   aufgefordert wurde) und `403 denied` (kein
   `user/login` für diesen Siteaccess, oder der Tab ist für den Benutzer nicht geöffnet). Nie die Anmeldeseite oder
   eine Fehlerseite mit dem Seitenlayout. Dafür nennt `site.ini` `user/megamenu` in
@@ -829,11 +829,11 @@ einer langen Auswahl kann dasselbe Layout mit `MegaMenuLayout=wide` in seinem `[
   seiner `SiteAccess`-Einschränkung, dann den Tab). Eine Site, die einen der beiden Einträge entfernt, erhält das alte
   Verhalten zurück: die Anmeldeseite
   oder die Fehlerseite, die das Skript ebenfalls als fehlgeschlagenes Laden behandelt.
-- **Die Session.** Die Ansicht liest die Session nur, daher schließt sie sie (`session_write_close()`), sobald das
+- **Die Sitzung.** Die Ansicht liest die Sitzung nur, daher schließt sie sie (`session_write_close()`), sobald das
   Urteil gefällt ist: Die anderen Anfragen der Seite warten nicht auf das Menü. Sie wartet trotzdem, wie jede Anfrage
   einer
-  Session, solange eine andere Anfrage derselben Session deren Sperre hält (der Datei-Handler und Velocity sperren
-  die Session für die gesamte Anfrage), sodass eine langsam ladende Seite in einem anderen Tab den Bereich um die Zeit
+  Sitzung, solange eine andere Anfrage derselben Sitzung deren Sperre hält (der Datei-Handler und Velocity sperren
+  die Sitzung für die gesamte Anfrage), sodass eine langsam ladende Seite in einem anderen Tab den Bereich um die Zeit
   dieser Seite verzögert.
 - **Aussehen:** eine admin4-Karte (`--a4-card`, `--a4-line`, `--a4-radius-s`, `--a4-shadow-m`), zentriert unter der
   Kopfzeile und so breit, wie ihre Gruppen es brauchen: bis zu drei Gruppen von 17rem nebeneinander, sodass eine kurze

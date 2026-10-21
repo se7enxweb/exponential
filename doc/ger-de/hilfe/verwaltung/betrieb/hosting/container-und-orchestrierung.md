@@ -63,7 +63,7 @@ php bin/php/console exp:velocity ext check
 
 | Pfad | Enthält | Wo |
 |---|---|---|
-| `var/` | hochgeladene Dateien (`var/storage`), Caches, Logs, den Audit-Trail, die SQLite-Datenbank | dauerhaftes Volume |
+| `var/` | hochgeladene Dateien (`var/storage`), Caches, Logs, das Prüfprotokoll, die SQLite-Datenbank | dauerhaftes Volume |
 | `settings/override` | die Einstellungen der Installation, Zugangsdaten der Datenbank, Audit-Schlüssel | dauerhaftes Volume oder Secrets |
 | `settings/siteaccess` | Siteaccess-Einstellungen, die das Installationsprogramm schreibt | dauerhaftes Volume |
 | `kernel/`, `lib/`, `vendor/`, `extension/`, `design/` | Code | im Image |

@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren von Sites mit einem Mitgliederbereich oder einer anderen Anmeldung auf dem öffentlichen
 Siteaccess. Mit getrennten Cookies öffnet eine Sitzung auf der öffentlichen Site nicht die Administration, und
-umgekehrt ([13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)).
+umgekehrt ([13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)).
 
 ## Inhalt
 

@@ -31,7 +31,7 @@ type: help
   [EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf); in der
   US-Bundesverwaltung [Section 508](https://www.section508.gov/).
 - Lesen Sie die Übersichtstabelle der [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#summary):
-  admin4 **Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508 **Unverified**; kein VPAT.
+  admin4 erfüllt WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508 **Nicht geprüft**; kein VPAT.
 
 ## Schritte
 

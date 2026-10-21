@@ -4,7 +4,7 @@ audience: businesses, admin, project-manager
 category: business-solutions
 order: 10
 summary: Die zehn Sicherheitsgrundlagen, die eine Unternehmenswebsite auf Exponential braucht, was die Software für jede bereits tut, was Sie entscheiden müssen und wer sich in einer kleinen Organisation meist darum kümmert. Keine Rechtsberatung.
-keywords: Sicherheitsgrundlagen, Updates, Passwörter, zweistufige Anmeldung, Rollen, minimale Rechte, Backups, Wiederherstellung, Administration, Überwachung, Audit-Trail, Vorfall, Verantwortung, kleines Unternehmen, security basics, HTTPS, updates, passwords, two-step sign-in, roles, least privilege, backups, restore, administration, monitoring, audit trail, incident, responsibility, small business
+keywords: Sicherheitsgrundlagen, Updates, Passwörter, zweistufige Anmeldung, Rollen, minimale Rechte, Backups, Wiederherstellung, Administration, Überwachung, Prüfprotokoll, Vorfall, Verantwortung, kleines Unternehmen, security basics, HTTPS, updates, passwords, two-step sign-in, roles, least privilege, backups, restore, administration, monitoring, audit trail, incident, responsibility, small business
 type: help
 ---
 # Sicherheitsgrundlagen für Unternehmen
@@ -34,7 +34,7 @@ Sicherheit ist geteilt. Eine typische Aufteilung in einer kleinen Organisation:
 | Partei | Meist verantwortlich für |
 |---|---|
 | Verantwortlicher der Website (Sie) | Entscheiden, wer Zugriff bekommt, welche Daten Sie erheben, Verträge, Menschen nach einem Vorfall informieren |
-| Administrator (Mitarbeiter oder Partner) | Rollen, Konten, Updates der Anwendung, Einstellungen, der Audit-Trail |
+| Administrator (Mitarbeiter oder Partner) | Rollen, Konten, Updates der Anwendung, Einstellungen, das Prüfprotokoll |
 | Hoster | Server, Betriebssystem, PHP, Netzwerk, Backups der Maschine, physische Sicherheit |
 | Entwickler oder Partner | Eigene Templates und Erweiterungen, sie über Updates hinweg sicher halten |
 | Das Exponential-Projekt | Schwachstellen in der Software beheben und Releases veröffentlichen (`SECURITY.md`) |
@@ -53,7 +53,7 @@ Schreiben Sie auf, wer welche Aufgabe für Ihre Website übernimmt. Die
 | 4 | Minimale Rechte | Feingranulare Rollen und Richtlinien; niemand bekommt etwas, das keine Rolle gibt | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 | 5 | Backups, die sich wiederherstellen lassen | Eine dokumentierte Liste dessen, was zu sichern ist, und ein Verfahren zum Testen der Wiederherstellung | [Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) |
 | 6 | Eine geschützte Administration | Ein eigener Hostname, Netzwerkbeschränkungen, Request-Shield davor | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md) |
-| 7 | Hinschauen | Anfrage-Logs, ein Log-Viewer und Audit-Alarme bei Brute Force und riskanten Änderungen | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| 7 | Hinschauen | Anfrage-Logs, ein Log-Viewer und Audit-Alarme bei Brute Force und riskanten Änderungen | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | 8 | Ihre personenbezogenen Daten kennen | Mail-Einwilligung, Formularexporte, Kontenlisten, Aufbewahrungseinstellungen | [Personenbezogene Daten in Exponential](personenbezogene-daten-in-exponential.md) |
 | 9 | Ein Weg, Probleme zu melden | Vertrauliche Meldungen an das Projekt, erste Antwort innerhalb eines Werktags | `SECURITY.md` |
 | 10 | Ein Plan für Vorfälle | Runbooks für eine kompromittierte oder ausgefallene Website | [Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md) |
@@ -64,7 +64,7 @@ Aus [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md) und [Si
 
 - Jede Seite trägt Sicherheits-Header wie `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` und
   `Permissions-Policy`.
-- Das Session-Cookie ist `HttpOnly`, `SameSite=Lax` und bei HTTPS `Secure`; das Abmelden beendet die Session endgültig.
+- Das Sitzungs-Cookie ist `HttpOnly`, `SameSite=Lax` und bei HTTPS `Secure`; das Abmelden beendet die Sitzung endgültig.
 - Hochgeladene Bilder werden nach ihrem Inhalt geprüft, nicht nach ihrem Namen; SVG-Bilder werden nur bereinigt
   gespeichert.
 - Kein Installer lässt das alte Standard-Administratorpasswort bestehen
@@ -72,8 +72,8 @@ Aus [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md) und [Si
 - Die Anmeldung verrät nicht, welche Konten existieren; die Alarmregeln des Audits melden Brute-Force-Versuche.
 - In der Administration wird eine Content Security Policy im Nur-Bericht-Modus gesendet
   ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
-- Der Audit-Trail ist standardmäßig eingeschaltet, braucht keine Einrichtung und zeichnet Anmeldungen,
-  Inhaltsänderungen, geschriebene Einstellungen und Bestellungen auf ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- Das Prüfprotokoll ist standardmäßig eingeschaltet, braucht keine Einrichtung und zeichnet Anmeldungen,
+  Inhaltsänderungen, geschriebene Einstellungen und Bestellungen auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Was Sie entscheiden müssen
 
@@ -81,7 +81,7 @@ Aus [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md) und [Si
 - [ ] Wer sich in der Administration anmelden darf, und von wo.
 - [ ] Welche personenbezogenen Daten die Website erhebt und wie lange sie sie aufbewahrt
       ([Aufbewahrung und Löschung von Daten](aufbewahrung-und-loeschung-von-daten.md)).
-- [ ] Wer die Alarmmails des Audit-Trails bekommt (Standard: die `AdminEmail` der Website).
+- [ ] Wer die Alarmmails des Prüfprotokolls bekommt (Standard: die `AdminEmail` der Website).
 - [ ] Wie schnell Sie ein Sicherheits-Release einspielen und wer das tut.
 - [ ] Ob die Content Security Policy nach Tests auf Ihrer öffentlichen Website durchgesetzt werden soll.
 - [ ] Was Sie Kunden sagen, wenn etwas schiefgeht, und wer das entscheidet.

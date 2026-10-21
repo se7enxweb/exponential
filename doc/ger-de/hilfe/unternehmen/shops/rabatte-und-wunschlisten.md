@@ -119,7 +119,7 @@ hinzufügt; das ist Arbeit für einen Entwickler oder Partner ([Einen Workflow-E
 - [ ] Die Beschränkung jeder Regel ist mit einem Testkunden im Warenkorb getestet.
 - [ ] Wer Aktionen plant, versteht, dass der höchste Rabatt gewinnt.
 - [ ] Die Schaltfläche der Wunschliste erscheint nur für angemeldete Kunden.
-- [ ] Änderungen an Rabatten werden festgehalten: Der Audit-Trail protokolliert Rabatte in der Kategorie `commerce` ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Änderungen an Rabatten werden festgehalten: Das Prüfprotokoll protokolliert Rabatte in der Kategorie `commerce` ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Verwandte Seiten
 

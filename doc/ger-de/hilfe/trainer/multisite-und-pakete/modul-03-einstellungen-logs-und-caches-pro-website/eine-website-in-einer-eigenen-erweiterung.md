@@ -131,7 +131,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Modul 2. Die Befehle laufen im Wurz
    Befehl, die fehlen (wie in Schritt 3). Führen Sie ihn mit dieser Option erneut aus.
 
 8. Suchen Sie die Sicherungen: `ls var/backup/ini/`.
-9. Starten Sie Velocity neu, wenn es die Übungsumgebung ausliefert, und öffnen Sie dann `/site_b` und `/site_b_ger`:
+9. Starten Sie Velocity neu, wenn er die Übungsumgebung ausliefert, und öffnen Sie dann `/site_b` und `/site_b_ger`:
    Beide sehen genau aus wie vorher.
 10. Lesen Sie `extension/site_clubb/extension.xml` und `ezinfo.php` und notieren Sie die Version und die Lizenz, die
     sie bekommen haben.

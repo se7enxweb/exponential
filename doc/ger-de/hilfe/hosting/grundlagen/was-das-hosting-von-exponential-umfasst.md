@@ -72,7 +72,7 @@ Eine Exponential-Website ist nicht fertig, wenn der Installer endet. Diese Dinge
 | Was | Warum | Wo es beschrieben ist |
 |---|---|---|
 | **Cronjobs** | Benachrichtigungen, Suchindizierung bei verzögerter Indizierung, Linkprüfungen, Bereinigung von Caches und Sitzungen | [Kapitel 10, Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs) |
-| **Velocity**, wenn es die Website ausliefert | ein lang laufender PHP-Serverprozess mit einem Pool von Workern | [Velocity für Hoster](../server/velocity-fuer-hoster.md) |
+| **Velocity**, wenn er die Website ausliefert | ein lang laufender PHP-Serverprozess mit einem Pool von Workern | [Velocity für Hoster](../server/velocity-fuer-hoster.md) |
 | **PHP-FPM**, wenn Apache oder nginx die Website ausliefert | ein Pool pro Website ist üblich | [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md) |
 | **Ein Datenbankserver**, außer bei SQLite | PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL | die Seite der jeweiligen Datenbank |
 | **Logs** | `var/log/` und die eigenen Logs des Webservers wachsen und brauchen Rotation | [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md) |

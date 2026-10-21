@@ -101,7 +101,7 @@ Aus [Eine gute Fehlerbeschreibung](../wenn-etwas-schiefgeht.md#eine-gute-fehlerb
   Schlüssel oder Serverpfade);
 - Logzeilen aus dem betreffenden Zeitraum, aus denen alles Private entfernt ist.
 
-Schreiben Sie nie Passwörter, Schlüssel, Session-Cookies, Datenbankadressen oder personenbezogene Daten von Kunden
+Schreiben Sie nie Passwörter, Schlüssel, Sitzungs-Cookies, Datenbankadressen oder personenbezogene Daten von Kunden
 oder Benutzern in ein öffentliches Issue.
 
 ### Eine Routine zur Bewertung für Ihr Team

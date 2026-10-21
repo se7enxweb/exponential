@@ -3,8 +3,8 @@ title: Sicherheitscheckliste für Shops
 audience: businesses, admin, hosting
 category: business-solutions
 order: 210
-summary: Die Sicherheitsaufgaben, die ein Shop-Inhaber prüfen sollte, in einfacher Sprache - Konten und zweistufige Anmeldung, Shop-Berechtigungen, Zahlungen, HTTPS, Updates, Backups, Logs und der Audit-Trail - mit Links zu den ausführlichen Seiten zur Härtung.
-keywords: Shop-Sicherheit, Sicherheit des Web-Shops, Checkliste, zweistufige Anmeldung, Rollen, Berechtigungen, HTTPS, Updates, Backups, Audit-Trail, Formular-Token, Content Security Policy, Meldung von Schwachstellen, store security, webshop security, checklist, two-factor, roles, permissions, updates, backups, audit trail, form tokens, vulnerability report
+summary: Die Sicherheitsaufgaben, die ein Shop-Inhaber prüfen sollte, in einfacher Sprache - Konten und zweistufige Anmeldung, Shop-Berechtigungen, Zahlungen, HTTPS, Updates, Backups, Logs und das Prüfprotokoll - mit Links zu den ausführlichen Seiten zur Härtung.
+keywords: Shop-Sicherheit, Sicherheit des Web-Shops, Checkliste, zweistufige Anmeldung, Rollen, Berechtigungen, HTTPS, Updates, Backups, Prüfprotokoll, Formular-Token, Content Security Policy, Meldung von Schwachstellen, store security, webshop security, checklist, two-factor, roles, permissions, updates, backups, audit trail, form tokens, vulnerability report
 type: help
 ---
 # Sicherheitscheckliste für Shops
@@ -102,9 +102,9 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 
 ## Überwachen
 
-- [ ] Der Audit-Trail ist eingeschaltet (das ist er standardmäßig), und jemand liest ihn. Er zeichnet in seiner
-  Kategorie `commerce` Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte auf ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
-- [ ] Audit-Warnungen erreichen eine Person, und der Trail wird von der Maschine weg weitergeleitet (Härtungs-Checkliste).
+- [ ] Das Prüfprotokoll ist eingeschaltet (das ist es standardmäßig), und jemand liest es. Es zeichnet in seiner
+  Kategorie `commerce` Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte auf ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Audit-Warnungen erreichen eine Person, und das Prüfprotokoll wird von der Maschine weg weitergeleitet (Härtungs-Checkliste).
 - [ ] Die Logs werden wöchentlich gelesen ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
 
 ## Kundendaten

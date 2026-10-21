@@ -95,7 +95,7 @@ die Kunden hochladen; Exponential prüft sie nicht. Nennen Sie die Grenze im Tar
 
 ## Die Bildverarbeitung von Velocity
 
-Wenn Velocity die Website ausliefert, beantwortet es statische Dateien selbst und kann Bilder auf Anfrage in der Größe
+Wenn Velocity die Website ausliefert, beantwortet er statische Dateien selbst und kann Bilder auf Anfrage in der Größe
 ändern ([Statische Dateien und Bilder in Velocity](../../../../eng-us/features/6.0/velocity-static-files-and-images.md)):
 
 - `?w=400` oder `?h=300` an einer Bild-URL ändert die Größe, nie über die Größe der Quelle hinaus; für Browser, die es

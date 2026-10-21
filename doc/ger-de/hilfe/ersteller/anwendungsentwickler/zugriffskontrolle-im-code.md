@@ -3,7 +3,7 @@ title: Zugriffskontrolle im Code
 audience: app-creator, developer
 category: app-creation
 order: 590
-summary: Die Rechte von Exponential in jeder Schicht einer Anwendung anwenden - der aktuelle Benutzer, Richtlinienprüfungen mit Einschränkungen, Prüfungen auf Inhaltsebene, Hintergrundarbeit als der richtige Benutzer, Integrationsbenutzer und das Festhalten von Zugriffsentscheidungen im Audit-Trail.
+summary: Die Rechte von Exponential in jeder Schicht einer Anwendung anwenden - der aktuelle Benutzer, Richtlinienprüfungen mit Einschränkungen, Prüfungen auf Inhaltsebene, Hintergrundarbeit als der richtige Benutzer, Integrationsbenutzer und das Festhalten von Zugriffsentscheidungen im Prüfprotokoll.
 keywords: Zugriffskontrolle, Rechte, Berechtigungen, Autorisierung, Einschränkungen, Hintergrundjobs, Integrationsbenutzer, Audit, Anwendungsentwickler, access control, permissions, authorization, eZUser, currentUser, hasAccessTo, limitations, canRead, canEdit, background jobs, integration user, audit, app creator
 type: help
 ---
@@ -59,9 +59,9 @@ oder OAuth-Client, damit er sich einzeln widerrufen lässt ([OAuth und API-Schl�
 
 ## Entscheidungen festhalten
 
-Schreiben Sie sicherheitsrelevante Aktionen und Ablehnungen in den Audit-Trail, mit IDs und niemals mit Geheimnissen
+Schreiben Sie sicherheitsrelevante Aktionen und Ablehnungen in das Prüfprotokoll, mit IDs und niemals mit Geheimnissen
 oder personenbezogenen Inhalten, damit Administratoren sie prüfen können
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md), [Audit](../../../bc/6.0/audit.md)).
+([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md), [Audit](../../../bc/6.0/audit.md)).
 
 ## Verwandte Seiten
 

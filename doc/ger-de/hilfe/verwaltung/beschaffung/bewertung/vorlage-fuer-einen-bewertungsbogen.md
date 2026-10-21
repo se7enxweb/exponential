@@ -88,10 +88,10 @@ Die Seiten zu den Standards von Exponential verwenden feste Statusangaben. Eine 
 
 | Status in `doc/eng-us/standards/` | Höchstens bewerten mit | Warum |
 |---|---|---|
-| **Complies** | 3, oder 4, wenn Sie es nachvollzogen haben | die Seite nennt die Nachweise (Tests, Einstellungen, Dateien) |
-| **Partly complies** | 2 | die Seite nennt, was abgedeckt ist, und die Lücken |
-| **Unverified** | 1 | es wurde keine Bewertung durchgeführt; zum Beispiel sind EN 301 549, Section 508 und OWASP ASVS „Unverified“ |
-| **Does not comply** | 0 | klar ausgesprochen, zum Beispiel unsignierte Commits in [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) |
+| **Erfüllt** | 3, oder 4, wenn Sie es nachvollzogen haben | die Seite nennt die Nachweise (Tests, Einstellungen, Dateien) |
+| **Teilweise erfüllt** | 2 | die Seite nennt, was abgedeckt ist, und die Lücken |
+| **Nicht geprüft** | 1 | es wurde keine Bewertung durchgeführt; zum Beispiel sind EN 301 549, Section 508 und OWASP ASVS „Nicht geprüft“ |
+| **Nicht erfüllt** | 0 | klar ausgesprochen, zum Beispiel unsignierte Commits in [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) |
 
 Ein Bieter kann eine Punktzahl mit eigenen Nachweisen anheben, zum Beispiel mit einem Audit der Barrierefreiheit des
 öffentlichen Designs, das er für Sie baut. Bewerten Sie diesen Nachweis, nicht nur die Produktdokumentation.

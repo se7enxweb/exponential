@@ -93,7 +93,7 @@ Die Rollen des Installers von 7x sind ausführlich in
 
 | Datei | Enthält |
 |---|---|
-| `settings/override/site.ini.append.php` | Listen der Siteaccesses, `MatchOrder`, `ForceVirtualHost=true`, `ActiveExtensions[]`, die Datenbankeinstellungen, Cache-Header für anonyme Besucher, Sitzungs-Handler |
+| `settings/override/site.ini.append.php` | Listen der Siteaccesses, `MatchOrder`, `ForceVirtualHost=true`, `ActiveExtensions[]`, die Datenbankeinstellungen, Cache-Header für anonyme Besucher, Session-Handler |
 | `settings/override/ezurlmultisite.ini.append.php` | die öffentlichen Siteaccesses und ihre Wurzelknoten, für Links zwischen Websites |
 | `settings/siteaccess/site/` | `site.ini`, `content.ini` (`RootNode`), `menu.ini`, `override.ini` und die anderen Dateien von `siteINISettings()` |
 | `settings/siteaccess/ger/` | die Kopie für Deutsch |

@@ -65,13 +65,13 @@ Die Freigabe deckt das Veröffentlichen ab. Andere Aktionen ändern, was die Öf
 | Verbergen | `content/hide` | ebenso |
 | Änderung von Sektion oder Zustand | `section/assign`, `state/assign` | einschränken mit `NewSection`, `NewState` |
 
-Diese Aktionen stehen im Kanal `content` des Audit-Trails, sodass eine zweite Person sie nachträglich prüfen kann.
+Diese Aktionen stehen im Kanal `content` des Prüfprotokolls, sodass eine zweite Person sie nachträglich prüfen kann.
 
 ## Belege für einen Prüfer
 
 - Die Freigabe selbst: das Element der Zusammenarbeit und der Prozess, solange er läuft; danach zeigt die Versionsgeschichte, wer jede Version
   erstellt hat ([Versionsgeschichte und Rechenschaft](versionsverlauf-und-nachvollziehbarkeit.md)).
-- Der Kanal `content` des Audit-Trails erfasst Veröffentlichungen, Entfernungen, Verschiebungen, Sektionen und Zustände.
+- Der Kanal `content` des Prüfprotokolls erfasst Veröffentlichungen, Entfernungen, Verschiebungen, Sektionen und Zustände.
 - Die Trigger-Liste und die Seite des Workflows dokumentieren die Konfiguration; bewahren Sie eine datierte Kopie in Ihrem Änderungsnachweis auf.
 
 Exponential erzeugt keinen einzelnen Bericht „freigegeben von“ je Seite; wenn Ihre Prüfer einen brauchen, kombinieren Sie die Versionsgeschichte mit

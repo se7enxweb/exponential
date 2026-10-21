@@ -54,7 +54,7 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht; die Daten sind Da
 | Links auf entfernte Inhalte und Script-Links werden beim Speichern des Textes geprüft. | [TinyMCE 8, Linkprüfungen](../../../eng-us/features/6.0/online-editor-tinymce8.md#link-checks-when-the-text-is-saved) |
 | Der Upload lehnt ausführbare Dateinamen wie `shell.php.jpg` ab. | [TinyMCE 8, Sicherheit](../../../eng-us/features/6.0/online-editor-tinymce8.md#security) |
 | „Upload von einer URL“ holt nur öffentliche `http`- und `https`-Adressen, mit höchstens 3 Weiterleitungen, die jeweils erneut geprüft werden. | [TinyMCE 8, Upload von einer URL](../../../eng-us/features/6.0/online-editor-tinymce8.md#upload-from-a-url) |
-| Ein Wechsel der Engine wird im Audit-Trail festgehalten. | [TinyMCE 8, Sicherheit](../../../eng-us/features/6.0/online-editor-tinymce8.md#security) |
+| Ein Wechsel der Engine wird im Prüfprotokoll festgehalten. | [TinyMCE 8, Sicherheit](../../../eng-us/features/6.0/online-editor-tinymce8.md#security) |
 | Das mitgelieferte TinyMCE 8.9.2 wird unter der GPL (Version 2 oder später) verwendet. | [TinyMCE 8, Tests](../../../eng-us/features/6.0/online-editor-tinymce8.md#tests) |
 
 ## Was Sie nicht behaupten sollten

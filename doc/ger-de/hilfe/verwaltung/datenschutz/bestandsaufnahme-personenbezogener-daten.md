@@ -3,8 +3,8 @@ title: Wo personenbezogene Daten in Exponential liegen
 audience: government, admin, project-manager, developer
 category: public-sector
 order: 40
-summary: Eine Bestandsaufnahme für öffentliche Stellen über die Orte, an denen eine Exponential-Installation personenbezogene Daten speichert - Benutzerkonten, Besuche, Sitzungen, Formulareinsendungen, E-Mail-Einstellungen und Einwilligungsprotokoll, Newsletter-Daten, Audit-Trail, Protokolle, Suchbegriffe, Bestellungen, Inhalte und Datensicherungen - mit dem Werkzeug, das jeden davon liest, exportiert oder entfernt.
-keywords: personenbezogene Daten, Datenbestand, Datenlandkarte, Benutzerkonten, ezuser, ezuservisit, Sitzungen, Informationssammlung, Einwilligungsprotokoll, Newsletter, Audit-Trail, Protokolle, Suchstatistiken, Bestellungen, Datensicherungen, Verzeichnis von Verarbeitungstätigkeiten, öffentlicher Sektor, personal data, data inventory, data map, records of processing
+summary: Eine Bestandsaufnahme für öffentliche Stellen über die Orte, an denen eine Exponential-Installation personenbezogene Daten speichert - Benutzerkonten, Besuche, Sitzungen, Formulareinsendungen, E-Mail-Einstellungen und Einwilligungsprotokoll, Newsletter-Daten, Prüfprotokoll, Protokolle, Suchbegriffe, Bestellungen, Inhalte und Datensicherungen - mit dem Werkzeug, das jeden davon liest, exportiert oder entfernt.
+keywords: personenbezogene Daten, Datenbestand, Datenlandkarte, Benutzerkonten, ezuser, ezuservisit, Sitzungen, Informationssammlung, Einwilligungsprotokoll, Newsletter, Prüfprotokoll, Protokolle, Suchstatistiken, Bestellungen, Datensicherungen, Verzeichnis von Verarbeitungstätigkeiten, öffentlicher Sektor, personal data, data inventory, data map, records of processing
 type: reference
 ---
 # Wo personenbezogene Daten in Exponential liegen
@@ -35,7 +35,7 @@ Verzeichnis von Verarbeitungstätigkeiten, für Auskunftsanträge und für den A
 | E-Mail-Einstellungen und Einwilligungsprotokoll | Adresse, Entscheidungen, Einwilligungsverlauf mit IP-Adresse | Setup > E-Mail-Einstellungen; `exp:mail:preferences export` | `exp:mail:preferences erase` | Einwilligungsprotokoll 1095 Tage für Personen, die nicht mehr da sind |
 | Sperrliste | gesalzener Hash einer Adresse | Prüfen durch Eingabe der Adresse | Aufheben | standardmäßig unbegrenzt |
 | Newsletter (cjw_newsletter, falls aktiv) | Abonnenten, Status, Statistiken pro Person mit Einwilligung | Newsletter-Benutzerliste, Abonnentenexport | Löschung der Person; Newsletter-Werkzeuge | je nach Erweiterung |
-| Audit-Trail | Handelnde, gekürzte Adressen, Handlungen an Benutzern | Reiter Audit; `exp:audit export --subject-user=<id>` | nicht gelöscht; nach 90 Tagen pseudonymisiert | 90 Tage live, 730 archiviert |
+| Prüfprotokoll | Handelnde, gekürzte Adressen, Handlungen an Benutzern | Reiter Audit; `exp:audit export --subject-user=<id>` | nicht gelöscht; nach 90 Tagen pseudonymisiert | 90 Tage live, 730 archiviert |
 | Protokolle (`404.log`, `security.log`, `auth.log`, `error.log` ...) | maskierte Adressen, User-Agents, URLs | Setup > Logdateien (maskiert) | Rotation und Bereinigung | 30 / 90 / 30 Tage für 404, Sicherheit, CSP; andere nur nach Größe |
 | Suchstatistiken | Suchbegriffe, die Besucher eingegeben haben | Setup > Suchstatistiken | Statistik zurücksetzen | keine; standardmäßig aus |
 | Shop-Bestellungen (falls genutzt) | Kundendaten | Shop-Ansichten | Shop-Werkzeuge | keine |

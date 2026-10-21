@@ -12,7 +12,7 @@ type: help
 Dieser Bereich richtet sich an Zuständige für Schriftgut, Archivarinnen und Archivare, Projektleitungen, Redaktionen
 und Administratoren öffentlicher Stellen, die mit Exponential veröffentlichen. Exponential ist ein
 Veröffentlichungssystem, kein System zur Schriftgutverwaltung: Es bewahrt Versionen auf, zeichnet in einem
-manipulationssicheren Audit-Trail auf, wer was geändert hat, hält URLs bei Umbenennungen und Verschiebungen stabil und
+manipulationssicheren Prüfprotokoll auf, wer was geändert hat, hält URLs bei Umbenennungen und Verschiebungen stabil und
 exportiert Inhalte auf mehreren Wegen. Es hat keine Funktion zur Erklärung von Schriftgut, keinen Aussonderungsplan und
 keine Aufbewahrungssperre; die Seiten sagen, wie Sie diese Abläufe mit den vorhandenen Werkzeugen aufbauen.
 

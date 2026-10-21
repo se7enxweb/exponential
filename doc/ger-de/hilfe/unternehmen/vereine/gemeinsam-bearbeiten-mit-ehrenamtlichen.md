@@ -3,8 +3,8 @@ title: Gemeinsam bearbeiten mit Ehrenamtlichen
 audience: businesses, editor, admin
 category: business-solutions
 order: 20
-summary: Wie eine kleine Gruppe mehrere Ehrenamtliche ihre Exponential-Website sicher bearbeiten lässt - ein Konto pro Person, wenige einfache, auf Sektionen beschränkte Rollen, zweistufige Anmeldung, auf Wunsch eine Freigabe vor dem Veröffentlichen, Versionen zum Rückgängigmachen von Fehlern, der Audit-Trail und Hausregeln, an die sich alle halten können.
-keywords: ehrenamtliche Redakteure, gemeinsames Bearbeiten, Rollen, Richtlinien, Berechtigungen, zweistufige Anmeldung, Freigabe-Workflow, Versionen, rückgängig machen, Audit-Trail, Hausregeln, kleine Gruppe, volunteer editors, shared editing, roles, policies, permissions, two-step sign-in, approval workflow, versions, undo, audit trail, house rules, small group
+summary: Wie eine kleine Gruppe mehrere Ehrenamtliche ihre Exponential-Website sicher bearbeiten lässt - ein Konto pro Person, wenige einfache, auf Sektionen beschränkte Rollen, zweistufige Anmeldung, auf Wunsch eine Freigabe vor dem Veröffentlichen, Versionen zum Rückgängigmachen von Fehlern, das Prüfprotokoll und Hausregeln, an die sich alle halten können.
+keywords: ehrenamtliche Redakteure, gemeinsames Bearbeiten, Rollen, Richtlinien, Berechtigungen, zweistufige Anmeldung, Freigabe-Workflow, Versionen, rückgängig machen, Prüfprotokoll, Hausregeln, kleine Gruppe, volunteer editors, shared editing, roles, policies, permissions, two-step sign-in, approval workflow, versions, undo, audit trail, house rules, small group
 type: help
 ---
 # Gemeinsam bearbeiten mit Ehrenamtlichen
@@ -31,7 +31,7 @@ wenigen Funktionen, die eine kleine Gruppe braucht; die vollständigen Anleitung
 „Ein persönliches Konto pro Person; keine gemeinsam genutzten Zugangsdaten“
 ([Die Website an Redakteure übergeben, Konten und Rollen](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md#accounts-and-roles)).
 Für eine Gruppe ist das wichtiger als für ein Unternehmen: Wenn ein Ehrenamtlicher geht, deaktivieren Sie ein Konto,
-statt ein Passwort zu ändern, das alle kannten, und der Audit-Trail kann zeigen, wer was getan hat.
+statt ein Passwort zu ändern, das alle kannten, und das Prüfprotokoll kann zeigen, wer was getan hat.
 
 ## Wenige einfache Rollen
 
@@ -92,11 +92,11 @@ in den Papierkorb“, das Entfernen eines Kontos ist also endgültig
 
 ## Wer was getan hat
 
-Der Audit-Trail hält „Anmeldungen und Abweisungen, Änderungen an Inhalten, Schreibvorgänge an Einstellungen, das
+Das Prüfprotokoll hält „Anmeldungen und Abweisungen, Änderungen an Inhalten, Schreibvorgänge an Einstellungen, das
 Leeren von Caches, Deployments, Bestellungen und Änderungen an der USt“ in einem manipulationssicheren Protokoll fest,
 das „standardmäßig eingeschaltet ist und keine Einrichtung braucht“
-([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Für eine Gruppe beantwortet er die Frage „Wer hat den
-Termin des Treffens geändert?“ ohne Schuldzuweisung, und er zeigt dem nächsten Administrator, was vor ihm geschah.
+([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Für eine Gruppe beantwortet es die Frage „Wer hat den
+Termin des Treffens geändert?“ ohne Schuldzuweisung, und es zeigt dem nächsten Administrator, was vor ihm geschah.
 
 ## Dieselbe Seite zur selben Zeit bearbeiten
 

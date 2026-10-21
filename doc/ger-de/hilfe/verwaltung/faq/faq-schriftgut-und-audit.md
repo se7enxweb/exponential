@@ -3,15 +3,15 @@ title: "FAQ: Schriftgut und Audit"
 audience: government, admin, project-manager
 category: public-sector
 order: 130
-summary: Antworten auf die Fragen öffentlicher Stellen zu Schriftgut und Audit in Exponential - Versionsgeschichte, der Papierkorb, der Audit-Trail und seine Unversehrtheit, Aufbewahrung, Exporte für Archive und welche Funktionen der Schriftgutverwaltung es nicht hat.
-keywords: FAQ Schriftgut, FAQ Audit, Versionsgeschichte, Papierkorb, Audit-Trail, manipulationssicher, Hash-Kette, Aufbewahrung, Archiv, Schriftgutverwaltung, Export, öffentlicher Sektor, records FAQ, audit FAQ, version history, trash, audit trail, tamper-evident, hash chain, retention, archive, records management, export, public sector
+summary: Antworten auf die Fragen öffentlicher Stellen zu Schriftgut und Audit in Exponential - Versionsgeschichte, der Papierkorb, das Prüfprotokoll und seine Unversehrtheit, Aufbewahrung, Exporte für Archive und welche Funktionen der Schriftgutverwaltung es nicht hat.
+keywords: FAQ Schriftgut, FAQ Audit, Versionsgeschichte, Papierkorb, Prüfprotokoll, manipulationssicher, Hash-Kette, Aufbewahrung, Archiv, Schriftgutverwaltung, Export, öffentlicher Sektor, records FAQ, audit FAQ, version history, trash, audit trail, tamper-evident, hash chain, retention, archive, records management, export, public sector
 type: help
 ---
 # FAQ: Schriftgut und Audit
 
 Diese Seite beantwortet die Fragen öffentlicher Stellen zur Aufbewahrung von Schriftgut und zum Audit in Exponential. Die
 Antworten stammen aus [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md),
-[Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) und [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md).
+[Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) und [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Archiv- und Schriftgutrecht mit Ihrer Rechtsberatung.
@@ -20,8 +20,8 @@ Antworten stammen aus [Versionen eines Objekts](../../../anleitungen/inhaltsverl
 
 1. [Führt Exponential eine Geschichte der Änderungen?](#führt-exponential-eine-geschichte-der-änderungen)
 2. [Sind gelöschte Inhalte weg?](#sind-gelöschte-inhalte-weg)
-3. [Was zeichnet der Audit-Trail auf?](#was-zeichnet-der-audit-trail-auf)
-4. [Kann der Audit-Trail manipuliert werden?](#kann-der-audit-trail-manipuliert-werden)
+3. [Was zeichnet das Prüfprotokoll auf?](#was-zeichnet-das-prüfprotokoll-auf)
+4. [Kann das Prüfprotokoll manipuliert werden?](#kann-das-prüfprotokoll-manipuliert-werden)
 5. [Wie lange werden Audit-Einträge aufbewahrt?](#wie-lange-werden-audit-einträge-aufbewahrt)
 6. [Ist Exponential ein Schriftgutverwaltungssystem?](#ist-exponential-ein-schriftgutverwaltungssystem)
 7. [Können wir Schriftgut für ein Archiv exportieren?](#können-wir-schriftgut-für-ein-archiv-exportieren)
@@ -37,16 +37,16 @@ Nicht sofort. Entfernte Objekte kommen in den Papierkorb, der zeigt, wer sie von
 gelöscht werden ([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)). Benutzerobjekte kommen nie in den
 Papierkorb ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#known-gaps)).
 
-## Was zeichnet der Audit-Trail auf?
+## Was zeichnet das Prüfprotokoll auf?
 
 Sicherheitsrelevante Ereignisse in fünf Kanälen (content, access, system, commerce, read): Anmeldungen,
 Inhaltsänderungen, Schreiben von Einstellungen, Leeren von Caches, Umschalten der Wartung und mehr
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md), [das Glossar von Exponential](../../../../eng-us/glossary.md#a)). Er ist
+([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md), [das Glossar von Exponential](../../../../eng-us/glossary.md#a)). Es ist
 standardmäßig eingeschaltet.
 
-## Kann der Audit-Trail manipuliert werden?
+## Kann das Prüfprotokoll manipuliert werden?
 
-Er ist manipulationssicher: Die Einträge sind mit einer Hash-Kette und signierten Manifesten verbunden, und
+Es ist manipulationssicher: Die Einträge sind mit einer Hash-Kette und signierten Manifesten verbunden, und
 `./console exp:audit verify` prüft die Kette ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)). Eine
 Alarmregel schlägt an, wenn die Kette bricht oder das Audit ausgeschaltet wird. Bewahren Sie die Signaturschlüssel sicher
 und gesichert auf
@@ -60,7 +60,7 @@ nach einer festgelegten Anzahl von Tagen pseudonymisiert ([Datenschutzstandards]
 
 ## Ist Exponential ein Schriftgutverwaltungssystem?
 
-Nein. Es behält Versionen, einen Papierkorb und einen Audit-Trail, aber die Dokumentation beschreibt keine
+Nein. Es behält Versionen, einen Papierkorb und ein Prüfprotokoll, aber die Dokumentation beschreibt keine
 Aufbewahrungspläne nach Klasse, keine Aufbewahrungssperren und keine Abgabepakete für Archive. Verwenden Sie daneben
 feste Abläufe oder ein Schriftgutsystem ([Checkliste Schriftgut](../checklisten/checkliste-schriftgut.md)).
 

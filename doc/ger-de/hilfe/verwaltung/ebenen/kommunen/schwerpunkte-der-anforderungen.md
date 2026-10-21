@@ -31,8 +31,8 @@ Dienstleistungen angewiesen sind. In der EU sind Kommunen öffentliche Stellen i
 Websites, [Richtlinie (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj); [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 ist die Referenz, auf die die meisten Regeln verweisen.
 
-Die Administration von Exponential (admin4, admin4l) wird mit **Partly complies** gegenüber WCAG 2.2 AA bewertet;
-EN 301 549 und Section 508 sind **Unverified**; öffentliche Designs sind nicht geprüft
+Die Administration von Exponential (admin4, admin4l) wird mit **Teilweise erfüllt** gegenüber WCAG 2.2 AA bewertet;
+EN 301 549 und Section 508 sind **nicht geprüft**; öffentliche Designs sind nicht geprüft
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Für Ihre Website bedeutet das:
 
 | Bereich | Ihre Arbeit |

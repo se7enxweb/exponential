@@ -48,7 +48,7 @@ Aus [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-c
 | `var/storage` und das `var/<site>/storage` jeder Website | Hochgeladene Bilder und Dateien |
 | `settings/override` und `settings/siteaccess` | Die Einstellungen der Installation; sie enthalten Passwörter, halten Sie die Backups also vertraulich |
 | Ihre eigenen Erweiterungen und Designs | Falls sie nicht in einem Git-Repository liegen |
-| `settings/override/audit.ini.append.php` | Enthält die Signaturschlüssel des Audit-Trails ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)) |
+| `settings/override/audit.ini.append.php` | Enthält die Signaturschlüssel des Prüfprotokolls ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)) |
 
 Caches werden automatisch neu aufgebaut und brauchen kein Backup.
 
@@ -128,7 +128,7 @@ Nutzen Sie bei einem einzelnen Fehler zuerst die Werkzeuge in Exponential:
 |---|---|
 | Ein Element wurde entfernt | Den Papierkorb: Stellen Sie es wieder her ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen)) |
 | Ein Text wurde überschrieben | **Versionen verwalten**: Erstellen Sie einen neuen Entwurf aus einer früheren Version ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#zu-einer-früheren-version-zurückkehren)) |
-| Unklar, wer es geändert hat | Den Audit-Trail ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
+| Unklar, wer es geändert hat | Das Prüfprotokoll ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
 
 ## Checkliste
 

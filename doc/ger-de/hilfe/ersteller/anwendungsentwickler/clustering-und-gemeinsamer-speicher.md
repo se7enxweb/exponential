@@ -44,7 +44,7 @@ Cluster-Datenbank (Wiederholungen: `DBConnectRetries`, `DBExecuteRetries`). Lege
 |---|---|
 | Die Datenbank | ein Server oder ein Datenbank-Cluster |
 | Code und Einstellungen | dasselbe Release, auf jeden Server ausgeliefert |
-| Sitzungen | der Datenbank-Sitzungshandler, damit jeder Server sie lesen kann ([Sitzungen](../../../anleitungen/sitzungen.md)) |
+| Sitzungen | der Datenbank-Session-Handler, damit jeder Server sie lesen kann ([Sitzungen](../../../anleitungen/sitzungen.md)) |
 | Inhalts-Jobs | das Job-Verzeichnis wird geteilt ([Inhalts-Jobs](inhalts-jobs.md)) |
 | Cron | auf einem Server oder mit Sperren |
 | Worker der Warteschlange | beliebig viele Server; expqueue vergibt jeden Job an genau einen Worker |

@@ -39,9 +39,9 @@ Was Exponential über sich selbst erklärt ([Standards zur Barrierefreiheit](../
 
 | Standard | Status | Bedeutung für Sie |
 |---|---|---|
-| WCAG 2.2 AA | Partly complies | die Administration admin4 und admin4l ist gegen AA-Kriterien gebaut und getestet; öffentliche Designs sind nicht geprüft |
-| EN 301 549 | Unverified | es gibt keinen Konformitätsbericht |
-| Section 508 | Unverified | es gibt kein VPAT und keinen Accessibility Conformance Report |
+| WCAG 2.2 AA | Teilweise erfüllt | die Administration admin4 und admin4l ist gegen AA-Kriterien gebaut und getestet; öffentliche Designs sind nicht geprüft |
+| EN 301 549 | Nicht geprüft | es gibt keinen Konformitätsbericht |
+| Section 508 | Nicht geprüft | es gibt kein VPAT und keinen Accessibility Conformance Report |
 
 Die Barrierefreiheit Ihrer **öffentlichen Website** hängt also von Ihrem Design, Ihren Templates und Inhalten ab.
 Planen Sie Mittel für eine Prüfung Ihrer eigenen Templates ein, für die Schulung der Redaktion (Alternativtexte,
@@ -74,7 +74,7 @@ Einrichtungen der Zentralregierung unter die NIS2-Richtlinie,
 
 | Thema | Was mitgeliefert wird | Lesen |
 |---|---|---|
-| OWASP Top 10 | Gegenmaßnahmen für alle zehn Kategorien, Status „Partly complies“ | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| OWASP Top 10 | Gegenmaßnahmen für alle zehn Kategorien, Status „Teilweise erfüllt“ | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
 | Zweistufige Anmeldung für Beschäftigte | sevenx_authentication_2fa, kann verpflichtend gemacht werden | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Kontosperre | verfügbar, standardmäßig aus (`MaxNumberOfFailedLogin`) | [Sicherheitshärtung](../../../sicherheitshaertung.md) |
 | Content Security Policy | standardmäßig Report-only in der Administration, auf Websites aus | [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md) |

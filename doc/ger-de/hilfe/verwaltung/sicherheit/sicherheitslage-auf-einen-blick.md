@@ -12,8 +12,8 @@ type: reference
 Diese Seite richtet sich an Projektverantwortliche, Informationssicherheitsbeauftragte und Administratorinnen und
 Administratoren öffentlicher Stellen, die einen Überblick über die Sicherheit von Exponential auf einer Seite brauchen,
 bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung des Projekts,
-[Sicherheitsstandards](../../../../eng-us/standards/security.md); die Bezeichnungen „Partly complies“, „Unverified“ und
-„Complies“ werden so übernommen, wie sie dort stehen. Das Projekt beansprucht keine externe Bewertung.
+[Sicherheitsstandards](../../../../eng-us/standards/security.md); die Bezeichnungen „Teilweise erfüllt“, „Nicht geprüft“ und
+„Erfüllt“ werden so übernommen, wie sie dort stehen. Das Projekt beansprucht keine externe Bewertung.
 
 ## Inhalt
 
@@ -27,13 +27,13 @@ bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung
 
 | Standard | Status | In einer Zeile |
 |---|---|---|
-| OWASP Top 10 (2021) | **Partly complies** | Gegenmaßnahmen in allen zehn Kategorien; A09 Protokollierung und Überwachung ist mit **Complies** bewertet |
-| OWASP ASVS 4.0.3 | **Unverified** | keine Bewertung; Stufe 1 erfordert, `MinPasswordLength` auf 12 anzuheben |
-| Content Security Policy Level 3 | **Partly complies** | standardmäßig Report-only in der Administration, aus auf öffentlichen Websites |
-| OWASP Cheat Sheet Series | **Partly complies** | CSRF-Tokens, Passwortspeicherung, Sitzungs-Cookies, Header, Maskierung, Uploads |
-| Koordinierte Offenlegung von Schwachstellen | **Partly complies** | `SECURITY.md` mit einem vertraulichen Kanal; keine mitgelieferte `security.txt` |
+| OWASP Top 10 (2021) | **Teilweise erfüllt** | Gegenmaßnahmen in allen zehn Kategorien; A09 Protokollierung und Überwachung ist mit **Erfüllt** bewertet |
+| OWASP ASVS 4.0.3 | **Nicht geprüft** | keine Bewertung; Stufe 1 erfordert, `MinPasswordLength` auf 12 anzuheben |
+| Content Security Policy Level 3 | **Teilweise erfüllt** | standardmäßig Report-only in der Administration, aus auf öffentlichen Websites |
+| OWASP Cheat Sheet Series | **Teilweise erfüllt** | CSRF-Tokens, Passwortspeicherung, Sitzungs-Cookies, Header, Maskierung, Uploads |
+| Koordinierte Offenlegung von Schwachstellen | **Teilweise erfüllt** | `SECURITY.md` mit einem vertraulichen Kanal; keine mitgelieferte `security.txt` |
 
-„Complies“ würde eine externe Bewertung erfordern, die nicht vorgenommen wurde
+„Erfüllt“ würde eine externe Bewertung erfordern, die nicht vorgenommen wurde
 ([Sicherheitsstandards: Status](../../../../eng-us/standards/security.md#status)).
 
 ## Standardmäßig an

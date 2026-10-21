@@ -77,7 +77,7 @@ keine offizielle Zertifizierung; die Zertifizierungen des Partnerprogramms sind 
 - **Host-Zuordnung, bevor die Siteaccesses existieren.** Legen Sie die Siteaccesses zuerst an und registrieren Sie
   sie, dann ordnen Sie sie zu.
 - **Caches vergessen.** Leeren Sie nach jeder Einstellungsänderung den INI-Cache (und starten Sie Velocity neu, wenn
-  es die Übungsumgebung ausliefert).
+  er die Übungsumgebung ausliefert).
 
 ## Praktische Übung
 

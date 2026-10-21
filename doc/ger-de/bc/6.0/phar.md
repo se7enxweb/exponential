@@ -187,7 +187,7 @@ Seiten und sendete fast nichts mit ihnen:
 
 Kein `Cache-Control`, daher ließ sich nichts cachen, und jede Anfrage wurde gerendert -- aus 75 ms wurden 1,2 bis
 1,7 s. Kein `Set-Cookie`, daher konnte sich niemand anmelden: Die Anmeldung antwortete mit 302 an die richtige Stelle
-und setzte keine Session. Nichts wurde protokolliert, weil nichts fehlschlug.
+und setzte keine Sitzung. Nichts wurde protokolliert, weil nichts fehlschlug.
 
 `qbix-webserver` 0.0.4.8 umhüllt auch `phar://`. Ist das Archiv in Gebrauch und verhalten sich Header oder Anmeldung
 seltsam, prüfen Sie zuerst diese Version.

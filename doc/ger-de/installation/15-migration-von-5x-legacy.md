@@ -46,7 +46,7 @@ umgekehrter Richtung. Jeder seiner Punkte ist hier aufgeführt, zusammen mit der
 | Designs, Siteaccess-Einstellungen, Override-Einstellungen, Extensions (nicht die mitgelieferten), `config.php`, `config.cluster.php`, `var/storage/packages` kopieren | Dieselbe Liste, mit dem Exponential-Paket für jede mitgelieferte Extension | [15.5](#155-den-legacy-teil-herauslösen) |
 | Binärdateien aus `web/var/<site>/storage` kopieren (ein Symlink auf `ezpublish_legacy/var`) | Ebenso | [15.5](#155-den-legacy-teil-herauslösen) |
 | Berechtigungen erneut setzen; `composer update --prefer-dist` | Berechtigungen wie in Kapitel 8; niemals `composer update` über Ihre eigenen Checkouts | [15.5](#155-den-legacy-teil-herauslösen) |
-| `dbupdate-5.4.0-to-6.13.0.sql` aus dem neuen Kernel anwenden | **Nicht tun.** Wenden Sie die Exponential-Dateien an; die eine Anweisung dieser Datei, die Exponential braucht, die breitere Spalte `password_hash`, steht in der Exponential-Datei von 5.4 auf 6.0 | [15.7](#157-die-datenbank-schritt-für-schritt), [15.9](#159-benutzer-passwort-hashes-und-sessions) |
+| `dbupdate-5.4.0-to-6.13.0.sql` aus dem neuen Kernel anwenden | **Nicht tun.** Wenden Sie die Exponential-Dateien an; die eine Anweisung dieser Datei, die Exponential braucht, die breitere Spalte `password_hash`, steht in der Exponential-Datei von 5.4 auf 6.0 | [15.7](#157-die-datenbank-schritt-für-schritt), [15.9](#159-benutzer-passwort-hashes-und-sitzungen) |
 | Enterprise-Schemas (datumsbasierter Publisher, Form Builder, Benachrichtigungen) | Nicht anwendbar | keiner |
 | Custom Tags und ihre Attributtypen in RichText | Nicht anwendbar: Custom Tags bleiben `ezxmltext`-Custom-Tags, mit jedem Typ aus `ezoe_attributes.ini` | [15.8](#158-feldtypen-und-datentypen) |
 | Varnish-VCL; Virtual-Host-Dateien in `doc/apache2`, `doc/nginx` | Exponential sendet keine Purges an einen Proxy; seine eigenen Caches ersetzen ihn. Serverkonfiguration in Kapitel 8 | [15.14](#1514-caches), [15.18](#1518-die-site-ausliefern) |
@@ -63,7 +63,7 @@ Aus der 5.x-Ära sind drei Arten von Sites hervorgegangen. Sehen Sie sich das Wu
 | Sie sehen | Sie betreiben | Lesen Sie |
 |---|---|---|
 | `ezpublish/` (mit `EzPublishKernel.php`, `console`, `config/ezpublish.yml`), `ezpublish_legacy/`, `web/`, `src/` | den Stack mit zwei Kerneln: 5.0 bis 5.4 oder Community 2013.x und 2014.x | dieses Kapitel |
-| nur den Legacy-Baum (`index.php`, `kernel/`, `lib/`, `settings/`, `extension/` im Wurzelverzeichnis), `lib/version.php` mit `VERSION_MAJOR = 5` und `VERSION_MINOR = 90` | die reine Legacy-Linie 5.90 (2015.01, 2017.x und später) | [Kapitel 11](11-aktualisieren.md#115-von-54-oder-590-auf-600), dazu [15.9](#159-benutzer-passwort-hashes-und-sessions) |
+| nur den Legacy-Baum (`index.php`, `kernel/`, `lib/`, `settings/`, `extension/` im Wurzelverzeichnis), `lib/version.php` mit `VERSION_MAJOR = 5` und `VERSION_MINOR = 90` | die reine Legacy-Linie 5.90 (2015.01, 2017.x und später) | [Kapitel 11](11-aktualisieren.md#115-von-54-oder-590-auf-600), dazu [15.9](#159-benutzer-passwort-hashes-und-sitzungen) |
 | den Baum mit zwei Kerneln, aber das Document Root des Webservers zeigt auf `ezpublish_legacy/` | den Legacy-Kernel, betrieben ohne Symfony | dieses Kapitel; die Teile über eingespeiste Einstellungen sind weniger wichtig |
 
 Die Prüfungen, ausgeführt im alten Wurzelverzeichnis:
@@ -110,7 +110,7 @@ werden: `expaudit_cursor`, `expaudit_event`, `expaudit_file` (Audit-Index), `exp
 `expmail_category`, `expmail_consent_log`, `expmail_pending`, `expmail_preference`, `expmail_suppression`
 (E-Mail-Einstellungen) und `ezrss_export_opml_item` (OPML-Export). Keine Legacy-Tabelle wurde entfernt.
 
-**Tabellen, die Exponential nicht kennt, werden ignoriert.** Eine Symfony-Session-Tabelle, eine Tabelle Ihres eigenen
+**Tabellen, die Exponential nicht kennt, werden ignoriert.** Eine Symfony-Sitzungstabelle, eine Tabelle Ihres eigenen
 Bundles oder Tabellen eines bereits begonnenen eZ-Platform-Updates bleiben unberührt; der Kernel liest sie nie. Listen Sie
 auf, was Sie haben, und vergleichen Sie es mit den obigen Listen:
 
@@ -352,7 +352,7 @@ hat und die Upstream nur in seinen Dateien in `6.12/`, `7.2/` und `7.3/` ausgeli
 
 - **`ezuser.password_hash`**: Jedes 5.x-Schema bis 2017.08 hat `password_hash varchar(50)`. Exponential speichert
   `php_default`-Hashes (bcrypt, 60 Zeichen) und schreibt mit `UpdateHash=true` den Hash jedes Benutzers bei der ersten
-  Anmeldung neu ([15.9](#159-benutzer-passwort-hashes-und-sessions)). Die Datei verbreitert die Spalte auf 255, die Breite
+  Anmeldung neu ([15.9](#159-benutzer-passwort-hashes-und-sitzungen)). Die Datei verbreitert die Spalte auf 255, die Breite
   im Kernel-Schema.
 - **`ezcontentobject_trash.trashed`**: der Zeitpunkt, zu dem Inhalt in den Papierkorb kam; ohne diese Spalte schlägt das
   Verschieben von Inhalt in den Papierkorb fehl. Die Datei fügt sie hinzu, wenn sie fehlt.
@@ -480,7 +480,7 @@ Custom Tags und ihre Attribute bleiben, wie sie in `ezxmltext` waren (`content.i
 `ezoe_attributes.ini`), daher gilt die Tabelle des Herstellers mit den Attributtypen, die RichText nicht unterstützt, hier
 nicht.
 
-## 15.9 Benutzer, Passwort-Hashes und Sessions
+## 15.9 Benutzer, Passwort-Hashes und Sitzungen
 
 Benutzer sind Inhaltsobjekte plus eine Zeile in `ezuser` (`login`, `email`, `password_hash`, `password_hash_type`) und
 `ezuser_setting` (`is_enabled`). Der New Stack verwendete dieselben Zeilen, daher wird jedes Konto übernommen.
@@ -502,10 +502,10 @@ neuen `php_default`-Hash, der in derselben Anfrage in `ezuser` geschrieben wird
 ([15.7](#157-die-datenbank-schritt-für-schritt), Schritt 5). Behalten Sie `SiteName` unverändert bei, solange noch ein Konto
 Typ 3 hat. Zwei Folgen für ein Rollback stehen in [15.21](#1521-rollback).
 
-**Sessions.** Unter dem Stack mit zwei Kerneln gehörte die Session Symfony, und der Legacy-Kernel nutzte sie über
+**Sitzungen.** Unter dem Stack mit zwei Kerneln gehörte die Sitzung Symfony, und der Legacy-Kernel nutzte sie über
 `ezpSessionHandlerSymfony`. Exponential verwendet seinen eigenen Handler (ein leeres `[Session] Handler=` bedeutet die
 Session-Verwaltung von PHP), daher meldet sich nach der Umstellung jeder Besucher neu an; zu migrieren ist nichts. Wenn Sie
-auf die Session-Zählung oder die Session-Bereinigung in der Administration angewiesen waren, lesen Sie die Kommentare über
+auf die Sitzungszählung oder die Sitzungsbereinigung in der Administration angewiesen waren, lesen Sie die Kommentare über
 `Handler` in `settings/site.ini` zu `ezpSessionHandlerDB`.
 
 **Formular-Token.** Das Legacy-Bundle gab der Formular-Token-Extension das Geheimnis und den Token-Feldnamen von Symfony
@@ -932,7 +932,7 @@ Extern:
 - Hier genannte Symfony-Konzepte: [Bundles](https://symfony.com/doc/current/bundles.html),
   [Konfiguration](https://symfony.com/doc/current/configuration.html), [Routing](https://symfony.com/doc/current/routing.html),
   [Templates](https://symfony.com/doc/current/templates.html), [HTTP-Cache](https://symfony.com/doc/current/http_cache.html),
-  [Sessions](https://symfony.com/doc/current/session.html); [Twig 3](https://twig.symfony.com/doc/3.x/).
+  [Sitzungen](https://symfony.com/doc/current/session.html); [Twig 3](https://twig.symfony.com/doc/3.x/).
 - Datenbanken: [SQL-Modi von MySQL](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html),
   [mysqldump](https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html),
   [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html),

@@ -57,7 +57,7 @@ Nach dem Prüfbeispiel aus [Objektzustände, Abschnitt 9](../../../../anleitunge
    Inhalte für Besucher unsichtbar sind.
 3. Redaktionen: `state/assign` mit `NewState = legal/pending_legal` für die rechtlich relevante Sektion.
 4. Rechtlich Prüfende: `state/assign` mit `NewState = legal/cleared, legal/pending_legal`.
-5. Jede Zustandsänderung wird im Audit-Trail als `content.object.state` erfasst, mit den Zuständen vorher und nachher.
+5. Jede Zustandsänderung wird im Prüfprotokoll als `content.object.state` erfasst, mit den Zuständen vorher und nachher.
 
 Setzen Sie bestehende öffentliche Inhalte auf Nicht nötig (oder Geprüft), bevor Sie die Rolle Anonymous einschränken.
 
@@ -70,7 +70,7 @@ Einschränkung nach Klasse aus; vermeiden Sie „die Redaktion entscheidet im Ei
 ## Was es nicht leistet
 
 - Es prüft den Text nicht: Das tun die Prüfenden.
-- Es führt keine eigene Rechtsakte; der Nachweis sind das Element der Zusammenarbeit, die Versionsgeschichte und der Audit-Trail. Exportieren Sie,
+- Es führt keine eigene Rechtsakte; der Nachweis sind das Element der Zusammenarbeit, die Versionsgeschichte und das Prüfprotokoll. Exportieren Sie,
   was Ihre Regeln zum Schriftgut verlangen ([Versionsgeschichte und Rechenschaft](versionsverlauf-und-nachvollziehbarkeit.md)).
 - Es verhindert nicht das Entfernen oder Verbergen von Inhalten; das sind getrennte Rechte.
 

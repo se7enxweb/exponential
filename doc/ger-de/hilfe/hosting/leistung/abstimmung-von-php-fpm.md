@@ -94,7 +94,7 @@ APCu wird vom SQL-Abfrage-Cache im Modus `shared` und von anderen Caches der Ins
 
 ## Sitzungen
 
-Der standardmäßige Sitzungs-Handler des Kernels lässt PHP die Sitzungen halten (Dateien, wie `session.save_handler` in `php.ini` sagt;
+Der standardmäßige Session-Handler des Kernels lässt PHP die Sitzungen halten (Dateien, wie `session.save_handler` in `php.ini` sagt;
 `site.ini [Session] Handler` leer). Der rollenbewusste HTTP-Cache braucht Sitzungen in **Dateien, die jeder Server lesen kann, der die
 Website ausliefert**, im selben Verzeichnis ([HTTP-Cache, einschalten](../../../../eng-us/bc/6.0/httpcache.md#switching-it-on)). Wenn Sie Sitzungen
 für einen Tarif anderswohin verlegen, speichert der HTTP-Cache nichts für angemeldete Besucher und sagt das in `X-Exp-Cache`.

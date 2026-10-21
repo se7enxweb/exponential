@@ -108,7 +108,7 @@ Läuft die Website auf Velocity, brauchen Sie dessen Befehle zum Stoppen und Sta
 5. Schalten Sie die Wartung aus: `php bin/php/maintenance.php off`. Notieren Sie die Uhrzeit.
 6. Ändern Sie die Website: Veröffentlichen Sie einen neuen Artikel `After the backup` und verschieben Sie einen anderen
    Schulungsartikel in den Papierkorb.
-7. Stellen Sie wieder her. Wartung ein; stoppen Sie Velocity, wenn es die Website ausliefert:
+7. Stellen Sie wieder her. Wartung ein; stoppen Sie Velocity, wenn er die Website ausliefert:
 
    ```bash
    php bin/php/maintenance.php on --message="Restoring" --allow-admin

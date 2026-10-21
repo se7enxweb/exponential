@@ -36,7 +36,7 @@ Benutzer anmelden und sehen, was ihrer Organisation zusteht. Alles, was es brauc
 | Jeder Partner sieht nur seinen eigenen Bereich | Sektionen, Teilbaum-Einschränkungen, Objektzustände | [Sektionen](../../../anleitungen/sektionen.md), [Objektzustände](../../../anleitungen/objektzustaende.md) |
 | Partner laden Dokumente sicher herunter | `content/download` prüft die Berechtigungen | [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
 | Partnergruppen bekommen eigene Preise | Ermäßigungsgruppen des Shops pro Benutzergruppe | [Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#discounts) |
-| Regelmäßige Prüfung, wer Zugriff hat | Rollenseiten, Benutzerkonten prüfen, der Audit-Trail | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md), [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Regelmäßige Prüfung, wer Zugriff hat | Rollenseiten, Benutzerkonten prüfen, das Prüfprotokoll | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md), [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 
 > **Hinweis**
 > Dieser Bereich beschreibt, was das Repository enthält. Er nennt keine Kunden und zitiert keine Statistiken.

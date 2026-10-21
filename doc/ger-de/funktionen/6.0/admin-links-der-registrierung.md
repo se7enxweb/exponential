@@ -138,7 +138,7 @@ Die Seite gehört zur Administration (`ui_context` administration). Sie zeigt:
   Freigeben oder Ablehnen.
 - **Bestätigen per POST.** Ein GET ändert nie etwas; E-Mail-Scanner und Linkvorschauen öffnen Links. Das Konto wird
   nur durch einen POST des Bestätigungsformulars mit **Freigeben** oder **Ablehnen und entfernen** geändert, und das
-  Formular trägt das Formular-Token der Session (`ezformtoken`), sodass eine andere Site es nicht für Sie absenden
+  Formular trägt das Formular-Token der Sitzung (`ezformtoken`), sodass eine andere Site es nicht für Sie absenden
   kann.
 - **Audit.** Festgehalten im Prüfprotokoll ([Audit-Ereignisse](../../bc/6.0/audit.md)):
 

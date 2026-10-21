@@ -4,7 +4,7 @@ audience: government, hosting, admin, project-manager
 category: public-sector
 order: 50
 summary: Für öffentliche Stellen, die eine Sicherungsrichtlinie für eine Exponential-Website schreiben. Die Entscheidungen, die eine Richtlinie treffen muss, die Regeln, die die Quellen nennen, die Aufbewahrungsfristen, die Exponential selbst einhält, und wie die Aufbewahrung von Datensicherungen Pflichten der Schriftgutverwaltung und des Datenschutzes erfüllt.
-keywords: Sicherungsplan, Aufbewahrung, Generationen, Sicherungsrichtlinie, Schriftgutverwaltung, Aufbewahrungsplan, Aufbewahrung des Audit-Trails, LiveDays, ArchiveDays, Löschung, personenbezogene Daten in Datensicherungen, Kontinuität, backup schedule, retention, generations, backup policy, records management, retention schedule, audit retention, erasure, personal data in backups, continuity
+keywords: Sicherungsplan, Aufbewahrung, Generationen, Sicherungsrichtlinie, Schriftgutverwaltung, Aufbewahrungsplan, Aufbewahrung des Prüfprotokolls, LiveDays, ArchiveDays, Löschung, personenbezogene Daten in Datensicherungen, Kontinuität, backup schedule, retention, generations, backup policy, records management, retention schedule, audit retention, erasure, personal data in backups, continuity
 type: help
 ---
 # Sicherungspläne und Aufbewahrung
@@ -59,9 +59,9 @@ stimmen Sie die beiden also aufeinander ab
 
 | Eintrag | Einstellung | Ausgeliefert |
 |---|---|---|
-| Audit-Trail, live (content, access, system, commerce) | `audit.ini [AuditChannel_*] LiveDays` | 90 Tage |
-| Audit-Trail, Archive | `ArchiveDays` | 730 Tage |
-| Audit-Trail, Lesekanal | `LiveDays` / `ArchiveDays` | 30 / 90 Tage |
+| Prüfprotokoll, live (content, access, system, commerce) | `audit.ini [AuditChannel_*] LiveDays` | 90 Tage |
+| Prüfprotokoll, Archive | `ArchiveDays` | 730 Tage |
+| Prüfprotokoll, Lesekanal | `LiveDays` / `ArchiveDays` | 30 / 90 Tage |
 | E-Mail-Einwilligungsprotokoll von Personen, die nicht mehr da sind | `mailpreferences.ini [ConsentSettings] RetentionDays` | 1095 Tage |
 | Archive von `404.log` / `security.log` | `logviewer.ini [RotationSettings]` | nach 30 / 90 Tagen bereinigt |
 | Archive anderer Logs | `site.ini [FileSettings] LogFileRotateCount`, `LogFileMaxAge` | 3 Archive, keine Altersgrenze |
@@ -74,9 +74,9 @@ das System für kürzere Zeit wiederherstellbar. Für eine Exponential-Website b
 
 - veröffentlichte Inhalte, die als Schriftgut aufbewahrt werden müssen, gehen über Ihren Schriftgutprozess in Ihr
   Schriftgutsystem oder Archiv, statt sich auf alte Datensicherungen zu verlassen;
-- der Audit-Trail kann jahrelang in seinen eigenen signierten Archiven (die Quellen zeigen eine Referenzkonfiguration
+- das Prüfprotokoll kann jahrelang in seinen eigenen signierten Archiven (die Quellen zeigen eine Referenzkonfiguration
   mit `ArchiveDays=3650`) auf Speicher aufbewahrt werden, den der Webserver nicht ändern kann
-  ([Archive des Audit-Trails und Datensicherung](audit-trail-archive-und-datensicherungen.md));
+  ([Archive des Prüfprotokolls und Datensicherung](audit-trail-archive-und-datensicherungen.md));
 - Sicherungsgenerationen werden nur so lange aufbewahrt, wie die Kontinuität es erfordert.
 
 Schriftgutnormen wie [ISO 15489-1](https://www.iso.org/standard/62542.html) beschreiben die Seite des Schriftguts;

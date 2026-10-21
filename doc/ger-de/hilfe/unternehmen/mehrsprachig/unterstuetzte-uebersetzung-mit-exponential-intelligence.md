@@ -88,7 +88,7 @@ Server nie verlassen“. Schutzmaßnahmen aus derselben Quelle und der
   Inhaltsklasse legen fest, welche Inhalte wohin gehen dürfen, und jede Anfrage hält fest, wohin sie ging.
 - **„EI: Summary“** ist eine druckbare Seite für einen Datenschutzbeauftragten mit Region, Aufbewahrungsdauer, Datum der
   Bedingungen und Schlüsselquelle jedes Anbieters (nie dem Schlüssel selbst).
-- Jede Anfrage, jeder Entwurf und jede Statusänderung eines Entwurfs ist ein Ereignis des **Audit-Trails**; Prompts,
+- Jede Anfrage, jeder Entwurf und jede Statusänderung eines Entwurfs ist ein Ereignis des **Prüfprotokolls**; Prompts,
   Antworten und Schlüssel werden nie aufgezeichnet.
 - Nur Modelle, die einen Live-Test des Tool-Callings bestanden haben oder per Konfiguration als vertrauenswürdig gelten,
   dürfen Entwürfe schreiben.

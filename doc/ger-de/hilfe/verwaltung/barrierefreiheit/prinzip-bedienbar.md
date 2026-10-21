@@ -36,7 +36,7 @@ Siehe „Tastatur und Fokus“.
 
 | Rolle | Tut |
 |---|---|
-| Administration | wägt die Sitzungsdauer aus Sicherheitsgründen gegen Menschen ab, die langsam arbeiten: `site.ini [Session] SessionTimeout` (ab Werk 259200 s) ([13.7](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)) |
+| Administration | wägt die Sitzungsdauer aus Sicherheitsgründen gegen Menschen ab, die langsam arbeiten: `site.ini [Session] SessionTimeout` (ab Werk 259200 s) ([13.7](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)) |
 | Design | Slider und Karussells lassen sich anhalten; kein automatisches Neuladen der Seite |
 | Redaktion | keine Inhalte, die sich von selbst bewegen, ohne Steuerung zum Anhalten |
 

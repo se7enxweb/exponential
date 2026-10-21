@@ -4,7 +4,7 @@ audience: businesses, admin, app-creator
 category: business-solutions
 order: 50
 summary: Welche Zugangsdaten eine App, eine Integration oder ein Skript verwenden sollte, um Exponential zu erreichen - OAuth2 für Apps, bei denen sich Benutzer anmelden, persönliche API-Schlüssel mit Bereichen für die Programme eines Benutzers, Tokens für expservices für Remote-Dienste - und wie ein Unternehmen sie steuert, begrenzt, prüft und widerruft.
-keywords: API-Schlüssel, OAuth2, OAuth-Clients, persönliche API-Schlüssel, Bereiche, Tokens für expservices, widerrufen, Ratenbegrenzung, Audit-Trail, Integrationsbenutzer, Zugangsdaten, Unternehmen, API keys, OAuth clients, personal API keys, scopes, expservices tokens, revoke, rate limit, audit trail, integration user, credentials, business
+keywords: API-Schlüssel, OAuth2, OAuth-Clients, persönliche API-Schlüssel, Bereiche, Tokens für expservices, widerrufen, Ratenbegrenzung, Prüfprotokoll, Integrationsbenutzer, Zugangsdaten, Unternehmen, API keys, OAuth clients, personal API keys, scopes, expservices tokens, revoke, rate limit, audit trail, integration user, credentials, business
 type: help
 ---
 # Apps und API-Schlüssel
@@ -22,7 +22,7 @@ Hausregeln. Die technische Seite ist [OAuth und API-Schlüssel](../../../../eng-
 2. [OAuth2 für Apps, bei denen sich Benutzer anmelden](#oauth2-für-apps-bei-denen-sich-benutzer-anmelden)
 3. [Persönliche API-Schlüssel](#persönliche-api-schlüssel)
 4. [Tokens für expservices](#tokens-für-expservices)
-5. [Steuerung, Begrenzungen und der Audit-Trail](#steuerung-begrenzungen-und-der-audit-trail)
+5. [Steuerung, Begrenzungen und das Prüfprotokoll](#steuerung-begrenzungen-und-das-prüfprotokoll)
 6. [Hausregeln für ein Unternehmen](#hausregeln-für-ein-unternehmen)
 
 ## Drei Arten von Zugangsdaten, gewählt danach, für wen das Programm handelt
@@ -79,7 +79,7 @@ token cannot create tokens“ (ein Token kann keine Tokens anlegen,
 [Remote-Dienste: persönliche API-Tokens](../../../../eng-us/features/6.0/remote-services-expservices.md#personal-api-tokens-for-scripts-and-apps)).
 Siehe [Entfernte Dienste](entfernte-dienste.md).
 
-## Steuerung, Begrenzungen und der Audit-Trail
+## Steuerung, Begrenzungen und das Prüfprotokoll
 
 | Steuerung | Standard | Quelle |
 |---|---|---|
@@ -88,10 +88,10 @@ Siehe [Entfernte Dienste](entfernte-dienste.md).
 | Anfragen pro Schlüssel und Minute | 120, in APCu gezählt; ohne APCu nicht durchgesetzt, und die Seite der API-Schlüssel sagt das | dieselbe |
 | Übersicht über jeden Schlüssel | **Setup > oAuth-Verwaltung > API-Schlüssel**: aktiv, innerhalb von sieben Tagen ablaufend, nie benutzt, abgelaufen, widerrufen; suchen, filtern, einen oder viele mit Bestätigung widerrufen | [7. Die Administration](../../../anleitungen/api-schluessel.md#7-die-administration-jeder-schlüssel-ein-benutzer-widerruf) |
 | Audit-Ereignisse | jeder angelegte, widerrufene, erstmals benutzte und abgelehnte Schlüssel, mit dem Grund (zum Beispiel widerrufen, abgelaufen, Bereich, ratenbegrenzt); nie das Geheimnis | [8. Auditing and limits](../../../anleitungen/api-schluessel.md#8-audit-und-grenzen) |
-| Tokens für expservices | Ereignisse für angelegte, widerrufene und fehlgeschlagene Tokens im Audit-Trail | [Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md#personal-api-tokens-for-scripts-and-apps) |
+| Tokens für expservices | Ereignisse für angelegte, widerrufene und fehlgeschlagene Tokens im Prüfprotokoll | [Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md#personal-api-tokens-for-scripts-and-apps) |
 
 Für ein Unternehmen beantwortet das die Fragen der Prüfer „Wer konnte unsere Inhalte per Programm erreichen, und was
-hat er getan?“ aus dem [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md).
+hat er getan?“ aus dem [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md).
 
 ## Hausregeln für ein Unternehmen
 

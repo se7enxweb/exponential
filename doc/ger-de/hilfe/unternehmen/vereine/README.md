@@ -29,7 +29,7 @@ dass ein wechselndes Team von Ehrenamtlichen es betreiben kann, und wie Sie es s
 | Mehrere Ehrenamtliche bearbeiten sicher | Persönliche Konten, auf einen Teilbaum oder eine Sektion beschränkte Rollen, Versionen jeder Änderung | [Gemeinsam bearbeiten mit Ehrenamtlichen](gemeinsam-bearbeiten-mit-ehrenamtlichen.md) |
 | Neuigkeiten und ein Veranstaltungskalender | Die `ezwebin`-Klassen `article`, `event`, `event_calendar`, `blog` und Feeds | [Veranstaltungen und Neuigkeiten für Gruppen](veranstaltungen-und-neuigkeiten-fuer-gruppen.md) |
 | Kontakt, Rückmeldungen, Umfragen, Anmeldungen | Formulare des Informationssammlers mit den Typen form, feedback und poll | [Formulare und Rückmeldungen von Mitgliedern](formulare-und-rueckmeldungen-von-mitgliedern.md) |
-| Übernahme, wenn Ehrenamtliche gehen | Kontoprüfungen, Eigentümerwechsel, Zurücksetzen des Passworts, Audit-Trail | [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
+| Übernahme, wenn Ehrenamtliche gehen | Kontoprüfungen, Eigentümerwechsel, Zurücksetzen des Passworts, Prüfprotokoll | [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
 | Geringe Betriebskosten | Keine Lizenzgebühr; SQLite als Standarddatenbank | [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md) |
 
 Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezwebin/packages/`), und die Erweiterung

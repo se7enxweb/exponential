@@ -3,7 +3,7 @@ title: Jede Sitzung eines Benutzers beenden
 audience: government, admin
 category: public-sector
 order: 40
-summary: Schritt für Schritt - nach einer vermuteten Kontoübernahme oder einem verlorenen Gerät jede Sitzung eines Benutzers in Exponential beenden, indem Sie das Passwort ändern (EndOtherSessions), das Konto deaktivieren oder Sitzungen unter Setup > Sitzungen mit dem Datenbank-Sitzungshandler entfernen.
+summary: Schritt für Schritt - nach einer vermuteten Kontoübernahme oder einem verlorenen Gerät jede Sitzung eines Benutzers in Exponential beenden, indem Sie das Passwort ändern (EndOtherSessions), das Konto deaktivieren oder Sitzungen unter Setup > Sitzungen mit dem Datenbank-Session-Handler entfernen.
 keywords: abmelden, Sitzungen beenden, Session Hijacking, Kontoübernahme, verlorener Laptop, EndOtherSessions, Passwortstempel, Setup Sitzungen, ezpSessionHandlerDB, Konto deaktivieren, Vorfall, öffentlicher Sektor, sign out, end sessions, session hijacking, account takeover, lost laptop, password stamp, disable account, incident, public sector
 type: help
 ---
@@ -30,7 +30,7 @@ die Sitzungen ([Sitzungen und Cookies](../../../../../eng-us/help/government/sec
 ## Möglichkeit 1: das Passwort ändern
 
 Mit `[PasswordSettings] EndOtherSessions=enabled` (der Voreinstellung) meldet eine Passwortänderung jede andere Sitzung
-dieses Benutzers bei ihrer nächsten Anfrage ab, mit jedem Sitzungshandler; die Sitzung, in der es geändert wurde,
+dieses Benutzers bei ihrer nächsten Anfrage ab, mit jedem Session-Handler; die Sitzung, in der es geändert wurde,
 erhält eine neue ID. Setzen Sie das Passwort auf der Kontoseite des Benutzers zurück (**Passwort**) oder auf der
 Kommandozeile:
 
@@ -49,7 +49,7 @@ nächsten Anfrage. Aufgezeichnet als `access.user.disable`.
 
 ## Möglichkeit 3: Sitzungen auf der Seite Sitzungen entfernen
 
-Nur mit dem Datenbank-Sitzungshandler (`[Session] Handler=ezpSessionHandlerDB`): **Setup > Sitzungen**, den Benutzer
+Nur mit dem Datenbank-Session-Handler (`[Session] Handler=ezpSessionHandlerDB`): **Setup > Sitzungen**, den Benutzer
 finden, seine Sitzungen markieren, **Ausgewählte entfernen**, bestätigen ([Sitzungen](../../../../anleitungen/sitzungen.md)).
 Mit dem Standardhandler kann die Seite Sitzungen nicht einzeln entfernen; verwenden Sie Möglichkeit 1 oder 2. Das
 Entfernen von Sitzungen hindert den Benutzer nicht daran, sich erneut anzumelden.

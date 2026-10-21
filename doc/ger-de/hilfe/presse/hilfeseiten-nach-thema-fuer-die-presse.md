@@ -44,7 +44,7 @@ wahrscheinlich berührt.
 | Exponential Layouts | [Der Layout-Editor](../layout-editor.md) |
 | Exponential Intelligence | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
 | admin4 | [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
-| Audit-Trail | [Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
+| Prüfprotokoll | [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | Das Hilfesystem | [Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
 | Inhaltsjobs | [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) |
 | jQuery 4 | [jQuery 4 und die Entfernung von YUI](../../../eng-us/features/6.0/jquery4-and-yui-removal.md) |

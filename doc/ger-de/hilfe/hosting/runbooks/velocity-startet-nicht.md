@@ -3,7 +3,7 @@ title: "Runbook: Velocity startet nicht"
 audience: hosting, admin
 category: hosting
 order: 90
-summary: Was zu tun ist, wenn die Engine Exponential Velocity nicht hochkommt oder nicht antwortet - ihren Status und ihr Konsolen-Log lesen, dann die üblichen Ursachen (Port belegt, fehlendes Paket oder fehlende PHP-Erweiterung, Engine-Archiv, Zertifikat, Rechte, ein hängender Neustart) mit der Abhilfe für jede.
+summary: Was zu tun ist, wenn der Server Exponential Velocity nicht hochkommt oder nicht antwortet - seinen Status und sein Konsolen-Log lesen, dann die üblichen Ursachen (Port belegt, fehlendes Paket oder fehlende PHP-Erweiterung, Engine-Archiv, Zertifikat, Rechte, ein hängender Neustart) mit der Abhilfe für jede.
 keywords: Runbook, Velocity, startet nicht, qbix, exp:velocity status, console.log, Port belegt, läuft bereits, Engine-Archiv, EnginePhar, sockets, pcntl, Zertifikat, Ports 80 443, root, Watchdog, Neustart, kill, runbook, will not start, port in use, already running, engine archive, certificate, watchdog, restart
 type: help
 ---

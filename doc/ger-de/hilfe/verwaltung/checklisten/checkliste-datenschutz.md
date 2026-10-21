@@ -49,7 +49,7 @@ Verantwortlicher; die Einhaltung liegt in der Verantwortung der Organisation, di
 
 ## Protokolle und Aufbewahrung
 
-- [ ] Datenschutzeinstellungen des Audits geprüft: gekürzte Adressen, Pseudonymisierung nach `PseudonymiseAfterDays` ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Datenschutzeinstellungen des Audits geprüft: gekürzte Adressen, Pseudonymisierung nach `PseudonymiseAfterDays` ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 - [ ] Anfrageprotokolle maskieren IP-Adressen (`MaskIP=enabled`) ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).
 - [ ] Andere Protokolle des Kernels als 404, Sicherheit und CSP haben standardmäßig keine Altersgrenze; setzen Sie `MaxAgeDays` oder rotieren Sie sie selbst ([Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)).
 - [ ] Zugriffsprotokolle des Webservers werden nach der Aufbewahrungsregel des Hosters behandelt.

@@ -59,8 +59,8 @@ Das vollständige Verfahren: [Aktualisieren](../../../anleitungen/aktualisieren.
 
 - [Sicherheitshärtung](../../sicherheitshaertung.md) und [13. Sicherheitshärtung](../../../installation/13-sicherheitshaertung.md).
 - Die Zuordnung zu OWASP und der Stand jeder Maßnahme: [Sicherheitsstandards](../../../../eng-us/standards/security.md).
-- Die Alarmregeln des Audit-Trails für Brute-Force-Anmeldeversuche, Rollenvergaben und Massenlöschungen
-  ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- Die Alarmregeln des Prüfprotokolls für Brute-Force-Anmeldeversuche, Rollenvergaben und Massenlöschungen
+  ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 Rahmenwerke wie das [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) oder in der EU die
 Pflichten, die sich aus der [NIS2-Richtlinie (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) für

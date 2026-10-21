@@ -1,47 +1,47 @@
 ---
-title: Audit-Trail für den Betrieb
+title: Prüfprotokoll für den Betrieb
 audience: businesses, admin, project-manager
 category: business-solutions
 order: 60
-summary: Wie der Audit-Trail, der mit Exponential geliefert wird, einem Unternehmen hilft, seine Website zuverlässig zu betreiben, die Änderung hinter einer Störung zu finden und nachzuweisen, dass seine Aufzeichnung der Ereignisse nicht verändert wurde.
-keywords: Audit-Trail, Audit, wer hat was getan, manipulationssicher, Hash-Kette, prüfen, Alarme, Betrieb, Änderungsprotokoll, Störung, Compliance-Nachweis, audit trail, who did what, tamper-evident, hash chain, verify, alerts, operations, change log, incident, compliance evidence
+summary: Wie das Prüfprotokoll, das mit Exponential geliefert wird, einem Unternehmen hilft, seine Website zuverlässig zu betreiben, die Änderung hinter einer Störung zu finden und nachzuweisen, dass seine Aufzeichnung der Ereignisse nicht verändert wurde.
+keywords: Prüfprotokoll, Audit, wer hat was getan, manipulationssicher, Hash-Kette, prüfen, Alarme, Betrieb, Änderungsprotokoll, Störung, Compliance-Nachweis, audit trail, who did what, tamper-evident, hash chain, verify, alerts, operations, change log, incident, compliance evidence
 type: help
 ---
-# Audit-Trail für den Betrieb
+# Prüfprotokoll für den Betrieb
 
 Diese Seite richtet sich an Führungskräfte und Administratoren, die wissen wollen, wer was auf der Website geändert hat,
-vor allem wenn etwas schiefgegangen ist. Sie erklärt, was der Audit-Trail aufzeichnet, wie er dem Betrieb hilft, wie Sie
-ihn lesen und was Sie einmalig einrichten. Die vollständige Referenz finden Sie unter
-[Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) und
+vor allem wenn etwas schiefgegangen ist. Sie erklärt, was das Prüfprotokoll aufzeichnet, wie es dem Betrieb hilft, wie Sie
+es lesen und was Sie einmalig einrichten. Die vollständige Referenz finden Sie unter
+[Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) und
 [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md#3-das-audit-protokoll-lesen-5-minuten). Die Nutzung für
 Compliance behandelt eine eigene Seite:
-[Compliance-Nachweise aus dem Audit-Trail](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
+[Compliance-Nachweise aus dem Prüfprotokoll](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
 
 ![Das Audit-Dashboard](../../../../eng-us/help/images/help/bu-audit-ops.webp)
 
 ## Inhalt
 
-1. [Warum der Betrieb einen Audit-Trail braucht](#warum-der-betrieb-einen-audit-trail-braucht)
+1. [Warum der Betrieb ein Prüfprotokoll braucht](#warum-der-betrieb-ein-prüfprotokoll-braucht)
 2. [Was aufgezeichnet wird](#was-aufgezeichnet-wird)
 3. [Der Nachweis, dass die Aufzeichnung nicht verändert wurde](#der-nachweis-dass-die-aufzeichnung-nicht-verändert-wurde)
 4. [Nutzung nach einer Störung](#nutzung-nach-einer-störung)
 5. [Alarme](#alarme)
 6. [Einmalig einrichten](#einmalig-einrichten)
-7. [Wer ihn lesen darf](#wer-ihn-lesen-darf)
+7. [Wer es lesen darf](#wer-es-lesen-darf)
 8. [Checkliste](#checkliste)
 
-## Warum der Betrieb einen Audit-Trail braucht
+## Warum der Betrieb ein Prüfprotokoll braucht
 
 Viele Störungen beginnen mit einer Änderung: eine geschriebene Einstellung, eine vergebene Rolle, ein entfernter
 Teilbaum, ein im falschen Moment geleerter Cache. Wenn sich die Website seltsam verhält, lautet die schnellste Frage:
-„Was hat sich kurz davor geändert?“ Der Audit-Trail beantwortet sie.
+„Was hat sich kurz davor geändert?“ Das Prüfprotokoll beantwortet sie.
 
-Ab Exponential 6.0.15 ist er standardmäßig eingeschaltet und zeichnet ohne Einrichtung auf
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Ab Exponential 6.0.15 ist es standardmäßig eingeschaltet und zeichnet ohne Einrichtung auf
+([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Was aufgezeichnet wird
 
-Aus [Der Audit-Trail, was aufgezeichnet wird](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded):
+Aus [Das Prüfprotokoll, was aufgezeichnet wird](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded):
 
 | Kanal | Beispiele |
 |---|---|
@@ -56,12 +56,12 @@ geänderte Einstellungen an einer Stelle.
 
 Mitgelieferte Aufbewahrung laut `settings/audit.ini`: Die Kanäle `content`, `access`, `system` und `commerce` behalten
 laufende Dateien 90 Tage und Archive 730 Tage, der Kanal `read` 30 und 90 Tage. Das lässt sich in einem Override ändern
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)).
+([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)).
 
 ## Der Nachweis, dass die Aufzeichnung nicht verändert wurde
 
-Ein Log, das jeder bearbeiten kann, beweist wenig. Der Audit-Trail ist manipulationssicher
-([Audit-Trail, warum Sie ihn wollen](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)):
+Ein Log, das jeder bearbeiten kann, beweist wenig. Das Prüfprotokoll ist manipulationssicher
+([Prüfprotokoll, warum Sie es wollen](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)):
 
 - Jeder Eintrag trägt den Hash des Eintrags davor (eine Hash-Kette).
 - Tagesdateien werden abgeschlossen, archiviert und in signierten Manifesten aufgeführt.
@@ -95,13 +95,13 @@ php bin/php/audit.php tail --channel=system --lines=20 --allow-root-user
 > **Tipp**
 > Das Entfernen eines Teilbaums wird als ein übergeordnetes Ereignis mit je einem untergeordneten Ereignis pro Knoten
 > darunter aufgezeichnet, und ein Inhaltsjob ist das übergeordnete Ereignis von allem, was seine Stapel getan haben.
-> „Wer hat das entfernt?“ hat genau eine Antwort ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)).
+> „Wer hat das entfernt?“ hat genau eine Antwort ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)).
 
 ## Alarme
 
 Alarmregeln achten auf Brute-Force-Anmeldungen, die Vergabe einer Administratorrolle, außerhalb der Arbeitszeit
 geschriebene Einstellungen, Massenlöschungen, das Abschalten des Audits und eine gebrochene Kette
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Standardmäßig geht die Alarm-Mail an die
+([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Standardmäßig geht die Alarm-Mail an die
 Administrator-E-Mail-Adresse der Website; prüfen Sie die Empfänger mit:
 
 ```bash
@@ -113,7 +113,7 @@ Unternehmen verlässt.
 
 ## Einmalig einrichten
 
-Aus [Der Audit-Trail, in zwei Minuten ausprobieren](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes):
+Aus [Das Prüfprotokoll, in zwei Minuten ausprobieren](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes):
 
 1. Stellen Sie sicher, dass die Cronjob-Gruppe `frequent` alle paar Minuten läuft. Sie enthält den Teil `audit`, der
    indiziert, zustellt, Alarmregeln auswertet und einmal am Tag rotiert, prüft und archiviert.
@@ -126,14 +126,14 @@ mitgelieferte Einstellung `OnWriteFailure` ist `continue`: Die Anfrage läuft we
 Dashboard warnt, „damit eine volle Festplatte die Website nicht lahmlegt“. `refuse` blockiert stattdessen
 sicherheitsrelevante Aktionen, solange das Audit nicht schreiben kann. Wählen Sie `refuse` nur dort, wo eine nicht
 aufgezeichnete Änderung schlimmer ist als eine verweigerte
-([Audit-Trail, wenn das Audit nicht schreiben kann](../../../../eng-us/features/6.0/audit-trail.md#when-the-audit-cannot-write-onwritefailure)).
+([Prüfprotokoll, wenn das Audit nicht schreiben kann](../../../../eng-us/features/6.0/audit-trail.md#when-the-audit-cannot-write-onwritefailure)).
 
-## Wer ihn lesen darf
+## Wer es lesen darf
 
 Zwei Richtlinien regeln den Zugang: `audit/read` für den Reiter, die Konsole und die Exporte und `audit/manage` für
 Archive, Einstellungen und „Jetzt prüfen“. In einer neuen Installation hat nur die Rolle Administrator sie, und ein
 verweigerter Versuch, ihn zu öffnen, wird selbst aufgezeichnet
-([Audit-Trail, wer hineinsehen darf](../../../../eng-us/features/6.0/audit-trail.md#who-may-look)). Geben Sie `audit/read` den
+([Prüfprotokoll, wer hineinsehen darf](../../../../eng-us/features/6.0/audit-trail.md#who-may-look)). Geben Sie `audit/read` den
 Personen, die Störungen und Compliance bearbeiten, und beschränken Sie `audit/manage` auf sehr wenige.
 
 ## Checkliste

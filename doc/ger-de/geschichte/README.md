@@ -27,7 +27,7 @@ Lesen Sie diese Zeilen zuerst, wenn Sie neu sind; jede verweist auf den Monat, d
 - **Juli 2026: Die Kommandozeile wird erwachsen.** `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern, ein vertrauenswürdiger Template-Editor. [Juli 2026](2026/2026-07.md)
 - **August 2026: ehrliches Template-Debugging, sechs Sicherheits-Patches, Tests bei jeder Änderung.** [August 2026](2026/2026-08.md)
 - **September 2026: große Listen, die funktionieren, Velocity, eine Installation mit einem Befehl und eine Härtungsrunde.** [Erste Hälfte](2026/2026-09a.md), [zweite Hälfte](2026/2026-09b.md)
-- **Oktober 2026: jQuery 4 und admin4, ein Audit-Trail, `exp:ini`, eine Debug-Leiste, Inhaltsjobs und TinyMCE 8.** [Oktober 2026](2026/2026-10.md)
+- **Oktober 2026: jQuery 4 und admin4, ein Prüfprotokoll, `exp:ini`, eine Debug-Leiste, Inhaltsjobs und TinyMCE 8.** [Oktober 2026](2026/2026-10.md)
 
 ## So lesen Sie die Chronik
 

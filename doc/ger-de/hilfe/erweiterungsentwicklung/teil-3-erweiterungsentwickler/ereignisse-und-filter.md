@@ -93,7 +93,7 @@ Im Code des Kernels gefunden mit `grep -rn "getInstance()->notify\|getInstance()
 | `content/notification/create` | filter | ob eine Benachrichtigung erzeugt wird |
 | `module/functionlist` | filter | die Richtlinienfunktionen eines Moduls (Inhaltseinschränkungen von Erweiterungen verwenden es) |
 | `image/alias` | notify | ein Bild-Alias wurde erzeugt |
-| `session/regenerate`, `session/destroy`, `session/gc`, `session/cleanup` | notify | Lebenszyklus der Session |
+| `session/regenerate`, `session/destroy`, `session/gc`, `session/cleanup` | notify | Lebenszyklus der Sitzung |
 | `httpcache/store/headers` | filter | Header, die mit einem Eintrag des HTTP-Caches gespeichert werden |
 
 Die Zugriffsfilter und die Schlüssel des View-Caches sind in

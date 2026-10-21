@@ -41,7 +41,7 @@ Der Weg von der Meldung zur Ursache ist kurz:
    **Suchen**.
 3. Die Seite zeigt den Eintrag und jede Zeile derselben Anfrage (gleiche Adresse und gleicher Client, innerhalb von zwei
    Sekunden) aus allen Kernel-Logs in zeitlicher Reihenfolge.
-4. **Das Audit dieses Moments** öffnet den Audit-Trail zum selben Zeitpunkt: Eine Bearbeitung, eine Veröffentlichung oder
+4. **Das Audit dieses Moments** öffnet das Prüfprotokoll zum selben Zeitpunkt: Eine Bearbeitung, eine Veröffentlichung oder
    eine Änderung an Einstellungen kurz vor dem Fehler ist oft die Ursache.
 
 Dasselbe in einer Shell: `php bin/php/console exp:logs --reference=ERR-0123456789`. Exit-Code 1 bedeutet, dass sie nicht
@@ -81,7 +81,7 @@ Exponential trennt echte Fehler vom Rauschen, damit es sich weiterhin lohnt, `er
 | `security.log` | Anfragen, die nach Sondierungen oder Angriffen aussehen, mit jedem Status | Den Betrieb, monatlich; achten Sie auf Häufungen und auf Angriffe, die ein `200` bekommen haben |
 | `deprecated.log` | Code, den eine spätere PHP-Version ablehnen wird | Entwickler, vor dem nächsten PHP-Upgrade ([Betrieb einer Site](../../../anleitungen/betrieb-einer-website.md#php-deprecations-und-größe-der-logdateien)) |
 | Cronjob-Logs | Ausgabe der geplanten Jobs | Den Betrieb, wenn ein Job nicht gelaufen ist |
-| Der Audit-Trail | Wer was getan hat: Anmeldungen, Inhalte, Einstellungen, Bestellungen | Führungskräfte, Sicherheit, Compliance ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
+| Das Prüfprotokoll | Wer was getan hat: Anmeldungen, Inhalte, Einstellungen, Bestellungen | Führungskräfte, Sicherheit, Compliance ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
 
 ## Logs ohne Shell lesen
 
@@ -122,8 +122,8 @@ standardmäßig:
   `setup/unmasklogs` kann das abschalten, und zwar nur für sich selbst, und ein Permalink trägt den Schalter für die
   Demaskierung nie mit
   ([Einen Fehler finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md#kurz-gesagt)).
-- Der Audit-Trail kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter oder Tokens auf
-  ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)).
+- Das Prüfprotokoll kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter oder Tokens auf
+  ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)).
 
 Das ist eine technische Schutzmaßnahme, keine Rechtsberatung. Zu Ihren Pflichten siehe
 [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md) und fragen Sie Ihren Datenschutzbeauftragten oder Ihren Anwalt.

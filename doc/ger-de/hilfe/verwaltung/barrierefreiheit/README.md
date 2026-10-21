@@ -13,8 +13,8 @@ Dieser Bereich richtet sich an öffentliche Stellen, die eine Website mit Expone
 gestalten müssen: Projektverantwortliche, Koordinatorinnen und Koordinatoren für Barrierefreiheit, Redaktion, Design,
 Entwicklung und Administration. Jede Aussage über das Produkt stützt sich auf die eigene Erklärung des Projekts,
 [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md), deren Statusangaben unverändert übernommen
-werden: WCAG 2.2 AA **Partly complies** (Administration admin4 und admin4l), EN 301 549 und Section 508
-**Unverified**, öffentliche Designs nicht geprüft, kein VPAT und kein Accessibility Conformance Report und keine
+werden: WCAG 2.2 AA **Teilweise erfüllt** (Administration admin4 und admin4l), EN 301 549 und Section 508
+**Nicht geprüft**, öffentliche Designs nicht geprüft, kein VPAT und kein Accessibility Conformance Report und keine
 Vorlage für eine Erklärung zur Barrierefreiheit. Dieser Bereich behauptet nie Konformität.
 
 > **Hinweis** Dieser Bereich beschreibt Funktionen und übliche Praxis; er ist keine Rechtsberatung. Prüfen Sie das für
@@ -46,12 +46,12 @@ Vorlage für eine Erklärung zur Barrierefreiheit. Dieser Bereich behauptet nie 
 | [Was das Recht der Barrierefreiheit von öffentlichen Stellen verlangt](gesetze-fuer-oeffentliche-stellen.md) | die drei Familien von Regeln und die gemeinsamen Pflichten |
 | [Die EU-Richtlinie über barrierefreie Websites und Exponential](richtlinie-ueber-barrierefreie-websites.md) | Pflicht für Pflicht: was die Software tut und was Sie tun |
 | [Der European Accessibility Act und Exponential](european-accessibility-act.md) | wann der Rechtsakt eine öffentliche Stelle betreffen kann; die verfügbaren Nachweise |
-| [Section 508 und Exponential](section-508.md) | Status Unverified, kein VPAT; was zu bewerten ist |
+| [Section 508 und Exponential](section-508.md) | Status Nicht geprüft, kein VPAT; was zu bewerten ist |
 | [WCAG 2.2 AA auf Exponential abgebildet](wcag-2-2-zuordnung.md) | Kriterium für Kriterium, Nachweise für admin4 und wer es auf der öffentlichen Website erledigt |
 | [EN 301 549 auf Exponential abgebildet](en-301-549-zuordnung.md) | Abschnitte 9, 10, 11 (11.8 Autorenwerkzeuge) und 12 |
 | [Was admin4 von Exponential abdeckt](admin4-was-abgedeckt-ist.md) | die getesteten Funktionen und wie admin4 das Design der Redaktion wird |
 | [Was Exponential nicht abdeckt](was-nicht-abgedeckt-ist.md) | die bekannten Lücken und wie Sie um sie herum planen |
-| [Der Online-Editor und die Barrierefreiheit](barrierefreiheit-des-online-editors.md) | TinyMCE 3 und 8, Status Unverified, wie Sie testen |
+| [Der Online-Editor und die Barrierefreiheit](barrierefreiheit-des-online-editors.md) | TinyMCE 3 und 8, Status Nicht geprüft, wie Sie testen |
 | [Ihr öffentliches Design mit WCAG-EM prüfen](ihr-oeffentliches-design-pruefen.md) | Umfang, Stichprobe je Template, bewerten, berichten |
 | [Eine Erklärung zur Barrierefreiheit schreiben](eine-erklaerung-zur-barrierefreiheit-schreiben.md) | keine Vorlage mitgeliefert; eine Gliederung und wie Sie sie veröffentlichen |
 | [Einen Accessibility Conformance Report für Ihre Website vorbereiten](einen-acr-vorbereiten.md) | Umfang festlegen und einen ehrlichen ACR für Ihre Konfiguration schreiben |

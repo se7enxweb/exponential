@@ -53,7 +53,7 @@ Anleitung zum Audit ([die Anleitung zum Audit](../../../../bc/6.0/audit.md)).
 
 ## Verwandte Seiten
 
-- [Der Audit-Trail für wer was geändert hat](../../transparenz-und-informationsfreiheit/der-audit-trail-fuer-wer-was-geaendert-hat.md)
+- [Das Prüfprotokoll für wer was geändert hat](../../transparenz-und-informationsfreiheit/der-audit-trail-fuer-wer-was-geaendert-hat.md)
 - [Den Zugang beenden](den-zugang-beenden.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

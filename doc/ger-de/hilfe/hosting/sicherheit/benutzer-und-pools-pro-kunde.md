@@ -92,7 +92,7 @@ Kunden im Verzeichnis eines anderen landet.
 
 ## Eine Velocity-Instanz pro Kunde
 
-Eine Velocity pro Website, jede als Benutzer des Kunden, an `127.0.0.1` gebunden, hinter einem Proxy, der nach Hostnamen routet
+Ein Velocity-Server pro Website, jeder als Benutzer des Kunden, an `127.0.0.1` gebunden, hinter einem Proxy, der nach Hostnamen routet
 ([Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md)):
 
 ```bash

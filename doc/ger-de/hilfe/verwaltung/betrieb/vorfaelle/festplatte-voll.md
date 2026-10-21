@@ -3,7 +3,7 @@ title: Festplatte voll
 audience: government, admin, hosting
 category: public-sector
 order: 130
-summary: Runbook für einen Server, dessen Festplatte unter einer öffentlichen Website vollgelaufen ist - herausfinden, was gewachsen ist, Platz nur mit den sicheren Befehlen schaffen (Caches, Log-Archive), Uploads, Einstellungen und die Datenbank nie von Hand anfassen und prüfen, was der Audit-Trail in der Zwischenzeit getan hat.
+summary: Runbook für einen Server, dessen Festplatte unter einer öffentlichen Website vollgelaufen ist - herausfinden, was gewachsen ist, Platz nur mit den sicheren Befehlen schaffen (Caches, Log-Archive), Uploads, Einstellungen und die Datenbank nie von Hand anfassen und prüfen, was das Prüfprotokoll in der Zwischenzeit getan hat.
 keywords: Festplatte voll, kein Speicherplatz, df, du, Caches, Log-Archive, exp:logs prune, ezcache, var/storage, SQLite WAL, Audit OnWriteFailure, Zustand der Logs, DiskBudget, Vorfall, disk full, no space left, log archives, Log health, incident
 type: help
 ---
@@ -18,7 +18,7 @@ Prüfungen, die eine öffentliche Stelle danach braucht.
 1. [Herausfinden, was gewachsen ist](#herausfinden-was-gewachsen-ist)
 2. [Sicher Platz schaffen](#sicher-platz-schaffen)
 3. [Was Sie nie entfernen dürfen](#was-sie-nie-entfernen-dürfen)
-4. [Der Audit-Trail, während die Festplatte voll war](#der-audit-trail-während-die-festplatte-voll-war)
+4. [Das Prüfprotokoll, während die Festplatte voll war](#das-prüfprotokoll-während-die-festplatte-voll-war)
 5. [Vorbeugen](#vorbeugen)
 6. [Verwandte Seiten](#verwandte-seiten)
 
@@ -54,16 +54,16 @@ vor, sobald Platz ist: `php bin/php/warm.php --allow-root-user`.
 | `var/storage`, `var/<site>/storage` | Uploads und Bilder: die Inhalte der Organisation |
 | `settings/` | Konfiguration |
 | `var/storage/sqlite3/` | die SQLite-Datenbank mit ihren Dateien `-wal` und `-shm` |
-| `var/<site>/log/audit/` | der Audit-Trail: Beweismittel; archivieren Sie ihn, löschen Sie ihn nicht |
+| `var/<site>/log/audit/` | das Prüfprotokoll: Beweismittel; archivieren Sie es, löschen Sie es nicht |
 
 Führen Sie während eines Vorfalls kein `rm -rf` unter `var/` von Hand aus; verwenden Sie die oben genannten Befehle.
 
-## Der Audit-Trail, während die Festplatte voll war
+## Das Prüfprotokoll, während die Festplatte voll war
 
 Mit `[AuditSettings] OnWriteFailure=continue` (Standard) lief die Website weiter, und nicht geschriebene Einträge wurden
 in `error.log` als `AUDIT-UNWRITTEN` vermerkt; das Audit-Dashboard warnt. Mit `refuse` wurden sicherheitsrelevante
 Aktionen verweigert (`AUDIT-REFUSED`)
-([Audit-Trail, „When the audit cannot write“](../../../../../eng-us/features/6.0/audit-trail.md#when-the-audit-cannot-write-onwritefailure)).
+([Prüfprotokoll, „When the audit cannot write“](../../../../../eng-us/features/6.0/audit-trail.md#when-the-audit-cannot-write-onwritefailure)).
 Danach:
 
 ```bash
@@ -71,7 +71,7 @@ Danach:
 ./console exp:audit verify --allow-root-user
 ```
 
-Halten Sie die Lücke im Audit-Trail in Ihren Notizen zum Vorfall fest: Prüfende werden danach fragen.
+Halten Sie die Lücke im Prüfprotokoll in Ihren Notizen zum Vorfall fest: Prüfende werden danach fragen.
 
 ## Vorbeugen
 

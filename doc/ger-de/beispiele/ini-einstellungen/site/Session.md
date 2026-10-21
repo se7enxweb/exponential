@@ -3,7 +3,7 @@ title: site.ini [Session]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [Session] in site.ini: RememberMeTimeout, Handler, SessionTimeout, ActivityTimeout, ForceStart, SessionNameHandler, SessionNamePrefix, SessionNamePerSiteAccess ..."
-keywords: Einstellung, site.ini, Session, INI, setting, RememberMeTimeout, Handler, SessionTimeout, ActivityTimeout, ForceStart, SessionNameHandler, SessionNamePrefix, SessionNamePerSiteAccess, CookieAlwaysAddToHttpResponse, BasketCleanup, BasketCleanupTime, BasketCleanupIdleTime, BasketCleanupFetchLimit, BasketCleanupAverageFrequency
+keywords: Einstellung, site.ini, Sitzung, INI, setting, RememberMeTimeout, Handler, SessionTimeout, ActivityTimeout, ForceStart, SessionNameHandler, SessionNamePrefix, SessionNamePerSiteAccess, CookieAlwaysAddToHttpResponse, BasketCleanup, BasketCleanupTime, BasketCleanupIdleTime, BasketCleanupFetchLimit, BasketCleanupAverageFrequency
 type: generated
 generated: exp:help:examples
 ---
@@ -37,8 +37,8 @@ RememberMeTimeout=
 
 ## Handler
 
-> Sitzungs-Handler von Exponential Legacy (Klassenname): nicht anwendbar mit dem Symfony-Stack  
-> Wenn leer, wird ezpSessionHandlerPHP verwendet, ein Sitzungs-Handler, der PHP die Kontrolle  
+> Session-Handler von Exponential Legacy (Klassenname): nicht anwendbar mit dem Symfony-Stack  
+> Wenn leer, wird ezpSessionHandlerPHP verwendet, ein Session-Handler, der PHP die Kontrolle  
 > über die Sitzungsverwaltung lässt (Standard: files, wie in session.save\_handler in php.ini festgelegt)  
 > Um das alte Verhalten für die Zählung angemeldeter/anonymer Benutzer und das Leeren von Sitzungen zurückzuerhalten, verwenden Sie ezpSessionHandlerDB  
 > und aktivieren Sie die Einstellung ForceStart.  

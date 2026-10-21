@@ -81,7 +81,7 @@ Konten unter [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-p
 [Checkliste für den Shop-Start](../shops/checkliste-fuer-den-shop-start.md); Backups unter
 [Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md); Monitoring unter
 [Zustandsprüfungen und Verfügbarkeit](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md); Audit-Warnungen unter
-[Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes).
+[Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes).
 
 ## Plan für den Starttag
 

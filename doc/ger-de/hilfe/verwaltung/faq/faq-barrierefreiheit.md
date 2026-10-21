@@ -12,7 +12,7 @@ type: help
 Diese Seite beantwortet die Fragen zur Barrierefreiheit, die Beschaffungsgremien und Beauftragte für Barrierefreiheit
 in öffentlichen Stellen zu Exponential stellen. Jede Antwort ist durch die
 [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) belegt; die dort verwendeten Statusangaben
-(„Partly complies“, teilweise erfüllt; „Unverified“, nicht überprüft) werden genau beibehalten.
+(„Teilweise erfüllt“; „Nicht geprüft“) werden genau beibehalten.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -32,7 +32,7 @@ in öffentlichen Stellen zu Exponential stellen. Jede Antwort ist durch die
 ## Erfüllt Exponential WCAG 2.2 AA?
 
 Nicht als Ganzes, und das Projekt behauptet es auch nicht. Die Administrationsdesigns **admin4** und **admin4l** werden
-gegen die Kriterien von WCAG 2.2 AA gebaut und mit Regressionstests geprüft; ihr Status ist **Partly complies**
+gegen die Kriterien von WCAG 2.2 AA gebaut und mit Regressionstests geprüft; ihr Status ist **Teilweise erfüllt**
 (teilweise erfüllt). Das ist keine Konformitätsaussage: Es gibt keine vollständige Prüfung jeder Seite und kein
 Testprotokoll mit assistiven Technologien
 ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#status)).
@@ -45,7 +45,7 @@ verlangen, bitten Sie den Bieter, eine Bewertung der Website in Auftrag zu geben
 
 ## Wie steht es um EN 301 549 und Section 508?
 
-Beide sind **Unverified** (nicht überprüft). Der Webabschnitt von EN 301 549 übernimmt WCAG 2.1 AA, das die Arbeit an
+Beide sind **nicht geprüft**. Der Webabschnitt von EN 301 549 übernimmt WCAG 2.1 AA, das die Arbeit an
 admin4 inhaltlich abdeckt, aber es wurde keine Bewertung gegen die Norm durchgeführt, und ihr Abschnitt zu
 Autorenwerkzeugen wurde nicht geprüft. Section 508 übernimmt WCAG 2.0 AA; es gibt kein VPAT
 ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#en-301-549)).
@@ -69,7 +69,7 @@ an die gelieferte Website, mit Tests
 
 ## Ist der Online-Editor barrierefrei?
 
-**Unverified** (nicht überprüft). Die Integrationen von TinyMCE wurden nicht auf WCAG geprüft; die Barrierefreiheit des
+**Nicht geprüft**. Die Integrationen von TinyMCE wurden nicht auf WCAG geprüft; die Barrierefreiheit des
 Editors selbst ist die des Projekts TinyMCE
 ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#known-gaps)). Testen Sie ihn bei der Bewertung mit
 den assistiven Technologien Ihrer Mitarbeitenden.

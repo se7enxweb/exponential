@@ -24,15 +24,15 @@ Referenz sind die [Standards zur Barrierefreiheit](../../../../../eng-us/standar
 ## Bevor Sie beginnen
 
 Kennen Sie die eigenen Statusbegriffe des Projekts, die ein Bieter für das Produkt nicht übertreffen sollte: WCAG 2.2 AA
-**Partly complies** für admin4 und admin4l; EN 301 549 und Section 508 **Unverified**; öffentliche Designs nicht
+**Teilweise erfüllt** für admin4 und admin4l; EN 301 549 und Section 508 **Nicht geprüft**; öffentliche Designs nicht
 geprüft; kein VPAT und kein ACR.
 
 ## Schritte
 
 1. **Listen Sie jede Aussage zur Barrierefreiheit** im Angebot wörtlich auf.
 2. **Trennen Sie Aussagen über das Produkt** (Exponential) von **Aussagen über die Site**, die der Bieter bauen wird.
-3. **Prüfen Sie Aussagen zum Produkt** gegen die Seite der Standards. Eine Aussage, die stärker ist als „Partly
-   complies“ oder „Unverified“, braucht ein Dokument, das Sie lesen können: eine benannte Prüfung, Methode, Umfang und
+3. **Prüfen Sie Aussagen zum Produkt** gegen die Seite der Standards. Eine Aussage, die stärker ist als „Teilweise
+   erfüllt“ oder „Nicht geprüft“, braucht ein Dokument, das Sie lesen können: eine benannte Prüfung, Methode, Umfang und
    Datum.
 4. **Prüfen Sie Aussagen zur Site** auf eine Methode und einen Umfang: welche Seiten, welcher Standard, welche
    Werkzeuge, wer testet.
@@ -46,10 +46,10 @@ geprüft; kein VPAT und kein ACR.
 
 | Aussage in einem Angebot | Was zu fragen ist |
 |---|---|
-| „Exponential ist WCAG 2.2 AA konform“ | welche Prüfung zeigt das? Das Projekt sagt Partly complies, nur für admin4 |
+| „Exponential ist WCAG 2.2 AA konform“ | welche Prüfung zeigt das? Das Projekt sagt „Teilweise erfüllt“, nur für admin4 |
 | „Wir liefern ein VPAT“ | ein VPAT wofür, von wem erstellt, für welche Version? Vom Projekt gibt es keines |
 | „Die Site wird barrierefrei sein“ | welcher Standard und welche Stufe, welche Methode, welche Seiten, wer behebt Fehler, auf wessen Kosten? |
-| „Der Editor ist barrierefrei“ | der Online-Editor ist Unverified; wie werden Mitarbeiter arbeiten, die assistive Technologien nutzen? |
+| „Der Editor ist barrierefrei“ | der Online-Editor ist nicht geprüft; wie werden Mitarbeiter arbeiten, die assistive Technologien nutzen? |
 | „Erklärung zur Barrierefreiheit inbegriffen“ | wer entwirft sie und hält sie aktuell? |
 
 ## Ergebnis

@@ -9,7 +9,7 @@ Exponential Velocity 0.0.4.28 und neuer (Befehl `vc-qshell` ab 0.0.4.42).
 ## Öffnen und einen Befehl ausführen
 
 1. Melden Sie sich am [Control Panel](velocity-control-panel.md) an. Die Shell benötigt eine angemeldete
-   Panel-Session; sie ist standardmäßig eingeschaltet.
+   Panel-Sitzung; sie ist standardmäßig eingeschaltet.
 2. Drücken Sie die Backtick-Taste (oder `~`) oder klicken Sie in der Werkzeugleiste auf **Shell**.
 3. Geben Sie einen Befehl ein:
 
@@ -51,10 +51,10 @@ davor antwortete sie, ihr Runner fehle, als `429`). Ein fehlender Runner antwort
 
 ## Das Terminal
 
-- **Fenstersteuerung**: `+` startet oder zeigt die Shell; `-` blendet sie aus (Session und Jobs laufen weiter; `Esc`
-  tut dasselbe); `m` maximiert; `x` schließt sie und beendet nach Rückfrage die Session und ihre Jobs.
+- **Fenstersteuerung**: `+` startet oder zeigt die Shell; `-` blendet sie aus (Sitzung und Jobs laufen weiter; `Esc`
+  tut dasselbe); `m` maximiert; `x` schließt sie und beendet nach Rückfrage die Sitzung und ihre Jobs.
 - **Tabs und Teilungen**: `Ctrl-Shift-T` öffnet einen Tab, `Ctrl-Shift-D` teilt; jeder Bereich ist eine eigene
-  Session mit eigenen Jobs.
+  Sitzung mit eigenen Jobs.
 - **Zeilenbearbeitung**: Emacs-Tasten (`Ctrl-A/E/K/U/W`, `Alt-B/F`), Pfeiltasten für den Verlauf, `Ctrl-R`
   Rückwärtssuche, `Tab` Vervollständigung, `Ctrl-C` Abbruch, `Ctrl-L` Leeren.
 - **Themes**: `theme list`, `theme quake`; Themes sind JSON-Dateien im Verzeichnis `shell/` eines Designs.
@@ -87,7 +87,7 @@ während die Konsole ausgeblendet ist.
 ## Verlauf
 
 Standardmäßig 100.000 Einträge in `<state dir>/shell/history` (erweitertes zsh-Format), unter einer Sperre angehängt,
-sodass mehrere Sessions nie eine Zeile verlieren. Die Konsole lädt die neuesten 1.000; `Up` über den ältesten hinaus
+sodass mehrere Sitzungen nie eine Zeile verlieren. Die Konsole lädt die neuesten 1.000; `Up` über den ältesten hinaus
 holt die vorherigen 1.000; `Ctrl-R` durchsucht die geladenen Einträge, dann die ganze Datei auf dem Server. Gemessen
 mit 150.000 Einträgen: neueste Seite etwa 1,5 ms, eine Suche zurück bis zum ältesten Eintrag etwa 30 ms.
 
@@ -102,7 +102,7 @@ mit 150.000 Einträgen: neueste Seite etwa 1,5 ms, eine Suche zurück bis zum ä
 | Konfigurationsschlüssel | Standard | Bedeutung |
 |---|---|---|
 | `Q.shell.enabled` | `true` | Die Konsole und die API |
-| `Q.shell.tier` | `advanced` | Höchste Stufe, die eine Session verwenden darf |
+| `Q.shell.tier` | `advanced` | Höchste Stufe, die eine Sitzung verwenden darf |
 | `Q.shell.allowSystem` | `false` | Rohe Betriebssystembefehle (`! command`, `sys command`) |
 | `Q.shell.user` | Eigentümer des Document Root | Als wer Befehle laufen |
 | `Q.shell.allowRoot` | `false` | `sudo <command>` als root |
@@ -110,7 +110,7 @@ mit 150.000 Einträgen: neueste Seite etwa 1,5 ms, eine Suche zurück bis zum ä
 | `Q.shell.timeout` | `120` | Sekunden pro Befehl (TERM, dann KILL) |
 | `Q.shell.maxOutput` | `8388608` | Bytes Ausgabe pro Befehl |
 | `Q.shell.historySize` | `100000` | Behaltene Verlaufseinträge; `0` behält alle |
-| `Q.shell.maxJobs` | `8` | Jobs pro Session |
+| `Q.shell.maxJobs` | `8` | Jobs pro Sitzung |
 | `Q.shell.scriptsDir` | keines | Verzeichnis mit Skripten, die die Shell ausführen kann |
 | `Q.shell.toggleKey` | Backtick | Die Taste, die die Konsole öffnet |
 | `Q.shell.allowedOrigins` | `[]` | Weitere Origins, die den WebSocket öffnen dürfen (die öffentliche URL eines Proxys) |
@@ -138,13 +138,13 @@ mit 150.000 Einträgen: neueste Seite etwa 1,5 ms, eine Suche zurück bis zum ä
 
 ## REST-API
 
-Unter `/Q/api/shell/`, authentifiziert mit dem Session-Token des Panels in `Authorization: Bearer <token>` oder
+Unter `/Q/api/shell/`, authentifiziert mit dem Sitzungs-Token des Panels in `Authorization: Bearer <token>` oder
 `X-Panel-Token` (das Cookie allein wird abgelehnt):
 
 | Methode und Pfad | Wirkung |
 |---|---|
 | `GET session` | wer, Stufe, Benutzer, ob Betriebssystembefehle und sudo erlaubt sind |
-| `DELETE session?session=<name>` | die Session und ihre Jobs beenden |
+| `DELETE session?session=<name>` | die Sitzung und ihre Jobs beenden |
 | `POST exec` | `{"command": "...", "force": false, "timeout": 30}` liefert `202` mit einer Job-ID |
 | `GET poll?since=<seq>` | Meldungen seit einer Sequenznummer |
 | `POST input`, `POST signal` | eine Eingabe oder ein Signal an einen Job senden |
@@ -158,10 +158,10 @@ curl -s -H "Authorization: Bearer $TOKEN" -d '{"command":"uptime"}' https://host
 
 ## Grenzen
 
-- Benötigt eine angemeldete Panel-Session; abgemeldet ist der Eintrag in der Werkzeugleiste deaktiviert.
+- Benötigt eine angemeldete Panel-Sitzung; abgemeldet ist der Eintrag in der Werkzeugleiste deaktiviert.
 - Die Befehlsprüfung liest die Zeile als Text. Sie verhindert gewohnheitsmäßige Fehler; sie ist keine Sandbox. Lassen
   Sie `Q.shell.allowSystem` ausgeschaltet, sofern Sie es nicht brauchen.
-- `server reload` und `server restart` nehmen die Session mit dem Server mit; die Shell verbindet sich neu.
+- `server reload` und `server restart` nehmen die Sitzung mit dem Server mit; die Shell verbindet sich neu.
 
 ## Verwandte Seiten
 

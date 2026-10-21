@@ -97,8 +97,8 @@ Exponential ist ein Content-Management-System. Bei offenen Daten ist es auf der 
   Ordners auf ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 - **Eine JSON-Schnittstelle.** Die REST-API liefert Knoten, Unterknoten und Felder als JSON unter `/api/ezp/v1/...` und
   `/api/ezp/v2/...` ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)).
-- **Versionen und ein Audit-Trail**, damit Sie zeigen können, was sich wann geändert hat
-  ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- **Versionen und ein Prüfprotokoll**, damit Sie zeigen können, was sich wann geändert hat
+  ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Was Exponential nicht tut
 

@@ -3,8 +3,8 @@ title: Nachbetrachtung eines Vorfalls
 audience: government, admin, project-manager
 category: public-sector
 order: 150
-summary: Eine Nachbetrachtung ohne Schuldzuweisung nach einem Vorfall auf einer öffentlichen Website durchführen - den Zeitablauf aus Audit-Trail und Logs rekonstruieren, Ursachen und begünstigende Faktoren finden, Maßnahmen vereinbaren und die Dokumentation erstellen, die Ihre Organisation und die Prüfenden erwarten.
-keywords: Nachbetrachtung, Postmortem, Lessons Learned, ohne Schuldzuweisung, Zeitablauf, Grundursache, begünstigende Faktoren, Maßnahmen, Audit-Trail, Beweise, kontinuierliche Verbesserung, post-incident review, postmortem, lessons learned, blameless, timeline, root cause, contributing factors, actions, audit trail, evidence, continuous improvement
+summary: Eine Nachbetrachtung ohne Schuldzuweisung nach einem Vorfall auf einer öffentlichen Website durchführen - den Zeitablauf aus Prüfprotokoll und Logs rekonstruieren, Ursachen und begünstigende Faktoren finden, Maßnahmen vereinbaren und die Dokumentation erstellen, die Ihre Organisation und die Prüfenden erwarten.
+keywords: Nachbetrachtung, Postmortem, Lessons Learned, ohne Schuldzuweisung, Zeitablauf, Grundursache, begünstigende Faktoren, Maßnahmen, Prüfprotokoll, Beweise, kontinuierliche Verbesserung, post-incident review, postmortem, lessons learned, blameless, timeline, root cause, contributing factors, actions, audit trail, evidence, continuous improvement
 type: help
 ---
 # Nachbetrachtung eines Vorfalls
@@ -32,7 +32,7 @@ Erinnerung frisch ist. Ohne Schuldzuweisung: Die Frage ist, warum System und Pro
 | Quelle | Liefert |
 |---|---|
 | Notizen zum Vorfall | was Personen gesehen und getan haben, mit Uhrzeiten |
-| Audit-Trail | Anmeldungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches, Bereitstellungen, Wartungsmodus an und aus, mit Uhrzeiten und Benutzern |
+| Prüfprotokoll | Anmeldungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches, Bereitstellungen, Wartungsmodus an und aus, mit Uhrzeiten und Benutzern |
 | `error.log`, `security.log`, `404.log` | wann Fehler und Angriffe begannen und endeten |
 | Überwachung | wann die Prüfung von außen fehlschlug und wieder erfolgreich war |
 | Logs von Webserver und Velocity | Anfragemengen und Statuscodes |

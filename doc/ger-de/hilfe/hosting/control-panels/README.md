@@ -80,7 +80,7 @@ mit PHP-FPM und Velocity dieselbe Installation ausliefern ([Stufe 1](../../betri
 - müssen beide `var/` als derselbe Benutzer schreiben ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe));
 - muss ein Ausrollen das richtige PHP-FPM neu laden und Velocity neu starten; `exp:velocity deploy` tut beides in Reihenfolge
   ([8.3.14](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy));
-- muss die Firewall des Panels die Ports von Velocity erlauben, wenn Besucher es direkt erreichen.
+- muss die Firewall des Panels die Ports von Velocity erlauben, wenn Besucher ihn direkt erreichen.
 
 Siehe [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md).
 

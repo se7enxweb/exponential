@@ -34,7 +34,7 @@ auf, was Ihnen dieses Framework bietet und wie Sie entscheiden, was Sie darauf b
 | Hintergrundjobs | die Job-Warteschlange `expqueue` und Inhalts-Jobs | [Warteschlangen mit expqueue](warteschlangen-mit-expqueue.md) |
 | Eine API | REST v1/v2 mit OAuth2 und API-Schlüsseln; über tausend benannte Dienste in `expservices` | [REST-API v1 und v2](rest-api.md), [Entfernte Dienste](entfernte-dienste-expservices.md) |
 | Suche | eingebaut oder Solr | [Suche auf der Website](../website-ersteller/suche-auf-der-website.md) |
-| Audit | ein Audit-Trail der Änderungen | [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Audit | ein Prüfprotokoll der Änderungen | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | KI-Unterstützung | Exponential Intelligence (`expai`) | [Exponential Intelligence für Anwendungen](exponential-intelligence.md) |
 | Auslieferung | Velocity, Apache, nginx, FrankenPHP | [Die Website ausliefern](../../../installation/08-die-website-ausliefern.md) |
 

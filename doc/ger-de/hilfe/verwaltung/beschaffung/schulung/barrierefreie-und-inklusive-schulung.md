@@ -32,7 +32,7 @@ und den Nachweisen zur Barrierefreiheit in den [Standards zur Barrierefreiheit](
 Exponential hat mehrere Administrationsdesigns. Die Arbeit an der Barrierefreiheit konzentriert sich auf **admin4** und
 seine Layout-Variante **admin4l**: Sprunglink, Landmarks, Tastaturunterstützung für Tabs und Menüs, beschriftete
 Formularelemente, Fehlerzusammenfassungen, auf Kontrast geprüfte Farben im hellen und dunklen Modus und Zielflächen von
-mindestens 24 mal 24 Pixeln. Sein Status gegenüber WCAG 2.2 AA ist **Partly complies**; die klassische Administration
+mindestens 24 mal 24 Pixeln. Sein Status gegenüber WCAG 2.2 AA ist **Teilweise erfüllt**; die klassische Administration
 ist nicht durch dieselben Tests abgedeckt ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
 
 Für Teilnehmende, die einen Screenreader, nur die Tastatur, starken Zoom oder den dunklen Modus verwenden, unterrichten

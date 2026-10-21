@@ -42,7 +42,7 @@ schreiben Sie Ihren eigenen Text so, wie Ihr Hausstil es verlangt.
 | das Hilfesystem, die Hilfe | Gattungsbegriffe |
 | admin4, admin3 | Designnamen klein geschrieben, wie das Projekt sie schreibt |
 | AdminUI | So, wie es geschrieben wird |
-| die Content Security Policy, der Audit-Trail | Funktionsnamen als allgemeine Begriffe |
+| die Content Security Policy, das Prüfprotokoll | Funktionsnamen als allgemeine Begriffe |
 
 ## Begriffe der Oberfläche
 

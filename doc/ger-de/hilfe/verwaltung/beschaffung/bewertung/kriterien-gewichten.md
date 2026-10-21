@@ -71,7 +71,7 @@ erfüllen, der die Arbeit leistet, unabhängig vom Produkt.
 Gewichten Sie Kriterien in dem Wissen, welche ein Bieter belegen kann:
 
 - **Durch das Repository belegt**: Funktionen, Einstellungen, Tests, Release-Richtlinie, Exportwerkzeuge, der Status jedes
-  Standards (Complies, Partly complies, Unverified), wie in [Standards: wie der Status zu lesen ist](../../../../../eng-us/standards/README.md#how-to-read-the-status) festgelegt.
+  Standards (Erfüllt, Teilweise erfüllt, Nicht geprüft), wie in [Standards: wie der Status zu lesen ist](../../../../../eng-us/standards/README.md#how-to-read-the-status) festgelegt.
 - **Nicht durch das Repository belegt**: ein VPAT oder Accessibility Conformance Report, eine Bewertung nach OWASP ASVS,
   ein externer Penetrationstest, eine Bewertung nach EN 301 549, veröffentlichte SLAs des Projekts ([SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)
   hält fest, dass das Projekt keine veröffentlicht). Diese müssen vom Bieter kommen oder Teil der Vertragsleistung sein.

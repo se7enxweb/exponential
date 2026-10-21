@@ -4,7 +4,7 @@ audience: government, admin, project-manager
 category: public-sector
 order: 210
 summary: Wie eine öffentliche Stelle ihre Exponential-Website und ihre Daten auf Anträge nach dem Informationsfreiheitsrecht vorbereitet - wissen, wo Informationen liegen, sie finden, Versionen und Audit-Einträge, Exporte, Schwärzung personenbezogener Daten und proaktive Veröffentlichung.
-keywords: Informationsfreiheit, Informationsfreiheitsgesetz, IFG, Informationszugang, Anträge, Schriftgut, Suche, Versionen, Audit-Trail, Export, Schwärzung, proaktive Veröffentlichung, öffentlicher Sektor, freedom of information, FOI, FOIA, access to information, requests, records, search, versions, audit trail, export, redaction, proactive publication, public sector
+keywords: Informationsfreiheit, Informationsfreiheitsgesetz, IFG, Informationszugang, Anträge, Schriftgut, Suche, Versionen, Prüfprotokoll, Export, Schwärzung, proaktive Veröffentlichung, öffentlicher Sektor, freedom of information, FOI, FOIA, access to information, requests, records, search, versions, audit trail, export, redaction, proactive publication, public sector
 type: help
 ---
 # Bereitschaft für Informationsfreiheit
@@ -31,7 +31,7 @@ ob sie herausgegeben werden müssen, ist eine rechtliche Frage.
 - [ ] Veröffentlichte und unveröffentlichte Inhalte: Objekte, ihre Versionen und Übersetzungen ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - [ ] Entfernte Inhalte im Papierkorb, bis er geleert wird ([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)).
 - [ ] Formulareinsendungen unter **Setup > Gesammelte Informationen** ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
-- [ ] Wer was geändert hat: der Audit-Trail ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Wer was geändert hat: das Prüfprotokoll ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 - [ ] Inhalte von Newslettern und Daten von Abonnenten, falls genutzt ([Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)).
 - [ ] Datensicherungen, die Inhalte enthalten können, die von der Website gelöscht wurden ([Sicherungspläne und Aufbewahrung](../../hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md)).
 - [ ] Die Übersicht dokumentiert, mit einer verantwortlichen Person für jede Quelle.
@@ -56,7 +56,7 @@ ob sie herausgegeben werden müssen, ist eine rechtliche Frage.
 
 - [ ] Auskünfte vor der Herausgabe auf personenbezogene Daten Dritter geprüft.
 - [ ] Exporte von Formulareinsendungen und Benutzerdaten unter Zugriffskontrolle behandelt und gelöscht, wenn der Antrag abgeschlossen ist.
-- [ ] Audit-Einträge enthalten nach der eingestellten Zeit pseudonymisierte Felder; wissen Sie, was sie zeigen können und was nicht ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Audit-Einträge enthalten nach der eingestellten Zeit pseudonymisierte Felder; wissen Sie, was sie zeigen können und was nicht ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Proaktiv veröffentlichen
 

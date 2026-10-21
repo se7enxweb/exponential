@@ -56,7 +56,7 @@ von Exponential erzeugt und kann mit der Entscheidung hochgeladen werden.
 Zu den Rechtsuchenden gehören Menschen ohne Anwalt, Menschen unter Druck, Menschen mit Behinderungen und Menschen mit
 eingeschränkter Kenntnis der Sprache. In der EU fallen die Websites von Gerichten als öffentliche Stellen, mit
 begrenzten Ausnahmen, unter die [Richtlinie (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj). Status von
-Exponential: Administration admin4 **Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508 **Unverified**;
+Exponential: Administration admin4 erfüllt WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508 **Nicht geprüft**;
 öffentliche Designs nicht geprüft ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Hinweisseiten
 in HTML mit einer kurzen Zusammenfassung helfen mehr als PDFs; Leitlinien für einfache Sprache finden Sie unter
 [plainlanguage.gov](https://www.plainlanguage.gov/).
@@ -71,7 +71,7 @@ in HTML mit einer kurzen Zusammenfassung helfen mehr als PDFs; Leitlinien für e
 | Content Security Policy auf der Website (auf Websites standardmäßig aus) | [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md) |
 | Alarmregeln des Audits (Brute-Force und andere) beobachtet | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
 
-Status gegenüber OWASP Top 10: **Partly complies** ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)). Die
+Status gegenüber OWASP Top 10: **Teilweise erfüllt** ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)). Die
 Justiz ist oft kritische Infrastruktur; siehe [NIST CSF 2.0](https://www.nist.gov/cyberframework) oder Ihren nationalen
 Rahmen.
 

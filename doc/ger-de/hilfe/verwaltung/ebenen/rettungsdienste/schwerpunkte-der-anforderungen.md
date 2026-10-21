@@ -46,8 +46,8 @@ Rettungsdienstes.
 Menschen, die während eines Einsatzes lesen, können Angst haben, einen kleinen Bildschirm nutzen, eine schwache
 Verbindung haben oder assistive Technologie verwenden. In der EU erfasst die
 [Richtlinie (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj) die Websites öffentlicher Stellen, und
-[WCAG 2.2](https://www.w3.org/TR/WCAG22/) ist die Referenz. Status von Exponential: Administration admin4
-**Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508 **Unverified**; öffentliche Designs nicht geprüft
+[WCAG 2.2](https://www.w3.org/TR/WCAG22/) ist die Referenz. Status von Exponential: Administration admin4 erfüllt
+WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508 **Nicht geprüft**; öffentliche Designs nicht geprüft
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
 
 | Praxis | Warum |
@@ -75,7 +75,7 @@ häufiger Anweisungen im Voraus vor, freigegeben vor jedem Einsatz.
 Rettungsdienste können je nach nationalem Recht wesentliche Einrichtungen im Sinne von NIS2,
 [Richtlinie (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), sein; anderswo ist
 [NIST CSF 2.0](https://www.nist.gov/cyberframework) ein verbreiteter Rahmen. Der eigene Status von Exponential gegenüber
-OWASP: **Partly complies** ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)).
+OWASP: **Teilweise erfüllt** ([Sicherheitsstandards](../../../../../eng-us/standards/security.md)).
 
 ## Verwandte Seiten
 

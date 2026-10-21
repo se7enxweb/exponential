@@ -3,8 +3,8 @@ title: Fehlerbehebung bei Workflows
 audience: government, admin, editor
 category: public-sector
 order: 150
-summary: Was zu tun ist, wenn freigegebene Inhalte nicht veröffentlicht werden, eine Freigabe auf eine ausgetretene freigebende Person wartet, „Veröffentlichen“ scheinbar nichts tut oder Prozesse fehlschlagen - mit der Seite Setup > Workflow-Prozesse, den Cronjob-Befehlen und einem sicheren Weg zum Abbrechen.
-keywords: Fehlerbehebung bei Workflows, Freigabe hängt, nicht veröffentlicht, ausstehend, Workflow-Prozesse, Prozess abbrechen, Workflow-Cronjob, workflow.php, fehlgeschlagener Prozess, freigebende Person ausgetreten, Veröffentlichen, workflow troubleshooting, approval stuck, not published, pending, workflow processes, cancel process, workflow cronjob, failed process, approver left, Send for publishing
+summary: Was zu tun ist, wenn freigegebene Inhalte nicht veröffentlicht werden, eine Freigabe auf eine ausgetretene freigebende Person wartet, „Zur Veröffentlichung schicken“ scheinbar nichts bewirkt oder Prozesse fehlschlagen - mit der Seite Setup > Workflow-Prozesse, den Cronjob-Befehlen und einem sicheren Weg zum Abbrechen.
+keywords: Fehlerbehebung bei Workflows, Freigabe hängt, nicht veröffentlicht, ausstehend, Workflow-Prozesse, Prozess abbrechen, Workflow-Cronjob, workflow.php, fehlgeschlagener Prozess, freigebende Person ausgetreten, Zur Veröffentlichung schicken, workflow troubleshooting, approval stuck, not published, pending, workflow processes, cancel process, workflow cronjob, failed process, approver left, Send for publishing
 type: help
 ---
 # Fehlerbehebung bei Workflows
@@ -18,7 +18,7 @@ den Nachweis auf.
 1. [Erster Blick](#erster-blick)
 2. [Freigegeben, aber nicht veröffentlicht](#freigegeben-aber-nicht-veröffentlicht)
 3. [Wartet auf eine freigebende Person, die nicht mehr da ist](#wartet-auf-eine-freigebende-person-die-nicht-mehr-da-ist)
-4. [Veröffentlichen hat nichts bewirkt](#veröffentlichen-hat-nichts-bewirkt)
+4. [Zur Veröffentlichung schicken hat nichts bewirkt](#zur-veröffentlichung-schicken-hat-nichts-bewirkt)
 5. [Fehlgeschlagene und festhängende Prozesse](#fehlgeschlagene-und-festhängende-prozesse)
 6. [Sicher abbrechen](#sicher-abbrechen)
 7. [Verwandte Seiten](#verwandte-seiten)
@@ -52,7 +52,7 @@ Eine bereits gestellte Anfrage behält ihre Beteiligten. Wenn niemand darin mehr
 2. Brechen Sie die wartenden Prozesse ab (siehe unten); ihre Versionen werden wieder zu Entwürfen.
 3. Bitten Sie die Autorinnen und Autoren, sie erneut zur Veröffentlichung zu schicken; die neuen Anfragen gehen an die aktuellen Freigebenden.
 
-## Veröffentlichen hat nichts bewirkt
+## Zur Veröffentlichung schicken hat nichts bewirkt
 
 Ein fehlgeschlagener oder abgebrochener Prozess mit demselben Schlüssel (dasselbe Objekt, dieselbe Version, derselbe Workflow und derselbe Benutzer)
 wird beim ersten Versuch entfernt, was die Operation einmal anhält; der zweite Versuch funktioniert. Brechen Sie fehlgeschlagene Prozesse vorher in

@@ -126,7 +126,7 @@ darauf aus (`report-uri` und der Header `Reporting-Endpoints` nennen dann `csp/r
   intervention) werden übersprungen.
 - **Für jeden Besucher offen**: Browser senden Berichte ohne Anmeldung, auch an eine Administration, die von allen eine
   Anmeldung verlangt. `site.ini [SiteAccessSettings] AnonymousAccessList[]` und `[RoleSettings] PolicyOmitList[]`
-  nennen `csp/report`. Ein angemeldeter Browser kann sein Session-Cookie mit einem Bericht senden: Die Prüfung des
+  nennen `csp/report`. Ein angemeldeter Browser kann sein Sitzungs-Cookie mit einem Bericht senden: Die Prüfung des
   Formular-Tokens (ezformtoken) lässt einen POST an `csp/report` mit einem dieser Content-Types unbehelligt; ein
   Formular einer anderen Website kann keinen davon senden, und die Ansicht schreibt nur eine Log-Zeile.
 - **Es kommt nichts zurück**: Die Antwort ist ein Status ohne Body: `204` für einen angenommenen Bericht, `405` für

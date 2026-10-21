@@ -32,7 +32,7 @@ womöglich dieselbe Behandlung brauchen.
 | 6.0.11 (Dez. 2025) | 8.5 | Nullable-Typen, wo PHP 8.5 sie verlangt; Zeta Components auf Releases angehoben, die PHP 8.5 unterstützen; die README nennt die Unterstützung für PHP 8.5. |
 | 6.0.13 (Feb. 2026) | 8.4 | Deprecations des Datentyps Zeit und von `eZOrder::fetchList()` behoben, siehe [die Spezifikation zur Härtung](../../spezifikationen/6.0/sicherheitshaertung-6.0.13.md). |
 | 6.0.15 (Okt. 2026) | 8.0 | PHP 8.0 ist die älteste unterstützte Version (RHEL 9): `array_is_list()` wird definiert, wenn es fehlt (`lib/phpcompat.php`), `fputcsv()` unter 8.0 ohne `$eol`, die Funktionen zum HTML-Escaping erhalten die Standard-Flags von PHP 8.1 ausdrücklich, sodass `wash` auch unter 8.0 einfache Anführungszeichen escapt, eine Syntaxprüfung und ein Boot-Test für PHP 8.0 in der CI. Siehe [Unterstützung für PHP 8.0](php-8.0-unterstuetzung.md). |
-| 6.0.13 (Apr. 2026) | 8.x | Der Session-Handler: `read()` gibt für eine unbekannte Session eine leere Zeichenkette zurück, `gc()` verwendet `time()` und eine Startzeit, und die globale Variable des aktuellen Siteaccess wird vor der Verwendung geprüft. |
+| 6.0.13 (Apr. 2026) | 8.x | Der Session-Handler: `read()` gibt für eine unbekannte Sitzung eine leere Zeichenkette zurück, `gc()` verwendet `time()` und eine Startzeit, und die globale Variable des aktuellen Siteaccess wird vor der Verwendung geprüft. |
 
 ## So prüfen Sie Ihre Installation
 

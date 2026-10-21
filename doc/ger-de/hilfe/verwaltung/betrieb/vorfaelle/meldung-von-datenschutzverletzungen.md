@@ -3,8 +3,8 @@ title: Meldung von Datenschutzverletzungen
 audience: government, admin, project-manager
 category: public-sector
 order: 70
-summary: Wie das technische Team die Entscheidung einer öffentlichen Stelle über die Meldung einer Verletzung des Schutzes personenbezogener Daten unterstützt - feststellen, welche Daten, wessen Daten und wann, mit dem Audit-Trail, den Logs und den Exporten, die Exponential bietet - ohne Rechtsberatung zu geben.
-keywords: Datenschutzverletzung, Verletzung des Schutzes personenbezogener Daten, Meldung, DSGVO, Aufsichtsbehörde, Datenschutzbeauftragte, Beweise, Audit-Trail, Zeitablauf, betroffene Personen, Vorfall, Datenschutz, data breach, personal data breach, notification, GDPR, supervisory authority, data protection officer, evidence, audit trail, timeline, affected persons, incident, privacy
+summary: Wie das technische Team die Entscheidung einer öffentlichen Stelle über die Meldung einer Verletzung des Schutzes personenbezogener Daten unterstützt - feststellen, welche Daten, wessen Daten und wann, mit dem Prüfprotokoll, den Logs und den Exporten, die Exponential bietet - ohne Rechtsberatung zu geben.
+keywords: Datenschutzverletzung, Verletzung des Schutzes personenbezogener Daten, Meldung, DSGVO, Aufsichtsbehörde, Datenschutzbeauftragte, Beweise, Prüfprotokoll, Zeitablauf, betroffene Personen, Vorfall, Datenschutz, data breach, personal data breach, notification, GDPR, supervisory authority, data protection officer, evidence, audit trail, timeline, affected persons, incident, privacy
 type: help
 ---
 # Meldung von Datenschutzverletzungen
@@ -46,7 +46,7 @@ Führen Sie ab dem ersten Anzeichen einen Zeitablauf.
 
 | Frage | Quelle in Exponential |
 |---|---|
-| Wann es begann | Audit-Trail (Anmeldungen im Kanal `access`, Änderungen im Kanal `content`), `security.log`, Logs des Webservers |
+| Wann es begann | Prüfprotokoll (Anmeldungen im Kanal `access`, Änderungen im Kanal `content`), `security.log`, Logs des Webservers |
 | Welche Konten gehandelt haben | `./console exp:audit search --login=<login> --allow-root-user`; die Konsole nach Benutzer gefiltert |
 | Was exportiert wurde | Ereignisse `data.export.csv` (Kontoliste, Exporte von Unterelementen) mit Zeilenzahlen; Audit-Exporte |
 | Welche Datensätze sich geändert haben | der Kanal `content`; Versionsseiten |

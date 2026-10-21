@@ -3,8 +3,8 @@ title: Transparenz in Exponential auf einen Blick
 audience: government, project-manager, admin, editor
 category: public-sector
 order: 20
-summary: Ein Überblick über die Funktionen von Exponential, die eine öffentliche Stelle für Transparenz und Informationsfreiheit nutzt (Veröffentlichen, Antragsformulare, Freigabe, Versionsgeschichte, Audit-Trail, Exporte), mit dem, was jede leistet, und den Lücken, die Sie einplanen sollten.
-keywords: Transparenz, Informationsfreiheit, IFG, Informationszugang, proaktive Veröffentlichung, Offenlegungsprotokoll, Audit-Trail, Versionsgeschichte, Rechenschaft, Überblick, transparency, freedom of information, FOI, FOIA, access to information, proactive disclosure, disclosure log, audit trail, version history, accountability, overview
+summary: Ein Überblick über die Funktionen von Exponential, die eine öffentliche Stelle für Transparenz und Informationsfreiheit nutzt (Veröffentlichen, Antragsformulare, Freigabe, Versionsgeschichte, Prüfprotokoll, Exporte), mit dem, was jede leistet, und den Lücken, die Sie einplanen sollten.
+keywords: Transparenz, Informationsfreiheit, IFG, Informationszugang, proaktive Veröffentlichung, Offenlegungsprotokoll, Prüfprotokoll, Versionsgeschichte, Rechenschaft, Überblick, transparency, freedom of information, FOI, FOIA, access to information, proactive disclosure, disclosure log, audit trail, version history, accountability, overview
 type: help
 ---
 # Transparenz in Exponential auf einen Blick
@@ -52,9 +52,9 @@ dazu. Die anderen Seiten dieses Bereichs behandeln jede Aufgabe im Einzelnen.
 | Frage | Funktion | Dokumentation |
 |---|---|---|
 | Was stand letzten Monat auf der Seite? | Versionen, **Zwei Versionen vergleichen** | [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md) |
-| Wer hat es geändert oder entfernt? | Audit-Trail, standardmäßig eingeschaltet, mit Hash-Kette | [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Wer hat es geändert oder entfernt? | Prüfprotokoll, standardmäßig eingeschaltet, mit Hash-Kette | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | Wer darf was ändern? | Rollen, Sektionen, Objektzustände | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
-| Wurde die Aufzeichnung verändert? | `./console exp:audit verify` | [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes) |
+| Wurde die Aufzeichnung verändert? | `./console exp:audit verify` | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes) |
 
 ## Lücken, die Sie einplanen sollten
 
@@ -64,7 +64,7 @@ dazu. Die anderen Seiten dieses Bereichs behandeln jede Aufgabe im Einzelnen.
 - **Kein Werkzeug zum Schwärzen.** Das Schwärzen von Dokumenten ist ein manueller redaktioneller Schritt in dem
   Programm, mit dem das Dokument erstellt wurde; Exponential veröffentlicht die Datei, die Sie hochladen (siehe
   „Schwärzen ist Handarbeit“).
-- **Keine Zertifizierung für die Schriftgutverwaltung.** Versionen und der Audit-Trail helfen; sie machen die Website
+- **Keine Zertifizierung für die Schriftgutverwaltung.** Versionen und das Prüfprotokoll helfen; sie machen die Website
   nicht zu einem Schriftgutsystem im Sinne von ISO 15489-1
   ([ISO 15489-1:2016](https://www.iso.org/standard/62542.html)).
 - **Versionsgrenzen.** Alte Versionen werden jenseits der Grenzen in `content.ini [VersionManagement]` entfernt
@@ -74,7 +74,7 @@ dazu. Die anderen Seiten dieses Bereichs behandeln jede Aufgabe im Einzelnen.
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
 - [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)
-- [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

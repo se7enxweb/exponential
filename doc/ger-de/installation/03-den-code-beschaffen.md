@@ -341,7 +341,7 @@ andere aktivieren Sie in der Administration (**Setup > Extensions**) oder in
 ActiveExtensions[]=ezfind
 ```
 
-Leeren Sie danach den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und starten Sie Velocity neu, wenn es die
+Leeren Sie danach den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und starten Sie Velocity neu, wenn er die
 Website ausliefert.
 
 Zwei Pakete aus `composer.json` kommen absichtlich inaktiv an und werden eingeschaltet, wenn Sie sie brauchen: die
@@ -388,7 +388,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `doc/` | ja | Die Dokumentation, einschließlich dieses Handbuchs. |
 | `extension/` | teilweise | Extensions. Das Repository liefert `ezjscore`, `ezoe`, `ezformtoken` und `expservices` aus; Composer fügt die übrigen hinzu. |
 | `kernel/` | ja | Der Kernel: Inhaltsmodell, Module, Datentypen, der Setup-Assistent (`kernel/setup/`), die Klassen der Konsolenbefehle (`kernel/private/classes/commands/`). |
-| `lib/` | ja | Die allgemeinen Bibliotheken: Datenbanktreiber (`lib/ezdb/`), Templates (`lib/eztemplate/`), Dateien, Locales, Bilder, Sessions; `lib/version.php` enthält die Version. |
+| `lib/` | ja | Die allgemeinen Bibliotheken: Datenbanktreiber (`lib/ezdb/`), Templates (`lib/eztemplate/`), Dateien, Locales, Bilder, Sitzungen; `lib/version.php` enthält die Version. |
 | `schemas/` | ja | XML-Schemas (das Schema der Übersetzungsdateien). |
 | `settings/` | ja | Die ausgelieferten `.ini`-Dateien. `settings/siteaccess/<name>/` und `settings/override/` enthalten die Einstellungen Ihrer Installation und werden von den Installern geschrieben. |
 | `share/` | ja | `db_schema.dba` und `db_data.dba` (die Datenbank, die der Installer anlegt), `locale/` und `translations/`, `codepages/` und `transformations/` (Zeichensätze), `icons/`, `maintenance.html` und `filelist.md5`, das Dateimanifest, mit dem die Upgrade-Prüfung der Administration vergleicht. |

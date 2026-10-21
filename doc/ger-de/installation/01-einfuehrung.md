@@ -73,7 +73,7 @@ Datenbank gehören der Installation selbst; alles andere lässt sich aus Git und
 ### Der Kernel
 
 Der Kernel ist der Code in `kernel/` und `lib/`. `lib/` enthält die allgemeinen Bibliotheken (Datenbanktreiber in
-`lib/ezdb/`, die Template-Engine in `lib/eztemplate/`, Dateien, Locales, Bilder, Sessions); `kernel/` enthält das
+`lib/ezdb/`, die Template-Engine in `lib/eztemplate/`, Dateien, Locales, Bilder, Sitzungen); `kernel/` enthält das
 Inhaltsmodell, die Module, die auf URLs antworten (`content/view`, `user/login`, `setup/...`), den Setup-Assistenten
 (`kernel/setup/`), die Konsolenbefehle (`kernel/private/classes/commands/`) und die Datentypen. Die Version des
 Kernels ist in `lib/version.php` definiert (`VERSION_MAJOR`, `VERSION_MINOR`, `VERSION_RELEASE`, `VERSION_STATE`);
@@ -239,7 +239,7 @@ In effect:
 ```
 
 Einstellungen werden in `var/cache/ini/` zwischengespeichert; leeren Sie nach dem Bearbeiten einer Datei von Hand
-diesen Cache mit `php bin/php/ezcache.php --clear-tag=ini`, und starten Sie Velocity neu, falls es die Site
+diesen Cache mit `php bin/php/ezcache.php --clear-tag=ini`, und starten Sie Velocity neu, falls er die Site
 ausliefert, denn seine Worker halten die Einstellungen im Speicher. Die Platzierungsregeln sind in
 [Platzierung von INI-Overrides](../spezifikationen/6.0/ini-override-platzierungen.md) spezifiziert; der Befehl, der
 Einstellungen in jedem Geltungsbereich liest und schreibt, ist [exp:ini](../../eng-us/features/6.0/exp-ini-command.md).

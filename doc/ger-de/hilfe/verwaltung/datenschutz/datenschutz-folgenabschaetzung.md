@@ -28,7 +28,7 @@ oder KI-Funktionen möglicherweise schon. Exponential entscheidet das nicht für
 
 - Konten für Bürgerinnen und Bürger mit persönlichen Profilen oder Mitgliederbereiche mit sensiblen Themen.
 - Formulare, die besondere Kategorien von Daten (Gesundheit, soziale Lage) oder Daten über Kinder erheben.
-- Überwachung von Beschäftigten über den Audit-Trail über Sicherheitszwecke hinaus.
+- Überwachung von Beschäftigten über das Prüfprotokoll über Sicherheitszwecke hinaus.
 - Webanalyse oder Tracking über Dienste hinweg.
 - KI-Verarbeitung von Inhalten oder Bildern, die personenbezogene Daten enthalten (die optionale Erweiterung
   Exponential Intelligence sendet Inhalte nach ihrer Datenrichtlinie an Anbieter).
@@ -54,7 +54,7 @@ Nutzen Sie die Seiten dieses Bereichs:
 | Zu lange aufbewahrte Daten | Aufbewahrungseinstellungen für Audit, Protokolle und Einwilligungen; Routinen zum Entfernen bei Formularen |
 | Datenabfluss über Protokolle | Maskierung in Anfrageprotokollen und im Protokollbetrachter |
 | Daten an Drittanbieter | Erweiterungen standardmäßig inaktiv; CSP beschränkt Hosts; Einwilligung vor dem Laden |
-| Unentdeckter Missbrauch | Audit-Trail standardmäßig an, Warnregeln, Weiterleitung an ein SIEM |
+| Unentdeckter Missbrauch | Prüfprotokoll standardmäßig an, Warnregeln, Weiterleitung an ein SIEM |
 | Versehentliche Veröffentlichung | Versionen, Vorschau, Freigabe-Workflows, Papierkorb ([Workflows](../../../anleitungen/workflows.md)) |
 
 ## Verwandte Seiten

@@ -51,7 +51,7 @@ Die Klauseltexte, die in den Vertrag selbst gehören, stehen in den [Ausschreibu
 
 - Kennungen von Anforderungen (`ACC-01`, `SEC-03` …) sind Beispiele; nummerieren Sie sie für Ihre Ausschreibung neu.
 - Werte in spitzen Klammern (`<time>`, `<country>`) füllen Sie aus. Diese Hilfe schlägt nie Zahlen vor.
-- Statusangaben (Complies, Partly complies, Unverified, Does not comply) sind von den Seiten zu den Standards übernommen
+- Statusangaben (Erfüllt, Teilweise erfüllt, Nicht geprüft, Nicht erfüllt) sind von den Seiten zu den Standards übernommen
   und dürfen nicht aufgewertet werden.
 
 ## Verwandte Seiten

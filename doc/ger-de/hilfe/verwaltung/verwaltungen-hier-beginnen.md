@@ -58,7 +58,7 @@ verantwortungsvoll.
   ([Standards zur Internationalisierung](../../../eng-us/standards/internationalization.md),
   [Sprachen mit Schreibrichtung von rechts nach links](../../../eng-us/features/6.0/right-to-left.md)).
 - **Von Haus aus nachvollziehbar.** Jede veröffentlichte Änderung behält ihre Versionsgeschichte, und ein
-  manipulationssicherer Audit-Trail ist standardmäßig eingeschaltet ([Audit-Trail](../../../eng-us/features/6.0/audit-trail.md)).
+  manipulationssicheres Prüfprotokoll ist standardmäßig eingeschaltet ([Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Wie dieser Bereich aufgebaut ist
 
@@ -66,7 +66,7 @@ verantwortungsvoll.
 |---|---|
 | [Verwaltungsebenen](../../../eng-us/help/government/levels/README.md) | Was ein Ministerium, ein Land oder eine Region, eine Kommune, eine Behörde, eine Bibliothek, eine Schule oder Hochschule, ein Gericht, ein Parlament, eine Gesundheitsbehörde oder ein Rettungsdienst typischerweise veröffentlicht, ein Inhaltsmodell dafür, Rollen, Prioritäten und ein Plan für die ersten 90 Tage |
 | [Barrierefreiheit](../../../eng-us/help/government/accessibility/README.md) | WCAG 2.2 AA, EN 301 549 und Section 508, abgebildet auf das, was Exponential mitbringt, jede Aussage belegt durch die [Standards zur Barrierefreiheit](../../../eng-us/standards/accessibility.md); Erklärungen, Prüfungen, barrierefreie Inhalte |
-| [Sicherheit](../../../eng-us/help/government/security/README.md) | OWASP, Härtung, der Audit-Trail, zweistufige Anmeldung, die Content Security Policy, request-shield |
+| [Sicherheit](../../../eng-us/help/government/security/README.md) | OWASP, Härtung, das Prüfprotokoll, zweistufige Anmeldung, die Content Security Policy, request-shield |
 | [Datenschutz](datenschutz/README.md) | DSGVO-Funktionen, Datenminimierung, Aufbewahrung, Einwilligungsnachweise, Löschung; andere Rechtsordnungen allgemein eingeordnet |
 | [Schriftgut und Archivierung](schriftgut-und-archivierung/README.md) | Versionen, Verlauf, Archivieren von Bekanntmachungen, Aufbewahrungspläne, Exporte, Erhalt von URLs |
 | [Offene Daten](offene-daten/README.md) | Datensätze mit Metadaten, Lizenzen und stabilen URLs veröffentlichen, und die vorhandenen APIs und Feeds |
@@ -83,10 +83,10 @@ verantwortungsvoll.
 
 | Anforderung | Was mit Exponential ausgeliefert wird | Was bei Ihrer Organisation bleibt | Quelle |
 |---|---|---|---|
-| Barrierefreiheit | Administration admin4 und admin4l, gegen WCAG 2.2 AA entworfen und mit Regressionstests geprüft (Status „Partly complies“, teilweise erfüllt); EN 301 549 und Section 508 „Unverified“ (nicht überprüft); kein VPAT und kein Accessibility Conformance Report | die Prüfung Ihres öffentlichen Designs und Ihrer Inhalte, die Veröffentlichung Ihrer Erklärung zur Barrierefreiheit | [Standards zur Barrierefreiheit](../../../eng-us/standards/accessibility.md) |
-| Sicherheit | Gegenmaßnahmen für jede Kategorie der OWASP Top 10 (2021), Sicherheits-Header, CSRF-Token, Audit-Trail standardmäßig eingeschaltet, Content Security Policy (in der Administration standardmäßig nur im Berichtsmodus) | Kontosperre, zweistufige Anmeldung, HSTS und das Erzwingen der CSP einschalten; Patches einspielen; Überwachung | [Sicherheitsstandards](../../../eng-us/standards/security.md), [Sicherheitshärtung](../sicherheitshaertung.md), dann [Sicherheit](../../../eng-us/help/government/security/README.md) |
+| Barrierefreiheit | Administration admin4 und admin4l, gegen WCAG 2.2 AA entworfen und mit Regressionstests geprüft (Status „Teilweise erfüllt“); EN 301 549 und Section 508 „Nicht geprüft“; kein VPAT und kein Accessibility Conformance Report | die Prüfung Ihres öffentlichen Designs und Ihrer Inhalte, die Veröffentlichung Ihrer Erklärung zur Barrierefreiheit | [Standards zur Barrierefreiheit](../../../eng-us/standards/accessibility.md) |
+| Sicherheit | Gegenmaßnahmen für jede Kategorie der OWASP Top 10 (2021), Sicherheits-Header, CSRF-Token, Prüfprotokoll standardmäßig eingeschaltet, Content Security Policy (in der Administration standardmäßig nur im Berichtsmodus) | Kontosperre, zweistufige Anmeldung, HSTS und das Erzwingen der CSP einschalten; Patches einspielen; Überwachung | [Sicherheitsstandards](../../../eng-us/standards/security.md), [Sicherheitshärtung](../sicherheitshaertung.md), dann [Sicherheit](../../../eng-us/help/government/security/README.md) |
 | Datenschutz | Einwilligungsnachweise für optionale E-Mails, Löschung beim Entfernen eines Kontos, pseudonymisierte Audit-Einträge, maskierte Protokolle mit Aufbewahrungsgrenzen, vom Kernel nur funktionale Cookies | Zwecke und Rechtsgrundlagen, die Datenschutzerklärung, das Verzeichnis von Verarbeitungstätigkeiten, jeder Dienst eines Drittanbieters, den Sie hinzufügen, Anfragen betroffener Personen | [Datenschutzstandards](../../../eng-us/standards/privacy.md) |
-| Schriftgut | Versionsgeschichte pro Inhaltsobjekt, Papierkorb und Wiederherstellen, Objektzustände und Sektionen, manipulationssichere Audit-Einträge | Ihr Aufbewahrungsplan, Abgaben an ein Archiv | [Inhaltsgeschichte](../../anleitungen/inhaltsverlauf.md), [Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
+| Schriftgut | Versionsgeschichte pro Inhaltsobjekt, Papierkorb und Wiederherstellen, Objektzustände und Sektionen, manipulationssichere Audit-Einträge | Ihr Aufbewahrungsplan, Abgaben an ein Archiv | [Inhaltsgeschichte](../../anleitungen/inhaltsverlauf.md), [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | Sprachen | Übersetzungen pro Objekt, ein Siteaccess pro Sprache, Oberfläche und Inhalte von rechts nach links | Übersetzung, Terminologie, Redigieren in einfacher Sprache | [Übersetzungen und Sprachen](../../../eng-us/features/6.0/translations-and-languages.md) |
 | Souveränität | GPL-Quellcode, Selbstbetrieb, eine Auswahl an Datenbanken (SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL) | wo Sie hosten, wer Sie unterstützt, Ihr Ausstiegsplan | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 
@@ -111,7 +111,7 @@ verantwortungsvoll.
 1. **Woche 1: die Nachweise verstehen.** Lesen Sie die vier Standardseiten, von denen Ihre Anforderungen abhängen:
    [Barrierefreiheit](../../../eng-us/standards/accessibility.md), [Sicherheit](../../../eng-us/standards/security.md),
    [Datenschutz](../../../eng-us/standards/privacy.md) und [Internationalisierung](../../../eng-us/standards/internationalization.md).
-   Notieren Sie jedes „Partly complies“ oder „Unverified“, das für Sie zählt.
+   Notieren Sie jedes „Teilweise erfüllt“ oder „Nicht geprüft“, das für Sie zählt.
 2. **Woche 2: ausprobieren.** Installieren Sie mit einem einzigen Befehl eine Testsite auf Ihrem eigenen Rechner
    ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)) und gehen Sie die Administration
    mit den Menschen durch, die später bearbeiten ([Erste Schritte](../erste-schritte.md),

@@ -54,8 +54,8 @@ und einmal im Jahr durch. Jeder Punkt nennt die Seite dieses Bereichs, die ihn e
 
 - [ ] Versionsgrenzen für aktenrelevante Klassen angehoben (siehe „Versionen länger aufbewahren“).
 - [ ] `content/versionremove` und `content/remove` für aktenrelevante Sektionen beschränkt.
-- [ ] Audit-Trail eingeschaltet, Aufbewahrung an den Aufbewahrungsplan angepasst, `exp:audit verify` regelmäßig
-  ausgeführt (siehe „Der Audit-Trail für ‚wer hat was geändert‘“).
+- [ ] Prüfprotokoll eingeschaltet, Aufbewahrung an den Aufbewahrungsplan angepasst, `exp:audit verify` regelmäßig
+  ausgeführt (siehe „Das Prüfprotokoll für ‚wer hat was geändert‘“).
 - [ ] Audit-Schlüssel in `settings/override/audit.ini.append.php` gesichert.
 
 ## Jährliche Überprüfung

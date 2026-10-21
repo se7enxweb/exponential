@@ -54,7 +54,7 @@ In diesen Texten kehren dieselben praktischen Pflichten wieder. Jede hat eine Se
 ## Wo Exponential steht
 
 - **Das Bearbeitungswerkzeug.** Die Administration admin4 und admin4l ist gegen WCAG 2.2 AA entworfen und getestet,
-  und das Projekt bewertet sie mit **Partly complies**. EN 301 549 und Section 508 sind **Unverified**. Es gibt kein
+  und das Projekt bewertet sie mit **Teilweise erfüllt**. EN 301 549 und Section 508 sind **nicht geprüft**. Es gibt kein
   VPAT und keinen ACR ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#summary)).
 - **Die öffentliche Website.** Die Designs, die Ihre öffentlichen Seiten darstellen, prüft das Projekt nicht
   ([Bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)). Ihre Barrierefreiheit liegt in der Verantwortung
@@ -63,7 +63,7 @@ In diesen Texten kehren dieselben praktischen Pflichten wieder. Jede hat eine Se
   das als Lücke gegenüber der Richtlinie über barrierefreie Websites
   ([EN 301 549](../../../../eng-us/standards/accessibility.md#en-301-549)).
 - **Unterstützung beim Erstellen.** EN 301 549 Abschnitt 11.8 (das Werkzeug hilft Autorinnen und Autoren,
-  barrierefreie Inhalte zu erstellen) wurde nicht überprüft. Hilfreiche Funktionen gibt es: ein Feld für Alternativtext
+  barrierefreie Inhalte zu erstellen) wurde nicht geprüft. Hilfreiche Funktionen gibt es: ein Feld für Alternativtext
   an Bildern, das eine Klasse verpflichtend machen kann (die Option „Alternativtext ist erforderlich“ an
   Bildattributen, seit 6.0.15), sowie Überschriften, Tabellenbeschriftungen und Tabellenköpfe im Rich Text.
 

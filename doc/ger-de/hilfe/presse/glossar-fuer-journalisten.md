@@ -92,7 +92,7 @@ und die Geschichte.
 | Begriff | Bedeutung |
 |---|---|
 | **CSP** | Content Security Policy: sagt dem Browser, welche Skripte eine Seite ausführen darf. [Thema: die Content Security Policy](thema-content-security-policy.md) |
-| **Audit-Trail** | Ein manipulationssicheres Protokoll dessen, was in der Administration geschehen ist |
+| **Prüfprotokoll** | Ein manipulationssicheres Protokoll dessen, was in der Administration geschehen ist |
 | **Zweistufige Anmeldung (2FA)** | Ein zweiter Faktor bei der Anmeldung, etwa ein Code aus einer App |
 | **Vertrauliche Meldung** | Eine Sicherheitslücke vertraulich melden, damit sie behoben ist, bevor Einzelheiten öffentlich werden. [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md) |
 

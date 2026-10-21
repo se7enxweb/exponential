@@ -37,7 +37,7 @@ git_manager, das sie in `var/site/backups/captions` speichert), liegen auf demse
 
 ## Wohin Kopien gehen dürfen
 
-Eine Datensicherung enthält dieselben Daten wie die Website: Inhalte, Konten, Formulareingaben, den Audit-Trail und
+Eine Datensicherung enthält dieselben Daten wie die Website: Inhalte, Konten, Formulareingaben, das Prüfprotokoll und
 Zugangsdaten. Ihre Regeln zum Speicherort der Daten gelten für sie wie für die Live-Website
 ([Speicherort der Daten und was wo gespeichert wird](../hosting/datenstandort-und-was-wo-gespeichert-wird.md)).
 
@@ -76,7 +76,7 @@ nur auf dem verlorenen Server lag, ist keine Datensicherung.
 
 - Bewahren Sie Verschlüsselungsschlüssel und Passphrasen in Ihrem Geheimnisspeicher auf, mit mindestens zwei Personen,
   die sie erreichen können.
-- Bewahren Sie dort auch eine Kopie der Schlüssel des Audit-Trails auf.
+- Bewahren Sie dort auch eine Kopie der Schlüssel des Prüfprotokolls auf.
 - Üben Sie eine Wiederherstellung aus der Kopie außer Haus, einschließlich der Entschlüsselung, als Teil von
   [Wiederherstellung testen](wiederherstellungstests.md).
 
@@ -92,9 +92,9 @@ verschlüsseln. Hilfreiche Praktiken:
 - mehrere Generationen, damit eine Datensicherung, die nach Beginn des Angriffs erstellt wurde, nicht die einzige ist
   ([Kompromittierte Website](../../../hosting/runbooks/kompromittierte-website.md)).
 
-Die Referenzkonfiguration des Audit-Trails für lange Aufbewahrung nutzt denselben Gedanken: Archive auf einem Mount,
+Die Referenzkonfiguration des Prüfprotokolls für lange Aufbewahrung nutzt denselben Gedanken: Archive auf einem Mount,
 dem der Webserver Dateien hinzufügen, den er aber nicht ändern kann
-([Archive des Audit-Trails und Datensicherung](audit-trail-archive-und-datensicherungen.md)).
+([Archive des Prüfprotokolls und Datensicherung](audit-trail-archive-und-datensicherungen.md)).
 
 ## Checkliste
 

@@ -3,8 +3,8 @@ title: Exponential-Begriffe für die Verwaltung
 audience: government, project-manager, admin, editor
 category: public-sector
 order: 70
-summary: Die Exponential-Begriffe, denen eine öffentliche Stelle am häufigsten begegnet, erklärt danach, was sie für eine Abteilung, ein Website-Team oder eine Beschaffung bedeuten - Siteaccess, Sektion, Rolle, Objektzustand, Workflow, Paket, Erweiterung, Velocity, Audit-Trail und weitere - mit Links zu den Seiten, die sie erklären.
-keywords: Exponential-Begriffe, Siteaccess, Sektion, Rolle, Richtlinie, Objektzustand, Workflow, Inhaltsklasse, Knoten, Paket, Erweiterung, Velocity, Audit-Trail, Editor-Siteaccess, Multisite, öffentlicher Sektor, Exponential terms, section, role, policy, object state, content class, node, package, extension, audit trail, Editor siteaccess, multisite, public sector
+summary: Die Exponential-Begriffe, denen eine öffentliche Stelle am häufigsten begegnet, erklärt danach, was sie für eine Abteilung, ein Website-Team oder eine Beschaffung bedeuten - Siteaccess, Sektion, Rolle, Objektzustand, Workflow, Paket, Erweiterung, Velocity, Prüfprotokoll und weitere - mit Links zu den Seiten, die sie erklären.
+keywords: Exponential-Begriffe, Siteaccess, Sektion, Rolle, Richtlinie, Objektzustand, Workflow, Inhaltsklasse, Knoten, Paket, Erweiterung, Velocity, Prüfprotokoll, Editor-Siteaccess, Multisite, öffentlicher Sektor, Exponential terms, section, role, policy, object state, content class, node, package, extension, audit trail, Editor siteaccess, multisite, public sector
 type: reference
 ---
 # Exponential-Begriffe für die Verwaltung
@@ -41,7 +41,7 @@ Organisation bedeutet, mit der Seite, die ihn vermittelt. Sie wiederholt nicht d
 | **Sektion** (section) | Eine Kennzeichnung eines Teils der Inhalte, auf die Rollen beschränkt werden können; oft eine pro Abteilung ([Sektionen](../../../anleitungen/sektionen.md)) |
 | **Objektzustand** (object state) | Eine eigene Stufe, etwa „Entwurf zur rechtlichen Prüfung“, von der Rechte abhängen können ([Objektzustände](../../../anleitungen/objektzustaende.md)) |
 | **Workflow** | Regeln, die bei Ereignissen ablaufen, etwa das Zurückhalten einer Version zur Freigabe vor dem Veröffentlichen ([Workflows](../../../anleitungen/workflows.md)) |
-| **Audit-Trail** (audit trail) | Die manipulationssichere Aufzeichnung, wer was getan hat, standardmäßig eingeschaltet ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)) |
+| **Prüfprotokoll** (audit trail) | Die manipulationssichere Aufzeichnung, wer was getan hat, standardmäßig eingeschaltet ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
 
 ## Mehrere Websites und Abteilungen
 

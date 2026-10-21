@@ -286,7 +286,7 @@ die Aggregate `BIT_OR` und `BIT_AND`, mit denen die Content-Engine Sprachmasken 
 `UPDATE ... JOIN`; und seit 6.0.15 eine **Schreibwarteschlange**: Jede Transaktion nimmt eine exklusive Sperre auf
 `<database>.writer-lock` und führt dann `BEGIN IMMEDIATE` aus, sodass gleichzeitige Veröffentlichungen warten, bis sie
 an der Reihe sind (bis zu `SQLiteTransactionWait` Sekunden, Standard 25), statt mit „database is locked“
-fehlzuschlagen. Session-Anweisungen, die es nur in MySQL gibt (`SET NAMES`, `SET FOREIGN_KEY_CHECKS` und ähnliche),
+fehlzuschlagen. Sitzungsanweisungen, die es nur in MySQL gibt (`SET NAMES`, `SET FOREIGN_KEY_CHECKS` und ähnliche),
 werden angenommen und ignoriert.
 
 **Wann es passt.** Ein Rechner, beliebig viele Leser, ein Redaktionsteam. In den Lasttests des Projekts skalierten
@@ -400,13 +400,13 @@ Treiber `eZOracleDB`, den Schema-Handler `eZOracleSchema`, Konsolenbefehle (`ext
 für Sites, die Oracle verwenden.
 
 **Voraussetzungen.** Oracle Database 19c oder neuer mit dem Zeichensatz `AL32UTF8`; PHP mit `oci8`, gebaut gegen einen
-Oracle-Client (der Instant Client genügt; `ORACLE_HOME` wird mit ihm nicht gebraucht); ein Benutzer, der Sessions,
+Oracle-Client (der Instant Client genügt; `ORACLE_HOME` wird mit ihm nicht gebraucht); ein Benutzer, der Sitzungen,
 Tabellen, Views, Trigger, Sequenzen und Prozeduren anlegen darf. `php extension/ezoracle/bin/php/ora-grant.php` gibt
 die Berechtigungen aus, die ein DBA vergeben muss.
 
 **Verbindungen.** `ezoracle.ini [ConnectionSettings]` bietet persistente Verbindungen, Database Resident Connection
 Pooling (DRCP, damit sich Hunderte von PHP-Workern einen Pool von Serverprozessen teilen), Wiederholungen, Failover,
-Timeouts für Aufrufe und Session-Tracing. Jede dieser Funktionen ist standardmäßig ausgeschaltet. Kommen die
+Timeouts für Aufrufe und Sitzungs-Tracing. Jede dieser Funktionen ist standardmäßig ausgeschaltet. Kommen die
 Einstellungen aus einer Site-Erweiterung statt aus `settings/override/`, führen Sie diese Erweiterung in
 `ActiveExtensions[]` **vor** `ezoracle` auf.
 
@@ -522,7 +522,7 @@ dass das Verzeichnis der Erweiterung `extension/mssql` heißt.
 | `UPDATE ... JOIN` | Nicht vorhanden | Noch zu tun (`UPDATE t SET ... FROM t JOIN ...`) |
 | Ein Schema-Handler | `eZMssqlSchema`, in beide Richtungen | Konstruktor für PHP 8; `NVARCHAR(MAX)` statt des veralteten `ntext`; eine Überprüfung der Spaltenübersetzungen anhand der heutigen `share/db_schema.dba` |
 | SQL-Dateien, Installer-Einträge, Erweiterungen, Tests und CI | Nur Installationshinweise | Alles noch zu tun |
-| Session-Anweisungen, Groß- und Kleinschreibung und Kollation | Nicht behandelt | Noch zu tun |
+| Sitzungsanweisungen, Groß- und Kleinschreibung und Kollation | Nicht behandelt | Noch zu tun |
 
 Zusammengenommen zeigt xrowmssql, wie jedes Teil für SQL Server schon einmal gelöst wurde, und liefert einen
 Schema-Handler und ein Treibergerüst als Ausgangspunkt; damit es auf Exponential 6 läuft, muss es auf PHP 8 und
@@ -539,7 +539,7 @@ hat.
 | Ein Schema-Handler | `lib/ezdbschema/classes/` und `settings/dbschema.ini` | `.dba` in `CREATE TABLE` mit den Typen von SQL Server umsetzen (`NVARCHAR`, `NVARCHAR(MAX)`, `INT IDENTITY`), Indizes (innerhalb der Größengrenzen von SQL Server für Indexschlüssel) und wieder zurück für die Upgrade-Prüfung |
 | SQL-Dateien | `kernel/sql/<engine>/`, `update/database/<engine>/` | das erzeugte Schema und die Update-Dateien jedes späteren Releases |
 | Installer-Einträge | `eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`, `settings/setup.ini [database_extensions]`, `bin/php/install.php` | die Auswahl im Assistenten, die Prüfung der Erweiterung, der Alias für `--db` |
-| Session-Anweisungen | der Treiber | `SET`-Anweisungen, die es nur in MySQL gibt, ignorieren, wie es der SQLite-Treiber tut |
+| Sitzungsanweisungen | der Treiber | `SET`-Anweisungen, die es nur in MySQL gibt, ignorieren, wie es der SQLite-Treiber tut |
 | Groß- und Kleinschreibung und Kollation | die Datenbank | Die Standardkollationen von SQL Server vergleichen wie die von MySQL ohne Beachtung der Groß- und Kleinschreibung; wählen Sie eine UTF-8-Kollation (SQL Server 2019 und neuer) oder `NVARCHAR`-Spalten |
 | Erweiterungen | jede Erweiterung mit eigenem SQL | dieselbe Überprüfung, die die Portierungen auf PostgreSQL und Oracle brauchten: Backticks, `LIMIT`, MySQL-Funktionen |
 | Tests und CI | `tests/`, `.github/workflows/` | ein CI-Job mit einem SQL-Server-Container, wie ihn die Jobs für MySQL und PostgreSQL haben |
@@ -592,7 +592,7 @@ ist.
 - **MongoDB**: Die Performance hängt von der Anzahl der Anweisungen pro Seite ab; legen Sie die Indizes aus
   `bin/mongodb/create_indexes.js` an, ohne die Abfragen auf Teilbäume und Suchen nach URL-Aliasen ganze Collections
   durchlaufen.
-- **Oracle**: Eine neue dedizierte Session kostet einige zehn Millisekunden; verwenden Sie `Persistent=enabled` und
+- **Oracle**: Eine neue dedizierte Sitzung kostet einige zehn Millisekunden; verwenden Sie `Persistent=enabled` und
   DRCP (`ezoracle.ini [ConnectionSettings]`) sowie die `Prefetch`-Einstellungen von `[PerformanceSettings]`.
 - **Langsame Anweisungen**: `[DatabaseSettings] SlowQueriesOutput=<milliseconds>` mit `SQLOutput=enabled` listet auf
   jeder Engine die langsameren Anweisungen in der Debug-Ausgabe auf; auf MySQL und MariaDB ergänzt
@@ -659,7 +659,7 @@ Wegwerf-Datenbank pro Test laufen.
 | 2. PostgreSQL | ja, Datenbanktests | der Job „Database tests (postgresql, PHP 8.3)“ mit einem `postgres:15`-Service und `pgcrypto`, `tests/runtests.php --dsn postgresql://... --db-per-test` |
 | 3. MongoDB | Unit-Tests des Adapters | der PHPUnit-Job lädt `mongodb` und installiert `mongodb/mongodb`; die Suite `mongodb` (Adaptertests ohne Server) läuft; die Gruppe `mongodb-live` braucht laufende MongoDB- und MySQL-Server und ist von der CI ausgenommen |
 | 4. MariaDB | nein | indirekt durch den MySQL-Job abgedeckt (derselbe Treiber) |
-| 5. Oracle | nein | Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen; die Erweiterung `ezoracle` hat in der installierten Kopie keinen eigenen Workflow (upstream nicht überprüft) |
+| 5. Oracle | nein | Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen; die Erweiterung `ezoracle` hat in der installierten Kopie keinen eigenen Workflow (upstream nicht geprüft) |
 | 6. MySQL | ja, Datenbanktests | der Job „Database tests (mysql, PHP 8.3)“ mit einem `mysql:8.0`-Service |
 
 PHP 8.0, die älteste unterstützte Version, prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem

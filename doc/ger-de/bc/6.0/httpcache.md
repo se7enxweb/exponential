@@ -11,7 +11,7 @@ ihn einschalten.
 | | |
 |---|---|
 | Was sich geändert hat | Neuer Cache `httpcache.ini`; früher Ausstieg `kernel/private/classes/httpcache/ezphttpcacheearlyexit.php`; Velocity liefert dieselben Einträge aus seinem Serverprozess aus. |
-| Wer betroffen ist | Niemand, bis `Enabled=enabled` gilt. Dann: Websites mit einer anderen Session-Speicherung als Dateien und Templates, die persönliche Daten ausgeben. |
+| Wer betroffen ist | Niemand, bis `Enabled=enabled` gilt. Dann: Websites mit einer anderen Sitzungsspeicherung als Dateien und Templates, die persönliche Daten ausgeben. |
 | Wie Sie es prüfen | `curl -sI https://your-host/ \| grep -i x-exp-cache` zeigt `HIT`, `STALE`, `MISS (reason)` oder `BYPASS (reason)`, sobald er eingeschaltet ist. |
 | Wie Sie ihn einschalten | Folgen Sie den drei Schritten unter „Einschalten“. |
 
@@ -63,11 +63,11 @@ Dann:
        require __DIR__ . '/kernel/private/classes/httpcache/ezphttpcacheearlyexit.php';
    ```
 
-2. **Halten Sie Sessions in Dateien, die jeder Server lesen kann.** Der frühe Ausstieg findet den Besucher über die
-   Session-Datei, die das Session-Cookie nennt; er kann nicht Redis oder eine Datenbank fragen. Jeder Server, der einen
+2. **Halten Sie Sitzungen in Dateien, die jeder Server lesen kann.** Der frühe Ausstieg findet den Besucher über die
+   Sitzungsdatei, die das Sitzungs-Cookie nennt; er kann nicht Redis oder eine Datenbank fragen. Jeder Server, der einen
    gecachten Siteaccess ausliefert, muss dasselbe Verzeichnis verwenden — der Pool von Apache und Velocity
    (`[PHPSettings] IniOptions[]=session.save_path=0;0660;<dir>` in `velocity.ini`). Ein Server, dessen
-   Session-Speicherung sich von der unterscheidet, die der Cache verzeichnet hat, speichert für angemeldete Besucher
+   Sitzungsspeicherung sich von der unterscheidet, die der Cache verzeichnet hat, speichert für angemeldete Besucher
    nichts und sagt das in `X-Exp-Cache`.
 
 3. **Starten Sie Velocity neu** (`exp:velocity restart`), damit es die Kernel-Klassen lädt und den Cache fragt.
@@ -232,8 +232,8 @@ jeder Besucher desselben Berechtigungskontexts erhält dieselbe Kopie. Filter-Er
 ## Sicherheit
 
 - Schlüssel und Kontexte sind HMACs mit einem erzeugten Schlüssel (`secret`, 0600), nie gesendet.
-- Ein Besucher mit einem Session-Cookie, das der Cache nicht auflösen kann, ist ein Fehltreffer, nie die anonyme
-  Seite; ein unbekannter Name eines Session-Cookies ist ein Fehltreffer.
+- Ein Besucher mit einem Sitzungs-Cookie, das der Cache nicht auflösen kann, ist ein Fehltreffer, nie die anonyme
+  Seite; ein unbekannter Name eines Sitzungs-Cookies ist ein Fehltreffer.
 - Ein angemeldeter Besucher erhält nur Seiten seines eigenen Berechtigungskontexts; eine Änderung der Rollen verschiebt
   jeden Benutzer sofort in einen neuen Kontext.
 - Formular-Tokens gelten pro Besucher und werden bei jedem Treffer wieder eingesetzt; andere persönliche Daten dürfen
@@ -246,7 +246,7 @@ jeder Besucher desselben Berechtigungskontexts erhält dieselbe Kopie. Filter-Er
 
 | | |
 |---|---|
-| `kernel/private/classes/httpcache/ezphttpcachecontract.php` | Schlüssel, Kontexte, Einträge, Zustand, Sessions, Platzhalter, Ausliefern; reines PHP |
+| `kernel/private/classes/httpcache/ezphttpcachecontract.php` | Schlüssel, Kontexte, Einträge, Zustand, Sitzungen, Platzhalter, Ausliefern; reines PHP |
 | `kernel/private/classes/httpcache/ezphttpcacheearlyexit.php` | Der frühe Ausstieg, eingebunden aus `config.php` |
 | `kernel/private/classes/httpcache/ezphttpcachelistener.php` | Speichern nach dem Rendern, Leerungen, Datensatz bei der Anmeldung |
 | `settings/httpcache.ini` | Einstellungen |

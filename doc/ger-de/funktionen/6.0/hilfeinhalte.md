@@ -111,7 +111,7 @@ hinzugefügt, nichts wird geändert oder entfernt.
 **Opt-in:** `exphelp.ini [ContentSettings] AnonymousContextHelp=enabled` (Standard `disabled`) lässt den Rollenschritt
 Anonymous zusätzlich `exphelp/context` geben, sodass das JSON **öffentlicher, veröffentlichter** Themen ohne Anmeldung
 gelesen werden kann (eine öffentliche Site, eine mobile App). Ohne diese Einstellung braucht der Endpunkt eine Anmeldung
-(Session oder die Token-Anmeldung der Site) und die Richtlinie.
+(Sitzung oder die Token-Anmeldung der Site) und die Richtlinie.
 
 ## Der Validator
 

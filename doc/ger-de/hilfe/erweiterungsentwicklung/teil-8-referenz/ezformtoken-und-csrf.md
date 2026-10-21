@@ -11,7 +11,7 @@ type: help
 
 Teil 8, Referenz 20. Cross-Site Request Forgery (CSRF) bedeutet, dass eine andere Website den Browser eines
 angemeldeten Benutzers dazu bringt, einen POST an Ihre Website zu senden. Die mit dem Kernel ausgelieferte Erweiterung
-`ezformtoken` verhindert das mit einem geheimen Token je Session. Meist funktioniert das, ohne dass Ihre Erweiterung
+`ezformtoken` verhindert das mit einem geheimen Token je Sitzung. Meist funktioniert das, ohne dass Ihre Erweiterung
 etwas tun muss; diese Seite sagt, wann nicht, und was dann zu tun ist.
 
 ## Wie es funktioniert
@@ -22,9 +22,9 @@ Die Erweiterung registriert drei Listener (in ihrer `settings/site.ini.append.ph
 |---|---|---|
 | `response/output` | `ezxFormToken::output()` | fügt jedem `<form>` einer HTML-Seite ein verstecktes Feld `ezxform_token` hinzu und dem `<head>` die Meta-Tags `csrf-param` und `csrf-token` (mit der ID `ezxform_token_js`) |
 | `request/input` | `ezxFormToken::input()` | lehnt einen POST ohne das richtige Token ab |
-| `session/regenerate` | `ezxFormToken::reset()` | ein neues Token mit einer neuen Session |
+| `session/regenerate` | `ezxFormToken::reset()` | ein neues Token mit einer neuen Sitzung |
 
-Geschützt sind nur angemeldete Benutzer mit einer Session (bei anonymen Besuchern gibt es nichts zu stehlen), und
+Geschützt sind nur angemeldete Benutzer mit einer Sitzung (bei anonymen Besuchern gibt es nichts zu stehlen), und
 geprüft werden nur POST-Requests.
 
 ## Wo das Token gesucht wird
@@ -48,7 +48,7 @@ JSON-Requests).
 | Eine View, die bei GET Daten ändert | auf POST umstellen: GET wird nie geprüft |
 | Eine JSON-Seite, die Ihre View ausliefert | das Token wird nur HTML-Seiten hinzugefügt; lesen Sie es aus der Seite, die den Aufruf macht |
 
-In PHP gibt `ezxFormToken::getToken()` das Token der aktuellen Session zurück, für Templates, die Sie außerhalb der
+In PHP gibt `ezxFormToken::getToken()` das Token der aktuellen Sitzung zurück, für Templates, die Sie außerhalb der
 normalen Ausgabe rendern (zum Beispiel einen per Ajax geladenen Dialog):
 
 ```php

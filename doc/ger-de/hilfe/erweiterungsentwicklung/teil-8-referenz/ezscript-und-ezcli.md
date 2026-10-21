@@ -31,7 +31,7 @@ Die meistverwendeten Einstellungen von `instance()`:
 | Schlüssel | Bedeutung |
 |---|---|
 | `description` | der Text, den `--help` anzeigt |
-| `use-session` | eine Session starten (selten nötig) |
+| `use-session` | eine Sitzung starten (selten nötig) |
 | `use-modules` | das Modulsystem laden |
 | `use-extensions` | die Einstellungen der aktiven Erweiterungen lesen (fast immer `true`) |
 

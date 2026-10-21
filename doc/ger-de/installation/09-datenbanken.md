@@ -848,7 +848,7 @@ Die Oracle-Unterstützung stammt aus der Extension **`ezoracle`** (Version 2.3.7
   Oracle-Client; der Instant Client genügt. `ORACLE_HOME` wird mit dem Instant Client nicht benötigt; setzen Sie
   `LD_LIBRARY_PATH` (und `TNS_ADMIN` für TNS-Aliase) nur, wenn der Client außerhalb des Bibliothekspfads des Systems
   liegt, und dann auch im PHP-FPM-Pool (`env[...]`) und in der Umgebung von Velocity.
-- Ein Oracle-Benutzer, der Sessions, Tabellen, Views, Trigger, Sequenzen und Prozeduren anlegen darf.
+- Ein Oracle-Benutzer, der Sitzungen, Tabellen, Views, Trigger, Sequenzen und Prozeduren anlegen darf.
 
 ### Den Benutzer anlegen
 
@@ -904,7 +904,7 @@ wird in `settings/override/ezoracle.ini.append.php` überschrieben. Jede Funktio
 
 ### Persistente Verbindungen und DRCP
 
-Eine neue dedizierte Oracle-Session kostet pro Anfrage einige zehn Millisekunden. Zwei Einstellungen beseitigen
+Eine neue dedizierte Oracle-Sitzung kostet pro Anfrage einige zehn Millisekunden. Zwei Einstellungen beseitigen
 diese Kosten:
 
 ```ini
@@ -1020,7 +1020,7 @@ Abfragen über Engines hinweg; diese Punkte stammen aus den Treibern):
   `concatString()`, `md5()`, `bitAnd()`, `bitOr()`, `escapeString()`, `lastSerialID()`. Der SQLite-Treiber
   registriert außerdem die Aggregatfunktionen `BIT_OR`/`BIT_AND` und schreibt `UPDATE ... JOIN` um; PostgreSQL
   berechnet MD5 über `pgcrypto`; Oracle verwendet `STANDARD_HASH` und `BITAND`.
-- **MySQL-Session-Anweisungen**: Der SQLite-Treiber akzeptiert `SET FOREIGN_KEY_CHECKS`, `SET NAMES`,
+- **MySQL-Sitzungsanweisungen**: Der SQLite-Treiber akzeptiert `SET FOREIGN_KEY_CHECKS`, `SET NAMES`,
   `SET CHARACTER SET`, `SET AUTOCOMMIT`, `SET SQL_MODE` und `SET UNIQUE_CHECKS` (auch mit `SESSION` oder `GLOBAL`)
   und tut nichts, weil SQLite keine solchen Schalter hat. PostgreSQL versteht `SET NAMES` (als `client_encoding`),
   lehnt die anderen aber ab; Oracle hat keine `SET`-Anweisung dieser Art. Lassen Sie sie in Code weg, der für jede

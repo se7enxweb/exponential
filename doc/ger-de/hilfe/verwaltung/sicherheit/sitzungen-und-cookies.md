@@ -4,7 +4,7 @@ audience: government, admin
 category: public-sector
 order: 200
 summary: Für Administratorinnen und Administratoren öffentlicher Websites - die Attribute des Sitzungs-Cookies, die Exponential standardmäßig setzt, empfohlene Einstellungen für eine reine HTTPS-Website, getrennte Cookies je Siteaccess, Zeitlimits für Sitzungen und wie Sie Benutzer nach einer vermuteten Kompromittierung abmelden.
-keywords: Sitzungen, Sitzungs-Cookie, Zeitlimit, Sitzungsübernahme, Abmelden, öffentlicher Sektor, sessions, session cookie, CookieSecure, CookieHttponly, CookieSameSite, SessionTimeout, SessionNameHandler, session hijacking, session.use_strict_mode, ezpSessionHandlerDB, Setup Sessions, sign out, password stamp, public sector
+keywords: Sitzungen, Sitzungs-Cookie, Zeitlimit, Sitzungsübernahme, Abmelden, öffentlicher Sektor, sessions, session cookie, CookieSecure, CookieHttponly, CookieSameSite, SessionTimeout, SessionNameHandler, session hijacking, session.use_strict_mode, ezpSessionHandlerDB, Setup Sitzungen, sign out, password stamp, public sector
 type: help
 ---
 # Sitzungen und Cookies
@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratorinnen und Administratoren. Ein gestohlenes Sitzungs-Cookie ist so viel wert
 wie das Passwort. Exponential setzt standardmäßig sichere Cookie-Attribute und meldet bei einer Passwortänderung andere
 Sitzungen ab; einige Einstellungen machen es strenger
-([13.7 Sitzungen und Cookies](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)).
+([13.7 Sitzungen und Cookies](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)).
 
 ## Inhalt
 
@@ -85,7 +85,7 @@ Administration.
 
 ## Verwandte Seiten
 
-- [13.7 Sitzungen und Cookies](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)
+- [13.7 Sitzungen und Cookies](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)
 - [Sitzungen: wer angemeldet ist](../../../anleitungen/sitzungen.md)
 - [Sicherheitshärtung: Sitzungsübernahme](../../sicherheitshaertung.md#sitzungsübernahme)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

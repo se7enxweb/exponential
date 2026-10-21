@@ -43,8 +43,8 @@ Objekte (zum Beispiel ein ersetztes Leitfaden-Objekt mit dem Zustand *Ersetzt*).
 Websites von Behörden sind in vielen Rechtsordnungen Websites des öffentlichen Sektors im Sinne des Rechts der
 Barrierefreiheit: der EU-Richtlinie über barrierefreie Websites,
 [Richtlinie (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj), und in den Vereinigten Staaten
-[Section 508](https://www.section508.gov/) für Bundesbehörden. Status von Exponential: WCAG 2.2 AA **Partly complies**
-für die Administration admin4, EN 301 549 und Section 508 **Unverified**, öffentliche Designs nicht geprüft, kein VPAT
+[Section 508](https://www.section508.gov/) für Bundesbehörden. Status von Exponential: WCAG 2.2 AA **Teilweise erfüllt**
+für die Administration admin4, EN 301 549 und Section 508 **Nicht geprüft**, öffentliche Designs nicht geprüft, kein VPAT
 ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Lange Leitfäden brauchen strukturierte
 Überschriften in HTML, nicht nur ein PDF.
 
@@ -55,7 +55,7 @@ für die Administration admin4, EN 301 549 und Section 508 **Unverified**, öffe
 | Konten der Beschäftigten | zweistufige Anmeldung, verpflichtend einstellbar | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Minimale Rechte | Rollen mit Einschränkungen nach Sektion und Zustand | [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
 | Überwachung | Alarmregeln des Audits wie `brute_force`; Anfrageprotokolle | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md), [Anfrageprotokolle](../../../../../eng-us/features/6.0/request-logs.md) |
-| Status | OWASP Top 10 **Partly complies**; ASVS **Unverified** | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| Status | OWASP Top 10 **Teilweise erfüllt**; ASVS **Nicht geprüft** | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
 
 Behörden gelten je nach nationalem Recht oft als wesentliche oder wichtige Einrichtungen im Sinne von NIS2,
 [Richtlinie (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj).

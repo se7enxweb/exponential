@@ -36,7 +36,7 @@ Hinzugefügt von `expMailGate::decorate()`:
 
 Das Gate schreibt `From`, `Reply-To` oder `Subject` nie um. Notwendige E-Mails (Passwort zurücksetzen, Aktivierung,
 Bestellungen) werden getrennt gehalten und enthalten keine Werbung. Das Projekt bewertet dies für E-Mails, die über das
-E-Mail-Gate gehen, mit **„Complies“** (erfüllt).
+E-Mail-Gate gehen, mit **„Erfüllt“**.
 
 ## Was bei einem Klick geschieht
 

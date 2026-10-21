@@ -44,7 +44,7 @@ von sich aus ([Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assis
 ### 5. „Open Source bedeutet unsicher.“
 
 Das Projekt hat ein vertrauliches Meldeverfahren mit einer ersten Antwort innerhalb eines Werktags, Korrekturen im
-nächsten Release, eine Content Security Policy, einen Audit-Trail und einen Leitfaden zur Härtung
+nächsten Release, eine Content Security Policy, ein Prüfprotokoll und einen Leitfaden zur Härtung
 ([Thema: Sicherheit](thema-sicherheit.md)). Keine Software ist absolut „sicher“; überprüfen lässt sich das Verfahren.
 
 ### 6. „Kostenlos bedeutet ungepflegt.“

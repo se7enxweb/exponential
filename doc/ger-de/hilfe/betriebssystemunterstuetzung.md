@@ -124,7 +124,7 @@ laufen gesehen.
 
 **Systeme, die das Projekt keiner Stufe zuordnen konnte.** **HP-UX** auf Itanium: Uns ist kein aktueller PHP-8-Build
 dafür bekannt; behandeln Sie es als Stufe 4, sofern Ihr Anbieter keinen hat. **OS/2 und ArcaOS**: Frühere
-PHP-Versionen wurden portiert; ob es eine Portierung von PHP 8 gibt, ist hier nicht überprüft.
+PHP-Versionen wurden portiert; ob es eine Portierung von PHP 8 gibt, ist hier nicht geprüft.
 
 ## Stufe 4: heute nicht möglich (theoretisch)
 
@@ -143,7 +143,7 @@ portiert, laufen die Dateien unverändert.
 | **Plan 9**, **9front** | uns ist keine PHP-Portierung bekannt; PHP setzt eine POSIX-C-Bibliothek voraus, die Plan 9 nicht bietet |
 | **RISC OS** | uns ist keine Portierung von PHP 8 bekannt |
 | **IBM z/OS** (UNIX System Services) | uns ist kein aktuelles PHP 8 für USS bekannt. Linux auf IBM Z (s390x) ist etwas anderes: Velocitys CI weist seinen Server dort nach, Linux auf demselben Mainframe ist also der Weg. |
-| **Windows XP**, **Windows 7** und andere Windows-Versionen, die Microsoft nicht mehr unterstützt | aktuelle PHP-8-Builds zielen auf unterstützte Windows-Versionen; ob ein bestimmter PHP-8-Build auf einer älteren Version noch startet, ist hier nicht überprüft, und ein solcher Rechner erhält ohnehin keine Sicherheitsupdates |
+| **Windows XP**, **Windows 7** und andere Windows-Versionen, die Microsoft nicht mehr unterstützt | aktuelle PHP-8-Builds zielen auf unterstützte Windows-Versionen; ob ein bestimmter PHP-8-Build auf einer älteren Version noch startet, ist hier nicht geprüft, und ein solcher Rechner erhält ohnehin keine Sicherheitsupdates |
 
 Seiten wie diese sind bei Stufe 4 ehrlich, damit niemand ein Wochenende mit einem Rechner verbringt, der nicht
 funktionieren kann, und damit alle, die einen davon zum Laufen bringen wollen, wissen, dass die Arbeit eine Portierung

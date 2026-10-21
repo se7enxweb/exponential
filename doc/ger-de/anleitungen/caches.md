@@ -28,7 +28,7 @@ geleert wurden.
   Nächstes zu tun ist, und den Befehl.
 - **Suchen** schränkt die Liste nach Name, ID, Tag oder Verzeichnis ein; die Knöpfe unter **Gruppen** zeigen eine einzelne Gruppe.
 - Die Cache-Dateien liegen in `var/`, das Apache mit PHP-FPM und Velocity gemeinsam nutzen: Ein hier geleerter Cache erreicht beide.
-  Zwei Dinge nicht: Velocity hält Einstellungen im Speicher (starten Sie es nach dem Leeren der INI-Caches neu) und beantwortet Seiten
+  Zwei Dinge nicht: Velocity hält Einstellungen im Speicher (starten Sie ihn nach dem Leeren der INI-Caches neu) und beantwortet Seiten
   einige Sekunden lang aus seinem eigenen Antwort-Cache (leeren Sie ihn in der letzten Gruppe oder mit `./console exp:velocity cache clear`).
 
 ## 1. Die Übersicht

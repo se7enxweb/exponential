@@ -3,8 +3,8 @@ title: Verdacht auf ein kompromittiertes Konto
 audience: government, admin, project-manager
 category: public-sector
 order: 60
-summary: Runbook für ein Konto von Beschäftigten oder der Administration, das möglicherweise jemand anderes benutzt - deaktivieren, seine Sitzungen beenden, im Audit-Trail nachsehen, was es getan hat, Änderungen rückgängig machen, Passwort und zweiten Faktor zurücksetzen und auf ausgeweitete Rechte prüfen.
-keywords: kompromittiertes Konto, gestohlenes Passwort, gekapertes Konto, Phishing, unbefugter Zugriff, Konto deaktivieren, Sitzungen, Audit-Trail, Passwort zurücksetzen, Anmeldung in zwei Schritten, Rollenänderungen, Vorfall, account compromise, stolen password, hijacked account, phishing, unauthorized access, disable account, sessions, audit trail, password reset, two-step sign-in, role changes, incident
+summary: Runbook für ein Konto von Beschäftigten oder der Administration, das möglicherweise jemand anderes benutzt - deaktivieren, seine Sitzungen beenden, im Prüfprotokoll nachsehen, was es getan hat, Änderungen rückgängig machen, Passwort und zweiten Faktor zurücksetzen und auf ausgeweitete Rechte prüfen.
+keywords: kompromittiertes Konto, gestohlenes Passwort, gekapertes Konto, Phishing, unbefugter Zugriff, Konto deaktivieren, Sitzungen, Prüfprotokoll, Passwort zurücksetzen, Anmeldung in zwei Schritten, Rollenänderungen, Vorfall, account compromise, stolen password, hijacked account, phishing, unauthorized access, disable account, sessions, audit trail, password reset, two-step sign-in, role changes, incident
 type: help
 ---
 # Verdacht auf ein kompromittiertes Konto
@@ -29,7 +29,7 @@ Kontoinhaber nicht vorgenommen hat. Beginnen Sie mit den [Grundlagen der Vorfall
 1. **Deaktivieren** Sie es: **Benutzer > Benutzerkonten prüfen**, Konto suchen, **Deaktivieren**, **Bestätigen**. Seine
    Sitzungen enden sofort, und es kann sich nicht mehr anmelden; Inhalte, Gruppen und Rollen bleiben erhalten
    (`access.user.disable`).
-2. Mit dem Datenbank-Sitzungshandler kann **Setup > Sitzungen** die Sitzungen des Kontos auch ausdrücklich entfernen
+2. Mit dem Datenbank-Session-Handler kann **Setup > Sitzungen** die Sitzungen des Kontos auch ausdrücklich entfernen
    ([Sitzungen](../../../../anleitungen/sitzungen.md)).
 3. Widerrufen Sie API-Schlüssel und OAuth-Tokens des Kontos (seine Kontoseite, **API-Schlüssel**).
 4. Hatte das Konto vollen Zugriff, erwägen Sie den Wartungsmodus und Netzwerkbeschränkungen für die Administration,

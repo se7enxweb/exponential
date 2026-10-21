@@ -96,7 +96,7 @@ Ohne `--allow-admin` ist auch die Administration offline
 ([Anleitung zum Wartungsmodus, von der Kommandozeile](../../../anleitungen/wartungsmodus.md#6-über-die-kommandozeile)).
 `--allow-root-user` ist nur nötig, wenn Sie als root arbeiten.
 
-Jedes Ein- und Ausschalten wird im Audit-Trail als `system.maintenance.change` aufgezeichnet, und die Seite listet die
+Jedes Ein- und Ausschalten wird im Prüfprotokoll als `system.maintenance.change` aufgezeichnet, und die Seite listet die
 letzten acht auf ([Anleitung zum Wartungsmodus, das Audit](../../../anleitungen/wartungsmodus.md#13-letzte-änderungen-und-das-audit)).
 
 ## Wer trotzdem hineinkommt

@@ -78,9 +78,9 @@ Die Version einer veröffentlichenden Person wartet dann als **ausstehend**; die
 ## Aufzeichnen, wer was getan hat
 
 - Die Versionsgeschichte zeigt, wer jede Version erstellt hat ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)).
-- Der Audit-Trail zeichnet Veröffentlichen, Entfernen, Änderungen von Sektion und Zustand im Kanal `content` und
-  Rollenzuweisungen im Kanal `access` auf; er ist standardmäßig eingeschaltet
-  ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- Das Prüfprotokoll zeichnet Veröffentlichen, Entfernen, Änderungen von Sektion und Zustand im Kanal `content` und
+  Rollenzuweisungen im Kanal `access` auf; es ist standardmäßig eingeschaltet
+  ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Checkliste
 

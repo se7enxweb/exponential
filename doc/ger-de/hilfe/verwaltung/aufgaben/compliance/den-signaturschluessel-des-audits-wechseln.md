@@ -37,7 +37,7 @@ Tagen) und sofort, wenn er gelesen worden sein könnte
 
    Der neue Schlüssel wird aktiv; alte Schlüssel bleiben für die Archive, die sie signiert haben;
    `system.audit.key.rotate` wird aufgezeichnet. Der Befehl leert den INI-Cache.
-3. Starten Sie Velocity neu, wenn es läuft, damit kein Worker weiter mit dem alten Schlüssel signiert:
+3. Starten Sie Velocity neu, wenn er läuft, damit kein Worker weiter mit dem alten Schlüssel signiert:
    `./console exp:velocity restart --allow-root-user`.
 4. Sichern Sie `settings/override/audit.ini.append.php` erneut.
 5. In einem Cluster kopieren Sie die Schlüsseldatei identisch auf jeden Server.

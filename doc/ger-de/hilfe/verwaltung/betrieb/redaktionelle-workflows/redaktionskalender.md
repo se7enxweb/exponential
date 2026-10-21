@@ -62,7 +62,7 @@ Ein praktischer Aufbau für eine öffentliche Stelle:
 | Die Freigabe | der Freigabe-Workflow; Freigebende sehen sie in ihrem Posteingang |
 | Das Datum für den Livegang | das Datumsattribut, das *Bis Datum warten* liest |
 | Das Enddatum | das Datumsattribut zum Verbergen |
-| Bestätigung, dass es live gegangen ist | der Kanal `content` des Audit-Trails; eine Prüfung der Seite |
+| Bestätigung, dass es live gegangen ist | der Kanal `content` des Prüfprotokolls; eine Prüfung der Seite |
 
 Wöchentlich: Vergleichen Sie den Plan mit **Setup > Workflow-Prozesse** (was wartet und warum) und mit dem, was live gegangen ist. Führen Sie
 vor einer Veröffentlichung zu fester Uhrzeit den Cronjob-Teil frequent direkt nach dieser Uhrzeit von Hand aus, wenn es auf Minuten ankommt

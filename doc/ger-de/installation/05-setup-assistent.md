@@ -29,7 +29,7 @@ Zeichenkette `true` ist, wird die Anfrage an das Modul `setup`, View `init`, üb
 
 - dem Pagelayout aus `[SetupSettings] PageLayout` (`setup_pagelayout.tpl`) und dem Design aus `[SetupSettings]
   OverrideSiteDesign` (`standard`);
-- keiner Session, keinem Benutzerobjekt und keiner Datenbankverbindung;
+- keiner Sitzung, keinem Benutzerobjekt und keiner Datenbankverbindung;
 - einem vorübergehenden Siteaccess namens `setup`.
 
 `CreateSites`, der letzte arbeitende Schritt, schreibt `CheckValidity=false` in
@@ -53,7 +53,7 @@ Site), und ein Fortschrittsbalken mit der Anzeige „N% abgeschlossen“.
 
 ### Wie sich der Assistent Ihre Antworten merkt
 
-Der Assistent führt keine serverseitige Session. Jede bisher gesammelte Antwort wird als verstecktes Formularfeld mit
+Der Assistent führt keine serverseitige Sitzung. Jede bisher gesammelte Antwort wird als verstecktes Formularfeld mit
 dem Namen `P_<group>-<key>` von Seite zu Seite weitergereicht (`design/standard/templates/setup/persistence.tpl`).
 Daraus folgt zweierlei:
 
@@ -116,7 +116,7 @@ Eine Site gilt als installiert, wenn:
 
 Für die Entwicklung lässt `settings/site.ini [SetupSettings] AllowWizardOnInstalledSite=enabled` (Standard ist
 `disabled`) den Assistenten auf einer installierten Site laufen, und zwar erst nach einer Bestätigungsseite: Der
-Wartungsmodus beginnt, wenn das Formular dieser Seite mit seinem Einmal-Token (das in der Session liegt)
+Wartungsmodus beginnt, wenn das Formular dieser Seite mit seinem Einmal-Token (das in der Sitzung liegt)
 zurückgeschickt wird, niemals durch ein GET. Ein abgeschickter Schritt, dessen Frist abgelaufen ist, kehrt zur
 Bestätigungsseite zurück.
 
@@ -738,7 +738,7 @@ der immer wieder fehlschlägt. Was zu tun ist, hängt davon ab, wie weit er geko
 
    zeigt, woher der Wert kommt; bearbeiten Sie diese Datei und setzen Sie `CheckValidity=true`.
 3. Leeren Sie den INI-Cache, damit die Änderung gelesen wird: `php bin/php/ezcache.php --clear-tag=ini`. Wenn Velocity
-   die Site ausliefert, starten Sie es neu ([Kapitel 8](08-die-website-ausliefern.md)).
+   die Site ausliefert, starten Sie ihn neu ([Kapitel 8](08-die-website-ausliefern.md)).
 4. Öffnen Sie die Site. Der Assistent beginnt bei „Willkommen“. Wählen Sie auf der Seite „Seitendetails“, was mit den
    vorhandenen Daten geschehen soll.
 

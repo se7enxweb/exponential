@@ -35,7 +35,7 @@ openssl s_client -connect www.example.com:443 -servername www.example.com </dev/
 
 ## Unter Velocity
 
-Velocity prüft ein Zertifikat, bevor es es nutzt: Ein kaputtes oder abgelaufenes Zertifikat erreicht nie einen Besucher; das Paar wird vor
+Velocity prüft ein Zertifikat, bevor er es nutzt: Ein kaputtes oder abgelaufenes Zertifikat erreicht nie einen Besucher; das Paar wird vor
 der Nutzung geprüft (lässt sich lesen, ist nicht abgelaufen, der Schlüssel gehört dazu), und ein selbstsigniertes Zertifikat springt ein,
 bis das echte wieder nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../../eng-us/features/6.0/velocity-https-certificates.md)).
 

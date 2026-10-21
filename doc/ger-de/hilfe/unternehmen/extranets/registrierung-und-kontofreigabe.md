@@ -85,7 +85,7 @@ Was diese Links schützt ([Security](../../../../eng-us/features/6.0/registratio
 - Das Öffnen eines Links ändert nichts. Die freigebende Person muss mit der Richtlinie `user/activation` angemeldet
   sein (oder Freigebende des wartenden Freigabeelements sein) und auf einer Bestätigungsseite eine Schaltfläche
   drücken. Mailscanner, die jeden Link öffnen, richten keinen Schaden an.
-- Freigaben, Ablehnungen und jeder abgewiesene Link werden im Audit-Trail aufgezeichnet.
+- Freigaben, Ablehnungen und jeder abgewiesene Link werden im Prüfprotokoll aufgezeichnet.
 
 Wenn die `SiteURL` der Administration keine Adresse ist, die die freigebende Person aus der Mail erreichen kann, setzen
 Sie `RegistrationAdminBaseURL`

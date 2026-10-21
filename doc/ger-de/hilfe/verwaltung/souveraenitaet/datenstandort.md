@@ -30,7 +30,7 @@ wählen; diese Liste hilft Ihnen, jeden Ort zu erfassen.
 | Hochgeladene Dateien und Bilder | `var/<site>/storage/` | kann auf gemeinsamem oder eingehängtem Speicher liegen |
 | Caches (Seiten, Templates, INI) | `var/<site>/cache/` oder ein anderer Pfad | pro Website verschiebbar ([Protokolle, Cache und Ablauf pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)) |
 | Protokolle | `var/log/` oder pro Website | Rotation und Maskierung in [Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md), [Protokollanzeige](../../../../eng-us/features/6.0/log-viewer.md) |
-| Audit-Einträge | `var/<site>/log/audit/`, dazu ein Index in der Datenbank | Senken können sie an ein Syslog oder einen Webhook Ihrer Wahl kopieren ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Audit-Einträge | `var/<site>/log/audit/`, dazu ein Index in der Datenbank | Senken können sie an ein Syslog oder einen Webhook Ihrer Wahl kopieren ([Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
 | Sitzungen | die Datenbank oder der eingerichtete Sitzungsspeicher | [Sitzungen](../../../anleitungen/sitzungen.md) |
 | Suchindex | die Datenbank (eingebaute Suchmaschine) oder der Solr-Server | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
 | E-Mail | Ihr Mailserver; der Dateitransport schreibt E-Mails in Dateien innerhalb der Installation | [E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md) |

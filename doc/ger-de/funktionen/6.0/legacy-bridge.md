@@ -144,7 +144,7 @@ mit „Could not map database driver“ ab. Siehe [SQLite für die Plattform](pl
 - 2026-03: Branch `3.x`: Portierung auf Symfony 5.4 und PHP 8: neue `TreeBuilder`-API, Events der Symfony Contracts,
   `RequestEvent` / `ResponseEvent`, typisierter Config-Resolver, Twig 3, über die DI registrierte Befehle mit
   Konstruktor-Injektion (kein `ContainerAwareCommand`), Permission-Resolver-API von Platform 3.
-- 2026-04: Branch `4.x`: Service-Aliase von Ibexa 4.6, Session-Verwaltung für Symfony 5.3+ (Factory-basierte Sessions),
+- 2026-04: Branch `4.x`: Service-Aliase von Ibexa 4.6, Session-Verwaltung für Symfony 5.3+ (Factory-basierte Sitzungen),
   SQLite, Umbenennung der Befehle, zusätzliche Oberflächenelemente für `legacy_admin` über die Extension `ngsite`.
 
 ## Grenzen

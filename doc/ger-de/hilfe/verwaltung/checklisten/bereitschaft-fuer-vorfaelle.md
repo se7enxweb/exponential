@@ -4,7 +4,7 @@ audience: government, admin, hosting, project-manager
 category: public-sector
 order: 140
 summary: Was eine öffentliche Stelle bereithält, bevor ein Vorfall ihre Exponential-Website trifft - Kontakte, Runbooks, Wartungsmodus, Protokolle und Audit, Datensicherungen, Kommunikation und Meldepflichten -, damit die erste Stunde mit Handeln verbracht wird, nicht mit Suchen.
-keywords: Vorfall, Sicherheitsvorfall, Reaktion auf Vorfälle, Bereitschaft, Ausfall, Kompromittierung, Runbook, Wartungsmodus, Audit-Trail, Protokolle, Kontakte, Kommunikation, NIS2, Meldung, öffentlicher Sektor, incident, incident response, readiness, outage, compromise, runbook, maintenance mode, audit trail, logs, contacts, communication, reporting, public sector
+keywords: Vorfall, Sicherheitsvorfall, Reaktion auf Vorfälle, Bereitschaft, Ausfall, Kompromittierung, Runbook, Wartungsmodus, Prüfprotokoll, Protokolle, Kontakte, Kommunikation, NIS2, Meldung, öffentlicher Sektor, incident, incident response, readiness, outage, compromise, runbook, maintenance mode, audit trail, logs, contacts, communication, reporting, public sector
 type: help
 ---
 # Bereitschaft für Vorfälle
@@ -52,7 +52,7 @@ nutzen.
 
 ## Beweise
 
-- [ ] Der Audit-Trail ist eingeschaltet und seine Schlüssel sind gesichert; prüfen Sie seine Kette mit `./console exp:audit verify` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
+- [ ] Das Prüfprotokoll ist eingeschaltet und seine Schlüssel sind gesichert; prüfen Sie seine Kette mit `./console exp:audit verify` ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 - [ ] `var/log/security.log` zeichnet Sondierungen und Angriffe auf ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).
 - [ ] Protokolle werden lange genug für eine Untersuchung aufbewahrt und während eines Vorfalls vom Server kopiert ([Protokollanzeige](../../../../eng-us/features/6.0/log-viewer.md)).
 - [ ] Bekannt ist, dass ein kompromittierter Server nicht gelöscht wird, bevor die Beweise gesichert sind ([Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md)).

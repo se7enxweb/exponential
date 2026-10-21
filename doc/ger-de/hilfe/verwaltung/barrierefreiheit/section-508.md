@@ -3,7 +3,7 @@ title: Section 508 und Exponential
 audience: government, project-manager, admin
 category: public-sector
 order: 60
-summary: Für US-Bundesbehörden und ihre Auftragnehmer - was Section 508 und die Revised 508 Standards allgemein von Webinhalten und Autorenwerkzeugen verlangen, der Status des Projekts (Unverified, kein VPAT) und wie Sie eine mit Exponential gebaute Website bewerten.
+summary: Für US-Bundesbehörden und ihre Auftragnehmer - was Section 508 und die Revised 508 Standards allgemein von Webinhalten und Autorenwerkzeugen verlangen, der Status des Projekts (Nicht geprüft, kein VPAT) und wie Sie eine mit Exponential gebaute Website bewerten.
 keywords: Section 508, Rehabilitation Act, Revised 508 Standards, US Access Board, VPAT, ACR, Konformitätsbericht, Bundesbehörden, Vereinigte Staaten, Beschaffung, Accessibility Conformance Report, WCAG 2.0 AA, federal, United States, procurement
 type: help
 ---
@@ -36,10 +36,10 @@ VPAT (Voluntary Product Accessibility Template), aus dem ein Accessibility Confo
 
 Aus [Standards zur Barrierefreiheit: Section 508](../../../../eng-us/standards/accessibility.md#section-508):
 
-- **Status: Unverified.** Es gibt kein VPAT und keinen Accessibility Conformance Report für Exponential.
+- **Status: Nicht geprüft.** Es gibt kein VPAT und keinen Accessibility Conformance Report für Exponential.
 - **Inhaltlich** deckt die Arbeit an WCAG es ab: WCAG 2.0 AA ist eine Teilmenge dessen, wogegen die Administration admin4
-  getestet wird (WCAG 2.2 AA, bewertet mit **Partly complies**).
-- Nicht überprüft: der Online-Editor (Integrationen von TinyMCE, **Unverified**), Designs öffentlicher Websites (nicht
+  getestet wird (WCAG 2.2 AA, bewertet mit **Teilweise erfüllt**).
+- Nicht geprüft: der Online-Editor (Integrationen von TinyMCE, **Nicht geprüft**), Designs öffentlicher Websites (nicht
   geprüft), als eigene Pakete ausgelieferte Erweiterungen (keine Gesamterklärung).
 
 ## Was zu bewerten ist

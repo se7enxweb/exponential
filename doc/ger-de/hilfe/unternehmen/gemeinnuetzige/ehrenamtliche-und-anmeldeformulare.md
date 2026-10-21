@@ -101,7 +101,7 @@ CAPTCHA-Dienste bieten eine barrierefreie Alternative
 - **Setup > Gesammelte Informationen** listet jedes Formular mit Zahlen, **Sammlungen**, **CSV exportieren** und
   **Objekt** auf.
 - **CSV exportieren** schreibt UTF-8 mit Byte Order Mark; Werte, die eine Tabellenkalkulation als Formel lesen würde,
-  beginnen mit einem Apostroph; höchstens 50.000 Zeilen; jeder Export wird ohne die Werte im Audit-Trail festgehalten.
+  beginnen mit einem Apostroph; höchstens 50.000 Zeilen; jeder Export wird ohne die Werte im Prüfprotokoll festgehalten.
 - **Ausgewählte entfernen** löscht Eingaben nach einer Bestätigung; die Formulare bleiben.
 - „Alles braucht `infocollector/read`. Geben Sie es den Menschen, die die Formulare bearbeiten, nicht jedem Redakteur.“
 

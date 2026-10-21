@@ -54,9 +54,9 @@ Liste bekannter Probleme mit einem Plan und einen Kontakt, auf den tatsächlich 
 Die meisten Erklärungen müssen das CMS gar nicht erwähnen: Sie betreffen die öffentliche Website. Wenn Sie es erwähnen,
 halten Sie sich an die Worte des Projekts:
 
-- das Administrationsdesign admin4 ist gegen WCAG 2.2 AA entworfen und getestet und vom Projekt mit „Partly complies“
+- das Administrationsdesign admin4 ist gegen WCAG 2.2 AA entworfen und getestet und vom Projekt mit „Teilweise erfüllt“
   bewertet;
-- die Konformität mit EN 301 549 und Section 508 ist „Unverified“;
+- die Konformität mit EN 301 549 und Section 508 ist „nicht geprüft“;
 - es gibt kein VPAT und keinen Accessibility Conformance Report.
 
 Schreiben Sie nie, die Website sei barrierefrei, „weil sie ein barrierefreies CMS verwendet“.

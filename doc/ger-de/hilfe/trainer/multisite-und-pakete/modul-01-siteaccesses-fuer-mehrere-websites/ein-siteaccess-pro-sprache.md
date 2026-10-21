@@ -116,7 +116,7 @@ Verwenden Sie Ihre Schulungsinstallation mit dem Siteaccess `site_b` aus Lektion
 4. Geben Sie ihm einen deutschen Namen: `exp:ini set site.ini/SiteSettings/SiteName "Seite B" siteaccess:site_b_ger`.
 5. Registrieren Sie ihn in `AvailableSiteAccessList[]` und `RelatedSiteAccessList[]` mit `exp:ini add ... global`, wie
    in Lektion 1.3, Schritt 7.
-6. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini` (und starten Sie Velocity neu, wenn es die
+6. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini` (und starten Sie Velocity neu, wenn er die
    Übungsumgebung ausliefert).
 7. Öffnen Sie `/site_b_ger` im Browser. Der Ordner *Site B* wird angezeigt, auf Englisch, weil er noch keine deutsche
    Übersetzung hat und `eng-US` der Fallback ist.

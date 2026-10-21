@@ -25,7 +25,7 @@ Das gesamte Schulungsmaterial für Exponential ist freie Dokumentation, die die 
 | Rolle | Muss Folgendes können | Schulung |
 |---|---|---|
 | Leitende Redaktion | Redakteure schulen, das Veröffentlichen steuern, das Inhaltsmodell verantworten | [Redaktion 101](../../../../eng-us/help/trainers/editors-101/README.md), [Redaktion 201](../../../../eng-us/help/trainers/editors-201/README.md) |
-| Website-Administration | Rollen, Sektionen, Sprachen, Workflows, Caches, der Audit-Trail | [Website-Administratoren](../../../../eng-us/help/trainers/site-administrators/README.md) |
+| Website-Administration | Rollen, Sektionen, Sprachen, Workflows, Caches, das Prüfprotokoll | [Website-Administratoren](../../../../eng-us/help/trainers/site-administrators/README.md) |
 | Technische Verantwortung | das Code-Repository lesen, Änderungen von Dienstleistern beurteilen, ein Update auf einem Testsystem durchführen | [Entwickler](../../../../eng-us/help/trainers/developers/README.md), [Hosting-Betrieb](../../../../eng-us/help/trainers/hosting-operations/README.md) |
 | Produktverantwortung | entscheiden, was die Website leisten soll, Lieferungen abnehmen | [Projektleitungen: hier beginnen](../../fuehrung/projektleiter-hier-beginnen.md) |
 

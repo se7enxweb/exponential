@@ -44,7 +44,7 @@ verlinkt, wo es hilft.
 1. Lesen Sie die [Grundlagen der Vorfallsbehandlung](grundlagen-der-vorfallsbehandlung.md) einmal, bevor Sie sie brauchen, und
    vereinbaren Sie die Rollen und die Schweregradskala mit Ihrem Team.
 2. Öffnen Sie während eines Vorfalls das passende Runbook und arbeiten Sie es von oben nach unten ab.
-3. Machen Sie Notizen mit Uhrzeiten; den Großteil des Rests ergänzt der Audit-Trail.
+3. Machen Sie Notizen mit Uhrzeiten; den Großteil des Rests ergänzt das Prüfprotokoll.
 4. Schließen Sie mit einer [Nachbetrachtung des Vorfalls](nachbetrachtung-eines-vorfalls.md) ab.
 
 Übung: Spielen Sie jedes Quartal ein Runbook auf einer Testkopie durch (nehmen Sie die Website zum Beispiel in den

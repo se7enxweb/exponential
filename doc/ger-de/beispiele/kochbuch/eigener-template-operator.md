@@ -163,7 +163,7 @@ php bin/php/ezcache.php --clear-tag=template --allow-root-user
 ```
 
 Die Operatorklasse steht nicht im Autoload-Array; sie wird über den Pfad in `script` eingebunden. Unter Velocity
-starten Sie es neu (`./console exp:velocity restart --allow-root-user` oder das ganze
+starten Sie ihn neu (`./console exp:velocity restart --allow-root-user` oder das ganze
 [Deployment](velocity-deployment.md)): Seine Worker lesen die Template-Einstellungen und die Operatorliste beim Start.
 
 Laden Sie eine Seite neu, die den Operator verwendet. Ein unbekannter Operator wird in der Debug-Ausgabe als

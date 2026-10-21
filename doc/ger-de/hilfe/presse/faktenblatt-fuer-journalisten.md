@@ -46,7 +46,7 @@ LIZENZ         Software: GNU GPL v2 oder später, kostenlos. Dokumentation: GNU 
 LÄUFT AUF *    PHP 8.0 - 8.5. SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.
                Linux, BSD, macOS, Windows (dokumentierte Stufen). Apache, Nginx und andere, oder Velocity.
 NEU IN 6.0.15* Exponential Velocity (PHP-Webserver), Exponential Layouts (Seitenbaukasten), Exponential
-               Intelligence (schreibt nur Entwürfe), Design admin4, Audit-Trail, Hilfesystem.
+               Intelligence (schreibt nur Entwürfe), Design admin4, Prüfprotokoll, Hilfesystem.
 SICHERHEIT     Vertrauliche Meldungen an security@se7enx.com; "a first answer within one business day";
                Korrekturen erscheinen im nächsten 6.0.x-Release; veröffentlichte Versionen werden nie geändert.
 SPRACHEN *     268 Locale-Dateien (40 von rechts nach links); 33 Übersetzungen der Administration, 19 vollständig

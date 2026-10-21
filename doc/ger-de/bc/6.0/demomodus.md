@@ -138,7 +138,7 @@ dann aus `$_SERVER` (Apache `SetEnv` mit mod_php und ähnlichen SAPIs). Ein Wert
 
 ## Einschalten
 
-Setzen Sie die Variable für **jeden** Prozess der Demo: das PHP des Webservers, Exponential Velocity, wenn es die
+Setzen Sie die Variable für **jeden** Prozess der Demo: das PHP des Webservers, Exponential Velocity, wenn er die
 Website ausliefert, die Cronjobs und jeden Konsolenbefehl. Ein Prozess ohne sie läuft mit ausgeschaltetem Demo-Modus.
 
 | Wo PHP läuft | Wie |

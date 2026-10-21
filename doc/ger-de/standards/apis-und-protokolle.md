@@ -88,7 +88,7 @@ mehrere vorgeschriebene oder empfohlene Teile fehlen.
 - `response_type=token` (der Implicit Grant, von RFC 9700 abgeraten) wird weiterhin akzeptiert und gibt die Tokens im
   Query-String zurück statt im URL-Fragment, das RFC 6749 Abschnitt 4.2.2 vorschreibt.
 - Die Token-Antwort hat kein `token_type` (von RFC 6749 Abschnitt 5.1 vorgeschrieben); `Cache-Control: no-store` wird
-  vom Controller nicht gesetzt. **Nicht verifiziert**, ob eine darunterliegende Schicht es hinzufügt.
+  vom Controller nicht gesetzt. **Nicht geprüft**, ob eine darunterliegende Schicht es hinzufügt.
 - Kein Grant `client_credentials` oder `password`, keine Token-Introspektion (RFC 7662), kein Widerrufs-Endpunkt
   (RFC 7009).
 - Die Annahme des Tokens in einem Query-Parameter erlaubt RFC 6750 nur als letztes Mittel; es kann in Logs landen.
@@ -161,8 +161,8 @@ Eine zweite HTTP-API ist die Aufrufschnittstelle von `ezjscore`, `/ezjscore/call
 - `GET /content/node/<id>/listAtom` antwortet unter v1 und v2 mit 500
   ([REST API v1 und v2](../anleitungen/rest-api-v1-und-v2.md), "Known issue: listAtom").
 - Welchen Statuscode jede schreibende Route zurückgibt (zum Beispiel 201 beim Erstellen), ist anhand des Codes
-  **nicht verifiziert**; der Leitfaden zeigt nur den JSON-Inhalt.
-- Bedingte Anfragen (`ETag`, `If-Match`) bei schreibenden Aufrufen wurden nicht gefunden. **Nicht verifiziert.**
+  **nicht geprüft**; der Leitfaden zeigt nur den JSON-Inhalt.
+- Bedingte Anfragen (`ETag`, `If-Match`) bei schreibenden Aufrufen wurden nicht gefunden. **Nicht geprüft.**
 
 ## JSON (RFC 8259)
 
@@ -223,7 +223,7 @@ PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK und UNLOCK. Klasse 1 ist der Grundu
 - Die Methoden `assignLock()`, `ownsLock()` und `releaseLock()` des Sperr-Autorisierers in
   `ezwebdavcontentbackendauth.php` sind leer (`@todo implement`); der eigene Kommentar des Backends sagt, dass
   Sperraufrufe in `setProperty` und `removeProperty` noch fehlen. Ob LOCK und UNLOCK mit echten Clients funktionieren,
-  ist **nicht verifiziert**.
+  ist **nicht geprüft**.
 - Die Regressionsaufzeichnungen haben keinen `*Test.php`-Runner, sodass keine PHPUnit-Suite in `phpunit.xml` sie
   ausführt und die CI WebDAV nicht testet.
 
@@ -311,7 +311,7 @@ liefert sie über ihr Modul `sitemap` aus.
 ### Bekannte Lücken
 
 - Das Limit von 50.000 URLs / 50 MB pro Datei und Sitemap-Indexdateien wurden für diese Seite nicht geprüft.
-  **Nicht verifiziert.**
+  **Nicht geprüft.**
 
 ## SMTP (RFC 5321) und Mail
 
@@ -341,7 +341,7 @@ Das Simple Mail Transfer Protocol, IETF RFC 5321 (Oktober 2008). STARTTLS für S
 ### Bekannte Lücken
 
 - Der Kommentar in `site.ini` bietet noch `sslv2` und `sslv3` als Verbindungstypen an, die veraltet und unsicher sind;
-  ob aktuelles PHP sie überhaupt akzeptiert, ist **nicht verifiziert**.
+  ob aktuelles PHP sie überhaupt akzeptiert, ist **nicht geprüft**.
 - Der Kommentar in `site.ini` zitiert RFC 2821, das durch RFC 5321 ersetzt wurde.
 - DKIM-Signaturen erstellt Exponential nicht; das bleibt dem Mailserver überlassen.
 
@@ -372,11 +372,11 @@ LDAPv2 wurde in RFC 3494 (2003) für historisch erklärt.
 
 - Der Standard ist `LDAPVersion=2`; setzen Sie ihn für jeden aktuellen Verzeichnisserver auf 3.
 - Kein StartTLS: `ldap_start_tls()` wird nicht aufgerufen. Die Verschlüsselung hängt von einer Serveradresse
-  `ldaps://` ab, was zusammen mit der separaten Einstellung `LDAPPort` **nicht verifiziert** ist.
+  `ldaps://` ab, was zusammen mit der separaten Einstellung `LDAPPort` **nicht geprüft** ist.
 - `LDAPDebugTrace=enabled` protokolliert Logins und Passwörter (Warnung in `ldap.ini`); lassen Sie es im Produktivbetrieb
   aus.
 - Der Test zielt auf einen festen entfernten LDAP-Server, nicht auf einen CI-Dienst; ob er in der CI läuft, ist
-  **nicht verifiziert**.
+  **nicht geprüft**.
 
 ## Webhooks
 

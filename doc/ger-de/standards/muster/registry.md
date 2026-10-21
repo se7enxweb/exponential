@@ -182,7 +182,7 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `eZSession` | class | `lib/ezsession/classes/ezsession.php:67` | Session-Schnittstellenklasse von Exponential | – |
+| `eZSession` | class | `lib/ezsession/classes/ezsession.php:67` | Sitzungsschnittstellenklasse von Exponential | – |
 
 ### lib/ezutils (2)
 

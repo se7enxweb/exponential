@@ -34,7 +34,7 @@ anmelden kann), die Installer akzeptieren das veröffentlichte Demo-Passwort, un
   Einstellungsdatei oder eine Datenbank, die von einer Demo kopiert wird, ihn nicht auf eine andere Website trägt.
 - **Nur der genaue Wert `1`.** `0`, `true`, `yes`, `on` und ein leerer Wert lassen ihn aus.
 - **Pro Prozess.** PHP liest ihn bei jedem Aufruf zuerst mit `getenv()`, dann aus `$_SERVER`. Jeder Prozess, der die Demo ausliefert oder
-  pflegt, braucht ihn: das PHP des Webservers, Exponential Velocity, wenn es die Website ausliefert, Cronjobs und Konsolenbefehle. Ein
+  pflegt, braucht ihn: das PHP des Webservers, Exponential Velocity, wenn er die Website ausliefert, Cronjobs und Konsolenbefehle. Ein
   Prozess ohne ihn läuft mit ausgeschaltetem Demomodus.
 
 ## Sie für jeden Server setzen

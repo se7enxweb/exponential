@@ -99,7 +99,7 @@ Benutzer den Grund erfährt. [Demomodus für Entwickler](demomodus-fuer-entwickl
 ## Verwandte Seiten
 
 - Zurück: [eZContentClass und ihre Attribute](ezcontentclass.md)
-- Weiter: [eZHTTPTool: Requests, Sessions und Weiterleitungen](ezhttptool.md)
+- Weiter: [eZHTTPTool: Requests, Sitzungen und Weiterleitungen](ezhttptool.md)
 - [Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

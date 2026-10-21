@@ -57,7 +57,7 @@ Angebot für die Klausel zeigen kann, mit Links zu den Nachweisen, und gibt Hinw
 
 - Klauselnummern (`X.1`, `Y.2` …) sind Platzhalter; nummerieren Sie sie in Ihrem Vertrag neu.
 - Eckige Klammern markieren Optionen: Behalten Sie eine, löschen Sie die übrigen.
-- Statusangaben für Exponential (Complies, Partly complies, Unverified, Does not comply) stammen von den
+- Statusangaben für Exponential (Erfüllt, Teilweise erfüllt, Nicht geprüft, Nicht erfüllt) stammen von den
   [Seiten zu den Standards](../../../../../eng-us/standards/README.md) und werden hier nicht aufgewertet.
 
 ## Verwandte Seiten

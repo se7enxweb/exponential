@@ -75,7 +75,7 @@ Prüfen Sie nach jedem als root ausgeführten Befehl den Eigentümer neuer Datei
 
 ## Geheimnisse auf dem Server
 
-`settings/override/` enthält das Datenbankpasswort, die Signatur- und Pseudonymschlüssel des Audit-Trails und das
+`settings/override/` enthält das Datenbankpasswort, die Signatur- und Pseudonymschlüssel des Prüfprotokolls und das
 Geheimnis für die E-Mail-Präferenzen ([13.3](../../../../installation/13-sicherheitshaertung.md#133-geheimnisse-in-settingsoverride)).
 Beschränken Sie, wer es auf dem Server lesen kann, halten Sie es aus der Versionsverwaltung heraus oder verschlüsseln
 Sie es dort, und behandeln Sie Datensicherungen, die es enthalten, als vertraulich (siehe
@@ -95,8 +95,8 @@ einem davon. Was hilft:
   zu, mit ehrlichen Statusangaben „Teilweise erfüllt“ und „Nicht geprüft“ und den bekannten Lücken (zum Beispiel die
   standardmäßig ausgeschaltete Kontosperre und eine Mindestlänge für Passwörter von 10, unter den 12 der ASVS-Stufe 1).
 - Die Prüfungen auf dieser Seite erzeugen Nachweise, die Sie der Bewertung beilegen können.
-- Der Audit-Trail zeichnet Schreibvorgänge an Einstellungen, das Leeren von Caches und Bereitstellungen auf, was
-  Änderungs- und Zugriffskontrollen unterstützt ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md)).
+- Das Prüfprotokoll zeichnet Schreibvorgänge an Einstellungen, das Leeren von Caches und Bereitstellungen auf, was
+  Änderungs- und Zugriffskontrollen unterstützt ([Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
 
 ## Checkliste
 

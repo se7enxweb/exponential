@@ -4,7 +4,7 @@ audience: press
 category: press-media
 order: 106
 summary: Wie Sie über die Linie Exponential 6.0.15 berichten, bevor sie ein Release-Tag hat - was die Quellen darüber sagen, wie Sie die Arbeit als in Entwicklung kennzeichnen, welche Formulierungen genau sind und warum kein Datum genannt werden darf.
-keywords: 6.0.15, Entwicklungslinie, unveröffentlicht, main-Branch, dev-main, Vorschau, in Entwicklung, kein Veröffentlichungsdatum, Velocity, admin4, Audit-Trail, Exponential Layouts, Exponential Intelligence, development line, unreleased, main branch, preview, in development, no release date, audit trail
+keywords: 6.0.15, Entwicklungslinie, unveröffentlicht, main-Branch, dev-main, Vorschau, in Entwicklung, kein Veröffentlichungsdatum, Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, development line, unreleased, main branch, preview, in development, no release date, audit trail
 type: help
 ---
 # Über 6.0.15 berichten, solange es in Entwicklung ist
@@ -57,7 +57,7 @@ Setzen Sie den Status in die Überschrift oder den ersten Satz, nicht in eine Fu
 
 ```text
 In Entwicklung: was die nächste Exponential-Version, 6.0.15, enthalten soll
-Die Entwicklungslinie von Exponential bekommt einen Audit-Trail (noch nicht veröffentlicht)
+Die Entwicklungslinie von Exponential bekommt ein Prüfprotokoll (noch nicht veröffentlicht)
 ```
 
 Im Text:

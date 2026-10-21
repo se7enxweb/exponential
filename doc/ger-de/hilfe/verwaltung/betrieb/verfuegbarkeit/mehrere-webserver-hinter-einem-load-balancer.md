@@ -59,7 +59,7 @@ Balancers. Der Load Balancer muss `X-Forwarded-Proto: https` setzen, wenn er TLS
 Host weitergeben. Velocity hat eine eigene Liste, `Q.webserver.proxy.trusted` in der Engine-Konfiguration, weil es
 entscheidet, bevor der Kernel läuft.
 
-Warum das für eine öffentliche Stelle wichtig ist: Ohne diese Einstellung erscheint jeder Besucher im Audit-Trail und
+Warum das für eine öffentliche Stelle wichtig ist: Ohne diese Einstellung erscheint jeder Besucher im Prüfprotokoll und
 in den Anfrage-Logs mit der Adresse des Load Balancers, sodass eine Untersuchung Anmeldungen nicht auseinanderhalten
 kann, und HTTPS-Seiten können `http`-Links erzeugen.
 

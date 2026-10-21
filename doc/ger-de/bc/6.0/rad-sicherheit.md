@@ -115,7 +115,7 @@ Die Bearbeitungsansicht schreibt nur Spalten, die die Tabelle hat, und wandelt j
 Das Entfernen fragt zuerst nach und handelt nur bei einem bestätigten POST.
 
 Der Schutz von POST-Anfragen kommt von der Erweiterung `ezformtoken`, die bei jedem POST eines angemeldeten Benutzers
-ein Token pro Session prüft und das Feld jedem Formular hinzufügt. Ein erzeugtes Modul erbt das, und die erzeugte
+ein Token pro Sitzung prüft und das Feld jedem Formular hinzufügt. Ein erzeugtes Modul erbt das, und die erzeugte
 README sagt es, denn eine Installation ohne diese Erweiterung hat überall ungeschützte POST-Anfragen, nicht nur hier.
 
 ## RAD-08: Geheimnisse werden nicht erneut angezeigt oder in die Erweiterung geschrieben

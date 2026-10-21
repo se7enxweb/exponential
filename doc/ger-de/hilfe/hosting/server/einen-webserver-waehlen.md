@@ -57,7 +57,7 @@ mit PHP-FPM, IIS und lighttpd in Stufe 3 ein: sollte funktionieren.
 |---|---|---|
 | Darf die Website eines Kunden in diesem Tarif einen langlebigen Prozess betreiben? | nein (typisches Shared Hosting) | Apache oder LiteSpeed mit `.htaccess`. Shared Hosting erlaubt das meist nicht (`README.md`) |
 | Hat die Maschine PHP 8.0? | ja (das Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) | jede Engine; Velocity läuft ab seinem Release 0.0.4.54 auf 8.0, mit dem el9-RPM oder mit Composer ([Kapitel 2](../../../installation/02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux)) |
-| Müssen Kunden auf einer Maschine durch das Betriebssystem voneinander getrennt sein? | ja | eine Velocity pro Website, jede als eigener Benutzer, oder ein PHP-FPM-Pool pro Website |
+| Müssen Kunden auf einer Maschine durch das Betriebssystem voneinander getrennt sein? | ja | ein Velocity-Server pro Website, jeder als eigener Benutzer, oder ein PHP-FPM-Pool pro Website |
 | Betreiben Sie bereits ein abgestimmtes Apache oder nginx, das Sie behalten wollen? | ja | behalten Sie es; Velocity kann dahinter oder daneben stehen |
 | Wollen Sie die schnellste Antwort für wiederholte Seiten, ohne einen Cache-Server hinzuzufügen? | ja | Velocity mit seinem Antwort-Cache |
 
@@ -83,7 +83,7 @@ Das README ist ausdrücklich: Ein einziger Serverprozess, der mehrere Websites a
 Sicherheitsgrenze; der Prozess, der eine Website ausliefert, kann jede Datei lesen, die die anderen halten. Für einen Tarif, der mehrere
 Kunden auf eine Maschine legt:
 
-- **Velocity**: Betreiben Sie eine Velocity pro Website, jede mit `[ServerSettings] User` und `Group` auf den Benutzer dieses Kunden
+- **Velocity**: Betreiben Sie einen Velocity-Server pro Website, jeden mit `[ServerSettings] User` und `Group` auf den Benutzer dieses Kunden
   gesetzt, auf eigenen Ports, hinter einem Proxy. Siehe [Velocity neben Apache oder nginx](velocity-neben-apache-oder-nginx.md).
 - **PHP-FPM**: Geben Sie jeder Website einen eigenen Pool, der als Benutzer der Website läuft. Siehe
   [Apache mit PHP-FPM](apache-mit-php-fpm.md) und [Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md).

@@ -29,11 +29,11 @@ ihn nachlesen.
 | ACR | Accessibility Conformance Report | Konformitätsbericht eines Anbieters zur Barrierefreiheit, oft mit einem VPAT erstellt; für Exponential gibt es keinen ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#section-508)) |
 | ARIA | Accessible Rich Internet Applications | Rollen und Zustände des W3C für assistive Technologien ([WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/)) |
 | EAA | European Accessibility Act (Europäischer Rechtsakt zur Barrierefreiheit) | Richtlinie (EU) 2019/882 ([EUR-Lex](https://eur-lex.europa.eu/eli/dir/2019/882/oj)) |
-| EN 301 549 | (Nummer der europäischen Norm) | Anforderungen an die Barrierefreiheit von IKT-Produkten und -Diensten ([ETSI, v3.2.1](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)); Exponential: „Unverified“ (nicht überprüft) |
+| EN 301 549 | (Nummer der europäischen Norm) | Anforderungen an die Barrierefreiheit von IKT-Produkten und -Diensten ([ETSI, v3.2.1](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)); Exponential: „Nicht geprüft“ |
 | VPAT | Voluntary Product Accessibility Template | die Vorlage für einen ACR, vor allem für Section 508 ([section508.gov](https://www.section508.gov/)) |
 | WAD | Web Accessibility Directive (Richtlinie über den barrierefreien Zugang zu Websites) | Richtlinie (EU) 2016/2102 für Websites und Apps öffentlicher Stellen ([EUR-Lex](https://eur-lex.europa.eu/eli/dir/2016/2102/oj)) |
 | WAI | Web Accessibility Initiative | die Gruppe des W3C, die WCAG und Leitfäden veröffentlicht |
-| WCAG | Web Content Accessibility Guidelines (Richtlinien für barrierefreie Webinhalte) | [WCAG 2.2](https://www.w3.org/TR/WCAG22/); Exponential admin4: „Partly complies“ (teilweise erfüllt) auf Stufe AA |
+| WCAG | Web Content Accessibility Guidelines (Richtlinien für barrierefreie Webinhalte) | [WCAG 2.2](https://www.w3.org/TR/WCAG22/); Exponential admin4: „Teilweise erfüllt“ auf Stufe AA |
 | WCAG-EM | WCAG Evaluation Methodology | wie eine Website gegen WCAG geprüft wird ([WCAG-EM](https://www.w3.org/TR/WCAG-EM/)) |
 
 ## Sicherheit

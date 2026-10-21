@@ -44,7 +44,7 @@ Cron versendet. Referenz: [Cronjobs](../../../../anleitungen/cronjobs.md); Sicht
   mehr als zwei Tage zurückliegt.
 - Shell: `./console crontab:list` zeigt die installierten Zeilen; `php runcronjobs.php --list --allow-root-user` die
   Teile.
-- Audit-Trail: Jeder Lauf ist `system.cronjob.run` oder `system.cronjob.fail`, gleich wer ihn gestartet hat.
+- Prüfprotokoll: Jeder Lauf ist `system.cronjob.run` oder `system.cronjob.fail`, gleich wer ihn gestartet hat.
 
 ## Pausen
 

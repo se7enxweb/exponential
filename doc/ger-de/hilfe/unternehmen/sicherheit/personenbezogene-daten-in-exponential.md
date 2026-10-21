@@ -3,8 +3,8 @@ title: Personenbezogene Daten in Exponential
 audience: businesses, admin, developer
 category: business-solutions
 order: 30
-summary: Wo eine Exponential-Installation personenbezogene Daten speichert - Benutzerkonten, Sessions, Bestellungen, Formulareingaben, E-Mail-Einstellungen und Einwilligung, Newsletter-Abonnenten, Benachrichtigungen, Suchbegriffe, Logs, der Audit-Trail, Exporte und Backups - jeweils mit dem Datenbankschema und der Dokumentation abgeglichen, mit dem, wer sie sehen darf und wie man sie entfernt. Keine Rechtsberatung.
-keywords: personenbezogene Daten, Dateninventar, Datenlandkarte, Benutzerkonten, Bestellungen, Informationssammler, Newsletter, Einwilligungsprotokoll, Sessions, Logs, Audit-Trail, Backups, DSGVO, personal data, data inventory, data map, user accounts, ezuser, orders, ezorder, information collector, ezinfocollection, newsletter, cjw_newsletter, cjwnl_user, consent log, expmail, sessions, logs, audit trail, backups, GDPR
+summary: Wo eine Exponential-Installation personenbezogene Daten speichert - Benutzerkonten, Sitzungen, Bestellungen, Formulareingaben, E-Mail-Einstellungen und Einwilligung, Newsletter-Abonnenten, Benachrichtigungen, Suchbegriffe, Logs, das Prüfprotokoll, Exporte und Backups - jeweils mit dem Datenbankschema und der Dokumentation abgeglichen, mit dem, wer sie sehen darf und wie man sie entfernt. Keine Rechtsberatung.
+keywords: personenbezogene Daten, Dateninventar, Datenlandkarte, Benutzerkonten, Bestellungen, Informationssammler, Newsletter, Einwilligungsprotokoll, Sitzungen, Logs, Prüfprotokoll, Backups, DSGVO, personal data, data inventory, data map, user accounts, ezuser, orders, ezorder, information collector, ezinfocollection, newsletter, cjw_newsletter, cjwnl_user, consent log, expmail, sessions, logs, audit trail, backups, GDPR
 type: help
 ---
 # Personenbezogene Daten in Exponential
@@ -26,7 +26,7 @@ haben, können Sie weder schützen noch exportieren noch löschen. Jede Zeile un
 3. [Shop: Warenkörbe und Bestellungen](#shop-warenkörbe-und-bestellungen)
 4. [Formulare: der Informationssammler](#formulare-der-informationssammler)
 5. [E-Mail-Einstellungen und Newsletter](#e-mail-einstellungen-und-newsletter)
-6. [Logs und der Audit-Trail](#logs-und-der-audit-trail)
+6. [Logs und das Prüfprotokoll](#logs-und-das-prüfprotokoll)
 7. [Alles andere, was zu prüfen ist](#alles-andere-was-zu-prüfen-ist)
 8. [Ihr eigenes Dateninventar aufbauen](#ihr-eigenes-dateninventar-aufbauen)
 
@@ -36,7 +36,7 @@ haben, können Sie weder schützen noch exportieren noch löschen. Jede Zeile un
 |---|---|---|---|
 | Benutzerkonten | Tabelle `ezuser` und das Inhaltsobjekt des Benutzers | Benutzername, E-Mail-Adresse, Passwort-Hash; Name und andere Felder der Benutzerklasse | [Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md) |
 | Anmeldeaktivität | `ezuservisit` | letzter Besuch, Zahl der Anmeldungen, fehlgeschlagene Versuche | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
-| Sessions | `ezsession` (Datenbank-Handler) oder die Session-Dateien von PHP | Benutzer-ID, Session-Daten | [Sessions](../../../anleitungen/sitzungen.md) |
+| Sitzungen | `ezsession` (Datenbank-Handler) oder die Sitzungsdateien von PHP | Benutzer-ID, Sitzungsdaten | [Sitzungen](../../../anleitungen/sitzungen.md) |
 | Bestellungen | `ezorder` | E-Mail-Adresse, Benutzer-ID und ein Kontodatensatz mit Name, Adresse, Telefon und Kommentar | [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md) |
 | Formulareingaben | `ezinfocollection`, `ezinfocollection_attribute` | was Besucher eingegeben haben, oft Namen und E-Mail-Adressen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | E-Mail-Einstellungen und Einwilligung | `expmail_preference`, `expmail_consent_log`, `expmail_pending` | Entscheidungen pro Kategorie; Einwilligungsverlauf mit Zeit, Quelle, angezeigtem Text, IP-Adresse, handelndem Benutzer | [E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md) |
@@ -45,7 +45,7 @@ haben, können Sie weder schützen noch exportieren noch löschen. Jede Zeile un
 | Abonnements von Benachrichtigungen | `ezsubtree_notification_rule` | welcher Benutzer welchen Inhalten folgt | [Benachrichtigungen](../../../anleitungen/benachrichtigungen-administrator.md) |
 | Suchbegriffe | `ezsearch_search_phrase` | Begriffe, die Besucher eingegeben haben und die personenbezogene Daten enthalten können | [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#datenschutz-und-privatsphäre-zu-beantwortende-fragen) |
 | Anfrage- und Sicherheits-Logs | `var/<site>/log/` | maskierte Adressen, gekürzte User-Agents | [Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md) |
-| Audit-Trail | `var/<site>/log/audit/` und die Index-Tabellen `expaudit_*` | wer was getan hat; Adressen gekürzt, Sessions gehasht | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Prüfprotokoll | `var/<site>/log/audit/` und die Index-Tabellen `expaudit_*` | wer was getan hat; Adressen gekürzt, Sitzungen gehasht | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | Exporte | Dateien, die Sie herunterladen, und Dateien in `var/tmp/` | CSV- und JSON-Exporte von Formularen, Mail-Daten, Audit-Datensätzen | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md) |
 | Backups | wo auch immer Ihr Hoster sie aufbewahrt | alles oben Genannte | [Backups: was zu sichern ist](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
 
@@ -70,19 +70,19 @@ haben, können Sie weder schützen noch exportieren noch löschen. Jede Zeile un
 - `ezorder` hält die E-Mail-Adresse und die Benutzer-ID des Kunden fest und in seinem Kontodatensatz Vor- und Nachname,
   E-Mail-Adresse, Straße, Postleitzahl, Ort, Bundesland, Land, Telefon und Kommentar, die an der Kasse eingegeben wurden
   (`kernel/private/classes/views/shop/userregister.php`).
-- `ezbasket` verbindet einen Warenkorb mit einer Session; `ezwishlist` mit einem Benutzer.
+- `ezbasket` verbindet einen Warenkorb mit einer Sitzung; `ezwishlist` mit einem Benutzer.
 - Bestellungen lassen sich in der Administration archivieren und entfernen (`shop/archiveorder`, `shop/removeorder`,
   [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)). Ihre
   Buchführungspflichten können verlangen, Bestellungen eine Zeit lang aufzubewahren; entscheiden Sie mit Ihrem
   Steuerberater.
-- Kartendaten: Der Audit-Trail zeichnet Zahlungen auf, „nie Kartendaten“ ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md));
+- Kartendaten: Das Prüfprotokoll zeichnet Zahlungen auf, „nie Kartendaten“ ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md));
   siehe [Kartenzahlungen und PCI-Grundlagen](../shops/kartenzahlungen-und-pci-grundlagen.md).
 
 ## Formulare: der Informationssammler
 
 Jedes Mal, wenn ein Besucher ein Formular absendet, wird eine Sammlung mit einem Wert pro Sammelfeld gespeichert.
 **Setup > Gesammelte Informationen** listet Sammlungen auf, exportiert sie (CSV) und entfernt sie; dafür braucht man die
-Richtlinie `infocollector/read`. Jeder Export wird mit der Zahl der Zeilen im Audit-Trail festgehalten, nie mit den
+Richtlinie `infocollector/read`. Jeder Export wird mit der Zahl der Zeilen im Prüfprotokoll festgehalten, nie mit den
 Werten ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)). Eine Mail an einen Empfänger legt dieselben
 Daten zusätzlich in einem Posteingang ab
 ([Formulare mit dem Informationssammler](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
@@ -96,15 +96,15 @@ Daten zusätzlich in einem Posteingang ab
   Klicks ist standardmäßig aus (`[TrackingSettings] Tracking=disabled`)
   ([Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#was-bei-hoster-und-kunde-bleibt)).
 
-## Logs und der Audit-Trail
+## Logs und das Prüfprotokoll
 
 - `404.log` und `security.log` maskieren Client-Adressen standardmäßig (`MaskIP=enabled`); der Log-Viewer maskiert
   E-Mail-Adressen, IP-Adressen und Geheimnisse in dem, was er anzeigt
   ([Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md#datenschutz-als-standard-in-den-logs)).
 - Das Zugriffslog von Velocity steht im kombinierten Format von Apache und „nennt Besucher“; seine Dateien sind nur für
   Eigentümer und Gruppe lesbar (dieselbe Quelle).
-- Der Audit-Trail kürzt Adressen, hasht Sessions, kürzt User-Agents und zeichnet nie Passwörter, Tokens oder Geheimnisse
-  auf ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- Das Prüfprotokoll kürzt Adressen, hasht Sitzungen, kürzt User-Agents und zeichnet nie Passwörter, Tokens oder Geheimnisse
+  auf ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
 - Logs von Webserver, Mail-Server und Panel außerhalb von Exponential folgen den Einstellungen Ihres Hosters.
 
 ## Alles andere, was zu prüfen ist

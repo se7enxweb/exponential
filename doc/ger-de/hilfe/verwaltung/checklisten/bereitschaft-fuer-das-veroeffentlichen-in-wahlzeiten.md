@@ -3,8 +3,8 @@ title: Bereitschaft für das Veröffentlichen in Wahlzeiten
 audience: government, editor, admin, project-manager
 category: public-sector
 order: 200
-summary: Gängige Praxis öffentlicher Stellen, die das Veröffentlichen in einer Wahlzeit einschränken oder prüfen, und wie Rollen, Sektionen, Objektzustände, Freigabe-Workflows und der Audit-Trail von Exponential diese Regeln unterstützen können - als Praxis, nicht als rechtliche Vorgabe.
-keywords: Wahlzeit, Vorwahlzeit, Neutralitätsgebot, Karenzzeit, Einschränkungen beim Veröffentlichen, Freigabe, Objektzustände, Workflows, Rollen, Audit-Trail, Neutralität, öffentlicher Sektor, election period, pre-election, purdah, caretaker period, publishing restrictions, approval, object states, roles, audit trail, neutrality, public sector
+summary: Gängige Praxis öffentlicher Stellen, die das Veröffentlichen in einer Wahlzeit einschränken oder prüfen, und wie Rollen, Sektionen, Objektzustände, Freigabe-Workflows und das Prüfprotokoll von Exponential diese Regeln unterstützen können - als Praxis, nicht als rechtliche Vorgabe.
+keywords: Wahlzeit, Vorwahlzeit, Neutralitätsgebot, Karenzzeit, Einschränkungen beim Veröffentlichen, Freigabe, Objektzustände, Workflows, Rollen, Prüfprotokoll, Neutralität, öffentlicher Sektor, election period, pre-election, purdah, caretaker period, publishing restrictions, approval, object states, roles, audit trail, neutrality, public sector
 type: help
 ---
 # Bereitschaft für das Veröffentlichen in Wahlzeiten
@@ -55,7 +55,7 @@ die Funktionen von Exponential Ihnen helfen können, sie einzuhalten. Sie beschr
 
 ## Aufzeichnungen dessen, was veröffentlicht wurde
 
-- [ ] Der Audit-Trail zeichnet Veröffentlichungen und Änderungen an Rechten auf; Sie wissen, wie Sie ihn durchsuchen ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
+- [ ] Das Prüfprotokoll zeichnet Veröffentlichungen und Änderungen an Rechten auf; Sie wissen, wie Sie es durchsuchen ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 - [ ] Versionen zeigen, was jede Seite wann sagte ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - [ ] Entscheidungen in Grenzfällen werden außerhalb der Website festgehalten.
 

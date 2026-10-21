@@ -426,8 +426,8 @@ Die Höhe wird einmal am Ende eines Ziehens gespeichert oder 0,6 s nach dem letz
   `data-exp-debug-panel-height` aus; das erste Skript des Berichts (`expdebugbar-head.js`) setzt `--exp-debug-panel-h`
   daraus, bevor sich das Panel öffnet, sodass es ohne Sprung in dieser Höhe öffnet.
 - **Anonym** (die Leiste über die IP angezeigt): Es wird keine Benutzereinstellung gelesen oder gespeichert und keine
-  Anfrage gesendet, da eZPreferences die Werte eines anonymen Benutzers in der Session halten und die Debug-Leiste nie
-  eine Session starten darf (`savedPanelHeight()` gibt 0 zurück, ohne zu fragen, und `expdebugbar::panelheight` lehnt
+  Anfrage gesendet, da eZPreferences die Werte eines anonymen Benutzers in der Sitzung halten und die Debug-Leiste nie
+  eine Sitzung starten darf (`savedPanelHeight()` gibt 0 zurück, ohne zu fragen, und `expdebugbar::panelheight` lehnt
   einen anonymen Besucher vor der Prüfung des Tokens ab). Die Höhe wird stattdessen im Browser gehalten:
   `localStorage`-Schlüssel `exp-debug-panel-height`, jeder Zugriff in `try`/`catch` (gesperrter Speicher bedeutet die
   Standardhöhe), von `expdebugbar-head.js` vor dem Öffnen des Panels zurückgelesen und zwischen 120 und 4000 px

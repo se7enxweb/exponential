@@ -55,7 +55,7 @@ Hilfe gehören zur Entwicklungslinie 6.0.15, die kein Veröffentlichungsdatum ha
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
 | C1 | Die Website unter Velocity betreiben | 8 Min. | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) | [Velocity](demo-skript-velocity.md) |
-| C2 | Rollen, zweistufige Anmeldung und der Audit-Trail | 8 Min. | [Sicherheitshärtung](../sicherheitshaertung.md) | [Rundgang für Administratoren, Teil 4](demo-skript-rundgang-fuer-administratoren.md#teil-4-sicherheit-3-minuten) |
+| C2 | Rollen, zweistufige Anmeldung und das Prüfprotokoll | 8 Min. | [Sicherheitshärtung](../sicherheitshaertung.md) | [Rundgang für Administratoren, Teil 4](demo-skript-rundgang-fuer-administratoren.md#teil-4-sicherheit-3-minuten) |
 | C3 | Logs, Upgrade-Prüfung und Caches | 8 Min. | [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md) | [Rundgang für Administratoren, Teil 3](demo-skript-rundgang-fuer-administratoren.md#teil-3-betrieb-3-minuten) |
 
 Ein optionaler vierter Strang kann Exponential Intelligence zeigen ([sein Demo-Skript](demo-skript-exponential-intelligence.md)),

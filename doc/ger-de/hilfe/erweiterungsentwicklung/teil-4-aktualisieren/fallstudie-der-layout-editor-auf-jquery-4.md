@@ -77,7 +77,7 @@ Die Liste des Kernels mit den entfernten Aufrufen und ihrem Ersatz steht in
 ## Schritt 4: Namen
 
 Beide Commits haben die Präfixe des Upstream-Projekts in globalen Variablen, Seiten-Tags (`<meta>`-Namen, die das
-JavaScript liest), Session-Schlüsseln und Dateinamen in `explayouts`- und `exp`-Namen umbenannt; zum Beispiel wurden
+JavaScript liest), Sitzungsschlüsseln und Dateinamen in `explayouts`- und `exp`-Namen umbenannt; zum Beispiel wurden
 aus den Meta-Tags `nglayouts-route-prefix` und `nglayouts-base-path` die Tags `explayouts-route-prefix` und
 `explayouts-base-path`, und aus `layouts-ibexa.js` wurde `layouts-exponential.js`. Das waren die Interna der
 Erweiterung: Nichts außerhalb der Erweiterung las sie, daher konnten sie im selben Commit umbenannt werden wie alles,

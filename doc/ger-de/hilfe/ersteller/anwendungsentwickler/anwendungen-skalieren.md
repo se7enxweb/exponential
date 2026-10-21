@@ -48,7 +48,7 @@ Der Worker-Pool von Velocity und seine dynamische Größe werden in `velocity.in
 
 Mehrere Webserver brauchen: eine Datenbank (oder einen Cluster davon), gemeinsamen Dateispeicher über den
 Cluster-Dateihandler, denselben Code und dieselben Einstellungen auf jedem Server, Sitzungen, die jeder Server lesen kann
-(der Datenbank-Sitzungshandler), einen Lastverteiler, der in `TrustedProxies[]` eingetragen ist, und Cron- und
+(der Datenbank-Session-Handler), einen Lastverteiler, der in `TrustedProxies[]` eingetragen ist, und Cron- und
 Warteschlangen-Worker auf einem dafür bestimmten Server (oder mit Sperre).
 
 ## Ein Anwendungsdesign, das skaliert

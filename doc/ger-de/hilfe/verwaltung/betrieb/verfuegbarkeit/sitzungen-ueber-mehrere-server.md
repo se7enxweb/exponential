@@ -4,7 +4,7 @@ audience: government, hosting, admin
 category: public-sector
 order: 110
 summary: Für IT-Teams, die eine Exponential-Website auf mehreren Webservern betreiben. Wo Sitzungen gespeichert werden (PHP-Dateien oder die Datenbank), wie Redakteurinnen und Redakteure angemeldet bleiben, wenn ein Load Balancer sie zwischen Servern verschiebt, was ein ausgefallener Knoten für angemeldete Beschäftigte bedeutet und welche Sitzungseinstellungen wichtig sind.
-keywords: Sitzungen, Sitzungshandler, ezpSessionHandlerDB, ezpSessionHandlerPHP, Sticky Sessions, Sitzungsaffinität, CookieAlwaysAddToHttpResponse, SessionTimeout, Setup > Sitzungen, mehrere Webserver, angemeldete Redakteure, sessions, session handler, sticky sessions, session affinity, Setup > Sessions, several web servers, signed-in editors
+keywords: Sitzungen, Session-Handler, ezpSessionHandlerDB, ezpSessionHandlerPHP, Sticky Sessions, Sitzungsaffinität, CookieAlwaysAddToHttpResponse, SessionTimeout, Setup > Sitzungen, mehrere Webserver, angemeldete Redakteure, sessions, session handler, sticky sessions, session affinity, Setup > Sitzungen, several web servers, signed-in editors
 type: help
 ---
 # Sitzungen über mehrere Server

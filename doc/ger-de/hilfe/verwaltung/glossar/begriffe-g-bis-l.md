@@ -93,8 +93,8 @@ mehrere haben ([das Exponential-Glossar](../../../../eng-us/glossary.md#l)).
 mit einer Fehlerübersicht auf ([Protokollanzeige](../../../../eng-us/features/6.0/log-viewer.md),
 [Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)).
 
-**Aufbewahrung von Protokollen (Log retention).** Wie lange Protokolle aufbewahrt werden. In Exponential bewahrt der
-Audit-Trail pro Kanal 90 Tage aktiv und zwei Jahre archiviert auf; einige andere Protokolle haben Altersgrenzen, die in
+**Aufbewahrung von Protokollen (Log retention).** Wie lange Protokolle aufbewahrt werden. In Exponential bewahrt das
+Prüfprotokoll pro Kanal 90 Tage aktiv und zwei Jahre archiviert auf; einige andere Protokolle haben Altersgrenzen, die in
 `logviewer.ini` festgelegt sind ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
 
 ## Verwandte Seiten

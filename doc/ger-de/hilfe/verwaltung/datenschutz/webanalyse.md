@@ -31,7 +31,7 @@ und ein Drittanbieter ([Besucherstatistiken und Webanalyse](../../../../eng-us/h
 | Suchstatistiken | Suchbegriffe, Anzahl, durchschnittliche Trefferzahl; **standardmäßig aus** (`LogSearchStats`) | Suchbegriffe können Namen enthalten |
 | Aufrufzähler | Seitenaufrufe pro Knoten, gezählt vom Cronjob-Teil `updateviewcount` aus dem Zugriffsprotokoll | nichts pro Besucher gespeichert |
 | Anfrageprotokolle | „Nicht gefunden“- und Angriffsanfragen, maskiert | maskierte Adressen |
-| Audit-Trail | Tätigkeiten in der Administration | Daten der Beschäftigten |
+| Prüfprotokoll | Tätigkeiten in der Administration | Daten der Beschäftigten |
 
 Diese Quellen beantworten betriebliche Fragen; sie sind kein Analysedienst.
 

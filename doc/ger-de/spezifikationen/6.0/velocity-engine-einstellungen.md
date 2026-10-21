@@ -1,7 +1,7 @@
 # Spezifikation: Einstellungen und Programme der Velocity-Engine
 
 Diese Seite ist die Referenz für die eigenen Einstellungen der Velocity-Engine (JSON unter dem Schlüssel `Q`), für die Stellen, aus denen sie gelesen
-werden, die Programme, die die Engine mitbringt, die Protokollierung, das Branding, die Event-Loop, die Wiederaufnahme von TLS-Sessions und den Vorwärm-Cache
+werden, die Programme, die die Engine mitbringt, die Protokollierung, das Branding, die Event-Loop, die Wiederaufnahme von TLS-Sitzungen und den Vorwärm-Cache
 beim Start. Lesen Sie sie, wenn Sie Velocity außerhalb der `settings/velocity.ini` von Exponential konfigurieren, seine Protokolle lesen
 oder den Standardwert eines Engine-Schlüssels brauchen. Sie gilt für Exponential Velocity 0.0.4.42.
 
@@ -146,7 +146,7 @@ Mit der Standardmarke und ohne weitere Einstellungen wird das eigene Logo des Se
 
 `webserver.eventLoop` wählt die Schleife, die auf Sockets wartet: `auto` nimmt Revolt, wenn `revolt/event-loop` installiert ist, sonst `stream_select`; `iopoll` (das native `Io\Poll` von PHP) muss ausdrücklich gewählt werden, weil es noch nicht gegen die echte Erweiterung gelaufen ist; `QBIX_EVENT_LOOP` hat Vorrang vor der Einstellung. Revolt wird nur mit der Erweiterung `ev`, `event` oder `uv` schneller und war in Messungen bis 2.000 Verbindungen nicht schneller als `select`; die Obergrenze unterhalb von etwa 1.000 Workern ist die von `stream_select` ([Worker-Pool](velocity-worker-pool.md)).
 
-Eine TLS-Session kann wiederaufgenommen werden (22. September 2026): Der HTTPS-Listener hält einen Kontext mit dem Session-Cache und dem Ticket-Schlüssel, und jede angenommene Verbindung erbt ihn, sodass ein wiederkehrender Besucher und jede neue Verbindung innerhalb eines Besuchs den vollständigen Handshake überspringen. Prüfen Sie das an einem HTTPS-Listener von Velocity (nicht an einem vorgeschalteten Server wie Apache) mit `openssl s_client -connect host:443 -reconnect < /dev/null | grep -c Reused`; mehr als 0 bedeutet, dass Sessions wiederaufgenommen werden.
+Eine TLS-Sitzung kann wiederaufgenommen werden (22. September 2026): Der HTTPS-Listener hält einen Kontext mit dem Sitzungs-Cache und dem Ticket-Schlüssel, und jede angenommene Verbindung erbt ihn, sodass ein wiederkehrender Besucher und jede neue Verbindung innerhalb eines Besuchs den vollständigen Handshake überspringen. Prüfen Sie das an einem HTTPS-Listener von Velocity (nicht an einem vorgeschalteten Server wie Apache) mit `openssl s_client -connect host:443 -reconnect < /dev/null | grep -c Reused`; mehr als 0 bedeutet, dass Sitzungen wiederaufgenommen werden.
 
 ## Vorwärm-Cache beim Start
 

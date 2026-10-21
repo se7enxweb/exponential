@@ -108,7 +108,7 @@ verlässlich wie `TrustedProxies[]` (siehe [TLS und HTTPS](tls-und-https.md#prox
 | Passwörter | `MinPasswordLength=10`, `WeakPasswordCheck=enabled`, bcrypt | eine Richtlinie anbieten wie `MinPasswordLength=15`, `ForbidLogin`, `ForbidCurrentPassword` ([13.6](../../../installation/13-sicherheitshaertung.md#136-passwörter-und-anmeldung)) |
 | Sperre | `MaxNumberOfFailedLogin=0` (aus) | mit dem Kunden entscheiden; eine Sperre lässt auch jeden ein bekanntes Konto sperren |
 | Zweistufige Anmeldung | Erweiterung von `composer.json` verlangt und von den Installern aktiviert; `Enforce2FA=disabled` | `Enforce2FA` für Administratoren empfehlen: [Zweistufige Anmeldung](zweistufige-anmeldung.md) |
-| Sitzungscookie | `HttpOnly`, `SameSite=Lax`, `CookieSecure=auto` | `CookieSecure=true` auf Websites nur mit HTTPS ([13.7](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)) |
+| Sitzungscookie | `HttpOnly`, `SameSite=Lax`, `CookieSecure=auto` | `CookieSecure=true` auf Websites nur mit HTTPS ([13.7](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)) |
 | Formular-Tokens | `ezformtoken` aktiv | in `ActiveExtensions[]` behalten ([13.8](../../../installation/13-sicherheitshaertung.md#138-formular-tokens-gegen-cross-site-request-forgery)) |
 | Konfiguration aus Git | `ManagedByDeployment=disabled` | `enabled` auf Siteaccesses der Administration in der Produktion, wenn Einstellungen und Templates aus der Versionsverwaltung kommen |
 

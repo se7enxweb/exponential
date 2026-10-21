@@ -54,7 +54,7 @@ Nginx oder Apache davorsteht ([README](https://github.com/se7enxweb/exponential/
 
 | Fakt | Quelle |
 |---|---|
-| Die mitgelieferte Voreinstellung in `settings/velocity.ini` ist `Engine=php`, weil sie keine Installation braucht; die Dokumentation sagt, sie für jede echte Website auf `qbix` zu ändern. | [Velocity, Wozu Sie es verwenden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
+| Die mitgelieferte Voreinstellung in `settings/velocity.ini` ist `Engine=php`, weil sie keine Installation braucht; die Dokumentation sagt, sie für jede echte Website auf `qbix` zu ändern. | [Velocity, Wozu Sie ihn verwenden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
 | Alle drei Engines können für Tests gleichzeitig laufen, jede mit eigenem Port, eigener PID-Datei und eigenen Protokollen. | [Velocity, Die Engines im Vergleich](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#engines-side-by-side) |
 | Der eingebaute Server von PHP ist „Single-threaded, no concurrency, not hardened. Never expose it to the internet.“ – einfädig, ohne Nebenläufigkeit, nicht gehärtet und nie dem Internet auszusetzen. | [README, The traditional options](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options) |
 | PHP 8.0 betreibt Exponential unter Apache, PHP-FPM oder Velocity (Velocity ab seinem Release 0.0.4.54). | [README, PHP](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |

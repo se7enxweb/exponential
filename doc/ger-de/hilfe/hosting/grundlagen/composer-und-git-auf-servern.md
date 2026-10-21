@@ -108,7 +108,7 @@ php bin/php/ezcache.php --clear-tag=ini
 ```
 
 und sie in `[ExtensionSettings] ActiveExtensions[]` zu aktivieren (in der Administration unter **Setup > Extensions**
-oder in `settings/override/site.ini.append.php`); starten Sie Velocity neu, wenn es die Website ausliefert.
+oder in `settings/override/site.ini.append.php`); starten Sie Velocity neu, wenn er die Website ausliefert.
 
 Der Block `suggest` von `composer.json` listet optionale Erweiterungen auf, die ein Hoster als Zusatzleistungen anbieten
 kann, darunter `ezfind` (Solr-Suche), `sevenx_valkey_cache` (Cache auf Valkey oder Redis), `ezscriptmonitor` und `hcaptcha`.

@@ -54,7 +54,7 @@ bei einem VPS ([Dedizierte Server](../../hosting/modelle/dedizierte-server.md)).
 
 **Managed Hosting.** Keine eigene Technik, sondern ein Dienst auf einer der anderen: Der Hoster übernimmt Updates,
 Backups, Monitoring und mehr und verwendet dafür die Werkzeuge, die Exponential bereitstellt (Updates mit `ezupdate`,
-die Upgrade-Prüfung, den Wartungsmodus, den Log-Viewer, den Audit-Trail)
+die Upgrade-Prüfung, den Wartungsmodus, den Log-Viewer, das Prüfprotokoll)
 ([Managed Hosting](../../hosting/modelle/managed-hosting.md)).
 
 **Platform as a Service.** Eine Plattform führt Ihren Code aus; in den Quellen Stufe 3. Ein schreibgeschütztes oder

@@ -315,7 +315,7 @@ Die Assistenten und ihre Adressen:
 |---|---|
 | Ein Design (Templates, Stylesheets, Overrides) | `/setup/designextension` |
 | Template-Operatoren, Fetch-Funktionen, Template-Funktionen | `/setup/templateoperator` |
-| Einen Handler, der einen Teil des Systems ersetzt (Anmeldung, Mail, Session, Suche, Mehrwertsteuer und Versand im Shop, REST-Filter, ...) | `/setup/handlerextension/<kind>` |
+| Einen Handler, der einen Teil des Systems ersetzt (Anmeldung, Mail, Sitzung, Suche, Mehrwertsteuer und Versand im Shop, REST-Filter, ...) | `/setup/handlerextension/<kind>` |
 | Eine Extension, die nur Einstellungen enthält | `/setup/settingsextension` |
 | Eine als Skript geschriebene Inhaltsklasse | `/setup/contentextension` |
 | Einen Datentyp | `/setup/datatype` |

@@ -3,7 +3,7 @@ title: Massenhafter Inhaltsfehler
 audience: government, admin, editor, project-manager
 category: public-sector
 order: 100
-summary: Runbook für einen großen Fehler im Inhalt - ein entfernter Teilbaum, eine falsche Sektion oder ein falscher Zustand auf vielen Seiten, ein misslungener Massenimport, eine zu früh veröffentlichte Ankündigung - mit dem Papierkorb, dem Versionsverlauf, Inhaltsjobs, dem Audit-Trail und als letztem Mittel einer Wiederherstellung der Datenbank.
+summary: Runbook für einen großen Fehler im Inhalt - ein entfernter Teilbaum, eine falsche Sektion oder ein falscher Zustand auf vielen Seiten, ein misslungener Massenimport, eine zu früh veröffentlichte Ankündigung - mit dem Papierkorb, dem Versionsverlauf, Inhaltsjobs, dem Prüfprotokoll und als letztem Mittel einer Wiederherstellung der Datenbank.
 keywords: Massenfehler, Massenänderung, entfernter Teilbaum, Wiederherstellung aus dem Papierkorb, falsche Sektion, falscher Zustand, Importfehler, Massenlöschung, Warnung mass_delete, Versionsverlauf, Inhaltsjobs, Datensicherung wiederherstellen, Vorfall, mass error, bulk mistake, removed subtree, trash restore, wrong section, wrong state, import error, mass delete, version history, content jobs, restore backup, incident
 type: help
 ---
@@ -41,7 +41,7 @@ Verhindern Sie zuerst weiteren Schaden und verwenden Sie dann das genaueste Werk
 Das Entfernen eines Teilbaums ist ein übergeordnetes Ereignis mit einem untergeordneten Ereignis je Knoten darunter;
 ein Inhaltsjob ist das übergeordnete Ereignis von allem, was seine Stapel getan haben; die Warnung `mass_delete` wird
 ausgelöst, wenn ein Benutzer in zehn Minuten 500 Knoten entfernt
-([Audit-Trail, „Why you want it“](../../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Notieren Sie, wer, wann
+([Prüfprotokoll, „Why you want it“](../../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Notieren Sie, wer, wann
 und welcher oberste Knoten.
 
 ## Rückgängig machen, mit dem genauesten Werkzeug zuerst

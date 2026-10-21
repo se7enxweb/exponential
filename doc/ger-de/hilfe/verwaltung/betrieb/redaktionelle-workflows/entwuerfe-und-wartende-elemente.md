@@ -64,7 +64,7 @@ sehen können:
 |---|---|---|
 | Ein erwarteter Entwurf fehlt | gefiltert, älter als der Altersfilter oder der einer anderen Person | setzen Sie die Filter zurück (sie werden in der Adresse gespeichert) |
 | Eine Version, die auf Ihre Freigabe wartet, wird nicht aufgeführt | Sie dürfen sie nicht lesen | beantragen Sie `content/versionread` für diesen Bereich |
-| „Veröffentlichen“ schien einmal nichts zu tun | ein fehlgeschlagener Prozess mit demselben Schlüssel wurde zuerst entfernt | siehe [Fehlerbehebung bei Workflows](workflow-fehlerbehebung.md) |
+| „Zur Veröffentlichung schicken“ schien einmal nichts zu bewirken | ein fehlgeschlagener Prozess mit demselben Schlüssel wurde zuerst entfernt | siehe [Fehlerbehebung bei Workflows](workflow-fehlerbehebung.md) |
 
 ## Verwandte Seiten
 - [Posteingang der Zusammenarbeit](posteingang-der-zusammenarbeit.md)

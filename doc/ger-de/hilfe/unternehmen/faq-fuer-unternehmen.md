@@ -103,7 +103,7 @@ irgendwohin sendet, bis Sie einen Anbieterschlüssel hinzufügen“ (`README.md`
 [Personenbezogene Daten in Exponential](sicherheit/personenbezogene-daten-in-exponential.md).
 
 **Macht Exponential uns DSGVO-konform?**
-Das schafft keine Software allein. Sie gibt Ihnen Werkzeuge (Berechtigungen, einen Audit-Trail, Kontoverwaltung), die
+Das schafft keine Software allein. Sie gibt Ihnen Werkzeuge (Berechtigungen, ein Prüfprotokoll, Kontoverwaltung), die
 helfen; die Pflichten liegen bei Ihnen. Siehe [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md); das sind Grundlagen, keine
 Rechtsberatung.
 
@@ -113,8 +113,8 @@ werden mit dem nächsten 6.0.x-Release veröffentlicht (`SECURITY.md`). Siehe
 [Sicherheitsupdates und Offenlegung](sicherheit/sicherheitsupdates-und-offenlegung.md).
 
 **Können wir nachweisen, wer was geändert hat?**
-Ja, mit dem manipulationssicheren Audit-Trail ([Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md)).
-Siehe [Compliance-Nachweise aus dem Audit-Trail](sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
+Ja, mit dem manipulationssicheren Prüfprotokoll ([Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md)).
+Siehe [Compliance-Nachweise aus dem Prüfprotokoll](sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
 
 ## Menschen und Support
 

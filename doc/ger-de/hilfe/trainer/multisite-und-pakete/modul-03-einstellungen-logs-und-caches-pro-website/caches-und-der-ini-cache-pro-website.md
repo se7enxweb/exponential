@@ -112,7 +112,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.3.
    php bin/php/console exp:ini set site.ini/FileSettings/INICacheDir site extension:site_clubb:siteaccess:site_b
    ```
 
-4. Starten Sie Velocity neu, wenn es die Übungsumgebung ausliefert, und fragen Sie dann `/site_b` und `/site` je
+4. Starten Sie Velocity neu, wenn er die Übungsumgebung ausliefert, und fragen Sie dann `/site_b` und `/site` je
    einmal mit `curl -s -o /dev/null` an.
 5. Zählen Sie die Dateien beider INI-Caches (ersetzen Sie `var/site` durch das `VarDir` aus Schritt 2):
 
@@ -168,7 +168,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.3.
 2. Sie enthält, wann Caches und Bild-Aliase zuletzt geleert wurden; geleert, gälten Bild-Aliase, die vor einem Leeren
    erzeugt wurden, wieder als aktuell ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#a-site-with-its-cache-in-memory)).
 3. Ihre Caches gehen nach `var_cache/shop/cache`.
-4. Velocity neu starten (es schreibt seine Liste ausgelieferter Pfade beim Start); für Apache die Regel `var_cache` in
+4. Velocity neu starten (er schreibt seine Liste ausgelieferter Pfade beim Start); für Apache die Regel `var_cache` in
    `.htaccess_root` aktivieren.
 5. Nichts.
 

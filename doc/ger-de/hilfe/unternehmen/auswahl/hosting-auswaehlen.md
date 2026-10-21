@@ -34,10 +34,10 @@ und `README.md`, „Requirements“:
 | Datenbank | SQLite 3, kein Server | in der offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Webserver | keiner, wenn Velocity die Website ausliefert | oder Apache, nginx, LiteSpeed, Caddy, IIS und andere |
 | Composer | 2.x | installiert die Software und ihre Erweiterungen |
-| Cron | ein Job alle paar Minuten | führt Benachrichtigungen, Aufräumarbeiten und die Arbeit des Audit-Trails aus |
+| Cron | ein Job alle paar Minuten | führt Benachrichtigungen, Aufräumarbeiten und die Arbeit des Prüfprotokolls aus |
 | Mail | ausgehende Mail | Formulare, Belege, Zurücksetzen von Passwörtern, Newsletter |
 | HTTPS | jede öffentliche Website | Velocity kann Zertifikate selbst beziehen |
-| Backups | Datenbank, hochgeladene Dateien, Einstellungen, Schlüssel, Audit-Trail | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
+| Backups | Datenbank, hochgeladene Dateien, Einstellungen, Schlüssel, Prüfprotokoll | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
 
 ## Die fünf Fragen, die entscheiden
 

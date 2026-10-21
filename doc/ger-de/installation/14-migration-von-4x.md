@@ -151,7 +151,7 @@ ziehen, den Sie migrieren.
   Schritt daher nicht für Sie erledigen.
 - **Optionale Aufräumarbeiten, die den Dump verkleinern:** interne Entwürfe entfernen (`content.ini [ContentSettings]
   InternalDraftsCleanUpLimit` und `InternalDraftsDuration` niedrig setzen und den Cronjob `internal_drafts_cleanup.php`
-  ausführen), alte archivierte Versionen, abgelaufene Sessions. Dieselben Werkzeuge gibt es danach in Exponential:
+  ausführen), alte archivierte Versionen, abgelaufene Sitzungen. Dieselben Werkzeuge gibt es danach in Exponential:
   `php runcronjobs.php --script=internal_drafts_cleanup.php`, `php bin/php/cleanupversions.php`,
   `php update/common/scripts/cleanup.php session`.
 - **Sichern** Sie die Datenbank und das gesamte alte Verzeichnis, einschließlich `var/`. Die Befehle stehen in

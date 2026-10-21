@@ -30,7 +30,7 @@ composer install --no-dev          # in the installation directory; --no-dev on 
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-(unter Exponential Velocity starten Sie es danach neu), oder reparieren Sie im Browser:
+(unter Exponential Velocity starten Sie ihn danach neu), oder reparieren Sie im Browser:
 
 ```bash
 sudo -u <web server user> php bin/php/exprepair.php --create-key

@@ -30,7 +30,7 @@ rückgängig machen würden. Änderungsbeiräte fragen üblicherweise danach. Ex
 | PHP-Code, Erweiterung ohne Datenbankänderungen | den vorherigen Commit und die vorherige `composer.lock` erneut bereitstellen; Autoloads neu erzeugen; `exp:velocity deploy` |
 | Erweiterung mit neuen Tabellen | wie oben; die neuen Tabellen bleiben, sofern sie nicht gelöscht werden |
 | Aktualisierung von Exponential mit Datenbankaktualisierung | **die Datensicherung** von Datenbank und Dateien wiederherstellen, die unmittelbar davor erstellt wurde |
-| Rollen, Workflows, Sektionen | von Hand zurückändern; der Audit-Trail zeigt für viele davon die alten Werte |
+| Rollen, Workflows, Sektionen | von Hand zurückändern; das Prüfprotokoll zeigt für viele davon die alten Werte |
 | Inhalte | Versionsseite: **Neuen Entwurf machen** aus der alten Version; aus dem Papierkorb wiederherstellen |
 
 ## Die Datensicherung ist die Rücknahme
@@ -75,9 +75,9 @@ endet. Die entscheidende Person ist im Änderungsdatensatz benannt.
 - Inhalte, die zwischen der Änderung und der Rücknahme veröffentlicht, E-Mails, die versendet, und Arbeit, die von
   Cronjobs erledigt wurde. Die Wiederherstellung einer Datensicherung verliert Inhalte, die danach bearbeitet wurden;
   deshalb hält das Wartungsfenster die Redaktion fern.
-- Die Dateien des Audit-Trails aus dem Wartungsfenster: Sie liegen in `var/<site>/log/audit/`; bewahren Sie sie auf
+- Die Dateien des Prüfprotokolls aus dem Wartungsfenster: Sie liegen in `var/<site>/log/audit/`; bewahren Sie sie auf
   und überschreiben Sie sie nicht mit der wiederhergestellten Kopie
-  ([Archive des Audit-Trails und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)).
+  ([Archive des Prüfprotokolls und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)).
 - Ein veröffentlichtes Release lässt sich nicht „zurückziehen“; die Korrektur ist die nächste Version.
 
 ## Verwandte Seiten

@@ -27,7 +27,7 @@ stammen vom Demonstrationsserver am 6. Oktober 2026, nur lesend erhoben.
 - **Übersichtskarten**: Exponential, Server, PHP, OPcache und APCu, Datenbank, Speicher, Caches, Cronjobs, E-Mail,
   Gebietsschema und Zeit, Maschine.
 - **Bericht herunterladen (.txt)**, **Als JSON herunterladen** und **Bericht als Text kopieren** liefern denselben
-  Bericht für eine Supportanfrage. Passwörter, Schlüssel, Tokens, Session-IDs, Zugangsdaten in Adressen und
+  Bericht für eine Supportanfrage. Passwörter, Schlüssel, Tokens, Sitzungs-IDs, Zugangsdaten in Adressen und
   vollständige Serverpfade stehen niemals darin.
 - **Größen messen** (`/setup/info/sizes`) ergänzt die Größe von `var/`, jedes Cache-Verzeichnisses und einer
   Datenbank auf einem Server. Das Messen liest jede Datei von `var/` einmal (die Cache-Verzeichnisse werden im selben
@@ -234,17 +234,17 @@ hinzufügen, niemals entfernen. Tests: `expSecretRuleTest`, `expSystemReportMask
 - Ein Wert, dessen Name ein Geheimnis bezeichnet (er enthält password, passwd, passphrase, secret, token, salt,
   credential, privatekey oder apikey, endet auf pwd oder dsn, lautet „key“ oder endet auf Key, _key oder -key; SortKey,
   KeyField und Ähnliche nicht), zeigt nur „(gesetzt, verborgen)“ oder „(nicht gesetzt)“; der Bericht ergänzt eine
-  Session-ID, ein Cookie, einen Authorization- und einen Signature-Wert; der Datenbankbenutzer wird immer verborgen;
+  Sitzungs-ID, ein Cookie, einen Authorization- und einen Signature-Wert; der Datenbankbenutzer wird immer verborgen;
 - das Passwort innerhalb einer Adresse wird abgeschnitten: `mysql://user:pw@db/site` wird zu `mysql://user:***@db/site`;
 - `password=...`, `token: ...` und Ähnliches in freiem Text verlieren ihren Wert;
-- eine Folge von 26 oder mehr Buchstaben und Ziffern, die eine Ziffer enthält (eine Session-ID, ein Token, ein
+- eine Folge von 26 oder mehr Buchstaben und Ziffern, die eine Ziffer enthält (eine Sitzungs-ID, ein Token, ein
   Schlüssel), wird zu `***`;
 - Pfade innerhalb der Installation werden relativ zu ihr angegeben (`var/site/cache`), Pfade unter einem Web- oder
   Home-Verzeichnis außerhalb von ihr behalten nur ihre letzten beiden Teile (`…/other/site`); Systempfade wie
   `/etc/vc/vc.conf` bleiben erhalten.
 
 `/setup/info/php` ruft `phpinfo()` ohne seine Variablen- und Umgebungsteile auf, die die HTTP-Anmeldung, das
-Session-Cookie und alles enthalten, was ein Server in die Umgebung legt. Unter Velocity ist es reiner Text, so wie die
+Sitzungs-Cookie und alles enthalten, was ein Server in die Umgebung legt. Unter Velocity ist es reiner Text, so wie die
 Kommandozeilen-SAPI von PHP ihn schreibt.
 
 ## 8. Von der Kommandozeile

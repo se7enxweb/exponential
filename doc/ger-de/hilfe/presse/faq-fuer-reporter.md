@@ -34,7 +34,7 @@ Inhaltsmodell, Multisite, vielen Sprachen und einem eingebauten Shop ([Exponenti
 
 **Was ist neu?**
 Die Produktlinie 6.0.15 bringt Exponential Velocity, Exponential Layouts, Exponential Intelligence, das Design admin4,
-einen Audit-Trail und ein Hilfesystem ([Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)).
+ein Prüfprotokoll und ein Hilfesystem ([Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)).
 
 **Verwendet es KI?**
 Exponential Intelligence ist ein Schreibassistent, der Entwürfe schreibt, als der angemeldete Redakteur, und nie von
@@ -97,7 +97,7 @@ dokumentierten Stufen ([Faktenblatt für Journalisten](faktenblatt-fuer-journali
 **Ist es sicher?**
 Drucken Sie „sicher“ nicht als absolute Aussage. Drucken Sie das Verfahren: vertrauliche Meldungen an
 security@se7enx.com, eine erste Antwort innerhalb eines Werktags, Korrekturen im nächsten Release, veröffentlichte
-Versionen werden nie geändert, eine Content Security Policy in der Administration, ein Audit-Trail und ein Leitfaden
+Versionen werden nie geändert, eine Content Security Policy in der Administration, ein Prüfprotokoll und ein Leitfaden
 zur Härtung ([Thema: Sicherheit](thema-sicherheit.md)).
 
 **Ich habe eine Sicherheitslücke gefunden. Was tue ich?**

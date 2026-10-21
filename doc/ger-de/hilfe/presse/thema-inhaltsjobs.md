@@ -54,7 +54,7 @@ aufgehört hat, sogar nach einem `kill -9`“ ([Inhaltsjobs](../../../eng-us/fea
 ## Verwandte Seiten
 
 - [Thema: Betriebswerkzeuge für Administratoren](thema-betriebswerkzeuge-fuer-administratoren.md)
-- [Thema: der Audit-Trail](thema-audit-trail.md)
+- [Thema: das Prüfprotokoll](thema-audit-trail.md)
 - [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -104,7 +104,7 @@ Sie den Weg über den Browser als Antwort.
 8. Die Template-Caches, über den Tag `template` (**Clear content / template / INI caches…** oder
    `php bin/php/ezcache.php --clear-tag=template --allow-root-user`)
    ([Caches](../../../../anleitungen/caches.md#5-in-einer-shell)).
-9. Velocity neu starten, denn es hält Einstellungen im Speicher
+9. Velocity neu starten, denn er hält Einstellungen im Speicher
    ([Caches](../../../../anleitungen/caches.md#kurz-gesagt)).
 10. Den Workflow-Cronjob (`workflow.php`, standardmäßig im Teil *frequent*); ohne ihn werden freigegebene Inhalte nie
     veröffentlicht ([Workflows](../../../../anleitungen/workflows.md#kurz-gesagt)).

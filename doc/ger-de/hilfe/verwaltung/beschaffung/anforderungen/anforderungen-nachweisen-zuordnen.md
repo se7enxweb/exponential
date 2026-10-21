@@ -4,7 +4,7 @@ audience: government, project-manager, partner, sales-marketing
 category: public-sector
 order: 150
 summary: Eine Referenztabelle, die übliche Anforderungen an ein CMS im öffentlichen Sektor den genauen Seiten, Einstellungen und Tests von Exponential zuordnet, die sie belegen, mit dem dokumentierten Status, für Bewertende, die Antworten prüfen, und Bieter, die sie schreiben.
-keywords: Nachweise, Zuordnung, Erfüllungsmatrix, Rückverfolgbarkeit von Anforderungen, Standards, WCAG, OWASP, DSGVO, i18n, Status, Complies, Partly complies, Unverified, Bewertung, Angebotsantwort, evidence, mapping, compliance matrix, requirements traceability, standards, GDPR, status, evaluation, bid response
+keywords: Nachweise, Zuordnung, Erfüllungsmatrix, Rückverfolgbarkeit von Anforderungen, Standards, WCAG, OWASP, DSGVO, i18n, Status, Erfüllt, Teilweise erfüllt, Nicht geprüft, Nicht erfüllt, Complies, Partly complies, Unverified, Bewertung, Angebotsantwort, evidence, mapping, compliance matrix, requirements traceability, standards, GDPR, status, evaluation, bid response
 type: reference
 ---
 # Anforderungen Nachweisen zuordnen
@@ -26,8 +26,8 @@ auf.
 
 ## Wie Sie diese Tabelle verwenden
 
-- **Bieter**: Nennen Sie Seite und Abschnitt und zitieren Sie den Status wie geschrieben. Wo der Status „Partly
-  complies“ oder „Unverified“ lautet, sagen Sie, was Sie für diesen Kunden gegen die Lücke tun.
+- **Bieter**: Nennen Sie Seite und Abschnitt und zitieren Sie den Status wie geschrieben. Wo der Status „Teilweise
+  erfüllt“ oder „Nicht geprüft“ lautet, sagen Sie, was Sie für diesen Kunden gegen die Lücke tun.
 - **Bewertende**: Öffnen Sie den Link und prüfen Sie, ob er sagt, was das Angebot behauptet. Einstellungen lassen sich
   in einer mit `./console exp:install` erstellten Testinstallation prüfen ([Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)).
 
@@ -35,32 +35,32 @@ auf.
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| WCAG 2.2 AA, Administration | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md); `tests/tests/design/` (Beschriftungen, Landmarks, Kontrast, Tastatur) | Partly complies |
+| WCAG 2.2 AA, Administration | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md); `tests/tests/design/` (Beschriftungen, Landmarks, Kontrast, Tastatur) | Teilweise erfüllt |
 | WCAG 2.2 AA, öffentliche Website | keiner für mitgelieferte öffentliche Designs | nicht geprüft |
-| WAI-ARIA 1.2 | dieselbe Seite, Muster von admin4 | Partly complies |
-| EN 301 549 | dieselbe Seite | Unverified |
-| Section 508 / VPAT | dieselbe Seite; kein VPAT oder ACR | Unverified |
+| WAI-ARIA 1.2 | dieselbe Seite, Muster von admin4 | Teilweise erfüllt |
+| EN 301 549 | dieselbe Seite | Nicht geprüft |
+| Section 508 / VPAT | dieselbe Seite; kein VPAT oder ACR | Nicht geprüft |
 | Rechts nach links | [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md) | dokumentiert |
 
 ## Sicherheit
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| OWASP Top 10 (2021) | [Sicherheitsstandards](../../../../../eng-us/standards/security.md), Tabelle A01 bis A10 | Partly complies |
-| OWASP ASVS 4.0.3 | dieselbe Seite | Unverified (keine Bewertung durchgeführt) |
-| Content Security Policy | [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md); `settings/site.ini [ContentSecurityPolicy]` | Partly complies |
-| Sicherheitsprotokollierung | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md); `settings/audit.ini [AuditSettings] Audit=enabled` | Complies (A09) |
+| OWASP Top 10 (2021) | [Sicherheitsstandards](../../../../../eng-us/standards/security.md), Tabelle A01 bis A10 | Teilweise erfüllt |
+| OWASP ASVS 4.0.3 | dieselbe Seite | Nicht geprüft (keine Bewertung durchgeführt) |
+| Content Security Policy | [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md); `settings/site.ini [ContentSecurityPolicy]` | Teilweise erfüllt |
+| Sicherheitsprotokollierung | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md); `settings/audit.ini [AuditSettings] Audit=enabled` | Erfüllt (A09) |
 | Zweistufige Anmeldung | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) | Erweiterung auf Wunsch |
 | Schritte zur Härtung | [Sicherheitshärtung für den Produktivbetrieb](../../../../installation/13-sicherheitshaertung.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) | dokumentiert |
-| Offenlegung von Schwachstellen | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) | Partly complies (keine security.txt) |
+| Offenlegung von Schwachstellen | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) | Teilweise erfüllt (keine security.txt) |
 
 ## Datenschutz
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| Funktionen für die DSGVO | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) | Partly complies (Funktionen bereitgestellt) |
-| Cookies (ePrivacy) | dieselbe Seite, Cookie-Tabelle | Partly complies (kein Einwilligungsbanner) |
-| Einwilligungsnachweise, Abmeldung | [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md) | CAN-SPAM Complies; RFC 8058 Complies |
+| Funktionen für die DSGVO | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) | Teilweise erfüllt (Funktionen bereitgestellt) |
+| Cookies (ePrivacy) | dieselbe Seite, Cookie-Tabelle | Teilweise erfüllt (kein Einwilligungsbanner) |
+| Einwilligungsnachweise, Abmeldung | [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md) | CAN-SPAM: Erfüllt; RFC 8058: Erfüllt |
 | Datensparsamkeit in Protokollen | [Log-Betrachter](../../../../../eng-us/features/6.0/log-viewer.md), [Anfrageprotokolle](../../../../../eng-us/features/6.0/request-logs.md) | dokumentiert |
 | Bereinigung von Konten | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) | dokumentiert |
 
@@ -68,12 +68,12 @@ auf.
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| UTF-8 | [Standards zur Internationalisierung](../../../../../eng-us/standards/internationalization.md) | Complies |
-| 4-Byte-UTF-8 unter MySQL/MariaDB | dieselbe Seite | Partly complies |
-| Pluralformen | dieselbe Seite | Does not comply |
+| UTF-8 | [Standards zur Internationalisierung](../../../../../eng-us/standards/internationalization.md) | Erfüllt |
+| 4-Byte-UTF-8 unter MySQL/MariaDB | dieselbe Seite | Teilweise erfüllt |
+| Pluralformen | dieselbe Seite | Nicht erfüllt |
 | HTTP, HTML, CSS, Cookies, robots | [Standards der Webplattform](../../../../../eng-us/standards/web-platform.md) | je Zeile dieser Seite |
 | APIs (REST, OAuth, LDAP, RSS, SMTP) | [Standards zu APIs und Protokollen](../../../../../eng-us/standards/apis-and-protocols.md) | je Zeile dieser Seite |
-| Barrierefreiheit von PDF (PDF/UA) | [Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md) | Does not comply |
+| Barrierefreiheit von PDF (PDF/UA) | [Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md) | Nicht erfüllt |
 
 ## Betrieb, Schriftgut und Ausstieg
 
@@ -90,10 +90,10 @@ auf.
 
 | Anforderungsbereich | Nachweis | Status |
 |---|---|---|
-| Dauerhafte Release-Tags | [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) | Complies (per Richtlinie) |
-| Signierte Commits oder Tags | dieselbe Seite | Does not comply |
-| Automatisierte Tests und CI | [Tests und kontinuierliche Integration](../../../../../eng-us/standards/testing-and-ci.md) | Complies |
-| Berichte zur Codeabdeckung | dieselbe Seite | Does not comply |
+| Dauerhafte Release-Tags | [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) | Erfüllt (per Richtlinie) |
+| Signierte Commits oder Tags | dieselbe Seite | Nicht erfüllt |
+| Automatisierte Tests und CI | [Tests und kontinuierliche Integration](../../../../../eng-us/standards/testing-and-ci.md) | Erfüllt |
+| Berichte zur Codeabdeckung | dieselbe Seite | Nicht erfüllt |
 
 ## Verwandte Seiten
 - [Anforderungen an ein CMS für den öffentlichen Sektor](README.md)

@@ -28,7 +28,7 @@ Nutzen Sie diese Tabelle, um Ihren Aufbewahrungsplan in Einstellungen umzusetzen
 
 | Daten | Mechanismus | Voreinstellung | Einstellung |
 |---|---|---|---|
-| Audit-Trail | täglicher Cronjob-Teil: archivieren, bereinigen | 90 Tage live, 730 archiviert (Kanal read 30/90) | `[AuditChannel_<channel>] LiveDays`, `ArchiveDays` |
+| Prüfprotokoll | täglicher Cronjob-Teil: archivieren, bereinigen | 90 Tage live, 730 archiviert (Kanal read 30/90) | `[AuditChannel_<channel>] LiveDays`, `ArchiveDays` |
 | Audit-Index | täglich | Zeilen 730 Tage aufbewahrt, nach 90 pseudonymisiert | `[AuditIndexSettings] KeepDays`, `[AuditPrivacySettings] PseudonymiseAfterDays` |
 | `404.log`, `security.log`, `csp.log` | Bereinigung nach Alter | 30, 90, 30 Tage | `logviewer.ini [RotationSettings] MaxAgeDays[<key>]` |
 | Andere Kernel-Protokolle | Rotation nur nach Größe | 2 MB, 3 Archive; keine Altersgrenze | `site.ini [FileSettings] LogFileMaxSize`, `LogFileRotateCount`, `LogFileMaxAge`; pro Protokoll `MaxAgeDays[<key>]` |

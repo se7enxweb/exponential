@@ -25,7 +25,7 @@ oder aktivieren; sie sind unten aufgeführt, damit Sie sie erlauben, sperren ode
 ## Was ohne jeden fremden Dienst läuft
 
 Seiten ausliefern, bearbeiten und veröffentlichen, die Suche mit der eingebauten Suchmaschine, Rollen und Sektionen,
-Versionen, der Audit-Trail, Workflows, Caches und die Cronjobs, die sie pflegen, laufen alle auf Ihrem Server und mit
+Versionen, das Prüfprotokoll, Workflows, Caches und die Cronjobs, die sie pflegen, laufen alle auf Ihrem Server und mit
 Ihrer Datenbank. Es gibt keinen Lizenzschlüssel und keinen Lizenzserver: Die Software steht unter der GPL
 ([Lizenzen für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)).
 

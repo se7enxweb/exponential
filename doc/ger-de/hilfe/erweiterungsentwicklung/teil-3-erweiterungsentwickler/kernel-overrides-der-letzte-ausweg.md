@@ -63,7 +63,7 @@ leichteren Zugang. In der Reihenfolge der Vorliebe:
 | Statt zu überschreiben | Versuchen Sie |
 |---|---|
 | ein Template | ein Template-Override ([Template-Overrides: die Grundlagen](../teil-2-builder/grundlagen-der-template-overrides.md)) |
-| eine Klasse für Mail, Anmeldung, Session, Suche ... | einen Handler ([Handler, die über Einstellungen benannt werden](handler-ueber-einstellungen-benennen.md)) |
+| eine Klasse für Mail, Anmeldung, Sitzung, Suche ... | einen Handler ([Handler, die über Einstellungen benannt werden](handler-ueber-einstellungen-benennen.md)) |
 | Verhalten rund um Veröffentlichen, Caches, Ausgabe | einen Ereignis-Listener oder Filter ([Ereignisse, Listener und Filter](ereignisse-und-filter.md)) |
 | die View eines Kernel-Moduls | eine Neuimplementierung der View (`site.ini [RunnableSettings] Implementation[]`) oder ein Modul einer Erweiterung, das das Modul ersetzt ([Eine Erweiterung kann ein Kernel-Modul ersetzen](../../../../eng-us/features/6.0/extension-module-override.md)) |
 | das Verhalten eines Datentyps | Ihren eigenen Datentyp |

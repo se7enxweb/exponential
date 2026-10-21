@@ -80,7 +80,7 @@ BETRIEB
 [ ] Monitoring und Fehlerreferenzen                            ___   ________  ______
 
 SICHERHEIT, DATEN UND BARRIEREFREIHEIT
-[ ] Audit-Trail, wer was getan hat                             ___   ________  ______
+[ ] Prüfprotokoll, wer was getan hat                           ___   ________  ______
 [ ] Aufbewahrungsfristen für Logs und Daten festgelegt         ___   ________  ______
 [ ] Content Security Policy auf der öffentlichen Site erzwungen ___  ________  ______
 [ ] Einzuhaltender Standard für Barrierefreiheit: <Standard>   ___   ________  ______
@@ -98,7 +98,7 @@ Wo Sie jeden Bereich prüfen:
 | Suche und Auffindbarkeit | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md), [URL-Aliase und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md), [Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md), [RSS-Feeds](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md) |
 | Apps und Integrationen | [REST API](../../../../eng-us/help/creators/app-creators/rest-api.md), [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md), [OAuth und API-Schlüssel](../../../../eng-us/help/creators/app-creators/oauth-and-api-keys.md) |
 | Betrieb | [Hosting auswählen](../auswahl/hosting-auswaehlen.md), [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md), [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md) |
-| Sicherheit, Daten, Barrierefreiheit | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md), [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md), [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md), [Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
+| Sicherheit, Daten, Barrierefreiheit | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md), [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md), [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md), [Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
 
 ## Zeilen, die Sie selbst ergänzen
 

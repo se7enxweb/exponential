@@ -4,7 +4,7 @@ audience: businesses, project-manager, sales-marketing
 category: business-solutions
 order: 20
 summary: Die Kostenposten, die Sie bei einem Budget für Exponential weglassen können, jeweils mit Quelle - keine Lizenzgebühr, keine Gebühr pro Benutzer oder Server, kein vorgeschriebener Datenbankserver oder separater Webserver und viele Funktionen, die mitgeliefert werden - und die Kosten, die bleiben.
-keywords: keine Lizenzgebühr, kostenlos, GPL, pro Benutzer, pro Arbeitsplatz, pro Server, SQLite, Velocity, eingebaute Funktionen, Shop, Newsletter, Zwei-Faktor, Audit-Trail, Herstellerbindung, Ausstiegskosten, no license fee, free of charge, per user, per seat, per server, built-in features, shop, newsletter, two-factor, audit trail, vendor lock-in, exit cost
+keywords: keine Lizenzgebühr, kostenlos, GPL, pro Benutzer, pro Arbeitsplatz, pro Server, SQLite, Velocity, eingebaute Funktionen, Shop, Newsletter, Zwei-Faktor, Prüfprotokoll, Herstellerbindung, Ausstiegskosten, no license fee, free of charge, per user, per seat, per server, built-in features, shop, newsletter, two-factor, audit trail, vendor lock-in, exit cost
 type: help
 ---
 # Wofür Sie nicht bezahlen
@@ -75,7 +75,7 @@ Aus `README.md`, „Main Exponential features“, und den Erweiterungen, die `co
 | Online-Shop | „Advanced e-Commerce Stores (Built in)“ mit USt, Währungen, Bestellungen; PayPal über `ezpaypal` | [Shops](../shops/README.md) |
 | Newsletter | `cjw_newsletter` wird von `composer.json` verlangt | [Newsletter](../newsletter/README.md) |
 | Zweistufige Anmeldung | `sevenx_authentication_2fa` wird verlangt, und die Installer aktivieren es | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Audit-Trail | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicherer Audit-Trail mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Prüfprotokoll | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicheres Prüfprotokoll mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 | Suche | „Built in search engine“ (eingebaute Suchmaschine); Solr über `ezfind` ist optional | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
 | Sprachen | „Advanced multi-lingual support“ (umfassende Mehrsprachigkeit) | [Mehrsprachig](../mehrsprachig/README.md) |
 | Headless und Apps | „A headless CRUD REST API“ | [Mobil und headless](../mobil-und-headless/README.md) |

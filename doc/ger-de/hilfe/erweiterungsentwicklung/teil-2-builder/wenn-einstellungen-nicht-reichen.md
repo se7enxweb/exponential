@@ -34,7 +34,7 @@ Anforderung passt, damit Ihr erstes PHP klein ist und am richtigen Ort steht.
 | Etwas nach Zeitplan | Cronjob-Teil | [Cronjob-Teile](../teil-3-erweiterungsentwickler/cronjob-teile.md) | `/setup/cronjobs` |
 | Einen Befehl für Administratoren | Konsolenbefehl | [CLI-Skripte und Konsolenbefehle](../teil-3-erweiterungsentwickler/cli-skripte-und-console-befehle.md) | |
 | Eine Reaktion auf ein Kernel-Ereignis oder einen Filter für einen Wert | Event-Listener | [Ereignisse, Listener und Filter](../teil-3-erweiterungsentwickler/ereignisse-und-filter.md) | `/setup/settingsextension` |
-| Einen anderen Mail-Transport, Login, Session, Suche, Mehrwertsteuer | über eine Einstellung benannter Handler | [Über Einstellungen benannte Handler](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) | `/setup/handlerextension/<kind>` |
+| Einen anderen Mail-Transport, Login, Sitzung, Suche, Mehrwertsteuer | über eine Einstellung benannter Handler | [Über Einstellungen benannte Handler](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) | `/setup/handlerextension/<kind>` |
 | Einen dynamischen Teil einer Seite aus JavaScript | ezjscore-Serverfunktion | [Ajax mit ezjscore-Serverfunktionen](../teil-3-erweiterungsentwickler/ajax-mit-ezjscore-serverfunktionen.md) | `/setup/handlerextension/ajaxfunction` |
 | Eine eigene Tabelle | persistentes Objekt | [Persistente Objekte und eigene Tabellen](../teil-3-erweiterungsentwickler/persistente-objekte-und-tabellen.md) | `/setup/modulewizard` |
 | Das Verhalten einer Kernel-Klasse ändern, wenn nichts anderes hilft | Kernel-Override | [Kernel-Klassen-Overrides: der letzte Ausweg](../teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md) | `/setup/kerneloverride` |

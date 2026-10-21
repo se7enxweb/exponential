@@ -4,7 +4,7 @@ audience: businesses, project-manager, sales-marketing
 category: business-solutions
 order: 10
 summary: Die Gründe, jeder mit seiner Quelle, warum eine Organisation, die online Geld verdient, sich auf Exponential verlassen kann - eine langlebige Codebasis, veröffentlichte Versionen, die sich nie ändern, wenige bewegliche Teile, Geschwindigkeit unter Last, Belege, wenn etwas schiefgeht, und keine Lizenzgebühr. Und wie jeder von ihnen Umsatz schützt und das Geschäft für Kunden erreichbar hält.
-keywords: Stabilität, Zuverlässigkeit, warum Exponential, langlebig, Release-Richtlinie, Sicherheitskorrekturen, PHP-Versionen, SQLite, Velocity, Cache, Audit-Trail, keine Lizenzgebühr, GPL, Rendite, Verfügbarkeit, geringer Wartungsaufwand, stability, reliability, why Exponential, long-lived, release policy, security fixes, PHP versions, cache, audit trail, no license fee, return on investment, availability, uptime, low maintenance
+keywords: Stabilität, Zuverlässigkeit, warum Exponential, langlebig, Release-Richtlinie, Sicherheitskorrekturen, PHP-Versionen, SQLite, Velocity, Cache, Prüfprotokoll, keine Lizenzgebühr, GPL, Rendite, Verfügbarkeit, geringer Wartungsaufwand, stability, reliability, why Exponential, long-lived, release policy, security fixes, PHP versions, cache, audit trail, no license fee, return on investment, availability, uptime, low maintenance
 type: help
 ---
 # Warum Unternehmen sich auf Exponential verlassen
@@ -115,7 +115,7 @@ Ihren Seiten ab; messen Sie sie mit den Benchmark-Werkzeugen
 
 | Werkzeug | Was es Ihnen gibt | Quelle |
 |---|---|---|
-| Manipulationssicherer Audit-Trail | Wer was wann geändert hat, mit Konsole, Alarmen und Exporten | [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
+| Manipulationssicheres Prüfprotokoll | Wer was wann geändert hat, mit Konsole, Alarmen und Exporten | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | Log-Viewer | Die Logs in der Administration, ohne Shell | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
 | Fehlerreferenzen | Eine dem Besucher angezeigte Referenz, die zum protokollierten Fehler führt | [Einen Fehler anhand seiner Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 | Systeminformationen | Versionen, PHP, Datenbank und Einstellungen auf einen Blick | [Systeminformationen: worauf die Site läuft und was Aufmerksamkeit braucht](../../anleitungen/systeminformationen.md) |

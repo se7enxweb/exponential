@@ -78,8 +78,8 @@ BCP-47-Tags ([Standards zur Internationalisierung](../../../../../eng-us/standar
 | G.2 | [Zuordnung von Siteaccesses nach Host und Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md), [Sprachumschalter und Sprach-URLs](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
 | G.5 | [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md), [Websites von rechts nach links](../../../../../eng-us/help/creators/website-creators/right-to-left-sites.md) |
 | G.6 | [Sprachen in Exponential](../../../../../eng-us/languages.md) (Übersetzungen der Administration und ihre Vollständigkeit), [UI-Umschalter: Sprachen der Oberfläche](../../../../../eng-us/features/6.0/ui-switch-languages.md) |
-| G.8 | Interne Kodierung UTF-8 Complies; unter MySQL und MariaDB verwendet die Verbindung Drei-Byte-`utf8` (Partly complies) |
-| Lücke bei G.4 | Übersetzungen der Oberfläche haben keine Pluralformen (Does not comply) |
+| G.8 | Interne Kodierung UTF-8: Erfüllt; unter MySQL und MariaDB verwendet die Verbindung Drei-Byte-`utf8` (Teilweise erfüllt) |
+| Lücke bei G.4 | Übersetzungen der Oberfläche haben keine Pluralformen (Nicht erfüllt) |
 
 ## Hinweise für die bewertende Person
 

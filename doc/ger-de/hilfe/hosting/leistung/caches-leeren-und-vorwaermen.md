@@ -63,7 +63,7 @@ tut genau das, mit `PASS` oder `FAIL` pro Schritt, auf Velocity und auf Websites
 | 3 | Caches für Templates, Template-Overrides, Übersetzungen und design_base |
 | 4 | Engine-Archiv, wenn Velocity aus einem läuft |
 | 5 | PHP-FPM: warten, bis OPcache neu geprüft hat, oder neu laden |
-| 6 | Velocity neu starten, wenn es läuft |
+| 6 | Velocity neu starten, wenn er läuft |
 | 7 | Caches für Inhalte, exphttpcache, (mit `--packer`) ezjscore-packer und Template-Blöcke |
 | 8 | der Antwort-Cache von Velocity |
 | 9 | Vorwärmen: jede `[DeploySettings] WarmUpURL[]` wird einmal im Hintergrund angefragt |

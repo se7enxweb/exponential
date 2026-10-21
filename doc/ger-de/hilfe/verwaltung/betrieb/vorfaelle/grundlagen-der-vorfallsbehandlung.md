@@ -4,7 +4,7 @@ audience: government, admin, project-manager, hosting
 category: public-sector
 order: 20
 summary: Der gemeinsame Rahmen für jeden Vorfall auf einer Exponential-Website des öffentlichen Sektors - Rollen, Schweregrad, die ersten fünfzehn Minuten, Beweissicherung, Kommunikation mit der Öffentlichkeit und der Abschluss mit einer Nachbetrachtung - mit den Werkzeugen, die Exponential in jeder Phase bietet.
-keywords: Vorfallsbehandlung, Vorfallmanagement, Schweregrad, Rufbereitschaft, Erstreaktion, Beweissicherung, Kommunikation, öffentliche Mitteilung, Wartungsmodus, Audit-Trail, Nachbetrachtung, Runbook, incident response, incident management, severity, on-call, evidence, maintenance mode, audit trail, post-incident review
+keywords: Vorfallsbehandlung, Vorfallmanagement, Schweregrad, Rufbereitschaft, Erstreaktion, Beweissicherung, Kommunikation, öffentliche Mitteilung, Wartungsmodus, Prüfprotokoll, Nachbetrachtung, Runbook, incident response, incident management, severity, on-call, evidence, maintenance mode, audit trail, post-incident review
 type: help
 ---
 # Grundlagen der Vorfallsbehandlung
@@ -56,7 +56,7 @@ schnell.
    php bin/php/maintenance.php on --message="This service is temporarily unavailable." --allow-admin --allow-ip=<your address> --allow-root-user
    ```
 
-4. **Beginnen Sie einen Zeitablauf**: Uhrzeit, wer, was gesehen wurde, was getan wurde. Der Audit-Trail von Exponential
+4. **Beginnen Sie einen Zeitablauf**: Uhrzeit, wer, was gesehen wurde, was getan wurde. Das Prüfprotokoll von Exponential
    zeichnet Aktionen in der Administration und viele Befehle auf; Ihre Notizen ergänzen, was außerhalb davon geschah.
 5. Öffnen Sie das passende Runbook in diesem Ordner.
 
