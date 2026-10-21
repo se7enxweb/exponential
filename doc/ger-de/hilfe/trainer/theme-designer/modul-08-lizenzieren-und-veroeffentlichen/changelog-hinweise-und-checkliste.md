@@ -18,7 +18,7 @@ Veröffentlichung eines echten Themes noch tun würden.
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 8: Lizenzieren und veröffentlichen](README.md) |
 | Dauer | 60 Minuten (15 Präsentation, 45 Übung) |
 | Niveau | Fortgeschrittene |
@@ -146,7 +146,7 @@ In `extension/training_theme`, dem lokalen Repository aus den Lektionen 7.4 und 
 ## Verwandte Seiten
 
 - [Modul 8: Lizenzieren und veröffentlichen](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -20,7 +20,7 @@ Administration.
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Dauer | 3 Stunden 40 Minuten (mit einer Pause von 10 Minuten) |
 | Lektionen | 4 |
 | Niveau | Fortgeschrittene bis Experten |
@@ -58,9 +58,9 @@ Administration.
 
 ## Verwandte Seiten
 
-- [Modul 4: Die Administration gestalten](../../../../../eng-us/help/trainers/theme-designers/module-04-styling-the-administration/README.md)
+- [Modul 4: Die Administration gestalten](../modul-04-die-administration-gestalten/README.md)
 - [Barrierefreiheit und Inklusion (Train the Trainer, Modul 5)](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

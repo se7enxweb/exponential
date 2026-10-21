@@ -18,12 +18,12 @@ welcher Teil ihre Aufgabe ist.
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 5: Barrierefreiheit und Rechts-nach-links](README.md) |
 | Dauer | 45 Minuten (25 Präsentation, 20 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Designer, Entwickler und alle, die Fragen von Kunden zur Barrierefreiheit beantworten |
-| Voraussetzungen | [Modul 4](../../../../../eng-us/help/trainers/theme-designers/module-04-styling-the-administration/README.md) ist hilfreich, aber nicht erforderlich |
+| Voraussetzungen | [Modul 4](../modul-04-die-administration-gestalten/README.md) ist hilfreich, aber nicht erforderlich |
 
 ## Lernziele
 
@@ -147,7 +147,7 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 ## Verwandte Seiten
 
 - [Modul 5: Barrierefreiheit und Rechts-nach-links](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

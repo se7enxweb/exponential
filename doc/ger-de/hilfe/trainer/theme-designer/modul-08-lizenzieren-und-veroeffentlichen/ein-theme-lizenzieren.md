@@ -22,7 +22,7 @@ haben.
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 8: Lizenzieren und veröffentlichen](README.md) |
 | Dauer | 45 Minuten (20 Präsentation, 25 Übung) |
 | Niveau | Fortgeschrittene |
@@ -141,6 +141,6 @@ Ihrer Sitznachbarin oder Ihrem Sitznachbarn.
 ## Verwandte Seiten
 
 - [Modul 8: Lizenzieren und veröffentlichen](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

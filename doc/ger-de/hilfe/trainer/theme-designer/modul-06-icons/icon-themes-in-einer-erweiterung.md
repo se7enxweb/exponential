@@ -18,12 +18,12 @@ kopieren. In dieser Lektion geben die Teilnehmenden einer Inhaltsklasse der Schu
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 6: Icons](README.md) |
 | Dauer | 45 Minuten (15 Präsentation, 30 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Designer und Entwickler |
-| Voraussetzungen | [Modul 2](../../../../../eng-us/help/trainers/theme-designers/module-02-templates-overrides-and-the-pagelayout/README.md): `training_theme` aktiv; ein Bildbearbeitungsprogramm oder eine kleine PNG-Datei |
+| Voraussetzungen | [Modul 2](../modul-02-templates-overrides-und-das-pagelayout/README.md): `training_theme` aktiv; ein Bildbearbeitungsprogramm oder eine kleine PNG-Datei |
 
 ## Lernziele
 
@@ -169,7 +169,7 @@ in einem Ordner liegen (zum Beispiel `article`), und notieren Sie ihn als `<clas
 ## Verwandte Seiten
 
 - [Modul 6: Icons](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

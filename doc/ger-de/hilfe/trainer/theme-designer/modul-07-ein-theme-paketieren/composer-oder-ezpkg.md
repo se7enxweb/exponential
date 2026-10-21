@@ -17,7 +17,7 @@ treffen die Teilnehmenden die Wahl für ihr Theme und bauen auf der Kommandozeil
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 7: Ein Theme paketieren](README.md) |
 | Dauer | 45 Minuten (15 Präsentation, 30 Übung) |
 | Niveau | Fortgeschrittene |
@@ -156,7 +156,7 @@ Auf Ihrer eigenen Schulungsinstallation, im Stammverzeichnis der Installation.
 ## Verwandte Seiten
 
 - [Modul 7: Ein Theme paketieren](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

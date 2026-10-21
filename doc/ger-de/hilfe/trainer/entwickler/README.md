@@ -88,7 +88,7 @@ Für kürzere Formate siehe den [Entwicklertag](../../../../eng-us/help/trainers
 ## Die Teilnehmenden prüfen
 
 Jede Lektion endet mit einem Quiz mit belegten Antworten. Für einen schriftlichen Test, eine praktische Aufgabe und
-Abschlussprojekte siehe [Prüfungen und praktische Übungen](../../../../eng-us/help/trainers/assessments/README.md). Die Prüfungen sind eigenes
+Abschlussprojekte siehe [Prüfungen und praktische Übungen](../pruefungen/README.md). Die Prüfungen sind eigenes
 Material des Trainers, keine offizielle Zertifizierung; die Zertifizierungen des Partnerprogramms sind davon getrennt
 ([Zertifizierungen](../../partner/zertifizierungen.md)).
 

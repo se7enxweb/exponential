@@ -18,7 +18,7 @@ denen der Installation, einen Export als `.ezpkg` und ein eigenes Git-Repository
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Dauer | 3 Stunden 10 Minuten (mit einer Pause von 10 Minuten) |
 | Lektionen | 4 |
 | Niveau | Fortgeschrittene |
@@ -58,7 +58,7 @@ denen der Installation, einen Export als `.ezpkg` und ein eigenes Git-Repository
 
 - [Modul 6: Icons](../modul-06-icons/README.md)
 - [Theme-Erweiterungen: hier beginnen](../../../../../eng-us/help/designers/extensions/theme-extensions-start-here.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

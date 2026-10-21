@@ -19,7 +19,7 @@ Modul endet der Kurs.
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Dauer | 2 Stunden 40 Minuten (mit einer Pause von 10 Minuten) |
 | Lektionen | 3 |
 | Niveau | Fortgeschrittene |
@@ -56,7 +56,7 @@ Modul endet der Kurs.
 
 - [Modul 7: Ein Theme paketieren](../modul-07-ein-theme-paketieren/README.md)
 - [Ein Theme verteilen: hier beginnen](../../../../../eng-us/help/designers/distribution/distribution-start-here.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -28,11 +28,11 @@ Die Zeitangaben enthalten die praktischen Übungen, aber keine Pausen.
 | [Suche](../../../eng-us/help/trainers/search/README.md) | Administratoren und Entwickler | Fortgeschrittene | 20 Lektionen, etwa 10 Stunden (1,5 bis 2 Tage) | Website-Administration |
 | [Multisite und Seitenpakete](../../../eng-us/help/trainers/multisite-and-packages/README.md) | Administratoren und Entwickler | Fortgeschrittene bis Experten | 26 Lektionen, etwa 22 Stunden (etwa 4 Tage) | Website-Administration |
 | [Entwickler](entwickler/README.md) | PHP-Entwickler, die auf Exponential aufbauen | Fortgeschrittene bis Experten | 52 Lektionen, etwa 44 Stunden (etwa 7 Tage) | PHP, Git |
-| [Theme-Design](../../../eng-us/help/trainers/theme-designers/README.md) | Designer und Frontend-Entwickler | Einsteiger bis Experten | 30 Lektionen, etwa 24 Stunden (etwa 4 Tage) | HTML, CSS |
+| [Theme-Design](theme-designer/README.md) | Designer und Frontend-Entwickler | Einsteiger bis Experten | 30 Lektionen, etwa 24 Stunden (etwa 4 Tage) | HTML, CSS |
 | [Newsletter](../../../eng-us/help/trainers/newsletter/README.md) | Redakteure und Administratoren, die Newsletter versenden | Einsteiger bis Experten | 20 Lektionen, etwa 16 Stunden (etwa 2,5 Tage; 1,5 Tage für den Pfad der Redakteure) | Redakteure 101 |
 | [Migration zu Exponential](../../../eng-us/help/trainers/migration/README.md) | Teams, die eine Website zu Exponential umziehen | Fortgeschrittene bis Experten | 25 Lektionen, etwa 22,5 Stunden (etwa 4 Tage) | Website-Administration oder Entwickler |
 | [Workshops und Bootcamps](../../../eng-us/help/trainers/workshops/README.md) | Gruppen, die ein kompaktes Programm brauchen | Alle | Programme für einen halben, 1, 3 und 5 Tage | Hängt vom Ablaufplan ab |
-| [Prüfungen und praktische Übungen](../../../eng-us/help/trainers/assessments/README.md) | Trainer, die Teilnehmende prüfen | Alle | Etwa 6 Stunden für den Trainer; Tests und Aufgaben je Kurs | Der geprüfte Kurs |
+| [Prüfungen und praktische Übungen](pruefungen/README.md) | Trainer, die Teilnehmende prüfen | Alle | Etwa 6 Stunden für den Trainer; Tests und Aufgaben je Kurs | Der geprüfte Kurs |
 
 Jeder Kursüberblick listet kürzere Zeitpläne auf, die aus seinen Modulen zusammengestellt sind.
 

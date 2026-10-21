@@ -18,7 +18,7 @@ Dieses kurze Modul behandelt beides und baut auf der Erweiterung und dem Dashboa
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Dauer | 1 Stunde 30 Minuten |
 | Lektionen | 2 |
 | Niveau | Fortgeschrittene |
@@ -53,7 +53,7 @@ Dieses kurze Modul behandelt beides und baut auf der Erweiterung und dem Dashboa
 ## Verwandte Seiten
 
 - [Modul 5: Barrierefreiheit und Rechts-nach-links](../modul-05-barrierefreiheit-und-rechts-nach-links/README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -18,12 +18,12 @@ die der Assistent geschrieben hat, und bringen sie miteinander und mit der Datei
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 7: Ein Theme paketieren](README.md) |
 | Dauer | 45 Minuten (15 Präsentation, 30 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Designer und Entwickler, die Themes veröffentlichen |
-| Voraussetzungen | [Lektion 2.1](../../../../../eng-us/help/trainers/theme-designers/module-02-templates-overrides-and-the-pagelayout/your-own-design-extension.md): `training_theme` mit dem Assistenten angelegt |
+| Voraussetzungen | [Lektion 2.1](../modul-02-templates-overrides-und-das-pagelayout/ihre-eigene-design-erweiterung.md): `training_theme` mit dem Assistenten angelegt |
 
 ## Lernziele
 
@@ -139,7 +139,7 @@ Auf Ihrer Schulungsinstallation, in `extension/training_theme/`.
 ## Verwandte Seiten
 
 - [Modul 7: Ein Theme paketieren](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -18,7 +18,7 @@ In dieser Lektion gehen die Teilnehmenden die Liste der Template-Autoren durch u
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 5: Barrierefreiheit und Rechts-nach-links](README.md) |
 | Dauer | 60 Minuten (15 Präsentation, 45 Übung) |
 | Niveau | Fortgeschrittene |
@@ -152,7 +152,7 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 ## Verwandte Seiten
 
 - [Modul 5: Barrierefreiheit und Rechts-nach-links](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

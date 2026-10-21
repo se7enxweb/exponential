@@ -19,12 +19,12 @@ es zu testen.
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 5: Barrierefreiheit und Rechts-nach-links](README.md) |
 | Dauer | 60 Minuten (20 Präsentation, 40 Übung) |
 | Niveau | Experten |
 | Zielgruppe | Designer und Frontend-Entwickler |
-| Voraussetzungen | [Lektion 5.2](ein-barrierefreies-website-design.md); [Lektion 4.4](../../../../../eng-us/help/trainers/theme-designers/module-04-styling-the-administration/module-and-extension-stylesheets.md) für den Teil zur Administration |
+| Voraussetzungen | [Lektion 5.2](ein-barrierefreies-website-design.md); [Lektion 4.4](../modul-04-die-administration-gestalten/modul-und-erweiterungs-stylesheets.md) für den Teil zur Administration |
 
 ## Lernziele
 
@@ -174,7 +174,7 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 ## Verwandte Seiten
 
 - [Modul 5: Barrierefreiheit und Rechts-nach-links](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

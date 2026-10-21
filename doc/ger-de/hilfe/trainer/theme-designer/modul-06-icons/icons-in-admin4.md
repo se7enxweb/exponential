@@ -18,12 +18,12 @@ Bedienelemente, die nur aus einem Icon bestehen, richtig und ergänzen ein eigen
 
 | | |
 |---|---|
-| Kurs | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) |
+| Kurs | [Theme-Design](../README.md) |
 | Modul | [Modul 6: Icons](README.md) |
 | Dauer | 45 Minuten (15 Präsentation, 30 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Designer und Entwickler, die Administrationsseiten bauen |
-| Voraussetzungen | [Modul 4](../../../../../eng-us/help/trainers/theme-designers/module-04-styling-the-administration/README.md): der Block `training_notes` und `training_admin.css` |
+| Voraussetzungen | [Modul 4](../modul-04-die-administration-gestalten/README.md): der Block `training_notes` und `training_admin.css` |
 
 ## Lernziele
 
@@ -167,7 +167,7 @@ Auf Ihrer Schulungsinstallation, Administration in admin4, Dateien aus Modul 4.
 ## Verwandte Seiten
 
 - [Modul 6: Icons](README.md)
-- [Theme-Design: Kursüberblick](../../../../../eng-us/help/trainers/theme-designers/README.md)
+- [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
