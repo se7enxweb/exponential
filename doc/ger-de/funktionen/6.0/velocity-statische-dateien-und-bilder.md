@@ -135,7 +135,7 @@ nicht aufgeführte Pfade an die Anwendung gehen.
 
 ## Verwandte Seiten
 
-- [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md) (Seiten, nicht Dateien), [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md) (die Binärdateien bündeln GD), [uwebserver](velocity-uwebserver.md)
+- [Velocity-Webserver](velocity-webserver.md), [Antwort-Cache](velocity-antwort-cache.md) (Seiten, nicht Dateien), [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md) (die Binärdateien bündeln GD), [uwebserver](velocity-uwebserver.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
 - Chronik: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (Verzeichnislisten, Galerien, `Save-Data`), [22. September](../../../eng-us/history/velocity/2026-09b.md) (Lebensdauer statischer Dateien, komprimierte Speicherung), [23. September](../../../eng-us/history/velocity/2026-09c.md) (Berechtigungen des Caches)

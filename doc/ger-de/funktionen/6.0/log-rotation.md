@@ -3,7 +3,7 @@
 Exponential schreibt seine Protokolle nach `var/log` (oder `var/<site>/log` jeder Website): `error.log`, `warning.log`,
 `notice.log`, `debug.log`, `deprecated.log`, `storage.log`, die Cronjob-Protokolle und die Protokolle von Extensions. Diese
 Seite beschreibt, wie sie rotiert werden, wie Sie sie bei Bedarf rotieren und wie Sie alte Archive entfernen, auf der
-Kommandozeile und unter **Setup > Logdateien** ([der Log-Betrachter](../../../eng-us/features/6.0/log-viewer.md)).
+Kommandozeile und unter **Setup > Logdateien** ([der Log-Betrachter](log-betrachter.md)).
 
 ## Kurz gesagt
 
@@ -59,7 +59,7 @@ Ein Protokoll ohne Eintrag nimmt die Werte aus `site.ini [FileSettings]` oben. D
 eines Protokolls verwendet immer `site.ini`.
 
 Die Anfrageprotokolle bringen eigene Einträge mit: `404.log` und `security.log` behalten 5 Archive, komprimiert, mit einer
-Größengrenze von 10 MB, bereinigt nach 30 (404) und 90 (security) Tagen ([Anfrageprotokolle](../../../eng-us/features/6.0/request-logs.md)).
+Größengrenze von 10 MB, bereinigt nach 30 (404) und 90 (security) Tagen ([Anfrageprotokolle](anfrageprotokolle.md)).
 
 ## Auf der Kommandozeile
 
@@ -118,7 +118,7 @@ damit der Kernel nicht zusätzlich rotiert, und verwenden Sie dort `copytruncate
 
 **Setup > Logdateien** bietet für das geöffnete Protokoll **Jetzt rotieren** an (`setup/managelogs`, eingeschaltet mit
 `logviewer.ini [ActionSettings] Rotate=enabled`), das dieselbe Rotation verwendet. Siehe
-[den Log-Betrachter](../../../eng-us/features/6.0/log-viewer.md), „Aktionen“.
+[den Log-Betrachter](log-betrachter.md), „Aktionen“.
 
 ## Für Entwickler
 

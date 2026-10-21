@@ -99,7 +99,7 @@ ersten Verwendung funktioniert.
 
 - Spezifikationen: [Datenbanktreiber SQLite3](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md), [Datenbanktreiber und Installer, 16. bis 30. September 2026](../../spezifikationen/6.0/datenbanktreiber-2026-09.md), [Verhalten der Treiber für SQLite und Oracle (Oktober 2026)](../../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md)
 - [SQLite: Transaktionen stellen sich für die Schreibsperre an](../../../eng-us/bc/6.0/sqlite-transactions.md)
-- [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [MongoDB-Datenbankunterstützung](mongodb-datenbankunterstuetzung.md)
+- [Installation mit einem Befehl](installation-mit-einem-befehl.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [MongoDB-Datenbankunterstützung](mongodb-datenbankunterstuetzung.md)
 - [Unterstützung für PHP 8](../../../eng-us/bc/6.0/php8.md) (die Korrekturen zu countable und `is_countable`, die aus den Testläufen mit SQLite kamen)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (der Treiber), [6.0.13](../../../changelogs/6.0/6.0.13.md) (absolute Pfade, Autoload), [6.0.14](../../../changelogs/6.0/6.0.14.md) (Lesen des Schemas)
 - Chronik: [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [April 2026](../../../eng-us/history/2026/2026-04.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md) (Entfernen von Indizes)

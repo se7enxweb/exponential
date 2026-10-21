@@ -134,7 +134,7 @@ gehört in eine Dienstklasse, nicht in einen von ihnen
   Anfrage eine Nonce, die den Direktiven aus `NonceDirectives[]` hinzugefügt wird (ausgeliefert: `script-src`); ein
   Template gibt sie mit dem Operator `csp_nonce()` aus (`expContentSecurityPolicyOperator`, registriert in
   `kernel/common/eztemplateautoload.php`): `<script nonce="{csp_nonce()}">`. Siehe
-  [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md).
+  [Content Security Policy](../../funktionen/6.0/content-security-policy.md).
 - **Ausgaben werden maskiert.** Jede Variable aus Inhalten oder Eingaben wird mit `|wash` ausgegeben (oder mit einem
   Operator, der maskiert).
 
@@ -159,7 +159,7 @@ Namespaces `Exponential\Command\Extension\<Ext>`, `Exponential\Cronjob\Extension
   `var_dump` bleibt im Kernel-Code zurück.
 - **Übersetzungen über `ezpI18n::tr( $context, $text )`** in PHP und `i18n( $context )` in Templates.
 - **Persistente Worker.** Code muss davon ausgehen, dass er in einem langlebigen Velocity-Worker laufen kann (siehe
-  [Kernel-Architektur](../../../eng-us/standards/architecture/kernel-architecture.md#servers-velocity-php-fpm-and-frankenphp)).
+  [Kernel-Architektur](kernel-architektur.md#server-velocity-php-fpm-und-frankenphp)).
 
 ## Namenskonventionen
 
@@ -259,7 +259,7 @@ finden.
   `exp:mail:status`. Velocity ist `exp:velocity` mit Unterbefehlen (`exp:velocity deploy`, `exp:velocity cache clear`).
 - Skripte von Extensions heißen `ext:<ext>:<name>`; Cronjob-Teile `cron:<part>`.
 - Befehlsnamen, Optionen und Exit-Codes sind Teil des Kompatibilitätsversprechens
-  ([Kompatibilität, Releases und Deployment](../../../eng-us/standards/architecture/compatibility-releases-deployment.md)).
+  ([Kompatibilität, Releases und Deployment](kompatibilitaet-releases-deployment.md)).
 
 ## Bekannte Lücken
 
@@ -272,7 +272,7 @@ finden.
 
 ## Verwandte Seiten
 
-- [Kernel-Architektur](../../../eng-us/standards/architecture/kernel-architecture.md)
+- [Kernel-Architektur](kernel-architektur.md)
 - [Katalog der Entwurfsmuster](../muster/README.md)
-- [Kompatibilität, Releases und Deployment](../../../eng-us/standards/architecture/compatibility-releases-deployment.md)
-- [Gestaltung der Administrationsoberfläche](../../../eng-us/bc/6.0/admin4-styling.md), [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)
+- [Kompatibilität, Releases und Deployment](kompatibilitaet-releases-deployment.md)
+- [Gestaltung der Administrationsoberfläche](../../../eng-us/bc/6.0/admin4-styling.md), [Content Security Policy](../../funktionen/6.0/content-security-policy.md)

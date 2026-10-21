@@ -258,7 +258,7 @@ der Anfrage, wie unter PHP-FPM.
 ## Verwandte Seiten
 
 - Anleitungen: [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md), [HTTP/2 und Cache-Aufwärmen](../../../eng-us/bc/6.0/http2-and-cache-warming.md), [Antwort-Cache und Navigations-Cache](../../../eng-us/bc/6.0/response-cache-and-navigation.md), [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md), [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md)
-- Funktionen: [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Velocity-Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md), [Opcode-Cache und Profil](velocity-opcode-cache-und-profil.md), [Befehle zur Serversteuerung](befehle-fuer-webserver-und-solr.md), [Wartungsmodus](wartungsmodus.md) (Velocity pausiert seine Caches, solange er eingeschaltet ist)
+- Funktionen: [Velocity-Webserver](velocity-webserver.md), [Velocity-Antwort-Cache](velocity-antwort-cache.md), [Opcode-Cache und Profil](velocity-opcode-cache-und-profil.md), [Befehle zur Serversteuerung](befehle-fuer-webserver-und-solr.md), [Wartungsmodus](wartungsmodus.md) (Velocity pausiert seine Caches, solange er eingeschaltet ist)
 - Spezifikationen: [Velocity-Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md), [Velocity-Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md), [Sicherheitsvorgaben vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - Changelogs: [6.0.15](../../../changelogs/6.0/6.0.15.md), [Exponential-Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md)

@@ -8,7 +8,7 @@ Exponential Velocity 0.0.4.28 und neuer (Befehl `vc-qshell` ab 0.0.4.42).
 
 ## Öffnen und einen Befehl ausführen
 
-1. Melden Sie sich am [Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md) an. Die Shell benötigt eine angemeldete
+1. Melden Sie sich am [Control Panel](velocity-control-panel.md) an. Die Shell benötigt eine angemeldete
    Panel-Session; sie ist standardmäßig eingeschaltet.
 2. Drücken Sie die Backtick-Taste (oder `~`) oder klicken Sie in der Werkzeugleiste auf **Shell**.
 3. Geben Sie einen Befehl ein:
@@ -165,7 +165,7 @@ curl -s -H "Authorization: Bearer $TOKEN" -d '{"command":"uptime"}' https://host
 
 ## Verwandte Seiten
 
-- [Control Panel und Dashboard](../../../eng-us/features/6.0/velocity-control-panel.md) (die Anmeldung, die die Shell braucht), [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md) (`vc-qshell`), [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md)
+- [Control Panel und Dashboard](velocity-control-panel.md) (die Anmeldung, die die Shell braucht), [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md) (`vc-qshell`), [Velocity-Webserver](velocity-webserver.md)
 - Spezifikationen: [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Programme, `qbixconsole`), [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md) (die Administrationsfläche)
 - Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
 - [Changelog: Exponential-Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md)

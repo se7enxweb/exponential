@@ -49,7 +49,7 @@ wie Sie sie geschrieben haben (anders als `eZINI::save()`, das die ganze Datei n
 - Eine Sicherung jeder geänderten Datei geht nach `var/backup/ini/<timestamp>/`.
 - Das Speichern als Benutzer der Website behält die Gruppe der Datei bei (er schreibt an Ort und Stelle neu, wenn sich
   die Gruppe nicht setzen lässt).
-- Schreibvorgänge an Einstellungen werden im [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) als `system.setting.write` erfasst;
+- Schreibvorgänge an Einstellungen werden im [Prüfprotokoll](pruefprotokoll.md) als `system.setting.write` erfasst;
   Geheimnisse werden als `[secret]` erfasst.
 
 ## Erweitern

@@ -91,7 +91,7 @@ Der Gestaltungsvorschlag, der dazu führte, mit den offenen Fragen, wird in
 
 - [Setup > Extensions: Ladereihenfolge](ladereihenfolge-der-extensions.md), [zusätzliche Extension-Verzeichnisse](zusaetzliche-extension-verzeichnisse.md)
 - [Extension-Metadaten](../../spezifikationen/6.0/extension-metadaten.md), [Seiten Über und Copyright](info-und-paketseiten.md)
-- [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Pakete vergleichen und importieren](../../../eng-us/features/6.0/package-compare-and-import.md), [Extensions, Themes und Pakete](extensions/README.md)
+- [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Pakete vergleichen und importieren](pakete-vergleichen-und-importieren.md), [Extensions, Themes und Pakete](extensions/README.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [August 2026](../../../eng-us/history/2026/2026-08.md), [Juni 2024](../../../eng-us/history/2024/2024-06.md), [März 2024](../../../eng-us/history/2024/2024-03.md), [Februar 2024](../../../eng-us/history/2024/2024-02.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md)
 

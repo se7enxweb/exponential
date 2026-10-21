@@ -77,7 +77,7 @@ Wartung, Cronjobs, Seiten vorladen, oAuth-Verwaltung).
   Adresse in ihren Schlüsseln, sodass ein auf einem Port ausgegebener Kopfbereich nie auf dem anderen ausgeliefert wird.
   In admin4 und admin4l führt die Weltkugel außerdem die anderen Websites auf, bei denen sich der Benutzer anmelden darf
   (`site.ini [AdminSiteAccessMenu]`, Administrationen nur mit `ListAdministrations=enabled`; siehe
-  [admin4](../../../eng-us/features/6.0/admin4-design.md#settings)).
+  [admin4](admin4-design.md#einstellungen)).
 - **Logo.** Das Logo verlinkt über `ezurl` auf die Inhaltswurzel, `content.ini [NodeSettings] RootNode`. Auf einem über
   die URI zugeordneten Admin bleibt es im Admin (`/admin/content/view/full/2`); auf einem über den Host zugeordneten
   Admin ist es `/content/view/full/2`.

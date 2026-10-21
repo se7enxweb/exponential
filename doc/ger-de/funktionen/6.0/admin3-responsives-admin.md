@@ -9,7 +9,7 @@ einklappbaren Seitenleiste, Menüs, die per Berührung funktionieren, und Inhalt
 ## Einschalten
 
 `admin3` erweitert `admin` und wird daher als Design eines Admin-Siteaccess aufgeführt. Der mitgelieferte Siteaccess
-`admin` führt es bereits als Rückfall hinter [admin4](../../../eng-us/features/6.0/admin4-design.md):
+`admin` führt es bereits als Rückfall hinter [admin4](admin4-design.md):
 
 ```ini
 # settings/siteaccess/admin/site.ini.append.php
@@ -84,7 +84,7 @@ Im ersten Release hieß das Skript `main.js` und musste von Hand eingeschaltet w
 
 ## Verwandte Seiten
 
-- [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md), [das Design admin4](admin4-design.md)
 - [Ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [ausgewählte Unterelemente ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md), [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md)
 - [Blättern und Seitengrößen](seitenweise-listen-im-admin.md)
 - [Die Entfernung von YUI](../../../eng-us/bc/6.0/yui-removal.md), die alle Admin-Designs auf jQuery umstellte

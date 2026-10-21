@@ -23,12 +23,12 @@ Es hat außerdem einen Cronjob und eine Kommandozeile. Version 1.3.0 machte es m
 In der Zeit von Exponential 6 erhielt das Repository nur Paketmetadaten und Informationen zur Finanzierung (Dezember
 2023 bis März 2026); der Code ist die Linie 1.3.
 
-Für neue Arbeiten verwenden Sie [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md). Es exportiert nach einem Zeitplan als CSV, JSON, XML
+Für neue Arbeiten verwenden Sie [xrowextract](xrowextract.md). Es exportiert nach einem Zeitplan als CSV, JSON, XML
 und Inhaltspakete und liefert per SFTP, FTPS, S3, WebDAV und HTTP aus.
 
 ## Verwandte Seiten
 
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md)
+- [xrowextract](xrowextract.md)
 - [Chronik](../../../../eng-us/history/extensions/ezxmlexport.md) und [Versionshinweise](../../../../changelogs/extensions/ezxmlexport.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezxmlexport.md)
 - [Verhaltensänderungen der Extensions](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

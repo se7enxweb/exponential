@@ -96,7 +96,7 @@ Probieren Sie immer zuerst das **Staging**-Verzeichnis von Let's Encrypt aus (`"
 1. Eine Quelle liefert das Zertifikat; das Paar wird geprüft; HTTPS liest nur eine **private Kopie** (`<ssl dir>/active-<port>-<fingerprint>-<pid>.pem`), die diesem Serverprozess gehört, sodass eine Datei, die anderswo neu geschrieben wird, keinen Handshake stören kann. Ein zweiter Server im selben Verzeichnis und auf demselben Port schreibt seine eigene Kopie (behoben in 0.0.4.28: Zuvor konnte ein zweiter Server dem ersten das HTTPS wegnehmen).
 2. Alle `watchInterval` Sekunden werden die Dateien der Quelle geprüft; ein geändertes, gültiges Paar wird der nächsten Verbindung präsentiert. Ein Zertifikat, das vor seinem Schlüssel geschrieben wird, bekommt ein Intervall Zeit, um zur Ruhe zu kommen.
 3. **Selbstsigniert** wird in dieser Reihenfolge versucht: PHP openssl mit ECDSA P-256; PHP openssl mit RSA 2048, signiert mit SHA-256; das System-Programm `openssl`; das Snakeoil-Paar des Systems. Es gilt 397 Tage, wird 30 Tage vor Ablauf und bei jeder Änderung der Namen erneuert und liegt in `ssl/self-signed.*`. (Release 0.0.4.27 signiert mit SHA-256, weil Systeme, die SHA-1 ablehnen, das frühere Zertifikat abgelehnt haben.)
-4. **Auswahl pro Domain (SNI)**: Das Zertifikat, das eine Domain abdeckt, wird pro Verbindung ausgewählt und im Reiter Domains des Panels angezeigt ([Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md)).
+4. **Auswahl pro Domain (SNI)**: Das Zertifikat, das eine Domain abdeckt, wird pro Verbindung ausgewählt und im Reiter Domains des Panels angezeigt ([Control Panel](velocity-control-panel.md)).
 
 ## Was in `ssl/` liegt
 
@@ -136,7 +136,7 @@ Sichern Sie `ssl/`. Alles darin lässt sich neu erzeugen, außer den ACME-Kontos
 
 ## Verwandte Seiten
 
-- [Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md) (Reiter SSL und Domains), [Scheduler](velocity-zeitplaner.md) (Erneuerungsjobs), [Webserver Velocity](../../../eng-us/features/6.0/velocity-web-server.md)
+- [Control Panel](velocity-control-panel.md) (Reiter SSL und Domains), [Scheduler](velocity-zeitplaner.md) (Erneuerungsjobs), [Webserver Velocity](velocity-webserver.md)
 - Spezifikationen: [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Wiederaufnahme von TLS-Sitzungen, `--https-port`)
 - Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) (`[HTTPSSettings]`)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)

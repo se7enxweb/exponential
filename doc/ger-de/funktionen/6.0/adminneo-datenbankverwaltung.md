@@ -75,7 +75,7 @@ der [Historie des Repositorys](../../../eng-us/history/ecosystem/adminneo.md#ups
 ## Verwandte Seiten
 
 - [sevenx_dse](extensions/sevenx_dse.md)
-- Plattformfunktionen: [Administrationsoberfläche](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md)
+- Plattformfunktionen: [Administrationsoberfläche](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Nexus-Starter](plattform-nexus-starter.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](legacy-bridge.md)
 - Spezifikationen: [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
 - Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)

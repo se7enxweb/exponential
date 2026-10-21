@@ -1,7 +1,7 @@
 # Design > Templates: Reihenfolge der Überschreibungen per Drag-and-drop
 
 Diese Seite ist aufgegangen in
-[Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](../../../eng-us/features/6.0/template-editor-overrides.md#reorder-by-drag-and-drop-september-2026),
+[Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](template-editor-ueberschreibungen.md#per-drag-and-drop-umsortieren-september-2026),
 die jetzt das Umordnen per Drag-and-drop, die Regeln für das Blättern, die Einstellung
 der Seitengröße und die Tabelle dessen enthält, was die alte Seite falsch machte.
 

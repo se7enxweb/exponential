@@ -65,7 +65,7 @@ neue Versionen, sodass jede Zeile der Seite Über eine Version, Lizenz und Websi
 ## Verwandte Seiten
 
 - [Spezifikation der Extension-Metadaten](../../spezifikationen/6.0/extension-metadaten.md)
-- [Pakete vergleichen und importieren](../../../eng-us/features/6.0/package-compare-and-import.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)
+- [Pakete vergleichen und importieren](pakete-vergleichen-und-importieren.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)
 - [Übersetzungen und Sprachen](uebersetzungen-und-sprachen.md)
 - [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [eine saubere Installation, die zu Shared Hosting passt](standardwerte-einer-sauberen-installation.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)

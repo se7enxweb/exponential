@@ -104,7 +104,7 @@ GNU-Lizenzen. Der erzeugte Text für `GPL-2.0-or-later` ist unverändert. MIT un
 
 ## Verwandte Seiten
 
-- [Pakete vergleichen und importieren](../../../eng-us/features/6.0/package-compare-and-import.md), [ezpm auf der Kommandozeile](ezpm-paketmanager-cli.md), [RAD-Werkzeuge](rad-werkzeuge.md)
+- [Pakete vergleichen und importieren](pakete-vergleichen-und-importieren.md), [ezpm auf der Kommandozeile](ezpm-paketmanager-cli.md), [RAD-Werkzeuge](rad-werkzeuge.md)
 - [Spezifikation der Extension-Metadaten](../../spezifikationen/6.0/extension-metadaten.md), [Seiten Über und Copyright](info-und-paketseiten.md), [Dateikonsistenzprüfung und die Dateiliste des Releases](dateikonsistenzpruefung.md)
 - [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [eine saubere Installation, die zu Shared Hosting passt](standardwerte-einer-sauberen-installation.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)

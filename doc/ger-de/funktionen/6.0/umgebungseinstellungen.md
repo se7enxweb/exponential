@@ -69,7 +69,7 @@ Templates lesen den Namen mit `{exp_environment()}`, ohne Umgebung eine leere Ze
 
 Die Administrationsdesigns admin4 und admin4l können die Umgebung als Plakette im Kopfbereich, auf der Anmeldeseite und
 vor dem Seitentitel zeigen: `site.ini [AdminEnvironment] Level=auto` nimmt die Stufe aus diesem Namen, oder Sie setzen
-die Stufe in der Variantendatei der Umgebung. Siehe [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md#settings).
+die Stufe in der Variantendatei der Umgebung. Siehe [Das Design admin4](admin4-design.md#einstellungen).
 
 ## PHP
 

@@ -849,7 +849,7 @@ englischen Website richtig liest.
 rechts nach links geschrieben wird, und ihr Layoutgerüst (Kopf, linkes Menü, Inhalt, rechte Werkzeugleiste) ist
 richtungssicher: Der Browser spiegelt es, statt dass es über links und rechts platziert wird. Die Einzelheiten, die
 CSS-Regeln und was noch zu prüfen ist, stehen unter
-[Sprachen, die von rechts nach links geschrieben werden](../eng-us/features/6.0/right-to-left.md).
+[Sprachen, die von rechts nach links geschrieben werden](funktionen/6.0/rechts-nach-links.md).
 
 **Übersetzungen der Oberfläche.** Vier Rechts-nach-links-Sprachen haben eine vollständige Übersetzung der
 Administrationsoberfläche: Hebräisch (`heb-IL`), Arabisch (`ara-SA`, modernes Hocharabisch, sodass jedes arabische

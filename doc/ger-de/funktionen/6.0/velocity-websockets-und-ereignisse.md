@@ -2,7 +2,7 @@
 
 Diese Seite ist für Entwickler, die Echtzeitfunktionen (Chat, Fortschritt live, Benachrichtigungen) neben einer
 Exponential-Website betreiben wollen, die Velocity ausliefert. Eine gewöhnliche Exponential-Website braucht sie nicht.
-Gilt für Exponential Velocity 0.0.4.x; Übersicht: [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md).
+Gilt für Exponential Velocity 0.0.4.x; Übersicht: [Velocity-Webserver](velocity-webserver.md).
 
 Velocity hat drei im Server eingebaute Wege, eine Verbindung zwischen einem Browser und PHP offen zu halten:
 
@@ -37,7 +37,7 @@ for ($i = 1; $i <= 10; $i++) {
 Beobachten Sie es mit `curl -N https://host/<path of the script>`: Pro Sekunde kommt eine Zeile `data:` an.
 
 Zwei andere Auslöser streamen eine Antwort ebenfalls: der Header `X-Accel-Buffering: no` oder
-`Q_Response::setStreaming(true)`. Gestreamte Antworten werden vom [Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md) nicht
+`Q_Response::setStreaming(true)`. Gestreamte Antworten werden vom [Antwort-Cache](velocity-antwort-cache.md) nicht
 gespeichert und belegen einen Worker, solange sie laufen.
 
 Nicht geprüft: ob `Q.webserver.requestTimeout` (Standard 30 Sekunden) einen Stream beendet. Testen Sie es, indem Sie 40
@@ -98,7 +98,7 @@ socket.emit('chat/message', { text: 'hello' }, (res) => console.log('saved', res
 
 ## Verwandte Seiten
 
-- [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Velocity-Zeitplaner](velocity-zeitplaner.md), [Control Panel und Dashboard](../../../eng-us/features/6.0/velocity-control-panel.md), [Erkennung, Föderation und Deployment](velocity-erkennung-foederation-und-deployment.md)
+- [Velocity-Webserver](velocity-webserver.md), [Velocity-Zeitplaner](velocity-zeitplaner.md), [Control Panel und Dashboard](velocity-control-panel.md), [Erkennung, Föderation und Deployment](velocity-erkennung-foederation-und-deployment.md)
 - [Worker-Pool und Kompatibilitätsschicht von Velocity](../../spezifikationen/6.0/velocity-worker-pool.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
 - Chronik: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (langlebige Prozesse, socket.io), [August 2026](../../../eng-us/history/velocity/2026-08.md) (socket.io in allen Browsern, Server-Sent Events)

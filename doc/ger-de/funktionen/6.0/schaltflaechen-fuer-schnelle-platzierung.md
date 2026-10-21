@@ -1,7 +1,7 @@
 # Schaltflächen für schnelle Platzierungen
 
 Manche Seiten fragen nach einer Stelle im Inhaltsbaum: der Startplatz der Inhaltsprüfungen
-([content-checks.md](../../../eng-us/features/6.0/content-checks.md), „Wo eine Prüfung beginnt“) und die Upload-Seite von ezmultiupload (ihr
+([content-checks.md](inhaltspruefungen.md), „Wo eine Prüfung beginnt“) und die Upload-Seite von ezmultiupload (ihr
 Zielplatz). Neben der Knotenauswahl bieten sie Schaltflächen für die bekannten Stellen mit einem Klick an, **Websites**
 und **Medien**, und eine Zeile mit den Stellen direkt unterhalb einer davon (die Websites unter Websites, Bilder,
 Dateien und Multimedia unter Medien). Die Schaltflächen werden aus dem Inhaltsbaum und den Einstellungen ermittelt, nie

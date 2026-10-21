@@ -202,7 +202,7 @@ Die ersten beiden antworten mit `302` und dem Sprachsegment in `Location`, die d
 
 - [Übersetzungen und Sprachen](uebersetzungen-und-sprachen.md)
 - [Inhaltssprachen](../../anleitungen/inhaltssprachen.md)
-- [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
+- [Antwort-Cache von Velocity](velocity-antwort-cache.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

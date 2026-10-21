@@ -32,7 +32,7 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [expai](expai.md) | Exponential Intelligence, der Schreibassistent der Administrationsoberfläche (nur Entwürfe) |
 | [explayouts-Suite](../../../../eng-us/bc/6.0/LAYOUTS.md) | Exponential Layouts: Layouts, Zonen, Blöcke, Regeln und gemeinsame Layouts (die Anleitung) |
 | [explayouts_ui](explayouts_ui.md) | die Admin-Bildschirme für Layouts |
-| [explayouts_ui_api](../../../../eng-us/features/6.0/extensions/explayouts_ui_api.md) | der Layout-Editor |
+| [explayouts_ui_api](explayouts_ui_api.md) | der Layout-Editor |
 | [ezautosave](ezautosave.md) | automatisches Speichern von Entwürfen |
 | [ezflow](ezflow.md) | Seiten, Zonen und Blöcke |
 | [ezie](ezie.md) | Bildeditor |
@@ -58,7 +58,7 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [bccie](bccie.md) | Export gesammelter Informationen |
 | [bcgooglesitemaps](bcgooglesitemaps.md) | Google-Sitemaps |
 | [bcwebsitestatistics](bcwebsitestatistics.md) | Google Analytics |
-| [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) | Newsletter |
+| [cjw_newsletter](cjw_newsletter.md) | Newsletter |
 | [ezpaypal](ezpaypal.md) | PayPal-Gateway |
 | [ezpm](ezpm.md) | private Nachrichten |
 
@@ -66,12 +66,12 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 
 | Extension | Was sie ist |
 |---|---|
-| [ezprestapi](../../../../eng-us/features/6.0/extensions/ezprestapi.md) | REST API v1 und v2 |
+| [ezprestapi](ezprestapi.md) | REST API v1 und v2 |
 | [ezprestapiprovider](ezprestapiprovider.md) | veraltete Kompatibilitätsschicht, verwenden Sie ezprestapi |
 | [ezxmlexport](ezxmlexport.md) | XML-Export |
 | [nxc_powercontent](nxc_powercontent.md) | Inhalte aus Code und REST |
 | [syndication](syndication.md) | Syndikation von Inhalten |
-| [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md) | Export und Import |
+| [xrowextract](xrowextract.md) | Export und Import |
 
 ## Administration, Sicherheit und Betrieb
 
@@ -81,8 +81,8 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [ezjscore](ezjscore.md) | JavaScript-Kern und Packer |
 | [ezmbpaex](ezmbpaex.md) | Ablauf von Passwörtern |
 | [expqueue](expqueue.md) | die Auftragswarteschlange für Hintergrundarbeit von Extensions |
-| [ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md) | Aktualisierungen und Pakete |
-| [git_manager](../../../../eng-us/features/6.0/extensions/git_manager.md) | Git-Dashboard und Sicherungen |
+| [ezupdate](ezupdate.md) | Aktualisierungen und Pakete |
+| [git_manager](git_manager.md) | Git-Dashboard und Sicherungen |
 | [sevenx_authentication_2fa](sevenx_authentication_2fa.md) | Zwei-Faktor- und Social-Login |
 | [sevenx_dse](sevenx_dse.md) | Database Source Editor |
 | [sevenx_valkey_cache](sevenx_valkey_cache.md) | Cache in Redis und Valkey |
@@ -101,7 +101,7 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [cjw-exponential-media-site-data](cjw-exponential-media-site-data.md) | Daten der Media-Site |
 | [ez-support-tools](ez-support-tools.md) | Plattform-Bundle (Chronik im Abschnitt Ökosystem) |
 | [ngsymfonytools](ngsymfonytools.md) | Plattform-Bundle (Chronik im Abschnitt Ökosystem) |
-| [sevenx-recipes](../../../../eng-us/features/6.0/extensions/sevenx-recipes.md) | Symfony-Flex-Rezepte |
+| [sevenx-recipes](sevenx-recipes.md) | Symfony-Flex-Rezepte |
 
 ## Verwandte Seiten
 

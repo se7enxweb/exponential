@@ -70,7 +70,7 @@ Aufträge liegen unter `var/<site var dir>/jobs/content/`; ein Cluster braucht e
 
 - Ein Teilbaum, an dem ein Auftrag arbeitet, wird für einen anderen Auftrag abgelehnt (Sperren).
 - Das Audit erfasst `content.job.start` als übergeordnetes Ereignis von allem, was die Teilschritte getan haben; siehe
-  [das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md).
+  [das Prüfprotokoll](pruefprotokoll.md).
 - Entfernte Clients starten dieselben Aufträge über die [Inhaltsdomäne von expservices](entfernte-dienste-expservices.md).
 - Am selben Tag behoben: Die Wahl „jetzt ausführen oder im Hintergrund“ einer Auswahlseite (Verschieben und Kopieren)
   wurde nie mit dem Auswahlformular gesendet, sodass immer die automatische Entscheidung gewann. Jetzt wird sie gesendet.

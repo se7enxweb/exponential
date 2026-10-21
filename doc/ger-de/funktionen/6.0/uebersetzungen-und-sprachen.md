@@ -80,7 +80,7 @@ JavaScript haben, das auf die alten `lang`-Werte passte (zum Beispiel `[lang="no
 
 ## Sprachen in einer neuen Installation
 
-Siehe [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) für die Sprachregeln des Einrichtungsassistenten und
+Siehe [Installation mit einem Befehl](installation-mit-einem-befehl.md) für die Sprachregeln des Einrichtungsassistenten und
 des Kickstarters. Kurz: Die Hauptsprache ist standardmäßig `eng-US` (die Sprache der mitgelieferten Daten); andere
 Hauptsprachen installieren sich sauber; der Schritt für die Paketsprache bietet `eng-US` nicht mehr zur Zuordnung an;
 Siteaccesses für zwei Locales einer Sprache erhalten verschiedene Namen; das Setup-Protokoll erfasst die Sprachen und die
@@ -98,8 +98,8 @@ Geben Sie ihm `[SiteAccessSettings] ExtensionSettingsSiteAccess=<main siteaccess
 - [Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](siteaccess-zuordnung-nach-host-und-sprache.md): welchen Sprach-Siteaccess die Startseite und Test-Hosts erreichen
 - [Sprachen](../../sprachen.md): jede Locale (138) und Übersetzung der Administrationsoberfläche (27) mit ihrer Vollständigkeit
 - [Inhaltssprachen](../../anleitungen/inhaltssprachen.md): die Anleitung zum Hinzufügen, Anzeigen, Übersetzen, Verschieben und Entfernen der Sprachen, in denen Inhalte geschrieben werden (Setup > Sprachen)
-- [Übersetzungen des Paketvergleichs](../../../eng-us/features/6.0/package-compare-and-import.md)
-- [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) (Sprachen einer neuen Installation), [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md) (Übersetzungs-Siteaccesses)
+- [Übersetzungen des Paketvergleichs](pakete-vergleichen-und-importieren.md)
+- [Installation mit einem Befehl](installation-mit-einem-befehl.md) (Sprachen einer neuen Installation), [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md) (Übersetzungs-Siteaccesses)
 - [Seiten Über und Copyright](info-und-paketseiten.md)
 - [Verhaltensänderungen vom September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)

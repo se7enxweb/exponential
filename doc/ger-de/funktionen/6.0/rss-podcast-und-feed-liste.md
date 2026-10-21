@@ -104,7 +104,7 @@ Prüfen: `grep -n "AvailableVersionList\|OPMLMaxOutlines" settings/site.ini` und
 ## Verwandte Seiten
 
 - [OPML-Exporte](../../../eng-us/bc/6.0/opml.md), [Aufräumen nach RSS-Importen](../../../eng-us/bc/6.0/cleanuprss.md), [Spezifikation der Syndikation](../../spezifikationen/6.0/syndikation.md)
-- [Cronjobs in der Konsole](../../../eng-us/features/6.0/cronjobs-console.md) (der Teil zum Aufräumen nach Importen), [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md) (die RSS-Liste wird seitenweise angezeigt)
+- [Cronjobs in der Konsole](cronjobs-in-der-konsole.md) (der Teil zum Aufräumen nach Importen), [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md) (die RSS-Liste wird seitenweise angezeigt)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronik: September 2026, erste Hälfte, 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
 

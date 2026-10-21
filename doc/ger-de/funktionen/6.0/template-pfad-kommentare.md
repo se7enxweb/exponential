@@ -71,7 +71,7 @@ welchem Template und in welcher Zeile das Problem steckt, nicht nur, dass es ein
 ## Verwandte Seiten
 
 - [Exp-Debug-Leiste](exp-debug-leiste.md), [Referenz der Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md)
-- [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](../../../eng-us/features/6.0/template-editor-overrides.md)
+- [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](template-editor-ueberschreibungen.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [Juli 2026](../../../eng-us/history/2026/2026-07.md), [August 2026](../../../eng-us/history/2026/2026-08.md)
 

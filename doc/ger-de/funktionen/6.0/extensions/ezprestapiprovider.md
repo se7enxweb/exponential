@@ -3,7 +3,7 @@
 Diese Seite ist für Entwickler und Website-Administratoren, deren Installation `ezprestapiprovider` noch aktiviert.
 
 > [!WARNING]
-> **Veraltet.** REST API v1 und v2 werden von einer Extension bedient, [ezprestapi](../../../../eng-us/features/6.0/extensions/ezprestapi.md) (1.2.6 oder neuer).
+> **Veraltet.** REST API v1 und v2 werden von einer Extension bedient, [ezprestapi](ezprestapi.md) (1.2.6 oder neuer).
 > `ezprestapiprovider` 6.0.4 (15. Oktober 2026) ist ihr letztes Release. Aktivieren Sie `ezprestapi` und entfernen Sie
 > `ezprestapiprovider` aus `ActiveExtensions`; die Schritte stehen in
 > [REST API v1 und v2: eine Extension](../../../anleitungen/rest-api-v1-und-v2.md#6-migration-von-ezprestapiprovider).
@@ -53,7 +53,7 @@ Für OAuth-Clients, Tokens, persönliche API-Schlüssel und die URLs von v1 änd
 ## Verwandte Seiten
 
 - [REST API v1 und v2: eine Extension](../../../anleitungen/rest-api-v1-und-v2.md)
-- [ezprestapi](../../../../eng-us/features/6.0/extensions/ezprestapi.md)
+- [ezprestapi](ezprestapi.md)
 - [Chronik](../../../../eng-us/history/extensions/ezprestapiprovider.md) und [Versionshinweise](../../../../changelogs/extensions/ezprestapiprovider.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezprestapiprovider.md)
 - [Verhaltensänderungen der Extensions](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

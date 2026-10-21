@@ -145,7 +145,7 @@ Einstellungen. Verwenden Sie `DebugByIP` oder `DebugByUser`.
 ## Verwandte Seiten
 
 - [Anleitung zur Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md), [ausführbare Klassen](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
-- [Der INI-Befehl](exp-ini-befehl.md) (dieselbe Editorklasse), [das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) (Änderungen an Einstellungen werden protokolliert), [Template-Pfad-Kommentare](template-pfad-kommentare.md)
+- [Der INI-Befehl](exp-ini-befehl.md) (dieselbe Editorklasse), [das Prüfprotokoll](pruefprotokoll.md) (Änderungen an Einstellungen werden protokolliert), [Template-Pfad-Kommentare](template-pfad-kommentare.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - Changelogs: [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.7](../../../changelogs/6.0/6.0.7.md), [6.0.10](../../../changelogs/6.0/6.0.10.md), [6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [August 2025](../../../eng-us/history/2025/2025-08.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md) (Überschrift und IDs, 6.0.7), [August 2024](../../../eng-us/history/2024/2024-08.md) (responsiver Block, 6.0.4)

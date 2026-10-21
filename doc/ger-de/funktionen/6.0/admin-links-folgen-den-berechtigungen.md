@@ -55,7 +55,7 @@ Um einen Reiter auf einem Siteaccess für alle auszublenden, unabhängig von den
 ## Verwandte Seiten
 
 - [Admin-Reiter ausblenden: HiddenTabs](ausgeblendete-admin-reiter.md)
-- [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](admin4-design.md)
 - [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

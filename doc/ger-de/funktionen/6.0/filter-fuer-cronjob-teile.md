@@ -13,7 +13,7 @@ ob ein Teil laufen darf.
   gehängt; `[Event] Listeners[]` wird nur an Webanfragen gehängt.
 - Ohne Listener läuft jeder Teil wie bisher.
 - Ein unter **Setup > Cronjobs** pausierter Teil wird ausgelassen, bevor der Filter gefragt wird; siehe
-  [Cronjob-Teile pausieren](../../../eng-us/features/6.0/cronjob-pause.md). Für einen Stoppschalter verwenden Sie lieber das als einen eigenen
+  [Cronjob-Teile pausieren](cronjobs-pausieren.md). Für einen Stoppschalter verwenden Sie lieber das als einen eigenen
   Listener.
 
 ## Der Filter

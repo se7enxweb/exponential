@@ -103,7 +103,7 @@ Cronjob-Teile und Modulansichten sind Klassen, die die Dateien aufrufen (2.4.10,
 
 ## Verwandte Seiten
 
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md): exportiert Tags über seine Handler für Schlagwörter und Tags und einen erweiterten Filter für eztags
+- [xrowextract](xrowextract.md): exportiert Tags über seine Handler für Schlagwörter und Tags und einen erweiterten Filter für eztags
 - [MongoDB-Datenbankunterstützung](../mongodb-datenbankunterstuetzung.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/eztags.md) und [Versionshinweise](../../../../changelogs/extensions/eztags.md)

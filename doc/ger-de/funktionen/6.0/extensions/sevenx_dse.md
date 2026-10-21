@@ -47,7 +47,7 @@ php bin/php/ezcache.php --clear-all
 ```
 
 4. Weisen Sie die Richtlinie `dse/dashboard` nur den Rollen zu, die sie haben müssen.
-5. Erstellen Sie zuerst eine Sicherung (zum Beispiel mit [git_manager](../../../../eng-us/features/6.0/extensions/git_manager.md)), öffnen Sie dann
+5. Erstellen Sie zuerst eine Sicherung (zum Beispiel mit [git_manager](git_manager.md)), öffnen Sie dann
    `/dse/dashboard` und bestätigen Sie die Sicherung.
 
 ## Einstellungen

@@ -9,7 +9,7 @@ Powercontent“, ursprünglich von NXC) erweitert, wie Code Inhalte anlegt, aktu
 - eine eingebaute Debug-Funktion, praktisch in Kommandozeilenskripten;
 - **beim Aktualisieren eines Objekts wird keine neue Version angelegt**.
 
-In der Zeit von Exponential 6 wurde sie für die REST-Extension [ezprestapi](../../../../eng-us/features/6.0/extensions/ezprestapi.md) erweitert, für die sie die
+In der Zeit von Exponential 6 wurde sie für die REST-Extension [ezprestapi](ezprestapi.md) erweitert, für die sie die
 Aufrufe zum Anlegen und Löschen der REST API v2 bereitstellt (1.1.0, Oktober 2024; Aktualisieren wird geprüft und
 antwortet dann mit 501). Seit `ezprestapi` 1.2.6 bedient diese eine Extension REST API v1 und v2; siehe
 [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md).
@@ -63,7 +63,7 @@ Siehe [Menü „Weitere Aktionen“ der Unterelemente](../../../../eng-us/bc/6.0
 
 ## Verwandte Seiten
 
-- [ezprestapi](../../../../eng-us/features/6.0/extensions/ezprestapi.md) und [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
+- [ezprestapi](ezprestapi.md) und [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
 - [Ausgewählte Unterelemente kopieren](../unterelemente-auswahl-kopieren.md)
 - [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)
 - [Chronik](../../../../eng-us/history/extensions/nxc_powercontent.md) und [Versionshinweise](../../../../changelogs/extensions/nxc_powercontent.md)

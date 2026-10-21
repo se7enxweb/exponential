@@ -117,7 +117,7 @@ Cache-Schlüssel und die Generation sowie die Blockdefinitionen und -Templates a
 nichts wird geschrieben außer der eigenen Cache-Generation des Resolvers).
 
 Siehe [die Verhaltensänderung](../../../eng-us/bc/6.0/admin4l.md) für das, was sich von admin4 unterscheidet, und
-[admin4](../../../eng-us/features/6.0/admin4-design.md) für das Design darunter.
+[admin4](admin4-design.md) für das Design darunter.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

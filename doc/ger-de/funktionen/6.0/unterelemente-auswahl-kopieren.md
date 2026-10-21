@@ -51,7 +51,7 @@ Alle Schlüssel stehen in `settings/content.ini`, Block `CopySettings`. Geltungs
 - [Inhaltsaufträge](inhaltsauftraege.md) für große Kopien
 - [Ausgewählte ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
 - [Optionen der Unterelementtabelle](optionen-der-unterelementtabelle.md)
-- [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md)
+- [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](admin4-design.md), [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md)
 - [Changelog 6.0.7](../../../changelogs/6.0/6.0.7.md)
 - Chronik: [August 2024](../../../eng-us/history/2024/2024-08.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md), [November 2024](../../../eng-us/history/2024/2024-11.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md), [Juni 2025](../../../eng-us/history/2025/2025-06.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)
 

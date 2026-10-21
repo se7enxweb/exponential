@@ -61,7 +61,7 @@ Alle Schlüssel stehen in `cie.ini`, Block `CieSettings`.
 ## Verwandte Seiten
 
 - [Spezifikation](../../../spezifikationen/6.0/bccie.md): Ansichten, Richtlinien, Dateien, Befehle, Einstellungen
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md): das neuere Exportwerkzeug mit eigenen Handlern; [birthday](birthday.md) bringt einen Handler dafür mit
+- [xrowextract](xrowextract.md): das neuere Exportwerkzeug mit eigenen Handlern; [birthday](birthday.md) bringt einen Handler dafür mit
 - [Abstraktionen für Kommandozeile, Cronjobs und Ansichten](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
 - [Chronik](../../../../eng-us/history/extensions/bccie.md) und [Versionshinweise](../../../../changelogs/extensions/bccie.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/bccie.md)

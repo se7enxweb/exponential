@@ -59,7 +59,7 @@ Datenbank.
 
 ## Verwandte Seiten
 
-- [ezoe](extensions/ezoe.md), [Online-Editor auf TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md)
+- [ezoe](extensions/ezoe.md), [Online-Editor auf TinyMCE 8](online-editor-tinymce8.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 
 <!-- exp-partner-block:start -->

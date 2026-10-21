@@ -88,7 +88,7 @@ Lücken und die Fehlersuche.
 
 ## Verwandte Seiten
 
-- [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md) und [admin4l](admin4l.md)
+- [Das Design admin4](admin4-design.md) und [admin4l](admin4l.md)
 - [Templates und Design](../../anleitungen/templates-und-design.md) (die Anleitung)
 
 <!-- exp-partner-block:start -->

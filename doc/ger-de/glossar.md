@@ -21,14 +21,14 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 ## A
 
-- **admin, admin2, admin3, admin4, classic**: die Administrationsdesigns. `admin3` funktioniert auf Telefonen und breiten Bildschirmen; `admin4` ist ein vollständiges Design mit hellem und dunklem Modus; `classic` ist die graue Oberfläche ohne YUI. Siehe [admin3](funktionen/6.0/admin3-responsives-admin.md), [admin4](../eng-us/features/6.0/admin4-design.md), [admin4l](funktionen/6.0/admin4l.md) (admin4, aus Layouts gebaut), [klassisches Admin-Theme](funktionen/6.0/extensions/sevenx_themes_admin_classic.md).
+- **admin, admin2, admin3, admin4, classic**: die Administrationsdesigns. `admin3` funktioniert auf Telefonen und breiten Bildschirmen; `admin4` ist ein vollständiges Design mit hellem und dunklem Modus; `classic` ist die graue Oberfläche ohne YUI. Siehe [admin3](funktionen/6.0/admin3-responsives-admin.md), [admin4](funktionen/6.0/admin4-design.md), [admin4l](funktionen/6.0/admin4l.md) (admin4, aus Layouts gebaut), [klassisches Admin-Theme](funktionen/6.0/extensions/sevenx_themes_admin_classic.md).
 - **AdminAid**: eine Extension mit einer Debugging-Hilfe für Administratoren. [AdminAid](funktionen/6.0/extensions/AdminAid.md).
 - **adminneo**: ein Datenbankmanager (ein Fork von Adminer), den die DSE-Extension in den Admin einbettet. [AdminNeo](funktionen/6.0/adminneo-datenbankverwaltung.md).
 - **Apache**: der Webserver, der die Installation zusammen mit **PHP-FPM** betreiben kann. [Deployment](anleitungen/bereitstellung.md).
 - **attribute** (Attribut): ein Feld einer **content class**, typisiert durch einen **datatype**. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
 - **audit channel** (Audit-Kanal): einer der fünf per Hash verketteten Ströme des **audit trail** (`content`, `access`, `system`, `commerce`, `read`). [Audit-Ereignismodell](spezifikationen/6.0/audit-ereignismodell.md).
 - **audit source** (Audit-Quelle): eine Klasse, die eine Extension in `audit.ini [AuditSourceSettings] Sources[]` registriert, um ihren eigenen Kanal in der Audit-Konsole anzuzeigen (Bereich, Links, Diagramme, CSV-Spalten). [Audit-Anleitung](../eng-us/bc/6.0/audit.md).
-- **audit trail** (Prüfprotokoll): ein manipulationssicheres Log sicherheitsrelevanter Ereignisse (Anmeldungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches). [Prüfprotokoll](../eng-us/features/6.0/audit-trail.md), [Ereignismodell](spezifikationen/6.0/audit-ereignismodell.md).
+- **audit trail** (Prüfprotokoll): ein manipulationssicheres Log sicherheitsrelevanter Ereignisse (Anmeldungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches). [Prüfprotokoll](funktionen/6.0/pruefprotokoll.md), [Ereignismodell](spezifikationen/6.0/audit-ereignismodell.md).
 - **autoload**: die generierten Klassenzuordnungen (`var/autoload`), die PHP sagen, wo jede Klasse liegt; neu erzeugen mit `php bin/php/ezpgenerateautoloads.php`. [Eine Website betreiben](anleitungen/betrieb-einer-website.md).
 
 ## B
@@ -36,7 +36,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **bc note** (Hinweis zu Verhaltensänderungen): eine Seite, die sagt, was sich im Verhalten geändert hat und was Sie bei einer Aktualisierung prüfen sollten. [Verhaltensänderungen, Juli und August 2026](../eng-us/bc/6.0/behaviour-changes-2026-07-08.md).
 - **bcgooglesitemaps**: eine Extension, die **sitemaps** für Suchmaschinen als **cronjob** erzeugt. [bcgooglesitemaps](funktionen/6.0/extensions/bcgooglesitemaps.md).
 - **bcwebsitestatistics**: eine Extension, die Seitenaufrufe und Shop-Käufe an einen Analysedienst sendet. [bcwebsitestatistics](funktionen/6.0/extensions/bcwebsitestatistics.md).
-- **benchmark**: das Vermessen einer Installation: Seitenzeiten über HTTP, zwei Server direkt nacheinander, der Kernel im Prozess und ein Vergleich mit einem gespeicherten Lauf (`exp:benchmark`). [Benchmark](../eng-us/features/6.0/benchmark.md).
+- **benchmark**: das Vermessen einer Installation: Seitenzeiten über HTTP, zwei Server direkt nacheinander, der Kernel im Prozess und ein Vergleich mit einem gespeicherten Lauf (`exp:benchmark`). [Benchmark](funktionen/6.0/benchmark.md).
 - **block (layout)** (Block): eine Inhaltseinheit, die in einer **zone** eines **layout** platziert ist. [Exponential Layouts](../eng-us/bc/6.0/LAYOUTS.md).
 - **bridge**: siehe **legacy bridge**.
 
@@ -47,8 +47,8 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **cache variant key (UI switch)** (Cache-Variantenschlüssel): der kurze Schlüssel (`language-ger-DE`), der Caches getrennt hält, die mit der Auswahl eines Benutzers im **UI switch** gebaut wurden: `{cache-block}`, der Cache der Inhaltsansicht und kompilierte Templates; leer, wenn nichts gewählt ist, sodass sich kein Cache-Name ändert. [API für UI-Switch-Provider](../eng-us/bc/6.0/ui-switch.md#the-cache-variant-key).
 - **changelog** (Changelog): die Versionshinweise einer Version, in Zeilen Added, Updated, Removed und Renamed. [6.0.15](../changelogs/6.0/6.0.15.md), [Extensions](../changelogs/extensions/README.md).
 - **chronicle** (Chronik): die Geschichte Monat für Monat. [Historie](../eng-us/history/README.md).
-- **CI (continuous integration)** (kontinuierliche Integration): die GitHub-Actions-Workflows: `phpunit.yml` führt die PHPUnit-Suites auf PHP 8.1 bis 8.5 aus, `quality.yml` prüft bei jeder Änderung Syntax (auch auf PHP 8.0), das Dateimanifest, Commit-Nachrichten, Code-Stil und PHPStan. [Qualitätsprüfungen](../eng-us/features/6.0/quality-checks.md), [Kontinuierliche Integration](spezifikationen/6.0/kontinuierliche-integration.md).
-- **cjw_newsletter**: ein vollständiges Newsletter-System. [cjw_newsletter](../eng-us/features/6.0/extensions/cjw_newsletter.md).
+- **CI (continuous integration)** (kontinuierliche Integration): die GitHub-Actions-Workflows: `phpunit.yml` führt die PHPUnit-Suites auf PHP 8.1 bis 8.5 aus, `quality.yml` prüft bei jeder Änderung Syntax (auch auf PHP 8.0), das Dateimanifest, Commit-Nachrichten, Code-Stil und PHPStan. [Qualitätsprüfungen](funktionen/6.0/qualitaetspruefungen.md), [Kontinuierliche Integration](spezifikationen/6.0/kontinuierliche-integration.md).
+- **cjw_newsletter**: ein vollständiges Newsletter-System. [cjw_newsletter](funktionen/6.0/extensions/cjw_newsletter.md).
 - **CLA (Contributor Licensing Agreement)**: die Vereinbarung mit 7x, die 7x und die Exponential Foundation einmalig unterschrieben verlangen, bevor ein Code-Beitrag zum Kern-Kernel (`se7enxweb/exponential`) übernommen wird, gleich auf welchem Weg er eingereicht wird (Pull Request, Patch, Issue, E-Mail). Mit Unterschrift und Einreichung überträgt der Beitragende das Urheberrecht am Beitrag an 7x, das sein Eigentümer wird, und gibt die Kontrolle darüber auf: 7x darf ihn auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne den Beitragenden zu fragen oder zu bezahlen, der ihn weder zurückziehen noch an Bedingungen knüpfen kann. Eigene Extensions der Benutzer sind nicht betroffen. [Urheberrechtsübertragung (CLA)](../../CONTRIBUTING.md#copyright-assignment-cla).
 - **class**: siehe **content class**.
 - **classic**: siehe **admin**.
@@ -57,15 +57,15 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **Composer**: der PHP-Paketmanager; die `composer.json` der Installation entscheidet, welche Extensions ankommen. [Standardverteilung der Extensions](funktionen/6.0/standard-extension-auslieferung.md).
 - **console** (Konsole): der Befehl `./console`, der jeden Befehl einer Installation findet und ausführt (`exp:`, `bin:`, `cron:`, `ext:`). [Konsole](../eng-us/bc/6.0/console.md).
 - **consent log** (Einwilligungsprotokoll): die Aufzeichnung jeder Änderung der E-Mail-Einstellungen einer Person, mit Zeit, Quelle, dem genauen Text, den die Person sah, und der IP-Adresse; bei einer Löschung anonymisiert. [E-Mail-Einstellungen](funktionen/6.0/e-mail-einstellungen.md), [Spezifikation](spezifikationen/6.0/mail-einstellungen.md).
-- **content checks** (Inhaltsprüfungen): **Setup > Nicht verknüpfte Objekte** und **Ungültige Relationen**: die Assets (Bilder, Dateien, Medien) unterhalb eines Knotens, die nichts verwendet (zum Verschieben in den Papierkorb), und sichtbare Inhalte, die auf gelöschte, im Papierkorb liegende, versteckte oder unveröffentlichte Inhalte verweisen. [Die Inhaltsprüfungen](../eng-us/features/6.0/content-checks.md).
+- **content checks** (Inhaltsprüfungen): **Setup > Nicht verknüpfte Objekte** und **Ungültige Relationen**: die Assets (Bilder, Dateien, Medien) unterhalb eines Knotens, die nichts verwendet (zum Verschieben in den Papierkorb), und sichtbare Inhalte, die auf gelöschte, im Papierkorb liegende, versteckte oder unveröffentlichte Inhalte verweisen. [Die Inhaltsprüfungen](funktionen/6.0/inhaltspruefungen.md).
 - **content class** (Inhaltsklasse): die Definition einer Art von Inhalt (zum Beispiel Artikel) als Liste von **attributes**. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
-- **content finder** (Inhaltsfinder): **Setup > Inhaltsfinder** und ein Feld unterhalb der Inhaltsstruktur: Finden Sie den Inhalt hinter einer ID, einer Remote-ID, einem URL-Alias, einer Seitenadresse oder einem Dateipfad und handeln Sie im Rahmen Ihrer Rechte darauf. [Inhaltsfinder](../eng-us/features/6.0/content-finder.md).
+- **content finder** (Inhaltsfinder): **Setup > Inhaltsfinder** und ein Feld unterhalb der Inhaltsstruktur: Finden Sie den Inhalt hinter einer ID, einer Remote-ID, einem URL-Alias, einer Seitenadresse oder einem Dateipfad und handeln Sie im Rahmen Ihrer Rechte darauf. [Inhaltsfinder](funktionen/6.0/inhalts-finder.md).
 - **content job** (Inhaltsauftrag): ein umfangreiches Entfernen, Kopieren oder Verschieben, das im Hintergrund läuft statt in einer Webanfrage. [Inhaltsaufträge](funktionen/6.0/inhaltsauftraege.md).
 - **content object** (Inhaltsobjekt): ein Inhaltsstück, eine Instanz einer **content class**, mit Versionen und Übersetzungen; es erscheint im Baum über einen oder mehrere **nodes**. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
 - **content tree** (Inhaltsbaum): die Hierarchie der **nodes**, die der Admin zeigt; Knoten 1 ist seine Wurzel. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
 - **content view cache** (Cache der Inhaltsansicht): das gespeicherte Ergebnis des Renderns der Ansicht eines Knotens; geleert durch `exp:cache`. [Cache-Steuerung](../eng-us/bc/6.0/cache-console.md).
 - **coverage** (Abdeckung): der generierte Nachweis, dass jede Änderung in der Dokumentation berücksichtigt ist. [Abdeckung](../eng-us/history/coverage.md).
-- **cron / cronjob part** (Cronjob-Teil): eine geplante Wartungsaufgabe (`cron:<name>`, ausgeführt von `runcronjobs.php`). [Cronjobs in der Konsole](../eng-us/features/6.0/cronjobs-console.md), [Eine Website betreiben](anleitungen/betrieb-einer-website.md).
+- **cron / cronjob part** (Cronjob-Teil): eine geplante Wartungsaufgabe (`cron:<name>`, ausgeführt von `runcronjobs.php`). [Cronjobs in der Konsole](funktionen/6.0/cronjobs-in-der-konsole.md), [Eine Website betreiben](anleitungen/betrieb-einer-website.md).
 
 ## D
 
@@ -87,9 +87,9 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **Exp Debug bar** (Exp-Debug-Leiste): eine Leiste auf Seiten, die Administratoren Abfragen, Zeiten und Template-Informationen zeigt. [Exp-Debug-Leiste](funktionen/6.0/exp-debug-leiste.md).
 - **exp (prefix)** (Präfix exp): ein Code-Präfix, das 7x strategisch und gezielt verwendet, um die Marke Exponential aufzubauen und das Eigentum an einer Extension oder Lösung dem Projekt Exponential und der Exponential Foundation zuzuordnen (`explayouts`, `expai`, `expHelpAudience`); neuer Kernel-Code verwendet es. [Namenspräfixe: sevenx und exp](standards/namenspraefixe-sevenx-und-exp.md).
 - **exp:** das Präfix der Konsolenbefehle, die Skripte aus `bin/php/*.php` ausführen. [Konsole](../eng-us/bc/6.0/console.md).
-- **exp:about**: die **system card** plus das Projekt: was Exponential ist, die Lizenz, Links, wie man beiträgt. [Die Systemkarte](../eng-us/features/6.0/system-card.md#expabout-the-card-and-the-project).
-- **exp:expfetch**: der Konsolenbefehl, der die **system card** zeichnet: das „e“ von Exponential neben den Fakten der Installation, ihrer Engine und ihrer Maschine, mit Hinweisen zum Zustand. [Die Systemkarte](../eng-us/features/6.0/system-card.md).
-- **exp:info**: die **system card** plus eine Bestandsaufnahme: Extensions und Versionen, Siteaccesses, Einstellungen, Cronjobs, Caches, Abdeckung der Hilfe. [Die Systemkarte](../eng-us/features/6.0/system-card.md#expinfo-the-card-and-an-inventory).
+- **exp:about**: die **system card** plus das Projekt: was Exponential ist, die Lizenz, Links, wie man beiträgt. [Die Systemkarte](funktionen/6.0/systemkarte.md#expabout-die-karte-und-das-projekt).
+- **exp:expfetch**: der Konsolenbefehl, der die **system card** zeichnet: das „e“ von Exponential neben den Fakten der Installation, ihrer Engine und ihrer Maschine, mit Hinweisen zum Zustand. [Die Systemkarte](funktionen/6.0/systemkarte.md).
+- **exp:info**: die **system card** plus eine Bestandsaufnahme: Extensions und Versionen, Siteaccesses, Einstellungen, Cronjobs, Caches, Abdeckung der Hilfe. [Die Systemkarte](funktionen/6.0/systemkarte.md#expinfo-die-karte-und-eine-bestandsaufnahme).
 - **exp:ini**: der Befehl, der **INI**-Einstellungen in jedem Geltungsbereich liest und schreibt. [exp:ini](funktionen/6.0/exp-ini-befehl.md).
 - **exp_enhanced_link**: die Extension, die den erweiterten Link-Feldtyp bereitstellt. [exp_enhanced_link](funktionen/6.0/extensions/exp_enhanced_link.md).
 - **explayouts**: die Extensions, die Layouts, Blöcke, Zonen und Regeln in den Admin bringen. [Exponential Layouts](../eng-us/bc/6.0/LAYOUTS.md), [explayouts_ui](funktionen/6.0/extensions/explayouts_ui.md), [API-Spezifikation](spezifikationen/6.0/explayouts-ui-api.md).
@@ -110,14 +110,14 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **ezmbpaex**: Regeln für den Ablauf von Passwörtern. [ezmbpaex](funktionen/6.0/extensions/ezmbpaex.md).
 - **ezmultiupload**: viele Dateien auf einmal in Ordner und Galerien hochladen. [ezmultiupload](funktionen/6.0/extensions/ezmultiupload.md).
 - **ezodf**: Import und Export von OpenDocument-Text. [ezodf](funktionen/6.0/extensions/ezodf.md).
-- **ezoe**: der Online-Editor für Rich Text (TinyMCE 3 und TinyMCE 8). [ezoe](funktionen/6.0/extensions/ezoe.md), [TinyMCE 8](../eng-us/features/6.0/online-editor-tinymce8.md).
+- **ezoe**: der Online-Editor für Rich Text (TinyMCE 3 und TinyMCE 8). [ezoe](funktionen/6.0/extensions/ezoe.md), [TinyMCE 8](funktionen/6.0/online-editor-tinymce8.md).
 - **ezpaypal**: das PayPal-Zahlungs-Gateway. [ezpaypal](funktionen/6.0/extensions/ezpaypal.md).
-- **ezpkg**: das Paketarchivformat (`.ezpkg`), das Inhalte, Klassen, Templates und Dateien enthält. [ezpm](funktionen/6.0/ezpm-paketmanager-cli.md), [Pakete vergleichen und importieren](../eng-us/features/6.0/package-compare-and-import.md).
+- **ezpkg**: das Paketarchivformat (`.ezpkg`), das Inhalte, Klassen, Templates und Dateien enthält. [ezpm](funktionen/6.0/ezpm-paketmanager-cli.md), [Pakete vergleichen und importieren](funktionen/6.0/pakete-vergleichen-und-importieren.md).
 - **ezpm** (Befehl): der Paketmanager auf der Kommandozeile (`ezpm.php`). [ezpm](funktionen/6.0/ezpm-paketmanager-cli.md). Nicht zu verwechseln mit der **ezpm-Extension**, die private Nachrichten bereitstellt: [ezpm-Extension](funktionen/6.0/extensions/ezpm.md).
-- **ezprestapi**: die REST-API-Extension, die REST API v1 und v2 bereitstellt (Lesen in beiden, Schreiben in v2) für entfernte Inhaltsaktualisierungen; sie ersetzt das veraltete **ezprestapiprovider**. [ezprestapi](../eng-us/features/6.0/extensions/ezprestapi.md), [REST API v1 und v2](anleitungen/rest-api-v1-und-v2.md).
+- **ezprestapi**: die REST-API-Extension, die REST API v1 und v2 bereitstellt (Lesen in beiden, Schreiben in v2) für entfernte Inhaltsaktualisierungen; sie ersetzt das veraltete **ezprestapiprovider**. [ezprestapi](funktionen/6.0/extensions/ezprestapi.md), [REST API v1 und v2](anleitungen/rest-api-v1-und-v2.md).
 - **ezstarrating**: ein Datentyp für Sternebewertungen. [ezstarrating](funktionen/6.0/extensions/ezstarrating.md).
 - **eztags**: ein Tag-Datentyp mit einem verwalteten Tag-Baum. [eztags](funktionen/6.0/extensions/eztags.md).
-- **ezupdate**: die Paket- und Aktualisierungsprüfung einer Installation. [ezupdate](../eng-us/features/6.0/extensions/ezupdate.md).
+- **ezupdate**: die Paket- und Aktualisierungsprüfung einer Installation. [ezupdate](funktionen/6.0/extensions/ezupdate.md).
 - **ezwebin**: die klassische fertige Website. [ezwebin](funktionen/6.0/extensions/ezwebin.md).
 - **ezwt**: die Website-Werkzeugleiste, die Redakteure auf der öffentlichen Website sehen. [ezwt](funktionen/6.0/extensions/ezwt.md).
 - **ezxmlexport**: geplanter XML-Export mit Auslieferung per FTP. [ezxmlexport](funktionen/6.0/extensions/ezxmlexport.md).
@@ -132,7 +132,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 ## G
 
-- **git_manager**: Web-Admin-Werkzeuge für die Git-Seite einer Installation. [git_manager](../eng-us/features/6.0/extensions/git_manager.md).
+- **git_manager**: Web-Admin-Werkzeuge für die Git-Seite einer Installation. [git_manager](funktionen/6.0/extensions/git_manager.md).
 - **guide** (Anleitung): ein Tutorial, das Sie in wenigen Minuten zu einem funktionierenden Ergebnis führt. [Anleitungen](anleitungen/README.md).
 
 ## H
@@ -147,7 +147,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **INI file** (INI-Datei): eine Einstellungsdatei (`site.ini`, `content.ini`, ...) in Blöcken von `Key=Value`; gelesen in der Reihenfolge: Standards, Extensions, Siteaccess, Überschreibung. [Platzierungen von INI-Überschreibungen](spezifikationen/6.0/ini-override-platzierungen.md), [exp:ini](funktionen/6.0/exp-ini-befehl.md).
 - **install type** (Installationstyp): ein benannter Installer der **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`), ausgeführt mit `exponential:install <type>`. [SQLite-Installer der Plattform](spezifikationen/6.0/platform-sqlite-installer.md).
 - **installation name** (Installationsname): der Name, der auf Seiten außerhalb der Produktion angezeigt wird, damit Staging nie für die Produktion gehalten wird. [Installationsname](funktionen/6.0/installationsname-in-seiten.md).
-- **installer / install** (Installer): `./console exp:install` installiert eine ganze Website mit einem Befehl. [Installation mit einem Befehl](../eng-us/features/6.0/install-in-one-command.md).
+- **installer / install** (Installer): `./console exp:install` installiert eine ganze Website mit einem Befehl. [Installation mit einem Befehl](funktionen/6.0/installation-mit-einem-befehl.md).
 - **interface language** (Oberflächensprache): die Sprache, in der die Administration selbst angezeigt wird, pro Benutzer in der rechten Werkzeugleiste gewählt (Richtlinie `uiswitch/language`); sie setzt das Locale für die Anfragen dieses Benutzers und ändert nie die Inhaltssprachen. [Oberflächensprache](funktionen/6.0/ui-umschalter.md), [Einstellungen](anleitungen/ui-umschalter-einstellungen.md).
 
 ## J
@@ -164,10 +164,10 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 - **layout (Exponential Layouts)** (Layout): eine Seitenstruktur aus **zones**, die **blocks** enthalten, ausgewählt durch **rules**. [Exponential Layouts](../eng-us/bc/6.0/LAYOUTS.md).
 - **ledger** (Änderungsverzeichnis): die vollständige Aufzeichnung jedes Commits jedes Repositorys. [Änderungsverzeichnis](../eng-us/history/ledger/README.md).
-- **legacy bridge**: das Paket, das Exponential 6 innerhalb der Symfony-Plattform ausführt. [Legacy Bridge](../eng-us/features/6.0/legacy-bridge.md), [Spezifikation](spezifikationen/6.0/legacy-bridge-bundle.md).
+- **legacy bridge**: das Paket, das Exponential 6 innerhalb der Symfony-Plattform ausführt. [Legacy Bridge](funktionen/6.0/legacy-bridge.md), [Spezifikation](spezifikationen/6.0/legacy-bridge-bundle.md).
 - **loading order** (Ladereihenfolge): die Reihenfolge, in der aktive **extensions** gelesen werden; die spätere gewinnt. [Ladereihenfolge der Extensions](funktionen/6.0/ladereihenfolge-der-extensions.md).
 - **location** (Ort): ein anderes Wort für einen **node**. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
-- **log viewer** (Log-Betrachter): **Setup > Logdateien** (`setup/logs`) und `./console exp:logs`: die Logdateien live verfolgt, samt ihrer Rotationen durchsucht, standardmäßig maskiert, über Anfrage- und Fehlerreferenz verknüpft. [Der Log-Betrachter](../eng-us/features/6.0/log-viewer.md).
+- **log viewer** (Log-Betrachter): **Setup > Logdateien** (`setup/logs`) und `./console exp:logs`: die Logdateien live verfolgt, samt ihrer Rotationen durchsucht, standardmäßig maskiert, über Anfrage- und Fehlerreferenz verknüpft. [Der Log-Betrachter](funktionen/6.0/log-betrachter.md).
 
 ## M
 
@@ -177,11 +177,11 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **module** (Modul): ein Satz von **views** hinter einer URL wie `content/view`; Extensions können Module hinzufügen oder überschreiben. [Module in Extensions überschreiben](funktionen/6.0/modulueberschreibung-durch-extensions.md).
 - **MongoDB**: eine unterstützte Datenbank. [MongoDB](funktionen/6.0/mongodb-datenbankunterstuetzung.md).
 - **multi-node edit** (Bearbeitung mehrerer Knoten): mehrere Elemente in einem Formular bearbeiten. [Mehrere Elemente auf einmal bearbeiten](../eng-us/bc/6.0/multi-node-edit.md).
-- **multisite package** (Multisite-Paket): das Website-Paket, das `exp:install` standardmäßig installiert (`sevenx_multisite`). [Installation mit einem Befehl](../eng-us/features/6.0/install-in-one-command.md).
+- **multisite package** (Multisite-Paket): das Website-Paket, das `exp:install` standardmäßig installiert (`sevenx_multisite`). [Installation mit einem Befehl](funktionen/6.0/installation-mit-einem-befehl.md).
 
 ## N
 
-- **Nexus**: die Startprojekte der auf Symfony basierenden Plattform. [Platform-Nexus-Starter](../eng-us/features/6.0/platform-nexus-starter.md).
+- **Nexus**: die Startprojekte der auf Symfony basierenden Plattform. [Platform-Nexus-Starter](funktionen/6.0/plattform-nexus-starter.md).
 - **ngclasslist**: ein Datentyp, der eine Liste von Inhaltsklassen speichert. [ngclasslist](funktionen/6.0/extensions/ngclasslist.md).
 - **ngsymfonytools**: lässt Legacy-Templates Twig-Templates einbinden und Symfony-Code ausführen. [ngsymfonytools](funktionen/6.0/extensions/ngsymfonytools.md).
 - **node** (Knoten): ein Platz eines **content object** im **content tree**; hat eine ID, ein Elternelement, eine Sortierung und eine Sichtbarkeit. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
@@ -195,7 +195,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **operator (template)** (Template-Operator): eine Funktion, die mit einer Pipe angewendet wird (`$text|wash`). [String-Template-Operatoren](funktionen/6.0/template-operatoren-fuer-zeichenketten.md), [Operatoren für Rollen und Richtlinien](funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md), [owsimpleoperator](funktionen/6.0/extensions/owsimpleoperator.md), [swark](funktionen/6.0/extensions/swark.md).
 - **OPML**: eine Liste von Feeds, exportierbar aus dem RSS-Modul. [OPML-Exporte](../eng-us/bc/6.0/opml.md).
 - **Oracle**: eine unterstützte Datenbank, über die Extension `ezoracle`; Installation mit `./console exp:install --db=oracle`. [Datenbanktreiber und Installer](spezifikationen/6.0/datenbanktreiber-2026-09.md#oracle).
-- **override** (Überschreibung): eine Regel, die sagt „für diese Klasse, diesen Knoten oder diese Sektion verwende dieses Template statt des Standards“, gespeichert in `override.ini`. [Template-Editor](../eng-us/features/6.0/template-editor-overrides.md), [Reihenfolge der Überschreibungen](funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md).
+- **override** (Überschreibung): eine Regel, die sagt „für diese Klasse, diesen Knoten oder diese Sektion verwende dieses Template statt des Standards“, gespeichert in `override.ini`. [Template-Editor](funktionen/6.0/template-editor-ueberschreibungen.md), [Reihenfolge der Überschreibungen](funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md).
 
 ## P
 
@@ -205,7 +205,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **PHP-FPM**: der PHP-Prozessmanager, der die Website hinter **Apache** ausliefert. Laden Sie nach einer PHP-Änderung den neu, der Ihre Website ausliefert. [Deployment](anleitungen/bereitstellung.md).
 - **placement (INI)** (Platzierung): der Name des Orts, von dem der Wert einer Einstellung stammt (`default`, `override`, `extension:<ext>`, `siteaccess`, ...). [Platzierungen von INI-Überschreibungen](spezifikationen/6.0/ini-override-platzierungen.md).
 - **policy** (Richtlinie): eine Berechtigung (Modul, Funktion, Einschränkung) innerhalb einer **role**. [Rollen und Richtlinien in Reihenfolge](funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md).
-- **PostgreSQL**: eine unterstützte Datenbank. [Installation mit einem Befehl](../eng-us/features/6.0/install-in-one-command.md).
+- **PostgreSQL**: eine unterstützte Datenbank. [Installation mit einem Befehl](funktionen/6.0/installation-mit-einem-befehl.md).
 - **preload** (Vorladen): jede veröffentlichte Seite anfordern, damit kein Besucher für ein Rendern bezahlt (`exp:preload`, `exp:warm`, **Setup > Vorladen**). [Ansicht Vorladen](funktionen/6.0/ansicht-websites-vorladen.md), [Preloader](../eng-us/bc/6.0/preload.md).
 
 ## Q
@@ -219,12 +219,12 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 - **RAD** (Rapid Application Development): die Erweiterungspunkte, über die Code Operatoren, Ansichten, Befehle und Datentypen hinzufügen kann, ohne den Kernel zu bearbeiten. [RAD-Werkzeuge](funktionen/6.0/rad-werkzeuge.md), [Erweiterungspunkte](../eng-us/bc/6.0/rad-extension-points.md), [Erweiterungsfläche](../eng-us/bc/6.0/rad-extension-surface.md).
 - **reCAPTCHA**: ein Captcha-Datentyp. [recaptcha](funktionen/6.0/extensions/recaptcha.md).
-- **recipe** (Rezept): ein Symfony-Flex-Rezept, das ein Paket bei der Installation konfiguriert. [sevenx-recipes](../eng-us/features/6.0/extensions/sevenx-recipes.md).
+- **recipe** (Rezept): ein Symfony-Flex-Rezept, das ein Paket bei der Installation konfiguriert. [sevenx-recipes](funktionen/6.0/extensions/sevenx-recipes.md).
 - **Redis / Valkey**: Server, die den Cache der Inhaltsansicht und den INI-Cache halten können. [Redis- und Valkey-Caches](funktionen/6.0/extensions/sevenx_valkey_cache.md).
 - **registry (rad.ini)** (Registry): eine Liste, die eine Extension aus ihren eigenen Einstellungen oder ihrem Code liest (Event-Listener, Cronjob-Teile, Audit-Quellen, Editor-Engines), in `rad.ini` deklariert, damit **Setup > RAD** ihre Einträge zählt und prüft. [RAD-Erweiterungsfläche](../eng-us/bc/6.0/rad-extension-surface.md).
 - **repair page** (Reparaturseite): die Seite, die fehlende Bibliotheken erklärt und einen Administrator sie reparieren lässt. [Reparatur aus dem Browser](funktionen/6.0/reparatur-im-browser.md), [Reparatur](../eng-us/bc/6.0/repair.md).
 - **request rule** (Anfrageregel): eine Regel in `requestrules.ini`, die eine Anfrage nach Modul, Ansicht und URL erlaubt oder ablehnt. [Anfrageregeln](funktionen/6.0/anfrageregeln.md), [content/view/full absichern](../eng-us/bc/6.0/view_full_security.md).
-- **response cache (Velocity)** (Antwort-Cache): der Cache gerenderter Seiten des Servers. [Antwort-Cache](../eng-us/features/6.0/velocity-response-cache.md).
+- **response cache (Velocity)** (Antwort-Cache): der Cache gerenderter Seiten des Servers. [Antwort-Cache](funktionen/6.0/velocity-antwort-cache.md).
 - **role** (Rolle): ein benannter Satz von **policies**, der Benutzern und Gruppen zugewiesen wird. [Rollen und Richtlinien in Reihenfolge](funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md); ihre Benutzer und Gruppen: [Seitenweise Anzeige der Rollenzuweisungen](funktionen/6.0/seitenweise-rollenzuweisungen.md).
 - **RSS**: Feeds, die vom RSS-Modul exportiert und importiert werden; siehe auch **syndication**. [RSS, Podcast und Feedliste](funktionen/6.0/rss-podcast-und-feed-liste.md).
 - **runnable**: die Klasse hinter einem Befehl, einem Cronjob-Teil oder einer Modulansicht (`Exponential\Runnable\*`); kann über `[RunnableSettings]` ersetzt oder belauscht werden. [Befehle, Cronjob-Teile und Ansichten als Klassen](spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md).
@@ -248,14 +248,14 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **suppression list** (Sperrliste): die Adressen, die keine optionalen E-Mails erhalten (Bounces, Beschwerden, Anfragen), nur als gesalzene Hashes gespeichert (`exp:mail:suppression`). [Anleitung für Administratoren](anleitungen/mail-einstellungen-administrator.md).
 - **swark**: eine Extension mit vielen Template-Operatoren und Workflow-Ereignissen. [swark](funktionen/6.0/extensions/swark.md).
 - **syndication**: die Extension für Export- und Import-Feeds. [syndication](funktionen/6.0/extensions/syndication.md), [Spezifikation](spezifikationen/6.0/syndikation.md).
-- **system card** (Systemkarte): was `exp:expfetch`, `exp:info` und `exp:about` anzeigen, und der Name ihres Codes (`expSysCard*`, `syscard.ini`): Fakten von **providers**, Hinweise zum Zustand, Themes und Logos. [Die Systemkarte](../eng-us/features/6.0/system-card.md).
+- **system card** (Systemkarte): was `exp:expfetch`, `exp:info` und `exp:about` anzeigen, und der Name ihres Codes (`expSysCard*`, `syscard.ini`): Fakten von **providers**, Hinweise zum Zustand, Themes und Logos. [Die Systemkarte](funktionen/6.0/systemkarte.md).
 
 ## T
 
 - **template** (Template): eine `.tpl`-Datei in der Template-Sprache von Exponential; aufgelöst über Design und **overrides**. [Kommentare mit Template-Pfaden](funktionen/6.0/template-pfad-kommentare.md).
 - **template path comments** (Kommentare mit Template-Pfaden): Kommentare `START` und `STOP`, die jedes Template im Seitenquelltext benennen. [Kommentare mit Template-Pfaden](funktionen/6.0/template-pfad-kommentare.md).
 - **test suite** (Testsuite): die PHPUnit-Suites aus `phpunit.xml`, ausgeführt mit `php vendor/bin/phpunit`. [Kontinuierliche Integration und die Testsuite](spezifikationen/6.0/kontinuierliche-integration.md).
-- **TinyMCE**: die Editor-Engine hinter **ezoe**, in den Versionen 3 und 8. [TinyMCE 8](../eng-us/features/6.0/online-editor-tinymce8.md).
+- **TinyMCE**: die Editor-Engine hinter **ezoe**, in den Versionen 3 und 8. [TinyMCE 8](funktionen/6.0/online-editor-tinymce8.md).
 - **translation** (Übersetzung): eine Sprachversion eines Inhaltsobjekts oder eine Sprachdatei der Oberfläche. [Übersetzungen und Sprachen](funktionen/6.0/uebersetzungen-und-sprachen.md).
 - **trash** (Papierkorb): wo entfernte Objekte darauf warten, wiederhergestellt oder endgültig gelöscht zu werden. [Papierkorb](funktionen/6.0/papierkorb-wer-und-wo.md).
 - **two-factor authentication** (Zwei-Faktor-Authentifizierung): ein zweiter Nachweis bei der Anmeldung, mit sozialem Login über OAuth. [sevenx_authentication_2fa](funktionen/6.0/extensions/sevenx_authentication_2fa.md).
@@ -271,7 +271,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 - **Valkey**: siehe **Redis / Valkey**.
 - **Vector**: der Arbeitsbereich für Threads von **Exponential Intelligence** (`expai/vector`): Modi für Umfang, Planen und Schreiben, gestufte Prüfung, parallele Läufe und Checkpoints. [expai](funktionen/6.0/extensions/expai.md).
-- **Velocity**: der mit Exponential gebündelte PHP-Anwendungsserver, ausgeführt mit `exp:velocity`, empfohlen für jede Stufe. [Velocity-Webserver](../eng-us/features/6.0/velocity-web-server.md), [dauerhafte Worker](funktionen/6.0/velocity-server-mit-dauerhaften-workern.md), [Control Panel](../eng-us/features/6.0/velocity-control-panel.md), [Engine-Einstellungen](spezifikationen/6.0/velocity-engine-einstellungen.md), [Chronik](../eng-us/history/velocity/README.md).
+- **Velocity**: der mit Exponential gebündelte PHP-Anwendungsserver, ausgeführt mit `exp:velocity`, empfohlen für jede Stufe. [Velocity-Webserver](funktionen/6.0/velocity-webserver.md), [dauerhafte Worker](funktionen/6.0/velocity-server-mit-dauerhaften-workern.md), [Control Panel](funktionen/6.0/velocity-control-panel.md), [Engine-Einstellungen](spezifikationen/6.0/velocity-engine-einstellungen.md), [Chronik](../eng-us/history/velocity/README.md).
 - **version (content)** (Version): ein gespeicherter Zustand eines Inhaltsobjekts (Entwurf, veröffentlicht, archiviert). [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
 - **view** (Ansicht): eine Funktion eines **module**, erreicht über eine URL; auch die Art, wie ein Knoten gerendert wird (full, line, embed). [Modulansichten als Klassen](spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md), [Templates und Design](anleitungen/templates-und-design.md).
 
@@ -283,7 +283,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 ## X
 
-- **xrowextract**: eine Extension, die Inhalte nach Zeitplänen exportiert und paketiert. [xrowextract](../eng-us/features/6.0/extensions/xrowextract.md), [Spezifikation](spezifikationen/6.0/xrowextract.md).
+- **xrowextract**: eine Extension, die Inhalte nach Zeitplänen exportiert und paketiert. [xrowextract](funktionen/6.0/extensions/xrowextract.md), [Spezifikation](spezifikationen/6.0/xrowextract.md).
 - **xrowmetadata**: ein Metadaten-Attribut für Seitentitel und Schlüsselwörter. [xrowmetadata](funktionen/6.0/extensions/xrowmetadata.md).
 
 ## Y
@@ -300,5 +300,5 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 - [Anleitungen: der Lernpfad](anleitungen/README.md)
 - [Historie](../eng-us/history/README.md) und [Abdeckung](../eng-us/history/coverage.md)
-- [Installation mit einem Befehl](../eng-us/features/6.0/install-in-one-command.md)
+- [Installation mit einem Befehl](funktionen/6.0/installation-mit-einem-befehl.md)
 - [Spezifikationen](spezifikationen/6.0/README.md): die Referenzseiten

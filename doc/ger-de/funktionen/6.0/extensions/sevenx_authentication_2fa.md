@@ -123,7 +123,7 @@ Versionsverwaltung.
 ## Verwandte Seiten
 
 - [Das Passwort eines Benutzers zurücksetzen](../benutzerpasswort-zuruecksetzen.md)
-- [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../pruefprotokoll.md)
 - [Chronik](../../../../eng-us/history/extensions/sevenx_authentication_2fa.md) und [Versionshinweise](../../../../changelogs/extensions/sevenx_authentication_2fa.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/sevenx_authentication_2fa.md)
 - [Verhaltensänderungen der Extensions](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

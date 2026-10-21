@@ -2,7 +2,7 @@
 
 Diese Seite ist für Entwickler, die Velocity-Anwendungen neben Exponential betreiben und mehrere Server zusammenarbeiten
 lassen wollen. Eine Exponential-Website braucht diese Funktionen nicht. Gilt für Exponential Velocity 0.0.4.x;
-Übersicht: [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md).
+Übersicht: [Velocity-Webserver](velocity-webserver.md).
 
 Vier kleine Funktionen behandeln den Server als einen von mehreren:
 
@@ -101,7 +101,7 @@ Engine.
 
 ## Verwandte Seiten
 
-- [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [WebSockets und Ereignisse](velocity-websockets-und-ereignisse.md), [Velocity-Zeitplaner](velocity-zeitplaner.md), [HTTPS-Zertifikate](velocity-https-zertifikate.md)
+- [Velocity-Webserver](velocity-webserver.md), [WebSockets und Ereignisse](velocity-websockets-und-ereignisse.md), [Velocity-Zeitplaner](velocity-zeitplaner.md), [HTTPS-Zertifikate](velocity-https-zertifikate.md)
 - [Velocity-Engines (Hinweise zur Aktualisierung)](../../../eng-us/bc/6.0/velocity-engines.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
 - Chronik: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (API-Erkennung aus Kommentaren, föderierte Anwendungen), [September 2026](../../../eng-us/history/velocity/2026-09d.md) (Signieren)

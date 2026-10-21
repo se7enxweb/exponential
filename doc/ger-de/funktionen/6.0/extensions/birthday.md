@@ -5,7 +5,7 @@ Datentyp `ezbirthday` bereit. Er speichert ein Geburtsdatum so, dass es sich sor
 bringt die üblichen Templates zum Bearbeiten und Anzeigen von Klassen und Objekten mit.
 
 Außerdem registriert er in `csv.ini` einen Export-Handler, `eZBirthdayCsvHandler`. Das Exportwerkzeug
-[xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md) verwendet ihn.
+[xrowextract](xrowextract.md) verwendet ihn.
 
 ## Verwenden
 
@@ -45,7 +45,7 @@ Kernels aus, nicht zur Datei dieser Extension.
 
 ## Verwandte Seiten
 
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md), [bccie](bccie.md)
+- [xrowextract](xrowextract.md), [bccie](bccie.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/birthday.md) und [Versionshinweise](../../../../changelogs/extensions/birthday.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/birthday.md)

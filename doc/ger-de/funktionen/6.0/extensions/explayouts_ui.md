@@ -7,7 +7,7 @@ Administrationsoberfläche den Reiter **Layouts** hinzu. Es ist die Verwaltungss
 - die **Layout-Zuordnungen**, die entscheiden, welches Layout eine Seite bekommt;
 - Importe, ein Template-Editor und eine Layout-Vorschau.
 
-Jede Liste verlinkt in den visuellen Editor, den [explayouts_ui_api](../../../../eng-us/features/6.0/extensions/explayouts_ui_api.md) ausliefert. Die Extension hat
+Jede Liste verlinkt in den visuellen Editor, den [explayouts_ui_api](explayouts_ui_api.md) ausliefert. Die Extension hat
 keine eigenen Domänenklassen, nur schlanke Ansichtsklassen unter `classes/runnable/views/explayouts_ui/`. Ihre
 Modulansichten sind Controller über den Diensten von `explayouts_core`, sodass die Bildschirme und der Editor immer
 dieselben Daten zeigen.
@@ -155,10 +155,10 @@ Bildschirme, die früher nichts zeigten, jetzt die 49 Komponenten und die echten
 
 ## Verwandte Seiten
 
-- [explayouts_ui_api: der Editor](../../../../eng-us/features/6.0/extensions/explayouts_ui_api.md)
+- [explayouts_ui_api: der Editor](explayouts_ui_api.md)
 - [Exponential Layouts (Hinweis zur Verhaltensänderung)](../../../../eng-us/bc/6.0/LAYOUTS.md)
 - [Spezifikation](../../../spezifikationen/6.0/explayouts-ui-api.md)
-- [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](../../../../eng-us/features/6.0/template-editor-overrides.md)
+- [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](../template-editor-ueberschreibungen.md)
 - [Chronik](../../../../eng-us/history/extensions/explayouts_ui.md) und [Versionshinweise](../../../../changelogs/extensions/explayouts_ui.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/explayouts_ui.md)
 - [Verhaltensänderungen der Extensions](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

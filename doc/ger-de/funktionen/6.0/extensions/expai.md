@@ -98,7 +98,7 @@ Administrationsoberfläche unter `expai/help` gezeigt.
 ## Verwandte Seiten
 
 - [expqueue](expqueue.md), die Auftragswarteschlange
-- [Exponential installieren, Abschnitt 10](../../../../eng-us/INSTALL.md#10-after-installing)
+- [Exponential installieren, Abschnitt 10](../../../INSTALL.md#10-nach-der-installation)
 - [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)
 - [Verzeichnis der Extensions](README.md)
 

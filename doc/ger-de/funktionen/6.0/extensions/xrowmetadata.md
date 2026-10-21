@@ -75,7 +75,7 @@ Seit 1.3.6 und 1.3.7 tragen die Metadaten `og_image`, Breite, Höhe, Alternativt
 
 ## Verwandte Seiten
 
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md): Der Export hat einen Spalten-Handler für diesen Datentyp
+- [xrowextract](xrowextract.md): Der Export hat einen Spalten-Handler für diesen Datentyp
 - [bcgooglesitemaps](bcgooglesitemaps.md): einfache Sitemaps
 - [robots.txt](../robots-txt.md)
 - [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)

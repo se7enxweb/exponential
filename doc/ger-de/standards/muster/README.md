@@ -13,7 +13,7 @@ Dieser Katalog richtet sich an Entwickler, die Exponential erweitern oder seinen
 
 Lauffähige Beispiele für die meisten dieser Erweiterungspunkte: [Beispiele](../../../eng-us/examples/README.md) und das [Kochbuch](../../../eng-us/examples/cookbook/README.md).
 
-Die Regeln, denen der Code folgt: [Standards](../README.md) und [Architektur des Kernels](../../../eng-us/standards/architecture/kernel-architecture.md).
+Die Regeln, denen der Code folgt: [Standards](../README.md) und [Architektur des Kernels](../architektur/kernel-architektur.md).
 
 ## In Zahlen
 

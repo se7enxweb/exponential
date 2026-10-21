@@ -1,6 +1,6 @@
 # Site-Bundles, Metadaten und die Twig-Werkzeuge der Plattform
 
-Diese Seite ist für Entwickler, die eine [Nexus](../../../eng-us/features/6.0/platform-nexus-starter.md)-Website auf Exponential Platform bauen oder
+Diese Seite ist für Entwickler, die eine [Nexus](plattform-nexus-starter.md)-Website auf Exponential Platform bauen oder
 erweitern. Diese Pakete sind die Bausteine, aus denen Nexus-Websites bestehen. Normalerweise installieren Sie sie nicht
 von Hand; die Nexus-Distribution verlangt sie. Zu wissen, was jedes tut, sagt Ihnen, wo Sie suchen müssen, wenn sich eine
 Website unerwartet verhält: Ein Menü, ein Query-Typ, ein Layout-Block oder eine Legacy-Zuordnung steckt meist in einem
@@ -14,7 +14,7 @@ davon.
 | Paket | Was es einer Website gibt |
 |---|---|
 | `se7enxweb/site-bundle` (Fork von Netgen Site Bundle) | Die gemeinsamen Funktionen, auf denen Netgen Websites baut: `Menu`, Integration von `Layouts`, `ContentForms`, `InfoCollection`, Metadaten `OpenGraph`, Blättern mit `Pagerfanta`, `QueryType` für Inhaltsabfragen, Ausgabe von `RichText`, Helfer `Relation` und `Topic`, eine Integration von `Imagine` für Bildvarianten, ein `ContextProvider` (welcher Teil des Baums die Website ist), ein Datensammler für die Debug-Werkzeugleiste, Konsolenbefehle. Nicht für den eigenständigen Einsatz; es ist das Basis-Bundle eines Projekts. |
-| `se7enxweb/site-legacy-bundle` | Verbindung zwischen dem neuen und dem Legacy-Kernel für Websites im Stil von Netgen, die mit der [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md) laufen: Legacy-Mapper, Templating, Ereignis-Listener und ein Verzeichnis `ezpublish_legacy` mit der Legacy-Extension. Die Copyright-Templates der Administrationsoberfläche tragen seit dem 17.04.2026 die Marke Exponential. |
+| `se7enxweb/site-legacy-bundle` | Verbindung zwischen dem neuen und dem Legacy-Kernel für Websites im Stil von Netgen, die mit der [Legacy Bridge](legacy-bridge.md) laufen: Legacy-Mapper, Templating, Ereignis-Listener und ein Verzeichnis `ezpublish_legacy` mit der Legacy-Extension. Die Copyright-Templates der Administrationsoberfläche tragen seit dem 17.04.2026 die Marke Exponential. |
 | `se7enxweb/ngsymfonytools` | Eine Legacy-Extension: Template-Operatoren, mit denen ein `.tpl`-Template von Exponential Twig und Symfony aufrufen kann |
 | `se7enxweb/metadata-bundle` | Der Feldtyp für Metadaten (SEO) der Plattform, datenkompatibel mit der Legacy-Extension `xrowmetadata`, sodass dasselbe Feld und dieselben gespeicherten Daten auf dem Legacy-Kernel und auf dem neuen Stack funktionieren. Das Release `v5.0.0` fügt Unterstützung für Ibexa 5.x und PHP 8.4 hinzu. |
 | `se7enxweb/mediata-ezpage-fieldtype-bundle` | Der Feldtyp page (Landingpage) für Ibexa 4, am 16.03.2026 als für 4.6 getestet importiert, mit einem Twig-Operator, sodass einfache Symfony-Projekte ihn verwenden können |
@@ -39,7 +39,7 @@ Mit aktivem `ngsymfonytools` kann ein Legacy-`.tpl` ein Twig-Template einbinden 
 
 2. Erzeugen Sie das Autoload-Array neu (Administrationsoberfläche: Setup, Extensions, „Autoload-Arrays neu erzeugen“;
    oder führen Sie das Legacy-Skript `bin/php/ezpgenerateautoloads.php` über
-   [`exponential:legacy:script`](../../../eng-us/features/6.0/legacy-bridge.md) aus).
+   [`exponential:legacy:script`](legacy-bridge.md) aus).
 
 3. Binden Sie ein Twig-Template ein:
 
@@ -80,7 +80,7 @@ Inhaltskonverters hält den alten Schnittstellennamen des Repositorys auf Ibexa 
 ## Verwandte Seiten
 
 - Seiten der Extensions: [ngsymfonytools](extensions/ngsymfonytools.md), [ez-support-tools](extensions/ez-support-tools.md), [xrowmetadata](extensions/xrowmetadata.md)
-- Plattformfunktionen: [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md), [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md), [Administrationsoberfläche der Plattform](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
+- Plattformfunktionen: [Nexus-Starter](plattform-nexus-starter.md), [Legacy Bridge](legacy-bridge.md), [Administrationsoberfläche der Plattform](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md), [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md)
 - Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)

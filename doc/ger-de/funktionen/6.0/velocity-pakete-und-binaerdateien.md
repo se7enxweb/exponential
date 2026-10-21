@@ -168,7 +168,7 @@ Eine Plattformmatrix führt das Phar auf Systemen aus, für die es keine Binärd
 
 ## Verwandte Seiten
 
-- [uwebserver](velocity-uwebserver.md), [HTTPS und Zertifikate](velocity-https-zertifikate.md), [Q-Shell](velocity-q-shell.md) (`vc-qshell`), [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md)
+- [uwebserver](velocity-uwebserver.md), [HTTPS und Zertifikate](velocity-https-zertifikate.md), [Q-Shell](velocity-q-shell.md) (`vc-qshell`), [Velocity-Webserver](velocity-webserver.md)
 - Spezifikation: [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Programme und die Struktur von `sbin/` und `bin/`)
 - Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) (Umbenennungen von Paketen und Pfaden), [Verzeichnisstruktur von Velocity](../../../eng-us/bc/6.0/velocity-ondisk-layout.md), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
 - [Changelog: Exponential-Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md)

@@ -34,7 +34,7 @@ Senden Sie es als `Authorization: Bearer <token>` oder, wo ein Proxy diesen Head
 Richtlinien wie der Benutzer, Schreibvorgänge brauchen weiterhin POST, aber kein Formular-Token. Abgelaufene,
 widerrufene Tokens oder Tokens abgeschalteter Benutzer antworten mit 401; ein Token kann keine Tokens erzeugen.
 `expsession::tokenList` und `expsession::tokenRevoke` verwalten sie. Die Ereignisse `access.expservices.token.create`,
-`.revoke` und `.failed` gehen in das [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md). Die Tabelle `expservices_token` wird aus
+`.revoke` und `.failed` gehen in das [Prüfprotokoll](pruefprotokoll.md). Die Tabelle `expservices_token` wird aus
 `extension/expservices/sql/<engine>/schema.sql` angelegt (MySQL, PostgreSQL, SQLite).
 
 ## Domänen
@@ -46,7 +46,7 @@ widerrufene Tokens oder Tokens abgeschalteter Benutzer antworten mit 401; ein To
 | Benutzer und Zugriff (195) | Benutzer, Gruppen, Rollen, Richtlinien, Sitzungen, Einstellungen, Benachrichtigungen, Zusammenarbeit, Kontoabläufe |
 | Handel, Community, Feeds (255) | Produkte, Warenkorb und Bestellvorgang, Bestellungen, MwSt., Währungen, Rabatte, Wunschlisten, Versand, Zahlungen, gesammelte Formulare, Umfragen, Foren, Kommentare, Bewertungen, RSS-Exporte und -Importe, Ausgabe von RSS/Atom/JSON Feed für jeden Teilbaum |
 | Medien und weitere (218) | Bilder und Varianten, Dateien und signierte Download-Links, Audio und Video, Tags, Layouts, Audit (nur lesend), Spalten der Unterelemente, Newsletter, Sitemaps, Statistik, Designs, Sprachen, externe Links, PDF-Links |
-| Editor | `expeditor::engines`, `get`, `set`, `uploadExtensions`, `config` (siehe [den Editor TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md)) |
+| Editor | `expeditor::engines`, `get`, `set`, `uploadExtensions`, `config` (siehe [den Editor TinyMCE 8](online-editor-tinymce8.md)) |
 
 ## Einen eigenen Dienst schreiben
 
@@ -92,8 +92,8 @@ Komponenten, einem Store und einseitigem Datenfluss). Sie rufen die Dienste übe
 ## Verwandte Seiten
 
 - [Anleitung zu den Backend-Diensten](../../../eng-us/bc/6.0/backend_ezjscore_services.md), [Spezifikation von expservices](../../spezifikationen/6.0/expservices.md)
-- [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md), [Audit-Ereignismodell](../../spezifikationen/6.0/audit-ereignismodell.md)
-- [Spalten der Unterelementliste](optionen-der-unterelementtabelle.md) (`expsubitems_svc`), [Online-Editor auf TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md) (`expeditor`), [ezjscore](extensions/ezjscore.md)
+- [Das Prüfprotokoll](pruefprotokoll.md), [Audit-Ereignismodell](../../spezifikationen/6.0/audit-ereignismodell.md)
+- [Spalten der Unterelementliste](optionen-der-unterelementtabelle.md) (`expsubitems_svc`), [Online-Editor auf TinyMCE 8](online-editor-tinymce8.md) (`expeditor`), [ezjscore](extensions/ezjscore.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)

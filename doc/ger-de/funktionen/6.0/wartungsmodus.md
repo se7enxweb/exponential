@@ -128,7 +128,7 @@ Die erzeugte Website-Konfiguration von Velocity nennt die Markierung als ihre Pa
 ## Verwandte Seiten
 
 - [Wartungsmodus: die Benutzeranleitung](../../anleitungen/wartungsmodus.md)
-- [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md), [Kickstarter](kickstarter-cli.md), [Einrichtungsassistent](einrichtungsassistent-und-editor-siteaccess.md)
+- [Installation mit einem Befehl](installation-mit-einem-befehl.md), [Kickstarter](kickstarter-cli.md), [Einrichtungsassistent](einrichtungsassistent-und-editor-siteaccess.md)
 - [Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](velocity-server-mit-dauerhaften-workern.md)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)

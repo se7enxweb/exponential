@@ -61,7 +61,7 @@ außerhalb des Installationsverzeichnisses, verborgene Dateien und Verzeichnisse
 von `extension/` und alles, was nicht Markdown ist, werden ebenfalls nie angezeigt.
 
 Für Administratoren, die ändern möchten, welche Dateien angezeigt werden, und für die vollständige Liste der Regeln,
-siehe [Das Hilfesystem](../../eng-us/features/6.0/help-system.md#project-files) (`exphelp.ini [ProjectFiles]`).
+siehe [Das Hilfesystem](../funktionen/6.0/hilfesystem.md#projektdateien) (`exphelp.ini [ProjectFiles]`).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

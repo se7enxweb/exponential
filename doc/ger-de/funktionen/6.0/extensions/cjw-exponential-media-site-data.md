@@ -31,7 +31,7 @@ Extension-Suite ist.
 
 ## Verwandte Seiten
 
-- [Plattform-Starter Nexus](../../../../eng-us/features/6.0/platform-nexus-starter.md)
+- [Plattform-Starter Nexus](../plattform-nexus-starter.md)
 - [Chronik](../../../../eng-us/history/extensions/cjw-exponential-media-site-data.md) und [Versionshinweise](../../../../changelogs/extensions/cjw-exponential-media-site-data.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/cjw-exponential-media-site-data.md)
 - [Verhaltensänderungen der Extensions](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

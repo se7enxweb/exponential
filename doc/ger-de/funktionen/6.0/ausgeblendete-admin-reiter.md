@@ -63,7 +63,7 @@ grep -rn HiddenTabs kernel design settings
 In admin4 geht beim Ausblenden von `design` oder `audit` keine Seite verloren: Das Setup-Menü und die Setup-Übersicht
 zeigen dann eine Gruppe Design oder Audit mit den Links des Reiters, und die Seiten des Reiters markieren den Reiter
 Setup. Ohne `dashboard` führt das Logo zum Dashboard. Siehe
-[Einen Reiter in Setup verschieben](../../../eng-us/features/6.0/admin4-design.md#moving-a-tab-into-setup). Leeren Sie auch den Template-Cache: Die
+[Einen Reiter in Setup verschieben](admin4-design.md#einen-tab-nach-setup-verschieben). Leeren Sie auch den Template-Cache: Die
 Menüs kompilieren die Einstellungen ein.
 
 ## Der mitgelieferte Editor-Siteaccess
@@ -84,7 +84,7 @@ Der Editor-Siteaccess verwendet beide Einstellungen. Er blendet im oberen Menü 
 ## Verwandte Seiten
 
 - [Admin-Links folgen den Berechtigungen](admin-links-folgen-den-berechtigungen.md)
-- [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](admin4-design.md)
 - [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

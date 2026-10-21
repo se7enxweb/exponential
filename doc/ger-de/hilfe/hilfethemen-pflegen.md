@@ -13,7 +13,7 @@ type: help
 Diese Seite ist für die Menschen, die die Hilfe einer Website schreiben und veröffentlichen: Hilfe-Redakteure und
 Release-Verantwortliche. Die Hilfethemen und Handbücher sind Inhalte der Website, geschrieben in der
 Administrationsoberfläche und auf **Entwurf**, **Prüfung** und **Veröffentlicht** gesetzt (siehe
-[Hilfe als Inhalt gepflegt](../../eng-us/features/6.0/help-content.md)). Drei Dinge helfen, sie richtig zu halten.
+[Hilfe als Inhalt gepflegt](../funktionen/6.0/hilfeinhalte.md)). Drei Dinge helfen, sie richtig zu halten.
 
 ## Themen mit überfälliger Prüfung
 
@@ -69,7 +69,7 @@ Verzeichnis des Servers schreiben oder in ein Git-Repository, das die Historie d
 
 ## Mehr erfahren
 
-- [Hilfe als Inhalt gepflegt](../../eng-us/features/6.0/help-content.md)
+- [Hilfe als Inhalt gepflegt](../funktionen/6.0/hilfeinhalte.md)
 - [Der Stilleitfaden der Hilfe](../spezifikationen/6.0/hilfe-stilrichtlinien.md)
 - [Veröffentlichen, Versionen und der Papierkorb](veroeffentlichen-und-versionen.md)
 

@@ -56,7 +56,7 @@ Jede Arbeit gelangt auf demselben Weg nach `main`:
 ### Die Prüfungen bei jedem Push und Pull Request
 
 GitHub Actions führt bei einem Push auf `main` und bei einem Pull Request (auf dem Merge des Branches in `main`)
-dieselben blockierenden Prüfungen aus. [Qualitätsprüfungen](../eng-us/features/6.0/quality-checks.md#ci) beschreibt jede davon;
+dieselben blockierenden Prüfungen aus. [Qualitätsprüfungen](funktionen/6.0/qualitaetspruefungen.md#ci) beschreibt jede davon;
 kurz gefasst:
 
 | Workflow | Was er prüft |
@@ -67,7 +67,7 @@ kurz gefasst:
 | CI health | Ein geplanter Bericht über den Zustand der Workflows |
 
 Bei einem Pull Request sind eine veraltete Manifestzeile und die Commit-Nachricht eines Beitragenden Warnungen; wer
-mergt, aktualisiert das Manifest auf `main`. [Bevor Sie pushen](../eng-us/features/6.0/quality-checks.md#before-you-push) listet
+mergt, aktualisiert das Manifest auf `main`. [Bevor Sie pushen](funktionen/6.0/qualitaetspruefungen.md#bevor-sie-pushen) listet
 die Befehle auf, mit denen Sie die blockierenden Prüfungen lokal ausführen.
 
 ### Release-Tags

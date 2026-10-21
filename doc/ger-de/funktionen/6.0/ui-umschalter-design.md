@@ -113,7 +113,7 @@ der ganzen Installation. Das ist weg.
 - Eine Umschaltung ist ein POST an `uiswitch/set` mit dem Formular-Token. Eine Anfrage von einer anderen Website, ein
   Design, das nicht angeboten wird (400), oder ein Benutzer ohne die Richtlinie (403) wird abgelehnt. Der Seite, zu der
   zurückgekehrt wird, wird nur gefolgt, wenn sie ein lokaler Pfad ist.
-- Jede Änderung wird in das [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) als `access.uiswitch.change` geschrieben, mit dem Provider
+- Jede Änderung wird in das [Prüfprotokoll](pruefprotokoll.md) als `access.uiswitch.change` geschrieben, mit dem Provider
   `design`, dem Wert vorher und nachher und dem Siteaccess.
 
 ## Abschalten
@@ -137,7 +137,7 @@ Siehe [die Anleitung](../../anleitungen/ui-umschalter-design.md#7-aus--und-einsc
 - [UI-Umschalter](ui-umschalter.md): das Framework und die Sprache der Oberfläche
 - [Anleitung: der Umschalter des Administrationsdesigns](../../anleitungen/ui-umschalter-design.md)
 - [Hinweise für Entwickler: der Umschalter des Administrationsdesigns](../../../eng-us/bc/6.0/ui-switch-design.md)
-- [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [admin4l](admin4l.md), [Exponential Admin UI](exp-adminui.md)
+- [Das Design admin4](admin4-design.md), [admin4l](admin4l.md), [Exponential Admin UI](exp-adminui.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

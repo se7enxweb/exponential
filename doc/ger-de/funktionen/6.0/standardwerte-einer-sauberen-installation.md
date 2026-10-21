@@ -82,7 +82,7 @@ Inhaltspaketen übersprungen, statt den Lauf zu beenden (`752adad843`, `8af48c1e
 
 ## Verwandte Seiten
 
-- [Installation mit einem Befehl: eine Website auf SQLite ohne `kickstart.ini`](../../../eng-us/features/6.0/install-in-one-command.md), [Kickstarter](kickstarter-cli.md), [Referenz der Kickstarter-CLI](../../../eng-us/bc/6.0/kickstartercli.md), [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
+- [Installation mit einem Befehl: eine Website auf SQLite ohne `kickstart.ini`](installation-mit-einem-befehl.md), [Kickstarter](kickstarter-cli.md), [Referenz der Kickstarter-CLI](../../../eng-us/bc/6.0/kickstartercli.md), [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
 - [Was eine neue Installation mitbringt: die Standard-Extensions](standard-extension-auslieferung.md), [eine brauchbare robots.txt ab Werk](robots-txt.md), [Installationsname in Seitentiteln](installationsname-in-seiten.md)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md), [SQLite-Installer der Plattform](plattform-sqlite-installation.md)
 - [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [Seiten Über und Copyright](info-und-paketseiten.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)

@@ -44,7 +44,7 @@ Für umfassendere SEO (Titel, Beschreibungen, Open-Graph-Bilder, News- und Mobil
 ## Verwandte Seiten
 
 - [xrowmetadata](xrowmetadata.md)
-- [Cronjobs in der Konsole](../../../../eng-us/features/6.0/cronjobs-console.md)
+- [Cronjobs in der Konsole](../cronjobs-in-der-konsole.md)
 - [Abstraktionen für Kommandozeile, Cronjobs und Ansichten](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
 - [Chronik](../../../../eng-us/history/extensions/bcgooglesitemaps.md) und [Versionshinweise](../../../../changelogs/extensions/bcgooglesitemaps.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/bcgooglesitemaps.md)

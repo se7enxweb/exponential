@@ -34,27 +34,27 @@ und ihrem Betrieb ab: Die Software kann Konformität möglich machen, aber eine 
 
 | Bereich | Seite | Behandelte Standards |
 |---|---|---|
-| Barrierefreiheit | [Barrierefreiheit](../../eng-us/standards/accessibility.md) | WCAG 2.2 AA, WAI-ARIA 1.2, EN 301 549 |
-| Sicherheit | [Sicherheit](../../eng-us/standards/security.md) | OWASP Top 10, OWASP ASVS, Content Security Policy Level 3, OWASP Cheat Sheets |
-| Datenschutz | [Datenschutz](../../eng-us/standards/privacy.md) | DSGVO, ePrivacy (Cookies), Einwilligung und Abmeldung |
-| Die Webplattform | [Webplattform](../../eng-us/standards/web-platform.md) | HTTP-Semantik und Caching, HTTP/2, TLS, HTML, CSS, ECMAScript, URLs, Cookies, Feeds, Sitemaps |
-| Sprachen | [Internationalisierung](../../eng-us/standards/internationalization.md) | Unicode und UTF-8, CLDR und ICU, BCP 47 und ISO-Sprachcodes, Rechts-nach-links und Bidi, Zeitzonen |
-| PHP | [PHP und Composer](../../eng-us/standards/php-and-composer.md) | Unterstützte PHP-Versionen, PSRs von PHP-FIG, Composer, Semantic Versioning |
-| Codestil | [Programmierstandards](../../eng-us/standards/coding-standards.md) | Das Regelwerk von phpcs, PHPStan, Dateiköpfe, Benennung, Regeln für CSS und JavaScript |
+| Barrierefreiheit | [Barrierefreiheit](barrierefreiheit.md) | WCAG 2.2 AA, WAI-ARIA 1.2, EN 301 549 |
+| Sicherheit | [Sicherheit](sicherheit.md) | OWASP Top 10, OWASP ASVS, Content Security Policy Level 3, OWASP Cheat Sheets |
+| Datenschutz | [Datenschutz](datenschutz.md) | DSGVO, ePrivacy (Cookies), Einwilligung und Abmeldung |
+| Die Webplattform | [Webplattform](webplattform.md) | HTTP-Semantik und Caching, HTTP/2, TLS, HTML, CSS, ECMAScript, URLs, Cookies, Feeds, Sitemaps |
+| Sprachen | [Internationalisierung](internationalisierung.md) | Unicode und UTF-8, CLDR und ICU, BCP 47 und ISO-Sprachcodes, Rechts-nach-links und Bidi, Zeitzonen |
+| PHP | [PHP und Composer](php-und-composer.md) | Unterstützte PHP-Versionen, PSRs von PHP-FIG, Composer, Semantic Versioning |
+| Codestil | [Programmierstandards](programmierstandards.md) | Das Regelwerk von phpcs, PHPStan, Dateiköpfe, Benennung, Regeln für CSS und JavaScript |
 | Code-Präfixe | [Namenspräfixe: sevenx und exp](namenspraefixe-sevenx-und-exp.md) | `sevenx` als offizielles öffentliches PHP-Code-Präfix von 7x, `exp` für Arbeit, die dem Projekt Exponential und der Exponential Foundation zugeordnet ist |
-| Tests | [Tests und kontinuierliche Integration](../../eng-us/standards/testing-and-ci.md) | PHPUnit, die Testkarte, die CI-Workflows und die Prüfungen vor einem Push |
-| Historie | [Versionsverwaltung und Releases](../../eng-us/standards/source-control-and-releases.md) | Git-Konventionen, Commit-Nachrichten, Changelogs, Tags und Versionsnummern |
-| Dokumentation | [Dokumentation und Veröffentlichung](../../eng-us/standards/documentation-and-publishing.md) | DITA 1.3, CommonMark und GFM, GNU FDL 1.3, PDF, EPUB 3 und EPUB Accessibility |
-| Schnittstellen | [APIs und Protokolle](../../eng-us/standards/apis-and-protocols.md) | OAuth 2.0 und OpenID Connect, REST und JSON, WebDAV, SOAP, Feeds, Mail, LDAP |
-| Datenbanken | [Datenbanken und SQL](../../eng-us/standards/databases-and-sql.md) | SQL und der Dialekt jeder unterstützten Datenbank, die Datenbankabstraktion |
+| Tests | [Tests und kontinuierliche Integration](tests-und-ci.md) | PHPUnit, die Testkarte, die CI-Workflows und die Prüfungen vor einem Push |
+| Historie | [Versionsverwaltung und Releases](versionsverwaltung-und-releases.md) | Git-Konventionen, Commit-Nachrichten, Changelogs, Tags und Versionsnummern |
+| Dokumentation | [Dokumentation und Veröffentlichung](dokumentation-und-veroeffentlichung.md) | DITA 1.3, CommonMark und GFM, GNU FDL 1.3, PDF, EPUB 3 und EPUB Accessibility |
+| Schnittstellen | [APIs und Protokolle](apis-und-protokolle.md) | OAuth 2.0 und OpenID Connect, REST und JSON, WebDAV, SOAP, Feeds, Mail, LDAP |
+| Datenbanken | [Datenbanken und SQL](datenbanken-und-sql.md) | SQL und der Dialekt jeder unterstützten Datenbank, die Datenbankabstraktion |
 
 ## Architektur
 
 | Seite | Was sie behandelt |
 |---|---|
-| [Kernel-Architektur](../../eng-us/standards/architecture/kernel-architecture.md) | Der Lebenszyklus einer Anfrage, Module, Ansichten und Funktionen, Richtlinien, Datentypen, persistente Objekte, Einstellungen und Siteaccesses, Designs und Überschreibungen, Templates, Extensions, Caches, Workflows, Cronjobs, die Datenbankschicht und der Anwendungsserver Velocity |
+| [Kernel-Architektur](architektur/kernel-architektur.md) | Der Lebenszyklus einer Anfrage, Module, Ansichten und Funktionen, Richtlinien, Datentypen, persistente Objekte, Einstellungen und Siteaccesses, Designs und Überschreibungen, Templates, Extensions, Caches, Workflows, Cronjobs, die Datenbankschicht und der Anwendungsserver Velocity |
 | [Regeln zu Schichten und Benennung](architektur/schichten-und-benennung.md) | Welche Schicht welche verwenden darf und wie neue Klassen, Module, Templates, Einstellungen und Befehle benannt werden |
-| [Kompatibilität, Releases und Deployment](../../eng-us/standards/architecture/compatibility-releases-deployment.md) | Die Richtlinie zur Abwärtskompatibilität, Versionsnummern und Releases und wie eine Änderung ausgebracht wird |
+| [Kompatibilität, Releases und Deployment](architektur/kompatibilitaet-releases-deployment.md) | Die Richtlinie zur Abwärtskompatibilität, Versionsnummern und Releases und wie eine Änderung ausgebracht wird |
 
 ## Entwurfsmuster
 
@@ -69,7 +69,7 @@ jederzeit mit `php bin/php/exppatterncatalogue.php --write` neu erstellen.
 
 - [Vorlage für den Kopf von Quelldateien (übernommen, 4.1)](../../eng-us/standards/header.txt): der Lizenzkopf, mit dem jede PHP-Datei der
   Codebasis 4.x begann, als Historie aufbewahrt. Neue Dateien verwenden den in
-  [Programmierstandards](../../eng-us/standards/coding-standards.md) beschriebenen Kopf.
+  [Programmierstandards](programmierstandards.md) beschriebenen Kopf.
 - [Checklisten zu Barrierefreiheit, Sicherheit und Konformität](../hilfe/fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md) für Projektleiter und Einkäufer
 - [Die Lizenz dieser Dokumentation](../README-LIZENZ.md)
 - [Sicherheitshärtung](../hilfe/sicherheitshaertung.md), [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md) und

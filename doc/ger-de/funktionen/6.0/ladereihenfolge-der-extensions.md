@@ -81,7 +81,7 @@ Extension-Einstellungen platziert werden, bevor die Siteaccess-Einstellungen zus
 ## Verwandte Seiten
 
 - [Modulüberschreibung durch Extensions](modulueberschreibung-durch-extensions.md), [INI-Überschreibungen für mehrere Websites](ini-ueberschreibungen-fuer-mehrere-websites.md)
-- [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](../../../eng-us/features/6.0/template-editor-overrides.md), [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
+- [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](template-editor-ueberschreibungen.md), [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
 - [Extension-Liste: jede Extension sortieren, untersuchen und herunterladen](extension-liste-und-downloads.md), [die Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Extensions, Themes und Pakete](extensions/README.md)
 - [Extension-Metadaten: `ezinfo.php` und `extension.xml`](../../spezifikationen/6.0/extension-metadaten.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)

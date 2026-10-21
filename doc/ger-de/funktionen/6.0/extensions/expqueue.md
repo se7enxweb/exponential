@@ -51,7 +51,7 @@ die API für Erzeuger, Planung, Worker und Einstellungen: [die Dokumentation](ht
 
 - [expai](expai.md), Exponential Intelligence, das seine eingereihte Arbeit hier ausführt
 - [Inhaltsaufträge](../../../../eng-us/bc/6.0/content-jobs.md)
-- [Exponential installieren, Abschnitt 10](../../../../eng-us/INSTALL.md#10-after-installing)
+- [Exponential installieren, Abschnitt 10](../../../INSTALL.md#10-nach-der-installation)
 - [Verzeichnis der Extensions](README.md)
 
 <!-- exp-partner-block:start -->

@@ -75,7 +75,7 @@ danach die Historie.
 - [Die Sicherheitspatches vom August 2026 (Prüfungen bei der Anmeldung)](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md)
 - [Sicherheitsstandards vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Exponential-Konsole](../../../eng-us/bc/6.0/console.md)
-- [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](pruefprotokoll.md)
 - [Chronik: Juli 2026](../../../eng-us/history/2026/2026-07.md)
 
 <!-- exp-partner-block:start -->

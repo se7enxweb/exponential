@@ -83,8 +83,8 @@ Für eine früher erstellte Installation ändert sich nichts. Um einen Editor-Si
 
 ## Verwandte Seiten
 
-- [Ausgeblendete Admin-Reiter](ausgeblendete-admin-reiter.md), [Admin-Links folgen den Berechtigungen](admin-links-folgen-den-berechtigungen.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
-- [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md), [Kickstarter-CLI](kickstarter-cli.md), [Referenz der Kickstarter-CLI](../../../eng-us/bc/6.0/kickstartercli.md)
+- [Ausgeblendete Admin-Reiter](ausgeblendete-admin-reiter.md), [Admin-Links folgen den Berechtigungen](admin-links-folgen-den-berechtigungen.md), [das Design admin4](admin4-design.md)
+- [Installation mit einem Befehl](installation-mit-einem-befehl.md), [Kickstarter-CLI](kickstarter-cli.md), [Referenz der Kickstarter-CLI](../../../eng-us/bc/6.0/kickstartercli.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md)

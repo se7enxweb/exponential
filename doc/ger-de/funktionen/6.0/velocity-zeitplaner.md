@@ -10,7 +10,7 @@ blockieren, die der Server beantwortet. Gilt für Exponential Velocity 0.0.4.x; 
 Server mit `Q::event()` verteilt, genau wie er ein Ereignis einer Webanfrage verteilt. Sie braucht also die
 Anwendungsschicht der Engine (`--app` oder eine Anwendung, die `handlers/` bereitstellt). Sie führt kein beliebiges
 PHP-Kommandozeilenskript aus; dafür verwenden Sie weiter das Cron des Systems. Die eigenen regelmäßigen Aufgaben von
-Exponential laufen über `php runcronjobs.php` (siehe [Cronjobs in der Konsole](../../../eng-us/features/6.0/cronjobs-console.md)).
+Exponential laufen über `php runcronjobs.php` (siehe [Cronjobs in der Konsole](cronjobs-in-der-konsole.md)).
 
 ## Worauf Sie sich verlassen können
 
@@ -75,7 +75,7 @@ Zeitplaner sieht einmal pro Sekunde auf die Uhr.
 
 Der Server fügt zwei eigene Aufgaben hinzu, wenn er sie braucht (Namen, die mit einem Unterstrich beginnen):
 
-- `_cacheSweep` entfernt abgelaufene Einträge des [Antwort-Caches](../../../eng-us/features/6.0/velocity-response-cache.md)
+- `_cacheSweep` entfernt abgelaufene Einträge des [Antwort-Caches](velocity-antwort-cache.md)
   (`Q.web.cache.sweep.every`, Standard 300 Sekunden);
 - `_certRenewal` erneuert im Hintergrund Zertifikate [automatischer Hosts](velocity-https-zertifikate.md).
 
@@ -100,8 +100,8 @@ Geben Sie einer eigenen Aufgabe keinen Namen mit führendem Unterstrich.
 
 ## Verwandte Seiten
 
-- [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md)
-- [Cronjobs in der Konsole](../../../eng-us/features/6.0/cronjobs-console.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
+- [Velocity-Webserver](velocity-webserver.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md)
+- [Cronjobs in der Konsole](cronjobs-in-der-konsole.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
 - [Hinweise zur Aktualisierung der Velocity-Engine (0.0.4.27 bis 0.0.4.42)](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
 - Chronik: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (der Zeitplaner kommt), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (Aufgaben geben root ab)

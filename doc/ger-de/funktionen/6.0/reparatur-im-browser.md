@@ -47,7 +47,7 @@ php bin/php/exprepair.php --disable   # writes Enabled=false and an empty KeyHas
 - Der Worker ist abgekoppelt, sodass die Seite, die eine Reparatur startet, sofort antwortet.
 - `index.php` beantwortet den Status des Laufs, bevor der Kernel startet, denn der Kernel kann ohne seine Bibliotheken
   nicht starten.
-- Reparatureinstellungen werden im [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) erfasst: ob ein Schlüssel gesetzt ist, nie der
+- Reparatureinstellungen werden im [Prüfprotokoll](pruefprotokoll.md) erfasst: ob ein Schlüssel gesetzt ist, nie der
   Schlüssel oder sein Hash.
 
 ## Einstellungen

@@ -74,7 +74,7 @@ Auf der Linie 2.5 heißt der Befehl noch `ezplatform:install`. Der Kernel der Li
 
 ## Mit der Legacy Bridge
 
-Eine Plattform-Installation auf SQLite kann seit `v4.0.0.1` auch den Legacy-Kernel von Exponential über die [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md) ausführen: Die Bridge bildet `pdo_sqlite` auf die Legacy-Implementierung `sqlite3` ab und übergibt den Dateipfad an die Legacy-`site.ini`. Der SQLite-Treiber des Legacy-Kernels selbst wird in [der Spezifikation des Datenbanktreibers SQLite 3](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md) beschrieben.
+Eine Plattform-Installation auf SQLite kann seit `v4.0.0.1` auch den Legacy-Kernel von Exponential über die [Legacy Bridge](legacy-bridge.md) ausführen: Die Bridge bildet `pdo_sqlite` auf die Legacy-Implementierung `sqlite3` ab und übergibt den Dateipfad an die Legacy-`site.ini`. Der SQLite-Treiber des Legacy-Kernels selbst wird in [der Spezifikation des Datenbanktreibers SQLite 3](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md) beschrieben.
 
 ## Was nebenbei behoben wurde (und warum Sie ihm trauen können)
 
@@ -96,7 +96,7 @@ Eine Plattform-Installation auf SQLite kann seit `v4.0.0.1` auch den Legacy-Kern
 ## Verwandte Seiten
 
 - [Datenbank SQLite für Exponential 6](sqlite-datenbank.md), [SQLite: Transaktionen stellen sich für die Schreibsperre an](../../../eng-us/bc/6.0/sqlite-transactions.md)
-- Plattformfunktionen: [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Administrationsoberfläche der Plattform](plattform-admin-ui-fork.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
+- Plattformfunktionen: [Nexus-Starter](plattform-nexus-starter.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Administrationsoberfläche der Plattform](plattform-admin-ui-fork.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [Legacy Bridge](legacy-bridge.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md), [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
 - Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)

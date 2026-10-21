@@ -57,7 +57,7 @@ user/preferences/set_and_exit/admin_left_menu_size/<value>
 
 ## Verwandte Seiten
 
-- [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](admin4-design.md)
 - [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md)
 - [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md), [ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md)
 - [Ausgewählte ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)

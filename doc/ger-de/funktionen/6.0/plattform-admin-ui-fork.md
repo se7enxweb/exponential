@@ -34,7 +34,7 @@ yarn ibexa:build
 ```
 
 Öffnen Sie `https://<your host>/adminui/` und melden Sie sich mit dem Administratorkonto Ihrer Installation an
-([DXP-Skeleton](plattform-dxp-skeleton.md), [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md)).
+([DXP-Skeleton](plattform-dxp-skeleton.md), [Nexus-Starter](plattform-nexus-starter.md)).
 
 **Wenn der Build eine Datei unter `vendor/ibexa/...` nicht findet**, hat das Projekt noch das Upstream-Paket neben dem
 Fork installiert. Führen Sie `composer why ibexa/admin-ui-assets` aus, um zu finden, was es verlangt, und prüfen Sie, dass
@@ -87,7 +87,7 @@ Changelog: [Releases der Admin-UI](../../../changelogs/extensions/admin-ui.md).
 
 ## Verwandte Seiten
 
-- Plattformfunktionen: [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
+- Plattformfunktionen: [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Nexus-Starter](plattform-nexus-starter.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](legacy-bridge.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
 - Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)

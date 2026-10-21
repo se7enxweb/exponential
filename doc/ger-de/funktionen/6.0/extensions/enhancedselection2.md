@@ -35,7 +35,7 @@ zeigte, aktualisieren Sie auf 2.1.6 oder neuer und leeren Sie die Template-Cache
 
 ## Verwandte Seiten
 
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md) exportiert und importiert diesen Datentyp (`ezenhancedselection`)
+- [xrowextract](xrowextract.md) exportiert und importiert diesen Datentyp (`ezenhancedselection`)
 - [Abstraktionen für Kommandozeile, Cronjobs und Ansichten](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/enhancedselection2.md) und [Versionshinweise](../../../../changelogs/extensions/enhancedselection2.md)

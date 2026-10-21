@@ -4,7 +4,7 @@ Diese Seite ist für Entwickler einer Website im Übergang von Legacy-Templates 
 Symfony Tools) lässt **Legacy-Templates** **Twig-Templates** einbinden und **Symfony-Unteranfragen** ausführen, sodass
 Legacy-Seiten Bausteine der Symfony- oder Ibexa-Seite wiederverwenden können.
 
-Es funktioniert nur in einer Einrichtung mit [Legacy Bridge](../../../../eng-us/features/6.0/legacy-bridge.md), in der der Legacy-Kernel innerhalb
+Es funktioniert nur in einer Einrichtung mit [Legacy Bridge](../legacy-bridge.md), in der der Legacy-Kernel innerhalb
 einer Symfony-Anwendung läuft.
 
 ## Operatoren
@@ -45,7 +45,7 @@ umgewandelt, bevor sie das Twig-Template erreichen.
 
 ## Verwandte Seiten
 
-- [Legacy Bridge](../../../../eng-us/features/6.0/legacy-bridge.md)
+- [Legacy Bridge](../legacy-bridge.md)
 - [Chronik des Repositorys](../../../../eng-us/history/ecosystem/ngsymfonytools.md) und [Versionshinweise](../../../../changelogs/extensions/ngsymfonytools.md) (zusammen mit den Plattform-Repositorys behandelt)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ngsymfonytools.md)
 - [Verhaltensänderungen der Extensions](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

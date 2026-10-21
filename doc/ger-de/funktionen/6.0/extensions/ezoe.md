@@ -11,7 +11,7 @@ eingehen. In der Zeit von Exponential 6 erhielt das eigenständige Repository nu
 
 Wie der Editor aufgebaut ist, auf TinyMCE 8 aktualisiert wurde und in Exponential 6 konfiguriert wird, beschreiben
 [ezoe und TinyMCE 8](../../../../eng-us/bc/6.0/ezoe-tinymce8.md) und die Funktionsseite
-[Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md). Zeichen oberhalb von U+FFFF und TeX-Quelltext in
+[Online-Editor auf TinyMCE 8](../online-editor-tinymce8.md). Zeichen oberhalb von U+FFFF und TeX-Quelltext in
 eigenen Tags: [Rich Text: Zeichen oberhalb von U+FFFF und TeX-Quelltext](../rich-text-zusatzzeichen-und-tex-quelltext.md).
 
 ## Verwandte Seiten

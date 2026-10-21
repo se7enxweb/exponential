@@ -86,7 +86,7 @@ Drei Regeln werden mitgeliefert, alle aus:
 ## Verwandte Seiten
 
 - [Härtung](../../../eng-us/bc/6.0/hardening.md)
-- [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md)
+- [Das Prüfprotokoll](pruefprotokoll.md)
 - [Objektzustände](../../anleitungen/objektzustaende.md#10-zustände-in-templates-fetches-und-request-regeln): die Zustände, auf die `Conditions[state]` passt
 - [Admin-Links folgen den Berechtigungen](admin-links-folgen-den-berechtigungen.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
