@@ -61,7 +61,7 @@ getrennten Webserver und liefert HTTPS selbst aus ([8.1](../../../installation/0
 
 ## Reihenfolge der Arbeit
 
-1. **PHP** 8.1 oder später (8.0, wenn Velocity nicht genutzt wird) mit den erforderlichen Erweiterungen, für Web und Kommandozeile gleich.
+1. **PHP** 8.0 oder später (auch für Velocity) mit den erforderlichen Erweiterungen, für Web und Kommandozeile gleich.
 2. **Datenbank**, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard, kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
    5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich. Legen Sie die Datenbank und
    ihren Benutzer vor der Installation an ([Datenbanken und Benutzer](datenbanken-und-benutzer.md)).

@@ -60,8 +60,8 @@ Zurück zum Anfang der Hilfe zum Hosting: [Hosting-Anbieter: hier beginnen](../h
 
 ## Die Kurzfassung
 
-- **PHP 8.0 oder später** für den Kernel; **PHP 8.1 oder später** mit `sockets` für Exponential Velocity, den empfohlenen
-  Webserver ([Kapitel 2](../../../installation/02-voraussetzungen.md#22-php)).
+- **PHP 8.0 oder später** für den Kernel und für Exponential Velocity, den empfohlenen Webserver, mit `sockets`
+  (ab Velocity 0.0.4.54; [Kapitel 2](../../../installation/02-voraussetzungen.md#22-php)).
 - **Datenbanken, in der offiziellen Reihenfolge:** 1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
   5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich (kein Treiber
   in 6.0.x). Siehe [Datenbankunterstützung](../../datenbankunterstuetzung.md).

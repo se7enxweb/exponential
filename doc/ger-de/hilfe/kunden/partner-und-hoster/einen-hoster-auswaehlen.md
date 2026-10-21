@@ -21,7 +21,7 @@ Aus [Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-ho
 
 | Bedarf | Mindestens |
 |---|---|
-| PHP | 8.0; empfohlen wird das neueste 8.x, das das System anbietet; Velocity braucht 8.1 |
+| PHP | 8.0; empfohlen wird das neueste 8.x, das das System anbietet; Velocity läuft ebenfalls unter 8.0 (ab Release 0.0.4.54) |
 | Datenbank | Eine der unterstützten Engines; das Projekt listet sie in einer offiziellen Reihenfolge |
 | Webserver | Keiner, wenn Velocity die Website ausliefert; oder Apache, nginx und andere |
 | Composer | 2.x |
@@ -42,7 +42,7 @@ Aus [Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-ho
 |---|---|
 | Muss mehr als ein Rechner in die Datenbank schreiben? | Ein Datenbankserver; nicht SQLite |
 | Ist das Hosting ohne dauerhaft laufende Prozesse (typisches Shared Hosting)? | Apache oder nginx mit PHP-FPM; Velocity meist nicht |
-| Ist das PHP des Rechners älter als 8.1? | Ein klassischer Webserver; Velocity braucht 8.1 |
+| Ist das PHP des Rechners 8.0? | Jeder Webserver; Velocity läuft ab seinem Release 0.0.4.54 unter 8.0 |
 | Gibt es keinen Shell-Zugriff? | Der Einrichtungsassistent im Browser, und weniger Möglichkeiten für Updates |
 
 > **Tipp**

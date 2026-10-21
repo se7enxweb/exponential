@@ -12,7 +12,10 @@
 <div class="a4-page a4-help-frame a4-help-manual" data-exphelp data-exphelp-i18n="{$help_i18n_json|wash}">
 
     <div class="a4-help-viewer-bar">
-        <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help Start'|i18n( 'kernel/exphelp' )}</a>
+        <div class="a4-help-viewer-line" data-exphelp-line>
+            <a class="a4-btn a4-btn-ghost a4-btn-small a4-help-viewer-start" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help Start'|i18n( 'kernel/exphelp' )}</a>
+            {if and( is_set( $help_reading ), $help_reading )}{include uri='design:exphelp/parts/reading_language.tpl' reading=$help_reading prefix='exphelp-manual-reading'}{/if}
+        </div>
         {if $help_manual}
         <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/manual'|ezurl}><span class="a4-icon a4-bi-journal-text" aria-hidden="true"></span> {'Manuals'|i18n( 'kernel/exphelp' )}</a>
         {/if}

@@ -42,7 +42,7 @@ Zwei Wege:
 
 | Weg | Was Sie bekommen | Worauf Sie achten |
 |---|---|---|
-| Ihr eigenes Image auf einer Basis mit PHP 8.1+ | die PHP-Erweiterungen, die Sie wählen, Composer, die mit `composer install` gebaute Installation | installieren Sie jede erforderliche Erweiterung: `dom`, `xsl`, `intl`, `mbstring`, `iconv`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick und für Velocity `sockets`, `pcntl`, `openssl` |
+| Ihr eigenes Image auf einer Basis mit PHP 8.0+ | die PHP-Erweiterungen, die Sie wählen, Composer, die mit `composer install` gebaute Installation | installieren Sie jede erforderliche Erweiterung: `dom`, `xsl`, `intl`, `mbstring`, `iconv`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick und für Velocity `sockets`, `pcntl`, `openssl` |
 | Das veröffentlichte Image von Velocity als Basis | den Server und ein PHP mit einer festgelegten Erweiterungsausstattung | prüfen Sie die Variante gegen das, was Exponential braucht |
 
 Die Images von Velocity sind nach Release, PHP-Version und Variante getaggt
@@ -154,7 +154,7 @@ Was das Kapitel dazu erklärt:
 
 ## Checkliste
 
-- [ ] Image mit PHP 8.1+ und jeder erforderlichen Erweiterung; `exp:velocity ext check` besteht in der Pipeline.
+- [ ] Image mit PHP 8.0+ und jeder erforderlichen Erweiterung; `exp:velocity ext check` besteht in der Pipeline.
 - [ ] Feste Image-Tags in der Produktion.
 - [ ] `var/`, `settings/override`, `settings/siteaccess` auf persistenten Volumes, im Eigentum des PHP-Benutzers des Containers.
 - [ ] Ein schreibender Container für SQLite, oder ein Datenbankserver für mehr.

@@ -20,7 +20,7 @@ Hosting-Partner, der dem Programm beitritt, ergänzt diese Landschaft um sein ei
 
 | Bereich | Anforderung | Quelle |
 |---|---|---|
-| PHP | 8.0 bis 8.5 für die Linie 6.0.15; Velocity braucht 8.1 oder später | `doc/eng-us/install/02-requirements.md` |
+| PHP | 8.0 bis 8.5 für die Linie 6.0.15, auch für Velocity (ab seinem Release 0.0.4.54) | `doc/eng-us/install/02-requirements.md` |
 | PHP-Erweiterungen | Unter anderem `dom`, `xsl`, `mbstring`, `iconv`, `intl`, `zlib` und eine Datenbankerweiterung | ebenda |
 | php.ini | `memory_limit` 64M oder mehr, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an | ebenda |
 | Datenbank | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL, in dieser Reihenfolge der Präferenz | [Datenbankunterstützung](../datenbankunterstuetzung.md) |

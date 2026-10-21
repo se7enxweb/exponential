@@ -34,7 +34,7 @@ ordnet sie als Entscheidungen an.
 |---|---|---|
 | Muss mehr als eine Maschine in die Datenbank schreiben? | ja | Einen Datenbankserver, zuerst PostgreSQL; nicht SQLite |
 | Erlaubt das Hosting lang laufende Prozesse? | nein (typisches Shared Hosting) | Apache oder nginx mit PHP-FPM; Velocity meist nicht |
-| Ist das PHP der Maschine älter als 8.1? | ja (zum Beispiel das mitgelieferte PHP 8.0 von RHEL 9) | Einen klassischen Webserver; Velocity braucht 8.1 |
+| Ist das PHP der Maschine 8.0? | ja (zum Beispiel das mitgelieferte PHP 8.0 von RHEL 9) | Jede Engine; Velocity läuft ab seinem Release 0.0.4.54 auf 8.0 |
 | Hat sich die Organisation auf eine Datenbank festgelegt? | ja | Diese Datenbank, wenn sie zu den sechs gehört; lesen Sie ihre Grenzen |
 | Gibt es Shell-Zugang auf dem Server? | nein | Den Setup-Assistenten im Browser |
 
@@ -103,7 +103,7 @@ kein Testergebnis“ ([Die vier Stufen](../betriebssystemunterstuetzung.md#die-v
 Risikoregister ein und planen Sie frühzeitig eine Testinstallation.
 
 Was jedes System bereitstellen muss, steht unter [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) und in
-[Kapitel 2](../../installation/02-voraussetzungen.md): PHP 8.0 oder neuer (8.1 für Velocity), die erforderlichen
+[Kapitel 2](../../installation/02-voraussetzungen.md): PHP 8.0 oder neuer (auch für Velocity), die erforderlichen
 PHP-Erweiterungen, eine Datenbank, Composer 2, beschreibbare Verzeichnisse, und 64-Bit-PHP wird empfohlen, „für die
 Unterstützung von mehr als 30 Sprachen“.
 
@@ -114,7 +114,7 @@ Unterstützung von mehr als 30 Sprachen“.
 | | Exponential Velocity | FrankenPHP (über Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Rolle | **empfohlen** für jede Stufe | produktionsreife Alternative | klassisch | klassisch |
-| PHP | 8.1 oder neuer | das im Binary enthaltene PHP | 8.0 oder neuer | 8.0 oder neuer |
+| PHP | 8.0 oder neuer | das im Binary enthaltene PHP | 8.0 oder neuer | 8.0 oder neuer |
 | Separater Webserver nötig | nein | nein | ja | ja |
 | Separates Werkzeug für HTTPS oder Zertifikate nötig | nein: eigene Zertifikate, selbst signierter Ersatz, ACME | nein: Ihr Zertifikat oder ein selbst signiertes | ja: `mod_ssl` plus certbot oder ein Hosting-Panel | ja |
 | Anwendung im Speicher gehalten | ja (persistente Worker) | nein | nein | nein |

@@ -99,6 +99,22 @@ The kit is dated June 2026. The repository has moved on since, and for release f
 | "stewarded by 7x (se7enxweb) since 1998" | The copyright notice of 7x and the Foundation starts in 1998; 7x was founded as Brookins Consulting in 2001; its project was launched in December 2023 | [7x in three stages: 2014, 2022, 2023](7x-in-three-stages.md) |
 | "Founded 1998 (as eZ Publish steward)" | eZ Systems developed eZ Publish from 1999; 7x took over leadership in 2023 | [Timeline for reporters](timeline-for-reporters.md) |
 
+The kit predates the news of 20 October 2026, which it therefore does not mention: **as of 6.0.15 the Velocity
+Internet / Web Application Server is part of Exponential.** The root `composer.json` requires
+`se7enxweb/exponential-velocity ~0.0.4.54` (until then it was only suggested), and Velocity 0.0.4.54 runs on PHP 8.0
+and later. Facts you can print, each with its source:
+
+| Fact | Source |
+|---|---|
+| Velocity is part of Exponential as of 6.0.15 and installed with every copy by `composer install` | [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md); `composer.json` |
+| Velocity runs on PHP 8.0 to 8.5, the stock PHP 8.0 of Red Hat Enterprise Linux 9 included | [PHP 8.0 support](../../bc/6.0/php-8.0-support.md) |
+| Velocity is the recommended engine for every stage; FrankenPHP is the production-ready alternative; Apache and nginx keep working | [Velocity engines](../../bc/6.0/velocity-engines.md) |
+| The project describes it as a turning point, a cornerstone and a capstone: a new level of application system integration, with even greater features out of the box in the core product | [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md#why-it-is-a-turning-point) |
+| Exponential is one working stack, not just a framework: server, RAD platform, CMS, digital experience and e-commerce | [One stack, not just a framework](../velocity-is-part-of-exponential-6-0-15.md#one-stack-not-just-a-framework) |
+
+Do not call Velocity or FrankenPHP "experimental"; neither is. Print only the performance figures the documentation
+already states, with their method ([How Velocity figures are measured](story-how-velocity-figures-are-measured.md)).
+
 The kit's key-facts table also contains two counts ("Active Properties" and "Forge Projects") for which this
 documentation has no source. Do not print them without asking how they were counted
 ([Verifying numbers](verifying-numbers.md)).

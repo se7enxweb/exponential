@@ -73172,6 +73172,78 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Help Start</source>
         <translation>بداية المساعدة</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>لم تُترجم هذه الصفحة إلى %reader بعد. تُعرض باللغة %original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>الإنجليزية</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>الألمانية</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>لغة القراءة:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>يؤدي اختيار لغة إلى تغيير لغة الإدارة بأكملها.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count من %total صفحة</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>المساعدة بلغات أخرى</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>فتح الأصل باللغة %language</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>أنت تقرأ الأصل لهذه الصفحة باللغة %language.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>العودة إلى الصفحة باللغة %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>هذه الصفحة ترجمة.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>قراءة الأصل باللغة %language</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>الوثائق التي تجلبها الامتدادات النشطة معها: أدلتها وREADME وسجل التغييرات والترخيص.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>البحث في وثائق %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>لا يجلب أي امتداد نشط وثائق خاصة به.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>وثائق الامتداد %extension فقط.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>صفحاته</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>البحث في المساعدة كلها</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

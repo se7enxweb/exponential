@@ -116,7 +116,7 @@ $eZTemplateFunctionArray[] = array( 'class' => 'eZTemplateIfFunction',
 der Schleifen; `case` von `switch`). Einträge werden zunächst nur vorgemerkt; die Klasse wird geladen, wenn einer ihrer Namen zum ersten Mal
 genutzt wird (`loadAndRegisterOperators()`, `loadAndRegisterFunctions()`). Ein zweimal registrierter Name behält den zuletzt gelesenen Eintrag;
 so kann eine Erweiterung einen Operator des Kernels ersetzen; die Seite
-[Operatoren des Kernels überschreiben](../../../eng-us/help/template-operators/overriding-kernel-operators.md) behandelt das.
+[Operatoren des Kernels überschreiben](../template-operatoren/kernel-operatoren-ueberschreiben.md) behandelt das.
 
 Die Ansichtsfunktionen des Kernels (`node_view_gui`, `attribute_view_gui` und die anderen Funktionen `*_gui`) sind alle eine Klasse,
 `eZObjectForwarder` in `kernel/common/ezobjectforwarder.php`, konfiguriert durch die Regeln in `kernel/common/eztemplateautoload.php`.
