@@ -61,7 +61,7 @@ Multi-Site-Wrapper kann die globale Variable vor dem Bootstrapping setzen, sodas
 dasselbe Cache-Verzeichnis verwendet; das Leeren des INI-Caches für ein Projekt leert ihn dann für alle. Setzen Sie sie
 nicht, ändert sich nichts. Das Gegenteil, ein eigener INI-Cache für jede Website, ist
 `site.ini [FileSettings] INICacheDir=site`: siehe
-[Protokolle, INI-Cache und Ablaufzeitstempel pro Website](../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
+[Protokolle, INI-Cache und Ablaufzeitstempel pro Website](log-und-cache-pfade-fuer-mehrere-websites.md).
 
 ## Optionale Beschleunigung für viele Website-Extensions
 
@@ -72,7 +72,7 @@ einige Prüfungen, ob Dateien existieren. Lassen Sie sie aus, sofern Sie nicht v
 
 ## Verwandte Seiten
 
-- [Protokolle, INI-Cache und Ablaufzeitstempel pro Website](../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)
+- [Protokolle, INI-Cache und Ablaufzeitstempel pro Website](log-und-cache-pfade-fuer-mehrere-websites.md)
 - [Spezifikation: Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Konsole: exp:ini](exp-ini-befehl.md), [Extensions in mehr als einem Ordner](zusaetzliche-extension-verzeichnisse.md)
 - [Changelog 6.0.12](../../../changelogs/6.0/6.0.12.md)

@@ -107,7 +107,7 @@ laufen; `runcronjobs.php` fragt den Filter vor dem ersten Skript und endet ohne 
 ## Verwandte Seiten
 
 - [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
-- [Filter für Zugriff und Ansichts-Cache für Extensions](../../../eng-us/features/6.0/access-and-cache-filters.md)
+- [Filter für Zugriff und Ansichts-Cache für Extensions](zugriffs-und-cache-filter.md)
 - [Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md)
 
 <!-- exp-partner-block:start -->

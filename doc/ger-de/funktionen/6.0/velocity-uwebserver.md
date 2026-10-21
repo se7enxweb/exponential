@@ -144,7 +144,7 @@ abgegeben, nachdem die Ports offen sind) oder `--allow-root` aus.**
 
 ## Verwandte Seiten
 
-- [Pakete und Binärdateien](../../../eng-us/features/6.0/velocity-packages-and-binaries.md), [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md) (der Anwendungsserver), [statische Dateien und Bilder](velocity-statische-dateien-und-bilder.md)
+- [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md), [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md) (der Anwendungsserver), [statische Dateien und Bilder](velocity-statische-dateien-und-bilder.md)
 - Spezifikationen: [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Programme)
 - Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) (die Standards von `0.0.4.42`)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)

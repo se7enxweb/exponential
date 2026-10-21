@@ -53,12 +53,12 @@ und ihrem Betrieb ab: Die Software kann Konformität möglich machen, aber eine 
 | Seite | Was sie behandelt |
 |---|---|
 | [Kernel-Architektur](../../eng-us/standards/architecture/kernel-architecture.md) | Der Lebenszyklus einer Anfrage, Module, Ansichten und Funktionen, Richtlinien, Datentypen, persistente Objekte, Einstellungen und Siteaccesses, Designs und Überschreibungen, Templates, Extensions, Caches, Workflows, Cronjobs, die Datenbankschicht und der Anwendungsserver Velocity |
-| [Regeln zu Schichten und Benennung](../../eng-us/standards/architecture/layering-and-naming.md) | Welche Schicht welche verwenden darf und wie neue Klassen, Module, Templates, Einstellungen und Befehle benannt werden |
+| [Regeln zu Schichten und Benennung](architektur/schichten-und-benennung.md) | Welche Schicht welche verwenden darf und wie neue Klassen, Module, Templates, Einstellungen und Befehle benannt werden |
 | [Kompatibilität, Releases und Deployment](../../eng-us/standards/architecture/compatibility-releases-deployment.md) | Die Richtlinie zur Abwärtskompatibilität, Versionsnummern und Releases und wie eine Änderung ausgebracht wird |
 
 ## Entwurfsmuster
 
-Der [Katalog der Entwurfsmuster](../../eng-us/standards/patterns/README.md) führt jede Abstraktion des Stacks von Exponential 6 auf: Fabriken,
+Der [Katalog der Entwurfsmuster](muster/README.md) führt jede Abstraktion des Stacks von Exponential 6 auf: Fabriken,
 Singletons, Registries, Handler und Strategien, abstrakte Basisklassen, Beobachter und Ereignis-Hooks, Adapter und
 Fassaden, persistente Objekte, Datentypen, Template-Operatoren, Fetch-Funktionen, Modulansichten,
 Richtlinienfunktionen, Workflow-Ereignisse, Cronjob-Teile und die INI-Einstellungen, über die Klassen eingesteckt

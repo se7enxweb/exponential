@@ -78,7 +78,7 @@ tail -n 3 var/tmp/opcache_profile.log
 
 ## Verwandte Seiten
 
-- [Velocity-Server mit dauerhaften Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity-Server mit dauerhaften Workern](velocity-server-mit-dauerhaften-workern.md)
 - [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Hinweise zur Aktualisierung der Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)

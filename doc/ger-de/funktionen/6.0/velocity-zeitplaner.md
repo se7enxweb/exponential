@@ -77,7 +77,7 @@ Der Server fügt zwei eigene Aufgaben hinzu, wenn er sie braucht (Namen, die mit
 
 - `_cacheSweep` entfernt abgelaufene Einträge des [Antwort-Caches](../../../eng-us/features/6.0/velocity-response-cache.md)
   (`Q.web.cache.sweep.every`, Standard 300 Sekunden);
-- `_certRenewal` erneuert im Hintergrund Zertifikate [automatischer Hosts](../../../eng-us/features/6.0/velocity-https-certificates.md).
+- `_certRenewal` erneuert im Hintergrund Zertifikate [automatischer Hosts](velocity-https-zertifikate.md).
 
 Geben Sie einer eigenen Aufgabe keinen Namen mit führendem Unterstrich.
 

@@ -94,7 +94,7 @@ socket.emit('chat/message', { text: 'hello' }, (res) => console.log('saved', res
   [Worker-Pools](../../spezifikationen/6.0/velocity-worker-pool.md).
 - Hinter einem Proxy, der keine Upgrades durchlässt, scheitern WebSockets. Halten Sie den Proxy für `Upgrade`
   durchlässig.
-- Der WebSocket der Shell nimmt nur denselben Ursprung an ([Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md)).
+- Der WebSocket der Shell nimmt nur denselben Ursprung an ([Q-Shell](velocity-q-shell.md)).
 
 ## Verwandte Seiten
 

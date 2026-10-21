@@ -88,7 +88,7 @@ Tests (ohne Datenbank): `eZContentVersionviewViewModeTest`.
 
 ## Verwandte Seiten
 
-- [Filter für Zugriff und Ansichts-Cache](../../../eng-us/features/6.0/access-and-cache-filters.md)
+- [Filter für Zugriff und Ansichts-Cache](zugriffs-und-cache-filter.md)
 - [PDF-Export](pdf-export.md)
 
 <!-- exp-partner-block:start -->

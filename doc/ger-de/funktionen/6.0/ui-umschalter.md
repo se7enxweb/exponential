@@ -34,7 +34,7 @@ mitgeliefert, das auch admin4l, der Editor und AdminUI verwenden.
    ohne Übersetzung sagt *noch keine Übersetzung* und zeigt englische Texte mit ihren eigenen Datums- und Zahlenformaten.
 3. Drücken Sie *Anwenden*. Die Seite, auf der Sie waren, wird in der gewählten Sprache neu geladen.
 
-Die Liste, ihre Reihenfolge und die Prozentsätze: [die Liste der Sprachen der Oberfläche](../../../eng-us/features/6.0/ui-switch-languages.md). Eine
+Die Liste, ihre Reihenfolge und die Prozentsätze: [die Liste der Sprachen der Oberfläche](ui-umschalter-sprachen.md). Eine
 Installation, deren Einstellungen keine Gruppen und keine Liste A–Z haben, zeigt die Sprachen stattdessen als Liste von
 Schaltflächen.
 

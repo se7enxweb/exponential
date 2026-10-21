@@ -3,7 +3,7 @@
 Die Sprachen, in denen Inhalte geschrieben werden (Setup > Sprachen), haben eine eigene Anleitung:
 [Inhaltssprachen](../../anleitungen/inhaltssprachen.md). Jede Locale und jede Übersetzung der Administrationsoberfläche,
 mit Unterstützungsstufen, Vollständigkeit und wie Sie weitere hinzufügen, ist an einer Stelle aufgeführt:
-[Sprachen](../../../eng-us/languages.md).
+[Sprachen](../../sprachen.md).
 
 Diese Seite ist für Administratoren, die Exponential in einer anderen Sprache als Englisch betreiben, und für
 Entwickler, die ihre eigenen Texte übersetzbar machen. Am 27. und 28. September 2026 wurden die Übersetzungskataloge von
@@ -95,8 +95,8 @@ Geben Sie ihm `[SiteAccessSettings] ExtensionSettingsSiteAccess=<main siteaccess
 
 ## Verwandte Seiten
 
-- [Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md): welchen Sprach-Siteaccess die Startseite und Test-Hosts erreichen
-- [Sprachen](../../../eng-us/languages.md): jede Locale (138) und Übersetzung der Administrationsoberfläche (27) mit ihrer Vollständigkeit
+- [Siteaccess nach Host-Präfix und die Weiterleitung auf die Sprache](siteaccess-zuordnung-nach-host-und-sprache.md): welchen Sprach-Siteaccess die Startseite und Test-Hosts erreichen
+- [Sprachen](../../sprachen.md): jede Locale (138) und Übersetzung der Administrationsoberfläche (27) mit ihrer Vollständigkeit
 - [Inhaltssprachen](../../anleitungen/inhaltssprachen.md): die Anleitung zum Hinzufügen, Anzeigen, Übersetzen, Verschieben und Entfernen der Sprachen, in denen Inhalte geschrieben werden (Setup > Sprachen)
 - [Übersetzungen des Paketvergleichs](../../../eng-us/features/6.0/package-compare-and-import.md)
 - [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) (Sprachen einer neuen Installation), [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md) (Übersetzungs-Siteaccesses)

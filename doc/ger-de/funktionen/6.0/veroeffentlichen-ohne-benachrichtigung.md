@@ -95,7 +95,7 @@ Schaltfläche, die Richtlinie). Der Parameter erreicht:
   ihn statt `true` an den Filter `content/notification/create`. Der Filter hat das letzte Wort: Ein Listener, der `true`
   zurückgibt, erzeugt das Ereignis auch für eine Veröffentlichung ohne Benachrichtigung, daher sollte ein Listener
   weitergeben, was er erhält, statt `true` zurückzugeben (siehe
-  [Filter für Zugriff und Ansichts-Cache](../../../eng-us/features/6.0/access-and-cache-filters.md#contentnotificationcreate)).
+  [Filter für Zugriff und Ansichts-Cache](zugriffs-und-cache-filter.md#contentnotificationcreate)).
 - `send-to-publishing-queue`: Mit `content.ini [PublishingSettings] AsynchronousPublishing=enabled` wird eine
   Veröffentlichung ohne Benachrichtigung nicht eingereiht, sondern sofort veröffentlicht. Der asynchrone Veröffentlicher
   führt die Operation erneut nur mit dem Objekt und der Version aus, sodass der Parameter dort verloren ginge.
@@ -142,7 +142,7 @@ sodass die dauerhaften Worker von Velocity jeder Anfrage ihre eigene Antwort geb
 
 - [Benachrichtigungen: die Anleitung für Benutzer](benachrichtigungen.md)
 - [Benachrichtigungen: die Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md#8-veröffentlichen-ohne-benachrichtigung)
-- [Filter für Zugriff und Ansichts-Cache](../../../eng-us/features/6.0/access-and-cache-filters.md)
+- [Filter für Zugriff und Ansichts-Cache](zugriffs-und-cache-filter.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

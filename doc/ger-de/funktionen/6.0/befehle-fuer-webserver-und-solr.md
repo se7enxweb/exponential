@@ -3,7 +3,7 @@
 Diese Seite ist für Administratoren, die die Server starten, stoppen und konfigurieren, die eine Installation von
 Exponential neben PHP betreibt. Drei Konsolenbefehle, hinzugefügt am 25. und 26. September 2026, steuern sie: den
 Webserver (jede der drei Velocity-Engines) und einen optionalen Suchserver Solr. Sie teilen sich einen Controller mit
-[Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md), sodass sich jedes Verb gleich verhält, gleich, welchen Namen Sie
+[Velocity](velocity-server-mit-dauerhaften-workern.md), sodass sich jedes Verb gleich verhält, gleich, welchen Namen Sie
 eingeben.
 
 Führen Sie sie als `./console exp:<name> <verb>` aus. Als `root` fügen Sie `--allow-root-user` hinzu.
@@ -111,7 +111,7 @@ Geltungsbereich: die Installation:
 
 ## Verwandte Seiten
 
-- [Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](velocity-server-mit-dauerhaften-workern.md)
 - [FrankenPHP und der eingebaute Server von PHP](../../../eng-us/bc/6.0/frankenphp.md)
 - [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)

@@ -45,7 +45,7 @@ Markenseiten für Partner, Fürsprecher und die Presse), folgt ihr und verlinkt 
 - **Neuer Code im Kernel** (Klassen, Template-Operatoren, Module, Einstellungen, Templates) verwendet `exp`, weil der
   Kernel der eigene Code des Projekts Exponential ist. Siehe
   [Programmierstandards](../../eng-us/standards/coding-standards.md#naming-conventions) und
-  [Regeln zu Schichten und Benennung](../../eng-us/standards/architecture/layering-and-naming.md).
+  [Regeln zu Schichten und Benennung](architektur/schichten-und-benennung.md).
 
 ## Ihr eigener Code
 
@@ -62,8 +62,8 @@ werden im Code-Format geschrieben. Siehe [Regeln zu Marke und Benennung](../hilf
 ## Verwandte Seiten
 
 - [Programmierstandards](../../eng-us/standards/coding-standards.md#naming-conventions)
-- [Regeln zu Schichten und Benennung](../../eng-us/standards/architecture/layering-and-naming.md)
+- [Regeln zu Schichten und Benennung](architektur/schichten-und-benennung.md)
 - [Autoloads und Benennung von Klassen](../../eng-us/help/extension-development/part-3-extension-developer/autoloads-and-class-naming.md)
 - [Benennung und Marke bei einer Aktualisierung](../../eng-us/help/extension-development/part-4-upgrading/naming-and-branding-during-an-upgrade.md)
 - [Regeln zu Marke und Benennung](../hilfe/geschaeft/marken-und-namensregeln.md)
-- [Glossar](../../eng-us/glossary.md)
+- [Glossar](../glossar.md)
