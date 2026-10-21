@@ -27,7 +27,7 @@ Bold Agency zieht auf eine eigene Installation um.
 ## Auf der Kommandozeile
 
 1. `./console exp:layouts export --only=<Bold Agency identifiers> --output=bold.zip` (ihre gemeinsamen Layouts kommen mit).
-2. Auf der neuen Installation, nach den Inhalten: Probelauf, Import, Leeren des Cache.
+2. Auf der neuen Installation, nach den Inhalten: Probelauf, Import (mit `--publish` leert er den Seiten-Cache selbst).
 
 ## Welchen Weg Sie wählen
 

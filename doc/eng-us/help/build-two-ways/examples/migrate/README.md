@@ -23,7 +23,7 @@ Move layouts, settings and templates between installations, versions and sites.
 10. [Change the settings files of another root](settings-on-another-root.md): exp:ini --root=<dir> works on the settings tree of another root (a copy of the installation); the INI cache there is not cleared, and the scope must exist there.
 11. [Update stored component block identifiers](component-block-identifiers.md): Layouts from before the rename store components as ibexa_component_<type>; ext:explayouts:updatecomponentblockidentifiers renames them to exp_component_<type>.
 12. [Update stored block links to remote IDs](link-location-references.md): ext:explayouts:updatelinklocationreferences converts block links from ibexa-location://<id> to exp-remote-location://<remote id>.
-13. [Use exp:layouts instead of the old helper scripts](helper-scripts-replaced.md): Several ext:explayouts:* helpers (block_list, layout_info, layout_copy, layout_list, rule_list, share_create, collection_list) stopped with a class-not-found error; exp:layouts covers listing and transfer.
+13. [Use exp:layouts instead of the old helper scripts](helper-scripts-replaced.md): The ext:explayouts:* helpers (block_list, layout_info, layout_copy, layout_list, rule_list, share_create, collection_list) run on their own again since explayouts 1.4.42; exp:layouts stays the tool for export and import.
 14. [Migrate a template-built site to Layouts](template-site-to-layouts.md): Keep the design; turn the page layout's parts into template blocks of a shared Header / Footer; add page layouts per class; map them.
 15. [Freeze a Layouts site into templates](layouts-site-to-templates.md): When a site must stop changing (an archive), its layouts can stay; freezing means fewer editors, not rewriting.
 16. [Add a language and give it layouts](new-siteaccess-for-language.md): A new siteaccess gets its settings (menu.ini) by exp:ini copy and its own layouts by mappings with a Siteaccess condition.
@@ -36,7 +36,7 @@ Move layouts, settings and templates between installations, versions and sites.
 23. [Rename layouts without breaking imports](rename-a-layout-identifier.md): Imports match layouts by identifier; keep identifiers stable and change names freely.
 24. [Split one installation into two sites](split-a-site.md): Export the layouts of the site's subtree, import them on the new installation after its content.
 25. [Merge layouts from two installations](merge-two-sites.md): Import the second site's layouts with --strategy=copy where identifiers clash, then rename and remap.
-26. [Rescue a layout broken by an import](rescue-a-broken-layout.md): Import the previous export with overwrite and publish; clear Content.
+26. [Rescue a layout broken by an import](rescue-a-broken-layout.md): Import the previous export with overwrite and publish; the import purges the page cache itself.
 27. [Move a hard-coded menu into settings](migrate-hardcoded-menu.md): An old template with links typed into it becomes a MainMenuID[] list read by the theme's main_menu.tpl.
 28. [Replace copied HTML snippets by a block type](migrate-snippets-to-block-type.md): Many HTML snippet blocks with the same markup become one block type; replace them one by one.
 29. [Move inline styles into the stylesheet](move-styles-out-of-templates.md): style="" and <style> in old templates go into your stylesheet, packed with the theme's.

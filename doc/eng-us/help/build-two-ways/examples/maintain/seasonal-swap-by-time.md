@@ -3,7 +3,7 @@ title: "Swap a seasonal layout by date"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1313
-summary: A Time condition (from, to) on the seasonal mapping switches it without anyone clicking, with up to an hour of lag from the resolver's memory.
+summary: A Time condition (from, to) on the seasonal mapping switches it at its start and end without anyone clicking.
 keywords: time condition, seasonal, schedule, campaign dates, mapping
 type: help
 ---
@@ -25,7 +25,7 @@ The Black Friday layout shows from Friday 00:00 to Monday 23:59.
 1. On the seasonal mapping, **Add condition** of type **Time** with the start and end.
 2. Keep its priority above the regular mapping.
 
-The resolver remembers its answer per address for `[ResolverSettings] CacheTTL` (3600 seconds here), so the switch can lag up to that long per address.
+Since explayouts 1.4.42 the resolver remembers that answer only until the condition's next start or end, and while that moment is within the page cache's `[HttpCacheSettings] MaxAge` (3600 seconds) the page is kept out of the page caches (`Cache-Control: private, no-store`), so the layout switches on time.
 
 ## With templates
 
@@ -33,7 +33,7 @@ The resolver remembers its answer per address for `[ResolverSettings] CacheTTL` 
 
 ## Which to choose
 
-The Time condition for planned campaigns; switch by hand when the minute matters.
+The Time condition for planned campaigns: it switches at the start and the end, without lag.
 
 ## Check
 

@@ -29,7 +29,7 @@ The layouts of one installation on a second one with the same content.
 1. On the source: `./console exp:layouts export --all --output=all-layouts.zip`.
 2. `./console exp:layouts import all-layouts.zip --dry-run` and read the States (`new`, `identical`, `changed`, `conflicting`).
 3. Run it again without `--dry-run`, with the `--strategy` you chose and `--publish` if the result should be live at once.
-4. `./console exp:cache clear --tag=content` (a command-line import does not purge the page cache).
+4. Nothing to clear by hand: since explayouts_core 1.0.10 an import with `--publish` purges the page cache itself.
 
 ## Which to choose
 

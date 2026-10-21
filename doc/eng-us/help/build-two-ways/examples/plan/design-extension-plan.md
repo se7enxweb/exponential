@@ -22,7 +22,7 @@ Site changes never go into the theme or the kernel.
 ## With templates
 
 1. Name it (these pages use `mysite`), give it `settings/design.ini.append.php` with `DesignExtensions[]=mysite`, and the design folder of the site (`design/media/`).
-2. Plan to place it first in `ActiveExtensions[]`: its templates then win over the theme's and its `explayouts.ini` is read after Layouts' own.
+2. Plan to place it first in `ActiveExtensions[]`: its templates then win over the theme's (for block types the position does not matter since explayouts 1.4.42).
 3. Keep it in its own git repository.
 
 ## Which to choose

@@ -28,7 +28,7 @@ Layouts reach production without being built twice.
 
 1. On staging: `./console exp:layouts export --only=<identifiers> --output=release.zip`.
 2. On production: `./console exp:layouts import release.zip --dry-run`, then with the chosen `--strategy` and `--publish`.
-3. Then `./console exp:cache clear --tag=content`.
+3. Nothing to clear by hand: since explayouts_core 1.0.10 the import with `--publish` purges the page cache itself.
 
 ## Which to choose
 

@@ -3,7 +3,7 @@ title: "Rescue a layout broken by an import"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1525
-summary: Import the previous export with overwrite and publish; clear Content.
+summary: Import the previous export with overwrite and publish; the import purges the page cache itself.
 keywords: rescue, broken layout, import, rollback, migration
 type: help
 ---
@@ -28,7 +28,7 @@ Undo an import that went wrong.
 
 1. `./console exp:layouts import before-import.zip --dry-run --strategy=overwrite --publish` and read the States (`new`, `identical`, `changed`, `conflicting`).
 2. Run it again without `--dry-run`, with the `--strategy` you chose and `--publish` if the result should be live at once.
-3. `./console exp:cache clear --tag=content` (a command-line import does not purge the page cache).
+3. Nothing to clear by hand: since explayouts_core 1.0.10 an import with `--publish` purges the page cache itself.
 
 ## Which to choose
 

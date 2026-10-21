@@ -29,7 +29,7 @@ Know what happens to a hand-picked article that does not exist on the target.
 1. `--unmapped=fail` stops the import and shows what is missing; `drop` (default) leaves those items out; `keep` keeps the reference as it is.
 2. `./console exp:layouts import layouts.zip --dry-run --unmapped=fail` and read the States (`new`, `identical`, `changed`, `conflicting`).
 3. Run it again without `--dry-run`, with the `--strategy` you chose and `--publish` if the result should be live at once.
-4. `./console exp:cache clear --tag=content` (a command-line import does not purge the page cache).
+4. Nothing to clear by hand: since explayouts_core 1.0.10 an import with `--publish` purges the page cache itself.
 
 ## Which to choose
 
