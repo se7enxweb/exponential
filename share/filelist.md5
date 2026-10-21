@@ -191,7 +191,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-d9c98ddd58711c8443c8230256d03a14  composer.json
+536665a8fef5506fe021b17909aef7e5  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 3d99e63d5759aceeb885e366929fa8c7  config.php-RECOMMENDED
@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-930ce7b9bbfdcb606e3787f9591e0e3b  doc/changelogs/6.0/6.0.15.md
+503855e5500d386ab354473fa6ede03d  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4932,7 +4932,7 @@ ca85614f14e595bced36608daef95d4f  doc/eng-us/examples/ini-settings/shop/README.m
 ad8cce76782f0c4b9961447545f51fa8  doc/eng-us/examples/ini-settings/shopaccount/HandlerSettings.md
 c135beb9575378bd3a7973db8cf47a2e  doc/eng-us/examples/ini-settings/shopaccount/README.md
 4b41a242c6e4a8ab86a7cb1bb8068ae0  doc/eng-us/examples/ini-settings/site/AdminEnvironment.md
-fda5b878c9ef45a35b707656f790bbbd  doc/eng-us/examples/ini-settings/site/AdminSiteAccessMenu.md
+05f808dc14b2cc73231d9b380d4de3f5  doc/eng-us/examples/ini-settings/site/AdminSiteAccessMenu.md
 1df9e4d2089bcc49541116c12816fc5f  doc/eng-us/examples/ini-settings/site/AppendNodeIDFilterSettings.md
 c22b859268798f7505fc18a76c38fef3  doc/eng-us/examples/ini-settings/site/BackwardCompatibilitySettings.md
 f6f565f1d58a812a0f1c8da2cfdbdcdf  doc/eng-us/examples/ini-settings/site/Cache.md
@@ -6182,7 +6182,7 @@ cb7b4a785e49764ddfc2a91a2295decb  doc/eng-us/features/6.0/extensions/AdminAid.md
 5409537e822b55c82dc6953a412d57d6  doc/eng-us/features/6.0/extensions/bccie.md
 802cfcb8988f3257992676935a2cf9f3  doc/eng-us/features/6.0/extensions/bcgooglesitemaps.md
 40867538617a1d8fa8ad1a3d86c769b7  doc/eng-us/features/6.0/extensions/bcwebsitestatistics.md
-32ab5f4f08cdc4b6e09f4805dd71c2e9  doc/eng-us/features/6.0/extensions/birthday.md
+e6c85996c733f9d4740d5d1079e9d5ea  doc/eng-us/features/6.0/extensions/birthday.md
 66aa73b5abbc2bb145e50efd93a6d867  doc/eng-us/features/6.0/extensions/cjw-exponential-media-site-data.md
 e25953f03d485479cdc3121f061eb25b  doc/eng-us/features/6.0/extensions/cjw_newsletter.md
 bfe9e78152ce569fc06e3a263c2483b8  doc/eng-us/features/6.0/extensions/enhancedezbinaryfile.md
@@ -7370,6 +7370,7 @@ fa8b40a55ca9efdd310547017d6b97aa  doc/eng-us/help/creators/website-creators/shar
 f17cc0cad1dd7bb22fb944619f923259  doc/eng-us/help/creators/website-creators/spam-protection-for-forms.md
 a61232174861c54ab40db57e242058f1  doc/eng-us/help/creators/website-creators/static-cache-and-velocity.md
 900bb255d4976be4fd5b68031fa6131b  doc/eng-us/help/creators/website-creators/statistics-and-analytics.md
+df44da3a5cc924aad9b8ec52798c3888  doc/eng-us/help/creators/website-creators/storing-a-date-of-birth.md
 c090a617ff83d9aa266b01a60790daf4  doc/eng-us/help/creators/website-creators/structuring-the-content-tree.md
 76dc7bf12f569fae66986ec9e7346f9e  doc/eng-us/help/creators/website-creators/stylesheets-and-scripts.md
 ad1c624217173974ac31d9ecc287733e  doc/eng-us/help/creators/website-creators/svg-and-image-formats.md
@@ -12220,7 +12221,7 @@ e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-setti
 09966c19390280a3af1a30f1f0cde9f2  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 8e407a8f857845152d90b0e6046f416e  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 cd9d33fd0cafc62d3aeaa23f273b4061  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
-89a3318e4c8270094a45755c2eb4487b  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
+bc6ffc2776551da0b2ddfc6cc5b57e2e  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
 2454d0022c677d9245e5e1322e5ee6b5  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
 22d6c9c5408fb8730a53e260be31c8c4  doc/ger-de/.examples/descriptions/12-shell-checkcalltimeref.json
@@ -13844,7 +13845,7 @@ bd1c6796771491c6edae12e5aaa59c64  doc/ger-de/beispiele/ini-einstellungen/shopacc
 d5d89e5a193a8e955de0c213ad392ed1  doc/ger-de/beispiele/ini-einstellungen/shopaccount/HandlerSettings.md
 967288e1968cc11628287e863fcc4c06  doc/ger-de/beispiele/ini-einstellungen/shopaccount/README.md
 d7232458f5dfe1e0d78f93833ab4ee4d  doc/ger-de/beispiele/ini-einstellungen/site/AdminEnvironment.md
-1986ceaafd2b51a3ca77258685aa99cb  doc/ger-de/beispiele/ini-einstellungen/site/AdminSiteAccessMenu.md
+be7ad08467d1bf1c08ef882b42205c0c  doc/ger-de/beispiele/ini-einstellungen/site/AdminSiteAccessMenu.md
 d9a592ba61b663981fbaae713603cca8  doc/ger-de/beispiele/ini-einstellungen/site/AppendNodeIDFilterSettings.md
 14308d57b497bcd3de656ac866546274  doc/ger-de/beispiele/ini-einstellungen/site/BackwardCompatibilitySettings.md
 33deab8806a5079ff427ba68c52598a3  doc/ger-de/beispiele/ini-einstellungen/site/Cache.md
@@ -20915,7 +20916,7 @@ b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.
 ff87cb464a335a0d70234d2a35106203  kernel/private/classes/ezscriptclusterpurge.php
 93df9b90000e461d123cdcd6f817ecd9  kernel/private/classes/ezscripttrashpurge.php
 6a70200419e040cc050e79492abadf7e  kernel/private/classes/global_functions.php
-71b3cc1d081e91098bb6360c8fd8b7ba  kernel/private/classes/httpcache/ezphttpcachecontract.php
+56e56f2b419c17edfe340d6801fa1191  kernel/private/classes/httpcache/ezphttpcachecontract.php
 02d8fd5929eba35f5ad8ed31e4b86f3e  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
 0a96f76d083af1e997f4faecae8eb1eb  kernel/private/classes/httpcache/ezphttpcachelistener.php
 42ac3ffe977340392a723531ffd8d6a9  kernel/private/classes/requestrules/ezprequestcontext.php
@@ -21854,7 +21855,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 16b3ae17276f02a0b427f88050b8a752  settings/menu.ini
-4f061cecd40623be1294a7695c5cd454  settings/mime.ini
+71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 e1d9c5932ac1b3e42db487331851a747  settings/module.ini
 4a0dab3096ea132c689422d49e89cba9  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
@@ -21869,7 +21870,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-7a2d70c226fb9989dbba71a547614a6e  settings/site.ini
+b50d1ae27e5156b9a2a60a03d5cd8807  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -23569,7 +23570,7 @@ cd0df33127aea30289ff55824df77907  tests/tests/kernel/classes/runnable/fixtures/r
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
 8e16d25035367dbc1eac8487aaff5c36  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 fdb21b66365e5254b9daaa9d4a2dfec1  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
-094a107f11fd68189234fa7c8f6754ab  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
+b0c7de44d801b8eac1d9e710da913eac  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
 83e5d0248cb3a7fdd605f728629f8214  tests/tests/kernel/classes/security/expIniPhpWrapperTest.php
 c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
 01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php
@@ -24205,7 +24206,7 @@ e6ad2c9ac436d848b4359433b0380402  tests/tests/lib/ezutils/eZURIFilterStringTest.
 6178821ce5542ce0e1358dbd29b28957  tests/tests/lib/ezutils/eZURITest.php
 50cc8c6cb3b573637cf62ab92e76d1e6  tests/tests/lib/ezutils/eZURITransformURIEscapeNullTest.php
 40005d9e868e02bfbd2cae8d1e693583  tests/tests/lib/ezutils/eZURITransformURINullTest.php
-ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
+96d7116f6a0e8ae2e19b2ed97b7ad43b  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 926cae6ab947a58b88b5cbc55a8e5902  tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php
 def53b26e73c0558a811a95b59614ebc  tests/tests/lib/ezutils/expDebugBarReportEngineTest.php
 b99dee804176afb040d2d3199defbcf5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
