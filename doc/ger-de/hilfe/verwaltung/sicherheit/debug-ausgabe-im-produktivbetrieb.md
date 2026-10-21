@@ -51,7 +51,7 @@ DebugIPList[]=203.0.113.10
 ```
 
 - Einträge können einzelne Adressen oder CIDR-Bereiche sein, IPv4 und IPv6; die Debug-Leiste dokumentiert
-  Bezeichnungen und Ablaufdaten für Einträge ([Die Exp-Debug-Leiste](../../../../eng-us/bc/6.0/debug-bar.md)).
+  Bezeichnungen und Ablaufdaten für Einträge ([Die Exp-Debug-Leiste](../../../bc/6.0/debug-leiste.md)).
 - `DebugByIP` vertraut der Adresse, die Exponential ermittelt; hinter einem Proxy stammt sie nur dann aus einem
   weitergeleiteten Header, wenn der Proxy in `TrustedProxies[]` steht. Ein Bereich, der weiter ist als Ihre Proxys,
   oder ein Eintrag für die Adresse des Proxys selbst gibt allen die Debug-Ausgabe.

@@ -59,7 +59,7 @@ Bieter den Ausstieg leicht macht, zu bewerten, gehört zur [Bewertung](../bewert
 
 ## Verwandte Seiten
 - [Beschaffung: Übersicht](../README.md)
-- [Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md)
+- [Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md)
 - [Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

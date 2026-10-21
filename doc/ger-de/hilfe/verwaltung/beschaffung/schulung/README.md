@@ -12,7 +12,7 @@ type: help
 Dieser Teil des Abschnitts zur Beschaffung richtet sich an die Personen einer öffentlichen Stelle, die für Schulungen
 verantwortlich sind: die Projektleitung, die sie in den Plan aufnimmt, die Beschaffungsstelle, die sie einkauft, und die
 Schulungskoordination, die sie nach dem Livegang am Laufen hält. Er baut auf den Trainerkursen dieser Hilfe auf
-([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md), [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)),
+([Kurskatalog](../../../trainer/kurskatalog.md), [Trainer: hier beginnen](../../../trainer/trainer-hier-beginnen.md)),
 die freie Dokumentation sind und von Ihrem eigenen Personal oder von einem Lieferanten genutzt werden können.
 
 ## Die Seiten
@@ -45,13 +45,13 @@ die freie Dokumentation sind und von Ihrem eigenen Personal oder von einem Liefe
 - Exponential hat keine Lizenzgebühr je Benutzer oder Arbeitsplatz ([Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md)).
 - Was einen Kurs „offiziell“ macht und der Inhalt der Zertifizierungen des Programms sind noch nicht veröffentlicht
   ([Schulungspartner](../../../partner/schulungspartner.md), [Zertifizierungen](../../../partner/zertifizierungen.md)).
-- Das Prüfungsmaterial in dieser Hilfe ist keine offizielle Zertifizierung ([Prüfungen](../../../../../eng-us/help/trainers/assessments/README.md)).
+- Das Prüfungsmaterial in dieser Hilfe ist keine offizielle Zertifizierung ([Prüfungen](../../../trainer/pruefungen/README.md)).
 
 ## Verwandte Seiten
 
 - [Exponential im öffentlichen Sektor beschaffen](../README.md)
 - Verwaltungen: hier beginnen (die Einstiegsseite dieses Hilfeabschnitts)
-- [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)
+- [Kurskatalog](../../../trainer/kurskatalog.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

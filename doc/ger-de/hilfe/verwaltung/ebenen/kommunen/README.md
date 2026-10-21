@@ -45,7 +45,7 @@ allgemeine Praxis im öffentlichen Sektor wieder, und die Zuständigkeiten unter
 4. **Die ersten 90 Tage** als Plan.
 
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
-[Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
+[Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 Bietet Ihre Region eine gemeinsame Plattform an, lesen Sie auch
 [Gemeinsame Dienste für die Kommunen einer Region](../laender-und-regionen/gemeinsame-dienste-fuer-kommunen.md).
 

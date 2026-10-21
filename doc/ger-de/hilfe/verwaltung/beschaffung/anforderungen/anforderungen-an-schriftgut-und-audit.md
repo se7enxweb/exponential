@@ -55,11 +55,11 @@ unten decken ab, was das CMS an eines übergeben muss.
 | REC-01 | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | REC-02 | Das Audit-Protokoll, standardmäßig an, mit den Kanälen `content`, `access`, `system`, `commerce` und optional `read` ([Das Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
 | REC-03 | Jeder Eintrag trägt den Hash des vorherigen; tägliche Dateien werden mit signierten Manifesten archiviert; `./console exp:audit verify` endet mit 1, wenn eine Kette gebrochen ist |
-| REC-04 | `./console exp:audit export`, einschließlich `--subject-user=<id>`; der Tab **Audit** in der Administration (`/audit/dashboard`) ([Audit-Leitfaden](../../../../../eng-us/bc/6.0/audit.md)) |
+| REC-04 | `./console exp:audit export`, einschließlich `--subject-user=<id>`; der Tab **Audit** in der Administration (`/audit/dashboard`) ([Audit-Leitfaden](../../../../bc/6.0/audit.md)) |
 | REC-05 | Aufbewahrung des Audits standardmäßig je Kanal 90 Tage live und 2 Jahre archiviert; Pseudonymisierung nach einer festgelegten Zeit ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)). Alte Versionen lassen sich auf der Versionsseite bereinigen |
 | REC-06 | Website-Archiv von xrowextract (CSV je Klasse mit `manifest.json`), Pakete, Datenbank-Dumps ([Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md)) |
 | REC-07 | `exp:makestaticcache` schreibt statische Seiten ([Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md)) |
-| REC-08 | Der Papierkorb hält fest, wer ein Element in den Papierkorb gelegt hat und wo es war ([Die Ansicht des Papierkorbs](../../../../../eng-us/bc/6.0/trash.md)) |
+| REC-08 | Der Papierkorb hält fest, wer ein Element in den Papierkorb gelegt hat und wo es war ([Die Ansicht des Papierkorbs](../../../../bc/6.0/papierkorb.md)) |
 
 Die Signaturschlüssel des Audits liegen in `settings/override/audit.ini.append.php`; ihr Verlust bedeutet, dass sich
 bestehende Einträge nicht mehr verifizieren lassen ([Sicherungen: was zu sichern ist](../../../hosting/betrieb/backups-was-gesichert-werden-muss.md)).

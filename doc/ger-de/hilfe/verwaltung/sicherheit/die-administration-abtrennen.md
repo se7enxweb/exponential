@@ -56,7 +56,7 @@ Anmeldung schützt von innen gegen gestohlene Passwörter.
 
 Die Anfrageregeln (`settings/requestrules.ini`) entscheiden, bevor eine Modulansicht läuft: Halten Sie anonyme Besucher
 von System-URLs wie `/content/view/full/123` fern, verlangen Sie für eine Sektion eine Anmeldung, weisen Sie Anfragen
-aus einem Netz ab ([Anfrageregeln](../../../../eng-us/bc/6.0/view_full_security.md)). Die Beispielregeln von request-shield
+aus einem Netz ab ([Anfrageregeln](../../../bc/6.0/sicherheit-von-content-view-full.md)). Die Beispielregeln von request-shield
 beantworten auf den öffentlichen Siteaccesses außerdem Administrationsmodule (`setup`, `class`, `role`, `workflow`,
 `package`) mit 404.
 

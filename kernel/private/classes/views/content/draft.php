@@ -53,8 +53,15 @@ class Draft extends \Exponential\Runnable\ModuleView
         $this->userID = (int)$user->id();
 
         $filters = \expContentDraftList::filters( isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array(),
-                                                  $this->http->hasGetVariable( 'q' ) ? $this->http->getVariable( 'q' ) : '' );
+                                                  \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
         $offset = \expAdminPagination::offset( $scope['Params'] );
+
+        // the search form without scripts (POST): to the canonical /(q)/ address, filters and order kept
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+        {
+            $filters['search'] = \expContentDraftList::searchText( \expViewParameters::clean( \expViewParameters::posted( $_POST, 'q' ) ) );
+            return \expViewParameters::redirect( '/content/draft' . \expContentDraftList::suffix( $filters ) . \expContentDraftList::searchSuffix( $filters ) );
+        }
 
         $this->removeSelected();
         $this->removeOne();
@@ -210,7 +217,7 @@ class Draft extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'draft_limit_choices', $limitChoices );
         $tpl->setVariable( 'draft_filters', $filters );
         $tpl->setVariable( 'draft_suffix', \expContentDraftList::suffix( $filters ) );
-        $tpl->setVariable( 'draft_search_suffix', $filters['search'] !== '' ? '?q=' . rawurlencode( $filters['search'] ) : '' );
+        $tpl->setVariable( 'draft_search_suffix', \expContentDraftList::searchSuffix( $filters ) );
         $tpl->setVariable( 'draft_links', \expContentDraftList::links( $filters, $choices ) );
         $tpl->setVariable( 'draft_choices', $choices );
         $tpl->setVariable( 'draft_overview', \expContentDraftList::overview( $all, $oldDays ) );

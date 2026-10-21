@@ -90,7 +90,7 @@ Zweimal im Jahr oder wie es Ihre Richtlinie vorsieht:
 
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
 - [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)
-- [Kurs Rollen und Richtlinien](../../../../eng-us/help/trainers/site-administrators/module-03-roles-and-policies/README.md)
+- [Kurs Rollen und Richtlinien](../../trainer/website-administratoren/modul-03-rollen-und-richtlinien/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

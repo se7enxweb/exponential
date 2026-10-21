@@ -85,7 +85,7 @@ Aufgaben, die diese Seiten Schritt für Schritt anwenden, finden Sie in den Comp
 
 ## Verwandte Seiten
 
-- Nach oben: [Verwaltungen: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
+- Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md)
 - [Sicherheitsstandards](../../../../eng-us/standards/security.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Sicherheit für Hoster](../../hosting/sicherheit/README.md)

@@ -97,7 +97,7 @@
     <li class="a4-figure"><strong>{$summary.blocks}</strong><span>{'Blocks'|i18n( 'design/admin/settings' )}</span></li>
     <li class="a4-figure"><strong>{$summary.settings}</strong><span>{'Settings'|i18n( 'design/admin/settings' )}</span></li>
     <li class="a4-figure"><strong>{$summary.arrays}</strong><span>{'Arrays'|i18n( 'design/admin/settings' )}</span></li>
-    <li class="a4-figure"><a href={concat( $base_url, '?changed=1' )|ezurl}><strong>{$summary.changed}</strong><span>{'Changed from the default'|i18n( 'design/admin/settings' )}</span></a></li>
+    <li class="a4-figure"><a href={concat( $base_url, '/(changed)/1' )|ezurl}><strong>{$summary.changed}</strong><span>{'Changed from the default'|i18n( 'design/admin/settings' )}</span></a></li>
     <li class="a4-figure"><strong>{$summary.added}</strong><span>{'Without a default'|i18n( 'design/admin/settings' )}</span></li>
     <li class="a4-figure"><strong>{$summary.secrets}</strong><span>{'Secrets, masked'|i18n( 'design/admin/settings' )}</span></li>
     <li class="a4-figure"><strong>{$summary.files}</strong><span>{'Files read'|i18n( 'design/admin/settings' )}</span></li>
@@ -137,7 +137,7 @@
 </details>
 
 {* Search, filter, compare *}
-<form method="get" action={$base_url|ezurl} role="search">
+<form method="post" action={$base_url|ezurl} role="search">
 <div class="a4-filterbar">
     <div class="a4-field">
         <label for="settings-q">{'Search'|i18n( 'design/admin/settings' )}</label>
@@ -180,7 +180,7 @@
 <tbody>
 {foreach $search_hits as $hit}
 <tr>
-    <td class="a4-settings-name"><a href={concat( 'settings/view/', $current_siteaccess, '/', $hit.file, '?q=', $hit.name, '#', $hit.anchor )|ezurl}><code>{$hit.file|wash}</code></a><br /><code>[{$hit.block|wash}] {$hit.name|wash}</code></td>
+    <td class="a4-settings-name"><a href={concat( 'settings/view/', $current_siteaccess, '/', $hit.file, '/(q)/', $hit.name, '#', $hit.anchor )|ezurl}><code>{$hit.file|wash}</code></a><br /><code>[{$hit.block|wash}] {$hit.name|wash}</code></td>
     <td class="a4-settings-v">{if $hit.secret}<span class="a4-settings-val is-secret">{$hit.text|wash}</span>{elseif eq( $hit.text, '' )}<span class="a4-settings-val is-empty">{'empty'|i18n( 'design/admin/settings' )}</span>{else}<span class="a4-settings-val">{$hit.text|shorten( 160 )|wash}</span>{/if}</td>
     <td>{include uri='design:settings/exp_origin.tpl' origin=$hit.origin}</td>
 </tr>

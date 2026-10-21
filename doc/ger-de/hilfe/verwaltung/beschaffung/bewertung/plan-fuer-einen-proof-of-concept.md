@@ -40,7 +40,7 @@ Datenbankserver und keinen Vertrag. Die Schritte stammen aus
 
 | Bedarf | Aus [Anforderungen](../../../../installation/02-voraussetzungen.md) |
 |---|---|
-| Ein Rechner oder eine virtuelle Maschine, die Sie löschen dürfen | AlmaLinux 9 und Ubuntu sind Stufe 1, „tested here“ ([Unterstützung von Betriebssystemen](../../../../../eng-us/help/os-support.md#tier-1-tested-here)) |
+| Ein Rechner oder eine virtuelle Maschine, die Sie löschen dürfen | AlmaLinux 9 und Ubuntu sind Stufe 1, „tested here“ ([Unterstützung von Betriebssystemen](../../../betriebssystemunterstuetzung.md#stufe-1-hier-getestet)) |
 | PHP 8.0 oder neuer (der eingebaute Server Velocity eingeschlossen) | prüfen mit `php -v` |
 | Composer 2 und Git | um den Code zu holen |
 | Kein Datenbankserver | SQLite 3 ist die Standarddatenbank |

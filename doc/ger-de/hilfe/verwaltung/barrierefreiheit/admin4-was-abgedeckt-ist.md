@@ -96,7 +96,7 @@ stehen unter [Tastatur](../../../../eng-us/features/6.0/admin4-design.md#keyboar
 - [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
 - [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
 - [Tastenkürzel](../../tastenkuerzel.md)
-- [Styling von admin4](../../../../eng-us/bc/6.0/admin4-styling.md) (für Entwicklerinnen und Entwickler, die es erweitern)
+- [Styling von admin4](../../../bc/6.0/admin4-gestaltung.md) (für Entwicklerinnen und Entwickler, die es erweitern)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

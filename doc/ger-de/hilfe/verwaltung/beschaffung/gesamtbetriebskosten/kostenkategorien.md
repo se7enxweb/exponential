@@ -65,7 +65,7 @@ Arbeit beschreibt, damit Sie Lieferanten die richtigen Dinge bepreisen lassen. S
 | Zeile | Treiber | Dokumentation |
 |---|---|---|
 | Webteam und Redaktion | Menge der Inhalte, Zahl der Abteilungen | [Personal und Kompetenzen](personal-und-kompetenzen.md) |
-| Administratoren | Websites, Rollen, Benutzer | [Kurs für die Administration der Website](../../../../../eng-us/help/trainers/site-administrators/README.md) |
+| Administratoren | Websites, Rollen, Benutzer | [Kurs für die Administration der Website](../../../trainer/website-administratoren/README.md) |
 | Schulung | Zahl der Personen und Rollen | [Schulungskosten](schulungskosten.md) |
 
 ## Qualität und Compliance

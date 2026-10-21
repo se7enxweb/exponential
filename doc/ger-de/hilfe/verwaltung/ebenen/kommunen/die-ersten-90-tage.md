@@ -52,7 +52,7 @@ Editor-Siteaccess anmelden.
 | Schritt | Lesen |
 |---|---|
 | Sektionen und Rollen für die Fachbereiche anlegen, die bearbeiten | [Sektionen](../../../../anleitungen/sektionen.md) |
-| Die Redaktion der Fachbereiche mit je einer echten Aufgabe schulen | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) |
+| Die Redaktion der Fachbereiche mit je einer echten Aufgabe schulen | [Editors 101](../../../trainer/redakteure-101/README.md) |
 | Die Sitzungen des laufenden Jahres veröffentlichen | [Ratssitzungen und örtliche Dienstleistungen](ratssitzungen-und-oertliche-dienstleistungen.md) |
 | Die alten Adressen der wichtigsten Anliegen umleiten | [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
 | Die Erklärung zur Barrierefreiheit und die Datenschutzerklärung veröffentlichen | [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) |

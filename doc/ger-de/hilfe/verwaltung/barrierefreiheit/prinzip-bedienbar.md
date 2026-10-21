@@ -68,7 +68,7 @@ admin4: Sprunglink, `aria-current="page"` im Brotkrumenpfad und im oberen Menü,
 | Design | Zielflächen mindestens 24 x 24 px (2.5.8); sichtbare Beschriftungen stimmen mit den zugänglichen Namen überein |
 | Entwicklung | Alternativen mit einem einzelnen Zeiger zum Ziehen (2.5.7); keine Aktionen allein beim Drücken des Zeigers |
 
-admin4: Zielflächen mindestens 24 x 24 px ([Styling von admin4](../../../../eng-us/bc/6.0/admin4-styling.md)); das Umsortieren
+admin4: Zielflächen mindestens 24 x 24 px ([Styling von admin4](../../../bc/6.0/admin4-gestaltung.md)); das Umsortieren
 von Unterelementen per Ziehen funktioniert auch mit der Tastatur und durch Bearbeiten der Prioritätszellen.
 
 ## Verwandte Seiten

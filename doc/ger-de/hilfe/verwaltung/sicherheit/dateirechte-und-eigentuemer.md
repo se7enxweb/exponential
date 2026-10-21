@@ -57,7 +57,7 @@ find var -type f -exec chmod 0660 {} +
 ```
 
 Grenzen für neue Dateien lassen sich auch in `config.php` mit `EZP_DIR_MODE_MAX` und `EZP_FILE_MODE_MAX` setzen
-([Grenzen für die Modi neuer Dateien](../../../../eng-us/bc/6.0/file-modes.md)).
+([Grenzen für die Modi neuer Dateien](../../../bc/6.0/dateimodi.md)).
 
 ## Root
 

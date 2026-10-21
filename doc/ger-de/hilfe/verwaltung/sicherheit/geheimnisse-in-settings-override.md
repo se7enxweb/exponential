@@ -46,7 +46,7 @@ die Website offen ([13.3 Geheimnisse in settings/override](../../../installation
 5. Mit `ManagedByDeployment` kann die Administration überhaupt keine Einstellungen schreiben; generierte Schlüssel werden
    trotzdem geschrieben.
 6. Schlüssel aus einem Secrets-Speicher: Das Audit kann seine Schlüssel aus Einstellungen übernehmen, die Sie schreiben
-   (`[AuditKeySettings] GenerateKeys=disabled`) ([4.6 Schlüssel](../../../../eng-us/bc/6.0/audit.md#46-keys)).
+   (`[AuditKeySettings] GenerateKeys=disabled`) ([4.6 Schlüssel](../../../bc/6.0/audit.md#46-schlüssel)).
 
 ## Eine Installation umziehen
 

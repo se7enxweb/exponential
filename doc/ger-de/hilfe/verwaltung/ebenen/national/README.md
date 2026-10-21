@@ -44,7 +44,7 @@ Regierungen veröffentlichen, geben allgemeine Praxis im öffentlichen Sektor wi
 5. **Viele Ministerien auf einer Plattform**, wenn die Website geteilt wird oder werden soll.
 
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
-[Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
+[Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 
 ## Was die nationale Regierung besonders macht
 

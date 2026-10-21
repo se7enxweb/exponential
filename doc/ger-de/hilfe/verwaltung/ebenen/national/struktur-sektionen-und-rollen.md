@@ -119,7 +119,7 @@ Webteam, Pressestelle. Setzen Sie Besch채ftigte nie in die Gruppe Members, die �
 - [Nationale Regierung](README.md)
 - [Schwerpunkte der Anforderungen f체r die nationale Regierung](schwerpunkte-der-anforderungen.md)
 - [Objektzust채nde](../../../../anleitungen/objektzustaende.md)
-- [Kurs f체r Website-Administratoren](../../../../../eng-us/help/trainers/site-administrators/README.md)
+- [Kurs f체r Website-Administratoren](../../../trainer/website-administratoren/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, 체bersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

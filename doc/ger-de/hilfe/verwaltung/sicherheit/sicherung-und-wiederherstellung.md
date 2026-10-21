@@ -76,7 +76,7 @@ Nicht jeder Verlust erfordert eine vollständige Wiederherstellung:
 
 | Verloren | Wiederherstellen mit |
 |---|---|
-| eine in den Papierkorb verschobene Seite | **Wiederherstellen** im Papierkorb (`content/trash`) ([Die Papierkorbansicht](../../../../eng-us/bc/6.0/trash.md)) |
+| eine in den Papierkorb verschobene Seite | **Wiederherstellen** im Papierkorb (`content/trash`) ([Die Papierkorbansicht](../../../bc/6.0/papierkorb.md)) |
 | ein früherer Text einer Seite | **Neuen Entwurf machen** aus der alten Version auf der Versionsseite ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)) |
 | ein entferntes Benutzerkonto | nur eine Wiederherstellung: Benutzerobjekte kommen nie in den Papierkorb; nutzen Sie für ausscheidende Beschäftigte besser **Deaktivieren und verschieben** |
 | ein archivierter Audit-Tag | `./console exp:audit restore --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user` |

@@ -40,13 +40,13 @@ Ergebnissen, nicht nach einem Etikett.
 
 | Verlangen Sie | Warum | Prüfen gegen |
 |---|---|---|
-| Eine Kursgliederung mit Modulen, Lektionen und Stunden | um Angebote auf derselben Grundlage zu vergleichen | die Kursübersichten im [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md) |
+| Eine Kursgliederung mit Modulen, Lektionen und Stunden | um Angebote auf derselben Grundlage zu vergleichen | die Kursübersichten im [Kurskatalog](../../../trainer/kurskatalog.md) |
 | Die Version von Exponential, die der Kurs verwendet | Übungen unterscheiden sich zwischen Versionen | die Version, die Ihre Website betreibt |
-| Das Lab: wer es bereitstellt, worauf | damit die Teilnehmenden an etwas üben, das Ihrer Website ähnelt | [Lab-Kurzkarte](../../../../../eng-us/help/trainers/lab-quick-card.md) |
+| Das Lab: wer es bereitstellt, worauf | damit die Teilnehmenden an etwas üben, das Ihrer Website ähnelt | [Lab-Kurzkarte](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md) |
 | Die Erfahrung der Trainerin oder des Trainers mit Exponential | die Qualität hängt von der Person ab | Referenzen, die Sie selbst prüfen |
 | Wie der Kurs Barrierefreiheit abdeckt | öffentliche Websites haben gesetzliche Pflichten | [Modul 8 von Editors 201](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md) |
-| Vorkehrungen für Teilnehmende mit Behinderungen | Ihre Pflicht als Arbeitgeber | [Vorkehrungen und inklusive Praxis](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md) |
-| Prüfung und was eine Bescheinigung aussagt | ehrlicher Wortlaut, kein Anspruch auf offiziellen Status | [Teilnahmebescheinigungen, die Sie ausstellen](../../../../../eng-us/help/trainers/assessments/module-01-designing-assessments/completion-certificates-you-issue.md) |
+| Vorkehrungen für Teilnehmende mit Behinderungen | Ihre Pflicht als Arbeitgeber | [Vorkehrungen und inklusive Praxis](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md) |
+| Prüfung und was eine Bescheinigung aussagt | ehrlicher Wortlaut, kein Anspruch auf offiziellen Status | [Teilnahmebescheinigungen, die Sie ausstellen](../../../trainer/pruefungen/modul-01-pruefungen-gestalten/abschlusszertifikate-die-sie-ausstellen.md) |
 | Material, das Sie behalten | für spätere Einarbeitung | siehe unten |
 | Kurs in Ihrem Inhaltsmodell oder allgemein | zugeschnittene Schulung wirkt besser | die Klassen Ihrer Website |
 

@@ -46,7 +46,7 @@ allgemeine Praxis im öffentlichen Sektor wieder, und die Verfahren unterscheide
 4. **Die ersten 90 Tage**.
 
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
-[Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
+[Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 Die Sitzungen eines Gemeinderats behandelt
 [Ratssitzungen und örtliche Dienstleistungen](../kommunen/ratssitzungen-und-oertliche-dienstleistungen.md).
 

@@ -139,7 +139,7 @@ Seiten zur Führung sind für Exponential 6 geschrieben, den Kernel, zu dem dies
 
 | Schicht | Fakten | Lesen |
 |---|---|---|
-| PHP | 8.0 bis 8.5; Velocity braucht 8.1 oder höher; 7.4 nur bis 6.0.7 | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| PHP | 8.0 bis 8.5, auch für Velocity (ab seinem Release 0.0.4.54); 7.4 nur bis 6.0.7 | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Datenbank | In der Reihenfolge der Empfehlung: SQLite 3 (der Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Betriebssystem | „fast jedes, auf dem PHP 8.0 oder höher läuft“, eingeteilt in vier Stufen | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Webserver | Exponential Velocity (empfohlen), FrankenPHP (produktionsreife Alternative), Apache oder nginx mit PHP-FPM und weitere | [Kapitel 8: Die Site ausliefern](../../installation/08-die-website-ausliefern.md) |

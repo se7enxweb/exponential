@@ -47,7 +47,7 @@ Währungseinheit.
 | A11 | Releases und Updates einspielen | 8 Tage des Lieferanten pro Jahr (Beispielannahme) |
 | A12 | Redaktion | 12 Personen, je 4 zusätzliche Stunden pro Monat (Beispielannahme) |
 | A13 | Administration der Website | 1 Person, 16 Stunden pro Monat (Beispielannahme) |
-| A14 | Erste Schulung | 2 Termine Editors 101 mit je 3 Trainertagen, dazu 1 Kurs zur Administration der Website mit 5 Trainertagen (Beispielannahme für die Zahl der Termine; Kurslängen aus dem [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)) |
+| A14 | Erste Schulung | 2 Termine Editors 101 mit je 3 Trainertagen, dazu 1 Kurs zur Administration der Website mit 5 Trainertagen (Beispielannahme für die Zahl der Termine; Kurslängen aus dem [Kurskatalog](../../../trainer/kurskatalog.md)) |
 | A15 | Einarbeitung neuer Beschäftigter | 2 Trainertage pro Jahr (Beispielannahme) |
 | A16 | Ausstieg am Ende des Zeithorizonts | 10 Tage des Lieferanten (Beispielannahme) |
 | A17 | Risikoreserve | 10 % aller übrigen Kosten (Beispielannahme) |

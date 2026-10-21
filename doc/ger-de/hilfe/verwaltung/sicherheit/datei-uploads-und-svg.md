@@ -42,7 +42,7 @@ Seit dem 15. Oktober 2026 nimmt der Bild-Datentyp auf jeder Website SVG an (`.sv
 aus dem ein Browser Skript ausführen kann, deshalb wird es nie so gespeichert, wie es hochgeladen wurde: Die
 gespeicherte Datei ist die Ausgabe des Bereinigers. Jeder Weg, der ein Bild speichert, bereinigt (Bearbeitungsformular,
 Upload-Modul, Mehrfach-Upload, Upload-Dialog des Editors, AJAX-Uploader, WebDAV, Paketimport). Eine Datei, die vorgibt,
-ein SVG zu sein, aber nicht als solches erkannt wird, wird nicht gespeichert ([SVG-Bilder](../../../../eng-us/bc/6.0/svg-images.md)).
+ein SVG zu sein, aber nicht als solches erkannt wird, wird nicht gespeichert ([SVG-Bilder](../../../bc/6.0/svg-bilder.md)).
 
 ## Beibehalten
 
@@ -70,7 +70,7 @@ Erwartet: die Positivliste so, wie Sie sie beabsichtigen, und dreimal `404`.
 
 ## Verwandte Seiten
 
-- [SVG-Bilder](../../../../eng-us/bc/6.0/svg-images.md)
+- [SVG-Bilder](../../../bc/6.0/svg-bilder.md)
 - [13.2 Was der Webserver nie herausgeben darf](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)
 - [SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

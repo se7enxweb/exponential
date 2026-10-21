@@ -58,7 +58,7 @@ jener Zeit liefen auf der Codebasis von eZ Publish, die ihr Hersteller nach fast
 Exponential führt diese Codebasis fort ([Wer ist 7x?](../../../wer-ist-7x.md)).
 
 Eine Website, die auf PHP 7.4 bleiben muss, kann höchstens 6.0.7 betreiben, das nicht mehr die gepflegte Linie ist
-([2. Anforderungen](../../../../../eng-us/install/02-requirements.md#versions)).
+([2. Anforderungen](../../../../installation/02-voraussetzungen.md#versionen)).
 
 ## Erweiterungen
 

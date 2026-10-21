@@ -96,5 +96,5 @@ IP.6 Moral rights and credits. <as required by applicable law>.
 - [Ausschreibungsvorlagen](README.md)
 - [Klausel zu Open-Source-Lizenz und Verfügbarkeit des Quellcodes](klausel-open-source-lizenz-und-quellcode.md)
 - [Anforderungen an Open Source und Lizenzierung](../anforderungen/anforderungen-an-open-source-und-lizenzierung.md)
-- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
+- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

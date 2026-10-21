@@ -53,8 +53,8 @@ und mit Workflows, die eine Version zur Freigabe zurückhalten ([Workflows](../.
 
 | Schritt | Was | Material |
 |---|---|---|
-| Kurs | Editors 101, in einer Gruppe oder als Lektionen im eigenen Tempo mit einer Mentorin oder einem Mentor | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) |
-| Übung | der Abschlussartikel von Editors 101 auf der Schulungsinstallation | [Modul 9: der Siteaccess Editor](../../../../../eng-us/help/trainers/editors-101/module-09-the-editor-siteaccess/README.md) |
+| Kurs | Editors 101, in einer Gruppe oder als Lektionen im eigenen Tempo mit einer Mentorin oder einem Mentor | [Editors 101](../../../trainer/redakteure-101/README.md) |
+| Übung | der Abschlussartikel von Editors 101 auf der Schulungsinstallation | [Modul 9: der Siteaccess Editor](../../../trainer/redakteure-101/modul-09-der-editor-siteaccess/README.md) |
 | Erste Arbeit live | vorhandene Seiten in der eigenen Sektion der Person bearbeiten; eine leitende Redakteurin oder ein leitender Redakteur prüft vor der Veröffentlichung | [Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md) |
 | Grundlagen der Barrierefreiheit | Alternativtext, Überschriften, Linktext | [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) |
 
@@ -75,9 +75,9 @@ der Checkliste zur redaktionellen Qualität im Abschnitt mit den Checklisten fü
 
 Ein Administrator erhält mehr Macht und braucht mehr Sorgfalt:
 
-- beginnen Sie mit Editors 101, Module 1 bis 3, dann [Administration der Website](../../../../../eng-us/help/trainers/site-administrators/README.md);
+- beginnen Sie mit Editors 101, Module 1 bis 3, dann [Administration der Website](../../../trainer/website-administratoren/README.md);
 - vergeben Sie die Administratorrolle erst nach dem Modul zur Sicherheit
-  ([Modul 8: Sicherheit](../../../../../eng-us/help/trainers/site-administrators/module-08-security/README.md));
+  ([Modul 8: Sicherheit](../../../trainer/website-administratoren/modul-08-sicherheit/README.md));
 - verlangen Sie für Administratoren die zweistufige Anmeldung, wo Ihre Website sie verwendet
   ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md));
 - gehen Sie die Betriebsroutine gemeinsam durch: [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md).
@@ -91,7 +91,7 @@ Ein Administrator erhält mehr Macht und braucht mehr Sorgfalt:
 | Mentor oder prüfende Person | um zu wissen, wer freigegeben hat |
 
 Halten Sie personenbezogene Daten im Nachweis auf das Minimum: Name, Kurs, Datum. Dieselbe Regel gilt für Bescheinigungen,
-die Sie ausstellen ([Teilnahmebescheinigungen, die Sie ausstellen](../../../../../eng-us/help/trainers/assessments/module-01-designing-assessments/completion-certificates-you-issue.md)).
+die Sie ausstellen ([Teilnahmebescheinigungen, die Sie ausstellen](../../../trainer/pruefungen/modul-01-pruefungen-gestalten/abschlusszertifikate-die-sie-ausstellen.md)).
 
 ## Verwandte Seiten
 

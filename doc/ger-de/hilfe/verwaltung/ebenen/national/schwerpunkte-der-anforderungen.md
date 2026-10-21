@@ -117,7 +117,7 @@ Löschung beim Entfernen eines Kontos, Pseudonymisierung im Audit und Maskierung
 
 Die Bereiche zu den Anforderungen in dieser Hilfe für Verwaltungen gehen tiefer:
 [Barrierefreiheit](../../barrierefreiheit/README.md), [Sicherheit](../../sicherheit/README.md),
-[Datenschutz](../../../../../eng-us/help/government/privacy/README.md) und [Schriftgut und Archivierung](../../../../../eng-us/help/government/records-and-archiving/README.md).
+[Datenschutz](../../datenschutz/README.md) und [Schriftgut und Archivierung](../../schriftgut-und-archivierung/README.md).
 
 ## Verwandte Seiten
 

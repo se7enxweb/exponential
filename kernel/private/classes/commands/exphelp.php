@@ -25,6 +25,7 @@ class Exphelp extends \Exponential\Runnable\Command
                                  "./console exp:help index                     build the index (if it is not current) and describe it\n" .
                                  "./console exp:help index --rebuild           build it again, whatever is cached\n" .
                                  "./console exp:help index --list              one line per page: id, type, category, audiences, title\n" .
+                                 "./console exp:help index --no-images         without fetching the pages' external images\n" .
                                  "./console exp:help search \"clear cache\"      search the pages (--audience, --category, --type, --limit)\n" .
                                  "./console exp:help show guides/caches.md     the metadata and headings of one page\n" .
                                  "./console exp:help check                     check the links and images of every page (--below=guides/)\n" .
@@ -36,19 +37,22 @@ class Exphelp extends \Exponential\Runnable\Command
                                  "pages; nothing is changed except the cache in var/<site>/cache/exphelp. --json prints one JSON document.\n" .
                                  "index builds the index of every language of exphelp.ini [DocLanguages] (doc/eng-us/, doc/ger-de/ ...);\n" .
                                  "--language=ger-de limits it to one, and makes search, show, check and pdf read that language.\n" .
+                                 "index also stores a copy of every https image a page shows (README.md's screenshots) in the cache's\n" .
+                                 "images/, served by exphelp/image, so the admin's Content Security Policy allows them.\n" .
                                  "Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing was found, 2 error.",
                 'use-session'    => false,
                 'use-modules'    => false,
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[rebuild][list][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:][fix][paths:][dirnames:]', '', array(
+        $options = $this->startup( '[rebuild][list][no-images][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:][fix][paths:][dirnames:]', '', array(
             'fix'      => 'maps: write .paths.json and .dirnames.json as the union of their entries, sorted',
             'paths'    => 'maps --fix: also merge the entries of this JSON file into .paths.json',
             'dirnames' => 'maps --fix: also merge the entries of this JSON file into .dirnames.json',
             'language' => 'the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; the old en/us and de are accepted)',
             'rebuild'  => 'index: build the index again even when the cached one is current',
             'list'     => 'index: list every page',
+            'no-images' => 'index: do not fetch the external images of the pages (they stay links)',
             'json'     => 'Print one JSON document instead of the text',
             'audience' => 'search, index --list: only pages for this audience (editor, admin, developer, user)',
             'category' => 'search, index --list: only pages of this category',
@@ -159,6 +163,7 @@ class Exphelp extends \Exponential\Runnable\Command
         $languages = \expHelpLanguage::fromIni();
         $wanted = $this->languageOption( $options, $languages );
         $languageReports = array();
+        $imageUrls = array();
         foreach ( $languages->directories() as $directory )
         {
             if ( $directory === $languages->defaultDirectory() || ( $wanted !== null && $wanted !== $directory ) )
@@ -166,6 +171,7 @@ class Exphelp extends \Exponential\Runnable\Command
             $other = \expHelpDocumentIndex::forLanguage( $directory, $languages );
             $otherStats = !empty( $options['rebuild'] ) ? $other->rebuild() : null;
             $otherDocuments = $other->documents();
+            $imageUrls += self::imageUrls( $other );
             $translated = count( array_filter( $otherDocuments, function ( $d ) { return empty( $d['fallback'] ); } ) );
             $otherSearch = method_exists( 'expHelpSearch', 'rebuild' ) ? ( new \expHelpSearch( $other ) )->rebuild() : null;
             $languageReports[$directory] = array( 'pages' => count( $otherDocuments ), 'translated' => $translated,
@@ -175,7 +181,10 @@ class Exphelp extends \Exponential\Runnable\Command
         }
         $index = \expHelpDocumentIndex::forLanguage( $languages->defaultDirectory(), $languages );
         if ( $wanted !== null && $wanted !== $languages->defaultDirectory() )
+        {
+            $this->fetchImages( $imageUrls, $options );
             return $this->languageReport( $languageReports, $json );
+        }
         $stats = null;
         $start = microtime( true );
         if ( !empty( $options['rebuild'] ) )
@@ -189,6 +198,8 @@ class Exphelp extends \Exponential\Runnable\Command
             $search = new \expHelpSearch( $index );
             $searchStats = $search->rebuild();
         }
+        // the external images of the pages, copied for exphelp/image (expHelpRemoteImages)
+        $imageStats = $this->fetchImages( $imageUrls + self::imageUrls( $index ), $options );
         $report = array(
             'signature'  => $index->signature(),
             'cache'      => $index->cacheDir(),
@@ -203,6 +214,7 @@ class Exphelp extends \Exponential\Runnable\Command
             'categories' => array_map( function ( $c ) { return $c['count']; }, $index->categories() ),
             'audiences'  => array_map( function ( $a ) { return $a['count']; }, $index->audiences() ),
             'search'     => is_array( $searchStats ) ? $searchStats : null,
+            'remote_images' => $imageStats,
             'language'   => $index->language(),
             'languages'  => $languageReports,
         );
@@ -234,6 +246,13 @@ class Exphelp extends \Exponential\Runnable\Command
         if ( is_array( $report['search'] ) )
             $cli->output( 'Search index: ' . implode( ', ', array_map( function ( $k, $v ) { return $k . ' ' . ( is_scalar( $v ) ? $v : json_encode( $v ) ); },
                                                                       array_keys( $report['search'] ), $report['search'] ) ) );
+        if ( is_array( $imageStats ) )
+        {
+            $cli->output( sprintf( 'External images: %d, %d stored, %d already stored, %d failed (%s)', $imageStats['images'],
+                                   $imageStats['stored'], $imageStats['cached'], count( $imageStats['failed'] ), $imageStats['dir'] ) );
+            foreach ( $imageStats['failed'] as $url => $reason )
+                $cli->warning( '  not stored, shown as a link: ' . $url . ': ' . $reason );
+        }
         foreach ( array( 'types', 'categories', 'audiences' ) as $group )
             $cli->output( sprintf( '%-11s %s', ucfirst( $group ) . ':', implode( ', ', array_map( function ( $k, $n ) { return "$k $n"; },
                                    array_keys( array_filter( $report[$group] ) ), array_filter( $report[$group] ) ) ) ) );
@@ -247,6 +266,32 @@ class Exphelp extends \Exponential\Runnable\Command
             return 1;
         }
         return 0;
+    }
+
+    /**
+     * The external https images the pages of an index show.
+     *
+     * @param \expHelpDocumentIndex $index
+     * @return array url => true
+     */
+    protected static function imageUrls( $index )
+    {
+        return class_exists( 'expHelpRemoteImages' ) ? \expHelpRemoteImages::indexReferences( $index ) : array();
+    }
+
+    /**
+     * Stores a copy of each image (expHelpRemoteImages::fetchAll()), unless --no-images.
+     *
+     * @param array $urls url => true
+     * @param array $options
+     * @return array|null the statistics with the directory, null when skipped
+     */
+    protected function fetchImages( array $urls, array $options )
+    {
+        if ( !empty( $options['no-images'] ) || !class_exists( 'expHelpRemoteImages' ) )
+            return null;
+        $images = new \expHelpRemoteImages();
+        return $images->fetchAll( array_keys( $urls ) ) + array( 'dir' => (string)$images->dir() );
     }
 
     /**

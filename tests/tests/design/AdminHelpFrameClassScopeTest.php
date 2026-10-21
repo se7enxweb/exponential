@@ -76,4 +76,23 @@ class AdminHelpFrameClassScopeTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/\.a4-package-creator-list label > span \{[^}]*flex: 1 1 auto;/', $css );
         $this->assertMatchesRegularExpression( '/\.a4-package-creator-list label \.a4-help \{[^}]*display: block;/', $css );
     }
+
+    /**
+     * The help dashboard's top block (the search hero) ends with the Browse all help button to exphelp/contents,
+     * the same markup as the viewer sidebar; the lower link in the sections stays.
+     *
+     * @dataProvider designs
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'designs' )]
+    public function testDashboardHeroEndsWithBrowseAllHelpButton( $design )
+    {
+        $tpl = file_get_contents( self::root() . '/design/' . $design . '/templates/exphelp/dashboard.tpl' );
+        $this->assertSame( 1, preg_match( '#<section class="a4-help-hero".*?</section>#s', $tpl, $m ), $design . ': no hero block' );
+        $button = '<a class="a4-btn a4-btn-small" href={\'exphelp/contents\'|ezurl}><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {\'Browse all help\'|i18n( \'kernel/exphelp\' )}</a>';
+        $this->assertStringContainsString( $button, $m[0], $design . ': the hero has no Browse all help button' );
+        $this->assertMatchesRegularExpression( '#' . preg_quote( $button, '#' ) . '</p>\s*</section>$#', $m[0], $design . ': the button is not at the bottom of the hero' );
+        $this->assertStringContainsString( 'class="a4-help-section-more" href={\'exphelp/contents\'|ezurl}', $tpl, $design . ': the lower Browse all help link is gone' );
+        $css = file_get_contents( self::root() . '/design/' . $design . '/stylesheets/modules/help.css' );
+        $this->assertStringContainsString( '.a4-help-hero-actions {', $css );
+    }
 }

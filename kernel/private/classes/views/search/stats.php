@@ -51,7 +51,15 @@ class Stats extends \Exponential\Runnable\ModuleView
         $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $sort = self::sortKey( isset( $userParameters['sort'] ) ? $userParameters['sort'] : '' );
         $show = self::showKey( isset( $userParameters['show'] ) ? $userParameters['show'] : '' );
-        $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        // The search form without scripts is posted (q): answered with 303 to its /(q)/... address
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+        {
+            \expViewParameters::redirect( 'search/stats' . \expViewParameters::suffix( array(
+                'sort' => $sort !== self::SORTS[0] ? $sort : '',
+                'show' => $show !== self::SHOWS[0] ? $show : '',
+                'q' => \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::posted( $_POST, 'q' ) ) ) ) );
+        }
+        $search = \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
 
         $wasReset = false;
         if ( $module->isCurrentAction( 'ResetSearchStats' ) )
@@ -109,7 +117,7 @@ class Stats extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "search_stats_sorts", self::SORTS );
         $tpl->setVariable( "search_stats_show", $show );
         $tpl->setVariable( "search_stats_search", $search );
-        $tpl->setVariable( "search_stats_suffix", $search !== '' ? '?q=' . rawurlencode( $search ) : '' );
+        $tpl->setVariable( "search_stats_suffix", \expViewParameters::suffix( array( 'q' => $search ) ) );
         $tpl->setVariable( "search_stats_reset", $wasReset );
         // the query string of a search for each phrase, so the page can offer to run it again
         $searchQueries = array();

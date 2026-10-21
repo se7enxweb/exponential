@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an die Schulungskoordination, die für jede Person einer öffentlichen Stelle sagen muss, welche
 Schulung sie braucht. Sie ordnet die üblichen Rollen den Trainerkursen dieser Hilfe und den Modulen darin zu. Die Kurse,
-Module und Längen stammen aus dem [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md) und den dort verlinkten
+Module und Längen stammen aus dem [Kurskatalog](../../../trainer/kurskatalog.md) und den dort verlinkten
 Kursübersichten.
 
 ## Inhalt
@@ -37,7 +37,7 @@ zeigt, wie beide zusammenkommen.
 
 | Rolle | Muss | Soll | Optional |
 |---|---|---|---|
-| Gelegentliche Redaktion (aktualisiert einige Seiten) | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md), Module 1 bis 6, oder der [Tag für die Redaktion](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/editors-day.md) | der Rest von Editors 101 | |
+| Gelegentliche Redaktion (aktualisiert einige Seiten) | [Editors 101](../../../trainer/redakteure-101/README.md), Module 1 bis 6, oder der [Tag für die Redaktion](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/editors-day.md) | der Rest von Editors 101 | |
 | Regelmäßige Redaktion (veröffentlicht jede Woche) | Editors 101 | [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) |
 | Freigebende oder leitende Redaktion | Editors 101 | Editors 201, besonders [Modul 5: Freigaben und Zusammenarbeit](../../../../../eng-us/help/trainers/editors-201/module-05-approvals-and-collaboration/README.md) und [Modul 4: Objektzustände](../../../../../eng-us/help/trainers/editors-201/module-04-object-states/README.md) | |
 | Übersetzende | Editors 101 | Editors 201, [Modul 1: Übersetzungen und Sprachen](../../../../../eng-us/help/trainers/editors-201/module-01-translations-and-languages/README.md) | |
@@ -49,11 +49,11 @@ zeigt, wie beide zusammenkommen.
 
 | Rolle | Muss | Soll | Optional |
 |---|---|---|---|
-| Administration der Website | Editors 101, Module 1 bis 3; [Administration der Website](../../../../../eng-us/help/trainers/site-administrators/README.md) | [Suche](../../../../../eng-us/help/trainers/search/README.md) | [Multisite und Website-Pakete](../../../../../eng-us/help/trainers/multisite-and-packages/README.md) für mehrere Websites |
-| Sicherheits- oder Audit-Beauftragte | Administration der Website, [Modul 7: Protokolle und das Audit-Protokoll](../../../../../eng-us/help/trainers/site-administrators/module-07-logs-and-the-audit-trail/README.md) und [Modul 8: Sicherheit](../../../../../eng-us/help/trainers/site-administrators/module-08-security/README.md) | | |
+| Administration der Website | Editors 101, Module 1 bis 3; [Administration der Website](../../../trainer/website-administratoren/README.md) | [Suche](../../../../../eng-us/help/trainers/search/README.md) | [Multisite und Website-Pakete](../../../../../eng-us/help/trainers/multisite-and-packages/README.md) für mehrere Websites |
+| Sicherheits- oder Audit-Beauftragte | Administration der Website, [Modul 7: Protokolle und das Audit-Protokoll](../../../trainer/website-administratoren/modul-07-logs-und-das-audit-protokoll/README.md) und [Modul 8: Sicherheit](../../../trainer/website-administratoren/modul-08-sicherheit/README.md) | | |
 | Systemadministration oder Hosting-Personal | Administration der Website (Caches, Cronjobs, Protokolle, Upgrades); [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | | |
-| PHP-Entwicklung | [Entwickler](../../../../../eng-us/help/trainers/developers/README.md) | | [Migration zu Exponential](../../../../../eng-us/help/trainers/migration/README.md) |
-| Design oder Frontend-Entwicklung | [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) | sein [Modul 5: Barrierefreiheit und rechts nach links](../../../../../eng-us/help/trainers/theme-designers/module-05-accessibility-and-right-to-left/README.md) ist für öffentliche Websites ein Muss | |
+| PHP-Entwicklung | [Entwickler](../../../trainer/entwickler/README.md) | | [Migration zu Exponential](../../../../../eng-us/help/trainers/migration/README.md) |
+| Design oder Frontend-Entwicklung | [Theme-Design](../../../trainer/theme-designer/README.md) | sein [Modul 5: Barrierefreiheit und rechts nach links](../../../trainer/theme-designer/modul-05-barrierefreiheit-und-rechts-nach-links/README.md) ist für öffentliche Websites ein Muss | |
 | Mitglied eines Migrationsteams | Administration der Website (ausgewählte Module), Migration zu Exponential | Entwickler | |
 
 ## Leitungs- und Unterstützungsrollen
@@ -62,7 +62,7 @@ zeigt, wie beide zusammenkommen.
 |---|---|---|---|
 | Projektleitung, Product Owner | [Halber Tag für Entscheidungsträger](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/decision-makers-half-day.md) | Editors 101, Module 1 bis 3 | |
 | Servicedesk (First-Level-Support für die Redaktion) | Editors 101 | Editors 201 | Administration der Website, Module 1 bis 2 |
-| Interne Trainerinnen und Trainer | [Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md), dann der Kurs, den sie unterrichten werden | [Prüfungen](../../../../../eng-us/help/trainers/assessments/README.md) | |
+| Interne Trainerinnen und Trainer | [Train the Trainer](../../../trainer/train-the-trainer/README.md), dann der Kurs, den sie unterrichten werden | [Prüfungen](../../../trainer/pruefungen/README.md) | |
 
 ## Rollen den Berechtigungen zuordnen
 
@@ -89,7 +89,7 @@ eingehalten wurde.
 
 - [Schulung in der Beschaffung](README.md)
 - [Ein Schulungsplan für eine öffentliche Stelle](schulungsplan-fuer-eine-oeffentliche-stelle.md)
-- [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)
+- [Kurskatalog](../../../trainer/kurskatalog.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

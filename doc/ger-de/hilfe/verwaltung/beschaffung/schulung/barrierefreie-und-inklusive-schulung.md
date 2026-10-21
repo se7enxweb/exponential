@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Schulungskoordination einer öffentlichen Stelle
 deren Beschäftigten Exponential beibringen. Öffentliche Arbeitgeber haben Pflichten gegenüber Beschäftigten mit
 Behinderungen, und Redaktionsmitglieder, die assistive Technologien nutzen, müssen das System erlernen können, mit dem
 sie arbeiten werden. Die Hinweise stammen aus
-[Modul 5 von Train the Trainer: Barrierefreiheit und Inklusion](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)
+[Modul 5 von Train the Trainer: Barrierefreiheit und Inklusion](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)
 und den Nachweisen zur Barrierefreiheit in den [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -45,13 +45,13 @@ Sie auf admin4:
 
 Der Online-Editor (TinyMCE) wurde **nicht** auf WCAG **geprüft**; planen Sie zusätzliche Zeit und eine Ausweichlösung für
 Teilnehmende ein, denen die Nutzung mit assistiven Technologien schwerfällt ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#known-gaps)).
-[Mit der barrierefreien Administration unterrichten](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/teaching-with-the-accessible-administration.md)
+[Mit der barrierefreien Administration unterrichten](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/mit-der-barrierefreien-administration-unterrichten.md)
 enthält die Lektion.
 
 ## Barrierefreies Kursmaterial
 
 - Handouts mit echten Überschriften, Alternativtext für Screenshots und lesbarem Kontrast
-  ([Barrierefreie Kursmaterialien](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accessible-course-materials.md)).
+  ([Barrierefreie Kursmaterialien](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/barrierefreie-kursmaterialien.md)).
 - Die Hilfe selbst folgt denselben Regeln: eine Hauptüberschrift je Seite, benannte Navigation, beschriftete Suche
   ([Hilfesystem](../../../../../eng-us/features/6.0/help-system.md#languages-and-accessibility)), sodass die Teilnehmenden sie mit
   assistiven Technologien nutzen können.
@@ -64,7 +64,7 @@ enthält die Lektion.
 Die Administration ist in mehreren Sprachen der Oberfläche verfügbar, und Sprachen, die von rechts nach links
 geschrieben werden, setzen die Schreibrichtung der Seite ([Sprachen](../../../sprachen.md), [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)).
 Arbeitet Ihr Personal in einer anderen Sprache als Englisch, prüfen Sie vor dem Kurs, welche Übersetzungen der
-Administration vollständig sind, und planen Sie für Begriffe, die Englisch bleiben. [Sprachen und rechts nach links im Unterricht](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/languages-and-right-to-left-in-class.md)
+Administration vollständig sind, und planen Sie für Begriffe, die Englisch bleiben. [Sprachen und rechts nach links im Unterricht](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/sprachen-und-rechts-nach-links-im-kurs.md)
 behandelt den Unterricht in gemischtsprachigen Gruppen.
 
 ## Vorkehrungen im Unterricht und bei Prüfungen
@@ -77,8 +77,8 @@ behandelt den Unterricht in gemischtsprachigen Gruppen.
 | Lernunterschiede | kürzere Blöcke, schriftliche Schritte | zusätzliche Zeit, ein ruhiger Raum |
 
 Fragen Sie die Teilnehmenden vor dem Kurs vertraulich, was sie brauchen. Einzelheiten:
-[Vorkehrungen und inklusive Praxis](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md)
-und [Vorkehrungen bei Prüfungen](../../../../../eng-us/help/trainers/assessments/module-01-designing-assessments/accommodations-in-assessment.md).
+[Vorkehrungen und inklusive Praxis](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md)
+und [Vorkehrungen bei Prüfungen](../../../trainer/pruefungen/modul-01-pruefungen-gestalten/nachteilsausgleich-bei-pruefungen.md).
 
 ## Was Sie von einem Lieferanten verlangen sollten
 
@@ -91,7 +91,7 @@ und [Vorkehrungen bei Prüfungen](../../../../../eng-us/help/trainers/assessment
 ## Verwandte Seiten
 
 - [Schulung in der Beschaffung](README.md)
-- [Train the Trainer, Modul 5](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)
+- [Train the Trainer, Modul 5](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)
 - [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

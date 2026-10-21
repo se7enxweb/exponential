@@ -45,7 +45,7 @@ allgemeine Praxis im öffentlichen Sektor wieder.
 4. **Die ersten 90 Tage**.
 
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
-[Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
+[Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 Eine Behörde eines Ministeriums kann sich auch eine Plattform mit diesem teilen; siehe
 [Viele Ministerien auf einer Plattform](../national/viele-ministerien-auf-einer-plattform.md).
 

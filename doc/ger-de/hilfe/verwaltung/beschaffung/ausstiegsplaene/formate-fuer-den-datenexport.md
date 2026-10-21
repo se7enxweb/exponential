@@ -89,7 +89,7 @@ Dateien auf der Festplatte liegen.
 | Layouts (Exponential Layouts) | `./console exp:layouts export --all --output=<file.zip>` | ZIP-Übertragungsdatei |
 | Formulareingaben | `./console ext:bccie:export --object=<id> --format=csv` | CSV oder SYLK |
 | Nachweise der E-Mail-Einwilligung | `./console exp:mailconsent` | CSV |
-| Audit-Protokoll | `./console exp:audit export --format=jsonl\|csv\|bundle --out=<path>` | JSON Lines, CSV oder ein Bündel mit `records.jsonl` und einer signierten `manifest.json` ([Audit-Leitfaden](../../../../../eng-us/bc/6.0/audit.md)) |
+| Audit-Protokoll | `./console exp:audit export --format=jsonl\|csv\|bundle --out=<path>` | JSON Lines, CSV oder ein Bündel mit `records.jsonl` und einer signierten `manifest.json` ([Audit-Leitfaden](../../../../bc/6.0/audit.md)) |
 
 ## Inhalte über HTTP
 

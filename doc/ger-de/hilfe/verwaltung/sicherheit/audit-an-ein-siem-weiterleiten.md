@@ -14,7 +14,7 @@ Security Operations Center oder eine zentrale Protokollplattform haben. Werden A
 weitergeleitet, kann ein kompromittierter Rechner seine eigene Geschichte nicht unbemerkt umschreiben, und Ihre
 Analystinnen und Analysten können die Website mit dem Rest Ihrer Infrastruktur in Beziehung setzen
 ([Sicherheitshärtung: Beobachten](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)).
-Die Konfiguration stammt aus [6.5 Weiterleitung an ein SIEM](../../../../eng-us/bc/6.0/audit.md#65-siem-forwarding).
+Die Konfiguration stammt aus [6.5 Weiterleitung an ein SIEM](../../../bc/6.0/audit.md#65-weiterleitung-an-ein-siem).
 
 ## Inhalt
 
@@ -91,11 +91,11 @@ Webhook-Signatur; in PHP lautet die Prüfung `expAuditWebhookSink::verify( $body
   Betriebskarte des Dashboards zeigt die Ziele.
 - Denken Sie daran, dass die Datenschutzeinstellungen vor der Weiterleitung greifen: Adressen gekürzt, Sitzungen gehasht.
   Stimmen Sie die Aufbewahrung im SIEM mit Ihrer oder Ihrem Datenschutzbeauftragten ab.
-- In einem Cluster leitet jeder Server seine eigenen Einträge weiter ([6.3 Cluster](../../../../eng-us/bc/6.0/audit.md#63-cluster)).
+- In einem Cluster leitet jeder Server seine eigenen Einträge weiter ([6.3 Cluster](../../../bc/6.0/audit.md#63-cluster)).
 
 ## Verwandte Seiten
 
-- [Audit-Leitfaden, 6.5 Weiterleitung an ein SIEM](../../../../eng-us/bc/6.0/audit.md#65-siem-forwarding)
+- [Audit-Leitfaden, 6.5 Weiterleitung an ein SIEM](../../../bc/6.0/audit.md#65-weiterleitung-an-ein-siem)
 - [Integrität und Prüfung des Audit-Protokolls](audit-integritaet-und-pruefung.md)
 - [Audit-Protokoll für Hoster](../../hosting/sicherheit/pruefprotokoll.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

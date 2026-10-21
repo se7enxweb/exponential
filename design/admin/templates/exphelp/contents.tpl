@@ -13,7 +13,10 @@
 <div class="a4-page a4-help-frame a4-help-contents" data-exphelp data-exphelp-i18n="{$help_i18n_json|wash}">
 
     <div class="a4-help-viewer-bar">
-        <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help Start'|i18n( 'kernel/exphelp' )}</a>
+        <div class="a4-help-viewer-line" data-exphelp-line>
+            <a class="a4-btn a4-btn-ghost a4-btn-small a4-help-viewer-start" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help Start'|i18n( 'kernel/exphelp' )}</a>
+            {if and( is_set( $help_reading ), $help_reading )}{include uri='design:exphelp/parts/reading_language.tpl' reading=$help_reading prefix='exphelp-contents-reading'}{/if}
+        </div>
         <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/extensions'|ezurl}><span class="a4-icon a4-bi-puzzle" aria-hidden="true"></span> {'Extensions'|i18n( 'kernel/exphelp' )}</a>
         <form class="a4-help-viewer-search a4-help-search-box" data-exphelp-search action={'exphelp/search'|ezurl} method="post" role="search" data-exphelp-endpoint={'exphelp/search'|ezurl}>
             <label class="a4-sr-only" for="exphelp-contents-q">{'Search the help'|i18n( 'kernel/exphelp' )}</label>

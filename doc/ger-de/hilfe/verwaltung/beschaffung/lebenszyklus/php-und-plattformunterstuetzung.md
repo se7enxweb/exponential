@@ -34,7 +34,7 @@ stammen aus [2. Anforderungen](../../../../installation/02-voraussetzungen.md) u
 | 8.5 | unterstützt; die neueste getestete Version |
 | spätere 8.x | von `composer.json` akzeptiert, aber noch nicht veröffentlicht oder getestet |
 
-Quelle: [2. Anforderungen, PHP-Versionen](../../../../../eng-us/install/02-requirements.md#versions). Die kontinuierliche
+Quelle: [2. Anforderungen, PHP-Versionen](../../../../installation/02-voraussetzungen.md#versionen). Die kontinuierliche
 Integration führt die Testsuite unter PHP 8.1 bis 8.5 aus und prüft, dass 8.0 noch startet
 ([Wer ist die Exponential Foundation?](../../../wer-ist-die-exponential-foundation.md#php-versionen)).
 

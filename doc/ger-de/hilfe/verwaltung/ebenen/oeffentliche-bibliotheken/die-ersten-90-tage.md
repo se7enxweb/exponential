@@ -50,7 +50,7 @@ Prüfung: Sie können sich in der Administration anmelden; **Setup > Klassen** l
 |---|---|
 | Dienstleistungsseiten in einfacher Sprache schreiben | [Schwerpunkte der Anforderungen](schwerpunkte-der-anforderungen.md) |
 | Die Veranstaltungen der nächsten zwei Monate eintragen | [Veranstaltungen und Kataloge](veranstaltungen-und-verlinkte-kataloge.md) |
-| Die Redaktion Veranstaltungen mit je einer echten Veranstaltung schulen | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) |
+| Die Redaktion Veranstaltungen mit je einer echten Veranstaltung schulen | [Editors 101](../../../trainer/redakteure-101/README.md) |
 | Das Suchfeld und die Links zum Katalog hinzufügen | [Veranstaltungen und Kataloge](veranstaltungen-und-verlinkte-kataloge.md#der-katalog-verlinken) |
 | Die Barrierefreiheit von Kalender und Seiten der Zweigstellen testen | [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
 | Start | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |

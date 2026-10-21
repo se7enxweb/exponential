@@ -48,7 +48,7 @@ Verantwortung Ihrer medizinischen und wissenschaftlichen Fachleute.
 4. **Die ersten 90 Tage**.
 
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
-[Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
+[Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 Stellen des Krisenmanagements finden verwandte Hinweise unter [Rettungsdienste](../rettungsdienste/README.md).
 
 ## Was den öffentlichen Gesundheitsdienst besonders macht

@@ -71,10 +71,10 @@ veröffentlichen, geben allgemeine Praxis im öffentlichen Sektor wieder, keine 
 5. Verwenden Sie **Die ersten 90 Tage** als Gerüst Ihres Projektplans.
 
 Die Bereiche zu den Anforderungen in dieser Hilfe für Verwaltungen ([Barrierefreiheit](../barrierefreiheit/README.md),
-[Sicherheit](../sicherheit/README.md), [Datenschutz](../../../../eng-us/help/government/privacy/README.md) und
-[Schriftgut und Archivierung](../../../../eng-us/help/government/records-and-archiving/README.md)) und die [Bauanleitungen](../../../../eng-us/help/government/building/README.md)
+[Sicherheit](../sicherheit/README.md), [Datenschutz](../datenschutz/README.md) und
+[Schriftgut und Archivierung](../schriftgut-und-archivierung/README.md)) und die [Bauanleitungen](../../../../eng-us/help/government/building/README.md)
 gehen bei jedem Thema tiefer. Die schrittweisen [Aufgaben zum Veröffentlichen](../../../../eng-us/help/government/tasks/publishing/README.md) für die
-Redaktion stehen im Aufgabenordner dieses Bereichs. Nach oben: [Verwaltungen: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+Redaktion stehen im Aufgabenordner dieses Bereichs. Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 
 ## Organisationen über mehrere Ebenen
 
@@ -100,7 +100,7 @@ Sicherheitsbeauftragten entscheiden sie.
 - [Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
 - [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
 - [Website-Ersteller: hier beginnen](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md)
-- [Kurskatalog für Trainerinnen und Trainer](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Kurskatalog für Trainerinnen und Trainer](../../trainer/kurskatalog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

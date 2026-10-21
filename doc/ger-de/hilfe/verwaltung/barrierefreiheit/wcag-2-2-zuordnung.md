@@ -48,7 +48,7 @@ Kriterium auf Ihrer öffentlichen Website verantwortlich ist. Jeder Eintrag für
 | 2.4.1 Blöcke umgehen | „Zum Hauptinhalt springen“ ist der erste Tabulatorstopp | `AdminLandmarksTest.php` | Entwicklung: ein Sprunglink in Ihrem Pagelayout |
 | 2.4.3 Fokus-Reihenfolge | dieselbe Tabulatorreihenfolge im Kopfbereich in admin4 und admin4l | `AdminHeaderTabOrderTest.php` | Entwicklung |
 | 2.4.7 Fokus sichtbar | ein gemeinsamer Fokusrahmen (Umriss von 3 px in `--a4-ring`) | `design/admin4/stylesheets/components.css` | Design: den Umriss nie ohne Ersatz entfernen |
-| 2.5.8 Zielgröße (Minimum) | Zielflächen mindestens 24 x 24 px | [Styling von admin4](../../../../eng-us/bc/6.0/admin4-styling.md) | Design |
+| 2.5.8 Zielgröße (Minimum) | Zielflächen mindestens 24 x 24 px | [Styling von admin4](../../../bc/6.0/admin4-gestaltung.md) | Design |
 | 3.1.1 Sprache der Seite | `<html lang>` aus dem Locale des Siteaccess | `design/admin4/templates/pagelayout.tpl` | Entwicklung: `lang` in Ihrem Pagelayout; Siteaccesses je Sprache |
 | 3.3.1 Fehlererkennung, 3.3.2 Beschriftungen oder Anweisungen | Fehlerübersicht, die den Fokus erhält und auf Felder verlinkt; `aria-invalid`, `aria-describedby` | `AdminFormErrorsTest.php` | Entwicklung: Ihre Formulare (Informationssammler, Registrierung) |
 | 4.1.2 Name, Rolle, Wert | zugängliche Namen; Rollen und Zustände von Reitern, Baum und Menüs | `AdminFormLabelsTest.php`, `AdminKeyboardTest.php` | Entwicklung |
@@ -85,7 +85,7 @@ Einige Fakten, die für diese Kriterien zählen und sich im Repository prüfen l
 
 - [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
 - [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
-- [Styling von admin4](../../../../eng-us/bc/6.0/admin4-styling.md)
+- [Styling von admin4](../../../bc/6.0/admin4-gestaltung.md)
 - [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

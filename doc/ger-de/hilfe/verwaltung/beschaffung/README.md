@@ -39,7 +39,7 @@ Exponential selbst ist freie Software unter der GNU General Public License, Vers
 | Implementierung: Inhaltsmodell, Design, Templates, Migration | ein Implementierungspartner oder eine Agentur | [Implementierungspartner](../../partner/implementierungspartner.md) |
 | Hosting und Betrieb | ein Hosting-Unternehmen oder Ihr eigenes Rechenzentrum | [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md) |
 | Support mit vereinbarten Reaktionszeiten | 7x oder ein Partner | [Support erhalten](../../projekt/unterstuetzung-erhalten.md), [Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md) |
-| Schulung für Redaktion und Administration | ein Schulungspartner oder Ihre eigenen Trainerinnen und Trainer | [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md) |
+| Schulung für Redaktion und Administration | ein Schulungspartner oder Ihre eigenen Trainerinnen und Trainer | [Kurskatalog](../../trainer/kurskatalog.md) |
 | Prüfungen der Barrierefreiheit oder der Sicherheit | eine unabhängige prüfende Stelle | [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md), [Sicherheitsstandards](../../../../eng-us/standards/security.md) |
 
 Weil die Software gleich bleibt, wer auch immer die Leistungen erbringt, kann eine öffentliche Stelle ihren Lieferanten

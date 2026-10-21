@@ -1,0 +1,110 @@
+---
+title: Template-Operatoren
+audience: developer, designer, app-creator
+category: development
+order: 0
+summary: Jeder auf alpha registrierte Template-Operator, nach Familien gruppiert, mit Parametern, Eingabe, Rückgabewert und auf alpha gerenderten Beispielen, dazu, wie Operatoren registriert, geschrieben, erweitert und überschrieben werden, Fetch-Aliase, Fetch-Funktionen und OW Simple Operator.
+keywords: Template-Operatoren, Operatorreferenz, Operatorfamilien, Fetch-Aliase, Fetch-Funktionen, eigener Operator, Operator überschreiben, template operators, operator reference, operator families, fetch_alias, fetch functions, owsimpleoperator, custom operator, override operator
+type: help
+---
+# Template-Operatoren
+
+Ein Operator nimmt einen Wert entgegen und gibt einen zurück: `{$node.name|wash}`, `{sum( 2, 3 )}`, `{fetch( 'content', 'node', hash( 'node_id', 89 ) )}`.
+Operatoren stammen aus der Template-Bibliothek (`lib/eztemplate/`), dem Kernel (`kernel/common/` und verwandten Verzeichnissen) und den
+aktiven Erweiterungen; auf alpha registriert die Engine 400 davon. Dieser Abschnitt umfasst 47 Seiten:
+
+- das [Operatorenverzeichnis](operatorenverzeichnis.md) von A bis Z, das zum Abschnitt jedes Operators führt;
+- eine Seite je Operatorfamilie, mit den Parametern, der Eingabe, dem Rückgabewert und mindestens einem Beispiel jedes Operators,
+  auf alpha mit echten Inhalten gerendert (interpretiert und zum Vergleich in einen Arbeitsordner kompiliert);
+- wie Operatoren registriert, geschrieben, erweitert und überschrieben werden, und die Fallen, die dabei im Code gefunden wurden;
+- [Fetch-Aliase](fetch-aliase.md) und [Fetch-Funktionen](wie-fetch-funktionen-arbeiten.md), die Datenseite der
+  Templates;
+- [OW Simple Operator](owsimpleoperator.md), die Erweiterung, mit der sich kleine Operatoren schnell schreiben lassen.
+
+Die generierten Seiten unter [Beispiele: Template-Operatoren](../../../eng-us/examples/template-operators/README.md) führen jeden
+Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in einem mitgelieferten Template auf.
+
+## Verzeichnisse
+
+- [Operatorenverzeichnis](operatorenverzeichnis.md): Alle 400 Template-Operatoren, die in den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Familienseite, die seine Parameter, seinen Rückgabewert und seine Beispiele dokumentiert, der Klasse, die ihn bedient, und der Herkunft dieser Klasse.
+
+## Operatoren der Template-Bibliothek
+
+- [Arithmetische Operatoren](arithmetische-operatoren.md): Die 18 Operatoren von eZTemplateArithmeticOperator (sum, sub, mul, div, mod, inc, dec, min, max, abs, ceil, floor, round, int, float, count, roman, rand) mit ihren Parametern, ihrer Eingabe, ihrem Rückgabewert und auf alpha gerenderten Beispielen.
+- [Array-Operatoren](array-operatoren.md): Die 24 Operatoren von eZTemplateArrayOperator (array, hash, append, prepend, merge, contains, compare, extract, extract_left, extract_right, begins_with, ends_with, implode, explode, repeat, reverse, insert, remove, replace, unique, array_sum und drei veraltete Namen), auf Arrays und auf Zeichenketten, mit auf alpha gerenderten Beispielen.
+- [Logische Operatoren](logische-operatoren.md): Die 13 Operatoren von eZTemplateLogicOperator (eq, ne, lt, gt, le, ge, and, or, not, null, true, false, choose), einschließlich der Zählregel von lt/gt/le/ge, die Zeichenketten nach ihrer Länge vergleicht, mit auf alpha gerenderten Beispielen.
+- [Steueroperatoren](steueroperatoren.md): cond und first_set aus eZTemplateControlOperator - Bedingungen und Ersatzwerte im Ausdruck, die nur auswerten, was sie brauchen, wie sich Interpreter und kompiliertes Template bei einem falschen Standardwert unterscheiden, mit auf alpha gerenderten Beispielen.
+- [Typ-Operatoren](typ-operatoren.md): Die 13 Operatoren von eZTemplateTypeOperator (is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null, is_class, is_set, is_unset, get_type, get_class) mit ihren Eingaberegeln und auf alpha gerenderten Beispielen.
+- [Zeichenketten-Operatoren](zeichenketten-operatoren.md): Die 15 Operatoren von eZTemplateStringOperator (upcase, downcase, upfirst, upword, count_words, count_chars, trim, simplify, pad, shorten, wrap, break, wash, ord, chr), jeder wash-Typ (xhtml, email, javascript, pdf) und auf alpha gerenderte Beispiele.
+- [PHP-Zeichenkettenfunktionen: suchen und vergleichen](php-zeichenkettenfunktionen-suchen-und-vergleichen.md): Die Such-, Vergleichs- und Ähnlichkeitsoperatoren von eZTemplateStringsOperator (strlen, strpos, stripos, strrpos, strripos, strstr, stristr, strrchr, strpbrk, strspn, strcspn, substr_count, str_contains, str_starts_with, str_ends_with, strcmp, strcasecmp, strncmp, strncasecmp, strnatcmp, strnatcasecmp, strcoll, substr_compare, levenshtein, similar_text, soundex, metaphone), wie ihre Parameter auf PHP abgebildet werden, mit auf alpha gerenderten Beispielen.
+- [PHP-Zeichenkettenfunktionen: umwandeln](php-zeichenkettenfunktionen-umwandeln.md): Die umwandelnden Operatoren von eZTemplateStringsOperator (substr, substr_replace, ristring, rstring, strtr, str_split, str_word_count, str_getcsv, strtok, ltrim, rtrim, lcfirst, chunk_split, addslashes, stripslashes, addcslashes, stripcslashes, quotemeta, strip_tags, str_shuffle, hebrev, dazu str_increment und str_decrement), die Registrierungsfalle von strip_tags, mit auf alpha gerenderten Beispielen.
+- [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md): Die Kodierungs- und Formatierungsoperatoren von eZTemplateStringsOperator (bin2hex, hex2bin, convert_uuencode, convert_uudecode, quoted_printable_encode, quoted_printable_decode, htmlentities, html_entity_decode, htmlspecialchars_decode, sprintf, vsprintf, number_format) mit der Abbildung ihrer PHP-Argumente und ihren Standardwerten sowie auf alpha gerenderten Beispielen.
+- [PHP-Funktionsoperatoren](php-funktionsoperatoren.md): Wie template.ini [PHP] PHPOperatorList über eZTemplatePHPOperator PHP-Funktionen mit einem Argument zu Template-Operatoren macht, welche Operatoren es auf alpha liefert (urlencode, urldecode, rawurlencode, rawurldecode, nl2br, serialize, unserialize, getenv, strip_tags), welche Erweiterung welchen hinzufügt, die Risiken, und auf alpha gerenderte Beispiele.
+- [Text-Operatoren](text-operatoren.md): concat und indent aus eZTemplateTextOperator - Werte zu einer Zeichenkette verbinden und mehrzeiligen Text mit Leerzeichen, Tabulatoren oder einem eigenen Füllzeichen einrücken, die Objektfalle von concat in kompilierten Templates, mit auf alpha gerenderten Beispielen.
+- [Locale-Operatoren](locale-operatoren.md): Die 7 Operatoren von eZTemplateLocaleOperator - l10n mit allen neun Formatierungstypen, datetime mit den Klassen aus datetime.ini und eigenen Formaten, locale, currentdate, maketime, makedate und gettime - mit auf alpha gerenderten Beispielen und dem abweichenden Verhalten von gettime im kompilierten Template.
+- [Attribute- und Dump-Operatoren](attribute-und-dump-operatoren.md): attribute und dump aus eZTemplateAttributeOperator - auflisten, was ein Objekt, ein Hash oder ein Array den Templates anbietet, mit oder ohne Werte, bis zu einer Tiefe, als HTML-Tabelle oder als Text, und warum ihre Ausgabe nie eine öffentliche Seite erreichen darf; auf alpha gerenderte Beispiele.
+- [Digest-Operatoren](digest-operatoren.md): crc32, md5 und rot13 aus eZTemplateDigestOperator, dazu sha1, das die Klasse anbietet, das aber erst funktioniert, nachdem ein anderer Digest-Operator sie geladen hat; wofür sie in Templates gedacht sind und wofür nicht, mit auf alpha gerenderten Beispielen.
+- [Der Einheitenoperator si](der-unit-operator.md): si aus eZTemplateUnitOperator - eine Zahl mit einer Einheit und einem dezimalen oder binären Präfix formatieren (Dateigrößen, Längen, Gewichte) anhand von units.ini, mit jedem Parameter, der automatischen Präfixregel und auf alpha gerenderten Beispielen.
+- [Die Operatoren fetch und fetch_alias](execute-operatoren.md): fetch und fetch_alias aus eZTemplateExecuteOperator - wie ein Template über eZFunctionHandler und eZModuleFunctionInfo die function_definition.php eines Moduls erreicht, Parameter, Ergebnisse und Fehler, was der Compiler mit einem konstanten fetch macht, mit auf alpha gerenderten Beispielen.
+- [Rollen-Operatoren](rollen-operatoren.md): Die 7 Operatoren von eZTemplateRoleOperator (has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user) - was sie prüfen, warum die gepipte Eingabe ignoriert wird, warum sie keine Zugriffsprüfung sind, mit lesenden Beispielen, die auf alpha als anonymer Benutzer gerendert wurden.
+- [Bild-Operatoren](bild-operatoren.md): texttoimage, image und imagefile aus eZTemplateImageOperator - Text mit einer TrueType-Schrift aus texttoimage.ini als Bild rendern, Ebenen zusammensetzen und die Größe einer Bilddatei lesen - welche davon Dateien unter var/cache/texttoimage schreiben, und Beispiele von alpha.
+- [Der Operator expinfo](der-expinfo-operator.md): expinfo aus eZTemplateExpInfoOperator - die aktiven Erweiterungen, alle verfügbaren Erweiterungen, die Metadaten einer Erweiterung aus extension.xml und ezinfo.php und die Kernel-Informationen, welche Schlüssel jeder Modus liefert und welche Kernel-Werte nie auf einer öffentlichen Seite ausgegeben werden dürfen; auf alpha gerenderte Beispiele.
+
+## Kernel-Operatoren
+
+- [URL-, Design-, INI- und HTTP-Operatoren](url-operatoren.md): Die zehn Operatoren von eZURLOperator im Kernel (ezurl, ezroot, ezdesign, ezimage, exturl, ezsys, ezhttp, ezhttp_hasvariable, ezini, ezini_hasvariable), wie die Erweiterung ezurlmultisite sie auf alpha übernimmt, und ihre eigenen ezurl_path, ezurl_siteaccess und ezurl_roots, jeweils mit belegten Beispielen.
+- [Übersetzungsoperatoren i18n, d18n und x18n](i18n-operatoren.md): Die drei Übersetzungsoperatoren von eZi18nOperator, ihre Parameter (Kontext, Kommentar, Argumente, Erweiterung), wie ezpI18n::tr() eine Übersetzung findet und Argumente einsetzt, wie kompilierte Templates beim Kompilieren übersetzen und warum es d18n gibt, mit auf alpha auf Englisch und Deutsch gerenderten Beispielen.
+- [Icon-Operatoren](icon-operatoren.md): Die acht Operatoren von eZWordToImageOperator - class_icon, classgroup_icon, mimetype_icon, action_icon, icon, flag_icon, icon_info und wordtoimage - mit ihren Positionsparametern, der Suche nach Thema und Größe in icon.ini und auf alpha gerenderten Beispielen.
+- [Menü- und Baum-Operatoren](menue-und-baum-operatoren.md): Die Kernel-Operatoren, die Navigation aufbauen - treemenu (ein Menü, das sich entlang des aktuellen Pfads aufklappt), content_structure_tree (ein verschachtelter Baum von Knoten) und topmenu (die Admin-Reiter aus menu.ini) - mit jedem Parameter, der Form ihrer Rückgabe, ihren Kosten und auf alpha gerenderten Beispielen.
+- [Text-Hilfsoperatoren des Kernels](text-hilfsoperatoren-des-kernels.md): Fünf kleine Kernel-Operatoren - alphabet, autolink, simpletags, eztoc und month_overview - mit ihren Parametern, den Einstellungen, die sie lesen, was sie maskieren und was nicht, und auf alpha gerenderten Beispielen.
+- [Präferenz-, Modul-, Paket- und PDF-Operatoren](weitere-kernel-operatoren.md): Die Kernel-Operatoren ezpreference, ezmodule, module_params und ezpackage und der Bibliotheksoperator pdf - was jeder liest, seine Parameter, was er zurückgibt, welche davon Nebenwirkungen haben - mit auf alpha gerenderten Beispielen.
+- [Siteaccess-Operatoren](siteaccess-operatoren.md): Die Kernel-Operatoren, die die Siteaccesses einer Installation kennen - siteaccess_url, siteaccess_menu, siteaccess_menu_key und language_switcher - mit ihren Parametern, den Einstellungen dahinter, ihrer Rückgabe, ihrer Kompilierung und Beispielen, die auf alpha mit drei verschiedenen Siteaccesses gerendert wurden.
+- [Installations-, Umgebungs-, Audit- und CSP-Operatoren](operatoren-des-exponential-kernels.md): Sechs Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label und csp_nonce - mit den Einstellungen, die sie lesen, ihrer Rückgabe, der Cache-Regel für csp_nonce und auf alpha gerenderten Beispielen.
+
+## Operatoren von Erweiterungen
+
+- [Die ezjscore-Operatoren im Detail](ezjscore-operatoren.md): Jeder Operator der Erweiterung ezjscore - die Packer-Operatoren ezscript, ezscript_require, ezscript_load, ezscriptfiles, ezcss, ezcss_require, ezcss_load, ezcssfiles, die Encoder json_encode, xml_encode, node_encode und has_access_to_limitation - mit allen Parametern, dem Mechanismus der persistenten Variablen hinter require und load, den Pack-Stufen und auf alpha gerenderten Beispielen.
+- [ezwebin-Operatoren](ezwebin-operatoren.md): Die sechs Operatoren der Erweiterung ezwebin - ezpagedata, ezpagedata_set, ezpagedata_append, ezarchive, ezkeywordlist und eztagcloud - mit ihren Parametern, dem, was ezpagedata für ein Pagelayout berechnet, den Datenbank-Engines, die ezarchive unterstützt, und auf alpha gerenderten Beispielen.
+- [eztags- und Starrating-Operatoren](eztags-und-starrating-operatoren.md): Die fünf Operatoren der Erweiterung eztags (eztagscloud, latest_tags, eztags_parent_string, tag_icon, user_limitations) und die drei von ezstarrating (fetch_starrating_stats, fetch_starrating_data, fetch_by_starrating), mit Parametern, der Form der Rückgabe, dem Solr-Weg der Tag-Wolke, einem zu vermeidenden Absturz und auf alpha gerenderten Beispielen.
+- [Die swark-Operatoren](swark-operatoren.md): Wie die Erweiterung swark ihre 37 Template-Operatoren mit je einer Klasse pro Operator registriert, die Basisklasse SwarkOperator mit Parameterzeichenketten der Form name=Standardwert und kompilierten Aufrufen von execute(), welche ihrer Namen andere Erweiterungen oder der Kernel auf alpha übernehmen, und ein belegter Fall, in dem der Besitzer eines Operators mitten in einer Anfrage wechselt.
+- [swark-Operatoren: Arrays, Zeichenketten und URLs](swark-operatoren-arrays-und-zeichenketten.md): Jeder Array-, Zeichenketten- und URL-Operator der Erweiterung swark - sort, rsort, asort, arsort, ksort, krsort, shuffle, array_search, range, set_array_element, remove_array_element, split_by_length, shortenw, preg_match, preg_replace, strpos, strrpos, substr, ltrim, rtrim, str_replace, json_encode, uri_path_segment, add_view_parameters, modify_view_parameter - mit Parametern, Rückgabewerten und auf alpha gerenderten Beispielen.
+- [swark-Operatoren: Anfrage und System](swark-operatoren-anfrage-und-system.md): Die Anfrage- und Systemoperatoren der Erweiterung swark - charset, current_siteaccess, current_layout, is_post_request, server, cookie, user_id_by_login, variable_names, debug, debug_attributes, redirect, return und clear_object_cache - mit Parametern, Rückgabewerten, welche davon die Anfrage beenden oder einen Zustand ändern, und auf alpha gerenderten Beispielen.
+- [Operatoren kleinerer Erweiterungen](operatoren-kleiner-erweiterungen.md): Die Template-Operatoren von ezoe, ezwt, enhancedezbinaryfile, recaptcha, xrowmetadata und bcwebsitestatistics - ezoe_ini_section, ezcreateclasslistgroups, parsexml, recaptcha_get_html, metadata, die sechs Operatoren xrowmetadata_license und die sechs Operatoren bc_ga - mit Parametern, Rückgabewerten, auf alpha gefundenen Fallstricken (Operatornamen mit Großbuchstaben, ein die() bei einem fehlenden Schlüssel) und auf alpha gerenderten Beispielen.
+- [Newsletter-Operatoren von cjw_newsletter](newsletter-operatoren.md): Die dreizehn Template-Operatoren der Erweiterung cjw_newsletter - drei allgemeine (cjw_newsletter_str_replace, cjw_newsletter_preg_replace, cjw_newsletter_variable) und zehn Rendering-Operatoren (Bedingungen, Umwandlung in reinen Text und Rich Text, Interessenblock, absolute URLs, Unterstreichung, Umbruch, Rendering-Daten) - mit Parametern, Rückgabewerten, wann die Bedingungsmarkierungen erscheinen, und auf alpha gerenderten Beispielen.
+- [Layouts-, expui- und expai-Operatoren](layouts-und-expui-operatoren.md): Die Template-Operatoren der Layout-Erweiterungen von Exponential (expl_parse, expl_strip, expl_has, expl_first, explayouts_ui_has_template), von expui (exp_config) und von expai (expai_money, expai_tokens, expai_number, expai_retention, expai_json), mit Parametern, Rückgabewerten, Maskierung und auf alpha gerenderten Beispielen, die von expai im Siteaccess admin.
+
+## Operatoren schreiben, registrieren und überschreiben
+
+- [Registrierungsreihenfolge und Überschreibungen](registrierungsreihenfolge-und-ueberschreibungen.md): Wie die Template-Engine entscheidet, welche Klasse einen Operatornamen bedient - die Reihenfolge, in der sie die Dateien eztemplateautoload.php liest, "die letzte Registrierung gewinnt", die 21 Namen, die auf alpha von zwei Klassen registriert werden, und die Regel des verzögerten Ladens, nach der eine Klasse einen Namen mitten in einer Anfrage zurückholen kann - belegt mit auf alpha gerenderten Beispielen.
+- [Kernel-Operatoren überschreiben](kernel-operatoren-ueberschreiben.md): Aus einer Erweiterung heraus ändern, was ein Operator des Kernels oder der Template-Bibliothek tut, so wie die Erweiterung ezurlmultisite es für ezurl macht - die Klasse ableiten, der der Name gehört, die abgeleitete Klasse für alle ihre Namen registrieren, den Code zur Kompilierzeit für das entfernen, was Sie ändern - mit jedem Fehler und dem funktionierenden Muster, auf alpha im interpretierten und im kompilierten Modus gerendert.
+- [Operatoren registrieren](operatoren-registrieren.md): Jeder Weg, auf dem ein Template-Operator registriert wird - eztemplateautoload.php in AutoloadPathList und ExtensionAutoloadPath, die Schlüssel des Eintrags, template.ini PHPOperatorList, owsimpleoperator.ini -, wie die Reihenfolge der Erweiterungen bestimmt wird (ActiveExtensions, ActiveAccessExtensions, ExtensionOrdering und die Abhängigkeiten in extension.xml) und was danach geleert werden muss.
+- [Einen Operator Schritt für Schritt anlegen](einen-operator-schritt-fuer-schritt-anlegen.md): Der ganze Weg von einer Idee zu einem funktionierenden Template-Operator in einer Erweiterung - einen freien Namen wählen, die Klasse schreiben, sie registrieren, Caches leeren, sie interpretiert und kompiliert ausprobieren, bereitstellen - oder den Assistenten für Template-Erweiterungen die Arbeit machen lassen; jeder Schritt an alpha geprüft.
+- [Die Schnittstelle der Operatorklasse](referenz-der-operatorklassen.md): Jede Methode und jedes Argument, das die Template-Engine an einem Template-Operator-Objekt verwendet - operatorList, namedParameterPerOperator, namedParameterList, modify mit seinen acht Argumenten, operatorTemplateHints und Elementtransformationen, operatorCompiledStaticData - und die Schlüssel des Registrierungseintrags, jeweils mit einer Beispielklasse, die auf alpha im interpretierten und im kompilierten Modus gerendert wurde.
+
+## Fetch-Aliase
+
+- [Fetch-Aliase](fetch-aliase.md): Was fetch_alias() tut, die Syntax von fetchalias.ini (Module, FunctionName, Parameter[], Constant[]), jeder auf alpha definierte Alias mit seinem Ziel und einem auf alpha gerenderten Beispiel, wie Parameter und Konstanten zusammenwirken und wie Sie aus einer Erweiterung einen eigenen hinzufügen oder einen vorhandenen ändern.
+
+## Fetch-Funktionen
+
+- [Wie Fetch-Funktionen arbeiten](wie-fetch-funktionen-arbeiten.md): Was geschieht, wenn ein Template fetch() aufruft - eZFunctionHandler, eZModuleFunctionInfo, die function_definition.php des Moduls und seine Klasse für die Funktionssammlung -, das Format der Definition, Ergebnisse und Fehler, die Suchreihenfolge der Modul-Repositories und wie eine Erweiterung ein Fetch-Modul hinzufügt, die Fetch-Funktionen eines Kernel-Moduls erweitert oder ersetzt, jeweils auf alpha gerendert.
+
+## OW Simple Operator
+
+- [OW Simple Operator - PHP-Funktionen als Template-Operatoren](owsimpleoperator.md): Was die Erweiterung owsimpleoperator tut, wie ihre Operatoren aus owsimpleoperator.ini registriert werden, die fünf PHP-Funktionen, die sie in dieser Installation anbietet (time, mktime, getdate, str_replace, str_rot13), und wie man sie aufruft, mit jedem Beispiel auf alpha gerendert.
+- [Eigene Operatoren mit OW Simple Operator](eigene-operatoren-mit-owsimpleoperator.md): Template-Operatoren als einfache öffentliche Methoden einer Klasse schreiben, die OWSimpleOperator erweitert, jede Methode in owsimpleoperator.ini registrieren, optionale Argumente, die Pipe-Form und was geschieht, wenn die Klasse stattdessen auf dem üblichen Weg registriert wird; jedes Beispiel auf alpha gerendert.
+- [OW Simple Operator: Grenzen und Risiken](grenzen-von-owsimpleoperator.md): Was OW Simple Operator nicht tut und wo es Probleme macht - die Pipe-Form, die ein Argument verliert, Null-Argumente, die weggelassen werden, keine Parameterprüfung, keine Optimierung zur Kompilierzeit, Namenskonflikte, Caching und die Sicherheitsregel für erlaubte PHP-Funktionen - mit den Fehlern, auf alpha gerendert.
+
+## Verwandte Seiten
+
+- [Die Template-Sprache](../template-sprache/README.md)
+- [Überblick über die Operatoren für Designer](../../../eng-us/help/designers/templates/operators-overview.md)
+- [Template-Operatoren schreiben](../../../eng-us/help/creators/app-creators/template-operators.md) (für Anwendungsentwickler)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
+entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
+geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
+[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

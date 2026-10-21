@@ -13,8 +13,8 @@ Diese Seite richtet sich an Administratorinnen und Administratoren sowie Informa
 Audit-Einträge möglicherweise als Beweismittel vorlegen müssen, zum Beispiel in einem Disziplinarverfahren, einer
 Untersuchung oder einem Streit darüber, wer amtliche Informationen geändert hat. Sie erklärt, wie die Integrität des
 Audit-Protokolls von Exponential geschützt und geprüft wird, auf Grundlage von
-[5.3 Die Hash-Kette und was die Prüfung findet](../../../../eng-us/bc/6.0/audit.md#53-the-hash-chain-and-what-verification-finds)
-und [4.4 Prüfen und wiederherstellen](../../../../eng-us/bc/6.0/audit.md#44-verify-and-restore).
+[5.3 Die Hash-Kette und was die Prüfung findet](../../../bc/6.0/audit.md#53-die-hash-kette-und-was-die-prüfung-findet)
+und [4.4 Prüfen und wiederherstellen](../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen).
 
 ## Inhalt
 
@@ -79,7 +79,7 @@ Die Anweisung des Audit-Leitfadens lautet: **Bearbeiten oder entfernen Sie nicht
 ## Schlüssel
 
 Die Signatur- und Pseudonymschlüssel stehen in `settings/override/audit.ini.append.php` (Modus 0640, nie eingecheckt)
-und werden bei der ersten Verwendung erzeugt ([4.6 Schlüssel](../../../../eng-us/bc/6.0/audit.md#46-keys)):
+und werden bei der ersten Verwendung erzeugt ([4.6 Schlüssel](../../../bc/6.0/audit.md#46-schlüssel)):
 
 - Sichern Sie die Datei als Geheimnis; ohne die Signaturschlüssel lassen sich alte Archive nicht prüfen
   (`unknown_key`);
@@ -89,7 +89,7 @@ und werden bei der ersten Verwendung erzeugt ([4.6 Schlüssel](../../../../eng-u
 
 ## Verwandte Seiten
 
-- [Audit-Leitfaden, 5.3](../../../../eng-us/bc/6.0/audit.md#53-the-hash-chain-and-what-verification-finds)
+- [Audit-Leitfaden, 5.3](../../../bc/6.0/audit.md#53-die-hash-kette-und-was-die-prüfung-findet)
 - [Das Audit-Protokoll für öffentliche Stellen](audit-protokoll-fuer-oeffentliche-stellen.md)
 - [Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

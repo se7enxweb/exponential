@@ -64,7 +64,7 @@ Sie eine Installation haben, an der Sie arbeiten können.
 | Schritt | Ergebnis | Lesen |
 |---|---|---|
 | Inhalte Einheit für Einheit in die Sektion Staging migrieren | Inhalte vorhanden, für Besucher unsichtbar | [Sektionen 13.3](../../../../anleitungen/sektionen.md#133-inhalte-vorbereiten-bevor-sie-öffentlich-werden) |
-| Redaktion und Freigebende schulen | alle haben eine Testseite veröffentlicht | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) |
+| Redaktion und Freigebende schulen | alle haben eine Testseite veröffentlicht | [Editors 101](../../../trainer/redakteure-101/README.md) |
 | Umleitungen für alte Adressen einrichten | Platzhalter und Aliase | [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
 | Lasttest mit eingeschalteten Caches | ein gemessenes Ergebnis | [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
 | Wartungsmodus und eine Wiederherstellung aus der Sicherung proben | ein Probelauf mit Zeitmessung | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md), [Sicherungen und Wiederherstellungen](../../../../../eng-us/help/creators/website-creators/backups-and-restores.md) |

@@ -58,7 +58,7 @@ Inhalten durch und messen Sie mit `exp:benchmark` ([Benchmarking](../../../../an
 | Produktion | die öffentliche Website | volle Größe |
 | Staging oder Abnahme | Releases und Inhalte vor der Produktion testen | kleinere Kopie |
 | Entwicklung | Arbeit des Lieferanten | eigene Rechner des Lieferanten oder klein |
-| Schulung | Kurse für die Redaktion mit erfundenen Inhalten | klein; siehe [Lab-Kurzkarte](../../../../../eng-us/help/trainers/lab-quick-card.md) |
+| Schulung | Kurse für die Redaktion mit erfundenen Inhalten | klein; siehe [Lab-Kurzkarte](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md) |
 
 Zählen Sie jede Umgebung, die Sie bezahlen. Eine Staging-Kopie darf nie mehr personenbezogene Daten enthalten, als sie
 braucht.

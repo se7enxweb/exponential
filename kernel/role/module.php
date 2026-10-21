@@ -14,7 +14,7 @@ $ViewList['list'] = array(
     'script' => 'list.php',
     'default_navigation_part' => 'ezusernavigationpart',
     'post_actions' => array( 'BrowseActionName' ),
-    'unordered_params' => array( 'offset' => 'Offset' ),
+    'unordered_params' => array( 'offset' => 'Offset', 'sort' => 'Sort', 'dir' => 'Dir', 'q' => 'Query' ),
     'params' => array(  ) );
 $ViewList['edit'] = array(
     'script' => 'edit.php',

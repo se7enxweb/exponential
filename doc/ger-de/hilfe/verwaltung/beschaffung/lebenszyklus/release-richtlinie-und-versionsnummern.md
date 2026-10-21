@@ -68,7 +68,7 @@ Erweiterung auflistet ([About- und Paketseiten](../../../../../eng-us/features/6
 | Änderungen am Kernel je Version | `doc/changelogs/<series>/<version>.md`, zum Beispiel das [Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md) |
 | Änderungen an Erweiterungen | `doc/changelogs/extensions/<name>.md` |
 | Änderungen, die beim Upgrade ein Handeln erfordern | Seiten in `doc/eng-us/bc/6.0/`, aus dem Changelog verlinkt |
-| Die Geschichte hinter den Änderungen seit Dezember 2023 | [die Geschichte](../../../../../eng-us/history/README.md) |
+| Die Geschichte hinter den Änderungen seit Dezember 2023 | [die Geschichte](../../../../geschichte/README.md) |
 
 Einträge im Changelog sind nach Added, Updated, Removed und Renamed gruppiert und aus der Commit-Historie
 zusammengestellt. Ein Lieferant kann Ihnen damit sagen, was ein Upgrade ändert ([Ein Changelog lesen](../../../../../eng-us/help/press/reading-a-changelog.md) erklärt,

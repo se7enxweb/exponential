@@ -1,5 +1,5 @@
 {* The progress page of a content job (content/job/<id>): a subtree remove or copy running in the background.
-   The page polls content/job/<id>?json=1 every two seconds and updates the bar, the counts, the message and the
+   The page polls content/job/<id>/(json)/1 every two seconds and updates the bar, the counts, the message and the
    log; when the job finishes it opens the result, when it fails or is cancelled it reloads to show the buttons.
    It stops with a message when the job is gone or the session has ended (page/content_job.js). *}
 {def $state_names = hash( 'queued',    'Waiting'|i18n( 'design/admin/content/job' ),
@@ -9,7 +9,7 @@
                           'cancelled', 'Cancelled'|i18n( 'design/admin/content/job' ) )
      $finished = or( eq( $job.state, 'done' ), eq( $job.state, 'failed' ), eq( $job.state, 'cancelled' ) )}
 <div class="context-block a4-page a4-content-job" id="exp-contentjob"
-     data-status-url={concat( 'content/job/', $job.id, '?json=1' )|ezurl}
+     data-status-url={concat( 'content/job/', $job.id, '/(json)/1' )|ezurl}
      data-state="{$job.state|wash}"{if $job.can_resume} data-can-resume="1"{/if}
      data-started="{$job.started|wash}"
      data-text-counts="{'%done of %total nodes'|i18n( 'design/admin/content/job' )|wash}"
@@ -102,7 +102,7 @@
 {* the module name in a variable: a server process started before the audit classes existed (Velocity) then gets no audit link instead of an error *}
 {def $cj_audit_module = 'audit'}{if fetch( $cj_audit_module, 'can_read', hash( 'channel', 'content' ) )}<p class="a4-content-job-audit"><a href={concat( 'audit/console/(job)/', $job.id )|ezurl}>{'Audit trail of this job'|i18n( 'design/admin/content/job' )}</a></p>{/if}{undef $cj_audit_module}
 
-<h2>{'Log'|i18n( 'design/admin/content/job' )} <a class="a4-content-job-download" href={concat( 'content/job/', $job.id, '?log=1' )|ezurl}>{'Download the whole log'|i18n( 'design/admin/content/job' )}</a></h2>
+<h2>{'Log'|i18n( 'design/admin/content/job' )} <a class="a4-content-job-download" href={concat( 'content/job/', $job.id, '/(log)/1' )|ezurl}>{'Download the whole log'|i18n( 'design/admin/content/job' )}</a></h2>
 <pre class="a4-pre a4-content-job-log" aria-live="off">{$job.log|wash}</pre>
 
 {* DESIGN: Content END *}</div></div></div>

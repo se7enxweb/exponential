@@ -69,7 +69,7 @@ Damit ist eine bekannte Lücke geschlossen; die Installation erfüllt dadurch ni
 ## Verwandte Seiten
 
 - [Sicherheitsstandards](../../../../eng-us/standards/security.md)
-- [Sicherheitshärtung von 6.0.13](../../../../eng-us/bc/6.0/hardening.md)
+- [Sicherheitshärtung von 6.0.13](../../../bc/6.0/haertung.md)
 - [Sicherheitsvoreinstellungen vom September 2026](../../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

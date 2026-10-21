@@ -72,7 +72,7 @@ Personal leisten können. Fragen Sie den Bieter, wie sein Versprechen an Sie per
 **Personal und Kompetenzen**
 - Wie viele Personen werden an der Website arbeiten, mit welchen Rollen? Wer vertritt sie im Urlaub?
 - Welche Schulung oder Zertifizierung haben sie abgeschlossen? Das kostenlose Kursmaterial steht im
-  [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md).
+  [Kurskatalog](../../../trainer/kurskatalog.md).
 
 **Sicherheit und Daten**
 - Wie werden Zugangsdaten übergeben und aufbewahrt? (Nie in Tickets oder E-Mails, wie der Leitfaden für Partner sagt.)

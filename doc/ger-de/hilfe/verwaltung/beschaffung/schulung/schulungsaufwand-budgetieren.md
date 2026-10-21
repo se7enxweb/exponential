@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an die Projektleitung, die eine Schulungszeile in ein Budget oder ein Modell der
 Gesamtbetriebskosten aufnehmen muss. Sie gibt eine Methode und ein Arbeitsblatt. Die einzigen Zahlen, die sie verwendet,
-sind die im [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md) veröffentlichten Kurslängen; jeden Preis, jeden Satz und
+sind die im [Kurskatalog](../../../trainer/kurskatalog.md) veröffentlichten Kurslängen; jeden Preis, jeden Satz und
 jede Personenzahl füllen Sie aus.
 
 ## Inhalt
@@ -50,7 +50,7 @@ Das Kursmaterial selbst kostet nichts: Es ist freie Dokumentation unter der GNU 
 | Suche | 20 | etwa 10 |
 | Train the Trainer | 34 | etwa 21 |
 
-Quelle: [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md). Viele Kurse bieten kürzere Zeitpläne aus ausgewählten
+Quelle: [Kurskatalog](../../../trainer/kurskatalog.md). Viele Kurse bieten kürzere Zeitpläne aus ausgewählten
 Modulen; die Tagesprogramme der [Workshops](../../../../../eng-us/help/trainers/workshops/README.md) sind eine weitere Möglichkeit.
 Rechnen Sie Pausen zu den Stunden hinzu, wenn Sie Tage planen.
 
@@ -92,9 +92,9 @@ Nehmen Sie dafür eine jährliche Zeile in das Budget auf, nicht nur die Schulun
 
 - **Die Zeit der Teilnehmenden** ist oft der größte Posten und wird nicht in Rechnung gestellt; zählen Sie sie trotzdem.
 - **Proben** auf der Version, die Sie verwenden werden, damit Übungen funktionieren
-  ([Übungen schreiben, die funktionieren](../../../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/writing-exercises-that-work.md)).
+  ([Übungen schreiben, die funktionieren](../../../trainer/train-the-trainer/modul-03-einen-kurs-gestalten/uebungen-schreiben-die-funktionieren.md)).
 - **Vorkehrungen zur Barrierefreiheit** für Teilnehmende
-  ([Vorkehrungen und inklusive Praxis](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md)).
+  ([Vorkehrungen und inklusive Praxis](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md)).
 - **Übersetzung** des Materials, wenn das Personal in einer anderen Sprache geschult wird, als die Hilfe anbietet.
 
 ## Verwandte Seiten

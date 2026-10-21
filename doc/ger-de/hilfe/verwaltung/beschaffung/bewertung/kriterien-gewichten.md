@@ -64,7 +64,7 @@ erfüllen, der die Arbeit leistet, unabhängig vom Produkt.
 | Freiheit beim Hosting und Speicherort der Daten | wo Daten gespeichert werden | [Hosting: ein Modell wählen](../../../hosting/modelle/ein-hosting-modell-waehlen.md) |
 | Ausstieg und Portabilität | die Möglichkeit, den Lieferanten zu wechseln | [Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md) |
 | Support und Kontinuität | eine Website lebt jahrelang | [Support erhalten](../../../projekt/unterstuetzung-erhalten.md), `SECURITY.md` |
-| Schulung | Redaktion über Abteilungen hinweg | [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md) |
+| Schulung | Redaktion über Abteilungen hinweg | [Kurskatalog](../../../trainer/kurskatalog.md) |
 
 ## Was die Dokumentation belegen kann und was nicht
 

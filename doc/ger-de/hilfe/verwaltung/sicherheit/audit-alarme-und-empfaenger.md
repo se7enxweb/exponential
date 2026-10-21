@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratorinnen und Administratoren, die dafür sorgen, dass ein ernstes Ereignis auf
 einer öffentlichen Website einen Menschen erreicht. Das Audit-Protokoll wertet Alarmregeln über seine Einträge aus;
 jede Auslösung wird als `system.audit.alert` aufgezeichnet und an Syslog und per E-Mail gesendet
-([4.5 Alarme und ihre Empfänger](../../../../eng-us/bc/6.0/audit.md#45-alerts-and-their-recipients)).
+([4.5 Alarme und ihre Empfänger](../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger)).
 
 ## Inhalt
 
@@ -90,7 +90,7 @@ unbekannte Gruppe, ein deaktivierter Benutzer).
 
 ## Verwandte Seiten
 
-- [Audit-Leitfaden, 4.5](../../../../eng-us/bc/6.0/audit.md#45-alerts-and-their-recipients)
+- [Audit-Leitfaden, 4.5](../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger)
 - [Das Audit-Protokoll für öffentliche Stellen](audit-protokoll-fuer-oeffentliche-stellen.md)
 - [13.14 Das Audit-Protokoll](../../../installation/13-sicherheitshaertung.md#1314-das-audit-protokoll)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

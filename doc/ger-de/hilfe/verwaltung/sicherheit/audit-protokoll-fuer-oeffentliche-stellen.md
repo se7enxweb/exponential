@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratorinnen und Administratoren, Informations
 Verantwortlichen für das Schriftgut öffentlicher Stellen. Von öffentlichen Stellen wird allgemein erwartet, dass
 Änderungen an amtlichen Informationen nachvollziehbar sind. Das Audit-Protokoll von Exponential zeichnet in
 manipulationssicheren Dateien auf, was in einer Installation geschieht, und ist **in jeder Installation standardmäßig
-eingeschaltet** ([Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md), [Audit-Leitfaden](../../../../eng-us/bc/6.0/audit.md)).
+eingeschaltet** ([Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md), [Audit-Leitfaden](../../../bc/6.0/audit.md)).
 
 ## Inhalt
 
@@ -61,8 +61,8 @@ Versionsseite Ersteller und Daten jeder Version ([Versionen eines Objekts](../..
   `access`, `system`, `commerce`, `read`.
 - Jede Zeile trägt den Hash der vorherigen Zeile; täglich signierte Prüfpunkte; signierte Archivmanifeste.
 - Aufbewahrung je Kanal: 90 Tage live und 730 Tage archiviert (read: 30 und 90), automatisch vom Cronjob-Teil entfernt
-  ([4.3 Aufbewahrung](../../../../eng-us/bc/6.0/audit.md#43-retention)). Verlangt ein Aktenplan längere Fristen, lässt sich
-  `ArchiveDays` verlängern ([6.6 Compliance: lange Aufbewahrung](../../../../eng-us/bc/6.0/audit.md#66-compliance-long-retention)).
+  ([4.3 Aufbewahrung](../../../bc/6.0/audit.md#43-aufbewahrung)). Verlangt ein Aktenplan längere Fristen, lässt sich
+  `ArchiveDays` verlängern ([6.6 Compliance: lange Aufbewahrung](../../../bc/6.0/audit.md#66-compliance-lange-aufbewahrung)).
 
 ## Wer es lesen darf
 
@@ -73,7 +73,7 @@ Versionsseite Ersteller und Daten jeder Version ([Versionen eines Objekts](../..
 
 In einer neuen Installation hat nur die Rolle Administrator diese Richtlinien. Ein Benutzer ohne die Richtlinie sieht
 nichts vom Audit, und eine eingetippte URL wird abgewiesen und aufgezeichnet
-([3.1 Wer was sehen darf](../../../../eng-us/bc/6.0/audit.md#31-who-may-see-what-the-policies)).
+([3.1 Wer was sehen darf](../../../bc/6.0/audit.md#31-wer-was-sehen-darf-die-richtlinien)).
 
 ## Erste Schritte in einer neuen Installation
 
@@ -90,7 +90,7 @@ nichts vom Audit, und eine eingetippte URL wird abgewiesen und aufgezeichnet
 ## Verwandte Seiten
 
 - [Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md)
-- [Audit: was in Exponential geschieht, aufgezeichnet](../../../../eng-us/bc/6.0/audit.md)
+- [Audit: was in Exponential geschieht, aufgezeichnet](../../../bc/6.0/audit.md)
 - [13.14 Das Audit-Protokoll](../../../installation/13-sicherheitshaertung.md#1314-das-audit-protokoll)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

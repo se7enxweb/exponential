@@ -40,7 +40,7 @@ Die Administration admin4 definiert alle ihre Farben als Tokens (Custom Properti
 verwendet werden: Text 4,5:1 auf jeder Fläche, Fokusrahmen und Feldränder 3:1, Diagrammfarben 3:1, in beiden Modi
 ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#wcag-22)). Die Designregeln verbieten fest
 codierte Farben in Templates und verlangen für jedes neue Token einen dunklen Wert
-([Styling von admin4](../../../../eng-us/bc/6.0/admin4-styling.md)). Außerdem beachtet sie `@media (forced-colors: active)` und
+([Styling von admin4](../../../bc/6.0/admin4-gestaltung.md)). Außerdem beachtet sie `@media (forced-colors: active)` und
 `prefers-color-scheme`.
 
 ## Dasselbe in Ihrem Theme tun

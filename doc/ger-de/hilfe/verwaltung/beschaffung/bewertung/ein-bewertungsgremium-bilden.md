@@ -56,7 +56,7 @@ Barrierefreiheit getrennt, weil sie aus derselben Demo zu unterschiedlichen Schl
 2. **Praktische Zeit vor den Demos.** Wer eine Stunde mit einem CMS gearbeitet hat, stellt bessere Fragen. Eine
    Testinstallation mit SQLite braucht einen Befehl
    ([Installation mit einem Befehl](../../../../../eng-us/features/6.0/install-in-one-command.md)).
-3. **Lesen im eigenen Tempo.** Die ersten Module von [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) vermitteln
+3. **Lesen im eigenen Tempo.** Die ersten Module von [Editors 101](../../../trainer/redakteure-101/README.md) vermitteln
    die Grundlagen, die Bewertende brauchen; der [Rundgang durch die Administration](../../../rundgang-durch-die-administration.md) ist kürzer.
 4. **Das Demo-Skript vereinbaren.** Geben Sie jedem Bieter dasselbe Skript; siehe die Seite zu Demo-Skripten für
    Bewertende.
@@ -89,7 +89,7 @@ Declarations signed: <date>
 ## Verwandte Seiten
 - [Bewertung: Übersicht](README.md)
 - [Beschaffung: Übersicht](../README.md)
-- [Trainerinnen und Trainer: Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainerinnen und Trainer: Kurskatalog](../../../trainer/kurskatalog.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

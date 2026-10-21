@@ -63,7 +63,7 @@ in der [Übersicht zur Beschaffung](../README.md) aufgeführt.
 - **Erfundene Daten in Demos und Tests.** Nie echte personenbezogene Daten von Bürgerinnen, Bürgern oder Beschäftigten.
 
 Die Einstiegsseite für Lesende aus dem öffentlichen Sektor ist
-[Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md).
+[Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 - [Beschaffung: Übersicht](../README.md)

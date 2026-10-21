@@ -46,7 +46,7 @@ sich von Land zu Land.
 5. **Gemeinsame Dienste für die Kommunen einer Region**, wenn Sie kommunale Websites hosten oder das planen.
 
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
-[Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
+[Verwaltungen: hier beginnen](../../verwaltungen-hier-beginnen.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 
 ## Was die regionale Ebene besonders macht
 

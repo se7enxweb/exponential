@@ -42,7 +42,7 @@ Zurück zu [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.m
 Welches Modell auch immer: Eine Exponential-Website braucht dieselben wenigen Dinge
 ([Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)):
 
-- **PHP 8.0 oder später** (8.1 oder später für Exponential Velocity) mit den erforderlichen Erweiterungen;
+- **PHP 8.0 oder später** (einschließlich Exponential Velocity) mit den erforderlichen Erweiterungen;
 - **eine Datenbank** der sechs unterstützten, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL ·
   3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit
   möglich; in 6.0.x hat es keinen Treiber ([Datenbankunterstützung](../../datenbankunterstuetzung.md));

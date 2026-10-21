@@ -56,7 +56,7 @@ Prüfungen:
 |---|---|
 | Fachbereich für Fachbereich in die Sektion Staging migrieren | [Sektionen, 13.3](../../../../anleitungen/sektionen.md#133-inhalte-vorbereiten-bevor-sie-öffentlich-werden) |
 | Die Beschlüsse der Volksvertretung der laufenden Wahlperiode laden; ältere im Archiv verlinken | [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
-| Redaktion der Fachbereiche, Freigebende und Sekretariat getrennt schulen | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) |
+| Redaktion der Fachbereiche, Freigebende und Sekretariat getrennt schulen | [Editors 101](../../../trainer/redakteure-101/README.md) |
 | Umleitungen für alte Adressen einrichten | [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
 | Eine Wiederherstellung und den Wartungsmodus proben | [Sicherungen und Wiederherstellungen](../../../../../eng-us/help/creators/website-creators/backups-and-restores.md), [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
 | Mit der Start-Checkliste starten | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |

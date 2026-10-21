@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Projektleitung oder Schulungskoordination einer öffentlichen Stelle, die Exponential
 einführt, und an die Beschaffungsstelle, die die Schulung in einer Ausschreibung beschreiben muss. Sie beantwortet:
 Welche Gruppen brauchen Schulung, welcher Kurs passt zu jeder Gruppe, wann im Projekt läuft jeder Kurs, und was sollten
-Sie festhalten, damit der Plan den Vertrag überdauert? Die Kurse und ihre Längen stammen aus dem [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md).
+Sie festhalten, damit der Plan den Vertrag überdauert? Die Kurse und ihre Längen stammen aus dem [Kurskatalog](../../../trainer/kurskatalog.md).
 
 ## Inhalt
 
@@ -53,18 +53,18 @@ Die Matrix, die jeder Gruppe Kurse zuordnet, steht auf der Seite „Rollen und K
 
 | Kurs | Für | Länge (Lektionen, ohne Pausen) |
 |---|---|---|
-| [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) | neue Redaktion | 27 Lektionen, etwa 19,5 Stunden |
+| [Editors 101](../../../trainer/redakteure-101/README.md) | neue Redaktion | 27 Lektionen, etwa 19,5 Stunden |
 | [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | Redaktion, die jede Woche veröffentlicht | 23 Lektionen, etwa 16 Stunden |
 | [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) | Redaktion und Website-Ersteller, die Seiten mit Blöcken bauen | 23 Lektionen, etwa 17,5 Stunden |
-| [Administration der Website](../../../../../eng-us/help/trainers/site-administrators/README.md) | Personen, die eine Website betreiben | 48 Lektionen, etwa 30 Stunden |
+| [Administration der Website](../../../trainer/website-administratoren/README.md) | Personen, die eine Website betreiben | 48 Lektionen, etwa 30 Stunden |
 | [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | Systemadministration | 28 Lektionen, etwa 20 Stunden |
 | [Suche](../../../../../eng-us/help/trainers/search/README.md) | Administration und Entwicklung | 20 Lektionen, etwa 10 Stunden |
 | [Multisite und Website-Pakete](../../../../../eng-us/help/trainers/multisite-and-packages/README.md) | Administration mehrerer Websites | 26 Lektionen, etwa 22 Stunden |
 | [Newsletter](../../../../../eng-us/help/trainers/newsletter/README.md) | Redaktion und Administration, die Newsletter versenden | 20 Lektionen, etwa 16 Stunden |
-| [Entwickler](../../../../../eng-us/help/trainers/developers/README.md) | PHP-Entwicklung | 52 Lektionen, etwa 44 Stunden |
-| [Theme-Design](../../../../../eng-us/help/trainers/theme-designers/README.md) | Design und Frontend-Entwicklung | 30 Lektionen, etwa 24 Stunden |
+| [Entwickler](../../../trainer/entwickler/README.md) | PHP-Entwicklung | 52 Lektionen, etwa 44 Stunden |
+| [Theme-Design](../../../trainer/theme-designer/README.md) | Design und Frontend-Entwicklung | 30 Lektionen, etwa 24 Stunden |
 | [Migration zu Exponential](../../../../../eng-us/help/trainers/migration/README.md) | Teams von Migrationsprojekten | 25 Lektionen, etwa 22,5 Stunden |
-| [Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md) | Personen, die unterrichten werden | 34 Lektionen, etwa 21 Stunden |
+| [Train the Trainer](../../../trainer/train-the-trainer/README.md) | Personen, die unterrichten werden | 34 Lektionen, etwa 21 Stunden |
 | [Workshops und Bootcamps](../../../../../eng-us/help/trainers/workshops/README.md) | Gruppen, die ein kompaktes Programm brauchen | Programme von einem halben bis zu fünf Tagen |
 
 Die Längen sind die, die der Katalog nennt. Jede Kursübersicht führt außerdem kürzere Zeitpläne auf, die aus ihren
@@ -94,7 +94,7 @@ Drei Möglichkeiten, die sich kombinieren lassen:
 2. **Ein Schulungspartner** führt die Kurse durch ([Schulungspartner](../../../partner/schulungspartner.md)). Beachten
    Sie, dass das Projekt noch nicht veröffentlicht hat, was einen Kurs „offiziell“ macht; verlangen Sie die
    Kursgliederung, nicht ein Etikett.
-3. **Ihre eigenen Trainerinnen und Trainer**, vorbereitet mit [Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md),
+3. **Ihre eigenen Trainerinnen und Trainer**, vorbereitet mit [Train the Trainer](../../../trainer/train-the-trainer/README.md),
    unterrichten die Kurse aus dieser Hilfe. So bleibt das Wissen nach Vertragsende im Haus.
 
 ## Eine Vorlage für den Plan
@@ -113,7 +113,7 @@ Lab: <training installation, see the lab quick card>   Material: free documentat
 Assessment: <written test / practical task>            Review of this plan: every <period>
 ```
 
-Bauen Sie das Lab mit der [Lab-Kurzkarte](../../../../../eng-us/help/trainers/lab-quick-card.md) auf; eine Schulungsinstallation auf
+Bauen Sie das Lab mit der [Lab-Kurzkarte](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md) auf; eine Schulungsinstallation auf
 SQLite braucht keinen Datenbankserver ([Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)).
 
 ## Fallstricke
@@ -121,7 +121,7 @@ SQLite braucht keinen Datenbankserver ([Exponential mit einem Befehl installiere
 - **Auf der Produktionswebsite schulen.** Verwenden Sie eine separate Schulungsinstallation; Übungen legen Inhalte an
   und löschen sie.
 - **Auf einer anderen Version schulen.** Proben Sie jede Übung auf der Version, die Sie verwenden werden
-  ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md#how-to-use-a-course)).
+  ([Kurskatalog](../../../trainer/kurskatalog.md#wie-sie-einen-kurs-nutzen)).
 - **Kein Plan für neue Beschäftigte.** Die Startgruppe ist geschult; die Personen, die ein Jahr später kommen, nicht.
 - **Schulungsmaterial im Besitz des Lieferanten.** Verlangen Sie im Vertrag, dass angepasstes Material für Sie nutzbar
   bleibt; die Hilfe, auf der es aufbaut, ist bereits freie Dokumentation.
@@ -129,8 +129,8 @@ SQLite braucht keinen Datenbankserver ([Exponential mit einem Befehl installiere
 ## Verwandte Seiten
 
 - [Schulung in der Beschaffung](README.md)
-- [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Kurskatalog](../../../trainer/kurskatalog.md)
+- [Trainer: hier beginnen](../../../trainer/trainer-hier-beginnen.md)
 - [Einen Schulungskurs zu Exponential durchführen](../../../partner/eine-schulung-durchfuehren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

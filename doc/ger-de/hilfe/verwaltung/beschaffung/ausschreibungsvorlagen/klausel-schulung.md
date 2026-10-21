@@ -10,7 +10,7 @@ type: help
 # Ausschreibungsvorlage: Klausel zur Schulung
 
 Diese Seite richtet sich an Beschaffungsstellen und Schulungskoordination, die Schulungen zusammen mit einem CMS
-einkaufen. Die Hilfe von Exponential enthält vollständige Trainerkurse unter der GNU FDL ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)),
+einkaufen. Die Hilfe von Exponential enthält vollständige Trainerkurse unter der GNU FDL ([Kurskatalog](../../../trainer/kurskatalog.md)),
 ein Lieferant muss also keine Materialien erfinden: Die Klausel kann verlangen, dass die gelieferte Schulung ihnen folgt,
 an Ihre Website angepasst, und dass die Materialien Ihnen zur Wiederverwendung gehören.
 
@@ -60,20 +60,20 @@ T.8 Refreshers. After each major change of the system the Supplier provides
 
 ## Rollen und Kurse
 
-Aus dem [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md); die Längen sind die dort veröffentlichten.
+Aus dem [Kurskatalog](../../../trainer/kurskatalog.md); die Längen sind die dort veröffentlichten.
 
 | Rolle in Ihrer Organisation | Kurs | Veröffentlichte Länge |
 |---|---|---|
-| Neue Redaktion | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) | 27 Lektionen, etwa 19,5 Stunden |
+| Neue Redaktion | [Editors 101](../../../trainer/redakteure-101/README.md) | 27 Lektionen, etwa 19,5 Stunden |
 | Regelmäßig Veröffentlichende, Freigebende | [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | 23 Lektionen, etwa 16 Stunden |
 | Seitengestaltung mit Blöcken | [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) | 23 Lektionen, etwa 17,5 Stunden |
-| Administration der Website | [Administration der Website](../../../../../eng-us/help/trainers/site-administrators/README.md) | 48 Lektionen, etwa 30 Stunden |
+| Administration der Website | [Administration der Website](../../../trainer/website-administratoren/README.md) | 48 Lektionen, etwa 30 Stunden |
 | Systemadministration | [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | 28 Lektionen, etwa 20 Stunden |
 | Newsletter-Personal | [Newsletter](../../../../../eng-us/help/trainers/newsletter/README.md) | 20 Lektionen, etwa 16 Stunden |
-| Interne Trainerinnen und Trainer | [Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md) | 34 Lektionen, etwa 21 Stunden |
+| Interne Trainerinnen und Trainer | [Train the Trainer](../../../trainer/train-the-trainer/README.md) | 34 Lektionen, etwa 21 Stunden |
 | Kurze Programme | [Workshops und Bootcamps](../../../../../eng-us/help/trainers/workshops/README.md) | Programme von einem halben bis zu 5 Tagen |
 
-Praktische Tests je Kurs stehen in [Prüfungen und praktische Übungen](../../../../../eng-us/help/trainers/assessments/README.md).
+Praktische Tests je Kurs stehen in [Prüfungen und praktische Übungen](../../../trainer/pruefungen/README.md).
 
 ## Materialien und Lizenzierung
 
@@ -81,7 +81,7 @@ Praktische Tests je Kurs stehen in [Prüfungen und praktische Übungen](../../..
   ([Freie Dokumentation](../../../freie-dokumentation.md)). Ihre Organisation darf sie kopieren und anpassen; angepasste
   Versionen bleiben unter derselben Lizenz.
 - Barrierefreiheit und Inklusion im Unterricht behandelt Train the Trainer, Modul 5
-  ([Barrierefreiheit und Inklusion](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)).
+  ([Barrierefreiheit und Inklusion](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)).
 
 ## Hinweise für die bewertende Person
 
@@ -93,6 +93,6 @@ Praktische Tests je Kurs stehen in [Prüfungen und praktische Übungen](../../..
 ## Verwandte Seiten
 - [Ausschreibungsvorlagen](README.md)
 - [Klausel zur Dokumentation](klausel-dokumentation.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../../trainer/trainer-hier-beginnen.md)
 - [Einen Schulungskurs durchführen (für Partner)](../../../partner/eine-schulung-durchfuehren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

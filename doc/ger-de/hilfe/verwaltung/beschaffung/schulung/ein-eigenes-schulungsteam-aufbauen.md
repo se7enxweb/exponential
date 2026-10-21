@@ -11,8 +11,8 @@ type: help
 
 Diese Seite richtet sich an die Schulungskoordination einer öffentlichen Stelle, die Wissen über Exponential in der
 Organisation halten möchte. Eine interne Trainerin oder ein interner Trainer kann neue Beschäftigte jederzeit einarbeiten
-und geht nicht, wenn ein Vertrag endet. Die Kurse und ihr Inhalt stammen aus [Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md) und
-[Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md).
+und geht nicht, wenn ein Vertrag endet. Die Kurse und ihr Inhalt stammen aus [Train the Trainer](../../../trainer/train-the-trainer/README.md) und
+[Trainer: hier beginnen](../../../trainer/trainer-hier-beginnen.md).
 
 ## Inhalt
 
@@ -36,21 +36,21 @@ und geht nicht, wenn ein Vertrag endet. Die Kurse und ihr Inhalt stammen aus [Tr
 
 Wählen Sie Personen, die das System bereits jede Woche nutzen: eine leitende Redakteurin oder einen leitenden
 Redakteur für Redaktionskurse, eine Person aus der Administration der Website für den Administrationskurs. Sie brauchen
-Kenntnisse im Browser und im Terminal für Train the Trainer ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)) und
+Kenntnisse im Browser und im Terminal für Train the Trainer ([Kurskatalog](../../../trainer/kurskatalog.md)) und
 Zeit: Trainerinnen und Trainer bereiten vor und proben, sie unterrichten nicht nur.
 
 ## Der Ausbildungsweg für Trainerinnen und Trainer
 
 | Schritt | Kurs | Länge |
 |---|---|---|
-| 1 | [Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md): Vorbereitung, Aufbau des Labs, Gestaltung eines Kurses, Durchführung, Barrierefreiheit und Inklusion, Prüfung und Nachbereitung | 34 Lektionen, etwa 21 Stunden |
-| 2 | der Fachkurs, den sie unterrichten werden, als Teilnehmende besucht (zum Beispiel [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md)) | siehe Katalog |
+| 1 | [Train the Trainer](../../../trainer/train-the-trainer/README.md): Vorbereitung, Aufbau des Labs, Gestaltung eines Kurses, Durchführung, Barrierefreiheit und Inklusion, Prüfung und Nachbereitung | 34 Lektionen, etwa 21 Stunden |
+| 2 | der Fachkurs, den sie unterrichten werden, als Teilnehmende besucht (zum Beispiel [Editors 101](../../../trainer/redakteure-101/README.md)) | siehe Katalog |
 | 3 | diesen Kurs der Gruppe zurück unterrichten, wie es der Katalog für neue Trainerinnen und Trainer vorschlägt | |
-| 4 | [Prüfungen und praktische Übungen](../../../../../eng-us/help/trainers/assessments/README.md), wenn Sie Lernende prüfen | etwa 6 Stunden |
+| 4 | [Prüfungen und praktische Übungen](../../../trainer/pruefungen/README.md), wenn Sie Lernende prüfen | etwa 6 Stunden |
 
 ## Das Lab
 
-Eine Schulungsinstallation ist von der Live-Website getrennt. Die [Lab-Kurzkarte](../../../../../eng-us/help/trainers/lab-quick-card.md)
+Eine Schulungsinstallation ist von der Live-Website getrennt. Die [Lab-Kurzkarte](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md)
 führt jeden Befehl auf, um eine zu bauen, auszuliefern, zu prüfen, zurückzusetzen und zu entfernen. Der schnellste
 Einstieg ist das Konsolen-Installationsprogramm auf SQLite, das keinen Datenbankserver braucht:
 
@@ -72,8 +72,8 @@ Testinhalte.
   wenn Sie die Hinweise erhalten und das Ergebnis genauso lizenzieren ([Freie Dokumentation](../../../freie-dokumentation.md)).
 - Ergänzen Sie die Übungen um Ihr eigenes Inhaltsmodell, Ihre Sektionsnamen und Ihre redaktionellen Regeln.
 - Proben Sie nach jedem Upgrade der Live-Website die Übungen erneut und aktualisieren Sie Screenshots oder Schritte, die
-  sich geändert haben ([Übungen schreiben, die funktionieren](../../../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/writing-exercises-that-work.md)).
-- Verwenden Sie die wiederverwendbaren Checklisten und Vorlagen im [Werkzeugkasten für Trainer](../../../../../eng-us/help/trainers/trainer-toolkit.md).
+  sich geändert haben ([Übungen schreiben, die funktionieren](../../../trainer/train-the-trainer/modul-03-einen-kurs-gestalten/uebungen-schreiben-die-funktionieren.md)).
+- Verwenden Sie die wiederverwendbaren Checklisten und Vorlagen im [Werkzeugkasten für Trainer](../../../trainer/trainer-werkzeugkasten.md).
 - Verbesserungen, die allen helfen, können als Beiträge zur Dokumentation an das Projekt zurückgehen
   ([Dokumentation und Übersetzungen beitragen](../../../partner/dokumentation-und-uebersetzungen-beitragen.md)).
 
@@ -84,15 +84,15 @@ Testinhalte.
 3. Bauen Sie das Lab und eine Routine zum Zurücksetzen auf.
 4. Passen Sie Editors 101 an Ihre Website an; proben Sie den Kurs.
 5. Führen Sie einen Pilotkurs mit einigen wohlwollenden Teilnehmenden durch; sammeln Sie Rückmeldungen
-   ([Rückmeldungen sammeln](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md)).
+   ([Rückmeldungen sammeln](../../../trainer/train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md)).
 6. Nehmen Sie den Kurs in die Routine der Einarbeitung auf (siehe „Einarbeitung neuer Beschäftigter“ in diesem Ordner).
 7. Überprüfen Sie das Material nach jedem Upgrade und einmal im Jahr.
 
 ## Verwandte Seiten
 
 - [Schulung in der Beschaffung](README.md)
-- [Train the Trainer: Kursübersicht](../../../../../eng-us/help/trainers/train-the-trainer/README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Train the Trainer: Kursübersicht](../../../trainer/train-the-trainer/README.md)
+- [Trainer: hier beginnen](../../../trainer/trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

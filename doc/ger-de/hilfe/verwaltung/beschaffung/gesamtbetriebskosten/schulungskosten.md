@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen, die Schulungen für Redaktion, Administratoren und technisches Personal
 budgetieren müssen. Die Hilfe liefert einen vollständigen Satz Trainerkurse mit Modulen, Zeitplänen und Übungen als
 freie Dokumentation mit. Das Material kostet also nichts; die Zeit der Trainerinnen und Trainer, die Zeit der
-Teilnehmenden und das Schulungs-Lab kosten weiterhin. Die Kurslängen unten sind die, die der [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md) nennt.
+Teilnehmenden und das Schulungs-Lab kosten weiterhin. Die Kurslängen unten sind die, die der [Kurskatalog](../../../trainer/kurskatalog.md) nennt.
 
 ## Inhalt
 1. [Wer welchen Kurs braucht](#wer-welchen-kurs-braucht)
@@ -25,14 +25,14 @@ Teilnehmenden und das Schulungs-Lab kosten weiterhin. Die Kurslängen unten sind
 
 | Gruppe | Kurs | Länge laut Katalog |
 |---|---|---|
-| Neue Redaktion | [Editors 101](../../../../../eng-us/help/trainers/editors-101/README.md) | 27 Lektionen, etwa 19,5 Stunden (etwa 3 Tage) |
+| Neue Redaktion | [Editors 101](../../../trainer/redakteure-101/README.md) | 27 Lektionen, etwa 19,5 Stunden (etwa 3 Tage) |
 | Redaktion, die jede Woche veröffentlicht | [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | 23 Lektionen, etwa 16 Stunden (etwa 3 Tage) |
 | Seitengestaltung | [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) | 23 Lektionen, etwa 17,5 Stunden (etwa 3 Tage) |
-| Administration der Website | [Administration der Website](../../../../../eng-us/help/trainers/site-administrators/README.md) | 48 Lektionen, etwa 30 Stunden (etwa 5 Tage) |
+| Administration der Website | [Administration der Website](../../../trainer/website-administratoren/README.md) | 48 Lektionen, etwa 30 Stunden (etwa 5 Tage) |
 | Systemadministration | [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | 28 Lektionen, etwa 20 Stunden (3 bis 4 Tage) |
 | Newsletter-Versand | [Newsletter](../../../../../eng-us/help/trainers/newsletter/README.md) | 20 Lektionen, etwa 16 Stunden |
-| Entwicklung | [Entwickler](../../../../../eng-us/help/trainers/developers/README.md) | 52 Lektionen, etwa 44 Stunden (etwa 7 Tage) |
-| Interne Trainerinnen und Trainer | [Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md) | 34 Lektionen, etwa 21 Stunden (3 bis 4 Tage) |
+| Entwicklung | [Entwickler](../../../trainer/entwickler/README.md) | 52 Lektionen, etwa 44 Stunden (etwa 7 Tage) |
+| Interne Trainerinnen und Trainer | [Train the Trainer](../../../trainer/train-the-trainer/README.md) | 34 Lektionen, etwa 21 Stunden (3 bis 4 Tage) |
 | Kompakte Programme | [Workshops und Bootcamps](../../../../../eng-us/help/trainers/workshops/README.md) | Programme von einem halben, 1, 3 und 5 Tagen |
 
 Die Dauern enthalten Übungen, aber keine Pausen. Jede Kursübersicht führt kürzere Zeitpläne auf, die aus ihren Modulen
@@ -64,7 +64,7 @@ Onboarding per year: <new staff per year> x <course days>
 ```
 
 Verwenden Sie die Kurslängen oben als Ausgangspunkt und passen Sie sie mit Ihrer Trainerin oder Ihrem Trainer an. Das
-Lab ist in [Das Lab aufbauen](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md) beschrieben.
+Lab ist in [Das Lab aufbauen](../../../trainer/train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md) beschrieben.
 
 ## Wege, die Kosten zu senken
 
@@ -82,7 +82,7 @@ Lab ist in [Das Lab aufbauen](../../../../../eng-us/help/trainers/train-the-trai
 ## Verwandte Seiten
 - [Gesamtbetriebskosten: Übersicht](README.md)
 - [Personal und Kompetenzen](personal-und-kompetenzen.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../../trainer/trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

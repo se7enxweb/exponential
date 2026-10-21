@@ -55,7 +55,7 @@ git tag -l 'v*' --sort=version:refname | tail -5
 - Jede Kernel-Version hat ein Changelog in `doc/changelogs/6.0/`, zum Beispiel das
   [Changelog von 6.0.15](../../../../../changelogs/6.0/6.0.15.md).
 - Erweiterungen haben eigene Changelogs in `doc/changelogs/extensions/`.
-- Jede Änderung seit Dezember 2023 wird in [der Geschichte](../../../../../eng-us/history/README.md) erzählt.
+- Jede Änderung seit Dezember 2023 wird in [der Geschichte](../../../../geschichte/README.md) erzählt.
 
 Ein langes, ausführliches Changelog mit Einträgen zu Sicherheit und Barrierefreiheit ist ein Zeichen aktiver Pflege;
 lesen Sie eine Stichprobe von Einträgen, statt sie zu zählen.

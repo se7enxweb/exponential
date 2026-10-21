@@ -69,7 +69,7 @@ bis zur *Behebung* einer Schwachstelle in der Software hängt vom Projekt ab.
 
 | Frage | Eine gute Antwort zeigt |
 |---|---|
-| Wer in Ihrem Personal kennt Exponential? | Benannte Rollen, abgeschlossene Schulungen ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)) |
+| Wer in Ihrem Personal kennt Exponential? | Benannte Rollen, abgeschlossene Schulungen ([Kurskatalog](../../../trainer/kurskatalog.md)) |
 | Wie erfahren Sie von einem neuen Release? | Verfolgen der Releases des Repositorys und des Changelogs ([Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md)) |
 | Wie testen Sie ein Update vor der Produktion? | Eine Staging-Kopie und ein schriftliches Verfahren ([Kundenwebsites aktualisieren](../../../hosting/betrieb/kunden-websites-aktualisieren.md)) |
 | Was tun Sie, wenn die Korrektur im vorgelagerten Projekt liegt? | Ein Issue im öffentlichen Tracker, ein Pull Request oder der Ticketweg für Partner ([Fehler als Partner melden](../../../partner/fehler-gut-melden.md)) |
