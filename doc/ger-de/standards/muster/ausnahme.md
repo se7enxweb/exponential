@@ -11,7 +11,7 @@ type: catalogue
 
 > **Hinweis**
 > Diese Seite wird aus dem Quellcode von `php bin/php/exppatterncatalogue.php --write` erzeugt. Bearbeiten Sie sie nicht von Hand:
-> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#how-the-catalogue-is-built).
+> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#wie-der-katalog-gebaut-wird).
 
 Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 
@@ -149,7 +149,7 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 | `eZDFSFileHandlerNFSMountPointNotWriteableException` | class extends ezcBaseException | `kernel/private/classes/exceptions/cluster/mount_point_not_writeable.php:19` | Klasse für die Ausnahme „Cluster-Mountpunkt nicht beschreibbar“ | – |
 | `eZDFSFileHandlerTableNotFoundException` | class extends ezcBaseException | `kernel/private/classes/exceptions/cluster/table_not_found.php:19` | Klasse für die Ausnahme „Cluster-Tabelle nicht gefunden“ | – |
 | `ezpAccessDenied` | class extends Exception | `kernel/private/classes/exceptions/kernel/accessdenied.php:17` | Ausnahme, die auftritt, wenn der Zugriff verweigert wird. | – |
-| `ezpFormTokenException` | class extends Exception | `kernel/private/classes/exceptions/kernel/formtoken.php:23` | Ein POST wurde abgelehnt, weil sein Formular-Token (CSRF-Token) fehlte oder nicht zur Session gehörte: das Formular wurde in einer anderen Session geladen, bevor e… | – |
+| `ezpFormTokenException` | class extends Exception | `kernel/private/classes/exceptions/kernel/formtoken.php:23` | Ein POST wurde abgelehnt, weil sein Formular-Token (CSRF-Token) fehlte oder nicht zur Sitzung gehörte: das Formular wurde in einer anderen Sitzung geladen, bevor e… | – |
 | `ezpLanguageNotFound` | class extends Exception | `kernel/private/classes/exceptions/kernel/languagenotfound.php:17` | Ausnahme, die auftritt, wenn eine unbekannte Sprache verwendet wird. | – |
 | `ezpModuleDisabled` | class extends Exception | `kernel/private/classes/exceptions/kernel/moduledisabled.php:17` | Ausnahme, die auftritt, wenn ein Modul deaktiviert ist. | – |
 | `ezpModuleNotFound` | class extends Exception | `kernel/private/classes/exceptions/kernel/modulenotfound.php:17` | Ausnahme, die auftritt, wenn ein Modul nicht gefunden wird. | – |

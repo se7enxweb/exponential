@@ -14,7 +14,7 @@ Aktualisierungen, Importe oder Wiederherstellungen planen und die Öffentlichkei
 beantwortet, wie der Wartungsmodus funktioniert, was Besucher, Überwachungssysteme und Suchmaschinen sehen, wer
 weiterhin hineinkommt und wie ein Wartungsfenster in Ihren Änderungskalender passt. Die vollständige Anleitung ist
 [Wartungsmodus: die Website offline nehmen und zurückholen](../../../../anleitungen/wartungsmodus.md); die
-Funktionsseite ist [Wartungsmodus](../../../../../eng-us/features/6.0/maintenance-mode.md).
+Funktionsseite ist [Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.md).
 
 ## Inhalt
 
@@ -56,7 +56,7 @@ php bin/php/maintenance.php off --allow-root-user
 
 `./console exp:maintenance on|off|status` ist dasselbe über die Konsole. Die Wartung endet nie von selbst: Wenn das
 erwartete Ende verstrichen ist, zeigt die Seite eine Warnung, und jemand muss sie ausschalten. Jede Änderung wird im
-Audit-Trail als `system.maintenance.change` festgehalten, und **Setup > Wartung** listet die letzten Änderungen auf.
+Prüfprotokoll als `system.maintenance.change` festgehalten, und **Setup > Wartung** listet die letzten Änderungen auf.
 
 ## Wer weiterhin hineinkommt
 
@@ -109,8 +109,9 @@ ein Job nicht laufen darf, während Sie die Website ändern (ein Import, ein Neu
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -58,9 +58,9 @@ nennt keine Kunden.
 |---|---|---|---|
 | **Web-Publishing und Medienportale** (Verlage, Nachrichten, Magazine) | Strukturierte Artikel, viele Autoren, Freigabe, Feeds, viele Rubriken | Frei definierbare Inhaltsklassen; Versionsverwaltung; Freigabe von Inhalten und zeitgesteuerte Veröffentlichung; Feeds in RSS, ATOM, iTunes und OPML (`README.md`, „Main Exponential features“) | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md), [Workflows](../../anleitungen/workflows.md), [RSS-Feeds](../../anleitungen/rss-feeds.md) |
 | **Intranets** | Angemeldete Benutzer, fein abgestufte Rechte je Abteilung, Suche | Rollenbasierte Berechtigungen mit Einschränkungen auf Sektionen und Teilbäume; eingebaute Suchmaschine | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md), [Sektionen](../../anleitungen/sektionen.md), [Suchen](../suchen.md) |
-| **Extranets** (Partner, Mitglieder, Kunden) | Registrierung, Freigabe von Konten, getrennte Bereiche | Benutzerregistrierung mit Freigabe durch einen Administrator; Sektionen; Siteaccesses | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md), [Siteaccess-Zuordnung nach Host und Sprache](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md) |
-| **E-Commerce** | Produkte, Warenkörbe, Bestellungen, Mehrwertsteuer, Währungen, Zahlungen | „Advanced e-Commerce Stores (Built in)“; PayPal über `ezpaypal` | [Bestellbestätigungen](../../../eng-us/features/6.0/order-receipts.md), [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md), [Wer ist 7x?](../wer-ist-7x.md#cms-cmf-und-shop-in-einem) |
-| **Organisationen mit mehreren Marken und Ländern** | Mehrere Sites, mehrere Sprachen, gemeinsam genutzte Inhalte | Multisite aus einer Installation; 268 Locale-Dateien; Schreibrichtung von rechts nach links | [Multisite- und mehrsprachige Projekte planen](../fuehrung/multisite-und-mehrsprachigkeit-planen.md), [Sprachen in Exponential](../../../eng-us/languages.md) |
+| **Extranets** (Partner, Mitglieder, Kunden) | Registrierung, Freigabe von Konten, getrennte Bereiche | Benutzerregistrierung mit Freigabe durch einen Administrator; Sektionen; Siteaccesses | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md), [Siteaccess-Zuordnung nach Host und Sprache](../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md) |
+| **E-Commerce** | Produkte, Warenkörbe, Bestellungen, Mehrwertsteuer, Währungen, Zahlungen | „Advanced e-Commerce Stores (Built in)“; PayPal über `ezpaypal` | [Bestellbestätigungen](../../funktionen/6.0/bestellbelege.md), [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md), [Wer ist 7x?](../wer-ist-7x.md#cms-cmf-und-shop-in-einem) |
+| **Organisationen mit mehreren Marken und Ländern** | Mehrere Sites, mehrere Sprachen, gemeinsam genutzte Inhalte | Multisite aus einer Installation; 268 Locale-Dateien; Schreibrichtung von rechts nach links | [Multisite- und mehrsprachige Projekte planen](../fuehrung/multisite-und-mehrsprachigkeit-planen.md), [Sprachen in Exponential](../../sprachen.md) |
 | **Verbände, Bildung, Behörden** | Langlebige Sites, viele Redakteure, Barrierefreiheit, Fragen des Datenschutzes | Rollen und Workflows; das Design admin4 mit geprüften Kontrasten und Zielgrößen; Audit-Protokoll | [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md) |
 | **Agenturen und Integratoren** | Eine Plattform, auf der sich viele Kunden-Sites ohne Lizenzgebühren bauen lassen | GPL-Lizenz; Erweiterungen; Git-Klone; die Distribution Nexus mit Demo-Inhalten und Layouts | [Mit Git entwickeln](../mit-git-entwickeln.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-platform-nexus) |
 | **Individuelle Webanwendungen** | Ein Framework, in dem Inhalte, Benutzer und Berechtigungen schon gebaut sind | MVC, Module und Views, Templates, REST-API, Kommandozeilenskripte | [Templates und Design](../../anleitungen/templates-und-design.md), [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
@@ -74,12 +74,12 @@ Die Entscheidungstabelle der Foundation, in Kurzform ([Welches Produkt zu Ihnen 
 | Der Kunde möchte | Angebot | Lesen |
 |---|---|---|
 | Ein CMS mit Shop, Multisite und vielen Sprachen, nur mit PHP, ohne Datenbankserver | Exponential 6 mit SQLite | [Erste Schritte](../erste-schritte.md), [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
-| Die schnellste Art, es auszuliefern | Exponential Velocity | [Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
+| Die schnellste Art, es auszuliefern | Exponential Velocity | [Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 | Redakteure, die Seiten selbst bauen | Exponential Layouts | [Der Layout-Editor](../layout-editor.md) |
-| Hilfe beim Schreiben und Übersetzen von Inhalten | Exponential Intelligence | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
-| Ein Symfony-Projekt mit REST und GraphQL, ohne Legacy-Kernel | Exponential Platform DXP | [DXP-Grundgerüst](../../../eng-us/features/6.0/platform-dxp-skeleton.md) |
-| Eine vollständige Demo-Site mit Layouts auf der Symfony-Plattform | Exponential Platform Nexus | [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md) |
-| Eine Site auf Exponential 6 behalten und Symfony daneben stellen | Exponential Platform Legacy | [Legacy-Bridge](../../../eng-us/features/6.0/legacy-bridge.md) |
+| Hilfe beim Schreiben und Übersetzen von Inhalten | Exponential Intelligence | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
+| Ein Symfony-Projekt mit REST und GraphQL, ohne Legacy-Kernel | Exponential Platform DXP | [DXP-Grundgerüst](../../funktionen/6.0/plattform-dxp-skeleton.md) |
+| Eine vollständige Demo-Site mit Layouts auf der Symfony-Plattform | Exponential Platform Nexus | [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md) |
+| Eine Site auf Exponential 6 behalten und Symfony daneben stellen | Exponential Platform Legacy | [Legacy-Bridge](../../funktionen/6.0/legacy-bridge.md) |
 | Ein kleines, einfaches CMS zum Lernen | Exponential Basic | <https://basic.exponential.earth> |
 
 ## Käufer-Personas
@@ -119,7 +119,7 @@ realer Personen.
 | **Was ihnen wichtig ist** | Zugriffskontrolle, Audit, Umgang mit Sicherheitslücken, Datenflüsse (auch die des Schreibassistenten) |
 | **Einstieg mit** | Rollen und Richtlinien; das manipulationssichere Audit-Protokoll; die Content Security Policy; vertrauliche Meldung von Sicherheitslücken; die Datenrichtlinie von Exponential Intelligence und ihre druckbare Zusammenfassung für Datenschutzbeauftragte (`README.md`, „Safety“) |
 | **Zeigen** | Den Tab **Audit**; eine Rollenseite, deren Richtlinien als Sätze dargestellt sind |
-| **Schicken** | [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md), [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md), [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md), `SECURITY.md` |
+| **Schicken** | [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md), [Content Security Policy](../../funktionen/6.0/content-security-policy.md), [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md), `SECURITY.md` |
 
 ### 4. Die Betreiber einer älteren Site
 
@@ -140,7 +140,7 @@ realer Personen.
 | **Situation** | Bauen und pflegen Sites für viele Kunden |
 | **Was ihnen wichtig ist** | Keine Lizenzgebühren pro Kunde, Wiederverwendung über Projekte hinweg, eine Community, die Möglichkeit, Dinge selbst zu beheben |
 | **Einstieg mit** | GPL-Lizenz; Erweiterungen und Composer-Pakete; Git-Klone mit vollständiger Historie; Pull-Requests sind willkommen |
-| **Zeigen** | Die Liste der Erweiterungen ([Die Standardauswahl an Erweiterungen](../../../eng-us/features/6.0/default-extension-distribution.md)); [Mit Git entwickeln](../mit-git-entwickeln.md) |
+| **Zeigen** | Die Liste der Erweiterungen ([Die Standardauswahl an Erweiterungen](../../funktionen/6.0/standard-extension-auslieferung.md)); [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | **Schicken** | [Community und Ökosystem als Verkaufsargument](community-und-oekosystem.md), [Lizenzen für Käufer erklärt](lizenzen-fuer-kaeufer.md) |
 
 ### 6. Die Ansprechpartner aus Einkauf oder Finanzen
@@ -162,10 +162,10 @@ das oft den Verkauf.
 | **Redakteur** | Schreibt, bearbeitet, übersetzt, veröffentlicht | Ein übersichtliches Dashboard, Entwürfe, Vorschau, Rückgängig machen | **Dashboard**, **Inhaltsstruktur**, Versionen | [Erste Schritte](../erste-schritte.md), [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
 | **Seitengestalter oder Designer** | Ordnet Seiten und Kampagnen an | Seiten ohne Code bauen | Tab **Layouts** | [Der Layout-Editor](../layout-editor.md) |
 | **Übersetzer** | Übersetzt Inhalte | Übersetzungen nebeneinander; die eigene Sprache der Oberfläche | Tab „Übersetzungen“; Sprache der Oberfläche | [Sprachen](../sprachen.md) |
-| **Autor von Inhalten** | Entwirft neue Inhalte | Hilfe bei ersten Entwürfen, Zusammenfassungen, Alternativtexten | Tab **Intelligence**, Aktionen im Bearbeitungsformular | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
+| **Autor von Inhalten** | Entwirft neue Inhalte | Hilfe bei ersten Entwürfen, Zusammenfassungen, Alternativtexten | Tab **Intelligence**, Aktionen im Bearbeitungsformular | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
 | **Administrator** | Benutzer, Rechte, Einstellungen, Logs | Kontrolle und Überblick | **Benutzer**, **Setup**, **Audit** | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md), [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md) |
 | **Entwickler** | Baut Funktionen und Integrationen | Git, Composer, Templates, Erweiterungen, APIs | Code und Einstellungen | [Mit Git entwickeln](../mit-git-entwickeln.md), [Erweiterungen](../../anleitungen/extensions.md) |
-| **Nutzer von Tastatur und assistiven Technologien** | Alles oben Genannte | Ohne Maus arbeiten; gut lesbare Kontraste | Tastenkürzel; das Design admin4 | [Tastenkürzel](../tastenkuerzel.md), [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
+| **Nutzer von Tastatur und assistiven Technologien** | Alles oben Genannte | Ohne Maus arbeiten; gut lesbare Kontraste | Tastenkürzel; das Design admin4 | [Tastenkürzel](../tastenkuerzel.md), [Das Design admin4](../../funktionen/6.0/admin4-design.md) |
 
 ## Qualifizierungsfragen
 
@@ -230,3 +230,11 @@ Open questions:        <for the project manager>
 - [Was Exponential ist: die Produktfamilie](../fuehrung/was-exponential-ist.md)
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

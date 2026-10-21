@@ -14,12 +14,12 @@ A view of the `url` module, defined in `kernel/url/module.php` and run by `kerne
 ## Address
 
 ```text
-/url/list/<ViewMode>/(offset)/<Offset>
+/url/list/<ViewMode>/(offset)/<Offset>/(sort)/<Sort>/(q)/<Query>
 ```
 
 Ordered parameters, in this order after the view name: `ViewMode`.
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(sort)` sets `Sort`, `(q)` sets `Query`.
 
 ## Who may open it
 

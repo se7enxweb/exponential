@@ -91,7 +91,7 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
    ([10.2](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).
 5. `HostMatchMethod=start` (oder die Methode `start` bei diesem einen Eintrag); `start` nimmt auch Hosts an, die Sie
    nicht gemeint haben, verwenden Sie es daher nur, wo der Webserver nur für Ihre eigenen Hosts antwortet
-   ([Host- und Sprach-Matching für Siteaccesses](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+   ([Host- und Sprach-Matching für Siteaccesses](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 6. Die Adresse des Load Balancers in `[HTTPHeaderSettings] TrustedProxies[]`
    ([10.2](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).
 7. Die Adresse der Website, verwendet in E-Mails, Feeds, Sitemaps und von `exp:benchmark`
@@ -100,8 +100,8 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
    ([Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md#logs-und-caches-pro-website)).
 9. In `settings/override__example/` der Erweiterung (für die Gruppe) oder in `settings/override/` (für jeden
    Siteaccess der Erweiterung)
-   ([Einstellungen pro Website in Erweiterungen](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md)).
-10. `ezurlmultisite` ([Websiteübergreifende Links in Multisite](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)).
+   ([Einstellungen pro Website in Erweiterungen](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)).
+10. `ezurlmultisite` ([Websiteübergreifende Links in Multisite](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)).
 11. Zwei Installationen: Verschiedene Kunden brauchen Isolation auf Betriebssystemebene, getrennte Last und getrennte
     Sicherungen
     ([Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md#eine-installation-oder-mehrere)).
@@ -119,8 +119,8 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
 
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)
 - [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md)
-- [Einstellungen pro Website in Erweiterungen](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md) und
-  [Websiteübergreifende Links in Multisite](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)
+- [Einstellungen pro Website in Erweiterungen](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) und
+  [Websiteübergreifende Links in Multisite](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
 
 ## Verwandte Seiten
 
@@ -131,9 +131,9 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -33,7 +33,7 @@ geprüft, und jede Lücke wird benannt.
 | [Dokumente und Publikationen](dokumente-und-publikationen/README.md) | Dateien, eine Dokumentenbibliothek, Versionen, Metadaten, PDF-Export, barrierefreie Dokumente, OpenDocument, Download-Berechtigungen |
 | [Suche](suche/README.md) | Die eingebaute Suchmaschine, durchsuchbare Felder, Solr mit ezfind, Statistiken und die damit verbundenen Datenschutzpflichten |
 | [Karten](karten/README.md) | Das Feld `ezgmaplocation` mit Google Maps und was es nicht gibt |
-| [Newsletter](newsletter/README.md) | cjw_newsletter, Double-Opt-in, Probe, Listenpflege, Abmeldung mit einem Klick |
+| [Newsletter](newsletters/README.md) | cjw_newsletter, Double-Opt-in, Probe, Listenpflege, Abmeldung mit einem Klick |
 | [Multisite](multisite/README.md) | Eine Installation für viele Abteilungen: Sites, Designs, gemeinsame Inhalte, Rollen, Betrieb |
 | [Intranets](intranets/README.md) | Ein Siteaccess nur für Mitarbeiter, Sektionen und Rollen, Anmeldeoptionen, Sitzungen |
 | [Extranets](extranets/README.md) | Auftragnehmer und Partner mit Zugang nur zu ihren eigenen Inhalten, Konten und deren Ende |
@@ -47,14 +47,14 @@ geprüft, und jede Lücke wird benannt.
 5. **Multisite**, **Intranets** und **Extranets**, wenn mehr als eine Zielgruppe oder Organisation die Plattform teilt.
 
 Nach oben: [Behörden: hier beginnen](../verwaltungen-hier-beginnen.md). Die Planung je Art von Organisation steht in
-[Verwaltungsebenen](../../../../eng-us/help/government/levels/README.md).
+[Verwaltungsebenen](../ebenen/README.md).
 
 ## Wiederkehrende Themen
 
 | Thema | Wo es wiederkehrt | Lesen |
 |---|---|---|
-| Barrierefreiheit dessen, was Sie bauen | Formulare, Veranstaltungen, Dokumente, Bekanntmachungen | [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) |
-| Personenbezogene Daten und Aufbewahrung | Formulare, Konten, Veranstaltungen, Newsletter | [Standards zum Datenschutz](../../../../eng-us/standards/privacy.md) |
+| Barrierefreiheit dessen, was Sie bauen | Formulare, Veranstaltungen, Dokumente, Bekanntmachungen | [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) |
+| Personenbezogene Daten und Aufbewahrung | Formulare, Konten, Veranstaltungen, Newsletter | [Standards zum Datenschutz](../../../standards/datenschutz.md) |
 | Drittanbieter (CAPTCHA, Karten, Analyse, Teilen in sozialen Netzwerken) | Formulare, Karten, Nachrichten | die Datenschutzhinweise der jeweiligen Seite |
 | Caches und dringende Inhalte | Bekanntmachungen, Veranstaltungen, Warnmeldungen | [Caches](../../../anleitungen/caches.md) |
 | Rollen und Sektionen | jeder Ordner | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md), [Sektionen](../../../anleitungen/sektionen.md) |
@@ -62,14 +62,15 @@ Nach oben: [Behörden: hier beginnen](../verwaltungen-hier-beginnen.md). Die Pla
 
 ## Verwandte Seiten
 
-- [Verwaltungsebenen](../../../../eng-us/help/government/levels/README.md)
-- [Website-Ersteller: hier beginnen](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Verwaltungsebenen](../ebenen/README.md)
+- [Website-Ersteller: hier beginnen](../../ersteller/website-ersteller/website-ersteller-hier-beginnen.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

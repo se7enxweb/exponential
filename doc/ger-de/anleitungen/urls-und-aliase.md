@@ -9,7 +9,7 @@ Sie richtet sich an Administratoren und Redakteure, die die Links und Adressen e
 jedes Feld und jede Regel unten wurde am 6. Oktober 2026 mit dem Code dieses Repositorys abgeglichen; die Dateien sind
 unter [Quellen](#quellen) aufgeführt.
 
-[Anleitungen](README.md) · Siehe auch: [Seitenweise Listen in der Administration](../../eng-us/features/6.0/admin-list-paging.md) ·
+[Anleitungen](README.md) · Siehe auch: [Seitenweise Listen in der Administration](../funktionen/6.0/seitenweise-listen-im-admin.md) ·
 [Cronjobs](cronjobs.md) · [Betrieb einer Site](betrieb-einer-website.md)
 
 ## Kurz gesagt
@@ -46,6 +46,7 @@ unter [Quellen](#quellen) aufgeführt.
 - [6. Adressen und Parameter der Seiten](#6-adressen-und-parameter-der-seiten)
 - [7. Wenn sich etwas nicht wie erwartet verhält](#7-wenn-sich-etwas-nicht-wie-erwartet-verhält)
 - [8. Adressen dekodieren und bereinigen: zwei optionale Einstellungen](#8-adressen-dekodieren-und-bereinigen-zwei-optionale-einstellungen)
+- [9. View-Parameter: wie ein Wert in der Adresse reist](#9-view-parameter-wie-ein-wert-in-der-adresse-reist)
 - [Für Entwickler](#für-entwickler)
 - [Quellen](#quellen)
 
@@ -85,7 +86,7 @@ Linkprüfung testet die Links erneut und kann den Zustand wieder zurücksetzen.
 
 Die Seitengröße wird unter der Liste gewählt (10, 25 oder 50, je Benutzer gespeichert). Die angebotenen Größen sind
 die Einstellung `ItemsPerPageList_url_list[]` in `admininterface.ini [PaginationSettings]`, wie bei jeder Liste der
-Administration ([Blättern](../../eng-us/features/6.0/admin-list-paging.md)).
+Administration ([Blättern](../funktionen/6.0/seitenweise-listen-im-admin.md)).
 
 ## 2. Wie Links geprüft werden
 
@@ -346,6 +347,50 @@ Trenner am Ende ohnehin, für sie ändert die Einstellung also nichts.
   Veröffentlichen jedes Knotens mit eingeschalteter Einstellung 6 von 2942 Aliasen, allesamt Namen mit doppelten
   Anführungszeichen.
 
+## 9. View-Parameter: wie ein Wert in der Adresse reist
+
+Die Optionen der Administrationsansichten sind View-Parameter, `/(name)/wert` (eine Suche, ein Filter, eine
+Sortierung). Manche Zeichen können in einem solchen Wert nicht unverändert reisen: Apache lehnt einen kodierten
+Schrägstrich (`%2F`) ab, der Kernel dekodiert die ganze Adresse (zweimal, solange `DecodeOnce` nicht eingeschaltet
+ist), bevor er sie an jedem `/` teilt, und ein Segment `(name)` beginnt den nächsten View-Parameter. Jede Ansicht
+schreibt ihre Werte deshalb in einer einzigen umkehrbaren Kodierung, sodass eine Suche nach `example.com/a` ihren
+Schrägstrich behält:
+
+| Zeichen | Geschrieben als |
+|---|---|
+| `/` | `~2F` |
+| `(` und `)` | `~28` und `~29` |
+| `~` (das Escape-Zeichen selbst) | `~7E` |
+| `%` und `+` | `~25` und `~2B` (die zweite Dekodierung würde sie ändern) |
+| `\`, `?`, `#` | `~5C`, `~3F`, `~23` |
+| Steuerzeichen (Tabulator, Zeilenumbruch) | `~09`, `~0A` ... |
+| ein Wert, der nur `.` oder `..` ist | `~2E`, `~2E~2E` (ein Browser würde ihn auflösen) |
+
+Alles andere bleibt lesbar: Buchstaben, Ziffern und `, : @ = ! *` werden unverändert geschrieben, Leerzeichen und
+anderer Text wie üblich prozentkodiert, was ein Browser als Text anzeigt. Beispiele:
+
+```
+/url/list/all/(q)/example.com~2Fa
+/contentfinder/search/(text)/var~2Fsite~2Fstorage~2Fimages~2Fa~2Fb%20~281~29.jpg
+/setup/logs/view/error/(level)/error,warning/(search)/not%20found/(from)/2026-10-17%2010:00
+/visual/templatelist/(filter)/content~2Fview
+```
+
+Früher geschriebene Links funktionieren weiter: Der Inhalts-Finder und die Einstellungsseite lesen ihre Form
+`~` + base64url weiterhin, die Form `~XX` des Log-Betrachters und der Template-Liste (ein Leerzeichen war `~20`) ist
+dieselbe Kodierung, und Paketliste, Paketvergleich und Paketbrowser lesen ihre zweimal kodierte Suche
+(`demo%2520content`) weiterhin.
+
+- In einem Template schreibt der Operator `view_parameter` einen Wert:
+  `{concat( 'settings/view/', $siteaccess, '/', $file, '/(q)/', $name|view_parameter )|ezurl}`. Nie `|urlencode`:
+  Er überlässt `/` Apache und `+` der zweiten Dekodierung.
+- In einem Skript der Administrationsdesigns schreibt `window.a4ViewParameter.encode( wert )` (`a4_url.js`, im
+  Seitenkopf von admin, admin3 und admin4 geladen) dasselbe; `window.a4ViewParameter.decode()` ist die Umkehrung.
+- In PHP schreibt `expViewParameters::suffix( array( 'q' => $text ) )` `/(q)/<wert>`, `expViewParameters::encode()`
+  einen Wert, und `expViewParameters::get()` und `text()` lesen ihn dekodiert zurück (`raw()` liefert ihn, wie der
+  Kernel ihn übergab). Getestet in `tests/tests/kernel/classes/expViewParametersTest.php` und
+  `tests/tests/design/AdminViewParametersOnlyTest.php` (VP-05, VP-06).
+
 ## Für Entwickler
 
 - Ein Link innerhalb der Site in einem Aufruf: `eZURI::build( '/content/view/full/2' )` liefert den Pfad, den der
@@ -397,3 +442,11 @@ Trenner am Ende ohnehin, für sie ändert die Einstellung also nichts.
   `content/urlalias_wildcard.tpl` und ihre Kopien in `design/admin`
 - `settings/site.ini [SearchSettings] LogSearchStats`, `settings/admininterface.ini [PaginationSettings]`
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md#6-october-2026-links-url-aliases-wildcards-and-search-statistics)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

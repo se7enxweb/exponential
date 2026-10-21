@@ -39,18 +39,18 @@ class Templatelist extends \Exponential\Runnable\ModuleView
         if ( !is_numeric( $offset ) )
             $offset = 0;
 
-        // The filter is the (filter) view parameter, its value written as expLogPermalink::encode() writes it ("~2F" for
-        // "/", which template paths are full of). The form without scripts is sent with POST and answered 303 with
+        // The filter is the (filter) view parameter, its value written as every view parameter is
+        // (expViewParameters::encode(): "~2F" for "/", which template paths are full of; get() decodes it). The form without scripts is sent with POST and answered 303 with
         // visual/templatelist/(filter)/<text>. A query string is never read.
         if ( \expViewParameters::redirectsPost( $_POST, array( 'filterString' ) ) )
         {
             $posted = trim( \expViewParameters::posted( $_POST, 'filterString' ) );
-            \expViewParameters::redirect( 'visual/templatelist' . ( $posted !== '' ? '/(filter)/' . \expLogPermalink::encode( substr( $posted, 0, 200 ) ) : '' ) );
+            \expViewParameters::redirect( 'visual/templatelist' . ( $posted !== '' ? '/(filter)/' . \expViewParameters::encode( substr( $posted, 0, 200 ) ) : '' ) );
         }
         $filterParameter = \expViewParameters::get( $scope['Params'], 'filter', 'Filter' );
         if ( $filterParameter !== false )
         {
-            $filterString = trim( \expLogPermalink::decode( $filterParameter ) );
+            $filterString = trim( $filterParameter );
             if ( strlen( $filterString ) > 0 )
                 $doFiltration = true;
         }
@@ -85,7 +85,7 @@ class Templatelist extends \Exponential\Runnable\ModuleView
 
         $tpl->setVariable( 'filterString', $filterString );
         // the pager keeps the filter: "/(filter)/<encoded text>", '' without one
-        $tpl->setVariable( 'filter_suffix', $doFiltration ? '/(filter)/' . \expLogPermalink::encode( $filterString ) : '' );
+        $tpl->setVariable( 'filter_suffix', $doFiltration ? '/(filter)/' . \expViewParameters::encode( $filterString ) : '' );
 
         if ( $doFiltration )
         {

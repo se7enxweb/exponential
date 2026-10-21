@@ -19,18 +19,18 @@ nennt die Datei, anhand derer sie geprüft wurde.
 
 | Standard | Version | Status | Nachweis (kurz) |
 |---|---|---|---|
-| Unterstützte PHP-Versionen | PHP 8.0 bis 8.5 | **Konform** (getestet) | `composer.json` `"php"`, `.github/workflows/quality.yml` Job `php80`, Matrix von `phpunit.yml` 8.1 bis 8.5 |
-| PSR-1 Basic Coding Standard | PSR-1 | **Teilweise konform** | `<?php`-Tags, keine Seiteneffekte in Klassendateien; Klassennamen wie `expHelpAudience` sind kein StudlyCaps |
-| PSR-2 / PSR-12 / PER Coding Style | PSR-12, PER-CS 2.0 | **Nicht konform** (bewusst) | `phpcs.xml.dist` erzwingt den eigenen Stil des Kernels |
-| PSR-4 Autoloading | PSR-4 | **Nicht konform** | kein `psr-4` in `composer.json`; generierte Klassenzuordnungen `autoload/ezp_kernel.php` |
-| PSR-3 Logger Interface | PSR-3 | **Nicht konform** (nicht verwendet) | kein `Psr\Log` in `kernel/`, `lib/`, `bin/` |
-| PSR-6 / PSR-16 Caching | PSR-6, PSR-16 | **Nicht konform** (nicht verwendet) | kein `Psr\Cache`, `Psr\SimpleCache` |
-| PSR-7 / PSR-15 / PSR-17 / PSR-18 HTTP | - | **Nicht konform** (nicht verwendet) | kein `Psr\Http` im Code des Repositorys oder in Exponential Velocity |
-| PSR-11 Container | PSR-11 | **Nicht konform** (nicht verwendet) | kein `Psr\Container` |
-| PSR-14 Event Dispatcher | PSR-14 | **Nicht konform** (nicht verwendet) | kein `Psr\EventDispatcher` |
-| Schema von `composer.json` | Composer 2 | **Konform** | `composer validate` meldet „./composer.json is valid“ |
-| Packagist | - | **Konform** | `se7enxweb/exponential` und jede Abhängigkeit `se7enxweb/*` werden über Packagist aufgelöst |
-| Semantic Versioning | SemVer 2.0.0 | **Teilweise konform** | der Kernel `6.0.x` ist dreiteilig; viele Extensions und Velocity verwenden vier Teile (`0.0.4.10`) |
+| Unterstützte PHP-Versionen | PHP 8.0 bis 8.5 | **Erfüllt** (getestet) | `composer.json` `"php"`, `.github/workflows/quality.yml` Job `php80`, Matrix von `phpunit.yml` 8.1 bis 8.5 |
+| PSR-1 Basic Coding Standard | PSR-1 | **Teilweise erfüllt** | `<?php`-Tags, keine Seiteneffekte in Klassendateien; Klassennamen wie `expHelpAudience` sind kein StudlyCaps |
+| PSR-2 / PSR-12 / PER Coding Style | PSR-12, PER-CS 2.0 | **Nicht erfüllt** (bewusst) | `phpcs.xml.dist` erzwingt den eigenen Stil des Kernels |
+| PSR-4 Autoloading | PSR-4 | **Nicht erfüllt** | kein `psr-4` in `composer.json`; generierte Klassenzuordnungen `autoload/ezp_kernel.php` |
+| PSR-3 Logger Interface | PSR-3 | **Nicht erfüllt** (nicht verwendet) | kein `Psr\Log` in `kernel/`, `lib/`, `bin/` |
+| PSR-6 / PSR-16 Caching | PSR-6, PSR-16 | **Nicht erfüllt** (nicht verwendet) | kein `Psr\Cache`, `Psr\SimpleCache` |
+| PSR-7 / PSR-15 / PSR-17 / PSR-18 HTTP | - | **Nicht erfüllt** (nicht verwendet) | kein `Psr\Http` im Code des Repositorys oder in Exponential Velocity |
+| PSR-11 Container | PSR-11 | **Nicht erfüllt** (nicht verwendet) | kein `Psr\Container` |
+| PSR-14 Event Dispatcher | PSR-14 | **Nicht erfüllt** (nicht verwendet) | kein `Psr\EventDispatcher` |
+| Schema von `composer.json` | Composer 2 | **Erfüllt** | `composer validate` meldet „./composer.json is valid“ |
+| Packagist | - | **Erfüllt** | `se7enxweb/exponential` und jede Abhängigkeit `se7enxweb/*` werden über Packagist aufgelöst |
+| Semantic Versioning | SemVer 2.0.0 | **Teilweise erfüllt** | der Kernel `6.0.x` ist dreiteilig; viele Extensions und Velocity verwenden vier Teile (`0.0.4.10`) |
 
 ## Unterstützte PHP-Versionen
 
@@ -60,7 +60,7 @@ zwei Jahre Sicherheitskorrekturen.
 | PHPStan | 8.3 (Analyse `phpVersion: 80100`) | `quality.yml`, `phpstan` |
 | Micro-Benchmark | 8.5 | `performance.yml`, `micro` |
 
-**Status: Konform** für PHP 8.0 bis 8.5.
+**Status: Erfüllt** für PHP 8.0 bis 8.5.
 
 **Bekannte Lücken.**
 
@@ -90,7 +90,7 @@ entschieden, den Codestil dieses Kernels beizubehalten und die Schnittstellen-PS
 - PSR-1 verlangt, dass Klassen für das Autoloading nach PSR-0 oder PSR-4 in einem Namespace liegen; die Kernel-Klassen
   sind global.
 
-**Status: Teilweise konform.**
+**Status: Teilweise erfüllt.**
 
 ### PSR-2 (veraltet), PSR-12 und PER Coding Style
 
@@ -100,7 +100,7 @@ einer eigenen Zeile (das hat PSR-12 auch, aber zusätzlich für Klassen und nich
 Typdeklarationen. Es verwendet einen Sniff von PSR-2 (`PSR2.ControlStructures.ControlStructureSpacing`) mit
 geänderten Eigenschaften.
 
-**Status: Nicht konform**, beabsichtigt.
+**Status: Nicht erfüllt**, beabsichtigt.
 
 ### PSR-4, Autoloading Standard
 
@@ -114,7 +114,7 @@ geänderten Eigenschaften.
   `Exponential\View\Kernel\Content`), aber ihre Pfade (etwa `kernel/private/classes/commands/clusterpurge.php`) bilden
   den Namespace nicht ab; auch sie werden über die Klassenzuordnung geladen.
 
-**Status: Nicht konform.** Klassenzuordnungen sind mit jeder Dateistruktur kompatibel, weshalb der Kernel sie verwendet.
+**Status: Nicht erfüllt.** Klassenzuordnungen sind mit jeder Dateistruktur kompatibel, weshalb der Kernel sie verwendet.
 
 > **Hinweis** Führen Sie nach dem Hinzufügen oder Umbenennen einer Kernel-Klasse `php bin/php/ezpgenerateautoloads.php -k`
 > aus, für eine Klasse einer Extension `-e`. Eine Klasse, die in der Zuordnung fehlt, wird nicht gefunden.
@@ -134,7 +134,7 @@ Eine Suche in `kernel/`, `lib/`, `bin/` und den Extensions im Repository nach `P
 
 `vendor/psr/log` ist nur als Abhängigkeit von `mongodb/mongodb` vorhanden.
 
-**Status: Nicht konform** (nicht verwendet). Das bedeutet, dass sich Exponential nicht direkt an PSR-basierte
+**Status: Nicht erfüllt** (nicht verwendet). Das bedeutet, dass sich Exponential nicht direkt an PSR-basierte
 Bibliotheken anschließen lässt; dafür ist ein Adapter nötig.
 
 ## Composer
@@ -159,7 +159,7 @@ JSON-Schema.
   `composer.dev.json` und werden mit `make devtools` in `.devtools/` installiert, nie in `vendor/`. Ihr
   `config.platform.php` ist `8.0.30`.
 
-**Status: Konform.**
+**Status: Erfüllt.**
 
 ## Packagist
 
@@ -174,7 +174,7 @@ JSON-Schema.
   Packagist bereits listet, bevor `composer update` in der CI daran scheitern würde
   ([Continuous Integration](../bc/6.0/ci.md), „Die lokalen Prüfungen und die CI“).
 
-**Status: Konform.**
+**Status: Erfüllt.**
 
 > **Warnung** Packagist liest einen Tag einmal. Ein Tag, der verschoben wird, nachdem Packagist ihn gelesen hat, erzeugt
 > zwei verschiedene Pakete mit derselben Version. Siehe [Versionsverwaltung und Releases](versionsverwaltung-und-releases.md).
@@ -199,7 +199,7 @@ Bedeutung jeder Erhöhung.
   eine eigene Entscheidung darüber, was das Release bedeutet.
 - **Tags sind dauerhaft**: Auf ein fehlerhaftes Release folgt ein neues, es wird nie neu erstellt.
 
-**Status: Teilweise konform.** Versionen sind geordnet und unveränderlich, und Composer behandelt sie korrekt, aber
+**Status: Teilweise erfüllt.** Versionen sind geordnet und unveränderlich, und Composer behandelt sie korrekt, aber
 vierteilige Nummern und neue Funktionen in Patch-Releases liegen außerhalb von SemVer 2.0.0.
 
 > **Hinweis** Sortieren Sie Tags nach Version, nicht nach Name: `git tag -l 'v*' --sort=version:refname`. Nach Name

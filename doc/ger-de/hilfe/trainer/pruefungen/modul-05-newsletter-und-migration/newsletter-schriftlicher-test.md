@@ -43,13 +43,13 @@ Wer diesen Test besteht, hat gezeigt, dass er Folgendes kann:
 ### So führen Sie ihn durch
 
 1. Teilen Sie die Fragen ohne den Schlüssel aus; 25 Minuten.
-2. Gehen Sie die Antworten mit [cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) und
+2. Gehen Sie die Antworten mit [cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) und
    [10.5](../../../../installation/10-nach-der-installation.md#newsletter-cjw_newsletter) auf dem Projektor durch.
 
 ### Häufige Fragen
 
 **Unser Release ist älter als 4.2.0.** Das Dashboard und einige Funktionen unterscheiden sich; die Fragen 1 bis 11
-gelten für die Releases, die in [cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) dokumentiert
+gelten für die Releases, die in [cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) dokumentiert
 sind.
 
 ### Stolperfallen
@@ -78,33 +78,33 @@ sind.
 <summary>Antworten</summary>
 
 1. Inhalte, der Klassen `cjw_newsletter_system`, `_list` und `_edition`, die wie alle anderen Inhalte bearbeitet
-   werden ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts)).
+   werden ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile)).
 2. `[NewsletterSettings] RootFolderNodeId` in `cjw_newsletter.ini`
-   ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+   ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 3. Abonnenten bestätigen das Abonnement über eine Mail, bevor sie Newsletter erhalten
-   ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md),
+   ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md),
    [10.5](../../../../installation/10-nach-der-installation.md#newsletter-cjw_newsletter)).
 4. Vier davon: ausstehend, bestätigt, freigegeben, vom Benutzer entfernt, von einem Administrator entfernt, Soft
-   Bounce, Hard Bounce, gesperrt ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts)).
+   Bounce, Hard Bounce, gesperrt ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile)).
 5. `cjw_newsletter_mailqueue_create` baut die Mail-Warteschlange der fälligen Ausgaben auf;
    `cjw_newsletter_mailqueue_process` versendet, was in der Warteschlange wartet; der Teil `cjw_newsletter` führt
    beide aus ([10.5](../../../../installation/10-nach-der-installation.md#newsletter-cjw_newsletter)).
 6. `cjw_newsletter_mailbox`; er gehört nicht zu `cjw_newsletter`
    ([10.5](../../../../installation/10-nach-der-installation.md#newsletter-cjw_newsletter)).
 7. Nach 3, `[BounceSettings] BounceThresholdValue`
-   ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+   ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 8. Für Adressen, die niemals Mails erhalten
-   ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts)).
+   ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile)).
 9. `TransportMethodCronjob` `file` (Ausgaben), `TransportMethodPreview` `sendmail` (Testversände),
    `TransportMethodDirectly` `file` (Abonnementbestätigungen und Info-Mails)
    ([10.5](../../../../installation/10-nach-der-installation.md#newsletter-cjw_newsletter)).
 10. In `FileTransportMailDir`, standardmäßig `var/log/mail`, eine `.eml`-Datei pro Mail; das Verzeichnis muss für den
     Benutzer des Webservers und für den Cron-Benutzer beschreibbar sein
-    ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+    ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 11. Alle drei `TransportMethod*` auf `file`, in `settings/override/cjw_newsletter.ini.append.php`
-    ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+    ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 12. `./console ext:cjw_newsletter:status`
-    ([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117)).
+    ([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117)).
 13. Die Top-Level-Domain `.invalid` stellt niemals zu, sodass selbst ein falsch eingestellter Transport keinen echten
     Menschen erreichen kann.
 
@@ -118,7 +118,7 @@ sind.
 
 ## Weiterführende Literatur
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)
 - [10.4 Mail](../../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand) und
   [10.5 Newsletter](../../../../installation/10-nach-der-installation.md#newsletter-cjw_newsletter)
 - [Mail-Einwilligung und Bounces](../../../hosting/betrieb/einwilligung-und-bounces-bei-mails.md)
@@ -132,9 +132,9 @@ sind.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

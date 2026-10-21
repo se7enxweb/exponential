@@ -3,8 +3,8 @@ title: PHP-FPM-Pool
 audience: admin, developer
 category: examples
 order: 90
-summary: Ein PHP-FPM-Pool für eine Exponential-6-Installation hinter Apache, nginx oder Caddy: eigener Benutzer und Socket, Bemessung der Worker, die PHP-Grenzen, die Exponential braucht, Sessions, OPcache und welcher Master nach einer Änderung neu geladen werden muss.
-keywords: PHP-FPM, Pool, Socket, Worker, Sessions, Neu laden, Beispiel, FPM, pool, php-fpm.d, listen, socket, pm, max_children, memory_limit, upload_max_filesize, post_max_size, OPcache, session.save_path, php_admin_value, reload, Plesk, plesk-php85-fpm, example
+summary: Ein PHP-FPM-Pool für eine Exponential-6-Installation hinter Apache, nginx oder Caddy: eigener Benutzer und Socket, Bemessung der Worker, die PHP-Grenzen, die Exponential braucht, Sitzungen, OPcache und welcher Master nach einer Änderung neu geladen werden muss.
+keywords: PHP-FPM, Pool, Socket, Worker, Sitzungen, Neu laden, Beispiel, FPM, pool, php-fpm.d, listen, socket, pm, max_children, memory_limit, upload_max_filesize, post_max_size, OPcache, session.save_path, php_admin_value, reload, Plesk, plesk-php85-fpm, example
 type: example
 ---
 # PHP-FPM-Pool
@@ -23,7 +23,7 @@ Kapitel zur Sicherheitshärtung. Velocity und FrankenPHP brauchen ihn nicht: Sie
    den PHP-Einstellungen der Domain.
 2. Ersetzen Sie `example.com`, Benutzer und Gruppe (den Eigentümer der Dateien der Installation) sowie `listen.owner` /
    `listen.group` (den Benutzer des Webservers: `apache`, `www-data`, `nginx` oder `caddy`).
-3. Legen Sie das Log-Verzeichnis an und, für Sessions in Dateien, das Session-Verzeichnis (`mkdir -p
+3. Legen Sie das Log-Verzeichnis an und, für Sitzungen in Dateien, das Sitzungsverzeichnis (`mkdir -p
    /var/lib/php/session/example.com; chown example: ...; chmod 700 ...`).
 4. Prüfen und neu laden:
 
@@ -123,9 +123,9 @@ php_admin_value[opcache.revalidate_freq] = 2
 - **Grenzen.** `memory_limit` mindestens 256M (mehr für große Importe und Bildbearbeitung), `upload_max_filesize` und
   `post_max_size` über Ihrem größten Upload (und über der eigenen Grenze des Webservers: `client_max_body_size` in nginx,
   `maxAllowedContentLength` in IIS), `max_input_vars` hoch genug für große Formulare von Klassen und Rollen.
-- **`php_admin_*`**-Werte kann ein Skript nicht ändern, `php_value`-Werte schon (den Session-Pfad, damit eine Website
+- **`php_admin_*`**-Werte kann ein Skript nicht ändern, `php_value`-Werte schon (den Sitzungspfad, damit eine Website
   ihn verlegen kann).
-- **Sessions.** Ist `site.ini [Session] Handler` leer (der Standard), hält PHP die Sessions in Dateien: Geben Sie jeder
+- **Sitzungen.** Ist `site.ini [Session] Handler` leer (der Standard), hält PHP die Sitzungen in Dateien: Geben Sie jeder
   Website ein eigenes Verzeichnis, nicht das gemeinsame Standardverzeichnis. Mit `Handler=ezpSessionHandlerDB` hält die
   Datenbank sie.
 - **OPcache** eingeschaltet, mit Platz für den Kernel und die Erweiterungen. Mit `revalidate_freq=2` wird eine

@@ -60,7 +60,7 @@ und enden mit einem erkennbaren Status oder einem Exit-Code.
 Quellen: [10.11](../../../installation/10-nach-der-installation.md#1011-überwachung-und-zustandsprüfungen),
 [Systeminformationen](../../../anleitungen/systeminformationen.md),
 [E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md#3-die-statusseite),
-[Benchmark](../../../../eng-us/features/6.0/benchmark.md).
+[Benchmark](../../../funktionen/6.0/benchmark.md).
 
 Für einen einzelnen Server genügt ein kleines Skript in der Crontab des Benutzers der Website, das diese ausführt und bei einem
 Exit-Status ungleich null eine Mail schickt. Für viele Server führen Sie dieselben Befehle aus Ihrem Überwachungsagenten aus und
@@ -84,7 +84,7 @@ sammeln die Exit-Codes.
 | **Setup > E-Mail-Einstellungen** | Zustand der Mail-Sperre, Probleme, Zahlen | `mailpreferences/administrate` |
 
 Zustand der Logs warnt ab 80 % von `logviewer.ini [HealthSettings] DiskBudget` (mitgeliefert 256 MB) und kennzeichnet Logs mit
-gemischten Eigentümern, die die Rotation aufhalten ([Zustand der Logs](../../../../eng-us/features/6.0/log-viewer.md#log-health)). Siehe
+gemischten Eigentümern, die die Rotation aufhalten ([Zustand der Logs](../../../funktionen/6.0/log-betrachter.md#zustand-der-logs)). Siehe
 [Log-Viewer und Log-Rotation](log-viewer-und-log-rotation.md).
 
 > **Tipp**
@@ -95,7 +95,7 @@ gemischten Eigentümern, die die Rotation aufhalten ([Zustand der Logs](../../..
 ## Die eigenen Endpunkte von Velocity
 
 Wenn Exponential Velocity eine Website ausliefert, hat der Server eigene Ansichten
-([Kontrollzentrum von Velocity](../../../../eng-us/features/6.0/velocity-control-panel.md)):
+([Kontrollzentrum von Velocity](../../../funktionen/6.0/velocity-control-panel.md)):
 
 | Endpunkt | Format | Nutzung |
 |---|---|---|
@@ -110,14 +110,14 @@ Wer sie öffnen darf, wird in `settings/velocity.ini [DashboardSettings]` festge
 
 Der **Watchdog** von Velocity (`exp:velocity watchdog install`, ein systemd-Timer) startet die Standard-Engine wieder, wenn sie
 nicht läuft und niemand das wollte, und schreibt in `var/log/velocity-watchdog.log`, was er getan hat
-([Der Watchdog](../../../../eng-us/bc/6.0/velocity-engines.md#the-watchdog-expvelocity-watchdog)). Er rührt nie einen laufenden Server
+([Der Watchdog](../../../bc/6.0/velocity-engines.md#der-watchdog-expvelocity-watchdog)). Er rührt nie einen laufenden Server
 an; einen Server, der läuft, aber nicht antwortet, muss Ihre Überwachung erkennen.
 
 ## Alarme, die die Website selbst sendet
 
 Das Prüfprotokoll wertet Alarmregeln im Cronjob-Teil `audit` aus (Teil von `frequent`): Brute-Force-Anmeldungen, die Vergabe einer
 Administratorrolle, außerhalb der Arbeitszeit geschriebene Einstellungen, Massenlöschungen, ein ausgeschaltetes Audit und eine
-gebrochene Kette ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)). Alarme gehen an die Empfänger einer Regel, sonst an
+gebrochene Kette ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Alarme gehen an die Empfänger einer Regel, sonst an
 die konfigurierten, sonst an die `AdminEmail` der Website:
 
 ```bash
@@ -155,3 +155,11 @@ ein zentrales System weiter ([Sicherheitslog](sicherheitslog.md)).
 - [Benchmark einer gehosteten Website](../leistung/benchmark-einer-gehosteten-website.md)
 - [Langsame Website](../runbooks/langsame-website.md), [Website nicht erreichbar](../runbooks/website-nicht-erreichbar.md) (Runbooks)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

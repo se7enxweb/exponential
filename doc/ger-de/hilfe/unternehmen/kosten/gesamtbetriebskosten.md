@@ -55,10 +55,10 @@ Zeitraum, den Ihre Organisation auch für andere Investitionen verwendet.
 |---|---|---|
 | Lizenz | „Using Exponential under the terms of the GNU GPL is free of charge.“ (Die Nutzung unter der GNU GPL ist kostenlos.) | `README.md`, „License“ |
 | Lizenz pro Server, Website oder Benutzer | „The act of running the Program is not restricted“ (Das Ausführen des Programms ist nicht eingeschränkt) | `LICENSE.md` Abschnitt 0; [Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md) |
-| Umsetzung | Shop, Multisite, mehrsprachige Inhalte, Workflows, eine REST API, Kontaktformulare, Feeds und ein Audit-Trail sind eingebaut | `README.md`, „Main Exponential features“ |
+| Umsetzung | Shop, Multisite, mehrsprachige Inhalte, Workflows, eine REST API, Kontaktformulare, Feeds und ein Prüfprotokoll sind eingebaut | `README.md`, „Main Exponential features“ |
 | Hosting | SQLite 3, die Standarddatenbank, braucht keinen Datenbankserver; Velocity braucht außer PHP nichts installiert | `README.md`, „Requirements“ |
 | Hosting | Läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
-| Betrieb | Ein Befehl installiert eine Website; Wartungsmodus, ein Log-Viewer und ein Health-Check sind dabei | [Installation mit einem Befehl](../../../../eng-us/features/6.0/install-in-one-command.md), [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md), [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md) |
+| Betrieb | Ein Befehl installiert eine Website; Wartungsmodus, ein Log-Viewer und ein Health-Check sind dabei | [Installation mit einem Befehl](../../../funktionen/6.0/installation-mit-einem-befehl.md), [Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md), [Log-Viewer](../../../funktionen/6.0/log-betrachter.md) |
 | Aktualisierungen | Eine gepflegte Linie (6.0); Korrekturen kommen als nächstes Release 6.0.x | `SECURITY.md`; [Aktualisieren](../../../anleitungen/aktualisieren.md) |
 | Support | Es gibt kostenlose Community-Kanäle; bezahlten Support können 7x oder jedes andere Unternehmen leisten | `README.md`, „Where to get more help“; [Wer ist 7x?](../../wer-ist-7x.md) |
 | Ausstieg | Die GPL erlaubt Ihnen, den Code zu jedem Anbieter mitzunehmen; die vollständige Git-Historie ist öffentlich | [Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md), [Mit Git entwickeln](../../mit-git-entwickeln.md) |
@@ -135,8 +135,8 @@ Posten gleich, damit der Vergleich fair bleibt.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

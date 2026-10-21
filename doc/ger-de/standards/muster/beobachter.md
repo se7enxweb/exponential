@@ -11,7 +11,7 @@ type: catalogue
 
 > **Hinweis**
 > Diese Seite wird aus dem Quellcode von `php bin/php/exppatterncatalogue.php --write` erzeugt. Bearbeiten Sie sie nicht von Hand:
-> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#how-the-catalogue-is-built).
+> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#wie-der-katalog-gebaut-wird).
 
 Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle davon weiß: ezpEvent-Listener, Benachrichtigungs-Handler, Cache-Listener.
 

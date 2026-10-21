@@ -81,7 +81,7 @@ Die Währungsliste hat die Aktionen **Auto-Umrechnungsfaktoren aktualisieren** u
 - [ ] Legen Sie eines in den Warenkorb: Warenkorb und Bestätigungsseite zeigen den neuen Preis und die richtige Mehrwertsteuer.
 - [ ] In einer anderen Währung, wenn Sie in mehreren verkaufen: Der Preis ist der, den Sie erwarten.
 - [ ] Das Shop-Dashboard meldet keine Produkte ohne Preis
-  ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+  ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 - [ ] Kampagnenseiten und Newsletter, die Preise nennen, sind aktualisiert.
 
 Wenn die öffentliche Website noch den alten Preis zeigt, kommt die Seite möglicherweise aus einem Cache. Fragen Sie
@@ -92,5 +92,13 @@ Ihren Administrator, bevor während geschäftiger Zeiten Caches geleert werden (
 - [Preise und Währungen für Unternehmen](../../unternehmen/shops/preise-und-waehrungen.md)
 - [USt-Typen und USt-Regeln](ust-typen-und-ust-regeln.md)
 - [Rabatte](rabatte.md)
-- [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
+- [Produkte, Preise und Mehrwertsteuer](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

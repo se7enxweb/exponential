@@ -756,10 +756,10 @@ Jeder Lauf wird außerdem mit maskierten Passwörtern nach `var/log/kickstart.lo
 
 ## Verwandte Seiten
 
-- [Kickstarter-CLI (Funktionsseite)](../../../eng-us/features/6.0/kickstarter-cli.md) und [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)
+- [Kickstarter-CLI (Funktionsseite)](../../funktionen/6.0/kickstarter-cli.md) und [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)
 - [Anleitung für den Einstieg](../../anleitungen/erste-schritte.md)
 - [Logs des Installationsprogramms und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Exponential-Konsole](konsole.md)
-- [September 2026, erste Hälfte: 13. September](../../../eng-us/history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
+- [September 2026, erste Hälfte: 13. September](../../geschichte/2026/2026-09a.md#13-september-caches-die-sie-sehen-cronjobs-die-sie-ausführen-können)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - `kickstart.ini-dist` im Projektwurzelverzeichnis: jeder Abschnitt und jedes Feld, kommentiert.

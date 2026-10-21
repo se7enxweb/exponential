@@ -77,7 +77,7 @@ Die Liste des Kernels mit den entfernten Aufrufen und ihrem Ersatz steht in
 ## Schritt 4: Namen
 
 Beide Commits haben die Präfixe des Upstream-Projekts in globalen Variablen, Seiten-Tags (`<meta>`-Namen, die das
-JavaScript liest), Session-Schlüsseln und Dateinamen in `explayouts`- und `exp`-Namen umbenannt; zum Beispiel wurden
+JavaScript liest), Sitzungsschlüsseln und Dateinamen in `explayouts`- und `exp`-Namen umbenannt; zum Beispiel wurden
 aus den Meta-Tags `nglayouts-route-prefix` und `nglayouts-base-path` die Tags `explayouts-route-prefix` und
 `explayouts-base-path`, und aus `layouts-ibexa.js` wurde `layouts-exponential.js`. Das waren die Interna der
 Erweiterung: Nichts außerhalb der Erweiterung las sie, daher konnten sie im selben Commit umbenannt werden wie alles,
@@ -108,7 +108,7 @@ Drei Dinge machen das zu einem guten Test:
 Diese beiden Commits betrafen jQuery. Das Shell-Template des Editors hatte noch Inline-Skripte (die Übersetzungen und
 einige Werte), und seine Skript-Links trugen noch Versionsabfragen; die CSP-Messung vom 17. Oktober 2026 führte
 explayouts_ui_api noch unter den Erweiterungen mit Inline-Code auf
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Ein großes Upgrade nach dem
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)). Ein großes Upgrade nach dem
 anderen ist in Ordnung, solange jedes fertig und veröffentlicht ist, bevor das nächste beginnt.
 
 Der Commit nannte außerdem eine Voraussetzung: „Braucht ezjscore 1.4.0 oder neuer.“ Wenn Ihre Erweiterung von einer
@@ -120,13 +120,13 @@ Anforderung in `composer.json`.
 - Zurück: [Fallstudie: von eZChangeclass zu expchangeclass](fallstudie-expchangeclass.md)
 - Weiter: [Fallstudie: Zwei-Faktor-Authentifizierung ohne Inline-Skripte](fallstudie-zwei-faktor-authentifizierung.md)
 - [Vom alten jQuery zu jQuery 4](altes-jquery-zu-jquery-4.md)
-- [jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

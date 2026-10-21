@@ -75,7 +75,7 @@ php bin/php/console exp:benchmark --compare=https://www.example.com,https://www.
 php bin/php/console exp:benchmark kernel --save=var/benchmark/base.json
 ```
 
-Der Befehl für Benchmarks ist in [Benchmark](../../../eng-us/features/6.0/benchmark.md) beschrieben und wird in der
+Der Befehl für Benchmarks ist in [Benchmark](../../funktionen/6.0/benchmark.md) beschrieben und wird in der
 Anleitung [Benchmarking von Exponential](../../anleitungen/benchmarking.md) erklärt.
 
 Bevor ein Skript läuft, gibt die Konsole einen kurzen Hinweis auf **stderr** aus, sodass weitergeleitete Ausgabe
@@ -178,7 +178,7 @@ php bin/php/console crontab:edit      # open it in $EDITOR
 ```
 
 Die Ansicht derselben Informationen im Browser ist die
-[Cronjob-Konsole](../../../eng-us/features/6.0/cronjobs-console.md).
+[Cronjob-Konsole](../../funktionen/6.0/cronjobs-in-der-konsole.md).
 
 ## Befehle von Erweiterungen
 
@@ -244,6 +244,6 @@ Ein Cronjob-Skript verwendet dasselbe Tag, zum Beispiel
 
 - [Cache-Konsole (`exp:cache`)](cache-konsole.md)
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](cli-cronjob-und-view-abstraktionen.md)
-- [Cronjob-Konsole](../../../eng-us/features/6.0/cronjobs-console.md)
-- [Juni 2026, erste Hälfte (1. bis 15. Juni)](../../../eng-us/history/2026/2026-06a.md)
+- [Cronjob-Konsole](../../funktionen/6.0/cronjobs-in-der-konsole.md)
+- [Juni 2026, erste Hälfte (1. bis 15. Juni)](../../geschichte/2026/2026-06a.md)
 - [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md)

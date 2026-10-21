@@ -4,7 +4,7 @@ audience: press
 category: press-media
 order: 106
 summary: Wie Sie über die Linie Exponential 6.0.15 berichten, bevor sie ein Release-Tag hat - was die Quellen darüber sagen, wie Sie die Arbeit als in Entwicklung kennzeichnen, welche Formulierungen genau sind und warum kein Datum genannt werden darf.
-keywords: 6.0.15, Entwicklungslinie, unveröffentlicht, main-Branch, dev-main, Vorschau, in Entwicklung, kein Veröffentlichungsdatum, Velocity, admin4, Audit-Trail, Exponential Layouts, Exponential Intelligence, development line, unreleased, main branch, preview, in development, no release date, audit trail
+keywords: 6.0.15, Entwicklungslinie, unveröffentlicht, main-Branch, dev-main, Vorschau, in Entwicklung, kein Veröffentlichungsdatum, Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, development line, unreleased, main branch, preview, in development, no release date, audit trail
 type: help
 ---
 # Über 6.0.15 berichten, solange es in Entwicklung ist
@@ -42,10 +42,10 @@ Exponential Layouts, Exponential Intelligence, the help system and much more". D
 
 | Zeitraum | Was laut Geschichte geschah | Monatsseite |
 |---|---|---|
-| Juli 2026 | "The command line grew up": `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern | [Juli 2026](../../../eng-us/history/2026/2026-07.md) |
-| August 2026 | Template-Debugging, sechs Sicherheitspatches, Tests bei jeder Änderung | [August 2026](../../../eng-us/history/2026/2026-08.md) |
-| September 2026 | Seitenweise lange Listen, Velocity (ab 22. September), eine Installation mit einem Befehl, eine Härtungsrunde | [Erste Hälfte](../../../eng-us/history/2026/2026-09a.md), [zweite Hälfte](../../../eng-us/history/2026/2026-09b.md) |
-| Oktober 2026 | "jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8" | [Oktober 2026](../../../eng-us/history/2026/2026-10.md) |
+| Juli 2026 | "The command line grew up": `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern | [Juli 2026](../../geschichte/2026/2026-07.md) |
+| August 2026 | Template-Debugging, sechs Sicherheitspatches, Tests bei jeder Änderung | [August 2026](../../geschichte/2026/2026-08.md) |
+| September 2026 | Seitenweise lange Listen, Velocity (ab 22. September), eine Installation mit einem Befehl, eine Härtungsrunde | [Erste Hälfte](../../geschichte/2026/2026-09a.md), [zweite Hälfte](../../geschichte/2026/2026-09b.md) |
+| Oktober 2026 | "jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8" | [Oktober 2026](../../geschichte/2026/2026-10.md) |
 
 Exponential Intelligence und die Job-Warteschlange kommen „inaktiv“ in die Distribution und werden vom Inhaber der Website
 eingeschaltet ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).
@@ -57,7 +57,7 @@ Setzen Sie den Status in die Überschrift oder den ersten Satz, nicht in eine Fu
 
 ```text
 In Entwicklung: was die nächste Exponential-Version, 6.0.15, enthalten soll
-Die Entwicklungslinie von Exponential bekommt einen Audit-Trail (noch nicht veröffentlicht)
+Die Entwicklungslinie von Exponential bekommt ein Prüfprotokoll (noch nicht veröffentlicht)
 ```
 
 Im Text:
@@ -100,8 +100,8 @@ einer Test-Website.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

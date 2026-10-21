@@ -12,7 +12,7 @@ type: reference
 Diese Seite richtet sich an Leserinnen und Leser in einer öffentlichen Stelle, die auf einen unbekannten Begriff
 stoßen. Jeder Eintrag hat ein bis drei Sätze und einen Link auf die Seite, die ihn erklärt. Die Einträge sind nach dem
 englischen Fachbegriff geordnet, der in Klammern steht. Das vollständige Produktglossar ist das
-[Exponential-Glossar](../../../../eng-us/glossary.md).
+[Exponential-Glossar](../../../glossar.md).
 
 > **Hinweis** Die Definitionen von Rechtsbegriffen sind Beschreibungen in einfacher Sprache, keine Legaldefinitionen.
 > Prüfen Sie das für Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -30,7 +30,7 @@ englischen Fachbegriff geordnet, der in Klammern steht. Das vollständige Produk
 können sich weiterhin anmelden ([Wartungsmodus](../../../anleitungen/wartungsmodus.md)).
 
 **Multisite.** Mehrere Websites, die aus einer Exponential-Installation betrieben werden, jede mit eigenem Siteaccess,
-Design und eigenen Einstellungen ([Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)).
+Design und eigenen Einstellungen ([Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)).
 
 **Knoten (Node).** Eine Stelle eines Inhaltsobjekts im Inhaltsbaum, mit einem übergeordneten Knoten und einer
 Sichtbarkeit ([Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md)).
@@ -72,17 +72,17 @@ Auftragsverarbeiter, der festlegt, wie mit personenbezogenen Daten umgegangen wi
 
 **Proof of Concept.** Eine kurze Testinstallation, die vor einer Entscheidung zeigt, dass ein Produkt wichtige
 Anforderungen erfüllen kann. Exponential lässt sich mit einem Befehl auf SQLite installieren
-([Exponential mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md)).
+([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 **Pseudonymisierung (Pseudonymization).** Das Ersetzen von Namen und Kennungen durch Werte, die zusätzliche
-Informationen brauchen, um wieder einer Person zugeordnet zu werden. Der Audit-Trail von Exponential pseudonymisiert
-Einträge nach einer festgelegten Zahl von Tagen ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Informationen brauchen, um wieder einer Person zugeordnet zu werden. Das Prüfprotokoll von Exponential pseudonymisiert
+Einträge nach einer festgelegten Zahl von Tagen ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## R
 
 **Schriftgutverwaltung (Records management).** Die Verwaltung von Schriftgut von der Entstehung bis zur Aussonderung
 nach einem Aufbewahrungsplan; die internationale Norm ist ISO 15489-1 ([iso.org](https://www.iso.org/standard/62542.html)).
-Exponential bewahrt Inhaltsversionen und einen Audit-Trail auf, ist aber für sich kein System zur Schriftgutverwaltung
+Exponential bewahrt Inhaltsversionen und ein Prüfprotokoll auf, ist aber für sich kein System zur Schriftgutverwaltung
 ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 
 **Weiterleitung (Redirect).** Eine Anweisung, die einen Besucher von einer alten Adresse zu einer neuen schickt; in
@@ -101,7 +101,7 @@ oder Archivierung aufbewahrt wird.
 
 **Von rechts nach links (Right-to-left, RTL).** Sprachen, die von rechts nach links geschrieben werden, etwa Arabisch
 und Hebräisch; Exponential setzt für sie die Schreibrichtung der Seite
-([Sprachen mit Schreibrichtung von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md)).
+([Sprachen mit Schreibrichtung von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md)).
 
 **Rolle (Role).** Eine benannte Menge von Richtlinien, die Benutzern oder Gruppen zugewiesen wird
 ([Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)).
@@ -118,8 +118,9 @@ eine Wiederherstellung dauern darf)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

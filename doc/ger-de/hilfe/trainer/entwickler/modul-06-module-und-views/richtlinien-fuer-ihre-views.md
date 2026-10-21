@@ -145,9 +145,9 @@ Auf der Schulungsinstallation, in `extension/mysite_hello`, und in der Administr
 
 - [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md): Rollen, Richtlinien, Einschränkungen und
   Zuweisungen.
-- [Reihenfolge von Rollen und Richtlinien](../../../../../eng-us/features/6.0/role-policy-order.md) und
-  [Berechtigungsprüfungen bei vielen Zuweisungen](../../../../../eng-us/features/6.0/permission-checks-for-many-assignments.md).
-- [Handler für Inhaltseinschränkungen](../../../../../eng-us/features/6.0/content-limitation-handlers.md): Einschränkungen, in
+- [Reihenfolge von Rollen und Richtlinien](../../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md) und
+  [Berechtigungsprüfungen bei vielen Zuweisungen](../../../../funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md).
+- [Handler für Inhaltseinschränkungen](../../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md): Einschränkungen, in
   PHP geschrieben.
 
 ## Verwandte Seiten
@@ -158,9 +158,9 @@ Auf der Schulungsinstallation, in `extension/mysite_hello`, und in der Administr
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

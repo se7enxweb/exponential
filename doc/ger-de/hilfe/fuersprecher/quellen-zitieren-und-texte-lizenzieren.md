@@ -50,7 +50,7 @@ statt auf eine Administrations-URL einer einzelnen Installation, die Leser nicht
 ## Aus der Hilfe kopieren (GNU FDL)
 
 Die Dokumentation steht unter der GNU Free Documentation License 1.3 oder später
-([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)). Sie dürfen sie unter den Bedingungen der Lizenz kopieren,
+([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)). Sie dürfen sie unter den Bedingungen der Lizenz kopieren,
 übersetzen, anpassen und teilen. [Freie Dokumentation](../freie-dokumentation.md#was-sie-tun-dürfen) erklärt in einfachen Worten:
 
 - [Kopieren und teilen](../freie-dokumentation.md#kopieren-und-an-andere-benutzer-weitergeben)
@@ -80,7 +80,7 @@ Bedingungen der GPL. Verlinken Sie im Zweifel auf die Datei, statt sie zu kopier
 | Andere Websites und Blogs | Meist alle Rechte vorbehalten | Verlinken, nicht kopieren |
 
 Wenn Sie der Hilfe Text beisteuern, der aus einer anderen Quelle mit einer anderen Lizenz stammt, sagen Sie das in Ihrem
-Pull Request ([Zur Dokumentation beitragen](../../../eng-us/README-LICENSE.md#contributing-to-the-documentation)).
+Pull Request ([Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumentation-beitragen)).
 
 ## Menschen und Projekte nennen
 

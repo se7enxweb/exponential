@@ -24,9 +24,9 @@ Ankündigung (das ist kein Angriff und darf nicht blockiert werden).
 ## Was Exponential tut und was nicht
 
 - Der Anfrageklassifizierer **klassifiziert** Sondierungen, Injektionen, Pfadmanipulationen, Scanner und 404-Häufungen
-  in `security.log`; er **blockiert nichts** ([Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md)).
+  in `security.log`; er **blockiert nichts** ([Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md)).
 - Anfrageregeln (`requestrules.ini`) können ausgewählte Anfragen frühzeitig beantworten, zum Beispiel mit „not found“
-  ([Anfrageregeln](../../../../../eng-us/features/6.0/request-rules.md)).
+  ([Anfrageregeln](../../../../funktionen/6.0/anfrageregeln.md)).
 - Ratenbegrenzung, Blockieren und Bandbreite sind Aufgabe dessen, was davor steht: request-shield, der Webserver, ein
   Reverse Proxy, ein CDN oder Ihr Netzanbieter
   ([Sicherheitshärtung, request-shield](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
@@ -53,7 +53,7 @@ Exponential reichen aus, um Muster zu erkennen; Ihr Netzwerkteam hat die vollst�
 ## Die Website am Laufen halten
 
 - **Caches vor PHP**: Unter Velocity liefert der Antwortcache Seiten ohne PHP aus
-  ([Velocity-Antwortcache](../../../../../eng-us/features/6.0/velocity-response-cache.md)); mit dem statischen Cache beantwortet
+  ([Velocity-Antwortcache](../../../../funktionen/6.0/velocity-antwort-cache.md)); mit dem statischen Cache beantwortet
   der Webserver öffentliche Seiten als Dateien ([Statischer Cache](../verfuegbarkeit/statischer-cache.md)).
 - **Wärmen Sie** die meistbesuchten Seiten nach dem Leeren eines Caches vor:
   `php bin/php/preload.php --siteaccess=site --allow-root-user`.
@@ -80,8 +80,9 @@ verlangen.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

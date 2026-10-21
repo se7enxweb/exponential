@@ -51,7 +51,7 @@ Die Seiten in diesem Ordner übersetzen das in geschäftliche Fragen:
 | Administrator | Eine kurze Zusammenfassung und die genaue technische Seite für jede Aufgabe |
 
 Organisationen des öffentlichen Sektors haben einen eigenen Bereich:
-[Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+[Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Seiten in diesem Bereich
 
@@ -88,20 +88,20 @@ Organisationen des öffentlichen Sektors haben einen eigenen Bereich:
 - [Mobile Apps, Headless-Nutzung und Netzwerke](../mobil-und-headless/README.md)
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md) und [Kosten](../kosten/README.md) für die betriebliche Seite vieler Websites
 - [Extranets](../extranets/README.md), wenn ein Partnerportal neben Ihren öffentlichen Marken läuft
-- Für das technische Team: [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- Für das technische Team: [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)
   und, für Hosting-Unternehmen, [Multisite in einer Installation](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md)
 
 ## Verwandte Seiten
 
 - [Multisite- und mehrsprachige Projekte planen](../../fuehrung/multisite-und-mehrsprachigkeit-planen.md)
-- [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
-- [Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
+- [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)
+- [Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

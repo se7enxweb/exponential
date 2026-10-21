@@ -41,7 +41,7 @@ Themen, die an dokumentierte Fakten gebunden sind, altern gut:
 
 | Thema | Quelle als Grundlage |
 |---|---|
-| „Was ich bei der Installation von Exponential mit einem Befehl gelernt habe“ | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| „Was ich bei der Installation von Exponential mit einem Befehl gelernt habe“ | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | „Fünf Dinge, die Redakteure ohne Entwickler tun können“ | [Gesprächspunkte für Redakteure](gespraechspunkte-fuer-redakteure.md) |
 | „Was in <Release> neu ist“ | [Über ein Release schreiben](ueber-ein-release-schreiben.md) |
 | „Diesen Monat in der Geschichte von Exponential“ | [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md) |
@@ -125,3 +125,11 @@ Written for Exponential <6.0.x>, checked on <date>.
 - [Auf Share und Projects veröffentlichen](auf-share-und-projects-veroeffentlichen.md)
 - [Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -37,7 +37,7 @@ Jedes Modul des Kernels und der mitgelieferten Erweiterungen, aus seiner `module
 | [pdf](pdf/README.md) | 2 | `kernel/pdf/module.php` |
 | [role](role/README.md) | 6 | `kernel/role/module.php` |
 | [rss](rss/README.md) | 4 | `kernel/rss/module.php` |
-| [search](search/README.md) | 1 | `kernel/search/module.php` |
+| [search](suche/README.md) | 1 | `kernel/search/module.php` |
 | [section](section/README.md) | 4 | `kernel/section/module.php` |
 | [settings](settings/README.md) | 2 | `kernel/settings/module.php` |
 | [setup](setup/README.md) | 43 | `kernel/setup/module.php` |

@@ -14,10 +14,12 @@ Eine Ansicht des Moduls `package`, definiert in `kernel/package/module.php` und 
 ## Adresse
 
 ```text
-/package/compare/<PackageName>
+/package/compare/<PackageName>/(filter)/<Filter>/(class)/<Class>/(search)/<Search>/(sort)/<Sort>/(dir)/<Dir>/(limit)/<Limit>/(offset)/<Offset>/(item)/<Item>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `PackageName`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(filter)` setzt `Filter`, `(class)` setzt `Class`, `(search)` setzt `Search`, `(sort)` setzt `Sort`, `(dir)` setzt `Dir`, `(limit)` setzt `Limit`, `(offset)` setzt `Offset`, `(item)` setzt `Item`.
 
 ## Wer sie öffnen darf
 
@@ -40,6 +42,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/package/compare/packagename'|ezurl}>package/compare</a>
+<a href={concat( '/package/compare/packagename/(filter)/', 1 )|ezurl}>package/compare</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

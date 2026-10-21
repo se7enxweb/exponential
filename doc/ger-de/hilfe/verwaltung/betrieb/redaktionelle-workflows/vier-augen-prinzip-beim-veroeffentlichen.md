@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Führungskräfte und Administratoren, deren Richtlinie vorschreibt, dass jede Veröffentlichung von einer zweiten Person
 gesehen wird (das „Vier-Augen-Prinzip“). Sie zeigt, wie nah Exponential dieser Regel von Haus aus kommt, welche Einstellungen zählen und wo ein
 schriftlich festgelegter Prozess die Lücke schließen muss. Quellen: [Workflows](../../../../anleitungen/workflows.md) und
-[Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md).
+[Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md).
 
 ## Inhalt
 1. [Warum ein Veröffentlichungsrecht nicht genügt](#warum-ein-veröffentlichungsrecht-nicht-genügt)
@@ -25,7 +25,7 @@ schriftlich festgelegter Prozess die Lücke schließen muss. Quellen: [Workflows
 ## Warum ein Veröffentlichungsrecht nicht genügt
 
 Im Bearbeitungsformular entscheidet `content/edit`, ob ein Benutzer einen Entwurf veröffentlichen darf
-([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)): Wer bearbeiten darf, kann auf die Schaltfläche
+([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)): Wer bearbeiten darf, kann auf die Schaltfläche
 zum Veröffentlichen klicken. Die Kontrolle ist daher der **Freigabe-Workflow** am Trigger **Vor dem Veröffentlichen von Inhalten**, der jede
 Version zurückhält, bis eine freigebende Person entscheidet.
 
@@ -65,17 +65,17 @@ Die Freigabe deckt das Veröffentlichen ab. Andere Aktionen ändern, was die Öf
 | Verbergen | `content/hide` | ebenso |
 | Änderung von Sektion oder Zustand | `section/assign`, `state/assign` | einschränken mit `NewSection`, `NewState` |
 
-Diese Aktionen stehen im Kanal `content` des Audit-Trails, sodass eine zweite Person sie nachträglich prüfen kann.
+Diese Aktionen stehen im Kanal `content` des Prüfprotokolls, sodass eine zweite Person sie nachträglich prüfen kann.
 
 ## Belege für einen Prüfer
 
 - Die Freigabe selbst: das Element der Zusammenarbeit und der Prozess, solange er läuft; danach zeigt die Versionsgeschichte, wer jede Version
   erstellt hat ([Versionsgeschichte und Rechenschaft](versionsverlauf-und-nachvollziehbarkeit.md)).
-- Der Kanal `content` des Audit-Trails erfasst Veröffentlichungen, Entfernungen, Verschiebungen, Sektionen und Zustände.
+- Der Kanal `content` des Prüfprotokolls erfasst Veröffentlichungen, Entfernungen, Verschiebungen, Sektionen und Zustände.
 - Die Trigger-Liste und die Seite des Workflows dokumentieren die Konfiguration; bewahren Sie eine datierte Kopie in Ihrem Änderungsnachweis auf.
 
 Exponential erzeugt keinen einzelnen Bericht „freigegeben von“ je Seite; wenn Ihre Prüfer einen brauchen, kombinieren Sie die Versionsgeschichte mit
-dem Audit-Export ([Audit-Einträge für eine Prüfung exportieren](../../../../../eng-us/help/government/tasks/operations/export-audit-records-for-an-auditor.md)).
+dem Audit-Export ([Audit-Einträge für eine Prüfung exportieren](../../aufgaben/betrieb/audit-eintraege-fuer-einen-pruefer-exportieren.md)).
 
 ## Verwandte Seiten
 - [Funktionstrennung](../personen-und-berechtigungen/funktionstrennung.md)
@@ -85,8 +85,9 @@ dem Audit-Export ([Audit-Einträge für eine Prüfung exportieren](../../../../.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -51,7 +51,7 @@ Quelle: [Eine Website betreiben, Teile 1 und 2](../../../../anleitungen/betrieb-
    Monitoring; `--dry-run` zeigt, was geleert würde, mit Größen.
 4. **Velocity** (2 Minuten). `exp:velocity cache clear` leert den Antwort-Cache; `exp:velocity restart` lässt Velocity
    geänderte Einstellungen lesen. Auf einem Server erledigt `exp:velocity deploy` jeden Schritt einer Bereitstellung in
-   der richtigen Reihenfolge ([Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md), Lektion 4.1).
+   der richtigen Reihenfolge ([Hosting und Betrieb](../../hosting-betrieb/README.md), Lektion 4.1).
 
 ### Häufige Fragen
 
@@ -174,9 +174,9 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -28,11 +28,11 @@ wählen; diese Liste hilft Ihnen, jeden Ort zu erfassen.
 |---|---|---|
 | Inhalte, Benutzer, in der Datenbank gespeicherte Einstellungen | der Datenbankserver oder die SQLite-Datei | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
 | Hochgeladene Dateien und Bilder | `var/<site>/storage/` | kann auf gemeinsamem oder eingehängtem Speicher liegen |
-| Caches (Seiten, Templates, INI) | `var/<site>/cache/` oder ein anderer Pfad | pro Website verschiebbar ([Protokolle, Cache und Ablauf pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)) |
-| Protokolle | `var/log/` oder pro Website | Rotation und Maskierung in [Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md), [Protokollanzeige](../../../../eng-us/features/6.0/log-viewer.md) |
-| Audit-Einträge | `var/<site>/log/audit/`, dazu ein Index in der Datenbank | Senken können sie an ein Syslog oder einen Webhook Ihrer Wahl kopieren ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Caches (Seiten, Templates, INI) | `var/<site>/cache/` oder ein anderer Pfad | pro Website verschiebbar ([Protokolle, Cache und Ablauf pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)) |
+| Protokolle | `var/log/` oder pro Website | Rotation und Maskierung in [Protokollrotation](../../../funktionen/6.0/log-rotation.md), [Protokollanzeige](../../../funktionen/6.0/log-betrachter.md) |
+| Audit-Einträge | `var/<site>/log/audit/`, dazu ein Index in der Datenbank | Senken können sie an ein Syslog oder einen Webhook Ihrer Wahl kopieren ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 | Sitzungen | die Datenbank oder der eingerichtete Sitzungsspeicher | [Sitzungen](../../../anleitungen/sitzungen.md) |
-| Suchindex | die Datenbank (eingebaute Suchmaschine) oder der Solr-Server | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
+| Suchindex | die Datenbank (eingebaute Suchmaschine) oder der Solr-Server | [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md) |
 | E-Mail | Ihr Mailserver; der Dateitransport schreibt E-Mails in Dateien innerhalb der Installation | [E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md) |
 | Datensicherungen | wohin Ihr Sicherungsprozess sie legt | oft die vergessene Kopie |
 | Exporte | Dateien, die von Exporten und Aufträgen geschrieben werden | löschen Sie sie, wenn sie erledigt sind |
@@ -43,7 +43,7 @@ wählen; diese Liste hilft Ihnen, jeden Ort zu erfassen.
 |---|---|
 | Erweiterungen für Webanalyse, CAPTCHA, Karten, Social Login | zu deren Anbietern (siehe „Zu prüfende Dienste von Drittanbietern“) |
 | KI-Assistent (`expai`) | zum eingerichteten Anbieter; Region pro Anbieter festgehalten; lokale Modelle möglich |
-| CDN oder HTTP-Cache vor der Website | zu den Standorten des CDN ([HTTP-Caching und CDNs](../../../../eng-us/help/creators/website-creators/http-caching-and-cdns.md)) |
+| CDN oder HTTP-Cache vor der Website | zu den Standorten des CDN ([HTTP-Caching und CDNs](../../ersteller/website-ersteller/http-caching-und-cdns.md)) |
 | Audit-Senken | zum Syslog oder Webhook-Empfänger, den Sie einrichten |
 | Zeitgesteuerte Exporte (`xrowextract`) | zu den Zielen, die Sie festlegen (SFTP, S3, WebDAV, ...) |
 
@@ -58,14 +58,15 @@ wählen; diese Liste hilft Ihnen, jeden Ort zu erfassen.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Verwaltungscloud und Hostingmodelle](verwaltungscloud-und-hostingmodelle.md)
 - [Aufbau des Speichers](../../hosting/betrieb/aufbau-des-speichers.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

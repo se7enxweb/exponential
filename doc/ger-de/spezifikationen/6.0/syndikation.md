@@ -4,7 +4,7 @@ Diese Seite ist die Referenz für die Extension `syndication` (1.3.3). Eine Site
 als Feed; eine andere Site **importiert** diesen Feed über SOAP und hält ihn per Cron auf dem gleichen Stand. Die Seite führt die
 Modul-Views und Richtlinien, die SOAP-Funktionen, die Tabellen, die Cronjob-Teile, jede Einstellung und die Art auf, wie sich ein Import
 authentifiziert. Lesen Sie sie, wenn Sie die Syndizierung installieren, zeitlich planen oder Fehler darin suchen. Die Einrichtung Schritt für Schritt steht auf der
-[Funktionsseite](../../../eng-us/features/6.0/extensions/syndication.md).
+[Funktionsseite](../../funktionen/6.0/erweiterungen/syndication.md).
 
 ## Kurz gesagt
 
@@ -158,7 +158,7 @@ Versionsverwaltung heraus.
 
 ## Siehe auch
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/syndication.md), [Verhaltensänderungen der Extensions](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
-- [Cronjobs in der Konsole](../../../eng-us/features/6.0/cronjobs-console.md), [Betrieb einer Site](../../anleitungen/betrieb-einer-website.md)
-- [Chronik](../../../eng-us/history/extensions/syndication.md), [Release Notes](../../../changelogs/extensions/syndication.md)
-- Monate: [2025-09](../../../eng-us/history/extensions/months/2025-09.md), [2026-03](../../../eng-us/history/extensions/months/2026-03.md), [2026-07](../../../eng-us/history/extensions/months/2026-07.md), [2026-09](../../../eng-us/history/extensions/months/2026-09.md), [2026-10](../../../eng-us/history/extensions/months/2026-10.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/syndication.md), [Verhaltensänderungen der Extensions](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)
+- [Cronjobs in der Konsole](../../funktionen/6.0/cronjobs-in-der-konsole.md), [Betrieb einer Site](../../anleitungen/betrieb-einer-website.md)
+- [Chronik](../../geschichte/erweiterungen/syndication.md), [Release Notes](../../../changelogs/extensions/syndication.md)
+- Monate: [2025-09](../../geschichte/erweiterungen/monate/2025-09.md), [2026-03](../../geschichte/erweiterungen/monate/2026-03.md), [2026-07](../../geschichte/erweiterungen/monate/2026-07.md), [2026-09](../../geschichte/erweiterungen/monate/2026-09.md), [2026-10](../../geschichte/erweiterungen/monate/2026-10.md)

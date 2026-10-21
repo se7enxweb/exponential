@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren, die Konten für Übersetzer einrichten, für Mitarbeitende eines
 Sprachdienstes oder beauftragte Übersetzer. Die Richtlinien von Exponential lassen sich nach **Sprache** einschränken,
 sodass ein Übersetzer eine Sprache bearbeiten darf und sonst nichts
-([Eine mehrsprachige Website bauen, Übersetzer](../../../../eng-us/help/creators/website-creators/multilingual-sites.md#translators),
+([Eine mehrsprachige Website bauen, Übersetzer](../../ersteller/website-ersteller/mehrsprachige-websites.md#übersetzer),
 [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 
 ## Inhalt
@@ -50,7 +50,7 @@ Objekt hinzuzufügen, und alle drei lassen sich nach **Sprache** einschränken
 
 - Persönliche Konten, nie geteilt; ein Enddatum in Ihren Unterlagen vermerkt. Exponential kennt kein Ablaufdatum für
   Konten: Deaktivieren Sie Konten, wenn der Vertrag endet, und nutzen Sie **Benutzer > Benutzerkonten prüfen**, um
-  Konten zu finden, die eine Weile nicht genutzt wurden ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  Konten zu finden, die eine Weile nicht genutzt wurden ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - Zweistufige Anmeldung, wo Ihre Richtlinien sie verlangen ([Anmeldung mit zwei Faktoren](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - Ein Freigabeschritt, bevor Übersetzungen online gehen, wenn der Übersetzer nicht die letzte prüfende Instanz ist
   (siehe „Übersetzungsablauf und Freigabe“).
@@ -67,7 +67,7 @@ Einschränkung **Sprache**, bietet der Editor eine neu hinzugefügte Sprache nic
 - Übersetzer mit `content/remove` könnten ganze Objekte entfernen; geben Sie dieses Recht nicht.
 - Das Entfernen einer Übersetzung löscht sie in jeder Version; lassen Sie dieses Recht bei den Administratoren (siehe
   „Eine Übersetzung sicher entfernen“).
-- Rollenzuweisungen werden im Kanal `access` des Audit-Trails festgehalten.
+- Rollenzuweisungen werden im Kanal `access` des Prüfprotokolls festgehalten.
 
 ## Verwandte Seiten
 
@@ -77,8 +77,9 @@ Einschränkung **Sprache**, bietet der Editor eine neu hinzugefügte Sprache nic
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

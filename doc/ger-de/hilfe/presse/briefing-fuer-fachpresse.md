@@ -51,14 +51,14 @@ bevor Sie veröffentlichen.
 
 | Engine | Status in der Dokumentation | Quelle |
 |---|---|---|
-| Exponential Velocity | "recommended for every stage; tier 1"; PHP 8.0+ | [Unterstützte Betriebssysteme, Webserver](../../../eng-us/help/os-support.md#web-servers) |
+| Exponential Velocity | "recommended for every stage; tier 1"; PHP 8.0+ | [Unterstützte Betriebssysteme, Webserver](../betriebssystemunterstuetzung.md#webserver) |
 | Apache httpd 2.4 mit PHP-FPM | Stufe 1, "the classic setup and shared hosting" | Dieselbe Tabelle |
 | FrankenPHP | "production-ready alternative" | Dieselbe Tabelle |
 | nginx mit PHP-FPM | Stufe 2 | Dieselbe Tabelle |
 | Der eingebaute Server von PHP | "development only" | Dieselbe Tabelle |
 
 Betriebssysteme sind in vier Stufen dokumentiert, von "Tested here" bis "Not possible today"; Stufe 3 ist "a reasoned
-expectation, not a test result" ([Unterstützte Betriebssysteme, Die vier Stufen](../../../eng-us/help/os-support.md#the-four-tiers)).
+expectation, not a test result" ([Unterstützte Betriebssysteme, Die vier Stufen](../betriebssystemunterstuetzung.md#die-vier-stufen)).
 Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen unter [Über Velocity-Releases berichten](ueber-velocity-releases-berichten.md).
 
 ## Beschaffen und installieren
@@ -68,7 +68,7 @@ Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen un
 - **Drei Wege zum Code**: `git clone` plus `composer install` (empfohlen), `composer create-project` oder
   `composer require` ([Den Code beschaffen](../../installation/03-den-code-beschaffen.md#32-drei-wege-zum-code)).
 - **Installation mit einem Befehl** auf der Entwicklungslinie: `./console exp:install` baut eine vollständige Website auf
-  SQLite ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)).
+  SQLite ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - **Veröffentlichte Tags ändern sich nie** ([Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md)).
 
 ## Wie es entwickelt wird
@@ -84,7 +84,7 @@ Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen un
 
 | Blickwinkel | Ausgangspunkt |
 |---|---|
-| Eine PHP-Codebasis von 2002 auf PHP 8.5 | [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x), [Dezember 2025](../../../eng-us/history/2025/2025-12.md) |
+| Eine PHP-Codebasis von 2002 auf PHP 8.5 | [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x), [Dezember 2025](../../geschichte/2025/2025-12.md) |
 | SQLite als Standarddatenbank eines CMS | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Ein in PHP geschriebener Webserver | [Über Velocity-Releases berichten](ueber-velocity-releases-berichten.md) |
 | Ein KI-Assistent, der nur Entwürfe schreibt | [Gesprächspunkte: Exponential Intelligence](../fuersprecher/gespraechspunkte-exponential-intelligence.md) |
@@ -108,8 +108,8 @@ Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen un
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -51,8 +51,8 @@ class expUnactivatedUsers
     }
 
     /**
-     * The search as the field and the address carry it: no control characters, no slashes or brackets (the address
-     * of a view is split at them), spaces folded, at most 100 characters.
+     * The search as the field and the address carry it: no control characters, spaces folded, at most 100
+     * characters. Slashes and brackets stay: the address carries them encoded (expViewParameters::encode()).
      *
      * @param mixed $search
      * @return string
@@ -61,7 +61,7 @@ class expUnactivatedUsers
     {
         if ( !is_scalar( $search ) )
             return '';
-        $search = preg_replace( '#[\x00-\x1F\x7F/()]+#u', ' ', (string)$search );
+        $search = preg_replace( '#[\x00-\x1F\x7F]+#u', ' ', (string)$search );
         if ( $search === null )
             return '';
         $search = trim( preg_replace( '#\s+#u', ' ', $search ) );

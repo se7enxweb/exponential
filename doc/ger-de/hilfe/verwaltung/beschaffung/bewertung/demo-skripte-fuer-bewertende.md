@@ -30,7 +30,7 @@ Hilfe wieder, die die genauen Schaltflächen und die Quelle jeder Aussage nennen
 - Schicken Sie das Skript allen Bietern gleichzeitig, mit der für jeden Teil erlaubten Zeit.
 - Der Bieter verwendet eine Demo-Installation ausschließlich mit **erfundenen Inhalten und erfundenen Konten**. Wie Sie
   eine solche Installation aufbauen, beschreibt
-  [Eine Demo-Installation einrichten](../../../../../eng-us/help/press/setting-up-a-demo-installation.md).
+  [Eine Demo-Installation einrichten](../../../presse/eine-demo-installation-einrichten.md).
 - Bewertende dürfen die vorführende Person bitten, einen Schritt zu wiederholen oder ihn nur mit der Tastatur
   auszuführen.
 - Alles Gezeigte muss in der angebotenen Version existieren. Funktionen aus einem anderen Produkt oder einem künftigen
@@ -39,11 +39,11 @@ Hilfe wieder, die die genauen Schaltflächen und die Quelle jeder Aussage nennen
 
 ## Teil 1 - Installation
 
-Quellskript: [Demo-Skript: Installation von null an](../../../../../eng-us/help/press/demo-script-install-from-zero.md).
+Quellskript: [Demo-Skript: Installation von null an](../../../presse/demo-skript-installation-von-null.md).
 
 1. Zeigen Sie die Anforderungen des verwendeten Rechners ([Anforderungen](../../../../installation/02-voraussetzungen.md)).
 2. Führen Sie die Installation mit einem Befehl mit SQLite aus: `./console exp:install`
-   ([Installation mit einem Befehl](../../../../../eng-us/features/6.0/install-in-one-command.md)).
+   ([Installation mit einem Befehl](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 3. Zeigen Sie, dass das generierte Administratorpasswort einmal ausgegeben und nach `var/log/initial-admin-password`
    geschrieben wird, und ändern Sie es bei der ersten Anmeldung.
 
@@ -51,8 +51,8 @@ Nachweis: die Zeit, die die Installation gedauert hat, und ob das Gremium sie im
 
 ## Teil 2 - Aufgaben der Redaktion
 
-Quellskripte: [Demo-Skript: Rundgang für die Redaktion](../../../../../eng-us/help/press/demo-script-editor-tour.md) und
-[Überblick in fünf Minuten](../../../../../eng-us/help/press/demo-script-five-minute-overview.md).
+Quellskripte: [Demo-Skript: Rundgang für die Redaktion](../../../presse/demo-skript-rundgang-fuer-redakteure.md) und
+[Überblick in fünf Minuten](../../../presse/demo-skript-ueberblick-in-fuenf-minuten.md).
 
 1. Legen Sie eine Nachrichtenseite mit Titel, Text und einem Bild mit Alternativtext an und speichern Sie sie als
    Entwurf.
@@ -61,18 +61,18 @@ Quellskripte: [Demo-Skript: Rundgang für die Redaktion](../../../../../eng-us/h
 4. Veröffentlichen Sie sie, bearbeiten Sie sie dann erneut und vergleichen Sie die beiden Versionen
    ([Versionen](../../../../anleitungen/inhaltsverlauf.md)).
 5. Übersetzen Sie sie in eine zweite Sprache; wenn Sie eine Sprache von rechts nach links brauchen, zeigen Sie eine
-   ([Rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)).
+   ([Rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md)).
 6. Finden Sie die Seite mit der Suche wieder.
 
 ## Teil 3 - Aufgaben der Administration
 
-Quellskript: [Demo-Skript: Rundgang für die Administration](../../../../../eng-us/help/press/demo-script-administrator-tour.md).
+Quellskript: [Demo-Skript: Rundgang für die Administration](../../../presse/demo-skript-rundgang-fuer-administratoren.md).
 
 1. Zeigen Sie einen Inhaltstyp (**Setup > Klassen**) und erklären Sie, welche Felder er hat.
 2. Zeigen Sie die Rolle einer Redakteurin oder eines Redakteurs (**Benutzerkonten**, Rollen) und schränken Sie sie auf
    eine Sektion ein ([Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)).
 3. Zeigen Sie das Audit-Protokoll der Handlungen aus Teil 2 (`/audit/dashboard`, dann die Konsole;
-   [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+   [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 4. Zeigen Sie die Einrichtung der zweistufigen Anmeldung, ohne sie abzuschließen
    ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)).
 5. Zeigen Sie **Setup > Upgrade-Prüfung** und **Setup > Systeminformationen** (nur den oberen Teil).
@@ -82,7 +82,7 @@ Quellskript: [Demo-Skript: Rundgang für die Administration](../../../../../eng-
 
 1. Wiederholen Sie die Schritte 1 und 4 aus Teil 2 nur mit der Tastatur. Das Design admin4 hat als ersten
    Tabulatorstopp einen Sprunglink und einen sichtbaren Fokus
-   ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
+   ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)).
 2. Bitten Sie den Bieter, die öffentliche Seite mit der Tastatur und bei 200 % Zoom zu zeigen. Öffentliche Designs prüft
    das Projekt nicht: Was Sie sehen, ist die eigene Designarbeit des Bieters.
 3. Fragen Sie, wo die Redaktion Alternativtext eingibt und was geschieht, wenn er leer ist: Nichts zwingt die Redaktion,
@@ -101,7 +101,7 @@ Der Rundgang für die Administration listet sie auf: Systeminformationen (Pfade,
 Audit-Konsole, Benutzerlisten, die Einrichtung der zweistufigen Anmeldung (QR-Code) und alles unterhalb von
 `settings/override/`. Auf einer Demo-Installation mit erfundenen Daten sind sie unbedenklich; auf der Kopie einer echten
 Website nicht. Akzeptieren Sie nie eine Demo auf der Kopie einer Produktionswebsite mit echten personenbezogenen Daten.
-Mehr dazu: [Geheimnisse vom Bildschirm fernhalten](../../../../../eng-us/help/press/keeping-secrets-off-screen.md).
+Mehr dazu: [Geheimnisse vom Bildschirm fernhalten](../../../presse/geheimnisse-vom-bildschirm-fernhalten.md).
 
 ## Notizblatt für Bewertende
 
@@ -116,12 +116,13 @@ Notes (facts only):
 ## Verwandte Seiten
 - [Bewertung: Übersicht](README.md)
 - [Beschaffung: Übersicht](../README.md)
-- [Presse: eine Demo-Installation einrichten](../../../../../eng-us/help/press/setting-up-a-demo-installation.md)
+- [Presse: eine Demo-Installation einrichten](../../../presse/eine-demo-installation-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

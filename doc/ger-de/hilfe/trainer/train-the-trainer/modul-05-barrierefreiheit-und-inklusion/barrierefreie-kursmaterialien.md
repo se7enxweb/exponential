@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 2. Zeigen Sie die Hilfe als Handout (4 Minuten): Jede Hilfeseite hat Überschriften, ein Inhaltsverzeichnis und
    **Als PDF herunterladen**; mit einer TrueType-Schrift lässt sich der Text des PDFs markieren und durchsuchen, und
    die Überschriften werden zu Links.
-3. Erwähnen Sie den Standard (3 Minuten): [Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md) zeigt,
+3. Erwähnen Sie den Standard (3 Minuten): [Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md) zeigt,
    wie Exponential gegenüber WCAG 2.2 AA abschneidet, und nennt seine Lücken ehrlich.
 
 ### Häufige Fragen
@@ -91,7 +91,7 @@ nach Möglichkeit in Admin 4.
 <summary>Antworten</summary>
 
 1. Sie lassen sich weder kopieren noch von einem Screenreader lesen.
-2. WCAG 2.2, Stufe AA ([Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md)).
+2. WCAG 2.2, Stufe AA ([Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md)).
 3. Was im Bild für die Aufgabe wichtig ist, nicht jedes Pixel.
 4. Es verlässt sich allein auf die Farbe; nennen Sie die Beschriftung der Schaltfläche.
 
@@ -100,8 +100,8 @@ nach Möglichkeit in Admin 4.
 ## Weiterführende Literatur
 
 - [Barrierefreie Folien und Grafiken](../../../fuersprecher/barrierefreie-folien-und-grafiken.md)
-- [Barrierefreiheitsstandards](../../../../../eng-us/standards/accessibility.md)
-- [Das Hilfesystem: Drucken und PDF](../../../../../eng-us/features/6.0/help-system.md#print-and-pdf)
+- [Barrierefreiheitsstandards](../../../../standards/barrierefreiheit.md)
+- [Das Hilfesystem: Drucken und PDF](../../../../funktionen/6.0/hilfesystem.md#drucken-und-pdf)
 
 ## Verwandte Seiten
 
@@ -111,9 +111,9 @@ nach Möglichkeit in Admin 4.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

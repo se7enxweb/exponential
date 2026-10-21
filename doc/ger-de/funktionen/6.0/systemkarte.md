@@ -268,7 +268,7 @@ Für alle drei Befehle gelten dieselben Optionen.
 
 Die Standardoptionen jedes Konsolenbefehls funktionieren ebenfalls (`--siteaccess`, `--quiet`, `--allow-root-user`
 ...). Der Exit-Code ist 0 oder 2 bei einer falschen Option. Generierte Referenz:
-[exp:expfetch](../../../eng-us/examples/commands/expfetch.md).
+[exp:expfetch](../../beispiele/befehle/expfetch.md).
 
 ### --watch
 
@@ -492,7 +492,7 @@ sicher:
 | `[Inventory]` | `Settings[]=<file>/<block>/<name>`: was exp:info zeigt |
 | `[About]` | `TextFile=share/syscard/about.txt` |
 
-Jede Einstellung: [syscard.ini](../../../eng-us/examples/ini-settings/syscard/README.md).
+Jede Einstellung: [syscard.ini](../../beispiele/ini-einstellungen/syscard/README.md).
 
 ## Fakten, ein Theme oder ein Logo aus einer Extension hinzufügen
 
@@ -630,8 +630,8 @@ schon etwas bedeutet: die Template-Funktionen `fetch()`, die Fetch-Definitionen 
 
 ## Verwandte Seiten
 
-- [exp:expfetch (generierte Referenz)](../../../eng-us/examples/commands/expfetch.md)
-- [syscard.ini (generierte Referenz)](../../../eng-us/examples/ini-settings/syscard/README.md)
+- [exp:expfetch (generierte Referenz)](../../beispiele/befehle/expfetch.md)
+- [syscard.ini (generierte Referenz)](../../beispiele/ini-einstellungen/syscard/README.md)
 - [Zustandsprüfungen und Verfügbarkeit](../../hilfe/hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)
 - [Systeminformationen](../../anleitungen/systeminformationen.md)
 - [Das Hilfesystem](hilfesystem.md)

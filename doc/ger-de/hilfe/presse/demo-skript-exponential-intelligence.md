@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Creator, die Exponential Intelligence zeigen, den Schreibassistenten der Administration. Die eine
 Botschaft, die jeden Schnitt Ihres Videos überstehen muss: **Er schreibt nur Entwürfe**, als der angemeldete Redakteur
 und mit dessen Rechten, und veröffentlicht nie von sich aus (`README.md`, „Exponential Intelligence“;
-[Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md)).
+[Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md)).
 
 Es ist die Erweiterung `se7enxweb/expai`, Release 0.0.1.0, die seit 6.0.15 in `composer.json` verlangt wird, das in
 Entwicklung ist. Sagen Sie das: „die Entwicklungslinie 6.0.15“ oder die Version, die Sie wirklich verwenden. Das Skript
@@ -31,7 +31,7 @@ dauert etwa sechs Minuten; die Einrichtung geschieht **außerhalb der Kamera**.
 Auf einer neuen Installation der Entwicklungslinie ist der Assistent laut README für die Siteaccesses der Administration
 bereits aktiv, seine Tabellen existieren und die Rolle Administrator hat seine Richtlinien; er "sends nothing anywhere
 until you add a provider key". Auf einer älteren Installation folgen Sie den Upgrade-Schritten in der README oder
-[Einschalten](../../../eng-us/features/6.0/extensions/expai.md#switch-it-on).
+[Einschalten](../../funktionen/6.0/erweiterungen/expai.md#einschalten).
 
 ```text
 [ ] Ein Anbieterschlüssel mit niedrigem Ausgabelimit, nur für diese Aufnahme erstellt, den Sie danach widerrufen können
@@ -60,7 +60,7 @@ und seine Aufbewahrung, und jede Anfrage hält fest, wohin sie ging (`README.md`
 | 3:30 | **„Rewrite“** oder **„Shorten“** auf ein Feld anwenden | „Der Wert kommt zur Prüfung ins Formular. Nichts ändert sich, bis ich ihn annehme und den Entwurf speichere.“ |
 | 4:10 | Auf die Zeile mit Modell, Region und Kosten zeigen | „Jeder Klick zeigt das Modell, die Region und was er kostet.“ |
 | 4:40 | Zurück zum Tab **Intelligence**; den Entwurf verwerfen | „Ich werfe den Entwurf weg; die Website ist unverändert.“ |
-| 5:10 | Titelkarte | „Jede Anfrage wird im Audit-Trail festgehalten, ohne Prompts, Antworten oder Schlüssel. Die Dokumentation ist unten verlinkt.“ |
+| 5:10 | Titelkarte | „Jede Anfrage wird im Prüfprotokoll festgehalten, ohne Prompts, Antworten oder Schlüssel. Die Dokumentation ist unten verlinkt.“ |
 
 ## Was Sie nie zeigen
 
@@ -105,8 +105,8 @@ Funktionsseite: <Link zu „Exponential Intelligence“> - Repository: https://g
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

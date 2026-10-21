@@ -9,8 +9,8 @@ Sie richtet sich an Redakteure und Freigebende. Jede Seite, jedes Feld und jede 
 am Code dieses Repositorys geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 
 [Anleitungen](README.md) · Siehe auch: [Versionen eines Objekts](inhaltsverlauf.md) ·
-[Bearbeitungszugriff auf nie veröffentlichte Objekte](../../eng-us/bc/6.0/draft-edit-access.md) ·
-[Workflows](workflows.md) · [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
+[Bearbeitungszugriff auf nie veröffentlichte Objekte](../bc/6.0/zugriff-auf-entwuerfe.md) ·
+[Workflows](workflows.md) · [Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 
@@ -66,3 +66,11 @@ Bitten Sie einen Administrator, sich **Setup > Workflow-Prozesse** anzusehen.
 - Templates: `design/admin4/templates/content/draft.tpl`, `pendinglist.tpl` (dasselbe in `design/admin`); das
   Aussehen steht in den Abschnitten zu Historie und Entwürfen von `stylesheets/modules/content.css`
 - Test: `tests/tests/kernel/classes/expContentDraftListTest.php` (ohne Datenbank)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

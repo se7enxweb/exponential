@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen und Administratoren. Eine öffentliche Stelle sollte jeden Dienstleister
 und am Ende auch jede Plattform geordnet verlassen können. Bei Exponential erlaubt die Lizenz das; der Plan macht es
 praktikabel. Der Bereich Beschaffung dieser Hilfe enthält Vorlagen für Ausstiegspläne
-([Ausstiegspläne](../../../../eng-us/help/government/procurement/exit-plans/README.md)).
+([Ausstiegspläne](../beschaffung/ausstiegsplaene/README.md)).
 
 ## Inhalt
 
@@ -55,7 +55,7 @@ alten Host für eine gewisse Zeit schreibgeschützt behalten. Die Datenbank kann
 2. Exportieren Sie die Inhalte pro Klasse (siehe „Inhalte und Pakete exportieren“) und die Dateien.
 3. Planen Sie die Konvertierung des Rich-Text-XML in das Zielformat.
 4. Behalten Sie die Adressen: Erstellen Sie eine Weiterleitungstabelle von den alten URL-Aliassen zu den neuen Adressen
-   ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md#relaunching-a-site-a-redirect-plan)).
+   ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md#relaunch-einer-website-ein-weiterleitungsplan)).
 5. Archivieren Sie, was als Schriftgut aufbewahrt werden muss, bevor das alte System abgeschaltet wird.
 
 ## Den Plan testen
@@ -72,8 +72,9 @@ Sie fest, wie lange es gedauert hat und was gefehlt hat, und verbessern Sie die 
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

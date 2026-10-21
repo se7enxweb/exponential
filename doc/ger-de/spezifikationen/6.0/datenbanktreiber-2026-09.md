@@ -7,11 +7,11 @@ installieren oder betreiben oder wenn sich ein Upgrade von einer älteren 6.0-Ve
 
 An anderer Stelle:
 
-- MongoDB: [MongoDB-Unterstützung im Kernel](../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md), Abschnitt „Addendum:
+- MongoDB: [MongoDB-Unterstützung im Kernel](../../bc/6.0/mongodb-kernel-unterstuetzung.md), Abschnitt „Addendum:
   driver and kernel fixes of 18 to 20 September 2026“.
 - SQLite-Transaktionen (Oktober 2026): [SQLite3-Datenbanktreiber, Transaktionen und Schreiber](sqlite3-datenbanktreiber.md#transaktionen-und-schreiber).
 - Die Installer: [Installer-Logs und Startdaten](installer-protokolle-und-startdaten.md) und
-  [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md).
+  [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md).
 
 ## Einstellungen auf dieser Seite
 
@@ -128,11 +128,11 @@ nach einem Klassenattribut sortiert werden). Oracle erlaubt `AS` nur für Spalte
 (`ORA-00933`), deshalb schlugen beide dort fehl; die Aliase werden jetzt ohne `AS` geschrieben, was
 auf jeder Datenbank gleich ist. Installieren Sie auf Oracle mit
 `./console exp:install --db=oracle` (siehe
-[Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)).
+[Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ### Oracle und der SQL-Abfrage-Cache (1. und 2. Oktober 2026)
 
-Der [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md) kennt die Anweisungen von Oracle, sodass der Oracle-Treiber (`extension/ezoracle`, Version in seiner `ezinfo.php`) SELECTs daraus beantworten kann:
+Der [SQL-Abfrage-Cache](../../bc/6.0/sql-abfrage-cache.md) kennt die Anweisungen von Oracle, sodass der Oracle-Treiber (`extension/ezoracle`, Version in seiner `ezinfo.php`) SELECTs daraus beantworten kann:
 
 - Oracle schreibt veränderliche Werte ohne Klammern, deshalb werden `<sequence>.NEXTVAL` und `.CURRVAL` (der Treiber liest die ID einer neuen Zeile mit `SELECT <sequence>.currval FROM DUAL`), `SYSDATE`, `SYSTIMESTAMP`, die SCN, `SYS_GUID`, `SYS_CONTEXT`/`USERENV` und `DBMS_RANDOM` nie gecacht (eine gecachte Antwort würde eine ID zweimal vergeben).
 - Der Katalog von Oracle (`USER_*`, `ALL_*`, `DBA_*`, `CDB_*`, `V$*`) zählt als Systemtabelle.
@@ -160,8 +160,8 @@ Das SQLite-Gegenstück zu dieser Änderung: [Transaktionen und Schreiber](sqlite
 
 ## Verwandte Seiten
 
-- [Datenbankunterstützung](../../../eng-us/help/database-support.md): die unterstützten Datenbanken in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), Versionen, Installer und CI-Abdeckung
+- [Datenbankunterstützung](../../hilfe/datenbankunterstuetzung.md): die unterstützten Datenbanken in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), Versionen, Installer und CI-Abdeckung
 - Spezifikationen: [SQLite3-Datenbanktreiber](sqlite3-datenbanktreiber.md), [Installer-Logs und Startdaten](installer-protokolle-und-startdaten.md)
-- Funktionen: [SQLite-Datenbank](../../../eng-us/features/6.0/sqlite-database.md), [MongoDB als Datenbank](../../../eng-us/features/6.0/mongodb-database-support.md), [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)
-- Upgrade-Hinweise: [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md), [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md) und [Juni 2026, erste Hälfte](../../../eng-us/history/2026/2026-06a.md)
+- Funktionen: [SQLite-Datenbank](../../funktionen/6.0/sqlite-datenbank.md), [MongoDB als Datenbank](../../funktionen/6.0/mongodb-datenbankunterstuetzung.md), [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)
+- Upgrade-Hinweise: [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md), [SQL-Abfrage-Cache](../../bc/6.0/sql-abfrage-cache.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md) und [Juni 2026, erste Hälfte](../../geschichte/2026/2026-06a.md)

@@ -69,7 +69,7 @@ Antwort-Cache von Velocity, den HTTP-Cache, eine statische Datei, einen vorgesch
 Browser-Cache.
 
 **Kann ich den statischen Cache für eine Übung einschalten?** Das ist nicht nötig: Lesen Sie stattdessen die Hilfe des
-Generators. Auf einer Live-Website entscheidet das der Hoster (siehe [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md)).
+Generators. Auf einer Live-Website entscheidet das der Hoster (siehe [Hosting und Betrieb](../../hosting-betrieb/README.md)).
 
 **Und OPcache und APCu?** Sie speichern PHP-Code und Daten pro PHP-Prozess. Die Seite Caches hat
 **OPcache zurücksetzen** und **APCu leeren** für den Prozess, der geantwortet hat; der andere Server behält seine
@@ -164,8 +164,8 @@ Auf Ihrer Schulungsinstallation, mit einem Terminal im Wurzelverzeichnis und ein
 
 - [Cache-Ebenen](../../../hosting/leistung/cache-schichten.md): alle zwölf Ebenen.
 - [Statischer Cache](../../../hosting/leistung/statischer-cache.md) und
-  [Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md).
-- [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md).
+  [Generator für den statischen Cache](../../../../funktionen/6.0/generator-fuer-den-statischen-cache.md).
+- [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md).
 - [HTTP-Caching](../../../../bc/6.0/http-caching.md).
 
 ## Verwandte Seiten
@@ -176,9 +176,9 @@ Auf Ihrer Schulungsinstallation, mit einem Terminal im Wurzelverzeichnis und ein
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

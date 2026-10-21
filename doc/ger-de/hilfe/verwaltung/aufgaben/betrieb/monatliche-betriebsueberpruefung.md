@@ -42,7 +42,7 @@ Behörden üblicherweise gefragt werden. Die Fassung für Hoster ist
 | Administratoren | Inhaber des Vollzugriffs unverändert | [Prüfen, wer Administratorrechte hat](../personen-und-berechtigungen/pruefen-wer-administratorrechte-hat.md) (vierteljährlich) |
 | Sicherungen | eine Sicherung der letzten Tage existiert; Test der Wiederherstellung wie geplant | [Die Sicherung der letzten Nacht auf einem Testserver wiederherstellen](die-sicherung-der-letzten-nacht-auf-einem-testserver-wiederherstellen.md) |
 | Zertifikate | mehr als ein Monat verbleibend | `./console exp:velocity ssl show --allow-root-user` oder `openssl` von außen |
-| Updates | neue Releases, Sicherheitskorrekturen | **Setup > Updates and packages**, **Check for updates**; das Changelog ([Sicherheitsupdates und Offenlegung](../../../../../eng-us/help/government/operations/upgrades-and-change/security-updates-and-disclosure.md)) |
+| Updates | neue Releases, Sicherheitskorrekturen | **Setup > Updates and packages**, **Check for updates**; das Changelog ([Sicherheitsupdates und Offenlegung](../../betrieb/aktualisierungen-und-aenderungen/sicherheitsaktualisierungen-und-offenlegung.md)) |
 | Header | noch vorhanden | [Die Sicherheitsheader prüfen](die-sicherheitsheader-pruefen.md) |
 
 ## Der Nachweis
@@ -52,15 +52,16 @@ Nachweisen zeigen einem Prüfer eine funktionierende Praxis; Befunde, die sich w
 Änderungsgremium.
 
 ## Verwandte Seiten
-- [Überblick über das Monitoring](../../../../../eng-us/help/government/operations/monitoring/monitoring-overview.md)
-- [Überprüfungen des Administratorzugangs](../../../../../eng-us/help/government/operations/people-and-permissions/admin-access-reviews.md)
-- [Nachbereitung eines Vorfalls](../../../../../eng-us/help/government/operations/incidents/post-incident-review.md)
+- [Überblick über das Monitoring](../../betrieb/ueberwachung/ueberwachung-im-ueberblick.md)
+- [Überprüfungen des Administratorzugangs](../../betrieb/personen-und-berechtigungen/ueberpruefung-administrativer-zugaenge.md)
+- [Nachbereitung eines Vorfalls](../../betrieb/vorfaelle/nachbetrachtung-eines-vorfalls.md)
 - [Checkliste zur Sicherheitsüberprüfung (Hosting)](../../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

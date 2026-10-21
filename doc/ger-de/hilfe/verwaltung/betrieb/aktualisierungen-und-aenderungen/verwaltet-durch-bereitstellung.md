@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Change-Manager, die wollen, dass jede Konfigurationsänderung an einer
 öffentlichen Website über die Versionsverwaltung und einen Änderungsbeirat läuft, nicht über einen Browser auf dem
 Live-Server. Exponential hat dafür einen Schalter, `[ConfigurationSettings] ManagedByDeployment`, beschrieben unter
-[Durch die Bereitstellung verwaltete Konfiguration](../../../../../eng-us/features/6.0/managed-by-deployment.md).
+[Durch die Bereitstellung verwaltete Konfiguration](../../../../funktionen/6.0/durch-deployment-verwaltet.md).
 
 ## Inhalt
 1. [Warum öffentliche Stellen ihn wollen](#warum-öffentliche-stellen-ihn-wollen)
@@ -28,7 +28,7 @@ Live-Server. Exponential hat dafür einen Schalter, `[ConfigurationSettings] Man
 Ohne den Schalter schreiben der INI-Editor, die Editoren für Werkzeugleiste und Menüs und der Template-Editor Dateien
 `*.ini.append.php` und `.tpl` in das Release-Verzeichnis, wo die Versionsverwaltung sie nicht sieht und die nächste
 Bereitstellung sie verwirft. Eine so vorgenommene Änderung hat kein Ticket, keine Prüfung und keine Historie außer dem
-Audit-Trail. Mit eingeschaltetem Schalter kann die Live-Website nur ausführen, was bereitgestellt wurde, und genau das
+Prüfprotokoll. Mit eingeschaltetem Schalter kann die Live-Website nur ausführen, was bereitgestellt wurde, und genau das
 gibt ein Änderungsbeirat frei.
 
 ## Was der Schalter sperrt
@@ -79,7 +79,7 @@ Einstellungen, bietet aber keine Bearbeitung an; `/settings/edit` antwortet wie 
 | Eine Einstellung | die Datei im Repository bearbeiten, prüfen, freigeben, bereitstellen; `./console exp:ini` auf einer Testkopie, um Werte auszuprobieren |
 | Ein Template | dasselbe; der Template-Editor bleibt auf Entwicklungs- und Test-Siteaccesses verfügbar, wo der Schalter ausgeschaltet ist |
 | Eine Erweiterung | `composer.json` und Einstellungen im Repository; Aktivierung durch die Bereitstellung |
-| Inhalte, Rollen, Workflows | unverändert: Sie sind Daten, werden in der Administration bearbeitet und im Audit-Trail aufgezeichnet |
+| Inhalte, Rollen, Workflows | unverändert: Sie sind Daten, werden in der Administration bearbeitet und im Prüfprotokoll aufgezeichnet |
 
 Die Einstellung kann sich mit Variantendateien für `EXP_ENV` je Umgebung unterscheiden, sodass Test und Entwicklung
 bearbeitbar bleiben ([Umgebungen: Entwicklung, Test und Produktion](../hosting/umgebungen-entwicklung-test-produktion.md)).
@@ -91,18 +91,19 @@ bearbeitbar bleiben ([Umgebungen: Entwicklung, Test und Produktion](../hosting/u
 - Dateirechte auf dem Release-Verzeichnis bleiben die stärkere Maßnahme; der Schalter ist ein Schutz auf
   Anwendungsebene.
 - Rollen, Workflows, Sektionen und Zustände sind Konfiguration in der Datenbank: Sie werden nicht gesperrt. Steuern
-  Sie sie über Rollen (wer sie ändern darf) und den Audit-Trail.
+  Sie sie über Rollen (wer sie ändern darf) und das Prüfprotokoll.
 
 ## Verwandte Seiten
 - [Änderungsmanagement und Änderungsbeiräte](aenderungsmanagement-und-aenderungsbeiraete.md)
 - [Staging und Freigabe](staging-und-freigabe.md)
 - [Konfiguration unter Versionsverwaltung](../hosting/konfiguration-unter-versionskontrolle.md)
-- [Konfiguration mit ManagedByDeployment sperren](../../../../../eng-us/help/government/tasks/operations/lock-configuration-with-managed-by-deployment.md)
+- [Konfiguration mit ManagedByDeployment sperren](../../aufgaben/betrieb/die-konfiguration-mit-managedbydeployment-sperren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

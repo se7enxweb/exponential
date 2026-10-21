@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren oder Sicherheitsbeauftragte. Am Ende einer 15-minütigen Prüfung wissen Sie, was
 Angreifer diese Woche versucht haben und ob etwas Handeln erfordert. `security.log` enthält Anfragen, die der
 Klassifizierer als Sondierung, Traversal, Injection, Angriffswerkzeug oder 404-Häufung einstuft, mit jedem Status; er
-blockiert nichts ([Anfrage-Logs: 404 und Sicherheit](../../../../../eng-us/help/government/operations/monitoring/request-logs-404-and-security.md)).
+blockiert nichts ([Anfrage-Logs: 404 und Sicherheit](../../betrieb/ueberwachung/anfrageprotokolle-404-und-sicherheit.md)).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -46,9 +46,9 @@ blockiert nichts ([Anfrage-Logs: 404 und Sicherheit](../../../../../eng-us/help/
 |---|---|
 | Sondierungen nach Software, die Sie nicht betreiben (andere CMS) | keine; normaler Hintergrund |
 | Injection oder Traversal mit Status 200 | einen Entwickler bestätigen lassen, dass die Antwort keine Daten preisgegeben hat |
-| Viele Anfragen aus wenigen Netzen | das Muster an die Stelle geben, die die vorgeschaltete Schicht betreibt ([DDoS und Fluten von Sondierungen](../../../../../eng-us/help/government/operations/incidents/ddos-and-probe-floods.md)) |
+| Viele Anfragen aus wenigen Netzen | das Muster an die Stelle geben, die die vorgeschaltete Schicht betreibt ([DDoS und Fluten von Sondierungen](../../betrieb/vorfaelle/ddos-und-flut-von-sondierungsanfragen.md)) |
 | Ein neuer Zielpfad auf Ihrer eigenen Site | die Verarbeitung der Eingaben dieser Seite prüfen |
-| Warnungen `brute_force` | [Vermutete Kompromittierung eines Kontos](../../../../../eng-us/help/government/operations/incidents/suspected-account-compromise.md), wenn ein Konto danach erfolgreich war |
+| Warnungen `brute_force` | [Vermutete Kompromittierung eines Kontos](../../betrieb/vorfaelle/verdacht-auf-kompromittiertes-konto.md), wenn ein Konto danach erfolgreich war |
 
 ## Die Notiz
 
@@ -57,14 +57,15 @@ Sicherheitsunterlagen auf; sie zeigt Prüfern eine fortlaufende Überwachungspra
 
 ## Verwandte Seiten
 - [Die Fehlerübersicht lesen](die-fehleruebersicht-lesen.md)
-- [Audit-Warnungen](../../../../../eng-us/help/government/operations/monitoring/audit-alerts.md)
+- [Audit-Warnungen](../../betrieb/ueberwachung/audit-warnungen.md)
 - [Sicherheits-Log (Hosting)](../../../hosting/betrieb/sicherheitslog.md)
 - [Sicherheitshärtung](../../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

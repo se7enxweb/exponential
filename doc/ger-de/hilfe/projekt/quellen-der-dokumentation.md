@@ -39,7 +39,7 @@ Hilfe in Bezug auf die Software voneinander abweichen, vertrauen Sie dieser Hilf
 Die Website bietet auf ihrer [Bücherseite](https://exponential.earth/doc/books) freie Bücher als PDF-Downloads an,
 beginnend mit „Learning eZ Publish“, geschrieben, als die Software noch ihren alten Namen trug. Drei Bücher werden in
 Repositories von se7enxweb aufbewahrt, zwei davon unter der GNU Free Documentation License; das Kapitel
-[Aus den freien Büchern lernen](../../../eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-the-books.md)
+[Aus den freien Büchern lernen](../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/aus-den-buechern-lernen.md)
 listet sie auf und enthält eine Tabelle, die das in den Büchern Beschriebene der heutigen Umsetzung in
 Exponential 6 gegenüberstellt.
 
@@ -83,6 +83,14 @@ Datenbank und die Konfiguration. Ihre Dokumentation mit vielen Beispielen finden
 
 - [Das Exponential-Projekt: Hier beginnen](README.md)
 - [Die Hilfe für Redakteure und Benutzer](../README.md)
-- [Aus den freien Büchern lernen](../../../eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-the-books.md)
+- [Aus den freien Büchern lernen](../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/aus-den-buechern-lernen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt
   und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -45,7 +45,7 @@ keine Vormerkungen und keine Mahngebühren. Eine Suche in Code und Dokumentation
 Wenn Sie sie brauchen, behalten Sie dafür Ihr integriertes Bibliothekssystem und verwenden Sie Exponential für die
 öffentliche Website, die digitale Sammlung und die Neuigkeiten drumherum. Einträge kann ein Entwickler per Skript oder
 über die REST API hereinholen
-([Inhalte im Code anlegen und aktualisieren](../../../../eng-us/help/creators/app-creators/creating-content-in-code.md),
+([Inhalte im Code anlegen und aktualisieren](../../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md),
 [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)).
 
 > **Hinweis**
@@ -78,25 +78,25 @@ Wenn Sie sie brauchen, behalten Sie dafür Ihr integriertes Bibliothekssystem un
 
 ## Benachbarte Bereiche
 
-- [Newsletter](../newsletter/README.md): ein Newsletter über Neuerwerbungen.
+- [Newsletter](../newsletters/README.md): ein Newsletter über Neuerwerbungen.
 - [Mitglieder](../mitglieder/README.md): Leserkonten und Inhalte nur für Mitglieder.
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md) und [Vereine und kleine Gruppen](../vereine/README.md):
   Viele Bibliotheken werden von einer solchen Organisation betrieben oder unterstützen eine.
 - [Mehrsprachige Websites](../mehrsprachig/README.md): Kataloge in mehreren Sprachen.
 - Öffentliche Bibliotheken in Trägerschaft einer Behörde: siehe auch
-  [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+  [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
-- [Was Sie bauen können](../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
+- [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
+- [Was Sie bauen können](../../ersteller/website-ersteller/was-sie-bauen-koennen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

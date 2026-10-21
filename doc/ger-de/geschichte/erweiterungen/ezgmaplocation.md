@@ -1,8 +1,8 @@
 # ezgmaplocation (Datentyp Kartenposition): Chronik
 
-Der Datentyp Kartenposition wechselte Anfang 2024 den Vendor und wurde im April 2026 für Koordinaten unter PHP 8.5 korrigiert; im September kamen ein SQLite-Schema und Übersetzungen hinzu. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezgmaplocation.md).
+Der Datentyp Kartenposition wechselte Anfang 2024 den Vendor und wurde im April 2026 für Koordinaten unter PHP 8.5 korrigiert; im September kamen ein SQLite-Schema und Übersetzungen hinzu. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezgmaplocation.md).
 
-Diese Seite führt **jede der 15 Änderungen** des Repositorys `ezgmaplocation` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezgmaplocation.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezgmaplocation.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezgmaplocation.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 15 Änderungen** des Repositorys `ezgmaplocation` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezgmaplocation.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezgmaplocation.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezgmaplocation.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -73,7 +73,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezgmaplocation.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezgmaplocation.md)
 - [Release Notes](../../../changelogs/extensions/ezgmaplocation.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezgmaplocation.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

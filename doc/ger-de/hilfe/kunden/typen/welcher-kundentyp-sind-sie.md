@@ -47,7 +47,7 @@ Wenn nichts passt (eine Kampagnen-Website, ein Portfolio, ein Katalog ohne Shop)
 
 Diese Seiten setzen voraus, dass Ihre Website bereits läuft. Wenn Sie noch ein System oder einen Partner auswählen,
 ist der Bereich [Unternehmen](../../unternehmen/unternehmen-hier-beginnen.md) für Sie geschrieben. Wenn Sie die Website selbst
-bauen oder ändern, ist es der Bereich [Website-Ersteller](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md).
+bauen oder ändern, ist es der Bereich [Website-Ersteller](../../ersteller/website-ersteller/website-ersteller-hier-beginnen.md).
 Wenn Sie Inhalte schreiben und veröffentlichen und die Schritte im Editor brauchen, beginnen Sie mit der Seite
 [Inhalte bearbeiten](../../inhalte-bearbeiten.md).
 
@@ -57,3 +57,11 @@ Wenn Sie Inhalte schreiben und veröffentlichen und die Schritte im Editor brauc
 - [Kunden: hier beginnen](../kunden-hier-beginnen.md)
 - [Welcher Bereich zu Ihrer Organisation passt](../../unternehmen/welcher-bereich-zu-ihrer-organisation-passt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -32,7 +32,7 @@ wiederherstellen und ihre Leistung messen und verbessern.
 | Dauer | 28 Lektionen, etwa 20 Stunden Lektionen (mit Pausen drei bis vier Tage) |
 | Form | Präsenz oder online; praxisorientiert im Terminal |
 | Niveau | Fortgeschrittene bis Experten |
-| Voraussetzungen | [Website-Administration](../../../../eng-us/help/trainers/site-administrators/README.md) (mindestens die Module zu Caches, Cronjobs, Logs und Upgrades); Grundlagen der Linux-Kommandozeile, eines Webservers und von PHP |
+| Voraussetzungen | [Website-Administration](../website-administratoren/README.md) (mindestens die Module zu Caches, Cronjobs, Logs und Upgrades); Grundlagen der Linux-Kommandozeile, eines Webservers und von PHP |
 | Übungsumgebung | Ein Linux-Rechner oder eine virtuelle Maschine pro Person mit root-Zugang, PHP 8.0 oder neuer, Composer 2 und Git; eine Schulungsinstallation, angelegt mit `php bin/php/console exp:install` und ausgeliefert mit `exp:velocity start`; für die Lektionen 1.2, 1.3 und 3.3 außerdem Apache oder nginx mit PHP-FPM und ein MariaDB- oder PostgreSQL-Server |
 
 ## Module
@@ -40,7 +40,7 @@ wiederherstellen und ihre Leistung messen und verbessern.
 | Modul | Lektionen | Dauer | Ergebnis |
 |---|---|---|---|
 | [1. Die Website ausliefern](modul-01-die-website-ausliefern/README.md) | 4 | 2 Std. 45 Min. | Liefert eine Website mit Apache oder nginx und PHP-FPM aus, stimmt Pools ab, prüft OPcache und APCu |
-| [2. Velocity](modul-02-velocity/README.md) | 4 | 3 Std. | Startet Velocity und hält es am Laufen, bemisst seine Pools, nutzt den Antwort-Cache und HTTPS |
+| [2. Velocity](modul-02-velocity/README.md) | 4 | 3 Std. | Startet Velocity und hält ihn am Laufen, bemisst seine Pools, nutzt den Antwort-Cache und HTTPS |
 | [3. Datenbanken](modul-03-datenbanken/README.md) | 4 | 2 Std. 55 Min. | Wählt eine Datenbank, betreibt SQLite gut, richtet einen Datenbankserver ein, sichert und verschiebt eine Datenbank |
 | [4. Bereitstellung und Cron](modul-04-bereitstellung-und-cron/README.md) | 4 | 2 Std. 55 Min. | Stellt eine Änderung bereit, richtet Cron ein, nutzt die Cronjob-Konsole, plant ein Upgrade |
 | [5. Monitoring und Logs](modul-05-monitoring-und-logs/README.md) | 4 | 2 Std. 55 Min. | Überwacht eine Website, liest und rotiert Logs, arbeitet die Runbooks für ausgefallene und langsame Websites ab |
@@ -51,7 +51,7 @@ wiederherstellen und ihre Leistung messen und verbessern.
 
 Für Trainer, die diesen Kurs vorbereiten, in dieser Reihenfolge:
 
-1. [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md) und der [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md).
+1. [Trainer: hier beginnen](../trainer-hier-beginnen.md) und der [Kurskatalog](../kurskatalog.md).
 2. [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md) und
    [Was das Hosting von Exponential umfasst](../../hosting/grundlagen/was-das-hosting-von-exponential-umfasst.md).
 3. [Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md) und
@@ -93,15 +93,15 @@ weiteres Material.
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

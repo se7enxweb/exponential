@@ -14,7 +14,7 @@ Diese Seite richtet sich an Administratorinnen und Administratoren, Entwicklerin
 Review und eine Bereitstellung laufen. Ohne den Schalter schreiben der INI-Editor der Administration, die Editoren für
 Werkzeugleisten und Menüs und der Template-Editor Dateien in das Release-Verzeichnis, wo die Versionsverwaltung sie
 nicht sieht. Mit dem Schalter können sie das nicht
-([Von der Bereitstellung verwaltete Konfiguration](../../../../eng-us/features/6.0/managed-by-deployment.md)).
+([Von der Bereitstellung verwaltete Konfiguration](../../../funktionen/6.0/durch-deployment-verwaltet.md)).
 
 ## Inhalt
 
@@ -75,14 +75,15 @@ In einer Webanfrage, bei eingeschaltetem Schalter:
 
 ## Verwandte Seiten
 
-- [Von der Bereitstellung verwaltete Konfiguration](../../../../eng-us/features/6.0/managed-by-deployment.md)
+- [Von der Bereitstellung verwaltete Konfiguration](../../../funktionen/6.0/durch-deployment-verwaltet.md)
 - [Bereitstellen](../../../anleitungen/bereitstellung.md)
 - [Dateirechte und Eigentümer](dateirechte-und-eigentuemer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -116,15 +116,15 @@ der Zeilen-Override überall greift, wo Veranstaltungen aufgelistet werden.
 | Reihenfolge | Drag-and-drop | die Reihenfolge der Blöcke oder `Priority` |
 
 Die Funktionen des Template-Editors (Standardkopie, Bedingung auf ein einzelnes Objekt, Entfernen mit Aufräumen) sind
-unter [Template-Editor](../../../../eng-us/features/6.0/template-editor-overrides.md) beschrieben.
+unter [Template-Editor](../../../funktionen/6.0/template-editor-ueberschreibungen.md) beschrieben.
 
 ## Reihenfolge: welche Regel gewinnt
 
 Wenn mehrere Regeln passen, gewinnt die erste. Regeln mit einer `Priority` kommen vor Regeln ohne; unter diesen die
 niedrigste Zahl zuerst. Regeln in Erweiterungen werden nach der Reihenfolge der Erweiterungen eingeordnet. Stellen Sie
 spezifische Regeln (ein Knoten) vor allgemeine (eine Klasse).
-[Template-Editor: neu anordnen](../../../../eng-us/features/6.0/template-editor-overrides.md#reorder-by-drag-and-drop-september-2026),
-[Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md).
+[Template-Editor: neu anordnen](../../../funktionen/6.0/template-editor-ueberschreibungen.md#per-drag-and-drop-umsortieren-september-2026),
+[Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md).
 
 ## Checkliste
 
@@ -140,13 +140,13 @@ spezifische Regeln (ein Knoten) vor allgemeine (eine Klasse).
 - [Designs und die Fallback-Kette](designs-und-die-fallback-kette.md)
 - [Das Pagelayout](das-pagelayout.md)
 - [Templates und Design](../../../anleitungen/templates-und-design.md)
-- [Modul-Override in Erweiterungen](../../../../eng-us/features/6.0/extension-module-override.md)
+- [Modul-Override in Erweiterungen](../../../funktionen/6.0/modulueberschreibung-durch-extensions.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

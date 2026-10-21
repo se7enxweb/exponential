@@ -71,7 +71,7 @@ Viele öffentliche Stellen betreiben nur Serversoftware, die eine interne Bewert
   übersetzt.
 - **Velocity** ist ein PHP-Anwendungsserver, der mit Exponential ausgeliefert wird, freie Software wie der Rest. Reichen
   Sie ihn als Teil der Anwendung mit seiner Dokumentation zur Bewertung ein:
-  [Velocity-Webserver](../../../../../eng-us/features/6.0/velocity-web-server.md) und
+  [Velocity-Webserver](../../../../funktionen/6.0/velocity-webserver.md) und
   [Velocity für Teams im öffentlichen Sektor](velocity-fuer-teams-im-oeffentlichen-sektor.md).
 - **FrankenPHP** wird als festgelegtes Release heruntergeladen, dessen SHA-256-Prüfsumme vor dem Start geprüft wird
   ([Bereitstellen](../../../../anleitungen/bereitstellung.md)); `install --engine=frankenphp --check` berechnet den Hash einer
@@ -111,8 +111,9 @@ beschrieben. Laden Sie nach jeder PHP-Änderung das richtige PHP-FPM neu und sta
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

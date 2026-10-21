@@ -182,6 +182,6 @@ ausgeführt.
   [Klassengruppen](../../anleitungen/klassengruppen.md)
 - [Datentypen](../datentypen/README.md): jeder Datentyp und seine Template-Attribute
 - [Ein eigener Datentyp](eigener-datentyp.md) und [Ein Template-Override](template-override.md)
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

@@ -47,7 +47,7 @@ Fakten aus dieser Tabelle, die ein Planer braucht:
 |---|---|---|
 | 6.0.7 | Das letzte Release für PHP 7.4 | [11. Upgrade](../../installation/11-aktualisieren.md#schritt-3-die-checkliste-jedes-durchlaufenen-zeitraums-lesen) |
 | 6.0.8 | Benötigt PHP 8.1 | ebenda |
-| 6.0.10 | Das erste Release mit dem Namen Exponential: der Produktname in Templates, Übersetzungen und Overrides | ebenda, [Das Produkt heißt Exponential](../../../eng-us/features/6.0/rebranding-to-exponential.md) |
+| 6.0.10 | Das erste Release mit dem Namen Exponential: der Produktname in Templates, Übersetzungen und Overrides | ebenda, [Das Produkt heißt Exponential](../../funktionen/6.0/umbenennung-in-exponential.md) |
 | 6.0.13 | Sicherheitskorrekturen und Prüfungen der Sortierspalten | ebenda |
 | 6.0.14 | MongoDB als Datenbank und die Dateiprüfung beim Upgrade (`share/filelist.md5`) | [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md) |
 | Linie 6.0.15 | Velocity, das Design admin4, das Audit-Protokoll, Exponential Layouts, Exponential Intelligence, das Hilfesystem und vieles mehr | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
@@ -112,9 +112,9 @@ Zwei Folgen für die Planung:
 | Dokument | Wofür | Wo |
 |---|---|---|
 | Changelog je Release | Was eine Version enthält, mit einem Abschnitt „Upgrading“ am Anfang | `doc/changelogs/6.0/` ([6.0.14](../../../changelogs/6.0/6.0.14.md), [6.0.15](../../../changelogs/6.0/6.0.15.md)) |
-| Hinweise zu Verhaltensänderungen | Was sich anders verhält und was zu prüfen ist, je Zeitraum | `doc/eng-us/bc/6.0/`, zum Beispiel [Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md), [16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md), [1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md) |
+| Hinweise zu Verhaltensänderungen | Was sich anders verhält und was zu prüfen ist, je Zeitraum | `doc/eng-us/bc/6.0/`, zum Beispiel [Juli und August 2026](../../bc/6.0/verhaltensaenderungen-2026-07-08.md), [16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md), [1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md) |
 | Release-Notes der Erweiterungen | Was ein Release einer Erweiterung geändert hat | [Release-Notes der Erweiterungen](../../../changelogs/extensions/README.md) |
-| Die Geschichte | Die Geschichte jeder Änderung seit Dezember 2023, nach Monaten | [Die Geschichte](../../../eng-us/history/README.md) |
+| Die Geschichte | Die Geschichte jeder Änderung seit Dezember 2023, nach Monaten | [Die Geschichte](../../geschichte/README.md) |
 | Das Upgrade-Kapitel | Die Tabelle „Von ... Lesen ...“, die die Hinweise jedes durchlaufenen Zeitraums auflistet | [11.6 Schritt 3](../../installation/11-aktualisieren.md#schritt-3-die-checkliste-jedes-durchlaufenen-zeitraums-lesen) |
 
 > **Tipp**
@@ -154,7 +154,7 @@ Fragen, die Sie beantworten sollten, bevor Sie einen Termin zusagen:
 | 4. Vorab-Prüfung | Die Upgrade-Prüfung auf der Live-Site ausführen und den Bericht aufbewahren | Administrator | Der Bericht ist gespeichert | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
 | 5. Generalprobe | Eine Kopie der Site aktualisieren, jede Überprüfung ausführen | Entwickler, Administrator | Die Kopie besteht die Prüfungen | [11.6](../../installation/11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand), [11.7](../../installation/11-aktualisieren.md#117-das-upgrade-überprüfen) |
 | 6. Abnahme | Redakteure testen die Kopie mit ihren echten Aufgaben | Redakteure, Projektleiter | Die Abnahme ist freigegeben | [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md) |
-| 7. Ankündigung | Redakteure und Besucher über das Zeitfenster informieren | Projektleiter | Das Zeitfenster ist angekündigt | [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md) |
+| 7. Ankündigung | Redakteure und Besucher über das Zeitfenster informieren | Projektleiter | Das Zeitfenster ist angekündigt | [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md) |
 | 8. Sicherung | Datenbank und Dateien, zum selben Zeitpunkt | Administrator | Ein Backup existiert **und** wurde einmal anderswo wiederhergestellt | [11.1](../../installation/11-aktualisieren.md#111-bevor-sie-beginnen) |
 | 9. Upgrade | Wartungsmodus an, Code, Datenbank-Update, Caches, Neuladen, Wartungsmodus aus | Administrator | Jeder Schritt hat das erwartete Ergebnis ausgegeben | [11.6](../../installation/11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) |
 | 10. Überprüfung | Die Prüfungen aus 11.7, erneut die Upgrade-Prüfung, Smoke-Test der Redakteure | Administrator, Redakteure | Die Prüfungen sind bestanden | [11.7](../../installation/11-aktualisieren.md#117-das-upgrade-überprüfen) |
@@ -255,14 +255,14 @@ aktuelle Produktlinie bringen.
    Sicherheitsvorgaben) und vom 1. und 2. Oktober 2026, außerdem die Hinweise zu den E-Mail-Einstellungen.
 3. **Befunde, die zu Aufgaben werden.** Das Upgrade-Kapitel nennt die Änderungen, auf die man am häufigsten stößt:
    Konten ohne Zeile in `ezuser_setting` können sich nicht anmelden; Override-Blöcke folgen `Priority`;
-   Sicherheits-Header, Session-Cookies mit `HttpOnly`/`SameSite` und eine strengere Upload-Prüfung sind standardmäßig
+   Sicherheits-Header, Sitzungs-Cookies mit `HttpOnly`/`SameSite` und eine strengere Upload-Prüfung sind standardmäßig
    aktiv; ältere Erweiterungen wurden auf einen einheitlichen Standard gebracht; die Standardwerte des statischen Caches
    haben sich geändert. Jeder Punkt wird zu einer Prüfung mit einem Verantwortlichen: „Konten ohne Einstellungszeile
    finden“ (Administrator), „Prioritäten in override.ini prüfen“ (Entwickler), „prüfen, dass nichts die
    Administration in einen Frame einbettet“ (Entwickler).
 4. **Das Audit-Protokoll kommt hinzu.** Ab 6.0.15 ist es standardmäßig eingeschaltet; das Zeitfenster enthält
    `php update/common/scripts/6.0/createaudittables.php`, und der Plan ergänzt eine Aufgabe, die Cronjob-Gruppe
-   `frequent` einzuplanen, damit das Audit indiziert wird ([Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)).
+   `frequent` einzuplanen, damit das Audit indiziert wird ([Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)).
 5. **Generalprobe** auf einer Kopie, dann Abnahme durch zwei Redakteure, dann das Zeitfenster.
 
 ## Wenn etwas schiefgeht
@@ -297,9 +297,17 @@ Mehr zur Teamarbeit rund um Tags finden Sie unter [Ein Team mit Git führen](ein
 ## Verwandte Seiten
 
 - [11. Upgrade](../../installation/11-aktualisieren.md) und der [Upgrade-Leitfaden](../../anleitungen/aktualisieren.md)
-- [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) und [Prüfung der Dateikonsistenz](../../../eng-us/features/6.0/file-consistency-check.md)
-- [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md)
+- [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) und [Prüfung der Dateikonsistenz](../../funktionen/6.0/dateikonsistenzpruefung.md)
+- [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md)
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung): die Support-Zusage
 - [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md), [Risikomanagement für Exponential-Projekte](risikomanagement.md)
 - [Projektvorlagen](projektvorlagen.md): Übergabedokument und Livegang-Checkliste
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

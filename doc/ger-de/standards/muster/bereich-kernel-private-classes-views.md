@@ -11,7 +11,7 @@ type: catalogue
 
 > **Hinweis**
 > Diese Seite wird aus dem Quellcode von `php bin/php/exppatterncatalogue.php --write` erzeugt. Bearbeiten Sie sie nicht von Hand:
-> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#how-the-catalogue-is-built).
+> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#wie-der-katalog-gebaut-wird).
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/views` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
@@ -181,7 +181,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/views` mi
 | `Exponential\View\Kernel\Setup\Preloadstream` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/preloadstream.php:37` | Der ältere Fortschrittsstrom von Setup › Preload, beibehalten für alles, was ihn öffnet. |
 | `Exponential\View\Kernel\Setup\Rad` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/rad.php:23` | Der Code von kernel/setup/rad.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\View\Kernel\Setup\Radsurvey` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/radsurvey.php:10` | Der Code von kernel/setup/radsurvey.php, in eine Klasse verschoben (#207 Stufe 1). |
-| `Exponential\View\Kernel\Setup\Session` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/session.php:58` | Setup › Sessions (setup/session). |
+| `Exponential\View\Kernel\Setup\Session` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/session.php:58` | Setup › Sitzungen (setup/session). |
 | `Exponential\View\Kernel\Setup\Settingsextension` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/settingsextension.php:10` | Der Code von kernel/setup/settingsextension.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\View\Kernel\Setup\Settingstoolbar` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/settingstoolbar.php:21` | Der Code von kernel/setup/settingstoolbar.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\View\Kernel\Setup\Setupmenu` | class extends ModuleView | [Modulansicht (Page Controller)](modulansicht.md) | `kernel/private/classes/views/setup/setupmenu.php:21` | Der Code von kernel/setup/setupmenu.php, in eine Klasse verschoben (#207 Stufe 1). |

@@ -11,8 +11,8 @@ type: help
 
 **Wer:** der Projektleiter mit dem Bewertungsteam. **Wann:** bevor die Ausschreibung veröffentlicht wird; viele
 Vergaberegeln verlangen, dass Kriterien und Gewichte mit ihr veröffentlicht werden. Vorlagen:
-[Vorlage für den Bewertungsbogen](../../../../../eng-us/help/government/procurement/evaluation/scoring-sheet-template.md) und
-[Kriterien gewichten](../../../../../eng-us/help/government/procurement/evaluation/weighting-criteria.md).
+[Vorlage für den Bewertungsbogen](../../beschaffung/bewertung/vorlage-fuer-einen-bewertungsbogen.md) und
+[Kriterien gewichten](../../beschaffung/bewertung/kriterien-gewichten.md).
 
 > **Hinweis** Diese Seite beschreibt gängige Praxis; sie ist keine Rechtsberatung. Folgen Sie den Vergaberegeln Ihrer
 > Organisation.
@@ -28,7 +28,7 @@ Vergaberegeln verlangen, dass Kriterien und Gewichte mit ihr veröffentlicht wer
 ## Bevor Sie beginnen
 
 - Anforderungen endgültig, aufgeteilt in zwingende (bestanden oder nicht) und bewertete
-  ([Anforderungen](../../../../../eng-us/help/government/procurement/requirements/README.md)).
+  ([Anforderungen](../../beschaffung/anforderungen/README.md)).
 - Bewertungsteam benannt ([Ein Bewertungsteam bilden](ein-bewertungsteam-bilden.md)).
 
 ## Schritte
@@ -52,7 +52,7 @@ Vergaberegeln verlangen, dass Kriterien und Gewichte mit ihr veröffentlicht wer
    Concept, eine Antwort einer Referenz. Bei Fakten zum Produkt kann das Gremium die Aussagen des Bieters gegen die Seiten
    der Standards prüfen ([Die Aussagen eines Anbieters zur Barrierefreiheit prüfen](die-aussagen-eines-anbieters-zur-barrierefreiheit-pruefen.md)).
 6. **Preis über die Laufzeit**: Bewerten Sie das Modell der Gesamtkosten, nicht das erste Jahr
-   ([Gesamtkosten](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/README.md)).
+   ([Gesamtkosten](../../beschaffung/gesamtbetriebskosten/README.md)).
 7. **Planen Sie die Abstimmung**: Die Bewertenden bewerten allein und einigen sich dann in einer Sitzung; halten Sie die
    Gründe für jede endgültige Bewertung fest.
 
@@ -86,13 +86,14 @@ Ein mit der Ausschreibung veröffentlichter Bogen, den jede bewertende Person au
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Vorlage für die Checkliste der Bewertung](../../../../../eng-us/help/government/procurement/evaluation/evaluation-checklist-template.md)
-- [Warnzeichen und Fallstricke](../../../../../eng-us/help/government/procurement/evaluation/red-flags-and-pitfalls.md)
+- [Vorlage für die Checkliste der Bewertung](../../beschaffung/bewertung/vorlage-fuer-eine-bewertungscheckliste.md)
+- [Warnzeichen und Fallstricke](../../beschaffung/bewertung/warnzeichen-und-fallstricke.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

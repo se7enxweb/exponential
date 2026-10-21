@@ -38,7 +38,7 @@ hat dieselben Regeln für Vorträge und Beiträge.
 | Shop: Bestellungen und Kunden | Namen, Adressen, Bestellinhalte | Verwenden Sie Demobestellungen oder lassen Sie ihn weg |
 | Gesammelte Informationen, Formulare | Was Besucher eingegeben haben | Verwenden Sie Ihre eigenen Testeinsendungen |
 | Newsletter | Abonnentenlisten | Weglassen oder Testabonnenten verwenden |
-| Protokolle, der Audit-Trail, die Debug-Leiste | IP-Adressen, Benutzernamen, Pfade, manchmal Hostnamen | Nur auf einer frischen Demo zeigen; zuschneiden |
+| Protokolle, das Prüfprotokoll, die Debug-Leiste | IP-Adressen, Benutzernamen, Pfade, manchmal Hostnamen | Nur auf einer frischen Demo zeigen; zuschneiden |
 | Setup und Systeminformationen | Hostnamen, Pfade, Versionen der Serversoftware | Zuschneiden oder unkenntlich machen; siehe [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md) |
 | E-Mail-Programme neben dem Browser | Echte Posteingänge | Schließen Sie sie |
 
@@ -87,8 +87,8 @@ sicher sind, fragen Sie jemanden, der die Regeln dort kennt, wo Sie veröffentli
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

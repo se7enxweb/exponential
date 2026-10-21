@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber, der dafür verantwortlich ist, dass keine Inhalte, Bestellungen und
 Mitgliederdaten verloren gehen. Das Backup selbst erstellt meist der Hoster oder ein Betreiber; die Befehle stehen unter
 [Eine Website betreiben, sichern und wiederherstellen](../../../anleitungen/betrieb-einer-website.md) und
-[Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md). Ihre Aufgabe ist es zu
+[Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md). Ihre Aufgabe ist es zu
 entscheiden, was gut genug ist, und sicherzustellen, dass es wirklich geschieht.
 
 ## Ein Backup hat zwei Hälften
@@ -49,7 +49,7 @@ Schreiben Sie die Antworten auf und geben Sie sie Ihrem Hoster; er macht daraus 
 
 > **Hinweis**
 > Das Projekt veröffentlicht keine empfohlene Häufigkeit oder Aufbewahrungsdauer; die Leitfäden geben nur ein
-> Beispiel, „täglich für eine Woche, wöchentlich für einen Monat“ ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+> Beispiel, „täglich für eine Woche, wöchentlich für einen Monat“ ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 > Wählen Sie anhand Ihrer eigenen Antworten.
 
 ## Was Sie Ihren Hoster fragen sollten
@@ -94,3 +94,11 @@ nutzen ([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaess
 - [Was gesichert werden muss (für Hoster)](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -6,12 +6,11 @@
 
 {include uri='design:page_head_exp.tpl'}
 
-{* a4SafeURL(), the check before a script follows an address from data (javascript/a4_url.js, found through the design chain
-   admin3 > admin2 > admin); ezpopupmenu.js and setup_logs.js call it, so it is loaded before the list *}
-{ezscript_load( array( 'a4_url.js' ) )}
+{* a4SafeURL() (javascript/a4_url.js), the check before a script follows an address from data, loads right after jQuery
+   in the same list: a separate ezscript_load before jQuery wrote out the page's queued scripts ahead of jQuery *}
 
 {if $load_javascript_list}
- {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
+ {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' ) )}
 {else}
- {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
+ {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' ) )}
 {/if}

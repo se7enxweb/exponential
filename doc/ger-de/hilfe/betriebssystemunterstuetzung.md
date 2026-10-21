@@ -124,7 +124,7 @@ laufen gesehen.
 
 **Systeme, die das Projekt keiner Stufe zuordnen konnte.** **HP-UX** auf Itanium: Uns ist kein aktueller PHP-8-Build
 dafür bekannt; behandeln Sie es als Stufe 4, sofern Ihr Anbieter keinen hat. **OS/2 und ArcaOS**: Frühere
-PHP-Versionen wurden portiert; ob es eine Portierung von PHP 8 gibt, ist hier nicht überprüft.
+PHP-Versionen wurden portiert; ob es eine Portierung von PHP 8 gibt, ist hier nicht geprüft.
 
 ## Stufe 4: heute nicht möglich (theoretisch)
 
@@ -143,7 +143,7 @@ portiert, laufen die Dateien unverändert.
 | **Plan 9**, **9front** | uns ist keine PHP-Portierung bekannt; PHP setzt eine POSIX-C-Bibliothek voraus, die Plan 9 nicht bietet |
 | **RISC OS** | uns ist keine Portierung von PHP 8 bekannt |
 | **IBM z/OS** (UNIX System Services) | uns ist kein aktuelles PHP 8 für USS bekannt. Linux auf IBM Z (s390x) ist etwas anderes: Velocitys CI weist seinen Server dort nach, Linux auf demselben Mainframe ist also der Weg. |
-| **Windows XP**, **Windows 7** und andere Windows-Versionen, die Microsoft nicht mehr unterstützt | aktuelle PHP-8-Builds zielen auf unterstützte Windows-Versionen; ob ein bestimmter PHP-8-Build auf einer älteren Version noch startet, ist hier nicht überprüft, und ein solcher Rechner erhält ohnehin keine Sicherheitsupdates |
+| **Windows XP**, **Windows 7** und andere Windows-Versionen, die Microsoft nicht mehr unterstützt | aktuelle PHP-8-Builds zielen auf unterstützte Windows-Versionen; ob ein bestimmter PHP-8-Build auf einer älteren Version noch startet, ist hier nicht geprüft, und ein solcher Rechner erhält ohnehin keine Sicherheitsupdates |
 
 Seiten wie diese sind bei Stufe 4 ehrlich, damit niemand ein Wochenende mit einem Rechner verbringt, der nicht
 funktionieren kann, und damit alle, die einen davon zum Laufen bringen wollen, wissen, dass die Arbeit eine Portierung
@@ -280,8 +280,16 @@ Erweiterungen, den Velocity erwartet.
 
 - [Kapitel 2, Voraussetzungen](../installation/02-voraussetzungen.md) und [Kapitel 8, Die Site ausliefern](../installation/08-die-website-ausliefern.md).
 - [Unterstützte Datenbanken](datenbankunterstuetzung.md): die unterstützten Datenbanken, in Reihenfolge.
-- [Velocity-Pakete und -Binaries](../../eng-us/features/6.0/velocity-packages-and-binaries.md),
-  [Der Webserver Velocity](../../eng-us/features/6.0/velocity-web-server.md), [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
-- [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md), [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md).
+- [Velocity-Pakete und -Binaries](../funktionen/6.0/velocity-pakete-und-binaerdateien.md),
+  [Der Webserver Velocity](../funktionen/6.0/velocity-webserver.md), [Velocity-Engines](../bc/6.0/velocity-engines.md).
+- [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md), [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md).
 - [Deployment](../anleitungen/bereitstellung.md).
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seiten dürfen frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

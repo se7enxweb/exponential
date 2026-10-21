@@ -33,7 +33,7 @@ qbixctl panel:password --root=/path/to/web --generate   # makes a strong one, pr
 ```
 
 Übergeben Sie dasselbe `--root` (oder `--app`, `--conf-dir`, `--config`), mit dem der Server läuft. Ein laufender Server
-verwendet das neue Passwort bei seiner nächsten Anfrage; eine Änderung beendet jede Session.
+verwendet das neue Passwort bei seiner nächsten Anfrage; eine Änderung beendet jede Sitzung.
 
 ### Passwortregeln
 
@@ -52,7 +52,7 @@ verdoppelt bis zu einer Stunde (eine gesperrte Anmeldung erhält `429`).
 Bevor irgendetwas gelesen oder geschrieben wird, muss jedes Verzeichnis vom Zugangsdatenspeicher bis hinauf zu `/` root
 oder dem Benutzer des Servers gehören und darf nicht für Gruppe oder andere beschreibbar sein. Der Speicher selbst muss
 `0700` / `0600` sein, und auf dem Weg darf kein symbolischer Link liegen. Andernfalls ist **das Panel gesperrt**:
-Anmeldung, der Standardschlüssel und jede Session werden abgelehnt, und das Startprotokoll nennt den Grund. Prüfen und
+Anmeldung, der Standardschlüssel und jede Sitzung werden abgelehnt, und das Startprotokoll nennt den Grund. Prüfen und
 beheben:
 
 ```bash
@@ -62,7 +62,7 @@ chmod g-w,o-w /srv/www/app                       # the usual cause after an upgr
 
 Oder legen Sie die Dateien woanders ab, indem Sie `Q.panel.aclDir` und `Q.panel.sessionsDir` setzen.
 
-| Situation | Zugangsdaten | Sessions |
+| Situation | Zugangsdaten | Sitzungen |
 |---|---|---|
 | Ausdrücklich gesetzt | `Q.panel.aclDir` | `Q.panel.sessionsDir` |
 | Mit einem Konfigurationsbaum | `<tree>/acl` (`/etc/qbix/acl`) | `<state dir>/sessions` (`/var/lib/qbix/sessions`) |
@@ -94,7 +94,7 @@ Für `/Q/panel` und `/Q/api/...`:
 
 - von diesem Rechner aus immer;
 - von anderswo nur, wenn ein Passwort gesetzt ist (oder der Standard noch gilt und die Seite ihr Anmeldeformular
-  zeigt), wenn die Anfrage das Dashboard-Token oder eine Panel-Session trägt oder wenn `Q.panel.remote` oder
+  zeigt), wenn die Anfrage das Dashboard-Token oder eine Panel-Sitzung trägt oder wenn `Q.panel.remote` oder
   `Q.dashboard.remote` den Wert `true` hat.
 
 Andernfalls sagt die eigene 403-Seite des Servers, wie Sie ein Passwort setzen. Das Dashboard, `/Q/stats`, `/Q/metrics`
@@ -121,7 +121,7 @@ Alle unter `Q.panel`, sofern nicht anders angegeben.
 | `defaultPassword` | der dokumentierte Standard | `null` oder `""` schaltet den Standard ab; das erste Passwort wird dann von diesem Rechner aus, mit dem Dashboard-Token oder auf der Kommandozeile gesetzt |
 | `defaultLocalOnly` | `false` | Den Standard nur von diesem Rechner aus oder mit dem Dashboard-Token akzeptieren |
 | `remote` (und `Q.dashboard.remote`) | `false` | Jeden, der die anderen Prüfungen besteht, das Panel auch von anderswo erreichen lassen |
-| `aclDir`, `sessionsDir` | siehe die Vertrauensregel oben | Wo die Zugangsdaten und Sessions liegen |
+| `aclDir`, `sessionsDir` | siehe die Vertrauensregel oben | Wo die Zugangsdaten und Sitzungen liegen |
 | `twofactor` | `false` | Nach dem Passwort einen TOTP-Code verlangen |
 | `twofactorWindow` | `1` | Akzeptierte Uhrabweichung in 30-Sekunden-Schritten auf jeder Seite |
 | `Q.dashboard` | aktiviert | `false` deaktiviert `/Q/dashboard`, `/Q/health`, `/Q/ws` |
@@ -190,8 +190,9 @@ zu bearbeiten. Fehlerseiten sind gestaltete Seiten in klaren Worten für jeden F
 - Geschichte: [Juli 2026](../../geschichte/velocity/2026-07.md) (erstes Panel), [24. September](../../geschichte/velocity/2026-09d.md) (Passwörter, Domains), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (SSL, Cache, Zwei-Faktor)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

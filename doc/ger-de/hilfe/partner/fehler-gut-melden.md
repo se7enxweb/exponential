@@ -47,7 +47,7 @@ Log (secrets and customer data removed):
 
 ## Vor dem Veröffentlichen entfernen
 
-Kundennamen, E-Mail-Adressen, private URLs, Hostnamen von Datenbanken, Schlüssel, Passwörter, Session-IDs. Ersetzen Sie
+Kundennamen, E-Mail-Adressen, private URLs, Hostnamen von Datenbanken, Schlüssel, Passwörter, Sitzungs-IDs. Ersetzen Sie
 sie durch Platzhalter ([Kundendaten schützen](kundendaten-schuetzen.md)).
 
 ## Nachfassen

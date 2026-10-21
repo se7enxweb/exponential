@@ -118,7 +118,7 @@ washed: &lt;script&gt;alert(1)&lt;/script&gt; &amp; &quot;quotes&quot;
 
 Attribute von Inhaltsobjekten, die bereits HTML sind, etwa die Ausgabe eines Rich-Text-Felds, werden über ihre Ansichts-Templates
 (`attribute_view_gui`) ausgegeben und dürfen nicht ein zweites Mal gewaschen werden. Siehe
-[Wash und Maskierung](../../../eng-us/help/designers/templates/wash-and-escaping.md).
+[Wash und Maskierung](../designer/vorlagen/wash-und-maskierung.md).
 
 ## Unbekannte Operatoren reichen ihre Eingabe durch
 
@@ -252,14 +252,14 @@ verglichen.
 Ein Template von Smarty bekommt meist alle seine Daten von dem PHP, das es rendert. Ein Template von Exponential fragt Daten oft selbst ab:
 `fetch( 'content', 'list', hash( ... ) )` führt eine Fetch-Funktion des Moduls `content` mit den Berechtigungen des aktuellen Benutzers aus.
 Die Werte sind PHP-Objekte (Knoten, Inhaltsobjekte, Attribute), gelesen über `attribute()`: `$node.data_map.title.content`. Siehe
-[Zugriff auf Attribute](zugriff-auf-attribute.md) und [Grundlagen von fetch](../../../eng-us/help/designers/templates/fetch-basics.md).
+[Zugriff auf Attribute](zugriff-auf-attribute.md) und [Grundlagen von fetch](../designer/vorlagen/fetch-grundlagen.md).
 
 ## Overrides statt Vererbung
 
 Templates von Smarty erweitern einander mit `{extends}` und `{block}`. In Exponential umschließt das Pagelayout jede Seite und gibt das
 Ergebnis der Modulansicht aus (`$module_result.content`), und das Override-System (`override.ini`) wählt nach Klasse, Sektion, Knoten,
 Elternknoten, Ansichtsmodus und mehr, welches Template eine Ansicht rendert. Teile einer Seite werden mit `include` und den Funktionen
-`*_view_gui` geteilt. Siehe [Grundlagen der Overrides](../../../eng-us/help/designers/templates/override-ini-basics.md).
+`*_view_gui` geteilt. Siehe [Grundlagen der Overrides](../designer/vorlagen/override-grundlagen.md).
 
 ## Namensräume
 
@@ -277,7 +277,15 @@ um Ausgabe-Tags wie `{$x}`. Templates können also jede Funktion in eine eigene 
 
 - Zurück: [Smarty und die Template-Sprache nebeneinander](smarty-nebeneinander.md)
 - Weiter: [Ein Template von Smarty umziehen](ein-template-von-smarty-umziehen.md)
-- [Häufige Fehler in Templates](../../../eng-us/help/designers/templates/common-template-mistakes.md)
-- [Logik- und Vergleichsoperatoren](../../../eng-us/help/designers/templates/logic-and-comparison-operators.md)
-- [Literal und Begrenzer](../../../eng-us/help/designers/templates/literal-and-delimiters.md)
+- [Häufige Fehler in Templates](../designer/vorlagen/haeufige-template-fehler.md)
+- [Logik- und Vergleichsoperatoren](../designer/vorlagen/logik-und-vergleichsoperatoren.md)
+- [Literal und Begrenzer](../designer/vorlagen/literal-und-begrenzer.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

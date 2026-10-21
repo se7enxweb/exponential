@@ -60,14 +60,14 @@ ist der Siteaccess Ihrer Administration). Es ist in jedem Design dieselbe Seite;
    Eingabe ab. **Sicheres Passwort erzeugen** erstellt eines für Sie; **Anzeigen** macht das Eingegebene sichtbar.
 3. Klicken Sie auf **Passwort ändern**.
 
-Sie bleiben angemeldet, mit einer neuen Session-ID. Ihre Sitzungen in anderen Browsern und auf anderen Geräten werden
+Sie bleiben angemeldet, mit einer neuen Sitzungs-ID. Ihre Sitzungen in anderen Browsern und auf anderen Geräten werden
 bei ihrer nächsten Anfrage abgemeldet, und eine E-Mail „Ihr Passwort wurde geändert“ geht an die Adresse des Kontos. Die
 Seite nennt, wie viele andere Sitzungen beendet wurden.
 
 Der Link ist ausgegraut oder fehlt, wenn Ihrer Rolle die Richtlinie **user/password** fehlt. Die Rolle Administrator
 hat sie.
 
-Einzelheiten der Seite: [Das Passwort ändern](../../eng-us/features/6.0/modern-password-change.md).
+Einzelheiten der Seite: [Das Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md).
 
 ## Das Passwort eines anderen Benutzers als Administrator ändern
 
@@ -164,7 +164,7 @@ nicht mehr, der gespeicherte Hash hat den konfigurierten Typ, ein Passwort kürz
 abgelehnt, `-q` gibt das erzeugte Passwort trotzdem aus, und ein autorisierendes Konto ohne die Rolle Administrator
 wird abgelehnt.
 
-Mehr: [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../eng-us/features/6.0/reset-user-password.md).
+Mehr: [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md).
 
 ## Wie Passwörter gespeichert werden: HashType
 
@@ -254,8 +254,8 @@ Festgelegt in `site.ini [PasswordSettings]`, beide standardmäßig eingeschaltet
 
 - **`EndOtherSessions=enabled`**: Eine Anmeldung speichert einen Stempel des Passworts in der Sitzung; ändert sich das
   Passwort, passt keine andere Sitzung dieses Benutzers mehr, und jede wird bei ihrer nächsten Anfrage abgemeldet, mit
-  jedem Session-Handler. Die Sitzung, die die Änderung vorgenommen hat, erhält eine neue Session-ID. Das macht eine
-  Passwortänderung nach der Übernahme eines Kontos überhaupt erst wirksam: Wer ein gestohlenes Session-Cookie besitzt,
+  jedem Session-Handler. Die Sitzung, die die Änderung vorgenommen hat, erhält eine neue Sitzungs-ID. Das macht eine
+  Passwortänderung nach der Übernahme eines Kontos überhaupt erst wirksam: Wer ein gestohlenes Sitzungs-Cookie besitzt,
   wird abgemeldet. Es gilt für jeden Weg, ein Passwort zu ändern: `user/password`, das Bearbeitungsformular für
   Benutzer, **Passwort vergessen?** und die Kommandozeile.
 - **`ChangeNotificationMail=enabled`**: Der Benutzer erhält „Ihr Passwort wurde geändert“ (Kategorie *Kontosicherheit*,
@@ -385,7 +385,7 @@ Verwenden Sie es nicht für die tägliche Arbeit:
      `UserCreatorID` nicht ändern können.
 
    Die Aktion **Deaktivieren und verschieben** von **Benutzerkonten prüfen** (`user/deactivate`, siehe
-   [Benutzerkonten prüfen](../../eng-us/features/6.0/user-hygiene.md)) ist für gewöhnliche Konten gedacht: Sie lehnt den anonymen
+   [Benutzerkonten prüfen](../funktionen/6.0/benutzerpflege.md)) ist für gewöhnliche Konten gedacht: Sie lehnt den anonymen
    Benutzer, `UserCreatorID`, das Konto `admin` und Sie selbst absichtlich ab und ist daher nicht der Weg, `admin`
    stillzulegen.
 5. **Halten Sie ein Notfallverfahren bereit, schriftlich und getestet.** Zum Beispiel: die root-Shell des Servers plus
@@ -448,9 +448,17 @@ verbreitet (<https://www.gnu.org/licenses/fdl-1.3.html>; der Copyright- und Erla
 - [Das Standard-Administratorpasswort](standard-administratorpasswort.md)
 - [Sicherheitshärtung](sicherheitshaertung.md)
 - [Ihr Konto und die Anmeldung](konten-und-anmeldung.md)
-- [Das Passwort ändern](../../eng-us/features/6.0/modern-password-change.md),
-  [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../eng-us/features/6.0/reset-user-password.md)
+- [Das Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md),
+  [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)
 - [Kapitel 10.1: Erste Anmeldung und das Administratorpasswort](../installation/10-nach-der-installation.md#101-erste-anmeldung-und-das-administratorpasswort),
   [Kapitel 13: Sicherheitshärtung für die Produktion](../installation/13-sicherheitshaertung.md)
 - [Zweistufige Anmeldung](../anleitungen/zwei-faktor-anmeldung.md), [Sitzungen](../anleitungen/sitzungen.md),
-  [Benutzerkonten prüfen](../../eng-us/features/6.0/user-hygiene.md), [Audit](../../eng-us/bc/6.0/audit.md)
+  [Benutzerkonten prüfen](../funktionen/6.0/benutzerpflege.md), [Audit](../bc/6.0/audit.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

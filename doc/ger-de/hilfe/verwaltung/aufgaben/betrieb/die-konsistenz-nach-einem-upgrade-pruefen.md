@@ -48,20 +48,21 @@ Exit-Code 0, wenn nichts geändert ist oder fehlt. Der Befehl braucht weder Kern
 | Befund | Tun |
 |---|---|
 | Eine Datei, die Sie absichtlich geändert haben | die Änderung in eine Erweiterung oder ein Override verlegen; bis dahin als akzeptiert führen |
-| Eine Datei, die niemand erklären kann | als mögliche Kompromittierung untersuchen ([Defacement](../../../../../eng-us/help/government/operations/incidents/defacement.md)) |
+| Eine Datei, die niemand erklären kann | als mögliche Kompromittierung untersuchen ([Defacement](../../betrieb/vorfaelle/verunstaltung-der-website.md)) |
 | Fehlende Dateien | sie aus dem Release wiederherstellen |
 | „File share/filelist.md5 does not exist.“ | das Manifest des Release kopieren, das diese Installation betreibt |
 
 ## Verwandte Seiten
 - [Das Datenbankschema prüfen](das-datenbankschema-pruefen.md)
-- [Die Upgrade-Prüfung vorher und nachher](../../../../../eng-us/help/government/operations/upgrades-and-change/upgrade-check-before-and-after.md)
-- [Die Upgrade-Prüfung als Monitor](../../../../../eng-us/help/government/operations/monitoring/upgrade-check-as-a-monitor.md)
-- [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md)
+- [Die Upgrade-Prüfung vorher und nachher](../../betrieb/aktualisierungen-und-aenderungen/upgrade-pruefung-vorher-und-nachher.md)
+- [Die Upgrade-Prüfung als Monitor](../../betrieb/ueberwachung/upgrade-pruefung-als-ueberwachung.md)
+- [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

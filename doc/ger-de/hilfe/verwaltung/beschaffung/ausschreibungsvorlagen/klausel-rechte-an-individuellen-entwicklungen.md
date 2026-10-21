@@ -81,7 +81,7 @@ IP.6 Moral rights and credits. <as required by applicable law>.
 - Eine Bibliothek unter einer GPL-inkompatiblen Lizenz darf in weitergegebenem Code nicht in denselben PHP-Prozess
   geladen werden; IP.3 erkennt das.
 - Die Dokumentation von Exponential selbst steht unter der GNU FDL 1.3 oder neuer
-  ([Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md)); eigene Dokumentation, die daraus kopiert, übernimmt
+  ([Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md)); eigene Dokumentation, die daraus kopiert, übernimmt
   diese Lizenz.
 - Um die Arbeit mit der Community zu teilen, siehe [Erweiterungen zurückgeben](../../../erweiterungen-zurueckgeben.md) und
   [Eine Erweiterung veröffentlichen](../../../partner/eine-erweiterung-veroeffentlichen.md).

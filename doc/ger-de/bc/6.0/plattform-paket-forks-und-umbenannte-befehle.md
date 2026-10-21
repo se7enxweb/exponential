@@ -6,7 +6,7 @@ verwendete, oder bevor Sie einen Branch zusammenführen, der auf die Pakete von 
 in der Reihenfolge, in der Sie sie ausführen sollten. Installationen nur des Legacy-Kernels betrifft nur der letzte
 Schritt.
 
-Überblick: [Ökosystem](../../../eng-us/history/ecosystem.md). Referenz:
+Überblick: [Ökosystem](../../geschichte/oekosystem.md). Referenz:
 [Paketzuordnung](../../spezifikationen/6.0/platform-paketzuordnung.md),
 [Befehlsnamen](../../spezifikationen/6.0/platform-konsolenbefehle.md).
 
@@ -76,8 +76,8 @@ einen Alias eines Entwicklungs-Branches. Verlangen Sie ein getaggtes Release, od
 | Platform-3.x-Forks (`ezplatform-*`) | 7.3 bis 8.5 (Bedingung am 2026-03-25 auf `^8.5` erweitert) | je nach Projekt |
 | Nexus 1.x / 2.5 | 7.1 bis 8.5 | 20 (die `cjw`-Nexus wechselte am 2026-02-12 von 14 auf 20) |
 
-- Unter PHP 8.4 oder 8.5 braucht ein älterer Stack die [Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md).
-- Unter PHP 8.4 braucht der Stack von Layouts 2.0 den [Fork von layouts-core](../../../eng-us/features/6.0/platform-layouts-core-fork.md).
+- Unter PHP 8.4 oder 8.5 braucht ein älterer Stack die [Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md).
+- Unter PHP 8.4 braucht der Stack von Layouts 2.0 den [Fork von layouts-core](../../funktionen/6.0/plattform-layouts-core-fork.md).
 - Nur für die Linie 1.x überspringt Composer die Plattformprüfung mit `--ignore-platform-reqs` (die
   Installationsanleitung von Nexus 1.x sagt das). Verwenden Sie diese Option bei anderen Linien nicht.
 
@@ -134,14 +134,14 @@ Lizenzberichte erzeugen, erwarten Sie den neuen Wert.
 - die Klassen des Config-Resolvers und des Twig-Loaders haben Typdeklarationen.
 
 Eigene Klassen, die Klassen der Bridge erweitern, brauchen dieselben Signaturen. Siehe
-[die Anleitung zur Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md).
+[die Anleitung zur Legacy Bridge](../../funktionen/6.0/legacy-bridge.md).
 
 ## Schritt 8: Nexus 1.x, wo Assets und gespeicherte Dateien liegen
 
 Die Installation von Nexus 1.x ersetzt das Legacy-Verzeichnis, wenn Composer `se7enxweb/exponential` aktualisiert.
 Der Inhaltsspeicher und die Erweiterung `app` liegen daher in `src/AppBundle/ezpublish_legacy` und werden mit den
 symbolischen Links der Installationsanleitung eingebunden
-([Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md#install-nexus-100x-the-25-line)). Halten Sie
+([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md#nexus-100x-installieren-die-linie-25)). Halten Sie
 hochgeladene Dateien nie nur innerhalb von `ezpublish_legacy/var`.
 
 ## Schritt 9: Legacy-Kernel, Datenbank-Update von 5.4 auf 6.0
@@ -162,14 +162,14 @@ Verhaltensänderungen des Legacy-Kernels stehen in den anderen Anleitungen diese
 ## Verwandte Seiten
 
 - [Paketzuordnung](../../spezifikationen/6.0/platform-paketzuordnung.md) und [Befehlsnamen](../../spezifikationen/6.0/platform-konsolenbefehle.md)
-- [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md) und ihre [Bundle-Spezifikation](../../spezifikationen/6.0/legacy-bridge-bundle.md)
-- [Framework-Forks für PHP 8.5](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
-- Funktionen: [Administrationsoberfläche der Platform](../../../eng-us/features/6.0/platform-admin-ui-fork.md);
-  [DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md); [Layouts auf der Platform](../../../eng-us/features/6.0/platform-layouts-core-fork.md);
-  [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md); [Site-Bundles](../../../eng-us/features/6.0/platform-site-bundles.md);
-  [SQLite für Exponential Platform](../../../eng-us/features/6.0/platform-sqlite-install.md);
-  [Datenbankmanager AdminNeo](../../../eng-us/features/6.0/adminneo-database-manager.md)
+- [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md) und ihre [Bundle-Spezifikation](../../spezifikationen/6.0/legacy-bridge-bundle.md)
+- [Framework-Forks für PHP 8.5](../../funktionen/6.0/plattform-php85-framework-forks.md)
+- Funktionen: [Administrationsoberfläche der Platform](../../funktionen/6.0/plattform-admin-ui-fork.md);
+  [DXP-Skeleton](../../funktionen/6.0/plattform-dxp-skeleton.md); [Layouts auf der Platform](../../funktionen/6.0/plattform-layouts-core-fork.md);
+  [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md); [Site-Bundles](../../funktionen/6.0/plattform-site-bundles.md);
+  [SQLite für Exponential Platform](../../funktionen/6.0/plattform-sqlite-installation.md);
+  [Datenbankmanager AdminNeo](../../funktionen/6.0/adminneo-datenbankverwaltung.md)
 - [Platform-SQLite-Installer](../../spezifikationen/6.0/platform-sqlite-installer.md)
 - [Changelog der Platform](../../../changelogs/extensions/exponential-platform.md)
-- Geschichte: [Überblick über das Ökosystem](../../../eng-us/history/ecosystem.md), eine Seite für jeden Monat ab 2018-11 in
-  [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md) und das [Änderungsbuch](../../../eng-us/history/ledger/README.md)
+- Geschichte: [Überblick über das Ökosystem](../../geschichte/oekosystem.md), eine Seite für jeden Monat ab 2018-11 in
+  [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md) und das [Änderungsbuch](../../geschichte/aenderungsverzeichnis/README.md)

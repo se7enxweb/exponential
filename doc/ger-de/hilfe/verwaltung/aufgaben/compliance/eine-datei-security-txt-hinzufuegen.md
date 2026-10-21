@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren und Hosting-Teams. Eine `security.txt` sagt Forschenden, wo sie Schwachstellen Ihrer Site melden
 können. Die Erklärung des Projekts führt sie als nicht mitgeliefert
-([security.txt hinzufügen](../../../../../eng-us/help/government/security/adding-security-txt.md)).
+([security.txt hinzufügen](../../sicherheit/security-txt-hinzufuegen.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -66,14 +66,15 @@ angekommen ist. Tragen Sie das Datum aus `Expires` in Ihren Kalender ein.
 
 ## Verwandte Seiten
 
-- [security.txt hinzufügen](../../../../../eng-us/help/government/security/adding-security-txt.md)
-- [Meldung von Schwachstellen](../../../../../eng-us/help/government/security/vulnerability-disclosure.md)
-- [Eine nützliche robots.txt ab Werk](../../../../../eng-us/features/6.0/robots-txt.md)
+- [security.txt hinzufügen](../../sicherheit/security-txt-hinzufuegen.md)
+- [Meldung von Schwachstellen](../../sicherheit/offenlegung-von-schwachstellen.md)
+- [Eine nützliche robots.txt ab Werk](../../../../funktionen/6.0/robots-txt.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

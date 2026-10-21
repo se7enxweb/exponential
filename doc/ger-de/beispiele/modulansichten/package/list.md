@@ -14,12 +14,12 @@ Eine Ansicht des Moduls `package`, definiert in `kernel/package/module.php` und 
 ## Adresse
 
 ```text
-/package/list/<RepositoryID>/(offset)/<Offset>
+/package/list/<RepositoryID>/(offset)/<Offset>/(search)/<Search>/(type)/<Type>/(state)/<State>/(sort)/<Sort>/(dir)/<Dir>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `RepositoryID`.
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`, `(search)` setzt `Search`, `(type)` setzt `Type`, `(state)` setzt `State`, `(sort)` setzt `Sort`, `(dir)` setzt `Dir`.
 
 ## Wer sie öffnen darf
 

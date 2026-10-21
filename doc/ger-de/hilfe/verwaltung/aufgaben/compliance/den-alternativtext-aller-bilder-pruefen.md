@@ -11,7 +11,7 @@ type: help
 
 Für Redakteure und Koordinatoren für Barrierefreiheit, als monatliche Prüfung oder vor der Veröffentlichung einer
 Erklärung zur Barrierefreiheit. Der Kernel von Exponential hat keine Liste aller Bilder der Site ohne Alternativtext;
-es gibt zwei Wege, sie zu finden ([Alternativtext für Bilder](../../../../../eng-us/help/government/accessibility/alternative-text-for-images.md)).
+es gibt zwei Wege, sie zu finden ([Alternativtext für Bilder](../../barrierefreiheit/alternativtext-fuer-bilder.md)).
 
 ## Inhalt
 
@@ -23,7 +23,7 @@ es gibt zwei Wege, sie zu finden ([Alternativtext für Bilder](../../../../../en
 ## Weg 1: der Bericht Missing alt text
 
 Nur wo die Erweiterung Exponential Intelligence (`expai`) aktiv ist
-([Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md)). Sie schickt Bilder nach dessen
+([Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md)). Sie schickt Bilder nach dessen
 Datenrichtlinie an einen KI-Anbieter; verwenden Sie sie nur, wenn Ihre Organisation das genehmigt hat.
 
 1. Öffnen Sie **Missing alt text** (`/expai/alttext`, Richtlinie `expai/write`).
@@ -52,14 +52,15 @@ Datenrichtlinie an einen KI-Anbieter; verwenden Sie sie nur, wenn Ihre Organisat
 
 ## Verwandte Seiten
 
-- [Alternativtext für Bilder](../../../../../eng-us/help/government/accessibility/alternative-text-for-images.md)
+- [Alternativtext für Bilder](../../barrierefreiheit/alternativtext-fuer-bilder.md)
 - [Alternativtext an einem Bildfeld verlangen](alternativtext-an-einem-bildfeld-verlangen.md)
 - [Bilder, Medien und Uploads](../../../medien-und-uploads.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

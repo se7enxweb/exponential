@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Das Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md), die Abschnitte „Wer nachsehen darf“, „Von
+Quellen: [Das Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md), die Abschnitte „Wer nachsehen darf“, „Von
 der Kommandozeile“, „Senken, Alarme und Archive“ und „Exporte und die Kanäle von Erweiterungen“;
 [Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md).
 
@@ -130,7 +130,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Jedes Testkonto verwendet eine 
 
 1. Den Kanal `content`, mit **Von** und **Bis** um den gestrigen Tag, und den Ereignisnamen eines Entfernens oder eine
    Textsuche nach dem Namen des Artikels.
-2. **B.** Optional nach Kanal eingeschränkt ([Das Audit-Protokoll, Wer nachsehen darf](../../../../../eng-us/features/6.0/audit-trail.md#who-may-look)).
+2. **B.** Optional nach Kanal eingeschränkt ([Das Audit-Protokoll, Wer nachsehen darf](../../../../funktionen/6.0/pruefprotokoll.md#wer-hineinsehen-darf)).
 3. Die `AdminEmail` der Website.
 4. **Jetzt herunterladen** streamt die Datei sofort; **Im Hintergrund exportieren** führt einen Inhaltsauftrag aus und
    bietet die Datei später auf der Exportseite an, nur dem Benutzer, der sie angefordert hat.
@@ -140,7 +140,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Jedes Testkonto verwendet eine 
 
 ## Weiterführende Literatur
 
-- [Das Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md): Senken, Alarme, Archive und Exporte.
+- [Das Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md): Senken, Alarme, Archive und Exporte.
 - [Der Leitfaden zum Audit](../../../../bc/6.0/audit.md): der Ereigniskatalog, um den richtigen Ereignisnamen zu
   finden.
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md): die Prüferrolle bauen.
@@ -155,9 +155,9 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Jedes Testkonto verwendet eine 
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

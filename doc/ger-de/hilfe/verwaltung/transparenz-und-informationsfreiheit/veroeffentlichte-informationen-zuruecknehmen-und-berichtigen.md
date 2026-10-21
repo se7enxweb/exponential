@@ -59,8 +59,8 @@ kurze Hinweisseite, statt ihn oder zusätzlich zum Verbergen.
 
 Das Entfernen verschiebt Inhalte in den Papierkorb, wo sie wiederhergestellt werden können, bis der Papierkorb geleert
 wird ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)); das Leeren löscht den Inhalt
-und seine Geschichte. Der Audit-Trail zeichnet das Entfernen und das endgültige Löschen auf
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Für aktenrelevante Inhalte beschränken Sie `content/remove` auf
+und seine Geschichte. Das Prüfprotokoll zeichnet das Entfernen und das endgültige Löschen auf
+([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Für aktenrelevante Inhalte beschränken Sie `content/remove` auf
 Administratoren und bevorzugen das Verbergen.
 
 ## Versehentlich veröffentlicht
@@ -73,7 +73,7 @@ Wenn personenbezogene Daten oder vertrauliches Material öffentlich wurden:
 3. Leeren Sie die Caches vor der Website ([Caches](../../../anleitungen/caches.md)).
 4. Informieren Sie Ihre Datenschutz- oder Informationssicherheitsbeauftragten; sie entscheiden über Meldungen.
 5. Prüfen Sie die Anfrageprotokolle und, wenn Lesezugriffe aufgezeichnet werden, den Audit-Kanal `read` auf Downloads
-   ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md)).
+   ([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md)).
 6. Veröffentlichen Sie die berichtigte Version mit einem neutralen Hinweis, wenn der Eintrag öffentlich bleiben muss.
 
 ## Verwandte Seiten
@@ -84,8 +84,9 @@ Wenn personenbezogene Daten oder vertrauliches Material öffentlich wurden:
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

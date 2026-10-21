@@ -46,7 +46,7 @@ Drei Wege, je nachdem, was der Partner betreibt:
   die Installation des Partners importiert, per Cron synchron gehalten. Seine Dokumentation nennt „portal networks“ und
   „large e-commerce networks“ (Portalnetzwerke und große E-Commerce-Netzwerke) unter den Verwendungen der Syndication in
   beide Richtungen, und Importe können sich gegenüber einer geschützten Quelle authentifizieren
-  ([syndication](../../../../eng-us/features/6.0/extensions/syndication.md)).
+  ([syndication](../../../funktionen/6.0/erweiterungen/syndication.md)).
 - **Der Partner betreibt ein anderes System**: Geben Sie ihm einen Feed (RSS oder Atom) der Produkte oder Neuigkeiten,
   die er zeigen darf, oder einen Integrationsbenutzer mit einem Schlüssel nur zum Lesen für die REST API
   ([Apps und API-Schlüssel](apps-und-api-schluessel.md)).
@@ -60,7 +60,7 @@ Viele Marktplätze, Vergleichsportale und Großhandelspartner nehmen Produktdate
 **Export** der Administration, „turns content into files and reads files back into content“ (macht aus Inhalten
 Dateien und liest Dateien zurück in Inhalte): CSV, JSON, XML und Inhaltspakete, mit Vorschauen, Filtern, gespeicherten
 Voreinstellungen, Hintergrundjobs, geplanten Läufen und Zustellung an SFTP, S3 und andere Ziele
-([xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md)). Das ältere `ezxmlexport` bleibt für Websites erhalten,
+([xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md)). Das ältere `ezxmlexport` bleibt für Websites erhalten,
 die es noch verwenden; für neue Arbeit verweist seine Seite auf `xrowextract`.
 
 > **Hinweis**
@@ -73,10 +73,10 @@ die es noch verwenden; für neue Arbeit verweist seine Seite auf `xrowextract`.
 
 | Bedarf | Funktion | Lesen |
 |---|---|---|
-| Suchmaschinen finden alle öffentlichen Seiten | XML-Sitemaps pro Siteaccess, mit einer mehrsprachigen Variante (`bcgooglesitemaps`), oder Sitemaps aus `xrowmetadata` | [Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md), [bcgooglesitemaps](../../../../eng-us/features/6.0/extensions/bcgooglesitemaps.md) |
-| Titel, Beschreibungen und kanonische Links pro Seite | Das Metadatenattribut von `xrowmetadata` | [Seitenmetadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md) |
+| Suchmaschinen finden alle öffentlichen Seiten | XML-Sitemaps pro Siteaccess, mit einer mehrsprachigen Variante (`bcgooglesitemaps`), oder Sitemaps aus `xrowmetadata` | [Sitemaps](../../ersteller/website-ersteller/sitemaps.md), [bcgooglesitemaps](../../../funktionen/6.0/erweiterungen/bcgooglesitemaps.md) |
+| Titel, Beschreibungen und kanonische Links pro Seite | Das Metadatenattribut von `xrowmetadata` | [Seitenmetadaten und Teilen in sozialen Medien](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md) |
 | Gute Vorschauen, wenn ein Link geteilt wird | Open-Graph-Tags; das Simple-Theme gibt `og:title`, `og:site_name` und ein `og:image` aus; `xrowmetadata` fügt ein Open-Graph-Bild pro Seite hinzu | dieselbe |
-| Grundlagen, um gefunden zu werden | Adressen, Überschriften, Sprachversionen | [SEO-Grundlagen für Exponential-Websites](../../../../eng-us/help/creators/website-creators/seo-basics.md) |
+| Grundlagen, um gefunden zu werden | Adressen, Überschriften, Sprachversionen | [SEO-Grundlagen für Exponential-Websites](../../ersteller/website-ersteller/seo-grundlagen.md) |
 
 ## Ihre eigene App als Kanal
 
@@ -114,8 +114,8 @@ Bevor Inhalte oder Daten Ihre Installation zu einem Partner verlassen:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

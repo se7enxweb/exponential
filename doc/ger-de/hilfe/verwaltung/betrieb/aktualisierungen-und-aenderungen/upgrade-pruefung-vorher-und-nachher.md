@@ -28,7 +28,7 @@ Datenbank so sind, wie sie sein sollen. **Setup > Upgrade-Prüfung** (`/setup/sy
 | Dateikonsistenz | die Dateien auf der Festplatte mit dem Manifest des Releases `share/filelist.md5` (und den Manifesten aktiver Erweiterungen, die eines haben) | **Überprüfe Dateikonsistenz** | **CSV herunterladen**, **Text herunterladen** |
 | Datenbankkonsistenz | das Datenbankschema mit `share/db_schema.dba` und denen aktiver Erweiterungen | **Überprüfe Datenbankkonsistenz** | **SQL herunterladen** |
 
-Beide lesen nur; die Seite hat keine Schaltfläche, die schreibt. Jeder Lauf und jeder Download wird im Audit-Trail als
+Beide lesen nur; die Seite hat keine Schaltfläche, die schreibt. Jeder Lauf und jeder Download wird im Prüfprotokoll als
 `system.upgrade.run` aufgezeichnet.
 
 ## Vor einer Änderung
@@ -72,15 +72,16 @@ Website. Ein Exit-Code ungleich null macht ihn für die Überwachung nutzbar
 ([Upgrade-Prüfung als Überwachung](../ueberwachung/upgrade-pruefung-als-ueberwachung.md)).
 
 ## Verwandte Seiten
-- [Konsistenz nach der Aktualisierung prüfen](../../../../../eng-us/help/government/tasks/operations/check-upgrade-consistency.md)
-- [Das Datenbankschema prüfen](../../../../../eng-us/help/government/tasks/operations/check-the-database-schema.md)
-- [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md)
+- [Konsistenz nach der Aktualisierung prüfen](../../aufgaben/betrieb/die-konsistenz-nach-einem-upgrade-pruefen.md)
+- [Das Datenbankschema prüfen](../../aufgaben/betrieb/das-datenbankschema-pruefen.md)
+- [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md)
 - [Überblick über Aktualisierungen für den öffentlichen Sektor](aktualisierungen-im-oeffentlichen-sektor-im-ueberblick.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -26,7 +26,7 @@ sich; **diese Seite gibt keine Steuerberatung**. Sie listet Fragen auf, die Sie 
 
 Der Shop von Exponential berechnet die Mehrwertsteuer über einen Mehrwertsteuer-Handler und den Versand über einen
 Versand-Handler, beide durch Erweiterungen ersetzbar; die RAD-Werkzeuge können für beide Handler-Erweiterungen erzeugen
-([RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)). Richten Sie sie so ein, wie Ihr Steuerberater es Ihnen sagt, und
+([RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md)). Richten Sie sie so ein, wie Ihr Steuerberater es Ihnen sagt, und
 testen Sie mit echten Fällen, bevor Sie live gehen.
 
 ## Schritt für Schritt
@@ -42,8 +42,9 @@ testen Sie mit echten Fällen, bevor Sie live gehen.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

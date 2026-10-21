@@ -14,8 +14,10 @@ Eine Ansicht des Moduls `contentfinder`, definiert in `kernel/contentfinder/modu
 ## Adresse
 
 ```text
-/contentfinder/search
+/contentfinder/search/(text)/<Text>/(type)/<Type>
 ```
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(text)` setzt `Text`, `(type)` setzt `Type`.
 
 ## Wer sie öffnen darf
 
@@ -37,6 +39,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/contentfinder/search'|ezurl}>contentfinder/search</a>
+<a href={concat( '/contentfinder/search/(text)/', 1 )|ezurl}>contentfinder/search</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

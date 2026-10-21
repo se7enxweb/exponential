@@ -22,10 +22,10 @@ Exponential 6.0.x tut, verweist auf die Dateien und Tests, die es belegen, und b
 
 | Standard | Version | Status | Nachweis (kurz) |
 |---|---|---|---|
-| Web Content Accessibility Guidelines (WCAG) | 2.2, Stufe AA | **Teilweise konform** | Administrationsoberfläche admin4 / admin4l nach AA-Kriterien gebaut und getestet; klassischer Admin und Standard-Bearbeitungsformular teilweise korrigiert; öffentliche Designs und Online-Editor nicht geprüft |
-| WAI-ARIA und der ARIA Authoring Practices Guide (APG) | WAI-ARIA 1.2 | **Teilweise konform** | Landmarks, Reiter-, Aufklapp- und Menümuster in admin4, abgesichert durch `tests/tests/design/AdminKeyboardTest.php`, `AdminLandmarksTest.php`, `AdminContextMenuTest.php` |
-| EN 301 549 (Europäische Anforderungen an die Barrierefreiheit von IKT) | v3.2.1 (2021-03) | **Nicht verifiziert** | ihr Web-Abschnitt 9 ist WCAG 2.1 AA, worauf die Arbeit an admin4 abzielt; kein Konformitätsbericht nach dem Standard |
-| Section 508 (US Rehabilitation Act, Revised 508 Standards) | Überarbeitung 2017 (WCAG 2.0 AA) | **Nicht verifiziert** | inhaltlich durch die WCAG-Arbeit für admin4 abgedeckt; kein VPAT / Accessibility Conformance Report |
+| Web Content Accessibility Guidelines (WCAG) | 2.2, Stufe AA | **Teilweise erfüllt** | Administrationsoberfläche admin4 / admin4l nach AA-Kriterien gebaut und getestet; klassischer Admin und Standard-Bearbeitungsformular teilweise korrigiert; öffentliche Designs und Online-Editor nicht geprüft |
+| WAI-ARIA und der ARIA Authoring Practices Guide (APG) | WAI-ARIA 1.2 | **Teilweise erfüllt** | Landmarks, Reiter-, Aufklapp- und Menümuster in admin4, abgesichert durch `tests/tests/design/AdminKeyboardTest.php`, `AdminLandmarksTest.php`, `AdminContextMenuTest.php` |
+| EN 301 549 (Europäische Anforderungen an die Barrierefreiheit von IKT) | v3.2.1 (2021-03) | **Nicht geprüft** | ihr Web-Abschnitt 9 ist WCAG 2.1 AA, worauf die Arbeit an admin4 abzielt; kein Konformitätsbericht nach dem Standard |
+| Section 508 (US Rehabilitation Act, Revised 508 Standards) | Überarbeitung 2017 (WCAG 2.0 AA) | **Nicht geprüft** | inhaltlich durch die WCAG-Arbeit für admin4 abgedeckt; kein VPAT / Accessibility Conformance Report |
 
 ## WCAG 2.2
 
@@ -76,7 +76,7 @@ Kontrastfehler bei erzwungenen Farben behoben.
 
 ### Status
 
-**Teilweise konform.** Die Administrationsoberfläche admin4 und admin4l ist nach den Kriterien von WCAG 2.2 AA gestaltet
+**Teilweise erfüllt.** Die Administrationsoberfläche admin4 und admin4l ist nach den Kriterien von WCAG 2.2 AA gestaltet
 und mit Regressionstests abgesichert. Das ist nicht dasselbe wie eine Konformitätserklärung: Es gibt kein vollständiges
 Audit jeder Seite, kein Testprotokoll mit assistiven Technologien, und mehrere Teile des Produkts wurden nicht geprüft
 (siehe unten).
@@ -91,7 +91,7 @@ Audit jeder Seite, kein Testprotokoll mit assistiven Technologien, und mehrere T
   schmale Fenster erhalten, werden aber nicht von den Kontrast-, Landmark- und Formularfehlertests abgedeckt, die admin4
   absichern.
 - **Online-Editor.** Die Integrationen von TinyMCE 8 und TinyMCE 3 (`extension/ezoe`) wurden nicht auf WCAG geprüft;
-  die Barrierefreiheit der Editor-Engine selbst ist die des TinyMCE-Projekts. **Nicht verifiziert.**
+  die Barrierefreiheit der Editor-Engine selbst ist die des TinyMCE-Projekts. **Nicht geprüft.**
 - **Extensions**, die als separate Pakete ausgeliefert werden (Layout-Editor, Newsletter, Shop), werden einzeln
   geprüft; einige Korrekturen sind im Changelog festgehalten, eine Gesamtaussage gibt es nicht.
 - **Keine automatisierte Engine zur Barrierefreiheit in der CI.** Die Tests lesen Template- und Stylesheet-Quellen; sie
@@ -124,7 +124,7 @@ zeigt, wie man damit gängige Widgets (Reiter, Menüs, Aufklappelemente, Dialoge
 
 ### Status
 
-**Teilweise konform** für admin4 und admin4l, wo die Muster an den Template-Quellen getestet werden. **Nicht
+**Teilweise erfüllt** für admin4 und admin4l, wo die Muster an den Template-Quellen getestet werden. **Nicht
 verifiziert** an anderer Stelle; klassische Designs enthalten noch ältere JavaScript-Widgets.
 
 ### Bekannte Lücken
@@ -150,7 +150,7 @@ Regeln.
 
 ### Status
 
-**Nicht verifiziert.** Es wurde keine Evaluierung nach EN 301 549 durchgeführt, und Abschnitt 11.8 (Autorenwerkzeuge,
+**Nicht geprüft.** Es wurde keine Evaluierung nach EN 301 549 durchgeführt, und Abschnitt 11.8 (Autorenwerkzeuge,
 zum Beispiel, dass das Werkzeug Autoren hilft, barrierefreie Inhalte zu erstellen) wurde nicht geprüft.
 
 ### Bekannte Lücken
@@ -176,7 +176,7 @@ wird.
 
 ### Status
 
-**Nicht verifiziert.** Es gibt kein VPAT und keinen Accessibility Conformance Report für Exponential.
+**Nicht geprüft.** Es gibt kein VPAT und keinen Accessibility Conformance Report für Exponential.
 
 ## Für Template-Autoren
 

@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an Redaktionen, Führungskräfte und Zuständige für Schriftgut, die zeigen müssen, was eine
 Seite zu einem bestimmten Zeitpunkt sagte und wer sie geändert hat. Jedes Speichern eines Inhaltsobjekts in
 Exponential ist eine Version; die Versionsseite listet sie auf und vergleicht jeweils zwei davon
-([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)). Der Audit-Trail ergänzt auf Systemebene, wer was getan hat
-(siehe „Der Audit-Trail für ‚wer hat was geändert‘“).
+([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)). Das Prüfprotokoll ergänzt auf Systemebene, wer was getan hat
+(siehe „Das Prüfprotokoll für ‚wer hat was geändert‘“).
 
 ## Inhalt
 
@@ -63,7 +63,7 @@ neue Version ergibt, sodass die Wiederherstellung selbst in der Geschichte steht
 | Mitarbeitende mit `content/versionremove` können archivierte Versionen entfernen | Geben Sie diese Richtlinie nur Administratoren |
 | Das Entfernen der Übersetzung eines Objekts löscht diese Sprache in jeder Version | Beschränken Sie `content/remove` und das Entfernen von Übersetzungen |
 | Das Entfernen des Objekts entfernt seine Geschichte (nachdem der Papierkorb geleert wurde) | Entfernen Sie keine aktenrelevanten Inhalte; verbergen oder zurücknehmen |
-| Änderungen an Einstellungen und Struktur sind keine Versionen | Der Audit-Trail zeichnet sie auf |
+| Änderungen an Einstellungen und Struktur sind keine Versionen | Das Prüfprotokoll zeichnet sie auf |
 
 Die Versionsgeschichte ist kein zertifiziertes Schriftgutsystem. Für langfristiges Schriftgut geben Sie Dokumente nach
 Ihrer Schriftgutrichtlinie an Ihr Schriftgutsystem oder Archiv ab.
@@ -74,7 +74,7 @@ Ihrer Schriftgutrichtlinie an Ihr Schriftgutsystem oder Archiv ab.
 2. Suchen Sie die Version, die an jenem Tag veröffentlicht war: diejenige, die vor dem Datum veröffentlicht und erst
    danach ersetzt wurde.
 3. Öffnen Sie sie und speichern oder drucken Sie sie für die Akte; notieren Sie Versionsnummer und Objekt-ID.
-4. Wenn die Version wegen der Grenze nicht mehr vorhanden ist, suchen Sie in Datensicherungen und im Audit-Trail, wann
+4. Wenn die Version wegen der Grenze nicht mehr vorhanden ist, suchen Sie in Datensicherungen und im Prüfprotokoll, wann
    sie veröffentlicht wurde.
 
 ## Verwandte Seiten

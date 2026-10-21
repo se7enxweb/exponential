@@ -5,7 +5,7 @@ Mit der UI-Umschaltung kann ein angemeldeter Benutzer eine Einstellung der Admin
 Entwickler: der Vertrag der Provider, die Registry und ihr Lebenszyklus pro Anfrage, der Varianten-Schlüssel des
 Caches, das Modul, die Fetch-Funktion, ein vollständiges Beispiel eines Providers in einer Erweiterung, die Regeln für
 Exponential Velocity und die Hinweise zur Kompatibilität. Was Benutzer sehen, steht auf
-[der Funktionsseite](../../../eng-us/features/6.0/ui-switch.md); die Einstellungen stehen in
+[der Funktionsseite](../../funktionen/6.0/ui-umschalter.md); die Einstellungen stehen in
 [der Anleitung zu den Einstellungen](../../anleitungen/ui-umschalter-einstellungen.md).
 
 ## Überblick
@@ -14,7 +14,7 @@ Exponential Velocity und die Hinweise zur Kompatibilität. Was Benutzer sehen, s
 |---|---|---|
 | `kernel/classes/uiswitch/expuiswitchproviderinterface.php` | `expUISwitchProviderInterface` | der Vertrag der Provider |
 | `kernel/classes/uiswitch/expuiswitchprovider.php` | `expUISwitchProvider` (abstrakt) | Einstellungen, Liste erlaubter Werte, strikte Validierung, Varianten-Schlüssel des Caches |
-| `kernel/classes/uiswitch/expuiswitch.php` | `expUISwitch` | Registry, Lebenszyklus pro Anfrage, Speicherung in der Session, Prüfung der Richtlinie, Varianten-Schlüssel des Caches, sichere Weiterleitung, Daten für die Werkzeugleiste |
+| `kernel/classes/uiswitch/expuiswitch.php` | `expUISwitch` | Registry, Lebenszyklus pro Anfrage, Speicherung in der Sitzung, Prüfung der Richtlinie, Varianten-Schlüssel des Caches, sichere Weiterleitung, Daten für die Werkzeugleiste |
 | `kernel/classes/uiswitch/expuiswitchlanguageprovider.php` | `expUISwitchLanguageProvider` | der Sprach-Provider (`language`) |
 | `kernel/uiswitch/module.php`, `set.php`, `state.php` | Modul `uiswitch` | `uiswitch/set` (POST), `uiswitch/state` (GET, JSON); eine Richtlinienfunktion pro Provider |
 | `kernel/private/classes/views/uiswitch/set.php`, `state.php` | `Exponential\View\Kernel\Uiswitch\Set`, `State` | der Code der Views |
@@ -72,7 +72,7 @@ implementiert. Eine Gruppe mit `Enabled=false` (oder `disabled`, `0`) wird still
 
 ### Lebenszyklus pro Anfrage
 
-`ezpKernelWeb::requestInit()` ruft die Registry direkt nach dem Start der Session und der Datenbankprüfung auf, vor
+`ezpKernelWeb::requestInit()` ruft die Registry direkt nach dem Start der Sitzung und der Datenbankprüfung auf, vor
 der Login-Vorprüfung, dem Ereignis `request/input`, `eZLocale::instance()`, der Seitensprache und jedem Template:
 
 ```php
@@ -86,23 +86,23 @@ if ( class_exists( 'expUISwitch' ) )
 
 - `beginRequest()` ruft `reset()` für jeden Provider auf, der früher in diesem Prozess einen Wert angewendet hat,
   vergisst die Provider und die angewendeten Werte und setzt `$GLOBALS['expUISwitchVariantKey'] = ''`.
-- `applyRequest()` startet nie eine Session und wirft nie eine Ausnahme. Es wendet nichts an, außer das Framework ist
-  eingeschaltet, der aktuelle Siteaccess ist ein Siteaccess der Umschaltung (`isSwitchSiteAccess()`), die Session ist
+- `applyRequest()` startet nie eine Sitzung und wirft nie eine Ausnahme. Es wendet nichts an, außer das Framework ist
+  eingeschaltet, der aktuelle Siteaccess ist ein Siteaccess der Umschaltung (`isSwitchSiteAccess()`), die Sitzung ist
   gestartet und der aktuelle Benutzer ist angemeldet. Es liest die gespeicherten Werte dieses Benutzers und
   Siteaccess und übergibt sie an `applyValues()`. Ein gespeicherter Wert, den `applyValues()` nicht angewendet hat,
-  wird aus der Session entfernt.
+  wird aus der Sitzung entfernt.
 - `applyValues( $stored, $user )` prüft jeden Wert erneut, bei jeder Anfrage: Der Benutzer muss jetzt
   `uiswitch/<identifier>` besitzen (`canUse()`), der Wert muss `isValid()` bestehen und darf nicht der Standard sein.
-  Ein Provider mit `RememberPreference=enabled` und ohne Eintrag in der Session nimmt den Wert aus den Einstellungen
+  Ein Provider mit `RememberPreference=enabled` und ohne Eintrag in der Sitzung nimmt den Wert aus den Einstellungen
   des Benutzers, unter denselben Prüfungen. Jeder Wert, der besteht, geht an `apply()`; am Ende wird der
   Varianten-Schlüssel des Caches in `$GLOBALS['expUISwitchVariantKey']` gespeichert.
 - `appliedValues()` gibt zurück, was in dieser Anfrage angewendet wurde.
 
-Der Setup-Assistent (Gültigkeitsprüfung) und Anfragen ohne Session wenden nichts an.
+Der Setup-Assistent (Gültigkeitsprüfung) und Anfragen ohne Sitzung wenden nichts an.
 
-### Format in der Session
+### Format in der Sitzung
 
-Die Session-Variable `expUISwitch` (`expUISwitch::SESSION_VARIABLE`) enthält:
+Die Sitzungsvariable `expUISwitch` (`expUISwitch::SESSION_VARIABLE`) enthält:
 
 ```php
 array(
@@ -114,7 +114,7 @@ array(
 )
 ```
 
-Werte eines anderen Benutzers werden ignoriert und beim nächsten Schreiben entfernt, sodass eine Session, die den
+Werte eines anderen Benutzers werden ignoriert und beim nächsten Schreiben entfernt, sodass eine Sitzung, die den
 Benutzer wechselt, nie eine Wahl mitnimmt. Gelesen werden nur wohlgeformte Kennungen und Werte
 (`IDENTIFIER_PATTERN`, `VALUE_PATTERN`), und gespeichert werden immer nur Werte, die ein Provider akzeptiert hat. Bleibt
 nichts übrig, wird die Variable entfernt. Gemerkte Werte sind die Benutzereinstellungen `exp_uiswitch_<identifier>`
@@ -312,6 +312,6 @@ Velocity-Worker sind persistent: Statische und globale Daten überdauern von ein
 Einstellungen, die Registry (fehlende Klassen, Nicht-Provider, ausgeschaltete und fehlerhafte Einträge),
 Richtlinienfunktionen und die Funktionsliste des Moduls, die strikte Liste erlaubter Werte, die Prüfungen von Locale
 und Übersetzung des Sprach-Providers und sein Anwenden im Speicher, die Prüfung der Richtlinie pro Provider, die
-Siteaccesses der Umschaltung, das Format in der Session, die erneuten Prüfungen beim Anwenden, das Zurücksetzen bei der
+Siteaccesses der Umschaltung, das Format in der Sitzung, die erneuten Prüfungen beim Anwenden, das Zurücksetzen bei der
 nächsten Anfrage, Varianten-Schlüssel und die Namen kompilierter Templates, lokale Weiterleitungen und die Ablehnungen
 von `uiswitch/set`.

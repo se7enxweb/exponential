@@ -59,13 +59,14 @@ des Inhaltsbaums gilt, der übliche Weg, einer Abteilung einen eigenen Bereich z
 ## Verwandte Seiten
 - [Eine Rolle mit einer Einschränkung auf eine Sektion zuweisen](eine-rolle-mit-einer-einschraenkung-auf-eine-sektion-zuweisen.md)
 - [Einen Auftragnehmer nur einen Ordner bearbeiten lassen](einen-auftragnehmer-nur-einen-ordner-bearbeiten-lassen.md)
-- [Sektionen und Einschränkungen auf Teilbäume](../../../../../eng-us/help/government/operations/people-and-permissions/sections-and-subtree-limits.md)
-- [Seitenweise Anzeige der Rollenzuweisungen](../../../../../eng-us/features/6.0/role-assignment-paging.md)
+- [Sektionen und Einschränkungen auf Teilbäume](../../betrieb/personen-und-berechtigungen/sektionen-und-teilbaum-einschraenkungen.md)
+- [Seitenweise Anzeige der Rollenzuweisungen](../../../../funktionen/6.0/seitenweise-rollenzuweisungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

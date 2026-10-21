@@ -3,8 +3,8 @@
 Diese Anleitung richtet sich an den Administrator einer Installation. Am Ende kennen Sie jede Einstellung der
 UI-Umschaltung, können eine weitere Sprache der Oberfläche anbieten, die Wahl auf einige Siteaccesses beschränken oder
 abschalten, den Eintrag der Werkzeugleiste in einer bestehenden Installation ergänzen und die Wahl einer Rolle geben.
-Was Benutzer sehen, steht auf [der Funktionsseite](../../eng-us/features/6.0/ui-switch.md); wie Code eine eigene Wahl hinzufügt,
-steht in [der Provider-API](../../eng-us/bc/6.0/ui-switch.md).
+Was Benutzer sehen, steht auf [der Funktionsseite](../funktionen/6.0/ui-umschalter.md); wie Code eine eigene Wahl hinzufügt,
+steht in [der Provider-API](../bc/6.0/ui-umschalter.md).
 
 Fügen Sie `--allow-root-user` hinzu, wenn Sie einen Befehl als root ausführen.
 
@@ -39,7 +39,7 @@ Bearbeiten Sie niemals `settings/uiswitch.ini` selbst. Legen Sie Änderungen in 
 | `Enabled` | `true` | `false` schaltet diesen Provider ab und lässt die anderen arbeiten. |
 | `GroupList[]` | `english`, `major`, `regional` | Die Gruppen der Liste, in Reihenfolge. Ein Gruppenbezeichner ist `[a-z][a-z0-9_]*`; eine Gruppe, die nichts anzubieten hat, wird ausgelassen. Leer, mit `AllLanguages=disabled`: keine Gruppen, die Auswahl ist die Liste von Schaltflächen aus #506. |
 | `GroupLabel[<group>]` | *Englisch*, *Wichtige Weltsprachen*, *Regionale Varianten* | Die Überschrift einer Gruppe, übersetzt im Kontext `kernel/uiswitch/language`. Fehlt sie: der Bezeichner. |
-| `GroupValues_<group>[]` | 5, 19 und 10 Locales | Die Locales einer Gruppe, in der angezeigten Reihenfolge. Warum die mitgelieferten so sind, wie sie sind: [die Funktionsseite](../../eng-us/features/6.0/ui-switch-languages.md#why-the-default-ranking-is-what-it-is). |
+| `GroupValues_<group>[]` | 5, 19 und 10 Locales | Die Locales einer Gruppe, in der angezeigten Reihenfolge. Warum die mitgelieferten so sind, wie sie sind: [die Funktionsseite](../funktionen/6.0/ui-umschalter-sprachen.md#warum-die-standard-rangfolge-so-ist-wie-sie-ist). |
 | `AllLanguages` | `enabled` | `enabled`: Jede Locale aus `share/locale` (ohne Formatvarianten wie `eng-GB@euro`) wird angeboten und nach den Gruppen von A bis Z als *Alle Sprachen (A–Z)* aufgeführt. `disabled`: nur die Gruppen und `AllowedValues[]`; die angebotenen Locales, die keine Gruppe nennt, werden von A bis Z als *Weitere Sprachen (A–Z)* aufgeführt. Fehlt die Einstellung: `disabled`. |
 | `ListUntranslated` | `enabled` | `enabled`: Locales ohne Übersetzung der Oberfläche (`share/translations/<locale>/translation.ts`) werden ebenfalls angeboten, markiert mit *noch keine Übersetzung*: englische Texte, eigene Datums- und Zahlenformate. `disabled`: nur Englisch (`eng-*`) und die übersetzten Sprachen. Fehlt die Einstellung: `disabled`. |
 | `AllowedValues[]` | leer | Weitere Locales, die außerhalb der Gruppen angeboten werden: eine Formatvariante (`eng-GB@euro`), oder die ganze Liste, wenn es keine Gruppen gibt und `AllLanguages=disabled` gilt. |
@@ -56,7 +56,7 @@ Mit Gruppen oder `AllLanguages=enabled` ist die Auswahl ein Listenfeld mit einer
 Schaltfläche *Übernehmen*; jeder Eintrag zeigt den eigenen Namen der Sprache, ihren Namen in der aktuellen Sprache der
 Oberfläche und wie vollständig ihre Übersetzung ist („Deutsch (Deutschland) — German (Germany) (99%)“,
 „Kiswahili (Kenya) — Swahili (Kenya) (no translation yet)“). Wie die Namen, die Reihenfolge von A bis Z und die
-Prozentwerte entstehen: [die Funktionsseite](../../eng-us/features/6.0/ui-switch-languages.md).
+Prozentwerte entstehen: [die Funktionsseite](../funktionen/6.0/ui-umschalter-sprachen.md).
 
 ## 3. Beispiele
 
@@ -284,8 +284,16 @@ eigene Funktion im selben Modul (`uiswitch/<identifier>`), die aufgeführt wird,
 
 ## Siehe auch
 
-- [Die Sprache der Oberfläche](../../eng-us/features/6.0/ui-switch.md): was Benutzer sehen.
-- [Die Liste der Oberflächensprachen](../../eng-us/features/6.0/ui-switch-languages.md): die Gruppen, die Reihenfolge von A bis Z,
+- [Die Sprache der Oberfläche](../funktionen/6.0/ui-umschalter.md): was Benutzer sehen.
+- [Die Liste der Oberflächensprachen](../funktionen/6.0/ui-umschalter-sprachen.md): die Gruppen, die Reihenfolge von A bis Z,
   die Abdeckung der Übersetzungen und warum die Standardrangfolge so ist, wie sie ist.
-- [Die Provider-API der UI-Umschaltung](../../eng-us/bc/6.0/ui-switch.md): eine Wahl aus einer Extension hinzufügen.
+- [Die Provider-API der UI-Umschaltung](../bc/6.0/ui-umschalter.md): eine Wahl aus einer Extension hinzufügen.
 - [Rollen und Richtlinien](rollen-und-richtlinien.md), [Caches](caches.md), [Inhaltssprachen](inhaltssprachen.md).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

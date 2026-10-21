@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Geschäftsinhaber und Projektleiter, die den Weg eines Kunden von einer Produktseite bis zur
 aufgegebenen Bestellung verstehen und testen möchten. Sie beschreibt jeden Schritt so, wie der Kunde ihn sieht, welche
 Entscheidungen das Unternehmen dort trifft und was schiefgehen kann. Die technische Beschreibung steht unter
-[Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md).
+[Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md).
 
 ## Inhalt
 
@@ -37,8 +37,8 @@ Entscheidungen das Unternehmen dort trifft und was schiefgehen kann. Die technis
 | 5. Zahlung | `shop/checkout` und der Anbieter | Der Zahlungsanbieter |
 | 6. Aufgegebene Bestellung | `shop/orderview` oder `shop/orderreceipt/<token>` | Klassische Bestellansicht oder dauerhafter Beleg |
 
-Quellen: [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md#the-visitors-path) und
-[Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#checkout).
+Quellen: [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md#der-weg-des-besuchers) und
+[Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md#kasse).
 
 ## Schritt 1 In den Warenkorb legen
 
@@ -57,7 +57,7 @@ zeigt eine an, laut der technischen Seite).
 Der Warenkorb listet Artikel, Mengen und Summen auf; Kunden ändern Mengen oder entfernen Artikel. Der Adressname des
 Warenkorbs ist eine Einstellung (`shop.ini [BasketSettings] BasketViewName`, ausgeliefert `basket`), sodass ein Shop
 ihn `cart` oder mit einem Wort in seiner eigenen Sprache nennen kann
-([Ansichtsname des Shop-Warenkorbs](../../../../eng-us/bc/6.0/shop-basket-view-name.md)).
+([Ansichtsname des Shop-Warenkorbs](../../../bc/6.0/view-name-des-shop-warenkorbs.md)).
 
 Zwei weitere Einstellungen in `site.ini [ShopSettings]` legen fest, wann ein Warenkorb geleert wird:
 
@@ -81,7 +81,7 @@ Die Bestätigungsseite zeigt die Bestellung mit Versand und USt. Die Versandkost
 Auslöser `before_shop_confirmorder` hinzugefügt ([Versand und Bearbeitung](versand-und-bearbeitung.md)). Seit 6.0.15
 führt **Abbrechen** in diesem Schritt den Kunden zu seinem Warenkorb mit dessen Artikeln zurück statt zu einem leeren
 Warenkorb, und die Zurück-Schaltfläche oder ein zweiter Tab führen die Bestätigung nicht mehr zweimal aus
-([Dauerhafte Bestellbelege](../../../../eng-us/features/6.0/order-receipts.md#a-checkout-fix-made-on-the-way)).
+([Dauerhafte Bestellbelege](../../../funktionen/6.0/bestellbelege.md#eine-korrektur-am-bestellvorgang-nebenbei)).
 
 ## Schritt 5 Zahlung
 
@@ -103,7 +103,7 @@ die neuesten Warenkörbe und unbestätigten Bestellvorgänge auf ([Shop-Dashboar
 Alte Warenkörbe entfernt der Cron-Teil `basket_cleanup` (`settings/cronjob.ini`, Teil `infrequent`), wie es
 `site.ini [Session] BasketCleanup=cronjob` vorsieht. Die „Nächste Schritte“ des Dashboards warnen, wenn die
 Warenkorb-Bereinigung Warenkörbe löschen würde, die in PHP-Sitzungen gehalten werden
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)). Stellen Sie sicher, dass die Cronjobs
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)). Stellen Sie sicher, dass die Cronjobs
 laufen ([Cronjobs](../../../anleitungen/cronjobs.md)).
 
 > **Tipp**
@@ -120,19 +120,19 @@ laufen ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Schließen Sie eine Zahlung im Testmodus ab; die Bestellung und die Mail kommen an.
 - [ ] Wiederholen Sie alles auf einem Smartphone.
 
-Die vollständige Testliste steht unter [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#test-order-checklist).
+Die vollständige Testliste steht unter [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md#checkliste-für-eine-testbestellung).
 
 ## Verwandte Seiten
 
-- [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
+- [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)
 - [Kundenkonten und Gastbestellung](kundenkonten-und-gastbestellung.md)
 - [Checkliste für den Shop-Start](checkliste-fuer-den-shop-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

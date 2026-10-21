@@ -13,10 +13,10 @@ Diese Seite richtet sich an Site-Ersteller, Administratoren und Projektleiter, d
 Nachrichtenzusammenfassung per E-Mail versenden. Die Erweiterung `cjw_newsletter`, die die Standardinstallation
 aktiviert, bietet Listen, als Inhalte geschriebene Ausgaben, Double-Opt-in, zeitgesteuerten Versand, Behandlung von
 Rückläufern und ein Archiv. Diese Seite behandelt ihre Verwendung für Nachrichten; die vollständigen Anleitungen zu
-Newslettern sind [Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md),
-[Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md) und
-[Newsletter versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md). Die Hilfe für Behörden hat im
-Bereich Aufbauen eine eigene Anleitung zu Newslettern ([Newsletter](../newsletter/README.md)).
+Newslettern sind [Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md),
+[Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md) und
+[Newsletter versenden](../../../ersteller/website-ersteller/newsletter-versenden.md). Die Hilfe für Behörden hat im
+Bereich Aufbauen eine eigene Anleitung zu Newslettern ([Newsletter](../newsletters/README.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -46,7 +46,7 @@ gut; sie ergänzt RSS für Menschen, die E-Mail bevorzugen.
 | Anforderung | cjw_newsletter und der Kernel |
 |---|---|
 | Opt-in | Double-Opt-in: das Abonnement zählt erst nach dem Link in der Bestätigungsmail |
-| Einfaches Abmelden | `newsletter/unsubscribe`; Exponential fügt optionalen Mails, die über sein Mail-Gateway gehen, die Header `List-Unsubscribe` und `List-Unsubscribe-Post` hinzu ([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)) |
+| Einfaches Abmelden | `newsletter/unsubscribe`; Exponential fügt optionalen Mails, die über sein Mail-Gateway gehen, die Header `List-Unsubscribe` und `List-Unsubscribe-Post` hinzu ([Standards zum Datenschutz](../../../../standards/datenschutz.md)) |
 | Gesperrte Adressen | eine Sperrliste; Rückläufer-Adressen werden markiert |
 | Nachweise | Status der Abonnements: ausstehend, bestätigt, freigegeben, entfernt, zurückgewiesen |
 
@@ -59,7 +59,7 @@ werden in der Praxis oft gleich behandelt.
 
 Der Newsletter hat eigene Transporte; stellen Sie sie zuerst auf Datei, senden Sie eine Testausgabe an eine Testliste
 mit Adressen auf einer reservierten Domain und lesen Sie die auf die Festplatte geschriebenen Mails
-([Newsletter versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md)). Erst dann schalten Sie auf echten
+([Newsletter versenden](../../../ersteller/website-ersteller/newsletter-versenden.md)). Erst dann schalten Sie auf echten
 Versand um.
 
 ## Wofür ein Newsletter nicht gedacht ist
@@ -73,13 +73,14 @@ Versand um.
 ## Verwandte Seiten
 
 - [Nachrichten und Warnmeldungen](README.md)
-- [cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)
 - [Benachrichtigungen und Abonnements](benachrichtigungen-und-abonnements.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -37,14 +37,14 @@ Benutzer, deren Rolle `notification/use` hat.
 
 ## Verwandte Seiten
 
-- [Benachrichtigungen: die Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md)
-- [Ohne Benachrichtigung veröffentlichen](../../../eng-us/features/6.0/publish-without-notification.md)
+- [Benachrichtigungen: die Anleitung für Benutzer](../../funktionen/6.0/benachrichtigungen.md)
+- [Ohne Benachrichtigung veröffentlichen](../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

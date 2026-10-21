@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, die möchten, dass eine Seite in Suchergebnissen und beim Teilen richtig aussieht. Viele
 Klassen haben ein Feld **Meta Data** (der Datentyp `xrowmetadata`) mit einem Titel, Schlüsselwörtern, einer
 Beschreibung, einem Canonical-Link und, seit 1.3.6, einem Open-Graph-Bild
-([xrowmetadata](../../../../../eng-us/features/6.0/extensions/xrowmetadata.md),
+([xrowmetadata](../../../../funktionen/6.0/erweiterungen/xrowmetadata.md),
 [Metadaten und Teilen in sozialen Netzwerken](../../aufbauen/nachrichten-und-warnmeldungen/metadaten-und-teilen-in-sozialen-netzwerken.md)).
 
 ## Inhalt
@@ -57,13 +57,14 @@ Beschreibung, einem Canonical-Link und, seit 1.3.6, einem Open-Graph-Bild
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Grundlagen der Suchmaschinenoptimierung](../../../../../eng-us/help/creators/website-creators/seo-basics.md)
+- [Grundlagen der Suchmaschinenoptimierung](../../../ersteller/website-ersteller/seo-grundlagen.md)
 - [Eine Zusammenfassung in einfacher Sprache schreiben](eine-zusammenfassung-in-einfacher-sprache-schreiben.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

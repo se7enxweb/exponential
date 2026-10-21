@@ -81,7 +81,7 @@ Die eigenen Stufenmodelle von Hosting-Unternehmen stehen in [Support-Stufen](../
 | Zusage | Wie sie mit Exponential gemessen wird |
 |---|---|
 | Verfügbarkeit | externe Prüfung einer Seite, die die Datenbank verwendet ([Zustandsprüfungen und Verfügbarkeit](../../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)) |
-| Von Besuchern gesehene Fehler | Anfrageprotokolle und der Log-Betrachter ([Anfrageprotokolle](../../../../../eng-us/features/6.0/request-logs.md), [Log-Betrachter](../../../../../eng-us/features/6.0/log-viewer.md)) |
+| Von Besuchern gesehene Fehler | Anfrageprotokolle und der Log-Betrachter ([Anfrageprotokolle](../../../../funktionen/6.0/anfrageprotokolle.md), [Log-Betrachter](../../../../funktionen/6.0/log-betrachter.md)) |
 | Wartungsfenster | Wartungsmodus mit Nachricht und Endzeit ([Wartungsmodus](../../../../anleitungen/wartungsmodus.md)); das Umschalten wird im Audit-Protokoll festgehalten |
 | RPO und RTO | Zeitstempel der Sicherungen und der letzte Wiederherstellungstest |
 | Reaktionszeiten | das Ticketsystem des Lieferanten; verlangen Sie Lesezugriff |

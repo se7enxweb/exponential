@@ -61,7 +61,7 @@ mehreren Marken jede Variante prüfen kann.
 
 Wo ein Unternehmen einen Entwurf auch so sehen muss, wie er gedruckt oder exportiert wird (zum Beispiel ein PDF-Layout
 eines Rundschreibens), kann die Vorschau weitere View-Modi anbieten, die in `content.ini [VersionView] ViewModes[]`
-aufgeführt sind ([Versionsvorschau in anderen View-Modi](../../../../eng-us/features/6.0/version-preview-view-modes.md)). Um eine
+aufgeführt sind ([Versionsvorschau in anderen View-Modi](../../../funktionen/6.0/ansichtsmodi-der-versionsvorschau.md)). Um eine
 Version zu sehen, braucht es die Richtlinie `content/versionread`.
 
 ## Freigabe vor dem Veröffentlichen
@@ -110,8 +110,8 @@ ab Werk 45 pro Element; wird die Grenze erreicht, wird die älteste archivierte 
 Muss Ihr Unternehmen für bestimmte Inhalte einen längeren Verlauf aufbewahren, bitten Sie Ihren Administrator, die
 Grenze für diese Klassen anzuheben.
 
-Der Audit-Trail zeichnet auf, wer was veröffentlicht, verschoben, entfernt oder wiederhergestellt hat, sodass „Wer hat
-das geändert?“ immer eine Antwort hat ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)).
+Das Prüfprotokoll zeichnet auf, wer was veröffentlicht, verschoben, entfernt oder wiederhergestellt hat, sodass „Wer hat
+das geändert?“ immer eine Antwort hat ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)).
 
 ## Große Änderungen im Hintergrund
 
@@ -119,7 +119,7 @@ Das Entfernen, Kopieren oder Verschieben eines großen Teilbaums lief früher in
 konnte an Zeit- oder Speicherlimits scheitern. Ab 6.0.15 bietet die Administration an, es als **Inhaltsjob** auszuführen,
 der in Stapeln arbeitet, nach jedem Stapel einen Checkpoint setzt und dort weitermacht, wo er aufgehört hat. Die
 Bestätigungsseite zeigt vor dem Start, was die Operation betrifft, und schlägt ab 50 Knoten den Hintergrund vor
-([Inhaltsjobs](../../../../eng-us/features/6.0/content-jobs.md)). Siehe
+([Inhaltsjobs](../../../funktionen/6.0/inhaltsauftraege.md)). Siehe
 [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md).
 
 ## Regeln für das Unternehmen
@@ -154,8 +154,8 @@ Halten Sie schriftlich fest und teilen Sie:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

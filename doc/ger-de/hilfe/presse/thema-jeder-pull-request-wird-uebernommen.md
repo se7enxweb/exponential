@@ -24,7 +24,7 @@ meisten Beiträge von außen ab; Exponential dokumentiert die gegenteilige Richt
 Jeder Pull Request wird übernommen. Solange er offen ist, prüft 7x ihn in vielen Runden, und sein Autor fasst ihn
 zusammen (Squash) und rebased ihn auf `main`, wie es die Prüfungen verlangen; sobald er übernommen ist, wird die
 Historie von `main` nie umgeschrieben, und spätere Korrekturen kommen als neue Pull Requests
-([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst), [CI](../../../eng-us/bc/6.0/ci.md)).
+([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst), [CI](../../bc/6.0/ci.md)).
 Beiträge werden unter derselben GPL-Lizenz veröffentlicht (CONTRIBUTING.md). Seit Dezember 2023 kommen Pull Requests
 von 7x, von Entwicklern wie ekked und fwoldt und von Unternehmen wie Netgen und Mugo Web; in der gesamten Historie
 erscheinen 1.039 übernommene Pull Requests ([Exponential in Zahlen](exponential-in-zahlen.md)).
@@ -35,7 +35,7 @@ erscheinen 1.039 übernommene Pull Requests ([Exponential in Zahlen](exponential
 |---|---|
 | Jeder Pull Request wird übernommen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | Solange ein Pull Request offen ist, fasst sein Autor ihn zusammen und rebased ihn auf `main`, wie es die Prüfungen verlangen; nach dem Merge wird `main` nie umgeschrieben, und spätere Korrekturen kommen als neue Pull Requests | ebenda; [Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews) |
-| Die Testsuite läuft bei jedem Pull Request | [CI](../../../eng-us/bc/6.0/ci.md) |
+| Die Testsuite läuft bei jedem Pull Request | [CI](../../bc/6.0/ci.md) |
 | Beiträge stehen unter der GPL v2 oder später | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | Code-Beiträge zum Kernel brauchen vor dem Merge eine unterzeichnete Contributor Licensing Agreement (CLA); mit Unterzeichnung und Einreichung übertragen Mitwirkende das Urheberrecht an 7x und geben die Kontrolle ab: 7x darf einen Beitrag auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, ohne sie zu fragen oder zu bezahlen, und sie können ihn nicht zurückziehen; die eigenen Erweiterungen der Anwender sind nicht betroffen | [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | 1.039 übernommene Pull Requests in der Historie (18. Oktober 2026) | [Exponential in Zahlen](exponential-in-zahlen.md) |
@@ -63,8 +63,8 @@ erscheinen 1.039 übernommene Pull Requests ([Exponential in Zahlen](exponential
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

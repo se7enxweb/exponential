@@ -29,7 +29,7 @@ in jeder Abteilung. Die Planung eines Intranets behandelt [Intranets für Untern
 | Dokumente, die Menschen finden | Dateien, eine Dateibibliothek und die Suche | [Dokumente und Dateibibliotheken](../../unternehmen/intranets/dokumente-und-dateibibliotheken.md), [Suche im Intranet](../../unternehmen/intranets/suche-im-intranet.md) |
 | Mitarbeitende über Änderungen informieren | Benachrichtigungen | [Benachrichtigungen für Mitarbeitende](../../unternehmen/intranets/benachrichtigungen-fuer-mitarbeiter.md) |
 | Änderungen werden geprüft, bevor sie erscheinen | Freigabe-Workflows | [Freigabe-Workflows](../../unternehmen/intranets/freigabe-workflows.md) |
-| Nachweis, wer was geändert hat | Das manipulationssichere Prüfprotokoll | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis, wer was geändert hat | Das manipulationssichere Prüfprotokoll | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 ## Wer wofür zuständig ist
 
@@ -71,3 +71,11 @@ Folgen Sie dem [Lesepfad für Intranets](lesepfad-intranets.md). Ein Intranet in
 - [FAQ zu Intranets (Unternehmen)](../../unternehmen/intranets/intranet-faq.md)
 - [Extranets](../../unternehmen/extranets/README.md): Bereiche für Kunden und Partner
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

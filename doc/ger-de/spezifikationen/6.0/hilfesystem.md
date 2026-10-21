@@ -1,7 +1,7 @@
 # Plan: Benutzerhandbücher und Hilfe, gepflegt in Exponential
 
 Status: Vorschlag, 18. Oktober 2026; Phase 1 (Klassen, Baum, Sektionen, Zustände, Rollen, Validator, Web- und Kontexthilfe
-in der Hilfe der Administration) umgesetzt in 6.0.15, siehe [Hilfe als Inhalt gepflegt](../../../eng-us/features/6.0/help-content.md).
+in der Hilfe der Administration) umgesetzt in 6.0.15, siehe [Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md).
 Begleitseite: [der Styleguide für die Hilfe](hilfe-stilrichtlinien.md).
 
 ## Idee

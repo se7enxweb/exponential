@@ -12,14 +12,14 @@ type: help
 Jede Exponential-Administration hat ein Hilfe-Center und darin eine Seite namens **Fehler melden** unter
 `/exphelp/report`. Sie führt eine Person durch die Meldung eines Fehlers in der Software: welcher Tracker zu verwenden
 ist, was zu schreiben ist, ein vorausgefülltes Issue und eine Zusammenfassung der Installation zum Kopieren, und wo ein
-Sicherheitsproblem vertraulich zu melden ist ([Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)). Diese Seite
+Sicherheitsproblem vertraulich zu melden ist ([Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)). Diese Seite
 erklärt aus Sicht des Betreibers, wofür sie da ist.
 
 ## Wer sie öffnen kann
 
 Die Meldeseite ist Teil der Hilfe, die die Richtlinie `exphelp/read` erfordert. Die Rolle Administrator hat sie, eine
 neue Installation gibt sie der Rolle Editor, und die Hilfe wird nie Besuchern gezeigt, die nicht angemeldet sind
-([Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)). Auf einer Installation aus der Zeit vor dem Hilfesystem
+([Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)). Auf einer Installation aus der Zeit vor dem Hilfesystem
 vergibt ein Administrator sie mit einem Befehl, der auf derselben Seite beschrieben ist.
 
 Das Dashboard der Hilfe befindet sich unter `/exphelp/dashboard`; die Schaltfläche **Hilfe** in der Kopfzeile der
@@ -38,7 +38,7 @@ Administration öffnet die Hilfeseite, die zu der Seite gehört, auf der Sie ger
 Wenn die Meldung geschrieben ist, bereitet die Seite im gewählten Tracker ein neues Issue mit diesem Text vor, fertig
 zum Öffnen. Zum Absenden brauchen Sie ein kostenloses GitHub-Konto ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 Die Diagnosedaten und der Text des Issues bleiben bewusst auf Englisch, „weil die Maintainer sie lesen“
-([Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)).
+([Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)).
 
 ## Welcher Tracker
 
@@ -76,3 +76,11 @@ Tracker angeboten (`[IssueTrackers] BundledExtensions[]` und `ExtensionOwners[]`
 - [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Systeminformationen](../../../anleitungen/systeminformationen.md): Ihr **Bericht als Text kopieren** liefert eine ähnliche sichere Zusammenfassung
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

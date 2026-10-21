@@ -31,7 +31,7 @@ Attribut für das Überprüfungsdatum, einer Template-Liste und einer Routine ba
 | Die Fachperson, die die Fakten bestätigt | ein Rollenname im Ablauf, nicht auf der Seite |
 
 Scheidet jemand aus, ändern Sie den Eigentümer seiner Seiten; **Benutzer > Benutzerkonten prüfen** hilft, Konten
-ausgeschiedener Personen zu finden ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+ausgeschiedener Personen zu finden ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Das Überprüfungsdatum
 
@@ -80,8 +80,8 @@ Spalten zeigen und als CSV exportieren, was für eine einmalige Prüfung genügt
 | Bedarf | Exponential |
 |---|---|
 | Was die Seite vorher sagte | **Versionen verwalten**, **Vergleichen** ([Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md)) |
-| Wer sie geändert hat | Versionen und das Audit-Protokoll ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
-| Menschen informieren, die der Leistung folgen | Benachrichtigungen beim Veröffentlichen; **Ohne Benachrichtigung veröffentlichen** für kleine Korrekturen, wo eingeschaltet ([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)) |
+| Wer sie geändert hat | Versionen und das Audit-Protokoll ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
+| Menschen informieren, die der Leistung folgen | Benachrichtigungen beim Veröffentlichen; **Ohne Benachrichtigung veröffentlichen** für kleine Korrekturen, wo eingeschaltet ([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)) |
 
 ## Eine monatliche Routine
 
@@ -96,12 +96,13 @@ Spalten zeigen und als CSV exportieren, was für eine einmalige Prüfung genügt
 
 - [Einen Leistungskatalog aufbauen](README.md)
 - [Messen und verbessern](messen-und-verbessern.md)
-- [Ihre Website pflegen](../../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)
+- [Ihre Website pflegen](../../../ersteller/website-ersteller/ihre-website-pflegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

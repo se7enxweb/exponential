@@ -22,7 +22,7 @@ Adresse Ihrer Website. Siehe [Ein Rundgang durch die Administration](../rundgang
 annimmt. Es ist ein Workflow-Ereignis namens *Approve* ([Workflows](../../anleitungen/workflows.md), [Freigabe und Prüfung](alltag/freigabe-und-pruefung.md)).
 
 **Prüfprotokoll** (*Audit trail*): der manipulationssichere Nachweis, wer in der Administration was getan hat, mit
-eigenem Reiter **Audit** ([Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md)).
+eigenem Reiter **Audit** ([Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md)).
 
 **Backup** (*Backup*): eine Kopie der Datenbank und der gespeicherten Dateien, aus der die Website wiederhergestellt
 werden kann. Nur eine Wiederherstellung beweist ein Backup ([Backups](gesund-halten/backups.md)).
@@ -31,7 +31,7 @@ werden kann. Nur eine Wiederherstellung beweist ein Backup ([Backups](gesund-hal
 damit Besucher die neue Fassung sehen; das erledigt Ihr Administrator ([Geschwindigkeit und Caching](gesund-halten/geschwindigkeit-und-caching.md)).
 
 **Inhaltsklasse** (*Content class*): die Art eines Inhaltselements (Article, Product, Folder ...) und die Felder, die es
-hat. Die Klassen Ihrer Website wurden beim Bau ausgewählt ([Inhaltsklassen für Websites](../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)).
+hat. Die Klassen Ihrer Website wurden beim Bau ausgewählt ([Inhaltsklassen für Websites](../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)).
 
 **Inhaltselement** (*Content item*, auch *Objekt*): ein einzelner Inhalt, etwa ein Artikel oder ein Produkt, mit seinen
 Versionen und Übersetzungen.
@@ -60,7 +60,7 @@ meiste für Ihre Website geschriebene Code liegt in Erweiterungen ([Was Ihnen ge
 gebaut hat oder pflegt.
 
 **Wartungsmodus** (*Maintenance mode*): ein Zustand, in dem Besucher eine Wartungsseite sehen, während gearbeitet wird;
-die Administration kann erreichbar bleiben (**Setup > Wartung**, [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md)).
+die Administration kann erreichbar bleiben (**Setup > Wartung**, [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md)).
 
 ## N bis S
 
@@ -119,3 +119,11 @@ Veröffentlichen ([Workflows](../../anleitungen/workflows.md)).
 - [Glossar für Hoster](../hosting/glossar-fuer-hoster.md)
 - [Glossar für Unternehmen](../unternehmen/glossar-fuer-unternehmen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Sicherheitsbeauftragte und Vertragsmanagement einer öffentlichen Stelle. Sie erklärt, wie
 eine Schwachstelle in Exponential von der Meldung bis zur Korrektur behandelt wird, was das Projekt verspricht und was
 nicht, und wie Sie daraus eine Pflicht zum Einspielen von Patches für einen Lieferanten machen. Die Quellen sind [`SECURITY.md`](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md),
-[Sicherheitsstandards](../../../../../eng-us/standards/security.md#vulnerability-disclosure) und
+[Sicherheitsstandards](../../../../standards/sicherheit.md#offenlegung-von-schwachstellen) und
 [SLA-Optionen für das Hosting von Exponential](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md).
 
 ## Inhalt
@@ -42,7 +42,7 @@ nicht, und wie Sie daraus eine Pflicht zum Einspielen von Patches für einen Lie
 | Unterstützte Linie: 6.0.x; 5.x und älter nicht | `SECURITY.md` |
 
 Nicht versprochen: eine Frist für die Korrektur, eine Vorabinformation der Nutzer, ein Feed mit Sicherheitshinweisen. Es
-wird keine Datei `security.txt` mitgeliefert ([Sicherheitsstandards](../../../../../eng-us/standards/security.md#vulnerability-disclosure)). Die
+wird keine Datei `security.txt` mitgeliefert ([Sicherheitsstandards](../../../../standards/sicherheit.md#offenlegung-von-schwachstellen)). Die
 SLA-Seite für das Hosting rät: Versprechen Sie, eine veröffentlichte Korrektur innerhalb einer Frist einzuspielen, nicht,
 dass eine Schwachstelle innerhalb einer Frist behoben wird; „das Zweite hängt vom Projekt ab, das Erste von Ihnen“
 ([SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md#sicherheitsupdates)).
@@ -57,7 +57,7 @@ dass eine Schwachstelle innerhalb einer Frist behoben wird; „das Zweite hängt
   ([Mit Git aktualisieren](../../../mit-git-aktualisieren.md#weg-b-die-administration)).
 - Hoster: [Sicherheitsupdates und Offenlegung](../../../hosting/sicherheit/sicherheitsupdates-und-offenlegung.md) und
   [Mit dem Projekt und 7x arbeiten](../../../hosting/geschaeft/mit-dem-projekt-und-7x-zusammenarbeiten.md).
-- Hinweise für die Presse dazu, wie Korrekturen angekündigt werden: [Über Sicherheitskorrekturen berichten](../../../../../eng-us/help/press/covering-security-fixes.md).
+- Hinweise für die Presse dazu, wie Korrekturen angekündigt werden: [Über Sicherheitskorrekturen berichten](../../../presse/ueber-sicherheitskorrekturen-berichten.md).
 
 Machen Sie eine benannte Rolle für das Verfolgen verantwortlich. Ohne verantwortliche Person bemerkt niemand ein Release.
 
@@ -96,8 +96,9 @@ beschreibt, ohne personenbezogene Daten.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

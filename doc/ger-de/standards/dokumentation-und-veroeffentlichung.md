@@ -80,7 +80,7 @@ Topic-, Map-, Bookmap- oder DITAVAL-Datei wird geschrieben oder gelesen.
   "E-books": "Not yet"). Der Exportbefehl akzeptiert nur `--format=epub` oder `--format=pdf`
   (`kernel/private/classes/commands/exphelpcontent.php`).
 - Der Plan der Hilfe nennt außerdem IEC/IEEE 82079-1:2019 und ISO/IEC/IEEE 26514 als Regeln für die Inhalte. Das sind
-  Schreibregeln; nichts prüft sie automatisch. **Nicht überprüft.**
+  Schreibregeln; nichts prüft sie automatisch. **Nicht geprüft.**
 
 ## CommonMark und GitHub Flavored Markdown
 
@@ -126,7 +126,7 @@ nicht gegen die Testsuiten der CommonMark- oder GFM-Spezifikation getestet.
 ### Bekannte Lücken
 
 - Kein Lauf der offiziellen Spezifikationsbeispiele von CommonMark oder GFM; die Konformität bei den Randfällen der
-  Auswertung von Hervorhebungen, Listen und Links ist **nicht überprüft**.
+  Auswertung von Hervorhebungen, Listen und Links ist **nicht geprüft**.
 - HTML-Blöcke und das meiste Inline-HTML werden als Text angezeigt statt durchgereicht. Das weicht absichtlich von
   CommonMark ab (Sicherheit); die eigene GFM-Erweiterung für unzulässiges rohes HTML filtert nur eine feste Liste von
   Tags.
@@ -199,7 +199,7 @@ Quellcodes. "Oder später" erlaubt einem Empfänger, auch den Bedingungen jeder 
   "version 2.0" ohne "or later", und `LICENSE` selbst wiederholt die Erlaubnis "or later", die `composer.json`
   erteilt, nicht.
 - In `lib/` gebündelter Code Dritter behält seine eigenen Hinweise; ein vollständiges Lizenzinventar des gebündelten
-  Codes wurde für diese Seite nicht erstellt. **Nicht überprüft.**
+  Codes wurde für diese Seite nicht erstellt. **Nicht geprüft.**
 
 ## EPUB 3.3 und EPUB Accessibility 1.1
 
@@ -246,7 +246,7 @@ Buch wurde validiert.
 ### Bekannte Lücken
 
 - epubcheck und Ace by DAISY werden nicht mitgeliefert und laufen nicht in CI; der Codekommentar sagt, dass die
-  Prüfung der Site überlassen bleibt. Die Konformität eines erzeugten Buchs ist **nicht überprüft**.
+  Prüfung der Site überlassen bleibt. Die Konformität eines erzeugten Buchs ist **nicht geprüft**.
 - Das Paketelement deklariert `version="3.0"`, den Wert, den EPUB 3.3 weiterhin verwendet; der Export wurde nicht gegen
   die neueren Anforderungen von EPUB 3.3 geprüft.
 - Die Angabe `dcterms:conformsTo` wird für jedes Buch geschrieben; sie wird nicht aus einer Prüfung dieses Buchs
@@ -332,7 +332,7 @@ Datei wurde mit einem ODF-Validator geprüft.
 
 - Ausgabe in ODF 1.0; Funktionen von ODF 1.2 und 1.3 (zum Beispiel digitale Signaturen und die RDF-Metadaten von 1.2)
   werden nicht geschrieben.
-- Die Tests der Extension gehören nicht zur CI des Kernel-Repositorys. **Nicht überprüft**, ob sie irgendwo laufen.
+- Die Tests der Extension gehören nicht zur CI des Kernel-Repositorys. **Nicht geprüft**, ob sie irgendwo laufen.
 
 ## Doxygen-API-Dokumentation
 

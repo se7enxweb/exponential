@@ -39,10 +39,10 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Eine CHANGELOG.md führen](../../../../../eng-us/help/designers/distribution/keeping-a-changelog-file.md),
-[Release Notes schreiben](../../../../../eng-us/help/designers/distribution/writing-release-notes.md),
-[Checkliste: Die Theme-Erweiterung ist bereit](../../../../../eng-us/help/designers/extensions/checklist-theme-extension-ready.md) und
-[Checkliste: Vor dem Veröffentlichen](../../../../../eng-us/help/designers/distribution/distribution-checklist.md).
+Quellen: [Eine CHANGELOG.md führen](../../../designer/veroeffentlichung/eine-changelog-datei-fuehren.md),
+[Release Notes schreiben](../../../designer/veroeffentlichung/release-notes-schreiben.md),
+[Checkliste: Die Theme-Erweiterung ist bereit](../../../designer/erweiterungen/checkliste-theme-erweiterung-bereit.md) und
+[Checkliste: Vor dem Veröffentlichen](../../../designer/veroeffentlichung/checkliste-vor-der-veroeffentlichung.md).
 
 1. **Changelog** (4 Minuten). Die Datei reist mit dem Theme in jede Installation; ein GitHub-Release tut das nicht.
    Führen Sie beides. Sammeln mit `git log --oneline "$(git describe --tags --abbrev=0)"..HEAD`, mit Präfixen neu
@@ -68,7 +68,7 @@ neue Templates, die Caches des Packers und der Template-Blöcke für geänderte 
 Einstellungen.
 
 **Wo veröffentliche ich?** Das ist eine Entscheidung für ein echtes Theme: siehe
-[Wählen, wo veröffentlicht wird](../../../../../eng-us/help/designers/distribution/choosing-where-to-publish.md).
+[Wählen, wo veröffentlicht wird](../../../designer/veroeffentlichung/waehlen-wo-veroeffentlicht-wird.md).
 
 ### Stolperfallen
 
@@ -98,9 +98,9 @@ In `extension/training_theme`, dem lokalen Repository aus den Lektionen 7.4 und 
    Exponential-Version Ihrer Übungsumgebung, von der Seite „Über“).
 5. Lesen Sie Ihre Notes als Benutzerin oder Benutzer, die oder der zwei Releases übersprungen hat. Entfernen Sie alles
    Private.
-6. Öffnen Sie [Checkliste: Die Theme-Erweiterung ist bereit](../../../../../eng-us/help/designers/extensions/checklist-theme-extension-ready.md)
+6. Öffnen Sie [Checkliste: Die Theme-Erweiterung ist bereit](../../../designer/erweiterungen/checkliste-theme-erweiterung-bereit.md)
    und gehen Sie sie für `training_theme` durch. Markieren Sie jeden Punkt als erledigt, offen oder nicht zutreffend.
-7. Machen Sie dasselbe mit [Checkliste: Vor dem Veröffentlichen](../../../../../eng-us/help/designers/distribution/distribution-checklist.md),
+7. Machen Sie dasselbe mit [Checkliste: Vor dem Veröffentlichen](../../../designer/veroeffentlichung/checkliste-vor-der-veroeffentlichung.md),
    bis zur Gruppe „Version und Tag“.
 8. Schreiben Sie die drei wichtigsten offenen Punkte auf eine Karte. Teilen Sie sie mit der Gruppe.
 
@@ -126,22 +126,22 @@ In `extension/training_theme`, dem lokalen Repository aus den Lektionen 7.4 und 
 <summary>Antworten</summary>
 
 1. Die Datei reist mit dem Theme in jede Installation; ein Release auf einer Hosting-Plattform tut das nicht
-   ([Eine CHANGELOG.md führen](../../../../../eng-us/help/designers/distribution/keeping-a-changelog-file.md)).
+   ([Eine CHANGELOG.md führen](../../../designer/veroeffentlichung/eine-changelog-datei-fuehren.md)).
 2. `git log --oneline "$(git describe --tags --abbrev=0)"..HEAD`.
 3. **C.**
 4. Nur, um einen sachlichen Fehler zu korrigieren, und das dann auch sagen.
 5. Zwei beliebige: interne Pfade, Hostnamen, Kundennamen, Zugangsdaten
-   ([Release Notes schreiben](../../../../../eng-us/help/designers/distribution/writing-release-notes.md)).
+   ([Release Notes schreiben](../../../designer/veroeffentlichung/release-notes-schreiben.md)).
 
 </details>
 
 ## Weiterführende Literatur
 
-- [Changelog-Einträge](../../../../../eng-us/help/designers/distribution/changelog-prefixes.md): die Präfixe.
-- [INSTALL.md und CHANGELOG.md](../../../../../eng-us/help/designers/extensions/install-and-changelog-files.md).
-- [Ein Theme verteilen: hier beginnen](../../../../../eng-us/help/designers/distribution/distribution-start-here.md): der ganze Weg zur
+- [Changelog-Einträge](../../../designer/veroeffentlichung/changelog-praefixe.md): die Präfixe.
+- [INSTALL.md und CHANGELOG.md](../../../designer/erweiterungen/install-und-changelog-dateien.md).
+- [Ein Theme verteilen: hier beginnen](../../../designer/veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md): der ganze Weg zur
   Veröffentlichung.
-- [Der Lebenszyklus eines Themes](../../../../../eng-us/help/designers/lifecycle/the-life-cycle-of-a-theme.md): nach dem ersten Release.
+- [Der Lebenszyklus eines Themes](../../../designer/lebenszyklus/der-lebenszyklus-eines-themes.md): nach dem ersten Release.
 
 ## Verwandte Seiten
 
@@ -151,9 +151,9 @@ In `extension/training_theme`, dem lokalen Repository aus den Lektionen 7.4 und 
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

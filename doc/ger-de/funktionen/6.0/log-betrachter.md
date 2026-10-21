@@ -33,7 +33,7 @@ Verwandt: [Einen Fehler über seine Referenz finden](../../anleitungen/fehler-an
 - Zeilen werden **geparst** (`[ time ] [client] [siteaccess] [request] message`), **nach Stufe eingefärbt**, nach
   Anfrage gruppiert und **verknüpft**: die Zeilen derselben Anfrage, die Fehlerreferenz, die Audit-Einträge derselben
   Minute sowie Knoten, Objekte, Benutzer, Klassen, Anfragen und Templates in der Administration.
-- **Datenschutz zuerst**: E-Mail-Adressen, IP-Adressen, Passwörter, Tokens, Schlüssel, Session-IDs und Cookies sind
+- **Datenschutz zuerst**: E-Mail-Adressen, IP-Adressen, Passwörter, Tokens, Schlüssel, Sitzungs-IDs und Cookies sind
   standardmäßig maskiert; die Werte geheimer Einstellungen werden nie angezeigt.
 - **Standardmäßig nur lesend.** Das Herunterladen (eines Bereichs, maskiert und komprimiert) ist eingeschaltet;
   **Jetzt rotieren**, **Leeren** und **Archivierte Rotation entfernen** sind ausgeschaltet, bis
@@ -129,7 +129,7 @@ mit seinem Standardwert wird weggelassen, sodass eine einfache Ansicht nur `/set
 | `(search)` | Text | | der Suchtext |
 | `(regex)` | `1` / `0` | `0` | der Suchtext ist ein regulärer Ausdruck |
 | `(case)` | `1` / `0` | `0` | Groß-/Kleinschreibung beachten |
-| `(from)`, `(to)` | eine Zeit, z. B. `2026-10-17T01~3A00` | | der Zeitraum |
+| `(from)`, `(to)` | eine Zeit, z. B. `2026-10-17T01:00` | | der Zeitraum |
 | `(siteaccess)` | ein Name | | der Siteaccess |
 | `(uri)` | Text | | Teil der Anfrageadresse |
 | `(ip)` | der Anfang einer Adresse | | der Client |
@@ -143,10 +143,13 @@ mit seinem Standardwert wird weggelassen, sodass eine einfache Ansicht nur `/set
 | `(unmask)` | `1` / `0` | `0` | unmaskiert angezeigt (nur mit `setup/unmasklogs`; nie Teil eines kopierten Permalinks) |
 | `(done)`, `(ok)` | eine Aktion, `1` / `0` | | das Ergebnis von Rotieren, Leeren oder Entfernen (von der Aktion gesetzt, nicht kopiert) |
 
-**Die Kodierung eines Werts.** Buchstaben, Ziffern und `_ . , -` werden unverändert geschrieben; jedes andere Byte
-wird zu `~` und seinen zwei Hexadezimalziffern, sodass ein Wert nie ein `/` oder eine `(` enthält, die ihn beenden
-würde: Ein Leerzeichen ist `~20`, ein Schrägstrich `~2F`, ein Doppelpunkt `~3A`, ein `~` selbst `~7E` und ein Zeichen
-außerhalb von ASCII ein `~XX` pro Byte seines UTF-8 (`ü` ist `~C3~BC`). Beispiele:
+**Die Kodierung eines Werts.** Ein Wert wird geschrieben wie jeder View-Parameter
+([wie ein Wert in der Adresse reist](../../anleitungen/urls-und-aliase.md#9-view-parameter-wie-ein-wert-in-der-adresse-reist),
+`expViewParameters::encode()`): `/`, `(`, `)`, `~`, `%`, `+`, `\`, `?`, `#` und Steuerzeichen werden zu `~` und zwei
+Hexadezimalziffern, sodass ein Wert nie ein `/` oder eine `(` enthält, die ihn beenden würde (ein Schrägstrich ist
+`~2F`, ein `~` selbst `~7E`); der Rest bleibt lesbar, ein Leerzeichen `%20`, ein Doppelpunkt `:`, `ü` `%C3%BC`. Links
+von früher, in denen auch jedes andere Zeichen `~XX` war (ein Leerzeichen `~20`, ein Doppelpunkt `~3A`, `ü`
+`~C3~BC`), werden genauso gelesen. Beispiele:
 
 ```
 /setup/logs/view/error/(level)/error/(search)/timeout/(follow)/0
@@ -280,7 +283,7 @@ Der größte Teil der CPU einer wachsenden Abfrage entfällt auf das Maskieren u
 0,25 ms pro Eintrag); die Datei-E/A ist das, was hinzukam, plus die kleine Cache-Datei.
 
 Die gesamte Anfrage über HTTPS, als Administrator, jeweils 30 Abfragen (`server_ms` ist
-die Zeit, die PHP für die Anfrage aufgewendet hat, einschließlich Kernel-Start, Session und Richtlinienprüfung):
+die Zeit, die PHP für die Anfrage aufgewendet hat, einschließlich Kernel-Start, Sitzung und Richtlinienprüfung):
 
 | | Serverzeit, Mittel (p95) | Roundtrip, Mittel (p95) |
 |---|---|---|
@@ -393,7 +396,7 @@ maskiert der Betrachter standardmäßig (`[RedactionSettings]`):
 - **IP-Adressen** (`MaskIPs`): `203.0.113.7` wird zu `203.0.x.x`, eine IPv6-Adresse behält ihre ersten beiden Gruppen.
   Die Client-Spalte wird genauso maskiert. Versionsnummern wie `6.0.15.1` bleiben unberührt.
 - **Geheimnisse** (`MaskSecrets`): Passwörter in Adressen (`mysql://user:***@host`), die Werte von `password=`,
-  `token=`, `api_key=`, `secret=` und ähnlichen Paaren, `Bearer`/`Basic`-Zugangsdaten, JSON Web Tokens, Session-IDs und
+  `token=`, `api_key=`, `secret=` und ähnlichen Paaren, `Bearer`/`Basic`-Zugangsdaten, JSON Web Tokens, Sitzungs-IDs und
   Cookies, lange Folgen aus Buchstaben und Ziffern (Schlüssel, Hashes).
 - **Geheime Einstellungen, immer**: Die Werte von `SecretSettings[]` (standardmäßig das Datenbankpasswort und das
   Passwort des Mail-Transports) und jeder Variable aus `SecretGroups[]`, deren Name besagt, dass sie ein Geheimnis
@@ -419,7 +422,7 @@ angeboten: Es gehört seinem Programm. Nach einer Aktion öffnet die Seite den P
 
 Jede Aktion ist ein POST an `setup/logsaction` mit dem Formular-Token; Rotieren, Leeren und Entfernen zeigen zuerst eine
 Bestätigungsseite, die die Datei, ihre Größe und das, was geschehen wird, nennt. Das Öffnen einer Datei hält
-`system.log.read` einmal pro Datei und Session alle `[ViewerAuditSettings] ReadInterval` Sekunden fest, sodass das
+`system.log.read` einmal pro Datei und Sitzung alle `[ViewerAuditSettings] ReadInterval` Sekunden fest, sodass das
 Verfolgen einer Datei nicht pro Abfrage einen Eintrag schreibt. Die Audit-Namen stehen im Katalog des
 [Prüfprotokolls](../../bc/6.0/audit.md) (Kanal `system`).
 
@@ -571,11 +574,11 @@ außerhalb, sodass der Betrachter nicht zum Abtasten der Festplatte verwendet we
 
 ## Ratenbegrenzung
 
-Jede Anfrage an den Feed (Abfragen, Suchen, verwandte Zeilen) zählt gegen die Session: höchstens
+Jede Anfrage an den Feed (Abfragen, Suchen, verwandte Zeilen) zählt gegen die Sitzung: höchstens
 `[RateLimitSettings] Requests` in `Window` Sekunden. Eine Anfrage über der Grenze wird mit `429` und `Retry-After`
-beantwortet, und die Seite wartet so lange. Der Zähler ist eine kleine Datei pro Session in
-`<cache dir>/logviewer/rate`, benannt nach einem Hash der Session-ID; nichts wird in die Session geschrieben, sodass
-eine Abfrage keinen Session-Schreibvorgang kostet.
+beantwortet, und die Seite wartet so lange. Der Zähler ist eine kleine Datei pro Sitzung in
+`<cache dir>/logviewer/rate`, benannt nach einem Hash der Sitzungs-ID; nichts wird in die Sitzung geschrieben, sodass
+eine Abfrage keinen Sitzungsschreibvorgang kostet.
 
 ## Tastatur und Barrierefreiheit
 
@@ -660,8 +663,8 @@ Administration.
 | `[DigestSettings] LogLevels[<key>]`, `GroupBy[<key>]` | `LogLevels[404]=error,warning,notice`; `GroupBy[404]=reason`, `GroupBy[security]=category-rule` | pro Log: die aufgelisteten Stufen und die Gruppierung (`message`, `category-rule`, `reason`, `reason-kind`, `uri`) |
 | `MaxDownloadBytes` | `52428800` | der größte Bereich eines Downloads |
 | `MaxBundleBytes` | `268435456` | die meisten Bytes an Logs, die ein Archiv von "Alle Logs herunterladen" enthält |
-| `[RateLimitSettings] Requests`, `Window` | `120`, `60` | Feed-Anfragen pro Session und Fenster (Sekunden) |
-| `[ViewerAuditSettings] ReadInterval` | `600` | Sekunden zwischen zwei `system.log.read` derselben Datei und Session |
+| `[RateLimitSettings] Requests`, `Window` | `120`, `60` | Feed-Anfragen pro Sitzung und Fenster (Sekunden) |
+| `[ViewerAuditSettings] ReadInterval` | `600` | Sekunden zwischen zwei `system.log.read` derselben Datei und Sitzung |
 
 Numerische Einstellungen werden innerhalb sicherer Grenzen gehalten, gleichgültig, was in der Datei steht (zum Beispiel
 `PollInterval` mindestens 250 ms, `MaxBytesPerPoll` höchstens 4 MB).
@@ -691,8 +694,9 @@ Numerische Einstellungen werden innerhalb sicherer Grenzen gehalten, gleichgült
 Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) schreibt jeder Prozess eine Zeile `demo/mode on pid=<pid> sapi=<sapi> ...` in `security.log`, im Format des Anfrage-Klassifizierers, sodass **Setup > Logdateien** sie unter `demo/mode` gruppiert. Auf einer echten Site bedeutet eine solche Zeile, dass die Variable sie erreicht hat. [Demo-Modus](../../bc/6.0/demomodus.md).
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

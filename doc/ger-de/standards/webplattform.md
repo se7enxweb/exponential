@@ -23,13 +23,13 @@ Velocity, den Webserver, der mit Exponential ausgeliefert wird.
 | Nachrichtensyntax von HTTP/1.1 | RFC 9112 (2022) | **Erfüllt** (Velocity) | Velocity lehnt mehrdeutige Rahmung ab (`Content-Length` mit `Transfer-Encoding`) |
 | HTTP-Caching | RFC 9111 (2022) | **Teilweise erfüllt** | rollenbewusster Seiten-Cache, `Cache-Control: private` für persönliche Antworten, `Last-Modified`/304 für Feeds; veraltete Standards für `Pragma`/`Expires` |
 | HTTP/2 | RFC 9113 (2022), HPACK RFC 7541 | **Erfüllt** (Velocity) | Aushandlung per ALPN, Prüfung von Frames und HPACK; siehe die Velocity-Spezifikation |
-| TLS | TLS 1.2 (RFC 5246) / 1.3 (RFC 8446) | **Teilweise erfüllt** | Velocity verwaltet Zertifikate (ACME, eigene Dateien); Mindestversion für den PHP-Server **nicht verifiziert** |
+| TLS | TLS 1.2 (RFC 5246) / 1.3 (RFC 8446) | **Teilweise erfüllt** | Velocity verwaltet Zertifikate (ACME, eigene Dateien); Mindestversion für den PHP-Server **nicht geprüft** |
 | HTML | WHATWG HTML Living Standard | **Teilweise erfüllt** | `<!DOCTYPE html>` in jedem Kern-Pagelayout; keine HTML-Validierung in der CI |
 | CSS | W3C CSS Snapshot 2024 (Custom Properties, Media Queries Level 5) | **Erfüllt** (admin4) | Tokens als Custom Properties, `prefers-color-scheme`, `forced-colors`, `prefers-reduced-motion`; kein Inline-CSS |
 | ECMAScript | ECMA-262 (im Stil von ES5.1, läuft auf aktuellen Engines) | **Erfüllt** | Admin-Skripte in einfachem JavaScript im ES5-Stil mit jQuery 4.0.0; Syntax in der CI von Node.js geprüft |
 | URI / URL | RFC 3986, WHATWG URL Standard | **Teilweise erfüllt** | URL-Aliase in sichere Zeichen umgewandelt; IRI-Modus optional |
 | Medientypen | RFC 6838, IANA-Registry | **Teilweise erfüllt** | `settings/mime.ini`, Content Sniffing für Bilder, `nosniff`; Atom als `application/xml` ausgeliefert |
-| HTTP-Cookies | RFC 6265 (+ `SameSite` aus dem Entwurf RFC 6265bis) | **Erfüllt** | `HttpOnly`, `Secure`, `SameSite=Lax` für das Session-Cookie |
+| HTTP-Cookies | RFC 6265 (+ `SameSite` aus dem Entwurf RFC 6265bis) | **Erfüllt** | `HttpOnly`, `Secure`, `SameSite=Lax` für das Sitzungs-Cookie |
 | Robots Exclusion | RFC 9309 (2022) | **Erfüllt** | mitgelieferte `robots.txt` im Web-Wurzelverzeichnis |
 | Sitemaps | Protokoll sitemaps.org 0.9 | **Erfüllt** (mit `bcgooglesitemaps`) | `xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"` |
 | RSS / Atom | RSS 2.0, RSS 1.0 (RDF), Atom 1.0 (RFC 4287) | **Teilweise erfüllt** | `kernel/classes/ezrssexport.php` schreibt alle drei; Medientyp für Atom nicht `application/atom+xml` |
@@ -74,7 +74,7 @@ Antworten speichern und wiederverwenden (`Cache-Control`, Validatoren, `Vary`).
 - Der eigene rollenbewusste Seiten-Cache des Kernels (`settings/httpcache.ini`, `kernel/private/classes/httpcache/`)
   wird von Apache, PHP-FPM und Velocity gemeinsam genutzt. Eine Antwort, die von einem Benutzer abhängt, wird mit
   `Cache-Control: private` markiert, sodass kein gemeinsam genutzter Cache sie behält; dieselbe Regel gilt, wenn das
-  Session-Cookie mit jeder Antwort gesendet wird (`[Session] CookieAlwaysAddToHttpResponse`)
+  Sitzungs-Cookie mit jeder Antwort gesendet wird (`[Session] CookieAlwaysAddToHttpResponse`)
   ([HTTP-Cache](../bc/6.0/httpcache.md)).
 - Purge-Tags für einen vorgeschalteten Cache (Varnish `xkey`, `Surrogate-Key`, `Cache-Tag`) mit `[HttpCacheSettings]
   TagHeader` (standardmäßig aus).
@@ -114,12 +114,12 @@ Repositorys.
   springt ein, bis ein echtes verwendbar ist ([Velocity: HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md)).
 - HSTS: `settings/velocity.ini [HTTPSSettings] HSTSMaxAge=300` (mit `HSTSIncludeSubDomains`, `HSTSPreload`) und
   `site.ini [HTTPHeaderSettings] SecurityHeaders[Strict-Transport-Security]` (standardmäßig leer) für jede Engine.
-- Das Session-Cookie ist `Secure`, sobald die Anfrage über HTTPS kam (`[Session] CookieSecure=auto`).
+- Das Sitzungs-Cookie ist `Secure`, sobald die Anfrage über HTTPS kam (`[Session] CookieSecure=auto`).
 - Der statische Dateiserver `uwebserver` von Velocity akzeptiert TLS 1.2 oder 1.3 (`--tls-min-version`, Standard
   `1.2`), nur mit AEAD-Chiffren mit Forward Secrecy ([uwebserver](../funktionen/6.0/velocity-uwebserver.md)).
 
 **Status.** **Teilweise erfüllt.** Die TLS-Mindestversion und die Chiffrenliste des PHP-Anwendungsservers von Velocity
-sind in diesem Repository nicht dokumentiert: **Nicht verifiziert**. Mit Apache oder nginx ist die TLS-Konfiguration
+sind in diesem Repository nicht dokumentiert: **Nicht geprüft**. Mit Apache oder nginx ist die TLS-Konfiguration
 Sache des Betreibers.
 
 ## HTML (WHATWG Living Standard)
@@ -157,7 +157,7 @@ insbesondere Custom Properties for Cascading Variables, Media Queries Level 5 (`
   Farben und Radien in Modul-Stylesheets schlagen fehl) und verlangt durch eine durchgesetzte CSP `style-src 'self'`
   ([Styling von admin4](../bc/6.0/admin4-gestaltung.md)).
 
-**Status.** **Erfüllt** für admin4 und admin4l. Andere Designs: **Nicht verifiziert**.
+**Status.** **Erfüllt** für admin4 und admin4l. Andere Designs: **Nicht geprüft**.
 
 ## ECMAScript
 
@@ -195,7 +195,7 @@ einfache Pfadsegmente umwandelt; `urlalias_iri` behält Unicode-Buchstaben (IRI)
 ([Sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md)).
 
 **Status.** **Teilweise erfüllt.** Die Regeln für Aliase sind in [URLs und Aliase](../anleitungen/urls-und-aliase.md)
-dokumentiert; kein Test prüft erzeugte URLs als solche gegen RFC 3986: darüber hinaus **nicht verifiziert**.
+dokumentiert; kein Test prüft erzeugte URLs als solche gegen RFC 3986: darüber hinaus **nicht geprüft**.
 
 ## Medientypen (RFC 6838)
 
@@ -220,7 +220,7 @@ Abschnitt 7); `settings/mime.ini` hat keine Einträge für `avif`, `json` oder `
 **Was es ist.** RFC 6265 "HTTP State Management Mechanism" (IETF, 2011). Das Attribut `SameSite` stammt aus seiner
 Überarbeitung, dem Entwurf RFC 6265bis, den alle großen Browser umsetzen.
 
-**Wie Exponential es erfüllt.** Das Session-Cookie wird von `lib/ezsession/classes/ezsession.php` aus
+**Wie Exponential es erfüllt.** Das Sitzungs-Cookie wird von `lib/ezsession/classes/ezsession.php` aus
 `settings/site.ini [Session]` gesetzt: `CookieHttponly` (Standard true), `CookieSecure` (Standard `auto`),
 `CookieSameSite` (Standard `Lax`; `None` nur zusammen mit `Secure`), `CookiePath`, `CookieDomain`, `CookieTimeout`.
 Das Cookie `is_logged_in` verwendet dieselben Optionen (`eZSession::siteCookieOptions()`). Die Cookies, die

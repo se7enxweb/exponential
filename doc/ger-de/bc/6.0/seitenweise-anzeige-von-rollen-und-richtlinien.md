@@ -301,9 +301,9 @@ gerendert wurde: Eine gecachte Seite ist kein Beleg dafür, was eine Seite verwe
 
 ## Verwandte Seiten
 
-- [Blättern, Sortieren und Seitengrößen](../../../eng-us/features/6.0/admin-list-paging.md) und [Wo die Seitengrößen stehen](einstellungen-fuer-seitengroessen.md)
-- [Reihenfolge von Rollen und Richtlinien](../../../eng-us/features/6.0/role-policy-order.md) und [Template-Operatoren für Rollen und Richtlinien](../../../eng-us/features/6.0/role-and-policy-template-operators.md)
+- [Blättern, Sortieren und Seitengrößen](../../funktionen/6.0/seitenweise-listen-im-admin.md) und [Wo die Seitengrößen stehen](einstellungen-fuer-seitengroessen.md)
+- [Reihenfolge von Rollen und Richtlinien](../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md) und [Template-Operatoren für Rollen und Richtlinien](../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md)
 - [Der Tab Orte: Blättern und Sortieren](tab-orte-blaettern-und-sortieren.md)
-- [September 2026, erste Hälfte: 15. September](../../../eng-us/history/2026/2026-09a.md#15-september-paging-everywhere)
-- [Januar 2026](../../../eng-us/history/2026/2026-01.md)
+- [September 2026, erste Hälfte: 15. September](../../geschichte/2026/2026-09a.md#15-september-überall-seitenweise-anzeige)
+- [Januar 2026](../../geschichte/2026/2026-01.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

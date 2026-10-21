@@ -85,7 +85,7 @@ englische Quelle.
 Bearbeiten Sie die Datei mit Qt Linguist oder einem beliebigen XML-Editor. `ezlupdate -e extension/expexample ger-DE`
 (gebaut aus `support/ezlupdate-qt4.5`) sammelt die markierten Texte der Erweiterung in die Datei und markiert
 verschwundene als veraltet; siehe
-[Sprachen, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation).
+[Sprachen, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen).
 
 ## 3. Anmelden
 
@@ -122,7 +122,7 @@ php bin/php/ezcache.php --clear-tag=ini --allow-root-user
 
 Öffnen Sie `/expexample/about` auf diesem Siteaccess: Die Überschrift lautet *Über das Beispiel*. Ein Redakteur kann
 die Sprache der Administration auch für sich selbst wählen: siehe
-[UI-Umschalter: Sprachen](../../../eng-us/features/6.0/ui-switch-languages.md).
+[UI-Umschalter: Sprachen](../../funktionen/6.0/ui-umschalter-sprachen.md).
 
 ## 5. Messen und prüfen
 
@@ -133,7 +133,7 @@ php bin/php/ezchecktranslation.php ger-DE --allow-root-user      # the finished 
 
 Eine Locale ohne eigenen Katalog fällt entlang einer Kette zurück (`ger-AT` auf `ger-DE`,
 `esl-AR` auf `esl-ES`), konfiguriert in `i18n.ini [TranslationSettings]`: Ein österreichischer Siteaccess zeigt Ihre
-deutschen Texte ohne eigene Datei. Siehe [Sprachen, Abschnitt 13](../../../eng-us/languages.md#13-translation-fallbacks).
+deutschen Texte ohne eigene Datei. Siehe [Sprachen, Abschnitt 13](../../sprachen.md#13-übersetzungs-fallbacks).
 
 Für diese Seite geprüft (2026-10-18): `xmllint --noout` auf den Katalog; die Signatur von `ezpI18n::tr()` ist die aus
 `kernel/common/ezpi18n.php`; die Suche in Erweiterungen ist die von `eZTSTranslator` über `TranslationExtensions` mit
@@ -158,9 +158,9 @@ dem Verzeichnis `translations`. Die deutsche Seite wurde für diese Seite nicht 
 ## Verwandte Seiten
 
 - [Kochbuch](README.md)
-- [Sprachen in Exponential](../../../eng-us/languages.md), [Übersetzungen und Sprachen](../../../eng-us/features/6.0/translations-and-languages.md)
+- [Sprachen in Exponential](../../sprachen.md), [Übersetzungen und Sprachen](../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Mehrere Websites: Siteaccesses](multisite-siteaccess.md) für einen Siteaccess je Sprache
 - [Template-Operatoren](../template-operatoren/README.md): `i18n` und seine Parameter
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

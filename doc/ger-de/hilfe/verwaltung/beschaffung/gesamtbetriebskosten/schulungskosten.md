@@ -26,14 +26,14 @@ Teilnehmenden und das Schulungs-Lab kosten weiterhin. Die Kurslängen unten sind
 | Gruppe | Kurs | Länge laut Katalog |
 |---|---|---|
 | Neue Redaktion | [Editors 101](../../../trainer/redakteure-101/README.md) | 27 Lektionen, etwa 19,5 Stunden (etwa 3 Tage) |
-| Redaktion, die jede Woche veröffentlicht | [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | 23 Lektionen, etwa 16 Stunden (etwa 3 Tage) |
-| Seitengestaltung | [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) | 23 Lektionen, etwa 17,5 Stunden (etwa 3 Tage) |
+| Redaktion, die jede Woche veröffentlicht | [Editors 201](../../../trainer/redakteure-201/README.md) | 23 Lektionen, etwa 16 Stunden (etwa 3 Tage) |
+| Seitengestaltung | [Exponential Layouts](../../../trainer/layouts/README.md) | 23 Lektionen, etwa 17,5 Stunden (etwa 3 Tage) |
 | Administration der Website | [Administration der Website](../../../trainer/website-administratoren/README.md) | 48 Lektionen, etwa 30 Stunden (etwa 5 Tage) |
-| Systemadministration | [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | 28 Lektionen, etwa 20 Stunden (3 bis 4 Tage) |
-| Newsletter-Versand | [Newsletter](../../../../../eng-us/help/trainers/newsletter/README.md) | 20 Lektionen, etwa 16 Stunden |
+| Systemadministration | [Hosting und Betrieb](../../../trainer/hosting-betrieb/README.md) | 28 Lektionen, etwa 20 Stunden (3 bis 4 Tage) |
+| Newsletter-Versand | [Newsletter](../../../trainer/newsletter/README.md) | 20 Lektionen, etwa 16 Stunden |
 | Entwicklung | [Entwickler](../../../trainer/entwickler/README.md) | 52 Lektionen, etwa 44 Stunden (etwa 7 Tage) |
 | Interne Trainerinnen und Trainer | [Train the Trainer](../../../trainer/train-the-trainer/README.md) | 34 Lektionen, etwa 21 Stunden (3 bis 4 Tage) |
-| Kompakte Programme | [Workshops und Bootcamps](../../../../../eng-us/help/trainers/workshops/README.md) | Programme von einem halben, 1, 3 und 5 Tagen |
+| Kompakte Programme | [Workshops und Bootcamps](../../../trainer/workshops/README.md) | Programme von einem halben, 1, 3 und 5 Tagen |
 
 Die Dauern enthalten Übungen, aber keine Pausen. Jede Kursübersicht führt kürzere Zeitpläne auf, die aus ihren Modulen
 gebildet sind; eine Administration eines Intranets braucht zum Beispiel vielleicht nur einen Teil von Editors 101 vor
@@ -86,8 +86,9 @@ Lab ist in [Das Lab aufbauen](../../../trainer/train-the-trainer/modul-02-die-ue
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

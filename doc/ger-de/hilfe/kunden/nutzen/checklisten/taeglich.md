@@ -46,8 +46,8 @@ IF SOMETHING LOOKS WRONG
 | Elemente, die auf Freigabe warten | **Meine Warteliste** in der Administration | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Geplante Elemente | Das Workflow-Ereignis *Bis Datum warten* läuft mit dem Cronjob | [Workflows](../../../../anleitungen/workflows.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen**, Richtlinie `infocollector/read` | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
-| Registrierungs-E-Mails | Gesendet an `RegistrationEmail`, sonst `AdminEmail`, mit signierten Links zum Genehmigen oder Ablehnen | [Signierte Links in der Registrierungs-E-Mail](../../../../../eng-us/features/6.0/registration-admin-links.md) |
-| Alarm-E-Mails | Die Alarmregeln des Prüfprotokolls schicken standardmäßig E-Mails an die `AdminEmail` der Website | [Das Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Registrierungs-E-Mails | Gesendet an `RegistrationEmail`, sonst `AdminEmail`, mit signierten Links zum Genehmigen oder Ablehnen | [Signierte Links in der Registrierungs-E-Mail](../../../../funktionen/6.0/admin-links-der-registrierung.md) |
+| Alarm-E-Mails | Die Alarmregeln des Prüfprotokolls schicken standardmäßig E-Mails an die `AdminEmail` der Website | [Das Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Shop | Dashboard **Shop** | [Tägliche Shop-Routine](../../handel/taegliche-shop-routine.md) |
 | Fehlerreferenzen | Eine Fehlerseite zeigt eine Referenz wie `ERR-0123456789` | [Einen Fehler anhand seiner Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 
@@ -56,9 +56,9 @@ IF SOMETHING LOOKS WRONG
 | Sie sehen | Erster Schritt |
 |---|---|
 | Eine Seite mit einer Fehlerreferenz | Schicken Sie die Referenz, die Adresse und die Uhrzeit an Ihren Administrator; er findet die Einzelheiten unter **Setup > Logdateien** |
-| „This form has expired“ | Meist eine zu lange offen gelassene Seite; neu laden und erneut senden ([Seite für abgelaufene Formulare](../../../../../eng-us/features/6.0/form-expired-page.md)) |
+| „This form has expired“ | Meist eine zu lange offen gelassene Seite; neu laden und erneut senden ([Seite für abgelaufene Formulare](../../../../funktionen/6.0/seite-abgelaufenes-formular.md)) |
 | Die ganze Website ist nicht erreichbar, oder eine unerwartete Wartungsseite | Rufen Sie den Hoster an ([Website nicht erreichbar](../../../hosting/runbooks/website-nicht-erreichbar.md)) |
-| Eine Seite, die Sie nicht geändert haben, sieht verändert aus | Prüfen Sie ihre Versionen; das Prüfprotokoll zeigt, wer was getan hat ([Das Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
+| Eine Seite, die Sie nicht geändert haben, sieht verändert aus | Prüfen Sie ihre Versionen; das Prüfprotokoll zeigt, wer was getan hat ([Das Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
 
 Weitere erste Schritte stehen unter [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md).
 
@@ -73,3 +73,11 @@ Weitere erste Schritte stehen unter [Wenn etwas schiefgeht](../../../wenn-etwas-
 - [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md)
 - [Checklisten für Betreiber](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

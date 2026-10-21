@@ -18,8 +18,8 @@ Jedes Beispiel auf diesen Seiten wurde auf alpha gerendert, der eigenen Installa
 Fit & Healthy), mit der Ausgabe darunter, genau wie die Template-Engine sie erzeugt hat; die Beispiele wurden außerdem in einen
 Arbeitsordner kompiliert und verglichen. Wo eine Seite Code zeigt, der nicht ausgeführt wurde, sagt sie das und warum.
 
-Für eine sanftere, aufgabenorientierte Einführung beginnen Sie mit dem [Überblick über Templates](../../../eng-us/help/designers/templates/templates-overview.md)
-für Designer und den [Grundlagen der TPL-Syntax](../../../eng-us/help/designers/templates/tpl-syntax-basics.md). Jeder Operator ist in
+Für eine sanftere, aufgabenorientierte Einführung beginnen Sie mit dem [Überblick über Templates](../designer/vorlagen/templates-ueberblick.md)
+für Designer und den [Grundlagen der TPL-Syntax](../designer/vorlagen/tpl-syntax-grundlagen.md). Jeder Operator ist in
 [Template-Operatoren](../template-operatoren/README.md) dokumentiert.
 
 ## Die Sprache
@@ -68,6 +68,14 @@ für Designer und den [Grundlagen der TPL-Syntax](../../../eng-us/help/designers
 ## Verwandte Seiten
 
 - [Template-Operatoren](../template-operatoren/README.md): jeder Operator, Fetch-Aliase, Fetch-Funktionen
-- [Templates für Designer](../../../eng-us/help/designers/templates/templates-overview.md)
-- [Referenz der Funktionen](../../../eng-us/help/designers/templates/function-reference.md)
+- [Templates für Designer](../designer/vorlagen/templates-ueberblick.md)
+- [Referenz der Funktionen](../designer/vorlagen/funktionsreferenz.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

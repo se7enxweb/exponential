@@ -60,7 +60,7 @@ Entwicklungsversion“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](
 |---|---|
 | [Thema: Sicherheit](thema-sicherheit.md) | Der Prozess, die Voreinstellungen, der Leitfaden zur Härtung |
 | [Thema: die Content Security Policy](thema-content-security-policy.md) | Der Schutz der Administration auf Seiten des Browsers |
-| [Thema: der Audit-Trail](thema-audit-trail.md) | Ein manipulationssicherer Nachweis dessen, was geschah |
+| [Thema: das Prüfprotokoll](thema-audit-trail.md) | Ein manipulationssicherer Nachweis dessen, was geschah |
 | [Thema: zweistufige Anmeldung](thema-zweistufige-anmeldung.md) | Ein zweiter Faktor für Redakteure und Administratoren |
 | [Thema: Betriebswerkzeuge für Administratoren](thema-betriebswerkzeuge-fuer-administratoren.md) | Wartungsmodus, Logs, Prüfungen |
 
@@ -114,7 +114,7 @@ Entwicklungsversion“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](
 | Allgemeine Nachrichten | [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md), [Thema: Open Source und Lizenzen](thema-open-source-und-lizenzen.md) |
 | Entwickler | [Thema: Exponential Velocity](thema-exponential-velocity.md), [Thema: aktuelles PHP](thema-aktuelles-php.md) |
 | Content-Teams und Marketing | [Thema: Exponential Layouts, der Seitenbaukasten](thema-exponential-layouts.md), [Thema: Exponential Intelligence](thema-exponential-intelligence.md) |
-| IT und Sicherheit | [Thema: Sicherheit](thema-sicherheit.md), [Thema: der Audit-Trail](thema-audit-trail.md) |
+| IT und Sicherheit | [Thema: Sicherheit](thema-sicherheit.md), [Thema: das Prüfprotokoll](thema-audit-trail.md) |
 | Öffentlicher Sektor und Bildung | [Thema: Barrierefreiheit](thema-barrierefreiheit.md), [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) |
 
 ## Verwandte Seiten
@@ -126,8 +126,8 @@ Entwicklungsversion“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

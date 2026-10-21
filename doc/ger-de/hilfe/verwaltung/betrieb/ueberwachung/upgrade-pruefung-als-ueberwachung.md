@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Administration und Informationssicherheitsbeauftragte, die wissen möchten, wenn sich der
 Code einer öffentlichen Website außerhalb einer Bereitstellung ändert. Die Prüfung der Dateikonsistenz vergleicht die
 Dateien der Installation mit dem Release-Manifest `share/filelist.md5`; nach Zeitplan ausgeführt, ist sie eine einfache
-Integritätsüberwachung. Referenz: [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md) und
+Integritätsüberwachung. Referenz: [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md) und
 [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md).
 
 ## Inhalt
@@ -57,19 +57,20 @@ Die Überwachung ist nur nützlich, wenn „nichts geändert“ der Normalzustan
 - Dateien, die das Manifest nicht aufführt (eine neue Datei, die in einem Verzeichnis abgelegt wurde); kombinieren Sie
   die Prüfung mit der Dateiüberwachung Ihres Servers oder einer Prüfung von `git status`, wenn Sie aus der
   Versionskontrolle bereitstellen ([Konfiguration unter Versionskontrolle](../hosting/konfiguration-unter-versionskontrolle.md)).
-- Änderungen in der Datenbank (Inhalte, dort gespeicherte Einstellungen); diese deckt der Audit-Trail ab.
+- Änderungen in der Datenbank (Inhalte, dort gespeicherte Einstellungen); diese deckt das Prüfprotokoll ab.
 - Hochgeladene Dateien in `var/storage`.
 
 ## Verwandte Seiten
 - [Upgrade-Prüfung vorher und nachher](../aktualisierungen-und-aenderungen/upgrade-pruefung-vorher-und-nachher.md)
 - [Verunstaltung der Website](../vorfaelle/verunstaltung-der-website.md)
-- [Die Konsistenz nach einer Aktualisierung prüfen](../../../../../eng-us/help/government/tasks/operations/check-upgrade-consistency.md)
+- [Die Konsistenz nach einer Aktualisierung prüfen](../../aufgaben/betrieb/die-konsistenz-nach-einem-upgrade-pruefen.md)
 - [Kompromittierte Website (Hosting-Runbook)](../../../hosting/runbooks/kompromittierte-website.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

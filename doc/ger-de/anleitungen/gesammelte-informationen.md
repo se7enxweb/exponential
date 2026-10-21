@@ -10,7 +10,7 @@ unten wurde am 6. Oktober 2026 am Code dieses Repositorys geprüft; die Dateien 
 genannt.
 
 [Anleitungen](README.md) · Siehe auch: [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md) ·
-[Sicherheit und Audit](sicherheit-und-audit.md) · [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
+[Sicherheit und Audit](sicherheit-und-audit.md) · [Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 
@@ -88,3 +88,11 @@ sind die früherer Versionen (`RemoveObjectCollectionButton`, `ObjectIDArray[]`,
 - CSV-Zellen: `kernel/classes/subitems/expsubitemscsvexport.php` (`cell()`, `writeLine()`).
 - Einstellungen: `admininterface.ini [PaginationSettings] ItemsPerPageList_infocollector_overview[]`.
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

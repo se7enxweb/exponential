@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Templates und Design, Teil 1](../../../../anleitungen/templates-und-design.md#1-wie-ein-template-gefunden-wird) und
-[Designs, Siteaccesses und die Fallback-Kette der Designs](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md).
+[Designs, Siteaccesses und die Fallback-Kette der Designs](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md).
 
 1. **Zuerst ein Satz** (2 Minuten). Ein Design ist ein Verzeichnis; ein Siteaccess verwendet eine Kette von Designs;
    die erste in der Kette gefundene Datei gewinnt. Schreiben Sie den Satz an die Tafel und kommen Sie in jeder Lektion
@@ -163,10 +163,10 @@ der Installation, dem Verzeichnis mit der `index.php`. Nichts in dieser Übung �
 
 - [Templates und Design: das Aussehen einer Seite ändern](../../../../anleitungen/templates-und-design.md): der Leitfaden,
   dem dieses Modul folgt.
-- [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md):
+- [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md):
   die Kette, erklärt für Website-Bauer.
-- [Was eine Theme-Erweiterung ist](../../../../../eng-us/help/designers/extensions/what-a-theme-extension-is.md): wo dieser Kurs endet.
-- [Ein Design oder Theme wählen](../../../../../eng-us/help/creators/website-creators/choosing-a-design-or-theme.md): die mitgelieferten
+- [Was eine Theme-Erweiterung ist](../../../designer/erweiterungen/was-eine-theme-erweiterung-ist.md): wo dieser Kurs endet.
+- [Ein Design oder Theme wählen](../../../ersteller/website-ersteller/ein-design-oder-theme-waehlen.md): die mitgelieferten
   Themes.
 
 ## Verwandte Seiten
@@ -177,9 +177,9 @@ der Installation, dem Verzeichnis mit der `index.php`. Nichts in dieser Übung �
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

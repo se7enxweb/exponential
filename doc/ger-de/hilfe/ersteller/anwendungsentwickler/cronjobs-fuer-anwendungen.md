@@ -80,13 +80,13 @@ Crontab; **Setup > Cronjobs** schlägt Zeilen vor ([12. Planen mit der Crontab](
 - Von einem Cronjob-Skript läuft immer nur eine Instanz gleichzeitig. `MaxScriptExecutionTime` (Standard 43200
   Sekunden) erlaubt einer neuen Instanz, eine hängende zu übernehmen; setzen Sie den Wert für lange Jobs pro Teil.
 - Teile lassen sich unter **Setup > Cronjobs** pausieren (`[PauseSettings] Pause=enabled`); ein pausierter Teil wird
-  übersprungen, ganz gleich, wer ihn startet ([Cronjob-Teile pausieren](../../../../eng-us/features/6.0/cronjob-pause.md)).
+  übersprungen, ganz gleich, wer ihn startet ([Cronjob-Teile pausieren](../../../funktionen/6.0/cronjobs-pausieren.md)).
 - Machen Sie Skripte wiederholbar: Auf einen abgestürzten Lauf folgt ein weiterer.
 
 ## Sie im Blick behalten
 
 **Setup > Cronjobs** zeigt jeden Teil, seine letzten Läufe, Ausgaben und Probleme und ob die Crontab ihn plant
-([Cronjob-Konsole](../../../../eng-us/features/6.0/cronjobs-console.md)). Schreiben Sie klare Ausgabezeilen; sie sind das, was ein
+([Cronjob-Konsole](../../../funktionen/6.0/cronjobs-in-der-konsole.md)). Schreiben Sie klare Ausgabezeilen; sie sind das, was ein
 Administrator liest, wenn etwas fehlschlägt.
 
 ## Verwandte Seiten
@@ -98,8 +98,8 @@ Administrator liest, wenn etwas fehlschlägt.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

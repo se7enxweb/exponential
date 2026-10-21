@@ -225,7 +225,7 @@ erzeugte Konfiguration, der es folgt, ist die, die Velocity mit seiner Engine `f
 
 - [Caddy](caddy.md): dasselbe Routing mit einem PHP-FPM-Pool.
 - [Kapitel 8, Abschnitt 8.4: FrankenPHP](../../installation/08-die-website-ausliefern.md#84-frankenphp),
-  [FrankenPHP als Web-Engine von Exponential](../../../eng-us/bc/6.0/frankenphp.md) und
-  [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) (auf Englisch).
+  [FrankenPHP als Web-Engine von Exponential](../../bc/6.0/frankenphp.md) und
+  [Velocity-Engines](../../bc/6.0/velocity-engines.md) (auf Englisch).
 - [Velocity](velocity.md), [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

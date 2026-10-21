@@ -84,7 +84,7 @@ Schalten Sie dann die Pfadkommentare ein, laden Sie neu und sehen Sie sich den S
 
 Jeder Teil des HTML ist jetzt von Kommentaren umschlossen, die seine Template-Datei nennen. Wenn Sie etwas auf einer
 Seite ändern möchten, finden Sie so die Datei, die Sie ändern müssen. Mehr dazu in
-[Template-Pfadkommentare](../../../../eng-us/features/6.0/template-path-comments.md).
+[Template-Pfadkommentare](../../../funktionen/6.0/template-pfad-kommentare.md).
 
 ## Übung 4: die Debug-Ausgabe lesen (10 Minuten)
 
@@ -110,7 +110,7 @@ tail -n 20 var/log/error.log
 ```
 
 Die Administration hat einen Viewer für dieselben Dateien: **Setup > Logs**, erklärt in
-[Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md). Jede Fehlerzeile trägt eine Referenz, nach der Sie suchen
+[Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md). Jede Fehlerzeile trägt eine Referenz, nach der Sie suchen
 können; siehe [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md).
 
 ## Übung 6: ein Skript mit geladenem Kernel ausführen (10 Minuten)
@@ -168,8 +168,8 @@ dieselbe Weise mit `exp:ini rem` aus, wenn Sie fertig sind. Jeder Schreibvorgang
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

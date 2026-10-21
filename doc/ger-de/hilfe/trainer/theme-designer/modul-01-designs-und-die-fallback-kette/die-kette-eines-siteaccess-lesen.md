@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md)
-und [Der Befehl exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md).
+Quellen: [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md)
+und [Der Befehl exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md).
 
 1. **Die Reihenfolge** (6 Minuten). Für ein Template wie `node/view/full.tpl` verwendet Exponential den ersten Treffer
    in:
@@ -67,7 +67,7 @@ und [Der Befehl exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md).
 4. **Reihenfolge der Erweiterungen** (4 Minuten). Zwei Erweiterungen können beide
    `design/simple/templates/pagelayout.tpl` mitbringen. Die zuerst geladene gewinnt. Die Reihenfolge ändern Sie unter
    **Setup > Extensions** oder mit `ActiveAccessExtensions[]`
-   ([Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md)); Modul 7 kommt darauf
+   ([Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md)); Modul 7 kommt darauf
    zurück.
 
 ### Häufige Fragen
@@ -159,12 +159,12 @@ schreibt eine Datei.
 
 ## Weiterführende Literatur
 
-- [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md):
+- [Designs, Siteaccesses und die Fallback-Kette der Designs](../../../ersteller/website-ersteller/designs-und-die-fallback-kette.md):
   die Kette lesen und ändern, mit typischen Fehlern.
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): jede Aktion und
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): jede Aktion und
   jeder Bereich.
-- [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md): welche Erweiterung gewinnt.
-- [Ladereihenfolge für Themes](../../../../../eng-us/help/designers/extensions/loading-order-for-themes.md): dieselbe Frage aus der Sicht
+- [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md): welche Erweiterung gewinnt.
+- [Ladereihenfolge für Themes](../../../designer/erweiterungen/ladereihenfolge-von-themes.md): dieselbe Frage aus der Sicht
   eines Theme-Autors.
 
 ## Verwandte Seiten
@@ -175,9 +175,9 @@ schreibt eine Datei.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

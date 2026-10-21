@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende, die Exponential-Server betreuen. Die Systemkarte
 (`./console exp:expfetch`) zeigt auf einem Bildschirm, was auf einer Maschine läuft und was Aufmerksamkeit braucht. Die
-vollständige Referenz ist [Die Systemkarte](../../../../eng-us/features/6.0/system-card.md).
+vollständige Referenz ist [Die Systemkarte](../../../funktionen/6.0/systemkarte.md).
 
 ## Bei der Anmeldung: die Hinweise lesen
 
@@ -62,11 +62,11 @@ Anbieter hat ein Zeitbudget.
 
 Die Karte gibt nie ein Passwort, einen Schlüssel, ein Token, einen Datenbankbenutzer oder die vollständige
 Datenbankadresse aus, auch nicht die Werte der envvars von Velocity. Sie können sie unverändert an ein Ticket anhängen.
-Siehe [No secrets, ever](../../../../eng-us/features/6.0/system-card.md#no-secrets-ever).
+Siehe [No secrets, ever](../../../funktionen/6.0/systemkarte.md#niemals-geheimnisse).
 
 ## Verwandte Seiten
 
-- [Die Systemkarte](../../../../eng-us/features/6.0/system-card.md)
+- [Die Systemkarte](../../../funktionen/6.0/systemkarte.md)
 - [Überblick über die Überwachung](ueberblick-ueber-die-ueberwachung.md)
 - [Zustandsprüfungen und Verfügbarkeit](zustandspruefungen-und-verfuegbarkeit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -83,7 +83,7 @@ Clustering wird in [Clustering und gemeinsamer Speicher](../betrieb/clustering-u
 Caches (`var/cache`, `var/<site>/cache`) können gemeinsam oder lokal pro Replikat sein; ein lokaler Cache bedeutet, dass
 ein Leeren des Caches jedes Replikat erreichen muss. Pfade für Logs und Caches pro Website (`LogVarDir`, `CacheVarDir`)
 erlauben es, Logs und Caches auf andere Dateisysteme als den Speicher zu legen
-([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)).
+([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)).
 
 ## Sitzungen
 
@@ -92,7 +92,7 @@ Speicher (Dateien) ([Sitzungen](../../../anleitungen/sitzungen.md)). Dateien auf
 Besucher, der auf einem Replikat angemeldet ist, ist auf einem anderen ein Fremder. Wählen Sie eines:
 
 - `Handler=ezpSessionHandlerDB`, das Sitzungen in der Tabelle `ezsession` der gemeinsamen Datenbank hält; oder
-- einen Sitzungs-Handler von PHP, den jedes Replikat teilt (in PHP konfiguriert, außerhalb von Exponential); oder
+- einen Session-Handler von PHP, den jedes Replikat teilt (in PHP konfiguriert, außerhalb von Exponential); oder
 - Sticky Sessions am Ingress, was das Problem verdeckt, bis ein Pod ersetzt wird.
 
 ```ini
@@ -127,7 +127,7 @@ des Besuchers mitteilen dürfen:
   ([13.10 Hinter einem Proxy](../../../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header)).
 - Unter Velocity konfigurieren Sie die vertrauenswürdigen Proxys in der eigenen Liste von Velocity,
   `Q.webserver.proxy.trusted`; Proxys vor Velocity werden **dort** konfiguriert
-  ([Vertrauenswürdige Proxys](../../../../eng-us/bc/6.0/trusted-proxies.md)).
+  ([Vertrauenswürdige Proxys](../../../bc/6.0/vertrauenswuerdige-proxys.md)).
 - Stellen Sie sicher, dass der Anwendungsserver nicht an ihnen vorbei erreichbar ist.
 
 > **Warnung**
@@ -162,3 +162,11 @@ Quellen:
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md), [Clustering und gemeinsamer Speicher](../betrieb/clustering-und-gemeinsamer-speicher.md)
 - [Varnish und Reverse Proxys](../leistung/varnish-und-reverse-proxys.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

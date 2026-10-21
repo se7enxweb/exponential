@@ -30,7 +30,7 @@ den Fachleuten.
 | Was | Lizenz | Quelle |
 |---|---|---|
 | Der Code von Exponential | GNU General Public License, Version 2 oder jede spätere Version | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Die Dokumentation in `doc/` | GNU Free Documentation License, Version 1.3 oder jede spätere Version | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
+| Die Dokumentation in `doc/` | GNU Free Documentation License, Version 1.3 oder jede spätere Version | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
 | Copyright | „7x & Exponential Foundation“ (mit „eZ Systems AS“ für 1999 bis 2014) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | Velocity | MIT-Lizenz (seine eigene `composer.json`) | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
 
@@ -53,7 +53,7 @@ Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweit
 - **Code**: „Mit Ihrem Beitrag stimmen Sie zu, dass Ihre Beiträge unter der GNU General Public License, Version 2.0 oder
   später, lizenziert werden“ ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 - **Dokumentation**: „Eine Änderung an einer Seite unter dem obigen Hinweis wird unter derselben Lizenz angenommen, der
-  GNU Free Documentation License 1.3 oder jeder späteren Version“ ([Zur Dokumentation beitragen](../../../eng-us/README-LICENSE.md#contributing-to-the-documentation)).
+  GNU Free Documentation License 1.3 oder jeder späteren Version“ ([Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumentation-beitragen)).
 - **Text, der von anderswo kopiert wurde** und eine andere Lizenz hat, muss das in seinem Pull Request sagen (dieselbe
   Quelle). Kopieren Sie nie einen Blogbeitrag oder eine Seite einer anderen Website in die Hilfe, ohne ihre Lizenz zu
   prüfen ([Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md)).

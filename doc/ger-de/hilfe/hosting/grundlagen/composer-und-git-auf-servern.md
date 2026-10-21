@@ -108,7 +108,7 @@ php bin/php/ezcache.php --clear-tag=ini
 ```
 
 und sie in `[ExtensionSettings] ActiveExtensions[]` zu aktivieren (in der Administration unter **Setup > Extensions**
-oder in `settings/override/site.ini.append.php`); starten Sie Velocity neu, wenn es die Website ausliefert.
+oder in `settings/override/site.ini.append.php`); starten Sie Velocity neu, wenn er die Website ausliefert.
 
 Der Block `suggest` von `composer.json` listet optionale Erweiterungen auf, die ein Hoster als Zusatzleistungen anbieten
 kann, darunter `ezfind` (Solr-Suche), `sevenx_valkey_cache` (Cache auf Valkey oder Redis), `ezscriptmonitor` und `hcaptcha`.
@@ -142,7 +142,7 @@ composer install
 Die Erweiterung `ezupdate`, die `composer.json` verlangt, ist ein Paketmanager in der Administration (**Setup >
 Updates and packages**) und auf der Kommandozeile. **Aktualisieren und Installieren sind aus, bis sie eingeschaltet
 werden**, in `settings/override/ezupdate.ini.append.php` (`[UpdateSettings] AllowUpdate`, `AllowInstall`), weil
-Composer `vendor/` und jedes Paket, das es verwaltet, neu schreibt ([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+Composer `vendor/` und jedes Paket, das es verwaltet, neu schreibt ([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 
 Für einen Hoster ist das eine Grundsatzentscheidung pro Tarif: aus lassen, wo der Hoster die Updates verwaltet, oder
 einschalten für Kunden, die ihre eigenen verwalten. Siehe [Automatische Updates mit ezupdate](../betrieb/automatische-updates-mit-ezupdate.md).
@@ -164,3 +164,11 @@ einschalten für Kunden, die ihre eigenen verwalten. Siehe [Automatische Updates
 - [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md) und [Änderungen ausrollen](../betrieb/aenderungen-ausrollen.md)
 - [Anleitung zu Erweiterungen](../../../anleitungen/extensions.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

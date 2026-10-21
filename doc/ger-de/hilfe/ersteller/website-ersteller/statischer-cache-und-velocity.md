@@ -34,7 +34,7 @@ der Anfrage des Redakteurs neu, sodass ein Veröffentlichen Sekunden dauerte
 Er hält gerenderte öffentliche Seiten vor und beantwortet wiederholte Anfragen im Serverprozess, bevor ein Worker
 ausgewählt wird. Er verhält sich wie ein kleiner Reverse Proxy: bedingte Anfragen (`304`), `ETag`, `Age`,
 stale-while-revalidate, Negativ-Caching, komprimierte Speicherung und Invalidierung über eine berührte Datei
-([Antwort-Cache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md)). Er greift nur, wenn Velocity die
+([Antwort-Cache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md)). Er greift nur, wenn Velocity die
 Website ausliefert, und nur für anonyme Anfragen.
 
 ## Einschalten
@@ -66,13 +66,13 @@ Eine zweite anonyme Anfrage nach derselben Seite sollte einen Header `Age` zeige
 
 - [Leistung und Caching](leistung-und-caching.md)
 - [Mit Velocity ausliefern](../anwendungsentwickler/mit-velocity-ausliefern.md)
-- [Velocity-Webserver](../../../../eng-us/features/6.0/velocity-web-server.md)
+- [Velocity-Webserver](../../../funktionen/6.0/velocity-webserver.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

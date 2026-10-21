@@ -70,7 +70,7 @@ wird, Texte selbst zu korrigieren, und entscheiden Sie dann, ob ihre eigenen Bea
 2. Legen Sie die Rolle „Freigebende“ mit den obigen Richtlinien an (**Benutzer > Rollen und Richtlinien > Neue Rolle**) und weisen Sie sie
    der Gruppe zu, mit **Mit Einschränkungen zuordnen: Teilbaum**, wenn es Freigebende je Fachbereich gibt.
 3. Öffnen Sie unter **Setup > Workflows** das Freigabe-Ereignis des Freigabe-Workflows und fügen Sie die Gruppe unter **Gruppen, die
-   Content freigeben** hinzu ([Einen Freigabe-Workflow für eine Sektion einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-an-approval-workflow-for-a-section.md)).
+   Content freigeben** hinzu ([Einen Freigabe-Workflow für eine Sektion einrichten](../../aufgaben/personen-und-berechtigungen/einen-freigabe-workflow-fuer-eine-sektion-einrichten.md)).
 4. Stellen Sie sicher, dass der Workflow-Cronjob läuft: **Setup > Workflow-Prozesse** zeigt in seiner Statusleiste, ob `workflow.php`
    eingeplant ist.
 
@@ -83,15 +83,16 @@ wird, Texte selbst zu korrigieren, und entscheiden Sie dann, ob ihre eigenen Bea
   **Setup > Workflow-Prozesse** verschwunden.
 
 ## Verwandte Seiten
-- [Einer freigebenden Person Rechte geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-approver-rights.md)
+- [Einer freigebenden Person Rechte geben](../../aufgaben/personen-und-berechtigungen/einem-freigebenden-rechte-geben.md)
 - [Überblick über Freigabe-Workflows](../redaktionelle-workflows/freigabe-workflows-im-ueberblick.md)
 - [Posteingang der Zusammenarbeit](../redaktionelle-workflows/posteingang-der-zusammenarbeit.md)
 - [Funktionstrennung](funktionstrennung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

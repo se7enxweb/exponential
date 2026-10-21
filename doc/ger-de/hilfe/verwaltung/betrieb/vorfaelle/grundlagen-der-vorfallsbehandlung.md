@@ -4,7 +4,7 @@ audience: government, admin, project-manager, hosting
 category: public-sector
 order: 20
 summary: Der gemeinsame Rahmen für jeden Vorfall auf einer Exponential-Website des öffentlichen Sektors - Rollen, Schweregrad, die ersten fünfzehn Minuten, Beweissicherung, Kommunikation mit der Öffentlichkeit und der Abschluss mit einer Nachbetrachtung - mit den Werkzeugen, die Exponential in jeder Phase bietet.
-keywords: Vorfallsbehandlung, Vorfallmanagement, Schweregrad, Rufbereitschaft, Erstreaktion, Beweissicherung, Kommunikation, öffentliche Mitteilung, Wartungsmodus, Audit-Trail, Nachbetrachtung, Runbook, incident response, incident management, severity, on-call, evidence, maintenance mode, audit trail, post-incident review
+keywords: Vorfallsbehandlung, Vorfallmanagement, Schweregrad, Rufbereitschaft, Erstreaktion, Beweissicherung, Kommunikation, öffentliche Mitteilung, Wartungsmodus, Prüfprotokoll, Nachbetrachtung, Runbook, incident response, incident management, severity, on-call, evidence, maintenance mode, audit trail, post-incident review
 type: help
 ---
 # Grundlagen der Vorfallsbehandlung
@@ -56,7 +56,7 @@ schnell.
    php bin/php/maintenance.php on --message="This service is temporarily unavailable." --allow-admin --allow-ip=<your address> --allow-root-user
    ```
 
-4. **Beginnen Sie einen Zeitablauf**: Uhrzeit, wer, was gesehen wurde, was getan wurde. Der Audit-Trail von Exponential
+4. **Beginnen Sie einen Zeitablauf**: Uhrzeit, wer, was gesehen wurde, was getan wurde. Das Prüfprotokoll von Exponential
    zeichnet Aktionen in der Administration und viele Befehle auf; Ihre Notizen ergänzen, was außerhalb davon geschah.
 5. Öffnen Sie das passende Runbook in diesem Ordner.
 
@@ -79,7 +79,7 @@ führen Sie `./console exp:audit verify --allow-root-user` aus und bewahren Sie 
 
 ## Abschluss
 
-Bringen Sie die Website zurück ([Die Website wieder online bringen](../../../../../eng-us/help/government/tasks/operations/bring-the-site-back-online.md)),
+Bringen Sie die Website zurück ([Die Website wieder online bringen](../../aufgaben/betrieb/die-site-wieder-online-bringen.md)),
 bestätigen Sie das Ergebnis von außen, leeren Sie die Caches vor der Website, informieren Sie die Öffentlichkeit und
 halten Sie innerhalb weniger Tage eine Nachbetrachtung ab
 ([Nachbetrachtung eines Vorfalls](nachbetrachtung-eines-vorfalls.md)).
@@ -92,8 +92,9 @@ halten Sie innerhalb weniger Tage eine Nachbetrachtung ab
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

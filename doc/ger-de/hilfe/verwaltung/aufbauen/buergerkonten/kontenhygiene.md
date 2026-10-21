@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren, die sich um die Konten einer Site für den öffentlichen Sektor kümmern.
 Ungenutzte Konten sind ein Risiko (ein altes Passwort, das anderswo wiederverwendet wird) und personenbezogene Daten
 ohne Zweck. **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) findet sie und bearbeitet viele auf einmal. Quelle:
-[Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md).
+[Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md).
 
 ## Inhalt
 
@@ -73,7 +73,7 @@ Nicht aktivierte Registrierungen stehen auf einer eigenen Seite, **Benutzer > Ni
 ## Wer die Seite benutzen darf
 
 Die Seite braucht die Rechte der Benutzerverwaltung, die in
-[Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) beschrieben sind; Adressen werden nur mit
+[Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md) beschrieben sind; Adressen werden nur mit
 `role/assign` angezeigt. Beschränken Sie das auf eine kleine Gruppe: Die Liste ist ein Verzeichnis aller, die ein
 Konto haben.
 
@@ -85,8 +85,9 @@ Konto haben.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

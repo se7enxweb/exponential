@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Anbietern, die Browser, Proxys oder ein CDN für Kunden-Websites arbeiten lassen.
 Sie beantwortet: welche Header eine Exponential-Website standardmäßig sendet, wie Sie Seiten für anonyme Besucher zwischenspeicherbar
 machen, ohne je eine Seite eines angemeldeten Benutzers offenzulegen, wie lange statische Dateien behalten werden dürfen und was der
-rollenbewusste HTTP-Cache hinzufügt. Die Quellen sind [HTTP-Caching für anonyme Besucher](../../../../eng-us/bc/6.0/http-caching.md) und
-[Der rollenbewusste HTTP-Cache](../../../../eng-us/bc/6.0/httpcache.md).
+rollenbewusste HTTP-Cache hinzufügt. Die Quellen sind [HTTP-Caching für anonyme Besucher](../../../bc/6.0/http-caching.md) und
+[Der rollenbewusste HTTP-Cache](../../../bc/6.0/httpcache.md).
 
 ## Inhalt
 
@@ -83,7 +83,7 @@ Dann `php bin/php/ezcache.php --clear-tag=ini --allow-root-user` (und starten Si
 
 Gemessen auf der Startseite einer Test-Website: 41 Assets, vorher alle bei jedem Aufruf neu geprüft, danach keines. Das macht einen
 ersten Besuch nicht schneller; es lässt jeden späteren Besuch und jede Navigation innerhalb der Website 41 Roundtrips weniger kosten
-([HTTP-Caching](../../../../eng-us/bc/6.0/http-caching.md#what-it-is-worth)). Eine unter demselben Namen ersetzte Datei wird erst nach Ablauf
+([HTTP-Caching](../../../bc/6.0/http-caching.md#was-es-bringt)). Eine unter demselben Namen ersetzte Datei wird erst nach Ablauf
 ihrer Lebensdauer erneut geholt, was für Kunden zählt, die Stylesheets an Ort und Stelle bearbeiten; der ezjscore-Packer hängt die
 Änderungszeit an die Namen gepackter Dateien an, wenn `ezjscore.ini [Packer] AppendLastModifiedTime=enabled`, wie das Beispiel für
 Apache anmerkt.
@@ -99,7 +99,7 @@ Kontext für einen Benutzer. Die nächste Anfrage im selben Kontext wird beantwo
 
 Zum Einschalten: `Enabled=enabled` in `settings/override/httpcache.ini.append.php`, den frühen Ausstieg aus `config.php` einbinden
 (Apache, PHP-FPM, FrankenPHP), Sitzungen in Dateien halten, die jeder Server lesen kann, und Velocity neu starten
-([HTTP-Cache, einschalten](../../../../eng-us/bc/6.0/httpcache.md#switching-it-on)).
+([HTTP-Cache, einschalten](../../../bc/6.0/httpcache.md#einschalten)).
 
 | Einstellung | Standard | Bedeutung |
 |---|---|---|
@@ -154,5 +154,13 @@ Trefferquote und den Gründen für Fehlschläge. Nutzen Sie für die Prüfung al
 - [Cache-Schichten](cache-schichten.md)
 - [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md)
 - [CDN](cdn.md)
-- [Der rollenbewusste HTTP-Cache](../../../../eng-us/bc/6.0/httpcache.md)
+- [Der rollenbewusste HTTP-Cache](../../../bc/6.0/httpcache.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

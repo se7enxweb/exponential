@@ -93,20 +93,20 @@ Im Code des Kernels gefunden mit `grep -rn "getInstance()->notify\|getInstance()
 | `content/notification/create` | filter | ob eine Benachrichtigung erzeugt wird |
 | `module/functionlist` | filter | die Richtlinienfunktionen eines Moduls (Inhaltseinschränkungen von Erweiterungen verwenden es) |
 | `image/alias` | notify | ein Bild-Alias wurde erzeugt |
-| `session/regenerate`, `session/destroy`, `session/gc`, `session/cleanup` | notify | Lebenszyklus der Session |
+| `session/regenerate`, `session/destroy`, `session/gc`, `session/cleanup` | notify | Lebenszyklus der Sitzung |
 | `httpcache/store/headers` | filter | Header, die mit einem Eintrag des HTTP-Caches gespeichert werden |
 
 Die Zugriffsfilter und die Schlüssel des View-Caches sind in
-[Filter für Zugriff und View-Cache](../../../../eng-us/features/6.0/access-and-cache-filters.md) dokumentiert,
+[Filter für Zugriff und View-Cache](../../../funktionen/6.0/zugriffs-und-cache-filter.md) dokumentiert,
 Inhaltseinschränkungen in
-[Inhaltseinschränkungen von Richtlinien durch Erweiterungen](../../../../eng-us/features/6.0/content-limitation-handlers.md).
+[Inhaltseinschränkungen von Richtlinien durch Erweiterungen](../../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md).
 
 ## Ereignisse von Befehlen, Cronjobs und Views
 
 Runnables kündigen `runnable/<kind>/before` (notify, mit `$runnable, $class, $scope`) und `runnable/<kind>/after`
 (Filter des Ergebnisses) an, wobei `<kind>` `command`, `cronjob` oder `view` ist, und `runcronjobs.php` fragt den
 Filter `cronjob/part/run`, bevor ein Teil ausgeführt wird
-([Einen Cronjob-Teil auslassen](../../../../eng-us/features/6.0/cronjob-part-filter.md)). Sie werden in
+([Einen Cronjob-Teil auslassen](../../../funktionen/6.0/filter-fuer-cronjob-teile.md)). Sie werden in
 `site.ini [RunnableSettings] Listeners[]` registriert, das auch erlaubt, eine Runnable-Klasse mit
 `Implementation[<class>]=<subclass>` zu ersetzen.
 
@@ -140,8 +140,8 @@ Benennen Sie Ihre Ereignisse nach Ihrer Erweiterung, und dokumentieren Sie ihre 
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -26,7 +26,7 @@ oder einem Lieferanten ([Erste Schritte](../../../../anleitungen/erste-schritte.
 | Schritt | Ergebnis |
 |---|---|
 | Die wichtigsten Anliegen aus Suchprotokollen, Themen des Bürgertelefons und Statistiken der aktuellen Website ermitteln | eine Liste von etwa 20 Dienstleistungen, die die Einwohnerschaft am meisten braucht |
-| Bestandsaufnahme der aktuellen Website; Seiten zum Behalten, Neuschreiben oder Aufgeben kennzeichnen | eine Bestandsliste ([Sitemap und Inhaltsinventar](../../../../../eng-us/help/creators/website-creators/site-map-and-content-inventory.md)) |
+| Bestandsaufnahme der aktuellen Website; Seiten zum Behalten, Neuschreiben oder Aufgeben kennzeichnen | eine Bestandsliste ([Sitemap und Inhaltsinventar](../../../ersteller/website-ersteller/sitemap-und-inhaltsbestandsaufnahme.md)) |
 | Mit dem Sitzungsdienst vereinbaren, wie Sitzungen veröffentlicht werden | der Sitzungszyklus ([Ratssitzungen und örtliche Dienstleistungen](ratssitzungen-und-oertliche-dienstleistungen.md)) |
 | Je Fachbereich, der bearbeiten wird, eine Redakteurin oder einen Redakteur benennen | eine Kontaktliste |
 | Vereinbaren, wer außerhalb der Dienstzeit eine dringende Warnung veröffentlichen darf | ein Bereitschaftsplan für Warnungen |
@@ -54,9 +54,9 @@ Editor-Siteaccess anmelden.
 | Sektionen und Rollen für die Fachbereiche anlegen, die bearbeiten | [Sektionen](../../../../anleitungen/sektionen.md) |
 | Die Redaktion der Fachbereiche mit je einer echten Aufgabe schulen | [Editors 101](../../../trainer/redakteure-101/README.md) |
 | Die Sitzungen des laufenden Jahres veröffentlichen | [Ratssitzungen und örtliche Dienstleistungen](ratssitzungen-und-oertliche-dienstleistungen.md) |
-| Die alten Adressen der wichtigsten Anliegen umleiten | [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
-| Die Erklärung zur Barrierefreiheit und die Datenschutzerklärung veröffentlichen | [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md) |
-| Start | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Die alten Adressen der wichtigsten Anliegen umleiten | [Umleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
+| Die Erklärung zur Barrierefreiheit und die Datenschutzerklärung veröffentlichen | [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md) |
+| Start | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 Prüfungen beim Start:
 
@@ -78,12 +78,13 @@ Prüfungen beim Start:
 
 - [Kommunen](README.md)
 - [Ratssitzungen und örtliche Dienstleistungen](ratssitzungen-und-oertliche-dienstleistungen.md)
-- [Ihre erste Website Schritt für Schritt](../../../../../eng-us/help/creators/website-creators/your-first-site-step-by-step.md)
+- [Ihre erste Website Schritt für Schritt](../../../ersteller/website-ersteller/ihre-erste-website-schritt-fuer-schritt.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

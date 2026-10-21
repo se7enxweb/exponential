@@ -17,7 +17,7 @@ Versionsverwaltung halten.
 
 ![Setup, Extensions: die Erweiterungen auf der Festplatte, welche aktiv sind, und die Schaltfläche zum Neuerzeugen der Autoload-Arrays](../../../../eng-us/help/images/hosting/extensions.webp)
 
-Die Referenz ist [Eine PHP-Änderung ausrollen](../../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy);
+Die Referenz ist [Eine PHP-Änderung ausrollen](../../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy);
 die Schritt-für-Schritt-Anleitung ist [Exponential ausrollen](../../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern).
 
 ## Inhalt
@@ -63,7 +63,7 @@ ausliefert, `--no-fpm` für eine, die nur Velocity ausliefert.
 | 4 | Caches für Templates, Template-Overrides, Übersetzungen und design_base |
 | 5 | das Engine-Archiv von Velocity, wenn sich eine Datei in `kernel/`, `lib/` oder `autoload/` geändert hat (jede Datei wird zuerst geparst) |
 | 6 | PHP-FPM: warten, bis OPcache die geänderten Dateien neu geprüft hat, oder neu laden, wenn man sich darauf nicht verlassen kann |
-| 7 | Velocity neu starten, wenn es läuft |
+| 7 | Velocity neu starten, wenn er läuft |
 | 8 | Caches für Inhalte, HTTP und Template-Blöcke (und der Packer mit `--packer`) |
 | 9 | der Antwort-Cache von Velocity |
 | 10 | Vorwärmen: jede `[DeploySettings] WarmUpURL[]` wird einmal von einem Hintergrundprozess angefragt |
@@ -125,7 +125,7 @@ geladen werden.
   ([Wartungsmodus](wartungsmodus.md)).
 - **Mehrere Knoten.** Führen Sie das Ausrollen auf jedem Knoten aus ([Mehrere Web-Knoten](mehrere-web-knoten.md)).
 - **Keine Shell.** Für Kunden ohne Shell-Zugang bietet die Erweiterung `git_manager` ein Git-Dashboard und Backups in der
-  Administration ([git_manager](../../../../eng-us/features/6.0/extensions/git_manager.md)); die Schritte für Caches und Neuladen müssen
+  Administration ([git_manager](../../../funktionen/6.0/erweiterungen/git_manager.md)); die Schritte für Caches und Neuladen müssen
   danach trotzdem erfolgen.
 
 ## Einstellungen je Umgebung
@@ -133,14 +133,14 @@ geladen werden.
 Eine Installation existiert oft als Live-Website, als Staging-Kopie und als Kopie eines Entwicklers. `EXP_ENV` nennt die Umgebung
 einer Maschine in `config.env.php` (kopiert aus `config.env.php.example`, außerhalb der Versionsverwaltung gehalten), und jede
 Einstellungsdatei kann daneben eine Variante dafür haben, etwa `settings/override/site.ini.test.append.php`
-([Einstellungen je Umgebung](../../../../eng-us/features/6.0/environment-settings.md)). Mailtransport, Adressen der Website und
+([Einstellungen je Umgebung](../../../funktionen/6.0/umgebungseinstellungen.md)). Mailtransport, Adressen der Website und
 Debug-Einstellungen unterscheiden sich dann je Maschine ohne Handarbeit nach jedem Ausrollen.
 
 ## Konfiguration über das Ausrollen verwaltet
 
 Auf einer Website, deren Konfiguration in der Versionsverwaltung liegt, landen Änderungen aus der Administration im
 Release-Verzeichnis, wo die Versionsverwaltung sie nicht sieht und das nächste Ausrollen sie verwirft. Ein Schalter pro
-Siteaccess verhindert das ([Konfiguration über das Ausrollen verwaltet](../../../../eng-us/features/6.0/managed-by-deployment.md)):
+Siteaccess verhindert das ([Konfiguration über das Ausrollen verwaltet](../../../funktionen/6.0/durch-deployment-verwaltet.md)):
 
 ```ini
 # settings/siteaccess/<admin siteaccess>/site.ini.append.php
@@ -175,3 +175,11 @@ Maßnahme.
 - [Velocity für Hoster](../server/velocity-fuer-hoster.md)
 - [Composer und Git auf Servern](../grundlagen/composer-und-git-auf-servern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

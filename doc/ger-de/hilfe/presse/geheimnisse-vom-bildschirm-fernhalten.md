@@ -41,14 +41,14 @@ Geheimnisse von Exponential auftauchen, damit Sie sie aus dem Bild heraushalten 
 |---|---|---|---|
 | Die Zusammenfassung von `exp:install` | Das Administratorpasswort, zweimal | Herausschneiden oder unkenntlich machen; das Passwort nach der Aufnahme ändern | [Die Installation auf der Konsole](../../installation/07-installation-ueber-die-konsole.md#710-was-sie-am-ende-sehen) |
 | `var/log/initial-admin-password` | Das erzeugte Passwort | Nie vor der Kamera öffnen; nach der ersten Anmeldung löschen | [Das voreingestellte Administratorpasswort](../standard-administratorpasswort.md) |
-| `--password=`, `--db-password=` auf der Kommandozeile | Passwörter im Terminal und in seinem Verlauf | Für die Datenbank `EXP_INSTALL_DB_PASSWORD` verwenden; den Verlauf löschen | [Mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md#choose-a-database) |
+| `--password=`, `--db-password=` auf der Kommandozeile | Passwörter im Terminal und in seinem Verlauf | Für die Datenbank `EXP_INSTALL_DB_PASSWORD` verwenden; den Verlauf löschen | [Mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md#eine-datenbank-wählen) |
 | `settings/override/site.ini.append.php` | Datenbankeinstellungen | Nie vor der Kamera öffnen | [Sicherheit bei Live-Demos](../fuersprecher/sicherheit-bei-live-demos.md#was-nie-auf-dem-bildschirm-sein-darf) |
-| `settings/override/expai.ini.append.php` | Der Anbieterschlüssel von Exponential Intelligence | Nie öffnen; den Schlüssel nach der Aufnahme widerrufen | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md#switch-it-on) |
-| Anmeldung am Control Panel von Velocity, `qbixctl panel:password --generate` | Das Passwort des Panels | Außerhalb der Kamera setzen | [Control Panel von Velocity](../../../eng-us/features/6.0/velocity-control-panel.md#first-sign-in) |
-| Eine Dashboard-Adresse mit `?token=` | Das Dashboard-Token | Die Adressleiste nicht zeigen | [Control Panel von Velocity](../../../eng-us/features/6.0/velocity-control-panel.md) |
+| `settings/override/expai.ini.append.php` | Der Anbieterschlüssel von Exponential Intelligence | Nie öffnen; den Schlüssel nach der Aufnahme widerrufen | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md#einschalten) |
+| Anmeldung am Control Panel von Velocity, `qbixctl panel:password --generate` | Das Passwort des Panels | Außerhalb der Kamera setzen | [Control Panel von Velocity](../../funktionen/6.0/velocity-control-panel.md#erste-anmeldung) |
+| Eine Dashboard-Adresse mit `?token=` | Das Dashboard-Token | Die Adressleiste nicht zeigen | [Control Panel von Velocity](../../funktionen/6.0/velocity-control-panel.md) |
 | Einrichtung der zweistufigen Anmeldung (`/user2fa/setup`) | Der QR-Code und das Geheimnis; Wiederherstellungscodes | Die Einrichtung nie vor der Kamera abschließen | [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md) |
 | **Setup > Systeminformationen** | Pfade, Hostnamen, Angaben zur Datenbank | Nur den oberen Teil zeigen oder unkenntlich machen | [Systeminformationen](../../anleitungen/systeminformationen.md) |
-| **Setup > Logdateien** mit **Unmaskiert zeigen** | E-Mail- und IP-Adressen, Geheimnisse so, wie sie geschrieben wurden | Während der Aufnahme nie einschalten | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
+| **Setup > Logdateien** mit **Unmaskiert zeigen** | E-Mail- und IP-Adressen, Geheimnisse so, wie sie geschrieben wurden | Während der Aufnahme nie einschalten | [Log-Viewer](../../funktionen/6.0/log-betrachter.md) |
 | Fehlerseiten und Fehler im Terminal | Pfade, manchmal Einstellungen | Erst lesen, dann zeigen | [Sicherheit bei Live-Demos](../fuersprecher/sicherheit-bei-live-demos.md#während-der-demo) |
 
 ## Den Rechner vorbereiten
@@ -97,8 +97,8 @@ eine Korrektur erschienen ist.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

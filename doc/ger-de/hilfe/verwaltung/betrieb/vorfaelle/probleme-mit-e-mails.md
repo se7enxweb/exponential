@@ -70,7 +70,7 @@ sendet, braucht seine IPv6-Adresse ebenfalls im SPF-Eintrag.
 
 1. Stoppen Sie es: Setzen Sie `Transport=file` für diese Installation, in der Variantendatei der Umgebung
    (`settings/override/site.ini.test.append.php` mit `EXP_ENV=test`), und leeren Sie den INI-Cache.
-2. Finden Sie heraus, was gesendet wurde: das Log des Mailservers; der Audit-Trail für die Aktionen, die E-Mails
+2. Finden Sie heraus, was gesendet wurde: das Log des Mailservers; das Prüfprotokoll für die Aktionen, die E-Mails
    ausgelöst haben.
 3. Informieren Sie Ihre Datenschutzbeauftragte oder Ihren Datenschutzbeauftragten, wenn personenbezogene Daten die
    falschen Personen erreicht haben ([Meldung von Datenschutzverletzungen](meldung-von-datenschutzverletzungen.md)).
@@ -79,14 +79,15 @@ sendet, braucht seine IPv6-Adresse ebenfalls im SPF-Eintrag.
 
 ## Verwandte Seiten
 - [Wiederherstellung auf einem Testserver](../datensicherung-und-wiederherstellung/wiederherstellung-auf-einem-testserver.md)
-- [Umgebungsspezifische Einstellungen einrichten](../../../../../eng-us/help/government/tasks/operations/set-up-environment-specific-settings.md)
-- [E-Mail-Einstellungen (Funktion)](../../../../../eng-us/features/6.0/mail-preferences.md)
+- [Umgebungsspezifische Einstellungen einrichten](../../aufgaben/betrieb/umgebungsspezifische-einstellungen-einrichten.md)
+- [E-Mail-Einstellungen (Funktion)](../../../../funktionen/6.0/e-mail-einstellungen.md)
 - [E-Mail-Zustellung (Hosting)](../../../hosting/betrieb/mailzustellung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

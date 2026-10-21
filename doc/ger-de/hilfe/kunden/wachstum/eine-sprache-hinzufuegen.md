@@ -40,7 +40,7 @@ Aus [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md):
 
 | Frage | Optionen | Lesen Sie |
 |---|---|---|
-| Wie erreichen Besucher die Sprache? | ein Pfad (`/de`), ein Host (`de.example.com`) oder eine Domain pro Land | [Sprachumschalter und Sprach-URLs](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
+| Wie erreichen Besucher die Sprache? | ein Pfad (`/de`), ein Host (`de.example.com`) oder eine Domain pro Land | [Sprachumschalter und Sprach-URLs](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md) |
 | Was sehen Besucher, wenn eine Seite nicht übersetzt ist? | verborgen, oder in der Hauptsprache angezeigt | [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
 | Alles, oder eine Auswahl? | eine vollständige Website, oder nur die Hauptseiten | [Planung mehrsprachiger Websites](../../unternehmen/mehrsprachig/mehrsprachigkeit-planen.md) |
 | Wer übersetzt und wer gibt frei? | eigenes Personal, Agentur, Freiberufler, unterstützt vom Schreibassistenten | [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) |
@@ -57,7 +57,7 @@ Aus [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md):
 | 4. Übersetzern Konten geben, die auf die Sprache beschränkt sind; bei Bedarf eine Freigabe pro Sprache einrichten | Administrator ([Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md)) |
 | 5. Die Inhalte übersetzen (siehe unten) | Übersetzer |
 | 6. Unter der neuen Adresse testen, abgemeldet | Betreiber und eine Person mit dieser Muttersprache |
-| 7. Die Adresse öffentlich machen; Suchmaschinen informieren (Sitemap pro Sprache) | Partner ([XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)) |
+| 7. Die Adresse öffentlich machen; Suchmaschinen informieren (Sitemap pro Sprache) | Partner ([XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md)) |
 
 Der neue Siteaccess lässt sich testen, bevor er öffentlich ist; bitten Sie Ihren Partner um einen Testhost
 ([Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md)).
@@ -84,5 +84,13 @@ Der neue Siteaccess lässt sich testen, bevor er öffentlich ist; bitten Sie Ihr
 
 - [Übersetzungsroutine](../alltag/uebersetzungsroutine.md)
 - [Sprachen und Locales](../../unternehmen/mehrsprachig/sprachen-und-locales.md)
-- [Mehrsprachige Websites](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Mehrsprachige Websites](../../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

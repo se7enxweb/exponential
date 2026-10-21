@@ -49,7 +49,7 @@ Kapitel nach der Installation einmal der Reihe nach durch; danach dient es als N
 - Einstellungen werden nie in `settings/*.ini` bearbeitet. Overrides gehören nach
   `settings/override/<file>.ini.append.php` (die ganze Installation) oder
   `settings/siteaccess/<name>/<file>.ini.append.php` (ein Siteaccess). `php bin/php/console exp:ini` liest und
-  schreibt sie in jedem Geltungsbereich ([exp:ini](../../eng-us/features/6.0/exp-ini-command.md)); führen Sie nach einer
+  schreibt sie in jedem Geltungsbereich ([exp:ini](../funktionen/6.0/exp-ini-befehl.md)); führen Sie nach einer
   Bearbeitung von Hand `php bin/php/ezcache.php --clear-tag=ini --allow-root-user` aus.
 - `site` und `admin` stehen für die Namen Ihres öffentlichen Siteaccess und Ihres Administrations-Siteaccess (die
   Voreinstellungen von `exp:install`).
@@ -88,11 +88,11 @@ gibt es aus; `-p <password>` setzt eines; `-a <login>` mit `-ap <password>` auto
 mit der Anmeldung eines anderen Administrators, für den Fall, dass Sie nicht `root` des Betriebssystems sind. Ein mit
 `-p` übergebenes Passwort ist in der Prozessliste und in der Shell-Historie sichtbar; verwenden Sie lieber `-g` und
 ändern Sie das Passwort nach der Anmeldung. Siehe
-[Ein Benutzerpasswort zurücksetzen](../../eng-us/features/6.0/reset-user-password.md) und
-[Ihr Passwort ändern](../../eng-us/features/6.0/modern-password-change.md). Alle Wege, es zu ändern, die Voreinstellung je
+[Ein Benutzerpasswort zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md) und
+[Ihr Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md). Alle Wege, es zu ändern, die Voreinstellung je
 Installationsmethode und wie Sie die Anmeldung `admin` stilllegen:
-[Das Administratorpasswort ändern](../../eng-us/help/change-the-admin-password.md),
-[Das voreingestellte Administratorpasswort](../../eng-us/help/default-administrator-password.md).
+[Das Administratorpasswort ändern](../hilfe/administratorpasswort-aendern.md),
+[Das voreingestellte Administratorpasswort](../hilfe/standard-administratorpasswort.md).
 
 ## 10.2 Siteaccesses und Adressen der Site
 
@@ -175,10 +175,10 @@ ClientIpByCustomHTTPHeader=X-Forwarded-For
 
 Die leere Zeile `TrustedProxies[]` ersetzt die ausgelieferte Liste; wiederholen Sie daher die Loopback-Einträge, wenn
 Sie sie weiterhin brauchen. Siehe [Kapitel 8](08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy) und
-[Vertrauenswürdige Proxys](../../eng-us/bc/6.0/trusted-proxies.md).
+[Vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md).
 
 Einstellungen je Site innerhalb einer Extension, um mehrere Sites aus einer Installation zu betreiben, werden unter
-[Einstellungen je Site innerhalb von Extensions](../../eng-us/features/6.0/multi-site-ini-overrides.md) erklärt.
+[Einstellungen je Site innerhalb von Extensions](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) erklärt.
 
 ## 10.3 Cronjobs
 
@@ -270,7 +270,7 @@ Installieren Sie sie in der Crontab des Benutzers der Site (`crontab -e -u <site
 Prüfen Sie, dass die Jobs laufen: Die Dateien wachsen, **Setup > Cronjobs** zeigt die letzte Ausgabe, und der
 Statusbefehl der Benachrichtigungen meldet den letzten Lauf ([10.5](#105-benachrichtigungen-und-newsletter)).
 
-Velocity hat einen eigenen [Scheduler](../../eng-us/features/6.0/velocity-scheduler.md), der Handler-Funktionen zu bestimmten
+Velocity hat einen eigenen [Scheduler](../funktionen/6.0/velocity-zeitplaner.md), der Handler-Funktionen zu bestimmten
 Zeiten oder in Intervallen ausführt, solange der Server läuft. Er ersetzt den System-Cron für diese Teile nicht von
 Haus aus: Er braucht einen Handler, den Sie schreiben, und er holt keine Zeitpunkte nach, die verpasst wurden, während
 der Server nicht lief.
@@ -496,7 +496,7 @@ php bin/php/console exp:velocity deploy --kernel --allow-root-user    # a kernel
 `--packer` leert zusätzlich die gepackten Skripte und Styles; `--no-fpm`, `--no-velocity` und `--no-autoload`
 überspringen Schritte. Der PHP-FPM-Dienst, den der Befehl neu lädt, ist `velocity.ini [DeploySettings] PhpFpmService`
 (`auto` findet ihn). Siehe
-[Velocity-Engines: eine PHP-Änderung bereitstellen](../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+[Velocity-Engines: eine PHP-Änderung bereitstellen](../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy).
 
 ## 10.7 Autoloads der Klassen
 
@@ -666,7 +666,7 @@ und Dateien zueinander passen.
 
 **Testen Sie eine Wiederherstellung** mindestens einmal auf einem anderen Rechner und nach jedem größeren Upgrade:
 Eine Sicherung, die nie wiederhergestellt wurde, ist eine Hoffnung, keine Sicherung. Siehe
-[Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md) und
+[Wartungsmodus](../funktionen/6.0/wartungsmodus.md) und
 [Eine Site betreiben, Teil 6](../anleitungen/betrieb-einer-website.md#6-sichern-und-wiederherstellen).
 
 ### Wartungsfenster
@@ -780,7 +780,7 @@ Standardmäßig ist es rücksichtsvoll: Gegen einen anderen Host als diesen Rech
 URL oder mehr als 16 gleichzeitig `--force`. Die Anleitung [Benchmarking von Exponential](../anleitungen/benchmarking.md)
 lehrt jeden Einsatz mit echten Ausgaben: Median, p90 und p99 lesen, Läufe fair vergleichen, die Checkliste gegen
 Messrauschen, Arbeitsabläufe für eine Code-Änderung, Apache gegen Velocity und ein Deployment sowie die CI-Prüfung;
-[Benchmark: exp:benchmark](../../eng-us/features/6.0/benchmark.md) ist die Referenz.
+[Benchmark: exp:benchmark](../funktionen/6.0/benchmark.md) ist die Referenz.
 
 ### Die Hebel, nach Wirkung geordnet
 
@@ -795,7 +795,7 @@ Messrauschen, Arbeitsabläufe für eine Code-Änderung, Apache gegen Velocity un
    `velocity.ini [PHPSettings] IniOptions[]=apc.shm_size=256M` ist ausgeliefert; ist er zu klein, verdrängen sich die
    beiden gegenseitig.
 5. **Der SQL-Abfrage-Cache** (`querycache.ini [QueryCacheSettings] Mode=request` oder `shared`), gemessen auf Ihrer
-   Site ([SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md)).
+   Site ([SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md)).
 6. **Die Datenbank**: [Kapitel 9](09-datenbanken.md) (SQLite `ANALYZE`, persistente Verbindungen und DRCP bei Oracle).
 
 **Lassen Sie den statischen Cache aus.** `[ContentSettings] StaticCache=disabled` ist der ausgelieferte Wert, und der
@@ -841,7 +841,7 @@ Die ausgelieferte `velocity.ini` setzt beide, zusammen mit `opcache.enable_cli=1
 Server ausführt, hat OPcache womöglich systemweit ausgeschaltet), `memory_consumption=256`,
 `max_accelerated_files=20000` und `interned_strings_buffer=32`. Prüfen Sie mit
 `php bin/php/cache.php opcache status --allow-root-user`; wie Sie es profilieren, lesen Sie unter
-[Velocity und der Opcode-Cache](../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md). Jede PHP-Einstellung, die mit
+[Velocity und der Opcode-Cache](../funktionen/6.0/velocity-opcode-cache-und-profil.md). Jede PHP-Einstellung, die mit
 „der Anfragezeit“ vergleicht, verhält sich in einem Velocity-Worker wie eingefroren; verdächtigen Sie das zuerst, wenn
 etwas unter PHP-FPM funktioniert und unter Velocity nicht.
 
@@ -884,7 +884,7 @@ ExtensionOrdering=enabled` (ausgeliefert) sortiert Extensions zusätzlich nach d
 - eine Extension, die nur Einstellungen zu einer Extension ergänzt, die eine vollständige Datei mitbringt (zum Beispiel
   Verbindungseinstellungen für `ezoracle`), steht **vor** dieser Extension;
 - ändern Sie die Reihenfolge unter **Setup > Extensions**, Karte *Ladereihenfolge*, die nur `ActiveExtensions`
-  speichert und eine Sicherungskopie anlegt ([Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md)).
+  speichert und eine Sicherungskopie anlegt ([Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md)).
 
 Prüfen Sie nach jeder Änderung der Reihenfolge den wirksamen Wert einer Einstellung mit
 `php bin/php/console exp:ini get <file>/<Block>/<Key> --allow-root-user`. Die installierten Versionen, Lizenzen und
@@ -906,7 +906,7 @@ Festplatte und sind inaktiv, bis Sie sie einschalten:
    `* * * * * ... php runcronjobs.php -q -s <admin siteaccess> expqueue` und
    `*/5 * * * * ... php runcronjobs.php -q -s <admin siteaccess> expai`.
 
-Einzelheiten: [Exponential Intelligence](../../eng-us/features/6.0/extensions/expai.md), [die Job-Warteschlange](../../eng-us/features/6.0/extensions/expqueue.md).
+Einzelheiten: [Exponential Intelligence](../funktionen/6.0/erweiterungen/expai.md), [die Job-Warteschlange](../funktionen/6.0/erweiterungen/expqueue.md).
 
 ## 10.14 Mehrsprachige Sites
 
@@ -943,7 +943,7 @@ Site-Paket, dessen Inhalte ein nicht installiertes Locale verwenden, zeigt Seite
 
 Übersetzungen der Oberfläche: `php bin/php/ezchecktranslation.php ger-DE --allow-root-user` meldet, wie vollständig
 eine ist, und nach einer Änderung an einer `.ts`-Datei leeren Sie `--clear-tag=i18n`. Siehe
-[Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md).
+[Übersetzungen und Sprachen](../funktionen/6.0/uebersetzungen-und-sprachen.md).
 
 ## 10.15 Eine Checkliste für die erste Woche
 
@@ -981,7 +981,7 @@ vollständige Liste steht in [Kapitel 12](12-fehlerbehebung.md).
 Administratorpassworts nicht: Das veröffentlichte Passwort soll bestehen bleiben und kann im Demo-Modus weder geändert
 noch zurückgesetzt werden. Prüfen Sie stattdessen, dass das Banner **Demo-Modus** in der Administration erscheint und
 dass `var/log/security.log` Zeilen mit `demo/mode` für den Webserver und für Cron enthält
-([Demo-Modus](../../eng-us/bc/6.0/demo-mode.md), [Probleme mit dem Demo-Modus](../../eng-us/help/hosting/runbooks/demo-mode-problems.md)).
+([Demo-Modus](../bc/6.0/demomodus.md), [Probleme mit dem Demo-Modus](../hilfe/hosting/runbooks/probleme-mit-dem-demomodus.md)).
 
 ## Referenzen
 
@@ -996,25 +996,25 @@ In diesem Repository:
   [Spezifikation der Benachrichtigungen](../spezifikationen/6.0/benachrichtigungen.md),
   [E-Mail-Präferenzen für Administratoren](../anleitungen/mail-einstellungen-administrator.md),
   [Spezifikation von cjw_newsletter](../spezifikationen/6.0/cjw_newsletter.md).
-- [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md),
+- [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md),
   [Befehle, Cronjob-Teile und Views als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md),
-  [Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md), [Velocity-Scheduler](../../eng-us/features/6.0/velocity-scheduler.md).
-- [Cache-Konsole](../../eng-us/bc/6.0/cache-console.md), [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../eng-us/features/6.0/cache-clear-rename-aside.md),
-  [HTTP-Cache](../../eng-us/bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md),
-  [Antwort-Cache von Velocity](../../eng-us/features/6.0/velocity-response-cache.md),
-  [Voreinstellungen des statischen Caches](../../eng-us/bc/6.0/static-cache-defaults.md), [View „Preload Sites“](../../eng-us/features/6.0/preload-sites-view.md).
-- [Velocity-Engines und exp:velocity deploy](../../eng-us/bc/6.0/velocity-engines.md),
-  [Velocity-Server mit persistenten Workern](../../eng-us/features/6.0/velocity-persistent-worker-server.md),
+  [Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md), [Velocity-Scheduler](../funktionen/6.0/velocity-zeitplaner.md).
+- [Cache-Konsole](../bc/6.0/cache-konsole.md), [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../funktionen/6.0/cache-leeren-durch-umbenennen.md),
+  [HTTP-Cache](../bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md),
+  [Antwort-Cache von Velocity](../funktionen/6.0/velocity-antwort-cache.md),
+  [Voreinstellungen des statischen Caches](../bc/6.0/standardwerte-des-statischen-caches.md), [View „Preload Sites“](../funktionen/6.0/ansicht-websites-vorladen.md).
+- [Velocity-Engines und exp:velocity deploy](../bc/6.0/velocity-engines.md),
+  [Velocity-Server mit persistenten Workern](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md),
   [Einstellungen der Velocity-Engine](../spezifikationen/6.0/velocity-engine-einstellungen.md),
-  [Velocity und der Opcode-Cache](../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md).
-- [Benchmark](../../eng-us/features/6.0/benchmark.md), [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md),
-  [Ein Benutzerpasswort zurücksetzen](../../eng-us/features/6.0/reset-user-password.md), [Ihr Passwort ändern](../../eng-us/features/6.0/modern-password-change.md),
-  [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md).
-- [Vertrauenswürdige Proxys](../../eng-us/bc/6.0/trusted-proxies.md), [exp:ini](../../eng-us/features/6.0/exp-ini-command.md), [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md),
-  [Zusätzliche Extension-Verzeichnisse](../../eng-us/bc/6.0/AdditionalExtensionDirectories.md),
-  [Einstellungen je Site innerhalb von Extensions](../../eng-us/features/6.0/multi-site-ini-overrides.md),
-  [Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md).
-- [Eine Installation reparieren](../../eng-us/bc/6.0/repair.md), [Glossar](../../eng-us/glossary.md).
+  [Velocity und der Opcode-Cache](../funktionen/6.0/velocity-opcode-cache-und-profil.md).
+- [Benchmark](../funktionen/6.0/benchmark.md), [Wartungsmodus](../funktionen/6.0/wartungsmodus.md),
+  [Ein Benutzerpasswort zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md), [Ihr Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md),
+  [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md).
+- [Vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md), [exp:ini](../funktionen/6.0/exp-ini-befehl.md), [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md),
+  [Zusätzliche Extension-Verzeichnisse](../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md),
+  [Einstellungen je Site innerhalb von Extensions](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md),
+  [Übersetzungen und Sprachen](../funktionen/6.0/uebersetzungen-und-sprachen.md).
+- [Eine Installation reparieren](../bc/6.0/reparatur.md), [Glossar](../glossar.md).
 - Die Einstellungen selbst: [`settings/site.ini`](../../../settings/site.ini), [`settings/cronjob.ini`](../../../settings/cronjob.ini),
   [`settings/image.ini`](../../../settings/image.ini), [`settings/velocity.ini`](../../../settings/velocity.ini),
   [`settings/querycache.ini`](../../../settings/querycache.ini), [`.autoloadignore`](../../../.autoloadignore),
@@ -1031,3 +1031,11 @@ Extern:
 - Datenbanken: die Referenzen in [Kapitel 9](09-datenbanken.md#quellen).
 
 [Inhalt](README.md) · Zurück: [9. Datenbanken](09-datenbanken.md) · Weiter: [11. Upgrade](11-aktualisieren.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->
