@@ -71,9 +71,9 @@ die registrierten Erweiterungspunkte; ein Override einer Kernel-Klasse ist das l
 
 ## Einstellungen und ihre Reihenfolge
 
-Ein INI-Wert wird aus `settings/<file>.ini` gelesen, dann aus `settings/` der aktiven Erweiterungen, dann aus
-`settings/siteaccess/<siteaccess>/` (und den Siteaccess-Verzeichnissen der Erweiterungen), dann aus `settings/override/`;
-der letzte gewinnt. `./console exp:ini where <file>/<block>/<key> <siteaccess>` zeigt jede Datei, die einen Wert setzt
+Ein INI-Wert wird aus `settings/<file>.ini` gelesen, dann aus den Siteaccess-Verzeichnissen der Erweiterungen und
+`settings/siteaccess/<siteaccess>/`, dann aus `settings/` der aktiven Erweiterungen, dann aus `settings/override/`;
+der letzte gewinnt, also gewinnt `settings/` einer aktiven Erweiterung gegenüber `settings/siteaccess/<siteaccess>/`. `./console exp:ini where <file>/<block>/<key> <siteaccess>` zeigt jede Datei, die einen Wert setzt
 ([Einstellungen und INI-Dateien](einstellungen-und-ini-dateien.md)).
 
 ## Kommandozeile und Hintergrundarbeit
