@@ -75,7 +75,7 @@ Sie das mit den Verantwortlichen für den Dienst.
   das Werkzeug es zuließ ([Nachbetrachtung eines Vorfalls](nachbetrachtung-eines-vorfalls.md)).
 
 ## Verwandte Seiten
-- [Versionsverlauf und Nachvollziehbarkeit](../../../../../eng-us/help/government/operations/editorial-workflows/version-history-and-accountability.md)
+- [Versionsverlauf und Nachvollziehbarkeit](../redaktionelle-workflows/versionsverlauf-und-nachvollziehbarkeit.md)
 - [Verunstaltung der Website](verunstaltung-der-website.md)
 - [Planung der Rücknahme](../aktualisierungen-und-aenderungen/planung-der-ruecknahme.md)
 - [Veröffentlichen und Versionen (Hilfe)](../../../veroeffentlichen-und-versionen.md)

@@ -57,9 +57,9 @@ wird, Texte selbst zu korrigieren, und entscheiden Sie dann, ob ihre eigenen Bea
 - **Eigene Inhalte einer freigebenden Person werden durchgelassen.** „Wenn der veröffentlichende Benutzer einer der Freigebenden ist,
   lässt das Ereignis die Version durch“ ([Workflows, Abschnitt 3.2](../../../../anleitungen/workflows.md#32-das-ereignis-freigeben-einrichten)). Wenn
   Ihre Regeln besagen, dass niemand seine eigene Arbeit freigibt, dürfen Freigebende in den Bereichen, die sie freigeben, keine Inhalte
-  erstellen, oder ein zweiter Workflow-Pfad muss sie abdecken. Siehe [Vier-Augen-Prinzip beim Veröffentlichen](../../../../../eng-us/help/government/operations/editorial-workflows/two-person-rule-for-publishing.md).
+  erstellen, oder ein zweiter Workflow-Pfad muss sie abdecken. Siehe [Vier-Augen-Prinzip beim Veröffentlichen](../redaktionelle-workflows/vier-augen-prinzip-beim-veroeffentlichen.md).
 - **Ausgeschlossene Benutzergruppen** im Freigabe-Ereignis veröffentlichen ohne Freigabe. Halten Sie diese Liste kurz und dokumentiert;
-  so wird eine Notfallumgehung gebaut ([Notfallumgehung beim Veröffentlichen](../../../../../eng-us/help/government/operations/editorial-workflows/emergency-publishing-bypass.md)).
+  so wird eine Notfallumgehung gebaut ([Notfallumgehung beim Veröffentlichen](../redaktionelle-workflows/notfall-veroeffentlichung-ohne-freigabe.md)).
 - **Verschiedene Bereiche, verschiedene Freigebende:** Ein Workflow je Bereich ist nicht nötig; die **Betroffenen Sektionen** des
   Freigabe-Ereignisses grenzen ein, welche Inhalte eine Freigabe brauchen. Für Freigebende je Fachbereich verwenden Sie getrennte
   Workflows, die mit einem Ereignis Multiplexer verkettet sind, oder eine Sektion je Fachbereich.
@@ -84,8 +84,8 @@ wird, Texte selbst zu korrigieren, und entscheiden Sie dann, ob ihre eigenen Bea
 
 ## Verwandte Seiten
 - [Einer freigebenden Person Rechte geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-approver-rights.md)
-- [Überblick über Freigabe-Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/approval-workflows-overview.md)
-- [Posteingang der Zusammenarbeit](../../../../../eng-us/help/government/operations/editorial-workflows/collaboration-inbox.md)
+- [Überblick über Freigabe-Workflows](../redaktionelle-workflows/freigabe-workflows-im-ueberblick.md)
+- [Posteingang der Zusammenarbeit](../redaktionelle-workflows/posteingang-der-zusammenarbeit.md)
 - [Funktionstrennung](funktionstrennung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

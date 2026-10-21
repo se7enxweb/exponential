@@ -49,7 +49,7 @@ Sichern Sie Beweise, bevor Sie etwas ändern (Dateien, Datenbank-Dump, `var/log/
 1. Deaktivieren Sie das verwendete Konto ([Verdacht auf ein kompromittiertes Konto](verdacht-auf-kompromittiertes-konto.md)).
 2. Öffnen Sie für jedes verunstaltete Objekt seine Versionsseite, wählen Sie bei der letzten guten Version
    **Neuen Entwurf machen** und veröffentlichen Sie ihn (er durchläuft den Freigabe-Workflow wie jede Version)
-   ([Versionsverlauf und Nachvollziehbarkeit](../../../../../eng-us/help/government/operations/editorial-workflows/version-history-and-accountability.md)).
+   ([Versionsverlauf und Nachvollziehbarkeit](../redaktionelle-workflows/versionsverlauf-und-nachvollziehbarkeit.md)).
 3. Entfernen Sie Elemente, die der Angreifer angelegt hat; prüfen Sie den Papierkorb auf Elemente, die er entfernt hat,
    und stellen Sie sie wieder her.
 4. Viele Elemente betroffen: Erwägen Sie stattdessen, die Datenbank aus der letzten sauberen Datensicherung

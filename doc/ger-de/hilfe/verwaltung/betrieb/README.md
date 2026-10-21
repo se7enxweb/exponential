@@ -39,7 +39,7 @@ Pflichten zur Kontinuität, Prüfungen und die Erwartung, dass alles dokumentier
 | [Vorfälle](vorfaelle/README.md) | Runbooks für schlechte Tage: Website ausgefallen, Datenbank nicht erreichbar, verunstaltete Seiten, ein kompromittiertes Konto, Fluten von Sondierungsanfragen, eine fehlgeschlagene Bereitstellung, ein massenhafter Inhaltsfehler, veraltete Caches, Probleme mit E-Mails. |
 | [Aktualisierungen und Änderungen](aktualisierungen-und-aenderungen/README.md) | Sicher aktualisieren, unveränderliche Releases, Änderungsbeiräte, Staging und Freigabe, durch die Bereitstellung verwaltete Konfiguration, Rücknahme. |
 | [Personen und Berechtigungen](personen-und-berechtigungen/README.md) | Rollen, Richtlinien und Einschränkungen; Rollenentwürfe nach dem Prinzip der geringsten Rechte für Webteams, Redaktionen der Fachbereiche, Freigebende, Prüfende und externe Dienstleister; Eintritt, Wechsel und Austritt; Anmeldung in zwei Schritten; Überprüfung der Zugänge. |
-| [Redaktionelle Workflows](../../../../eng-us/help/government/operations/editorial-workflows/README.md) | Freigabe vor dem Veröffentlichen, der Posteingang für die Zusammenarbeit, das Vier-Augen-Prinzip, rechtliche Prüfung, mehrsprachige Freigaben, ein Notfall-Umgehungsweg, der dokumentiert bleibt, Verantwortung für Inhalte. |
+| [Redaktionelle Workflows](redaktionelle-workflows/README.md) | Freigabe vor dem Veröffentlichen, der Posteingang für die Zusammenarbeit, das Vier-Augen-Prinzip, rechtliche Prüfung, mehrsprachige Freigaben, ein Notfall-Umgehungsweg, der dokumentiert bleibt, Verantwortung für Inhalte. |
 
 ## Schritt-für-Schritt-Aufgaben
 
@@ -56,7 +56,7 @@ Zwei Aufgabenordner enthalten kurze, nummerierte Abläufe, die auf die Ordner ob
 1. **Neu im Betrieb von Exponential:** [Hosting](hosting/README.md), danach
    [Datensicherung und Wiederherstellung](datensicherung-und-wiederherstellung/README.md) und [Überwachung](ueberwachung/README.md).
 2. **Vorbereitung auf den Livegang:** [Personen und Berechtigungen](personen-und-berechtigungen/README.md) und
-   [Redaktionelle Workflows](../../../../eng-us/help/government/operations/editorial-workflows/README.md), damit Zugänge und Freigaben vom ersten Tag an stimmen.
+   [Redaktionelle Workflows](redaktionelle-workflows/README.md), damit Zugänge und Freigaben vom ersten Tag an stimmen.
 3. **Den Dienst betreiben:** [Vorfälle](vorfaelle/README.md) und
    [Aktualisierungen und Änderungen](aktualisierungen-und-aenderungen/README.md), mit den
    [Betriebsaufgaben](../../../../eng-us/help/government/tasks/operations/README.md) griffbereit.

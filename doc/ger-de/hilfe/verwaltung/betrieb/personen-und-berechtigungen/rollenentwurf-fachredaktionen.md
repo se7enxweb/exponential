@@ -70,7 +70,7 @@ mit dem Teilbaum des Medienordners dieses Fachbereichs.
 | Variante | Änderung |
 |---|---|
 | Übersetzerinnen und Übersetzer | `content/translate` und `content/edit` mit einer Einschränkung `Language` statt vollem Bearbeiten |
-| Redaktionen, deren Arbeit eine Freigabe braucht | dieselbe Rolle; nehmen Sie die Gruppe in den Freigabe-Workflow auf und schließen Sie sie nicht aus ([Das Freigabe-Ereignis einrichten](../../../../../eng-us/help/government/operations/editorial-workflows/setting-up-the-approve-event.md)) |
+| Redaktionen, deren Arbeit eine Freigabe braucht | dieselbe Rolle; nehmen Sie die Gruppe in den Freigabe-Workflow auf und schließen Sie sie nicht aus ([Das Freigabe-Ereignis einrichten](../redaktionelle-workflows/das-freigabe-ereignis-einrichten.md)) |
 | Leitende Redakteurinnen und Redakteure, die freigeben | nehmen Sie sie in die Gruppe der Freigebenden auf ([Rollenentwurf: Freigebende](rollenentwurf-freigebende.md)) |
 | Redaktionen eines Inhaltstyps auf der ganzen Website (zum Beispiel Nachrichten) | Einschränkung `Class` mit einem Teilbaum des Nachrichtenordners |
 

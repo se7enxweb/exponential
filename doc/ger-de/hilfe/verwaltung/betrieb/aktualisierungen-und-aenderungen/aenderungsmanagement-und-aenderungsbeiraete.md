@@ -35,7 +35,7 @@ Kategorien an Ihre an.
 
 | Änderung an einer Exponential-Website | Übliche Art | Warum |
 |---|---|---|
-| Inhalte veröffentlichen | keine Änderung; durch den redaktionellen Workflow gesteuert | [Überblick über Freigabe-Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/approval-workflows-overview.md) |
+| Inhalte veröffentlichen | keine Änderung; durch den redaktionellen Workflow gesteuert | [Überblick über Freigabe-Workflows](../redaktionelle-workflows/freigabe-workflows-im-ueberblick.md) |
 | Caches leeren, einen Cronjob-Teil ausführen, Logs rotieren | Standard | umkehrbar, dokumentiert ([Betriebsaufgaben](../../../../../eng-us/help/government/tasks/operations/README.md)) |
 | Einen Benutzer hinzufügen, einer Gruppe eine vorhandene Rolle zuweisen | Standard (nach Ihrem Eintrittsablauf) | im Audit-Trail aufgezeichnet |
 | Eine neue Rolle, eine neue Sektion, ein geänderter Workflow | normal | ändert, wer was tun darf |

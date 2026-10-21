@@ -47,7 +47,7 @@ ein Prozess die Software absichern muss.
 
 | Kombination | Risiko | Kontrolle |
 |---|---|---|
-| Autorin oder Autor und einzige freigebende Person desselben Bereichs | Selbstfreigabe | eigene Inhalte von Freigebenden lässt das Freigabe-Ereignis durch; halten Sie Freigebende dort vom Erstellen fern, oder geben Sie ihnen einen getrennten Weg über ein Autorenkonto, den eine andere freigebende Person abdeckt ([Vier-Augen-Prinzip](../../../../../eng-us/help/government/operations/editorial-workflows/two-person-rule-for-publishing.md)) |
+| Autorin oder Autor und einzige freigebende Person desselben Bereichs | Selbstfreigabe | eigene Inhalte von Freigebenden lässt das Freigabe-Ereignis durch; halten Sie Freigebende dort vom Erstellen fern, oder geben Sie ihnen einen getrennten Weg über ein Autorenkonto, den eine andere freigebende Person abdeckt ([Vier-Augen-Prinzip](../redaktionelle-workflows/vier-augen-prinzip-beim-veroeffentlichen.md)) |
 | Kontenadministration und Rollenvergabe | ein Konto anlegen und ihm beliebige Rechte geben | Modul `role` nur für Systemadministratoren; `PreventPrivilegeEscalation=enabled` begrenzt, was andere vergeben könnten |
 | Voller Zugriff und Verwaltung des Audits | Einstellungen ändern und den Nachweis darüber auch | das Audit ist hashverkettet und wird geprüft (`exp:audit verify`); senden Sie Einträge an ein Syslog- oder Webhook-Ziel außerhalb des Servers ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)) |
 | Betrieb und unmaskierte Logs | beiläufiger Zugriff auf personenbezogene Daten | `setup/unmasklogs` nur während Untersuchungen |

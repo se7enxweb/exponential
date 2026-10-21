@@ -55,7 +55,7 @@ Nach oben: [Exponential im öffentlichen Sektor betreiben](../README.md). Die Ei
 ## Verwandte Seiten
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md)
 - [Leitfaden zu Sektionen](../../../../anleitungen/sektionen.md) und [Leitfaden zu Objektzuständen](../../../../anleitungen/objektzustaende.md)
-- [Redaktionelle Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/README.md)
+- [Redaktionelle Workflows](../redaktionelle-workflows/README.md)
 - [Kurs für Website-Administratoren: Rollen und Richtlinien](../../../../../eng-us/help/trainers/site-administrators/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

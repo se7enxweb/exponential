@@ -56,7 +56,7 @@ ist *Voller Zugriff*, rot markiert.
 Für Freigaben zählt eine Tatsache: Im Bearbeitungsformular entscheidet `content/edit`, ob ein Benutzer einen Entwurf veröffentlichen darf
 ([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)). Eine Freigabe vor dem Veröffentlichen
 wird daher durch einen Workflow durchgesetzt, nicht durch das Vorenthalten eines Veröffentlichungsrechts; siehe
-[Vier-Augen-Prinzip beim Veröffentlichen](../../../../../eng-us/help/government/operations/editorial-workflows/two-person-rule-for-publishing.md).
+[Vier-Augen-Prinzip beim Veröffentlichen](../redaktionelle-workflows/vier-augen-prinzip-beim-veroeffentlichen.md).
 
 ## Einschränkungen, die Sie verwenden werden
 

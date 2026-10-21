@@ -72,9 +72,9 @@ im ersten Zustand der Gruppe beginnt.
   ([Objektzustände, Abschnitt 12](../../../../anleitungen/objektzustaende.md#12-workflows-ereignisse-audit-und-suche)).
   Dieser Eintrag ist der Beleg dafür, dass eine prüfende Person etwas freigegeben hat.
 - Zustände und der Freigabe-Workflow sind zwei verschiedene Werkzeuge. Der Workflow hält eine Version zurück, bis eine freigebende
-  Person entscheidet ([Überblick über Freigabe-Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/approval-workflows-overview.md)); Zustände halten eine
+  Person entscheidet ([Überblick über Freigabe-Workflows](../redaktionelle-workflows/freigabe-workflows-im-ueberblick.md)); Zustände halten eine
   Phase am Objekt über Versionen hinweg fest. Viele Organisationen nutzen den Workflow für das Veröffentlichen und einen Zustand für eine
-  getrennte Prüfung wie die rechtliche Freigabe ([Schritt der rechtlichen Prüfung](../../../../../eng-us/help/government/operations/editorial-workflows/legal-review-step.md)).
+  getrennte Prüfung wie die rechtliche Freigabe ([Schritt der rechtlichen Prüfung](../redaktionelle-workflows/rechtliche-pruefung-als-schritt.md)).
 - Ein Workflow kann bei Zustandsänderungen laufen, sobald `workflow.ini [OperationSettings] AvailableOperationList[]=content_updateobjectstate`
   gesetzt ist; **Setup > Trigger** bietet die Operation dann an.
 
@@ -84,7 +84,7 @@ im ersten Zustand der Gruppe beginnt.
   nicht zurück, es sei denn, Ihr Prozess oder ein Workflow tut das.
 - Zustände verbergen Inhalte nicht von selbst; das tut nur eine Leserichtlinie mit einer Zustandseinschränkung.
 - Exponential hat kein Datumsfeld an einem Zustand; ein Zustand „Prüfung fällig“ wird von Personen oder von Ihrem eigenen Code gesetzt,
-  nicht von einem Zeitgeber. Siehe [Prüftermine mit Objektzuständen](../../../../../eng-us/help/government/operations/editorial-workflows/review-dates-with-object-states.md).
+  nicht von einem Zeitgeber. Siehe [Prüftermine mit Objektzuständen](../redaktionelle-workflows/pruefdaten-mit-objektzustaenden.md).
 
 ## Verwandte Seiten
 - [Eine Zustandsgruppe für Prüfungen einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-a-review-state-group.md)
