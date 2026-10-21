@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-38ab9bf5e655136c425c164c8d8a5f1f  doc/changelogs/6.0/6.0.15.md
+232586716724182493b1afdc5944651b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3395,7 +3395,7 @@ fb1fc98da050946003d9f5471b75257d  doc/eng-us/bc/6.0/phpunitv10.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/eng-us/bc/6.0/phpunitv13forPHP841.md
 078f9ef73fdfe3a0a79ba7d9aecd40c1  doc/eng-us/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/eng-us/bc/6.0/preload.md
-08c6231f7e5c2a7eafe37f8b94236125  doc/eng-us/bc/6.0/rad-extension-points.md
+376308514a9856f7e8be3e6e0e49ae14  doc/eng-us/bc/6.0/rad-extension-points.md
 0be7fcd531857ff7726b254443c29bd2  doc/eng-us/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/eng-us/bc/6.0/rad-security.md
 4a8181eadee679b8558fe125d10df9c1  doc/eng-us/bc/6.0/redirect-query-and-image-alias-guards.md
@@ -7072,7 +7072,7 @@ bda74491d8a18accc46ca3b486ffcbb4  doc/eng-us/help/creators/website-creators/meta
 22f54bb9330ae2b0a264662606a5b75b  doc/eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md
 f86b5f1e419215030bb3ff616d178e8d  doc/eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md
 443f284e096550b17db0049c46be7538  doc/eng-us/help/creators/website-creators/organizing-the-media-library.md
-a54ff50e439828d76a912b4f2897bf6b  doc/eng-us/help/creators/website-creators/payment-gateways.md
+f4bfea98029753022ac8808298b1c610  doc/eng-us/help/creators/website-creators/payment-gateways.md
 98cc9d380fd64a7ba8e4e1ccf3de0436  doc/eng-us/help/creators/website-creators/performance-and-caching.md
 8d75f5669ab2d54cbf976541b73f51b3  doc/eng-us/help/creators/website-creators/planning-your-website.md
 6918276f0350657319ca081ef47bff98  doc/eng-us/help/creators/website-creators/products-prices-and-vat.md
@@ -11411,7 +11411,7 @@ d2f8403906212d10b165b1b9653b9193  doc/ger-de/bc/6.0/phpunitv13-fuer-php841.md
 612be239edbb585b8d0052eda126c84c  doc/ger-de/bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md
 2d58bd791e33216046183545084a2ab3  doc/ger-de/bc/6.0/preload.md
 0d24bd9aa00e8964eda6de52b645cf59  doc/ger-de/bc/6.0/rad-erweiterungsoberflaeche.md
-6770654105982117212e314bc593101d  doc/ger-de/bc/6.0/rad-erweiterungspunkte.md
+a87249b7de03c3604d96098437fbb7b9  doc/ger-de/bc/6.0/rad-erweiterungspunkte.md
 d4b8fa2c2bb2774894e82becbb64ef1a  doc/ger-de/bc/6.0/rad-sicherheit.md
 a1f06eaaed77feadea50b05555c358e6  doc/ger-de/bc/6.0/reparatur.md
 6ad31ed1e21c597ad6650e1278be2ccf  doc/ger-de/bc/6.0/schutz-fuer-weiterleitungs-query-und-bildaliase.md
@@ -14858,7 +14858,7 @@ eac45abcc06cdbbde569db82c6e12255  doc/ger-de/hilfe/ersteller/website-ersteller/m
 40368e26bb9ab6b73efcdecdf4cff62c  doc/ger-de/hilfe/ersteller/website-ersteller/newsletter-listen-und-abonnements.md
 d54aa88a692f1a775323d6704decb424  doc/ger-de/hilfe/ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md
 5ea5158f031fcfb7346240ab8f8bbb53  doc/ger-de/hilfe/ersteller/website-ersteller/newsletter-versenden.md
-da28c2cd0eb42e7d0bb62be63299597a  doc/ger-de/hilfe/ersteller/website-ersteller/payment-gateways.md
+5b4c8f758e2c4df07efa897e3bedc6ea  doc/ger-de/hilfe/ersteller/website-ersteller/payment-gateways.md
 49aba69ac64cd36a7ec2c3619f27d692  doc/ger-de/hilfe/ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md
 2e82c393fa19705c0d765ea75c4e1ecd  doc/ger-de/hilfe/ersteller/website-ersteller/rechte-fuer-besucher.md
 72027eb28ef23e19cbb5bb3d1f260e79  doc/ger-de/hilfe/ersteller/website-ersteller/relationen-und-wiederverwendung.md
@@ -18191,7 +18191,7 @@ fb6638f122ba67898a1fb5c5e7204ca4  extension/expservices/classes/commerce/expbask
 be846ae79b018561d8a875b0e1bb05c4  extension/expservices/classes/commerce/expcurrencyservices.php
 66e50d0936ba01ca779f525d2a7e057f  extension/expservices/classes/commerce/expdiscountservices.php
 0b2c952a4b8c0555396d1d0086de2376  extension/expservices/classes/commerce/exporderservices.php
-137ebc090cc9f145077c5985ce697d8d  extension/expservices/classes/commerce/exppaymentservices.php
+4979502a19c230a0342f208b4d87d212  extension/expservices/classes/commerce/exppaymentservices.php
 efbea9762d8806ce83e6d768887fd1d5  extension/expservices/classes/commerce/expproductservices.php
 1945cdc82abc41ffdc934a9b03821d4f  extension/expservices/classes/commerce/expshippingservices.php
 8d06b33a613ecbfb60734d285a530b74  extension/expservices/classes/commerce/expvatservices.php
@@ -20435,12 +20435,12 @@ f8e92677e7dfa02f5c12c3ba4f51ade5  kernel/setup/designextension.php
 15d94ae6155a33c96b55d9adfa4fbcf8  kernel/setup/expdatatypewizard.php
 936ad2179123ade3dea1af5b24297a4a  kernel/setup/expdesignextensionwizard.php
 b0f357020c2a66612f4bb6207b4d13db  kernel/setup/expextensionwizard.php
-0818181f52af3eff62b7e99551454c62  kernel/setup/exphandlerwizard.php
+be9d74ef628233b7b31f888a25fb6076  kernel/setup/exphandlerwizard.php
 8dcd3e914c27dd70475d60c14cc917f2  kernel/setup/expkerneloverridewizard.php
 93be9f38034705c82e97c75e7d5d6cf3  kernel/setup/expmoduleextensionwizard.php
 7d874e8a0a728f966e4fe80ef8a8050a  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
-b43f4586cd2ac9903fc205f00469e474  kernel/setup/expradcatalogue.php
+32390bfa6bd690e300505de4b8517109  kernel/setup/expradcatalogue.php
 def82e9940456bf5dc25932788b70e45  kernel/setup/expradhealth.php
 fc32c69d2f9b56f92a7ba4ebf90611e8  kernel/setup/expradsurvey.php
 f9c1bc8aa5a0d2918cf560c5573bf199  kernel/setup/expsettingsextensionwizard.php
@@ -22588,6 +22588,7 @@ e2c096f97e91a5655ee3a7c7f3747e73  tests/tests/kernel/classes/radwizards/expExten
 d48645e195f5e2a6243a0a2cf8a10b61  tests/tests/kernel/classes/radwizards/expRadWizardFirstVisitProblemsTest.php
 e709c9fd48714bf8671939837b81cb81  tests/tests/kernel/classes/radwizards/expRadWizardGeneratedCodeFaultsTest.php
 38307083ba81fb231a703374df7ec69e  tests/tests/kernel/classes/radwizards/expRadWizardListsTest.php
+e414caf421b6c9adec37d5cae73c38c0  tests/tests/kernel/classes/radwizards/expRadWizardPaymentGatewayIsFoundTest.php
 439fb99a6b841e5fe4b26659fb14b01b  tests/tests/kernel/classes/radwizards/expRadWizardTestHelper.php
 74e872122daba48572e05606bca781cc  tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php
 7083b8e7ffc52109d89f3ddd560c0568  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
