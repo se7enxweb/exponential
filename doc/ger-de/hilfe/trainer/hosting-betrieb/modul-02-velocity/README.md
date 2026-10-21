@@ -58,7 +58,7 @@ von Velocity.
 
 ## Verwandte Seiten
 
-- [Hosting und Betrieb: Kursübersicht](../README.md)
+- [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md)
 - [Velocity neben Apache oder nginx](../../../hosting/server/velocity-neben-apache-oder-nginx.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

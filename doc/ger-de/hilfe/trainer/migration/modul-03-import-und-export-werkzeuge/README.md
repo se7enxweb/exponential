@@ -55,7 +55,7 @@ Importskripts für Quellen, die kein Werkzeug liest.
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Die Import- und Exportwerkzeuge von Exponential](../../../../installation/migration/exponential-tools.md): die Seite, auf
   der dieses Modul aufbaut.
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

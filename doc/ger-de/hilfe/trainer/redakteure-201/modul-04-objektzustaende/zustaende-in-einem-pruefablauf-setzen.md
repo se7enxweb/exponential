@@ -140,7 +140,7 @@ andere Prüfer; der Trainer hat den Prüferkonten eine Prüferrolle gegeben.
 ## Verwandte Seiten
 
 - [Modul 4: Objektzustände](README.md)
-- [Redakteure 201: Kursübersicht](../README.md)
+- [Redakteure 201: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

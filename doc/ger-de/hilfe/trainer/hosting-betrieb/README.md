@@ -1,13 +1,13 @@
 ---
-title: "Hosting und Betrieb: Kursübersicht"
+title: "Hosting und Betrieb: Kursüberblick"
 audience: trainer, hosting, admin
 category: training
 order: 1
 summary: Der Kurs für Systemadministratoren und Hosting-Mitarbeitende, die Exponential-Websites betreiben, die Website ausliefern, Velocity, Datenbanken, Bereitstellung und Cron, Monitoring und Logs, Sicherungen und Wiederherstellung, Leistung und Skalierung. Sieben Module, 28 Lektionen, etwa 20 Stunden Lektionen.
-keywords: hosting und betrieb, kursübersicht, lesepfad, hosting, php-fpm, velocity, datenbanken, bereitstellung, cron, monitoring, logs, sicherungen, benchmarking, valkey, clustering, hosting and operations, course overview, reading path, databases, deploying, backups
+keywords: hosting und betrieb, kursüberblick, lesepfad, hosting, php-fpm, velocity, datenbanken, bereitstellung, cron, monitoring, logs, sicherungen, benchmarking, valkey, clustering, hosting and operations, course overview, reading path, databases, deploying, backups
 type: help
 ---
-# Hosting und Betrieb: Kursübersicht
+# Hosting und Betrieb: Kursüberblick
 
 Dieser Kurs richtet sich an die Menschen, die Exponential-Websites auf Servern am Laufen halten: Systemadministratoren,
 Mitarbeitende von Hosting-Unternehmen und die Betriebsseite einer Agentur. Er begleitet eine Website durch ihr Leben

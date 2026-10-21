@@ -1,13 +1,13 @@
 ---
-title: "Exponential Intelligence: Kursübersicht"
+title: "Exponential Intelligence: Kursüberblick"
 audience: trainer, editor, admin
 category: training
 order: 1
 summary: Der Kurs zu Exponential Intelligence (expai), dem Schreibassistenten, mit 7 Modulen und 21 Lektionen, etwa 15,5 Stunden Lektionen, von den drei Versprechen über den Tab Intelligence, das Bearbeitungsformular, Vector und Ketten bis zum verantwortungsvollen Einsatz und zur Administration, mit einer Abschlussaufgabe am Ende.
-keywords: exponential intelligence, expai, ki-schreibassistent, kursübersicht, tab intelligence, bearbeitungsformular, feldaktionen, alternativtext, vector, gestufte prüfung, ketten, log, datenschutz, personenbezogene daten, ki-ergebnisse prüfen, kosten, anbieter, modelle, ei summary, ai writing assistant, course overview, intelligence tab, edit form, field actions, alt text, staged review, chains, privacy, personal data, reviewing ai output, cost, providers, models
+keywords: exponential intelligence, expai, ki-schreibassistent, kursüberblick, tab intelligence, bearbeitungsformular, feldaktionen, alternativtext, vector, gestufte prüfung, ketten, log, datenschutz, personenbezogene daten, ki-ergebnisse prüfen, kosten, anbieter, modelle, ei summary, ai writing assistant, course overview, intelligence tab, edit form, field actions, alt text, staged review, chains, privacy, personal data, reviewing ai output, cost, providers, models
 type: help
 ---
-# Exponential Intelligence: Kursübersicht
+# Exponential Intelligence: Kursüberblick
 
 Exponential Intelligence (die Erweiterung **expai**) ist der Schreibassistent der Administration von Exponential. Er
 schreibt Entwürfe, veröffentlicht nie von sich aus und arbeitet mit den Berechtigungen des angemeldeten Redakteurs.
@@ -46,7 +46,7 @@ Schlüsseln, Limits und Budgets einschalten und **EI: Summary** erstellen.
 - Teilnehmende: Redakteure 101 oder Erfahrung als Redakteur. Redakteure 201 hilft (Freigaben, Barrierefreiheit).
 - Administratoren in Modul 7: Shell-Zugang zu einer eigenen Schulungsinstallation.
 - Trainer: Erfahrung mit dem Assistenten in der Version, die sie unterrichten, und Administratorrechte auf der
-  Schulungsinstallation ([Train the Trainer: Kursübersicht](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  Schulungsinstallation ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
 
 ## Übungsumgebung
 

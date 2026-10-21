@@ -50,7 +50,7 @@ vollständigen Migrationsplan für ein realistisches Szenario.
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Migration weg von Exponential](../../../../installation/migration/exponential-verlassen.md): die Seite, auf der Lektion
   8.1 aufbaut.
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

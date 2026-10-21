@@ -134,7 +134,7 @@ Verwenden Sie die Schulungsinstallation und Papier.
 ## Verwandte Seiten
 
 - [Modul 2: Layouts und Layout-Typen](README.md)
-- [Exponential Layouts: Kursübersicht](../README.md)
+- [Exponential Layouts: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

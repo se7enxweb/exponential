@@ -121,7 +121,7 @@ Prüfpunkt die zugehörigen Lektionen zur Wiederholung.
 ## Verwandte Seiten
 
 - [Modul 7: Administration](README.md)
-- [Exponential Intelligence: Kursübersicht](../README.md)
+- [Exponential Intelligence: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

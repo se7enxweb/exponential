@@ -149,7 +149,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity.
 ## Verwandte Seiten
 
 - [Modul 7: Leistung und Skalierung](README.md)
-- [Hosting und Betrieb: Kursübersicht](../README.md)
+- [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

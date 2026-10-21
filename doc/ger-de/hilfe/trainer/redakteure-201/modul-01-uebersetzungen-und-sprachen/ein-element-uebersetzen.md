@@ -140,7 +140,7 @@ nennt).
 ## Verwandte Seiten
 
 - [Modul 1: Übersetzungen und Sprachen](README.md)
-- [Redakteure 201: Kursübersicht](../README.md)
+- [Redakteure 201: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

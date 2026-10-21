@@ -1,13 +1,13 @@
 ---
-title: "Exponential Layouts: Kursübersicht"
+title: "Exponential Layouts: Kursüberblick"
 audience: trainer, editor, website-creator, designer
 category: training
 order: 1
 summary: Der Kurs zu Exponential Layouts, dem Seitenbaukasten, mit 8 Modulen und 23 Lektionen, etwa 17,5 Stunden Lektionen, von den fünf Grundideen über Layouts, Blöcke, Collections, gemeinsame Layouts und das Veröffentlichen bis zu Zuordnungsregeln und einer Kampagnenseite als Abschlussprojekt.
-keywords: exponential layouts, layouts-kurs, seitenbaukasten, layout-editor, explayouts, layout-typen, zonen, blöcke, collections, gemeinsame layouts, zonenverknüpfung, zuordnungsregeln, entwürfe, veröffentlichen, landingpage, kursübersicht, layouts course, page builder, layouts editor, shared layouts, mapping rules, course overview
+keywords: exponential layouts, layouts-kurs, seitenbaukasten, layout-editor, explayouts, layout-typen, zonen, blöcke, collections, gemeinsame layouts, zonenverknüpfung, zuordnungsregeln, entwürfe, veröffentlichen, landingpage, kursüberblick, layouts course, page builder, layouts editor, shared layouts, mapping rules, course overview
 type: help
 ---
-# Exponential Layouts: Kursübersicht
+# Exponential Layouts: Kursüberblick
 
 Mit Exponential Layouts stellen Redakteure und Website-Ersteller Seiten im Browser aus Blöcken zusammen: Startseiten,
 Landing- und Kampagnenseiten, eine gemeinsame Kopf- und Fußzeile. Dieser Kurs vermittelt das Werkzeug von den fünf
@@ -45,7 +45,7 @@ Zuordnungen anlegen und Fehler darin finden; und eine Kampagnenseite planen und 
   Redakteure 201 hilft, ist aber nicht nötig.
 - Trainer: Erfahrung mit dem Layout-Editor in der Version, die sie unterrichten, und Administratorrechte auf der
   Schulungsinstallation, um Rollen, ein gemeinsames Layout und Fehler für die Lektion zur Fehlersuche vorzubereiten
-  ([Train the Trainer: Kursübersicht](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
 
 ## Übungsumgebung
 

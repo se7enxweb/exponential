@@ -153,7 +153,7 @@ Arbeiten Sie in Paaren, A und B.
 ## Verwandte Seiten
 
 - [Modul 2: Systeme, Listen und Ausgaben](README.md)
-- [Newsletter mit CJW Newsletter: Kursübersicht](../README.md)
+- [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

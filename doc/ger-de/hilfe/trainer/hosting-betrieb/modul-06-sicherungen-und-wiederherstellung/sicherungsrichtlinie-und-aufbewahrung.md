@@ -137,7 +137,7 @@ Arbeiten Sie in Gruppen zu zweit oder zu dritt, auf Papier oder in einem gemeins
 ## Verwandte Seiten
 
 - [Modul 6: Sicherungen und Wiederherstellung](README.md)
-- [Hosting und Betrieb: Kursübersicht](../README.md)
+- [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -53,7 +53,7 @@ Datenbankschritte sind die aus Modul 4.
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Kapitel 15: Migration vom 5.x-Legacy-Stack](../../../../installation/15-migration-von-5x-legacy.md): das Kapitel, auf
   dem dieses Modul aufbaut.
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

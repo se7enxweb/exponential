@@ -179,7 +179,7 @@ Sie `--allow-root-user` hinzu, wenn Ihr Trainer es Ihnen sagt). Ersetzen Sie `<n
 ## Verwandte Seiten
 
 - [Modul 4: Versand](README.md)
-- [Newsletter mit CJW Newsletter: Kursübersicht](../README.md)
+- [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

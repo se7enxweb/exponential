@@ -53,7 +53,7 @@ Das praktische Herzstück des Kurses. Die Teilnehmenden füllen ihr Kurs-Layout 
 
 ## Verwandte Seiten
 
-- [Exponential Layouts: Kursübersicht](../README.md)
+- [Exponential Layouts: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

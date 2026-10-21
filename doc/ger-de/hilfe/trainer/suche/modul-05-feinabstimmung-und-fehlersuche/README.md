@@ -58,7 +58,7 @@ für fehlende Ergebnisse und messen die Suchseite, statt zu raten.
 
 ## Verwandte Seiten
 
-- [Suche: Kursübersicht](../README.md)
+- [Suche: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

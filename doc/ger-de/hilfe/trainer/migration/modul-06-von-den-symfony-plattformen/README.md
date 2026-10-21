@@ -54,7 +54,7 @@ Legacy-Kernel von Exponential 6 wählt und wie jeder Weg geplant wird. Es folgt 
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Kapitel 16: Migration von eZ Platform und Ibexa](../../../../installation/16-migration-von-ez-platform-und-ibexa.md):
   das Kapitel, auf dem dieses Modul aufbaut.
 - [Kapitel 17: Migrationsreferenz](../../../../installation/17-migrationsreferenz.md): die Nachschlagetabellen für beide

@@ -54,7 +54,7 @@ und ihren Passwörtern geschieht und wie jede alte Adresse weiter funktioniert.
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Inhalte auf Exponential abbilden](../../../../installation/migration/inhaltsmodell-zuordnen.md): die Seite, auf der
   dieses Modul aufbaut.
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

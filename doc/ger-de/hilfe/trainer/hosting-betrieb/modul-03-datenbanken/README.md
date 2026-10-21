@@ -56,7 +56,7 @@ Sicherungen und dem Umzug einer Website zwischen Datenbanksystemen.
 
 ## Verwandte Seiten
 
-- [Hosting und Betrieb: Kursübersicht](../README.md)
+- [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Datenbankunterstützung](../../../datenbankunterstuetzung.md)
 - [Datenbanken in der offiziellen Reihenfolge](../../../hosting/grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

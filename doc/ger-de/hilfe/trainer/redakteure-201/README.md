@@ -1,13 +1,13 @@
 ---
-title: "Redakteure 201: Kursübersicht"
+title: "Redakteure 201: Kursüberblick"
 audience: trainer, editor
 category: training
 order: 1
 summary: Der Aufbaukurs für Redakteure, die jede Woche veröffentlichen, mit 8 Modulen und 23 Lektionen, etwa 16 Stunden Lektionen, zu Übersetzungen, Verknüpfungen und Orten, Inhalte organisieren und Sektionen, Objektzuständen, Freigaben, URL-Aliasen, Feeds und PDF, Tags, Inhaltsprüfungen und barrierefreien Inhalten.
-keywords: redakteure 201, aufbauschulung für redakteure, übersetzungen, sprachen, verknüpfungen, orte, sektionen, objektzustände, freigabe, zusammenarbeit, url-alias, rss, pdf-export, tags, eztags, inhaltsprüfungen, barrierefreiheit, kursübersicht, editors 201, intermediate editor training, translations, languages, relations, locations, sections, object states, approval, collaboration, url alias, pdf export, content checks, accessibility, course overview
+keywords: redakteure 201, aufbauschulung für redakteure, übersetzungen, sprachen, verknüpfungen, orte, sektionen, objektzustände, freigabe, zusammenarbeit, url-alias, rss, pdf-export, tags, eztags, inhaltsprüfungen, barrierefreiheit, kursüberblick, editors 201, intermediate editor training, translations, languages, relations, locations, sections, object states, approval, collaboration, url alias, pdf export, content checks, accessibility, course overview
 type: help
 ---
-# Redakteure 201: Kursübersicht
+# Redakteure 201: Kursüberblick
 
 Redakteure 201 richtet sich an Redakteure, die bereits sicher veröffentlichen und nun auf einer größeren, mehrsprachigen
 oder von einem Team betreuten Website arbeiten. Der Kurs behandelt, was Redakteure 101 ausgelassen hat: Übersetzungen,
@@ -50,7 +50,7 @@ möglicherweise nicht verwendet; lassen Sie sie dann weg.
   Online-Editor, Bilder, Versionen und der Papierkorb).
 - Trainer: Erfahrung als Redakteur und einige Administratorrechte auf der Schulungsinstallation, weil mehrere Module
   vorbereitete Rollen, einen Workflow, eine zweite Sprache, eine Zustandsgruppe oder ein Tags-Feld brauchen
-  ([Train the Trainer: Kursübersicht](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
 
 ## Übungsumgebung
 

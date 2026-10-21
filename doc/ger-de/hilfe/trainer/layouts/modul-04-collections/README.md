@@ -49,7 +49,7 @@ vermittelt die beiden Arten von Collections und die Einstellungen, die sie zu re
 
 ## Verwandte Seiten
 
-- [Exponential Layouts: Kursübersicht](../README.md)
+- [Exponential Layouts: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

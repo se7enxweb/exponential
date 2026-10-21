@@ -56,7 +56,7 @@ abarbeitet.
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Kapitel 14: Migration von der 4.x-Linie](../../../../installation/14-migration-von-4x.md): das Kapitel, auf dem dieses
   Modul aufbaut.
 - [Ältere Versionen dieses Kernels](../../../../installation/migration/aeltere-versionen.md): welches Kapitel zu welcher

@@ -165,7 +165,7 @@ Installation aus; ersetzen Sie `exponential.db` durch den Dateinamen, den `ls` z
 ## Verwandte Seiten
 
 - [Modul 3: Datenbanken](README.md)
-- [Hosting und Betrieb: Kursübersicht](../README.md)
+- [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

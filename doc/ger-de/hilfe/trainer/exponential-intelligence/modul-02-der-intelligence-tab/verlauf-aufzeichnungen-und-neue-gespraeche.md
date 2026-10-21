@@ -121,6 +121,6 @@ Verwenden Sie die Schulungsinstallation und den Tab **Intelligence** Ihres Kurso
 ## Verwandte Seiten
 
 - [Modul 2: Der Tab Intelligence](README.md)
-- [Exponential Intelligence: Kursübersicht](../README.md)
+- [Exponential Intelligence: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

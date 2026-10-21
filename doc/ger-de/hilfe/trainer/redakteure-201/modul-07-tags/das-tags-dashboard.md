@@ -126,7 +126,7 @@ Verwenden Sie die Schulungsinstallation mit einer Rolle, die Tags lesen und hinz
 ## Verwandte Seiten
 
 - [Modul 7: Tags](README.md)
-- [Redakteure 201: Kursübersicht](../README.md)
+- [Redakteure 201: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

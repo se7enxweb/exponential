@@ -1,13 +1,13 @@
 ---
-title: "Suche: Kursübersicht"
+title: "Suche: Kursüberblick"
 audience: trainer, admin, developer
 category: training
 order: 1
 summary: Der Kurs für Administratoren und Entwickler, die die Suche einer Exponential-Website betreiben, wie die Suche funktioniert, Indizierung, Suchen in der Praxis, Solr über ezfind, Feinabstimmung und Fehlersuche. Fünf Module, 20 Lektionen, etwa 10 Stunden Lektionen.
-keywords: suchkurs, kursübersicht, lesepfad, suche, indizierung, solr, ezfind, suchstatistiken, inhaltsfinder, fehlersuche in der suche, search course, course overview, reading path, search, indexing, search statistics, content finder, troubleshooting search
+keywords: suchkurs, kursüberblick, lesepfad, suche, indizierung, solr, ezfind, suchstatistiken, inhaltsfinder, fehlersuche in der suche, search course, course overview, reading path, search, indexing, search statistics, content finder, troubleshooting search
 type: help
 ---
-# Suche: Kursübersicht
+# Suche: Kursüberblick
 
 Dieser Kurs vermittelt Administratoren und Entwicklern, wie die Suche auf einer Exponential-Website funktioniert und
 wie sie funktionsfähig bleibt: was die eingebaute Suchmaschine leistet, wann Solr über die Erweiterung ezfind die

@@ -56,7 +56,7 @@ die späteren Module zu bestimmten Quellen darauf aufbauen können.
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Migration zu und von Exponential](../../../../installation/migration/README.md): der Migrations-Hub, auf dem dieses
   Modul aufbaut.
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

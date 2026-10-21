@@ -148,7 +148,7 @@ die Administration. Sie lesen nur.
 ## Verwandte Seiten
 
 - [Modul 1: Erste Schritte](README.md)
-- [Newsletter mit CJW Newsletter: Kursübersicht](../README.md)
+- [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

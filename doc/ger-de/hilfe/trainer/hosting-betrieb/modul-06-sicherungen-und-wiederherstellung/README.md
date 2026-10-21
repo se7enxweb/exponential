@@ -54,7 +54,7 @@ mit einer vollen Festplatte und einer Wiederherstellung bei einer Störung umgeh
 
 ## Verwandte Seiten
 
-- [Hosting und Betrieb: Kursübersicht](../README.md)
+- [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Sicherungen: was gesichert wird](../../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

@@ -140,7 +140,7 @@ Verwenden Sie Papier und die öffentliche Website der Schulungsinstallation.
 ## Verwandte Seiten
 
 - [Modul 1: Exponential Layouts kennenlernen](README.md)
-- [Exponential Layouts: Kursübersicht](../README.md)
+- [Exponential Layouts: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

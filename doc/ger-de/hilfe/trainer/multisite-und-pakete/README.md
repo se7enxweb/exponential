@@ -1,13 +1,13 @@
 ---
-title: "Multisite und Seitenpakete: Kursübersicht"
+title: "Multisite und Seitenpakete: Kursüberblick"
 audience: trainer, admin, developer
 category: training
 order: 1
 summary: Der Kurs für Administratoren und Entwickler, die mehrere Websites auf einer Installation betreiben und Websites aus Paketen aufbauen. Sechs Module und 26 Lektionen, etwa 22 Stunden Lektionen, von Siteaccesses und der Zuordnung von Anfragen über Einstellungen, Logs und Caches pro Website, websiteübergreifende Links, Pakete, exp:install und den Kickstarter bis zu einem Abschlussprojekt.
-keywords: multisite und seitenpakete, multisite, siteaccess, host-zuordnung, sprachweiterleitung, website-erweiterung, logs pro website, caches pro website, seitenpaket, paket-assistent, kickstarter, kursübersicht, multisite and site packages, host matching, MatchOrder, language redirect, site extension, exp:ini, ezurlmultisite, site package, ezpm, package wizard, exp:install, course overview
+keywords: multisite und seitenpakete, multisite, siteaccess, host-zuordnung, sprachweiterleitung, website-erweiterung, logs pro website, caches pro website, seitenpaket, paket-assistent, kickstarter, kursüberblick, multisite and site packages, host matching, MatchOrder, language redirect, site extension, exp:ini, ezurlmultisite, site package, ezpm, package wizard, exp:install, course overview
 type: help
 ---
-# Multisite und Seitenpakete: Kursübersicht
+# Multisite und Seitenpakete: Kursüberblick
 
 Dieser Kurs zeigt, wie eine Exponential-Installation mehrere Websites ausliefert und wie Websites aus Paketen
 aufgebaut und über die Kommandozeile installiert werden. Die Teilnehmenden beginnen mit einer Schulungsinstallation mit
@@ -47,7 +47,7 @@ installieren, neu installieren und neu erzeugen.
   als Redakteur oder Administrator benutzt. Der Kurs Website-Administration oder vergleichbare Erfahrung ist eine gute
   Grundlage.
 - Trainer: hat jede Übung auf der Version geprobt, die er unterrichtet, und hat den Kurs Train the Trainer besucht oder
-  vergleichbare Erfahrung ([Train the Trainer: Kursübersicht](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  vergleichbare Erfahrung ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
 
 ## Übungsumgebung
 

@@ -54,7 +54,7 @@ und eigene Anwendungen; Trainer können daraus nach demselben Muster zusätzlich
 
 ## Verwandte Seiten
 
-- [Migration zu Exponential: Kursübersicht](../README.md)
+- [Migration zu Exponential: Kursüberblick](../README.md)
 - [Migration zu und von Exponential, Abschnitt 4](../../../../installation/migration/README.md#4-migrationen-von-und-zu-anderen-systemen):
   alle Anleitungen für andere Systeme.
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

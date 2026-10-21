@@ -57,7 +57,7 @@ und eine langsame Website diagnostizieren.
 
 ## Verwandte Seiten
 
-- [Hosting und Betrieb: Kursübersicht](../README.md)
+- [Hosting und Betrieb: Kursüberblick](../README.md)
 - [Überblick über das Monitoring](../../../hosting/betrieb/ueberblick-ueber-die-ueberwachung.md)
 - [Runbooks](../../../hosting/runbooks/README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)

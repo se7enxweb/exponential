@@ -1,13 +1,13 @@
 ---
-title: "Migration zu Exponential: Kursübersicht"
+title: "Migration zu Exponential: Kursüberblick"
 audience: trainer, admin, developer
 category: training
 order: 1
 summary: Ein Kurs für Trainer zur Migration von Websites zu Exponential 6 - Planung, Zuordnung, Import- und Exportwerkzeuge, die In-place-Wege von der 4.x-Linie und vom 5.x-Legacy-Stack, die beiden Wege von eZ Platform und Ibexa, WordPress, Drupal, Joomla und statisches HTML, der Abschied von Exponential und ein Abschlussprojekt. Acht Module, 25 Lektionen, etwa 22,5 Stunden Lektionen.
-keywords: migration zu exponential, migrationskurs, kursübersicht, lesepfad, zeitplan, migrationsplanung, inhaltszuordnung, abschlussprojekt, exponential verlassen, migrating to exponential, migration course, course overview, reading path, schedule, migration planning, content mapping, xrowextract, 4.x, 5.x, eZ Platform, Ibexa, Nexus, Platform Legacy, WordPress, Drupal, Joomla, static HTML, leaving exponential, capstone
+keywords: migration zu exponential, migrationskurs, kursüberblick, lesepfad, zeitplan, migrationsplanung, inhaltszuordnung, abschlussprojekt, exponential verlassen, migrating to exponential, migration course, course overview, reading path, schedule, migration planning, content mapping, xrowextract, 4.x, 5.x, eZ Platform, Ibexa, Nexus, Platform Legacy, WordPress, Drupal, Joomla, static HTML, leaving exponential, capstone
 type: help
 ---
-# Migration zu Exponential: Kursübersicht
+# Migration zu Exponential: Kursüberblick
 
 Dieser Kurs vermittelt Administratoren, Entwicklern und Projektleitern, wie sie eine Website zu Exponential 6
 umziehen und ein solches Projekt so planen, dass keine Inhalte, keine Adressen und keine Benutzer verloren gehen. Er
@@ -138,7 +138,7 @@ Jede Prüfung, die Sie durchführen, ist Ihr eigenes Kursmaterial; das ist keine
 
 - [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
-- [Train the Trainer: Kursübersicht](../../../../eng-us/help/trainers/train-the-trainer/README.md)
+- [Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)
 - [Migration zu und von Exponential](../../../installation/migration/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -161,7 +161,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. `<public siteaccess>` ist der N
 ## Verwandte Seiten
 
 - [Modul 3: Suchen in der Praxis](README.md)
-- [Suche: Kursübersicht](../README.md)
+- [Suche: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

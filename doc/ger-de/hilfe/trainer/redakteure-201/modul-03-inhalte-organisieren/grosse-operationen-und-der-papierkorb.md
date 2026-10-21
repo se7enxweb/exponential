@@ -141,7 +141,7 @@ Elementen vorbereitet (zum Beispiel mit **Mehrere neu anlegen** oder als Kopie e
 ## Verwandte Seiten
 
 - [Modul 3: Inhalte organisieren](README.md)
-- [Redakteure 201: Kursübersicht](../README.md)
+- [Redakteure 201: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

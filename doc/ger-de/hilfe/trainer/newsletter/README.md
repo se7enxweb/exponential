@@ -1,13 +1,13 @@
 ---
-title: "Newsletter mit CJW Newsletter: Kursübersicht"
+title: "Newsletter mit CJW Newsletter: Kursüberblick"
 audience: trainer, editor, admin
 category: training
 order: 1
 summary: Der Kurs für alle, die Newsletter mit der Erweiterung cjw_newsletter schreiben, versenden und betreiben - 6 Module und 20 Lektionen, 16 Stunden Lektionen, auf einer Schulungsinstallation, die jede Mail in eine Datei schreibt und nur Testadressen unter example.invalid verwendet.
-keywords: newsletter mit cjw newsletter, newsletter-kurs, cjw_newsletter, newsletter-schulung, abonnenten, double opt-in, versand, cronjobs, bounces, transporte, skins, kursübersicht, newsletters with cjw newsletter, newsletter course, newsletter training, subscribers, sending, transports, course overview
+keywords: newsletter mit cjw newsletter, newsletter-kurs, cjw_newsletter, newsletter-schulung, abonnenten, double opt-in, versand, cronjobs, bounces, transporte, skins, kursüberblick, newsletters with cjw newsletter, newsletter course, newsletter training, subscribers, sending, transports, course overview
 type: help
 ---
-# Newsletter mit CJW Newsletter: Kursübersicht
+# Newsletter mit CJW Newsletter: Kursüberblick
 
 Dieser Kurs vermittelt das Newsletter-System von Exponential, die Erweiterung `cjw_newsletter`, vom ersten Blick auf
 das Dashboard bis zu einem eigenen Skin. Die Teilnehmenden legen eine Liste an, gewinnen erfundene Abonnenten über das
@@ -52,7 +52,7 @@ Testgruppen nutzen und einen Skin schreiben.
   Designer: die Template-Sprache.
 - Trainer: hat den ganzen Kurs einmal auf der eigenen Schulungsinstallation durchgespielt, einschließlich jeder
   Versandübung, und kennt das Material von Train the Trainer
-  ([Train the Trainer: Kursübersicht](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
 
 ## Übungsumgebung
 
