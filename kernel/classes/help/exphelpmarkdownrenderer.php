@@ -42,6 +42,10 @@
  *   remote_images  callable( $href ) => array( 'url', 'width', 'height' ) or null: the local copy of an https image
  *                  (expHelpRemoteImages::resolve(), stored by exp:help index), shown in its place as an <img> the
  *                  policy's 'self' allows. Null, or no copy: the image as above (an <img>, or the link).
+ *   partner_card   bool: the "Become an Exponential Partner" block between its markers (<!-- exp-partner-block:start -->
+ *                  ... <!-- exp-partner-block:end -->) becomes the card of the help dashboard's footer blocks
+ *                  (section.a4-help-partner, renderPartnerCard()); the viewer sets it. Default false: a paragraph, as
+ *                  every other output (DITA, content export) keeps it.
  *
  * The markup (styled by help.css; the class contract with the viewer and exphelp.js): div.a4-help-body around the
  * page; h1-h6.a4-help-h[id] with a.a4-help-anchor; div.a4-help-code[data-lang][data-label] > pre.a4-help-pre >
@@ -65,6 +69,10 @@ class expHelpMarkdownRenderer
 
     /** Deepest nesting of block quotes, lists and containers; deeper content is shown as text */
     const MAX_DEPTH = 16;
+
+    /** The markers around the "Become an Exponential Partner" block of the help pages (renderPartnerCard()) */
+    const PARTNER_START = '/^ {0,3}<!--[ \t]*exp-partner-block:start[ \t]*-->[ \t]*$/';
+    const PARTNER_END = '/^ {0,3}<!--[ \t]*exp-partner-block:end[ \t]*-->[ \t]*$/';
 
     /** @var array the elements kept from inline HTML, without attributes */
     protected static $inlineTags = array( 'b', 'strong', 'i', 'em', 's', 'del', 'ins', 'mark', 'small', 'sub', 'sup',
@@ -138,6 +146,7 @@ class expHelpMarkdownRenderer
             'source_path' => '',
             'image_sources' => null,
             'remote_images' => null,
+            'partner_card' => false,
         );
     }
 
@@ -492,6 +501,17 @@ class expHelpMarkdownRenderer
                 $html .= '<hr class="a4-help-hr">';
                 $i++;
                 continue;
+            }
+
+            // the "Become an Exponential Partner" block between its markers: a card (partner_card), else as written
+            if ( $this->options['partner_card'] && preg_match( self::PARTNER_START, $line ) === 1 )
+            {
+                $card = $this->renderPartnerCard( $lines, $i );
+                if ( $card !== null )
+                {
+                    $html .= $card;
+                    continue;
+                }
             }
 
             // HTML comment: dropped
@@ -939,6 +959,120 @@ class expHelpMarkdownRenderer
         return '<div class="a4-help-callout a4-help-callout--' . $kind . '" role="note">'
             . '<p class="a4-help-callout-title"><span class="a4-icon ' . $icon . '" aria-hidden="true"></span> ' . $title . '</p>'
             . $body . '</div>';
+    }
+
+    /**
+     * The "Become an Exponential Partner" block at the end of the help pages, as the card of the help dashboard's
+     * footer blocks (option partner_card). The block is the text between the markers
+     * "<!-- exp-partner-block:start -->" and "<!-- exp-partner-block:end -->", each on a line of its own, that every
+     * page carries in every language: one paragraph that starts with its bold lead sentence. The lead becomes the
+     * card's heading, the text up to the sentence with the first link its text, and the links of that last sentence
+     * its buttons (the first one primary), through the same link policy as every other link. Anything else between
+     * the markers (no end marker, more than one paragraph, no bold lead) returns null and is rendered as written.
+     *
+     * Markup: section.a4-help-partner > span.a4-help-tile (span.a4-icon.a4-bi-building) + div.a4-help-partner-main
+     * (h2.a4-help-partner-title + p) + div.a4-help-partner-actions (a.a4-btn ...).
+     *
+     * @param array $lines
+     * @param int $i the line of the start marker; moved past the end marker when the card is made
+     * @return string|null
+     */
+    protected function renderPartnerCard( array $lines, &$i )
+    {
+        $count = count( $lines );
+        $end = null;
+        for ( $j = $i + 1; $j < $count && $j <= $i + 40; $j++ )
+        {
+            if ( preg_match( self::PARTNER_END, $lines[$j] ) === 1 )
+            {
+                $end = $j;
+                break;
+            }
+        }
+        if ( $end === null )
+            return null;
+        $inner = array();
+        foreach ( array_slice( $lines, $i + 1, $end - $i - 1 ) as $innerLine )
+        {
+            // one paragraph only: no blank line between text, no other block
+            if ( trim( $innerLine ) === '' )
+            {
+                if ( $inner )
+                    $inner[] = '';
+                continue;
+            }
+            if ( ( $inner && end( $inner ) === '' ) || $this->startsBlock( $innerLine ) || preg_match( '/^ {4}/', $innerLine ) === 1 )
+                return null;
+            $inner[] = trim( $innerLine );
+        }
+        while ( $inner && end( $inner ) === '' )
+            array_pop( $inner );
+        $text = implode( "\n", $inner );
+        if ( preg_match( '/^(\*\*|__)([^*_\n][^*_]{0,160}?)\1[ \t\n]+(\S.*)$/s', $text, $m ) !== 1 )
+            return null;
+        $lead = rtrim( trim( $m[2] ), '.:!' );
+        $body = $m[3];
+        if ( $lead === '' )
+            return null;
+
+        // the links of the sentence that holds the first one become buttons; the text before it stays text
+        $buttons = array();
+        if ( preg_match_all( '/\[([^\[\]\n]{1,200})\]\(([^()\s]{1,2048})\)/', $body, $links, PREG_OFFSET_CAPTURE ) )
+        {
+            $first = $links[0][0][1];
+            $cut = null;
+            if ( preg_match_all( '/[.!?][ \t\n]+/', substr( $body, 0, $first ), $stops, PREG_OFFSET_CAPTURE ) )
+            {
+                $last = end( $stops[0] );
+                $cut = $last[1] + 1;
+            }
+            // only when that sentence is a short lead-in to its links ("Start with A and B.")
+            $sentence = $cut === null ? '' : substr( $body, $cut );
+            $rest = trim( preg_replace( '/\[([^\[\]\n]{1,200})\]\(([^()\s]{1,2048})\)/', '', $sentence ) );
+            if ( $cut !== null && mb_strlen( $rest, 'UTF-8' ) <= 60 )
+            {
+                foreach ( $links[1] as $n => $label )
+                    $buttons[] = array( $label[0], $links[2][$n][0] );
+                $body = rtrim( substr( $body, 0, $cut ) );
+            }
+        }
+
+        // the heading has no id: it is not in the table of contents, the page's scroll tracking or its collapsible
+        // sections (exphelp.js takes the h2 and h3 with an id)
+        $html = '<section class="a4-help-partner">'
+            . '<span class="a4-help-tile" aria-hidden="true"><span class="a4-icon a4-bi-building"></span></span>'
+            . '<div class="a4-help-partner-main"><h2 class="a4-help-partner-title">' . $this->renderInline( $lead ) . '</h2>'
+            . '<p>' . $this->renderInline( $body ) . '</p></div>';
+        if ( $buttons )
+        {
+            $icons = array( 'a4-bi-signpost-split', 'a4-bi-pencil-square' );
+            $html .= '<div class="a4-help-partner-actions">';
+            foreach ( $buttons as $n => $button )
+            {
+                // a link cannot hold another link
+                $label = preg_replace( '/<a\b[^>]*>|<\/a>/', '', $this->renderInline( $button[0] ) );
+                $target = $this->resolveUrl( $button[1] );
+                if ( $n > 0 )
+                    $html .= ' ';
+                if ( $target === null )
+                {
+                    $html .= '<span class="a4-help-deadlink">' . $label . '</span>';
+                    continue;
+                }
+                $class = 'a4-btn' . ( $n === 0 ? ' a4-btn-primary' : '' );
+                $attrs = ' href="' . self::escape( $target['href'] ) . '"';
+                if ( $target['external'] && stripos( $target['href'], 'mailto:' ) !== 0 )
+                {
+                    $class .= ' a4-help-ext';
+                    $attrs .= ' rel="noopener noreferrer"';
+                }
+                $icon = isset( $icons[$n] ) ? $icons[$n] : 'a4-bi-arrow-right';
+                $html .= '<a class="' . $class . '"' . $attrs . '><span class="a4-icon ' . $icon . '" aria-hidden="true"></span>' . $label . '</a>';
+            }
+            $html .= '</div>';
+        }
+        $i = $end + 1;
+        return $html . '</section>';
     }
 
     protected static function isTableDelimiter( $line )

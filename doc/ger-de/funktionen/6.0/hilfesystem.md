@@ -441,6 +441,28 @@ Dokumentation“. Das gilt für die gesamte Dokumentation von 6.x, einschließli
 Seiten; die aus früheren Versionen übernommenen Seiten behalten ihren eigenen Hinweis
 (`exphelp.ini [License] OtherLicensePathRules[]`). `[License] Enabled=false` blendet die Hinweise aus.
 
+## Die Partnerkarte
+
+Fast jede Hilfeseite endet mit dem Absatz **Werden Sie Exponential-Partner** (englisch **Become an Exponential
+Partner**), geschrieben zwischen zwei Markierungen, die GitHub nicht anzeigt:
+
+```markdown
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, ... Beginnen Sie mit
+[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->
+```
+
+Der Viewer zeigt ihn als Karte wie die Blöcke am Ende des Hilfe-Dashboards: das Partnersymbol auf einer Kachel, den
+fett gesetzten Anfang als Überschrift, den Text und die Links seines letzten Satzes als Schaltflächen (die erste
+hervorgehoben), nach denselben Regeln wie jeder andere Link. Das macht `expHelpMarkdownRenderer` mit seiner Option
+`partner_card`, die der Viewer setzt (`section.a4-help-partner`, gestaltet in `stylesheets/modules/help.css` von admin
+und admin4 mit den gemeinsamen Tokens, hell und dunkel). Erkannt wird nichts an seinen Worten, deshalb funktioniert
+jede Sprache gleich: Eine Übersetzung behält die Markierungen um ihren eigenen Text. Ein markierter Block, der nicht
+ein Absatz mit fettem Anfang ist oder keine Endmarkierung hat, wird als der Absatz gezeigt, der er ist. Das PDF druckt
+die Karte als Kasten mit den Links in einer Zeile; die Suche, die DITA- und Inhaltsexporte und alle anderen Ausgaben
+behalten den einfachen Absatz.
+
 ## Verwandt
 
 - `doc/eng-us/help/develop-with-git.md`: Arbeiten mit einem Git-Klon samt seiner Historie, und der Weg vom Benutzer zum Entwickler.

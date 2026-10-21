@@ -23,8 +23,8 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Viewer extends \Exponential\Runnable\ModuleView
 {
-    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings; 5: the language directories eng-us, ger-de; 6: external images from their local copy, exphelp/image) */
-    const RENDER_VERSION = 6;
+    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings; 5: the language directories eng-us, ger-de; 6: external images from their local copy, exphelp/image; 7: the Become an Exponential Partner block as a card) */
+    const RENDER_VERSION = 7;
 
     public function run( array $scope )
     {
@@ -295,6 +295,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
             'image_sources' => \expContentSecurityPolicy::imageSources(),
             // ... unless exp:help index stored a copy of it: then the copy, served by exphelp/image
             'remote_images' => class_exists( 'expHelpRemoteImages' ) ? array( new \expHelpRemoteImages(), 'resolve' ) : null,
+            // the "Become an Exponential Partner" block at the end of the pages as the dashboard's card
+            'partner_card' => true,
             'source_path' => (string)$sourcePath ) );
     }
 

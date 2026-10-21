@@ -773,6 +773,44 @@
   .a4-help-report-actions { grid-column: 1 / -1; }
 }
 
+/* ---- help pages: the "Become an Exponential Partner" card -----------------------------------------------------
+   The block at the end of the help pages (between <!-- exp-partner-block:start/end --> in the Markdown), rendered by
+   expHelpMarkdownRenderer (option partner_card, set by the viewer) as the dashboard's footer blocks are: a tile with
+   the partner icon, the bold lead as heading, the text and its links as buttons. Inside .a4-help-body, so the
+   article's own heading and paragraph rules are undone here. */
+
+.a4-help-partner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-4) var(--a4-space-5);
+  margin: var(--a4-space-6) 0 var(--a4-space-4);
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background:
+    linear-gradient(120deg, var(--a4-info-bg), transparent 55%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-info-line);
+}
+.a4-help-partner .a4-help-tile { color: var(--a4-info); background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-info-line); }
+.a4-help-body .a4-help-partner .a4-help-partner-title {
+  margin: 0 0 var(--a4-space-1);
+  padding: 0;
+  border: 0;
+  font-size: var(--a4-text-l);
+  font-weight: 650;
+}
+.a4-help-body .a4-help-partner p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-body .a4-help-partner p strong { color: var(--a4-ink); }
+.a4-help-partner-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); grid-column: 2; }
+.a4-help-body .a4-help-partner-actions a.a4-btn { text-decoration: none; }
+@media (max-width: 600px) {
+  .a4-help-partner-actions { grid-column: 1 / -1; }
+}
+@media print {
+  .a4-help-partner { break-inside: avoid; }
+}
+
 /* ---- dashboard: grow from user to developer (parts/dashboard_grow.tpl) ---------------------------------------- */
 
 .a4-help-grow {
