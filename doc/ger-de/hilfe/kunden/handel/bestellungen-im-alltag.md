@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für die Shop-Leitung und die Personen, die verpacken, versenden und Kunden antworten. Sie beschreibt,
 wie ein Team jeden Tag mit Bestellungen in Exponential arbeitet. Die Ansichten und Status sind für Unternehmen unter
-[Bestellungen und Bestellstatus](../../../../eng-us/help/businesses/stores/orders-and-order-statuses.md) beschrieben; die Morgenroutine
+[Bestellungen und Bestellstatus](../../unternehmen/shops/bestellungen-und-bestellstatus.md) beschrieben; die Morgenroutine
 steht unter [Tägliche Shop-Routine](taegliche-shop-routine.md).
 
 ## Die Ansichten
@@ -92,6 +92,6 @@ lieber archivieren als entfernen ([Datenexport und Löschung](datenexport-und-lo
 
 - [Bestellstatus](bestellstatus.md)
 - [Tägliche Shop-Routine](taegliche-shop-routine.md)
-- [Bestellungen und Bestellstatus für Unternehmen](../../../../eng-us/help/businesses/stores/orders-and-order-statuses.md)
+- [Bestellungen und Bestellstatus für Unternehmen](../../unternehmen/shops/bestellungen-und-bestellstatus.md)
 - [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

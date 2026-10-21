@@ -89,5 +89,5 @@ Fragen Sie Ihren Partner, wenn:
 
 - [Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md)
 - [Suchen (für Redakteure)](../../suchen.md)
-- [Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md)
+- [Suche im Intranet](../../unternehmen/intranets/suche-im-intranet.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

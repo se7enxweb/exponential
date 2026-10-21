@@ -14,8 +14,10 @@ A view of the `exphelp` module, defined in `kernel/exphelp/module.php` and run b
 ## Address
 
 ```text
-/exphelp/manual
+/exphelp/manual/(format)/<Format>
 ```
+
+Unordered parameters, in any order as `/(name)/value`: `(format)` sets `Format`.
 
 ## Who may open it
 
@@ -37,6 +39,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/exphelp/manual'|ezurl}>exphelp/manual</a>
+<a href={concat( '/exphelp/manual/(format)/', 1 )|ezurl}>exphelp/manual</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

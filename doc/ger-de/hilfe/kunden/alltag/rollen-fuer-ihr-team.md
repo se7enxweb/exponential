@@ -68,7 +68,7 @@ Das [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md) macht aus dieser 
 Eine Rolle kann **mit einer Einschränkung** zugewiesen werden: nur in einem Teilbaum oder nur in einer Sektion. Eine
 gemeinsame Rolle Editor, die der Gruppe jeder Abteilung mit einer Einschränkung auf die Sektion zugewiesen wird,
 bedeutet eine einzige Rolle zu pflegen statt einer pro Team
-([Abteilungen, Rollen und Sektionen](../../../../eng-us/help/businesses/intranets/departments-roles-and-sections.md)). Die Richtlinien
+([Abteilungen, Rollen und Sektionen](../../unternehmen/intranets/abteilungen-rollen-und-sektionen.md)). Die Richtlinien
 zum Bearbeiten, Übersetzen und Anlegen von Inhalten lassen sich außerdem nach Sprache einschränken
 ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)).
 
@@ -82,7 +82,7 @@ zum Bearbeiten, Übersetzen und Anlegen von Inhalten lassen sich außerdem nach 
 | `user/hygiene` | sieht Name, Benutzername, Status, Gruppen und Rollen jedes Kontos |
 | `audit/read`, `audit/manage` | liest oder verwaltet das Prüfprotokoll |
 
-Quellen: [Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md),
+Quellen: [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md),
 [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md). `PreventPrivilegeEscalation` ist in
 `settings/site.ini` standardmäßig eingeschaltet, sodass niemand mehr gewähren kann, als er selbst hat.
 
@@ -90,7 +90,7 @@ Quellen: [Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/a
 
 - Wenn jemand dazukommt, die Aufgabe wechselt oder geht: [Neue Mitarbeitende einarbeiten](neue-mitarbeitende-einarbeiten.md),
   [Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md).
-- Einmal im Jahr eine vollständige Überprüfung: [Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md).
+- Einmal im Jahr eine vollständige Überprüfung: [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md).
 - Nachdem Ihr Partner eine Änderung geliefert hat, die ein Modul oder eine Rolle hinzufügt: Fragen Sie, was sie gibt und wem.
 
 ## Verwandte Seiten
@@ -98,5 +98,5 @@ Quellen: [Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/a
 - [Rollen für neue Mitarbeitende wählen](rollen-fuer-neue-mitarbeitende-waehlen.md)
 - [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md)
 - [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)
-- [Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

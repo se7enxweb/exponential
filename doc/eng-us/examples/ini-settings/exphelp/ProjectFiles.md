@@ -21,8 +21,9 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 
 > The project files (expHelpProjectFiles; doc/eng-us/features/6.0/help-system.md, "Project files"): the Markdown files  
 > of the repository outside doc/ that document the project itself (README.md, INSTALL.md, SECURITY.md,  
-> CONTRIBUTING.md, COPYRIGHT.md, LICENSE.md, the README.md of bin/, design/ and kernel/ directories). Each has the id  
-> project/<path in the repository> (/exphelp/viewer/project/README.md; /exphelp/viewer/README.md redirects there) and  
+> CONTRIBUTING.md, CODE\_OF\_CONDUCT.md, COPYRIGHT.md, LICENSE.md, the README.md of bin/, design/ and kernel/  
+> directories). Each has the id project/<path in the repository> (/exphelp/viewer/project/README.md;  
+> /exphelp/viewer/README.md redirects there) and  
 > is a page at the top of the page tree, next to the folders, not in a folder of its own. They are English only and  
 > not translated, like doc/changelogs/: a reader of another language sees them with the note that the page is not  
 > translated.  
@@ -127,7 +128,7 @@ Audiences[]=admin
 
 ## AudienceRules
 
-Default: a list of 6: `README.md;admin,developer,editor,user,partner,hosting`, `INSTALL.md;admin,developer,hosting`, `SECURITY.md;admin,developer,hosting`, `CONTRIBUTING.md;developer,supporter,advocate,partner`, `COPYRIGHT.md;admin,developer,partner,businesses`, `LICENSE.md;admin,developer,partner,businesses`.
+Default: a list of 7: `README.md;admin,developer,editor,user,partner,hosting`, `INSTALL.md;admin,developer,hosting`, `SECURITY.md;admin,developer,hosting`, `CONTRIBUTING.md;developer,supporter,advocate,partner`, `CODE_OF_CONDUCT.md;developer,supporter,advocate,partner,trainer,user`, `COPYRIGHT.md;admin,developer,partner,businesses`, `LICENSE.md;admin,developer,partner,businesses`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -139,6 +140,7 @@ AudienceRules[]=README.md;admin,developer,editor,user,partner,hosting
 AudienceRules[]=INSTALL.md;admin,developer,hosting
 AudienceRules[]=SECURITY.md;admin,developer,hosting
 AudienceRules[]=CONTRIBUTING.md;developer,supporter,advocate,partner
+AudienceRules[]=CODE_OF_CONDUCT.md;developer,supporter,advocate,partner,trainer,user
 AudienceRules[]=COPYRIGHT.md;admin,developer,partner,businesses
 AudienceRules[]=LICENSE.md;admin,developer,partner,businesses
 */ ?>

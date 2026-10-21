@@ -30,9 +30,9 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 | Remote-Dienste (`expservices`) | Skripte und Portale, die tun, was die Administration tut | [Remote-Dienste (expservices)](remote-dienste-expservices.md) |
 | RSS-, Atom- und Podcast-Feeds | andere Websites, Aggregatoren und Verzeichnisse, die Ihre Neuigkeiten lesen | [RSS- und Podcast-Feeds](rss-und-podcast-feeds.md) |
 | RSS-Import | den Feed einer anderen Website als Inhalt übernehmen | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
-| Die Erweiterung `syndication` | Inhalte zwischen Installationen teilen, in eine Richtung oder in beide | [Feeds und Syndikation](../../../../eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md) |
-| Anmeldung über ein Verzeichnis (LDAP und andere) | Mitarbeitende melden sich mit ihrem Firmenkonto an | [Anmeldung über Verzeichnisse und LDAP](../../../../eng-us/help/businesses/intranets/directory-sign-in-and-ldap.md) |
-| Payment-Gateways | die Zahlungen des Shops | [Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md) |
+| Die Erweiterung `syndication` | Inhalte zwischen Installationen teilen, in eine Richtung oder in beide | [Feeds und Syndikation](../../unternehmen/mobil-und-headless/feeds-und-syndication.md) |
+| Anmeldung über ein Verzeichnis (LDAP und andere) | Mitarbeitende melden sich mit ihrem Firmenkonto an | [Anmeldung über Verzeichnisse und LDAP](../../unternehmen/intranets/verzeichnisanmeldung-und-ldap.md) |
+| Payment-Gateways | die Zahlungen des Shops | [Zahlungsanbieter für Unternehmen](../../unternehmen/shops/zahlungsanbieter-fuer-unternehmen.md) |
 | CSV-Export | Formulareinsendungen, Kontenlisten, Listen von Unterelementen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 
 ## Sieben Fragen
@@ -43,14 +43,14 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 4. **Welches Konto?** Ein eigenes Konto mit einer eng gefassten Rolle, nicht das Konto einer Person
    ([Die REST-API für Betreiber](rest-api-fuer-betreiber.md)).
 5. **Welche Zugangsdaten?** OAuth2 für Apps, deren Benutzer sich anmelden, ein persönlicher API-Schlüssel oder ein
-   Token für Remote-Dienste für ein Programm ([Apps und API-Schlüssel](../../../../eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md)).
+   Token für Remote-Dienste für ein Programm ([Apps und API-Schlüssel](../../unternehmen/mobil-und-headless/apps-und-api-schluessel.md)).
 6. **Wer ist zuständig?** Eine Person in Ihrer Organisation, die darüber entscheidet, und ein Partner, der sie pflegt.
 7. **Was kostet der Betrieb?** Hosting, Lizenzen des anderen Systems, die Wartungszeit des Partners.
 
 ## Datenschutz
 
 - Halten Sie fest, welche personenbezogenen Daten von wo nach wo gehen, und warum. Dies ist keine Rechtsberatung;
-  fragen Sie die Person, die für den Datenschutz verantwortlich ist ([Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)).
+  fragen Sie die Person, die für den Datenschutz verantwortlich ist ([Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)).
 - Halten Sie Zugangsdaten aus Dokumenten und E-Mails heraus; Schlüssel und Tokens werden einmal angezeigt, und
   gespeichert wird nur ein Hash ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Jedes Ereignis zu API-Schlüsseln und jeder Schreibvorgang über Remote-Dienste steht im Prüfprotokoll, das Ihnen einen
@@ -61,7 +61,7 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 | Frage | Zu vereinbarende Antwort |
 |---|---|
 | Wie bemerken wir es? | ein Alarm, ein täglicher Bericht oder eine Person, die nachsieht |
-| Was tut das andere System, wenn die Website nicht antwortet (Wartung, Upgrade)? | später erneut versuchen, in eine Warteschlange stellen oder zwischengespeicherte Daten zeigen ([Zuverlässigkeit des App-Backends](../../../../eng-us/help/businesses/mobile-and-headless/app-backend-reliability.md)) |
+| Was tut das andere System, wenn die Website nicht antwortet (Wartung, Upgrade)? | später erneut versuchen, in eine Warteschlange stellen oder zwischengespeicherte Daten zeigen ([Zuverlässigkeit des App-Backends](../../unternehmen/mobil-und-headless/zuverlaessigkeit-des-app-backends.md)) |
 | Was tut die Website, wenn das andere System nicht antwortet? | |
 | Wer kann sie abschalten, und wie? | die Zugangsdaten widerrufen, das Konto deaktivieren oder der Schalter des Dienstes |
 | Wer wird informiert? | |
@@ -90,6 +90,6 @@ Next review: __________
 ## Verwandte Seiten
 
 - [Mobil und Apps](mobil-und-apps.md)
-- [Über Netzwerke und Partner verkaufen](../../../../eng-us/help/businesses/mobile-and-headless/selling-through-networks-and-partners.md)
+- [Über Netzwerke und Partner verkaufen](../../unternehmen/mobil-und-headless/verkaufen-ueber-netzwerke-und-partner.md)
 - [Schätzen und Abgrenzen mit Erweiterungen](../../fuehrung/schaetzen-und-abgrenzen-mit-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

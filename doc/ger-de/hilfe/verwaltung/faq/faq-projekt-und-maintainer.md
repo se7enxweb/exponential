@@ -39,7 +39,7 @@ Seite das ([Was die Quellen nicht sagen](../../wer-ist-die-exponential-foundatio
 
 Nein. Exponential führt die Codebasis fort, die eZ Systems als eZ Publish entwickelt hat, ein Produkt, das sein
 Hersteller nach fast achtzehn Jahren eingestellt hat; das Projekt ist nicht mit eZ Systems oder Ibexa verbunden
-([Nicht mit eZ Systems oder Ibexa verbunden](../../../../eng-us/help/press/not-associated-with-ez-systems-or-ibexa.md)).
+([Nicht mit eZ Systems oder Ibexa verbunden](../../presse/nicht-verbunden-mit-ez-systems-oder-ibexa.md)).
 
 ## Wie aktiv ist das Projekt?
 

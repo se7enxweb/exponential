@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber, der einen klaren Moment im Jahr haben möchte, um zu fragen: Was hat uns die Website
 gebracht, was hat sie gekostet, und was tun wir als Nächstes? Sie gibt einen Sitzungsplan mit Unterlagen, einer
 Tagesordnung und den festzuhaltenden Entscheidungen vor. Die betriebliche Seite des Jahres (Updates, Backups,
-Sicherheit, Datenschutz) hat ihre eigene Vorlage, die [Checkliste für die Jahresüberprüfung](../../../../eng-us/help/businesses/templates/annual-review-checklist.md);
+Sicherheit, Datenschutz) hat ihre eigene Vorlage, die [Checkliste für die Jahresüberprüfung](../../unternehmen/vorlagen/checkliste-jahresrueckblick.md);
 halten Sie beide am selben Tag ab, oder die betriebliche zuerst.
 
 ## Wer teilnimmt
@@ -74,9 +74,9 @@ Signed: ______________________
 - Für welche Funktion haben wir beim Bau bezahlt und nutzen sie nicht?
 - Welche Kosten sind gestiegen, ohne dass es eine Entscheidung gab?
 - Wenn die Website einen Tag ausfiele, was würde uns das kosten
-  ([Arbeitsblatt zu den Kosten von Ausfällen](../../../../eng-us/help/businesses/costs/cost-of-downtime-worksheet.md))?
+  ([Arbeitsblatt zu den Kosten von Ausfällen](../../unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md))?
 - Sind wir noch auf einem unterstützten Release, und ist die Update-Arbeit des nächsten Jahres im Budget
-  ([Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md))?
+  ([Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md))?
 
 > **Tipp**
 > Bewahren Sie die ausgefüllte Überprüfung zusammen mit der des Vorjahres auf. Drei Jahre nebeneinander zeigen mehr als
@@ -90,7 +90,7 @@ Signed: ______________________
 
 ## Verwandte Seiten
 
-- [Checkliste für die Jahresüberprüfung](../../../../eng-us/help/businesses/templates/annual-review-checklist.md)
+- [Checkliste für die Jahresüberprüfung](../../unternehmen/vorlagen/checkliste-jahresrueckblick.md)
 - [ROI-Arbeitsblatt](roi-arbeitsblatt.md)
 - [Jährliche Checkliste](checklisten/jaehrlich.md)
 - [Den ROI messen](den-roi-messen.md)

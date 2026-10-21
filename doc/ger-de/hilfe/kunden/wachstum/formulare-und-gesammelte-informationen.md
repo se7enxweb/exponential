@@ -74,8 +74,8 @@ Spam-Sammlungen lassen sich unter **Setup > Gesammelte Informationen** gesammelt
   eines Formulars; die Formulare bleiben. Es lässt sich nicht rückgängig machen: Exportieren Sie zuerst, wenn die Daten
   noch gebraucht werden ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
 - Legen Sie fest, wie lange Einsendungen aufbewahrt werden, schreiben Sie es in Ihre Datenschutzhinweise und löschen
-  Sie nach diesem Plan. Dies ist keine Rechtsberatung ([Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md),
-  [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+  Sie nach diesem Plan. Dies ist keine Rechtsberatung ([Einwilligung und Formulare](../../unternehmen/sicherheit/einwilligung-und-formulare.md),
+  [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 
 Eine monatliche Routine:
 
@@ -97,5 +97,5 @@ Eine monatliche Routine:
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
 - [Formulareinsendungen lesen und exportieren](../../../../eng-us/help/creators/website-creators/form-submissions.md)
-- [Formulare und Feedback von Mitgliedern](../../../../eng-us/help/businesses/associations/forms-and-member-feedback.md)
+- [Formulare und Feedback von Mitgliedern](../../unternehmen/vereine/formulare-und-rueckmeldungen-von-mitgliedern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

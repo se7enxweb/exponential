@@ -18,6 +18,7 @@ Diese Seite ist für Fürsprecher mit einer kurzen Frage zur Fürsprache selbst.
 | Darf ich für 7x oder die Foundation sprechen? | Nur, wenn diese Sie darum bitten. Sonst sprechen Sie als Sie selbst | [Offenlegung und Interessenkonflikte](offenlegung-und-interessenkonflikte.md) |
 | Darf ich das Logo verwenden? | Die Quellen legen keine Logoregeln für Dritte fest; fragen Sie den Inhaber | [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#was-die-quellen-nicht-entscheiden) |
 | Darf ich für Beiträge oder Vorträge bezahlt werden? | Ja, wenn Sie es deutlich offenlegen | [Offenlegung und Interessenkonflikte](offenlegung-und-interessenkonflikte.md) |
+| Wie zeige ich in einer Demo, „was diese Installation ist“? | Führen Sie `./console exp:about` aus: das Logo, die Fakten und das Projekt auf einem Bildschirm, ohne Geheimnisse | [Die Systemkarte in Demos](die-systemkarte-in-demos.md) |
 | Darf ich ein „Exponential-Treffen“ organisieren? | Ja, als Ihre eigene Veranstaltung, deutlich so benannt | [Ein Treffen vorschlagen](ein-treffen-vorschlagen.md) |
 | Darf ich Hilfeseiten in meinen Blog kopieren? | Unter den Bedingungen der GNU FDL; am einfachsten ist ein Zitat mit Link | [Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md) |
 | Was, wenn ich etwas Falsches gesagt habe? | Korrigieren Sie es offen | [Ehrlichkeit und Genauigkeit](ehrlichkeit-und-genauigkeit.md) |

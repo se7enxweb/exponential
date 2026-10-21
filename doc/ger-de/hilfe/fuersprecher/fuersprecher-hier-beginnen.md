@@ -133,7 +133,7 @@ Folgen Sie dann [Ihre erste Woche als Fürsprecher](ihre-erste-woche.md).
 |---|---|
 | [Demos als Fürsprecher zeigen](demos-zeigen.md) | Exponential auf einer Installation zeigen, die Sie kontrollieren |
 | [Skript für einen Lightning Talk](skript-lightning-talk.md), [Folienplan für einen 20-Minuten-Vortrag](folienplan-20-minuten-vortrag.md), [Ablaufplan für einen Praxis-Workshop](ablaufplan-praxis-workshop.md) | Vorträge von 5, 20 und mehr als 90 Minuten, bereit zum Anpassen |
-| [Vor einer Benutzergruppe oder Klasse präsentieren](vor-benutzergruppe-oder-klasse-praesentieren.md), [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md), [Einen Screencast aufnehmen](einen-screencast-aufnehmen.md), [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md) | Gut, sicher und barrierefrei präsentieren |
+| [Vor einer Benutzergruppe oder Klasse präsentieren](vor-benutzergruppe-oder-klasse-praesentieren.md), [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md), [Die Systemkarte in Demos](die-systemkarte-in-demos.md), [Einen Screencast aufnehmen](einen-screencast-aufnehmen.md), [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md) | Gut, sicher und barrierefrei präsentieren |
 
 ### Schreiben
 
