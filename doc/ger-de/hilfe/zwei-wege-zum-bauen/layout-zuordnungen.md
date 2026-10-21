@@ -52,8 +52,8 @@ Rezept-Zuordnung (160) vor der Artikel-Zuordnung (130); eine Seite, die keine an
 ## Eine Zuordnung anlegen
 
 **Neue Zuordnung** öffnet ein Feld: **Layout verknüpfen** (das Layout), **Priorität**, **Aktiviert**, dann Ziele und
-Bedingungen. Die angebotenen Zieltypen sind Pfad, Pfadpräfix, Pfad (regulärer Ausdruck), Ort, Teilbaum und Route (Route passt
-auf der Site nie); die Bedingungstypen Siteaccess, Klasse, Abfrageparameter, Routenparameter und Zeit. *Any target can be
+Bedingungen. Die angebotenen Zieltypen sind Pfad, Pfadpräfix, Pfad (regulärer Ausdruck), Ort, Teilbaum und Route;
+die Bedingungstypen Siteaccess, Klasse, Abfrageparameter, Routenparameter und Zeit. *Any target can be
 met*; jede Bedingung muss erfüllt sein.
 
 ![Das Feld Neue Zuordnung: Zugeordnetes Layout, Layout verknüpfen, Priorität mit Aktiviert, Keine Ziele mit der Auswahl Pfad und Ziel hinzufügen, Keine Bedingungen mit der Auswahl Siteaccess und Bedingung hinzufügen](../../../eng-us/help/build-two-ways/images/mp-01-new-mapping.webp)
@@ -62,10 +62,27 @@ Eine Siteaccess-Bedingung ist eine Liste der Siteaccesse der Installation zur Au
 
 ![Eine Siteaccess-Bedingung mit der Liste site, admin, classic, bold](../../../eng-us/help/build-two-ways/images/mp-04-siteaccess-condition.webp)
 
+Ein Ziel vom Typ **Route** nennt statt einer Adresse eine Modulansicht von Exponential: `content/search` (die
+Suchseite), `user/*` (alle Benutzerseiten), `content/view` (jede Inhaltsseite; ein URL-Alias zählt als die
+Inhaltsansicht, für die er steht) oder `*` (jedes Modul). Ein führender Schrägstrich ist erlaubt. Seit explayouts 1.4.42
+passt ein Route-Ziel auf der Site. Das Media-Design gestaltet Seiten, die keine Inhaltsseiten sind (Suche, Benutzer, ein
+Modul einer Erweiterung), nur über eine Zuordnung mit Route-Ziel; die Auffang- und Pfad-Zuordnungen bleiben bei
+Inhaltsseiten. In einem eigenen Template liefert `fetch( 'explayouts', 'resolve_route_layout', hash() )` das Layout,
+das eine Route-Zuordnung gewählt hat.
+
 Der Resolver merkt sich seine Antwort pro Adresse und Siteaccess für `[ResolverSettings] CacheTTL` (auf dieser Installation
-3600 Sekunden), ohne den Query-String. Eine Bedingung Abfrageparameter oder Zeit wirkt deshalb nur für Adressen, deren
-gemerkte Antwort abgelaufen ist: Auf der Testkopie zeigten `/showcase` und `/showcase?variant=b` immer dasselbe Layout,
-das derjenigen Adresse, die zuerst angefragt wurde.
+3600 Sekunden). Seit explayouts 1.4.42 gibt es zwei Ausnahmen:
+
+- Eine Antwort, die von einer Bedingung **Abfrageparameter** einer Zuordnung für die Seite abhängt, wird nicht gemerkt;
+  `/showcase` und `/showcase?variant=b` bekommen also bei jeder Anfrage ihr eigenes Layout (A/B unter einer Adresse
+  funktioniert). Der Seiten-Cache behält keine Adresse, deren Query einen Parameter außerhalb von
+  `[HttpCacheSettings] QueryStringParameters` hat. Auf der Live-Installation zeigte eine Zuordnung mit dem
+  Abfrageparameter `p643b=b` an einem Artikel mit `?p643b=b` `layout_4` und ohne ihn das normale `layout_2`, auf Apache
+  und auf Velocity, in jeder Reihenfolge der Anfragen.
+- Eine Antwort, die von einer Bedingung **Zeit** abhängt, wird nur bis zum nächsten Beginn oder Ende der Bedingung
+  (`from`, `to`) gemerkt, nicht für `CacheTTL`. Liegt dieser Zeitpunkt innerhalb von `[HttpCacheSettings] MaxAge` des
+  Seiten-Cache (3600 Sekunden), bleibt die Seite aus den Seiten-Caches (`Cache-Control: private, no-store`). Eine
+  Zeit-Bedingung schaltet also zu Beginn und Ende um, ohne Verzögerung. Ein abgelaufener Zeitraum wird normal gecacht.
 
 ## Das Layout einer Seite finden
 

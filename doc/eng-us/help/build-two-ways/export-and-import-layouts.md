@@ -3,7 +3,7 @@ title: Export and import layouts
 audience: admin, developer, website-creator, designer, hosting
 category: build-two-ways
 order: 600
-summary: Move layouts between installations, keep them in version control and roll a layout back - exp:layouts list, export and import with dry runs and strategies, the .zip format, and the cache to clear after a command-line import. Real output.
+summary: Move layouts between installations, keep them in version control and roll a layout back - exp:layouts list, export and import with dry runs and strategies, the .zip format, and the page cache after a command-line import. Real output.
 keywords: exp:layouts, export layouts, import layouts, layouts zip, dry run, strategy skip overwrite copy, publish, rollback, version control, staging to production, references
 type: help
 ---
@@ -102,10 +102,11 @@ decides what happens to references to content that the target installation does 
 
 ## After a command-line import
 
-On the test copy, a `--strategy=overwrite --publish` import wrote the layout and printed
-`1 items written; 0 resolver cache entries removed.`, but the article pages still came from the page cache
-(`X-Exp-Cache: HIT`) with the old blocks until `./console exp:cache clear --tag=content`. Clear the content caches
-after importing on the command line. (Publishing in the editor purged them by itself.)
+Since explayouts_core 1.0.10, an import that publishes a layout (`--publish`) or writes a rule purges every page of
+the page cache itself, on the command line too, as publishing in the editor does. Clearing the content cache by hand
+after a command-line import is no longer needed. Drafts, dry runs and refused imports purge nothing. The import still
+ends with the line `N items written; M resolver cache entries removed.` (for example
+`1 items written; 0 resolver cache entries removed.`).
 
 ## Related pages
 

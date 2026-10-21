@@ -3,7 +3,7 @@ title: Bekanntes Verhalten des Editors
 audience: editor, website-creator, admin, designer, developer
 category: build-two-ways
 order: 280
-summary: Verhalten des Layout-Editors und seiner Werkzeuge, das beim Schreiben dieser Seiten auf Exponential 6.0.15+ beobachtet wurde, jeweils mit dem Beobachteten und dem Umgang damit; Änderungen des Ansichtstyps, Positionen von Einträgen, die Suche im Content Browser, Importe und der Seiten-Cache sowie defekte Hilfsskripte.
+summary: Verhalten des Layout-Editors und seiner Werkzeuge, das beim Schreiben dieser Seiten auf Exponential 6.0.15+ beobachtet wurde, jeweils mit dem Beobachteten und dem Umgang damit; Änderungen des Ansichtstyps, Positionen von Einträgen, die Suche im Content Browser, Template-Blöcke in Kopf- und Fußzeile sowie das seit explayouts_core 1.0.10 und explayouts 1.4.42 behobene Verhalten von Importen und Hilfsbefehlen.
 keywords: bekannte Probleme, Verhalten, Layout-Editor, Ansichtstyp nicht gespeichert, js-skip-on-change, Position von Einträgen, Suche im Content Browser, Import-Cache, block_list, layout_info, collection_list, Umgehung, known issues, behaviors, layouts editor, view type not saved, collection item position, content browser search, import cache, workaround
 type: help
 ---
@@ -12,24 +12,30 @@ type: help
 Jeder Eintrag wurde beim Schreiben dieser Hilfe auf einer Kopie einer Live-Installation beobachtet. Sie werden genannt,
 damit Sie wissen, was Sie erwartet; prüfen Sie die Release Notes Ihrer Version, denn dort können sie behoben sein.
 
-## Eine Änderung nur des Ansichtstyps wird nicht gespeichert
+## Eine Änderung nur des Ansichtstyps wird nicht gespeichert (behoben in explayouts_ui_api 1.3.29)
 
 **Beobachtet:** Im Reiter **Design** änderte die Auswahl eines anderen **Ansichtstyps** das Formular, aber der Entwurf
 behielt den alten Ansichtstyp; nach **Layout veröffentlichen** war der Block unverändert. Die Auswahlliste trägt die
 Klasse `js-skip-on-change`, mit der das Skript des Editors das Speichern bei dieser Änderung überspringt.
+explayouts_ui_api 1.3.28 speicherte die meisten Ansichtstypen; 1.3.29 speichert auch die Ansichtstypen einer Liste, bei
+denen kein Ansichtstyp der Elemente zur Wahl bleibt (`list_zigzag`, `list_accordion`, ein eigener wie `list_compact`).
 
-**Umgang damit:** Ändern Sie nach der Auswahl des Ansichtstyps ein beliebiges anderes Feld desselben Formulars (tippen
-und löschen Sie ein Zeichen in **CSS class**): Dann wird das ganze Formular gespeichert, samt Ansichtstyp. Der Blockkopf
-zeigt anschließend den neuen Ansichtstyp in Großbuchstaben.
+**Umgang damit:** Aktualisieren Sie explayouts_ui_api auf 1.3.29 oder neuer. In einer älteren Version ändern Sie nach
+der Auswahl des Ansichtstyps ein beliebiges anderes Feld desselben Formulars (tippen und löschen Sie ein Zeichen in
+**CSS class**): Dann wird das ganze Formular gespeichert, samt Ansichtstyp. In beiden Fällen zeigt der Blockkopf den
+gespeicherten Ansichtstyp in Großbuchstaben.
 
-## Zwei Einträge mit Position 0
+## Zwei Einträge mit Position 0 (behoben in explayouts_ui_api 1.3.29)
 
 **Beobachtet:** Nachdem **+ Elemente hinzufügen** einer manuellen Sammlung mit drei Artikeln einen vierten hinzugefügt
 hatte, hatte die veröffentlichte Sammlung die Positionen 0, 0, 1, 2 (der neue Eintrag und der erste beide 0). Die Seite
-zeigte alle vier.
+zeigte alle vier. Der Editor schickt jeden gewählten Eintrag mit dem Offset der Sammlung, und jeder wurde genau an
+dieser Position gespeichert.
 
-**Umgang damit:** Wenn die Reihenfolge auf der Site nicht der im Editor entspricht, ziehen Sie die Einträge vor dem
-Veröffentlichen noch einmal in die gewünschte Reihenfolge.
+**Umgang damit:** Aktualisieren Sie explayouts_ui_api auf 1.3.29 oder neuer: Jeder neue Eintrag erhält eine eigene
+Position, die neuen Einträge stehen vorn in der gewählten Reihenfolge, und das Verschieben eines Eintrags verschiebt
+die dazwischen. Positionen, die vorher geteilt waren, werden bei der nächsten Änderung der Sammlung bereinigt. In einer
+älteren Version ziehen Sie die Einträge vor dem Veröffentlichen noch einmal in die gewünschte Reihenfolge.
 
 ## Die Suche im Content Browser
 
@@ -38,21 +44,27 @@ gefunden.“, während das Durchblättern mit **Öffnen** die Artikel fand.
 
 **Umgang damit:** Blättern Sie durch den Baum; die Suche hängt von der Sucheinrichtung der Installation ab.
 
-## Ein Import auf der Kommandozeile lässt die alte Seite im Cache
+## Ein Import auf der Kommandozeile leert den Seiten-Cache
 
-**Beobachtet:** `exp:layouts import ... --strategy=overwrite --publish` schrieb und veröffentlichte das Layout, aber die
-Seiten kamen weiterhin mit den alten Blöcken aus dem Seiten-Cache (`X-Exp-Cache: HIT`). Das Veröffentlichen im Editor hat
-sie von selbst geleert (`MISS (purged)`).
+**Behoben:** Seit explayouts_core 1.0.10 leert ein `exp:layouts import`, der ein Layout veröffentlicht (`--publish`)
+oder eine Regel schreibt, selbst jede Seite des Seiten-Cache, auch auf der Kommandozeile, so wie das Veröffentlichen im
+Editor. Den Inhalts-Cache nach einem Import auf der Kommandozeile von Hand zu leeren ist nicht mehr nötig. Entwürfe,
+Probeläufe und abgelehnte Importe leeren nichts.
 
-**Umgang damit:** Nach einem Import auf der Kommandozeile `./console exp:cache clear --tag=content`.
+## Die Hilfsbefehle von explayouts laufen eigenständig
 
-## Einige Hilfsbefehle von explayouts brechen mit einem Fehler ab
+**Behoben:** Seit explayouts 1.4.42 laufen `./console ext:explayouts:block_list <layout_id>`, `layout_info <id>`,
+`collection_list <block_id>`, `layout_copy`, `layout_list`, `rule_list <layout_id>` und `share_create` (und die anderen
+Helfer in `extension/explayouts/bin/php`) eigenständig; sie enden nicht mehr mit `Class "..." not found`.
+`-s <siteaccess>` wählt den Siteaccess. `./console ext:explayouts:layout_info 2` gibt unter anderem aus:
 
-**Beobachtet:** `./console ext:explayouts:block_list <id>`, `layout_info`, `collection_list`, `layout_copy`,
-`layout_list`, `rule_list` und `share_create` (alle `ext:explayouts:...`) endeten mit `PHP Fatal error: Uncaught Error: Class "..." not found`.
+```text
+ID:          2
+Identifier:  fd0aa7af77a85a03bf1080018f5db1dc
+Name:        Header / Footer
+```
 
-**Umgang damit:** Verwenden Sie `./console exp:layouts list` und `exp:layouts export --only=<identifier>` (die
-`layouts.json` des Archivs enthält Zonen, Blöcke, Parameter und Einträge).
+`exp:layouts` bleibt das Werkzeug für Export und Import.
 
 ## Template-Blöcke in den Zonen header und footer
 

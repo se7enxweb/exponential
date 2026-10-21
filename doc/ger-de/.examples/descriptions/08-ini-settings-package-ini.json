@@ -359,9 +359,53 @@
         "en": "TTL for Route APC cache, in seconds",
         "de": "TTL des APC-Routen-Caches, in Sekunden"
     },
+    "ini:settings/rest.ini [CorsSettings]": {
+        "en": "Cross-origin resource sharing (CORS) for everything served by index_rest.php (/api/...: the content API, the\nOAuth token end point and the routes of every REST provider). doc/eng-us/bc/6.0/rest-cors.md\nOff by default: no CORS header is sent and an OPTIONS request is routed as before.",
+        "de": "Cross-Origin Resource Sharing (CORS) für alles, was index_rest.php ausliefert (/api/...: die Content-API, den\nOAuth-Token-Endpunkt und die Routen jedes REST-Providers). doc/eng-us/bc/6.0/rest-cors.md\nStandardmäßig aus: Es wird kein CORS-Header gesendet, und eine OPTIONS-Anfrage wird wie bisher geroutet."
+    },
+    "ini:settings/rest.ini [CorsSettings] AllowCredentials": {
+        "en": "enabled or disabled (the default). Enabled: Access-Control-Allow-Credentials: true, so a browser sends and keeps\ncookies on the cross-origin request (the session of a signed in user). Leave it disabled for clients that send an\nOAuth token or an API key in the Authorization header, which is the usual case.",
+        "de": "enabled oder disabled (der Standard). enabled: Access-Control-Allow-Credentials: true, damit ein Browser bei der\nCross-Origin-Anfrage Cookies sendet und behält (die Sitzung eines angemeldeten Benutzers). Lassen Sie es für Clients, die ein\nOAuth-Token oder einen API-Schlüssel im Authorization-Header senden, deaktiviert; das ist der übliche Fall."
+    },
+    "ini:settings/rest.ini [CorsSettings] AllowedHeaders": {
+        "en": "The request headers a preflight may ask for (compared without case); a preflight that asks for any other is refused",
+        "de": "Die Anfrage-Header, nach denen ein Preflight fragen darf (ohne Beachtung der Groß- und Kleinschreibung verglichen); ein Preflight, der nach einem anderen fragt, wird abgelehnt"
+    },
+    "ini:settings/rest.ini [CorsSettings] AllowedMethods": {
+        "en": "AllowedOrigins[]=https://app.example.com\nAllowedOrigins[]=http://localhost:3000\nThe methods a preflight may ask for",
+        "de": "AllowedOrigins[]=https://app.example.com\nAllowedOrigins[]=http://localhost:3000\nDie Methoden, nach denen ein Preflight fragen darf"
+    },
+    "ini:settings/rest.ini [CorsSettings] AllowedOrigins": {
+        "en": "The origins that may call the API from a browser, exactly as the browser sends them: scheme, host and port\n(when not the default), no path and no trailing slash. A response to any other origin has no Access-Control-*\nheader. \"null\" is never accepted. \"*\" (any origin) is accepted only while AllowCredentials is disabled.",
+        "de": "Die Origins, die die API aus einem Browser aufrufen dürfen, genau so, wie der Browser sie sendet: Schema, Host und Port\n(wenn nicht der Standardport), kein Pfad und kein abschließender Schrägstrich. Eine Antwort an jeden anderen Origin hat keinen\nAccess-Control-*-Header. \"null\" wird nie akzeptiert. \"*\" (jeder Origin) wird nur akzeptiert, solange AllowCredentials deaktiviert ist."
+    },
+    "ini:settings/rest.ini [CorsSettings] Cors": {
+        "en": "enabled or disabled (the default)",
+        "de": "enabled oder disabled (der Standard)"
+    },
+    "ini:settings/rest.ini [CorsSettings] ExposedHeaders": {
+        "en": "Response headers a script of an allowed origin may read besides the CORS-safelisted ones",
+        "de": "Antwort-Header, die ein Skript eines erlaubten Origins neben den CORS-sicheren Headern lesen darf"
+    },
+    "ini:settings/rest.ini [CorsSettings] MaxAge": {
+        "en": "How long a browser may keep the answer to a preflight, in seconds; 0 sends no Access-Control-Max-Age",
+        "de": "Wie lange ein Browser die Antwort auf einen Preflight behalten darf, in Sekunden; 0 sendet kein Access-Control-Max-Age"
+    },
+    "ini:settings/rest.ini [OAuthSettings] AllowPlainPkce": {
+        "en": "enabled or disabled (the default). The challenge method \"plain\" sends the verifier itself and protects nothing\nagainst an attacker who can read the authorization request; only S256 is accepted unless this is enabled.",
+        "de": "enabled oder disabled (der Standard). Die Challenge-Methode \"plain\" sendet den Verifier selbst und schützt nicht\ngegen einen Angreifer, der die Autorisierungsanfrage lesen kann; nur S256 wird akzeptiert, solange dies nicht aktiviert ist."
+    },
     "ini:settings/rest.ini [OAuthSettings] AuthorizeRequiresPolicy": {
         "en": "enabled or disabled. Enabled (the default): a signed in user may authorize an OAuth client at oauth/authorize only\nwith the policy oauth/authorize (optionally limited by siteaccess); without it the client gets error=access_denied.\ndisabled: every signed in user may authorize clients, as before 6.0.15. Use it only for a short time during an\nupgrade, until \"php bin/php/addoauthauthorizepolicy.php\" has granted the policy (doc/eng-us/bc/6.0/oauth-authorize-policy.md).",
         "de": "enabled oder disabled. Enabled (der Standard): Ein angemeldeter Benutzer darf einen OAuth-Client unter oauth/authorize nur\nmit der Richtlinie oauth/authorize autorisieren (wahlweise nach Siteaccess eingeschränkt); ohne sie erhält der Client error=access_denied.\ndisabled: Jeder angemeldete Benutzer darf Clients autorisieren, wie vor 6.0.15. Verwenden Sie es nur kurz während eines\nUpgrades, bis \"php bin/php/addoauthauthorizepolicy.php\" die Richtlinie gewährt hat (doc/eng-us/bc/6.0/oauth-authorize-policy.md)."
+    },
+    "ini:settings/rest.ini [OAuthSettings] RequirePkceForConfidentialClients": {
+        "en": "enabled or disabled (the default). Enabled: every client must use PKCE, also one with a client secret.",
+        "de": "enabled oder disabled (der Standard). enabled: Jeder Client muss PKCE verwenden, auch einer mit einem Client-Secret."
+    },
+    "ini:settings/rest.ini [OAuthSettings] RequirePkceForPublicClients": {
+        "en": "PKCE (RFC 7636) for the authorization code flow. A client sends code_challenge and code_challenge_method to\noauth/authorize and the matching code_verifier to the token end point (/api/oauth/token); the code is refused\nthere without it. doc/eng-us/bc/6.0/oauth-pkce.md\nenabled (the default) or disabled. Enabled: a public client (one stored without a client secret, such as a mobile\nor browser application) must use PKCE; oauth/authorize answers error=invalid_request without a code_challenge.\nA public client authenticates with its client_id alone, so without PKCE anyone who sees its code can redeem it.",
+        "de": "PKCE (RFC 7636) für den Authorization-Code-Flow. Ein Client sendet code_challenge und code_challenge_method an\noauth/authorize und den passenden code_verifier an den Token-Endpunkt (/api/oauth/token); ohne ihn wird der Code\ndort abgelehnt. doc/eng-us/bc/6.0/oauth-pkce.md\nenabled (der Standard) oder disabled. enabled: Ein öffentlicher Client (einer, der ohne Client-Secret gespeichert ist, etwa eine mobile\noder Browser-Anwendung) muss PKCE verwenden; oauth/authorize antwortet ohne code_challenge mit error=invalid_request.\nEin öffentlicher Client authentifiziert sich allein mit seiner client_id; ohne PKCE kann also jeder, der seinen Code sieht, ihn einlösen."
     },
     "ini:settings/rest.ini [OAuthSettings] TokenTTL": {
         "en": "OAuth token/authcode time to live, in seconds\nDefault is one hour",

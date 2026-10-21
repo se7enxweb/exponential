@@ -3,7 +3,7 @@ title: "A/B-Varianten einer Seite planen"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1018
-summary: Die Bedingung Abfrageparameter gibt es, aber der Resolver merkt sich seine Antwort pro Pfad, sodass eine Adresse nicht zwei Layouts zugleich zeigen kann; planen Sie Varianten unter zwei Adressen.
+summary: Eine Bedingung Abfrageparameter gibt einer Adresse ein zweites Layout: Seit explayouts 1.4.42 bekommen /showcase und /showcase?variant=b bei jeder Anfrage ihr eigenes Layout.
 keywords: A/B-Test, Variante, Abfrageparameter, Resolver-Cache, zwei URLs, Experiment, A/B test, variant, query parameter, resolver cache, two URLs, experiment
 type: help
 ---
@@ -22,8 +22,8 @@ Zwei Versionen einer Landingpage vergleichen.
 
 ## Im Layout-Editor
 
-1. Auf einer Kopie getestet: eine Zuordnung *Pfadpräfix `showcase` + Abfrageparameter `variant`* (Priorität 3000) und die normale Showcase-Zuordnung. Die zuerst angefragte Adresse entschied für die nächste Stunde über das Layout von `/showcase` und `/showcase?variant=b` (in beiden Fällen 114 Blöcke oder in beiden Fällen 5).
-2. Planen Sie also zwei Seiten mit eigener Adresse (zum Beispiel `/offer-a` und `/offer-b`), jede mit einer Zuordnung Ort oder Pfad auf ihr eigenes Layout, und teilen Sie den Verkehr außerhalb auf (Kampagnenlinks, Newsletter-Hälften).
+1. Legen Sie neben der normalen Showcase-Zuordnung eine Zuordnung *Pfadpräfix `showcase` + Abfrageparameter `variant`* (Priorität 3000) an. Seit explayouts 1.4.42 merkt sich der Resolver keine Antwort, die von einer Bedingung Abfrageparameter abhängt; `/showcase` und `/showcase?variant=b` bekommen also bei jeder Anfrage ihr eigenes Layout. Auf der Live-Installation geprüft: Eine Zuordnung mit dem Abfrageparameter `p643b=b` an einem Artikel zeigte mit `?p643b=b` `layout_4` und ohne ihn das normale `layout_2`, auf Apache und auf Velocity, in jeder Reihenfolge der Anfragen.
+2. Teilen Sie den Verkehr außerhalb auf (Kampagnenlinks, Newsletter-Hälften). Der Seiten-Cache behält keine Adresse, deren Query einen Parameter außerhalb von `[HttpCacheSettings] QueryStringParameters` hat; die Variante wird also bei jedem Aufruf dargestellt.
 
 ## Mit Templates
 
@@ -31,7 +31,7 @@ Zwei Versionen einer Landingpage vergleichen.
 
 ## Welchen Weg Sie wählen
 
-Getrennte Adressen halten Seiten-Caches und Resolver korrekt.
+Eine Adresse mit Abfrageparameter für einen Test; zwei Seiten mit eigener Adresse (zum Beispiel `/offer-a` und `/offer-b`), wenn beide Varianten aus dem Seiten-Cache kommen sollen.
 
 ## Prüfen
 

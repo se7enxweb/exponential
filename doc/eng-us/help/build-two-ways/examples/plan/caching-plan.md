@@ -26,7 +26,7 @@ No change is called broken when it is only cached.
 
 ## Which cache
 
-1. Settings read in templates (menus): **Template & content**. New templates: **Template & content**. Stylesheets: **Template & content** (packed files). Command-line layout imports: **Content**.
+1. Settings read in templates (menus): **Template & content**. New templates: **Template & content**. Stylesheets: **Template & content** (packed files). Command-line layout imports: none (an import with `--publish` purges the page cache itself).
 
 ## Which to choose
 

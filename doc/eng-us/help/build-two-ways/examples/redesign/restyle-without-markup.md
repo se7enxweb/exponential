@@ -26,7 +26,7 @@ New colors, spacing and type, no template changes.
 
 ## With templates
 
-1. Add your stylesheet to the media design's list by overriding `pagelayout/head/style.tpl` ([Styling your blocks](../../styling-your-blocks.md)), and style the classes the wrapper already has.
+1. Add your stylesheet with `FrontendCSSFileList[]` in your extension's `design.ini` ([Styling your blocks](../../styling-your-blocks.md)), and style the classes the wrapper already has.
 
 ## Which to choose
 

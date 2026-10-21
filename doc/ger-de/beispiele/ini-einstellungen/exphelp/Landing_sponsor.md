@@ -52,7 +52,7 @@ Blocks[]=related
 
 ## Related
 
-Standard: eine Liste mit 3: `supporter`, `partner`, `advocate`.
+Standard: eine Liste mit 4: `supporter`, `partner`, `advocate`, `community`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -63,6 +63,7 @@ Related[]
 Related[]=supporter
 Related[]=partner
 Related[]=advocate
+Related[]=community
 */ ?>
 ```
 

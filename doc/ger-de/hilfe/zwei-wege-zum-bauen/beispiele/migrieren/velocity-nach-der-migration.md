@@ -22,7 +22,7 @@ Migrierte Einstellungen wirken auf Velocity.
 
 ## Im Layout-Editor
 
-1. Layout-Importe brauchen das Leeren des Inhalts-Cache, keinen Neustart.
+1. Layout-Importe brauchen weder einen Neustart noch ein Leeren des Cache: Ein Import mit `--publish` leert den Seiten-Cache selbst.
 
 ## Auf der Kommandozeile
 

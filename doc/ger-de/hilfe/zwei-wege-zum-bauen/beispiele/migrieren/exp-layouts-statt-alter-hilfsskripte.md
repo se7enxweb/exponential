@@ -3,7 +3,7 @@ title: "exp:layouts statt der alten Hilfsskripte verwenden"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1512
-summary: Mehrere ext:explayouts:*-Helfer (block_list, layout_info, layout_copy, layout_list, rule_list, share_create, collection_list) brachen mit einem Fehler „class not found“ ab; exp:layouts deckt Auflisten und Übertragen ab.
+summary: Die ext:explayouts:*-Helfer (block_list, layout_info, layout_copy, layout_list, rule_list, share_create, collection_list) laufen seit explayouts 1.4.42 wieder eigenständig; exp:layouts bleibt das Werkzeug für Export und Import.
 keywords: Hilfsskripte, exp:layouts, layout_copy, Migration, bekannte Probleme, helper scripts, migration, known issues
 type: help
 ---
@@ -27,10 +27,11 @@ Skripte, die gegen die alten Helfer geschrieben wurden, funktionieren weiter.
 ## Auf der Kommandozeile
 
 1. Auflisten: `exp:layouts list`. Details: `exp:layouts export --only=<identifier>` und `layouts.json` lesen. Kopieren: exportieren und `import --strategy=copy`.
+2. Seit explayouts 1.4.42 laufen die `ext:explayouts:*`-Helfer wieder eigenständig (`-s <siteaccess>` wählt den Siteaccess): `./console ext:explayouts:layout_info 2` gibt `ID:          2`, `Identifier:  fd0aa7af77a85a03bf1080018f5db1dc`, `Name:        Header / Footer` aus.
 
 ## Welchen Weg Sie wählen
 
-Stellen Sie Skripte jetzt auf `exp:layouts` um.
+`exp:layouts` für Export, Import und Kopien zwischen Installationen; die Helfer für einen schnellen Blick auf ein Layout, einen Block oder eine Sammlung.
 
 ## Prüfen
 

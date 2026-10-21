@@ -30,10 +30,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin3/templates/page_head_script.tpl` line 14:
+The first use in the templates of this installation, `design/admin3/templates/page_head_script.tpl` line 13:
 
 ```tpl
-{ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
+{ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' ) )}
 ```
 
 ## Related

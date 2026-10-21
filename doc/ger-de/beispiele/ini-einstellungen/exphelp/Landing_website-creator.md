@@ -31,7 +31,7 @@ StartPage=help/creators/website-creators/website-creators-start-here.md
 
 ## Related
 
-Standard: eine Liste mit 4: `designer`, `editor`, `app-creator`, `hosting`.
+Standard: eine Liste mit 5: `designer`, `editor`, `app-creator`, `hosting`, `individual`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,7 @@ Related[]=designer
 Related[]=editor
 Related[]=app-creator
 Related[]=hosting
+Related[]=individual
 */ ?>
 ```
 

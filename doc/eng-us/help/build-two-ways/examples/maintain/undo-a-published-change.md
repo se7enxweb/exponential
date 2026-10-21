@@ -3,7 +3,7 @@ title: "Undo a published layout change"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1321
-summary: Import the export taken before the change with --strategy=overwrite --publish, then clear Content.
+summary: Import the export taken before the change with --strategy=overwrite --publish; the import purges the page cache itself.
 keywords: undo, rollback, published layout, import overwrite, maintenance
 type: help
 ---
@@ -26,7 +26,7 @@ Last week's Prefooter back.
 
 ## On the command line
 
-1. `./console exp:layouts import prefooter-before.zip --dry-run --strategy=overwrite --publish`, then without `--dry-run`, then `./console exp:cache clear --tag=content`.
+1. `./console exp:layouts import prefooter-before.zip --dry-run --strategy=overwrite --publish`, then without `--dry-run`; the import purges the page cache itself (since explayouts_core 1.0.10).
 
 ## Which to choose
 

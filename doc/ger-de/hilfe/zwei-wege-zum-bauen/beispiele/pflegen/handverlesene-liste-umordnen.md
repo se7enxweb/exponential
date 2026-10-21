@@ -24,7 +24,7 @@ Den meistgelesenen Artikel an den Anfang stellen.
 
 1. Wählen Sie die Liste aus, ziehen Sie die Einträge unter **Elemente** an ihren Griffen und klicken Sie auf **Layout veröffentlichen**.
 
-Auf der Testkopie hinterließ ein einziges Hinzufügen zwei Einträge mit der Position 0; wenn die Reihenfolge auf der Site von der im Editor abweicht, ziehen Sie noch einmal ([Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)).
+Vor explayouts_ui_api 1.3.29 konnte ein einziges Hinzufügen zwei Einträge mit der Position 0 hinterlassen; wenn in einer solchen Version die Reihenfolge auf der Site von der im Editor abweicht, ziehen Sie noch einmal ([Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)).
 
 ## Mit Templates
 

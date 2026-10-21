@@ -24,8 +24,14 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 > their addresses. Its first entry opens the site, as the globe did; the  
 > others are grouped into sites and administrations, and the siteaccess in use  
 > is marked. Signed-in users only. The addresses are worked out as  
-> siteaccess\_url() does (MatchOrder, URIMatchType, HostMatchMapItems, SiteURL),  
-> with the scheme, host and port of the request.  
+> siteaccess\_url() does, with the scheme of the request: each siteaccess gets  
+> the first address that the matching rules (host\_uri, host and uri, in  
+> MatchOrder order) lead back to it with no part of the path left over. Tried  
+> in turn: this host with its HostUriMatchMapItems entry or its URI element,  
+> its own \[SiteSettings\] SiteURL, a host that HostMatchMapItems gives it, then  
+> one of its host\_uri entries on another host. Where none of them can be shown  
+> to lead there, its URI element on this host is used as before (else its  
+> SiteURL as written, else this host).  
 > Read from the settings of the administration siteaccess.  
 >
 > enabled or disabled; disabled leaves the globe a plain link to the site  
