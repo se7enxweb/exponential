@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-436a8b3902a6ea45223ca698fa1e8bc1  doc/changelogs/6.0/6.0.15.md
+930ce7b9bbfdcb606e3787f9591e0e3b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6729,7 +6729,7 @@ e90272a3e38a05a23cf0cfdef4f8b64f  doc/eng-us/help/build-two-ways/examples/migrat
 12a315d48ca49597d664520dc6b9dab2  doc/eng-us/help/build-two-ways/examples/migrate/migration-rollback-plan.md
 b505cd8ba15d6f35609b3a8d42f03035  doc/eng-us/help/build-two-ways/examples/migrate/missing-content-on-target.md
 3896c7a24bebd4f95119c34deb2c60e5  doc/eng-us/help/build-two-ways/examples/migrate/move-content-keep-layouts.md
-35afb21430293dcf0300712ab27f1aec  doc/eng-us/help/build-two-ways/examples/migrate/move-styles-out-of-templates.md
+24d200fa794fd8e263449fb945a01d3d  doc/eng-us/help/build-two-ways/examples/migrate/move-styles-out-of-templates.md
 439df7c8a2a29fbd53aadc25cb3a004b  doc/eng-us/help/build-two-ways/examples/migrate/new-siteaccess-for-language.md
 f4f7f2fdbcfbfd7d3baac97838153cc7  doc/eng-us/help/build-two-ways/examples/migrate/only-some-layouts.md
 2733fd8f4b8cdebe6b88eb90246138dd  doc/eng-us/help/build-two-ways/examples/migrate/package-and-layouts.md
@@ -6809,7 +6809,7 @@ d4cfaab73a5926880197411acd6ed3eb  doc/eng-us/help/build-two-ways/examples/redesi
 060c5e60434730b331e4ef32bc0e2766  doc/eng-us/help/build-two-ways/examples/redesign/redesign-rollout.md
 9e980e09ef79d0fab2c3dde7201cd80a  doc/eng-us/help/build-two-ways/examples/redesign/remove-the-breadcrumb-somewhere.md
 5ec8218dc40e24a05c335b1dd63c12f0  doc/eng-us/help/build-two-ways/examples/redesign/restyle-the-hero.md
-333fa27abad163a20913a533c90538ba  doc/eng-us/help/build-two-ways/examples/redesign/restyle-without-markup.md
+0969a7bb45f0ec7cb8a6ad8f14cdc6e3  doc/eng-us/help/build-two-ways/examples/redesign/restyle-without-markup.md
 88e1c739c31404b791b326c31f493793  doc/eng-us/help/build-two-ways/examples/redesign/retire-a-view-type.md
 41f10d6afef44a7fd066e2def3031821  doc/eng-us/help/build-two-ways/examples/redesign/search-box-redesign.md
 773ce31c07e1e5a98a2254f84af3877b  doc/eng-us/help/build-two-ways/examples/redesign/template-page-to-layout.md
@@ -6888,7 +6888,7 @@ da8eddfc3c69ef5ea85b6a10c978b71c  doc/eng-us/help/build-two-ways/prefooter-in-th
 2d681826d63dd2360dcda33d2717205b  doc/eng-us/help/build-two-ways/reorder-or-remove-header-menu-items.md
 799bd140b784818a4352601bc1fe0ac7  doc/eng-us/help/build-two-ways/roll-back-a-layout.md
 3554b555bbc769874cf7d822f832315d  doc/eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md
-d359b146bb44732c1b14bdc57c1c1946  doc/eng-us/help/build-two-ways/styling-your-blocks.md
+aa7f6ee489a8fe7f419058d4973490aa  doc/eng-us/help/build-two-ways/styling-your-blocks.md
 bd568adf40fa0f684f27d6c231285c15  doc/eng-us/help/build-two-ways/template-blocks.md
 addf6a51aa1655b767766574038f7428  doc/eng-us/help/build-two-ways/two-ways-to-build.md
 5a0bb86e8c896997876836c4063e1b90  doc/eng-us/help/build-two-ways/why-doesnt-my-change-appear.md
@@ -18695,7 +18695,7 @@ ba754b0d14d17af8a57644d9bdc249e7  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele
 6168e943dc8fe2d0d7a3af079a5cc89e  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/fest-eingebautes-menue-in-einstellungen.md
 2f17a539acf15d177615892fae74f081  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/html-snippets-durch-blocktyp-ersetzen.md
 19c30a4cc2fb9effc9ff22730d6394db  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/inhalte-im-baum-verschieben.md
-bc515d322ffa1e49797efd7f45986b6a  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/inline-styles-ins-stylesheet.md
+e601f818df84ab3ee603666071123b25  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/inline-styles-ins-stylesheet.md
 e8c245a139b43ce4d9157e07d3278474  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/installation-aufteilen.md
 f5e25f2dfbddae2382bdd21a6c26d047  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/knoten-ids-auf-staging-und-produktion.md
 76a832a81aaf60cd8b159131aac726ab  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/layouts-im-repository.md
@@ -18736,7 +18736,7 @@ c36ec30ccb18c61005e7e74b8eb3b814  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele
 38483210d5f0392431063e524fb0eb63  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/logo-aendern.md
 7ea8c0ca98ac75118f03ca80edce0a93  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/manuell-zu-dynamisch.md
 349b284af2f18b86a6bd9fc62db6b8c4  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/menue-aus-dem-baum.md
-bcd44e3b96b4a5ff1607616061ed2325  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neu-gestalten-ohne-markup.md
+94c9c213e432062c62d7954fc5813b56  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neu-gestalten-ohne-markup.md
 bfb56cdbdf1f46d95133610c159bf741  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neuer-komponentenblock.md
 d2e2673277abc77a3db35afb4c8eda37  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neues-aussehen-einer-klasse-in-listen.md
 3e4c0c0b9e1f47eb714b8e3f10141ec0  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neues-aussehen-fuer-listen.md
@@ -18826,7 +18826,7 @@ a2e44a5147f06345e679f0f97e0d2ba2  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele
 977e42e3ad91ff48a87162d3b2ebc15c  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/planen/zweite-sprache-planen.md
 d1f765c98ae1452d31944a566eb039cf  doc/ger-de/hilfe/zwei-wege-zum-bauen/bekanntes-verhalten-des-editors.md
 dcc6f31a9016f2b471ab71ab94a4ffea  doc/ger-de/hilfe/zwei-wege-zum-bauen/blocktyp-hinzufuegen.md
-95b7b71fb803a008a99d04d1b94a194e  doc/ger-de/hilfe/zwei-wege-zum-bauen/bloecke-gestalten.md
+86f44ecd3fe5fea14707454e8d9a98ea  doc/ger-de/hilfe/zwei-wege-zum-bauen/bloecke-gestalten.md
 c89b0cfd63f93cccb37a1c5d2ffe99ef  doc/ger-de/hilfe/zwei-wege-zum-bauen/caches-nach-einer-aenderung.md
 5739d9f5e318719e7e0d17a4c6afe72a  doc/ger-de/hilfe/zwei-wege-zum-bauen/der-reiter-design.md
 9ba9e75daa31fe1a8b123aeeed71f93c  doc/ger-de/hilfe/zwei-wege-zum-bauen/eigene-design-erweiterung.md
