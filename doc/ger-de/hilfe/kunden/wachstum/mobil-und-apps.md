@@ -74,7 +74,7 @@ Planen Sie sie wie jede Integration: [Eine Integration planen](eine-integration-
 
 ## Den Betrieb sichern
 
-- Überprüfen Sie die Zugangsdaten der App einmal im Jahr mit der [Zugriffsüberprüfung](../../../../eng-us/help/businesses/security/access-reviews.md):
+- Überprüfen Sie die Zugangsdaten der App einmal im Jahr mit der [Zugriffsüberprüfung](../../unternehmen/sicherheit/zugriffspruefungen.md):
   Schlüssel werden vom Besitzer oder einem Administrator widerrufen und enden, wenn sie ablaufen oder ihr Besitzer
   deaktiviert wird ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Informieren Sie den App-Entwickler vor Upgrades; fragen Sie Ihren Partner, was sich für API-Clients ändert

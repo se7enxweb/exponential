@@ -134,7 +134,7 @@ Der Bereich [Zuverlässigkeit](../zuverlaessigkeit/README.md) erklärt jede Prax
 
 ## Verwandte Seiten
 
-- [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md)
+- [Verfügbarkeit in der Praxis](../zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md)
 - [Rendite der Stabilität](rendite-der-stabilitaet.md)
 - [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

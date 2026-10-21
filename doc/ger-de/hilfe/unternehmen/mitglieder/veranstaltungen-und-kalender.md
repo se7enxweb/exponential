@@ -98,7 +98,7 @@ Organisationen:
 
 Schützen Sie öffentliche Anmeldeformulare mit einem CAPTCHA gegen Spam
 ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)), und sagen Sie im Formular,
-welche Daten aufbewahrt werden und warum ([Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md)).
+welche Daten aufbewahrt werden und warum ([Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)).
 
 ## Veranstaltungen ankündigen
 
@@ -147,7 +147,7 @@ Bitten Sie einen Partner, zu schätzen, was Sie brauchen ([Einen Partner auswäh
 - [Veranstaltungen und Neuigkeiten für Gruppen](../vereine/veranstaltungen-und-neuigkeiten-fuer-gruppen.md)
 - [Kommunikation mit Mitgliedern](kommunikation-mit-mitgliedern.md)
 - [Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)
-- [Ehrenamtliche und Anmeldeformulare](../../../../eng-us/help/businesses/nonprofits/volunteers-and-sign-up-forms.md)
+- [Ehrenamtliche und Anmeldeformulare](../gemeinnuetzige/ehrenamtliche-und-anmeldeformulare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

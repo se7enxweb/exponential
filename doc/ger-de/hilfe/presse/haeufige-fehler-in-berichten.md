@@ -65,7 +65,7 @@ Text vor der Veröffentlichung mit der Liste ab.
 |---|---|---|
 | „die KI schreibt und veröffentlicht“ | Schreibt nur Entwürfe | [Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md) |
 | „DXP enthält den Seitenbaukasten“ | Nexus liefert den Layout-Editor mit; DXP nicht | [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md) |
-| „Velocity ist Pflicht“ | Velocity wird empfohlen; klassische Server und FrankenPHP bleiben Optionen | [Thema: Engines, Velocity, FrankenPHP und klassische Server](thema-engines-velocity-frankenphp-und-klassische-server.md) |
+| „Velocity ist Pflicht“ | Velocity wird empfohlen; klassische Server und FrankenPHP bleiben Optionen | [Thema: Engines, Velocity, FrankenPHP und die klassischen Server](thema-engines-velocity-frankenphp-und-klassische-server.md) |
 | „alle Sprachen vollständig übersetzt“ | 33 Übersetzungen der Administration, 19 vollständig (19. Oktober 2026) | [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) |
 
 ## Zahlen und Vergleiche
@@ -74,7 +74,7 @@ Text vor der Veröffentlichung mit der Liste ab.
 |---|---|---|
 | „Tausende Websites“ | Nicht gezählt | [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md) |
 | „zehnmal schneller als X“ | Kein Vergleich veröffentlicht | [Zahlen prüfen](zahlen-pruefen.md) |
-| Eine Zahl ohne Datum | Zahlen tragen ihr Datum | [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
+| Eine Zahl ohne Datum | Zahlen tragen ihr Datum | [Exponential in Zahlen](exponential-in-zahlen.md) |
 
 ## Lizenzen
 
@@ -94,7 +94,7 @@ Text vor der Veröffentlichung mit der Liste ab.
 ## Verwandte Seiten
 
 - [Mythen und Richtigstellungen](mythen-und-richtigstellungen.md)
-- [Checkliste: Faktenprüfung](../../../eng-us/help/press/fact-checking-checklist.md)
+- [Checkliste: Faktenprüfung](checkliste-faktenpruefung.md)
 - [Aussagen, die Sie nicht machen dürfen](../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

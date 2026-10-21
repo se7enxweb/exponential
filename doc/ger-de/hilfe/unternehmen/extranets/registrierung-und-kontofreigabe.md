@@ -143,7 +143,7 @@ selbst zurück ([Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/
 - [Registrierung von Mitgliedern](../mitglieder/registrierung-von-mitgliedern.md)
 - [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
-- [Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md)
+- [Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

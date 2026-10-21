@@ -108,7 +108,7 @@ Beiträge und ein automatisches Ende der Mitgliedschaft sind keine dokumentierte
 **Welche personenbezogenen Daten speichert die Website?**
 Was die Benutzerklasse und die Formulare erheben, dazu Anmeldeprotokolle, Newsletter-Abonnements und das
 Einwilligungsprotokoll der E-Mail-Einstellungen. Prüfen Sie es mit Ihrer Ansprechperson für den Datenschutz
-([Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)). Diese FAQ ist keine
+([Personenbezogene Daten in Exponential](../sicherheit/personenbezogene-daten-in-exponential.md)). Diese FAQ ist keine
 Rechtsberatung.
 
 **Kann ein Mitglied herunterladen, was die Website über seine Mail-Einstellungen weiß?**

@@ -69,7 +69,7 @@ Aus [Formulare und Rückmeldungen von Mitgliedern](formulare-und-rueckmeldungen-
 
 ## Datenschutz
 
-Grundlagen, keine Rechtsberatung ([Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md)):
+Grundlagen, keine Rechtsberatung ([Sicherheit und Datenschutz](../sicherheit/README.md)):
 
 - [ ] Keine personenbezogenen Daten von Mitgliedern auf öffentlichen Seiten.
 - [ ] Die Datenschutzerklärung deckt Formulare, den CAPTCHA-Anbieter und einen eventuellen Newsletter ab.
@@ -78,7 +78,7 @@ Grundlagen, keine Rechtsberatung ([Sicherheit und Datenschutz](../../../../eng-u
 
 ## Betrieb
 
-Aus [Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md):
+Aus [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md):
 
 - [ ] Hosting-Modell gewählt; Datenbank gewählt (SQLite, sofern nicht viele Redakteure gleichzeitig veröffentlichen).
 - [ ] Backups geplant und eine Wiederherstellung getestet.
@@ -127,7 +127,7 @@ Aus [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenam
 ## Verwandte Seiten
 
 - [Vereine und kleine Gruppen](README.md)
-- [Checkliste für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-checklist.md)
+- [Checkliste für gemeinnützige Organisationen](../gemeinnuetzige/checkliste-fuer-gemeinnuetzige.md)
 - [Checkliste für den Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md)
 - [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

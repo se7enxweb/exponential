@@ -81,7 +81,7 @@ aus Erweiterungen, die in `composer.json` aufgeführt sind:
 - [Newsletter](../newsletter/README.md): das Newsletter-System im Detail.
 - [Extranets](../extranets/README.md) und [Intranets](../intranets/README.md): dieselben Werkzeuge für Partner und
   Mitarbeiter.
-- [Sicherheit](../../../../eng-us/help/businesses/security/README.md): DSGVO-Grundlagen, Einwilligung und Konten.
+- [Sicherheit](../sicherheit/README.md): DSGVO-Grundlagen, Einwilligung und Konten.
 - Öffentliche Stellen: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
 
 ## Verwandte Seiten

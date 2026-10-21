@@ -80,11 +80,11 @@ sich vertraulich an den Autor statt öffentlich. Die Seite **Info > Über** nenn
 
 Wenn personenbezogene Daten von Kunden offengelegt worden sein könnten, kann es rechtliche Meldepflichten geben. Fragen
 Sie sofort Ihren Datenschutzbeauftragten oder Anwalt. Diese Seite ist keine Rechtsberatung; siehe
-[DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md).
+[DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md).
 
 ## Verwandte Seiten
 
 - [Sicherheitsgrundlagen](sicherheitsgrundlagen.md)
-- [Sicherheitsupdates und Offenlegung (für Unternehmen)](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md)
+- [Sicherheitsupdates und Offenlegung (für Unternehmen)](../../unternehmen/sicherheit/sicherheitsupdates-und-offenlegung.md)
 - [Probleme melden](probleme-melden.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

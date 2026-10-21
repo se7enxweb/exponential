@@ -115,7 +115,7 @@ Legen Sie neben dem Zeitplan direkt vor jeder riskanten Änderung ein Backup an
 - **Überwacht.** Ein fehlgeschlagener Backup-Job muss jemanden alarmieren, genau wie eine fehlgeschlagene
   Zustandsprüfung ([Health-Checks und Monitoring](health-checks-und-monitoring.md)).
 - **Datenschutz.** Für Backups gelten dieselben Regeln wie für die Live-Daten. Siehe
-  [Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md); dies ist keine Rechtsberatung.
+  [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md); dies ist keine Rechtsberatung.
 
 ## Kleine Fehler brauchen keine Wiederherstellung
 

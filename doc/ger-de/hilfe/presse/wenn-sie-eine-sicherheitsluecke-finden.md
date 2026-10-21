@@ -105,7 +105,7 @@ kein Programm für Danksagungen oder Prämien (Bug Bounty); deuten Sie nicht an,
 ## Verwandte Seiten
 
 - [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md)
-- [Sperrfristen und Zeitpunkt](../../../eng-us/help/press/embargoes-and-timing.md)
+- [Sperrfristen und Zeitpunkt](sperrfristen-und-zeitpunkt.md)
 - [Welcher Tracker für welche Meldung](../fuersprecher/welcher-tracker-fuer-welche-meldung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

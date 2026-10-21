@@ -35,7 +35,7 @@ Exponential 6.0.0 erschien am 1. Januar 2024 und 6.0.14 am 7. Juni 2026
 **Wie alt ist die Codebasis?**
 Die Historie des Repositorys reicht bis zum 2. September 2002 zurück; der Code begann als eZ Publish, entwickelt ab 1999
 ([Wer ist 7x?](../../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021)). Siehe
-[Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md).
+[Warum Stabilität wichtig ist](warum-stabilitaet-wichtig-ist.md).
 
 **Kann sich eine veröffentlichte Version unter uns ändern?**
 Nein. „Ein veröffentlichter Tag wird nie geändert“
@@ -64,7 +64,7 @@ Keine, und keine Seite dieser Hilfe nennt einen Prozentwert. Die Verfügbarkeit 
 Netzwerk und Ihrem Betrieb ab wie von der Software. Die Zahlen eines Verfügbarkeitsversprechens sind „eine geschäftliche
 Entscheidung; die Quellen nennen keine“
 ([Zustandsprüfungen und Verfügbarkeit](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md#verfügbarkeit-in-einem-hosting-tarif)).
-Siehe [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md).
+Siehe [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md).
 
 **Gibt es eine Health-URL, die wir überwachen können?**
 „Es gibt keine einzelne Health-URL; kombinieren Sie eine Prüfung von außen mit den Statusbefehlen im Inneren“
@@ -104,12 +104,12 @@ Meist nicht. Entfernte Elemente landen im Papierkorb, und aus früheren Versione
 Behandeln Sie den Wechsel auf die neueste 6.0.x als wiederkehrende Aufgabe; aktualisieren Sie im nächsten Fenster, wenn
 es ein Sicherheits-Release gibt
 ([Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md#entscheiden-wann-ein-upgrade-erfolgt)). Siehe
-[Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md).
+[Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md).
 
 **Woher wissen wir, dass eine Aktualisierung unsere Änderungen nicht überschreibt?**
 Führen Sie vor dem Start **Setup > Upgrade-Prüfung** aus: Sie listet Release-Dateien auf, die von Hand verändert wurden,
 und liest nur ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)). Siehe
-[Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md).
+[Upgrade-Prüfung und Dateikonsistenz](upgrade-pruefung-und-dateikonsistenz.md).
 
 **Ist ein Deployment möglich, ohne Besucher zu verlieren?**
 Unter Velocity „führt `graceful` den Server neu aus, ohne den lauschenden Socket freizugeben, sodass ein Deployment
@@ -128,13 +128,13 @@ Website unbeaufsichtigt aktualisiert“, und das Aktualisieren ist ausgeschaltet
 **Brauchen wir Velocity?**
 Nein. Exponential läuft unter Apache, Nginx und anderen Webservern, und die README merkt an, dass „Exponential 6.0.15+
 auch unter Apache oder Nginx unter Last schnell ist“. Velocity hebt die Obergrenze dort an, wo Ihr Hosting einen
-langlebigen Prozess erlaubt. Siehe [Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md).
+langlebigen Prozess erlaubt. Siehe [Velocity für Unternehmen](velocity-fuer-unternehmen.md).
 
 **Was bedeuten die Zahlen zu Velocity für uns?**
 Die README dokumentiert 0,36 ms pro gecachter Seite und 8.941 Anfragen pro Sekunde im Dauerbetrieb auf einem Rechner
 mit 12 Kernen und erklärt, wie sie gemessen wurden. Sie sind kein Versprechen für Ihre Website; messen Sie Ihre eigenen
 Seiten mit `exp:benchmark`. Siehe
-[Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md#the-documented-figures-read-honestly).
+[Velocity für Unternehmen](velocity-fuer-unternehmen.md#die-dokumentierten-zahlen-ehrlich-gelesen).
 
 **Welche Datenbank ist die zuverlässigste Wahl?**
 Die offizielle Reihenfolge des Projekts ist 1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·

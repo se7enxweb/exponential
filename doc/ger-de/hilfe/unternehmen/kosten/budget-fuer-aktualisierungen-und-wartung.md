@@ -37,7 +37,7 @@ umfasst, wie oft sie anfällt und wie Sie daraus ein Budget mit einer Reserve f�
 | Betriebssystem und Datenbankserver aktualisieren | wie der Hersteller veröffentlicht | Hoster | [Sicherheitsupdates und Offenlegung](../../hosting/sicherheit/sicherheitsupdates-und-offenlegung.md) |
 | Dateien und Datenbank prüfen | vor und nach jeder Aktualisierung | Administrator | [Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Eine Wiederherstellung testen | mindestens einige Male im Jahr | Administrator oder Hoster | [Wiederherstellung und Wiederherstellungstests](../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
-| Konten und Zugriffe prüfen | jährlich | Website-Inhaber | [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md) |
+| Konten und Zugriffe prüfen | jährlich | Website-Inhaber | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md) |
 
 Wie oft Releases kommen: Die Linie 6.0 ging von 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, mit 6.0.15 in
 Entwicklung ([Wer ist 7x?](../../wer-ist-7x.md#kurz-gesagt)). Planen Sie mehrere Aktualisierungen im Jahr ein, nicht eine
@@ -63,7 +63,7 @@ Eine Version, die Sie getestet haben, bleibt die Version, die Sie betreiben. Die
 
 Verwenden Sie den Wartungsmodus für die Minuten, in denen die Website offline sein muss
 ([Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md)), und lesen Sie
-[Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) für die Sicht des Unternehmens.
+[Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md) für die Sicht des Unternehmens.
 
 ## PHP- und Serveraktualisierungen
 
@@ -137,7 +137,7 @@ und behalten Sie die Reserve für Arbeiten außerhalb des Vertrags.
 ## Verwandte Seiten
 
 - [Release-Linie und Support-Richtlinie](../zuverlaessigkeit/release-linie-und-support-richtlinie.md)
-- [Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md)
+- [Upgrade-Prüfung und Dateikonsistenz](../zuverlaessigkeit/upgrade-pruefung-und-dateikonsistenz.md)
 - [Kunden-Websites aktualisieren](../../hosting/betrieb/kunden-websites-aktualisieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -50,7 +50,7 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 ## Datenschutz
 
 - Halten Sie fest, welche personenbezogenen Daten von wo nach wo gehen, und warum. Dies ist keine Rechtsberatung;
-  fragen Sie die Person, die für den Datenschutz verantwortlich ist ([Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)).
+  fragen Sie die Person, die für den Datenschutz verantwortlich ist ([Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)).
 - Halten Sie Zugangsdaten aus Dokumenten und E-Mails heraus; Schlüssel und Tokens werden einmal angezeigt, und
   gespeichert wird nur ein Hash ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Jedes Ereignis zu API-Schlüsseln und jeder Schreibvorgang über Remote-Dienste steht im Prüfprotokoll, das Ihnen einen

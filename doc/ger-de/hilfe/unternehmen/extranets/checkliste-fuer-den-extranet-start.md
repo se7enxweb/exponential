@@ -62,7 +62,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 - [ ] CAPTCHA im Registrierungsformular
   ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
 - [ ] Das Registrierungsformular und der Datenschutzhinweis sagen, welche Daten aufbewahrt werden und warum
-  ([Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md)).
+  ([Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)).
 
 ## Anmeldung
 
@@ -108,7 +108,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
   ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
 - [ ] Monitoring der Portaladresse ([Health-Checks und Monitoring](../zuverlaessigkeit/health-checks-und-monitoring.md)).
 - [ ] Plan für Aktualisierungen vereinbart
-  ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
+  ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).
 
 ## Pilotpartner
 

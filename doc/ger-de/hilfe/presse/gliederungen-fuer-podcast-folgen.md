@@ -26,7 +26,7 @@ die Quellen.
 
 | Zeit | Segment | Material |
 |---|---|---|
-| 0:00 | Kalter Einstieg: der älteste Commit, September 2002 | [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
+| 0:00 | Kalter Einstieg: der älteste Commit, September 2002 | [Exponential in Zahlen](exponential-in-zahlen.md) |
 | 2:00 | Die Jahre von eZ Publish, in der Vergangenheitsform | [Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md) |
 | 10:00 | 2014, 2022, Dezember 2023: wie 7x übernahm | [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) |
 | 20:00 | Die Umbenennung und die Foundation | [Warum es Exponential heißt](warum-es-exponential-heisst.md), [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) |
@@ -39,7 +39,7 @@ die Quellen.
 |---|---|---|
 | 0:00 | Was veröffentlicht wurde, mit dem Datum des Tags | [Über ein Release berichten](ueber-ein-release-berichten.md) |
 | 3:00 | Drei wichtige Änderungen aus dem Changelog | [Ein Changelog lesen](ein-changelog-lesen.md) |
-| 15:00 | Was es für Redakteure, Administratoren und Entwickler bedeutet | [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md) |
+| 15:00 | Was es für Redakteure, Administratoren und Entwickler bedeutet | [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md) |
 | 25:00 | Wie man aktualisiert, wo man fragt | [Hilfeseiten nach Thema, für die Presse](hilfeseiten-nach-thema-fuer-die-presse.md) |
 
 Nehmen Sie die Folge erst auf, wenn der Tag existiert; vorher nennen Sie sie eine Vorschau auf ein Release in

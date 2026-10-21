@@ -32,7 +32,7 @@ dem entspricht.
 3. Füllen Sie Teil 2 anhand der Personalliste aus. Vergleichen Sie mit **Benutzer > Benutzerkonten prüfen**
    ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
 4. Markieren Sie jede Abweichung und vereinbaren Sie, wer sie behebt.
-5. Überprüfen Sie das Blatt einmal im Jahr ([Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+5. Überprüfen Sie das Blatt einmal im Jahr ([Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)).
 
 ## Teil 1: Aufgaben und Rollen
 
@@ -65,7 +65,7 @@ dem entspricht.
 ## Teil 3: heikle Berechtigungen
 
 Halten Sie fest, wer jede dieser Berechtigungen hat. Je kürzer jede Liste, desto besser
-([Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+([Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)).
 
 | Berechtigung | Wer sie hat | Noch nötig? |
 |---|---|---|

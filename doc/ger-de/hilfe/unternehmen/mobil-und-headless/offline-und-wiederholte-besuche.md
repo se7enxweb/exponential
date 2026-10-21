@@ -122,7 +122,7 @@ letzten Kopie des alten Workers lassen, Dateikopf von `sw.js`).
 
 - [Zuverlässigkeit des App-Backends](zuverlaessigkeit-des-app-backends.md)
 - [Responsive Websites](responsive-websites.md)
-- [Statischer Cache und Antwortcache](../../../../eng-us/help/businesses/reliability/static-and-response-cache.md)
+- [Statischer Cache und Antwortcache](../zuverlaessigkeit/statischer-cache-und-antwortcache.md)
 - [Antwortcache von Velocity](../../hosting/leistung/antwort-cache-von-velocity.md)
 - [Der Antwortcache, und dem Netzwerk aus dem Weg gehen](../../../../eng-us/bc/6.0/response-cache-and-navigation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -34,7 +34,7 @@ Network, und werden genannt.
 
 | Fakt | Quelle |
 |---|---|
-| 66 se7enxweb-Pakete, die der Kernel voraussetzt (18. Oktober 2026) | [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
+| 66 se7enxweb-Pakete, die der Kernel voraussetzt (18. Oktober 2026) | [Exponential in Zahlen](exponential-in-zahlen.md) |
 | 219 se7enxweb-Pakete auf Packagist | ebenda |
 | Viele Erweiterungen standardmäßig inaktiv | [Die Standardverteilung der Erweiterungen](../../../eng-us/features/6.0/default-extension-distribution.md) |
 | Jede Erweiterung hat ihren eigenen Changelog | [Changelogs der Erweiterungen](../../../changelogs/extensions/README.md) |

@@ -126,7 +126,7 @@ standardmäßig:
   ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)).
 
 Das ist eine technische Schutzmaßnahme, keine Rechtsberatung. Zu Ihren Pflichten siehe
-[DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md) und fragen Sie Ihren Datenschutzbeauftragten oder Ihren Anwalt.
+[DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md) und fragen Sie Ihren Datenschutzbeauftragten oder Ihren Anwalt.
 
 ## Checkliste
 

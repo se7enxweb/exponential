@@ -81,7 +81,7 @@ weiter funktionieren.
 
 - [Wie Unternehmen online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Shops](../shops/README.md), für den Shop, aus dem Ihre App oder Ihre Partner verkaufen
-- [Zuverlässigkeit](../zuverlaessigkeit/README.md) und [Sicherheit](../../../../eng-us/help/businesses/security/README.md)
+- [Zuverlässigkeit](../zuverlaessigkeit/README.md) und [Sicherheit](../sicherheit/README.md)
 - [Mehrere Marken in einer Installation](../multisite/README.md) und
   [Verkaufen in mehreren Sprachen und Märkten](../mehrsprachig/README.md)
 - Für Entwickler: [App-Entwickler: hier beginnen](../../../../eng-us/help/creators/app-creators/app-creators-start-here.md)

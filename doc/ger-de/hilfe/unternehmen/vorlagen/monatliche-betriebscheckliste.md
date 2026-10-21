@@ -73,7 +73,7 @@ Offene Risiken: ______________________________________________
 
 | Prüfung | Wo | Lesen |
 |---|---|---|
-| Releases | GitHub-Releases und der in `README.md` genannte Issue-Tracker | [Sicherheitsupdates und Offenlegung](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md) |
+| Releases | GitHub-Releases und der in `README.md` genannte Issue-Tracker | [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md) |
 | Updates der Erweiterungen | **Setup > Updates und Pakete** (`ezupdate`), die Prüfung ändert nichts | [Automatische Updates mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |
 | Upgrade-Prüfung | **Setup > Upgrade-Prüfung** | [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Backups | der Backup-Bericht Ihres Hosters | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
@@ -105,7 +105,7 @@ und der Nachweis für Ihre [ROI](../kosten/rendite-der-stabilitaet.md)-Zahlen.
 ## Verwandte Seiten
 
 - [Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)
-- [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md)
+- [Verfügbarkeit in der Praxis](../zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md)
 - [Betrieb einer Website](../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -138,8 +138,8 @@ Vereinbaren Sie Folgendes mit Ihrem Team oder Partner und halten Sie es schriftl
 
 ## Verwandte Seiten
 
-- [Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md)
-- [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)
+- [Velocity für Unternehmen](velocity-fuer-unternehmen.md)
+- [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md)
 - [Änderungen ausrollen (Hosting)](../../hosting/betrieb/aenderungen-ausrollen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -121,7 +121,7 @@ die Investition ihr Geld zurückbringt und danach weiter spart.
 
 ## Verwandte Seiten
 
-- [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md)
+- [Warum Stabilität wichtig ist](../zuverlaessigkeit/warum-stabilitaet-wichtig-ist.md)
 - [Release-Linie und Support-Richtlinie](../zuverlaessigkeit/release-linie-und-support-richtlinie.md)
 - [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)

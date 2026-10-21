@@ -62,7 +62,7 @@ Server bewältigen, nachdem ihm die gecachten Seiten abgenommen wurden?
 Nach der Leistungsseite für Website-Ersteller, die dem Installationsbuch folgt:
 
 1. **Mit Velocity ausliefern** und mit seinem Response-Cache; persistente Worker halten die Anwendung warm
-   ([Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md)).
+   ([Velocity für Unternehmen](../zuverlaessigkeit/velocity-fuer-unternehmen.md)).
 2. **Content-View-Cache und Template-Block-Cache eingeschaltet lassen** (beide sind in den ausgelieferten
    Einstellungen eingeschaltet) und die Website nach einem vollständigen Leeren vorwärmen.
 3. **OPcache** für kompiliertes PHP.

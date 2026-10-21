@@ -71,7 +71,7 @@ Partner können außerdem Funktionen sponsern und an der Planung der Roadmap tei
 
 Nie in einem öffentlichen Tracker. Schreiben Sie an **security@se7enx.com**; „Sie können mit einer ersten Antwort
 innerhalb eines Werktags rechnen“ (`SECURITY.md`). Einzelheiten:
-[Sicherheitsupdates und Offenlegung](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md#reporting-a-vulnerability).
+[Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md#eine-schwachstelle-melden).
 
 ## Dienstleistungen kaufen
 

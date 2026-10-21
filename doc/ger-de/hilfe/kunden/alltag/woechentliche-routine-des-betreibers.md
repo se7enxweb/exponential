@@ -65,7 +65,7 @@ wenn Ihre Rolle sie nicht anzeigt, erledigen Sie diese Schritte mit Ihrem Admini
 
 ## Einmal im Jahr zusätzlich
 
-- [ ] Eine [Zugriffsüberprüfung](../../../../eng-us/help/businesses/security/access-reviews.md) mit dem [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md).
+- [ ] Eine [Zugriffsüberprüfung](../../unternehmen/sicherheit/zugriffspruefungen.md) mit dem [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md).
 - [ ] Ein [Inhalts-Audit](inhalts-audits.md) eines oder zweier Bereiche.
 - [ ] Die [Stichprobe zur Barrierefreiheit](barrierefreiheit-pflegen.md), wenn nicht vierteljährlich erledigt.
 - [ ] Ein Blick auf den Plan für die Website: [Arbeitsblatt für die Wachstums-Roadmap](../wachstum/arbeitsblatt-wachstums-roadmap.md).

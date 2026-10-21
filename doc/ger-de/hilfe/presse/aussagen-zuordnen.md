@@ -67,7 +67,7 @@ seinen Verlauf, sodass eine Datei immer zu einem Commit zitiert werden kann ([Da
 ## Verwandte Seiten
 
 - [Richtlinie für Zitate](richtlinie-fuer-zitate.md)
-- [Leitfaden: Faktenprüfung](../../../eng-us/help/press/fact-checking-guide.md)
+- [Leitfaden: Faktenprüfung](leitfaden-faktenpruefung.md)
 - [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

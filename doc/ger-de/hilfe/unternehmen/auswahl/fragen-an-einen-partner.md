@@ -88,9 +88,9 @@ deckt alles in [Backups: was gesichert werden muss](../../hosting/betrieb/backup
 ```
 
 Eine gute Antwort nennt einen Zeitrahmen für das Einspielen veröffentlichter Korrekturen
-([Sicherheitsupdates und Offenlegung](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md)), verwendet die zweistufige
-Anmeldung ([Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md)) und kennt die Mail- und
-Audit-Werkzeuge für Anfragen zu Daten ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)).
+([Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)), verwendet die zweistufige
+Anmeldung ([Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md)) und kennt die Mail- und
+Audit-Werkzeuge für Anfragen zu Daten ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
 ## Updates und die lange Sicht
 

@@ -80,11 +80,11 @@ Auch ein stark genutzter Bestellvorgang im Shop schreibt; siehe
       ([Systeminformationen, Zustandsprüfungen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen)).
 - [ ] Die Landingpages sind öffentliche Seiten, die sich cachen lassen; persönliche Inhalte bleiben von ihnen fern.
 - [ ] Läuft die Website auf Velocity, sind Worker-Anzahl und Antwortcache mit Ihrem Betrieb durchgesehen
-      ([Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md)).
+      ([Velocity für Unternehmen](velocity-fuer-unternehmen.md)).
 - [ ] Reicht ein Rechner nicht, ist der Hosting-Partner frühzeitig gefragt: Server hinzuzufügen braucht Zeit
       ([Clustering und Hochverfügbarkeit](clustering-und-hochverfuegbarkeit.md)).
 - [ ] Jede Aktualisierung ist lange vorher erledigt, nicht in der letzten Woche
-      ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
+      ([Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md)).
 
 ## Tage vorher
 

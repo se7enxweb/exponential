@@ -109,7 +109,7 @@ in Einstellungsdateien, die in die Versionsverwaltung gehen. Die Übergabe selbs
 - Verwenden Sie mitgelieferte Klassen und ein Design; vermeiden Sie eigenen Code, den ein künftiger Ehrenamtlicher
   nicht pflegen kann.
 - Bevorzugen Sie gehostetes oder verwaltetes Hosting, wenn kein Ehrenamtlicher einen Server aktualisieren kann
-  ([Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md#hosting-choices)).
+  ([Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md#hosting-möglichkeiten)).
 - SQLite, die Standarddatenbank, braucht keinen Datenbankserver, was zu einer Gruppe mit wenigen Redakteuren passt
   ([SQLite-Datenbankunterstützung](../../../../eng-us/features/6.0/sqlite-database.md)).
 - Entfernen Sie bei jeder jährlichen Prüfung Funktionen, die niemand nutzt.
@@ -134,7 +134,7 @@ Yearly review month:        ...
 
 - [Vereine und kleine Gruppen](README.md)
 - [Checkliste für kleine Gruppen](checkliste-fuer-kleine-gruppen.md)
-- [Website-Planung für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md)
+- [Website-Planung für gemeinnützige Organisationen](../gemeinnuetzige/website-planung-fuer-gemeinnuetzige.md)
 - [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -32,7 +32,7 @@ Notizen; jede Zeile verweist auf die Seite, die sie erklärt.
 ```
 
 Seiten: [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md),
-[Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md), [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md),
+[Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md), [Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md),
 [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md), [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md).
 
 ## Vor einem Interview
@@ -47,7 +47,7 @@ Seiten: [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md),
 
 Seiten: [Ein Interview anfragen](ein-interview-anfragen.md), [Fragen an 7x](fragen-an-7x.md),
 [Fragen an die Foundation](fragen-an-die-foundation.md), [Richtlinie für Zitate](richtlinie-fuer-zitate.md),
-[Zitate überprüfen](zitate-pruefen.md), [Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md).
+[Zitate überprüfen](zitate-pruefen.md), [Sperrfristen und Timing](sperrfristen-und-zeitpunkt.md).
 
 ## Vor der Veröffentlichung einer Nachricht
 
@@ -62,7 +62,7 @@ Seiten: [Ein Interview anfragen](ein-interview-anfragen.md), [Fragen an 7x](frag
 ```
 
 Seiten: [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md), [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md),
-[Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md).
+[Checkliste zum Faktencheck](checkliste-faktenpruefung.md).
 
 ## Vor der Veröffentlichung eines Features oder einer Rezension
 
@@ -75,7 +75,7 @@ Seiten: [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.
 [ ] Alt text and accessible structure                           (Making your coverage accessible)
 ```
 
-Seiten: [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md), [Vergleiche, fair gemacht](faire-vergleiche.md),
+Seiten: [Leitfaden zum Faktencheck](leitfaden-faktenpruefung.md), [Vergleiche, fair gemacht](faire-vergleiche.md),
 [Zahlen überprüfen](zahlen-pruefen.md), [Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md),
 [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md), [Barrierefreie Berichterstattung](barrierefreie-berichterstattung.md).
 

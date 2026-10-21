@@ -81,5 +81,5 @@ Zusammenfassung ([Monatlicher Betrieb](../../hosting/checklisten/checkliste-fuer
 - [Logs für Betreiber](logs-fuer-betreiber.md)
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
 - [Statusprüfungen und Verfügbarkeit (für Hoster)](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)
-- [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md)
+- [Verfügbarkeit in der Praxis](../../unternehmen/zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -34,7 +34,7 @@ mit einer Abdeckungsseite, die zeigt, dass keine fehlt
 |---|---|
 | Git-Klone mit vollständiger Historie sind die empfohlene Installation | README, „Installation“ |
 | Websites lassen sich mit Git aktualisieren | [Mit Git aktualisieren](../mit-git-aktualisieren.md) |
-| Der älteste Commit stammt vom 2. September 2002 | `git log --reverse`; [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
+| Der älteste Commit stammt vom 2. September 2002 | `git log --reverse`; [Exponential in Zahlen](exponential-in-zahlen.md) |
 | Jede Änderung seit Dezember 2023 steht in der Geschichte und in den Ledgern | [Die Geschichte](../../../eng-us/history/README.md), [Die Ledger](../../../eng-us/history/ledger/README.md), [Abdeckung](../../../eng-us/history/coverage.md) |
 | Veröffentlichte Versionen werden nie geändert; eine Korrektur ist das nächste Release | [Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md) |
 | Administratoren können Checkouts mit `git_manager` aus der Administration aktualisieren | [git_manager](../../../eng-us/features/6.0/extensions/git_manager.md) |

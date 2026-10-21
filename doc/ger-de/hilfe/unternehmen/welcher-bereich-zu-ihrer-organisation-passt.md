@@ -46,18 +46,18 @@ Aufwand jeder braucht.
 | Verleihen, verzeichnen oder archivieren Objekte | [Bibliotheken und Kataloge](bibliotheken/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
 | Sammeln Spenden und organisieren Ehrenamtliche | [Gemeinnützige Organisationen](gemeinnuetzige/README.md) | [Newsletter](newsletter/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
 | Führen einen Verein oder einen Berufsverband | [Mitgliederwebsites](mitglieder/README.md) | [Kleine Gruppen und Vereine](vereine/README.md) |
-| Informieren und unterstützen Mitarbeiter | [Intranets](intranets/README.md) | [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
+| Informieren und unterstützen Mitarbeiter | [Intranets](intranets/README.md) | [Sicherheit](sicherheit/README.md) |
 | Arbeiten mit Händlern, Lieferanten oder Kunden hinter einer Anmeldung | [Extranets und Partnerportale](extranets/README.md) | [Intranets](intranets/README.md) |
 | Führen mehrere Marken oder Länder | [Marken mit Multisite](multisite/README.md) | [Mehrsprachige Unternehmen](mehrsprachig/README.md) |
 | Versorgen eine App oder andere Systeme mit Inhalten | [Mobil und headless](mobil-und-headless/README.md) | [Zuverlässigkeit](zuverlaessigkeit/README.md) |
-| Dienen als Behörde der Öffentlichkeit | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) | [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
+| Dienen als Behörde der Öffentlichkeit | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) | [Sicherheit](sicherheit/README.md) |
 
 ## Zuordnung nach den Nutzern der Website
 
 | Nutzer | Was sie braucht | Lesen |
 |---|---|---|
 | Anonyme Besucher | Schnelle Seiten, Suche, gute URLs | [Zuverlässigkeit](zuverlaessigkeit/README.md), [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) |
-| Kunden mit einem Konto | Registrierung, Bestellhistorie, Datenschutz | [Kundenkonten und Gastbestellung](shops/kundenkonten-und-gastbestellung.md), [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) |
+| Kunden mit einem Konto | Registrierung, Bestellhistorie, Datenschutz | [Kundenkonten und Gastbestellung](shops/kundenkonten-und-gastbestellung.md), [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md) |
 | Mitarbeiter | Rollen pro Abteilung, Freigabe, Suche | [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md) |
 | Partner | Freigegebene Registrierung, getrennte Bereiche | [Registrierung und Kontofreigabe](extranets/registrierung-und-kontofreigabe.md) |
 | Mitglieder | Inhalte nur für Mitglieder, Kommunikation | [Inhalte nur für Mitglieder](mitglieder/inhalte-nur-fuer-mitglieder.md) |
@@ -76,7 +76,7 @@ Das sind Muster, keine Berichte über echte Kunden.
 | Muster | Bereiche in dieser Reihenfolge |
 |---|---|
 | Ein kleiner Shop, der wächst | [Shops](shops/README.md), [Newsletter](newsletter/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md), dann [Mobil und headless](mobil-und-headless/README.md) |
-| Ein Unternehmen mit öffentlicher Website, Intranet und Partnerportal auf einer Installation | [Intranets](intranets/README.md), [Extranets](extranets/README.md), [Marken mit Multisite](multisite/README.md), [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
+| Ein Unternehmen mit öffentlicher Website, Intranet und Partnerportal auf einer Installation | [Intranets](intranets/README.md), [Extranets](extranets/README.md), [Marken mit Multisite](multisite/README.md), [Sicherheit](sicherheit/README.md) |
 | Eine Mitgliederorganisation | [Mitgliederwebsites](mitglieder/README.md), [Newsletter](newsletter/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
 | Eine Marke, die in mehreren Ländern verkauft | [Marken mit Multisite](multisite/README.md), [Mehrsprachige Unternehmen](mehrsprachig/README.md), [Shops](shops/README.md) |
 | Eine Bibliothek oder ein Archiv mit öffentlichem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md) |
@@ -87,7 +87,7 @@ Was auch immer Sie betreiben, lesen Sie diese, bevor Sie live gehen:
 
 - [Zuverlässigkeit](zuverlaessigkeit/README.md): Backups, Monitoring, Upgrades.
 - [Kosten](kosten/README.md): was der Betrieb über Jahre kostet.
-- [Grundlagen zu Sicherheit und Compliance](../../../eng-us/help/businesses/security/README.md).
+- [Grundlagen zu Sicherheit und Compliance](sicherheit/README.md).
 - [Hosting und einen Partner auswählen](auswahl/README.md).
 - [Vorlagen und Checklisten](vorlagen/README.md), insbesondere die [Checkliste Go-live](vorlagen/checkliste-go-live.md).
 

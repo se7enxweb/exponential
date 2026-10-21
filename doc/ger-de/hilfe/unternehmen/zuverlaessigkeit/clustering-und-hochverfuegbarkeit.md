@@ -49,7 +49,7 @@ einfachere Wahl.“ Bevor Sie Server hinzufügen:
 2. **Messen** Sie mit `exp:benchmark`, um zu wissen, wo die Zeit verloren geht
    ([Lastspitzen planen](lastspitzen-planen.md#messen-statt-raten)).
 3. **Velocity** erhöht dort, wo das Hosting es erlaubt, was ein Rechner ausliefern kann
-   ([Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md)). Mehrere Velocity-Instanzen können sich auf einem Rechner
+   ([Velocity für Unternehmen](velocity-fuer-unternehmen.md)). Mehrere Velocity-Instanzen können sich auf einem Rechner
    einen Port teilen; `graceful` lädt sie nacheinander neu, „damit der Port weiter antwortet“
    ([Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md#several-qbix-servers-on-one-port-instances)).
 4. **Ein größerer Rechner**: siehe

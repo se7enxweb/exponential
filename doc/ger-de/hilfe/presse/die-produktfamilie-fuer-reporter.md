@@ -85,7 +85,7 @@ Genaue Schreibweisen und Kurzformen: [Kurzreferenz zu Namen für Nachrichtenreda
 ## Verwandte Seiten
 
 - [Die Produktfamilie kennen](../fuersprecher/die-produktfamilie-kennen.md)
-- [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Thema: Exponential Platform DXP](thema-exponential-platform-dxp.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

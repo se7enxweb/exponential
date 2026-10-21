@@ -110,7 +110,7 @@ Nicht-Produktivinstallation vor den Seitentitel, sodass niemand die falsche Kopi
 - [ ] Gibt es Caches pro Marke, und auf welchem Speicher?
 - [ ] Wer darf Caches für eine Marke leeren, und wie wird Velocity nach einer Änderung der Einstellungen neu gestartet?
 - [ ] Wer liest die Logs, wie oft, und wie erfährt ein Markenverantwortlicher von Fehlern auf seiner Website?
-- [ ] Entspricht die Aufbewahrung der Logs Ihrer Datenschutzerklärung ([Sicherheit](../../../../eng-us/help/businesses/security/README.md))?
+- [ ] Entspricht die Aufbewahrung der Logs Ihrer Datenschutzerklärung ([Sicherheit](../sicherheit/README.md))?
 
 ## Verwandte Seiten
 

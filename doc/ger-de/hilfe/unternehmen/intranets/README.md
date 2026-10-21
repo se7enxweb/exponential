@@ -95,7 +95,7 @@ Login-Handler des Kernels für LDAP und Textdateien, eingestellt in `settings/ld
 - [Extranets](../extranets/README.md): dieselben Werkzeuge für Partner, Kunden, Händler und Lieferanten.
 - [Mitgliederwebsites](../mitglieder/README.md): Registrierung durch die Öffentlichkeit, Inhalte nur für Mitglieder und
   Veranstaltungen.
-- [Sicherheit](../../../../eng-us/help/businesses/security/README.md): Zugriffsprüfungen, Konten und Passwörter, DSGVO-Grundlagen.
+- [Sicherheit](../sicherheit/README.md): Zugriffsprüfungen, Konten und Passwörter, DSGVO-Grundlagen.
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md): das Intranet an jedem Arbeitstag verfügbar halten.
 - [Kosten](../kosten/README.md), einschließlich des [durchgerechneten Beispiels für ein Intranet](../kosten/durchgerechnetes-beispiel-intranet.md).
 - Öffentliche Stellen: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).

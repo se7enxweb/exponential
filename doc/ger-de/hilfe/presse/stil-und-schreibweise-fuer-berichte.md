@@ -64,7 +64,7 @@ Schreiben Sie Namen von Menüs und Schaltflächen so, wie sie erscheinen, fett, 
 | Element | Stil |
 |---|---|
 | Versionen | 6.0.14, ohne „v“; das „v“ gehört zu Git-Tags ([Versionsnummern im Text](versionsnummern-im-text.md)) |
-| Zählungen | Mit dem Datum, an dem gezählt wurde ([Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md)) |
+| Zählungen | Mit dem Datum, an dem gezählt wurde ([Exponential in Zahlen](exponential-in-zahlen.md)) |
 | Daten | So genau wie die Quelle: „1. Januar 2024“, „Dezember 2023“, „2022“ ([Daten prüfen](daten-pruefen.md)) |
 | Geschwindigkeitswerte | Mit ihren Bedingungen: „0,36 ms pro gecachter Seite“ |
 

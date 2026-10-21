@@ -53,8 +53,8 @@ Diese gibt es bereits; dieser Bereich verweist auf sie, statt sie zu kopieren:
 | Entscheidungsprotokoll zum Hosting | [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md#ein-entscheidungsprotokoll-zum-kopieren) |
 | SLA-Vorlage | [SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md#eine-sla-vorlage) |
 | Arbeitsblatt zu den Kosten eines Ausfalls | [Arbeitsblatt: Kosten eines Ausfalls](../kosten/arbeitsblatt-kosten-eines-ausfalls.md#das-leere-arbeitsblatt) |
-| Protokoll einer Zugriffsprüfung | [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md#a-review-record-to-keep) |
-| Aufbewahrungsplan | [Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md#a-retention-schedule-to-fill-in) |
+| Protokoll einer Zugriffsprüfung | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md#ein-prüfprotokoll-zum-aufbewahren) |
+| Aufbewahrungsplan | [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md#ein-aufbewahrungsplan-zum-ausfüllen) |
 
 ## Eine empfohlene Reihenfolge durch ein Projekt
 

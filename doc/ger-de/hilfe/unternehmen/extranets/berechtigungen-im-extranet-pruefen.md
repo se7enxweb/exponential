@@ -37,7 +37,7 @@ die jeden Schritt schnell machen.
 - Inhalte werden verschoben; eine Teilbaum-Einschränkung folgt dem Baum, verschobene Inhalte wechseln also die
   Zielgruppe.
 - Datenschutzregeln erwarten, dass personenbezogene Daten nur so lange aufbewahrt werden wie nötig
-  ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md); diese Seite ist keine Rechtsberatung).
+  ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md); diese Seite ist keine Rechtsberatung).
 
 ## Der Rhythmus
 
@@ -48,7 +48,7 @@ die jeden Schritt schnell machen.
 | Bereiche und Sektionen | zweimal im Jahr | die Sektionsliste und einige Stichproben |
 | Vollständige Prüfung mit den Verantwortlichen für die Beziehungen | einmal im Jahr | ein Termin pro Zielgruppe |
 
-Wählen Sie den Rhythmus mit Ihrem Sicherheitsbeauftragten; die Seite [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
+Wählen Sie den Rhythmus mit Ihrem Sicherheitsbeauftragten; die Seite [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)
 im Bereich Sicherheit beschreibt die allgemeine Methode.
 
 ## Schritt 1: Rollen
@@ -132,7 +132,7 @@ Der Audit-Trail zeichnet Rollenzuordnungen, Kontosperren, Anmeldungen und Inhalt
 manipulationssicheren Log auf, und `./console exp:audit verify` belegt, dass die Aufzeichnung unversehrt ist
 ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Schreiben Sie zu jeder Prüfung eine kurze Notiz: Datum,
 prüfende Person, was geändert wurde. Die Seite
-[Compliance-Nachweise](../../../../eng-us/help/businesses/security/compliance-evidence-from-the-audit-trail.md) zeigt, wie Sie den Audit-Trail als
+[Compliance-Nachweise](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md) zeigt, wie Sie den Audit-Trail als
 Nachweis verwenden.
 
 ## Wenn eine Partnerschaft endet
@@ -140,12 +140,12 @@ Nachweis verwenden.
 1. Entfernen Sie die Rollenzuordnungen der Organisation (ihre Teilbaum-Zuordnung und die Gruppen der Stufen).
 2. Deaktivieren und verschieben Sie ihre Konten, oder deaktivieren Sie sie.
 3. Archivieren oder entfernen Sie ihren Ordner, gemäß dem Vertrag und Ihren Aufbewahrungsregeln
-   ([Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+   ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 4. Vermerken Sie die Änderung in der Aufzeichnung der Prüfung.
 
 ## Verwandte Seiten
 
-- [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)
 - [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
 - [Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)

@@ -53,7 +53,7 @@ Schreiben Sie diese Punkte in den Vertrag oder die Support-Vereinbarung (siehe
 | Alles, was noch zu tun ist | Zu prüfende Einstellungen, Erweiterungen, die auf ein Release warten |
 
 Dateien, die der Anbieter bewusst geändert hat, sind in der Upgrade-Prüfung zu erwarten; fragen Sie, welche das sind und
-warum ([Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md)).
+warum ([Upgrade-Prüfung und Dateikonsistenz](../../unternehmen/zuverlaessigkeit/upgrade-pruefung-und-dateikonsistenz.md)).
 
 ## Der Teil Ihres Teams
 

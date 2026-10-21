@@ -34,7 +34,7 @@ im März 2026, eine gemeinnützige Organisation dafür zu gründen
 | Fakt | Quelle |
 |---|---|
 | Copyright-Jahre ab 1999 (eZ Systems) und 1998 (Hinweis von 7x und der Foundation) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
-| Ältester Commit am 2. September 2002; mehr als 27.000 Commits (18. Oktober 2026) | [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
+| Ältester Commit am 2. September 2002; mehr als 27.000 Commits (18. Oktober 2026) | [Exponential in Zahlen](exponential-in-zahlen.md) |
 | Letztes Release der alten Linie: v2019.03.6.1, 3. September 2021 | [Wer ist 7x?, Zeitleiste](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
 | 15 Releases der Linie 6.0 von Januar 2024 bis Juni 2026 | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) |
 | PHP 8.0 bis 8.5 unterstützt | [Thema: aktuelles PHP](thema-aktuelles-php.md) |

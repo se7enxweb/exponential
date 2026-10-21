@@ -134,7 +134,7 @@ Aus [PDF- und Druckexporte](pdf-und-druckexporte.md) und [Feeds für Neuerwerbun
       ([Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
 - [ ] Feeds in einem Feedreader geöffnet; gespeicherte PDFs bei Bedarf neu erzeugt.
 - [ ] Rollen für Mitarbeiter und Ehrenamtliche geprüft, die gewechselt haben
-      ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+      ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 
 ## Jedes Jahr
 

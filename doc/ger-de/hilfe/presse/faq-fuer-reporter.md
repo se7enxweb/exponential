@@ -27,14 +27,14 @@ erklärt. Stand der Fakten: **18. Oktober 2026**.
 
 **Was ist Exponential?**
 Ein freies Open-Source-Content-Management-System und Anwendungsframework in PHP mit einem vollständig anpassbaren
-Inhaltsmodell, Multisite, vielen Sprachen und einem eingebauten Shop ([Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md)).
+Inhaltsmodell, Multisite, vielen Sprachen und einem eingebauten Shop ([Exponential in Kürze](exponential-in-kuerze.md)).
 
 **Was ist die neueste Version?**
 6.0.14, erschienen am 7. Juni 2026. 6.0.15 ist in Entwicklung ([Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md)).
 
 **Was ist neu?**
 Die Produktlinie 6.0.15 bringt Exponential Velocity, Exponential Layouts, Exponential Intelligence, das Design admin4,
-einen Audit-Trail und ein Hilfesystem ([Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)).
+einen Audit-Trail und ein Hilfesystem ([Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)).
 
 **Verwendet es KI?**
 Exponential Intelligence ist ein Schreibassistent, der Entwürfe schreibt, als der angemeldete Redakteur, und nie von
@@ -90,7 +90,7 @@ Es ist keine Kundenliste veröffentlicht. Nennen Sie eine Organisation nur mit i
 
 **Worauf läuft es?**
 PHP 8.0 bis 8.5; SQLite, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS und Windows in
-dokumentierten Stufen ([Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md)).
+dokumentierten Stufen ([Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md)).
 
 ## Sicherheit
 

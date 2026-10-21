@@ -68,10 +68,10 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 
 | Begriff | Bedeutung | Lesen |
 |---|---|---|
-| Velocity | Der eigene Anwendungsserver von Exponential, der die Anwendung zwischen den Anfragen geladen hält | [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) |
+| Velocity | Der eigene Anwendungsserver von Exponential, der die Anwendung zwischen den Anfragen geladen hält | [Velocity für Unternehmen](zuverlaessigkeit/velocity-fuer-unternehmen.md) |
 | Cache | Gespeicherte Ergebnisse, die Seiten schnell machen; werden geleert, wenn sich Inhalte ändern | [Caches: was jeder enthält und wie Sie ihn leeren](../../anleitungen/caches.md) |
 | View-Cache | Die zwischengespeicherte Ausgabe einer Inhaltsseite | [Caching für Verfügbarkeit](zuverlaessigkeit/caching-fuer-verfuegbarkeit.md) |
-| Statischer Cache | Seiten, die als einfache Dateien auf die Festplatte geschrieben werden | [Statischer Cache und Antwortcache](../../../eng-us/help/businesses/reliability/static-and-response-cache.md) |
+| Statischer Cache | Seiten, die als einfache Dateien auf die Festplatte geschrieben werden | [Statischer Cache und Antwortcache](zuverlaessigkeit/statischer-cache-und-antwortcache.md) |
 | Cronjob | Eine Aufgabe, die nach Zeitplan läuft, zum Beispiel das Versenden von Benachrichtigungen | [Cronjobs: ausführen, planen und verfolgen](../../anleitungen/cronjobs.md) |
 | Wartungsmodus | Eine Seite, die Besuchern angezeigt wird, während gearbeitet wird | [Wartungsmodus: die Site vom Netz nehmen und zurückholen](../../anleitungen/wartungsmodus.md) |
 | Audit-Trail | Ein manipulationssicheres Protokoll darüber, wer was geändert hat | [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
@@ -90,7 +90,7 @@ Das sind allgemeine Begriffe, nicht spezifisch für Exponential.
 | SLA (Service Level Agreement) | Eine schriftliche Zusage zu Verfügbarkeit, Reaktions- und Wiederherstellungszeiten | [Grundlagen zu Verträgen und SLAs](auswahl/grundlagen-zu-vertraegen-und-slas.md) |
 | RTO (Recovery Time Objective) | Wie lange es nach einem Ausfall dauern darf, bis alles wieder läuft | [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) |
 | RPO (Recovery Point Objective) | Wie viele aktuelle Daten Sie sich zu verlieren leisten können; bestimmt, wie oft Sie sichern | ebenda |
-| DSGVO | Die Datenschutz-Grundverordnung der Europäischen Union | [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) |
+| DSGVO | Die Datenschutz-Grundverordnung der Europäischen Union | [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md) |
 | GPL | Die GNU General Public License, die Lizenz von Exponential | [Lizenzen für Käufer erklärt: GPL-Code, GFDL-Dokumentation](../geschaeft/lizenzen-fuer-kaeufer.md) |
 | GFDL | Die GNU Free Documentation License, die Lizenz dieser Dokumentation | [Freie Dokumentation: Nutzen Sie sie, um sich selbst und anderen zu helfen](../freie-dokumentation.md) |
 

@@ -122,8 +122,8 @@ Exponential, das Open-Source-PHP-CMS, geleitet von 7x und betrieben von der Expo
 
 ## Verwandte Seiten
 
-- [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md)
-- [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md)
+- [Exponential in Kürze](exponential-in-kuerze.md)
+- [Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md)
 - [Marke und Namen für Medien](marke-und-namen-fuer-medien.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

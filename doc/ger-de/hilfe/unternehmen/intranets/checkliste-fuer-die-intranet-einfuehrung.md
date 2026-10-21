@@ -96,7 +96,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 - [ ] Status des Audit-Trails geprüft: `./console exp:audit status`
   ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
 - [ ] Plan für Aktualisierungen vereinbart
-  ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
+  ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).
 - [ ] Monitoring der Adresse des Intranets eingerichtet
   ([Health-Checks und Monitoring](../zuverlaessigkeit/health-checks-und-monitoring.md)).
 
@@ -119,7 +119,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 
 - [ ] Prüfung nach 30 Tagen: wonach Mitarbeiter gesucht und was sie nicht gefunden haben, welche Bereiche nicht
   aktualisiert werden.
-- [ ] Erste Zugriffsprüfung nach 90 Tagen ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+- [ ] Erste Zugriffsprüfung nach 90 Tagen ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 - [ ] Ungenutzte Konten unter **Benutzer > Benutzerkonten prüfen** geprüft
   ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
 - [ ] Monatliche Betriebsroutine eingerichtet

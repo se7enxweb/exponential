@@ -50,7 +50,7 @@ um zur Quelle zu gehen und zu entscheiden, welche Quelle Vorrang hat, wenn sich 
 | 7x | <https://se7enx.com/about>; [Wer ist 7x?](../wer-ist-7x.md) |
 | Die Foundation | <https://foundation.exponential.earth/>; [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | Die Umbenennung | <https://exponential.earth/about/project>; [August 2025](../../../eng-us/history/2025/2025-08.md) |
-| Pressekit, frühere Berichte | [Das Pressekit](das-pressekit.md); [Frühere Pressemitteilungen und Berichte](../../../eng-us/help/press/earlier-press-releases-and-coverage.md) |
+| Pressekit, frühere Berichte | [Das Pressekit](das-pressekit.md); [Frühere Pressemitteilungen und Berichte](fruehere-pressemitteilungen-und-berichte.md) |
 
 Die Fürsprecher führen eine ähnliche Karte für Gesprächspunkte: [Wo die Fakten stehen](../fuersprecher/wo-die-fakten-stehen.md).
 
@@ -86,7 +86,7 @@ git log -1 --format='%ad %s' v6.0.14
 
 ## Verwandte Seiten
 
-- [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md)
+- [Leitfaden zum Faktencheck](leitfaden-faktenpruefung.md)
 - [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)
 - [Hilfeseiten nach Thema, für die Presse](hilfeseiten-nach-thema-fuer-die-presse.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

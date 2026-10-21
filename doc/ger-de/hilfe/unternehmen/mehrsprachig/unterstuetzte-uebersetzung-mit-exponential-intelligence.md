@@ -94,7 +94,7 @@ Server nie verlassen“. Schutzmaßnahmen aus derselben Quelle und der
   dürfen Entwürfe schreiben.
 
 Entscheiden Sie mit Ihrem Datenschutzbeauftragten, welche Inhalte an welchen Anbieter gesendet werden dürfen, bevor
-jemand ihn nutzt ([Sicherheit](../../../../eng-us/help/businesses/security/README.md)).
+jemand ihn nutzt ([Sicherheit](../sicherheit/README.md)).
 
 ## Kosten und Grenzen
 

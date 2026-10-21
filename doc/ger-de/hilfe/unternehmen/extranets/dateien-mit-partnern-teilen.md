@@ -97,7 +97,7 @@ Der Audit-Trail zeichnet standardmäßig Inhaltsänderungen, Anmeldungen und Abl
 stichprobenartig Knotenaufrufe, Suchen und Downloads auf, nur wenn Lesezugriffe eingeschaltet sind
 ([Der Audit-Trail, What is recorded](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)). Entscheiden Sie mit Ihrer
 Ansprechperson für den Datenschutz, ob ein Portal Aufzeichnungen der Downloads braucht und für wie lange, und sagen Sie
-das im Datenschutzhinweis des Portals ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)).
+das im Datenschutzhinweis des Portals ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
 Jedes File-Objekt behält seine Versionen, seinen Eigentümer und seine Daten, sodass sich die Frage „Welche Preisliste
 hatte Partner A im März?“ über die Versionsseite beantworten lässt
@@ -124,7 +124,7 @@ bei einem Dienst, der dafür gebaut ist, und werden aus dem Portal verlinkt
 - [Dokumente und Dateibibliotheken](../intranets/dokumente-und-dateibibliotheken.md)
 - [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
 - [Händler- und Lieferantenportale](haendler-und-lieferantenportale.md)
-- [Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)
+- [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

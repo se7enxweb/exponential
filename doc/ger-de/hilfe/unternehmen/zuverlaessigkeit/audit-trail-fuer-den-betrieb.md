@@ -15,7 +15,7 @@ ihn lesen und was Sie einmalig einrichten. Die vollständige Referenz finden Sie
 [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) und
 [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md#3-das-audit-protokoll-lesen-5-minuten). Die Nutzung für
 Compliance behandelt eine eigene Seite:
-[Compliance-Nachweise aus dem Audit-Trail](../../../../eng-us/help/businesses/security/compliance-evidence-from-the-audit-trail.md).
+[Compliance-Nachweise aus dem Audit-Trail](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
 
 ![Das Audit-Dashboard](../../../../eng-us/help/images/help/bu-audit-ops.webp)
 

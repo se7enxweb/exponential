@@ -56,19 +56,19 @@ Siehe [Hosting-Modelle im Vergleich](auswahl/hosting-modelle-im-vergleich.md).
 **Wie schnell ist es?**
 Die dokumentierten Werte für den Stack sind 0,36 ms pro Seite aus dem Cache und 8.941 Anfragen pro Sekunde im
 Dauerbetrieb auf einer Maschine mit 12 Kernen, mit ihrer Messmethode (`README.md`, „What that measures as“). Ihre
-eigenen Werte hängen von Ihrer Hardware und Ihren Seiten ab. Siehe [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md).
+eigenen Werte hängen von Ihrer Hardware und Ihren Seiten ab. Siehe [Velocity für Unternehmen](zuverlaessigkeit/velocity-fuer-unternehmen.md).
 
 **Wie hoch ist die Verfügbarkeit?**
 Das Projekt veröffentlicht keinen Verfügbarkeitswert, und diese Hilfe erfindet keinen. Die Verfügbarkeit hängt vom
 Hosting, von der Überwachung und von der Art ab, wie die Website betrieben wird. Siehe
-[Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md) und
+[Verfügbarkeit in der Praxis](zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md) und
 [Grundlagen zu Verträgen und SLAs](auswahl/grundlagen-zu-vertraegen-und-slas.md).
 
 **Wie werden Updates ausgeliefert?**
 Als neue 6.0.x-Releases; „Ein veröffentlichter Tag wird nie geändert“ (`SECURITY.md`). Die Administration prüft eine
 Installation vor einem Upgrade gegen das Release
 ([Die Upgrade-Prüfung: Dateien und Datenbank vor einem Upgrade](../../anleitungen/upgrade-pruefung.md)).
-Siehe [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md).
+Siehe [Aktualisierungen ohne Überraschungen](zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md).
 
 ## Verkaufen und Kunden bedienen
 
@@ -100,21 +100,21 @@ Ja. Rollen, Richtlinien, Sektionen und Siteaccesses entscheiden, wer was sieht
 In Ihrer Datenbank und Ihrem Dateispeicher, auf dem Server, den Sie wählen. Nichts wird anderswohin gesendet, sofern
 Sie es nicht einrichten, zum Beispiel einen Zahlungsanbieter oder den optionalen Schreibassistenten, der „nichts
 irgendwohin sendet, bis Sie einen Anbieterschlüssel hinzufügen“ (`README.md`, „Exponential Intelligence“). Siehe
-[Personenbezogene Daten in Exponential](../../../eng-us/help/businesses/security/personal-data-in-exponential.md).
+[Personenbezogene Daten in Exponential](sicherheit/personenbezogene-daten-in-exponential.md).
 
 **Macht Exponential uns DSGVO-konform?**
 Das schafft keine Software allein. Sie gibt Ihnen Werkzeuge (Berechtigungen, einen Audit-Trail, Kontoverwaltung), die
-helfen; die Pflichten liegen bei Ihnen. Siehe [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md); das sind Grundlagen, keine
+helfen; die Pflichten liegen bei Ihnen. Siehe [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md); das sind Grundlagen, keine
 Rechtsberatung.
 
 **Wie werden Sicherheitsprobleme behandelt?**
 Melden Sie sie vertraulich an security@se7enx.com, mit „einer ersten Antwort innerhalb eines Werktags“; Korrekturen
 werden mit dem nächsten 6.0.x-Release veröffentlicht (`SECURITY.md`). Siehe
-[Sicherheitsupdates und Offenlegung](../../../eng-us/help/businesses/security/security-updates-and-disclosure.md).
+[Sicherheitsupdates und Offenlegung](sicherheit/sicherheitsupdates-und-offenlegung.md).
 
 **Können wir nachweisen, wer was geändert hat?**
 Ja, mit dem manipulationssicheren Audit-Trail ([Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md)).
-Siehe [Compliance-Nachweise aus dem Audit-Trail](../../../eng-us/help/businesses/security/compliance-evidence-from-the-audit-trail.md).
+Siehe [Compliance-Nachweise aus dem Audit-Trail](sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
 
 ## Menschen und Support
 

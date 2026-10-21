@@ -84,5 +84,5 @@ aktualisieren“ ([Automatische Updates mit ezupdate](../../hosting/betrieb/auto
 - [Release-Linie und Support](release-linie-und-support.md)
 - [Upgrades mit Ihrem Anbieter](upgrades-mit-ihrem-anbieter.md)
 - [Checkliste für den Upgrade-Tag](checkliste-upgrade-tag.md)
-- [Upgrades ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)
+- [Upgrades ohne Überraschungen](../../unternehmen/zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

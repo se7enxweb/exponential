@@ -67,7 +67,7 @@ Tags; die Ankündigung hat ihr eigenes Datum.
 
 - [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md)
 - [Zahlen prüfen](zahlen-pruefen.md)
-- [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md)
+- [Leitfaden zum Faktencheck](leitfaden-faktenpruefung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

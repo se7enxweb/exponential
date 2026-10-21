@@ -43,7 +43,7 @@ geben.
 > **Hinweis**
 > Das Repository hat kein eigenes Spendenmodul. Eine Spendenseite wird mit dem eingebauten Shop und einem
 > Zahlungsanbieter gebaut oder mit einem Link auf die eigene Spendenseite Ihres Zahlungsanbieters; siehe
-> [Spenden und Spendenaufrufe](../../../../eng-us/help/businesses/nonprofits/donations-and-fundraising-pages.md). Es gelten die Gebühren des Anbieters.
+> [Spenden und Spendenaufrufe](../gemeinnuetzige/spenden-und-spendenaufrufe.md). Es gelten die Gebühren des Anbieters.
 
 ## Die Eingabewerte
 
@@ -113,13 +113,13 @@ dann entscheiden, ob diese Stunden gut angelegt sind. Gemeinsames Bearbeiten mit
 - [ ] Arbeit für Barrierefreiheit, die eine gemeinnützige Organisation oft leisten muss
       ([Barrierefreiheit für gemeinnützige Organisationen](../gemeinnuetzige/barrierefreiheit-fuer-gemeinnuetzige.md)).
 - [ ] Datenschutzgrundlagen für die Daten von Spendern und Mitgliedern
-      ([Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md)).
-- [ ] Einen Plan für die Jahre mit kleinem Budget: [Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md).
+      ([Sicherheit und Datenschutz](../sicherheit/README.md)).
+- [ ] Einen Plan für die Jahre mit kleinem Budget: [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md).
 
 ## Verwandte Seiten
 
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md)
-- [Website-Planung für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md)
+- [Website-Planung für gemeinnützige Organisationen](../gemeinnuetzige/website-planung-fuer-gemeinnuetzige.md)
 - [Wofür Sie nicht bezahlen](wofuer-sie-nicht-bezahlen.md)
 - [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -31,7 +31,7 @@ eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/g
 - **Geringe Anforderungen an das Hosting sind möglich.** SQLite 3 ist die erste unterstützte Datenbank, und „eine
   vollständige Exponential-Website läuft aus einer Datei auf der Platte, ohne Datenbankserver, der installiert,
   konfiguriert oder abgesichert werden müsste“ ([Unterstützung für SQLite-Datenbanken](../../../../eng-us/features/6.0/sqlite-database.md)).
-- **Formulare, Newsletter und Landingpages sind enthalten.** Der Information Collector, `cjw_newsletter` und Exponential
+- **Formulare, Newsletter und Landingpages sind enthalten.** Der Informationssammler, `cjw_newsletter` und Exponential
   Layouts kommen mit dem Produkt (`composer.json`).
 - **Das Projekt selbst hat ein gemeinnütziges Zuhause**: Es wird von der Exponential Foundation betrieben, einer
   gemeinnützigen Organisation ([Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md)).
@@ -40,13 +40,13 @@ eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/g
 
 | Bedarf | Was es gibt | Seite |
 |---|---|---|
-| Spenden auf der Website annehmen | Kein eigenes Spendenmodul. Möglichkeiten: auf eine externe Spendenseite verlinken oder feste „Spenden“-Artikel über den eingebauten Shop mit dem Gateway `ezpaypal` verkaufen | [Spenden und Spendenaufrufe](../../../../eng-us/help/businesses/nonprofits/donations-and-fundraising-pages.md) |
+| Spenden auf der Website annehmen | Kein eigenes Spendenmodul. Möglichkeiten: auf eine externe Spendenseite verlinken oder feste „Spenden“-Artikel über den eingebauten Shop mit dem Gateway `ezpaypal` verkaufen | [Spenden und Spendenaufrufe](spenden-und-spendenaufrufe.md) |
 | Regelmäßige Spenden | Für den Shop oder `ezpaypal` nicht dokumentiert; nutzen Sie die regelmäßigen Spenden der externen Plattform | dieselbe Seite |
-| Anmeldung von Ehrenamtlichen | Formulare mit dem Information Collector; Dateien mit `enhancedezbinaryfile`; CAPTCHA | [Ehrenamtliche und Anmeldeformulare](../../../../eng-us/help/businesses/nonprofits/volunteers-and-sign-up-forms.md) |
+| Anmeldung von Ehrenamtlichen | Formulare mit dem Informationssammler; Dateien mit `enhancedezbinaryfile`; CAPTCHA | [Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md) |
 | Kampagnenseiten | Exponential Layouts, mit zeitlich begrenzten Regeln | [Kampagnen und Landingpages](kampagnen-und-landingpages.md) |
 | Newsletter für Unterstützer | `cjw_newsletter` mit Double-Opt-in | [Newsletter](../newsletter/README.md) |
 | Barrierefreie Website | Anleitungen für Templates, verpflichtende Alternativtexte, ein barrierefreies Administrationsdesign | [Barrierefreiheit für gemeinnützige Organisationen](barrierefreiheit-fuer-gemeinnuetzige.md) |
-| Geringe laufende Kosten | SQLite, Velocity ohne separaten Webserver, keine Lizenzgebühr | [Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) |
+| Geringe laufende Kosten | SQLite, Velocity ohne separaten Webserver, keine Lizenzgebühr | [Betrieb mit kleinem Budget](betrieb-mit-kleinem-budget.md) |
 
 > **Hinweis**
 > Alles in diesem Bereich ist im Repository dokumentiert und auf jeder Seite belegt. Wo dieser Bereich sagt, dass etwas
@@ -57,23 +57,23 @@ eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/g
 
 | Seite | Was sie beantwortet |
 |---|---|
-| [Website-Planung für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md) | Ziele, Zielgruppen, die Seiten, die eine gemeinnützige Organisation braucht, Rollen und ein Arbeitsblatt zur Planung |
-| [Spenden und Spendenaufrufe](../../../../eng-us/help/businesses/nonprofits/donations-and-fundraising-pages.md) | Die ehrlichen Möglichkeiten, Spenden anzunehmen, und wie Sie eine gute Spendenseite bauen |
-| [Ehrenamtliche und Anmeldeformulare](../../../../eng-us/help/businesses/nonprofits/volunteers-and-sign-up-forms.md) | Formulare für Ehrenamtliche, wer sie liest, Spam-Schutz, personenbezogene Daten |
+| [Website-Planung für gemeinnützige Organisationen](website-planung-fuer-gemeinnuetzige.md) | Ziele, Zielgruppen, die Seiten, die eine gemeinnützige Organisation braucht, Rollen und ein Arbeitsblatt zur Planung |
+| [Spenden und Spendenaufrufe](spenden-und-spendenaufrufe.md) | Die ehrlichen Möglichkeiten, Spenden anzunehmen, und wie Sie eine gute Spendenseite bauen |
+| [Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md) | Formulare für Ehrenamtliche, wer sie liest, Spam-Schutz, personenbezogene Daten |
 | [Kampagnen und Landingpages](kampagnen-und-landingpages.md) | Kampagnenseiten mit Exponential Layouts, Ein- und Ausschalten nach Datum, Messen |
 | [Barrierefreiheit für gemeinnützige Organisationen](barrierefreiheit-fuer-gemeinnuetzige.md) | Warum sie wichtig ist, was Templates und Redakteure leisten, wie Sie testen |
-| [Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) | Hosting, Wartung und Zeit der Ehrenamtlichen gering halten, ohne die Website zu gefährden |
-| [Checkliste für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-checklist.md) | Eine Checkliste von der Planung bis zum Start und die Routine danach |
+| [Betrieb mit kleinem Budget](betrieb-mit-kleinem-budget.md) | Hosting, Wartung und Zeit der Ehrenamtlichen gering halten, ohne die Website zu gefährden |
+| [Checkliste für gemeinnützige Organisationen](checkliste-fuer-gemeinnuetzige.md) | Eine Checkliste von der Planung bis zum Start und die Routine danach |
 
 ## Empfohlene Lesereihenfolge
 
-1. [Website-Planung für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md)
-2. [Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md)
-3. [Spenden und Spendenaufrufe](../../../../eng-us/help/businesses/nonprofits/donations-and-fundraising-pages.md)
-4. [Ehrenamtliche und Anmeldeformulare](../../../../eng-us/help/businesses/nonprofits/volunteers-and-sign-up-forms.md)
+1. [Website-Planung für gemeinnützige Organisationen](website-planung-fuer-gemeinnuetzige.md)
+2. [Betrieb mit kleinem Budget](betrieb-mit-kleinem-budget.md)
+3. [Spenden und Spendenaufrufe](spenden-und-spendenaufrufe.md)
+4. [Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md)
 5. [Kampagnen und Landingpages](kampagnen-und-landingpages.md)
 6. [Barrierefreiheit für gemeinnützige Organisationen](barrierefreiheit-fuer-gemeinnuetzige.md)
-7. [Checkliste für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-checklist.md)
+7. [Checkliste für gemeinnützige Organisationen](checkliste-fuer-gemeinnuetzige.md)
 
 ## Benachbarte Bereiche
 
@@ -81,7 +81,7 @@ eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/g
 - [Newsletter](../newsletter/README.md): Neuigkeiten für Unterstützer per Mail.
 - [Mitglieder](../mitglieder/README.md): Mitgliederbereiche und Registrierung.
 - [Kosten](../kosten/README.md), einschließlich eines [durchgerechneten Beispiels für eine gemeinnützige Organisation](../kosten/durchgerechnetes-beispiel-gemeinnuetzige-organisation.md).
-- [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): Grundlagen der DSGVO, Einwilligung und Formulare.
+- [Sicherheit und Datenschutz](../sicherheit/README.md): Grundlagen der DSGVO, Einwilligung und Formulare.
 - [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md) für öffentliche Stellen.
 
 ## Verwandte Seiten

@@ -76,7 +76,7 @@ Releases, die für die Planung wichtig sind, aus
 
 Für ein Unternehmen bedeutet das: **Aktuell zu bleiben ist Ihr Sicherheitsplan.** Planen Sie eine routinemäßige
 Aktualisierung innerhalb der Linie als wiederkehrende Aufgabe ein. Der Sicherheitsbereich sagt mehr dazu:
-[Sicherheitsupdates und Offenlegung](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md).
+[Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md).
 
 ## PHP-Versionen
 
@@ -143,7 +143,7 @@ vertragliche Zusage, holen Sie sie sich schriftlich von ihnen; siehe
 
 ## Verwandte Seiten
 
-- [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)
+- [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md)
 - [Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md)
 - [Zusammenarbeit mit 7x und dem Exponential-Projekt](../auswahl/zusammenarbeit-mit-7x-und-dem-projekt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

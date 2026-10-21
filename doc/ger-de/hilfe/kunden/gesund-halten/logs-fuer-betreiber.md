@@ -49,7 +49,7 @@ Prüfprotokoll kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter, To
 
 Ihre Regel: **Fügen Sie nie unmaskierte Logzeilen in ein Ticket ein**, und leiten Sie nie Logs mit Kundendaten an
 jemanden weiter, der sie nicht braucht. Wie lange Logs und Prüfprotokoll-Einträge aufbewahrt werden, behandelt
-[Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md) (keine Rechtsberatung).
+[Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md) (keine Rechtsberatung).
 
 ## Wer was lesen darf
 

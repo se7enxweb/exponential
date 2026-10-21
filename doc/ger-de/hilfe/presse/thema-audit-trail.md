@@ -102,7 +102,7 @@ aufzeichnen, nicht die Menschen: Regeln zur Privatsphäre in einem Audit-Protoko
 - [Thema: Sicherheit](thema-sicherheit.md)
 - [Der Audit-Trail (Funktionsseite)](../../../eng-us/features/6.0/audit-trail.md)
 - [Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md)
-- [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -63,7 +63,7 @@ Pull Request, dass PHP 8.0 noch startet ([PHP-Versionen](../wer-ist-die-exponent
 
 - [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md)
 - [Einwand: „PHP und moderne Technik“](../fuersprecher/einwand-php-und-moderne-technik.md)
-- [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

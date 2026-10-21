@@ -102,7 +102,7 @@ Auf Deutsch gesprochen lautet die Versionsnummer zum Beispiel „sechs Punkt nul
 
 ## Verwandte Seiten
 
-- [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md)
+- [Checkliste zum Faktencheck](checkliste-faktenpruefung.md)
 - [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md)
 - [Über ein Release berichten](ueber-ein-release-berichten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

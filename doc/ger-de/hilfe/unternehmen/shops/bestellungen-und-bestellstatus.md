@@ -118,7 +118,7 @@ Abgeschlossene Bestellungen lassen sich archivieren (`shop/archiveorder`), wodur
 verschwinden, ohne gelöscht zu werden, und wieder zurückholen (`shop/unarchiveorder`). Bestellungen können auch
 entfernt werden (`shop/removeorder`). Denken Sie daran, dass Ihre Buchhaltungs- und Steuervorschriften verlangen
 können, Bestellunterlagen jahrelang aufzubewahren; archivieren Sie lieber, statt zu entfernen, und lesen Sie
-[Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md).
+[Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md).
 
 ## Kunden
 

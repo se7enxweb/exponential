@@ -73,7 +73,7 @@ Der Wunschzettel ist ein guter Grund, Konten anzubieten, wenn Ihre Produkte gut 
 ## Personenbezogene Daten
 
 Warenkörbe sind an eine Sitzung gebunden und Wunschzettel an einen Benutzer (`ezbasket`, `ezwishlist`), wie unter
-[Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md) aufgeführt.
+[Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md) aufgeführt.
 Berücksichtigen Sie sie, wenn Sie die Daten Ihres Shops in Ihrer Datenschutzerklärung beschreiben.
 
 ## Verwandte Seiten

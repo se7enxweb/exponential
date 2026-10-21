@@ -51,7 +51,7 @@ Bereits dokumentiert: die Liste der Releases, das Changelog von 6.0.15. Nicht do
 
 ## Produkte
 
-Bereits dokumentiert: was Velocity, Exponential Intelligence und Exponential Layouts tun ([Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)).
+Bereits dokumentiert: was Velocity, Exponential Intelligence und Exponential Layouts tun ([Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)).
 
 - Warum einen Webserver in PHP schreiben, statt bestehende Server zu optimieren?
 - Warum veröffentlicht Exponential Intelligence nie von sich aus? Wurde darüber diskutiert?

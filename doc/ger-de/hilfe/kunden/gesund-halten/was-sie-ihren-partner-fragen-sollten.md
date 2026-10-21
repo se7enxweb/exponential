@@ -20,7 +20,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 |---|---|
 | Welche Erweiterungen verwendet die Website, und wer pflegt jede davon? | Eine Liste mit Versionen; **Setup > Extensions** zeigt sie an ([Liste der Erweiterungen](../../../../eng-us/features/6.0/extension-list-and-downloads.md)) |
 | Welche Teile sind individuell: Templates, Designs, Erweiterungen, Inhaltsklassen? | Eine Liste, und wo der Code aufbewahrt wird |
-| Haben Sie Dateien von Exponential selbst geändert? | Im Idealfall keine; jede Änderung wird in einer Versionsverwaltung gehalten und erscheint in der Upgrade-Prüfung ([Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md)) |
+| Haben Sie Dateien von Exponential selbst geändert? | Im Idealfall keine; jede Änderung wird in einer Versionsverwaltung gehalten und erscheint in der Upgrade-Prüfung ([Upgrade-Prüfung und Dateikonsistenz](../../unternehmen/zuverlaessigkeit/upgrade-pruefung-und-dateikonsistenz.md)) |
 | Wo wird der Code unserer Website aufbewahrt? | Ein Git-Repository, das Ihnen gehört oder das Sie kopieren können ([Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md)) |
 | Gibt es ein Dokument, das die Website beschreibt? | Ein Übergabedokument: Inhaltsmodell, Rollen, Einstellungen, Kontakte ([Projektvorlagen](../../fuehrung/projektvorlagen.md)) |
 

@@ -113,7 +113,7 @@ Aufmerksamkeit:
   geben können.
 
 Keines davon gehört zu einer Redakteursrolle einer Abteilung. Planen Sie einen regelmäßigen Blick auf beide Kennzeichen
-ein ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+ein ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 
 ## Fehler, die Sie vermeiden sollten
 

@@ -109,11 +109,11 @@ für die diese Dokumentation keine Quelle hat. Drucken Sie sie nicht, ohne zu fr
 
 | Sie brauchen | Seite |
 |---|---|
-| Ein Faktenblatt mit Quellen | [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md) |
+| Ein Faktenblatt mit Quellen | [Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md) |
 | Beschreibungen in mehreren Längen | [Textbausteine, die Sie kopieren dürfen](standardbeschreibungen.md) |
 | Eine datierte Zeitleiste | [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md) |
 | Die Namen richtig geschrieben | [Kurzreferenz zu Namen für Nachrichtenredakteure](namens-kurzreferenz-fuer-redaktionen.md) |
-| Blickwinkel nach Funktion | [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md) |
+| Blickwinkel nach Funktion | [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md) |
 | Bildschirmfotos unter einer bekannten Lizenz | [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md) |
 | Kontakte | [Pressekontakte](pressekontakte.md) |
 
@@ -135,7 +135,7 @@ Thank you,
 
 - [Logos und Markenmaterial](logos-und-markenmaterial.md)
 - [Pressekontakte](pressekontakte.md)
-- [Frühere Pressemitteilungen und Berichte](../../../eng-us/help/press/earlier-press-releases-and-coverage.md)
+- [Frühere Pressemitteilungen und Berichte](fruehere-pressemitteilungen-und-berichte.md)
 - [Partnerlogos und das Zertifizierungszeichen verwenden](../partner/partnerlogos-und-zeichen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

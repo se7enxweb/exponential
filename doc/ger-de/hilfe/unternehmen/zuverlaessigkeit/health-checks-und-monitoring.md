@@ -149,7 +149,7 @@ Eine Prüfung, die niemand liest, ist kein Monitoring. Legen Sie im Voraus fest:
 ## Verwandte Seiten
 
 - [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md)
-- [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md)
+- [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md)
 - [Überblick über die Überwachung](../../hosting/betrieb/ueberblick-ueber-die-ueberwachung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

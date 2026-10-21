@@ -94,7 +94,7 @@ Organisation am unmittelbarsten etwas kostet:
 - [ ] CAPTCHAs haben eine barrierefreie Alternative; „beide mitgelieferten CAPTCHA-Dienste bieten eine“.
 
 Quelle: [Barrierefreiheit für Website-Ersteller, Formulare](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#forms).
-Zu den Formularen selbst siehe [Ehrenamtliche und Anmeldeformulare](../../../../eng-us/help/businesses/nonprofits/volunteers-and-sign-up-forms.md).
+Zu den Formularen selbst siehe [Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md).
 
 ## Kampagnenseiten und Downloads
 

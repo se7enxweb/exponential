@@ -69,7 +69,7 @@ Zitieren Sie historische Titel genau; benennen Sie sie nicht um:
 
 - eZpedia, „The free eZ Publish encyclopedia that anyone can edit“ (<https://ezpedia.exponential.earth/>).
 - Das Buch „Learning eZ Publish“, inzwischen unter der GNU FDL veröffentlicht ([Die Community](../wer-ist-7x.md#die-community)).
-- Pressemitteilungen von 2024 und 2025, deren Titel den früheren Namen verwenden ([Frühere Pressemitteilungen und Berichte](../../../eng-us/help/press/earlier-press-releases-and-coverage.md)).
+- Pressemitteilungen von 2024 und 2025, deren Titel den früheren Namen verwenden ([Frühere Pressemitteilungen und Berichte](fruehere-pressemitteilungen-und-berichte.md)).
 
 ## Websites aus diesen Jahren
 

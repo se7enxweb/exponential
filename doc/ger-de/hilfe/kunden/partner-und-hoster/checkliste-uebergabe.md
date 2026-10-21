@@ -71,7 +71,7 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
 
 - [ ] Die Konten des alten Anbieters in Ihrer Administration sind deaktiviert.
 - [ ] Der alte Anbieter löscht Ihre Daten gemäß Vertrag und Gesetz und bestätigt es schriftlich
-      (keine Rechtsberatung; [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+      (keine Rechtsberatung; [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 - [ ] [Wer was macht](wer-was-macht.md) und Ihre [Eskalationskontakte](vorlage-eskalationskontakte.md) sind aktualisiert.
 
 > **Hinweis**

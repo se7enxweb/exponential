@@ -29,7 +29,7 @@ und die Geschichte.
 
 | Begriff | Bedeutung |
 |---|---|
-| **Exponential** | Ein freies, quelloffenes Content-Management-System und Anwendungsframework in PHP. [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md) |
+| **Exponential** | Ein freies, quelloffenes Content-Management-System und Anwendungsframework in PHP. [Exponential in Kürze](exponential-in-kuerze.md) |
 | **Exponential 6, 6.0.x** | Die aktuelle Hauptlinie, seit dem 1. Januar 2024 |
 | **7x** | Das Unternehmen, das Exponential führt; früher Brookins Consulting. [7x für Reporter](7x-fuer-reporter.md) |
 | **se7enxweb** | Der Name von 7x auf GitHub und Packagist |

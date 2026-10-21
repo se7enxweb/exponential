@@ -80,13 +80,13 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 ## Datenschutz
 
 - [ ] Registrierungs- und Anmeldeformulare sagen, was erhoben wird und warum
-  ([Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md)).
+  ([Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)).
 - [ ] Nur die nötigen Felder in der Benutzerklasse.
 - [ ] Suchstatistiken ausgeschaltet gelassen oder mit einem Grund eingeschaltet
   ([Suche auf der Website, Search statistics](../../../../eng-us/help/creators/website-creators/site-search.md#search-statistics)).
 - [ ] Aufbewahrung für unbestätigte und inaktive Konten vereinbart
-  ([Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
-- [ ] Datenschutzhinweis veröffentlicht ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)).
+  ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
+- [ ] Datenschutzhinweis veröffentlicht ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
 ## Betrieb
 
@@ -94,7 +94,7 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 - [ ] Backups eingeplant und eine Wiederherstellung ausprobiert
   ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - [ ] Plan für Aktualisierungen und eine Ansprechperson für Probleme
-  ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
+  ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).
 - [ ] Zweistufige Anmeldung für Administratoren und Redakteure
   ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - [ ] `MaxNumberOfFailedLogin` gesetzt
@@ -113,7 +113,7 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 | Wöchentlich | Registrierungen freigeben oder bereinigen | [Rollen und Richtlinien, 7](../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen) |
 | Monatlich | Newsletter; Bounces und die Sperrliste prüfen | [Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md) |
 | Vierteljährlich | inaktive und doppelte Konten prüfen | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
-| Jährlich | Rollen, Sektionen und den Datenschutzhinweis prüfen | [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md) |
+| Jährlich | Rollen, Sektionen und den Datenschutzhinweis prüfen | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md) |
 
 Passen Sie den Rhythmus an die Größe Ihrer Organisation an.
 

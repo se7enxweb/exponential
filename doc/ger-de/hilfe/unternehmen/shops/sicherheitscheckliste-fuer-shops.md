@@ -45,7 +45,7 @@ Sicht des Projekts auf die Bedrohungen steht unter [Sicherheitshärtung](../../s
 | Das anfängliche Administratorpasswort der Installation wurde geändert | Hoster oder Partner | [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md) |
 | Jede Person hat ihr eigenes Konto; niemand teilt eines | Inhaber | [Sicherheitshärtung](../../sicherheitshaertung.md#checkliste) |
 | Für Administratoren und Shop-Mitarbeiter ist die zweistufige Anmeldung Pflicht | Hoster oder Partner | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md), [sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md) |
-| Konten ausgeschiedener Personen werden am selben Tag deaktiviert | Inhaber | [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md) |
+| Konten ausgeschiedener Personen werden am selben Tag deaktiviert | Inhaber | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md) |
 | Die Administration läuft auf einem eigenen Host und ist eingeschränkt | Hoster | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md) |
 
 ## Shop-Berechtigungen
@@ -57,7 +57,7 @@ Die Funktionen des Shops sind `buy`, `administrate`, `setup`, `edit_status` und 
   und `ToStatus` ([Bestellungen und Bestellstatus](bestellungen-und-bestellstatus.md#wer-einen-status-ändern-darf)).
 - [ ] Nur der Inhaber oder die Buchhaltung hat `shop/setup` (USt, Währungen, Rabatte).
 - [ ] Redakteure, die Produkte pflegen, haben nur Inhaltsberechtigungen in den Produktordnern.
-- [ ] Rollen werden zweimal im Jahr überprüft ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+- [ ] Rollen werden zweimal im Jahr überprüft ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 
 ## Zahlungen
 
@@ -91,7 +91,7 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 - [ ] Jemand verfolgt die Releases von Exponential und spielt Sicherheitskorrekturen ein. Exponential 6.0 ist die
   gepflegte Linie, und Korrekturen erscheinen mit dem nächsten Release 6.0.x ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
 - [ ] Erweiterungen (auch Zahlungsanbindungen) werden mit dem System aktualisiert.
-- [ ] Updates werden vor dem Live-Shop auf einer Kopie getestet ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
+- [ ] Updates werden vor dem Live-Shop auf einer Kopie getestet ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).
 
 ## Backups
 
@@ -111,9 +111,9 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 
 - [ ] Nur Mitarbeiter, die es brauchen, können die Kundenliste und die Bestellungen öffnen.
 - [ ] Bestellunterlagen werden so lange aufbewahrt, wie Ihre Buchhaltung es verlangt, und nicht länger
-  ([Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+  ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 - [ ] Werbemails nur mit Einwilligung ([Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)).
-- [ ] Ihr Datenschutzhinweis beschreibt, was der Shop speichert ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)).
+- [ ] Ihr Datenschutzhinweis beschreibt, was der Shop speichert ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
 ## Wenn etwas passiert
 
@@ -126,7 +126,7 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 ## Verwandte Seiten
 
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
-- [Sicherheitsgrundlagen für Unternehmen](../../../../eng-us/help/businesses/security/security-basics-for-businesses.md)
+- [Sicherheitsgrundlagen für Unternehmen](../sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md)
 - [Checkliste für den Shop-Start](checkliste-fuer-den-shop-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

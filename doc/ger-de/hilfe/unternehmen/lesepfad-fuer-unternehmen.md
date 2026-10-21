@@ -46,7 +46,7 @@ Ziel: wissen, was Exponential ist und was es für Ihre Art von Organisation leis
 | [Welcher Bereich passt zu Ihrer Organisation?](welcher-bereich-zu-ihrer-organisation-passt.md) | Ihre Bereiche finden |
 | [Wie Unternehmen online verkaufen](wie-unternehmen-online-verkaufen.md) | Website, Apps und Netzwerke |
 | [Glossar für Unternehmen](glossar-fuer-unternehmen.md) | Die Begriffe, die im Rest des Bereichs verwendet werden |
-| [Warum Stabilität wichtig ist](../../../eng-us/help/businesses/reliability/why-stability-matters.md) | Was Stabilität wert ist |
+| [Warum Stabilität wichtig ist](zuverlaessigkeit/warum-stabilitaet-wichtig-ist.md) | Was Stabilität wert ist |
 
 ## Stufe 2: entscheiden
 
@@ -57,8 +57,8 @@ Ziel: eine Entscheidung für ein Pilotprojekt, mit verstandenen Kosten und Risik
 | [Gesamtbetriebskosten](kosten/gesamtbetriebskosten.md) | Alle Kosten über Jahre, nicht nur der Aufbau |
 | [Wofür Sie nicht bezahlen](kosten/wofuer-sie-nicht-bezahlen.md) | Die Lizenz und ihre Folgen |
 | [Rendite der Stabilität](kosten/rendite-der-stabilitaet.md) und ein durchgerechnetes Beispiel: [Shop](kosten/durchgerechnetes-beispiel-kleiner-shop.md), [Intranet](kosten/durchgerechnetes-beispiel-intranet.md) oder [gemeinnützige Organisation](kosten/durchgerechnetes-beispiel-gemeinnuetzige-organisation.md) | Die Rechnung mit Ihren Zahlen |
-| [Sicherheitsgrundlagen für Unternehmen](../../../eng-us/help/businesses/security/security-basics-for-businesses.md) | Worum Sie sich kümmern müssen |
-| [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) | Personenbezogene Daten (Grundlagen, keine Rechtsberatung) |
+| [Sicherheitsgrundlagen für Unternehmen](sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md) | Worum Sie sich kümmern müssen |
+| [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md) | Personenbezogene Daten (Grundlagen, keine Rechtsberatung) |
 | [Bewertungsbogen für Anbieter](vorlagen/bewertungsbogen-fuer-anbieter.md) | Optionen auf dem Papier vergleichen |
 
 ## Stufe 3: planen
@@ -81,11 +81,11 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 | Lesen | Warum |
 |---|---|
 | [Checkliste Go-live](vorlagen/checkliste-go-live.md) | Der Tag des Starts |
-| [Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md) | Tägliche Gewohnheiten |
+| [Verfügbarkeit in der Praxis](zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md) | Tägliche Gewohnheiten |
 | [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) und [Wiederherstellungsübungen](zuverlaessigkeit/wiederherstellungsuebungen.md) | Das eine, was Sie rettet |
 | [Health Checks und Monitoring](zuverlaessigkeit/health-checks-und-monitoring.md) | Es wissen, bevor die Kunden es merken |
 | [Störungsbehandlung für kleine Teams](zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md) | Wenn es trotzdem passiert |
-| [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) | Jedes Release |
+| [Aktualisierungen ohne Überraschungen](zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md) | Jedes Release |
 | [Monatliche Betriebscheckliste](vorlagen/monatliche-betriebscheckliste.md) und [Checkliste für den Jahresrückblick](vorlagen/checkliste-jahresrueckblick.md) | Die Routine |
 
 ## Zusätzliche Seiten für jede Art von Organisation
@@ -98,7 +98,7 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 | Mitgliederorganisation | [README Mitgliederwebsites](mitglieder/README.md), [Mitgliederwebsite planen](mitglieder/mitgliederwebsite-planen.md), [Checkliste für Mitgliederwebsites](mitglieder/checkliste-fuer-mitgliederwebsites.md) |
 | Herausgeber eines Newsletters | [README Newsletter](newsletter/README.md), [Einen Newsletter planen](newsletter/einen-newsletter-planen.md), [Opt-in und Einwilligung](newsletter/opt-in-und-einwilligung.md) |
 | Bibliothek oder Katalog | [README Bibliotheken](bibliotheken/README.md), [Katalog planen](bibliotheken/katalog-planen.md), [Katalogsuche](bibliotheken/katalogsuche.md) |
-| Gemeinnützige Organisation | [README Gemeinnützige](gemeinnuetzige/README.md), [Website-Planung für gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md), [Betrieb mit kleinem Budget](../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) |
+| Gemeinnützige Organisation | [README Gemeinnützige](gemeinnuetzige/README.md), [Website-Planung für gemeinnützige Organisationen](gemeinnuetzige/website-planung-fuer-gemeinnuetzige.md), [Betrieb mit kleinem Budget](gemeinnuetzige/betrieb-mit-kleinem-budget.md) |
 | Kleine Gruppe oder Verein | [README Vereine](vereine/README.md), [Übergabe bei Wechsel der Ehrenamtlichen](vereine/uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
 | Mehrere Marken | [README Multisite](multisite/README.md), [Mehrere Marken planen](multisite/mehrere-marken-planen.md) |
 | Mehrere Sprachen | [README Mehrsprachig](mehrsprachig/README.md), [Übersetzungsablauf](mehrsprachig/uebersetzungsablauf.md) |

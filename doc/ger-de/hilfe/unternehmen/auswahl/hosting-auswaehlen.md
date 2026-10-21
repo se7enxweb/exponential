@@ -52,7 +52,7 @@ Aus [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-daten
 | Gibt es Shell-Zugang auf dem Server? | nein | den Einrichtungsassistenten im Browser |
 
 Für die meisten Websites kleiner und mittlerer Unternehmen ist die einfachste Antwort eine Maschine mit SQLite und
-Velocity ([Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md)). Fügen Sie einen Datenbankserver und
+Velocity ([Velocity für Unternehmen](../zuverlaessigkeit/velocity-fuer-unternehmen.md)). Fügen Sie einen Datenbankserver und
 weitere Maschinen hinzu, wenn Messungen den Bedarf zeigen ([Kostentreiber beim Hosting](../kosten/kostentreiber-beim-hosting.md)).
 
 > **Tipp**
@@ -66,8 +66,8 @@ weitere Maschinen hinzu, wenn Messungen den Bedarf zeigen ([Kostentreiber beim H
 | Wer was tut | Aktualisiert der Hoster PHP, Exponential, Erweiterungen? Wer stellt wieder her? |
 | Backups | Wie oft, wie lange aufbewahrt, wo, und wurde eine Wiederherstellung getestet? |
 | Monitoring | Überwacht der Hoster die Website von außen, und wer wird benachrichtigt? |
-| Sicherheit | Trennung von anderen Kunden, TLS, Zugang zur Administration ([Sicherheitsgrundlagen für Unternehmen](../../../../eng-us/help/businesses/security/security-basics-for-businesses.md)) |
-| Datenschutz | Wo die Server stehen, Verträge zur Verarbeitung personenbezogener Daten ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)) |
+| Sicherheit | Trennung von anderen Kunden, TLS, Zugang zur Administration ([Sicherheitsgrundlagen für Unternehmen](../sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md)) |
+| Datenschutz | Wo die Server stehen, Verträge zur Verarbeitung personenbezogener Daten ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)) |
 | Support | Reaktionszeiten schriftlich ([Grundlagen zu Verträgen und SLAs](grundlagen-zu-vertraegen-und-slas.md)) |
 | Ausstieg | Wie Sie Ihre Daten und Dateien bekommen, wenn Sie gehen, und in welchem Format |
 | Erfahrung | Hat der Hoster schon Exponential-Websites betrieben? Hosting-Partner werden vom Projekt aufgeführt ([Hosting-Partner](../../partner/hosting-partner.md)) |

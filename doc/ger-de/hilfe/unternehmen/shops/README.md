@@ -106,7 +106,7 @@ beschreiben nur, was die Software tut.
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md) und [Wie Unternehmen mit Exponential online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Newsletter](../newsletter/README.md), um Kunden auf dem Laufenden zu halten
 - [Kosten und Rendite](../kosten/README.md), darunter [ein durchgerechnetes Beispiel für einen kleinen Shop](../kosten/durchgerechnetes-beispiel-kleiner-shop.md)
-- [Sicherheit](../../../../eng-us/help/businesses/security/README.md) und [Zuverlässigkeit](../zuverlaessigkeit/README.md)
+- [Sicherheit](../sicherheit/README.md) und [Zuverlässigkeit](../zuverlaessigkeit/README.md)
 - [Mehrsprachige Websites](../mehrsprachig/README.md) für Shops in mehreren Sprachen
 - [Mobil und headless](../mobil-und-headless/README.md) für den Verkauf über Apps und Partner
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)

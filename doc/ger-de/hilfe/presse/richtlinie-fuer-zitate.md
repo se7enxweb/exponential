@@ -51,7 +51,7 @@ legt die Regeln dar, denen diese Dokumentation folgt, und bittet Sie, ihnen eben
 | Ihnen gegebene Aussagen | Eine Antwort per E-Mail auf Ihre Frage | „<Name, Rolle> von <Organisation> sagte in einer E-Mail“ |
 
 Frühere Pressemitteilungen sind ebenfalls veröffentlichte Aussagen; zitieren Sie sie mit ihrem Datum
-([Frühere Pressemitteilungen und Berichte](../../../eng-us/help/press/earlier-press-releases-and-coverage.md)).
+([Frühere Pressemitteilungen und Berichte](fruehere-pressemitteilungen-und-berichte.md)).
 
 ## Ein Zitat von 7x oder der Foundation bekommen
 

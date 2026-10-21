@@ -42,7 +42,7 @@ Ein kurzer Anruf oder eine E-Mail vor der Aufnahme:
 4. Which numbers might come up, and where are they documented?
 ```
 
-Lesen Sie [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md) und bereiten Sie Fragen aus der
+Lesen Sie [Exponential in Kürze](exponential-in-kuerze.md) und bereiten Sie Fragen aus der
 [Fragensammlung für Interviews](fragensammlung-fuer-interviews.md) vor.
 
 ## Namen und Aussprache

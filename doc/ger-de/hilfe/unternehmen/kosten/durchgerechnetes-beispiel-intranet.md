@@ -116,7 +116,7 @@ Raten Sie die Minuten nicht; messen Sie sie vorher und nachher:
 - [ ] Ihre Mitarbeiterzahlen, Arbeitswochen und Kosten pro Stunde von der Personalabteilung.
 - [ ] Einen Umsetzungsfaktor, den Sie begründen können.
 - [ ] Posten für Verzeichnisanbindung, Single Sign-on oder Dokumentenmigration, wenn Ihr Projekt sie braucht.
-- [ ] Einen Posten für eine jährliche Zugriffsprüfung ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+- [ ] Einen Posten für eine jährliche Zugriffsprüfung ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 - [ ] Einen Einführungsplan: [Checkliste für die Intranet-Einführung](../intranets/checkliste-fuer-die-intranet-einfuehrung.md).
 
 ## Verwandte Seiten

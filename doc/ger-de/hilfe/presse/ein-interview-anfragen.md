@@ -61,7 +61,7 @@ Stellungnahme gehört an einen der Kontakte oben.
 | Das Format: Live-Interview, aufgezeichnetes Gespräch, Video, schriftliche Fragen | Schriftliche Fragen lassen sich am genauesten beantworten |
 | Ihre Frist, mit Zeitzone | 7x beschreibt sich als nordamerikanisch; nennen Sie Ihre Zeitzone deutlich |
 | Ob und wie Sie zitieren werden | Damit man Ihnen eine schriftliche Stellungnahme geben kann ([Richtlinie für Zitate](richtlinie-fuer-zitate.md)) |
-| Eine Sperrfrist oder ein Veröffentlichungsdatum | Siehe [Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md) |
+| Eine Sperrfrist oder ein Veröffentlichungsdatum | Siehe [Sperrfristen und Timing](sperrfristen-und-zeitpunkt.md) |
 | Ihre Offenlegung, falls nötig | Zum Beispiel, wenn Sie Sponsor oder Mitwirkender sind |
 
 ## Eine Vorlage für die Anfrage

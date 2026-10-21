@@ -76,8 +76,8 @@ Technische Checklisten unterschrieben von: ______________   am: ________
 Go / No-Go: ________   Entschieden von: ______________   am: ________
 ```
 
-Worauf jede Zeile beruht: Datenschutz und Mail-Fußzeile unter [Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md);
-Konten unter [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md); der Shop in der
+Worauf jede Zeile beruht: Datenschutz und Mail-Fußzeile unter [Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md);
+Konten unter [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md); der Shop in der
 [Checkliste für den Shop-Start](../shops/checkliste-fuer-den-shop-start.md); Backups unter
 [Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md); Monitoring unter
 [Zustandsprüfungen und Verfügbarkeit](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md); Audit-Warnungen unter

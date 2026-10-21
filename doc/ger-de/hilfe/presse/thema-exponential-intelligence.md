@@ -96,7 +96,7 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
 - [Gesprächspunkte: Exponential Intelligence](../fuersprecher/gespraechspunkte-exponential-intelligence.md)
 - [Einwand: „Was ist mit den KI-Funktionen?“](../fuersprecher/einwand-ki-funktionen.md)
 - [Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md)
-- [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

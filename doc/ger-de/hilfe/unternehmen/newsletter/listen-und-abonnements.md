@@ -91,7 +91,7 @@ festgehalten (derselbe Leitfaden).
 > **Warnung**
 > Ein Export enthält personenbezogene Daten. Bewahren Sie ihn nur so lange auf, wie die Aufgabe dauert, für die er
 > gebraucht wurde, und speichern Sie ihn wie alle anderen personenbezogenen Daten. Siehe
-> [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md).
+> [Sicherheit und Datenschutz](../sicherheit/README.md).
 
 **Umstieg von der alten Erweiterung eznewsletter.** Der Befehl `ext:cjw_newsletter:import-eznewsletter` übernimmt
 Listen und Abonnenten von dort (derselbe Leitfaden, Abschnitt „Migration from eznewsletter“).
@@ -117,7 +117,7 @@ Administration und `import_export` für Import und Export von 4.2.0. Der Leitfad
 - [ ] Besucher bekommen nur die öffentlichen Funktionen (abonnieren, einstellen, abmelden).
 - [ ] Autoren bekommen, was sie zum Schreiben und Testen von Ausgaben brauchen, nicht die Abonnentenlisten.
 - [ ] Eine oder zwei namentlich benannte Personen bekommen die Abonnentenlisten, den Import und den Export.
-- [ ] Prüfen Sie diese Rollen, wenn Menschen die Stelle wechseln ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+- [ ] Prüfen Sie diese Rollen, wenn Menschen die Stelle wechseln ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 
 Wie Rollen und Richtlinien allgemein funktionieren: [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md).
 

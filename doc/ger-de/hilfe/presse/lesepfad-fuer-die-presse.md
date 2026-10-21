@@ -25,7 +25,7 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 
 | Schritt | Seite | Was Sie mitnehmen |
 |---|---|---|
-| 1 | [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md) | Was es ist und wer dahintersteht |
+| 1 | [Exponential in Kürze](exponential-in-kuerze.md) | Was es ist und wer dahintersteht |
 | 2 | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) | Welche Version aktuell ist |
 | 3 | [Über ein Release berichten](ueber-ein-release-berichten.md) | Wie Sie die Neuigkeit melden |
 | 4 | [Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md) | Die richtigen Namen |
@@ -39,7 +39,7 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 | 2 | [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md) | Die Daten |
 | 3 | [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) | Die Anfänge des Unternehmens |
 | 4 | [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) | Wer was macht |
-| 5 | [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md) | Zwei oder drei Funktionen zum Zeigen |
+| 5 | [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md) | Zwei oder drei Funktionen zum Zeigen |
 | 6 | [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md) | Die Fragen, die Sie stellen sollten |
 | 7 | [Fragen an 7x](fragen-an-7x.md), [Fragen an die Foundation](fragen-an-die-foundation.md) | Ihren Interviewplan |
 
@@ -75,7 +75,7 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 
 ## Vor jeder Veröffentlichung
 
-1. [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md)
+1. [Checkliste zum Faktencheck](checkliste-faktenpruefung.md)
 2. [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md)
 3. [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md)
 

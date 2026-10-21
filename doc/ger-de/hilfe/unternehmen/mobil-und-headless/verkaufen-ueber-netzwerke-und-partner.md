@@ -98,7 +98,7 @@ Bevor Inhalte oder Daten Ihre Installation zu einem Partner verlassen:
 - [ ] **Rechte**: Bilder und Texte, die Sie verschicken, sind vielleicht nur für Ihre eigene Verwendung lizenziert;
       prüfen Sie das, bevor Sie sie weitergeben.
 - [ ] **Personenbezogene Daten**: Bekommen Partner Kundendaten? Wenn ja, schließen Sie einen Vertrag zur
-      Auftragsverarbeitung ([Sicherheit](../../../../eng-us/help/businesses/security/README.md)); diese Seite ist keine Rechtsberatung.
+      Auftragsverarbeitung ([Sicherheit](../sicherheit/README.md)); diese Seite ist keine Rechtsberatung.
 - [ ] **Monitoring**: Feeds, Exporte und Importe laufen per Cron; jemand prüft, dass sie gelaufen sind
       ([Zuverlässigkeit des App-Backends](zuverlaessigkeit-des-app-backends.md)).
 - [ ] **Ein Ausstiegsplan**: wie der Zugriff und die Kopien eines Partners entfernt werden, wenn Sie sich trennen.

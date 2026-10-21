@@ -60,7 +60,7 @@ Von außen nach innen ([Cache-Schichten, die Schichten auf einen Blick](../../ho
 | OPcache und APCu | Die eigenen Caches von PHP für kompilierten Code und kleine Werte |
 
 Die beiden Schichten, die antworten, ohne die Anwendung überhaupt auszuführen, der statische Cache und der Antwortcache
-von Velocity, haben eine eigene Seite: [Statischer Cache und Antwortcache](../../../../eng-us/help/businesses/reliability/static-and-response-cache.md).
+von Velocity, haben eine eigene Seite: [Statischer Cache und Antwortcache](statischer-cache-und-antwortcache.md).
 
 ## Was ab Werk eingeschaltet ist
 
@@ -148,7 +148,7 @@ Verwenden Sie den Namen Ihres eigenen öffentlichen Siteaccess. Dasselbe steht i
 
 ## Verwandte Seiten
 
-- [Statischer Cache und Antwortcache](../../../../eng-us/help/businesses/reliability/static-and-response-cache.md)
+- [Statischer Cache und Antwortcache](statischer-cache-und-antwortcache.md)
 - [Lastspitzen planen](lastspitzen-planen.md)
 - [Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

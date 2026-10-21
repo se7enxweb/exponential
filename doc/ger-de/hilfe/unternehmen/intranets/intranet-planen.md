@@ -125,7 +125,7 @@ Kopieren Sie diese Liste in die Projektbeschreibung
 - [ ] Entscheidung zu Benachrichtigungen: welchen Einträgen Mitarbeiter standardmäßig folgen.
 - [ ] Hosting und Backups entschieden ([Zuverlässigkeit](../zuverlaessigkeit/README.md)).
 - [ ] Benannte verantwortliche Person und ein Termin für die erste Zugriffsprüfung
-      ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
+      ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 
 ## Verwandte Seiten
 

@@ -75,5 +75,5 @@ Ersetzen Sie die Beispiele durch die Seiten, die für Ihr Geschäft wichtig sind
 
 - [Wie Updates funktionieren](wie-updates-funktionieren.md)
 - [Wartungsmodus und geplante Arbeiten](wartungsmodus-und-geplante-arbeiten.md)
-- [Upgrades ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)
+- [Upgrades ohne Überraschungen](../../unternehmen/zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

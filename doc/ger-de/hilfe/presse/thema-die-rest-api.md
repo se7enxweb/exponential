@@ -28,7 +28,7 @@ Das README nennt „A headless CRUD REST API“ unter den Hauptfunktionen. In Ex
 authenticated with“. Clients authentifizieren sich mit einem OAuth2-Token oder einem persönlichen API-Schlüssel
 ([REST API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md)). REST v2 mit Schreibunterstützung war die Hauptnachricht von
 6.0.9 in einer Pressemitteilung von 7x aus dem Jahr 2025
-([Frühere Pressemitteilungen und Berichte](../../../eng-us/help/press/earlier-press-releases-and-coverage.md)).
+([Frühere Pressemitteilungen und Berichte](fruehere-pressemitteilungen-und-berichte.md)).
 
 ## Fakten, die Sie drucken können
 

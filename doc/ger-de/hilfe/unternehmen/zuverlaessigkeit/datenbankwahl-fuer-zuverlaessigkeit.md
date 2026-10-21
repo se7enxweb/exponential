@@ -83,7 +83,7 @@ Was die Continuous Integration des Projekts bei jedem Push ausführt
 
 Für ein Unternehmen, das möglichst viele Tests des Projekts hinter seinem Datenbankserver haben möchte, sind PostgreSQL
 und MySQL die Engines mit Live-Datenbanktests bei jedem Push. Proben Sie bei den anderen Aktualisierungen besonders
-sorgfältig an einer Kopie Ihrer eigenen Website ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
+sorgfältig an einer Kopie Ihrer eigenen Website ([Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md)).
 
 ## Backups je Datenbank
 

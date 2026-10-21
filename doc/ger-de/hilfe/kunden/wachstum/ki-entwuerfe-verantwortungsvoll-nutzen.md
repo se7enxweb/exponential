@@ -102,5 +102,5 @@ AI DRAFTS POLICY for ______________________   Agreed on: __________   Owner: ___
 
 - [Exponential Intelligence](exponential-intelligence.md)
 - [Entwürfe, Versionen und Rückgängigmachen](../alltag/entwuerfe-versionen-und-rueckgaengig.md)
-- [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)
+- [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

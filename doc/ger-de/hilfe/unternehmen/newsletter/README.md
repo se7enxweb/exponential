@@ -98,7 +98,7 @@ mit den E-Mail-Einstellungen von Exponential 6.0.15, statt ein eigenes Einwillig
 
 - [Mitglieder](../mitglieder/README.md): Mitgliederwebsites versenden oft einen Newsletter für Mitglieder.
 - [Shops](../shops/README.md): einen Shop bewerben, auch per Newsletter.
-- [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): Grundlagen der DSGVO und Einwilligung bei Formularen.
+- [Sicherheit und Datenschutz](../sicherheit/README.md): Grundlagen der DSGVO und Einwilligung bei Formularen.
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md) und [Vereine und kleine Gruppen](../vereine/README.md):
   Newsletter für Unterstützer und Mitglieder.
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).

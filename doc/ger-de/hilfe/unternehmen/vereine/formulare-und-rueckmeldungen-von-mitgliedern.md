@@ -109,7 +109,7 @@ CAPTCHA-Anbieter in Ihrer Datenschutzerklärung.
 
 Quelle: [Formulareinsendungen lesen und exportieren](../../../../eng-us/help/creators/website-creators/form-submissions.md). Die Regeln
 für personenbezogene Daten in Formularen sind Grundlagen, keine Rechtsberatung; siehe
-[Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md).
+[Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md).
 
 ## Checkliste für Formulare
 
@@ -124,7 +124,7 @@ für personenbezogene Daten in Formularen sind Grundlagen, keine Rechtsberatung;
 ## Verwandte Seiten
 
 - [Vereine und kleine Gruppen](README.md)
-- [Ehrenamtliche und Anmeldeformulare](../../../../eng-us/help/businesses/nonprofits/volunteers-and-sign-up-forms.md)
+- [Ehrenamtliche und Anmeldeformulare](../gemeinnuetzige/ehrenamtliche-und-anmeldeformulare.md)
 - [Ein Kontaktformular Schritt für Schritt erstellen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)
 - [Gesammelte Informationen (Anleitung)](../../../anleitungen/gesammelte-informationen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

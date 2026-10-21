@@ -107,7 +107,7 @@ Die Anleitung warnt: „Ein Durchlauf auf einer ausgelasteten Maschine beweist w
 - [Thema: Exponential Velocity](thema-exponential-velocity.md)
 - [Benchmarking von Exponential](../../anleitungen/benchmarking.md)
 - [Gesprächspunkte: Geschwindigkeit und Velocity](../fuersprecher/gespraechspunkte-geschwindigkeit-und-velocity.md)
-- [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

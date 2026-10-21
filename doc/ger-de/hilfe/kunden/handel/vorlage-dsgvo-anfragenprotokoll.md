@@ -24,7 +24,7 @@ das Protokoll füllt, steht unter [DSGVO-Anfragen](dsgvo-anfragen.md).
 - Halten Sie fest, was Sie getan haben, nicht mehr personenbezogene Daten als nötig: Ein Verweis auf die Person genügt
   oft. Fragen Sie Ihre Beratung, welchen Verweis Sie verwenden sollen.
 - Kopieren Sie keine exportierten Daten in das Protokoll. Exporte werden gelöscht, wenn die Anfrage abgeschlossen ist
-  ([Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+  ([Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 - Sehen Sie das Protokoll durch, wenn Sie Ihre Datenschutzerklärung prüfen, mindestens einmal im Jahr.
 
 ## Das Protokoll
@@ -84,5 +84,5 @@ Answer sent [date] | [export files, if any] | [what is kept, and the rule for ke
 
 - [DSGVO-Anfragen](dsgvo-anfragen.md)
 - [Datenexport und Löschung](datenexport-und-loeschung.md)
-- [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)
+- [DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

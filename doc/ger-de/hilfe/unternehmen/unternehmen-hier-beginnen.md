@@ -105,12 +105,12 @@ erklärt die drei Kanäle: Website-Anwendungen, mobile Apps und Netzwerke.
 Der größte Teil der Kosten einer Website liegt nicht im Aufbau, sondern im jahrelangen Betrieb. Der Bereich
 [Zuverlässigkeit](zuverlaessigkeit/README.md) behandelt, was eine Website für Kunden erreichbar hält:
 
-- [Warum Stabilität wichtig ist](../../../eng-us/help/businesses/reliability/why-stability-matters.md) und [Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md);
+- [Warum Stabilität wichtig ist](zuverlaessigkeit/warum-stabilitaet-wichtig-ist.md) und [Verfügbarkeit in der Praxis](zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md);
 - [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) und [Wiederherstellungsübungen](zuverlaessigkeit/wiederherstellungsuebungen.md);
-- [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) und [unterbrechungsfreie Deployments](zuverlaessigkeit/unterbrechungsfreie-deployments.md);
+- [Velocity für Unternehmen](zuverlaessigkeit/velocity-fuer-unternehmen.md) und [unterbrechungsfreie Deployments](zuverlaessigkeit/unterbrechungsfreie-deployments.md);
 - [Caching für Verfügbarkeit](zuverlaessigkeit/caching-fuer-verfuegbarkeit.md) und [Lastspitzen planen](zuverlaessigkeit/lastspitzen-planen.md);
 - [Monitoring](zuverlaessigkeit/health-checks-und-monitoring.md) und [Störungsbehandlung für kleine Teams](zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md);
-- [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md).
+- [Aktualisierungen ohne Überraschungen](zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md).
 
 ## Geld: Kosten, Ertrag und Risiko
 
@@ -118,7 +118,7 @@ Der größte Teil der Kosten einer Website liegt nicht im Aufbau, sondern im jah
 - [Die Rendite der Stabilität](kosten/rendite-der-stabilitaet.md), mit durchgerechneten Beispielen für einen
   [kleinen Shop](kosten/durchgerechnetes-beispiel-kleiner-shop.md), ein [Intranet](kosten/durchgerechnetes-beispiel-intranet.md) und eine
   [gemeinnützige Organisation](kosten/durchgerechnetes-beispiel-gemeinnuetzige-organisation.md) sowie einem [Arbeitsblatt zu den Kosten eines Ausfalls](kosten/arbeitsblatt-kosten-eines-ausfalls.md).
-- [Sicherheitsgrundlagen für Unternehmen](../../../eng-us/help/businesses/security/security-basics-for-businesses.md) und [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md)
+- [Sicherheitsgrundlagen für Unternehmen](sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md) und [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md)
   (Grundlagen, keine Rechtsberatung).
 - [Hosting auswählen](auswahl/hosting-auswaehlen.md) und [einen Partner auswählen](auswahl/einen-partner-auswaehlen.md).
 

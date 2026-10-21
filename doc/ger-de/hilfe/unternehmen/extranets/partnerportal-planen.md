@@ -95,8 +95,8 @@ rechtzeitig zu schließen, ist die am häufigsten vergessene Aufgabe jedes Porta
 
 Ein Portal enthält personenbezogene Daten von Menschen anderer Organisationen: Namen, E-Mail-Adressen,
 Anmeldeprotokolle. Planen Sie mit Ihrer Ansprechperson für den Datenschutz, was erhoben und wie lange es aufbewahrt
-wird ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md),
-[Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)). Diese Seite ist keine
+wird ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md),
+[Personenbezogene Daten in Exponential](../sicherheit/personenbezogene-daten-in-exponential.md)). Diese Seite ist keine
 Rechtsberatung.
 
 ## Arbeitsblatt zur Planung

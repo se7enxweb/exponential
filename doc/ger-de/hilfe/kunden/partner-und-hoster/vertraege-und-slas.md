@@ -89,7 +89,7 @@ vereinbaren Sie.
 - [ ] Ausschlüsse gelesen und akzeptiert: meist Ihr eigener Code, Erweiterungen, die er nicht geliefert hat, Ausfälle
       durch Ihre Inhalte und angekündigte Wartung ([SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)).
 - [ ] Zeit für Sicherheitsupdates angegeben.
-- [ ] Datenschutzbedingungen vereinbart ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md), keine Rechtsberatung).
+- [ ] Datenschutzbedingungen vereinbart ([DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md), keine Rechtsberatung).
 - [ ] Ausstieg und Übergabe beschrieben ([Checkliste für die Übergabe](checkliste-uebergabe.md)).
 - [ ] Von Ihrer Rechtsberatung geprüft.
 

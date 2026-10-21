@@ -111,10 +111,10 @@ Aus [Lizenzen für Käufer erklärt: GPL-Code, GFDL-Dokumentation](../../geschae
 ## Datenschutz
 
 - Wenn der Lieferant personenbezogene Daten für Sie verarbeitet, ist meist eine schriftliche Vereinbarung über diese
-  Verarbeitung nötig; Ihr Berater weiß, in welcher Form ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)).
+  Verarbeitung nötig; Ihr Berater weiß, in welcher Form ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 - Nennen Sie die Standorte von Servern und Backups.
 - Vereinbaren Sie, wie der Lieferant bei Anfragen auf Einsicht, Export oder Löschung von Daten hilft
-  ([Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+  ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 - Vereinbaren Sie, wer wen nach einem Vorfall wie schnell informiert.
 
 ## Ausstieg

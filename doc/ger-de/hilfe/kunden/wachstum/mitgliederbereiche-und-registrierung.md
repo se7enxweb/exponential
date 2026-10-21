@@ -32,7 +32,7 @@ entscheiden und was Ihr Team jeden Monat tut.
 | Was sehen Mitglieder, was Besucher nicht sehen? | eine Sektion nur für Mitglieder | [Inhalte nur für Mitglieder](../../unternehmen/mitglieder/inhalte-nur-fuer-mitglieder.md) |
 | Welche E-Mails erhalten Mitglieder? | notwendige Konto-E-Mails immer; optionale E-Mails nur, wenn sie sie einschalten | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
 | Zweistufige Anmeldung für Mitglieder? | optional für Mitglieder, verpflichtend für Mitarbeitende | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) |
-| Welche Daten fragen Sie ab? | so wenig wie nötig, auf dem Formular erklärt | [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md) |
+| Welche Daten fragen Sie ab? | so wenig wie nötig, auf dem Formular erklärt | [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md) |
 
 ## Wie es funktioniert, in Kürze
 

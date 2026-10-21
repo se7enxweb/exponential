@@ -68,7 +68,7 @@ Diese veröffentlichten Sätze werden oft zitiert; hier steht, woher jeder stamm
 ## Verwandte Seiten
 
 - [Regeln für Zitate](richtlinie-fuer-zitate.md)
-- [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md)
+- [Leitfaden zum Faktencheck](leitfaden-faktenpruefung.md)
 - [Wo die Fakten stehen, für die Presse](wo-die-fakten-stehen-fuer-die-presse.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

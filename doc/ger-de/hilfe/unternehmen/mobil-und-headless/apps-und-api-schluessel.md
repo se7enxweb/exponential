@@ -115,7 +115,7 @@ Angepasst aus der guten Praxis der technischen Seite:
 - [Entfernte Dienste](entfernte-dienste.md)
 - [OAuth und API-Schlüssel](../../../../eng-us/help/creators/app-creators/oauth-and-api-keys.md)
 - [Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)
-- [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

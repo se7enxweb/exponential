@@ -97,7 +97,7 @@ Kunden braucht deren Opt-in ([Opt-in und Einwilligung](../newsletter/opt-in-und-
 > **Hinweis**
 > Dies sind Grundlagen, keine Rechtsberatung. Für Ihre Pflichten nach dem Datenschutzrecht lesen Sie die Verordnung,
 > die für Sie gilt, und fragen Sie Ihren Anwalt oder Datenschutzbeauftragten. Beginnen Sie mit
-> [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md) und [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md).
+> [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md) und [Personenbezogene Daten in Exponential](../sicherheit/personenbezogene-daten-in-exponential.md).
 
 ## Die Wahl
 
@@ -112,7 +112,7 @@ Kunden braucht deren Opt-in ([Opt-in und Einwilligung](../newsletter/opt-in-und-
 
 - [Warenkorb und Bestellablauf](warenkorb-und-bestellablauf.md)
 - [Mitgliederregistrierung und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
-- [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md)
+- [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

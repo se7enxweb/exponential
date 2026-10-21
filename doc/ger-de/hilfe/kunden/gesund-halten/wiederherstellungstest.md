@@ -85,7 +85,7 @@ Test copy removed on:     ____
 ```
 
 Bewahren Sie die Protokolle zusammen auf. Sie sind Nachweise für eine Prüfung, einen Versicherer oder einen Kunden, der
-fragt, wie Sie seine Daten schützen ([Compliance-Nachweise aus dem Prüfprotokoll](../../../../eng-us/help/businesses/security/compliance-evidence-from-the-audit-trail.md)).
+fragt, wie Sie seine Daten schützen ([Compliance-Nachweise aus dem Prüfprotokoll](../../unternehmen/sicherheit/compliance-nachweise-aus-dem-audit-trail.md)).
 
 ## Wenn ein Test fehlschlägt
 

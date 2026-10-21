@@ -81,7 +81,7 @@ Weitere Fragen stehen unter [Eine Integration planen](eine-integration-planen.md
 
 - Administratoren sehen jeden Schlüssel unter **Setup > oAuth-Verwaltung > API-Schlüssel**, mit Suche und Filtern;
   widerrufen Sie die, die niemand braucht ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
-- Beziehen Sie die Konten der Integrationen in die [Zugriffsüberprüfung](../../../../eng-us/help/businesses/security/access-reviews.md) ein.
+- Beziehen Sie die Konten der Integrationen in die [Zugriffsüberprüfung](../../unternehmen/sicherheit/zugriffspruefungen.md) ein.
 - Fragen Sie den Partner, ob ein Upgrade etwas für API-Clients ändert.
 
 ## Verwandte Seiten

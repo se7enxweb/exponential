@@ -53,7 +53,7 @@ PLAN
 | Punkt | Lesen Sie |
 |---|---|
 | Wiederherstellungstest | [Wiederherstellungsübungen](../../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md), [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
-| Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
+| Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../unternehmen/sicherheit/zugriffspruefungen.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
 | Zweistufige Anmeldung | [Zwei-Faktor-Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Updates der Erweiterungen | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
 | PHP-Unterstützung | `README.md`: PHP 8.0 bis 8.5 unterstützt; Ihr Hoster plant das Upgrade |
@@ -79,5 +79,5 @@ Wiederherstellung funktioniert.
 - [Monatliche Checkliste](monatlich.md)
 - [Jährliche Checkliste](jaehrlich.md)
 - [Wiederherstellungsübungen](../../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md)
-- [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Zugriffsüberprüfungen](../../../unternehmen/sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -102,7 +102,7 @@ die Regeln befolgen: Barrierefreiheit in CONTRIBUTING.md festgeschrieben“.
 - [Gesprächspunkte: Barrierefreiheit](../fuersprecher/gespraechspunkte-barrierefreiheit.md)
 - [Thema: admin4, das Design der Administration](thema-admin4.md)
 - [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md)
-- [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

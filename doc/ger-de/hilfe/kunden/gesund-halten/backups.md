@@ -92,5 +92,5 @@ nutzen ([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaess
 - [Wiederherstellungstest](wiederherstellungstest.md)
 - [Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)
 - [Was gesichert werden muss (für Hoster)](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
-- [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)
+- [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

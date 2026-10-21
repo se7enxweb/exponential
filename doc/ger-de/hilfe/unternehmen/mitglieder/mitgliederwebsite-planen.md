@@ -107,8 +107,8 @@ wechseln.
 Eine Mitgliederwebsite speichert Namen, E-Mail-Adressen, Anmeldeprotokolle und je nach Klassen mehr (zum Beispiel ein
 Geburtsdatum mit dem Datentyp `birthday`). Erheben Sie nur, was Sie brauchen, sagen Sie im Registrierungsformular,
 warum, und vereinbaren Sie die Aufbewahrung mit Ihrer Ansprechperson für den Datenschutz
-([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md),
-[Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)). Diese Seite ist keine
+([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md),
+[Personenbezogene Daten in Exponential](../sicherheit/personenbezogene-daten-in-exponential.md)). Diese Seite ist keine
 Rechtsberatung.
 
 ## Was nicht eingebaut ist

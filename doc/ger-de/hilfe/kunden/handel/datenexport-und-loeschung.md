@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Eigentümer und den Administrator. Sie führt für jede Art von Daten, die ein Shop vorhält, auf,
 wie sie exportiert und wie sie gelöscht werden, und gibt eine jährliche Routine vor, damit Daten nicht länger
 aufbewahrt werden als beschlossen. Die vollständigen Tabellen der Standardwerte und Einstellungen stehen unter
-[Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md); diese Seite ist die Sicht
+[Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md); diese Seite ist die Sicht
 des Shops darauf.
 
 > **Warnung**
@@ -28,7 +28,7 @@ des Shops darauf.
 | Bestellungen | Die Bestellungen eines Kunden in der Bestellansicht des Kunden; jeder Beleg als heruntergeladene Datei | Archivieren (`shop/archiveorder`) oder entfernen (`shop/removeorder`) | `kernel/shop/module.php`, [Dauerhafte Bestellbelege](../../../../eng-us/features/6.0/order-receipts.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen**, CSV-Export | Dieselbe Seite: Sammlungen entfernen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | Die Benutzerliste von `cjw_newsletter` | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
-| Prüfprotokoll-Einträge | `exp:audit export --subject-user=<id>` | Nicht einzeln; für die Aufbewahrungsfrist aufbewahrt, personenbezogene Felder pseudonymisiert | [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md) |
+| Prüfprotokoll-Einträge | `exp:audit export --subject-user=<id>` | Nicht einzeln; für die Aufbewahrungsfrist aufbewahrt, personenbezogene Felder pseudonymisiert | [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md) |
 | Warenkörbe | Nicht nötig | Vom Cronjob `basket_cleanup.php` entfernt | `settings/cronjob.ini` |
 | Backups | Ihr Hoster | Verfallen gemäß Ihrer Backup-Aufbewahrung | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
 
@@ -49,14 +49,14 @@ des Shops darauf.
 
 Die meisten Shops archivieren abgeschlossene Bestellungen nach Ablauf der Rückgabefrist und entfernen sie erst, wenn
 die buchhalterische Aufbewahrungsfrist abgelaufen ist. Halten Sie Ihre Fristen in einem Aufbewahrungsplan fest; der
-unter [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md) hat eine Zeile für
+unter [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md) hat eine Zeile für
 Bestellungen.
 
 ## Die Standardwerte, die von selbst greifen
 
 Mehrere Arten von Daten werden von Cronjobs entfernt, mit Fristen, die Sie ändern können, zum Beispiel Sitzungen nach
 3 Tagen (`site.ini [Session] SessionTimeout`), `404.log` nach 30 Tagen und `security.log` nach 90 Tagen
-([Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+([Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 
 > **Warnung**
 > Wenn die Cronjobs nicht laufen, wird nichts entfernt. Bitten Sie Ihren Hoster, zu bestätigen, dass sie eingeplant
@@ -82,8 +82,8 @@ Mehrere Arten von Daten werden von Cronjobs entfernt, mit Fristen, die Sie ände
 
 ## Verwandte Seiten
 
-- [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)
+- [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)
 - [DSGVO-Anfragen](dsgvo-anfragen.md)
-- [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md)
+- [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)
 - [Aufbewahrung von Logs und Daten für Hoster](../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

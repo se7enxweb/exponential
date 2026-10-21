@@ -115,7 +115,7 @@ Weiterleitung geschrieben werden kann ([Zahlungsanbieter für Unternehmen](zahlu
 ## Grundlagen für jeden Shop, der Karten annimmt
 
 - [ ] Die ganze Website läuft auf HTTPS ([TLS und HTTPS](../../hosting/sicherheit/tls-und-https.md)).
-- [ ] Exponential und seine Erweiterungen werden aktuell gehalten ([Sicherheitsupdates und Offenlegung](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md)).
+- [ ] Exponential und seine Erweiterungen werden aktuell gehalten ([Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)).
 - [ ] Administratoren verwenden starke Passwörter und die zweistufige Anmeldung ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - [ ] Die Administration ist eingeschränkt ([Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md)).
 - [ ] Logs und Debug-Ausgaben zeigen nie Kartendaten; die Debug-Ausgabe ist im Produktivbetrieb aus.
@@ -135,7 +135,7 @@ Weiterleitung geschrieben werden kann ([Zahlungsanbieter für Unternehmen](zahlu
 
 - [Zahlungsanbieter](../../../../eng-us/help/creators/website-creators/payment-gateways.md)
 - [Sicherheit für Anwendungen](../../../../eng-us/help/creators/app-creators/security-for-applications.md)
-- [Sicherheitsgrundlagen für Unternehmen](../../../../eng-us/help/businesses/security/security-basics-for-businesses.md)
+- [Sicherheitsgrundlagen für Unternehmen](../sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

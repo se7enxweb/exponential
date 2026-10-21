@@ -92,7 +92,7 @@ Quelle: [Unterstützte Datenbanken, SQLite 3](../datenbankunterstuetzung.md#1-sq
 - [Thema: sechs Datenbanken](thema-sechs-datenbanken.md)
 - [Thema: Installation mit einem Befehl](thema-installation-mit-einem-befehl.md)
 - [Unterstützung der SQLite-Datenbank](../../../eng-us/features/6.0/sqlite-database.md)
-- [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

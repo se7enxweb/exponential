@@ -137,7 +137,7 @@ plus zwei für Gruppen:
 - [Vereine und kleine Gruppen](README.md)
 - [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenamtlichen.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
-- [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -102,7 +102,7 @@ Drei Signale, vom günstigsten zum gründlichsten:
    wer ihn gestartet hat (derselbe Abschnitt).
 
 Nehmen Sie die Prüfung von `crontab:list` und der Datumsangaben im Cron-Log in die wöchentliche Routine auf
-([Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md#every-week)).
+([Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md#jede-woche)).
 
 ## Inhaltsjobs: große Operationen im Hintergrund
 

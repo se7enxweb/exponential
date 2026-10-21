@@ -51,8 +51,8 @@ alle drei ab:
 
 | Sie sind | Beginnen Sie mit |
 |---|---|
-| Inhaber oder Führungskraft und entscheiden, ob Sie sich auf Exponential verlassen | [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md), dann [Release-Linie und Support-Richtlinie](release-linie-und-support-richtlinie.md) |
-| Führungskraft, die den Betrieb budgetieren muss | [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md) und dem [Bewertungsbogen Zuverlässigkeit](bewertungsbogen-zuverlaessigkeit.md) |
+| Inhaber oder Führungskraft und entscheiden, ob Sie sich auf Exponential verlassen | [Warum Stabilität wichtig ist](warum-stabilitaet-wichtig-ist.md), dann [Release-Linie und Support-Richtlinie](release-linie-und-support-richtlinie.md) |
+| Führungskraft, die den Betrieb budgetieren muss | [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md) und dem [Bewertungsbogen Zuverlässigkeit](bewertungsbogen-zuverlaessigkeit.md) |
 | Die Person, die die Website im Alltag betreibt | [Health-Checks und Monitoring](health-checks-und-monitoring.md), [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md), [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md) |
 | Ein kleines Team, das reagieren muss, wenn etwas ausfällt | [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md) |
 | Shop-Inhaber, der einen Sale oder eine Kampagne erwartet | [Lastspitzen planen](lastspitzen-planen.md) und [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md) |
@@ -61,24 +61,24 @@ alle drei ab:
 
 | Seite | Was sie beantwortet |
 |---|---|
-| [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md) | Was eine instabile Website ein Unternehmen kostet und was Exponential dagegen tut |
+| [Warum Stabilität wichtig ist](warum-stabilitaet-wichtig-ist.md) | Was eine instabile Website ein Unternehmen kostet und was Exponential dagegen tut |
 | [Release-Linie und Support-Richtlinie](release-linie-und-support-richtlinie.md) | Welche Versionen gepflegt werden, wie Releases funktionieren, unter welchen PHP-Versionen es läuft |
-| [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md) | Die Routine, die eine Website Woche für Woche verfügbar hält |
+| [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md) | Die Routine, die eine Website Woche für Woche verfügbar hält |
 | [Health-Checks und Monitoring](health-checks-und-monitoring.md) | Was Sie von außen und von innen beobachten und mit welchen Befehlen |
 | [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md) | Wie aus dem „Etwas ist schiefgelaufen“ eines Kunden eine Log-Zeile wird, mit der Sie arbeiten können |
 | [Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md) | Wer was geändert hat, und der Nachweis, dass die Aufzeichnung nicht bearbeitet wurde |
 | [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md) | Was Sie sichern, wie und wie oft |
 | [Wiederherstellungsübungen](wiederherstellungsuebungen.md) | Wie Sie beweisen, dass ein Backup funktioniert, bevor Sie es brauchen |
-| [Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) | Was der mitgelieferte Anwendungsserver einem Unternehmen bringt, in einfachen Worten |
+| [Velocity für Unternehmen](velocity-fuer-unternehmen.md) | Was der mitgelieferte Anwendungsserver einem Unternehmen bringt, in einfachen Worten |
 | [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md) | Änderungen ausliefern, ohne Anfragen von Besuchern zu verlieren |
 | [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md) | Wie Caches eine Website unter Last antwortfähig halten |
-| [Statischer Cache und Antwortcache](../../../../eng-us/help/businesses/reliability/static-and-response-cache.md) | Die beiden Caches, die antworten, ohne die Anwendung auszuführen |
+| [Statischer Cache und Antwortcache](statischer-cache-und-antwortcache.md) | Die beiden Caches, die antworten, ohne die Anwendung auszuführen |
 | [Lastspitzen planen](lastspitzen-planen.md) | Vorbereitung auf einen Sale, eine Kampagne oder einen Newsletter-Versand |
 | [Clustering und Hochverfügbarkeit](clustering-und-hochverfuegbarkeit.md) | Wann ein Server nicht reicht und was weitere Server kosten |
 | [Datenbankwahl für Zuverlässigkeit](datenbankwahl-fuer-zuverlaessigkeit.md) | Welche Datenbank zu welchem Unternehmen passt, in der offiziellen Reihenfolge des Projekts |
 | [Wartungsmodus und geplante Arbeiten](wartungsmodus-und-geplante-arbeiten.md) | Die Website sauber vom Netz nehmen und die Kunden informieren |
-| [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) | Eine Aktualisierung planen und proben |
-| [Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md) | Nachweisen, dass die Installation vor und nach einer Aktualisierung dem Release entspricht |
+| [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md) | Eine Aktualisierung planen und proben |
+| [Upgrade-Prüfung und Dateikonsistenz](upgrade-pruefung-und-dateikonsistenz.md) | Nachweisen, dass die Installation vor und nach einer Aktualisierung dem Release entspricht |
 | [Vorschau vor dem Veröffentlichen](vorschau-vor-dem-veroeffentlichen.md) | Entwürfe, Versionen, Freigabe und Vorschau, damit ein Fehler nie bei den Kunden ankommt |
 | [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md) | Ein Plan für den schlechten Tag, der zu zwei oder drei Personen passt |
 | [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md) | Die Arbeit, auf die niemand wartet, und wie Sie wissen, dass sie gelaufen ist |
@@ -87,16 +87,16 @@ alle drei ab:
 
 ## Eine empfohlene Reihenfolge
 
-1. Lesen Sie [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md) und
+1. Lesen Sie [Warum Stabilität wichtig ist](warum-stabilitaet-wichtig-ist.md) und
    [Release-Linie und Support-Richtlinie](release-linie-und-support-richtlinie.md), um zu verstehen, was Ihnen das Produkt
    bietet.
-2. Lesen Sie [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md), um die ganze Routine auf einer Seite zu sehen.
+2. Lesen Sie [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md), um die ganze Routine auf einer Seite zu sehen.
 3. Richten Sie die Grundlagen ein: [Health-Checks und Monitoring](health-checks-und-monitoring.md),
    [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md),
    [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md).
 4. Beweisen Sie, dass sie funktionieren: [Wiederherstellungsübungen](wiederherstellungsuebungen.md) und
    [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md).
-5. Planen Sie Änderungen: [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md),
+5. Planen Sie Änderungen: [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md),
    [Wartungsmodus und geplante Arbeiten](wartungsmodus-und-geplante-arbeiten.md),
    [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md).
 6. Planen Sie Wachstum: [Caching für Verfügbarkeit](caching-fuer-verfuegbarkeit.md),
@@ -120,7 +120,7 @@ alle drei ab:
   Bereichs.
 - [Kosten und Rendite](../kosten/README.md): die Kosten eines Ausfalls und die Rendite der Stabilität, in Zahlen, die Sie
   selbst eintragen.
-- [Sicherheit](../../../../eng-us/help/businesses/security/README.md): Grundlagen von Sicherheit und Datenschutz für Unternehmen.
+- [Sicherheit](../sicherheit/README.md): Grundlagen von Sicherheit und Datenschutz für Unternehmen.
 - [Hosting und Partner auswählen](../auswahl/README.md): wer die Server für Sie betreibt.
 - [Vorlagen für Unternehmen](../vorlagen/README.md): Checklisten zum Kopieren, darunter eine monatliche
   Betriebs-Checkliste.

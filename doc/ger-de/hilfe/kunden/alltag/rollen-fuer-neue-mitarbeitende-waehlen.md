@@ -73,7 +73,7 @@ Requested by: ______________   Approved by (site owner): ______________
 ```
 
 Bewahren Sie die Anfrage auf: Sie ist der Nachweis, mit dem Sie bei der jährlichen
-[Zugriffsüberprüfung](../../../../eng-us/help/businesses/security/access-reviews.md) vergleichen.
+[Zugriffsüberprüfung](../../unternehmen/sicherheit/zugriffspruefungen.md) vergleichen.
 
 ## Verwandte Seiten
 

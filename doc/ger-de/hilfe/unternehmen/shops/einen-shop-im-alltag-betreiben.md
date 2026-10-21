@@ -91,15 +91,15 @@ Mit ezauthorize gibt es in der Administration ein Erstattungsmodul ([Kartenzahlu
 - [ ] Suchbegriffe ohne Ergebnisse ([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)).
 - [ ] Eine Newsletter-Ausgabe an Abonnenten, die eingewilligt haben ([Newsletter](../newsletter/README.md)).
 - [ ] Prüfen Sie, ob die Backups gelaufen sind und die Cronjobs (einschließlich der Warenkorb-Bereinigung) laufen ([Cronjobs](../../../anleitungen/cronjobs.md)).
-- [ ] Fragen Sie den Hoster oder Partner nach Updates für Exponential und die Erweiterungen ([Sicherheitsupdates und Offenlegung](../../../../eng-us/help/businesses/security/security-updates-and-disclosure.md)).
+- [ ] Fragen Sie den Hoster oder Partner nach Updates für Exponential und die Erweiterungen ([Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)).
 - [ ] Die Vorlage [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md).
 
 ## Jedes Jahr
 
 - [ ] USt-Sätze und -Regeln stimmen noch; fragen Sie Ihren Steuerberater nach Änderungen.
 - [ ] Die Länder der Rangliste entsprechen der Herkunft der Bestellungen ([Ländergruppen und Regionen](laendergruppen-und-regionen.md)).
-- [ ] Rollen und Mitarbeiterkonten überprüft ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
-- [ ] Alte Bestellungen und Kundendaten nach Ihren Aufbewahrungsregeln behandelt ([Aufbewahrung und Löschung von Daten](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+- [ ] Rollen und Mitarbeiterkonten überprüft ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
+- [ ] Alte Bestellungen und Kundendaten nach Ihren Aufbewahrungsregeln behandelt ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 - [ ] Eine Wiederherstellungsübung ([Wiederherstellungsübungen](../zuverlaessigkeit/wiederherstellungsuebungen.md)).
 - [ ] Vertrag und Gebühren des Zahlungsanbieters mit Alternativen verglichen.
 - [ ] Die [Checkliste: Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md).

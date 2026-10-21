@@ -67,7 +67,7 @@ Upgrades.
 
 **Was das für ein Unternehmen bedeutet:** Sie wissen, welche Version Sie betreiben, Sie wissen, dass sich eine Version
 nie unter Ihnen ändert, und Sie können die nächste testen, bevor sie Kunden erreicht. Siehe
-[Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) und
+[Aktualisierungen ohne Überraschungen](zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md) und
 [Release-Linie und Support-Richtlinie](zuverlaessigkeit/release-linie-und-support-richtlinie.md).
 
 ## Wenige bewegliche Teile
@@ -107,7 +107,7 @@ unter Last“ (`README.md`, „The part that matters even if you never run Veloc
 gleichzeitig bringt, ist der Moment, in dem eine langsame Website am meisten Geld verliert. Ein Cache, der die
 vorhandene Kopie ausliefert, während eine Anfrage sie neu aufbaut, hält die Website während dieser Spitze am Antworten.
 Siehe [Lastspitzen planen](zuverlaessigkeit/lastspitzen-planen.md) und
-[Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md). Ihre eigenen Werte hängen von Ihrer Hardware und
+[Velocity für Unternehmen](zuverlaessigkeit/velocity-fuer-unternehmen.md). Ihre eigenen Werte hängen von Ihrer Hardware und
 Ihren Seiten ab; messen Sie sie mit den Benchmark-Werkzeugen
 ([Benchmarks für Exponential: Geschwindigkeit messen, vergleichen und absichern](../../anleitungen/benchmarking.md)).
 
@@ -156,7 +156,7 @@ Ehrliche Grenzen, damit später niemand überrascht ist:
 - **Die Software sichert sich nicht selbst.** Jemand muss Backups erstellen und testen, dass sie sich wiederherstellen
   lassen ([Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - **Updates installieren sich nicht von selbst.** Jemand muss Sicherheits-Releases einspielen
-  ([Sicherheitsupdates und Offenlegung](../../../eng-us/help/businesses/security/security-updates-and-disclosure.md)).
+  ([Sicherheitsupdates und Offenlegung](sicherheit/sicherheitsupdates-und-offenlegung.md)).
 - **Eigener Code liegt in Ihrer Verantwortung.** Erweiterungen und Templates, die für Sie geschrieben wurden, müssen
   von Ihnen oder Ihrem Partner gepflegt werden ([Einen Partner auswählen](auswahl/einen-partner-auswaehlen.md)).
 - **Das Hosting zählt.** Ein billiger Hoster ohne Monitoring kann nicht liefern, was die Software ermöglicht
@@ -165,7 +165,7 @@ Ehrliche Grenzen, damit später niemand überrascht ist:
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](unternehmen-hier-beginnen.md)
-- [Warum Stabilität wichtig ist](../../../eng-us/help/businesses/reliability/why-stability-matters.md)
+- [Warum Stabilität wichtig ist](zuverlaessigkeit/warum-stabilitaet-wichtig-ist.md)
 - [Positionierung und Nutzenversprechen](../geschaeft/positionierung-und-nutzenversprechen.md)
 - [Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md)
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)

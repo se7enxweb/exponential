@@ -44,7 +44,7 @@ Seite trennt Korrekturen von Aktualisierungen und gibt Ihnen Hinweise, die Sie a
 |---|---|
 | Ein neues Release wird getaggt | `git tag -l 'v6.0.*' --sort=version:refname`; [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md) |
 | Eine als kommend beschriebene Funktion ist jetzt veröffentlicht | Das Changelog des Releases |
-| Eine Zahl ist gewachsen | [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
+| Eine Zahl ist gewachsen | [Exponential in Zahlen](exponential-in-zahlen.md) |
 | Eine Organisation ändert ihre Selbstbeschreibung | Ihre Website |
 
 Sie müssen nicht jeden alten Beitrag aktualisieren; ergänzen Sie einen Aktualisierungshinweis dort, wo Leser sich
@@ -73,7 +73,7 @@ zitieren können.
 ## Verwandte Seiten
 
 - [Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)
-- [Leitfaden: Faktenprüfung](../../../eng-us/help/press/fact-checking-guide.md)
+- [Leitfaden: Faktenprüfung](leitfaden-faktenpruefung.md)
 - [Daten prüfen](daten-pruefen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

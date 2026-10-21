@@ -85,7 +85,7 @@ Die [Geschichte](../../../eng-us/history/README.md) erzählt jede Änderung seit
   „not associated with“ eZ Systems oder Ibexa ([Nicht mit eZ Systems oder Ibexa verbunden](nicht-verbunden-mit-ez-systems-oder-ibexa.md)).
 - **Keine erfundenen Personen oder Zitate.** Nennen Sie Personen nur so, wie die öffentlichen Quellen sie nennen, und
   zitieren Sie nur, was veröffentlicht ist oder Ihnen gegeben wurde ([Regeln für Zitate](richtlinie-fuer-zitate.md)).
-- **Keine geschätzten Zahlen.** Verwenden Sie die gezählten Werte mit ihren Daten ([Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md)).
+- **Keine geschätzten Zahlen.** Verwenden Sie die gezählten Werte mit ihren Daten ([Exponential in Zahlen](exponential-in-zahlen.md)).
 
 ## Ein Detail prüfen
 

@@ -76,7 +76,7 @@ Ihren Hoster, Wochen im Voraus ([Planung für Lastspitzen](../../unternehmen/zuv
 
 ## Verwandte Seiten
 
-- [Statischer Cache und Response-Cache](../../../../eng-us/help/businesses/reliability/static-and-response-cache.md)
-- [Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md)
+- [Statischer Cache und Response-Cache](../../unternehmen/zuverlaessigkeit/statischer-cache-und-antwortcache.md)
+- [Velocity für Unternehmen](../../unternehmen/zuverlaessigkeit/velocity-fuer-unternehmen.md)
 - [Caching-Schichten (für Hoster)](../../hosting/leistung/cache-schichten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

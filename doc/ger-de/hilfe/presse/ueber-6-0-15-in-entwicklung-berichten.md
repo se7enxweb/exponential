@@ -94,7 +94,7 @@ einer Test-Website.
 ## Verwandte Seiten
 
 - [Über ein Release berichten](ueber-ein-release-berichten.md)
-- [Sperrfristen und Zeitpunkt](../../../eng-us/help/press/embargoes-and-timing.md)
+- [Sperrfristen und Zeitpunkt](sperrfristen-und-zeitpunkt.md)
 - [Aussagen, die Sie nicht machen dürfen, Die Zukunft](../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md#die-zukunft)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

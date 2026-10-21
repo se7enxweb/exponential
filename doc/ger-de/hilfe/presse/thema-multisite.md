@@ -95,7 +95,7 @@ Inhalte in einem gemeinsamen Baum liegen. So kann ein Team mehrere Websites ohne
 - [Multisite- und mehrsprachige Projekte planen](../fuehrung/multisite-und-mehrsprachigkeit-planen.md)
 - [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md)
 - [Thema: Freiheit beim Hosting](thema-freiheit-beim-hosting.md)
-- [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

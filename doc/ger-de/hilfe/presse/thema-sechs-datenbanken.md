@@ -97,7 +97,7 @@ ein Inhaltsmodell“, „Von einer Datei bis Oracle: eine Datenbank für ein Ope
 - [Datenbankunterstützung](../datenbankunterstuetzung.md)
 - [Thema: SQLite als Voreinstellung](thema-sqlite-als-standard.md)
 - [Thema: MongoDB als Datenbank](thema-mongodb-als-datenbank.md)
-- [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -42,7 +42,7 @@ Team sie ohne die Website findet:
 - [ ] Die Links zu den Runbooks unten.
 
 Proben Sie einmal im Quartal: Tun Sie so, als sei die Website ausgefallen, und gehen Sie diese Seite gemeinsam durch
-([Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md#every-quarter)).
+([Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md#jedes-quartal)).
 
 ## Drei Rollen, auch für zwei Personen
 
@@ -128,14 +128,14 @@ Die Werkzeuge von Exponential helfen dabei:
   seine Aufzeichnung manipuliert wurde
   ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md#der-nachweis-dass-die-aufzeichnung-nicht-verändert-wurde)).
 - Die Upgrade-Prüfung zeigt Release-Dateien, die verändert wurden
-  ([Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md)).
+  ([Upgrade-Prüfung und Dateikonsistenz](upgrade-pruefung-und-dateikonsistenz.md)).
 - `security.log` listet Anfragen auf, die nach Sondierungen oder Angriffen aussahen
   ([Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md#die-logs-und-wofür-jedes-da-ist)).
 
 Liegt die Ursache in einem Sicherheitsproblem von Exponential selbst, melden Sie es vertraulich wie in
 [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) beschrieben, nie in einem öffentlichen
 Tracker. Verletzungen des Schutzes personenbezogener Daten können gesetzliche Meldepflichten auslösen; siehe
-[Sicherheitsgrundlagen für Unternehmen](../../../../eng-us/help/businesses/security/security-basics-for-businesses.md) und fragen Sie Ihren
+[Sicherheitsgrundlagen für Unternehmen](../sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md) und fragen Sie Ihren
 Datenschutzbeauftragten oder Ihren Anwalt. Diese Seite ist keine Rechtsberatung.
 
 ## Die Störung abschließen

@@ -95,8 +95,8 @@ Navigation der Website behält ([Gemeinsame Kopf- und Fußzeile](../../../../eng
 
 | Aktion der Kampagne | Verbinden mit |
 |---|---|
-| Spenden | Der Spendenseite oder -plattform ([Spenden und Spendenaufrufe](../../../../eng-us/help/businesses/nonprofits/donations-and-fundraising-pages.md)) |
-| Sich engagieren | Einem Formularobjekt ([Ehrenamtliche und Anmeldeformulare](../../../../eng-us/help/businesses/nonprofits/volunteers-and-sign-up-forms.md)) |
+| Spenden | Der Spendenseite oder -plattform ([Spenden und Spendenaufrufe](spenden-und-spendenaufrufe.md)) |
+| Sich engagieren | Einem Formularobjekt ([Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md)) |
 | Informiert bleiben | Der Seite zum Abonnieren des Newsletters ([Newsletter](../newsletter/README.md)) |
 | Teilen | Metadaten für das Teilen in sozialen Netzwerken ([Metadaten und Teilen in sozialen Netzwerken](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md)) |
 | Messen | Ihrem Analysewerkzeug ([Statistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)) |

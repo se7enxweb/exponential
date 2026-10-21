@@ -62,7 +62,7 @@ Entschuldigung für die Verwirrung.
 
 ## Wenn jemand auf einen Fehler hinweist
 
-1. Bedanken Sie sich und prüfen Sie die Quelle, die genannt wird ([Leitfaden: Faktenprüfung](../../../eng-us/help/press/fact-checking-guide.md)).
+1. Bedanken Sie sich und prüfen Sie die Quelle, die genannt wird ([Leitfaden: Faktenprüfung](leitfaden-faktenpruefung.md)).
 2. Wenn die Person recht hat, korrigieren Sie innerhalb eines Tages und sagen Sie es im Thread.
 3. Wenn sie sich irrt, antworten Sie höflich mit Ihrer Quelle.
 4. Wenn die Dokumentation selbst falsch ist, sagen Sie es dem Projekt im

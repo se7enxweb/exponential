@@ -94,7 +94,7 @@ Velocity und den eigenen Server von PHP mit denselben Befehlen“.
 - [Thema: Exponential Velocity](thema-exponential-velocity.md)
 - [FrankenPHP und der eingebaute Server von PHP](../../../eng-us/bc/6.0/frankenphp.md)
 - [Thema: Freiheit beim Hosting](thema-freiheit-beim-hosting.md)
-- [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

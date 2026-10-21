@@ -83,7 +83,7 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-sp
 
 - Welche Kapazität haben wir für Warenkorb- und Kassenanfragen, nachdem gecachte Seiten den Server entlasten?
 - Wird die Website mit Velocity und dessen Response-Cache ausgeliefert, und sind der View-Cache und der
-  Template-Block-Cache eingeschaltet ([Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md))?
+  Template-Block-Cache eingeschaltet ([Velocity für Unternehmen](../../unternehmen/zuverlaessigkeit/velocity-fuer-unternehmen.md))?
 - Können Sie einen Lasttest auf einer Kopie durchführen, mit einigen vollständigen Bestellvorgängen im Testmodus des Anbieters?
 - Wer hat an unseren Daten Bereitschaft, und wie erreichen wir die Person?
 

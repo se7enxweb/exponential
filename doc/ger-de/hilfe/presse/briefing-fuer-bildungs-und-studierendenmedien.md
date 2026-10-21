@@ -76,7 +76,7 @@ sehen Sie auf dieser Seite nach, was darüber veröffentlicht ist.
 - Nehmen Sie über die [Pressekontakte](pressekontakte.md) Kontakt auf; sagen Sie, dass Sie für Studierendenmedien
   schreiben, und nennen Sie Ihren Abgabetermin.
 - Installieren Sie selbst eine Demo, statt um Zugang zu bitten ([Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)).
-- Prüfen Sie die Fakten mit der [Checkliste: Faktenprüfung](../../../eng-us/help/press/fact-checking-checklist.md).
+- Prüfen Sie die Fakten mit der [Checkliste: Faktenprüfung](checkliste-faktenpruefung.md).
 
 ## Verwandte Seiten
 

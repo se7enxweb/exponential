@@ -30,7 +30,7 @@ dass ein wechselndes Team von Ehrenamtlichen es betreiben kann, und wie Sie es s
 | Neuigkeiten und ein Veranstaltungskalender | Die `ezwebin`-Klassen `article`, `event`, `event_calendar`, `blog` und Feeds | [Veranstaltungen und Neuigkeiten für Gruppen](veranstaltungen-und-neuigkeiten-fuer-gruppen.md) |
 | Kontakt, Rückmeldungen, Umfragen, Anmeldungen | Formulare des Informationssammlers mit den Typen form, feedback und poll | [Formulare und Rückmeldungen von Mitgliedern](formulare-und-rueckmeldungen-von-mitgliedern.md) |
 | Übernahme, wenn Ehrenamtliche gehen | Kontoprüfungen, Eigentümerwechsel, Zurücksetzen des Passworts, Audit-Trail | [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
-| Geringe Betriebskosten | Keine Lizenzgebühr; SQLite als Standarddatenbank | [Betrieb mit kleinem Budget](../../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) |
+| Geringe Betriebskosten | Keine Lizenzgebühr; SQLite als Standarddatenbank | [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md) |
 
 Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezwebin/packages/`), und die Erweiterung
 `ezownerchange`, die bei der Übergabe verwendet wird, stehen beide im `require`-Block der `composer.json`.
@@ -67,7 +67,7 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 - [Mitglieder](../mitglieder/README.md): Registrierung von Mitgliedern und Inhalte nur für Mitglieder.
 - [Newsletter](../newsletter/README.md): Mails an Mitglieder und Unterstützer.
 - [Bibliotheken und Kataloge](../bibliotheken/README.md): für Gruppen, die eine Sammlung pflegen.
-- [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.
+- [Sicherheit und Datenschutz](../sicherheit/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.
 - Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
 
 ## Verwandte Seiten

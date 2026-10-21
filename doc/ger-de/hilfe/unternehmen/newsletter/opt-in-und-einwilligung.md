@@ -145,8 +145,8 @@ Wie Sie solche Anfragen Schritt für Schritt bearbeiten:
 
 - [Newsletter für Unternehmen](README.md)
 - [Listen und Abonnements](listen-und-abonnements.md)
-- [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)
-- [Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md)
+- [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)
+- [Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)
 - [E-Mail-Einstellungen: der Leitfaden für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

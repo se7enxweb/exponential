@@ -166,7 +166,7 @@ Nach dem Ausschalten:
 
 ## Verwandte Seiten
 
-- [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)
+- [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md)
 - [Wartungsmodus für Website-Ersteller](../../../../eng-us/help/creators/website-creators/maintenance-mode.md)
 - [Wartungsmodus (Hosting)](../../hosting/betrieb/wartungsmodus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

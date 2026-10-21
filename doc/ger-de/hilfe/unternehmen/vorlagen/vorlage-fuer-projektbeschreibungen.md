@@ -99,7 +99,7 @@ PROJEKTBESCHREIBUNG - <Projektname>     Version <x>, <Datum>       Verantwortlic
 | 5 Inhalte | Die Arbeit an den Inhalten ist meist der größte Aufwand; planen Sie sie früh | [Workshops zur Inhaltsmodellierung](../../fuehrung/workshops-zur-inhaltsmodellierung.md) |
 | 6 Funktionen | Prüfen Sie, was eingebaut ist, bevor Sie Sonderentwicklung anfragen | [Schätzen und Abgrenzen mit Erweiterungen](../../fuehrung/schaetzen-und-abgrenzen-mit-erweiterungen.md) |
 | 7 Hosting | Füllen Sie zuerst die Kosten eines Ausfalls aus | [Arbeitsblatt: Kosten eines Ausfalls](../kosten/arbeitsblatt-kosten-eines-ausfalls.md) |
-| 8 Sicherheit | Listen Sie die personenbezogenen Daten jetzt auf, nicht nach dem Start | [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md) |
+| 8 Sicherheit | Listen Sie die personenbezogenen Daten jetzt auf, nicht nach dem Start | [Personenbezogene Daten in Exponential](../sicherheit/personenbezogene-daten-in-exponential.md) |
 | 9 Budget | Ein Rahmen bringt bessere Angebote als gar keine Zahl | [Gesamtbetriebskosten](../kosten/gesamtbetriebskosten.md) |
 | 11 Angebote | Veröffentlichen Sie Ihre Bewertungskriterien | [Bewertungsbogen für Anbieter](bewertungsbogen-fuer-anbieter.md) |
 

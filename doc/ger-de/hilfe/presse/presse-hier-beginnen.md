@@ -51,8 +51,8 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 
 ## Ihre ersten fünfzehn Minuten
 
-1. **Lesen Sie die Kurzfassung** (3 Minuten): [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md).
-2. **Öffnen Sie das Faktenblatt** (3 Minuten): [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md), jede Zeile
+1. **Lesen Sie die Kurzfassung** (3 Minuten): [Exponential in Kürze](exponential-in-kuerze.md).
+2. **Öffnen Sie das Faktenblatt** (3 Minuten): [Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md), jede Zeile
    mit ihrer Quelle und dem Datum, an dem sie geprüft wurde.
 3. **Schreiben Sie die Namen richtig** (3 Minuten): [Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md).
 4. **Wissen Sie, wen Sie fragen** (3 Minuten): [Pressekontakte](pressekontakte.md) und [Das Pressekit](das-pressekit.md).
@@ -62,7 +62,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 ## Fünf Regeln für jeden Beitrag
 
 1. **Nennen Sie die Quelle.** Zahlen und Daten ändern sich mit den Releases. Verlinken Sie die Seite oder Datei, aus der
-   Sie sie haben, und schreiben Sie dazu, wann Sie sie geprüft haben ([Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md)).
+   Sie sie haben, und schreiben Sie dazu, wann Sie sie geprüft haben ([Leitfaden zum Faktencheck](leitfaden-faktenpruefung.md)).
 2. **Verwenden Sie die richtigen Namen.** Das Produkt ist **Exponential**, das Unternehmen **7x**, die gemeinnützige
    Organisation **die Exponential Foundation**. Der alte Name gehört nur in die Geschichte ([Marke und Namen für Medien](marke-und-namen-fuer-medien.md)).
 3. **Erfinden Sie nie ein Zitat.** Zitieren Sie veröffentlichten Text wörtlich mit seinem Link, oder bitten Sie
@@ -78,12 +78,12 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
-| [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md) | Das Produkt, die Menschen und die Geschichte in fünf Minuten verstehen |
+| [Exponential in Kürze](exponential-in-kuerze.md) | Das Produkt, die Menschen und die Geschichte in fünf Minuten verstehen |
 | [Das Pressekit](das-pressekit.md) | Wissen, was das offizielle Pressekit enthält und welche Teile veraltet sind |
-| [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md), [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) | Fakten und Zahlen mit ihren Quellen drucken |
+| [Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md), [Exponential in Zahlen](exponential-in-zahlen.md) | Fakten und Zahlen mit ihren Quellen drucken |
 | [Standardbeschreibungen, die Sie kopieren dürfen](standardbeschreibungen.md) | Eine fertige Beschreibung von 25 bis 250 Wörtern verwenden |
 | [Pressekontakte](pressekontakte.md), [Offizielle Kanäle und Social-Media-Konten](offizielle-kanaele-und-social-media-konten.md) | Die richtigen Menschen über überprüfte Adressen erreichen |
-| [Frühere Pressemitteilungen und Berichte](../../../eng-us/help/press/earlier-press-releases-and-coverage.md) | Finden, was früher veröffentlicht wurde |
+| [Frühere Pressemitteilungen und Berichte](fruehere-pressemitteilungen-und-berichte.md) | Finden, was früher veröffentlicht wurde |
 | [Wo die Fakten stehen, für die Presse](wo-die-fakten-stehen-fuer-die-presse.md), [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md) | Schnell eine Quelle finden und die Lücken kennen |
 
 ### Geschichte und Organisationen
@@ -109,7 +109,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
-| [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md) | Ein Thema nach Bereich wählen: Bearbeiten, Layouts, Exponential Intelligence, Velocity, Sicherheit, Barrierefreiheit, Sprachen, Multisite, Suche, Hosting, Open Source, Dokumentation und mehr |
+| [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md) | Ein Thema nach Bereich wählen: Bearbeiten, Layouts, Exponential Intelligence, Velocity, Sicherheit, Barrierefreiheit, Sprachen, Multisite, Suche, Hosting, Open Source, Dokumentation und mehr |
 | [Thema: Exponential Velocity](thema-exponential-velocity.md), [Thema: Exponential Intelligence](thema-exponential-intelligence.md), [Thema: Exponential Layouts, der Seitenbaukasten](thema-exponential-layouts.md) | Die drei wichtigsten Funktionen der Produktlinie 6.0.15 |
 | [Thema: Sicherheit](thema-sicherheit.md), [Thema: Barrierefreiheit](thema-barrierefreiheit.md), [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) | Werte und Standards, mit Belegen |
 
@@ -129,8 +129,8 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 |---|---|
 | [Ein Interview anfragen](ein-interview-anfragen.md), [Ein Briefing vorbereiten](ein-briefing-vorbereiten.md), [Fragensammlung für Interviews](fragensammlung-fuer-interviews.md) | Ein Interview bekommen und vorbereiten |
 | [Briefing für die Fachpresse](briefing-fuer-fachpresse.md), [für die Wirtschaftspresse](briefing-fuer-wirtschaftspresse.md), [für lokale und regionale Presse](briefing-fuer-lokal-und-regionalpresse.md), [für Bildungs- und Studierendenmedien](briefing-fuer-bildungs-und-studierendenmedien.md), [Gäste in Podcast und Radio](gaeste-in-podcast-und-radio.md) | Jede Art von Medium briefen |
-| [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md), [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md), [Zahlen überprüfen](zahlen-pruefen.md), [Daten überprüfen](daten-pruefen.md), [Zitate überprüfen](zitate-pruefen.md) | Prüfen, bevor Sie veröffentlichen |
-| [Richtlinie für Zitate](richtlinie-fuer-zitate.md), [Aussagen zuordnen](aussagen-zuordnen.md), [Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md) | Richtig zitieren und zuordnen |
+| [Leitfaden zum Faktencheck](leitfaden-faktenpruefung.md), [Checkliste zum Faktencheck](checkliste-faktenpruefung.md), [Zahlen überprüfen](zahlen-pruefen.md), [Daten überprüfen](daten-pruefen.md), [Zitate überprüfen](zitate-pruefen.md) | Prüfen, bevor Sie veröffentlichen |
+| [Richtlinie für Zitate](richtlinie-fuer-zitate.md), [Aussagen zuordnen](aussagen-zuordnen.md), [Sperrfristen und Timing](sperrfristen-und-zeitpunkt.md) | Richtig zitieren und zuordnen |
 | [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md), [Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md), [Vergleiche, fair gemacht](faire-vergleiche.md) | Fehler vermeiden und korrigieren |
 
 ### Influencer und Creator
@@ -177,9 +177,9 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 
 ## Verwandte Seiten
 
-- [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md)
+- [Exponential in Kürze](exponential-in-kuerze.md)
 - [Pressekontakte](pressekontakte.md)
-- [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md)
+- [Faktenblatt für Journalisten](faktenblatt-fuer-journalisten.md)
 - [Creator und Influencer: hier beginnen](creator-und-influencer-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

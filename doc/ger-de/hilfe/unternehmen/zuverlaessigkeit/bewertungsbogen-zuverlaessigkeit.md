@@ -43,7 +43,7 @@ stehen und was als Nächstes zu tun ist. Jeder Punkt verweist auf die Seite, die
 | 4 | Prüfungen im Inneren | Keine | Ab und zu angesehen | Systeminformationen, Cache-Status und Audit-Prüfung laufen nach Zeitplan und werden per Exit-Code ausgewertet | [Health-Checks und Monitoring](health-checks-und-monitoring.md#prüfungen-auf-dem-server) |
 | 5 | Backups | Keine oder nur die Datenbank | Datenbank und Dateien, nicht wiederhergestellt | Datenbank und Dateien, abseits des Servers, mehrere Generationen, Fehlschläge alarmieren jemanden | [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md) |
 | 6 | Wiederherstellungsübungen | Nie | Einmal, vor langer Zeit | Nach Zeitplan, mit Zeitmessung, protokolliert, Mail auf der Kopie abgeschaltet | [Wiederherstellungsübungen](wiederherstellungsuebungen.md) |
-| 7 | Änderungen und Aktualisierungen | Direkt auf der Live-Website | Zuerst ein Backup, keine Probe | An einer Kopie geprobt, Upgrade-Prüfung vorher und nachher, Wartungsfenster, Verantwortlicher für das Zurückrollen | [Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) |
+| 7 | Änderungen und Aktualisierungen | Direkt auf der Live-Website | Zuerst ein Backup, keine Probe | An einer Kopie geprobt, Upgrade-Prüfung vorher und nachher, Wartungsfenster, Verantwortlicher für das Zurückrollen | [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md) |
 | 8 | Deployments | Caches von Hand geleert, Server hart neu gestartet | Dokumentierte Schritte | `exp:velocity deploy` oder ein gleichwertiges geordnetes Vorgehen, zuerst ein Probelauf, danach geprüft | [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md) |
 | 9 | Hintergrundarbeit | Cron nicht eingerichtet oder unbekannt | Cron eingerichtet, nicht beobachtet | Cron auf einem Server, wöchentlich beobachtet, während geplanter Arbeiten angehalten | [Cronjobs und Hintergrundjobs](cronjobs-und-hintergrundjobs.md) |
 | 10 | Bereitschaft für Störungen | Kein Plan | Ein Plan, den niemand geprobt hat | Ausgedruckter Plan, benannte Rollen, bekannte Runbooks, in diesem Jahr geprobt, Nachbesprechungen geschrieben | [Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md) |
@@ -90,7 +90,7 @@ Eine 2 sollte auf etwas verweisen, das Sie einer Führungskraft, einem Prüfer o
 | Störungen | Der ausgedruckte Plan, das Datum der Probe, die Nachbesprechungen |
 
 Zur Nutzung des Audit-Trails für Compliance siehe
-[Compliance-Nachweise aus dem Audit-Trail](../../../../eng-us/help/businesses/security/compliance-evidence-from-the-audit-trail.md).
+[Compliance-Nachweise aus dem Audit-Trail](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
 
 ## Ein Protokoll zum Kopieren
 
@@ -118,7 +118,7 @@ Der Bereich [Vorlagen für Unternehmen](../vorlagen/README.md) enthält weitere 
 ## Verwandte Seiten
 
 - [Zuverlässigkeit für Unternehmen](README.md)
-- [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md)
+- [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md)
 - [Risikomanagement für Exponential-Projekte](../../fuehrung/risikomanagement.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -54,7 +54,7 @@ Der Kernel setzt das Paket seit der Produktlinie 6.0.15 voraus ([Die Produktfami
 
 - [Thema: admin4, das Design der Administration](thema-admin4.md)
 - [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md)
-- [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

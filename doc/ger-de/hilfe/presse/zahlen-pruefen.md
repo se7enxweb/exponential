@@ -27,7 +27,7 @@ Methode, die Sie wiederholen können.
 2. **Wann?** Zählungen ändern sich mit jedem Commit und jedem Release. Halten Sie das Datum fest.
 3. **Unter welchen Bedingungen?** Vor allem bei Geschwindigkeit: welcher Rechner, welche Seite, gecacht oder nicht.
 
-Die gezählten Werte, mit Methoden und Daten, stehen unter [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md).
+Die gezählten Werte, mit Methoden und Daten, stehen unter [Exponential in Zahlen](exponential-in-zahlen.md).
 
 ## Die gängigen Werte nachzählen
 
@@ -76,8 +76,8 @@ Avoid: "thousands of users"
 
 ## Verwandte Seiten
 
-- [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md)
-- [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md)
+- [Exponential in Zahlen](exponential-in-zahlen.md)
+- [Leitfaden zum Faktencheck](leitfaden-faktenpruefung.md)
 - [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

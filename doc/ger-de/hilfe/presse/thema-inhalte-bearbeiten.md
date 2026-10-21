@@ -102,7 +102,7 @@ Um es selbst auszuprobieren, installieren Sie Ihre eigene Kopie mit einem Befehl
 - [Gesprächspunkte für Redakteure](../fuersprecher/gespraechspunkte-fuer-redakteure.md)
 - [Thema: der Online-Editor, TinyMCE 8](thema-der-online-editor-tinymce-8.md)
 - [Thema: Inhaltsjobs](thema-inhaltsjobs.md)
-- [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
+- [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

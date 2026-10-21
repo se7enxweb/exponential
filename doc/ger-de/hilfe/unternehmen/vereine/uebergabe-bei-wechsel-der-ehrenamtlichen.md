@@ -140,8 +140,8 @@ waren und was sich in den letzten Monaten geändert hat, ohne fragen zu müssen.
 
 - [Vereine und kleine Gruppen](README.md)
 - [Gemeinsam bearbeiten mit Ehrenamtlichen](gemeinsam-bearbeiten-mit-ehrenamtlichen.md)
-- [Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
-- [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md)
+- [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)
+- [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

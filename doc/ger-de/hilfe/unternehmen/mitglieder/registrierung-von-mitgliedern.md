@@ -123,7 +123,7 @@ oder hCaptcha) hinzu und lassen Sie die E-Mail-Bestätigung eingeschaltet
 - [ ] CAPTCHA in der Benutzerklasse; E-Mail-Bestätigung eingeschaltet.
 - [ ] Freigabeverfahren entschieden und getestet, wenn Mitglieder geprüft werden.
 - [ ] Das Registrierungsformular sagt, welche Daten aufbewahrt werden und warum
-      ([Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md)).
+      ([Einwilligung und Formulare](../sicherheit/einwilligung-und-formulare.md)).
 - [ ] Eine Routine zum Bereinigen nicht aktivierter und ungenutzter Konten.
 
 ## Verwandte Seiten
@@ -131,7 +131,7 @@ oder hCaptcha) hinzu und lassen Sie die E-Mail-Bestätigung eingeschaltet
 - [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
 - [Inhalte nur für Mitglieder](inhalte-nur-fuer-mitglieder.md)
 - [Registrierung und Kontofreigabe](../extranets/registrierung-und-kontofreigabe.md)
-- [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md)
+- [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

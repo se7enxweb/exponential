@@ -88,7 +88,7 @@ Jede Änderung einer Einstellung wird mit dem genauen Text, den die Person geseh
 **Einwilligungsprotokoll** geschrieben
 ([E-Mail-Einstellungen: einrichten](../../../anleitungen/mail-einstellungen-administrator.md)). Diese Aufzeichnung hilft, wenn
 jemand fragt, warum er eine Mail bekommen hat. Die rechtliche Seite behandeln
-[Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md) und [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md);
+[Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md) und [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md);
 diese Seiten sind keine Rechtsberatung.
 
 ## Was jede optionale Mail enthält

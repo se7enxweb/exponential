@@ -107,7 +107,7 @@ Inhalte Mitarbeitern fehlen
 > **Hinweis**
 > Suchbegriffe können personenbezogene Daten sein; deshalb ist ihre Aufzeichnung standardmäßig ausgeschaltet.
 > Entscheiden Sie mit Ihrer Ansprechperson für den Datenschutz, ob Sie sie einschalten und für wie lange
-> ([DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md)).
+> ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
 ## Redakteure und Administratoren
 
