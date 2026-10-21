@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[RSSSettings]` von `settings/site.ini`, mit 8 Einstellung(en).
 
-> Settings for RSS  
+> Einstellungen für RSS  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,8 +21,8 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ActiveExtensions
 
-> RSS import handler Extension settings  
-> Must be placed in <extension directory>/<active extension>/rss/ezrssimporthandler.php  
+> Einstellungen der Erweiterungen für RSS-Import-Handler  
+> Muss in <extension directory>/<active extension>/rss/ezrssimporthandler.php liegen  
 
 Standard: eine leere Liste.
 
@@ -37,8 +37,8 @@ ActiveExtensions[]
 
 ## NumberOfObjectsList
 
-> List of numbers of objects being included in the RSS feed.  
-> This list is being shown in the RSS export edit admin interface.  
+> Liste der Anzahlen von Objekten, die in den RSS-Feed aufgenommen werden.  
+> Diese Liste wird in der Bearbeitungsoberfläche des RSS-Exports in der Administration angezeigt.  
 
 Standard: eine Liste mit 11: `5`, `10`, `20`, `30`, `40`, `50`, `100`, `250`, `350`, `500`, `1000`.
 
@@ -64,7 +64,7 @@ NumberOfObjectsList[]=1000
 
 ## NumberOfObjectsDefault
 
-> Selected by default in the RSS export edit GUI.  
+> In der Bearbeitungsoberfläche des RSS-Exports standardmäßig ausgewählt.  
 
 Standard: `20`.
 
@@ -78,16 +78,16 @@ NumberOfObjectsDefault=20
 
 ## CacheTime
 
-> Cache Time in Seconds  
+> Cache-Zeit in Sekunden  
 >
-> The timespan a RSS feed is served from the cache in seconds.  
-> After the end of the timespan, the RSS feed is regenerated and  
-> again served from the cache.  
+> Die Zeitspanne in Sekunden, die ein RSS-Feed aus dem Cache ausgeliefert wird.  
+> Nach Ablauf der Zeitspanne wird der RSS-Feed neu erzeugt und  
+> wieder aus dem Cache ausgeliefert.  
 >
-> This means that changes to the content being fed show up  
-> after the maximum cache time at the latest.  
+> Das bedeutet, dass Änderungen an den eingespeisten Inhalten spätestens  
+> nach der maximalen Cache-Zeit erscheinen.  
 >
-> "CacheTime = 0" turns off cacheing.  
+> "CacheTime = 0" schaltet das Caching ab.  
 
 Standard: `1200`.
 
@@ -101,15 +101,15 @@ CacheTime=1200
 
 ## AvailableVersionList
 
-> The list of available RSS versions.  
-> OPML is a list of feeds rather than a list of articles: an export set to it  
-> has no content source, and lists the other exports on this installation, or  
-> content nodes, instead. See kernel/classes/ezrssexportopmlitem.php.  
-> An Apple Podcasts feed: RSS 2.0 with the iTunes namespace, which Apple reads  
-> for everything RSS has no room for - the show's author, owner, artwork,  
-> category and rating. The episodes come from content sources like any other  
-> feed, and each one needs its enclosure mapped to a media or file attribute.  
-> See eZRSSExport::generateITunes().  
+> Die Liste der verfügbaren RSS-Versionen.  
+> OPML ist eine Liste von Feeds statt einer Liste von Artikeln: Ein darauf gesetzter Export  
+> hat keine Inhaltsquelle und listet stattdessen die anderen Exporte dieser Installation oder  
+> Inhaltsknoten auf. Siehe kernel/classes/ezrssexportopmlitem.php.  
+> Ein Apple-Podcasts-Feed: RSS 2.0 mit dem iTunes-Namespace, den Apple für alles liest,  
+> wofür RSS keinen Platz hat: Autor, Eigentümer, Bild,  
+> Kategorie und Einstufung der Sendung. Die Folgen kommen wie bei jedem anderen  
+> Feed aus Inhaltsquellen, und bei jeder muss das Enclosure einem Medien- oder Dateiattribut zugeordnet sein.  
+> Siehe eZRSSExport::generateITunes().  
 
 Standard: eine Liste mit 5: `1.0`, `2.0`, `ATOM`, `OPML`, `ITUNES`.
 
@@ -129,9 +129,9 @@ AvailableVersionList[]=ITUNES
 
 ## OPMLMaxOutlines
 
-> The most outlines one OPML document will carry. A document large enough to  
-> exhaust memory is served from a public address, so it would take the site  
-> down rather than just itself. Bounded at 50000 whatever this says.  
+> Die meisten Gliederungspunkte, die ein OPML-Dokument enthält. Ein Dokument, das groß genug ist,  
+> um den Speicher zu erschöpfen, wird von einer öffentlichen Adresse ausgeliefert und würde daher die Website  
+> lahmlegen statt nur sich selbst. Begrenzt auf 50000, egal was hier steht.  
 
 Standard: `5000`.
 
@@ -145,7 +145,7 @@ OPMLMaxOutlines=5000
 
 ## DefaultVersion
 
-> Selected by default in the RSS export edit GUI.  
+> In der Bearbeitungsoberfläche des RSS-Exports standardmäßig ausgewählt.  
 
 Standard: `2.0`.
 
@@ -159,7 +159,7 @@ DefaultVersion=2.0
 
 ## DefaultFeedItemClasses
 
-> Default source to child mapping  
+> Standardzuordnung von Quelle zu Unterelement  
 > DefaultFeedItemClasses\[<source\_class>\]=<child\_class>\[;<child\_class\_2>\]  
 
 Standard: eine leere Liste.

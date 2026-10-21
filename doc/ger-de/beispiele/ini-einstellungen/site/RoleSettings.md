@@ -31,12 +31,12 @@ EnableCaching=true
 
 ## PoliciesPerPage
 
-> How many policies a screen shows at once.  
+> Wie viele Richtlinien eine Ansicht auf einmal zeigt.  
 >
-> A role's policy list is paged. $role.policies is every policy the role has,  
-> which the permission system needs and a screen does not: on an installation  
-> whose roles carry policies in the millions, loading them all to draw a  
-> screenful exhausts memory before the first row is written.  
+> Die Richtlinienliste einer Rolle wird geblättert. $role.policies ist jede Richtlinie, die die Rolle hat,  
+> was das Berechtigungssystem braucht und eine Ansicht nicht: In einer Installation,  
+> deren Rollen Millionen von Richtlinien tragen, erschöpft das Laden aller, um eine  
+> Bildschirmseite zu zeichnen, den Speicher, bevor die erste Zeile geschrieben ist.  
 
 Standard: `25`.
 
@@ -50,13 +50,13 @@ PoliciesPerPage=25
 
 ## AccessArrayPrefetch
 
-> How the access array of a user is built when the role cache is rebuilt.  
-> enabled loads the policies, limitations and values of all the user's roles in  
-> three queries and computes the limitations of a policy once for all the  
-> assignments of its role (a member of 120 teamrooms has every policy of the  
-> member role 120 times). disabled asks the database once for every role, policy  
-> and limitation, as before. The access array is the same either way, in the same  
-> order.  
+> Wie das Zugriffs-Array eines Benutzers aufgebaut wird, wenn der Rollen-Cache neu aufgebaut wird.  
+> enabled lädt die Richtlinien, Einschränkungen und Werte aller Rollen des Benutzers in  
+> drei Abfragen und berechnet die Einschränkungen einer Richtlinie einmal für alle  
+> Zuweisungen ihrer Rolle (ein Mitglied von 120 Teamräumen hat jede Richtlinie der  
+> Mitgliederrolle 120-mal). disabled fragt die Datenbank wie bisher einmal für jede Rolle, Richtlinie  
+> und Einschränkung. Das Zugriffs-Array ist in beiden Fällen gleich, in derselben  
+> Reihenfolge.  
 
 Standard: `enabled`.
 
@@ -70,16 +70,16 @@ AccessArrayPrefetch=enabled
 
 ## PreventPrivilegeEscalation
 
-> Whether a user who may edit roles can give more than they have themselves.  
-> enabled (the default) refuses, in the role editor, the policy wizard, the  
-> policy editor, role/copy and role/assign, any policy or assignment that is  
-> broader than the editor's own access: a policy must be covered by one of the  
-> editor's policies (module, function and every limitation of that policy, a  
-> subtree inside one of its subtrees, sections, classes, nodes, languages and  
-> other values among its values), and a role may only be assigned when the  
-> editor covers every policy of it, narrowed by the assignment's limitation.  
-> Users with access to every function of every module may grant anything.  
-> disabled gives back the old behaviour: role editors may grant anything.  
+> Ob ein Benutzer, der Rollen bearbeiten darf, mehr vergeben kann, als er selbst hat.  
+> enabled (der Standard) lehnt im Rolleneditor, im Richtlinienassistenten, im  
+> Richtlinieneditor, in role/copy und role/assign jede Richtlinie oder Zuweisung ab, die  
+> weiter reicht als der eigene Zugriff des Bearbeiters: Eine Richtlinie muss von einer der  
+> Richtlinien des Bearbeiters abgedeckt sein (Modul, Funktion und jede Einschränkung dieser Richtlinie, ein  
+> Teilbaum innerhalb eines ihrer Teilbäume, Sektionen, Klassen, Knoten, Sprachen und  
+> andere Werte unter ihren Werten), und eine Rolle darf nur zugewiesen werden, wenn der  
+> Bearbeiter jede ihrer Richtlinien abdeckt, eingegrenzt durch die Einschränkung der Zuweisung.  
+> Benutzer mit Zugriff auf jede Funktion jedes Moduls dürfen alles vergeben.  
+> disabled stellt das alte Verhalten wieder her: Rolleneditoren dürfen alles vergeben.  
 
 Standard: `enabled`.
 
@@ -93,9 +93,9 @@ PreventPrivilegeEscalation=enabled
 
 ## AssignmentsPerPage
 
-> How many of the users and user groups a role is assigned to role/view shows  
-> at once, sorted by name and paged on (assignment\_offset). A role given to  
-> thousands of users took long to draw. 0 lists all of them on one page.  
+> Wie viele der Benutzer und Benutzergruppen, denen eine Rolle zugewiesen ist, role/view  
+> auf einmal zeigt, nach Namen sortiert und weitergeblättert (assignment\_offset). Eine Rolle, die  
+> Tausenden von Benutzern gegeben wurde, brauchte lange zum Zeichnen. 0 listet alle auf einer Seite auf.  
 
 Standard: `50`.
 
@@ -109,11 +109,11 @@ AssignmentsPerPage=50
 
 ## RolesPerPageList
 
-> The page sizes the role list offers in its items per page selector.  
+> Die Seitengrößen, die die Rollenliste in ihrer Auswahl für Einträge pro Seite anbietet.  
 >
-> The stored preference is the position in this list, counting from one, so a  
-> site that changes these keeps everyone's choice rather than resetting it -  
-> and the old 1, 2 and 3 still mean the first, second and third entry.  
+> Die gespeicherte Einstellung ist die Position in dieser Liste, ab eins gezählt, sodass eine  
+> Website, die diese ändert, die Wahl aller behält statt sie zurückzusetzen,  
+> und die alten 1, 2 und 3 bedeuten weiterhin den ersten, zweiten und dritten Eintrag.  
 
 Standard: eine Liste mit 3: `10`, `25`, `50`.
 
@@ -131,9 +131,9 @@ RolesPerPageList[]=50
 
 ## PolicyPreviewPerRole
 
-> How many of a role's policies the summary window on a user or user group  
-> shows before it stops and links to the role. That window lists every role the  
-> user has, so it is the product of two lists rather than one.  
+> Wie viele Richtlinien einer Rolle das Zusammenfassungsfenster eines Benutzers oder einer Benutzergruppe  
+> zeigt, bevor es aufhört und auf die Rolle verlinkt. Dieses Fenster listet jede Rolle des  
+> Benutzers auf, es ist also das Produkt zweier Listen statt einer.  
 
 Standard: `10`.
 
@@ -147,13 +147,13 @@ PolicyPreviewPerRole=10
 
 ## PermissionSQLOptimization
 
-> How the permission condition of a content fetch is built from the read policies  
-> of the user. enabled merges the policies that differ only in the subtree their  
-> role is assigned for (a member of 120 teamrooms has every read policy of the  
-> member role 120 times) and leaves out those that cannot give access to a node  
-> the fetch returns: subtrees outside the fetched one, classes outside its class  
-> filter. The fetch returns the same nodes. disabled ORs every policy as before;  
-> SQLite refuses that condition from 1000 policies on.  
+> Wie die Berechtigungsbedingung eines Inhalts-Fetches aus den Leserichtlinien  
+> des Benutzers aufgebaut wird. enabled fasst die Richtlinien zusammen, die sich nur im Teilbaum unterscheiden, für den ihre  
+> Rolle zugewiesen ist (ein Mitglied von 120 Teamräumen hat jede Leserichtlinie der  
+> Mitgliederrolle 120-mal), und lässt die weg, die keinen Zugriff auf einen Knoten geben können,  
+> den der Fetch zurückgibt: Teilbäume außerhalb des abgerufenen, Klassen außerhalb seines Klassen-  
+> filters. Der Fetch gibt dieselben Knoten zurück. disabled verknüpft wie bisher jede Richtlinie mit OR;  
+> SQLite lehnt diese Bedingung ab 1000 Richtlinien ab.  
 
 Standard: `enabled`.
 
@@ -167,22 +167,22 @@ PermissionSQLOptimization=enabled
 
 ## PolicyOmitList
 
-> A list of modules to omit policy checking on,  
-> You should add 'role' to the list if you loose  
-> access to the role module  
-> You can also specify views by adding a / and the viewname  
-> This is a fake omission: we need a manual policy check, therefore implemented directly in oauth/authorize.php  
-> Order receipts decide for themselves: the customer who placed the order, or  
-> shop/administrate (eZShopReceipt::canView); everyone else gets the login form.  
-> E-mail preferences: settings and export check the login themselves, manage,  
-> unsubscribe and confirm work with a signed link, request sends one.  
-> API access: apikey/list checks for itself (signed in to see and revoke one's own keys,  
-> apikey/create to make one).  
-> admin4's mega menu: user/megamenu checks for itself (a signed-in user who may log in to the  
-> siteaccess, user/login with its SiteAccess limitation, and the tab open to that user), so every  
-> refusal is a bare 403 for its script instead of a page.  
-> The reports of the Content Security Policy come from browsers, signed in or not; csp/report protects itself  
-> (content types, size, rate limits, masked log lines).  
+> Eine Liste der Module, bei denen die Richtlinienprüfung ausgelassen wird;  
+> fügen Sie 'role' der Liste hinzu, wenn Sie den  
+> Zugriff auf das Modul role verlieren  
+> Sie können auch Ansichten angeben, indem Sie ein / und den Namen der Ansicht anhängen  
+> Dies ist eine scheinbare Auslassung: Wir brauchen eine manuelle Richtlinienprüfung, daher direkt in oauth/authorize.php umgesetzt  
+> Bestellbelege entscheiden selbst: der Kunde, der die Bestellung aufgegeben hat, oder  
+> shop/administrate (eZShopReceipt::canView); alle anderen erhalten das Anmeldeformular.  
+> E-Mail-Einstellungen: settings und export prüfen die Anmeldung selbst, manage,  
+> unsubscribe und confirm arbeiten mit einem signierten Link, request sendet einen.  
+> API-Zugang: apikey/list prüft selbst (angemeldet, um eigene Schlüssel zu sehen und zu widerrufen,  
+> apikey/create, um einen zu erstellen).  
+> Das Mega-Menü von admin4: user/megamenu prüft selbst (ein angemeldeter Benutzer, der sich am  
+> Siteaccess anmelden darf, user/login mit seiner Einschränkung SiteAccess, und der für diesen Benutzer offene Reiter), sodass jede  
+> Ablehnung für sein Skript ein bloßes 403 statt einer Seite ist.  
+> Die Berichte der Content Security Policy kommen von Browsern, angemeldet oder nicht; csp/report schützt sich selbst  
+> (Inhaltstypen, Größe, Ratenbegrenzung, maskierte Logzeilen).  
 
 Standard: eine Liste mit 23: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
 
@@ -218,13 +218,13 @@ PolicyOmitList[]=mailpreferences/export
 
 ## PolicyOmitListExclude
 
-> Entries taken out of PolicyOmitList\[\] after every settings file is merged, so a site can  
-> close one entry without resetting the list (a reset would also drop the entries the active  
-> extensions add). New installations write PolicyOmitListExclude\[\]=user/register in  
-> settings/override/site.ini.append.php: registering then needs the user/register policy,  
-> which their Anonymous role has (remove it there to close registration), and the login  
-> pages show the "register" link only to a user who has it. An upgraded site keeps user/register open;  
-> to close it, add the line above to settings/override/site.ini.append.php.  
+> Einträge, die nach dem Zusammenführen jeder Einstellungsdatei aus PolicyOmitList\[\] entfernt werden, sodass eine Website  
+> einen Eintrag schließen kann, ohne die Liste zurückzusetzen (ein Zurücksetzen würde auch die Einträge verwerfen, die die aktiven  
+> Erweiterungen hinzufügen). Neue Installationen schreiben PolicyOmitListExclude\[\]=user/register in  
+> settings/override/site.ini.append.php: Die Registrierung braucht dann die Richtlinie user/register,  
+> die ihre Rolle Anonymous hat (entfernen Sie sie dort, um die Registrierung zu schließen), und die Anmelde-  
+> seiten zeigen den Link „Registrieren“ nur einem Benutzer, der sie hat. Eine aktualisierte Website lässt user/register offen;  
+> um es zu schließen, fügen Sie die Zeile oben in settings/override/site.ini.append.php hinzu.  
 
 Standard: eine leere Liste.
 
@@ -239,7 +239,7 @@ PolicyOmitListExclude[]
 
 ## ShowAccessDeniedReason
 
-> Should we try to show reason for access denied in view  
+> Ob versucht wird, in der Ansicht den Grund für einen verweigerten Zugriff zu zeigen  
 
 Standard: `disabled`.
 
@@ -253,7 +253,7 @@ ShowAccessDeniedReason=disabled
 
 ## MaxParentDepthLimitation
 
-> Specifies max level for the 'ParentDepth' limitation.  
+> Gibt die höchste Ebene für die Einschränkung 'ParentDepth' an.  
 
 Standard: `20`.
 
@@ -267,11 +267,11 @@ MaxParentDepthLimitation=20
 
 ## LimitationHandlers
 
-> Handlers of content policy limitations the kernel does not know itself, one  
-> class per limitation name; the class implements ezpContentLimitationHandler.  
-> An extension that adds a limitation to a content function (event filter  
-> module/functionlist) registers its handler here. A limitation without a  
-> handler denies: in checkAccess() and in the SQL of list and tree fetches.  
+> Handler für Einschränkungen von Inhaltsrichtlinien, die der Kernel selbst nicht kennt, eine  
+> Klasse pro Einschränkungsname; die Klasse implementiert ezpContentLimitationHandler.  
+> Eine Erweiterung, die einer Inhaltsfunktion eine Einschränkung hinzufügt (Event-Filter  
+> module/functionlist), registriert ihren Handler hier. Eine Einschränkung ohne  
+> Handler verweigert: in checkAccess() und im SQL von Listen- und Baum-Fetches.  
 > LimitationHandlers\[MyLimitation\]=myLimitationHandler  
 
 Standard: eine leere Liste.

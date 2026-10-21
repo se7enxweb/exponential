@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[OverrideSettings]` von `settings/site.ini`, mit 1 Einstellung(en).
 
-> since 5.3 it is possible to define a list with the dataypes containing prices  
-> This will allow you to define your own price datatypes and work with them  
-> in the shop module  
-> Setting is commented out by default  
+> Seit 5.3 lässt sich eine Liste der Datentypen definieren, die Preise enthalten  
+> Damit können Sie eigene Preis-Datentypen definieren und mit ihnen  
+> im Modul shop arbeiten  
+> Die Einstellung ist standardmäßig auskommentiert  
 > ProductDatatypeStringList\[\]  
 > ProductDatatypeStringList\[\]=ezprice  
 > ProductDatatypeStringList\[\]=ezmultiprice  

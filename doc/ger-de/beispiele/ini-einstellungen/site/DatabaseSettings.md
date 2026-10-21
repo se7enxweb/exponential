@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## SQLitePragmas
 
-> SQLite (DatabaseImplementation=sqlite3) only: the connection's PRAGMAs, one  
-> per line as name=value, over the driver's defaults:  
->   synchronous=NORMAL     with WAL still crash-safe; FULL synced every commit  
->   cache\_size=-65536      64 MB page cache (SQLite's default is 2 MB)  
->   mmap\_size=268435456    read the file through 256 MB of mapped memory  
->   temp\_store=MEMORY      sorts and temporary tables in memory  
->   busy\_timeout=5000      wait up to 5 s for a lock instead of failing at once  
-> Run php bin/php/ezexec.php on an ANALYZE script (or sqlite3 <file> ANALYZE)  
-> after an install, so the query planner has statistics.  
+> Nur SQLite (DatabaseImplementation=sqlite3): die PRAGMAs der Verbindung, eines  
+> pro Zeile als name=value, über den Standards des Treibers:  
+>   synchronous=NORMAL     mit WAL weiterhin absturzsicher; FULL synchronisierte jeden Commit  
+>   cache\_size=-65536      64 MB Seiten-Cache (Standard von SQLite ist 2 MB)  
+>   mmap\_size=268435456    die Datei über 256 MB eingeblendeten Speicher lesen  
+>   temp\_store=MEMORY      Sortierungen und temporäre Tabellen im Speicher  
+>   busy\_timeout=5000      bis zu 5 s auf eine Sperre warten, statt sofort zu scheitern  
+> Führen Sie nach einer Installation php bin/php/ezexec.php mit einem ANALYZE-Skript (oder sqlite3 <file> ANALYZE) aus,  
+> damit der Abfrageplaner Statistiken hat.  
 
 Standard: eine leere Liste.
 
@@ -42,15 +42,15 @@ SQLitePragmas[]
 
 ## SQLiteTransactionWait
 
-> SQLite only: how many seconds a transaction (a publish, a save) waits at its  
-> start for the other writers ahead of it, queued on <database>.writer-lock  
-> next to the database file, before it gives up. Waiting there is safe: the  
-> transaction has written nothing yet, and once it has started it cannot fail  
-> for a lock. Keep it below the web server's request timeout, or the request  
-> is killed before the driver can report "database is busy": Velocity ends a  
-> request after its engine setting Q.webserver.requestTimeout, 30 s unless  
-> changed (the client gets a 504), hence 25 here; under PHP-FPM the limit is  
-> the pool's request\_terminate\_timeout. Raise both together.  
+> Nur SQLite: wie viele Sekunden eine Transaktion (ein Veröffentlichen, ein Speichern) zu ihrem  
+> Beginn auf die anderen Schreiber vor ihr wartet, eingereiht in <database>.writer-lock  
+> neben der Datenbankdatei, bevor sie aufgibt. Dort zu warten ist sicher: Die  
+> Transaktion hat noch nichts geschrieben, und sobald sie begonnen hat, kann sie nicht mehr  
+> an einer Sperre scheitern. Halten Sie den Wert unter dem Anfrage-Timeout des Webservers, sonst wird die Anfrage  
+> beendet, bevor der Treiber "database is busy" melden kann: Velocity beendet eine  
+> Anfrage nach seiner Engine-Einstellung Q.webserver.requestTimeout, 30 s, sofern nicht  
+> geändert (der Client erhält 504), daher hier 25; unter PHP-FPM ist die Grenze  
+> request\_terminate\_timeout des Pools. Erhöhen Sie beide gemeinsam.  
 
 Standard: `25`.
 
@@ -136,9 +136,9 @@ Database=nextgen
 
 ## UseSlaveServer
 
-> Enable slave servers  
-> The slave servers will only be used for read queries  
-> Useful for load balanced environments  
+> Slave-Server aktivieren  
+> Die Slave-Server werden nur für lesende Abfragen verwendet  
+> Nützlich in lastverteilten Umgebungen  
 
 Standard: `disabled`.
 
@@ -157,7 +157,7 @@ UseSlaveServer=disabled
 > SlaverServerUser\[\]=nextgen  
 > SlaverServerPassword\[\]=nextgen  
 > SlaverServerDatabase\[\]=nextgen  
-> The number of times to reconnect if the first fails  
+> Wie oft neu verbunden wird, wenn die erste Verbindung scheitert  
 
 Standard: `0`.
 
@@ -171,9 +171,9 @@ ConnectRetries=0
 
 ## Charset
 
-> The charset to use for the database connection  
-> If left empty the charset set in i18n.ini will be used,  
-> which is often the most reasonable setting.  
+> Der Zeichensatz für die Datenbankverbindung  
+> Wenn leer, wird der in i18n.ini gesetzte Zeichensatz verwendet,  
+> was oft die vernünftigste Einstellung ist.  
 
 Standard: `utf-8`.
 
@@ -187,7 +187,7 @@ Charset=utf-8
 
 ## UseBuiltinEncoding
 
-> Use charset conversion routines in DB if possible  
+> Wenn möglich die Routinen der Datenbank für die Zeichensatzumwandlung verwenden  
 
 Standard: `true`.
 
@@ -213,9 +213,9 @@ Socket=disabled
 
 ## QueryAnalysisOutput
 
-> This controls if the queries should have an analysis done  
-> for the debug output (Requires SQLOutput=enabled)  
-> NOTE: Currently this only works for MySQL.  
+> Steuert, ob die Abfragen für die Debug-Ausgabe  
+> analysiert werden (erfordert SQLOutput=enabled)  
+> HINWEIS: Funktioniert derzeit nur mit MySQL.  
 
 Standard: `disabled`.
 
@@ -241,8 +241,8 @@ SQLOutput=disabled
 
 ## SlowQueriesOutput
 
-> When this setting is larger than 0 the Queries would only be shown in the  
-> SQLOutput if the execution time took more than <setting> miliseconds.  
+> Ist diese Einstellung größer als 0, werden Abfragen nur dann in der  
+> SQLOutput angezeigt, wenn ihre Ausführung länger als <setting> Millisekunden dauerte.  
 
 Standard: `0`.
 
@@ -256,10 +256,10 @@ SlowQueriesOutput=0
 
 ## DebugTransactions
 
-> If enabled the system will store stack traces for all begin/commits in the  
-> system. When an unbalanced nested transactions are detected it will output  
-> all begin/commits with information on where it occured as a deep tree.  
-> This tree can be used to debug the code and find the missing commit.  
+> Wenn aktiviert, speichert das System Stacktraces für alle begin/commit im  
+> System. Werden unausgeglichene verschachtelte Transaktionen erkannt, gibt es  
+> alle begin/commit mit der Stelle, an der sie auftraten, als tiefen Baum aus.  
+> Mit diesem Baum lässt sich der Code debuggen und das fehlende commit finden.  
 
 Standard: `disabled`.
 
@@ -273,7 +273,7 @@ DebugTransactions=disabled
 
 ## ImplementationAlias
 
-> Alias for implementations  
+> Alias für Implementierungen  
 
 Standard: ein Hash mit 9: `mysql=eZMySQLiDB`, `mysqli=eZMySQLiDB`, `postgresql=eZPostgreSQLDB`, `ezmysql=eZMySQLiDB`, `ezmysqli=eZMySQLiDB`, `ezpostgresql=eZPostgreSQLDB`, `pgsql=eZPostgreSQLDB`, `sqlite3=eZSQLite3DB`, `mongodb=expMongoDB`.
 
@@ -309,8 +309,8 @@ UsePersistentConnection=disabled
 
 ## Transactions
 
-> Use transactions to ensure that integrity of a database is maintained.  
-> MySQL needs transaction safe-tables like the InnoDB table handler.  
+> Transaktionen verwenden, um die Integrität der Datenbank zu wahren.  
+> MySQL braucht transaktionssichere Tabellen wie den Tabellen-Handler InnoDB.  
 
 Standard: `enabled`.
 

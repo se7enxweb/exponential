@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## NotFoundLog
 
-> A request for a page that does not exist (404, 410) is written as one line  
-> in its own log beside error.log, with the reason the kernel found: an  
-> undefined module or view, a module or view this siteaccess switches off, a  
-> node or object that is not there. A request the request classifier names a  
-> probe or attack is written to security.log instead (requestclassifier.ini),  
-> never to both. Answers 401 and 403 stay notices in notice.log.  
-> enabled (the default): 404s go to NotFoundLogFile and no longer to error.log,  
-> which keeps the real faults. disabled: error.log as before.  
+> Eine Anfrage nach einer Seite, die es nicht gibt (404, 410), wird als eine Zeile  
+> in ein eigenes Log neben error.log geschrieben, mit dem Grund, den der Kernel gefunden hat: ein  
+> nicht definiertes Modul oder eine nicht definierte Ansicht, ein Modul oder eine Ansicht, die dieser Siteaccess abschaltet, ein  
+> Knoten oder Objekt, das nicht da ist. Eine Anfrage, die der Anfrage-Klassifizierer als  
+> Sondierung oder Angriff einstuft, wird stattdessen in security.log geschrieben (requestclassifier.ini),  
+> nie in beide. Antworten 401 und 403 bleiben notices in notice.log.  
+> enabled (der Standard): 404 gehen nach NotFoundLogFile und nicht mehr nach error.log,  
+> das die echten Fehler behält. disabled: error.log wie bisher.  
 
 Standard: `enabled`.
 
@@ -40,8 +40,8 @@ NotFoundLog=enabled
 
 ## NotFoundLogFile
 
-> The file in the log directory (var/log, or the site's log directory with  
-> \[FileSettings\] UseGlobalLogDir=disabled). Rotated as the other logs are.  
+> Die Datei im Log-Verzeichnis (var/log oder das Log-Verzeichnis der Website mit  
+> \[FileSettings\] UseGlobalLogDir=disabled). Wird wie die anderen Logs rotiert.  
 
 Standard: `404.log`.
 
@@ -55,8 +55,8 @@ NotFoundLogFile=404.log
 
 ## MaskIP
 
-> enabled (the default): the address of the client is written with its host  
-> part hidden (203.0.x.x, 2001:db8:x:x), never in full.  
+> enabled (der Standard): Die Adresse des Clients wird mit verborgenem Host-  
+> teil geschrieben (203.0.x.x, 2001:db8:x:x), nie vollständig.  
 
 Standard: `enabled`.
 
@@ -70,8 +70,8 @@ MaskIP=enabled
 
 ## MaxURILength
 
-> The longest address written; a longer one is cut and ends in "...". The  
-> values of the query are always written as \*\*\*.  
+> Die längste geschriebene Adresse; eine längere wird abgeschnitten und endet auf "...". Die  
+> Werte der Query werden immer als \*\*\* geschrieben.  
 
 Standard: `300`.
 

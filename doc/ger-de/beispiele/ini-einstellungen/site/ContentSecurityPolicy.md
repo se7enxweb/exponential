@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Mode
 
-> The Content Security Policy of the pages (doc/eng-us/features/6.0/content-security-policy.md):  
-> which scripts, stylesheets, images and connections a page may use. It is sent  
-> beside the security headers of \[HTTPHeaderSettings\] SecurityHeaders\[\].  
+> Die Content Security Policy der Seiten (doc/eng-us/features/6.0/content-security-policy.md):  
+> welche Skripte, Stylesheets, Bilder und Verbindungen eine Seite verwenden darf. Sie wird  
+> neben den Sicherheits-Headern aus \[HTTPHeaderSettings\] SecurityHeaders\[\] gesendet.  
 >
-> disabled: no policy  
-> report-only: Content-Security-Policy-Report-Only; the browser reports what the  
->   policy would block (developer console, ReportURI) and blocks nothing  
-> enforce: Content-Security-Policy; the browser blocks it. Sent as a second  
->   policy after SecurityHeaders\[Content-Security-Policy\], both apply  
-> auto (the default): report-only on administration siteaccesses (those whose  
->   \[DesignSettings\] SiteDesign begins with "admin"), disabled on the others  
+> disabled: keine Richtlinie  
+> report-only: Content-Security-Policy-Report-Only; der Browser meldet, was die  
+>   Richtlinie blockieren würde (Entwicklerkonsole, ReportURI), und blockiert nichts  
+> enforce: Content-Security-Policy; der Browser blockiert es. Als zweite  
+>   Richtlinie nach SecurityHeaders\[Content-Security-Policy\] gesendet, beide gelten  
+> auto (der Standard): report-only in Administrations-Siteaccesses (denen, deren  
+>   \[DesignSettings\] SiteDesign mit "admin" beginnt), in den anderen disabled  
 
 Standard: `auto`.
 
@@ -43,19 +43,19 @@ Mode=auto
 
 ## Directives
 
-> The policy, Directives\[<directive>\]=<sources>. Set a value empty in an override  
-> to leave that directive out; an override that starts with "Directives\[\]" alone  
-> replaces the whole list. Values with ";" or "," are ignored. frame-ancestors  
-> and sandbox are sent only with Mode=enforce (browsers ignore them in a  
-> report-only policy). object-src 'none' blocks <object>/<embed> (the legacy  
-> Flash, Windows Media, RealVideo and QuickTime previews, a PDF shown inline).  
-> script-src 'self' allows script files of this site only: no inline <script>,  
-> no on...= attributes, no javascript: links, no eval(). style-src 'self' allows  
-> stylesheet files only: no <style> elements and no style="" attributes (setting  
-> element.style from a script file stays allowed).  
-> Workers (new Worker, a service worker) of this site only: no blob: or data: worker,  
-> which would run code built from a string. Named here (it would otherwise fall back  
-> to script-src) so AdditionalSources\[\] can add a host or blob: where a feature needs it.  
+> Die Richtlinie, Directives\[<directive>\]=<sources>. Setzen Sie einen Wert in einem Override leer,  
+> um diese Direktive wegzulassen; ein Override, das mit "Directives\[\]" allein beginnt,  
+> ersetzt die ganze Liste. Werte mit ";" oder "," werden ignoriert. frame-ancestors  
+> und sandbox werden nur mit Mode=enforce gesendet (Browser ignorieren sie in einer  
+> reinen Berichtsrichtlinie). object-src 'none' blockiert <object>/<embed> (die alten  
+> Vorschauen für Flash, Windows Media, RealVideo und QuickTime, ein eingebettet angezeigtes PDF).  
+> script-src 'self' erlaubt nur Skriptdateien dieser Website: kein Inline-<script>,  
+> keine on...=-Attribute, keine javascript:-Links, kein eval(). style-src 'self' erlaubt  
+> nur Stylesheet-Dateien: keine <style>-Elemente und keine style=""-Attribute (element.style  
+> aus einer Skriptdatei zu setzen bleibt erlaubt).  
+> Worker (new Worker, ein Service Worker) nur dieser Website: kein blob:- oder data:-Worker,  
+> der aus einer Zeichenkette gebauten Code ausführen würde. Hier genannt (sonst fiele es  
+> auf script-src zurück), damit AdditionalSources\[\] einen Host oder blob: hinzufügen kann, wo eine Funktion es braucht.  
 
 Standard: ein Hash mit 13: `default-src='self'`, `script-src='self'`, `style-src='self'`, `img-src='self' data: blob:`, `font-src='self' data:`, `media-src='self' blob:`, `connect-src='self'`, `worker-src='self'`, `frame-src='self'`, `object-src='none'`, `base-uri='self'`, `form-action='self'` ....
 
@@ -83,11 +83,11 @@ Directives[frame-ancestors]='self'
 
 ## AdditionalSources
 
-> Sources added to a directive of Directives\[\], one entry per directive and  
-> sources: AdditionalSources\[\]=<directive> <sources>. A list, so an extension and  
-> the siteaccess can each add a host without restating the directive. An entry  
-> for a directive that Directives\[\] does not have is ignored.  
-> Example: AdditionalSources\[\]=script-src https://maps.googleapis.com  
+> Quellen, die einer Direktive aus Directives\[\] hinzugefügt werden, ein Eintrag pro Direktive und  
+> Quellen: AdditionalSources\[\]=<directive> <sources>. Eine Liste, damit eine Erweiterung und  
+> der Siteaccess jeweils einen Host hinzufügen können, ohne die Direktive zu wiederholen. Ein Eintrag  
+> für eine Direktive, die Directives\[\] nicht hat, wird ignoriert.  
+> Beispiel: AdditionalSources\[\]=script-src https://maps.googleapis.com  
 
 Standard: eine leere Liste.
 
@@ -102,11 +102,11 @@ AdditionalSources[]
 
 ## ReportOnlyDirectives
 
-> With Mode=enforce: a second, stricter policy sent as  
-> Content-Security-Policy-Report-Only (Directives\[\] with these entries in their  
-> place), to measure what it would still block while the enforced policy  
-> allows it. Empty: none.  
-> Example: ReportOnlyDirectives\[style-src\]='self'  
+> Mit Mode=enforce: eine zweite, strengere Richtlinie, gesendet als  
+> Content-Security-Policy-Report-Only (Directives\[\] mit diesen Einträgen an ihrer  
+> Stelle), um zu messen, was sie noch blockieren würde, während die durchgesetzte Richtlinie  
+> es erlaubt. Leer: keine.  
+> Beispiel: ReportOnlyDirectives\[style-src\]='self'  
 
 Standard: eine leere Liste.
 
@@ -121,9 +121,9 @@ ReportOnlyDirectives[]
 
 ## ReportOnlyDesigns
 
-> Designs whose requests stay report-only under Mode=enforce: the classic  
-> administration, with inline code, which a user can pick with the UI switch.  
-> The design of the request (after the UI switch) decides.  
+> Designs, deren Anfragen unter Mode=enforce bei report-only bleiben: die klassische  
+> Administration mit Inline-Code, die ein Benutzer mit dem Oberflächenschalter wählen kann.  
+> Das Design der Anfrage (nach dem Oberflächenschalter) entscheidet.  
 
 Standard: eine Liste mit 3: `admin`, `admin2`, `admin_classic`.
 
@@ -141,10 +141,10 @@ ReportOnlyDesigns[]=admin_classic
 
 ## ReportOnlyViews
 
-> Views (module/view) that send a policy of their own for their own inline  
-> scripts, such as a bundled database tool: report-only under Mode=enforce, so  
-> the kernel's policy cannot block them where a server keeps both headers.  
-> Example: ReportOnlyViews\[\]=dse/adminneo  
+> Ansichten (module/view), die für ihre eigenen Inline-Skripte eine eigene Richtlinie senden,  
+> wie ein mitgeliefertes Datenbankwerkzeug: report-only unter Mode=enforce, damit  
+> die Richtlinie des Kernels sie nicht blockieren kann, wo ein Server beide Header behält.  
+> Beispiel: ReportOnlyViews\[\]=dse/adminneo  
 
 Standard: eine leere Liste.
 
@@ -159,11 +159,11 @@ ReportOnlyViews[]
 
 ## Nonce
 
-> enabled: a nonce of the request, 'nonce-...', is added to the directives of  
-> NonceDirectives\[\], for an inline script a template cannot move into a file:  
-> <script nonce="{csp\_nonce()}">. Not added where the directive allows  
-> 'unsafe-inline' (browsers would ignore 'unsafe-inline' next to it). Never print  
-> csp\_nonce() inside a cache-block or a view-cached template.  
+> enabled: Eine Nonce der Anfrage, 'nonce-...', wird den Direktiven aus  
+> NonceDirectives\[\] hinzugefügt, für ein Inline-Skript, das ein Template nicht in eine Datei verlagern kann:  
+> <script nonce="{csp\_nonce()}">. Nicht hinzugefügt, wo die Direktive  
+> 'unsafe-inline' erlaubt (Browser würden 'unsafe-inline' daneben ignorieren). Geben Sie  
+> csp\_nonce() nie in einem Cache-Block oder einem im View-Cache gecachten Template aus.  
 
 Standard: `enabled`.
 
@@ -191,10 +191,10 @@ NonceDirectives[]=script-src
 
 ## ReportURI
 
-> Where the browser sends its reports (report-uri), e.g. a collector of your  
-> own; empty: the developer console only, or with ReportEndpoint=enabled the  
-> csp/report view of the siteaccess. An absolute address is also announced as  
-> the Reporting-Endpoints endpoint csp-endpoint (report-to).  
+> Wohin der Browser seine Berichte sendet (report-uri), z. B. an einen eigenen  
+> Sammler; leer: nur die Entwicklerkonsole oder, mit ReportEndpoint=enabled, die  
+> Ansicht csp/report des Siteaccess. Eine absolute Adresse wird außerdem als  
+> Reporting-Endpoints-Endpunkt csp-endpoint angekündigt (report-to).  
 
 Standard: leer.
 
@@ -208,8 +208,8 @@ ReportURI=
 
 ## ReportEndpoint
 
-> enabled: with ReportURI empty, the reports go to csp/report of the  
-> siteaccess (the kernel module csp), which logs them to var/log/csp.log  
+> enabled: Mit leerem ReportURI gehen die Berichte an csp/report des  
+> Siteaccess (das Kernel-Modul csp), das sie in var/log/csp.log protokolliert  
 
 Standard: `disabled`.
 
@@ -223,10 +223,10 @@ ReportEndpoint=disabled
 
 ## ReportsPerMinute
 
-> The reports the view csp/report takes (one line per violation in var/log/csp.log,  
-> Setup > Log files, key csp). Per client (the salted address hash of the  
-> request classifier), per minute; over it the view answers 429 and the  
-> request classifier writes one abuse/csp-report-flood line to security.log.  
+> Die Berichte, die die Ansicht csp/report annimmt (eine Zeile pro Verstoß in var/log/csp.log,  
+> Setup > Logdateien, Schlüssel csp). Pro Client (der gesalzene Adress-Hash des  
+> Anfrage-Klassifizierers), pro Minute; darüber antwortet die Ansicht mit 429, und der  
+> Anfrage-Klassifizierer schreibt eine Zeile abuse/csp-report-flood in security.log.  
 
 Standard: `60`.
 
@@ -240,7 +240,7 @@ ReportsPerMinute=60
 
 ## ReportsPerMinuteTotal
 
-> All clients together, per minute.  
+> Alle Clients zusammen, pro Minute.  
 
 Standard: `600`.
 
@@ -254,7 +254,7 @@ ReportsPerMinuteTotal=600
 
 ## MaxReportBytes
 
-> The biggest report body taken, in bytes (413 above it).  
+> Der größte angenommene Berichtsinhalt, in Bytes (darüber 413).  
 
 Standard: `65536`.
 
@@ -268,7 +268,7 @@ MaxReportBytes=65536
 
 ## MaxViolationsPerReport
 
-> The most violations written from one report (the Reporting API sends several).  
+> Die meisten Verstöße, die aus einem Bericht geschrieben werden (die Reporting API sendet mehrere).  
 
 Standard: `20`.
 
@@ -282,7 +282,7 @@ MaxViolationsPerReport=20
 
 ## LogFile
 
-> The log file, in the log directory (var/log).  
+> Die Logdatei, im Log-Verzeichnis (var/log).  
 
 Standard: `csp.log`.
 

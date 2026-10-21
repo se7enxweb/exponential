@@ -31,29 +31,29 @@ ExtensionDirectory=extension
 
 ## AdditionalExtensionDirectories
 
-> Further places extensions may live, searched after ExtensionDirectory above.  
-> A second root separates what this project wrote from what it took from  
-> elsewhere, so who owns a package is readable off the directory layout rather  
-> than off a list somebody has to maintain.  
+> Weitere Orte, an denen Erweiterungen liegen können, durchsucht nach ExtensionDirectory oben.  
+> Eine zweite Wurzel trennt, was dieses Projekt geschrieben hat, von dem, was es von  
+> anderswo übernommen hat, sodass sich der Eigentümer eines Pakets an der Verzeichnisstruktur ablesen lässt  
+> statt an einer Liste, die jemand pflegen muss.  
 >
-> An extension of the same name in a later root shadows the one before it. That  
-> is how a package is forked without being edited - copy it across and change  
-> it there - and also how one gets shadowed by accident.  
+> Eine Erweiterung gleichen Namens in einer späteren Wurzel verdeckt die davor. So  
+> wird ein Paket geforkt, ohne es zu bearbeiten (hinüberkopieren und dort  
+> ändern), und so wird eines auch versehentlich verdeckt.  
 >
-> The directory has to exist, and the autoload generator scans every configured  
-> root, so after adding one:  
+> Das Verzeichnis muss existieren, und der Autoload-Generator durchsucht jede konfigurierte  
+> Wurzel; nach dem Hinzufügen einer also:  
 >
 >     php bin/php/ezpgenerateautoloads.php  
 >
-> Nothing else: moving a package between roots is a copy, with no manifest to  
-> edit and no composer dump-autoload to run.  
+> Sonst nichts: Ein Paket zwischen Wurzeln zu verschieben ist eine Kopie, ohne Manifest zum  
+> Bearbeiten und ohne composer dump-autoload.  
 >
-> Code should never build a path out of "extension/" and a name. Use  
-> eZExtension::extensionPath() and eZExtension::expandedPathList(), which  
-> resolve across every root. eZExtension::filterExtensionRootDirectories() is  
-> the last word, for a root that has to be worked out at runtime.  
+> Code sollte nie einen Pfad aus "extension/" und einem Namen zusammensetzen. Verwenden Sie  
+> eZExtension::extensionPath() und eZExtension::expandedPathList(), die  
+> über alle Wurzeln auflösen. eZExtension::filterExtensionRootDirectories() hat  
+> das letzte Wort, für eine Wurzel, die zur Laufzeit ermittelt werden muss.  
 >
-> See doc/eng-us/bc/6.0/AdditionalExtensionDirectories.md  
+> Siehe doc/eng-us/bc/6.0/AdditionalExtensionDirectories.md  
 
 Standard: eine leere Liste.
 
@@ -69,14 +69,14 @@ AdditionalExtensionDirectories[]
 ## ExtensionOrdering
 
 > AdditionalExtensionDirectories\[\]=extension\_src  
-> Use extension reordering to avoid issues because of ActiveExtensions and  
-> ActiveAccessExtensions not being correctly defined  
-> Known issues:  
->   - Breaks clustering settings in siteaccess and extensions support  
->     Only known workaround is to disable this setting and order manually  
->   - Still loads an extension even if dependant extension is not loaded  
->   - Does not fix order issues across the two extensions settings  
->     ( ActiveExtensions and ActiveAccessExtensions )  
+> Umsortieren der Erweiterungen verwenden, um Probleme zu vermeiden, weil ActiveExtensions und  
+> ActiveAccessExtensions nicht korrekt definiert sind  
+> Bekannte Probleme:  
+>   - Zerstört Cluster-Einstellungen in Siteaccess und die Unterstützung von Erweiterungen  
+>     Einzige bekannte Umgehung: diese Einstellung deaktivieren und von Hand sortieren  
+>   - Lädt eine Erweiterung auch dann, wenn eine Erweiterung, von der sie abhängt, nicht geladen ist  
+>   - Behebt keine Reihenfolgeprobleme zwischen den beiden Erweiterungseinstellungen  
+>     ( ActiveExtensions und ActiveAccessExtensions )  
 
 Standard: `enabled`.
 
@@ -90,9 +90,9 @@ ExtensionOrdering=enabled
 
 ## ActiveExtensions
 
-> A list of active extensions, add new ones to activate them  
-> The extension itself will then have it's settings directory read (if any)  
-> and any extra configurability is done automatically.  
+> Eine Liste der aktiven Erweiterungen; fügen Sie neue hinzu, um sie zu aktivieren  
+> Das settings-Verzeichnis der Erweiterung wird dann gelesen (falls vorhanden),  
+> und jede weitere Konfiguration geschieht automatisch.  
 
 Standard: eine Liste mit 1: `xrowmetadata`.
 
@@ -108,8 +108,8 @@ ActiveExtensions[]=xrowmetadata
 
 ## ActiveAccessExtensions
 
-> Same as ActiveExtensions but will be loaded after the siteaccess is chosen.  
-> This allows for activating different extensions on different siteaccesses  
+> Wie ActiveExtensions, wird aber geladen, nachdem der Siteaccess gewählt ist.  
+> Damit lassen sich in verschiedenen Siteaccesses verschiedene Erweiterungen aktivieren  
 
 Standard: eine leere Liste.
 

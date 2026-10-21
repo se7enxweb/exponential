@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Implementation
 
-> Commands (bin/), cronjob parts (cronjobs/) and module views are classes that extend  
-> Exponential\\Runnable\\Command, CronjobPart or ModuleView.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Befehle (bin/), Cronjob-Teile (cronjobs/) und Modulansichten sind Klassen, die  
+> Exponential\\Runnable\\Command, CronjobPart oder ModuleView erweitern.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 >
-> Re-implementation: the class to create instead of a runnable class. It must extend  
-> the class it replaces; an entry naming anything else is ignored.  
+> Neuimplementierung: die Klasse, die statt einer Runnable-Klasse erzeugt wird. Sie muss  
+> die Klasse erweitern, die sie ersetzt; ein Eintrag, der etwas anderes nennt, wird ignoriert.  
 > Implementation\[<runnable class>\]=<subclass>  
-> eg:  
+> z. B.:  
 > Implementation\[Exponential\\View\\Kernel\\Content\\History\]=myHistoryView  
 > Implementation\[Exponential\\Command\\Kernel\\Trashpurge\]=myTrashpurgeCommand  
 

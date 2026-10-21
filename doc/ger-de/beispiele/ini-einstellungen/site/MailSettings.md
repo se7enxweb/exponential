@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[MailSettings]` von `settings/site.ini`, mit 22 Einstellung(en).
 
-> If RedirectAfterPublish=uri, indicates to which URI user will be redirected  
-> after publishing a node.  
-> example : RedirectAfterPublishUri=/content/dashboard  
-> if empty : will be redirected to parent node  
+> Bei RedirectAfterPublish=uri gibt dies an, auf welche URI der Benutzer  
+> nach dem Veröffentlichen eines Knotens weitergeleitet wird.  
+> Beispiel: RedirectAfterPublishUri=/content/dashboard  
+> wenn leer: Weiterleitung zum Elternknoten  
 > RedirectAfterPublishUri=  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -25,9 +25,9 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Transport
 
-> The type of transport for emails, can be either: sendmail, SMTP or file  
-> Window users should probably use SMTP  
-> For debug purposes you can use file for sending mail to a log file  
+> Die Art des Transports für E-Mails, kann sendmail, SMTP oder file sein  
+> Windows-Benutzer sollten wahrscheinlich SMTP verwenden  
+> Zum Debuggen können Sie file verwenden, um Mails in eine Logdatei zu schreiben  
 
 Standard: `sendmail`.
 
@@ -41,7 +41,7 @@ Transport=sendmail
 
 ## TransportAlias
 
-> A list of possible handlers for sending mails, use the setting Transport to specify which one to use  
+> Eine Liste möglicher Handler zum Senden von Mails; mit der Einstellung Transport geben Sie an, welcher verwendet wird  
 
 Standard: ein Hash mit 3: `file=eZFileTransport`, `sendmail=eZSendmailTransport`, `smtp=eZSMTPTransport`.
 
@@ -59,7 +59,7 @@ TransportAlias[smtp]=eZSMTPTransport
 
 ## TransportServer
 
-> Configuration for SMTP  
+> Konfiguration für SMTP  
 
 Standard: leer.
 
@@ -73,7 +73,7 @@ TransportServer=
 
 ## TransportConnectionType
 
-> Connection type in SMTP: <empty>(no encryption)|ssl|sslv2|sslv3|tls  
+> Verbindungstyp bei SMTP: <empty>(keine Verschlüsselung)|ssl|sslv2|sslv3|tls  
 
 Standard: leer.
 
@@ -87,7 +87,7 @@ TransportConnectionType=
 
 ## TransportPort
 
-> Default SMTP port is 25, default Secure SMTP port(SSL,TLS) is 465  
+> Der Standardport für SMTP ist 25, der Standardport für sicheres SMTP (SSL, TLS) 465  
 
 Standard: `25`.
 
@@ -125,8 +125,8 @@ TransportPassword=
 
 ## SenderHost
 
-> The FQDN, used by extended HELO  
-> See part "4.1.1.1  Extended HELLO (EHLO) or HELLO (HELO)" of http://www.faqs.org/rfcs/rfc2821.html  
+> Der FQDN, verwendet vom erweiterten HELO  
+> Siehe Abschnitt "4.1.1.1  Extended HELLO (EHLO) or HELLO (HELO)" von http://www.faqs.org/rfcs/rfc2821.html  
 
 Standard: `localhost`.
 
@@ -152,8 +152,8 @@ AdminEmail=nospam@example.com
 
 ## EmailSender
 
-> The address which will be set as the From header of the e-mail, unless  
-> overridden by the template variable email\_sender.  
+> Die Adresse, die als Header From der E-Mail gesetzt wird, sofern  
+> nicht die Template-Variable email\_sender sie überschreibt.  
 
 Standard: leer.
 
@@ -167,9 +167,9 @@ EmailSender=
 
 ## EmailReplyTo
 
-> The address which will be set as the Reply-To header of the e-mail, unless  
-> overridden by the template variable email\_reply\_to. If not set, the senders  
-> address will be used, either from the template, or the EmailSender setting.  
+> Die Adresse, die als Header Reply-To der E-Mail gesetzt wird, sofern  
+> nicht die Template-Variable email\_reply\_to sie überschreibt. Wenn nicht gesetzt, wird die Adresse  
+> des Absenders verwendet, entweder aus dem Template oder aus der Einstellung EmailSender.  
 
 Standard: leer.
 
@@ -183,10 +183,10 @@ EmailReplyTo=
 
 ## UserAgent
 
-> The User-Agent header of every mail sent through eZMail (sendmail, SMTP and file  
-> transports), e.g. the name of the portal; ASCII only, it is not encoded.  
-> Empty: "Exponential, Version <version>" (sendmail, file) and the default of the  
-> mail library (SMTP), as before. eZMail::setUserAgent() still overrides it per mail.  
+> Der Header User-Agent jeder über eZMail gesendeten Mail (Transporte sendmail, SMTP und  
+> file), z. B. der Name des Portals; nur ASCII, er wird nicht kodiert.  
+> Leer: "Exponential, Version <version>" (sendmail, file) und der Standard der  
+> Mail-Bibliothek (SMTP), wie bisher. eZMail::setUserAgent() überschreibt ihn weiterhin pro Mail.  
 
 Standard: leer.
 
@@ -200,8 +200,8 @@ UserAgent=
 
 ## AllowedCharsets
 
-> Which charset are allowed to send directly, those that do not match  
-> is converted to OutputCharset before being sent.  
+> Welche Zeichensätze direkt gesendet werden dürfen; die, die nicht passen,  
+> werden vor dem Senden in OutputCharset umgewandelt.  
 
 Standard: eine Liste mit 5: `us-ascii`, `utf-8`, `iso-8859-1`, `iso-8859-15`, `cp1252`.
 
@@ -221,7 +221,7 @@ AllowedCharsets[]=cp1252
 
 ## OutputCharset
 
-> Which charset to convert emails to if they are not in correct format  
+> In welchen Zeichensatz E-Mails umgewandelt werden, wenn sie nicht im richtigen Format sind  
 
 Standard: `utf-8`.
 
@@ -235,7 +235,7 @@ OutputCharset=utf-8
 
 ## ContentType
 
-> Content type of mails, for instance text/plain or text/html  
+> Inhaltstyp von Mails, zum Beispiel text/plain oder text/html  
 
 Standard: `text/plain`.
 
@@ -249,12 +249,12 @@ ContentType=text/plain
 
 ## HeaderLineEnding
 
-> The line endings used for headers in mail messages. If you need to use  
-> control characters like LF or CR you need to use it's urlencoded value, for  
-> example %0A for LF and %0D for CR. The default setting is what RFC 2045  
-> requires: CRLF  
-> If it contains auto the system will try to determine the line-ending  
-> based on the current operating system.  
+> Die Zeilenenden der Header in Mailnachrichten. Wenn Sie  
+> Steuerzeichen wie LF oder CR verwenden müssen, verwenden Sie ihren URL-kodierten Wert, zum  
+> Beispiel %0A für LF und %0D für CR. Die Standardeinstellung ist das, was RFC 2045  
+> verlangt: CRLF  
+> Enthält sie auto, versucht das System, das Zeilenende  
+> anhand des aktuellen Betriebssystems zu bestimmen.  
 
 Standard: `auto`.
 
@@ -268,9 +268,9 @@ HeaderLineEnding=auto
 
 ## SendmailOptions
 
-> Set additional sendmail options here.  
-> -f <sender> is default in PHP SafeMode.  
-> Please use a line for every (sub)option. e.g.  
+> Setzen Sie hier zusätzliche Optionen für sendmail.  
+> -f <sender> ist im SafeMode von PHP der Standard.  
+> Bitte verwenden Sie eine Zeile pro (Unter-)Option, z. B.  
 > SendmailOptions\[\]=-r  
 > SendmailOptions\[\]=muchspam@example.com  
 
@@ -287,12 +287,12 @@ SendmailOptions[]
 
 ## SendmailEnvelopeSender
 
-> Whether sendmail is given the sender as envelope sender with -f <sender>.  
-> disabled: no -f. A mail without a sender of its own (no sender address and no  
-> From extra header) gets a From header with EmailSender, else AdminEmail, when one  
-> of them is a valid address ("address" or "Name <address>"). Needed for msmtp with  
-> --read-envelope-from, which refuses -f together with that option and reads the  
-> envelope sender from the From header.  
+> Ob sendmail den Absender mit -f <sender> als Umschlag-Absender erhält.  
+> disabled: kein -f. Eine Mail ohne eigenen Absender (keine Absenderadresse und kein  
+> zusätzlicher Header From) erhält einen Header From mit EmailSender, sonst AdminEmail, wenn eine  
+> davon eine gültige Adresse ist ("address" oder "Name <address>"). Nötig für msmtp mit  
+> --read-envelope-from, das -f zusammen mit dieser Option ablehnt und den  
+> Umschlag-Absender aus dem Header From liest.  
 
 Standard: `enabled`.
 
@@ -306,8 +306,8 @@ SendmailEnvelopeSender=enabled
 
 ## SendmailInsertUndisclosedRecipient
 
-> Allows inserting undisclosed-recipients into the "TO:" of email headers.  
-> As this is not a standard, some MTA might reject it, in that case you can set it to "disabled"  
+> Erlaubt, undisclosed-recipients in das "TO:" der E-Mail-Header einzufügen.  
+> Da dies kein Standard ist, lehnen manche MTAs es ab; dann können Sie es auf "disabled" setzen  
 
 Standard: `enabled`.
 
@@ -321,7 +321,7 @@ SendmailInsertUndisclosedRecipient=enabled
 
 ## DebugSending
 
-> If enabled, all emails will be sent to DebugReceiverEmail instead of to their original recipient(s)  
+> Wenn aktiviert, werden alle E-Mails an DebugReceiverEmail statt an ihre ursprünglichen Empfänger gesendet  
 
 Standard: `disabled`.
 
@@ -335,7 +335,7 @@ DebugSending=disabled
 
 ## DebugReceiverEmail
 
-> Receiver email address to use when DebugSending is enabled  
+> Empfängeradresse, die verwendet wird, wenn DebugSending aktiviert ist  
 
 Standard: leer.
 
@@ -349,8 +349,8 @@ DebugReceiverEmail=
 
 ## ExcludeHeaders
 
-> Headers to exclude from the sent message, case insensitive, only relevant when using SMTP  
-> You might want to add bcc here, if your mail server does not hide bcc recipients from each other  
+> Header, die aus der gesendeten Nachricht entfernt werden, ohne Beachtung der Groß-/Kleinschreibung, nur bei SMTP relevant  
+> Sie können hier bcc hinzufügen, wenn Ihr Mailserver bcc-Empfänger nicht voreinander verbirgt  
 
 Standard: eine leere Liste.
 

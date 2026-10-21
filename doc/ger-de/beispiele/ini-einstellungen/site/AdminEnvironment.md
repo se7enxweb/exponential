@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Level
 
-> The environment badge of the administration (designs admin4 and admin4l): the  
-> name of this installation's environment in the header, on the sign-in page and  
-> before the page title, so a live site is not taken for a test copy.  
-> Set it per environment, for example in the variant files of EXP\_ENV  
-> (settings/override/site.ini.prod.append.php, see config.env.php.example).  
-> The header's cache-blocks are keyed by the badge: a changed setting shows on  
-> the next request (clear the INI cache where EZP\_INI\_FILEMTIME\_CHECK is false).  
+> Die Umgebungsplakette der Administration (Designs admin4 und admin4l): der  
+> Name der Umgebung dieser Installation im Kopf, auf der Anmeldeseite und  
+> vor dem Seitentitel, damit eine Live-Website nicht für eine Testkopie gehalten wird.  
+> Setzen Sie sie pro Umgebung, zum Beispiel in den Variantendateien von EXP\_ENV  
+> (settings/override/site.ini.prod.append.php, siehe config.env.php.example).  
+> Die Cache-Blöcke des Kopfes werden nach der Plakette unterschieden: Eine geänderte Einstellung erscheint bei der  
+> nächsten Anfrage (leeren Sie den INI-Cache, wo EZP\_INI\_FILEMTIME\_CHECK false ist).  
 >
-> development, test, staging or production: the color and the default name.  
-> auto takes the level from EXP\_ENV: dev and development, test, stage and  
-> staging, prod, production and live. Empty (the default): no badge.  
+> development, test, staging oder production: die Farbe und der Standardname.  
+> auto übernimmt die Stufe aus EXP\_ENV: dev und development, test, stage und  
+> staging, prod, production und live. Leer (der Standard): keine Plakette.  
 
 Standard: leer.
 
@@ -43,8 +43,8 @@ Level=
 
 ## Name
 
-> The badge's text; empty takes the level's name (Development, Test, Staging,  
-> Production, translated)  
+> Der Text der Plakette; leer übernimmt den Namen der Stufe (Development, Test, Staging,  
+> Production, übersetzt)  
 
 Standard: leer.
 
@@ -58,9 +58,9 @@ Name=
 
 ## ShortName
 
-> The text where the header is narrow (up to 767px, phones too) with  
-> BadgeDisplay=always or on touch screens; empty takes the level's code (DEV, TEST, STAGE, PROD).  
-> The name is read out.  
+> Der Text, wo der Kopf schmal ist (bis 767px, auch Telefone), mit  
+> BadgeDisplay=always oder auf Touchscreens; leer übernimmt den Code der Stufe (DEV, TEST, STAGE, PROD).  
+> Der Name wird vorgelesen.  
 
 Standard: leer.
 
@@ -74,8 +74,8 @@ ShortName=
 
 ## Release
 
-> Free text after the name, for example a release or build; shown to signed-in  
-> users only, not on the sign-in page  
+> Freier Text nach dem Namen, zum Beispiel ein Release oder Build; nur angemeldeten  
+> Benutzern angezeigt, nicht auf der Anmeldeseite  
 
 Standard: leer.
 
@@ -89,7 +89,7 @@ Release=
 
 ## ShowVersion
 
-> enabled adds the Exponential version after the release (signed-in users only)  
+> enabled fügt nach dem Release die Version von Exponential hinzu (nur für angemeldete Benutzer)  
 
 Standard: `disabled`.
 
@@ -103,8 +103,8 @@ ShowVersion=disabled
 
 ## ShowInTitle
 
-> The name before the page title: "\[PRODUCTION\] Dashboard - Site"; disabled  
-> leaves the title as it is  
+> Der Name vor dem Seitentitel: "\[PRODUCTION\] Dashboard - Site"; disabled  
+> lässt den Titel, wie er ist  
 
 Standard: `enabled`.
 
@@ -118,11 +118,11 @@ ShowInTitle=enabled
 
 ## BadgeDisplay
 
-> hover (the default): the badge shows only while a mouse or trackpad pointer  
-> rests on the logo, or the logo has the keyboard focus (Escape hides it); on  
-> touch screens, which cannot hover, beside the logo as with always. Screen  
-> readers read it with the logo link. always: beside the logo  
-> at all times  
+> hover (der Standard): Die Plakette erscheint nur, solange ein Maus- oder Trackpad-Zeiger  
+> auf dem Logo ruht oder das Logo den Tastaturfokus hat (Escape blendet sie aus); auf  
+> Touchscreens, die kein Hover kennen, neben dem Logo wie bei always. Screenreader  
+> lesen sie mit dem Logo-Link. always: neben dem Logo  
+> jederzeit  
 
 Standard: `hover`.
 

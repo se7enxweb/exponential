@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ProxyServer
 
-> If an user wants to use proxy in linkcheck.php/rssimport.php or downloading site packages in "setup wizard".  
-> If empty proxy will not be used.  
-> Example:  http://<host>:<port>  
+> Wenn ein Benutzer in linkcheck.php/rssimport.php oder beim Herunterladen von Seitenpaketen im „Setup-Assistenten“ einen Proxy verwenden will.  
+> Wenn leer, wird kein Proxy verwendet.  
+> Beispiel:  http://<host>:<port>  
 
 Standard: leer.
 

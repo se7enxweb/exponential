@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Show
 
-> The site menu of the administration (designs admin4 and admin4l): the globe  
-> button in the header opens a list of this installation's siteaccesses with  
-> their addresses. Its first entry opens the site, as the globe did; the  
-> others are grouped into sites and administrations, and the siteaccess in use  
-> is marked. Signed-in users only. The addresses are worked out as  
-> siteaccess\_url() does (MatchOrder, URIMatchType, HostMatchMapItems, SiteURL),  
-> with the scheme, host and port of the request.  
-> Read from the settings of the administration siteaccess.  
+> Das Website-Menü der Administration (Designs admin4 und admin4l): Die Globus-  
+> Schaltfläche im Kopf öffnet eine Liste der Siteaccesses dieser Installation mit  
+> ihren Adressen. Ihr erster Eintrag öffnet die Website, wie es der Globus tat; die  
+> anderen sind in Websites und Administrationen gruppiert, und der verwendete Siteaccess  
+> ist markiert. Nur für angemeldete Benutzer. Die Adressen werden so ermittelt wie  
+> von siteaccess\_url() (MatchOrder, URIMatchType, HostMatchMapItems, SiteURL),  
+> mit Schema, Host und Port der Anfrage.  
+> Aus den Einstellungen des Administrations-Siteaccess gelesen.  
 >
-> enabled or disabled; disabled leaves the globe a plain link to the site  
+> enabled oder disabled; disabled lässt den Globus einen einfachen Link zur Website sein  
 
 Standard: `enabled`.
 
@@ -42,12 +42,12 @@ Show=enabled
 
 ## List
 
-> related: \[SiteAccessSettings\] RelatedSiteAccessList\[\] of this siteaccess (the  
-> siteaccesses sharing its database), or this siteaccess alone where it is  
-> empty; available: AvailableSiteAccessList\[\]. Only siteaccesses of  
-> AvailableSiteAccessList\[\] are listed either way. An installation that serves  
-> several sites sets RelatedSiteAccessList\[\] for each administration to list  
-> its own site's siteaccesses.  
+> related: \[SiteAccessSettings\] RelatedSiteAccessList\[\] dieses Siteaccess (die  
+> Siteaccesses, die seine Datenbank teilen), oder dieser Siteaccess allein, wo sie  
+> leer ist; available: AvailableSiteAccessList\[\]. In beiden Fällen werden nur Siteaccesses aus  
+> AvailableSiteAccessList\[\] aufgeführt. Eine Installation, die  
+> mehrere Websites bedient, setzt RelatedSiteAccessList\[\] für jede Administration, damit sie  
+> die Siteaccesses ihrer eigenen Website auflistet.  
 
 Standard: `related`.
 
@@ -61,8 +61,8 @@ List=related
 
 ## HiddenSiteAccessList
 
-> Siteaccesses left out of the menu. The site the globe opens (FrontSiteAccess,  
-> else DefaultAccess) is always its first entry.  
+> Siteaccesses, die im Menü ausgelassen werden. Die Website, die der Globus öffnet (FrontSiteAccess,  
+> sonst DefaultAccess), ist immer sein erster Eintrag.  
 
 Standard: eine leere Liste.
 
@@ -77,9 +77,9 @@ HiddenSiteAccessList[]
 
 ## AdminSiteAccessList
 
-> The siteaccesses that count as administrations. Empty: those whose  
-> \[DesignSettings\] SiteDesign begins with "admin", or that set a  
-> \[SiteSettings\] FrontSiteAccess.  
+> Die Siteaccesses, die als Administrationen gelten. Leer: die, deren  
+> \[DesignSettings\] SiteDesign mit "admin" beginnt oder die eine  
+> \[SiteSettings\] FrontSiteAccess setzen.  
 
 Standard: eine leere Liste.
 
@@ -94,8 +94,8 @@ AdminSiteAccessList[]
 
 ## ListAdministrations
 
-> disabled: the menu lists sites only; enabled: the administrations too, as a  
-> group of their own  
+> disabled: Das Menü listet nur Websites auf; enabled: auch die Administrationen, als  
+> eigene Gruppe  
 
 Standard: `disabled`.
 

@@ -11,14 +11,14 @@ generated: exp:help:examples
 
 Der Block `[AppendNodeIDFilterSettings]` von `settings/site.ini`, mit 1 Einstellung(en).
 
-> This configuration group is related  
-> to the eZURLAliasFilterAppendNodeID URL filter  
-> This makes it possible to filter on which type of  
-> content the node id will be appended.  
+> Diese Konfigurationsgruppe gehört  
+> zum URL-Filter eZURLAliasFilterAppendNodeID  
+> Damit lässt sich filtern, an welche Art von  
+> Inhalten die Knoten-ID angehängt wird.  
 >
-> For example if you want to append the nodeID  
-> for folder and article content objects you could  
-> use the following configuration  
+> Wenn Sie zum Beispiel die Knoten-ID  
+> für Inhaltsobjekte vom Typ folder und article anhängen wollen, könnten Sie  
+> die folgende Konfiguration verwenden  
 >
 > ApplyOnClass\[\]  
 > ApplyOnClass\[\]=folder  

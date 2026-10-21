@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Module
 
-> Whether the form module is allowed or not  
-> The form is by design insecure so don't enable unless you know  
-> what you are doing.  
+> Ob das Modul form erlaubt ist  
+> Das Formular ist von Grund auf unsicher; aktivieren Sie es nur, wenn Sie wissen,  
+> was Sie tun.  
 
 Standard: `disabled`.
 

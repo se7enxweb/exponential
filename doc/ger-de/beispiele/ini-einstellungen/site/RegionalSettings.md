@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Locale
 
-> The locale for your site  
+> Die Locale Ihrer Website  
 
 Standard: `eng-GB`.
 
@@ -33,7 +33,7 @@ Locale=eng-GB
 
 ## HTTPLocale
 
-> Set this if the http locale in the locale is wrong  
+> Setzen Sie dies, wenn die HTTP-Locale in der Locale falsch ist  
 
 Standard: leer.
 
@@ -47,11 +47,11 @@ HTTPLocale=
 
 ## SystemLocale
 
-> Set this if you want to run the entire PHP system in a given  
-> locale, this means that PHP will be locale aware when dealing  
-> with strings (e.g making characters in a string into lowercase). (C is a  
-> special locale meaning 7-bit ASCII). Examples for this setting include  
-> "german", "de\_DE.ISO-8859-1"; depending on your operating system.  
+> Setzen Sie dies, wenn Sie das ganze PHP-System in einer bestimmten  
+> Locale ausführen wollen; PHP berücksichtigt die Locale dann beim Umgang  
+> mit Zeichenketten (z. B. beim Umwandeln von Zeichen in Kleinbuchstaben). (C ist eine  
+> besondere Locale und bedeutet 7-Bit-ASCII). Beispiele für diese Einstellung sind  
+> "german", "de\_DE.ISO-8859-1"; abhängig von Ihrem Betriebssystem.  
 
 Standard: leer.
 
@@ -65,11 +65,11 @@ SystemLocale=
 
 ## ContentObjectLocale
 
-> The default language for content objects  
-> Note: Changing this can have catastrophic consequences  
->       since there might not be any content objects with  
->       the selected language. Instead the content/translations  
->       page should be used for adding/removing translations.  
+> Die Standardsprache für Inhaltsobjekte  
+> Hinweis: Eine Änderung kann katastrophale Folgen haben,  
+>       da es eventuell keine Inhaltsobjekte in  
+>       der gewählten Sprache gibt. Verwenden Sie stattdessen die Seite content/translations,  
+>       um Übersetzungen hinzuzufügen oder zu entfernen.  
 
 Standard: `eng-US`.
 
@@ -83,10 +83,10 @@ ContentObjectLocale=eng-US
 
 ## ContentObjectFallbackLocale
 
-> The content language used as a last resort, when neither a prioritized  
-> content language nor ContentObjectLocale is set: the setup wizard and command  
-> line scripts create class and attribute names before the site's languages  
-> exist. Empty or missing means eng-US.  
+> Die Inhaltssprache, die als letzte Möglichkeit verwendet wird, wenn weder eine priorisierte  
+> Inhaltssprache noch ContentObjectLocale gesetzt ist: Der Setup-Assistent und Kommando-  
+> zeilenskripte legen Klassen- und Attributnamen an, bevor es die Sprachen der Website  
+> gibt. Leer oder fehlend bedeutet eng-US.  
 
 Standard: `eng-US`.
 
@@ -100,8 +100,8 @@ ContentObjectFallbackLocale=eng-US
 
 ## ShowUntranslatedObjects
 
-> If enabled, ShowUntranslatedObjects will force showing the objects  
-> existing in other languages than those specified in SiteLanguageList  
+> Wenn aktiviert, erzwingt ShowUntranslatedObjects die Anzeige der Objekte,  
+> die in anderen als den in SiteLanguageList angegebenen Sprachen existieren  
 
 Standard: `disabled`.
 
@@ -115,10 +115,10 @@ ShowUntranslatedObjects=disabled
 
 ## SiteLanguageList
 
-> Prioritized list of languages. Only objects existing in these  
-> languages will be shown (unless ShowUntranslatedObjects is enabled).  
-> If an object exists in more languages, that one which is first in  
-> SiteLanguageList will be used to render it.  
+> Priorisierte Liste der Sprachen. Nur Objekte, die in diesen  
+> Sprachen existieren, werden angezeigt (außer ShowUntranslatedObjects ist aktiviert).  
+> Existiert ein Objekt in mehreren Sprachen, wird die zum Rendern verwendet, die in  
+> SiteLanguageList zuerst steht.  
 
 Standard: eine leere Liste.
 
@@ -133,10 +133,10 @@ SiteLanguageList[]
 
 ## ContentXMLCharset
 
-> Controls how xml is stored in content objects.  
-> disabled - Store with utf8  
-> enabled  - Store with current charset  
-> if any other text is entered it is assumed to be a charset and will be used  
+> Steuert, wie XML in Inhaltsobjekten gespeichert wird.  
+> disabled - mit utf8 speichern  
+> enabled  - mit dem aktuellen Zeichensatz speichern  
+> Jeder andere eingegebene Text gilt als Zeichensatz und wird verwendet  
 
 Standard: `enabled`.
 
@@ -150,8 +150,8 @@ ContentXMLCharset=enabled
 
 ## TextTranslation
 
-> Use either disabled to disable all text translation (faster) or enabled.  
-> Text translation is automatically disabled when the Locale is set to eng-GB  
+> Verwenden Sie disabled, um jede Textübersetzung abzuschalten (schneller), oder enabled.  
+> Die Textübersetzung wird automatisch abgeschaltet, wenn die Locale auf eng-GB steht  
 
 Standard: `enabled`.
 
@@ -177,10 +177,10 @@ TranslationCache=enabled
 
 ## SharedTranslationCacheDir
 
-> Translation cache files will be stored in the directory located outside of the  
-> siteaccess VarDir. Empty value disables sharing of translation cache.  
-> Useful if you want to share translation cache between siteaccesses that  
-> only differes by content, db and var directory.  
+> Die Cache-Dateien der Übersetzungen werden in einem Verzeichnis außerhalb des  
+> VarDir des Siteaccess gespeichert. Ein leerer Wert schaltet das Teilen des Übersetzungs-Caches ab.  
+> Nützlich, wenn Sie den Übersetzungs-Cache zwischen Siteaccesses teilen wollen, die sich  
+> nur in Inhalt, Datenbank und var-Verzeichnis unterscheiden.  
 
 Standard: leer.
 
@@ -194,8 +194,8 @@ SharedTranslationCacheDir=
 
 ## TranslationCheckMTime
 
-> Sets if modified time should be checked or not on ts files when checking  
-> if translation cache is valid  
+> Legt fest, ob beim Prüfen der Gültigkeit des Übersetzungs-Caches  
+> die Änderungszeit der ts-Dateien geprüft wird  
 
 Standard: `enabled`.
 
@@ -209,7 +209,7 @@ TranslationCheckMTime=enabled
 
 ## Debug
 
-> Use either enabled to see which locale files are loaded or disabled to supress debug  
+> Verwenden Sie enabled, um zu sehen, welche Locale-Dateien geladen werden, oder disabled, um das Debugging zu unterdrücken  
 
 Standard: `disabled`.
 
@@ -223,9 +223,9 @@ Debug=disabled
 
 ## DevelopmentMode
 
-> By enabling development mode all untranslated texts will be translated  
-> using the bork rules.  
-> See lib/ezi18n/classes/ezborktranslator.php for more information.  
+> Im Entwicklungsmodus werden alle unübersetzten Texte  
+> nach den Bork-Regeln übersetzt.  
+> Mehr dazu in lib/ezi18n/classes/ezborktranslator.php.  
 
 Standard: `disabled`.
 
@@ -264,9 +264,9 @@ TranslationExtensions[]
 
 ## LanguageSwitcherClass
 
-> NOTE: The LanguageSwitcher settings are not frozen, meaning they might still change.  
-> The class which is used in the language switcher module to forward users to  
-> selected translation siteaccesses.  
+> HINWEIS: Die Einstellungen des LanguageSwitcher sind nicht festgeschrieben und können sich noch ändern.  
+> Die Klasse, die im Modul der Sprachumschaltung Benutzer auf die  
+> gewählten Übersetzungs-Siteaccesses weiterleitet.  
 
 Standard: `ezpLanguageSwitcher`.
 

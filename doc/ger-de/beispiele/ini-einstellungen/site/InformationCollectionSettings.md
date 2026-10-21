@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## EmailReceiver
 
-> Which email collected information is sent to  
+> An welche E-Mail-Adresse gesammelte Informationen gesendet werden  
 
 Standard: leer.
 

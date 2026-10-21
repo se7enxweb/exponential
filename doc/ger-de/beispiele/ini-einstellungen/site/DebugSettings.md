@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## DebugOutput
 
-> Master switch for debug, if disabled no debug will be shown  
-> If enabled it's up to the DebugByIP and DebugIPList to decide what to do.  
-> Use either enabled or disabled  
+> Hauptschalter für das Debugging; wenn deaktiviert, wird kein Debugging angezeigt  
+> Wenn aktiviert, entscheiden DebugByIP und DebugIPList, was geschieht.  
+> Verwenden Sie enabled oder disabled  
 
 Standard: `disabled`.
 
@@ -35,16 +35,16 @@ DebugOutput=disabled
 
 ## AlwaysLog
 
-> Controls which debug types to always log.  
-> This ensures logging even if debug output is off  
+> Steuert, welche Debug-Typen immer protokolliert werden.  
+> Das stellt die Protokollierung sicher, auch wenn die Debug-Ausgabe aus ist  
 >
-> Available debug types are:  
-> error - For major errors, very important to log  
-> warning - Smaller errors, important for development but not for live site  
-> debug - Temporary debug, usually only important to see in the web browser  
-> notice - General notices, enabling this can fill up the log files quickly  
-> strict - Strict notices, suggests changes to your code which will ensure the best interoperability and forward compatibility  
-> deprecated - PHP deprecations (with DeprecatedLog=enabled), each distinct message once per request  
+> Verfügbare Debug-Typen sind:  
+> error - für schwere Fehler, sehr wichtig zu protokollieren  
+> warning - kleinere Fehler, wichtig für die Entwicklung, aber nicht für eine Live-Website  
+> debug - vorübergehendes Debugging, meist nur im Webbrowser wichtig  
+> notice - allgemeine Hinweise; das Aktivieren kann die Logdateien schnell füllen  
+> strict - strikte Hinweise, schlagen Änderungen an Ihrem Code für beste Interoperabilität und Zukunftssicherheit vor  
+> deprecated - Veraltungen von PHP (mit DeprecatedLog=enabled), jede eindeutige Meldung einmal pro Anfrage  
 
 Standard: eine Liste mit 1: `error`.
 
@@ -60,11 +60,11 @@ AlwaysLog[]=error
 
 ## DeprecatedLog
 
-> PHP deprecations (E\_DEPRECATED, E\_USER\_DEPRECATED, eZDebug::writeDeprecated()).  
-> enabled: written to var/log/deprecated.log, each distinct message once per  
-> request, and only counted in the debug output (the debug bar's summary and  
-> the warning count); none is kept in memory or listed with the messages.  
-> disabled: warnings in warning.log and the debug output, as before.  
+> Veraltungen von PHP (E\_DEPRECATED, E\_USER\_DEPRECATED, eZDebug::writeDeprecated()).  
+> enabled: in var/log/deprecated.log geschrieben, jede eindeutige Meldung einmal pro  
+> Anfrage, und in der Debug-Ausgabe nur gezählt (die Zusammenfassung der Debug-Leiste und  
+> die Zahl der Warnungen); keine wird im Speicher gehalten oder mit den Meldungen aufgeführt.  
+> disabled: Warnungen in warning.log und der Debug-Ausgabe, wie bisher.  
 
 Standard: `enabled`.
 
@@ -78,9 +78,9 @@ DeprecatedLog=enabled
 
 ## ScriptDebugOutput
 
-> Debug switch for scripts, will only take place if DebugOutput is set to enabled  
-> By default it is off to not give debug for scripts.  
-> Use either enabled or disabled  
+> Debug-Schalter für Skripte, wirkt nur, wenn DebugOutput auf enabled steht  
+> Standardmäßig aus, um für Skripte kein Debugging auszugeben.  
+> Verwenden Sie enabled oder disabled  
 
 Standard: `disabled`.
 
@@ -94,9 +94,9 @@ ScriptDebugOutput=disabled
 
 ## DebugByIP
 
-> Whether debug is set per IP address. If set to enabled it will user  
-> DebugIPList for valid ips otherwise all ips get debug.  
-> Use either enabled or disabled  
+> Ob das Debugging pro IP-Adresse gesetzt wird. Wenn enabled, verwendet es  
+> DebugIPList für gültige IPs, sonst erhalten alle IPs Debugging.  
+> Verwenden Sie enabled oder disabled  
 
 Standard: `disabled`.
 
@@ -110,7 +110,7 @@ DebugByIP=disabled
 
 ## DebugIPList
 
-> A array with IP addresses or networks which will get debug information  
+> Ein Array mit IP-Adressen oder Netzen, die Debug-Informationen erhalten  
 
 Standard: eine leere Liste.
 
@@ -125,13 +125,13 @@ DebugIPList[]
 
 ## DebugByUser
 
-> Examples  
+> Beispiele  
 > DebugIPList\[\]=1.2.3.4  
 > DebugIPList\[\]=192.0.0.42  
 > DebugIPList\[\]=192.0.0.0/27  
-> Whether debug is set per UserID. If set to enabled only users with  
-> IDs (in DebugUserIDList) can get debug.  
-> Use either enabled or disabled  
+> Ob das Debugging pro Benutzer-ID gesetzt wird. Wenn enabled, erhalten nur Benutzer  
+> mit IDs (in DebugUserIDList) Debugging.  
+> Verwenden Sie enabled oder disabled  
 
 Standard: `disabled`.
 
@@ -145,7 +145,7 @@ DebugByUser=disabled
 
 ## DebugUserIDList
 
-> An array with UserIDs which will get debug information  
+> Ein Array mit Benutzer-IDs, die Debug-Informationen erhalten  
 
 Standard: eine leere Liste.
 
@@ -160,15 +160,15 @@ DebugUserIDList[]
 
 ## Debug
 
-> Examples  
+> Beispiele  
 > DebugUserIDList\[\]=14  
-> Controls how debug is displayed, inline means that the debug is displayed in  
-> page itself while popup will create a new popup window with the debug.  
-> Popup window might not work in all browsers.  
-> Use either disabled, inline or popup  
-> If you use popup you must make sure that a rewrite rules exists for .html files  
-> or that your site is running in non-virtual host mode. Also some browsers  
-> have problems with this feature.  
+> Steuert, wie das Debugging angezeigt wird: inline bedeutet, dass das Debugging  
+> in der Seite selbst angezeigt wird, popup öffnet ein neues Popup-Fenster mit dem Debugging.  
+> Das Popup-Fenster funktioniert eventuell nicht in allen Browsern.  
+> Verwenden Sie disabled, inline oder popup  
+> Wenn Sie popup verwenden, muss es eine Rewrite-Regel für .html-Dateien geben,  
+> oder Ihre Website muss im Modus ohne virtuellen Host laufen. Außerdem haben manche Browser  
+> Probleme mit dieser Funktion.  
 
 Standard: `inline`.
 
@@ -182,9 +182,9 @@ Debug=inline
 
 ## DebugRedirection
 
-> Controls if redirects should be debuggable, set to enable to get a redirect  
-> page with debug info.  
-> This is useful for development while production sites should have it off  
+> Steuert, ob Weiterleitungen debuggbar sein sollen; auf enable setzen, um eine Weiterleitungs-  
+> seite mit Debug-Informationen zu erhalten.  
+> Nützlich für die Entwicklung; Produktivsysteme sollten es aus haben  
 
 Standard: `disabled`.
 
@@ -198,8 +198,8 @@ DebugRedirection=disabled
 
 ## DisplayDebugWarnings
 
-> Whether debug warnings/errors should be displayed on the page or not.  
-> If not they will appear in debug log only.  
+> Ob Debug-Warnungen/-Fehler auf der Seite angezeigt werden.  
+> Wenn nicht, erscheinen sie nur im Debug-Log.  
 
 Standard: `disabled`.
 
@@ -213,7 +213,7 @@ DisplayDebugWarnings=disabled
 
 ## DebugLogOnly
 
-> Whether to skip showing debug strings in the debug output.  
+> Ob das Anzeigen von Debug-Zeichenketten in der Debug-Ausgabe übersprungen wird.  
 
 Standard: `disabled`.
 
@@ -227,7 +227,7 @@ DebugLogOnly=disabled
 
 ## DebugToolbar
 
-> Developer toolbar with clear cache and quick settings features  
+> Entwickler-Werkzeugleiste mit Funktionen zum Leeren des Caches und für Schnelleinstellungen  
 
 Standard: `enabled`.
 
@@ -241,7 +241,7 @@ DebugToolbar=enabled
 
 ## DisplayIncludedFiles
 
-> Display list of php included files used to render the current page  
+> Liste der eingebundenen PHP-Dateien anzeigen, die zum Rendern der aktuellen Seite verwendet wurden  
 
 Standard: `disabled`.
 
@@ -255,8 +255,8 @@ DisplayIncludedFiles=disabled
 
 ## QuickSettingsList
 
-> Quick settings list for the developer toolbar  
-> You can use any enabled/disabled setting  
+> Liste der Schnelleinstellungen für die Entwickler-Werkzeugleiste  
+> Sie können jede Einstellung mit enabled/disabled verwenden  
 
 Standard: eine Liste mit 6: `DebugSettings;DebugOutput;site.ini;Debug output`, `DebugSettings;DebugRedirection;site.ini;Debug redirection`, `TemplateSettings;Debug;site.ini;Template debug`, `TemplateSettings;ShowXHTMLCode;site.ini;Inline template debug`, `TemplateSettings;ShowUsedTemplates;site.ini;List of used templates`, `DatabaseSettings;SQLOutput;site.ini;SQL debug output`.
 
@@ -277,14 +277,14 @@ QuickSettingsList[]=DatabaseSettings;SQLOutput;site.ini;SQL debug output
 
 ## UsedTemplateEditUrl
 
-> The link of each template's "Edit" icon in the debug output's list of used  
-> templates (TemplateSettings ShowUsedTemplates), as a sprintf() format:  
->  %1$s the address of visual/templateedit in the current siteaccess followed  
->       by the template file, e.g. /visual/templateedit/design/standard/templates/page.tpl  
->  %2$s the current siteaccess  
->  %3$s the template file, for example design/standard/templates/page.tpl  
-> Empty (the default): %1$s/(siteAccess)/%2$s, the link the list always had.  
-> Example, the editor of the admin siteaccess from a public siteaccess:  
+> Der Link des Symbols „Bearbeiten“ jedes Templates in der Liste der verwendeten  
+> Templates der Debug-Ausgabe (TemplateSettings ShowUsedTemplates), als sprintf()-Format:  
+>  %1$s die Adresse von visual/templateedit im aktuellen Siteaccess, gefolgt  
+>       von der Template-Datei, z. B. /visual/templateedit/design/standard/templates/page.tpl  
+>  %2$s der aktuelle Siteaccess  
+>  %3$s die Template-Datei, zum Beispiel design/standard/templates/page.tpl  
+> Leer (der Standard): %1$s/(siteAccess)/%2$s, der Link, den die Liste immer hatte.  
+> Beispiel, der Editor des Administrations-Siteaccess aus einem öffentlichen Siteaccess:  
 > UsedTemplateEditUrl=/admin/visual/templateedit/%3$s/(siteAccess)/%2$s  
 
 Standard: leer.

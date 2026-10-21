@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Listeners
 
-> (This is private api and might change in future versions)  
-> List of global event listeners/filters in the form:  
+> (Dies ist eine private API und kann sich in künftigen Versionen ändern)  
+> Liste globaler Event-Listener/-Filter in der Form:  
 > Listeners\[\]=<event>@<callback>  
-> eg:  
+> z. B.:  
 > Listeners\[\]=request/input@ezxFormHandler::input  
 
 Standard: eine leere Liste.

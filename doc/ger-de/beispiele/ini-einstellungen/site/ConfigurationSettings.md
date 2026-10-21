@@ -19,18 +19,18 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ManagedByDeployment
 
-> enabled: the configuration of this siteaccess is managed by the deployment  
-> (version control) and the admin interface does not change it on the server.  
-> In a web request the views that write settings, templates, generated code or  
-> packages (settings/edit, toolbar and menu editors, template editor, setup  
-> wizards and code generators, package upload/install/uninstall/create/export;  
-> the list is expManagedConfiguration::LOCKED\_VIEWS) answer like a view switched  
-> off in \[SiteAccessRules\] and are hidden from the menus, and neither  
-> eZINI::save() nor expIniEditor::save() writes a settings file. This holds  
-> for PHP-FPM, Apache and the application servers that run PHP on the command  
-> line (Velocity, the built-in server). Read-only views stay available. Command  
-> line scripts are not affected. Set it in a versioned settings file, never  
-> from the admin. See doc/eng-us/features/6.0/managed-by-deployment.md.  
+> enabled: Die Konfiguration dieses Siteaccess wird vom Deployment verwaltet  
+> (Versionskontrolle), und die Administrationsoberfläche ändert sie auf dem Server nicht.  
+> In einer Web-Anfrage antworten die Ansichten, die Einstellungen, Templates, erzeugten Code oder  
+> Pakete schreiben (settings/edit, Editoren für Werkzeugleisten und Menüs, Template-Editor, Setup-  
+> Assistenten und Code-Generatoren, Paket hochladen/installieren/deinstallieren/erstellen/exportieren;  
+> die Liste ist expManagedConfiguration::LOCKED\_VIEWS), wie eine in \[SiteAccessRules\] abgeschaltete  
+> Ansicht und sind in den Menüs ausgeblendet, und weder  
+> eZINI::save() noch expIniEditor::save() schreibt eine Einstellungsdatei. Das gilt  
+> für PHP-FPM, Apache und die Anwendungsserver, die PHP auf der Kommando-  
+> zeile ausführen (Velocity, der eingebaute Server). Nur lesende Ansichten bleiben verfügbar. Kommando-  
+> zeilenskripte sind nicht betroffen. Setzen Sie es in einer versionierten Einstellungsdatei, nie  
+> aus der Administration. Siehe doc/eng-us/features/6.0/managed-by-deployment.md.  
 
 Standard: `disabled`.
 

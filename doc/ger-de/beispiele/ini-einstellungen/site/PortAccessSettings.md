@@ -20,8 +20,8 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 ## 1337
 
 > MatchOrder : port  
-> Add entries here if you have port in MatchOrder  
-> Each entry consists of the port=accessname  
+> Fügen Sie hier Einträge hinzu, wenn Sie port in MatchOrder haben  
+> Jeder Eintrag besteht aus port=accessname  
 
 Standard: `user`.
 

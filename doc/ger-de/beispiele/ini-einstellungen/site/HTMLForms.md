@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Secret
 
-> # Settings dealing with HTML forms and security aspects of it.  
-> Setting to specify a secret for the csrf protection, it  
-> is highly recommended that you specify this pr project.  
+> # Einstellungen zu HTML-Formularen und ihren Sicherheitsaspekten.  
+> Einstellung für ein Geheimnis des CSRF-Schutzes; es wird  
+> dringend empfohlen, es pro Projekt anzugeben.  
 
 Standard: `ThisTokenIsNotSoSecretChangeIt`.
 
@@ -35,10 +35,10 @@ Secret=ThisTokenIsNotSoSecretChangeIt
 
 ## RefusalLogCollapseSeconds
 
-> A POST without its form token, or with a wrong one, is answered with a 403  
-> and one line in var/log/warning.log. The same refusal again (same check,  
-> siteaccess, path and client) within this many seconds is counted instead of  
-> written; the next line for it gives the count. 0 writes every one.  
+> Ein POST ohne sein Formular-Token oder mit einem falschen wird mit 403  
+> und einer Zeile in var/log/warning.log beantwortet. Dieselbe Ablehnung erneut (gleiche Prüfung,  
+> Siteaccess, Pfad und Client) innerhalb so vieler Sekunden wird gezählt statt  
+> geschrieben; die nächste Zeile dazu nennt die Zahl. 0 schreibt jede.  
 
 Standard: `60`.
 

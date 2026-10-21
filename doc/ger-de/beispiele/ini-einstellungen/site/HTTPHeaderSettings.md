@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## CustomHeader
 
-> Enable/disable custom HTTP header data.  
+> Eigene HTTP-Header-Daten aktivieren/deaktivieren.  
 
 Standard: `disabled`.
 
@@ -33,7 +33,7 @@ CustomHeader=disabled
 
 ## OnlyForAnonymous
 
-> Only apply custom headers for anonymous users  
+> Eigene Header nur für anonyme Benutzer anwenden  
 
 Standard: `disabled`.
 
@@ -47,8 +47,8 @@ OnlyForAnonymous=disabled
 
 ## OnlyForContent
 
-> Only apply the fallback root \[/\] custom headers for the content/view module  
-> If disabled, custom headers for the root path will be applied to all modules and their views  
+> Die eigenen Ausweich-Header der Wurzel \[/\] nur für das Modul content/view anwenden  
+> Wenn deaktiviert, werden die eigenen Header des Wurzelpfads auf alle Module und ihre Ansichten angewendet  
 
 Standard: `enabled`.
 
@@ -62,7 +62,7 @@ OnlyForContent=enabled
 
 ## HeaderList
 
-> Header list. Contains all HTTP which should override standard ones.  
+> Header-Liste. Enthält alle HTTP-Header, die die Standard-Header überschreiben sollen.  
 
 Standard: eine Liste mit 3: `Cache-Control`, `Pragma`, `Expires`.
 
@@ -80,17 +80,17 @@ HeaderList[]=Expires
 
 ## Cache-Control
 
-> Default Cache-Control header  
-> HTTP Headers are specified using the following format :  
+> Standard-Header Cache-Control  
+> HTTP-Header werden in folgendem Format angegeben:  
 > <HTTP header>\[<Exponential path|module{/view}>\]=<value>{;<depth>{;<level>}}  
-> Note: to use a semicolon in the value, you need to escape it with a backslash.  
+> Hinweis: Um ein Semikolon im Wert zu verwenden, maskieren Sie es mit einem Backslash.  
 >
-> Example :  
+> Beispiel:  
 > # Set Pragma HTTP header to no-cache for whole site, except /news, and 2 levels below news.  
 > Pragma\[\]  
 > Pragma\[/\]=no-cache;2  
 > Pragma\[/news\]=;2;0  
-> Cache-Control values are set directly  
+> Werte von Cache-Control werden direkt gesetzt  
 
 Standard: ein Hash mit 1: `/=no-cache, must-revalidate`.
 
@@ -106,7 +106,7 @@ Cache-Control[/]=no-cache, must-revalidate
 
 ## Pragma
 
-> Pragma values are set directly  
+> Werte von Pragma werden direkt gesetzt  
 
 Standard: ein Hash mit 1: `/=no-cache`.
 
@@ -122,8 +122,8 @@ Pragma[/]=no-cache
 
 ## Expires
 
-> Expires specifies time offset compared to current time  
-> Default expired 2 hours ago ( no caching )  
+> Expires gibt einen Zeitversatz zur aktuellen Zeit an  
+> Standard ist vor 2 Stunden abgelaufen (kein Caching)  
 
 Standard: ein Hash mit 1: `/=-7200`.
 
@@ -139,11 +139,11 @@ Expires[/]=-7200
 
 ## ClientIpByCustomHTTPHeader
 
-> Use a custom HTTP header to get the client IP  
-> false is the default value  
-> The header is read only for a request from one of the TrustedProxies below,  
-> and from the right: trusted proxies are skipped and the first other address  
-> is the client. Entries further left are what the client sent and are ignored.  
+> Einen eigenen HTTP-Header verwenden, um die IP des Clients zu ermitteln  
+> false ist der Standardwert  
+> Der Header wird nur für eine Anfrage von einem der TrustedProxies unten gelesen,  
+> und von rechts: Vertrauenswürdige Proxys werden übersprungen, und die erste andere Adresse  
+> ist der Client. Einträge weiter links sind das, was der Client gesendet hat, und werden ignoriert.  
 
 Standard: `false`.
 
@@ -157,22 +157,22 @@ ClientIpByCustomHTTPHeader=false
 
 ## TrustedProxies
 
-> Useful example when client get connected via (reverse-)proxy  
+> Nützliches Beispiel, wenn sich Clients über einen (Reverse-)Proxy verbinden  
 > ClientIpByCustomHTTPHeader=X-Forwarded-For  
-> The reverse proxies and load balancers in front of this site whose forwarded  
-> headers can be believed: X-Forwarded-For (with ClientIpByCustomHTTPHeader),  
-> X-Forwarded-Proto, X-Forwarded-Port, X-Forwarded-Server and X-Forwarded-Host.  
-> They are request headers any visitor can send, so they count only when the  
-> connection comes from one of these addresses (REMOTE\_ADDR). Addresses and  
-> address/prefix ranges, IPv4 and IPv6, e.g.  
+> Die Reverse-Proxys und Lastverteiler vor dieser Website, deren weitergeleiteten  
+> Headern man glauben kann: X-Forwarded-For (mit ClientIpByCustomHTTPHeader),  
+> X-Forwarded-Proto, X-Forwarded-Port, X-Forwarded-Server und X-Forwarded-Host.  
+> Es sind Anfrage-Header, die jeder Besucher senden kann, sie zählen also nur, wenn die  
+> Verbindung von einer dieser Adressen kommt (REMOTE\_ADDR). Adressen und  
+> Adress-/Präfixbereiche, IPv4 und IPv6, z. B.  
 >  TrustedProxies\[\]=10.0.0.0/8  
 >  TrustedProxies\[\]=192.0.2.10  
 >  TrustedProxies\[\]=2001:db8::/32  
-> The default trusts a proxy on this machine only. A trusted proxy must set  
-> these headers itself, not pass on what the visitor sent.  
-> An override that starts with "TrustedProxies\[\]" alone replaces the list;  
-> leave it empty to trust no proxy at all.  
-> See doc/eng-us/bc/6.0/trusted-proxies.md.  
+> Der Standard vertraut nur einem Proxy auf diesem Rechner. Ein vertrauenswürdiger Proxy muss  
+> diese Header selbst setzen, nicht weitergeben, was der Besucher gesendet hat.  
+> Ein Override, das mit "TrustedProxies\[\]" allein beginnt, ersetzt die Liste;  
+> lassen Sie sie leer, um gar keinem Proxy zu vertrauen.  
+> Siehe doc/eng-us/bc/6.0/trusted-proxies.md.  
 
 Standard: eine Liste mit 2: `127.0.0.1`, `::1`.
 
@@ -189,14 +189,14 @@ TrustedProxies[]=::1
 
 ## SecurityHeaders
 
-> Security headers sent with every page, SecurityHeaders\[<header>\]=<value>.  
-> Set a value empty in an override to drop that header. HeaderList above  
-> still overrides these per path.  
->  - frame-ancestors / X-Frame-Options: pages may only be framed by the  
->    same site (clickjacking); allow a trusted editor host explicitly, e.g.  
+> Sicherheits-Header, die mit jeder Seite gesendet werden, SecurityHeaders\[<header>\]=<value>.  
+> Setzen Sie einen Wert in einem Override leer, um diesen Header wegzulassen. HeaderList oben  
+> überschreibt diese weiterhin pro Pfad.  
+>  - frame-ancestors / X-Frame-Options: Seiten dürfen nur von derselben Website  
+>    eingerahmt werden (Clickjacking); erlauben Sie einen vertrauenswürdigen Editor-Host ausdrücklich, z. B.  
 >    SecurityHeaders\[Content-Security-Policy\]=frame-ancestors 'self' https://edit.example.com  
->  - Strict-Transport-Security is only sent over HTTPS and is off by  
->    default: enable it once the whole site is HTTPS-only, e.g.  
+>  - Strict-Transport-Security wird nur über HTTPS gesendet und ist standardmäßig  
+>    aus: Aktivieren Sie es, sobald die ganze Website nur noch HTTPS verwendet, z. B.  
 >    SecurityHeaders\[Strict-Transport-Security\]=max-age=31536000  
 
 Standard: ein Hash mit 6: `X-Content-Type-Options=nosniff`, `X-Frame-Options=SAMEORIGIN`, `Content-Security-Policy=frame-ancestors 'self'`, `Referrer-Policy=strict-origin-when-cross-origin`, `Permissions-Policy=camera=(), microphone=(), payment=(), usb=()`, `Strict-Transport-Security=`.

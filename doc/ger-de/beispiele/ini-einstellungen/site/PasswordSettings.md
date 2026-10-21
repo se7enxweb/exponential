@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## RequireLowercase
 
-> The rules a new password must meet (user/password, registration, the user account in  
-> content/edit, bin/php/resetuserpassword.php), besides the length  
-> (\[UserSettings\] MinPasswordLength), and what happens after a change.  
-> Every rule is off by default: a site keeps the rules it had.  
-> Guide: doc/eng-us/features/6.0/modern-password-change.md  
+> Die Regeln, die ein neues Passwort erfüllen muss (user/password, Registrierung, das Benutzerkonto in  
+> content/edit, bin/php/resetuserpassword.php), neben der Länge  
+> (\[UserSettings\] MinPasswordLength), und was nach einer Änderung geschieht.  
+> Jede Regel ist standardmäßig aus: Eine Website behält die Regeln, die sie hatte.  
+> Anleitung: doc/eng-us/features/6.0/modern-password-change.md  
 >
-> At least one lowercase letter (any script, not only a-z)  
+> Mindestens ein Kleinbuchstabe (jede Schrift, nicht nur a-z)  
 
 Standard: `disabled`.
 
@@ -39,7 +39,7 @@ RequireLowercase=disabled
 
 ## RequireUppercase
 
-> At least one uppercase letter  
+> Mindestens ein Großbuchstabe  
 
 Standard: `disabled`.
 
@@ -53,7 +53,7 @@ RequireUppercase=disabled
 
 ## RequireDigit
 
-> At least one digit  
+> Mindestens eine Ziffer  
 
 Standard: `disabled`.
 
@@ -67,7 +67,7 @@ RequireDigit=disabled
 
 ## RequireSymbol
 
-> At least one character that is neither a letter nor a digit (a space counts)  
+> Mindestens ein Zeichen, das weder Buchstabe noch Ziffer ist (ein Leerzeichen zählt)  
 
 Standard: `disabled`.
 
@@ -81,7 +81,7 @@ RequireSymbol=disabled
 
 ## MinCharacterClasses
 
-> At least this many of the four kinds above (0 to 4; 0 = no such rule)  
+> Mindestens so viele der vier Arten oben (0 bis 4; 0 = keine solche Regel)  
 
 Standard: `0`.
 
@@ -95,7 +95,7 @@ MinCharacterClasses=0
 
 ## ForbidLogin
 
-> The new password must not contain the user's login name (logins of 3 or more characters)  
+> Das neue Passwort darf den Anmeldenamen des Benutzers nicht enthalten (Anmeldenamen ab 3 Zeichen)  
 
 Standard: `disabled`.
 
@@ -109,7 +109,7 @@ ForbidLogin=disabled
 
 ## ForbidCurrentPassword
 
-> The new password must differ from the current one  
+> Das neue Passwort muss sich vom aktuellen unterscheiden  
 
 Standard: `disabled`.
 
@@ -123,12 +123,12 @@ ForbidCurrentPassword=disabled
 
 ## EndOtherSessions
 
-> After a password change: the user's other sessions are signed out on their next  
-> request (a sign-in keeps a stamp of the password in the session, checked by  
-> eZUser::currentUser()); this one stays signed in, with a new session id. The database  
-> session handler also deletes them at once. Sessions from before the upgrade (no stamp)  
-> and accounts without a password of their own (LDAP, SSO) are not checked.  
-> disabled: no stamp, no check, other sessions stay.  
+> Nach einer Passwortänderung: Die anderen Sitzungen des Benutzers werden bei ihrer nächsten  
+> Anfrage abgemeldet (eine Anmeldung behält einen Stempel des Passworts in der Sitzung, geprüft von  
+> eZUser::currentUser()); diese bleibt angemeldet, mit einer neuen Sitzungs-ID. Der Sitzungs-Handler  
+> der Datenbank löscht sie außerdem sofort. Sitzungen von vor dem Upgrade (kein Stempel)  
+> und Konten ohne eigenes Passwort (LDAP, SSO) werden nicht geprüft.  
+> disabled: kein Stempel, keine Prüfung, andere Sitzungen bleiben.  
 
 Standard: `enabled`.
 
@@ -142,9 +142,9 @@ EndOtherSessions=enabled
 
 ## ChangeNotificationMail
 
-> After a change: mail "your password was changed" to the user (mail category  
-> security, essential; template design:user/password\_changed\_mail.tpl). The mail never  
-> contains the password.  
+> Nach einer Änderung: die Mail „Ihr Passwort wurde geändert“ an den Benutzer (Mailkategorie  
+> security, essential; Template design:user/password\_changed\_mail.tpl). Die Mail enthält nie  
+> das Passwort.  
 
 Standard: `enabled`.
 
@@ -158,8 +158,8 @@ ChangeNotificationMail=enabled
 
 ## StrengthMeter
 
-> For the page's script: show the strength meter, offer "Generate a strong password"  
-> (its length is \[UserSettings\] GeneratePasswordLength, at least 12)  
+> Für das Skript der Seite: die Stärkeanzeige zeigen, „Starkes Passwort erzeugen“ anbieten  
+> (seine Länge ist \[UserSettings\] GeneratePasswordLength, mindestens 12)  
 
 Standard: `enabled`.
 

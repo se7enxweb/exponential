@@ -31,8 +31,8 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## StandardDesign
 
-> The standard design, is used as fallback design  
-> if the element is not in the sitedesign  
+> Das Standard-Design, verwendet als Ausweich-Design,  
+> wenn das Element nicht im Website-Design ist  
 
 Standard: `standard`.
 
@@ -46,7 +46,7 @@ StandardDesign=standard
 
 ## SiteDesign
 
-> The design of the site  
+> Das Design der Website  
 
 Standard: `admin`.
 
@@ -60,10 +60,10 @@ SiteDesign=admin
 
 ## AdditionalSiteDesignList
 
-> AdditionalSiteDesignArray contains an array  
-> of sitedesigns. These sitedesigns will be used  
-> if the design was not found in the main  
-> sitedesign. StandardDesign is the fallback design.  
+> AdditionalSiteDesignArray enthält ein Array  
+> von Website-Designs. Diese Designs werden verwendet,  
+> wenn das Design im Haupt-Website-Design  
+> nicht gefunden wurde. StandardDesign ist das Ausweich-Design.  
 
 Standard: eine leere Liste.
 
@@ -78,7 +78,7 @@ AdditionalSiteDesignList[]
 
 ## DesignLocationCache
 
-> Whether to cache location of design directories  
+> Ob der Ort der Design-Verzeichnisse gecacht wird  
 
 Standard: `disabled`.
 

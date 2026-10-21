@@ -25,8 +25,8 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## SurplusNode
 
-> Node where all new related objects are default placed  
-> OBSOLETE: See content.ini for more advanced settings  
+> Knoten, unter dem alle neuen verknüpften Objekte standardmäßig abgelegt werden  
+> VERALTET: Erweiterte Einstellungen stehen in content.ini  
 
 Standard: `3`.
 
@@ -40,7 +40,7 @@ SurplusNode=3
 
 ## CacheDir
 
-> Where to place view cache files, it's a subdir of the global cache dir.  
+> Wo die Dateien des View-Caches abgelegt werden; ein Unterverzeichnis des globalen Cache-Verzeichnisses.  
 
 Standard: `content`.
 
@@ -54,7 +54,7 @@ CacheDir=content
 
 ## ViewCaching
 
-> Whether to use view caching or not  
+> Ob der View-Cache verwendet wird  
 
 Standard: `enabled`.
 
@@ -68,7 +68,7 @@ ViewCaching=enabled
 
 ## CachedViewModes
 
-> A list of viewmodes which will be cached  
+> Eine Liste der Ansichtsmodi, die gecacht werden  
 
 Standard: `full;sitemap;pdf`.
 
@@ -82,20 +82,20 @@ CachedViewModes=full;sitemap;pdf
 
 ## ViewCacheTweaks
 
-> View cache tweaks for cache strategy on specific node id's  
+> Anpassungen des View-Caches für die Cache-Strategie bestimmter Knoten-IDs  
 > ViewCacheTweaks\[<node\_id>\]=<setting>\[;<setting2>\]  
-> currently supported settings:  
-> disabled: Same as setting cache\_ttl=0 in template, just a bit more efficient by knowing about it in advance  
-> pr\_user: cache page pr user, more efficient then disabling view cache and using cache-blocks  
-> protocol: builds different cache based on the request protocol (http vs https)  
-> ignore\_discountlist do not include users shop discountlist in cache hash  
-> ignore\_userroles do not include users roles in cache hash  
-> ignore\_userlimitedlist do not include users limted policy assignement list in cache hash  
-> ignore\_viewparameters do not include view parameters in cache hash  
-> ignore\_userpreferences do not include users preferencest in cache hash  
-> ignore\_siteaccess\_name do not include siteaccess name in cache path, use default siteaccess instead  
-> ignore\_siteaccess\_type do not include siteaccess type in cache hash  
-> Note: you can also set 'global' as <node\_id> to set tweaks globally for all tweaks but 'disabled' as you have other settings for that  
+> derzeit unterstützte Einstellungen:  
+> disabled: wie cache\_ttl=0 im Template, nur etwas effizienter, weil es vorab bekannt ist  
+> pr\_user: Seite pro Benutzer cachen, effizienter, als den View-Cache abzuschalten und Cache-Blöcke zu verwenden  
+> protocol: baut je nach Protokoll der Anfrage (http oder https) einen anderen Cache  
+> ignore\_discountlist die Rabattliste des Shops des Benutzers nicht in den Cache-Hash aufnehmen  
+> ignore\_userroles die Rollen des Benutzers nicht in den Cache-Hash aufnehmen  
+> ignore\_userlimitedlist die Liste eingeschränkter Richtlinienzuweisungen des Benutzers nicht in den Cache-Hash aufnehmen  
+> ignore\_viewparameters die View-Parameter nicht in den Cache-Hash aufnehmen  
+> ignore\_userpreferences die Benutzereinstellungen nicht in den Cache-Hash aufnehmen  
+> ignore\_siteaccess\_name den Namen des Siteaccess nicht in den Cache-Pfad aufnehmen, stattdessen den Standard-Siteaccess verwenden  
+> ignore\_siteaccess\_type den Typ des Siteaccess nicht in den Cache-Hash aufnehmen  
+> Hinweis: Sie können als <node\_id> auch 'global' setzen, um Anpassungen global für alle zu setzen, außer 'disabled', wofür es andere Einstellungen gibt  
 
 Standard: eine leere Liste.
 
@@ -110,9 +110,9 @@ ViewCacheTweaks[]
 
 ## CachedViewPreferences
 
-> A semicolon separated list of the user preferences (possibly with the default value after the '=' sign)  
-> on which the viewmode, determined by an array key, dependes.  
-> Ex.: CachedViewPreferences\[full\]=show\_more\_info=0;show\_right\_menu  
+> Eine durch Semikolons getrennte Liste der Benutzereinstellungen (eventuell mit dem Standardwert nach dem '='),  
+> von denen der durch einen Array-Schlüssel bestimmte Ansichtsmodus abhängt.  
+> Bsp.: CachedViewPreferences\[full\]=show\_more\_info=0;show\_right\_menu  
 
 Standard: eine leere Liste.
 
@@ -127,9 +127,9 @@ CachedViewPreferences[]
 
 ## ComplexDisplayViewModes
 
-> A list of viewmodes which displays more than just it's immediate children  
-> These viewmodes are too complex to cleanup file by file and needs to  
-> be expired globally.  
+> Eine Liste der Ansichtsmodi, die mehr als nur ihre unmittelbaren Unterknoten anzeigen  
+> Diese Ansichtsmodi sind zu komplex, um Datei für Datei aufgeräumt zu werden, und müssen  
+> global ablaufen.  
 
 Standard: `sitemap`.
 
@@ -143,8 +143,8 @@ ComplexDisplayViewModes=sitemap
 
 ## CacheThreshold
 
-> The threshold for file cleanup, if it is exceeded a global expiry is used instead  
-> The value is the number of affected nodes  
+> Die Schwelle für das Aufräumen von Dateien; wird sie überschritten, wird stattdessen ein globaler Ablauf verwendet  
+> Der Wert ist die Zahl der betroffenen Knoten  
 
 Standard: `250`.
 
@@ -158,8 +158,8 @@ CacheThreshold=250
 
 ## EditDirtyObjectAction
 
-> What to do when editing an object that has draft versions newer than the current version.  
-> Use 'showversions' to select which version to edit, or 'usecurrent' to always edit the current version.  
+> Was beim Bearbeiten eines Objekts geschieht, das Entwurfsversionen hat, die neuer als die aktuelle Version sind.  
+> Verwenden Sie 'showversions', um die zu bearbeitende Version zu wählen, oder 'usecurrent', um immer die aktuelle Version zu bearbeiten.  
 
 Standard: `showversions`.
 
@@ -173,7 +173,7 @@ EditDirtyObjectAction=showversions
 
 ## PreViewCache
 
-> Set to 'enabled' to make Exponential pre-cache the view cache files on publishing  
+> Auf 'enabled' setzen, damit Exponential die Dateien des View-Caches beim Veröffentlichen vorab erzeugt  
 
 Standard: `disabled`.
 
@@ -187,7 +187,7 @@ PreViewCache=disabled
 
 ## PreCacheSiteaccessArray
 
-> List of siteaccesses that will have preview cache generated on publish.  
+> Liste der Siteaccesses, für die beim Veröffentlichen der Vorschau-Cache erzeugt wird.  
 
 Standard: eine Liste mit 2: `admin`, `base`.
 
@@ -204,11 +204,11 @@ PreCacheSiteaccessArray[]=base
 
 ## PreviewCacheUsers
 
-> A list of users to pre-generate the content cache for  
-> The list should contain the User ID or a special identifier, possible identifiers are:  
-> - 'anonymous' for the anonymous user.  
-> - 'current' for the currently logged in user  
-> The default is to pregenerate for anonymous users  
+> Eine Liste der Benutzer, für die der Inhalts-Cache vorab erzeugt wird  
+> Die Liste sollte die Benutzer-ID oder einen besonderen Bezeichner enthalten, mögliche Bezeichner sind:  
+> - 'anonymous' für den anonymen Benutzer.  
+> - 'current' für den aktuell angemeldeten Benutzer  
+> Standard ist, für anonyme Benutzer vorab zu erzeugen  
 
 Standard: eine Liste mit 1: `anonymous`.
 
@@ -224,9 +224,9 @@ PreviewCacheUsers[]=anonymous
 
 ## StaticCache
 
-> Set to 'enabled' to make Exponential store all published objects as static  
-> HTML. This requires also settings in staticcache.ini and special URL rewrite  
-> rules.  
+> Auf 'enabled' setzen, damit Exponential alle veröffentlichten Objekte als statisches  
+> HTML speichert. Das erfordert außerdem Einstellungen in staticcache.ini und besondere URL-Rewrite-  
+> Regeln.  
 
 Standard: `disabled`.
 
@@ -240,7 +240,7 @@ StaticCache=disabled
 
 ## StaticCacheHandler
 
-> Sets a Cache Handler  
+> Setzt einen Cache-Handler  
 
 Standard: `eZStaticCache`.
 
@@ -254,9 +254,9 @@ StaticCacheHandler=eZStaticCache
 
 ## CacheGenerationTimeout
 
-> maximum cache generation time. If a file stays in generation mode for more than  
-> this value in seconds, it is considered timed out (process died, for instance),  
-> and generation is taken over by the requesting process  
+> Höchste Zeit für die Erzeugung eines Caches. Bleibt eine Datei länger als  
+> diesen Wert in Sekunden im Erzeugungsmodus, gilt sie als abgelaufen (der Prozess ist zum Beispiel gestorben),  
+> und der anfragende Prozess übernimmt die Erzeugung  
 
 Standard: `60`.
 
@@ -270,10 +270,10 @@ CacheGenerationTimeout=60
 
 ## ContentClassEditHandler
 
-> Handler responsible of storing changes made on a content class when objects exist  
-> and require an update. This might be a huge task that can lead to time out,  
-> you may consider using the 'eZContentClassEditDeferredHandler' provided with the  
-> eZ Script Monitor extension.  
+> Handler, der Änderungen an einer Inhaltsklasse speichert, wenn Objekte existieren  
+> und aktualisiert werden müssen. Das kann eine riesige Aufgabe sein, die zu Zeitüberschreitungen führt;  
+> erwägen Sie den 'eZContentClassEditDeferredHandler' aus der  
+> Erweiterung eZ Script Monitor.  
 
 Standard: `eZContentClassEditHandler`.
 
@@ -287,7 +287,7 @@ ContentClassEditHandler=eZContentClassEditHandler
 
 ## ContentObjectNameLimit
 
-> Length limit on contentObjectName, must be between 1 and 255.  
+> Längengrenze für contentObjectName, muss zwischen 1 und 255 liegen.  
 
 Standard: `150`.
 
@@ -301,7 +301,7 @@ ContentObjectNameLimit=150
 
 ## ContentObjectNameLimitSequence
 
-> End sequence for object name when reaching length limit.  
+> Endsequenz für den Objektnamen, wenn die Längengrenze erreicht ist.  
 
 Standard: `...`.
 
@@ -315,7 +315,7 @@ ContentObjectNameLimitSequence=...
 
 ## DatatypeBlackListForExternal
 
-> List of datatypes that should not expose their content through external calls (Ajax/REST)  
+> Liste der Datentypen, die ihren Inhalt nicht über externe Aufrufe (Ajax/REST) preisgeben sollen  
 
 Standard: eine Liste mit 1: `ezuser`.
 
@@ -331,12 +331,12 @@ DatatypeBlackListForExternal[]=ezuser
 
 ## RedirectAfterPublish
 
-> Use this setting to change the redirection after publishing a node.  
-> It can contain the following values:  
-> - parentNode - redirect to the parent of the edited object's main node (default value)  
-> - node       - redirect to the edited object's main node  
-> - rootNode   - redirect to siteaccess root node (ie. content.ini/NodeSettings/rootNode )  
-> - uri        - redirect to a specific URI (see RedirectAfterPublishUri settings below)  
+> Mit dieser Einstellung ändern Sie die Weiterleitung nach dem Veröffentlichen eines Knotens.  
+> Sie kann folgende Werte enthalten:  
+> - parentNode - zum Elternknoten des Hauptknotens des bearbeiteten Objekts weiterleiten (Standardwert)  
+> - node       - zum Hauptknoten des bearbeiteten Objekts weiterleiten  
+> - rootNode   - zum Wurzelknoten des Siteaccess weiterleiten (d. h. content.ini/NodeSettings/rootNode )  
+> - uri        - auf eine bestimmte URI weiterleiten (siehe die Einstellung RedirectAfterPublishUri unten)  
 
 Standard: `parentNode`.
 

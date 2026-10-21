@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ConnectTimeout
 
-> Used by the linkcheck cronjob, ConnectTimeout specifies the limit (in seconds) to wait for a valid connection.  
+> Vom Cronjob linkcheck verwendet; ConnectTimeout gibt die Grenze (in Sekunden) an, die auf eine gültige Verbindung gewartet wird.  
 
 Standard: `3`.
 

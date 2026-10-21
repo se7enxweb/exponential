@@ -19,31 +19,31 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## CacheItems
 
-> Array with cache items to extend ezcache  
-> Example of use:  
+> Array mit Cache-Einträgen zur Erweiterung von ezcache  
+> Beispiel:  
 > CacheItems\[\]=custom  
 >
 > \[Cache\_custom\]  
 >
-> \[optional\] Name of the cache item, key (custom) is used camel-cased if not set  
+> \[optional\] Name des Cache-Eintrags; wenn nicht gesetzt, wird der Schlüssel (custom) in CamelCase verwendet  
 > name=Custom cache  
-> \[optional\] Id of cache item, to be used from command line, key (custom) is used if not set  
+> \[optional\] ID des Cache-Eintrags für die Kommandozeile; wenn nicht gesetzt, wird der Schlüssel (custom) verwendet  
 > id=custom  
-> \[optional\] If cache item should be cleared using cluster instead of plain file handler, def: false  
+> \[optional\] Ob der Cache-Eintrag über den Cluster statt über den einfachen Datei-Handler geleert wird, Standard: false  
 > isClustered=true  
-> \[optional\] tags that will trigger clearing of this item, default: empty array  
+> \[optional\] Tags, die das Leeren dieses Eintrags auslösen, Standard: leeres Array  
 > tags\[\]=content  
 > tags\[\]=custom  
-> \[optional\] If cache uses eZExpiryHandler, then this is the key to get expiry time  
+> \[optional\] Wenn der Cache eZExpiryHandler verwendet, ist dies der Schlüssel für die Ablaufzeit  
 > expiryKey=global-custom-cache  
-> \[optional\] (bool) If this cache is enabled or not, default: true  
+> \[optional\] (bool) Ob dieser Cache aktiviert ist, Standard: true  
 > enabled=false  
-> \[optional\] Path where cache is stored, either directory or file if class/purgeClass  
-> variables are unset, relative to current cache directory is assumed  
+> \[optional\] Pfad, unter dem der Cache gespeichert wird, Verzeichnis oder Datei, wenn die Variablen class/purgeClass  
+> nicht gesetzt sind; relativ zum aktuellen Cache-Verzeichnis  
 > path=custom\_cache.php  
-> \[optional\] custom cache clear function "<class>::clearCache()" to be called  
+> \[optional\] eigene Funktion zum Leeren des Caches "<class>::clearCache()", die aufgerufen wird  
 > class=eZSomeClassName  
-> \[optional\] custom cache purge function "<class>::purgeCache()" to be called  
+> \[optional\] eigene Funktion zum endgültigen Löschen des Caches "<class>::purgeCache()", die aufgerufen wird  
 > purgeClass=eZSomeClassName  
 
 Standard: eine Liste mit 2: `rest`, `restRoutes`.
