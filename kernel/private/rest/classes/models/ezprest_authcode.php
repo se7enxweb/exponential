@@ -45,6 +45,18 @@ class ezpRestAuthcode implements ezcPersistentObject
      * @var string
      */
     public $scope;
+    /**
+     * PKCE code_challenge (RFC 7636) of the authorization request, null without PKCE
+     *
+     * @var string|null
+     */
+    public $code_challenge;
+    /**
+     * PKCE code_challenge_method: S256 or plain, null without PKCE
+     *
+     * @var string|null
+     */
+    public $code_challenge_method;
 
     /**
      * Set the PersistentObject state.
@@ -73,6 +85,8 @@ class ezpRestAuthcode implements ezcPersistentObject
              'client_id' => $this->client_id,
              'user_id' => $this->user_id,
              'scope' => $this->scope,
+             'code_challenge' => $this->code_challenge,
+             'code_challenge_method' => $this->code_challenge_method,
          );
      }
 }

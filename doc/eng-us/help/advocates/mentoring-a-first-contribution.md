@@ -92,6 +92,10 @@ reviews ask (`git fetch origin`, `git rebase -i origin/main`, `git push --force-
 branch only); after the merge, `main` is never rewritten
 ([Code reviews](../../../../CONTRIBUTING.md#code-reviews)).
 
+Steer a first contribution away from changing deliberate behavior that other sites rely on, a
+[negative feature](../project/getting-support.md#negative-features): such a change needs a clear justification and
+takes even longer to review. If it cannot wait, suggest an option that keeps today's default.
+
 ## After it is merged
 
 - Celebrate: a thank-you in the forum or chat, with their consent ([Recognition ideas](recognition-ideas.md)).

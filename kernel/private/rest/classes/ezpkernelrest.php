@@ -192,6 +192,14 @@ class ezpKernelRest implements ezpKernelHandler
      */
     public function run()
     {
+        // CORS (rest.ini [CorsSettings], off by default): a preflight is answered here and the request is not run;
+        // an actual request gets its Access-Control-* headers before the response writer sends the rest.
+        if ( expRestCors::fromIni( eZINI::instance( 'rest.ini' ) )->handle( $_SERVER ) )
+        {
+            $this->shutdown();
+            return new ezpKernelResult( '', array( 'cors_preflight' => true ) );
+        }
+
         $mvcConfig = new ezpMvcConfiguration( $this->responseWriterClass );
         $frontController = new ezpMvcConfigurableDispatcher( $mvcConfig );
         $result = $frontController->run();

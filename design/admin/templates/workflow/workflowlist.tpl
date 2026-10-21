@@ -58,7 +58,7 @@
 {section show=$workflow_list}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )}" onclick="ezjs_toggleCheckboxes( document.workflowlistform, 'Workflow_id_checked[]' ); return false;" title="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )}" /></th>
+    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )}" data-a4-toggle-checkboxes="Workflow_id_checked[]" data-a4-form="workflowlistform" title="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )}" /></th>
     <th>{'Name'|i18n( 'design/admin/workflow/workflowlist' )}</th>
     <th class="tight">{'ID'|i18n( 'design/admin/workflow/workflowlist' )}</th>
     <th>{'Modifier'|i18n( 'design/admin/workflow/workflowlist' )}</th>

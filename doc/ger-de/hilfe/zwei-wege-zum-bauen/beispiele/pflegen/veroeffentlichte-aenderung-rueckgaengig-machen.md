@@ -3,7 +3,7 @@ title: "Eine veröffentlichte Layoutänderung rückgängig machen"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1321
-summary: Den vor der Änderung gemachten Export mit --strategy=overwrite --publish importieren, dann Inhalte leeren.
+summary: Den vor der Änderung gemachten Export mit --strategy=overwrite --publish importieren; der Import leert den Seiten-Cache selbst.
 keywords: rückgängig machen, Zurücksetzen, veröffentlichtes Layout, Import mit Überschreiben, Pflege, undo, rollback, published layout, import overwrite, maintenance
 type: help
 ---
@@ -26,7 +26,7 @@ Der Prefooter der letzten Woche ist zurück.
 
 ## Auf der Kommandozeile
 
-1. `./console exp:layouts import prefooter-before.zip --dry-run --strategy=overwrite --publish`, dann ohne `--dry-run`, dann `./console exp:cache clear --tag=content`.
+1. `./console exp:layouts import prefooter-before.zip --dry-run --strategy=overwrite --publish`, dann ohne `--dry-run`; der Import leert den Seiten-Cache selbst (seit explayouts_core 1.0.10).
 
 ## Welchen Weg Sie wählen
 

@@ -28,6 +28,7 @@ Probleme werden schneller gelöst, wenn sie zuerst die richtige Person erreichen
 | Ein vermuteter Einbruch: unbekannte Konten, geänderte Dateien | Hoster, sofort, als Schweregrad 1 | Partner; Ihr Datenschutzbeauftragter, wenn personenbezogene Daten offengelegt sein könnten |
 | Eine Sicherheitslücke in Exponential selbst | Vertraulich an security@se7enx.com, meist über Ihren Partner | ([Vertrauliche Sicherheitsmeldungen](../gesund-halten/vertrauliche-sicherheitsmeldungen.md)) |
 | Ein reproduzierbarer Fehler in Exponential selbst | Partner oder Administrator, der ihn meldet | Der öffentliche Tracker ([GitHub-Issues](../gesund-halten/github-issues.md)) |
+| Ein Verhalten, das stört, aber beabsichtigt oder Auslegungssache sein könnte | Partner oder Administrator, der prüft, ob andere Sites sich darauf verlassen | Ein Issue mit klarer Begründung; rechnen Sie mit mehreren Prüfrunden und einer Option statt eines neuen Standards ([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)) |
 | Sie brauchen garantierte Hilfe, und Ihre Anbieter können sie nicht geben | Bezahlter Support von 7x ([Mit 7x und dem Projekt zusammenarbeiten](mit-7x-und-dem-projekt-zusammenarbeiten.md)) | |
 
 ## Bevor Sie anrufen

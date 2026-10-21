@@ -46,10 +46,10 @@ an der Website noch in der Administration anmelden,
    App. Der Benutzer braucht die Richtlinie `oauth/authorize`, die sich nach Siteaccess einschränken lässt.
 3. Die App tauscht einen Code gegen ein Token und erneuert es, wenn es abläuft (standardmäßig nach einer Stunde).
 
-Quelle: [3.1 OAuth2-Tokens](../../../anleitungen/rest-api-v1-und-v2.md#31-oauth2-tokens). Wichtig für ein Unternehmen: „The
-client secret belongs on a server; an app that cannot keep a secret should go through a back end of yours“ (Das
-Client-Geheimnis gehört auf einen Server; eine App, die kein Geheimnis bewahren kann, sollte über ein Backend von Ihnen
-gehen, [OAuth2 für Anwendungen Dritter](../../ersteller/anwendungsentwickler/oauth-und-api-schluessel.md#oauth2-für-anwendungen-von-drittanbietern)).
+Quelle: [3.1 OAuth2-Tokens](../../../anleitungen/rest-api-v1-und-v2.md#31-oauth2-tokens). Wichtig für ein Unternehmen: „Das
+Client-Geheimnis gehört auf einen Server. Eine App, die kein Geheimnis bewahren kann (eine mobile oder Browser-App),
+ist ein öffentlicher Client: Sie wird ohne Geheimnis gespeichert, sendet keines und muss PKCE mit `S256` verwenden“
+([OAuth2 für Anwendungen Dritter](../../ersteller/anwendungsentwickler/oauth-und-api-schluessel.md#oauth2-für-anwendungen-von-drittanbietern)).
 Das Entfernen einer App in der Administration entfernt auch ihre Autorisierungen und Tokens
 ([7. Die Administration](../../../anleitungen/api-schluessel.md#7-die-administration-jeder-schlüssel-ein-benutzer-widerruf)).
 

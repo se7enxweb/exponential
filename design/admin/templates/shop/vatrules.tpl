@@ -39,7 +39,7 @@
 {if $rules}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )}" onclick="ezjs_toggleCheckboxes( document.VatRules, 'RuleIDList[]' ); return false;" /></th>
+    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )}" data-a4-toggle-checkboxes="RuleIDList[]" data-a4-form="VatRules" /></th>
     <th class="tight">{'Country/region'|i18n( 'design/admin/shop/vatrules' )}</th>
     <th class="wide">{'Product categories'|i18n( 'design/admin/shop/vatrules' )}</th>
     <th>{'VAT type'|i18n( 'design/admin/shop/vatrules' )}</th>

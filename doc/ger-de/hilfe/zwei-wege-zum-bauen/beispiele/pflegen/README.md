@@ -24,15 +24,15 @@ Listen, Banner, Menüs und Kampagnen Woche für Woche ändern und Fehler beheben
 11. [Einen Fußzeilen-Link eine Zeit lang ausblenden](fusszeilen-link-ausblenden.md): Das Menu item im Inhaltsbaum verstecken; die Fußzeile listet nur, was der Besucher sehen darf.
 12. [Die Adresse eines Social-Media-Profils ändern](social-media-profil-aendern.md): Das passende Feld (facebook, twitter, instagram, linkedin) des Site-Info-Objekts bearbeiten.
 13. [Ein saisonales Layout von Hand wechseln](saisonales-layout-von-hand-wechseln.md): Zwei Zuordnungen für dieselbe Seite, die saisonale mit höherer Priorität: Aktiviert an- oder abhaken, um umzuschalten.
-14. [Ein saisonales Layout nach Datum wechseln](saisonales-layout-nach-datum-wechseln.md): Eine Zeit-Bedingung (from, to) an der saisonalen Zuordnung schaltet sie um, ohne dass jemand klickt, mit bis zu einer Stunde Verzögerung durch das Gedächtnis des Resolvers.
+14. [Ein saisonales Layout nach Datum wechseln](saisonales-layout-nach-datum-wechseln.md): Eine Zeit-Bedingung (from, to) an der saisonalen Zuordnung schaltet sie zu Beginn und Ende um, ohne dass jemand klickt.
 15. [Einen vorübergehenden Hinweis aufstellen](voruebergehender-hinweis.md): Ein Alert-Block in der Zone post_header der Seite, nach dem Ereignis wieder entfernt.
 16. [Den hervorgehobenen Eintrag eines Rasters wechseln](hervorgehobenen-eintrag-wechseln.md): In einer grid_featured-Liste ist der erste Eintrag der große: Ziehen Sie einen anderen Eintrag nach oben.
 17. [Die Anzahl der Spalten eines Rasters ändern](spaltenzahl-aendern.md): Number of columns im Reiter Design: 2, 3, 4 oder 6.
-18. [Eine Liste von Raster auf Liste umstellen](von-raster-auf-liste-umstellen.md): View type im Reiter Design, mit der Eigenheit, dass die Änderung erst mit der nächsten Änderung eines anderen Felds gespeichert wird.
+18. [Eine Liste von Raster auf Liste umstellen](von-raster-auf-liste-umstellen.md): View type im Reiter Design; vor explayouts_ui_api 1.3.29 wurde die Änderung erst mit der nächsten Änderung eines anderen Felds gespeichert.
 19. [Einem Abschnitt eine Hintergrundfarbe geben](hintergrundfarbe-setzen.md): Set background color im Reiter Design; der Wrapper erhält bg-color-<color>.
 20. [Die Abstände eines Abschnitts anpassen](abstaende-anpassen.md): Use vertical whitespace on top and bottom (Reiter Design) statt Spacer-Blöcken verwenden.
 21. [Einen misslungenen Entwurf verwerfen](misslungenen-entwurf-verwerfen.md): Verwerfen entfernt den Entwurf; das veröffentlichte Layout bleibt unberührt.
-22. [Eine veröffentlichte Layoutänderung rückgängig machen](veroeffentlichte-aenderung-rueckgaengig-machen.md): Den vor der Änderung gemachten Export mit --strategy=overwrite --publish importieren, dann Inhalte leeren.
+22. [Eine veröffentlichte Layoutänderung rückgängig machen](veroeffentlichte-aenderung-rueckgaengig-machen.md): Den vor der Änderung gemachten Export mit --strategy=overwrite --publish importieren; der Import leert den Seiten-Cache selbst.
 23. [Layouts jede Woche exportieren](woechentlicher-export.md): Ein geplanter exp:layouts export --all bewahrt eine Historie der Layouts.
 24. [Vergessene Entwürfe finden](vergessene-entwuerfe-finden.md): exp:layouts list --drafts listet jeden offenen Entwurf; öffnen Sie jeden und veröffentlichen oder verwerfen Sie ihn.
 25. [Eine Änderung erschien nicht](aenderung-erscheint-nicht.md): Entwurf nicht veröffentlicht, verknüpfte Zone, anderes Layout, Einstellungen in der falschen Datei, kompiliertes Template, Seiten-Cache, Velocity: die zehn Prüfungen.

@@ -42,6 +42,10 @@ Aus CONTRIBUTING.md und [Mit Git entwickeln](../mit-git-entwickeln.md):
   PHP-Versionen (`doc/eng-us/bc/6.0/ci.md`).
 - „Mit Ihrem Beitrag erklären Sie sich damit einverstanden, dass Ihre Beiträge unter der GNU General Public License,
   Version 2.0 oder später, lizenziert werden“ (CONTRIBUTING.md).
+- Ändert Ihre Korrektur ein Verhalten, das beabsichtigt oder Auslegungssache ist (eine negative Funktion), betrifft
+  sie jede Site, die sich darauf verlässt, auch die anderer Partner. Rechnen Sie dann mit einer Bitte um eine klare
+  Begründung und mehreren Runden der Prüfung, und bieten Sie das neue Verhalten lieber als Option an als als neuen
+  Standard ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Mit Kunden abstimmen
 

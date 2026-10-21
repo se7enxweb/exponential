@@ -27,6 +27,9 @@ that protects all your customers.
 - [ ] Reproduce it on a clean installation of a current release, without your customer's code if you can.
 - [ ] Search open and closed issues.
 - [ ] Note the exact versions: Exponential, PHP, database, engine, extensions.
+- [ ] Check that it is not a deliberate behavior or one open to interpretation, which other sites may depend on.
+  Changing such a [negative feature](../project/getting-support.md#negative-features) needs a clear justification and
+  often several rounds of review.
 
 ## What to include
 

@@ -20,6 +20,9 @@ issue, and what must never be in one.
 3. **Make it small.** Find the shortest way to make it happen. A problem you can show in four steps gets fixed.
 4. **Is it a security problem?** Then do not open a public issue. Follow the project's security policy (the kernel's
    is in `SECURITY.md` at the root of its repository) and report it privately.
+5. **Is it on purpose?** Read what the documentation actually promises. Behavior that is deliberate or open to
+   interpretation is a [negative feature](../../project/getting-support.md#negative-features) other sites may depend
+   on: say why it does not work for you, ask for an option rather than a new default, and expect a longer discussion.
 
 ## A bug report
 

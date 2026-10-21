@@ -28,7 +28,7 @@ type: help
 4. Select the block, open the **Design** tab and fill **View type** `list_numbered`.
 5. **Publish layout**. The pages that use the layout show the block on their next view.
 
-Changing only the view type does not save until another field changes ([Known editor behaviors](../../known-editor-behaviors.md)).
+Before explayouts_ui_api 1.3.29, changing only the view type did not save until another field changed ([Known editor behaviors](../../known-editor-behaviors.md)).
 
 ## With templates
 

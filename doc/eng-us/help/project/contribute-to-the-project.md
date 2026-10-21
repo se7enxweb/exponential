@@ -47,7 +47,9 @@ request to 7x's repository, where it is reviewed and, when merged, released to e
    syntax, the code style and the file manifest (`share/filelist.md5`, fixed with `make manifest-fix`) at every
    commit. Run the tests and update the documentation when your change needs it.
 6. **Open the pull request** and describe what you changed, why, and how you tested it. Mention the issue it fixes
-   (`Fixes #123`).
+   (`Fixes #123`). If the "bug" you fix is behavior that is deliberate or open to interpretation, a
+   [negative feature](getting-support.md#negative-features) other sites depend on, explain the use case carefully,
+   prefer a new option over a changed default, and expect several rounds of review before it is accepted and merged.
 7. **Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code
    contribution to the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, code in an
    issue, or mail), only after you have signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in

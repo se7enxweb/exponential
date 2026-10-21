@@ -27,6 +27,7 @@ re-apply at every release; a fix that is merged upstream arrives with the next r
 |---|---|
 | A bug in the kernel or an installer | <https://github.com/se7enxweb/exponential>, issue or pull request |
 | A missing option that would make bundling easier | an issue describing the need first |
+| A default that is deliberate but wrong for your bundle | an issue with a clear justification; it may be a [negative feature](../project/getting-support.md#negative-features) other sites rely on, so propose an option and expect several review rounds |
 | A bug in an extension | the extension's repository |
 | An improved or new site package | the package server's repository ([Contribute your site package](../site-packages/contribute-your-site-package.md)) |
 | A mistake or gap in the documentation | a pull request to `doc/` |

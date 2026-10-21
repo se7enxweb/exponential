@@ -125,6 +125,112 @@ class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
                                              array( 'user' => array( 'accessWord' => 'no' ), 'requirePolicy' => 'enabled' ) )['status'] );
     }
 
+    const VERIFIER = 'dBjftJeZ4CVP-mJ92K1qUdtn6O2-yCK3lQrNT3rTtsw';
+    const CHALLENGE = 'Fu7DwriVMYUK_uIfg3yACE6SZ22UhWekgh_0o9vhH28';
+
+    private static function signedIn( array $extra = array() )
+    {
+        return $extra + array( 'user' => array( 'accessWord' => 'yes' ), 'siteaccess' => 'site', 'authorized' => true );
+    }
+
+    public function testTheStateComesBackUnchangedWithTheCode()
+    {
+        $result = $this->authorize( self::validRequest() + array( 'state' => 'xyz /&=+' ), array(), self::signedIn() );
+        $this->assertSame( '302 Found', $result['status'] );
+        $this->assertSame( self::ENDPOINT . '?code=harness-code&expires_in=3600&state=' . urlencode( 'xyz /&=+' ), $result['location'] );
+    }
+
+    public function testTheStateComesBackWithAnError()
+    {
+        $this->assertSame(
+            self::ENDPOINT . '?error=invalid_request&error_description=' . urlencode( 'Missing response_type parameter' ) . '&state=abc',
+            $this->authorize( array( 'redirect_uri' => self::ENDPOINT, 'client_id' => 'known-client', 'state' => 'abc' ) )['location'] );
+        $this->assertSame(
+            self::ENDPOINT . '?error=access_denied&error_description=' . urlencode( 'The user may not authorize clients' ) . '&state=abc',
+            $this->authorize( self::validRequest() + array( 'state' => 'abc' ), array(),
+                              array( 'user' => array( 'accessWord' => 'no' ), 'siteaccess' => 'site' ) )['location'] );
+    }
+
+    public function testAnS256ChallengeIsStoredWithTheCode()
+    {
+        $result = $this->authorize( self::validRequest() + array( 'code_challenge' => self::CHALLENGE, 'code_challenge_method' => 'S256' ),
+                                    array(), self::signedIn() );
+        $this->assertSame( '302 Found', $result['status'] );
+        $this->assertSame( 'ezpRestAuthcode', $result['saved']['class'] );
+        $this->assertSame( self::CHALLENGE, $result['saved']['code_challenge'] );
+        $this->assertSame( 'S256', $result['saved']['code_challenge_method'] );
+        $this->assertSame( 'known-client', $result['saved']['client_id'] );
+    }
+
+    public function testACodeWithoutPkceStoresNoChallenge()
+    {
+        $result = $this->authorize( self::validRequest(), array(), self::signedIn() );
+        $this->assertNull( $result['saved']['code_challenge'] );
+        $this->assertNull( $result['saved']['code_challenge_method'] );
+    }
+
+    public static function refusedPkceProvider()
+    {
+        return array(
+            'plain'              => array( array( 'code_challenge' => self::VERIFIER, 'code_challenge_method' => 'plain' ) ),
+            'no method (plain)'  => array( array( 'code_challenge' => self::VERIFIER ) ),
+            'unknown method'     => array( array( 'code_challenge' => self::CHALLENGE, 'code_challenge_method' => 'S1' ) ),
+            'malformed S256'     => array( array( 'code_challenge' => 'short', 'code_challenge_method' => 'S256' ) ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('refusedPkceProvider')]
+    public function testAnUnacceptableChallengeIsRefusedBeforeTheLogin( array $pkce )
+    {
+        // no "user": the view would stop at the login if it got past the PKCE check
+        $result = $this->authorize( self::validRequest() + $pkce + array( 'state' => 's1' ) );
+        $this->assertSame( '302 Found', $result['status'] );
+        $this->assertStringStartsWith( self::ENDPOINT . '?error=invalid_request&error_description=', $result['location'] );
+        $this->assertStringEndsWith( '&state=s1', $result['location'] );
+        $this->assertArrayNotHasKey( 'saved', $result );
+    }
+
+    public function testPlainIsAcceptedWhenAllowed()
+    {
+        $result = $this->authorize( self::validRequest() + array( 'code_challenge' => self::VERIFIER, 'code_challenge_method' => 'plain' ),
+                                    array(), self::signedIn( array( 'ini' => array( 'AllowPlainPkce' => 'enabled' ) ) ) );
+        $this->assertSame( 'plain', $result['saved']['code_challenge_method'] );
+    }
+
+    public function testAPublicClientMustUsePkce()
+    {
+        $request = array( 'redirect_uri' => self::ENDPOINT, 'client_id' => 'public-client', 'response_type' => 'code' );
+        $this->assertSame( self::ENDPOINT . '?error=invalid_request&error_description=' . urlencode( 'code_challenge required' ),
+                           $this->authorize( $request )['location'] );
+        $this->assertSame( array( 'reached' => 'login' ),
+                           $this->authorize( $request + array( 'code_challenge' => self::CHALLENGE, 'code_challenge_method' => 'S256' ) ) );
+        // switched off, a public client goes on without PKCE
+        $this->assertSame( array( 'reached' => 'login' ),
+                           $this->authorize( $request, array(), array( 'ini' => array( 'RequirePkceForPublicClients' => 'disabled' ) ) ) );
+        // a confidential client is not affected by default
+        $this->assertSame( array( 'reached' => 'login' ), $this->authorize( self::validRequest() ) );
+    }
+
+    public function testTheAuthorizationFormCarriesStateAndChallenge()
+    {
+        $result = $this->authorize( self::validRequest() + array( 'state' => 's2', 'code_challenge' => self::CHALLENGE, 'code_challenge_method' => 'S256' ),
+                                    array(), array( 'user' => array( 'accessWord' => 'yes' ) ) );
+        // the harness stops at the authorization step; the Authorize POST repeats the parameters, so it is the same request
+        $this->assertSame( array( 'reached' => 'authorization' ), $result );
+        $posted = $this->authorize( array(), array( 'AuthorizeButton' => '1' ) + self::validRequest()
+                                              + array( 'state' => 's2', 'code_challenge' => self::CHALLENGE, 'code_challenge_method' => 'S256' ),
+                                    self::signedIn() );
+        $this->assertStringEndsWith( '&state=s2', $posted['location'] );
+        $this->assertSame( self::CHALLENGE, $posted['saved']['code_challenge'] );
+    }
+
+    public function testTheAuthorizeTemplateWritesEveryParameterAsAHiddenField()
+    {
+        $tpl = (string)file_get_contents( dirname( __DIR__, 5 ) . '/design/standard/templates/oauth/authorize.tpl' );
+        $this->assertStringContainsString( '{foreach $httpParameters as $name => $value}', $tpl );
+        $this->assertStringContainsString( 'value="{$value|wash}"', $tpl );
+    }
+
     public function testTheAutoloadGeneratorFindsNoClassInTheHarness()
     {
         // the stand-ins carry kernel class names; declared as classes, ezpgenerateautoloads.php -s would map them to

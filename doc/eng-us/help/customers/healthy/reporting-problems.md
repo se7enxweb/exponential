@@ -63,6 +63,7 @@ Use the scale your contract defines, if it has one; otherwise agree this one.
 | A reproducible bug in Exponential itself | The public issue tracker, usually filed by your administrator or partner ([GitHub issues](github-issues.md), [The help report page](the-help-report-page.md)) |
 | A security problem in the software | Privately to security@se7enx.com, never in public ([Private security reports](private-security-reports.md)) |
 | Questions about the project | The community places ([Getting support](../../project/getting-support.md)) |
+| Something that works as designed, just not as your team wants | Possibly a deliberate behavior other sites rely on ([Negative features](../../project/getting-support.md#negative-features)); a change needs a clear business case and several rounds of review, and an option is easier to win than a new default |
 
 ## Never send
 

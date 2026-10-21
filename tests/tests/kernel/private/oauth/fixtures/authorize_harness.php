@@ -10,7 +10,9 @@
  *
  * Optional keys of the request: "user", the signed in user as the result of hasAccessTo( 'oauth', 'authorize' )
  * ({"accessWord": ...}; without it the view stops at "login"), "siteaccess" (the current siteaccess name) and
- * "requirePolicy" (rest.ini [OAuthSettings] AuthorizeRequiresPolicy; not set when missing).
+ * "requirePolicy" (rest.ini [OAuthSettings] AuthorizeRequiresPolicy; not set when missing), "ini" (other settings of
+ * [OAuthSettings], name => value) and "authorized" (true: the user has authorized the client, so the view issues the
+ * code or token; the stored object is returned as "saved"). "public-client" is a known client without a secret.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -32,7 +34,11 @@ function harnessResult( array $result )
 
 function expModuleViewOauthAuthorizeResponse( $httpHeader, $location = null )
 {
-    harnessResult( array( 'status' => $httpHeader, 'location' => $location ) );
+    $result = array( 'status' => $httpHeader, 'location' => $location );
+    // the authorization code or token the view stored, when it got that far
+    if ( isset( $GLOBALS['harnessSaved'] ) )
+        $result['saved'] = $GLOBALS['harnessSaved'];
+    harnessResult( $result );
 }
 
 // The stand-ins are declared through eval(): written as class declarations here, the autoload generator (which
@@ -52,10 +58,16 @@ class eZINI
     public static function instance( $fileName ) { return new self(); }
     public function hasVariable( $block, $name )
     {
-        return $name !== 'AuthorizeRequiresPolicy' || isset( $GLOBALS['harnessRequest']['requirePolicy'] );
+        if ( isset( $GLOBALS['harnessRequest']['ini'][$name] ) )
+            return true;
+        if ( $name === 'TokenTTL' )
+            return true;
+        return $name === 'AuthorizeRequiresPolicy' && isset( $GLOBALS['harnessRequest']['requirePolicy'] );
     }
     public function variable( $block, $name )
     {
+        if ( isset( $GLOBALS['harnessRequest']['ini'][$name] ) )
+            return $GLOBALS['harnessRequest']['ini'][$name];
         return $name === 'AuthorizeRequiresPolicy' ? $GLOBALS['harnessRequest']['requirePolicy'] : '3600';
     }
 }
@@ -63,6 +75,7 @@ class eZINI
 class ezpRestClient
 {
     public $endpoint_uri = 'https://client.example/callback';
+    public $client_secret = 'harness-secret';
 
     public static function fetchByClientId( $clientId )
     {
@@ -70,6 +83,12 @@ class ezpRestClient
         {
             $client = new self();
             $client->endpoint_uri = '';
+            return $client;
+        }
+        if ( $clientId === 'public-client' )
+        {
+            $client = new self();
+            $client->client_secret = '';
             return $client;
         }
         return $clientId === 'known-client' ? new self() : false;
@@ -80,7 +99,32 @@ class ezpRestClient
         return $endPointUri === $this->endpoint_uri;
     }
 
-    public function isAuthorizedByUser( $scope, $user ) { harnessResult( array( 'reached' => 'authorization' ) ); }
+    public function isAuthorizedByUser( $scope, $user )
+    {
+        if ( empty( $GLOBALS['harnessRequest']['authorized'] ) )
+            harnessResult( array( 'reached' => 'authorization' ) );
+        return true;
+    }
+}
+
+class ezpRestToken
+{
+    public static function generateToken( $vary ) { return 'harness-code'; }
+}
+
+class ezpRestAuthcode
+{
+    public $id, $client_id, $user_id, $expirytime, $scope, $code_challenge, $code_challenge_method;
+}
+
+class ezcPersistentSessionInstance
+{
+    public static function get() { return new self(); }
+    public function save( $object )
+    {
+        $GLOBALS['harnessSaved'] = array( 'class' => get_class( $object ) ) + get_object_vars( $object );
+        unset( $GLOBALS['harnessSaved']['expirytime'] );
+    }
 }
 
 class eZSiteAccess
@@ -97,6 +141,7 @@ class eZUser
         return new self();
     }
     public function isRegistered() { return true; }
+    public function attribute( $name ) { return 14; }
     public function hasAccessTo( $module, $function )
     {
         return $module === 'oauth' && $function === 'authorize' ? $GLOBALS['harnessRequest']['user'] : array( 'accessWord' => 'no' );
@@ -106,6 +151,7 @@ STANDINS
 );
 
 require_once dirname( __DIR__, 6 ) . '/kernel/private/rest/classes/oauth/authorize_policy.php';
+require_once dirname( __DIR__, 6 ) . '/kernel/private/rest/classes/oauth/pkce.php';
 
 $Params = array( 'Module' => null );
 require dirname( __DIR__, 6 ) . '/kernel/private/modules/oauth/authorize.php';

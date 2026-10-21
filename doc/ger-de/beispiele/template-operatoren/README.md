@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweiterungen registrieren (das `$eZTemplateOperatorArray` jeder `eztemplateautoload.php` und `settings/template.ini` `[PHP] PHPOperatorList[]`), mit seinen Parametern und einem Beispiel. „Verwendet in“ gibt an, ob ein ausgeliefertes Template ihn verwendet; seine Seite zitiert die erste Verwendung.
 
-236 Operatoren.
+237 Operatoren.
 
 | Operator | Klasse | Parameter | In einem ausgelieferten Template verwendet |
 |---|---|---|---|
@@ -246,6 +246,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [upword](upword.md) | eZTemplateStringOperator | 0 |  |
 | [urldecode](urldecode.md) | eZTemplatePHPOperator | ? |  |
 | [urlencode](urlencode.md) | eZTemplatePHPOperator | ? | ja |
+| [view_parameter](view_parameter.md) | expViewParameterOperator | 0 | ja |
 | [vsprintf](vsprintf.md) | eZTemplateStringsOperator | ? |  |
 | [wash](wash.md) | eZTemplateStringOperator | 1 | ja |
 | [wordtoimage](wordtoimage.md) | eZWordToImageOperator | ? | ja |

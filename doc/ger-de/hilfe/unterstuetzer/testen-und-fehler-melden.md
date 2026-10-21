@@ -32,6 +32,11 @@ Das Wichtigste:
 - Fehlermeldungen und Logzeilen, aus denen Passwörter, Schlüssel und personenbezogene Daten entfernt sind.
 - Ob es auch auf einer frischen Installation auftritt.
 
+Nicht alles, was wie ein Fehler aussieht, ist einer: Manches Verhalten ist beabsichtigt oder Auslegungssache, und
+andere Sites verlassen sich darauf. Eine Änderung daran braucht eine klare Begründung und kann mehrere Runden der
+Prüfung brauchen; oft ist eine Option die bessere Lösung als ein neuer Standard
+([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 ## Vor einem Release testen
 
 Die Entwicklung findet im Branch `main` statt, und Korrekturen werden „mit dem nächsten Release 6.0.x veröffentlicht“

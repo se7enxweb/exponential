@@ -21,7 +21,7 @@ Tests liegen und was fehlt.
 
 | Standard | Version | Status | Nachweis (kurz) |
 |---|---|---|---|
-| OAuth 2.0, Autorisierungsserver für die REST-API | RFC 6749 (2012) | **Teilweise erfüllt** | `kernel/private/modules/oauth/`, `kernel/private/rest/classes/oauth/`, Token-Endpunkt `POST /api/auth/v1/oauth/token`; kein `state`, kein PKCE, kein `token_type` |
+| OAuth 2.0, Autorisierungsserver für die REST-API | RFC 6749 (2012) | **Teilweise erfüllt** | `kernel/private/modules/oauth/`, `kernel/private/rest/classes/oauth/`, Token-Endpunkt `POST /api/auth/v1/oauth/token`; `state` und PKCE (RFC 7636, S256) seit 6.0.15; kein `token_type` |
 | OAuth 2.0 Bearer-Tokens | RFC 6750 (2012) | **Teilweise erfüllt** | `Authorization: Bearer` und `OAuth` akzeptiert (`ezpOauthUtility`); Token wird auch als Query-Parameter akzeptiert |
 | OAuth 2.0 / OpenID Connect, Client für Social Login | RFC 6749, RFC 7636, OIDC Core 1.0 | **Teilweise erfüllt** | Extension `sevenx_authentication_2fa`: Authorization-Code-Flow mit `state` und PKCE S256; ID-Tokens werden nicht validiert |
 | REST über HTTP | HTTP-Semantik, RFC 9110 | **Teilweise erfüllt** | `ezprestapi`-Routen `/api/ezp/v1`, `/api/ezp/v2`; Statusklassen in `kernel/private/rest/classes/` |
@@ -82,9 +82,12 @@ mehrere vorgeschriebene oder empfohlene Teile fehlen.
 
 ### Bekannte Lücken
 
-- `state` wird nicht an den Client zurückgegeben (Kommentar in `authorize.php`: "state, not implemented yet").
-  RFC 6749 empfiehlt es gegen Cross-Site Request Forgery; Clients können sich nicht darauf verlassen.
-- Kein PKCE (RFC 7636) auf der Serverseite.
+- Seit 6.0.15 wird `state` unverändert mit dem Code, dem Token und dem Fehler zurückgegeben, und PKCE (RFC 7636) wird
+  unterstützt: `S256`, `plain` nur bei eingeschaltetem `AllowPlainPkce`, standardmäßig verlangt für öffentliche
+  Clients (ohne gespeichertes Geheimnis) ([PKCE und state](../bc/6.0/oauth-pkce-und-state.md)). Das sind keine
+  Lücken mehr.
+- CORS für die REST-Schnittstelle gibt es seit 6.0.15, standardmäßig ausgeschaltet (`rest.ini [CorsSettings]`,
+  [CORS für die REST-API](../bc/6.0/cors-fuer-die-rest-api.md)).
 - `response_type=token` (der Implicit Grant, von RFC 9700 abgeraten) wird weiterhin akzeptiert und gibt die Tokens im
   Query-String zurück statt im URL-Fragment, das RFC 6749 Abschnitt 4.2.2 vorschreibt.
 - Die Token-Antwort hat kein `token_type` (von RFC 6749 Abschnitt 5.1 vorgeschrieben); `Cache-Control: no-store` wird

@@ -22,7 +22,7 @@ Clean up a look the new design does not have.
 
 ## In the Layouts editor
 
-1. Change each block found to another view type (mind the save quirk).
+1. Change each block found to another view type (on explayouts_ui_api before 1.3.29, mind the save quirk).
 
 ## With an export and settings
 

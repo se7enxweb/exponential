@@ -444,3 +444,13 @@ CREATE TABLE IF NOT EXISTS expapikey (
 -- which logins are equal; as shipped it ignores case and trailing spaces):
 --
 -- ALTER TABLE ezuser DROP INDEX ezuser_login, ADD UNIQUE KEY ezuser_login ( login );
+
+--
+-- ezprest_authcode: PKCE (RFC 7636) for the OAuth authorization code flow.
+-- oauth/authorize stores the code_challenge and code_challenge_method of the request with the code; the token end
+-- point checks the code_verifier against them. Without these columns no authorization code can be issued.
+-- Run once; a second run stops at "Duplicate column name", which means the columns are there.
+--
+ALTER TABLE ezprest_authcode
+  ADD COLUMN code_challenge varchar(128) default NULL,
+  ADD COLUMN code_challenge_method varchar(10) default NULL;

@@ -42,6 +42,11 @@ If none of these answers it, ask. Say in your question what you already tried; i
 The administration has a guide for bug reports: **Help > Report an error** (`exphelp/report`) fills in a summary of
 the installation and opens a prepared GitHub issue. See [When something goes wrong](../../when-something-goes-wrong.md).
 
+Before you file a bug, ask yourself whether the behavior might be deliberate: in Exponential, as in any project, some
+of it is open to interpretation and other sites rely on it. Changing such a
+[negative feature](../../project/getting-support.md#negative-features) needs a clear justification and several rounds
+of review, and an option is far easier to accept than a new default.
+
 ## How to write a question people can answer
 
 A good question has five parts:

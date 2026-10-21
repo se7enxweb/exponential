@@ -28,7 +28,7 @@ class ezpRestOauthTokenController extends ezcMvcController
     {
         // Check that the correct params are present
         // Params for token endpoint per section 4
-        // REQUIRED: grant_type, client_id, client_secret
+        // REQUIRED: grant_type, client_id, and client_secret for a confidential client
         // OPTIONAL: scope
         //
         // Supported grant types are: authorization_code and refresh_token
@@ -39,8 +39,13 @@ class ezpRestOauthTokenController extends ezcMvcController
         // Additional param for 'refresh_token", Section 4.1.4
         // REQUIRED: refresh_token
 
+        // A public client (one stored without a secret, RFC 6749 section 2.1) sends no client_secret; it is bound to
+        // its authorization code by PKCE (code_verifier, RFC 7636 section 4.5) instead. Whether a client must send
+        // a secret is decided in ezpOauthUtility, where the client is loaded.
+        // OPTIONAL: client_secret, code_verifier
+
         // Defining the required params for each stage of operation
-        $initialRequiredParams = array( 'grant_type', 'client_id', 'client_secret' );
+        $initialRequiredParams = array( 'grant_type', 'client_id' );
 
         // params for grant_type=authorization_code
         $codeRequiredParams = array( 'code', 'redirect_uri' );
@@ -53,7 +58,9 @@ class ezpRestOauthTokenController extends ezcMvcController
         // We can get the first set of required params
         $grant_type = $this->request->post['grant_type'];
         $client_id = $this->request->post['client_id'];
-        $client_secret = $this->request->post['client_secret'];
+        $client_secret = isset( $this->request->post['client_secret'] ) && is_string( $this->request->post['client_secret'] )
+                         ? $this->request->post['client_secret'] : null;
+        $code_verifier = isset( $this->request->post['code_verifier'] ) ? $this->request->post['code_verifier'] : null;
         $tokenTTL = (int)eZINI::instance( 'rest.ini' )->variable( 'OAuthSettings', 'TokenTTL' );
 
         if ( !$this->validateGrantType( $grant_type ) )
@@ -68,7 +75,7 @@ class ezpRestOauthTokenController extends ezcMvcController
         {
             case 'authorization_code':
                 $this->checkParams( $codeRequiredParams );
-                $newToken = ezpOauthUtility::doRefreshTokenWithAuthorizationCode( $client_id, $client_secret, $this->request->post['code'], $this->request->post['redirect_uri']);
+                $newToken = ezpOauthUtility::doRefreshTokenWithAuthorizationCode( $client_id, $client_secret, $this->request->post['code'], $this->request->post['redirect_uri'], $code_verifier );
                 break;
 
             case 'refresh_token':

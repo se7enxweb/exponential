@@ -31,7 +31,7 @@ StartPage=help/partners/partners-start-here.md
 
 ## Related
 
-Standard: eine Liste mit 4: `hosting`, `designer`, `sponsor`, `sales-marketing`.
+Standard: eine Liste mit 8: `hosting`, `designer`, `sponsor`, `sales-marketing`, `ecosystem`, `reseller`, `bundler`, `integrator`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,10 @@ Related[]=hosting
 Related[]=designer
 Related[]=sponsor
 Related[]=sales-marketing
+Related[]=ecosystem
+Related[]=reseller
+Related[]=bundler
+Related[]=integrator
 */ ?>
 ```
 

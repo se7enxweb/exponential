@@ -19,6 +19,10 @@ Exponential schicken.
 2. **Ein Thema pro Pull-Request.** Eine Korrektur und ein Refactoring sind zwei Pull-Requests.
 3. **Verzweigen Sie vom aktuellen main**: `git switch -c fix-map-popup origin/main`.
 4. **Nehmen Sie die Änderung vor** und folgen Sie dem Stil des Themes. Kein Umformatieren unberührter Zeilen.
+   Ändern Sie ein Verhalten, das beabsichtigt oder Auslegungssache ist, bedenken Sie, dass andere Sites sich darauf
+   verlassen können, in Exponential wie in jedem fremden Theme: Begründen Sie es klar, rechnen Sie mit mehreren
+   Prüfrunden und bieten Sie lieber eine Option an als einen neuen Standard
+   ([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 5. **Testen** Sie auf einer aktuellen Installation; bei optischen Änderungen hell und dunkel, Telefon und Zoom.
 6. **Committen** Sie mit einem Präfix und einem Grund ([Changelog-Einträge](../veroeffentlichung/changelog-praefixe.md)).
 7. **Öffnen Sie den Pull-Request** mit:

@@ -33,6 +33,10 @@ maintained by everyone.
 The Exponential project's practice is to merge every pull request and fix what needs fixing in its own commits on
 top, so a contribution is not lost to a long review; that is no reason to send less careful work.
 
+In Exponential and in any other project, a change that alters deliberate behavior other sites depend on, a
+[negative feature](../../project/getting-support.md#negative-features), needs a clear justification and may go through
+several rounds of review before it is accepted. Offer the new look or behavior as an option and keep the old default.
+
 ## Step by step
 
 1. Make the change on a branch of your fork, one topic per branch.

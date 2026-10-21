@@ -44,6 +44,17 @@ $def->properties['scope']->columnName   = 'scope';
 $def->properties['scope']->propertyName = 'scope';
 $def->properties['scope']->propertyType = ezcPersistentObjectProperty::PHP_TYPE_STRING;
 
+// PKCE (RFC 7636): the challenge of the authorization request, checked against the code_verifier at the token end point
+$def->properties['code_challenge']               = new ezcPersistentObjectProperty();
+$def->properties['code_challenge']->columnName   = 'code_challenge';
+$def->properties['code_challenge']->propertyName = 'code_challenge';
+$def->properties['code_challenge']->propertyType = ezcPersistentObjectProperty::PHP_TYPE_STRING;
+
+$def->properties['code_challenge_method']               = new ezcPersistentObjectProperty();
+$def->properties['code_challenge_method']->columnName   = 'code_challenge_method';
+$def->properties['code_challenge_method']->propertyName = 'code_challenge_method';
+$def->properties['code_challenge_method']->propertyType = ezcPersistentObjectProperty::PHP_TYPE_STRING;
+
 return $def;
 
 ?>

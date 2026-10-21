@@ -63,6 +63,9 @@ Tracker angeboten (`[IssueTrackers] BundledExtensions[]` und `ExtensionOwners[]`
   Redakteure können die Seite trotzdem nutzen, um zu sehen, welche Informationen eine gute Meldung braucht.
 - **Zuerst suchen.** Wenn das Problem bereits bekannt ist, ergänzen Sie, was Sie wissen, in diesem Issue, statt ein
   neues zu eröffnen.
+- **Mit negativen Funktionen rechnen.** Manches gemeldete Verhalten ist beabsichtigt oder Auslegungssache, und andere
+  Sites verlassen sich darauf. Eine Änderung braucht dann eine klare Begründung und oft mehrere Prüfrunden; eine
+  Option ist besser als ein neuer Standard ([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 - **Den Text vor dem Absenden prüfen.** Die Diagnosedaten lassen Geheimnisse weg, Ihre eigene Beschreibung vielleicht
   nicht: Entfernen Sie Kundennamen, E-Mail-Adressen und alles Vertrauliche.
 

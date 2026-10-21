@@ -32,10 +32,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/page_head_script.tpl` line 10:
+The first use in the templates of this installation, `design/admin/templates/page_head_script.tpl` line 21:
 
 ```tpl
-{ezscript_load( array( 'a4_url.js' ) )}
+{ezscript_load( $admin_backend_script_list )}
 ```
 
 ## Related

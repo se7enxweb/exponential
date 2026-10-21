@@ -31,6 +31,7 @@ next project cheaper for you and for everyone, and it is how Exponential grows. 
 | A generic connector | A mail transport for a provider's API, a login handler for an identity provider, a search engine plugin | A public extension of its own |
 | An extension point | A filter or event the kernel should announce so integrations need no override | A pull request with the event and its documentation |
 | Documentation | A pattern, a pitfall, a recipe | A pull request to the documentation ([Contributing docs and translations](../partners/contributing-docs-and-translations.md)) |
+| A change to behavior that is deliberate but awkward for your integration | A default that suits most sites but not yours | An issue first; it may be a [negative feature](../project/getting-support.md#negative-features) others depend on, so justify it clearly, expect several review rounds and propose an option |
 
 ## Separate generic from customer code
 

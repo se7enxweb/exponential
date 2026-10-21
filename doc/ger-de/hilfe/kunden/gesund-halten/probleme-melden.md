@@ -19,6 +19,11 @@ Manche Seiten sagen nur, dass etwas nicht erlaubt oder nicht vorhanden ist, zum 
 the proper privileges“, oder eine ausgegraute Schaltfläche. Das sind Fragen des Zugriffs, keine Fehler: Fragen Sie den
 Administrator Ihrer Website ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
+Auch ein Verhalten, das Ihr Team stört, kann beabsichtigt oder Auslegungssache sein, und andere Sites verlassen sich
+vielleicht darauf. Eine Änderung daran braucht eine klare Begründung und kann mehrere Runden der Prüfung brauchen;
+oft ist eine Option der bessere Weg als ein neuer Standard
+([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 ## Ein Kontakt für das Team
 
 Vereinbaren Sie eine Person (und eine Vertretung), die Probleme von Redaktion und Kunden sammelt und weitergibt. Das

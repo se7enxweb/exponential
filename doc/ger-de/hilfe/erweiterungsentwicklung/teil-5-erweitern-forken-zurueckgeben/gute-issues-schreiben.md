@@ -57,9 +57,13 @@ Jeder Teil hat einen Zweck:
 | Ein Titel, der das Symptom und die Bedingung nennt | der Maintainer kann es von zwanzig anderen unterscheiden |
 | Versionen | die Hälfte aller Fehler hängt von einer ab |
 | Schritte von einem bekannten Zustand aus | der Maintainer kann es mit eigenen Augen sehen |
-| Erwartet und tatsächlich | manchmal ist der „Fehler“ beabsichtigt, und das zeigt die Meinungsverschiedenheit |
-| Fehlermeldungen als Text, kopiert | sie lassen sich durchsuchen; ein Screenshot nicht |
+| Erwartet und tatsächlich | manchmal ist der „Fehler“ beabsichtigt, und das zeigt die Meinungsverschiedenheit || Fehlermeldungen als Text, kopiert | sie lassen sich durchsuchen; ein Screenshot nicht |
 | Was Sie schon herausgefunden haben | spart Zeit; es ist in Ordnung, unsicher zu sein |
+
+Ist das Verhalten beabsichtigt oder Auslegungssache, handelt es sich oft um eine negative Funktion, auf die sich
+andere Sites verlassen. Eine Änderung daran braucht eine klare Begründung und kann mehrere Runden der Prüfung
+brauchen, bevor sie übernommen wird; eine Option ist dann meist besser als ein neuer Standard
+([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Ein Funktionswunsch
 

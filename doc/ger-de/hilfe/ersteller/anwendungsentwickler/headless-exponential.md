@@ -40,6 +40,12 @@ statische Websites oder ein anderes System, das die Inhalte anzeigt.
 | expservices | die Funktionen der Administration als Dienste, mit Discovery und Tokens ([Entfernte Dienste mit expservices](entfernte-dienste-expservices.md)) |
 | ezjscore-Serverfunktionen | kleine JSON-Endpunkte, die Sie selbst schreiben ([JSON-Endpunkte mit ezjscore](json-endpunkte-mit-ezjscore.md)) |
 
+Ein Frontend, das im Browser auf einem anderen Host läuft, ruft die REST-API erst auf, wenn CORS für seinen Ursprung
+in `rest.ini [CorsSettings]` eingeschaltet ist; standardmäßig ist es aus
+([CORS für die REST-API](../../../bc/6.0/cors-fuer-die-rest-api.md)). Eine Browser- oder mobile App, bei der sich
+Benutzer anmelden, ist ein öffentlicher OAuth-Client und verwendet PKCE
+([PKCE und state](../../../bc/6.0/oauth-pkce-und-state.md)).
+
 ## Inhalte lesen
 
 ```bash

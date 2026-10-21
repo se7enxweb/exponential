@@ -1154,6 +1154,8 @@ CREATE TABLE ezpreferences (
 
 CREATE TABLE ezprest_authcode (
   client_id varchar(200) NOT NULL default '',
+  code_challenge varchar(128) default NULL,
+  code_challenge_method varchar(10) default NULL,
   expirytime bigint(20) NOT NULL default '0',
   id varchar(200) NOT NULL default '',
   scope varchar(200) default NULL,

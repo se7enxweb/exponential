@@ -61,6 +61,10 @@ Die Meldeseite der Hilfe entwirft ein solches Issue für Sie ([Die Meldeseite de
 - **Sie können helfen.** Eine genaue Reproduktion, ein Test auf der Entwicklungslinie oder eine als Pull Request
   eingereichte Korrektur beschleunigen die Sache; „Erwähnen Sie das Issue im Pull Request (zum Beispiel `Fixes #123`),
   damit beide verknüpft sind“ ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md), [Mit Git entwickeln](../../mit-git-entwickeln.md)).
+- **Nicht jeder Fehler wird geändert.** Ist das Verhalten beabsichtigt oder Auslegungssache, verlassen sich andere
+  Sites womöglich darauf. Eine Änderung braucht dann eine klare Begründung und mehrere Runden der Prüfung, bevor sie
+  übernommen wird, und kommt meist als Option statt als neuer Standard
+  ([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Wer für Ihre Organisation meldet
 

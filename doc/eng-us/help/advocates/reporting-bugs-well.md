@@ -29,6 +29,9 @@ page turns it into a routine.
 2. Is it a security problem? Then private ([Security reports stay private](security-reports-stay-private.md)).
 3. Search the tracker; if it exists, add what you know there.
 4. Can you reproduce it on a fresh installation? If not, it may be the site's own setup.
+5. Is it really wrong, or deliberate and open to interpretation? A [negative feature](../project/getting-support.md#negative-features)
+   is behavior other sites depend on; a report asking to change it needs a clear justification and patience through
+   several rounds of review.
 
 ## The parts of a good report
 

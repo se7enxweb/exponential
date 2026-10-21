@@ -26,7 +26,7 @@ Keine Änderung wird für kaputt erklärt, wenn sie nur im Cache steckt.
 
 ## Welcher Cache
 
-1. In Templates gelesene Einstellungen (Menüs): **Template & Inhalt**. Neue Templates: **Template & Inhalt**. Stylesheets: **Template & Inhalt** (gepackte Dateien). Layout-Importe auf der Kommandozeile: **Inhalte**.
+1. In Templates gelesene Einstellungen (Menüs): **Template & Inhalt**. Neue Templates: **Template & Inhalt**. Stylesheets: **Template & Inhalt** (gepackte Dateien). Layout-Importe auf der Kommandozeile: keiner (ein Import mit `--publish` leert den Seiten-Cache selbst).
 
 ## Welchen Weg Sie wählen
 

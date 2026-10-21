@@ -32,18 +32,23 @@ Zugangsdaten; wählen Sie danach, für wen das Programm handelt.
 
 1. Ein Administrator registriert den Client unter **Setup > oAuth-Verwaltung** (`/oauthadmin/list`): Kennung,
    Geheimnis, Weiterleitungsadresse.
-2. Die App schickt den Benutzer zu `/oauth/authorize?client_id=...&redirect_uri=...&response_type=code`; der Benutzer
-   meldet sich an und erlaubt den Zugriff. Der Benutzer braucht die Richtlinie `oauth/authorize` (optional nach
-   Siteaccess eingeschränkt); ohne sie leitet die Website mit `error=access_denied` weiter
-   ([Richtlinie OAuth authorize](../../../bc/6.0/oauth-autorisierungsrichtlinie.md)).
-3. Die App tauscht den Code bei `POST /api/auth/v1/oauth/token` ein (`grant_type=authorization_code`).
+2. Die App schickt den Benutzer zu `/oauth/authorize?client_id=...&redirect_uri=...&response_type=code&state=...`,
+   mit PKCE zusätzlich `code_challenge=...&code_challenge_method=S256`; der Benutzer meldet sich an und erlaubt den
+   Zugriff, und die Website leitet mit dem Code und demselben `state` zurück. Der Benutzer braucht die Richtlinie
+   `oauth/authorize` (optional nach Siteaccess eingeschränkt); ohne sie leitet die Website mit
+   `error=access_denied` weiter ([Richtlinie OAuth authorize](../../../bc/6.0/oauth-autorisierungsrichtlinie.md)).
+3. Die App tauscht den Code bei `POST /api/auth/v1/oauth/token` ein (`grant_type=authorization_code`, dazu
+   `code_verifier`, wenn sie eine Challenge gesendet hat).
 4. Sie sendet `Authorization: OAuth <token>`; nach `TokenTTL` (standardmäßig eine Stunde) verwendet sie
    `grant_type=refresh_token`.
 
 ![oAuth-Verwaltung: die OAuth-Clients der Installation und ihr Zugriff](../../../../eng-us/help/images/creators/oauth-admin.webp)
 
-Das Client-Geheimnis gehört auf einen Server; eine App, die kein Geheimnis bewahren kann, sollte über ein Backend von
-Ihnen gehen.
+Das Client-Geheimnis gehört auf einen Server. Eine App, die kein Geheimnis bewahren kann (eine mobile oder
+Browser-App), ist ein öffentlicher Client: Sie wird ohne Geheimnis gespeichert, sendet keines und muss PKCE mit
+`S256` verwenden ([PKCE und state](../../../bc/6.0/oauth-pkce-und-state.md)). Eine Seite in einem Browser auf einem
+anderen Host erreicht die API nur, wenn CORS für ihren Ursprung eingeschaltet ist
+([CORS für die REST-API](../../../bc/6.0/cors-fuer-die-rest-api.md); standardmäßig aus).
 
 ## Persönliche API-Schlüssel
 

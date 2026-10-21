@@ -24,15 +24,15 @@ Change lists, banners, menus and campaigns week by week, and recover from mistak
 11. [Hide a footer link for a while](hide-a-footer-link.md): Hide the Menu item in the content tree; the footer lists only what the visitor may see.
 12. [Change a social profile address](update-social-profile.md): Edit the matching field (facebook, twitter, instagram, linkedin) of the site info object.
 13. [Swap a seasonal layout by hand](seasonal-swap-by-hand.md): Two mappings for the same page, the seasonal one with a higher priority: tick or untick Enabled to switch.
-14. [Swap a seasonal layout by date](seasonal-swap-by-time.md): A Time condition (from, to) on the seasonal mapping switches it without anyone clicking, with up to an hour of lag from the resolver's memory.
+14. [Swap a seasonal layout by date](seasonal-swap-by-time.md): A Time condition (from, to) on the seasonal mapping switches it at its start and end without anyone clicking.
 15. [Put up a temporary notice](temporary-notice.md): An Alert block in the page's post_header zone, removed again after the event.
 16. [Rotate the featured item of a grid](rotate-the-featured-item.md): In a grid_featured list, the first item is the large one: drag another item to the top.
 17. [Change the number of columns of a grid](change-columns.md): Number of columns on the Design tab: 2, 3, 4 or 6.
-18. [Change a list from grid to list](change-a-view-type.md): View type on the Design tab - with the quirk that the change is stored with the next change of another field.
+18. [Change a list from grid to list](change-a-view-type.md): View type on the Design tab; before explayouts_ui_api 1.3.29 the change was stored only with the next change of another field.
 19. [Give a section a background color](change-a-background.md): Set background color on the Design tab; the wrapper gets bg-color-<color>.
 20. [Adjust the spacing of a section](adjust-spacing.md): Use vertical whitespace on top and bottom (Design tab) instead of Spacer blocks.
 21. [Throw away a draft that went wrong](discard-a-bad-draft.md): Discard removes the draft; the published layout is untouched.
-22. [Undo a published layout change](undo-a-published-change.md): Import the export taken before the change with --strategy=overwrite --publish, then clear Content.
+22. [Undo a published layout change](undo-a-published-change.md): Import the export taken before the change with --strategy=overwrite --publish; the import purges the page cache itself.
 23. [Export layouts every week](weekly-export.md): A scheduled exp:layouts export --all keeps a history of the layouts.
 24. [Find forgotten drafts](find-forgotten-drafts.md): exp:layouts list --drafts lists every open draft; open each and publish or discard.
 25. [A change did not show](change-did-not-show.md): Draft not published, linked zone, another layout, settings in the wrong file, compiled template, page cache, Velocity: the ten checks.

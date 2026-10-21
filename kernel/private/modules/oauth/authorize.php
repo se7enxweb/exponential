@@ -6,7 +6,11 @@
  * @param string $_GET[redirect_uri] the URI the view should redirect to in case of success
  * @param string $_GET[response_type] the requested response type. Can be code_and_token, code, or token
  * @param string $_GET[scope] the permissions scope the client requests (optional)
- * @param string $_GET[state] Not implemented yet (optional)
+ * @param string $_GET[state] an opaque value of the client, sent back unchanged with the code, the token or the error
+ *                            (optional, RFC 6749 section 4.1.2)
+ * @param string $_GET[code_challenge] PKCE challenge (RFC 7636), stored with the authorization code (optional unless
+ *                                     rest.ini [OAuthSettings] requires PKCE for the client)
+ * @param string $_GET[code_challenge_method] S256, or plain when AllowPlainPkce is enabled
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -22,15 +26,38 @@ if ( !function_exists( 'expModuleViewOauthAuthorizeError' ) ) {
  * @param string $redirectUri The URI the error should be sent to
  * @param string $errorCode The error code, as defined in section 3.2.1
  * @param string $message A human readable error message explaining the error
+ * @param string|false $state The state parameter of the request, sent back unchanged; false when it had none
  *
  * @return void
  */
-function expModuleViewOauthAuthorizeError( $redirectUri, $errorCode, $message = null )
+function expModuleViewOauthAuthorizeError( $redirectUri, $errorCode, $message = null, $state = false )
 {
-    $location = "{$redirectUri}?error=" . urlencode( $errorCode );
+    $parameters = array( 'error' => $errorCode );
     if( $message !== null )
-        $location .= '&error_description=' . urlencode( $message );
-    expModuleViewOauthAuthorizeResponse( '302 Found', $location );
+        $parameters['error_description'] = $message;
+    expModuleViewOauthAuthorizeResponse( '302 Found', expModuleViewOauthAuthorizeLocation( $redirectUri, $parameters, $state ) );
+}
+}
+
+if ( !function_exists( 'expModuleViewOauthAuthorizeLocation' ) ) {
+/**
+ * The address of a redirect to the client's end point: its parameters, and the state of the request when it had one.
+ *
+ * @param string $redirectUri The client's end point
+ * @param array $parameters name => value
+ * @param string|false $state The state parameter of the request; false when it had none
+ *
+ * @return string
+ */
+function expModuleViewOauthAuthorizeLocation( $redirectUri, array $parameters, $state = false )
+{
+    if ( is_string( $state ) )
+        $parameters['state'] = $state;
+    $query = array();
+    foreach ( $parameters as $name => $value )
+        $query[] = $name . '=' . urlencode( (string)$value );
+    // an end point that has a query string of its own keeps it
+    return $redirectUri . ( strpos( $redirectUri, '?' ) === false ? '?' : '&' ) . implode( '&', $query );
 }
 }
 
@@ -110,14 +137,30 @@ if ( $pRedirectUri === '' || !$application->isEndPointValid( $pRedirectUri ) )
     expModuleViewOauthAuthorizeResponse( '400 Bad Request' );
 }
 
-// From here on errors are sent to the client's end point
+// From here on errors are sent to the client's end point, with the state of the request (RFC 6749, section 4.1.2.1)
+$pState = expModuleViewOauthAuthorizeGetHTTPVariable( 'state' );
+if ( !is_string( $pState ) )
+    $pState = false;
 
 // Requested response type
 if ( ( $pResponseType = expModuleViewOauthAuthorizeGetHTTPVariable( 'response_type' ) ) === false )
 {
-    expModuleViewOauthAuthorizeError( $pRedirectUri, 'invalid_request', "Missing response_type parameter" );
+    expModuleViewOauthAuthorizeError( $pRedirectUri, 'invalid_request', "Missing response_type parameter", $pState );
     // redirect to the redirect_uri with GET parameter error=invalid_request
     // @todo mismatch between chapters 3.2's example (error=access-denied) and error codes list at 3.2.1 (error=access_denied)
+}
+
+// PKCE (RFC 7636): checked before the user is asked to sign in, so a request that cannot succeed fails at once
+$pCodeChallenge = expModuleViewOauthAuthorizeGetHTTPVariable( 'code_challenge' );
+$pCodeChallengeMethod = expModuleViewOauthAuthorizeGetHTTPVariable( 'code_challenge_method' );
+$pkceError = expOAuthPkce::checkChallenge( $pCodeChallenge, $pCodeChallengeMethod, expOAuthPkce::plainAllowed( $restINI ) );
+if ( $pkceError !== null )
+{
+    expModuleViewOauthAuthorizeError( $pRedirectUri, 'invalid_request', $pkceError, $pState );
+}
+if ( $pResponseType === 'code' && $pCodeChallenge === false && expOAuthPkce::isRequiredFor( $application, $restINI ) )
+{
+    expModuleViewOauthAuthorizeError( $pRedirectUri, 'invalid_request', 'code_challenge required', $pState );
 }
 
 // Scope
@@ -154,7 +197,7 @@ if ( !$user->isRegistered() )
 // section 4.1.2.1). Before 6.0.15 a negation bound before the comparison made this check always pass.
 if ( !expOAuthAuthorizePolicy::userMayAuthorize( $user, expOAuthAuthorizePolicy::currentSiteAccessName(), $restINI ) )
 {
-    expModuleViewOauthAuthorizeError( $pRedirectUri, 'access_denied', 'The user may not authorize clients' );
+    expModuleViewOauthAuthorizeError( $pRedirectUri, 'access_denied', 'The user may not authorize clients', $pState );
 }
 
 // Everything is valid. Process to app authorization.
@@ -165,7 +208,7 @@ if ( !$application->isAuthorizedByUser( $pScope, eZUser::currentUser() ) )
     // authorization denied: redirect
     if ( $http->hasPostVariable( 'DenyButton' ) )
     {
-        expModuleViewOauthAuthorizeError( $pRedirectUri, 'access_denied' );
+        expModuleViewOauthAuthorizeError( $pRedirectUri, 'access_denied', null, $pState );
     }
 
     elseif ( $http->hasPostVariable( 'AuthorizeButton' ) )
@@ -185,6 +228,14 @@ if ( !$application->isAuthorizedByUser( $pScope, eZUser::currentUser() ) )
                              'response_type' => $pResponseType,
                              'scope' => $pScope,
                              'redirect_uri' => $pRedirectUri );
+        // carried through the form, so the POST of Authorize or Deny is the same request
+        if ( $pState !== false )
+            $parameters['state'] = $pState;
+        if ( $pCodeChallenge !== false )
+        {
+            $parameters['code_challenge'] = $pCodeChallenge;
+            $parameters['code_challenge_method'] = expOAuthPkce::normalizeMethod( $pCodeChallengeMethod );
+        }
         $tpl->setVariable( 'httpParameters', $parameters );
 
         $result = array();
@@ -198,6 +249,7 @@ if ( !$application->isAuthorizedByUser( $pScope, eZUser::currentUser() ) )
         return $result;
     }
 }
+
 
 $tokenTTL = (int)$restINI->variable( 'OAuthSettings', 'TokenTTL' );
 if ( $pResponseType == 'token')
@@ -216,28 +268,19 @@ if ( $pResponseType == 'token')
     $session = ezcPersistentSessionInstance::get();
     $session->save( $token );
 
-
-    // The user has a agreed to authorize this app.
-    // Redirect to the redirect_uri with these parameters:
-    // - code, only if request_type == code OR code_and_token @todo Implement
-    // - access_token, only if request_type == token OR code_and_token
-    // - expires_in, the token lifetime in seconds
-    // - scope, the permission scope the provided code / token grants, if different from the requested one (not implemented yet)
-    // - state, not implemented yet (state persistency related)
-    $parameters = array();
-
-    $rExpiresIn = $tokenTTL;
-
-    $parameters[] = 'access_token=' . urlencode( $rAccessToken );
-    $parameters[] = 'refresh_token=' . urlencode( $rRefreshToken );
-    $parameters[] = "expires_in=$rExpiresIn";
-    $location = "{$pRedirectUri}?" . implode( '&', $parameters );
+    // The user has agreed to authorize this app. Redirect to the redirect_uri with the access token, the refresh
+    // token, the token lifetime in seconds and the state of the request.
+    $location = expModuleViewOauthAuthorizeLocation( $pRedirectUri,
+                                                     array( 'access_token' => $rAccessToken,
+                                                            'refresh_token' => $rRefreshToken,
+                                                            'expires_in' => $tokenTTL ),
+                                                     $pState );
 
     expModuleViewOauthAuthorizeResponse( '302 Found', $location );
 }
 elseif ( $pResponseType ==  'code')
 {
-    // At this point, the we know the user HAS granted access, and can hand over a token
+    // At this point, the we know the user HAS granted access, and can hand over a code
     $rCode = ezpRestToken::generateToken( $pScope );
 
     $code = new ezpRestAuthcode();
@@ -245,29 +288,27 @@ elseif ( $pResponseType ==  'code')
     $code->client_id = $pClientId;
     $code->user_id = $user->attribute( 'contentobject_id' );
     $code->expirytime = time() + $tokenTTL;
+    // PKCE: the token end point redeems the code only with the matching code_verifier
+    if ( $pCodeChallenge !== false )
+    {
+        $code->code_challenge = $pCodeChallenge;
+        $code->code_challenge_method = expOAuthPkce::normalizeMethod( $pCodeChallengeMethod );
+    }
 
     $session = ezcPersistentSessionInstance::get();
     $session->save( $code );
 
-
-    // The user has a agreed to authorize this app.
-    // Redirect to the redirect_uri with these parameters:
-    // - code, only if request_type == code OR code_and_token @todo Implement
-    // - access_token, only if request_type == token OR code_and_token
-    // - expires_in, the token lifetime in seconds
-    // - scope, the permission scope the provided code / token grants, if different from the requested one (not implemented yet)
-    // - state, not implemented yet (state persistency related)
-    $parameters = array();
-
-    $rExpiresIn = $tokenTTL;
-
-    $parameters[] = 'code=' . urlencode( $rCode );
-    $parameters[] = "expires_in=$rExpiresIn";
-    $location = "{$pRedirectUri}?" . implode( '&', $parameters );
+    // The user has agreed to authorize this app. Redirect to the redirect_uri with the code, its lifetime in seconds
+    // and the state of the request.
+    $location = expModuleViewOauthAuthorizeLocation( $pRedirectUri,
+                                                     array( 'code' => $rCode, 'expires_in' => $tokenTTL ),
+                                                     $pState );
 
     expModuleViewOauthAuthorizeResponse( '302 Found', $location );
 }
-
-
+else
+{
+    expModuleViewOauthAuthorizeError( $pRedirectUri, 'unsupported_response_type', null, $pState );
+}
 
 ?>

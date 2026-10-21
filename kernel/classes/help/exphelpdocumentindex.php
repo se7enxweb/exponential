@@ -185,6 +185,16 @@ class expHelpDocumentIndex
     }
 
     /**
+     * The index setInstance() fixed, or null when instance() follows the configuration.
+     *
+     * @return expHelpDocumentIndex|null
+     */
+    public static function fixedInstance()
+    {
+        return self::$instanceFixed ? self::$instance : null;
+    }
+
+    /**
      * Forgets the instance (tests, and after a rebuild in the same process).
      */
     public static function resetInstance()

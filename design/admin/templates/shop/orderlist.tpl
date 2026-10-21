@@ -23,7 +23,7 @@
    column and direction are view parameters, so paging keeps them. *}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" onclick="ezjs_toggleCheckboxes( document.orderlist, 'OrderIDArray[]' ); return false;" /></th>
+    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" data-a4-toggle-checkboxes="OrderIDArray[]" data-a4-form="orderlist" /></th>
     {include uri='design:parts/sortheader.tpl' key='id' label='ID'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
     {include uri='design:parts/sortheader.tpl' key='customer' label='Customer'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
     {include uri='design:parts/sortheader.tpl' key='total_ex_vat' label='Total (ex. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}

@@ -28,7 +28,7 @@
 class expHelpPdfWriter
 {
     /** Bumped when the output changes, so cached files are made again */
-    const VERSION = 1;
+    const VERSION = 2;
 
     /** Page sizes in points */
     const PAGE_SIZES = array( 'A4' => array( 595.28, 841.89 ), 'LETTER' => array( 612.0, 792.0 ) );
@@ -785,6 +785,15 @@ class expHelpPdfWriter
         switch ( $tag )
         {
             case 'h1': case 'h2': case 'h3': case 'h4': case 'h5': case 'h6':
+                if ( self::hasClass( $element, 'a4-help-partner-title' ) )
+                {
+                    // the partner card's title: bold in the card's colour, not a section of the page
+                    $atoms = array();
+                    $this->inline( $element, $ctx['style'] + array( 'b' => true, 'color' => self::CALLOUTS['tip'][0] ), $atoms );
+                    $this->paragraph( $atoms, $ctx );
+                    $this->space( 3 );
+                    return;
+                }
                 $this->heading( $element, (int)$tag[1], $ctx );
                 return;
             case 'p':
@@ -865,6 +874,12 @@ class expHelpPdfWriter
                     $this->blocks( $element, array( 'size' => $ctx['size'] - 1.5 ) + $ctx );
                     return;
                 }
+                if ( self::hasClass( $element, 'a4-help-partner' ) )
+                {
+                    // the "Become an Exponential Partner" card (expHelpMarkdownRenderer partner_card): a box like a tip
+                    $this->boxed( $element, $ctx, self::CALLOUTS['tip'][0], self::CALLOUTS['tip'][1], array() );
+                    return;
+                }
                 $this->blocks( $element, $ctx );
                 return;
             case 'div':
@@ -876,6 +891,21 @@ class expHelpPdfWriter
                         $this->code( $pre->item( 0 ), $ctx, (string)$element->getAttribute( 'data-label' ), false );
                         return;
                     }
+                }
+                if ( self::hasClass( $element, 'a4-help-partner-actions' ) )
+                {
+                    // the card's buttons: one line of links, separated
+                    $atoms = array();
+                    foreach ( $element->childNodes as $child )
+                    {
+                        if ( !$child instanceof DOMElement || $this->skipped( $child ) )
+                            continue;
+                        if ( $atoms )
+                            $atoms = array_merge( $atoms, $this->atoms( '  |  ', $ctx['style'] ) );
+                        $this->inline( $child, $ctx['style'], $atoms );
+                    }
+                    $this->paragraph( $atoms, $ctx );
+                    return;
                 }
                 $kind = self::classPrefixed( $element, 'a4-help-callout--' );
                 if ( $kind !== null )

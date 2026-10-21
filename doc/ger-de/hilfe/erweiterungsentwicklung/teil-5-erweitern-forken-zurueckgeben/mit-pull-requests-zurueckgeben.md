@@ -37,6 +37,10 @@ tragen. Dieses Kapitel geht einen Pull Request von Anfang bis Ende durch. Es gil
    dort, statt einen zweiten zu eröffnen.
 3. **Fragen Sie bei einer großen Änderung zuerst.** Eröffnen Sie ein Issue, das beschreibt, was Sie tun möchten und
    warum. Ein Maintainer hat vielleicht schon einen Plan oder einen Grund, warum es nicht funktionieren kann.
+4. **Prüfen Sie, ob der „Fehler“ eine negative Funktion ist.** Manches Verhalten ist beabsichtigt oder
+   Auslegungssache, und andere Sites verlassen sich darauf, in Exponential wie in jeder Erweiterung. Eine Änderung
+   daran braucht eine klare Begründung und oft mehrere Review-Runden; bieten Sie lieber eine Option an als einen neuen
+   Standard ([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## 1. Eine Änderung, ein Branch
 

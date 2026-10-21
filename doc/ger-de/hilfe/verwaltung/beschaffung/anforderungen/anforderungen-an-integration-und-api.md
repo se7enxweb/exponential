@@ -52,7 +52,7 @@ sind es nicht.
 | Id | Nachweis | Status |
 |---|---|---|
 | INT-01 | REST API v1 und v2 aus einer Erweiterung ([REST API v1 und v2](../../../../anleitungen/rest-api-v1-und-v2.md)); JSON | REST **Teilweise erfüllt**, JSON **Erfüllt** |
-| INT-02 | OAuth-2.0-Token-Endpunkt; persönliche API-Schlüssel ([Persönliche API-Schlüssel](../../../../anleitungen/api-schluessel.md)); entfernte Dienste ([Entfernte Dienste und Apps](../../../../anleitungen/entfernte-dienste-und-apps.md)) | OAuth 2.0 **Teilweise erfüllt** (kein PKCE auf Serverseite) |
+| INT-02 | OAuth-2.0-Token-Endpunkt; persönliche API-Schlüssel ([Persönliche API-Schlüssel](../../../../anleitungen/api-schluessel.md)); entfernte Dienste ([Entfernte Dienste und Apps](../../../../anleitungen/entfernte-dienste-und-apps.md)) | OAuth 2.0 **Teilweise erfüllt** (state und PKCE S256 seit 6.0.15; kein `token_type` in der Token-Antwort) |
 | INT-03 | LDAP-Authentifizierung im Kernel; Anmeldung über soziale Netzwerke und OpenID Connect über `sevenx_authentication_2fa` | LDAP **Teilweise erfüllt** (standardmäßig LDAPv2, kein StartTLS); OIDC-Client **Teilweise erfüllt** (ID-Tokens nicht validiert) |
 | INT-04 | Export von RSS 1.0/2.0 und Atom, Import von RSS ([RSS-Feeds](../../../../anleitungen/rss-feeds.md)); Sitemaps mit `bcgooglesitemaps` | RSS **Erfüllt**, Atom **Teilweise erfüllt**, Sitemaps **Erfüllt** |
 | INT-05 | Audit-Senken einschließlich eines signierten ausgehenden Webhooks (HMAC-SHA-256) ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) | **Erfüllt** mit seinem eigenen dokumentierten Vertrag |

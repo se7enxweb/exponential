@@ -34,6 +34,11 @@ Das Projekt Exponential führt jeden Pull-Request zusammen und korrigiert, was z
 darauf, sodass ein Beitrag nicht in einem langen Review verloren geht; das ist kein Grund, weniger sorgfältige Arbeit zu
 schicken.
 
+Ändert Ihre Korrektur ein Verhalten, das beabsichtigt oder Auslegungssache ist, gilt Vorsicht, bei Exponential wie
+bei jedem Theme oder jeder Erweiterung: Andere Sites verlassen sich womöglich darauf. Eine solche Änderung braucht eine
+klare Begründung und mehrere Runden der Prüfung; eine Option ist besser als ein neuer Standard
+([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 ## Schritt für Schritt
 
 1. Nehmen Sie die Änderung auf einem Branch Ihres Forks vor, ein Thema pro Branch.

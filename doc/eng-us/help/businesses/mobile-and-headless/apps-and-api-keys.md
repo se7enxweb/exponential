@@ -46,7 +46,8 @@ None of them is a password: an API key "cannot sign in to the site or the admini
 3. The app exchanges a code for a token, and refreshes it when it expires (one hour by default).
 
 Source: [3.1 OAuth2 tokens](../../../guides/rest-api-v1-and-v2.md#31-oauth2-tokens). Important for a business:
-"The client secret belongs on a server; an app that cannot keep a secret should go through a back end of yours"
+"The client secret belongs on a server. An app that cannot keep a secret (a mobile or browser app) is a public
+client: it is stored without a secret, sends none and must use PKCE with `S256`"
 ([OAuth2 for third-party applications](../../creators/app-creators/oauth-and-api-keys.md#oauth2-for-third-party-applications)).
 Removing an app in the administration also removes its authorizations and tokens
 ([7. The administration](../../../guides/api-keys.md#7-the-administration-every-key-one-user-revoking)).

@@ -97,18 +97,26 @@ Für eine Anwendung, bei der sich *andere* Benutzer anmelden und für die sie in
 1. Ein Administrator registriert die Anwendung unter **Setup > oAuth admin** (`/oauthadmin/list`). Sie erhält eine Client-Kennung,
    ein Geheimnis und die Weiterleitungsadresse der Anwendung.
 2. Die Anwendung schickt den Benutzer auf die Autorisierungsseite der Site:
-   `https://example.com/oauth/authorize?client_id=<client id>&redirect_uri=<redirect uri>&response_type=code`.
-   Der Benutzer meldet sich an und erlaubt der Anwendung den Zugriff; die Site leitet mit `code=<code>` zurück. Der Benutzer benötigt die
+   `https://example.com/oauth/authorize?client_id=<client id>&redirect_uri=<redirect uri>&response_type=code&state=<zufall>`,
+   mit PKCE zusätzlich `&code_challenge=<challenge>&code_challenge_method=S256`.
+   Der Benutzer meldet sich an und erlaubt der Anwendung den Zugriff; die Site leitet mit `code=<code>` und dem
+   unveränderten `state` der Anfrage zurück (die Anwendung prüft ihn). Der Benutzer benötigt die
    Richtlinie *OAuth / Authorize* (`oauth/authorize`); ohne sie leitet die Site mit `error=access_denied` zurück
    ([Upgrade-Hinweis](../bc/6.0/oauth-autorisierungsrichtlinie.md)).
 3. Die Anwendung tauscht den Code am Token-Endpunkt gegen ein Token,
    `POST /api/auth/v1/oauth/token`, mit `grant_type=authorization_code`, `client_id`, `client_secret`, `code` und
-   `redirect_uri`.
+   `redirect_uri`, dazu `code_verifier`, wenn sie eine Challenge gesendet hat. Ein öffentlicher Client (ohne
+   gespeichertes Geheimnis, etwa eine mobile App) sendet kein `client_secret` und muss PKCE verwenden
+   ([PKCE und state](../bc/6.0/oauth-pkce-und-state.md)).
 4. Sie sendet das Token mit jeder Anfrage (`Authorization: OAuth <token>` oder den Parameter `oauth_token`).
 5. Wenn das Token abgelaufen ist (`rest.ini [OAuthSettings] TokenTTL`, standardmäßig eine Stunde), fordert die Anwendung mit
    `grant_type=refresh_token` und `refresh_token=<refresh token>` ein neues an.
 
 Der Token-Endpunkt unterstützt die Grants `authorization_code` und `refresh_token`.
+
+Eine Seite in einem Browser auf einem anderen Host (eine Single-Page-Anwendung) kann die API nur aufrufen, wenn CORS
+für ihren Ursprung eingeschaltet ist, `rest.ini [CorsSettings]`; standardmäßig ist es aus
+([CORS für die REST-API](../bc/6.0/cors-fuer-die-rest-api.md)).
 
 ### 3.2 Persönliche API-Schlüssel
 

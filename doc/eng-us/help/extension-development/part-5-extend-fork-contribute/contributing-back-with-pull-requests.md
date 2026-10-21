@@ -32,6 +32,10 @@ start to end. It applies to the kernel (`se7enxweb/exponential`) and to any exte
    starting a second.
 3. **For a large change, ask first.** Open an issue that describes what you want to do and why. A maintainer may
    already have a plan, or a reason it cannot work.
+4. **Check whether the "bug" is a negative feature.** Behavior that is deliberate or open to interpretation may be
+   exactly what other sites depend on. A pull request that changes it needs a clear justification, is far easier to
+   accept as an option than as a new default, and may take several rounds of review before it is merged
+   ([Negative features](../../project/getting-support.md#negative-features)).
 
 ## 1. One change, one branch
 

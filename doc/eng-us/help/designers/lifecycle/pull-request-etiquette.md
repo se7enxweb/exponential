@@ -14,6 +14,9 @@ This page is for designers sending a change to another maintainer's theme or to 
 ## Step by step
 
 1. **Check first**: is there an issue? Comment that you are working on it. Read the repository's contributing notes.
+   If what you want to fix is deliberate behavior that other sites rely on, a
+   [negative feature](../../project/getting-support.md#negative-features), any maintainer will ask for a clear
+   justification and several rounds of review; propose it as an option rather than a changed default.
 2. **One topic per pull request.** A fix and a refactoring are two pull requests.
 3. **Branch from the current main**: `git switch -c fix-map-popup origin/main`.
 4. **Make the change** following the theme's style. No reformatting of untouched lines.

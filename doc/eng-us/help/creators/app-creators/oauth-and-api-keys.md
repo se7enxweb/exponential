@@ -32,15 +32,21 @@ the program acts for.
 
 1. An administrator registers the client in **Setup > oAuth admin** (`/oauthadmin/list`): identifier, secret, redirect
    address.
-2. The app sends the user to `/oauth/authorize?client_id=...&redirect_uri=...&response_type=code`; the user signs in
-   and allows it. The user needs the policy `oauth/authorize` (optionally limited by siteaccess); without it the site
-   redirects with `error=access_denied` ([OAuth authorize policy](../../../bc/6.0/oauth-authorize-policy.md)).
-3. The app exchanges the code at `POST /api/auth/v1/oauth/token` (`grant_type=authorization_code`).
+2. The app sends the user to `/oauth/authorize?client_id=...&redirect_uri=...&response_type=code&state=...`, with
+   PKCE also `code_challenge=...&code_challenge_method=S256`; the user signs in and allows it, and the site redirects
+   back with the code and the same `state`. The user needs the policy `oauth/authorize` (optionally limited by
+   siteaccess); without it the site redirects with `error=access_denied`
+   ([OAuth authorize policy](../../../bc/6.0/oauth-authorize-policy.md)).
+3. The app exchanges the code at `POST /api/auth/v1/oauth/token` (`grant_type=authorization_code`, and
+   `code_verifier` when it sent a challenge).
 4. It sends `Authorization: OAuth <token>`; after `TokenTTL` (one hour by default) it uses `grant_type=refresh_token`.
 
 ![oAuth admin: the OAuth clients of the installation and their access](../../images/creators/oauth-admin.webp)
 
-The client secret belongs on a server; an app that cannot keep a secret should go through a back end of yours.
+The client secret belongs on a server. An app that cannot keep a secret (a mobile or browser app) is a public
+client: it is stored without a secret, sends none and must use PKCE with `S256`
+([PKCE and state](../../../bc/6.0/oauth-pkce.md)). A page in a browser on another host reaches the API only when
+CORS is switched on for its origin ([CORS for the REST API](../../../bc/6.0/rest-cors.md); off by default).
 
 ## Personal API keys
 

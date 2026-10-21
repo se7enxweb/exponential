@@ -31,7 +31,7 @@ StartPage=help/press/press-start-here.md
 
 ## Related
 
-Standard: eine Liste mit 3: `sales-marketing`, `advocate`, `sponsor`.
+Standard: eine Liste mit 4: `sales-marketing`, `advocate`, `sponsor`, `podcaster`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,7 @@ Related[]
 Related[]=sales-marketing
 Related[]=advocate
 Related[]=sponsor
+Related[]=podcaster
 */ ?>
 ```
 

@@ -26,7 +26,7 @@ Die Fußzeile jeder Seite ist in wenigen Minuten wieder in Ordnung.
 
 ## Auf der Kommandozeile
 
-1. `./console exp:layouts import <last export> --only=fd0aa7af77a85a03bf1080018f5db1dc --strategy=overwrite --publish --dry-run`, prüfen, ohne `--dry-run` ausführen, dann `./console exp:cache clear --tag=content`.
+1. `./console exp:layouts import <last export> --only=fd0aa7af77a85a03bf1080018f5db1dc --strategy=overwrite --publish --dry-run`, prüfen, ohne `--dry-run` ausführen; der Import leert den Seiten-Cache selbst (seit explayouts_core 1.0.10).
 
 ## Welchen Weg Sie wählen
 
