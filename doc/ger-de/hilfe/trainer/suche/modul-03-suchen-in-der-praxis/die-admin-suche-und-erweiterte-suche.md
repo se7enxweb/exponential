@@ -84,7 +84,7 @@ Beispielinhalten vorkommen.
 
 1. Drücken Sie auf dem Dashboard `/`, geben Sie ein häufiges Wort aus den Beispielinhalten ein und drücken Sie die
    Eingabetaste. Notieren Sie die Anzahl der Treffer in der Überschrift.
-2. Grenzen Sie die Suche mit der Liste **In** auf der Ergebnisseite auf die Sektion *Medien* ein, dann auf *Standard*
+2. Grenzen Sie die Suche mit der Liste **In** auf der Ergebnisseite auf die Sektion *Media* ein, dann auf *Standard*
    (oder die Sektionen, die Ihre Installation hat).
 3. Öffnen Sie einen Ordner in der **Inhaltsstruktur**, wählen Sie dann **Suchbereich**, **Wo**: **Aktueller Ort**, und
    suchen Sie nach demselben Wort.
