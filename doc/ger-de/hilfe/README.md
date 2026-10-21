@@ -29,6 +29,7 @@ ausgegraut oder gar nicht angezeigt.
 | [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md) | Kopfzeile, Registerkarten, Seitenspalten und Dashboard kennenlernen |
 | [Anmelden im Editor](anmelden-im-editor.md) | Im Editor anmelden, der Oberfläche zum Schreiben und Veröffentlichen |
 | [Anmelden in der Administration](anmelden-in-der-administration.md) | In der Administration anmelden, mit Hinweisen zu Sperren, Design und Sicherheit |
+| [Benutzerhandbuch](handbuch/README.md) | Eine Aufgabe in der Administration erledigen: eine Frage pro Seite, mit der Angabe, wer sie erledigen darf, den Schritten und dem, was schiefgehen kann |
 
 ## Wer Exponential macht
 

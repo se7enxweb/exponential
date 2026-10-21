@@ -201,6 +201,17 @@ Die FAQ der Website nennt Spenden und Mitgliedschaften und außerdem die vielen 
 [Zum Projekt beitragen](zum-projekt-beitragen.md), [Erweiterungen zurückgeben](../erweiterungen-zurueckgeben.md)
 und [Geben und spenden](geben-und-spenden.md).
 
+### Muss ich etwas unterschreiben, um Code beizutragen, und was gebe ich dabei ab?
+
+Für den Kern-Kernel ja. 7x und die Exponential Foundation verlangen für jeden Code-Beitrag zum Kernel eine
+unterschriebene Contributor Licensing Agreement (CLA), bevor er übernommen werden kann, gleich ob er als Pull Request,
+Patch, Issue oder per E-Mail eingereicht wird. **Mit Unterschrift und Einreichung übertragen Sie das Urheberrecht an
+Ihrem Beitrag an 7x, das sein Eigentümer wird, und geben die Kontrolle darüber auf:** 7x darf ihn auf jede Weise
+verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen Produkten, ohne
+Sie zu fragen oder zu bezahlen, und Sie können ihn weder zurückziehen noch an Bedingungen knüpfen. Sie unterschreiben
+einmal für alle künftigen Beiträge. Ihre eigenen Extensions, Seitenpakete und Themes sind nicht betroffen. Siehe
+[Urheberrechtsübertragung (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) (auf Englisch).
+
 ### Ist es wirklich kostenlos?
 
 Ja. Exponential ist freie Software unter der GNU GPL Version 2 oder später: Sie dürfen es für jeden Zweck nutzen,
