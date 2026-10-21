@@ -75762,8 +75762,8 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>Estudantes e aprendizes</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Aprenda o Exponential: trilhas de aprendizado, seu primeiro site, projetos de estudo, certificações e o nível de parceiro Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Aprenda o Exponential: trilhas de aprendizado, seu primeiro site, projetos de estudo, certificações planejadas e o nível de parceiro Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

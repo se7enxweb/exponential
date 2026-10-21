@@ -74931,8 +74931,8 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Étudiants et apprenants</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Apprendre Exponential : parcours d'apprentissage, votre premier site, projets d'étude, certifications et le niveau de partenaire Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Apprendre Exponential : parcours d'apprentissage, votre premier site, projets d'étude, certifications prévues et le niveau de partenaire Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

@@ -75028,8 +75028,8 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Studenter og elever</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Lær Exponential: læringsstier, ditt første nettsted, studieprosjekter, sertifiseringer og partnernivået Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Lær Exponential: læringsstier, ditt første nettsted, studieprosjekter, planlagte sertifiseringer og partnernivået Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

@@ -74982,8 +74982,8 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Studenci i uczący się</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Naucz się Exponential: ścieżki nauki, Twoja pierwsza witryna, projekty studenckie, certyfikaty i poziom partnerski Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Naucz się Exponential: ścieżki nauki, Twoja pierwsza witryna, projekty studenckie, planowane certyfikaty i poziom partnerski Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

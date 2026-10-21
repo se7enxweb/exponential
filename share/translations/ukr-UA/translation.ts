@@ -73521,8 +73521,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Студенти й ті, хто навчається</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Вивчайте Exponential: навчальні маршрути, ваш перший сайт, навчальні проєкти, сертифікації та партнерський рівень Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Вивчайте Exponential: навчальні маршрути, ваш перший сайт, навчальні проєкти, заплановані сертифікації та партнерський рівень Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

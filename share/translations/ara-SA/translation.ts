@@ -73565,8 +73565,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>الطلاب والمتعلمون</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>تعلّم Exponential: مسارات التعلم وموقعك الأول ومشاريع الدراسة والشهادات ومستوى الشراكة Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>تعلّم Exponential: مسارات التعلم وموقعك الأول ومشاريع الدراسة والشهادات المخطط لها ومستوى الشراكة Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

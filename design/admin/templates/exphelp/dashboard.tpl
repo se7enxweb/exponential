@@ -55,7 +55,7 @@
         'local-business', hash( 'icon', 'geo-alt', 'name', 'Local businesses'|i18n( 'kernel/exphelp' ), 'text', 'Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.'|i18n( 'kernel/exphelp' ) ),
         'individual', hash( 'icon', 'person-circle', 'name', 'Individuals'|i18n( 'kernel/exphelp' ), 'text', 'Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.'|i18n( 'kernel/exphelp' ) ),
         'non-technical', hash( 'icon', 'chat-square-text', 'name', 'Non-technical people'|i18n( 'kernel/exphelp' ), 'text', 'Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.'|i18n( 'kernel/exphelp' ) ),
-        'student', hash( 'icon', 'book', 'name', 'Students and learners'|i18n( 'kernel/exphelp' ), 'text', 'Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.'|i18n( 'kernel/exphelp' ) ) )
+        'student', hash( 'icon', 'book', 'name', 'Students and learners'|i18n( 'kernel/exphelp' ), 'text', 'Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.'|i18n( 'kernel/exphelp' ) ) )
      $help_audience_groups = array(
         hash( 'id', 'use', 'open', true(), 'name', 'Use and run Exponential'|i18n( 'kernel/exphelp' ), 'text', 'Editors, administrators, developers and users, and everyone with a site of their own.'|i18n( 'kernel/exphelp' ),
               'ids', array( 'editor', 'admin', 'developer', 'user', 'customer', 'adopter', 'non-technical', 'individual' ) ),

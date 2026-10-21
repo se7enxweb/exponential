@@ -73536,8 +73536,8 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghojwI'pu'</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Exponential yIghoj: ghojmeH He, wa'DIch DaqlIj, ghojmeH vay'mey, ngoq ta'mey, ghojwI' jupma' patlh je.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential yIghoj: ghojmeH He, wa'DIch DaqlIj, ghojmeH vay'mey, nablu'bogh ngoq ta'mey, ghojwI' jupma' patlh je.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

@@ -73768,8 +73768,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>زده کوونکي او زده کړه کوونکي</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Exponential زده کړئ: د زده کړې لارې، ستاسو لومړی سایټ، د زده کړې پروژې، سندونه او د Student د شراکت کچه.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential زده کړئ: د زده کړې لارې، ستاسو لومړی سایټ، د زده کړې پروژې، پلان شوي سندونه او د Student د شراکت کچه.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

@@ -75204,8 +75204,8 @@ Gracias por tu feedback</translation>
         <translation>Estudiantes y aprendices</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Aprende Exponential: itinerarios de aprendizaje, tu primer sitio, proyectos de estudio, certificaciones y el nivel de socio Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Aprende Exponential: itinerarios de aprendizaje, tu primer sitio, proyectos de estudio, certificaciones previstas y el nivel de socio Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

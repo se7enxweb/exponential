@@ -82,7 +82,7 @@ class expHelpLanding
         'local-business' => 'Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.',
         'individual' => 'Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.',
         'non-technical' => 'Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.',
-        'student' => 'Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.',
+        'student' => 'Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.',
     );
 
     /** @var expHelpDocumentIndex */

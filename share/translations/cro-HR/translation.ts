@@ -74823,8 +74823,8 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Studenti i polaznici</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Naučite Exponential: putovi učenja, vaše prvo web-mjesto, studijski projekti, certifikacije i partnerska razina Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Naučite Exponential: putovi učenja, vaše prvo web-mjesto, studijski projekti, planirane certifikacije i partnerska razina Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

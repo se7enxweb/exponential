@@ -75177,8 +75177,8 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Studenti e apprendisti</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Impara Exponential: percorsi di apprendimento, il tuo primo sito, progetti di studio, certificazioni e il livello partner Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Impara Exponential: percorsi di apprendimento, il tuo primo sito, progetti di studio, certificazioni previste e il livello partner Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

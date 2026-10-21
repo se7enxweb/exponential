@@ -75052,8 +75052,8 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Studenti a studující</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Naučte se Exponential: vzdělávací cesty, váš první web, studijní projekty, certifikace a partnerská úroveň Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Naučte se Exponential: vzdělávací cesty, váš první web, studijní projekty, plánované certifikace a partnerská úroveň Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

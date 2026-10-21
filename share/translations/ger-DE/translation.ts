@@ -80760,8 +80760,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Studierende und Lernende</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Exponential lernen: Lernpfade, Ihre erste Site, Studienprojekte, Zertifizierungen und die Partnerstufe Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential lernen: Lernpfade, Ihre erste Site, Studienprojekte, geplante Zertifizierungen und die Partnerstufe Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

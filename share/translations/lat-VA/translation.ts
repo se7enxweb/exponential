@@ -73536,8 +73536,8 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Studiosi et discipuli</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Exponential disce: itinera discendi, primus situs tuus, incepta studiorum, certificationes et gradus socii Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential disce: itinera discendi, primus situs tuus, incepta studiorum, certificationes destinatae et gradus socii Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

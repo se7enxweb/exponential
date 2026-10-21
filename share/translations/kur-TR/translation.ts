@@ -73768,8 +73768,8 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Xwendekar û hînbûyar</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Exponential hîn bibin: rêyên hînbûnê, malpera we ya yekem, projeyên xwendinê, sertîfîka û asta hevkariyê Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential hîn bibin: rêyên hînbûnê, malpera we ya yekem, projeyên xwendinê, sertîfîkayên plankirî û asta hevkariyê Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

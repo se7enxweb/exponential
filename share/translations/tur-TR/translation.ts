@@ -73775,8 +73775,8 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Öğrenciler ve öğrenenler</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Exponential'ı öğrenin: öğrenme yolları, ilk siteniz, çalışma projeleri, sertifikalar ve Student iş ortaklığı seviyesi.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential'ı öğrenin: öğrenme yolları, ilk siteniz, çalışma projeleri, planlanan sertifikalar ve Student iş ortaklığı seviyesi.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

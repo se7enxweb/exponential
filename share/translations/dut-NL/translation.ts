@@ -74995,8 +74995,8 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Studenten en leerlingen</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Exponential leren: leerpaden, uw eerste site, studieprojecten, certificeringen en het partnerniveau Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential leren: leerpaden, uw eerste site, studieprojecten, geplande certificeringen en het partnerniveau Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

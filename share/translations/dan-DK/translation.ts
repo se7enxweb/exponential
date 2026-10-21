@@ -74446,8 +74446,8 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Studerende og elever</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Lær Exponential: læringsforløb, dit første website, studieprojekter, certificeringer og partnerniveauet Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Lær Exponential: læringsforløb, dit første website, studieprojekter, planlagte certificeringer og partnerniveauet Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>

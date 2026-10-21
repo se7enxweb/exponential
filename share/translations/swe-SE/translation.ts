@@ -75073,8 +75073,8 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Studenter och elever</translation>
     </message>
     <message>
-        <source>Learn Exponential: learning paths, your first site, study projects, certifications and the Student partner level.</source>
-        <translation>Lär dig Exponential: lärvägar, din första webbplats, studieprojekt, certifieringar och partnernivån Student.</translation>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Lär dig Exponential: lärvägar, din första webbplats, studieprojekt, planerade certifieringar och partnernivån Student.</translation>
     </message>
     <message>
         <source>Learning Exponential</source>
