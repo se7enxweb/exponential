@@ -24,8 +24,8 @@ Insgesamt: 206 Beispiele.
 
 ## Verwandte Seiten
 
-- [Zwei Wege zum Bauen](../../../../eng-us/help/build-two-ways/two-ways-to-build.md)
-- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../eng-us/help/build-two-ways/build-a-campaign-page.md)
+- [Zwei Wege zum Bauen](../zwei-wege-zum-bauen.md)
+- [Eine Kampagnenseite bauen, von Anfang bis Ende](../kampagnenseite-bauen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

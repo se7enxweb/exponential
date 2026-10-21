@@ -38,7 +38,7 @@ Inhalt, wenn das Template das Feld liest; sonst das Template.
 
 ## Verwandte Seiten
 
-- [Wie die Kopfzeile aufgebaut ist](../../../../../eng-us/help/build-two-ways/how-the-header-is-built.md)
+- [Wie die Kopfzeile aufgebaut ist](../../wie-die-kopfzeile-aufgebaut-ist.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

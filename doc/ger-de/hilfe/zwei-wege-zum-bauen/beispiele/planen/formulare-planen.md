@@ -38,7 +38,7 @@ Formulare sind Inhalt plus Template; Layouts ordnen nur um sie herum an.
 
 ## Verwandte Seiten
 
-- [Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)
+- [Welches Layout bekommt eine Seite?](../../layout-zuordnungen.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

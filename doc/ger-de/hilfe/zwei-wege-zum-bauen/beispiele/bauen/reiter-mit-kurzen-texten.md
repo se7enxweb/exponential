@@ -29,7 +29,7 @@ Drei Reiter: Beginners, Advanced, Pros.
 
 ## Mit Templates
 
-1. Kopieren Sie `extension/explayouts/design/standard/templates/explayouts/block/tabs.tpl` nach `extension/mysite/design/media/templates/explayouts/block/tabs.tpl` und ändern Sie Ihre Kopie; jeder Block dieses Typs ändert sich in jedem Layout ([Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)). Damit ändern Sie das Markup der Reiter für jeden Tabs-Block.
+1. Kopieren Sie `extension/explayouts/design/standard/templates/explayouts/block/tabs.tpl` nach `extension/mysite/design/media/templates/explayouts/block/tabs.tpl` und ändern Sie Ihre Kopie; jeder Block dieses Typs ändert sich in jedem Layout ([Wie ein Block seinen Templates zugeordnet wird](../../zuordnung-block-zu-template.md)). Damit ändern Sie das Markup der Reiter für jeden Tabs-Block.
 
 ## Welchen Weg Sie wählen
 
@@ -41,7 +41,7 @@ Der Block für den Inhalt; der Override für barrierefreies Markup auf der ganze
 
 ## Verwandte Seiten
 
-- [Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)
+- [Wie ein Block seinen Templates zugeordnet wird](../../zuordnung-block-zu-template.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

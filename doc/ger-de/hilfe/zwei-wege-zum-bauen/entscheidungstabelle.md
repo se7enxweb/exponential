@@ -37,7 +37,7 @@ Jede Zeile ist eine Art von Änderung. **Weg** ist das, was Sie verwenden; **Auc
 
 | Änderung | Weg | Auch |
 |---|---|---|
-| Einträge des Kopfmenüs hinzufügen, entfernen, umordnen | Einstellungen: `menu.ini [SiteInfo] MainMenuID[]` | [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md) |
+| Einträge des Kopfmenüs hinzufügen, entfernen, umordnen | Einstellungen: `menu.ini [SiteInfo] MainMenuID[]` | [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md) |
 | Erste Zeile der Fußzeile | Einstellungen: `FooterMenuID[]` | [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md) |
 | Zweite Zeile der Fußzeile | Inhalt: Menu items in Footer links | [Fußzeilen-Links aus dem Inhaltsbaum](fusszeilen-links-aus-dem-inhaltsbaum.md) |
 | Text eines Menüeintrags | Inhalt: die Seite umbenennen | |
@@ -60,7 +60,7 @@ Jede Zeile ist eine Art von Änderung. **Weg** ist das, was Sie verwenden; **Auc
 
 ## Verwandte Seiten
 
-- [Zwei Wege zum Bauen](../../../eng-us/help/build-two-ways/two-ways-to-build.md)
+- [Zwei Wege zum Bauen](zwei-wege-zum-bauen.md)
 - [Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

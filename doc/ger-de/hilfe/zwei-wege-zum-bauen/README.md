@@ -12,24 +12,24 @@ type: help
 
 Exponential 6.0.15+ baut Sites auf zwei Wegen: mit **Templates** in einer Design-Erweiterung (Code, Overrides, Tests) und
 mit dem **Layout-Editor** (ohne Code). Diese Seiten zeigen beide auf der echten Demo-Site Fit & Healthy, mit den genauen
-Bildschirmen, Befehlen und Dateien. Neu hier? Beginnen Sie mit [Zwei Wege zum Bauen](../../../eng-us/help/build-two-ways/two-ways-to-build.md). Sie wollen
-schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md).
+Bildschirmen, Befehlen und Dateien. Neu hier? Beginnen Sie mit [Zwei Wege zum Bauen](zwei-wege-zum-bauen.md). Sie wollen
+schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md).
 
 ## Hier beginnen
 
-- [Zwei Wege zum Bauen](../../../eng-us/help/build-two-ways/two-ways-to-build.md): was jeder Weg ist, wo sie sich treffen, welchen Sie verwenden.
+- [Zwei Wege zum Bauen](zwei-wege-zum-bauen.md): was jeder Weg ist, wo sie sich treffen, welchen Sie verwenden.
 - [Welcher Weg: die Entscheidungstabelle](entscheidungstabelle.md): jede Art von Änderung und der Weg, sie vorzunehmen.
 - [Gemessene Schritte und Zeiten](gemessene-schritte-und-zeiten.md): wie die Zahlen auf diesen Seiten gemessen wurden.
 - [Zwei Wege zum Bauen, die Begriffe](glossar.md): die Fachbegriffe.
 
 ## Die Kopfzeile
 
-- [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md): die kurze Antwort und die drei Wege.
+- [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md): die kurze Antwort und die drei Wege.
 - [Das Kopfmenü in der Administration](kopfmenue-in-der-administration.md): Schritt für Schritt, ohne Code.
 - [Das Kopfmenü über die Kommandozeile](kopfmenue-per-kommandozeile.md): `exp:ini` und `exp:cache`, echte Ausgaben.
 - [Das Kopfmenü und der Inhaltsbaum](kopfmenue-und-inhaltsbaum.md): was Redakteure im Baum ändern.
 - [Einträge des Kopfmenüs umordnen oder entfernen](kopfmenue-eintraege-umordnen-oder-entfernen.md).
-- [Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md): vom gemeinsamen Layout bis zur `menu.ini`.
+- [Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md): vom gemeinsamen Layout bis zur `menu.ini`.
 - [Fehlerbehebung beim Kopfmenü](kopfmenue-fehlerbehebung.md).
 - [Ein Kopfmenü, das dem Baum folgt](kopfmenue-aus-dem-baum.md): der Weg über Templates, getestet.
 
@@ -45,8 +45,8 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 - [Der Layout-Editor, ein Rundgang](rundgang-durch-den-layout-editor.md).
 - [Der Reiter Design](der-reiter-design.md).
 - [Manuelle und dynamische Sammlungen](manuelle-und-dynamische-sammlungen.md).
-- [Welches Layout bekommt eine Seite?](../../../eng-us/help/build-two-ways/layout-mappings.md).
-- [Wie ein Block seinen Templates zugeordnet wird](../../../eng-us/help/build-two-ways/block-to-template-map.md).
+- [Welches Layout bekommt eine Seite?](layout-zuordnungen.md).
+- [Wie ein Block seinen Templates zugeordnet wird](zuordnung-block-zu-template.md).
 - [Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md): warum eine Kopfzeile jede Seite bedient.
 - [Warum erscheint meine Änderung nicht?](warum-erscheint-meine-aenderung-nicht.md): die Checkliste.
 - [Caches nach einer Änderung](caches-nach-einer-aenderung.md): welcher Cache für welche Änderung.
@@ -62,7 +62,7 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 
 ## Ausgearbeitetes Beispiel und Beispiele zum Lebenszyklus
 
-- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../eng-us/help/build-two-ways/build-a-campaign-page.md): jeder Bildschirm, dann der Weg über Templates.
+- [Eine Kampagnenseite bauen, von Anfang bis Ende](kampagnenseite-bauen.md): jeder Bildschirm, dann der Weg über Templates.
 - [Beispiele zum Lebenszyklus](beispiele/README.md): eine Aufgabe pro Seite, auf beiden Wegen erledigt, nach Phase im Leben einer Site.
 
 ## Layouts übertragen und aufbewahren

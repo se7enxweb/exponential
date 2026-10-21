@@ -32,7 +32,7 @@ Das Media-Design zeichnet das Raster mit `explayouts/block/list/grid.tpl` und `l
 
 ## Mit Templates
 
-1. Kopieren Sie `extension/sevenx_themes_media/design/media/templates/explayouts/block/list/grid/4_columns.tpl` nach `extension/mysite/design/media/templates/explayouts/block/list/grid/4_columns.tpl` und ändern Sie Ihre Kopie; jedes vierspaltige Raster ändert sich ([Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)).
+1. Kopieren Sie `extension/sevenx_themes_media/design/media/templates/explayouts/block/list/grid/4_columns.tpl` nach `extension/mysite/design/media/templates/explayouts/block/list/grid/4_columns.tpl` und ändern Sie Ihre Kopie; jedes vierspaltige Raster ändert sich ([Wie ein Block seinen Templates zugeordnet wird](../../zuordnung-block-zu-template.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -45,7 +45,7 @@ Die Spalten sind eine Design-Option; ändern Sie das Markup aller vierspaltigen 
 ## Verwandte Seiten
 
 - [Der Reiter Design](../../der-reiter-design.md)
-- [Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)
+- [Wie ein Block seinen Templates zugeordnet wird](../../zuordnung-block-zu-template.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

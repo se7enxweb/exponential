@@ -40,7 +40,7 @@ Behalten Sie das alte Layout, bis das neue geprüft ist; das Umstellen der Zuord
 
 ## Verwandte Seiten
 
-- [Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)
+- [Welches Layout bekommt eine Seite?](../../layout-zuordnungen.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

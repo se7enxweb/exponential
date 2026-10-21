@@ -30,7 +30,7 @@ Artikel, die vorbeigleiten, drei auf einmal.
 
 ## Mit Templates
 
-1. Kopieren Sie `extension/explayouts/design/standard/templates/explayouts/block/carousel.tpl` nach `extension/mysite/design/media/templates/explayouts/block/carousel.tpl` und ändern Sie Ihre Kopie; jeder Block dieses Typs ändert sich in jedem Layout ([Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)).
+1. Kopieren Sie `extension/explayouts/design/standard/templates/explayouts/block/carousel.tpl` nach `extension/mysite/design/media/templates/explayouts/block/carousel.tpl` und ändern Sie Ihre Kopie; jeder Block dieses Typs ändert sich in jedem Layout ([Wie ein Block seinen Templates zugeordnet wird](../../zuordnung-block-zu-template.md)).
 
 ## Welchen Weg Sie wählen
 

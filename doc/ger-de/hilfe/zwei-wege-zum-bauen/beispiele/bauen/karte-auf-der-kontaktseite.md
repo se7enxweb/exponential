@@ -27,7 +27,7 @@ Eine Karte mit der Adresse des Studios über dem Kontaktformular.
 3. Wählen Sie den Block aus, öffnen Sie den Reiter **Design** und füllen Sie **Map embed URL** (die Einbettungsadresse, die der Kartendienst angibt), **Width** (Standard `100%`) und **Height (px)** (Standard 400) aus.
 4. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
-Contact (Knoten 185) ist eine Seite vom Typ *Contact form*; prüfen Sie unter **Layouts > Layout-Zuordnungen**, welches Layout sie bekommt, oder geben Sie ihr eines ([Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)).
+Contact (Knoten 185) ist eine Seite vom Typ *Contact form*; prüfen Sie unter **Layouts > Layout-Zuordnungen**, welches Layout sie bekommt, oder geben Sie ihr eines ([Welches Layout bekommt eine Seite?](../../layout-zuordnungen.md)).
 
 ## Mit Templates
 
@@ -43,7 +43,7 @@ Der Block hält die Karte beim Seitenlayout und bearbeitbar.
 
 ## Verwandte Seiten
 
-- [Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)
+- [Welches Layout bekommt eine Seite?](../../layout-zuordnungen.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

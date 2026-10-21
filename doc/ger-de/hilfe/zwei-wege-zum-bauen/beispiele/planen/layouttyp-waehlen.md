@@ -39,7 +39,7 @@ Verwenden Sie die beiden Typen, die das Theme zeichnet; ein neuer Typ braucht au
 
 ## Verwandte Seiten
 
-- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../../eng-us/help/build-two-ways/build-a-campaign-page.md)
+- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../kampagnenseite-bauen.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

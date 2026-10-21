@@ -102,7 +102,7 @@ Wiederherstellen. Um einen Eintrag endgültig herauszunehmen, entfernen Sie sein
 
 ## Verwandte Seiten
 
-- [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
+- [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md)
 - [Das Kopfmenü über die Kommandozeile](kopfmenue-per-kommandozeile.md)
 - [exp:ini für Site-Entwickler](exp-ini-fuer-site-entwickler.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

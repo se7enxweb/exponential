@@ -49,7 +49,7 @@ Aussehen und Struktur ändern: Overrides, neue Ansichts- und Blocktypen, neue ge
 ## Verwandte Seiten
 
 - [Beispiele zum Lebenszyklus](../README.md)
-- [Zwei Wege zum Bauen](../../../../../eng-us/help/build-two-ways/two-ways-to-build.md)
+- [Zwei Wege zum Bauen](../../zwei-wege-zum-bauen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

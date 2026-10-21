@@ -116,7 +116,7 @@ menu-item-main_menu-location-id-185
 ```
 
 (Auf dieser Site zeigen die ersten fünf Einträge in diesem Attribut stattdessen die IDs aus `NexusMainMenuID[]`, siehe
-[Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md).)
+[Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md).)
 
 ## 6. Dasselbe für jeden Siteaccess
 
@@ -128,7 +128,7 @@ zur Liste jedes Siteaccess hinzugefügt; halten Sie Menülisten in den Siteacces
 
 ## Verwandte Seiten
 
-- [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
+- [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md)
 - [exp:ini für Site-Entwickler](exp-ini-fuer-site-entwickler.md)
 - [Caches nach einer Änderung](caches-nach-einer-aenderung.md)
 - [Gemessene Schritte und Zeiten](gemessene-schritte-und-zeiten.md)

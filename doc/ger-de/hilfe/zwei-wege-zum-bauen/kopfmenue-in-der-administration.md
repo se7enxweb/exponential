@@ -91,7 +91,7 @@ Es erscheint nichts? Siehe [Fehlerbehebung beim Kopfmenü](kopfmenue-fehlerbeheb
 
 ## Verwandte Seiten
 
-- [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
+- [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md)
 - [Das Kopfmenü über die Kommandozeile](kopfmenue-per-kommandozeile.md)
 - [INI-Einstellungen in der Administration](ini-einstellungen-in-der-administration.md)
 - [Caches nach einer Änderung](caches-nach-einer-aenderung.md)

@@ -31,7 +31,7 @@ Das Standard-Template schreibt `<div class="slb slb-quote quote-<alignment>">`.
 
 ## Mit Templates
 
-1. Kopieren Sie `extension/explayouts/design/standard/templates/explayouts/block/quote.tpl` nach `extension/mysite/design/media/templates/explayouts/block/quote.tpl` und ändern Sie Ihre Kopie; jeder Block dieses Typs ändert sich in jedem Layout ([Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)). Zum Beispiel, um ein `<cite>` um die Quelle zu setzen.
+1. Kopieren Sie `extension/explayouts/design/standard/templates/explayouts/block/quote.tpl` nach `extension/mysite/design/media/templates/explayouts/block/quote.tpl` und ändern Sie Ihre Kopie; jeder Block dieses Typs ändert sich in jedem Layout ([Wie ein Block seinen Templates zugeordnet wird](../../zuordnung-block-zu-template.md)). Zum Beispiel, um ein `<cite>` um die Quelle zu setzen.
 
 ## Welchen Weg Sie wählen
 
@@ -43,7 +43,7 @@ Der Block für das Zitat selbst; der Override, wenn jedes Zitat der Site anders 
 
 ## Verwandte Seiten
 
-- [Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)
+- [Wie ein Block seinen Templates zugeordnet wird](../../zuordnung-block-zu-template.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -39,7 +39,7 @@ Die Prüfung auf der Konsole deckt alle Layouts mit je einer Zeile ab.
 ## Verwandte Seiten
 
 - [Gemeinsame Layouts und Zonenverknüpfung](../../gemeinsame-layouts-und-zonenverknuepfung.md)
-- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../../eng-us/help/build-two-ways/build-a-campaign-page.md)
+- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../kampagnenseite-bauen.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

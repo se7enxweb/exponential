@@ -36,7 +36,7 @@ leeren Sie im Kasten **Cache leeren** den Cache **Inhalte** ([Caches nach einer 
 
 | Aufgabe | Wo |
 |---|---|
-| Eine Seite zum Menü hinzufügen | [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md) |
+| Eine Seite zum Menü hinzufügen | [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md) |
 | Die Reihenfolge ändern | [Einträge des Kopfmenüs umordnen oder entfernen](kopfmenue-eintraege-umordnen-oder-entfernen.md) |
 | Eine Seite aus dem Menü nehmen, die Seite aber behalten | Ihre ID aus `MainMenuID[]` entfernen |
 | Ein anderes Menü pro Site oder Sprache | Jeder Siteaccess hat seine eigene `menu.ini`; `exp:ini where menu.ini/SiteInfo/MainMenuID <siteaccess>` |
@@ -68,7 +68,7 @@ Sammlung auf einen übergeordneten Knoten.
 
 ## Verwandte Seiten
 
-- [Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)
+- [Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md)
 - [Eine Knoten-ID finden](knoten-id-finden.md)
 - [Fehlerbehebung beim Kopfmenü](kopfmenue-fehlerbehebung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

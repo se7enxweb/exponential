@@ -78,14 +78,14 @@ Die Verknüpfungen werden pro Zone als `linked_layout_id` plus `linked_zone_iden
 |---|---|---|
 | Sie haben einen Block zur Zone `header` des Seitenlayouts hinzugefügt, und er wird nicht gezeigt | Die Zone ist verknüpft; die Seite zeigt die gemeinsame Zone | Fügen Sie ihn Header / Footer hinzu, oder heben Sie die Verknüpfung der Zone auf |
 | Ein zum Prefooter hinzugefügter Block erscheint auf Artikeln, aber nicht auf Landingpages | Nur Full / Article und Full / Recipe verknüpfen `pre_footer` | Verknüpfen Sie `pre_footer` der anderen Layouts, oder fügen Sie den Block dort hinzu |
-| Das Kopfmenü steht nicht im Editor | Die Kopfzeile ist ein Template-Block; das Menü steht in der `menu.ini` | [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md) |
+| Das Kopfmenü steht nicht im Editor | Die Kopfzeile ist ein Template-Block; das Menü steht in der `menu.ini` | [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md) |
 | Sie haben Header / Footer geändert, und nichts hat sich geändert | Der Entwurf ist noch nicht veröffentlicht | **Layout veröffentlichen** |
 
 Weitere Fälle: [Warum erscheint meine Änderung nicht?](warum-erscheint-meine-aenderung-nicht.md)
 
 ## Verwandte Seiten
 
-- [Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)
+- [Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md)
 - [Der Layout-Editor](../layout-editor.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

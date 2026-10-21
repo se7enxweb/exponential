@@ -9,7 +9,7 @@ type: help
 ---
 # Wie die Fußzeile aufgebaut ist
 
-Die Fußzeile nimmt denselben Weg wie die Kopfzeile ([Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)). Pfade
+Die Fußzeile nimmt denselben Weg wie die Kopfzeile ([Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md)). Pfade
 sind relativ zu `extension/sevenx_themes_media/design/media/templates/`.
 
 ## Inhalt
@@ -55,11 +55,11 @@ wird mit `ezroot` statt `ezurl` geschrieben.
 | Einen Link zur zweiten Zeile hinzufügen | Inhalt (Menu item in Footer links) | [Fußzeilen-Links aus dem Inhaltsbaum](fusszeilen-links-aus-dem-inhaltsbaum.md) |
 | Adressen der Social-Media-Profile | Inhalt (das Site-Info-Objekt bearbeiten) | |
 | Blöcke über der Fußzeile auf Artikel- und Rezeptseiten | Layout-Editor (gemeinsames Layout Prefooter) | [Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md) |
-| Markup der Fußzeile | Template-Override in Ihrer eigenen Design-Erweiterung | [Zwei Wege zum Bauen](../../../eng-us/help/build-two-ways/two-ways-to-build.md) |
+| Markup der Fußzeile | Template-Override in Ihrer eigenen Design-Erweiterung | [Zwei Wege zum Bauen](zwei-wege-zum-bauen.md) |
 
 ## Verwandte Seiten
 
-- [Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)
+- [Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md)
 - [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

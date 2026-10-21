@@ -26,7 +26,7 @@ Die Seite Contact bekommt ein Layout mit einer Karte, andere Seiten ihrer Klasse
 2. Ziel: **Ort** mit der Seite oder **Pfad** mit ihrer URL ohne den führenden Schrägstrich (`contact`), **Ziel hinzufügen**.
 3. **Zuordnung hinzufügen**.
 
-Der Durchgang mit der Kampagne verwendete ein Ziel Pfad `spring-2027` mit Priorität 2500 ([Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../../eng-us/help/build-two-ways/build-a-campaign-page.md)).
+Der Durchgang mit der Kampagne verwendete ein Ziel Pfad `spring-2027` mit Priorität 2500 ([Eine Kampagnenseite bauen, von Anfang bis Ende](../../kampagnenseite-bauen.md)).
 
 ## Mit Templates
 
@@ -42,8 +42,8 @@ Pfad-Ziele sind leicht zu lesen; Ort-Ziele überstehen eine Änderung der URL.
 
 ## Verwandte Seiten
 
-- [Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)
-- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../../eng-us/help/build-two-ways/build-a-campaign-page.md)
+- [Welches Layout bekommt eine Seite?](../../layout-zuordnungen.md)
+- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../kampagnenseite-bauen.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -36,11 +36,11 @@ Außerdem:
 
 Die Menüeinträge der Site tragen die ID in ihrem Markup: `id="menu-item-main_menu-location-id-<id>"` und
 `data-location-id="<id>"` (in diesem Theme zeigen die ersten Einträge dort die IDs der Referenz-Site, siehe
-[Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)).
+[Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md)).
 
 ## Verwandte Seiten
 
-- [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
+- [Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md)
 - [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

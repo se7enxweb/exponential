@@ -11,7 +11,7 @@ type: help
 
 Ein **Template block** (Blocktyp `tpl_block`, Gruppe *Placeholders* der Palette) zeigt ein Template, dessen Namen Sie
 im Editor eintippen. Der Entwickler entscheidet *was* (das Template), der Redakteur entscheidet *wo* (Layout, Zone und
-Reihenfolge). Kopfzeile, Brotkrumenpfad und Fußzeile von Fit & Healthy sind Template-Blöcke ([Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)).
+Reihenfolge). Kopfzeile, Brotkrumenpfad und Fußzeile von Fit & Healthy sind Template-Blöcke ([Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md)).
 
 ## Inhalt
 
@@ -77,7 +77,7 @@ ein Design ohne den Operator des Media-Themes bindet `design:explayouts/tpl_bloc
 
 ## Verwandte Seiten
 
-- [Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)
+- [Wie die Kopfzeile aufgebaut ist](wie-die-kopfzeile-aufgebaut-ist.md)
 - [Einen Blocktyp hinzufügen](blocktyp-hinzufuegen.md)
 - [Ihre eigene Design-Erweiterung](eigene-design-erweiterung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

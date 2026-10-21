@@ -44,7 +44,7 @@ Die Column des Prefooters hat eine Hintergrundfarbe und vertikalen Leerraum eing
 ## Verwandte Seiten
 
 - [Der Layout-Editor, ein Rundgang](rundgang-durch-den-layout-editor.md)
-- [Wie ein Block seinen Templates zugeordnet wird](../../../eng-us/help/build-two-ways/block-to-template-map.md)
+- [Wie ein Block seinen Templates zugeordnet wird](zuordnung-block-zu-template.md)
 - [Ihre Blöcke gestalten](bloecke-gestalten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -38,7 +38,7 @@ Exportieren Sie das Layout, bevor Sie irgendetwas löschen.
 
 ## Verwandte Seiten
 
-- [Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)
+- [Welches Layout bekommt eine Seite?](../../layout-zuordnungen.md)
 - [Layouts exportieren und importieren](../../layouts-exportieren-und-importieren.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

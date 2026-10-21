@@ -27,7 +27,7 @@ Ein Hero-Banner eröffnet eine Landingpage: ein Bild, ein Titel, ein Satz und ei
 3. Wählen Sie den Block aus, öffnen Sie den Reiter **Design** und füllen Sie **Title**, **Content**, **Image URL**, **Image alt text**, **Link text** und **Link URL** aus; **CSS class** und **CSS ID** sind optional.
 4. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
-Der Hero wird mit `explayouts/block/hero.tpl` des Standard-Designs von Layouts dargestellt. Der vollständige Durchgang mit Bildschirmfotos ist [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../../eng-us/help/build-two-ways/build-a-campaign-page.md).
+Der Hero wird mit `explayouts/block/hero.tpl` des Standard-Designs von Layouts dargestellt. Der vollständige Durchgang mit Bildschirmfotos ist [Eine Kampagnenseite bauen, von Anfang bis Ende](../../kampagnenseite-bauen.md).
 
 ## Mit Templates
 
@@ -55,7 +55,7 @@ Redakteure ändern Kampagnen-Heros oft: Verwenden Sie den Hero-Block. Verwenden 
 
 ## Verwandte Seiten
 
-- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../../eng-us/help/build-two-ways/build-a-campaign-page.md)
+- [Eine Kampagnenseite bauen, von Anfang bis Ende](../../kampagnenseite-bauen.md)
 - [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

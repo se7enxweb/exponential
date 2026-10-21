@@ -77,7 +77,7 @@ extension/mysite/design/media/templates/pagelayout/header/main_menu.tpl         
 
 Dasselbe funktioniert für jedes Block-Template von Layouts; zum Beispiel ersetzt
 `extension/mysite/design/media/templates/explayouts/block/list/grid.tpl` die Rasteransicht des List-Blocks
-([Wie ein Block seinen Templates zugeordnet wird](../../../eng-us/help/build-two-ways/block-to-template-map.md)).
+([Wie ein Block seinen Templates zugeordnet wird](zuordnung-block-zu-template.md)).
 
 ## Die Caches leeren
 
