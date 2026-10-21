@@ -3602,11 +3602,12 @@ e37753efe1f2a6c778455cb8e00e16bb  doc/eng-us/examples/datatypes/eztext.md
 9cee0e1a1d73c3a713eac4c3ecba22f0  doc/eng-us/examples/datatypes/ezurl.md
 0b82da1b146d3a9a199231c2db490836  doc/eng-us/examples/datatypes/ezuser.md
 27147271b09243c44cc4d27c71933d93  doc/eng-us/examples/datatypes/ezxmltext.md
-e939b9f6d0624a6ddf15c2097e5dbd2b  doc/eng-us/examples/demo-mode/README.md
+65a20fd5a2524ec899d79099018ed3db  doc/eng-us/examples/demo-mode/README.md
 d9151af9fa51426efaa3f0f867b73dd5  doc/eng-us/examples/demo-mode/apache-vhost-demo.conf
 f63b1459bc018cd25380629340f6cf86  doc/eng-us/examples/demo-mode/crontab-demo
 8e8e4c7adc9953ba057eaec91c272a17  doc/eng-us/examples/demo-mode/docker-demo.env
 fe2338de7f116fb2d6461ca17a1d5460  doc/eng-us/examples/demo-mode/htaccess-setenv.conf
+1a64380ba1a7164ff63e75704ade8cab  doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh
 c3b16416aa018ac3a5588b9945d60b22  doc/eng-us/examples/demo-mode/install-demo-sqlite.sh
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
@@ -7603,7 +7604,7 @@ c8dddfaafa7d413a779c0117b9c64911  doc/eng-us/help/designers/distribution/copyrig
 1b6579f48b98bde6b569db6014a3c945  doc/eng-us/help/designers/distribution/creating-the-github-repository.md
 fa330caff5ebfa13ac1c12dd4b40219e  doc/eng-us/help/designers/distribution/creative-commons-for-images.md
 c2685ac9dd039aa27230f69803579a1c  doc/eng-us/help/designers/distribution/demo-content.md
-d5bd057184f729d0a108bb645c5c9513  doc/eng-us/help/designers/distribution/demo-sites.md
+b1eed9920d93ffba131fb6ca53eae21c  doc/eng-us/help/designers/distribution/demo-sites.md
 36b44ef6f2c88277284d9ae64648b1e7  doc/eng-us/help/designers/distribution/distribution-checklist.md
 130569cdd86602d972ef279a8ddd649e  doc/eng-us/help/designers/distribution/distribution-start-here.md
 b744444711234c524b8a6483290aa75e  doc/eng-us/help/designers/distribution/documenting-on-ezpedia.md
