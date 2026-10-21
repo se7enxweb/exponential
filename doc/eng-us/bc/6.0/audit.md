@@ -1607,6 +1607,11 @@ passed the privacy rules.
   `devlog` sends the RFC 5424 line to `/dev/log`. `udp` sends header and structured data only (RFC 5426). `tcp` and
   `tls` send the whole record with octet counting (RFC 6587/5425). Local delivery happens at flush; network
   transports go through the spool.
+  Under `open_basedir` (shared hosting, a PHP pool limited to the site folder) the sink checks the setting before it
+  touches `/run/systemd/journal/socket` or `/dev/log` (parsed as PHP does, decided once per process): a socket
+  outside the allowed paths is never touched, so no open_basedir warning reaches the error log, and `local`,
+  `journald` and `devlog` then go through PHP's own `syslog()` (identifier `AppName`, the sink's facility, the RFC 5424
+  line without `<PRI>`).
 - **webhook** (`expAuditWebhookSink`): `POST` JSON `{"v":1,"installation":…,"site":…,"batch":…,"events":[…]}` in
   batches of `BatchSize` or `BatchSeconds`, with headers `X-Exponential-Timestamp`, `X-Exponential-Batch` and
   `X-Exponential-Signature: sha256=<hex HMAC-SHA-256( SigningSecret, timestamp + "." + body )>`. Receivers check the

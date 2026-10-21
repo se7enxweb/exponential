@@ -289,7 +289,14 @@ class eZContentClass extends eZPersistentObject
             $languageCode = eZContentObject::defaultLanguage();
         }
 
-        $object = eZContentObject::create( ezpI18n::tr( "kernel/contentclass", "New %1", null, array( $this->name( $languageCode ) ) ),
+        // A class without a name in this language falls back to its name in the prioritized languages
+        $className = $this->name( $languageCode );
+        if ( trim( $className ) === '' )
+        {
+            $className = $this->name();
+        }
+
+        $object = eZContentObject::create( ezpI18n::tr( "kernel/contentclass", "New %1", null, array( $className ) ),
                                            $this->attribute( "id" ),
                                            $userID,
                                            $sectionID,
@@ -306,7 +313,7 @@ class eZContentClass extends eZPersistentObject
 
         $object->store();
         $object->assignDefaultStates();
-        $object->setName( ezpI18n::tr( "kernel/contentclass", "New %1", null, array( $this->name( $languageCode ) ) ), false, $languageCode );
+        $object->setName( ezpI18n::tr( "kernel/contentclass", "New %1", null, array( $className ) ), false, $languageCode );
 
         if ( !$versionNumber )
         {

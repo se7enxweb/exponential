@@ -1,7 +1,8 @@
 <?php
 /**
  * ezpSiteAccessURL::root(): the root URL of a siteaccess from the matching rules of site.ini (URI element or map,
- * host map, SiteURL), the scheme, host and port of this request, RemoveSiteAccessIfDefaultAccess, and its helpers
+ * host map, host_uri map, SiteURL; an address is used only when the rules lead it to the siteaccess with nothing of
+ * the path left over), the scheme, host and port of this request, RemoveSiteAccessIfDefaultAccess, and its helpers
  * (host:port split, "a;b" map items, the URI element of a siteaccess).
  *
  * No database. The rules are injected into site.ini (eZINI::injectSettings(), put back in tearDown()) for
@@ -206,8 +207,12 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
     {
         $this->rules( array( 'MatchOrder' => array( 'host', 'uri' ),
                              'HostMatchMapItems' => array( 'WWW.k1.example.invalid;k1-eng', 'admin.k1.example.invalid;k1-admin' ) ) );
-        $this->assertSame( 'https://admin.k1.example.invalid/' . $this->index . 'k1-admin/', ezpSiteAccessURL::root( 'k1-admin' ) );
-        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-eng/', ezpSiteAccessURL::root( 'k1-eng' ) );
+        // The host decides there before the URI is read: a /k1-admin/ path on admin.k1 would be taken for a module
+        $this->assertSame( 'https://admin.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-admin' ) );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-eng' ) );
+        // not mapped to a host: its URI, on this host, which the host map gives another siteaccess first, does not
+        // lead there; its URI on this host is still the best guess
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::root( 'k1-ger' ) );
     }
 
     public function testUriBeforeHostKeepsThisHost()
@@ -222,7 +227,8 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
     public function testSiteUrlWhenNeitherUriNorHostMap()
     {
         $this->rules( array( 'MatchOrder' => 'host' ), 'http://shop.k1.example.invalid:9000/path' );
-        $this->assertSame( 'https://shop.k1.example.invalid:9000/' . $this->index, ezpSiteAccessURL::root( 'k1-ger' ) );
+        // the SiteURL as it is written, with the scheme of this request
+        $this->assertSame( 'https://shop.k1.example.invalid:9000/' . $this->index . 'path/', ezpSiteAccessURL::root( 'k1-ger' ) );
     }
 
     public function testSiteUrlAtLocalhostMeansThisHost()
@@ -236,6 +242,95 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
     {
         $this->rules( array( 'MatchOrder' => 'uri', 'URIMatchElement' => '2' ), 'shop.k1.example.invalid' );
         $this->assertSame( 'https://shop.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-ger' ) );
+    }
+
+    /**
+     * MatchOrder=host_uri;host;uri as on a demo with its administration on a host of its own: the site on the bare
+     * host (host map), the other sites under a path of that host (host_uri), the administration on edit.
+     */
+    private function demoRules( $siteURL = null )
+    {
+        $this->rules( array( 'MatchOrder' => 'host_uri;host;uri',
+                             'AvailableSiteAccessList' => array( 'k1-eng', 'k1-ger', 'k1-admin' ),
+                             'HostMatchMapItems' => array( 'edit.k1.example.invalid;k1-admin', 'www.k1.example.invalid;k1-eng' ),
+                             'HostUriMatchMapItems' => array( 'www.k1.example.invalid;k1-ger;k1-ger;strict' ),
+                             'HostUriMatchMethodDefault' => 'strict',
+                             'HostMatchType' => 'map',
+                             'HostMatchMethod' => 'strict' ), $siteURL );
+        $_SERVER['HTTP_HOST'] = 'edit.k1.example.invalid';
+    }
+
+    public function testHostMatchedSiteAccessFromTheAdministrationHostHasNoPath()
+    {
+        // before: https://www.k1.example.invalid/k1-eng/, which the host map gives k1-eng with a module k1-eng: 404
+        $this->demoRules();
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-eng' ) );
+        $this->assertSame( 'https://edit.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-admin' ) );
+    }
+
+    public function testHostUriMatchedSiteAccessGetsItsHostAndUri()
+    {
+        $this->demoRules();
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::root( 'k1-ger' ) );
+        // on its own host the entry for that host is used
+        $_SERVER['HTTP_HOST'] = 'www.k1.example.invalid';
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::root( 'k1-ger' ) );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-eng' ) );
+    }
+
+    public function testSiteUrlIsUsedWhenTheRulesLeadThere()
+    {
+        // a SiteURL with the index file: the path after it
+        $this->demoRules( 'www.k1.example.invalid/index.php/k1-ger' );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::root( 'k1-ger' ) );
+        // a SiteURL whose path would be read as a module there (the host map decides) is passed over for the host map
+        $this->demoRules( 'www.k1.example.invalid/k1-eng' );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-eng' ) );
+    }
+
+    public function testSiteUrlComesBeforeAnotherMappedHost()
+    {
+        $this->rules( array( 'MatchOrder' => 'host',
+                             'HostMatchMapItems' => array( 'k1.example.invalid;k1-ger', 'de.k1.example.invalid;k1-ger' ) ),
+                      'de.k1.example.invalid' );
+        $this->assertSame( 'https://de.k1.example.invalid/' . $this->index, ezpSiteAccessURL::root( 'k1-ger' ) );
+    }
+
+    public function testUriMatchedSiteAccessStaysOnThisHost()
+    {
+        // MatchOrder=uri: this host and the URI, whatever SiteURL says, so a visitor on :8443 stays there
+        $this->rules( array(), 'shop.k1.example.invalid/k1-ger' );
+        $_SERVER['HTTP_HOST'] = 'www.k1.example.invalid:8443';
+        $this->assertSame( 'https://www.k1.example.invalid:8443/' . $this->index . 'k1-ger/', ezpSiteAccessURL::root( 'k1-ger' ) );
+    }
+
+    public static function leadsToProvider()
+    {
+        return array(
+            'host map, no path' => array( 'www.k1.example.invalid', '', 'k1-eng' ),
+            'host map, path left over' => array( 'www.k1.example.invalid', 'k1-eng', null ),
+            'host_uri' => array( 'www.k1.example.invalid', 'k1-ger', 'k1-ger' ),
+            'host_uri deeper path left over' => array( 'www.k1.example.invalid', 'k1-ger/x', null ),
+            'uri on an unmapped host' => array( 'other.k1.example.invalid', 'k1-ger', 'k1-ger' ),
+            'default on an unmapped host' => array( 'other.k1.example.invalid', '', 'k1-eng' ),
+            'unknown path on an unmapped host' => array( 'other.k1.example.invalid', 'nothere', null ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('leadsToProvider')]
+    public function testLeadsTo( $host, $path, $expected )
+    {
+        $this->demoRules();
+        $ini = new eZINI( 'site.ini', 'settings', null, null, true );
+        $order = array( 'host_uri', 'host', 'uri' );
+        $this->assertSame( $expected, $this->call( 'leadsTo', array( $ini, $order, array( 'k1-eng', 'k1-ger', 'k1-admin' ), 'k1-eng', $host, $path ) ) );
+    }
+
+    public function testTrimIndex()
+    {
+        $this->assertSame( 'eng', $this->call( 'trimIndex', array( '/index.php/eng/' ) ) );
+        $this->assertSame( '', $this->call( 'trimIndex', array( 'index.php' ) ) );
+        $this->assertSame( 'eng/x', $this->call( 'trimIndex', array( 'eng/x' ) ) );
     }
 
     private function call( $method, array $arguments )

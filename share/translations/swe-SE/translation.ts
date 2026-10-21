@@ -20762,8 +20762,8 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>INI-inställningar</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Varje INI-fil läses i lager: först settings/&lt;file&gt;.ini, sedan filerna från de aktiva tilläggen och webbplatsingången, sedan settings/override. En senare fil gäller: den ersätter ett enkelt värde och lägger till i en array om den inte tömmer arrayen först. Den här sidan visar värdet som gäller, filen det kommer från och alla filer som anger det. Lösenord, nycklar, token och andra hemligheter visas aldrig.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Varje INI-fil läses i lager: först settings/&lt;file&gt;.ini, sedan ActiveAccessExtensions, sedan webbplatsingången (tilläggen först, settings/siteaccess sist), sedan ActiveExtensions, sedan settings/override. En senare fil gäller: den ersätter ett enkelt värde och lägger till i en array om den inte tömmer arrayen först. Den här sidan visar värdet som gäller, filen det kommer från och alla filer som anger det. Lösenord, nycklar, token och andra hemligheter visas aldrig.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

@@ -20724,8 +20724,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>تنظیمات INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>هر فایل INI به صورت لایه‌لایه خوانده می‌شود: ابتدا settings/&lt;file&gt;.ini، سپس فایل‌های افزونه‌های فعال و دسترسی سایت، و سپس settings/override. فایل بعدی برنده است: یک مقدار ساده را جایگزین می‌کند، و به یک آرایه می‌افزاید مگر اینکه ابتدا آرایه را خالی کند. این صفحه مقدار مؤثر، فایلی که از آن می‌آید و همهٔ فایل‌هایی را که آن را تنظیم می‌کنند نشان می‌دهد. گذرواژه‌ها، کلیدها، توکن‌ها و دیگر مقادیر محرمانه هرگز نمایش داده نمی‌شوند.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>هر فایل INI به صورت لایه‌لایه خوانده می‌شود: ابتدا settings/&lt;file&gt;.ini، سپس ActiveAccessExtensions، سپس دسترسی سایت (ابتدا افزونه‌ها، settings/siteaccess در آخر)، سپس ActiveExtensions، و سپس settings/override. فایل بعدی برنده است: یک مقدار ساده را جایگزین می‌کند، و به یک آرایه می‌افزاید مگر اینکه ابتدا آرایه را خالی کند. این صفحه مقدار مؤثر، فایلی که از آن می‌آید و همهٔ فایل‌هایی را که آن را تنظیم می‌کنند نشان می‌دهد. گذرواژه‌ها، کلیدها، توکن‌ها و دیگر مقادیر محرمانه هرگز نمایش داده نمی‌شوند.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

@@ -55,6 +55,7 @@
     <button type="button" class="a4-btn a4-btn-primary" id="exp-sysinfo-copy" hidden data-done="{'The report was copied to the clipboard.'|i18n( 'design/admin/setup/info' )|wash}" data-manual="{'Select the text of the report below and copy it.'|i18n( 'design/admin/setup/info' )|wash}">{'Copy report as text'|i18n( 'design/admin/setup/info' )}</button>
     <a class="a4-btn" href={'/setup/info/report'|ezurl}>{'Download report (.txt)'|i18n( 'design/admin/setup/info' )}</a>
     <a class="a4-btn" href={'/setup/info/json'|ezurl}>{'Download as JSON'|i18n( 'design/admin/setup/info' )}</a>
+    <a class="a4-btn" href={'/setup/info/php'|ezurl} rel="nofollow">{'PHP details (phpinfo)'|i18n( 'design/admin/setup/info' )}</a>
     {if $si.sizes}
         <a class="a4-btn" href={'/setup/info'|ezurl}>{'Without sizes (faster)'|i18n( 'design/admin/setup/info' )}</a>
         <form method="post" action={'/setup/info/sizes'|ezurl} class="a4-actions"><button type="submit" class="a4-btn" name="RefreshSizesButton" value="1">{'Measure again'|i18n( 'design/admin/setup/info' )}</button></form>

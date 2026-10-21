@@ -20742,8 +20742,8 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Ustawienia INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Każdy plik INI jest odczytywany warstwami: najpierw settings/&lt;file&gt;.ini, potem pliki aktywnych rozszerzeń i dostępu do witryny, a na końcu settings/override. Późniejszy plik wygrywa: zastępuje zwykłą wartość, a do tablicy dodaje, chyba że najpierw ją opróżni. Ta strona pokazuje obowiązującą wartość, plik, z którego pochodzi, i każdy plik, który ją ustawia. Hasła, klucze, tokeny i inne dane poufne nigdy nie są wyświetlane.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Każdy plik INI jest odczytywany warstwami: najpierw settings/&lt;file&gt;.ini, potem ActiveAccessExtensions, potem dostęp do witryny (najpierw rozszerzenia, settings/siteaccess jako ostatni), potem ActiveExtensions, a na końcu settings/override. Późniejszy plik wygrywa: zastępuje zwykłą wartość, a do tablicy dodaje, chyba że najpierw ją opróżni. Ta strona pokazuje obowiązującą wartość, plik, z którego pochodzi, i każdy plik, który ją ustawia. Hasła, klucze, tokeny i inne dane poufne nigdy nie są wyświetlane.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

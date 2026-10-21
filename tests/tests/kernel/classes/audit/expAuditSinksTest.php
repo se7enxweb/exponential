@@ -15,6 +15,10 @@
  *          transport (a test transport writing into the test directory: no real mail); a second alert of the
  *          same rule and group within Throttle is not mailed
  *  SK-07 — under test settings nothing leaves the process unless the test allows sinks
+ *  SK-08 — syslog under open_basedir: pathAllowed() parses open_basedir as PHP does; with the sockets outside it
+ *          the sink never touches them, raises no warning and delivers through PHP's syslog(); without
+ *          open_basedir the transports are the old ones; checked with an injected setting and in a PHP process
+ *          started with a real open_basedir (fixtures/expaudittestsyslogopenbasedir.php)
  *
  * Writes only into var/tmp/audit-tests/ (and two test lines to the journal in SK-02); no database.
  *
@@ -25,6 +29,25 @@
  */
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
+
+/** The syslog sink of SK-08: records what it would send instead of sending it. */
+class expAuditTestSyslogSink extends expAuditSyslogSink
+{
+    public $unix = array();
+    public $syslog = array();
+
+    protected function sendUnix( $path, $datagram )
+    {
+        $this->unix[] = $path;
+        return true;
+    }
+
+    protected function sendPhpSyslog( array $r )
+    {
+        $this->syslog[] = $this->message( $r, true, false );
+        return true;
+    }
+}
 
 /** The mail transport of the tests: writes each mail into the test directory. */
 class expAuditTestMailTransport extends eZMailTransport
@@ -310,6 +333,94 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
         $this->failedLogins( 3 );
         $this->assertSame( 0, expAuditSinkRegistry::spool( 'webhook' )->count() );
         $this->assertSame( array(), expAuditSinkRegistry::deliverSpools( true ) );
+    }
+
+    /** SK-08 */
+    public function testSyslogPathAllowedParsesOpenBasedir()
+    {
+        expAuditSyslogSink::resetPathCache();
+        $this->assertTrue( expAuditSyslogSink::pathAllowed( '/dev/log', '' ), 'no open_basedir: everything' );
+        $this->assertFalse( expAuditSyslogSink::pathAllowed( '/dev/log', '/srv/site/:/tmp/' ) );
+        $this->assertFalse( expAuditSyslogSink::pathAllowed( '/run/systemd/journal/socket', '/srv/site/:/tmp/' ) );
+        $this->assertTrue( expAuditSyslogSink::pathAllowed( '/tmp/x', '/srv/site/:/tmp/' ) );
+        $this->assertTrue( expAuditSyslogSink::pathAllowed( '/tmp', '/srv/site/:/tmp/' ), 'the directory itself' );
+        $this->assertFalse( expAuditSyslogSink::pathAllowed( '/tmpfoo', '/srv/site/:/tmp/' ), 'a trailing / is a directory' );
+        $this->assertTrue( expAuditSyslogSink::pathAllowed( '/tmpfoo', '/srv/site:/tmp' ), 'no trailing /: a prefix' );
+        $this->assertTrue( expAuditSyslogSink::pathAllowed( '/dev/log', '/srv/site:/dev' ) );
+        $this->assertTrue( expAuditSyslogSink::pathAllowed( '/dev/log', ':/dev/:' ), 'empty entries are skipped' );
+        $this->assertTrue( expAuditSyslogSink::pathAllowed( getcwd() . '/x', '.' ), 'relative entries from the working directory' );
+    }
+
+    /** SK-08 */
+    public function testSyslogUnderOpenBasedirTouchesNoSocket()
+    {
+        $warnings = array();
+        set_error_handler( function ( $errno, $errstr ) use ( &$warnings )
+        {
+            $warnings[] = $errstr;
+            return true;
+        } );
+        try
+        {
+            expAuditSyslogSink::resetPathCache();
+            expAuditSyslogSink::$openBasedir = '/srv/site/:/tmp/';
+            foreach ( array( 'local', 'journald', 'devlog' ) as $t )
+            {
+                $sink = new expAuditTestSyslogSink( 'syslog', array( 'Transport' => $t, 'AppName' => 'exp-test' ) );
+                $this->assertSame( 'syslog', $sink->transport(), "$t falls back to PHP's syslog()" );
+                $this->assertSame( '', $sink->problem() );
+                $this->assertFalse( $sink->isSpooled(), 'delivered at flush, like the sockets' );
+                $r = array( 'id' => '01J9ZK', 'name' => 'access.session.login.failed', 'channel' => 'access', 'severity' => 'notice',
+                            'time' => '2026-10-02T13:30:01.123Z', 'request' => array( 'host' => 'web1', 'pid' => 7 ) );
+                $this->assertSame( 1, $sink->deliver( array( $r ) ) );
+                $this->assertSame( 'syslog', $sink->lastTransport );
+                $this->assertSame( array(), $sink->unix, 'no socket written' );
+                $this->assertCount( 1, $sink->syslog );
+                $this->assertStringStartsWith( '1 2026-10-02T13:30:01.123Z web1 exp-test 7 access [exp@32473 ', $sink->syslog[0] );
+            }
+
+            expAuditSyslogSink::$openBasedir = '';
+            $sink = new expAuditSyslogSink( 'syslog', array( 'Transport' => 'local' ) );
+            $this->assertSame( file_exists( expAuditSyslogSink::JOURNAL_SOCKET ) ? 'journald' : 'devlog', $sink->transport(),
+                               'no open_basedir: the old resolution' );
+            $this->assertSame( 'devlog', ( new expAuditSyslogSink( 'syslog', array( 'Transport' => 'devlog' ) ) )->transport() );
+            $this->assertSame( 'journald', ( new expAuditSyslogSink( 'syslog', array( 'Transport' => 'journald' ) ) )->transport() );
+        }
+        finally
+        {
+            expAuditSyslogSink::$openBasedir = null;
+            expAuditSyslogSink::resetPathCache();
+            restore_error_handler();
+        }
+        $this->assertSame( array(), $warnings, 'no warning raised' );
+    }
+
+    /** SK-08, with a real open_basedir in a PHP process of its own */
+    public function testSyslogUnderRealOpenBasedirRaisesNoWarning()
+    {
+        if ( !function_exists( 'proc_open' ) )
+            $this->markTestSkipped( 'Needs proc_open()' );
+        $root = dirname( __DIR__, 5 ) . '/';
+        $script = __DIR__ . '/fixtures/expaudittestsyslogopenbasedir.php';
+        $run = function ( array $args ) use ( $root, $script )
+        {
+            $cmd = array_merge( array( PHP_BINARY, '-n', '-d', 'open_basedir=' . $root, '-d', 'display_errors=0', $script ), $args );
+            $p = proc_open( $cmd, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
+            $out = stream_get_contents( $pipes[1] );
+            $err = stream_get_contents( $pipes[2] );
+            fclose( $pipes[1] );
+            fclose( $pipes[2] );
+            proc_close( $p );
+            $this->assertSame( '', trim( $err ) );
+            return json_decode( $out, true );
+        };
+        $old = $run( array( 'old' ) );
+        $this->assertSame( $root, $old['open_basedir'] );
+        $this->assertCount( 2, $old['warnings'], 'file_exists() on the sockets warns under open_basedir' );
+        $new = $run( array() );
+        $this->assertSame( array(), $new['warnings'], 'the sink raises no warning' );
+        foreach ( array( 'local', 'journald', 'devlog' ) as $t )
+            $this->assertSame( array( 'transport' => 'syslog', 'problem' => '', 'spooled' => false ), $new[$t] );
     }
 
     /** @return array[] The records of the test system channel */

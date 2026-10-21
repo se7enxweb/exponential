@@ -20669,8 +20669,8 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>INI postavke</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Svaka INI datoteka čita se u slojevima: najprije settings/&lt;file&gt;.ini, zatim datoteke aktivnih proširenja i pristupa web-mjestu, a potom settings/override. Kasnija datoteka ima prednost: zamjenjuje jednostavnu vrijednost i nadopunjuje niz, osim ako ga najprije isprazni. Ova stranica prikazuje vrijednost na snazi, datoteku iz koje dolazi i svaku datoteku koja je postavlja. Lozinke, ključevi, tokeni i druge tajne nikad se ne prikazuju.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Svaka INI datoteka čita se u slojevima: najprije settings/&lt;file&gt;.ini, zatim ActiveAccessExtensions, zatim pristup web-mjestu (najprije proširenja, settings/siteaccess posljednji), zatim ActiveExtensions, a potom settings/override. Kasnija datoteka ima prednost: zamjenjuje jednostavnu vrijednost i nadopunjuje niz, osim ako ga najprije isprazni. Ova stranica prikazuje vrijednost na snazi, datoteku iz koje dolazi i svaku datoteku koja je postavlja. Lozinke, ključevi, tokeni i druge tajne nikad se ne prikazuju.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

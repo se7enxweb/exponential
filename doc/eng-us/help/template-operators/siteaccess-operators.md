@@ -43,8 +43,23 @@ Generated page: [siteaccess_url](../../examples/template-operators/siteaccess_ur
   in `AvailableSiteAccessList[]` gives an empty string.
 
 The address is worked out from the scheme, host and port of the request and the way the target siteaccess is matched
-(`MatchOrder`, `URIMatchType`, `HostMatchMapItems`, `SiteURL`), so it works for URI, host and port matching alike. It
-is not quoted and not escaped.
+(`MatchOrder` with `host_uri`, `host` and `uri`; `URIMatchType`, `HostUriMatchMapItems`, `HostMatchMapItems`, and the
+siteaccess's own `[SiteSettings] SiteURL`), so it works for URI, host, host and URI, and port matching alike. An
+address is only used when the matching rules lead it to that siteaccess with nothing of the path left over, so a
+host-matched site never gets a `/name/` path that its host would read as a module (and answer 404). In this order:
+
+1. this host, with a `HostUriMatchMapItems` entry of the siteaccess for this host, else with its URI element (or its
+   `URIMatchMapItems` key);
+2. the siteaccess's own `SiteURL` (host, port and path; an index file in it is left out), unless it is empty or
+   `localhost`;
+3. a host that `HostMatchMapItems` maps to it, without a path;
+4. the host and URI of one of its `HostUriMatchMapItems` entries.
+
+When none of them can be shown to lead there, its URI on this host is used, else its `SiteURL` as written, else this
+host. The scheme is always the one of the request. With the settings of a demo whose administration has a host of
+its own (`MatchOrder=host_uri;host;uri`, `HostMatchMapItems[]=edit.example.com;admin` and `=example.com;site`,
+`HostUriMatchMapItems[]=example.com;bold;bold;strict`), the administration on `edit.example.com` links `site` to
+`https://example.com/` and `bold` to `https://example.com/bold/`. It is not quoted and not escaped.
 
 ```tpl
 1 front: {siteaccess_url()}

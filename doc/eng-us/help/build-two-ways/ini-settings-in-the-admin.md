@@ -27,9 +27,11 @@ Choose the **INI file** and the **Siteaccess**, then **Show settings**. The addr
 
 ![The Settings page with the INI file and Siteaccess choices and the Show settings button](images/hm-11-settings-pick-file.webp)
 
-The page says how settings work: *Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of
-the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and
-adds to an array unless it empties the array first.* Secrets (passwords, keys, tokens) are never shown.
+The page says how settings work: *Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the
+ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then
+settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first.*
+Secrets (passwords, keys, tokens) are never shown. So a setting in an active extension beats the same setting in
+settings/siteaccess/&lt;siteaccess&gt;; only settings/override beats the extension.
 
 ## Read the layers
 
