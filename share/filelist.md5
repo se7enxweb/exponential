@@ -3602,12 +3602,12 @@ e37753efe1f2a6c778455cb8e00e16bb  doc/eng-us/examples/datatypes/eztext.md
 9cee0e1a1d73c3a713eac4c3ecba22f0  doc/eng-us/examples/datatypes/ezurl.md
 0b82da1b146d3a9a199231c2db490836  doc/eng-us/examples/datatypes/ezuser.md
 27147271b09243c44cc4d27c71933d93  doc/eng-us/examples/datatypes/ezxmltext.md
-e8a684b2b1577c351de6d6e3eb3cb943  doc/eng-us/examples/demo-mode/README.md
+65a20fd5a2524ec899d79099018ed3db  doc/eng-us/examples/demo-mode/README.md
 d9151af9fa51426efaa3f0f867b73dd5  doc/eng-us/examples/demo-mode/apache-vhost-demo.conf
 f63b1459bc018cd25380629340f6cf86  doc/eng-us/examples/demo-mode/crontab-demo
 8e8e4c7adc9953ba057eaec91c272a17  doc/eng-us/examples/demo-mode/docker-demo.env
 fe2338de7f116fb2d6461ca17a1d5460  doc/eng-us/examples/demo-mode/htaccess-setenv.conf
-54b46df2f275aa09b8283538d03349a3  doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh
+1a64380ba1a7164ff63e75704ade8cab  doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh
 c3b16416aa018ac3a5588b9945d60b22  doc/eng-us/examples/demo-mode/install-demo-sqlite.sh
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf

@@ -3,23 +3,25 @@
 #
 # Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md.
 # A real variant of install-demo-sqlite.sh in this folder: one Plesk vhost with several names, the admin
-# siteaccess matched by its own host (edit.demo.exponential.earth), the old names redirected, and a check that the
-# settings name only the demo's hosts.
+# siteaccess matched by its own host (edit.demo.exponential.earth), the other siteaccesses by host and URI, the
+# old names redirected, and a check that the settings name only the demo's hosts.
 #
 # Rebuilds the Exponential demo at demo.exponential.earth from the newest sources on GitHub, once a day:
 #   1. clones se7enxweb/exponential (main) into a fresh build folder next to the site,
 #   2. composer install,
 #   3. installs it on SQLite with exp:install (administrator: admin / publish, demo mode),
-#   4. sets the siteaccess matching by host (edit.demo.exponential.earth -> admin, demo.exponential.earth -> site,
-#      then the installer's URI matching) and checks every SiteURL (never a build folder or another host),
+#   4. sets the siteaccess matching (edit.demo.exponential.earth -> admin by host; demo.exponential.earth/<name> -> each
+#      other siteaccess by host and URI; demo.exponential.earth -> site) and checks it and every SiteURL,
 #   5. swaps it in: the live public_html is moved to /tmp, the new build is moved into its place (instant, same
 #      filesystem), and the old copy in /tmp is removed.
 # The site keeps serving the old copy until the swap; a failed build is left aside and the live site is untouched.
 #
 # Host: the Plesk domain demo.ezpublish.one (system user ezpautodemo, PHP 8.5 lsphp, docroot public_html) with the
 # aliases demo.exponential.earth, edit.demo.exponential.earth and edit.demo.ezpublish.one. Exponential matches the
-# siteaccess by host first: edit.demo.exponential.earth is the admin siteaccess (its SiteURL, no /admin), and
-# demo.exponential.earth is the site; other hosts fall through to the installer's URI matching. The old names are
+# siteaccess with MatchOrder=host_uri;host;uri: demo.exponential.earth/<name> is each siteaccess the installer made
+# except admin and site (bold, bold_ger, editor, adminui ...; SiteURL demo.exponential.earth/<name>), then by host
+# edit.demo.exponential.earth is the admin siteaccess (its SiteURL, no /admin) and demo.exponential.earth the site, so
+# demo.exponential.earth/admin is a 404: the admin answers only on its own host. The old names are
 # redirected (301) by rules this script puts at the top of .htaccess: demo.ezpublish.one/<path> to
 # demo.exponential.earth/<path>, edit.demo.ezpublish.one/<path> to edit.demo.exponential.earth/<path>.
 #
@@ -112,20 +114,31 @@ if [ -f var/log/initial-admin-password ]; then
     fail "the installer did not take the demo password (is EXP_DEMO_MODE=1 supported by this release?)"
 fi
 
-# Siteaccess matching by host, set on every build: MatchOrder=host;uri, edit.demo.exponential.earth -> admin,
-# demo.exponential.earth -> site (the installer writes MatchOrder=uri;host and an empty host map), DefaultAccess=site,
-# and the admin siteaccess's SiteURL on its own host, so its links and redirects stay there.
-echo "siteaccess matching by host"
+# Siteaccess matching, set on every build (the installer writes MatchOrder=uri;host and an empty host map):
+#   MatchOrder=host_uri;host;uri
+#   HostUriMatchMapItems[]=demo.exponential.earth;<name>;<name>;strict  for every other siteaccess the installer made
+#   HostMatchMapItems[]=edit.demo.exponential.earth;admin and =demo.exponential.earth;site, DefaultAccess=site,
+# the admin's SiteURL on its own host, the site's on the host root, the others' on demo.exponential.earth/<name>.
+echo "siteaccess matching"
 SA=settings/override/site.ini.append.php
 grep -q '^HostMatchMapItems\[\]$' "$SA" || fail "$SA: no HostMatchMapItems[] line to fill"
 grep -q '^MatchOrder=' "$SA" || fail "$SA: no MatchOrder line"
-sed -i -e 's#^MatchOrder=.*#MatchOrder=host;uri#' \
-       -e '/^HostMatchMapItems\[\]=/d' \
-       -e "s#^HostMatchMapItems\[\]\$#HostMatchMapItems[]\nHostMatchMapItems[]=$ADMIN_HOST;admin\nHostMatchMapItems[]=$HOST;site#" \
+# the URI siteaccesses: AvailableSiteAccessList without admin and site, longest name first (bold_ger before bold)
+URI_SAS=$(sed -n 's/^AvailableSiteAccessList\[\]=//p' "$SA" | grep -vxE 'admin|site' | awk '{ print length, $0 }' | sort -rn | cut -d' ' -f2-)
+[ -n "$URI_SAS" ] || fail "$SA: no siteaccesses besides admin and site in AvailableSiteAccessList"
+HOSTURI=$(for n in $URI_SAS; do printf '\\nHostUriMatchMapItems[]=%s;%s;%s;strict' "$HOST" "$n" "$n"; done)
+sed -i -e 's#^MatchOrder=.*#MatchOrder=host_uri;host;uri#' \
+       -e '/^HostMatchMapItems\[\]=/d' -e '/^HostUriMatchMapItems\[\]/d' \
+       -e "s#^HostMatchMapItems\[\]\$#HostMatchMapItems[]\nHostMatchMapItems[]=$ADMIN_HOST;admin\nHostMatchMapItems[]=$HOST;site\nHostUriMatchMapItems[]$HOSTURI#" \
        -e 's#^DefaultAccess=.*#DefaultAccess=site#' "$SA"
 sed -i "s#^SiteURL=.*#SiteURL=$ADMIN_HOST#" settings/siteaccess/admin/site.ini.append.php
 # the site is the host's root now (the installer wrote demo.exponential.earth/site): the preloader and the links use it
 sed -i "s#^SiteURL=.*#SiteURL=$HOST#" settings/siteaccess/site/site.ini.append.php
+for n in $URI_SAS; do
+    f=settings/siteaccess/$n/site.ini.append.php
+    [ -f "$f" ] || fail "no $f"
+    sed -i "s#^SiteURL=.*#SiteURL=$HOST/$n#" "$f"
+done
 
 # Host names in the settings: every SiteURL must be on demo.exponential.earth (the admin's on edit.demo.exponential.earth),
 # and nothing may name the build folder or another demo's host.
@@ -137,7 +150,11 @@ if grep -rlE "build-$STAMP|latest\.demo\.exponential\.earth|site\.cjw\.demo|demo
 fi
 grep -qx "SiteURL=$ADMIN_HOST" settings/siteaccess/admin/site.ini.append.php || fail "admin SiteURL is not $ADMIN_HOST"
 grep -qx "SiteURL=$HOST" settings/siteaccess/site/site.ini.append.php || fail "site SiteURL is not $HOST"
-grep -qx 'MatchOrder=host;uri' "$SA" || fail "MatchOrder is not host;uri"
+grep -qx 'MatchOrder=host_uri;host;uri' "$SA" || fail "MatchOrder is not host_uri;host;uri"
+for n in $URI_SAS; do
+    grep -qx "HostUriMatchMapItems\[\]=$HOST;$n;$n;strict" "$SA" || fail "no host_uri map for $HOST/$n"
+    grep -qx "SiteURL=$HOST/$n" "settings/siteaccess/$n/site.ini.append.php" || fail "$n SiteURL is not $HOST/$n"
+done
 grep -qx "HostMatchMapItems\[\]=$ADMIN_HOST;admin" "$SA" || fail "no host map for $ADMIN_HOST"
 grep -qx "HostMatchMapItems\[\]=$HOST;site" "$SA" || fail "no host map for $HOST"
 grep -qx 'DefaultAccess=site' "$SA" || fail "DefaultAccess is not site"
