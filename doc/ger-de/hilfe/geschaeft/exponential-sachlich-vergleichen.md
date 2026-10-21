@@ -55,7 +55,7 @@ Wahl ist.
 | Selbst-Hosting | Läuft auf „fast jedem [Betriebssystem], auf dem PHP 8.0 oder später läuft“, in vier dokumentierten Stufen | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Datenbanken | „1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL“ | [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
 | Webserver | Exponential Velocity (empfohlen), Apache, nginx, FrankenPHP, LiteSpeed, Caddy, IIS, lighttpd und weitere | [Unterstützte Betriebssysteme, Webserver](../betriebssystemunterstuetzung.md#webserver), `README.md` |
-| PHP-Versionen | PHP 8.0 bis 8.5; Velocity benötigt 8.1 oder später; PHP 7.4 nur bis 6.0.7 | [Wer ist die Exponential Foundation?, PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| PHP-Versionen | PHP 8.0 bis 8.5, einschließlich Velocity (ab seinem Release 0.0.4.54); PHP 7.4 nur bis 6.0.7 | [Wer ist die Exponential Foundation?, PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Unveränderliche Releases | „Ein veröffentlichter Tag wird nie geändert“: Eine Korrektur kommt mit dem nächsten Release | `SECURITY.md` |
 | Sicherheitsprozess | Vertrauliche Meldung, eine erste Antwort „innerhalb eines Werktags“, Korrekturen auf `main` und im nächsten 6.0.x-Release | `SECURITY.md` |
 | Continuous Integration | Qualitätsprüfungen und PHPUnit bei jedem Push und jedem Pull-Request; PHPUnit unter PHP 8.1 bis 8.5; Datenbanktests mit MySQL 8.0 und PostgreSQL 15; Startprüfung unter PHP 8.0 | [Continuous Integration](../../../eng-us/bc/6.0/ci.md) |

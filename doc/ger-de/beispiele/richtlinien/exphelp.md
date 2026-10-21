@@ -31,7 +31,7 @@ $role->appendPolicy( 'exphelp', 'context' );
 
 ## read
 
-Geprüft von den Ansichten: [asset](../modulansichten/exphelp/asset.md), [audience](../modulansichten/exphelp/audience.md), [contents](../modulansichten/exphelp/contents.md), [dashboard](../modulansichten/exphelp/dashboard.md), [extensions](../modulansichten/exphelp/extensions.md), [manual](../modulansichten/exphelp/manual.md), [pdf](../modulansichten/exphelp/pdf.md), [report](../modulansichten/exphelp/report.md), [search](../modulansichten/exphelp/search.md), [topic](../modulansichten/exphelp/topic.md), [viewer](../modulansichten/exphelp/viewer.md).
+Geprüft von den Ansichten: [asset](../modulansichten/exphelp/asset.md), [audience](../modulansichten/exphelp/audience.md), [contents](../modulansichten/exphelp/contents.md), [dashboard](../modulansichten/exphelp/dashboard.md), [extensions](../modulansichten/exphelp/extensions.md), [image](../modulansichten/exphelp/image.md), [manual](../modulansichten/exphelp/manual.md), [pdf](../modulansichten/exphelp/pdf.md), [report](../modulansichten/exphelp/report.md), [search](../modulansichten/exphelp/search.md), [topic](../modulansichten/exphelp/topic.md), [viewer](../modulansichten/exphelp/viewer.md).
 
 Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
 

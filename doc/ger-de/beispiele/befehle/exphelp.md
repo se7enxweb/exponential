@@ -29,6 +29,7 @@ The help system: the index of the documentation, its search and its link check
 ./console exp:help index                     build the index (if it is not current) and describe it
 ./console exp:help index --rebuild           build it again, whatever is cached
 ./console exp:help index --list              one line per page: id, type, category, audiences, title
+./console exp:help index --no-images         without fetching the pages' external images
 ./console exp:help search "clear cache"      search the pages (--audience, --category, --type, --limit)
 ./console exp:help show guides/caches.md     the metadata and headings of one page
 ./console exp:help check                     check the links and images of every page (--below=guides/)
@@ -40,6 +41,8 @@ Only git-tracked files below doc/ (and the doc/ of the extensions in exphelp.ini
 pages; nothing is changed except the cache in var/<site>/cache/exphelp. --json prints one JSON document.
 index builds the index of every language of exphelp.ini [DocLanguages] (doc/eng-us/, doc/ger-de/ ...);
 --language=ger-de limits it to one, and makes search, show, check and pdf read that language.
+index also stores a copy of every https image a page shows (README.md's screenshots) in the cache's
+images/, served by exphelp/image, so the admin's Content Security Policy allows them.
 Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing was found, 2 error.
 ```
 
@@ -49,6 +52,7 @@ Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing
 |---|---|---|
 | `--rebuild` |  | index: den Index neu aufbauen, auch wenn der im Cache aktuell ist |
 | `--list` |  | index: jede Seite auflisten |
+| `--no-images` |  | index: do not fetch the external images of the pages (they stay links) |
 | `--json` |  | Ein JSON-Dokument statt des Textes ausgeben |
 | `--audience` | erforderlich | search, index --list: nur Seiten für diese Zielgruppe (editor, admin, developer, user) |
 | `--category` | erforderlich | search, index --list: nur Seiten dieser Kategorie |

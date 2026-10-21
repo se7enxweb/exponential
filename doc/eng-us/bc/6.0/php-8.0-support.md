@@ -110,6 +110,10 @@ page; the engine's minimums are in its
 [requirements](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/requirements.md) and the release in
 its [changelog](https://github.com/se7enxweb/exponential-velocity/blob/main/CHANGELOG.md).
 
+With that, **Velocity is part of Exponential as of 6.0.15**: the root `composer.json` requires it at `~0.0.4.54`, so
+the kernel, the shipped extensions and the server share one minimum, PHP 8.0. The story for every reader:
+[Velocity is part of Exponential 6.0.15](../../help/velocity-is-part-of-exponential-6-0-15.md).
+
 ## Red Hat Enterprise Linux 9
 
 - **Stock PHP 8.0**: `dnf install php php-fpm php-mysqlnd php-gd php-intl php-mbstring php-xml php-pdo php-opcache`
