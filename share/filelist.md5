@@ -343,11 +343,11 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin/stylesheets/modules/content.css
-528bcced3f58888564ccbc7d451e1b16  design/admin/stylesheets/modules/help.css
+f329e336a366339fda71781e1af030a6  design/admin/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin/stylesheets/modules/structure.css
-5fb1d8a3b81d7275079e6a231a8bf06c  design/admin/stylesheets/modules/workflow.css
+2c1fb9b9030ae9857f1059009c9bb212  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
 7f0ab761ab91d55e7f22d9456c4d8529  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
@@ -1078,11 +1078,11 @@ ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin4/stylesheets/modules/content.css
-528bcced3f58888564ccbc7d451e1b16  design/admin4/stylesheets/modules/help.css
+f329e336a366339fda71781e1af030a6  design/admin4/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin4/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin4/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin4/stylesheets/modules/structure.css
-5fb1d8a3b81d7275079e6a231a8bf06c  design/admin4/stylesheets/modules/workflow.css
+2c1fb9b9030ae9857f1059009c9bb212  design/admin4/stylesheets/modules/workflow.css
 6e999aa90b2660caf0fe3e2ef577ecdf  design/admin4/stylesheets/packagecompare.css
 8eddc989d2d2222387ec716ebc783682  design/admin4/stylesheets/pagelayout.css
 ff5905841b79458608cca6dda718778d  design/admin4/stylesheets/theme/admin_datatable.css
@@ -2111,7 +2111,7 @@ e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.
 64329dba5639afef8bd574d90fd432ab  design/standard/stylesheets/expdebugbar.css
 6be40b2658f59872433cc8104f2deebd  design/standard/stylesheets/ezmedia_silverlight.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
-18b1a5e07097891d17b341b9eefe380a  design/standard/stylesheets/mailpreferences.css
+3d104d2130898dcab66b2586407bb602  design/standard/stylesheets/mailpreferences.css
 d30d96f7fbd57acdf214228a9caeeee2  design/standard/stylesheets/mailpreferences_account_link.css
 0dc888c586595537ff00fa327e3ef019  design/standard/stylesheets/mailpreferences_signup.css
 d5de150d8a583b510f49f7c3021088cf  design/standard/stylesheets/manual.css
