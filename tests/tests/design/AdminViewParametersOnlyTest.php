@@ -90,14 +90,36 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
         return $files;
     }
 
+    /** @return array<string,bool>|null the extensions with files in this repository's git index, null without git */
+    protected static function trackedExtensions()
+    {
+        $out = array();
+        $rc = 1;
+        @exec( 'git -C ' . escapeshellarg( self::root() ) . ' ls-files -- extension 2>/dev/null', $out, $rc );
+        if ( $rc !== 0 || !$out )
+            return null;
+        $names = array();
+        foreach ( $out as $path )
+        {
+            $parts = explode( '/', $path );
+            if ( isset( $parts[1] ) )
+                $names[$parts[1]] = true;
+        }
+        return $names;
+    }
+
     /** @return string[] */
     protected static function files( $kind, array $patterns )
     {
         $files = array();
-        // the designs of this repository: an extension that is a git repository of its own (a checkout such as
-        // exp_adminui on a site) is not part of it and has its own release
-        $extensionDesigns = array_filter( glob( self::root() . '/extension/*/design/*', GLOB_ONLYDIR ) ?: array(), function ( $dir ) {
-            return !file_exists( dirname( $dir, 2 ) . '/.git' );
+        // the designs of this repository: an extension this repository does not track (a checkout such as
+        // exp_adminui on a site, a git repository of its own with its own release) is not part of it
+        $tracked = self::trackedExtensions();
+        $extensionDesigns = array_filter( glob( self::root() . '/extension/*/design/*', GLOB_ONLYDIR ) ?: array(), function ( $dir ) use ( $tracked ) {
+            $extension = dirname( $dir, 2 );
+            if ( $tracked !== null )
+                return isset( $tracked[basename( $extension )] );
+            return !file_exists( $extension . '/.git' );
         } );
         foreach ( array_merge( glob( self::root() . '/design/*', GLOB_ONLYDIR ), $extensionDesigns ) as $design )
             foreach ( $patterns as $pattern )

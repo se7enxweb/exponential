@@ -16509,7 +16509,7 @@ ca25a4b93b231cb5ebc3f04b2d1c61d8  tests/tests/design/AdminTopNodeNameTest.php
 c31fbf08113c86fde611d49decc230b8  tests/tests/design/AdminTreeMenuEscapingTest.php
 8b1138729281fbcf159078ec6d707a29  tests/tests/design/AdminTreeViewTest.php
 db8cab45223a19677ec1dc1f786b2f5c  tests/tests/design/AdminUsedTranslationsTest.php
-c39360aef7516a8f39d7133bd35e0228  tests/tests/design/AdminViewParametersOnlyTest.php
+94a6ba38f469230c617cf5b8679f2596  tests/tests/design/AdminViewParametersOnlyTest.php
 79434fdf210e89a5a67e773034cbfa98  tests/tests/design/AdminVisibilityStatusTest.php
 f0f50ee05d633e889c584fbc962ea814  tests/tests/design/AsynchronousPublishingLinkTest.php
 78e62d89e1a68e8217d79c35a9ece84e  tests/tests/design/ClassicAdminNarrowWindowTest.php
