@@ -14,7 +14,8 @@
  * 4. the default of the page's type: [AudienceSettings] TypeDefaults[<type>] and [CategorySettings] TypeDefaults[<type>].
  *
  * The audiences are editor, admin, developer, user, project-manager, sales-marketing, partner, advocate, designer,
- * hosting, app-creator, website-creator, supporter and sponsor ([AudienceSettings] Audiences[]);
+ * hosting, app-creator, website-creator, supporter, sponsor, trainer, press, businesses, government, customer and the
+ * audiences of #645 (community, ecosystem, php-developer ... student) ([AudienceSettings] Audiences[]);
  * the categories and their names and icons are [CategorySettings] Categories[], CategoryNames[] and CategoryIcons[]. An extension adds rules
  * and categories in its own exphelp.ini.append.php.
  *
@@ -51,6 +52,28 @@ class expHelpAudience
     const BUSINESSES = 'businesses';
     const PRESS = 'press';
     const TRAINER = 'trainer';
+    const COMMUNITY = 'community';
+    const ECOSYSTEM = 'ecosystem';
+    const PHP_DEVELOPER = 'php-developer';
+    const THEME_DESIGNER = 'theme-designer';
+    const RESELLER = 'reseller';
+    const BUNDLER = 'bundler';
+    const AI_AGENTS = 'ai-agents';
+    const SOFTWARE_ENGINEER = 'software-engineer';
+    const ADOPTER = 'adopter';
+    const MOBILE_APP_DEVELOPER = 'mobile-app-developer';
+    const WEB_FRAMEWORK_DEVELOPER = 'web-framework-developer';
+    const CMS_DEVELOPER = 'cms-developer';
+    const DXP_DEVELOPER = 'dxp-developer';
+    const ECOMMERCE = 'ecommerce';
+    const INTEGRATOR = 'integrator';
+    const DBA = 'dba';
+    const PODCASTER = 'podcaster';
+    const NON_PROFIT = 'non-profit';
+    const LOCAL_BUSINESS = 'local-business';
+    const INDIVIDUAL = 'individual';
+    const NON_TECHNICAL = 'non-technical';
+    const STUDENT = 'student';
 
     /** The audiences and their names and icons (bootstrap-icons) */
     const AUDIENCES = array(
@@ -73,6 +96,28 @@ class expHelpAudience
         'businesses'      => array( 'name' => 'Businesses', 'icon' => 'briefcase' ),
         'government'      => array( 'name' => 'Governments', 'icon' => 'bank' ),
         'customer'        => array( 'name' => 'Customers', 'icon' => 'person-check' ),
+        'community'       => array( 'name' => 'Community', 'icon' => 'chat-left-dots' ),
+        'ecosystem'       => array( 'name' => 'Ecosystem', 'icon' => 'globe2' ),
+        'php-developer'   => array( 'name' => 'PHP Developers', 'icon' => 'terminal' ),
+        'theme-designer'  => array( 'name' => 'Theme designers', 'icon' => 'brush' ),
+        'reseller'        => array( 'name' => 'Resellers', 'icon' => 'tag' ),
+        'bundler'         => array( 'name' => 'Bundlers', 'icon' => 'box-seam' ),
+        'ai-agents'       => array( 'name' => 'AI, agents and agentic', 'icon' => 'cpu' ),
+        'software-engineer' => array( 'name' => 'Software Engineers', 'icon' => 'tools' ),
+        'adopter'         => array( 'name' => 'Adopters', 'icon' => 'check2-square' ),
+        'mobile-app-developer' => array( 'name' => 'Mobile App Developers', 'icon' => 'phone-flip' ),
+        'web-framework-developer' => array( 'name' => 'Web Framework Developers', 'icon' => 'diagram-2' ),
+        'cms-developer'   => array( 'name' => 'CMS Developers', 'icon' => 'file-earmark-code' ),
+        'dxp-developer'   => array( 'name' => 'DXP Developers', 'icon' => 'display' ),
+        'ecommerce'       => array( 'name' => 'E-commerce', 'icon' => 'tags' ),
+        'integrator'      => array( 'name' => 'Integrators', 'icon' => 'plug' ),
+        'dba'             => array( 'name' => 'Database Administrators', 'icon' => 'table' ),
+        'podcaster'       => array( 'name' => 'Podcasters, radio and streaming', 'icon' => 'collection-play' ),
+        'non-profit'      => array( 'name' => 'Non-profits', 'icon' => 'people' ),
+        'local-business'  => array( 'name' => 'Local businesses', 'icon' => 'geo-alt' ),
+        'individual'      => array( 'name' => 'Individuals', 'icon' => 'person-circle' ),
+        'non-technical'   => array( 'name' => 'Non-technical people', 'icon' => 'chat-square-text' ),
+        'student'         => array( 'name' => 'Students and learners', 'icon' => 'book' ),
     );
 
     /** The categories, in their dashboard order, with names and icons */
@@ -110,6 +155,27 @@ class expHelpAudience
         'business-solutions' => array( 'name' => 'Exponential for businesses', 'icon' => 'briefcase' ),
         'press-media'     => array( 'name' => 'Press and media', 'icon' => 'megaphone' ),
         'training'        => array( 'name' => 'Training', 'icon' => 'easel' ),
+        'community'       => array( 'name' => 'Community', 'icon' => 'chat-left-dots' ),
+        'ecosystem'       => array( 'name' => 'Ecosystem', 'icon' => 'globe2' ),
+        'php-development' => array( 'name' => 'PHP development', 'icon' => 'terminal' ),
+        'reselling'       => array( 'name' => 'Reselling', 'icon' => 'tag' ),
+        'bundling'        => array( 'name' => 'Bundles and distributions', 'icon' => 'box-seam' ),
+        'ai-agents'       => array( 'name' => 'AI and agents', 'icon' => 'cpu' ),
+        'software-engineering' => array( 'name' => 'Software engineering', 'icon' => 'tools' ),
+        'adoption'        => array( 'name' => 'Adopting Exponential', 'icon' => 'check2-square' ),
+        'mobile-apps'     => array( 'name' => 'Mobile apps', 'icon' => 'phone-flip' ),
+        'web-frameworks'  => array( 'name' => 'Web frameworks', 'icon' => 'diagram-2' ),
+        'cms-development' => array( 'name' => 'CMS development', 'icon' => 'file-earmark-code' ),
+        'dxp-development' => array( 'name' => 'DXP development', 'icon' => 'display' ),
+        'e-commerce'      => array( 'name' => 'E-commerce', 'icon' => 'tags' ),
+        'integration'     => array( 'name' => 'Integration', 'icon' => 'plug' ),
+        'database-administration' => array( 'name' => 'Database administration', 'icon' => 'table' ),
+        'podcasting-streaming' => array( 'name' => 'Podcasting and streaming', 'icon' => 'collection-play' ),
+        'non-profits'     => array( 'name' => 'Non-profit organizations', 'icon' => 'people' ),
+        'local-business'  => array( 'name' => 'Local business', 'icon' => 'geo-alt' ),
+        'personal-sites'  => array( 'name' => 'Personal sites', 'icon' => 'person-circle' ),
+        'plain-language'  => array( 'name' => 'Plain-language help', 'icon' => 'chat-square-text' ),
+        'learning'        => array( 'name' => 'Learning Exponential', 'icon' => 'book' ),
         'project'         => array( 'name' => 'The Exponential project', 'icon' => 'globe' ),
         'administration'  => array( 'name' => 'Administration', 'icon' => 'gear' ),
         'features'        => array( 'name' => 'Features', 'icon' => 'stars' ),
@@ -155,6 +221,28 @@ class expHelpAudience
         'doc/eng-us/help/businesses/*;businesses',
         'doc/eng-us/help/press/*;press',
         'doc/eng-us/help/trainers/*;trainer',
+        'doc/eng-us/help/community/*;community',
+        'doc/eng-us/help/ecosystem/*;ecosystem',
+        'doc/eng-us/help/php-developers/*;php-developer',
+        'doc/eng-us/help/theme-designers/*;theme-designer',
+        'doc/eng-us/help/resellers/*;reseller',
+        'doc/eng-us/help/bundlers/*;bundler',
+        'doc/eng-us/help/ai-agents/*;ai-agents',
+        'doc/eng-us/help/software-engineers/*;software-engineer',
+        'doc/eng-us/help/adopters/*;adopter',
+        'doc/eng-us/help/mobile-app-developers/*;mobile-app-developer',
+        'doc/eng-us/help/web-framework-developers/*;web-framework-developer',
+        'doc/eng-us/help/cms-developers/*;cms-developer',
+        'doc/eng-us/help/dxp-developers/*;dxp-developer',
+        'doc/eng-us/help/e-commerce/*;ecommerce',
+        'doc/eng-us/help/integrators/*;integrator',
+        'doc/eng-us/help/database-administrators/*;dba',
+        'doc/eng-us/help/podcasters/*;podcaster',
+        'doc/eng-us/help/non-profits/*;non-profit',
+        'doc/eng-us/help/local-businesses/*;local-business',
+        'doc/eng-us/help/individuals/*;individual',
+        'doc/eng-us/help/non-technical-people/*;non-technical',
+        'doc/eng-us/help/students/*;student',
         'doc/eng-us/help/project/*;user,editor,admin,developer,partner,supporter',
         'doc/eng-us/help/build-two-ways/*;designer,website-creator,editor,admin,developer',
         'doc/eng-us/help/extension-development/*;developer,designer',
@@ -202,6 +290,28 @@ class expHelpAudience
         'doc/eng-us/help/businesses/*;business-solutions',
         'doc/eng-us/help/press/*;press-media',
         'doc/eng-us/help/trainers/*;training',
+        'doc/eng-us/help/community/*;community',
+        'doc/eng-us/help/ecosystem/*;ecosystem',
+        'doc/eng-us/help/php-developers/*;php-development',
+        'doc/eng-us/help/theme-designers/*;theme-design',
+        'doc/eng-us/help/resellers/*;reselling',
+        'doc/eng-us/help/bundlers/*;bundling',
+        'doc/eng-us/help/ai-agents/*;ai-agents',
+        'doc/eng-us/help/software-engineers/*;software-engineering',
+        'doc/eng-us/help/adopters/*;adoption',
+        'doc/eng-us/help/mobile-app-developers/*;mobile-apps',
+        'doc/eng-us/help/web-framework-developers/*;web-frameworks',
+        'doc/eng-us/help/cms-developers/*;cms-development',
+        'doc/eng-us/help/dxp-developers/*;dxp-development',
+        'doc/eng-us/help/e-commerce/*;e-commerce',
+        'doc/eng-us/help/integrators/*;integration',
+        'doc/eng-us/help/database-administrators/*;database-administration',
+        'doc/eng-us/help/podcasters/*;podcasting-streaming',
+        'doc/eng-us/help/non-profits/*;non-profits',
+        'doc/eng-us/help/local-businesses/*;local-business',
+        'doc/eng-us/help/individuals/*;personal-sites',
+        'doc/eng-us/help/non-technical-people/*;plain-language',
+        'doc/eng-us/help/students/*;learning',
         'doc/eng-us/help/project/*;project',
         'doc/eng-us/help/build-two-ways/*;build-two-ways',
         'doc/eng-us/help/extension-development/*;extension-development',
@@ -577,7 +687,30 @@ class expHelpAudience
                           'governments' => 'government', 'public-sector' => 'government', 'agency' => 'government', 'agencies' => 'government',
                           'companies' => 'businesses', 'company' => 'businesses', 'enterprise' => 'businesses', 'enterprises' => 'businesses',
                           'media' => 'press', 'journalist' => 'press', 'journalists' => 'press', 'influencer' => 'press', 'influencers' => 'press', 'press-media' => 'press',
-                          'trainers' => 'trainer', 'teacher' => 'trainer', 'teachers' => 'trainer', 'instructor' => 'trainer', 'instructors' => 'trainer', 'all' => '*' );
+                          'trainers' => 'trainer', 'teacher' => 'trainer', 'teachers' => 'trainer', 'instructor' => 'trainer', 'instructors' => 'trainer',
+                          'communities' => 'community', 'community-members' => 'community',
+                          'ecosystems' => 'ecosystem',
+                          'php-developers' => 'php-developer', 'php' => 'php-developer',
+                          'theme-designers' => 'theme-designer', 'themers' => 'theme-designer', 'themer' => 'theme-designer',
+                          'resellers' => 'reseller',
+                          'bundlers' => 'bundler', 'distributors' => 'bundler',
+                          'ai' => 'ai-agents', 'agents' => 'ai-agents', 'agentic' => 'ai-agents', 'ai-agent' => 'ai-agents',
+                          'software-engineers' => 'software-engineer', 'engineer' => 'software-engineer', 'engineers' => 'software-engineer',
+                          'adopters' => 'adopter',
+                          'mobile-app-developers' => 'mobile-app-developer', 'mobile' => 'mobile-app-developer', 'mobile-developers' => 'mobile-app-developer',
+                          'web-framework-developers' => 'web-framework-developer', 'framework-developers' => 'web-framework-developer',
+                          'cms-developers' => 'cms-developer',
+                          'dxp-developers' => 'dxp-developer', 'dxp' => 'dxp-developer',
+                          'e-commerce' => 'ecommerce', 'commerce' => 'ecommerce', 'shop' => 'ecommerce', 'merchants' => 'ecommerce',
+                          'integrators' => 'integrator', 'system-integrators' => 'integrator',
+                          'dbas' => 'dba', 'database-administrator' => 'dba', 'database-administrators' => 'dba',
+                          'podcasters' => 'podcaster', 'podcast' => 'podcaster', 'radio' => 'podcaster', 'streaming' => 'podcaster', 'streamers' => 'podcaster',
+                          'non-profits' => 'non-profit', 'nonprofit' => 'non-profit', 'nonprofits' => 'non-profit', 'charity' => 'non-profit', 'charities' => 'non-profit', 'ngo' => 'non-profit',
+                          'local-businesses' => 'local-business', 'small-business' => 'local-business', 'small-businesses' => 'local-business',
+                          'individuals' => 'individual', 'personal' => 'individual',
+                          'non-technical-people' => 'non-technical', 'beginners' => 'non-technical', 'plain-language' => 'non-technical',
+                          'students' => 'student', 'learner' => 'student', 'learners' => 'student',
+                          'all' => '*' );
         $wanted = array();
         foreach ( $items as $item )
         {
@@ -604,7 +737,7 @@ class expHelpAudience
      */
     public function guessAudience( $path, $intro )
     {
-        if ( preg_match( '/-(project-manager|sales-marketing|app-creator|website-creator|partner|advocate|designer|supporter|sponsor|customer|government|businesses|press|trainer|editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
+        if ( preg_match( '/-(web-framework-developer|mobile-app-developer|software-engineer|theme-designer|local-business|php-developer|cms-developer|dxp-developer|non-technical|integrator|non-profit|individual|community|ecosystem|ai-agents|ecommerce|podcaster|reseller|bundler|adopter|student|dba|project-manager|sales-marketing|app-creator|website-creator|partner|advocate|designer|supporter|sponsor|customer|government|businesses|press|trainer|editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
             return $this->audienceList( array( $m[1] ) );
         $intro = strtolower( substr( (string)$intro, 0, 600 ) );
         $found = array();

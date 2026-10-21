@@ -42,9 +42,11 @@ DesignExtensions[]=mytheme
 
 ## Wo Einstellungen gewinnen
 
-Vom schwächsten zum stärksten: die `settings/*.ini` des Kernels, die `settings/` der aktiven Erweiterungen (frühere
-Erweiterungen gewinnen über spätere), Siteaccess-Einstellungen (auch die innerhalb von Erweiterungen) und schließlich das
-`settings/override/` der Installation. Die vollständige Liste steht in
+Vom schwächsten zum stärksten: die `settings/*.ini` des Kernels, Siteaccess-Einstellungen (zuerst die innerhalb von
+Erweiterungen, dann `settings/siteaccess/<siteaccess>/`), die `settings/` der aktiven Erweiterungen (frühere
+Erweiterungen gewinnen über spätere) und schließlich das `settings/override/` der Installation. Ein Wert im
+`settings/` Ihres Themes gewinnt also über denselben Wert in einem Siteaccess; nur `settings/override/` gewinnt über
+ihn. Die vollständige Liste steht in
 [Ablageorte für Einstellungs-Overrides](../../../spezifikationen/6.0/ini-override-platzierungen.md).
 
 ## Schritt für Schritt: eine Einstellung hinzufügen und prüfen

@@ -67,6 +67,12 @@ providers), registered in `paymentgateways.ini` of an extension, plus a module v
 `doc/eng-us/shop/examples/paypal/` pages walk through one. This is application creator work: see
 [Writing a workflow event type](../app-creators/writing-a-workflow-event-type.md).
 
+**Setup > RAD** (`/setup/handlerextension/paymentgateway`, or `paymentgatewaydirect` for a gateway that takes the
+payment without leaving the site) writes the skeleton. Check that the generated class is at
+`extension/<name>/paymentgateways/<alias>/classes/<alias>gateway.php`: the kernel loads
+`<GatewaysDirectories>/<gateway>/classes/<gateway>gateway.php` for each name in `AvailableGateways[]` and nothing
+else. Earlier versions of the tool wrote `paymentgateways/<alias>gateway.php`, which is never loaded.
+
 ## Related pages
 
 - [Running a shop: overview](shop-overview.md)

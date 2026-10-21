@@ -184,15 +184,16 @@ zusammen, wobei eine spätere Datei gewinnt:
 
 | Reihenfolge | Geltungsbereich | Verzeichnisse |
 |---|---|---|
-| 1 | `sa-extension` | Siteaccess-spezifische Verzeichnisse in Extensions (`extension/<ext>/settings/siteaccess/<sa>/` und verwandte) |
-| 2 | `siteaccess` | `settings/siteaccess/<sa>/` |
+| 1 | `sa-extension` | `extension/<ext>/settings/` der Extensions in `ActiveAccessExtensions[]` |
+| 2 | `siteaccess` | Siteaccess-spezifische Verzeichnisse in Extensions (`extension/<ext>/settings/siteaccess/<sa>/` und verwandte), dann `settings/siteaccess/<sa>/` |
 | 3 | `extension` | `extension/<ext>/settings/` jeder aktiven Extension |
 | 4 | `override` | `settings/override/` |
 
 Überschreibungsdateien heißen `<file>.ini.append.php` (die Endung `.php` verhindert, dass sie als Text ausgeliefert
 werden). Extensions werden in `site.ini [ExtensionSettings] ActiveExtensions[]` (global) und
 `ActiveAccessExtensions[]` (pro Siteaccess) eingeschaltet. Beachten Sie die Reihenfolge: Das `settings/` einer
-Extension gewinnt gegenüber `settings/siteaccess/<sa>/`, und `settings/override/` gewinnt gegenüber allem. Die
+Extension in `ActiveExtensions[]` gewinnt gegenüber `settings/siteaccess/<sa>/` (eine in `ActiveAccessExtensions[]`
+nicht), und `settings/override/` gewinnt gegenüber allem. Die
 vollständige Referenz ist [INI-Überschreibungsverzeichnisse und Platzierungen](../../spezifikationen/6.0/ini-override-platzierungen.md);
 Site-spezifische Einstellungen in Extensions beschreibt
 [INI-Überschreibungen für mehrere Sites](../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).

@@ -7,8 +7,9 @@ if you write documentation (in `doc/` or in an extension) that should show up in
 
 - **Help dashboard** (`/exphelp/dashboard`): the Exponential logo above "Help center" (the header's drawing,
   `exphelp/parts/dashboard_brand.tpl`, per design), a search field, the help for each audience (editors, administrators,
-  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters, sponsors, trainers, press, media and influencers, businesses, governments and customers; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
-  report an error.
+  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters, sponsors, trainers, press, media and influencers, businesses, governments, customers, the community, the ecosystem, PHP developers, theme designers, resellers, bundlers, AI and agents, software engineers, adopters, mobile app developers, web framework developers, CMS developers, DXP developers, e-commerce, integrators, database administrators, podcasters, non-profits, local businesses, individuals, non-technical people and students; forty-one cards in five folding groups, the first open, and the search filters beyond that group behind "More audiences"; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
+  report an error. Below the search, "Who makes Exponential" (`exphelp/parts/dashboard_about.tpl`) links "Who is 7x?",
+  "Who is the Exponential Foundation?" and the landing pages of the Partners, the Community and the Ecosystem.
 - **Help pages** (`/exphelp/viewer/<page>`): every git-tracked Markdown and text file under `doc/`, rendered with
   headings, a table of contents, tables, callouts, highlighted code and images, with the navigation of its section,
   the previous and next page, and a link to the file on GitHub. `<page>` is the path below `doc/`
@@ -70,7 +71,7 @@ Security Policy.
 | `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose documentation is shown whether they are active or not |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
 | `[ProjectFiles] Enabled`, `Include[]`, `Exclude[]` | `enabled`, the root `*.md` and the README.md of `bin/`, `design/`, `kernel/` | the tracked Markdown files outside `doc/` that are shown as project files (see "Project files") |
-| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press`, `businesses`, `government`, `customer` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
+| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press`, `businesses`, `government`, `customer`, `community`, `ecosystem`, `php-developer`, `theme-designer`, `reseller`, `bundler`, `ai-agents`, `software-engineer`, `adopter`, `mobile-app-developer`, `web-framework-developer`, `cms-developer`, `dxp-developer`, `ecommerce`, `integrator`, `dba`, `podcaster`, `non-profit`, `local-business`, `individual`, `non-technical`, `student` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
 | `[SearchSettings]` | 20 results | result count and the weights of title, headings and text |

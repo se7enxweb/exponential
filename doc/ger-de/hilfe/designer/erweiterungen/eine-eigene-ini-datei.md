@@ -55,8 +55,10 @@ die für Open Graph als Artikel gelten, aus `cjw_jumper.ini [OpenGraph] ArticleC
    ./console exp:ini where mytheme.ini/FrontPage/TeaserCount --allow-root-user
    ```
 
-5. Sagen Sie Nutzern im README, wie sie den Wert überschreiben: in `settings/override/mytheme.ini.append.php` oder in einem
-   Siteaccess-Ordner, nie in der eigenen Datei des Themes (ein Update würde sie überschreiben).
+5. Sagen Sie Nutzern im README, wie sie den Wert überschreiben: in `settings/override/mytheme.ini.append.php`, nie in
+   der eigenen Datei des Themes (ein Update würde sie überschreiben). Ein Siteaccess-Ordner wirkt nicht für einen
+   Schlüssel, den die Datei des Themes setzt, denn die `settings/` der Erweiterungen werden nach den
+   Siteaccess-Einstellungen gelesen und gewinnen.
 
 ## Bewährte Praxis
 
