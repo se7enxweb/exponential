@@ -20,7 +20,7 @@ current state:
 
 | Demo | Rebuilt | Sign-in |
 |---|---|---|
-| `https://demo.exponential.earth/` | once a day | `admin` / `publish` at `/admin` |
+| `https://demo.exponential.earth/` | once a day | `admin` / `publish` at `https://edit.demo.exponential.earth/` |
 | `https://latest.demo.exponential.earth/` | every two hours | `admin` at `/admin` |
 | `https://site.cjw.demo.exponential.earth/` (the CJW starter site, `cjw_themes_jumper` design) | every two hours | `admin` at `/admin` |
 

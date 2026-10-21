@@ -39,7 +39,7 @@ What demo mode does, and its risks: [Demo mode](../../bc/6.0/demo-mode.md).
 | [`crontab-demo`](crontab-demo) | the demo user's crontab: `EXP_DEMO_MODE=1` for the cronjobs and the scheduled rebuild |
 | [`docker-demo.env`](docker-demo.env) | an environment file for the demo container only (`--env-file`, `env_file:`) |
 | [`install-demo-sqlite.sh`](install-demo-sqlite.sh) | the generic shape of a rebuild script: clone, `composer install`, `exp:install` on SQLite in demo mode, check that the published password went in as given, `SetEnv` in `.htaccess`, swap, warm |
-| [`install-demo-sqlite-demo-exponential-earth.sh`](install-demo-sqlite-demo-exponential-earth.sh) | the real script of `https://demo.exponential.earth/` (daily from cron at 04:20, sign-in `admin` / `publish`): the generic shape plus a check that every `SiteURL` the installer wrote is on the demo's own name, and `.htaccess` rules that redirect the vhost's other names (an old domain, an `edit.` alias) to it |
+| [`install-demo-sqlite-demo-exponential-earth.sh`](install-demo-sqlite-demo-exponential-earth.sh) | the real script of `https://demo.exponential.earth/` (daily from cron at 04:20, sign-in `admin` / `publish` at `edit.demo.exponential.earth`): the generic shape plus siteaccess matching by host written after the install (`MatchOrder=host;uri`, `HostMatchMapItems[]` for the admin and the site, the admin's `SiteURL` on its own host), a check that the settings name only the demo's hosts, and `.htaccess` rules that redirect the vhost's old names to the new ones |
 
 ## Which one you need
 
