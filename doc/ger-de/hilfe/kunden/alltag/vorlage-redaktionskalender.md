@@ -71,7 +71,7 @@ Goal (one sentence): ________________________________________________
 
 | Element | Häufigkeit | Tag | Zuständig | Notiz |
 |---|---|---|---|---|
-| Newsletter | | | | ein wiederkehrender Versand kann das übernehmen ([Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md)) |
+| Newsletter | | | | ein wiederkehrender Versand kann das übernehmen ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)) |
 | Seite mit Öffnungszeiten oder Veranstaltungen | | | | |
 | SEO-Prüfung | monatlich | | | [Monatliche SEO-Checkliste](monatliche-seo-checkliste.md) |
 | Inhalts-Audit | jährlich | | | [Inhalts-Audits](inhalts-audits.md) |

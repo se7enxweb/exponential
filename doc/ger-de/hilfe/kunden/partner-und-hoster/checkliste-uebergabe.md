@@ -40,7 +40,7 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
       neuen Hoster ändern.
 - [ ] Eigene Erweiterungen und Designs, oder die Adressen ihrer Git-Repositorys.
 - [ ] Die Signaturschlüssel des Prüfprotokolls (`settings/override/audit.ini.append.php`) und, wenn Sie die Historie
-      möchten, die Einträge des Prüfprotokolls ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)).
+      möchten, die Einträge des Prüfprotokolls ([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - [ ] Erstellt bei eingeschaltetem Wartungsmodus, damit Datenbank und Dateien zusammenpassen.
 
 ## Unterlagen
@@ -71,12 +71,12 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
 
 - [ ] Die Konten des alten Anbieters in Ihrer Administration sind deaktiviert.
 - [ ] Der alte Anbieter löscht Ihre Daten gemäß Vertrag und Gesetz und bestätigt es schriftlich
-      (keine Rechtsberatung; [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md)).
+      (keine Rechtsberatung; [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 - [ ] [Wer was macht](wer-was-macht.md) und Ihre [Eskalationskontakte](vorlage-eskalationskontakte.md) sind aktualisiert.
 
 > **Hinweis**
 > Exponential steht unter der GPL. Ein Partner, der eine Website baut und Ihnen den Code übergibt, verbreitet ihn an Sie,
-> und Sie erhalten die Rechte der GPL, einschließlich des Quellcodes ([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)).
+> und Sie erhalten die Rechte der GPL, einschließlich des Quellcodes ([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)).
 > Das Eigentum an Designs und Inhalten, die für Sie erstellt wurden, ist eine Vertragsfrage: Vereinbaren Sie es schriftlich.
 
 ## Verwandte Seiten

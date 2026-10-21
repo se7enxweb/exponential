@@ -1,0 +1,986 @@
+{
+    "command:mailconsent --email": {
+        "en": "an address",
+        "de": "eine Adresse"
+    },
+    "command:mailconsent --from": {
+        "en": "from this day",
+        "de": "ab diesem Tag"
+    },
+    "command:mailconsent --limit": {
+        "en": "list: how many (default 50)",
+        "de": "list: wie viele (Standard 50)"
+    },
+    "command:mailconsent --offset": {
+        "en": "list: skip this many",
+        "de": "list: so viele überspringen"
+    },
+    "command:mailconsent --output": {
+        "en": "export: the file (mode 0600)",
+        "de": "export: die Datei (Modus 0600)"
+    },
+    "command:mailconsent --source": {
+        "en": "page, link, admin, import, signup, bridge, confirm, system",
+        "de": "page, link, admin, import, signup, bridge, confirm, system"
+    },
+    "command:mailconsent --to": {
+        "en": "up to this day",
+        "de": "bis zu diesem Tag"
+    },
+    "command:mailconsent --user": {
+        "en": "a login or user id",
+        "de": "ein Login oder eine Benutzer-ID"
+    },
+    "command:mailgate": {
+        "en": "Test the mail gate: who of the given addresses would get a mail of a category, and what the decorated mail looks like",
+        "de": "Testet das Mail-Gate: wer von den angegebenen Adressen eine Mail einer Kategorie bekäme und wie die ergänzte Mail aussieht"
+    },
+    "command:mailgate --addresses": {
+        "en": "show the addresses",
+        "de": "die Adressen zeigen"
+    },
+    "command:mailgate --category": {
+        "en": "the category of the test mail (empty: a mail without category)",
+        "de": "die Kategorie der Testmail (leer: eine Mail ohne Kategorie)"
+    },
+    "command:mailgate --html": {
+        "en": "an HTML test mail",
+        "de": "eine HTML-Testmail"
+    },
+    "command:mailgate --mail-file-dir": {
+        "en": "where --write puts the mail",
+        "de": "wohin --write die Mail legt"
+    },
+    "command:mailgate --to": {
+        "en": "addresses, comma separated",
+        "de": "Adressen, durch Kommas getrennt"
+    },
+    "command:mailgate --write": {
+        "en": "send the test mail through the gate with the file transport",
+        "de": "die Testmail mit dem Datei-Transport durch das Gate schicken"
+    },
+    "command:mailpreferences": {
+        "en": "Show and change the e-mail preferences of a user or an address: categories, master switch, frequency, export, erase",
+        "de": "Zeigt und ändert die E-Mail-Einstellungen eines Benutzers oder einer Adresse: Kategorien, Hauptschalter, Häufigkeit, Export, Löschen"
+    },
+    "command:mailpreferences --addresses": {
+        "en": "show the address instead of hiding it",
+        "de": "die Adresse zeigen, statt sie zu verbergen"
+    },
+    "command:mailpreferences --category": {
+        "en": "set, frequency: the category identifier",
+        "de": "set, frequency: der Kategoriebezeichner"
+    },
+    "command:mailpreferences --email": {
+        "en": "the person: an address (the account it belongs to, if any)",
+        "de": "die Person: eine Adresse (und das Konto, zu dem sie gehört, falls vorhanden)"
+    },
+    "command:mailpreferences --format": {
+        "en": "export: json (default) or csv",
+        "de": "export: json (Standard) oder csv"
+    },
+    "command:mailpreferences --frequency": {
+        "en": "frequency: immediate, daily or weekly",
+        "de": "frequency: immediate, daily oder weekly"
+    },
+    "command:mailpreferences --json": {
+        "en": "show, categories: JSON",
+        "de": "show, categories: JSON"
+    },
+    "command:mailpreferences --no-mail": {
+        "en": "set: do not send the confirmation mail of a double opt-in",
+        "de": "set: die Bestätigungsmail eines Double-Opt-in nicht senden"
+    },
+    "command:mailpreferences --output": {
+        "en": "export: write to this file instead of the screen",
+        "de": "export: in diese Datei statt auf den Bildschirm schreiben"
+    },
+    "command:mailpreferences --source": {
+        "en": "admin (default) or import: import switches a double opt-in category on at once",
+        "de": "admin (Standard) oder import: import schaltet eine Kategorie mit Double-Opt-in sofort ein"
+    },
+    "command:mailpreferences --state": {
+        "en": "set, master: on or off",
+        "de": "set, master: on oder off"
+    },
+    "command:mailpreferences --user": {
+        "en": "the person: a login or a user id",
+        "de": "die Person: ein Login oder eine Benutzer-ID"
+    },
+    "command:mailpreferences --wording": {
+        "en": "the text recorded in the consent log (default: \"Changed on the console\")",
+        "de": "der im Einwilligungsprotokoll festgehaltene Text (Standard: \"Changed on the console\")"
+    },
+    "command:mailpreferences --yes": {
+        "en": "erase: really erase",
+        "de": "erase: wirklich löschen"
+    },
+    "command:mailstatus": {
+        "en": "Show the e-mail preference system: tables, gate, footer, categories, suppression, consent log, the gate's last decisions and problems",
+        "de": "Zeigt das System der E-Mail-Einstellungen: Tabellen, Gate, Fußzeile, Kategorien, Sperrliste, Einwilligungsprotokoll, die letzten Entscheidungen des Gates und Probleme"
+    },
+    "command:mailsuppression": {
+        "en": "The suppression list of the e-mail gate: list, check, add and lift entries (only hashes are stored)",
+        "de": "Die Sperrliste des E-Mail-Gates: Einträge auflisten, prüfen, hinzufügen und aufheben (es werden nur Hashes gespeichert)"
+    },
+    "command:mailsuppression --email": {
+        "en": "the address (check, add, lift)",
+        "de": "die Adresse (check, add, lift)"
+    },
+    "command:mailsuppression --hash": {
+        "en": "lift: the hash of an entry (list shows its start; the whole hash is in --json)",
+        "de": "lift: der Hash eines Eintrags (list zeigt seinen Anfang; der ganze Hash steht in --json)"
+    },
+    "command:mailsuppression --json": {
+        "en": "list: JSON",
+        "de": "list: JSON"
+    },
+    "command:mailsuppression --note": {
+        "en": "add: a note for the admins (the address is removed from it)",
+        "de": "add: eine Notiz für die Administratoren (die Adresse wird daraus entfernt)"
+    },
+    "command:mailsuppression --reason": {
+        "en": "add: the reason; list: only this reason",
+        "de": "add: der Grund; list: nur dieser Grund"
+    },
+    "command:maintenance": {
+        "en": "Take the site offline for maintenance and back: on, off or status",
+        "de": "Nimmt die Website für Wartungsarbeiten vom Netz und wieder zurück: on, off oder status"
+    },
+    "command:maintenance --allow-admin": {
+        "en": "Keep the administration (/admin) reachable",
+        "de": "Die Administration (/admin) erreichbar lassen"
+    },
+    "command:maintenance --allow-ip": {
+        "en": "Addresses that still see the site, comma separated",
+        "de": "Adressen, die die Website weiterhin sehen, durch Kommas getrennt"
+    },
+    "command:maintenance --message": {
+        "en": "What the page says, instead of the default text",
+        "de": "Was die Seite sagt, statt des Standardtextes"
+    },
+    "command:maintenance --until": {
+        "en": "When the site is expected back: 30m, 2h, or a date and time",
+        "de": "Wann die Website zurück sein soll: 30m, 2h oder ein Datum mit Uhrzeit"
+    },
+    "command:makestaticcache": {
+        "en": "Crawl the public siteaccesses and generate static pages (--site, --max-pages, --max-depth)",
+        "de": "Durchläuft die öffentlichen Siteaccesses und erzeugt statische Seiten (--site, --max-pages, --max-depth)"
+    },
+    "command:makestaticcache --force": {
+        "en": "Accepted for compatibility; a run always replaces what it generates.",
+        "de": "Zur Kompatibilität akzeptiert; ein Lauf ersetzt immer, was er erzeugt."
+    },
+    "command:makestaticcache --keep": {
+        "en": "Add to what is already stored instead of replacing it.",
+        "de": "Zum bereits Gespeicherten hinzufügen, statt es zu ersetzen."
+    },
+    "command:makestaticcache --max-depth": {
+        "en": "Follow links this many steps from the site root. Default 12.",
+        "de": "Links so viele Schritte von der Wurzel der Website aus folgen. Standard 12."
+    },
+    "command:makestaticcache --max-pages": {
+        "en": "Stop after this many pages per site. Default 2500.",
+        "de": "Nach so vielen Seiten pro Website aufhören. Standard 2500."
+    },
+    "command:makestaticcache --site": {
+        "en": "Generate only this siteaccess. Repeat for several; omit for every public one.",
+        "de": "Nur diesen Siteaccess erzeugen. Für mehrere wiederholen; weglassen für jeden öffentlichen."
+    },
+    "command:notificationevents": {
+        "en": "List the notification events, or remove the old ones",
+        "de": "Listet die Benachrichtigungsereignisse auf oder entfernt die alten"
+    },
+    "command:notificationevents --dry-run": {
+        "en": "cleanup: count, remove nothing",
+        "de": "cleanup: zählen, nichts entfernen"
+    },
+    "command:notificationevents --include-unknown": {
+        "en": "cleanup: also remove events whose age cannot be told",
+        "de": "cleanup: auch Ereignisse entfernen, deren Alter sich nicht bestimmen lässt"
+    },
+    "command:notificationevents --older-than": {
+        "en": "cleanup: 90s, 15m, 12h, 30d, 2w or a date (2026-09-01)",
+        "de": "cleanup: 90s, 15m, 12h, 30d, 2w oder ein Datum (2026-09-01)"
+    },
+    "command:notificationevents --status": {
+        "en": "list, cleanup --older-than: pending or handled (default both)",
+        "de": "list, cleanup --older-than: pending oder handled (Standard beide)"
+    },
+    "command:notificationrun": {
+        "en": "Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them)",
+        "de": "Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten)"
+    },
+    "command:notificationrun --addresses": {
+        "en": "Show whole recipient addresses in the dry run (they are masked by default)",
+        "de": "Im Probelauf die ganzen Empfängeradressen zeigen (standardmäßig maskiert)"
+    },
+    "command:notificationrun --at": {
+        "en": "The time of the time event: a date (2026-10-05 08:00) or a timestamp, default now",
+        "de": "Der Zeitpunkt des Zeitereignisses: ein Datum (2026-10-05 08:00) oder ein Zeitstempel, Standard jetzt"
+    },
+    "command:notificationrun --dry-run": {
+        "en": "List what would be sent and change nothing",
+        "de": "Auflisten, was gesendet würde, und nichts ändern"
+    },
+    "command:notificationrun --event": {
+        "en": "Only these events (ids, comma separated); no time event is made then",
+        "de": "Nur diese Ereignisse (IDs, durch Kommas getrennt); dann wird kein Zeitereignis erzeugt"
+    },
+    "command:notificationrun --job": {
+        "en": "The id of a background job whose progress file is written (the status page uses this)",
+        "de": "Die ID eines Hintergrundauftrags, dessen Fortschrittsdatei geschrieben wird (die Statusseite verwendet das)"
+    },
+    "command:notificationrun --mail-file-dir": {
+        "en": "Write the mail to files in this directory instead of sending it (this process only)",
+        "de": "Die Mail in Dateien in diesem Verzeichnis schreiben, statt sie zu senden (nur dieser Prozess)"
+    },
+    "command:notificationrun --no-time-event": {
+        "en": "Make no time event: only the pending events are handled (no digest is due because of this run)",
+        "de": "Kein Zeitereignis erzeugen: nur die anstehenden Ereignisse werden verarbeitet (durch diesen Lauf wird keine Zusammenfassung fällig)"
+    },
+    "command:notificationrun --source": {
+        "en": "console (default) or web; what the record of the run says",
+        "de": "console (Standard) oder web; was der Datensatz des Laufs angibt"
+    },
+    "command:notificationstatus": {
+        "en": "Show the notification system: pending events, digest items, subscriptions, the last runs and problems",
+        "de": "Zeigt das Benachrichtigungssystem: anstehende Ereignisse, Einträge der Zusammenfassungen, Abonnements, die letzten Läufe und Probleme"
+    },
+    "command:notificationsubscriptions": {
+        "en": "List the subtree notification subscriptions per user and subtree, or remove those whose content is gone",
+        "de": "Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert"
+    },
+    "command:notificationsubscriptions --addresses": {
+        "en": "also show the user's e-mail address (hidden by default)",
+        "de": "auch die E-Mail-Adresse des Benutzers zeigen (standardmäßig verborgen)"
+    },
+    "command:notificationsubscriptions --class": {
+        "en": "only nodes of this class identifier",
+        "de": "nur Knoten dieses Klassenbezeichners"
+    },
+    "command:notificationsubscriptions --dry-run": {
+        "en": "remove-missing: count, remove nothing",
+        "de": "remove-missing: zählen, nichts entfernen"
+    },
+    "command:notificationsubscriptions --limit": {
+        "en": "how many (default 50)",
+        "de": "wie viele (Standard 50)"
+    },
+    "command:notificationsubscriptions --missing": {
+        "en": "only subscriptions whose node is gone",
+        "de": "nur Abonnements, deren Knoten nicht mehr existiert"
+    },
+    "command:notificationsubscriptions --offset": {
+        "en": "skip this many",
+        "de": "so viele überspringen"
+    },
+    "command:notificationsubscriptions --user": {
+        "en": "only this user: a login or the user's content object id",
+        "de": "nur dieser Benutzer: ein Login oder die Inhaltsobjekt-ID des Benutzers"
+    },
+    "command:notificationsubscriptions -q": {
+        "en": "only nodes whose name contains this",
+        "de": "nur Knoten, deren Name dies enthält"
+    },
+    "command:phar": {
+        "en": "Build and inspect the engine archive dist/engine.phar (verbs build, check, clean, info)",
+        "de": "Baut und untersucht das Engine-Archiv dist/engine.phar (Verben build, check, clean, info)"
+    },
+    "command:phar --force": {
+        "en": "build: rebuild even when the archive already carries exactly the files on disk.",
+        "de": "build: neu bauen, auch wenn das Archiv genau die Dateien auf der Festplatte enthält."
+    },
+    "command:phar --json": {
+        "en": "Print the result as JSON.",
+        "de": "Das Ergebnis als JSON ausgeben."
+    },
+    "command:phar --output": {
+        "en": "Write the archive somewhere other than dist/engine.phar.",
+        "de": "Das Archiv an einen anderen Ort als dist/engine.phar schreiben."
+    },
+    "command:preload": {
+        "en": "Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones",
+        "de": "Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten"
+    },
+    "command:preload --max-pages": {
+        "en": "most pages to request (default ",
+        "de": "höchstens so viele Seiten anfordern (Standard "
+    },
+    "command:preload --target": {
+        "en": "the siteaccess whose site is preloaded (default: the one of --siteaccess)",
+        "de": "der Siteaccess, dessen Website vorgewärmt wird (Standard: der von --siteaccess)"
+    },
+    "command:preloadjob --id": {
+        "en": "the job id (hex), chosen by setup/preloadjob",
+        "de": "die Auftrags-ID (hex), von setup/preloadjob gewählt"
+    },
+    "command:preloadjob --images": {
+        "en": "also request the images the warmed pages show, and report the missing ones",
+        "de": "auch die Bilder anfordern, die die vorgewärmten Seiten zeigen, und die fehlenden melden"
+    },
+    "command:preloadjob --max-depth": {
+        "en": "most links to follow from a starting page (default 3)",
+        "de": "höchstens so viele Links von einer Startseite aus folgen (Standard 3)"
+    },
+    "command:preloadjob --max-pages": {
+        "en": "most pages to fetch (default 250)",
+        "de": "höchstens so viele Seiten abrufen (Standard 250)"
+    },
+    "command:preloadjob --target": {
+        "en": "the siteaccess whose site is preloaded (default: DefaultAccess)",
+        "de": "der Siteaccess, dessen Website vorgewärmt wird (Standard: DefaultAccess)"
+    },
+    "command:resetuserpassword": {
+        "en": "Reset a user password with admin authentication or root bypass",
+        "de": "Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung"
+    },
+    "command:solr": {
+        "en": "Control the Solr search server, once it is installed and configured",
+        "de": "Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist"
+    },
+    "command:systeminfo": {
+        "en": "The facts and health checks of Setup > System information, as text or JSON (--json, --sizes)",
+        "de": "Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes)"
+    },
+    "command:systeminfo --sizes": {
+        "en": "Also measure the size of var/, of each cache directory and of the database",
+        "de": "Auch die Größe von var/, jedes Cache-Verzeichnisses und der Datenbank messen"
+    },
+    "command:trashpurge": {
+        "en": "Permanently delete all objects in the trash",
+        "de": "Löscht alle Objekte im Papierkorb endgültig"
+    },
+    "command:trashpurge --memory-monitoring": {
+        "en": "If set, memory usage will be logged in var/log/trashpurge.log.",
+        "de": "Wenn gesetzt, wird der Speicherverbrauch in var/log/trashpurge.log protokolliert."
+    },
+    "command:trashpurge --trashed-days": {
+        "en": "If set, only objects that has been trashed for at least the specified amount of days will be purged.",
+        "de": "Wenn gesetzt, werden nur Objekte endgültig gelöscht, die seit mindestens so vielen Tagen im Papierkorb liegen."
+    },
+    "command:updateisbn13": {
+        "en": "Update the ISBN range data in the database from an XML file (--url is required)",
+        "de": "Aktualisiert die ISBN-Bereichsdaten in der Datenbank aus einer XML-Datei (--url ist erforderlich)"
+    },
+    "command:updateisbn13 --url": {
+        "en": "URL containing the xml file for the different ranges",
+        "de": "URL der XML-Datei mit den verschiedenen Bereichen"
+    },
+    "command:updateniceurls": {
+        "en": "Import old URL aliases and update the URL aliases of all nodes (--update-nodes)",
+        "de": "Importiert alte URL-Aliase und aktualisiert die URL-Aliase aller Knoten (--update-nodes)"
+    },
+    "command:updateniceurls --backup-tables": {
+        "en": "Performs a backup of the ezurlalias and ezurlalias_ml tables after each stage is done (import or update),\nthe backup tables will use the original name but with the suffix supplied to this option.\nNote: Use only for debugging and only on MySQL.",
+        "de": "Sichert nach jeder Phase (Import oder Update) die Tabellen ezurlalias und ezurlalias_ml,\ndie Sicherungstabellen tragen den Originalnamen mit dem bei dieser Option angegebenen Suffix.\nHinweis: nur zur Fehlersuche und nur mit MySQL verwenden."
+    },
+    "command:updateniceurls --column-width": {
+        "en": "The approximate width of the output block, defaults to 72.",
+        "de": "Die ungefähre Breite des Ausgabeblocks, Standard 72."
+    },
+    "command:updateniceurls --fetch-limit": {
+        "en": "The number of items to fetch in one go, increasing it may reduce\ntotal time but will also increase memory usage, defaults to 200.",
+        "de": "Die Anzahl der auf einmal geholten Einträge; ein höherer Wert kann die\nGesamtzeit verkürzen, erhöht aber auch den Speicherverbrauch, Standard 200."
+    },
+    "command:updateniceurls --import": {
+        "en": "Enables all import routines.",
+        "de": "Aktiviert alle Importroutinen."
+    },
+    "command:updateniceurls --import-aliases": {
+        "en": "Enables importing of old urls (system and customized).",
+        "de": "Aktiviert den Import alter URLs (System und angepasst)."
+    },
+    "command:updateniceurls --import-nodes": {
+        "en": "Enables importing of urls from the old node data.",
+        "de": "Aktiviert den Import von URLs aus den alten Knotendaten."
+    },
+    "command:updateniceurls --import-redirections": {
+        "en": "Enables importing of urls which redirects to the correct url (ie. history).",
+        "de": "Aktiviert den Import von URLs, die auf die richtige URL weiterleiten (d. h. Verlauf)."
+    },
+    "command:updateniceurls --import-wildcards": {
+        "en": "Enables importing of urls which redirects to the correct url using wildcards (ie. history).",
+        "de": "Aktiviert den Import von URLs, die mit Platzhaltern auf die richtige URL weiterleiten (d. h. Verlauf)."
+    },
+    "command:updateniceurls --interactive": {
+        "en": "Enables interactive mode for --verify-data,\nthis will halt execution when database errors occurs and allow for manual inspection.",
+        "de": "Aktiviert den interaktiven Modus für --verify-data,\nder die Ausführung bei Datenbankfehlern anhält und eine Prüfung von Hand erlaubt."
+    },
+    "command:updateniceurls --no-import": {
+        "en": "Disables all import routines. To enable specific ones use the --import-* options.",
+        "de": "Deaktiviert alle Importroutinen. Um bestimmte zu aktivieren, die Optionen --import-* verwenden."
+    },
+    "command:updateniceurls --no-update-nodes": {
+        "en": "Disable updating of the urls of content object nodes.",
+        "de": "Deaktiviert das Aktualisieren der URLs der Knoten von Inhaltsobjekten."
+    },
+    "command:updateniceurls --update-nodes": {
+        "en": "Enable updating of the urls of content object nodes.",
+        "de": "Aktiviert das Aktualisieren der URLs der Knoten von Inhaltsobjekten."
+    },
+    "command:updateniceurls --verify-data": {
+        "en": "Verify the database after new data has been inserted, this should only be used for debugging.",
+        "de": "Prüft die Datenbank, nachdem neue Daten eingefügt wurden; nur zur Fehlersuche verwenden."
+    },
+    "command:updatesearchindex": {
+        "en": "Reindex all content objects in the search engine",
+        "de": "Indiziert alle Inhaltsobjekte in der Suchmaschine neu"
+    },
+    "command:updatesearchindex --clean": {
+        "en": "Remove all search data before beginning indexing",
+        "de": "Vor dem Indizieren alle Suchdaten entfernen"
+    },
+    "command:userlogincheck": {
+        "en": "Unique logins: list the logins more than one user account has; --fix-index adds the unique index on ezuser.login once there are none",
+        "de": "Eindeutige Logins: listet die Logins auf, die mehr als ein Benutzerkonto hat; --fix-index fügt den eindeutigen Index auf ezuser.login hinzu, sobald es keine mehr gibt"
+    },
+    "command:userlogincheck --fix-index": {
+        "en": "Add the unique index on ezuser.login when no duplicates are found",
+        "de": "Den eindeutigen Index auf ezuser.login hinzufügen, wenn keine Duplikate gefunden werden"
+    },
+    "command:userlogincheck --show-logins": {
+        "en": "Show the logins in full instead of shortened",
+        "de": "Die Logins vollständig statt gekürzt zeigen"
+    },
+    "command:velocity --dry-run": {
+        "en": "deploy: print the steps and what each would do, and do nothing",
+        "de": "deploy: die Schritte ausgeben und was jeder täte, und nichts tun"
+    },
+    "command:velocity --engine": {
+        "en": "php, frankenphp or qbix -- or several, comma-separated -- for this command only, instead of [ServerSettings] Engine",
+        "de": "php, frankenphp oder qbix (oder mehrere, durch Kommas getrennt) nur für diesen Befehl, statt [ServerSettings] Engine"
+    },
+    "command:velocity --fpm-reload": {
+        "en": "deploy: reload PHP-FPM even when its OPcache revalidates the files (php.ini or pool changed, files renamed)",
+        "de": "deploy: PHP-FPM neu laden, auch wenn sein OPcache die Dateien neu prüft (php.ini oder Pool geändert, Dateien umbenannt)"
+    },
+    "command:velocity --from": {
+        "en": "install: take the binary from this file instead of downloading it (still verified)",
+        "de": "install: die Binärdatei aus dieser Datei nehmen, statt sie herunterzuladen (sie wird dennoch geprüft)"
+    },
+    "command:velocity --keep-global": {
+        "en": "More globals to keep between requests (comma-separated), appended to the built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command",
+        "de": "Weitere Globals, die zwischen Anfragen erhalten bleiben (durch Kommas getrennt), zusätzlich zu den eingebauten Standards und velocity.ini KeepGlobals[]; für start, restart und command"
+    },
+    "command:velocity --kernel": {
+        "en": "deploy: regenerate the kernel autoload array too (kernel/ and lib/ only)",
+        "de": "deploy: auch das Autoload-Array des Kernels neu erzeugen (nur kernel/ und lib/)"
+    },
+    "command:velocity --no-autoload": {
+        "en": "deploy: do not regenerate autoload arrays",
+        "de": "deploy: die Autoload-Arrays nicht neu erzeugen"
+    },
+    "command:velocity --no-fpm": {
+        "en": "deploy: leave PHP-FPM alone (no reload, no wait)",
+        "de": "deploy: PHP-FPM in Ruhe lassen (kein Neuladen, kein Warten)"
+    },
+    "command:velocity --no-velocity": {
+        "en": "deploy: do not restart Velocity",
+        "de": "deploy: Velocity nicht neu starten"
+    },
+    "command:velocity --packer": {
+        "en": "deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block)",
+        "de": "deploy: auch die gepackten Skripte und Styles leeren (ezjscore-packer, direkt vor template-block)"
+    },
+    "command:velocity --rebuild-phar": {
+        "en": "start, restart, graceful, deploy: rebuild the engine archive even when it is current",
+        "de": "start, restart, graceful, deploy: das Engine-Archiv neu bauen, auch wenn es aktuell ist"
+    },
+    "command:velocity --trust-github-digest": {
+        "en": "install: with no Sha256 pinned for the version, accept the digest GitHub publishes for the release",
+        "de": "install: wenn für die Version keine Sha256 festgelegt ist, den Digest akzeptieren, den GitHub für das Release veröffentlicht"
+    },
+    "command:warm": {
+        "en": "Request every published page so no visitor pays for a render (--limit, --concurrency)",
+        "de": "Fordert jede veröffentlichte Seite an, damit kein Besucher für das Rendern bezahlt (--limit, --concurrency)"
+    },
+    "command:warm --base": {
+        "en": "Where to send them (default: http://127.0.0.1:8088).",
+        "de": "Wohin die Anfragen gehen (Standard: http://127.0.0.1:8088)."
+    },
+    "command:warm --concurrency": {
+        "en": "How many at once (default: 8).",
+        "de": "Wie viele gleichzeitig (Standard: 8)."
+    },
+    "command:warm --host": {
+        "en": "Host header to send (default: SiteURL of site.ini, with Velocity's HTTPS port).",
+        "de": "Zu sendender Host-Header (Standard: SiteURL aus site.ini, mit dem HTTPS-Port von Velocity)."
+    },
+    "command:warm --limit": {
+        "en": "Warm at most this many pages.",
+        "de": "Höchstens so viele Seiten vorwärmen."
+    },
+    "command:warm --verbose": {
+        "en": "Name every page that had to be rendered.",
+        "de": "Jede Seite nennen, die gerendert werden musste."
+    },
+    "command:webserver": {
+        "en": "Control the Exponential web server (php, frankenphp or qbix engines)",
+        "de": "Steuert den Exponential-Webserver (Engines php, frankenphp oder qbix)"
+    },
+    "command:webserver --docroot": {
+        "en": "configure/reconfigure: the document root to persist for the engine",
+        "de": "configure/reconfigure: das Dokumentenverzeichnis, das für die Engine gespeichert wird"
+    },
+    "command:webserver --dry-run": {
+        "en": "configure/reconfigure: show what would be written, without writing it",
+        "de": "configure/reconfigure: zeigen, was geschrieben würde, ohne es zu schreiben"
+    },
+    "command:webserver --engine": {
+        "en": "php, frankenphp or qbix for this command only (or several, comma-separated, or --all), instead of the configured default",
+        "de": "php, frankenphp oder qbix nur für diesen Befehl (oder mehrere, durch Kommas getrennt, oder --all), statt des konfigurierten Standards"
+    },
+    "command:webserver --https-port": {
+        "en": "configure/reconfigure: the HTTPS port to persist (frankenphp or qbix; php has no TLS)",
+        "de": "configure/reconfigure: der HTTPS-Port, der gespeichert wird (frankenphp oder qbix; php hat kein TLS)"
+    },
+    "command:webserver --port": {
+        "en": "configure/reconfigure: the port to persist for the engine",
+        "de": "configure/reconfigure: der Port, der für die Engine gespeichert wird"
+    },
+    "command:webserver --reconfigure": {
+        "en": "start: resolve and persist the engine/port/docroot/HTTPS port again before running",
+        "de": "start: Engine, Port, Dokumentenverzeichnis und HTTPS-Port vor dem Start erneut ermitteln und speichern"
+    },
+    "cronjob:audit.php": {
+        "en": "Audit: sink spools, alert rules, rotation by day, archives, retention and checkpoints",
+        "de": "Audit: Spools der Ziele, Alarmregeln, Rotation nach Tagen, Archive, Aufbewahrung und Prüfpunkte"
+    },
+    "cronjob:audit.php docblock": {
+        "en": "The cronjob part audit (cronjobs/audit.php; [CronjobPart-audit] and the frequent group in cronjob.ini): the\naudit's scheduled work, expAuditMaintenance::run(). Every run: the incremental index, the sink spools (webhook,\nmail, network syslog) and the alert rules' cronjob pass; once a day after [AuditRotationSettings] RotateAfter:\nrotation by day, verification, archiving, retention, pseudonymisation of the index and the checkpoint\n(doc/eng-us/bc/6.0/audit.md, \"Rotation, archives and retention (Q8)\").",
+        "de": "Der Cronjob-Teil audit (cronjobs/audit.php; [CronjobPart-audit] und die Gruppe frequent in cronjob.ini): die\ngeplante Arbeit des Audits, expAuditMaintenance::run(). Bei jedem Lauf: der inkrementelle Index, die Spools der Ziele (Webhook,\nMail, Netzwerk-Syslog) und der Cronjob-Durchgang der Alarmregeln; einmal am Tag nach [AuditRotationSettings] RotateAfter:\nRotation nach Tagen, Prüfung, Archivierung, Aufbewahrung, Pseudonymisierung des Index und der Prüfpunkt\n(doc/eng-us/bc/6.0/audit.md, \"Rotation, archives and retention (Q8)\")."
+    },
+    "cronjob:basket_cleanup.php": {
+        "en": "Remove abandoned shopping baskets older than the configured threshold",
+        "de": "Entfernt verlassene Warenkörbe, die älter als die konfigurierte Grenze sind"
+    },
+    "cronjob:basket_cleanup.php docblock": {
+        "en": "The code of cronjobs/basket_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/basket_cleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/basket_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/basket_cleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:cachecleanup.php": {
+        "en": "Remove expired and old view cache and cache-block files from disk",
+        "de": "Entfernt abgelaufene und alte View-Cache- und Cache-Block-Dateien von der Festplatte"
+    },
+    "cronjob:cachecleanup.php docblock": {
+        "en": "The code of cronjobs/cachecleanup.php, moved into a class (#207 stage 1). The file cronjobs/cachecleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/cachecleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/cachecleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:cleanuprss.php": {
+        "en": "Trim the content the RSS import has created, keeping the newest items of each feed",
+        "de": "Kürzt die vom RSS-Import angelegten Inhalte und behält die neuesten Einträge jedes Feeds"
+    },
+    "cronjob:cleanuprss.php docblock": {
+        "en": "The code of cronjobs/cleanuprss.php, moved into a class (#207 stage 1). The file cronjobs/cleanuprss.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/cleanuprss.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/cleanuprss.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:clusterpurge.php": {
+        "en": "Purge expired cluster storage entries from the database backend",
+        "de": "Löscht abgelaufene Einträge des Cluster-Speichers aus dem Datenbank-Backend"
+    },
+    "cronjob:clusterpurge.php docblock": {
+        "en": "The code of cronjobs/clusterpurge.php, moved into a class (#207 stage 1). The file cronjobs/clusterpurge.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/clusterpurge.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/clusterpurge.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:contentcheck.php": {
+        "en": "Build the reference index of the content checks (unused assets), for installations where a page may not build it (contentcheck.ini BuildOnRequest=false)",
+        "de": "Baut den Referenzindex der Inhaltsprüfungen (ungenutzte Assets) für Installationen, in denen eine Seite ihn nicht bauen darf (contentcheck.ini BuildOnRequest=false)"
+    },
+    "cronjob:contentcheck.php docblock": {
+        "en": "The code of cronjobs/contentcheck.php: builds the reference index of the content checks and keeps it in the cache\n(expContentCheckReferences). Run it as the cronjob part contentcheck (php runcronjobs.php contentcheck) more often\nthan contentcheck.ini [UnreferencedSettings] IndexTTL when BuildOnRequest is false. With [MissingFileSettings]\nCronjobReport=enabled it also counts the missing files and alias problems of the whole tree and writes the count\nto the cronjob output (a warning when there are any); it never resolves anything.\nGuide: doc/eng-us/features/6.0/content-checks.md",
+        "de": "Der Code von cronjobs/contentcheck.php: baut den Referenzindex der Inhaltsprüfungen und behält ihn im Cache\n(expContentCheckReferences). Führen Sie ihn als Cronjob-Teil contentcheck aus (php runcronjobs.php contentcheck), öfter\nals contentcheck.ini [UnreferencedSettings] IndexTTL, wenn BuildOnRequest false ist. Mit [MissingFileSettings]\nCronjobReport=enabled zählt er außerdem die fehlenden Dateien und Alias-Probleme des ganzen Baums und schreibt die Zahl\nin die Cronjob-Ausgabe (eine Warnung, wenn es welche gibt); er behebt nie etwas.\nAnleitung: doc/eng-us/features/6.0/content-checks.md"
+    },
+    "cronjob:contentjobs.php": {
+        "en": "Resume content jobs whose worker died and start queued jobs nobody started",
+        "de": "Setzt Inhaltsaufträge fort, deren Worker gestorben ist, und startet wartende Aufträge, die niemand gestartet hat"
+    },
+    "cronjob:contentjobs.php docblock": {
+        "en": "The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a\nworker and have none — a running job whose worker died (kill -9, a reboot, a memory limit) and a queued job\nnobody started within content.ini [ContentJobSettings] QueuedGrace seconds (the spawn from the web request\nfailed) — and removes finished jobs older than KeepDays.\n\nThe worker is started detached (bin/php/expcontentjob.php run <id>), as from the web request, so a long job\nnever holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and\nagain without finishing a batch is failed by the worker after MaxAttempts starts instead of looping.",
+        "de": "Der Cronjob-Teil contentjobs (cronjobs/contentjobs.php, Gruppe frequent): startet die Inhaltsaufträge, die einen\nWorker brauchen und keinen haben (ein laufender Auftrag, dessen Worker gestorben ist (kill -9, ein Neustart, eine Speichergrenze), und ein wartender Auftrag,\nden niemand innerhalb von content.ini [ContentJobSettings] QueuedGrace Sekunden gestartet hat (der Start aus der Web-Anfrage\nist fehlgeschlagen)) und entfernt abgeschlossene Aufträge, die älter als KeepDays sind.\n\nDer Worker wird abgekoppelt gestartet (bin/php/expcontentjob.php run <id>), wie aus der Web-Anfrage, sodass ein langer Auftrag\nnie die anderen Cronjob-Teile aufhält; als root gestartet, wird er zum Benutzer der Website. Ein Auftrag, der immer wieder\nfortgesetzt wird, ohne einen Stapel abzuschließen, wird vom Worker nach MaxAttempts Starts als fehlgeschlagen markiert, statt sich endlos zu wiederholen."
+    },
+    "cronjob:explogrotate.php": {
+        "en": "Logs: rotate the logs over their MaxSize, prune and compress their archives (off unless a part runs it)",
+        "de": "Logs: rotiert die Logs über ihrer MaxSize, bereinigt und komprimiert ihre Archive (aus, solange kein Teil ihn ausführt)"
+    },
+    "cronjob:explogrotate.php docblock": {
+        "en": "The code of cronjobs/explogrotate.php: the log rotation cronjob part ([CronjobPart-logs], in no default part, so it\nruns only when a site adds it to a part it runs or calls php runcronjobs.php logs). Guide:\ndoc/eng-us/features/6.0/log-rotation.md, \"As a cronjob part\".\n\nEach run, through expLogManager: rotates every log over its MaxSize (logviewer.ini [RotationSettings] MaxSize[<key>],\nelse site.ini [FileSettings] LogFileMaxSize), prunes the archives beyond Keep and MaxAgeDays, and compresses the plain\narchives from .2 on of the logs whose Compress is enabled. Every change is recorded in the audit trail.",
+        "de": "Der Code von cronjobs/explogrotate.php: der Cronjob-Teil der Log-Rotation ([CronjobPart-logs], in keinem Standardteil, er\nläuft also nur, wenn eine Website ihn einem Teil hinzufügt, den sie ausführt, oder php runcronjobs.php logs aufruft). Anleitung:\ndoc/eng-us/features/6.0/log-rotation.md, \"As a cronjob part\".\n\nJeder Lauf, über expLogManager: rotiert jedes Log über seiner MaxSize (logviewer.ini [RotationSettings] MaxSize[<key>],\nsonst site.ini [FileSettings] LogFileMaxSize), bereinigt die Archive über Keep und MaxAgeDays hinaus und komprimiert die\nunkomprimierten Archive ab .2 der Logs, deren Compress aktiviert ist. Jede Änderung wird im Audit-Trail festgehalten."
+    },
+    "cronjob:hide.php": {
+        "en": "Process scheduled hide and unhide actions on content objects",
+        "de": "Führt geplante Aktionen zum Verbergen und Anzeigen von Inhaltsobjekten aus"
+    },
+    "cronjob:hide.php docblock": {
+        "en": "The code of cronjobs/hide.php, moved into a class (#207 stage 1). The file cronjobs/hide.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/hide.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/hide.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:httpcache_cleanup.php": {
+        "en": "Remove expired, purged and orphaned entries from the role-aware HTTP cache",
+        "de": "Entfernt abgelaufene, gelöschte und verwaiste Einträge aus dem rollenbewussten HTTP-Cache"
+    },
+    "cronjob:httpcache_cleanup.php docblock": {
+        "en": "The code of cronjobs/httpcache_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/httpcache_cleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/httpcache_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/httpcache_cleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:indexcontent.php": {
+        "en": "Index pending content modifications in the search engine",
+        "de": "Indiziert anstehende Inhaltsänderungen in der Suchmaschine"
+    },
+    "cronjob:indexcontent.php docblock": {
+        "en": "The code of cronjobs/indexcontent.php, moved into a class (#207 stage 1). The file cronjobs/indexcontent.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/indexcontent.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/indexcontent.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:internal_drafts_cleanup.php": {
+        "en": "Remove internal drafts that exceed the configured age limit",
+        "de": "Entfernt interne Entwürfe, die die konfigurierte Altersgrenze überschreiten"
+    },
+    "cronjob:internal_drafts_cleanup.php docblock": {
+        "en": "The code of cronjobs/internal_drafts_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/internal_drafts_cleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/internal_drafts_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/internal_drafts_cleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:linkcheck.php": {
+        "en": "Check all internal and external links in published content for broken URLs",
+        "de": "Prüft alle internen und externen Links in veröffentlichten Inhalten auf defekte URLs"
+    },
+    "cronjob:linkcheck.php docblock": {
+        "en": "The code of cronjobs/linkcheck.php, moved into a class (#207 stage 1). The file cronjobs/linkcheck.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md\nUser guide of the link check: doc/eng-us/guides/urls-and-aliases.md (section \"How links are checked\")",
+        "de": "Der Code von cronjobs/linkcheck.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/linkcheck.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md\nBenutzeranleitung der Linkprüfung: doc/eng-us/guides/urls-and-aliases.md (Abschnitt \"How links are checked\")"
+    },
+    "cronjob:mailbounces.php": {
+        "en": "The bounce mailbox: hard bounces and spam complaints go on the suppression list (mailpreferences.ini [BounceSettings])",
+        "de": "Das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste (mailpreferences.ini [BounceSettings])"
+    },
+    "cronjob:mailbounces.php docblock": {
+        "en": "The code of cronjobs/mailbounces.php.",
+        "de": "Der Code von cronjobs/mailbounces.php."
+    },
+    "cronjob:mailpreferences.php": {
+        "en": "E-mail preferences retention: consent log rows of people who are gone, expired confirmations, old suppression entries",
+        "de": "Aufbewahrung der E-Mail-Einstellungen: Zeilen des Einwilligungsprotokolls von Personen, die nicht mehr da sind, abgelaufene Bestätigungen, alte Einträge der Sperrliste"
+    },
+    "cronjob:mailpreferences.php docblock": {
+        "en": "The code of cronjobs/mailpreferences.php.",
+        "de": "Der Code von cronjobs/mailpreferences.php."
+    },
+    "cronjob:notification.php": {
+        "en": "Process and dispatch pending notification events to subscribers",
+        "de": "Verarbeitet anstehende Benachrichtigungsereignisse und verschickt sie an die Abonnenten"
+    },
+    "cronjob:notification.php docblock": {
+        "en": "The code of cronjobs/notification.php, moved into a class (#207 stage 1). The file cronjobs/notification.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/notification.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/notification.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:old_drafts_cleanup.php": {
+        "en": "Remove user drafts that exceed the configured age limit",
+        "de": "Entfernt Entwürfe von Benutzern, die die konfigurierte Altersgrenze überschreiten"
+    },
+    "cronjob:old_drafts_cleanup.php docblock": {
+        "en": "The code of cronjobs/old_drafts_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/old_drafts_cleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/old_drafts_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/old_drafts_cleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:querycache_cleanup.php": {
+        "en": "Remove the result files of the SQL query cache that are older than MaxAge or from before the last clear",
+        "de": "Entfernt die Ergebnisdateien des SQL-Abfrage-Caches, die älter als MaxAge sind oder von vor dem letzten Leeren stammen"
+    },
+    "cronjob:querycache_cleanup.php docblock": {
+        "en": "The code of cronjobs/querycache_cleanup.php. The file cronjobs/querycache_cleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md\n\nRemoves the result files of the SQL query cache (querycache.ini Storage=file, or auto without APCu) that can no\nlonger be answered: older than MaxAge or from before the last clear. A lookup never answers them anyway; without\nthis run they stay on disk until the same statement is stored again.",
+        "de": "Der Code von cronjobs/querycache_cleanup.php. Die Datei cronjobs/querycache_cleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md\n\nEntfernt die Ergebnisdateien des SQL-Abfrage-Caches (querycache.ini Storage=file, oder auto ohne APCu), die nicht mehr\nbeantwortet werden können: älter als MaxAge oder von vor dem letzten Leeren. Eine Abfrage beantwortet sie ohnehin nie; ohne\ndiesen Lauf bleiben sie auf der Festplatte, bis dieselbe Anweisung erneut gespeichert wird."
+    },
+    "cronjob:rssimport.php": {
+        "en": "Fetch and import configured RSS feeds into the content tree",
+        "de": "Holt die konfigurierten RSS-Feeds und importiert sie in den Inhaltsbaum"
+    },
+    "cronjob:rssimport.php docblock": {
+        "en": "The code of cronjobs/rssimport.php, moved into a class (#207 stage 1). The file cronjobs/rssimport.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/rssimport.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/rssimport.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:session_gc.php": {
+        "en": "Garbage-collect expired user sessions from the session store",
+        "de": "Räumt abgelaufene Benutzersitzungen aus dem Sitzungsspeicher"
+    },
+    "cronjob:session_gc.php docblock": {
+        "en": "The code of cronjobs/session_gc.php, moved into a class (#207 stage 1). The file cronjobs/session_gc.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/session_gc.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/session_gc.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:staticcache_cleanup.php": {
+        "en": "Remove expired and stale entries from the static page cache",
+        "de": "Entfernt abgelaufene und veraltete Einträge aus dem statischen Seiten-Cache"
+    },
+    "cronjob:staticcache_cleanup.php docblock": {
+        "en": "The code of cronjobs/staticcache_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/staticcache_cleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/staticcache_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/staticcache_cleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:subtreeexpirycleanup.php": {
+        "en": "Clean up subtree expiry entries from the URL cache tables",
+        "de": "Räumt Einträge zum Ablauf von Teilbäumen aus den URL-Cache-Tabellen"
+    },
+    "cronjob:subtreeexpirycleanup.php docblock": {
+        "en": "The code of cronjobs/subtreeexpirycleanup.php, moved into a class (#207 stage 1). The file cronjobs/subtreeexpirycleanup.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/subtreeexpirycleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/subtreeexpirycleanup.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:trashpurge.php": {
+        "en": "Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says)",
+        "de": "Löscht Objekte im Papierkorb endgültig (alle oder so alte, wie [TrashSettings] KeepItemsForDays sagt)"
+    },
+    "cronjob:trashpurge.php docblock": {
+        "en": "The code of cronjobs/trashpurge.php, moved into a class (#207 stage 1). The file cronjobs/trashpurge.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/trashpurge.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/trashpurge.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:unlock.php": {
+        "en": "Release content objects stuck in a locked editing state",
+        "de": "Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen"
+    },
+    "cronjob:unlock.php docblock": {
+        "en": "The code of cronjobs/unlock.php, moved into a class (#207 stage 1). The file cronjobs/unlock.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/unlock.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/unlock.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:unpublish.php": {
+        "en": "Process scheduled unpublish actions on content objects",
+        "de": "Führt geplante Aktionen zum Zurückziehen von Inhaltsobjekten aus"
+    },
+    "cronjob:unpublish.php docblock": {
+        "en": "The code of cronjobs/unpublish.php, moved into a class (#207 stage 1). The file cronjobs/unpublish.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/unpublish.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/unpublish.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:updateviewcount.php": {
+        "en": "Flush the in-memory view count buffer to the database",
+        "de": "Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank"
+    },
+    "cronjob:updateviewcount.php docblock": {
+        "en": "The code of cronjobs/updateviewcount.php, moved into a class (#207 stage 1). The file cronjobs/updateviewcount.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/updateviewcount.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/updateviewcount.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "cronjob:workflow.php": {
+        "en": "Process pending workflow events and advance stalled workflows",
+        "de": "Verarbeitet anstehende Workflow-Ereignisse und bringt hängende Workflows weiter"
+    },
+    "cronjob:workflow.php docblock": {
+        "en": "The code of cronjobs/workflow.php, moved into a class (#207 stage 1). The file cronjobs/workflow.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",
+        "de": "Der Code von cronjobs/workflow.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/workflow.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
+    },
+    "ini:extension/expservices/settings/expportal.ini [Portal]": {
+        "en": "Settings of the portal frontends (designs expportal_jquery and expportal_reactive).\nNode ids of the content roots each page reads. Change them per installation; defaults are the standard roots.",
+        "de": "Einstellungen der Portal-Frontends (Designs expportal_jquery und expportal_reactive).\nKnoten-IDs der Inhaltswurzeln, die jede Seite liest. Ändern Sie sie pro Installation; die Standardwerte sind die üblichen Wurzeln."
+    },
+    "ini:extension/expservices/settings/expservices.ini": {
+        "en": "expservices: remote services over ezjscore/call/exp<domain>::<method>[::arg...]\nGuide: doc/eng-us/bc/6.0/backend_ezjscore_services.md",
+        "de": "expservices: entfernte Dienste über ezjscore/call/exp<domain>::<method>[::arg...]\nAnleitung: doc/eng-us/bc/6.0/backend_ezjscore_services.md"
+    },
+    "ini:extension/expservices/settings/expservices.ini [Community] ForumClass": {
+        "en": "The community services (forum, topic, reply, comment, poll) work on content classes, by identifier.\nChange them to run the services over the classes of another site.",
+        "de": "Die Community-Dienste (Forum, Thema, Antwort, Kommentar, Umfrage) arbeiten mit Inhaltsklassen, über ihren Bezeichner.\nÄndern Sie sie, um die Dienste mit den Klassen einer anderen Website zu betreiben."
+    },
+    "ini:extension/expservices/settings/expservices.ini [Community] TopicStickyAttribute": {
+        "en": "The attribute that says a topic stays on top",
+        "de": "Das Attribut, das sagt, dass ein Thema oben bleibt"
+    },
+    "ini:extension/expservices/settings/expservices.ini [Paging]": {
+        "en": "Domains are the [ezjscServer_exp<domain>] blocks of ezjscore.ini whose Class extends expServiceBase.",
+        "de": "Domänen sind die Blöcke [ezjscServer_exp<domain>] von ezjscore.ini, deren Class von expServiceBase erbt."
+    },
+    "ini:extension/expservices/settings/expservices.ini [Services] Enabled": {
+        "en": "Master switch: when disabled every service answers 403",
+        "de": "Hauptschalter: wenn deaktiviert, antwortet jeder Dienst mit 403"
+    },
+    "ini:extension/expservices/settings/expservices.ini [Writes] Audit": {
+        "en": "Audit event written for every successful write (expAudit): service.<domain>.<method>",
+        "de": "Audit-Ereignis, das für jeden erfolgreichen Schreibzugriff geschrieben wird (expAudit): service.<domain>.<method>"
+    },
+    "ini:extension/expservices/settings/expservices.ini [Writes] RequireToken": {
+        "en": "Writes need POST and the form token; set to disabled only for tests",
+        "de": "Schreibzugriffe brauchen POST und das Formular-Token; nur für Tests auf disabled setzen"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [Packer] AppendLastModifiedTime": {
+        "en": "Appends the last modified time to the cached file name so Proxy/Browser cache\nis forced to re fetch file on change. Note: cronjob to cleanup expired\nfiles does not exist, but should be fairly trivial to create.\nEnabled by default: packed scripts and styles are served with a long browser cache lifetime, so without the\ntime in the name an update to a stylesheet or script would not reach browsers until their copy expired.",
+        "de": "Hängt die Zeit der letzten Änderung an den Namen der gecachten Datei an, sodass Proxy- und Browser-Cache\ndie Datei bei einer Änderung neu holen müssen. Hinweis: Ein Cronjob zum Aufräumen abgelaufener\nDateien existiert nicht, sollte aber recht einfach zu erstellen sein.\nStandardmäßig aktiviert: Gepackte Skripte und Styles werden mit langer Browser-Cache-Dauer ausgeliefert, ohne die\nZeit im Namen würde ein geändertes Stylesheet oder Skript die Browser also erst erreichen, wenn ihre Kopie abläuft."
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [Packer] CustomHosts": {
+        "en": "For spreading the load of static files to separate domains as recommended by\nYDN Performance Best Practices. Key should match file extension: .js | .css",
+        "de": "Um die Last statischer Dateien auf getrennte Domänen zu verteilen, wie es die\nYDN Performance Best Practices empfehlen. Der Schlüssel muss zur Dateiendung passen: .js | .css"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [eZJSCore] ExternalScripts": {
+        "en": "List of external JavaScript jQuery libraries with their CDN URL\nIf it starts with :// http or https will be selected based on if page is served as https or not\nSecurity hardening (H-06, CWE-829/319): use https for external scripts so the\nadmin/frontend JavaScript cannot be tampered with on the network path. Prefer\nleaving LoadFromCDN=disabled (local scripts) or adding Subresource Integrity.\njQuery: the same releases from the CDN as the local files below (the CDN entries used to name\njQuery 1.10.2 and jQuery UI 1.10.3, older than the local copies).",
+        "de": "Liste externer JavaScript-Bibliotheken für jQuery mit ihrer CDN-URL\nBeginnt sie mit ://, wird http oder https gewählt, je nachdem, ob die Seite über https ausgeliefert wird\nSicherheitshärtung (H-06, CWE-829/319): Verwenden Sie https für externe Skripte, damit das\nJavaScript der Administration und des Frontends auf dem Netzwerkweg nicht manipuliert werden kann. Lassen Sie\nam besten LoadFromCDN=disabled (lokale Skripte) oder ergänzen Sie Subresource Integrity.\njQuery: dieselben Releases aus dem CDN wie die lokalen Dateien unten (die CDN-Einträge nannten früher\njQuery 1.10.2 und jQuery UI 1.10.3, älter als die lokalen Kopien)."
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [eZJSCore] JavaScriptOptimizer": {
+        "en": "Disables/enables js / css packer (for debugging Apache rewrite rules)\nNormally controlled by [TemplateSettings]DevelopmentMode for convenience,\nbut can also be specifically controlled by this setting if set.\nForce packer level by setting integer from 0 to 3 instead of [dis|en]abled\nPacker=disabled",
+        "de": "Deaktiviert/aktiviert den Packer für js / css (zum Debuggen von Apache-Rewrite-Regeln)\nNormalerweise der Einfachheit halber über [TemplateSettings]DevelopmentMode gesteuert,\nkann aber auch gezielt über diese Einstellung gesteuert werden, wenn sie gesetzt ist.\nDie Packer-Stufe mit einer Ganzzahl von 0 bis 3 statt [dis|en]abled erzwingen\nPacker=disabled"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [eZJSCore] LoadFromCDN": {
+        "en": "# CDN Script settings (jQuery integration)\nThe following settings in this block are specific to ezjscore's\njQuery integration and used by the ezjsc::jquery calls.\nYou only need to change them if you:\n- Need to load these scripts locally (intranet / not rely on internet connection)\n- Want to add support for another js library / framework\n- Want to update the library it self\nYou don't have to set up your js scripts with this, it's enough to just refer\nto them directly using {ezscript[_require]('somescript.js')} or\n{ezscript_require(array('ezjsc::jquery', 'somescript_that_uses_jquery.js'))}\nenable / disable loading the jQuery files from external servers",
+        "de": "# Einstellungen der CDN-Skripte (jQuery-Integration)\nDie folgenden Einstellungen in diesem Block gehören zur jQuery-Integration\nvon ezjscore und werden von den Aufrufen ezjsc::jquery verwendet.\nSie müssen sie nur ändern, wenn Sie:\n- diese Skripte lokal laden müssen (Intranet / ohne Abhängigkeit von einer Internetverbindung)\n- Unterstützung für eine andere JS-Bibliothek oder ein anderes Framework hinzufügen wollen\n- die Bibliothek selbst aktualisieren wollen\nIhre eigenen JS-Skripte müssen Sie hiermit nicht einrichten; es genügt, sie direkt\nüber {ezscript[_require]('somescript.js')} oder\n{ezscript_require(array('ezjsc::jquery', 'somescript_that_uses_jquery.js'))} einzubinden\nDas Laden der jQuery-Dateien von externen Servern aktivieren / deaktivieren"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [eZJSCore] LocalScripts": {
+        "en": "List of local JavaScript jQuery libraries, optionally start with \"/\" to signal that its in\nroot of design folder and not in /javascript sub folder\nezjsc::jquery: jQuery 4.0.0, followed by jQuery Migrate 4.0.2, which restores the APIs jQuery 4 removed so older\ncode keeps working. This build is quiet; to see in the browser console every old call it restores, use the\nreporting build, jquery-migrate-4.0.2.js. Leave jqueryMigrate empty to load jQuery 4 alone. Only these releases\nare shipped: the older jQuery 3.7.1, Migrate 3.4.1 and jQuery UI 1.10.3 files are removed.\nezjsc::jqueryUI: jQuery UI 1.14.2, which supports jQuery 4",
+        "de": "Liste lokaler JavaScript-Bibliotheken für jQuery; ein \"/\" am Anfang zeigt an, dass sie im\nWurzelverzeichnis des Design-Ordners liegen und nicht im Unterordner /javascript\nezjsc::jquery: jQuery 4.0.0, gefolgt von jQuery Migrate 4.0.2, das die von jQuery 4 entfernten APIs wiederherstellt, damit älterer\nCode weiter funktioniert. Dieser Build ist still; um in der Browser-Konsole jeden alten Aufruf zu sehen, den er wiederherstellt, verwenden Sie den\nmeldenden Build, jquery-migrate-4.0.2.js. Lassen Sie jqueryMigrate leer, um jQuery 4 allein zu laden. Nur diese Releases\nwerden ausgeliefert: Die älteren Dateien von jQuery 3.7.1, Migrate 3.4.1 und jQuery UI 1.10.3 sind entfernt.\nezjsc::jqueryUI: jQuery UI 1.14.2, das jQuery 4 unterstützt"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [eZJSCore] PreferredLibrary": {
+        "en": "Preferred Library (jquery)\nThis is a preference hint to extensions that use ezjscore\nso they can optionally select to support both and select by this setting",
+        "de": "Bevorzugte Bibliothek (jquery)\nDies ist ein Hinweis für Erweiterungen, die ezjscore verwenden,\ndamit sie wahlweise beide unterstützen und anhand dieser Einstellung wählen können"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer]": {
+        "en": "Example: Serve javascript files from static sub domain (No end slash!)\nCustomHosts[.js]=http://static.example.com",
+        "de": "Beispiel: JavaScript-Dateien von einer statischen Subdomäne ausliefern (ohne Schrägstrich am Ende!)\nCustomHosts[.js]=http://static.example.com"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer] FunctionList": {
+        "en": "List of permission functions as used by the Exponential permission system\nezjscnode::load, ::subtree and ::updatepriority, when [ezjscServer_ezjscnode] RequirePolicy=enabled\nezajaxuploader (the AJAX uploader of relation attributes), when [ezjscServer_ezajaxuploader] RequirePolicy=enabled",
+        "de": "Liste der Berechtigungsfunktionen, wie sie das Berechtigungssystem von Exponential verwendet\nezjscnode::load, ::subtree und ::updatepriority, wenn [ezjscServer_ezjscnode] RequirePolicy=enabled\nezajaxuploader (der AJAX-Uploader von Verknüpfungsattributen), wenn [ezjscServer_ezajaxuploader] RequirePolicy=enabled"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_expdebugbar]": {
+        "en": "File=kernel/classes/subitems/expsubitemsserverfunctions.php",
+        "de": "File=kernel/classes/subitems/expsubitemsserverfunctions.php"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_expdebugbar] Class": {
+        "en": "The Exp Debug bar (settings/debugbar.ini, guide doc/eng-us/bc/6.0/debug-bar.md):\n<root>/ezjscore/call/expdebugbar::settings[::<siteaccess>]\n  every debug setting with its value in effect, where it comes from and the value of each scope\n<root>/ezjscore/call/expdebugbar::set      (POST setting, op, value, scope, ezxform_token)\n<root>/ezjscore/call/expdebugbar::undo     (POST entry or group, ezxform_token)\n<root>/ezjscore/call/expdebugbar::preset   (POST preset + scope, or save, or delete, ezxform_token)\n<root>/ezjscore/call/expdebugbar::cache    (action=list; POST action=clear by=tag|id|all|node|velocity|opcache)\n<root>/ezjscore/call/expdebugbar::iptest   (address, list)\n<root>/ezjscore/call/expdebugbar::log, expdebugbar::summary\n<root>/ezjscore/call/expdebugbar::panelheight  (POST height in pixels or 0, ezxform_token: user preference\n  expdebugbar_panel_height, the height of the open panel)\nEvery function checks itself: reading needs debug output for the request or setup/setup or\nsetup/managecache; changing settings needs setup/setup, clearing caches setup/managecache;\npanelheight a signed-in user who sees the debug output.",
+        "de": "Die Exp-Debug-Leiste (settings/debugbar.ini, Anleitung doc/eng-us/bc/6.0/debug-bar.md):\n<root>/ezjscore/call/expdebugbar::settings[::<siteaccess>]\n  jede Debug-Einstellung mit ihrem geltenden Wert, ihrer Herkunft und dem Wert jedes Bereichs\n<root>/ezjscore/call/expdebugbar::set      (POST setting, op, value, scope, ezxform_token)\n<root>/ezjscore/call/expdebugbar::undo     (POST entry or group, ezxform_token)\n<root>/ezjscore/call/expdebugbar::preset   (POST preset + scope, or save, or delete, ezxform_token)\n<root>/ezjscore/call/expdebugbar::cache    (action=list; POST action=clear by=tag|id|all|node|velocity|opcache)\n<root>/ezjscore/call/expdebugbar::iptest   (address, list)\n<root>/ezjscore/call/expdebugbar::log, expdebugbar::summary\n<root>/ezjscore/call/expdebugbar::panelheight  (POST Höhe in Pixeln oder 0, ezxform_token: Benutzereinstellung\n  expdebugbar_panel_height, die Höhe des geöffneten Panels)\nJede Funktion prüft selbst: Lesen braucht die Debug-Ausgabe für die Anfrage oder setup/setup oder\nsetup/managecache; Einstellungen ändern braucht setup/setup, Caches leeren setup/managecache;\npanelheight einen angemeldeten Benutzer, der die Debug-Ausgabe sieht."
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_expsubitems] Class": {
+        "en": "The admin subitems list's Table options (settings/subitems.ini, settings/subitemscolumns.ini):\n<root>/ezjscore/call/expsubitems::columns::2\n  the columns the user may see under node 2, the defaults, presets and the saved choice\n<root>/ezjscore/call/expsubitems::rows::2::10::0::name::1?columns=parentnodeid,urlalias\n  ezjscnode::subtree's list plus the requested columns per item\n<root>/ezjscore/call/expsubitems::savepreference[::2]  (POST preference=<json>)\nEvery function checks itself: a logged-in user with content/read who can read the parent;\ncolumn policies come from subitemscolumns.ini. The HardLimit above applies to rows too.",
+        "de": "Die Tabellenoptionen der Unterelemente-Liste der Administration (settings/subitems.ini, settings/subitemscolumns.ini):\n<root>/ezjscore/call/expsubitems::columns::2\n  die Spalten, die der Benutzer unter Knoten 2 sehen darf, die Standards, Vorlagen und die gespeicherte Auswahl\n<root>/ezjscore/call/expsubitems::rows::2::10::0::name::1?columns=parentnodeid,urlalias\n  die Liste von ezjscnode::subtree plus die angeforderten Spalten pro Eintrag\n<root>/ezjscore/call/expsubitems::savepreference[::2]  (POST preference=<json>)\nJede Funktion prüft selbst: ein angemeldeter Benutzer mit content/read, der den Elternknoten lesen darf;\ndie Richtlinien der Spalten kommen aus subitemscolumns.ini. Das HardLimit oben gilt auch für rows."
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezajaxuploader] Functions": {
+        "en": "Every call checks the upload handler's canUpload() (content/create and the attribute's class constraints).\nRequirePolicy=enabled also asks for ezjscore/call with the function list ezajaxuploader; grant it to the roles\nthat upload through the AJAX uploader before switching it on.",
+        "de": "Jeder Aufruf prüft canUpload() des Upload-Handlers (content/create und die Klassenbeschränkungen des Attributs).\nRequirePolicy=enabled verlangt außerdem ezjscore/call mit der Funktionsliste ezajaxuploader; gewähren Sie sie den Rollen,\ndie über den AJAX-Uploader hochladen, bevor Sie es einschalten."
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjsc]": {
+        "en": "FunctionList[]=ezjsckeyword\nFunctionList[]=ezjscrating_rate\nSettings for setting up a server functions\nThese are also supported by ezjscPacker, the class used in ezcss and ezscript\nHere is an example of setting up such a function:\n\n[ezjscServer_<custom_server>]\n# Optional, uses <custom_server> as class name if not set\nClass=MyCustomJsGeneratorClass\n# Optional, defines if a template is to be executed instead of a php class function\n# In this case request will go to /templates/<class>/<function>.tpl\nTemplateFunction=true\n# Optional, uses autoload system if not defined\nFile=extension/ezjscore/classes/mycustomjsgenerator.php\n# Optional, List of [ezjscServer]FunctionList functions user needs to have access to, Default: none\nFunctions[]=ezjsc\n# Optional, If pr function, then function name will be  appended to Function name like\n# <FunctionList_name>_<funtion_name>, warning will be thrown if not set in FunctionList[].\n# Default: disabled\nPermissionPrFunction=enabled\n# Optional, whether Functions[] is checked. Not set: checked, and a refused call is answered\n# with its error text (as before). disabled: not checked. enabled: checked, and a request whose\n# calls are all refused is answered with 403 Forbidden.\nRequirePolicy=enabled\n\nDefinition of use in template:\n{ezscript('<custom_server>::<funtion_name>[::arg1[::arg2]]')}",
+        "de": "FunctionList[]=ezjsckeyword\nFunctionList[]=ezjscrating_rate\nEinstellungen zum Einrichten von Serverfunktionen\nSie werden auch von ezjscPacker unterstützt, der Klasse, die ezcss und ezscript verwenden\nHier ein Beispiel für das Einrichten einer solchen Funktion:\n\n[ezjscServer_<custom_server>]\n# Optional, uses <custom_server> as class name if not set\nClass=MyCustomJsGeneratorClass\n# Optional, defines if a template is to be executed instead of a php class function\n# In this case request will go to /templates/<class>/<function>.tpl\nTemplateFunction=true\n# Optional, uses autoload system if not defined\nFile=extension/ezjscore/classes/mycustomjsgenerator.php\n# Optional, List of [ezjscServer]FunctionList functions user needs to have access to, Default: none\nFunctions[]=ezjsc\n# Optional, If pr function, then function name will be  appended to Function name like\n# <FunctionList_name>_<funtion_name>, warning will be thrown if not set in FunctionList[].\n# Default: disabled\nPermissionPrFunction=enabled\n# Optional, whether Functions[] is checked. Not set: checked, and a refused call is answered\n# with its error text (as before). disabled: not checked. enabled: checked, and a request whose\n# calls are all refused is answered with 403 Forbidden.\nRequirePolicy=enabled\n\nVerwendung in einem Template:\n{ezscript('<custom_server>::<funtion_name>[::arg1[::arg2]]')}"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjsc] Class": {
+        "en": "Url to test this server function(return current time):\n<root>/ezjscore/call/ezjsc::time",
+        "de": "URL zum Testen dieser Serverfunktion (gibt die aktuelle Zeit zurück):\n<root>/ezjscore/call/ezjsc::time"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjscnode]": {
+        "en": "File=extension/ezjscore/classes/ezjscserverfunctionsjs.php",
+        "de": "File=extension/ezjscore/classes/ezjscserverfunctionsjs.php"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjscnode] Class": {
+        "en": "Url to test this server function(return node list):\n<root>/ezjscore/call/ezjscnode::subtree::2",
+        "de": "URL zum Testen dieser Serverfunktion (gibt eine Knotenliste zurück):\n<root>/ezjscore/call/ezjscnode::subtree::2"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjscnode] Functions": {
+        "en": "File=extension/ezjscore/classes/ezjscserverfunctionsnode.php\nThe node data (name, ids, remote id, owner, section, dates, class, translations, paths) is\nreadable by every user who may read the node, anonymous visitors included, unless\nRequirePolicy=enabled: then a user also needs ezjscore/call with the function list ezjscnode\n(FunctionList limitation). New installations write RequirePolicy=enabled in\nsettings/override/ezjscore.ini.append.php and grant the Editor role that policy; an upgraded\nsite keeps disabled until it switches. Guide: doc/eng-us/bc/6.0/backend_ezjscore_services.md",
+        "de": "File=extension/ezjscore/classes/ezjscserverfunctionsnode.php\nDie Knotendaten (Name, IDs, Remote-ID, Eigentümer, Sektion, Daten, Klasse, Übersetzungen, Pfade) kann\njeder Benutzer lesen, der den Knoten lesen darf, anonyme Besucher eingeschlossen, außer bei\nRequirePolicy=enabled: Dann braucht ein Benutzer außerdem ezjscore/call mit der Funktionsliste ezjscnode\n(Einschränkung FunctionList). Neue Installationen schreiben RequirePolicy=enabled in\nsettings/override/ezjscore.ini.append.php und gewähren der Rolle Editor diese Richtlinie; eine aktualisierte\nWebsite behält disabled, bis sie umschaltet. Anleitung: doc/eng-us/bc/6.0/backend_ezjscore_services.md"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjscnode] HardLimit": {
+        "en": "Allows setting a Hard Limit to the subtree method to prevent the load of very large subtrees\n reducing server load and risk of DOS attacks.\n false disables the feature, any integer will set the hard limit.\n for example: a hard limit of 100 will allow limiting to 30 or 40, but will replace a\n              limit of 150.",
+        "de": "Erlaubt eine harte Grenze für die Methode subtree, um das Laden sehr großer Teilbäume zu verhindern,\n was die Serverlast und das Risiko von DoS-Angriffen senkt.\n false deaktiviert die Funktion, jede Ganzzahl setzt die harte Grenze.\n Zum Beispiel: Eine harte Grenze von 100 erlaubt eine Begrenzung auf 30 oder 40, ersetzt aber eine\n              Begrenzung von 150."
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjsctemplate]": {
+        "en": "File=kernel/classes/debugbar/expdebugbarserverfunctions.php",
+        "de": "File=kernel/classes/debugbar/expdebugbarserverfunctions.php"
+    },
+    "ini:extension/ezjscore/settings/ezjscore.ini [ezjscServer_ezjsctemplate] TemplateFunction": {
+        "en": "Url to test this server function(return alert message):\n<root>/ezjscore/call/ezjsctemplate::alert\nwill execute templates/ezjsctemplate/alert.tpl",
+        "de": "URL zum Testen dieser Serverfunktion (gibt eine Meldung aus):\n<root>/ezjscore/call/ezjsctemplate::alert\nführt templates/ezjsctemplate/alert.tpl aus"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini": {
+        "en": "Exponential configuration file for the eZ Online Editor",
+        "de": "Exponential-Konfigurationsdatei für den eZ Online Editor"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorLayout] Buttons": {
+        "en": "Global editor layout (buttons and path / toolbar placment)\nDefault buttons you want to use in the editor\nbuttons not mentioned here aren't tested and therefore not supported together with Online Editor\nNOTE: underline and pagebreak will not appear if these custom tags are not enabled in content.ini!\nTo controll alignment on p|header|custom|table|td|th tags\nOnly supported on eZ Publish 4.1 and higher (buttons will be hidden in 4.0.x)\nThese two needs the directionality to be enabled to be used\nButtons[]=|\nButtons[direction]=ltr,rtl\nThese two needs the searchreplace plugin in order to work\nButtons[]=|\nButtons[searchreplace]=search,replace\nAdditonal embed button for specific file UI\nButtons[]=file\nNeeded to be able to past content from word, to wash the syntax (should not be needed on 5.0.2 and up)\nButtons[]=pasteword\nNeeds the nonbreaking plugin enabled and probably also AllowMultipleSpaces set to true in ezxml.ini\nButtons[]=nonbreaking\nemotions button needs ezemotions plugin to be activated\nButtons[]=emotions\nSplitButton that puts all table related buttons inside a sub menu.\nButtons[table]=tablemenu\nBut by default we use buttons directly in toolbar for quick access\nAdditional table buttons\nButtons[]=col_before\nButtons[]=row_before\nLets you see a popup with html markup\nneeds rewrite rules to allow html files in design folders if in virtualhost mode (like shown in INSTALL doc)\nButtons[]=code\nneeds the visualchars plugin in order to work\nButtons[]=visualchars\nButtons for publish / store / discard actions on whole object\nButtons[]=|\nButtons[]=publish\nButtons[]=store\nButtons[]=discard\nButtons[]=|\nButton for TinyMCE spellchecker, needs spellchecker plugin\nButtons[]=spellchecker\nButton to disable editor",
+        "de": "Globales Layout des Editors (Schaltflächen und Platzierung von Pfad / Werkzeugleiste)\nStandardschaltflächen, die Sie im Editor verwenden wollen\nHier nicht genannte Schaltflächen sind nicht getestet und werden daher mit dem Online Editor nicht unterstützt\nHINWEIS: underline und pagebreak erscheinen nicht, wenn diese eigenen Tags in content.ini nicht aktiviert sind!\nZur Steuerung der Ausrichtung bei den Tags p|header|custom|table|td|th\nNur ab eZ Publish 4.1 unterstützt (in 4.0.x werden die Schaltflächen ausgeblendet)\nDiese beiden brauchen das Plugin directionality\nButtons[]=|\nButtons[direction]=ltr,rtl\nDiese beiden brauchen das Plugin searchreplace\nButtons[]=|\nButtons[searchreplace]=search,replace\nZusätzliche Einbettungs-Schaltfläche für eine eigene Datei-Oberfläche\nButtons[]=file\nNötig, um Inhalte aus Word einzufügen und die Syntax zu bereinigen (ab 5.0.2 nicht mehr nötig)\nButtons[]=pasteword\nBraucht das aktivierte Plugin nonbreaking und wahrscheinlich auch AllowMultipleSpaces=true in ezxml.ini\nButtons[]=nonbreaking\nDie Schaltfläche emotions braucht das aktivierte Plugin ezemotions\nButtons[]=emotions\nSplitButton, der alle Tabellen-Schaltflächen in ein Untermenü legt.\nButtons[table]=tablemenu\nStandardmäßig verwenden wir die Schaltflächen aber direkt in der Werkzeugleiste für schnellen Zugriff\nZusätzliche Tabellen-Schaltflächen\nButtons[]=col_before\nButtons[]=row_before\nZeigt ein Popup mit dem HTML-Markup\nbraucht Rewrite-Regeln, die HTML-Dateien in Design-Ordnern erlauben, im Modus mit virtuellem Host (wie im INSTALL-Dokument gezeigt)\nButtons[]=code\nbraucht das Plugin visualchars\nButtons[]=visualchars\nSchaltflächen für die Aktionen Veröffentlichen / Speichern / Verwerfen für das ganze Objekt\nButtons[]=|\nButtons[]=publish\nButtons[]=store\nButtons[]=discard\nButtons[]=|\nSchaltfläche für die Rechtschreibprüfung von TinyMCE, braucht das Plugin spellchecker\nButtons[]=spellchecker\nSchaltfläche zum Deaktivieren des Editors"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorLayout] PathLocation": {
+        "en": "Path location (theme_advanced_statusbar_location), possible values: top / bottom / none",
+        "de": "Position des Pfades (theme_advanced_statusbar_location), mögliche Werte: top / bottom / none"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorLayout] ToolbarLocation": {
+        "en": "Toolbar location (theme_advanced_toolbar_location), possible values: top / bottom / none",
+        "de": "Position der Werkzeugleiste (theme_advanced_toolbar_location), mögliche Werte: top / bottom / none"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorLayout_mini]": {
+        "en": "Example for Editor layout for mini editor\n'mini' is taken from TagPreset defined in ezxml.ini and\nstored while editing the class on a attribute basis.\nThis feature is eZ Publish 4.1 and higher only!",
+        "de": "Beispiel für das Layout eines Mini-Editors\n'mini' stammt aus dem in ezxml.ini definierten TagPreset und\nwird beim Bearbeiten der Klasse pro Attribut gespeichert.\nDiese Funktion gibt es erst ab eZ Publish 4.1!"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] BrowseImageAlias": {
+        "en": "Image alias to use for the preview while browsing",
+        "de": "Bild-Alias für die Vorschau beim Durchsuchen"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] CompatibilityMode": {
+        "en": "Included skin variants in the o2k7 skin is: 'silver' and 'black'\nSkinVariant=\nThis option specifies the default writing direction. Some languages (Like Hebrew, Arabic, Urdu...)\nwrite from right to left instead of left to right. The default value of this option is \"ltr\" but if\nyou want to use from right to left mode specify \"rtl\" instead.\nDirectionality=ltr\nLets you control alignment of toolbar buttons [left|right]\nToolbarAlign=left\nEnables compatibility mode by making editor behave more like OE 4.x\n- uses attachment icon for embed relations, makes it easier to place embed objects inside text\n  but looses preview functionality. (name of embed object is shown if you hover the icon though)",
+        "de": "Im Skin o2k7 enthaltene Varianten sind: 'silver' und 'black'\nSkinVariant=\nDiese Option legt die Standard-Schreibrichtung fest. Manche Sprachen (wie Hebräisch, Arabisch, Urdu ...)\nschreiben von rechts nach links statt von links nach rechts. Der Standardwert dieser Option ist \"ltr\"; wenn\nSie den Modus von rechts nach links verwenden wollen, geben Sie stattdessen \"rtl\" an.\nDirectionality=ltr\nSteuert die Ausrichtung der Schaltflächen der Werkzeugleiste [left|right]\nToolbarAlign=left\nAktiviert den Kompatibilitätsmodus, in dem sich der Editor mehr wie OE 4.x verhält\n- verwendet ein Anhangsymbol für eingebettete Verknüpfungen, was das Platzieren eingebetteter Objekte im Text erleichtert,\n  aber die Vorschau verliert (der Name des eingebetteten Objekts erscheint jedoch, wenn Sie über das Symbol fahren)"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] CustomAttributeStyleMap": {
+        "en": "Map custom attribute names to style values so they are previewed in the editor.\nSupported styles are limited to the following types:\n    border* (so border or border-color will work)\n    margin*\n    padding*\n    width\n    height",
+        "de": "Ordnet Namen eigener Attribute Style-Werten zu, damit sie im Editor in der Vorschau erscheinen.\nUnterstützte Styles sind auf folgende Typen beschränkt:\n    border* (also funktionieren border oder border-color)\n    margin*\n    padding*\n    width\n    height"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] CustomTagControls": {
+        "en": "Custom tag controls (TinyMCE 3, TinyMCE 8 and Tiptap): a focused custom tag gets buttons to move it up or\ndown, to edit and to remove it (Alt+Shift+Up / Down / E / Delete; Backspace removes an empty block custom tag),\nand every block custom tag shows its name as a label. enabled / disabled. New installations write\nCustomTagControls=enabled; an upgraded site keeps disabled until it is switched on here or in an override.\nTinyMCE 3 loads the plugin exp_customtag_controls for it, so it needs no entry in Plugins[].\n(From LoveStack, commit 63334f1681, with thanks to Mugo Web.)",
+        "de": "Bedienelemente für eigene Tags (TinyMCE 3, TinyMCE 8 und Tiptap): Ein fokussiertes eigenes Tag erhält Schaltflächen, um es nach oben oder\nunten zu verschieben, zu bearbeiten und zu entfernen (Alt+Umschalt+Hoch / Runter / E / Entf; Rücktaste entfernt ein leeres eigenes Block-Tag),\nund jedes eigene Block-Tag zeigt seinen Namen als Beschriftung. enabled / disabled. Neue Installationen schreiben\nCustomTagControls=enabled; eine aktualisierte Website behält disabled, bis es hier oder in einem Override eingeschaltet wird.\nTinyMCE 3 lädt dafür das Plugin exp_customtag_controls, es braucht also keinen Eintrag in Plugins[].\n(Aus LoveStack, Commit 63334f1681, mit Dank an Mugo Web.)"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] EditorEngine": {
+        "en": "Editor engine used for ezxmltext attributes\n tinymce3 = eZ Online Editor on TinyMCE 3.5 (default)\n tinymce8 = prototype on TinyMCE 8, supports formatting, lists, links, anchors,\n            tables, embed/embed-inline, custom tags and literal\nCan be overridden per user with the preference ezoe_engine:\n /user/preferences/set/ezoe_engine/tinymce8",
+        "de": "Editor-Engine für Attribute vom Typ ezxmltext\n tinymce3 = eZ Online Editor auf TinyMCE 3.5 (Standard)\n tinymce8 = Prototyp auf TinyMCE 8, unterstützt Formatierung, Listen, Links, Anker,\n            Tabellen, embed/embed-inline, eigene Tags und literal\nKann pro Benutzer mit der Einstellung ezoe_engine überschrieben werden:\n /user/preferences/set/ezoe_engine/tinymce8"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] Engines": {
+        "en": "Show a button below the editor to switch between tinymce3 and tinymce8 (saved as user preference),\nuseful while both editors run in parallel. enabled / disabled; off when not set.\nNot set here on purpose: this file is read at the extension level, after every siteaccess setting and every\nextension activated for one siteaccess only (ActiveAccessExtensions[]), so a value here would override theirs.\nEngineSwitch=disabled\nForce one engine for every editor of a siteaccess, whatever their preference ezoe_engine says (the engine switch is\nthen hidden and the engine page shows the choice as fixed). Set it per siteaccess, e.g. ForceEngine=tiptap. An engine\nthat cannot be used (missing files, inactive extension) is ignored, so editors fall back to the usual choice.\nNot set here on purpose, for the same reason as EditorEngine and EngineSwitch.\nForceEngine=\nThe editor engines: Engines[<identifier>]=<class implementing expOEEditorEngine>. An extension adds an\nengine with one class and one line in its own ezoe.ini.append.php, EditorEngine / the user preference then\nname it. An entry whose class is missing or is not an engine is ignored (and shown in setup/rad).\nGuide: doc/eng-us/bc/6.0/ezoe-tinymce8.md\nNo empty Engines[] before the list: read at the extension level, it would remove the engines of an extension\nactivated for one siteaccess only (ActiveAccessExtensions[]) and of siteaccess settings.",
+        "de": "Unter dem Editor eine Schaltfläche zeigen, um zwischen tinymce3 und tinymce8 zu wechseln (als Benutzereinstellung gespeichert),\nnützlich, solange beide Editoren parallel laufen. enabled / disabled; aus, wenn nicht gesetzt.\nHier absichtlich nicht gesetzt: Diese Datei wird auf Erweiterungsebene gelesen, nach jeder Siteaccess-Einstellung und jeder\nnur für einen Siteaccess aktivierten Erweiterung (ActiveAccessExtensions[]), ein Wert hier würde also deren Werte überschreiben.\nEngineSwitch=disabled\nEine Engine für jeden Redakteur eines Siteaccess erzwingen, egal was seine Einstellung ezoe_engine sagt (der Engine-Schalter ist\ndann ausgeblendet, und die Engine-Seite zeigt die Wahl als fest). Pro Siteaccess setzen, z. B. ForceEngine=tiptap. Eine Engine,\ndie nicht verwendet werden kann (fehlende Dateien, inaktive Erweiterung), wird ignoriert, die Redakteure fallen also auf die übliche Wahl zurück.\nHier absichtlich nicht gesetzt, aus demselben Grund wie EditorEngine und EngineSwitch.\nForceEngine=\nDie Editor-Engines: Engines[<identifier>]=<class implementing expOEEditorEngine>. Eine Erweiterung fügt eine\nEngine mit einer Klasse und einer Zeile in ihrer eigenen ezoe.ini.append.php hinzu; EditorEngine / die Benutzereinstellung\nnennen sie dann. Ein Eintrag, dessen Klasse fehlt oder keine Engine ist, wird ignoriert (und in setup/rad angezeigt).\nAnleitung: doc/eng-us/bc/6.0/ezoe-tinymce8.md\nKein leeres Engines[] vor der Liste: Auf Erweiterungsebene gelesen, würde es die Engines einer nur für einen\nSiteaccess aktivierten Erweiterung (ActiveAccessExtensions[]) und der Siteaccess-Einstellungen entfernen."
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] Plugins": {
+        "en": "TinyMCE plugins you want to use\nplugins not mentioned here aren't tested and therefore not supported together with Online Editor\nPlugins[]=insertdatetime\nPlugins[]=visualchars\nSupport for button to insert nonbreaking white space\nPlugins[]=nonbreaking\nSpellchecker Requirements:\nhttp://wiki.moxiecode.com/index.php/TinyMCE:Plugins/spellchecker\nPlugins[]=spellchecker\nPlugins[]=searchreplace\neZ variant of emotions plugin\nPlugins[]=ezemotions\nProvides two buttons for text direction: ltr and rtl\nPlugins[]=directionality\nautolink plugin\nlist plugin\nSupport CTRL+Enter to exit a custom tag",
+        "de": "TinyMCE-Plugins, die Sie verwenden wollen\nHier nicht genannte Plugins sind nicht getestet und werden daher mit dem Online Editor nicht unterstützt\nPlugins[]=insertdatetime\nPlugins[]=visualchars\nUnterstützung für die Schaltfläche zum Einfügen eines geschützten Leerzeichens\nPlugins[]=nonbreaking\nVoraussetzungen der Rechtschreibprüfung:\nhttp://wiki.moxiecode.com/index.php/TinyMCE:Plugins/spellchecker\nPlugins[]=spellchecker\nPlugins[]=searchreplace\neZ-Variante des Plugins emotions\nPlugins[]=ezemotions\nBietet zwei Schaltflächen für die Textrichtung: ltr und rtl\nPlugins[]=directionality\nPlugin autolink\nPlugin list\nUnterstützt Strg+Eingabe, um ein eigenes Tag zu verlassen"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] Skin": {
+        "en": "Skin for the editor, 'default' and 'o2k7' is included as standard",
+        "de": "Skin des Editors; 'default' und 'o2k7' sind standardmäßig enthalten"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] TagPathOpenDialog": {
+        "en": "Makes it possible to get default TinyMCE behavior when clicking tag name by disabling",
+        "de": "Wenn deaktiviert, gilt beim Klick auf einen Tag-Namen das Standardverhalten von TinyMCE"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] UploadExtensionCheck": {
+        "en": "Server-side check of the uploaded file's type against UploadFileExtensions[] (ezoe/upload):\n engine   = when the user's engine is not tinymce3 (default; the TinyMCE 3 dialog never limited types)\n always   = every upload of the online editor\n disabled = none\nIn every mode a name with an executable type anywhere in it (php, phtml, phar, sh, cgi, .htaccess, ...) is refused.",
+        "de": "Serverseitige Prüfung des Typs der hochgeladenen Datei gegen UploadFileExtensions[] (ezoe/upload):\n engine   = wenn die Engine des Benutzers nicht tinymce3 ist (Standard; der Dialog von TinyMCE 3 hat die Typen nie beschränkt)\n always   = jeder Upload des Online-Editors\n disabled = keiner\nIn jedem Modus wird ein Name abgelehnt, der irgendwo einen ausführbaren Typ enthält (php, phtml, phar, sh, cgi, .htaccess, ...)."
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] UploadFileExtensions": {
+        "en": "File extensions the upload tab of the TinyMCE 8 embed dialog accepts, the class of the new\nobject is chosen by upload.ini like in the TinyMCE 3 upload dialog",
+        "de": "Dateiendungen, die der Reiter Hochladen im Einbettungsdialog von TinyMCE 8 akzeptiert; die Klasse des neuen\nObjekts wählt upload.ini wie im Upload-Dialog von TinyMCE 3"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] UploadFromUrl": {
+        "en": "Upload from a URL on the Upload tab of the embed dialog (both editors): the server fetches a file from\nan http(s) address and creates the object like a browser upload. enabled / disabled",
+        "de": "Hochladen von einer URL im Reiter Hochladen des Einbettungsdialogs (beide Editoren): Der Server holt eine Datei von\neiner http(s)-Adresse und legt das Objekt wie bei einem Browser-Upload an. enabled / disabled"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] UploadFromUrlMaxSize": {
+        "en": "Largest file fetched from a URL (K, M, G). Only this applies, PHP's upload_max_filesize does not (a fetch\nis not a browser upload); the body is streamed to a temporary file, never held in memory",
+        "de": "Größte von einer URL geholte Datei (K, M, G). Nur dies gilt, upload_max_filesize von PHP nicht (ein Abruf\nist kein Browser-Upload); der Inhalt wird in eine temporäre Datei gestreamt, nie im Speicher gehalten"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] UploadFromUrlTimeout": {
+        "en": "Total time in seconds a fetch may take (the connection must be made within 5 seconds)",
+        "de": "Gesamtzeit in Sekunden, die ein Abruf dauern darf (die Verbindung muss innerhalb von 5 Sekunden zustande kommen)"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] ValidateEmbedObjects": {
+        "en": "Validates embed objects and gives a warning if it's in trash",
+        "de": "Prüft eingebettete Objekte und warnt, wenn eines im Papierkorb liegt"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [EditorSettings] XmlTagNameAlias": {
+        "en": "Friendly name for tags, is shown in status bar and dialogs",
+        "de": "Lesbarer Name für Tags, wird in Statusleiste und Dialogen angezeigt"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [Engine_tinymce8]": {
+        "en": "TinyMCE 8 engine: [EditorLayout] button name => TinyMCE 8 toolbar item. Buttons with no counterpart are dropped.",
+        "de": "TinyMCE-8-Engine: Name der Schaltfläche in [EditorLayout] => Element der Werkzeugleiste von TinyMCE 8. Schaltflächen ohne Gegenstück entfallen."
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [Engine_tinymce8] ExternalPlugins": {
+        "en": "ezoe plugins loaded by URL: name => design path (an extension adds its own the same way)",
+        "de": "Per URL geladene ezoe-Plugins: Name => Design-Pfad (eine Erweiterung fügt ihre eigenen auf dieselbe Weise hinzu)"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [Engine_tinymce8] TableDialog": {
+        "en": "Dialog of Insert table / Table properties in TinyMCE 8:\nclassic = the design of the TinyMCE 3 dialog (Properties tab, size grid, width and border with unit, class, custom attributes)\nmodern  = the TinyMCE 8 dialog (plain form fields)",
+        "de": "Dialog für Tabelle einfügen / Tabelleneigenschaften in TinyMCE 8:\nclassic = das Design des Dialogs von TinyMCE 3 (Reiter Eigenschaften, Größenraster, Breite und Rahmen mit Einheit, Klasse, eigene Attribute)\nmodern  = der Dialog von TinyMCE 8 (einfache Formularfelder)"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [SpellChecker] config": {
+        "en": "Settings for TinyMCE SpellChecker\nYou need to enable the spellchecker plugin before these settings have any effect\nWiki: http://www.tinymce.com/wiki.php/Plugin:spellchecker",
+        "de": "Einstellungen der Rechtschreibprüfung von TinyMCE\nDamit diese Einstellungen wirken, müssen Sie das Plugin spellchecker aktivieren\nWiki: http://www.tinymce.com/wiki.php/Plugin:spellchecker"
+    },
+    "ini:extension/ezoe/settings/ezoe.ini [SystemSettings] RelativeURL": {
+        "en": "Use relative URLs (without host) inside the editor (only affects images in OE 5.x).",
+        "de": "Relative URLs (ohne Host) im Editor verwenden (betrifft in OE 5.x nur Bilder)."
+    },
+    "ini:extension/ezoe/settings/ezoe_attributes.ini": {
+        "en": "Exponential configuration file for the eZ Online Editor\n[CustomAttribute_<attribute>] / [CustomAttribute_<tag>_<attribute>]\nCustom attribute settings, these can be used on all tags (also custom tags)\n'CustomAttributes', defines the list of custom attributes to use on current tag (defined by [<tag>])\n'CustomAttributesDefaults' setting defines custom attributes default values\n that appear in the dialog window for a newly created element.\n Deprecated: use 'Default' on the custom attribute settings block instead (explained bellow)\n\n# Example for a custom tag setting in content.ini:\n\n[factbox]\nCustomAttributes[]=align\nCustomAttributes[]=myattr\nCustomAttributesDefaults[align]=right\nCustomAttributesDefaults[myattr]=default\n# CustomAttribute settings block for align attribute on factbox tag!\n# You can also define global align custom attribute setting with\n# this pattern [CustomAttribute_align], but this is only used if\n# there is no tag specific settings like this one:\n\n[CustomAttribute_factbox_align]\n# Optional, lets you specify the label name on the html control\nName=Align\n# Optional, lets you specify the default value on the html control\nDefault=right\n# Optional, to set the html title on the input element\nTitle=Titles are used for help text, they show up when you hover the html control\n# Optional, lets you specify what html form input element (type) to use, valid:\n# text (default, supports validation)\n# textarea (supports validation)\n# int (supports validation)\n# number (supports validation)\n# email (supports validation)\n# select (drop down box with selectable values)\n# hidden (hide the control)\n# color (with color picker and preview of color, needs rewrite rules to allow html files from design folders if in virtualhost mode)\n# htmlsize (int with drop down for size type px or %, where px is stripped out in resulting value)\n# csssize (int with drop down for size type, see CssSizeType[], px / % available if not defined)\n# csssize4 (same as csssize but for top, right, bottom and left sides when defining shorthand variant of margin & padding,\n#           aka margin: 0 1px 4% 0;)\n# cssborder (same as csssize but with border type and color as well)\n# checkbox\n# link (used by default in link dialog on href param, lets you type url and search / browse for internal urls,\n#       currently only one such attribute is supported pr tag)\nType=select\n# Optional, lets you disable the html control so users can't change the value\nDisabled=true\n# Optional, forces user to fill out the html form element\n# Note: When combined with select type it will enforce that anything but first option is\n#       selected as that is assumed to be a \"Please choose one:\" option.\n#       When combined with checkbox it will enforce that checkbox is checked.\nRequired=true\n# Opposite of Required, allows input to be empty even if type is for instance int\nAllowEmpty=true\n# Optional, to specify the number of rows when a textarea is used\nRows=3\n# Optional, for validation when type is int or number (inclusive)\nMinimum=1\n# Optional, for validation when type is int or number (inclusive)\nMaximum=99\n# Selection is needed if type is set to select\nSelection[]\nSelection[left]=Left\nSelection[right]=Right\nSelection[center]=Center\n# CssSizeType is used for size type on csssize and csssize4\nCssSizeType[]\nCssSizeType[px]=px\nCssSizeType[em]=em\nCssSizeType[pt]=pt\nCssSizeType[%]=%\n# LinkType is used for link type, for the link type selections\nLinkType[]\nLinkType[eznode://]=Internal link\nLinkType[http://]=Http\nLinkType[0]=Other\nComplete custom attributes example for enabling and forcing users\nto fill out table summary for WAI conformance\n\n# In content.ini:\n[table]\nCustomAttributes[]=summary\n\n# In this ini file:\n[CustomAttribute_table_summary]\nName=Summary (WAI)\nRequired=true\n[Attribute_<attribute>] / [Attribute_<tag>_<attribute>]\nSettings for xml attributes can be setup exactly the same way as [CustomAttribute_*], so look bellow\nfor list of all supported sub settinbgs like Name / Default / Title / Type\nNote: Some attributes ('class' on all tags and 'name' on custom tags) have special meaning to\nExponential and you should not change their selections using this override.\n\n# Example for setting table border attribute to int type\n[Attribute_table_border]\nTitle=Border size for the table\nType=int\n\n# Example for setting name on class attributes for less technical people\n[Attribute_class]\nName=Style",
+        "de": "Exponential-Konfigurationsdatei für den eZ Online Editor\n[CustomAttribute_<attribute>] / [CustomAttribute_<tag>_<attribute>]\nEinstellungen eigener Attribute; sie können bei allen Tags verwendet werden (auch bei eigenen Tags)\n'CustomAttributes' legt die Liste der eigenen Attribute des aktuellen Tags fest (definiert durch [<tag>])\nDie Einstellung 'CustomAttributesDefaults' legt Standardwerte eigener Attribute fest,\n die im Dialogfenster für ein neu angelegtes Element erscheinen.\n Veraltet: Verwenden Sie stattdessen 'Default' im Einstellungsblock des eigenen Attributs (unten erklärt)\n\n# Example for a custom tag setting in content.ini:\n\n[factbox]\nCustomAttributes[]=align\nCustomAttributes[]=myattr\nCustomAttributesDefaults[align]=right\nCustomAttributesDefaults[myattr]=default\n# CustomAttribute settings block for align attribute on factbox tag!\n# You can also define global align custom attribute setting with\n# this pattern [CustomAttribute_align], but this is only used if\n# there is no tag specific settings like this one:\n\n[CustomAttribute_factbox_align]\n# Optional, lets you specify the label name on the html control\nName=Align\n# Optional, lets you specify the default value on the html control\nDefault=right\n# Optional, to set the html title on the input element\nTitle=Titles are used for help text, they show up when you hover the html control\n# Optional, lets you specify what html form input element (type) to use, valid:\n# text (default, supports validation)\n# textarea (supports validation)\n# int (supports validation)\n# number (supports validation)\n# email (supports validation)\n# select (drop down box with selectable values)\n# hidden (hide the control)\n# color (with color picker and preview of color, needs rewrite rules to allow html files from design folders if in virtualhost mode)\n# htmlsize (int with drop down for size type px or %, where px is stripped out in resulting value)\n# csssize (int with drop down for size type, see CssSizeType[], px / % available if not defined)\n# csssize4 (same as csssize but for top, right, bottom and left sides when defining shorthand variant of margin & padding,\n#           aka margin: 0 1px 4% 0;)\n# cssborder (same as csssize but with border type and color as well)\n# checkbox\n# link (used by default in link dialog on href param, lets you type url and search / browse for internal urls,\n#       currently only one such attribute is supported pr tag)\nType=select\n# Optional, lets you disable the html control so users can't change the value\nDisabled=true\n# Optional, forces user to fill out the html form element\n# Note: When combined with select type it will enforce that anything but first option is\n#       selected as that is assumed to be a \"Please choose one:\" option.\n#       When combined with checkbox it will enforce that checkbox is checked.\nRequired=true\n# Opposite of Required, allows input to be empty even if type is for instance int\nAllowEmpty=true\n# Optional, to specify the number of rows when a textarea is used\nRows=3\n# Optional, for validation when type is int or number (inclusive)\nMinimum=1\n# Optional, for validation when type is int or number (inclusive)\nMaximum=99\n# Selection is needed if type is set to select\nSelection[]\nSelection[left]=Left\nSelection[right]=Right\nSelection[center]=Center\n# CssSizeType is used for size type on csssize and csssize4\nCssSizeType[]\nCssSizeType[px]=px\nCssSizeType[em]=em\nCssSizeType[pt]=pt\nCssSizeType[%]=%\n# LinkType is used for link type, for the link type selections\nLinkType[]\nLinkType[eznode://]=Internal link\nLinkType[http://]=Http\nLinkType[0]=Other\nVollständiges Beispiel für eigene Attribute, das Benutzer dazu bringt,\ndie Tabellenzusammenfassung für die WAI-Konformität auszufüllen\n\n# In content.ini:\n[table]\nCustomAttributes[]=summary\n\n# In this ini file:\n[CustomAttribute_table_summary]\nName=Summary (WAI)\nRequired=true\n[Attribute_<attribute>] / [Attribute_<tag>_<attribute>]\nEinstellungen für XML-Attribute lassen sich genauso einrichten wie [CustomAttribute_*]; siehe oben\ndie Liste aller unterstützten Untereinstellungen wie Name / Default / Title / Type\nHinweis: Manche Attribute ('class' bei allen Tags und 'name' bei eigenen Tags) haben für\nExponential eine besondere Bedeutung, und Sie sollten ihre Auswahl nicht mit diesem Override ändern.\n\n# Example for setting table border attribute to int type\n[Attribute_table_border]\nTitle=Border size for the table\nType=int\n\n# Example for setting name on class attributes for less technical people\n[Attribute_class]\nName=Style"
+    }
+}

@@ -68,7 +68,7 @@ alles, was Ihr Team tun muss.
 
 > **Hinweis**
 > Das Projekt veröffentlicht keinen Release-Kalender. Releases der Linie 6.0 kamen in Abständen von etwa einem bis fünf
-> Monaten ([Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)).
+> Monaten ([Release-Linie und Support-Richtlinie](../../unternehmen/zuverlaessigkeit/release-linie-und-support-richtlinie.md)).
 > Planen Sie mit den Releases, die es gibt, nicht mit einem Datum.
 
 ## Automatische Updates
@@ -84,5 +84,5 @@ aktualisieren“ ([Automatische Updates mit ezupdate](../../hosting/betrieb/auto
 - [Release-Linie und Support](release-linie-und-support.md)
 - [Upgrades mit Ihrem Anbieter](upgrades-mit-ihrem-anbieter.md)
 - [Checkliste für den Upgrade-Tag](checkliste-upgrade-tag.md)
-- [Upgrades ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)
+- [Upgrades ohne Überraschungen](../../unternehmen/zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

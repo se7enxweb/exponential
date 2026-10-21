@@ -28,6 +28,14 @@ The generated reference examples of the help (doc/eng-us/examples/)
 ./console exp:help:examples --area=datatypes     only this area (repeat with a comma: --area=datatypes,cronjobs)
 ./console exp:help:examples --check              compare only: exit 1 when a page is missing, different or stale
 ./console exp:help:examples --list               the areas and how many pages each has
+./console exp:help:examples --language=ger-de    the same pages in a translation (doc/ger-de/beispiele/), with
+                                                 their entries in doc/ger-de/.paths.json
+./console exp:help:examples --language=ger-de --worklist=var/tmp/todo.json
+                                                 also write the source texts that have no translation yet
+
+A translation reads its text from doc/<language>/.examples/: strings.json (the fixed text of the pages) and
+descriptions/*.json (the comments and descriptions quoted from the sources, by item). A text without a
+translation is written in English and counted as untranslated.
 
 The pages are read from the git-tracked sources of this installation (the template autoload files,
 function_definition.php, module.php, operation_definition.php, the shipped INI files, the datatype and
@@ -44,7 +52,9 @@ Exit code: 0 fine, 1 --check found differences, 2 error.
 | `--area` | required | Only these areas, comma separated (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points) |
 | `--check` |  | Compare the generated pages with the files and change nothing; exit 1 on a difference |
 | `--list` |  | List the areas with their page counts |
-| `--out` | required | The output directory relative to the installation root (default doc/eng-us/examples) |
+| `--out` | required | The output directory relative to the installation root (default doc/eng-us/examples, or the translation's directory) |
+| `--language` | required | Write the pages in a translation: a language directory below doc/ (ger-de); default the English original |
+| `--worklist` | required | With --language: write the source texts without a translation to this file, as a description catalogue to fill in |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

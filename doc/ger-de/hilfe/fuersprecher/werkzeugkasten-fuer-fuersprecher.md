@@ -50,6 +50,7 @@ Diese Seite ist für Fürsprecher, die alles griffbereit haben möchten. Setzen 
 [Demos zeigen](demos-zeigen.md), [Skript für einen Lightning Talk](skript-lightning-talk.md),
 [20-Minuten-Vortrag](folienplan-20-minuten-vortrag.md), [Workshop](ablaufplan-praxis-workshop.md),
 [Benutzergruppe oder Klasse](vor-benutzergruppe-oder-klasse-praesentieren.md), [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md),
+[Die Systemkarte in Demos](die-systemkarte-in-demos.md),
 [Screencast](einen-screencast-aufnehmen.md), [Barrierefreie Folien](barrierefreie-folien-und-grafiken.md)
 und die [Demo-Skripte](../geschaeft/demo-drehbuecher.md) Klick für Klick.
 

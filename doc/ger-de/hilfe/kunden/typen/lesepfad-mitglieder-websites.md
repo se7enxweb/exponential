@@ -19,7 +19,7 @@ Die Reihenfolge, in der ein Mitgliederteam seine Website kennenlernt. Jeder Schr
 | 2 | [In der Administration anmelden](../../anmelden-in-der-administration.md) | Mitgliederverwaltung | Wo man sich anmeldet |
 | 3 | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Alle mit Zugang | Mitgliederdaten brauchen sichere Konten |
 | 4 | [Administratorlinks bei Registrierungen](../../../../eng-us/features/6.0/registration-admin-links.md) | Mitgliederverwaltung | Neue Mitglieder genehmigen oder ablehnen |
-| 5 | [Inhalte nur für Mitglieder](../../../../eng-us/help/businesses/members/members-only-content.md) | Mitgliederverwaltung | Was die Öffentlichkeit sieht und was Mitglieder sehen |
+| 5 | [Inhalte nur für Mitglieder](../../unternehmen/mitglieder/inhalte-nur-fuer-mitglieder.md) | Mitgliederverwaltung | Was die Öffentlichkeit sieht und was Mitglieder sehen |
 | 6 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Vorstandsmitglied, das für die Website verantwortlich ist | Eine Rolle pro Aufgabe |
 | 7 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Nachrichtenredaktion | Neuigkeiten für Mitglieder |
 

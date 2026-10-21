@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber, der die Website in einer weiteren Sprache anbieten möchte. In Exponential hat das
 zwei technische Hälften (eine Inhaltssprache und einen Siteaccess, der sie anzeigt) und eine große menschliche Hälfte:
 die Übersetzungsarbeit. Die Schritte für den Administrator stehen unter [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md);
-die Planungssicht unter [Planung mehrsprachiger Websites](../../../../eng-us/help/businesses/multilingual/multilingual-planning.md).
+die Planungssicht unter [Planung mehrsprachiger Websites](../../unternehmen/mehrsprachig/mehrsprachigkeit-planen.md).
 
 ## Inhalt
 
@@ -42,10 +42,10 @@ Aus [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md):
 |---|---|---|
 | Wie erreichen Besucher die Sprache? | ein Pfad (`/de`), ein Host (`de.example.com`) oder eine Domain pro Land | [Sprachumschalter und Sprach-URLs](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
 | Was sehen Besucher, wenn eine Seite nicht übersetzt ist? | verborgen, oder in der Hauptsprache angezeigt | [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
-| Alles, oder eine Auswahl? | eine vollständige Website, oder nur die Hauptseiten | [Planung mehrsprachiger Websites](../../../../eng-us/help/businesses/multilingual/multilingual-planning.md) |
+| Alles, oder eine Auswahl? | eine vollständige Website, oder nur die Hauptseiten | [Planung mehrsprachiger Websites](../../unternehmen/mehrsprachig/mehrsprachigkeit-planen.md) |
 | Wer übersetzt und wer gibt frei? | eigenes Personal, Agentur, Freiberufler, unterstützt vom Schreibassistenten | [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) |
-| Von rechts nach links? | Arabisch, Hebräisch, Persisch und andere erfordern Unterstützung durch das Design | [Märkte mit Schreibrichtung von rechts nach links](../../../../eng-us/help/businesses/multilingual/right-to-left-markets.md) |
-| Währungen, Daten und Formate? | die Locale bestimmt Datums- und Zahlenformate; ein Shop braucht auch Preise | [Währungen, Datums- und Zahlenformate](../../../../eng-us/help/businesses/multilingual/currencies-dates-and-formats.md) |
+| Von rechts nach links? | Arabisch, Hebräisch, Persisch und andere erfordern Unterstützung durch das Design | [Märkte mit Schreibrichtung von rechts nach links](../../unternehmen/mehrsprachig/maerkte-mit-rechts-nach-links-schrift.md) |
+| Währungen, Daten und Formate? | die Locale bestimmt Datums- und Zahlenformate; ein Shop braucht auch Preise | [Währungen, Datums- und Zahlenformate](../../unternehmen/mehrsprachig/waehrungen-datumsangaben-und-formate.md) |
 
 ## Die Schritte, und wer sie erledigt
 
@@ -60,12 +60,12 @@ Aus [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md):
 | 7. Die Adresse öffentlich machen; Suchmaschinen informieren (Sitemap pro Sprache) | Partner ([XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)) |
 
 Der neue Siteaccess lässt sich testen, bevor er öffentlich ist; bitten Sie Ihren Partner um einen Testhost
-([Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md)).
+([Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md)).
 
 ## Was zuerst zu übersetzen ist
 
 1. Die Startseite und die Menüordner: Über sie erreichen Besucher alles andere
-   ([Übersetzungs-Workflow](../../../../eng-us/help/businesses/multilingual/translation-workflow.md)).
+   ([Übersetzungs-Workflow](../../unternehmen/mehrsprachig/uebersetzungsablauf.md)).
 2. Kontakt-, Rechts- und Datenschutzseiten.
 3. Die Seiten, die Besucher aus diesem Markt am meisten nutzen (Ihre Suchstatistiken und Analysen helfen dabei).
 4. Formulare und ihre Bestätigungstexte; Newsletter-Listen für diese Sprache.
@@ -78,11 +78,11 @@ Der neue Siteaccess lässt sich testen, bevor er öffentlich ist; bitten Sie Ihr
 - [ ] Datums- und Zahlenangaben sind ortsüblich geschrieben.
 - [ ] Formulare, Fehlermeldungen und E-Mails sind in der Sprache.
 - [ ] Eine Person mit dieser Muttersprache hat die Hauptseiten gelesen.
-- [ ] Die [Checkliste für Mehrsprachigkeit](../../../../eng-us/help/businesses/multilingual/multilingual-checklist.md) ist abgehakt.
+- [ ] Die [Checkliste für Mehrsprachigkeit](../../unternehmen/mehrsprachig/checkliste-mehrsprachigkeit.md) ist abgehakt.
 
 ## Verwandte Seiten
 
 - [Übersetzungsroutine](../alltag/uebersetzungsroutine.md)
-- [Sprachen und Locales](../../../../eng-us/help/businesses/multilingual/languages-and-locales.md)
+- [Sprachen und Locales](../../unternehmen/mehrsprachig/sprachen-und-locales.md)
 - [Mehrsprachige Websites](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

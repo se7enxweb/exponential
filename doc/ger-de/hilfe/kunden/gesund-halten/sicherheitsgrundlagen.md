@@ -41,7 +41,7 @@ einmal durchzuführen und Ihnen das Ergebnis zu schicken.
 | Wie schnell Sicherheits-Releases eingespielt werden | Es ist eine Vertragsbedingung mit Ihrem Anbieter | [Release-Linie und Support](release-linie-und-support.md) |
 | Wie viel Datenverlust hinnehmbar ist | Es bestimmt den Backup-Plan | [Backups](backups.md) |
 | Wer Sicherheitsalarme erhält | Jemand muss sie lesen | [Überwachung](ueberwachung.md) |
-| Welche personenbezogenen Daten Sie erheben, und wie lange | Es ist eine rechtliche und geschäftliche Frage | [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md) |
+| Welche personenbezogenen Daten Sie erheben, und wie lange | Es ist eine rechtliche und geschäftliche Frage | [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md) |
 
 ## Die drei wichtigsten Gewohnheiten
 
@@ -81,6 +81,6 @@ haben, in der [Vorlage für Vorfallnotizen](vorlage-vorfallnotizen.md).
 ## Verwandte Seiten
 
 - [Sicherheits-Checkliste für Betreiber](sicherheits-checkliste-fuer-betreiber.md)
-- [Sicherheitsgrundlagen für Unternehmen](../../../../eng-us/help/businesses/security/security-basics-for-businesses.md)
-- [DSGVO-Grundlagen](../../../../eng-us/help/businesses/security/gdpr-basics.md) (keine Rechtsberatung)
+- [Sicherheitsgrundlagen für Unternehmen](../../unternehmen/sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md)
+- [DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md) (keine Rechtsberatung)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

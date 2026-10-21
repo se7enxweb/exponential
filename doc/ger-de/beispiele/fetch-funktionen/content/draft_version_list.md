@@ -1,0 +1,55 @@
+---
+title: fetch( 'content', 'draft_version_list' )
+audience: developer, admin
+category: examples
+summary: "Die Fetch-Funktion draft_version_list des Moduls content: 2 Parameter, 0 erforderlich."
+keywords: Fetch-Funktion, fetch, content, draft_version_list, fetch function, template
+type: generated
+generated: exp:help:examples
+---
+# fetch( 'content', 'draft_version_list' )
+
+Definiert in `kernel/content/function_definition.php`; sie ruft `eZContentFunctionCollection::fetchDraftVersionList()` auf (`kernel/content/ezcontentfunctioncollection.php`).
+Operationstyp: read.
+
+## Parameter
+
+| Parameter | Typ | Erforderlich | Standard |
+|---|---|---|---|
+| `offset` | integer | nein | `false` |
+| `limit` | integer | nein | `false` |
+
+## Beispiel
+
+In einem Template (die Werte sind Platzhalter vom Typ des jeweiligen Parameters):
+
+```tpl
+{def $result = fetch( 'content', 'draft_version_list', hash( 'offset', 1 ) )}
+{* mit jedem Parameter *}
+{def $all = fetch( 'content', 'draft_version_list', hash( 'offset', 1,
+                                                     'limit', 1 ) )}
+```
+
+In PHP dieselbe Funktion über den Function-Handler (`lib/ezutils/classes/ezfunctionhandler.php`):
+
+```php
+$result = eZFunctionHandler::execute( 'content', 'draft_version_list', array( 'offset' => 1 ) );
+```
+
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/standard/templates/dashboard/drafts.tpl` Zeile 13:
+
+```tpl
+{foreach fetch( 'content', 'draft_version_list', hash( 'limit', $block.number_of_items ) ) as $draft sequence array( 'bglight', 'bgdark' ) as $style}
+```
+
+## Siehe auch
+
+- [Alle Fetch-Funktionen von content](README.md)
+- [Die Ansichten des Moduls content](../../modulansichten/content/README.md)
+- [Der Template-Operator fetch](../../template-operatoren/fetch.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/content/function_definition.php`, `kernel/content/ezcontentfunctioncollection.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

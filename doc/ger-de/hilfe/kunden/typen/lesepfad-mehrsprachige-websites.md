@@ -28,8 +28,8 @@ Lesepfad des Typs Ihrer Website (Nachrichtenredaktion, Shop, Intranet ...). Jede
 |---|---|---|---|
 | 6 | [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) | Übersetzungskoordination | Bemerken, was sich geändert hat |
 | 7 | [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) | Website-Betreiber, Administrator | Wie Sprachen eingerichtet werden |
-| 8 | [Übersetzungs-Workflow (Unternehmen)](../../../../eng-us/help/businesses/multilingual/translation-workflow.md) | Übersetzungskoordination | Stufen einer Übersetzung |
-| 9 | [Währungen, Datums- und Zahlenformate](../../../../eng-us/help/businesses/multilingual/currencies-dates-and-formats.md) | Website-Betreiber | Formate pro Land |
+| 8 | [Übersetzungs-Workflow (Unternehmen)](../../unternehmen/mehrsprachig/uebersetzungsablauf.md) | Übersetzungskoordination | Stufen einer Übersetzung |
+| 9 | [Währungen, Datums- und Zahlenformate](../../unternehmen/mehrsprachig/waehrungen-datumsangaben-und-formate.md) | Website-Betreiber | Formate pro Land |
 | 10 | [SEO-Prüfungen](../alltag/seo-pruefungen.md) | Redaktion in jeder Sprache | Titel und Zusammenfassungen in jeder Sprache |
 | 11 | [URLs, Weiterleitungen und verschobene Seiten](../alltag/urls-weiterleitungen-und-verschobene-seiten.md) | Redaktion | Adressen in jeder Sprache |
 
@@ -37,7 +37,7 @@ Lesepfad des Typs Ihrer Website (Nachrichtenredaktion, Shop, Intranet ...). Jede
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 12 | [Unterstützte Übersetzung mit Exponential Intelligence](../../../../eng-us/help/businesses/multilingual/assisted-translation-with-exponential-intelligence.md) | Website-Betreiber | Entwürfe von Übersetzungen, nach Ihren Regeln |
+| 12 | [Unterstützte Übersetzung mit Exponential Intelligence](../../unternehmen/mehrsprachig/unterstuetzte-uebersetzung-mit-exponential-intelligence.md) | Website-Betreiber | Entwürfe von Übersetzungen, nach Ihren Regeln |
 | 13 | [KI-Entwürfe verantwortungsvoll nutzen](../wachstum/ki-entwuerfe-verantwortungsvoll-nutzen.md) | Übersetzer | Eine Person liest jeden Entwurf |
 | 14 | [Von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md) | Website-Betreiber | Wenn Sie Arabisch, Hebräisch oder eine andere Sprache mit Schreibrichtung von rechts nach links hinzufügen |
 | 15 | [Eine Sprache hinzufügen](../wachstum/eine-sprache-hinzufuegen.md) | Website-Betreiber | Das Projekt hinter einer neuen Sprache |

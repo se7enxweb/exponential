@@ -33,8 +33,8 @@ Die Zeiten sind Vorschläge für ein kleines Team; messen Sie in den ersten Mona
 | Wenn Sie außerdem betreiben | Verwenden Sie zusätzlich |
 |---|---|
 | Einen Shop | [Tägliche Shop-Routine](../../handel/taegliche-shop-routine.md), [Wöchentliche Shop-Checkliste](../../handel/woechentliche-shop-checkliste.md), [Monatliche Shop-Checkliste](../../handel/monatliche-shop-checkliste.md) |
-| Den Betrieb selbst | [Monatliche Checkliste für den Betrieb](../../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md) und die wöchentliche Checkliste in [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md) |
-| Eine jährliche Überprüfung durch die Geschäftsleitung | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md) und [Checkliste für die Jahresüberprüfung](../../../../../eng-us/help/businesses/templates/annual-review-checklist.md) |
+| Den Betrieb selbst | [Monatliche Checkliste für den Betrieb](../../../unternehmen/vorlagen/monatliche-betriebscheckliste.md) und die wöchentliche Checkliste in [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md) |
+| Eine jährliche Überprüfung durch die Geschäftsleitung | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md) und [Checkliste für die Jahresüberprüfung](../../../unternehmen/vorlagen/checkliste-jahresrueckblick.md) |
 
 ## Sie gut nutzen
 

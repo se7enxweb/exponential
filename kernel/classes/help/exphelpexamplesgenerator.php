@@ -75,17 +75,85 @@ class expHelpExamplesGenerator
     /** @var string[] notes about sources that could not be read */
     protected $warnings = array();
 
+    /** @var expHelpExamplesTranslation|null the language of the pages; null: the English original */
+    protected $translation = null;
+
+    /** @var array translated path below doc/<language>/ => English path below doc/eng-us/, of the pages of this run */
+    protected $pathMap = array();
+
     /**
      * @param string $root the installation root
-     * @param string $out the output directory, relative to the root
+     * @param string|null $out the output directory, relative to the root (null: doc/eng-us/examples, or for a
+     *                         translation doc/<language>/<the translated name of "examples">)
      * @param string[]|null $files the tracked files (null: asks git, else scans the source directories)
+     * @param expHelpExamplesTranslation|null $translation the language of the pages; null: the English original
      */
-    public function __construct( $root, $out = 'doc/eng-us/examples', ?array $files = null )
+    public function __construct( $root, $out = 'doc/eng-us/examples', ?array $files = null, ?expHelpExamplesTranslation $translation = null )
     {
         $this->root = rtrim( $root, '/' );
+        $this->translation = $translation;
+        if ( $out === null || ( $translation !== null && trim( $out, '/' ) === 'doc/eng-us/examples' ) )
+            $out = $translation !== null ? 'doc/' . $translation->directory() . '/' . $translation->dirname( 'examples' ) : 'doc/eng-us/examples';
         $this->out = trim( $out, '/' );
         $this->files = $files !== null ? $files : self::trackedFiles( $this->root );
         sort( $this->files, SORT_STRING );
+    }
+
+    /** @return expHelpExamplesTranslation|null */
+    public function translation()
+    {
+        return $this->translation;
+    }
+
+    /** @return string the output directory, relative to the root */
+    public function outputDirectory()
+    {
+        return $this->out;
+    }
+
+    /**
+     * The path map entries of the pages of the last build (translated path below doc/<language>/ => English path
+     * below doc/eng-us/); empty for the English original or an output directory outside doc/<language>/.
+     *
+     * @return array
+     */
+    public function pathMap()
+    {
+        $map = $this->pathMap;
+        ksort( $map, SORT_STRING );
+        return $map;
+    }
+
+    /**
+     * A fixed text of the generator, in the language of the pages, with its {placeholders} filled in.
+     *
+     * @param string $text the English text
+     * @param array $vars placeholder (without braces) => value
+     * @return string
+     */
+    protected function t( $text, array $vars = array() )
+    {
+        if ( $this->translation !== null )
+            $text = $this->translation->string( $text );
+        if ( !$vars )
+            return $text;
+        $pairs = array();
+        foreach ( $vars as $name => $value )
+            $pairs['{' . $name . '}'] = (string)$value;
+        return strtr( $text, $pairs );
+    }
+
+    /**
+     * A text a page quotes from a source (a comment, a description), in the language of the pages when the
+     * catalogue has it.
+     *
+     * @param string $key the item, for example "ini:settings/site.ini [Block] Setting"
+     * @param string $text the English text of the source
+     * @return string
+     */
+    protected function d( $key, $text )
+    {
+        return $this->translation !== null ? $this->translation->description( $key, (string)$text ) : (string)$text;
     }
 
     /**
@@ -136,6 +204,9 @@ class expHelpExamplesGenerator
     {
         $this->pages = array();
         $this->counts = array();
+        $this->pathMap = array();
+        if ( $this->translation !== null )
+            $this->translation->resetMissing();
         foreach ( array_keys( self::AREAS ) as $area )
         {
             if ( $areas !== null && !in_array( $area, $areas, true ) )
@@ -216,7 +287,73 @@ class expHelpExamplesGenerator
         foreach ( $this->existingGeneratedPages( $areas ) as $path )
             if ( !isset( $pages[$path] ) )
                 $result['stale'][] = $path;
+        if ( $this->translation !== null )
+        {
+            $result['map'] = array();
+            $file = $this->pathMapFile();
+            if ( $file !== null && ( is_file( $file ) ? (string)file_get_contents( $file ) : '' ) !== $this->mergedPathMap( $areas ) )
+                $result['map'][] = substr( $file, strlen( $this->root ) + 1 );
+        }
         return $result;
+    }
+
+    /**
+     * The path map file of the language (doc/<language>/.paths.json), or null when the pages are not written into
+     * the language's directory.
+     *
+     * @return string|null
+     */
+    protected function pathMapFile()
+    {
+        if ( $this->translation === null || strpos( $this->out . '/', 'doc/' . $this->translation->directory() . '/' ) !== 0 )
+            return null;
+        return $this->root . '/doc/' . $this->translation->directory() . '/.paths.json';
+    }
+
+    /**
+     * The language's .paths.json with the entries of the generated pages of the built areas replaced by those of the
+     * last build (all other entries kept), in the file's format.
+     *
+     * @param string[]|null $areas
+     * @return string
+     */
+    public function mergedPathMap( ?array $areas = null )
+    {
+        $file = $this->pathMapFile();
+        $map = array();
+        if ( $file !== null && is_file( $file ) )
+        {
+            $data = json_decode( (string)file_get_contents( $file ), true );
+            if ( is_array( $data ) )
+                $map = $data;
+        }
+        foreach ( $map as $translated => $original )
+            if ( is_string( $original ) && preg_match( '#^examples/([^/]+)/#', $original, $m ) && isset( self::AREAS[$m[1]] )
+                 && ( $areas === null || in_array( $m[1], $areas, true ) ) )
+                unset( $map[$translated] );
+        foreach ( $this->pathMap as $translated => $original )
+            $map[$translated] = $original;
+        if ( class_exists( 'expHelpLanguage' ) )
+            return expHelpLanguage::encodePathMap( $map );
+        return expHelpExamplesTranslation::encode( $map );
+    }
+
+    /**
+     * Writes the language's .paths.json with the entries of the last build (nothing for the English original).
+     *
+     * @param string[]|null $areas the areas that were built
+     * @return bool whether the file changed
+     */
+    public function writePathMap( ?array $areas = null )
+    {
+        $file = $this->pathMapFile();
+        if ( $file === null )
+            return false;
+        $content = $this->mergedPathMap( $areas );
+        if ( is_file( $file ) && file_get_contents( $file ) === $content )
+            return false;
+        file_put_contents( $file, $content );
+        return true;
     }
 
     /**
@@ -232,7 +369,7 @@ class expHelpExamplesGenerator
         {
             if ( $areas !== null && !in_array( $area, $areas, true ) )
                 continue;
-            $dir = $this->root . '/' . $this->out . '/' . $area;
+            $dir = $this->root . '/' . $this->out . '/' . $this->localDirectory( $area );
             if ( !is_dir( $dir ) )
                 continue;
             $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
@@ -303,36 +440,36 @@ class expHelpExamplesGenerator
             $piped = isset( $hints['input'] ) ? (bool)$hints['input'] : null;
 
             $md = array();
-            $md[] = "# The $name template operator";
+            $md[] = $this->t( '# The {name} template operator', array( 'name' => $name ) );
             $md[] = '';
-            $md[] = 'Registered in `' . $info['autoload'] . '`' . ( $info['class'] !== null ? ' by the class `' . $info['class'] . '`' . ( $file ? ' (`' . $file . '`)' : '' ) : '' ) . '.';
+            $md[] = $this->registeredIn( $info['autoload'], $info['class'], $file );
             if ( isset( $phpOperators[$name] ) )
-                $md[] = 'It calls the PHP function `' . $phpOperators[$name] . '()`, listed in `settings/template.ini` `[PHP] PHPOperatorList[]`.';
+                $md[] = $this->t( 'It calls the PHP function `{function}()`, listed in `settings/template.ini` `[PHP] PHPOperatorList[]`.', array( 'function' => $phpOperators[$name] ) );
             if ( $info['siblings'] )
-                $md[] = 'The same class also registers: ' . implode( ', ', array_map( function ( $n ) { return '[' . $n . '](' . self::fileName( $n ) . '.md)'; }, $info['siblings'] ) ) . '.';
+                $md[] = $this->t( 'The same class also registers: {list}.', array( 'list' => implode( ', ', array_map( function ( $n ) { return '[' . $n . '](' . self::fileName( $n ) . '.md)'; }, $info['siblings'] ) ) ) );
             $md[] = '';
-            $md[] = '## Parameters';
+            $md[] = $this->t( '## Parameters' );
             $md[] = '';
             if ( $params === null )
-                $md[] = 'The class does not describe its parameters (no `namedParameterList()`); see its source for what it reads.';
+                $md[] = $this->t( 'The class does not describe its parameters (no `namedParameterList()`); see its source for what it reads.' );
             else if ( !$params )
-                $md[] = 'None.';
+                $md[] = $this->t( 'None.' );
             else
             {
-                $md[] = '| Parameter | Type | Required | Default |';
+                $md[] = $this->t( '| Parameter | Type | Required | Default |' );
                 $md[] = '|---|---|---|---|';
                 foreach ( $params as $pname => $p )
-                    $md[] = '| `' . $pname . '` | ' . self::cell( isset( $p['type'] ) ? $p['type'] : '' ) . ' | ' . ( !empty( $p['required'] ) ? 'yes' : 'no' ) . ' | ' . ( array_key_exists( 'default', $p ) ? self::code( self::export( $p['default'] ) ) : '' ) . ' |';
+                    $md[] = '| `' . $pname . '` | ' . self::cell( isset( $p['type'] ) ? $p['type'] : '' ) . ' | ' . ( !empty( $p['required'] ) ? $this->t( 'yes' ) : $this->t( 'no' ) ) . ' | ' . ( array_key_exists( 'default', $p ) ? self::code( self::export( $p['default'] ) ) : '' ) . ' |';
             }
             $md[] = '';
             if ( $piped !== null )
             {
-                $md[] = $piped ? 'The operator works on its input: the value before `|`.' : 'The operator takes no input: it is called on its own, not after `|`.';
+                $md[] = $piped ? $this->t( 'The operator works on its input: the value before `|`.' ) : $this->t( 'The operator takes no input: it is called on its own, not after `|`.' );
                 $md[] = '';
             }
-            $md[] = '## Example';
+            $md[] = $this->t( '## Example' );
             $md[] = '';
-            $md[] = 'Built from the parameter list above; the values are placeholders (the operator\'s template hints decide whether it takes an input).';
+            $md[] = $this->t( 'Built from the parameter list above; the values are placeholders (the operator\'s template hints decide whether it takes an input).' );
             $md[] = '';
             $md[] = '```tpl';
             $md[] = self::operatorCall( $name, $params, $piped );
@@ -340,26 +477,28 @@ class expHelpExamplesGenerator
             $md[] = '';
             $use = $this->templateUse( 'op:' . $name );
             $this->appendUse( $md, $use );
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All template operators](README.md)';
-            $md[] = '- [Templates and design](../../guides/templates-and-design.md)';
-            $md[] = '- [A custom template operator](../cookbook/custom-template-operator.md)';
+            $md[] = $this->t( '- [All template operators](README.md)' );
+            $md[] = $this->t( '- [Templates and design](../../guides/templates-and-design.md)' );
+            $md[] = $this->t( '- [A custom template operator](../cookbook/custom-template-operator.md)' );
             $sources = array( $info['autoload'] );
             if ( $file )
                 $sources[] = $file;
-            $this->page( "$area/" . self::fileName( $name ) . '.md', "$name template operator",
-                         "The $name template operator: " . ( $params ? count( $params ) . ' parameter(s)' : 'no named parameters' ) . ', registered by ' . ( $info['class'] ?: 'a function' ) . '.',
+            $by = $info['class'] ?: $this->t( 'a function' );
+            $this->page( "$area/" . self::fileName( $name ) . '.md', $this->t( '{name} template operator', array( 'name' => $name ) ),
+                         $params ? $this->t( 'The {name} template operator: {count} parameter(s), registered by {by}.', array( 'name' => $name, 'count' => count( $params ), 'by' => $by ) )
+                                 : $this->t( 'The {name} template operator: no named parameters, registered by {by}.', array( 'name' => $name, 'by' => $by ) ),
                          array( $name, 'template operator', 'operator', 'tpl', (string)$info['class'] ), $sources, $md );
-            $rows[] = '| [' . $name . '](' . self::fileName( $name ) . '.md) | ' . self::cell( (string)$info['class'] ) . ' | ' . ( $params === null ? '?' : count( $params ) ) . ' | ' . ( $use ? 'yes' : '' ) . ' |';
+            $rows[] = '| [' . $name . '](' . self::fileName( $name ) . '.md) | ' . self::cell( (string)$info['class'] ) . ' | ' . ( $params === null ? '?' : count( $params ) ) . ' | ' . ( $use ? $this->t( 'yes' ) : '' ) . ' |';
             ++$this->counts[$area];
         }
-        $md = array( '# Template operators', '',
-                     'Every operator the kernel, its libraries and the bundled extensions register (the `$eZTemplateOperatorArray` of each `eztemplateautoload.php`, and `settings/template.ini` `[PHP] PHPOperatorList[]`), with its parameters and an example. "Used in" says whether a shipped template uses it; its page quotes the first use.', '',
-                     count( $operators ) . ' operators.', '',
-                     '| Operator | Class | Parameters | Used in a shipped template |', '|---|---|---|---|' );
+        $md = array( $this->t( '# Template operators' ), '',
+                     $this->t( 'Every operator the kernel, its libraries and the bundled extensions register (the `$eZTemplateOperatorArray` of each `eztemplateautoload.php`, and `settings/template.ini` `[PHP] PHPOperatorList[]`), with its parameters and an example. "Used in" says whether a shipped template uses it; its page quotes the first use.' ), '',
+                     $this->t( '{count} operators.', array( 'count' => count( $operators ) ) ), '',
+                     $this->t( '| Operator | Class | Parameters | Used in a shipped template |' ), '|---|---|---|---|' );
         $md = array_merge( $md, $rows );
-        $this->index( $area, 'Template operators', 'Every registered template operator with its parameters, an example call and its first use in a shipped template.', $md, $this->templateAutoloadFiles() );
+        $this->index( $area, $this->t( 'Template operators' ), $this->t( 'Every registered template operator with its parameters, an example call and its first use in a shipped template.' ), $md, $this->templateAutoloadFiles() );
     }
 
     /**
@@ -592,31 +731,31 @@ class expHelpExamplesGenerator
         foreach ( $functions as $name => $info )
         {
             $file = $info['class'] !== null ? $this->classFile( $info['class'] ) : null;
-            $md = array( "# The $name template function", '' );
-            $md[] = 'Registered in `' . $info['autoload'] . '`' . ( $info['class'] !== null ? ' by the class `' . $info['class'] . '`' . ( $file ? ' (`' . $file . '`)' : '' ) : '' ) . '.';
+            $md = array( $this->t( '# The {name} template function', array( 'name' => $name ) ), '' );
+            $md[] = $this->registeredIn( $info['autoload'], $info['class'], $file );
             if ( $info['siblings'] )
-                $md[] = 'The same class also handles: ' . implode( ', ', array_map( function ( $n ) { return '[' . $n . '](' . self::fileName( $n ) . '.md)'; }, $info['siblings'] ) ) . '.';
+                $md[] = $this->t( 'The same class also handles: {list}.', array( 'list' => implode( ', ', array_map( function ( $n ) { return '[' . $n . '](' . self::fileName( $n ) . '.md)'; }, $info['siblings'] ) ) ) );
             $md[] = '';
             if ( $info['attributes'] )
             {
-                $md[] = '## Inner functions';
+                $md[] = $this->t( '## Inner functions' );
                 $md[] = '';
-                $md[] = 'Used inside the block: ' . implode( ', ', array_map( function ( $a ) { return '`{' . $a . '}`'; }, $info['attributes'] ) ) . '.';
+                $md[] = $this->t( 'Used inside the block: {list}.', array( 'list' => implode( ', ', array_map( function ( $a ) { return '`{' . $a . '}`'; }, $info['attributes'] ) ) ) );
                 $md[] = '';
             }
             if ( $info['rule'] )
             {
-                $md[] = '## How it finds its template';
+                $md[] = $this->t( '## How it finds its template' );
                 $md[] = '';
-                $md[] = 'From the forward rule in `eZObjectForwardInit()` (`kernel/common/eztemplateautoload.php`):';
+                $md[] = $this->t( 'From the forward rule in `eZObjectForwardInit()` (`kernel/common/eztemplateautoload.php`):' );
                 $md[] = '';
-                $md[] = '| Key | Value |';
+                $md[] = $this->t( '| Key | Value |' );
                 $md[] = '|---|---|';
                 foreach ( array( 'template_root', 'input_name', 'output_name', 'namespace', 'use_views' ) as $key )
                     if ( isset( $info['rule'][$key] ) )
                         $md[] = '| `' . $key . '` | ' . self::code( self::export( $info['rule'][$key] ) ) . ' |';
                 if ( isset( $info['rule']['attribute_keys'] ) && is_array( $info['rule']['attribute_keys'] ) )
-                    $md[] = '| override match keys | ' . implode( ', ', array_map( function ( $k ) { return '`' . $k . '`'; }, array_keys( $info['rule']['attribute_keys'] ) ) ) . ' |';
+                    $md[] = '| ' . $this->t( 'override match keys' ) . ' | ' . implode( ', ', array_map( function ( $k ) { return '`' . $k . '`'; }, array_keys( $info['rule']['attribute_keys'] ) ) ) . ' |';
                 $md[] = '';
                 if ( isset( $info['rule']['input_name'] ) )
                 {
@@ -624,30 +763,30 @@ class expHelpExamplesGenerator
                     $md[] = '{' . $name . ' ' . $info['rule']['input_name'] . '=$' . $info['rule']['input_name'] . ( !empty( $info['rule']['use_views'] ) ? ' view=' . ( is_string( $info['rule']['use_views'] ) ? $info['rule']['use_views'] : 'view' ) : '' ) . '}';
                     $md[] = '```';
                     $md[] = '';
-                    $md[] = 'The variable name is the rule\'s `input_name`; the value is a placeholder.';
+                    $md[] = $this->t( 'The variable name is the rule\'s `input_name`; the value is a placeholder.' );
                     $md[] = '';
                 }
             }
             $use = $this->templateUse( 'fn:' . $name );
             $this->appendUse( $md, $use );
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All template functions](README.md)';
-            $md[] = '- [Template operators](../template-operators/README.md)';
-            $md[] = '- [Templates and design](../../guides/templates-and-design.md)';
+            $md[] = $this->t( '- [All template functions](README.md)' );
+            $md[] = $this->t( '- [Template operators](../template-operators/README.md)' );
+            $md[] = $this->t( '- [Templates and design](../../guides/templates-and-design.md)' );
             $sources = array( $info['autoload'] );
             if ( $file )
                 $sources[] = $file;
-            $this->page( "$area/" . self::fileName( $name ) . '.md', "$name template function",
-                         "The {$name} template function, registered by " . ( $info['class'] ?: 'a function' ) . '.',
+            $this->page( "$area/" . self::fileName( $name ) . '.md', $this->t( '{name} template function', array( 'name' => $name ) ),
+                         $this->t( 'The {name} template function, registered by {by}.', array( 'name' => $name, 'by' => $info['class'] ?: $this->t( 'a function' ) ) ),
                          array( $name, 'template function', 'tpl', (string)$info['class'] ), $sources, $md );
-            $rows[] = '| [' . $name . '](' . self::fileName( $name ) . '.md) | ' . self::cell( (string)$info['class'] ) . ' | ' . ( $use ? 'yes' : '' ) . ' |';
+            $rows[] = '| [' . $name . '](' . self::fileName( $name ) . '.md) | ' . self::cell( (string)$info['class'] ) . ' | ' . ( $use ? $this->t( 'yes' ) : '' ) . ' |';
             ++$this->counts[$area];
         }
-        $md = array_merge( array( '# Template functions', '',
-                     'Every template function (`{name ...}` and `{name}...{/name}`) the kernel and the bundled extensions register (`$eZTemplateFunctionArray` in each `eztemplateautoload.php`), with its first use in a shipped template.', '',
-                     count( $functions ) . ' functions.', '', '| Function | Class | Used in a shipped template |', '|---|---|---|' ), $rows );
-        $this->index( $area, 'Template functions', 'Every registered template function with its class and its first use in a shipped template.', $md, $this->templateAutoloadFiles() );
+        $md = array_merge( array( $this->t( '# Template functions' ), '',
+                     $this->t( 'Every template function (`{name ...}` and `{name}...{/name}`) the kernel and the bundled extensions register (`$eZTemplateFunctionArray` in each `eztemplateautoload.php`), with its first use in a shipped template.' ), '',
+                     $this->t( '{count} functions.', array( 'count' => count( $functions ) ) ), '', $this->t( '| Function | Class | Used in a shipped template |' ), '|---|---|---|' ), $rows );
+        $this->index( $area, $this->t( 'Template functions' ), $this->t( 'Every registered template function with its class and its first use in a shipped template.' ), $md, $this->templateAutoloadFiles() );
     }
 
     // ------------------------------------------------------------------------------------------------------------
@@ -683,26 +822,33 @@ class expHelpExamplesGenerator
                 $params = isset( $def['parameters'] ) && is_array( $def['parameters'] ) ? $def['parameters'] : array();
                 $call = isset( $def['call_method'] ) && is_array( $def['call_method'] ) ? $def['call_method'] : array();
                 $md = array( "# fetch( '$module', '$fname' )", '' );
-                $md[] = 'Defined in `' . $data['file'] . '`' . ( isset( $call['class'], $call['method'] ) ? '; it calls `' . $call['class'] . '::' . $call['method'] . '()`' . ( ( $cf = $this->classFile( $call['class'] ) ) ? ' (`' . $cf . '`)' : '' ) : '' ) . '.';
+                if ( isset( $call['class'], $call['method'] ) )
+                {
+                    $cf = $this->classFile( $call['class'] );
+                    $vars = array( 'file' => $data['file'], 'call' => $call['class'] . '::' . $call['method'] . '()', 'class_file' => (string)$cf );
+                    $md[] = $cf ? $this->t( 'Defined in `{file}`; it calls `{call}` (`{class_file}`).', $vars ) : $this->t( 'Defined in `{file}`; it calls `{call}`.', $vars );
+                }
+                else
+                    $md[] = $this->t( 'Defined in `{file}`.', array( 'file' => $data['file'] ) );
                 if ( !empty( $def['operation_types'] ) )
-                    $md[] = 'Operation type: ' . implode( ', ', array_map( 'strval', (array)$def['operation_types'] ) ) . '.';
+                    $md[] = $this->t( 'Operation type: {list}.', array( 'list' => implode( ', ', array_map( 'strval', (array)$def['operation_types'] ) ) ) );
                 $md[] = '';
-                $md[] = '## Parameters';
+                $md[] = $this->t( '## Parameters' );
                 $md[] = '';
                 if ( !$params )
-                    $md[] = 'None.';
+                    $md[] = $this->t( 'None.' );
                 else
                 {
-                    $md[] = '| Parameter | Type | Required | Default |';
+                    $md[] = $this->t( '| Parameter | Type | Required | Default |' );
                     $md[] = '|---|---|---|---|';
                     foreach ( $params as $p )
                         if ( isset( $p['name'] ) )
-                            $md[] = '| `' . $p['name'] . '` | ' . self::cell( isset( $p['type'] ) ? $p['type'] : '' ) . ' | ' . ( !empty( $p['required'] ) ? 'yes' : 'no' ) . ' | ' . ( array_key_exists( 'default', $p ) ? self::code( self::export( $p['default'] ) ) : '' ) . ' |';
+                            $md[] = '| `' . $p['name'] . '` | ' . self::cell( isset( $p['type'] ) ? $p['type'] : '' ) . ' | ' . ( !empty( $p['required'] ) ? $this->t( 'yes' ) : $this->t( 'no' ) ) . ' | ' . ( array_key_exists( 'default', $p ) ? self::code( self::export( $p['default'] ) ) : '' ) . ' |';
                 }
                 $md[] = '';
-                $md[] = '## Example';
+                $md[] = $this->t( '## Example' );
                 $md[] = '';
-                $md[] = 'In a template (the values are placeholders of each parameter\'s type):';
+                $md[] = $this->t( 'In a template (the values are placeholders of each parameter\'s type):' );
                 $md[] = '';
                 $required = array_values( array_filter( $params, function ( $p ) { return !empty( $p['required'] ); } ) );
                 // with no required parameter the short example names the first one
@@ -711,12 +857,12 @@ class expHelpExamplesGenerator
                 $md[] = '{def $result = ' . self::fetchCall( $module, $fname, $minimal ) . '}';
                 if ( count( $minimal ) < count( $params ) )
                 {
-                    $md[] = '{* with every parameter *}';
+                    $md[] = $this->t( '{* with every parameter *}' );
                     $md[] = '{def $all = ' . self::fetchCall( $module, $fname, $params ) . '}';
                 }
                 $md[] = '```';
                 $md[] = '';
-                $md[] = 'In PHP, the same function through the function handler (`lib/ezutils/classes/ezfunctionhandler.php`):';
+                $md[] = $this->t( 'In PHP, the same function through the function handler (`lib/ezutils/classes/ezfunctionhandler.php`):' );
                 $md[] = '';
                 $md[] = '```php';
                 $phpArgs = array();
@@ -726,29 +872,29 @@ class expHelpExamplesGenerator
                 $md[] = '```';
                 $md[] = '';
                 $this->appendUse( $md, $this->templateUse( "fetch:$module/$fname" ) );
-                $md[] = '## Related';
+                $md[] = $this->t( '## Related' );
                 $md[] = '';
-                $md[] = "- [All fetch functions of $module](README.md)";
-                $md[] = "- [The views of the $module module](../../module-views/" . self::fileName( $module ) . '/README.md)';
-                $md[] = '- [The fetch template operator](../../template-operators/fetch.md)';
+                $md[] = $this->t( '- [All fetch functions of {module}](README.md)', array( 'module' => $module ) );
+                $md[] = $this->t( '- [The views of the {module} module](../../module-views/{dir}/README.md)', array( 'module' => $module, 'dir' => self::fileName( $module ) ) );
+                $md[] = $this->t( '- [The fetch template operator](../../template-operators/fetch.md)' );
                 $sources = array( $data['file'] );
                 if ( isset( $call['class'] ) && ( $cf = $this->classFile( $call['class'] ) ) )
                     $sources[] = $cf;
                 $this->page( "$area/" . self::fileName( $module ) . '/' . self::fileName( $fname ) . '.md', "fetch( '$module', '$fname' )",
-                             "The fetch function $fname of the $module module: " . count( $params ) . ' parameter(s), ' . count( $required ) . ' required.',
+                             $this->t( 'The fetch function {function} of the {module} module: {count} parameter(s), {required} required.', array( 'function' => $fname, 'module' => $module, 'count' => count( $params ), 'required' => count( $required ) ) ),
                              array( 'fetch', $module, $fname, 'fetch function', 'template' ), $sources, $md );
                 $rows[] = '| [' . $fname . '](' . self::fileName( $fname ) . '.md) | ' . implode( ', ', array_map( function ( $p ) { return '`' . $p['name'] . '`' . ( !empty( $p['required'] ) ? '*' : '' ); }, array_filter( $params, function ( $p ) { return isset( $p['name'] ); } ) ) ) . ' |';
                 ++$this->counts[$area];
             }
-            $md = array_merge( array( "# Fetch functions of the $module module", '', 'Defined in `' . $data['file'] . '`. A parameter marked * is required.', '',
-                                      '| Function | Parameters |', '|---|---|' ), $rows );
-            $this->index( "$area/" . self::fileName( $module ), "Fetch functions of $module", "The fetch functions of the $module module with their parameters.", $md, array( $data['file'] ), 10 );
+            $md = array_merge( array( $this->t( '# Fetch functions of the {module} module', array( 'module' => $module ) ), '', $this->t( 'Defined in `{file}`. A parameter marked * is required.', array( 'file' => $data['file'] ) ), '',
+                                      $this->t( '| Function | Parameters |' ), '|---|---|' ), $rows );
+            $this->index( "$area/" . self::fileName( $module ), $this->t( 'Fetch functions of {module}', array( 'module' => $module ) ), $this->t( 'The fetch functions of the {module} module with their parameters.', array( 'module' => $module ) ), $md, array( $data['file'] ), 10 );
             $moduleRows[] = '| [' . $module . '](' . self::fileName( $module ) . '/README.md) | ' . count( $rows ) . ' | `' . $data['file'] . '` |';
         }
-        $md = array_merge( array( '# Fetch functions', '',
-                                  'Every `fetch( \'module\', \'function\', hash( ... ) )` the kernel and the bundled extensions offer, from their `function_definition.php`: the parameters, an example in a template and in PHP, and the first use in a shipped template.', '',
-                                  '| Module | Functions | Defined in |', '|---|---|---|' ), $moduleRows );
-        $this->index( $area, 'Fetch functions', 'Every fetch function by module, with parameters and examples in templates and PHP.', $md, array() );
+        $md = array_merge( array( $this->t( '# Fetch functions' ), '',
+                                  $this->t( 'Every `fetch( \'module\', \'function\', hash( ... ) )` the kernel and the bundled extensions offer, from their `function_definition.php`: the parameters, an example in a template and in PHP, and the first use in a shipped template.' ), '',
+                                  $this->t( '| Module | Functions | Defined in |' ), '|---|---|---|' ), $moduleRows );
+        $this->index( $area, $this->t( 'Fetch functions' ), $this->t( 'Every fetch function by module, with parameters and examples in templates and PHP.' ), $md, array() );
     }
 
     /**
@@ -886,9 +1032,10 @@ class expHelpExamplesGenerator
                 $functions = isset( $def['functions'] ) ? $def['functions'] : null;
                 $url = '/' . $module . '/' . $view . implode( '', array_map( function ( $p ) { return '/<' . $p . '>'; }, $params ) );
                 $md = array( "# /$module/$view", '' );
-                $md[] = 'A view of the `' . $module . '` module, defined in `' . $data['file'] . '`' . ( isset( $def['script'] ) ? ' and run by `' . $dir . '/' . $def['script'] . '`' : '' ) . '.';
+                $md[] = isset( $def['script'] ) ? $this->t( 'A view of the `{module}` module, defined in `{file}` and run by `{script}`.', array( 'module' => $module, 'file' => $data['file'], 'script' => $dir . '/' . $def['script'] ) )
+                                                : $this->t( 'A view of the `{module}` module, defined in `{file}`.', array( 'module' => $module, 'file' => $data['file'] ) );
                 $md[] = '';
-                $md[] = '## Address';
+                $md[] = $this->t( '## Address' );
                 $md[] = '';
                 $md[] = '```text';
                 $md[] = $url . implode( '', array_map( function ( $k, $v ) { return '/(' . $k . ')/<' . $v . '>'; }, array_keys( $unordered ), $unordered ) );
@@ -896,37 +1043,38 @@ class expHelpExamplesGenerator
                 $md[] = '';
                 if ( $params )
                 {
-                    $md[] = 'Ordered parameters, in this order after the view name: ' . implode( ', ', array_map( function ( $p ) { return '`' . $p . '`'; }, $params ) ) . '.';
+                    $md[] = $this->t( 'Ordered parameters, in this order after the view name: {list}.', array( 'list' => implode( ', ', array_map( function ( $p ) { return '`' . $p . '`'; }, $params ) ) ) );
                     $md[] = '';
                 }
                 if ( $unordered )
                 {
-                    $md[] = 'Unordered parameters, in any order as `/(name)/value`: ' . implode( ', ', array_map( function ( $k, $v ) { return '`(' . $k . ')` sets `' . $v . '`'; }, array_keys( $unordered ), $unordered ) ) . '.';
+                    $sets = $this->t( '`({name})` sets `{variable}`' );
+                    $md[] = $this->t( 'Unordered parameters, in any order as `/(name)/value`: {list}.', array( 'list' => implode( ', ', array_map( function ( $k, $v ) use ( $sets ) { return strtr( $sets, array( '{name}' => $k, '{variable}' => $v ) ); }, array_keys( $unordered ), $unordered ) ) ) );
                     $md[] = '';
                 }
-                $md[] = '## Who may open it';
+                $md[] = $this->t( '## Who may open it' );
                 $md[] = '';
-                $md = array_merge( $md, self::viewAccess( $module, $view, $functions, $data['functions'], in_array( "$module/$view", $omit, true ) || in_array( $module, $omit, true ) ) );
+                $md = array_merge( $md, $this->viewAccess( $module, $view, $functions, $data['functions'], in_array( "$module/$view", $omit, true ) || in_array( $module, $omit, true ) ) );
                 $md[] = '';
                 $details = array();
                 foreach ( array( 'default_navigation_part' => 'Navigation part', 'ui_context' => 'UI context', 'ui_component' => 'UI component' ) as $key => $label )
                     if ( isset( $def[$key] ) && is_scalar( $def[$key] ) )
-                        $details[] = '| ' . $label . ' | `' . $def[$key] . '` |';
+                        $details[] = '| ' . $this->t( $label ) . ' | `' . $def[$key] . '` |';
                 foreach ( array( 'single_post_actions' => 'Single POST actions', 'post_actions' => 'POST actions', 'post_action_parameters' => 'POST action parameters', 'post_value_action_parameters' => 'POST value action parameters' ) as $key => $label )
                     if ( !empty( $def[$key] ) && is_array( $def[$key] ) )
-                        $details[] = '| ' . $label . ' | ' . self::cell( self::flatten( $def[$key] ) ) . ' |';
+                        $details[] = '| ' . $this->t( $label ) . ' | ' . self::cell( self::flatten( $def[$key] ) ) . ' |';
                 if ( $details )
                 {
-                    $md[] = '## Details';
+                    $md[] = $this->t( '## Details' );
                     $md[] = '';
-                    $md[] = '| Key | Value |';
+                    $md[] = $this->t( '| Key | Value |' );
                     $md[] = '|---|---|';
                     $md = array_merge( $md, $details );
                     $md[] = '';
                 }
-                $md[] = '## Example';
+                $md[] = $this->t( '## Example' );
                 $md[] = '';
-                $md[] = 'A link in a template (`ezurl` adds the siteaccess and quotes the address); the parameter values are placeholders:';
+                $md[] = $this->t( 'A link in a template (`ezurl` adds the siteaccess and quotes the address); the parameter values are placeholders:' );
                 $md[] = '';
                 $md[] = '```tpl';
                 $sample = '/' . $module . '/' . $view;
@@ -940,38 +1088,38 @@ class expHelpExamplesGenerator
                 }
                 $md[] = '```';
                 $md[] = '';
-                $md[] = 'From PHP, the redirect a view gives after it has done its work:';
+                $md[] = $this->t( 'From PHP, the redirect a view gives after it has done its work:' );
                 $md[] = '';
                 $md[] = '```php';
                 $md[] = "return \$Module->redirectTo( '$sample' );";
                 $md[] = '```';
                 $md[] = '';
-                $md[] = '## Related';
+                $md[] = $this->t( '## Related' );
                 $md[] = '';
-                $md[] = "- [All views of $module](README.md)";
-                $md[] = "- [The policies of $module](../../policies/" . self::fileName( $module ) . '.md)';
-                $md[] = '- [A custom module and view](../../cookbook/custom-module-view.md)';
+                $md[] = $this->t( '- [All views of {module}](README.md)', array( 'module' => $module ) );
+                $md[] = $this->t( '- [The policies of {module}](../../policies/{file}.md)', array( 'module' => $module, 'file' => self::fileName( $module ) ) );
+                $md[] = $this->t( '- [A custom module and view](../../cookbook/custom-module-view.md)' );
                 $sources = array( $data['file'] );
                 if ( isset( $def['script'] ) && in_array( $dir . '/' . $def['script'], $this->files, true ) )
                     $sources[] = $dir . '/' . $def['script'];
                 $this->page( "$area/" . self::fileName( $module ) . '/' . self::fileName( $view ) . '.md', "/$module/$view",
-                             "The view $module/$view: its address, parameters and the policy functions it needs.",
+                             $this->t( 'The view {view}: its address, parameters and the policy functions it needs.', array( 'view' => "$module/$view" ) ),
                              array( $module, $view, "$module/$view", 'module', 'view', 'URL' ), $sources, $md );
-                $rows[] = '| [' . $view . '](' . self::fileName( $view ) . '.md) | `' . self::cell( $url ) . '` | ' . self::cell( self::functionsText( $functions ) ) . ' |';
+                $rows[] = '| [' . $view . '](' . self::fileName( $view ) . '.md) | `' . self::cell( $url ) . '` | ' . self::cell( $this->functionsText( $functions ) ) . ' |';
                 ++$this->counts[$area];
             }
             $name = isset( $data['module']['name'] ) && is_string( $data['module']['name'] ) ? $data['module']['name'] : $module;
-            $md = array_merge( array( "# The $module module", '', 'Name `' . $name . '`, defined in `' . $data['file'] . '`. ' . count( $rows ) . ' views.', '',
-                                      '| View | Address | Policy functions |', '|---|---|---|' ), $rows );
+            $md = array_merge( array( $this->t( '# The {module} module', array( 'module' => $module ) ), '', $this->t( 'Name `{name}`, defined in `{file}`. {count} views.', array( 'name' => $name, 'file' => $data['file'], 'count' => count( $rows ) ) ), '',
+                                      $this->t( '| View | Address | Policy functions |' ), '|---|---|---|' ), $rows );
             $md[] = '';
-            $md[] = '- [The policies of this module](../../policies/' . self::fileName( $module ) . '.md)';
-            $this->index( "$area/" . self::fileName( $module ), "The $module module", "The views of the $module module: addresses, parameters and policy functions.", $md, array( $data['file'] ), 10 );
+            $md[] = $this->t( '- [The policies of this module](../../policies/{file}.md)', array( 'file' => self::fileName( $module ) ) );
+            $this->index( "$area/" . self::fileName( $module ), $this->t( 'The {module} module', array( 'module' => $module ) ), $this->t( 'The views of the {module} module: addresses, parameters and policy functions.', array( 'module' => $module ) ), $md, array( $data['file'] ), 10 );
             $moduleRows[] = '| [' . $module . '](' . self::fileName( $module ) . '/README.md) | ' . count( $rows ) . ' | `' . $data['file'] . '` |';
         }
-        $md = array_merge( array( '# Module views', '',
-                                  'Every module of the kernel and the bundled extensions, from their `module.php`: each view\'s address with its ordered and unordered parameters, the policy functions it needs, and a link to it from a template.', '',
-                                  '| Module | Views | Defined in |', '|---|---|---|' ), $moduleRows );
-        $this->index( $area, 'Module views', 'Every module view: address pattern, parameters, unordered parameters and required policies.', $md, array() );
+        $md = array_merge( array( $this->t( '# Module views' ), '',
+                                  $this->t( 'Every module of the kernel and the bundled extensions, from their `module.php`: each view\'s address with its ordered and unordered parameters, the policy functions it needs, and a link to it from a template.' ), '',
+                                  $this->t( '| Module | Views | Defined in |' ), '|---|---|---|' ), $moduleRows );
+        $this->index( $area, $this->t( 'Module views' ), $this->t( 'Every module view: address pattern, parameters, unordered parameters and required policies.' ), $md, array() );
     }
 
     /**
@@ -979,18 +1127,18 @@ class expHelpExamplesGenerator
      *
      * @return string[]
      */
-    protected static function viewAccess( $module, $view, $functions, $moduleFunctions, $omitted )
+    protected function viewAccess( $module, $view, $functions, $moduleFunctions, $omitted )
     {
         $md = array();
         if ( $omitted )
-            $md[] = 'Listed in `settings/site.ini` `[RoleSettings] PolicyOmitList[]`: no policy is checked, everyone may open it.';
+            $md[] = $this->t( 'Listed in `settings/site.ini` `[RoleSettings] PolicyOmitList[]`: no policy is checked, everyone may open it.' );
         if ( $functions === null || $functions === array() )
         {
-            $md[] = 'The view names no policy function, so the user needs a policy for the whole module: `' . $module . '/*` (every function of the module) in one of the roles assigned to them.';
+            $md[] = $this->t( 'The view names no policy function, so the user needs a policy for the whole module: `{module}/*` (every function of the module) in one of the roles assigned to them.', array( 'module' => $module ) );
             return $md;
         }
         $list = is_array( $functions ) ? $functions : array( $functions );
-        $md[] = 'The user needs ' . ( count( $list ) > 1 ? 'all of these (the entries are combined with "and"); an entry with "or" needs one of its functions' : 'this policy function' ) . ':';
+        $md[] = count( $list ) > 1 ? $this->t( 'The user needs all of these (the entries are combined with "and"); an entry with "or" needs one of its functions:' ) : $this->t( 'The user needs this policy function:' );
         $md[] = '';
         foreach ( $list as $expression )
         {
@@ -999,11 +1147,11 @@ class expHelpExamplesGenerator
             $words = preg_split( '/\s+(or|and)\s+/', trim( $expression ), -1, PREG_SPLIT_DELIM_CAPTURE );
             $out = array();
             foreach ( $words as $word )
-                $out[] = ( $word === 'or' || $word === 'and' ) ? $word : '[`' . $module . '/' . trim( $word, '() ' ) . '`](../../policies/' . self::fileName( $module ) . '.md#' . self::anchor( trim( $word, '() ' ) ) . ')';
+                $out[] = ( $word === 'or' || $word === 'and' ) ? $this->t( $word ) : '[`' . $module . '/' . trim( $word, '() ' ) . '`](../../policies/' . self::fileName( $module ) . '.md#' . self::anchor( trim( $word, '() ' ) ) . ')';
             $md[] = '- ' . implode( ' ', $out );
         }
         $md[] = '';
-        $md[] = 'A policy on `' . $module . '/*` (every function) also grants it; limitations of the policy (section, subtree, class ...) still apply where the view checks them.';
+        $md[] = $this->t( 'A policy on `{module}/*` (every function) also grants it; limitations of the policy (section, subtree, class ...) still apply where the view checks them.', array( 'module' => $module ) );
         return $md;
     }
 
@@ -1011,10 +1159,10 @@ class expHelpExamplesGenerator
      * @param mixed $functions
      * @return string
      */
-    protected static function functionsText( $functions )
+    protected function functionsText( $functions )
     {
         if ( $functions === null || $functions === array() )
-            return '(module)';
+            return $this->t( '(module)' );
         return implode( '; ', array_filter( (array)$functions, 'is_string' ) );
     }
 
@@ -1041,17 +1189,17 @@ class expHelpExamplesGenerator
                         if ( is_string( $expression ) )
                             foreach ( preg_split( '/\s+(?:or|and)\s+/', $expression ) as $word )
                                 $usedBy[trim( $word, '() ' )][] = $view;
-            $md = array( "# Policies of the $module module", '' );
-            $md[] = 'The policy functions of `' . $module . '` and their limitations, from `$FunctionList` in `' . $data['file'] . '`. In the administration they are chosen under Roles and policies; a policy on `' . $module . '/*` grants every function.';
+            $md = array( $this->t( '# Policies of the {module} module', array( 'module' => $module ) ), '' );
+            $md[] = $this->t( 'The policy functions of `{module}` and their limitations, from `$FunctionList` in `{file}`. In the administration they are chosen under Roles and policies; a policy on `{module}/*` grants every function.', array( 'module' => $module, 'file' => $data['file'] ) );
             $md[] = '';
             if ( !empty( $data['stateLimitations'] ) )
             {
-                $md[] = 'Some functions also take one limitation per object state group of the site, named `StateGroup_<group identifier>` (`eZContentObjectStateGroup::limitations()`, read from the database, so not listed below).';
+                $md[] = $this->t( 'Some functions also take one limitation per object state group of the site, named `StateGroup_<group identifier>` (`eZContentObjectStateGroup::limitations()`, read from the database, so not listed below).' );
                 $md[] = '';
             }
             if ( !$functions )
             {
-                $md[] = 'The module defines no policy functions: a role needs `' . $module . '/*` for its views (unless they are in `PolicyOmitList[]`).';
+                $md[] = $this->t( 'The module defines no policy functions: a role needs `{module}/*` for its views (unless they are in `PolicyOmitList[]`).', array( 'module' => $module ) );
                 $md[] = '';
             }
             ksort( $functions, SORT_STRING );
@@ -1063,14 +1211,14 @@ class expHelpExamplesGenerator
                 {
                     $views = array_values( array_unique( $usedBy[$fname] ) );
                     sort( $views, SORT_STRING );
-                    $md[] = 'Checked by the views: ' . implode( ', ', array_map( function ( $v ) use ( $module ) { return '[' . $v . '](../module-views/' . self::fileName( $module ) . '/' . self::fileName( $v ) . '.md)'; }, $views ) ) . '.';
+                    $md[] = $this->t( 'Checked by the views: {list}.', array( 'list' => implode( ', ', array_map( function ( $v ) use ( $module ) { return '[' . $v . '](../module-views/' . self::fileName( $module ) . '/' . self::fileName( $v ) . '.md)'; }, $views ) ) ) );
                 }
                 else
-                    $md[] = 'No view of the module names it; code checks it (`eZUser::hasAccessTo( \'' . $module . '\', \'' . $fname . '\' )` or the `user/has_access_to` fetch).';
+                    $md[] = $this->t( 'No view of the module names it; code checks it ({call} or the `user/has_access_to` fetch).', array( 'call' => '`eZUser::hasAccessTo( \'' . $module . '\', \'' . $fname . '\' )`' ) );
                 $md[] = '';
                 if ( is_array( $limitations ) && $limitations )
                 {
-                    $md[] = '| Limitation | Values come from |';
+                    $md[] = $this->t( '| Limitation | Values come from |' );
                     $md[] = '|---|---|';
                     ksort( $limitations, SORT_STRING );
                     foreach ( $limitations as $lname => $lim )
@@ -1081,9 +1229,9 @@ class expHelpExamplesGenerator
                             if ( isset( $lim['class'], $lim['function'] ) && is_string( $lim['class'] ) && is_string( $lim['function'] ) )
                                 $from = '`' . $lim['class'] . '::' . $lim['function'] . '()`';
                             else if ( isset( $lim['extension'] ) )
-                                $from = 'extension ' . self::cell( self::flatten( $lim['extension'] ) );
+                                $from = $this->t( 'extension {name}', array( 'name' => self::cell( self::flatten( $lim['extension'] ) ) ) );
                             else if ( !empty( $lim['values'] ) && is_array( $lim['values'] ) )
-                                $from = 'fixed: ' . self::cell( implode( ', ', array_map( function ( $v ) { return is_array( $v ) && isset( $v['Name'] ) ? $v['Name'] . ( isset( $v['value'] ) ? ' (' . $v['value'] . ')' : '' ) : self::export( $v ); }, $lim['values'] ) ) );
+                                $from = $this->t( 'fixed:' ) . ' ' . self::cell( implode( ', ', array_map( function ( $v ) { return is_array( $v ) && isset( $v['Name'] ) ? $v['Name'] . ( isset( $v['value'] ) ? ' (' . $v['value'] . ')' : '' ) : self::export( $v ); }, $lim['values'] ) ) );
                         }
                         $md[] = '| ' . self::cell( (string)$lname ) . ' | ' . $from . ' |';
                     }
@@ -1091,11 +1239,11 @@ class expHelpExamplesGenerator
                 }
                 else
                 {
-                    $md[] = 'No limitations: the policy is all or nothing.';
+                    $md[] = $this->t( 'No limitations: the policy is all or nothing.' );
                     $md[] = '';
                 }
                 $md[] = '```php';
-                $md[] = '// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))';
+                $md[] = $this->t( '// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))' );
                 $md[] = "\$role = eZRole::fetchByName( 'Editor' );";
                 $md[] = "\$role->appendPolicy( '$module', '$fname'" . ( is_array( $limitations ) && $limitations ? ', array( ' . "'" . key( $limitations ) . "' => array( /* values */ ) )" : '' ) . ' );';
                 $md[] = '```';
@@ -1107,21 +1255,21 @@ class expHelpExamplesGenerator
                 $md[] = '```';
                 $md[] = '';
             }
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All modules\' policies](README.md)';
-            $md[] = '- [The views of ' . $module . '](../module-views/' . self::fileName( $module ) . '/README.md)';
-            $md[] = '- [Roles and policies](../../guides/roles-and-policies.md)';
-            $this->page( "$area/" . self::fileName( $module ) . '.md', "Policies of the $module module",
-                         "The policy functions of the $module module (" . count( $functions ) . ') and their limitations.',
+            $md[] = $this->t( '- [All modules\' policies](README.md)' );
+            $md[] = $this->t( '- [The views of {module}](../module-views/{dir}/README.md)', array( 'module' => $module, 'dir' => self::fileName( $module ) ) );
+            $md[] = $this->t( '- [Roles and policies](../../guides/roles-and-policies.md)' );
+            $this->page( "$area/" . self::fileName( $module ) . '.md', $this->t( 'Policies of the {module} module', array( 'module' => $module ) ),
+                         $this->t( 'The policy functions of the {module} module ({count}) and their limitations.', array( 'module' => $module, 'count' => count( $functions ) ) ),
                          array( $module, 'policy', 'policies', 'role', 'limitation', 'permission' ), array( $data['file'], 'kernel/classes/ezrole.php' ), $md );
-            $rows[] = '| [' . $module . '](' . self::fileName( $module ) . '.md) | ' . ( $functions ? implode( ', ', array_map( function ( $f ) { return '`' . $f . '`'; }, array_keys( $functions ) ) ) : '(none: `' . $module . '/*`)' ) . ' |';
+            $rows[] = '| [' . $module . '](' . self::fileName( $module ) . '.md) | ' . ( $functions ? implode( ', ', array_map( function ( $f ) { return '`' . $f . '`'; }, array_keys( $functions ) ) ) : $this->t( '(none: `{module}/*`)', array( 'module' => $module ) ) ) . ' |';
             ++$this->counts[$area];
         }
-        $md = array_merge( array( '# Policy functions and limitations', '',
-                                  'Every module\'s policy functions and the limitations each can carry, from `$FunctionList` in its `module.php`, with the views that check them and examples in PHP and templates.', '',
-                                  '| Module | Policy functions |', '|---|---|' ), $rows );
-        $this->index( $area, 'Policy functions and limitations', 'Every module\'s policy functions and limitations, with the views that check them.', $md, array( 'kernel/classes/ezrole.php' ) );
+        $md = array_merge( array( $this->t( '# Policy functions and limitations' ), '',
+                                  $this->t( 'Every module\'s policy functions and the limitations each can carry, from `$FunctionList` in its `module.php`, with the views that check them and examples in PHP and templates.' ), '',
+                                  $this->t( '| Module | Policy functions |' ), '|---|---|' ), $rows );
+        $this->index( $area, $this->t( 'Policy functions and limitations' ), $this->t( 'Every module\'s policy functions and limitations, with the views that check them.' ), $md, array( 'kernel/classes/ezrole.php' ) );
     }
 
     // ------------------------------------------------------------------------------------------------------------
@@ -1158,18 +1306,19 @@ class expHelpExamplesGenerator
                     $slug = $base . '-' . $i;
                 $used[strtolower( $slug )] = true;
                 $md = array( "# $ini [$block]", '' );
-                $md[] = 'The block `[' . $block . ']` of `' . $file . '`' . ( $ext !== null ? ' (extension ' . $ext . ')' : '' ) . ', with ' . count( $info['settings'] ) . ' setting(s).';
+                $vars = array( 'block' => $block, 'file' => $file, 'extension' => (string)$ext, 'count' => count( $info['settings'] ) );
+                $md[] = $ext !== null ? $this->t( 'The block `[{block}]` of `{file}` (extension {extension}), with {count} setting(s).', $vars ) : $this->t( 'The block `[{block}]` of `{file}`, with {count} setting(s).', $vars );
                 $md[] = '';
                 if ( $info['comment'] )
                 {
-                    $md = array_merge( $md, self::quote( $info['comment'] ) );
+                    $md = array_merge( $md, self::quote( $this->d( 'ini:' . $file . ' [' . $block . ']', $info['comment'] ) ) );
                     $md[] = '';
                 }
-                $md[] = 'Never edit `' . $file . '` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:';
+                $md[] = $this->t( 'Never edit `{file}` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:', array( 'file' => $file ) );
                 $md[] = '';
-                $md[] = '- `settings/override/' . $ini . '.append.php` for every siteaccess,';
-                $md[] = '- `settings/siteaccess/<siteaccess>/' . $ini . '.append.php` for one siteaccess,';
-                $md[] = '- `extension/<extension>/settings/' . $ini . '.append.php` in an extension (read when the extension is active).';
+                $md[] = $this->t( '- `settings/override/{ini}.append.php` for every siteaccess,', array( 'ini' => $ini ) );
+                $md[] = $this->t( '- `settings/siteaccess/<siteaccess>/{ini}.append.php` for one siteaccess,', array( 'ini' => $ini ) );
+                $md[] = $this->t( '- `extension/<extension>/settings/{ini}.append.php` in an extension (read when the extension is active).', array( 'ini' => $ini ) );
                 $md[] = '';
                 foreach ( $info['settings'] as $name => $setting )
                 {
@@ -1177,49 +1326,54 @@ class expHelpExamplesGenerator
                     $md[] = '';
                     if ( $setting['comment'] )
                     {
-                        $md = array_merge( $md, self::quote( $setting['comment'] ) );
+                        $md = array_merge( $md, self::quote( $this->d( 'ini:' . $file . ' [' . $block . '] ' . $name, $setting['comment'] ) ) );
                         $md[] = '';
                     }
-                    $md[] = 'Default: ' . self::iniDefaultText( $setting ) . '.';
+                    $md[] = $this->t( 'Default: {value}.', array( 'value' => $this->iniDefaultText( $setting ) ) );
                     $md[] = '';
                     $md[] = '```ini';
                     $md[] = '<?php /* #?ini charset="utf-8"?';
                     $md[] = '# settings/override/' . $ini . '.append.php';
                     $md[] = '[' . $block . ']';
-                    $md = array_merge( $md, self::iniOverrideLines( $name, $setting ) );
+                    $md = array_merge( $md, $this->iniOverrideLines( $name, $setting ) );
                     $md[] = '*/ ?>';
                     $md[] = '```';
                     $md[] = '';
                 }
-                $md[] = '## Related';
+                $md[] = $this->t( '## Related' );
                 $md[] = '';
-                $md[] = '- [All blocks of ' . $ini . '](README.md)';
-                $md[] = '- [All INI files](../README.md)';
-                $md[] = '- [The settings page](../../../guides/settings-page.md)';
+                $md[] = $this->t( '- [All blocks of {ini}](README.md)', array( 'ini' => $ini ) );
+                $md[] = $this->t( '- [All INI files](../README.md)' );
+                $md[] = $this->t( '- [The settings page](../../../guides/settings-page.md)' );
+                $list = implode( ', ', array_slice( array_keys( $info['settings'] ), 0, 8 ) ) . ( count( $info['settings'] ) > 8 ? ' ...' : '' );
                 $this->page( "$area/$folder/$slug.md", "$ini [$block]",
-                             "The settings of [$block] in $ini" . ( $ext !== null ? " ($ext)" : '' ) . ': ' . implode( ', ', array_slice( array_keys( $info['settings'] ), 0, 8 ) ) . ( count( $info['settings'] ) > 8 ? ' ...' : '' ),
+                             $ext !== null ? $this->t( 'The settings of [{block}] in {ini} ({extension}): {list}', array( 'block' => $block, 'ini' => $ini, 'extension' => $ext, 'list' => $list ) )
+                                           : $this->t( 'The settings of [{block}] in {ini}: {list}', array( 'block' => $block, 'ini' => $ini, 'list' => $list ) ),
                              array_merge( array( $ini, $block, 'INI', 'setting' ), array_slice( array_keys( $info['settings'] ), 0, 30 ) ), array( $file ), $md );
                 $rows[] = '| [' . self::cell( $block ) . '](' . $slug . '.md) | ' . count( $info['settings'] ) . ' |';
                 ++$this->counts[$area];
             }
             $md = array( "# $ini", '' );
-            $md[] = 'The shipped settings of `' . $file . '`' . ( $ext !== null ? ' (extension ' . $ext . ')' : '' ) . ': ' . count( $parsed['blocks'] ) . ' blocks, ' . array_sum( array_map( function ( $b ) { return count( $b['settings'] ); }, $parsed['blocks'] ) ) . ' settings.';
+            $vars = array( 'file' => $file, 'extension' => (string)$ext, 'blocks' => count( $parsed['blocks'] ), 'settings' => array_sum( array_map( function ( $b ) { return count( $b['settings'] ); }, $parsed['blocks'] ) ) );
+            $md[] = $ext !== null ? $this->t( 'The shipped settings of `{file}` (extension {extension}): {blocks} blocks, {settings} settings.', $vars ) : $this->t( 'The shipped settings of `{file}`: {blocks} blocks, {settings} settings.', $vars );
             $md[] = '';
             if ( $parsed['comment'] )
             {
-                $md = array_merge( $md, self::quote( $parsed['comment'] ) );
+                $md = array_merge( $md, self::quote( $this->d( 'ini:' . $file, $parsed['comment'] ) ) );
                 $md[] = '';
             }
-            $md[] = '| Block | Settings |';
+            $md[] = $this->t( '| Block | Settings |' );
             $md[] = '|---|---|';
             $md = array_merge( $md, $rows );
-            $this->index( "$area/$folder", $ini . ( $ext !== null ? " ($ext)" : '' ), "The blocks and settings of $ini" . ( $ext !== null ? " of the extension $ext" : '' ) . '.', $md, array( $file ), 10 );
-            $fileRows[] = '| [' . $ini . '](' . $folder . '/README.md) | ' . ( $ext !== null ? $ext : 'kernel' ) . ' | ' . count( $parsed['blocks'] ) . ' |';
+            $this->index( "$area/$folder", $ini . ( $ext !== null ? " ($ext)" : '' ),
+                          $ext !== null ? $this->t( 'The blocks and settings of {ini} of the extension {extension}.', array( 'ini' => $ini, 'extension' => $ext ) ) : $this->t( 'The blocks and settings of {ini}.', array( 'ini' => $ini ) ),
+                          $md, array( $file ), 10 );
+            $fileRows[] = '| [' . $ini . '](' . $folder . '/README.md) | ' . ( $ext !== null ? $ext : $this->t( 'kernel' ) ) . ' | ' . count( $parsed['blocks'] ) . ' |';
         }
-        $md = array_merge( array( '# INI settings', '',
-                                  'Every shipped INI file of the kernel and the bundled extensions, one page per block: each setting with the comment of the shipped file, its default and an override to copy. Settings are changed in overrides, never in the shipped files (`settings/override/<file>.append.php`, `settings/siteaccess/<siteaccess>/<file>.append.php` or an extension\'s `settings/`).', '',
-                                  '| File | From | Blocks |', '|---|---|---|' ), $fileRows );
-        $this->index( $area, 'INI settings', 'Every shipped INI setting by file and block: comment, default and an override example.', $md, array() );
+        $md = array_merge( array( $this->t( '# INI settings' ), '',
+                                  $this->t( 'Every shipped INI file of the kernel and the bundled extensions, one page per block: each setting with the comment of the shipped file, its default and an override to copy. Settings are changed in overrides, never in the shipped files (`settings/override/<file>.append.php`, `settings/siteaccess/<siteaccess>/<file>.append.php` or an extension\'s `settings/`).' ), '',
+                                  $this->t( '| File | From | Blocks |' ), '|---|---|---|' ), $fileRows );
+        $this->index( $area, $this->t( 'INI settings' ), $this->t( 'Every shipped INI setting by file and block: comment, default and an override example.' ), $md, array() );
     }
 
     /**
@@ -1324,16 +1478,17 @@ class expHelpExamplesGenerator
      * @param array $setting
      * @return string
      */
-    protected static function iniDefaultText( array $setting )
+    protected function iniDefaultText( array $setting )
     {
         if ( $setting['kind'] === 'scalar' )
-            return $setting['value'] === null ? 'not set' : ( $setting['value'] === '' ? 'empty' : '`' . str_replace( '`', "'", $setting['value'] ) . '`' );
+            return $setting['value'] === null ? $this->t( 'not set' ) : ( $setting['value'] === '' ? $this->t( 'empty' ) : '`' . str_replace( '`', "'", $setting['value'] ) . '`' );
         if ( !$setting['items'] )
-            return 'an empty list';
+            return $this->t( 'an empty list' );
         $parts = array();
         foreach ( array_slice( $setting['items'], 0, 12 ) as $item )
             $parts[] = '`' . str_replace( '`', "'", ( $item[0] !== null ? $item[0] . '=' : '' ) . $item[1] ) . '`';
-        return ( $setting['kind'] === 'hash' ? 'a hash of ' : 'a list of ' ) . count( $setting['items'] ) . ': ' . implode( ', ', $parts ) . ( count( $setting['items'] ) > 12 ? ' ...' : '' );
+        $vars = array( 'count' => count( $setting['items'] ), 'list' => implode( ', ', $parts ) . ( count( $setting['items'] ) > 12 ? ' ...' : '' ) );
+        return $setting['kind'] === 'hash' ? $this->t( 'a hash of {count}: {list}', $vars ) : $this->t( 'a list of {count}: {list}', $vars );
     }
 
     /**
@@ -1341,16 +1496,16 @@ class expHelpExamplesGenerator
      * @param array $setting
      * @return string[]
      */
-    protected static function iniOverrideLines( $name, array $setting )
+    protected function iniOverrideLines( $name, array $setting )
     {
         if ( $setting['kind'] === 'scalar' )
             return array( $name . '=' . (string)$setting['value'] );
-        $lines = array( '# an empty "' . $name . '[]" first replaces the shipped list; without it the items are added' );
+        $lines = array( $this->t( '# an empty "{name}[]" first replaces the shipped list; without it the items are added', array( 'name' => $name ) ) );
         $lines[] = $name . '[]';
         foreach ( array_slice( $setting['items'], 0, 20 ) as $item )
             $lines[] = $name . '[' . ( $item[0] !== null ? $item[0] : '' ) . ']=' . $item[1];
         if ( count( $setting['items'] ) > 20 )
-            $lines[] = '# ... ' . ( count( $setting['items'] ) - 20 ) . ' more in the shipped file';
+            $lines[] = $this->t( '# ... {count} more in the shipped file', array( 'count' => count( $setting['items'] ) - 20 ) );
         return $lines;
     }
 
@@ -1420,30 +1575,34 @@ class expHelpExamplesGenerator
         $rows = array();
         foreach ( $found as $string => $info )
         {
-            $md = array( "# The $string datatype" . ( $info['name'] !== '' ? ' (' . $info['name'] . ')' : '' ), '' );
-            $md[] = 'Class `' . $info['class'] . '` in `' . $info['file'] . '`; identifier `' . $string . '`' . ( in_array( $string, $available, true ) ? ', listed in `settings/content.ini` `[DataTypeSettings] AvailableDataTypes[]`' : ', not in the shipped `AvailableDataTypes[]` (an extension or override adds it)' ) . '.';
+            $englishName = $info['name'];
+            $info['name'] = $this->d( 'datatype:' . $string, $info['name'] );
+            $md = array( $info['name'] !== '' ? $this->t( '# The {identifier} datatype ({name})', array( 'identifier' => $string, 'name' => $info['name'] ) ) : $this->t( '# The {identifier} datatype', array( 'identifier' => $string ) ), '' );
+            $vars = array( 'class' => $info['class'], 'file' => $info['file'], 'identifier' => $string );
+            $md[] = in_array( $string, $available, true ) ? $this->t( 'Class `{class}` in `{file}`; identifier `{identifier}`, listed in `settings/content.ini` `[DataTypeSettings] AvailableDataTypes[]`.', $vars )
+                                                          : $this->t( 'Class `{class}` in `{file}`; identifier `{identifier}`, not in the shipped `AvailableDataTypes[]` (an extension or override adds it).', $vars );
             $md[] = '';
-            $md[] = '## What it stores';
+            $md[] = $this->t( '## What it stores' );
             $md[] = '';
             if ( $info['fields'] )
-                $md[] = 'The columns of the attribute tables its class reads or writes: ' . implode( ', ', array_map( function ( $f ) { return '`' . $f . '`'; }, $info['fields'] ) ) . ' (`data_text`, `data_int`, `data_float` and `sort_key_*` are the object attribute\'s; `data_text1` ... `data_int4` the class attribute\'s settings). Found by reading the class: a heuristic.';
+                $md[] = $this->t( 'The columns of the attribute tables its class reads or writes: {list} (`data_text`, `data_int`, `data_float` and `sort_key_*` are the object attribute\'s; `data_text1` ... `data_int4` the class attribute\'s settings). Found by reading the class: a heuristic.', array( 'list' => implode( ', ', array_map( function ( $f ) { return '`' . $f . '`'; }, $info['fields'] ) ) ) );
             else
-                $md[] = 'Its class names none of the standard columns; it stores its value elsewhere (a table of its own or another object).';
+                $md[] = $this->t( 'Its class names none of the standard columns; it stores its value elsewhere (a table of its own or another object).' );
             if ( $info['sort'] !== '' )
-                $md[] = 'Sorting: `sortKeyType()` returns `' . $info['sort'] . '`.';
+                $md[] = $this->t( 'Sorting: `sortKeyType()` returns `{type}`.', array( 'type' => $info['sort'] ) );
             if ( $info['flags'] )
-                $md[] = 'It is ' . implode( '; ', $info['flags'] ) . '.';
+                $md[] = $this->t( 'It is {list}.', array( 'list' => implode( '; ', array_map( function ( $f ) { return $this->t( $f ); }, $info['flags'] ) ) ) );
             $md[] = '';
-            $md[] = '## In templates';
+            $md[] = $this->t( '## In templates' );
             $md[] = '';
-            $md[] = '`my_attribute` stands for the identifier of an attribute of this type in your class:';
+            $md[] = $this->t( '`my_attribute` stands for the identifier of an attribute of this type in your class:' );
             $md[] = '';
             $md[] = '```tpl';
             $md[] = '{def $attribute = $node.data_map.my_attribute}';
             $md[] = '{if $attribute.has_content}';
             $md[] = '    {attribute_view_gui attribute=$attribute}';
             $md[] = '{/if}';
-            $md[] = '{* the value as the datatype returns it (objectAttributeContent()) *}';
+            $md[] = $this->t( '{* the value as the datatype returns it (objectAttributeContent()) *}' );
             $md[] = '{$attribute.content|attribute( show, 1 )}';
             $md[] = '```';
             $md[] = '';
@@ -1457,7 +1616,8 @@ class expHelpExamplesGenerator
             foreach ( $views as $tpl => $label )
             {
                 $lines = preg_split( '/\r?\n/', rtrim( (string)file_get_contents( $this->root . '/' . $tpl ) ) );
-                $md[] = 'The shipped template that ' . $label . ', `' . $tpl . '`' . ( count( $lines ) > 25 ? ' (first 25 lines)' : '' ) . ':';
+                $vars = array( 'template' => $tpl, 'what' => $this->t( $label ) );
+                $md[] = count( $lines ) > 25 ? $this->t( 'The shipped template that {what}, `{template}` (first 25 lines):', $vars ) : $this->t( 'The shipped template that {what}, `{template}`:', $vars );
                 $md[] = '';
                 $md[] = '```tpl';
                 foreach ( array_slice( $lines, 0, 25 ) as $l )
@@ -1465,22 +1625,23 @@ class expHelpExamplesGenerator
                 $md[] = '```';
                 $md[] = '';
             }
-            $md[] = 'Override them for one class attribute in an `override.ini.append.php` with `Source=content/datatype/view/' . $string . '.tpl` and a match on `attribute_identifier` (see [A template override](../cookbook/template-override.md)).';
+            $md[] = $this->t( 'Override them for one class attribute in an `override.ini.append.php` with `Source=content/datatype/view/{identifier}.tpl` and a match on `attribute_identifier` (see [A template override](../cookbook/template-override.md)).', array( 'identifier' => $string ) );
             $md[] = '';
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All datatypes](README.md)';
-            $md[] = '- [A custom datatype](../cookbook/custom-datatype.md)';
-            $md[] = '- [A content class](../cookbook/content-class.md)';
-            $this->page( "$area/" . self::fileName( $string ) . '.md', "$string datatype" . ( $info['name'] !== '' ? ' (' . $info['name'] . ')' : '' ),
-                         "The $string datatype" . ( $info['name'] !== '' ? ' (' . $info['name'] . ')' : '' ) . ': what it stores and how templates use it.',
-                         array( $string, $info['name'], 'datatype', 'attribute', $info['class'] ), array_merge( array( $info['file'], 'settings/content.ini' ), array_keys( $views ) ), $md );
-            $rows[] = '| [' . $string . '](' . self::fileName( $string ) . '.md) | ' . self::cell( $info['name'] ) . ' | `' . $info['class'] . '` | ' . ( in_array( $string, $available, true ) ? 'yes' : 'no' ) . ' |';
+            $md[] = $this->t( '- [All datatypes](README.md)' );
+            $md[] = $this->t( '- [A custom datatype](../cookbook/custom-datatype.md)' );
+            $md[] = $this->t( '- [A content class](../cookbook/content-class.md)' );
+            $vars = array( 'identifier' => $string, 'name' => $info['name'] );
+            $this->page( "$area/" . self::fileName( $string ) . '.md', $info['name'] !== '' ? $this->t( '{identifier} datatype ({name})', $vars ) : $this->t( '{identifier} datatype', $vars ),
+                         $info['name'] !== '' ? $this->t( 'The {identifier} datatype ({name}): what it stores and how templates use it.', $vars ) : $this->t( 'The {identifier} datatype: what it stores and how templates use it.', $vars ),
+                         array_merge( array( $string, $info['name'] ), $englishName !== $info['name'] ? array( $englishName ) : array(), array( 'datatype', 'attribute', $info['class'] ) ), array_merge( array( $info['file'], 'settings/content.ini' ), array_keys( $views ) ), $md );
+            $rows[] = '| [' . $string . '](' . self::fileName( $string ) . '.md) | ' . self::cell( $info['name'] ) . ' | `' . $info['class'] . '` | ' . ( in_array( $string, $available, true ) ? $this->t( 'yes' ) : $this->t( 'no' ) ) . ' |';
             ++$this->counts[$area];
         }
-        $md = array_merge( array( '# Datatypes', '', 'Every datatype of the kernel and the bundled extensions: its identifier, what it stores and how a template shows it, with the shipped view and edit templates.', '',
-                                  '| Identifier | Name | Class | Available by default |', '|---|---|---|---|' ), $rows );
-        $this->index( $area, 'Datatypes', 'Every datatype: identifier, storage columns and template examples.', $md, array( 'settings/content.ini' ) );
+        $md = array_merge( array( $this->t( '# Datatypes' ), '', $this->t( 'Every datatype of the kernel and the bundled extensions: its identifier, what it stores and how a template shows it, with the shipped view and edit templates.' ), '',
+                                  $this->t( '| Identifier | Name | Class | Available by default |' ), '|---|---|---|---|' ), $rows );
+        $this->index( $area, $this->t( 'Datatypes' ), $this->t( 'Every datatype: identifier, storage columns and template examples.' ), $md, array( 'settings/content.ini' ) );
     }
 
     // ------------------------------------------------------------------------------------------------------------
@@ -1515,21 +1676,25 @@ class expHelpExamplesGenerator
         $rows = array();
         foreach ( $events as $string => $info )
         {
-            $md = array( "# The $string workflow event" . ( $info['name'] !== '' ? ' (' . $info['name'] . ')' : '' ), '' );
-            $md[] = 'Class `' . $info['class'] . '` in `' . $info['file'] . '`; in a workflow it is the event type `event_' . $string . '`' . ( in_array( 'event_' . $string, $available, true ) ? ', listed in `settings/workflow.ini` `[EventSettings] AvailableEventTypes[]`' : ' (add it to `[EventSettings] AvailableEventTypes[]` to offer it)' ) . '.';
+            $englishName = $info['name'];
+            $info['name'] = $this->d( 'workflow-event:' . $string, $info['name'] );
+            $md = array( $info['name'] !== '' ? $this->t( '# The {identifier} workflow event ({name})', array( 'identifier' => $string, 'name' => $info['name'] ) ) : $this->t( '# The {identifier} workflow event', array( 'identifier' => $string ) ), '' );
+            $vars = array( 'class' => $info['class'], 'file' => $info['file'], 'identifier' => $string );
+            $md[] = in_array( 'event_' . $string, $available, true ) ? $this->t( 'Class `{class}` in `{file}`; in a workflow it is the event type `event_{identifier}`, listed in `settings/workflow.ini` `[EventSettings] AvailableEventTypes[]`.', $vars )
+                                                                     : $this->t( 'Class `{class}` in `{file}`; in a workflow it is the event type `event_{identifier}` (add it to `[EventSettings] AvailableEventTypes[]` to offer it).', $vars );
             $md[] = '';
             if ( $info['triggers'] )
             {
-                $md[] = 'It may be used on these triggers only (`setTriggerTypes()`): ' . implode( ', ', array_map( function ( $t ) { return '`' . $t . '`'; }, $info['triggers'] ) ) . '.';
+                $md[] = $this->t( 'It may be used on these triggers only (`setTriggerTypes()`): {list}.', array( 'list' => implode( ', ', array_map( function ( $t ) { return '`' . $t . '`'; }, $info['triggers'] ) ) ) );
                 $md[] = '';
             }
-            $md[] = '## Use it';
+            $md[] = $this->t( '## Use it' );
             $md[] = '';
-            $md[] = '1. Setup > Workflows: create a workflow in a group and add the event "' . ( $info['name'] !== '' ? $info['name'] : $string ) . '"; fill in its settings.';
-            $md[] = '2. Setup > Triggers: connect the workflow to a trigger, for example `content / publish / before` (see the [triggers](triggers.md)).';
-            $md[] = '3. Workflows that wait (approval, a date) continue when the cronjob part `frequent` runs `workflow.php` (see the [cronjobs](../cronjobs/README.md)).';
+            $md[] = $this->t( '1. Setup > Workflows: create a workflow in a group and add the event "{name}"; fill in its settings.', array( 'name' => $info['name'] !== '' ? $info['name'] : $string ) );
+            $md[] = $this->t( '2. Setup > Triggers: connect the workflow to a trigger, for example `content / publish / before` (see the [triggers](triggers.md)).' );
+            $md[] = $this->t( '3. Workflows that wait (approval, a date) continue when the cronjob part `frequent` runs `workflow.php` (see the [cronjobs](../cronjobs/README.md)).' );
             $md[] = '';
-            $md[] = 'To offer it (it is shipped in the list unless noted above):';
+            $md[] = $this->t( 'To offer it (it is shipped in the list unless noted above):' );
             $md[] = '';
             $md[] = '```ini';
             $md[] = '<?php /* #?ini charset="utf-8"?';
@@ -1545,19 +1710,20 @@ class expHelpExamplesGenerator
                     $tpls[] = $f;
             if ( $tpls )
             {
-                $md[] = 'Its templates: ' . implode( ', ', array_map( function ( $t ) { return '`' . $t . '`'; }, $tpls ) ) . '.';
+                $md[] = $this->t( 'Its templates: {list}.', array( 'list' => implode( ', ', array_map( function ( $t ) { return '`' . $t . '`'; }, $tpls ) ) ) );
                 $md[] = '';
             }
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All workflow event types](README.md)';
-            $md[] = '- [Triggers](triggers.md)';
-            $md[] = '- [A workflow event of your own](../cookbook/workflow-event.md)';
-            $md[] = '- [Workflows](../../guides/workflows.md)';
-            $this->page( "$area/" . self::fileName( $string ) . '.md', "$string workflow event" . ( $info['name'] !== '' ? ' (' . $info['name'] . ')' : '' ),
-                         "The $string workflow event type: its class, the triggers it accepts and how to use it.",
-                         array( $string, 'event_' . $string, 'workflow', 'event', 'trigger', $info['class'] ), array_merge( array( $info['file'], 'settings/workflow.ini' ), $tpls ), $md );
-            $rows[] = '| [' . $string . '](' . self::fileName( $string ) . '.md) | ' . self::cell( $info['name'] ) . ' | `' . $info['class'] . '` | ' . ( $info['triggers'] ? self::cell( implode( ', ', $info['triggers'] ) ) : 'any' ) . ' |';
+            $md[] = $this->t( '- [All workflow event types](README.md)' );
+            $md[] = $this->t( '- [Triggers](triggers.md)' );
+            $md[] = $this->t( '- [A workflow event of your own](../cookbook/workflow-event.md)' );
+            $md[] = $this->t( '- [Workflows](../../guides/workflows.md)' );
+            $vars = array( 'identifier' => $string, 'name' => $info['name'] );
+            $this->page( "$area/" . self::fileName( $string ) . '.md', $info['name'] !== '' ? $this->t( '{identifier} workflow event ({name})', $vars ) : $this->t( '{identifier} workflow event', $vars ),
+                         $this->t( 'The {identifier} workflow event type: its class, the triggers it accepts and how to use it.', $vars ),
+                         array_merge( array( $string, 'event_' . $string ), $englishName !== $info['name'] ? array( $info['name'], $englishName ) : array(), array( 'workflow', 'event', 'trigger', $info['class'] ) ), array_merge( array( $info['file'], 'settings/workflow.ini' ), $tpls ), $md );
+            $rows[] = '| [' . $string . '](' . self::fileName( $string ) . '.md) | ' . self::cell( $info['name'] ) . ' | `' . $info['class'] . '` | ' . ( $info['triggers'] ? self::cell( implode( ', ', $info['triggers'] ) ) : $this->t( 'any' ) ) . ' |';
             ++$this->counts[$area];
         }
 
@@ -1580,25 +1746,25 @@ class expHelpExamplesGenerator
                 $params = isset( $def['parameters'] ) && is_array( $def['parameters'] ) ? $def['parameters'] : array();
                 foreach ( $body as $step )
                     if ( is_array( $step ) && isset( $step['type'], $step['name'] ) && $step['type'] === 'trigger' )
-                        $triggerRows[] = '| `' . $module . '` | `' . $operation . '` | `' . $step['name'] . '` | ' . ( strpos( $step['name'], 'pre_' ) === 0 ? 'before' : 'after' ) . ' | ' . self::cell( implode( ', ', array_map( function ( $p ) { return isset( $p['name'] ) ? $p['name'] : ''; }, $params ) ) ) . ' |';
+                        $triggerRows[] = '| `' . $module . '` | `' . $operation . '` | `' . $step['name'] . '` | ' . ( strpos( $step['name'], 'pre_' ) === 0 ? $this->t( 'before' ) : $this->t( 'after' ) ) . ' | ' . self::cell( implode( ', ', array_map( function ( $p ) { return isset( $p['name'] ) ? $p['name'] : ''; }, $params ) ) ) . ' |';
             }
         }
-        $md = array_merge( array( '# Workflow triggers', '',
-                                  'The points where a workflow can run: each operation of `' . implode( '`, `', $sources ) . '` and its `pre_` (before) and `post_` (after) triggers. Connect a workflow at Setup > Triggers; the operation\'s parameters are what its events receive.', '',
-                                  '| Module | Operation | Trigger | When | Parameters |', '|---|---|---|---|---|' ), $triggerRows );
+        $md = array_merge( array( $this->t( '# Workflow triggers' ), '',
+                                  $this->t( 'The points where a workflow can run: each operation of {files} and its `pre_` (before) and `post_` (after) triggers. Connect a workflow at Setup > Triggers; the operation\'s parameters are what its events receive.', array( 'files' => '`' . implode( '`, `', $sources ) . '`' ) ), '',
+                                  $this->t( '| Module | Operation | Trigger | When | Parameters |' ), '|---|---|---|---|---|' ), $triggerRows );
         $md[] = '';
-        $md[] = '## Related';
+        $md[] = $this->t( '## Related' );
         $md[] = '';
-        $md[] = '- [Workflow event types](README.md)';
-        $md[] = '- [Workflows](../../guides/workflows.md)';
-        $this->page( "$area/triggers.md", 'Workflow triggers', 'Every workflow trigger point: the content, shop and user operations and their before and after triggers.',
+        $md[] = $this->t( '- [Workflow event types](README.md)' );
+        $md[] = $this->t( '- [Workflows](../../guides/workflows.md)' );
+        $this->page( "$area/triggers.md", $this->t( 'Workflow triggers' ), $this->t( 'Every workflow trigger point: the content, shop and user operations and their before and after triggers.' ),
                      array( 'trigger', 'workflow', 'operation', 'pre_publish', 'post_publish' ), $sources, $md, 5 );
         ++$this->counts[$area];
 
-        $md = array_merge( array( '# Workflow event types and triggers', '',
-                                  'Every workflow event type of the kernel and the bundled extensions, and every [trigger](triggers.md) a workflow can be connected to.', '',
-                                  '| Event | Name | Class | Triggers it accepts |', '|---|---|---|---|' ), $rows );
-        $this->index( $area, 'Workflow event types and triggers', 'Every workflow event type and every trigger point.', $md, array( 'settings/workflow.ini' ) );
+        $md = array_merge( array( $this->t( '# Workflow event types and triggers' ), '',
+                                  $this->t( 'Every workflow event type of the kernel and the bundled extensions, and every [trigger](triggers.md) a workflow can be connected to.' ), '',
+                                  $this->t( '| Event | Name | Class | Triggers it accepts |' ), '|---|---|---|---|' ), $rows );
+        $this->index( $area, $this->t( 'Workflow event types and triggers' ), $this->t( 'Every workflow event type and every trigger point.' ), $md, array( 'settings/workflow.ini' ) );
     }
 
     // ------------------------------------------------------------------------------------------------------------
@@ -1641,38 +1807,40 @@ class expHelpExamplesGenerator
             }
             if ( $header === '' )
                 $header = self::docblockText( $source );
+            $description = $this->d( 'cronjob:' . $script, $description );
+            $header = $this->d( 'cronjob:' . $script . ' docblock', $header );
             $partsOf = isset( $inPart[$script] ) ? $inPart[$script] : array();
-            $md = array( "# The $script cronjob", '' );
+            $md = array( $this->t( '# The {script} cronjob', array( 'script' => $script ) ), '' );
             if ( $description !== '' )
                 $md[] = rtrim( $description, '.' ) . '.';
             $md[] = '';
-            $md[] = 'Entry point `' . $file . '`' . ( $classFile ? ', code in `' . $classFile . '`' : '' ) . '.';
+            $md[] = $classFile ? $this->t( 'Entry point `{file}`, code in `{class_file}`.', array( 'file' => $file, 'class_file' => $classFile ) ) : $this->t( 'Entry point `{file}`.', array( 'file' => $file ) );
             $md[] = '';
             if ( $header !== '' )
             {
                 $md = array_merge( $md, self::quote( $header ) );
                 $md[] = '';
             }
-            $md[] = '## When it runs';
+            $md[] = $this->t( '## When it runs' );
             $md[] = '';
             if ( $partsOf )
-                $md[] = 'In the shipped `settings/cronjob.ini` it belongs to: ' . implode( ', ', array_map( function ( $p ) { return $p === '(default)' ? 'the default part (`[CronjobSettings]`, `runcronjobs.php` without a part)' : 'the part `' . $p . '`'; }, $partsOf ) ) . '.';
+                $md[] = $this->t( 'In the shipped `settings/cronjob.ini` it belongs to: {list}.', array( 'list' => implode( ', ', array_map( function ( $p ) { return $p === '(default)' ? $this->t( 'the default part (`[CronjobSettings]`, `runcronjobs.php` without a part)' ) : $this->t( 'the part `{part}`', array( 'part' => $p ) ); }, $partsOf ) ) ) );
             else
-                $md[] = 'It is in no shipped part: add it to one in an override (below) or run it on its own.';
+                $md[] = $this->t( 'It is in no shipped part: add it to one in an override (below) or run it on its own.' );
             $md[] = '';
             $md[] = '```bash';
             if ( $partsOf )
             {
                 $p = $partsOf[0];
-                $md[] = '# run its part (as the user the web server runs as, from the installation root)';
+                $md[] = $this->t( '# run its part (as the user the web server runs as, from the installation root)' );
                 $md[] = 'php runcronjobs.php' . ( $p === '(default)' ? '' : ' ' . $p );
                 $md[] = './console exp:runcronjobs' . ( $p === '(default)' ? '' : ' ' . $p );
             }
-            $md[] = '# run only this script';
+            $md[] = $this->t( '# run only this script' );
             $md[] = 'php runcronjobs.php ' . $m[3];
             $md[] = '```';
             $md[] = '';
-            $md[] = 'Add it to a part in an override:';
+            $md[] = $this->t( 'Add it to a part in an override:' );
             $md[] = '';
             $md[] = '```ini';
             $md[] = '<?php /* #?ini charset="utf-8"?';
@@ -1682,24 +1850,24 @@ class expHelpExamplesGenerator
             $md[] = '*/ ?>';
             $md[] = '```';
             $md[] = '';
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All cronjobs and parts](README.md)';
-            $md[] = '- [Cronjobs](../../guides/cronjobs.md)';
-            $md[] = '- [A cronjob of your own](../cookbook/cronjob.md)';
-            $this->page( "$area/" . self::fileName( $m[3] ) . '.md', "$script cronjob", ( $description !== '' ? $description : "The cronjob script $script" ) . '.',
+            $md[] = $this->t( '- [All cronjobs and parts](README.md)' );
+            $md[] = $this->t( '- [Cronjobs](../../guides/cronjobs.md)' );
+            $md[] = $this->t( '- [A cronjob of your own](../cookbook/cronjob.md)' );
+            $this->page( "$area/" . self::fileName( $m[3] ) . '.md', $this->t( '{script} cronjob', array( 'script' => $script ) ), ( $description !== '' ? $description : $this->t( 'The cronjob script {script}', array( 'script' => $script ) ) ) . '.',
                          array( $script, $m[3], 'cronjob', 'runcronjobs', 'part' ), array_values( array_filter( array( $file, $classFile, 'settings/cronjob.ini' ) ) ), $md );
-            $rows[] = '| [' . $script . '](' . self::fileName( $m[3] ) . '.md) | ' . self::cell( $description ) . ' | ' . self::cell( implode( ', ', $partsOf ) ) . ' |';
+            $rows[] = '| [' . $script . '](' . self::fileName( $m[3] ) . '.md) | ' . self::cell( $description ) . ' | ' . self::cell( implode( ', ', array_map( function ( $p ) { return $p === '(default)' ? $this->t( '(default)' ) : $p; }, $partsOf ) ) ) . ' |';
             ++$this->counts[$area];
         }
         $partRows = array();
         foreach ( $parts as $part => $info )
-            $partRows[] = '| ' . ( $part === '(default)' ? '(default)' : '`' . $part . '`' ) . ' | ' . implode( ', ', array_map( function ( $s ) { return '[' . $s . '](' . self::fileName( substr( $s, 0, -4 ) ) . '.md)'; }, $info['scripts'] ) ) . ' | `php runcronjobs.php' . ( $part === '(default)' ? '' : ' ' . $part ) . '` |';
-        $md = array_merge( array( '# Cronjob scripts and parts', '',
-                                  'Every cronjob script of the kernel and the bundled extensions and the parts of the shipped `settings/cronjob.ini` that run them.', '',
-                                  '## Parts', '', '| Part | Scripts | Run it |', '|---|---|---|' ), $partRows,
-                           array( '', '## Scripts', '', '| Script | What it does | Parts |', '|---|---|---|' ), $rows );
-        $this->index( $area, 'Cronjob scripts and parts', 'Every cronjob script and cronjob part, with how to run and schedule them.', $md, array( 'settings/cronjob.ini' ) );
+            $partRows[] = '| ' . ( $part === '(default)' ? $this->t( '(default)' ) : '`' . $part . '`' ) . ' | ' . implode( ', ', array_map( function ( $s ) { return '[' . $s . '](' . self::fileName( substr( $s, 0, -4 ) ) . '.md)'; }, $info['scripts'] ) ) . ' | `php runcronjobs.php' . ( $part === '(default)' ? '' : ' ' . $part ) . '` |';
+        $md = array_merge( array( $this->t( '# Cronjob scripts and parts' ), '',
+                                  $this->t( 'Every cronjob script of the kernel and the bundled extensions and the parts of the shipped `settings/cronjob.ini` that run them.' ), '',
+                                  $this->t( '## Parts' ), '', $this->t( '| Part | Scripts | Run it |' ), '|---|---|---|' ), $partRows,
+                           array( '', $this->t( '## Scripts' ), '', $this->t( '| Script | What it does | Parts |' ), '|---|---|---|' ), $rows );
+        $this->index( $area, $this->t( 'Cronjob scripts and parts' ), $this->t( 'Every cronjob script and cronjob part, with how to run and schedule them.' ), $md, array( 'settings/cronjob.ini' ) );
     }
 
     // ------------------------------------------------------------------------------------------------------------
@@ -1734,11 +1902,13 @@ class expHelpExamplesGenerator
                         $aliases[] = strpos( $alias, ':' ) === false ? 'exp:' . $alias : $alias;
             $aliases = array_values( array_unique( $aliases ) );
             $parsed = self::scriptHelp( $code );
+            $summary = $this->d( 'command:' . $name, $summary );
             $md = array( "# exp:$name", '' );
             if ( $summary !== '' )
                 $md[] = rtrim( $summary, '.' ) . '.';
             $md[] = '';
-            $md[] = 'Script `' . $file . '`' . ( $classFile ? ', code in `' . $classFile . '`' : '' ) . '. Run it from the installation root, as the user the web server runs as:';
+            $md[] = $classFile ? $this->t( 'Script `{file}`, code in `{class_file}`. Run it from the installation root, as the user the web server runs as:', array( 'file' => $file, 'class_file' => $classFile ) )
+                               : $this->t( 'Script `{file}`. Run it from the installation root, as the user the web server runs as:', array( 'file' => $file ) );
             $md[] = '';
             $md[] = '```bash';
             $md[] = './console exp:' . $name . ' --help';
@@ -1749,8 +1919,13 @@ class expHelpExamplesGenerator
             $md[] = '';
             if ( $parsed['description'] !== '' )
             {
-                $md[] = '## Help text';
+                $md[] = $this->t( '## Help text' );
                 $md[] = '';
+                if ( $this->translation !== null )
+                {
+                    $md[] = $this->t( 'What `--help` prints, as the command writes it:' );
+                    $md[] = '';
+                }
                 $md[] = '```text';
                 foreach ( preg_split( '/\r?\n/', rtrim( $parsed['description'] ) ) as $l )
                     $md[] = str_replace( '```', "'''", $l );
@@ -1759,25 +1934,25 @@ class expHelpExamplesGenerator
             }
             if ( $parsed['options'] )
             {
-                $md[] = '## Options';
+                $md[] = $this->t( '## Options' );
                 $md[] = '';
-                $md[] = '| Option | Value | Help |';
+                $md[] = $this->t( '| Option | Value | Help |' );
                 $md[] = '|---|---|---|';
                 foreach ( $parsed['options'] as $opt => $o )
-                    $md[] = '| `' . ( strlen( $opt ) === 1 ? '-' : '--' ) . $opt . '` | ' . $o['value'] . ' | ' . self::cell( $o['help'] ) . ' |';
+                    $md[] = '| `' . ( strlen( $opt ) === 1 ? '-' : '--' ) . $opt . '` | ' . ( $o['value'] !== '' ? $this->t( $o['value'] ) : '' ) . ' | ' . self::cell( $this->d( 'command:' . $name . ' ' . ( strlen( $opt ) === 1 ? '-' : '--' ) . $opt, $o['help'] ) ) . ' |';
                 $md[] = '';
-                $md[] = 'Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).';
+                $md[] = $this->t( 'Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).' );
                 $md[] = '';
             }
             if ( $parsed['arguments'] !== '' )
             {
-                $md[] = 'Arguments: `' . $parsed['arguments'] . '`.';
+                $md[] = $this->t( 'Arguments: `{arguments}`.', array( 'arguments' => $parsed['arguments'] ) );
                 $md[] = '';
             }
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All console commands](README.md)';
-            $this->page( "$area/" . self::fileName( $name ) . '.md', "exp:$name", ( $summary !== '' ? $summary : "The command exp:$name ($file)" ) . '.',
+            $md[] = $this->t( '- [All console commands](README.md)' );
+            $this->page( "$area/" . self::fileName( $name ) . '.md', "exp:$name", ( $summary !== '' ? $summary : $this->t( 'The command exp:{name} ({file})', array( 'name' => $name, 'file' => $file ) ) ) . '.',
                          array_merge( array( 'exp:' . $name, $name, 'console', 'command', 'CLI', basename( $file ) ), $aliases ), array_values( array_filter( array( $file, $classFile ) ) ), $md );
             $rows[] = '| [exp:' . $name . '](' . self::fileName( $name ) . '.md) | ' . self::cell( implode( ', ', array_diff( $aliases, array( 'exp:' . $name ) ) ) ) . ' | ' . self::cell( $summary ) . ' |';
             ++$this->counts[$area];
@@ -1787,14 +1962,14 @@ class expHelpExamplesGenerator
             if ( preg_match( '#^bin/shell/([a-z0-9_\-]+)\.sh$#', $file, $m ) )
             {
                 $text = (string)file_get_contents( $this->root . '/' . $file );
-                $shell[] = '| `shell:' . $m[1] . '` | `' . $file . '` | ' . self::cell( preg_match( '/#\s*@description\s+(.+)/', $text, $d ) ? trim( $d[1] ) : '' ) . ' |';
+                $shell[] = '| `shell:' . $m[1] . '` | `' . $file . '` | ' . self::cell( $this->d( 'shell:' . $m[1], preg_match( '/#\s*@description\s+(.+)/', $text, $d ) ? trim( $d[1] ) : '' ) ) . ' |';
             }
-        $md = array_merge( array( '# Console commands', '',
-                                  'Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `exp:<name>`, a script may add aliases with `@alias`. The help text and the options are read from the code, so they match `--help`. `./console list` shows them on a machine; `./console help <command>` prints one command\'s help.', '',
-                                  '| Command | Aliases | What it does |', '|---|---|---|' ), $rows );
+        $md = array_merge( array( $this->t( '# Console commands' ), '',
+                                  $this->t( 'Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `exp:<name>`, a script may add aliases with `@alias`. The help text and the options are read from the code, so they match `--help`. `./console list` shows them on a machine; `./console help <command>` prints one command\'s help.' ), '',
+                                  $this->t( '| Command | Aliases | What it does |' ), '|---|---|---|' ), $rows );
         if ( $shell )
-            $md = array_merge( $md, array( '', '## Shell scripts', '', '`bin/shell/<name>.sh` runs as `shell:<name>`:', '', '| Command | File | What it does |', '|---|---|---|' ), $shell );
-        $this->index( $area, 'Console commands', 'Every ./console command with its help text, options and aliases.', $md, array( 'bin/php/console' ) );
+            $md = array_merge( $md, array( '', $this->t( '## Shell scripts' ), '', $this->t( '`bin/shell/<name>.sh` runs as `shell:<name>`:' ), '', $this->t( '| Command | File | What it does |' ), '|---|---|---|' ), $shell );
+        $this->index( $area, $this->t( 'Console commands' ), $this->t( 'Every ./console command with its help text, options and aliases.' ), $md, array( 'bin/php/console' ) );
     }
 
     /**
@@ -1963,46 +2138,46 @@ class expHelpExamplesGenerator
             $ext = preg_match( '#^extension/([^/]+)/#', $file, $m ) ? $m[1] : null;
             $slug = ( $ext !== null ? $ext . '-' : '' ) . substr( $ini, 0, -4 );
             $iniFolder = $slug;
-            $md = array( "# Extension points in $ini", '' );
-            $md[] = 'Settings of `' . $file . '` whose name says they hold handlers, classes, filters, providers or directories that an extension can add to or replace. **Found by the setting\'s name: a heuristic.** Read the setting\'s comment (linked) before relying on it.';
+            $md = array( $this->t( '# Extension points in {ini}', array( 'ini' => $ini ) ), '' );
+            $md[] = $this->t( 'Settings of `{file}` whose name says they hold handlers, classes, filters, providers or directories that an extension can add to or replace. **Found by the setting\'s name: a heuristic.** Read the setting\'s comment (linked) before relying on it.', array( 'file' => $file ) );
             $md[] = '';
-            $md[] = 'An extension adds to a list in its own `settings/' . $ini . '.append.php` (active extensions\' settings are read after the kernel\'s and before `settings/override`):';
+            $md[] = $this->t( 'An extension adds to a list in its own `settings/{ini}.append.php` (active extensions\' settings are read after the kernel\'s and before `settings/override`):', array( 'ini' => $ini ) );
             $md[] = '';
             foreach ( $points as $p )
             {
                 $blockSlug = self::fileName( $p['block'] );
                 $md[] = '## ' . $p['block'] . ' ' . $p['name'];
                 $md[] = '';
-                $md[] = 'Shipped: ' . self::iniDefaultText( $p['setting'] ) . '. [The setting](../ini-settings/' . $iniFolder . '/' . $blockSlug . '.md#' . self::anchor( $p['name'] ) . ').';
+                $md[] = $this->t( 'Shipped: {value}. [The setting]({link}).', array( 'value' => $this->iniDefaultText( $p['setting'] ), 'link' => '../ini-settings/' . $iniFolder . '/' . $blockSlug . '.md#' . self::anchor( $p['name'] ) ) );
                 $md[] = '';
                 $md[] = '```ini';
                 $md[] = '<?php /* #?ini charset="utf-8"?';
                 $md[] = '# extension/expexample/settings/' . $ini . '.append.php';
                 $md[] = '[' . $p['block'] . ']';
                 if ( $p['setting']['kind'] === 'scalar' )
-                    $md[] = $p['name'] . '=' . ( $p['values'] && $p['values'][0] !== '' ? $p['values'][0] : '' ) . '    # replace with your class or value';
+                    $md[] = $p['name'] . '=' . ( $p['values'] && $p['values'][0] !== '' ? $p['values'][0] : '' ) . '    ' . $this->t( '# replace with your class or value' );
                 else if ( $p['setting']['kind'] === 'hash' )
-                    $md[] = $p['name'] . '[expexample]=expExample' . preg_replace( '/s$/', '', $p['name'] ) . '    # key and value are yours';
+                    $md[] = $p['name'] . '[expexample]=expExample' . preg_replace( '/s$/', '', $p['name'] ) . '    ' . $this->t( '# key and value are yours' );
                 else
-                    $md[] = $p['name'] . '[]=expExample' . preg_replace( '/(s|List)$/', '', $p['name'] ) . '    # your class or value, added to the list';
+                    $md[] = $p['name'] . '[]=expExample' . preg_replace( '/(s|List)$/', '', $p['name'] ) . '    ' . $this->t( '# your class or value, added to the list' );
                 $md[] = '*/ ?>';
                 $md[] = '```';
                 $md[] = '';
             }
-            $md[] = '## Related';
+            $md[] = $this->t( '## Related' );
             $md[] = '';
-            $md[] = '- [All extension points](README.md)';
-            $md[] = '- [An extension skeleton](../cookbook/extension-skeleton.md)';
-            $md[] = '- [The blocks of ' . $ini . '](../ini-settings/' . $iniFolder . '/README.md)';
-            $this->page( "$area/$slug.md", "Extension points in $ini", "Settings of $ini that list handlers, classes or directories an extension can add to (" . count( $points ) . ', found by name).',
+            $md[] = $this->t( '- [All extension points](README.md)' );
+            $md[] = $this->t( '- [An extension skeleton](../cookbook/extension-skeleton.md)' );
+            $md[] = $this->t( '- [The blocks of {ini}](../ini-settings/{folder}/README.md)', array( 'ini' => $ini, 'folder' => $iniFolder ) );
+            $this->page( "$area/$slug.md", $this->t( 'Extension points in {ini}', array( 'ini' => $ini ) ), $this->t( 'Settings of {ini} that list handlers, classes or directories an extension can add to ({count}, found by name).', array( 'ini' => $ini, 'count' => count( $points ) ) ),
                          array( $ini, 'extension point', 'handler', 'extension', 'hook' ), array( $file ), $md );
-            $fileRows[] = '| [' . $ini . '](' . $slug . '.md) | ' . ( $ext !== null ? $ext : 'kernel' ) . ' | ' . count( $points ) . ' | ' . self::cell( implode( ', ', array_slice( array_map( function ( $p ) { return $p['name']; }, $points ), 0, 6 ) ) . ( count( $points ) > 6 ? ' ...' : '' ) ) . ' |';
+            $fileRows[] = '| [' . $ini . '](' . $slug . '.md) | ' . ( $ext !== null ? $ext : $this->t( 'kernel' ) ) . ' | ' . count( $points ) . ' | ' . self::cell( implode( ', ', array_slice( array_map( function ( $p ) { return $p['name']; }, $points ), 0, 6 ) ) . ( count( $points ) > 6 ? ' ...' : '' ) ) . ' |';
             $this->counts[$area] += count( $points );
         }
-        $md = array_merge( array( '# Extension points', '',
-                                  'Where an extension plugs into the kernel through settings: INI settings that name handler classes, filters, providers, listeners, repositories or extension directories. They are **found by the setting\'s name (a heuristic)**, one page per INI file, each with an override an extension can ship. Other ways to extend: [template operators](../template-operators/README.md), [modules](../module-views/README.md), [datatypes](../datatypes/README.md), [workflow events](../workflow-events/README.md), [cronjobs](../cronjobs/README.md) and [design overrides](../cookbook/template-override.md).', '',
-                                  '| INI file | From | Settings | Examples |', '|---|---|---|---|' ), $fileRows );
-        $this->index( $area, 'Extension points', 'INI-driven handler, class and directory lists an extension can add to (found by name, a heuristic).', $md, array() );
+        $md = array_merge( array( $this->t( '# Extension points' ), '',
+                                  $this->t( 'Where an extension plugs into the kernel through settings: INI settings that name handler classes, filters, providers, listeners, repositories or extension directories. They are **found by the setting\'s name (a heuristic)**, one page per INI file, each with an override an extension can ship. Other ways to extend: [template operators](../template-operators/README.md), [modules](../module-views/README.md), [datatypes](../datatypes/README.md), [workflow events](../workflow-events/README.md), [cronjobs](../cronjobs/README.md) and [design overrides](../cookbook/template-override.md).' ), '',
+                                  $this->t( '| INI file | From | Settings | Examples |' ), '|---|---|---|---|' ), $fileRows );
+        $this->index( $area, $this->t( 'Extension points' ), $this->t( 'INI-driven handler, class and directory lists an extension can add to (found by name, a heuristic).' ), $md, array() );
     }
 
     // ------------------------------------------------------------------------------------------------------------
@@ -2065,9 +2240,9 @@ class expHelpExamplesGenerator
     {
         if ( $use === null )
             return;
-        $md[] = '## In a shipped template';
+        $md[] = $this->t( '## In a shipped template' );
         $md[] = '';
-        $md[] = 'The first use in the templates of this installation, `' . $use[0] . '` line ' . $use[1] . ':';
+        $md[] = $this->t( 'The first use in the templates of this installation, `{file}` line {line}:', array( 'file' => $use[0], 'line' => $use[1] ) );
         $md[] = '';
         $md[] = '```tpl';
         $md[] = str_replace( '```', '` ` `', $use[2] );
@@ -2205,6 +2380,18 @@ class expHelpExamplesGenerator
     protected function page( $relative, $title, $summary, array $keywords, array $sources, array $body, $order = null )
     {
         $keywords = array_values( array_unique( array_filter( array_map( function ( $k ) { return trim( str_replace( array( ',', "\n" ), ' ', (string)$k ) ); }, $keywords ), 'strlen' ) ) );
+        if ( $this->translation !== null )
+        {
+            // the keywords of the language first, then the English ones (readers search for both)
+            $translated = array();
+            foreach ( $keywords as $keyword )
+            {
+                $word = $this->translation->keyword( $keyword );
+                if ( $word !== null && $word !== '' )
+                    $translated[] = $word;
+            }
+            $keywords = array_values( array_unique( array_merge( $translated, $keywords ) ) );
+        }
         $lines = array( '---' );
         $lines[] = 'title: ' . self::frontValue( $title );
         $lines[] = 'audience: developer, admin';
@@ -2219,8 +2406,19 @@ class expHelpExamplesGenerator
         $body[] = '';
         $body[] = '---';
         $body[] = '';
-        $body[] = 'Generated by `./console exp:help:examples` from ' . implode( ', ', array_map( function ( $s ) { return '`' . $s . '`'; }, array_values( array_unique( $sources ) ) ) ) . '. Do not edit this page: change the source and generate again ([how](' . str_repeat( '../', substr_count( $relative, '/' ) ) . 'README.md#how-the-generated-pages-are-made)). Free documentation: [GFDL 1.3 or later](' . str_repeat( '../', substr_count( $relative, '/' ) + 1 ) . 'help/free-documentation.md).';
-        $this->pages[$this->out . '/' . $relative] = implode( "\n", $lines ) . "\n" . implode( "\n", $body ) . "\n";
+        $body[] = $this->t( 'Generated by `./console exp:help:examples` from {sources}. Do not edit this page: change the source and generate again ([how]({up}README.md#how-the-generated-pages-are-made)). Free documentation: [GFDL 1.3 or later]({up}../help/free-documentation.md).',
+                            array( 'sources' => implode( ', ', array_map( function ( $s ) { return '`' . $s . '`'; }, array_values( array_unique( $sources ) ) ) ), 'up' => str_repeat( '../', substr_count( $relative, '/' ) ) ) );
+        if ( $this->translation === null )
+        {
+            $this->pages[$this->out . '/' . $relative] = implode( "\n", $lines ) . "\n" . implode( "\n", $body ) . "\n";
+            return;
+        }
+        $local = $this->localPath( $relative );
+        $file = $this->out . '/' . $local;
+        $this->pages[$file] = implode( "\n", $lines ) . "\n" . implode( "\n", $this->localLinks( $body, $relative, $file ) ) . "\n";
+        $prefix = 'doc/' . $this->translation->directory() . '/';
+        if ( strpos( $file, $prefix ) === 0 )
+            $this->pathMap[substr( $file, strlen( $prefix ) )] = 'examples/' . $relative;
     }
 
     /**
@@ -2230,11 +2428,163 @@ class expHelpExamplesGenerator
     {
         $body[] = '';
         $up = str_repeat( '../', substr_count( $relativeDir, '/' ) + 1 );
-        $body[] = '- [All examples](' . $up . 'README.md)';
-        $this->page( "$relativeDir/README.md", $title, $summary, array( $title, 'examples', 'reference' ), $sources ?: array( 'the sources named on each page' ), $body, $order );
+        $body[] = $this->t( '- [All examples]({up}README.md)', array( 'up' => $up ) );
+        $fallback = $this->t( 'the sources named on each page' );
+        $this->page( "$relativeDir/README.md", $title, $summary, array( $title, 'examples', 'reference' ), $sources ?: array( $fallback ), $body, $order );
         // the sources fallback reads as prose
-        $path = $this->out . "/$relativeDir/README.md";
-        $this->pages[$path] = str_replace( 'from `the sources named on each page`', 'from the sources named on each page', $this->pages[$path] );
+        $path = $this->out . '/' . ( $this->translation !== null ? $this->localPath( "$relativeDir/README.md" ) : "$relativeDir/README.md" );
+        $this->pages[$path] = str_replace( '`' . $fallback . '`', $fallback, $this->pages[$path] );
+    }
+
+    /**
+     * "Registered in ... by the class ... (file)." of an operator or a function.
+     *
+     * @param string $autoload
+     * @param string|null $class
+     * @param string|null $file
+     * @return string
+     */
+    protected function registeredIn( $autoload, $class, $file )
+    {
+        $vars = array( 'autoload' => $autoload, 'class' => (string)$class, 'file' => (string)$file );
+        if ( $class === null )
+            return $this->t( 'Registered in `{autoload}`.', $vars );
+        return $file ? $this->t( 'Registered in `{autoload}` by the class `{class}` (`{file}`).', $vars ) : $this->t( 'Registered in `{autoload}` by the class `{class}`.', $vars );
+    }
+
+    /**
+     * A directory below the output directory in the language of the pages (each name as .dirnames.json gives it).
+     *
+     * @param string $relativeDir
+     * @return string
+     */
+    protected function localDirectory( $relativeDir )
+    {
+        if ( $this->translation === null || $relativeDir === '' )
+            return $relativeDir;
+        $out = array();
+        foreach ( explode( '/', $relativeDir ) as $segment )
+            $out[] = $this->translation->dirname( $segment );
+        return implode( '/', $out );
+    }
+
+    /**
+     * The path of a page below the output directory in the language of the pages: its directories as
+     * .dirnames.json names them, a fixed file name of the generator (triggers.md) as the string table gives it.
+     *
+     * @param string $relative the English path below the output directory
+     * @return string
+     */
+    protected function localPath( $relative )
+    {
+        if ( $this->translation === null )
+            return $relative;
+        $dir = dirname( $relative );
+        $name = $this->translation->file( basename( $relative ) );
+        return $dir === '.' ? $name : $this->localDirectory( $dir ) . '/' . $name;
+    }
+
+    /**
+     * Points the relative links of a translated page at the pages of its language: a generated page at its translated
+     * path, a hand-written page at its translation when the path map lists one, anything else at the English file
+     * (relative to the translated page's file, as the help and GitHub resolve them). Code blocks are left alone.
+     *
+     * @param string[] $body
+     * @param string $relative the English path of the page below the output directory
+     * @param string $file the translated page, relative to the root
+     * @return string[]
+     */
+    protected function localLinks( array $body, $relative, $file )
+    {
+        $fence = false;
+        $base = dirname( 'examples/' . $relative );
+        foreach ( $body as $i => $line )
+        {
+            if ( strncmp( ltrim( $line ), '```', 3 ) === 0 )
+            {
+                $fence = !$fence;
+                continue;
+            }
+            if ( $fence || strpos( $line, '](' ) === false )
+                continue;
+            $body[$i] = preg_replace_callback( '/(?<!\\\\)\]\(([^()\s]+)\)/', function ( $m ) use ( $base, $file )
+            {
+                $target = $m[1];
+                if ( $target[0] === '#' || $target[0] === '/' || preg_match( '#^[a-z][a-z0-9+.\-]*:#i', $target ) )
+                    return $m[0];
+                $anchor = '';
+                if ( ( $hash = strpos( $target, '#' ) ) !== false )
+                {
+                    $anchor = substr( $target, $hash );
+                    $target = substr( $target, 0, $hash );
+                }
+                $id = self::normalizePath( $base . '/' . $target );
+                if ( $id === null )
+                    return $m[0];
+                return '](' . self::relativePath( dirname( $file ), $this->localFileOf( $id ) ) . $anchor . ')';
+            }, $line );
+        }
+        return $body;
+    }
+
+    /**
+     * The file, relative to the root, that a translated page links for an English page id.
+     *
+     * @param string $id a path below doc/eng-us/
+     * @return string
+     */
+    protected function localFileOf( $id )
+    {
+        if ( preg_match( '#^examples/([^/]+)/#', $id, $m ) && isset( self::AREAS[$m[1]] ) )
+            return $this->out . '/' . $this->localPath( substr( $id, strlen( 'examples/' ) ) );
+        $translated = $this->translation->translatedPath( $id );
+        if ( $translated !== null )
+            return 'doc/' . $this->translation->directory() . '/' . $translated;
+        return 'doc/eng-us/' . $id;
+    }
+
+    /**
+     * "a/b/../c" as "a/c"; null when the path climbs above its start.
+     *
+     * @param string $path
+     * @return string|null
+     */
+    protected static function normalizePath( $path )
+    {
+        $out = array();
+        foreach ( explode( '/', $path ) as $segment )
+        {
+            if ( $segment === '' || $segment === '.' )
+                continue;
+            if ( $segment === '..' )
+            {
+                if ( !$out )
+                    return null;
+                array_pop( $out );
+                continue;
+            }
+            $out[] = $segment;
+        }
+        return implode( '/', $out );
+    }
+
+    /**
+     * The relative path from a directory to a file (both relative to the root).
+     *
+     * @param string $fromDir
+     * @param string $to
+     * @return string
+     */
+    protected static function relativePath( $fromDir, $to )
+    {
+        $from = $fromDir === '' || $fromDir === '.' ? array() : explode( '/', $fromDir );
+        $target = explode( '/', $to );
+        while ( $from && count( $target ) > 1 && $from[0] === $target[0] )
+        {
+            array_shift( $from );
+            array_shift( $target );
+        }
+        return str_repeat( '../', count( $from ) ) . implode( '/', $target );
     }
 
     /**

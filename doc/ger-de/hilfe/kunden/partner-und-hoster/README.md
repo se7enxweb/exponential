@@ -51,7 +51,7 @@ Diese Seiten helfen Ihnen, diese Freiheit wirklich zu erhalten.
 ## Verwandte Seiten
 
 - [Ihre Website gesund halten](../gesund-halten/README.md)
-- [Hosting, Partner und Support auswählen (für Unternehmen)](../../../../eng-us/help/businesses/choosing/README.md)
+- [Hosting, Partner und Support auswählen (für Unternehmen)](../../unternehmen/auswahl/README.md)
 - [Hosting-Anbieter: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md)
 - [Partner: hier beginnen](../../partner/partner-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

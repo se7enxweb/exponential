@@ -13,7 +13,7 @@ Bewahren Sie diese Seite dort auf, wo Sie sie ohne die Website finden: Drucken S
 [Eskalationskontakten](../partner-und-hoster/vorlage-eskalationskontakte.md). Sie ist der Teil des Betreibers an einem
 schlechten Tag. Die technische Arbeit erledigt Ihr Hoster oder Partner nach Runbooks wie
 [Website nicht erreichbar](../../hosting/runbooks/website-nicht-erreichbar.md); der Plan für ein kleines Team ist
-[Vorfallreaktion für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md).
+[Vorfallreaktion für kleine Teams](../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md).
 
 ## Die ersten fünf Minuten
 
@@ -44,7 +44,7 @@ Wenn nur eine Seite fehlschlägt, ist es kein Ausfall; melden Sie es auf normale
 ## Entscheiden
 
 Drei Möglichkeiten, entschieden von der leitenden Person zusammen mit der Person, die behebt
-([Vorfallreaktion für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)):
+([Vorfallreaktion für kleine Teams](../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)):
 
 - **Eine schnelle Korrektur**, wenn die Ursache bekannt und klein ist.
 - **Die letzte Änderung zurücknehmen**, wenn das Problem mit ihr begann.
@@ -57,7 +57,7 @@ Eine Wiederherstellung aus dem Backup ist der letzte Ausweg, weil alles seit dem
 ## Menschen informieren
 
 - **Früh und ehrlich**, mit der Uhrzeit des nächsten Updates, und halten Sie diese ein
-  ([Vorfallreaktion für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)).
+  ([Vorfallreaktion für kleine Teams](../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)).
 - **Nicht nur auf der kaputten Website**: Verwenden Sie die vereinbarten Kanäle (E-Mail, soziale Medien, Ansage am Telefon).
 - **Dieselbe Nachricht** für alle, die Kunden antworten.
 
@@ -72,7 +72,7 @@ vermuteten Einbruch handelt; löschen Sie selbst nichts ([Kompromittierte Websit
 
 - [ ] Füllen Sie die [Vorfallnotizen](vorlage-vorfallnotizen.md) aus, solange Sie sich erinnern.
 - [ ] Innerhalb einer Woche eine kurze Auswertung ohne Schuldzuweisung: Wie haben wir es erfahren, was hat uns
-      aufgehalten, was hätte es verhindert, was ändern wir ([Vorfallreaktion für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)).
+      aufgehalten, was hätte es verhindert, was ändern wir ([Vorfallreaktion für kleine Teams](../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)).
 - [ ] Bitten Sie Ihren Hoster oder Partner um seine schriftliche Darstellung von Ursache und Korrektur.
 
 ## Verwandte Seiten

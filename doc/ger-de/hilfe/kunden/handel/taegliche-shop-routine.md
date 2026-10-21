@@ -13,7 +13,7 @@ Diese Seite ist für die Shop-Leitung, oder für den Eigentümer, der zugleich d
 Routine für jeden Arbeitstag vor, in der Reihenfolge, die Probleme am frühesten erkennt, und sagt, wer im Team welchen
 Schritt erledigt. Sie setzt voraus, dass der Shop live ist; das vollständige Bild der täglichen, wöchentlichen und
 jährlichen Aufgaben für Unternehmen finden Sie unter
-[Einen Shop im Alltag betreiben](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md), und diese Seite ist die Fassung,
+[Einen Shop im Alltag betreiben](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md), und diese Seite ist die Fassung,
 die Sie an die Wand hängen können.
 
 ## Bevor Sie beginnen
@@ -96,7 +96,7 @@ jedes Status steht unter [Bestellstatus](bestellstatus.md).
 
 Die Vertretung braucht ein eigenes Konto, den Statusablauf Ihres Shops auf einer Seite und die Kontakte von Hoster
 und Zahlungsanbieter. Eine Übergabeliste finden Sie unter
-[Einen Shop im Alltag betreiben](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md).
+[Einen Shop im Alltag betreiben](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md).
 
 > **Tipp**
 > Drucken Sie den Abschnitt „So funktioniert Ihr Shop“ des Dashboards einmal aus und legen Sie ihn zu dieser Routine. Er
@@ -107,5 +107,5 @@ und Zahlungsanbieter. Eine Übergabeliste finden Sie unter
 - [Bestellungen im Alltag](bestellungen-im-alltag.md)
 - [Wöchentliche Shop-Checkliste](woechentliche-shop-checkliste.md)
 - [Shop-Berichte](shop-berichte.md)
-- [Einen Shop im Alltag betreiben (für Unternehmen)](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md)
+- [Einen Shop im Alltag betreiben (für Unternehmen)](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

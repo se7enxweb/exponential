@@ -65,11 +65,11 @@ wenn Ihre Rolle sie nicht anzeigt, erledigen Sie diese Schritte mit Ihrem Admini
 
 ## Einmal im Jahr zusätzlich
 
-- [ ] Eine [Zugriffsüberprüfung](../../../../eng-us/help/businesses/security/access-reviews.md) mit dem [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md).
+- [ ] Eine [Zugriffsüberprüfung](../../unternehmen/sicherheit/zugriffspruefungen.md) mit dem [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md).
 - [ ] Ein [Inhalts-Audit](inhalts-audits.md) eines oder zweier Bereiche.
 - [ ] Die [Stichprobe zur Barrierefreiheit](barrierefreiheit-pflegen.md), wenn nicht vierteljährlich erledigt.
 - [ ] Ein Blick auf den Plan für die Website: [Arbeitsblatt für die Wachstums-Roadmap](../wachstum/arbeitsblatt-wachstums-roadmap.md).
-- [ ] Die jährliche Checkliste des Bereichs für Unternehmen ([Checkliste für die Jahresüberprüfung](../../../../eng-us/help/businesses/templates/annual-review-checklist.md)).
+- [ ] Die jährliche Checkliste des Bereichs für Unternehmen ([Checkliste für die Jahresüberprüfung](../../unternehmen/vorlagen/checkliste-jahresrueckblick.md)).
 
 ## Protokoll
 
@@ -84,6 +84,6 @@ Sent to partner/host: ________________________________________________
 ## Verwandte Seiten
 
 - [Ihre Website im Alltag betreiben](README.md)
-- [Monatliche Checkliste für den Betrieb](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)
+- [Monatliche Checkliste für den Betrieb](../../unternehmen/vorlagen/monatliche-betriebscheckliste.md)
 - [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

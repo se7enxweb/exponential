@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Eigentümer und Marketing-Verantwortliche, die Aktionen im Shop durchführen. Sie gibt die Abläufe für
 die Rabatte vor, die der Shop hat, und eine ehrliche Liste dessen, wofür eine Erweiterung nötig ist. Wie
 Ermäßigungsgruppen und -regeln funktionieren und welcher Rabatt gewinnt, ist unter
-[Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md) erklärt.
+[Rabatte und Wunschzettel für Unternehmen](../../unternehmen/shops/rabatte-und-wunschlisten.md) erklärt.
 
 ## Was der Shop bietet
 
@@ -76,7 +76,7 @@ Name | Discount group / rule | Percentage | Who gets it | Start | End | Started 
 
 ## Was der Shop ohne Erweiterung nicht kann
 
-Aus dem Kernel-Code, wie unter [Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md) zusammengefasst:
+Aus dem Kernel-Code, wie unter [Rabatte und Wunschzettel für Unternehmen](../../unternehmen/shops/rabatte-und-wunschlisten.md) zusammengefasst:
 
 - Gutschein- oder Rabattcodes, die an der Kasse eingegeben werden;
 - Geschenkkarten;
@@ -89,8 +89,8 @@ das vor der Bestätigungsseite eine negative Bestellposition hinzufügt ([Workfl
 
 ## Verwandte Seiten
 
-- [Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md)
-- [Ihren Shop bewerben](../../../../eng-us/help/businesses/stores/promoting-your-store.md)
+- [Rabatte und Wunschzettel für Unternehmen](../../unternehmen/shops/rabatte-und-wunschlisten.md)
+- [Ihren Shop bewerben](../../unternehmen/shops/ihren-shop-bewerben.md)
 - [Kundenkonten](kundenkonten.md)
 - [Wunschzettel und Warenkörbe](wunschzettel-und-warenkoerbe.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
