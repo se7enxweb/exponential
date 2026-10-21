@@ -65,7 +65,7 @@ Quellen: [Kapitel 15.5](../../../../installation/15-migration-von-5x-legacy.md#1
 einen CRC32 des Namens: Behalten Sie die Namen der Siteaccesses bei (15.1).
 
 **Können wir ein Symfony-Frontend behalten?** Ja, mit der Legacy-Bridge von se7enxweb auf aktuellen Symfony-Versionen;
-Kapitel 15 geht davon aus, dass Exponential für sich allein läuft ([Legacy-Bridge](../../../../../eng-us/features/6.0/legacy-bridge.md)).
+Kapitel 15 geht davon aus, dass Exponential für sich allein läuft ([Legacy-Bridge](../../../../funktionen/6.0/legacy-bridge.md)).
 
 **Wie sehe ich, welche Datei einen Wert setzt?** `php bin/php/console exp:ini where <file>/<block>/<key>` (15.6).
 
@@ -171,13 +171,13 @@ Verwenden Sie Ihre eigene Schulungsinstallation für die nur lesenden Befehle; d
 
 - [Modul 5: Vom 5.x-Legacy-Stack](README.md)
 - [Migration zu Exponential: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

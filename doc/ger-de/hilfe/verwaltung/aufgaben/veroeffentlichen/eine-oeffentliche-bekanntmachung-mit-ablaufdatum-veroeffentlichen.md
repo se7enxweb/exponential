@@ -27,7 +27,7 @@ ein Datumsattribut an der Klasse und eine Einstellung ([Cronjobs](../../../../an
 
 - Ihre Klasse für Bekanntmachungen hat ein Attribut vom Typ Datum und Uhrzeit für das Ende, zum Beispiel
   **Hide after** (`hide_date`), wie in
-  [Inhaltsmodell für Kommunen](../../../../../eng-us/help/government/levels/municipal-and-local/content-model.md#class-to-add-public-notice).
+  [Inhaltsmodell für Kommunen](../../ebenen/kommunen/inhaltsmodell.md#hinzuzufügende-klasse-öffentliche-bekanntmachung).
 - Das automatische Verstecken ist für den Ordner der Bekanntmachungen eingerichtet (fragen Sie das Web-Team;
   Einrichtung unten).
 - Sie kennen die Bekanntmachungsfrist, die Ihre Regeln verlangen.
@@ -79,8 +79,9 @@ Objektzustände und Sektionen beenden Inhalte nicht von sich aus nach Datum; nur
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

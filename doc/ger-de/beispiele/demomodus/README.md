@@ -14,7 +14,7 @@ Umgebungsvariablen **`EXP_DEMO_MODE=1`**: Administratorpasswörter lassen sich w
 Installationsprogramme akzeptieren das veröffentlichte Demo-Passwort (`publish` oder `publishing`), und die
 Administration zeigt ein Banner **Demo-Modus**. Die Variable muss jeden PHP-Prozess der Demo erreichen und keinen
 Prozess einer anderen Website. Die Dateien hier zeigen, wie das geht, eine für jede Stelle, an der PHP läuft. Was der
-Demomodus bewirkt und welche Risiken er hat: [Demomodus](../../../eng-us/bc/6.0/demo-mode.md).
+Demomodus bewirkt und welche Risiken er hat: [Demomodus](../../bc/6.0/demomodus.md).
 
 > **Warnung:** Kopieren Sie diese Dateien nur in die Konfiguration einer Demo, deren Inhalte, Benutzer und
 > Einstellungen allesamt zum Wegwerfen sind. Niemals in einen gemeinsam genutzten Pool, eine serverweite
@@ -35,7 +35,7 @@ Demomodus bewirkt und welche Risiken er hat: [Demomodus](../../../eng-us/bc/6.0/
 | [`apache-vhost-demo.conf`](../../../eng-us/examples/demo-mode/apache-vhost-demo.conf) | `SetEnv` im virtuellen Host der Demo unter Apache (auch ein Feld „Zusätzliche Apache-Direktiven“ in Plesk) |
 | [`php-fpm-pool-demo.conf`](../../../eng-us/examples/demo-mode/php-fpm-pool-demo.conf) | `env[EXP_DEMO_MODE] = 1` im eigenen PHP-FPM-Pool der Demo |
 | [`nginx-fastcgi-demo.conf`](../../../eng-us/examples/demo-mode/nginx-fastcgi-demo.conf) | `fastcgi_param EXP_DEMO_MODE 1` dort, wo nginx Anfragen an PHP-FPM weitergibt |
-| `/etc/vc/envvars` (hier keine Datei: eine Zeile) | **empfohlen für Exponential Velocity**: `export EXP_DEMO_MODE=1`; der Server liest die Datei bei jedem Start und exportiert die Variable an die Worker, sodass Neustarts und Deployments aus jeder Shell sie behalten ([Aufbau auf der Festplatte](../../../eng-us/bc/6.0/velocity-ondisk-layout.md)) |
+| `/etc/vc/envvars` (hier keine Datei: eine Zeile) | **empfohlen für Exponential Velocity**: `export EXP_DEMO_MODE=1`; der Server liest die Datei bei jedem Start und exportiert die Variable an die Worker, sodass Neustarts und Deployments aus jeder Shell sie behalten ([Aufbau auf der Festplatte](../../bc/6.0/velocity-verzeichnisstruktur.md)) |
 | [`velocity-demo-mode.conf`](../../../eng-us/examples/demo-mode/velocity-demo-mode.conf) | ein systemd-Drop-in mit `Environment=EXP_DEMO_MODE=1` für die Unit, die Exponential Velocity startet (hat Vorrang vor envvars) |
 | [`crontab-demo`](../../../eng-us/examples/demo-mode/crontab-demo) | die Crontab des Demo-Benutzers: `EXP_DEMO_MODE=1` für die Cronjobs und den geplanten Neuaufbau |
 | [`docker-demo.env`](../../../eng-us/examples/demo-mode/docker-demo.env) | eine Umgebungsdatei nur für den Container der Demo (`--env-file`, `env_file:`) |
@@ -64,7 +64,7 @@ Demomodus bewirkt und welche Risiken er hat: [Demomodus](../../../eng-us/bc/6.0/
 
 ## Verwandte Seiten
 
-- [Demomodus: der Hinweis zum Upgrade](../../../eng-us/bc/6.0/demo-mode.md)
+- [Demomodus: der Hinweis zum Upgrade](../../bc/6.0/demomodus.md)
 - [Eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../../hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md)
 - [Demomodus für Hoster](../../hilfe/hosting/sicherheit/demomodus-fuer-hoster.md), [Häufige Fragen zum Demomodus](../../hilfe/demomodus-faq.md)
 - [Umgebungsvariablen](../../anleitungen/umgebungsvariablen.md)

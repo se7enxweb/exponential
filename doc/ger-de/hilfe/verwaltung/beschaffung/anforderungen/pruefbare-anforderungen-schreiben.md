@@ -13,7 +13,7 @@ Diese Seite richtet sich an Beschaffungsstellen, Projektleitungen und die Fachle
 Anforderungsteil einer Ausschreibung für ein Web-Content-Management-System (CMS) zu schreiben. Sie beantwortet eine
 Frage: Wie formulieren Sie eine Anforderung so, dass ein Bieter sie mit Nachweisen beantworten und Ihre Bewertenden die
 Antwort prüfen können? Die Beispiele verwenden Exponential und seine Dokumentation, weil seine Seiten zu den Standards
-zeigen, wie gute Nachweise aussehen ([Standards](../../../../../eng-us/standards/README.md)).
+zeigen, wie gute Nachweise aussehen ([Standards](../../../../standards/README.md)).
 
 ## Inhalt
 1. [Was eine Anforderung prüfbar macht](#was-eine-anforderung-prüfbar-macht)
@@ -55,7 +55,7 @@ braucht es:
 | Schwach | Stark | Warum |
 |---|---|---|
 | „Das CMS muss barrierefrei sein.“ | „Die von der Redaktion genutzte Administrationsoberfläche erfüllt WCAG 2.2 Stufe AA. Geben Sie Ihren Konformitätsstatus je Kriterium und die Nachweise an (Testberichte, Audit, Konformitätsbericht).“ | Nennt Standard, Stufe, Geltungsbereich und Nachweise. |
-| „Gute Sicherheit.“ | „Das System schützt jedes Formular gegen Cross-Site Request Forgery. Nennen Sie den Mechanismus und zeigen Sie, wo er konfiguriert ist.“ | Eine Maßnahme, ein benannter Mechanismus. Exponential dokumentiert Formular-Tokens in [Sicherheitsstandards](../../../../../eng-us/standards/security.md). |
+| „Gute Sicherheit.“ | „Das System schützt jedes Formular gegen Cross-Site Request Forgery. Nennen Sie den Mechanismus und zeigen Sie, wo er konfiguriert ist.“ | Eine Maßnahme, ein benannter Mechanismus. Exponential dokumentiert Formular-Tokens in [Sicherheitsstandards](../../../../standards/sicherheit.md). |
 | „Unterstützt viele Sprachen.“ | „Die Redaktion kann dieselbe Seite in mindestens <Anzahl> Sprachen veröffentlichen, einschließlich Schriften von rechts nach links, und Besuchern wird die Sprache der Adresse angezeigt, die sie verwendet haben.“ | Messbar; die Zahl füllen Sie aus. |
 | „Daten können exportiert werden.“ | „Alle veröffentlichten Inhalte mit ihren Metadaten und Dateien lassen sich ohne Mitwirkung des Bieters in einem offenen, dokumentierten Format exportieren. Beschreiben Sie Werkzeuge und Formate.“ | In einem Proof of Concept prüfbar. Vergleichen Sie [Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md). |
 | „Support rund um die Uhr.“ | „Kritische Störungen erhalten zu jeder Stunde innerhalb von <Zeit> eine erste Reaktion; nennen Sie die Personalausstattung, die das leistet.“ | Die Zahl ist eine Lücke, die Sie nach Ihrem eigenen Bedarf füllen; der Bieter muss sagen, wie er sie einhält. |
@@ -73,7 +73,7 @@ einen Bieter.
 | Kann | nützliche Extras | gering bewertet oder als Entscheidung bei Gleichstand |
 
 Eine Anforderung, die der Markt heute nicht erfüllen kann, ist ein „soll“, mit der Bitte, den Plan zu beschreiben.
-Konformitätsberichte zur Barrierefreiheit sind ein Beispiel: Exponential hat keinen ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)),
+Konformitätsberichte zur Barrierefreiheit sind ein Beispiel: Exponential hat keinen ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)),
 und viele andere Open-Source-Systeme auch nicht.
 
 ## Nach Nachweisen fragen
@@ -84,11 +84,11 @@ Fragen Sie nach Nachweisen, die es gibt und die Sie selbst prüfen können:
 - **Einstellungen** nach Datei und Schlüssel (zum Beispiel `settings/site.ini [UserSettings] MinPasswordLength`), die
   Sie in einer Testinstallation sehen können.
 - **Tests**, die in öffentlicher CI laufen. Die Testsuiten von Exponential stehen in
-  [Tests und kontinuierliche Integration](../../../../../eng-us/standards/testing-and-ci.md).
+  [Tests und kontinuierliche Integration](../../../../standards/tests-und-ci.md).
 - **Eine Vorführung** auf einem System, das Sie selbst bedienen können, oder eine Installation für einen Proof of
-  Concept, die Sie selbst betreiben. Exponential lässt sich mit einem Befehl auf SQLite installieren ([Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)).
+  Concept, die Sie selbst betreiben. Exponential lässt sich mit einem Befehl auf SQLite installieren ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - **Ehrliche Lücken.** Bitten Sie den Bieter, aufzulisten, was nicht erfüllt ist. Ein Bieter, der jede Zeile ohne
-  Nachweis mit „voll konform“ beantwortet, gibt Ihnen weniger Information als einer, der „Partly complies“ sagt und die
+  Nachweis mit „voll konform“ beantwortet, gibt Ihnen weniger Information als einer, der „Teilweise erfüllt“ sagt und die
   Lücke zeigt.
 
 ## Fallstricke
@@ -105,12 +105,13 @@ Fragen Sie nach Nachweisen, die es gibt und die Sie selbst prüfen können:
 - [Anforderungen an ein CMS für den öffentlichen Sektor](README.md)
 - [Anforderungen Nachweisen zuordnen](anforderungen-nachweisen-zuordnen.md)
 - [Was Exponential nachweisen kann und was nicht](was-exponential-nachweisen-kann-und-was-nicht.md)
-- [Standards](../../../../../eng-us/standards/README.md)
+- [Standards](../../../../standards/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

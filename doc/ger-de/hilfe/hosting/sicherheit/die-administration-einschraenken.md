@@ -99,7 +99,7 @@ persönliche Konten haben, mit ihrem Arbeitsverhältnis angelegt und entfernt, n
 
 Mit `[ConfigurationSettings] ManagedByDeployment=enabled` auf einem Siteaccess der Administration in der Produktion kann die
 Administration den Setup-Assistenten nicht ausführen, keine Einstellungen oder Templates bearbeiten, keine Erweiterungen aktivieren und
-keine Pakete installieren ([Konfiguration, die vom Ausrollen verwaltet wird](../../../../eng-us/features/6.0/managed-by-deployment.md)). Nutzen Sie
+keine Pakete installieren ([Konfiguration, die vom Ausrollen verwaltet wird](../../../funktionen/6.0/durch-deployment-verwaltet.md)). Nutzen Sie
 es, wo Einstellungen und Templates aus Git kommen: Eine gestohlene Sitzung eines Administrators kann dann weder Code noch Konfiguration
 ändern.
 
@@ -135,5 +135,13 @@ geschickt. Setzen Sie es auf einer Live-Website nie zurück; die Seite
 - [Sicherheit für Hoster: Überblick](README.md)
 - [Kapitel 13: Der Siteaccess der Administration](../../../installation/13-sicherheitshaertung.md#135-der-administrations-siteaccess)
 - [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)
-- [Request-Regeln](../../../../eng-us/bc/6.0/view_full_security.md)
+- [Request-Regeln](../../../bc/6.0/sicherheit-von-content-view-full.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

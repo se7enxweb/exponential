@@ -37,7 +37,7 @@ allgemeinen Ratschlägen.
 | EasyApache (EA-PHP 8.x), PHP pro Konto | dieselbe Tabelle |
 | Shared Hosting kann lang laufende Prozesse verbieten, sodass Velocity womöglich nicht erlaubt ist; nutzen Sie Apache oder LiteSpeed mit `.htaccess` | dieselbe Tabelle |
 | Auf Shared Hosting ohne Shell-Zugang ist der Setup-Assistent im Browser der Installer | [Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
-| ezupdate sucht Composer unter anderem in `/opt/cpanel/composer/bin/` | [Einstellungen von ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md) |
+| ezupdate sucht Composer unter anderem in `/opt/cpanel/composer/bin/` | [Einstellungen von ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md) |
 
 Das ist alles, was die Quellen speziell über cPanel sagen.
 
@@ -68,7 +68,7 @@ Das Folgende ist ein allgemeiner Ratschlag, abgeleitet aus den Anforderungen von
    ([8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt)).
 4. **Legen Sie die Datenbank und ihren Benutzer** im Panel an, wenn nicht SQLite. Für MariaDB oder MySQL nutzen Sie `utf8mb4`
    ([9.3](../../../installation/09-datenbanken.md#93-mysql-und-mariadb)). Seit 6.0.15 braucht der Assistent nur Rechte auf diese
-   Datenbank ([Eine saubere Installation, die zu Shared Hosting passt](../../../../eng-us/features/6.0/clean-install-defaults.md)).
+   Datenbank ([Eine saubere Installation, die zu Shared Hosting passt](../../../funktionen/6.0/standardwerte-einer-sauberen-installation.md)).
 5. **Laden Sie den Code mit `vendor/` hoch**, oder führen Sie Composer in einer Shell aus, wenn es eine gibt (nächster Abschnitt).
 6. **Öffnen Sie den Setup-Assistenten** im Browser und folgen Sie seiner Systemprüfung ([Kapitel 5](../../../installation/05-setup-assistent.md)).
 7. **Fügen Sie die Cron-Zeile** auf der Cron-Seite des Panels hinzu, mit dem PHP des Kontos ([Cron und Shell-Zugang](cron-und-shell-zugang.md)).
@@ -87,7 +87,7 @@ Das Folgende ist ein allgemeiner Ratschlag, abgeleitet aus den Anforderungen von
 - In der Administration: Die Erweiterung ezupdate durchsucht unter ihren Standardorten für Composer `/opt/cpanel/composer/bin/` und
   kann mit *Get Composer* ein per SHA-256 geprüftes `composer.phar` nach `var/ezupdate/` herunterladen. Aktualisieren und
   Installieren aus dem Browser sind aus, bis `[UpdateSettings] AllowUpdate` und `AllowInstall` eingeschaltet sind
-  ([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+  ([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 - Ohne beides: Bauen Sie den Baum mit `composer install` anderswo, auf derselben PHP-Version, und laden Sie ihn hoch.
 
 ## Velocity auf cPanel
@@ -124,7 +124,7 @@ Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../betriebssystemunt
 - [ ] Zertifikat und Umleitung auf HTTPS.
 - [ ] Der Testplan hat auf Ihrer Plattform bestanden.
 
-**Eine öffentliche Demo auf cPanel.** Setzen Sie `EXP_DEMO_MODE=1` nur für das Konto der Demo: `SetEnv EXP_DEMO_MODE 1` in der `.htaccess` der Website (Apache oder LiteSpeed) und `EXP_DEMO_MODE=1` in einer eigenen Zeile oben in den Cronjobs des Kontos. [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Beispiele für den Demomodus](../../../../eng-us/examples/demo-mode/README.md).
+**Eine öffentliche Demo auf cPanel.** Setzen Sie `EXP_DEMO_MODE=1` nur für das Konto der Demo: `SetEnv EXP_DEMO_MODE 1` in der `.htaccess` der Website (Apache oder LiteSpeed) und `EXP_DEMO_MODE=1` in einer eigenen Zeile oben in den Cronjobs des Kontos. [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md).
 
 ## Verwandte Seiten
 
@@ -132,3 +132,11 @@ Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../betriebssystemunt
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -37,9 +37,9 @@ Schritt vorankommen wollen.
 | Repository von Legacy angelegt am 23. Februar 2025; Nexus am 28. Januar 2026 | [Wer ist 7x?, Zeitleiste](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
 | Legacy-Linien 2.5.x, 3.3.x, 4.6.x und 5.0.x | [Exponential Platform Legacy](../wer-ist-die-exponential-foundation.md#exponential-platform-legacy) |
 | Nexus 1.0.0.x bis 1.3.0.x, für Platform v2.5 bis v5 | [Exponential Platform Nexus](../wer-ist-die-exponential-foundation.md#exponential-platform-nexus) |
-| Die Linie 1.3.0.x (Platform v5) und der v5-Starter haben keinen Legacy-Kernel; die älteren Nexus-Linien enthalten Exponential 6 | [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md) |
-| Es gibt eine CJW-Variante von Nexus und einen sofort lauffähigen Starter, „Currently In Public Beta“ | ebenda; [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md) |
-| Die Legacy Bridge verbindet die beiden Kernels | [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md) |
+| Die Linie 1.3.0.x (Platform v5) und der v5-Starter haben keinen Legacy-Kernel; die älteren Nexus-Linien enthalten Exponential 6 | [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md) |
+| Es gibt eine CJW-Variante von Nexus und einen sofort lauffähigen Starter, „Currently In Public Beta“ | ebenda; [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md) |
+| Die Legacy Bridge verbindet die beiden Kernels | [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -64,8 +64,8 @@ Schritt vorankommen wollen.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

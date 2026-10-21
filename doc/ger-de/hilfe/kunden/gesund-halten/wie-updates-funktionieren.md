@@ -62,7 +62,7 @@ Lassen Sie sich diese drei Ergebnisse nach jedem Update schriftlich geben.
 
 Jedes Release hat ein Changelog mit einem Abschnitt „Upgrading“, und die Hinweise zu Verhaltensänderungen sagen, was
 sich anders verhält ([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md),
-[Verhaltensänderungen vom Oktober 2026](../../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)). Bitten Sie Ihren Anbieter um
+[Verhaltensänderungen vom Oktober 2026](../../../bc/6.0/verhaltensaenderungen-2026-10.md)). Bitten Sie Ihren Anbieter um
 eine kurze Zusammenfassung in Ihren eigenen Worten: was sich für die Redaktion ändert, was sich für Besucher ändert und
 alles, was Ihr Team tun muss.
 
@@ -86,3 +86,11 @@ aktualisieren“ ([Automatische Updates mit ezupdate](../../hosting/betrieb/auto
 - [Checkliste für den Upgrade-Tag](checkliste-upgrade-tag.md)
 - [Upgrades ohne Überraschungen](../../unternehmen/zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

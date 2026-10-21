@@ -30,7 +30,7 @@ composer install --no-dev          # in the installation directory; --no-dev on 
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-(unter Exponential Velocity starten Sie es danach neu), oder reparieren Sie im Browser:
+(unter Exponential Velocity starten Sie ihn danach neu), oder reparieren Sie im Browser:
 
 ```bash
 sudo -u <web server user> php bin/php/exprepair.php --create-key
@@ -207,7 +207,7 @@ StaticErrorPage[dependencies]=design/standard/errors/dependencies.html
 
 ## Verwandte Seiten
 
-- [Reparatur im Browser](../../../eng-us/features/6.0/repair-from-the-browser.md)
+- [Reparatur im Browser](../../funktionen/6.0/reparatur-im-browser.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
 - [Velocity-Engines](velocity-engines.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

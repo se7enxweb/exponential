@@ -54,7 +54,7 @@ Wofür Sie sich auch entscheiden: Der Kundenservice muss die Nummer allein anhan
 ## Abholbestellungen
 
 Der ausgelieferte Status **Ready for pickup** (11) zählt als „wartet auf den Kunden“, sodass das Dashboard solche
-Bestellungen nach der kürzeren Wartefrist hervorhebt ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+Bestellungen nach der kürzeren Wartefrist hervorhebt ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 - [ ] Teilen Sie dem Kunden mit, dass die Bestellung bereitliegt und wie lange Sie sie aufbewahren.
 - [ ] Prüfen Sie jeden Tag die hervorgehobenen Abholbestellungen und erinnern Sie den Kunden.
@@ -80,7 +80,7 @@ Anzeichen dafür, dass Sie Versandregeln brauchen:
 Bitten Sie Ihren Partner um einen Versand-Handler, und geben Sie ihm die Preisliste Ihres Versanddienstleisters, die
 Länder, in die Sie versenden, und die gewünschte Regel ([Versand und Abwicklung für Unternehmen](../../unternehmen/shops/versand-und-bearbeitung.md)
 listet die gängigen Modelle). Etiketten, Buchung beim Versanddienstleister und Sendungsverfolgung bleiben außerhalb
-von Exponential, sofern sie nicht hinzugefügt werden ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)).
+von Exponential, sofern sie nicht hinzugefügt werden ([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)).
 
 ## Monatliche Prüfungen
 
@@ -93,5 +93,13 @@ von Exponential, sofern sie nicht hinzugefügt werden ([Einen Shop betreiben: Ü
 - [Versand und Abwicklung für Unternehmen](../../unternehmen/shops/versand-und-bearbeitung.md)
 - [Bestellungen im Alltag](bestellungen-im-alltag.md)
 - [Retouren und Erstattungen](retouren-und-erstattungen.md)
-- [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
+- [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

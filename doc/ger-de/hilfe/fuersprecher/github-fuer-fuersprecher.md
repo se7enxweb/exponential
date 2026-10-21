@@ -36,7 +36,7 @@ GitHub-Konto ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#einen-fehler-i
 
 - **Watch > Custom > Releases** bei einem Repository, um nur über neue Releases benachrichtigt zu werden.
 - Die [Seite der Releases](https://github.com/se7enxweb/exponential/releases) listet die veröffentlichten Versionen auf.
-- Die Liste der Commits auf `main` zeigt die tägliche Arbeit; die [Geschichte](../../../eng-us/history/README.md) erklärt sie Monat
+- Die Liste der Commits auf `main` zeigt die tägliche Arbeit; die [Geschichte](../../geschichte/README.md) erklärt sie Monat
   für Monat.
 - Schalten Sie Benachrichtigungen nicht für alles ein, es sei denn, Sie möchten Hunderte E-Mails.
 
@@ -88,3 +88,11 @@ Wie Sie ein gutes Issue schreiben: [Fehler gut melden](fehler-gut-melden.md). We
 - [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)
 - [Mit Git entwickeln](../mit-git-entwickeln.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -11,8 +11,8 @@ type: help
 
 Diese Seite richtet sich an Site-Ersteller und Projektleiter, die entscheiden, wo Dokumente liegen und wie Besucher sie
 finden. Exponential lässt Dateien überall im Baum liegen; die Wahl beeinflusst Berechtigungen, Menüs und Pflege.
-Quellen: [Die Medienbibliothek ordnen](../../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md) und
-[Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md).
+Quellen: [Die Medienbibliothek ordnen](../../../ersteller/website-ersteller/die-medienbibliothek-organisieren.md) und
+[Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md).
 
 ## Inhalt
 
@@ -37,7 +37,7 @@ Mal eine Kopie hochzuladen.
 Für Berichte, Pläne und Leitfäden ist ein Objekt **Publication** die Seite, die Menschen finden und zitieren; die
 Datei ist daran angehängt. Eine Klasse Publication mit Titel, Zusammenfassung, Veröffentlichungsdatum, Aktenzeichen,
 Typ, Themen und zugehörigen Dateien wird in
-[Inhaltsmodell für die Bundesebene](../../../../../eng-us/help/government/levels/national/content-model.md#class-to-add-publication) vorgeschlagen.
+[Inhaltsmodell für die Bundesebene](../../ebenen/national/inhaltsmodell.md#hinzuzufügende-klasse-publikation) vorgeschlagen.
 
 | Nutzen | Warum |
 |---|---|
@@ -66,7 +66,7 @@ Publikation, die unter zwei Typen aufgeführt wird, erhält einen zweiten Ort.
 
 Ein Template-Fetch listet die Publication-Objekte unter dem Ordner Publications, die neuesten zuerst, und ein Filter
 über eine Auswahl oder Schlagworte grenzt sie ein (nach Typ, Thema oder Jahr). Mit eZ Find erledigen das Facetten für
-Suchergebnisse ([Suche mit eZ Find und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)). Die
+Suchergebnisse ([Suche mit eZ Find und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)). Die
 Tabelle der Unterelemente in der Administration exportiert dieselbe Liste als CSV für ein Verzeichnis
 ([Inhaltsmodell und Bearbeitung, 5](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#5-die-tabelle-der-unterelemente)).
 
@@ -77,18 +77,19 @@ Tabelle der Unterelemente in der Administration exportiert dieselbe Liste als CS
 | Ein File-Objekt je Dokument; nie zwei Kopien | ein Ort zum Korrigieren |
 | Lesbare Dateinamen (`annual-report-2025.pdf`) | sie erscheinen in der Download-Adresse |
 | Keine Dokumente in Sektionen, die Besucher nicht lesen können, außer sie sollen eingeschränkt sein | defekte Downloads |
-| Prüfen Sie umgekehrte Beziehungen, bevor Sie eine Datei entfernen | Seiten, die auf sie verlinken ([Prüfung umgekehrter Beziehungen](../../../../../eng-us/features/6.0/reverse-relation-check.md)) |
+| Prüfen Sie umgekehrte Beziehungen, bevor Sie eine Datei entfernen | Seiten, die auf sie verlinken ([Prüfung umgekehrter Beziehungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)) |
 
 ## Verwandte Seiten
 
 - [Dokumente und Publikationen](README.md)
 - [Metadaten und Verschlagwortung](metadaten-und-verschlagwortung.md)
-- [Den Inhaltsbaum strukturieren](../../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)
+- [Den Inhaltsbaum strukturieren](../../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

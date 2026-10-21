@@ -45,7 +45,7 @@ aussehen.
 | `VerifyUserType` | `email`: das Konto wird über einen Link in einer Mail aktiviert |
 | `RegistrationEmail` | wer über neue Registrierungen informiert wird |
 | `PasswordInRegistrationEmail` | `disabled`: das Passwort wird nie per Mail verschickt |
-| `MinPasswordLength`, `WeakPasswordCheck` | Passwortregeln ([Moderne Passwortänderung](../../../../eng-us/features/6.0/modern-password-change.md)) |
+| `MinPasswordLength`, `WeakPasswordCheck` | Passwortregeln ([Moderne Passwortänderung](../../../funktionen/6.0/moderne-passwortaenderung.md)) |
 
 Legen Sie eine Benutzergruppe „Members“ an und setzen Sie `DefaultUserPlacement` im öffentlichen Siteaccess auf deren
 Knoten, damit Registrierungen nie in einer Gruppe der Redaktion landen.
@@ -66,7 +66,7 @@ die ihn öffnen, werden zur Anmeldung aufgefordert. Stattdessen kann auch ein ga
 ## Passwörter und Anmeldesicherheit
 
 - Das Zurücksetzen von Passwörtern ist eingebaut, und seine Schlüssel laufen ab
-  ([Benutzerpasswort zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+  ([Benutzerpasswort zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 - Eine zweistufige Anmeldung für Mitglieder ist verfügbar ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - Sitzungen und Abmeldungen: [Sitzungen](../../../anleitungen/sitzungen.md).
 
@@ -77,7 +77,7 @@ die ihn öffnen, werden zur Anmeldung aufgefordert. Stattdessen kann auch ein ga
 - [ ] Die Rolle Member gewährt nur, was Mitglieder brauchen.
 - [ ] Das Registrierungsformular sagt, welche Daten gespeichert werden und warum.
 - [ ] Inaktive und nicht bestätigte Konten werden aufgeräumt
-  ([Pflege der Benutzerkonten](../../../../eng-us/features/6.0/user-hygiene.md)).
+  ([Pflege der Benutzerkonten](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Verwandte Seiten
 
@@ -88,8 +88,8 @@ die ihn öffnen, werden zur Anmeldung aufgefordert. Stattdessen kann auch ein ga
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

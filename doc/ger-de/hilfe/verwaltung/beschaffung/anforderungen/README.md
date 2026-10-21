@@ -12,7 +12,7 @@ type: help
 Dieser Abschnitt richtet sich an Beschaffungsstellen, Projektleitungen und Fachleute, die die Anforderungen einer
 Ausschreibung für ein Web-Content-Management-System schreiben. Jede Seite gibt Formulierungen für Anforderungen, die
 Sie anpassen können, erklärt, was sie prüfbar macht, und nennt die Dokumentation von Exponential, die sie beantwortet,
-mit den Statusangaben der [Seiten zu den Standards](../../../../../eng-us/standards/README.md) und den dort aufgeführten Lücken.
+mit den Statusangaben der [Seiten zu den Standards](../../../../standards/README.md) und den dort aufgeführten Lücken.
 Die Klauseltexte, die in den Vertrag selbst gehören, stehen in den [Ausschreibungsvorlagen](../ausschreibungsvorlagen/README.md).
 
 ## Seiten in diesem Abschnitt
@@ -51,19 +51,20 @@ Die Klauseltexte, die in den Vertrag selbst gehören, stehen in den [Ausschreibu
 
 - Kennungen von Anforderungen (`ACC-01`, `SEC-03` …) sind Beispiele; nummerieren Sie sie für Ihre Ausschreibung neu.
 - Werte in spitzen Klammern (`<time>`, `<country>`) füllen Sie aus. Diese Hilfe schlägt nie Zahlen vor.
-- Statusangaben (Complies, Partly complies, Unverified, Does not comply) sind von den Seiten zu den Standards übernommen
+- Statusangaben (Erfüllt, Teilweise erfüllt, Nicht geprüft, Nicht erfüllt) sind von den Seiten zu den Standards übernommen
   und dürfen nicht aufgewertet werden.
 
 ## Verwandte Seiten
 - [Beschaffung](../README.md)
 - [Ausschreibungsvorlagen](../ausschreibungsvorlagen/README.md)
 - Verwaltungen: hier beginnen (`government-start-here.md`, die Einstiegsseite dieses Abschnitts)
-- [Standards](../../../../../eng-us/standards/README.md)
+- [Standards](../../../../standards/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

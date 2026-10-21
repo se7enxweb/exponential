@@ -67,7 +67,7 @@ Wenn Sie den Lizenztext oder seine Adresse auf der Seite brauchen, fügen Sie ei
 mit einer Objektbeziehung damit.
 
 Die Schritte im Klasseneditor finden Sie unter
-[Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md).
+[Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md).
 
 ## Die Lizenz Menschen und Maschinen zeigen
 
@@ -91,6 +91,6 @@ wen sie fragen können.
 ## Verwandte Seiten
 
 - [Eine Datensatzklasse entwerfen](eine-datensatzklasse-entwerfen.md)
-- [Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Lizenzen für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md): die Lizenz der Software, was eine andere Frage ist
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

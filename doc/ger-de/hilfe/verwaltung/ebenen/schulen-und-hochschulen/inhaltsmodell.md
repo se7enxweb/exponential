@@ -14,7 +14,7 @@ Fachhochschule oder Universität entwerfen. Die genannten Klassen und Datentypen
 ([sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md),
 [Die Demo-Inhaltspakete](../../../seitenpakete/sevenx-multisite/die-demo-inhaltspakete.md),
 `kernel/classes/datatypes/`); der Klasseneditor ist unter
-[Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) beschrieben.
+[Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) beschrieben.
 
 ## Inhalt
 
@@ -102,7 +102,7 @@ Department ──< Program ──< Course >── Person (teachers)
 ```
 
 Beziehungen halten jede Tatsache an einer Stelle: Das Profil einer Lehrperson ist ein Objekt Person, das aus jedem Kurs
-verknüpft ist ([Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)). Verlässt
+verknüpft ist ([Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)). Verlässt
 eine Person die Einrichtung, prüfen Sie **Verknüpfungen** an ihrem Objekt (die umgekehrten Beziehungen), bevor Sie es
 entfernen.
 
@@ -110,12 +110,13 @@ entfernen.
 
 - [Schulen und Hochschulen](README.md)
 - [Struktur, Sektionen und Rollen für Schulen und Hochschulen](struktur-sektionen-und-rollen.md)
-- [Datentypen für Ihre Felder wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+- [Datentypen für Ihre Felder wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

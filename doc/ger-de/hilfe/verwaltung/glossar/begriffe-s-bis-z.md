@@ -12,7 +12,7 @@ type: reference
 Diese Seite richtet sich an Leserinnen und Leser in einer öffentlichen Stelle, die auf einen unbekannten Begriff
 stoßen. Jeder Eintrag hat ein bis drei Sätze und einen Link auf die Seite, die ihn erklärt. Die Einträge sind nach dem
 englischen Fachbegriff geordnet, der in Klammern steht. Das vollständige Produktglossar ist das
-[Exponential-Glossar](../../../../eng-us/glossary.md).
+[Exponential-Glossar](../../../glossar.md).
 
 > **Hinweis** Die Definitionen von Rechtsbegriffen sind Beschreibungen in einfacher Sprache, keine Legaldefinitionen.
 > Prüfen Sie das für Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -37,7 +37,7 @@ Reaktionszeiten festlegt. Das Projekt Exponential veröffentlicht keine; Dienstl
 Browser abmelden ([Sitzungen](../../../anleitungen/sitzungen.md)).
 
 **Siteaccess.** Ein Weg, eine Installation zu erreichen (über Adresse, Host oder Port), mit eigenen Einstellungen und
-eigenem Design, etwa die öffentliche Website und die Administration ([das Exponential-Glossar](../../../../eng-us/glossary.md#s)).
+eigenem Design, etwa die öffentliche Website und die Administration ([das Exponential-Glossar](../../../glossar.md#s)).
 
 **Quellcode (Source code).** Die Form eines Programms, die Menschen lesen und ändern. Die GPL gibt jedem, der
 Exponential erhält, den Quellcode; der Code ist öffentlich auf GitHub
@@ -47,7 +47,7 @@ Exponential erhält, den Quellcode; der Code ist öffentlich auf GitHub
 Live-Website erreichen ([Bereitstellung](../../../anleitungen/bereitstellung.md)).
 
 **Unterstützte Version (Supported version).** Eine Version, die noch Sicherheitskorrekturen erhält. Für Exponential ist
-das die Versionslinie 6.0.x (`SECURITY.md`; [Unterstützte Versionen](../../../../eng-us/help/government/procurement/lifecycle/supported-versions.md)).
+das die Versionslinie 6.0.x (`SECURITY.md`; [Unterstützte Versionen](../beschaffung/lebenszyklus/unterstuetzte-versionen.md)).
 
 ## T
 
@@ -59,10 +59,10 @@ Hosting, Support, Personal, Schulung, Aktualisierungen und Ausstieg, nicht nur d
 keine Lizenzgebühren an.
 
 **Übersetzung (Translation).** Eine Sprachfassung eines Inhaltsobjekts oder eine Sprachdatei der Oberfläche
-([Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)).
+([Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)).
 
 **Papierkorb (Trash).** Wo entfernte Inhalte warten, bevor sie endgültig gelöscht oder wiederhergestellt werden
-([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)).
+([Papierkorb](../../../funktionen/6.0/papierkorb-wer-und-wo.md)).
 
 **Zweistufige Anmeldung (Two-step sign-in).** Die Anmeldung mit einem zweiten Faktor nach dem Passwort, etwa einem Code
 aus einer Authenticator-App; in Exponential kommt sie mit der Erweiterung `sevenx_authentication_2fa` und ist wahlweise
@@ -79,29 +79,29 @@ Stelle oft eine pro Abteilung oder Funktion
 
 **Velocity (Exponential Velocity).** Der PHP-Anwendungsserver, der mit Exponential ausgeliefert wird und eine Website
 anstelle von Apache oder nginx mit PHP-FPM ausliefern kann
-([Webserver Velocity](../../../../eng-us/features/6.0/velocity-web-server.md)).
+([Webserver Velocity](../../../funktionen/6.0/velocity-webserver.md)).
 
 **Version.** Ein gespeicherter Zustand eines Inhaltsobjekts: Entwurf, veröffentlicht oder archiviert. Ältere Versionen
 lassen sich vergleichen und wiederherstellen ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)). Zur
 Software selbst siehe die Release-Politik
-([Release-Politik und Versionsnummern](../../../../eng-us/help/government/procurement/lifecycle/release-policy-and-version-numbers.md)).
+([Release-Politik und Versionsnummern](../beschaffung/lebenszyklus/release-richtlinie-und-versionsnummern.md)).
 
 **VPAT.** Voluntary Product Accessibility Template, das Formular, mit dem Anbieter einen Accessibility Conformance Report
 schreiben, vor allem für Section 508. Für Exponential gibt es keines
-([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#section-508)).
+([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#section-508)).
 
 **Offenlegung von Schwachstellen (Vulnerability disclosure).** Der Ablauf, eine Sicherheitslücke vertraulich zu melden,
 damit sie behoben werden kann, bevor sie öffentlich wird. Der von Exponential steht in `SECURITY.md`
-([Sicherheitsstandards](../../../../eng-us/standards/security.md#vulnerability-disclosure)).
+([Sicherheitsstandards](../../../standards/sicherheit.md#offenlegung-von-schwachstellen)).
 
 ## W bis Z
 
 **WCAG.** Die Web Content Accessibility Guidelines des W3C (Richtlinien für barrierefreie Webinhalte); die Stufe AA der
 Version 2.2 ist das übliche Ziel ([WCAG 2.2](https://www.w3.org/TR/WCAG22/);
-[Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)).
+[Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)).
 
 **Platzhalter (Wildcard, URL).** Eine Regel, die ein ganzes Muster alter Adressen auf neue weiterleitet
-([URL-Platzhalter](../../../../eng-us/help/creators/website-creators/url-wildcards.md)).
+([URL-Platzhalter](../../ersteller/website-ersteller/url-platzhalter.md)).
 
 **Workflow.** Ein Ablauf, der läuft, wenn mit Inhalten etwas geschieht, zum Beispiel das Zurückhalten einer Version zur
 Freigabe ([Workflows](../../../anleitungen/workflows.md)).
@@ -116,8 +116,9 @@ Freigabe ([Workflows](../../../anleitungen/workflows.md)).
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

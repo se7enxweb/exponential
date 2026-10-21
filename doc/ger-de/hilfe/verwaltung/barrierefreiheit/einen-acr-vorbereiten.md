@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektverantwortliche und Lieferanten, die in einer Ausschreibung oder von einem Käufer
 um einen Accessibility Conformance Report (ACR) gebeten werden, oft in Form eines VPAT. Es gibt **kein VPAT und keinen
 ACR für Exponential**
-([Standards zur Barrierefreiheit: Section 508](../../../../eng-us/standards/accessibility.md#section-508)). Was Sie erstellen
+([Standards zur Barrierefreiheit: Section 508](../../../standards/barrierefreiheit.md#section-508)). Was Sie erstellen
 können, ist ein Bericht für **Ihre Konfiguration**: eine bestimmte Version von Exponential, ein Administrationsdesign,
 ein öffentliches Design und eine Menge von Erweiterungen. Diese Seite zeigt, wie.
 
@@ -65,7 +65,7 @@ nennt.
 | Supports (unterstützt) | jede getestete Seite und Aufgabe das Kriterium erfüllt |
 | Partially supports (teilweise unterstützt) | manche es erfüllen, manche nicht; nennen Sie welche |
 | Does not support (nicht unterstützt) | die meisten es nicht erfüllen |
-| Not applicable (nicht anwendbar) | das Kriterium nicht auftreten kann (zum Beispiel kein Audio auf der Website) |
+| Nicht anwendbar | das Kriterium nicht auftreten kann (zum Beispiel kein Audio auf der Website) |
 | Not evaluated (nicht bewertet) | Sie es nicht getestet haben; raten Sie nie |
 
 Sagen Sie in den Anmerkungen, woher eine Einschränkung stammt (Ihr Template, ein Inhaltselement, eine Erweiterung, der
@@ -75,25 +75,26 @@ Online-Editor) und was die Umgehung oder der Plan ist.
 
 Sie dürfen, mit dem Link, die eigenen Nachweise des Projekts für die Administration zitieren:
 
-- die Statusangaben der [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md) (Partly complies,
-  Unverified);
+- die Statusangaben der [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md) (Teilweise erfüllt,
+  Nicht geprüft);
 - die Liste der Designtests und was sie absichern (Formularbeschriftungen, Landmarks, Tastaturmuster, Kontrast-Tokens,
   Fehlerübersichten);
 - die manuellen axe-Ergebnisse, festgehalten im [Changelog von 6.0.15](../../../../changelogs/6.0/6.0.15.md).
 
-Machen Sie aus „Partly complies“ nicht „Supports“. Die Tests des Projekts lesen Template-Quellen; sie sind Nachweise
+Machen Sie aus „Teilweise erfüllt“ nicht „Supports“. Die Tests des Projekts lesen Template-Quellen; sie sind Nachweise
 für Ihre Anmerkungen, kein Ersatz für Ihren Test.
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Systeminformationen](../../../anleitungen/systeminformationen.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

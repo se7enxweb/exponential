@@ -25,7 +25,7 @@ bietet.
 ## Menüs
 
 Menüs entstehen aus dem Inhaltsbaum: Ordner unter der Wurzel werden zu Menüeinträgen
-([Menüs und Navigation](../../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)). Für Leistungen:
+([Menüs und Navigation](../../../ersteller/website-ersteller/menues-und-navigation.md)). Für Leistungen:
 
 - benennen Sie die obersten Ordner nach Aufgaben und Themen, die Menschen erkennen, nicht nach Abteilungen;
 - geben Sie einer Leistung einen zweiten Ort in einem anderen Ordner statt einer Kopie, wenn sie an zwei Stellen
@@ -53,14 +53,14 @@ Ein Template-Fetch listet jede Leistung alphabetisch; gruppieren Sie im Template
 
 Eine Leistung mit zwei Orten erscheint in einem Baum-Fetch zweimal; fügen Sie `'main_node_only', true()` hinzu, um jede
 einmal zu listen. Legen Sie die Liste in einen Cache-Block, denn ein Baum-Fetch über die ganze Site ist nicht umsonst
-([View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)).
+([View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md)).
 
 ## Site-Suche
 
 | Suchmaschine | Wann | Lesen |
 |---|---|---|
-| Eingebaute Suche (`eZSearchEngine`) | kleine und mittlere Sites; kein zusätzlicher Server | [Site-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md) |
-| eZ Find mit Solr | große Sites, Relevanzsortierung, Facetten, Hervorhebung gewählter Ergebnisse | [Suche mit eZ Find und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md) |
+| Eingebaute Suche (`eZSearchEngine`) | kleine und mittlere Sites; kein zusätzlicher Server | [Site-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md) |
+| eZ Find mit Solr | große Sites, Relevanzsortierung, Facetten, Hervorhebung gewählter Ergebnisse | [Suche mit eZ Find und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md) |
 
 Für einen Leistungskatalog:
 
@@ -88,7 +88,7 @@ zeigen fehlende Wörter oder fehlende Seiten:
 
 Suchbegriffe können personenbezogene Daten enthalten (Menschen tippen Namen und Nummern), weshalb die Aufzeichnung
 voreingestellt aus ist; vereinbaren Sie, wie lange Statistiken aufbewahrt werden, und leeren Sie sie nach Plan
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)).
+([Standards zum Datenschutz](../../../../standards/datenschutz.md)).
 
 ## Titel und Zusammenfassungen
 
@@ -96,19 +96,20 @@ voreingestellt aus ist; vereinbaren Sie, wie lange Statistiken aufbewahrt werden
 |---|---|
 | Beginnen Sie den Titel mit der Sache: „Bewohnerparkausweise“ | Suchergebnisse und Menüs zeigen die ersten Wörter |
 | Schreiben Sie die Zusammenfassung für den Auszug im Suchergebnis | Suchmaschinen und die Site-Suche zeigen ihn |
-| Füllen Sie die Meta-Beschreibung mit xrowmetadata, wo die Zusammenfassung nicht verwendet wird | [xrowmetadata](../../../../../eng-us/features/6.0/extensions/xrowmetadata.md) |
-| Halten Sie URL-Aliase kurz und stabil | der Alias kommt aus dem Namen; Umbenennen behält eine Weiterleitung ([Weiterleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)) |
+| Füllen Sie die Meta-Beschreibung mit xrowmetadata, wo die Zusammenfassung nicht verwendet wird | [xrowmetadata](../../../../funktionen/6.0/erweiterungen/xrowmetadata.md) |
+| Halten Sie URL-Aliase kurz und stabil | der Alias kommt aus dem Namen; Umbenennen behält eine Weiterleitung ([Weiterleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)) |
 
 ## Verwandte Seiten
 
 - [Einen Leistungskatalog aufbauen](README.md)
 - [Lebenslagen und Themen](lebenslagen-und-themen.md)
-- [SEO-Grundlagen](../../../../../eng-us/help/creators/website-creators/seo-basics.md)
+- [SEO-Grundlagen](../../../ersteller/website-ersteller/seo-grundlagen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

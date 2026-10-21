@@ -21,7 +21,7 @@ Standard, ist sie in der Administration **nur meldend** (report-only): Der Brows
 Policy blockieren würde, und blockiert nichts. Mit `Mode=enforce` blockiert der Browser Inline-Skripte, und die
 Schaltflächen und Menüs einer alten Erweiterung werden gezeichnet, tun aber nichts, ohne einen Fehler auf der Seite.
 Die Einzelheiten, auch wie Sie sie einschalten, stehen in
-[Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md).
+[Content Security Policy](../../../funktionen/6.0/content-security-policy.md).
 
 Die Administrations-Templates des Kernels enthalten keinen Inline-Code mehr. Was übrig ist, steckt in Erweiterungen,
 und diese zu korrigieren, ist der Zweck dieses Kapitels. Teil 3 erklärt die Policy für neuen Code:
@@ -203,15 +203,15 @@ Template-Kommentare. Mehr dazu in [Tests und CI für eine aktualisierte Erweiter
 
 - Zurück: [composer.json modernisieren](composer-json-modernisieren.md)
 - Weiter: [CSP: von Event-Handler-Attributen zu data-Attributen](csp-event-handler-zu-data-attributen.md)
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
 - [Fallstudie: Zwei-Faktor-Authentifizierung ohne Inline-Skripte](fallstudie-zwei-faktor-authentifizierung.md)
 - [CSS und JavaScript in einer Erweiterung](../teil-3-erweiterungsentwickler/css-und-javascript-in-einer-erweiterung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

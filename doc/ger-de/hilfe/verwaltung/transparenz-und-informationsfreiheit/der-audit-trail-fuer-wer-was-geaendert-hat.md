@@ -1,19 +1,19 @@
 ---
-title: Der Audit-Trail für „wer hat was geändert“
+title: Das Prüfprotokoll für „wer hat was geändert“
 audience: government, admin, project-manager
 category: public-sector
 order: 150
-summary: Wie eine öffentliche Stelle den Audit-Trail von Exponential (standardmäßig eingeschaltet, mit Hash-Kette und signierten Archiven) nutzt, um zu beantworten, wer Inhalte veröffentlicht, geändert, verschoben oder entfernt hat, wer Rollen und Einstellungen geändert hat, wie sie beweist, dass die Aufzeichnung unversehrt ist, und wie lange Einträge aufbewahrt werden.
-keywords: Audit-Trail, Audit, Audit-Protokoll, wer hat was geändert, Rechenschaft, manipulationssicher, Hash-Kette, verify, exp:audit, Audit-Konsole, Aufbewahrung, Kanal content, Kanal access, audit trail, who changed what, accountability, tamper-evident, hash chain, audit console, retention, content channel, access channel
+summary: Wie eine öffentliche Stelle das Prüfprotokoll von Exponential (standardmäßig eingeschaltet, mit Hash-Kette und signierten Archiven) nutzt, um zu beantworten, wer Inhalte veröffentlicht, geändert, verschoben oder entfernt hat, wer Rollen und Einstellungen geändert hat, wie sie beweist, dass die Aufzeichnung unversehrt ist, und wie lange Einträge aufbewahrt werden.
+keywords: Prüfprotokoll, Audit, Audit-Protokoll, wer hat was geändert, Rechenschaft, manipulationssicher, Hash-Kette, verify, exp:audit, Audit-Konsole, Aufbewahrung, Kanal content, Kanal access, audit trail, who changed what, accountability, tamper-evident, hash chain, audit console, retention, content channel, access channel
 type: help
 ---
-# Der Audit-Trail für „wer hat was geändert“
+# Das Prüfprotokoll für „wer hat was geändert“
 
 Diese Seite richtet sich an Administratoren, Informationssicherheitsbeauftragte und Führungskräfte, die die Frage „wer
 war das?“ beantworten und zeigen müssen, dass man der Antwort trauen kann. Exponential zeichnet sicherheitsrelevante
 Ereignisse in einem manipulationssicheren Protokoll auf, standardmäßig eingeschaltet, lesbar in der Administration und
-auf der Kommandozeile ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md); vollständige Referenz:
-[der Audit-Leitfaden](../../../../eng-us/bc/6.0/audit.md)).
+auf der Kommandozeile ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md); vollständige Referenz:
+[der Audit-Leitfaden](../../../bc/6.0/audit.md)).
 
 ## Inhalt
 
@@ -88,18 +88,19 @@ diese Rechte. Ein verweigerter Versuch wird selbst aufgezeichnet.
 Adressen werden gekürzt, Sitzungen gehasht, Passwörter und Token nie aufgezeichnet; Einträge werden nach einer
 gewissen Zeit pseudonymisiert. Um ein Auskunftsersuchen einer betroffenen Person zu beantworten, liefert
 `./console exp:audit export --subject-user=<id>` die Einträge von oder über einen Benutzer
-([Audit-Leitfaden 4.12](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)).
+([Audit-Leitfaden 4.12](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)).
 
 ## Verwandte Seiten
 
-- [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)
 - [Versionsgeschichte als Rechenschaft](versionsgeschichte-als-rechenschaft.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

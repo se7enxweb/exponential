@@ -46,7 +46,7 @@ einen Beitrag brauchen, fragen Sie 7x schriftlich ([Ein Interview anfragen](ein-
 |---|---|
 | Das Changelog des Releases | [6.0.13](../../../changelogs/6.0/6.0.13.md): "Security hardening (seven findings fixed)", die Befunde SEC-01 bis SEC-06 und weitere |
 | Eine Spezifikationsseite pro Härtungsrunde | [Die Härtung von 6.0.13](../../spezifikationen/6.0/sicherheitshaertung-6.0.13.md), [Sicherheitspatches vom August 2026](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Sicherheitsvorgaben vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md) |
-| Die Monatsseite der Geschichte | [August 2026](../../../eng-us/history/2026/2026-08.md): "Six security patches and jQuery 3.7.1 landed on 16 August" |
+| Die Monatsseite der Geschichte | [August 2026](../../geschichte/2026/2026-08.md): "Six security patches and jQuery 3.7.1 landed on 16 August" |
 | Die Entwicklungslinie | Das [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) führt spätere Korrekturen nach Datum auf; sie sind nicht veröffentlicht, bis das Tag 6.0.15 existiert |
 
 Beachten Sie den Status: Die Patches vom August 2026 liegen auf der Entwicklungslinie 6.0.15. Ein Beitrag darf nicht
@@ -100,8 +100,8 @@ und die kürzere Hilfeseite [Sicherheitshärtung](../sicherheitshaertung.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

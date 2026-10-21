@@ -3,8 +3,8 @@ title: Der Online-Editor und die Barrierefreiheit
 audience: government, admin, editor, project-manager
 category: public-sector
 order: 110
-summary: Für öffentliche Stellen, deren Beschäftigte Rich Text schreiben - welche Engines für den Online-Editor Exponential mitliefert (TinyMCE 3 als Standard, TinyMCE 8 auf Wunsch), warum ihre Barrierefreiheit Unverified ist und wie Sie den Editor und seine Ausgabe für Ihre eigene Erklärung testen.
-keywords: Online-Editor, Rich Text, Engine-Wechsel, Barrierefreiheit, Tastatur, Screenreader, nicht verifiziert, Autorenwerkzeug, Ausgabe des Rich Text, Überschriften, Tabellen, online editor, rich text, TinyMCE, TinyMCE 3, TinyMCE 8, ezoe, engine switch, accessibility, keyboard, screen reader, unverified, authoring tool, rich text output, headings, tables
+summary: Für öffentliche Stellen, deren Beschäftigte Rich Text schreiben - welche Engines für den Online-Editor Exponential mitliefert (TinyMCE 3 als Standard, TinyMCE 8 auf Wunsch), warum ihre Barrierefreiheit nicht geprüft ist und wie Sie den Editor und seine Ausgabe für Ihre eigene Erklärung testen.
+keywords: Online-Editor, Rich Text, Engine-Wechsel, Barrierefreiheit, Tastatur, Screenreader, nicht geprüft, Autorenwerkzeug, Ausgabe des Rich Text, Überschriften, Tabellen, online editor, rich text, TinyMCE, TinyMCE 3, TinyMCE 8, ezoe, engine switch, accessibility, keyboard, screen reader, unverified, authoring tool, rich text output, headings, tables
 type: help
 ---
 # Der Online-Editor und die Barrierefreiheit
@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an die Administration, die den Rich-Text-Editor auswählt, an die Koordination
 Barrierefreiheit, die die Autorenumgebung bewertet, und an Redakteurinnen und Redakteure mit Behinderungen, die ihn
 nutzen. Der Online-Editor ist der Teil der Administration, den das Projekt **nicht** geprüft hat: Sein Status ist
-**Unverified**, und die Barrierefreiheit der Editor-Engine ist die des Projekts TinyMCE
-([Standards zur Barrierefreiheit: bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)).
+**Nicht geprüft**, und die Barrierefreiheit der Editor-Engine ist die des Projekts TinyMCE
+([Standards zur Barrierefreiheit: bekannte Lücken](../../../standards/barrierefreiheit.md#bekannte-lücken)).
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ nutzen. Der Online-Editor ist der Teil der Administration, den das Projekt **nic
 ## Welchen Editor Ihre Beschäftigten erhalten
 
 Die Erweiterung eZ Online Editor (`extension/ezoe`) liefert zwei Engines mit
-([Der Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md)):
+([Der Online-Editor auf TinyMCE 8](../../../funktionen/6.0/online-editor-tinymce8.md)):
 
 | Engine | Status in einer neuen Installation | Wie Sie sie wählen |
 |---|---|---|
@@ -39,13 +39,13 @@ Mit `EngineSwitch=enabled` zeigt der Editor unter sich einen Engine-Wechsel, ein
 
 Wo die Content Security Policy ohne `'unsafe-inline'` in `script-src` durchgesetzt wird, wird TinyMCE 3 nicht
 angeboten, und der Editor weicht auf TinyMCE 8 aus
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Was das Projekt sagt
 
-- Die Integrationen von TinyMCE wurden nicht auf WCAG geprüft. **Unverified.**
+- Die Integrationen von TinyMCE wurden nicht auf WCAG geprüft. **Nicht geprüft.**
 - Der Engine-Wechsel ist eine Umschaltgruppe mit `aria-pressed` (dokumentiert auf der Seite zu TinyMCE 8).
-- EN 301 549 Abschnitt 11.8 (Autorenwerkzeuge) wurde nicht überprüft.
+- EN 301 549 Abschnitt 11.8 (Autorenwerkzeuge) wurde nicht geprüft.
 
 Weitere Nachweise gibt es im Repository nicht. Beschreiben Sie den Editor in Ihrer Erklärung nicht ohne eigenen Test
 als barrierefrei.
@@ -87,14 +87,15 @@ Für die Öffentlichkeit zählt am meisten das HTML, das die Inhalte des Editors
 
 ## Verwandte Seiten
 
-- [Der Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Der Online-Editor auf TinyMCE 8](../../../funktionen/6.0/online-editor-tinymce8.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Geschäftsinhaber, die entscheiden, wie Kunden für die Lieferung bezahlen. Sie beschreibt
 die Versandwerkzeuge, die mit Exponential ausgeliefert werden, was jedes kann und was nicht, und wie Sie von einer
 pauschalen Versandgebühr zu Regeln nach Zone oder Gewicht wachsen. Die Einrichtung ist unter
-[Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md) beschrieben.
+[Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md) beschrieben.
 
 ## Inhalt
 
@@ -31,7 +31,7 @@ pauschalen Versandgebühr zu Regeln nach Zone oder Gewicht wachsen. Die Einricht
 | Workflow-Ereignis für einfachen Versand (`ezsimpleshipping`) | Fügt jeder Bestellung eine feste Versandposition hinzu | Nur Konfiguration |
 | Versand-Handler | Berechnet den Versand mit Ihren eigenen Regeln, angezeigt im Warenkorb und bei der Bestätigung | Entwicklerarbeit |
 
-Beide werden unter [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md#setting-up-a-shop-in-order)
+Beide werden unter [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md#einen-shop-einrichten-der-reihe-nach)
 genannt: „a shipping handler or the simple shipping workflow in `workflow.ini`“.
 
 ## Der pauschale Versand-Workflow
@@ -47,7 +47,7 @@ tut:
 - Er rechnet den Betrag in die Währung der Bestellung um.
 
 Er läuft als Workflow am Auslöser `before_shop_confirmorder`, sodass der Kunde die Versandkosten auf der
-Bestätigungsseite sieht, bevor er bezahlt ([Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#workflow-triggers),
+Bestätigungsseite sieht, bevor er bezahlt ([Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md#workflow-trigger),
 [Workflows: Freigaben, Trigger und die Prozesse, die warten](../../../anleitungen/workflows.md)).
 
 > **Hinweis**
@@ -66,7 +66,7 @@ entfernt sie, wenn der Warenkorb geleert wird.
 
 Mit dem Kernel wird kein Versand-Handler ausgeliefert: Das in `shop.ini` genannte Standardverzeichnis
 `kernel/classes/shippinghandlers` existiert in diesem Release nicht. Ein Handler wird von einem Entwickler oder Partner
-geschrieben, meist als Teil einer Erweiterung ([Als Erweiterung paketieren](../../../../eng-us/help/creators/app-creators/packaging-as-an-extension.md)).
+geschrieben, meist als Teil einer Erweiterung ([Als Erweiterung paketieren](../../ersteller/anwendungsentwickler/als-erweiterung-paketieren.md)).
 
 Worauf ein Handler seine Kosten stützt, entscheiden Sie: Gewichtsfelder an Produkten, das Land des Kunden, die Summe
 des Warenkorbs oder eine Abfrage beim Tarifdienst eines Versanddienstleisters.
@@ -86,7 +86,7 @@ des Warenkorbs oder eine Abfrage beim Tarifdienst eines Versanddienstleisters.
 ## Abholung und lokale Lieferung
 
 Zu den mitgelieferten Bestellstatus gehören **Ready for pickup** (Status 11) und **Shipped** (Status 10)
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md#order-statuses-for-the-whole-lifecycle)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md#bestellstatus-für-den-ganzen-lebenszyklus)).
 Ein Shop, der Abholung anbietet, kann damit Mitarbeitern und Kunden sagen, wo eine Bestellung steht, auch mit
 pauschalen oder gar keinen Versandkosten. Ready for pickup zählt als „wartet auf den Kunden“, sodass das Dashboard es
 nach der kürzeren Wartefrist hervorhebt.
@@ -94,7 +94,7 @@ nach der kürzeren Wartefrist hervorhebt.
 ## Was nicht enthalten ist
 
 Der technische Überblick nennt Versandetiketten unter den Dingen, die als Erweiterungen oder Integrationen zu planen
-sind ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md#what-the-shop-does-not-do)).
+sind ([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md#was-der-shop-nicht-leistet)).
 Sendungsnummern, Etikettendruck und die Buchung beim Versanddienstleister geschehen außerhalb von Exponential, es sei
 denn, Sie fügen sie hinzu. Viele kleine Unternehmen beginnen damit, Etiketten im eigenen Portal des
 Versanddienstleisters zu erstellen und die Sendungsnummer an der Bestellung zu notieren.
@@ -110,15 +110,15 @@ Versanddienstleisters zu erstellen und die Sendungsnummer an der Bestellung zu n
 
 ## Verwandte Seiten
 
-- [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
+- [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)
 - [Warenkorb und Bestellablauf](warenkorb-und-bestellablauf.md)
 - [Bestellungen und Bestellstatus](bestellungen-und-bestellstatus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

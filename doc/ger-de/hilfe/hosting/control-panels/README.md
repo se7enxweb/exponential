@@ -80,7 +80,7 @@ mit PHP-FPM und Velocity dieselbe Installation ausliefern ([Stufe 1](../../betri
 - müssen beide `var/` als derselbe Benutzer schreiben ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe));
 - muss ein Ausrollen das richtige PHP-FPM neu laden und Velocity neu starten; `exp:velocity deploy` tut beides in Reihenfolge
   ([8.3.14](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy));
-- muss die Firewall des Panels die Ports von Velocity erlauben, wenn Besucher es direkt erreichen.
+- muss die Firewall des Panels die Ports von Velocity erlauben, wenn Besucher ihn direkt erreichen.
 
 Siehe [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md).
 
@@ -90,3 +90,11 @@ Siehe [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-ng
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

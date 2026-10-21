@@ -71,7 +71,7 @@ Schritte:
 Checkliste:
 
 - [ ] Es gibt eine Demonstrationsinstallation, die sich das Team ansehen kann (`./console exp:install`,
-      [Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)).
+      [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - [ ] Der Auftraggeber hat die Administration gesehen, nicht nur Folien.
 - [ ] Produkt, Datenbank, Webserver und Installationsmethode stehen im Projektauftrag.
 - [ ] Die Herkunft der Inhalte (alte Site, Tabellen, neu geschriebene Texte) ist bekannt.
@@ -110,7 +110,7 @@ Was Entwickler bauen und wo die Hilfe es erklärt:
 | Kernel und Erweiterungen als Git-Klone installieren | [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | Klassen, Attribute und Objekte | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | Templates und das Design | [Templates und Design](../../anleitungen/templates-und-design.md) |
-| Eigene Erweiterungen, generiert oder von Hand | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md) |
+| Eigene Erweiterungen, generiert oder von Hand | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md) |
 | Integrationen | [REST API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
 | Ausliefern und Deployment | [Deployment](../../anleitungen/bereitstellung.md), [Kapitel 8](../../installation/08-die-website-ausliefern.md) |
 
@@ -118,7 +118,7 @@ Checkliste für den Projektleiter:
 
 - [ ] Jede Änderung läuft über Git, auf einem Branch, mit einem Pull-Request ([Ein Team mit Git führen](ein-team-mit-git-fuehren.md)).
 - [ ] Einstellungen, die nicht in der Administration geändert werden dürfen, sind versioniert; `ManagedByDeployment`
-      kann verhindern, dass die Administration sie schreibt ([Vom Deployment verwaltete Konfiguration](../../../eng-us/features/6.0/managed-by-deployment.md)).
+      kann verhindern, dass die Administration sie schreibt ([Vom Deployment verwaltete Konfiguration](../../funktionen/6.0/durch-deployment-verwaltet.md)).
 - [ ] Geheimnisse in `settings/override` bleiben außerhalb der Versionsverwaltung ([Kapitel 13](../../installation/13-sicherheitshaertung.md)).
 - [ ] Die Qualitätsschranken sind vereinbart und werden ausgeführt ([Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md)).
 - [ ] Neben der Entwicklungsumgebung gibt es eine Test- oder Staging-Installation.
@@ -130,21 +130,21 @@ Checkliste für den Projektleiter:
 | Herkunft der Inhalte | Werkzeuge, die die Hilfe beschreibt |
 |---|---|
 | Von Redakteuren eingegeben | [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md), [Bilder, Medien und Uploads](../medien-und-uploads.md) (viele Dateien auf einmal) |
-| Tabellen oder Dateien | `xrowextract`: Inhalte als Dateien exportieren, importieren und verschieben ([xrowextract](../../../eng-us/features/6.0/extensions/xrowextract.md)) |
+| Tabellen oder Dateien | `xrowextract`: Inhalte als Dateien exportieren, importieren und verschieben ([xrowextract](../../funktionen/6.0/erweiterungen/xrowextract.md)) |
 | Eine andere Installation | Pakete: Klassen, Inhalte und Erweiterungen als `.ezpkg`-Dateien übertragen ([Pakete](../../anleitungen/pakete.md)) |
 | Eine ältere Exponential-Site | Die Kapitel zu Upgrade und Migration ([Upgrade](../../anleitungen/aktualisieren.md)) |
 | Ein externes System | REST API ([REST API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md)) |
-| Hilfe beim Schreiben | Exponential Intelligence schreibt Entwürfe, die Redakteure prüfen ([expai](../../../eng-us/features/6.0/extensions/expai.md)) |
+| Hilfe beim Schreiben | Exponential Intelligence schreibt Entwürfe, die Redakteure prüfen ([expai](../../funktionen/6.0/erweiterungen/expai.md)) |
 
 Umfangreiches Entfernen, Kopieren und Verschieben läuft als Inhaltsjob im Hintergrund, in Stapeln, die nach einer
-Unterbrechung weiterlaufen ([Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md)).
+Unterbrechung weiterlaufen ([Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md)).
 
 Checkliste:
 
 - [ ] Eine Inhaltsinventur mit einem Verantwortlichen je Bereich.
 - [ ] Ein Testimport auf der Testinstallation vor dem echten Import.
 - [ ] Nach dem Import laufen die Inhaltsprüfungen: nicht referenzierte Objekte, defekte Relationen, Speicherdateien
-      ([Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md)).
+      ([Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md)).
 - [ ] Alternativtexte für Bilder: Bildfelder können sie verpflichtend machen
       ([Inhaltsmodell, Abschnitt 9](../../anleitungen/inhaltsmodell-und-bearbeitung.md)).
 - [ ] Übersetzungen vollständig für jede Sprache, die ein Siteaccess anzeigt.
@@ -154,7 +154,7 @@ Checkliste:
 Verwenden Sie [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md) für die Schranken und
 [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](checklisten-barrierefreiheit-sicherheit-und-compliance.md) für
 die Prüfungen. Ergänzen Sie eine Leistungsprüfung: Der Befehl `exp:benchmark` misst die Antwortzeiten von Seiten
-([Benchmark](../../../eng-us/features/6.0/benchmark.md)), und Abschnitt 2.10 des Kapitels zu den Systemanforderungen erklärt,
+([Benchmark](../../funktionen/6.0/benchmark.md)), und Abschnitt 2.10 des Kapitels zu den Systemanforderungen erklärt,
 warum die Dokumentation nur wenige feste Zahlen nennt ([Arbeitsspeicher, CPU und Festplatte](../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte)).
 
 ## Phase 6: Livegang
@@ -165,8 +165,8 @@ Härtungs-Checkliste dieser Hilfe ([Sicherheitshärtung](../sicherheitshaertung.
 Sie, dass jede Zeile einen Namen und ein Datum trägt, und Sie bereiten vor:
 
 - [ ] Ein Zeitfenster für den Livegang und einen Rückfallplan (Backup erstellt **und** einmal wiederhergestellt).
-- [ ] Den Wartungsmodus für die Umschaltung, falls Inhalte eingefroren werden müssen ([Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md)).
-- [ ] Die Personen, die am Tag des Livegangs die Logs beobachten ([Log-Viewer](../../../eng-us/features/6.0/log-viewer.md)).
+- [ ] Den Wartungsmodus für die Umschaltung, falls Inhalte eingefroren werden müssen ([Wartungsmodus](../../funktionen/6.0/wartungsmodus.md)).
+- [ ] Die Personen, die am Tag des Livegangs die Logs beobachten ([Log-Viewer](../../funktionen/6.0/log-betrachter.md)).
 - [ ] Die Ankündigung an die Redakteure: Was sich für sie ändert und wo sie Hilfe finden.
 
 ## Phase 7: Betrieb
@@ -176,7 +176,7 @@ Eine Site ist nie fertig. Übergeben Sie mit:
 - [ ] Der wöchentlichen Checkliste aus [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md) und der Checkliste für
       die erste Woche aus [Kapitel 10](../../installation/10-nach-der-installation.md#1015-eine-checkliste-für-die-erste-woche).
 - [ ] Laufenden Cronjobs, einschließlich der Gruppe `frequent`, die das Audit-Protokoll und die Workflows benötigen
-      ([Cronjobs](../../anleitungen/cronjobs.md), [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)).
+      ([Cronjobs](../../anleitungen/cronjobs.md), [Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)).
 - [ ] Einer Update-Routine: Wer verfolgt die Releases, und wie werden Updates getestet
       ([Release- und Upgrade-Planung](release-und-upgrade-planung.md))?
 - [ ] Der Übergabevorlage aus den [Projektvorlagen](projektvorlagen.md).
@@ -192,8 +192,8 @@ Was eine neue Installation laut Quellcode mitbringt:
 
 | Rolle | Was sie laut Quellcode hat |
 |---|---|
-| **Administrator** | Jede Richtlinie („Vollzugriff“); in einer neuen Installation die einzige Rolle mit `audit/read` und `audit/manage` ([Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)) |
-| **Editor** | Bearbeitungsrechte, `exphelp/read` zum Lesen der Hilfe ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)), `ezjscore/call` für `ezjscnode` und `oauth/authorize` bei neuen Installationen ([Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)) |
+| **Administrator** | Jede Richtlinie („Vollzugriff“); in einer neuen Installation die einzige Rolle mit `audit/read` und `audit/manage` ([Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)) |
+| **Editor** | Bearbeitungsrechte, `exphelp/read` zum Lesen der Hilfe ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)), `ezjscore/call` für `ezjscnode` und `oauth/authorize` bei neuen Installationen ([Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)) |
 | **Anonymous** | Was nicht angemeldete Besucher tun dürfen; `content/read` und `content/pdf`, beschränkt auf die Sektion Standard ([Sektionen](../../anleitungen/sektionen.md)) |
 
 Ordnen Sie die Personen Ihres Projekts Rollen zu. Bevorzugen Sie Benutzergruppen gegenüber einzelnen Benutzern: Jedes
@@ -231,22 +231,22 @@ den Bedarf, ist es Entwicklungsarbeit oder eine Erweiterung ([Schätzen und Abgr
 | Redakteure gestalten Landingpages selbst | Exponential Layouts | [Der Layout-Editor](../layout-editor.md) |
 | Mehrere Sites aus einer Installation | Siteaccesses, Multisite-Einstellungen | [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md) |
 | Inhalte in mehreren Sprachen | Inhaltssprachen, `SiteLanguageList` je Siteaccess | [Inhaltssprachen](../../anleitungen/inhaltssprachen.md) |
-| Sprachen mit Schreibrichtung von rechts nach links | `dir="rtl"` in Inhalten und Administration | [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
-| Hilfe beim Schreiben von Entwürfen und Übersetzungen | Exponential Intelligence | [expai](../../../eng-us/features/6.0/extensions/expai.md) |
-| Inhalte mit Tags klassifizieren | `eztags` | [eztags](../../../eng-us/features/6.0/extensions/eztags.md) |
-| Ein Newsletter | `cjw_newsletter` | [cjw_newsletter](../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
-| Produkte verkaufen | Der eingebaute Shop, PayPal über `ezpaypal` | [ezpaypal](../../../eng-us/features/6.0/extensions/ezpaypal.md), [Bestellbestätigungen](../../../eng-us/features/6.0/order-receipts.md) |
+| Sprachen mit Schreibrichtung von rechts nach links | `dir="rtl"` in Inhalten und Administration | [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
+| Hilfe beim Schreiben von Entwürfen und Übersetzungen | Exponential Intelligence | [expai](../../funktionen/6.0/erweiterungen/expai.md) |
+| Inhalte mit Tags klassifizieren | `eztags` | [eztags](../../funktionen/6.0/erweiterungen/eztags.md) |
+| Ein Newsletter | `cjw_newsletter` | [cjw_newsletter](../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
+| Produkte verkaufen | Der eingebaute Shop, PayPal über `ezpaypal` | [ezpaypal](../../funktionen/6.0/erweiterungen/ezpaypal.md), [Bestellbestätigungen](../../funktionen/6.0/bestellbelege.md) |
 | Abonnenten über neue Inhalte benachrichtigen | Benachrichtigungen | [Benachrichtigungen für Administratoren](../../anleitungen/benachrichtigungen-administrator.md) |
 | Respektieren, was Personen per E-Mail erhalten möchten | Die Mail-Schranke, das Einwilligungsprotokoll und die Sperrliste | [13.13 E-Mail: Einwilligung und Sperrliste](../../installation/13-sicherheitshaertung.md#1313-mail-einwilligung-und-sperrliste) |
 | Zweistufige Anmeldung für Mitarbeitende | `sevenx_authentication_2fa` | [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md) |
-| Wissen, wer was geändert hat | Das Audit-Protokoll | [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| Wissen, wer was geändert hat | Das Audit-Protokoll | [Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md) |
 | Andere Systeme lesen oder schreiben Inhalte | REST API v1 und v2 | [REST API](../../anleitungen/rest-api-v1-und-v2.md) |
-| PDF-Fassungen von Inhalten | PDF-Export | [PDF-Export](../../../eng-us/features/6.0/pdf-export.md) |
+| PDF-Fassungen von Inhalten | PDF-Export | [PDF-Export](../../funktionen/6.0/pdf-export.md) |
 | RSS-Feeds | RSS-Feeds | [RSS-Feeds](../../anleitungen/rss-feeds.md) |
 | Suche auf der Site | Die eingebaute Suche | [Suchen](../suchen.md) |
-| Spamschutz für Formulare | `recaptcha`, `hcaptcha` | [Erweiterungen](../../../eng-us/features/6.0/extensions/README.md) |
-| SEO-Metadaten und Sitemaps | `xrowmetadata`, `bcgooglesitemaps` | [xrowmetadata](../../../eng-us/features/6.0/extensions/xrowmetadata.md) |
-| Ungenutzte Bilder und defekte Links bereinigen | Inhaltsprüfungen | [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md) |
+| Spamschutz für Formulare | `recaptcha`, `hcaptcha` | [Erweiterungen](../../funktionen/6.0/erweiterungen/README.md) |
+| SEO-Metadaten und Sitemaps | `xrowmetadata`, `bcgooglesitemaps` | [xrowmetadata](../../funktionen/6.0/erweiterungen/xrowmetadata.md) |
+| Ungenutzte Bilder und defekte Links bereinigen | Inhaltsprüfungen | [Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md) |
 
 ## Ein durchgespieltes Beispiel
 
@@ -276,3 +276,11 @@ Freigabeschritt für Nachrichten. Die Planung Schritt für Schritt:
 - [Zusammenarbeiten](zusammenarbeiten.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

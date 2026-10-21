@@ -19,7 +19,7 @@ aus einer Installation betreiben, jede in ihrer eigenen Erweiterung.
 | `settings/siteaccess/<siteaccess>/` | Nur solange dieser Siteaccess läuft |
 | `settings/override/` | Solange ein Siteaccess läuft, der in dieser Erweiterung einen Ordner `settings/siteaccess/<name>/` hat (seit Januar 2026) |
 
-Der zweite Ort ist in [Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
+Der zweite Ort ist in [Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)
 beschrieben. Sein Ablagename, wie ihn die Debug-Ausgabe zeigt, ist `ext-siteaccess-override:<extension>`.
 
 ## Ein echtes Beispiel
@@ -66,8 +66,9 @@ im Starter-Siteaccess gelesen, sodass die Formulare des Themes keine andere Webs
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

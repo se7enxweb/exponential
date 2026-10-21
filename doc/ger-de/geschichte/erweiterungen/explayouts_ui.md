@@ -1,8 +1,8 @@
 # explayouts_ui (die Layouts-Seiten der Administration): Chronik
 
-Die Layouts-Seiten der Administration wurden am 30. Juli 2026 importiert. Im August wurde aus der Regelliste die Seite der Layout-Zuordnungen mit Detailbereich und Schnellaktionen; im September wurden die Listen seitenweise angezeigt, die Vorschau zeigte echte Inhalte, und die Seiten wurden für Telefone, MongoDB und dauerhaft laufende Worker korrigiert. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/explayouts_ui.md).
+Die Layouts-Seiten der Administration wurden am 30. Juli 2026 importiert. Im August wurde aus der Regelliste die Seite der Layout-Zuordnungen mit Detailbereich und Schnellaktionen; im September wurden die Listen seitenweise angezeigt, die Vorschau zeigte echte Inhalte, und die Seiten wurden für Telefone, MongoDB und dauerhaft laufende Worker korrigiert. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/explayouts_ui.md).
 
-Diese Seite führt **jede der 55 Änderungen** des Repositorys `explayouts_ui` zwischen 2026-07-30 und 2026-09-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/explayouts_ui.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/explayouts_ui.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/explayouts_ui.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 55 Änderungen** des Repositorys `explayouts_ui` zwischen 2026-07-30 und 2026-09-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/explayouts_ui.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/explayouts_ui.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/explayouts_ui.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -117,8 +117,8 @@ Diese Commits wurden nach dem Erstellen des maschinell erzeugten Änderungsverze
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/explayouts_ui.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/explayouts_ui.md)
 - [Release Notes](../../../changelogs/extensions/explayouts_ui.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/explayouts_ui.md)
 - [Spezifikation](../../spezifikationen/6.0/explayouts-ui-api.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Site-Ersteller. `ezgmaplocation` ist ein Datentyp, der einen Breiten-
 und Längengrad (Dezimalgrad) und eine Adresse an einem Objekt speichert; Redakteure finden den Punkt, indem sie unter
-einer Google-Karte eine Adresse eingeben ([ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md)).
+einer Google-Karte eine Adresse eingeben ([ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md)).
 
 ## Inhalt
 
@@ -46,7 +46,7 @@ Ohne Schlüssel laden Bearbeitungsformular und Ansicht kein Skript von Google un
 Eine Site oder Administration, die eine Content Security Policy sendet (`site.ini [ContentSecurityPolicy]`), muss die
 Hosts von Google erlauben; das README listet die Zeilen `AdditionalSources[]` für `script-src`, `img-src`,
 `connect-src`, `font-src`, `style-src`, `frame-src` und `worker-src`. Ohne Schlüssel muss nichts erlaubt werden
-([Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../../funktionen/6.0/content-security-policy.md)).
 
 ## Das Feld einer Klasse hinzufügen
 
@@ -75,8 +75,9 @@ auflistet), dann dasselbe mit `--apply`. Führen Sie es nur einmal aus.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

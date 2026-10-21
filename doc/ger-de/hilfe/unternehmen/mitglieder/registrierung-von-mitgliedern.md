@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Menschen, die eine Mitgliederorganisation führen, und für die Person, die die Website
 einrichtet. Sie erklärt, wie jemand auf der Website Mitglied wird, was die Person erlebt, was die Organisation steuert
 und was die Mitgliederliste sauber hält. Die technische Seite ist
-[Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md).
+[Mitgliederregistrierung und Bereiche nur für Mitglieder](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md).
 
 ## Inhalt
 
@@ -37,10 +37,10 @@ und was die Mitgliederliste sauber hält. Die technische Seite ist
 5. Die Person meldet sich an (`user/login`) und bearbeitet ihr eigenes Konto (`user/edit`).
 
 Jede Seite ist ein Template, das das Design der Website überschreibt, damit sie wie die Website aussieht
-([The pages involved](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md#the-pages-involved)). Die
+([The pages involved](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md#die-beteiligten-seiten)). Die
 Passwortregeln gelten auch hier: Eine Mindestlänge von 10 und eine Prüfung auf schwache Passwörter sind ausgeliefert
 (`settings/site.ini [UserSettings]`), und weitere Regeln lassen sich einschalten
-([Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md)).
+([Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md)).
 
 ## Die Registrierung öffnen
 
@@ -55,7 +55,7 @@ nur Besuchern, die sich registrieren dürfen; eine Website ohne offene Registrie
 (ausgeliefert `12`). Legen Sie eine Gruppe *Mitglieder* an, lassen Sie die Einstellung im öffentlichen Siteaccess darauf
 zeigen und geben Sie dieser Gruppe eine Rolle *Mitglied* mit `content/read` für die Mitgliedersektion und `user/login`
 für den öffentlichen Siteaccess, und sonst nichts
-([A members role](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md#a-members-role)).
+([A members role](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md#eine-rolle-für-mitglieder)).
 
 | Einstellung (`[UserSettings]`) | Empfohlen für eine Mitgliederwebsite |
 |---|---|
@@ -73,7 +73,7 @@ Manche Organisationen nehmen Mitglieder erst nach einer Prüfung auf. Exponentia
   **View**, **Activate** und **Reject and remove** für jede Registrierung. Die Links laufen standardmäßig nach 7 Tagen
   ab und geben nur einmal frei oder lehnen nur einmal ab; das Öffnen eines Links ändert nichts, bis die angemeldete
   Person der Geschäftsstelle bestätigt
-  ([Signierte Links in der Mail „New user registered“](../../../../eng-us/features/6.0/registration-admin-links.md)).
+  ([Signierte Links in der Mail „New user registered“](../../../funktionen/6.0/admin-links-der-registrierung.md)).
 - **Bis zur Freigabe zurückhalten.** Mit einem Freigabe-Workflow wartet das Konto auf ein Freigabeelement; die
   Geschäftsstelle gibt es aus der Mail oder dem Posteingang der Zusammenarbeit frei oder lehnt es ab, und der
   Workflow-Cronjob muss laufen.
@@ -85,16 +85,16 @@ die Geschäftsstelle das Konto der Gruppe *Mitglieder* hinzu.
 
 Wenn Mitglieder auf Papier oder über ein anderes Mitgliedersystem beitreten, legt die Geschäftsstelle die Konten in der
 Administration unter der Gruppe Mitglieder an. Die Mitglieder setzen dann ihr eigenes Passwort mit **Forgot your
-password?**, dessen Schlüssel ablaufen ([Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+password?**, dessen Schlüssel ablaufen ([Das Passwort eines Benutzers zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 Für größere Zahlen ist ein Import durch einen Entwickler möglich
-([Inhalte im Code anlegen](../../../../eng-us/help/creators/app-creators/creating-content-in-code.md)).
+([Inhalte im Code anlegen](../../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md)).
 
 ## Anmelden und vergessene Passwörter
 
 - Anmelden, Abmelden, die Kontoseite und das Ändern des Passworts sind für Mitglieder unter
   [Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md) beschrieben.
 - Die Seite für vergessene Passwörter verrät nicht, ob zu einer Adresse ein Konto gehört (ezwebin 6.0.7,
-  [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md)).
+  [ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md)).
 - Die zweistufige Anmeldung kann Mitgliedern als Option angeboten werden
   ([Zwei-Faktor und Anmeldung](../intranets/zwei-faktor-und-anmeldung.md#zweistufige-anmeldung)).
 
@@ -102,15 +102,15 @@ Für größere Zahlen ist ein Import durch einen Entwickler möglich
 
 Registrierungsformulare ziehen automatische Anmeldungen an. Fügen Sie der Benutzerklasse ein CAPTCHA-Feld (reCAPTCHA
 oder hCaptcha) hinzu und lassen Sie die E-Mail-Bestätigung eingeschaltet
-([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md),
-[hcaptcha](../../../../eng-us/features/6.0/extensions/hcaptcha.md)).
+([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md),
+[hcaptcha](../../../funktionen/6.0/erweiterungen/hcaptcha.md)).
 
 ## Die Mitgliederliste sauber halten
 
 | Aufgabe | Wo |
 |---|---|
 | Nie bestätigte Registrierungen | **Benutzer > Nicht aktivierte Benutzer**: aktivieren, erneut senden, entfernen; älter als 30 Tage mit *Old* gekennzeichnet ([Rollen und Richtlinien, 7](../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen)) |
-| Mitglieder, die sich nie oder lange nicht angemeldet haben | **Benutzer > Benutzerkonten prüfen**, Filter *Nie angemeldet* und *Not seen for N days* ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)) |
+| Mitglieder, die sich nie oder lange nicht angemeldet haben | **Benutzer > Benutzerkonten prüfen**, Filter *Nie angemeldet* und *Not seen for N days* ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)) |
 | Eine Person mit zwei Konten | der Filter *Doppelte E-Mail-Adresse* |
 | Mitglieder, die gegangen sind | **Deaktivieren** oder, wenn eingeschaltet, **Deaktivieren und verschieben** |
 
@@ -128,7 +128,7 @@ oder hCaptcha) hinzu und lassen Sie die E-Mail-Bestätigung eingeschaltet
 
 ## Verwandte Seiten
 
-- [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
+- [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
 - [Inhalte nur für Mitglieder](inhalte-nur-fuer-mitglieder.md)
 - [Registrierung und Kontofreigabe](../extranets/registrierung-und-kontofreigabe.md)
 - [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md)
@@ -136,8 +136,8 @@ oder hCaptcha) hinzu und lassen Sie die E-Mail-Bestätigung eingeschaltet
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

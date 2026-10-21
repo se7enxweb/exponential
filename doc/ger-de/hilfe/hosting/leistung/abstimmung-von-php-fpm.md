@@ -72,7 +72,7 @@ Dateien; eine Änderung, die „nicht wirkt“, ist meist eine Änderung an der 
 |---|---|---|
 | `max_execution_time` | PHP | der eigene Zeitgeber des Skripts |
 | `request_terminate_timeout` | der FPM-Pool | vom FPM-Master durchgesetzt, was auch immer das Skript tut; die echte Grenze in Echtzeit unter FPM |
-| `SQLiteTransactionWait` | `site.ini [DatabaseSettings]`, Standard 25 s | unter dem Zeitlimit der Anfrage halten und beide gemeinsam erhöhen ([SQLite-Transaktionen](../../../../eng-us/bc/6.0/sqlite-transactions.md)) |
+| `SQLiteTransactionWait` | `site.ini [DatabaseSettings]`, Standard 25 s | unter dem Zeitlimit der Anfrage halten und beide gemeinsam erhöhen ([SQLite-Transaktionen](../../../bc/6.0/sqlite-transaktionen.md)) |
 | der Setup-Assistent auf MongoDB | — | der Konfigurationsschritt kann ein bis drei Minuten dauern; erhöhen Sie `request_terminate_timeout` oder nutzen Sie die Konsole ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
 
 > **Tipp**
@@ -84,7 +84,7 @@ Dateien; eine Änderung, die „nicht wirkt“, ist meist eine Änderung an der 
 APCu wird vom SQL-Abfrage-Cache im Modus `shared` und von anderen Caches der Installation genutzt.
 
 - Prüfen Sie es: Setup > Systeminformationen, Abschnitt PHP, oder `php -m | grep apcu`, und `php_admin_value[apc.enabled]` des Pools
-  ([SQL-Abfrage-Cache, einschalten](../../../../eng-us/bc/6.0/sql-query-cache.md#switching-it-on)).
+  ([SQL-Abfrage-Cache, einschalten](../../../bc/6.0/sql-abfrage-cache.md#einschalten)).
 - APCu wird geteilt: `querycache.ini` sagt, dass APCu ein Speicher für jede Website des PHP-FPM-Pools ist; voll mit gültigen Einträgen
   leert es sich vollständig, und jeder andere Cache und Zähler darin geht verloren. Auf einer Maschine, auf der sich mehrere Kunden
   einen FPM-Master teilen, kann eine Website die Einträge der anderen verdrängen.
@@ -94,9 +94,9 @@ APCu wird vom SQL-Abfrage-Cache im Modus `shared` und von anderen Caches der Ins
 
 ## Sitzungen
 
-Der standardmäßige Sitzungs-Handler des Kernels lässt PHP die Sitzungen halten (Dateien, wie `session.save_handler` in `php.ini` sagt;
+Der standardmäßige Session-Handler des Kernels lässt PHP die Sitzungen halten (Dateien, wie `session.save_handler` in `php.ini` sagt;
 `site.ini [Session] Handler` leer). Der rollenbewusste HTTP-Cache braucht Sitzungen in **Dateien, die jeder Server lesen kann, der die
-Website ausliefert**, im selben Verzeichnis ([HTTP-Cache, einschalten](../../../../eng-us/bc/6.0/httpcache.md#switching-it-on)). Wenn Sie Sitzungen
+Website ausliefert**, im selben Verzeichnis ([HTTP-Cache, einschalten](../../../bc/6.0/httpcache.md#einschalten)). Wenn Sie Sitzungen
 für einen Tarif anderswohin verlegen, speichert der HTTP-Cache nichts für angemeldete Besucher und sagt das in `X-Exp-Cache`.
 
 ## Neu laden, ohne andere Websites aufzuhalten
@@ -105,7 +105,7 @@ Nach einer Änderung an einer PHP-Klasse, einem Operator oder einer INI-Datei mu
 beschränkt sich nicht auf eine Website: Der Master bittet jedes Kind jedes Pools, seine Anfrage zu beenden, und startet kein neues Kind,
 bis das letzte fertig ist, für bis zu `process_control_timeout` (300 s auf Plesk). Gemessen auf einem Host ließ ein offener Ereignisstrom
 von 25 s die nächste Seite nach einem Neuladen 22,4 s warten
-([Engines von Velocity](../../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy)).
+([Engines von Velocity](../../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy)).
 
 Deshalb lädt `exp:velocity deploy` (auf Websites nur mit Apache mit `--no-velocity` nutzbar) nur neu, wenn es muss:
 
@@ -129,10 +129,10 @@ Die Quellen nennen keine Anzahl von Kindern für PHP-FPM; sie geben eine Methode
 
 - Eine gerenderte Seite kostet sowohl PHP- als auch Datenbank-CPU. Auf der Testinstallation von FrankenPHP (12 Kerne) waren es pro Seite
   etwa 0,25 s PHP- und 0,25 s Datenbank-CPU, und mehr PHP-Threads als etwa doppelt so viele wie Kerne konkurrierten nur miteinander
-  ([FrankenPHP, Threads](../../../../eng-us/bc/6.0/frankenphp.md#threads-classic-mode)). Dieselbe Überlegung gilt für einen Pool von FPM-Kindern;
+  ([FrankenPHP, Threads](../../../bc/6.0/frankenphp.md#threads-klassischer-modus)). Dieselbe Überlegung gilt für einen Pool von FPM-Kindern;
   bestätigen Sie sie auf Ihren eigenen Websites.
 - Zwischengespeicherte Seiten kosten weit weniger: Der HTTP-Cache maß unter Apache 508 anonyme Seiten pro Sekunde gegenüber 28 gerenderten
-  ([HTTP-Cache](../../../../eng-us/bc/6.0/httpcache.md#measured-on-a-reference-installation-2026-09-26-one-content-page-8-concurrent)). Wie viel
+  ([HTTP-Cache](../../../bc/6.0/httpcache.md#gemessen-auf-einer-referenzinstallation-2026-09-26-eine-inhaltsseite-8-gleichzeitig)). Wie viel
   einer Website aus Caches ausgeliefert wird, entscheidet, wie viele Kinder sie braucht.
 - Messen Sie mit `exp:benchmark --cold` bei steigender Gleichzeitigkeit und wählen Sie den Punkt, an dem p90 zu steigen beginnt
   ([Benchmark einer gehosteten Website](benchmark-einer-gehosteten-website.md)).
@@ -152,5 +152,13 @@ Die Quellen nennen keine Anzahl von Kindern für PHP-FPM; sie geben eine Methode
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
 - [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md)
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
-- [SQL-Abfrage-Cache](../../../../eng-us/bc/6.0/sql-query-cache.md)
+- [SQL-Abfrage-Cache](../../../bc/6.0/sql-abfrage-cache.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

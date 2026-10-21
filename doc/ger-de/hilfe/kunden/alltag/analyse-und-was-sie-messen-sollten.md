@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für den Betreiber und die Leitung, die darüber berichten, wie es der Website geht. Exponential zeichnet
 einige Zahlen selbst auf; für eine Besucheranalyse (woher Besucher kommen, wie lange sie bleiben) brauchen Sie einen
-Dienst, den Sie hinzufügen ([Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
+Dienst, den Sie hinzufügen ([Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
 Beginnen Sie mit den Fragen, die Sie beantwortet haben möchten, nicht mit den Zahlen, die ein Werkzeug zufällig anzeigt.
 
 ## Inhalt
@@ -35,15 +35,15 @@ Beginnen Sie mit den Fragen, die Sie beantwortet haben möchten, nicht mit den Z
 
 ## Was Exponential aufzeichnet
 
-Aus [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md):
+Aus [Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md):
 
 | Quelle | Was | Wo |
 |---|---|---|
 | Suchstatistiken | gesuchte Begriffe, Häufigkeit, durchschnittliche Trefferzahl; **standardmäßig ausgeschaltet** (`LogSearchStats=disabled` in `settings/site.ini`) | **Setup > Suchstatistiken** |
 | Aufrufzähler | Seitenaufrufe pro Knoten, gezählt vom Cronjob-Teil `updateviewcount` aus dem Zugriffslog | von Templates für Listen der „meistgelesenen“ Seiten verwendet |
-| Request-Logs | Anfragen mit Zeitmessung, für den Betrieb | [Request-Logs](../../../../eng-us/features/6.0/request-logs.md) |
-| Shop-Statistik | Bestellungen und Umsatz | `shop/statistics`, das [Shop-Dashboard](../../../../eng-us/features/6.0/store-dashboard.md) |
-| Prüfprotokoll | wer in der Administration was geändert hat | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Request-Logs | Anfragen mit Zeitmessung, für den Betrieb | [Request-Logs](../../../funktionen/6.0/anfrageprotokolle.md) |
+| Shop-Statistik | Bestellungen und Umsatz | `shop/statistics`, das [Shop-Dashboard](../../../funktionen/6.0/shop-dashboard.md) |
+| Prüfprotokoll | wer in der Administration was geändert hat | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 Diese Quellen beantworten Fragen des Betriebs; sie ersetzen keinen Analysedienst (dieselbe Quelle). Die Seite für
 Projektleitungen [Ein Projekt messen: Kennzahlen](../../fuehrung/kennzahlen-aus-logs-und-audit.md) listet weitere Zahlen,
@@ -57,9 +57,9 @@ die das Produkt liefert, jeweils mit der Seite oder dem Befehl, und eine Vorlage
 ## Einen Analysedienst hinzufügen
 
 - Die Erweiterung `bcwebsitestatistics` fügt das Google-Analytics-Skript hinzu und kann Shop-Bestellungen melden
-  ([bcwebsitestatistics](../../../../eng-us/features/6.0/extensions/bcwebsitestatistics.md)).
+  ([bcwebsitestatistics](../../../funktionen/6.0/erweiterungen/bcwebsitestatistics.md)).
 - Ein anderer Dienst wird als Skriptdatei über das Design hinzugefügt, wobei sein Host in der Content Security Policy
-  der Website erlaubt wird ([Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
+  der Website erlaubt wird ([Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
 
 Fragen Sie Ihren Partner, welchen Dienst Ihre Website verwendet und wer das Konto hat. Das Konto gehört Ihrer
 Organisation, nicht dem Partner.
@@ -69,9 +69,9 @@ Organisation, nicht dem Partner.
 Für Analyse ist in vielen Rechtsordnungen in der Regel die Einwilligung des Besuchers nötig: Laden Sie das Skript erst
 nach der Einwilligung, beschreiben Sie es auf der Datenschutzseite, und bevorzugen Sie Dienste, die Sie selbst hosten
 können oder die keine Cookies setzen, wenn Ihr Publikum das erwartet
-([Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)). Auch Suchbegriffe
+([Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)). Auch Suchbegriffe
 können personenbezogene Daten sein, weshalb die Suchstatistiken standardmäßig ausgeschaltet sind
-([Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md)). Dies ist keine Rechtsberatung; fragen Sie die
+([Website-Suche](../../ersteller/website-ersteller/suche-auf-der-website.md)). Dies ist keine Rechtsberatung; fragen Sie die
 Person, die für den Datenschutz verantwortlich ist.
 
 ## Ein Monatsbericht
@@ -95,6 +95,14 @@ Vergleichen Sie jede Zahl mit demselben Monat davor; die erste Messung ist Ihr A
 ## Verwandte Seiten
 
 - [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md)
-- [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)
+- [Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)
 - [Shop-Dashboard und Berichte](../../unternehmen/shops/shop-uebersicht-und-berichte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

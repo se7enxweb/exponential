@@ -45,8 +45,8 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Fehlende Dateien und Bildvarianten](../../../../anleitungen/fehlende-dateien.md),
-[Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md) (die Abschnitte „Speicherdateien“ und „Quarantäne“)
-und [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md).
+[Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md) (die Abschnitte „Speicherdateien“ und „Quarantäne“)
+und [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md).
 
 1. **Fehlende Dateien** (4 Minuten). Ein Ziel unter **Setup > Ungültige Relationen**: Haken Sie
    **Fehlende Dateien in var/site/storage** an (angezeigt wird der Name Ihres Speicherverzeichnisses) und führen Sie
@@ -146,7 +146,7 @@ Installation.
 1. **D.** Eine Bildvariante wird erst erstellt, wenn ein Bild zum ersten Mal in ihr angezeigt wird
    ([Fehlende Dateien](../../../../anleitungen/fehlende-dateien.md#1-die-prüfung-öffnen)).
 2. Nach `var/<site>/storage-quarantine/<date>/`, in einem Manifest verzeichnet; sie lässt sich an ihrem Platz
-   wiederherstellen ([Quarantäne](../../../../../eng-us/features/6.0/content-checks.md#quarantine)).
+   wiederherstellen ([Quarantäne](../../../../funktionen/6.0/inhaltspruefungen.md#quarantäne)).
 3. `bash bin/shell/verifyfiles.sh`, ausgeführt im Dokumentenstamm.
 4. Nein. Eine Datei, die jünger als ein Tag ist, ist nie verwaist.
 5. Die Prüfung auf fehlende Dateien: Existiert jede Datei, die der Inhalt verwendet?
@@ -156,9 +156,9 @@ Installation.
 ## Weiterführende Literatur
 
 - [Fehlende Dateien und Bildvarianten](../../../../anleitungen/fehlende-dateien.md): die Befunde lesen und beheben.
-- [Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md): nicht referenzierte Objekte, ungültige
+- [Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md): nicht referenzierte Objekte, ungültige
   Relationen, Speicherdateien und die Quarantäne.
-- [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md).
+- [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md).
 - [Runbook: Festplatte voll](../../../hosting/runbooks/festplatte-voll.md): wenn der Speicher die Festplatte füllt.
 
 ## Verwandte Seiten
@@ -169,9 +169,9 @@ Installation.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

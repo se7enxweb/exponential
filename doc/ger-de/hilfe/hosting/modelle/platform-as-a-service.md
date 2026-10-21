@@ -61,7 +61,7 @@ Administration installiert; `settings/` bleibt beschreibbar, wenn Administratore
 > Auf einer PaaS gehören Einstellungen in das Code-Repository. Der Schalter `[ConfigurationSettings] ManagedByDeployment=enabled`
 > sorgt dafür, dass die Konfiguration dieses Siteaccess nur aus dem Ausrollen (der Versionsverwaltung) kommt: Die
 > Administration schreibt keine `*.ini.append.php`- oder `.tpl`-Dateien mehr auf den Server
-> ([Konfiguration über das Ausrollen verwaltet](../../../../eng-us/features/6.0/managed-by-deployment.md)).
+> ([Konfiguration über das Ausrollen verwaltet](../../../funktionen/6.0/durch-deployment-verwaltet.md)).
 
 ## Schreibgeschützte oder flüchtige Dateisysteme
 
@@ -71,7 +71,7 @@ absolute Verzeichnisse werden NICHT UNTERSTÜTZT. **Hängen Sie den persistenten
 Installation ein**, statt `VarDir` anderswohin zeigen zu lassen.
 
 Innerhalb von `var/` bieten die Quellen feinere Steuerung (`site.ini [FileSettings]`,
-[Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)):
+[Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)):
 
 | Einstellung | Was sie erlaubt |
 |---|---|
@@ -135,3 +135,11 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
 - [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

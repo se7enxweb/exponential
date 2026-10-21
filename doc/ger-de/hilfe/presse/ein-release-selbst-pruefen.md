@@ -82,7 +82,7 @@ dass der Webhook des Repositorys zu Packagist fehlen kann, wenn eine neue Versio
 
 | Frage | Wie Sie es prüfen |
 |---|---|
-| Ist Funktion X in Version Y? | Durchsuchen Sie den Changelog von Y ([Einen Changelog lesen](ein-changelog-lesen.md)), dann das Ledger, dessen Spalte „Release“ „the release tag that first contained the change“ nennt ([Geschichte](../../../eng-us/history/README.md#how-to-read-the-ledger)) |
+| Ist Funktion X in Version Y? | Durchsuchen Sie den Changelog von Y ([Einen Changelog lesen](ein-changelog-lesen.md)), dann das Ledger, dessen Spalte „Release“ „the release tag that first contained the change“ nennt ([Geschichte](../../geschichte/README.md#so-lesen-sie-das-änderungsverzeichnis)) |
 | Ist ein Commit in einem Release? | `git tag --contains <hash>` in einem Klon listet jeden Tag auf, der ihn enthält |
 | Was hat sich zwischen zwei Releases geändert? | `git log --oneline v6.0.13..v6.0.14` |
 | Welche Version betreibt eine Website? | Sicher weiß das nur ihr Betreiber; raten Sie nicht anhand von Bildschirmfotos |
@@ -105,8 +105,8 @@ dass der Webhook des Repositorys zu Packagist fehlen kann, wenn eine neue Versio
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -88,14 +88,14 @@ Diese Seiten behandeln Teile des Themas bereits ausführlich; dieser Abschnitt v
 | [Anleitung zu Paketen](../../anleitungen/pakete.md) | **Setup > Pakete** Seite für Seite: die Liste, die Seite eines Pakets, Prüfungen beim Hochladen, Installation, Deinstallation, Entfernen, Berechtigungen |
 | [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../installation/04-installationsweg-waehlen.md) | Welches Installations-Frontend Pakete wie nutzt |
 | [Der Setup-Assistent](../../installation/05-setup-assistent.md), [Der Kickstarter](../../installation/06-kickstarter.md), [Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md) | Die drei Installations-Frontends |
-| [Der Paketassistent](../../../eng-us/features/6.0/package-wizard.md) | Pakete in der Administration erstellen |
-| [ezpm, der Paketmanager auf der Kommandozeile](../../../eng-us/features/6.0/ezpm-package-manager-cli.md) | `ezpm.php` |
-| [Das JSON-Paketformat](../../../eng-us/bc/6.0/package-json-format.md) | Das zweite Speicherformat eines Pakets |
-| [ezupdate](../../../eng-us/features/6.0/extensions/ezupdate.md) | Updates, Composer-Pakete und Paketserver in der Administration |
+| [Der Paketassistent](../../funktionen/6.0/paketassistent.md) | Pakete in der Administration erstellen |
+| [ezpm, der Paketmanager auf der Kommandozeile](../../funktionen/6.0/ezpm-paketmanager-cli.md) | `ezpm.php` |
+| [Das JSON-Paketformat](../../bc/6.0/package-json-format.md) | Das zweite Speicherformat eines Pakets |
+| [ezupdate](../../funktionen/6.0/erweiterungen/ezupdate.md) | Updates, Composer-Pakete und Paketserver in der Administration |
 | [Seitenpakete für Hoster](../hosting/bereitstellung/seitenpakete-fuer-hoster.md) | Ein Seitenpaket pro Hosting-Tarif wählen |
-| [Seitenpakete und die mitgelieferten Themes](../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md) | Die Seitenpakete aus der Sicht eines Website-Erstellers |
-| [Was ein Exponential-Paket ist](../../../eng-us/help/designers/extensions/what-an-exponential-package-is.md) und [Seitenstil-Paket](../../../eng-us/help/designers/extensions/site-style-package.md) | Pakete aus der Sicht eines Designers |
-| [Verteilung für Designer](../../../eng-us/help/designers/distribution/distribution-start-here.md) | Themes und Erweiterungen veröffentlichen |
+| [Seitenpakete und die mitgelieferten Themes](../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md) | Die Seitenpakete aus der Sicht eines Website-Erstellers |
+| [Was ein Exponential-Paket ist](../designer/erweiterungen/was-ein-exponential-paket-ist.md) und [Seitenstil-Paket](../designer/erweiterungen/das-site-style-paket.md) | Pakete aus der Sicht eines Designers |
+| [Verteilung für Designer](../designer/veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md) | Themes und Erweiterungen veröffentlichen |
 | [Mit Git aktualisieren](../mit-git-aktualisieren.md) | Den Code einer Installation aktuell halten |
 
 ## Verwandte Seiten
@@ -105,3 +105,11 @@ Diese Seiten behandeln Teile des Themas bereits ausführlich; dieser Abschnitt v
 - [Hosting-Unternehmen: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md)
 - [Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

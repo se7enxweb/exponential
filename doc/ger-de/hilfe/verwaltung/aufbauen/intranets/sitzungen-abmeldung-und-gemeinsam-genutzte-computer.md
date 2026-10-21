@@ -4,7 +4,7 @@ audience: government, admin
 category: public-sector
 order: 80
 summary: Wie lange Mitarbeiter in einem Exponential-Intranet angemeldet bleiben (SessionTimeout, ActivityTimeout), wie man das verkürzt, wie man Sitzungen unter Setup > Sitzungen mit dem Datenbank-Handler sieht und beendet, und Hinweise zu gemeinsam genutzten Computern und zur Sperre.
-keywords: Sitzungen, Abmeldung, gemeinsam genutzte Computer, Setup Sitzungen, Sperre, sessions, SessionTimeout, ActivityTimeout, sign-out, logout, shared computers, Setup Sessions, ezpSessionHandlerDB, lockout, MaxNumberOfFailedLogin
+keywords: Sitzungen, Abmeldung, gemeinsam genutzte Computer, Setup Sitzungen, Sperre, sessions, SessionTimeout, ActivityTimeout, sign-out, logout, shared computers, Setup Sitzungen, ezpSessionHandlerDB, lockout, MaxNumberOfFailedLogin
 type: help
 ---
 # Sitzungen, Abmeldung und gemeinsam genutzte Computer
@@ -51,17 +51,18 @@ eines Kontos beendet auch seine Sitzungen (**Benutzer > Benutzerkonten prüfen**
 `site.ini [UserSettings] MaxNumberOfFailedLogin=0` (mitgeliefert) bedeutet keine Sperre. Eine Zahl sperrt ein Konto
 nach so vielen fehlgeschlagenen Anmeldungen; `TrustedIPList[]` listet Adressen, die immer erlaubt sind.
 **Benutzer > Benutzerkonten prüfen** zeigt gesperrte Konten und hat **Entsperren**. Brute-Force-Anmeldungen lösen
-außerdem einen Alarm im Audit-Protokoll aus ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+außerdem einen Alarm im Audit-Protokoll aus ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 
 - [Sitzungen](../../../../anleitungen/sitzungen.md)
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

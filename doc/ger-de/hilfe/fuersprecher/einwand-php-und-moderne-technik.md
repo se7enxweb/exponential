@@ -39,13 +39,13 @@ worauf Exponential heute läuft und was es bietet, und lassen Sie die Menschen u
 | Das Projekt zielt auf „PHP 8.2, 8.3, 8.4, 8.5, 8.6 und darüber hinaus PHP 9“ | ebenda |
 | Die CI führt die Tests auf PHP 8.1 bis 8.5 aus und prüft, dass 8.0 noch startet | ebenda |
 | Die Unterstützung für PHP 7.4 endete mit 6.0.7 | ebenda |
-| Das Design admin4, mit hellem und dunklem Modus, Tastaturunterstützung und Tests der Barrierefreiheit | [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
+| Das Design admin4, mit hellem und dunklem Modus, Tastaturunterstützung und Tests der Barrierefreiheit | [Das Design admin4](../../funktionen/6.0/admin4-design.md) |
 | jQuery 4 und TinyMCE 8 in der Linie 6.0.15 | [Mit Einwänden umgehen, PHP-Versionen und moderne Technik](../geschaeft/einwandbehandlung.md#php-versionen-und-moderne-technik) |
-| AdminUI als alternative Administration | [AdminUI](../../../eng-us/features/6.0/exp-adminui.md) |
+| AdminUI als alternative Administration | [AdminUI](../../funktionen/6.0/exp-adminui.md) |
 | Eine REST-API, Versionen 1 und 2 | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
-| Exponential Velocity, ein PHP-Webserver mit HTTP/2, HTTPS und dauerhaften Workern | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
+| Exponential Velocity, ein PHP-Webserver mit HTTP/2, HTTPS und dauerhaften Workern | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 | Für Symfony mit GraphQL: Exponential Platform DXP | [Welches Produkt passt zu Ihnen](../wer-ist-die-exponential-foundation.md#welches-produkt-zu-ihnen-passt) |
-| Eine Content Security Policy und keine Inline-Skripte in neuen Templates der Administration | [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) |
+| Eine Content Security Policy und keine Inline-Skripte in neuen Templates der Administration | [Content Security Policy](../../funktionen/6.0/content-security-policy.md) |
 
 ## Das Wort „Legacy“
 
@@ -86,3 +86,11 @@ the family has Exponential Platform DXP. (links)
 - [Die Produktfamilie kennen](die-produktfamilie-kennen.md)
 - [Einwände als Fürsprecher beantworten](einwaende-beantworten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

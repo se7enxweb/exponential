@@ -29,7 +29,7 @@ innerhalb einer Frist behoben wird.“
 ## Die Release-Fakten des Projekts
 
 Aus [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) und
-[Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md):
+[Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md):
 
 - Exponential 6.0 ist die gepflegte Linie. Sicherheitskorrekturen werden auf `main` vorgenommen und mit dem nächsten
   Release 6.0.x veröffentlicht. Ältere Linien (5.x, 4.x, 3.x) werden nicht unterstützt.
@@ -85,7 +85,7 @@ Z.7 Record. The Supplier shall keep a record of releases assessed, fixes applied
 | Z.6 | [Eine Schwachstelle melden](../../../sicherheitshaertung.md#eine-schwachstelle-melden) |
 
 Beachten Sie, dass das Projekt in der CI keine Prüfung der Abhängigkeiten auf Schwachstellen durchführt
-([Sicherheitsstandards](../../../../../eng-us/standards/security.md)); der Härtungsleitfaden empfiehlt `composer audit`. Bitten
+([Sicherheitsstandards](../../../../standards/sicherheit.md)); der Härtungsleitfaden empfiehlt `composer audit`. Bitten
 Sie den Lieferanten, es als Teil von Z.1 auszuführen.
 
 ## Hinweise für die bewertende Person

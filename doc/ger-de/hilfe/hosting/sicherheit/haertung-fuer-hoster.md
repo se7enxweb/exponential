@@ -108,7 +108,7 @@ verlässlich wie `TrustedProxies[]` (siehe [TLS und HTTPS](tls-und-https.md#prox
 | Passwörter | `MinPasswordLength=10`, `WeakPasswordCheck=enabled`, bcrypt | eine Richtlinie anbieten wie `MinPasswordLength=15`, `ForbidLogin`, `ForbidCurrentPassword` ([13.6](../../../installation/13-sicherheitshaertung.md#136-passwörter-und-anmeldung)) |
 | Sperre | `MaxNumberOfFailedLogin=0` (aus) | mit dem Kunden entscheiden; eine Sperre lässt auch jeden ein bekanntes Konto sperren |
 | Zweistufige Anmeldung | Erweiterung von `composer.json` verlangt und von den Installern aktiviert; `Enforce2FA=disabled` | `Enforce2FA` für Administratoren empfehlen: [Zweistufige Anmeldung](zweistufige-anmeldung.md) |
-| Sitzungscookie | `HttpOnly`, `SameSite=Lax`, `CookieSecure=auto` | `CookieSecure=true` auf Websites nur mit HTTPS ([13.7](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)) |
+| Sitzungscookie | `HttpOnly`, `SameSite=Lax`, `CookieSecure=auto` | `CookieSecure=true` auf Websites nur mit HTTPS ([13.7](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)) |
 | Formular-Tokens | `ezformtoken` aktiv | in `ActiveExtensions[]` behalten ([13.8](../../../installation/13-sicherheitshaertung.md#138-formular-tokens-gegen-cross-site-request-forgery)) |
 | Konfiguration aus Git | `ManagedByDeployment=disabled` | `enabled` auf Siteaccesses der Administration in der Produktion, wenn Einstellungen und Templates aus der Versionsverwaltung kommen |
 
@@ -213,3 +213,11 @@ wiederkehrende Prüfung ist die [Checkliste für die Sicherheitsprüfung](../che
 - [Checkliste für einen neuen Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
 - [Kompromittierte Website](../runbooks/kompromittierte-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

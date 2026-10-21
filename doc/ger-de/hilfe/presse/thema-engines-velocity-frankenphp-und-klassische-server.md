@@ -41,7 +41,7 @@ noch richtig ist.
 
 | Engine | Rolle in den Quellen | Standardport | Quelle |
 |---|---|---|---|
-| Qbix (der eigene Server von Velocity) | Für jede Stufe empfohlen; liefert HTTP und HTTPS selbst aus | 8088 (HTTPS 8080) | [Velocity, Die Engines im Vergleich](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#engines-side-by-side) |
+| Qbix (der eigene Server von Velocity) | Für jede Stufe empfohlen; liefert HTTP und HTTPS selbst aus | 8088 (HTTPS 8080) | [Velocity, Die Engines im Vergleich](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#engines-nebeneinander) |
 | FrankenPHP | Produktionsreife Alternative; eine einzige Binärdatei mit geprüfter Prüfsumme | 8089 (HTTPS 8444) | ebenda |
 | Eingebauter Server von PHP | Nur für die Entwicklung; die mitgelieferte Voreinstellung | 8087 | ebenda |
 | Apache, Nginx, LiteSpeed, Caddy, IIS, lighttpd, H2O, Traefik | Klassische Server mit Rewrite-Regeln; alle funktionieren | ihre eigenen | [README, The traditional options](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options) |
@@ -54,11 +54,11 @@ Nginx oder Apache davorsteht ([README](https://github.com/se7enxweb/exponential/
 
 | Fakt | Quelle |
 |---|---|
-| Die mitgelieferte Voreinstellung in `settings/velocity.ini` ist `Engine=php`, weil sie keine Installation braucht; die Dokumentation sagt, sie für jede echte Website auf `qbix` zu ändern. | [Velocity, Wozu Sie es verwenden](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
-| Alle drei Engines können für Tests gleichzeitig laufen, jede mit eigenem Port, eigener PID-Datei und eigenen Protokollen. | [Velocity, Die Engines im Vergleich](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#engines-side-by-side) |
+| Die mitgelieferte Voreinstellung in `settings/velocity.ini` ist `Engine=php`, weil sie keine Installation braucht; die Dokumentation sagt, sie für jede echte Website auf `qbix` zu ändern. | [Velocity, Wozu Sie ihn verwenden](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden) |
+| Alle drei Engines können für Tests gleichzeitig laufen, jede mit eigenem Port, eigener PID-Datei und eigenen Protokollen. | [Velocity, Die Engines im Vergleich](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#engines-nebeneinander) |
 | Der eingebaute Server von PHP ist „Single-threaded, no concurrency, not hardened. Never expose it to the internet.“ – einfädig, ohne Nebenläufigkeit, nicht gehärtet und nie dem Internet auszusetzen. | [README, The traditional options](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options) |
 | PHP 8.0 betreibt Exponential unter Apache, PHP-FPM oder Velocity (Velocity ab seinem Release 0.0.4.54). | [README, PHP](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
-| Shared Hosting: Apache oder LiteSpeed mit `.htaccess`; Velocity kann dort meist nicht laufen. | [Unterstützte Betriebssysteme](../../../eng-us/help/os-support.md#containers-cloud-and-hosting-panels) |
+| Shared Hosting: Apache oder LiteSpeed mit `.htaccess`; Velocity kann dort meist nicht laufen. | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
 | Worker halten die Anwendung im Speicher, deshalb braucht ein geändertes Template, eine geänderte Einstellung oder Klasse einen Neustart. | [README, One thing to know](https://github.com/se7enxweb/exponential/blob/main/README.md#one-thing-to-know-before-you-rely-on-it) |
 
 ## Was Sie nicht behaupten sollten
@@ -92,15 +92,15 @@ Velocity und den eigenen Server von PHP mit denselben Befehlen“.
 ## Verwandte Seiten
 
 - [Thema: Exponential Velocity](thema-exponential-velocity.md)
-- [FrankenPHP und der eingebaute Server von PHP](../../../eng-us/bc/6.0/frankenphp.md)
+- [FrankenPHP und der eingebaute Server von PHP](../../bc/6.0/frankenphp.md)
 - [Thema: Freiheit beim Hosting](thema-freiheit-beim-hosting.md)
 - [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

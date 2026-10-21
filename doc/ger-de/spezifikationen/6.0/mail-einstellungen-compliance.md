@@ -161,7 +161,7 @@ identifizieren niemanden. Die Anleitung der Extension ist `extension/cjw_newslet
 | Speicherbegrenzung | Zeilen pro Person werden nach `[TrackingSettings] PersonRetentionMonths` (12) entfernt, täglich durch die E-Mail-Warteschlange und durch `ext:cjw_newsletter:statistics --cleanup`; Summen bleiben erhalten | ST-07 |
 | Datenminimierung: keine Adresse und kein Name in einer URL, Berichte und Exporte zeigen Summen | Schlüssel `p<send item hash>` / `a<send>x<variant>`, HMAC-Signatur; `CjwNewsletterStatisticsReport` | ST-02, ST-11 |
 | Keine offene Weiterleitung, keine gefälschten Zählungen | die Weiterleitung geht nur auf die URL, die für die gesendete Ausgabe gespeichert ist, mit einer gültigen Signatur desselben Versands; sonst 404 | ST-04 |
-| Sicherheit der Endpunkte | keine Session, kein Cookie, `Cache-Control: no-store`, `Referrer-Policy: no-referrer`; CSV-Zellen entschärft | ST-03, ST-04, ST-11 |
+| Sicherheit der Endpunkte | keine Sitzung, kein Cookie, `Cache-Control: no-store`, `Referrer-Policy: no-referrer`; CSV-Zellen entschärft | ST-03, ST-04, ST-11 |
 
 **Site**: Nennen Sie in der Datenschutzerklärung die Newsletter-Statistik, was gezählt wird und die Aufbewahrungsdauer, und lassen Sie den Schalter der
 Site aus, wo keine Rechtsgrundlage besteht. Anonyme Summen laden für alle trotzdem ein Pixel von der Site (in Modus 2 auch für die
@@ -172,7 +172,7 @@ das Pixel mit `[TrackingSettings] OpenPixel=disabled` aus, oder lassen Sie das T
 
 - [E-Mail-Einstellungen: die Spezifikation](mail-einstellungen.md)
 - [Befehle für die E-Mail-Einstellungen](mail-einstellungen-cli.md)
-- [E-Mail-Einstellungen: die Anleitung für Benutzer](../../../eng-us/features/6.0/mail-preferences.md)
+- [E-Mail-Einstellungen: die Anleitung für Benutzer](../../funktionen/6.0/e-mail-einstellungen.md)
 - [E-Mail-Einstellungen: die Anleitung für Administratoren](../../anleitungen/mail-einstellungen-administrator.md)
 - [E-Mail-Einstellungen: die Anleitung für Entwickler](../../anleitungen/mail-einstellungen-entwickler.md)
-- [Upgrade-Hinweise: E-Mail-Einstellungen](../../../eng-us/bc/6.0/mail-preferences.md)
+- [Upgrade-Hinweise: E-Mail-Einstellungen](../../bc/6.0/e-mail-einstellungen.md)

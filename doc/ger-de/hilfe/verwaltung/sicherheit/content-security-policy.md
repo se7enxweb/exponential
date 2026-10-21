@@ -15,7 +15,7 @@ Seite verwenden darf; mit einer strengen Richtlinie läuft ein Skript nicht, das
 reflektierten Wert eingeschleust wurde, selbst wenn ein Template vergisst, ihn zu maskieren. Öffentliche Websites sind
 attraktive Ziele für Defacement und für das Einschleusen von Skripten in vertrauenswürdige Seiten, daher ist die
 Richtlinie eine starke zweite Verteidigungslinie
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Inhalt
 
@@ -32,9 +32,9 @@ Richtlinie eine starke zweite Verteidigungslinie
 | Administration (Design beginnt mit `admin`, oder ein Editor-Siteaccess auf admin4l) | **Report-only**: Der Browser meldet, was er blockieren würde, und blockiert nichts |
 | öffentliche Websites | **keine Richtlinie** |
 
-Das Projekt bewertet seine CSP-Unterstützung mit **Partly complies** gegenüber CSP Level 3
+Das Projekt bewertet seine CSP-Unterstützung mit **Teilweise erfüllt** gegenüber CSP Level 3
 (<https://www.w3.org/TR/CSP3/>); das Durchsetzen ist eine Entscheidung des Betreibers je Siteaccess
-([Sicherheitsstandards: Content Security Policy Level 3](../../../../eng-us/standards/security.md#content-security-policy-level-3)).
+([Sicherheitsstandards: Content Security Policy Level 3](../../../standards/sicherheit.md#content-security-policy-level-3)).
 Unabhängig davon begrenzt `SecurityHeaders[Content-Security-Policy]=frame-ancestors 'self'` das Einbetten in Frames auf
 jeder Seite.
 
@@ -75,14 +75,15 @@ admin4l fehl.
 
 ## Verwandte Seiten
 
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Content Security Policy für Hoster](../../hosting/sicherheit/content-security-policy.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -35,9 +35,9 @@ openssl s_client -connect www.example.com:443 -servername www.example.com </dev/
 
 ## Unter Velocity
 
-Velocity prüft ein Zertifikat, bevor es es nutzt: Ein kaputtes oder abgelaufenes Zertifikat erreicht nie einen Besucher; das Paar wird vor
+Velocity prüft ein Zertifikat, bevor er es nutzt: Ein kaputtes oder abgelaufenes Zertifikat erreicht nie einen Besucher; das Paar wird vor
 der Nutzung geprüft (lässt sich lesen, ist nicht abgelaufen, der Schlüssel gehört dazu), und ein selbstsigniertes Zertifikat springt ein,
-bis das echte wieder nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../../eng-us/features/6.0/velocity-https-certificates.md)).
+bis das echte wieder nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../funktionen/6.0/velocity-https-zertifikate.md)).
 
 1. Zeigen Sie, was es ausliefert:
 
@@ -81,3 +81,11 @@ bis das echte wieder nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../.
 - [HTTPS-Zertifikate in Velocity](../server/https-zertifikate-in-velocity.md)
 - [Velocity startet nicht](velocity-startet-nicht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

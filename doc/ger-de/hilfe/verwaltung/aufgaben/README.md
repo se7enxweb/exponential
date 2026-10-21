@@ -66,7 +66,7 @@ Administration, admin3) zeigen dieselben Funktionen in einer anderen Anordnung; 
 
 1. **Arbeiten Sie zuerst auf einer Test-Site**, wenn die Aufgabe Einstellungen, Rollen oder Workflows ändert. Eine
    Kopie der Produktion mit eigener Datenbank ist der sichere Ort zum Üben
-   ([Installation mit einem Befehl](../../../../eng-us/features/6.0/install-in-one-command.md) liefert Ihnen schnell eine
+   ([Installation mit einem Befehl](../../../funktionen/6.0/installation-mit-einem-befehl.md) liefert Ihnen schnell eine
    Testinstallation).
 2. **Prüfen Sie Ihre Rechte.** Eine Aufgabe in der Administration scheitert mit einer Seite „Zugriff verweigert“, wenn
    Ihrer Rolle die Richtlinie fehlt; fragen Sie die Person, die die Rollen verwaltet
@@ -77,7 +77,7 @@ Administration, admin3) zeigen dieselben Funktionen in einer anderen Anordnung; 
 4. **Leeren Sie die richtigen Caches** nach einer Änderung an Einstellungen oder Templates
    ([Caches](../../../anleitungen/caches.md)).
 5. **Halten Sie fest, was Sie geändert haben**, in Ihrem Änderungsprotokoll; das Audit-Protokoll zeichnet auf, wer
-   in der Administration was getan hat ([Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+   in der Administration was getan hat ([Audit-Protokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 
@@ -87,8 +87,9 @@ Administration, admin3) zeigen dieselben Funktionen in einer anderen Anordnung; 
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

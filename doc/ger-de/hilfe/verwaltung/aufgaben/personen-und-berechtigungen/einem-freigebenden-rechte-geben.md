@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren. Am Ende erhält eine Kollegin oder ein Kollege Freigabeanfragen für einen Bereich
 und kann sie freigeben oder ablehnen. Hintergrund:
-[Rollengestaltung: Freigebende](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-approvers.md).
+[Rollengestaltung: Freigebende](../../betrieb/personen-und-berechtigungen/rollenentwurf-freigebende.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -66,20 +66,21 @@ und kann sie freigeben oder ablehnen. Hintergrund:
 ## Fallstricke
 
 - Die eigenen Inhalte eines Freigebenden lässt das Ereignis Approve durch; wenn Ihre Regeln das verbieten, siehe
-  [Vier-Augen-Prinzip beim Veröffentlichen](../../../../../eng-us/help/government/operations/editorial-workflows/two-person-rule-for-publishing.md).
+  [Vier-Augen-Prinzip beim Veröffentlichen](../../betrieb/redaktionelle-workflows/vier-augen-prinzip-beim-veroeffentlichen.md).
 - Anfragen, die vor dem Beitritt der Kollegin oder des Kollegen gestellt wurden, behalten ihre alten Teilnehmer.
 - Ohne `content/versionread` für den Bereich werden wartende Versionen für den Freigebenden nicht gelistet.
 
 ## Verwandte Seiten
-- [Eingang der Zusammenarbeit](../../../../../eng-us/help/government/operations/editorial-workflows/collaboration-inbox.md)
-- [Das Ereignis Approve einrichten](../../../../../eng-us/help/government/operations/editorial-workflows/setting-up-the-approve-event.md)
+- [Eingang der Zusammenarbeit](../../betrieb/redaktionelle-workflows/posteingang-der-zusammenarbeit.md)
+- [Das Ereignis Approve einrichten](../../betrieb/redaktionelle-workflows/das-freigabe-ereignis-einrichten.md)
 - [Eine Rollenzuweisung entfernen](eine-rollenzuweisung-entfernen.md)
 - [Anleitung zu den Workflows](../../../../anleitungen/workflows.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -336,7 +336,7 @@
         if ( isNaN( depth ) || depth < 0 ) depth = 12;
 
         {* the options as view parameters, never a query string *}
-        var url = streamUrl + ( saEl && saEl.value ? '/(siteaccess)/' + encodeURIComponent( saEl.value ) : '' )
+        var url = streamUrl + ( saEl && saEl.value ? '/(siteaccess)/' + ( window.a4ViewParameter ? window.a4ViewParameter.encode( saEl.value ) : encodeURIComponent( saEl.value ) ) : '' )
                 + '/(maxpages)/' + pages + '/(maxdepth)/' + depth;
 
         startBtn.disabled = true;

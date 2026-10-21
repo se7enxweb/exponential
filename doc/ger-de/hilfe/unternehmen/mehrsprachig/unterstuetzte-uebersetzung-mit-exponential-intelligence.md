@@ -28,7 +28,7 @@ Datenschutzbeauftragten ein, bevor Sie ihn einschalten.
 
 ## Die Regel: nur Entwürfe
 
-Aus der README des Projekts und der [Funktionsseite zu expai](../../../../eng-us/features/6.0/extensions/expai.md):
+Aus der README des Projekts und der [Funktionsseite zu expai](../../../funktionen/6.0/erweiterungen/expai.md):
 
 - Der Assistent schreibt **Entwürfe**, als der angemeldete Redakteur und mit dessen eigenen Berechtigungen. „Er
   veröffentlicht nie von sich aus.“
@@ -45,7 +45,7 @@ Veröffentlichungsrechten ihn durchlässt.
 
 | Wo | Was er tut | Quelle |
 |---|---|---|
-| Das Bearbeitungsformular | Eine Aktion **Übersetzen** je Feld, neben „Write“, „Rewrite“, „Shorten“ und „Suggest“; die Werte landen zur Prüfung im Formular | [expai](../../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
+| Das Bearbeitungsformular | Eine Aktion **Übersetzen** je Feld, neben „Write“, „Rewrite“, „Shorten“ und „Suggest“; die Werte landen zur Prüfung im Formular | [expai](../../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
 | Vector, der Arbeitsbereich für größere Aufträge | Pläne mit Kostenschätzung, schrittweise Prüfung jeder Änderung je Feld, bevor etwas geschrieben wird, und „What changed“ mit Rückgängigmachen | ebenda |
 | KI-Ketten | Schreiben, prüfen, überarbeiten und übersetzen in Schritten, mit einem menschlichen Kontrollpunkt | ebenda |
 | Übersetzungsabgleich | Hält bestehende Übersetzungen auf Stand, wenn sich der Quelltext ändert | unten |
@@ -82,13 +82,13 @@ und das Recht, das Objekt in dieser Sprache zu bearbeiten.
 Die in der README aufgeführten Anbieter: Anthropic; jeder OpenAI-kompatible Dienst (Melious.ai in der EU-Region,
 Hugging Face, OpenRouter, Mistral und andere); und lokale Open-Weight-Modelle über Ollama, bei denen „die Daten den
 Server nie verlassen“. Schutzmaßnahmen aus derselben Quelle und der
-[Funktionsseite](../../../../eng-us/features/6.0/extensions/expai.md#for-administrators):
+[Funktionsseite](../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren):
 
 - Jeder Anbieter nennt seine **Region** (`us`, `eu`, `local`) und Aufbewahrungsdauer; Regeln je Sektion und
   Inhaltsklasse legen fest, welche Inhalte wohin gehen dürfen, und jede Anfrage hält fest, wohin sie ging.
 - **„EI: Summary“** ist eine druckbare Seite für einen Datenschutzbeauftragten mit Region, Aufbewahrungsdauer, Datum der
   Bedingungen und Schlüsselquelle jedes Anbieters (nie dem Schlüssel selbst).
-- Jede Anfrage, jeder Entwurf und jede Statusänderung eines Entwurfs ist ein Ereignis des **Audit-Trails**; Prompts,
+- Jede Anfrage, jeder Entwurf und jede Statusänderung eines Entwurfs ist ein Ereignis des **Prüfprotokolls**; Prompts,
   Antworten und Schlüssel werden nie aufgezeichnet.
 - Nur Modelle, die einen Live-Test des Tool-Callings bestanden haben oder per Konfiguration als vertrauenswürdig gelten,
   dürfen Entwürfe schreiben.
@@ -100,7 +100,7 @@ jemand ihn nutzt ([Sicherheit](../sicherheit/README.md)).
 
 Jede Anfrage steht mit ihren aus einer Preistabelle geschätzten Kosten in einem Nutzungsprotokoll; Grenzen lassen sich
 je Benutzer, Tag, Monat, Website und Anbieter festlegen, und Budgets deckeln Arbeit in der Warteschlange
-([expai](../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)). Der Übersetzungsabgleich schätzt die Kosten
+([expai](../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)). Der Übersetzungsabgleich schätzt die Kosten
 jedes Auftrags, bevor er in die Warteschlange kommt, und ein Auftrag, den das Monatsbudget nicht mehr aufnehmen kann,
 wird zurückgehalten.
 
@@ -118,7 +118,7 @@ Die README beschreibt zwei Fälle:
 - **Eine ältere Installation**: Aktivieren Sie die Erweiterung, fügen Sie den Schlüssel hinzu, legen Sie ihre Tabellen
   an, geben Sie Redakteuren die Richtlinie `expai/write` und fügen Sie die Cron-Teile hinzu.
 
-Die [Funktionsseite](../../../../eng-us/features/6.0/extensions/expai.md#switch-it-on) enthält die Schritte. Der Hauptschalter
+Die [Funktionsseite](../../../funktionen/6.0/erweiterungen/expai.md#einschalten) enthält die Schritte. Der Hauptschalter
 `[AISettings] Enabled` schaltet alles auf einmal aus, oder je Siteaccess.
 
 ## Ein Prüfablauf
@@ -136,15 +136,15 @@ Die [Funktionsseite](../../../../eng-us/features/6.0/extensions/expai.md#switch-
 
 - [Übersetzungsablauf](uebersetzungsablauf.md)
 - [Checkliste Mehrsprachigkeit](checkliste-mehrsprachigkeit.md)
-- [expai: Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)
-- [Exponential Intelligence für Anwendungen](../../../../eng-us/help/creators/app-creators/exponential-intelligence.md)
+- [expai: Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md)
+- [Exponential Intelligence für Anwendungen](../../ersteller/anwendungsentwickler/exponential-intelligence.md)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -249,8 +249,8 @@ rohe Ausgabe an.
 
 ## Verwandte Seiten
 
-- [Der Online-Editor mit TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md) und [ezoe](../../../eng-us/features/6.0/extensions/ezoe.md)
-- [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md#access-and-security) (die Prüfung beim Upload)
+- [Der Online-Editor mit TinyMCE 8](../../funktionen/6.0/online-editor-tinymce8.md) und [ezoe](../../funktionen/6.0/erweiterungen/ezoe.md)
+- [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md#zugriff-und-sicherheit) (die Prüfung beim Upload)
 - [Upgrade des Audit-Protokolls](audit.md)
 - [Backend-Dienste von ezjscore](backend-dienste-ueber-ezjscore.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

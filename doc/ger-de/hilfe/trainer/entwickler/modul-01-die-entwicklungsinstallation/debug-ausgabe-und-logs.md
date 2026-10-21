@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Debug-Ausgabe und Logs für Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md),
-[Die Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md) und [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md).
+[Die Exp Debug bar](../../../../funktionen/6.0/exp-debug-leiste.md) und [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md).
 
 1. **Die Einstellungen** (4 Minuten). Alle in `site.ini`; zeigen Sie die Standardwerte:
 
@@ -141,7 +141,7 @@ Auf der Entwicklungsinstallation aus Lektion 1.2, aus ihrem Wurzelverzeichnis.
 3. Das Leeren des INI-Caches, `php bin/php/ezcache.php --clear-tag=ini`.
 4. `eZDebug::writeError()`: Fehler werden immer geloggt (`AlwaysLog[]=error`).
 5. **Falsch.** Sie fügen jedem Template Markup hinzu; nur für die Entwicklung
-   ([Template-Pfadkommentare](../../../../../eng-us/features/6.0/template-path-comments.md)).
+   ([Template-Pfadkommentare](../../../../funktionen/6.0/template-pfad-kommentare.md)).
 
 </details>
 
@@ -149,8 +149,8 @@ Auf der Entwicklungsinstallation aus Lektion 1.2, aus ihrem Wurzelverzeichnis.
 
 - [Debug-Ausgabe und Logs für Entwickler](../../../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md):
   jede Einstellung und jede Logdatei.
-- [Die Exp Debug bar](../../../../../eng-us/features/6.0/exp-debug-bar.md): ihre Tabs und ihr Einstellungs-Tab.
-- [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md) und
+- [Die Exp Debug bar](../../../../funktionen/6.0/exp-debug-leiste.md): ihre Tabs und ihr Einstellungs-Tab.
+- [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md) und
   [Einen Fehler über seine Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md).
 
 ## Verwandte Seiten
@@ -161,9 +161,9 @@ Auf der Entwicklungsinstallation aus Lektion 1.2, aus ihrem Wurzelverzeichnis.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

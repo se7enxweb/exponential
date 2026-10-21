@@ -25,7 +25,7 @@ Mehrere Reporter waren versucht, die Lücken mit einer Geschichte zu füllen; di
 | Datum | Ereignis | Quelle |
 |---|---|---|
 | 11. August 2025 | Die Website des Projekts kündigt den neuen Namen an | <https://exponential.earth/about/project> |
-| 12. August 2025 | README, `composer.json` und `lib/version.php` ändern sich im Repository; ein Commit benennt das Produkt in 332 Dateien von `bin/`, `doc/`, `design/` und den Übersetzungen um | [August 2025](../../../eng-us/history/2025/2025-08.md) |
+| 12. August 2025 | README, `composer.json` und `lib/version.php` ändern sich im Repository; ein Commit benennt das Produkt in 332 Dateien von `bin/`, `doc/`, `design/` und den Übersetzungen um | [August 2025](../../geschichte/2025/2025-08.md) |
 | 28. August 2025 | 6.0.10, das erste Release unter dem Namen Exponential | [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x) |
 
 ## Der Wortlaut der Ankündigung
@@ -50,7 +50,7 @@ Für die Plattform-Linie ergänzt das README, sie sei umbenannt worden, „to av
 | Die Konstante `EDITION` in `lib/version.php`, die `Exponential` lautet | Skriptnamen wie `bin/php/ezcache.php` |
 | | Paketnamen von Erweiterungen wie `ezwebin` und `eztags` |
 
-Die Umbenennung „touched text, not identifiers“ ([Das Produkt heißt Exponential](../../../eng-us/features/6.0/rebranding-to-exponential.md)).
+Die Umbenennung „touched text, not identifiers“ ([Das Produkt heißt Exponential](../../funktionen/6.0/umbenennung-in-exponential.md)).
 Deshalb sehen Leser im Code noch `eZ`: Es ist ein Präfix echter Bezeichner, und sie umzubenennen würde jede Website und
 jede Erweiterung kaputt machen.
 
@@ -80,13 +80,13 @@ Wenn Ihr Beitrag etwas davon braucht, fragen Sie 7x und die Foundation und nenne
 
 - [Nicht mit eZ Systems oder Ibexa verbunden](nicht-verbunden-mit-ez-systems-oder-ibexa.md)
 - [Marke und Namen für Medien](marke-und-namen-fuer-medien.md)
-- [Das Produkt heißt Exponential](../../../eng-us/features/6.0/rebranding-to-exponential.md)
+- [Das Produkt heißt Exponential](../../funktionen/6.0/umbenennung-in-exponential.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

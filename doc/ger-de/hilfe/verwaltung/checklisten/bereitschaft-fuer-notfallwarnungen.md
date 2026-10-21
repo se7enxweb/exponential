@@ -36,23 +36,23 @@ Caches und eine Engine, die Last verträgt. Planen Sie darauf aufbauend.
 
 ## Vorbereitete Inhalte
 
-- [ ] Ein Inhaltsbereich für Warnungen, den das Design deutlich anzeigt (zum Beispiel ein Block auf der Startseite oder im gemeinsamen Kopfbereich) ([Gemeinsamer Kopf- und Fußbereich](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md), [Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+- [ ] Ein Inhaltsbereich für Warnungen, den das Design deutlich anzeigt (zum Beispiel ein Block auf der Startseite oder im gemeinsamen Kopfbereich) ([Gemeinsamer Kopf- und Fußbereich](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md), [Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 - [ ] Vorlagen für häufige Warnungen, vorab in einfacher Sprache geschrieben und übersetzt ([Checkliste einfache Sprache](checkliste-einfache-sprache.md)).
 - [ ] Warnungen als Text, nicht als Bilder, damit Screenreader und langsame Verbindungen sie erhalten.
-- [ ] Ein RSS-Feed der Warnungen für Partner, die sie weiterverbreiten ([RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)).
+- [ ] Ein RSS-Feed der Warnungen für Partner, die sie weiterverbreiten ([RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md)).
 
 ## Schnell veröffentlichen
 
 - [ ] Die Redaktion für Warnungen hat das Veröffentlichen auf der Schulungsinstallation geübt.
 - [ ] Sie weiß, wie sie die Warnung aktualisiert und dann entfernt, und kennt die Versionsseite, um zu sehen, was wann gesagt wurde ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
-- [ ] Benachrichtigungen an Abonnenten, wenn Ihre Website sie nutzt ([Benachrichtigungen](../../../anleitungen/benachrichtigungen-administrator.md)); Newsletter gehen nicht sofort hinaus ([Newsletter versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)).
+- [ ] Benachrichtigungen an Abonnenten, wenn Ihre Website sie nutzt ([Benachrichtigungen](../../../anleitungen/benachrichtigungen-administrator.md)); Newsletter gehen nicht sofort hinaus ([Newsletter versenden](../../ersteller/website-ersteller/newsletter-versenden.md)).
 
 ## Die Änderung sichtbar machen
 
 - [ ] Die Redaktion weiß, dass das Veröffentlichen den Ansichtscache der Seite leert; die Administration weiß, wie sie mehr leert, wenn die Warnung in gemeinsamen Teilen erscheint: **Setup > Cache-Verwaltung** oder `php bin/php/ezcache.php --clear-id=template-block,content --allow-root-user` ([Caches](../../../anleitungen/caches.md)).
-- [ ] Wenn die Website den Antwortcache von Velocity nutzt, leeren Sie auch ihn: `exp:velocity cache clear` ([Antwortcache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md)).
-- [ ] Wenn ein CDN oder Reverse Proxy davor steht, ist sein Verfahren zum Leeren schriftlich festgehalten ([HTTP-Caching und CDNs](../../../../eng-us/help/creators/website-creators/http-caching-and-cdns.md)).
-- [ ] Wenn ein statischer Cache genutzt wird, ist sein Neuaufbau bekannt ([Statischer Cache und Velocity](../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md)).
+- [ ] Wenn die Website den Antwortcache von Velocity nutzt, leeren Sie auch ihn: `exp:velocity cache clear` ([Antwortcache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md)).
+- [ ] Wenn ein CDN oder Reverse Proxy davor steht, ist sein Verfahren zum Leeren schriftlich festgehalten ([HTTP-Caching und CDNs](../../ersteller/website-ersteller/http-caching-und-cdns.md)).
+- [ ] Wenn ein statischer Cache genutzt wird, ist sein Neuaufbau bekannt ([Statischer Cache und Velocity](../../ersteller/website-ersteller/statischer-cache-und-velocity.md)).
 
 ## Unter Last erreichbar bleiben
 
@@ -71,12 +71,13 @@ Caches und eine Engine, die Last verträgt. Planen Sie darauf aufbauend.
 
 - [Checklisten für Verwaltungen](README.md)
 - [Bereitschaft für Vorfälle](bereitschaft-fuer-vorfaelle.md)
-- [Leistung und Caching](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching](../../ersteller/website-ersteller/leistung-und-caching.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

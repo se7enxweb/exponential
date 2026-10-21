@@ -61,7 +61,7 @@ php bin/php/cache.php imagealias clear --allow-root-user
 php bin/php/cache.php opcache status --allow-root-user
 ```
 
-Große Caches werden beiseitegeschoben und erst danach gelöscht, sodass ein Leeren keine Anfragen warten lässt; siehe [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../eng-us/features/6.0/cache-clear-rename-aside.md).
+Große Caches werden beiseitegeschoben und erst danach gelöscht, sodass ein Leeren keine Anfragen warten lässt; siehe [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../funktionen/6.0/cache-leeren-durch-umbenennen.md).
 
 ### Die Caches vor PHP
 
@@ -80,7 +80,7 @@ Die erwartete Ausgabe der Status-Befehle endet mit `PASS` und einer Zeile wie `t
 ./console exp:velocity deploy --dry-run --allow-root-user
 ```
 
-Vertiefung: [Velocity-Antwort-Cache](../../eng-us/features/6.0/velocity-response-cache.md), [HTTP-Cache](../../eng-us/bc/6.0/http-caching.md), [Antwort-Cache und Navigation](../../eng-us/bc/6.0/response-cache-and-navigation.md), [Cache-Konsole](../../eng-us/bc/6.0/cache-console.md), [Velocity-Engines: eine PHP-Änderung bereitstellen](../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+Vertiefung: [Velocity-Antwort-Cache](../funktionen/6.0/velocity-antwort-cache.md), [HTTP-Cache](../bc/6.0/http-caching.md), [Antwort-Cache und Navigation](../bc/6.0/antwort-cache-und-navigation.md), [Cache-Konsole](../bc/6.0/cache-konsole.md), [Velocity-Engines: eine PHP-Änderung bereitstellen](../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy).
 
 ## 3. Cronjobs ausführen
 
@@ -114,13 +114,13 @@ Um den Zeitplan einzurichten, öffnen Sie die Crontab zum Bearbeiten (`./console
 17 * * * *  cd /path/to/installation && php runcronjobs.php --siteaccess=site infrequent --allow-root-user >> var/log/cron-infrequent.log 2>&1
 ```
 
-Ersetzen Sie `/path/to/installation` durch das Wurzelverzeichnis. Jeder Teil hat außerdem einen Konsolen-Alias, zum Beispiel `./console cron:frequent`; `./console list cron` zeigt alle an. Wenn Sie Velocity betreiben, kann dessen eigener [Scheduler](../../eng-us/features/6.0/velocity-scheduler.md) diese Aufgaben ohne den System-Cron starten.
+Ersetzen Sie `/path/to/installation` durch das Wurzelverzeichnis. Jeder Teil hat außerdem einen Konsolen-Alias, zum Beispiel `./console cron:frequent`; `./console list cron` zeigt alle an. Wenn Sie Velocity betreiben, kann dessen eigener [Scheduler](../funktionen/6.0/velocity-zeitplaner.md) diese Aufgaben ohne den System-Cron starten.
 
 Der Cronjob-Teil für Benachrichtigungen hat eine eigene Anleitung: [Benachrichtigungen: ausführen und Probleme beheben](benachrichtigungen-administrator.md).
 
 Der Teil `mailpreferences` (ebenfalls in `infrequent`) hält das Protokoll der E-Mail-Einwilligungen und die Bestätigungen innerhalb ihrer Aufbewahrungsfrist: [E-Mail-Einstellungen: einrichten und ausführen](mail-einstellungen-administrator.md).
 
-Vertiefung: [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md), [Befehle, Cronjob-Teile und Views als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md), [Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md) (große Lösch- und Kopiervorgänge laufen in Stapeln und werden von `cron:contentjobs` fortgesetzt).
+Vertiefung: [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md), [Befehle, Cronjob-Teile und Views als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md), [Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md) (große Lösch- und Kopiervorgänge laufen in Stapeln und werden von `cron:contentjobs` fortgesetzt).
 
 ## 4. Den statischen Cache einschalten
 
@@ -146,7 +146,7 @@ php bin/php/cache.php static status --allow-root-user
 
 Die Dateien werden je Site in `var/site/static` gezählt. Damit der Webserver aus ihnen antwortet, setzen Sie `StaticCache=enabled` in `settings/override/site.ini.append.php` im Block `[ContentSettings]`, leeren den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`) und prüfen, dass die Webserver-Regeln Ihrer Installation aktiv sind. Entfernen Sie die erzeugten Dateien mit `php bin/php/cache.php static clear --allow-root-user`.
 
-Vertiefung: [Generator für den statischen Cache](../../eng-us/features/6.0/static-cache-generator.md), [Standardwerte des statischen Caches](../../eng-us/bc/6.0/static-cache-defaults.md).
+Vertiefung: [Generator für den statischen Cache](../funktionen/6.0/generator-fuer-den-statischen-cache.md), [Standardwerte des statischen Caches](../bc/6.0/standardwerte-des-statischen-caches.md).
 
 ## 5. Die Site vorwärmen (Preload)
 
@@ -162,7 +162,7 @@ Das Skript fragt zuerst die Seiten der Sektionen ab und folgt dann den Links der
 php bin/php/warm.php --allow-root-user >> var/log/cache-warm.log 2>&1
 ```
 
-Verwenden Sie im Browser die Ansicht *Seiten vorladen* der Administration: Wählen Sie die Site, eine Seitenbegrenzung (Standard 250) und eine Linktiefe (Standard 3) und verfolgen Sie, wie die Seiten abgerufen werden. Vertiefung: [Caches vorwärmen](caches-vorwaermen.md), [Ansicht „Seiten vorladen“](../../eng-us/features/6.0/preload-sites-view.md), [Preloader für den Site-Cache](../../eng-us/bc/6.0/preload.md), [HTTP/2 und Cache-Vorwärmung](../../eng-us/bc/6.0/http2-and-cache-warming.md).
+Verwenden Sie im Browser die Ansicht *Seiten vorladen* der Administration: Wählen Sie die Site, eine Seitenbegrenzung (Standard 250) und eine Linktiefe (Standard 3) und verfolgen Sie, wie die Seiten abgerufen werden. Vertiefung: [Caches vorwärmen](caches-vorwaermen.md), [Ansicht „Seiten vorladen“](../funktionen/6.0/ansicht-websites-vorladen.md), [Preloader für den Site-Cache](../bc/6.0/preload.md), [HTTP/2 und Cache-Vorwärmung](../bc/6.0/http2-und-cache-vorwaermen.md).
 
 ## 6. Sichern und wiederherstellen
 
@@ -199,7 +199,7 @@ php bin/php/maintenance.php off --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-Testen Sie eine Wiederherstellung mindestens einmal auf einem anderen Server; eine Sicherung, die Sie nie wiederhergestellt haben, ist nur eine Hoffnung. Vertiefung: [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md).
+Testen Sie eine Wiederherstellung mindestens einmal auf einem anderen Server; eine Sicherung, die Sie nie wiederhergestellt haben, ist nur eine Hoffnung. Vertiefung: [Wartungsmodus](../funktionen/6.0/wartungsmodus.md).
 
 ## 7. Den eigenen Datenbanktreiber kennen
 
@@ -263,10 +263,10 @@ Installation eingeschaltet; bei einem Upgrade ist nichts zu tun. Mit Dank an Mug
 Verknüpfte Objekte werden mit dem Objekt indiziert, das auf sie verweist: Die durchsuchbaren Felder eines Objekts, das in einem
 Objektbeziehungs- oder Beziehungslistenfeld ausgewählt ist, werden gefunden, wenn Sie nach dem Objekt suchen, das dieses Feld enthält. Die Beziehungsfelder
 dieses verknüpften Objekts bleiben außen vor, sodass die Indizierung nie einer Kette von Beziehungen folgt. Exponential arbeitet
-seit 2018 so (siehe [Indizierung von Beziehungen](../../eng-us/bc/5.90/relation_indexing.md)); LoveStacks Commit `5c089f6250`
+seit 2018 so (siehe [Indizierung von Beziehungen](../bc/5.90/indizierung-von-beziehungen.md)); LoveStacks Commit `5c089f6250`
 macht dasselbe, sodass eine Site, die von LoveStack kommt, hier dieselben Suchergebnisse findet.
 
-Vertiefung: [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md), [SQLite-3-Treiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md), [Datenbanktreiber vom 16. bis 30. September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md), [Verhalten der SQLite- und Oracle-Treiber](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md), [MongoDB-Unterstützung](../../eng-us/features/6.0/mongodb-database-support.md).
+Vertiefung: [SQLite-Datenbankunterstützung](../funktionen/6.0/sqlite-datenbank.md), [SQLite-3-Treiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md), [Datenbanktreiber vom 16. bis 30. September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md), [Verhalten der SQLite- und Oracle-Treiber](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md), [MongoDB-Unterstützung](../funktionen/6.0/mongodb-datenbankunterstuetzung.md).
 
 ## 8. Die Logs lesen
 
@@ -288,14 +288,14 @@ php bin/php/audit.php tail --channel=access --lines=20 --allow-root-user
 php bin/php/audit.php verify --allow-root-user
 ```
 
-Erwartete Ausgabe von `status`: `Audit: enabled` und eine Zeile je Kanal (`content`, `access`, `system`, ...), die auf `intact` endet. Um bei der Untersuchung mehr auf der Seite selbst zu sehen, setzen Sie `DebugOutput=enabled` in `settings/override/site.ini.append.php` im Block `[DebugSettings]`, laden die Seite neu und schalten es danach wieder aus; lassen Sie es im Produktivbetrieb nie eingeschaltet. Vertiefung: [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md), [Ereignismodell des Audit-Protokolls](../spezifikationen/6.0/audit-ereignismodell.md), [Verbesserungen der Debug-Ausgabe](../../eng-us/features/6.0/debug-output-improvements.md).
+Erwartete Ausgabe von `status`: `Audit: enabled` und eine Zeile je Kanal (`content`, `access`, `system`, ...), die auf `intact` endet. Um bei der Untersuchung mehr auf der Seite selbst zu sehen, setzen Sie `DebugOutput=enabled` in `settings/override/site.ini.append.php` im Block `[DebugSettings]`, laden die Seite neu und schalten es danach wieder aus; lassen Sie es im Produktivbetrieb nie eingeschaltet. Vertiefung: [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md), [Ereignismodell des Audit-Protokolls](../spezifikationen/6.0/audit-ereignismodell.md), [Verbesserungen der Debug-Ausgabe](../funktionen/6.0/verbesserte-debug-ausgabe.md).
 
 ### PHP-Deprecations und Größe der Logdateien
 
 PHP 8 meldet eine Deprecation für jede Verwendung von etwas, das eine spätere PHP-Version entfernt, oft dieselbe viele Male
 auf einer Seite. Sie haben ein eigenes Log, `var/log/deprecated.log`, in das jede unterschiedliche Meldung einmal pro
 Anfrage geschrieben wird; sie werden nicht im Speicher gehalten und nicht in der Debug-Ausgabe aufgeführt, die sie nur zählt (der Wert `depr` der
-[Debug-Leiste](../../eng-us/bc/6.0/debug-bar.md#the-pinned-bar) und die Anzahl der Warnungen). Für Entwickler ist die Datei die Liste dessen,
+[Debug-Leiste](../bc/6.0/debug-leiste.md#die-angeheftete-leiste) und die Anzahl der Warnungen). Für Entwickler ist die Datei die Liste dessen,
 was vor dem nächsten PHP-Upgrade zu beheben ist; für Administratoren braucht eine Seite mit eingeschalteter Debug-Ausgabe weniger Speicher.
 
 ```ini
@@ -349,7 +349,7 @@ php bin/php/ezpgenerateautoloads.php -e --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-Vertiefung: [Reparatur aus dem Browser](../../eng-us/features/6.0/repair-from-the-browser.md), [Reparatur (Upgrade-Seite)](../../eng-us/bc/6.0/repair.md).
+Vertiefung: [Reparatur aus dem Browser](../funktionen/6.0/reparatur-im-browser.md), [Reparatur (Upgrade-Seite)](../bc/6.0/reparatur.md).
 
 ## 10. Eine wöchentliche Checkliste
 
@@ -361,8 +361,16 @@ Vertiefung: [Reparatur aus dem Browser](../../eng-us/features/6.0/repair-from-th
 
 ## Verwandte Seiten
 
-- Betrieb auf dem Velocity-Server: [Velocity-Server mit persistenten Workern](../../eng-us/features/6.0/velocity-persistent-worker-server.md) und [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
-- Eine neue Site installieren: [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md) und [Kickstarter](../../eng-us/features/6.0/kickstarter-cli.md).
-- Was sich geändert hat, Monat für Monat: die [Velocity-Chronik](../../eng-us/history/velocity/README.md).
+- Betrieb auf dem Velocity-Server: [Velocity-Server mit persistenten Workern](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und [Velocity-Engines](../bc/6.0/velocity-engines.md).
+- Eine neue Site installieren: [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md) und [Kickstarter](../funktionen/6.0/kickstarter-cli.md).
+- Was sich geändert hat, Monat für Monat: die [Velocity-Chronik](../geschichte/velocity/README.md).
 - Weitere Anleitungen: [Bereitstellung](bereitstellung.md) (Server, HTTPS, eine Änderung ausliefern), [Sicherheit und Audit](sicherheit-und-audit.md) (Härtung, Rollen, das Audit-Protokoll), [Upgrade](aktualisieren.md).
-- Hier verwendete Begriffe: [Glossar](../../eng-us/glossary.md).
+- Hier verwendete Begriffe: [Glossar](../glossar.md).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

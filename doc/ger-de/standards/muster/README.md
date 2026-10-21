@@ -11,7 +11,7 @@ type: reference
 
 Dieser Katalog richtet sich an Entwickler, die Exponential erweitern oder seinen Kernel ändern. Er listet jede Abstraktion auf, die der Code verwendet, wo sie liegt und wie eine neue Implementierung eingehängt wird, damit neuer Code den bereits vorhandenen Mustern folgt, statt neue zu erfinden. Er wird aus dem Quellcode generiert und ist daher für den Code, aus dem er gebaut wurde, vollständig und aktuell; die Regeln, die jedes Muster erkennen, sind heuristisch und werden weiter unten erklärt.
 
-Lauffähige Beispiele für die meisten dieser Erweiterungspunkte: [Beispiele](../../../eng-us/examples/README.md) und das [Kochbuch](../../../eng-us/examples/cookbook/README.md).
+Lauffähige Beispiele für die meisten dieser Erweiterungspunkte: [Beispiele](../../beispiele/README.md) und das [Kochbuch](../../beispiele/kochbuch/README.md).
 
 Die Regeln, denen der Code folgt: [Standards](../README.md) und [Architektur des Kernels](../architektur/kernel-architektur.md).
 

@@ -26,7 +26,7 @@ Jeder darf sie kopieren, übersetzen, anpassen und weitergeben.
 Die Dokumentation im Verzeichnis `doc/` des Repositorys, einschließlich der Hilfe in der Administration, steht unter
 „Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors“ und ist unter der GNU Free
 Documentation License, Version 1.3 oder später, lizenziert, ohne unveränderliche Abschnitte und ohne Umschlagtexte
-([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)). Eine Seite in einfachen Worten erklärt, was Leser damit
+([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)). Eine Seite in einfachen Worten erklärt, was Leser damit
 tun dürfen: sie lesen, kopieren, weitergeben, übersetzen, anpassen und zitieren
 ([Freie Dokumentation](../freie-dokumentation.md)). Ältere, von eZ Systems übernommene Seiten behalten ihre
 ursprünglichen Bedingungen. Rund um die Dokumentation pflegt die Community seit 2006 das Wiki eZpedia unter der GFDL,
@@ -36,11 +36,11 @@ und freie Schulungsbücher sind auf GitHub gespiegelt.
 
 | Fakt | Quelle |
 |---|---|
-| Die Dokumentation steht unter der GNU FDL 1.3 oder einer späteren Version | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
-| Der Hinweis deckt die Hilfeseiten, Anleitungen, Installationskapitel, Funktionsseiten zu 6.x, Changelogs und die Geschichte ab | [Was der Hinweis abdeckt](../../../eng-us/README-LICENSE.md#what-the-notice-covers) |
-| Dokumente von eZ Systems aus der Zeit vor 6.0 behalten ihre eigenen Bedingungen (GPL v2) | [Ältere Seiten mit eigenen Bedingungen](../../../eng-us/README-LICENSE.md#older-pages-with-their-own-terms) |
-| Beiträge zur Dokumentation werden unter derselben Lizenz angenommen | [Zur Dokumentation beitragen](../../../eng-us/README-LICENSE.md#contributing-to-the-documentation) |
-| Die Hilfe zeigt die Lizenz auf jeder Seite | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md#gnu-free-documentation-license) |
+| Die Dokumentation steht unter der GNU FDL 1.3 oder einer späteren Version | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
+| Der Hinweis deckt die Hilfeseiten, Anleitungen, Installationskapitel, Funktionsseiten zu 6.x, Changelogs und die Geschichte ab | [Was der Hinweis abdeckt](../../README-LIZENZ.md#was-der-hinweis-abdeckt) |
+| Dokumente von eZ Systems aus der Zeit vor 6.0 behalten ihre eigenen Bedingungen (GPL v2) | [Ältere Seiten mit eigenen Bedingungen](../../README-LIZENZ.md#ältere-seiten-mit-eigenen-bedingungen) |
+| Beiträge zur Dokumentation werden unter derselben Lizenz angenommen | [Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumentation-beitragen) |
+| Die Hilfe zeigt die Lizenz auf jeder Seite | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md#gnu-free-documentation-license) |
 | eZpedia: „The free eZ Publish encyclopedia that anyone can edit“, seit 2006, unter der GNU FDL | [Die Community](../wer-ist-7x.md#die-community) |
 | Schulungsbücher, „eZ Publish Training Books (100% Compatible With Exponential)“, als freie PDFs | ebenda |
 

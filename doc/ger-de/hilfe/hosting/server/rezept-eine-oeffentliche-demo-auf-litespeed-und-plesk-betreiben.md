@@ -16,7 +16,7 @@ funktionieren mit Apache und PHP-FPM; die Unterschiede sind vermerkt.
 
 Die Demo läuft im **Demomodus** (die Umgebungsvariable `EXP_DEMO_MODE=1`): Niemand kann ein Administratorpasswort ändern oder
 zurücksetzen, sodass der nächste Besucher sich weiterhin anmelden kann, und die Installer akzeptieren das veröffentlichte Passwort. Was der
-Demomodus tut und was nicht: [Demomodus](../../../../eng-us/bc/6.0/demo-mode.md).
+Demomodus tut und was nicht: [Demomodus](../../../bc/6.0/demomodus.md).
 
 > **Warnung:** Eine öffentliche Demo übergibt ihre Administration Fremden. Geben Sie ihr eine eigene Domain, einen eigenen Systembenutzer,
 > einen eigenen PHP-Handler und eine eigene Datenbankdatei, keine Zustellung von Mail an echte Adressen, keine Zugangsdaten, die irgendwo
@@ -139,16 +139,24 @@ Wenn eines davon fehlt: [Probleme mit dem Demomodus](../runbooks/probleme-mit-de
 |---|---|
 | Apache mit PHP-FPM (der FPM-Handler von Plesk) | dieselben Zeilen in `.htaccess` oder `env[EXP_DEMO_MODE] = 1` im Pool der Domain ([`php-fpm-pool-demo.conf`](../../../../eng-us/examples/demo-mode/php-fpm-pool-demo.conf)); Plesk schreibt die Pool-Datei, nutzen Sie also seine PHP-Einstellungen für die Domain, wo es sie anbietet |
 | nginx mit PHP-FPM | der Pool oder `fastcgi_param EXP_DEMO_MODE 1` ([`nginx-fastcgi-demo.conf`](../../../../eng-us/examples/demo-mode/nginx-fastcgi-demo.conf)) |
-| Exponential Velocity | die Umgebung der Unit, die es startet ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)); ein Neustart aus einer Shell ohne die Variable verwirft sie |
+| Exponential Velocity | die Umgebung der Unit, die ihn startet ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)); ein Neustart aus einer Shell ohne die Variable verwirft sie |
 | cPanel | die `.htaccess` der Domain (Apache oder LiteSpeed) und die Zeile mit der Variablen in den Cronjobs des Kontos |
 | Ein Container | [`docker-demo.env`](../../../../eng-us/examples/demo-mode/docker-demo.env) nur für den Dienst der Demo |
 
 ## Verwandte Seiten
 
-- [Demomodus: der Hinweis zum Upgrade](../../../../eng-us/bc/6.0/demo-mode.md)
+- [Demomodus: der Hinweis zum Upgrade](../../../bc/6.0/demomodus.md)
 - [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md),
   [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
-- [Beispiele für den Demomodus](../../../../eng-us/examples/demo-mode/README.md)
+- [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md)
 - [LiteSpeed und OpenLiteSpeed](litespeed-und-openlitespeed.md), [Plesk](../control-panels/plesk.md)
 - [exp:install für Hoster](../bereitstellung/exp-install-fuer-hoster.md), [Cronjobs](../betrieb/cronjobs.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

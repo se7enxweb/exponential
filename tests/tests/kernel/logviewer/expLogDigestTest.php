@@ -181,7 +181,7 @@ class expLogDigestTest extends PHPUnit\Framework\TestCase
     {
         $since = mktime( 10, 0, 0, 10, 17, 2026 );
         $g = array( 'key' => 'error', 'level' => 'error', 'literal' => 'not found', 'last_offset' => 4096 );
-        $this->assertSame( 'setup/logs/view/error/(level)/error/(search)/not~20found/(from)/2026-10-17~2010~3A00', expLogDigest::link( $g, $since ) );
+        $this->assertSame( 'setup/logs/view/error/(level)/error/(search)/not%20found/(from)/2026-10-17%2010:00', expLogDigest::link( $g, $since ) );
         $g['literal'] = '';
         $this->assertStringNotContainsString( '(search)', expLogDigest::link( $g, $since ) );
         $this->assertSame( 'setup/logs/view/error/(offset)/4096/(follow)/0', expLogDigest::entryLink( $g ) );

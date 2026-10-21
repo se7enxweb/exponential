@@ -11,7 +11,7 @@ type: help
 
 Dieser Bereich richtet sich an Datenschutzbeauftragte, Projektleitungen, Administratoren, Entwickler und Redakteure
 öffentlicher Stellen, die eine Website mit Exponential betreiben. Jede Aussage über das Produkt ist durch das
-Repository belegt, vor allem durch [Datenschutzstandards](../../../../eng-us/standards/privacy.md): Exponential ist Software,
+Repository belegt, vor allem durch [Datenschutzstandards](../../../standards/datenschutz.md): Exponential ist Software,
 kein Verantwortlicher im Sinne des Datenschutzrechts; es stellt Funktionen bereit (Einwilligungsprotokoll, E-Mail nur
 nach Opt-in, Löschung beim Entfernen eines Kontos, Pseudonymisierung im Audit, Maskierung und Aufbewahrungsfristen in
 Protokollen, keine Ressourcen von Drittanbietern in der Administration) und benennt seine Lücken (keine einheitliche
@@ -44,7 +44,7 @@ Formulare ohne Aufbewahrungsfrist, kein Cookie-Banner).
 | [Verantwortlicher, Auftragsverarbeiter und die Software](verantwortlicher-auftragsverarbeiter-und-exponential.md) | wer rund um eine Website welche Rolle hat |
 | [Wo personenbezogene Daten in Exponential liegen](bestandsaufnahme-personenbezogener-daten.md) | die Bestandsaufnahme mit Werkzeugen und Aufbewahrung |
 | [Datenminimierung](datenminimierung.md) | standardmäßig minimiert; was Sie selbst minimieren |
-| [Datenschutz im Audit-Trail](datenschutz-im-audit-trail.md) | Voreinstellungen, Pseudonymisierung, strenges Profil |
+| [Datenschutz im Prüfprotokoll](datenschutz-im-audit-trail.md) | Voreinstellungen, Pseudonymisierung, strenges Profil |
 | [Maskierung in Protokollen und im Protokollbetrachter](maskierung-in-protokollen.md) | Maskieren beim Schreiben und beim Anzeigen |
 | [Aufbewahrung personenbezogener Daten im Überblick](aufbewahrung-im-ueberblick.md) | jeder Mechanismus und seine Voreinstellung |
 | [Aufbewahrung von Audit-Einträgen](aufbewahrung-von-audit-eintraegen.md) | 90 / 730 Tage und wie Sie sie ändern |
@@ -74,18 +74,19 @@ Formulare ohne Aufbewahrungsfrist, kein Cookie-Banner).
 
 Schritt-für-Schritt-Aufgaben (einen Auskunftsantrag zu E-Mail-Einstellungen beantworten, ein Benutzerkonto löschen,
 Audit-Einträge über eine Person exportieren, Formulareinsendungen exportieren und entfernen) finden Sie in den
-Compliance-Aufgaben dieser Hilfe ([Compliance-Aufgaben](../../../../eng-us/help/government/tasks/compliance/README.md)).
+Compliance-Aufgaben dieser Hilfe ([Compliance-Aufgaben](../aufgaben/compliance/README.md)).
 
 ## Verwandte Seiten
 
 - Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md)
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Compliance und DSGVO für Hoster](../../hosting/sicherheit/compliance-und-dsgvo.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

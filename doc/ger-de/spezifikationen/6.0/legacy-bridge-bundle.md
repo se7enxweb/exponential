@@ -4,7 +4,7 @@ Diese Seite ist die Referenz für die Legacy-Bridge, das Symfony-Bundle, das den
 Plattform-Anfrage ausführt: sein Aufbau, die Ereignisse, auf die Sie hören können, die Einstellungen, die es von der Plattform
 in den Legacy-Kernel überträgt, sein Konfigurationsbaum und seine Branches. Lesen Sie sie, wenn Sie ein Projekt konfigurieren
 oder erweitern, das beide Kernel ausführt. Eine Schritt-für-Schritt-Einrichtung finden Sie unter
-[Legacy-Bridge: Exponential 6 innerhalb der Symfony-Plattform ausführen](../../../eng-us/features/6.0/legacy-bridge.md).
+[Legacy-Bridge: Exponential 6 innerhalb der Symfony-Plattform ausführen](../../funktionen/6.0/legacy-bridge.md).
 
 | Element | Wert |
 |---|---|
@@ -112,8 +112,8 @@ ez_publish_legacy:
 
 ## Verwandte Seiten
 
-- Funktionen: [Legacy-Bridge](../../../eng-us/features/6.0/legacy-bridge.md), [Site-Bundles](../../../eng-us/features/6.0/platform-site-bundles.md), [Administrationsoberfläche der Plattform](../../../eng-us/features/6.0/platform-admin-ui-fork.md), [DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md), [Layouts auf der Plattform](../../../eng-us/features/6.0/platform-layouts-core-fork.md), [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md), [Framework-Forks für PHP 8.5](../../../eng-us/features/6.0/platform-php85-framework-forks.md), [SQLite für Exponential Platform](../../../eng-us/features/6.0/platform-sqlite-install.md), [Datenbankverwaltung AdminNeo](../../../eng-us/features/6.0/adminneo-database-manager.md)
+- Funktionen: [Legacy-Bridge](../../funktionen/6.0/legacy-bridge.md), [Site-Bundles](../../funktionen/6.0/plattform-site-bundles.md), [Administrationsoberfläche der Plattform](../../funktionen/6.0/plattform-admin-ui-fork.md), [DXP-Skeleton](../../funktionen/6.0/plattform-dxp-skeleton.md), [Layouts auf der Plattform](../../funktionen/6.0/plattform-layouts-core-fork.md), [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md), [Framework-Forks für PHP 8.5](../../funktionen/6.0/plattform-php85-framework-forks.md), [SQLite für Exponential Platform](../../funktionen/6.0/plattform-sqlite-installation.md), [Datenbankverwaltung AdminNeo](../../funktionen/6.0/adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Namen der Konsolenbefehle der Plattform](platform-konsolenbefehle.md), [Paketübersicht der Plattform](platform-paketzuordnung.md), [SQLite-Installer der Plattform](platform-sqlite-installer.md)
-- Upgrade-Hinweise: [Paket-Forks und umbenannte Befehle](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Upgrade-Hinweise: [Paket-Forks und umbenannte Befehle](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Geschichte: [Überblick über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md); Repositorys [legacyBridge](../../../eng-us/history/ecosystem/legacyBridge.md), [ibexa-legacy-bridge---7x](../../../eng-us/history/ecosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../../eng-us/history/ecosystem/site-legacy-bundle.md), [ngsymfonytools](../../../eng-us/history/ecosystem/ngsymfonytools.md)
+- Geschichte: [Überblick über das Ökosystem](../../geschichte/oekosystem.md), [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md), [Änderungsverzeichnis](../../geschichte/aenderungsverzeichnis/README.md); Repositorys [legacyBridge](../../geschichte/oekosystem/legacyBridge.md), [ibexa-legacy-bridge---7x](../../geschichte/oekosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../geschichte/oekosystem/site-legacy-bundle.md), [ngsymfonytools](../../geschichte/oekosystem/ngsymfonytools.md)

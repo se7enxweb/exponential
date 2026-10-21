@@ -76,7 +76,7 @@ INCIDENT NOTES                                    Reference: <your own number or
 |---|---|
 | Genaue Zeiten von Deployments, Einstellungsänderungen, Ein- und Ausschalten der Wartung | Der Kanal `system` des Prüfprotokolls; Umschaltungen der Wartung werden als `system.maintenance.change` festgehalten ([Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Prüfprotokoll für den Betrieb](../../unternehmen/zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)) |
 | Der technische Fehler hinter einer Referenz | **Setup > Logdateien**, Feld **Fehlerreferenz** ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)) |
-| Wer sich angemeldet oder Inhalte geändert hat | Das Prüfprotokoll ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Wer sich angemeldet oder Inhalte geändert hat | Das Prüfprotokoll ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 | Verfügbarkeit und Zeitpunkte von Alarmen | Ihre externe Überwachung ([Überwachung](ueberwachung.md)) |
 | Reaktionszeiten | Das Ticketsystem Ihres Anbieters |
 
@@ -99,3 +99,11 @@ Vertragsverhandlung eine Zahl zu nennen.
 - [Probleme melden](probleme-melden.md)
 - [Ihren Anbieter jedes Jahr überprüfen](../partner-und-hoster/anbieter-jedes-jahr-ueberpruefen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

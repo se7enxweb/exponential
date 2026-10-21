@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren und Entwicklerinnen und Entwickler, 
 öffentlichen Website pflegen. Erweiterungen sind Composer-Pakete und Verzeichnisse unter `extension/`; jede trägt ihre
 Version in `ezinfo.php` und `extension.xml`. Die Werkzeuge sind **Setup > Extensions**
 ([Die Seite Extensions](../../../../anleitungen/extensions-seite.md)) und **Setup > Updates und Pakete**, bereitgestellt von
-der Erweiterung ezupdate ([ezupdate](../../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+der Erweiterung ezupdate ([ezupdate](../../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 
 ## Inhalt
 1. [Wissen, was Sie betreiben](#wissen-was-sie-betreiben)
@@ -59,7 +59,7 @@ Lesen Sie den Changelog jeder Erweiterung zwischen Ihrer und der neuen Version
 Erweiterungen von außerhalb des Projekts (und solche, die externe Dienste aufrufen, etwa Captcha- oder Kartendienste)
 brauchen dieselbe Prüfung wie jede Software, die Sie beschaffen: Lizenz, Betreuer, letztes Release, welche Daten Ihre
 Website verlassen. Der Datenschutzstandard hält fest, dass Erweiterungen Dritter standardmäßig ausgeschaltet sind
-([Datenschutzstandard](../../../../../eng-us/standards/privacy.md)). Führen Sie eine kurze Bewertung pro Erweiterung.
+([Datenschutzstandard](../../../../standards/datenschutz.md)). Führen Sie eine kurze Bewertung pro Erweiterung.
 
 ## Prüfungen nach einer Aktualisierung
 
@@ -78,13 +78,14 @@ einem Tag **Setup > Logdateien**, **Fehlerübersicht** an.
 ## Verwandte Seiten
 - [Versionshinweise lesen](versionshinweise-lesen.md)
 - [Automatisierte Updates mit ezupdate (Hosting)](../../../hosting/betrieb/automatische-updates-mit-ezupdate.md)
-- [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md)
+- [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Leitfaden zu Erweiterungen](../../../../anleitungen/extensions.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

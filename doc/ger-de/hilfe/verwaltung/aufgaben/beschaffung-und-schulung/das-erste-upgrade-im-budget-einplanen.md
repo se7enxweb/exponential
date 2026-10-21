@@ -11,7 +11,7 @@ type: help
 
 **Wer:** der Projektleiter mit dem Site-Administrator. **Wann:** beim Go-live, für die ersten Monate des Betriebs. Das
 erste Upgrade zeigt, ob die Site so gebaut wurde, dass sie sich aktualisieren lässt; planen Sie es früh. Hintergrund:
-[Upgrades im Budget einplanen](../../../../../eng-us/help/government/procurement/lifecycle/planning-upgrades-in-the-budget.md).
+[Upgrades im Budget einplanen](../../beschaffung/lebenszyklus/upgrades-im-haushalt-planen.md).
 
 ## Inhalt
 
@@ -34,7 +34,7 @@ erste Upgrade zeigt, ob die Site so gebaut wurde, dass sie sich aktualisieren l�
    zu verlegen ([Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md)).
 3. **Prüfen Sie, ob Staging existiert** und der Produktion entspricht.
 4. **Wählen Sie den Auslöser**: das nächste Release 6.0.x oder das erste Sicherheitsrelease, je nachdem, was zuerst
-   kommt ([Unterstützte Versionen](../../../../../eng-us/help/government/procurement/lifecycle/supported-versions.md)).
+   kommt ([Unterstützte Versionen](../../beschaffung/lebenszyklus/unterstuetzte-versionen.md)).
 5. **Budgetieren Sie es**: die Stunden des Lieferanten für die sieben Schritte plus einen Regressionstest, die Zeit
    Ihrer Mitarbeiter für Tests und eine Reserve ([Mit Git aktualisieren](../../../mit-git-aktualisieren.md#die-sieben-schritte)).
 6. **Vereinbaren Sie ein Wartungsfenster** und wie es angekündigt wird
@@ -57,13 +57,14 @@ Ein erstes Upgrade, pünktlich und im Budget erledigt, und echte Zahlen für die
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Kosten für Upgrades und Wartung](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/upgrade-and-maintenance-costs.md)
+- [Kosten für Upgrades und Wartung](../../beschaffung/gesamtbetriebskosten/kosten-fuer-upgrades-und-wartung.md)
 - [Aktualisieren](../../../../anleitungen/aktualisieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

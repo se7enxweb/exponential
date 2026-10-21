@@ -35,13 +35,13 @@ für öffentliche Stellen, mit der harmonisierten Norm
 Vereinigten Staaten folgen Bundesbehörden [Section 508](https://www.section508.gov/) und den
 [Revised 508 Standards](https://www.access-board.gov/ict/). Beide bauen auf [WCAG](https://www.w3.org/TR/WCAG22/) auf.
 
-Was Exponential über sich selbst erklärt ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)):
+Was Exponential über sich selbst erklärt ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)):
 
 | Standard | Status | Bedeutung für Sie |
 |---|---|---|
-| WCAG 2.2 AA | Partly complies | die Administration admin4 und admin4l ist gegen AA-Kriterien gebaut und getestet; öffentliche Designs sind nicht geprüft |
-| EN 301 549 | Unverified | es gibt keinen Konformitätsbericht |
-| Section 508 | Unverified | es gibt kein VPAT und keinen Accessibility Conformance Report |
+| WCAG 2.2 AA | Teilweise erfüllt | die Administration admin4 und admin4l ist gegen AA-Kriterien gebaut und getestet; öffentliche Designs sind nicht geprüft |
+| EN 301 549 | Nicht geprüft | es gibt keinen Konformitätsbericht |
+| Section 508 | Nicht geprüft | es gibt kein VPAT und keinen Accessibility Conformance Report |
 
 Die Barrierefreiheit Ihrer **öffentlichen Website** hängt also von Ihrem Design, Ihren Templates und Inhalten ab.
 Planen Sie Mittel für eine Prüfung Ihrer eigenen Templates ein, für die Schulung der Redaktion (Alternativtexte,
@@ -57,8 +57,8 @@ Wo mehrere Sprachen Amtssprachen sind, muss jede Seite meist vor oder bei der Ve
 | Bedarf | Exponential | Lesen |
 |---|---|---|
 | Ein Objekt, mehrere Sprachen | Übersetzungen je Objekt, ein Siteaccess je Sprache | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
-| Sprachumschalter und Sprach-URLs | Siteaccess je Sprache, Templates für den Umschalter | [Sprachumschalter und Sprach-URLs](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
-| Sprachen von rechts nach links | Unterstützung für `dir="rtl"` | [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md) |
+| Sprachumschalter und Sprach-URLs | Siteaccess je Sprache, Templates für den Umschalter | [Sprachumschalter und Sprach-URLs](../../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md) |
+| Sprachen von rechts nach links | Unterstützung für `dir="rtl"` | [Sprachen von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md) |
 | Freigabe je Sprache | **Betroffene Sprachen** des Ereignisses *Freigeben* | [Workflows](../../../../anleitungen/workflows.md) |
 
 Es gibt keine eingebaute Regel „nur veröffentlichen, wenn alle Sprachen vorliegen“. Setzen Sie sie durch einen Prozess
@@ -74,11 +74,11 @@ Einrichtungen der Zentralregierung unter die NIS2-Richtlinie,
 
 | Thema | Was mitgeliefert wird | Lesen |
 |---|---|---|
-| OWASP Top 10 | Gegenmaßnahmen für alle zehn Kategorien, Status „Partly complies“ | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| OWASP Top 10 | Gegenmaßnahmen für alle zehn Kategorien, Status „Teilweise erfüllt“ | [Sicherheitsstandards](../../../../standards/sicherheit.md) |
 | Zweistufige Anmeldung für Beschäftigte | sevenx_authentication_2fa, kann verpflichtend gemacht werden | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Kontosperre | verfügbar, standardmäßig aus (`MaxNumberOfFailedLogin`) | [Sicherheitshärtung](../../../sicherheitshaertung.md) |
-| Content Security Policy | standardmäßig Report-only in der Administration, auf Websites aus | [Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md) |
-| Lastspitzen | Ansichts-Cache, statischer Cache, Antwort-Cache von Velocity | [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
+| Content Security Policy | standardmäßig Report-only in der Administration, auf Websites aus | [Content Security Policy](../../../../funktionen/6.0/content-security-policy.md) |
+| Lastspitzen | Ansichts-Cache, statischer Cache, Antwort-Cache von Velocity | [Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md) |
 | Geplante Ausfallzeit | Wartungsmodus mit 503 und `Retry-After` | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
 
 Ihre Arbeit: ein Bedrohungsmodell, ein Hosting mit Redundanz, durch Wiederherstellen getestete Sicherungen, Überwachung,
@@ -101,7 +101,7 @@ die Schriftgutverwaltung wie [ISO 15489-1](https://www.iso.org/standard/62542.ht
 
 Formulare, Konten und Protokolle enthalten personenbezogene Daten. Exponential bietet Einwilligungsnachweise für E-Mails,
 Löschung beim Entfernen eines Kontos, Pseudonymisierung im Audit und Maskierung in Protokollen, aber kein Cookie-Banner
-([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)); in der EU gilt die
+([Datenschutzstandards](../../../../standards/datenschutz.md)); in der EU gilt die
 [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
 
 ## Eine Anforderungstabelle als Ausgangspunkt
@@ -127,8 +127,9 @@ Die Bereiche zu den Anforderungen in dieser Hilfe für Verwaltungen gehen tiefer
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

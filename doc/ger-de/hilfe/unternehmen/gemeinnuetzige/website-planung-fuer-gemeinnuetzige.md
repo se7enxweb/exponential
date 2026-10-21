@@ -34,19 +34,19 @@ Schreiben Sie drei bis fünf Ziele auf, denen die Website dient, jedes mit etwas
 | Den Auftrag erklären | Besucher erreichen die Seiten „Über uns“ und „Unsere Arbeit“ |
 | Geld sammeln | Klicks auf die Spendenschaltfläche oder Bestellungen im Shop, wenn Sie Spendenartikel verkaufen |
 | Ehrenamtliche gewinnen | Eingegangene Formulare von Ehrenamtlichen ([Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md)) |
-| Unterstützer informiert halten | Abonnenten des Newsletters ([Newsletter](../newsletter/README.md)) |
+| Unterstützer informiert halten | Abonnenten des Newsletters ([Newsletter](../newsletters/README.md)) |
 | Kampagnen durchführen | Besuche der Kampagnenseiten während der Kampagne ([Kampagnen und Landingpages](kampagnen-und-landingpages.md)) |
 
 Exponential setzt diese Ziele nicht für Sie und berichtet nicht darüber; die Werkzeuge zum Messen sind unter
-[Statistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md) aufgeführt.
+[Statistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md) aufgeführt.
 
 ## Zielgruppen
 
 Listen Sie jede Zielgruppe auf und das eine, wofür sie kommt: Spender (geben, Wirkung sehen), Ehrenamtliche (sich
 anmelden), Menschen, für die Sie da sind (Hilfe finden, Kontakt aufnehmen), Partner und Geldgeber (Berichte, Kontakte),
 Presse (Fakten, Bilder). Die wichtigsten Aufgaben werden zum Hauptmenü; alles andere steht darunter. Zur Methode siehe
-[Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md) und
-[Sitemap und Inhaltsinventar](../../../../eng-us/help/creators/website-creators/site-map-and-content-inventory.md).
+[Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md) und
+[Sitemap und Inhaltsinventar](../../ersteller/website-ersteller/sitemap-und-inhaltsbestandsaufnahme.md).
 
 ## Die Seiten, die die meisten gemeinnützigen Organisationen brauchen
 
@@ -58,7 +58,7 @@ Presse (Fakten, Bilder). Die wichtigsten Aufgaben werden zum Hauptmenü; alles a
 - [ ] Mitmachen ([Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md)).
 - [ ] Neuigkeiten und Veranstaltungen.
 - [ ] Berichte und Dokumente: Jahresberichte und Abschlüsse als Downloads
-      ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
+      ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
 - [ ] Kontakt, Datenschutzhinweis, Erklärung zur Barrierefreiheit.
 
 Die Website-Oberfläche `ezwebin`, die von `composer.json` verlangt wird, liefert Klassenpakete wie `article`, `event`,
@@ -98,7 +98,7 @@ Ziele erfüllen; jede bringt Schulung und Pflege mit sich.
 ## Sprachen und Barrierefreiheit
 
 Wenn Sie Menschen in mehreren Sprachen erreichen, planen Sie die Sprachen von Anfang an
-([Mehrsprachige Websites](../../../../eng-us/help/creators/website-creators/multilingual-sites.md), [Mehrsprachigkeit](../mehrsprachig/README.md)).
+([Mehrsprachige Websites](../../ersteller/website-ersteller/mehrsprachige-websites.md), [Mehrsprachigkeit](../mehrsprachig/README.md)).
 Planen Sie auch die Barrierefreiheit von Anfang an: Das ist günstiger, als eine fertige Website zu reparieren
 ([Barrierefreiheit für gemeinnützige Organisationen](barrierefreiheit-fuer-gemeinnuetzige.md)).
 
@@ -129,15 +129,15 @@ Launch date:                   ...
 ## Verwandte Seiten
 
 - [Gemeinnützige Organisationen](README.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Ein Exponential-Projekt planen](../../fuehrung/ein-exponential-projekt-planen.md)
 - [Vorlage für Projektbeschreibungen](../vorlagen/vorlage-fuer-projektbeschreibungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

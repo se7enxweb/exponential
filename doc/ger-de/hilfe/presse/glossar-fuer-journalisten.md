@@ -11,7 +11,7 @@ type: help
 # Glossar für Journalisten
 
 Diese Seite ist für Journalisten und ihre Leser. Jeder Begriff wird in ein oder zwei einfachen Sätzen erklärt, mit einem
-Link auf die Seite, die tiefer geht. Die eigenen Glossare des Projekts sind [das Glossar](../../../eng-us/glossary.md) für
+Link auf die Seite, die tiefer geht. Die eigenen Glossare des Projekts sind [das Glossar](../../glossar.md) für
 technische Begriffe und das [Glossar der Foundation](../wer-ist-die-exponential-foundation.md#glossar) für die Familie
 und die Geschichte.
 
@@ -92,7 +92,7 @@ und die Geschichte.
 | Begriff | Bedeutung |
 |---|---|
 | **CSP** | Content Security Policy: sagt dem Browser, welche Skripte eine Seite ausführen darf. [Thema: die Content Security Policy](thema-content-security-policy.md) |
-| **Audit-Trail** | Ein manipulationssicheres Protokoll dessen, was in der Administration geschehen ist |
+| **Prüfprotokoll** | Ein manipulationssicheres Protokoll dessen, was in der Administration geschehen ist |
 | **Zweistufige Anmeldung (2FA)** | Ein zweiter Faktor bei der Anmeldung, etwa ein Code aus einer App |
 | **Vertrauliche Meldung** | Eine Sicherheitslücke vertraulich melden, damit sie behoben ist, bevor Einzelheiten öffentlich werden. [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md) |
 
@@ -110,14 +110,14 @@ und die Geschichte.
 ## Verwandte Seiten
 
 - [FAQ für Reporter](faq-fuer-reporter.md)
-- [Das Glossar](../../../eng-us/glossary.md)
+- [Das Glossar](../../glossar.md)
 - [Glossar für Fürsprecher](../fuersprecher/glossar-fuer-fuersprecher.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -69,9 +69,9 @@ php bin/php/ezcache.php --clear-tag=ini --allow-root-user
 
 - [Datenbankunterstützung](../../hilfe/datenbankunterstuetzung.md): die unterstützten Datenbanken in ihrer offiziellen Reihenfolge, SQLite zuerst
 - [Spezifikation: Datenbanktreiber (SQLite und Oracle)](../../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md)
-- [SQLite-Datenbankunterstützung](../../../eng-us/features/6.0/sqlite-database.md)
+- [SQLite-Datenbankunterstützung](../../funktionen/6.0/sqlite-datenbank.md)
 - [Spezifikation: der SQLite3-Datenbanktreiber](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md)
-- [SQLite für Exponential Platform: kein Datenbankserver nötig](../../../eng-us/features/6.0/platform-sqlite-install.md)
+- [SQLite für Exponential Platform: kein Datenbankserver nötig](../../funktionen/6.0/plattform-sqlite-installation.md)
 - [Platform-SQLite-Installer](../../spezifikationen/6.0/platform-sqlite-installer.md)
-- Geschichte: [Januar 2024, 1. bis 15.](../../../eng-us/history/2024/2024-01a.md), [Januar 2024, 16. bis 31.](../../../eng-us/history/2024/2024-01b.md),
-  [April 2026](../../../eng-us/history/2026/2026-04.md), [Juni 2026, 16. bis 30.](../../../eng-us/history/2026/2026-06b.md)
+- Geschichte: [Januar 2024, 1. bis 15.](../../geschichte/2024/2024-01a.md), [Januar 2024, 16. bis 31.](../../geschichte/2024/2024-01b.md),
+  [April 2026](../../geschichte/2026/2026-04.md), [Juni 2026, 16. bis 30.](../../geschichte/2026/2026-06b.md)

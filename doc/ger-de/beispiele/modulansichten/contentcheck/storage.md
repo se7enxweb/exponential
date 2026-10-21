@@ -14,12 +14,12 @@ Eine Ansicht des Moduls `contentcheck`, definiert in `kernel/contentcheck/module
 ## Adresse
 
 ```text
-/contentcheck/storage/<NodeID>/(offset)/<Offset>
+/contentcheck/storage/<NodeID>/(offset)/<Offset>/(show)/<Show>/(sort)/<Sort>/(order)/<Order>/(kind)/<Kind>/(selectall)/<SelectAll>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `NodeID`.
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`, `(show)` setzt `Show`, `(sort)` setzt `Sort`, `(order)` setzt `Order`, `(kind)` setzt `Kind`, `(selectall)` setzt `SelectAll`.
 
 ## Wer sie öffnen darf
 

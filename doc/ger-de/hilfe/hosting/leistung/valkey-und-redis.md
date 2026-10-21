@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Hosting-Anbieter, die Redis oder Valkey betreiben und es Exponential-Websites anbieten möchten, für Geschwindigkeit oder
 für Websites, die von mehreren Web-Knoten ausgeliefert werden. Sie beantwortet: was die Erweiterung `sevenx_valkey_cache` in Redis oder
 Valkey verlegt, wie Sie sie einrichten, wie sich mehrere Kunden einen Server teilen können, ohne die Schlüssel der anderen zu sehen, und
-wo die Grenzen liegen. Die Quelle ist [sevenx_valkey_cache: Cache-Backend für Redis und Valkey](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md).
+wo die Grenzen liegen. Die Quelle ist [sevenx_valkey_cache: Cache-Backend für Redis und Valkey](../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md).
 
 ## Inhalt
 
@@ -75,7 +75,7 @@ bisher auf die Dateien zurück.
    IniCache=enabled
    ```
 
-3. Erzeugen Sie die Autoloads neu und leeren Sie die Caches (und starten Sie Velocity neu, wenn es die Website ausliefert):
+3. Erzeugen Sie die Autoloads neu und leeren Sie die Caches (und starten Sie Velocity neu, wenn er die Website ausliefert):
 
    ```bash
    php bin/php/ezpgenerateautoloads.php -e
@@ -140,7 +140,7 @@ Servers wird zu Cache-Fehlschlägen; die Erweiterung entscheidet, wie Fehler gem
 
 | Cache | Wo er bleibt |
 |---|---|
-| Sitzungen | der Sitzungs-Handler von PHP (standardmäßig Dateien); der rollenbewusste HTTP-Cache braucht Dateien |
+| Sitzungen | der Session-Handler von PHP (standardmäßig Dateien); der rollenbewusste HTTP-Cache braucht Dateien |
 | Der Antwort-Cache von Velocity | APCu und `var/cache/qbix-reverse` |
 | Der SQL-Abfrage-Cache | APCu oder Dateien (`querycache.ini Storage`) |
 | Kompilierte Templates, Bild-Aliase | Dateien in `var/` |
@@ -161,5 +161,13 @@ getrenntes Thema des Clusterings ([Clustering und gemeinsamer Speicher](../betri
 - [Cache-Schichten](cache-schichten.md)
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md)
 - [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md)
-- [sevenx_valkey_cache](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md)
+- [sevenx_valkey_cache](../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -51,7 +51,7 @@ wenn die Ursache gefunden ist. Die Fehlerseiten und ihre Ursachen stammen aus
 |---|---|---|
 | `We'll be right back` (503, `Retry-After: 30`) | die Datenbank war nicht erreichbar | prüfen Sie, dass der Datenbankserver läuft; prüfen Sie die Zugangsdaten in `settings/override/site.ini.append.php`; die Log-Zeile enthält die Meldung des Treibers |
 | `Down for maintenance` (503) | der Wartungsmodus ist an | `php bin/php/maintenance.php status --allow-root-user`; wenn die Arbeit erledigt ist: `php bin/php/maintenance.php off --allow-root-user`; das Löschen von `var/maintenance.json` beendet ihn, was auch immer sonst falsch ist |
-| `The site is missing the software libraries it needs` (503) | `vendor/` fehlt, wurde verschoben oder umbenannt | legen Sie `vendor/` zurück oder führen Sie `composer install --no-dev` aus; dann `php bin/php/ezcache.php --clear-all`, und starten Sie Velocity neu, wenn es die Website ausliefert |
+| `The site is missing the software libraries it needs` (503) | `vendor/` fehlt, wurde verschoben oder umbenannt | legen Sie `vendor/` zurück oder führen Sie `composer install --no-dev` aus; dann `php bin/php/ezcache.php --clear-all`, und starten Sie Velocity neu, wenn er die Website ausliefert |
 | `Something went wrong on our side` (500) mit `ERR-...` | ein nicht abgefangener Fehler | `./console exp:logs --reference=ERR-...`; die Zeile nennt Meldung, Datei und Zeile ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)) |
 | Eine leere Seite, oder 500 ohne etwas in `error.log` | PHP scheiterte, bevor Exponential protokollieren konnte: Syntaxfehler, fehlende Erweiterung, Speicher erschöpft | lesen Sie das Fehlerlog des Webservers oder von PHP-FPM; `php -l` auf einer kürzlich geänderten Datei |
 | 404 für jede Seite unter Apache | `.htaccess` wird nicht gelesen oder `mod_rewrite` ist aus | erlauben Sie Overrides, aktivieren Sie `mod_rewrite` ([Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)) |
@@ -98,3 +98,11 @@ Worker festhängt, `exp:velocity kill` und dann `start`.
 - [Velocity startet nicht](velocity-startet-nicht.md)
 - [Kapitel 12: Fehlersuche](../../../installation/12-fehlerbehebung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

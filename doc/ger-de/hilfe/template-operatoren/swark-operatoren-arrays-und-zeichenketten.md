@@ -281,13 +281,14 @@ Die Beispiele dieser drei sind die Zeilen 4 bis 6 des Zeichenketten-Beispiels ob
 
 - [Die swark-Operatoren](swark-operatoren.md)
 - [Swark-Operatoren: Anfrage und System](swark-operatoren-anfrage-und-system.md)
-- [Array-Operatoren für Designer](../../../eng-us/help/designers/templates/array-operators.md)
-- [Seitenweise Anzeige](../../../eng-us/help/designers/templates/pagination.md)
+- [Array-Operatoren für Designer](../designer/vorlagen/array-operatoren.md)
+- [Seitenweise Anzeige](../designer/vorlagen/seitenumbruch.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

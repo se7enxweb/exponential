@@ -55,7 +55,7 @@ Releases, die für die Planung wichtig sind, aus
 | 6.0.10 | Das erste Release mit dem Namen Exponential |
 | 6.0.13 | Sicherheitskorrekturen und Prüfungen der Sortierspalten |
 | 6.0.14 | MongoDB als Datenbank und die Upgrade-Dateiprüfung |
-| Linie 6.0.15 | Velocity, das Design admin4, der Audit-Trail, Exponential Layouts, Exponential Intelligence, das Hilfesystem |
+| Linie 6.0.15 | Velocity, das Design admin4, das Prüfprotokoll, Exponential Layouts, Exponential Intelligence, das Hilfesystem |
 
 > **Hinweis**
 > Das Projekt veröffentlicht keinen festen Release-Kalender. Die 6.0.x-Tags kamen in Abständen von etwa einem bis fünf
@@ -116,9 +116,9 @@ Aus [Wer ist die Exponential Foundation?, Releases und Versionsnummern](../../we
 | Dokument | Wofür Sie es nutzen |
 |---|---|
 | [Changelogs je Release](../../../../changelogs/6.0/6.0.15.md) | Was eine Version enthält, mit einem Abschnitt „Upgrading“ |
-| [Hinweise zu Verhaltensänderungen](../../../../eng-us/bc/6.0/behaviour-changes-2026-10.md) | Was sich anders verhält und was zu prüfen ist, je Zeitraum |
+| [Hinweise zu Verhaltensänderungen](../../../bc/6.0/verhaltensaenderungen-2026-10.md) | Was sich anders verhält und was zu prüfen ist, je Zeitraum |
 | [Release Notes der Erweiterungen](../../../../changelogs/extensions/README.md) | Was ein Release einer Erweiterung geändert hat |
-| [Die Geschichte](../../../../eng-us/history/README.md) | Die Geschichte jeder Änderung seit Dezember 2023, nach Monaten |
+| [Die Geschichte](../../../geschichte/README.md) | Die Geschichte jeder Änderung seit Dezember 2023, nach Monaten |
 
 Geben Sie einer Person in Ihrem Team die Aufgabe, diese vor jeder Aktualisierung zu lesen.
 
@@ -150,8 +150,8 @@ vertragliche Zusage, holen Sie sie sich schriftlich von ihnen; siehe
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

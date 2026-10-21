@@ -81,10 +81,10 @@ Listen werden seitenweise geliefert: `data` sind die Einträge und `meta` ist `t
 
 ### Authentifizierung
 
-Melden Sie sich einmal mit `expsession::login` an (POST `username`, `password`); die Antwort setzt das Session-Cookie,
+Melden Sie sich einmal mit `expsession::login` an (POST `username`, `password`); die Antwort setzt das Sitzungs-Cookie,
 das ein Client, der kein Browser ist, in einem Cookie-Speicher hält und mit jedem Aufruf sendet. `expsession::whoami`
-sagt, wer die Session ist, `expsession::token` gibt das für Schreibvorgänge nötige Formular-Token zurück,
-`expsession::ping` hält die Session am Leben, `expsession::logout` beendet sie. Clients, die kein Cookie halten
+sagt, wer die Sitzung ist, `expsession::token` gibt das für Schreibvorgänge nötige Formular-Token zurück,
+`expsession::ping` hält die Sitzung am Leben, `expsession::logout` beendet sie. Clients, die kein Cookie halten
 können, verwenden stattdessen ein persönliches API-Token, siehe unten.
 
     curl -c jar -d 'username=admin' --data-urlencode 'password=...' https://site/ezjscore/call/expsession::login
@@ -92,9 +92,9 @@ können, verwenden stattdessen ein persönliches API-Token, siehe unten.
 
 ### Authentifizierung mit einem API-Token
 
-Für Apps, Skripte und Server ist ein Session-Cookie das falsche Werkzeug: Es läuft ab, es braucht den Anmeldeablauf
+Für Apps, Skripte und Server ist ein Sitzungs-Cookie das falsche Werkzeug: Es läuft ab, es braucht den Anmeldeablauf
 und für jeden Schreibvorgang ein Formular-Token. Ein persönliches API-Token ist die Alternative. Ein angemeldeter
-Benutzer (Anmeldung per Session, nicht per Token) erzeugt eines mit `expsession::tokenCreate` (POST `name`,
+Benutzer (Anmeldung per Sitzung, nicht per Token) erzeugt eines mit `expsession::tokenCreate` (POST `name`,
 `expires_in_days` 1 bis 365, Standard 90); die Antwort enthält das Token **einmal** (`data.token`, `expt_` und 48
 Hexadezimalzeichen). Gespeichert wird nur sein SHA-256-Hash (Tabelle `expservices_token`), daher kann ein verlorenes
 Token nicht zurückgelesen, sondern nur widerrufen (`expsession::tokenRevoke`, POST `id`) und ersetzt werden.
@@ -111,7 +111,7 @@ zuletzt verwendet, Ablauf, widerrufen, gültig, nie das Token.
   Referenzinstallation kommt `Authorization` nicht an, und `X-Exp-Token` ist der Header, der funktioniert). Die
   mitgelieferten Clients senden beide.
 - **Was es bewirkt.** Bevor irgendeine Prüfung den Benutzer ansieht, meldet die Basisklasse die Anfrage als Benutzer
-  des Tokens an, nur für diese eine Anfrage: Die Session wird nicht angetastet, daher wird kein Cookie erzeugt, und
+  des Tokens an, nur für diese eine Anfrage: Die Sitzung wird nicht angetastet, daher wird kein Cookie erzeugt, und
   danach bleibt nichts angemeldet. Jede andere Prüfung ist unverändert: dieselben Richtlinien und Einschränkungen wie
   für diesen Benutzer, POST für Schreibvorgänge, das Audit-Ereignis jedes Schreibvorgangs.
 - **Schreibvorgänge brauchen kein Formular-Token**, wenn ein Bearer-Token verwendet wird (aber weiterhin POST). Das
@@ -122,7 +122,7 @@ zuletzt verwendet, Ablauf, widerrufen, gültig, nie das Token.
 - **Ablehnungen.** Ein unbekanntes, widerrufenes oder abgelaufenes Token oder ein Token, dessen Benutzer deaktiviert
   ist, wird bei jedem Dienst mit 401 beantwortet, auch bei öffentlichen (ein Client muss bemerken, dass sein Token
   ungültig geworden ist, statt stillschweigend anonym zu werden). Ein Token kann keine Tokens erzeugen (403): Dafür ist
-  die Anmeldung per Session nötig. Tokens anderer Benutzer sind unsichtbar (404).
+  die Anmeldung per Sitzung nötig. Tokens anderer Benutzer sind unsichtbar (404).
 - **Audit.** `access.expservices.token.create`, `access.expservices.token.revoke` und
   `access.expservices.token.failed` (ein abgelehntes Token, mit dem Grund) im Kanal `access`; der Zweig der Taxonomie
   `expServicesAuditBranch` ist in `extension/expservices/settings/audit.ini.append.php` registriert. Verwendungen werden
@@ -230,22 +230,22 @@ Discovery der API; jeder Aufruf ist öffentlich.
 | `expservices::domains` | public |  | Die Domänen mit ihrer Klasse und der Zahl ihrer Dienste |
 | `expservices::version` | public |  | Die Version von expservices, die Version des Umschlags und die Version von Exponential |
 
-### Session und Authentifizierung (`expsession`, 11 Dienste)
+### Sitzung und Authentifizierung (`expsession`, 11 Dienste)
 
-Entfernte Clients melden sich einmal an und behalten das Session-Cookie, oder sie verwenden ein persönliches
+Entfernte Clients melden sich einmal an und behalten das Sitzungs-Cookie, oder sie verwenden ein persönliches
 API-Token; siehe die Abschnitte zur Authentifizierung.
 
 | Aufruf | Zugriff | Schreiben | Zusammenfassung |
 |---|---|---|---|
-| `expsession::login::<username>::<password>` | public |  | Meldet mit POST username und password an; das Session-Cookie der Antwort ist die Session |
+| `expsession::login::<username>::<password>` | public |  | Meldet mit POST username und password an; das Sitzungs-Cookie der Antwort ist die Sitzung |
 | `expsession::logout` | user | POST | Meldet ab (POST mit dem Formular-Token) |
 | `expsession::whoami` | public |  | Der aktuelle Benutzer: ID, Anmeldename, Name, E-Mail, registriert, Gruppen |
-| `expsession::token` | public |  | Das Formular-Token dieser Session für Schreibvorgänge (Feld ezxform_token oder Header X-CSRF-Token) |
-| `expsession::ping` | public |  | Hält die Session am Leben und sagt, ob sie angemeldet ist |
+| `expsession::token` | public |  | Das Formular-Token dieser Sitzung für Schreibvorgänge (Feld ezxform_token oder Header X-CSRF-Token) |
+| `expsession::ping` | public |  | Hält die Sitzung am Leben und sagt, ob sie angemeldet ist |
 | `expsession::access::<module>::<function>` | user |  | Ob der Benutzer module/function hat (accessWord yes, no oder limited) |
 | `expsession::roles` | user |  | Die Rollen des Benutzers mit den Richtlinien jeder Rolle (module, function) |
 | `expsession::groups` | user |  | Die Benutzergruppen des Benutzers |
-| `expsession::tokenCreate` | user | POST | Erzeugt ein persönliches API-Token für den angemeldeten Benutzer (Anmeldung per Session, nicht durch ein anderes Token); `name`, `expires_in_days`. Das Token steht einmal in der Antwort, gespeichert wird nur sein Hash |
+| `expsession::tokenCreate` | user | POST | Erzeugt ein persönliches API-Token für den angemeldeten Benutzer (Anmeldung per Sitzung, nicht durch ein anderes Token); `name`, `expires_in_days`. Das Token steht einmal in der Antwort, gespeichert wird nur sein Hash |
 | `expsession::tokenList` | user |  | Die eigenen API-Tokens: ID, Name, Hinweis, erzeugt, zuletzt verwendet, Ablauf, widerrufen, gültig (nie das Token) |
 | `expsession::tokenRevoke` | user | POST | Widerruft ein eigenes API-Token (`id`) |
 
@@ -268,7 +268,7 @@ Was die Installation ist und worauf sie läuft; die Geheimnisse der Installation
 | `expsystem::locales::<limit>::<offset>` | user |  | Die Locales, die die Installation kennt |
 | `expsystem::health` | setup/system_info |  | Schnelle Prüfungen: Datenbankverbindung, Verzeichnisse var und Cache beschreibbar |
 | `expsystem::directories` | setup/system_info |  | Die Verzeichnisse var, storage und Cache (relativ zur Installation) und ob sie beschreibbar sind |
-| `expsystem::statistics` | setup/system_info |  | Anzahlen: Inhaltsobjekte, Knoten, Klassen, Benutzer, Sessions |
+| `expsystem::statistics` | setup/system_info |  | Anzahlen: Inhaltsobjekte, Knoten, Klassen, Benutzer, Sitzungen |
 | `expsystem::load` | setup/system_info |  | Die durchschnittliche Last des Servers und der PHP-Speicherverbrauch dieser Anfrage |
 | `expsystem::urls` | public |  | Host, Root-URL, Indexdatei und Server-URL dieser Anfrage |
 
@@ -446,7 +446,7 @@ begrenzte signierte Links (HMAC über Knoten, Attribut und Ablauf mit dem Geheim
 | `expfile::attributes::<node>` | content/read |  | Die Dateiattribute eines Knotens |
 | `expfile::info::<node>::<attribute>` | content/read |  | Eine Datei eines Knotens: Namen, MIME-Typ, Größe, Zahl der Downloads |
 | `expfile::downloadurl::<node>::<attribute>` | content/read |  | Die URL von content/download für eine Knotendatei (der Download selbst prüft content/read) |
-| `expfile::signedurl::<node>::<attribute>::<seconds>` | content/read |  | Ein zeitlich begrenzter signierter Link auf eine Knotendatei, für Clients ohne Session |
+| `expfile::signedurl::<node>::<attribute>::<seconds>` | content/read |  | Ein zeitlich begrenzter signierter Link auf eine Knotendatei, für Clients ohne Sitzung |
 | `expfile::verify::<node>::<attribute_id>::<expires>::<signature>` | public |  | Ob ein signierter Link echt und nicht abgelaufen ist |
 | `expfile::exists::<node>::<attribute>` | content/read |  | Ob die gespeicherte Datei eines Knotenattributs auf der Festplatte existiert |
 | `expfile::downloads::<node>::<attribute>` | content/read |  | Die Zahl der Downloads einer Knotendatei |
@@ -643,7 +643,7 @@ bcgooglesitemaps.ini), der Sitemap-Index und die erzeugten Dateien.
 
 ### Statistiken (`expstats`, 16 Dienste)
 
-Suchbegriffe, Inhaltszahlen, Wachstum, Sprachen, Benutzer und Sessions. Inhaltszahlen folgen content/read, der Rest
+Suchbegriffe, Inhaltszahlen, Wachstum, Sprachen, Benutzer und Sitzungen. Inhaltszahlen folgen content/read, der Rest
 braucht setup/administrate.
 
 | Aufruf | Zugriff | Schreiben | Zusammenfassung |
@@ -662,7 +662,7 @@ braucht setup/administrate.
 | `expstats::topowners::<limit>` | setup/administrate |  | Die Benutzer, denen die meisten veröffentlichten Objekte gehören |
 | `expstats::languagecounts` | content/read |  | Veröffentlichte Übersetzungen von Objekten pro Sprache |
 | `expstats::users` | setup/administrate |  | Zahl der Benutzerkonten, aktiviert und deaktiviert |
-| `expstats::sessions` | setup/administrate |  | Aktive Sessions (nicht abgelaufen) und wie viele davon angemeldete Benutzer sind |
+| `expstats::sessions` | setup/administrate |  | Aktive Sitzungen (nicht abgelaufen) und wie viele davon angemeldete Benutzer sind |
 | `expstats::overview` | content/read |  | Die wichtigsten Zahlen in einer Antwort |
 
 ### Designs und Templates (`expdesign`, 13 Dienste)
@@ -758,14 +758,14 @@ Client. Der Vertrag, dem alle Beispiele unten folgen:
    Dienstes (oder sein Fehler) ist `content`, siehe „Der Umschlag“. Argumente in der URL werden prozentkodiert und mit
    `::` verbunden; ein Schreibvorgang sendet seine Argumente als POST-Formularfelder.
 2. **Authentifizierung.** `POST expsession::login` mit `username` und `password` (formularkodiert). Das `Set-Cookie`
-   der Antwort ist die Session; halten Sie es in einem Cookie-Speicher. Die Antwort enthält außerdem das
-   Formular-Token der neuen Session (`data.token`), das jedes vor der Anmeldung geholte Token ersetzt. Anonyme Aufrufe
+   der Antwort ist die Sitzung; halten Sie es in einem Cookie-Speicher. Die Antwort enthält außerdem das
+   Formular-Token der neuen Sitzung (`data.token`), das jedes vor der Anmeldung geholte Token ersetzt. Anonyme Aufrufe
    funktionieren für die Dienste, deren Zugriff `public` ist. **Oder verwenden Sie ein persönliches API-Token**
    (`expsession::tokenCreate`, siehe „Authentifizierung mit einem API-Token“): Senden Sie
    `Authorization: Bearer <token>` und `X-Exp-Token: <token>` mit jedem Aufruf, halten Sie kein Cookie, holen Sie kein
    Formular-Token; Schreibvorgänge sind weiterhin POST.
 3. **Schreibvorgänge.** Mit einem API-Token ist ein Schreibvorgang nur ein POST (kein Cookie, daher kein
-   Formular-Token). Mit der Session: Holen Sie `expsession::token` (`data.token`, `data.field` = `ezxform_token`,
+   Formular-Token). Mit der Sitzung: Holen Sie `expsession::token` (`data.token`, `data.field` = `ezxform_token`,
    `data.header` = `X-CSRF-Token`) und senden Sie dann `POST` mit dem Token als Feld `ezxform_token` und als Header
    `X-CSRF-Token`. Ein fehlendes oder falsches Token ergibt 403.
 4. **Fehler.** HTTP 200 bedeutet nicht Erfolg: Sehen Sie auf `content.ok`. `content.error.code` ist
@@ -1133,9 +1133,9 @@ den POST, `msg.get_request_headers().append("X-CSRF-Token", token)` fügt den He
 ### Hinweise zur Integration in KDE und GNOME
 
 - **KDE (Qt/KF6).** Verwenden Sie den Qt-Client oben. Speichern Sie das Passwort in KWallet
-  (`KWallet::Wallet::openWallet`) und nie in der Konfigurationsdatei; nur das Session-Cookie lebt im Speicher (oder ein
+  (`KWallet::Wallet::openWallet`) und nie in der Konfigurationsdatei; nur das Sitzungs-Cookie lebt im Speicher (oder ein
   nach `~/.cache` gespeicherter `QNetworkCookieJar`). Zeigen Sie die Dienste des Katalogs als KRunner-Plugin (Abfrage
-  `expsearch::search`), als Plasma-Widget (lesende Dienste per Timer, `expsession::ping` hält die Session) oder als
+  `expsearch::search`), als Plasma-Widget (lesende Dienste per Timer, `expsession::ping` hält die Sitzung) oder als
   KIO-Slave-artiges Durchblättern von `expnode::children`. `KJob`/`QNetworkReply` liefern das asynchrone Modell;
   KNotification für 401 („erneut anmelden“).
 - **GNOME (GTK4/libadwaita).** Verwenden Sie den GTK/Python-Client oder `Soup 3` aus C/Vala/Rust. Speichern Sie das
@@ -1146,13 +1146,13 @@ den POST, `msg.get_request_headers().append("X-CSRF-Token", token)` fügt den He
 - **Beide.** Ermitteln Sie die Dienste beim Start mit `expservices::catalog` (zwischengespeichert nach
   `expservices::version`), bauen Sie Formulare aus den `args` eines schreibenden Dienstes, senden Sie
   Schreibvorgänge nur nach einer Aktion des Benutzers, und behandeln Sie jedes 403 als „das Token einmal erneuern“.
-  Online-Konten: KDE (KAccounts) und GNOME (GOA) haben keinen allgemeinen Anbieter für eine „Cookie-Session“; halten
+  Online-Konten: KDE (KAccounts) und GNOME (GOA) haben keinen allgemeinen Anbieter für eine „Cookie-Sitzung“; halten
   Sie das Konto daher in der App.
 
 ### Tests
 
 Die Shell- und Python-Clients wurden gegen eine Live-Website ausgeführt (lesende Aufrufe; der Schreibpfad bis zum
-401, das eine anonyme Session erhält). Der Ablauf mit API-Token wurde über HTTP geprüft (Erzeugen, Lesen und Schreiben
+401, das eine anonyme Sitzung erhält). Der Ablauf mit API-Token wurde über HTTP geprüft (Erzeugen, Lesen und Schreiben
 mit Bearer, Widerrufen, 401), die Shell- und Python-Clients wurden mit einem Token betrieben, und die GTK/Python-Beispiele
 dieser Anleitung wurden entnommen und ausgeführt.
 
@@ -1171,7 +1171,7 @@ Sein Code besteht aus ES-Modulen (`javascript/portal/`), die `React.createElemen
 sind in das Design übernommen (`javascript/vendor/`, `stylesheets/vendor/`), sodass die Website offline funktioniert
 und sich die Versionen nicht unter ihr verschieben können: React und ReactDOM 18.3.1 (UMD) und React Bootstrap 2.10.2
 von `cdnjs.cloudflare.com/ajax/libs/` sowie das CSS von Bootstrap 5.3.3. Für ein Upgrade laden Sie dieselben
-Dateinamen in der neuen Version von cdnjs herunter. Aufbau: `services.js` (der Client: fetch, Session-Cookie,
+Dateinamen in der neuen Version von cdnjs herunter. Aufbau: `services.js` (der Client: fetch, Sitzungs-Cookie,
 Formular-Token, Auspacken des Umschlags, `ServiceError`), `api.js` (eine Funktion pro Bedarf eines Bildschirms, die
 einzige Datei, die Dienste nennt), `ui.js` (Abkürzungen für das Kit, `useAsync`, Blätterleiste, Fehler- und
 Ladezustände), `pages/*.js` (eine Komponente pro Seite), `app.js` (Rahmen und Hash-Router).
@@ -1290,20 +1290,20 @@ Theme-Umschalter funktionieren, kein horizontales Scrollen, kein Konsolenfehler 
 ab (Formen von Knoten, Zusammenfalten von Listen, Bau von URLs, Behandlung von Nichtverfügbarkeit, Textsicherheit) und
 für das reaktive Design das Umsortieren mit Schlüsseln unter Erhalt der Knotenidentität, das Ersetzen von Handlern,
 die Textsicherheit, den Store (Reducer, Benachrichtigung nur bei Änderung, Effekte) und die Routentabelle. Das
-Browser-Testgerüst von expui (`/expui/test`) ist eine Admin-Seite, die an Admin-Sessions gebunden ist, daher laufen die
+Browser-Testgerüst von expui (`/expui/test`) ist eine Admin-Seite, die an Admin-Sitzungen gebunden ist, daher laufen die
 Portaltests stattdessen in der Playwright-Seite.
 
 ## Benutzer und Zugriff (neun Domänen, 195 Dienste)
 
 Klassen in `extension/expservices/classes/users/`, Tests in `tests/tests/extension/expservices/users/` (113 Tests,
-gegen die Live-Datenbank ausgeführt; sie legen eine Testgruppe, Testbenutzer, eine Testrolle, Test-Sessions und
+gegen die Live-Datenbank ausgeführt; sie legen eine Testgruppe, Testbenutzer, eine Testrolle, Test-Sitzungen und
 Kollaborationselemente an und entfernen sie wieder). Benutzer werden über die ID des Inhaltsobjekts angesprochen,
 Benutzergruppen über die Knoten-ID, Rollen und Richtlinien über die ID.
 
 Regeln, die für jeden Dienst dieser Domänen gelten:
 
-- Nichts gibt einen Passwort-Hash, einen Aktivierungs- oder Reset-Schlüssel, einen Session-Schlüssel oder
-  Session-Daten zurück. Anmeldename, E-Mail-Adresse und Kontozustand eines Benutzers werden nur für einen selbst oder
+- Nichts gibt einen Passwort-Hash, einen Aktivierungs- oder Reset-Schlüssel, einen Sitzungsschlüssel oder
+  Sitzungsdaten zurück. Anmeldename, E-Mail-Adresse und Kontozustand eines Benutzers werden nur für einen selbst oder
   für einen Benutzer zurückgegeben, den der Aufrufer bearbeiten darf (`content/edit` auf dem Benutzerobjekt); andere
   Aufrufer erhalten den öffentlichen Teil (ID, Name, Knoten, Klasse).
 - Schreibvorgänge sind POST mit dem Formular-Token (`expsession::token`), werden gegen die in der Tabelle gezeigte
@@ -1322,8 +1322,8 @@ Regeln, die für jeden Dienst dieser Domänen gelten:
 - Ein Kollaborationselement ist nur für seine Teilnehmer sichtbar (alle anderen erhalten 404); Genehmigen und
   Ablehnen brauchen die Rolle des Genehmigenden und eine wartende Genehmigung und lassen den Workflow genau so
   fortfahren, wie es die eigene View des Kernels tut.
-- `expsessionadmin` bezeichnet eine Session mit einer kurzen abgeleiteten Kennung; das Auflisten und Beenden anderer
-  Sessions braucht `setup/administrate`. Die Zahlen der Sessions lesen die Tabelle `ezsession`, die leer ist, wenn der
+- `expsessionadmin` bezeichnet eine Sitzung mit einer kurzen abgeleiteten Kennung; das Auflisten und Beenden anderer
+  Sitzungen braucht `setup/administrate`. Die Zahlen der Sitzungen lesen die Tabelle `ezsession`, die leer ist, wenn der
   Datei-Session-Handler von PHP verwendet wird (`expsessionadmin::settings` sagt, welcher Handler aktiv ist).
 Aus großer Macht folgt große Verantwortung.
 
@@ -1340,17 +1340,17 @@ Aus großer Macht folgt große Verantwortung.
 | `expuser::listAll` | user |  | limit:int, offset:int | Alle Benutzer, seitenweise |
 | `expuser::count` | user |  |  | Die Zahl der Benutzer |
 | `expuser::listByGroup` | user |  | group:int, limit:int, offset:int | Die Benutzer, die direkt in einer Benutzergruppe sind (Knoten-ID der Gruppe), seitenweise |
-| `expuser::loggedIn` | setup/administrate |  | limit:int, offset:int | Die Benutzer mit einer aktiven Session |
-| `expuser::loggedInCount` | setup/administrate |  |  | Angemeldete registrierte und anonyme Sessions |
-| `expuser::isOnline` | user |  | id:int | Ob ein Benutzer eine aktive Session hat |
+| `expuser::loggedIn` | setup/administrate |  | limit:int, offset:int | Die Benutzer mit einer aktiven Sitzung |
+| `expuser::loggedInCount` | setup/administrate |  |  | Angemeldete registrierte und anonyme Sitzungen |
+| `expuser::isOnline` | user |  | id:int | Ob ein Benutzer eine aktive Sitzung hat |
 | `expuser::profile` | user |  | id:int | Die Inhaltsattribute eines Benutzers (nicht das Konto), ohne ID man selbst |
 | `expuser::updateProfile` | user | POST | id:int, fields:json | Profilattribute eines Benutzers aktualisieren, den der Aufrufer bearbeiten darf (POST id, fields als JSON) |
 | `expuser::create` | user | POST | group:int, login:string, email:string, password:string, fields:json, enabled:bool, class:string | Einen Benutzer in einer Gruppe anlegen (POST group, login, email, password, fields, enabled, class) |
 | `expuser::remove` | user | POST | id:int | Einen Benutzer in den Papierkorb verschieben (POST id) |
 | `expuser::enable` | user | POST | id:int | Ein Konto aktivieren (POST id) |
-| `expuser::disable` | user | POST | id:int | Ein Konto deaktivieren und seine Sessions beenden (POST id) |
+| `expuser::disable` | user | POST | id:int | Ein Konto deaktivieren und seine Sitzungen beenden (POST id) |
 | `expuser::unlock` | user | POST | id:int | Den Zähler fehlgeschlagener Anmeldungen zurücksetzen (POST id) |
-| `expuser::setPassword` | user | POST | id:int, password:string | Das Passwort eines anderen Benutzers setzen, beendet seine Sessions (POST id, password) |
+| `expuser::setPassword` | user | POST | id:int, password:string | Das Passwort eines anderen Benutzers setzen, beendet seine Sitzungen (POST id, password) |
 | `expuser::changeEmail` | user | POST | id:int, email:string | Die E-Mail-Adresse eines Benutzers ändern, den der Aufrufer bearbeiten darf (POST id, email) |
 | `expuser::changeLogin` | user | POST | id:int, login:string | Den Anmeldenamen eines Benutzers ändern, den der Aufrufer bearbeiten darf (POST id, login) |
 | `expuser::loginInfo` | user |  | id:int | Zahl der Anmeldungen, letzter Besuch, fehlgeschlagene Versuche, Sperre und Online-Zustand |
@@ -1455,20 +1455,20 @@ Aus großer Macht folgt große Verantwortung.
 
 | Dienst | Zugriff | Schreiben | Argumente | Zusammenfassung |
 |---|---|---|---|---|
-| `expsessionadmin::own` | public |  |  | Die aktuelle Session: Benutzer, gestartet, Cookie, kurze Kennung |
-| `expsessionadmin::ownList` | user |  | limit:int, offset:int | Die aktiven Sessions des aktuellen Benutzers (andere Geräte) |
-| `expsessionadmin::ownCount` | user |  |  | Die Zahl der aktiven Sessions des aktuellen Benutzers |
-| `expsessionadmin::ownRemove` | user | POST | id:string | Eine Ihrer eigenen Sessions beenden (POST id) |
-| `expsessionadmin::ownRemoveOthers` | user | POST |  | Alle Ihre Sessions außer dieser beenden (POST) |
-| `expsessionadmin::regenerate` | user | POST |  | Einen neuen Session-Schlüssel für diese Session ausgeben (POST) |
-| `expsessionadmin::listAll` | setup/administrate |  | limit:int, offset:int, registered:bool | Die aktiven Sessions der Installation, seitenweise |
-| `expsessionadmin::byUser` | setup/administrate |  | id:int, limit:int, offset:int | Die Sessions eines Benutzers |
-| `expsessionadmin::count` | setup/administrate |  |  | Aktive, abgelaufene und alle Sessions |
-| `expsessionadmin::stats` | setup/administrate |  |  | Registrierte und anonyme Sessions und abgelaufene |
-| `expsessionadmin::expiredCount` | setup/administrate |  |  | Die Zahl der abgelaufenen Sessions |
-| `expsessionadmin::removeExpired` | setup/administrate | POST |  | Abgelaufene Sessions löschen (POST) |
-| `expsessionadmin::remove` | setup/administrate | POST | id:string | Eine Session über ihre Kennung beenden (POST id) |
-| `expsessionadmin::removeByUser` | setup/administrate | POST | id:int | Alle Sessions eines Benutzers außer Ihrer eigenen beenden (POST id) |
+| `expsessionadmin::own` | public |  |  | Die aktuelle Sitzung: Benutzer, gestartet, Cookie, kurze Kennung |
+| `expsessionadmin::ownList` | user |  | limit:int, offset:int | Die aktiven Sitzungen des aktuellen Benutzers (andere Geräte) |
+| `expsessionadmin::ownCount` | user |  |  | Die Zahl der aktiven Sitzungen des aktuellen Benutzers |
+| `expsessionadmin::ownRemove` | user | POST | id:string | Eine Ihrer eigenen Sitzungen beenden (POST id) |
+| `expsessionadmin::ownRemoveOthers` | user | POST |  | Alle Ihre Sitzungen außer dieser beenden (POST) |
+| `expsessionadmin::regenerate` | user | POST |  | Einen neuen Sitzungsschlüssel für diese Sitzung ausgeben (POST) |
+| `expsessionadmin::listAll` | setup/administrate |  | limit:int, offset:int, registered:bool | Die aktiven Sitzungen der Installation, seitenweise |
+| `expsessionadmin::byUser` | setup/administrate |  | id:int, limit:int, offset:int | Die Sitzungen eines Benutzers |
+| `expsessionadmin::count` | setup/administrate |  |  | Aktive, abgelaufene und alle Sitzungen |
+| `expsessionadmin::stats` | setup/administrate |  |  | Registrierte und anonyme Sitzungen und abgelaufene |
+| `expsessionadmin::expiredCount` | setup/administrate |  |  | Die Zahl der abgelaufenen Sitzungen |
+| `expsessionadmin::removeExpired` | setup/administrate | POST |  | Abgelaufene Sitzungen löschen (POST) |
+| `expsessionadmin::remove` | setup/administrate | POST | id:string | Eine Sitzung über ihre Kennung beenden (POST id) |
+| `expsessionadmin::removeByUser` | setup/administrate | POST | id:int | Alle Sitzungen eines Benutzers außer Ihrer eigenen beenden (POST id) |
 | `expsessionadmin::settings` | setup/administrate |  |  | Session-Handler und Timeouts |
 | `expsessionadmin::handler` | setup/administrate |  |  | Die Klasse des Session-Handlers und der Save-Handler von PHP |
 
@@ -1575,7 +1575,7 @@ Klassen in `extension/expservices/classes/commerce/` und `classes/community/`, T
 `tests/tests/extension/expservices/commerce/` und `community/` (151 Tests, wie bei den anderen Domänen gegen die
 Live-Datenbank ausgeführt: Testprodukte, Foren, Umfragen, Formulare und Exporte werden in einem Testordner unter der
 Wurzel Media (Knoten 43) oder als benannte Testzeilen angelegt und in `tearDown` entfernt; Warenkörbe existieren nur für
-einen Session-Schlüssel eines Tests; die Checkout-Tests legen die temporäre Bestellung eines Test-Warenkorbs an und
+einen Sitzungsschlüssel eines Tests; die Checkout-Tests legen die temporäre Bestellung eines Test-Warenkorbs an und
 brechen sie ab, keine Bestellung wird abgeschlossen und keine Zahlung angelegt; eine Testdatenbank gibt es nie).
 Ausführen: `php vendor/bin/phpunit tests/tests/extension/expservices/commerce/ tests/tests/extension/expservices/community/`.
 
@@ -1590,7 +1590,7 @@ Regeln, die für jeden Dienst dieser Domänen gelten:
   eigenen Audit-Ereignisse des Kernels (`commerce.order.status`, `.archive`, `.unarchive`, `.delete`,
   `commerce.vat.change`, `.currency.change`, `.discount.change`, `.payment.approve`, `.basket.checkout`) genau wie in
   den Shop-Views verhalten.
-- **Der Warenkorb gehört zur Session.** Eine entfernte App behält ihr Session-Cookie (`expsession::login`); ohne eines
+- **Der Warenkorb gehört zur Sitzung.** Eine entfernte App behält ihr Sitzungs-Cookie (`expsession::login`); ohne eines
   antworten Lesevorgänge mit einem leeren Warenkorb und Schreibvorgänge mit 401. Der Checkout erfolgt in Schritten:
   `checkoutStatus` (was blockiert), `startCheckout` (die temporäre Bestellung, nichts wird berechnet), `review` (Versand
   und MwSt. wie im Bestätigungsschritt), `cancelCheckout` und, nur wenn der Client es so meint, `placeOrder`, das die
@@ -1669,7 +1669,7 @@ Regeln, die für jeden Dienst dieser Domänen gelten:
 
 | Dienst | Zugriff | Argumente | Was er tut |
 |---|---|---|---|
-| `view` | public |  | Der Warenkorb dieser Session: Zeilen, Optionen, Summen pro MwSt.-Satz, Währung |
+| `view` | public |  | Der Warenkorb dieser Sitzung: Zeilen, Optionen, Summen pro MwSt.-Satz, Währung |
 | `items` | public |  | Die Zeilen des Warenkorbs |
 | `item` | public | `item_id:int` | Eine Zeile des Warenkorbs |
 | `count` | public |  | Zahl der Zeilen und Einheiten im Warenkorb |
@@ -1691,9 +1691,9 @@ Regeln, die für jeden Dienst dieser Domänen gelten:
 | `review` | `shop/buy` |  | Die temporäre Bestellung mit Versand und MwSt., wie der Bestätigungsschritt sie zeigt |
 | `cancelCheckout` (POST) | `shop/buy` |  | Bricht die temporäre Bestellung ab und kehrt zum Warenkorb zurück |
 | `placeOrder` (POST) | `shop/buy` |  | Führt die Checkout-Operation der temporären Bestellung aus: aktiviert sie oder übergibt an das Zahlungs-Gateway |
-| `adminList` | `shop/administrate` | `limit:int`, `offset:int` | Warenkörbe aller Sessions mit ihrer Größe und ihrem Alter |
-| `adminView` | `shop/administrate` | `basket_id:int` | Ein Warenkorb einer beliebigen Session |
-| `adminCleanup` (POST) | `shop/administrate` | `days:int POST` | Entfernt die Warenkörbe von Sessions, die nicht mehr existieren und älter als die angegebenen Tage sind |
+| `adminList` | `shop/administrate` | `limit:int`, `offset:int` | Warenkörbe aller Sitzungen mit ihrer Größe und ihrem Alter |
+| `adminView` | `shop/administrate` | `basket_id:int` | Ein Warenkorb einer beliebigen Sitzung |
+| `adminCleanup` (POST) | `shop/administrate` | `days:int POST` | Entfernt die Warenkörbe von Sitzungen, die nicht mehr existieren und älter als die angegebenen Tage sind |
 
 ##### Bestellungen (`exporder`, 24 Dienste)
 
@@ -1745,7 +1745,7 @@ Regeln, die für jeden Dienst dieser Domänen gelten:
 | `forProduct` | public | `node_id:int`, `country:string` | Der MwSt.-Satz eines Produkts für ein Land (dynamischer MwSt.-Handler) oder der eigene des Produkts |
 | `settings` | public |  | Die MwSt.-Einstellungen des Shops: dynamische Berechnung, Handler, Pflicht zur Länderangabe |
 | `userCountry` | public |  | Das Land, das für die MwSt. des aktuellen Benutzers verwendet wird |
-| `setUserCountry` (POST) | public | `country:string POST` | Setzt das bevorzugte Land der aktuellen Session für die MwSt. |
+| `setUserCountry` (POST) | public | `country:string POST` | Setzt das bevorzugte Land der aktuellen Sitzung für die MwSt. |
 | `countries` | public |  | Die Ländercodes mit MwSt.-Regeln und die Länder der Installation |
 
 ##### Währungen (`expcurrency`, 19 Dienste)
@@ -1994,7 +1994,7 @@ von Sortierung und Filter und die Weiche „sofort oder als Job“). Tests: `tes
 (Live-Datenbank wie bei den anderen Domänen: Lesevorgänge auf den stabilen Knoten, Schreibvorgänge auf Testinhalten
 unter dem Wurzelknoten Media 43 und auf Testklassen, Klassengruppen, Sektionen, Zustandsgruppen, Aliasen und
 Platzhaltern, die tearDown entfernt; nie eine Testdatenbank). Die Beispielaufrufe wurden außerdem über HTTP auf Apache
-mit einer angemeldeten Admin-Session geprüft (Lesevorgänge, ein ohne Token abgelehnter Schreibvorgang, dann Anlegen,
+mit einer angemeldeten Admin-Sitzung geprüft (Lesevorgänge, ein ohne Token abgelehnter Schreibvorgang, dann Anlegen,
 Aktualisieren und Entfernen eines Testordners).
 
 Wie die Inhaltsdienste über die obigen Regeln hinaus arbeiten:
@@ -2537,7 +2537,7 @@ Administrator aus `expaccount.forgotRequest`. [Demomodus](demomodus.md).
 
 ## Verwandte Seiten
 
-- [Funktionsseite zu den entfernten Diensten (expservices)](../../../eng-us/features/6.0/remote-services-expservices.md)
+- [Funktionsseite zu den entfernten Diensten (expservices)](../../funktionen/6.0/entfernte-dienste-expservices.md)
 - [Anleitung zu entfernten Diensten und Apps](../../anleitungen/entfernte-dienste-und-apps.md)
 - [Inhaltsjobs](inhaltsjobs.md)
 - [Audit](audit.md)

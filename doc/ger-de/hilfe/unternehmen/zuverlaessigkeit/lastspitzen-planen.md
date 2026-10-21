@@ -33,7 +33,7 @@ Viele Spitzen verursacht das Unternehmen selbst, und das heißt, sie lassen sich
 | Spitze | Wer zuerst davon weiß |
 |---|---|
 | Ein Sale oder eine Rabattaktion | Vertrieb und Marketing |
-| Ein Newsletter oder Mailing an alle Mitglieder ([Newsletter](../newsletter/README.md)) | Wer ihn versendet; der Versand lässt sich auf eine ruhige Stunde legen |
+| Ein Newsletter oder Mailing an alle Mitglieder ([Newsletter](../newsletters/README.md)) | Wer ihn versendet; der Versand lässt sich auf eine ruhige Stunde legen |
 | Eine Produkteinführung oder der Start einer Veranstaltungsanmeldung | Die Projektleitung |
 | Eine Erwähnung in Presse oder Rundfunk | Die Kommunikation; oft mit wenig Vorlauf |
 | Saisongeschäft (Feiertage, Beginn eines Schuljahres, Steuerfristen) | Alle, aus dem Vorjahr |
@@ -111,7 +111,7 @@ Auch ein stark genutzter Bestellvorgang im Shop schreibt; siehe
    Verwenden Sie den Namen Ihres eigenen öffentlichen Siteaccess.
 2. **Beobachten Sie**: den externen Monitor, die Fehlerübersicht und unter Velocity das Dashboard unter `/Q/dashboard`,
    das laufende Anfragen, Worker und Statuscodes zeigt
-   ([Velocity Control Panel](../../../../eng-us/features/6.0/velocity-control-panel.md)).
+   ([Velocity Control Panel](../../../funktionen/6.0/velocity-control-panel.md)).
 3. **Leeren Sie nicht alle Caches** während der Spitze, es sei denn, etwas stimmt nicht; jedes vollständige Leeren lässt
    die nächsten Besucher auf das Rendern warten.
 4. **Halten Sie eine Ausweichnachricht bereit**: Wenn die Website nicht mithalten kann, ist ein kurzes Wartungsfenster
@@ -146,8 +146,8 @@ Auch ein stark genutzter Bestellvorgang im Shop schreibt; siehe
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

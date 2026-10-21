@@ -281,11 +281,11 @@ Templates als gültig (Syntax). Das Modul wurde für diese Seite nicht gegen ein
 - [Kochbuch](README.md)
 - [Modulansichten](../modulansichten/README.md) und [Richtlinienfunktionen](../richtlinien/README.md): jede Ansicht
   und Funktion des Kernels, aus dem Code erzeugt
-- [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md#a-module-view):
+- [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md#eine-modul-view):
   dieselbe Ansicht als Klasse geschrieben
-- [Eine Erweiterung kann ein Kernel-Modul ersetzen](../../../eng-us/features/6.0/extension-module-override.md),
-  [Anfrageregeln](../../../eng-us/features/6.0/request-rules.md)
+- [Eine Erweiterung kann ein Kernel-Modul ersetzen](../../funktionen/6.0/modulueberschreibung-durch-extensions.md),
+  [Anfrageregeln](../../funktionen/6.0/anfrageregeln.md)
 - [Übersetzungen](uebersetzungen.md) für die Texte der Templates
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

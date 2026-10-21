@@ -57,7 +57,7 @@ Ein Wert wird in dieser Reihenfolge gelesen; der letzte gewinnt:
    Erweiterung)
 2. `settings/<file>.ini.append.php` der aktiven Erweiterungen
 3. `settings/siteaccess/<siteaccess>/` und `settings/siteaccess/<siteaccess>/` der Erweiterungen
-4. `settings/override/` der Erweiterungen für ihre eigenen Siteaccesses ([Einstellungen je Website](../../../../eng-us/features/6.0/multi-site-ini-overrides.md))
+4. `settings/override/` der Erweiterungen für ihre eigenen Siteaccesses ([Einstellungen je Website](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md))
 5. `settings/override/<file>.ini.append.php` der Installation
 
 Arrays addieren sich über die Schichten; eine leere Zeile `Key[]` löscht, was vorher kam.
@@ -78,7 +78,7 @@ wenn ein Schlüssel fehlen kann.
 ## Einstellungen ändern
 
 `exp:ini` liest und schreibt jeden Geltungsbereich Zeile für Zeile und behält Kommentare bei
-([Einstellungen auf der Kommandozeile ändern](../../../../eng-us/features/6.0/exp-ini-command.md)):
+([Einstellungen auf der Kommandozeile ändern](../../../funktionen/6.0/exp-ini-befehl.md)):
 
 ```bash
 ./console exp:ini get expdemo.ini/ListSettings/DefaultLimit
@@ -110,8 +110,8 @@ Einstellungen werden gecacht. Nach einer Änderung: `php bin/php/ezcache.php --c
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

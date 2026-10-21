@@ -28,9 +28,9 @@ Wurzelverzeichnis der Installation an ([Kapitel 15.2](../15-migration-von-5x-leg
 | 3.0 bis 3.9 | [Kapitel 14.5.1](../14-migration-von-4x.md#1451-welche-ausgangspunkte-funktionieren) | nicht direkt: Die Update-Skripte dieser Versionen sind nicht in diesem Repository; bringen Sie die Site zuerst mit der alten Release 3.10 auf 3.10 und folgen Sie dann der nächsten Zeile |
 | 3.10, 4.0 bis 4.7 auf PHP 5 | [Kapitel 14](../14-migration-von-4x.md) | die alte Kette bis 5.4, dann auf 6.0.0, dann auf den heutigen Stand |
 | 5.0 bis 5.4, Community-Releases 2013.x und 2014.x (mit dem Symfony-Stack) | [Kapitel 15](../15-migration-von-5x-legacy.md) | den Legacy-Teil herauslösen; die 5.4-Datenbank geht auf 6.0.0, dann auf den heutigen Stand |
-| Die reine Legacy-Linie 5.90 (2015.01, 2017.08, 2017.12 und spätere Releases, die `VERSION_MAJOR = 5`, `VERSION_MINOR = 90` melden) | [Kapitel 11.5](../11-aktualisieren.md#115-von-54-oder-590-auf-600), mit [15.9](../15-migration-von-5x-legacy.md#159-benutzer-passwort-hashes-und-sessions) für Passwörter | auf 6.0.0, dann auf den heutigen Stand |
+| Die reine Legacy-Linie 5.90 (2015.01, 2017.08, 2017.12 und spätere Releases, die `VERSION_MAJOR = 5`, `VERSION_MINOR = 90` melden) | [Kapitel 11.5](../11-aktualisieren.md#115-von-54-oder-590-auf-600), mit [15.9](../15-migration-von-5x-legacy.md#159-benutzer-passwort-hashes-und-sitzungen) für Passwörter | auf 6.0.0, dann auf den heutigen Stand |
 | Releases, die nach einem Jahr später als 2017 benannt sind | in diesem Repository nicht geprüft | lesen Sie `lib/version.php`: Eine 5.90-Release folgt der Zeile darüber |
-| LoveStack (die Distribution des Legacy-Kernels von Mugo Web) | [LoveStack: Migration](../../../eng-us/bc/6.0/love/MIGRATION.md) | `./console exp:explovestack` prüft sie und registriert ihre Datenbank als die von Exponential |
+| LoveStack (die Distribution des Legacy-Kernels von Mugo Web) | [LoveStack: Migration](../../bc/6.0/love/migration.md) | `./console exp:explovestack` prüft sie und registriert ihre Datenbank als die von Exponential |
 | Exponential 6.0.0 bis 6.0.14 | [Kapitel 11.6](../11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) | die Update-Dateien von 6.0.x |
 
 Danach finden Sie in [Kapitel 17](../17-migrationsreferenz.md) die Nachschlagetabellen und in [Kapitel 12](../12-fehlerbehebung.md) die
@@ -56,5 +56,13 @@ Sobald die Site auf Exponential 6 läuft, steht jeder andere Weg der [Übersicht
 ([Platform Legacy](exponential-platform-legacy.md)), eine Distribution zum Aufbau von Seiten ([Nexus](exponential-platform-nexus.md))
 oder eine reine Symfony-Plattform ([DXP](exponential-platform-dxp.md)). Machen Sie immer nur einen Wechsel auf einmal.
 
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->
+
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License
-1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).

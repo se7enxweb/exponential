@@ -14,10 +14,10 @@ A view of the `search` module, defined in `kernel/search/module.php` and run by 
 ## Address
 
 ```text
-/search/stats/(offset)/<Offset>
+/search/stats/(offset)/<Offset>/(sort)/<Sort>/(show)/<Show>/(q)/<Query>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(sort)` sets `Sort`, `(show)` sets `Show`, `(q)` sets `Query`.
 
 ## Who may open it
 

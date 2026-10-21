@@ -62,7 +62,7 @@ Nehmen Sie Veranstaltungen, die Sie behalten möchten, aus, indem Sie sie in ein
 |---|---|
 | Legen Sie unter Events einen Ordner „Archiv <Jahr>“ an | zu Jahresbeginn |
 | Verschieben Sie die Veranstaltungen des Vorjahres dorthin | markieren Sie sie in der Liste **Unterelemente**, **Weitere Aktionen** > **Ausgewähltes verschieben**; eine große Verschiebung kann als Content-Job laufen ([Inhaltsmodell und Bearbeitung, 8](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#8-große-operationen-als-inhaltsjobs)) |
-| Alte Adressen funktionieren weiter | das Verschieben behält Weiterleitungen von den alten Aliasen ([Weiterleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)) |
+| Alte Adressen funktionieren weiter | das Verschieben behält Weiterleitungen von den alten Aliasen ([Weiterleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)) |
 | Kennzeichnen Sie sie | ein Hinweis „archiviert“ im Template für Veranstaltungen in Archivordnern |
 
 ## Nach der Veranstaltung
@@ -82,8 +82,9 @@ Nehmen Sie Veranstaltungen, die Sie behalten möchten, aus, indem Sie sie in ein
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

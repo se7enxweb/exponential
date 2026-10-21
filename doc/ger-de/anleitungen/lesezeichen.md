@@ -8,8 +8,8 @@ wie erwartet verhält.
 Sie richtet sich an Redakteure und Administratoren. Jede Seite, jedes Feld und jede Regel unten wurde am 6. Oktober
 2026 am Code dieses Repositorys geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 
-[Anleitungen](README.md) · Siehe auch: [Lesezeichen-Ordner (Funktion)](../../eng-us/features/6.0/bookmark-folders.md) ·
-[Lesezeichen-Ordner (Upgrade)](../../eng-us/bc/6.0/bookmark-folders.md) · [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
+[Anleitungen](README.md) · Siehe auch: [Lesezeichen-Ordner (Funktion)](../funktionen/6.0/lesezeichenordner.md) ·
+[Lesezeichen-Ordner (Upgrade)](../bc/6.0/lesezeichenordner.md) · [Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 
@@ -172,7 +172,7 @@ verschoben.
   die erste Schaltfläche des Formulars, sodass die Eingabetaste in einem Positionsfeld dieses Lesezeichen verschiebt.
 - Nur die eigenen Lesezeichen und Ordner des Benutzers werden gelesen oder geändert; die IDs eines anderen Benutzers
   werden abgewiesen. Jedes Formular trägt das Formular-Token. `NeedRedirectBack` mit `RedirectURI` führt nur zu einer
-  Seite dieser Site ([sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md)).
+  Seite dieser Site ([sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md)).
 - Die Template-Variablen `view_parameters` und `bookmark_notice` bleiben erhalten; die neue `bookmark_page` enthält
   alles Übrige. Der Baum des Kastens Lesezeichen und des Auswahldialogs (`content/bookmark_tree.tpl`) ist unverändert.
 - Das Aussehen steht im Lesezeichen-Abschnitt von `stylesheets/modules/content.css` (design/admin und design/admin4),
@@ -189,3 +189,11 @@ Mit einer Installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookm
   `design/admin`)
 - `tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php`, `tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php`
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -29,6 +29,7 @@ ausgegraut oder gar nicht angezeigt.
 | [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md) | Kopfzeile, Registerkarten, Seitenspalten und Dashboard kennenlernen |
 | [Anmelden im Editor](anmelden-im-editor.md) | Im Editor anmelden, der Oberfläche zum Schreiben und Veröffentlichen |
 | [Anmelden in der Administration](anmelden-in-der-administration.md) | In der Administration anmelden, mit Hinweisen zu Sperren, Design und Sicherheit |
+| [Benutzerhandbuch](handbuch/README.md) | Eine Aufgabe in der Administration erledigen: eine Frage pro Seite, mit der Angabe, wer sie erledigen darf, den Schritten und dem, was schiefgehen kann |
 
 ## Wer Exponential macht
 
@@ -62,7 +63,7 @@ ausgegraut oder gar nicht angezeigt.
 | [Tastenkürzel](tastenkuerzel.md) | Nur mit der Tastatur arbeiten, in der Administration und auf diesen Hilfeseiten |
 | [Wenn etwas schiefgeht](wenn-etwas-schiefgeht.md) | Die richtigen Leute über einen Fehler informieren, mit allem, was sie zur Behebung brauchen |
 | [Unterstützung erhalten](projekt/unterstuetzung-erhalten.md) | Kostenlose Hilfe von der Community (Foren, Telegram, Discord, Slack) oder bezahlte Hilfe von 7x bekommen |
-| [Projektdateien](../../eng-us/help/project-files.md) | Die README, die Sicherheitsrichtlinie, die Richtlinien für Mitwirkende und die Lizenz des Repositorys in der Hilfe lesen |
+| [Projektdateien](projektdateien.md) | Die README, die Sicherheitsrichtlinie, die Richtlinien für Mitwirkende und die Lizenz des Repositorys in der Hilfe lesen |
 
 ## Vom Benutzer zum Entwickler
 
@@ -81,7 +82,7 @@ am häufigsten verwenden:
 [Versionen eines Objekts](../anleitungen/inhaltsverlauf.md), [Lesezeichen](../anleitungen/lesezeichen.md),
 [Inhaltssprachen](../anleitungen/inhaltssprachen.md), [Anmeldung in zwei Schritten](../anleitungen/zwei-faktor-anmeldung.md) und
 [Das Inhaltsmodell und das Bearbeiten von Inhalten](../anleitungen/inhaltsmodell-und-bearbeitung.md). Alle Anleitungen stehen im
-[Inhaltsverzeichnis der Anleitungen](../anleitungen/README.md), und jeder Begriff wird im [Glossar](../../eng-us/glossary.md)
+[Inhaltsverzeichnis der Anleitungen](../anleitungen/README.md), und jeder Begriff wird im [Glossar](../glossar.md)
 erklärt.
 
 ## Wählen, wo Exponential läuft
@@ -92,3 +93,11 @@ Für Administratoren und Entwickler, die die Maschine und die Datenbank einer Si
 |---|---|
 | [Datenbankunterstützung](datenbankunterstuetzung.md) | Eine Datenbank unter den unterstützten wählen, in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), und wissen, was jede braucht |
 | [Betriebssystemunterstützung](betriebssystemunterstuetzung.md) | Prüfen, ob ein Betriebssystem, ein Prozessor und ein Webserver Exponential ausführen können, von Linux bis Windows und darüber hinaus |
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

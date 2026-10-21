@@ -27,7 +27,7 @@ Lesen Sie diese Zeilen zuerst, wenn Sie neu sind; jede verweist auf den Monat, d
 - **Juli 2026: Die Kommandozeile wird erwachsen.** `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern, ein vertrauenswürdiger Template-Editor. [Juli 2026](2026/2026-07.md)
 - **August 2026: ehrliches Template-Debugging, sechs Sicherheits-Patches, Tests bei jeder Änderung.** [August 2026](2026/2026-08.md)
 - **September 2026: große Listen, die funktionieren, Velocity, eine Installation mit einem Befehl und eine Härtungsrunde.** [Erste Hälfte](2026/2026-09a.md), [zweite Hälfte](2026/2026-09b.md)
-- **Oktober 2026: jQuery 4 und admin4, ein Audit-Trail, `exp:ini`, eine Debug-Leiste, Inhaltsjobs und TinyMCE 8.** [Oktober 2026](2026/2026-10.md)
+- **Oktober 2026: jQuery 4 und admin4, ein Prüfprotokoll, `exp:ini`, eine Debug-Leiste, Inhaltsjobs und TinyMCE 8.** [Oktober 2026](2026/2026-10.md)
 
 ## So lesen Sie die Chronik
 
@@ -116,12 +116,12 @@ Hinweise stehen im [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md).
 
 - **Sie wollen eine Funktion nutzen:** Folgen Sie dem Link von ihrem Monat zur Funktionsseite, oder beginnen Sie bei den [Anleitungen](../anleitungen/README.md).
 - **Sie machen ein Upgrade:** Lesen Sie das [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md), dann die dort verlinkten Hinweise zu Verhaltensänderungen, die neuesten zuletzt.
-- **Sie stoßen auf ein Wort, das Sie nicht kennen:** [Glossar](../../eng-us/glossary.md).
+- **Sie stoßen auf ein Wort, das Sie nicht kennen:** [Glossar](../glossar.md).
 - **Sie suchen einen einzelnen Commit:** Durchsuchen Sie das Änderungsverzeichnis des Repositorys, oder führen Sie in der Installation `git log --oneline -S"text"` aus.
 
 ## Verwandte Seiten
 
 - [Anleitungen: der Lernpfad](../anleitungen/README.md)
-- [Glossar](../../eng-us/glossary.md)
+- [Glossar](../glossar.md)
 - [Abdeckung: jede Änderung nachgewiesen](abdeckung.md)
 - [Änderungsverzeichnis aller Repositorys](aenderungsverzeichnis/README.md)

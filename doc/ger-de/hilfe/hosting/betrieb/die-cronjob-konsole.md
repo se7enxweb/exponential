@@ -15,7 +15,7 @@ von der PHP-Konfiguration einer Hosting-Plattform braucht, wie das Anhalten funk
 Sie es einem Kunden übergeben.
 
 Das vollständige Benutzerhandbuch ist [Cronjobs: ausführen, planen und verfolgen](../../../anleitungen/cronjobs.md); die Referenz
-der Funktion ist [Cronjob-Konsole](../../../../eng-us/features/6.0/cronjobs-console.md). Was die Teile tun, steht auf
+der Funktion ist [Cronjob-Konsole](../../../funktionen/6.0/cronjobs-in-der-konsole.md). Was die Teile tun, steht auf
 [Cronjobs](cronjobs.md).
 
 ## Inhalt
@@ -96,7 +96,7 @@ PHP-FPM als verschiedene Benutzer laufen.
 ## Teile anhalten
 
 Einen angehaltenen Teil lässt `runcronjobs.php` aus, wer ihn auch startet: die Crontab, `./console cron:<part>`, die Befehle
-`cron:` von Velocity oder die Seite ([Cronjob-Teile anhalten](../../../../eng-us/features/6.0/cronjob-pause.md)). Ein Teil, der während
+`cron:` von Velocity oder die Seite ([Cronjob-Teile anhalten](../../../funktionen/6.0/cronjobs-pausieren.md)). Ein Teil, der während
 seines Laufs angehalten wird, beendet das gerade laufende Skript und lässt den Rest aus. Der Hinweis sagt, seit wann, von wem
 und warum:
 
@@ -167,3 +167,11 @@ Sie die Logs pro Teil mit logrotate des Systems.
 - [Cron und Shell-Zugang](../control-panels/cron-und-shell-zugang.md)
 - [Support-Stufen](../geschaeft/support-stufen-fuer-exponential-hosting.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

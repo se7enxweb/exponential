@@ -34,7 +34,7 @@ Anforderung passt, damit Ihr erstes PHP klein ist und am richtigen Ort steht.
 | Etwas nach Zeitplan | Cronjob-Teil | [Cronjob-Teile](../teil-3-erweiterungsentwickler/cronjob-teile.md) | `/setup/cronjobs` |
 | Einen Befehl für Administratoren | Konsolenbefehl | [CLI-Skripte und Konsolenbefehle](../teil-3-erweiterungsentwickler/cli-skripte-und-console-befehle.md) | |
 | Eine Reaktion auf ein Kernel-Ereignis oder einen Filter für einen Wert | Event-Listener | [Ereignisse, Listener und Filter](../teil-3-erweiterungsentwickler/ereignisse-und-filter.md) | `/setup/settingsextension` |
-| Einen anderen Mail-Transport, Login, Session, Suche, Mehrwertsteuer | über eine Einstellung benannter Handler | [Über Einstellungen benannte Handler](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) | `/setup/handlerextension/<kind>` |
+| Einen anderen Mail-Transport, Login, Sitzung, Suche, Mehrwertsteuer | über eine Einstellung benannter Handler | [Über Einstellungen benannte Handler](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) | `/setup/handlerextension/<kind>` |
 | Einen dynamischen Teil einer Seite aus JavaScript | ezjscore-Serverfunktion | [Ajax mit ezjscore-Serverfunktionen](../teil-3-erweiterungsentwickler/ajax-mit-ezjscore-serverfunktionen.md) | `/setup/handlerextension/ajaxfunction` |
 | Eine eigene Tabelle | persistentes Objekt | [Persistente Objekte und eigene Tabellen](../teil-3-erweiterungsentwickler/persistente-objekte-und-tabellen.md) | `/setup/modulewizard` |
 | Das Verhalten einer Kernel-Klasse ändern, wenn nichts anderes hilft | Kernel-Override | [Kernel-Klassen-Overrides: der letzte Ausweg](../teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md) | `/setup/kerneloverride` |
@@ -72,13 +72,13 @@ Template-Operator ist ein gutes erstes Stück Code, weil er klein und rein ist u
 - Zurück: [Eine Website bauen, ohne Code zu schreiben](eine-website-ohne-code-bauen.md)
 - Weiter: [Teil 3: Der Erweiterungsentwickler](../teil-3-erweiterungsentwickler/README.md)
 - [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)
-- [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
+- [RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

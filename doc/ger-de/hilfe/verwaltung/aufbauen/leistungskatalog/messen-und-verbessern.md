@@ -25,13 +25,13 @@ einen eigenen Analysedienst braucht und wie Sie messen, ohne mehr über Besucher
 
 ## Was Exponential aufzeichnet
 
-Aus [Statistik und Analyse](../../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md):
+Aus [Statistik und Analyse](../../../ersteller/website-ersteller/besucherstatistik-und-analyse.md):
 
 | Quelle | Was sie beantwortet | Wo |
 |---|---|---|
 | Suchstatistik (voreingestellt aus) | wonach Menschen suchen, wie oft, mit wie vielen Ergebnissen | **Setup > Suchstatistiken**, mit `LogSearchStats=enabled` |
 | Aufrufzahlen | welche Seiten am meisten aufgerufen werden, aus dem Zugriffsprotokoll | das Cronjob-Skript `updateviewcount`, `fetch( 'content', 'view_top_list', ... )` |
-| Anfrage-Logs | Anfragen mit Zeitmessung, für den Betrieb | [Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md) |
+| Anfrage-Logs | Anfragen mit Zeitmessung, für den Betrieb | [Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md) |
 | Gesammelte Informationen | was Menschen Ihnen in Formularen sagen | **Setup > Gesammelte Informationen** |
 
 Diese beantworten betriebliche Fragen. Sie ersetzen keinen Analysedienst.
@@ -55,16 +55,16 @@ Angaben in das Textfeld einzugeben, und entfernen Sie Antworten, sobald sie gele
 
 | Möglichkeit | Hinweis |
 |---|---|
-| `bcwebsitestatistics` | fügt das Skript von Google Analytics hinzu ([bcwebsitestatistics](../../../../../eng-us/features/6.0/extensions/bcwebsitestatistics.md)); ein Drittanbieter |
-| Ein anderer Dienst, möglicherweise selbst gehostet | sein Skript über die Skriptliste Ihres Designs ([Stylesheets und Skripte](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md)) |
+| `bcwebsitestatistics` | fügt das Skript von Google Analytics hinzu ([bcwebsitestatistics](../../../../funktionen/6.0/erweiterungen/bcwebsitestatistics.md)); ein Drittanbieter |
+| Ein anderer Dienst, möglicherweise selbst gehostet | sein Skript über die Skriptliste Ihres Designs ([Stylesheets und Skripte](../../../ersteller/website-ersteller/stylesheets-und-skripte.md)) |
 | Keiner | Suchstatistik, Aufrufzahlen und Rückmeldungen können für eine kleine Site genügen |
 
 Analysen brauchen in vielen Rechtsordnungen meist eine Einwilligung; Exponential liefert kein Cookie-Banner mit
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)). In der EU gelten die
+([Standards zum Datenschutz](../../../../standards/datenschutz.md)). In der EU gelten die
 [ePrivacy-Richtlinie](https://eur-lex.europa.eu/eli/dir/2002/58/oj) und die
 [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj). Eine Content Security Policy muss den Host des Analysedienstes
 erlauben, wenn Sie einen verwenden
-([Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)).
+([Content Security Policy](../../../../funktionen/6.0/content-security-policy.md)).
 
 ## Aus Befunden Änderungen machen
 
@@ -82,12 +82,13 @@ Werten Sie die Befunde monatlich zusammen mit der Liste überfälliger Seiten au
 
 - [Einen Leistungskatalog aufbauen](README.md)
 - [Leistungen finden](leistungen-finden.md)
-- [Statistik und Analyse](../../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)
+- [Statistik und Analyse](../../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -118,6 +118,6 @@ wird (`eZTemplate`), und die Operatoren `csp_nonce` und `exp_environment` des Ke
 - Zurück: [Was die Template-Sprache ist](was-die-template-sprache-ist.md)
 - Weiter: [Smarty und die Template-Sprache nebeneinander](smarty-nebeneinander.md)
 - [Sections und foreach](sections-und-foreach.md)
-- [Section (veraltet)](../../../eng-us/help/designers/templates/section-legacy.md) zum Umstellen alter Templates
+- [Section (veraltet)](../designer/vorlagen/section-legacy.md) zum Umstellen alter Templates
 - [Wer ist 7x?](../wer-ist-7x.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,7 +11,7 @@ type: catalogue
 
 > **Hinweis**
 > Diese Seite wird aus dem Quellcode von `php bin/php/exppatterncatalogue.php --write` erzeugt. Bearbeiten Sie sie nicht von Hand:
-> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#how-the-catalogue-is-built).
+> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#wie-der-katalog-gebaut-wird).
 
 Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodass der Aufrufer die konkrete Klasse nicht nennt.
 
@@ -618,7 +618,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expUISwitch` | class | `kernel/classes/uiswitch/expuiswitch.php:28` | Das UI-Umschalt-Framework: eine Registry von Anbietern (uiswitch.ini [UISwitchSettings] ProviderList[]), die in der Session gespeicherten Auswahlen des Benutzers und die ea… | – |
+| `expUISwitch` | class | `kernel/classes/uiswitch/expuiswitch.php:28` | Das UI-Umschalt-Framework: eine Registry von Anbietern (uiswitch.ini [UISwitchSettings] ProviderList[]), die in der Sitzung gespeicherten Auswahlen des Benutzers und die ea… | – |
 
 ### kernel/classes/user (5)
 

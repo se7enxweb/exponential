@@ -1,8 +1,8 @@
 # ezpm (private Nachrichten): Chronik
 
-Private Nachrichten wechselte Anfang 2024 den Vendor und wurde im September 2026 sicher für dauerhaft laufende Worker gemacht (0.10.0). Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezpm.md).
+Private Nachrichten wechselte Anfang 2024 den Vendor und wurde im September 2026 sicher für dauerhaft laufende Worker gemacht (0.10.0). Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezpm.md).
 
-Diese Seite führt **jede der 4 Änderungen** des Repositorys `ezpm` zwischen 2023-12-24 und 2026-09-22 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezpm.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezpm.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezpm.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 4 Änderungen** des Repositorys `ezpm` zwischen 2023-12-24 und 2026-09-22 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezpm.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezpm.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezpm.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -45,7 +45,7 @@ Der Monat über alle Erweiterungen: [September 2026](monate/2026-09.md). [Änder
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezpm.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezpm.md)
 - [Release Notes](../../../changelogs/extensions/ezpm.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezpm.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

@@ -43,7 +43,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Mehrere Websites in einer Installation einrichten, Schritt für Schritt](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site).
+Quelle: [Mehrere Websites in einer Installation einrichten, Schritt für Schritt](../../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website).
 
 1. **Die fünf Änderungen** (5 Minuten). Zeigen Sie die Reihenfolge an der Tafel: Inhalt (ein Ordner), Siteaccess (ein
    Verzeichnis), Registrierung (zwei Listen), Zuordnung (Modul 2; bei URL-Zuordnung ist nichts nötig), Caches.
@@ -82,7 +82,7 @@ prüft das.
   **Knoten ID**.
 - **Ein Tippfehler im Namen des Siteaccess.** `exp:ini` verweigert einen Scope für einen Siteaccess ohne Verzeichnis;
   kopieren Sie zuerst das Verzeichnis und schreiben Sie dann die Einstellungen.
-- **Velocity.** Läuft die Übungsumgebung auf Exponential Velocity, starten Sie es nach der Einstellungsänderung neu
+- **Velocity.** Läuft die Übungsumgebung auf Exponential Velocity, starten Sie ihn nach der Einstellungsänderung neu
   (`php bin/php/console exp:velocity restart`), sonst behalten die Worker die alten Einstellungen.
 - **Unveröffentlichter Ordner.** Ein Ordner, der nur als Entwurf gespeichert wurde, hat keinen Knoten;
   veröffentlichen Sie ihn zuerst.
@@ -138,7 +138,7 @@ Die Befehle laufen in ihrem Wurzelverzeichnis; fügen Sie `--allow-root-user` nu
    php bin/php/console exp:ini add 'site.ini/SiteSettings/SiteList[]' site_b global
    ```
 
-9. Leeren Sie den INI-Cache (und starten Sie Velocity neu, wenn es die Übungsumgebung ausliefert):
+9. Leeren Sie den INI-Cache (und starten Sie Velocity neu, wenn er die Übungsumgebung ausliefert):
 
    ```bash
    php bin/php/ezcache.php --clear-tag=ini
@@ -183,7 +183,7 @@ Die Befehle laufen in ihrem Wurzelverzeichnis; fügen Sie `--allow-root-user` nu
 3. Die Kopie bringt das Design, die Sprache und andere Einstellungen mit, sodass die neue Website sofort dargestellt
    wird; Sie ändern nur, was abweicht.
 4. `SiteList[]` in `site.ini [SiteSettings]`, das der Installer in das globale Override schreibt
-   ([Mehrere Websites einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site)).
+   ([Mehrere Websites einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website)).
 5. Der INI-Cache wurde nicht geleert; das globale Override setzt `SiteName` und gewinnt; Velocity wurde nicht neu
    gestartet.
 
@@ -191,24 +191,24 @@ Die Befehle laufen in ihrem Wurzelverzeichnis; fügen Sie `--allow-root-user` nu
 
 ## Weiterführende Informationen
 
-- [Mehrere Websites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md): die
+- [Mehrere Websites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md): die
   Schritte mit Host-Zuordnung.
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md): `set`, `add`, `rem`,
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../bc/6.0/console-exp-ini.md): `set`, `add`, `rem`,
   `--dry-run`.
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site).
-- [Den Inhaltsbaum strukturieren](../../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md).
+- [Den Inhaltsbaum strukturieren](../../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md).
 
 ## Verwandte Seiten
 
 - [Modul 1: Siteaccesses für mehrere Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

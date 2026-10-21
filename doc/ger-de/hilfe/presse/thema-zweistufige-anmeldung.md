@@ -36,7 +36,7 @@ up.“ Für Benutzer ist sie freiwillig, sofern der Betreiber der Website sie ni
 
 | Was | Wann | Quelle |
 |---|---|---|
-| Die Erweiterung übernommen (Version 1.0.0) | 21. Juli 2026 | [sevenx_authentication_2fa](../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md) |
+| Die Erweiterung übernommen (Version 1.0.0) | 21. Juli 2026 | [sevenx_authentication_2fa](../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md) |
 | Die Anleitung, Social-Login-Schaltflächen auf der Anmeldeseite von admin4, Codes, die nur einmal gelten und als fehlgeschlagene Anmeldungen gezählt werden, Geheimnisse, die im Ruhezustand verschlüsselt werden können | 6. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
 
 Die Änderungen am Kernel sind Teil der Entwicklungslinie 6.0.15, die nicht veröffentlicht ist; die Erweiterung wird
@@ -46,20 +46,20 @@ eigenständig veröffentlicht.
 
 | Fakt | Quelle |
 |---|---|
-| Authenticator-Apps, die RFC 6238 folgen, funktionieren, zum Beispiel Google Authenticator, Authy und Microsoft Authenticator. | [sevenx_authentication_2fa, Was sie bietet](../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md#what-it-offers) |
+| Authenticator-Apps, die RFC 6238 folgen, funktionieren, zum Beispiel Google Authenticator, Authy und Microsoft Authenticator. | [sevenx_authentication_2fa, Was sie bietet](../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md#was-sie-bietet) |
 | Ein Einmalcode per E-Mail ist die Alternative, wenn keine App verwendet wird. | ebenda |
 | „The password alone never signs in“: Der Benutzer wird erst nach dem richtigen Code angemeldet, mit einer neuen Sitzungs-ID. | [Zweistufige Anmeldung, Was sie schützt](../../anleitungen/zwei-faktor-anmeldung.md#was-sie-schützt) |
 | Jeder Code gilt einmal; nach fünf falschen Codes beginnt die Anmeldung erneut mit dem Passwort. | [Zweistufige Anmeldung, Was ein Benutzer sieht](../../anleitungen/zwei-faktor-anmeldung.md#was-ein-benutzer-sieht) |
 | Wer die Methode ändert oder abschaltet, muss einen aktuellen Code eingeben, „so someone at an unattended computer cannot weaken the account“. | ebenda |
 | Der QR-Code wird auf dem Server erzeugt; der Schlüssel geht an keinen anderen Dienst. | [Zweistufige Anmeldung, Was sie schützt](../../anleitungen/zwei-faktor-anmeldung.md#was-sie-schützt) |
 | Jeder Schritt wird in `var/log/auth.log` geschrieben, nie ein Code oder ein Geheimnis. | ebenda |
-| Social-Login-Handler gibt es als Gerüst für Google, Facebook, Twitter/X, Instagram, Meta und ID.me. | [sevenx_authentication_2fa, Was sie bietet](../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md#what-it-offers) |
-| Das Velocity Control Panel hat eine eigene, optionale Zwei-Faktor-Authentifizierung. | [Velocity Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md#two-factor-authentication-optional) |
+| Social-Login-Handler gibt es als Gerüst für Google, Facebook, Twitter/X, Instagram, Meta und ID.me. | [sevenx_authentication_2fa, Was sie bietet](../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md#was-sie-bietet) |
+| Das Velocity Control Panel hat eine eigene, optionale Zwei-Faktor-Authentifizierung. | [Velocity Control Panel](../../funktionen/6.0/velocity-control-panel.md#zwei-faktor-authentifizierung-optional) |
 
 ## Wo sich die Quellen unterscheiden
 
 Die Seite der Erweiterung sagt, der Link in der E-Mail „completes the login when clicked, even in another browser“
-([sevenx_authentication_2fa](../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md#what-it-offers)); die neuere
+([sevenx_authentication_2fa](../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md#was-sie-bietet)); die neuere
 Anleitung sagt „the link in the mail only works in the browser where the password was typed“
 ([Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md#was-sie-schützt)). Beschreiben Sie das Verhalten des
 E-Mail-Links nicht, ohne 7x zu fragen, was aktuell gilt.
@@ -96,8 +96,8 @@ E-Mail-Links nicht, ohne 7x zu fragen, was aktuell gilt.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

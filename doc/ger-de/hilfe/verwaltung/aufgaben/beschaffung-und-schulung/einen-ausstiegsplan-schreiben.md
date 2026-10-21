@@ -10,7 +10,7 @@ type: help
 # Einen Ausstiegsplan schreiben
 
 **Wer:** der Vertragsverantwortliche mit dem Site-Administrator. **Wann:** vor der Unterzeichnung; aktualisieren Sie
-ihn jedes Jahr. Vorlage: [Vorlage für den Ausstiegsplan](../../../../../eng-us/help/government/procurement/exit-plans/exit-plan-template.md).
+ihn jedes Jahr. Vorlage: [Vorlage für den Ausstiegsplan](../../beschaffung/ausstiegsplaene/vorlage-fuer-einen-ausstiegsplan.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Lassen Sie die
 > Klauseln zum Ausstieg von Ihrer Rechtsberatung prüfen.
@@ -25,8 +25,8 @@ ihn jedes Jahr. Vorlage: [Vorlage für den Ausstiegsplan](../../../../../eng-us/
 ## Bevor Sie beginnen
 
 - Lesen Sie, warum der Ausstieg zu Beginn geplant wird
-  ([Warum den Ausstieg planen](../../../../../eng-us/help/government/procurement/exit-plans/why-plan-the-exit.md)).
-- Kennen Sie die Werkzeuge für den Export ([Formate für den Datenexport](../../../../../eng-us/help/government/procurement/exit-plans/data-export-formats.md),
+  ([Warum den Ausstieg planen](../../beschaffung/ausstiegsplaene/warum-den-ausstieg-planen.md)).
+- Kennen Sie die Werkzeuge für den Export ([Formate für den Datenexport](../../beschaffung/ausstiegsplaene/formate-fuer-den-datenexport.md),
   [Von Exponential weg migrieren](../../../../installation/migration/exponential-verlassen.md)).
 
 ## Schritte
@@ -39,19 +39,19 @@ ihn jedes Jahr. Vorlage: [Vorlage für den Ausstiegsplan](../../../../../eng-us/
    - ein Dump der Datenbank;
    - Layouts, Formulareinsendungen, Einwilligungsnachweise, Audit-Einträge, wo nötig.
 3. **Listen Sie die Übergabe außer den Daten auf**: Code-Repository, Dokumentation, Einstellungen, Runbooks
-   ([Übergabe der Dokumentation](../../../../../eng-us/help/government/procurement/exit-plans/documentation-handover.md)).
+   ([Übergabe der Dokumentation](../../beschaffung/ausstiegsplaene/uebergabe-der-dokumentation.md)).
 4. **Listen Sie Schlüssel und Zugänge auf**: Administratorkonten, Zugang zu Server und Panel, DNS, Signaturschlüssel des
    Audits, das Geheimnis der E-Mail-Einstellungen, TLS-Schlüssel
-   ([Übergabe von Schlüsseln und Geheimnissen](../../../../../eng-us/help/government/procurement/exit-plans/keys-and-secrets-handover.md)).
+   ([Übergabe von Schlüsseln und Geheimnissen](../../beschaffung/ausstiegsplaene/uebergabe-von-schluesseln-und-geheimnissen.md)).
 5. **Legen Sie Rollen und Zeitplan fest**: wer exportiert, wer prüft, die Übergabezeit, die Überschneidung mit dem
    Nachfolger.
 6. **Behandeln Sie personenbezogene Daten**: was übertragen wird, was gelöscht wird, Bestätigung der Löschung durch den
-   Lieferanten ([Personenbezogene Daten beim Ausstieg](../../../../../eng-us/help/government/procurement/exit-plans/personal-data-at-exit.md)).
+   Lieferanten ([Personenbezogene Daten beim Ausstieg](../../beschaffung/ausstiegsplaene/personenbezogene-daten-beim-ausstieg.md)).
 7. **Behandeln Sie Adressen**: eine Tabelle der Weiterleitungen aus URL-Aliasen und Platzhaltern
-   ([URL-Weiterleitungen nach dem Ausstieg](../../../../../eng-us/help/government/procurement/exit-plans/url-redirects-after-exit.md)).
+   ([URL-Weiterleitungen nach dem Ausstieg](../../beschaffung/ausstiegsplaene/url-umleitungen-nach-dem-ausstieg.md)).
 8. **Planen Sie den Test**: einmal im Jahr eine Übung des Exports ([Eine Ausstiegsübung durchführen](eine-ausstiegsuebung-durchfuehren.md)).
 9. **Fügen Sie ihn** dem Vertrag als Anlage **bei**, mit der Klausel, die den Lieferanten zur Mitwirkung verpflichtet
-   ([Klausel zu Ausstieg und Rückgabe der Daten](../../../../../eng-us/help/government/procurement/tender-templates/exit-and-data-return-clause.md)).
+   ([Klausel zu Ausstieg und Rückgabe der Daten](../../beschaffung/ausschreibungsvorlagen/klausel-ausstieg-und-datenrueckgabe.md)).
 
 ## Ergebnis
 
@@ -66,13 +66,14 @@ Ein kurzer, konkreter Plan als Anlage zum Vertrag, dem ein Nachfolger folgen kö
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Ausstiegspläne](../../../../../eng-us/help/government/procurement/exit-plans/README.md)
+- [Ausstiegspläne](../../beschaffung/ausstiegsplaene/README.md)
 - [Bereitschaft für den Ausstieg](../../checklisten/bereitschaft-fuer-den-ausstieg.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

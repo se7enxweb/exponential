@@ -47,17 +47,17 @@ installieren, neu installieren und neu erzeugen.
   als Redakteur oder Administrator benutzt. Der Kurs Website-Administration oder vergleichbare Erfahrung ist eine gute
   Grundlage.
 - Trainer: hat jede Übung auf der Version geprobt, die er unterrichtet, und hat den Kurs Train the Trainer besucht oder
-  vergleichbare Erfahrung ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  vergleichbare Erfahrung ([Train the Trainer: Kursüberblick](../train-the-trainer/README.md)).
 
 ## Übungsumgebung
 
 - **Eine Installation pro Person**, niemals eine gemeinsame: Die Module 2 bis 4 ändern die globalen
   Zuordnungseinstellungen. Installieren Sie jede mit `php bin/php/console exp:install` (Standard-Seitenpaket, SQLite,
-  URL-Zuordnung), wie in [Lektion 2.3 von Train the Trainer](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md),
-  und liefern Sie sie aus wie in [Lektion 2.4](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md).
+  URL-Zuordnung), wie in [Lektion 2.3 von Train the Trainer](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md),
+  und liefern Sie sie aus wie in [Lektion 2.4](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md).
 - Shell-Zugang als der Benutzer, der die Website ausliefert, `curl` und `sqlite3` (Lektion 6.4).
 - Drei weitere frische Code-Verzeichnisse pro Person für Modul 6
-  ([Lektion 2.2 von Train the Trainer](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/getting-the-code-for-a-class.md)).
+  ([Lektion 2.2 von Train the Trainer](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/den-code-fuer-einen-kurs-beschaffen.md)).
 - Netzwerkzugang zum Paketindex oder die Seitenpakete bereits importiert für eine Offline-Installation.
 - Ein Administratorkonto pro Person auf der eigenen Installation; Testbenutzer mit Adressen unter `example.invalid`;
   keine echten E-Mails.
@@ -79,24 +79,24 @@ Für Trainer, die den Kurs vorbereiten, in dieser Reihenfolge:
 
 1. [10.2 Siteaccesses und Website-Adressen](../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site),
    [Multisite auf einer Installation](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md) und
-   [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md).
-2. [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)
+   [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md).
+2. [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)
    und die Kommentare von `settings/site.ini [SiteAccessSettings]`.
-3. [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../eng-us/bc/6.0/console-exp-ini.md),
-   [Einstellungen pro Website in Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md) und
-   [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
-4. [Links auf Inhalte einer anderen Website](../../../../eng-us/features/6.0/multisite-cross-site-links.md) und
+3. [Einstellungen über die Kommandozeile ändern: exp:ini](../../../bc/6.0/console-exp-ini.md),
+   [Einstellungen pro Website in Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) und
+   [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
+4. [Links auf Inhalte einer anderen Website](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md) und
    [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md).
 5. [4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird),
-   [Pakete](../../../anleitungen/pakete.md), [ezpm](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md),
-   [Der Paket-Assistent](../../../../eng-us/features/6.0/package-wizard.md),
-   [Paketlizenzen und Semantic Versioning](../../../../eng-us/features/6.0/package-licenses-and-versions.md),
-   [Vergleichen und Importieren](../../../../eng-us/features/6.0/package-compare-and-import.md) und
-   [Stapelverarbeitung im Installer](../../../../eng-us/features/6.0/package-installer-batching.md).
+   [Pakete](../../../anleitungen/pakete.md), [ezpm](../../../funktionen/6.0/ezpm-paketmanager-cli.md),
+   [Der Paket-Assistent](../../../funktionen/6.0/paketassistent.md),
+   [Paketlizenzen und Semantic Versioning](../../../funktionen/6.0/paketlizenzen-und-versionen.md),
+   [Vergleichen und Importieren](../../../funktionen/6.0/pakete-vergleichen-und-importieren.md) und
+   [Stapelverarbeitung im Installer](../../../funktionen/6.0/paketinstallation-in-teilschritten.md).
 6. [4. Eine Installationsmethode wählen](../../../installation/04-installationsweg-waehlen.md),
    [6. Der Kickstarter](../../../installation/06-kickstarter.md) und [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md).
 7. Als Hintergrund: [Seitenpakete für Hoster](../../hosting/bereitstellung/seitenpakete-fuer-hoster.md) und
-   [Seitenpakete und die mitgelieferten Themes](../../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md).
+   [Seitenpakete und die mitgelieferten Themes](../../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md).
 8. Dann die Module der Reihe nach: zuerst die Übersicht jedes Moduls (seine Vorbereitungsliste und sein Zeitplan), dann
    seine Lektionen. Proben Sie jede Übung auf einer frischen Installation der Übungsumgebung; die Module bauen auf den
    Ergebnissen der vorherigen auf.
@@ -129,20 +129,20 @@ Wiederholung hinzu.
 - Das Quiz und das erwartete Ergebnis jeder Lektion prüfen das Verständnis während des Kurses.
 - [Lektion 6.5](modul-06-websites-installieren/abschlussprojekt-eine-multisite-von-grund-auf.md) hat eine Checkliste mit acht Punkten
   für eine abschließende praktische Prüfung.
-- Der [Kurs Prüfungen](../../../../eng-us/help/trainers/assessments/README.md) enthält weiteres Material für technische Kurse.
+- Der [Kurs Prüfungen](../pruefungen/README.md) enthält weiteres Material für technische Kurse.
 - All das ist die eigene Prüfung des Trainers, keine offizielle Zertifizierung; die Zertifizierungen des
   Partnerprogramms sind davon getrennt ([Zertifizierungen](../../partner/zertifizierungen.md)).
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

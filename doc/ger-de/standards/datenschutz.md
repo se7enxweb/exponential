@@ -47,11 +47,11 @@ Voreinstellungen (Art. 25) sowie Sicherheit (Art. 32).
 | Auskunftsrecht (Art. 15) und Datenübertragbarkeit (Art. 20) | E-Mail-Einstellungen und Einwilligungsverlauf als JSON oder CSV herunterladbar, durch die Person selbst (`mailpreferences/export`) oder durch einen Administrator (`./console exp:mail:preferences export`); Audit-Einträge von oder über einen Benutzer mit `./console exp:audit export --subject-user=<id>` | [E-Mail-Einstellungen für Administratoren](../anleitungen/mail-einstellungen-administrator.md), [Audit-Leitfaden 4.12](../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben) |
 | Recht auf Löschung (Art. 17) | Beim Entfernen eines Benutzerkontos ruft `eZUser::removeUser()` die Methode `expMailPreferences::eraseForRemovedAccount()` auf: Einstellungen und ausstehende Bestätigungen werden entfernt, das Einwilligungsprotokoll wird anonymisiert; auf Anfrage `./console exp:mail:preferences erase --yes`. Audit-Einträge werden für ihre Aufbewahrungsdauer nach Art. 17 Abs. 3 lit. b und e aufbewahrt und pseudonymisiert | [die Checkliste zu den Gesetzen](../spezifikationen/6.0/mail-einstellungen-compliance.md), [Audit-Leitfaden 4.12](../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben) |
 | Einschränkung der Verarbeitung (Art. 18) | **Deaktivieren und verschieben** (Opt-in, `[UserSettings] DeactivateAndMove=enabled`) deaktiviert Konten und verschiebt sie umkehrbar in eine versteckte Gruppe ohne Rollen; **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) findet Konten, die seit N Tagen nicht genutzt wurden | [Benutzerkonten prüfen](../funktionen/6.0/benutzerpflege.md) |
-| Datenminimierung in Logs (Art. 5 Abs. 1 lit. c, Art. 25) | Audit: Adressen auf /24 gekürzt (IPv6 /48), Session-IDs gehasht, User-Agents gekürzt, keine Passwörter, Tokens oder POST-Inhalte, je Feld `full / truncate / hash / off` in `[AuditPrivacySettings] Field[]`, Pseudonymisierung nach `PseudonymiseAfterDays`. Anfrage-Logs: `MaskIP=enabled`, jeder Query-Wert wird durch `***` ersetzt. Log-Viewer: `settings/logviewer.ini [RedactionSettings] MaskIPs=enabled`, E-Mail-Adressen und Geheimnisse maskiert | [Prüfprotokoll](../funktionen/6.0/pruefprotokoll.md), [Anfrage-Logs](../funktionen/6.0/anfrageprotokolle.md), [Log-Viewer](../funktionen/6.0/log-betrachter.md#datenschutz-was-maskiert-wird) |
+| Datenminimierung in Logs (Art. 5 Abs. 1 lit. c, Art. 25) | Audit: Adressen auf /24 gekürzt (IPv6 /48), Sitzungs-IDs gehasht, User-Agents gekürzt, keine Passwörter, Tokens oder POST-Inhalte, je Feld `full / truncate / hash / off` in `[AuditPrivacySettings] Field[]`, Pseudonymisierung nach `PseudonymiseAfterDays`. Anfrage-Logs: `MaskIP=enabled`, jeder Query-Wert wird durch `***` ersetzt. Log-Viewer: `settings/logviewer.ini [RedactionSettings] MaskIPs=enabled`, E-Mail-Adressen und Geheimnisse maskiert | [Prüfprotokoll](../funktionen/6.0/pruefprotokoll.md), [Anfrage-Logs](../funktionen/6.0/anfrageprotokolle.md), [Log-Viewer](../funktionen/6.0/log-betrachter.md#datenschutz-was-maskiert-wird) |
 | Speicherbegrenzung (Art. 5 Abs. 1 lit. e) | Audit: 90 Tage aktiv und 2 Jahre archiviert je Kanal, danach automatisch entfernt. `settings/logviewer.ini [RotationSettings] MaxAgeDays[404]=30`, `MaxAgeDays[security]=90`, `MaxAgeDays[csp]=30` | [Audit-Leitfaden 4.3](../bc/6.0/audit.md#43-aufbewahrung), [Log-Rotation](../funktionen/6.0/log-rotation.md) |
-| Sicherheit der Verarbeitung (Art. 32) | Siehe [Sicherheitsstandards](sicherheit.md): Passwort-Hashing, CSRF-Tokens, Flags des Session-Cookies, Prüfprotokoll | [Sicherheitsstandards](sicherheit.md) |
+| Sicherheit der Verarbeitung (Art. 32) | Siehe [Sicherheitsstandards](sicherheit.md): Passwort-Hashing, CSRF-Tokens, Flags des Sitzungs-Cookies, Prüfprotokoll | [Sicherheitsstandards](sicherheit.md) |
 | Keine Datenübermittlung an Dritte durch die Administrationsoberfläche | jQuery und die übrigen Admin-Skripte werden lokal ausgeliefert (`extension/ezjscore/settings/ezjscore.ini [eZJSCore] LoadFromCDN=disabled`); das Design admin4 lädt keine Webfonts oder Skripte von anderen Hosts | `design/admin4/templates/pagelayout.tpl` |
-| Fehlerberichte ohne personenbezogene Daten | Der Fehlerbericht der Hilfe erstellt seine Installationsübersicht aus einer festen Liste von Fakten und entfernt E-Mail-Adressen, IP-Adressen, Zugangsdaten und Pfade außerhalb des Installationsverzeichnisses (`scrub()`); keine Benutzer- oder Sessiondaten | `kernel/classes/help/exphelpissuereport.php`, [Hilfesystem](../funktionen/6.0/hilfesystem.md) |
+| Fehlerberichte ohne personenbezogene Daten | Der Fehlerbericht der Hilfe erstellt seine Installationsübersicht aus einer festen Liste von Fakten und entfernt E-Mail-Adressen, IP-Adressen, Zugangsdaten und Pfade außerhalb des Installationsverzeichnisses (`scrub()`); keine Benutzer- oder Sitzungsdaten | `kernel/classes/help/exphelpissuereport.php`, [Hilfesystem](../funktionen/6.0/hilfesystem.md) |
 
 ### Status
 
@@ -64,7 +64,7 @@ abschließen und Anfragen beantworten.
 
 - **Keine einzelne Funktion „alle meine Daten exportieren“ oder „mich löschen“.** Ein Benutzerkonto ist ein
   Inhaltsobjekt; seine Felder, seine Inhalte, seine Informationssammlungen
-  ([Gesammelte Informationen](../anleitungen/gesammelte-informationen.md)), seine Bestellungen und seine Sessions erreichen Sie
+  ([Gesammelte Informationen](../anleitungen/gesammelte-informationen.md)), seine Bestellungen und seine Sitzungen erreichen Sie
   über die einzelnen Werkzeuge der Administrationsoberfläche. Nur E-Mail-Einstellungen und Audit-Einträge haben einen
   eigenen Export.
 - **Das Entfernen von Benutzern erfolgt manuell und Konto für Konto**: Ein Benutzerobjekt kommt nie in den Papierkorb,
@@ -92,7 +92,7 @@ Cookies, die der Kernel und die mitgelieferten Administrationsdesigns setzen:
 
 | Cookie | Gesetzt von | Zweck | Wann |
 |---|---|---|---|
-| Session-Cookie (`[Session] SessionNamePrefix=eZSESSID`, plus ein Suffix) | `lib/ezsession/classes/ezsession.php` | Anmeldung und Formularzustand; `HttpOnly`, `SameSite=Lax`, `Secure` über HTTPS | wenn eine Session beginnt |
+| Sitzungs-Cookie (`[Session] SessionNamePrefix=eZSESSID`, plus ein Suffix) | `lib/ezsession/classes/ezsession.php` | Anmeldung und Formularzustand; `HttpOnly`, `SameSite=Lax`, `Secure` über HTTPS | wenn eine Sitzung beginnt |
 | `is_logged_in` | `kernel/private/classes/ezpkernelweb.php` | lässt HTTP-Caches angemeldete Benutzer überspringen | solange angemeldet |
 | `exp_setup_wizard` | `kernel/classes/expmaintenance.php` | der eigene Durchlauf des Einrichtungsassistenten | nur während der Installation |
 | `eZMobileDeviceDetect` | `kernel/private/classes/ezpmobiledeviceregexpfilter.php` | merkt sich die Erkennung mobiler Geräte | nur mit `[SiteAccessSettings] DetectMobileDevice=enabled` (Standard `disabled`) |
@@ -124,7 +124,7 @@ sie Besucherdaten an einen Dritten, der dann als Auftragsverarbeiter oder Verant
 | `sevenx_authentication_2fa` (Handler für Social Login) | der gewählte Identitätsanbieter (Google, Facebook und andere) | der Benutzer wählt ihn; in der Datenschutzerklärung erwähnen |
 | Statistik von `cjw_newsletter` | keiner (auf der Site), aber personenbezogene Zählung von Öffnungen und Klicks | nur mit vorheriger Einwilligung in die Kategorie `newsletter_statistics` |
 
-Ob ein Site-Paket eine dieser Extensions aktiviert, ist hier **nicht überprüft**; prüfen Sie `ActiveExtensions[]` in
+Ob ein Site-Paket eine dieser Extensions aktiviert, ist hier **nicht geprüft**; prüfen Sie `ActiveExtensions[]` in
 `settings/override/site.ini.append.php`.
 
 ## CAN-SPAM Act und Abmeldung mit einem Klick

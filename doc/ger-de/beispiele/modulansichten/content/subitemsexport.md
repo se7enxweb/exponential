@@ -14,10 +14,12 @@ Eine Ansicht des Moduls `content`, definiert in `kernel/content/module.php` und 
 ## Adresse
 
 ```text
-/content/subitemsexport/<NodeID>
+/content/subitemsexport/<NodeID>/(columns)/<Columns>/(sort)/<Sort>/(order)/<Order>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `NodeID`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(columns)` setzt `Columns`, `(sort)` setzt `Sort`, `(order)` setzt `Order`.
 
 ## Wer sie öffnen darf
 
@@ -39,6 +41,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/content/subitemsexport/1'|ezurl}>content/subitemsexport</a>
+<a href={concat( '/content/subitemsexport/1/(columns)/', 1 )|ezurl}>content/subitemsexport</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

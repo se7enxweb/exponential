@@ -24,7 +24,7 @@ darauf verweisen können.
 | Der Inhaltsbaum | **Inhaltsstruktur** | | [Rundgang durch die Administration](../rundgang-durch-die-administration.md#die-linke-spalte) |
 | Bilder und Dateien | **Medien** | | [Medien und Uploads](../medien-und-uploads.md) |
 | Ein Element über seine Nummer, seinen Pfad oder seine Adresse öffnen | **Inhaltsfinder** unter dem Baum, oder **Setup > Inhaltsfinder** | `/contentfinder/search` | `doc/eng-us/features/6.0/content-finder.md` |
-| Der Shop auf einen Blick | **Shop** (erster Eintrag) | `/shop/dashboard` | [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md) |
+| Der Shop auf einen Blick | **Shop** (erster Eintrag) | `/shop/dashboard` | [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md) |
 | Alle Inhalte durchsuchen | **Suchen...** in der Kopfzeile (drücken Sie `/`) | | [Suchen](../suchen.md) |
 
 ## Jede Woche oder jeden Monat
@@ -32,17 +32,17 @@ darauf verweisen können.
 | Was | Menü | Adresse | Beschrieben in |
 |---|---|---|---|
 | Wartende Prozesse (Freigaben, zeitgesteuertes Veröffentlichen) | **Setup > Workflow-Prozesse** | `/workflow/processlist` | [Workflows](../../anleitungen/workflows.md) |
-| Alte, gesperrte und doppelte Benutzerkonten | **Benutzer > Benutzerkonten prüfen** | `/user/hygiene` | [Benutzerkonten prüfen](../../../eng-us/features/6.0/user-hygiene.md) |
-| Dateien, die niemand nutzt, kaputte Beziehungen, ungenutzte Dateien | Inhaltsprüfungen | `/contentcheck/unreferenced/<node id>`, `/contentcheck/brokenrelations/<node id>`, `/contentcheck/storage/<node id>` | [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md) |
-| Wer was getan hat | **Audit** | `/audit/dashboard` | [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
-| Die Logdateien | **Setup > Logdateien** | `/setup/logs` | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
-| Druckbare Exporte | **Setup > PDF export** | `/pdf/list` | [PDF-Export](../../../eng-us/features/6.0/pdf-export.md) |
+| Alte, gesperrte und doppelte Benutzerkonten | **Benutzer > Benutzerkonten prüfen** | `/user/hygiene` | [Benutzerkonten prüfen](../../funktionen/6.0/benutzerpflege.md) |
+| Dateien, die niemand nutzt, kaputte Beziehungen, ungenutzte Dateien | Inhaltsprüfungen | `/contentcheck/unreferenced/<node id>`, `/contentcheck/brokenrelations/<node id>`, `/contentcheck/storage/<node id>` | [Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md) |
+| Wer was getan hat | **Audit** | `/audit/dashboard` | [Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
+| Die Logdateien | **Setup > Logdateien** | `/setup/logs` | [Log-Viewer](../../funktionen/6.0/log-betrachter.md) |
+| Druckbare Exporte | **Setup > PDF export** | `/pdf/list` | [PDF-Export](../../funktionen/6.0/pdf-export.md) |
 
 ## Wenn sich etwas ändert
 
 | Was | Menü | Adresse | Beschrieben in |
 |---|---|---|---|
-| Die Website für geplante Arbeiten schließen | **Setup > Wartung** | `/setup/maintenance` | [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md) |
+| Die Website für geplante Arbeiten schließen | **Setup > Wartung** | `/setup/maintenance` | [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md) |
 | Die Installation nach einem Upgrade prüfen | **Setup > Upgrade-Prüfung** | `/setup/systemupgrade` | [Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
 | Workflows und ihre Trigger | **Setup > Workflows** | `/workflow/grouplist` | [Workflows](../../anleitungen/workflows.md) |
 
@@ -53,7 +53,7 @@ Sie die richtige Frage stellen können: „Ist die Upgrade-Prüfung sauber?“, 
 
 | Was | Adresse | Beschrieben in |
 |---|---|---|
-| Das Dashboard der Hilfe | `/exphelp/dashboard` | [Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Das Dashboard der Hilfe | `/exphelp/dashboard` | [Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | Die Einstiegsseite einer Zielgruppe, etwa diese | `/exphelp/audience/customer` | ebenda |
 | Wie man einen Fehler meldet | `/exphelp/report` | [Die Meldeseite der Hilfe](gesund-halten/die-meldeseite-der-hilfe.md) |
 
@@ -69,3 +69,11 @@ Dashboards listet **Meine Warteliste**, **Meine Entwürfe**, **Meine Lesezeichen
 - [Kunden: hier beginnen](kunden-hier-beginnen.md)
 - [Tastenkürzel](../tastenkuerzel.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

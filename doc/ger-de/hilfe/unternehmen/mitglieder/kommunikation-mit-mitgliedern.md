@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Verantwortlichen der Kommunikation in Mitgliederorganisationen. Mitglieder erwarten, regelmäßig
 von Ihnen zu hören, und mit einem Klick nichts mehr von Ihnen zu hören. Exponential gibt Ihnen drei Kanäle und eine
 Seite, auf der jedes Mitglied entscheidet, was es bekommt. Das Newsletter-System behandelt der Bereich
-[Newsletter](../newsletter/README.md) im Detail; diese Seite zeigt, wie die Teile zu einer Mitgliederwebsite passen.
+[Newsletter](../newsletters/README.md) im Detail; diese Seite zeigt, wie die Teile zu einer Mitgliederwebsite passen.
 
 ![Das Newsletter-Dashboard](../../../../eng-us/help/images/help/bu-newsletter.webp)
 
@@ -43,7 +43,7 @@ Seite, auf der jedes Mitglied entscheidet, was es bekommt. Das Newsletter-System
 `cjw_newsletter` ist ein vollständiges Newsletter-System in der Administration (**Newsletter**, `/newsletter/index`):
 Ausgaben werden als Inhalte geschrieben, Besucher abonnieren Listen mit Double-Opt-in, Ausgaben werden per Cron im
 Hintergrund verschickt, Bounces und eine Sperrliste halten Listen sauber, und jeder Versand wird archiviert
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
 | Teil | Was die Organisation dort tut |
 |---|---|
@@ -54,8 +54,8 @@ Hintergrund verschickt, Bounces und eine Sperrliste halten Listen sauber, und je
 | Bounces | nach `BounceThresholdValue` Bounces (Standard 3) bekommt ein Abonnent nichts mehr |
 | CSV | Abonnenten importieren und exportieren |
 
-Die Status erklärt [Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#statuses),
-das Schreiben und Versenden [Newsletter versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md).
+Die Status erklärt [Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#status),
+das Schreiben und Versenden [Newsletter versenden](../../ersteller/website-ersteller/newsletter-versenden.md).
 
 > **Tipp**
 > Eine Liste pro Zielgruppe lässt Mitglieder wählen, was sie bekommen, und hält die Ausgabe relevant. Eine Ausgabe nur
@@ -66,7 +66,7 @@ das Schreiben und Versenden [Newsletter versenden](../../../../eng-us/help/creat
 
 Mitglieder mit der Richtlinie `notification/use` können einem Bereich mit **Benachrichtigen** folgen und bekommen eine
 Mail, wenn darunter etwas veröffentlicht wird, sofort oder als täglicher, wöchentlicher oder monatlicher Digest
-([Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md)). Mails werden nur über Inhalte
+([Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md)). Mails werden nur über Inhalte
 verschickt, die das Mitglied lesen darf. Fügen Sie der Rolle Mitglied `notification/use` hinzu, wenn Sie das anbieten,
 und lassen Sie den Cronjob für Benachrichtigungen laufen
 ([Benachrichtigungen für Mitarbeiter](../intranets/benachrichtigungen-fuer-mitarbeiter.md#was-laufen-muss)).
@@ -75,7 +75,7 @@ und lassen Sie den Cronjob für Benachrichtigungen laufen
 
 Seit 6.0.15 hat jede Person eine Seite für E-Mail-Einstellungen (`/mailpreferences/settings` oder der Link **Manage**
 in jeder optionalen Mail, ohne Anmeldung)
-([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md)):
+([E-Mail-Einstellungen: die Anleitung für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md)):
 
 - Optionale Mails (Benachrichtigungen, Newsletter, Angebote, Hinweise) sind aus, bis die Person sie einschaltet.
 - Newsletter und Angebote brauchen eine Bestätigung per Mail, bevor sie beginnen; eine Anfrage verfällt nach sieben
@@ -88,7 +88,7 @@ Jede Änderung einer Einstellung wird mit dem genauen Text, den die Person geseh
 **Einwilligungsprotokoll** geschrieben
 ([E-Mail-Einstellungen: einrichten](../../../anleitungen/mail-einstellungen-administrator.md)). Diese Aufzeichnung hilft, wenn
 jemand fragt, warum er eine Mail bekommen hat. Die rechtliche Seite behandeln
-[Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md) und [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md);
+[Opt-in und Einwilligung](../newsletters/opt-in-und-einwilligung.md) und [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md);
 diese Seiten sind keine Rechtsberatung.
 
 ## Was jede optionale Mail enthält
@@ -104,7 +104,7 @@ Organisation werden leer ausgeliefert und müssen ausgefüllt werden (`mailprefe
 
 `cjw_newsletter.ini` kann jede Mail in Dateien schreiben, statt sie zu verschicken; eine vollständige Generalprobe
 (Abonnieren, Double-Opt-in, Versand, Cron, Abmelden) braucht also keinen Mailserver und erreicht keinen echten Empfänger
-([cjw_newsletter, Rehearse](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+([cjw_newsletter, Rehearse](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 Machen Sie das vor der ersten echten Ausgabe und nach jeder Änderung von Templates.
 
 ## Zustellung
@@ -136,16 +136,16 @@ Passen Sie den Rhythmus an Ihre Organisation an; weniger, bessere Mails halten d
 
 ## Verwandte Seiten
 
-- [Newsletter](../newsletter/README.md)
-- [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)
+- [Newsletter](../newsletters/README.md)
+- [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)
 - [Veranstaltungen und Kalender](veranstaltungen-und-kalender.md)
 - [Benachrichtigungen für Mitarbeiter](../intranets/benachrichtigungen-fuer-mitarbeiter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

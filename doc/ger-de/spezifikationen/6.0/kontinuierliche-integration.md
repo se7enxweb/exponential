@@ -57,8 +57,8 @@ brauchen 8.1, und die Tests sind für diese Versionen geschrieben. PHP 8.0 wird 
 in `.github/workflows/quality.yml` abgedeckt: `php -l` mit 8.0 auf jeder PHP-Datei, ein
 `composer install` für den Produktivbetrieb auf 8.0 und der Start-Rauchtest `tests/bin/bootsmoke.php`
 (jede Klasse des Kernels und der Extensions geladen, die Kompatibilitätsfunktionen, ein Template mit
-`wash`). Siehe [PHP-8.0-Unterstützung](../../../eng-us/bc/6.0/php-8.0-support.md) und
-[Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md).
+`wash`). Siehe [PHP-8.0-Unterstützung](../../bc/6.0/php-8.0-unterstuetzung.md) und
+[Qualitätsprüfungen](../../funktionen/6.0/qualitaetspruefungen.md).
 
 ### Job `phpunit-db`
 
@@ -174,6 +174,6 @@ gemeinsam genutzten Server die Suites, die keine Datenbank brauchen, direkt und 
 
 ## Siehe auch
 
-- Werkzeugkette: [PHPUnit 10](../../../eng-us/bc/6.0/phpunitv10.md), [PHPUnit 13](../../../eng-us/bc/6.0/phpunitv13.md), [PHPUnit 13 für PHP 8.4.1](../../../eng-us/bc/6.0/phpunitv13forPHP841.md), [PHP-8-Unterstützung](../../../eng-us/bc/6.0/php8.md)
+- Werkzeugkette: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [PHPUnit 13 für PHP 8.4.1](../../bc/6.0/phpunitv13-fuer-php841.md), [PHP-8-Unterstützung](../../bc/6.0/php8.md)
 - Spezifikationen: [Sicherheits-Patches vom August 2026](sicherheitshaertung-2026-08.md) (die Suite `security`), [Datenbanktreiber und Installer, September 2026](datenbanktreiber-2026-09.md)
-- [Verhaltensänderungen vom Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Monatsseiten [Juli 2026](../../../eng-us/history/2026/2026-07.md) und [August 2026](../../../eng-us/history/2026/2026-08.md)
+- [Verhaltensänderungen vom Juli und August 2026](../../bc/6.0/verhaltensaenderungen-2026-07-08.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Monatsseiten [Juli 2026](../../geschichte/2026/2026-07.md) und [August 2026](../../geschichte/2026/2026-08.md)

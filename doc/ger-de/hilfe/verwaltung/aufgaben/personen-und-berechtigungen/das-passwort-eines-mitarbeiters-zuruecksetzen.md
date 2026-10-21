@@ -36,7 +36,7 @@ Der sicherste Weg, weil das Passwort nie durch Ihre Hände geht:
 1. Bitten Sie die Kollegin oder den Kollegen, die Anmeldeseite zu öffnen und **Passwort vergessen?** zu verwenden.
 2. Sie erhalten an der E-Mail-Adresse des Kontos eine E-Mail mit einem Link und wählen ein neues Passwort.
 
-Das braucht einen funktionierenden E-Mail-Transport ([Probleme mit E-Mails](../../../../../eng-us/help/government/operations/incidents/mail-problems.md)).
+Das braucht einen funktionierenden E-Mail-Transport ([Probleme mit E-Mails](../../betrieb/vorfaelle/probleme-mit-e-mails.md)).
 
 ## Möglichkeit 2: es auf der Kontoseite setzen
 
@@ -49,7 +49,7 @@ Das braucht einen funktionierenden E-Mail-Transport ([Probleme mit E-Mails](../.
 ## Was danach geschieht
 
 - Das Passwort muss `MinPasswordLength` erfüllen und wird gegen häufige Passwörter geprüft; alle Regeln aus
-  `site.ini [PasswordSettings]` gelten ([Das eigene Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md)).
+  `site.ini [PasswordSettings]` gelten ([Das eigene Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md)).
 - Die anderen Sitzungen des Kontos werden bei ihrer nächsten Anfrage abgemeldet.
 - Eine E-Mail „Ihr Passwort wurde geändert“ geht an die Adresse des Kontos; niemand kann das abschalten.
 - Die Änderung wird im Audit-Protokoll aufgezeichnet; das Passwort nie.
@@ -64,14 +64,15 @@ Das braucht einen funktionierenden E-Mail-Transport ([Probleme mit E-Mails](../.
 
 ## Verwandte Seiten
 - [Ein Passwort auf der Kommandozeile zurücksetzen](ein-passwort-auf-der-kommandozeile-zuruecksetzen.md)
-- [Zweistufige Anmeldung für Mitarbeiter](../../../../../eng-us/help/government/operations/people-and-permissions/two-factor-for-staff.md)
+- [Zweistufige Anmeldung für Mitarbeiter](../../betrieb/personen-und-berechtigungen/zwei-faktor-anmeldung-fuer-beschaeftigte.md)
 - [Das Administratorpasswort ändern (Hilfe)](../../../administratorpasswort-aendern.md)
 - [Konten und Anmeldung (Hilfe)](../../../konten-und-anmeldung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

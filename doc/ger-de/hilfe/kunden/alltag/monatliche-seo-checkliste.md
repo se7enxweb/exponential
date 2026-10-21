@@ -37,7 +37,7 @@ wenn Sie keinen Zugriff haben.
       in dem Inhalt, der ihn verwendet. Die Linkprüfung läuft im Cron-Teil `infrequent`
       ([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)).
 - [ ] **Kaputte Beziehungen** ab der Inhaltswurzel: Beheben Sie jede Quelle
-      ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+      ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 - [ ] In diesem Monat entfernte Seiten: Jede hat eine Ersatzadresse (einen Alias auf der neuen Seite oder eine
       Wildcard), oder ist bewusst weg ([URLs, Weiterleitungen und verschobene Seiten](urls-weiterleitungen-und-verschobene-seiten.md)).
 - [ ] Testen Sie zwei oder drei alte Adressen, von denen Sie wissen, dass sie verschoben wurden: Sie sollten auf der
@@ -62,9 +62,9 @@ Sagen Sie den Autoren, was Sie gefunden haben, freundlich und konkret. Die Regel
 
 - [ ] Die Webmaster-Tools der Suchmaschinen: neue Crawl-Fehler, aus dem Index ausgeschlossene Seiten.
 - [ ] Die Sitemap, wenn Ihre Website eine hat: Sie öffnet sich, listet die neuen Seiten dieses Monats und listet keine
-      verborgenen Seiten oder Seiten nur für Mitglieder ([XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)).
+      verborgenen Seiten oder Seiten nur für Mitglieder ([XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md)).
 - [ ] `robots.txt` nennt weiterhin die Sitemap und wurde nicht versehentlich geändert
-      ([robots.txt für Ihre Website](../../../../eng-us/help/creators/website-creators/robots-txt.md)).
+      ([robots.txt für Ihre Website](../../ersteller/website-ersteller/robots-txt.md)).
 - [ ] Die Website öffnet sich unter einem einzigen Hostnamen mit HTTPS; die anderen Schreibweisen leiten weiter.
 - [ ] Alles, was langsam oder kaputt ist, geht mit Adresse und Uhrzeit an den Hoster oder Partner.
 
@@ -84,3 +84,11 @@ Crawl errors in webmaster tools: ____   Sent to partner/host: ______________
 - [Wöchentliche Routine des Betreibers](woechentliche-routine-des-betreibers.md)
 - [Monatliche Checkliste für den Betrieb](../../unternehmen/vorlagen/monatliche-betriebscheckliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

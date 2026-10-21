@@ -31,9 +31,9 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 - [ ] Zweck, verantwortliche Person und Umfang schriftlich festgehalten ([Intranet planen](intranet-planen.md)).
 - [ ] Hosting gewählt und die Installation läuft ([Hosting auswählen](../auswahl/hosting-auswaehlen.md)).
 - [ ] Hostname und HTTPS-Zertifikat vorhanden
-  ([Live gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+  ([Live gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] Der Siteaccess des Intranets hat `RequireUserLogin=true`
-  ([Was Besucher sehen dürfen, Siteaccess settings](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#siteaccess-settings)).
+  ([Was Besucher sehen dürfen, Siteaccess settings](../../ersteller/website-ersteller/rechte-fuer-besucher.md#einstellungen-des-siteaccess)).
 - [ ] Netzwerkbeschränkung entschieden und, falls gewünscht, im Webserver eingerichtet
   ([Network restrictions](../../hosting/sicherheit/die-administration-einschraenken.md#einschränkungen-im-netzwerk)).
 - [ ] Das Standardpasswort des Administrators geändert
@@ -50,7 +50,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
   ([Rollen und Richtlinien, 1](../../../anleitungen/rollen-und-richtlinien.md#1-die-rollenliste-lesen)).
 - [ ] Wenn das Intranet eine Installation mit einer öffentlichen Website teilt: Die öffentliche Rolle Anonymous kann
   keine Sektion des Intranets lesen; in einem privaten Browserfenster getestet
-  ([Als Besucher testen](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#testing-as-a-visitor)).
+  ([Als Besucher testen](../../ersteller/website-ersteller/rechte-fuer-besucher.md#als-besucher-testen)).
 
 ## Phase 3: Anmeldung
 
@@ -63,7 +63,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
   ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - [ ] Der Helpdesk weiß, wie man ein Passwort zurücksetzt und mit einem verlorenen zweiten Schritt umgeht
   ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md#was-ein-benutzer-sieht),
-  [Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+  [Das Passwort eines Benutzers zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 - [ ] Offene Registrierung geschlossen: `user/register` im Intranet nicht an Anonymous vergeben
   ([Rollen und Richtlinien, 8](../../../anleitungen/rollen-und-richtlinien.md#8-festlegen-wer-sich-registrieren-und-wer-knotendaten-lesen-darf)).
 
@@ -76,7 +76,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 - [ ] Suche als Mitglieder zweier Abteilungen getestet ([Suche im Intranet](suche-im-intranet.md)).
 - [ ] Suchindex nach der Migration neu aufgebaut.
 - [ ] Startseite mit den neuesten Neuigkeiten ([Neuigkeiten und Ankündigungen](neuigkeiten-und-ankuendigungen.md)).
-- [ ] Redakteure geschult ([Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+- [ ] Redakteure geschult ([Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Phase 5: Kommunikation und Freigabe
 
@@ -93,8 +93,8 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
   ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Backups eingeplant und eine Wiederherstellung getestet
   ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
-- [ ] Status des Audit-Trails geprüft: `./console exp:audit status`
-  ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+- [ ] Status des Prüfprotokolls geprüft: `./console exp:audit status`
+  ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)).
 - [ ] Plan für Aktualisierungen vereinbart
   ([Aktualisierungen ohne Überraschungen](../zuverlaessigkeit/aktualisierungen-ohne-ueberraschungen.md)).
 - [ ] Monitoring der Adresse des Intranets eingerichtet
@@ -121,7 +121,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
   aktualisiert werden.
 - [ ] Erste Zugriffsprüfung nach 90 Tagen ([Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md)).
 - [ ] Ungenutzte Konten unter **Benutzer > Benutzerkonten prüfen** geprüft
-  ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Monatliche Betriebsroutine eingerichtet
   ([Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)).
 
@@ -130,13 +130,13 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 - [Intranets](README.md)
 - [Vorlage Checkliste Go-live](../vorlagen/checkliste-go-live.md)
 - [Qualitätsschwellen und Abnahme](../../fuehrung/qualitaetsschranken-und-abnahme.md)
-- [Checkliste für den Start für Website-Ersteller](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Checkliste für den Start für Website-Ersteller](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

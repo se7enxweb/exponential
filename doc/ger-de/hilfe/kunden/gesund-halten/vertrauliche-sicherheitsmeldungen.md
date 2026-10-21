@@ -74,7 +74,7 @@ Diese erste Antwort ist die einzige Zusage zur Reaktionszeit in den eigenen Date
 Eine Erweiterung, die nicht Teil des Projekts ist, hat ihren eigenen Autor und gegebenenfalls einen eigenen
 Sicherheitskontakt. Prüfen Sie das Repository der Erweiterung auf eine Sicherheitsrichtlinie; hat es keine, wenden Sie
 sich vertraulich an den Autor statt öffentlich. Die Seite **Info > Über** nennt die Website jeder Erweiterung
-([Die Seiten Über und Copyright](../../../../eng-us/features/6.0/about-and-package-pages.md)).
+([Die Seiten Über und Copyright](../../../funktionen/6.0/info-und-paketseiten.md)).
 
 ## Personenbezogene Daten
 
@@ -88,3 +88,11 @@ Sie sofort Ihren Datenschutzbeauftragten oder Anwalt. Diese Seite ist keine Rech
 - [Sicherheitsupdates und Offenlegung (für Unternehmen)](../../unternehmen/sicherheit/sicherheitsupdates-und-offenlegung.md)
 - [Probleme melden](probleme-melden.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

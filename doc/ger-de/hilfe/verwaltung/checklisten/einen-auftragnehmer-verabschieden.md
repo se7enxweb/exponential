@@ -23,12 +23,12 @@ letzten Tag, nicht Wochen später.
 ## Vor dem letzten Tag
 
 - [ ] Listen Sie jeden Zugang des Auftragnehmers auf: Konten in Exponential, Server-Logins, Datenbankbenutzer, Repositorys, Hosting-Panel, DNS, Überwachung, E-Mail.
-- [ ] Nehmen Sie die Übergabe entgegen: Code in Ihrem Repository, Dokumentation, offene Punkte, angelegte Zugangsdaten ([Das Ende eines Vertrags](../../../../eng-us/help/government/procurement/lifecycle/end-of-a-contract.md#what-to-hand-over-in-every-case)).
+- [ ] Nehmen Sie die Übergabe entgegen: Code in Ihrem Repository, Dokumentation, offene Punkte, angelegte Zugangsdaten ([Das Ende eines Vertrags](../beschaffung/lebenszyklus/ende-eines-vertrags.md#was-in-jedem-fall-zu-übergeben-ist)).
 - [ ] Stellen Sie sicher, dass benannte Mitarbeitende Ihrer Organisation Administratorzugang haben, bevor der des Auftragnehmers entfernt wird.
 
 ## In Exponential
 
-- [ ] Deaktivieren oder entfernen Sie die Konten des Auftragnehmers; bei eingeschaltetem **Deaktivieren und verschieben** wandern Konten in eine verborgene Gruppe ohne Rollen und können wiederhergestellt werden ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] Deaktivieren oder entfernen Sie die Konten des Auftragnehmers; bei eingeschaltetem **Deaktivieren und verschieben** wandern Konten in eine verborgene Gruppe ohne Rollen und können wiederhergestellt werden ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Inhalte, deren Eigentümer er ist, können einer Mitarbeiterin oder einem Mitarbeiter übertragen werden ([Den Eigentümer von Inhalten ändern](../../../anleitungen/eigentuemer-aendern.md)).
 - [ ] Entfernen Sie seine Rollenzuweisungen; prüfen Sie Rollen, die er möglicherweise angelegt hat ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 - [ ] Widerrufen Sie seine persönlichen API-Schlüssel ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)) und alle OAuth-Clients (**Setup > oAuth-Verwaltung**).
@@ -47,7 +47,7 @@ letzten Tag, nicht Wochen später.
 
 ## Prüfen und festhalten
 
-- [ ] Prüfen Sie seine letzten Aktionen im Audit-Trail (`/audit/console`).
+- [ ] Prüfen Sie seine letzten Aktionen im Prüfprotokoll (`/audit/console`).
 - [ ] Versuchen Sie, sich in einem Testbrowser mit seinem alten Konto anzumelden: Es muss scheitern.
 - [ ] Halten Sie fest, was von wem wann entfernt wurde.
 - [ ] Lassen Sie sich schriftlich bestätigen, dass der Auftragnehmer alle Kopien Ihrer Daten zurückgegeben oder gelöscht hat, wie der Vertrag es verlangt.
@@ -60,8 +60,9 @@ letzten Tag, nicht Wochen später.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

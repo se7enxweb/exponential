@@ -259,7 +259,7 @@ Datei, in der die Pfade dieses Rechners ersetzt wurden.
 - [Kapitel 8, Abschnitt 8.3: Exponential Velocity, der empfohlene Weg](../../installation/08-die-website-ausliefern.md#83-exponential-velocity-der-empfohlene-weg),
   [8.3.10 Der Konfigurationsbaum](../../installation/08-die-website-ausliefern.md#8310-der-konfigurationsbaum-etcvc-im-debian-stil),
   [8.3.11 Velocity als Dienst betreiben](../../installation/08-die-website-ausliefern.md#8311-velocity-als-dienst-betreiben).
-- [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) und [FrankenPHP](frankenphp.md).
+- [Velocity-Engines](../../bc/6.0/velocity-engines.md) und [FrankenPHP](frankenphp.md).
 - [Kapitel 13, Abschnitt 13.12: Velocity-spezifische Härtung](../../installation/13-sicherheitshaertung.md#1312-velocity-spezifische-härtung).
 - [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite dürfen Sie frei kopieren, übersetzen und verbessern.

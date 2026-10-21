@@ -4,7 +4,7 @@ audience: government, hosting, admin
 category: public-sector
 order: 110
 summary: Für IT-Teams, die eine Exponential-Website auf mehreren Webservern betreiben. Wo Sitzungen gespeichert werden (PHP-Dateien oder die Datenbank), wie Redakteurinnen und Redakteure angemeldet bleiben, wenn ein Load Balancer sie zwischen Servern verschiebt, was ein ausgefallener Knoten für angemeldete Beschäftigte bedeutet und welche Sitzungseinstellungen wichtig sind.
-keywords: Sitzungen, Sitzungshandler, ezpSessionHandlerDB, ezpSessionHandlerPHP, Sticky Sessions, Sitzungsaffinität, CookieAlwaysAddToHttpResponse, SessionTimeout, Setup > Sitzungen, mehrere Webserver, angemeldete Redakteure, sessions, session handler, sticky sessions, session affinity, Setup > Sessions, several web servers, signed-in editors
+keywords: Sitzungen, Session-Handler, ezpSessionHandlerDB, ezpSessionHandlerPHP, Sticky Sessions, Sitzungsaffinität, CookieAlwaysAddToHttpResponse, SessionTimeout, Setup > Sitzungen, mehrere Webserver, angemeldete Redakteure, sessions, session handler, sticky sessions, session affinity, Setup > Sitzungen, several web servers, signed-in editors
 type: help
 ---
 # Sitzungen über mehrere Server
@@ -82,7 +82,7 @@ Website, auf der die Redaktion während eines Vorfalls weiterarbeiten muss, den 
 Ein kürzeres `SessionTimeout` für die Administration kann eine Anforderung Ihrer Sicherheitsrichtlinie sein; setzen
 Sie es in den Einstellungen des Administrations-Siteaccess. Eine Abmeldung beendet die Sitzung unter jedem Handler
 endgültig, und eine Passwortänderung beendet andere Sitzungen (`[PasswordSettings] EndOtherSessions=enabled`)
-([Sicherheitsstandards](../../../../../eng-us/standards/security.md)).
+([Sicherheitsstandards](../../../../standards/sicherheit.md)).
 
 ## Checkliste
 
@@ -98,8 +98,9 @@ endgültig, und eine Passwortänderung beendet andere Sitzungen (`[PasswordSetti
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

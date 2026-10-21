@@ -1,8 +1,8 @@
 # sevenx_themes_simple (das Simple-Theme): Chronik
 
-Das Simple-Theme ist das Standard-Design einer neuen Exponential-Installation. Es wurde im Januar 2024 mit den auf ezwebin beruhenden Paketen importiert, im August 2025 auf Exponential umbenannt, im Juli 2026 überarbeitet (mehrstufiges Menü, Abstände der Toolbar, HTML5-Markup) und in der Überarbeitung von September und Oktober 2026 fertiggestellt (Titel der Fehlerseiten, Übersetzungen, jQuery 4, YUI entfernt). Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md).
+Das Simple-Theme ist das Standard-Design einer neuen Exponential-Installation. Es wurde im Januar 2024 mit den auf ezwebin beruhenden Paketen importiert, im August 2025 auf Exponential umbenannt, im Juli 2026 überarbeitet (mehrstufiges Menü, Abstände der Toolbar, HTML5-Markup) und in der Überarbeitung von September und Oktober 2026 fertiggestellt (Titel der Fehlerseiten, Übersetzungen, jQuery 4, YUI entfernt). Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md).
 
-Diese Seite führt **jede der 72 Änderungen** des Repositorys `sevenx_themes_simple` zwischen 2024-01-25 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_themes_simple.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx_themes_simple.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 72 Änderungen** des Repositorys `sevenx_themes_simple` zwischen 2024-01-25 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_themes_simple.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx_themes_simple.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -173,7 +173,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md)
 - [Release Notes](../../../changelogs/extensions/sevenx_themes_simple.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_themes_simple.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

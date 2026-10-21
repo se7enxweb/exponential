@@ -122,7 +122,7 @@ RootNodeDepth=1
 `MatchOrder` ist `uri;port`, wenn die Installation Zugriff über Ports nutzt. Bei Zugriff über die URL wird die Übersetzung über den Pfad
 erreicht (`https://www.example.com/ger/`). Bei Zugriff über Ports bekommt eine Übersetzung den nächsten Port nach dem der Website; bei
 Zugriff über Hosts nennt der Kommentar des Installers die Form `ger.example.com`. Siehe
-[Zuordnung von Siteaccesses nach Host und Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
+[Zuordnung von Siteaccesses nach Host und Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
 
 Eine Sitzung deckt alle öffentlichen Siteaccesses ab (`[Session] SessionNamePerSiteAccess=disabled` auf dem Benutzer-Siteaccess), während
 die Administration eine eigene Sitzung behält (`SessionNameHandler=custom` in der Überschreibung).
@@ -137,11 +137,11 @@ Siteaccesses löschen würde. Der Umschalter des Designs starter liest es.
 ## Die Siteaccesses der Administration
 
 - `admin`: Anmeldung erforderlich, `ShowHiddenNodes=true`, Wurzelknoten der Inhalte 2, `Locale` und `SiteLanguageList` aus den gewählten
-  Sprachen, `ActiveAccessExtensions[]` mit `expai` und `exp_adminui`, wo vorhanden. Siehe [admin4l](../../../../eng-us/features/6.0/admin4l.md).
+  Sprachen, `ActiveAccessExtensions[]` mit `expai` und `exp_adminui`, wo vorhanden. Siehe [admin4l](../../../funktionen/6.0/admin4l.md).
 - `editor`: vom Setup aus den Dateien der Administration angelegt; siehe
-  [Der Setup-Assistent und der Siteaccess der Redaktion](../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
+  [Der Setup-Assistent und der Siteaccess der Redaktion](../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
 - `adminui`: nur über die URI erreichbar (`/adminui`), ohne Eintrag für Host, Port oder Host-Zuordnung. Siehe
-  [exp_adminui](../../../../eng-us/features/6.0/exp-adminui.md).
+  [exp_adminui](../../../funktionen/6.0/exp-adminui.md).
 
 > **Hinweis**
 > Anonymous darf sich auf jedem ausgelieferten Siteaccess außer `admin` und `adminui` anmelden (`siteRoles()`), sodass der Siteaccess der
@@ -153,6 +153,14 @@ Siteaccesses löschen würde. Der Umschalter des Designs starter liest es.
 - [Die Installerskripte](die-installerskripte-von-cjw-multisite.md)
 - [Was Sie nach der Installation haben](was-sie-nach-der-installation-von-cjw-multisite-haben.md)
 - [Siteaccesses und Sprachen von sevenx_multisite](../sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md)
-- [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)
+- [Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

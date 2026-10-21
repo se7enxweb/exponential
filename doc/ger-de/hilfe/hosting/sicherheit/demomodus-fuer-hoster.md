@@ -34,7 +34,7 @@ anmelden kann), die Installer akzeptieren das veröffentlichte Demo-Passwort, un
   Einstellungsdatei oder eine Datenbank, die von einer Demo kopiert wird, ihn nicht auf eine andere Website trägt.
 - **Nur der genaue Wert `1`.** `0`, `true`, `yes`, `on` und ein leerer Wert lassen ihn aus.
 - **Pro Prozess.** PHP liest ihn bei jedem Aufruf zuerst mit `getenv()`, dann aus `$_SERVER`. Jeder Prozess, der die Demo ausliefert oder
-  pflegt, braucht ihn: das PHP des Webservers, Exponential Velocity, wenn es die Website ausliefert, Cronjobs und Konsolenbefehle. Ein
+  pflegt, braucht ihn: das PHP des Webservers, Exponential Velocity, wenn er die Website ausliefert, Cronjobs und Konsolenbefehle. Ein
   Prozess ohne ihn läuft mit ausgeschaltetem Demomodus.
 
 ## Sie für jeden Server setzen
@@ -104,9 +104,17 @@ Das Skript darf die Variable nicht in `config.php`, `settings/` oder irgendetwas
 
 - [Demomodus](../../demomodus.md) (für Administratoren), [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
 - [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md),
-  [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md), [Beispiele für den Demomodus](../../../../eng-us/examples/demo-mode/README.md)
-- [Demomodus: der Hinweis zum Upgrade](../../../../eng-us/bc/6.0/demo-mode.md)
+  [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md), [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md)
+- [Demomodus: der Hinweis zum Upgrade](../../../bc/6.0/demomodus.md)
 - [Erste Anmeldung und Standardpasswörter](erste-anmeldung-und-standardpasswoerter.md)
 - [Härtung für Hoster](haertung-fuer-hoster.md), [Sicherheit für Hoster: Überblick](README.md)
 - [Eine Demo-Installation einrichten](../../presse/eine-demo-installation-einrichten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

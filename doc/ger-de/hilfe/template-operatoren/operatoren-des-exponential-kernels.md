@@ -3,8 +3,8 @@ title: Operatoren für Installation, Umgebung, Audit und CSP
 audience: developer, designer, app-creator
 category: development
 order: 370
-summary: Sechs Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label und csp_nonce - mit den Einstellungen, die sie lesen, ihren Rückgabewerten, der Caching-Regel für csp_nonce und Beispielen, die auf alpha gerendert wurden.
-keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, Nonce, Audit, Installationsname, Produktivsystem, Umgebung, Umgebungsabzeichen, environment, badge
+summary: Sieben Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce und view_parameter - mit den Einstellungen, die sie lesen, ihren Rückgabewerten, der Caching-Regel für csp_nonce und Beispielen, die auf alpha gerendert wurden.
+keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, view_parameter, View-Parameter, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, Nonce, Audit, Installationsname, Produktivsystem, Umgebung, Umgebungsabzeichen, environment, badge
 type: help
 ---
 # Operatoren für Installation, Umgebung, Audit und CSP
@@ -18,19 +18,21 @@ Diese Operatoren gehören zum aktuellen Exponential-Kernel und werden in
 | `exp_environment`, `exp_environment_badge` | `expEnvironmentOperator`, `kernel/common/expenvironmentoperator.php` |
 | `audit_label` | `expAuditTemplateOperator`, `kernel/classes/audit/console/expaudittemplateoperator.php` |
 | `csp_nonce` | `expContentSecurityPolicyOperator`, `kernel/common/expcontentsecuritypolicyoperator.php` |
+| `view_parameter` | `expViewParameterOperator`, `kernel/common/expviewparameteroperator.php` |
 
 ## Inhalt
 
 1. [Die Operatoren](#die-operatoren): [installation_name](#installation_name),
    [is_production_system](#is_production_system), [exp_environment](#exp_environment),
-   [exp_environment_badge](#exp_environment_badge), [audit_label](#audit_label), [csp_nonce](#csp_nonce)
+   [exp_environment_badge](#exp_environment_badge), [audit_label](#audit_label), [csp_nonce](#csp_nonce),
+   [view_parameter](#view_parameter)
 2. [Beispiele](#beispiele)
 
 ## Die Operatoren
 
 ### installation_name
 
-Generierte Seite: [installation_name](../../../eng-us/examples/template-operators/installation_name.md).
+Generierte Seite: [installation_name](../../beispiele/template-operatoren/installation_name.md).
 
 | Parameter | Typ | Erforderlich | Standardwert |
 |---|---|---|---|
@@ -45,7 +47,7 @@ Der Wert wird einmal pro Anfrage gelesen (`ExpInstallationDetailsOutputFilter::i
 
 ### is_production_system
 
-Generierte Seite: [is_production_system](../../../eng-us/examples/template-operators/is_production_system.md).
+Generierte Seite: [is_production_system](../../beispiele/template-operatoren/is_production_system.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** `true`, wenn der Installationsname nicht leer ist und in `[SiteSettings]
@@ -53,7 +55,7 @@ Generierte Seite: [is_production_system](../../../eng-us/examples/template-opera
 
 ### exp_environment
 
-Generierte Seite: [exp_environment](../../../eng-us/examples/template-operators/exp_environment.md).
+Generierte Seite: [exp_environment](../../beispiele/template-operatoren/exp_environment.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** der Name der Umgebung aus der Konstante `EXP_ENV` (`config.env.php`, gelesen von `eZINI::environment()`)
@@ -66,7 +68,7 @@ Generierte Seite: [exp_environment](../../../eng-us/examples/template-operators/
 
 ### exp_environment_badge
 
-Generierte Seite: [exp_environment_badge](../../../eng-us/examples/template-operators/exp_environment_badge.md).
+Generierte Seite: [exp_environment_badge](../../beispiele/template-operatoren/exp_environment_badge.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** das Umgebungsabzeichen der Kopfzeile der Administration als Hash: `level`, `name`, `short`, `release`,
@@ -85,7 +87,7 @@ Das Abzeichen kommt aus `site.ini` `[AdminEnvironment]` des aktuellen Siteaccess
 
 ### audit_label
 
-Generierte Seite: [audit_label](../../../eng-us/examples/template-operators/audit_label.md).
+Generierte Seite: [audit_label](../../beispiele/template-operatoren/audit_label.md).
 
 - **Eingabe:** der Name eines Audit-Ereignisses wie `content.node.move`. **Parameter:** keine.
 - **Rückgabe:** die lesbare Bezeichnung aus der Audit-Taxonomie (`expAuditConsole::label()`), übersetzt im Kontext
@@ -97,7 +99,7 @@ und Punkte und Unterstriche durch Leerzeichen ersetzt (`expAuditTaxonomy::label(
 
 ### csp_nonce
 
-Generierte Seite: [csp_nonce](../../../eng-us/examples/template-operators/csp_nonce.md).
+Generierte Seite: [csp_nonce](../../beispiele/template-operatoren/csp_nonce.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** die Nonce der Content Security Policy dieser Anfrage (`expContentSecurityPolicy::templateNonce()`,
@@ -112,6 +114,25 @@ Die Nonce ist bei jedem Aufruf innerhalb einer Anfrage gleich und bei jeder Anfr
 eines `cache-block` oder eines im View-Cache gespeicherten Templates aus**: Die zwischengespeicherte Kopie trüge die
 Nonce einer anderen Anfrage, und der Browser würde das Skript blockieren. Noch besser verschieben Sie das Skript in eine
 Datei, die über die Skriptliste des Designs geladen wird; sie braucht keine Nonce.
+
+### view_parameter
+
+Generierte Seite: [view_parameter](../../../eng-us/examples/template-operators/view_parameter.md).
+
+- **Eingabe:** ein Text oder eine Zahl. **Parameter:** keine.
+- **Rückgabe:** der Wert als Wert eines View-Parameters, `/(name)/<wert>`, so geschrieben, wie jede Ansicht ihn
+  schreibt (`expViewParameters::encode()`, `kernel/classes/expviewparameters.php`): `/` als `~2F`, `(` und `)` als
+  `~28` und `~29`, `~` als `~7E`, `%` und `+` als `~25` und `~2B`, der Rest lesbar (ein Leerzeichen `%20`). Ein
+  Array ergibt eine leere Zeichenkette.
+
+```tpl
+<a href={concat( 'settings/view/', $siteaccess, '/', $file, '/(q)/', $name|view_parameter )|ezurl}>...</a>
+```
+
+Die Ansicht liest den Wert mit `expViewParameters::get()` zurück. Schreiben Sie einen View-Parameter nie mit
+`|urlencode`: Apache lehnt das `%2F` ab, das daraus für einen Schrägstrich wird, und die zweite Dekodierung des
+Kernels macht aus `%2B` ein Leerzeichen. Die Kodierung und ihre Regeln:
+[View-Parameter: wie ein Wert in der Adresse reist](../../anleitungen/urls-und-aliase.md#9-view-parameter-wie-ein-wert-in-der-adresse-reist).
 
 ## Beispiele
 
@@ -154,14 +175,15 @@ csp_nonce on admin: length 22, same on the second call: yes
 
 ## Verwandte Seiten
 
-- [Content Security Policy für Anwendungen](../../../eng-us/help/creators/app-creators/content-security-policy.md)
-- [Umgebungseinstellungen und Geheimnisse](../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Content Security Policy für Anwendungen](../ersteller/anwendungsentwickler/content-security-policy.md)
+- [Umgebungseinstellungen und Geheimnisse](../ersteller/anwendungsentwickler/umgebungseinstellungen-und-geheimnisse.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

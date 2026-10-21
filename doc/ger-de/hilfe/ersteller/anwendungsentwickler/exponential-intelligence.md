@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Anwendungsentwickler, die KI-Unterstützung in ihrer Anwendung möchten oder wissen wollen, wie sie
 sich einfügt. Exponential Intelligence ist die Erweiterung `expai`: ein Schreibassistent in der Administration, der
 nachschlägt, was er braucht, und **Entwürfe** im Namen der angemeldeten Redakteurin oder des angemeldeten Redakteurs
-schreibt, ohne jemals selbst zu veröffentlichen ([expai](../../../../eng-us/features/6.0/extensions/expai.md)). Die vollständige
+schreibt, ohne jemals selbst zu veröffentlichen ([expai](../../../funktionen/6.0/erweiterungen/expai.md)). Die vollständige
 Dokumentation liegt in ihrem Repository und unter `extension/expai/doc/`.
 
 ## Inhalt
@@ -48,7 +48,7 @@ OpenAI-kompatible Dienste oder Ollama).
 - Ein Hauptschalter (`[AISettings] Enabled`) und ein Veto-Hook.
 - Pro Anbieter: eine Region (`us`, `eu`, `local`) und eine Aufbewahrungsdauer; Regeln pro Sektion und Klasse.
 - Jede Anfrage in einem Verbrauchsprotokoll (nur Benutzer-IDs), geschätzte Kosten, Limits und Budgets.
-- Jede Anfrage, jeder Entwurf und jede Zustandsänderung eines Entwurfs im Kanal `ai` des Audit-Trails; Prompts,
+- Jede Anfrage, jeder Entwurf und jede Zustandsänderung eines Entwurfs im Kanal `ai` des Prüfprotokolls; Prompts,
   Antworten und Schlüssel werden nie aufgezeichnet. **EI: Übersicht** gibt einer oder einem Datenschutzbeauftragten
   eine druckbare Seite.
 
@@ -74,13 +74,13 @@ Details und ausgearbeitete Beispiele: [Exponential Intelligence erweitern](expon
 
 - [Exponential Intelligence erweitern](exponential-intelligence-erweitern.md)
 - [Warteschlangen mit expqueue](warteschlangen-mit-expqueue.md)
-- [Datenschutzstandard](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandard](../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
