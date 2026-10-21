@@ -225,6 +225,7 @@ class Vatrules extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'vatrule_count', $pageCount );
         $tpl->setVariable( 'limit', $pageLimit );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
+        $tpl->setVariable( 'handler_notice', self::handlerNotice( $pageCount ) );
 
         $path = array();
         $path[] = array( 'text' => \ezpI18n::tr( 'kernel/shop/vatrules', 'VAT rules' ),
@@ -235,6 +236,34 @@ class Vatrules extends \Exponential\Runnable\ModuleView
         $Result['content'] = $tpl->fetch( "design:shop/vatrules.tpl" );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Whether the page has to say that its rules are not used.
+     *
+     * VAT charging rules are read only by a VAT handler (shop.ini [VATSettings] Handler, for example
+     * ezdefault), and the shipped shop.ini names none: without one the rules are kept and never applied,
+     * and every product is charged the VAT type set on it. The handler stays off by default because
+     * switching it on changes checkout on an existing shop (eZShopOperationCollection::handleUserCountry()
+     * then cancels an order whose buyer has no known country), so the page says so instead.
+     *
+     * @param int $ruleCount how many VAT charging rules exist
+     * @return array|false false when there is nothing to say; otherwise 'state' ('none': no handler is set,
+     *                     'missing': the handler that is set cannot be loaded) and 'handler' (its name, or '')
+     */
+    public static function handlerNotice( $ruleCount )
+    {
+        if ( (int)$ruleCount < 1 )
+            return false;
+
+        $handler = \eZVATManager::loadVATHandler();
+        if ( is_object( $handler ) )
+            return false;
+
+        $shopINI = \eZINI::instance( 'shop.ini' );
+        $name = $shopINI->hasVariable( 'VATSettings', 'Handler' ) ? (string)$shopINI->variable( 'VATSettings', 'Handler' ) : '';
+
+        return array( 'state' => $handler === true ? 'none' : 'missing', 'handler' => $name );
     }
 }
 

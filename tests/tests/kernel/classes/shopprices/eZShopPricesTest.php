@@ -236,6 +236,58 @@ class eZShopPricesTest extends PHPUnit\Framework\TestCase
         $this->assertNull( eZVATManager::getVAT( false, 'DE' ) );
     }
 
+    /**
+     * The shipped shop.ini names no VAT handler, on purpose. Without one only the VAT type set on a product is
+     * charged; with one, checkout also needs to know the buyer's country (eZShopOperationCollection::handleUserCountry()
+     * cancels the order otherwise) and the default handler charges 0% where no rule matches - so switching it on in
+     * the shipped file would change what existing shops do. The VAT rules page says when rules exist and nothing
+     * applies them.
+     */
+    public function testShippedShopIniSetsNoVatHandler()
+    {
+        $section = '';
+        $active = array();
+        foreach ( file( 'settings/shop.ini' ) as $line )
+        {
+            $line = trim( $line );
+            if ( preg_match( '/^\[(.+)\]$/', $line, $match ) )
+                $section = $match[1];
+            elseif ( $section === 'VATSettings' && preg_match( '/^Handler\s*=/', $line ) )
+                $active[] = $line;
+        }
+        $this->assertSame( array(), $active );
+        $this->assertStringContainsString( '#Handler=ezdefault', (string)file_get_contents( 'settings/shop.ini' ),
+                                           'the line to copy into an override is still there, commented out' );
+    }
+
+    public function testFixedVatTypesDoNotNeedAHandler()
+    {
+        $fixed = new eZVatType( array( 'id' => 3, 'name' => 'k1 fixed', 'percentage' => 19.0 ) );
+        $this->setting( 'shop.ini', 'VATSettings', 'Handler', null );
+        $this->assertSame( 19.0, $fixed->getPercentage( false, 'DE' ) );
+        $this->setting( 'shop.ini', 'VATSettings', 'Handler', 'ezdefault' );
+        $this->setting( 'shop.ini', 'VATSettings', 'RepositoryDirectories', array( 'kernel/classes/vathandlers' ) );
+        $this->setting( 'shop.ini', 'VATSettings', 'ExtensionDirectories', array() );
+        $this->assertSame( 19.0, $fixed->getPercentage( false, 'DE' ), 'a handler only answers for the dynamic VAT type' );
+    }
+
+    public function testVatRulesPageSaysWhenNothingAppliesTheRules()
+    {
+        $this->setting( 'shop.ini', 'VATSettings', 'Handler', null );
+        $this->assertFalse( \Exponential\View\Kernel\Shop\Vatrules::handlerNotice( 0 ), 'no rules, nothing to say' );
+        $this->assertSame( array( 'state' => 'none', 'handler' => '' ),
+                           \Exponential\View\Kernel\Shop\Vatrules::handlerNotice( 3 ) );
+
+        $this->setting( 'shop.ini', 'VATSettings', 'Handler', 'ezdefault' );
+        $this->setting( 'shop.ini', 'VATSettings', 'RepositoryDirectories', array( 'kernel/classes/vathandlers' ) );
+        $this->setting( 'shop.ini', 'VATSettings', 'ExtensionDirectories', array() );
+        $this->assertFalse( \Exponential\View\Kernel\Shop\Vatrules::handlerNotice( 3 ), 'a handler applies them' );
+
+        $this->setting( 'shop.ini', 'VATSettings', 'Handler', 'k1nosuch' );
+        $this->assertSame( array( 'state' => 'missing', 'handler' => 'k1nosuch' ),
+                           \Exponential\View\Kernel\Shop\Vatrules::handlerNotice( 3 ) );
+    }
+
     public static function handlerNameProvider()
     {
         return array( 'documented lower case' => array( 'ezdefault' ), 'class case' => array( 'eZDefault' ) );

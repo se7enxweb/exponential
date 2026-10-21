@@ -38907,6 +38907,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/shop/vatrules</name>
     <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Diese MwSt.-Regeln werden nicht angewendet.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Es ist kein MwSt.-Handler eingestellt: Jedes Produkt wird mit dem bei ihm eingestellten MwSt.-Typ berechnet, und diese Regeln werden nie gelesen. Um sie anzuwenden, setzen Sie Handler=ezdefault im Abschnitt [VATSettings] der shop.ini (in settings/override/shop.ini.append.php) und geben den Produkten den MwSt.-Typ &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Der im Abschnitt [VATSettings] der shop.ini eingestellte MwSt.-Handler &quot;%handler&quot; kann nicht geladen werden, deshalb werden diese Regeln nie gelesen. Prüfen Sie den Namen des Handlers und die Verzeichnisse, in denen MwSt.-Handler gesucht werden (RepositoryDirectories und ExtensionDirectories).</translation>
+    </message>
+    <message>
         <source>VAT charging rules [%rules]</source>
         <translation type="obsolete">USt Abrechnungsregeln [%rules]</translation>
     </message>

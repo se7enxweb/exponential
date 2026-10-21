@@ -35816,6 +35816,18 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/shop/vatrules</name>
     <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>These VAT rules are not applied.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</translation>
+    </message>
+    <message>
         <source>Invert selection.</source>
         <translation>Invert selection.</translation>
     </message>

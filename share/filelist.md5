@@ -761,7 +761,7 @@ bf967764f67262f33ca9e722aff5a9e3  design/admin/templates/shop/removeproductcateg
 9df0bf0dc7cffd78eeea0d987e9aeeaf  design/admin/templates/shop/removevattypes.tpl
 6115bd8ea719e1cade23e0b6981826cb  design/admin/templates/shop/status.tpl
 d2069f305f43c1a767f3a407c9140bcd  design/admin/templates/shop/userregister.tpl
-1057d11b551b317251e444d06e1f98f6  design/admin/templates/shop/vatrules.tpl
+e74e2aae3e1f066db92e63d42b83d3cd  design/admin/templates/shop/vatrules.tpl
 c6766df803d4b2a402f7cd2da25f7f57  design/admin/templates/shop/vattype.tpl
 9229a326256b772dfa3cd48a4b46897e  design/admin/templates/shop/wishlist.tpl
 183c0e1b4ae03cf61f40f5c76f86fdc9  design/admin/templates/state/assign.tpl
@@ -1544,7 +1544,7 @@ b93e11154287ac254e5145bee3990c88  design/admin4/templates/shop/discountgroup.tpl
 fe3ff98d6f83a23ada6f4327ae1dfa79  design/admin4/templates/shop/removevattypes.tpl
 119bd7e9e795c16ecb7d2310c66933b0  design/admin4/templates/shop/status.tpl
 4a14cf04b3eda3a87136d3d18fec63d7  design/admin4/templates/shop/userregister.tpl
-63452bd9245b7c02f2f6fc0d444cc955  design/admin4/templates/shop/vatrules.tpl
+7be8117ea209e51c604f9eff07beb3da  design/admin4/templates/shop/vatrules.tpl
 00f60bf9a8dc0d4682b1a10e303da0ed  design/admin4/templates/shop/vattype.tpl
 fdc982f5c4719c7b600a77d0408f2456  design/admin4/templates/shop/wishlist.tpl
 183c0e1b4ae03cf61f40f5c76f86fdc9  design/admin4/templates/state/assign.tpl
@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-232586716724182493b1afdc5944651b  doc/changelogs/6.0/6.0.15.md
+fe37c5ca741deba1b7373279949da74e  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6372,7 +6372,7 @@ c9d69c18641eb389f494cab5998489b5  doc/eng-us/guides/sessions.md
 d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
-56c9eb440c65029867518d68dd59a5b7  doc/eng-us/guides/upgrading.md
+70aa7fc3b92e519f91f2dd1a19c12ddb  doc/eng-us/guides/upgrading.md
 5761832e2c70ad9f4f000f218d73de2c  doc/eng-us/guides/urls-and-aliases.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
 9d8d4c2b17acf8820ddf142eaed2d740  doc/eng-us/help/README.md
@@ -6956,7 +6956,7 @@ dae7c2d54c70d7b6b89a678b40dbb371  doc/eng-us/help/businesses/stores/store-launch
 002b91921480caa09b9a9dfd65a3c51e  doc/eng-us/help/businesses/stores/store-planning-for-small-businesses.md
 7f1a716385b2ceed7dd1eff70729a34a  doc/eng-us/help/businesses/stores/store-search-and-navigation.md
 891a3304641bf8785452c90def7ca91c  doc/eng-us/help/businesses/stores/store-security-checklist.md
-a29669036b50a1bc7bf8d22d0ca96cd6  doc/eng-us/help/businesses/stores/vat-rules-and-vat-types.md
+3f4606f8305bc1d86bbc1dbc99112321  doc/eng-us/help/businesses/stores/vat-rules-and-vat-types.md
 3eee763b1422c60a1a783bdc635f6890  doc/eng-us/help/businesses/stores/what-the-built-in-shop-does.md
 f51f79c1fe88f090b86e7af5227e1ccc  doc/eng-us/help/businesses/templates/README.md
 0e46f3b6997dd5daf20d41b4b0d4e132  doc/eng-us/help/businesses/templates/annual-review-checklist.md
@@ -7075,7 +7075,7 @@ f86b5f1e419215030bb3ff616d178e8d  doc/eng-us/help/creators/website-creators/news
 f4bfea98029753022ac8808298b1c610  doc/eng-us/help/creators/website-creators/payment-gateways.md
 98cc9d380fd64a7ba8e4e1ccf3de0436  doc/eng-us/help/creators/website-creators/performance-and-caching.md
 8d75f5669ab2d54cbf976541b73f51b3  doc/eng-us/help/creators/website-creators/planning-your-website.md
-6918276f0350657319ca081ef47bff98  doc/eng-us/help/creators/website-creators/products-prices-and-vat.md
+83a0a8362b113a18e2a867528e68a27d  doc/eng-us/help/creators/website-creators/products-prices-and-vat.md
 3f88e7c03304d9cc4fa97872d0c08525  doc/eng-us/help/creators/website-creators/redirects-and-moved-content.md
 00cfd088e157af40895ca01cd3575f4d  doc/eng-us/help/creators/website-creators/relations-and-reuse.md
 ed2bef2cb258c3d0a18e5ff46cd6c4be  doc/eng-us/help/creators/website-creators/right-to-left-sites.md
@@ -11290,7 +11290,7 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 cda223dc1e4d14ac9943e964893cf0ea  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
-298ca02639e71b960a7cd508f6e99c91  doc/ger-de/anleitungen/aktualisieren.md
+923680cc7a7fb9ad0e45bdf385bd0244  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 01b31623d9f1da5f7084fea2a237e3b0  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
 0e14fb80e8b544030c16681a1eb70987  doc/ger-de/anleitungen/benachrichtigungen-entwickler.md
@@ -14859,7 +14859,7 @@ eac45abcc06cdbbde569db82c6e12255  doc/ger-de/hilfe/ersteller/website-ersteller/m
 d54aa88a692f1a775323d6704decb424  doc/ger-de/hilfe/ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md
 5ea5158f031fcfb7346240ab8f8bbb53  doc/ger-de/hilfe/ersteller/website-ersteller/newsletter-versenden.md
 5b4c8f758e2c4df07efa897e3bedc6ea  doc/ger-de/hilfe/ersteller/website-ersteller/payment-gateways.md
-49aba69ac64cd36a7ec2c3619f27d692  doc/ger-de/hilfe/ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md
+330f8cca1d01df2e44b65b6bc82fece1  doc/ger-de/hilfe/ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md
 2e82c393fa19705c0d765ea75c4e1ecd  doc/ger-de/hilfe/ersteller/website-ersteller/rechte-fuer-besucher.md
 72027eb28ef23e19cbb5bb3d1f260e79  doc/ger-de/hilfe/ersteller/website-ersteller/relationen-und-wiederverwendung.md
 0fb5b7032a10a0547f8e096cfef78242  doc/ger-de/hilfe/ersteller/website-ersteller/robots-txt.md
@@ -16689,7 +16689,7 @@ aab509fdc974aea2d3cacb6e12eaf314  doc/ger-de/hilfe/unternehmen/shops/produktklas
 82392d07a8f979a9b1ece6908e7014fc  doc/ger-de/hilfe/unternehmen/shops/shop-uebersicht-und-berichte.md
 74af08e65c60f017a44307bda1c8c485  doc/ger-de/hilfe/unternehmen/shops/sicherheitscheckliste-fuer-shops.md
 7e6dec0912c8d32d9a3f95b59540d3b5  doc/ger-de/hilfe/unternehmen/shops/suche-und-navigation-im-shop.md
-f59da420dd0947008330fb598b13f38e  doc/ger-de/hilfe/unternehmen/shops/ust-regeln-und-ust-typen.md
+42fedb3a54cf288ec0dc5a3bc435abc7  doc/ger-de/hilfe/unternehmen/shops/ust-regeln-und-ust-typen.md
 9ad529824bfb7d657b4a45b192a81b5c  doc/ger-de/hilfe/unternehmen/shops/versand-und-bearbeitung.md
 a4125a4a89ce63dac34616400b1f5581  doc/ger-de/hilfe/unternehmen/shops/warenkorb-und-bestellablauf.md
 726938e1a83c45041b891714d7db1ba6  doc/ger-de/hilfe/unternehmen/shops/was-der-eingebaute-shop-kann.md
@@ -20209,7 +20209,7 @@ bdb794f540f1afed93d2d9db1f0756e2  kernel/private/classes/views/shop/setstatus.ph
 e8a9a25c7ff880a17380848be4ae3d6a  kernel/private/classes/views/shop/unarchiveorder.php
 70c4657b1e9fc28fdb85bf34f6dd9776  kernel/private/classes/views/shop/updatebasket.php
 1d8ffbf33995152c30ca4008c00a5263  kernel/private/classes/views/shop/userregister.php
-bfc096abc8491aa67bc1a00d2b519d11  kernel/private/classes/views/shop/vatrules.php
+65599bf292026cb23d201cdfdda5e9a1  kernel/private/classes/views/shop/vatrules.php
 723d76e0f6cbb498bea8ba370ee73ceb  kernel/private/classes/views/shop/vattype.php
 50c7c511282021f32c497143143f9dda  kernel/private/classes/views/shop/wishlist.php
 8dc3d9227a45faf1af4aa6c3ee255978  kernel/private/classes/views/state/assign.php
@@ -21764,7 +21764,7 @@ f55673690de26ae3db4014bf76bc0ac1  share/translations/dan-DK/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-13a4df195bff2b85edbdc0d3a971e87e  share/translations/eng-US/translation.ts
+24af9ca756cc23af315681f5f8283e05  share/translations/eng-US/translation.ts
 12374452476a056e657992da94160ab1  share/translations/esl-ES/translation.ts
 9b7fe955115a921893b88b7a2a60fa70  share/translations/esl-MX/translation.ts
 9c58f44063336d8350b1ef13c9f9db9d  share/translations/fas-IR/translation.ts
@@ -21772,7 +21772,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 70f45aae19d561b2f1e526c790e81609  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-d0f0e312cedef785bf3298726ef21ca9  share/translations/ger-DE/translation.ts
+49f9e1aae1c226477cb7344ff05f18db  share/translations/ger-DE/translation.ts
 b2385cccb9eacc0406171e00d9c5456a  share/translations/heb-IL/translation.ts
 e82fd892b2d0b5f8e649b1bbbf5bb295  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -21792,7 +21792,7 @@ af7fa91809ef892f07a667386733f7ae  share/translations/tlh-QO/translation.ts
 a2745f8fbd559e66936f0af9b9b054f2  share/translations/tur-TR/translation.ts
 acbc384265847c35c7ffa3bdf14598c5  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-7787e5f2ced7972f7e33a07cf12a1715  share/translations/untranslated/translation.ts
+ae03d01f9b9d23ce20fef1143964d440  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -22654,7 +22654,7 @@ ff0f446447b511ded16794509df958e8  tests/tests/kernel/classes/setupsteps/eZSetupS
 6c40a46fb606c4d27b987d2f6826eb21  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
 94f7de1b3237cc5c060982a0527dbf18  tests/tests/kernel/classes/shop/eZCurrencyConverterRoundingTest.php
 009298166c4d9895d0b6c4969ee530e6  tests/tests/kernel/classes/shopprices/eZPaymentCallbackCheckerTest.php
-50a3ed6254274b1d0b775f920f3e0e50  tests/tests/kernel/classes/shopprices/eZShopPricesTest.php
+74e70aebcfe0d18ff0c2edfde58983b2  tests/tests/kernel/classes/shopprices/eZShopPricesTest.php
 f87c35d4e8f471dd00bb04d7a585ce64  tests/tests/kernel/classes/shopprices/eZShopReceiptTokenTest.php
 de5f3e5dd1a2b8761abb5d26522d6928  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 5f7b136345d65abce93f026c8d8815d3  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
