@@ -14,10 +14,10 @@ A view of the `pdf` module, defined in `kernel/pdf/module.php` and run by `kerne
 ## Address
 
 ```text
-/pdf/list/(language)/<Language>
+/pdf/list/(language)/<Language>/(sort)/<Sort>/(dir)/<Dir>/(filter)/<Filter>/(limit)/<Limit>/(offset)/<Offset>/(search)/<Search>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(language)` sets `Language`.
+Unordered parameters, in any order as `/(name)/value`: `(language)` sets `Language`, `(sort)` sets `Sort`, `(dir)` sets `Dir`, `(filter)` sets `Filter`, `(limit)` sets `Limit`, `(offset)` sets `Offset`, `(search)` sets `Search`.
 
 ## Who may open it
 

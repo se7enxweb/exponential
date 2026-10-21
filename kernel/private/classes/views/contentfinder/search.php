@@ -5,8 +5,9 @@
  * read), and one result block per object found, with what the user may
  * see of it. Needs the policy contentfinder/search; answers on administration siteaccesses only. Every search is
  * recorded in the audit (content.finder.search). The search form is posted (SearchText, SearchType) and answered with a
- * 303 to that address. A text that is not plain (a path or a URL: "/", "(", "%" ...) travels as "~" and its base64url,
- * so that it survives the address unchanged (textParameter()).
+ * 303 to that address. The text is written as every view parameter is (expViewParameters::encode(): "~2F" for "/"),
+ * so that a path or a URL survives the address unchanged; the "~" and base64url form of before is still read
+ * (textFromParameter()).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -32,7 +33,7 @@ class Search extends \Exponential\Runnable\ModuleView
         if ( \expViewParameters::redirectsPost( $_POST, array( 'SearchText', 'SearchType' ) ) )
             \expViewParameters::redirect( self::searchURI( \expViewParameters::posted( $_POST, 'SearchText' ),
                                                            \expViewParameters::posted( $_POST, 'SearchType' ) ) );
-        $text = self::textFromParameter( \expViewParameters::get( $Params, 'text', 'Text' ) );
+        $text = self::textFromParameter( \expViewParameters::raw( $Params, 'text', 'Text' ) );
         $type = \expContentFinderInput::type( \expViewParameters::get( $Params, 'type', 'Type' ) ?: 'auto' );
 
         $feedback = null;
@@ -88,22 +89,22 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * A search text as the view parameter (text): plain when it is made of letters, digits and . _ : @ , + = - and
-     * spaces, else "~" and its base64url (a path, a URL), which the address cannot carry as it is.
+     * A search text as the view parameter (text): expViewParameters::encode() ("~2F" for "/", "~28" for "(" ...).
      *
      * @param string $text
      * @return string
      */
     public static function textParameter( $text )
     {
-        $text = (string)$text;
-        if ( preg_match( '/^[A-Za-z0-9._:@,+=\- ]+$/', $text ) )
-            return rawurlencode( $text );
-        return '~' . rtrim( strtr( base64_encode( $text ), '+/', '-_' ), '=' );
+        return \expViewParameters::encode( (string)$text );
     }
 
     /**
-     * The search text of the view parameter (text) (see textParameter()).
+     * The search text of the view parameter (text) as the kernel hands it (expViewParameters::raw()): the encoding
+     * of every view parameter (expViewParameters::decode()), or the form of before, "~" and the base64url of the
+     * text, so that the links written then keep working. A value is read as the old form only when it is not one
+     * the encoding writes (expViewParameters::escape() of its decoding gives it back) and its base64url is valid
+     * UTF-8.
      *
      * @param string|false $value
      * @return string
@@ -112,10 +113,25 @@ class Search extends \Exponential\Runnable\ModuleView
     {
         if ( !is_string( $value ) || $value === '' )
             return '';
-        if ( $value[0] !== '~' )
-            return $value;
-        $decoded = base64_decode( strtr( substr( $value, 1 ), '-_', '+/' ), true );
-        return is_string( $decoded ) ? $decoded : '';
+        $decoded = \expViewParameters::decode( $value );
+        if ( $value[0] !== '~' || \expViewParameters::escape( $decoded ) === $value )
+            return $decoded;
+        $legacy = self::legacyTextFromParameter( $value );
+        return $legacy !== null ? $legacy : $decoded;
+    }
+
+    /**
+     * The text of the form of before, "~" and a base64url, null when $value is not one.
+     *
+     * @param string $value
+     * @return string|null
+     */
+    public static function legacyTextFromParameter( $value )
+    {
+        if ( !preg_match( '/^~([A-Za-z0-9_-]+)$/', (string)$value, $m ) )
+            return null;
+        $text = base64_decode( strtr( $m[1], '-_', '+/' ), true );
+        return is_string( $text ) && $text !== '' && preg_match( '//u', $text ) ? $text : null;
     }
 
     /**

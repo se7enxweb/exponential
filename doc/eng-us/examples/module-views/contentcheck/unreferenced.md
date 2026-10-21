@@ -14,12 +14,12 @@ A view of the `contentcheck` module, defined in `kernel/contentcheck/module.php`
 ## Address
 
 ```text
-/contentcheck/unreferenced/<NodeID>/(offset)/<Offset>
+/contentcheck/unreferenced/<NodeID>/(offset)/<Offset>/(class)/<Class>/(sort)/<Sort>/(order)/<Order>/(containers)/<Containers>/(selectall)/<SelectAll>
 ```
 
 Ordered parameters, in this order after the view name: `NodeID`.
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(class)` sets `Class`, `(sort)` sets `Sort`, `(order)` sets `Order`, `(containers)` sets `Containers`, `(selectall)` sets `SelectAll`.
 
 ## Who may open it
 

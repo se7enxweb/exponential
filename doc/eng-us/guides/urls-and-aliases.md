@@ -43,6 +43,7 @@ rule below was checked against the code of this repository on 6 October 2026; th
 - [6. Addresses and parameters of the pages](#6-addresses-and-parameters-of-the-pages)
 - [7. When something does not behave as expected](#7-when-something-does-not-behave-as-expected)
 - [8. Decoding and cleaning addresses: two optional settings](#8-decoding-and-cleaning-addresses-two-optional-settings)
+- [9. View parameters: how a value travels in an address](#9-view-parameters-how-a-value-travels-in-an-address)
 - [For developers](#for-developers)
 - [References](#references)
 
@@ -321,6 +322,53 @@ already strip `!`, dots and separators at the end, so for them the setting chang
   redirect to the new one, as with any renamed object.
 - On a copy of the demonstration installation's database switched to `urlalias_iri`, republishing every node
   with the setting on changed 6 of 2942 aliases, all of them names with double quotes.
+
+## 9. View parameters: how a value travels in an address
+
+The options of the administration views are view parameters, `/(name)/value` (a search, a filter, a sort order).
+Some characters cannot travel in such a value as they are: Apache refuses an encoded slash (`%2F`), the kernel
+decodes the whole address (twice unless `DecodeOnce` is enabled) before it splits it at every `/`, and a segment
+`(name)` starts the next view parameter. Every view writes its values in one reversible encoding, so a search for
+`example.com/a` keeps its slash:
+
+| Character | Written as |
+|---|---|
+| `/` | `~2F` |
+| `(` and `)` | `~28` and `~29` |
+| `~` (the escape itself) | `~7E` |
+| `%` and `+` | `~25` and `~2B` (the second decoding would change them) |
+| `\`, `?`, `#` | `~5C`, `~3F`, `~23` |
+| control characters (a tab, a line break) | `~09`, `~0A` ... |
+| a value that is only `.` or `..` | `~2E`, `~2E~2E` (a browser would resolve it) |
+
+Everything else stays readable: letters, digits, `, : @ = ! *` are written as they are, and spaces and other
+text are percent-encoded as usual, which a browser shows as text. Examples:
+
+```
+/url/list/all/(q)/example.com~2Fa
+/content/urltranslator/(q)/news~2F2026
+/contentfinder/search/(text)/var~2Fsite~2Fstorage~2Fimages~2Fa~2Fb%20~281~29.jpg
+/settings/view/admin/site.ini/(q)/RootNode/(scope)/all
+/setup/logs/view/error/(level)/error,warning/(search)/not%20found/(from)/2026-10-17%2010:00
+/visual/templatelist/(filter)/content~2Fview
+/package/list/7x/(search)/demo%20content
+```
+
+Links written before keep working: the content finder and the settings page still read their `~` + base64url
+form, and the log viewer's and the template list's `~XX` form (a space was `~20`) is the same encoding. The package
+list, comparison and browser still read their search encoded twice (`demo%2520content`).
+
+- In a template, write a value with the operator `view_parameter`:
+  `{concat( 'settings/view/', $siteaccess, '/', $file, '/(q)/', $name|view_parameter )|ezurl}`. Never
+  `|urlencode`: it leaves `/` to Apache and `+` to the second decoding.
+- In a script of the administration designs, `window.a4ViewParameter.encode( value )` (`a4_url.js`, loaded in the
+  page head of admin, admin3 and admin4) writes the same; `window.a4ViewParameter.decode()` is its inverse.
+- In PHP, `expViewParameters::suffix( array( 'q' => $text ) )` writes `/(q)/<value>`,
+  `expViewParameters::encode( $value )` one value, and `expViewParameters::get()` and `text()` read a value back
+  decoded (`raw()` gives it as the kernel handed it over). Tested in
+  `tests/tests/kernel/classes/expViewParametersTest.php` (round trips through the kernel's decoding, once and
+  twice) and `tests/tests/design/AdminViewParametersOnlyTest.php` (VP-05, VP-06: the views, templates and scripts
+  use it, and the script writes exactly what PHP writes).
 
 ## For developers
 
