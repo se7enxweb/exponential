@@ -64,7 +64,7 @@
         {/foreach}
     </nav>
 
-    <form class="pvf-filter pcmp-filter" method="get" action={$Compare.url_filter|ezurl}>
+    <form class="pvf-filter pcmp-filter" method="post" action={$Compare.url_filter|ezurl}>
         <div class="pvf-field">
             <label for="compare-filter">{'Status'|i18n('design/admin/package')}</label>
             <select id="compare-filter" name="CompareFilter">

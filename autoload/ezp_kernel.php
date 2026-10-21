@@ -1384,6 +1384,7 @@ return array(
       'expVelocityRestartUnit'                                       => 'kernel/classes/expvelocityrestartunit.php',
       'expVelocityWatchdog'                                          => 'kernel/classes/expvelocitywatchdog.php',
       'expViewAccess'                                                => 'kernel/classes/expviewaccess.php',
+      'expViewParameters'                                            => 'kernel/classes/expviewparameters.php',
       'expWeakPasswordList'                                          => 'kernel/classes/expweakpasswordlist.php',
       'expWorkflowEventWizard'                                       => 'kernel/setup/expworkfloweventwizard.php',
       'ezpAccessDenied'                                              => 'kernel/private/classes/exceptions/kernel/accessdenied.php',

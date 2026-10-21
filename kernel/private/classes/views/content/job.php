@@ -1,8 +1,8 @@
 <?php
 /**
  * The content/job/<id> view: the progress page of a content job (a large subtree remove or copy that runs in
- * the background, see kernel/classes/contentjob/), its JSON status (?json=1, polled by the page every two
- * seconds) and its actions: Cancel, Resume, Remove the partial copy.
+ * the background, see kernel/classes/contentjob/), its JSON status (/(json)/1, polled by the page every two
+ * seconds; the options are view parameters, a ?json= is not read) and its actions: Cancel, Resume, Remove the partial copy.
  *
  * Who may see a job: the user who started it; a user with the content/jobs policy; a user with unlimited
  * content/remove (a remove job) or content/create (a copy job).
@@ -27,7 +27,7 @@ class Job extends \Exponential\Runnable\ModuleView
         $Module = $Params['Module'];
         $http = \eZHTTPTool::instance();
         $user = \eZUser::currentUser();
-        $json = $http->hasGetVariable( 'json' );
+        $json = \expViewParameters::get( $Params, 'json', 'Json' ) === '1';
 
         $id = isset( $Params['JobID'] ) ? (string) $Params['JobID'] : '';
         $job = preg_match( '/^[0-9a-z-]{1,64}$/', $id ) ? \expContentJob::fetch( $id ) : null;
@@ -57,7 +57,7 @@ class Job extends \Exponential\Runnable\ModuleView
                 return $Module->redirectTo( $redirect );
         }
 
-        if ( $http->hasGetVariable( 'log' ) )
+        if ( \expViewParameters::get( $Params, 'log', 'Log' ) === '1' )
             return self::sendLog( $job );
 
         $info = self::info( $job );
@@ -694,7 +694,7 @@ class Job extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Sends the job's whole log as a download (content/job/<id>?log=1) and ends the request.
+     * Sends the job's whole log as a download (content/job/<id>/(log)/1) and ends the request.
      *
      * @param \expContentJob $job
      */

@@ -218,12 +218,13 @@ class expContentCheckQueryTest extends PHPUnit\Framework\TestCase
     public function testQueryStringsOfThePages()
     {
         $p = expContentCheckUnreferenced::parameters( array( 'ClassID' => array( 5, '12' ), 'Sort' => 'modified', 'Containers' => '1' ), 2 );
-        $this->assertSame( '?ClassID%5B%5D=5&ClassID%5B%5D=12&Sort=modified&Order=desc&Containers=1', Unreferenced::querySuffix( $p ) );
+        $this->assertSame( '/(class)/5,12/(sort)/modified/(order)/desc/(containers)/1', Unreferenced::querySuffix( $p ) );
         $p = expContentCheckBrokenRelations::parameters( array( 'Exclude' => '43,5', 'Kind' => array( 'deleted', '"><script>' ), 'Relation' => array( 'xml', 'object' ) ) );
-        $this->assertSame( '?Exclude=43%2C5&Kind%5B%5D=deleted', Brokenrelations::querySuffix( $p ) );
-        $this->assertSame( '', Brokenrelations::querySuffix( expContentCheckBrokenRelations::parameters( array() ) ), 'no filter: no bare "?"' );
+        $this->assertSame( '/(exclude)/43,5/(kind)/deleted', Brokenrelations::querySuffix( $p ) );
+        $this->assertSame( '', Brokenrelations::querySuffix( expContentCheckBrokenRelations::parameters( array() ) ), 'no filter: no options' );
+        $this->assertSame( '/(kind)/none/(relation)/none', Brokenrelations::querySuffix( expContentCheckBrokenRelations::parameters( array() ), array( 'Kind', 'Relation' ) ) );
         foreach ( array( 'design/admin', 'design/admin4' ) as $design )
-            $this->assertStringContainsString( "\$separator = cond( \$filter_suffix|eq( '' ), '?', '&' )}",
+            $this->assertStringContainsString( "concat( \$page_uri, \$filter_suffix, '/(after)/', \$result.last )",
                                                (string)file_get_contents( dirname( __DIR__, 4 ) . "/$design/templates/contentcheck/brokenrelations.tpl" ), $design );
     }
 

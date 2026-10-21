@@ -9,7 +9,7 @@
    </td>
    <td align="right">
     <div class="content-search" >
-           <form action={"/visual/templatelist"|ezurl} method="get">
+           <form action={"/visual/templatelist"|ezurl} method="post">
                <input class="halfbox" type="text" size="15" name="filterString" id="Filter" aria-label="{'Filter'|i18n( 'design/standard/layout' )|wash}" value="{$filterString|wash}" />
                <input class="button" name="FilterButton" type="submit" value="{'Filter'|i18n('design/standard/layout')}" />&nbsp; &nbsp;
            </form>
@@ -45,7 +45,7 @@
 {include name=navigator
          uri='design:navigator/google.tpl'
          page_uri='/visual/templatelist'
-         page_uri_suffix=concat('?filterString=',$filterString|urlencode )    
+         page_uri_suffix=$filter_suffix
          item_count=$template_count
          view_parameters=$view_parameters
          item_limit=20}

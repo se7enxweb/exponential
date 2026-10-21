@@ -240,7 +240,7 @@ entfernt abgelaufene ausstehende Zeilen und schaltet deren Kategorien ab, und en
 | `confirm/<token>` | Link | Abschnitt „Abläufe“ |
 | `request` | keine | „Link zusenden“ |
 | `export/<json|csv>[/(token)/<token>]` | angemeldet oder Link | der Datendownload |
-| `admin/<status|categories|suppression|consent|user>[/<id>]` | `mailpreferences/administrate` | die Seiten des Administrators; Einwilligungsfilter `?person=&category=&source=&from=&to=`, `&export=csv` (Richtlinie `mailpreferences/export`); `/(offset)/<n>` |
+| `admin/<status|categories|suppression|consent|user>[/<id>]` | `mailpreferences/administrate` | die Seiten des Administrators; Einwilligungsfilter `/(person)/…/(category)/…/(source)/…/(from)/…/(to)/…` (das Filterformular wird gesendet und mit 303 an diese Adresse beantwortet), `/(export)/csv` (Richtlinie `mailpreferences/export`; die Seite eines Benutzers auch `/(export)/json`), die Benutzersuche `/(q)/…`; `/(offset)/<n>`; nie Parameter im Query-String |
 
 Seiten, die über einen persönlichen Link erreicht werden, werden mit `Cache-Control: private, no-store, max-age=0`, `Referrer-Policy: no-referrer`
 und `X-Robots-Tag: noindex, nofollow` ausgeliefert. Jede Seite funktioniert ohne JavaScript.

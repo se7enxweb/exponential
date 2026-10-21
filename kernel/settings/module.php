@@ -14,7 +14,10 @@ $ViewList = array();
 $ViewList["view"] = array(
     "script" => "view.php",
     "default_navigation_part" => "ezsetupnavigationpart",
-    "params" => array( 'SiteAccess' , 'INIFile' ) );
+    "params" => array( 'SiteAccess' , 'INIFile' ),
+    // The search options are view parameters only ((q), (scope)/all, (changed)/1, (compare)/<siteaccess>); the search
+    // form is posted and answered with a 303 to that address
+    "unordered_params" => array( 'q' => 'Query', 'scope' => 'Scope', 'changed' => 'Changed', 'compare' => 'Compare' ) );
 $ViewList["edit"] = array(
     "script" => "edit.php",
     'ui_context' => 'edit',

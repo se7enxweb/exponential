@@ -766,7 +766,8 @@ class expContentCheckFiles
     /**
      * The missing files section of the broken relations page: the page of findings and what the template needs.
      *
-     * @param array $get the request's GET fields: Problem[], Version[], ProblemChoice, VersionChoice, SelectAll
+     * @param array $get the request's options as form fields (from the view parameters (problem), (version),
+     *                   (selectall)): Problem[], Version[], ProblemChoice, VersionChoice, SelectAll
      * @param int $nodeID the page's start node
      * @param int $limit the page size
      * @param int $offset the first finding of the page
@@ -775,25 +776,7 @@ class expContentCheckFiles
      */
     public static function section( array $get, $nodeID, $limit, $offset = 0 )
     {
-        $input = array( 'NodeID' => (int)$nodeID, 'Limit' => (int)$limit );
-        foreach ( array( 'Problem' => 'Problem', 'Version' => 'Version' ) as $field => $name )
-        {
-            if ( isset( $get[$field] ) )
-                $input[$name] = $get[$field];
-        }
-        // "Select all" and "Select none" of the filter groups: submit buttons, so they work without JavaScript
-        foreach ( array( 'Problem' => self::PROBLEMS, 'Version' => self::VERSIONS ) as $name => $all )
-        {
-            $choice = isset( $get[$name . 'Choice'] ) && is_string( $get[$name . 'Choice'] ) ? $get[$name . 'Choice'] : '';
-            if ( $choice === 'all' )
-                $input[$name] = $all;
-        }
-        $params = self::parameters( $input, (int)$nodeID );
-        foreach ( array( 'Problem' => 'problems', 'Version' => 'versions' ) as $name => $key )
-        {
-            if ( isset( $get[$name . 'Choice'] ) && $get[$name . 'Choice'] === 'none' )
-                $params[$key] = array();
-        }
+        $params = self::filterParameters( $get, $nodeID, $limit );
         $canFix = class_exists( 'expContentCheckFileFix' ) && expContentCheck::hasPolicy( 'contentcheck', 'fixfiles' );
         $feedback = null;
         $http = eZHTTPTool::instance();
@@ -828,36 +811,62 @@ class expContentCheckFiles
     }
 
     /**
-     * The query string of the broken relations page with the missing files asked for: every target ticked (so that
-     * missing_file alone does not read as "only missing files"), and the missing files' own filters.
+     * The filters of the missing files section from the request's fields, with the buttons "Select all" and
+     * "Select none" of each group applied (none: an empty list).
      *
-     * @param string $suffix the page's query string without them ('?...')
+     * @param array $get Problem[], Version[], ProblemChoice, VersionChoice
+     * @param int $nodeID
+     * @param int $limit
+     * @return array as parameters()
+     */
+    public static function filterParameters( array $get, $nodeID, $limit )
+    {
+        $input = array( 'NodeID' => (int)$nodeID, 'Limit' => (int)$limit );
+        foreach ( array( 'Problem' => 'Problem', 'Version' => 'Version' ) as $field => $name )
+        {
+            if ( isset( $get[$field] ) )
+                $input[$name] = $get[$field];
+        }
+        // "Select all" and "Select none" of the filter groups: submit buttons, so they work without JavaScript
+        foreach ( array( 'Problem' => self::PROBLEMS, 'Version' => self::VERSIONS ) as $name => $all )
+        {
+            $choice = isset( $get[$name . 'Choice'] ) && is_string( $get[$name . 'Choice'] ) ? $get[$name . 'Choice'] : '';
+            if ( $choice === 'all' )
+                $input[$name] = $all;
+        }
+        $params = self::parameters( $input, (int)$nodeID );
+        foreach ( array( 'Problem' => 'problems', 'Version' => 'versions' ) as $name => $key )
+        {
+            if ( isset( $get[$name . 'Choice'] ) && $get[$name . 'Choice'] === 'none' )
+                $params[$key] = array();
+        }
+        return $params;
+    }
+
+    /**
+     * The view parameters of the broken relations page with the missing files asked for: every target ticked (so
+     * that missing_file alone does not read as "only missing files"), and the missing files' own filters
+     * ((problem), (version): comma lists, "none" for none ticked).
+     *
+     * @param string $suffix the page's view parameters without them ('/(exclude)/...', or '')
      * @param string[] $kinds the targets of the broken relations ticked (none: only the missing files)
      * @param array $params from parameters()
-     * @return string starting with ?
+     * @return string "/(kind)/...,missing_file..."
      */
     public static function querySuffix( $suffix, array $kinds, array $params )
     {
-        $parts = array();
-        foreach ( explode( '&', ltrim( (string)$suffix, '?' ) ) as $part )
-        {
-            if ( $part !== '' && strpos( $part, 'Kind%5B%5D=' ) !== 0 )
-                $parts[] = $part;
-        }
-        foreach ( $kinds as $kind )
-            $parts[] = 'Kind%5B%5D=' . rawurlencode( $kind );
-        $parts[] = 'Kind%5B%5D=' . self::TARGET;
-        if ( $params['problems'] !== self::DEFAULT_PROBLEMS )
-        {
-            foreach ( $params['problems'] as $problem )
-                $parts[] = 'Problem%5B%5D=' . rawurlencode( $problem );
-        }
-        if ( count( $params['versions'] ) < count( self::VERSIONS ) )
-        {
-            foreach ( $params['versions'] as $version )
-                $parts[] = 'Version%5B%5D=' . rawurlencode( $version );
-        }
-        return '?' . implode( '&', $parts );
+        // the targets of the page are replaced by those given here
+        $suffix = preg_replace( '#/\(kind\)/[^/]*#', '', (string)$suffix );
+        $options = array( 'kind' => array_merge( array_values( $kinds ), array( self::TARGET ) ) );
+        if ( !$params['problems'] )
+            $options['problem'] = 'none';
+        else if ( $params['problems'] !== self::DEFAULT_PROBLEMS )
+            $options['problem'] = $params['problems'];
+        if ( !$params['versions'] )
+            $options['version'] = 'none';
+        else if ( count( $params['versions'] ) < count( self::VERSIONS ) )
+            $options['version'] = $params['versions'];
+        return $suffix . expContentCheck::viewSuffix( $options );
     }
 
     /**

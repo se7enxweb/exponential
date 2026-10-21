@@ -205,7 +205,7 @@ $ViewList['urltranslator'] = array(
                                     'RemoveURLAliasButton' => 'RemoveURLAlias',
                                     'StoreURLAliasButton' => 'StoreURLAlias' ),*/
     'params' => array( ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'q' => 'Query' ) );
 
 $ViewList['urlwildcards'] = array(
     'functions' => array( 'urltranslator' ),
@@ -222,7 +222,7 @@ $ViewList['urlwildcards'] = array(
                                                                'WildcardDestinationText' => 'WildcardDestinationText',
                                                                'Offset' => 'Offset' ) ),
     'params' => array( ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'q' => 'Query' ) );
 
 $ViewList['advancedsearch'] = array(
     'functions' => array( 'read' ),
@@ -368,7 +368,7 @@ $ViewList['draft'] = array(
     'script' => 'draft.php',
     'default_navigation_part' => 'ezmynavigationpart',
     'params' => array( ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'q' => 'Query' ) );
 
 $ViewList['history'] = array(
     // The view decides for the object (History::canOpen()): who may edit it, or read it with an edit policy elsewhere
@@ -437,7 +437,7 @@ $ViewList['bookmark'] = array(
                                     'RemoveButton' => 'Remove' ),
     'post_actions' => array( 'BrowseActionName' ),
     'post_action_parameters' => array( 'Remove' => array( 'DeleteIDArray' => 'DeleteIDArray' ) ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'q' => 'Query' ) );
 
 $ViewList['pendinglist'] = array(
     'functions' => array( 'pendinglist' ),
@@ -509,12 +509,13 @@ $ViewList['treemenu'] = array(
     'default_navigation_part' => 'ezmynavigationpart',
     'params' => array( 'NodeID', 'Modified', 'Expiry', 'Perm' ) );
 
-// CSV of the admin subitems list: content/subitemsexport/<NodeID>?columns=a,b&sort=<key>&order=0|1
+// CSV of the admin subitems list: content/subitemsexport/<NodeID>/(columns)/a,b/(sort)/<key>/(order)/0|1
 $ViewList['subitemsexport'] = array(
     'functions' => array( 'read' ),
     'script' => 'subitemsexport.php',
     'default_navigation_part' => 'ezcontentnavigationpart',
-    'params' => array( 'NodeID' ) );
+    'params' => array( 'NodeID' ),
+    'unordered_params' => array( 'columns' => 'Columns', 'sort' => 'Sort', 'order' => 'Order' ) );
 
 $ViewList['dashboard'] = array(
     'functions' => array( 'dashboard' ),
@@ -530,14 +531,15 @@ $ViewList['queued'] = array(
     'params' => array( 'ContentObjectID', 'version' ) );
 
 // Content jobs: large subtree removes and copies in the background (doc/eng-us/bc/6.0/content-jobs.md).
-// content/job/<id> is the progress page (?json=1 its status), content/jobs the list. Both check
+// content/job/<id> is the progress page ((json)/1 its status, (log)/1 the whole log), content/jobs the list. Both check
 // themselves: the job's owner, content/jobs (everybody's jobs), or unlimited content/remove|create.
 $ViewList['job'] = array(
     'functions' => array( 'read' ),
     'default_navigation_part' => 'ezcontentnavigationpart',
     'ui_context' => 'administration',
     'script' => 'job.php',
-    'params' => array( 'JobID' ) );
+    'params' => array( 'JobID' ),
+    'unordered_params' => array( 'json' => 'Json', 'log' => 'Log' ) );
 
 $ViewList['jobs'] = array(
     'functions' => array( 'read' ),
@@ -545,7 +547,8 @@ $ViewList['jobs'] = array(
     'ui_context' => 'administration',
     'script' => 'jobs.php',
     'params' => array( ),
-    'unordered_params' => array( 'all' => 'All' ) );
+    'unordered_params' => array( 'all' => 'All', 'state' => 'State', 'type' => 'Type', 'user' => 'User',
+                                 'sort' => 'Sort', 'order' => 'Order', 'offset' => 'Offset' ) );
 
 $ClassID = array(
     'name'=> 'Class',

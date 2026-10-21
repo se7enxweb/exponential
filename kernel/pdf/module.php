@@ -52,7 +52,8 @@ $ViewList['list'] = array(
     'single_post_actions' => array( 'NewPDFExport' => 'NewExport',
                                     'RemoveExportButton' => 'RemoveExport' ),
     'post_action_parameters' => array( 'RemoveExport' => array( 'DeleteIDArray' => 'DeleteIDArray' ) ),
-    'unordered_params' => array( 'language' => 'Language' ) );
+    'unordered_params' => array( 'language' => 'Language', 'sort' => 'Sort', 'dir' => 'Dir', 'filter' => 'Filter',
+                                 'limit' => 'Limit', 'offset' => 'Offset', 'search' => 'Search' ) );
 
 
 $FunctionList = array();

@@ -55,7 +55,7 @@
 
 <section aria-labelledby="oauth-key-filter-title">
 <h2 class="exp-sr" id="oauth-key-filter-title">{'Find keys'|i18n( 'design/admin/oauthadmin' )}</h2>
-<form class="exp-toolbar" method="get" action={$oa_base|ezurl} role="search">
+<form class="exp-toolbar" method="post" action={$oa_base|ezurl} role="search">
     <div class="exp-field">
         <label for="oauth-key-search">{'Name, prefix, login or e-mail'|i18n( 'design/admin/oauthadmin' )}</label>
         <input type="search" id="oauth-key-search" name="q" value="{$search|wash}" maxlength="100" autocomplete="off" spellcheck="false" />
