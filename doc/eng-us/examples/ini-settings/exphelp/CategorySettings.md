@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > The sections of the help, in dashboard order. A page's category: its front matter (category: editing), else the  
 > first PathRules\[\] that matches, else TypeDefaults\[<type>\]  
 
-Default: a list of 45: `getting-started`, `manual`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `build-two-ways`, `shortcuts`, `support` ....
+Default: a list of 66: `getting-started`, `manual`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `build-two-ways`, `shortcuts`, `support` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -50,13 +50,13 @@ Categories[]=theme-design
 Categories[]=templates
 Categories[]=extension-development
 Categories[]=theme-extensions
-# ... 25 more in the shipped file
+# ... 46 more in the shipped file
 */ ?>
 ```
 
 ## CategoryNames
 
-Default: a hash of 45: `getting-started=Getting started`, `manual=User manual`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `build-two-ways=Two ways to build`, `shortcuts=Keyboard shortcuts`, `support=Help and support` ....
+Default: a hash of 66: `getting-started=Getting started`, `manual=User manual`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `build-two-ways=Two ways to build`, `shortcuts=Keyboard shortcuts`, `support=Help and support` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -84,7 +84,7 @@ CategoryNames[theme-design]=Theme design
 CategoryNames[templates]=Templates
 CategoryNames[extension-development]=Extension development
 CategoryNames[theme-extensions]=Theme extensions
-# ... 25 more in the shipped file
+# ... 46 more in the shipped file
 */ ?>
 ```
 
@@ -92,7 +92,7 @@ CategoryNames[theme-extensions]=Theme extensions
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 45: `getting-started=signpost-split`, `manual=question-circle`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `build-two-ways=signpost-split`, `shortcuts=input-cursor-text`, `support=info-circle` ....
+Default: a hash of 66: `getting-started=signpost-split`, `manual=question-circle`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `build-two-ways=signpost-split`, `shortcuts=input-cursor-text`, `support=info-circle` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -120,7 +120,7 @@ CategoryIcons[theme-design]=palette
 CategoryIcons[templates]=file-earmark-code
 CategoryIcons[extension-development]=puzzle
 CategoryIcons[theme-extensions]=puzzle
-# ... 25 more in the shipped file
+# ... 46 more in the shipped file
 */ ?>
 ```
 
@@ -128,7 +128,7 @@ CategoryIcons[theme-extensions]=puzzle
 
 > <pattern>;<category>, first match wins  
 
-Default: a list of 80: `doc/eng-us/help/manual/*;manual`, `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creation`, `doc/eng-us/help/creators/website-creators/*;website-creation`, `doc/eng-us/help/creators/*;website-creation`, `doc/eng-us/help/supporters/*;supporting` ....
+Default: a list of 102: `doc/eng-us/help/manual/*;manual`, `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creation`, `doc/eng-us/help/creators/website-creators/*;website-creation`, `doc/eng-us/help/creators/*;website-creation`, `doc/eng-us/help/supporters/*;supporting` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -154,9 +154,9 @@ PathRules[]=doc/eng-us/help/government/*;public-sector
 PathRules[]=doc/eng-us/help/businesses/*;business-solutions
 PathRules[]=doc/eng-us/help/press/*;press-media
 PathRules[]=doc/eng-us/help/trainers/*;training
-PathRules[]=doc/eng-us/help/project/*;project
-PathRules[]=doc/eng-us/help/build-two-ways/*;build-two-ways
-# ... 60 more in the shipped file
+PathRules[]=doc/eng-us/help/community/*;community
+PathRules[]=doc/eng-us/help/ecosystem/*;ecosystem
+# ... 82 more in the shipped file
 */ ?>
 ```
 

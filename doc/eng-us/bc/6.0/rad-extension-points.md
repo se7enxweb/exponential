@@ -688,9 +688,15 @@ What happens when a package is installed or taken back out.
 
 Takes a basket to somewhere money can be paid and brings the answer back. The shop prices, taxes and delivers a basket and stops at taking money: this is the piece that does not ship. It is called twice for one order - once to send the buyer away, once when they return - and the two visits are joined by the payment row it stores in between.
 
+The kernel looks for a gateway at `<GatewaysDirectories>/<gateway>/classes/<gateway>gateway.php`, for each name in
+`AvailableGateways[]`, so the class file sits in a directory named after its alias. Before 6.0.15 the tool wrote
+`paymentgateways/<alias>gateway.php`, where nothing looked, and registered the class under `<alias>gateway` rather
+than its own name: a gateway made with an earlier version has to be moved to the path above, and the second argument
+of its `registerGateway()` call changed to the class name.
+
 | | |
 |---|---|
-| Code | `extension/<name>/paymentgateways/<alias>gateway.php` |
+| Code | `extension/<name>/paymentgateways/<alias>/classes/<alias>gateway.php` |
 | Registered by | paymentgateways.ini [GatewaysSettings] AvailableGateways[] and GatewaysDirectories[], plus eZPaymentGatewayType::registerGateway() at the foot of the class file, plus a workflow with a Payment Gateway event bound to shop_confirmorder |
 | Contract | `extends eZRedirectGateway, or eZPaymentGateway for one that takes payment without leaving the site` |
 | Mechanism | directory |
@@ -703,7 +709,7 @@ Takes the payment without the buyer ever leaving the site: the card is exchanged
 
 | | |
 |---|---|
-| Code | `extension/<name>/paymentgateways/<alias>gateway.php` |
+| Code | `extension/<name>/paymentgateways/<alias>/classes/<alias>gateway.php` |
 | Registered by | paymentgateways.ini [GatewaysSettings] AvailableGateways[] and GatewaysDirectories[], plus eZPaymentGatewayType::registerGateway() at the foot of the class file, plus a workflow with a Payment Gateway event bound to shop_confirmorder |
 | Contract | `extends eZPaymentGateway` |
 | Mechanism | directory |

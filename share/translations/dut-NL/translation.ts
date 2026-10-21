@@ -74674,5 +74674,397 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Search the whole help</source>
         <translation>In de hele help zoeken</translation>
     </message>
+    <message>
+        <source>Community</source>
+        <translation>Gemeenschap</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>Exponential wereldwijd gebruiken, promoten en ermee bouwen: meedoen, de kanalen, evenementen, de gedragscode en bijdragen.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>De Exponential-community: meedoen, kanalen, evenementen, de gedragscode en bijdragen.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>Ecosysteem</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>De bredere Exponential-wereld in de PHP-stack: de producten, extensies, distributies, partners, gebruikers en makers.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>Het Exponential-ecosysteem in de PHP-stack: producten, extensies, distributies, partners, gebruikers en makers.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>PHP-ontwikkelaars</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Aan Exponential werken in PHP: de kernel en zijn klassen, autoloads, de opdrachtregel, Composer, tests en codeerstandaarden.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>PHP-ontwikkeling</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>PHP-ontwikkeling op Exponential: de kernel, klassen, autoloads, de opdrachtregel, Composer, tests en codeerstandaarden.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>Thema-ontwerpers</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>Thema's ontwerpen voor Exponential: designs en overrides, templates, stylesheets en assets, een thema verpakken en actueel houden.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>Wederverkopers</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Exponential en de diensten eromheen doorverkopen: hosting-, support- en implementatiepakketten, prijzen, licenties en partners.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>Wederverkoop</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>Exponential doorverkopen: dienstenpakketten, hosting en support, prijzen, licenties en samenwerken met partners.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>Bundelaars</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Exponential bundelen: distributies, sitepakketten, extensies en installatieprogramma's, met hun versies, licenties en updates.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>Bundels en distributies</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>Exponential bundelen: distributies, sitepakketten, extensies, installatieprogramma's, versies en licenties.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>AI, agents en agentisch werken</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>Met AI en agents werken in Exponential: de schrijfassistent expai, toegang voor agents via de API's, agentische workflows en veiligheid.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>AI en agents</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>AI, agents en agentisch werken met Exponential: de schrijfassistent expai, de API's, workflows en veiligheid.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>Software-engineers</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>Software bouwen op Exponential: architectuur, de verwerking van een verzoek, caching, testen, kwaliteitscontroles en onderhoudbaarheid.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>Software-engineering</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>Software-engineering op Exponential: architectuur, de verwerking van een verzoek, caching, testen en kwaliteit.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>Overstappers</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Exponential invoeren: het beoordelen, de overstap plannen, content migreren, uw team opleiden en het met vertrouwen beheren.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>Exponential invoeren</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>Exponential invoeren: beoordeling, planning, migratie, opleiding en beheer.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>Ontwikkelaars van mobiele apps</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>Mobiele apps bouwen op content uit Exponential: de REST-API's, authenticatie, content als JSON, afbeeldingen en caching.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>Mobiele apps</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>Mobiele apps op content uit Exponential: de REST-API's, authenticatie, JSON-content, afbeeldingen en caching.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>Ontwikkelaars van webframeworks</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential combineren met webframeworks: Composer, de API's, content insluiten en beide naast elkaar draaien.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>Webframeworks</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential met webframeworks: Composer, de API's, content insluiten en beide naast elkaar draaien.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>CMS-ontwikkelaars</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Ontwikkelen op een contentmanagementsysteem: contentklassen, templates, workflows, rechten, multisite en talen.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>CMS-ontwikkeling</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>CMS-ontwikkeling met Exponential: contentklassen, templates, workflows, rechten, multisite en talen.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>DXP-ontwikkelaars</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>Ontwikkelen voor Exponential Platform DXP: de Symfony-distributie, de beheeromgeving, REST en GraphQL, en hoe het verschilt van Exponential 6.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>DXP-ontwikkeling</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: de Symfony-distributie, de beheeromgeving, REST- en GraphQL-API's, en hoe het verschilt van Exponential 6.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>E-commerce</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>Online verkopen met Exponential: de winkel, producten en prijzen, btw, bestellingen, betalingen en het dagelijkse beheer van de winkel.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>E-commerce met Exponential: de winkel, producten, prijzen, btw, bestellingen en betalingen.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>Integratoren</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Exponential koppelen aan andere systemen: de REST-API's, RSS-feeds, import en export, en zoeken.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>Integratie</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>Exponential integreren met andere systemen: de API's, feeds, import, export en zoeken.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>Databasebeheerders</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>De database achter Exponential beheren: de ondersteunde databases, schema en upgrades, back-ups en herstel, en prestaties.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>Databasebeheer</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>Databasebeheer voor Exponential: de ondersteunde databases, schema, upgrades, back-ups en prestaties.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>Podcasters, radio en streaming</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Podcasts, radio en streams publiceren met Exponential: audio en video, feeds, insluitingen, shownotes, planning en rechten.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>Podcasting en streaming</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Podcasts, radio en streaming met Exponential: audio- en videomedia, feeds, insluitingen, shownotes, planning en rechten.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>Non-profitorganisaties</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>De website van een non-profitorganisatie beheren op Exponential: leden en vrijwilligers, inzamelingspagina's, toegankelijkheid, transparantie en kleine budgetten.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>Non-profitorganisaties</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Exponential voor non-profitorganisaties: leden, vrijwilligers, inzamelingspagina's, toegankelijkheid en transparantie.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>Lokale bedrijven</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>Een lokaal bedrijf online brengen met Exponential: openingstijden, pagina's voor locatie en contact, lokaal zoeken, een eenvoudige winkel en een klein budget.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>Lokaal bedrijf</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Exponential voor lokale bedrijven: openingstijden, locatiepagina's, lokaal zoeken en een eenvoudige winkel.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>Particulieren</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>Een eigen site bouwen met Exponential: een persoonlijke site, een portfolio, een blog, een site voor familie of vereniging, stap voor stap.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>Persoonlijke sites</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>Persoonlijke sites met Exponential: portfolio's, blogs, sites voor families en verenigingen.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>Niet-technische gebruikers</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential in gewone taal: geen opdrachtregel, hosting kiezen, de woorden die u tegenkomt en eenvoudige handleidingen.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>Hulp in gewone taal</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential in gewone taal: handleidingen zonder opdrachtregel, hostingkeuzes en een woordenlijst.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>Studenten en leerlingen</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential leren: leerpaden, uw eerste site, studieprojecten, geplande certificeringen en het partnerniveau Student.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>Exponential leren</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>Exponential leren: leerpaden, eerste sites, studieprojecten en certificeringen.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>Exponential gebruiken en beheren</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>Redacteuren, beheerders, ontwikkelaars en gebruikers, en iedereen met een eigen site.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>Organisaties</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>Bedrijven, overheden en non-profitorganisaties, en de mensen die hun projecten leiden en verkopen.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>Bouwen met Exponential</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>Ontwerpers, ontwikkelaars en engineers die sites, thema's, applicaties en integraties bouwen.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>Hosten, verkopen en partner worden</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>Partners, hostingbedrijven, wederverkopers en bundelaars die Exponential bij hun klanten brengen.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>Community en leren</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>De community en het ecosysteem, supporters en sponsors, de media, trainers en studenten.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>Exponential-partners dragen financieel bij aan de duurzame toekomst van het project, geven code en meer terug aan het project en werken rechtstreeks samen met 7x en de Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>Leden van de Exponential-community gebruiken Exponential wereldwijd, dragen eraan bij, promoten het en ontwikkelen er software mee.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>Het bredere ecosysteem reikt verder dan de community en omvat alle aspecten van de Exponential-wereld binnen de PHP-stack: de gebruikers en makers.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>%count doelgroepen</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>Meer doelgroepen</translation>
+    </message>
 </context>
 </TS>
