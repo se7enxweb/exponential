@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d3059d5aa33cfcda698bf29e95084c66  doc/changelogs/6.0/6.0.15.md
+5d58c7854d872ec08d4a037dea0b1268  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -10341,7 +10341,7 @@ d8623379278f58dcf26b28ab3cf43bc0  doc/eng-us/help/template-operators/php-string-
 30b2a67a421386349a00a52e6b63039e  doc/eng-us/help/template-operators/registering-operators.md
 cd41c4e4e6508c9406b1da26ef0be3bb  doc/eng-us/help/template-operators/registration-order-and-overrides.md
 80c02552c45176b83daa11de0090dc4c  doc/eng-us/help/template-operators/role-operators.md
-de47b656684587c00f55fe87d6453ac8  doc/eng-us/help/template-operators/siteaccess-operators.md
+506ed7c463645bf79a750f72e7f1073e  doc/eng-us/help/template-operators/siteaccess-operators.md
 a6d7aa179864c2bb2cfe6ecfb0a6bbc4  doc/eng-us/help/template-operators/small-extension-operators.md
 b7d1dec28debe23ebacf7e14921b7e82  doc/eng-us/help/template-operators/string-operators.md
 e9744aa168517df7577a6611125df181  doc/eng-us/help/template-operators/swark-operators-arrays-and-strings.md
@@ -20261,7 +20261,7 @@ d512fea2b159bda6e83158d5992933ab  kernel/private/classes/ezpmultivariatetest.php
 be72236ef28a665ddb30d6e278d102c3  kernel/private/classes/ezpmultivariatetesthandler.php
 b0ceceef412a27ea5302703bdb8fb87a  kernel/private/classes/ezpmultivariatetesthandlerinterface.php
 e53645bb2948a589bc008d65e5bb9bef  kernel/private/classes/ezpsiteaccessmenu.php
-9032ed182e4a80071226d9aaaeb46f76  kernel/private/classes/ezpsiteaccessurl.php
+afd830d0e69828545b261d3c3e6934aa  kernel/private/classes/ezpsiteaccessurl.php
 a4426106f9957b221c8245b2bb480881  kernel/private/classes/ezptemplateoverrides.php
 0e365e531c5a5eda3f6f895ee50c1765  kernel/private/classes/ezptopologicalsort.php
 b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.php
@@ -23159,7 +23159,7 @@ b6656c954acf5e5f6db1a2607a7564e4  tests/tests/kernel/private/classes/expUpgradeC
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php
 f6f7a6d0fedaac36b1b7a203e3f349cf  tests/tests/kernel/private/classes/ezpKernelResultAndEventTest.php
 13eaad81e6d99804ce2a4564858cdf7c  tests/tests/kernel/private/classes/ezpLanguageSwitcherTest.php
-b70fc1f19af70ae939a50ba77400a81a  tests/tests/kernel/private/classes/ezpSiteAccessURLTest.php
+bf52330689c5e2af829168e1e7be42b5  tests/tests/kernel/private/classes/ezpSiteAccessURLTest.php
 2000c194dcb439f91bf20cee50496582  tests/tests/kernel/private/classes/ezpSmallKernelHelpersTest.php
 f8bd96cb7671e92382f05210af3b11eb  tests/tests/kernel/private/classes/ezpTopologicalSortOrderTest.php
 ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpContentCriteriaTest.php
