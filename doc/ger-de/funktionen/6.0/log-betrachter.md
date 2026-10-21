@@ -129,7 +129,7 @@ mit seinem Standardwert wird weggelassen, sodass eine einfache Ansicht nur `/set
 | `(search)` | Text | | der Suchtext |
 | `(regex)` | `1` / `0` | `0` | der Suchtext ist ein regulärer Ausdruck |
 | `(case)` | `1` / `0` | `0` | Groß-/Kleinschreibung beachten |
-| `(from)`, `(to)` | eine Zeit, z. B. `2026-10-17T01~3A00` | | der Zeitraum |
+| `(from)`, `(to)` | eine Zeit, z. B. `2026-10-17T01:00` | | der Zeitraum |
 | `(siteaccess)` | ein Name | | der Siteaccess |
 | `(uri)` | Text | | Teil der Anfrageadresse |
 | `(ip)` | der Anfang einer Adresse | | der Client |
@@ -143,10 +143,13 @@ mit seinem Standardwert wird weggelassen, sodass eine einfache Ansicht nur `/set
 | `(unmask)` | `1` / `0` | `0` | unmaskiert angezeigt (nur mit `setup/unmasklogs`; nie Teil eines kopierten Permalinks) |
 | `(done)`, `(ok)` | eine Aktion, `1` / `0` | | das Ergebnis von Rotieren, Leeren oder Entfernen (von der Aktion gesetzt, nicht kopiert) |
 
-**Die Kodierung eines Werts.** Buchstaben, Ziffern und `_ . , -` werden unverändert geschrieben; jedes andere Byte
-wird zu `~` und seinen zwei Hexadezimalziffern, sodass ein Wert nie ein `/` oder eine `(` enthält, die ihn beenden
-würde: Ein Leerzeichen ist `~20`, ein Schrägstrich `~2F`, ein Doppelpunkt `~3A`, ein `~` selbst `~7E` und ein Zeichen
-außerhalb von ASCII ein `~XX` pro Byte seines UTF-8 (`ü` ist `~C3~BC`). Beispiele:
+**Die Kodierung eines Werts.** Ein Wert wird geschrieben wie jeder View-Parameter
+([wie ein Wert in der Adresse reist](../../anleitungen/urls-und-aliase.md#9-view-parameter-wie-ein-wert-in-der-adresse-reist),
+`expViewParameters::encode()`): `/`, `(`, `)`, `~`, `%`, `+`, `\`, `?`, `#` und Steuerzeichen werden zu `~` und zwei
+Hexadezimalziffern, sodass ein Wert nie ein `/` oder eine `(` enthält, die ihn beenden würde (ein Schrägstrich ist
+`~2F`, ein `~` selbst `~7E`); der Rest bleibt lesbar, ein Leerzeichen `%20`, ein Doppelpunkt `:`, `ü` `%C3%BC`. Links
+von früher, in denen auch jedes andere Zeichen `~XX` war (ein Leerzeichen `~20`, ein Doppelpunkt `~3A`, `ü`
+`~C3~BC`), werden genauso gelesen. Beispiele:
 
 ```
 /setup/logs/view/error/(level)/error/(search)/timeout/(follow)/0

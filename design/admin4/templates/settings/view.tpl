@@ -180,7 +180,7 @@
 <tbody>
 {foreach $search_hits as $hit}
 <tr>
-    <td class="a4-settings-name"><a href={concat( 'settings/view/', $current_siteaccess, '/', $hit.file, '/(q)/', $hit.name, '#', $hit.anchor )|ezurl}><code>{$hit.file|wash}</code></a><br /><code>[{$hit.block|wash}] {$hit.name|wash}</code></td>
+    <td class="a4-settings-name"><a href={concat( 'settings/view/', $current_siteaccess, '/', $hit.file, '/(q)/', $hit.name|view_parameter, '#', $hit.anchor )|ezurl}><code>{$hit.file|wash}</code></a><br /><code>[{$hit.block|wash}] {$hit.name|wash}</code></td>
     <td class="a4-settings-v">{if $hit.secret}<span class="a4-settings-val is-secret">{$hit.text|wash}</span>{elseif eq( $hit.text, '' )}<span class="a4-settings-val is-empty">{'empty'|i18n( 'design/admin/settings' )}</span>{else}<span class="a4-settings-val">{$hit.text|shorten( 160 )|wash}</span>{/if}</td>
     <td>{include uri='design:settings/exp_origin.tpl' origin=$hit.origin}</td>
 </tr>

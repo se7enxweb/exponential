@@ -14,10 +14,12 @@ A view of the `contentcheck` module, defined in `kernel/contentcheck/module.php`
 ## Address
 
 ```text
-/contentcheck/brokenrelations/<NodeID>
+/contentcheck/brokenrelations/<NodeID>/(exclude)/<Exclude>/(kind)/<Kind>/(relation)/<Relation>/(after)/<After>/(problem)/<Problem>/(version)/<Version>/(selectall)/<SelectAll>/(file_offset)/<FileOffset>
 ```
 
 Ordered parameters, in this order after the view name: `NodeID`.
+
+Unordered parameters, in any order as `/(name)/value`: `(exclude)` sets `Exclude`, `(kind)` sets `Kind`, `(relation)` sets `Relation`, `(after)` sets `After`, `(problem)` sets `Problem`, `(version)` sets `Version`, `(selectall)` sets `SelectAll`, `(file_offset)` sets `FileOffset`.
 
 ## Who may open it
 
@@ -39,6 +41,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/contentcheck/brokenrelations/1'|ezurl}>contentcheck/brokenrelations</a>
+<a href={concat( '/contentcheck/brokenrelations/1/(exclude)/', 1 )|ezurl}>contentcheck/brokenrelations</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

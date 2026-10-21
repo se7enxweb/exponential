@@ -30,10 +30,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/content/jobs.tpl` line 99:
+The first use in the templates of this installation, `design/admin/templates/content/jobs.tpl` line 100:
 
 ```tpl
-{if lt( sum( $offset, $page ), $count )}<a href={concat( $base_url, '?', $query, '&offset=', sum( $offset, $page ) )|ezurl}>{'Older'|i18n( 'design/admin/content/job' )}</a>{/if}
+{if lt( sum( $offset, $page ), $count )}<a href={concat( $page_url, '/(offset)/', sum( $offset, $page ) )|ezurl}>{'Older'|i18n( 'design/admin/content/job' )}</a>{/if}
 ```
 
 ## Related
