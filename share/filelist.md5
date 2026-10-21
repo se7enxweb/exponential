@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-33b3bf5041fc9d0f43754db296512461  doc/changelogs/6.0/6.0.15.md
+aa35e65011964cde74ba48a5f435ee09  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4932,7 +4932,7 @@ ca85614f14e595bced36608daef95d4f  doc/eng-us/examples/ini-settings/shop/README.m
 ad8cce76782f0c4b9961447545f51fa8  doc/eng-us/examples/ini-settings/shopaccount/HandlerSettings.md
 c135beb9575378bd3a7973db8cf47a2e  doc/eng-us/examples/ini-settings/shopaccount/README.md
 4b41a242c6e4a8ab86a7cb1bb8068ae0  doc/eng-us/examples/ini-settings/site/AdminEnvironment.md
-fda5b878c9ef45a35b707656f790bbbd  doc/eng-us/examples/ini-settings/site/AdminSiteAccessMenu.md
+05f808dc14b2cc73231d9b380d4de3f5  doc/eng-us/examples/ini-settings/site/AdminSiteAccessMenu.md
 1df9e4d2089bcc49541116c12816fc5f  doc/eng-us/examples/ini-settings/site/AppendNodeIDFilterSettings.md
 c22b859268798f7505fc18a76c38fef3  doc/eng-us/examples/ini-settings/site/BackwardCompatibilitySettings.md
 f6f565f1d58a812a0f1c8da2cfdbdcdf  doc/eng-us/examples/ini-settings/site/Cache.md
@@ -6729,7 +6729,7 @@ e90272a3e38a05a23cf0cfdef4f8b64f  doc/eng-us/help/build-two-ways/examples/migrat
 12a315d48ca49597d664520dc6b9dab2  doc/eng-us/help/build-two-ways/examples/migrate/migration-rollback-plan.md
 5f59636b2161a03c615c30cda55bb35f  doc/eng-us/help/build-two-ways/examples/migrate/missing-content-on-target.md
 3896c7a24bebd4f95119c34deb2c60e5  doc/eng-us/help/build-two-ways/examples/migrate/move-content-keep-layouts.md
-35afb21430293dcf0300712ab27f1aec  doc/eng-us/help/build-two-ways/examples/migrate/move-styles-out-of-templates.md
+24d200fa794fd8e263449fb945a01d3d  doc/eng-us/help/build-two-ways/examples/migrate/move-styles-out-of-templates.md
 439df7c8a2a29fbd53aadc25cb3a004b  doc/eng-us/help/build-two-ways/examples/migrate/new-siteaccess-for-language.md
 9b8abbb42b45bf94cc573ac3ece2377a  doc/eng-us/help/build-two-ways/examples/migrate/only-some-layouts.md
 2733fd8f4b8cdebe6b88eb90246138dd  doc/eng-us/help/build-two-ways/examples/migrate/package-and-layouts.md
@@ -6809,7 +6809,7 @@ d4cfaab73a5926880197411acd6ed3eb  doc/eng-us/help/build-two-ways/examples/redesi
 060c5e60434730b331e4ef32bc0e2766  doc/eng-us/help/build-two-ways/examples/redesign/redesign-rollout.md
 9e980e09ef79d0fab2c3dde7201cd80a  doc/eng-us/help/build-two-ways/examples/redesign/remove-the-breadcrumb-somewhere.md
 5ec8218dc40e24a05c335b1dd63c12f0  doc/eng-us/help/build-two-ways/examples/redesign/restyle-the-hero.md
-333fa27abad163a20913a533c90538ba  doc/eng-us/help/build-two-ways/examples/redesign/restyle-without-markup.md
+0969a7bb45f0ec7cb8a6ad8f14cdc6e3  doc/eng-us/help/build-two-ways/examples/redesign/restyle-without-markup.md
 88e1c739c31404b791b326c31f493793  doc/eng-us/help/build-two-ways/examples/redesign/retire-a-view-type.md
 41f10d6afef44a7fd066e2def3031821  doc/eng-us/help/build-two-ways/examples/redesign/search-box-redesign.md
 773ce31c07e1e5a98a2254f84af3877b  doc/eng-us/help/build-two-ways/examples/redesign/template-page-to-layout.md
@@ -6888,7 +6888,7 @@ da8eddfc3c69ef5ea85b6a10c978b71c  doc/eng-us/help/build-two-ways/prefooter-in-th
 2d681826d63dd2360dcda33d2717205b  doc/eng-us/help/build-two-ways/reorder-or-remove-header-menu-items.md
 244ad40149a893ac8cc73dbc679e5eba  doc/eng-us/help/build-two-ways/roll-back-a-layout.md
 3554b555bbc769874cf7d822f832315d  doc/eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md
-d359b146bb44732c1b14bdc57c1c1946  doc/eng-us/help/build-two-ways/styling-your-blocks.md
+aa7f6ee489a8fe7f419058d4973490aa  doc/eng-us/help/build-two-ways/styling-your-blocks.md
 bd568adf40fa0f684f27d6c231285c15  doc/eng-us/help/build-two-ways/template-blocks.md
 addf6a51aa1655b767766574038f7428  doc/eng-us/help/build-two-ways/two-ways-to-build.md
 5a0bb86e8c896997876836c4063e1b90  doc/eng-us/help/build-two-ways/why-doesnt-my-change-appear.md
@@ -12220,7 +12220,7 @@ e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-setti
 09966c19390280a3af1a30f1f0cde9f2  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 8e407a8f857845152d90b0e6046f416e  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 cd9d33fd0cafc62d3aeaa23f273b4061  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
-89a3318e4c8270094a45755c2eb4487b  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
+bc6ffc2776551da0b2ddfc6cc5b57e2e  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
 2454d0022c677d9245e5e1322e5ee6b5  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
 22d6c9c5408fb8730a53e260be31c8c4  doc/ger-de/.examples/descriptions/12-shell-checkcalltimeref.json
@@ -13844,7 +13844,7 @@ bd1c6796771491c6edae12e5aaa59c64  doc/ger-de/beispiele/ini-einstellungen/shopacc
 d5d89e5a193a8e955de0c213ad392ed1  doc/ger-de/beispiele/ini-einstellungen/shopaccount/HandlerSettings.md
 967288e1968cc11628287e863fcc4c06  doc/ger-de/beispiele/ini-einstellungen/shopaccount/README.md
 d7232458f5dfe1e0d78f93833ab4ee4d  doc/ger-de/beispiele/ini-einstellungen/site/AdminEnvironment.md
-1986ceaafd2b51a3ca77258685aa99cb  doc/ger-de/beispiele/ini-einstellungen/site/AdminSiteAccessMenu.md
+be7ad08467d1bf1c08ef882b42205c0c  doc/ger-de/beispiele/ini-einstellungen/site/AdminSiteAccessMenu.md
 d9a592ba61b663981fbaae713603cca8  doc/ger-de/beispiele/ini-einstellungen/site/AppendNodeIDFilterSettings.md
 14308d57b497bcd3de656ac866546274  doc/ger-de/beispiele/ini-einstellungen/site/BackwardCompatibilitySettings.md
 33deab8806a5079ff427ba68c52598a3  doc/ger-de/beispiele/ini-einstellungen/site/Cache.md
@@ -18695,7 +18695,7 @@ bccd05e261a5f44249903d367971ecf2  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele
 6168e943dc8fe2d0d7a3af079a5cc89e  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/fest-eingebautes-menue-in-einstellungen.md
 2f17a539acf15d177615892fae74f081  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/html-snippets-durch-blocktyp-ersetzen.md
 19c30a4cc2fb9effc9ff22730d6394db  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/inhalte-im-baum-verschieben.md
-bc515d322ffa1e49797efd7f45986b6a  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/inline-styles-ins-stylesheet.md
+e601f818df84ab3ee603666071123b25  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/inline-styles-ins-stylesheet.md
 2b468ed0221864429832a1d1336f66bb  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/installation-aufteilen.md
 f5e25f2dfbddae2382bdd21a6c26d047  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/knoten-ids-auf-staging-und-produktion.md
 76a832a81aaf60cd8b159131aac726ab  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/migrieren/layouts-im-repository.md
@@ -18736,7 +18736,7 @@ c36ec30ccb18c61005e7e74b8eb3b814  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele
 38483210d5f0392431063e524fb0eb63  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/logo-aendern.md
 7ea8c0ca98ac75118f03ca80edce0a93  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/manuell-zu-dynamisch.md
 349b284af2f18b86a6bd9fc62db6b8c4  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/menue-aus-dem-baum.md
-bcd44e3b96b4a5ff1607616061ed2325  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neu-gestalten-ohne-markup.md
+94c9c213e432062c62d7954fc5813b56  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neu-gestalten-ohne-markup.md
 bfb56cdbdf1f46d95133610c159bf741  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neuer-komponentenblock.md
 d2e2673277abc77a3db35afb4c8eda37  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neues-aussehen-einer-klasse-in-listen.md
 3e4c0c0b9e1f47eb714b8e3f10141ec0  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/neugestaltung/neues-aussehen-fuer-listen.md
@@ -18826,7 +18826,7 @@ eda4e36aad0440e86d7264103693b0a8  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele
 977e42e3ad91ff48a87162d3b2ebc15c  doc/ger-de/hilfe/zwei-wege-zum-bauen/beispiele/planen/zweite-sprache-planen.md
 316db8a34d796f87bf454ff47498a8cf  doc/ger-de/hilfe/zwei-wege-zum-bauen/bekanntes-verhalten-des-editors.md
 acc3b18f05fa08bedf51bb0fe3a474b1  doc/ger-de/hilfe/zwei-wege-zum-bauen/blocktyp-hinzufuegen.md
-95b7b71fb803a008a99d04d1b94a194e  doc/ger-de/hilfe/zwei-wege-zum-bauen/bloecke-gestalten.md
+86f44ecd3fe5fea14707454e8d9a98ea  doc/ger-de/hilfe/zwei-wege-zum-bauen/bloecke-gestalten.md
 c89b0cfd63f93cccb37a1c5d2ffe99ef  doc/ger-de/hilfe/zwei-wege-zum-bauen/caches-nach-einer-aenderung.md
 5739d9f5e318719e7e0d17a4c6afe72a  doc/ger-de/hilfe/zwei-wege-zum-bauen/der-reiter-design.md
 dfcf18269dd1a29a121e53733efde9bf  doc/ger-de/hilfe/zwei-wege-zum-bauen/eigene-design-erweiterung.md
@@ -21869,7 +21869,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-7a2d70c226fb9989dbba71a547614a6e  settings/site.ini
+b50d1ae27e5156b9a2a60a03d5cd8807  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
