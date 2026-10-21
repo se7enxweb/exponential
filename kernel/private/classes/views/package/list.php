@@ -63,19 +63,16 @@ class ListView extends \Exponential\Runnable\ModuleView
             return $this->viewResult( null, $module->redirectTo( self::listURI( \eZPackageRequestGuard::repository( $chosen, $repositories ) ? $chosen : '' ) ) );
         }
 
-        // The filter form sends GET fields; they are answered with one redirect to the same state as view
-        // parameters, so the address bar, the pager and a bookmark all carry the clean form.
-        if ( $http->hasGetVariable( 'PackageFilter' ) )
+        // The filter form is sent with POST (PackageFilter and its fields); it is answered with a 303 to the same
+        // state as view parameters, so the address bar, the pager and a bookmark all carry the clean form. The
+        // options are view parameters only: a query string is never read.
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'PackageFilter' ) ) )
         {
-            $get = function ( $name ) use ( $http ) { return $http->hasGetVariable( $name ) ? $http->getVariable( $name ) : ''; };
-            $chosen = (string)$get( 'Repository' );
-            $target = self::listURI( \eZPackageRequestGuard::repository( $chosen, $repositories ) ? $chosen : '',
-                                     array( 'search' => $get( 'SearchText' ), 'type' => $get( 'Type' ), 'state' => $get( 'State' ),
-                                            'sort' => $get( 'Sort' ), 'dir' => '' ) );
-            // Without HTML escaping: the address goes into the Location header, where &amp; would stay &amp;
-            \eZURI::transformURI( $target, false, 'full', false );
-            \eZHTTPTool::redirect( $target, array(), '302 Found', false );
-            \eZExecution::cleanExit();
+            $post = function ( $name ) { return \expViewParameters::posted( $_POST, $name ); };
+            $chosen = $post( 'Repository' );
+            \expViewParameters::redirect( self::listURI( \eZPackageRequestGuard::repository( $chosen, $repositories ) ? $chosen : '',
+                                                         array( 'search' => $post( 'SearchText' ), 'type' => $post( 'Type' ), 'state' => $post( 'State' ),
+                                                                'sort' => $post( 'Sort' ), 'dir' => '' ) ) );
         }
 
         $scan = \eZPackageCatalog::scan( $repositories );

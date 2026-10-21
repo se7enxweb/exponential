@@ -45,7 +45,7 @@ Export keinen Dateinamen, der nicht erraten werden soll, und verwenden Sie für 
 |---|---|
 | Kennzahlen | Exporte; einmal erzeugt; bei Bedarf erzeugt; gespeicherte Dateien; ihre Gesamtgröße; Exporte, die Aufmerksamkeit brauchen |
 | Unfertige Entwürfe | Neue Exporte, die begonnen und nie gespeichert wurden. Sie werden entfernt, sobald `content.ini [PDFExportSettings] DraftTimeout` (7200 Sekunden) verstrichen ist und jemand einen neuen Export beginnt |
-| Export finden | Titel, Dateiname, ID, Quellknoten oder Klasse; jedes Wort muss passen. Die Suche ist Teil der Adresse (`?search=`) |
+| Export finden | Titel, Dateiname, ID, Quellknoten oder Klasse; jedes Wort muss passen. Die Suche ist Teil der Adresse (`/(search)/<Text>`) |
 | Anzeigen | Alle, Einmal erzeugt, Bei Bedarf, Mit gespeicherter Datei, Brauchen Aufmerksamkeit, jeweils mit ihrer Anzahl |
 | Sortieren nach | Titel, Geändert, Erzeugt (Datum der gespeicherten Datei), Dateigröße, ID; ein zweiter Klick kehrt die Reihenfolge um |
 | Pro Seite | Die Größen aus `admininterface.ini [PaginationSettings]` (`ItemsPerPage[pdf/list]`, `ItemsPerPageList_pdf_list[]`); Ihre Wahl wird gespeichert |

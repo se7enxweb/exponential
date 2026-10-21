@@ -119,11 +119,10 @@ class View extends \Exponential\Runnable\ModuleView
             // Each is left out at its default (no type, no search, 50 per page, offset 0, no file open).
             // The kernel URL-decodes the whole path before splitting it, so the search, the one free text,
             // is written encoded twice (see $browseURL) and decoded once more here; the rest are keywords
-            // and numbers. The filter form submits the old GET fields (BrowseType, BrowseSearch,
-            // BrowseLimit, BrowseApply), and links made before may carry BrowseOffset/BrowseView: both are
-            // answered with one redirect to the same state as view parameters, so the address bar only
-            // ever shows the clean form and old links keep working.
-            $http = \eZHTTPTool::instance();
+            // and numbers. The filter form is sent with POST (BrowseApply with BrowseType, BrowseSearch,
+            // BrowseLimit) and answered with a 303 to the same state as view parameters, so the address bar
+            // only ever shows the clean form. The options are view parameters only: a query string is never
+            // read.
             $userParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
             $limitChoices = array( '25', '50', '100', '250', '1000', 'all' );
             $typeChoices = array( 'class', 'object', 'image', 'simplefile', 'document', 'package', 'other' );
@@ -156,27 +155,14 @@ class View extends \Exponential\Runnable\ModuleView
                 return $url;
             };
 
-            $legacyFields = array( 'BrowseApply', 'BrowseType', 'BrowseSearch', 'BrowseLimit', 'BrowseOffset', 'BrowseView' );
-            $hasLegacy = false;
-            foreach ( $legacyFields as $field )
-                $hasLegacy = $hasLegacy || $http->hasGetVariable( $field );
-            if ( $hasLegacy )
+            if ( \expViewParameters::redirectsPost( $_POST, array( 'BrowseApply', 'BrowseType', 'BrowseSearch', 'BrowseLimit' ) ) )
             {
-                $get = function ( $name, $fallback ) use ( $http ) { return $http->hasGetVariable( $name ) ? $http->getVariable( $name ) : $fallback; };
-                // A changed filter always starts on the first page: an old offset means nothing against a
-                // newly filtered list
-                $applied = $http->hasGetVariable( 'BrowseApply' );
-                $state = array( 'as' => '' ) + $normalise( $get( 'BrowseType', '' ), $get( 'BrowseSearch', '' ), $get( 'BrowseLimit', '50' ),
-                                     $applied ? 0 : $get( 'BrowseOffset', 0 ), $applied ? -1 : $get( 'BrowseView', -1 ) );
-                // Not $module->redirectTo(): the kernel adds the request's query string to every module
-                // redirect, and these very fields would then send the next request back here, for ever.
-                // The path is complete and encoded already (the search twice, on purpose), so it goes out as
-                // it is, with only the siteaccess prefix added.
-                $target = $browseURL( $state );
-                // Without HTML escaping: the address goes into the Location header, where &amp; would stay &amp;
-                \eZURI::transformURI( $target, false, 'full', false );
-                \eZHTTPTool::redirect( $target, array(), '302 Found', false );
-                \eZExecution::cleanExit();
+                $post = function ( $name, $fallback ) { return isset( $_POST[$name] ) && is_scalar( $_POST[$name] ) ? (string)$_POST[$name] : $fallback; };
+                // A changed filter always starts on the first page with no file open: an old offset means
+                // nothing against a newly filtered list. The path is complete and encoded already (the search
+                // twice, on purpose), so it goes out as it is, with only the siteaccess prefix added.
+                $state = array( 'as' => '' ) + $normalise( $post( 'BrowseType', '' ), $post( 'BrowseSearch', '' ), $post( 'BrowseLimit', '50' ), 0, -1 );
+                \expViewParameters::redirect( $browseURL( $state ) );
             }
 
             $state = $normalise(

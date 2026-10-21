@@ -21,8 +21,10 @@ use Exponential\Service\MailPreferencesPage;
  *  - admin/consent               the consent log with filters and the CSV export (mailpreferences/export)
  *  - admin/user[/<id>]           find a user; see and change their preferences on their request
  *
- * Paging: /(offset)/<n>. The consent filters are query string parameters, so a filtered list can be bookmarked and
- * exported as it is shown.
+ * Paging: /(offset)/<n>. The options are view parameters, never query string parameters: the consent filters
+ * (/(person)/, /(category)/, /(source)/, /(from)/, /(to)/), so a filtered list can be bookmarked and exported as it is
+ * shown, the exports (/(export)/csv, on a user's page also /(export)/json) and the user search (/(q)/). The filter
+ * and search forms are posted and answered with 303 to that address.
  */
 class Admin extends Page
 {
@@ -46,6 +48,18 @@ class Admin extends Page
                 return $this->status();
         }
         return $this->module->handleError( \eZError::KERNEL_MODULE_VIEW_NOT_FOUND, 'kernel' );
+    }
+
+    /**
+     * A view parameter of the request (/(name)/value), trimmed; '' when not given. A query string is not read.
+     *
+     * @param string $name
+     * @return string
+     */
+    protected function option( $name )
+    {
+        $value = \expViewParameters::get( $this->params, $name, ucfirst( $name ) );
+        return $value === false ? '' : trim( $value );
     }
 
     /** @return int the offset of a list (/(offset)/n) */
@@ -219,7 +233,7 @@ class Admin extends Page
         unset( $reasons['bridge'] );
         $access = \eZUser::currentUser()->hasAccessTo( 'mailpreferences', 'export' );
         $canExport = $access['accessWord'] !== 'no';
-        if ( isset( $_GET['export'] ) && $_GET['export'] === 'csv' )
+        if ( $this->option( 'export' ) === 'csv' )
         {
             if ( !$canExport )
                 return $this->module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
@@ -280,7 +294,7 @@ class Admin extends Page
         return $this->render( 'admin/suppression.tpl', array( 'rows' => $rows, 'total' => $total, 'offset' => $offset, 'limit' => self::LIMIT,
                                                               'reason_names' => MailPreferencesPage::reasonNames(), 'add_reasons' => $reasons,
                                                               'check' => $check, 'notice' => $notice, 'page_uri' => 'mailpreferences/admin/suppression',
-                                                              'export_uri' => $canExport && $total > 0 ? 'mailpreferences/admin/suppression?export=csv' : false ),
+                                                              'export_uri' => $canExport && $total > 0 ? 'mailpreferences/admin/suppression/(export)/csv' : false ),
                               $t( 'Suppression list' ) );
     }
 
@@ -289,7 +303,16 @@ class Admin extends Page
     protected function consent()
     {
         $t = function ( $text, $args = null ) { return MailPreferencesPage::trAdmin( $text, $args ); };
-        $get = function ( $name ) { return isset( $_GET[$name] ) && is_string( $_GET[$name] ) ? trim( $_GET[$name] ) : ''; };
+        $fields = array( 'person', 'category', 'source', 'from', 'to' );
+        // The filter form is posted: answered with 303 to the filtered list's /(person)/.../(to)/... address
+        if ( \expViewParameters::redirectsPost( $_POST, $fields ) )
+        {
+            $posted = array();
+            foreach ( $fields as $field )
+                $posted[$field] = trim( \expViewParameters::posted( $_POST, $field ) );
+            \expViewParameters::redirect( 'mailpreferences/admin/consent' . \expViewParameters::suffix( $posted ) );
+        }
+        $get = function ( $name ) { return $this->option( $name ); };
         $filters = array( 'person' => $get( 'person' ), 'category' => $get( 'category' ), 'source' => $get( 'source' ),
                           'from' => $get( 'from' ), 'to' => $get( 'to' ) );
         $query = array();
@@ -350,11 +373,11 @@ class Admin extends Page
         $categoryNames = array();
         foreach ( \expMailCategoryRegistry::instance()->all() as $id => $category )
             $categoryNames[$id] = MailPreferencesPage::categoryName( $category );
-        $queryString = $query ? '?' . http_build_query( $query ) : '';
+        $queryString = \expViewParameters::suffix( $query );
         return $this->render( 'admin/consent.tpl', array(
             'rows' => $rows, 'total' => $total, 'offset' => $offset, 'limit' => self::LIMIT, 'filters' => $filters,
             'category_names' => $categoryNames, 'source_names' => MailPreferencesPage::sourceNames(),
-            'export_uri' => $canExport ? 'mailpreferences/admin/consent?' . http_build_query( $query + array( 'export' => 'csv' ) ) : false,
+            'export_uri' => $canExport ? 'mailpreferences/admin/consent' . \expViewParameters::suffix( $query + array( 'export' => 'csv' ) ) : false,
             'query' => $queryString, 'page_uri' => 'mailpreferences/admin/consent', 'notice' => false ), $t( 'Consent log' ) );
     }
 
@@ -366,7 +389,10 @@ class Admin extends Page
         $id = (int)$this->param( 'ID', 0 );
         if ( $id <= 0 )
         {
-            $q = isset( $_GET['q'] ) && is_string( $_GET['q'] ) ? trim( $_GET['q'] ) : '';
+            // The search form is posted: answered with 303 to /(q)/...
+            if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+                \expViewParameters::redirect( 'mailpreferences/admin/user' . \expViewParameters::suffix( array( 'q' => \expViewParameters::posted( $_POST, 'q' ) ) ) );
+            $q = \expViewParameters::text( $this->params, 'q', 'Q' );
             return $this->render( 'admin/user.tpl', array( 'query' => $q, 'users' => $q !== '' ? self::findUsers( $q ) : array(), 'notice' => false ),
                                   $t( 'A user' ) );
         }
@@ -376,7 +402,7 @@ class Admin extends Page
                                                            'notice' => array( 'type' => 'error', 'text' => $t( 'No user found.' ) ) ), $t( 'A user' ) );
         $prefs = \expMailPreferences::forRecipient( \expMailRecipient::fromUser( $user ) );
         $base = 'mailpreferences/admin/user/' . $id;
-        $format = isset( $_GET['export'] ) && in_array( $_GET['export'], array( 'json', 'csv' ), true ) ? $_GET['export'] : '';
+        $format = in_array( $this->option( 'export' ), array( 'json', 'csv' ), true ) ? $this->option( 'export' ) : '';
         if ( $format !== '' )
         {
             $access = \eZUser::currentUser()->hasAccessTo( 'mailpreferences', 'export' );
@@ -386,7 +412,7 @@ class Admin extends Page
         }
         $notices = MailPreferencesPage::handlePost( $prefs, $this->http, 'admin' );
         $variables = MailPreferencesPage::templateVariables( $prefs, 'admin', $base,
-                                                             array( 'json' => $base . '?export=json', 'csv' => $base . '?export=csv' ), $notices );
+                                                             array( 'json' => $base . '/(export)/json', 'csv' => $base . '/(export)/csv' ), $notices );
         $object = $user->attribute( 'contentobject' );
         $variables['user_name'] = $object ? (string)$object->attribute( 'name' ) : (string)$user->attribute( 'login' );
         $variables['can_administrate'] = true;

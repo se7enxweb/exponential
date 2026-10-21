@@ -253,10 +253,10 @@ reset it when the numbers are no longer needed.
 
 | Page | Address | Parameters |
 |---|---|---|
-| Link list | `/url/list/<all\|valid\|invalid\|unchecked>` | `(sort)/checked`, `(sort)/modified`, `(offset)/<n>`, `?q=<text>` |
-| Global aliases | `/content/urltranslator` | `(kind)/redirect`, `(kind)/direct`, `(offset)/<n>`, `?q=<text>` |
-| Wildcards | `/content/urlwildcards` | `(kind)/...`, `(offset)/<n>`, `?q=<text>`, `?test=<address>` |
-| Search statistics | `/search/stats` | `(sort)/phrase`, `(sort)/fewest`, `(show)/none`, `(offset)/<n>`, `?q=<text>` |
+| Link list | `/url/list/<all\|valid\|invalid\|unchecked>` | `(sort)/checked`, `(sort)/modified`, `(offset)/<n>`, `(q)/<text>` |
+| Global aliases | `/content/urltranslator` | `(kind)/redirect`, `(kind)/direct`, `(offset)/<n>`, `(q)/<text>` |
+| Wildcards | `/content/urlwildcards` | `(kind)/...`, `(offset)/<n>`, `(q)/<text>`; the Try form posts `test` (an address) |
+| Search statistics | `/search/stats` | `(sort)/phrase`, `(sort)/fewest`, `(show)/none`, `(offset)/<n>`, `(q)/<text>` |
 
 Unknown values fall back to the defaults. The forms, their field names and their buttons (`SetValid`,
 `SetInvalid`, `URLSelection[]`, `NewAliasButton`, `RemoveAliasButton`, `RemoveAllAliasesButton`, `ElementList[]`,

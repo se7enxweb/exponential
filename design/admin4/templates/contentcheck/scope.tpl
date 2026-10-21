@@ -1,12 +1,13 @@
 {* The start location of a content check (doc/eng-us/features/6.0/content-checks.md, "Where a check starts"), shared by
-   every check that takes one. Include it inside the check's GET filter form (an a4-filterbar):
+   every check that takes one. Include it inside the check's filter form (a posted a4-filterbar):
 
      {include uri='design:contentcheck/scope.tpl' scope=$scope}
 
    Variable: scope, from expContentCheckScope::forTemplate( $node_id, '<view>' ): node_id, node_name, path, view,
    query, presets (key, node_id, name, label, path, current), sites (parent_id, parent_label, items of node_id, name,
    current, within; more, more_url), browse_url. With only node_id and node_name it shows the field alone.
-   The field is NodeID: the views read GET NodeID before the node in the address, and remember it for the user.
+   The field is NodeID: the views read the posted NodeID before the node in the address, answer with a 303 to
+   contentcheck/<view>/<node id> and the view parameters, and remember it for the user. query is view parameters.
    Beneath the field: the quick scope buttons (contentcheck.ini [ScopeSettings] PresetList[]: Whole tree, Websites,
    Media) and the node picker, then a second row with the sites and sections under the content root (SiteRow*),
    "More..." opening the picker at that level when there are more. All of them are plain links to

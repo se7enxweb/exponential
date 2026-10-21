@@ -170,11 +170,13 @@ preferences), so it stays the same for every log, every permalink and the next v
 anything shows (no flash). Without a stored choice, `[TailSettings] WrapLines` decides (default `enabled`). Following
 or paused, and the entry in focus, belong to a view and travel in its permalink; wrapping is a preference and does not.
 
-**Old links.** A link of the first form, `/setup/logs?file=var/log/error.log` (with `q`, `levels[]` and the other
-search fields of that time), answers `301 Moved Permanently` with the permalink of the same file and search, e.g.
-`/setup/logs/view/error`, `/setup/logs?file=var/log/error.log.1` is `/setup/logs/view/error/(rotation)/1`. A file it
-may not open answers 404. The feed (`setup/logsfeed`) and the actions (`setup/logsaction`) still name a file by its
-internal id (`var/log/error.log`; a configured log `@<key>/<file name>`); the actions answer with the permalink.
+**View parameters only.** The options of the page and of its feed are view parameters, `/(name)/value`; a query
+string (`?file=`, `?key=`, `?q=` ...) is never read and never redirected. The search form and the file chooser without
+JavaScript are sent with POST (with the form token): `key` (and `rotation`) or `file`, and the search fields (`q`,
+`regex`, `case`, `levels[]`, `from`, `to`, `siteaccess`, `uri`, `ip`, `reference`, `scope`, `rotations`), answered
+`303 See Other` with the permalink of the same file and search. A file it may not open answers 404. The feed
+(`setup/logsfeed`) and the actions (`setup/logsaction`) name a file by its internal id (`var/log/error.log`; a
+configured log `@<key>/<file name>`); the actions answer with the permalink.
 
 ## Web server logs
 
@@ -215,7 +217,9 @@ own virtual host).
 
 ## Following a file live
 
-The page polls `setup/logsfeed?action=tail&file=...&offset=<n>&ino=<n>`:
+The page polls `setup/logsfeed/(action)/tail/(file)/<id>/(offset)/<n>/(ino)/<n>`, each value written as a permalink
+writes it (`~2F` for `/`, `expLogPermalink::encode()`); a search asks `setup/logsfeed/(action)/search/(file)/<id>/(q)/...`
+with the criteria of the form and `(cursor)` for the next results. A query string is never read:
 
 - **A cheap `stat()` first.** A file that has not grown since the offset is answered without opening it.
 - **Only what is new is read**, from the byte offset the page already has, at most `[TailSettings] MaxBytesPerPoll`
@@ -485,8 +489,7 @@ takes the log's grouping; without it a link is built as before.
 
 A rotation opens in the same viewer, read only, under its own permalink: `/setup/logs/view/<key>/(archive)/N` (`.N`,
 or `.N.gz` when there is no plain one). `(rotation)/N` is still read as the same. An archive is never followed (no
-polling); it can be searched, downloaded and, with `DeleteArchives`, removed, never rotated or emptied. Old links of
-the form `?file=var/log/error.log.2` answer 301 with `/setup/logs/view/error/(archive)/2`.
+polling); it can be searched, downloaded and, with `DeleteArchives`, removed, never rotated or emptied.
 
 ## Copy messages
 
@@ -617,7 +620,7 @@ Numeric settings are kept within safe bounds whatever the file says (for example
   search, time seek), `expLogRedactor` (masks), `expLogRateLimit`, `expLogFileStats` (line rate), `expLogActions`
   (download, rotate, empty, remove) and the facade `expLogViewer` (policies, audit, the feed's answers).
 - Views: `setup/logs` (the page; `setup/logs/view/<key>` with the view parameters of [Permalinks](#permalinks)),
-  `setup/logsfeed` (JSON: `action=tail|search|related|reference|files`),
+  `setup/logsfeed` (JSON: `/(action)/tail|search|related|reference|files`, every option a view parameter),
   `setup/logsaction` (POST). Template fetch: `fetch( 'setup', 'log_files' )`, the navigator (empty without
   `setup/logs`).
 - A log of your own extension appears in **Extensions** when it is written to an allowed directory with a matching

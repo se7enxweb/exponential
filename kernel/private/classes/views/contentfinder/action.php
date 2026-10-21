@@ -126,7 +126,7 @@ class Action extends \Exponential\Runnable\ModuleView
      */
     public static function searchURI( $objectID )
     {
-        return '/contentfinder/search?SearchType=object&SearchText=' . (int)$objectID;
+        return Search::searchURI( (string)(int)$objectID, 'object' );
     }
 
     /**

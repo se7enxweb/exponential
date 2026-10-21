@@ -1,5 +1,5 @@
 {* Previous / next for the administrator's lists. Variables: page_uri (the list's address, with its filters as
-   ordered parameters), total, offset, limit, query (a query string for the filters, with "?", or ''). *}
+   ordered parameters), total, offset, limit, query (the filters as view parameters, /(name)/value, or ''). *}
 {if $total|gt( $limit )}
 {def $query_string = first_set( $query, '' )}
 <nav class="mp-pager" aria-label="{'Pages'|i18n( 'design/admin/mailpreferences' )}">

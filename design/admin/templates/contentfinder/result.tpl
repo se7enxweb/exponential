@@ -129,7 +129,7 @@
     </form>
     {/if}
     {/foreach}
-    {if $result.actions.restore}<form method="get" action={concat( 'content/restore/', $result.object_id )|ezurl}><input type="submit" class="button" value="{'Restore'|i18n( 'kernel/contentfinder' )}" /></form>{/if}
+    {if $result.actions.restore}<a class="button" href={concat( 'content/restore/', $result.object_id )|ezurl}>{'Restore'|i18n( 'kernel/contentfinder' )}</a>{/if}
 </div>
 {/if}
 </section>

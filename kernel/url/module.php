@@ -18,7 +18,7 @@ $ViewList['list'] = array(
     'post_action_parameters' => array( 'SetValid' => array( 'URLSelection' => 'URLSelection' ),
                                        'SetInvalid' => array( 'URLSelection' => 'URLSelection' ) ),
     'params' => array( 'ViewMode' ),
-    "unordered_params" => array( "offset" => "Offset" ) );
+    "unordered_params" => array( "offset" => "Offset", "sort" => "Sort", "q" => "Query" ) );
 $ViewList['view'] = array(
     'script' => 'view.php',
     'default_navigation_part' => 'ezsetupnavigationpart',
