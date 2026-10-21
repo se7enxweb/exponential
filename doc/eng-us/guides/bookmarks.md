@@ -146,7 +146,7 @@ Open a folder in the folder list. Its panel offers:
   `setOrder()` saves the order of some or all entries of one folder (the posted entries take the places they held, see
   `expBookmarkPage::reorderSlots()`), and `moveToPosition()` puts one entry at a place. Both refuse an id that is not
   the user's, not in that folder, or repeated.
-- Addresses: `content/bookmark/(folder)/<id>|top/(sort)/name|added|type|modified/(offset)/<n>?q=<text>`. Every POST
+- Addresses: `content/bookmark/(folder)/<id>|top/(sort)/name|added|type|modified/(offset)/<n>/(q)/<text>` (view parameters; the search form is sent with POST and answered with a 303 to that address). Every POST
   answers with a redirect to the same folder, order and search, with the result as a notice.
 - The POST names are the ones the page always had: `RemoveButton`, `AddButton`, `DeleteIDArray[]`,
   `MoveSelectedButton` with `FolderID`, and `BookmarkFolderAction` (create, rename, delete, move_bookmark,

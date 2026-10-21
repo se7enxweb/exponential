@@ -3,8 +3,8 @@
    Variables: scope (the start location, see scope.tpl), params (show, sort, order, kinds, offset, limit, node_id),
    state (the last scan, or null), percent, rows (the page), count, quarantine (the listing, with Show=quarantine),
    quarantine_root, storage_dir, kinds, sorts, min_age_days, cluster (report only), can_quarantine, can_fix,
-   batch_limit, feedback, select_all (GET SelectAll: every box of the page ticked), page_uri, page_uri_suffix, view_parameters, limit, limit_choices, limit_preference,
-   form_token, token_field. The lists and filters are GET; the scan and every action are posted to
+   batch_limit, feedback, select_all ((selectall)/1: every box of the page ticked), page_uri, page_uri_suffix, view_parameters, limit, limit_choices, limit_preference,
+   form_token, token_field. The lists and filters are view parameters (the filter forms are posted and answered with a 303 to that address); the scan and every action are posted to
    contentcheck/storageaction, which shows each action's plan first and asks to confirm. The same file is in
    design/admin and design/admin4. *}
 {def $kind_names = hash( 'owner', 'Wrong owner'|i18n( 'kernel/contentcheck' ),
@@ -91,16 +91,16 @@
 
 <nav aria-label="{'Lists'|i18n( 'kernel/contentcheck' )|wash}">
 <ul class="a4-tabs">
-    <li><a href={concat( $page_uri, '?Show=orphans' )|ezurl}{if eq( $params.show, 'orphans' )} aria-current="page"{/if}>{'Orphan files'|i18n( 'kernel/contentcheck' )}{if $done} ({$state.counts.orphans}){/if}</a></li>
-    <li><a href={concat( $page_uri, '?Show=problems' )|ezurl}{if eq( $params.show, 'problems' )} aria-current="page"{/if}>{'File problems'|i18n( 'kernel/contentcheck' )}</a></li>
-    <li><a href={concat( $page_uri, '?Show=quarantine' )|ezurl}{if eq( $params.show, 'quarantine' )} aria-current="page"{/if}>{'Quarantine'|i18n( 'kernel/contentcheck' )}</a></li>
+    <li><a href={concat( $page_uri, '/(show)/orphans' )|ezurl}{if eq( $params.show, 'orphans' )} aria-current="page"{/if}>{'Orphan files'|i18n( 'kernel/contentcheck' )}{if $done} ({$state.counts.orphans}){/if}</a></li>
+    <li><a href={concat( $page_uri, '/(show)/problems' )|ezurl}{if eq( $params.show, 'problems' )} aria-current="page"{/if}>{'File problems'|i18n( 'kernel/contentcheck' )}</a></li>
+    <li><a href={concat( $page_uri, '/(show)/quarantine' )|ezurl}{if eq( $params.show, 'quarantine' )} aria-current="page"{/if}>{'Quarantine'|i18n( 'kernel/contentcheck' )}</a></li>
 </ul>
 </nav>
 
 {if eq( $params.show, 'problems' )}
 <section aria-labelledby="cc-filter-title">
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
-<form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
+<form class="a4-filterbar" method="post" action={$page_uri|ezurl}>
     <input type="hidden" name="Show" value="problems" />
     {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <fieldset class="a4-field">
@@ -120,7 +120,7 @@
 {elseif eq( $params.show, 'orphans' )}
 <section aria-labelledby="cc-filter-title">
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
-<form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
+<form class="a4-filterbar" method="post" action={$page_uri|ezurl}>
     <input type="hidden" name="Show" value="orphans" />
     {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <div class="a4-field">

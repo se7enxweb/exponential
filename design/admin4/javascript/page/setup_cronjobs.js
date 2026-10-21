@@ -259,7 +259,7 @@ var expCronjobText = {
     function follow() {
         if ( source ) return;
         say( tr( 'following' ) );
-        source = new EventSource( expCronjobStreamUrl + '?Offset=' + offset );
+        source = new EventSource( expCronjobStreamUrl + '/(offset)/' + offset );   // a view parameter, never a query string
 
         source.onmessage = function ( event ) {
             var payload;

@@ -22,13 +22,16 @@ $Module = array( 'name' => 'ContentCheck',
 
 $ViewList = array();
 
-// The objects below a node that nothing refers to (GET: ClassID[], Sort, Order, Containers; (offset) in the address)
+// The objects below a node that nothing refers to. The options are view parameters only: (class) (comma list of
+// class ids), (sort), (order), (containers)/1, (selectall)/1, (offset). The filter form is posted and answered with a
+// 303 to that address.
 $ViewList['unreferenced'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'unreferenced.php',
     'functions' => array( 'unreferenced' ),
     'params' => array( 'NodeID' ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'class' => 'Class', 'sort' => 'Sort', 'order' => 'Order',
+                                 'containers' => 'Containers', 'selectall' => 'SelectAll' ) );
 
 // Moving unreferenced objects to the trash: POST only; first the confirmation page, then the move
 $ViewList['trash'] = array(
@@ -37,13 +40,17 @@ $ViewList['trash'] = array(
     'functions' => array( 'unreferenced', 'trash' ),
     'params' => array() );
 
-// Visible content that refers to deleted, trashed, hidden or unpublished content (GET: Exclude, Kind[],
-// Relation[], After)
+// Visible content that refers to deleted, trashed, hidden or unpublished content. The options are view parameters
+// only: (exclude), (kind), (relation) (comma lists, "none" for none ticked), (after), and of the missing files
+// (problem), (version), (selectall)/1, (file_offset). The filter form is posted and answered with a 303 to that address.
 $ViewList['brokenrelations'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'brokenrelations.php',
     'functions' => array( 'brokenrelations' ),
-    'params' => array( 'NodeID' ) );
+    'params' => array( 'NodeID' ),
+    'unordered_params' => array( 'exclude' => 'Exclude', 'kind' => 'Kind', 'relation' => 'Relation', 'after' => 'After',
+                                 'problem' => 'Problem', 'version' => 'Version', 'selectall' => 'SelectAll',
+                                 'file_offset' => 'FileOffset' ) );
 
 // Resolving the missing files of the broken relations: POST only; first the preview, then the batches
 $ViewList['fixfiles'] = array(
@@ -60,13 +67,15 @@ $ViewList['scope'] = array(
     'params' => array( 'View', 'NodeID', 'StartNodeID' ) );
 
 // The storage files: orphans (no content uses them), file-system problems of the used ones below the node, and the
-// quarantine (GET: Show, Sort, Order, Kind[]; (offset) in the address)
+// quarantine. The options are view parameters only: (show), (sort), (order), (kind) (comma list, or "none"),
+// (selectall)/1, (offset). The filter forms are posted and answered with a 303 to that address.
 $ViewList['storage'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'storage.php',
     'functions' => array( 'storage' ),
     'params' => array( 'NodeID' ),
-    'unordered_params' => array( 'offset' => 'Offset' ) );
+    'unordered_params' => array( 'offset' => 'Offset', 'show' => 'Show', 'sort' => 'Sort', 'order' => 'Order',
+                                 'kind' => 'Kind', 'selectall' => 'SelectAll' ) );
 
 // The scan and the actions on storage files: POST only; every action shows its plan (the dry run) and is confirmed
 $ViewList['storageaction'] = array(

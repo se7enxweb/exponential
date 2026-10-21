@@ -1,13 +1,15 @@
 <?php
 /**
  * The contentcheck/storage view (doc/eng-us/features/6.0/content-checks.md, "Storage files"): the result of the last scan
- * of var/<site>/storage, in three lists (GET Show):
+ * of var/<site>/storage, in three lists (the view parameter (show)):
  *
  *   orphans     files no content uses, with size and age and the totals (the whole storage: they belong to no node)
  *   problems    used files with a wrong owner or mode, empty files, and name or path mismatches, of the content below
  *               the start location (contentcheck/storage/<node id>, see expContentCheckScope)
  *   quarantine  the files moved to var/<site>/storage-quarantine, to restore or delete
  *
+ * The options are view parameters only: (show), (sort), (order), (kind) (a comma list, or "none"), (selectall)/1 and
+ * (offset); a query string is not read. The filter forms are posted and answered with a 303 to that address.
  * The scan itself and every action are posted to contentcheck/storageaction. Needs contentcheck/storage; the actions
  * need contentcheck/quarantine or contentcheck/permissions as well. Answers on administration siteaccesses only.
  *
@@ -30,6 +32,9 @@ class Storage extends \Exponential\Runnable\ModuleView
     /** The lists */
     const SHOWS = array( 'orphans', 'problems', 'quarantine' );
 
+    /** The fields of the filter forms (posted, then answered with a 303 to the view parameters) */
+    const FORM_FIELDS = array( 'NodeID', 'Show', 'Sort', 'Order', 'Kind', 'KindChoice' );
+
     /** The orders of the orphans */
     const SORTS = array( 'path', 'size', 'age' );
 
@@ -42,19 +47,18 @@ class Storage extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
         list( $limit, $limitChoice, $limitChoices ) = \expAdminPagination::chosen( 'contentcheck/storage', self::LIMIT_PREFERENCE );
-        $get = array();
-        foreach ( array( 'Show', 'Sort', 'Order', 'Kind' ) as $name )
-            $get[$name] = $http->hasGetVariable( $name ) ? $http->getVariable( $name ) : null;
-        // "Select all" / "Select none" of the kinds (KindChoice); none ticked lists every kind, as no box ticked does
-        $kindChoice = $http->hasGetVariable( 'KindChoice' ) ? $http->getVariable( 'KindChoice' ) : '';
-        if ( $kindChoice === 'all' || $kindChoice === 'none' )
-            $get['Kind'] = $kindChoice === 'all' ? \expContentCheckStorage::PROBLEMS : null;
+        // the options are view parameters (/(show)/problems/(kind)/owner,mode); the filter forms are posted and
+        // answered with a 303 to that address
+        if ( \expViewParameters::redirectsPost( $_POST, self::FORM_FIELDS ) )
+            \expViewParameters::redirect( self::canonicalURI( $Params, $_POST ) );
+        $get = self::viewInput( $Params );
+        // "Select none" of the kinds ((kind)/none); none ticked lists every kind, as no box ticked does
+        $kindChoice = isset( $get['KindChoice'] ) ? $get['KindChoice'] : '';
         $params = self::parameters( $get );
         $params['kinds_shown'] = $kindChoice === 'none' ? array() : $params['kinds'];
         $params['offset'] = \expAdminPagination::offset( $Params );
         $params['limit'] = $limit;
-        $nodeID = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
-                                                 $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
+        $nodeID = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null, null );
         if ( !\expContentCheck::readableNode( $nodeID ) )
             return $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
         $params['node_id'] = $nodeID;
@@ -100,7 +104,7 @@ class Storage extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
         // the scope buttons keep the list shown (orphans or file problems)
-        $tpl->setVariable( 'scope', \expContentCheckScope::forTemplate( $nodeID, 'storage', array( 'Show' => $params['show'] ) ) );
+        $tpl->setVariable( 'scope', \expContentCheckScope::forTemplate( $nodeID, 'storage', array( 'show' => $params['show'] ) ) );
         $tpl->setVariable( 'params', $params );
         $tpl->setVariable( 'state', $state );
         $tpl->setVariable( 'percent', $state ? \expContentCheckStorage::percent( $state ) : 0 );
@@ -117,9 +121,9 @@ class Storage extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'can_fix', \expContentCheck::hasPolicy( 'contentcheck', 'permissions' ) && \expContentCheckStorage::canChangeFiles() );
         $tpl->setVariable( 'batch_limit', \expContentCheckQuarantine::batchLimit() );
         $tpl->setVariable( 'feedback', $feedback );
-        $tpl->setVariable( 'select_all', $http->hasGetVariable( 'SelectAll' ) && $http->getVariable( 'SelectAll' ) === '1' );
+        $tpl->setVariable( 'select_all', \expViewParameters::get( $Params, 'selectall' ) === '1' );
         $tpl->setVariable( 'page_uri', '/contentcheck/storage/' . $nodeID );
-        $tpl->setVariable( 'page_uri_suffix', self::querySuffix( $params ) );
+        $tpl->setVariable( 'page_uri_suffix', self::querySuffix( $params, $kindChoice === 'none' ) );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $params['offset'] ) );
         $tpl->setVariable( 'limit', $limit );
         $tpl->setVariable( 'limit_choices', $limitChoices );
@@ -153,25 +157,55 @@ class Storage extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The query string that keeps the list, the order and the kinds on the pages.
+     * The view parameters that keep the list, the order and the kinds on the pages.
      *
      * @param array $params
-     * @return string starting with ?
+     * @param bool $noKinds the button "Select none" of the kinds was pressed
+     * @return string "/(show)/..."
      */
-    public static function querySuffix( array $params )
+    public static function querySuffix( array $params, $noKinds = false )
     {
-        $query = array( 'Show=' . rawurlencode( $params['show'] ) );
+        $options = array( 'show' => $params['show'] );
         if ( $params['show'] === 'orphans' )
         {
-            $query[] = 'Sort=' . rawurlencode( $params['sort'] );
-            $query[] = 'Order=' . rawurlencode( $params['order'] );
+            $options['sort'] = $params['sort'];
+            $options['order'] = $params['order'];
         }
-        if ( $params['show'] === 'problems' && count( $params['kinds'] ) < count( \expContentCheckStorage::PROBLEMS ) )
-        {
-            foreach ( $params['kinds'] as $kind )
-                $query[] = 'Kind%5B%5D=' . rawurlencode( $kind );
-        }
-        return '?' . implode( '&', $query );
+        if ( $params['show'] === 'problems' && $noKinds )
+            $options['kind'] = 'none';
+        else if ( $params['show'] === 'problems' && count( $params['kinds'] ) < count( \expContentCheckStorage::PROBLEMS ) )
+            $options['kind'] = $params['kinds'];
+        return \expContentCheck::viewSuffix( $options );
+    }
+
+    /**
+     * The options of the address as the fields of the filter form (Show, Sort, Order, Kind, KindChoice).
+     *
+     * @param array $Params the view's $Params
+     * @return array
+     */
+    public static function viewInput( array $Params )
+    {
+        return \expContentCheck::viewInput( $Params, array( 'Show' => array( 'show', false ), 'Sort' => array( 'sort', false ),
+                                                            'Order' => array( 'order', false ), 'Kind' => array( 'kind', true ) ) );
+    }
+
+    /**
+     * The canonical address of a posted filter form: contentcheck/storage/<node id> and the view parameters.
+     *
+     * @param array $Params the view's $Params
+     * @param array $post the form (NodeID, Show, Sort, Order, Kind[], KindChoice)
+     * @return string
+     */
+    public static function canonicalURI( array $Params, array $post )
+    {
+        $get = \expContentCheck::postedInput( $post, self::FORM_FIELDS );
+        $choice = isset( $get['KindChoice'] ) && is_string( $get['KindChoice'] ) ? $get['KindChoice'] : '';
+        if ( $choice === 'all' || $choice === 'none' )
+            unset( $get['Kind'] );
+        $nodeID = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
+                                                 isset( $get['NodeID'] ) ? $get['NodeID'] : null );
+        return '/contentcheck/storage/' . (int)$nodeID . self::querySuffix( self::parameters( $get ), $choice === 'none' );
     }
 }
 

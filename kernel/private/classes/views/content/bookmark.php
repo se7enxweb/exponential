@@ -21,7 +21,8 @@ namespace Exponential\View\Kernel\Content
 
 /**
  * My bookmarks: the bookmarks of the current user grouped by folder, with a folder (folder), an order (sort), a
- * search (?q=) and paging (offset) kept in the address. What is shown is worked out by \expBookmarkPage; the folder
+ * search (/(q)/) and paging (offset) kept in the address as view parameters (a ?q= is not read; the search form is
+ * sent with POST and answered with a 303 to that address). What is shown is worked out by \expBookmarkPage; the folder
  * actions are \eZContentBrowseBookmarkFolder::handleAction(). Every POST answers with a redirect back to the same
  * folder, order and search and a notice kept in the session, so a reload never repeats an action. Only the user's
  * own bookmarks and folders are read or changed.
@@ -48,12 +49,17 @@ class Bookmark extends \Exponential\Runnable\ModuleView
         $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array) $scope['Params']['UserParameters'] : array();
         $offset = isset( $scope['Params']['Offset'] ) && is_numeric( $scope['Params']['Offset'] ) ? max( 0, (int) $scope['Params']['Offset'] ) : 0;
         $sort = \expBookmarkPage::sortKey( isset( $userParameters['sort'] ) ? $userParameters['sort'] : '' );
-        $search = \expBookmarkPage::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        $search = \expBookmarkPage::searchText( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
 
         $rows = \eZContentBrowseBookmarkFolder::fetchRowsForUser( $userID );
         $folders = \expBookmarkPage::folders( $rows );
         $scopeFolder = \expBookmarkPage::scope( isset( $userParameters['folder'] ) ? $userParameters['folder'] : '', $folders );
         $here = \expBookmarkPage::path( $scopeFolder, $sort, $search, $offset );
+
+        // the search form without scripts (POST): to the canonical address of that search
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+            return \expViewParameters::redirect( \expBookmarkPage::path( $scopeFolder, $sort,
+                                                     \expViewParameters::clean( \expViewParameters::posted( $_POST, 'q' ) ) ) );
 
         // Folder actions: one POST field says which (create, rename, delete, move_bookmark, move_folder, place, reorder).
         if ( $http->hasPostVariable( 'MoveSelectedButton' ) )
@@ -236,7 +242,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             'here' => $here,
             'base' => \expBookmarkPage::path( $scopeFolder ),
             'base_sorted' => \expBookmarkPage::path( $scopeFolder, $sort ),
-            'search_suffix' => $search !== '' ? '?q=' . rawurlencode( $search ) : '',
+            'search_suffix' => \expViewParameters::suffix( array( 'q' => $search ) ),
             'order_buttons' => $sort === 'own' && $search === '',
             'own_path' => \expBookmarkPage::path( $scopeFolder ),
             'first_last' => self::firstLast( $items ),

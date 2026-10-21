@@ -96,7 +96,7 @@ the page. (Until 6.0.15 the choice of the move and copy browse pages was not sen
 
 - the title ("Copying Fit & Healthy"), the state (Waiting, Running, Done, Failed, Cancelled), "120 of 400 nodes",
   the seconds it has run, a progress bar and the current step;
-- the last 40 lines of the worker log, updated live, and **Download the whole log** (`?log=1`);
+- the last 40 lines of the worker log, updated live, and **Download the whole log** (`/(log)/1`);
 - **Who**: the user it runs as (linked), their login, who created it on their behalf when that differs (the
   partial-copy remove, the cronjob), who cancelled or resumed it and when;
 - **What**: the operation, the source and the target with their full paths (linked), when the source was last
@@ -112,7 +112,7 @@ the page. (Until 6.0.15 the choice of the move and copy browse pages was not sen
   Exponential Velocity or the command line, the host, the pid, the system user), whether the worker is alive
   (with the age of its last heartbeat) or stalled, how many times a worker was started, and the lock it holds.
 
-The page asks `content/job/<id>?json=1` for the status every two seconds. When the job is done it opens the
+The page asks `content/job/<id>/(json)/1` for the status every two seconds. When the job is done it opens the
 result after three seconds: the new copy, the moved node in its new place, or the parent of what was removed.
 When it fails or is cancelled the page reloads to show the right buttons.
 

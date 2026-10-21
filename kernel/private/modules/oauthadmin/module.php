@@ -53,7 +53,7 @@ $ViewList['view'] = array(
 // oauthadmin/keys/(user)/<id> is one user's keys, linked from the user's settings page.
 $ViewList['keys'] = array(
     'script' => 'keys.php',
-    'unordered_params' => array( 'status' => 'Status', 'user' => 'UserID', 'offset' => 'Offset' ),
+    'unordered_params' => array( 'status' => 'Status', 'user' => 'UserID', 'offset' => 'Offset', 'q' => 'Query' ),
     'default_navigation_part' => 'ezsetupnavigationpart',
 );
 

@@ -43,7 +43,7 @@ $ViewList["templatelist"] = array(
     "script" => "templatelist.php",
     "default_navigation_part" => 'ezvisualnavigationpart',
     "params" => array( ),
-    "unordered_params" => array( "offset" => "Offset" ) );
+    "unordered_params" => array( "offset" => "Offset", "filter" => "Filter" ) );
 
 $ViewList["templateview"] = array(
     "script" => "templateview.php",

@@ -335,8 +335,9 @@
         if ( isNaN( pages ) || pages < 1 ) pages = 2500;
         if ( isNaN( depth ) || depth < 0 ) depth = 12;
 
-        var url = streamUrl + '?SiteAccess=' + encodeURIComponent( saEl ? saEl.value : '' )
-                + '&MaxPages=' + pages + '&MaxDepth=' + depth;
+        {* the options as view parameters, never a query string *}
+        var url = streamUrl + ( saEl && saEl.value ? '/(siteaccess)/' + encodeURIComponent( saEl.value ) : '' )
+                + '/(maxpages)/' + pages + '/(maxdepth)/' + depth;
 
         startBtn.disabled = true;
         stopBtn.disabled  = false;
