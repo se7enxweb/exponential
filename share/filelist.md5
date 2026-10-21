@@ -20305,7 +20305,7 @@ b9abbada4676605e209c224dfdede8a2  kernel/classes/help/exphelpcommitfeed.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 25b08aa3ec37bc6d75cf65326d1a9e49  kernel/classes/help/exphelpcontextregistry.php
-ecc3eca12cc494a581385e402b1b7ed7  kernel/classes/help/exphelpdocumentindex.php
+6a26c1fe68cda8f249197e48f0c47e03  kernel/classes/help/exphelpdocumentindex.php
 0776ecdb29ca13a41bb6b72c3cabee52  kernel/classes/help/exphelpexamplesgenerator.php
 3e79654e800bcb6b79ad95a0b8b736b5  kernel/classes/help/exphelpexamplestranslation.php
 7943d5e887c68ecec49867260aa31677  kernel/classes/help/exphelpfrontmatter.php
@@ -21832,7 +21832,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 612796f3f7de7e69cb1f941fbdc6e1b5  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-f1fb8e8752278f046f1910047aae58aa  settings/exphelp.ini
+f8ba004bd4f3f668e182d0eee51e5d91  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -23417,7 +23417,7 @@ e2fd62fa99a37861d3110313ae2b1345  tests/tests/kernel/classes/help/expHelpContent
 1a6f8d25a51abc94dc6d40460b69c1e0  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 365becf2ae6ba9d054e9fa9db6199a7e  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 3a627ccf5a875fdf097d073022a6f6fe  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
-21843fbc31b972e9bb2a126a64304746  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
+985cf720ea21f49a1577289ddd974bbb  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
 a2e86a2b851afeb667709ff2f4303754  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
 95a5d76568a80713a3816488278d36bc  tests/tests/kernel/classes/help/expHelpExtensionDocsTest.php
 ba2166460a45a76fe3478f8edaaf33ac  tests/tests/kernel/classes/help/expHelpExternalImagesTest.php

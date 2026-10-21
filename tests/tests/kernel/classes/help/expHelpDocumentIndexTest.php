@@ -15,6 +15,8 @@
  *  HX-07  the cache follows a change (signature), a stale cache entry for a file that is gone is not served
  *  HX-08  StatFilesInterval: the look at the files is reused within the interval, never after it
  *  HX-09  the allowlist stamp sees a same-size rewrite of a source file within the same second
+ *  HX-10  under Exponential Velocity's file layer (its file:// wrapper registered) the signature is the one PHP's own
+ *         stat gives, and follows an edit
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -365,6 +367,44 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         self::git( 'commit -q -m edit' );
         $this->assertNotSame( $rebuilt['signature'], self::cachedIndex( 60 )->signature(), 'a commit is seen at once' );
         $this->assertSame( self::cachedIndex( 0 )->signature(), self::cachedIndex( 60 )->signature() );
+    }
+
+    /**
+     * HX-10 under Velocity's file layer (the engine's file:// wrapper registered, as in a worker) the look at the files
+     * gives the signature PHP's own stat gives, and sees an edit. Uses the engine's wrapper when the engine has
+     * nativeStats() (Exponential Velocity 0.0.4.56): EXP_VELOCITY_ENGINE_DIR, else vendor/se7enxweb/exponential-velocity.
+     */
+    public function testSignatureUnderTheVelocityFileLayer()
+    {
+        $engine = getenv( 'EXP_VELOCITY_ENGINE_DIR' ) ?: dirname( __DIR__, 5 ) . '/vendor/se7enxweb/exponential-velocity';
+        if ( !class_exists( 'Q_WebServer_CompatFileWrapper', false ) && is_file( $engine . '/src/Q/WebServer/Compat.php' ) )
+            require_once $engine . '/src/Q/WebServer/Compat.php';
+        if ( !class_exists( 'Q_WebServer_CompatFileWrapper', false ) || !method_exists( 'Q_WebServer_CompatFileWrapper', 'nativeStats' ) )
+            $this->markTestSkipped( 'no Velocity engine with nativeStats() at ' . $engine );
+        $plain = self::index()->signature();
+        stream_wrapper_unregister( 'file' );
+        stream_wrapper_register( 'file', 'Q_WebServer_CompatFileWrapper' );
+        Q_WebServer_CompatFileWrapper::$installed = true;
+        try
+        {
+            $wrapped = self::index()->signature();
+            $file = self::$root . '/doc/eng-us/help/editing.md';
+            $edited = file_get_contents( $file ) . "\nEdited under the wrapper.\n";
+            file_put_contents( $file, $edited );
+            touch( $file, time() + 20 );
+            $after = self::index()->signature();
+            $type = stream_get_meta_data( $handle = fopen( $file, 'r' ) )['wrapper_type'];
+            fclose( $handle );
+        }
+        finally
+        {
+            stream_wrapper_restore( 'file' );
+            Q_WebServer_CompatFileWrapper::$installed = false;
+        }
+        $this->assertSame( $plain, $wrapped, 'the same signature as with PHP\'s own stat' );
+        $this->assertNotSame( $wrapped, $after, 'an edit is seen' );
+        $this->assertSame( 'user-space', $type, 'the wrapper is in place again after the look' );
+        $this->assertSame( $after, self::index()->signature(), 'and the same once the wrapper is gone' );
     }
 
     /** HX-09 a source file rewritten with the same size within the same second still changes the allowlist stamp */

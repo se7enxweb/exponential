@@ -437,16 +437,42 @@ class expHelpDocumentIndex
             if ( $checked !== null )
                 return $this->signature = $checked;
         }
+        $names = array();
         foreach ( $this->files() as $path => $file )
-        {
-            $name = $this->allowlist->rootDir() . '/' . $path;
-            $parts[] = $path . ':' . (int)@filesize( $name ) . ':' . (int)@filemtime( $name );
-        }
+            $names[$path] = $this->allowlist->rootDir() . '/' . $path;
+        foreach ( self::sizesAndTimes( $names ) as $path => $stamp )
+            $parts[] = $path . ':' . $stamp[0] . ':' . $stamp[1];
         $this->signature = sha1( implode( "\n", $parts ) );
         if ( $this->statInterval > 0 )
             $this->store( self::CHECKED_SIGNATURE_FILE, array( 'base' => $base, 'signature' => $this->signature, 'checked' => time() ),
                           self::CHECKED_SIGNATURE_FILE );
         return $this->signature;
+    }
+
+    /**
+     * The size and modification time of each file, 0 for one that cannot be read, keyed as given.
+     *
+     * Under Exponential Velocity each filesize() and filemtime() is answered by the engine's file layer (about 30
+     * microseconds, against 3 for PHP's own stat), so the look at ~9 000 help pages took 0.3 s of CPU, and up to a
+     * second under load, in whichever request found the last look too old. The engine answers a whole list with
+     * PHP's own stat when it can (Q_WebServer_CompatFileWrapper::nativeStats(), Exponential Velocity 0.0.4.56): the
+     * same numbers, in about the time PHP-FPM takes.
+     *
+     * @param array $names key => file name
+     * @return array key => array( size, mtime )
+     */
+    protected static function sizesAndTimes( array $names )
+    {
+        $out = array();
+        if ( class_exists( 'Q_WebServer_CompatFileWrapper', false ) && method_exists( 'Q_WebServer_CompatFileWrapper', 'nativeStats' ) )
+        {
+            foreach ( Q_WebServer_CompatFileWrapper::nativeStats( $names ) as $key => $stat )
+                $out[$key] = $stat ? array( (int)$stat['size'], (int)$stat['mtime'] ) : array( 0, 0 );
+            return $out;
+        }
+        foreach ( $names as $key => $name )
+            $out[$key] = array( (int)@filesize( $name ), (int)@filemtime( $name ) );
+        return $out;
     }
 
     /**
