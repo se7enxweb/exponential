@@ -24,6 +24,7 @@ ausgegraut oder gar nicht angezeigt.
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
+| [Velocity ist Teil von Exponential 6.0.15](velocity-ist-teil-von-exponential-6-0-15.md) | Wissen, was sich geändert hat, als der Velocity Internet / Web Application Server Teil von Exponential wurde: ein Wendepunkt, der Exponential zu einem einzigen funktionierenden Stack macht (Server, RAD-Plattform, CMS, Digital Experience und E-Commerce) |
 | [Erste Schritte](erste-schritte.md) | Anmelden, die ersten Schritte gehen und wissen, wo Sie Hilfe finden |
 | [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md) | Kopfzeile, Registerkarten, Seitenspalten und Dashboard kennenlernen |
 | [Anmelden im Editor](anmelden-im-editor.md) | Im Editor anmelden, der Oberfläche zum Schreiben und Veröffentlichen |

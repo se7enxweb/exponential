@@ -52,7 +52,7 @@ Release eine Sicherheitskorrektur enthält.** Vereinbaren Sie mit Ihrem Anbieter
 
 Exponential läuft auf PHP, und PHP-Versionen haben ihre eigenen Unterstützungszeiträume. Aus der Seite zur
 Release-Linie für Unternehmen: PHP 7.4 nur bis 6.0.7; PHP 8.0 ist die älteste unterstützte; 8.1 bis 8.5 werden
-unterstützt, und Exponential Velocity braucht 8.1 oder neuer. **Setup > Systeminformationen** warnt, wenn die
+unterstützt, und Exponential Velocity läuft ab seinem Release 0.0.4.54 unter 8.0 bis 8.5. **Setup > Systeminformationen** warnt, wenn die
 Sicherheitsunterstützung des laufenden PHP-Zweigs beendet ist ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 Fragen Sie Ihren Hoster, welche PHP-Versionen er anbietet und wann er eine einstellt.
 

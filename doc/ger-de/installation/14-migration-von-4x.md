@@ -61,7 +61,7 @@ einmal mit einer frischen Kopie, die gezogen wird, während sich die alte Websit
 1. **Den alten Code einfrieren.** Notieren Sie die genaue alte Version (14.3), die Liste der aktiven Extensions und
    jede Datei, die Sie im Kernel geändert haben. Kernel-Änderungen werden nicht übernommen; sie müssen zu Extensions
    oder Overrides werden.
-2. **Staging-Server.** PHP 8.0 bis 8.5 (8.1 oder neuer, wenn die Website unter Exponential Velocity laufen soll), die
+2. **Staging-Server.** PHP 8.0 bis 8.5 (auch für Exponential Velocity), die
    Datenbank-Engine, die Sie im Produktivbetrieb verwenden werden, und die Voraussetzungen aus
    [Kapitel 2](02-voraussetzungen.md).
 3. **Neuer Code.** Beziehen Sie Exponential wie in [Kapitel 3](03-den-code-beschaffen.md). Führen Sie **keinen**

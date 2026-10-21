@@ -44,7 +44,7 @@ Die Versionen von Exponential springen bei neun nicht um. Nach 6.0.9 kam 6.0.10 
 - „Nach `0.1.9` ist das nächste Release `0.1.10`; nur die letzte Stelle zählt hoch, sofern Sie nichts anderes
   entscheiden“ ([Leitfaden für Erweiterungen, Veröffentlichen](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 - „Die letzte Stelle einer Velocity-Version zählt über 9 hinaus weiter (`0.0.4.9`, `0.0.4.10`, ...)“
-  ([Den Code besorgen, das Velocity-Paket](../../installation/03-den-code-beschaffen.md#34-das-optionale-velocity-paket)).
+  ([Den Code besorgen, das Velocity-Paket](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket)).
 - „Versionen zählen in der letzten Stelle: Auf `0.0.4.9` folgt `0.0.4.10`, nie `0.0.5.0`“
   ([Release Notes von Velocity](../../../changelogs/extensions/exponential-velocity.md)).
 
@@ -82,7 +82,7 @@ Diesen begegnen Sie in `composer.json` und in Changelogs, die benötigte Pakete 
 
 | Bedingung | Bedeutet | Beispiel und Quelle |
 |---|---|---|
-| `~0.0.4.54` | `>=0.0.4.54 <0.0.5.0`, also jede spätere 0.0.4.x | Velocity, [Den Code besorgen](../../installation/03-den-code-beschaffen.md#34-das-optionale-velocity-paket) |
+| `~0.0.4.54` | `>=0.0.4.54 <0.0.5.0`, also jede spätere 0.0.4.x | Velocity, [Den Code besorgen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket) |
 | `~2.4.11` | `>=2.4.11 <2.5.0` | eztags, [Den Code besorgen](../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete) |
 | `^8.0` | PHP 8.0 oder jede spätere 8.x | Die PHP-Anforderung der Linie 6.0.15, dieselbe Seite, Abschnitt 3.1 |
 

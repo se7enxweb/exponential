@@ -262,12 +262,19 @@ On a production server, `--no-dev` is right on every PHP version: the test tools
 
 ## 3.4 The Velocity package
 
-Exponential Velocity, the recommended application server, is a separate package,
-[`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity). `composer.json`
-requires it at `~0.0.4.54`, so `composer install` installs it. From that release the engine runs on PHP 8.0 to 8.5
-(`"php": ">=8.0"`, the same oldest version as the kernel) and needs the `sockets` extension (`"ext-sockets": "*"`). Until
-0.0.4.54 the engine needed PHP 8.1, and `composer.json` only suggested it; an installation made in that time adds it
-with:
+As of 6.0.15 Exponential Velocity, the Internet / Web Application Server and the recommended engine for every
+stage, is part of Exponential. It is the package
+[`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity), and the root
+`composer.json` **requires** it (it was only suggested before 6.0.15):
+
+```json
+"se7enxweb/exponential-velocity": "~0.0.4.54"
+```
+
+Velocity 0.0.4.54 runs on PHP 8.0 and later (`"php": ">=8.0"`) and needs the `sockets` extension
+(`"ext-sockets": "*"`), so the same PHP that runs the kernel runs the server, the stock PHP 8.0 of Red Hat Enterprise
+Linux 9 included. A plain `composer install` installs it; nothing more is needed. Until 0.0.4.54 the engine needed
+PHP 8.1, and `composer.json` only suggested it; an installation made in that time adds it with:
 
 ```bash
 composer require se7enxweb/exponential-velocity:~0.0.4.54

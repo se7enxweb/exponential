@@ -51,7 +51,7 @@ einfachere Wahl.“ Bevor Sie Server hinzufügen:
 3. **Velocity** erhöht dort, wo das Hosting es erlaubt, was ein Rechner ausliefern kann
    ([Velocity für Unternehmen](velocity-fuer-unternehmen.md)). Mehrere Velocity-Instanzen können sich auf einem Rechner
    einen Port teilen; `graceful` lädt sie nacheinander neu, „damit der Port weiter antwortet“
-   ([Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md#several-qbix-servers-on-one-port-instances)).
+   ([Velocity-Engines](../../../bc/6.0/velocity-engines.md#mehrere-qbix-server-auf-einem-port-instances)).
 4. **Ein größerer Rechner**: siehe
    [Speicher, CPU und Festplatte dimensionieren](../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md).
 5. **Eine schnelle Wiederherstellung**: Für viele kleine Unternehmen ist eine getestete Wiederherstellung auf einen

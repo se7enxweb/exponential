@@ -47,7 +47,7 @@ Deployment keine Anfragen verliert“ ([README, „Using it“](https://github.c
 php bin/php/console exp:velocity graceful --allow-root-user
 ```
 
-Was jede Engine bei `graceful` tut, aus [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md#in-short):
+Was jede Engine bei `graceful` tut, aus [Velocity-Engines](../../../bc/6.0/velocity-engines.md#kurz-gesagt):
 
 | Engine | `graceful` |
 |---|---|
@@ -56,7 +56,7 @@ Was jede Engine bei `graceful` tut, aus [Velocity-Engines](../../../../eng-us/bc
 | Eingebauter Server von PHP | Neustart (nur für die Entwicklung) |
 
 Wenn sich mehrere Qbix-Instanzen einen Port teilen, „lädt `graceful` sie nacheinander neu, sodass der Port weiter
-antwortet“ ([Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md#several-qbix-servers-on-one-port-instances)). Ab
+antwortet“ ([Velocity-Engines](../../../bc/6.0/velocity-engines.md#mehrere-qbix-server-auf-einem-port-instances)). Ab
 Engine 0.0.4.50 lässt auch ein Stopp HTTP/2-Verbindungen sanft auslaufen (dieselbe Seite).
 
 Unter Apache oder Nginx mit PHP-FPM übernimmt ein sanftes Neuladen des PHP-FPM-Dienstes dieselbe Rolle; siehe
@@ -84,7 +84,7 @@ Was ein Unternehmen darüber wissen sollte:
 - Optionen decken Websites ohne Velocity (`--no-velocity`, nur Apache) und Websites ohne PHP-FPM (`--no-fpm`) ab.
 - Ein Deployment, dessen Aufrufer zwischen Stopp und Start beendet wird, schließt von selbst ab, sodass der Server nicht
   ausgefallen zurückbleibt
-  ([Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md#a-restart-or-deploy-that-is-cut-off)).
+  ([Velocity-Engines](../../../bc/6.0/velocity-engines.md#ein-abgeschnittener-neustart-oder-deploy)).
 
 ## Warum die Reihenfolge der Schritte wichtig ist
 

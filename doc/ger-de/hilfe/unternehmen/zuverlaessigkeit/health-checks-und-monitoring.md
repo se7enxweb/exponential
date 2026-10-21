@@ -97,7 +97,7 @@ Wenn die Website von Exponential Velocity ausgeliefert wird, gibt es zwei weiter
 
 - `exp:velocity status` meldet `running` nur für einen Server, der auf eine HTTP-Anfrage antwortet; Prozesse, die nicht
   antworten, werden als `not answering` gemeldet, und der Befehl endet mit einem Exit-Status ungleich null
-  ([Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md#stop-restart-and-status-of-the-qbix-engine)). Die README
+  ([Velocity-Engines](../../../bc/6.0/velocity-engines.md#stopp-neustart-und-status-der-qbix-engine)). Die README
   merkt an, dass „`status --json` für das Monitoring da ist“.
 - `/Q/health` auf dem Server „antwortet jedem mit `{"status":"ok"}`“. Das sagt Ihnen, dass der Serverprozess antwortet;
   es rendert keine Seite, behalten Sie also auch die Prüfungen von außen bei.
