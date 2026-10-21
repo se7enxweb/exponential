@@ -32,7 +32,7 @@ Diese Operatoren gehören zum aktuellen Exponential-Kernel und werden in
 
 ### installation_name
 
-Generierte Seite: [installation_name](../../../eng-us/examples/template-operators/installation_name.md).
+Generierte Seite: [installation_name](../../beispiele/template-operatoren/installation_name.md).
 
 | Parameter | Typ | Erforderlich | Standardwert |
 |---|---|---|---|
@@ -47,7 +47,7 @@ Der Wert wird einmal pro Anfrage gelesen (`ExpInstallationDetailsOutputFilter::i
 
 ### is_production_system
 
-Generierte Seite: [is_production_system](../../../eng-us/examples/template-operators/is_production_system.md).
+Generierte Seite: [is_production_system](../../beispiele/template-operatoren/is_production_system.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** `true`, wenn der Installationsname nicht leer ist und in `[SiteSettings]
@@ -55,7 +55,7 @@ Generierte Seite: [is_production_system](../../../eng-us/examples/template-opera
 
 ### exp_environment
 
-Generierte Seite: [exp_environment](../../../eng-us/examples/template-operators/exp_environment.md).
+Generierte Seite: [exp_environment](../../beispiele/template-operatoren/exp_environment.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** der Name der Umgebung aus der Konstante `EXP_ENV` (`config.env.php`, gelesen von `eZINI::environment()`)
@@ -68,7 +68,7 @@ Generierte Seite: [exp_environment](../../../eng-us/examples/template-operators/
 
 ### exp_environment_badge
 
-Generierte Seite: [exp_environment_badge](../../../eng-us/examples/template-operators/exp_environment_badge.md).
+Generierte Seite: [exp_environment_badge](../../beispiele/template-operatoren/exp_environment_badge.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** das Umgebungsabzeichen der Kopfzeile der Administration als Hash: `level`, `name`, `short`, `release`,
@@ -87,7 +87,7 @@ Das Abzeichen kommt aus `site.ini` `[AdminEnvironment]` des aktuellen Siteaccess
 
 ### audit_label
 
-Generierte Seite: [audit_label](../../../eng-us/examples/template-operators/audit_label.md).
+Generierte Seite: [audit_label](../../beispiele/template-operatoren/audit_label.md).
 
 - **Eingabe:** der Name eines Audit-Ereignisses wie `content.node.move`. **Parameter:** keine.
 - **Rückgabe:** die lesbare Bezeichnung aus der Audit-Taxonomie (`expAuditConsole::label()`), übersetzt im Kontext
@@ -99,7 +99,7 @@ und Punkte und Unterstriche durch Leerzeichen ersetzt (`expAuditTaxonomy::label(
 
 ### csp_nonce
 
-Generierte Seite: [csp_nonce](../../../eng-us/examples/template-operators/csp_nonce.md).
+Generierte Seite: [csp_nonce](../../beispiele/template-operatoren/csp_nonce.md).
 
 - **Eingabe:** keine. **Parameter:** keine.
 - **Rückgabe:** die Nonce der Content Security Policy dieser Anfrage (`expContentSecurityPolicy::templateNonce()`,
@@ -175,14 +175,15 @@ csp_nonce on admin: length 22, same on the second call: yes
 
 ## Verwandte Seiten
 
-- [Content Security Policy für Anwendungen](../../../eng-us/help/creators/app-creators/content-security-policy.md)
-- [Umgebungseinstellungen und Geheimnisse](../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Content Security Policy für Anwendungen](../ersteller/anwendungsentwickler/content-security-policy.md)
+- [Umgebungseinstellungen und Geheimnisse](../ersteller/anwendungsentwickler/umgebungseinstellungen-und-geheimnisse.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

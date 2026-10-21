@@ -31,11 +31,11 @@ Vereinigten Staaten gelten für Einrichtungen, die Bundesmittel erhalten, eigene
 [Section 508](https://www.section508.gov/) gilt für Bundesbehörden). Lernende mit Behinderungen sind auf das Intranet
 ebenso angewiesen wie auf die öffentliche Website.
 
-Status von Exponential: Administration admin4 **Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508
-**Unverified**; öffentliche Designs nicht geprüft; kein VPAT
-([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Fachbereiche, die ihre eigenen Dokumente
+Status von Exponential: Administration admin4 erfüllt WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508
+**Nicht geprüft**; öffentliche Designs nicht geprüft; kein VPAT
+([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)). Fachbereiche, die ihre eigenen Dokumente
 veröffentlichen, brauchen Schulung: barrierefreie Dokumente und Alternativtexte
-([Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+([Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 
 ## Daten und Bilder Minderjähriger
 
@@ -52,17 +52,17 @@ Schulen veröffentlichen für und über Kinder. Praxis in vielen Rechtsordnungen
 Exponential speichert, was Sie hochladen; es hat kein Einwilligungsregister für Fotos. Führen Sie die
 Einwilligungsnachweise in Ihrer Schulverwaltung und vermerken Sie im Beschreibungsfeld eines Bildes, dass eine
 Einwilligung vorliegt. Die [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj) schützt in der EU die Daten von Kindern
-besonders ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)).
+besonders ([Datenschutzstandards](../../../../standards/datenschutz.md)).
 
 ## Konten, die sich jedes Jahr ändern
 
 | Bedarf | Exponential | Lesen |
 |---|---|---|
-| Konten finden, die niemand nutzt | **Benutzer > Benutzerkonten prüfen**, Filter *Nie angemeldet*, *Seit N Tagen nicht gesehen* | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) |
+| Konten finden, die niemand nutzt | **Benutzer > Benutzerkonten prüfen**, Filter *Nie angemeldet*, *Seit N Tagen nicht gesehen* | [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md) |
 | Ausscheidende in großer Zahl deaktivieren | **Deaktivieren** an angekreuzten Konten; **Deaktivieren und verschieben** (auf Wunsch einzuschalten) in eine verborgene Gruppe ohne Rollen | dieselbe Seite |
 | Starke Anmeldung für Beschäftigte | zweistufige Anmeldung, verpflichtend einstellbar | [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Passwortregeln | `MinPasswordLength` (10), Ablauf von Passwörtern und Regeln mit ezmbpaex | [ezmbpaex](../../../../../eng-us/features/6.0/extensions/ezmbpaex.md) |
-| Entfernen eines Kontos | endgültig (Benutzerobjekte kommen nie in den Papierkorb); E-Mail-Einstellungen gelöscht | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
+| Passwortregeln | `MinPasswordLength` (10), Ablauf von Passwörtern und Regeln mit ezmbpaex | [ezmbpaex](../../../../funktionen/6.0/erweiterungen/ezmbpaex.md) |
+| Entfernen eines Kontos | endgültig (Benutzerobjekte kommen nie in den Papierkorb); E-Mail-Einstellungen gelöscht | [Datenschutzstandards](../../../../standards/datenschutz.md) |
 
 ## Sprachen
 
@@ -75,18 +75,19 @@ ihre Unterrichtssprache als Attribut tragen.
 Richtlinien, Protokolle der Gremien, Inspektionsberichte und Zulassungsregeln sind Schriftgut. Bewahren Sie die
 genehmigten Fassungen als Objekte der Klasse File mit Genehmigungsdatum auf; Versionen und das Audit-Protokoll zeichnen
 Änderungen auf der Website auf ([Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md),
-[Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)). Das förmliche Archiv ist Ihr Schriftgutverwaltungssystem.
+[Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)). Das förmliche Archiv ist Ihr Schriftgutverwaltungssystem.
 
 ## Verwandte Seiten
 
 - [Schulen und Hochschulen](README.md)
 - [Die ersten 90 Tage für Schulen und Hochschulen](die-ersten-90-tage.md)
-- [Registrierung von Mitgliedern und Mitgliederbereiche](../../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
+- [Registrierung von Mitgliedern und Mitgliederbereiche](../../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

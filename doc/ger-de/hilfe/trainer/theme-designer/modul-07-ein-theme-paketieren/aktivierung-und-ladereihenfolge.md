@@ -39,9 +39,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Ein Theme aktivieren](../../../../../eng-us/help/designers/extensions/activating-a-theme-extension.md),
-[Die Ladereihenfolge und welches Theme gewinnt](../../../../../eng-us/help/designers/extensions/loading-order-for-themes.md),
-[Die Design-Einstellungen, die ein Theme mitliefert](../../../../../eng-us/help/designers/extensions/design-settings-a-theme-ships.md) und
+Quellen: [Ein Theme aktivieren](../../../designer/erweiterungen/eine-theme-erweiterung-aktivieren.md),
+[Die Ladereihenfolge und welches Theme gewinnt](../../../designer/erweiterungen/ladereihenfolge-von-themes.md),
+[Die Design-Einstellungen, die ein Theme mitliefert](../../../designer/erweiterungen/design-einstellungen-eines-themes.md) und
 [Die Seite Extensions](../../../../anleitungen/extensions-seite.md).
 
 1. **Zwei Schalter** (3 Minuten). `site.ini [ExtensionSettings] ActiveExtensions[]` für die ganze Installation (der
@@ -128,10 +128,10 @@ Auf Ihrer eigenen Schulungsinstallation, in der Administration angemeldet mit Ih
 <summary>Antworten</summary>
 
 1. `ActiveAccessExtensions[]` in den Einstellungen dieses Siteaccess
-   ([Ein Theme aktivieren](../../../../../eng-us/help/designers/extensions/activating-a-theme-extension.md)).
+   ([Ein Theme aktivieren](../../../designer/erweiterungen/eine-theme-erweiterung-aktivieren.md)).
 2. Es würde für jeden Siteaccess gelten, in dem das Theme aktiv ist, einschließlich der Administration.
 3. **C.** `<extends>` lässt das Theme vor `base_theme` laden, sodass es gewinnt
-   ([Die Ladereihenfolge und welches Theme gewinnt](../../../../../eng-us/help/designers/extensions/loading-order-for-themes.md)).
+   ([Die Ladereihenfolge und welches Theme gewinnt](../../../designer/erweiterungen/ladereihenfolge-von-themes.md)).
 4. Sie zeigt die entstehenden Zeilen von `ActiveExtensions[]` und die Risiken, bevor etwas geschrieben wird.
 5. Nein; nur die Einstellung ändert sich.
 
@@ -140,10 +140,10 @@ Auf Ihrer eigenen Schulungsinstallation, in der Administration angemeldet mit Ih
 ## Weiterführende Literatur
 
 - [Die Seite Extensions](../../../../anleitungen/extensions-seite.md): jeder Teil von **Setup > Extensions**.
-- [Abhängigkeiten in extension.xml angeben](../../../../../eng-us/help/designers/extensions/dependencies-in-extension-xml.md).
-- [Siteaccess-Einstellungen in einem Theme](../../../../../eng-us/help/designers/extensions/siteaccess-settings-in-an-extension.md): wenn
+- [Abhängigkeiten in extension.xml angeben](../../../designer/erweiterungen/abhaengigkeiten-in-extension-xml.md).
+- [Siteaccess-Einstellungen in einem Theme](../../../designer/erweiterungen/siteaccess-einstellungen-in-einem-theme.md): wenn
   das Theme eine eigene Website mitbringt.
-- [Einstellungsdateien in einer Erweiterung](../../../../../eng-us/help/designers/extensions/settings-files-in-an-extension.md).
+- [Einstellungsdateien in einer Erweiterung](../../../designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md).
 
 ## Verwandte Seiten
 
@@ -153,9 +153,9 @@ Auf Ihrer eigenen Schulungsinstallation, in der Administration angemeldet mit Ih
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

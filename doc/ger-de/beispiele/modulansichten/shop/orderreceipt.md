@@ -14,10 +14,12 @@ Eine Ansicht des Moduls `shop`, definiert in `kernel/shop/module.php` und ausgef
 ## Adresse
 
 ```text
-/shop/orderreceipt/<Token>
+/shop/orderreceipt/<Token>/(download)/<Download>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `Token`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(download)` setzt `Download`.
 
 ## Wer sie öffnen darf
 
@@ -36,6 +38,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/shop/orderreceipt/token'|ezurl}>shop/orderreceipt</a>
+<a href={concat( '/shop/orderreceipt/token/(download)/', 1 )|ezurl}>shop/orderreceipt</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

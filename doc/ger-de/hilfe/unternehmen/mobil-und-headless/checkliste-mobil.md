@@ -101,7 +101,7 @@ zutreffenden Teile in Ihr Werkzeug zur Projektverfolgung. Jeder Punkt verlinkt d
 ## Nach dem Start
 
 - [ ] Monatlich: die Übersicht der API-Schlüssel nach nie benutzten, bald ablaufenden oder abgelehnten Schlüsseln
-      ([Steuerung, Begrenzungen und der Audit-Trail](apps-und-api-schluessel.md#steuerung-begrenzungen-und-der-audit-trail)).
+      ([Steuerung, Begrenzungen und das Prüfprotokoll](apps-und-api-schluessel.md#steuerung-begrenzungen-und-das-prüfprotokoll)).
 - [ ] Monatlich: Feed-Exporte und -Importe sind gelaufen; der Status der Syndication hat keine fehlgeschlagenen
       Einträge.
 - [ ] Nach jeder Aktualisierung: Die API-Prüfung, eine Prüfung der Feeds und der Telefontest werden wiederholt.
@@ -112,13 +112,13 @@ zutreffenden Teile in Ihr Werkzeug zur Projektverfolgung. Jeder Punkt verlinkt d
 - [Mobile Apps, Headless und Netzwerke](README.md)
 - [Checkliste für mehrere Marken](../multisite/checkliste-fuer-mehrere-marken.md)
 - [Vorlage Checkliste Go-live](../vorlagen/checkliste-go-live.md)
-- [Die Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Die Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

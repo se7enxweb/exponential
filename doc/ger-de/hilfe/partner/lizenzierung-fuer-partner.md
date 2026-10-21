@@ -17,7 +17,7 @@ Arbeit eines Partners betreffen. Sie ist keine Rechtsberatung; maßgeblich sind 
 | Was | Lizenz | Quelle |
 |---|---|---|
 | Der Code von Exponential | GNU General Public License, Version 2 oder später | LICENSE, CONTRIBUTING.md |
-| Die Dokumentation und diese Hilfe | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
+| Die Dokumentation und diese Hilfe | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
 | Der Text des Partnerprogramms | Creative Commons Attribution-ShareAlike 4.0 International (Copyright 2025 7x) | <https://exponential.earth/partner/program> |
 | Erweiterungen | Jede ihre eigene; die des Projekts stehen unter der GPL | `extension.xml` / LICENSE der jeweiligen Erweiterung |
 

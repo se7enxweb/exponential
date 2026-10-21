@@ -46,7 +46,7 @@ Quelle für alle drei: [README, How Exponential is served](https://github.com/se
 ## Woher sie stammen
 
 Die Vorher-nachher-Tabelle der Arbeit am Antwort-Cache nennt dieselben Zahlen neben ihren Ausgangswerten
-([Der Antwort-Cache](../../../eng-us/bc/6.0/response-cache-and-navigation.md#what-this-adds-up-to)):
+([Der Antwort-Cache](../../bc/6.0/antwort-cache-und-navigation.md#was-das-zusammen-ergibt)):
 
 | Messgröße | Vorher | Nachher |
 |---|---|---|
@@ -59,13 +59,13 @@ Die Vorher-nachher-Tabelle der Arbeit am Antwort-Cache nennt dieselben Zahlen ne
 
 Dieselbe Seite nennt die zwei Zahlen, zwischen denen „alles liegt“: ein Cache-Treffer von 0,36 ms und ein vollständiges
 Rendern von 1.382 ms
-([Die zwei Zahlen](../../../eng-us/bc/6.0/response-cache-and-navigation.md#the-two-numbers-everything-sits-between)). Das ist der
+([Die zwei Zahlen](../../bc/6.0/antwort-cache-und-navigation.md#die-zwei-zahlen-zwischen-denen-alles-liegt)). Das ist der
 Zusammenhang, den eine Überschrift verliert: Eine gecachte Seite und eine gerenderte Seite sind sehr verschiedene Dinge.
 
 ## Selbst messen
 
 Exponential liefert `exp:benchmark` mit, das „nichts braucht als PHP mit der curl-Erweiterung“
-([Benchmark](../../../eng-us/features/6.0/benchmark.md)). Die Beispielausgabe der Anleitung entstand auf einem
+([Benchmark](../../funktionen/6.0/benchmark.md)). Die Beispielausgabe der Anleitung entstand auf einem
 Demonstrationsserver mit „12 CPUs, geteilt mit anderer Arbeit bei einer Last von 5 bis 11“
 ([Anleitung zum Benchmarking](../../anleitungen/benchmarking.md)).
 
@@ -112,8 +112,8 @@ Die Anleitung warnt: „Ein Durchlauf auf einer ausgelasteten Maschine beweist w
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

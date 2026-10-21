@@ -50,7 +50,7 @@ schreiben.
 4. Öffnen Sie die Startseite abgemeldet und prüfen Sie, dass die Warnung erscheint. Das Veröffentlichen leert den
    Ansichts-Cache der Warnung und ihrer verwandten Seiten; wird die Startseite aus einem statischen Cache, dem
    Antwort-Cache von Velocity oder einem CDN ausgeliefert, frischen Sie diese wie geprobt auf
-   ([Caches](../../../../anleitungen/caches.md), [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md)).
+   ([Caches](../../../../anleitungen/caches.md), [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md)).
 
 ## Übersetzen
 
@@ -68,7 +68,7 @@ schreiben.
 | Eine Übersetzung weicht nach einer Aktualisierung ab | jede Sprache aktualisieren; der Reiter **Übersetzungen** zeigt, welche Sprachen es gibt |
 
 Sprachen von rechts nach links werden von der Administration und von Templates unterstützt, die `dir` setzen
-([Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)).
+([Sprachen von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md)).
 
 ## Aktualisieren
 
@@ -93,8 +93,8 @@ Schriftgut es erlauben.
 | Kanal | Einrichtung |
 |---|---|
 | RSS | ein RSS-Export des Ordners Alerts (**Setup > RSS**) für Medien und Partnerwebsites ([RSS-Feeds](../../../../anleitungen/rss-feeds.md)) |
-| E-Mail an Folgende | Personen mit einem Konto folgen dem Ordner Alerts mit **Benachrichtigen**; der Cronjob für Benachrichtigungen versendet die E-Mail ([Benachrichtigungen: der Leitfaden für Benutzer](../../../../../eng-us/features/6.0/notifications.md)) |
-| Newsletter | für langsamere Aktualisierungen ([Newsletter mit CJW Newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)) |
+| E-Mail an Folgende | Personen mit einem Konto folgen dem Ordner Alerts mit **Benachrichtigen**; der Cronjob für Benachrichtigungen versendet die E-Mail ([Benachrichtigungen: der Leitfaden für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md)) |
+| Newsletter | für langsamere Aktualisierungen ([Newsletter mit CJW Newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)) |
 | Soziale Medien | außerhalb von Exponential; auf die Adresse der Warnung verlinken |
 
 Benachrichtigungen gehen nur an Personen, die sich zum Folgen entschieden haben, nach dem nächsten Lauf der
@@ -105,12 +105,13 @@ die Ihr Land bereitstellt.
 
 - [Öffentliche Gesundheit](README.md)
 - [Rettungsdienste](../rettungsdienste/README.md)
-- [Mehrsprachige Websites](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Mehrsprachige Websites](../../../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

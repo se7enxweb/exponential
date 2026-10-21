@@ -120,6 +120,6 @@ beide den neuen Code verwenden.
 
 ## Verwandte Seiten
 
-- [Installationsanleitung, 13.11 Dateirechte und Besitz](../../../eng-us/install/13-security-hardening.md#1311-file-permissions-and-ownership)
+- [Installationsanleitung, 13.11 Dateirechte und Besitz](../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)
 - [eZINI behält Kommentare beim Speichern](ezini-behaelt-kommentare.md)
 - [exp:ini](console-exp-ini.md)

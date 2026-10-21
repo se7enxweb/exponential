@@ -28,7 +28,7 @@ Mail-Anbieters bleiben.
 ## Die drei Transporte
 
 `cjw_newsletter.ini [NewsletterMailSettings]` legt einen Transport pro Art von Mail fest
-([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#the-transports)):
+([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#die-transporte)):
 
 | Einstellung | Verwendet für | Mitgelieferter Wert |
 |---|---|---|
@@ -49,7 +49,7 @@ Versionsverwaltung“ (dieselbe Seite).
 
 Der Datei-Transport ermöglicht eine vollständige Probe: „abonnieren, Double-Opt-in, senden, Cron, abmelden“ ohne
 Mail-Server und ohne echten Empfänger
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 
 ```ini
 [NewsletterMailSettings]
@@ -79,7 +79,7 @@ Verwenden Sie Testadressen, die keinen echten Menschen erreichen können (zum Be
 ## Von der Probe zu echten Mails
 
 Folgen Sie der Reihenfolge des Leitfadens für Website-Ersteller
-([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#from-rehearsal-to-real-mail)):
+([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#von-der-probe-zur-echten-mail)):
 
 1. Proben Sie mit `file` für alle drei Methoden; lesen Sie die `.eml`-Dateien.
 2. Stellen Sie `TransportMethodPreview` auf `smtp` um und senden Sie einen Test nur an Ihre eigene Adresse.
@@ -89,7 +89,7 @@ Folgen Sie der Reihenfolge des Leitfadens für Website-Ersteller
 
 SMTP braucht `SmtpTransportServer`, `SmtpTransportPort`, `SmtpTransportUser`, `SmtpTransportPassword` und
 `SmtpTransportConnectionType` (leer, `ssl`, `sslv2`, `sslv3` oder `tls`)
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 
 ## Absenderdomain und Ruf
 
@@ -99,7 +99,7 @@ Exponential. Bitten Sie Ihren Anbieter oder Hosting-Partner, sie einzurichten un
 Server für Ihre Domain senden dürfen.
 
 Das Präfix der Betreffzeile von Newsletter-Mails ist `EmailSubjectPrefix`; leer bedeutet seit 4.1.16
-`[Newsletter <host of SiteURL>]` ([cjw_newsletter, Einstellungen, die Sie verwenden werden](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+`[Newsletter <host of SiteURL>]` ([cjw_newsletter, Einstellungen, die Sie verwenden werden](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 Die meisten Unternehmen setzen ein eigenes Präfix oder keines.
 
 ## Ratenbegrenzungen und Pakete
@@ -122,7 +122,7 @@ Ihren Anbieter nach seinen Grenzen und setzen Sie sie etwas niedriger.
 ## Die Cron-Teile
 
 Der Versand geschieht in Cron, nicht im Browser
-([Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#setting-it-up)):
+([Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#einrichten)):
 
 ```text
 */10 * * * *  cd /path/to/installation && php runcronjobs.php -q -s site cjw_newsletter
@@ -159,14 +159,14 @@ Einrichtung von Cron: [Cronjobs](../../../anleitungen/cronjobs.md).
 
 - [Newsletter für Unternehmen](README.md)
 - [Ausgaben schreiben und versenden](ausgaben-schreiben-und-versenden.md)
-- [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)
+- [Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md)
 - [Nach der Installation: Mail](../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -15,7 +15,7 @@ sich der Adapter verbinden kann, welche Schritte die Installation über die übl
 einem Kunden nennen sollten, bevor er sich dafür entscheidet, und wie Sie sichern. MongoDB ist die dritte in der
 offiziellen Reihenfolge. Quellen: [Datenbankunterstützung](../../datenbankunterstuetzung.md#3-mongodb),
 [Kapitel 9.5](../../../installation/09-datenbanken.md#95-mongodb) und
-[MongoDB als Datenbank](../../../../eng-us/features/6.0/mongodb-database-support.md).
+[MongoDB als Datenbank](../../../funktionen/6.0/mongodb-datenbankunterstuetzung.md).
 
 ## Inhalt
 
@@ -133,7 +133,7 @@ Ein vollständiges Backup enthält außerdem `var/storage`, `settings/override` 
 ## Zahlen zur Dimensionierung
 
 Die einzigen Zahlen, die das Repository für eine MongoDB-Installation nennt, stehen in Abschnitt 24.1 der
-[Referenz zur MongoDB-Portierung](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md): RAM mindestens 512 MB, empfohlen
+[Referenz zur MongoDB-Portierung](../../../bc/6.0/mongodb-kernel-unterstuetzung.md): RAM mindestens 512 MB, empfohlen
 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB. Die Leistung folgt der Anzahl der Anweisungen pro Seite; messen Sie
 eine echte Website mit `php bin/php/console exp:benchmark` ([Speicher, CPU und Festplatte dimensionieren](speicher-cpu-und-festplatte-dimensionieren.md)).
 
@@ -152,6 +152,14 @@ eine echte Website mit `php bin/php/console exp:benchmark` ([Speicher, CPU und F
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
 - [Datenbankunterstützung: MongoDB](../../datenbankunterstuetzung.md#3-mongodb)
 - [Kapitel 9.5: MongoDB](../../../installation/09-datenbanken.md#95-mongodb)
-- [MongoDB als Datenbank](../../../../eng-us/features/6.0/mongodb-database-support.md)
+- [MongoDB als Datenbank](../../../funktionen/6.0/mongodb-datenbankunterstuetzung.md)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

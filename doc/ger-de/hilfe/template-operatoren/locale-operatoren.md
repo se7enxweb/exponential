@@ -54,7 +54,7 @@ Ein unbekannter Typ protokolliert "Unknown locale type".
 | `locale` | Zeichenkette, ein Locale-Code wie `ger-DE` | nein | `false` (die Locale des Siteaccess) |
 | `param` | Zeichenkette, das Währungssymbol für `currency` | nein | `false` (das Symbol der Locale) |
 
-Gibt eine Zeichenkette zurück. Erzeugte Referenz: [l10n](../../../eng-us/examples/template-operators/l10n.md).
+Gibt eine Zeichenkette zurück. Erzeugte Referenz: [l10n](../../beispiele/template-operatoren/l10n.md).
 
 ```tpl
 {def $t = maketime( 14, 5, 0, 10, 19, 2026 )}
@@ -131,7 +131,7 @@ Die Klassen auf alpha (`datetime.ini` des Kernels; ezfind fügt `solr` hinzu, ez
 
 Legen Sie eine Klasse in `settings/datetime.ini.append.php` Ihrer Erweiterung unter `[ClassSettings]` an und
 verwenden Sie sie überall. Gibt eine Zeichenkette zurück.
-Erzeugte Referenz: [datetime](../../../eng-us/examples/template-operators/datetime.md).
+Erzeugte Referenz: [datetime](../../beispiele/template-operatoren/datetime.md).
 
 ```tpl
 {def $t = maketime( 14, 5, 0, 10, 19, 2026 )}
@@ -192,7 +192,7 @@ Unix-Zeitstempel zurück.
 | `year` | Ganzzahl | nein | jetzt |
 | `dst` | Ganzzahl | nein | nicht übergeben |
 
-Erzeugte Referenz: [maketime](../../../eng-us/examples/template-operators/maketime.md).
+Erzeugte Referenz: [maketime](../../beispiele/template-operatoren/maketime.md).
 
 ### makedate
 
@@ -205,7 +205,7 @@ Erzeugte Referenz: [maketime](../../../eng-us/examples/template-operators/maketi
 | `year` | Ganzzahl | nein | jetzt |
 | `dst` | Ganzzahl | nein | nicht übergeben |
 
-Erzeugte Referenz: [makedate](../../../eng-us/examples/template-operators/makedate.md).
+Erzeugte Referenz: [makedate](../../beispiele/template-operatoren/makedate.md).
 
 ### gettime
 
@@ -217,7 +217,7 @@ Zerlegt einen Zeitstempel in einen Hash mit den Schlüsseln `seconds`, `minutes`
 |---|---|---|---|
 | `timestamp` | Ganzzahl | nein | jetzt |
 
-Erzeugte Referenz: [gettime](../../../eng-us/examples/template-operators/gettime.md).
+Erzeugte Referenz: [gettime](../../beispiele/template-operatoren/gettime.md).
 
 ```tpl
 {def $t = maketime( 14, 5, 0, 10, 19, 2026 )
@@ -268,7 +268,7 @@ $t|gettime.hours = 2
 
 Der aktuelle Unix-Zeitstempel (`time()`). Keine Parameter, keine Eingabe. In einem Cache-Block oder auf einer Seite
 mit Ansichtscache ist der Wert die Zeit, zu der der Cache erstellt wurde.
-Erzeugte Referenz: [currentdate](../../../eng-us/examples/template-operators/currentdate.md).
+Erzeugte Referenz: [currentdate](../../beispiele/template-operatoren/currentdate.md).
 
 Das Beispiel prüft den Wert, statt ihn auszugeben, damit sich die Seite nicht jeden Tag ändert; außerdem berechnet es
 ein Alter in Tagen aus dem Veröffentlichungsdatum des Artikels Privacy Policy auf alpha (Knoten 90):
@@ -299,7 +299,7 @@ Formatierungsoperatoren.
 |---|---|---|---|
 | Locale-Code | Zeichenkette | ja, außer bei Übergabe über die Pipe | keiner |
 
-Gibt ein Objekt zurück. Erzeugte Referenz: [locale](../../../eng-us/examples/template-operators/locale.md).
+Gibt ein Objekt zurück. Erzeugte Referenz: [locale](../../beispiele/template-operatoren/locale.md).
 
 ```tpl
 {def $de = locale( 'ger-DE' )
@@ -317,15 +317,16 @@ locale( 'ger-DE' ): ger-DE, Deutsch (Deutschland), currency €
 
 ## Verwandte Seiten
 
-- [Datumsangaben, Zahlen und Lokalisierung für Designer](../../../eng-us/help/designers/templates/dates-numbers-and-l10n.md)
+- [Datumsangaben, Zahlen und Lokalisierung für Designer](../designer/vorlagen/datum-zahlen-und-l10n.md)
 - [Arithmetische Operatoren](arithmetische-operatoren.md): mit Zeitstempeln rechnen
 - [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md): `number_format`, `sprintf`
-- [Alle Template-Operatoren (erzeugt)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (erzeugt)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

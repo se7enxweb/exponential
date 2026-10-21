@@ -72,7 +72,7 @@ Aus [Kampagnen und Landingpages](kampagnen-und-landingpages.md):
 
 ## Newsletter
 
-Aus dem Bereich [Newsletter](../newsletter/README.md):
+Aus dem Bereich [Newsletter](../newsletters/README.md):
 
 - [ ] Das Versprechen an die Unterstützer ist aufgeschrieben; das Double-Opt-in ist eingeschaltet.
 - [ ] Die Probe mit dem Datei-Transport ist bestanden (alle drei Transporte auf `file`).
@@ -110,18 +110,18 @@ Aus [Betrieb mit kleinem Budget](betrieb-mit-kleinem-budget.md):
 
 ## Start
 
-- [ ] Die [Start-Checkliste](../../../../eng-us/help/creators/website-creators/launch-checklist.md) für Website-Ersteller ist bestanden.
-- [ ] HTTPS auf jedem Host ([Online gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+- [ ] Die [Start-Checkliste](../../ersteller/website-ersteller/checkliste-fuer-den-start.md) für Website-Ersteller ist bestanden.
+- [ ] HTTPS auf jedem Host ([Online gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] Die Redakteure haben die Website mit einer kurzen Anleitung übernommen
-      ([Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
-- [ ] Die Adressen der alten Website sind umgeleitet ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+      ([Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
+- [ ] Die Adressen der alten Website sind umgeleitet ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Jeden Monat
 
 - [ ] Formulareingaben sind bearbeitet, und alte werden nach Plan entfernt.
 - [ ] Spenden oder Bestellungen sind mit den Aufzeichnungen des Anbieters abgeglichen.
 - [ ] Logs und das Newsletter-Dashboard sind angesehen.
-- [ ] Konten ausgeschiedener Ehrenamtlicher sind deaktiviert ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] Konten ausgeschiedener Ehrenamtlicher sind deaktiviert ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] Updates sind geprüft; Backups sind kontrolliert.
 
 ## Abnahme
@@ -145,8 +145,8 @@ Aus [Betrieb mit kleinem Budget](betrieb-mit-kleinem-budget.md):
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -19,7 +19,7 @@ zu den wertvollsten Beiträgen: Partner sehen die Fragen, die Kunden stellen, un
 - Jede Hilfeseite hat einen Link „Auf GitHub bearbeiten“: Korrigieren Sie einen Fehler direkt mit einem Pull Request.
 - Neue Hilfeseiten sind Markdown-Dateien mit Front Matter (title, audience, category, order, summary) unter `doc/eng-us/help/`.
 - Die Dokumentation steht unter der GNU Free Documentation License 1.3 oder später; Ihr Beitrag wird es ebenfalls
-  ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+  ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).
 
 ### Was Partner gut dokumentieren können
 

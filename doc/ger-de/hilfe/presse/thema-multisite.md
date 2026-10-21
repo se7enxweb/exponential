@@ -40,7 +40,7 @@ Inhalten einer anderen.
 
 | Was | Wann | Quelle |
 |---|---|---|
-| Einstellungen pro Website in Erweiterungen; ein einziges Leeren des INI-Caches für jedes Projekt | Januar 2026 | [Einstellungen pro Website in Erweiterungen](../../../eng-us/features/6.0/multi-site-ini-overrides.md) |
+| Einstellungen pro Website in Erweiterungen; ein einziges Leeren des INI-Caches für jedes Projekt | Januar 2026 | [Einstellungen pro Website in Erweiterungen](../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) |
 | Zuordnung nach dem Anfang eines Hosts und eine Weiterleitung zur Sprache | 6. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-host-matching-by-the-start-of-a-host-and-a-redirect-to-the-language-for-addresses-without-one) |
 | Links zu Inhalten einer anderen Website einer Multisite-Installation | 13. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#13-october-2026-links-to-content-of-another-site-of-a-multisite-installation) |
 | Das Website-Menü der Administration: die anderen Websites, bei denen sich ein Benutzer anmelden darf | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-site-menu-of-the-administration) |
@@ -52,11 +52,11 @@ Die Änderungen vom Oktober gehören zur Linie 6.0.15, die nicht veröffentlicht
 | Fakt | Quelle |
 |---|---|
 | Mehrere Websites laufen aus einer Installation, jede ein Siteaccess mit eigenem Host, Pfad, eigener Sprache und eigenem Design. | [Wer ist 7x?](../wer-ist-7x.md#cms-cmf-und-shop-in-einem) |
-| Vor Januar 2026 bedeutete das Hosten von zehn Websites ein großes Einstellungsverzeichnis oder zehn Siteaccess-Verzeichnisse; jetzt bringt die Erweiterung jeder Website ihre eigenen mit. | [Einstellungen pro Website in Erweiterungen](../../../eng-us/features/6.0/multi-site-ini-overrides.md) |
-| Eine Host-Zuordnung kann `www.example.com.test.local` dem Siteaccess von `www.example.com` zuordnen (`HostMatchMethod=start`). | [Siteaccess nach Host-Präfix](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md#in-short) |
+| Vor Januar 2026 bedeutete das Hosten von zehn Websites ein großes Einstellungsverzeichnis oder zehn Siteaccess-Verzeichnisse; jetzt bringt die Erweiterung jeder Website ihre eigenen mit. | [Einstellungen pro Website in Erweiterungen](../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) |
+| Eine Host-Zuordnung kann `www.example.com.test.local` dem Siteaccess von `www.example.com` zuordnen (`HostMatchMethod=start`). | [Siteaccess nach Host-Präfix](../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md#kurz-gefasst) |
 | Die Startseite kann einmalig zu der Sprache weiterleiten, die ein Browser anfordert, und behält dabei Adresse und Abfrage bei. | ebenda |
-| Ohne die Erweiterung `ezurlmultisite` konnte ein Link zu Inhalten einer anderen Website in die falsche Website zeigen und mit 404 antworten; die Erweiterung behebt das. | [Links zu Inhalten einer anderen Website](../../../eng-us/features/6.0/multisite-cross-site-links.md#in-short) |
-| Redakteure melden sich einmal an und sehen die anderen Websites, die sie nutzen dürfen, im Website-Menü der Kopfzeile. | [Das Design admin4, Was Sie bekommen](../../../eng-us/features/6.0/admin4-design.md#what-you-get) |
+| Ohne die Erweiterung `ezurlmultisite` konnte ein Link zu Inhalten einer anderen Website in die falsche Website zeigen und mit 404 antworten; die Erweiterung behebt das. | [Links zu Inhalten einer anderen Website](../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md#kurz-gesagt) |
+| Redakteure melden sich einmal an und sehen die anderen Websites, die sie nutzen dürfen, im Website-Menü der Kopfzeile. | [Das Design admin4, Was Sie bekommen](../../funktionen/6.0/admin4-design.md#was-sie-erhalten) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -100,8 +100,8 @@ Inhalte in einem gemeinsamen Baum liegen. So kann ein Team mehrere Websites ohne
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

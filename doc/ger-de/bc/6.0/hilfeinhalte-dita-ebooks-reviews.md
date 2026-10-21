@@ -1,7 +1,7 @@
 # Hilfe als Inhalt gepflegt: DITA-Export, gespeicherte E-Books, überfällige Reviews (6.0.15)
 
 Drei Teile des Hilfe-Plans ([help-system.md](../../spezifikationen/6.0/hilfesystem.md)), die nach Phase 1 von
-[Hilfe als Inhalt gepflegt](../../../eng-us/features/6.0/help-content.md) noch offen waren, sind in 6.0.15 enthalten.
+[Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md) noch offen waren, sind in 6.0.15 enthalten.
 Diese Seite beschreibt, was sich für eine Website ändert, die sie verwendet, und was nach dem Deploy zu tun ist.
 
 ## Was sich ändert

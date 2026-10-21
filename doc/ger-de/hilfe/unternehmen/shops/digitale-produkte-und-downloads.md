@@ -35,17 +35,17 @@ verstanden, und die Möglichkeiten stehen unten.
 
 | Baustein | Was er tut | Lesen Sie |
 |---|---|---|
-| Dateifeld (`ezbinaryfile`) | Hält eine Datei an einem beliebigen Inhaltsobjekt, auch an einem Produkt | [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
+| Dateifeld (`ezbinaryfile`) | Hält eine Datei an einem beliebigen Inhaltsobjekt, auch an einem Produkt | [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md) |
 | `content/download` | Sendet eine Datei erst nach der Prüfung, ob der Besucher das Objekt lesen darf | dieselbe Seite, „How a download works“ |
-| Sektionen und Rollen | Legen fest, wer welche Inhalte lesen darf | [Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md), [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
-| Benutzergruppen | Sammeln die Kunden, die herunterladen dürfen | [Mitgliederregistrierung und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
-| Workflow-Auslöser im Shop | Führen an der Kasse einen eigenen Schritt aus | [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#workflow-triggers) |
+| Sektionen und Rollen | Legen fest, wer welche Inhalte lesen darf | [Sektionen und Objektzustände](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md), [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
+| Benutzergruppen | Sammeln die Kunden, die herunterladen dürfen | [Mitgliederregistrierung und Mitgliederbereiche](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md) |
+| Workflow-Auslöser im Shop | Führen an der Kasse einen eigenen Schritt aus | [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md#workflow-trigger) |
 | Dauerhafte Belege | Ein signierter Link zur Bestellung, jahrelang gültig | [Bestellbelege und Bestätigungsmails](bestellbelege-und-bestaetigungsmails.md) |
 
 Die Berechtigungsprüfung der Download-Ansicht bedeutet, dass eine Datei in einer Sektion nur für Mitglieder auch nur
 von Mitgliedern heruntergeladen werden kann, und Dateien dürfen nie direkt aus dem Speicherverzeichnis verlinkt
 werden, was die Prüfung umgehen würde
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads)).
 
 ## Was fehlt
 
@@ -79,9 +79,9 @@ von Hand zugewiesen werden.
 Ein Entwickler schreibt ein Workflow-Ereignis für die Kasse, das nach bestätigter Zahlung den Käufer entweder einer
 Benutzergruppe mit Lesezugriff auf die Dateien des gekauften Produkts hinzufügt oder einen signierten, zeitlich
 begrenzten Download-Link schickt (in der Idee ähnlich dem signierten Beleg-Link). Anleitung:
-[Einen Workflow-Ereignistyp schreiben](../../../../eng-us/help/creators/app-creators/writing-a-workflow-event-type.md),
-[Workflows und Ereignisse](../../../../eng-us/help/creators/app-creators/workflows-and-events.md),
-[Zugriffskontrolle im Code](../../../../eng-us/help/creators/app-creators/access-control-in-code.md).
+[Einen Workflow-Ereignistyp schreiben](../../ersteller/anwendungsentwickler/einen-workflow-ereignistyp-schreiben.md),
+[Workflows und Ereignisse](../../ersteller/anwendungsentwickler/workflows-und-ereignisse.md),
+[Zugriffskontrolle im Code](../../ersteller/anwendungsentwickler/zugriffskontrolle-im-code.md).
 
 - Gut für: Shops, in denen Downloads das Hauptgeschäft sind.
 - Bitten Sie den Entwickler, sie als Erweiterung zu veröffentlichen, damit andere sie gemeinsam mit Ihnen nutzen und
@@ -95,11 +95,11 @@ begrenzten Download-Link schickt (in der Idee ähnlich dem signierten Beleg-Link
 - Lassen Sie den Versand bei rein digitalen Bestellungen weg ([Versand und Bearbeitung](versand-und-bearbeitung.md)).
 - Nennen Sie den Kunden Format und Größe vor dem Kauf; für viele Websites ist das auch eine Anforderung der
   Barrierefreiheit
-  ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#download-links-in-templates)).
+  ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#download-links-in-templates)).
 - Große Dateien: Für Redakteure gelten die Upload-Grenzen von PHP, und sehr große Dateien liegen besser bei einem
-  Dienst, der dafür gebaut ist ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#large-files)).
+  Dienst, der dafür gebaut ist ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#große-dateien)).
 - Die Erweiterung `enhancedezbinaryfile` fügt dem Dateifeld Optionen hinzu
-  ([enhancedezbinaryfile](../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md)).
+  ([enhancedezbinaryfile](../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md)).
 
 ## Steuern auf digitale Produkte
 
@@ -119,15 +119,15 @@ Steuerberater.
 
 ## Verwandte Seiten
 
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Dateien und digitale Sammlungen](../bibliotheken/dateien-und-digitale-sammlungen.md)
 - [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

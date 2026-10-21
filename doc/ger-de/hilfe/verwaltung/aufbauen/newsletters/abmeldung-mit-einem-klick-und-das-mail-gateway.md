@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren. Jede Mail, die die Installation sendet, durchläuft das **Mail-Gateway** in
 `eZMailTransport::send()`; optionale Mails erhalten eine Fußzeile mit dem Grund und einem Abmeldelink sowie die Header
 `List-Unsubscribe` und `List-Unsubscribe-Post: List-Unsubscribe=One-Click`
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe),
+([Standards zum Datenschutz](../../../../standards/datenschutz.md#can-spam-act-und-abmeldung-mit-einem-klick),
 [E-Mail-Einstellungen für Administratoren](../../../../anleitungen/mail-einstellungen-administrator.md)).
 
 ## Inhalt
@@ -29,7 +29,7 @@ Diese Seite richtet sich an Administratoren. Jede Mail, die die Installation sen
 - Schreibt `From`, `Reply-To` oder `Subject` nie um.
 - Hält notwendige Mails (Zurücksetzen des Passworts, Aktivierung) von optionalen Mails getrennt.
 
-Der Datenschutzstandard bewertet das für Mails, die durch das Gateway gehen, als **Complies**, wobei die folgenden
+Der Datenschutzstandard bewertet das für Mails, die durch das Gateway gehen, als **Erfüllt**, wobei die folgenden
 Punkte der Site überlassen bleiben.
 
 ## Was die Site ergänzen muss
@@ -53,13 +53,14 @@ Sie mit dem Datei-Transport und Adressen auf einer reservierten Testdomain, nie 
 
 ## Verwandte Seiten
 
-- [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md)
+- [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md)
 - [Rückläufer, Sperrliste und Listenpflege](ruecklaeufer-sperrliste-und-listenpflege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

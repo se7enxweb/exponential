@@ -63,8 +63,8 @@ Manche Ergebnisse zeigen sich im System selbst. Das sind Indikatoren, die Sie be
 |---|---|
 | Unfertig liegengebliebene Entwürfe | Dashboard > Meine Entwürfe je Redaktionsmitglied ([Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)) |
 | Elemente, die lange auf eine Freigabe warten | Meine Warteliste und die Workflow-Prozesse ([Workflows](../../../../anleitungen/workflows.md)) |
-| Defekte Links und Beziehungen | Setup > URL-Verwaltung und Ungültige Relationen ([Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md)) |
-| Bilder ohne Alternativtext | eine Prüfung der veröffentlichten Inhalte; nichts in der Software zwingt die Redaktion, das Feld auszufüllen ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#known-gaps)) |
+| Defekte Links und Beziehungen | Setup > URL-Verwaltung und Ungültige Relationen ([Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md)) |
+| Bilder ohne Alternativtext | eine Prüfung der veröffentlichten Inhalte; nichts in der Software zwingt die Redaktion, das Feld auszufüllen ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#bekannte-lücken)) |
 | Wiederholte Fragen an den Servicedesk | Ihr Ticketsystem |
 
 ## Ergebnisse in einem Vertrag
@@ -98,8 +98,9 @@ Wählen Sie die Bestehensgrenze und die Zahl der Nachschulungstermine selbst; ni
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

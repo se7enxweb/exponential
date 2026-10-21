@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Anwendungsentwickler, deren Code so sicher sein soll wie der Kernel um ihn herum. Jede Regel
 nennt die Kernel-Funktion, die dabei hilft; die Standardseite ordnet sie den OWASP Top 10 zu
-([Sicherheitsstandards](../../../../eng-us/standards/security.md)).
+([Sicherheitsstandards](../../../standards/sicherheit.md)).
 
 ## Inhalt
 
@@ -29,11 +29,11 @@ nennt die Kernel-Funktion, die dabei hilft; die Standardseite ordnet sie den OWA
 | Alle Ausgaben maskieren | `|wash` in Templates | ebenda |
 | POST-Formulare schützen | `ezformtoken` | [Formulare, CSRF und HTTP-Eingaben](formulare-csrf-und-http-eingaben.md) |
 | SQL nur mit Maskierung und Typumwandlung oder `eZPersistentObject` | `escapeString()` | [Datenbankzugriff](datenbankzugriff.md) |
-| Nur innerhalb der Website weiterleiten | Prüfungen für sichere Weiterleitungen | [Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md) |
+| Nur innerhalb der Website weiterleiten | Prüfungen für sichere Weiterleitungen | [Sichere Weiterleitungen](../../../funktionen/6.0/sichere-weiterleitungen.md) |
 | Uploads über den Kernel speichern | Bild- und Datei-Datentypen; SVG-Bereinigung | [SVG-Bilder](../../../bc/6.0/svg-bilder.md) |
 | Keine Inline-Skripte oder -Styles | die Content Security Policy | [Content Security Policy für Anwendungen](content-security-policy.md) |
 | Keine Geheimnisse in Code, Nutzdaten oder Logs | `settings/override/` | [Umgebungseinstellungen und Geheimnisse](umgebungseinstellungen-und-geheimnisse.md) |
-| Sicherheitsrelevante Aktionen aufzeichnen | das Audit-Protokoll | [Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Sicherheitsrelevante Aktionen aufzeichnen | das Audit-Protokoll | [Audit-Protokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Ausgehende Anfragen nur an erlaubte Hosts | die Regel der Linkprüfung für private Netze als Vorbild | [URLs und Links](../../../anleitungen/urls-und-aliase.md) |
 
 ## Einstiegspunkte, die zu sichern sind
@@ -72,8 +72,8 @@ Erweiterung eine `SECURITY.md` mit einem vertraulichen Kontakt.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

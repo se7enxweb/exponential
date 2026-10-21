@@ -23,7 +23,7 @@ Mitgliederbereich für angemeldete Mitglieder.
 ## Die Rollen- und Richtlinienoperatoren
 
 Sieben Operatoren von `eZTemplateRoleOperator` (`lib/eztemplate/classes/eztemplateroleoperator.php`), beschrieben in
-[Rollen- und Richtlinienprüfungen in Templates](../../../../eng-us/features/6.0/role-and-policy-template-operators.md):
+[Rollen- und Richtlinienprüfungen in Templates](../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md):
 
 ```tpl
 {if $current_user|has_role( 'Editor' )} ... {/if}
@@ -81,8 +81,9 @@ Rollen des Benutzers; ein Cache-Block braucht `$current_user.role_id_list|implod
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

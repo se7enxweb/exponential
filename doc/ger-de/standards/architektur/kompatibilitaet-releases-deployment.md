@@ -67,7 +67,7 @@ braucht, um weiter zu funktionieren, oder sich ungefragt anders verhält. Insbes
 ### Bekannte Ausnahmen
 
 - **Sicherheitsstandards ohne Opt-in geändert.** Im September und Oktober 2026 wurden Sicherheitsheader,
-  Session-Cookies mit `HttpOnly` und `SameSite`, eine strengere Upload-Prüfung und neue Zugriffsanforderungen für
+  Sitzungs-Cookies mit `HttpOnly` und `SameSite`, eine strengere Upload-Prüfung und neue Zugriffsanforderungen für
   einige entfernte Dienste standardmäßig eingeschaltet
   ([Sicherheitsstandards](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),
   [Verhaltensänderungen vom 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)).

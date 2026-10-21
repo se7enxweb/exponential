@@ -13,8 +13,8 @@ Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei Hosting
 Sie beantwortet: was der Antwort-Cache speichert, welche Einstellungen entscheiden, wie frisch Seiten sind, wie Sie prüfen, dass er
 funktioniert, wie Sie ihn leeren und was Sie einem Kunden sagen, der eine alte Seite sieht. Die Quellen sind
 [Kapitel 8, Abschnitt 8.3.8](../../../installation/08-die-website-ausliefern.md#838-der-antwort-cache),
-[Antwort-Cache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md) und
-[Der Antwort-Cache, und dem Netzwerk aus dem Weg gehen](../../../../eng-us/bc/6.0/response-cache-and-navigation.md).
+[Antwort-Cache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md) und
+[Der Antwort-Cache, und dem Netzwerk aus dem Weg gehen](../../../bc/6.0/antwort-cache-und-navigation.md).
 
 ## Inhalt
 
@@ -33,7 +33,7 @@ funktioniert, wie Sie ihn leeren und was Sie einem Kunden sagen, der eine alte S
 Der Antwort-Cache hält gerenderte anonyme Seiten und beantwortet wiederholte Anfragen innerhalb des Serverprozesses, bevor ein Worker
 gewählt wird: kein Fork, kein PHP, keine Datenbank. Gemessen auf einem Host mit 12 Kernen, eine zwischengespeicherte Startseite über TLS
 mit gzip: etwa 2.950 Seiten pro Sekunde von einem Server, 11.985 von vier Servern auf einem Port
-([Antwort-Cache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md)). Er verhält sich wie ein kleiner Reverse Proxy:
+([Antwort-Cache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md)). Er verhält sich wie ein kleiner Reverse Proxy:
 
 - bedingte Anfragen werden mit `304` beantwortet, mit einem `ETag`, das aus der Seite abgeleitet ist, nicht aus der Uhr, sodass eine
   unveränderte Seite einen wiederkehrenden Browser 202 Byte Header kostet statt des ganzen Dokuments;
@@ -125,7 +125,7 @@ Herkunft aus dem eigenen Browser des Besuchers beantworten und sie im Hintergrun
 einem Sitzungscookie abgerufen wurde, keine Antwort außer 200 und nicht `/admin`, `/user`, `/explayouts_ui` und `/api`. Die Folge für
 den Support: Eine veröffentlichte Änderung erscheint beim **zweiten** Aufruf, nicht beim ersten. Der Notschalter ist, `index.js` als
 `self.registration.unregister()` auszuliefern; jeder Browser verwirft ihn innerhalb von 24 Stunden
-([Der Antwort-Cache, und dem Netzwerk aus dem Weg gehen](../../../../eng-us/bc/6.0/response-cache-and-navigation.md#added-a-navigation-cache-in-the-browser-indexjs)).
+([Der Antwort-Cache, und dem Netzwerk aus dem Weg gehen](../../../bc/6.0/antwort-cache-und-navigation.md#hinzugefügt-ein-navigations-cache-im-browser-indexjs)).
 
 ## Antworten für den Support
 
@@ -149,5 +149,13 @@ den Support: Eine veröffentlichte Änderung erscheint beim **zweiten** Aufruf, 
 - [Cache-Schichten](cache-schichten.md)
 - [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md)
 - [Velocity für Hoster](../server/velocity-fuer-hoster.md)
-- [Antwort-Cache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md)
+- [Antwort-Cache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -1,8 +1,8 @@
 # nxc_powercontent (Inhalte aus Code und REST): Chronik
 
-Powercontent wurde im Oktober 2024 für die REST-Erweiterung erweitert, im Dezember 2025 für PHP 8.5 korrigiert, erhielt im Juni 2026 Aktionen zum Kopieren und Verbergen, im Juli 2026 eine Fetch-Funktion für Klassenlisten und im Oktober 2026 eine Korrektur des PDF-Exports. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/nxc_powercontent.md).
+Powercontent wurde im Oktober 2024 für die REST-Erweiterung erweitert, im Dezember 2025 für PHP 8.5 korrigiert, erhielt im Juni 2026 Aktionen zum Kopieren und Verbergen, im Juli 2026 eine Fetch-Funktion für Klassenlisten und im Oktober 2026 eine Korrektur des PDF-Exports. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/nxc_powercontent.md).
 
-Diese Seite führt **jede der 12 Änderungen** des Repositorys `nxc_powercontent` zwischen 2024-10-29 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/nxc_powercontent.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/nxc_powercontent.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/nxc_powercontent.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 12 Änderungen** des Repositorys `nxc_powercontent` zwischen 2024-10-29 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/nxc_powercontent.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/nxc_powercontent.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/nxc_powercontent.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -75,7 +75,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/nxc_powercontent.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/nxc_powercontent.md)
 - [Release Notes](../../../changelogs/extensions/nxc_powercontent.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/nxc_powercontent.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

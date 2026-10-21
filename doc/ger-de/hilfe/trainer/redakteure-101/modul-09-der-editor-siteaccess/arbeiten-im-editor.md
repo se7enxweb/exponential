@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Anmelden im Editor](../../../anmelden-im-editor.md) und
-[Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
+[Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
 
 1. **Drei Teile einer Installation** (3 Minuten). Neue Installationen kommen mit drei Siteaccesses: der Website für
    Besucher, der Administration für Administratoren und dem **Editor** für Menschen, die Inhalte bearbeiten, die
@@ -121,7 +121,7 @@ Verwenden Sie die Adresse des Editors der Schulungsinstallation, die der Trainer
 <summary>Antworten</summary>
 
 1. Die Website, die Administration und der Editor
-   ([Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md#the-three-siteaccesses)).
+   ([Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md#die-drei-siteaccesses)).
 2. **Falsch.** Beide arbeiten mit denselben Inhalten.
 3. Zwei beliebige von: der Reiter **Layouts**, **Setup**, die Entwickler-Werkzeugleiste, Rollen, Sektionen,
    Objektzustände, Workflows.
@@ -133,7 +133,7 @@ Verwenden Sie die Adresse des Editors der Schulungsinstallation, die der Trainer
 ## Weiterführende Literatur
 
 - [Anmelden im Editor](../../../anmelden-im-editor.md): die Anmeldung im Editor.
-- [Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md):
+- [Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md):
   was der Editor zeigt und sperrt.
 
 ## Verwandte Seiten
@@ -144,9 +144,9 @@ Verwenden Sie die Adresse des Editors der Schulungsinstallation, die der Trainer
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

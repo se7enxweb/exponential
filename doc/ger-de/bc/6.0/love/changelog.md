@@ -7,7 +7,7 @@ Funktion mit ihrem LoveStack-Commit und ihrem Upgrade-Hinweis, steht im Changelo
 ## 6.0.15 (in Entwicklung)
 
 - Hinzugefügt: 36 Funktionen aus LoveStack (mugoweb/ezpublish-legacy, Commit `e61e9fdf0c` vom 23. Februar 2026), in
-  Exponential neu gebaut, mit Dank an Mugo Web: L01–L06 Sicherheit und Sessions, L07–L12 Diagnose, L13–L21 Inhalte
+  Exponential neu gebaut, mit Dank an Mugo Web: L01–L06 Sicherheit und Sitzungen, L07–L12 Diagnose, L13–L21 Inhalte
   und Administration, L22–L24 Rich-Text-Editor, L25–L31 APIs und Einstellungen für Entwickler, L32–L36 URLs und Suche
   ([Überblick](../lovestack.md#funktion-für-funktion)).
 - Hinzugefügt: Der Name der Einstellung `site.ini [Session] SameSite` von LoveStack wird gelesen, wenn

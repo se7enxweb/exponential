@@ -12,7 +12,7 @@ type: help
 Für alle, die eine öffentliche Demo von Exponential betreuen, und für alle, die den Demomodus dort finden, wo er nicht sein sollte. Der
 Demomodus ist in einem Prozess genau dann an, wenn dieser Prozess die Umgebungsvariable `EXP_DEMO_MODE` mit dem Wert `1` hat (gelesen mit
 `getenv()`, dann `$_SERVER`); es gibt nirgendwo sonst eine Einstellung dafür. Jedes Problem unten ist ein Prozess, der die Variable hat
-oder nicht hat, wenn er sie haben sollte. Hintergrund: [Demomodus](../../../../eng-us/bc/6.0/demo-mode.md).
+oder nicht hat, wenn er sie haben sollte. Hintergrund: [Demomodus](../../../bc/6.0/demomodus.md).
 
 ## Inhalt
 
@@ -39,7 +39,7 @@ Denken Sie daran, dass nur der genaue Wert `1` zählt (Leerzeichen darum werden 
 
 | Ursache | Prüfen | Abhilfe |
 |---|---|---|
-| Die Variable ist nur für Cron oder die Konsole gesetzt | keine Zeile `demo/mode` mit der SAPI des Webs | setzen Sie sie auch für den Webserver: `SetEnv` in `.htaccess` oder im virtuellen Host, im PHP-FPM-Pool, `fastcgi_param` oder in der Unit von Velocity ([Beispiele](../../../../eng-us/examples/demo-mode/README.md)) |
+| Die Variable ist nur für Cron oder die Konsole gesetzt | keine Zeile `demo/mode` mit der SAPI des Webs | setzen Sie sie auch für den Webserver: `SetEnv` in `.htaccess` oder im virtuellen Host, im PHP-FPM-Pool, `fastcgi_param` oder in der Unit von Velocity ([Beispiele](../../../beispiele/demomodus/README.md)) |
 | `SetEnv` in einer `.htaccess`, die der Server nicht liest | der Server hat `AllowOverride None`, oder die Zeile steht in der `.htaccess` eines anderen Verzeichnisses | setzen Sie sie in den virtuellen Host, oder erlauben Sie Overrides für den Document Root; mit LiteSpeed prüfen Sie, dass `.htaccess` für die Domain gelesen wird |
 | `mod_env` ist nicht geladen | der Block `<IfModule mod_env.c>` wird übersprungen | aktivieren Sie `mod_env`, oder setzen Sie die Variable im PHP-FPM-Pool |
 | PHP-FPM verwirft die Umgebung | der Master hat sie, der Pool hat `clear_env = yes` (der Standard) | `env[EXP_DEMO_MODE] = 1` im Pool, dann den Master dieses Pools neu laden |
@@ -102,9 +102,17 @@ mehr ändern, und die Installer würden ein bekanntes akzeptieren.
 
 ## Verwandte Seiten
 
-- [Demomodus: der Hinweis zum Upgrade](../../../../eng-us/bc/6.0/demo-mode.md)
+- [Demomodus: der Hinweis zum Upgrade](../../../bc/6.0/demomodus.md)
 - [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
 - [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md)
-- [Beispiele für den Demomodus](../../../../eng-us/examples/demo-mode/README.md)
+- [Beispiele für den Demomodus](../../../beispiele/demomodus/README.md)
 - [Runbooks](README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

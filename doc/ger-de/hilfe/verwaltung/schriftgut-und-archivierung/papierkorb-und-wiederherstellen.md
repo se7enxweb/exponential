@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Redaktionen und Administratoren. Das Entfernen von Inhalten verschiebt sie in Exponential
 normalerweise in den Papierkorb, aus dem sie wiederhergestellt werden können, bis er geleert wird
-([Die Ansicht des Papierkorbs](../../../../eng-us/bc/6.0/trash.md)).
+([Die Ansicht des Papierkorbs](../../../bc/6.0/papierkorb.md)).
 
 ## Inhalt
 
@@ -66,7 +66,7 @@ Das Leeren wird als `content.trash.empty` aufgezeichnet; endgültig gelöschte O
 
 Benutzerkonten: Ein Benutzerobjekt wird endgültig entfernt (`eZContentObjectTreeNode::isNodeTrashAllowed()`).
 Verabschieden Sie ausscheidende Personen stattdessen mit Deaktivieren oder mit Deaktivieren und Verschieben
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Der Papierkorb ist kein Archiv
 
@@ -76,14 +76,15 @@ Bekanntmachungen archivieren“). Ein Aufbewahrungsplan sollte festlegen, wer de
 
 ## Verwandte Seiten
 
-- [Die Ansicht des Papierkorbs](../../../../eng-us/bc/6.0/trash.md)
+- [Die Ansicht des Papierkorbs](../../../bc/6.0/papierkorb.md)
 - [Alte Bekanntmachungen archivieren](alte-bekanntmachungen-archivieren.md)
 - [Eine Seite und ihre Geschichte wiederherstellen](versionen-und-inhaltsgeschichte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

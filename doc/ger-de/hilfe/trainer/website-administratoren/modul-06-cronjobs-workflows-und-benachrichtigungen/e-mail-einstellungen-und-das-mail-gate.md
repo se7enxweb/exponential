@@ -47,7 +47,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: [E-Mail-Einstellungen: einrichten und betreiben](../../../../anleitungen/mail-einstellungen-administrator.md),
-Abschnitte 1 bis 10. Was Besucher sehen: [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md).
+Abschnitte 1 bis 10. Was Besucher sehen: [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md).
 
 1. **Die Sperre in einem Absatz** (3 Minuten). Jede E-Mail passiert `eZMailTransport::send()`. Eine E-Mail mit einer
    Kategorie wird mit den Einstellungen der Person, der Sperrliste und einem noch offenen Double-Opt-in abgeglichen.
@@ -182,9 +182,9 @@ Verwenden Sie Ihre eigene Schulungsinstallation, in einem Terminal im Wurzelverz
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

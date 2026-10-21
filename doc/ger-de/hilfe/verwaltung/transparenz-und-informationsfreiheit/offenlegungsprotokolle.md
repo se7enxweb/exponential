@@ -59,7 +59,7 @@ den Objektnamen: `<reference> <title>`.
 
 Ein Ordner „Offenlegungsprotokoll“ mit den Einträgen als Unterobjekten, sortiert nach dem Datum der Auskunft, die
 neuesten zuerst. Geben Sie der Klasse der Einträge eine Zeilenansicht, die Aktenzeichen, Titel, Datum und Ergebnis
-zeigt ([Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md)). Bei einem großen Protokoll
+zeigt ([Template-Overrides](../../ersteller/website-ersteller/template-overrides.md)). Bei einem großen Protokoll
 gruppieren Sie die Einträge in einem Ordner pro Jahr.
 
 ## Einen Eintrag veröffentlichen
@@ -79,7 +79,7 @@ gruppieren Sie die Einträge in einem Ordner pro Jahr.
   ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 - Machen Sie Titel, Zusammenfassung und Auskunft **Durchsuchbar**, damit die Suche der Website frühere Herausgaben
   findet; mit Handlern in `binaryfile.ini` kann auch der Text von PDFs indexiert werden
-  ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#searching-inside-files)).
+  ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#in-dateien-suchen)).
 - Die Suchstatistiken zeigen, wonach Menschen suchen und was sie nicht finden
   ([Suchstatistiken](../../../anleitungen/urls-und-aliase.md#5-suchstatistiken)).
 
@@ -98,8 +98,9 @@ gruppieren Sie die Einträge in einem Ordner pro Jahr.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

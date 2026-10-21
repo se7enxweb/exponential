@@ -11,11 +11,11 @@ type: help
 
 Eine Sitzung hält einen Browser angemeldet. Ein Administrator muss wissen, wie lange Sitzungen dauern, wie er sieht,
 wer angemeldet ist, wie er einen Browser nach einem Vorfall abmeldet und welche Cookie-Einstellungen verhindern, dass
-eine Sitzung gestohlen wird. Diese Lektion behandelt **Setup > Sitzungen** mit beiden Arten von Sitzungs-Handlern und
+eine Sitzung gestohlen wird. Diese Lektion behandelt **Setup > Sitzungen** mit beiden Arten von Session-Handlern und
 die Cookie-Einstellungen aus Kapitel 13.
 
 > **Hinweis**
-> Ein Wechsel des Sitzungs-Handlers meldet einmal alle ab. Tun Sie das nur auf Ihrer eigenen Schulungsinstallation.
+> Ein Wechsel des Session-Handlers meldet einmal alle ab. Tun Sie das nur auf Ihrer eigenen Schulungsinstallation.
 
 ## Auf einen Blick
 
@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Sitzungen: wer angemeldet ist und wie Sie Browser abmelden](../../../../anleitungen/sitzungen.md) und
-[Kapitel 13, 13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies).
+[Kapitel 13, 13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies).
 
 1. **Was eine Sitzung ist** (2 Minuten). Sie wird bei der ersten Anfrage geöffnet, die sie braucht, und endet
    `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung (standardmäßig 259200, also drei Tage).
@@ -167,9 +167,9 @@ Browsern (oder einem normalen und einem privaten Fenster).
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

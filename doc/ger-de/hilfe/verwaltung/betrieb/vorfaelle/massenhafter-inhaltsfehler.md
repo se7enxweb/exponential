@@ -3,7 +3,7 @@ title: Massenhafter Inhaltsfehler
 audience: government, admin, editor, project-manager
 category: public-sector
 order: 100
-summary: Runbook für einen großen Fehler im Inhalt - ein entfernter Teilbaum, eine falsche Sektion oder ein falscher Zustand auf vielen Seiten, ein misslungener Massenimport, eine zu früh veröffentlichte Ankündigung - mit dem Papierkorb, dem Versionsverlauf, Inhaltsjobs, dem Audit-Trail und als letztem Mittel einer Wiederherstellung der Datenbank.
+summary: Runbook für einen großen Fehler im Inhalt - ein entfernter Teilbaum, eine falsche Sektion oder ein falscher Zustand auf vielen Seiten, ein misslungener Massenimport, eine zu früh veröffentlichte Ankündigung - mit dem Papierkorb, dem Versionsverlauf, Inhaltsjobs, dem Prüfprotokoll und als letztem Mittel einer Wiederherstellung der Datenbank.
 keywords: Massenfehler, Massenänderung, entfernter Teilbaum, Wiederherstellung aus dem Papierkorb, falsche Sektion, falscher Zustand, Importfehler, Massenlöschung, Warnung mass_delete, Versionsverlauf, Inhaltsjobs, Datensicherung wiederherstellen, Vorfall, mass error, bulk mistake, removed subtree, trash restore, wrong section, wrong state, import error, mass delete, version history, content jobs, restore backup, incident
 type: help
 ---
@@ -28,7 +28,7 @@ Verhindern Sie zuerst weiteren Schaden und verwenden Sie dann das genaueste Werk
   verbergen Sie das Element sofort (`content/hide`) oder schalten Sie den Wartungsmodus für die ganze Website ein.
 - Wenn ein Inhaltsjob noch läuft (eine große Entfernung, Kopie oder Sektionszuweisung), können Sie ihn auf seiner
   Fortschrittsseite verfolgen; warten Sie auf ihn oder starten Sie keine neuen
-  ([Inhaltsjobs](../../../../../eng-us/features/6.0/content-jobs.md)).
+  ([Inhaltsjobs](../../../../funktionen/6.0/inhaltsauftraege.md)).
 - Bitten Sie die Redaktion, Änderungen im betroffenen Bereich zu unterbrechen.
 
 ## Genau herausfinden, was passiert ist
@@ -41,7 +41,7 @@ Verhindern Sie zuerst weiteren Schaden und verwenden Sie dann das genaueste Werk
 Das Entfernen eines Teilbaums ist ein übergeordnetes Ereignis mit einem untergeordneten Ereignis je Knoten darunter;
 ein Inhaltsjob ist das übergeordnete Ereignis von allem, was seine Stapel getan haben; die Warnung `mass_delete` wird
 ausgelöst, wenn ein Benutzer in zehn Minuten 500 Knoten entfernt
-([Audit-Trail, „Why you want it“](../../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Notieren Sie, wer, wann
+([Prüfprotokoll, „Why you want it“](../../../../funktionen/6.0/pruefprotokoll.md#warum-sie-es-wollen)). Notieren Sie, wer, wann
 und welcher oberste Knoten.
 
 ## Rückgängig machen, mit dem genauesten Werkzeug zuerst
@@ -82,8 +82,9 @@ Sie das mit den Verantwortlichen für den Dienst.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

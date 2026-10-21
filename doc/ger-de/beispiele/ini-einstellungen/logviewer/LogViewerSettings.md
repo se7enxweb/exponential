@@ -35,7 +35,7 @@ LogViewer=enabled
 
 > Die Verzeichnisse, deren Logdateien angezeigt werden, relativ zum Wurzelverzeichnis der Installation (oder absolut, aber darin).  
 > Ein \* passt auf einen Verzeichnisnamen (var/\*/log ist das Log-Verzeichnis jeder Website). Nur die Dateien direkt in einem  
-> Verzeichnis werden aufgeführt, nie seine Unterverzeichnisse (der Audit-Trail in var/log/audit hat seine eigene Konsole), und ein  
+> Verzeichnis werden aufgeführt, nie seine Unterverzeichnisse (das Prüfprotokoll in var/log/audit hat seine eigene Konsole), und ein  
 > Verzeichnis oder eine Datei, die (per realpath) außerhalb des Wurzelverzeichnisses der Installation liegt, wird nie angezeigt, sodass ein symbolischer Link  
 > nirgendwo anders hinführen kann. {log\_dir} ist das Log-Verzeichnis, in das eZDebug schreibt (var/log, oder var/<site>/log mit  
 > site.ini \[FileSettings\] UseGlobalLogDir=disabled).  

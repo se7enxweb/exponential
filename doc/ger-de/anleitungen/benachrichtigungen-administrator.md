@@ -8,7 +8,7 @@ Wurzelverzeichnis der Installation ausgeführt; ergänzen Sie `--allow-root-user
 einer Testinstallation, deren Mail-Transport auf Dateien gezwungen war, mit Testadressen unter `nottest.invalid`: Es wurde keine E-Mail gesendet.
 Namen, IDs und Zeiten weichen auf Ihrer Installation ab.
 
-Was Benutzer sehen, steht in [der Anleitung für Benutzer](../../eng-us/features/6.0/notifications.md); die Befehle vollständig in
+Was Benutzer sehen, steht in [der Anleitung für Benutzer](../funktionen/6.0/benachrichtigungen.md); die Befehle vollständig in
 [der Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md).
 
 ## 1. Wie es funktioniert, in einer Minute
@@ -71,7 +71,7 @@ fünf Minuten ein guter Standard; ein Digest wird beim ersten Lauf nach seiner S
 
 Wenn Ihre Crontab die Gruppe `frequent` bereits ausführt, ist der Benachrichtigungsteil schon enthalten; fügen Sie keine zweite Zeile hinzu.
 `./console crontab:edit` öffnet die Crontab. Die Anleitung zu Cronjobs ist [Betrieb einer Site](betrieb-einer-website.md#3-cronjobs-ausführen).
-Wenn Sie Velocity betreiben, kann dessen eigener [Scheduler](../../eng-us/features/6.0/velocity-scheduler.md) den Teil ohne den System-Cron starten.
+Wenn Sie Velocity betreiben, kann dessen eigener [Scheduler](../funktionen/6.0/velocity-zeitplaner.md) den Teil ohne den System-Cron starten.
 
 Zwei Dinge schützen vor doppelten Läufen: `runcronjobs.php` sperrt jeden Teil, und der Benachrichtigungsdienst hat eine eigene Sperre
 (Abschnitt 6), sodass sich ein Cron-Lauf, ein Konsolen-Lauf und **Jetzt ausführen** nie überschneiden. Ein zweiter Lauf wird abgewiesen, nicht in eine Warteschlange gestellt.
@@ -215,7 +215,7 @@ E-Mail verlässt den Server. Siehe [die INI-Referenz](../spezifikationen/6.0/ben
 |---|---|---|
 | Der Cronjob | der System-Cron führt `php runcronjobs.php` aus; nicht betroffen | dasselbe, oder der Velocity-Scheduler |
 | Jetzt ausführen / Vorschau | die Seite startet die PHP-Kommandozeile mit `setsid`; sie läuft als Benutzer des Pools (auf der Testinstallation: der Site-Benutzer, PHP aus der Plesk-8.5-Installation) | derselbe Code, gestartet über den eigenen Prozess-Helfer des Servers |
-| Dateien in `var/` | angelegt von dem, der ausführt: dem Benutzer des Pools für das Web, root für einen Konsolen-Lauf | Velocity läuft als root, daher gehören die Dateien, die es anlegt, root |
+| Dateien in `var/` | angelegt von dem, der ausführt: dem Benutzer des Pools für das Web, root für einen Konsolen-Lauf | Velocity läuft als root, daher gehören die Dateien, die er anlegt, root |
 | Nachdem Sie PHP-Code geändert haben | das PHP-FPM neu laden, das die Site bedient (unter Plesk: seine eigene Unit `plesk-php85-fpm`, nicht das System-`php-fpm`), dann den Inhalts-Cache leeren | Velocity neu starten (seine Worker laden Klassen einmal), dann seinen Antwort-Cache leeren |
 | Änderungen an Templates | geleert mit `php bin/php/ezcache.php --clear-all`; neue Template-Dateien erfordern zusätzlich das Leeren des Template-Override-Caches | dasselbe, dann den Antwort-Cache von Velocity leeren |
 
@@ -265,7 +265,7 @@ Redakteure können eine Korrektur veröffentlichen, ohne die Abonnenten zu infor
 2. Geben Sie den Redakteuren die Richtlinie **content / publish_without_notification** (Rollen und Richtlinien, die Redakteursrolle, Neue
    Richtlinie, Modul `content`, Funktion `publish_without_notification`). Administratoren mit `content/*` haben sie bereits.
 
-Leeren Sie den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und starten Sie Velocity neu, falls Sie es verwenden, damit die Worker die
+Leeren Sie den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und starten Sie Velocity neu, falls Sie ihn verwenden, damit die Worker die
 Einstellung lesen. Das Bearbeitungsformular und die Versionsvorschau zeigen dann **Ohne Benachrichtigung veröffentlichen** neben der Schaltfläche zum Veröffentlichen.
 Eine damit veröffentlichte Version erzeugt kein Benachrichtigungsereignis: Die Statusseite zählt kein Ereignis dafür, kein
 Abonnement sendet dafür eine E-Mail oder sammelt einen Digest-Eintrag. Freigabe-E-Mails (Zusammenarbeit) werden weiterhin gesendet, und die
@@ -291,11 +291,19 @@ IncludeClasses[]=file
 Jede andere Klasse gilt dann als ohne Benachrichtigung veröffentlicht. Eine Klassen-ID in der Liste (`IncludeClasses[]=16`) bezeichnet
 ihre Klasse ebenfalls. Der Standard (`disabled`) benachrichtigt für jede Klasse.
 
-Die ganze Geschichte: [Ohne Benachrichtigung veröffentlichen](../../eng-us/features/6.0/publish-without-notification.md).
+Die ganze Geschichte: [Ohne Benachrichtigung veröffentlichen](../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md).
 
 ## Verwandte Seiten
 
-- [Die Anleitung für Benutzer](../../eng-us/features/6.0/notifications.md), [die Anleitung für Entwickler](benachrichtigungen-entwickler.md)
+- [Die Anleitung für Benutzer](../funktionen/6.0/benachrichtigungen.md), [die Anleitung für Entwickler](benachrichtigungen-entwickler.md)
 - [Die Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md), [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md), [die Spezifikation](../spezifikationen/6.0/benachrichtigungen.md)
-- [Betrieb einer Site](betrieb-einer-website.md), [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md), [das Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md)
-- [Upgrade-Hinweise](../../eng-us/bc/6.0/notification-ui-and-commands.md)
+- [Betrieb einer Site](betrieb-einer-website.md), [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md), [das Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md)
+- [Upgrade-Hinweise](../bc/6.0/benachrichtigungen-oberflaeche-und-befehle.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

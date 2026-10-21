@@ -30,7 +30,7 @@ jedem Release; Ihr Gedächtnis nicht.
 | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) | Unterstützte Versionen, vertrauliche Meldung, „eine erste Antwort innerhalb eines Werktags“ |
 | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) | Wie man beiträgt, Commit-Nachrichten, Lizenzierung von Beiträgen |
 | [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) | Erlaubte PHP-Versionen, die benötigten Pakete |
-| [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) | Der Hinweis zur GNU FDL 1.3 der Dokumentation |
+| [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) | Der Hinweis zur GNU FDL 1.3 der Dokumentation |
 
 ## Aussagen und ihre Quellen
 
@@ -42,25 +42,25 @@ jedem Release; Ihr Gedächtnis nicht.
 | Releases und Daten | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x), [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | PHP-Versionen | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Sicherheitsprozess | [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen), [Sicherheitshärtung](../sicherheitshaertung.md) |
-| Content Security Policy | [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) |
-| Prüfprotokoll | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| Content Security Policy | [Content Security Policy](../../funktionen/6.0/content-security-policy.md) |
+| Prüfprotokoll | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
 | Zweistufige Anmeldung | [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md) |
 | Datenbanken | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Betriebssysteme, Webserver | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md) |
-| Sprachen und von rechts nach links | [Sprachen in Exponential](../../../eng-us/languages.md), [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
-| Barrierefreiheit der Administration | [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md) |
-| Velocity | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
+| Sprachen und von rechts nach links | [Sprachen in Exponential](../../sprachen.md), [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
+| Barrierefreiheit der Administration | [Das Design admin4](../../funktionen/6.0/admin4-design.md), [Die Administration gestalten](../../bc/6.0/admin4-gestaltung.md) |
+| Velocity | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 | Exponential Layouts | [Der Layouts-Editor](../layout-editor.md) |
-| Exponential Intelligence | [expai](../../../eng-us/features/6.0/extensions/expai.md) |
-| Die Hilfe | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
-| Erweiterungen und die RAD-Werkzeuge | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md) |
-| Installation mit einem Befehl | [Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Exponential Intelligence | [expai](../../funktionen/6.0/erweiterungen/expai.md) |
+| Die Hilfe | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
+| Erweiterungen und die RAD-Werkzeuge | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md) |
+| Installation mit einem Befehl | [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Upgrades und Migrationen | [Upgrade](../../installation/11-aktualisieren.md), [Migration von 4.x](../../installation/14-migration-von-4x.md) |
-| Geschichte, Monat für Monat | [Die Geschichte](../../../eng-us/history/README.md) |
+| Geschichte, Monat für Monat | [Die Geschichte](../../geschichte/README.md) |
 | Orte der Community | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 | Sponsoring | [Wie Sie unterstützen oder beitreten](../wer-ist-die-exponential-foundation.md#unterstützen-oder-mitmachen) |
 | Pull Requests werden übernommen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
-| Jeder Begriff | [Das Glossar](../../../eng-us/glossary.md) |
+| Jeder Begriff | [Das Glossar](../../glossar.md) |
 
 Für die geschäftliche Einordnung derselben Fakten: [Funktions-Highlights passend zu den Bedürfnissen der Kunden](../geschaeft/funktionshighlights-fuer-kunden.md#die-übersicht-bedürfnis-funktion-wo-zeigen-nachweis).
 
@@ -108,3 +108,11 @@ oder eröffnen Sie ein Issue im [Community-Tracker](https://github.com/se7enxweb
 - [Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md)
 - [Faktenblatt auf einer Seite](faktenblatt.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Layout-Regeln: welche Seite welches Layout bekommt](../../../../../eng-us/help/creators/website-creators/layout-rules.md) und
-[explayouts_ui: Ein Layout einer Seite zuordnen](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md#map-a-layout-to-a-page).
+Quellen: [Layout-Regeln: welche Seite welches Layout bekommt](../../../ersteller/website-ersteller/layout-regeln.md) und
+[explayouts_ui: Ein Layout einer Seite zuordnen](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md#ein-layout-einer-seite-zuordnen).
 
 1. **Der Bildschirm** (4 Minuten). **Layouts** > **Layout-Zuordnungen**: *Eine Zuordnung verbindet ein Layout mit
    Seiten: Die erste aktivierte Zuordnung nach Priorität, deren Ziele und Bedingungen zur Seite passen, gewinnt.* Jede
@@ -64,7 +64,7 @@ Quellen: [Layout-Regeln: welche Seite welches Layout bekommt](../../../../../eng
 Layout.
 
 **Ist eine unbekannte Bedingung sicher?** Nein: Ein unbekannter Bedingungstyp passt immer, sodass ein Tippfehler eine
-Regel erweitert, statt sie abzuschalten ([Layout-Regeln](../../../../../eng-us/help/creators/website-creators/layout-rules.md#conditions)).
+Regel erweitert, statt sie abzuschalten ([Layout-Regeln](../../../ersteller/website-ersteller/layout-regeln.md#bedingungen)).
 
 **Gibt es ein Ziel „route“?** Es ist deklariert, aber nicht implementiert und passt nie; verwenden Sie es nicht.
 
@@ -117,7 +117,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto. Es wird 
 
 1. Priorität; Ziele; Bedingungen.
 2. Sie folgen dem Inhalt, wenn er umbenannt oder verschoben wird; ein Pfad bricht
-   ([Layout-Regeln](../../../../../eng-us/help/creators/website-creators/layout-rules.md#targets)).
+   ([Layout-Regeln](../../../ersteller/website-ersteller/layout-regeln.md#ziele)).
 3. **B.**
 4. Er passt immer und erweitert damit die Regel.
 5. Die normalen Templates der Website, ohne Layout.
@@ -126,20 +126,20 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto. Es wird 
 
 ## Weiterführende Informationen
 
-- [Layout-Regeln: welche Seite welches Layout bekommt](../../../../../eng-us/help/creators/website-creators/layout-rules.md)
-- [Exponential Layouts: Regeln](../../../../../eng-us/bc/6.0/LAYOUTS.md#rules-deciding-which-layout-a-page-gets)
+- [Layout-Regeln: welche Seite welches Layout bekommt](../../../ersteller/website-ersteller/layout-regeln.md)
+- [Exponential Layouts: Regeln](../../../../bc/6.0/layouts.md#regeln-entscheiden-welches-layout-eine-seite-erhält)
 
 ## Verwandte Seiten
 
 - [Modul 7: Zuordnungsregeln](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

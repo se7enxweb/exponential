@@ -36,12 +36,12 @@ Siehe „Tastatur und Fokus“.
 
 | Rolle | Tut |
 |---|---|
-| Administration | wägt die Sitzungsdauer aus Sicherheitsgründen gegen Menschen ab, die langsam arbeiten: `site.ini [Session] SessionTimeout` (ab Werk 259200 s) ([13.7](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)) |
+| Administration | wägt die Sitzungsdauer aus Sicherheitsgründen gegen Menschen ab, die langsam arbeiten: `site.ini [Session] SessionTimeout` (ab Werk 259200 s) ([13.7](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)) |
 | Design | Slider und Karussells lassen sich anhalten; kein automatisches Neuladen der Seite |
 | Redaktion | keine Inhalte, die sich von selbst bewegen, ohne Steuerung zum Anhalten |
 
 Abgelaufene Formulare zeigen die Seite „Formular abgelaufen“
-([Seite „Formular abgelaufen“](../../../../eng-us/features/6.0/form-expired-page.md)).
+([Seite „Formular abgelaufen“](../../../funktionen/6.0/seite-abgelaufenes-formular.md)).
 
 ## 2.3 Anfälle und körperliche Reaktionen
 
@@ -79,8 +79,9 @@ von Unterelementen per Ziehen funktioniert auch mit der Tastatur und durch Bearb
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

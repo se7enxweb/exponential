@@ -71,15 +71,16 @@ installieren Sie die Zeile der Crontab, die **Setup > Cronjobs** vorschlägt
 Änderungsnachweis: Name des Workflows, Einstellungen des Ereignisses, Auslöser, Testergebnis und Datum.
 
 ## Verwandte Seiten
-- [Das Ereignis Approve einrichten](../../../../../eng-us/help/government/operations/editorial-workflows/setting-up-the-approve-event.md)
-- [Überblick über Freigabe-Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/approval-workflows-overview.md)
-- [Fehlersuche bei Workflows](../../../../../eng-us/help/government/operations/editorial-workflows/workflow-troubleshooting.md)
+- [Das Ereignis Approve einrichten](../../betrieb/redaktionelle-workflows/das-freigabe-ereignis-einrichten.md)
+- [Überblick über Freigabe-Workflows](../../betrieb/redaktionelle-workflows/freigabe-workflows-im-ueberblick.md)
+- [Fehlersuche bei Workflows](../../betrieb/redaktionelle-workflows/workflow-fehlerbehebung.md)
 - [Anleitung zu den Workflows](../../../../anleitungen/workflows.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -44,7 +44,7 @@ listet auf, wo personenbezogene Daten liegen.
 | Handhabung technischer Schwachstellen | Aktualisierungsnachweise, `composer audit` | Patch-Nachweise |
 | Integrität der Software | Dateikonsistenzprüfung | Bericht der Upgrade-Prüfung, Ausgabe von `verifyfiles.sh` |
 | Datensicherung | Nachweise über Sicherung und Wiederherstellung | Betriebsnachweise |
-| Sichere Entwicklung | die Tests und Härtungshinweise des Projekts; Ihre eigenen Code-Reviews | [Sicherheitsstandards: Tests und CI](../../../../eng-us/standards/security.md#tests-and-ci) |
+| Sichere Entwicklung | die Tests und Härtungshinweise des Projekts; Ihre eigenen Code-Reviews | [Sicherheitsstandards: Tests und CI](../../../standards/sicherheit.md#tests-und-ci) |
 | Löschung von Informationen | Aufbewahrung von Protokollen, Audit, Einwilligungsprotokoll | Aufbewahrungseinstellungen (siehe den Datenschutzbereich) |
 
 ## Lieferanten
@@ -56,14 +56,15 @@ Support bei 7x oder einem Partner einkaufen ([Wer ist 7x](../../wer-ist-7x.md)).
 
 ## Verwandte Seiten
 
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Die Sicherheitslage von Exponential auf einen Blick](sicherheitslage-auf-einen-blick.md)
 - [Sicherheits-Checkliste vor dem Go-live öffentlicher Websites](sicherheits-checkliste-vor-dem-go-live.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

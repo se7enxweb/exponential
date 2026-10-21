@@ -40,14 +40,14 @@ die die Site betreiben werden, übernehmen können. Kurs: [Site-Administration](
 4. **Stellen Sie eine Laborumgebung bereit** mit derselben Version von Exponential wie Ihre Site
    ([Kurzkarte zum Labor](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md)).
 5. **Buchen Sie den Trainer**: Ihren eigenen Trainer, einen Partner oder 7x
-   ([Schulungen bei einem Partner einkaufen](../../../../../eng-us/help/government/procurement/training/buying-training-from-a-partner.md)).
+   ([Schulungen bei einem Partner einkaufen](../../beschaffung/schulung/schulung-bei-einem-partner-einkaufen.md)).
 6. **Prüfen Sie**: der schriftliche Test und die praktische Aufgabe für Site-Administratoren
    ([Praktische Aufgabe für Site-Administratoren](../../../trainer/pruefungen/modul-03-administrationskurse/website-administratoren-praktische-aufgabe.md)).
 7. **Übergeben Sie die Rolle**: nach dem Kurs die Administratorrolle, mit zweistufiger Anmeldung, wo Ihre Site sie
    verwendet ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)); gehen Sie die Betriebsroutine gemeinsam
    durch ([Eine Site betreiben](../../../../anleitungen/betrieb-einer-website.md)).
 8. **Planen Sie den Folgekurs**, wenn sie auch Server betreiben
-   ([Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md)).
+   ([Hosting und Betrieb](../../../trainer/hosting-betrieb/README.md)).
 
 ## Ergebnis
 
@@ -63,13 +63,14 @@ Lieferanten.
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Rollen und Kurse](../../../../../eng-us/help/government/procurement/training/roles-to-courses.md)
-- [Schulungsergebnisse messen](../../../../../eng-us/help/government/procurement/training/measuring-training-results.md)
+- [Rollen und Kurse](../../beschaffung/schulung/rollen-und-kurse.md)
+- [Schulungsergebnisse messen](../../beschaffung/schulung/schulungsergebnisse-messen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

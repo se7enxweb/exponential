@@ -312,7 +312,7 @@ Wurzelverzeichnis genau wie `extension/`:
 
 ## Verwandte Seiten
 
-- [Zusätzliche Erweiterungsverzeichnisse (Funktion)](../../../eng-us/features/6.0/additional-extension-directories.md)
+- [Zusätzliche Erweiterungsverzeichnisse (Funktion)](../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md)
 - [Spezifikation: Metadaten von Erweiterungen](../../spezifikationen/6.0/extension-metadaten.md)
 - [Spezifikation: Verzeichnisse und Platzierungen von INI-Overrides](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Erweiterungen: Verhaltensänderungen](verhaltensaenderungen-von-erweiterungen.md)

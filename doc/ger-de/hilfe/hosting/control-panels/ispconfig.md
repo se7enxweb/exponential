@@ -81,7 +81,7 @@ darauf verlassen ([8.6](../../../installation/08-die-website-ausliefern.md#86-ng
 `open_basedir`; die Seite Cronjobs braucht `proc_open`, `exec` und `posix_kill` für ihre Funktionen zum Starten, zur Crontab und zum
 Anhalten ([Cronjobs, Bevor Sie beginnen](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen)); ezupdate sucht Composer zuerst unterhalb
 des Wurzelverzeichnisses der Installation, weil `open_basedir` Systemordner verbergen kann
-([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md)).
+([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md)).
 
 ## Ein Testplan
 
@@ -113,3 +113,11 @@ Wenn alles besteht, teilen Sie es dem Projekt mit, damit ISPConfig in eine Stufe
 - [nginx mit PHP-FPM](../server/nginx-mit-php-fpm.md), [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
 - [Anforderungen auf einen Blick](../grundlagen/anforderungen-auf-einen-blick.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

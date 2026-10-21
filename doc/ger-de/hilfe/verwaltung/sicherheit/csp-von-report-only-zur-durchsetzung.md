@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratorinnen und Administratoren sowie Entwicklerinnen und Entwickler, die die
 Content Security Policy von einem Berichtswerkzeug zu einem Schutz machen. Das Durchsetzen ist eine Entscheidung je
 Siteaccess, getroffen nach einer Prüfung; das schrittweise Vorgehen des Projekts steht unter
-[Schritt für Schritt auf enforce umstellen](../../../../eng-us/features/6.0/content-security-policy.md#switching-to-enforce-step-by-step).
+[Schritt für Schritt auf enforce umstellen](../../../funktionen/6.0/content-security-policy.md#schritt-für-schritt-auf-enforce-umstellen).
 Diese Seite macht daraus einen Plan mit Meilensteinen, der zum Änderungsprozess einer öffentlichen Stelle passt.
 
 ## Inhalt
@@ -93,19 +93,20 @@ durchgesetzten Richtlinie, die Inline-Stile noch erlaubt.
 
 Setzen Sie im Siteaccess `Mode=report-only`, leeren Sie den INI-Cache, laden Sie PHP-FPM neu und starten Sie Velocity
 neu. Sonst ändert sich nichts
-([Durchsetzen: Rückfall](../../../../eng-us/features/6.0/content-security-policy.md#enforcing-nonce-more-sources-a-stricter-companion-rollback)).
+([Durchsetzen: Rückfall](../../../funktionen/6.0/content-security-policy.md#durchsetzen-nonce-weitere-quellen-ein-strengerer-begleiter-rückkehr)).
 Schreiben Sie den Rückfall in Ihren Änderungsantrag, bevor Sie durchsetzen.
 
 ## Verwandte Seiten
 
-- [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)
 - [Content Security Policy für öffentliche Websites](content-security-policy.md)
 - [Routine zur Protokollprüfung](routine-zur-protokollpruefung.md) (das CSP-Protokoll gehört dazu)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

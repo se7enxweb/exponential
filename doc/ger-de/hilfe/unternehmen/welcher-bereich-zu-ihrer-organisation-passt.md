@@ -41,22 +41,22 @@ Aufwand jeder braucht.
 
 | Sie | Hauptbereich | Oft auch |
 |---|---|---|
-| Verkaufen physische oder digitale Produkte | [Online-Shops](shops/README.md) | [Newsletter](newsletter/README.md), [Mobil und headless](mobil-und-headless/README.md) |
-| Geben einen Newsletter oder ein Magazin heraus | [Newsletter](newsletter/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
+| Verkaufen physische oder digitale Produkte | [Online-Shops](shops/README.md) | [Newsletter](newsletters/README.md), [Mobil und headless](mobil-und-headless/README.md) |
+| Geben einen Newsletter oder ein Magazin heraus | [Newsletter](newsletters/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
 | Verleihen, verzeichnen oder archivieren Objekte | [Bibliotheken und Kataloge](bibliotheken/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
-| Sammeln Spenden und organisieren Ehrenamtliche | [Gemeinnützige Organisationen](gemeinnuetzige/README.md) | [Newsletter](newsletter/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
+| Sammeln Spenden und organisieren Ehrenamtliche | [Gemeinnützige Organisationen](gemeinnuetzige/README.md) | [Newsletter](newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
 | Führen einen Verein oder einen Berufsverband | [Mitgliederwebsites](mitglieder/README.md) | [Kleine Gruppen und Vereine](vereine/README.md) |
 | Informieren und unterstützen Mitarbeiter | [Intranets](intranets/README.md) | [Sicherheit](sicherheit/README.md) |
 | Arbeiten mit Händlern, Lieferanten oder Kunden hinter einer Anmeldung | [Extranets und Partnerportale](extranets/README.md) | [Intranets](intranets/README.md) |
 | Führen mehrere Marken oder Länder | [Marken mit Multisite](multisite/README.md) | [Mehrsprachige Unternehmen](mehrsprachig/README.md) |
 | Versorgen eine App oder andere Systeme mit Inhalten | [Mobil und headless](mobil-und-headless/README.md) | [Zuverlässigkeit](zuverlaessigkeit/README.md) |
-| Dienen als Behörde der Öffentlichkeit | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) | [Sicherheit](sicherheit/README.md) |
+| Dienen als Behörde der Öffentlichkeit | Der eigene Bereich [Behörden](../verwaltung/verwaltungen-hier-beginnen.md) | [Sicherheit](sicherheit/README.md) |
 
 ## Zuordnung nach den Nutzern der Website
 
 | Nutzer | Was sie braucht | Lesen |
 |---|---|---|
-| Anonyme Besucher | Schnelle Seiten, Suche, gute URLs | [Zuverlässigkeit](zuverlaessigkeit/README.md), [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) |
+| Anonyme Besucher | Schnelle Seiten, Suche, gute URLs | [Zuverlässigkeit](zuverlaessigkeit/README.md), [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md) |
 | Kunden mit einem Konto | Registrierung, Bestellhistorie, Datenschutz | [Kundenkonten und Gastbestellung](shops/kundenkonten-und-gastbestellung.md), [DSGVO-Grundlagen](sicherheit/dsgvo-grundlagen.md) |
 | Mitarbeiter | Rollen pro Abteilung, Freigabe, Suche | [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md) |
 | Partner | Freigegebene Registrierung, getrennte Bereiche | [Registrierung und Kontofreigabe](extranets/registrierung-und-kontofreigabe.md) |
@@ -75,9 +75,9 @@ Das sind Muster, keine Berichte über echte Kunden.
 
 | Muster | Bereiche in dieser Reihenfolge |
 |---|---|
-| Ein kleiner Shop, der wächst | [Shops](shops/README.md), [Newsletter](newsletter/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md), dann [Mobil und headless](mobil-und-headless/README.md) |
+| Ein kleiner Shop, der wächst | [Shops](shops/README.md), [Newsletter](newsletters/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md), dann [Mobil und headless](mobil-und-headless/README.md) |
 | Ein Unternehmen mit öffentlicher Website, Intranet und Partnerportal auf einer Installation | [Intranets](intranets/README.md), [Extranets](extranets/README.md), [Marken mit Multisite](multisite/README.md), [Sicherheit](sicherheit/README.md) |
-| Eine Mitgliederorganisation | [Mitgliederwebsites](mitglieder/README.md), [Newsletter](newsletter/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
+| Eine Mitgliederorganisation | [Mitgliederwebsites](mitglieder/README.md), [Newsletter](newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
 | Eine Marke, die in mehreren Ländern verkauft | [Marken mit Multisite](multisite/README.md), [Mehrsprachige Unternehmen](mehrsprachig/README.md), [Shops](shops/README.md) |
 | Eine Bibliothek oder ein Archiv mit öffentlichem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md), [Zuverlässigkeit](zuverlaessigkeit/README.md) |
 
@@ -109,8 +109,8 @@ Anforderungen besser dazu passen, lesen Sie [Was Exponential ist: die Produktfam
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

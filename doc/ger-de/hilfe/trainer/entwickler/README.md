@@ -66,9 +66,9 @@ Für einen Trainer, der diesen Kurs vorbereitet, in dieser Reihenfolge:
    und [8](../../../installation/08-die-website-ausliefern.md) des Installationsbuchs.
 4. [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md) und
    [Templates und Design](../../../anleitungen/templates-und-design.md).
-5. [Erweiterungen](../../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md) und das Buch
+5. [Erweiterungen](../../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md) und das Buch
    [Erweiterungsentwicklung](../../erweiterungsentwicklung/README.md).
-6. [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md) und [Programmierrichtlinien](../../../../eng-us/standards/coding-standards.md).
+6. [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md) und [Programmierrichtlinien](../../../standards/programmierstandards.md).
 7. Die Module 1 bis 13 der Reihe nach; bauen Sie das Stück jedes Moduls auf Ihrer eigenen Entwicklungsinstallation,
    bevor Sie es unterrichten.
 
@@ -81,9 +81,9 @@ Für einen Trainer, der diesen Kurs vorbereitet, in dieser Reihenfolge:
 | Schnellkurs für Agenturen (vier Tage) | Module 1, 2, 3, 4, 7, 8 und 13; der Rest im Selbststudium |
 | Wöchentliche Abende | Ein Modul pro Woche |
 
-Für kürzere Formate siehe den [Entwicklertag](../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/developers-day.md), das
-[dreitägige Entwickler-Bootcamp](../../../../eng-us/help/trainers/workshops/module-03-three-day-bootcamps/developer-bootcamp.md) und die
-[Full-Stack-Entwicklerwoche](../../../../eng-us/help/trainers/workshops/module-04-five-day-bootcamps/full-stack-developer-week.md).
+Für kürzere Formate siehe den [Entwicklertag](../workshops/modul-02-eintaegige-programme/tag-fuer-entwickler.md), das
+[dreitägige Entwickler-Bootcamp](../workshops/modul-03-dreitaegige-bootcamps/entwickler-bootcamp.md) und die
+[Full-Stack-Entwicklerwoche](../workshops/modul-04-fuenftaegige-bootcamps/full-stack-entwicklerwoche.md).
 
 ## Die Teilnehmenden prüfen
 
@@ -100,9 +100,9 @@ Material des Trainers, keine offizielle Zertifizierung; die Zertifizierungen des
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

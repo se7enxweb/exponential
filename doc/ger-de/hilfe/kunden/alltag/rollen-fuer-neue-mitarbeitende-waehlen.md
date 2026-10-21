@@ -40,7 +40,7 @@ eine Sektion, einen Teilbaum oder eine Sprache einschränken lässt ([Rollen und
 | Freigebende Person oder Chefredaktion | in die Gruppe der freigebenden Personen des Freigabe-Workflows aufgenommen | die betroffenen Sektionen des Workflows ([Workflows](../../../anleitungen/workflows.md)) |
 | Übersetzer oder Agentur | eine Übersetzerrolle | Bearbeiten, Übersetzen und Anlegen nach Sprache eingeschränkt ([Übersetzungs-Workflow](../../unternehmen/mehrsprachig/uebersetzungsablauf.md)) |
 | Person, die Kontaktformulare beantwortet | eine Rolle mit `infocollector/read` | sonst nichts ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) |
-| Shop-Personal | eine Shop-Rolle, die Ihr Partner eingerichtet hat | der Teil des Baums, der zum Shop gehört ([Shop-Dashboard](../../../../eng-us/features/6.0/store-dashboard.md)) |
+| Shop-Personal | eine Shop-Rolle, die Ihr Partner eingerichtet hat | der Teil des Baums, der zum Shop gehört ([Shop-Dashboard](../../../funktionen/6.0/shop-dashboard.md)) |
 | Vorübergehende Hilfe | die kleinste der obigen | ein Enddatum in Ihren eigenen Notizen, siehe [Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md) |
 
 > **Tipp**
@@ -56,7 +56,7 @@ eine Sektion, einen Teilbaum oder eine Sprache einschränken lässt ([Rollen und
 - **Kontenüberprüfung** (`user/hygiene`) und **Prüfprotokoll**-Richtlinien: Lassen Sie diese bei der Person, die die
   Konten verwaltet, und beim Eigentümer.
 - **Geteilte Konten.** Ein persönliches Konto pro Person; keine geteilten Anmeldungen
-  ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+  ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Die Anfrage schreiben
 
@@ -81,3 +81,11 @@ Bewahren Sie die Anfrage auf: Sie ist der Nachweis, mit dem Sie bei der jährlic
 - [Neue Mitarbeitende einarbeiten](neue-mitarbeitende-einarbeiten.md)
 - [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

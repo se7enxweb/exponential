@@ -67,7 +67,7 @@ Längen. Die Datentypen des Kernels wurden im September 2026 auf dieselbe Weise 
 Ein Weiterleitungsziel aus einem Formularfeld, der Sitzung oder der Adresse kann einen Besucher auf eine andere Website
 schicken. Verwenden Sie die Regeln des Kernels: `eZRedirectManager` (`kernel/classes/ezredirectmanager.php`) wählt ein
 sicheres Ziel für „zurück“ (`redirectTo()`, `returnURI()`), und seine Regeln gelten für jedes Ziel, das nicht aus dem
-Code selbst stammt. Siehe [Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md).
+Code selbst stammt. Siehe [Sichere Weiterleitungen](../../../funktionen/6.0/sichere-weiterleitungen.md).
 
 ## 7. Dateien und Pfade
 
@@ -114,8 +114,8 @@ an deren Betreuer; für den Kernel und die se7enxweb-Erweiterungen nennt `SECURI
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

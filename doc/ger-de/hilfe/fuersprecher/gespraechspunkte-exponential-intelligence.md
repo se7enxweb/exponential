@@ -31,21 +31,21 @@ angemeldete redaktionelle Person und mit deren eigenen Rechten“, und der nie s
 
 | Sagen Sie | Quelle |
 |---|---|
-| „Es schreibt nur Entwürfe. Es veröffentlicht nie selbst.“ | [expai, Kurz gesagt](../../../eng-us/features/6.0/extensions/expai.md#in-short) |
+| „Es schreibt nur Entwürfe. Es veröffentlicht nie selbst.“ | [expai, Kurz gesagt](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt) |
 | „Es arbeitet als die angemeldete redaktionelle Person, mit deren Rechten; es kann nichts tun, was diese Person nicht darf.“ | ebenda |
-| „**Send for approval** führt den normalen Veröffentlichungsvorgang aus, sodass ein Freigabe-Workflow die Version zurückhält.“ | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
-| „Sie wählen den Anbieter: gehostete Dienste in den USA oder der EU oder ein lokales Modell mit offenen Gewichten.“ | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence), [expai, Kurz gesagt](../../../eng-us/features/6.0/extensions/expai.md#in-short) |
+| „**Send for approval** führt den normalen Veröffentlichungsvorgang aus, sodass ein Freigabe-Workflow die Version zurückhält.“ | [expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
+| „Sie wählen den Anbieter: gehostete Dienste in den USA oder der EU oder ein lokales Modell mit offenen Gewichten.“ | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence), [expai, Kurz gesagt](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt) |
 | „Eine neue Installation aktiviert es, aber es sendet nichts irgendwohin, bis Sie einen Anbieterschlüssel hinzufügen.“ | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence) |
-| „Es kann Alternativtext für Bilder vorschlagen und Bilder melden, denen er fehlt.“ | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
+| „Es kann Alternativtext für Bilder vorschlagen und Bilder melden, denen er fehlt.“ | [expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
 | „Jeder Klick zeigt das Modell, die Region und die Kosten.“ | ebenda |
 
 ## Punkte für Skeptiker
 
 | Bedenken | Antwort | Quelle |
 |---|---|---|
-| „KI veröffentlicht Unsinn.“ | Nur Entwürfe; ein Mensch veröffentlicht; Workflows gelten weiterhin | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
+| „KI veröffentlicht Unsinn.“ | Nur Entwürfe; ein Mensch veröffentlicht; Workflows gelten weiterhin | [expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
 | „Unsere Daten verlassen das Haus.“ | Nichts wird gesendet, bis ein Anbieterschlüssel hinzugefügt ist; ein lokales Modell ist möglich | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence) |
-| „Wir wollen überhaupt keine KI.“ | Administratoren können es abschalten; lesen Sie zuerst die Funktionsseite | [expai, Für Administratoren](../../../eng-us/features/6.0/extensions/expai.md#for-administrators) |
+| „Wir wollen überhaupt keine KI.“ | Administratoren können es abschalten; lesen Sie zuerst die Funktionsseite | [expai, Für Administratoren](../../funktionen/6.0/erweiterungen/expai.md#für-administratoren) |
 | „Wer ist für den Text verantwortlich?“ | Die redaktionelle Person, die ihn veröffentlicht, wie bei jedem Text | Die Richtlinie Ihrer Organisation |
 
 Für Organisationen hat die Seite des Vertriebs eine ausführlichere Tabelle:
@@ -71,6 +71,14 @@ Für Organisationen hat die Seite des Vertriebs eine ausführlichere Tabelle:
 ## Verwandte Seiten
 
 - [Einwand: „Was ist mit den KI-Funktionen?“](einwand-ki-funktionen.md)
-- [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md)
+- [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md)
 - [Gesprächspunkte für Redakteure](gespraechspunkte-fuer-redakteure.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

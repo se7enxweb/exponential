@@ -35,9 +35,9 @@ ShowTemplatePathComments=enabled
 ```
 
 Die Debug-Leiste zeigt Abfragen, verwendete Templates, Einstellungen, Laufzeiten und Caches der Seite
-([Exp-Debug-Leiste](../../../../eng-us/features/6.0/exp-debug-bar.md), [Debug-Leiste](../../../bc/6.0/debug-leiste.md)). Kommentare zu
+([Exp-Debug-Leiste](../../../funktionen/6.0/exp-debug-leiste.md), [Debug-Leiste](../../../bc/6.0/debug-leiste.md)). Kommentare zu
 Template-Pfaden zeigen, welche Datei welches Markup geschrieben hat
-([Kommentare zu Template-Pfaden](../../../../eng-us/features/6.0/template-path-comments.md)). Aktivieren Sie die Debug-Ausgabe nie
+([Kommentare zu Template-Pfaden](../../../funktionen/6.0/template-pfad-kommentare.md)). Aktivieren Sie die Debug-Ausgabe nie
 in einem Siteaccess der Produktivumgebung; sie kann Interna zeigen.
 
 ## Debug- und Logzeilen schreiben
@@ -62,9 +62,9 @@ Tokens oder personenbezogene Daten.
 | `var/log/security.log` | Sicherheitsereignisse |
 | Ihre eigenen `*.log` | was Ihr Code schreibt |
 
-**Setup > Logs** zeigt sie mit einer Zusammenfassung wiederholter Meldungen ([Log-Betrachter](../../../../eng-us/features/6.0/log-viewer.md));
-Logs werden rotiert ([Log-Rotation](../../../../eng-us/features/6.0/log-rotation.md)). Anfrage-Logs zeichnen Anfragen mit
-Laufzeiten auf ([Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md)).
+**Setup > Logs** zeigt sie mit einer Zusammenfassung wiederholter Meldungen ([Log-Betrachter](../../../funktionen/6.0/log-betrachter.md));
+Logs werden rotiert ([Log-Rotation](../../../funktionen/6.0/log-rotation.md)). Anfrage-Logs zeichnen Anfragen mit
+Laufzeiten auf ([Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md)).
 
 ## Von einer Fehlerseite zur Logzeile
 
@@ -79,19 +79,19 @@ Fehlerseiten tragen eine Referenz; suchen Sie in den Logs danach, um die vollst�
   ([8.3.12 Logs](../../../installation/08-die-website-ausliefern.md#8312-logs)).
 - Vergleichen Sie mit dem eingebauten Server von PHP (`--engine=php`), der jede Anfrage frisch ausführt, wenn Sie
   vermuten, dass Zustand zwischen Anfragen erhalten bleibt
-  ([Persistenter Worker-Server Velocity](../../../../eng-us/features/6.0/velocity-persistent-worker-server.md)).
+  ([Persistenter Worker-Server Velocity](../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)).
 
 ## Verwandte Seiten
 
 - [Anwendungen testen](anwendungen-testen.md)
-- [Verbesserungen der Debug-Ausgabe](../../../../eng-us/features/6.0/debug-output-improvements.md)
+- [Verbesserungen der Debug-Ausgabe](../../../funktionen/6.0/verbesserte-debug-ausgabe.md)
 - [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

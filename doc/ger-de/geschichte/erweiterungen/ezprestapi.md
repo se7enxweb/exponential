@@ -1,8 +1,8 @@
 # ezprestapi (REST-Inhaltsanbieter): Chronik
 
-Der REST-Inhaltsanbieter wurde im Oktober 2024 mit einem Beispiel-Client importiert und erhielt im September und Oktober 2026 die Metadaten von Exponential und klassenbasierte Befehle. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezprestapi.md).
+Der REST-Inhaltsanbieter wurde im Oktober 2024 mit einem Beispiel-Client importiert und erhielt im September und Oktober 2026 die Metadaten von Exponential und klassenbasierte Befehle. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezprestapi.md).
 
-Diese Seite führt **jede der 16 Änderungen** des Repositorys `ezprestapi` zwischen 2024-10-10 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezprestapi.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezprestapi.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezprestapi.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 16 Änderungen** des Repositorys `ezprestapi` zwischen 2024-10-10 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezprestapi.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezprestapi.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezprestapi.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -62,7 +62,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezprestapi.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezprestapi.md)
 - [Release Notes](../../../changelogs/extensions/ezprestapi.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezprestapi.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

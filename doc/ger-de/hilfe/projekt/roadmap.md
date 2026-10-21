@@ -60,7 +60,7 @@ Die Roadmap bittet die Community bei zwei Dingen um Hilfe, die jeder mit etwas E
 2. **Site-Pakete.** Der Setup-Assistent installiert Site-Pakete wie 7x Simple. Das Projekt möchte die Liste der
    Site-Pakete des Assistenten für die Community öffnen, damit Benutzer ihre eigenen veröffentlichen können. Die
    Roadmap bittet Interessierte, an die dort genannte Community-Adresse zu schreiben (community at exponential dot
-   earth); [Ihr Site-Paket beitragen](../../../eng-us/help/site-packages/contribute-your-site-package.md) zeigt den Weg über einen
+   earth); [Ihr Site-Paket beitragen](../seitenpakete/ihr-seitenpaket-beitragen.md) zeigt den Weg über einen
    Pull-Request.
 
 Außerdem lädt sie Unternehmen ein, [Partner zu werden](https://exponential.earth/partner/apply) und
@@ -77,11 +77,11 @@ Momentaufnahme ihrer Entstehungszeit. Mehrere ihrer Punkte sind heute im Reposit
 |---|---|
 | Unterstützung für PHP 8.4 und 8.5 | Exponential 6.0.15 läuft unter PHP 8.0 bis 8.5 ([Anforderungen](../../installation/02-voraussetzungen.md)) |
 | PHP 8.6 | `composer.json` erlaubt bereits PHP bis 8.8, und die README nennt 8.6 als Ziel; die Schätzung der Roadmap war 2026/Q3 |
-| Dokumentation zusammengeführt | Die Dokumentation liegt jetzt in `doc/` des Repositorys, und diese Hilfe zeigt sie in der Administration ([Hilfesystem](../../../eng-us/features/6.0/help-system.md)), unter der GNU FDL |
+| Dokumentation zusammengeführt | Die Dokumentation liegt jetzt in `doc/` des Repositorys, und diese Hilfe zeigt sie in der Administration ([Hilfesystem](../../funktionen/6.0/hilfesystem.md)), unter der GNU FDL |
 | Composer-basierte Paketverwaltung in der Administration | **Setup > Aktualisierungen und Pakete** aus der Erweiterung `ezupdate` findet, prüft und installiert Composer-Pakete von Paketservern ([Mit Git aktualisieren: Aktualisierungen und Pakete](../mit-git-aktualisieren.md#b4-die-erweiterungen-mit-aktualisierungen-und-pakete-aktualisieren)) |
 
 Alles, was sich von Release zu Release geändert hat, lesen Sie im [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md)
-und in [der Chronik](../../../eng-us/history/README.md). Der Changelog ist die maßgebliche Aufzeichnung; die Roadmap ist eine
+und in [der Chronik](../../geschichte/README.md). Der Changelog ist die maßgebliche Aufzeichnung; die Roadmap ist eine
 Absichtserklärung.
 
 ## Wie Sie die Roadmap mitgestalten
@@ -98,7 +98,7 @@ Absichtserklärung.
 - **Bauen Sie es**: Ein Pull-Request bringt eine Funktion schneller voran als jeder Wunsch
   ([Zum Projekt beitragen](zum-projekt-beitragen.md)).
 - **Finanzieren Sie es**: Sponsoring bezahlt die Arbeit an der Roadmap ([Geben und spenden](geben-und-spenden.md)).
-  Partner haben ihren eigenen Weg der Beteiligung ([Partner: Mitwirkung an der Roadmap](../../../eng-us/help/partners/roadmap-participation.md)).
+  Partner haben ihren eigenen Weg der Beteiligung ([Partner: Mitwirkung an der Roadmap](../partner/an-der-roadmap-mitwirken.md)).
 
 ## Verwandte Seiten
 
@@ -107,3 +107,11 @@ Absichtserklärung.
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt
   und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -13,7 +13,7 @@ Diese Seite richtet sich an Projektverantwortliche, Administratorinnen und Admin
 zentralen Webteams der Regierung, das Websites für mehrere Ministerien oder Ressorts betreibt. Sie erklärt, wie eine
 Exponential-Installation mehrere Websites bedient, wie jedes Ministerium auf seine eigenen Inhalte beschränkt bleibt,
 was sich teilen lässt und wann getrennte Installationen besser sind. Die Mechanismen sind unter
-[Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md) und auf den Funktionsseiten zu
+[Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md) und auf den Funktionsseiten zu
 Multisite dokumentiert.
 
 ## Inhalt
@@ -37,14 +37,14 @@ und einer Datenbank.
 | Design | kann sein | meist eine gemeinsame Design-Erweiterung der Regierung |
 | Inhaltsklassen | | ja |
 | Benutzer, Rollen, Sektionen | Gruppen und Sektionen je Ministerium | ein gemeinsamer Benutzerbestand |
-| Caches, Protokolle | getrennte Pfade verfügbar ([Protokoll- und Cache-Pfade bei Multisite](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)) | |
+| Caches, Protokolle | getrennte Pfade verfügbar ([Protokoll- und Cache-Pfade bei Multisite](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)) | |
 
 Einstellungen können je Website mit INI-Overrides abweichen
-([INI-Overrides bei Multisite](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md)). Links von einer Website auf eine
+([INI-Overrides bei Multisite](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)). Links von einer Website auf eine
 Seite einer anderen werden mit dem richtigen Host geschrieben
-([Websiteübergreifende Links](../../../../../eng-us/features/6.0/multisite-cross-site-links.md)). Die Zuordnung nach Host und
+([Websiteübergreifende Links](../../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)). Die Zuordnung nach Host und
 Sprache entscheidet, welcher Siteaccess eine Anfrage beantwortet
-([Zuordnung von Siteaccesses nach Host und Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+([Zuordnung von Siteaccesses nach Host und Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 
 ## Jedes Ministerium auf seine eigenen Inhalte beschränken
 
@@ -52,13 +52,13 @@ Sprache entscheidet, welcher Siteaccess eine Anfrage beantwortet
 |---|---|
 | Eine Sektion je Ministerium | den obersten Ordner des Ministeriums seiner Sektion zuweisen ([Sektionen](../../../../anleitungen/sektionen.md)) |
 | Rollen mit einer Einschränkung nach Sektion oder Teilbaum zugewiesen | die gemeinsame Rolle Editor, je Gruppe eines Ministeriums mit dessen Sektion zugewiesen |
-| Der Baum der Administration beginnt beim Ordner des Ministeriums | die Einstellung für den obersten Knoten des Inhaltsbaums ([Oberster Knoten des Inhaltsbaums der Administration](../../../../../eng-us/features/6.0/admin-content-tree-top-node.md)) |
+| Der Baum der Administration beginnt beim Ordner des Ministeriums | die Einstellung für den obersten Knoten des Inhaltsbaums ([Oberster Knoten des Inhaltsbaums der Administration](../../../../funktionen/6.0/oberster-knoten-des-inhaltsbaums-im-admin.md)) |
 | Freigebende je Ministerium | ein Ereignis *Freigeben* je Ministerium, auf seine Sektion eingeschränkt |
-| Audit je Ministerium | das Audit-Protokoll zeichnet Benutzer und Objekt auf; filtern Sie danach ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
+| Audit je Ministerium | das Audit-Protokoll zeichnet Benutzer und Objekt auf; filtern Sie danach ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
 
 Testen Sie die Trennung als Benutzer jedes Ministeriums: Sie dürfen die Inhalte eines anderen Ministeriums nicht
 bearbeiten, verschieben oder entfernen können, und Links der Administration, die sie nicht nutzen können, sind
-ausgeblendet ([Links der Administration folgen den Berechtigungen](../../../../../eng-us/features/6.0/admin-links-follow-permissions.md)).
+ausgeblendet ([Links der Administration folgen den Berechtigungen](../../../../funktionen/6.0/admin-links-folgen-den-berechtigungen.md)).
 
 ## Was sich teilen lässt
 
@@ -95,14 +95,15 @@ Getrennte Installationen können Design und Klassen weiterhin teilen, als Erweit
 ## Verwandte Seiten
 
 - [Nationale Regierung](README.md)
-- [Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md)
-- [Gemeinsamer Kopf- und Fußbereich](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)
-- [Kurs Multisite und Pakete](../../../../../eng-us/help/trainers/multisite-and-packages/README.md)
+- [Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md)
+- [Gemeinsamer Kopf- und Fußbereich](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)
+- [Kurs Multisite und Pakete](../../../trainer/multisite-und-pakete/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -3,7 +3,7 @@
 Lesen Sie diese Seite, wenn Sie eine Installation aktualisieren, die den **PDF-Export** verwendet (`content/pdf`, die
 Seiten des PDF-Exports in der Administration). Der Export hat eine konfigurierbare Fußzeile, bessere Schriften und
 eine Skalierung von Bildern erhalten. Das Upgrade braucht zwei Datenbankspalten, und einige Standardwerte von
-`pdf.ini` haben sich geändert. Die Funktion selbst ist unter [PDF-Export](../../../eng-us/features/6.0/pdf-export.md)
+`pdf.ini` haben sich geändert. Die Funktion selbst ist unter [PDF-Export](../../funktionen/6.0/pdf-export.md)
 beschrieben.
 
 ## Kurz gesagt
@@ -69,7 +69,7 @@ dieses Templates funktioniert weiter, zeigt den neuen Text der Fußzeile aber er
 
 ## Verwandte Seiten
 
-- [PDF-Export](../../../eng-us/features/6.0/pdf-export.md)
-- [September 2026, erste Hälfte: 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [PDF-Export](../../funktionen/6.0/pdf-export.md)
+- [September 2026, erste Hälfte: 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Upgrade von OPML](opml.md), das dieselbe Datei für das Datenbank-Update verwendet

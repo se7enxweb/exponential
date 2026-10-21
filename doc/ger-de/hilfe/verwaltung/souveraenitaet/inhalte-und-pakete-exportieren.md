@@ -45,7 +45,7 @@ erst durch eine Wiederherstellung bewiesen
 
 ## Pakete
 
-**Setup > Pakete > Neues Paket erstellen** bietet Assistenten an ([Paketassistent](../../../../eng-us/features/6.0/package-wizard.md)):
+**Setup > Pakete > Neues Paket erstellen** bietet Assistenten an ([Paketassistent](../../../funktionen/6.0/paketassistent.md)):
 
 | Assistent | Exportiert |
 |---|---|
@@ -63,7 +63,7 @@ vollständige Datensicherung zuverlässiger.
 `xrowextract` exportiert eine Klasse oder jede Klasse unterhalb ausgewählter Knoten als CSV, JSON oder XML, mit Sprachen
 als Zeilen, Filtern und Voreinstellungen, und kann Exporte zeitgesteuert an ein Ziel liefern; das `exp:ezcsvexport` des
 Kernels schreibt eine CSV-Datei pro Klasse
-([xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md), [exp:ezcsvexport](../../../../eng-us/examples/commands/ezcsvexport.md)).
+([xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md), [exp:ezcsvexport](../../../beispiele/befehle/ezcsvexport.md)).
 Prüfen Sie, wie Rich-Text-Felder im Export erscheinen (sehen Sie sich zuerst die Vorschau an), bevor Sie sich darauf
 verlassen.
 
@@ -83,12 +83,13 @@ Rechten des Benutzers, unter dem sie läuft ([REST-API v1 und v2](../../../anlei
 
 - [Anbieterabhängigkeit vermeiden](anbieterabhaengigkeit-vermeiden.md)
 - [Ausstiegsplanung](ausstiegsplanung.md)
-- [Pakete vergleichen und importieren](../../../../eng-us/features/6.0/package-compare-and-import.md)
+- [Pakete vergleichen und importieren](../../../funktionen/6.0/pakete-vergleichen-und-importieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

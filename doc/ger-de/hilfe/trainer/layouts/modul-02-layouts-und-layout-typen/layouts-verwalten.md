@@ -37,9 +37,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Exponential Layouts: Aktionen auf Layout-Ebene](../../../../../eng-us/bc/6.0/LAYOUTS.md#layout-level-actions),
-[Import, Export und Freigabelinks](../../../../../eng-us/bc/6.0/LAYOUTS.md#import-export-and-share-links) und
-[explayouts_ui](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md).
+Quellen: [Exponential Layouts: Aktionen auf Layout-Ebene](../../../../bc/6.0/layouts.md#aktionen-auf-ebene-des-layouts),
+[Import, Export und Freigabelinks](../../../../bc/6.0/layouts.md#import-export-und-freigabelinks) und
+[explayouts_ui](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md).
 
 1. **Die Liste** (3 Minuten). **Sortieren nach** **Name**, **Beschreibung**, **Zuletzt geändert**, **Layout-Typ**
    oder **Zuordnungen**; **Reihenfolge** aufsteigend oder absteigend. Jede Karte zeigt Bezeichner, Typ, Datum und
@@ -120,7 +120,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto.
 
 1. Sortieren Sie die Liste **Layouts** nach **Zuordnungen**, absteigend.
 2. Wenn es mehreren Seiten oder Bereichen dient und Sie nur einige davon ändern möchten
-   ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#walkthrough-a-customising-the-default-design)).
+   ([Exponential Layouts](../../../../bc/6.0/layouts.md#durchgang-a-das-standarddesign-anpassen)).
 3. **B.**
 4. Dass keine Zuordnung darauf zeigt und, bei einem gemeinsamen Layout, dass keine Zone damit verknüpft ist.
 5. **Falsch.** Layouts sind keine Inhaltselemente; exportieren Sie im Zweifel vorher.
@@ -129,20 +129,20 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto.
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Import, Export und Freigabelinks](../../../../../eng-us/bc/6.0/LAYOUTS.md#import-export-and-share-links)
-- [explayouts_ui: Vorschau eines Layouts](../../../../../eng-us/features/6.0/extensions/explayouts_ui.md#preview-a-layout)
+- [Exponential Layouts: Import, Export und Freigabelinks](../../../../bc/6.0/layouts.md#import-export-und-freigabelinks)
+- [explayouts_ui: Vorschau eines Layouts](../../../../funktionen/6.0/erweiterungen/explayouts_ui.md#ein-layout-in-der-vorschau-ansehen)
 
 ## Verwandte Seiten
 
 - [Modul 2: Layouts und Layout-Typen](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

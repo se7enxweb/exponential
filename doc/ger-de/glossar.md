@@ -212,7 +212,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 - **Q settings** (Q-Einstellungen): die eigenen Einstellungen der Velocity-Engine, JSON unter dem Schlüssel `Q`; aus Exponential werden sie normalerweise über `settings/velocity.ini` gesetzt. [Velocity-Engine-Einstellungen](spezifikationen/6.0/velocity-engine-einstellungen.md).
 - **Q shell** (Q-Shell): die ausklappbare Konsole im Velocity-Control-Panel. [Q-Shell](funktionen/6.0/velocity-q-shell.md).
-- **qbix**: der Engine-Name von **Velocity** in den Einstellungen von Exponential und das Upstream-Projekt, auf dem es beruht. [Velocity-Engines](bc/6.0/velocity-engines.md).
+- **qbix**: der Engine-Name von **Velocity** in den Einstellungen von Exponential und das Upstream-Projekt, auf dem er beruht. [Velocity-Engines](bc/6.0/velocity-engines.md).
 - **query cache (SQL)** (SQL-Abfrage-Cache): beantwortet wiederholte `SELECT`-Abfragen, ohne die Datenbank zu fragen, bis ein Schreibvorgang sie veralten lässt. [SQL-Abfrage-Cache](bc/6.0/sql-abfrage-cache.md).
 
 ## R
@@ -232,7 +232,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 ## S
 
 - **section** (Sektion): eine Kennzeichnung an Inhalten, die ein Design und Berechtigungen auswählt. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
-- **security defaults** (Sicherheitsvorgaben): die Einstellungen, die eine Standardinstallation ohne zusätzliche Arbeit sicher machen (Sicherheits-Header, Session-Cookie, Anmeldung, ausgelieferte Dateien, Caching). [Sicherheitsvorgaben](spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [Härtung von Datentypen und Eingaben](spezifikationen/6.0/datentyp-eingabehaertung.md).
+- **security defaults** (Sicherheitsvorgaben): die Einstellungen, die eine Standardinstallation ohne zusätzliche Arbeit sicher machen (Sicherheits-Header, Sitzungs-Cookie, Anmeldung, ausgelieferte Dateien, Caching). [Sicherheitsvorgaben](spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [Härtung von Datentypen und Eingaben](spezifikationen/6.0/datentyp-eingabehaertung.md).
 - **seed data** (Startdaten): die Tabellen und Inhalte, mit denen eine neue Installation beginnt. [Installer-Logs und Startdaten](spezifikationen/6.0/installer-protokolle-und-startdaten.md).
 - **setup wizard** (Setup-Assistent): der Installer im Browser. [Setup-Assistent](funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
 - **sevenx**: das offizielle öffentliche PHP-Code-Präfix von 7x (`sevenx_dse`, `sevenx_valkey_cache`). „7x“ selbst kann kein Präfix sein, weil eine Klasse oder ein Bezeichner nicht mit einer Ziffer beginnen kann; Extensions und Klassen von 7x verwenden je nach Bedarf `sevenx` oder `exp`. **7x** ist das Unternehmen, das Exponential führt. [Namenspräfixe: sevenx und exp](standards/namenspraefixe-sevenx-und-exp.md).
@@ -262,7 +262,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 ## U
 
-- **UI switch** (UI-Umschalter): das Framework hinter dem Feld *Oberfläche* in der rechten Werkzeugleiste der Administration: die Auswahl eines angemeldeten Benutzers für die Oberfläche selbst (zuerst die **interface language**), pro Siteaccess in der Session gehalten und früh in jeder Anfrage angewendet. [Oberflächensprache](funktionen/6.0/ui-umschalter.md), [Einstellungen](anleitungen/ui-umschalter-einstellungen.md).
+- **UI switch** (UI-Umschalter): das Framework hinter dem Feld *Oberfläche* in der rechten Werkzeugleiste der Administration: die Auswahl eines angemeldeten Benutzers für die Oberfläche selbst (zuerst die **interface language**), pro Siteaccess in der Sitzung gehalten und früh in jeder Anfrage angewendet. [Oberflächensprache](funktionen/6.0/ui-umschalter.md), [Einstellungen](anleitungen/ui-umschalter-einstellungen.md).
 - **UI switch provider** (UI-Switch-Provider): eine Klasse, die eine Auswahl des **UI switch** anbietet (`expUISwitchProviderInterface`, meist als Erweiterung von `expUISwitchProvider`), genannt in `uiswitch.ini [UISwitchSettings] ProviderList[]` und durch die Richtlinie `uiswitch/<identifier>` geschützt. [API für UI-Switch-Provider](bc/6.0/ui-umschalter.md).
 - **URL alias** (URL-Alias): eine lesbare Adresse, die einem Knoten zugeordnet ist; `exp:updateniceurls` baut sie neu auf. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
 - **uwebserver**: ein kleiner C-Webserver, der mit Velocity ausgeliefert wird, für statische Dateien und Benchmarks. [uwebserver](funktionen/6.0/velocity-uwebserver.md).

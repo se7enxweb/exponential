@@ -41,7 +41,7 @@ von Änderungen zusammenpassen. Die technischen Einzelheiten stehen auf den Host
 ## Images und festgelegte Tags
 
 Die Images von Velocity sind nach Release, PHP-Version und Variante getaggt
-([Velocity-Pakete und -Binärdateien](../../../../../eng-us/features/6.0/velocity-packages-and-binaries.md)):
+([Velocity-Pakete und -Binärdateien](../../../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)):
 
 ```text
 ghcr.io/se7enxweb/exponential-velocity:<release>-php<version>-<variant>   fixed
@@ -63,7 +63,7 @@ php bin/php/console exp:velocity ext check
 
 | Pfad | Enthält | Wo |
 |---|---|---|
-| `var/` | hochgeladene Dateien (`var/storage`), Caches, Logs, den Audit-Trail, die SQLite-Datenbank | dauerhaftes Volume |
+| `var/` | hochgeladene Dateien (`var/storage`), Caches, Logs, das Prüfprotokoll, die SQLite-Datenbank | dauerhaftes Volume |
 | `settings/override` | die Einstellungen der Installation, Zugangsdaten der Datenbank, Audit-Schlüssel | dauerhaftes Volume oder Secrets |
 | `settings/siteaccess` | Siteaccess-Einstellungen, die das Installationsprogramm schreibt | dauerhaftes Volume |
 | `kernel/`, `lib/`, `vendor/`, `extension/`, `design/` | Code | im Image |
@@ -120,8 +120,9 @@ Container erleichtern manche Pflichten des öffentlichen Sektors, wenn Sie sie d
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

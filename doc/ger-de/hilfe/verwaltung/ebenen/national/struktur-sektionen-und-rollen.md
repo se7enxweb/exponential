@@ -27,7 +27,7 @@ beschrieben sind; lesen Sie diese für jeden Bildschirm und jedes Feld.
 ## Der Inhaltsbaum
 
 Besucher navigieren nach Thema; Beschäftigte denken in Einheiten. Der Baum muss zuerst den Besuchern dienen, weil die
-Menüs aus ihm entstehen ([Menüs und Navigation](../../../../../eng-us/help/creators/website-creators/menus-and-navigation.md)). Eine
+Menüs aus ihm entstehen ([Menüs und Navigation](../../../ersteller/website-ersteller/menues-und-navigation.md)). Eine
 Struktur, die für viele nationale Websites funktioniert:
 
 ```text
@@ -70,7 +70,7 @@ Kopieren Sie Editor, statt die Rolle zu ändern, damit ein Upgrade oder ein Pake
 | Rolle | Richtlinien (Modul / Funktion, Einschränkung) | Zugewiesen an |
 |---|---|---|
 | Redaktion der Einheit | `content/read`; `content/create`, `content/edit`, `content/hide`, `content/versionread`, `content/translate` eingeschränkt nach Sektion (der Sektion der Einheit); `content/remove` ebenso eingeschränkt, wenn Einheiten entfernen dürfen | die Redaktionsgruppe der Einheit, die Rolle mit einer Einschränkung nach Sektion zugewiesen |
-| Pressestelle | die Richtlinien der Redaktion der Einheit für die Sektion Pressestelle, dazu `content/publish_without_notification`, wenn Korrekturen keine E-Mails an Abonnenten auslösen sollen ([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)) | die Gruppe der Pressestelle |
+| Pressestelle | die Richtlinien der Redaktion der Einheit für die Sektion Pressestelle, dazu `content/publish_without_notification`, wenn Korrekturen keine E-Mails an Abonnenten auslösen sollen ([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)) | die Gruppe der Pressestelle |
 | Freigabe | die Richtlinien der Redaktion der Einheit plus `content/versionread` für ausstehende Versionen | die Freigebenden einer Einheit |
 | Webteam | `content/*`, `section/assign`, `state/assign`, `rss/edit`, `infocollector/read` | das zentrale Webteam |
 | Administration | `*/*` | eine kleine Gruppe von Systemadministratorinnen und -administratoren |
@@ -102,7 +102,7 @@ Ereignis *Freigeben* in den Workflow (jedes auf seine Sektionen eingeschränkt) 
 Legen Sie die Gruppen unter **Benutzer** an: eine je Einheit für die Redaktion, eine je Einheit für die Freigebenden,
 Webteam, Pressestelle. Setzen Sie Beschäftigte nie in die Gruppe Members, die öffentliche Registrierungen verwenden
 (`[UserSettings] DefaultUserPlacement`). Halten Sie die Konten mit **Benutzer > Benutzerkonten prüfen** sauber
-([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Prüfungen
 
@@ -123,8 +123,9 @@ Webteam, Pressestelle. Setzen Sie Beschäftigte nie in die Gruppe Members, die �
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

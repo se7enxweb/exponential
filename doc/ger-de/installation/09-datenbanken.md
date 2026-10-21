@@ -12,7 +12,7 @@ Code oder Inhalte von einer Engine zu einer anderen wechseln.
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Empfehlung:** 1. SQLite 3 (die
 > Voreinstellung) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit
-> bekanntermaßen mit zusätzlichem Aufwand möglich. Details: [Datenbankunterstützung](../../eng-us/help/database-support.md).
+> bekanntermaßen mit zusätzlichem Aufwand möglich. Details: [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
 
 Die folgenden Abschnitte halten die Reihenfolge der Treiber ein (MariaDB und MySQL teilen sich Abschnitt 9.3); die
 oben genannte Unterstützungsseite nennt die gegen den Code geprüften Versionen, die Testabdeckung jeder Datenbank und
@@ -103,7 +103,7 @@ php bin/php/console exp:ini get site.ini/DatabaseSettings/DatabaseImplementation
 Die Konsole gibt zuerst eine Zeile aus, die das ausgeführte Skript nennt (`running exp:ini → bin/php/ini.php`, auf
 dem Fehlerstrom), dann den Wert allein, zum Beispiel `sqlite3`. Zeigt ein Wert, den Sie geändert zu haben glaubten,
 noch den alten, ist der Override in einer Datei oder einem Block gelandet, die nicht gelesen werden; `exp:ini where`
-(siehe [exp:ini](../../eng-us/bc/6.0/console-exp-ini.md)) zeigt, aus welcher Datei jeder Wert stammt.
+(siehe [exp:ini](../bc/6.0/console-exp-ini.md)) zeigt, aus welcher Datei jeder Wert stammt.
 
 Nachdem Sie eine Datenbankeinstellung geändert haben, leeren Sie den INI-Cache, damit jeder Prozess sie liest:
 
@@ -204,7 +204,7 @@ Website:
 ### Schreibvorgänge in der Warteschlange: BEGIN IMMEDIATE und die Schreibsperre
 
 Dies ist der Teil, der SQLite für eine Redaktionssite geeignet macht. Er wurde mit 6.0.15 eingeführt (1. und
-2. Oktober 2026); lesen Sie [SQLite: Transaktionen warten in einer Schlange auf die Schreibsperre](../../eng-us/bc/6.0/sqlite-transactions.md)
+2. Oktober 2026); lesen Sie [SQLite: Transaktionen warten in einer Schlange auf die Schreibsperre](../bc/6.0/sqlite-transaktionen.md)
 für die Upgrade-Hinweise.
 
 **Das Problem, das er löst.** Ein einfaches `BEGIN` ist in SQLite *deferred* (aufgeschoben): Die Transaktion liest
@@ -337,7 +337,7 @@ Darunter verringern zwei weitere Caches, was bei SQLite ankommt:
 - Der **SQL-Abfrage-Cache** (`settings/querycache.ini`, `[QueryCacheSettings] Mode=off` als Standardwert; `request`
   oder `shared`) beantwortet ein wiederholtes `SELECT`, bis ein Schreibvorgang in eine seiner Tabellen es veralten
   lässt. Der SQLite-Treiber teilt ihm jeden Schreibvorgang mit (`eZDBQueryCache::noteWrite()`). Siehe
-  [SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md).
+  [SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md).
 - Der **Datei-Cache des Betriebssystems** und die Speicherabbildung von SQLite: Eine Datenbank von einigen hundert
   Megabyte wird nach dem ersten Durchlauf aus dem Arbeitsspeicher gelesen.
 
@@ -364,7 +364,7 @@ Seiten-Cache und die kompilierten Templates bleiben im Worker warm. Was das für
   der gemeinsamen Speicherabbildung.
 - **Nach einer Änderung der Einstellungen** starten Sie die Worker neu: Sie lesen `site.ini` beim Start.
 
-Lesen Sie [Velocity-Server mit persistenten Workern](../../eng-us/features/6.0/velocity-persistent-worker-server.md) und
+Lesen Sie [Velocity-Server mit persistenten Workern](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und
 [Velocity-Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md) zum Pool selbst.
 
 ### Wie er sich unter Last verhält
@@ -549,7 +549,7 @@ nicht. Eine Phase starken Schreibens kann eine große `-wal`-Datei hinterlassen.
 | Eigentümer | `ls -l var/storage/sqlite3/` | alle Dateien für die Gruppe beschreibbar, eine gemeinsame Gruppe |
 
 `exp:benchmark kernel` misst unter seinen Messpunkten auch den Datenbank-Roundtrip, und `exp:benchmark` mit `--save`
-und `--baseline` erkennt eine Verlangsamung zwischen zwei Läufen ([Benchmark](../../eng-us/features/6.0/benchmark.md)).
+und `--baseline` erkennt eine Verlangsamung zwischen zwei Läufen ([Benchmark](../funktionen/6.0/benchmark.md)).
 
 ### Grenzen, und wann eine andere Engine die bessere Wahl ist
 
@@ -812,8 +812,8 @@ Prozesses vorgehalten, sodass ein Velocity-Worker seine Verbindungen wiederverwe
 
 ### Grenzen
 
-Aus [MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md) und Abschnitt 26 der
-[Portierungsreferenz](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md):
+Aus [MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) und Abschnitt 26 der
+[Portierungsreferenz](../bc/6.0/mongodb-kernel-unterstuetzung.md):
 
 - Der Adapter führt nie echtes SQL aus. Von Hand geschriebenes SQL, das über `arrayQuery()` gesendet wird und das er
   nicht übersetzen kann, liefert ein leeres Ergebnis und protokolliert eine Warnung; suchen Sie in den Protokollen
@@ -848,7 +848,7 @@ Die Oracle-Unterstützung stammt aus der Extension **`ezoracle`** (Version 2.3.7
   Oracle-Client; der Instant Client genügt. `ORACLE_HOME` wird mit dem Instant Client nicht benötigt; setzen Sie
   `LD_LIBRARY_PATH` (und `TNS_ADMIN` für TNS-Aliase) nur, wenn der Client außerhalb des Bibliothekspfads des Systems
   liegt, und dann auch im PHP-FPM-Pool (`env[...]`) und in der Umgebung von Velocity.
-- Ein Oracle-Benutzer, der Sessions, Tabellen, Views, Trigger, Sequenzen und Prozeduren anlegen darf.
+- Ein Oracle-Benutzer, der Sitzungen, Tabellen, Views, Trigger, Sequenzen und Prozeduren anlegen darf.
 
 ### Den Benutzer anlegen
 
@@ -904,7 +904,7 @@ wird in `settings/override/ezoracle.ini.append.php` überschrieben. Jede Funktio
 
 ### Persistente Verbindungen und DRCP
 
-Eine neue dedizierte Oracle-Session kostet pro Anfrage einige zehn Millisekunden. Zwei Einstellungen beseitigen
+Eine neue dedizierte Oracle-Sitzung kostet pro Anfrage einige zehn Millisekunden. Zwei Einstellungen beseitigen
 diese Kosten:
 
 ```ini
@@ -950,7 +950,7 @@ ActiveExtensions[]=ezoracle
 `settings/override/` gewinnt immer gegenüber jeder Extension. Prüfen Sie die wirksamen Werte nach einer Änderung mit
 `php bin/php/console exp:ini get ezoracle.ini/ConnectionSettings/DRCP --allow-root-user`. Die Ladereihenfolge lässt
 sich auch in der Administration unter **Setup > Extensions** ändern
-([Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md)).
+([Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md)).
 
 ### Weitere Einstellungen
 
@@ -1020,7 +1020,7 @@ Abfragen über Engines hinweg; diese Punkte stammen aus den Treibern):
   `concatString()`, `md5()`, `bitAnd()`, `bitOr()`, `escapeString()`, `lastSerialID()`. Der SQLite-Treiber
   registriert außerdem die Aggregatfunktionen `BIT_OR`/`BIT_AND` und schreibt `UPDATE ... JOIN` um; PostgreSQL
   berechnet MD5 über `pgcrypto`; Oracle verwendet `STANDARD_HASH` und `BITAND`.
-- **MySQL-Session-Anweisungen**: Der SQLite-Treiber akzeptiert `SET FOREIGN_KEY_CHECKS`, `SET NAMES`,
+- **MySQL-Sitzungsanweisungen**: Der SQLite-Treiber akzeptiert `SET FOREIGN_KEY_CHECKS`, `SET NAMES`,
   `SET CHARACTER SET`, `SET AUTOCOMMIT`, `SET SQL_MODE` und `SET UNIQUE_CHECKS` (auch mit `SESSION` oder `GLOBAL`)
   und tut nichts, weil SQLite keine solchen Schalter hat. PostgreSQL versteht `SET NAMES` (als `client_encoding`),
   lehnt die anderen aber ab; Oracle hat keine `SET`-Anweisung dieser Art. Lassen Sie sie in Code weg, der für jede
@@ -1092,35 +1092,35 @@ Aufwand möglich. Die Datenbankschicht ist die Schnittstelle `eZDBInterface` mit
 Schema-Handlern; auf diesem Weg kamen auch die Unterstützung für Oracle und MongoDB hinzu. Die Liste der Arbeiten
 (ein Treiber auf Basis von `sqlsrv`, die Aggregatfunktion `BIT_OR`, die SQL Server fehlt, ein Schema-Handler, SQL-
 und Update-Dateien, Einträge in den Installern, Tests) steht unter
-[Datenbankunterstützung](../../eng-us/help/database-support.md#microsoft-sql-server-possible-with-additional-work).
+[Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand).
 
-**SQLite für öffentliche Demos.** SQLite ist die übliche Datenbank einer öffentlichen Demo, die alle paar Stunden von Grund auf neu aufgebaut wird: `EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password=<the published password>` installiert eine in etwa einer Minute, ohne dass zwischen den Builds etwas gelöscht werden muss. Der Demo-Modus selbst hängt nicht von der Datenbank-Engine ab ([Demo-Modus](../../eng-us/bc/6.0/demo-mode.md)).
+**SQLite für öffentliche Demos.** SQLite ist die übliche Datenbank einer öffentlichen Demo, die alle paar Stunden von Grund auf neu aufgebaut wird: `EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password=<the published password>` installiert eine in etwa einer Minute, ohne dass zwischen den Builds etwas gelöscht werden muss. Der Demo-Modus selbst hängt nicht von der Datenbank-Engine ab ([Demo-Modus](../bc/6.0/demomodus.md)).
 
 ## Quellen
 
 In diesem Repository:
 
-- [Datenbankunterstützung](../../eng-us/help/database-support.md): die unterstützten Datenbanken in ihrer offiziellen
+- [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md): die unterstützten Datenbanken in ihrer offiziellen
   Reihenfolge, die gegen den Code geprüften Versionen, die Unterstützung durch die Installer pro Weg und die
   CI-Abdeckung.
-- [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md): die aufgabenorientierte Einführung.
+- [SQLite-Datenbankunterstützung](../funktionen/6.0/sqlite-datenbank.md): die aufgabenorientierte Einführung.
 - [Spezifikation: der SQLite3-Datenbanktreiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md): Verbindung,
   PRAGMAs, Transaktionen und Schreiber, die SQL-Kompatibilitätsschicht.
-- [SQLite: Transaktionen warten in einer Schlange auf die Schreibsperre](../../eng-us/bc/6.0/sqlite-transactions.md): die
+- [SQLite: Transaktionen warten in einer Schlange auf die Schreibsperre](../bc/6.0/sqlite-transaktionen.md): die
   Änderung in 6.0.15 und Upgrade-Hinweise.
 - [Datenbanktreiber und Installer, 16. bis 30. September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md):
   Änderungen an SQLite, PostgreSQL, MySQL und Oracle, der Setup-Assistent.
-- [SQLite für Exponential Platform](../../eng-us/features/6.0/platform-sqlite-install.md) und
+- [SQLite für Exponential Platform](../funktionen/6.0/plattform-sqlite-installation.md) und
   [SQLite-Installer für Platform](../spezifikationen/6.0/platform-sqlite-installer.md).
-- [SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md).
-- [MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md) und die
-  [Portierungsreferenz zur MongoDB-Unterstützung im Kernel](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
+- [SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md).
+- [MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) und die
+  [Portierungsreferenz zur MongoDB-Unterstützung im Kernel](../bc/6.0/mongodb-kernel-unterstuetzung.md)
   (Abschnitte 18, 24, 26).
-- [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md), [Kickstarter](../../eng-us/features/6.0/kickstarter-cli.md).
-- [Velocity-Server mit persistenten Workern](../../eng-us/features/6.0/velocity-persistent-worker-server.md),
-  [Velocity-Antwort-Cache](../../eng-us/features/6.0/velocity-response-cache.md),
+- [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md), [Kickstarter](../funktionen/6.0/kickstarter-cli.md).
+- [Velocity-Server mit persistenten Workern](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md),
+  [Velocity-Antwort-Cache](../funktionen/6.0/velocity-antwort-cache.md),
   [Velocity-Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md).
-- [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md).
+- [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md).
 - [Eine Site betreiben](../anleitungen/betrieb-einer-website.md), Abschnitt 7 (Datenbanktreiber) und Abschnitt 6
   (Sicherungen).
 - [Kapitel 11, die Update-Dateien](11-aktualisieren.md#113-die-update-dateien), zu Schema-Updates pro Engine.
@@ -1156,3 +1156,11 @@ Extern:
   [oci8-Konfiguration](https://www.php.net/manual/en/oci8.configuration.php).
 
 [Inhalt](README.md) · Zurück: [8. Die Site ausliefern](08-die-website-ausliefern.md) · Weiter: [10. Nach der Installation](10-nach-der-installation.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

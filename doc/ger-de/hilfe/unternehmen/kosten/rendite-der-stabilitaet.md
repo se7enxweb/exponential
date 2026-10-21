@@ -59,10 +59,10 @@ beiden Seiten denselben Zeitraum (meist ein Jahr oder die fünf Jahre Ihrer
 | Keine Überraschungen in einer Version | „A published tag is never changed“ (ein veröffentlichter Tag wird nie geändert) | `SECURITY.md` |
 | Langes Leben | „Exponential has made it beyond it's end of life in 2021 and survived“ (Exponential hat sein Lebensende 2021 überdauert und überlebt) | `README.md`, „Exponential Project Status“ |
 | Aktuelles PHP | PHP 8.0 bis 8.5 werden unterstützt; die Testsuite läuft bei jedem Push auf PHP 8.1 bis 8.5 | `README.md`, [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
-| Weniger Ausfälle | Velocity kann von einem Watchdog bewacht werden, der es nach einem Absturz neu startet | [SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md) |
-| Geplante Arbeit ohne Fehler | Der Wartungsmodus zeigt Besuchern eine freundliche Seite und antwortet mit 503 | [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md) |
+| Weniger Ausfälle | Velocity kann von einem Watchdog bewacht werden, der ihn nach einem Absturz neu startet | [SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md) |
+| Geplante Arbeit ohne Fehler | Der Wartungsmodus zeigt Besuchern eine freundliche Seite und antwortet mit 503 | [Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md) |
 | Schnellere Diagnose | Der Log-Viewer und Fehlerreferenzen finden einen Fehler schnell | [Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
-| Nachweis nach einem Vorfall | Ein manipulationssicherer Audit-Trail zeichnet auf, wer was getan hat | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis nach einem Vorfall | Ein manipulationssicheres Prüfprotokoll zeichnet auf, wer was getan hat | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Sichere Aktualisierungen | Die Upgrade-Prüfung vergleicht die Dateien mit ihren Prüfsummen und die Datenbank mit dem Schema und ändert nichts | [Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 
 Der Bereich [Zuverlässigkeit](../zuverlaessigkeit/README.md) erklärt jede dieser Praktiken für Unternehmen.
@@ -129,8 +129,8 @@ die Investition ihr Geld zurückbringt und danach weiter spart.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

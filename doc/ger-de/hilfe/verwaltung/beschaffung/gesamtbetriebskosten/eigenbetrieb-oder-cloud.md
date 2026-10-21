@@ -69,7 +69,7 @@ Keines davon ist allgemein günstiger; vergleichen Sie mit Ihren eigenen Angebot
   unter welcher Vereinbarung. In der EU braucht ein Anbieter, der personenbezogene Daten in Ihrem Auftrag verarbeitet,
   einen Auftragsverarbeitungsvertrag nach der [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
 - Die Administration von Exponential lädt standardmäßig keine Skripte oder Schriften von anderen Hosts, die
-  Administration selbst sendet also keine Daten an Dritte ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)).
+  Administration selbst sendet also keine Daten an Dritte ([Datenschutzstandards](../../../../standards/datenschutz.md)).
 - Sicherheitspflichten können Sie unabhängig vom gewählten Modell treffen; in der EU siehe die
   [NIS2-Richtlinie](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) für Einrichtungen in ihrem Anwendungsbereich.
 
@@ -96,8 +96,9 @@ Keines davon ist allgemein günstiger; vergleichen Sie mit Ihren eigenen Angebot
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

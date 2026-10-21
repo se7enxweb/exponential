@@ -8,8 +8,8 @@ Anlegen eines neuen Entwurfs aus einer alten Version, das Entfernen von Versione
 Sie richtet sich an Redakteure und Administratoren. Jede Seite, jedes Feld und jede Regel unten wurde am 6. Oktober
 2026 am Code dieses Repositorys geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 
-[Anleitungen](README.md) · Siehe auch: [Bearbeitungszugriff auf nie veröffentlichte Objekte](../../eng-us/bc/6.0/draft-edit-access.md) ·
-[Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
+[Anleitungen](README.md) · Siehe auch: [Bearbeitungszugriff auf nie veröffentlichte Objekte](../bc/6.0/zugriff-auf-entwuerfe.md) ·
+[Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 
@@ -83,7 +83,7 @@ Wer das Objekt bearbeiten darf, öffnet seine Versionen, auch ohne eine Leserich
 sieht, was jede Version ist, und darf die veröffentlichte, die archivierten und die abgelehnten Versionen sowie seine
 eigenen vergleichen und kopieren; der Entwurf oder die ausstehende Version eines anderen erfordert
 `content/versionread`. Die vollständigen Regeln stehen unter [Bearbeitungszugriff auf nie veröffentlichte
-Objekte](../../eng-us/bc/6.0/draft-edit-access.md#the-versions-of-such-an-object-contenthistory).
+Objekte](../bc/6.0/zugriff-auf-entwuerfe.md#die-versionen-eines-solchen-objekts-contenthistory).
 
 ## Probleme
 

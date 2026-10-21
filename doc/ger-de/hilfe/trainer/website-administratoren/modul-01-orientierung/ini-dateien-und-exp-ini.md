@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md) und die
+Quelle: [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md) und die
 vollständige Referenz [console exp:ini](../../../../bc/6.0/console-exp-ini.md).
 
 1. **Wo INI-Dateien liegen** (3 Minuten). Zeigen Sie den Baum in einem Terminal: `settings/` (die Standardwerte,
@@ -156,7 +156,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 <details>
 <summary>Antworten</summary>
 
-1. **B.** ([Geltungsbereiche von exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md#scopes)).
+1. **B.** ([Geltungsbereiche von exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md#geltungsbereiche)).
 2. Es gibt als Diff aus, was sich ändern würde, und schreibt nichts.
 3. In `var/backup/ini/<timestamp>/`.
 4. `php bin/php/ezcache.php --clear-tag=ini`, und `exp:velocity restart` für eine Einstellung, die Velocity nur beim
@@ -167,7 +167,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 
 ## Weiterführende Literatur
 
-- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md): die Aktionen und
+- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md): die Aktionen und
   Geltungsbereiche.
 - [console exp:ini](../../../../bc/6.0/console-exp-ini.md): die vollständige Referenz mit der Ausgabe jeder Aktion.
 - [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md): dieselben Einstellungen im Browser.
@@ -181,9 +181,9 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

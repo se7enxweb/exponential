@@ -8,7 +8,7 @@ Sie richtet sich an Administratoren. Jede Seite, jedes Feld und jede Regel unten
 geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 
 [Anleitungen](README.md) · Siehe auch: [Sicherheit und Audit](sicherheit-und-audit.md) ·
-[Betrieb einer Site](betrieb-einer-website.md) · [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
+[Betrieb einer Site](betrieb-einer-website.md) · [Blättern in Listen](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 
@@ -121,7 +121,7 @@ funktioniert weiterhin, allerdings nur für Schlüssel dieses Benutzers. Jedes F
 |---|---|
 | „Ihr aktueller Session-Handler unterstützt keine Session-Verwaltung.“ | `Handler` ist leer oder `ezpSessionHandlerPHP`. Das ist normal; siehe Abschnitt 3 zum Umstellen. |
 | Die Liste der kürzlichen Anmeldungen ist leer | Niemand hat sich innerhalb des Zeitfensters angemeldet: Wählen Sie die Sitzungsdauer. |
-| „Nicht alle abgelaufenen Sessions konnten entfernt werden.“ | Der Lauf wurde abgebrochen, um eine Zeitüberschreitung zu vermeiden. Wiederholen Sie ihn, führen Sie `php bin/php/ezsessiongc.php` aus oder richten Sie den Cronjob-Teil `session_gc` ein. |
+| „Nicht alle abgelaufenen Sitzungen konnten entfernt werden.“ | Der Lauf wurde abgebrochen, um eine Zeitüberschreitung zu vermeiden. Wiederholen Sie ihn, führen Sie `php bin/php/ezsessiongc.php` aus oder richten Sie den Cronjob-Teil `session_gc` ein. |
 | „Nur die Sitzung, die Sie gerade verwenden, war ausgewählt“ | Ihre eigene aktuelle Sitzung wird nie aus der Liste entfernt. Melden Sie sich ab, um sie zu beenden. |
 | „Zeitversatz erkannt“ bei Letzte Aktivität | Das Ende der Sitzung liegt weiter in der Zukunft als die Sitzungsdauer: Die Uhr eines Webservers weicht ab, oder `SessionTimeout` wurde verringert. |
 
@@ -139,3 +139,11 @@ funktioniert weiterhin, allerdings nur für Schlüssel dieses Benutzers. Jedes F
 - Tests: `tests/tests/kernel/classes/setup/SessionPageTest.php` (Referenzen, Regel zur eigenen Sitzung, Aufräumen, Zeitdauern,
   Zeilen; ohne Datenbank).
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

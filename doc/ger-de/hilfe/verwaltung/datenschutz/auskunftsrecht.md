@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Datenschutzbeauftragte und Administratoren, die Auskunftsanträge beantworten. Exponential
 hat eigene Exporte für E-Mail-Einstellungen und Audit-Einträge; der Rest wird über einzelne Administrationswerkzeuge
 zusammengetragen, weil es keine einheitliche Funktion „alle meine Daten exportieren“ gibt
-([Datenschutzstandards: Bekannte Lücken](../../../../eng-us/standards/privacy.md#known-gaps)).
+([Datenschutzstandards: Bekannte Lücken](../../../standards/datenschutz.md#bekannte-lücken)).
 
 ![Gesammelte Informationen: was Besucher über Formulare gesendet haben, für einen Auskunftsantrag aufzufinden](../../../../eng-us/help/images/government/gov-forms.webp)
 
@@ -45,7 +45,7 @@ zusammengetragen, weil es keine einheitliche Funktion „alle meine Daten export
 | Audit-Einträge von oder über den Benutzer | `./console exp:audit export --subject-user=<id> --format=jsonl --out=var/tmp/<case>/audit.jsonl --allow-root-user`; enthält pseudonymisierte Einträge |
 
 Quellen: [E-Mail-Einstellungen für Administratoren: Anträge](../../../anleitungen/mail-einstellungen-administrator.md#6-anfragen-nach-dem-datenschutzrecht),
-[Audit-Leitfaden 4.12](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks).
+[Audit-Leitfaden 4.12](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben).
 
 ## Den Rest zusammentragen
 
@@ -78,8 +78,9 @@ Siehe „Was nicht exportiert werden kann“ für das, was die Werkzeuge nicht a
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

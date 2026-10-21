@@ -22,7 +22,7 @@ Sheets sich in Code und Einstellungen wiederfinden. Die praktischen Schritte zur
 | Standard | Version | Status | Nachweis (kurz) |
 |---|---|---|---|
 | OWASP Top 10 | 2021 | **Teilweise erfüllt** | Gegenmaßnahmen für alle zehn Kategorien; Lücken beim Standard für die Kontosperre, bei der Prüfung der Abhängigkeiten in der CI und bei der CSP der öffentlichen Website |
-| OWASP Application Security Verification Standard (ASVS) | 4.0.3 | **Nicht verifiziert** | keine ASVS-Bewertung durchgeführt; viele Kontrollen der Stufe 1 vorhanden (siehe unten) |
+| OWASP Application Security Verification Standard (ASVS) | 4.0.3 | **Nicht geprüft** | keine ASVS-Bewertung durchgeführt; viele Kontrollen der Stufe 1 vorhanden (siehe unten) |
 | Content Security Policy | Level 3 (W3C Working Draft) | **Teilweise erfüllt** | Kernel-Richtlinie mit Nonces pro Anfrage, `report-uri` und Reporting API, Sammelstelle `csp/report`; standardmäßig nur berichtend, auf Websites aus |
 | OWASP Cheat Sheet Series | aktuell | **Teilweise erfüllt** | CSRF-Tokens, Speicherung von Passwörtern, Sitzungscookies, Sicherheitsheader, Ausgabekodierung, Prüfung von Uploads |
 | Koordinierte Offenlegung von Schwachstellen | ISO/IEC 29147 (Praxis) | **Teilweise erfüllt** | `SECURITY.md` mit einem privaten Meldeweg und den unterstützten Versionen; keine `security.txt` (RFC 9116) mitgeliefert |
@@ -104,7 +104,7 @@ und im Code vorhanden sind:
 
 ### Status
 
-**Nicht verifiziert.** Die standardmäßige Mindestlänge für Passwörter (10) liegt unter ASVS 4.0.3 V2.1.1 (12), sodass
+**Nicht geprüft.** Die standardmäßige Mindestlänge für Passwörter (10) liegt unter ASVS 4.0.3 V2.1.1 (12), sodass
 Stufe 1 ohne Änderung von `MinPasswordLength` nicht erreicht wird. Die Stufen 2 und 3 wurden nicht bewertet.
 
 ## Content Security Policy Level 3

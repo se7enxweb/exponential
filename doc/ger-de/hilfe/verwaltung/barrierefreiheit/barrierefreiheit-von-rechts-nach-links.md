@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administration, Design und Entwicklung in öffentlic
 Sprachen von rechts nach links bedienen. Schreibrichtung und Sprache sind Fragen der Barrierefreiheit: Ein Screenreader
 liest arabischen Text mit der falschen Stimme, wenn `lang` falsch ist, und Satzzeichen springen an das falsche Ende,
 wenn die Schreibrichtung nicht isoliert ist. Die folgenden Fakten stammen aus
-[Sprachen von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md).
+[Sprachen von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md).
 
 ## Inhalt
 
@@ -40,7 +40,7 @@ Locale-Dateien enthalten diesen Eintrag. Templates können `$site.text_direction
   richtigen Stelle behält.
 - Eine Seite von links nach rechts bleibt Byte für Byte unverändert.
 - Abgesichert durch `tests/tests/design/AdminRightToLeftTest.php`; das Projekt zählt dies zu WCAG 1.3.2
-  Bedeutungstragende Reihenfolge ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#wcag-22)).
+  Bedeutungstragende Reihenfolge ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#wcag-22)).
 
 ## In Inhalten
 
@@ -65,7 +65,7 @@ beschrieben.
   erscheinen (ein Zitat, eine übersetzte Zusammenfassung).
 - Spiegeln Sie richtungsabhängige Symbole (Pfeile, Winkel), nicht Logos oder Mediensteuerungen.
 - Die Sicht der Website-Ersteller finden Sie unter
-  [Websites von rechts nach links](../../../../eng-us/help/creators/website-creators/right-to-left-sites.md).
+  [Websites von rechts nach links](../../ersteller/website-ersteller/websites-von-rechts-nach-links.md).
 
 ## Testen
 
@@ -77,14 +77,15 @@ beschrieben.
 
 ## Verwandte Seiten
 
-- [Sprachen von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md)
+- [Sprachen von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
 - [Sprachen](../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

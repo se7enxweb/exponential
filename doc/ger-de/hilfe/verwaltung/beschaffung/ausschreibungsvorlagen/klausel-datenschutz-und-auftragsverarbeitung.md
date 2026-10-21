@@ -62,16 +62,16 @@ P.7 End of contract. At the end of the contract the Supplier shall return the da
 
 ## Personenbezogene Daten, die ein CMS enthält
 
-Bitten Sie den Bieter, für P.2 mindestens Folgendes abzudecken, aus den [Datenschutzstandards](../../../../../eng-us/standards/privacy.md):
+Bitten Sie den Bieter, für P.2 mindestens Folgendes abzudecken, aus den [Datenschutzstandards](../../../../standards/datenschutz.md):
 
 | Wo | Was |
 |---|---|
 | Benutzerkonten | Namen, E-Mail-Adressen, Anmeldedaten von Beschäftigten und registrierten Besuchern |
 | Information Collector | alles, was Besucher in Formulare eingeben ([Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)) |
-| E-Mail-Einstellungen und Einwilligungsprotokoll | Kategorien, Einwilligungsverlauf, der angezeigte Text ([E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md)) |
+| E-Mail-Einstellungen und Einwilligungsprotokoll | Kategorien, Einwilligungsverlauf, der angezeigte Text ([E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md)) |
 | Newsletter-Daten | Abonnenten; Statistiken je Person nur mit Einwilligung |
 | Suchbegriffe | gespeichert, können personenbezogene Daten enthalten |
-| Audit-Protokoll | handelnde Personen, gekürzte Adressen, nach einer festgelegten Zeit pseudonymisiert ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
+| Audit-Protokoll | handelnde Personen, gekürzte Adressen, nach einer festgelegten Zeit pseudonymisiert ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
 | Protokolle | Anfrageprotokolle, Fehlerprotokolle, Protokolle des Webservers (außerhalb von Exponential) |
 | Sicherungen | alles oben Genannte |
 
@@ -79,8 +79,8 @@ Bitten Sie den Bieter, für P.2 mindestens Folgendes abzudecken, aus den [Datens
 
 | Klausel | Funktion |
 |---|---|
-| P.3 | Einstellungen der Audit-Felder `[AuditPrivacySettings] Field[]`; `MaskIP=enabled` für Anfrageprotokolle; Schwärzung im Log-Betrachter; `MaxAgeDays` je Protokoll ([Rotation der Logdateien](../../../../../eng-us/features/6.0/log-rotation.md)); Erweiterungen Dritter standardmäßig nicht aktiv |
-| P.5 | Export der E-Mail-Einstellungen (JSON, CSV), `./console exp:audit export --subject-user=<id>`, Löschung der Maildaten beim Entfernen eines Kontos, „Deaktivieren und verschieben“ zur Einschränkung ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)) |
+| P.3 | Einstellungen der Audit-Felder `[AuditPrivacySettings] Field[]`; `MaskIP=enabled` für Anfrageprotokolle; Schwärzung im Log-Betrachter; `MaxAgeDays` je Protokoll ([Rotation der Logdateien](../../../../funktionen/6.0/log-rotation.md)); Erweiterungen Dritter standardmäßig nicht aktiv |
+| P.5 | Export der E-Mail-Einstellungen (JSON, CSV), `./console exp:audit export --subject-user=<id>`, Löschung der Maildaten beim Entfernen eines Kontos, „Deaktivieren und verschieben“ zur Einschränkung ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)) |
 | Lücke bei P.5 | Keine einzelne Funktion „alle meine Daten exportieren“ oder „mich löschen“; Formulare, Bestellungen und Inhalte werden gesondert erreicht |
 | Lücke bei P.2 | Kein Cookie-Einwilligungsbanner im Kernel oder in mitgelieferten Designs |
 

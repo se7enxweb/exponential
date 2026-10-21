@@ -14,7 +14,7 @@ Fehlermeldungen beantworten. Sie erklärt, wie eine Fehlerseite zu den genauen L
 führt, welche Logs es gibt und wofür jedes da ist und wie Logs klein und frei von personenbezogenen Daten der Kunden
 gehalten werden. Die technischen Anleitungen sind
 [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) und
-[Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md).
+[Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md).
 
 ![Die Fehlerübersicht der Logdateien](../../../../eng-us/help/images/help/bu-logs.webp)
 
@@ -41,7 +41,7 @@ Der Weg von der Meldung zur Ursache ist kurz:
    **Suchen**.
 3. Die Seite zeigt den Eintrag und jede Zeile derselben Anfrage (gleiche Adresse und gleicher Client, innerhalb von zwei
    Sekunden) aus allen Kernel-Logs in zeitlicher Reihenfolge.
-4. **Das Audit dieses Moments** öffnet den Audit-Trail zum selben Zeitpunkt: Eine Bearbeitung, eine Veröffentlichung oder
+4. **Das Audit dieses Moments** öffnet das Prüfprotokoll zum selben Zeitpunkt: Eine Bearbeitung, eine Veröffentlichung oder
    eine Änderung an Einstellungen kurz vor dem Fehler ist oft die Ursache.
 
 Dasselbe in einer Shell: `php bin/php/console exp:logs --reference=ERR-0123456789`. Exit-Code 1 bedeutet, dass sie nicht
@@ -72,7 +72,7 @@ passiert: Jeder Server führt sein eigenes `var/log`
 ## Die Logs und wofür jedes da ist
 
 Exponential trennt echte Fehler vom Rauschen, damit es sich weiterhin lohnt, `error.log` zu lesen
-([Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md)):
+([Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md)):
 
 | Log | Was es enthält | Wen es betrifft |
 |---|---|---|
@@ -81,14 +81,14 @@ Exponential trennt echte Fehler vom Rauschen, damit es sich weiterhin lohnt, `er
 | `security.log` | Anfragen, die nach Sondierungen oder Angriffen aussehen, mit jedem Status | Den Betrieb, monatlich; achten Sie auf Häufungen und auf Angriffe, die ein `200` bekommen haben |
 | `deprecated.log` | Code, den eine spätere PHP-Version ablehnen wird | Entwickler, vor dem nächsten PHP-Upgrade ([Betrieb einer Site](../../../anleitungen/betrieb-einer-website.md#php-deprecations-und-größe-der-logdateien)) |
 | Cronjob-Logs | Ausgabe der geplanten Jobs | Den Betrieb, wenn ein Job nicht gelaufen ist |
-| Der Audit-Trail | Wer was getan hat: Anmeldungen, Inhalte, Einstellungen, Bestellungen | Führungskräfte, Sicherheit, Compliance ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
+| Das Prüfprotokoll | Wer was getan hat: Anmeldungen, Inhalte, Einstellungen, Bestellungen | Führungskräfte, Sicherheit, Compliance ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
 
 ## Logs ohne Shell lesen
 
 **Setup > Logdateien** (Richtlinie `setup/logs`) zeigt jedes Log der Installation in der Administration: die
 Kernel-Logs, die Logs jeder Website, die Logs, die Erweiterungen schreiben, und ihre Rotationen. Die Seite hat einen
 Navigator über alle Dateien, Filter nach Zeit, Stufe und Adresse, eine Suche und für jede Ansicht einen **Permalink**,
-den Sie einer Kollegin oder einem Kollegen schicken können ([Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md#in-short)).
+den Sie einer Kollegin oder einem Kollegen schicken können ([Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md#kurz-gesagt)).
 
 Zwei Übersichtsseiten sparen Zeit
 ([Überblick über die Überwachung](../../hosting/betrieb/ueberblick-ueber-die-ueberwachung.md#seiten-für-einen-menschen)):
@@ -100,7 +100,7 @@ Zwei Übersichtsseiten sparen Zeit
 ## Logs bleiben klein
 
 Ein Log, das die Festplatte füllt, kann eine Website lahmlegen. Exponential rotiert jedes Log für Sie
-([Log-Rotation](../../../../eng-us/features/6.0/log-rotation.md#in-short)):
+([Log-Rotation](../../../funktionen/6.0/log-rotation.md#kurz-gesagt)):
 
 - Wenn ein Log über `site.ini [FileSettings] LogFileMaxSize` (ab Werk 2 MB) hinauswächst, wird es nach `.1`, `.2`, `.3`
   rotiert.
@@ -122,8 +122,8 @@ standardmäßig:
   `setup/unmasklogs` kann das abschalten, und zwar nur für sich selbst, und ein Permalink trägt den Schalter für die
   Demaskierung nie mit
   ([Einen Fehler finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md#kurz-gesagt)).
-- Der Audit-Trail kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter oder Tokens auf
-  ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)).
+- Das Prüfprotokoll kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter oder Tokens auf
+  ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#warum-sie-es-wollen)).
 
 Das ist eine technische Schutzmaßnahme, keine Rechtsberatung. Zu Ihren Pflichten siehe
 [DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md) und fragen Sie Ihren Datenschutzbeauftragten oder Ihren Anwalt.
@@ -145,8 +145,8 @@ Das ist eine technische Schutzmaßnahme, keine Rechtsberatung. Zu Ihren Pflichte
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

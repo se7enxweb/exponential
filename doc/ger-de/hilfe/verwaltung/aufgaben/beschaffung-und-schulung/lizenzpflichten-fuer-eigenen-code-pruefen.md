@@ -27,7 +27,7 @@ und vor der Abnahme. Die Regeln stammen aus
 
 - Die Liste der gelieferten Erweiterungen, Designs und Bibliotheken.
 - Die Vertragsklauseln zu Eigentum und Quellcode
-  ([Klausel zum geistigen Eigentum an eigener Arbeit](../../../../../eng-us/help/government/procurement/tender-templates/intellectual-property-of-custom-work-clause.md)).
+  ([Klausel zum geistigen Eigentum an eigener Arbeit](../../beschaffung/ausschreibungsvorlagen/klausel-rechte-an-individuellen-entwicklungen.md)).
 
 ## Schritte
 
@@ -36,7 +36,7 @@ und vor der Abnahme. Die Regeln stammen aus
    ([Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md#was-bedeutet-quellcode-bei-einer-webanwendung)).
 2. **Prüfen Sie die Lizenz jeder Erweiterung**: Ihre `ezinfo.php`, `extension.xml` oder `composer.json` nennt sie; die
    Seite Über listet Erweiterungen mit ihrer Lizenz
-   ([Seiten Über und Pakete](../../../../../eng-us/features/6.0/about-and-package-pages.md)). Code, der Exponential erweitert und
+   ([Seiten Über und Pakete](../../../../funktionen/6.0/info-und-paketseiten.md)). Code, der Exponential erweitert und
    an Sie verbreitet wird, steht unter der GPL Version 2 oder später.
 3. **Prüfen Sie Bibliotheken**, die in denselben PHP-Prozess geladen werden: Sie müssen GPL-kompatibel sein;
    Bibliotheken, die nur über das Netzwerk erreicht werden, sind getrennt
@@ -63,5 +63,5 @@ haben, den Code zu pflegen, zu ändern und weiterzugeben.
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Anforderungen zu Open Source und Lizenzierung](../../../../../eng-us/help/government/procurement/requirements/open-source-and-licensing-requirements.md)
+- [Anforderungen zu Open Source und Lizenzierung](../../beschaffung/anforderungen/anforderungen-an-open-source-und-lizenzierung.md)
 - [FAQ: Lizenzierung und Open Source](../../faq/faq-lizenzen-und-open-source.md)

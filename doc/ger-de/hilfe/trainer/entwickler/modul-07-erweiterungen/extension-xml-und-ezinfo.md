@@ -40,8 +40,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [ezinfo.php: was die Seite Über liest](../../../../../eng-us/help/designers/extensions/ezinfo-php.md),
-[extension.xml: die verpackte Beschreibung](../../../../../eng-us/help/designers/extensions/extension-xml.md) und
+Quellen: [ezinfo.php: was die Seite Über liest](../../../designer/erweiterungen/ezinfo-php.md),
+[extension.xml: die verpackte Beschreibung](../../../designer/erweiterungen/extension-xml.md) und
 [Spezifikation: Metadaten von Erweiterungen](../../../../spezifikationen/6.0/extension-metadaten.md).
 
 1. **`ezinfo.php`** (4 Minuten). Die Klasse heißt wie der Ordner, gefolgt von `Info`, `info()` ist `static`, und
@@ -54,7 +54,7 @@ Quellen: [ezinfo.php: was die Seite Über liest](../../../../../eng-us/help/desi
    von der Datei `LICENSE` abweicht; eine Website, die nicht Ihnen gehört.
 4. **Die Lizenz** (3 Minuten). Code, der auf dem Kernel aufbaut, steht in der Regel unter der GNU GPL, Version 2
    oder später; die Lizenzzeile lautet "GNU General Public License v2.0 (or any later version)". Die Wahl der Lizenz
-   ist die Entscheidung des Autors; [Lizenzwahl](../../../../../eng-us/help/designers/distribution/licensing-choices-overview.md)
+   ist die Entscheidung des Autors; [Lizenzwahl](../../../designer/veroeffentlichung/lizenzwahl-ueberblick.md)
    erklärt die Möglichkeiten.
 5. **Versionen und Tags** (3 Minuten). Ein Release erhöht die Version in beiden Dateien in dem Commit, auf den der
    Tag zeigt. Ein gepushter Tag ist dauerhaft; ein Fehler wird mit der nächsten Version behoben, niemals durch das
@@ -154,11 +154,11 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [ezinfo.php](../../../../../eng-us/help/designers/extensions/ezinfo-php.md) und [extension.xml](../../../../../eng-us/help/designers/extensions/extension-xml.md).
-- [Alle Versionsfelder synchron halten](../../../../../eng-us/help/designers/extensions/keeping-version-fields-in-sync.md).
-- [Die Datei LICENSE](../../../../../eng-us/help/designers/extensions/license-file.md) und
-  [Lizenzwahl](../../../../../eng-us/help/designers/distribution/licensing-choices-overview.md).
-- [Ein gepushter Tag ist dauerhaft](../../../../../eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md).
+- [ezinfo.php](../../../designer/erweiterungen/ezinfo-php.md) und [extension.xml](../../../designer/erweiterungen/extension-xml.md).
+- [Alle Versionsfelder synchron halten](../../../designer/erweiterungen/versionsfelder-synchron-halten.md).
+- [Die Datei LICENSE](../../../designer/erweiterungen/die-license-datei.md) und
+  [Lizenzwahl](../../../designer/veroeffentlichung/lizenzwahl-ueberblick.md).
+- [Ein gepushter Tag ist dauerhaft](../../../designer/veroeffentlichung/ein-gepushter-tag-ist-endgueltig.md).
 
 ## Verwandte Seiten
 
@@ -168,9 +168,9 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

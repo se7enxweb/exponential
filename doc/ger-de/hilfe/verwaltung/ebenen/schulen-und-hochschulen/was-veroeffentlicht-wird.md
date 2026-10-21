@@ -52,10 +52,10 @@ Inhalt braucht.
 |---|---|---|
 | Subsites von Fachbereichen mit eigenem Aussehen | Siteaccesses und Designs auf einer Installation | [Intranets und Subsites von Fachbereichen](intranets-und-fachbereichs-subsites.md) |
 | Eingeschränkte Seiten für Beschäftigte und Lernende | Sektionen, die Anonymous nicht lesen darf; Rollen für Mitglieder | [Sektionen, 13.1](../../../../anleitungen/sektionen.md#131-ein-mitgliederbereich) |
-| Fristen, die Listen steuern | Datumsattribute und Fetches | [Datentypen wählen](../../../../../eng-us/help/creators/website-creators/choosing-datatypes.md) |
+| Fristen, die Listen steuern | Datumsattribute und Fetches | [Datentypen wählen](../../../ersteller/website-ersteller/datentypen-waehlen.md) |
 | Veranstaltungen mit einem Kalender | die Klassen Event und Event calendar | [Inhaltsmodell](inhaltsmodell.md) |
-| Profile der Beschäftigten an einer Stelle, wiederverwendet | eine Klasse Person (`ng_person` wird mit dem Standardpaket ausgeliefert) und Beziehungen | [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md) |
-| Suche über viele Fachbereiche | eingebaute Suche oder eZ Find mit Solr | [Suche mit eZ Find und Solr](../../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md) |
+| Profile der Beschäftigten an einer Stelle, wiederverwendet | eine Klasse Person (`ng_person` wird mit dem Standardpaket ausgeliefert) und Beziehungen | [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md) |
+| Suche über viele Fachbereiche | eingebaute Suche oder eZ Find mit Solr | [Suche mit eZ Find und Solr](../../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md) |
 | Handbücher über mehrere Ebenen | die Klasse Documentation page (`documentation_page`) | [sevenx_classes](../../../seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md) |
 
 ## Was in andere Systeme gehört
@@ -70,7 +70,7 @@ Inhalt braucht.
 
 Exponential kann sich mit Login-Handlern gegen andere Systeme authentifizieren, einschließlich der Gerüste für
 OAuth-Social-Login in `sevenx_authentication_2fa`
-([sevenx_authentication_2fa](../../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md)); die Anbindung an den
+([sevenx_authentication_2fa](../../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md)); die Anbindung an den
 Identitätsanbieter einer Einrichtung ist eine Entwicklungsaufgabe, keine Einstellung.
 
 ## Zu klärende Fragen
@@ -84,12 +84,13 @@ Identitätsanbieter einer Einrichtung ist eine Entwicklungsaufgabe, keine Einste
 
 - [Schulen und Hochschulen](README.md)
 - [Inhaltsmodell für Schulen und Hochschulen](inhaltsmodell.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -39,7 +39,7 @@ General Public License, Version 2 oder höher (`composer.json`: `"license": "GPL
 > heißen `ezpublish-version` und `ezpublish-release`. Das sind Namen von Code, nicht des Produkts, und dieses
 > Handbuch schreibt sie genau so wie der Code, denn ein Befehl oder eine Einstellung funktioniert nur, wenn sie so
 > geschrieben ist, wie der Code es erwartet. Das Produkt selbst heißt immer Exponential.
-> [Umbenennung in Exponential](../../eng-us/features/6.0/rebranding-to-exponential.md) erzählt die Geschichte.
+> [Umbenennung in Exponential](../funktionen/6.0/umbenennung-in-exponential.md) erzählt die Geschichte.
 
 ## 1.2 Die Bestandteile einer Installation
 
@@ -73,7 +73,7 @@ Datenbank gehören der Installation selbst; alles andere lässt sich aus Git und
 ### Der Kernel
 
 Der Kernel ist der Code in `kernel/` und `lib/`. `lib/` enthält die allgemeinen Bibliotheken (Datenbanktreiber in
-`lib/ezdb/`, die Template-Engine in `lib/eztemplate/`, Dateien, Locales, Bilder, Sessions); `kernel/` enthält das
+`lib/ezdb/`, die Template-Engine in `lib/eztemplate/`, Dateien, Locales, Bilder, Sitzungen); `kernel/` enthält das
 Inhaltsmodell, die Module, die auf URLs antworten (`content/view`, `user/login`, `setup/...`), den Setup-Assistenten
 (`kernel/setup/`), die Konsolenbefehle (`kernel/private/classes/commands/`) und die Datentypen. Die Version des
 Kernels ist in `lib/version.php` definiert (`VERSION_MAJOR`, `VERSION_MINOR`, `VERSION_RELEASE`, `VERSION_STATE`);
@@ -119,7 +119,7 @@ in `extension/<name>` ab, wobei `<name>` der Wert `extra.ezpublish-legacy-extens
 dieser nicht gesetzt ist, der Teil des Paketnamens nach dem Schrägstrich. Deshalb landet `se7enxweb/explayouts-ui`
 in `extension/explayouts_ui`: Das Paket benennt sein Verzeichnis ausdrücklich.
 [Kapitel 3](03-den-code-beschaffen.md#35-extensions-sind-composer-pakete) erklärt das im Detail. Die Extensions und
-ihre jeweilige Aufgabe sind unter [Extensions](../../eng-us/features/6.0/extensions/README.md) aufgeführt; die Entwicklung
+ihre jeweilige Aufgabe sind unter [Extensions](../funktionen/6.0/erweiterungen/README.md) aufgeführt; die Entwicklung
 eigener Extensions behandelt die [Anleitung zu Extensions](../anleitungen/extensions.md).
 
 ### Siteaccesses
@@ -152,7 +152,7 @@ Module hinter den ausgeblendeten Reitern (`setup`, `visual`, `explayouts_ui`, `e
 `xrowextract`, `bccie`) sind dort über `[SiteAccessRules]` abgeschaltet. Geben Sie Redakteuren diese Adresse statt
 der Admin-Adresse: Sie behalten alles, was sie brauchen, und können die Einstellungen, das Design und die
 Entwicklerwerkzeuge nicht erreichen. Siehe
-[Der Setup-Assistent und der Redaktions-Siteaccess](../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
+[Der Setup-Assistent und der Redaktions-Siteaccess](../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
 
 Wie die Siteaccesses unterschieden werden, wird während der Installation gewählt. Mit `exp:install` und seinen
 Standard-Match-Werten (die Hostnamen sind die, die Sie mit `--host` und `--admin-host` angeben) sehen die drei
@@ -239,10 +239,10 @@ In effect:
 ```
 
 Einstellungen werden in `var/cache/ini/` zwischengespeichert; leeren Sie nach dem Bearbeiten einer Datei von Hand
-diesen Cache mit `php bin/php/ezcache.php --clear-tag=ini`, und starten Sie Velocity neu, falls es die Site
+diesen Cache mit `php bin/php/ezcache.php --clear-tag=ini`, und starten Sie Velocity neu, falls er die Site
 ausliefert, denn seine Worker halten die Einstellungen im Speicher. Die Platzierungsregeln sind in
 [Platzierung von INI-Overrides](../spezifikationen/6.0/ini-override-platzierungen.md) spezifiziert; der Befehl, der
-Einstellungen in jedem Geltungsbereich liest und schreibt, ist [exp:ini](../../eng-us/features/6.0/exp-ini-command.md).
+Einstellungen in jedem Geltungsbereich liest und schreibt, ist [exp:ini](../funktionen/6.0/exp-ini-befehl.md).
 
 ### Das Site-Paket und die Datenbank
 
@@ -269,7 +269,7 @@ Engines betreibt: den eingebauten Server von PHP (`php`, für die Entwicklung) u
 produktionsreife Alternative). Velocity ist bei der Installation optional, aber für den Betrieb empfohlen; die Site
 läuft auch ohne es hinter Apache oder nginx. Weil die Worker den Code und die Einstellungen im Speicher halten,
 erreicht eine Änderung an einer PHP-Klasse oder einer INI-Datei eine von Velocity ausgelieferte Site erst nach
-`exp:velocity restart` (oder `exp:velocity deploy`). Siehe [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md) und das
+`exp:velocity restart` (oder `exp:velocity deploy`). Siehe [Velocity-Engines](../bc/6.0/velocity-engines.md) und das
 [README](../../../README.md#exponential-velocity--the-fast-option) des Projekts.
 
 ## 1.3 Die drei Installationsmethoden in je einem Absatz
@@ -312,7 +312,7 @@ Das Handbuch folgt der Reihenfolge, in der Sie eine Site installieren:
 | [14](14-migration-von-4x.md) bis [17](17-migrationsreferenz.md): Migration | Sie eine Site von einer älteren Produktlinie zu Exponential umziehen |
 
 Das [Inhaltsverzeichnis](README.md) verlinkt jedes Kapitel und schlägt je nach Situation einen Lesepfad vor. Wenn Sie
-nur den kürzesten Weg möchten, finden Sie in der [Installationsübersicht](../../eng-us/INSTALL.md) den gesamten Ablauf auf einer
+nur den kürzesten Weg möchten, finden Sie in der [Installationsübersicht](../INSTALL.md) den gesamten Ablauf auf einer
 Seite; dieses Handbuch erklärt jeden Schritt ausführlich, mit den Gründen, den Alternativen und den Referenzen.
 
 Jedes Kapitel beginnt mit einer Zusammenfassung, verlinkt oben und unten seine Nachbarkapitel und endet mit einem
@@ -343,7 +343,7 @@ php bin/php/kickstarter.php run --dry-run
 Shell-Skripte in `bin/shell/` sind die Befehle `shell:<name>`, und Extensions fügen eigene unter
 `ext:<extension>:` hinzu. Viele Installationen legen eine Verknüpfung im Wurzelverzeichnis an
 (`ln -s bin/php/console console`), wonach `./console` dasselbe Programm ist. `php bin/php/console list` listet jeden
-Befehl auf; `php bin/php/console help <command>` erklärt einen. Siehe [Konsole](../../eng-us/bc/6.0/console.md).
+Befehl auf; `php bin/php/console help <command>` erklärt einen. Siehe [Konsole](../bc/6.0/konsole.md).
 
 **Ausführen als root.** Die meisten Kommandozeilenskripte verweigern die Ausführung als Betriebssystembenutzer
 `root`. Sie brechen mit dem Exit-Status 1 ab und geben aus:
@@ -386,7 +386,7 @@ vollständige Geschichte steht in den [Changelogs](../../changelogs/6.0/6.0.15.m
 
 ## 1.6 Glossar
 
-Die folgenden Begriffe sind die, die die Installationskapitel verwenden. Das [vollständige Glossar](../../eng-us/glossary.md)
+Die folgenden Begriffe sind die, die die Installationskapitel verwenden. Das [vollständige Glossar](../glossar.md)
 enthält jeden Begriff der Dokumentation.
 
 | Begriff | Bedeutung |
@@ -420,19 +420,19 @@ enthält jeden Begriff der Dokumentation.
 
 In diesem Repository:
 
-- [Installationsübersicht](../../eng-us/INSTALL.md): die gesamte Installation auf einer Seite.
+- [Installationsübersicht](../INSTALL.md): die gesamte Installation auf einer Seite.
 - [Projekt-README](../../../README.md): was Exponential ist und wie es ausgeliefert wird.
-- [Glossar](../../eng-us/glossary.md): jeder Begriff der Dokumentation.
+- [Glossar](../glossar.md): jeder Begriff der Dokumentation.
 - [Erste Schritte](../anleitungen/erste-schritte.md): die erste Stunde nach einer Installation.
-- [Der Setup-Assistent und der Redaktions-Siteaccess](../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
-- [Standardwerte einer sauberen Installation](../../eng-us/features/6.0/clean-install-defaults.md).
-- [Extensions](../../eng-us/features/6.0/extensions/README.md) und die [Anleitung zu Extensions](../anleitungen/extensions.md).
+- [Der Setup-Assistent und der Redaktions-Siteaccess](../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
+- [Standardwerte einer sauberen Installation](../funktionen/6.0/standardwerte-einer-sauberen-installation.md).
+- [Extensions](../funktionen/6.0/erweiterungen/README.md) und die [Anleitung zu Extensions](../anleitungen/extensions.md).
 - [Templates und Design](../anleitungen/templates-und-design.md).
 - [Platzierung von INI-Overrides](../spezifikationen/6.0/ini-override-platzierungen.md) und
-  [exp:ini](../../eng-us/features/6.0/exp-ini-command.md).
-- [Konsole](../../eng-us/bc/6.0/console.md).
-- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
-- [Umbenennung in Exponential](../../eng-us/features/6.0/rebranding-to-exponential.md).
+  [exp:ini](../funktionen/6.0/exp-ini-befehl.md).
+- [Konsole](../bc/6.0/konsole.md).
+- [Velocity-Engines](../bc/6.0/velocity-engines.md).
+- [Umbenennung in Exponential](../funktionen/6.0/umbenennung-in-exponential.md).
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
 - Code: `lib/version.php`, `settings/site.ini` (`[SiteAccessSettings]`, `[ExtensionSettings]`),
   `kernel/setup/steps/ezstep_site_access.php`, `kernel/setup/steps/ezstep_site_details.php`,
@@ -448,3 +448,11 @@ Extern:
 - 7x: [se7enx.com](https://se7enx.com).
 
 [Inhalt](README.md) · Weiter: [2. Voraussetzungen](02-voraussetzungen.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

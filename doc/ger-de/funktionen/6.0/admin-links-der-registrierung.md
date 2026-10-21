@@ -138,7 +138,7 @@ Die Seite gehört zur Administration (`ui_context` administration). Sie zeigt:
   Freigeben oder Ablehnen.
 - **Bestätigen per POST.** Ein GET ändert nie etwas; E-Mail-Scanner und Linkvorschauen öffnen Links. Das Konto wird
   nur durch einen POST des Bestätigungsformulars mit **Freigeben** oder **Ablehnen und entfernen** geändert, und das
-  Formular trägt das Formular-Token der Session (`ezformtoken`), sodass eine andere Site es nicht für Sie absenden
+  Formular trägt das Formular-Token der Sitzung (`ezformtoken`), sodass eine andere Site es nicht für Sie absenden
   kann.
 - **Audit.** Festgehalten im Prüfprotokoll ([Audit-Ereignisse](../../bc/6.0/audit.md)):
 
@@ -280,8 +280,9 @@ setzt, hat die E-Mail beide Teile; andernfalls ist sie, wie bisher, das, was das
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

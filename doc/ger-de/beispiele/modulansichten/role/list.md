@@ -14,10 +14,10 @@ Eine Ansicht des Moduls `role`, definiert in `kernel/role/module.php` und ausgef
 ## Adresse
 
 ```text
-/role/list/(offset)/<Offset>
+/role/list/(offset)/<Offset>/(sort)/<Sort>/(dir)/<Dir>/(q)/<Query>
 ```
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`, `(sort)` setzt `Sort`, `(dir)` setzt `Dir`, `(q)` setzt `Query`.
 
 ## Wer sie öffnen darf
 

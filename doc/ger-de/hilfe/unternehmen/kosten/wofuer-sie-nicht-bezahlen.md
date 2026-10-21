@@ -4,7 +4,7 @@ audience: businesses, project-manager, sales-marketing
 category: business-solutions
 order: 20
 summary: Die Kostenposten, die Sie bei einem Budget für Exponential weglassen können, jeweils mit Quelle - keine Lizenzgebühr, keine Gebühr pro Benutzer oder Server, kein vorgeschriebener Datenbankserver oder separater Webserver und viele Funktionen, die mitgeliefert werden - und die Kosten, die bleiben.
-keywords: keine Lizenzgebühr, kostenlos, GPL, pro Benutzer, pro Arbeitsplatz, pro Server, SQLite, Velocity, eingebaute Funktionen, Shop, Newsletter, Zwei-Faktor, Audit-Trail, Herstellerbindung, Ausstiegskosten, no license fee, free of charge, per user, per seat, per server, built-in features, shop, newsletter, two-factor, audit trail, vendor lock-in, exit cost
+keywords: keine Lizenzgebühr, kostenlos, GPL, pro Benutzer, pro Arbeitsplatz, pro Server, SQLite, Velocity, eingebaute Funktionen, Shop, Newsletter, Zwei-Faktor, Prüfprotokoll, Herstellerbindung, Ausstiegskosten, no license fee, free of charge, per user, per seat, per server, built-in features, shop, newsletter, two-factor, audit trail, vendor lock-in, exit cost
 type: help
 ---
 # Wofür Sie nicht bezahlen
@@ -73,14 +73,14 @@ Aus `README.md`, „Main Exponential features“, und den Erweiterungen, die `co
 | Bedarf | Enthalten | Mehr lesen |
 |---|---|---|
 | Online-Shop | „Advanced e-Commerce Stores (Built in)“ mit USt, Währungen, Bestellungen; PayPal über `ezpaypal` | [Shops](../shops/README.md) |
-| Newsletter | `cjw_newsletter` wird von `composer.json` verlangt | [Newsletter](../newsletter/README.md) |
+| Newsletter | `cjw_newsletter` wird von `composer.json` verlangt | [Newsletter](../newsletters/README.md) |
 | Zweistufige Anmeldung | `sevenx_authentication_2fa` wird verlangt, und die Installer aktivieren es | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Audit-Trail | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicherer Audit-Trail mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
-| Suche | „Built in search engine“ (eingebaute Suchmaschine); Solr über `ezfind` ist optional | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
+| Prüfprotokoll | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicheres Prüfprotokoll mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
+| Suche | „Built in search engine“ (eingebaute Suchmaschine); Solr über `ezfind` ist optional | [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md) |
 | Sprachen | „Advanced multi-lingual support“ (umfassende Mehrsprachigkeit) | [Mehrsprachig](../mehrsprachig/README.md) |
 | Headless und Apps | „A headless CRUD REST API“ | [Mobil und headless](../mobil-und-headless/README.md) |
-| Seitenbaukasten | Exponential Layouts | [Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md) |
-| Formulare | „Contact forms“ (Kontaktformulare) mit dem Information Collector; Erweiterungen für reCAPTCHA und hCaptcha | [Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
+| Seitenbaukasten | Exponential Layouts | [Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md) |
+| Formulare | „Contact forms“ (Kontaktformulare) mit dem Information Collector; Erweiterungen für reCAPTCHA und hCaptcha | [Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
 | Aktualisierungen in der Administration | `ezupdate` wird verlangt | [Automatische Aktualisierungen mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |
 
 Bevor Sie einen Posten aus dem Budget streichen, prüfen Sie, ob die enthaltene Funktion tut, was Sie brauchen: Eine
@@ -130,8 +130,8 @@ Seien Sie gegenüber der Geschäftsleitung klar darüber; es sind echte Kosten a
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

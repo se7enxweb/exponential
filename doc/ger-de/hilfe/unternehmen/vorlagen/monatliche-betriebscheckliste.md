@@ -4,7 +4,7 @@ audience: businesses, admin, hosting
 category: business-solutions
 order: 60
 summary: Eine kopierfertige monatliche Checkliste, damit eine laufende Exponential-Website gesund und sicher bleibt - Releases und Updates, Backups, Logs und Fehler, Sicherheit, Konten, Jobs, Inhalte und Formulare - mit dem Ort, an dem jede Prüfung stattfindet, und einem kurzen Bericht für die Geschäftsleitung.
-keywords: monatlicher Betrieb, Checkliste, Wartung, Updates, Backups, Logs, Fehler, Sicherheit, Audit-Trail, Konten, Cronjobs, Festplatte, Bericht, Betrieb, monthly operations, checklist, maintenance, logs, errors, security, audit trail, accounts, cron jobs, disk, report, operations
+keywords: monatlicher Betrieb, Checkliste, Wartung, Updates, Backups, Logs, Fehler, Sicherheit, Prüfprotokoll, Konten, Cronjobs, Festplatte, Bericht, Betrieb, monthly operations, checklist, maintenance, logs, errors, security, audit trail, accounts, cron jobs, disk, report, operations
 type: help
 ---
 # Monatliche Betriebscheckliste
@@ -40,7 +40,7 @@ UPDATES                                                                     Erl.
 
 BACKUPS
 [ ] Backups liefen in diesem Monat jeden Tag                               [ ]   ____
-[ ] Backup umfasst Datenbank, Dateien, Einstellungen, Schlüssel, Audit-Trail [ ] ____
+[ ] Backup umfasst Datenbank, Dateien, Einstellungen, Schlüssel, Prüfprotokoll [ ] ____
 [ ] Wiederherstellungstest in diesem Quartal? (Datum: ______)              [ ]   ____
 
 LOGS UND FEHLER
@@ -56,7 +56,7 @@ SICHERHEIT
 
 KONTEN
 [ ] Konten der Ausgeschiedenen des Monats deaktiviert                      [ ]   ____
-[ ] Neue Administratoren beabsichtigt? (Rollenzuweisungen im Audit-Trail)  [ ]   ____
+[ ] Neue Administratoren beabsichtigt? (Rollenzuweisungen im Prüfprotokoll) [ ]   ____
 
 JOBS UND INHALTE
 [ ] Cronjobs gelaufen (Cronjob-Seite)                                      [ ]   ____
@@ -77,12 +77,12 @@ Offene Risiken: ______________________________________________
 | Updates der Erweiterungen | **Setup > Updates und Pakete** (`ezupdate`), die Prüfung ändert nichts | [Automatische Updates mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |
 | Upgrade-Prüfung | **Setup > Upgrade-Prüfung** | [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Backups | der Backup-Bericht Ihres Hosters | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
-| Logs und 404-Fehler | der Log-Viewer | [Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md), [Request-Logs](../../../../eng-us/features/6.0/request-logs.md) |
+| Logs und 404-Fehler | der Log-Viewer | [Log-Viewer](../../../funktionen/6.0/log-betrachter.md), [Request-Logs](../../../funktionen/6.0/anfrageprotokolle.md) |
 | Speicherplatz und Zustand | **Systeminformationen** | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
-| Audit | der Tab **Audit**; `exp:audit verify` | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
-| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
-| Cronjobs | die Cronjob-Seite | [Cronjob-Konsole](../../../../eng-us/features/6.0/cronjobs-console.md) |
-| Inhaltsprüfungen | Link- und Inhaltsprüfungen | [Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md) |
+| Audit | der Tab **Audit**; `exp:audit verify` | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
+| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
+| Cronjobs | die Cronjob-Seite | [Cronjob-Konsole](../../../funktionen/6.0/cronjobs-in-der-konsole.md) |
+| Inhaltsprüfungen | Link- und Inhaltsprüfungen | [Link- und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md) |
 | Formulare | **Setup > Gesammelte Informationen** | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | Mail | `exp:mail:status` | [E-Mail-Einstellungen: Leitfaden für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md) |
 
@@ -104,15 +104,15 @@ und der Nachweis für Ihre [ROI](../kosten/rendite-der-stabilitaet.md)-Zahlen.
 
 ## Verwandte Seiten
 
-- [Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)
+- [Ihre Website pflegen](../../ersteller/website-ersteller/ihre-website-pflegen.md)
 - [Verfügbarkeit in der Praxis](../zuverlaessigkeit/verfuegbarkeit-in-der-praxis.md)
 - [Betrieb einer Website](../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

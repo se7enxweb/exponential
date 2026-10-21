@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Websiteersteller. Jeder Siteaccess formatiert Datum, Zahlen und
 Geldbeträge mit seiner `site.ini [RegionalSettings] Locale`, gelesen aus `share/locale/<code>.ini`
-([Sprachen in Exponential, Abschnitt 7](../../../../eng-us/languages.md#7-adding-a-locale)).
+([Sprachen in Exponential, Abschnitt 7](../../../sprachen.md#7-eine-locale-hinzufügen)).
 
 ## Inhalt
 
@@ -32,7 +32,7 @@ Geldbeträge mit seiner `site.ini [RegionalSettings] Locale`, gelesen aus `share
 | `[HTTP] ContentLanguage` | die `lang`-Angabe der Seite |
 
 Die Locale-Dateien von 6.0.15 wurden aus den Daten von Unicode CLDR erzeugt, sie folgen also dem üblichen Gebrauch in
-jedem Land ([Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md#unicode-cldr-and-icu)).
+jedem Land ([Standards zur Internationalisierung](../../../standards/internationalisierung.md#unicode-cldr-und-icu)).
 
 ## Die Formate einer Locale sehen
 
@@ -50,7 +50,7 @@ eigenen Repository auf; eine geänderte mitgelieferte Datei wird bei Updates üb
 
 `site.ini [TimeZoneSettings] TimeZone` setzt eine Zeitzone pro Installation oder Siteaccess, aus der IANA-Zeitzonendatenbank;
 es gibt keine Zeitzone pro Benutzer
-([Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md#time-zones-the-iana-tz-database)).
+([Standards zur Internationalisierung](../../../standards/internationalisierung.md#zeitzonen-die-iana-tz-datenbank)).
 Eine Stelle, die mehrere Zeitzonen bedient, sollte die Zeitzone neben Uhrzeiten angeben, etwa bei Fristen.
 
 ## Bekannte Grenzen
@@ -64,14 +64,15 @@ Eine Stelle, die mehrere Zeitzonen bedient, sollte die Zeitzone neben Uhrzeiten 
 
 ## Verwandte Seiten
 
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
-- [Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md)
+- [Sprachen in Exponential](../../../sprachen.md)
+- [Standards zur Internationalisierung](../../../standards/internationalisierung.md)
 - [Eigene Locales für nicht gelistete Sprachen](eigene-locales-fuer-nicht-gelistete-sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

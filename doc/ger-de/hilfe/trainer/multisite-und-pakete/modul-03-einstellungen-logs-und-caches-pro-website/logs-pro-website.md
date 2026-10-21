@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
+Quelle: [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
 
 1. **Die Einstellungen** (6 Minuten), alle in `site.ini [FileSettings]`, für jeden Siteaccess der Website:
 
@@ -106,7 +106,7 @@ Ihrer Übungsumgebung.
    php bin/php/console exp:ini set site.ini/FileSettings/LogDir log_site_b extension:site_clubb:siteaccess:site_b
    ```
 
-3. Starten Sie Velocity neu, wenn es die Übungsumgebung ausliefert.
+3. Starten Sie Velocity neu, wenn er die Übungsumgebung ausliefert.
 4. Fragen Sie `site_b` nach einer Seite, die nicht existiert, dann die Hauptwebsite:
 
    ```bash
@@ -147,31 +147,31 @@ Ihrer Übungsumgebung.
 1. Die Debug-Logs und die Standard-Logs von `eZLog` gehen in das Log-Verzeichnis der Website statt nach `var/log`.
 2. **B.** Das erste Verzeichnis von `VarDir` wird durch den Baum ersetzt, dann wird `LogDir` (`log`) angehängt.
 3. Die Audit-Einträge: Sie gehören zum Speicher der Website, werden jahrelang aufbewahrt und gegen ihre Hash-Kette
-   geprüft ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#what-reads-the-logs)).
+   geprüft ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#was-die-logs-liest)).
 4. `eZSys::logDirectory()` oder `eZLog::write()` ohne Verzeichnis.
 5. `404.log` im Log-Verzeichnis dieser Website, wenn `[RequestLogSettings] NotFoundLog` auf `enabled` steht
-   ([Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md)).
+   ([Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md)).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
-- [Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md): `404.log` und `security.log`.
-- [Die Log-Anzeige](../../../../../eng-us/features/6.0/log-viewer.md): die Logs unter **Setup** > **Logdateien** lesen.
+- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
+- [Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md): `404.log` und `security.log`.
+- [Die Log-Anzeige](../../../../funktionen/6.0/log-betrachter.md): die Logs unter **Setup** > **Logdateien** lesen.
 - [Log-Anzeige und Rotation](../../../hosting/betrieb/log-viewer-und-log-rotation.md): die Sicht des Hosters.
 
 ## Verwandte Seiten
 
 - [Modul 3: Einstellungen, Logs und Caches pro Website](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

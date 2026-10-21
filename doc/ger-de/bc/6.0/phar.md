@@ -187,7 +187,7 @@ Seiten und sendete fast nichts mit ihnen:
 
 Kein `Cache-Control`, daher ließ sich nichts cachen, und jede Anfrage wurde gerendert -- aus 75 ms wurden 1,2 bis
 1,7 s. Kein `Set-Cookie`, daher konnte sich niemand anmelden: Die Anmeldung antwortete mit 302 an die richtige Stelle
-und setzte keine Session. Nichts wurde protokolliert, weil nichts fehlschlug.
+und setzte keine Sitzung. Nichts wurde protokolliert, weil nichts fehlschlug.
 
 `qbix-webserver` 0.0.4.8 umhüllt auch `phar://`. Ist das Archiv in Gebrauch und verhalten sich Header oder Anmeldung
 seltsam, prüfen Sie zuerst diese Version.
@@ -336,9 +336,9 @@ Bewusst nicht getan:
 
 ## Verwandte Seiten
 
-- [Verhaltensänderungen vom 16. bis 30. September 2026: Engine-Archiv](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md#engine-archive-expphar) (atomarer Bau, gebündelte Syntaxprüfung)
-- [Velocity, der Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Verhaltensänderungen vom 16. bis 30. September 2026: Engine-Archiv](verhaltensaenderungen-2026-09b.md#engine-archiv-expphar) (atomarer Bau, gebündelte Syntaxprüfung)
+- [Velocity, der Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Velocity-Engines — Qbix, FrankenPHP, der eingebaute Server von PHP](velocity-engines.md)
 - [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

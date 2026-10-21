@@ -5,7 +5,7 @@ Referenz ERR-0123456789“), zu den Logzeilen dieser Anfrage gelangen, zu dem, w
 hat, und dazu, wer in diesem Moment was getan hat. Sie richtet sich an Administratoren und Entwickler, die solche
 Meldungen beantworten.
 
-[Anleitungen](README.md) · Siehe auch: [Der Log-Viewer](../../eng-us/features/6.0/log-viewer.md),
+[Anleitungen](README.md) · Siehe auch: [Der Log-Viewer](../funktionen/6.0/log-betrachter.md),
 [Sicherheit und Audit](sicherheit-und-audit.md), [Systeminformationen](systeminformationen.md)
 
 ## Kurz gesagt
@@ -46,10 +46,10 @@ aufgetreten: Jeder Server hat sein eigenes `var/log`.
 Ohne Referenz suchen Sie stattdessen nach Zeit und Adresse: **Von** und **Bis** einige Minuten um die Meldung herum,
 die Adresse unter **Anfrage**, die Stufen **Fehler** und **Warnung**, Bereich **Alle Kernel-Logs**. Als Permalink:
 `/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17T01:00/(to)/2026-10-17T01:10/(uri)/~2Fshop/(scope)/kernel`
-(ein `/` wird in einem Wert zu `~2F`, siehe [Permalinks](../../eng-us/features/6.0/log-viewer.md#permalinks); ein
+(ein `/` wird in einem Wert zu `~2F`, siehe [Permalinks](../funktionen/6.0/log-betrachter.md#permalinks); ein
 früher geschriebener Link mit `~3A` für `:` wird genauso gelesen).
 
-Sind die Webserver-Logs des Servers konfiguriert ([Webserver-Logs](../../eng-us/features/6.0/log-viewer.md#web-server-logs)),
+Sind die Webserver-Logs des Servers konfiguriert ([Webserver-Logs](../funktionen/6.0/log-betrachter.md#webserver-logs)),
 zeigt `/setup/logs/view/webserver-access` mit demselben Zeitraum die Anfrage so, wie der Webserver sie gesehen hat:
 ihren Status, ihre Größe und den User-Agent.
 
@@ -82,3 +82,11 @@ dieselbe Suche öffnet, immer maskiert (ein Permalink trägt nie den Schalter zu
 oder laden Sie die Zeilen mit eingeschalteter Maskierung herunter (die Voreinstellung): Der Download über **Bereich
 herunterladen** ist wie die Seite maskiert und komprimiert. Fügen Sie nie unmaskierte Zeilen in ein Ticket ein: Sie
 können E-Mail-Adressen und IP-Adressen von Kunden enthalten.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

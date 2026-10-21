@@ -13,7 +13,7 @@ Diese Seite richtet sich an IT-Teams in öffentlichen Stellen, deren Änderungsp
 an einem Produktionssystem auf einen freigegebenen Antrag zurückführbar sein muss. Sie beantwortet, wie Sie Code und
 Einstellungen einer Exponential-Website in der Versionsverwaltung halten, wie Sie verhindern, dass die Administration
 an Ihrem Prozess vorbei Einstellungen auf dem Server ändert, und was aus dem Repository herausbleiben muss. Die
-Funktionsreferenz ist [Durch die Bereitstellung verwaltete Konfiguration](../../../../../eng-us/features/6.0/managed-by-deployment.md).
+Funktionsreferenz ist [Durch die Bereitstellung verwaltete Konfiguration](../../../../funktionen/6.0/durch-deployment-verwaltet.md).
 
 ## Inhalt
 
@@ -45,7 +45,7 @@ Wie Code mit Composer und Git auf einen Server gelangt, steht unter
 Ohne Sperre schreiben der INI-Editor, die Editoren für Werkzeugleiste und Menüs und der Template-Editor der
 Administration Dateien `*.ini.append.php` und `.tpl` in das Release-Verzeichnis. Die Versionsverwaltung sieht sie
 nicht, und die nächste Bereitstellung verwirft sie
-([Durch die Bereitstellung verwaltete Konfiguration](../../../../../eng-us/features/6.0/managed-by-deployment.md)). Für eine
+([Durch die Bereitstellung verwaltete Konfiguration](../../../../funktionen/6.0/durch-deployment-verwaltet.md)). Für eine
 öffentliche Stelle ist das zudem ein Prüfungsbefund: eine Änderung an der Produktion, die den Änderungsprozess umgangen hat.
 
 ## Mit ManagedByDeployment sperren
@@ -101,9 +101,9 @@ aus Ihrem Speicher für Geheimnisse bereitgestellt wird. Sichern Sie diese Datei
 ## Nachvollziehbarkeit
 
 Mit Code und Einstellungen in der Versionsverwaltung sagt die Historie des Repositorys, was sich wann und in welchem
-geprüften Commit geändert hat. Exponential steuert seinen Teil bei: Der Audit-Trail zeichnet Schreibvorgänge an
+geprüften Commit geändert hat. Exponential steuert seinen Teil bei: Das Prüfprotokoll zeichnet Schreibvorgänge an
 Einstellungen, das Leeren von Caches, Bereitstellungen und Paketinstallationen im Kanal `system` auf
-([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md)). Zusammen erlauben sie Ihnen, die Frage einer Prüferin oder
+([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md)). Zusammen erlauben sie Ihnen, die Frage einer Prüferin oder
 eines Prüfers zu beantworten: „Wer hat diese Einstellung geändert, und war das freigegeben?“ Der Änderungsprozess
 selbst ist unter [Änderungsmanagement und Änderungsbeiräte](../aktualisierungen-und-aenderungen/aenderungsmanagement-und-aenderungsbeiraete.md)
 beschrieben.
@@ -124,8 +124,9 @@ beschrieben.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

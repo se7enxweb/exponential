@@ -29,7 +29,7 @@ Exponential liefert einen Shop in seinem Kernel mit. Das README des Projekts nen
 in)“ unter den wichtigsten Funktionen ([README.md](https://github.com/se7enxweb/exponential/blob/main/README.md)). Produkte sind gewöhnliche Inhalte mit einem
 Preisfeld; Besucher legen sie in einen Warenkorb, gehen zur Kasse und bezahlen über einen Zahlungsanbieter, und die
 Mitarbeiter des Shops bearbeiten die Bestellungen im Tab **Shop** der Administration, der das Shop-Dashboard öffnet
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 Die Seiten dieses Bereichs behandeln:
 
@@ -49,7 +49,7 @@ Die Seiten dieses Bereichs behandeln:
 | Geschäftsinhaber und entscheiden, ob Sie mit Exponential online verkaufen | [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md) |
 | Shop-Verantwortlicher und bearbeiten täglich Bestellungen | [Einen Shop im Alltag betreiben](einen-shop-im-alltag-betreiben.md) |
 | Projektleiter und planen den Start | [Shop-Planung für kleine Unternehmen](shop-planung-fuer-kleine-unternehmen.md) |
-| Die Person, die den Shop einrichtet | die technische Seite [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md) |
+| Die Person, die den Shop einrichtet | die technische Seite [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md) |
 
 ## Alle Seiten dieses Bereichs
 
@@ -97,31 +97,31 @@ Die Seiten dieses Bereichs behandeln:
 
 Diese Seiten erklären und fassen zusammen; sie wiederholen nicht die Konfigurationsschritte. Einstellungen, Templates
 und Code stehen auf den technischen Seiten, auf die sie verweisen, meist unter
-[Website-Ersteller](../../../../eng-us/help/creators/website-creators/website-creators-start-here.md) und auf den Funktionsseiten in
+[Website-Ersteller](../../ersteller/website-ersteller/website-ersteller-hier-beginnen.md) und auf den Funktionsseiten in
 `doc/eng-us/features/6.0/`. Steuer- und Rechtsfragen gehören zu Ihrem Steuerberater und Ihrem Anwalt; diese Seiten
 beschreiben nur, was die Software tut.
 
 ## Benachbarte Bereiche
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md) und [Wie Unternehmen mit Exponential online verkaufen](../wie-unternehmen-online-verkaufen.md)
-- [Newsletter](../newsletter/README.md), um Kunden auf dem Laufenden zu halten
+- [Newsletter](../newsletters/README.md), um Kunden auf dem Laufenden zu halten
 - [Kosten und Rendite](../kosten/README.md), darunter [ein durchgerechnetes Beispiel für einen kleinen Shop](../kosten/durchgerechnetes-beispiel-kleiner-shop.md)
 - [Sicherheit](../sicherheit/README.md) und [Zuverlässigkeit](../zuverlaessigkeit/README.md)
 - [Mehrsprachige Websites](../mehrsprachig/README.md) für Shops in mehreren Sprachen
 - [Mobil und headless](../mobil-und-headless/README.md) für den Verkauf über Apps und Partner
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md)
 
 ## Verwandte Seiten
 
-- [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)
-- [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+- [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)
+- [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 - [Vertrieb und Marketing: hier beginnen](../../geschaeft/vertrieb-und-marketing-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

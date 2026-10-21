@@ -148,7 +148,7 @@ schneller und einfacher.
 ### Umstieg von LoveStack
 
 `./console exp:explovestack` prüft eine Installation, auf der LoveStack lief (nur lesend), und übernimmt deren
-Datenbank als die von Exponential. Die Schritte stehen unter [LoveStack: Migration](../../../eng-us/bc/6.0/love/MIGRATION.md).
+Datenbank als die von Exponential. Die Schritte stehen unter [LoveStack: Migration](../../bc/6.0/love/migration.md).
 
 ## 2. Export aus Exponential
 
@@ -299,5 +299,13 @@ Bewährte Vorgehensweisen für das Skript:
 | Office-Dokumente | ezodf | |
 | Ein Feed | RSS-Import | |
 
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->
+
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License
-1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).

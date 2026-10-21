@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Kommunikationsteams. Der Widerruf einer Einwilligung muss so einfach
 sein wie ihre Erteilung, und große Postfachanbieter verlangen von Massenversendern das Abmelden mit einem Klick. Das
 E-Mail-Gate von Exponential fügt beides jeder optionalen E-Mail hinzu
-([Datenschutzstandards: CAN-SPAM Act und Abmelden mit einem Klick](../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe)).
+([Datenschutzstandards: CAN-SPAM Act und Abmelden mit einem Klick](../../../standards/datenschutz.md#can-spam-act-und-abmeldung-mit-einem-klick)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -36,7 +36,7 @@ Hinzugefügt von `expMailGate::decorate()`:
 
 Das Gate schreibt `From`, `Reply-To` oder `Subject` nie um. Notwendige E-Mails (Passwort zurücksetzen, Aktivierung,
 Bestellungen) werden getrennt gehalten und enthalten keine Werbung. Das Projekt bewertet dies für E-Mails, die über das
-E-Mail-Gate gehen, mit **„Complies“** (erfüllt).
+E-Mail-Gate gehen, mit **„Erfüllt“**.
 
 ## Was bei einem Klick geschieht
 
@@ -70,14 +70,15 @@ beschrieben.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [E-Mail-Einstellungen für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md)
 - [Die Sperrliste](sperrliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

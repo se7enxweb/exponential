@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Beschaffungsstellen und IT-Leitungen, die eine Dokumentation wollen, mit der ein anderes
 Team übernehmen kann. Das Produkt selbst ist im Repository dokumentiert, in `doc/`, wird in der Hilfe der Administration
-angezeigt und ist freie Dokumentation unter der GNU FDL 1.3 oder neuer ([Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md)).
+angezeigt und ist freie Dokumentation unter der GNU FDL 1.3 oder neuer ([Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md)).
 Der Lieferant muss das Produkt also nicht neu dokumentieren: Die Klausel verlangt, was für Ihre Website spezifisch ist.
 
 **Vorlage** - an Ihre Vergaberegeln anpassen; keine Rechtsberatung
@@ -64,8 +64,8 @@ D.6 Verification. The Customer may ask a third party to install or restore the
 ## Die Produktdokumentation nutzen
 
 - Redaktion und Administratoren lesen die Hilfe in der Administration (**Hilfe-Center**, `/exphelp/dashboard`), und die
-  Schaltfläche „?“ öffnet die Hilfe zur aktuellen Seite ([Hilfesystem](../../../../../eng-us/features/6.0/help-system.md)).
-- Die Hilfe lässt sich exportieren, zum Beispiel als EPUB ([Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md)).
+  Schaltfläche „?“ öffnet die Hilfe zur aktuellen Seite ([Hilfesystem](../../../../funktionen/6.0/hilfesystem.md)).
+- Die Hilfe lässt sich exportieren, zum Beispiel als EPUB ([Standards zu Dokumentation und Veröffentlichung](../../../../standards/dokumentation-und-veroeffentlichung.md)).
 - Weil die Produktdokumentation unter der GFDL steht, darf Ihre eigene Website-Dokumentation sie zitieren und anpassen
   und muss diese Lizenz für die angepassten Teile beibehalten ([Freie Dokumentation](../../../freie-dokumentation.md)).
 
@@ -78,5 +78,5 @@ D.6 Verification. The Customer may ask a third party to install or restore the
 - [Ausschreibungsvorlagen](README.md)
 - [Klausel zur Schulung](klausel-schulung.md)
 - [Klausel zu Ausstieg und Datenrückgabe](klausel-ausstieg-und-datenrueckgabe.md)
-- [Übergabe an die Redaktion](../../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)
+- [Übergabe an die Redaktion](../../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

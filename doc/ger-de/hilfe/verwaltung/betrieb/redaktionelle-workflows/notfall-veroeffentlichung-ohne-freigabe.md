@@ -3,7 +3,7 @@ title: Notfallumgehung beim Veröffentlichen
 audience: government, admin, project-manager
 category: public-sector
 order: 90
-summary: Wie eine öffentliche Stelle dringende Informationen (eine Notfallmeldung, eine Schließung, eine Meldung zur öffentlichen Sicherheit) veröffentlichen kann, ohne auf die normale Freigabe zu warten, und dabei die Umgehung klein, bewusst und im Audit-Trail nachvollziehbar hält.
+summary: Wie eine öffentliche Stelle dringende Informationen (eine Notfallmeldung, eine Schließung, eine Meldung zur öffentlichen Sicherheit) veröffentlichen kann, ohne auf die normale Freigabe zu warten, und dabei die Umgehung klein, bewusst und im Prüfprotokoll nachvollziehbar hält.
 keywords: Notfallveröffentlichung, dringende Bekanntmachung, Notfallzugriff, Freigabe umgehen, ausgeschlossene Benutzergruppen, Krisenkommunikation, öffentliche Sicherheit, Audit, Freigabe-Workflow, nachträgliche Prüfung, emergency publishing, urgent notice, break glass, bypass approval, excluded user groups, crisis communication, public safety, approval workflow, after-the-fact review
 type: help
 ---
@@ -11,8 +11,8 @@ type: help
 
 Diese Seite richtet sich an Webverantwortliche und Kommunikationsleitungen, die dringende öffentliche Informationen sofort veröffentlichen können
 müssen, auch wenn keine freigebende Person erreichbar ist, und dabei trotzdem ihre Steuerungsregeln einhalten. Exponential hat keinen eigenen
-Notfallmodus; die Umgehung wird aus dem Feld **Gruppen ausschließen** des Freigabe-Ereignisses und dem Audit-Trail gebaut.
-Quellen: [Workflows](../../../../anleitungen/workflows.md) und [Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md).
+Notfallmodus; die Umgehung wird aus dem Feld **Gruppen ausschließen** des Freigabe-Ereignisses und dem Prüfprotokoll gebaut.
+Quellen: [Workflows](../../../../anleitungen/workflows.md) und [Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md).
 
 ## Inhalt
 1. [Der Entwurf: erst Notfallzugriff, dann Prüfung](#der-entwurf-erst-notfallzugriff-dann-prüfung)
@@ -28,7 +28,7 @@ Quellen: [Workflows](../../../../anleitungen/workflows.md) und [Audit-Trail](../
   veröffentlichen ohne Freigabe“ ([Workflows, Abschnitt 3.2](../../../../anleitungen/workflows.md#32-das-ereignis-freigeben-einrichten)).
 - Die Gruppe ist im Normalbetrieb **leer** oder enthält zwei oder drei namentlich benannte Personen in Bereitschaft.
 - Jemanden in die Gruppe aufzunehmen, ist der eigentliche Notfallzugriff. Es ist eine Aktion eines Administrators, und sie wird erfasst.
-- Jede Veröffentlichung wird im Kanal `content` des Audit-Trails erfasst, sodass die anschließende Prüfung die Fakten hat.
+- Jede Veröffentlichung wird im Kanal `content` des Prüfprotokolls erfasst, sodass die anschließende Prüfung die Fakten hat.
 
 ## Einrichten
 
@@ -86,12 +86,13 @@ Freigabe in Ihrem Ticket fest.
 - [Vier-Augen-Prinzip beim Veröffentlichen](vier-augen-prinzip-beim-veroeffentlichen.md)
 - [Überblick über Freigabe-Workflows](freigabe-workflows-im-ueberblick.md)
 - [Grundlagen der Reaktion auf Vorfälle](../vorfaelle/grundlagen-der-vorfallsbehandlung.md)
-- [Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

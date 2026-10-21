@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Lizenzentscheidungen: ein Überblick](../../../../../eng-us/help/designers/distribution/licensing-choices-overview.md) und die
+Quelle: [Lizenzentscheidungen: ein Überblick](../../../designer/veroeffentlichung/lizenzwahl-ueberblick.md) und die
 dort verlinkten Seiten.
 
 1. **Was Exponential verwendet** (4 Minuten). Die Software: GNU GPL Version 2 oder später (`GPL-2.0-or-later`). Die
@@ -51,10 +51,10 @@ dort verlinkten Seiten.
 
    | Teil | Übliche Wahl | Seite |
    |---|---|---|
-   | Templates, CSS, JavaScript, PHP | `GPL-2.0-or-later` | [Die GPL für Theme-Code](../../../../../eng-us/help/designers/distribution/gpl-for-theme-code.md) |
-   | Die Dokumentation des Themes | GFDL 1.3 oder eine Creative-Commons-Lizenz | [Die GFDL für die Dokumentation eines Themes](../../../../../eng-us/help/designers/distribution/gfdl-for-theme-documentation.md) |
-   | Eigene Bilder und Grafiken | Eine Creative-Commons-Lizenz | [Creative Commons für Bilder](../../../../../eng-us/help/designers/distribution/creative-commons-for-images.md) |
-   | Schriften, Icons und Bibliotheken anderer | Was ihre Urheber gewählt haben; Sie müssen sich daran halten | [Schriften, Icons und Bibliotheken von Dritten](../../../../../eng-us/help/designers/distribution/third-party-fonts-icons-and-libraries.md) |
+   | Templates, CSS, JavaScript, PHP | `GPL-2.0-or-later` | [Die GPL für Theme-Code](../../../designer/veroeffentlichung/gpl-fuer-theme-code.md) |
+   | Die Dokumentation des Themes | GFDL 1.3 oder eine Creative-Commons-Lizenz | [Die GFDL für die Dokumentation eines Themes](../../../designer/veroeffentlichung/gfdl-fuer-theme-dokumentation.md) |
+   | Eigene Bilder und Grafiken | Eine Creative-Commons-Lizenz | [Creative Commons für Bilder](../../../designer/veroeffentlichung/creative-commons-fuer-bilder.md) |
+   | Schriften, Icons und Bibliotheken anderer | Was ihre Urheber gewählt haben; Sie müssen sich daran halten | [Schriften, Icons und Bibliotheken von Dritten](../../../designer/veroeffentlichung/schriften-icons-und-bibliotheken-dritter.md) |
 
 3. **Was die Assistenten anbieten** (3 Minuten). Der Assistent für Design-Erweiterungen und der Paket-Assistent listen
    die Lizenzen aus `package.ini [LicenseSettings]` auf: die Familien GPL, LGPL und AGPL, MIT, die GFDL,
@@ -66,8 +66,8 @@ dort verlinkten Seiten.
 ### Häufige Fragen
 
 **Darf ich ein GPL-Theme verkaufen?** Ja; die GPL erlaubt den Verkauf, unter Bedingungen. Siehe
-[Die GPL und der Verkauf](../../../../../eng-us/help/designers/sales/gpl-and-selling.md) und
-[Kommerzielle Bedingungen neben der GPL](../../../../../eng-us/help/designers/distribution/commercial-terms-and-gpl.md).
+[Die GPL und der Verkauf](../../../designer/verkauf/gpl-und-verkauf.md) und
+[Kommerzielle Bedingungen neben der GPL](../../../designer/veroeffentlichung/kommerzielle-bedingungen-neben-der-gpl.md).
 
 **Die Icons von admin4 stehen unter MIT. Liefert mein Theme sie mit?** Nein: Sie gehören zur Installation
 (`share/icons/bootstrap-icons/`, mit ihrer Lizenz daneben). Ihr Theme liefert nur, was in seinem eigenen Ordner liegt.
@@ -122,7 +122,7 @@ Ihrer Sitznachbarin oder Ihrem Sitznachbarn.
 <details>
 <summary>Antworten</summary>
 
-1. **B.** ([Lizenzentscheidungen](../../../../../eng-us/help/designers/distribution/licensing-choices-overview.md#what-exponential-uses))
+1. **B.** ([Lizenzentscheidungen](../../../designer/veroeffentlichung/lizenzwahl-ueberblick.md#was-exponential-verwendet))
 2. Der Code, die Dokumentation, die eigenen Bilder sowie Schriften, Icons und Bibliotheken von Dritten.
 3. Die GNU Free Documentation License 1.3 oder später.
 4. Die Lizenz der Schrift, die ihre Urheberin gewählt hat; Sie müssen sich daran halten.
@@ -132,11 +132,11 @@ Ihrer Sitznachbarin oder Ihrem Sitznachbarn.
 
 ## Weiterführende Literatur
 
-- [Lizenzentscheidungen: ein Überblick](../../../../../eng-us/help/designers/distribution/licensing-choices-overview.md).
-- [Assets unter eigenen Lizenzen](../../../../../eng-us/help/designers/sales/assets-under-separate-licenses.md).
-- [Urheberrechtshinweise in Dateien](../../../../../eng-us/help/designers/distribution/copyright-notices-in-files.md) und
-  [Copyright- und Autorenzeilen](../../../../../eng-us/help/designers/extensions/copyright-and-author-lines.md).
-- [Eine Lizenz im Paket-Assistenten wählen](../../../../../eng-us/help/designers/extensions/package-licenses-in-the-wizard.md).
+- [Lizenzentscheidungen: ein Überblick](../../../designer/veroeffentlichung/lizenzwahl-ueberblick.md).
+- [Assets unter eigenen Lizenzen](../../../designer/verkauf/bilder-und-schriften-unter-eigenen-lizenzen.md).
+- [Urheberrechtshinweise in Dateien](../../../designer/veroeffentlichung/copyright-hinweise-in-dateien.md) und
+  [Copyright- und Autorenzeilen](../../../designer/erweiterungen/copyright-und-autorenzeilen.md).
+- [Eine Lizenz im Paket-Assistenten wählen](../../../designer/erweiterungen/paketlizenzen-im-assistenten.md).
 
 ## Verwandte Seiten
 

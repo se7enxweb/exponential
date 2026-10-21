@@ -13,8 +13,8 @@ Diese Seite ist für Redakteure, die einen Newsletter zusammenstellen: eine mona
 Beteiligungsverfahren und Veranstaltungen. Die Erweiterung `cjw_newsletter` hält Ausgaben als Inhalte unter einer
 Liste; der Bereich **Newsletter** der Administration (`/newsletter/index`, das **Newsletter dashboard**) zeigt
 Abonnenten, Versand, Rückläufer und die redaktionellen Werkzeuge
-([Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md),
-[Newsletter versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md)).
+([Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md),
+[Newsletter versenden](../../../ersteller/website-ersteller/newsletter-versenden.md)).
 
 ## Inhalt
 
@@ -67,12 +67,13 @@ gegangen ist.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Newsletter (Nachrichten und Warnmeldungen)](../../aufbauen/nachrichten-und-warnmeldungen/newsletter.md)
-- [Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md)
+- [Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

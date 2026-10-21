@@ -49,7 +49,7 @@ git push -u origin help-fix-layouts
 ```
 
 In einer Installation meldet `./console exp:help check` defekte Links und Bilder in `doc/`
-([Das Hilfesystem, Auf der Kommandozeile](../../../eng-us/features/6.0/help-system.md#on-the-command-line)). Für Pull Requests am
+([Das Hilfesystem, Auf der Kommandozeile](../../funktionen/6.0/hilfesystem.md#auf-der-kommandozeile)). Für Pull Requests am
 Kernel beschreibt CONTRIBUTING.md außerdem den Commit-Hook und das Dateimanifest (`make hooks`, `make manifest-fix`).
 
 ## Was am meisten hilft
@@ -66,16 +66,16 @@ Kernel beschreibt CONTRIBUTING.md außerdem den Commit-Hook und das Dateimanifes
 ## Regeln für das Schreiben von Hilfeseiten
 
 - **Front Matter**: Neue Seiten beginnen mit `title`, `audience`, `category`, `order`, `summary`, `keywords` und `type`,
-  wie die bestehenden Seiten ([Das Hilfesystem, Front Matter](../../../eng-us/features/6.0/help-system.md#front-matter)).
+  wie die bestehenden Seiten ([Das Hilfesystem, Front Matter](../../funktionen/6.0/hilfesystem.md#front-matter)).
 - **Wörter auf dem Bildschirm**: „Verwenden Sie den Produktnamen, den der Leser auf dem Bildschirm sieht“, und die Namen
   der Schaltflächen genau so, wie sie angezeigt werden (Stilrichtlinie der Hilfe, zitiert in
   [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#sprache-und-schreibweise)).
 - **Amerikanisches Englisch** auf den englischen Seiten: license, color, behavior.
 - **Quellen**: Verlinken Sie die Seite oder Datei, die eine Tatsache belegt.
 - **Sicheres Markdown**: Rohes HTML wird in der Hilfe maskiert; verwenden Sie schlichtes Markdown, Tabellen und
-  Codeblöcke ([Was sie zeigt und was nie](../../../eng-us/features/6.0/help-system.md#what-it-shows-and-what-never)).
+  Codeblöcke ([Was sie zeigt und was nie](../../funktionen/6.0/hilfesystem.md#was-sie-zeigt-und-was-nie)).
 - **Lizenz**: Ihre Änderung wird unter der GNU FDL 1.3 oder später angenommen; sagen Sie es, wenn Text aus einer Quelle
-  mit einer anderen Lizenz stammt ([Zur Dokumentation beitragen](../../../eng-us/README-LICENSE.md#contributing-to-the-documentation)).
+  mit einer anderen Lizenz stammt ([Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumentation-beitragen)).
 
 ## Was Sie vermeiden sollten
 
@@ -92,3 +92,11 @@ Kernel beschreibt CONTRIBUTING.md außerdem den Commit-Hook und das Dateimanifes
 - [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)
 - [Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

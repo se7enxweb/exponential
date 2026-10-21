@@ -624,6 +624,6 @@ Erweiterung:
 
 ## Verwandte Seiten
 
-- [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](../../funktionen/6.0/admin4-design.md)
 - [admin4l: die aus Layouts gebaute Admin-Seite](admin4l.md)
 - [Richtlinien für Beitragende](../../../../CONTRIBUTING.md)

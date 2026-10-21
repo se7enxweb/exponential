@@ -43,7 +43,7 @@ Aus dem [Überblick über die Überwachung](../../hosting/betrieb/ueberblick-ueb
 | Erreichbarkeit | Erreichen Kunden die Website, und zwar schnell genug? | eine HTTP-Prüfung von außen; `/Q/health` von Velocity |
 | Plattform | Sind PHP, Datenbank, Festplatte und Cron in Ordnung? | `exp:system:info`, der Cache-Status, `crontab:list` |
 | Anwendung | Gibt es neue Fehler, Angriffe, fehlgeschlagene Jobs, Mailprobleme? | die Logs, die Fehlerübersicht, der Status von Mail und Benachrichtigungen |
-| Integrität | Hat jemand etwas geändert, was er nicht sollte? | der Audit-Trail und sein Prüfbefehl |
+| Integrität | Hat jemand etwas geändert, was er nicht sollte? | das Prüfprotokoll und sein Prüfbefehl |
 
 ## Prüfungen von außen
 
@@ -73,7 +73,7 @@ wurden am Code geprüft; führen Sie sie im Wurzelverzeichnis der Installation a
 | Zustand der Plattform | `php bin/php/console exp:system:info --json --allow-root-user` | Exit-Status 0; er endet mit 1, wenn eine Zustandsprüfung fehlschlägt |
 | Caches | `php bin/php/cache.php status --json --allow-root-user` | endet mit `PASS` |
 | Velocity, falls verwendet | `php bin/php/console exp:velocity status --json --allow-root-user` | läuft, Worker wie konfiguriert |
-| Audit-Trail | `php bin/php/audit.php verify --allow-root-user` | Exit-Status 0; 1 bedeutet, dass eine Kette gebrochen ist |
+| Prüfprotokoll | `php bin/php/audit.php verify --allow-root-user` | Exit-Status 0; 1 bedeutet, dass eine Kette gebrochen ist |
 | Cron | `php bin/php/console crontab:list` und die Datumsangaben der Cron-Logs | Einträge vorhanden, Logs aktuell |
 | Festplatte | `df -h` auf dem Dateisystem der Installation | Platz für Caches, Logs und ein Backup |
 
@@ -131,9 +131,9 @@ Eine Prüfung, die niemand liest, ist kein Monitoring. Legen Sie im Voraus fest:
 - **Wer einen Alarm erhält**, während und außerhalb der Bürozeiten, und wer die Vertretung ist.
 - **Wie schnell** die Person nachsehen soll und was sie zuerst tut
   ([Störungsbehandlung für kleine Teams](stoerungsbehandlung-fuer-kleine-teams.md)).
-- **Wohin Alarme gehen**: Mail, ein Chat-Kanal, ein Telefon. Der Audit-Trail verschickt außerdem eigene Alarm-Mails bei
+- **Wohin Alarme gehen**: Mail, ein Chat-Kanal, ein Telefon. Das Prüfprotokoll verschickt außerdem eigene Alarm-Mails bei
   Ereignissen wie Brute-Force-Anmeldungen oder der Vergabe einer Administratorrolle; prüfen Sie die Empfänger mit
-  `php bin/php/console exp:audit alerts recipients` ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
+  `php bin/php/console exp:audit alerts recipients` ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)).
 - **Was kein Alarm ist**: ein geplantes Wartungsfenster, eine einzelne langsame Anfrage. Zu viele Fehlalarme gewöhnen
   Menschen daran, echte zu übersehen.
 
@@ -155,8 +155,8 @@ Eine Prüfung, die niemand liest, ist kein Monitoring. Legen Sie im Voraus fest:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Administratoren, die entscheiden, wohin Formulareinsendungen per Mail
 gehen. Sammlungen werden immer in der Datenbank gespeichert (**Setup > Gesammelte Informationen**); die Mail ist eine
 Kopie für das Team, das sie bearbeitet. Quellen:
-[Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md#mail-to-a-receiver)
+[Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md#mail-an-einen-empfänger)
 und [10.4 Mail](../../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand).
 
 ## Inhalt
@@ -44,7 +44,7 @@ die Mail dorthin.
 | `content/collectedinfo/<type>.tpl` | die Seite, die der Besucher nach dem Senden sieht (mit `Display=result`) |
 
 Überschreiben Sie sie in Ihrem Design
-([Template-Overrides](../../../../../eng-us/help/creators/website-creators/template-overrides.md)), um der Mail einen klaren Betreff
+([Template-Overrides](../../../ersteller/website-ersteller/template-overrides.md)), um der Mail einen klaren Betreff
 („Neue Meldung: <Formularname>“), die Werte in einer lesbaren Reihenfolge und einen Link auf die Sammlung in der
 Administration zu geben.
 
@@ -91,8 +91,9 @@ Adressen echter Menschen.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

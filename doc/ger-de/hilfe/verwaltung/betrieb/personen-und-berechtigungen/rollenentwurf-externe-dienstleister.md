@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Vertragsverantwortliche in öffentlichen Stellen, die eine externe Agentur, einen
 Lieferanten oder befristet Beschäftigte an der Website arbeiten lassen. Ziel ist ein Zugang, der zum Vertrag passt und mit ihm endet.
 Alles nutzt das Rollenmodell aus [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md) und die
-Kontenwerkzeuge aus [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md).
+Kontenwerkzeuge aus [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md).
 
 ## Inhalt
 1. [Grundsätze](#grundsätze)
@@ -24,7 +24,7 @@ Kontenwerkzeuge aus [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/
 
 ## Grundsätze
 
-- **Nur persönliche Konten.** Ein Konto je Person, nie ein gemeinsamer Anmeldename für die „Agentur“: Der Audit-Trail erfasst Personen,
+- **Nur persönliche Konten.** Ein Konto je Person, nie ein gemeinsamer Anmeldename für die „Agentur“: Das Prüfprotokoll erfasst Personen,
   und **Benutzerkonten prüfen** kann dann Konten finden, die niemand nutzt. Der Filter **Doppelte E-Mail-Adresse** findet Konten, die
   mit einer gemeinsamen Teamadresse angelegt wurden.
 - **Eine Gruppe je Vertrag.** Legen Sie die Konten des Dienstleisters in eine eigene Benutzergruppe (zum Beispiel „Vertrag 2026-07 -
@@ -71,7 +71,7 @@ Debug-Ausgabe nur für die eigene Adresse ist mit einem Ablaufdatum in `DebugIPL
 ## Während des Vertrags
 
 - Verlangen Sie die zweistufige Anmeldung für die Konten des Vertrags ([Zwei-Faktor für Beschäftigte](zwei-faktor-anmeldung-fuer-beschaeftigte.md)).
-- Sehen Sie sich den Kanal `access` des Audit-Trails für ihre Anmeldungen an, wenn Ihr Vertrag eine Überwachung verlangt.
+- Sehen Sie sich den Kanal `access` des Prüfprotokolls für ihre Anmeldungen an, wenn Ihr Vertrag eine Überwachung verlangt.
 - Wenn sich der Ordner ändert, ändern Sie die eingeschränkte Zuweisung, nicht die Rolle.
 
 ## Am Ende des Vertrags
@@ -81,23 +81,24 @@ Debug-Ausgabe nur für die eigene Adresse ist mit einem Ablaufdatum in `DebugIPL
 2. **Benutzer > Benutzerkonten prüfen**: Suchen Sie die Konten, markieren Sie sie und klicken Sie auf **Deaktivieren**; ihre Sitzungen enden.
 3. Wenn Ihre Website es nutzt, wenden Sie stattdessen **Deaktivieren und verschieben** auf die Konten an: Sie werden deaktiviert und in eine
    verborgene Gruppe ohne Rollen verschoben, wobei ihre Inhalte und der Nachweis dessen, was sie getan haben, erhalten bleiben
-   ([Deaktivieren und verschieben](../../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move)).
+   ([Deaktivieren und verschieben](../../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben)).
 4. Exportieren Sie die Liste als CSV für die Vertragsakte (**Liste als CSV exportieren**).
 5. Entfernen Sie IP-Adressen des Dienstleisters aus allen Freigabelisten für Debug-Ausgabe oder Netzwerkzugang.
 
 Das Entfernen eines Benutzerkontos ist endgültig (Benutzerobjekte kommen nie in den Papierkorb), deshalb wird Deaktivieren oder
-Deaktivieren und verschieben bevorzugt: Der Audit-Trail und die Inhalte behalten einen gültigen Eigentümer.
+Deaktivieren und verschieben bevorzugt: Das Prüfprotokoll und die Inhalte behalten einen gültigen Eigentümer.
 
 ## Verwandte Seiten
-- [Einen Dienstleister nur einen Ordner bearbeiten lassen](../../../../../eng-us/help/government/tasks/people-and-permissions/let-a-contractor-edit-only-one-folder.md)
+- [Einen Dienstleister nur einen Ordner bearbeiten lassen](../../aufgaben/personen-und-berechtigungen/einen-auftragnehmer-nur-einen-ordner-bearbeiten-lassen.md)
 - [Eintritt, Wechsel und Austritt](eintritt-wechsel-austritt.md)
 - [Checkliste für das Ausscheiden von Kunden (Hosting)](../../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)
 - [Grundsätze der geringsten Rechte](prinzip-der-geringsten-rechte.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

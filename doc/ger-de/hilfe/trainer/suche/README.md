@@ -32,7 +32,7 @@ Ergebnisse fehlen.
 | Dauer | 20 Lektionen, etwa 10 Stunden Lektionen (mit Pausen anderthalb bis zwei Tage) |
 | Form | Präsenz oder online; praxisorientiert |
 | Niveau | Fortgeschrittene; Modul 4 für Experten |
-| Voraussetzungen | [Website-Administration](../../../../eng-us/help/trainers/site-administrators/README.md) (mindestens die Module zu Caches und Cronjobs); ein Terminal |
+| Voraussetzungen | [Website-Administration](../website-administratoren/README.md) (mindestens die Module zu Caches und Cronjobs); ein Terminal |
 | Übungsumgebung | Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install` und ausgeliefert mit `exp:velocity start`; für Modul 4 eine Installation auf MySQL oder PostgreSQL, eine Java-Laufzeitumgebung und das Paket ezfind (siehe die Vorbereitungsliste des Moduls) |
 
 ## Module
@@ -49,11 +49,11 @@ Ergebnisse fehlen.
 
 Für Trainer, die diesen Kurs vorbereiten, in dieser Reihenfolge:
 
-1. [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md) und der [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md).
+1. [Trainer: hier beginnen](../trainer-hier-beginnen.md) und der [Kurskatalog](../kurskatalog.md).
 2. [Suchen](../../suchen.md): die Suche, wie Redakteure und Besucher sie erleben.
 3. [Such-Backends](../../hosting/grundlagen/such-backends.md): die eingebaute Suchmaschine und Solr aus Sicht eines
    Hosters.
-4. [Webserver- und Solr-Befehle](../../../../eng-us/features/6.0/web-server-and-solr-commands.md): die Konsolenbefehle, die in
+4. [Webserver- und Solr-Befehle](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md): die Konsolenbefehle, die in
    Modul 4 verwendet werden.
 5. [Cronjobs](../../../anleitungen/cronjobs.md): Die verzögerte Indizierung hängt von ihnen ab.
 6. [Caches](../../../anleitungen/caches.md): Veraltete Ergebnisse sind oft eine Cache-Frage.
@@ -83,15 +83,15 @@ weiteres Material.
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
 - [Suchen](../../suchen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

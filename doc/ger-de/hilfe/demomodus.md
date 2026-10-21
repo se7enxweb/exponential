@@ -74,21 +74,29 @@ Der Demo-Modus ist keine Einstellung. Es gibt keinen Schalter in der Administrat
 der Adresszeile, so kann niemand ihn versehentlich oder irrtümlich einschalten. Die Betreiber des Servers setzen oder
 entfernen die Umgebungsvariable `EXP_DEMO_MODE=1` für die PHP-Prozesse der Demo; nur genau der Wert `1` schaltet ihn
 ein. Wie das für jede Art von Server geht, steht unter
-[Demo-Modus für Hoster](../../eng-us/help/hosting/security/demo-mode-for-hosts.md).
+[Demo-Modus für Hoster](hosting/sicherheit/demomodus-fuer-hoster.md).
 
 Während der Installation einer Demo erlaubt der Demo-Modus dem Installer außerdem, das veröffentlichte Demo-Passwort
 zu akzeptieren, das er sonst als zu bekannt oder zu kurz ablehnen würde (`publish` oder `publishing`). Die Einzelheiten
-stehen im Upgrade-Hinweis [Demo-Modus: EXP_DEMO_MODE=1](../../eng-us/bc/6.0/demo-mode.md).
+stehen im Upgrade-Hinweis [Demo-Modus: EXP_DEMO_MODE=1](../bc/6.0/demomodus.md).
 
 ## Verwandte Seiten
 
-- [Demo-Modus für Hoster](../../eng-us/help/hosting/security/demo-mode-for-hosts.md), [FAQ zum Demo-Modus](demomodus-faq.md),
-  [Probleme mit dem Demo-Modus](../../eng-us/help/hosting/runbooks/demo-mode-problems.md)
-- [Demo-Modus für Entwickler](../../eng-us/help/extension-development/part-8-reference/demo-mode-for-developers.md)
-- [Demo-Modus: der Upgrade-Hinweis](../../eng-us/bc/6.0/demo-mode.md)
+- [Demo-Modus für Hoster](hosting/sicherheit/demomodus-fuer-hoster.md), [FAQ zum Demo-Modus](demomodus-faq.md),
+  [Probleme mit dem Demo-Modus](hosting/runbooks/probleme-mit-dem-demomodus.md)
+- [Demo-Modus für Entwickler](erweiterungsentwicklung/teil-8-referenz/demomodus-fuer-entwickler.md)
+- [Demo-Modus: der Upgrade-Hinweis](../bc/6.0/demomodus.md)
 - [Das Standard-Administratorpasswort](standard-administratorpasswort.md),
   [Das Administratorpasswort ändern](administratorpasswort-aendern.md)
 - [Eine Demo-Installation einrichten](presse/eine-demo-installation-einrichten.md),
-  [Sicherheit bei Live-Demos](../../eng-us/help/advocates/live-demo-safety.md)
+  [Sicherheit bei Live-Demos](fuersprecher/sicherheit-bei-live-demos.md)
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und
   verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

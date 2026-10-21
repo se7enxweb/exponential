@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Hosting-Teams. Protokolle enthalten personenbezogene Daten (maskierte
 Adressen, User-Agents, URLs). Exponential rotiert jedes Protokoll nach Größe; nur die Anfrageprotokolle haben
 standardmäßig Altersgrenzen. Das Projekt führt „Protokolle standardmäßig ohne Altersgrenze“ als bekannte Lücke
-([Datenschutzstandards: Bekannte Lücken](../../../../eng-us/standards/privacy.md#known-gaps)).
+([Datenschutzstandards: Bekannte Lücken](../../../standards/datenschutz.md#bekannte-lücken)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -31,7 +31,7 @@ standardmäßig Altersgrenzen. Das Projekt führt „Protokolle standardmäßig 
 Wenn ein Protokoll über `site.ini [FileSettings] LogFileMaxSize` (2 MB) hinauswächst, rotiert es beim nächsten
 Schreiben: Aus `.1` wird `.2` und so weiter, und Archive über `LogFileRotateCount` (3) hinaus werden entfernt. Eine
 **Bereinigung** (Prune) entfernt Archive über die Anzahl hinaus und solche, die älter als die Altersgrenze sind; eine
-Rotation entfernt nie nach Alter ([Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)).
+Rotation entfernt nie nach Alter ([Protokollrotation](../../../funktionen/6.0/log-rotation.md)).
 
 ## Die Voreinstellungen
 
@@ -94,14 +94,15 @@ fragen Sie Ihren Hoster.
 
 ## Verwandte Seiten
 
-- [Protokollrotation und Bereinigung](../../../../eng-us/features/6.0/log-rotation.md)
+- [Protokollrotation und Bereinigung](../../../funktionen/6.0/log-rotation.md)
 - [Maskierung in Protokollen und im Protokollbetrachter](maskierung-in-protokollen.md)
 - [Aufbewahrung von Protokollen und Daten für Hoster](../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

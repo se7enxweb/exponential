@@ -20,7 +20,7 @@ Code, der von einer Änderung in LoveStack abgeleitet ist, trägt die Zeile
 
 ---
 
-## Sicherheit und Sessions
+## Sicherheit und Sitzungen
 
 ### Knotendaten-Aufrufe und `RequirePolicy` (L01)
 
@@ -90,7 +90,7 @@ verbergen, die die Registrierung offen hält.
 ### Abmelden (L03)
 
 `eZUser::logoutCurrent()` endet mit `eZSession::remove()`. Das `destroy()` der Session-Handler lässt das
-Session-Cookie mit dem Pfad, der Domain, `Secure`, `HttpOnly` und `SameSite` ablaufen, mit denen `eZSession::start()`
+Sitzungs-Cookie mit dem Pfad, der Domain, `Secure`, `HttpOnly` und `SameSite` ablaufen, mit denen `eZSession::start()`
 es gesetzt hat.
 
 ```php
@@ -99,9 +99,9 @@ eZSession::expireCookie();                        // sends it once per response;
 eZSession::listsExpiredCookie( $headers, $name ); // does a header list already remove the cookie
 ```
 
-`eZSession::remove()` schließt außerdem ohne Schreiben eine Session, die der Handler laufen gelassen hat, lässt das
+`eZSession::remove()` schließt außerdem ohne Schreiben eine Sitzung, die der Handler laufen gelassen hat, lässt das
 Cookie für einen eigenen Handler ablaufen, der das nicht tut, und entfernt `$_COOKIE[<session name>]` und die
-Session-ID, sodass eine später in der Anfrage gestartete Session eine neue ID erhält.
+Sitzungs-ID, sodass eine später in der Anfrage gestartete Sitzung eine neue ID erhält.
 
 ### Eindeutige Anmeldenamen (L04)
 

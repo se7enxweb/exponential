@@ -36,7 +36,7 @@ Zeitplaner und nicht den Legacy-Kernel mit
 | Repository angelegt am 12. März 2026 | [Wer ist 7x?, Zeitleiste](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
 | Was sie laut README gegenüber Ibexa DXP OSS hinzufügt: Unterstützung für SQLite, aktuelles PHP („PHP 8.3 and later“), einen Weg von Exponential 6 über die Dual-Kernel-Distributionen und „A name of its own“ | [Exponential Platform DXP](../wer-ist-die-exponential-foundation.md#exponential-platform-dxp) |
 | Für Organisationen mit viel strukturiertem Inhalt, Teams, die eZ Platform oder Ibexa OSS verlassen, und Symfony-Entwickler | ebenda |
-| Beginnen Sie mit dem DXP-Skeleton | [DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md) |
+| Beginnen Sie mit dem DXP-Skeleton | [DXP-Skeleton](../../funktionen/6.0/plattform-dxp-skeleton.md) |
 | Website der Platform-Linie | <https://platform.exponential.earth/> |
 
 ## Was Sie nicht behaupten sollten
@@ -61,8 +61,8 @@ Zeitplaner und nicht den Legacy-Kernel mit
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

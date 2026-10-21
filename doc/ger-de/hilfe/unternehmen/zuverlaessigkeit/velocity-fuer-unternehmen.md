@@ -13,7 +13,7 @@ Diese Seite richtet sich an Inhaber und Führungskräfte, die von ihrem Entwickl
 und wissen wollen, was das für das Unternehmen bedeutet. Sie erklärt, was Velocity ist, welche Zahlen das Projekt
 dokumentiert und wie Sie sie lesen, was es für die Verfügbarkeit tut, was es von Ihrem Hosting braucht und wann ein
 klassischer Webserver die bessere Antwort bleibt. Der technische Einstieg ist
-[Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
+[Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md).
 
 ## Inhalt
 
@@ -32,7 +32,7 @@ Aus der [README, „How Exponential is served“](https://github.com/se7enxweb/e
 Anfragen geladen hält.“ Er basiert auf dem Qbix-Server und wird zusammen mit Exponential entwickelt.
 
 In einfachen Worten: Ein klassischer Aufbau startet die Anwendung für jede Seitenanfrage neu und wirft die Arbeit danach
-weg. Velocity lädt die Anwendung einmal und hält Worker bereit, und es fügt einen Antwortcache hinzu, der eine
+weg. Velocity lädt die Anwendung einmal und hält Worker bereit, und er fügt einen Antwortcache hinzu, der eine
 wiederholte Anfrage beantwortet, ohne die Anwendung überhaupt zu wecken (README, „Why it is faster“).
 
 Velocity kann drei Engines betreiben, gewählt mit einer einzigen Einstellung
@@ -91,7 +91,7 @@ nutzbar ist.
 | Neustart, der von selbst abschließt | Ein Neustart, dessen Aufrufer zwischen Stopp und Start beendet wird, lässt den Server nicht mehr ausgefallen zurück | [Velocity-Engines](../../../bc/6.0/velocity-engines.md#ein-abgeschnittener-neustart-oder-deploy) |
 | Deployment mit einem Befehl | `exp:velocity deploy` führt jeden Schritt zum Ausliefern einer PHP-Änderung in der richtigen Reihenfolge aus | [Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md) |
 | Eigenes HTTPS | Liefert HTTPS selbst aus und tauscht ein erneuertes Zertifikat ohne Neustart ein | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#when-a-traditional-server-is-still-the-right-answer) |
-| Control Panel und Dashboard | Ansichten des Servers, die weiter funktionieren, wenn die Anwendung defekt ist | [Velocity Control Panel](../../../../eng-us/features/6.0/velocity-control-panel.md) |
+| Control Panel und Dashboard | Ansichten des Servers, die weiter funktionieren, wenn die Anwendung defekt ist | [Velocity Control Panel](../../../funktionen/6.0/velocity-control-panel.md) |
 
 ## Was es von Ihrem Hosting braucht
 
@@ -142,8 +142,8 @@ Abwägung.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

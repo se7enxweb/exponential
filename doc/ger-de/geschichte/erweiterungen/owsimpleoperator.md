@@ -1,8 +1,8 @@
 # owsimpleoperator (einfache Template-Operatoren): Chronik
 
-Die einfachen Template-Operatoren wurden im Januar 2024 neu paketiert und erhielten im September 2026 Metadaten zu Version und Lizenz. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/owsimpleoperator.md).
+Die einfachen Template-Operatoren wurden im Januar 2024 neu paketiert und erhielten im September 2026 Metadaten zu Version und Lizenz. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/owsimpleoperator.md).
 
-Diese Seite führt **jede der 16 Änderungen** des Repositorys `owsimpleoperator` zwischen 2024-01-07 und 2026-09-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/owsimpleoperator.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/owsimpleoperator.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/owsimpleoperator.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 16 Änderungen** des Repositorys `owsimpleoperator` zwischen 2024-01-07 und 2026-09-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/owsimpleoperator.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/owsimpleoperator.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/owsimpleoperator.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -59,7 +59,7 @@ Der Monat über alle Erweiterungen: [September 2026](monate/2026-09.md). [Änder
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/owsimpleoperator.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/owsimpleoperator.md)
 - [Release Notes](../../../changelogs/extensions/owsimpleoperator.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/owsimpleoperator.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

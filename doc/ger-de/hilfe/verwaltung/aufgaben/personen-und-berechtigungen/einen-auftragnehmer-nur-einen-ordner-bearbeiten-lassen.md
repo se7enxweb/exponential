@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren und Verantwortliche für Verträge. Am Ende können die Mitarbeiter des
 Auftragnehmers in einem Ordner Inhalte anlegen und bearbeiten, ihre Arbeit wird freigegeben, bevor sie öffentlich ist,
 und der Zugang ist bereit, mit dem Vertrag beendet zu werden. Gestaltung:
-[Rollengestaltung: Auftragnehmer und befristete Mitarbeiter](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-contractors.md).
+[Rollengestaltung: Auftragnehmer und befristete Mitarbeiter](../../betrieb/personen-und-berechtigungen/rollenentwurf-externe-dienstleister.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -60,7 +60,7 @@ fehlschlägt, verlegen Sie `user/login` in eine eigene Rolle, die der Vertragsgr
 
 Stellen Sie sicher, dass die Sektion des Ordners unter **Betroffene Sektionen** des Freigabe-Workflows steht und die
 Vertragsgruppe nicht unter den ausgeschlossenen Gruppen
-([Das Ereignis Approve einrichten](../../../../../eng-us/help/government/operations/editorial-workflows/setting-up-the-approve-event.md)).
+([Das Ereignis Approve einrichten](../../betrieb/redaktionelle-workflows/das-freigabe-ereignis-einrichten.md)).
 
 ## Prüfen, ob es funktioniert hat
 
@@ -81,12 +81,13 @@ Vertragsgruppe nicht unter den ausgeschlossenen Gruppen
 - [Eine Rolle mit einer Einschränkung auf einen Teilbaum zuweisen](eine-rolle-mit-einer-einschraenkung-auf-einen-teilbaum-zuweisen.md)
 - [Redakteure aus dem Siteaccess der Administration heraushalten](redakteure-aus-dem-siteaccess-der-administration-heraushalten.md)
 - [Einen ausscheidenden Mitarbeiter entfernen](einen-ausscheidenden-mitarbeiter-entfernen.md)
-- [Funktionstrennung](../../../../../eng-us/help/government/operations/people-and-permissions/separation-of-duties.md)
+- [Funktionstrennung](../../betrieb/personen-und-berechtigungen/funktionstrennung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

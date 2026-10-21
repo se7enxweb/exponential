@@ -40,7 +40,7 @@ Exponential selbst ist freie Software unter der GNU General Public License, Vers
 | Hosting und Betrieb | ein Hosting-Unternehmen oder Ihr eigenes Rechenzentrum | [Hosting-Unternehmen: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md) |
 | Support mit vereinbarten Reaktionszeiten | 7x oder ein Partner | [Support erhalten](../../projekt/unterstuetzung-erhalten.md), [Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md) |
 | Schulung für Redaktion und Administration | ein Schulungspartner oder Ihre eigenen Trainerinnen und Trainer | [Kurskatalog](../../trainer/kurskatalog.md) |
-| Prüfungen der Barrierefreiheit oder der Sicherheit | eine unabhängige prüfende Stelle | [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md), [Sicherheitsstandards](../../../../eng-us/standards/security.md) |
+| Prüfungen der Barrierefreiheit oder der Sicherheit | eine unabhängige prüfende Stelle | [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md), [Sicherheitsstandards](../../../standards/sicherheit.md) |
 
 Weil die Software gleich bleibt, wer auch immer die Leistungen erbringt, kann eine öffentliche Stelle ihren Lieferanten
 wechseln, ohne ihr System zu wechseln. Das ist das stärkste Argument gegen eine Anbieterabhängigkeit, und der Teil zu den
@@ -80,11 +80,11 @@ veröffentlicht seine Nachweise stattdessen im Repository und sagt deutlich, wo 
 
 | Frage | Was es gibt | Was es nicht gibt |
 |---|---|---|
-| Barrierefreiheit | [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md): WCAG 2.2 AA **Partly complies** für die Administration admin4 und admin4l; EN 301 549 und Section 508 **Unverified** | Kein VPAT und kein Accessibility Conformance Report; öffentliche Website-Designs nicht geprüft; keine Vorlage für eine Erklärung zur Barrierefreiheit |
-| Sicherheit | [Sicherheitsstandards](../../../../eng-us/standards/security.md): Zuordnung zu den OWASP Top 10, drei dokumentierte Härtungsdurchgänge, manipulationssicheres Audit-Protokoll | Keine Bewertung nach OWASP ASVS; kein Bericht eines externen Penetrationstests im Repository; keine mitgelieferte `security.txt` |
-| Datenschutz | [Datenschutzstandards](../../../../eng-us/standards/privacy.md): Einwilligungsnachweise, Löschung beim Entfernen eines Kontos, Maskierung und Aufbewahrung von Protokollen | Keine einzelne Funktion „alle meine Daten exportieren“; kein Cookie-Banner |
+| Barrierefreiheit | [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md): WCAG 2.2 AA **Teilweise erfüllt** für die Administration admin4 und admin4l; EN 301 549 und Section 508 **Nicht geprüft** | Kein VPAT und kein Accessibility Conformance Report; öffentliche Website-Designs nicht geprüft; keine Vorlage für eine Erklärung zur Barrierefreiheit |
+| Sicherheit | [Sicherheitsstandards](../../../standards/sicherheit.md): Zuordnung zu den OWASP Top 10, drei dokumentierte Härtungsdurchgänge, manipulationssicheres Audit-Protokoll | Keine Bewertung nach OWASP ASVS; kein Bericht eines externen Penetrationstests im Repository; keine mitgelieferte `security.txt` |
+| Datenschutz | [Datenschutzstandards](../../../standards/datenschutz.md): Einwilligungsnachweise, Löschung beim Entfernen eines Kontos, Maskierung und Aufbewahrung von Protokollen | Keine einzelne Funktion „alle meine Daten exportieren“; kein Cookie-Banner |
 | Umgang mit Schwachstellen | [`SECURITY.md`](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md): vertrauliche Meldung, erste Antwort innerhalb eines Werktags | Keine veröffentlichte Zusage zur Behebungszeit; Korrekturen erscheinen als nächstes Release |
-| Release-Richtlinie | [Quellcodeverwaltung und Releases](../../../../eng-us/standards/source-control-and-releases.md): dauerhafte Tags, Changelogs | Commits und Tags sind nicht signiert |
+| Release-Richtlinie | [Quellcodeverwaltung und Releases](../../../standards/versionsverwaltung-und-releases.md): dauerhafte Tags, Changelogs | Commits und Tags sind nicht signiert |
 | Service-Level | keine vom Projekt; Partner und Hoster veröffentlichen ihre eigenen | Das Projekt veröffentlicht kein SLA ([SLA-Optionen für Hosting](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)) |
 
 Verlangen Sie von den Bietern, die fehlenden Teile als Teil ihres Angebots zu liefern (zum Beispiel eine Prüfung der
@@ -99,8 +99,9 @@ Barrierefreiheit der Website, die sie bauen), statt sie vom Open-Source-Projekt 
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

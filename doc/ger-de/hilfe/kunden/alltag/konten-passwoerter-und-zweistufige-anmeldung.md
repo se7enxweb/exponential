@@ -25,11 +25,11 @@ und was zu prüfen ist.
 ## Vier Regeln für das Team
 
 1. **Ein persönliches Konto pro Person.** Keine geteilten Anmeldungen; die Seite zur Kontenüberprüfung findet sie mit
-   dem Filter **Doppelter Benutzername** ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+   dem Filter **Doppelter Benutzername** ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 2. **Eine echte E-Mail-Adresse an jedem Konto.** Passwort-Zurücksetzung, die E-Mail „Ihr Passwort wurde geändert“ und
    E-Mail-Codes gehen dorthin.
 3. **Zweistufige Anmeldung für alle, die veröffentlichen können**
-   ([Die Website an die Redaktion übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)), und immer
+   ([Die Website an die Redaktion übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)), und immer
    für Administratoren.
 4. **Konten enden am letzten Arbeitstag** ([Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md)).
 
@@ -38,7 +38,7 @@ und was zu prüfen ist.
 | Verhalten | Quelle |
 |---|---|
 | Ein neues Passwort muss mindestens 10 Zeichen haben (`[UserSettings] MinPasswordLength=10`), und eine Prüfung auf schwache Passwörter ist eingeschaltet (`WeakPasswordCheck=enabled`) | `settings/site.ini` |
-| Die Änderungsseite listet die Anforderungen neben dem Feld auf, kann ein starkes Passwort erzeugen und schreibt ein eingegebenes Passwort nie in die Seite zurück | [Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md) |
+| Die Änderungsseite listet die Anforderungen neben dem Feld auf, kann ein starkes Passwort erzeugen und schreibt ein eingegebenes Passwort nie in die Seite zurück | [Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md) |
 | Nach einer Änderung werden die anderen Sitzungen der Person abgemeldet, und eine E-Mail „Ihr Passwort wurde geändert“ geht an die Adresse des Kontos; niemand kann diese E-Mail abschalten | ebenda |
 | Dieselben Regeln gelten für die Registrierung, das Bearbeiten eines Kontos und das Zurücksetzen über die Konsole | ebenda |
 | Jede Änderung und jede abgelehnte Änderung steht im Prüfprotokoll; das Passwort nie | ebenda |
@@ -73,8 +73,8 @@ ohne Telefon in der Hand überrascht wird.
 |---|---|
 | Jemand hat sein Passwort vergessen | die Person nutzt „Passwort vergessen?“ auf der Anmeldeseite ([Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)) |
 | Jemand hat sein Telefon verloren | ein Administrator setzt das Feld *Zweistufige Anmeldung* des Benutzers auf *E-Mail one-time code* oder *Deaktiviert* und veröffentlicht; die Person richtet die App neu ein ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)) |
-| Ein Konto ist nach fehlgeschlagenen Anmeldungen gesperrt | wer die Konten verwaltet, nutzt **Entsperren** unter Benutzerkonten prüfen ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)) |
-| Niemand kann sich mehr als Administrator anmelden | Ihr Hoster oder Partner setzt das Passwort über die Kommandozeile zurück ([Ein Benutzerpasswort zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)) |
+| Ein Konto ist nach fehlgeschlagenen Anmeldungen gesperrt | wer die Konten verwaltet, nutzt **Entsperren** unter Benutzerkonten prüfen ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)) |
+| Niemand kann sich mehr als Administrator anmelden | Ihr Hoster oder Partner setzt das Passwort über die Kommandozeile zurück ([Ein Benutzerpasswort zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)) |
 | Sie vermuten, dass jemand anderes ein Konto benutzt hat | deaktivieren Sie es, und bitten Sie dann den Administrator, sich das Prüfprotokoll anzusehen ([Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md)) |
 
 ## Was Sie jedes Quartal prüfen sollten
@@ -91,3 +91,11 @@ ohne Telefon in der Hand überrascht wird.
 - [Benutzerkonten und Passwörter](../../unternehmen/sicherheit/benutzerkonten-und-passwoerter.md)
 - [Zwei-Faktor und Anmeldung für Intranets](../../unternehmen/intranets/zwei-faktor-und-anmeldung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

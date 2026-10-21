@@ -1,8 +1,8 @@
 # ezwebin-ezpackage (Installer-Pakete): Chronik
 
-Das Repository der Installer-Pakete von ezwebin wurde von Dezember 2023 bis März 2024 für SQLite, MySQL 8 und den Setup-Assistenten aktualisiert und im Juli 2026 für HTML5 bereinigt. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezwebin-ezpackage.md).
+Das Repository der Installer-Pakete von ezwebin wurde von Dezember 2023 bis März 2024 für SQLite, MySQL 8 und den Setup-Assistenten aktualisiert und im Juli 2026 für HTML5 bereinigt. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezwebin-ezpackage.md).
 
-Diese Seite führt **jede der 13 Änderungen** des Repositorys `ezwebin-ezpackage` zwischen 2023-12-24 und 2026-07-19 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezwebin-ezpackage.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezwebin-ezpackage.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezwebin-ezpackage.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 13 Änderungen** des Repositorys `ezwebin-ezpackage` zwischen 2023-12-24 und 2026-07-19 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezwebin-ezpackage.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezwebin-ezpackage.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezwebin-ezpackage.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -54,7 +54,7 @@ Der Monat über alle Erweiterungen: [Juli 2026](monate/2026-07.md). [Änderungsv
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezwebin-ezpackage.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezwebin-ezpackage.md)
 - [Release Notes](../../../changelogs/extensions/ezwebin-ezpackage.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezwebin-ezpackage.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

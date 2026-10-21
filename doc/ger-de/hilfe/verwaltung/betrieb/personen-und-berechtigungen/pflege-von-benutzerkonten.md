@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren, die die Konten einer öffentlichen Website in Ordnung halten, meist im Rahmen einer
 Sicherheitsrichtlinie oder einer Prüfungsfeststellung zu ruhenden Konten. Das wichtigste Werkzeug ist **Benutzer > Benutzerkonten prüfen**
-(`/user/hygiene`), vollständig beschrieben unter [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md).
+(`/user/hygiene`), vollständig beschrieben unter [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md).
 
 ## Inhalt
 1. [Worauf Sie achten sollten](#worauf-sie-achten-sollten)
@@ -38,7 +38,7 @@ Die Seite listet jedes Konto, oder die unterhalb einer Benutzergruppe, mit einem
 
 Jede Zeile zeigt den letzten Besuch, die Zahl der Anmeldungen, Gruppen und Rollen, eigene und geerbte. Die Seite braucht `user/hygiene`;
 vergeben Sie es nur an Kontenadministratoren, weil die Seite Name, Anmeldenamen, Zustand, Gruppen und Rollen jedes Kontos zeigt
-([Wer sie nutzen darf](../../../../../eng-us/features/6.0/user-hygiene.md#who-may-use-it)). Sie braucht eine SQL-Datenbank; unter MongoDB listet sie nichts.
+([Wer sie nutzen darf](../../../../funktionen/6.0/benutzerpflege.md#wer-sie-verwenden-darf)). Sie braucht eine SQL-Datenbank; unter MongoDB listet sie nichts.
 
 ## Die Sammelaktionen
 
@@ -53,10 +53,10 @@ Zeilenzahl erfasst, nie mit den Werten. Zellen, die wie Formeln aussehen, erhalt
 ## Kontosperre
 
 Die Sperre ist standardmäßig **aus**: `settings/site.ini [UserSettings] MaxNumberOfFailedLogin=0`
-([Sicherheitsstandard](../../../../../eng-us/standards/security.md)). Brute-Force-Versuche werden unabhängig davon von den Audit-Alarmen `brute_force`
+([Sicherheitsstandard](../../../../standards/sicherheit.md)). Brute-Force-Versuche werden unabhängig davon von den Audit-Alarmen `brute_force`
 und `brute_force_user` gemeldet. Um Konten nach wiederholten Fehlversuchen zu sperren, setzen Sie eine Zahl in
 `settings/override/site.ini.append.php`; erwägen Sie `TrustedIPList[]` für Büronetze, wie der Standard anmerkt
-([Die Kontosperre einschalten](../../../../../eng-us/help/government/tasks/people-and-permissions/switch-on-account-lockout.md)). Gesperrte Konten erscheinen dann unter dem
+([Die Kontosperre einschalten](../../aufgaben/personen-und-berechtigungen/die-kontosperre-einschalten.md)). Gesperrte Konten erscheinen dann unter dem
 Filter **Gesperrt**.
 
 ## Ein Konto je Anmeldename
@@ -78,7 +78,7 @@ Wenn sich Besucher registrieren können, listet **Benutzer > Nicht aktivierte Be
 älter als 30 Tage ist, wird als **Alt** markiert, und **Alle unaktivierten Benutzer entfernen** räumt sie auf, erfasst als `access.user.remove`
 ([Leitfaden zu Rollen, Abschnitt 7](../../../../anleitungen/rollen-und-richtlinien.md#7-nicht-aktivierte-benutzer-aufräumen)). Auf einer neuen Installation braucht
 die offene Registrierung die Richtlinie `user/register`; eine aktualisierte Website hält sie offen, bis sie geschlossen wird
-([Die offene Registrierung schließen](../../../../../eng-us/help/government/tasks/people-and-permissions/close-open-registration.md)).
+([Die offene Registrierung schließen](../../aufgaben/personen-und-berechtigungen/die-offene-registrierung-schliessen.md)).
 
 ## Eine monatliche Routine
 
@@ -90,15 +90,16 @@ die offene Registrierung die Richtlinie `user/register`; eine aktualisierte Webs
 5. Bewahren Sie den CSV-Export bei Ihrem Überprüfungsnachweis auf ([Überprüfung der Administrationszugänge](ueberpruefung-administrativer-zugaenge.md)).
 
 ## Verwandte Seiten
-- [Konten finden, die seit Monaten nicht genutzt werden](../../../../../eng-us/help/government/tasks/people-and-permissions/find-accounts-not-used-for-months.md)
-- [Ein gesperrtes Konto entsperren](../../../../../eng-us/help/government/tasks/people-and-permissions/unlock-a-locked-account.md)
-- [Die Kontenliste für eine Überprüfung exportieren](../../../../../eng-us/help/government/tasks/people-and-permissions/export-the-account-list-for-a-review.md)
+- [Konten finden, die seit Monaten nicht genutzt werden](../../aufgaben/personen-und-berechtigungen/konten-finden-die-seit-monaten-nicht-genutzt-wurden.md)
+- [Ein gesperrtes Konto entsperren](../../aufgaben/personen-und-berechtigungen/ein-gesperrtes-konto-entsperren.md)
+- [Die Kontenliste für eine Überprüfung exportieren](../../aufgaben/personen-und-berechtigungen/die-kontenliste-fuer-eine-ueberpruefung-exportieren.md)
 - [Eintritt, Wechsel und Austritt](eintritt-wechsel-austritt.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

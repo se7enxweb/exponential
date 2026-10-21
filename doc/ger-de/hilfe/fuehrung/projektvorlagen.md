@@ -242,21 +242,21 @@ Die Pfade sind relativ zu `doc/` im Repository; in dieser Hilfe ist jeder davon 
 öffnen können. Die Links: [Inhaltsmodell und Bearbeiten](../../anleitungen/inhaltsmodell-und-bearbeitung.md),
 [Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md), [Workflows](../../anleitungen/workflows.md),
 [Layout-Editor](../layout-editor.md), [Inhalte bearbeiten](../inhalte-bearbeiten.md),
-[Medien und Uploads](../medien-und-uploads.md), [eztags](../../../eng-us/features/6.0/extensions/eztags.md),
+[Medien und Uploads](../medien-und-uploads.md), [eztags](../../funktionen/6.0/erweiterungen/eztags.md),
 [Suchen](../suchen.md), [RSS-Feeds](../../anleitungen/rss-feeds.md), [PDF-Exporte](../../anleitungen/pdf-exporte.md),
-[expai](../../../eng-us/features/6.0/extensions/expai.md), [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md),
-[Inhaltssprachen](../../anleitungen/inhaltssprachen.md), [Sprachen](../../../eng-us/languages.md),
-[Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md), [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md),
-[Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md), [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md),
-[cjw_newsletter](../../../eng-us/features/6.0/extensions/cjw_newsletter.md),
-[Benachrichtigungen](../../anleitungen/benachrichtigungen-administrator.md), [E-Mail-Einstellungen](../../../eng-us/features/6.0/mail-preferences.md),
+[expai](../../funktionen/6.0/erweiterungen/expai.md), [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md),
+[Inhaltssprachen](../../anleitungen/inhaltssprachen.md), [Sprachen](../../sprachen.md),
+[Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md), [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md),
+[Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md), [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md),
+[cjw_newsletter](../../funktionen/6.0/erweiterungen/cjw_newsletter.md),
+[Benachrichtigungen](../../anleitungen/benachrichtigungen-administrator.md), [E-Mail-Einstellungen](../../funktionen/6.0/e-mail-einstellungen.md),
 [REST API](../../anleitungen/rest-api-v1-und-v2.md), [API-Schlüssel](../../anleitungen/api-schluessel.md),
 [Remote-Dienste](../../anleitungen/entfernte-dienste-und-apps.md), [Datenbankunterstützung](../datenbankunterstuetzung.md),
 [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Deployment](../../anleitungen/bereitstellung.md),
-[ManagedByDeployment](../../../eng-us/features/6.0/managed-by-deployment.md), [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md),
+[ManagedByDeployment](../../funktionen/6.0/durch-deployment-verwaltet.md), [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md),
 [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md), [Systeminformationen](../../anleitungen/systeminformationen.md),
 [Compliance-Checklisten](checklisten-barrierefreiheit-sicherheit-und-compliance.md),
-[Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md), [Sicherheitshärtung](../sicherheitshaertung.md),
+[Content Security Policy](../../funktionen/6.0/content-security-policy.md), [Sicherheitshärtung](../sicherheitshaertung.md),
 [Benchmarking](../../anleitungen/benchmarking.md).
 
 ## Livegang-Checkliste
@@ -305,19 +305,19 @@ First week
 ```
 
 Seiten: [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md), [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md),
-[Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md), [Sicherheitshärtung](../sicherheitshaertung.md#checkliste),
+[Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md), [Sicherheitshärtung](../sicherheitshaertung.md#checkliste),
 [13.16 Go-live-Checkliste](../../installation/13-sicherheitshaertung.md#1316-checkliste-für-den-livegang),
-[Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md), [Benchmarking](../../anleitungen/benchmarking.md),
+[Content Security Policy](../../funktionen/6.0/content-security-policy.md), [Benchmarking](../../anleitungen/benchmarking.md),
 [10.15 Eine Checkliste für die erste Woche](../../installation/10-nach-der-installation.md#1015-eine-checkliste-für-die-erste-woche),
 [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md),
 [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md#6-sichern-und-wiederherstellen), [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md),
 [Systeminformationen](../../anleitungen/systeminformationen.md#3-zustandsprüfungen), [Cronjobs](../../anleitungen/cronjobs.md),
-[Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md), [Deployment](../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern),
+[Wartungsmodus](../../funktionen/6.0/wartungsmodus.md), [Deployment](../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern),
 [13.4](../../installation/13-sicherheitshaertung.md#134-debug-ausgabe-und-fehleranzeige),
 [10.4](../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand),
 [10.8](../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung),
-[Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md), [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md),
-[Request-Logs](../../../eng-us/features/6.0/request-logs.md).
+[Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md), [Log-Viewer](../../funktionen/6.0/log-betrachter.md),
+[Request-Logs](../../funktionen/6.0/anfrageprotokolle.md).
 
 ## Übergabedokument
 
@@ -395,7 +395,7 @@ Sign-off:  Handed over by <role, date>   Received by <role, date>
 
 Seiten zu den Abschnitten: [Systeminformationen](../../anleitungen/systeminformationen.md),
 [Die Seite Extensions](../../anleitungen/extensions-seite.md), [Ein Team mit Git führen](ein-team-mit-git-fuehren.md),
-[ManagedByDeployment](../../../eng-us/features/6.0/managed-by-deployment.md), [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md),
+[ManagedByDeployment](../../funktionen/6.0/durch-deployment-verwaltet.md), [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md),
 [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md), [Cronjobs](../../anleitungen/cronjobs.md),
 [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md), [Release- und Upgrade-Planung](release-und-upgrade-planung.md),
 [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md).
@@ -408,3 +408,11 @@ Seiten zu den Abschnitten: [Systeminformationen](../../anleitungen/systeminforma
 - [Zusammenarbeiten](zusammenarbeiten.md): Übergaben zwischen Rollen
 - [Ein Projekt messen: Kennzahlen aus den eigenen Logs und dem Audit-Protokoll des Produkts](kennzahlen-aus-logs-und-audit.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

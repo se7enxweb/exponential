@@ -27,7 +27,7 @@ erklärt, was, und wie Sie die Quelle angeben. Sie ist eine praktische Orientier
 Die Dokumentation in `doc/`, einschließlich dieser Hilfe, ist „Copyright (C) 1998 - 2026 7x & Exponential Foundation
 and the Exponential contributors“ und steht unter der GNU Free Documentation License, Version 1.3 oder jeder späteren
 Version, „with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts“, also ohne unveränderliche
-Abschnitte und ohne Umschlagtexte ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)). Die Erklärung in
+Abschnitte und ohne Umschlagtexte ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)). Die Erklärung in
 einfachen Worten steht auf [Freie Dokumentation](../freie-dokumentation.md).
 
 ## Was Sie dürfen
@@ -73,7 +73,7 @@ Video description:
 Einige Dateien in `doc/` stammen aus der Dokumentation der ursprünglichen Software, geschrieben von eZ Systems AS
 zwischen 1999 und 2014. Sie behalten ihre ursprünglichen Bedingungen (die GPL v2) und das Urheberrecht von eZ Systems:
 die Dokumente zu Funktionen, Upgrades, Spezifikationen und Changelogs vor 6.0, `doc/eng-us/shop/`,
-`doc/eng-us/release-overview` und einige andere ([Ältere Seiten mit eigenen Bedingungen](../../../eng-us/README-LICENSE.md#older-pages-with-their-own-terms)).
+`doc/eng-us/release-overview` und einige andere ([Ältere Seiten mit eigenen Bedingungen](../../README-LIZENZ.md#ältere-seiten-mit-eigenen-bedingungen)).
 Die Hilfe zeigt auf ihnen einen anderen Hinweis. Prüfen Sie den Hinweis unten auf der Seite, die Sie zitieren.
 
 ## Zitieren ist nicht dasselbe wie eine Aussage zuordnen
@@ -91,8 +91,8 @@ Organisationen siehe [Richtlinie für Zitate](richtlinie-fuer-zitate.md) und [Au
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

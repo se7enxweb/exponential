@@ -113,8 +113,8 @@ beiden Stylesheets leere Dateien, sodass seine Prüfsummen nicht das Einzige sin
 Ein Paket hat kein Feld für Screenshots. Das Vorschaubild ist ein kleines Bild zum Auswählen; es ist keine Vorschau der Website. Setzen Sie
 Screenshots eines Seitenpakets dorthin, wo Menschen entscheiden, ob sie es nutzen: in das README seines Quell-Repositorys und in den Pull
 Request, der es einreicht ([Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)). Wie Sie sie gut aufnehmen, behandeln
-[Screenshots für ein Theme](../../../../eng-us/help/designers/distribution/screenshots-for-a-theme.md) und die
-[Checkliste für Screenshots](../../../../eng-us/help/designers/distribution/screenshot-checklist.md).
+[Screenshots für ein Theme](../../designer/veroeffentlichung/screenshots-fuer-ein-theme.md) und die
+[Checkliste für Screenshots](../../designer/veroeffentlichung/screenshot-checkliste.md).
 
 ## Checkliste
 
@@ -140,3 +140,11 @@ curl -s -o /dev/null -w '%{http_code}\n' https://packages.example.com/exponentia
 - [Was auf dem Paketserver liegt](../paketserver/was-auf-dem-paketserver-liegt.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

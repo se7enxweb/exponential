@@ -12,8 +12,8 @@ type: reference
 Diese Seite richtet sich an Projektverantwortliche, Informationssicherheitsbeauftragte und Administratorinnen und
 Administratoren öffentlicher Stellen, die einen Überblick über die Sicherheit von Exponential auf einer Seite brauchen,
 bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung des Projekts,
-[Sicherheitsstandards](../../../../eng-us/standards/security.md); die Bezeichnungen „Partly complies“, „Unverified“ und
-„Complies“ werden so übernommen, wie sie dort stehen. Das Projekt beansprucht keine externe Bewertung.
+[Sicherheitsstandards](../../../standards/sicherheit.md); die Bezeichnungen „Teilweise erfüllt“, „Nicht geprüft“ und
+„Erfüllt“ werden so übernommen, wie sie dort stehen. Das Projekt beansprucht keine externe Bewertung.
 
 ## Inhalt
 
@@ -27,14 +27,14 @@ bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung
 
 | Standard | Status | In einer Zeile |
 |---|---|---|
-| OWASP Top 10 (2021) | **Partly complies** | Gegenmaßnahmen in allen zehn Kategorien; A09 Protokollierung und Überwachung ist mit **Complies** bewertet |
-| OWASP ASVS 4.0.3 | **Unverified** | keine Bewertung; Stufe 1 erfordert, `MinPasswordLength` auf 12 anzuheben |
-| Content Security Policy Level 3 | **Partly complies** | standardmäßig Report-only in der Administration, aus auf öffentlichen Websites |
-| OWASP Cheat Sheet Series | **Partly complies** | CSRF-Tokens, Passwortspeicherung, Sitzungs-Cookies, Header, Maskierung, Uploads |
-| Koordinierte Offenlegung von Schwachstellen | **Partly complies** | `SECURITY.md` mit einem vertraulichen Kanal; keine mitgelieferte `security.txt` |
+| OWASP Top 10 (2021) | **Teilweise erfüllt** | Gegenmaßnahmen in allen zehn Kategorien; A09 Protokollierung und Überwachung ist mit **Erfüllt** bewertet |
+| OWASP ASVS 4.0.3 | **Nicht geprüft** | keine Bewertung; Stufe 1 erfordert, `MinPasswordLength` auf 12 anzuheben |
+| Content Security Policy Level 3 | **Teilweise erfüllt** | standardmäßig Report-only in der Administration, aus auf öffentlichen Websites |
+| OWASP Cheat Sheet Series | **Teilweise erfüllt** | CSRF-Tokens, Passwortspeicherung, Sitzungs-Cookies, Header, Maskierung, Uploads |
+| Koordinierte Offenlegung von Schwachstellen | **Teilweise erfüllt** | `SECURITY.md` mit einem vertraulichen Kanal; keine mitgelieferte `security.txt` |
 
-„Complies“ würde eine externe Bewertung erfordern, die nicht vorgenommen wurde
-([Sicherheitsstandards: Status](../../../../eng-us/standards/security.md#status)).
+„Erfüllt“ würde eine externe Bewertung erfordern, die nicht vorgenommen wurde
+([Sicherheitsstandards: Status](../../../standards/sicherheit.md#status)).
 
 ## Standardmäßig an
 
@@ -66,7 +66,7 @@ bevor sie die Einzelheiten lesen. Jeder Status stammt aus der eigenen Erklärung
 
 ## Bekannte Lücken
 
-Aus [Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/security.md#known-gaps):
+Aus [Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken):
 
 - Kontosperre standardmäßig aus; Brute-Force wird von Alarmregeln erkannt, nicht vom Kernel gebremst;
 - die zweistufige Anmeldung muss eigens eingeschaltet werden;
@@ -78,14 +78,15 @@ Aus [Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/securi
 
 ## Verwandte Seiten
 
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../../../installation/13-sicherheitshaertung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
