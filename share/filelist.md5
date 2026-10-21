@@ -706,7 +706,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin/templates/settings/exp_origin.tpl
 afea2c896730f8b9142080fee6e1ebdd  design/admin/templates/setup/designextension.tpl
 11f0aa0693cddbf698731e7dc5e1e576  design/admin/templates/setup/extensions.tpl
 e7c49888f84d392e3d9c0fac2a8ed395  design/admin/templates/setup/handlerextension.tpl
-57994486a26c07afab6e89ef2b919ecc  design/admin/templates/setup/info.tpl
+ba678756abb0296740b2303d50234c06  design/admin/templates/setup/info.tpl
 b6cd17ce32f4503e4efa3de4023ae532  design/admin/templates/setup/kerneloverride.tpl
 26834e98fce147b8eb87749da5233252  design/admin/templates/setup/languages.tpl
 bb038cf7a9fdc88514696d5cf6ce35a9  design/admin/templates/setup/logs.tpl
@@ -20175,7 +20175,7 @@ d32c6962dd7f135b3bd18c0f2d036263  kernel/classes/ezcontentbrowsebookmark.php
 e03967a373ba9e46d7ba161d72500151  kernel/classes/ezcontentbrowserecent.php
 be5967e47609a568319111fd808d10e2  kernel/classes/ezcontentcache.php
 d54f49848795212a691c9840b37564bd  kernel/classes/ezcontentcachemanager.php
-b54dc3050de2493e3a921da200445feb  kernel/classes/ezcontentclass.php
+7dd52dd89ad105b6e3a9b4f4a4ddef93  kernel/classes/ezcontentclass.php
 1b6e5128718bb11668a859b0c083cda1  kernel/classes/ezcontentclassattribute.php
 57be7f3d46bf77207cc381abf151a22c  kernel/classes/ezcontentclassclassgroup.php
 80531ede01d01d5e75317285416f594a  kernel/classes/ezcontentclassedithandler.php
@@ -20985,7 +20985,7 @@ f8ed857141541037f107aeb11914ec7c  kernel/private/classes/views/content/move.php
 dde65590bb2e9c6b9e0eefbc92386e33  kernel/private/classes/views/content/removeeditversion.php
 589b516fc1882a01202090da4f5c9ee2  kernel/private/classes/views/content/removenode.php
 29c28c4b523b9d1c6417869ef34545be  kernel/private/classes/views/content/removeobject.php
-3d0f924bebac6915382e898072ed70e1  kernel/private/classes/views/content/restore.php
+cb5b9fdfc09d81cd65f022e289bedaf5  kernel/private/classes/views/content/restore.php
 59d1cccb1c918607b70fefc51b23f549  kernel/private/classes/views/content/reverserelatedlist.php
 989488ba76246550f8645db88223acc2  kernel/private/classes/views/content/search.php
 65ecf66f993d9a775354c150ee12cbdd  kernel/private/classes/views/content/subitemsexport.php
