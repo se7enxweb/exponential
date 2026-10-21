@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d3059d5aa33cfcda698bf29e95084c66  doc/changelogs/6.0/6.0.15.md
+7252788cb732bc0a1f15140d8609c83a  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3330,7 +3330,7 @@ d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_M
 26fb0c7c82a5aa83bee59e3ee0c5d1fc  doc/eng-us/bc/6.0/admin4-styling.md
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
-04a8047a63b17b583bee880327dc4c51  doc/eng-us/bc/6.0/audit.md
+1a342651e7b2fba7adde8622fb5d2ccd  doc/eng-us/bc/6.0/audit.md
 135fd8831f5dd0b8dbba0ba6b7b04166  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 b8a4ee939fef98f95e90c899e9718e96  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08.md
 7f48c053c6ee255a85130fcc69c31355  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
@@ -19299,7 +19299,7 @@ fc9df9d446f6b5b51953b92a5e9849f0  kernel/classes/audit/sinks/expauditmailsink.ph
 e2c15d2e737dee9378e3ce28fd5aed05  kernel/classes/audit/sinks/expauditsinkbase.php
 d903885b297b3f9262552ee751a90392  kernel/classes/audit/sinks/expauditsinkregistry.php
 227d6bd3e797784a3e1d99c3d0173c65  kernel/classes/audit/sinks/expauditspool.php
-a2eb430c2e1eb7cec1d143ef457c0d1c  kernel/classes/audit/sinks/expauditsyslogsink.php
+9adedac065ef43e65c659acf815a1cbb  kernel/classes/audit/sinks/expauditsyslogsink.php
 07f8324ee03cfb9a66bdce1f31b0667a  kernel/classes/audit/sinks/expauditwebhooksink.php
 347e0b5b322c11051576975b30661f0c  kernel/classes/basketinfohandlers/ezdefaultbasketinfohandler.php
 d9227137dd50a1a7c10f055f3d1e3a47  kernel/classes/binaryhandlers/ezfilepassthrough/ezfilepassthroughhandler.php
@@ -22487,9 +22487,10 @@ cf8fc76d38f1db1b11f47a6aa1e7f33a  tests/tests/kernel/classes/audit/expAuditForkT
 95b5c571bce2d71de41ee87cb0f34108  tests/tests/kernel/classes/audit/expAuditReaderChunkTest.php
 e5a45657eb985ea8445c68b47ede63ad  tests/tests/kernel/classes/audit/expAuditRecentChannelsTest.php
 142f7cb0ed70abd19eef516d2e4202c9  tests/tests/kernel/classes/audit/expAuditRecordTest.php
-9e3f378a72b93fbcd4c7157d8b2df3d3  tests/tests/kernel/classes/audit/expAuditSinksTest.php
+baea57e5bf9da3f12e56e0bb1e5fcc73  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 1e2d12f0d0eae7d2bdd941d75b9631bc  tests/tests/kernel/classes/audit/expAuditSourceTest.php
 48b46955f2d2754be10ad2ea72e3687d  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
+9877054f6b4a9cf9c2c301cf765ee2a6  tests/tests/kernel/classes/audit/fixtures/expaudittestsyslogopenbasedir.php
 79ddb3ce226847a0407e965b1d7e99f3  tests/tests/kernel/classes/audit/fixtures/expaudittestwebhookreceiver.php
 d4cad238dad8d7b326ffbdb4af42308e  tests/tests/kernel/classes/benchmark/ExpBenchmarkHttpTest.php
 5e6d056c4f3682404e1a54660f69d52c  tests/tests/kernel/classes/benchmark/ExpBenchmarkMicroTest.php
