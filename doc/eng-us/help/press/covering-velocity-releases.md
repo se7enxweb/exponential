@@ -39,7 +39,8 @@ Velocity versions have four positions and the last one keeps counting: "`0.0.4.9
 latest release in the release notes was `v0.0.4.50` of 12 October 2026; GitHub showed `v0.0.4.53` as the newest tag on
 19 October 2026. `v0.0.4.54` of 20 October 2026 is the first release that runs on PHP 8.0, and the kernel's
 `composer.json` requires `~0.0.4.54`, which accepts every later 0.0.4.x
-([Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package)). Check the tags
+([Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package)); as of 6.0.15 Velocity is part of
+Exponential ([Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md)). Check the tags
 on the day you write ([Verifying a release yourself](verifying-a-release-yourself.md)).
 
 Many releases can fall on one day: the chronicle lists `v0.0.2.1` to `v0.0.4.14` on 22 September 2026 alone

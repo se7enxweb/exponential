@@ -133,7 +133,7 @@ Die Spalte „Stand“ gibt den Stand vom 18. Oktober 2026 mit seiner Quelle an.
 | [Exponential Platform Legacy](#exponential-platform-legacy) | Symfony-Plattform plus Exponential 6 (Dual-Kernel) | Sites, die Exponential 6 behalten und Symfony ergänzen | Linien 2.5.x bis 5.0.x (README) |
 | [Exponential Platform Nexus](#exponential-platform-nexus) | Plattform plus Exponential 6, Netgen Layouts und Media Site, mit Demo-Inhalten | Agenturen und Teams, die schnell eine vollständige Site wollen | Linien 1.0.0.x bis 1.3.0.x (README) |
 | [Exponential Platform DXP](#exponential-platform-dxp) | Reines Symfony-DXP-Metapaket, die freiheitlich weitergeführte Fortsetzung von Ibexa DXP OSS | Neue Symfony-Projekte | „Stable; Open Source“ (seine composer.json) |
-| [Exponential Velocity](#exponential-velocity) | Ein in PHP geschriebener Web- und Anwendungsserver | Alle, die Exponential und andere PHP-Anwendungen ausliefern | Empfohlene Version 0.0.4.50 (README) |
+| [Exponential Velocity](#exponential-velocity) | Ein in PHP geschriebener Web- und Anwendungsserver | Alle, die Exponential und andere PHP-Anwendungen ausliefern | Erforderlich als `~0.0.4.54`, das erste Release unter PHP 8.0 (README) |
 | [Exponential Intelligence](#exponential-intelligence) | Ein Schreibassistent in der Administration | Redakteure und ihre Vorgesetzten | Seit 6.0.15 Pflicht, `~0.0.1.12` in composer.json |
 | [Exponential Layouts](#exponential-layouts) | Ein visueller Seitenbaukasten: Layouts, Zonen, Blöcke und Regeln | Redakteure und Designer | Seit 6.0.15 Pflicht, `~1.4.39` in composer.json |
 | [AdminUI](#adminui) | Eine alternative Administrationsoberfläche | Redakteure, die sie bevorzugen | Seit 6.0.15 Pflicht, `~1.0.0.46` in composer.json |
@@ -242,7 +242,7 @@ production“ (README, „Engines“). FrankenPHP ist „the production-ready al
 Vorgabe für die Entwicklung.
 
 **Wo es steht.** Erste Commits im Juli 2026, erstes Release `v0.0.1` im September 2026, seit dem 22. September 2026
-Teil von Exponential ([Velocity-Chronik](../../eng-us/history/velocity/README.md)); das README empfiehlt Version 0.0.4.50.
+Teil von Exponential ([Velocity-Chronik](../../eng-us/history/velocity/README.md)); das README nennt es als erforderlich in `~0.0.4.54`, dem ersten Release, das unter PHP 8.0 läuft.
 
 ### Exponential Intelligence
 
@@ -324,8 +324,8 @@ genannten Stelle schriftlich festgehalten; zusammen beschreiben sie, wie sich da
 | PHP | Exponential 6 | Quelle |
 |---|---|---|
 | 7.4 | Nur bis 6.0.7 („PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7“) | README |
-| 8.0 | Die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt | README, [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md) |
-| 8.1 bis 8.5 | Unterstützt; Velocity braucht 8.1 oder neuer | README |
+| 8.0 | Die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt, ab dem Velocity-Release 0.0.4.54 auch unter Velocity (bis dahin brauchte Velocity 8.1) | README, [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md) |
+| 8.1 bis 8.5 | Unterstützt, auch für Velocity | README |
 | 8.6 und neuer | Durch die `php`-Anforderung in `composer.json` zugelassen (bis 8.8); das Projekt zielt auf „PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9“ | composer.json, README |
 
 Die kontinuierliche Integration führt die Testsuite auf PHP 8.1 bis 8.5 aus und prüft, dass PHP 8.0 noch startet, bei

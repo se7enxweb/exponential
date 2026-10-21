@@ -31,7 +31,7 @@ Planung ([Ein Exponential-Projekt planen](../fuehrung/ein-exponential-projekt-pl
 
 - **Analyse:** Gibt es für jede Anforderung bereits eine Erweiterung? Suchen Sie, bevor Sie schätzen
   ([Erweiterungen](../../anleitungen/extensions.md#2-eine-extension-finden)).
-- **Umgebung:** Verwenden Sie ein aktuell unterstütztes PHP (8.0 bis 8.5 für 6.0.15; Velocity braucht 8.1 oder später,
+- **Umgebung:** Verwenden Sie ein aktuell unterstütztes PHP (8.0 bis 8.5 für 6.0.15; auch für Velocity ab seinem Release 0.0.4.54,
   `doc/eng-us/install/02-requirements.md`).
 - **Umsetzung:** Halten Sie allgemeine Verbesserungen getrennt vom Kundencode, damit sie an die Upstream-Projekte gehen
   können ([Code zurückgeben](code-zurueckgeben.md)).

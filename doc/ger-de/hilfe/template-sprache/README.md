@@ -20,7 +20,7 @@ Arbeitsordner kompiliert und verglichen. Wo eine Seite Code zeigt, der nicht aus
 
 Für eine sanftere, aufgabenorientierte Einführung beginnen Sie mit dem [Überblick über Templates](../../../eng-us/help/designers/templates/templates-overview.md)
 für Designer und den [Grundlagen der TPL-Syntax](../../../eng-us/help/designers/templates/tpl-syntax-basics.md). Jeder Operator ist in
-[Template-Operatoren](../../../eng-us/help/template-operators/README.md) dokumentiert.
+[Template-Operatoren](../template-operatoren/README.md) dokumentiert.
 
 ## Die Sprache
 
@@ -67,7 +67,7 @@ für Designer und den [Grundlagen der TPL-Syntax](../../../eng-us/help/designers
 
 ## Verwandte Seiten
 
-- [Template-Operatoren](../../../eng-us/help/template-operators/README.md): jeder Operator, Fetch-Aliase, Fetch-Funktionen
+- [Template-Operatoren](../template-operatoren/README.md): jeder Operator, Fetch-Aliase, Fetch-Funktionen
 - [Templates für Designer](../../../eng-us/help/designers/templates/templates-overview.md)
 - [Referenz der Funktionen](../../../eng-us/help/designers/templates/function-reference.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -48,7 +48,7 @@ und die Datenbank: x86_64 ist Stufe 1, aarch64 Stufe 2
 
 Ein VPS-Image für Exponential enthält:
 
-- **PHP 8.1 oder später**, damit Velocity laufen kann (8.0 führt Exponential unter Apache oder PHP-FPM aus, nicht Velocity).
+- **PHP 8.0 oder später**, für Apache, PHP-FPM und Velocity gleichermaßen (Velocity läuft ab seinem Release 0.0.4.54 unter 8.0).
   Die Empfehlung ist das neueste 8.x, das Ihre Distribution anbietet; 8.5 wird unterstützt
   ([2.2 PHP](../../../installation/02-voraussetzungen.md#22-php)).
 - **Die erforderlichen Erweiterungen**: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`,
@@ -66,7 +66,8 @@ Unter Red Hat Enterprise Linux 9 und seinen Nachbauten ist die dokumentierte Pak
 dnf install php php-fpm php-mysqlnd php-gd php-intl php-mbstring php-xml php-pdo php-opcache
 ```
 
-Für Velocity wechseln Sie auf einen neueren Modul-Stream (`dnf module reset php`, `dnf module enable php:8.3`,
+Dieses mitgelieferte PHP 8.0 führt auch Velocity aus (das el9-rpm installiert sich darauf ohne Modul-Stream). Für ein
+neueres PHP wechseln Sie auf einen anderen Modul-Stream (`dnf module reset php`, `dnf module enable php:8.3`,
 `dnf distro-sync`). Sobald eine Installation existiert, lassen Sie sie die Maschine prüfen:
 
 ```bash
@@ -146,7 +147,7 @@ Möglichkeiten, zwischen denen ein Hoster üblicherweise wählt:
 
 ## Checkliste
 
-- [ ] Distribution der Stufe 1 oder 2, PHP 8.1 oder später für Web und Kommandozeile, in beiden dieselben Erweiterungen.
+- [ ] Distribution der Stufe 1 oder 2, PHP 8.0 oder später für Web und Kommandozeile, in beiden dieselben Erweiterungen.
 - [ ] `exp:velocity ext check` ohne Befund für die genutzten Funktionen.
 - [ ] Velocity mit einem Startdienst oder Apache/nginx mit PHP-FPM; HTTPS mit einem Zertifikat einer CA.
 - [ ] Datenbank in der offiziellen Reihenfolge gewählt und dokumentiert.

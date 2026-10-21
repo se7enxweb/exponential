@@ -73375,5 +73375,77 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Help Start</source>
         <translation>Destpêka alîkariyê</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Ev rûpel hîn bi %reader nehatiye wergerandin. Bi %original tê nîşandan.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Îngilîzî</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Almanî</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Zimanê xwendinê:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Bijartina zimanekî zimanê hemû rêveberiyê diguherîne.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count ji %total rûpelan</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Alîkarî bi zimanên din</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Orîjînala bi %language veke</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Tu orîjînala vê rûpelê bi %language dixwînî.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Vegere rûpela bi %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Ev rûpel werger e.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Orîjînala bi %language bixwîne</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Belgekirina ku pêvekên çalak bi xwe re tînin: rêberên wan, README, guhertinname û lîsans.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Di belgekirina %extension de lêgerîn</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Tu pêveka çalak belgekirina xwe bi xwe re nayîne.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Tenê belgekirina pêveka %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Rûpelên wê</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Di hemû alîkariyê de lêgerîn</translation>
+    </message>
 </context>
 </TS>
