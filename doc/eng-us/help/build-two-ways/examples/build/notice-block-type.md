@@ -22,7 +22,7 @@ A "Notice" block in two looks (info, warning) that editors drag in like any othe
 
 ## With templates
 
-1. Define `[BlockDefinition_notice]` and `AvailableBlocks[]=notice` in your extension's `explayouts.ini.append.php` (with the extension first in `ActiveExtensions[]`).
+1. Define `[BlockDefinition_notice]` and `AvailableBlocks[]=notice` in your extension's `explayouts.ini.append.php` (since explayouts 1.4.42 the extension's place in `ActiveExtensions[]` does not matter for blocks).
 2. Write `explayouts/block/notice.tpl`.
 3. Clear Template & content and INI caches.
 

@@ -3,7 +3,7 @@ title: "Plan A/B variants of a page"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1018
-summary: The Query parameter condition exists, but the resolver remembers its answer per path, so one address cannot show two layouts at once; plan variants on two addresses.
+summary: A Query parameter condition gives one address a second layout: since explayouts 1.4.42 /showcase and /showcase?variant=b each get their own layout on every request.
 keywords: A/B test, variant, query parameter, resolver cache, two URLs, experiment
 type: help
 ---
@@ -22,8 +22,8 @@ Compare two versions of a landing page.
 
 ## In the Layouts editor
 
-1. Tested on a copy: a mapping *Path prefix `showcase` + Query parameter `variant`* (priority 3000) and the regular Showcase mapping. Whichever address was requested first decided the layout of both `/showcase` and `/showcase?variant=b` for the next hour (114 blocks either way, or 5 either way).
-2. So plan two pages with their own address (for example `/offer-a` and `/offer-b`), each with a Location or Path mapping to its own layout, and split the traffic outside (campaign links, newsletter halves).
+1. Add a mapping *Path prefix `showcase` + Query parameter `variant`* (priority 3000) beside the regular Showcase mapping. Since explayouts 1.4.42 the resolver does not cache an answer that depends on a Query parameter condition, so `/showcase` and `/showcase?variant=b` each get their own layout on every request. Verified on the live installation: a mapping with Query parameter `p643b=b` on one article showed `layout_4` with `?p643b=b` and the regular `layout_2` without it, on both Apache and Velocity, in any request order.
+2. Split the traffic outside (campaign links, newsletter halves). The page cache does not keep an address whose query has a parameter outside `[HttpCacheSettings] QueryStringParameters`, so the variant is rendered on every view.
 
 ## With templates
 
@@ -31,7 +31,7 @@ Compare two versions of a landing page.
 
 ## Which to choose
 
-Separate addresses keep page caches and the resolver correct.
+One address with a Query parameter for a test; two pages with their own address (for example `/offer-a` and `/offer-b`) when both variants should come from the page cache.
 
 ## Check
 

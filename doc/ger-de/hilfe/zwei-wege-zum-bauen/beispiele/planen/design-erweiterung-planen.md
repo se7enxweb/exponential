@@ -22,7 +22,7 @@ type: help
 ## Mit Templates
 
 1. Geben Sie ihr einen Namen (diese Seiten verwenden `mysite`), eine `settings/design.ini.append.php` mit `DesignExtensions[]=mysite` und den Design-Ordner der Site (`design/media/`).
-2. Planen Sie, sie an die erste Stelle in `ActiveExtensions[]` zu setzen: Dann haben ihre Templates Vorrang vor denen des Themes, und ihre `explayouts.ini` wird nach der von Layouts gelesen.
+2. Planen Sie, sie an die erste Stelle in `ActiveExtensions[]` zu setzen: Dann haben ihre Templates Vorrang vor denen des Themes (für Blocktypen spielt die Position seit explayouts 1.4.42 keine Rolle).
 3. Bewahren Sie sie in einem eigenen git-Repository auf.
 
 ## Welchen Weg Sie wählen

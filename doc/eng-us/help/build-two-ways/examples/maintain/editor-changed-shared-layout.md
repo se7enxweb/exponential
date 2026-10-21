@@ -26,7 +26,7 @@ Every page's footer is back to normal in minutes.
 
 ## On the command line
 
-1. `./console exp:layouts import <last export> --only=fd0aa7af77a85a03bf1080018f5db1dc --strategy=overwrite --publish --dry-run`, check, run without `--dry-run`, then `./console exp:cache clear --tag=content`.
+1. `./console exp:layouts import <last export> --only=fd0aa7af77a85a03bf1080018f5db1dc --strategy=overwrite --publish --dry-run`, check, run without `--dry-run`; the import purges the page cache itself (since explayouts_core 1.0.10).
 
 ## Which to choose
 

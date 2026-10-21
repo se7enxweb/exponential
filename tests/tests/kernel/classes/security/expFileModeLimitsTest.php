@@ -19,8 +19,9 @@
  *          (BYPASSES is empty; a new call that bypasses them fails)
  *  FM-07 - Executables keep their execute bits within the directory limit; expAuditWriter::ownLikeParent() limits a
  *          directory as a directory and a file as a file
- *  FM-08 - The code that runs before the autoloader (the HTTP cache early exit, the repair queue) loads the helpers
- *          itself
+ *  FM-08 - The code that runs before the autoloader (the HTTP cache early exit, the repair queue) has the limits
+ *          itself; the HTTP cache contract does not load eZFile or eZDir (Velocity's parent loads it before its source
+ *          transform, and an eZFile compiled there sent every download without its headers) and limits a mode as they do
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -451,11 +452,41 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
     public function testCodeBeforeTheAutoloaderHasTheHelpers()
     {
         $code = 'require "lib/ezutils/classes/ezprepairqueue.php"; require "kernel/private/classes/httpcache/ezphttpcachecontract.php"; ' .
-                'echo class_exists( "ezpAutoloader", false ) ? "autoloader" : "plain", " ", eZFile::fileMode( 0660 ), " ", eZDir::dirMode( 0770 );';
+                'echo class_exists( "ezpAutoloader", false ) ? "autoloader" : "plain", " ", ' .
+                'class_exists( "eZFile", false ) || class_exists( "eZDir", false ) ? "loaded" : "free", " ", ' .
+                'ezpHttpCacheContract::fileMode( 0660 ), " ", ezpHttpCacheContract::dirMode( 0770 );';
         $output = array();
         exec( escapeshellarg( PHP_BINARY ) . ' -n -r ' . escapeshellarg( $code ) . ' 2>&1', $output, $status );
         $this->assertSame( 0, $status, implode( "\n", $output ) );
-        $this->assertSame( 'plain ' . 0660 . ' ' . 0770, implode( "\n", $output ) );
+        $this->assertSame( 'plain free ' . 0660 . ' ' . 0770, implode( "\n", $output ) );
+
+        // the contract without eZFile limits a mode exactly as eZFile::fileMode() and eZDir::dirMode() do, for every
+        // way of writing the constants (one, both, a string, nonsense, a limit taking rights from the owner)
+        $cases = array( array(), array( 'EZP_FILE_MODE_MAX' => 0640 ), array( 'EZP_DIR_MODE_MAX' => 0750 ),
+                        array( 'EZP_FILE_MODE_MAX' => '0640', 'EZP_DIR_MODE_MAX' => '750' ),
+                        array( 'EZP_FILE_MODE_MAX' => 0600, 'EZP_DIR_MODE_MAX' => 0700 ), array( 'EZP_DIR_MODE_MAX' => 750 ),
+                        array( 'EZP_FILE_MODE_MAX' => 'rw-r-----' ), array( 'EZP_DIR_MODE_MAX' => 0640 ),
+                        array( 'EZP_FILE_MODE_MAX' => 0 ), array( 'EZP_FILE_MODE_MAX' => 06640 ) );
+        foreach ( $cases as $constants )
+        {
+            $define = '';
+            foreach ( $constants as $name => $value )
+                $define .= 'define( ' . var_export( $name, true ) . ', ' . var_export( $value, true ) . ' ); ';
+            $modes = '$m = array(); foreach ( array( 0777, 0666, 0660, 0640, 0600, 0770, 0755, 0750, 0700, 0 ) as $x ) ' .
+                     '$m[] = %s::fileMode( $x ) . "/" . %s::dirMode( $x ); echo implode( ",", $m );';
+            $run = function ( $code )
+            {
+                $output = array();
+                exec( escapeshellarg( PHP_BINARY ) . ' -n -d log_errors=0 -r ' . escapeshellarg( $code ) . ' 2>/dev/null', $output, $status );
+                $this->assertSame( 0, $status, implode( "\n", $output ) );
+                return implode( "\n", $output );
+            };
+            $contract = $run( $define . 'require "kernel/private/classes/httpcache/ezphttpcachecontract.php"; ' .
+                              sprintf( $modes, 'ezpHttpCacheContract', 'ezpHttpCacheContract' ) );
+            $kernel = $run( $define . 'require "lib/ezfile/classes/ezfile.php"; require "lib/ezfile/classes/ezdir.php"; ' .
+                            sprintf( $modes, 'eZFile', 'eZDir' ) );
+            $this->assertSame( $kernel, $contract, 'the contract limits modes as eZFile and eZDir with ' . json_encode( $constants ) );
+        }
 
         // the repair queue alone: loading it needs nothing else (it is read out of the engine archive on its own and
         // has to work when libraries are broken); the helpers are loaded when a mode is first asked for

@@ -22,7 +22,7 @@ Migrated settings take effect on Velocity.
 
 ## In the Layouts editor
 
-1. Layout imports need the content cache cleared, not a restart.
+1. Layout imports need neither a restart nor a cache clear: an import with `--publish` purges the page cache itself.
 
 ## On the command line
 

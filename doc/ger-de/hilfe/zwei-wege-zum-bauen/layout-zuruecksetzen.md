@@ -3,7 +3,7 @@ title: Ein Layout zurücksetzen
 audience: admin, website-creator, editor, developer
 category: build-two-ways
 order: 610
-summary: Vor einer Änderung eine Sicherheitskopie eines Layouts machen und sie danach mit exp:layouts zurückholen; exportieren, ändern, mit overwrite und publish importieren, den Inhalts-Cache leeren. Durchgespielt am gemeinsamen Layout Prefooter.
+summary: Vor einer Änderung eine Sicherheitskopie eines Layouts machen und sie danach mit exp:layouts zurückholen; exportieren, ändern, mit overwrite und publish importieren, was den Seiten-Cache leert. Durchgespielt am gemeinsamen Layout Prefooter.
 keywords: Zurücksetzen, Layout rückgängig machen, Layout wiederherstellen, Layout sichern, exp:layouts export, Import overwrite publish, Sicherheitskopie, Layout-Historie, rollback, undo layout, restore layout, backup layout, safety copy, layout history
 type: help
 ---
@@ -18,7 +18,7 @@ Im Editor wirft **Verwerfen** einen Entwurf weg; eine vorher veröffentlichte Ve
 2. [Die Änderung vornehmen](#2-die-änderung-vornehmen)
 3. [Zurücksetzen: Vorschau](#3-zurücksetzen-vorschau)
 4. [Zurücksetzen: schreiben](#4-zurücksetzen-schreiben)
-5. [Den Inhalts-Cache leeren](#5-den-inhalts-cache-leeren)
+5. [Der Seiten-Cache](#5-der-seiten-cache)
 
 ## 1. Vor der Änderung: exportieren
 
@@ -71,14 +71,11 @@ Nach dem Import hatte es wieder seine drei ursprünglichen Artikel und keinen de
 
 Ohne `--publish` wird die importierte Version ein Entwurf, den Sie vor dem Veröffentlichen im Editor prüfen können.
 
-## 5. Den Inhalts-Cache leeren
+## 5. Der Seiten-Cache
 
-Der Import leert den Seiten-Cache nicht. Auf der Testkopie zeigten die Artikelseiten den geänderten Prefooter weiterhin
-(`X-Exp-Cache: HIT`), bis:
-
-```text
-./console exp:cache clear --tag=content
-```
+Seit explayouts_core 1.0.10 leert der Import mit `--publish` selbst jede Seite des Seiten-Cache; die Artikelseiten
+zeigen den wiederhergestellten Prefooter also bei ihrem nächsten Aufruf, und kein Cache muss von Hand geleert werden.
+Ein Import ohne `--publish`, ein Probelauf oder ein abgelehnter Import leert nichts.
 
 ## Verwandte Seiten
 

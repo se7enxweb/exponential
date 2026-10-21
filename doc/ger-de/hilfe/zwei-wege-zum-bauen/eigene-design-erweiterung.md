@@ -58,7 +58,7 @@ Testkopie gemessen wurde:
 |---|---|---|
 | am Ende angehängt (was `exp:ini add` macht) | `mysite` vor `sevenx_themes_media` aufgeführt | die Templates des Themes gewinnen; der Override wird ignoriert |
 | vor `sevenx_themes_media` gesetzt | `mysite` nach dem Theme aufgeführt | Ihre Templates gewinnen |
-| an die erste Stelle gesetzt | `mysite` als letzte aufgeführt | Ihre Templates gewinnen, und Ihre `explayouts.ini` wird nach der von Layouts gelesen (nötig für neue Blocktypen) |
+| an die erste Stelle gesetzt | `mysite` als letzte aufgeführt | Ihre Templates gewinnen |
 
 Die Regel dahinter: Die Erweiterungen werden in umgekehrter Reihenfolge von `ActiveExtensions[]` gelesen, und in
 `DesignExtensions[]` gewinnt die zuletzt aufgeführte. Eine Erweiterung, die **früher** in `ActiveExtensions[]` steht,

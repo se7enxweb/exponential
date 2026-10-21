@@ -27,7 +27,7 @@ Bold Agency moves to its own installation.
 ## On the command line
 
 1. `./console exp:layouts export --only=<Bold Agency identifiers> --output=bold.zip` (their shared layouts come along).
-2. On the new installation, after the content: dry run, import, cache clear.
+2. On the new installation, after the content: dry run, import (with `--publish` it purges the page cache itself).
 
 ## Which to choose
 
