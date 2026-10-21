@@ -53,9 +53,9 @@ Ausstiegsplänen in diesem Bereich zeigt, wie Sie es im Vertrag aufrechterhalten
 | [Anforderungen](anforderungen/README.md) | Wie Sie prüfbare Anforderungen an ein öffentliches CMS schreiben und welche Nachweise das Repository für jede liefert |
 | [Ausschreibungsvorlagen](ausschreibungsvorlagen/README.md) | Klauseltexte für eine Ausschreibung oder Angebotsaufforderung, mit anzupassenden Platzhaltern |
 | [Bewertung](bewertung/README.md) | Checklisten, Bewertungsbögen, Demo-Skripte, ein Plan für einen Proof of Concept und Referenzprüfungen |
-| [Gesamtbetriebskosten](../../../../eng-us/help/government/procurement/total-cost-of-ownership/README.md) | Ein Kostenmodell mit Kategorien und durchgerechneten Beispielen, deren Zahlen alle als Annahmen gekennzeichnet sind |
+| [Gesamtbetriebskosten](gesamtbetriebskosten/README.md) | Ein Kostenmodell mit Kategorien und durchgerechneten Beispielen, deren Zahlen alle als Annahmen gekennzeichnet sind |
 | [Ausstiegspläne](ausstiegsplaene/README.md) | Wie Sie das Ende eines Vertrags planen: Exportformate, Übergabe, Übergang und Klauseln gegen Lock-in |
-| [Schulung](../../../../eng-us/help/government/procurement/training/README.md) | Ein Schulungsplan für eine öffentliche Stelle, aufbauend auf den Kursen für Trainerinnen und Trainer dieser Hilfe |
+| [Schulung](schulung/README.md) | Ein Schulungsplan für eine öffentliche Stelle, aufbauend auf den Kursen für Trainerinnen und Trainer dieser Hilfe |
 | [Lebenszyklus](lebenszyklus/README.md) | Release-Richtlinie, unterstützte Versionen, Unterstützung von PHP und wie Sie Upgrades im Haushalt planen |
 
 ## Lesereihenfolge
@@ -64,10 +64,10 @@ Ausstiegsplänen in diesem Bereich zeigt, wie Sie es im Vertrag aufrechterhalten
    Anforderungen.
 2. Machen Sie daraus mit den [Ausschreibungsvorlagen](ausschreibungsvorlagen/README.md) Klauseln.
 3. Bereiten Sie das Gremium mit der [Bewertung](bewertung/README.md) vor, bevor die Angebote eingehen.
-4. Vergleichen Sie Angebote nach den [Gesamtbetriebskosten](../../../../eng-us/help/government/procurement/total-cost-of-ownership/README.md), nicht nach dem Preis
+4. Vergleichen Sie Angebote nach den [Gesamtbetriebskosten](gesamtbetriebskosten/README.md), nicht nach dem Preis
    des ersten Jahres.
 5. Schreiben Sie den [Ausstiegsplan](ausstiegsplaene/README.md) vor der Unterzeichnung, nicht erst, wenn der Vertrag endet.
-6. Planen Sie [Schulung](../../../../eng-us/help/government/procurement/training/README.md) und den [Lebenszyklus](lebenszyklus/README.md) des Produkts für die gesamte
+6. Planen Sie [Schulung](schulung/README.md) und den [Lebenszyklus](lebenszyklus/README.md) des Produkts für die gesamte
    Laufzeit ein.
 
 Die Checklisten „Vor einer Ausschreibung“ und „Vor der Unterzeichnung“ im Bereich der Checklisten für Verwaltungen

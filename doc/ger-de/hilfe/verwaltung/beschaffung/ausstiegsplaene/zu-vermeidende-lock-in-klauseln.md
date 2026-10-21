@@ -43,7 +43,7 @@ Der Vertrag sollte das bestätigen, nicht einschränken.
 | Der Lieferant besitzt den eigenen Code und gewährt Ihnen nur eine Nutzungslizenz | ein anderer Lieferant darf ihn rechtlich nicht ändern |
 | Eigene Erweiterungen ohne Quellcode oder verschleiert geliefert | niemand sonst kann sie pflegen |
 | Sicherungen, Einstellungen und Schlüssel nur beim Lieferanten | Sie können ohne seine Mitwirkung nicht umziehen |
-| Änderungen in einem privaten Fork des Kernels | jedes Upgrade hängt vom Lieferanten ab ([Kosten für Upgrades und Wartung](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/upgrade-and-maintenance-costs.md)) |
+| Änderungen in einem privaten Fork des Kernels | jedes Upgrade hängt vom Lieferanten ab ([Kosten für Upgrades und Wartung](../gesamtbetriebskosten/kosten-fuer-upgrades-und-wartung.md)) |
 | Daten werden „in einem vom Lieferanten gewählten Format“ zurückgegeben | Sie erhalten womöglich etwas, das niemand lesen kann |
 | Unterstützung beim Ausstieg zu Sätzen, die im Vertrag nicht festgelegt sind | der Preis des Ausstiegs wird festgelegt, wenn Sie keine Wahl haben |
 | Daten werden bei Kündigung sofort gelöscht | Sie verlieren womöglich Daten, bevor Sie Ihre Kopie geprüft haben |

@@ -44,7 +44,7 @@ Weg existiert also; diese Seiten machen daraus einen Plan, eine Vertragsanlage u
 4. Beim Ausstieg: die passende Seite zum Wechsel, dann [Umleitungen](url-umleitungen-nach-dem-ausstieg.md),
    [personenbezogene Daten](personenbezogene-daten-beim-ausstieg.md) und [Schlüssel und Geheimnisse](uebergabe-von-schluesseln-und-geheimnissen.md).
 
-Die Kosten des Ausstiegs gehören in das Modell der [Gesamtbetriebskosten](../../../../../eng-us/help/government/procurement/total-cost-of-ownership/README.md); ob ein
+Die Kosten des Ausstiegs gehören in das Modell der [Gesamtbetriebskosten](../gesamtbetriebskosten/README.md); ob ein
 Bieter den Ausstieg leicht macht, zu bewerten, gehört zur [Bewertung](../bewertung/README.md).
 
 ## Grundsätze dieses Abschnitts
