@@ -152,6 +152,9 @@ The [reading path](app-creators-reading-path.md) puts every page below in order.
 - [Who is the Exponential Foundation?](../../who-is-the-exponential-foundation.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
+<!-- exp-see-also-645 -->
+**See also:** [PHP Developers](../../php-developers/php-developers-start-here.md), [Mobile App Developers](../../mobile-app-developers/mobile-app-developers-start-here.md).
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

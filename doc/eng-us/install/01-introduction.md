@@ -387,7 +387,7 @@ documentation.
 | match value | What selects a siteaccess: a URL path, a port or a host name. Chosen during the install; the siteaccess names stay `site`, `admin` and `editor`. |
 | design | A set of templates, styles and images; a siteaccess chooses which designs are searched, in order. |
 | site package | The archive of content, classes and design installed at setup; `sevenx_multisite` by default. |
-| INI file | A settings file of `[Block]` and `Key=Value` lines; read in order: defaults, extensions, siteaccess, override. |
+| INI file | A settings file of `[Block]` and `Key=Value` lines; read in order, a later file winning: defaults, siteaccess, extensions, override. |
 | override (settings) | A file in `settings/override/` or `settings/siteaccess/<name>/` whose values replace the defaults. |
 | setup wizard | The browser installer, active while `CheckValidity=true`. |
 | kickstarter | The command line installer that answers the wizard's steps from `kickstart.ini`. |

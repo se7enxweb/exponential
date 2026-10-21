@@ -115,6 +115,9 @@ full history, step by step, and how to send your improvements back to the projec
 - [Keyboard shortcuts](keyboard-shortcuts.md)
 - [Develop with Git](develop-with-git.md)
 
+<!-- exp-see-also-645 -->
+**See also:** [Non-technical people](non-technical-people/non-technical-people-start-here.md).
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

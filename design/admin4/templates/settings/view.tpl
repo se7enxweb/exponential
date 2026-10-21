@@ -28,7 +28,7 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="a4-intro">{'Every INI file is read in layers: settings/<file>.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.'|i18n( 'design/admin/settings' )|wash}</p>
+<p class="a4-intro">{'Every INI file is read in layers: settings/<file>.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.'|i18n( 'design/admin/settings' )|wash}</p>
 
 {* What the last change did *}
 {if $notice}

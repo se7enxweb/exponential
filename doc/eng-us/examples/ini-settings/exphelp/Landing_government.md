@@ -31,7 +31,7 @@ StartPage=help/government/government-start-here.md
 
 ## Related
 
-Default: a list of 4: `businesses`, `hosting`, `partner`, `admin`.
+Default: a list of 5: `businesses`, `hosting`, `partner`, `admin`, `non-profit`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,7 @@ Related[]=businesses
 Related[]=hosting
 Related[]=partner
 Related[]=admin
+Related[]=non-profit
 */ ?>
 ```
 

@@ -3,7 +3,7 @@ title: "Lesson 8.4: Settings of your own"
 audience: trainer, developer
 category: training
 order: 84
-summary: Learners give their extension its own INI file with documented defaults, read it in PHP with eZINI and in templates with ezini, let a siteaccess override it, and handle missing settings safely. 45 minutes.
+summary: Learners give their extension its own INI file with documented defaults, read it in PHP with eZINI and in templates with ezini, override it from the installation's global override, and handle missing settings safely. 45 minutes.
 keywords: developers course, own ini file, mysite.ini, eZINI instance, variable, hasVariable, hasGroup, variableArray, ezini operator, ezini_hasvariable, defaults, extension settings, siteaccess override
 type: help
 ---
@@ -11,7 +11,8 @@ type: help
 
 Code that hard-codes a number or a node ID has to be edited for every site. An extension of quality reads such
 values from an INI file of its own, with documented defaults that a site can override. In this lesson learners add
-`mysite.ini` to their extension, read it from PHP and from templates, and override one value for a siteaccess.
+`mysite.ini` to their extension, read it from PHP and from templates, and find out which file can override one of
+its values.
 
 ## At a glance
 
@@ -31,7 +32,7 @@ After this lesson, learners can:
 - create an INI file of their own in an extension, with a comment for every setting;
 - read it in PHP with `eZINI::instance()`, `variable()`, `hasVariable()` and `variableArray()`;
 - read it in templates with `ezini()` and `ezini_hasvariable()`;
-- override a value for one siteaccess and check the result with `exp:ini where`;
+- override a value in `settings/override/`, and show with `exp:ini where` why a siteaccess file cannot;
 - fall back to a safe default when a setting is missing.
 
 ## Trainer's notes
@@ -49,8 +50,11 @@ Sources: [Your own INI file](../../../designers/extensions/your-own-ini-file.md)
    hold `;`-separated lists.
 3. **Templates** (2 minutes). `{ezini( 'GreetSettings', 'MaxTimes', 'mysite.ini' )}`;
    `ezini_hasvariable()` checks first.
-4. **Overrides** (3 minutes). A site changes a value with `exp:ini set mysite.ini/GreetSettings/MaxTimes 3
-   siteaccess:<sa>`; the extension's file is never edited for one site.
+4. **Overrides** (3 minutes). An installation changes a value with `exp:ini set mysite.ini/GreetSettings/MaxTimes 3
+   global` (`settings/override/`); the extension's file is never edited for one site. A siteaccess file is not
+   enough: `eZINI::overrideDirs()` reads `settings/siteaccess/<sa>/` before the extensions' `settings/`, so the
+   extension's value wins over it. A value that must differ per siteaccess is not shipped in the extension's file;
+   the code gives its default.
 5. **Prefixes** (2 minutes). INI file names are shared by all extensions; name yours after your extension or
    prefix (`mysite.ini`), not `settings.ini`.
 
@@ -104,18 +108,22 @@ On the development installation, in `extension/mysite_hello`.
 4. Use the greeting text in `greet.tpl`:
    `{ezini( 'GreetSettings', 'Greeting', 'mysite.ini' )|wash}, {$name|wash}!`.
 5. Check with `php -l`, clear the `ini` and template caches, open `/hello/greet/Ada/(times)/9`.
-6. Override for your site only:
+6. Try to override it for your site:
    `php bin/php/console exp:ini set mysite.ini/GreetSettings/MaxTimes 2 siteaccess:<sa>`, and open the address again.
-7. Run `exp:ini where` from step 2 again and read both files.
-8. Remove the override with `exp:ini rem mysite.ini/GreetSettings/MaxTimes siteaccess:<sa>` and commit the
-   extension's files.
+7. Run `exp:ini where` from step 2 again and read both files and their order.
+8. Remove that value with `exp:ini rem mysite.ini/GreetSettings/MaxTimes siteaccess:<sa>`, set it in the global
+   override instead (`exp:ini set mysite.ini/GreetSettings/MaxTimes 2 global`), clear the `ini` cache and open the
+   address again. Then remove it (`exp:ini rem mysite.ini/GreetSettings/MaxTimes global`) and commit the extension's
+   files.
 
 ## Expected result
 
 - Step 2: the extension's file with `MaxTimes=5` and `In effect:`.
 - Step 5: five greetings (the maximum), each starting with "Hello".
-- Step 6: two greetings.
-- Step 7: two files in load order, the siteaccess value in effect.
+- Step 6: still five greetings.
+- Step 7: two files in load order, the siteaccess file first and the extension's file after it, and the extension's
+  `MaxTimes=5` in effect.
+- Step 8: two greetings.
 - The trainer checks one learner's `mysite.ini.append.php` for comments on every setting.
 
 ## Quiz
@@ -133,7 +141,8 @@ On the development installation, in `extension/mysite_hello`.
 1. In its `settings/` folder, as `<name>.ini.append.php`.
 2. **B.** `hasVariable( 'GreetSettings', 'MaxTimes' )`.
 3. `{ezini( 'GreetSettings', 'MaxTimes', 'mysite.ini' )}`.
-4. An override in the site's scope (a siteaccess or the global override), never the extension's file.
+4. The global override (`settings/override/`), never the extension's file. A siteaccess file loses to a value the
+   extension's `settings/` sets, because the extensions' settings are read after the siteaccess.
 5. INI file names are shared by all extensions; a prefixed name cannot collide.
 
 </details>

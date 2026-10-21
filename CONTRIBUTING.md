@@ -214,6 +214,13 @@ All contributions will be reviewed before merging. Be open to feedback and be wi
 
 Feel free to open an issue for bug reports, feature requests, or general discussions. Follow the provided templates to provide necessary details.
 
+**Negative features.** Not every reported bug is a bug. Some behavior is deliberate, or open to interpretation, and
+other installations, extensions and integrations depend on it working exactly as it does today. Engineers call this a
+negative feature. An issue or pull request that changes one needs a clear justification of the use case and of who
+else is affected, and it may go through many rounds of review and revision before it is accepted and merged. A
+proposal that keeps today's behavior as the default and adds an option is much easier to accept. The help page
+[Getting support: negative features](doc/eng-us/help/project/getting-support.md#negative-features) explains more.
+
 ## Licensing
 
 By contributing, you agree that your contributions will be licensed under the [GNU General Public License, version 2.0 or later](LICENSE). Make sure that your contributions comply with this license. In addition, a contribution to the core kernel needs your signed Contributor Licensing Agreement ([Copyright assignment (CLA)](#copyright-assignment-cla)).

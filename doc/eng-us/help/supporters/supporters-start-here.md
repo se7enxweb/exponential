@@ -77,6 +77,9 @@ and the Exponential Foundation (the nonprofit that operates the project). Read
 - [Develop with Git](../develop-with-git.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
+<!-- exp-see-also-645 -->
+**See also:** [Community](../community/community-start-here.md).
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

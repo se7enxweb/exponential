@@ -58,8 +58,8 @@ Quellen: [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-na
    sagt genau das), und `MatchOrder` die Reihenfolge der Regeln (`uri;host;port` im Auslieferungszustand). `[SiteSettings]
    DefaultAccess` ist der Siteaccess, der antwortet, wenn keine Regel gegriffen hat.
 3. **Die Ladereihenfolge** (6 Minuten). Zeichnen Sie vier Kästen von unten nach oben: die Kernel-Voreinstellungen in
-   `settings/*.ini`, die Einstellungen aktiver Erweiterungen, `settings/siteaccess/<name>/` und `settings/override/`,
-   das das letzte Wort hat. Ein einfacher Wert nimmt die letzte Datei, die ihn setzt; Arrays addieren sich, sofern
+   `settings/*.ini`, `settings/siteaccess/<name>/`, die Einstellungen aktiver Erweiterungen (sie gewinnen gegenüber
+   dem Siteaccess) und `settings/override/`, das das letzte Wort hat. Ein einfacher Wert nimmt die letzte Datei, die ihn setzt; Arrays addieren sich, sofern
    eine Datei sie nicht mit einer leeren Zeile `Name[]` zurücksetzt. Modul 3 ergänzt dieses Bild um die
    Override-Verzeichnisse pro Website in Website-Erweiterungen.
 4. **Live ansehen** (4 Minuten). Führen Sie `exp:ini where` am Beamer aus (Schritt 5 der Übung) und lesen Sie die

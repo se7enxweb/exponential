@@ -15,17 +15,25 @@
  * - Siteaccess: the one asked for, else site.ini [SiteSettings] DefaultAccess.
  * - Scheme: the one of this request, as eZSys::isSSLNow() has it (forwarded
  *   headers included).
- * - Host: this request's host when the siteaccess can be reached on it by URI
- *   (MatchOrder has uri) and this request is not on a host that the host map
- *   gives another siteaccess before the URI is tried; else a host that [SiteAccessSettings] HostMatchMapItems maps
- *   to the siteaccess; else its [SiteSettings] SiteURL; else this host.
- * - Port: the visitor's port, when the host has none of its own and is served
- *   by this installation (this host, or one of HostMatchMapItems) -- an
- *   installation reached both on 443 and on 8080 keeps the visitor on the one
- *   they are on.
- * - Path: the siteaccess name (or its URIMatchMapItems key) when it is matched
- *   by URI, unless RemoveSiteAccessIfDefaultAccess leaves the default out;
- *   the index file when URLs carry one.
+ * - Address: the first of these that the matching rules (MatchOrder with
+ *   host_uri, host and uri, as eZSiteAccess::match() applies them) lead to
+ *   the siteaccess with no part of the path left over, which would otherwise
+ *   be read as a module and answer 404:
+ *   1. this host with a [SiteAccessSettings] HostUriMatchMapItems entry of
+ *      the siteaccess for it, then this host with its URI element (or its
+ *      URIMatchMapItems key; nothing for the default with
+ *      RemoveSiteAccessIfDefaultAccess);
+ *   2. its own [SiteSettings] SiteURL (host, port and path, the index file
+ *      left out of the path), unless it is empty or localhost;
+ *   3. a host that HostMatchMapItems maps to it, without a path;
+ *   4. the host and URI of a HostUriMatchMapItems entry of it.
+ *   When none of them can be shown to lead there: its URI on this host,
+ *   else its SiteURL as written, else this host.
+ * - Port: the visitor's port, when the address has none of its own and is
+ *   served by this installation (this host, or a host of the host maps) --
+ *   an installation reached both on 443 and on 8080 keeps the visitor on the
+ *   one they are on.
+ * - The index file when URLs carry one.
  *
  * The rules are read from the settings without siteaccess overrides, as
  * eZSiteAccess::match() reads them, so the admin's own settings do not change
@@ -121,65 +129,241 @@ class ezpSiteAccessURL
                 $currentPort = (string)$serverPort;
         }
 
-        // Hosts the host map gives this siteaccess, and every host it maps.
+        $order = $ini->variable( 'SiteAccessSettings', 'MatchOrder' );
+        $order = array_values( array_filter( array_map( 'trim', is_array( $order ) ? $order : explode( ';', (string)$order ) ) ) );
+        $uriSegment = in_array( 'uri', $order, true ) ? self::uriSegment( $ini, $siteaccess ) : null;
+        $hostUriItems = in_array( 'host_uri', $order, true ) ? self::hostUriItems( $ini ) : array();
         $mappedHosts = array();
-        $allMapped = array();
         foreach ( self::mapItems( $ini, 'HostMatchMapItems' ) as $item )
         {
-            $allMapped[] = strtolower( $item[0] );
             if ( $item[1] === $siteaccess )
                 $mappedHosts[] = $item[0];
         }
+        $siteURL = trim( (string)eZSiteAccess::getIni( $siteaccess, 'site.ini' )->variable( 'SiteSettings', 'SiteURL' ) );
+        $siteURL = trim( preg_replace( '#^[a-z][a-z0-9+.-]*://#i', '', $siteURL ), '/' );
+        $siteURLHost = $siteURL !== '' ? strtok( $siteURL, '/' ) : '';
+        $siteURLPath = $siteURL !== '' ? (string)substr( $siteURL, strlen( $siteURLHost ) ) : '';
+        // a SiteURL that carries the index file (example.com/index.php/eng) says the path after it
+        $siteURLPath = self::trimIndex( $siteURLPath );
+        list( $siteURLHostName, $siteURLPort ) = self::splitHost( $siteURLHost );
+        $siteURLReal = $siteURLHostName !== '' && !in_array( strtolower( $siteURLHostName ), array( 'localhost', '127.0.0.1' ), true );
 
-        $order = $ini->variable( 'SiteAccessSettings', 'MatchOrder' );
-        $order = is_array( $order ) ? $order : explode( ';', (string)$order );
-        $uriSegment = in_array( 'uri', $order, true ) ? self::uriSegment( $ini, $siteaccess ) : null;
+        // The addresses the siteaccess may have, the most fitting first; the
+        // first one that the matching rules lead to the siteaccess with no
+        // part of the path left over is the one. Each is array( host, port
+        // or null, path, served here: keeps the visitor's port ).
+        $candidates = array();
+        $uriCandidate = null;
+        // 1. on this host: a host_uri entry of the siteaccess, then its URI
+        foreach ( $hostUriItems as $item )
+        {
+            if ( $item[2] === $siteaccess && $item[0] !== '' && eZSiteAccess::hostMatches( $currentHost, $item[0], $item[3] ) )
+                $candidates[] = array( $currentHost, null, $item[1], true );
+        }
+        if ( $uriSegment !== null )
+        {
+            $removed = $ini->variable( 'SiteAccessSettings', 'RemoveSiteAccessIfDefaultAccess' ) === 'enabled' && $siteaccess === $default;
+            $uriCandidate = array( $currentHost, null, $removed ? '' : $uriSegment, true );
+            $candidates[] = $uriCandidate;
+        }
+        // 2. its own [SiteSettings] SiteURL
+        if ( $siteURLReal )
+            $candidates[] = array( $siteURLHostName, $siteURLPort, $siteURLPath, strcasecmp( $siteURLHostName, $currentHost ) === 0 );
+        // 3. a host the host map gives it
+        foreach ( $mappedHosts as $mappedHost )
+        {
+            list( $host, $port ) = self::splitHost( $mappedHost );
+            $candidates[] = array( strtolower( $host ), $port, '', true );
+        }
+        // 4. a host_uri entry of it on another host (a host written out, strict, start or end)
+        foreach ( $hostUriItems as $item )
+        {
+            if ( $item[2] === $siteaccess && $item[0] !== '' && $item[3] !== 'part' )
+            {
+                list( $host, $port ) = self::splitHost( $item[0] );
+                $candidates[] = array( strtolower( $host ), $port, $item[1], true );
+            }
+        }
 
-        // On this host by URI, unless this host belongs to another siteaccess
-        // and MatchOrder tries the host before the URI (then the host's rule
-        // would win there). With uri before host the URI wins on any host.
-        $hostPosition = array_search( 'host', $order, true );
-        $uriPosition = array_search( 'uri', $order, true );
-        $hostFirst = $hostPosition !== false && ( $uriPosition === false || $hostPosition < $uriPosition );
-        $currentMapsElsewhere = $hostFirst
-                                && in_array( strtolower( $currentHost ), $allMapped, true )
-                                && !in_array( strtolower( $currentHost ), array_map( 'strtolower', $mappedHosts ), true );
-        if ( $uriSegment !== null && !$currentMapsElsewhere )
+        $chosen = null;
+        foreach ( $candidates as $candidate )
         {
-            $host = $currentHost;
-            $port = null;
-            $local = true;
+            $port = $candidate[1] !== null ? $candidate[1] : ( $candidate[3] ? $currentPort : null );
+            // DefaultAccess for no match at all is only certain on this host: any host
+            // nobody maps answers so, a placeholder SiteURL (example.com) too
+            $fallback = strcasecmp( $candidate[0], $currentHost ) === 0 ? $default : null;
+            if ( self::leadsTo( $ini, $order, $available, $fallback, $candidate[0] . ( $port !== null ? ':' . $port : '' ), $candidate[2] ) === $siteaccess )
+            {
+                $chosen = $candidate;
+                break;
+            }
         }
-        else if ( $mappedHosts )
+        if ( $chosen === null )
         {
-            list( $host, $port ) = self::splitHost( $mappedHosts[0] );
-            $local = true;
+            // Nothing the rules can be shown to lead there: as before, its URI
+            // on this host, else its SiteURL as it is written, else this host.
+            if ( $uriCandidate !== null )
+                $chosen = $uriCandidate;
+            else if ( $siteURLReal )
+                $chosen = array( $siteURLHostName, $siteURLPort, $siteURLPath, strcasecmp( $siteURLHostName, $currentHost ) === 0 );
+            else
+                $chosen = array( $currentHost, null, '', true );
         }
-        else
+
+        list( $host, $port, $path, $local ) = $chosen;
+        if ( $host === '' )
         {
-            $siteURL = trim( (string)eZSiteAccess::getIni( $siteaccess, 'site.ini' )->variable( 'SiteSettings', 'SiteURL' ) );
-            $siteURL = preg_replace( '#^[a-z]+://#i', '', $siteURL );
-            list( $host, $port ) = self::splitHost( $siteURL !== '' ? strtok( $siteURL, '/' ) : $currentHost );
-            $local = strcasecmp( $host, $currentHost ) === 0;
-        }
-        if ( $host === '' || in_array( strtolower( $host ), array( 'localhost', '127.0.0.1' ), true ) && $currentHost !== '' )
-        {
-            // A SiteURL left at localhost names no real address.
             $host = $currentHost;
             $local = true;
         }
         if ( $port === null && $local && $currentPort !== null )
             $port = $currentPort;
-
-        $path = '';
-        if ( $uriSegment !== null
-             && !( $ini->variable( 'SiteAccessSettings', 'RemoveSiteAccessIfDefaultAccess' ) === 'enabled' && $siteaccess === $default ) )
-            $path = $uriSegment . '/';
+        $path = trim( (string)$path, '/' );
 
         $index = trim( (string)eZSys::indexFile( false ), '/' );
         $defaultPort = $scheme === 'https' ? '443' : '80';
         return $scheme . '://' . $host . ( $port !== null && $port !== $defaultPort ? ':' . $port : '' )
-             . '/' . ( $index !== '' ? $index . '/' : '' ) . $path;
+             . '/' . ( $index !== '' ? $index . '/' : '' ) . ( $path !== '' ? $path . '/' : '' );
+    }
+
+    /**
+     * The siteaccess the matching rules give $host with the path $path, as
+     * eZSiteAccess::match() would, when nothing of the path is left over:
+     * host_uri (HostUriMatchMapItems), host (HostMatchType=map), uri
+     * (URIMatchType=element on the first element, or map), in MatchOrder;
+     * $default when none of them matches and the path is empty. null
+     * when the address leads nowhere certain: the path would be read as a
+     * module and view, or a probe this check does not follow (port,
+     * servervar, index, element/text/regexp host or URI matching beyond the
+     * first element) comes before the probe that would match.
+     *
+     * @param eZINI $ini site.ini without siteaccess overrides
+     * @param array $order MatchOrder
+     * @param array $available AvailableSiteAccessList
+     * @param string|null $default DefaultAccess, or null when no match at all
+     *                             leads nowhere certain
+     * @param string $host
+     * @param string $path without leading or trailing slash
+     * @return string|null
+     */
+    private static function leadsTo( eZINI $ini, array $order, array $available, $default, $host, $path )
+    {
+        $path = trim( (string)$path, '/' );
+        $elements = $path === '' ? array() : explode( '/', $path );
+        foreach ( $order as $probe )
+        {
+            $name = null;
+            $used = 0;
+            switch ( $probe )
+            {
+                case 'host_uri':
+                    foreach ( self::hostUriItems( $ini ) as $item )
+                    {
+                        if ( $item[1] !== '' && $path !== $item[1] && strpos( $path, $item[1] . '/' ) !== 0 )
+                            continue;
+                        if ( eZSiteAccess::hostMatches( $host, $item[0], $item[3] ) )
+                        {
+                            $name = $item[2];
+                            $used = $item[1] === '' ? 0 : count( explode( '/', $item[1] ) );
+                            break;
+                        }
+                    }
+                    break;
+                case 'host':
+                    if ( (string)$ini->variable( 'SiteAccessSettings', 'HostMatchType' ) !== 'map' )
+                        return null;
+                    $method = $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMethod' )
+                            ? (string)$ini->variable( 'SiteAccessSettings', 'HostMatchMethod' ) : 'strict';
+                    if ( $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMapItems' ) )
+                    {
+                        foreach ( (array)$ini->variable( 'SiteAccessSettings', 'HostMatchMapItems' ) as $item )
+                        {
+                            $parts = explode( ';', (string)$item );
+                            if ( count( $parts ) < 2 || $parts[0] === '' )
+                                continue;
+                            $itemMethod = isset( $parts[2] ) && trim( $parts[2] ) !== '' ? trim( $parts[2] ) : $method;
+                            if ( eZSiteAccess::hostMatches( $host, $parts[0], $itemMethod ) )
+                            {
+                                $name = $parts[1];
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                case 'uri':
+                    $type = (string)$ini->variable( 'SiteAccessSettings', 'URIMatchType' );
+                    if ( $type === 'element' )
+                    {
+                        $count = $ini->hasVariable( 'SiteAccessSettings', 'URIMatchElement' )
+                               ? (int)$ini->variable( 'SiteAccessSettings', 'URIMatchElement' ) : 1;
+                        if ( $count !== 1 )
+                            return null;
+                        if ( $elements && in_array( $elements[0], $available, true ) )
+                        {
+                            $name = $elements[0];
+                            $used = 1;
+                        }
+                    }
+                    else if ( $type === 'map' )
+                    {
+                        foreach ( self::mapItems( $ini, 'URIMatchMapItems' ) as $item )
+                        {
+                            if ( $elements && $item[0] === $elements[0] && in_array( $item[1], $available, true ) )
+                            {
+                                $name = $item[1];
+                                $used = 1;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                        return null;
+                    break;
+                case 'none':
+                    break;
+                default:
+                    return null;
+            }
+            if ( $name !== null )
+                return $used === count( $elements ) ? $name : null;
+        }
+        return $elements ? null : $default;
+    }
+
+    /**
+     * site.ini [SiteAccessSettings] HostUriMatchMapItems as
+     * array( host, uri without slashes, siteaccess, method ), the method
+     * filled in from HostUriMatchMethodDefault (strict).
+     */
+    private static function hostUriItems( eZINI $ini )
+    {
+        if ( !$ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) )
+            return array();
+        $defaultMethod = $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' )
+                       ? trim( (string)$ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' ) ) : 'strict';
+        if ( $defaultMethod === '' )
+            $defaultMethod = 'strict';
+        $items = array();
+        foreach ( (array)$ini->variable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) as $item )
+        {
+            $parts = explode( ';', (string)$item );
+            if ( count( $parts ) < 3 || trim( $parts[2] ) === '' )
+                continue;
+            $method = isset( $parts[3] ) && trim( $parts[3] ) !== '' && trim( $parts[3] ) !== 'default' ? trim( $parts[3] ) : $defaultMethod;
+            $items[] = array( trim( $parts[0] ), trim( $parts[1], " /" ), trim( $parts[2] ), $method );
+        }
+        return $items;
+    }
+
+    /**
+     * A path without a leading index file (index.php/eng: eng).
+     */
+    private static function trimIndex( $path )
+    {
+        $path = trim( (string)$path, '/' );
+        if ( preg_match( '#^[^/]+\.php(/|$)#', $path ) )
+            $path = (string)substr( $path, strpos( $path . '/', '/' ) + 1 );
+        return trim( $path, '/' );
     }
 
     /**

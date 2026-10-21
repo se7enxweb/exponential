@@ -360,6 +360,9 @@ Three more things worth knowing:
 - Git itself: the free book [Pro Git](https://git-scm.com/book/en/v2), and GitHub's guide to
   [pull requests](https://docs.github.com/en/pull-requests).
 
+<!-- exp-see-also-645 -->
+**See also:** [Ecosystem](ecosystem/ecosystem-start-here.md), [PHP Developers](php-developers/php-developers-start-here.md), [AI, agents and agentic](ai-agents/ai-agents-start-here.md), [Software Engineers](software-engineers/software-engineers-start-here.md), [Web Framework Developers](web-framework-developers/web-framework-developers-start-here.md), [CMS Developers](cms-developers/cms-developers-start-here.md), [DXP Developers](dxp-developers/dxp-developers-start-here.md), [Integrators](integrators/integrators-start-here.md).
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

@@ -29,6 +29,11 @@ for everyone. This page is the community-member view; the full instructions are 
 | You do not know how to do something | A question: ask in the forums ([Asking a good question](../joining/asking-a-good-question.md)) |
 | Someone could see or change what they should not | A security problem: privately to security@se7enx.com (`SECURITY.md`) |
 | An idea for the project, the website or the community | The community issue tracker |
+| It works as designed, but not the way you want | Maybe a **negative feature**: a deliberate behavior, not a bug. Read [Negative features](../../project/getting-support.md#negative-features) before you file it |
+
+> **Warning:** some behavior that looks wrong is on purpose, or open to interpretation. Changing such a negative feature can
+> affect every site that depends on it, so an issue or pull request about it needs a clear justification and may go
+> through several rounds of review before it is accepted. See [Negative features](../../project/getting-support.md#negative-features).
 
 ## The right tracker
 

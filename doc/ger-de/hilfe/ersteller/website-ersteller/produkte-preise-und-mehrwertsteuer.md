@@ -47,7 +47,12 @@ oder in den Bildern unterscheiden, sind getrennte Produkte meist übersichtliche
 |---|---|---|
 | Mehrwertsteuertypen | **Shop > USt-Typen** (`shop/vattype`) | benannte Prozentsätze: Normalsatz, ermäßigt, null |
 | Mehrwertsteuerregeln | `shop/vatrules`, `shop/editvatrule` | welcher Mehrwertsteuertyp je Land des Kunden und Produktkategorie gilt |
-| Einstellungen | `shop.ini [VATSettings]` | `ProductCategoryAttribute`, `UserCountryAttribute`, `RequireUserCountry=true`, `DynamicVatTypeName` |
+| Einstellungen | `shop.ini [VATSettings]` | `Handler` (ausgeliefert nicht gesetzt), `ProductCategoryAttribute`, `UserCountryAttribute`, `RequireUserCountry=true`, `DynamicVatTypeName` |
+
+Mehrwertsteuerregeln wirken erst, wenn ein Mehrwertsteuer-Handler gesetzt ist: Tragen Sie `Handler=ezdefault` in
+`[VATSettings]` von `settings/override/shop.ini.append.php` ein. Die ausgelieferte `settings/shop.ini` lässt die Zeile
+auskommentiert, weil das Einschalten den Checkout eines bestehenden Shops verändert (das Land des Kunden wird
+Pflicht); die Seite **VAT rules** zeigt einen Hinweis, solange Regeln vorhanden sind und kein Handler sie anwendet.
 
 Mit Mehrwertsteuerregeln wählen Sie am Preis den Mehrwertsteuertyp "Durch Regeln für die Mehrwertsteuer bestimmt"
 (`DynamicVatTypeName`), legen fest, welches Attribut die Produktkategorie und welches Benutzerattribut das Land enthält,

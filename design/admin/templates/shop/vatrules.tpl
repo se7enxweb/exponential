@@ -12,6 +12,18 @@
 </div>
 {/if}
 
+{* Rules are applied only by a VAT handler (shop.ini [VATSettings] Handler); the shipped shop.ini sets none. *}
+{if $handler_notice}
+<div class="message-warning">
+    <h2>{'These VAT rules are not applied.'|i18n( 'design/admin/shop/vatrules' )}</h2>
+    {if eq( $handler_notice.state, 'none' )}
+    <p>{'No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type "%dynamic".'|i18n( 'design/admin/shop/vatrules',, hash( '%dynamic', ezini( 'VATSettings', 'DynamicVatTypeName', 'shop.ini' ) ) )|wash}</p>
+    {else}
+    <p>{'The VAT handler "%handler" set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).'|i18n( 'design/admin/shop/vatrules',, hash( '%handler', $handler_notice.handler ) )|wash}</p>
+    {/if}
+</div>
+{/if}
+
 <form action={'shop/vatrules'|ezurl} method="post" name="VatRules">
 
 <div class="context-block">

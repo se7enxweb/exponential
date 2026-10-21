@@ -69,6 +69,12 @@ Callback des Anbieters. Die Seiten in `doc/eng-us/shop/examples/paypal/` gehen e
 Arbeit für Anwendungsentwickler: siehe
 [Einen Workflow-Ereignistyp schreiben](../anwendungsentwickler/einen-workflow-ereignistyp-schreiben.md).
 
+**Setup > RAD** (`/setup/handlerextension/paymentgateway`, oder `paymentgatewaydirect` für ein Gateway, das die
+Zahlung ohne Verlassen der Website annimmt) schreibt das Gerüst. Prüfen Sie, dass die erzeugte Klasse unter
+`extension/<name>/paymentgateways/<alias>/classes/<alias>gateway.php` liegt: Der Kernel lädt für jeden Namen in
+`AvailableGateways[]` nur `<GatewaysDirectories>/<gateway>/classes/<gateway>gateway.php`. Frühere Versionen des
+Werkzeugs schrieben `paymentgateways/<alias>gateway.php`, das nie geladen wird.
+
 ## Verwandte Seiten
 
 - [Einen Shop betreiben: Überblick](shop-ueberblick.md)

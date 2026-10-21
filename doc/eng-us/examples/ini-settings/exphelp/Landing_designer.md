@@ -31,7 +31,7 @@ StartPage=help/designers/designers-start-here.md
 
 ## Related
 
-Default: a list of 3: `website-creator`, `developer`, `partner`.
+Default: a list of 5: `website-creator`, `developer`, `partner`, `theme-designer`, `cms-developer`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,8 @@ Related[]
 Related[]=website-creator
 Related[]=developer
 Related[]=partner
+Related[]=theme-designer
+Related[]=cms-developer
 */ ?>
 ```
 

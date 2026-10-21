@@ -48,6 +48,11 @@ A screenshot helps, as long as it shows no passwords or other people's personal 
 
 ## Filing a bug in Exponential
 
+> **Before you file it:** not everything that looks like a bug is one. A behavior can be deliberate or open to
+> interpretation, what engineers call a negative feature. Changing it can affect every site that relies on it, so it
+> needs a strong justification and often several rounds of review. See
+> [Negative features](project/getting-support.md#negative-features).
+
 When your administrator (or you, as one) finds that the problem is in the software itself and not in the site's own
 setup, file it publicly so it can be fixed for everyone. The **Report an error** page of the help
 (`exphelp/report` in the administration) guides you through it, fills in a summary of the installation for you and
