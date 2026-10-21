@@ -3,7 +3,7 @@ title: "Ein durch einen Import beschädigtes Layout retten"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1525
-summary: Den vorherigen Export mit overwrite und publish importieren; Inhalte leeren.
+summary: Den vorherigen Export mit overwrite und publish importieren; der Import leert den Seiten-Cache selbst.
 keywords: retten, beschädigtes Layout, Import, Zurücksetzen, Migration, rescue, broken layout, import, rollback, migration
 type: help
 ---
@@ -28,7 +28,7 @@ Einen misslungenen Import rückgängig machen.
 
 1. `./console exp:layouts import before-import.zip --dry-run --strategy=overwrite --publish` und die Zustände lesen (`new`, `identical`, `changed`, `conflicting`).
 2. Noch einmal ohne `--dry-run` ausführen, mit der gewählten `--strategy` und `--publish`, wenn das Ergebnis sofort live sein soll.
-3. `./console exp:cache clear --tag=content` (ein Import auf der Kommandozeile leert den Seiten-Cache nicht).
+3. Von Hand ist nichts zu leeren: Seit explayouts_core 1.0.10 leert ein Import mit `--publish` den Seiten-Cache selbst.
 
 ## Welchen Weg Sie wählen
 

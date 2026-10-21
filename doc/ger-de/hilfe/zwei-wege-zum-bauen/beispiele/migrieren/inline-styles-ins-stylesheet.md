@@ -26,7 +26,7 @@ Templates ohne Inline-CSS, Styles im Cache.
 
 ## Mit Templates
 
-1. Ersetzen Sie jedes `style=""` durch eine Klasse; fügen Sie die Regeln zu `mysite.css` hinzu; nehmen Sie die Datei über Ihren Override von `pagelayout/head/style.tpl` in die Liste des Themes auf.
+1. Ersetzen Sie jedes `style=""` durch eine Klasse; fügen Sie die Regeln zu `mysite.css` hinzu; tragen Sie die Datei in die `design.ini` Ihrer Erweiterung ein (`[StylesheetSettings] FrontendCSSFileList[]=mysite.css`).
 
 ## Welchen Weg Sie wählen
 

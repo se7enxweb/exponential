@@ -22,7 +22,7 @@ Ein Block „Notice“ in zwei Ausführungen (info, warning), den Redakteure wie
 
 ## Mit Templates
 
-1. Definieren Sie `[BlockDefinition_notice]` und `AvailableBlocks[]=notice` in der `explayouts.ini.append.php` Ihrer Erweiterung (mit der Erweiterung an erster Stelle in `ActiveExtensions[]`).
+1. Definieren Sie `[BlockDefinition_notice]` und `AvailableBlocks[]=notice` in der `explayouts.ini.append.php` Ihrer Erweiterung (seit explayouts 1.4.42 spielt die Stelle der Erweiterung in `ActiveExtensions[]` für Blöcke keine Rolle).
 2. Schreiben Sie `explayouts/block/notice.tpl`.
 3. Leeren Sie die Caches Template & Inhalt und INI.
 

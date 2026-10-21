@@ -3,7 +3,7 @@ title: "Ein saisonales Layout nach Datum wechseln"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1313
-summary: Eine Zeit-Bedingung (from, to) an der saisonalen Zuordnung schaltet sie um, ohne dass jemand klickt, mit bis zu einer Stunde Verzögerung durch das Gedächtnis des Resolvers.
+summary: Eine Zeit-Bedingung (from, to) an der saisonalen Zuordnung schaltet sie zu Beginn und Ende um, ohne dass jemand klickt.
 keywords: Zeitbedingung, saisonal, Zeitplan, Kampagnendaten, Zuordnung, time condition, seasonal, schedule, campaign dates, mapping
 type: help
 ---
@@ -25,7 +25,7 @@ Das Black-Friday-Layout erscheint von Freitag 00:00 bis Montag 23:59.
 1. Fügen Sie an der saisonalen Zuordnung mit **Bedingung hinzufügen** eine Bedingung vom Typ **Zeit** mit Beginn und Ende hinzu.
 2. Lassen Sie ihre Priorität über der normalen Zuordnung.
 
-Der Resolver merkt sich seine Antwort pro Adresse für `[ResolverSettings] CacheTTL` (hier 3600 Sekunden), sodass der Wechsel pro Adresse bis zu dieser Zeit nachhinken kann.
+Seit explayouts 1.4.42 merkt sich der Resolver diese Antwort nur bis zum nächsten Beginn oder Ende der Bedingung, und solange dieser Zeitpunkt innerhalb von `[HttpCacheSettings] MaxAge` des Seiten-Cache (3600 Sekunden) liegt, bleibt die Seite aus den Seiten-Caches (`Cache-Control: private, no-store`); das Layout wechselt also pünktlich.
 
 ## Mit Templates
 
@@ -33,7 +33,7 @@ Der Resolver merkt sich seine Antwort pro Adresse für `[ResolverSettings] Cache
 
 ## Welchen Weg Sie wählen
 
-Die Zeit-Bedingung für geplante Kampagnen; schalten Sie von Hand um, wenn es auf die Minute ankommt.
+Die Zeit-Bedingung für geplante Kampagnen: Sie schaltet zu Beginn und Ende um, ohne Verzögerung.
 
 ## Prüfen
 

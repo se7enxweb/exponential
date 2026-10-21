@@ -26,7 +26,7 @@ Templates without inline CSS, styles cached.
 
 ## With templates
 
-1. Replace each `style=""` by a class; add the rules to `mysite.css`; add the file to the theme's list via your `pagelayout/head/style.tpl` override.
+1. Replace each `style=""` by a class; add the rules to `mysite.css`; list the file in your extension's `design.ini` (`[StylesheetSettings] FrontendCSSFileList[]=mysite.css`).
 
 ## Which to choose
 

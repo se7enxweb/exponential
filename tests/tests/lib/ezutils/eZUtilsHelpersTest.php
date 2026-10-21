@@ -364,6 +364,7 @@ class eZUtilsHelpersTest extends PHPUnit\Framework\TestCase
             'upper suffix'   => array( 'PHOTO.JPG', 'image/jpeg', 'jpg' ),
             'png'            => array( 'a.png', 'image/png', 'png' ),
             'pdf'            => array( 'doc/manual.pdf', 'application/pdf', 'pdf' ),
+            'epub'           => array( 'var/storage/original/application/help-manual.epub', 'application/epub+zip', 'epub' ),
             'unknown suffix' => array( 'file.t1unknown', 'application/octet-stream', 't1unknown' ),
         );
     }

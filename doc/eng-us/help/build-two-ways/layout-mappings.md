@@ -52,7 +52,7 @@ mapping takes falls through to **Default Layout** (10), which links its `header`
 ## Create a mapping
 
 **New mapping** opens a panel: **Link layout** (the layout), **Priority**, **Enabled**, then targets and conditions. The
-target types offered are Path, Path prefix, Path regex, Location, Subtree and Route (Route never matches on the site);
+target types offered are Path, Path prefix, Path regex, Location, Subtree and Route;
 the condition types Siteaccess, Class, Query parameter, Route parameter and Time. *Any target can be met*; every
 condition must be.
 
@@ -62,10 +62,25 @@ A Siteaccess condition is a list of the installation's siteaccesses to choose fr
 
 ![A Siteaccess condition with the list site, admin, classic, bold](images/mp-04-siteaccess-condition.webp)
 
+A **Route** target names an Exponential module view instead of an address: `content/search` (the search page),
+`user/*` (all user pages), `content/view` (every content page; a URL alias counts as the content view it stands for)
+or `*` (every module). A leading slash is fine. Since explayouts 1.4.42 a Route target matches on the site. The media
+design lays out non-content pages (search, user, a module of an extension) only through a mapping with a Route target;
+the catch-all and path mappings keep to content pages. In a template of your own,
+`fetch( 'explayouts', 'resolve_route_layout', hash() )` returns the layout a Route mapping chose.
+
 The resolver remembers its answer per address and siteaccess for `[ResolverSettings] CacheTTL` (3600 seconds on this
-installation), without the query string. So a Query parameter or Time condition takes effect only for addresses whose
-remembered answer has expired: on the test copy `/showcase` and `/showcase?variant=b` always showed the same layout,
-the one of whichever was requested first.
+installation). Since explayouts 1.4.42 there are two exceptions:
+
+- An answer that depends on a **Query parameter** condition of a mapping naming the page is not remembered, so
+  `/showcase` and `/showcase?variant=b` each get their own layout on every request (A/B on one address works). The
+  page cache does not keep an address whose query has a parameter outside `[HttpCacheSettings] QueryStringParameters`.
+  On the live installation a mapping with Query parameter `p643b=b` on one article showed `layout_4` with `?p643b=b`
+  and the regular `layout_2` without it, on both Apache and Velocity, in any request order.
+- An answer that depends on a **Time** condition is remembered only until the condition's next start or end (`from`,
+  `to`), not for `CacheTTL`. When that moment is within the page cache's `[HttpCacheSettings] MaxAge` (3600 seconds),
+  the page is kept out of the page caches (`Cache-Control: private, no-store`). So a Time condition switches at its
+  start and end, without lag. A range that is over is cached normally.
 
 ## Finding the layout of one page
 

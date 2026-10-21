@@ -671,6 +671,10 @@
         "en": "index: list every page",
         "de": "index: jede Seite auflisten"
     },
+    "command:exphelp --no-images": {
+        "en": "index: do not fetch the external images of the pages (they stay links)",
+        "de": "index: die externen Bilder der Seiten nicht abrufen (sie bleiben Links)"
+    },
     "command:exphelp --out": {
         "en": "pdf: the file to write (default: the page title as file name, in the current directory)",
         "de": "pdf: die zu schreibende Datei (Standard: der Seitentitel als Dateiname, im aktuellen Verzeichnis)"

@@ -3,7 +3,7 @@ title: Bekanntes Verhalten des Editors
 audience: editor, website-creator, admin, designer, developer
 category: build-two-ways
 order: 280
-summary: Verhalten des Layout-Editors und seiner Werkzeuge, das beim Schreiben dieser Seiten auf Exponential 6.0.15+ beobachtet wurde, jeweils mit dem Beobachteten und dem Umgang damit; Änderungen des Ansichtstyps, Positionen von Einträgen, die Suche im Content Browser, Importe und der Seiten-Cache sowie defekte Hilfsskripte.
+summary: Verhalten des Layout-Editors und seiner Werkzeuge, das beim Schreiben dieser Seiten auf Exponential 6.0.15+ beobachtet wurde, jeweils mit dem Beobachteten und dem Umgang damit; Änderungen des Ansichtstyps, Positionen von Einträgen, die Suche im Content Browser, Template-Blöcke in Kopf- und Fußzeile sowie das seit explayouts_core 1.0.10 und explayouts 1.4.42 behobene Verhalten von Importen und Hilfsbefehlen.
 keywords: bekannte Probleme, Verhalten, Layout-Editor, Ansichtstyp nicht gespeichert, js-skip-on-change, Position von Einträgen, Suche im Content Browser, Import-Cache, block_list, layout_info, collection_list, Umgehung, known issues, behaviors, layouts editor, view type not saved, collection item position, content browser search, import cache, workaround
 type: help
 ---
@@ -44,21 +44,27 @@ gefunden.“, während das Durchblättern mit **Öffnen** die Artikel fand.
 
 **Umgang damit:** Blättern Sie durch den Baum; die Suche hängt von der Sucheinrichtung der Installation ab.
 
-## Ein Import auf der Kommandozeile lässt die alte Seite im Cache
+## Ein Import auf der Kommandozeile leert den Seiten-Cache
 
-**Beobachtet:** `exp:layouts import ... --strategy=overwrite --publish` schrieb und veröffentlichte das Layout, aber die
-Seiten kamen weiterhin mit den alten Blöcken aus dem Seiten-Cache (`X-Exp-Cache: HIT`). Das Veröffentlichen im Editor hat
-sie von selbst geleert (`MISS (purged)`).
+**Behoben:** Seit explayouts_core 1.0.10 leert ein `exp:layouts import`, der ein Layout veröffentlicht (`--publish`)
+oder eine Regel schreibt, selbst jede Seite des Seiten-Cache, auch auf der Kommandozeile, so wie das Veröffentlichen im
+Editor. Den Inhalts-Cache nach einem Import auf der Kommandozeile von Hand zu leeren ist nicht mehr nötig. Entwürfe,
+Probeläufe und abgelehnte Importe leeren nichts.
 
-**Umgang damit:** Nach einem Import auf der Kommandozeile `./console exp:cache clear --tag=content`.
+## Die Hilfsbefehle von explayouts laufen eigenständig
 
-## Einige Hilfsbefehle von explayouts brechen mit einem Fehler ab
+**Behoben:** Seit explayouts 1.4.42 laufen `./console ext:explayouts:block_list <layout_id>`, `layout_info <id>`,
+`collection_list <block_id>`, `layout_copy`, `layout_list`, `rule_list <layout_id>` und `share_create` (und die anderen
+Helfer in `extension/explayouts/bin/php`) eigenständig; sie enden nicht mehr mit `Class "..." not found`.
+`-s <siteaccess>` wählt den Siteaccess. `./console ext:explayouts:layout_info 2` gibt unter anderem aus:
 
-**Beobachtet:** `./console ext:explayouts:block_list <id>`, `layout_info`, `collection_list`, `layout_copy`,
-`layout_list`, `rule_list` und `share_create` (alle `ext:explayouts:...`) endeten mit `PHP Fatal error: Uncaught Error: Class "..." not found`.
+```text
+ID:          2
+Identifier:  fd0aa7af77a85a03bf1080018f5db1dc
+Name:        Header / Footer
+```
 
-**Umgang damit:** Verwenden Sie `./console exp:layouts list` und `exp:layouts export --only=<identifier>` (die
-`layouts.json` des Archivs enthält Zonen, Blöcke, Parameter und Einträge).
+`exp:layouts` bleibt das Werkzeug für Export und Import.
 
 ## Template-Blöcke in den Zonen header und footer
 

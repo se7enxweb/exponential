@@ -2,14 +2,14 @@
 title: rest.ini [OAuthSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [OAuthSettings] in rest.ini: TokenTTL, AuthorizeRequiresPolicy"
-keywords: rest.ini, OAuthSettings, INI, setting, TokenTTL, AuthorizeRequiresPolicy
+summary: "The settings of [OAuthSettings] in rest.ini: TokenTTL, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce"
+keywords: rest.ini, OAuthSettings, INI, setting, TokenTTL, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce
 type: generated
 generated: exp:help:examples
 ---
 # rest.ini [OAuthSettings]
 
-The block `[OAuthSettings]` of `settings/rest.ini`, with 2 setting(s).
+The block `[OAuthSettings]` of `settings/rest.ini`, with 5 setting(s).
 
 Never edit `settings/rest.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -46,6 +46,54 @@ Default: `enabled`.
 # settings/override/rest.ini.append.php
 [OAuthSettings]
 AuthorizeRequiresPolicy=enabled
+*/ ?>
+```
+
+## RequirePkceForPublicClients
+
+> PKCE (RFC 7636) for the authorization code flow. A client sends code\_challenge and code\_challenge\_method to  
+> oauth/authorize and the matching code\_verifier to the token end point (/api/oauth/token); the code is refused  
+> there without it. doc/eng-us/bc/6.0/oauth-pkce.md  
+> enabled (the default) or disabled. Enabled: a public client (one stored without a client secret, such as a mobile  
+> or browser application) must use PKCE; oauth/authorize answers error=invalid\_request without a code\_challenge.  
+> A public client authenticates with its client\_id alone, so without PKCE anyone who sees its code can redeem it.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+RequirePkceForPublicClients=enabled
+*/ ?>
+```
+
+## RequirePkceForConfidentialClients
+
+> enabled or disabled (the default). Enabled: every client must use PKCE, also one with a client secret.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+RequirePkceForConfidentialClients=disabled
+*/ ?>
+```
+
+## AllowPlainPkce
+
+> enabled or disabled (the default). The challenge method "plain" sends the verifier itself and protects nothing  
+> against an attacker who can read the authorization request; only S256 is accepted unless this is enabled.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+AllowPlainPkce=disabled
 */ ?>
 ```
 
