@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Infrastruktur- und Sicherheitsteams einer öffen
 Exponential-Website vorbereiten und bewerten. Sie beantwortet, welche Härtung die Software vom Host erwartet, wie Sie
 jede Ebene prüfen und wie Sie das Ergebnis in einer Sicherheitsbewertung darstellen. Die Referenz ist
 [Kapitel 13: Sicherheitshärtung](../../../../installation/13-sicherheitshaertung.md); die Seite der Anwendung behandeln
-[Sicherheitshärtung](../../../sicherheitshaertung.md) und [Sicherheitsstandards](../../../../../eng-us/standards/security.md).
+[Sicherheitshärtung](../../../sicherheitshaertung.md) und [Sicherheitsstandards](../../../../standards/sicherheit.md).
 Hoster haben ihre eigene Fassung: [Härtung für Hoster](../../../hosting/sicherheit/haertung-fuer-hoster.md).
 
 ## Inhalt
@@ -75,7 +75,7 @@ Prüfen Sie nach jedem als root ausgeführten Befehl den Eigentümer neuer Datei
 
 ## Geheimnisse auf dem Server
 
-`settings/override/` enthält das Datenbankpasswort, die Signatur- und Pseudonymschlüssel des Audit-Trails und das
+`settings/override/` enthält das Datenbankpasswort, die Signatur- und Pseudonymschlüssel des Prüfprotokolls und das
 Geheimnis für die E-Mail-Präferenzen ([13.3](../../../../installation/13-sicherheitshaertung.md#133-geheimnisse-in-settingsoverride)).
 Beschränken Sie, wer es auf dem Server lesen kann, halten Sie es aus der Versionsverwaltung heraus oder verschlüsseln
 Sie es dort, und behandeln Sie Datensicherungen, die es enthalten, als vertraulich (siehe
@@ -90,13 +90,13 @@ ISO/IEC 27001 ([ISO/IEC 27001](https://www.iso.org/standard/27001)), des
 [NIS2-Richtlinie](https://eur-lex.europa.eu/eli/dir/2022/2555/oj). Exponential beansprucht keine Zertifizierung nach
 einem davon. Was hilft:
 
-- [Sicherheitsstandards](../../../../../eng-us/standards/security.md) ordnet die Software den
+- [Sicherheitsstandards](../../../../standards/sicherheit.md) ordnet die Software den
   [OWASP Top 10](https://owasp.org/Top10/) und dem [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)
   zu, mit ehrlichen Statusangaben „Teilweise erfüllt“ und „Nicht geprüft“ und den bekannten Lücken (zum Beispiel die
   standardmäßig ausgeschaltete Kontosperre und eine Mindestlänge für Passwörter von 10, unter den 12 der ASVS-Stufe 1).
 - Die Prüfungen auf dieser Seite erzeugen Nachweise, die Sie der Bewertung beilegen können.
-- Der Audit-Trail zeichnet Schreibvorgänge an Einstellungen, das Leeren von Caches und Bereitstellungen auf, was
-  Änderungs- und Zugriffskontrollen unterstützt ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md)).
+- Das Prüfprotokoll zeichnet Schreibvorgänge an Einstellungen, das Leeren von Caches und Bereitstellungen auf, was
+  Änderungs- und Zugriffskontrollen unterstützt ([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Checkliste
 
@@ -106,7 +106,7 @@ einem davon. Was hilft:
 - [ ] `EZP_DIR_MODE_MAX` und `EZP_FILE_MODE_MAX` gesetzt; ein Benutzer oder eine Gruppe schreibt `var/`.
 - [ ] `settings/override/` ist nur für den Benutzer der Website und Administratoren lesbar.
 - [ ] Der Einrichtungsassistent ist geschlossen und die Administration beschränkt.
-- [ ] Die in [Sicherheitsstandards](../../../../../eng-us/standards/security.md) aufgeführten Lücken sind geprüft und entschieden.
+- [ ] Die in [Sicherheitsstandards](../../../../standards/sicherheit.md) aufgeführten Lücken sind geprüft und entschieden.
 
 ## Verwandte Seiten
 
@@ -116,8 +116,9 @@ einem davon. Was hilft:
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

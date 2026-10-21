@@ -11,10 +11,10 @@ type: help
 # Velocity für Hoster
 
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei Hosting-Unternehmen, die Exponential Velocity für Kunden-Websites
-betreiben. Sie beantwortet: was Velocity von einem Server braucht, wie Sie es installieren und konfigurieren, wie es Neustarts und Abstürze
-übersteht, wie eine Änderung es erreicht, wohin es protokolliert, wie Sie es beobachten und wie Sie jedem Kunden eine eigene Instanz
+betreiben. Sie beantwortet: was Velocity von einem Server braucht, wie Sie ihn installieren und konfigurieren, wie er Neustarts und Abstürze
+übersteht, wie eine Änderung ihn erreicht, wohin er protokolliert, wie Sie ihn beobachten und wie Sie jedem Kunden eine eigene Instanz
 geben. Die Quellen sind [Kapitel 8](../../../installation/08-die-website-ausliefern.md#83-exponential-velocity-der-empfohlene-weg) und
-[Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md); jeder Befehl unten wird aus dem Wurzelverzeichnis der Installation ausgeführt.
+[Velocity-Engines](../../../bc/6.0/velocity-engines.md); jeder Befehl unten wird aus dem Wurzelverzeichnis der Installation ausgeführt.
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ geben. Die Quellen sind [Kapitel 8](../../../installation/08-die-website-auslief
 7. [Eine Änderung ausrollen](#eine-änderung-ausrollen)
 8. [Logs, Status und Überwachung](#logs-status-und-überwachung)
 9. [Das Dashboard und das Kontrollzentrum](#das-dashboard-und-das-kontrollzentrum)
-10. [Eine Velocity pro Kunde](#eine-velocity-pro-kunde)
+10. [Ein Velocity-Server pro Kunde](#ein-velocity-server-pro-kunde)
 11. [Checkliste](#checkliste)
 
 ## Was Velocity für einen Hoster ist
@@ -90,7 +90,7 @@ curl -sI http://127.0.0.1:8088/ | head -1
   setzt `qbix`.
 - `start` schreibt die Konfiguration, startet den Server im Hintergrund, wartet, bis der Port antwortet, und gibt den Status aus.
 - Die Engine gibt es auch als deb- und rpm-Pakete und Docker-Images
-  ([Pakete und Binärdateien von Velocity](../../../../eng-us/features/6.0/velocity-packages-and-binaries.md)), aber für eine Installation von
+  ([Pakete und Binärdateien von Velocity](../../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)), aber für eine Installation von
   Exponential ist das Composer-Paket das, was `exp:velocity` steuert.
 
 Was beim ersten Start schiefgehen kann (Kapitel 8): kein Serverskript (Paket nicht installiert), der Port ist schon belegt
@@ -117,7 +117,7 @@ php bin/php/console exp:velocity config paths
 Eine geänderte Einstellung erreicht den Server beim nächsten `restart` oder `graceful`. Der Baum `/etc/vc` ist wie `/etc/apache2` von
 Debian aufgebaut (`vc.conf`, `ports.conf`, `envvars`, `conf-`, `mods-` und `sites-available` mit Symlinks in `-enabled`), mit
 `exp:velocity site|conf|mod enable|disable <name>` als Familie von `a2ensite`
-([Aufbau von Velocity auf der Festplatte](../../../../eng-us/bc/6.0/velocity-ondisk-layout.md)). Erzeugte Dateien tragen
+([Aufbau von Velocity auf der Festplatte](../../../bc/6.0/velocity-verzeichnisstruktur.md)). Erzeugte Dateien tragen
 `"_generated": "exp:velocity"`; entfernen Sie diese Markierung aus einer Datei, und sie wird nie wieder überschrieben.
 
 ## Ports, Adresse und der Worker-Benutzer
@@ -163,7 +163,7 @@ existiert, stoppt den Start. Prüfen Sie die Startzeile `Workers as: ...` in `va
 Der **Watchdog** ist ein zweites Sicherheitsnetz für einen Absturz, einen Abbruch wegen Speichermangels oder ein Stoppen durch ein anderes
 Werkzeug. Er ist aus, bis er installiert wird (root, systemd), und er startet die Engine nur, wenn kein Prozess von ihr läuft, niemand sie
 absichtlich gestoppt hat, kein Neustart im Gange ist und er nicht gerade zurückweicht. Er stoppt oder startet nie einen laufenden Server
-neu ([Velocity-Engines, Der Watchdog](../../../../eng-us/bc/6.0/velocity-engines.md#the-watchdog-expvelocity-watchdog)):
+neu ([Velocity-Engines, Der Watchdog](../../../bc/6.0/velocity-engines.md#der-watchdog-expvelocity-watchdog)):
 
 ```bash
 php bin/php/console exp:velocity watchdog install --allow-root-user   # vc-watchdog.service + .timer
@@ -226,16 +226,16 @@ Der erste Besuch von `/Q/panel` setzt sein Passwort (mindestens 16 Zeichen). Auf
 setzen Sie es sofort, und erreichen Sie ein entferntes Kontrollzentrum über einen SSH-Tunnel zum eigenen Port des Servers. Ein Token ist
 eine beliebige lange zufällige Zeichenkette, zum Beispiel aus `openssl rand -hex 24`. Lassen Sie `[DashboardSettings] Remote` auf
 `disabled`, es sei denn, eine Firewall beschränkt den Port bereits
-([Kontrollzentrum von Velocity](../../../../eng-us/features/6.0/velocity-control-panel.md)).
+([Kontrollzentrum von Velocity](../../../funktionen/6.0/velocity-control-panel.md)).
 
 Der Reiter **Domains** des Kontrollzentrums kann eine Domain auf `suspended` (antwortet `503` mit `Retry-After`) oder `disabled`
 (antwortet `404`) setzen; die eigenen Pfade `/Q/` und `/.well-known/` des Servers funktionieren weiter, sodass Erneuerungen von
 Zertifikaten weiterlaufen.
 
-## Eine Velocity pro Kunde
+## Ein Velocity-Server pro Kunde
 
 Ein einzelner Server, der mehrere Websites ausliefert, ist laut `README.md` eine Bequemlichkeit beim Routing, keine Sicherheitsgrenze. Für
-mehrere Kunden auf einer Maschine betreiben Sie eine Installation und eine Velocity pro Kunde:
+mehrere Kunden auf einer Maschine betreiben Sie eine Installation und einen Velocity-Server pro Kunde:
 
 - jede als eigener Benutzer des Kunden (`[ServerSettings] User` und `Group`), nie als der eines anderen Kunden;
 - jede auf eigenen Ports (`Port`, `HTTPSPort`), mit `Host=127.0.0.1` hinter einem Proxy oder auf einer eigenen Adresse;
@@ -266,5 +266,13 @@ Aus [Kapitel 8, Checkliste](../../../installation/08-die-website-ausliefern.md#8
 - [HTTPS-Zertifikate in Velocity](https-zertifikate-in-velocity.md)
 - [Antwort-Cache von Velocity](../leistung/antwort-cache-von-velocity.md)
 - [Velocity startet nicht](../runbooks/velocity-startet-nicht.md)
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

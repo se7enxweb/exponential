@@ -41,7 +41,7 @@ nur die erste. Die anderen vermeiden Sie dadurch, wie Sie bauen, hosten und Vert
 | Daten | Exporte als CSV, JSON, XML; Pakete als `.ezpkg`; REST-API; Datenbank-Dumps je Datenbank | siehe „Inhalte und Pakete exportieren“ |
 | Hosting | viele Betriebssysteme und Hostingmodelle, mit Stufen dokumentiert | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
 | Datenbank | sechs unterstützte Datenbanken, darunter drei Server aus freier Software und SQLite | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
-| Kompetenzen | freie Dokumentation, Schulungsmaterial, ein Partnerprogramm, das jedem Unternehmen offensteht | [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md), [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) |
+| Kompetenzen | freie Dokumentation, Schulungsmaterial, ein Partnerprogramm, das jedem Unternehmen offensteht | [Kurskatalog](../../trainer/kurskatalog.md), [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) |
 | Vertrag | überhaupt kein Lizenzvertrag | die Lizenz |
 
 ## Praktiken, die Sie frei halten
@@ -79,8 +79,9 @@ Antworten Sie mit Ja oder Nein; jedes „Nein“ ist eine Abhängigkeit, die zu 
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

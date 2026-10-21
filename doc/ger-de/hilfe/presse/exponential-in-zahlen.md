@@ -36,10 +36,10 @@ unter [Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen).
 | Vom Kernel verlangte se7enxweb-Pakete | 66 | `composer.json` |
 | Pakete des Vendors se7enxweb auf Packagist | 219 | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
 | Öffentliche Repositorys des GitHub-Kontos se7enxweb | 1.025, davon 95 keine Forks | `gh repo list se7enxweb --limit 1100` |
-| Änderungen in der Geschichte seit Dezember 2023 | 6.556 in 53 Repositorys, 1.037 davon vom Team se7enxweb (18. Oktober 2026) | [Ökosystem](../../../eng-us/history/ecosystem.md) |
+| Änderungen in der Geschichte seit Dezember 2023 | 6.556 in 53 Repositorys, 1.037 davon vom Team se7enxweb (18. Oktober 2026) | [Ökosystem](../../geschichte/oekosystem.md) |
 | Commit-Autoren vor 2016 | 194 verschiedene Namen | `git log --until=2016-01-01 --format=%an` |
-| Locale-Dateien (Inhaltssprachen und Länder) | 268, davon 40 von rechts nach links | [Sprachen](../../../eng-us/languages.md) |
-| Übersetzungen der Administration | 33, davon 19 vollständig (19. Oktober 2026) | [Sprachen](../../../eng-us/languages.md) |
+| Locale-Dateien (Inhaltssprachen und Länder) | 268, davon 40 von rechts nach links | [Sprachen](../../sprachen.md) |
+| Übersetzungen der Administration | 33, davon 19 vollständig (19. Oktober 2026) | [Sprachen](../../sprachen.md) |
 | Unterstützte Datenbanken | 6 | README, „Requirements“ |
 | Unterstützte PHP-Versionen | 8.0 bis 8.5 | README; [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 
@@ -105,8 +105,8 @@ Meiden:  „Exponential ist 10-mal schneller als ...“      (kein Vergleich ver
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

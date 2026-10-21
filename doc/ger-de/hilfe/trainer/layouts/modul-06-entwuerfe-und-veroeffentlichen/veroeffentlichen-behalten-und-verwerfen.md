@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Der Layout-Editor: Veröffentlichen, behalten oder wegwerfen](../../../layout-editor.md#veröffentlichen-behalten-oder-verwerfen) und
-[Exponential Layouts: Entwürfe, Veröffentlichen und Versionen](../../../../../eng-us/bc/6.0/LAYOUTS.md#drafts-publishing-and-versions).
+[Exponential Layouts: Entwürfe, Veröffentlichen und Versionen](../../../../bc/6.0/layouts.md#entwürfe-veröffentlichen-und-versionen).
 
 1. **Entwürfe** (3 Minuten). Wer ein veröffentlichtes Layout öffnet, legt einen Entwurf davon an. Änderungen werden
    laufend im Entwurf gespeichert; einen eigenen Speicherschritt gibt es nicht. Die Website zeigt weiter das
@@ -145,13 +145,13 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout (mit den Blöcken au
 
 - [Modul 6: Entwürfe und Veröffentlichen](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

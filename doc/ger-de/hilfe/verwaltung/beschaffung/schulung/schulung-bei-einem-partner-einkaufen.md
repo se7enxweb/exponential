@@ -44,7 +44,7 @@ Ergebnissen, nicht nach einem Etikett.
 | Die Version von Exponential, die der Kurs verwendet | Übungen unterscheiden sich zwischen Versionen | die Version, die Ihre Website betreibt |
 | Das Lab: wer es bereitstellt, worauf | damit die Teilnehmenden an etwas üben, das Ihrer Website ähnelt | [Lab-Kurzkarte](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md) |
 | Die Erfahrung der Trainerin oder des Trainers mit Exponential | die Qualität hängt von der Person ab | Referenzen, die Sie selbst prüfen |
-| Wie der Kurs Barrierefreiheit abdeckt | öffentliche Websites haben gesetzliche Pflichten | [Modul 8 von Editors 201](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md) |
+| Wie der Kurs Barrierefreiheit abdeckt | öffentliche Websites haben gesetzliche Pflichten | [Modul 8 von Editors 201](../../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md) |
 | Vorkehrungen für Teilnehmende mit Behinderungen | Ihre Pflicht als Arbeitgeber | [Vorkehrungen und inklusive Praxis](../../../trainer/train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md) |
 | Prüfung und was eine Bescheinigung aussagt | ehrlicher Wortlaut, kein Anspruch auf offiziellen Status | [Teilnahmebescheinigungen, die Sie ausstellen](../../../trainer/pruefungen/modul-01-pruefungen-gestalten/abschlusszertifikate-die-sie-ausstellen.md) |
 | Material, das Sie behalten | für spätere Einarbeitung | siehe unten |
@@ -102,8 +102,9 @@ Die Klausel zur Schulung im Teil zu Ausschreibungsvorlagen dieses Abschnitts ent
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

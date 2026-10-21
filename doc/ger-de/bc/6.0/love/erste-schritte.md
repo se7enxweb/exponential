@@ -36,7 +36,7 @@ grep -l -i "lovestack" lib/version.php composer.json composer.lock 2>/dev/null
 Nach dem Upgrade auf 6.0.15:
 
 - **reine Fehlerkorrekturen und Sicherheitsprüfungen** sind für jede Website eingeschaltet: Das Abmelden beendet die
-  Session und ihr Cookie (L03), hochgeladene Bilder und Vorschaubilder von Paketen werden anhand ihres Inhalts geprüft
+  Sitzung und ihr Cookie (L03), hochgeladene Bilder und Vorschaubilder von Paketen werden anhand ihres Inhalts geprüft
   (L05, L06), dazu ein Dutzend kleinerer Korrekturen;
 - **einige kleine sichtbare Änderungen**: PHP-Deprecations gehen nach `var/log/deprecated.log` (L07), Log-Dateien
   werden bei 2 MB rotiert (L08), eine Template-Warnung für Operator-Parameter ohne Standardwert (L09), eine

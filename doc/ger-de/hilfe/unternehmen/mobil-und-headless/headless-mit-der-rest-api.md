@@ -13,7 +13,7 @@ Diese Seite ist für Führungskräfte und Produktverantwortliche, die eine App o
 Exponential verwaltete Inhalte zeigt. „Headless“ bedeutet: Exponential behält die Inhalte, die Bearbeitung und die
 Berechtigungen, während ein anderes Programm die Darstellung übernimmt. Diese Seite erklärt, was diese Aufteilung für Ihr
 Team und Ihr Budget bedeutet, was die API heute kann und was nicht, und was in ein Briefing für Entwickler gehört. Die
-technische Anleitung ist [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md).
+technische Anleitung ist [Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md).
 
 ## Inhalt
 
@@ -26,7 +26,7 @@ technische Anleitung ist [Headless Exponential](../../../../eng-us/help/creators
 
 ## Was in Exponential bleibt und was Sie bauen
 
-Aus [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md#what-you-keep-and-what-you-replace):
+Aus [Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md#was-sie-behalten-und-was-sie-ersetzen):
 
 | Bleibt in Exponential | Baut Ihr Frontend |
 |---|---|
@@ -44,13 +44,13 @@ hinzufügen, ist ein zweites Programm, das entworfen, gebaut, gehostet und gepfl
 |---|---|---|
 | REST v1 und v2 (`ezprestapi`) | Knoten, Unterelemente und Felder lesen; Inhalte anlegen und entfernen; OAuth für Apps | [REST API v1 und v2 für Unternehmen](rest-api-v1-und-v2-fuer-unternehmen.md) |
 | expservices | Die Funktionen der Administration als Dienste, mit Discovery und Tokens | [Entfernte Dienste](entfernte-dienste.md) |
-| Serverfunktionen von ezjscore | Kleine JSON-Endpunkte, die Ihre eigenen Entwickler schreiben | [JSON-Endpunkte mit ezjscore](../../../../eng-us/help/creators/app-creators/json-endpoints-with-ezjscore.md) |
+| Serverfunktionen von ezjscore | Kleine JSON-Endpunkte, die Ihre eigenen Entwickler schreiben | [JSON-Endpunkte mit ezjscore](../../ersteller/anwendungsentwickler/json-endpunkte-mit-ezjscore.md) |
 
 Für eine App, die Ihre Inhalte zeigt, ist die REST API die übliche Wahl.
 
 ## Was die REST API tut
 
-Aus [REST API v1 und v2 für Anwendungen](../../../../eng-us/help/creators/app-creators/rest-api.md):
+Aus [REST API v1 und v2 für Anwendungen](../../ersteller/anwendungsentwickler/rest-api.md):
 
 - **Liest** einen Knoten, seine Unterelemente (seitenweise, mit Offset und Limit), die Zahl der Unterelemente und Felder,
   nach Knoten- oder Objekt-ID, in v1 und v2.
@@ -67,9 +67,9 @@ Aus [REST API v1 und v2 für Anwendungen](../../../../eng-us/help/creators/app-c
 
 | Thema | Warum es wichtig ist | Quelle |
 |---|---|---|
-| **Vorschau** | Redakteure sehen die Vorschau mit den Templates der Website; ein Headless-Frontend „needs its own preview“ (braucht eine eigene Vorschau), eine geschützte Route, die Entwürfe liest. „Plan this early; it is the part teams forget.“ (Planen Sie das früh; das ist der Teil, den Teams vergessen.) | [Vorschau und Entwürfe](../../../../eng-us/help/creators/app-creators/headless-exponential.md#preview-and-drafts) |
-| **Caching und Leeren** | Das REST-Framework hat einen Antwortcache; auch das Frontend oder ein CDN cacht und muss erfahren, wenn Inhalte veröffentlicht werden, zum Beispiel über ein Workflow-Ereignis, das Ihren Purge-Hook aufruft | [Caching und Leistung](../../../../eng-us/help/creators/app-creators/headless-exponential.md#caching-and-performance) |
-| **Links in Inhalten** | Links in Rich Text zeigen auf Adressen der Website; das Frontend bildet sie auf seine eigenen Routen ab | [Rich Text, Bilder und Links](../../../../eng-us/help/creators/app-creators/headless-exponential.md#rich-text-images-and-links) |
+| **Vorschau** | Redakteure sehen die Vorschau mit den Templates der Website; ein Headless-Frontend „needs its own preview“ (braucht eine eigene Vorschau), eine geschützte Route, die Entwürfe liest. „Plan this early; it is the part teams forget.“ (Planen Sie das früh; das ist der Teil, den Teams vergessen.) | [Vorschau und Entwürfe](../../ersteller/anwendungsentwickler/headless-exponential.md#vorschau-und-entwürfe) |
+| **Caching und Leeren** | Das REST-Framework hat einen Antwortcache; auch das Frontend oder ein CDN cacht und muss erfahren, wenn Inhalte veröffentlicht werden, zum Beispiel über ein Workflow-Ereignis, das Ihren Purge-Hook aufruft | [Caching und Leistung](../../ersteller/anwendungsentwickler/headless-exponential.md#caching-und-leistung) |
+| **Links in Inhalten** | Links in Rich Text zeigen auf Adressen der Website; das Frontend bildet sie auf seine eigenen Routen ab | [Rich Text, Bilder und Links](../../ersteller/anwendungsentwickler/headless-exponential.md#rich-text-bilder-und-links) |
 | **Zugangsdaten** | Welchen Schlüssel oder welches Token die App verwendet und wer es widerrufen kann | [Apps und API-Schlüssel](apps-und-api-schluessel.md) |
 | **SEO** | Inhalte innerhalb einer App werden nicht indiziert; eine Website trägt weiterhin die Sichtbarkeit in Suchmaschinen | [Mobile Strategie](mobile-strategie.md#was-eine-app-ihnen-an-arbeit-hinzufügt) |
 
@@ -77,7 +77,7 @@ Aus [REST API v1 und v2 für Anwendungen](../../../../eng-us/help/creators/app-c
 > „Start hybrid unless there is a reason not to“ (beginnen Sie hybrid, wenn nichts dagegen spricht): Behalten Sie die
 > Website in den Templates von Exponential und fügen Sie die App über die API hinzu. Vorschau, Layouts und SEO bleiben
 > für die Website einfach
-> ([Hybrid: Templates und API zusammen](../../../../eng-us/help/creators/app-creators/headless-exponential.md#hybrid-templates-and-api-together)).
+> ([Hybrid: Templates und API zusammen](../../ersteller/anwendungsentwickler/headless-exponential.md#hybrid-templates-und-api-zusammen)).
 
 ## Was es (noch) nicht gibt
 
@@ -110,15 +110,15 @@ Nehmen Sie in das Briefing auf:
 
 - [REST API v1 und v2 für Unternehmen](rest-api-v1-und-v2-fuer-unternehmen.md)
 - [Apps und API-Schlüssel](apps-und-api-schluessel.md)
-- [Headless Exponential](../../../../eng-us/help/creators/app-creators/headless-exponential.md)
-- [REST API v1 und v2 für Anwendungen](../../../../eng-us/help/creators/app-creators/rest-api.md)
-- [Exponential als Anwendungsplattform](../../../../eng-us/help/creators/app-creators/exponential-as-an-application-platform.md)
+- [Headless Exponential](../../ersteller/anwendungsentwickler/headless-exponential.md)
+- [REST API v1 und v2 für Anwendungen](../../ersteller/anwendungsentwickler/rest-api.md)
+- [Exponential als Anwendungsplattform](../../ersteller/anwendungsentwickler/exponential-als-anwendungsplattform.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

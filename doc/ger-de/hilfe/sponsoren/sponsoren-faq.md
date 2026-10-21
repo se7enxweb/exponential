@@ -45,7 +45,7 @@ für Sie bestehen, bis Sie eine andere Stufe wählen oder Ihr Abonnement kündig
 
 **Garantiert ein Sponsoring eine Funktion?**
 Nein. Stufen erhöhen die Priorität; garantierte Arbeit braucht eine schriftliche Vereinbarung.
-[Funktionswünsche und gesponserte Funktionen](../../../eng-us/help/partners/feature-requests-and-sponsored-features.md)
+[Funktionswünsche und gesponserte Funktionen](../partner/funktionswuensche-und-gesponserte-funktionen.md)
 
 **Ich nutze GitHub nicht.**
 [Weitere Wege, Geld zu geben](weitere-wege-zu-geben.md)
@@ -58,3 +58,11 @@ Nein. Stufen erhöhen die Priorität; garantierte Arbeit braucht eine schriftlic
 - [Sponsoren: Hier beginnen](sponsoren-hier-beginnen.md)
 - [Unterstützer-FAQ](../unterstuetzer/unterstuetzer-faq.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -65,7 +65,7 @@ vor allem die Netzwerkstrecke und nimmt statische Dateien ab.
 
 Hinter einem CDN kommt jede Anfrage von den Adressen des CDN. Ohne Vertrauen behandelt der Kernel Anfragen als reines HTTP von der
 Adresse des Proxys, was sich als URLs mit `http://`, Umleitungen auf `http://` und jeder Besucher mit der Adresse des CDN zeigt
-([Weitergeleitete Header](../../../../eng-us/bc/6.0/trusted-proxies.md#who-has-to-act)).
+([Weitergeleitete Header](../../../bc/6.0/vertrauenswuerdige-proxys.md#wer-handeln-muss)).
 
 ```ini
 # settings/override/site.ini.append.php
@@ -137,5 +137,13 @@ beantwortet und nie einem zweiten, anonymen Browser ausgeliefert wird.
 - [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md)
 - [HTTP-Cache-Header](http-cache-header.md)
 - [TLS und HTTPS](../sicherheit/tls-und-https.md)
-- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../eng-us/bc/6.0/trusted-proxies.md)
+- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../bc/6.0/vertrauenswuerdige-proxys.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

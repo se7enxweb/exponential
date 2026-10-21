@@ -40,7 +40,7 @@ Was das in der Praxis bedeutet:
 | Eine Administration für alle Redakteure, wenn Sie das wollen | Eine Wiederherstellung aus dem Backup stellt alle Marken auf einmal wieder her |
 | Eine Backup-Routine | Markenspezifischer Code muss ordentlich gehalten werden, sonst betrifft er alle |
 
-Diese Abwägungen stammen aus [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#trade-offs).
+Diese Abwägungen stammen aus [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md#abwägungen).
 Schreiben Sie sie in Ihren Projektauftrag, damit später niemand überrascht ist.
 
 ## Die fünf Fragen, die zuerst zu klären sind
@@ -65,8 +65,8 @@ sorgfältig.
 | Eine Marke in mehreren Sprachen | Ein Siteaccess pro Sprache | Exporteure, internationale Verbände |
 | Jede Marke in ihrer eigenen Erweiterung | Einstellungen, die nur gelten, während die Siteaccesses dieser Marke laufen | Agenturen und Organisationen mit vielen kleinen Websites |
 
-Quellen: [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#shapes-of-a-multisite)
-und [Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md).
+Quellen: [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md#formen-einer-multisite)
+und [Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 
 > **Hinweis**
 > Die Formen lassen sich kombinieren. Ein häufiges Muster sind zwei Marken, jede in zwei Sprachen: vier öffentliche
@@ -92,13 +92,13 @@ eigenen Installation sicherer.
 
 Wenn getrennte Installationen trotzdem Inhalte austauschen müssen, exportiert die Erweiterung `syndication` einen Teil
 des Inhaltsbaums einer Installation als Feed, den eine andere importiert, und hält beide per Cron im Gleichschritt
-([syndication](../../../../eng-us/features/6.0/extensions/syndication.md)).
+([syndication](../../../funktionen/6.0/erweiterungen/syndication.md)).
 
 ## Teams und Berechtigungen
 
 - Eine Administration kann jede Marke bedienen; Rollen, die auf einen Teilbaum beschränkt sind, halten jedes Team im
   Ordner seiner Marke
-  ([Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#editors-and-the-administration)).
+  ([Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md#redaktion-und-administration)).
 - Mehrere Administrations-Siteaccesses sind möglich, wenn Teams die Websites der anderen überhaupt nicht sehen sollen.
 - Ein Redakteur kann darauf beschränkt werden, sich nur in einer Administration anzumelden, indem `user/login` nach
   Siteaccess eingeschränkt wird
@@ -137,8 +137,8 @@ Der Bereich für Führungskräfte hat einen längeren Bogen mit Sprachen und Ein
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

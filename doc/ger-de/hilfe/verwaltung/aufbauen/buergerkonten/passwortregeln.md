@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an Administratoren, die die Passwortrichtlinie einer Site für den öffentlichen Sektor
 festlegen. Sie listet jede Regel, die Exponential hat, wo sie gesetzt wird, und gibt einen Ausgangspunkt für
 öffentliche Konten und Mitarbeiterkonten. Quellen:
-[Das eigene Passwort ändern](../../../../../eng-us/features/6.0/modern-password-change.md),
-[ezmbpaex](../../../../../eng-us/features/6.0/extensions/ezmbpaex.md) und
+[Das eigene Passwort ändern](../../../../funktionen/6.0/moderne-passwortaenderung.md),
+[ezmbpaex](../../../../funktionen/6.0/erweiterungen/ezmbpaex.md) und
 [Sicherheitshärtung](../../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung).
 
 ## Inhalt
@@ -64,7 +64,7 @@ Sicherheitsbeauftragten.
 | Dieselbe Antwort für jede Adresse | ja: die Seite verrät nie, ob ein Konto existiert |
 | Gültigkeit des Links | eine Verwendung, eine Stunde (`ForgotPasswordKeyLifetime`) |
 | Stärke des Schlüssels | zufällige Schlüssel aus der sicheren Quelle des Systems |
-| Ohne Zugang zum Postfach | ein Administrator setzt das Passwort zurück (im Konto des Benutzers, oder für Administratoren mit `bin/php/resetuserpassword.php`, [Ein Benutzerpasswort zurücksetzen](../../../../../eng-us/features/6.0/reset-user-password.md)), nachdem er die Identität geprüft hat |
+| Ohne Zugang zum Postfach | ein Administrator setzt das Passwort zurück (im Konto des Benutzers, oder für Administratoren mit `bin/php/resetuserpassword.php`, [Ein Benutzerpasswort zurücksetzen](../../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)), nachdem er die Identität geprüft hat |
 
 ## Eine Richtlinie wählen
 
@@ -93,8 +93,9 @@ Passwörter werden bei der Anmeldung nicht erneut geprüft; niemand wird durch e
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

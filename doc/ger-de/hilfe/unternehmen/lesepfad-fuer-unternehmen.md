@@ -96,14 +96,14 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 | Intranet | [README Intranets](intranets/README.md), [Intranet planen](intranets/intranet-planen.md), [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md), [Checkliste für die Einführung](intranets/checkliste-fuer-die-intranet-einfuehrung.md) |
 | Extranet oder Partnerportal | [README Extranets](extranets/README.md), [Partnerportal planen](extranets/partnerportal-planen.md), [Registrierung und Freigabe](extranets/registrierung-und-kontofreigabe.md), [Checkliste für den Start](extranets/checkliste-fuer-den-extranet-start.md) |
 | Mitgliederorganisation | [README Mitgliederwebsites](mitglieder/README.md), [Mitgliederwebsite planen](mitglieder/mitgliederwebsite-planen.md), [Checkliste für Mitgliederwebsites](mitglieder/checkliste-fuer-mitgliederwebsites.md) |
-| Herausgeber eines Newsletters | [README Newsletter](newsletter/README.md), [Einen Newsletter planen](newsletter/einen-newsletter-planen.md), [Opt-in und Einwilligung](newsletter/opt-in-und-einwilligung.md) |
+| Herausgeber eines Newsletters | [README Newsletter](newsletters/README.md), [Einen Newsletter planen](newsletters/einen-newsletter-planen.md), [Opt-in und Einwilligung](newsletters/opt-in-und-einwilligung.md) |
 | Bibliothek oder Katalog | [README Bibliotheken](bibliotheken/README.md), [Katalog planen](bibliotheken/katalog-planen.md), [Katalogsuche](bibliotheken/katalogsuche.md) |
 | Gemeinnützige Organisation | [README Gemeinnützige](gemeinnuetzige/README.md), [Website-Planung für gemeinnützige Organisationen](gemeinnuetzige/website-planung-fuer-gemeinnuetzige.md), [Betrieb mit kleinem Budget](gemeinnuetzige/betrieb-mit-kleinem-budget.md) |
 | Kleine Gruppe oder Verein | [README Vereine](vereine/README.md), [Übergabe bei Wechsel der Ehrenamtlichen](vereine/uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
 | Mehrere Marken | [README Multisite](multisite/README.md), [Mehrere Marken planen](multisite/mehrere-marken-planen.md) |
 | Mehrere Sprachen | [README Mehrsprachig](mehrsprachig/README.md), [Übersetzungsablauf](mehrsprachig/uebersetzungsablauf.md) |
 | Mobile App oder andere Systeme | [README Mobil und headless](mobil-und-headless/README.md), [Mobile Strategie](mobil-und-headless/mobile-strategie.md), [Zuverlässigkeit des App-Backends](mobil-und-headless/zuverlaessigkeit-des-app-backends.md) |
-| Behörde | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
+| Behörde | Der eigene Bereich [Behörden](../verwaltung/verwaltungen-hier-beginnen.md) |
 
 ## Wer was lesen sollte
 
@@ -112,7 +112,7 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 | Inhaber oder Geschäftsführer | 1 und 2 | Der Einstundenpfad reicht für die Entscheidung |
 | Projektleiter | 2 und 3 | [Projektleiter: hier beginnen](../fuehrung/projektleiter-hier-beginnen.md) |
 | Person, die die Website betreiben wird | 4 | [Hosting-Anbieter: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md) enthält die technischen Einzelheiten |
-| Entwickler oder Website-Ersteller | 3 und 4 | [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md), [Anwendungsentwickler](../../../eng-us/help/creators/app-creators/app-creators-start-here.md) |
+| Entwickler oder Website-Ersteller | 3 und 4 | [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md), [Anwendungsentwickler](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) |
 | Redakteure | Nach dem Start | [Erste Schritte](../erste-schritte.md), [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md) |
 
 ## Verwandte Seiten
@@ -124,8 +124,8 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

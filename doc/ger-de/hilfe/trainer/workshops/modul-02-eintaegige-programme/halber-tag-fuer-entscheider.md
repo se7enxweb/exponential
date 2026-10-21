@@ -38,7 +38,7 @@ Am Ende der Veranstaltung können die Teilnehmenden:
 | Zeit | Block | Verwendet |
 |---|---|---|
 | 13:30 | Begrüßung; die Geschichte in zwei Minuten; wer ist 7x, wer ist die Foundation (30 Min.) | [Die Geschichte von Exponential in zwei Minuten](../../../fuersprecher/die-geschichte-in-zwei-minuten.md), [Wer ist 7x?](../../../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../../../wer-ist-die-exponential-foundation.md) |
-| 14:00 | Geführte Vorführung: Bearbeiten, Veröffentlichen, Layouts (45 Min.) | [Vorführskripte](../../../geschaeft/demo-drehbuecher.md), [Sicher vorführen](../../../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/demonstrating-safely.md) |
+| 14:00 | Geführte Vorführung: Bearbeiten, Veröffentlichen, Layouts (45 Min.) | [Vorführskripte](../../../geschaeft/demo-drehbuecher.md), [Sicher vorführen](../../train-the-trainer/modul-04-durchfuehren/sicher-vorfuehren.md) |
 | 14:45 | Pause (15 Min.) | |
 | 15:00 | Fakten: Lizenzen, Hosting, Datenbanken, Betriebssysteme, Sicherheit (45 Min.) | [Argumente für Entscheidungsträger](../../../fuersprecher/gespraechspunkte-fuer-entscheider.md), [Datenbankunterstützung](../../../datenbankunterstuetzung.md), [Unterstützte Betriebssysteme](../../../betriebssystemunterstuetzung.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) |
 | 15:45 | Fragen und Einwände (30 Min.) | [Mit Einwänden umgehen](../../../geschaeft/einwandbehandlung.md) |
@@ -91,13 +91,13 @@ Die Teilnehmenden füllen gemeinsam aus:
 
 - [Modul 2: Eintägige Agenden](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

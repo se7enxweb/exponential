@@ -88,9 +88,9 @@ Das Projekt vergleicht Shared Hosting, VPS, dedizierte Server, Container und Kub
 - Multisite ist eingebaut: Mehrere Websites können sich eine Installation, einen Satz Aktualisierungen und einen
   Backup-Job teilen ([Eine Installation, viele Websites](../multisite/eine-installation-viele-websites.md)).
 - Der Speicherbedarf wächst mit den Medien: Bilder und Dateien in `var/storage`, Bildvarianten, die beim ersten Aufruf
-  erzeugt werden, Logs und der Audit-Trail
+  erzeugt werden, Logs und das Prüfprotokoll
   ([Speicher, CPU und Festplatte dimensionieren](../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)).
-- Backups brauchen Platz für die Datenbank, hochgeladene Dateien, Einstellungen, Schlüssel und den Audit-Trail
+- Backups brauchen Platz für die Datenbank, hochgeladene Dateien, Einstellungen, Schlüssel und das Prüfprotokoll
   ([Backups: was gesichert wird](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)); die Aufbewahrungsdauer
   vervielfacht das.
 
@@ -149,7 +149,7 @@ hinzufügen, wenn Messungen den Bedarf zeigen
 - [ ] Was kostet ein Wechsel weg von Ihnen, und in welchem Format bekomme ich meine Daten?
 
 Weitere Fragen: [Fragen an einen Partner](../auswahl/fragen-an-einen-partner.md) und
-[Hosting-Anforderungen für eine Website](../../../../eng-us/help/creators/website-creators/hosting-for-a-website.md#questions-for-a-hosting-provider).
+[Hosting-Anforderungen für eine Website](../../ersteller/website-ersteller/hosting-fuer-eine-website.md#fragen-an-einen-hosting-anbieter).
 
 ## Verwandte Seiten
 
@@ -160,8 +160,8 @@ Weitere Fragen: [Fragen an einen Partner](../auswahl/fragen-an-einen-partner.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -31,7 +31,7 @@ wenn Ihre Rolle sie nicht anzeigt, erledigen Sie diese Schritte mit Ihrem Admini
 | 5 | *Meine Warteliste* der freigebenden Personen, oder fragen Sie sie | nichts wartet, was erscheinen sollte | [Freigabe und Prüfung](freigabe-und-pruefung.md) |
 | 5 | **Setup > Workflow-Prozesse** | kein Prozess wartet seit Tagen; die Statusleiste meldet, dass der Workflow-Cronjob eingeplant ist | [Workflows](../../../anleitungen/workflows.md) |
 | 5 | Der Papierkorb, gefiltert auf diese Woche | nichts versehentlich entfernt | [Archivieren und der Papierkorb](archivieren-und-der-papierkorb.md) |
-| 5 | **Benutzer > Benutzerkonten prüfen**, neue Konten und **Gesperrt** | jedes Konto gehört einer Person, die aktuell dazugehört | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
+| 5 | **Benutzer > Benutzerkonten prüfen**, neue Konten und **Gesperrt** | jedes Konto gehört einer Person, die aktuell dazugehört | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 | 10 | **Setup > Suchstatistiken**, Begriffe ohne Treffer | Ideen für Inhalte | [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md) |
 | 5 | Formulareinsendungen, wenn Ihre Website welche sammelt | jemand beantwortet sie | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | 5 | Die Website selbst, abgemeldet, auf einem Smartphone | die Startseite und eine neue Seite sehen richtig aus | [Barrierefreiheit pflegen](barrierefreiheit-pflegen.md) |
@@ -87,3 +87,11 @@ Sent to partner/host: ________________________________________________
 - [Monatliche Checkliste für den Betrieb](../../unternehmen/vorlagen/monatliche-betriebscheckliste.md)
 - [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

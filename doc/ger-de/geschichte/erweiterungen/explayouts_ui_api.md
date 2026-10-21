@@ -1,8 +1,8 @@
 # explayouts_ui_api (der Layout-Editor): Chronik
 
-Die API und Single-Page-App des Layout-Editors wurden am 30. Juli 2026 importiert und wuchsen im August schnell (Collections, Container, verknüpfte Zonen, Inhaltsbrowser); im September wurden sie gehärtet: Reihenfolge der Blöcke, geteilte und gesperrte Zonen, ein Editor für Mobilgeräte, Korrekturen für SQLite und Indizes der Share-Tabelle, ein Siteaccess-Präfix, das Formular-Token bei jedem Schreibzugriff, Schreibzugriffe nur auf Entwürfe und deutsche Texte. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/explayouts_ui_api.md) und die [Spezifikation](../../spezifikationen/6.0/explayouts-ui-api.md).
+Die API und Single-Page-App des Layout-Editors wurden am 30. Juli 2026 importiert und wuchsen im August schnell (Collections, Container, verknüpfte Zonen, Inhaltsbrowser); im September wurden sie gehärtet: Reihenfolge der Blöcke, geteilte und gesperrte Zonen, ein Editor für Mobilgeräte, Korrekturen für SQLite und Indizes der Share-Tabelle, ein Siteaccess-Präfix, das Formular-Token bei jedem Schreibzugriff, Schreibzugriffe nur auf Entwürfe und deutsche Texte. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/explayouts_ui_api.md) und die [Spezifikation](../../spezifikationen/6.0/explayouts-ui-api.md).
 
-Diese Seite führt **jede der 58 Änderungen** des Repositorys `explayouts_ui_api` zwischen 2026-07-30 und 2026-09-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/explayouts_ui_api.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/explayouts_ui_api.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/explayouts_ui_api.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 58 Änderungen** des Repositorys `explayouts_ui_api` zwischen 2026-07-30 und 2026-09-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/explayouts_ui_api.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/explayouts_ui_api.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/explayouts_ui_api.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -121,8 +121,8 @@ Diese Commits wurden nach dem Erstellen des maschinell erzeugten Änderungsverze
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/explayouts_ui_api.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/explayouts_ui_api.md)
 - [Release Notes](../../../changelogs/extensions/explayouts_ui_api.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/explayouts_ui_api.md)
 - [Spezifikation](../../spezifikationen/6.0/explayouts-ui-api.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

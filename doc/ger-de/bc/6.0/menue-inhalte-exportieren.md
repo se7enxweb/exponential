@@ -42,7 +42,7 @@ package/create/(creator)/ezcontentobject/(node)/<node id>[/(subtree)/1][/(classe
   belegen den zweiten Schritt vor.
 - Jeder andere Wert ergibt „nicht verfügbar“. Ein Knoten, der nicht existiert, ergibt „nicht verfügbar“, einer, den
   der Benutzer nicht lesen darf, „Zugriff verweigert“, ebenso ein Benutzer ohne die Richtlinien unten.
-- Der Assistent beginnt neu (seine Session-Daten werden ersetzt), mit dem Knoten oder Teilbaum in seinem ersten
+- Der Assistent beginnt neu (seine Sitzungsdaten werden ersetzt), mit dem Knoten oder Teilbaum in seinem ersten
   Schritt. Das Paket entsteht erst, wenn der Benutzer die Schritte durchläuft. Die Prüfungen stehen in
   `eZContentObjectPackageCreator::entryParameters()` und `::currentUserCanExportContent()`; die View ist
   `kernel/private/classes/views/package/create.php`.
@@ -124,7 +124,7 @@ Eintrag zum Importieren wird nur angezeigt, wenn `%canImport%` 1 ist (Elementopt
 xrowextract/import/(parent)/<node id>
 ```
 
-Das Importformular beginnt mit diesem Knoten als Ziel (für die Session beibehalten, bis ein anderer gewählt wird), und
+Das Importformular beginnt mit diesem Knoten als Ziel (für die Sitzung beibehalten, bis ein anderer gewählt wird), und
 die View leitet auf das Formular weiter; nichts wird importiert, bevor der Benutzer eine Datei hochlädt, die Vorschau
 prüft und sie anwendet. Ein Knoten, der nicht existiert, ergibt „nicht verfügbar“; einer, den der Benutzer nicht lesen
 darf, der kein Container ist oder unter dem der Benutzer keine Inhalte anlegen darf, ergibt „Zugriff verweigert“

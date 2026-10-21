@@ -57,8 +57,8 @@ Angebot für die Klausel zeigen kann, mit Links zu den Nachweisen, und gibt Hinw
 
 - Klauselnummern (`X.1`, `Y.2` …) sind Platzhalter; nummerieren Sie sie in Ihrem Vertrag neu.
 - Eckige Klammern markieren Optionen: Behalten Sie eine, löschen Sie die übrigen.
-- Statusangaben für Exponential (Complies, Partly complies, Unverified, Does not comply) stammen von den
-  [Seiten zu den Standards](../../../../../eng-us/standards/README.md) und werden hier nicht aufgewertet.
+- Statusangaben für Exponential (Erfüllt, Teilweise erfüllt, Nicht geprüft, Nicht erfüllt) stammen von den
+  [Seiten zu den Standards](../../../../standards/README.md) und werden hier nicht aufgewertet.
 
 ## Verwandte Seiten
 - [Beschaffung](../README.md)
@@ -68,8 +68,9 @@ Angebot für die Klausel zeigen kann, mit Links zu den Nachweisen, und gibt Hinw
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

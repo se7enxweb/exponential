@@ -1,8 +1,8 @@
 # eztags (Tags): Chronik
 
-Die Erweiterung für die Tag-Taxonomie wurde im Januar 2024 für Exponential neu paketiert und dann Datenbank für Datenbank repariert: SQLite im April 2026, MongoDB im September, Oracle und PostgreSQL am 29. und 30. September. Im Oktober wurde YUI entfernt, und die Administration wird nun in jedem Admin-Design dargestellt. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/eztags.md).
+Die Erweiterung für die Tag-Taxonomie wurde im Januar 2024 für Exponential neu paketiert und dann Datenbank für Datenbank repariert: SQLite im April 2026, MongoDB im September, Oracle und PostgreSQL am 29. und 30. September. Im Oktober wurde YUI entfernt, und die Administration wird nun in jedem Admin-Design dargestellt. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/eztags.md).
 
-Diese Seite führt **jede der 37 Änderungen** des Repositorys `eztags` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/eztags.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/eztags.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/eztags.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 37 Änderungen** des Repositorys `eztags` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/eztags.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/eztags.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/eztags.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -112,7 +112,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/eztags.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/eztags.md)
 - [Release Notes](../../../changelogs/extensions/eztags.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/eztags.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

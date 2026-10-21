@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Geschäftsinhaber und Redakteure, die den Shop mit Produkten füllen. Sie erklärt, was ein
 Produkt in Exponential ist, welche Felder ein Produkt haben kann, wie Optionen und Varianten funktionieren und wie Sie
 den Katalog so ordnen, dass Kunden und Mitarbeiter die Dinge finden. Die Einrichtung selbst ist unter
-[Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md) beschrieben.
+[Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md) beschrieben.
 
 ## Inhalt
 
@@ -28,15 +28,15 @@ den Katalog so ordnen, dass Kunden und Mitarbeiter die Dinge finden. Die Einrich
 
 In Exponential ist jede Seite ein Inhaltsobjekt einer **Klasse**, einer Vorlage, die festlegt, welche Felder es hat.
 Ein Produkt ist einfach Inhalt einer Klasse mit einem Preisfeld (`ezprice` oder `ezmultiprice`)
-([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)). Das hat für ein Unternehmen
+([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)). Das hat für ein Unternehmen
 praktische Vorteile:
 
 - Redakteure schreiben Produktseiten mit demselben Editor, denselben Versionen und derselben Vorschau wie jede andere
   Seite ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)).
-- Produkte lassen sich wie andere Inhalte übersetzen ([Mehrsprachige Websites](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)).
+- Produkte lassen sich wie andere Inhalte übersetzen ([Mehrsprachige Websites](../../ersteller/website-ersteller/mehrsprachige-websites.md)).
 - Produkte erscheinen ohne Zusatzarbeit in Menüs, in der Suche und in Feeds.
 - Produkte lassen sich mit Artikeln, Anleitungen und anderen Produkten verknüpfen
-  ([Beziehungen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+  ([Beziehungen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Die Produktklasse im Auslieferungszustand
 
@@ -53,28 +53,28 @@ Auf der Installation alpha (https://alpha.se7enx.com) hat die Klasse **Product**
 | Caption (Image) | `ezxmltext` | Bildunterschrift |
 | Additional options | `ezmultioption` | Auswahlmöglichkeiten, die den Preis ändern können |
 | Tags | `ezkeyword` | Schlagwörter |
-| Star Rating | `ezsrrating` | Kundenbewertungen ([ezstarrating](../../../../eng-us/features/6.0/extensions/ezstarrating.md)) |
-| Meta Data | `xrowmetadata` | Metadaten für Suchmaschinen ([xrowmetadata](../../../../eng-us/features/6.0/extensions/xrowmetadata.md)) |
+| Star Rating | `ezsrrating` | Kundenbewertungen ([ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md)) |
+| Meta Data | `xrowmetadata` | Metadaten für Suchmaschinen ([xrowmetadata](../../../funktionen/6.0/erweiterungen/xrowmetadata.md)) |
 | Specifications | `ezmatrix` | Eine Tabelle mit technischen Daten |
 
 Die Klasse ist ein Container, sodass ein Produkt Unterseiten wie Handbücher oder Zubehör enthalten kann. Die Klasse in
 Ihrer Installation kann abweichen: Sie hängt vom installierten Seitenpaket ab
-([Seitenpakete und mitgelieferte Themes](../../../../eng-us/help/creators/website-creators/site-packages-and-shipped-themes.md)).
+([Seitenpakete und mitgelieferte Themes](../../ersteller/website-ersteller/seitenpakete-und-mitgelieferte-themes.md)).
 
 ## Felder, die sich lohnen
 
-Klassen lassen sich jederzeit unter **Setup > Klassen** ändern ([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)).
+Klassen lassen sich jederzeit unter **Setup > Klassen** ändern ([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)).
 Felder, die Unternehmen oft hinzufügen:
 
 | Bedarf | Datentyp | Hinweis |
 |---|---|---|
 | Produktkategorie für USt-Regeln | `ezproductcategory` | Nur nötig, wenn die USt je nach Produktart abweicht ([USt-Regeln und USt-Typen](ust-regeln-und-ust-typen.md)) |
 | Preise in mehreren Währungen | `ezmultiprice` statt `ezprice` | ([Preise und Währungen](preise-und-waehrungen.md)) |
-| Handbuch zum Herunterladen | `ezbinaryfile` | ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)) |
-| Marke, Material, Farbe als Filter | `eztags` oder eine Auswahl | ([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) |
+| Handbuch zum Herunterladen | `ezbinaryfile` | ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)) |
+| Marke, Material, Farbe als Filter | `eztags` oder eine Auswahl | ([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)) |
 | Gewicht, für Versandregeln | `ezfloat` oder `ezinteger` | Nur mit einem eigenen Versand-Handler sinnvoll ([Versand und Bearbeitung](versand-und-bearbeitung.md)) |
 
-Datentypen werden unter [Datentypen für Ihre Felder auswählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)
+Datentypen werden unter [Datentypen für Ihre Felder auswählen](../../ersteller/website-ersteller/datentypen-waehlen.md)
 verglichen.
 
 ## Optionen und Varianten
@@ -82,7 +82,7 @@ verglichen.
 Der Kernel liefert vier Options-Datentypen mit: `ezoption`, `ezmultioption`, `ezmultioption2` und `ezrangeoption`
 (`kernel/classes/datatypes/`). Eine Option lässt den Kunden zum Beispiel eine Größe oder Farbe wählen und kann den
 Preis ändern; die Wahl wird mit dem Artikel im Warenkorb gespeichert
-([Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md#options-and-variants)).
+([Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md#optionen-und-varianten)).
 
 Wann sollte eine Variante stattdessen ein eigenes Produkt sein?
 
@@ -100,13 +100,13 @@ Wann sollte eine Variante stattdessen ein eigenes Produkt sein?
 ## Den Katalog ordnen
 
 - **Ordner** bilden die Hauptkategorien und das Menü: ein Ordner pro Kategorie, die Produkte darin
-  ([Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)).
+  ([Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)).
 - **Ein Produkt, mehrere Kategorien**: Ein Inhaltsobjekt kann mehrere Platzierungen haben, sodass ein Produkt unter
   „Neu“ und in seiner eigenen Kategorie stehen kann, ohne kopiert zu werden.
 - **Tags** bieten einen zweiten Weg durch den Katalog (Marke, Material, Anlass).
 - **Sektionen** trennen einen Großhandelskatalog vom öffentlichen, mit Berechtigungen pro Sektion
-  ([Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)).
-- **Landingpages** für Kampagnen und Saisons ([Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)).
+  ([Sektionen und Objektzustände](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)).
+- **Landingpages** für Kampagnen und Saisons ([Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)).
 
 ## Wer Produkte pflegt
 
@@ -118,7 +118,7 @@ Wann sollte eine Variante stattdessen ein eigenes Produkt sein?
 | Prüfen, ob jedes Produkt einen Preis hat | Shop-Inhaber | das Dashboard zählt Produkte ohne Preis |
 
 Das Shop-Dashboard meldet die Zahl der Produkte und der Produkte ohne Preis und listet die Produktklassen mit ihrem
-Preisattribut auf ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+Preisattribut auf ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Checkliste für den Katalog
 
@@ -127,19 +127,19 @@ Preisattribut auf ([Shop-Dashboard und Bestellstatus](../../../../eng-us/feature
 - [ ] Preise sind gesetzt, und der USt-Typ jedes Preises stimmt.
 - [ ] Optionen sind im Warenkorb mit ihren Preisänderungen getestet.
 - [ ] Kategorien, Menüs und Tags sind abgestimmt, bevor die Massenerfassung beginnt.
-- [ ] Bildgrößen sind einmal festgelegt ([Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)).
+- [ ] Bildgrößen sind einmal festgelegt ([Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md)).
 
 ## Verwandte Seiten
 
-- [Produkte, Preise und USt](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
+- [Produkte, Preise und USt](../../ersteller/website-ersteller/produkte-preise-und-mehrwertsteuer.md)
 - [Suche und Navigation im Shop](suche-und-navigation-im-shop.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
+- [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

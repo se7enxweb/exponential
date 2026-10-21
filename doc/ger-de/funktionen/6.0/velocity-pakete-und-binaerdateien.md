@@ -120,7 +120,7 @@ Das Document Root ist `/app`; jede Server-Option lässt sich übergeben, indem S
 
 | Variante | Enthält | Größe (Linux x86-64, PHP 8.3) | Für |
 |---|---|---|---|
-| `mini` | Nur, was der Server braucht: Prozessisolation, Sockets, TLS, Sessions, seinen eigenen Metrikspeicher | 16 MB | Statische Websites, kleine Skripte |
+| `mini` | Nur, was der Server braucht: Prozessisolation, Sockets, TLS, Sitzungen, seinen eigenen Metrikspeicher | 16 MB | Statische Websites, kleine Skripte |
 | `lite` | mini plus, was eine typische Anwendungsplattform verlangt: XML, Bilder (gd), MySQL/MariaDB, SQLite, cURL, intl, zip, opcache | 68 MB | Die meisten Anwendungen |
 | `standard` | lite plus die empfohlene Stufe: PostgreSQL, MongoDB, Caches (apcu, redis, memcached, igbinary), LDAP, SOAP, bcmath und mehr | 73 MB | Der Standard; davon geht die Dokumentation aus |
 | `full` | Alles, was static-php-cli auf dieser Plattform bauen kann, nach bestem Bemühen | etwa 90 bis 120 MB | Eine Extension außerhalb von standard |
@@ -175,8 +175,9 @@ Eine Plattformmatrix führt das Phar auf Systemen aus, für die es keine Binärd
 - Chronik: [August 2026](../../geschichte/velocity/2026-08.md) (erste Binärdateien), [23. September](../../geschichte/velocity/2026-09c.md) (Plattformmatrix), [24. September](../../geschichte/velocity/2026-09d.md) (Pakete), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (Umbenennung, `sbin/`)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

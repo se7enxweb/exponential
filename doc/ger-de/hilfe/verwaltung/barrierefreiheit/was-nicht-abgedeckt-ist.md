@@ -3,7 +3,7 @@ title: Was Exponential für die Barrierefreiheit nicht abdeckt
 audience: government, project-manager, admin, developer
 category: public-sector
 order: 100
-summary: Die bekannten Lücken bei der Barrierefreiheit, die das Projekt selbst nennt - öffentliche Designs nicht geprüft, klassische Administration und admin3 teilweise korrigiert, Online-Editor nicht verifiziert, Erweiterungen ohne Gesamterklärung, keine automatische Engine in der CI, kein Konformitätsbericht, Inhalte der Redaktion überlassen - und wie eine öffentliche Stelle um jede herum plant.
+summary: Die bekannten Lücken bei der Barrierefreiheit, die das Projekt selbst nennt - öffentliche Designs nicht geprüft, klassische Administration und admin3 teilweise korrigiert, Online-Editor nicht geprüft, Erweiterungen ohne Gesamterklärung, keine automatische Engine in der CI, kein Konformitätsbericht, Inhalte der Redaktion überlassen - und wie eine öffentliche Stelle um jede herum plant.
 keywords: Lücken bei der Barrierefreiheit, bekannte Lücken, nicht geprüft, öffentliche Designs, klassische Administration, admin3, Online-Editor, Erweiterungen, Konformitätsbericht, Risikoregister, Plan, accessibility gaps, known gaps, not audited, public designs, classic admin, online editor, TinyMCE, extensions, axe, CI, VPAT, ACR, conformance report, risk register, plan
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Projektverantwortliche und die Koordination Barrierefreiheit, die ein Risikoregister oder
 einen Plan zur Barrierefreiheit führen. Sie listet die Lücken auf, die die eigene Erklärung des Projekts nennt
-([Standards zur Barrierefreiheit: bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)), und für jede, was
+([Standards zur Barrierefreiheit: bekannte Lücken](../../../standards/barrierefreiheit.md#bekannte-lücken)), und für jede, was
 eine öffentliche Stelle dagegen tun kann. Zu sagen, wo die Grenzen liegen, gehört zu einer ehrlichen Erklärung zur
 Barrierefreiheit.
 
@@ -28,7 +28,7 @@ Barrierefreiheit.
 |---|---|
 | Designs öffentlicher Websites (`design/standard`, `design/base`, `design/plain`, `design/mysite`, die paketierten Website-Designs) sind nicht geprüft | für die Seiten, die die Öffentlichkeit sieht, gibt es keine Nachweise des Projekts; Sie bewerten sie |
 | Klassische Administration (`design/admin`) und admin3 sind nicht von den Tests für Kontrast, Landmarks und Formularfehler abgedeckt | Beschäftigte, die sie nutzen, arbeiten in einer Umgebung mit weniger Nachweisen |
-| Der Online-Editor (TinyMCE 8 und TinyMCE 3 in `extension/ezoe`) wurde nicht geprüft; Status **Unverified** | das Bearbeiten von Rich Text und seine Ausgabe brauchen Ihre eigene Prüfung |
+| Der Online-Editor (TinyMCE 8 und TinyMCE 3 in `extension/ezoe`) wurde nicht geprüft; Status **Nicht geprüft** | das Bearbeiten von Rich Text und seine Ausgabe brauchen Ihre eigene Prüfung |
 | Als eigene Pakete ausgelieferte Erweiterungen (Layout-Editor, Newsletter, Shop) werden einzeln überprüft; keine Gesamterklärung | jede Erweiterung, die Sie aktivieren, braucht einen Blick |
 | Keine automatische Engine für Barrierefreiheit in der CI; die Tests lesen Quellen und stellen keine Seiten dar; axe läuft manuell | Rückschritte zwischen Releases fallen nur durch die Quelltests und manuelle Reviews auf |
 | Kein veröffentlichter Konformitätsbericht (Bewertung nach WCAG-EM, VPAT oder ACR) | Sie können keinen in einer Ausschreibung oder Erklärung zitieren |
@@ -40,7 +40,7 @@ Barrierefreiheit.
 
 **Öffentliche Designs.** Planen Sie eine Prüfung Ihres Designs vor dem Start und nach jeder Neugestaltung ein. Bauen Sie
 bevorzugt auf einem Design auf, dessen Templates Sie steuern, und geben Sie Ihrem Design die Checkliste aus
-[Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md).
+[Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md).
 
 **Klassische Administration und admin3.** Setzen Sie `SiteDesign=admin4` im Administrations-Siteaccess und beschränken
 Sie den Designwechsel, wo möglich, auf admin4 und admin4l
@@ -49,7 +49,7 @@ Sie den Designwechsel, wo möglich, auf admin4 und admin4l
 **Online-Editor.** Nehmen Sie den Editor in Ihre Bewertung auf: Fügen Sie nur mit der Tastatur eine Überschrift, eine
 Liste, eine Tabelle mit Kopfzeile und Beschriftung, einen Link und ein Bild mit Alternativtext ein; untersuchen Sie dann
 das veröffentlichte HTML. TinyMCE 3 ist die Standard-Engine; TinyMCE 8 ist je Benutzer oder je Siteaccess wählbar
-([Der Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md)). Bewerten Sie die Engine, die Sie
+([Der Online-Editor auf TinyMCE 8](../../../funktionen/6.0/online-editor-tinymce8.md)). Bewerten Sie die Engine, die Sie
 einsetzen.
 
 **Erweiterungen.** Führen Sie eine Liste der aktivierten Erweiterungen (Setup > Extensions) und testen Sie die
@@ -79,14 +79,15 @@ erforderlich“), schulen Sie die Redaktion und prüfen Sie die Inhalte jeden Mo
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

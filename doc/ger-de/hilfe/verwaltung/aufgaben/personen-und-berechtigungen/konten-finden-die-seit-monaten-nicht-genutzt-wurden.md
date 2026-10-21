@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren, die Konten pflegen oder einen Befund eines Audits zu ruhenden Konten beantworten.
 Am Ende sind ungenutzte Konten gelistet, geprüft und deaktiviert. Die Seite ist **Benutzer > Benutzerkonten prüfen**
-(`/user/hygiene`), beschrieben unter [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md).
+(`/user/hygiene`), beschrieben unter [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -56,15 +56,16 @@ Der letzte Besuch ist die Zeit der letzten Anmeldung oder der ersten Anfrage nac
 - Bewahren Sie die CSV-Datei und die Antworten der Abteilungen mit Ihrem Nachweis der Überprüfung auf.
 
 ## Verwandte Seiten
-- [Pflege der Benutzerkonten](../../../../../eng-us/help/government/operations/people-and-permissions/user-account-hygiene.md)
+- [Pflege der Benutzerkonten](../../betrieb/personen-und-berechtigungen/pflege-von-benutzerkonten.md)
 - [Die Kontenliste für eine Überprüfung exportieren](die-kontenliste-fuer-eine-ueberpruefung-exportieren.md)
 - [Einen ausscheidenden Mitarbeiter deaktivieren und verschieben](einen-ausscheidenden-mitarbeiter-deaktivieren-und-verschieben.md)
-- [Überprüfungen des Administratorzugangs](../../../../../eng-us/help/government/operations/people-and-permissions/admin-access-reviews.md)
+- [Überprüfungen des Administratorzugangs](../../betrieb/personen-und-berechtigungen/ueberpruefung-administrativer-zugaenge.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

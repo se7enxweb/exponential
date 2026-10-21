@@ -63,14 +63,14 @@ Was immer Sie bauen, diese Dinge kommen mit dem Kernel und sind vom ersten Tag a
   ([Leistung und Caching](leistung-und-caching.md)).
 - **Suche** eingebaut, mit Solr als Option für große Websites ([Suche auf der Website](suche-auf-der-website.md)).
 - **Eine Content Security Policy** für die Administration und die Werkzeuge, um Ihrer Website eine zu geben
-  ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+  ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 - **Diese Hilfe**, in der Administration, für Sie und Ihre Redaktion.
 
 ## Was Sie mit Erweiterungen ergänzen
 
 Erweiterungen sind Composer-Pakete, die Funktionen hinzufügen ([Erweiterungen](../../../anleitungen/extensions.md)).
 Diejenigen, denen ein Website-Ersteller am häufigsten begegnet, sind jeweils unter
-[Erweiterungen](../../../../eng-us/features/6.0/extensions/README.md) dokumentiert:
+[Erweiterungen](../../../funktionen/6.0/erweiterungen/README.md) dokumentiert:
 
 | Bedarf | Erweiterung |
 |---|---|
@@ -114,8 +114,8 @@ Beantworten Sie diese Fragen, bevor Sie beginnen; jede Antwort verweist auf eine
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

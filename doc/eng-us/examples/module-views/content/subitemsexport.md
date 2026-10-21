@@ -14,10 +14,12 @@ A view of the `content` module, defined in `kernel/content/module.php` and run b
 ## Address
 
 ```text
-/content/subitemsexport/<NodeID>
+/content/subitemsexport/<NodeID>/(columns)/<Columns>/(sort)/<Sort>/(order)/<Order>
 ```
 
 Ordered parameters, in this order after the view name: `NodeID`.
+
+Unordered parameters, in any order as `/(name)/value`: `(columns)` sets `Columns`, `(sort)` sets `Sort`, `(order)` sets `Order`.
 
 ## Who may open it
 
@@ -39,6 +41,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/content/subitemsexport/1'|ezurl}>content/subitemsexport</a>
+<a href={concat( '/content/subitemsexport/1/(columns)/', 1 )|ezurl}>content/subitemsexport</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

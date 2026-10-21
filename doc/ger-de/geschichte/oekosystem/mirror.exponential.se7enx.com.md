@@ -39,9 +39,9 @@ Außerdem: 1 Merge- oder Finanzierungs-Commit des Teams (ohne Nutzen für Anwend
 ## Verwandte Seiten
 
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/mirror.exponential.se7enx.com.md)
-- [SQLite für die Plattform](../../../eng-us/features/6.0/platform-sqlite-install.md)
+- [SQLite für die Plattform](../../funktionen/6.0/plattform-sqlite-installation.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)
 - Plattform-Ökosystem nach Monat: [2025-07](monate/2025-07.md), [2025-08](monate/2025-08.md), [2026-03](monate/2026-03.md), [2026-04](monate/2026-04.md)

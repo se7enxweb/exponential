@@ -60,14 +60,14 @@ Keiner der vier Ersteller schreibt ein Paket vom Typ `site`, und keiner schreibt
 5. Prüfen Sie die Überprüfung im letzten Schritt und drücken Sie **Paket erstellen**.
 
 Die Fassung Schritt für Schritt mit jedem Feld ist
-[Der Paketassistent Schritt für Schritt](../../../../eng-us/help/designers/extensions/package-creator-wizard-step-by-step.md); der neu gestaltete Assistent
-selbst ist auf [Der Paketassistent](../../../../eng-us/features/6.0/package-wizard.md) beschrieben.
+[Der Paketassistent Schritt für Schritt](../../designer/erweiterungen/paketerstellungs-assistent-schritt-fuer-schritt.md); der neu gestaltete Assistent
+selbst ist auf [Der Paketassistent](../../../funktionen/6.0/paketassistent.md) beschrieben.
 
 > **Hinweis**
 > Der Extension-Export ist aus, bis er eingeschaltet wird: Führen Sie die Erweiterung in `package.ini [ExtensionExportSettings]
 > AllowedExtensions[]` auf (oder `*`) und vergeben Sie mit `RequirePolicy=enabled` (dem Standard) `package/export_extension`. Eine
 > Erweiterung mit geheimen Werten oder Schlüsselmaterial wird in jedem Fall abgewiesen
-> ([Die Prüfung von Paketen auf Geheimnisse](../../../../eng-us/help/designers/extensions/package-secret-check.md)).
+> ([Die Prüfung von Paketen auf Geheimnisse](../../designer/erweiterungen/geheimnispruefung-vor-dem-paketieren.md)).
 
 ## Der Schritt der Informationen
 
@@ -110,3 +110,11 @@ Quell-Repository zu bringen:
 - [Pakete, Abschnitt 8](../../../anleitungen/pakete.md#8-ein-paket-erstellen)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

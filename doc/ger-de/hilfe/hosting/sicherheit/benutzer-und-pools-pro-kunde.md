@@ -92,7 +92,7 @@ Kunden im Verzeichnis eines anderen landet.
 
 ## Eine Velocity-Instanz pro Kunde
 
-Eine Velocity pro Website, jede als Benutzer des Kunden, an `127.0.0.1` gebunden, hinter einem Proxy, der nach Hostnamen routet
+Ein Velocity-Server pro Website, jeder als Benutzer des Kunden, an `127.0.0.1` gebunden, hinter einem Proxy, der nach Hostnamen routet
 ([Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md)):
 
 ```bash
@@ -177,3 +177,11 @@ Die erste darf nichts ausgeben ([13.11](../../../installation/13-sicherheitshaer
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
 - [Kapitel 8: Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

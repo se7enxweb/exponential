@@ -164,11 +164,11 @@ als gültig (Syntax).
 
 - [Kochbuch](README.md)
 - [Caches: was jeder enthält und wie man ihn leert](../../anleitungen/caches.md),
-  [Cache-Konsole](../../../eng-us/bc/6.0/cache-console.md)
-- [Der rollenbewusste HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md),
-  [Response-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md),
-  [Generator für den statischen Cache](../../../eng-us/features/6.0/static-cache-generator.md)
+  [Cache-Konsole](../../bc/6.0/cache-konsole.md)
+- [Der rollenbewusste HTTP-Cache](../../bc/6.0/httpcache.md),
+  [Response-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md),
+  [Generator für den statischen Cache](../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
 - [INI-Einstellungen](../ini-einstellungen/README.md) für jede Cache-Einstellung
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

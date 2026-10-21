@@ -71,7 +71,7 @@ das Paket-Repository von 7x aufgebaut.
 - [ ] Eine Shell mit `tar` und `gzip`; `xmllint` hilft beim Prüfen von XML-Dateien.
 - [ ] Zum Veröffentlichen: einen Ort, der statische Dateien über HTTPS ausliefert (GitHub Pages funktioniert, wie der Server von 7x zeigt).
 - [ ] Eine Entscheidung über die Lizenz für Code, Dokumentation und Demo-Bilder
-      ([Lizenzwahl](../../../../eng-us/help/designers/distribution/licensing-choices-overview.md)).
+      ([Lizenzwahl](../../designer/veroeffentlichung/lizenzwahl-ueberblick.md)).
 
 > **Hinweis**
 > Der Installer liest Seitenpakete; wie sie gemacht wurden, ist ihm gleich. Alles in diesem Abschnitt funktioniert gleich, ob Sie die Archive
@@ -101,3 +101,11 @@ Beides lässt sich kombinieren: auf dem eigenen Server testen, dann den Pull Req
 - [Pakete in der Administration](../admin-oberflaeche/README.md)
 - [4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

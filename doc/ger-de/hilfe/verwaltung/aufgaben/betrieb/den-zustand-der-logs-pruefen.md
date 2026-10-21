@@ -11,7 +11,7 @@ type: help
 
 Diese Aufgabe ist für Administratoren bei einer wöchentlichen Prüfung. Am Ende wissen Sie, dass die Logs im Budget
 liegen, rotieren und beschreibbar sind. Referenz:
-[Log-Viewer, „Zustand der Logs“](../../../../../eng-us/features/6.0/log-viewer.md#log-health).
+[Log-Viewer, „Zustand der Logs“](../../../../funktionen/6.0/log-betrachter.md#zustand-der-logs).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -45,14 +45,15 @@ liegen, rotieren und beschreibbar sind. Referenz:
 
 ## Verwandte Seiten
 - [Die Fehlerübersicht lesen](die-fehleruebersicht-lesen.md)
-- [Aufbewahrung und Rotation der Logs](../../../../../eng-us/help/government/operations/monitoring/log-retention-and-rotation.md)
-- [Datenträger voll](../../../../../eng-us/help/government/operations/incidents/disk-full.md)
+- [Aufbewahrung und Rotation der Logs](../../betrieb/ueberwachung/aufbewahrung-und-rotation-von-protokollen.md)
+- [Datenträger voll](../../betrieb/vorfaelle/festplatte-voll.md)
 - [Log-Viewer und Rotation (Hosting)](../../../hosting/betrieb/log-viewer-und-log-rotation.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

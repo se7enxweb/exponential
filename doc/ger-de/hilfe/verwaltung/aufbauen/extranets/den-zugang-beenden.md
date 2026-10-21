@@ -24,7 +24,7 @@ Vertragsregister.
 ## Deaktivieren
 
 **Benutzer > Benutzerkonten prüfen**, markieren Sie die Konten, **Deaktivieren**, **Bestätigen**: Sie können sich
-nicht anmelden, und ihre Sitzungen enden ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)). Tun Sie
+nicht anmelden, und ihre Sitzungen enden ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)). Tun Sie
 es am letzten Tag des Vertrags.
 
 ## Deaktivieren und verschieben
@@ -39,7 +39,7 @@ Gruppen frei von ehemaligen Auftragnehmern.
 Die Erweiterung `ezmbpaex` legt fest, wie lange ein Passwort gültig ist
 (`mbpaex.ini [mbpaexSettings] DefaultPasswordLifeTime`, in Tagen, auch je Gruppe oder Benutzer möglich), und kann vor
 dem Ablauf per Mail warnen; nach dem Ablauf muss der Benutzer bei der nächsten Anmeldung ein neues Passwort setzen
-([ezmbpaex](../../../../../eng-us/features/6.0/extensions/ezmbpaex.md)). Das beendet den Zugang nicht von selbst (die Person
+([ezmbpaex](../../../../funktionen/6.0/erweiterungen/ezmbpaex.md)). Das beendet den Zugang nicht von selbst (die Person
 kann ein neues Passwort setzen), begrenzt aber, wie lange ein durchgesickertes Passwort nützlich bleibt.
 
 ## Ihre Inhalte
@@ -61,8 +61,9 @@ Aufbewahrungsregeln es verlangen, Konto für Konto, nach Ablauf der Aufbewahrung
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

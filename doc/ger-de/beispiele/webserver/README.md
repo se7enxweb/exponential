@@ -80,5 +80,5 @@ finden Sie unter [Beispiele für den Demomodus](../demomodus/README.md).
 
 - [Kapitel 8, Die Site ausliefern](../../installation/08-die-website-ausliefern.md): Velocity, Apache, nginx und FrankenPHP Schritt für Schritt.
 - [Kapitel 13, Sicherheitshärtung](../../installation/13-sicherheitshaertung.md): was der Webserver niemals ausliefern darf, Header, HTTPS.
-- [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) und [FrankenPHP](../../../eng-us/bc/6.0/frankenphp.md) (auf Englisch).
+- [Velocity-Engines](../../bc/6.0/velocity-engines.md) und [FrankenPHP](../../bc/6.0/frankenphp.md) (auf Englisch).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

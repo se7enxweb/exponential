@@ -121,7 +121,7 @@ Werkzeug, das Sie neben dem Klon pflegen), bis das Skript hinzugefügt ist.
 - **4. bis 17. April:** Unterstützung für den Branch 4.6.x der Plattform:
   - Korrekturen am Web-Build (Dart Sass 1.x), Favicon und `.htaccess`, REST-API-401, fehlende Icons und das Laden der
     JavaScript-Übersetzungen;
-  - eine Sicherheitskonfiguration mit dem Passwort-Hasher für die Ibexa-Benutzerklasse, Session-Einstellungen und
+  - eine Sicherheitskonfiguration mit dem Passwort-Hasher für die Ibexa-Benutzerklasse, Sitzungseinstellungen und
     Siteaccess der Legacy Bridge, Routen-Importe;
   - das Skript `bin/install-legacy-links`, vorhanden in jedem Slot außer `1.3` (prüfen Sie es mit
     `ls se7enxweb/exponential-platform-dxp/*/bin` in einem Klon);
@@ -157,8 +157,9 @@ Werkzeug, das Sie neben dem Klon pflegen), bis das Skript hinzugefügt ist.
 - Monate: [2026-03](../../../geschichte/erweiterungen/monate/2026-03.md), [2026-04](../../../geschichte/erweiterungen/monate/2026-04.md) (alle Extensions)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

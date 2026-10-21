@@ -40,7 +40,7 @@ Backup, das Sie nie wiederhergestellt haben, ist eine Hoffnung“ (dieselbe Quel
 
 ## Was Sie sichern
 
-Aus [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md#what-to-back-up):
+Aus [Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md#was-gesichert-wird):
 
 | Was | Warum |
 |---|---|
@@ -48,7 +48,7 @@ Aus [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-c
 | `var/storage` und das `var/<site>/storage` jeder Website | Hochgeladene Bilder und Dateien |
 | `settings/override` und `settings/siteaccess` | Die Einstellungen der Installation; sie enthalten Passwörter, halten Sie die Backups also vertraulich |
 | Ihre eigenen Erweiterungen und Designs | Falls sie nicht in einem Git-Repository liegen |
-| `settings/override/audit.ini.append.php` | Enthält die Signaturschlüssel des Audit-Trails ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)) |
+| `settings/override/audit.ini.append.php` | Enthält die Signaturschlüssel des Prüfprotokolls ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#in-zwei-minuten-ausprobieren)) |
 
 Caches werden automatisch neu aufgebaut und brauchen kein Backup.
 
@@ -71,7 +71,7 @@ einen Zeitplan. Der Hosting-Bereich erklärt jede Option ausführlich:
 > **Hinweis**
 > Das Projekt veröffentlicht keine empfohlene Häufigkeit und keine Aufbewahrungsdauer. Die Anleitungen geben nur ein
 > Beispiel: „etwa täglich für eine Woche, wöchentlich für einen Monat“
-> ([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md#retention)). Wählen Sie
+> ([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md#aufbewahrung)). Wählen Sie
 > Ihre eigenen Werte anhand Ihrer Antworten oben.
 
 ## Ein Backup anlegen
@@ -88,7 +88,7 @@ Der Betrieb folgt der Anleitung für Ihre Datenbank. In Grundzügen
 
 Unter SQLite (mit seinem Online-`.backup`) und unter MySQL mit InnoDB (mit `--single-transaction`) ist das
 Datenbank-Backup allein auch ohne Wartungsmodus konsistent
-([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md#taking-a-backup)).
+([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md#ein-backup-erstellen)).
 PostgreSQL hat eine eigene zeitpunktgenaue Wiederherstellung ([Datenbankunterstützung](../../datenbankunterstuetzung.md#2-postgresql)).
 
 > **Warnung**
@@ -128,7 +128,7 @@ Nutzen Sie bei einem einzelnen Fehler zuerst die Werkzeuge in Exponential:
 |---|---|
 | Ein Element wurde entfernt | Den Papierkorb: Stellen Sie es wieder her ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen)) |
 | Ein Text wurde überschrieben | **Versionen verwalten**: Erstellen Sie einen neuen Entwurf aus einer früheren Version ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#zu-einer-früheren-version-zurückkehren)) |
-| Unklar, wer es geändert hat | Den Audit-Trail ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
+| Unklar, wer es geändert hat | Das Prüfprotokoll ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)) |
 
 ## Checkliste
 
@@ -145,14 +145,14 @@ Nutzen Sie bei einem einzelnen Fehler zuerst die Werkzeuge in Exponential:
 ## Verwandte Seiten
 
 - [Wiederherstellungsübungen](wiederherstellungsuebungen.md)
-- [Backups und Wiederherstellungen (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)
+- [Backups und Wiederherstellungen (Website-Ersteller)](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)
 - [Backups: was gesichert werden muss (Hosting)](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

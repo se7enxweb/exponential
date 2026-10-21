@@ -36,13 +36,13 @@ Berichten, die niemand liest.
 
 | Zahl | Wo in Exponential | Quelle |
 |---|---|---|
-| Bestellungen, Umsatz, Kunden, abgebrochene Warenkörbe | Shop-Dashboard; Produkt-Statistiken pro Monat | [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md), [Shop-Berichte](../handel/shop-berichte.md) |
+| Bestellungen, Umsatz, Kunden, abgebrochene Warenkörbe | Shop-Dashboard; Produkt-Statistiken pro Monat | [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md), [Shop-Berichte](../handel/shop-berichte.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen**, mit CSV-Export | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
-| Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
+| Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
 | Wonach Besucher suchen | Suchbegriffe werden gespeichert (`ezsearch_search_phrase`) | [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md) |
 | Veröffentlichte Inhalte | Versionen und Veröffentlichungshistorie der Inhalte | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Kosten eines KI-Anbieters, falls genutzt | Das Dashboard von Exponential Intelligence zeigt Kosten, Tokens und Anfragen | `README.md`, „Exponential Intelligence“ |
-| Besucherzahlen | Nicht als Bericht eingebaut; ein Statistikwerkzeug | [Besucherstatistik und Analyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md) |
+| Besucherzahlen | Nicht als Bericht eingebaut; ein Statistikwerkzeug | [Besucherstatistik und Analyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md) |
 
 Zahlen von außerhalb der Website: Ihre Buchhaltung (tatsächliche Einnahmen, Gebühren, Erstattungen), die Rechnungen
 Ihres Hosters und Partners, die Zeiterfassung Ihrer Mitarbeitenden und Ihre Telefon- oder E-Mail-Statistik zu Fragen,
@@ -81,3 +81,11 @@ werden. Bringen Sie sie zur [jährlichen Überprüfung des Nutzens](jaehrliche-u
 - [Return on Investment von Stabilität](../../unternehmen/kosten/rendite-der-stabilitaet.md)
 - [Betriebskosten für Betreiber](betriebskosten-fuer-betreiber.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -67,12 +67,12 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 
 ## Verwandte Seiten
 
-- [DXP-Skeleton und Metapaket](../../../eng-us/features/6.0/platform-dxp-skeleton.md)
+- [DXP-Skeleton und Metapaket](../../funktionen/6.0/plattform-dxp-skeleton.md)
 - [Release-Changelog](../../../changelogs/extensions/oss.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/oss.md)
-- [SQLite für die Plattform](../../../eng-us/features/6.0/platform-sqlite-install.md)
+- [SQLite für die Plattform](../../funktionen/6.0/plattform-sqlite-installation.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)
 - Plattform-Ökosystem nach Monat: [2023-12](monate/2023-12.md), [2024-02](monate/2024-02.md), [2024-05](monate/2024-05.md), [2024-11](monate/2024-11.md), [2025-10](monate/2025-10.md), [2026-03](monate/2026-03.md), [2026-04](monate/2026-04.md)

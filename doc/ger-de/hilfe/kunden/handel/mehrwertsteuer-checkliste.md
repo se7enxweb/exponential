@@ -75,11 +75,11 @@ Signed off: __________________   Next check due: __________
 |---|---|---|
 | USt-Typen | **Shop > USt-Typen** | `shop/vattype`, Richtlinie `shop/setup` (`kernel/shop/module.php`) |
 | USt-Regeln und Kategorien | **Shop > USt-Regeln**, **Shop > Produktkategorien** | `shop/vatrules`, `shop/productcategories` |
-| Warnung bei 0 Prozent | Shop-Dashboard, „Nächste Schritte“ | [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md) |
+| Warnung bei 0 Prozent | Shop-Dashboard, „Nächste Schritte“ | [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md) |
 | Name des dynamischen USt-Typs | `settings/shop.ini [VATSettings] DynamicVatTypeName` | ausgeliefert „Determined by VAT charging rules“ |
-| Summen mit und ohne Mehrwertsteuer | **Shop > Bestellungen**, sortierbare Spalten | [Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md) |
+| Summen mit und ohne Mehrwertsteuer | **Shop > Bestellungen**, sortierbare Spalten | [Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md) |
 | Monatszahlen | **Shop > Produkt-Statistiken** (`shop/statistics`) | [Shop-Berichte](shop-berichte.md) |
-| Nachweis der Änderungen | Das Prüfprotokoll, Kanal `commerce` | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Nachweis der Änderungen | Das Prüfprotokoll, Kanal `commerce` | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 ## Wenn etwas nicht stimmt
 
@@ -95,3 +95,11 @@ Signed off: __________________   Next check due: __________
 - [USt-Regeln und USt-Typen für Unternehmen](../../unternehmen/shops/ust-regeln-und-ust-typen.md)
 - [Monatliche Shop-Checkliste](monatliche-shop-checkliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

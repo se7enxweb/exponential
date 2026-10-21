@@ -53,7 +53,7 @@ wöchentlicher Blick auf die Website. Planen Sie dann mit dem [Arbeitsblatt für
 
 | Fähigkeit | Wird mit Exponential geliefert | Braucht meist einen Partner für |
 |---|---|---|
-| Newsletter (`cjw_newsletter`) | ja, in `composer.json` ([Newsletter für Unternehmen](../../unternehmen/newsletter/README.md)) | Klassen, Cronjobs, E-Mail-Transport, Absenderdomain |
+| Newsletter (`cjw_newsletter`) | ja, in `composer.json` ([Newsletter für Unternehmen](../../unternehmen/newsletters/README.md)) | Klassen, Cronjobs, E-Mail-Transport, Absenderdomain |
 | Landingpages (Exponential Layouts) | ja ([Der Layouts-Editor](../../layout-editor.md)) | neue Layout-Typen oder Block-Typen |
 | Weitere Inhaltssprachen | ja ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)) | Siteaccess-Einstellungen, Sprachumschalter |
 | Weitere Websites in einer Installation | ja ([Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md)) | Siteaccess, DNS, Zertifikate |
@@ -67,5 +67,13 @@ wöchentlicher Blick auf die Website. Planen Sie dann mit dem [Arbeitsblatt für
 
 - [Ihre Website im Alltag betreiben](../alltag/README.md)
 - [Mobil und Headless für Unternehmen](../../unternehmen/mobil-und-headless/README.md)
-- [Was Sie bauen können](../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
+- [Was Sie bauen können](../../ersteller/website-ersteller/was-sie-bauen-koennen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

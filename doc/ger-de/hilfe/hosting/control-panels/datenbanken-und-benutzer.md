@@ -46,7 +46,7 @@ Installer legen weder Datenbanken noch Benutzer an ([2.6 Datenbanken](../../../i
 | 6. MySQL | ja, `utf8mb4` | ja | `mysqli` |
 
 Seit 6.0.15 arbeitet der Setup-Assistent nur mit Ihrer eigenen Datenbank: Sie brauchen nur noch Rechte auf Ihre eigene Datenbank
-([Eine saubere Installation, die zu Shared Hosting passt](../../../../eng-us/features/6.0/clean-install-defaults.md)).
+([Eine saubere Installation, die zu Shared Hosting passt](../../../funktionen/6.0/standardwerte-einer-sauberen-installation.md)).
 
 ## 1. SQLite 3
 
@@ -188,3 +188,11 @@ Wenn Ihr Panel eine Zeile nicht erfüllen kann, eignet sich diese Engine auf die
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
 - [Kapitel 9: Datenbanken](../../../installation/09-datenbanken.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

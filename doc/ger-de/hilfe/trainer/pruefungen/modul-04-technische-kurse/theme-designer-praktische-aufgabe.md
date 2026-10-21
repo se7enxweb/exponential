@@ -53,7 +53,7 @@ Wer diese Aufgabe besteht, hat gezeigt, dass er Folgendes kann:
 
 **Dürfen die Teilnehmenden mit dem Design-Assistenten beginnen?** Wenn Ihr Kurs ihn behandelt hat, ja; die Dateien
 müssen trotzdem vollständig sein, und das Bewertungsraster gilt für das Ergebnis
-([Der Assistent für Design-Erweiterungen](../../../../../eng-us/help/designers/extensions/design-extension-wizard.md)).
+([Der Assistent für Design-Erweiterungen](../../../designer/erweiterungen/der-design-erweiterungs-assistent.md)).
 
 **Welche Stylesheet-Einstellung liest das Pagelayout?** Das hängt vom Pagelayout ab, das die Teilnehmenden schreiben.
 Akzeptieren Sie jeden dokumentierten Weg, eine Datei aus dem Ordner `stylesheets/` des Designs ohne `style`-Block zu
@@ -140,21 +140,21 @@ Fragen für die Nachbesprechung nach der Bewertung.
 <summary>Antworten</summary>
 
 1. Ein globales `SiteDesign` würde die Administration und jede andere Website verändern
-   ([Die Design-Einstellungen, die ein Theme mitliefert](../../../../../eng-us/help/designers/extensions/design-settings-a-theme-ships.md)).
+   ([Die Design-Einstellungen, die ein Theme mitliefert](../../../designer/erweiterungen/design-einstellungen-eines-themes.md)).
 2. Nichts wäre gefunden worden: Der Wert ist der Name der Erweiterung
-   ([Das Design registrieren](../../../../../eng-us/help/designers/extensions/registering-the-design.md)).
+   ([Das Design registrieren](../../../designer/erweiterungen/das-design-registrieren.md)).
 3. Ihre Datei hat auf die Anfrage nach `node/view/full.tpl` geantwortet
    ([Templates und Design](../../../../anleitungen/templates-und-design.md#3-sehen-welches-template-welches-markup-geschrieben-hat)).
 4. Eine Website kann eine Content Security Policy einschalten, ohne dass das Theme kaputtgeht
-   ([Inline-Skripte und -Styles entfernen](../../../../../eng-us/help/designers/lifecycle/removing-inline-scripts-and-styles.md)).
+   ([Inline-Skripte und -Styles entfernen](../../../designer/lebenszyklus/inline-skripte-und-styles-entfernen.md)).
 
 </details>
 
 ## Weiterführende Literatur
 
-- [Die Ordnerstruktur einer Theme-Erweiterung](../../../../../eng-us/help/designers/extensions/extension-folder-structure.md)
-- [Die Design-Einstellungen, die ein Theme mitliefert](../../../../../eng-us/help/designers/extensions/design-settings-a-theme-ships.md)
-- [Checkliste: Theme-Erweiterung bereit](../../../../../eng-us/help/designers/extensions/checklist-theme-extension-ready.md)
+- [Die Ordnerstruktur einer Theme-Erweiterung](../../../designer/erweiterungen/ordnerstruktur-einer-theme-erweiterung.md)
+- [Die Design-Einstellungen, die ein Theme mitliefert](../../../designer/erweiterungen/design-einstellungen-eines-themes.md)
+- [Checkliste: Theme-Erweiterung bereit](../../../designer/erweiterungen/checkliste-theme-erweiterung-bereit.md)
 
 ## Verwandte Seiten
 
@@ -165,9 +165,9 @@ Fragen für die Nachbesprechung nach der Bewertung.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

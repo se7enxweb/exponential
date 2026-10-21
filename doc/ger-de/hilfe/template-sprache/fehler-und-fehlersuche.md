@@ -125,7 +125,7 @@ WARNING : Function "no_such_function" is not registered
 ```
 
 Beides geschieht, wenn eine Erweiterung, die den Operator oder die Funktion registriert, auf dem Siteaccess nicht aktiv ist oder ihre
-Autoload-Registrierung fehlt (siehe [Template-Operatoren schreiben](../../../eng-us/help/creators/app-creators/template-operators.md)).
+Autoload-Registrierung fehlt (siehe [Template-Operatoren schreiben](../ersteller/anwendungsentwickler/template-operatoren-schreiben.md)).
 
 ## Parserfehler
 
@@ -239,7 +239,7 @@ WARNING undef: Variable 'c' is not defined with {def}.
 ```
 
 Die Regeln stehen in `lib/eztemplate/classes/eztemplatedeffunction.php` und `eztemplatesetfunction.php`; die Seite für Designer ist
-[Variablen und def](../../../eng-us/help/designers/templates/variables-and-def.md).
+[Variablen und def](../designer/vorlagen/variablen-und-def.md).
 
 ## Die Leerraumregel
 
@@ -293,13 +293,21 @@ Template-Cache geleert ist. `ShowTemplatePathComments` funktioniert mit kompilie
 
 Um auf einer laufenden Website die Datei hinter einem Stück HTML zu finden, ist `ShowTemplatePathComments` meist der schnellste Weg: Schalten
 Sie es in einer Entwicklungsinstallation für einen Siteaccess ein, sehen Sie sich den Quelltext der Seite an und suchen Sie nach dem HTML. Die
-Seite [Fehlersuche in Templates](../../../eng-us/help/designers/templates/template-debugging.md) geht das durch.
+Seite [Fehlersuche in Templates](../designer/vorlagen/template-debugging.md) geht das durch.
 
 ## Verwandte Seiten
 
-- [Fehlersuche in Templates](../../../eng-us/help/designers/templates/template-debugging.md)
-- [Template-Pfadkommentare](../../../eng-us/help/designers/templates/template-path-comments.md)
-- [Häufige Fehler in Templates](../../../eng-us/help/designers/templates/common-template-mistakes.md)
+- [Fehlersuche in Templates](../designer/vorlagen/template-debugging.md)
+- [Template-Pfadkommentare](../designer/vorlagen/template-pfad-kommentare.md)
+- [Häufige Fehler in Templates](../designer/vorlagen/haeufige-template-fehler.md)
 - [Der Template-Compiler](der-template-compiler.md)
-- [Fehlersuche und Logs](../../../eng-us/help/creators/app-creators/debugging-and-logs.md)
+- [Fehlersuche und Logs](../ersteller/anwendungsentwickler/fehlersuche-und-logs.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

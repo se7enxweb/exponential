@@ -29,7 +29,7 @@ des Projekts funktioniert, was meist nicht, wie eine Website ohne Shell installi
 - Ihr Hosting lässt Sie keinen lang laufenden Prozess ausführen. Shared Hosting tut das meist nicht. Apache oder LiteSpeed
   mit `.htaccess` ist dort die Antwort (`README.md` im Wurzelverzeichnis, Abschnitt dazu, wann ein klassischer Server noch
   die richtige Antwort ist).
-- Velocity passt meist nicht zu Shared Hosting, weil es einen lang laufenden Prozess braucht; Apache mit PHP-FPM passt
+- Velocity passt meist nicht zu Shared Hosting, weil er einen lang laufenden Prozess braucht; Apache mit PHP-FPM passt
   ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 - Shared Hosting ohne Shell-Zugang: der Assistent. Er braucht nur einen Browser und FTP-Zugang
   ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation)).
@@ -37,7 +37,7 @@ des Projekts funktioniert, was meist nicht, wie eine Website ohne Shell installi
   womöglich nicht erlaubt ist; nutzen Sie Apache oder LiteSpeed mit `.htaccess` ([Stufe 3](../../betriebssystemunterstuetzung.md#stufe-3-voraussichtlich-lauffähig)).
 - Seit 6.0.15 arbeitet der Setup-Assistent nur mit Ihrer eigenen Datenbank: Er führt kein `SHOW DATABASES` mehr aus und
   öffnet die Systemdatenbank `mysql` nicht mehr, was Rechte bräuchte, die ein Shared Host nicht vergibt
-  ([Eine saubere Installation, die zu Shared Hosting passt](../../../../eng-us/features/6.0/clean-install-defaults.md)).
+  ([Eine saubere Installation, die zu Shared Hosting passt](../../../funktionen/6.0/standardwerte-einer-sauberen-installation.md)).
 
 ## Auslieferung: Apache oder LiteSpeed mit .htaccess
 
@@ -86,7 +86,7 @@ beschreibbaren Verzeichnisse und die `php.ini`-Werte und gibt für jeden Fehler 
 > Ein langer Schritt des Assistenten kann an die Zeitgrenze für Anfragen von PHP-FPM des Kontos stoßen. Die Notizen zur
 > MongoDB-Portierung beschreiben, wie der Assistent durch das `request_terminate_timeout` des Pools abgebrochen wird, das
 > `set_time_limit()` von PHP selbst nicht überschreiben kann
-> ([MongoDB-Unterstützung im Kernel](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)). Wenn die Installationen auf
+> ([MongoDB-Unterstützung im Kernel](../../../bc/6.0/mongodb-kernel-unterstuetzung.md)). Wenn die Installationen auf
 > Ihrer Plattform lange laufen, erhöhen Sie die Grenze für die Installation und senken Sie sie danach wieder.
 
 ## PHP-Einstellungen pro Konto
@@ -169,3 +169,11 @@ des Kunden), als dieser eine Benutzer laufen
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

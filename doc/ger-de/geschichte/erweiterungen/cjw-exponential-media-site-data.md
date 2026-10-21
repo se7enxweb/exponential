@@ -1,8 +1,8 @@
 # cjw-exponential-media-site-data (Daten der Media-Site): Chronik
 
-Das Datenpaket der Media-Site für den Installer entstand am 3. Juli 2026 (1.0.0). Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/cjw-exponential-media-site-data.md).
+Das Datenpaket der Media-Site für den Installer entstand am 3. Juli 2026 (1.0.0). Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/cjw-exponential-media-site-data.md).
 
-Diese Seite führt **jede der 2 Änderungen** des Repositorys `cjw-exponential-media-site-data` zwischen 2026-07-03 und 2026-07-03 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/cjw-exponential-media-site-data.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/cjw-exponential-media-site-data.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/cjw-exponential-media-site-data.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 2 Änderungen** des Repositorys `cjw-exponential-media-site-data` zwischen 2026-07-03 und 2026-07-03 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/cjw-exponential-media-site-data.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/cjw-exponential-media-site-data.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/cjw-exponential-media-site-data.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -26,7 +26,7 @@ Der Monat über alle Erweiterungen: [Juli 2026](monate/2026-07.md). [Änderungsv
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/cjw-exponential-media-site-data.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/cjw-exponential-media-site-data.md)
 - [Release Notes](../../../changelogs/extensions/cjw-exponential-media-site-data.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/cjw-exponential-media-site-data.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

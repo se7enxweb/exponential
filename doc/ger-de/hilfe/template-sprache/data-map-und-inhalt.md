@@ -118,7 +118,7 @@ Stored XML starts with: &lt;section xmlns:image=&quot;http://ez.no/namespaces/ez
 Auf alpha ist der Ausgabe-Handler `ExplBlockXHTMLXMLOutput` (von `get_class` klein geschrieben), eine Unterklasse von `eZXHTMLXMLOutput` des
 Kernels, die die Erweiterung explayouts in `ezxml.ini` (`HandlerClass`) registriert. In einer Seite schreiben Sie normalerweise
 `{attribute_view_gui attribute=$node.data_map.body}`, was dasselbe `output_text` über das Ansichts-Template des Datentyps rendert (siehe
-[Templates für Rich Text](../../../eng-us/help/designers/templates/rich-text-templates.md)).
+[Templates für Rich Text](../designer/vorlagen/rich-text-templates.md)).
 
 ## Bilder (ezimage)
 
@@ -264,7 +264,7 @@ Why Should You Choose Strength Training?]
 
 Nutzen Sie `attribute_view_gui`, wenn Sie das eigene Markup des Datentyps wollen (Rich Text, Bilder, Dateien, Matrizen): Das Template des
 Datentyps kümmert sich um Maskierung, Aliase und Links. Lesen Sie `content`, wenn Sie den Wert in Ihrem eigenen Markup, einer Bedingung oder
-einer Berechnung brauchen, und maskieren Sie Text selbst mit `wash` (siehe [Wash und Maskierung](../../../eng-us/help/designers/templates/wash-and-escaping.md)).
+einer Berechnung brauchen, und maskieren Sie Text selbst mit `wash` (siehe [Wash und Maskierung](../designer/vorlagen/wash-und-maskierung.md)).
 
 ## Leere Felder
 
@@ -291,7 +291,15 @@ eine Leerzeile, um einen zu behalten (siehe die Leerraumregel in [Fehler und Feh
 
 - [Das Objektmodell in Templates](das-objektmodell-in-templates.md)
 - [Referenz von Inhaltsattribut und Version](referenz-von-inhaltsattribut-und-version.md)
-- [Attribute view gui](../../../eng-us/help/designers/templates/attribute-view-gui.md)
-- [Ansichts-Templates von Datentypen](../../../eng-us/help/designers/templates/datatype-view-templates.md)
-- [Datentypen mit Beispielen](../../../eng-us/examples/datatypes/README.md)
+- [Attribute view gui](../designer/vorlagen/attribute-view-gui.md)
+- [Ansichts-Templates von Datentypen](../designer/vorlagen/datentyp-ansichtstemplates.md)
+- [Datentypen mit Beispielen](../../beispiele/datentypen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

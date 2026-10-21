@@ -8,7 +8,7 @@ Sie richtet sich an Administratoren, die das Inhaltsmodell pflegen. Jede Angabe 
 Demonstrationsserver am Code geprüft (`kernel/private/classes/views/class/grouplist.php` und `removegroup.php`).
 
 [Anleitungen](README.md) · Siehe auch: [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md),
-[Blättern in Listen der Administration](../../eng-us/features/6.0/admin-list-paging.md)
+[Blättern in Listen der Administration](../funktionen/6.0/seitenweise-listen-im-admin.md)
 
 ## Kurz gesagt
 
@@ -108,3 +108,11 @@ Unter den Gruppen die zehn zuletzt geänderten Klassen, mit ID, Bezeichner, Bear
   in `design/admin/templates/class/`).
 - Blättern: `settings/admininterface.ini [PaginationSettings] ItemsPerPage[class/grouplist]`.
 - Tests: `tests/tests/kernel/classes/expAdminListsRedesignTest.php` (ohne Datenbank).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -48,7 +48,7 @@ Der Shop hat keine Rabatte, die von selbst beginnen und enden. Eine Aktion wird 
 5. **Festhalten**: Notieren Sie in Ihrem Aktionsprotokoll, was von wann bis wann lief.
 
 Das Verschieben vieler Produkte in eine Sektion „Sale“ oder aus ihr heraus kann im Hintergrund als Inhaltsauftrag
-laufen ([Inhaltsaufträge](../../../../eng-us/features/6.0/content-jobs.md)).
+laufen ([Inhaltsaufträge](../../../funktionen/6.0/inhaltsauftraege.md)).
 
 > **Tipp**
 > Tragen Sie Start und Ende mit je einer namentlich genannten Person in den Teamkalender ein. Eine Aktion, die niemand
@@ -65,7 +65,7 @@ laufen ([Inhaltsaufträge](../../../../eng-us/features/6.0/content-jobs.md)).
 
 ## Buch führen
 
-Änderungen an Rabatten werden im Kanal `commerce` des Prüfprotokolls festgehalten ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+Änderungen an Rabatten werden im Kanal `commerce` des Prüfprotokolls festgehalten ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 Führen Sie zusätzlich ein eigenes kurzes Protokoll, denn der Grund für eine Aktion steht nicht im Prüfprotokoll:
 
 ```text
@@ -94,3 +94,11 @@ das vor der Bestätigungsseite eine negative Bestellposition hinzufügt ([Workfl
 - [Kundenkonten](kundenkonten.md)
 - [Wunschzettel und Warenkörbe](wunschzettel-und-warenkoerbe.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

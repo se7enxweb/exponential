@@ -33,9 +33,9 @@ diesem Bereich:
 | Was Exponential ist, in fünf Minuten gezeigt | 5 Min. | [Überblick in fünf Minuten](demo-skript-ueberblick-in-fuenf-minuten.md) | [Erste Schritte](../erste-schritte.md) |
 | Bearbeiten, Entwürfe, Vorschau und Versionen | 8 bis 10 Min. | [Rundgang für Redakteure](demo-skript-rundgang-fuer-redakteure.md) | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | Eine Seite mit dem Seitenbaukasten bauen | 6 bis 8 Min. | [Exponential Layouts](demo-skript-exponential-layouts.md) | [Der Layout-Editor](../layout-editor.md) |
-| Der Schreibassistent, der nur Entwürfe schreibt | 6 Min. | [Exponential Intelligence](demo-skript-exponential-intelligence.md) | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
-| Eine Website unter Velocity betreiben | 8 Min. | [Velocity](demo-skript-velocity.md) | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
-| Von einem leeren Ordner zu einer laufenden Website | 10 Min. | [Installation von null](demo-skript-installation-von-null.md) | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Der Schreibassistent, der nur Entwürfe schreibt | 6 Min. | [Exponential Intelligence](demo-skript-exponential-intelligence.md) | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
+| Eine Website unter Velocity betreiben | 8 Min. | [Velocity](demo-skript-velocity.md) | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
+| Von einem leeren Ordner zu einer laufenden Website | 10 Min. | [Installation von null](demo-skript-installation-von-null.md) | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Was ein Administrator sieht | 10 Min. | [Rundgang für Administratoren](demo-skript-rundgang-fuer-administratoren.md) | [Sicherheitshärtung](../sicherheitshaertung.md) |
 
 Schreiben Sie vor allem anderen das Versprechen in einem Satz auf: „Nach diesem Video können Sie <Aufgabe>.“
@@ -118,8 +118,8 @@ Die vollständige Liste dessen, was nicht zu sehen sein darf, steht unter [Gehei
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -15,7 +15,7 @@ andere betreiben. Sie beantwortet: wie die eingebaute Suche funktioniert und was
 Sie den Index neu aufbauen und was Solr über die Erweiterung eZ Find umfasst. Quellen:
 [Kapitel 10.8](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung),
 `settings/site.ini [SearchSettings]`, `settings/solr.ini` und
-[Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md).
+[Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md).
 
 ## Inhalt
 
@@ -89,7 +89,7 @@ php bin/php/ezpgenerateautoloads.php -e
 ```
 
 dann `ActiveExtensions[]=ezfind` in `settings/override/site.ini.append.php`, leeren Sie den INI-Cache und starten Sie
-Velocity neu, wenn es die Website ausliefert ([Kapitel 3.5](../../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete)).
+Velocity neu, wenn er die Website ausliefert ([Kapitel 3.5](../../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete)).
 Dieses Repository gibt nicht an, welche Solr-Versionen eZ Find braucht; entnehmen Sie das dem eigenen Repository der
 Erweiterung, bevor Sie Solr anbieten, statt es anzunehmen.
 
@@ -133,7 +133,7 @@ php bin/php/console exp:solr start --allow-root-user      # local instance only
 | `ping` | Solr fragen, ob es läuft |
 
 Solange Solr nicht konfiguriert ist, sagt jedes Verb das, und `start` endet mit einem Wert ungleich null, sodass eine
-Überwachungsprüfung „nicht konfiguriert“ nie für „läuft“ hält ([Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)).
+Überwachungsprüfung „nicht konfiguriert“ nie für „läuft“ hält ([Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver)).
 
 ## Suche in einem Tarif anbieten
 
@@ -163,6 +163,14 @@ Optionen, aus denen ein Hoster wählen kann:
 - [Kapitel 10.8: Suchindizierung und Bildverarbeitung](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung)
 - [Suchen](../../suchen.md) (für Redakteure)
 - [Cronjobs](../betrieb/cronjobs.md) und [Zustandsprüfungen und Verfügbarkeit](../betrieb/zustandspruefungen-und-verfuegbarkeit.md)
-- [Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md)
+- [Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md)
 - [Composer und Git auf Servern](composer-und-git-auf-servern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

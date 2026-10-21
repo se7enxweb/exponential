@@ -14,10 +14,12 @@ Eine Ansicht des Moduls `content`, definiert in `kernel/content/module.php` und 
 ## Adresse
 
 ```text
-/content/job/<JobID>
+/content/job/<JobID>/(json)/<Json>/(log)/<Log>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `JobID`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(json)` setzt `Json`, `(log)` setzt `Log`.
 
 ## Wer sie öffnen darf
 
@@ -40,6 +42,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/content/job/1'|ezurl}>content/job</a>
+<a href={concat( '/content/job/1/(json)/', 1 )|ezurl}>content/job</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite geht das Hinzufügen eines Template-Operators zu einer Erweiterung in der Reihenfolge durch, in der Sie es
 tun, mit den Prüfungen, die die üblichen Fehler aufdecken. Der Code einer vollständigen kleinen Operatorklasse steht
-im Kochbuch unter [Ein eigener Template-Operator](../../../eng-us/examples/cookbook/custom-template-operator.md); jede Methode und
+im Kochbuch unter [Ein eigener Template-Operator](../../beispiele/kochbuch/eigener-template-operator.md); jede Methode und
 jedes Argument erklärt [Die Schnittstelle der Operatorklasse](referenz-der-operatorklassen.md). Hier geht es um den Ablauf.
 
 ## Inhalt
@@ -56,7 +56,7 @@ Der Assistent für Template-Erweiterungen in der Administration (Setup, RAD, „
 Erweiterung mit einer beliebigen Mischung aus Operatoren, Template-Funktionen, Fetch-Funktionen und Fetch-Aliasen: die
 Operatorklasse mit ihrer Parameterliste, Hinweisen für die Kompilierung und einem `modify()`, das nach dem
 Operatornamen verzweigt, `autoloads/eztemplateautoload.php`, `settings/site.ini.append.php`, `ezinfo.php`,
-`extension.xml` und `composer.json`. Siehe [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md). Der Rest dieser Seite
+`extension.xml` und `composer.json`. Siehe [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md). Der Rest dieser Seite
 zeigt, was diese Dateien enthalten und warum, für den Fall, dass Sie sie von Hand schreiben oder prüfen, was der
 Assistent geschrieben hat.
 
@@ -187,14 +187,15 @@ WARNING exp_clamp: min and max must be numbers
 
 - [Die Schnittstelle der Operatorklasse](referenz-der-operatorklassen.md)
 - [Operatoren registrieren](operatoren-registrieren.md)
-- [Ein eigener Template-Operator](../../../eng-us/examples/cookbook/custom-template-operator.md) (Kochbuch)
+- [Ein eigener Template-Operator](../../beispiele/kochbuch/eigener-template-operator.md) (Kochbuch)
 - [Eigene Operatoren mit OW Simple Operator](eigene-operatoren-mit-owsimpleoperator.md): die Abkürzung und ihre Grenzen
 - [Kernel-Operatoren überschreiben](kernel-operatoren-ueberschreiben.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -25,16 +25,16 @@ Exponential ist der sichere Weg, das Konto zu **deaktivieren**, statt es zu entf
 ## Deaktivieren, nicht entfernen
 
 - Ein Benutzerobjekt kommt nie in den Papierkorb: Das Entfernen eines Benutzers ist endgültig
-  ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - **Deaktivieren** unter **Benutzer > Benutzerkonten prüfen** verhindert, dass sich das Konto anmeldet, und beendet
   seine Sitzungen. Seine Inhalte, Gruppen und Rollen bleiben erhalten, sodass die Historie, wer was geschrieben hat,
   bewahrt wird.
 - Wenn Ihr Administrator **Deaktivieren und verschieben** eingeschaltet hat (`site.ini [UserSettings]
   DeactivateAndMove=enabled`, standardmäßig aus), wird das Konto deaktiviert und in eine verborgene Gruppe ohne Rollen
-  verschoben; **Reaktivieren und zurückverschieben** macht das rückgängig ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  verschoben; **Reaktivieren und zurückverschieben** macht das rückgängig ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 Jede Änderung wird im Prüfprotokoll festgehalten (`access.user.disable`, Kanal *access*), sodass Sie einen Nachweis
-des Datums haben ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+des Datums haben ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Vor dem letzten Tag
 
@@ -54,7 +54,7 @@ des Datums haben ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-tra
 2. **Widerrufen Sie API-Schlüssel und Tokens.** Persönliche API-Schlüssel enden, wenn ihr Besitzer deaktiviert oder
    entfernt wird, und Administratoren können jeden Schlüssel unter **Setup > oAuth-Verwaltung > API-Schlüssel**
    widerrufen ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)). Remote-Service-Tokens eines deaktivierten
-   Benutzers antworten mit 401 ([Remote-Dienste](../../../../eng-us/features/6.0/remote-services-expservices.md)). Prüfen Sie
+   Benutzers antworten mit 401 ([Remote-Dienste](../../../funktionen/6.0/entfernte-dienste-expservices.md)). Prüfen Sie
    trotzdem beide Listen.
 3. **Entfernen Sie Rollenzuweisungen, die der Person direkt** (nicht über eine Gruppe) gemacht wurden, falls vorhanden.
 4. Hatte die Person Administratorzugriff, fragen Sie Ihren Hoster oder Partner, ob sie auch Zugriff auf Server,
@@ -91,3 +91,11 @@ Checked by (manager): ______________
 - [Konten, Passwörter und zweistufige Anmeldung](konten-passwoerter-und-zweistufige-anmeldung.md)
 - [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

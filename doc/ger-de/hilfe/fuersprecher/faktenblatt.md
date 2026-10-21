@@ -54,7 +54,7 @@ Für ein deutschsprachiges Publikum übersetzen Sie die Zeilen und behalten die 
 | Sicherheit | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Sprachen | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | Geschichte | [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md) |
-| Ausprobieren | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Ausprobieren | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Community, Unterstützung | [Die Community-Kanäle](community-kanaele.md) |
 
 ## Verwendung
@@ -67,3 +67,11 @@ Für ein deutschsprachiges Publikum übersetzen Sie die Zeilen und behalten die 
 - [Gesprächspunkte: das Grundset](gespraechspunkte-grundset.md)
 - [Der Werkzeugkasten für Fürsprecher](werkzeugkasten-fuer-fuersprecher.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

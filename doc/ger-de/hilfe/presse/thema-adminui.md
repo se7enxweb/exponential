@@ -34,8 +34,8 @@ Der Kernel setzt das Paket seit der Produktlinie 6.0.15 voraus ([Die Produktfami
 | Paket `exp_adminui`, in der Produktlinie 6.0.15 als `~1.0.0.46` vorausgesetzt | [Die Produktfamilie auf einen Blick](../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick) |
 | Eine Portierung der Netgen AdminUI | Beschreibung des Repositorys |
 | Braucht Exponential 6.0.15 oder neuer | ebenda |
-| Funktionsseite | [Exponential AdminUI](../../../eng-us/features/6.0/exp-adminui.md) |
-| Benutzer können zwischen Designs wechseln | [UI-Wechsel](../../../eng-us/features/6.0/ui-switch.md) |
+| Funktionsseite | [Exponential AdminUI](../../funktionen/6.0/exp-adminui.md) |
+| Benutzer können zwischen Designs wechseln | [UI-Wechsel](../../funktionen/6.0/ui-umschalter.md) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -59,8 +59,8 @@ Der Kernel setzt das Paket seit der Produktlinie 6.0.15 voraus ([Die Produktfami
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

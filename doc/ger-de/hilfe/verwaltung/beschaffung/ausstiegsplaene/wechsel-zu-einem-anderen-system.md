@@ -86,7 +86,7 @@ Für ein nicht aufgeführtes Ziel sind CSV und Manifest des Website-Archivs der 
 - [ ] Letzter Export und Datenbank-Dump nach Ihren Regeln zum Schriftgut archiviert.
 - [ ] Ein statisches Archiv der alten öffentlichen Website aufbewahrt, wenn Ihre Regeln eines verlangen:
       `exp:makestaticcache` schreibt statische Seiten, wie der Migrationskurs erklärt
-      ([Exponential verlassen, Lektion](../../../../../eng-us/help/trainers/migration/module-08-leaving-and-capstone/leaving-exponential.md)).
+      ([Exponential verlassen, Lektion](../../../trainer/migration/modul-08-wechsel-weg-und-abschlussprojekt/von-exponential-wechseln.md)).
 - [ ] Audit-Protokoll mit signiertem Manifest exportiert und für seine Aufbewahrungsdauer aufbewahrt.
 - [ ] Personenbezogene Daten wie vereinbart behandelt ([Personenbezogene Daten beim Ausstieg](personenbezogene-daten-beim-ausstieg.md)).
 - [ ] Server, Cronjobs, Zertifikate und Konten entfernt; Löschung schriftlich bestätigt.
@@ -98,8 +98,9 @@ Für ein nicht aufgeführtes Ziel sind CSV und Manifest des Website-Archivs der 
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

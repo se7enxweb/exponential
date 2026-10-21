@@ -54,10 +54,10 @@ Mehr dazu: [Über ein Release einer Erweiterung berichten](ueber-ein-erweiterung
 
 | Nachweis | Wo | Was er Ihnen liefert |
 |---|---|---|
-| Die Chronik | [Die Geschichte](../../../eng-us/history/README.md) | Monatsseiten ab Dezember 2023: was sich geändert hat, warum es wichtig ist, mit Commits |
-| Das Ledger | [Ledger aller Repositorys](../../../eng-us/history/ledger/README.md) | Jeder Commit jedes Repositorys, mit Datum, Art, Umfang und dem Release-Tag, der ihn zuerst enthielt |
-| Die Seite zur Abdeckung | [Abdeckung](../../../eng-us/history/coverage.md) | Der Beleg, pro Repository und Monat, dass jede Änderung erklärt oder aufgeführt ist |
-| Die eigene Chronik von Velocity | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) | Der Webserver ab seinem ersten Commit im Juli 2026 |
+| Die Chronik | [Die Geschichte](../../geschichte/README.md) | Monatsseiten ab Dezember 2023: was sich geändert hat, warum es wichtig ist, mit Commits |
+| Das Ledger | [Ledger aller Repositorys](../../geschichte/aenderungsverzeichnis/README.md) | Jeder Commit jedes Repositorys, mit Datum, Art, Umfang und dem Release-Tag, der ihn zuerst enthielt |
+| Die Seite zur Abdeckung | [Abdeckung](../../geschichte/abdeckung.md) | Der Beleg, pro Repository und Monat, dass jede Änderung erklärt oder aufgeführt ist |
+| Die eigene Chronik von Velocity | [Chronik von Velocity](../../geschichte/velocity/README.md) | Der Webserver ab seinem ersten Commit im Juli 2026 |
 
 Wie Sie sie zitieren, steht unter [Die Geschichtsseiten als Quelle](die-geschichtsseiten-als-quelle.md).
 
@@ -93,8 +93,8 @@ Im Zweifel entscheiden die Git-Tags, denn sie sind das Release ([Ein Release sel
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

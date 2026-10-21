@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an die Administration und das Sicherheitspersonal öffentlicher Websites, die einen stetigen
 Strom automatisierter Sondierungen anziehen. Exponential schreibt Antworten „nicht gefunden“ und vermutete Angriffe in
-eigene Logs, damit `error.log` die echten Fehler enthält. Referenz: [Anfrage-Logs](../../../../../eng-us/features/6.0/request-logs.md);
+eigene Logs, damit `error.log` die echten Fehler enthält. Referenz: [Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md);
 Sicht des Hostings: [Sicherheitslog (Hosting)](../../../hosting/betrieb/sicherheitslog.md).
 
 ## Inhalt
@@ -48,7 +48,7 @@ maskiert), den Siteaccess und einen gekürzten User-Agent. Lesen Sie es auf:
   einen Blick der Entwicklung.
 
 Die Fehlerübersicht gruppiert es nach Kategorie und Regel; sehen Sie es wöchentlich durch
-([Das Sicherheitslog wöchentlich durchsehen](../../../../../eng-us/help/government/tasks/operations/review-the-security-log-weekly.md)).
+([Das Sicherheitslog wöchentlich durchsehen](../../aufgaben/betrieb/das-sicherheits-log-woechentlich-pruefen.md)).
 
 ## Was 404.log Ihnen sagt
 
@@ -81,12 +81,13 @@ hat“. Rotation: standardmäßig 5 Archive, komprimiert, 10 MB, bereinigt nach 
 - [Fehlerübersicht und Zustand der Logs](fehleruebersicht-und-zustand-der-logs.md)
 - [CSP-Berichte](csp-berichte.md)
 - [Audit-Warnungen](audit-warnungen.md)
-- [Anfrageregeln](../../../../../eng-us/features/6.0/request-rules.md)
+- [Anfrageregeln](../../../../funktionen/6.0/anfrageregeln.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

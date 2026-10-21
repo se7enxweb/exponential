@@ -47,7 +47,7 @@ Er sagt, wo die Referenz steht, und gibt die Zeilen ihrer Anfrage aus. Exit-Code
 | Die Zeile sagt | Tun |
 |---|---|
 | ein Fehler in Template oder Code | Ticket an die Entwickler mit dem Permalink |
-| ein Datenbankfehler | [Datenbank nicht erreichbar](../../../../../eng-us/help/government/operations/incidents/database-unreachable.md) |
+| ein Datenbankfehler | [Datenbank nicht erreichbar](../../betrieb/vorfaelle/datenbank-nicht-erreichbar.md) |
 | eine fehlende Datei oder Berechtigung | [Datei- und Verzeichnisberechtigungen prüfen](datei-und-verzeichnisberechtigungen-pruefen.md) |
 | überhaupt nicht gefunden | die Meldung stammt vielleicht von einem anderen Server oder einer anderen Engine; suchen Sie dort, oder mit `--rotations` in älteren Logs |
 
@@ -55,14 +55,15 @@ Antworten Sie dem Bürger ohne technische Details; personenbezogene Daten aus de
 
 ## Verwandte Seiten
 - [Die Fehlerübersicht lesen](die-fehleruebersicht-lesen.md)
-- [Der Log-Viewer](../../../../../eng-us/help/government/operations/monitoring/the-log-viewer.md)
-- [Site ausgefallen](../../../../../eng-us/help/government/operations/incidents/site-down.md)
+- [Der Log-Viewer](../../betrieb/ueberwachung/der-log-viewer.md)
+- [Site ausgefallen](../../betrieb/vorfaelle/website-nicht-erreichbar.md)
 - [Wenn etwas schiefgeht (Hilfe)](../../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

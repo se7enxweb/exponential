@@ -142,5 +142,5 @@ den Dienst. Siehe [Velocity-Engines](velocity-engines.md).
 
 - [Velocity-Engines](velocity-engines.md)
 - [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md)
-- [Velocity-Pakete, Docker-Images und Binärdateien](../../../eng-us/features/6.0/velocity-packages-and-binaries.md)
-- [Velocity-Chronik: September 2026, 24. September](../../../eng-us/history/velocity/2026-09d.md)
+- [Velocity-Pakete, Docker-Images und Binärdateien](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)
+- [Velocity-Chronik: September 2026, 24. September](../../geschichte/velocity/2026-09d.md)

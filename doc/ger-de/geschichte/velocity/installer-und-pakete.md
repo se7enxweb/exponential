@@ -15,7 +15,7 @@ Das Repository enthält die Pakete, die der Setup-Assistent installiert: die Web
 | Änderung | Commit | Was sie für Sie behebt |
 |---|---|---|
 | Fataler Fehler in den Einstellungen des Installers während des Setup-Assistenten | `52ee7a6` | Der Installer berechnete den Port des nächsten Siteaccess als `setting + 1`; die Einstellung wird jetzt zuerst in einen Integer umgewandelt (`(int)$this->setting( 'access_type_value' ) + 1`), was den fatalen Fehler verhindert, den der Commit nennt. Gilt für `ezwebin_site` und `ezwebin_site_clean`. |
-| Unterstützung für SQLite im Paket-Installer | `5ce4b25` | Ist die Datenbank SQLite, liest der Installer das Schema einer Erweiterung aus `ezextension/<extension>/sql/sqlite/sqlite.sql`, sodass sich die Erweiterungen des Website-Pakets in eine SQLite-Datenbank installieren lassen (siehe [SQLite-Datenbank](../../../eng-us/features/6.0/sqlite-database.md)). Eine falsch geschriebene Fehlermeldung („shema“) wurde in derselben Änderung korrigiert. |
+| Unterstützung für SQLite im Paket-Installer | `5ce4b25` | Ist die Datenbank SQLite, liest der Installer das Schema einer Erweiterung aus `ezextension/<extension>/sql/sqlite/sqlite.sql`, sodass sich die Erweiterungen des Website-Pakets in eine SQLite-Datenbank installieren lassen (siehe [SQLite-Datenbank](../../funktionen/6.0/sqlite-datenbank.md)). Eine falsch geschriebene Fehlermeldung („shema“) wurde in derselben Änderung korrigiert. |
 | `eZArchive` und MySQL 8 | `fc49287` | Die Archivklasse verwendet einen Konstruktor im Stil von PHP 5, und das SQL der Erweiterung läuft auf MySQL 8. |
 | Blog-Templates auf MySQL 8 | `76897e9` | Templates für Blog-Inhalte werden korrekt angezeigt; die Composer-Konfiguration wurde aktualisiert. |
 | Paketname in Composer | `afa7b90`, `0646383` | Vendor und Paketname auf das Paket von se7enxweb umgestellt; das Lizenzfeld auf einen gültigen Wert gesetzt. |
@@ -29,7 +29,7 @@ Das Repository enthält die Pakete, die der Setup-Assistent installiert: die Web
 
 `98c5c51` entfernt selbstschließende Schrägstriche im Stil von XHTML und veraltete Attribute `type` aus 56 Template-Dateien (etwa 2.670 geänderte Zeilen). Die Seitenausgabe ändert sich von `<input ... />` zu `<input ...>` und von `<script type="text/javascript">` zu `<script>`.
 
-**Prüfen Sie vor dem Upgrade einer angepassten Website:** Ein Stylesheet oder Test, der genau das alte Markup erwartet (zum Beispiel einer, der nach `<script type="text/javascript">` sucht), braucht einen Blick; Browser sind nicht betroffen. Diese Änderung steht auch unter [Upgrade-Hinweise zur Engine von Velocity](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md#installer-templates-html5).
+**Prüfen Sie vor dem Upgrade einer angepassten Website:** Ein Stylesheet oder Test, der genau das alte Markup erwartet (zum Beispiel einer, der nach `<script type="text/javascript">` sucht), braucht einen Blick; Browser sind nicht betroffen. Diese Änderung steht auch unter [Upgrade-Hinweise zur Engine von Velocity](../../bc/6.0/velocity-engine-upgrade-hinweise.md#templates-der-installationsprogramme-html5).
 
 ## exponential-legacy-installer
 
@@ -71,5 +71,5 @@ Aus dem Änderungsverzeichnis erzeugt: 17 Änderungen. „Einordnung“ ist die 
 ## Verwandte Seiten
 
 - Velocity-Chronik: [Übersicht](README.md).
-- Betreiben: [Velocity, der Server mit dauerhaft laufenden Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) und die Anleitung [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md).
-- Installer: [Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md) und [Kickstarter](../../../eng-us/features/6.0/kickstarter-cli.md).
+- Betreiben: [Velocity, der Server mit dauerhaft laufenden Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und die Anleitung [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md).
+- Installer: [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md) und [Kickstarter](../../funktionen/6.0/kickstarter-cli.md).

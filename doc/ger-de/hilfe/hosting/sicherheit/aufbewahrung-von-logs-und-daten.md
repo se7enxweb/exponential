@@ -54,7 +54,7 @@ leeren Sie danach den INI-Cache.
 
 Wenn ein Log `LogFileMaxSize` (2 MB) überschreitet, rotiert der nächste Schreibvorgang es, und die Archive über `LogFileRotateCount` (3)
 hinaus werden entfernt. `LogFileMaxAge` (`0`, keine Grenze) fügt eine Altersgrenze hinzu, die eine Bereinigung anwendet;
-`LogFileCompress=enabled` komprimiert Archive ab `.2` ([Log-Rotation](../../../../eng-us/features/6.0/log-rotation.md)). Pro Log, nach seinem
+`LogFileCompress=enabled` komprimiert Archive ab `.2` ([Log-Rotation](../../../funktionen/6.0/log-rotation.md)). Pro Log, nach seinem
 Schlüssel:
 
 ```ini
@@ -81,7 +81,7 @@ Prüfprotokoll festgehalten.
 
 Diese werden mit eigenen Grenzen in `logviewer.ini [RotationSettings]` ausgeliefert (Schlüssel `404`, `security`, `csp`: `MaxSize`
 10485760, `Keep` 5, `Compress` enabled, `MaxAgeDays` 30, 90 und 30). Um `security.log` länger zu behalten
-([Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md#the-log-viewer-rotation-and-the-error-digest)):
+([Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md#der-log-viewer-die-rotation-und-die-fehlerübersicht)):
 
 ```ini
 # settings/override/logviewer.ini.append.php
@@ -101,7 +101,7 @@ Altersgrenze; entfernen Sie alte mit Ihrem eigenen geplanten Job, nach dem Zeitr
 
 Pro Kanal in `[AuditChannel_<channel>]`: `LiveDays` (unkomprimiert) und `ArchiveDays` (als Archive behalten). Die mitgelieferten Blöcke
 der Kanäle setzen beide Werte; setzen Sie sie also pro Kanal, nicht in `[AuditRotationSettings]`
-([4.3 Aufbewahrung](../../../../eng-us/bc/6.0/audit.md#43-retention)):
+([4.3 Aufbewahrung](../../../bc/6.0/audit.md#43-aufbewahrung)):
 
 ```ini
 # settings/override/audit.ini.append.php: one year of archives instead of two
@@ -122,8 +122,8 @@ ArchiveDays=365
 - Die Aufbewahrung entfernt nie einen Signaturschlüssel: `exp:audit purge` nennt die Schlüssel, die aufbewahrte Archive noch brauchen.
   Behalten Sie jeden `SigningKey[]` so lange wie die Archive, die er signiert hat.
 - Lange Aufbewahrung (zum Beispiel zehn Jahre auf einmal beschreibbarem Speicher) ist die
-  [Konfiguration für Compliance](../../../../eng-us/bc/6.0/audit.md#66-compliance-long-retention); minimale Aufbewahrung mit gehashten Feldern ist
-  die [Konfiguration für strengen Datenschutz](../../../../eng-us/bc/6.0/audit.md#64-strict-privacy).
+  [Konfiguration für Compliance](../../../bc/6.0/audit.md#66-compliance-lange-aufbewahrung); minimale Aufbewahrung mit gehashten Feldern ist
+  die [Konfiguration für strengen Datenschutz](../../../bc/6.0/audit.md#64-strenger-datenschutz).
 - Einträge, die eine Senke weiterleitet, behält das empfangende System nach eigenen Regeln.
 
 ## Einwilligung und Unterdrückung bei Mails
@@ -147,7 +147,7 @@ Person sie vorher eingeschaltet hatte.
   bisher den ganzen Papierkorb leert; eine Zahl behält Elemente so viele Tage (bis zu 36500). `bin/php/trashpurge.php` nimmt
   `--trashed-days=<days>`.
 - **Inhaltsjobs**: Abgeschlossene Jobs werden nach `[ContentJobSettings] KeepDays=30` entfernt (`0` behält sie).
-- **Sitzungen**: `SessionTimeout` (259200 Sekunden) setzt `session.gc_maxlifetime` beim eigenen Sitzungs-Handler von PHP;
+- **Sitzungen**: `SessionTimeout` (259200 Sekunden) setzt `session.gc_maxlifetime` beim eigenen Session-Handler von PHP;
   `bin/php/ezsessiongc.php` entfernt auf Anforderung abgelaufene Sitzungen nach `SessionTimeout`.
 - **Versionen und Entwürfe** von Inhalten folgen den Inhaltseinstellungen der Website; sie sind Inhalte, und ihre Aufbewahrung ist die
   redaktionelle Entscheidung des Kunden.
@@ -178,5 +178,13 @@ Person sie vorher eingeschaltet hatte.
 - [Compliance und DSGVO](compliance-und-dsgvo.md)
 - [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md)
 - [Prüfprotokoll](pruefprotokoll.md)
-- [Log-Rotation und Bereinigung](../../../../eng-us/features/6.0/log-rotation.md)
+- [Log-Rotation und Bereinigung](../../../funktionen/6.0/log-rotation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

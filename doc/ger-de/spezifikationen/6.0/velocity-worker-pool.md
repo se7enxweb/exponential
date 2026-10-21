@@ -82,7 +82,7 @@ Der Tod eines Workers kostet nie eine Anfrage, die hätte bedient werden können
 | `debug` | `false` | Ob Meldung, Datei, Zeile und Stacktrace eines nicht abgefangenen Fehlers in der Antwort gezeigt werden |
 | `Q.compat.statTtl` | `0` | Sekunden (höchstens 10), die ein Worker Dateiinformationen über Anfragen hinweg behält |
 
-Aus Exponential heraus wird der Pool in `settings/velocity.ini` eingestellt (`[ServerSettings]`: `Workers`, `SpareWorkers`, `Instances`, `Zygote`); siehe [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md).
+Aus Exponential heraus wird der Pool in `settings/velocity.ini` eingestellt (`[ServerSettings]`: `Workers`, `SpareWorkers`, `Instances`, `Zygote`); siehe [Velocity-Engines](../../bc/6.0/velocity-engines.md).
 
 ## Wann ein Worker ersetzt wird
 
@@ -150,7 +150,7 @@ Von der Schicht garantiertes Verhalten (jeweils in einer genannten Release behob
 - Dateien, die nach dem Start neu geschrieben werden, werden ohne Neustart übernommen (der Wrapper macht die Kompilierung eines Skripts ungültig, wenn sich die mtime ändert; eingebundene Dateien werden einmal gelesen und behalten, höchstens 4 MB pro Prozess, solange ein echter stat-Aufruf in derselben Anfrage noch übereinstimmt).
 - `compress.zlib://`, `gzopen()` und `copy()` in eine oder aus einer `.gz`-Datei funktionieren über die Dateischicht, ebenso Stream-Optionen (0.0.4.38).
 - Multipart-Felder mit verschachtelten Namen erreichen `$_POST` so, wie PHP sie über `parse_str()` aufbaut; `$_FILES` hat den Aufbau von PHP (0.0.4.37).
-- `session.save_path` wird in der PHP-Form `[N;[MODE;]]/path` gelesen, und Sessions werden mit dessen Modus angelegt (0.0.4.31); jeder Session-Wert wird ohne Warnung aus seinen eigenen Bytes dekodiert (0.0.4.42).
+- `session.save_path` wird in der PHP-Form `[N;[MODE;]]/path` gelesen, und Sitzungen werden mit dessen Modus angelegt (0.0.4.31); jeder Sitzungswert wird ohne Warnung aus seinen eigenen Bytes dekodiert (0.0.4.42).
 - `REQUEST_TIME` und `REQUEST_TIME_FLOAT` werden pro Anfrage gesetzt (0.0.4.42).
 - `Q.compat.statTtl` behält, was ein Worker über Dateien weiß (ob ein Pfad existiert, mtime, Größe), über Anfragen hinweg bis zu dieser Anzahl von Sekunden (wie `opcache.revalidate_freq`); gemessen wurden bei einer Sekunde 13 Prozent weniger CPU pro gerenderter Seite. Die eigenen Schreibvorgänge des Workers, `clearstatcache()` und ein Programm, das er ausführt, werden in jedem Fall sofort gesehen.
 
@@ -167,7 +167,7 @@ Von der Schicht garantiertes Verhalten (jeweils in einer genannten Release behob
 
 ## Siehe auch
 
-- Funktionen: [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../../eng-us/features/6.0/velocity-scheduler.md), [Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md)
+- Funktionen: [Velocity-Webserver](../../funktionen/6.0/velocity-webserver.md), [Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md), [Scheduler](../../funktionen/6.0/velocity-zeitplaner.md), [Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md)
 - Spezifikationen: [Engine-Einstellungen](velocity-engine-einstellungen.md) (Event-Loop, Vorwärm-Cache beim Start), [HTTP/2 und Sicherheit](velocity-http2-und-sicherheit.md)
-- Upgrade und Betrieb: [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) (`[ServerSettings]` in `settings/velocity.ini`), [Upgrade-Hinweise zur Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
-- Geschichte: [August 2026](../../../eng-us/history/velocity/2026-08.md) (Octane), [7. bis 21. September](../../../eng-us/history/velocity/2026-09a.md) (Kompatibilitätsschicht), [23. September](../../../eng-us/history/velocity/2026-09c.md) (Speicherkorrekturen), [24. September](../../../eng-us/history/velocity/2026-09d.md), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (Zygote, Worker ohne root); [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)
+- Upgrade und Betrieb: [Velocity-Engines](../../bc/6.0/velocity-engines.md) (`[ServerSettings]` in `settings/velocity.ini`), [Upgrade-Hinweise zur Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md)
+- Geschichte: [August 2026](../../geschichte/velocity/2026-08.md) (Octane), [7. bis 21. September](../../geschichte/velocity/2026-09a.md) (Kompatibilitätsschicht), [23. September](../../geschichte/velocity/2026-09c.md) (Speicherkorrekturen), [24. September](../../geschichte/velocity/2026-09d.md), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (Zygote, Worker ohne root); [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)

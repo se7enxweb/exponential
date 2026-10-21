@@ -10,9 +10,9 @@ type: help
 # FAQ: Releases und Aktualisierungen
 
 Diese Seite beantwortet die Fragen öffentlicher Stellen zu Releases und Aktualisierungen von Exponential. Die Antworten
-stammen aus `SECURITY.md`, [Versionsverwaltung und Releases](../../../../eng-us/standards/source-control-and-releases.md) und den
+stammen aus `SECURITY.md`, [Versionsverwaltung und Releases](../../../standards/versionsverwaltung-und-releases.md) und den
 Anleitungen zum Aktualisieren; der Teil zum Lebenszyklus im Bereich Beschaffung erklärt sie für Verträge
-([Der Produktlebenszyklus](../../../../eng-us/help/government/procurement/lifecycle/README.md)).
+([Der Produktlebenszyklus](../beschaffung/lebenszyklus/README.md)).
 
 ## Inhalt
 
@@ -27,13 +27,13 @@ Anleitungen zum Aktualisieren; der Teil zum Lebenszyklus im Bereich Beschaffung 
 ## Welche Version ist aktuell?
 
 Die Versionslinie 6.0. Die veröffentlichten Tags des Kernels reichen von `v6.0.0` bis `v6.0.14`; 6.0.15 ist auf `main` in
-Entwicklung ([Versionsverwaltung und Releases](../../../../eng-us/standards/source-control-and-releases.md#the-kernels-versions)).
+Entwicklung ([Versionsverwaltung und Releases](../../../standards/versionsverwaltung-und-releases.md#die-versionen-des-kernels)).
 **Setup > Systeminformationen** zeigt, was Ihre Website ausführt.
 
 ## Welche Versionen werden unterstützt?
 
 6.0.x; Korrekturen erscheinen als nächstes 6.0.x. 5.x, 4.x, 3.x und ältere werden nicht unterstützt (`SECURITY.md`;
-[Unterstützte Versionen](../../../../eng-us/help/government/procurement/lifecycle/supported-versions.md)).
+[Unterstützte Versionen](../beschaffung/lebenszyklus/unterstuetzte-versionen.md)).
 
 ## Wie oft gibt es Releases?
 
@@ -44,7 +44,7 @@ Aktualisierungen ein.
 ## Kann sich eine veröffentlichte Version ändern?
 
 Nein. Ein veröffentlichter Tag wird nie geändert; eine Korrektur kommt als nächste Version (`SECURITY.md`;
-[Release-Politik und Versionsnummern](../../../../eng-us/help/government/procurement/lifecycle/release-policy-and-version-numbers.md)).
+[Release-Politik und Versionsnummern](../beschaffung/lebenszyklus/release-richtlinie-und-versionsnummern.md)).
 
 ## Wie funktioniert eine Aktualisierung?
 
@@ -74,8 +74,9 @@ PHP 8.0 bis 8.5, auch mit Velocity (ab seinem Release 0.0.4.54); PHP 7.4 nur bis
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

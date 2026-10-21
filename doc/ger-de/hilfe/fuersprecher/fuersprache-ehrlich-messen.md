@@ -26,7 +26,7 @@ und schwer zu beweisen“. Messen Sie, was Sie beobachten können, erfinden Sie 
 | Dieselbe Frage kommt nicht mehr, nachdem Sie eine Hilfeseite verbessert haben | Die Foren, der Chat |
 | Ihre Pull Requests wurden übernommen | GitHub |
 | Neue, denen Sie geholfen haben, haben einen ersten Beitrag geleistet | GitHub (öffentlich) |
-| Übersetzungsfortschritt Ihrer Sprache | `ezchecktranslation.php` ([Sprachen, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)) |
+| Übersetzungsfortschritt Ihrer Sprache | `ezchecktranslation.php` ([Sprachen, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)) |
 | Issues, die Sie bestätigt haben, wurden behoben | GitHub |
 | Menschen kommen wieder zu Ihren Treffen | Ihre eigene Zählung, ohne Namen |
 
@@ -56,3 +56,11 @@ Next quarter:   <1-3 goals>
 - [Ein 90-Tage-Plan für Fürsprecher](ein-90-tage-plan.md)
 - [Ehrlichkeit und Genauigkeit](ehrlichkeit-und-genauigkeit.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

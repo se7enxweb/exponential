@@ -31,8 +31,8 @@ Fallbearbeitung. Die Website erklärt und verweist; das Verfahren findet andersw
 | Sagt, was danach geschieht und wie lange es dauert | Verfolgt den Fall, versendet Bescheide |
 
 Exponential hat einen Shop und Zahlungsschnittstellen für den Verkauf von Produkten
-([Überblick über den Shop](../../../../../eng-us/help/creators/website-creators/shop-overview.md),
-[Zahlungsschnittstellen](../../../../../eng-us/help/creators/website-creators/payment-gateways.md)); öffentliche Gebühren und Bußgelder
+([Überblick über den Shop](../../../ersteller/website-ersteller/shop-ueberblick.md),
+[Zahlungsschnittstellen](../../../ersteller/website-ersteller/payment-gateways.md)); öffentliche Gebühren und Bußgelder
 werden meist von eigenen staatlichen Zahlungsdiensten mit eigener Buchhaltung und eigenem Audit eingenommen und sind
 besser verlinkt als nachgebaut.
 
@@ -47,7 +47,7 @@ besser verlinkt als nachgebaut.
 | Bieten Sie die Alternative an (Telefon, Dienststelle) für Menschen, die das Online-System nicht nutzen können | Inklusion |
 
 Ein Attribut `ezurl` speichert die Adresse in der URL-Tabelle, die alle Links teilen, und die liest die Linkprüfung
-([Prüfungen von Links und Inhalten](../../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)).
+([Prüfungen von Links und Inhalten](../../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)).
 
 ## Links funktionsfähig halten
 
@@ -58,13 +58,13 @@ Verfahrenssysteme ändern ihre Adressen öfter, als sich Leistungsseiten ändern
 | Linkprüfung | der Cronjob `linkcheck.php` (Teil infrequent) testet externe Links; **Setup > URL-Verwaltung** (`/url/list`) zeigt die Ergebnisse |
 | Ein URL-Objekt je Adresse | alle Seiten, die dieselbe Adresse verwenden, teilen es; einmal korrigiert, sind alle Seiten korrigiert |
 | Ein Kontakt zu den Verantwortlichen der Systeme | sie sagen Ihnen Bescheid, bevor sich eine Adresse ändert |
-| Eine Weiterleitung auf Ihrer Seite | eine kurze Adresse auf Ihrer eigenen Domain (ein URL-Platzhalter oder globaler Alias auf die externe Adresse), die Sie umleiten können ([Weiterleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)) |
+| Eine Weiterleitung auf Ihrer Seite | eine kurze Adresse auf Ihrer eigenen Domain (ein URL-Platzhalter oder globaler Alias auf die externe Adresse), die Sie umleiten können ([Weiterleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)) |
 
 ## Wann ein einfaches Formular genügt
 
 Der Information Collector passt zu kurzen Anfragen mit geringem Risiko: eine Frage, die Meldung einer defekten
 Straßenlaterne, eine Rückmeldung. Er speichert Einsendungen unter **Setup > Gesammelte Informationen** und kann sie per
-Mail senden ([Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+Mail senden ([Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 
 | Geeignet für den Information Collector | Nicht geeignet |
 |---|---|
@@ -75,13 +75,13 @@ Mail senden ([Formulare mit dem Information Collector](../../../../../eng-us/hel
 | Kleine Anhänge, selten | viele Dokumente je Antrag |
 
 Formulare sind durch CSRF-Formular-Token geschützt; CAPTCHA-Erweiterungen sind Drittanbieter
-([Spamschutz für Formulare](../../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+([Spamschutz für Formulare](../../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 
 ## Anmeldung über Systeme hinweg
 
 Menschen melden sich ungern zweimal an. Die Login-Handler von Exponential lassen sich erweitern, und
 `sevenx_authentication_2fa` enthält Gerüste für OAuth-Handler zum Social Login
-([sevenx_authentication_2fa](../../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md)); die Anbindung an einen
+([sevenx_authentication_2fa](../../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md)); die Anbindung an einen
 staatlichen Identitätsdienst ist eine Entwicklungsaufgabe, keine Einstellung. Für die meisten Leistungskataloge brauchen
 die öffentlichen Seiten überhaupt keine Anmeldung, und das Verfahrenssystem kümmert sich um die Identität.
 
@@ -89,12 +89,13 @@ die öffentlichen Seiten überhaupt keine Anmeldung, und das Verfahrenssystem k�
 
 - [Einen Leistungskatalog aufbauen](README.md)
 - [Die Leistungsseite und einfache Sprache](die-leistungsseite-und-einfache-sprache.md)
-- [Sichere Weiterleitungen](../../../../../eng-us/features/6.0/safe-redirects.md)
+- [Sichere Weiterleitungen](../../../../funktionen/6.0/sichere-weiterleitungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

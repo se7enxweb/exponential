@@ -24,7 +24,7 @@ Bildschirmfotos, jede mit anderen Bedingungen. Im Zweifel machen Sie Ihre eigene
 
 | Quelle | Bedingungen | Geeignet für |
 |---|---|---|
-| Die Bilder dieser Hilfe (`doc/eng-us/help/images/`) | Teil der Dokumentation in `doc/`, mit ihr unter der GNU FDL 1.3 oder später veröffentlicht ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)) | Artikel und Videos, die einen Lizenzhinweis und einen Bildnachweis tragen können |
+| Die Bilder dieser Hilfe (`doc/eng-us/help/images/`) | Teil der Dokumentation in `doc/`, mit ihr unter der GNU FDL 1.3 oder später veröffentlicht ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)) | Artikel und Videos, die einen Lizenzhinweis und einen Bildnachweis tragen können |
 | Galerien auf exponential.earth | Auf der Seite ist keine Lizenz angegeben | Zum Ansehen; fragen Sie vor einer Wiederverwendung |
 | Der Ordner `screenshots/` des Pressekits | Unterliegt den Richtlinien des Kits („editorial, review, and partnership coverage“, also redaktionelle Berichte, Rezensionen und Berichte über Partnerschaften); in v1.0.0 nennt der Ordner nur geplante Dateien | Redaktionelle Nutzung, sobald die Dateien da sind |
 | Ihre eigenen Bildschirmfotos einer Installation, die Sie betreiben | Die Oberfläche ist GPL-Software; der Inhalt auf dem Bildschirm gehört Ihnen oder Ihrer Demo | Alles, was Sie schreiben, wenn der Bildschirm keine Daten anderer zeigt |
@@ -82,8 +82,8 @@ For your own:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

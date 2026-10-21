@@ -28,7 +28,7 @@ NewObjectsOnly=false
 
 4. Leeren Sie die Caches und fügen Sie dann der Klasse ein Attribut **hCaptcha** hinzu.
 
-Die Einstellungen bedeuten dasselbe wie bei [recaptcha](recaptcha.md#set-it-up): Schlüssel pro Host als Arrays,
+Die Einstellungen bedeuten dasselbe wie bei [recaptcha](recaptcha.md#einrichten): Schlüssel pro Host als Arrays,
 `Theme`, `OverrideLang` und `NewObjectsOnly`.
 
 ## Einstellungen
@@ -52,7 +52,7 @@ grep -n hcaptcha.com extension/hcaptcha/classes/hcaptchalib.php
 ## Grenze: Die Formular-Überschreibungen sind die von recaptcha
 
 `design/standard/override/templates/full/feedback_form.tpl` und `request_form.tpl` sind dieselben Dateien wie in
-[recaptcha](recaptcha.md#the-v3-form-overrides). Sie lesen `ezini( 'Keys', 'PublicKey', 'recaptcha.ini' )` und laden
+[recaptcha](recaptcha.md#die-formular-überschreibungen-für-v3). Sie lesen `ezini( 'Keys', 'PublicKey', 'recaptcha.ini' )` und laden
 `recaptcha/api.js` von Google, **nicht** das von hCaptcha. Sind beide Extensions aktiv und verwenden Sie diese
 Formularklassen, verwenden die Formulare die Einstellungen von reCAPTCHA; der Datentyp hCaptcha hat sein eigenes
 Template. Prüfen:
@@ -83,8 +83,9 @@ sie in Ihrer eigenen Extension.
 - Monate: [2024-08](../../../geschichte/erweiterungen/monate/2024-08.md), [2026-10](../../../geschichte/erweiterungen/monate/2026-10.md) (alle Extensions)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

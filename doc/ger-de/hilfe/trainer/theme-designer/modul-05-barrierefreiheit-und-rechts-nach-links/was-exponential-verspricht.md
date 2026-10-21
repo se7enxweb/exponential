@@ -4,7 +4,7 @@ audience: trainer, designer, developer
 category: training
 order: 51
 summary: Die Teilnehmenden lesen den Stand der Barrierefreiheit von Exponential ehrlich (WCAG 2.2 AA teilweise erfüllt für admin4, öffentliche Designs nicht geprüft), trennen den Anteil des Produkts von dem des Themes und der Redakteure und beantworten die Frage einer Kundin oder eines Kunden, ohne zu viel zu versprechen. 45 Minuten.
-keywords: theme-design, barrierefreiheit, WCAG 2.2, AA, WAI-ARIA, EN 301 549, Section 508, VPAT, teilweise erfüllt, nicht verifiziert, öffentliche designs nicht geprüft, verantwortung des website-bauers, admin4, erklärung zur barrierefreiheit, theme design, accessibility, partly complies, unverified, accessibility statement
+keywords: theme-design, barrierefreiheit, WCAG 2.2, AA, WAI-ARIA, EN 301 549, Section 508, VPAT, teilweise erfüllt, nicht geprüft, öffentliche designs nicht geprüft, verantwortung des website-bauers, admin4, erklärung zur barrierefreiheit, theme design, accessibility, partly complies, unverified, accessibility statement
 type: help
 ---
 # Lektion 5.1: Barrierefreiheit: was Exponential leistet und was Ihr Theme leisten muss
@@ -39,8 +39,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) und
-[Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md).
+Quellen: [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) und
+[Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md).
 
 1. **Die Übersichtstabelle** (8 Minuten). Zeigen Sie sie am Projektor:
 
@@ -48,8 +48,8 @@ Quellen: [Standards zur Barrierefreiheit](../../../../../eng-us/standards/access
    |---|---|
    | WCAG 2.2, Stufe AA | Teilweise erfüllt |
    | WAI-ARIA 1.2 und die APG | Teilweise erfüllt |
-   | EN 301 549 v3.2.1 | Nicht verifiziert |
-   | Section 508 (Revised 508 Standards) | Nicht verifiziert |
+   | EN 301 549 v3.2.1 | Nicht geprüft |
+   | Section 508 (Revised 508 Standards) | Nicht geprüft |
 
    „Teilweise erfüllt“ bedeutet: Die Administration in admin4 und admin4l ist nach Kriterien der WCAG 2.2 AA gebaut
    und wird mit Regressionstests dagegen geprüft; das ist keine Konformitätsaussage. Es gibt keine vollständige Prüfung
@@ -88,13 +88,13 @@ erhalten.
 
 ## Praktische Übung
 
-Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
+Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md).
 
 1. Lesen Sie die Tabelle „Zusammenfassung“ und schreiben Sie die vier Einstufungen auf eine Karte.
 2. Wählen Sie im Abschnitt zu WCAG drei Zeilen der Tabelle „Wie Exponential die Kriterien erfüllt“ und notieren Sie zu
    jeder den Test, der sie absichert.
 3. Lesen Sie „Bekannte Lücken“ und listen Sie die Lücken auf, die ein öffentliches Theme betreffen.
-4. Öffnen Sie [Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+4. Öffnen Sie [Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
    und übertragen Sie die Tabelle „Was die Template-Autorin oder der Template-Autor bestimmt“ auf Ihr Blatt mit drei
    Spalten (Produkt, Theme, Redakteure).
 5. Ergänzen Sie die Punkte aus „Was Redakteure bestimmen“ in der Spalte der Redakteure.
@@ -105,8 +105,8 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 
 ## Erwartetes Ergebnis
 
-- Die Karte zeigt: WCAG 2.2 AA teilweise erfüllt, WAI-ARIA 1.2 teilweise erfüllt, EN 301 549 nicht verifiziert,
-  Section 508 nicht verifiziert.
+- Die Karte zeigt: WCAG 2.2 AA teilweise erfüllt, WAI-ARIA 1.2 teilweise erfüllt, EN 301 549 nicht geprüft,
+  Section 508 nicht geprüft.
 - Das Blatt mit drei Spalten ordnet die Punkte der Template-Autoren der Spalte des Themes zu.
 - Die Antworten sagen, wogegen die Administration getestet wird, dass die öffentliche Website von Theme und Inhalten
   abhängt, dass es keinen Konformitätsbericht gibt und was das Theme leisten wird. Keine Antwort behauptet volle
@@ -125,7 +125,7 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 <details>
 <summary>Antworten</summary>
 
-1. **B.** ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#summary))
+1. **B.** ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#zusammenfassung))
 2. Die Administrationsdesigns admin4 und admin4l.
 3. Die Website-Bauer: Öffentliche Designs sind nicht geprüft, und ihre Barrierefreiheit hängt vom Theme und von den
    Inhalten ab.
@@ -137,11 +137,11 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 
 ## Weiterführende Literatur
 
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md): die Aussage des Projekts, mit Belegen und
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md): die Aussage des Projekts, mit Belegen und
   Lücken.
-- [Barrierefreiheit für Website-Bauer](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md): der
+- [Barrierefreiheit für Website-Bauer](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md): der
   Anteil des Themes und der Redakteure.
-- [Prüfung der Barrierefreiheit bei jedem Release](../../../../../eng-us/help/designers/lifecycle/accessibility-audit-per-release.md): ein
+- [Prüfung der Barrierefreiheit bei jedem Release](../../../designer/lebenszyklus/barrierefreiheitspruefung-pro-release.md): ein
   Theme über seine ganze Lebensdauer barrierefrei halten.
 
 ## Verwandte Seiten
@@ -152,9 +152,9 @@ Zuerst einzeln, dann in Paaren. Verwenden Sie [Standards zur Barrierefreiheit](.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

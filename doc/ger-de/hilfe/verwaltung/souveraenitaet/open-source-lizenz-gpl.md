@@ -64,8 +64,8 @@ manchmal den einen oder den anderen Begriff; beide treffen zu.
 
 - `LICENSE`, `LICENSE.md` und `COPYRIGHT.md` im Wurzelverzeichnis des Repositorys; `"license"` in `composer.json`.
 - In der Administration: Die Info-Seite listet jede Erweiterung mit Version und Lizenz auf
-  ([Info- und Paketseiten](../../../../eng-us/features/6.0/about-and-package-pages.md)).
-- Die Lizenzliste des Paketsystems ([Paketlizenzen und Versionen](../../../../eng-us/features/6.0/package-licenses-and-versions.md)).
+  ([Info- und Paketseiten](../../../funktionen/6.0/info-und-paketseiten.md)).
+- Die Lizenzliste des Paketsystems ([Paketlizenzen und Versionen](../../../funktionen/6.0/paketlizenzen-und-versionen.md)).
 
 ## Verwandte Seiten
 

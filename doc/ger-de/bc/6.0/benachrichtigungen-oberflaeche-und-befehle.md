@@ -4,7 +4,7 @@ Was sich am Verhalten des Benachrichtigungssystems geändert hat, was Sie beim U
 behalten werden, die der Transport ablehnt. Lesen Sie die Seite, wenn Sie Exponential 6.0.15 oder neuer betreiben,
 Templates der Benachrichtigungen überschrieben haben oder die Klassen der Benachrichtigungen aus Ihrem eigenen Code
 aufrufen. Die Seiten, die das System beschreiben, wie es jetzt ist:
-[die Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md),
+[die Anleitung für Benutzer](../../funktionen/6.0/benachrichtigungen.md),
 [die Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md),
 [die Spezifikation](../../spezifikationen/6.0/benachrichtigungen.md).
 
@@ -182,6 +182,6 @@ läuft.
 
 ## Verwandte Seiten
 
-- [Die Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md), [die Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md), [die Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md)
+- [Die Anleitung für Benutzer](../../funktionen/6.0/benachrichtigungen.md), [die Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md), [die Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md)
 - [Die Spezifikation](../../spezifikationen/6.0/benachrichtigungen.md), [die INI-Referenz](../../spezifikationen/6.0/benachrichtigungen-ini.md), [die Befehlsreferenz](../../spezifikationen/6.0/benachrichtigungen-cli.md)
 - [Befehle, Cronjob-Teile und Views als Klassen](cli-cronjob-und-view-abstraktionen.md)

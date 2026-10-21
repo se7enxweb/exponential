@@ -1,8 +1,8 @@
 # xrowextract (Export und Import): Chronik
 
-`xrowextract` begann 2008 als kleine Seite für den CSV-Export und änderte sich bis zum Sommer 2026 selten: ein Wechsel des Vendors im Februar 2024, Korrekturen für PHP 8 im Jahr 2024 (Releases 2.3.1 bis 2.4.2). Am 29. September 2026 wurde es an einem Tag mit 130 zusammengeführten Änderungen zu einem Werkzeug für den Datenaustausch umgebaut: Vorschauen, JSON und XML, Archive ganzer Websites, Filter, Voreinstellungen, Hintergrundjobs, ein Importer für CSV, JSON und XML in jeder Größe, Inhaltspakete, geplante Läufe mit Auslieferung über SFTP, S3 und WebDAV und ein Spaltenmanifest. Am nächsten Tag wurde es gehärtet (PHPStan Level 8, eine Release-Prüfung, Integrationstests, Korrekturen für Daten, die nicht UTF-8 sind, und für fehlerhafte Eingaben), und am 2. Oktober wurden seine Befehle zu Klassen. Was Sie damit tun können, steht auf der [Funktionsseite](../../../eng-us/features/6.0/extensions/xrowextract.md); die Referenz ist die [Spezifikation](../../spezifikationen/6.0/xrowextract.md).
+`xrowextract` begann 2008 als kleine Seite für den CSV-Export und änderte sich bis zum Sommer 2026 selten: ein Wechsel des Vendors im Februar 2024, Korrekturen für PHP 8 im Jahr 2024 (Releases 2.3.1 bis 2.4.2). Am 29. September 2026 wurde es an einem Tag mit 130 zusammengeführten Änderungen zu einem Werkzeug für den Datenaustausch umgebaut: Vorschauen, JSON und XML, Archive ganzer Websites, Filter, Voreinstellungen, Hintergrundjobs, ein Importer für CSV, JSON und XML in jeder Größe, Inhaltspakete, geplante Läufe mit Auslieferung über SFTP, S3 und WebDAV und ein Spaltenmanifest. Am nächsten Tag wurde es gehärtet (PHPStan Level 8, eine Release-Prüfung, Integrationstests, Korrekturen für Daten, die nicht UTF-8 sind, und für fehlerhafte Eingaben), und am 2. Oktober wurden seine Befehle zu Klassen. Was Sie damit tun können, steht auf der [Funktionsseite](../../funktionen/6.0/erweiterungen/xrowextract.md); die Referenz ist die [Spezifikation](../../spezifikationen/6.0/xrowextract.md).
 
-Diese Seite führt **jede der 245 Änderungen** des Repositorys `xrowextract` zwischen 2024-01-28 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/xrowextract.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/xrowextract.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/xrowextract.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 245 Änderungen** des Repositorys `xrowextract` zwischen 2024-01-28 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/xrowextract.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/xrowextract.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/xrowextract.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -328,8 +328,8 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/xrowextract.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/xrowextract.md)
 - [Release Notes](../../../changelogs/extensions/xrowextract.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/xrowextract.md)
 - [Spezifikation](../../spezifikationen/6.0/xrowextract.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

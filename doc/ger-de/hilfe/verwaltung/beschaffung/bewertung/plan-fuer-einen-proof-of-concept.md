@@ -13,7 +13,7 @@ Diese Seite richtet sich an die technische Leitung eines Bewertungsgremiums, die
 Ausschreibung in einer Umgebung testen möchte, die die öffentliche Stelle selbst kontrolliert. Weil die Software frei
 ist und sich mit einem Befehl auf SQLite installieren lässt, braucht ein Proof of Concept keine Lizenz, keinen
 Datenbankserver und keinen Vertrag. Die Schritte stammen aus
-[Installation mit einem Befehl](../../../../../eng-us/features/6.0/install-in-one-command.md) und
+[Installation mit einem Befehl](../../../../funktionen/6.0/installation-mit-einem-befehl.md) und
 [Erste Schritte](../../../../anleitungen/erste-schritte.md).
 
 ## Inhalt
@@ -64,7 +64,7 @@ Engine `php` lauscht standardmäßig auf Port 8087
 
 Nennt Ihr Hosting-Plan eine andere Datenbank, wiederholen Sie die Installation mit `--db=pgsql`, `--db=mysql` oder einer
 anderen Engine aus der Tabelle in
-[Installation mit einem Befehl](../../../../../eng-us/features/6.0/install-in-one-command.md#choose-a-database) und übergeben das
+[Installation mit einem Befehl](../../../../funktionen/6.0/installation-mit-einem-befehl.md#eine-datenbank-wählen) und übergeben das
 Passwort über die Umgebungsvariable `EXP_INSTALL_DB_PASSWORD`.
 
 ## Testfälle
@@ -74,15 +74,15 @@ Passwort über die Umgebungsvariable `EXP_INSTALL_DB_PASSWORD`.
 | T1 | Eine Seite anlegen, in der Vorschau ansehen, veröffentlichen | veröffentlichte Version auf der Website sichtbar | [Inhaltsmodell und Bearbeitung](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | T2 | Erneut bearbeiten, Versionen vergleichen, wiederherstellen | ein neuer Entwurf aus der älteren Version, dann veröffentlicht | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md) |
 | T3 | Eine auf eine Sektion eingeschränkte Rolle anlegen; als Testredaktion anmelden | die Redaktion sieht und bearbeitet nur diese Sektion | [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
-| T4 | Das Audit-Protokoll zeigt T1 bis T3 | Ereignisse in der Audit-Konsole aufgelistet | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| T4 | Das Audit-Protokoll zeigt T1 bis T3 | Ereignisse in der Audit-Konsole aufgelistet | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | T5 | Die Audit-Kette prüfen: `./console exp:audit verify` | die Kette lässt sich verifizieren | [Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md) |
-| T6 | Administration nur mit Tastatur | Sprunglink, sichtbarer Fokus, alle Aktionen erreichbar | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) |
+| T6 | Administration nur mit Tastatur | Sprunglink, sichtbarer Fokus, alle Aktionen erreichbar | [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) |
 | T7 | Eine zweite Inhaltssprache hinzufügen und T1 übersetzen | beide Sprachen veröffentlicht | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
 | T8 | Wartungsmodus an und aus | Besucher sehen die Wartungsseite | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
 | T9 | Sicherung und Wiederherstellung auf einem zweiten Rechner | die wiederhergestellte Website zeigt T1 | [Sicherungen: was zu sichern ist](../../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
 | T10 | Ein Website-Archiv exportieren | ZIP mit `manifest.json` und je Klasse einer CSV-Datei | [Exponential verlassen](../../../../installation/migration/exponential-verlassen.md) |
 | T11 | Die Upgrade-Prüfung ausführen | Bericht der Dateien, die vom Release abweichen | [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
-| T12 | Die Hilfe in der Administration lesen | die Hilfe öffnet sich über die Schaltfläche „?“ | [Hilfesystem](../../../../../eng-us/features/6.0/help-system.md) |
+| T12 | Die Hilfe in der Administration lesen | die Hilfe öffnet sich über die Schaltfläche „?“ | [Hilfesystem](../../../../funktionen/6.0/hilfesystem.md) |
 
 Ergänzen Sie Testfälle für die Anforderungen Ihrer Ausschreibung und halten Sie für jeden fest: Datum, testende Person,
 Ergebnis (bestanden, nicht bestanden, teilweise), Nachweis (Screenshot erfundener Daten, Protokollzeile, Dateiliste).
@@ -116,12 +116,13 @@ brauchen keine personenbezogenen Daten eine besondere Behandlung.
 ## Verwandte Seiten
 - [Bewertung: Übersicht](README.md)
 - [Beschaffung: Übersicht](../README.md)
-- [Installation mit einem Befehl](../../../../../eng-us/features/6.0/install-in-one-command.md)
+- [Installation mit einem Befehl](../../../../funktionen/6.0/installation-mit-einem-befehl.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

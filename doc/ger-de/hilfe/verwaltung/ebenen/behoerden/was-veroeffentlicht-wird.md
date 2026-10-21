@@ -41,7 +41,7 @@ veröffentlichen (allgemeine Praxis im öffentlichen Sektor), und was jede Art v
 | Ein Status je Dokument (in Kraft, ersetzt, zurückgezogen) | Objektzustände, in Templates angezeigt und in Rollen verwendbar | [Objektzustände](../../../../anleitungen/objektzustaende.md) |
 | Rechtliche Prüfung vor dem Veröffentlichen | ein Ereignis *Freigeben* mit dem Rechtsteam als Freigebenden | [Workflows](../../../../anleitungen/workflows.md) |
 | Abonnenten über Änderungen informieren | Benachrichtigungen für einen Teilbaum; RSS | [Benachrichtigungen](../../../../anleitungen/benachrichtigungen-administrator.md), [RSS-Feeds](../../../../anleitungen/rss-feeds.md) |
-| Getrennte Einstiege für Öffentlichkeit und Fachleute | zwei Ordner oder zwei Siteaccesses über gemeinsamen Inhalten | [Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md) |
+| Getrennte Einstiege für Öffentlichkeit und Fachleute | zwei Ordner oder zwei Siteaccesses über gemeinsamen Inhalten | [Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md) |
 | Konsultationen | der Informationssammler | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
 | Warnungen auf der Startseite | ein Ordner oder ein Block des Layout-Editors, den die Startseite zeigt | [Der Layout-Editor](../../../layout-editor.md) |
 
@@ -76,8 +76,9 @@ Exponential erzeugt keine DCAT-Kataloge; dafür braucht es ein Template oder ein
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

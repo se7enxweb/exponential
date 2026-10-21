@@ -60,13 +60,13 @@ Für einen Trainer, der sich auf diesen Kurs vorbereitet, in dieser Reihenfolge:
 3. [Installation über die Kommandozeile](../../../installation/07-installation-ueber-die-konsole.md) und
    [Nach der Installation](../../../installation/10-nach-der-installation.md): die Übungsumgebung.
 4. [Die Einstellungsseite](../../../anleitungen/einstellungsseite.md), [Systeminformationen](../../../anleitungen/systeminformationen.md)
-   und [Der Befehl exp:ini](../../../../eng-us/features/6.0/exp-ini-command.md).
+   und [Der Befehl exp:ini](../../../funktionen/6.0/exp-ini-befehl.md).
 5. [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md) und
    [Sektionen](../../../anleitungen/sektionen.md).
 6. [Caches](../../../anleitungen/caches.md) und [Cronjobs](../../../anleitungen/cronjobs.md).
-7. [Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md) und [Das Audit-Protokoll](../../../../eng-us/features/6.0/audit-trail.md).
+7. [Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md) und [Das Audit-Protokoll](../../../funktionen/6.0/pruefprotokoll.md).
 8. [Sicherheitshärtung](../../sicherheitshaertung.md), [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) und
-   [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md).
+   [Content Security Policy](../../../funktionen/6.0/content-security-policy.md).
 9. [Wartungsmodus](../../../anleitungen/wartungsmodus.md) und [Upgrades durchführen](../../../anleitungen/aktualisieren.md).
 10. Die Module 1 bis 10 dieses Kurses, der Reihe nach. Proben Sie jede Übung auf einer Installation, die genau wie die
     der Teilnehmenden eingerichtet ist; mehrere Übungen ändern Einstellungen oder stellen die Website wieder her, und
@@ -96,14 +96,14 @@ praktische Übungen im Katalog enthält weiteres Material.
 
 - [Trainer: hier beginnen](../trainer-hier-beginnen.md)
 - [Kurskatalog](../kurskatalog.md)
-- [Hosting und Betrieb: Kursüberblick](../../../../eng-us/help/trainers/hosting-operations/README.md)
-- [Suche: Kursüberblick](../../../../eng-us/help/trainers/search/README.md)
+- [Hosting und Betrieb: Kursüberblick](../hosting-betrieb/README.md)
+- [Suche: Kursüberblick](../suche/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

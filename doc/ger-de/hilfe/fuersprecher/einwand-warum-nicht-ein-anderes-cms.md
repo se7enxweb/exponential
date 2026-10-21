@@ -52,7 +52,7 @@ besten passt.
 | Strukturierte Inhalte vieler Typen | Ein vollständig anpassbares Inhaltsmodell, in der Administration definiert | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | Mehrere Websites und viele Sprachen aus einer Installation | Siteaccesses, Übersetzungen pro Inhalt, von rechts nach links | [Funktions-Highlights](../geschaeft/funktionshighlights-fuer-kunden.md#mehrere-sites-aus-einer-installation) |
 | Redaktionelle Kontrolle | Entwürfe, Versionen, Freigabe-Workflows, ein Prüfprotokoll | [Funktions-Highlights](../geschaeft/funktionshighlights-fuer-kunden.md#strukturierte-inhalte-freigabe-und-versionen) |
-| Ein Shop im selben System | Der eingebaute Shop | [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md) |
+| Ein Shop im selben System | Der eingebaute Shop | [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md) |
 | Freie Wahl beim Hosting | Sechs Datenbanken, Betriebssysteme in Stufen | [Gesprächspunkte: Hosting](gespraechspunkte-hosting-datenbanken-freiheit.md) |
 | Langes Leben und keine Bindung an einen Anbieter | GPL-Code mit öffentlicher Geschichte seit 2002 | [Gesprächspunkte: Langlebigkeit](gespraechspunkte-langlebigkeit-und-geschichte.md) |
 
@@ -101,3 +101,11 @@ Ein Vergleichsraster zum gemeinsamen Ausfüllen steht in
 - [Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md)
 - [Einwände als Fürsprecher beantworten](einwaende-beantworten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

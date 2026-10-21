@@ -65,13 +65,13 @@ Aus dem [Kurskatalog](../../../trainer/kurskatalog.md); die Längen sind die dor
 | Rolle in Ihrer Organisation | Kurs | Veröffentlichte Länge |
 |---|---|---|
 | Neue Redaktion | [Editors 101](../../../trainer/redakteure-101/README.md) | 27 Lektionen, etwa 19,5 Stunden |
-| Regelmäßig Veröffentlichende, Freigebende | [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | 23 Lektionen, etwa 16 Stunden |
-| Seitengestaltung mit Blöcken | [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) | 23 Lektionen, etwa 17,5 Stunden |
+| Regelmäßig Veröffentlichende, Freigebende | [Editors 201](../../../trainer/redakteure-201/README.md) | 23 Lektionen, etwa 16 Stunden |
+| Seitengestaltung mit Blöcken | [Exponential Layouts](../../../trainer/layouts/README.md) | 23 Lektionen, etwa 17,5 Stunden |
 | Administration der Website | [Administration der Website](../../../trainer/website-administratoren/README.md) | 48 Lektionen, etwa 30 Stunden |
-| Systemadministration | [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | 28 Lektionen, etwa 20 Stunden |
-| Newsletter-Personal | [Newsletter](../../../../../eng-us/help/trainers/newsletter/README.md) | 20 Lektionen, etwa 16 Stunden |
+| Systemadministration | [Hosting und Betrieb](../../../trainer/hosting-betrieb/README.md) | 28 Lektionen, etwa 20 Stunden |
+| Newsletter-Personal | [Newsletter](../../../trainer/newsletter/README.md) | 20 Lektionen, etwa 16 Stunden |
 | Interne Trainerinnen und Trainer | [Train the Trainer](../../../trainer/train-the-trainer/README.md) | 34 Lektionen, etwa 21 Stunden |
-| Kurze Programme | [Workshops und Bootcamps](../../../../../eng-us/help/trainers/workshops/README.md) | Programme von einem halben bis zu 5 Tagen |
+| Kurze Programme | [Workshops und Bootcamps](../../../trainer/workshops/README.md) | Programme von einem halben bis zu 5 Tagen |
 
 Praktische Tests je Kurs stehen in [Prüfungen und praktische Übungen](../../../trainer/pruefungen/README.md).
 

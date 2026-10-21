@@ -54,8 +54,8 @@ Generators auf.
 
 ## Verwandte Seiten
 
-- [Generator des statischen Caches](../../../eng-us/features/6.0/static-cache-generator.md)
-- [Preload Sites](../../../eng-us/features/6.0/preload-sites-view.md)
+- [Generator des statischen Caches](../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
+- [Preload Sites](../../funktionen/6.0/ansicht-websites-vorladen.md)
 - [Cache über die Konsole](cache-konsole.md) und [HTTP-Caching](http-caching.md)
-- [Statischer Cache in der Chronik vom September 2026](../../../eng-us/history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
+- [Statischer Cache in der Chronik vom September 2026](../../geschichte/2026/2026-09a.md#13-september-caches-die-sie-sehen-cronjobs-die-sie-ausführen-können)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

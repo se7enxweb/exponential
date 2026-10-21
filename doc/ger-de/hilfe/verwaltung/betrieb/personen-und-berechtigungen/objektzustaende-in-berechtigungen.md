@@ -17,7 +17,7 @@ stammen aus [Objektzustände](../../../../anleitungen/objektzustaende.md); diese
 1. [Was Zustände den Rollen hinzufügen](#was-zustände-den-rollen-hinzufügen)
 2. [Die zwei Einschränkungen](#die-zwei-einschränkungen)
 3. [Beispiel: eine Prüfgruppe](#beispiel-eine-prüfgruppe)
-4. [Zustände, Freigaben und der Audit-Trail](#zustände-freigaben-und-der-audit-trail)
+4. [Zustände, Freigaben und das Prüfprotokoll](#zustände-freigaben-und-das-prüfprotokoll)
 5. [Grenzen](#grenzen)
 6. [Verwandte Seiten](#verwandte-seiten)
 
@@ -66,9 +66,9 @@ Bevor Sie die Rolle Anonymous einschränken, setzen Sie die bereits öffentliche
 für alles unterhalb dieses Knotens“; sonst verschwindet die ganze Website für Besucher auf einen Schlag, weil jedes bestehende Objekt
 im ersten Zustand der Gruppe beginnt.
 
-## Zustände, Freigaben und der Audit-Trail
+## Zustände, Freigaben und das Prüfprotokoll
 
-- Jede Zustandsänderung an einem Objekt wird im Audit-Trail als `content.object.state` erfasst, mit den Zuständen vorher und nachher
+- Jede Zustandsänderung an einem Objekt wird im Prüfprotokoll als `content.object.state` erfasst, mit den Zuständen vorher und nachher
   ([Objektzustände, Abschnitt 12](../../../../anleitungen/objektzustaende.md#12-workflows-ereignisse-audit-und-suche)).
   Dieser Eintrag ist der Beleg dafür, dass eine prüfende Person etwas freigegeben hat.
 - Zustände und der Freigabe-Workflow sind zwei verschiedene Werkzeuge. Der Workflow hält eine Version zurück, bis eine freigebende
@@ -87,15 +87,16 @@ im ersten Zustand der Gruppe beginnt.
   nicht von einem Zeitgeber. Siehe [Prüftermine mit Objektzuständen](../redaktionelle-workflows/pruefdaten-mit-objektzustaenden.md).
 
 ## Verwandte Seiten
-- [Eine Zustandsgruppe für Prüfungen einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-a-review-state-group.md)
+- [Eine Zustandsgruppe für Prüfungen einrichten](../../aufgaben/personen-und-berechtigungen/eine-zustandsgruppe-fuer-die-pruefung-einrichten.md)
 - [Rollen, Richtlinien und Einschränkungen](rollen-richtlinien-und-einschraenkungen.md)
 - [Funktionstrennung](funktionstrennung.md)
 - [Leitfaden zu Objektzuständen](../../../../anleitungen/objektzustaende.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

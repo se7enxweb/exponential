@@ -36,7 +36,7 @@ Bogen, die Kapitel und wo jedes davon erzählt wird.
 5. 2026 kamen in der Linie ein eigener Webserver in PHP, ein Seitenbaukasten, ein Schreibassistent und ein Hilfesystem
    hinzu, während Websites, die über zwei Jahrzehnte gebaut wurden, weiterlaufen.
 
-Quellen: [Wer ist 7x?](../wer-ist-7x.md), [Die Geschichte von Exponential](../../../eng-us/history/README.md).
+Quellen: [Wer ist 7x?](../wer-ist-7x.md), [Die Geschichte von Exponential](../../geschichte/README.md).
 
 ## Die Kapitel und ihre Quellen
 
@@ -44,26 +44,26 @@ Quellen: [Wer ist 7x?](../wer-ist-7x.md), [Die Geschichte von Exponential](../..
 |---|---|---|
 | Die eZ-Publish-Jahre | 1999 bis 2021 | [Die eZ-Publish-Jahre, 1999 bis 2021](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021); die alten Changelogs unter [Changelogs](../../../changelogs/README.md) |
 | Das Unternehmen, das geblieben ist | 2000 bis 2023 | [Von Brookins Consulting zu 7x](../wer-ist-7x.md#von-brookins-consulting-zu-7x-in-drei-stufen); [7x in drei Etappen](7x-in-drei-etappen.md) |
-| Der Monat, in dem der Code den Besitzer wechselte | Dezember 2023 | [Dezember 2023](../../../eng-us/history/2023/2023-12.md); [Verwaltung](../wer-ist-7x.md#verantwortung-von-einer-ruhenden-codebasis-zu-exponential-6) |
+| Der Monat, in dem der Code den Besitzer wechselte | Dezember 2023 | [Dezember 2023](../../geschichte/2023/2023-12.md); [Verwaltung](../wer-ist-7x.md#verantwortung-von-einer-ruhenden-codebasis-zu-exponential-6) |
 | Die Releases 6.0.x | 2024 bis 2026 | [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x) |
-| Ein eigener Name | August 2025 | [August 2025](../../../eng-us/history/2025/2025-08.md); [Warum es Exponential heißt](warum-es-exponential-heisst.md) |
+| Ein eigener Name | August 2025 | [August 2025](../../geschichte/2025/2025-08.md); [Warum es Exponential heißt](warum-es-exponential-heisst.md) |
 | Eine gemeinnützige Organisation für das Projekt | März 2026 | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
-| Ein in PHP geschriebener Webserver | Juli bis September 2026 | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
-| Die Linie 6.0.15 | 2026 | [Oktober 2026](../../../eng-us/history/2026/2026-10.md); [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| Ein in PHP geschriebener Webserver | Juli bis September 2026 | [Chronik von Velocity](../../geschichte/velocity/README.md) |
+| Die Linie 6.0.15 | 2026 | [Oktober 2026](../../geschichte/2026/2026-10.md); [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 
 ## Die Geschichtsseiten
 
-Die [Geschichte](../../../eng-us/history/README.md) erzählt jede Änderung seit Dezember 2023, Monat für Monat. Sie beginnt mit:
+Die [Geschichte](../../geschichte/README.md) erzählt jede Änderung seit Dezember 2023, Monat für Monat. Sie beginnt mit:
 „This is where the story of Exponential 6 begins: the month a dormant code base changed hands“
-([Dezember 2023](../../../eng-us/history/2023/2023-12.md)).
+([Dezember 2023](../../geschichte/2023/2023-12.md)).
 
 | Seite | Was sie einem Autor bietet |
 |---|---|
-| [Die Geschichte](../../../eng-us/history/README.md) | Die Monatsseiten, der Reihe nach |
-| [Der Überblick über das Ökosystem](../../../eng-us/history/ecosystem.md) | Die Repositorys und wie sich die Arbeit auf sie verteilt |
-| [Die Ledger](../../../eng-us/history/ledger/README.md) | Jede erfasste Änderung, jeweils eine Zeile |
-| [Abdeckung](../../../eng-us/history/coverage.md) | Der Beleg, dass in den Ledgern keine Änderung fehlt |
-| [Chronik von Velocity](../../../eng-us/history/velocity/README.md) | Die Geschichte des Webservers ab seinem ersten Commit |
+| [Die Geschichte](../../geschichte/README.md) | Die Monatsseiten, der Reihe nach |
+| [Der Überblick über das Ökosystem](../../geschichte/oekosystem.md) | Die Repositorys und wie sich die Arbeit auf sie verteilt |
+| [Die Ledger](../../geschichte/aenderungsverzeichnis/README.md) | Jede erfasste Änderung, jeweils eine Zeile |
+| [Abdeckung](../../geschichte/abdeckung.md) | Der Beleg, dass in den Ledgern keine Änderung fehlt |
+| [Chronik von Velocity](../../geschichte/velocity/README.md) | Die Geschichte des Webservers ab seinem ersten Commit |
 
 ## Blickwinkel, die standhalten
 
@@ -108,8 +108,8 @@ git tag -l 'v6.0.*' --sort=version:refname           # the releases, in order
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

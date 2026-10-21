@@ -42,7 +42,7 @@ Verzeichnis je Anbieter (`7x` ...). Seitenpakete, die der Installer verwendet, s
 Export von Inhaltsklassen, Export von Erweiterungen, Seitenstil. Sie geben die Bestandteile, den Namen, die
 Zusammenfassung, die Version, die Lizenz und den Betreuer an sowie das Format (klassisches XML oder JSON); der letzte
 Schritt zeigt alles noch einmal zur Prüfung, bevor in `local` geschrieben wird
-([Der Paket-Assistent](../../../../eng-us/features/6.0/package-wizard.md)).
+([Der Paket-Assistent](../../../funktionen/6.0/paketassistent.md)).
 
 ## Auf der Kommandozeile
 
@@ -75,13 +75,13 @@ zuerst auf Staging. Pakete können Inhalte auch als Entwürfe installieren
 
 - [Inhaltsklassen für Websites](../website-ersteller/inhaltsklassen-fuer-websites.md)
 - [Als Erweiterung paketieren](als-erweiterung-paketieren.md)
-- [Kommandozeile des Paketmanagers ezpm](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md)
+- [Kommandozeile des Paketmanagers ezpm](../../../funktionen/6.0/ezpm-paketmanager-cli.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

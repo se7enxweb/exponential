@@ -1070,7 +1070,7 @@ und Benutzer kosten nichts; Bedingungen zum Knoten laden den Knoten einmal.
 
 ## Verwandte Seiten
 
-- [Anfrageregeln (Funktion)](../../../eng-us/features/6.0/request-rules.md)
+- [Anfrageregeln (Funktion)](../../funktionen/6.0/anfrageregeln.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
 - [HTTP-Cache](httpcache.md)
 - [Sicherheitshärtung](haertung.md)

@@ -37,22 +37,22 @@ bleiben dieselben; das Design passt sie dem Bildschirm an.
 
 | Design | Responsiv? | Quelle |
 |---|---|---|
-| `sevenx_themes_simple`, das öffentliche Standarddesign | Beschrieben als „the light, responsive public design of the default installation“ (das leichte, responsive öffentliche Design der Standardinstallation), mit dem Stylesheet `main.css` und „its responsive companion `main.res.css`“ (seinem responsiven Begleiter `main.res.css`) | [sevenx_themes_simple](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md) |
-| Andere mitgelieferte Themes | Siehe ihre eigenen Seiten | [Ein Design oder Theme wählen](../../../../eng-us/help/creators/website-creators/choosing-a-design-or-theme.md#the-themes-that-ship) |
-| Ihr eigenes Design | Was auch immer Ihre Designer bauen | [Ein Design oder Theme wählen](../../../../eng-us/help/creators/website-creators/choosing-a-design-or-theme.md#your-own-design) |
+| `sevenx_themes_simple`, das öffentliche Standarddesign | Beschrieben als „the light, responsive public design of the default installation“ (das leichte, responsive öffentliche Design der Standardinstallation), mit dem Stylesheet `main.css` und „its responsive companion `main.res.css`“ (seinem responsiven Begleiter `main.res.css`) | [sevenx_themes_simple](../../../funktionen/6.0/erweiterungen/sevenx_themes_simple.md) |
+| Andere mitgelieferte Themes | Siehe ihre eigenen Seiten | [Ein Design oder Theme wählen](../../ersteller/website-ersteller/ein-design-oder-theme-waehlen.md#die-mitgelieferten-themes) |
+| Ihr eigenes Design | Was auch immer Ihre Designer bauen | [Ein Design oder Theme wählen](../../ersteller/website-ersteller/ein-design-oder-theme-waehlen.md#ihr-eigenes-design) |
 
 Wenn Sie ein Design in Auftrag geben, schreiben Sie „funktioniert auf Telefonen ab 320 px Breite, ohne horizontales
 Scrollen und mit Zoom auf 200 %“ in das Briefing. Die Hinweise zur Barrierefreiheit für Website-Ersteller verlangen
 genau das: „layouts that work at 200% zoom and on narrow screens, no horizontal scrolling“ (Layouts, die mit Zoom auf
 200 % und auf schmalen Bildschirmen funktionieren, kein horizontales Scrollen,
-[Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#what-the-template-author-controls)).
+[Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#was-der-template-autor-steuert)).
 
 ## Bilder, die auf kleine Bildschirme passen
 
 Exponential speichert das hochgeladene Bild einmal und erzeugt **Bildaliase**: Varianten in festgelegten Größen. Ein
 Design kann mit `srcset` zwei oder drei Aliase desselben Bildes anbieten, sodass ein Telefon eine kleine Datei und ein
 großer Bildschirm eine große herunterlädt
-([Responsive Bilder](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md#responsive-images)).
+([Responsive Bilder](../../ersteller/website-ersteller/bilder-und-bildvarianten.md#responsive-bilder)).
 
 | Einstellung (ausgeliefert) | Bedeutung |
 |---|---|
@@ -60,8 +60,8 @@ großer Bildschirm eine große herunterlädt
 | Seiten dürfen zeigen | JPEG, PNG, WebP, GIF |
 | SVG | Beim Hochladen bereinigt und nie skaliert |
 
-Quellen: [Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md#converters-formats-and-quality)
-und [SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md).
+Quellen: [Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md#konverter-formate-und-qualität)
+und [SVG und Bildformate](../../ersteller/website-ersteller/svg-und-bildformate.md).
 
 > **Tipp**
 > Fragen Sie Ihre Designer, welche Aliase das Design definiert, und bitten Sie Redakteure, Bilder hochzuladen, die groß
@@ -72,12 +72,12 @@ und [SVG und Bildformate](../../../../eng-us/help/creators/website-creators/svg-
 
 Mobile Besucher haben oft langsamere Verbindungen. Exponential hat mehrere Cache-Ebenen, und die Anleitung für
 Website-Ersteller listet „the levers, in order of effect“ (die Hebel, nach Wirkung geordnet,
-[Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)). Für Telefone relevant:
+[Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md)). Für Telefone relevant:
 
 - Gepackte Stylesheets und Skripte über ezjscore, sodass eine Seite weniger Dateien lädt
-  ([Stylesheets und Skripte für Ihre Website](../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md)).
+  ([Stylesheets und Skripte für Ihre Website](../../ersteller/website-ersteller/stylesheets-und-skripte.md)).
 - HTTP-Caching und CDNs für anonyme Besucher
-  ([HTTP-Caching, Proxys und CDNs](../../../../eng-us/help/creators/website-creators/http-caching-and-cdns.md)).
+  ([HTTP-Caching, Proxys und CDNs](../../ersteller/website-ersteller/http-caching-und-cdns.md)).
 - Unter Exponential Velocity ein Antwortcache und ein optionaler Navigationscache im Browser für wiederholte Besuche
   ([Offline und wiederholte Besuche](offline-und-wiederholte-besuche.md)).
 
@@ -90,7 +90,7 @@ An Formularen geben mobile Besucher auf. Die Hinweise zur Barrierefreiheit für 
 - Fehler werden neben dem Feld angezeigt und oben zusammengefasst;
 - CAPTCHAs haben eine barrierefreie Alternative (beide mitgelieferten CAPTCHA-Dienste bieten eine).
 
-Quelle: [Barrierefreiheit für Website-Ersteller, Forms](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#forms).
+Quelle: [Barrierefreiheit für Website-Ersteller, Forms](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#formulare).
 Für den Bestellablauf des Shops siehe [Warenkorb und Bestellablauf](../shops/warenkorb-und-bestellablauf.md).
 
 ## Ein Testplan, den Sie selbst ausführen können
@@ -114,15 +114,15 @@ Verwenden Sie ein echtes Telefon, nicht nur ein schmales Desktop-Fenster.
 
 - [Mobile Strategie](mobile-strategie.md)
 - [Checkliste mobil](checkliste-mobil.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)
-- [Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md)
+- [Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

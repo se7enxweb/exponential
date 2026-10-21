@@ -3,14 +3,14 @@ title: Audit-Warnungen
 audience: government, admin, project-manager
 category: public-sector
 order: 70
-summary: Die sieben Warnregeln, die mit dem Audit-Trail von Exponential ausgeliefert werden (Brute Force, eine vergebene Administratorrolle, außerhalb der Dienstzeit geschriebene Einstellungen, Massenlöschungen, ein abgeschaltetes Audit, eine gebrochene Kette), wer sie erhält, wie Sie sie abstimmen und testen und wie eine öffentliche Stelle sie an ihr Sicherheitsteam weiterleitet.
+summary: Die sieben Warnregeln, die mit dem Prüfprotokoll von Exponential ausgeliefert werden (Brute Force, eine vergebene Administratorrolle, außerhalb der Dienstzeit geschriebene Einstellungen, Massenlöschungen, ein abgeschaltetes Audit, eine gebrochene Kette), wer sie erhält, wie Sie sie abstimmen und testen und wie eine öffentliche Stelle sie an ihr Sicherheitsteam weiterleitet.
 keywords: Audit-Warnungen, Warnregeln, Brute Force, admin_role_granted, Einstellungen außerhalb der Dienstzeit, Massenlöschung, Audit abgeschaltet, gebrochene Kette, Empfänger, Syslog, Webhook, SIEM, Sicherheitsüberwachung, audit alerts, alert rules, brute force, settings out of hours, mass delete, audit disabled, chain broken, recipients, security monitoring
 type: help
 ---
 # Audit-Warnungen
 
 Diese Seite richtet sich an Informationssicherheitsbeauftragte und die Administration, die informiert werden müssen,
-wenn auf einer öffentlichen Website etwas Riskantes geschieht. Der Audit-Trail wertet Warnregeln für seine Einträge aus
+wenn auf einer öffentlichen Website etwas Riskantes geschieht. Das Prüfprotokoll wertet Warnregeln für seine Einträge aus
 und sendet Warnungen an Syslog, per E-Mail oder an einen Webhook. Quellen: `settings/audit.ini` und
 [der Audit-Leitfaden, Abschnitt 4.5](../../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger).
 
@@ -77,20 +77,21 @@ Dienstzeiten passend zu Ihren Servicezeiten; das Sicherheitsteam als Empfänger 
 
 Wenn Ihre Organisation ein Security Operations Center oder ein SIEM betreibt, versorgen Sie es über die Syslog-Senke
 oder die signierte Webhook-Senke (HMAC-SHA-256 über Zeitstempel und Inhalt, zwischengespeichert mit Wiederholungen)
-statt per E-Mail ([Audit-Trail, „Sinks, alerts and archives“](../../../../../eng-us/features/6.0/audit-trail.md#sinks-alerts-and-archives)).
+statt per E-Mail ([Prüfprotokoll, „Sinks, alerts and archives“](../../../../funktionen/6.0/pruefprotokoll.md#sinks-alarme-und-archive)).
 Vereinbaren Sie, was jede Warnung für das Team bedeutet und wer wen anruft; die [Seiten zu Vorfällen](../vorfaelle/README.md)
 beschreiben die ersten Schritte.
 
 ## Verwandte Seiten
-- [Prüfung des Audit-Trails](pruefung-des-audit-trails.md)
-- [Prüfen, wer Audit-Warnungen erhält](../../../../../eng-us/help/government/tasks/operations/check-who-gets-audit-alerts.md)
+- [Prüfung des Prüfprotokolls](pruefung-des-audit-trails.md)
+- [Prüfen, wer Audit-Warnungen erhält](../../aufgaben/betrieb/pruefen-wer-audit-warnungen-erhaelt.md)
 - [Verdacht auf ein kompromittiertes Konto](../vorfaelle/verdacht-auf-kompromittiertes-konto.md)
-- [Audit-Trail (Hosting)](../../../hosting/sicherheit/pruefprotokoll.md)
+- [Prüfprotokoll (Hosting)](../../../hosting/sicherheit/pruefprotokoll.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

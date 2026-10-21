@@ -1,17 +1,17 @@
 ---
-title: "eZHTTPTool: Requests, Sessions und Weiterleitungen"
+title: "eZHTTPTool: Requests, Sitzungen und Weiterleitungen"
 audience: developer
 category: extension-development
 order: 100
-summary: POST- und GET-Variablen lesen, Werte in der Session halten und mit eZHTTPTool weiterleiten - postVariable() mit Ersatzwert, sessionVariable(), redirect() - und die Modulweiterleitungen, die Views bevorzugen.
-keywords: Request, Session, Weiterleitung, POST-Variablen, GET-Variablen, Ersatzwert, eZHTTPTool, instance, postVariable, hasPostVariable, getVariable, hasGetVariable, variable, setSessionVariable, sessionVariable, hasSessionVariable, removeSessionVariable, redirect, redirectTo, request
+summary: POST- und GET-Variablen lesen, Werte in der Sitzung halten und mit eZHTTPTool weiterleiten - postVariable() mit Ersatzwert, sessionVariable(), redirect() - und die Modulweiterleitungen, die Views bevorzugen.
+keywords: Request, Sitzung, Weiterleitung, POST-Variablen, GET-Variablen, Ersatzwert, eZHTTPTool, instance, postVariable, hasPostVariable, getVariable, hasGetVariable, variable, setSessionVariable, sessionVariable, hasSessionVariable, removeSessionVariable, redirect, redirectTo, request
 type: help
 ---
-# eZHTTPTool: Requests, Sessions und Weiterleitungen
+# eZHTTPTool: Requests, Sitzungen und Weiterleitungen
 
 Teil 8, Referenz 10. Mit `eZHTTPTool` (`lib/ezutils/classes/ezhttptool.php`) lesen Kernel-Code und Erweiterungen den
-Request und die Session. Verwenden Sie es statt `$_POST`, `$_GET` und `$_SESSION`: Es kümmert sich um den Start der
-Session, protokolliert fehlende Variablen und hält Ihren Code testbar.
+Request und die Sitzung. Verwenden Sie es statt `$_POST`, `$_GET` und `$_SESSION`: Es kümmert sich um den Start der
+Sitzung, protokolliert fehlende Variablen und hält Ihren Code testbar.
 
 ```php
 <?php
@@ -46,16 +46,16 @@ Jeder Wert aus dem Request ist nicht vertrauenswürdig: Wandeln Sie Zahlen um, p
 Sie bei der Ausgabe ([Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)). In
 Modul-Views prüft der Kernel bei POST außerdem das Formular-Token ([ezformtoken und CSRF](ezformtoken-und-csrf.md)).
 
-## Session
+## Sitzung
 
 | Methode | Verwendung |
 |---|---|
-| `setSessionVariable( $name, $value )` | einen Wert für die Session dieses Benutzers speichern |
+| `setSessionVariable( $name, $value )` | einen Wert für die Sitzung dieses Benutzers speichern |
 | `sessionVariable( $name, $fallbackValue = null )` | ihn lesen |
 | `hasSessionVariable( $name, $forceStart = true )` | ob er existiert |
 | `removeSessionVariable( $name )` | ihn entfernen |
 
-Versehen Sie die Namen mit dem Namen Ihrer Erweiterung als Präfix (`MyExtLastFilter`). Halten Sie Sessions klein: Sie werden
+Versehen Sie die Namen mit dem Namen Ihrer Erweiterung als Präfix (`MyExtLastFilter`). Halten Sie Sitzungen klein: Sie werden
 bei jedem Request dieses Benutzers gelesen.
 
 ## Weiterleitungen
@@ -88,8 +88,8 @@ ab. Für alles, was über ein einfaches GET hinausgeht, verwenden Sie cURL direk
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

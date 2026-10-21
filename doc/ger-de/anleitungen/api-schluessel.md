@@ -16,9 +16,9 @@ Port 443 und Velocity auf 8080) mit Wegwerfkonten ausgeführt, die danach entfer
 Hostnamen sind gekürzt oder durch Dokumentationswerte ersetzt (`example.com`, `203.0.113.0/24`).
 
 [Anleitungen](README.md) · Siehe auch: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md) (die `expservices`-Tokens) ·
-[ezprestapi](../../eng-us/features/6.0/extensions/ezprestapi.md) (die REST-Routen für Inhalte) ·
+[ezprestapi](../funktionen/6.0/erweiterungen/ezprestapi.md) (die REST-Routen für Inhalte) ·
 [REST-API v1 und v2](rest-api-v1-und-v2.md) ·
-[Sicherheit und Audit](sicherheit-und-audit.md) · Änderungshinweis: [doc/eng-us/bc/6.0/api-keys.md](../../eng-us/bc/6.0/api-keys.md)
+[Sicherheit und Audit](sicherheit-und-audit.md) · Änderungshinweis: [doc/eng-us/bc/6.0/api-keys.md](../bc/6.0/api-schluessel.md)
 
 ## Kurz gesagt
 
@@ -61,7 +61,7 @@ Hostnamen sind gekürzt oder durch Dokumentationswerte ersetzt (`example.com`, `
 | Ein persönlicher API-Schlüssel ist | Er ist nicht |
 |---|---|
 | Eine lange Zufallszeichenfolge, die ein Benutzer für eines seiner eigenen Programme erstellt: ein Import-Skript, einen CI-Job, ein Desktop-Werkzeug | Ein Passwort: Er kann sich weder an der Site noch an der Administration anmelden und fragt nie nach einem |
-| Wird mit jeder REST-Anfrage im Header `Authorization` gesendet | Eine Session: Es gibt kein Cookie und kein Formular-Token |
+| Wird mit jeder REST-Anfrage im Header `Authorization` gesendet | Eine Sitzung: Es gibt kein Cookie und kein Formular-Token |
 | Für diese Anfrage der Benutzer, innerhalb der Bereiche, die beim Erstellen gewählt wurden | Mehr als der Benutzer: Ein Schlüssel bekommt nie ein Recht, das sein Eigentümer nicht hat |
 | Einzeln widerrufbar, ohne das Passwort des Benutzers oder seine anderen Schlüssel anzurühren | Eine OAuth-Anwendung: Diese registriert ein Administrator für Apps, die *andere* Benutzer anmelden |
 
@@ -70,7 +70,7 @@ Es gibt drei Wege, wie ein Programm in Exponential hineinkommt. Wählen Sie den,
 | Sie möchten | Verwenden Sie |
 |---|---|
 | Ein eigenes Skript liest oder veröffentlicht Inhalte über die REST-Schnittstelle (`/api/...`) | **Einen persönlichen API-Schlüssel** (diese Anleitung) |
-| Ein Skript ruft die Remote-Dienste auf (`/expservices/...`): Lesezeichen, Sessions, Inhaltsaufträge | Ein `expservices`-Token, siehe [Remote-Dienste und Apps](entfernte-dienste-und-apps.md#5-ein-persönliches-api-token-für-skripte-und-apps-3-minuten) |
+| Ein Skript ruft die Remote-Dienste auf (`/expservices/...`): Lesezeichen, Sitzungen, Inhaltsaufträge | Ein `expservices`-Token, siehe [Remote-Dienste und Apps](entfernte-dienste-und-apps.md#5-ein-persönliches-api-token-für-skripte-und-apps-3-minuten) |
 | Eine App oder Partner-Site lässt *viele* Benutzer sich anmelden und handelt für sie | Eine OAuth-Anwendung, registriert unter **Setup > oAuth-Verwaltung** ([Abschnitt 7](#7-die-administration-jeder-schlüssel-ein-benutzer-widerruf)) |
 
 > [!NOTE]
@@ -384,7 +384,7 @@ eines Benutzers werden nur solchen Benutzern angezeigt.
 
 ## 8. Audit und Grenzen
 
-Vier Ereignisse des Audit-Kanals `access`, standardmäßig eingeschaltet ([Audit](../../eng-us/bc/6.0/audit.md#8-event-reference)):
+Vier Ereignisse des Audit-Kanals `access`, standardmäßig eingeschaltet ([Audit](../bc/6.0/audit.md#8-referenz-der-ereignisse)):
 
 | Ereignis | Wann | Zeichnet auf |
 |---|---|---|
@@ -412,7 +412,7 @@ keinen Schlüssel (Grund `transport`). Gekürzt: die Anfrage- und Ereignis-IDs.
 **Letzte Benutzung.** Die letzte Benutzung und die Adresse eines Schlüssels werden höchstens einmal pro Minute
 geschrieben (`LastUsedInterval`), sodass ein viel benutzter Schlüssel keinen Datenbank-Schreibzugriff pro Anfrage
 kostet. Die Adresse ist die des Clients, über vertrauenswürdige Proxys hinweg (`eZSys::clientIP()`, siehe
-[vertrauenswürdige Proxys](../../eng-us/bc/6.0/trusted-proxies.md)).
+[vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md)).
 
 **Grenzen.**
 
@@ -562,3 +562,11 @@ und Template-Override-Caches, laden Sie PHP-FPM neu und starten Sie Velocity neu
 
 Außerdem: `site.ini [RoleSettings] PolicyOmitList[]=apikey/list`, `module.ini ModuleList[]=apikey`,
 `admininterface.ini ItemsPerPage[oauthadmin/keys]=25`.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

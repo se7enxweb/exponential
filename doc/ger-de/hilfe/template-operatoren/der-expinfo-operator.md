@@ -39,7 +39,7 @@ Der Modus ist der erste Parameter oder, wenn es keinen Parameter gibt, die gepip
 |---|---|---|---|
 | Modus oder Erweiterungsname | Zeichenkette | nein | aktive Erweiterungen |
 
-Es gibt keine benannten Parameter. Generierte Referenz: [expinfo](../../../eng-us/examples/template-operators/expinfo.md).
+Es gibt keine benannten Parameter. Generierte Referenz: [expinfo](../../beispiele/template-operatoren/expinfo.md).
 
 ## Eine Erweiterung
 
@@ -122,15 +122,16 @@ Alle Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe
 
 ## Verwandte Seiten
 
-- [Aufbau einer Erweiterung](../../../eng-us/help/creators/app-creators/extension-anatomy.md): `ezinfo.php` und `extension.xml`
-- [Was eine Erweiterung ist](../../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md)
-- [Die Erweiterungen Ihrer Website finden](../../../eng-us/help/extension-development/part-1-from-user-to-developer/finding-the-extensions-on-your-site.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Aufbau einer Erweiterung](../ersteller/anwendungsentwickler/aufbau-einer-erweiterung.md): `ezinfo.php` und `extension.xml`
+- [Was eine Erweiterung ist](../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md)
+- [Die Erweiterungen Ihrer Website finden](../erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/die-erweiterungen-ihrer-website-finden.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

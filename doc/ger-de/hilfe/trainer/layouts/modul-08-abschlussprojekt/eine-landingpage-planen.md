@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Layout-Typen, Zonen und Blöcke: Planungsblatt](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#planning-sheet)
-und [Landingpages mit dem Layout-Editor: Eine Kampagnenseite von Grund auf](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md#a-campaign-page-from-scratch).
+Quellen: [Layout-Typen, Zonen und Blöcke: Planungsblatt](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#planungsblatt)
+und [Landingpages mit dem Layout-Editor: Eine Kampagnenseite von Grund auf](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md#eine-kampagnenseite-von-grund-auf).
 
 1. **Die Aufgabe** (3 Minuten). Zeigen Sie sie am Beamer: *Eine Herbstkampagnen-Seite für die Schulungs-Website. Ein
    großes Banner mit Titel, einem Satz und einer Schaltfläche; drei von Hand ausgewählte Highlights; darunter die sechs
@@ -107,7 +107,7 @@ Arbeiten Sie zuerst allein, dann zu zweit. Verwenden Sie Papier oder eine Kopie 
 <summary>Antworten</summary>
 
 1. Seite, Layout-Typ, Zone, Blöcke (Typ / Ansichtstyp), Collection
-   ([Layout-Typen, Zonen und Blöcke](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#planning-sheet)).
+   ([Layout-Typen, Zonen und Blöcke](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#planungsblatt)).
 2. Eine Bedingung **time** mit `from` und `to`.
 3. Sie werden einmal in einem gemeinsamen Layout definiert; Änderungen dort erreichen jede Seite.
 4. Manuell für die drei kuratierten Highlights; dynamisch für die neuesten Artikel.
@@ -117,20 +117,20 @@ Arbeiten Sie zuerst allein, dann zu zweit. Verwenden Sie Papier oder eine Kopie 
 
 ## Weiterführende Informationen
 
-- [Landingpages mit dem Layout-Editor](../../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md)
-- [Layout-Regeln: Rezepte](../../../../../eng-us/help/creators/website-creators/layout-rules.md#recipes)
+- [Landingpages mit dem Layout-Editor](../../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md)
+- [Layout-Regeln: Rezepte](../../../ersteller/website-ersteller/layout-regeln.md#rezepte)
 
 ## Verwandte Seiten
 
 - [Modul 8: Abschlussprojekt](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

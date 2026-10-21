@@ -29,7 +29,7 @@ dort, wo sie hinausgehen, im Format des Ortes, an den sie gelangen.
 | Text | Längenbegrenzung, trim, die für das Feld erlaubten Zeichen |
 | E-Mail, URL | die Prüfung des Datentyps oder `filter_var()`; bei URLs zusätzlich das Schema (nur `https`) |
 | Dateien | Typ nach Inhalt und Größe, gespeichert über den Kernel |
-| Weiterleitungsziele | nur Adressen der Website ([Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md)) |
+| Weiterleitungsziele | nur Adressen der Website ([Sichere Weiterleitungen](../../../funktionen/6.0/sichere-weiterleitungen.md)) |
 
 Ansichtsparameter (`$Params`) und ungeordnete Parameter sind Zeichenketten aus der Adresse und genauso wenig
 vertrauenswürdig wie POST-Daten.
@@ -71,13 +71,13 @@ Ausnahmen sind Werte, die konstruktionsbedingt bereits sicheres HTML sind: `$mod
 
 - [Formulare, CSRF und HTTP-Eingaben](formulare-csrf-und-http-eingaben.md)
 - [Sicherheit für Anwendungen](sicherheit-fuer-anwendungen.md)
-- [Sicherheitsstandard](../../../../eng-us/standards/security.md)
+- [Sicherheitsstandard](../../../standards/sicherheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

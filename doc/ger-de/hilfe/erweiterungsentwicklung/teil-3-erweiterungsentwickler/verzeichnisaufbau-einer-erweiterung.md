@@ -92,7 +92,7 @@ done
   Kollisionen mit jeder anderen Erweiterung. Erweiterungen von 7x verwenden `sevenx` (das offizielle öffentliche
   Präfix für PHP-Code von 7x; "7x" kann keines sein, da ein Name nicht mit einer Ziffer beginnen kann) oder `exp`
   (bewusst verwendet für Arbeit, die dem Projekt Exponential und der Exponential Foundation zugeordnet ist): siehe
-  [Namenspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md). Beginnen Sie neue
+  [Namenspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md). Beginnen Sie neue
   Namen nicht mit `ez`, das zu den historischen Klassen des Kernels gehört.
 - Der Ordnername wird überall verwendet (Einstellungen, `extra` von Composer, Klassennamen wie `mysite_helloInfo`),
   wählen Sie ihn also einmal.
@@ -114,8 +114,8 @@ zu lernen; siehe
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

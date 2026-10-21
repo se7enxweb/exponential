@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an die Administration, die die Logs einer öffentlichen Website jeden Tag prüft, ohne sie Zeile
 für Zeile zu lesen. Dafür hat der Log-Viewer zwei Übersichtsseiten: **Fehlerübersicht** (`/setup/logsdigest`) und
 **Zustand der Logs** (`/setup/logshealth`), beide unter **Setup > Logdateien** und beide mit der Funktion `setup/logs`
-([Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md#error-digest)).
+([Log-Viewer](../../../../funktionen/6.0/log-betrachter.md#fehlerübersicht)).
 
 ## Inhalt
 1. [Die Fehlerübersicht](#die-fehlerübersicht)
@@ -64,8 +64,8 @@ Stufe und dem Zeitpunkt des letzten Auftretens. Jede Gruppe verweist auf das dan
 3. Reiter **Audit**, **Alarme**: Wurde seit gestern etwas ausgelöst?
 4. Halten Sie Befunde in Ihrem Betriebsprotokoll oder Ticketsystem fest.
 
-Vorgehen: [Die Fehlerübersicht lesen](../../../../../eng-us/help/government/tasks/operations/read-the-error-digest.md) und
-[Den Zustand der Logs prüfen](../../../../../eng-us/help/government/tasks/operations/check-log-health.md).
+Vorgehen: [Die Fehlerübersicht lesen](../../aufgaben/betrieb/die-fehleruebersicht-lesen.md) und
+[Den Zustand der Logs prüfen](../../aufgaben/betrieb/den-zustand-der-logs-pruefen.md).
 
 ## Verwandte Seiten
 - [Der Log-Viewer](der-log-viewer.md)
@@ -75,8 +75,9 @@ Vorgehen: [Die Fehlerübersicht lesen](../../../../../eng-us/help/government/tas
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -250,8 +250,8 @@ Kontrollpunkt, Fortschrittsseite, Fortsetzen):
 
 | Typ | Klasse | Gestartet von | Was er tut |
 |---|---|---|---|
-| `packageinstall` | `expContentJobPackageInstall` | der Installationsseite unter Setup > Pakete, „Im Hintergrund installieren“ | installiert ein Paket mit den Entscheidungen des Assistenten als der anfragende Benutzer; die Seite des Pakets zeigt den Fortschritt Objekt für Objekt und führt die Entwürfe auf ([Anleitung zu Paketen](../../../eng-us/guides/packages.md#7-installing-and-uninstalling)) |
-| `auditexport` | `expContentJobAuditExport` | der Exportseite des Audit-Protokolls, „Im Hintergrund exportieren“ | schreibt den Filter der Konsole als CSV, JSON Lines oder JSON in eine Datei neben dem Job, in Stapeln von `BatchSize` x 100 Einträgen, bis `audit.ini [AuditConsoleSettings] MaxBackgroundExportRecords`; nur der Benutzer, der ihn angefordert hat, darf die Datei herunterladen, die mit dem Job verschwindet, wenn fertige Jobs entfernt werden ([Anleitung zum Audit-Protokoll](../../../eng-us/bc/6.0/audit.md#streaming-the-export)) |
+| `packageinstall` | `expContentJobPackageInstall` | der Installationsseite unter Setup > Pakete, „Im Hintergrund installieren“ | installiert ein Paket mit den Entscheidungen des Assistenten als der anfragende Benutzer; die Seite des Pakets zeigt den Fortschritt Objekt für Objekt und führt die Entwürfe auf ([Anleitung zu Paketen](../../anleitungen/pakete.md#7-installieren-und-deinstallieren)) |
+| `auditexport` | `expContentJobAuditExport` | der Exportseite des Audit-Protokolls, „Im Hintergrund exportieren“ | schreibt den Filter der Konsole als CSV, JSON Lines oder JSON in eine Datei neben dem Job, in Stapeln von `BatchSize` x 100 Einträgen, bis `audit.ini [AuditConsoleSettings] MaxBackgroundExportRecords`; nur der Benutzer, der ihn angefordert hat, darf die Datei herunterladen, die mit dem Job verschwindet, wenn fertige Jobs entfernt werden ([Anleitung zum Audit-Protokoll](audit.md#den-export-streamen)) |
 
 Ein Job, der in `gui_return_url` eine Seite nennt, öffnet sie, wenn er fertig ist: Der Audit-Export kehrt mit der
 Datei zur Exportseite zurück.
@@ -392,7 +392,7 @@ wird.
 
 ## Verwandte Seiten
 
-- [Inhaltsjobs (Funktion)](../../../eng-us/features/6.0/content-jobs.md)
+- [Inhaltsjobs (Funktion)](../../funktionen/6.0/inhaltsauftraege.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
 - [Die Exponential-Konsole](konsole.md)
 - [Anleitung zu Inhaltsmodell und Bearbeitung](../../anleitungen/inhaltsmodell-und-bearbeitung.md)

@@ -91,7 +91,7 @@ frei kopiert und angepasst werden ([Freie Dokumentation](../freie-dokumentation.
 | [Erste Schritte](../erste-schritte.md) | Anmelden und eine erste Änderung vornehmen |
 | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) | Die Bildschirme, die Sie zeigen und über die Sie sprechen werden |
 | [Der Layout-Editor](../layout-editor.md) | Der Seitenbaukasten, mit dem Redakteure arbeiten |
-| [Sprachen](../sprachen.md) und [Sprachen in Exponential](../../../eng-us/languages.md) | Inhalte übersetzen; die 268 Locales und 32 Übersetzungen der Administration |
+| [Sprachen](../sprachen.md) und [Sprachen in Exponential](../../sprachen.md) | Inhalte übersetzen; die 268 Locales und 32 Übersetzungen der Administration |
 | [Datenbankunterstützung](../datenbankunterstuetzung.md) | Die sechs unterstützten Datenbanken, in ihrer Reihenfolge |
 | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) | Wo Exponential läuft |
 | [Sicherheitshärtung](../sicherheitshaertung.md) | Wie Exponential eine Site schützt |
@@ -101,9 +101,9 @@ frei kopiert und angepasst werden ([Freie Dokumentation](../freie-dokumentation.
 | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md) | Wie Zugriff vergeben wird |
 | [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md) | Was der Betrieb einer Site umfasst |
 | [Upgrade](../../anleitungen/aktualisieren.md) | Wie eine Site auf ein neueres Release wechselt |
-| [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) | Wie diese Hilfe funktioniert, und ihr PDF-Download |
+| [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) | Wie diese Hilfe funktioniert, und ihr PDF-Download |
 | [Der Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) | Was die aktuelle Versionslinie bringt |
-| [Das Glossar](../../../eng-us/glossary.md) | Jeder Begriff erklärt |
+| [Das Glossar](../../glossar.md) | Jeder Begriff erklärt |
 
 ## Der Pfad für Projektleiter
 
@@ -130,7 +130,7 @@ frei kopiert und angepasst werden ([Freie Dokumentation](../freie-dokumentation.
 ### Woche 3: Inhalte, Sprachen und Compliance
 
 1. [Workshops zur Inhaltsmodellierung durchführen](workshops-zur-inhaltsmodellierung.md), mit [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md)
-2. [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md), mit [Sprachen in Exponential](../../../eng-us/languages.md)
+2. [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md), mit [Sprachen in Exponential](../../sprachen.md)
 3. [Checklisten für Barrierefreiheit, Sicherheit und Compliance](checklisten-barrierefreiheit-sicherheit-und-compliance.md), mit [Sicherheitshärtung](../sicherheitshaertung.md)
 4. [Lizenzen für Käufer erklärt](../geschaeft/lizenzen-fuer-kaeufer.md)
 5. [Der Layout-Editor](../layout-editor.md)
@@ -146,7 +146,7 @@ frei kopiert und angepasst werden ([Freie Dokumentation](../freie-dokumentation.
 
 1. [Ein Team mit Git führen](ein-team-mit-git-fuehren.md), mit [Mit Git entwickeln](../mit-git-entwickeln.md)
 2. [Mit der Community arbeiten und etwas zurückgeben](mit-der-community-arbeiten.md), mit [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md)
-3. [Ein Projekt messen: Kennzahlen (KPIs) aus den eigenen Logs und dem Audit-Protokoll des Produkts](kennzahlen-aus-logs-und-audit.md), mit [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)
+3. [Ein Projekt messen: Kennzahlen (KPIs) aus den eigenen Logs und dem Audit-Protokoll des Produkts](kennzahlen-aus-logs-und-audit.md), mit [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)
 4. [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md), Abschnitt „10. Eine wöchentliche Checkliste“
 
 ### Woche 6: führen
@@ -264,3 +264,11 @@ Questions for the team meeting:           <...>
 - [Wer ist 7x?](../wer-ist-7x.md)
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

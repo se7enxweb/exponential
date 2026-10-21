@@ -2,7 +2,7 @@
 
 Status: Vorschlag, 18. Oktober 2026. Grundlage: [der Plan für das Hilfesystem](hilfesystem.md) (Inhaltsmodell, Zugriff,
 Arbeitsablauf). Die maschinell prüfbaren Regeln prüft seit 6.0.15 `./console exp:help:content check`
-([Hilfe als Inhalt gepflegt](../../../eng-us/features/6.0/help-content.md#the-validator)).
+([Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md#der-validator)).
 
 Dieser Leitfaden gilt für jedes Thema im Themenpool (`help-pool`). Einen Teil
 davon prüft der Validator `check_help.php`; der Rest ist Aufgabe des
@@ -422,4 +422,4 @@ Thema vorkommt.
 ## Siehe auch
 
 - [Plan für das Hilfesystem](hilfesystem.md)
-- [Glossar](../../../eng-us/glossary.md)
+- [Glossar](../../glossar.md)

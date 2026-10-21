@@ -41,17 +41,17 @@ Nach dieser Lektion können die Teilnehmenden:
    Zugang, ein ruhiger Bereich für Pausen.
 2. Netzwerk (3 Minuten): Installationen laden Code von GitHub und Packagist und Seitenpakete aus dem Paketindex;
    testen Sie das Netzwerk des Veranstaltungsorts vorab oder bereiten Sie Code und Pakete auf jedem Rechner vor
-   ([Lektion 2.8 von Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/choosing-the-site-package-for-class.md)
+   ([Lektion 2.8 von Train the Trainer](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/das-seitenpaket-fuer-den-kurs-waehlen.md)
    behandelt den Paketindex und Offline-Installationen).
 3. Ausstattung und Helfer (4 Minuten): Ersatz-Laptops mit einer vorbereiteten Installation; gedruckte
-   [Kurzkarte für die Übungsumgebung](../../../../../eng-us/help/trainers/lab-quick-card.md); ein Helfer pro acht bis zehn Teilnehmende, wie es die
+   [Kurzkarte für die Übungsumgebung](../../kurzkarte-fuer-die-uebungsumgebung.md); ein Helfer pro acht bis zehn Teilnehmende, wie es die
    Workshop-Gliederung der Fürsprecher empfiehlt.
 
 ### Häufige Fragen
 
 **Was, wenn das Netzwerk GitHub blockiert?** Bereiten Sie den Code vorab vor (USB-Stick oder vorinstallierte Rechner).
 
-**Lieber online?** Siehe [Lektion 3.6 von Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/online-and-hybrid-delivery.md).
+**Lieber online?** Siehe [Lektion 3.6 von Train the Trainer](../../train-the-trainer/modul-03-einen-kurs-gestalten/online-und-hybridunterricht.md).
 
 ### Stolperfallen
 
@@ -96,19 +96,19 @@ Schreiben Sie den Logistikplan für einen eintägigen Workshop mit 16 Teilnehmen
 
 - [Gliederung eines praktischen Workshops](../../../fuersprecher/ablaufplan-praxis-workshop.md)
 - [Checklisten für Veranstaltungen](../../../fuersprecher/checklisten-fuer-veranstaltungen.md)
-- [Trainer-Werkzeugkasten](../../../../../eng-us/help/trainers/trainer-toolkit.md)
+- [Trainer-Werkzeugkasten](../../trainer-werkzeugkasten.md)
 
 ## Verwandte Seiten
 
 - [Modul 1: Einen Workshop planen](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -29,10 +29,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/setup/logs.tpl` Zeile 48:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/shop/archivelist.tpl` Zeile 73:
 
 ```tpl
-{if $log_criteria.q|ne( '' )}{set $log_crit = concat( $log_crit, '&q=', $log_criteria.q|rawurlencode )}{/if}
+<td><a href={concat( '/shop/customerorderview/', $Orders.item.user_id, '/', $Orders.item.account_email|rawurlencode )|ezurl}>{$Orders.item.account_name|wash}</a></td> {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2 *}
 ```
 
 ## Siehe auch

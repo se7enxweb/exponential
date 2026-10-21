@@ -41,7 +41,7 @@ PHP `substr()`. Ohne Startwert protokolliert es "Missing required parameter: sta
 | start | integer (negativ zählt vom Ende) | ja | keiner |
 | length | integer | nein | bis zum Ende |
 
-Gibt eine Zeichenkette zurück. Generierte Referenz: [substr](../../../eng-us/examples/template-operators/substr.md).
+Gibt eine Zeichenkette zurück. Generierte Referenz: [substr](../../beispiele/template-operatoren/substr.md).
 
 ### substr_replace
 
@@ -53,7 +53,7 @@ PHP `substr_replace()`: ersetzt den Teil ab start (über length Bytes) durch den
 | start | integer | ja | keiner |
 | length | integer | nein | bis zum Ende |
 
-Gibt eine Zeichenkette zurück. Generierte Referenz: [substr_replace](../../../eng-us/examples/template-operators/substr_replace.md).
+Gibt eine Zeichenkette zurück. Generierte Referenz: [substr_replace](../../beispiele/template-operatoren/substr_replace.md).
 
 ```tpl
 {def $s = 'Healthy eating'}
@@ -86,13 +86,13 @@ im Namen. Suche und Ersatz dürfen wie in PHP Arrays sein.
 | search | string oder array | ja | keiner |
 | replace | string oder array | ja | keiner |
 
-Gibt eine Zeichenkette zurück. Generierte Referenz: [ristring](../../../eng-us/examples/template-operators/ristring.md).
+Gibt eine Zeichenkette zurück. Generierte Referenz: [ristring](../../beispiele/template-operatoren/ristring.md).
 
 ### rstring
 
 PHP `str_ireplace()`: die Ersetzung **ohne Beachtung der Groß- und Kleinschreibung**. Dieselben Parameter wie
 `ristring`.
-Generierte Referenz: [rstring](../../../eng-us/examples/template-operators/rstring.md).
+Generierte Referenz: [rstring](../../beispiele/template-operatoren/rstring.md).
 
 Die Namen sind das Gegenteil dessen, was man vermuten würde; der Klassenkommentar dokumentiert sie als
 `ristring: str_replace` und `rstring: str_ireplace`, und das Beispiel bestätigt es. Auf alpha bietet außerdem die
@@ -109,7 +109,7 @@ associative array".
 | from oder ein Hash mit Ersetzungen | string oder hash | ja | keiner |
 | to | string | bei einer Zeichenkette from | keiner |
 
-Gibt eine Zeichenkette zurück. Generierte Referenz: [strtr](../../../eng-us/examples/template-operators/strtr.md).
+Gibt eine Zeichenkette zurück. Generierte Referenz: [strtr](../../beispiele/template-operatoren/strtr.md).
 
 ```tpl
 {def $s = 'Fit and healthy. Stay Healthy.'}
@@ -135,7 +135,7 @@ strtr( hash( 'Fit', 'Strong', 'healthy', 'happy' ) ) = Strong and happy. Stay He
 ### str_split
 
 PHP `str_split()`: die Zeichenkette in Stücken von length Bytes (Standardwert 1). Gibt ein Array zurück.
-Generierte Referenz: [str_split](../../../eng-us/examples/template-operators/str_split.md).
+Generierte Referenz: [str_split](../../beispiele/template-operatoren/str_split.md).
 
 ### str_word_count
 
@@ -147,7 +147,7 @@ Position zu Wort. Ein optionaler zweiter Parameter nennt zusätzliche Zeichen, d
 | format | integer (0, 1 oder 2) | nein | 0 |
 | characters | string | nein | keiner |
 
-Generierte Referenz: [str_word_count](../../../eng-us/examples/template-operators/str_word_count.md).
+Generierte Referenz: [str_word_count](../../beispiele/template-operatoren/str_word_count.md).
 
 ### str_getcsv
 
@@ -160,14 +160,14 @@ als veraltet markierte alte Voreinstellung vermeidet.
 | enclosure | string | nein | `"` |
 | escape | string | nein | `''` |
 
-Generierte Referenz: [str_getcsv](../../../eng-us/examples/template-operators/str_getcsv.md).
+Generierte Referenz: [str_getcsv](../../beispiele/template-operatoren/str_getcsv.md).
 
 ### strtok
 
 PHP `strtok( input, token )`: das erste Token. Weil jeder Operatoraufruf einen neuen Durchlauf von `strtok()` beginnt,
 kann ein Template nur das erste Stück erhalten; verwenden Sie für alle Stücke `explode`. Parameter: token (string,
 erforderlich).
-Generierte Referenz: [strtok](../../../eng-us/examples/template-operators/strtok.md).
+Generierte Referenz: [strtok](../../beispiele/template-operatoren/strtok.md).
 
 ```tpl
 'abcdefg'|str_split( 3 ) = {'abcdefg'|str_split( 3 )|implode( ' | ' )}
@@ -194,13 +194,13 @@ Ausgabe auf alpha:
 ### ltrim und rtrim
 
 PHP `ltrim()` und `rtrim()`: Leerraum oder die angegebenen Zeichen am linken oder am rechten Ende entfernt. Parameter:
-characters (string, optional). Generierte Referenzen: [ltrim](../../../eng-us/examples/template-operators/ltrim.md),
-[rtrim](../../../eng-us/examples/template-operators/rtrim.md). Beide Enden auf einmal: [trim](zeichenketten-operatoren.md#trim).
+characters (string, optional). Generierte Referenzen: [ltrim](../../beispiele/template-operatoren/ltrim.md),
+[rtrim](../../beispiele/template-operatoren/rtrim.md). Beide Enden auf einmal: [trim](zeichenketten-operatoren.md#trim).
 
 ### lcfirst
 
 PHP `lcfirst()`: das erste Byte als Kleinbuchstabe. Keine Parameter.
-Generierte Referenz: [lcfirst](../../../eng-us/examples/template-operators/lcfirst.md).
+Generierte Referenz: [lcfirst](../../beispiele/template-operatoren/lcfirst.md).
 
 ### chunk_split
 
@@ -212,7 +212,7 @@ dem letzten.
 | length | integer | nein | 76 wie in PHP |
 | separator | string | nein | `"\r\n"` wie in PHP |
 
-Generierte Referenz: [chunk_split](../../../eng-us/examples/template-operators/chunk_split.md).
+Generierte Referenz: [chunk_split](../../beispiele/template-operatoren/chunk_split.md).
 
 ```tpl
 [{'--slug--'|ltrim( '-' )}] [{'--slug--'|rtrim( '-' )}] [{'  both  '|ltrim}]
@@ -240,9 +240,9 @@ Ausgabe auf alpha:
 
 Keiner davon ist eine Maskierung für HTML- oder JavaScript-Ausgabe; verwenden Sie dafür `wash`
 ([Zeichenketten-Operatoren](zeichenketten-operatoren.md#wash)). Generierte Referenzen:
-[addslashes](../../../eng-us/examples/template-operators/addslashes.md), [stripslashes](../../../eng-us/examples/template-operators/stripslashes.md),
-[addcslashes](../../../eng-us/examples/template-operators/addcslashes.md), [stripcslashes](../../../eng-us/examples/template-operators/stripcslashes.md),
-[quotemeta](../../../eng-us/examples/template-operators/quotemeta.md).
+[addslashes](../../beispiele/template-operatoren/addslashes.md), [stripslashes](../../beispiele/template-operatoren/stripslashes.md),
+[addcslashes](../../beispiele/template-operatoren/addcslashes.md), [stripcslashes](../../beispiele/template-operatoren/stripcslashes.md),
+[quotemeta](../../beispiele/template-operatoren/quotemeta.md).
 
 Im Template-Quelltext wird ein Anführungszeichen innerhalb einer Zeichenkette in einfachen Anführungszeichen als `\'`
 geschrieben und ein Backslash als `\\`:
@@ -278,7 +278,7 @@ Tags, die erhalten bleiben sollen (eine Zeichenkette wie `'<b><i>'` oder ein Arr
 
 Gibt eine Zeichenkette zurück. `strip_tags` ist kein Bereinigungswerkzeug: Es behält die Attribute erlaubter Tags und
 maskiert `&` nicht. Bereinigen Sie das Ergebnis mit wash, bevor Sie es ausgeben. Generierte Referenz:
-[strip_tags](../../../eng-us/examples/template-operators/strip_tags.md).
+[strip_tags](../../beispiele/template-operatoren/strip_tags.md).
 
 ```tpl
 {def $html = '<p>Fit <b>and</b> <a href="/x">healthy</a></p>'}
@@ -324,13 +324,13 @@ das Markup im Template hinzu, oder registrieren Sie einen eigenen Operator unter
 ### str_shuffle
 
 PHP `str_shuffle()`: die Bytes in zufälliger Reihenfolge (nicht für Geheimes geeignet). Keine Parameter.
-Generierte Referenz: [str_shuffle](../../../eng-us/examples/template-operators/str_shuffle.md).
+Generierte Referenz: [str_shuffle](../../beispiele/template-operatoren/str_shuffle.md).
 
 ### hebrev
 
 PHP `hebrev()`: wandelt logischen hebräischen Text in visuellen Text um, mit einer optionalen Höchstzahl von Zeichen
 je Zeile (integer). Text ohne hebräische Zeichen wird unverändert zurückgegeben. Generierte Referenz:
-[hebrev](../../../eng-us/examples/template-operators/hebrev.md).
+[hebrev](../../beispiele/template-operatoren/hebrev.md).
 
 ```tpl
 {def $s = 'abcdef'|str_shuffle}
@@ -391,12 +391,13 @@ Verlassen Sie sich in einem Template, das überall funktionieren muss, nicht auf
 - [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md)
 - [PHP-Funktionsoperatoren](php-funktionsoperatoren.md): `PHPOperatorList`
 - [Array-Operatoren](array-operatoren.md): die Multibyte-sicheren Operatoren zum Bearbeiten von Zeichenketten
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

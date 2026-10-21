@@ -46,7 +46,7 @@ Kategorien, die Transparenzprogramme häufig proaktiv veröffentlichen:
 Legen Sie unterhalb eines Ordners „Transparenz“ einen Ordner pro Kategorie an und legen Sie jede Kategorie in eine
 eigene Sektion, wenn verschiedene Teams sie veröffentlichen ([Sektionen](../../../anleitungen/sektionen.md)). Die
 Ordnernamen werden zu den Adressen (`/Transparency/What-we-spend`), die auch nach Umbenennungen gültig bleiben, weil
-alte Aliasse weiterleiten ([Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md)).
+alte Aliasse weiterleiten ([Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)).
 
 ## Ein fester Ablauf für jede Kategorie
 
@@ -84,12 +84,13 @@ die Aufbewahrung. Richten Sie es dann in Exponential ein:
 
 - [Veröffentlichungspläne](veroeffentlichungsplaene.md)
 - [Offenlegungsprotokolle](offenlegungsprotokolle.md)
-- [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)
+- [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

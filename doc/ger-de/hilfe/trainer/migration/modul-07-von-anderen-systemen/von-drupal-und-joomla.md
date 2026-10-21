@@ -51,7 +51,7 @@ Quellen: [Drupal und Exponential](../../../../installation/migration/drupal.md) 
    `/node/123` wird verlinkt, ergänzen Sie also für jede Node-ID einen Alias oder eine Weiterleitung im Webserver;
    übernehmen Sie die Tabelle des Redirect-Moduls.
 4. **Joomla-Export** (3 Minuten). Die Web Services API (Joomla 4 und 5) mit einem Token im Header `X-Joomla-Token`
-   oder die Datenbank auf einer Kopie. Die Anleitung markiert zwei Punkte als nicht überprüft: eine Kernfunktion
+   oder die Datenbank auf einer Kopie. Die Anleitung markiert zwei Punkte als nicht geprüft: eine Kernfunktion
    „Website exportieren“ und die Parameter für die Seitenaufteilung der API.
 5. **Joomla-Zuordnung und -Adressen** (4 Minuten). `introtext` und `fulltext` (an der Weiterlesen-Linie getrennt) zu
    `intro` und `body`; Kategorien als Ordner; Module als Layout-Blöcke. Die Adressen hängen von den SEF-Einstellungen
@@ -76,7 +76,7 @@ der Bestandsaufnahme.
   zählen Sie gegen die Bestandsaufnahme.
 - **Tiefe Verschachtelung von Paragraphs.** Entwerfen Sie zuerst die Kindklassen; testen Sie die tiefste
   Verschachtelung.
-- **Die nicht überprüften Joomla-Punkte als Tatsache unterrichten.** Sagen Sie, was die Anleitung sagt: nicht
+- **Die nicht geprüften Joomla-Punkte als Tatsache unterrichten.** Sagen Sie, was die Anleitung sagt: nicht
   überprüft.
 
 ## Praktische Übung
@@ -128,7 +128,7 @@ Eine Vergleichsübung zu zweit, mit beiden geöffneten Anleitungen.
    ([Joomla-Anleitung, Abschnitt 2](../../../../installation/migration/joomla.md#2-joomla-auf-exponential-abbilden)).
 4. Das Menü bestimmt den Pfad
    ([Joomla-Anleitung, Abschnitt 4](../../../../installation/migration/joomla.md#4-adressen-und-weiterleitungen)).
-5. **Falsch.** Sie wurde nicht gefunden und ist in beide Richtungen als nicht überprüft markiert
+5. **Falsch.** Sie wurde nicht gefunden und ist in beide Richtungen als nicht geprüft markiert
    ([Joomla-Anleitung, Abschnitt 1](../../../../installation/migration/joomla.md#1-was-joomla-exportieren-kann)).
 
 </details>
@@ -144,13 +144,13 @@ Eine Vergleichsübung zu zweit, mit beiden geöffneten Anleitungen.
 
 - [Modul 7: Von anderen Systemen](README.md)
 - [Migration zu Exponential: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

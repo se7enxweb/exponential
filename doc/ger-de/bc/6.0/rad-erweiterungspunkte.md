@@ -322,7 +322,7 @@ Etwas, das einer Rolle gewährt werden kann, und wodurch es eingeschränkt werde
 Eine eigene Einschränkung für eine Inhaltsfunktion wie content/read, neben Class, Section und Subtree: Eine
 Erweiterung fügt sie der Funktion hinzu, und ihr Handler entscheidet für Objekte, Knoten und Versionen und liefert die
 SQL-Bedingung für Fetches von Listen und Bäumen. Ohne Handler verweigert die Einschränkung überall. Siehe
-[Einschränkungen für Inhaltsrichtlinien von Erweiterungen](../../../eng-us/features/6.0/content-limitation-handlers.md).
+[Einschränkungen für Inhaltsrichtlinien von Erweiterungen](../../funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md).
 
 | | |
 |---|---|
@@ -463,7 +463,7 @@ Etwas, das von selbst nach einem Zeitplan läuft, außerhalb jeder Anfrage.
 Etwas, das entscheidet, ob ein Cronjob-Teil überhaupt läuft, zum Beispiel ein Stoppschalter, während ein Release
 bereitgestellt wird. runcronjobs.php fragt den Filter cronjob/part/run mit dem Teil, dem Siteaccess und den Skripten,
 bevor das erste Skript startet; nur true führt den Teil aus. Anleitung:
-[Einen Cronjob-Teil auslassen](../../../eng-us/features/6.0/cronjob-part-filter.md).
+[Einen Cronjob-Teil auslassen](../../funktionen/6.0/filter-fuer-cronjob-teile.md).
 
 | | |
 |---|---|
@@ -592,7 +592,7 @@ Was Inhalte beim Veröffentlichen indiziert und was antwortet, wenn jemand sucht
 ### Session-Handler  
 *Werkzeug:* `/setup/handlerextension/session`
 
-Wo Sessions aufbewahrt und wie sie aufgeräumt werden.
+Wo Sitzungen aufbewahrt und wie sie aufgeräumt werden.
 
 | | |
 |---|---|

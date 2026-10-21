@@ -10,7 +10,7 @@ type: help
 # Eine Abteilungs-Site hinzufügen
 
 Diese Seite richtet sich an Administratoren und Site-Ersteller. Sie folgt den Schritten aus
-[Mehrere Sites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site)
+[Mehrere Sites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website)
 für eine Abteilung einer Behörde.
 
 ## Inhalt
@@ -70,7 +70,7 @@ Behalten Sie die Einträge, die der Installer geschrieben hat; fügen Sie Ihre h
 ## Host, DNS und Zertifikat
 
 Fügen Sie den Hostnamen dem DNS, dem Webserver oder Velocity und dem Zertifikat hinzu
-([Live gehen: Hosts, HTTPS und Siteaccesses](../../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+([Live gehen: Hosts, HTTPS und Siteaccesses](../../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 
 ## Die Administration
 
@@ -94,8 +94,9 @@ unter diesem Host nicht erreichbar sind, sofern das nicht beabsichtigt ist.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

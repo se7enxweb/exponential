@@ -13,8 +13,8 @@ Diese Seite richtet sich an Site-Ersteller, Projektleiter und Redakteure, die Le
 wissen, welche Abteilung sie anbietet. Menschen denken in Themen („Wohnen“, „Verkehr“) und in Lebenslagen („ein Kind
 bekommen“, „umziehen“, „ein Unternehmen gründen“, „wenn jemand stirbt“). Mit Schlagworten erscheint eine Leistung unter
 jedem Thema und jeder Lebenslage, zu der sie gehört, während sie an einer Stelle im Baum liegt. Die Erweiterung für
-Schlagworte ist in [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md) und
-[Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md) dokumentiert.
+Schlagworte ist in [eztags](../../../../funktionen/6.0/erweiterungen/eztags.md) und
+[Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md) dokumentiert.
 
 ## Inhalt
 
@@ -45,7 +45,7 @@ Situation nötige Leistung in sinnvoller Reihenfolge sammelt.
 
 Das Dashboard **Tags** und die Funktionen zum Hinzufügen, Bearbeiten, Verschieben und Zusammenführen gehören zu eztags;
 die Richtlinien liegen im Modul `tags`
-([Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md#permissions)).
+([Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md#rechte)).
 
 ## Leistungen verschlagworten
 
@@ -84,12 +84,13 @@ der Erweiterung in `extension/eztags/doc/`.
 
 - [Einen Leistungskatalog aufbauen](README.md)
 - [Leistungen finden](leistungen-finden.md)
-- [Den Inhaltsbaum strukturieren](../../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)
+- [Den Inhaltsbaum strukturieren](../../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

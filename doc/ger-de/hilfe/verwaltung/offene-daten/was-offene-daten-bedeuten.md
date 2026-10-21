@@ -89,16 +89,16 @@ Exponential ist ein Content-Management-System. Bei offenen Daten ist es auf der 
 
 - **Dateien unter stabilen Adressen.** Eine Datensatzdatei ist ein Inhaltsobjekt mit einem Dateifeld; die
   Download-Adresse `content/download/<object ID>/<attribute ID>` prüft die Rechte und funktioniert, solange das Objekt
-  existiert ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
+  existiert ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
 - **Beschreibungen als strukturierte Inhalte.** Sie können eine Inhaltsklasse „Datensatz“ mit Feldern für Titel,
   Beschreibung, Herausgeber, Lizenz, Aktualisierungshäufigkeit und Dateien festlegen
-  ([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)).
+  ([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)).
 - **Feeds neuer und geänderter Datensätze.** RSS-2.0- oder Atom-Exporte listen die neuesten Objekte unterhalb eines
   Ordners auf ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 - **Eine JSON-Schnittstelle.** Die REST-API liefert Knoten, Unterknoten und Felder als JSON unter `/api/ezp/v1/...` und
   `/api/ezp/v2/...` ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)).
-- **Versionen und ein Audit-Trail**, damit Sie zeigen können, was sich wann geändert hat
-  ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- **Versionen und ein Prüfprotokoll**, damit Sie zeigen können, was sich wann geändert hat
+  ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Was Exponential nicht tut
 
@@ -127,14 +127,15 @@ Die anderen Seiten dieses Bereichs behandeln jeden Schritt der Reihe nach.
 
 ## Verwandte Seiten
 
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
 - [RSS-Feeds](../../../anleitungen/rss-feeds.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

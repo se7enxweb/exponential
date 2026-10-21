@@ -56,7 +56,7 @@ Zusammengefasst aus derselben Seite:
 | 5. Caches geleert und die neue Adresse getestet | Administrator |
 | 6. Die Marke in die Website-Liste der Administration aufgenommen, damit Vorschauen und Links sie verwenden können | Administrator |
 
-Die genauen Einstellungen stehen unter [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md).
+Die genauen Einstellungen stehen unter [Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md).
 Ein Testhost oder eine Staging-Adresse lässt Sie die Marke sehen, bevor sie öffentlich ist.
 
 ## Teams und gemeinsame Inhalte
@@ -78,7 +78,7 @@ bearbeitet, wer freigibt.
 
 - [ ] Die wöchentliche Routine umfasst die neue Marke ([Wöchentliche Routine des Betreibers](../alltag/woechentliche-routine-des-betreibers.md)).
 - [ ] Suchstatistiken werden im neuen öffentlichen Siteaccess aufgezeichnet, wenn Sie sie verwenden.
-- [ ] Die Sitemap der neuen Marke wird erzeugt und eingereicht ([XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)).
+- [ ] Die Sitemap der neuen Marke wird erzeugt und eingereicht ([XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md)).
 - [ ] Backups und Überwachung umfassen den neuen Hostnamen; fragen Sie Ihren Hoster.
 - [ ] Die vollständige [Checkliste für mehrere Marken](../../unternehmen/multisite/checkliste-fuer-mehrere-marken.md) ist erledigt.
 
@@ -88,3 +88,11 @@ bearbeitet, wer freigibt.
 - [Multisite in einer Installation für Hoster](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md)
 - [Multisite- und mehrsprachige Projekte planen](../../fuehrung/multisite-und-mehrsprachigkeit-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

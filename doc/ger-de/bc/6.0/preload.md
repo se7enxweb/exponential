@@ -340,8 +340,8 @@ behandeln (das geht über dieses Skript hinaus).
 
 ## Verwandte Seiten
 
-- [Seiten vorladen: läuft im Hintergrund](../../../eng-us/features/6.0/preload-sites-view.md#it-runs-in-the-background) (28. September 2026)
+- [Seiten vorladen: läuft im Hintergrund](../../funktionen/6.0/ansicht-websites-vorladen.md#es-läuft-im-hintergrund) (28. September 2026)
 - [Verhaltensänderungen, 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
-- [Generator des statischen Caches](../../../eng-us/features/6.0/static-cache-generator.md)
+- [Generator des statischen Caches](../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
 - [HTTP/2 und das Vorwärmen von Caches](http2-und-cache-vorwaermen.md)
 - [Exponential-Konsole](konsole.md)

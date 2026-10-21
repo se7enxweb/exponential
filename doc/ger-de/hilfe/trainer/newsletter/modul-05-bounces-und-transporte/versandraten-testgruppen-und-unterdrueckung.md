@@ -43,7 +43,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quelle: die Anleitung zur Zustellbarkeit der Erweiterung (verlinkt von der
-[Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)); die Richtlinienfunktion
+[Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)); die Richtlinienfunktion
 `newsletter/deliverability` öffnet alle ihre Seiten.
 
 1. **Versandraten** (6 Minuten). Mit `[ThrottleSettings] Throttle=enabled` geht ein Versand in Paketen von höchstens
@@ -132,7 +132,7 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 <summary>Antworten</summary>
 
 1. Er hält an und wird vom nächsten Lauf der Warteschlange fortgesetzt (Anleitung zur Zustellbarkeit, verlinkt von
-   der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+   der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 2. **B.** `MaxTestGroupSize=25`.
 3. **Falsch.** Ein angehaltener Transport sendet nichts, auch wenn die Drosselung aus ist.
 4. Er lädt eine CSV mit Adressen in die Unterdrückungsliste des Kernels, die jeder Newsletter-Versand beachtet
@@ -143,24 +143,24 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 
 ## Weiterführende Informationen
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420):
   die Anleitung zur Zustellbarkeit.
 - [E-Mail-Einstellungen: einrichten und betreiben](../../../../anleitungen/mail-einstellungen-administrator.md): die
   Unterdrückungsliste.
-- [Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#when-something-goes-wrong):
+- [Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md#wenn-etwas-schiefgeht):
   viele Bounces und Spam-Meldungen.
 
 ## Verwandte Seiten
 
 - [Modul 5: Bounces und Transporte](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -58,7 +58,7 @@ Die Fußzeile der Website verlinkt außerdem Spenden über PayPal. Andere Wege u
 | Ein Benutzer, dessen Site auf Exponential läuft | Ein kleines monatliches Sponsoring für 7x oder die Foundation |
 | Ein Unternehmen, das mit Exponential Geld verdient | Ein größeres dauerhaftes Sponsoring ([Sponsoring als Unternehmen](../sponsoren/als-unternehmen-sponsern.md)) oder eine Partnerschaft |
 | Ein Unternehmen, das eine Funktion braucht | Gesponserte Entwicklung bei 7x; das Ergebnis kann allen zugutekommen |
-| Eine Agentur, ein Hoster oder ein Schulungsanbieter | Das Partnerprogramm ([Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)) |
+| Eine Agentur, ein Hoster oder ein Schulungsanbieter | Das Partnerprogramm ([Partner: Hier beginnen](../partner/partner-hier-beginnen.md)) |
 | Jemand, der in den Vereinigten Staaten eine mögliche Steuerermäßigung möchte | Die Foundation, eine gemeinnützige Organisation nach 501(c)(3); fragen Sie Ihren eigenen Steuerberater |
 
 ## Warum es wichtig ist
@@ -83,3 +83,11 @@ Beratung zur Barrierefreiheit und Antworten in den Foren sind alle Geschenke an 
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) und [Wer ist 7x?](../wer-ist-7x.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt
   und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

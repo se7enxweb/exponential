@@ -160,7 +160,7 @@ php ezpm.php install mypackage --as-drafts [--drafts-existing=update|skip]
 - **Im Hintergrund installieren**: Der Content-Job `packageinstall` installiert mit den Wahlen des Assistenten als
   anfragender Benutzer, vorgeschlagen oberhalb von `[ContentJobSettings] SynchronousLimit`; die Seite des Pakets zeigt
   seinen Fortschritt und führt die Entwürfe auf, wenn er fertig ist
-  ([Content-Jobs](../../../eng-us/bc/6.0/content-jobs.md#job-types-of-other-parts-of-the-kernel)).
+  ([Content-Jobs](inhaltsjobs.md#jobtypen-anderer-teile-des-kernels)).
 - **Inhaltsbrowser**: JSON-Dokumente werden nach ihrer Art aufgeführt (Paketdefinition, Inhaltsobjekt, Inhaltsklasse)
   und als JSON oder als das XML angezeigt, das sie spiegeln, ein XML-Dokument ebenso als JSON; eine Binärdatei als
   Karte mit ihrem SHA-256 und der Angabe, ob er zu `package.json` passt.

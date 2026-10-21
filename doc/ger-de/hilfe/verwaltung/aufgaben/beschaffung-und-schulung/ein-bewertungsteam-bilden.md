@@ -11,7 +11,7 @@ type: help
 
 **Wer:** die Beschaffungsverantwortlichen oder der Projektleiter. **Wann:** bevor die Ausschreibung veröffentlicht wird,
 damit das Team bei der Festlegung der Kriterien hilft. Die Methode steht in
-[Ein Bewertungsgremium bilden](../../../../../eng-us/help/government/procurement/evaluation/building-an-evaluation-panel.md).
+[Ein Bewertungsgremium bilden](../../beschaffung/bewertung/ein-bewertungsgremium-bilden.md).
 
 > **Hinweis** Diese Seite beschreibt gängige Praxis; sie ist keine Rechtsberatung. Folgen Sie den Vergaberegeln Ihrer
 > Organisation.
@@ -25,7 +25,7 @@ damit das Team bei der Festlegung der Kriterien hilft. Die Methode steht in
 
 ## Bevor Sie beginnen
 
-- Die Anforderungen sind entworfen ([Anforderungen](../../../../../eng-us/help/government/procurement/requirements/README.md)).
+- Die Anforderungen sind entworfen ([Anforderungen](../../beschaffung/anforderungen/README.md)).
 - Ihre Vergaberegeln zu Gremien (Größe, Unabhängigkeit, Dokumentation) sind bekannt.
 
 ## Schritte
@@ -47,10 +47,10 @@ damit das Team bei der Festlegung der Kriterien hilft. Die Methode steht in
    damit es weiß, was das Produkt ohne Anleitung eines Anbieters kann. Ein Befehl auf SQLite genügt
    ([Einen Proof of Concept auf SQLite mit einem Befehl durchführen](einen-proof-of-concept-auf-sqlite-mit-einem-befehl-durchfuehren.md)). Für
    Entscheider gibt es eine halbtägige Einführung
-   ([Halber Tag für Entscheider](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/decision-makers-half-day.md)).
+   ([Halber Tag für Entscheider](../../../trainer/workshops/modul-02-eintaegige-programme/halber-tag-fuer-entscheider.md)).
 4. **Teilen Sie die Fakten**, die das Gremium braucht: die Seiten zu den Standards für Barrierefreiheit, Sicherheit und
    Datenschutz sowie
-   [Was Exponential nachweisen kann und was nicht](../../../../../eng-us/help/government/procurement/requirements/what-exponential-can-and-cannot-evidence.md).
+   [Was Exponential nachweisen kann und was nicht](../../beschaffung/anforderungen/was-exponential-nachweisen-kann-und-was-nicht.md).
 5. **Verteilen Sie die Kriterien** auf die Mitglieder; jedes Kriterium hat eine führende und eine zweite bewertende
    Person.
 6. **Vereinbaren Sie die Bewertungsregeln**, bevor Angebote gelesen werden
@@ -72,13 +72,14 @@ Lücken und einer Aufteilung der Kriterien.
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Bewertung](../../../../../eng-us/help/government/procurement/evaluation/README.md)
+- [Bewertung](../../beschaffung/bewertung/README.md)
 - [Vor einer Ausschreibung](../../checklisten/vor-einer-ausschreibung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -14,10 +14,12 @@ Eine Ansicht des Moduls `contentcheck`, definiert in `kernel/contentcheck/module
 ## Adresse
 
 ```text
-/contentcheck/brokenrelations/<NodeID>
+/contentcheck/brokenrelations/<NodeID>/(exclude)/<Exclude>/(kind)/<Kind>/(relation)/<Relation>/(after)/<After>/(problem)/<Problem>/(version)/<Version>/(selectall)/<SelectAll>/(file_offset)/<FileOffset>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `NodeID`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(exclude)` setzt `Exclude`, `(kind)` setzt `Kind`, `(relation)` setzt `Relation`, `(after)` setzt `After`, `(problem)` setzt `Problem`, `(version)` setzt `Version`, `(selectall)` setzt `SelectAll`, `(file_offset)` setzt `FileOffset`.
 
 ## Wer sie öffnen darf
 
@@ -39,6 +41,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/contentcheck/brokenrelations/1'|ezurl}>contentcheck/brokenrelations</a>
+<a href={concat( '/contentcheck/brokenrelations/1/(exclude)/', 1 )|ezurl}>contentcheck/brokenrelations</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

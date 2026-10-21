@@ -84,7 +84,7 @@ Wo Pools liegen, laut den Quellen:
 | Debian und Ubuntu | `/etc/php/<version>/fpm/pool.d/` | `php<version>-fpm` |
 
 Quellen: [Kapitel 2, Plesk und Debian](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen),
-[Engines von Velocity, welches PHP-FPM](../../../../eng-us/bc/6.0/velocity-engines.md).
+[Engines von Velocity, welches PHP-FPM](../../../bc/6.0/velocity-engines.md).
 
 ## Pool-Einstellungen für Exponential
 
@@ -111,7 +111,7 @@ und `max_execution_time` 30 ([2.5](../../../installation/02-voraussetzungen.md#2
 **Zeitgrenzen für Anfragen.** Neben `max_execution_time` kann ein Pool eine Anfrage nach einer Grenze in Echtzeit beenden
 (`request_terminate_timeout`), die `set_time_limit()` von PHP nicht überschreiben kann. Die Notizen zur MongoDB-Portierung
 beschreiben, wie der Setup-Assistent dadurch abgebrochen wird und die Grenze nur für die Installation erhöht wird
-([MongoDB-Unterstützung im Kernel](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)). Unter Velocity ist das Gegenstück das
+([MongoDB-Unterstützung im Kernel](../../../bc/6.0/mongodb-kernel-unterstuetzung.md)). Unter Velocity ist das Gegenstück das
 `requestTimeout` der Engine (30 Sekunden; der Client erhält 504); halten Sie `SQLiteTransactionWait` von SQLite (Standard 25) unter
 dem Zeitlimit der Anfrage ([9.2](../../../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei)).
 
@@ -141,7 +141,7 @@ Website ausliefert, oft nicht der mit dem Namen `php-fpm`. Finden Sie ihn über 
 `exp:velocity deploy` erledigt das für Sie. `[DeploySettings] PhpFpmService=auto` (der Standard in `settings/velocity.ini`) findet in
 den vier Pool-Verzeichnissen oben die Pool-Konfiguration, die nach der Hosting-Domain der Installation benannt ist
 (`/var/www/vhosts/<domain>/...`, wie Plesk Pools benennt), oder eine, die das Verzeichnis der Installation nennt. Der Schritt ist ein
-Neuladen, sodass keine Anfrage verloren geht. Er braucht root ([Engines von Velocity](../../../../eng-us/bc/6.0/velocity-engines.md)).
+Neuladen, sodass keine Anfrage verloren geht. Er braucht root ([Engines von Velocity](../../../bc/6.0/velocity-engines.md)).
 
 ```bash
 php bin/php/console exp:velocity deploy --dry-run --allow-root-user                # shows which service it found
@@ -155,7 +155,7 @@ ausliefert.
 
 | Einschränkung | Wirkung auf Exponential | Quelle |
 |---|---|---|
-| `open_basedir` | der Setup-Assistent warnt; ezupdate sucht Composer zuerst innerhalb der Installation | [2.4](../../../installation/02-voraussetzungen.md#24-der-systemtest-des-setup-assistenten), [ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md) |
+| `open_basedir` | der Setup-Assistent warnt; ezupdate sucht Composer zuerst innerhalb der Installation | [2.4](../../../installation/02-voraussetzungen.md#24-der-systemtest-des-setup-assistenten), [ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md) |
 | `disable_functions` mit `proc_open`, `exec` oder `posix_kill` | die Seite Cronjobs kann keinen Job starten, die Crontab nicht lesen oder einen Job nicht anhalten; sie sagt, welches davon | [Cronjobs](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen) |
 | `disable_functions` mit `opcache_get_status` | **Systeminformationen** kann keine OPcache-Kennzahlen zeigen; der Cache funktioniert weiter | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
 | `variables_order` ohne `E` | der optionale Test meldet, dass PHP keine Umgebungsvariablen registriert | [Kapitel 12](../../../installation/12-fehlerbehebung.md) |
@@ -177,3 +177,11 @@ ausliefert.
 - [PHP-Versionen und Erweiterungen](../grundlagen/php-versionen-und-erweiterungen.md), [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md)
 - [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md), [Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -62,14 +62,15 @@ ein Audit-Ereignis.
 
 ## Verwandte Seiten
 - [Das Audit-Protokoll verifizieren](das-audit-protokoll-verifizieren.md)
-- [Rollengestaltung: Prüfer](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-auditors.md)
+- [Rollengestaltung: Prüfer](../../betrieb/personen-und-berechtigungen/rollenentwurf-pruefende.md)
 - [Einem Prüfer Lesezugriff auf das Audit-Protokoll geben](../personen-und-berechtigungen/einem-pruefer-lesezugriff-auf-das-audit-protokoll-geben.md)
-- [Die Funktion Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md#exports-and-the-channels-of-extensions)
+- [Die Funktion Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md#exporte-und-die-kanäle-von-extensions)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

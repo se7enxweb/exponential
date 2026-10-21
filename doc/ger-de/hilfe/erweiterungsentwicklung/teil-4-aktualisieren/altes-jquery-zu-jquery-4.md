@@ -13,7 +13,7 @@ Teil 4, Kapitel 18. Die Administration von Exponential läuft auf jQuery 4.0.0, 
 jQuery UI 1.14.2, alle geladen über den Packer-Schlüssel `ezjsc::jquery` von ezjscore (und `ezjsc::jqueryUI`). Alte
 Erweiterungen bringen oft ihr eigenes jQuery 1.x oder 2.x mit oder rufen Funktionen auf, die jQuery 3 und 4 entfernt
 haben. Dieses Kapitel behandelt beides. Die Zusammenfassung der Änderung im Kernel ist
-[jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md).
+[jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md).
 
 ## Schritt 1: das jQuery der Seite verwenden, nicht Ihre eigene Kopie
 
@@ -124,14 +124,14 @@ eigenen Test.
 
 - Zurück: [Von YUI zu expui](yui-zu-expui.md)
 - Weiter: [admin4-Styling für Erweiterungsseiten](admin4-styling-fuer-erweiterungsseiten.md)
-- [jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
 - [Upgrade-Leitfaden für jQuery 4.0](https://jquery.com/upgrade-guide/4.0/) und [Upgrade-Leitfaden für jQuery 3.0](https://jquery.com/upgrade-guide/3.0/) auf jquery.com
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

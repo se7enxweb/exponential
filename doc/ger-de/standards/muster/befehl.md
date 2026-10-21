@@ -11,7 +11,7 @@ type: catalogue
 
 > **Hinweis**
 > Diese Seite wird aus dem Quellcode von `php bin/php/exppatterncatalogue.php --write` erzeugt. Bearbeiten Sie sie nicht von Hand:
-> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#how-the-catalogue-is-built).
+> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#wie-der-katalog-gebaut-wird).
 
 Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp:...), eine CLI-Skriptklasse oder ein Cronjob-Teil.
 
