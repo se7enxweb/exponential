@@ -301,3 +301,11 @@ Die Idee und die Behandlung der Entwürfe stammen aus LoveStack (Mugo Web, Commi
 - Auswirkungen der Sicherheitsänderungen auf ein Upgrade: [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../eng-us/bc/6.0/behaviour-changes-2026-10.md), [Sicherheitshärtung vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
 - Wie es dazu kam: [Chronik Oktober 2026](../../eng-us/history/2026/2026-10.md), [September 2026, zweite Hälfte](../../eng-us/history/2026/2026-09b.md).
 - Weitere Anleitungen: [Betrieb einer Site](betrieb-einer-website.md) (Logs, Sicherungen, Reparaturen), [Extensions](extensions.md) (Zwei-Faktor-Anmeldung und andere Extensions), [Glossar](../../eng-us/glossary.md).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

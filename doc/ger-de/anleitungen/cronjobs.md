@@ -716,3 +716,11 @@ ErrorFile=cronjobs/error.log
   Skriptsperre), `design/admin4/templates/setup/cronjobs.tpl` (die Seite; dieselbe Datei in `design/admin`)
 - Tests: `tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php` (Zeitpläne in Worten, nächste Ausführungen, Befehle,
   Beschreibungen)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

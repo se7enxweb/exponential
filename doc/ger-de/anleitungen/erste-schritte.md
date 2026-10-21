@@ -238,3 +238,11 @@ und [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading
 | Sehen, was sich wann geändert hat | [Chronik nach Monaten](../../eng-us/history/README.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
 | Wissen, was eine Installation standardmäßig tut | [Standardwerte einer Neuinstallation](../../eng-us/features/6.0/clean-install-defaults.md), [Protokolle und Startdaten des Installationsprogramms](../spezifikationen/6.0/installer-protokolle-und-startdaten.md) |
 | Einen Begriff nachschlagen | [Glossar](../../eng-us/glossary.md) |
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

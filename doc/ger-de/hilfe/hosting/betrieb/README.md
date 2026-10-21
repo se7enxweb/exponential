@@ -124,3 +124,11 @@ Das Installationsbuch behandelt dasselbe Gebiet f체r eine einzelne Website ausf�
 - [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md) (Anleitung)
 - [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, 체bersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beitr채ge zur체ck
+und entwickeln die Produkte mit uns, und so w채chst Exponential. Eine Partner-Website und ein Dashboard sind f체r Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen fr체her liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

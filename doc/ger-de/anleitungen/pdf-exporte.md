@@ -124,3 +124,11 @@ entfernt wurde. Ein Neuladen entfernt nie zweimal.
 - `expPDFExportForm::read()`: das Formular, wobei die Prüfungen, die die Datenbank brauchen, hineingereicht werden.
 - Tests ohne Datenbank: `php vendor/bin/phpunit tests/tests/kernel/classes/expPDFExportTest.php`.
 - Velocity: Die Klassen sind Kernel-Klassen; stellen Sie sie mit `exp:velocity deploy --kernel` bereit.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -247,3 +247,11 @@ Name einer Cache-Datei ist derselbe wie ohne die Funktion. Eine gespeicherte Wah
 - [Hinweise für Entwickler: die Umschaltung des Administrationsdesigns](../../eng-us/bc/6.0/ui-switch-design.md)
 - [UI-Umschaltung](../../eng-us/features/6.0/ui-switch.md) und [ihre Einstellungen](ui-umschalter-einstellungen.md)
 - [Rollen und Richtlinien](rollen-und-richtlinien.md), [Caches](caches.md), [Templates und Design](templates-und-design.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

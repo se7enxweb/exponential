@@ -60,8 +60,9 @@ Für OAuth-Clients, Tokens, persönliche API-Schlüssel und die URLs von v1 änd
 - Monate: [2023-12](../../../geschichte/erweiterungen/monate/2023-12.md), [2024-01](../../../geschichte/erweiterungen/monate/2024-01.md), [2026-03](../../../geschichte/erweiterungen/monate/2026-03.md), [2026-09](../../../geschichte/erweiterungen/monate/2026-09.md), [2026-10](../../../geschichte/erweiterungen/monate/2026-10.md)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

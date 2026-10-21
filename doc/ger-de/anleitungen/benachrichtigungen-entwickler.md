@@ -301,3 +301,11 @@ Ein Test der Zusammenfassung erfordert kein Warten: Legen Sie das Ereignis mit e
 - [Die Spezifikation](../spezifikationen/6.0/benachrichtigungen.md), [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md), [die Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md)
 - [Die Anleitung für Administratoren](benachrichtigungen-administrator.md), [die Anleitung für Benutzer](../../eng-us/features/6.0/notifications.md)
 - [Extensions](extensions.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

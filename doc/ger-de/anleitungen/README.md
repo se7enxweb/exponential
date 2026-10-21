@@ -175,3 +175,11 @@ Sie betreiben die Installation: Server, Caches, Sicherungen, Upgrades, Sicherhei
 - Was sich geändert hat und warum: [Geschichte](../../eng-us/history/README.md); der Nachweis, dass nichts fehlt: [Abdeckung](../../eng-us/history/coverage.md).
 - Release Notes: [Changelogs von 6.0](../../changelogs/6.0/6.0.15.md) und [der Extensions](../../changelogs/extensions/README.md).
 - Der Installationstext an einem Ort: [INSTALL](../../eng-us/INSTALL.md).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->
