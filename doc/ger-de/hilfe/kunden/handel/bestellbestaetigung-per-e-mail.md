@@ -13,7 +13,7 @@ Diese Seite ist für den Eigentümer und die Shop-Leitung. Die Bestätigungs-E-M
 von einer Bestellung aufbewahrt, und eine E-Mail, die nicht ankommt, wird zu einem Supportanruf. Diese Seite gibt die
 Prüfungen vor, mit denen sie weiterhin ankommt, und die Entscheidungen über ihren Inhalt. Was die E-Mail enthält und
 welchen Beleg-Link sie tragen kann, ist unter
-[Bestellbelege und Bestellbestätigung für Unternehmen](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md) erklärt.
+[Bestellbelege und Bestellbestätigung für Unternehmen](../../unternehmen/shops/bestellbelege-und-bestaetigungsmails.md) erklärt.
 
 ## Wie sie versendet wird
 
@@ -77,7 +77,7 @@ Postfach des Shops.
 ## Verwandte Seiten
 
 - [Rechnungen und Belege](rechnungen-und-belege.md)
-- [Bestellbelege und Bestellbestätigung für Unternehmen](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md)
+- [Bestellbelege und Bestellbestätigung für Unternehmen](../../unternehmen/shops/bestellbelege-und-bestaetigungsmails.md)
 - [E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md)
 - [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

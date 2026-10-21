@@ -1,0 +1,138 @@
+{
+    "shell:checkcalltimeref": {
+        "en": "Check PHP source files for deprecated call-time pass-by-reference usage",
+        "de": "Prüft PHP-Quelldateien auf veraltete Übergabe per Referenz beim Aufruf (call-time pass-by-reference)"
+    },
+    "shell:checkcode": {
+        "en": "Check PHP source files for short open tag coding standard violations",
+        "de": "Prüft PHP-Quelldateien auf Verstöße gegen den Codierstandard durch kurze Open-Tags"
+    },
+    "shell:checkdbschema": {
+        "en": "Verify database schema files against the expected baseline schema",
+        "de": "Prüft die Datenbankschema-Dateien gegen das erwartete Basisschema"
+    },
+    "shell:checkdbupdate": {
+        "en": "Check database update files for consistency with the current version",
+        "de": "Prüft die Datenbank-Update-Dateien auf Übereinstimmung mit der aktuellen Version"
+    },
+    "shell:checkforeach": {
+        "en": "Check PHP foreach loop syntax for Exponential coding standard compliance",
+        "de": "Prüft die Syntax von PHP-foreach-Schleifen auf Einhaltung des Exponential-Codierstandards"
+    },
+    "shell:checkini": {
+        "en": "Find INI configuration files that do not conform to valid PHP parse syntax",
+        "de": "Findet INI-Konfigurationsdateien, die sich nicht als gültiges PHP parsen lassen"
+    },
+    "shell:checkprint": {
+        "en": "Check PHP source files for print() statement usage",
+        "de": "Prüft PHP-Quelldateien auf Verwendung von print()"
+    },
+    "shell:checkversionnumbers": {
+        "en": "Check version number consistency across source files (deprecated since 5.0)",
+        "de": "Prüft die Versionsnummern in den Quelldateien auf Übereinstimmung (veraltet seit 5.0)"
+    },
+    "shell:clearcache": {
+        "en": "Deprecated — clear site caches using bin/php/ezcache.php instead",
+        "de": "Veraltet: Leeren Sie die Caches der Website stattdessen mit bin/php/ezcache.php"
+    },
+    "shell:creatediff": {
+        "en": "Create a patch/diff archive between two Exponential release versions",
+        "de": "Erstellt ein Patch-/Diff-Archiv zwischen zwei Exponential-Releases"
+    },
+    "shell:distcommon": {
+        "en": "Shared functions library sourced by distribution build scripts (not executable)",
+        "de": "Gemeinsame Funktionsbibliothek, die die Skripte zum Bau der Distribution einbinden (nicht ausführbar)"
+    },
+    "shell:extensionscommon": {
+        "en": "Shared functions library sourced by extension packaging scripts (not executable)",
+        "de": "Gemeinsame Funktionsbibliothek, die die Skripte zum Paketieren von Erweiterungen einbinden (nicht ausführbar)"
+    },
+    "shell:fixlicense": {
+        "en": "Update legacy eZ Systems license URLs in PHP source files",
+        "de": "Aktualisiert alte Lizenz-URLs von eZ Systems in PHP-Quelldateien"
+    },
+    "shell:generatefilelist": {
+        "en": "Generate share/filelist.md5 file integrity checksums for the current release",
+        "de": "Erzeugt die Prüfsummen der Dateien in share/filelist.md5 für das aktuelle Release"
+    },
+    "shell:i18ncontrol": {
+        "en": "Control and manage i18n translation source files",
+        "de": "Steuert und verwaltet die Quelldateien der i18n-Übersetzungen"
+    },
+    "shell:i18nstats": {
+        "en": "Display translation coverage statistics for specified locales",
+        "de": "Zeigt Statistiken zur Übersetzungsabdeckung für die angegebenen Locales"
+    },
+    "shell:makeaddonpackages": {
+        "en": "Build add-on packages for inclusion in a distribution release",
+        "de": "Baut Zusatzpakete zur Aufnahme in ein Distributions-Release"
+    },
+    "shell:makedist": {
+        "en": "Build a full Exponential release distribution package (deprecated since 5.0)",
+        "de": "Baut ein vollständiges Distributionspaket eines Exponential-Releases (veraltet seit 5.0)"
+    },
+    "shell:makedoc": {
+        "en": "Dump the current running site as static HTML for offline documentation",
+        "de": "Speichert die laufende Website als statisches HTML für eine Offline-Dokumentation"
+    },
+    "shell:makei18ndist": {
+        "en": "Build i18n translation distribution packages for specified locales",
+        "de": "Baut Distributionspakete der i18n-Übersetzungen für die angegebenen Locales"
+    },
+    "shell:makestylepackages": {
+        "en": "Build style and design distribution packages",
+        "de": "Baut Distributionspakete für Styles und Designs"
+    },
+    "shell:packagescommon": {
+        "en": "Shared functions library sourced by package build scripts (not executable)",
+        "de": "Gemeinsame Funktionsbibliothek, die die Skripte zum Bau von Paketen einbinden (nicht ausführbar)"
+    },
+    "shell:packext": {
+        "en": "Package an extension directory into a distributable archive",
+        "de": "Packt ein Erweiterungsverzeichnis in ein verteilbares Archiv"
+    },
+    "shell:phpcheck": {
+        "en": "Find PHP source files with syntax errors and print their paths",
+        "de": "Findet PHP-Quelldateien mit Syntaxfehlern und gibt ihre Pfade aus"
+    },
+    "shell:redumpall": {
+        "en": "Re-dump all SQL database schemas and seed data to SQL files",
+        "de": "Schreibt alle SQL-Datenbankschemata und Startdaten neu in SQL-Dateien"
+    },
+    "shell:setdistribution": {
+        "en": "Set the distribution name and version properties for a release build",
+        "de": "Setzt Name und Version der Distribution für den Bau eines Releases"
+    },
+    "shell:setupdist": {
+        "en": "Set up a distribution build environment and staging directory structure",
+        "de": "Richtet eine Build-Umgebung für die Distribution und die Verzeichnisstruktur des Staging-Bereichs ein"
+    },
+    "shell:sqlcommon": {
+        "en": "Shared database connection variables sourced by SQL scripts (not executable)",
+        "de": "Gemeinsame Variablen für die Datenbankverbindung, die SQL-Skripte einbinden (nicht ausführbar)"
+    },
+    "shell:sqlredump": {
+        "en": "Re-dump a specific SQL schema or data set to a named output file",
+        "de": "Schreibt ein bestimmtes SQL-Schema oder einen Datenbestand neu in eine benannte Ausgabedatei"
+    },
+    "shell:stats": {
+        "en": "Display code statistics including line counts and file totals for the repository",
+        "de": "Zeigt Code-Statistiken des Repositorys, darunter Zeilenzahlen und Dateisummen"
+    },
+    "shell:updateisbn13": {
+        "en": "Download updated ISBN-13 publisher prefix data and import it into the database",
+        "de": "Lädt aktualisierte Verlagspräfixe für ISBN-13 herunter und importiert sie in die Datenbank"
+    },
+    "shell:updatelicense": {
+        "en": "Update license header blocks across all source files",
+        "de": "Aktualisiert die Lizenzköpfe in allen Quelldateien"
+    },
+    "shell:updatetranslations": {
+        "en": "Download and update translation files for all configured locales",
+        "de": "Lädt die Übersetzungsdateien für alle konfigurierten Locales herunter und aktualisiert sie"
+    },
+    "shell:verifyfiles": {
+        "en": "Verify repository file integrity against share/filelist.md5 checksums",
+        "de": "Prüft die Integrität der Dateien des Repositorys gegen die Prüfsummen in share/filelist.md5"
+    }
+}

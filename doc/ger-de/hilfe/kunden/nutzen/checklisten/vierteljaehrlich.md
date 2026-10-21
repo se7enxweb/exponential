@@ -52,10 +52,10 @@ PLAN
 
 | Punkt | Lesen Sie |
 |---|---|
-| Wiederherstellungstest | [Wiederherstellungsübungen](../../../../../eng-us/help/businesses/reliability/restore-drills.md), [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
-| Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
+| Wiederherstellungstest | [Wiederherstellungsübungen](../../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md), [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
+| Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../unternehmen/sicherheit/zugriffspruefungen.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
 | Zweistufige Anmeldung | [Zwei-Faktor-Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Updates der Erweiterungen | [Budget für Upgrades und Wartung](../../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md) |
+| Updates der Erweiterungen | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
 | PHP-Unterstützung | `README.md`: PHP 8.0 bis 8.5 unterstützt; Ihr Hoster plant das Upgrade |
 | Inhalts-Audit | [Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md), [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Barrierefreiheit | [Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
@@ -65,7 +65,7 @@ PLAN
 ## Warum der Wiederherstellungstest am wichtigsten ist
 
 Ein Backup ist erst durch eine Wiederherstellung bewiesen. Der Wartungskalender im Bereich für Unternehmen sieht in
-jedem Quartal einen Wiederherstellungstest vor ([Budget für Upgrades und Wartung](../../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)).
+jedem Quartal einen Wiederherstellungstest vor ([Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)).
 Bitten Sie jedes Mal um eine kurze schriftliche Notiz: das Datum, welches Backup, wie lange es gedauert hat und was auf
 der wiederhergestellten Kopie geprüft wurde. Bewahren Sie die Notizen auf; sie sind der Nachweis, dass Ihre
 Wiederherstellung funktioniert.
@@ -78,6 +78,6 @@ Wiederherstellung funktioniert.
 
 - [Monatliche Checkliste](monatlich.md)
 - [Jährliche Checkliste](jaehrlich.md)
-- [Wiederherstellungsübungen](../../../../../eng-us/help/businesses/reliability/restore-drills.md)
-- [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Wiederherstellungsübungen](../../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md)
+- [Zugriffsüberprüfungen](../../../unternehmen/sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

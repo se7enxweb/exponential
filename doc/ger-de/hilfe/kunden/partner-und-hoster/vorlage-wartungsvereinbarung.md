@@ -94,5 +94,5 @@ Felder, die zu vereinbaren sind. Lassen Sie das Ergebnis von Ihrer Rechtsberatun
 
 - [Wie Updates funktionieren](../gesund-halten/wie-updates-funktionieren.md)
 - [SLA-Vorlage](sla-vorlage.md)
-- [Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)
+- [Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

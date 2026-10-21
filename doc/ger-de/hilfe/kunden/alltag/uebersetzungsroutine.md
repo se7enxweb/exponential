@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für den Betreiber und die Übersetzungskoordination einer Website in mehr als einer Sprache. Die Klicks
 für Redakteure stehen unter [Sprachen](../../sprachen.md); die Planungssicht unter
-[Übersetzungs-Workflow](../../../../eng-us/help/businesses/multilingual/translation-workflow.md). Hier finden Sie die wöchentliche
+[Übersetzungs-Workflow](../../unternehmen/mehrsprachig/uebersetzungsablauf.md). Hier finden Sie die wöchentliche
 Routine und die Prüfungen, die verhindern, dass Sprachen auseinanderdriften.
 
 ## Inhalt
@@ -25,7 +25,7 @@ Routine und die Prüfungen, die verhindern, dass Sprachen auseinanderdriften.
 
 ## Wer was tut
 
-Aus [Übersetzungs-Workflow](../../../../eng-us/help/businesses/multilingual/translation-workflow.md):
+Aus [Übersetzungs-Workflow](../../unternehmen/mehrsprachig/uebersetzungsablauf.md):
 
 | Rolle | Tut |
 |---|---|
@@ -46,12 +46,12 @@ des Elements.
 
 > **Tipp**
 > Übersetzen Sie zuerst die Startseite und die Menüordner. Über sie erreichen Besucher alles andere
-> ([Übersetzungs-Workflow](../../../../eng-us/help/businesses/multilingual/translation-workflow.md)).
+> ([Übersetzungs-Workflow](../../unternehmen/mehrsprachig/uebersetzungsablauf.md)).
 
 ## Übersetzungen folgen nicht von selbst
 
 Wenn sich der Ausgangstext ändert, ändern sich seine Übersetzungen nicht von selbst
-([Übersetzungs-Workflow](../../../../eng-us/help/businesses/multilingual/translation-workflow.md)). Jeder Siteaccess zeigt ein Element in
+([Übersetzungs-Workflow](../../unternehmen/mehrsprachig/uebersetzungsablauf.md)). Jeder Siteaccess zeigt ein Element in
 der ersten Sprache seiner Sprachliste, die das Element hat; ein Element in keiner davon ist verborgen, es sei denn, es
 ist *immer verfügbar* ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)). Eine fehlende Übersetzung kann also
 bedeuten, dass Besucher dieser Sprache eine andere Sprache sehen, oder nichts.
@@ -90,7 +90,7 @@ Möglichkeiten, den Überblick zu behalten:
 Exponential Intelligence kann Übersetzungen als **Entwürfe** vorbereiten, die eine Person prüft, und sein
 Übersetzungsabgleich kann bestehende Übersetzungen auf Stand bringen, nachdem sich die Quelle geändert hat, wobei nur
 die geänderten Passagen angepasst werden
-([Unterstützte Übersetzung mit Exponential Intelligence](../../../../eng-us/help/businesses/multilingual/assisted-translation-with-exponential-intelligence.md)).
+([Unterstützte Übersetzung mit Exponential Intelligence](../../unternehmen/mehrsprachig/unterstuetzte-uebersetzung-mit-exponential-intelligence.md)).
 Er veröffentlicht nie von sich aus. Lesen Sie [KI-Entwürfe verantwortungsvoll nutzen](../wachstum/ki-entwuerfe-verantwortungsvoll-nutzen.md),
 bevor Sie ihn für Übersetzer einschalten.
 
@@ -98,5 +98,5 @@ bevor Sie ihn für Übersetzer einschalten.
 
 - [Sprachen](../../sprachen.md)
 - [Eine Sprache hinzufügen](../wachstum/eine-sprache-hinzufuegen.md)
-- [Checkliste für Mehrsprachigkeit](../../../../eng-us/help/businesses/multilingual/multilingual-checklist.md)
+- [Checkliste für Mehrsprachigkeit](../../unternehmen/mehrsprachig/checkliste-mehrsprachigkeit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

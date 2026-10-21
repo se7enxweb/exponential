@@ -1,0 +1,802 @@
+{
+    "command:explogs --file": {
+        "en": "With --search: the file (default: [LogViewerSettings] DefaultFile)",
+        "de": "Mit --search: die Datei (Standard: [LogViewerSettings] DefaultFile)"
+    },
+    "command:explogs --follow": {
+        "en": "With --tail: go on printing what the file gains, polling with backoff (Ctrl-C ends)",
+        "de": "Mit --tail: weiter ausgeben, was zur Datei hinzukommt, mit zunehmendem Abfrageintervall (Strg-C beendet)"
+    },
+    "command:explogs --force": {
+        "en": "With --rotate-all: also the logs under their MaxSize",
+        "de": "Mit --rotate-all: auch die Logs unter ihrer MaxSize"
+    },
+    "command:explogs --from": {
+        "en": "Only entries at or after this time (e.g. 2026-10-17 01:00)",
+        "de": "Nur Einträge zu oder nach diesem Zeitpunkt (z. B. 2026-10-17 01:00)"
+    },
+    "command:explogs --in-place": {
+        "en": "With --truncate: empty the file in place, keeping no copy",
+        "de": "Mit --truncate: die Datei an Ort und Stelle leeren, ohne Kopie"
+    },
+    "command:explogs --interval": {
+        "en": "With --follow: the shortest poll interval in milliseconds (default [TailSettings] PollInterval)",
+        "de": "Mit --follow: das kürzeste Abfrageintervall in Millisekunden (Standard [TailSettings] PollInterval)"
+    },
+    "command:explogs --ip": {
+        "en": "Only entries whose client address starts with this",
+        "de": "Nur Einträge, deren Client-Adresse damit beginnt"
+    },
+    "command:explogs --level": {
+        "en": "Only these levels: error,warning,notice,debug",
+        "de": "Nur diese Stufen: error,warning,notice,debug"
+    },
+    "command:explogs --limit": {
+        "en": "With --search: print at most this many entries",
+        "de": "Mit --search: höchstens so viele Einträge ausgeben"
+    },
+    "command:explogs --lines": {
+        "en": "With --tail: how many entries (default 20)",
+        "de": "Mit --tail: wie viele Einträge (Standard 20)"
+    },
+    "command:explogs --list": {
+        "en": "List the log files the viewer may open, by group, with size, time and lines a minute",
+        "de": "Die Logdateien, die der Viewer öffnen darf, nach Gruppe auflisten, mit Größe, Zeit und Zeilen pro Minute"
+    },
+    "command:explogs --prune": {
+        "en": "Remove the archives beyond the limits (Keep, MaxAgeDays): of every log, or of these keys",
+        "de": "Die Archive über die Grenzen (Keep, MaxAgeDays) hinaus entfernen: von jedem Log oder von diesen Schlüsseln"
+    },
+    "command:explogs --reference": {
+        "en": "Find an error reference (ERR-XXXXXXXXXX) in the kernel logs and their rotations, with its request",
+        "de": "Eine Fehlerreferenz (ERR-XXXXXXXXXX) in den Kernel-Logs und ihren Rotationen finden, mit ihrer Anfrage"
+    },
+    "command:explogs --regex": {
+        "en": "With --search: the text is a regular expression (bounded by [SearchSettings] BacktrackLimit and TimeLimit)",
+        "de": "Mit --search: der Text ist ein regulärer Ausdruck (begrenzt durch [SearchSettings] BacktrackLimit und TimeLimit)"
+    },
+    "command:explogs --related": {
+        "en": "The lines of the same request as the entry at <file>:<offset>",
+        "de": "Die Zeilen derselben Anfrage wie der Eintrag bei <file>:<offset>"
+    },
+    "command:explogs --rotate": {
+        "en": "Rotate these logs now, whatever their size: keys (error,debug,site-storage) or ids (var/log/error.log), comma separated",
+        "de": "Diese Logs jetzt rotieren, unabhängig von ihrer Größe: Schlüssel (error,debug,site-storage) oder IDs (var/log/error.log), durch Kommas getrennt"
+    },
+    "command:explogs --rotate-all": {
+        "en": "Rotate every log over its MaxSize (with --force: every log that is not empty)",
+        "de": "Jedes Log über seiner MaxSize rotieren (mit --force: jedes Log, das nicht leer ist)"
+    },
+    "command:explogs --rotations": {
+        "en": "With --search: the rotations (.1 .. .N, .gz) too",
+        "de": "Mit --search: auch die Rotationen (.1 .. .N, .gz)"
+    },
+    "command:explogs --sa": {
+        "en": "Only entries of this siteaccess",
+        "de": "Nur Einträge dieses Siteaccess"
+    },
+    "command:explogs --scope": {
+        "en": "With --search: file (default), kernel (every kernel log) or all (every file listed)",
+        "de": "Mit --search: file (Standard), kernel (jedes Kernel-Log) oder all (jede aufgeführte Datei)"
+    },
+    "command:explogs --search": {
+        "en": "Search for a text (literal, or a regular expression with --regex)",
+        "de": "Nach einem Text suchen (wörtlich oder als regulärer Ausdruck mit --regex)"
+    },
+    "command:explogs --tail": {
+        "en": "The last entries of a file (its path relative to the root, e.g. var/log/error.log)",
+        "de": "Die letzten Einträge einer Datei (ihr Pfad relativ zum Wurzelverzeichnis, z. B. var/log/error.log)"
+    },
+    "command:explogs --to": {
+        "en": "Only entries at or before this time (a date alone means the whole day)",
+        "de": "Nur Einträge zu oder vor diesem Zeitpunkt (ein Datum allein bedeutet den ganzen Tag)"
+    },
+    "command:explogs --truncate": {
+        "en": "Empty these logs: rotate them (the content stays in .1), or with --in-place empty the file itself",
+        "de": "Diese Logs leeren: sie rotieren (der Inhalt bleibt in .1) oder mit --in-place die Datei selbst leeren"
+    },
+    "command:explogs --unmask": {
+        "en": "Show e-mail addresses, IP addresses and secrets unmasked (the values of secret settings stay hidden)",
+        "de": "E-Mail-Adressen, IP-Adressen und Geheimnisse unmaskiert zeigen (die Werte geheimer Einstellungen bleiben verborgen)"
+    },
+    "command:explogs --uri": {
+        "en": "Only entries whose request contains this text",
+        "de": "Nur Einträge, deren Anfrage diesen Text enthält"
+    },
+    "command:exploremipsumfill": {
+        "en": "Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text",
+        "de": "Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-Ipsum-Text"
+    },
+    "command:exploremipsumfill --language": {
+        "en": "the test language to fill (default: ",
+        "de": "die zu füllende Testsprache (Standard: "
+    },
+    "command:explovestack": {
+        "en": "Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate)",
+        "de": "Prüft eine von LoveStack kommende Installation (nur lesend) und trägt ihre Datenbank als die von Exponential ein (migrate)"
+    },
+    "command:explovestack --apply": {
+        "en": "migrate: write the two ezsite_data rows",
+        "de": "migrate: die zwei Zeilen in ezsite_data schreiben"
+    },
+    "command:explovestack --dry-run": {
+        "en": "migrate: print what would be written, write nothing (the default)",
+        "de": "migrate: ausgeben, was geschrieben würde, nichts schreiben (der Standard)"
+    },
+    "command:exprepair": {
+        "en": "Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run",
+        "de": "Reparaturwarteschlange der Fehlerseite für fehlende Bibliotheken: --create-key, --disable, --status, --run"
+    },
+    "command:ezapplytemplate": {
+        "en": "Apply the template blocks found in files and write the files back (exit code 0, 1 or 2)",
+        "de": "Wendet die in Dateien gefundenen Template-Blöcke an und schreibt die Dateien zurück (Exit-Code 0, 1 oder 2)"
+    },
+    "command:ezapplytemplate --all": {
+        "en": "Go trough all files defined in codetemplate.ini",
+        "de": "Alle in codetemplate.ini definierten Dateien durchgehen"
+    },
+    "command:ezapplytemplate --check-only": {
+        "en": "Will only check if the files will be changed or have errors",
+        "de": "Nur prüfen, ob die Dateien geändert würden oder Fehler haben"
+    },
+    "command:ezasynchronouspublisher --daemon": {
+        "en": "Run in the background",
+        "de": "Im Hintergrund laufen"
+    },
+    "command:ezasynchronouspublisher --pid-file": {
+        "en": "PID file",
+        "de": "PID-Datei"
+    },
+    "command:ezcache": {
+        "en": "Clear Exponential caches by tag or id (--clear-tag, --clear-id, --clear-all, --list-tags)",
+        "de": "Leert die Caches von Exponential nach Tag oder ID (--clear-tag, --clear-id, --clear-all, --list-tags)"
+    },
+    "command:ezcache --clear-all": {
+        "en": "Clears all caches",
+        "de": "Leert alle Caches"
+    },
+    "command:ezcache --clear-id": {
+        "en": "Clears all caches related to a given id, separate multiple ids with a comma",
+        "de": "Leert alle Caches zu einer ID; mehrere IDs durch Kommas trennen"
+    },
+    "command:ezcache --clear-tag": {
+        "en": "Clears all caches related to a given tag, separate multiple tags with a comma",
+        "de": "Leert alle Caches zu einem Tag; mehrere Tags durch Kommas trennen"
+    },
+    "command:ezcache --expiry": {
+        "en": "Date or relative time which specifies when cache items are to be considered expired, e.g 'now', '-2 days' or 'last monday'. Can only be used together with --purge.",
+        "de": "Datum oder relative Zeit, ab der Cache-Einträge als abgelaufen gelten, z. B. 'now', '-2 days' oder 'last monday'. Nur zusammen mit --purge verwendbar."
+    },
+    "command:ezcache --iteration-max": {
+        "en": "Amount of items to remove in each iteration when performing a purge operation.",
+        "de": "Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden."
+    },
+    "command:ezcache --iteration-sleep": {
+        "en": "Amount of seconds to sleep between each iteration when performing a purge operation, can be a float.",
+        "de": "Sekunden Pause zwischen den Iterationen beim Löschen, auch als Dezimalzahl."
+    },
+    "command:ezcache --list-ids": {
+        "en": "Lists all available ids",
+        "de": "Listet alle verfügbaren IDs auf"
+    },
+    "command:ezcache --list-tags": {
+        "en": "Lists all available tags",
+        "de": "Listet alle verfügbaren Tags auf"
+    },
+    "command:ezcache --purge": {
+        "en": "Enforces purging of cache items which ensures that specified entries are physically removed (Useful for saving diskspace). Used together with the clear-* options.",
+        "de": "Erzwingt das Löschen der Cache-Einträge, sodass die angegebenen Einträge physisch entfernt werden (nützlich, um Speicherplatz zu sparen). Zusammen mit den Optionen clear-* verwendet."
+    },
+    "command:ezcheckphptag": {
+        "en": "Check files for characters before the PHP start tag or after the end tag",
+        "de": "Prüft Dateien auf Zeichen vor dem PHP-Start-Tag oder nach dem End-Tag"
+    },
+    "command:ezcheckphptag --no-print": {
+        "en": "Do not print path for bad files",
+        "de": "Den Pfad fehlerhafter Dateien nicht ausgeben"
+    },
+    "command:ezchecktranslation": {
+        "en": "Show statistics for one translation, e.g. ezchecktranslation.php ita-IT",
+        "de": "Zeigt Statistiken zu einer Übersetzung, z. B. ezchecktranslation.php ita-IT"
+    },
+    "command:ezchecktranslation --ignore-tr-setup": {
+        "en": "Tells the analyzer to skip all translations regarding the setup",
+        "de": "Lässt den Analysator alle Übersetzungen zum Setup überspringen"
+    },
+    "command:ezcontentcache": {
+        "en": "Clear content caches of given nodes or subtrees (--clear-node, --clear-subtree)",
+        "de": "Leert die Inhalts-Caches der angegebenen Knoten oder Teilbäume (--clear-node, --clear-subtree)"
+    },
+    "command:ezconvert2isbn13": {
+        "en": "Convert ISBN-10 numbers to ISBN-13",
+        "de": "Wandelt ISBN-10-Nummern in ISBN-13 um"
+    },
+    "command:ezconvert2isbn13 --all-classes": {
+        "en": "Will convert all ISBN attributes in all content classes.",
+        "de": "Wandelt alle ISBN-Attribute in allen Inhaltsklassen um."
+    },
+    "command:ezconvert2isbn13 --attribute-id": {
+        "en": "The attribute id for the ISBN attribute which should be converted.",
+        "de": "Die Attribut-ID des umzuwandelnden ISBN-Attributs."
+    },
+    "command:ezconvert2isbn13 --class-id": {
+        "en": "The class id for the ISBN attribute.",
+        "de": "Die Klassen-ID für das ISBN-Attribut."
+    },
+    "command:ezconvert2isbn13 --force": {
+        "en": "Will convert all attributes even if the class is set to ISBN.",
+        "de": "Wandelt alle Attribute um, auch wenn die Klasse auf ISBN gesetzt ist."
+    },
+    "command:ezconvert2isbn13 -f": {
+        "en": "Short alias for force.",
+        "de": "Kurzer Alias für force."
+    },
+    "command:ezconvertdbcharset": {
+        "en": "Convert all Exponential database tables to use UTF-8 character set",
+        "de": "Stellt alle Datenbanktabellen von Exponential auf den Zeichensatz UTF-8 um"
+    },
+    "command:ezconvertdbcharset --collation": {
+        "en": "specify collation for converted db. default is 'utf8_general_ci'",
+        "de": "die Kollation der umgewandelten Datenbank angeben. Standard ist 'utf8_general_ci'"
+    },
+    "command:ezconvertdbcharset --extra-serialized-data": {
+        "en": "specify custom serialized data.\nusage: <table>.<field>;<key_field1>[.<key_field2>....][,<table>.<field>...].\nex: mytable.data_text;id.version,mytable2.data;id",
+        "de": "eigene serialisierte Daten angeben.\nVerwendung: <table>.<field>;<key_field1>[.<key_field2>....][,<table>.<field>...].\nBeispiel: mytable.data_text;id.version,mytable2.data;id"
+    },
+    "command:ezconvertdbcharset --extra-xml-attributes": {
+        "en": "specify custom attributes which store its data in xml.\nusage: <datatype_string>[.<table>.<field>][,<datatype_string>.<table>.<field>...].\ndefault table is 'ezcontentobject_attribute', default data field is 'data_text'\nnote: your custom table must have 'id', 'version' and 'data_type_string' fields.",
+        "de": "eigene Attribute angeben, die ihre Daten in XML speichern.\nVerwendung: <datatype_string>[.<table>.<field>][,<datatype_string>.<table>.<field>...].\nStandardtabelle ist 'ezcontentobject_attribute', Standard-Datenfeld ist 'data_text'\nHinweis: Ihre eigene Tabelle muss die Felder 'id', 'version' und 'data_type_string' haben."
+    },
+    "command:ezconvertdbcharset --extra-xml-data": {
+        "en": "specify custom xml data.\nusage: <table>.<field>[,<table>.<field>...].\nnote: your custom table must have 'id' field.",
+        "de": "eigene XML-Daten angeben.\nVerwendung: <table>.<field>[,<table>.<field>...].\nHinweis: Ihre eigene Tabelle muss das Feld 'id' haben."
+    },
+    "command:ezconvertdbcharset --iconv-character-set": {
+        "en": "This setting is used when characters are converted by iconv(). This settings is typically needed when a character set is not called the same by the database and iconv. An example is \"windows-1252\" (iconv) and \"iso-8859-1\" (mysql 5)",
+        "de": "Diese Einstellung wird verwendet, wenn Zeichen mit iconv() umgewandelt werden. Sie wird typischerweise gebraucht, wenn ein Zeichensatz in der Datenbank und in iconv nicht gleich heißt. Ein Beispiel ist \"windows-1252\" (iconv) und \"iso-8859-1\" (mysql 5)"
+    },
+    "command:ezconvertdbcharset --log-filename": {
+        "en": "Specify a file where iconv conversions will be logged to",
+        "de": "Eine Datei angeben, in die die Umwandlungen durch iconv protokolliert werden"
+    },
+    "command:ezconvertdbcharset --skip-class-translations": {
+        "en": "Content class translations were added in Exponential 3.9. Use this options if upgrading from early version.",
+        "de": "Übersetzungen von Inhaltsklassen kamen mit Exponential 3.9 hinzu. Verwenden Sie diese Option beim Upgrade von einer früheren Version."
+    },
+    "command:ezconvertmysqltabletype": {
+        "en": "Convert the tables of a MySQL database to another table type (--list, --newtype=TYPE)",
+        "de": "Wandelt die Tabellen einer MySQL-Datenbank in einen anderen Tabellentyp um (--list, --newtype=TYPE)"
+    },
+    "command:ezconvertmysqltabletype --host": {
+        "en": "Connect to host database",
+        "de": "Mit der Datenbank auf diesem Host verbinden"
+    },
+    "command:ezconvertmysqltabletype --list": {
+        "en": "List the table types",
+        "de": "Die Tabellentypen auflisten"
+    },
+    "command:ezconvertmysqltabletype --newtype": {
+        "en": "Convert the database to the given type.\nType can either be: myisam or innodb\nMake sure that you have made a BACKUP UP of YOUR DATABASE!",
+        "de": "Die Datenbank in den angegebenen Typ umwandeln.\nDer Typ ist myisam oder innodb\nSorgen Sie vorher für eine SICHERUNG IHRER DATENBANK!"
+    },
+    "command:ezconvertmysqltabletype --password": {
+        "en": "Password to use when connecting to the database",
+        "de": "Passwort für die Verbindung zur Datenbank"
+    },
+    "command:ezconvertmysqltabletype --usecopy": {
+        "en": "To convert the table we rename the original table and copy the data to the new table structure.\nThis conversion method is much slower and has a higher risk to corrupt the data in the database.\nHowever this option may circumvent the MySQL crash on the ALTER query.",
+        "de": "Zum Umwandeln wird die Originaltabelle umbenannt und die Daten in die neue Tabellenstruktur kopiert.\nDiese Methode ist viel langsamer und birgt ein höheres Risiko, die Daten in der Datenbank zu beschädigen.\nSie kann aber den Absturz von MySQL bei der ALTER-Abfrage umgehen."
+    },
+    "command:ezconvertmysqltabletype --user": {
+        "en": "User for login to the database",
+        "de": "Benutzer für die Anmeldung an der Datenbank"
+    },
+    "command:ezcreatedeactivatedusergroup": {
+        "en": "Create the user group for deactivated accounts (\"Deactivate and move\") ahead of first use",
+        "de": "Legt die Benutzergruppe für deaktivierte Konten („Deaktivieren und verschieben“) schon vor der ersten Verwendung an"
+    },
+    "command:ezcreatedeactivatedusergroup --commit": {
+        "en": "Create the group (without it, only say what would be done)",
+        "de": "Die Gruppe anlegen (ohne die Option nur sagen, was getan würde)"
+    },
+    "command:ezcreatedeactivatedusergroup --name": {
+        "en": "The name of the group (default: \"Deactivated users\" in the siteaccess language)",
+        "de": "Der Name der Gruppe (Standard: \"Deactivated users\" in der Sprache des Siteaccess)"
+    },
+    "command:ezcreatedeactivatedusergroup --section-id": {
+        "en": "Put the group in this section (default: the section of the user root node)",
+        "de": "Die Gruppe in diese Sektion legen (Standard: die Sektion des Wurzelknotens der Benutzer)"
+    },
+    "command:ezcsvexport": {
+        "en": "Export the subtree below a node to one CSV file per content class (--storage-dir)",
+        "de": "Exportiert den Teilbaum unter einem Knoten in eine CSV-Datei pro Inhaltsklasse (--storage-dir)"
+    },
+    "command:ezcsvexport --storage-dir": {
+        "en": "directory to place exported files in",
+        "de": "Verzeichnis, in das die exportierten Dateien gelegt werden"
+    },
+    "command:ezcsvimport": {
+        "en": "Import content objects of a class below a node from a CSV file (--class, --creator)",
+        "de": "Importiert Inhaltsobjekte einer Klasse unter einen Knoten aus einer CSV-Datei (--class, --creator)"
+    },
+    "command:ezcsvimport --class": {
+        "en": "class identifier to create objects",
+        "de": "Klassenbezeichner der anzulegenden Objekte"
+    },
+    "command:ezcsvimport --creator": {
+        "en": "user id of imported objects creator",
+        "de": "Benutzer-ID des Erstellers der importierten Objekte"
+    },
+    "command:ezcsvimport --storage-dir": {
+        "en": "path to directory which will be added to the path of CSV elements",
+        "de": "Pfad zu einem Verzeichnis, das dem Pfad der CSV-Elemente vorangestellt wird"
+    },
+    "command:ezexec": {
+        "en": "Run a PHP script with the Exponential bootstrap done: ezexec.php myscript.php",
+        "de": "Führt ein PHP-Skript nach dem Bootstrap von Exponential aus: ezexec.php myscript.php"
+    },
+    "command:ezflowupgrade": {
+        "en": "Upgrade the installed ezflow packages (--to-version, --package, --url)",
+        "de": "Aktualisiert die installierten ezflow-Pakete (--to-version, --package, --url)"
+    },
+    "command:ezflowupgrade --auto-mode": {
+        "en": "[on/off]. Do not ask what to do in case of confilicts. By default is 'on'",
+        "de": "[on/off]. Bei Konflikten nicht nachfragen. Standard ist 'on'"
+    },
+    "command:ezflowupgrade --package": {
+        "en": "Package(s) to install, f.e. 'ezflow_classes'",
+        "de": "Zu installierende(s) Paket(e), z. B. 'ezflow_classes'"
+    },
+    "command:ezflowupgrade --package-dir": {
+        "en": "Path to directory with packed(ezpkg) packages(default is '/tmp/ezflow') ",
+        "de": "Pfad zum Verzeichnis mit gepackten (ezpkg) Paketen (Standard ist '/tmp/ezflow') "
+    },
+    "command:ezflowupgrade --repository": {
+        "en": "Path to repository where unpacked(unarchived) packages are \nplaced. it's relative to 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]' \n(default is 'var/storage/packages/eZ-systems')",
+        "de": "Pfad zum Repository, in dem die entpackten Pakete \nliegen. Er ist relativ zu 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]' \n(Standard ist 'var/storage/packages/eZ-systems')"
+    },
+    "command:ezflowupgrade --to-version": {
+        "en": "Specify what upgrade path to use. \n available options: '1.1-0' - upgrade 1.0-0 to 1.1-0",
+        "de": "Den zu verwendenden Upgrade-Pfad angeben. \n Verfügbare Optionen: '1.1-0' - Upgrade von 1.0-0 auf 1.1-0"
+    },
+    "command:ezflowupgrade --url": {
+        "en": "URL to download packages, f.e. 'http://packages.ez.no/Exponential/3.9'.\n'package-dir' can be specified to store uploaded packages on local computer.\nif 'package-dir' is not specified then default dir('/tmp/ezflow') will be used.",
+        "de": "URL zum Herunterladen der Pakete, z. B. 'http://packages.ez.no/Exponential/3.9'.\nMit 'package-dir' können die heruntergeladenen Pakete auf dem lokalen Rechner gespeichert werden.\nOhne 'package-dir' wird das Standardverzeichnis ('/tmp/ezflow') verwendet."
+    },
+    "command:ezgeneratetranslationcache": {
+        "en": "Generate translation cache files (--ts-list limits it to the given translations)",
+        "de": "Erzeugt die Cache-Dateien der Übersetzungen (--ts-list beschränkt es auf die angegebenen Übersetzungen)"
+    },
+    "command:ezgeneratetranslationcache --ts-list": {
+        "en": "A list of translations to generate caches for, for example 'rus-RU nor-NO'\nBy default caches for all translations will be generated",
+        "de": "Eine Liste der Übersetzungen, für die Caches erzeugt werden, zum Beispiel 'rus-RU nor-NO'\nStandardmäßig werden Caches für alle Übersetzungen erzeugt"
+    },
+    "command:ezimportdbafile": {
+        "en": "Import the dba data of a datatype into the database (--datatype=ezisbn)",
+        "de": "Importiert die dba-Daten eines Datentyps in die Datenbank (--datatype=ezisbn)"
+    },
+    "command:ezimportdbafile --datatype": {
+        "en": "The name of the datatype where the database should be updated.",
+        "de": "Der Name des Datentyps, für den die Datenbank aktualisiert werden soll."
+    },
+    "command:ezpgenerateautoloads": {
+        "en": "Generate the class autoload arrays: kernel (-k), kernel overrides (-o), extensions (-e)",
+        "de": "Erzeugt die Autoload-Arrays der Klassen: Kernel (-k), Kernel-Overrides (-o), Erweiterungen (-e)"
+    },
+    "command:ezpgenerateautoloads --allow-root-user": {
+        "en": "Accepted for compatibility with the other scripts; has no effect.",
+        "de": "Zur Kompatibilität mit den anderen Skripten akzeptiert; hat keine Wirkung."
+    },
+    "command:ezpgenerateautoloads --dry-run": {
+        "en": "Whether a new file autoload file should be written. (short: -n)",
+        "de": "Ob eine neue Autoload-Datei geschrieben werden soll. (short: -n)"
+    },
+    "command:ezpgenerateautoloads --exclude": {
+        "en": "Folders to exclude from the class search.",
+        "de": "Verzeichnisse, die bei der Klassensuche ausgelassen werden."
+    },
+    "command:ezpgenerateautoloads --extension": {
+        "en": "If an autoload array for the extensions should be generated. (short: -e)",
+        "de": "Ob ein Autoload-Array für die Erweiterungen erzeugt werden soll. (short: -e)"
+    },
+    "command:ezpgenerateautoloads --help": {
+        "en": "Show help information (short: -h)",
+        "de": "Hilfe anzeigen (short: -h)"
+    },
+    "command:ezpgenerateautoloads --kernel": {
+        "en": "If an autoload array for the kernel files should be generated. (short: -k)",
+        "de": "Ob ein Autoload-Array für die Kernel-Dateien erzeugt werden soll. (short: -k)"
+    },
+    "command:ezpgenerateautoloads --kernel-override": {
+        "en": "If an autoload array for the kernel override files should be generated. (short: -o)",
+        "de": "Ob ein Autoload-Array für die Kernel-Override-Dateien erzeugt werden soll. (short: -o)"
+    },
+    "command:ezpgenerateautoloads --progress": {
+        "en": "If progress output should be shown on the command-line. (short: -p)",
+        "de": "Ob der Fortschritt auf der Kommandozeile angezeigt werden soll. (short: -p)"
+    },
+    "command:ezpgenerateautoloads --quiet": {
+        "en": "do not give any output except when errors occur (short: -q)",
+        "de": "keine Ausgabe außer bei Fehlern (short: -q)"
+    },
+    "command:ezpgenerateautoloads --target": {
+        "en": "The directory to where the generated autoload file should be written. (short: -t)",
+        "de": "Das Verzeichnis, in das die erzeugte Autoload-Datei geschrieben wird. (short: -t)"
+    },
+    "command:ezpgenerateautoloads --tests": {
+        "en": "If an autoload array for the tests should be generated. (short: -s)",
+        "de": "Ob ein Autoload-Array für die Tests erzeugt werden soll. (short: -s)"
+    },
+    "command:ezpgenerateautoloads --verbose": {
+        "en": "Whether or not to display more information. (short: -v)",
+        "de": "Ob mehr Informationen angezeigt werden sollen. (short: -v)"
+    },
+    "command:ezpublishingbenchmark": {
+        "en": "Benchmark parallel publishing in concurrent batches (--batches-count, -l level)",
+        "de": "Misst paralleles Veröffentlichen in gleichzeitigen Stapeln (--batches-count, -l level)"
+    },
+    "command:ezpublishingbenchmark --batches-count": {
+        "en": "How many times a concurrent batch should be started [default: 1]",
+        "de": "Wie oft ein gleichzeitiger Stapel gestartet wird [Standard: 1]"
+    },
+    "command:ezpublishingbenchmark --concurrency-level": {
+        "en": "Parallel processes to use [default: 20]",
+        "de": "Zu verwendende parallele Prozesse [Standard: 20]"
+    },
+    "command:ezpublishingbenchmark --content-class": {
+        "en": "Identifier of the content class used for testing [default: article]",
+        "de": "Bezeichner der für den Test verwendeten Inhaltsklasse [Standard: article]"
+    },
+    "command:ezpublishingbenchmark --generate-content": {
+        "en": "Wether content should  be generated or not (not fully supported yet) [default: off]",
+        "de": "Ob Inhalte erzeugt werden sollen (noch nicht vollständig unterstützt) [Standard: off]"
+    },
+    "command:ezpublishingbenchmark --parent-node": {
+        "en": "Container content should be created in [default: 2]",
+        "de": "Container, in dem die Inhalte angelegt werden [Standard: 2]"
+    },
+    "command:ezrequestrules": {
+        "en": "List and check the request rules of a siteaccess and explain their decision for an address",
+        "de": "Listet und prüft die Anfrageregeln eines Siteaccess und erklärt ihre Entscheidung für eine Adresse"
+    },
+    "command:ezrequestrules --check": {
+        "en": "Report problems in the settings; exits 1 when there are any",
+        "de": "Probleme in den Einstellungen melden; Exit-Code 1, wenn es welche gibt"
+    },
+    "command:ezrequestrules --host": {
+        "en": "Host name the visitor used",
+        "de": "Hostname, den der Besucher verwendet hat"
+    },
+    "command:ezrequestrules --ip": {
+        "en": "Client address",
+        "de": "Client-Adresse"
+    },
+    "command:ezrequestrules --list": {
+        "en": "List the rules in the order they are asked",
+        "de": "Die Regeln in der Reihenfolge auflisten, in der sie gefragt werden"
+    },
+    "command:ezrequestrules --method": {
+        "en": "HTTP method (default GET)",
+        "de": "HTTP-Methode (Standard GET)"
+    },
+    "command:ezrequestrules --scheme": {
+        "en": "http or https (default https)",
+        "de": "http oder https (Standard https)"
+    },
+    "command:ezrequestrules --uri": {
+        "en": "Explain the decision for this address, as typed after the host and siteaccess (e.g. content/view/full/2 or Fit-Healthy)",
+        "de": "Die Entscheidung für diese Adresse erklären, so wie sie nach Host und Siteaccess eingegeben wird (z. B. content/view/full/2 oder Fit-Healthy)"
+    },
+    "command:ezrequestrules --user": {
+        "en": "The login of the user to explain it for (default: the anonymous user)",
+        "de": "Das Login des Benutzers, für den es erklärt wird (Standard: der anonyme Benutzer)"
+    },
+    "command:ezsessiongc": {
+        "en": "Remove expired sessions as defined by site.ini [Session] SessionTimeout",
+        "de": "Entfernt abgelaufene Sitzungen gemäß site.ini [Session] SessionTimeout"
+    },
+    "command:ezsqldiff": {
+        "en": "Show the differences between two database schemas; the exit code tells if they differ",
+        "de": "Zeigt die Unterschiede zwischen zwei Datenbankschemata; der Exit-Code sagt, ob sie sich unterscheiden"
+    },
+    "command:ezsqldumpisbndata": {
+        "en": "Dump the ISBN group and range tables as SQL to a file or standard output",
+        "de": "Schreibt die ISBN-Gruppen- und -Bereichstabellen als SQL in eine Datei oder auf die Standardausgabe"
+    },
+    "command:ezsqldumpisbndata --db-database": {
+        "en": "Database name.",
+        "de": "Datenbankname."
+    },
+    "command:ezsqldumpisbndata --db-driver": {
+        "en": "Database driver.",
+        "de": "Datenbanktreiber."
+    },
+    "command:ezsqldumpisbndata --db-host": {
+        "en": "Database host.",
+        "de": "Datenbankhost."
+    },
+    "command:ezsqldumpisbndata --db-password": {
+        "en": "Database password.",
+        "de": "Datenbankpasswort."
+    },
+    "command:ezsqldumpisbndata --db-user": {
+        "en": "Database user.",
+        "de": "Datenbankbenutzer."
+    },
+    "command:ezsqldumpisbndata --filename-dba": {
+        "en": "Custom name for the dba file. Will be stored in the directory: \nkernel/classes/datatypes/ezisbn/share/",
+        "de": "Eigener Name für die dba-Datei. Sie wird im Verzeichnis gespeichert: \nkernel/classes/datatypes/ezisbn/share/"
+    },
+    "command:ezsqldumpisbndata --filename-sql": {
+        "en": "Custom name for the sql file. Will be stored in the directory: \nkernel/classes/datatypes/ezisbn/sql/<database>/",
+        "de": "Eigener Name für die sql-Datei. Sie wird im Verzeichnis gespeichert: \nkernel/classes/datatypes/ezisbn/sql/<database>/"
+    },
+    "command:ezsqldumpisbndata --stdout-dba": {
+        "en": "Result of dba output will be printed to standard output instead of to file.",
+        "de": "Die dba-Ausgabe wird auf der Standardausgabe statt in eine Datei geschrieben."
+    },
+    "command:ezsqldumpisbndata --stdout-sql": {
+        "en": "Result of sql output will be printed to standard output instead of to file.",
+        "de": "Die sql-Ausgabe wird auf der Standardausgabe statt in eine Datei geschrieben."
+    },
+    "command:ezsqldumpschema": {
+        "en": "Dump the database schema to a file or standard output (--type, --user)",
+        "de": "Schreibt das Datenbankschema in eine Datei oder auf die Standardausgabe (--type, --user)"
+    },
+    "command:ezsqlinsertschema": {
+        "en": "Insert a database schema and data from a .dba file into a database (--type, --user)",
+        "de": "Fügt ein Datenbankschema und Daten aus einer .dba-Datei in eine Datenbank ein (--type, --user)"
+    },
+    "command:ezsubtreecopy": {
+        "en": "Copy a content subtree to a new location (--src-node-id, --dst-node-id)",
+        "de": "Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id)"
+    },
+    "command:ezsubtreecopy --all-versions": {
+        "en": "Copy all versions for each contentobject being copied.",
+        "de": "Alle Versionen jedes kopierten Inhaltsobjekts kopieren."
+    },
+    "command:ezsubtreecopy --dst-node-id": {
+        "en": "Destination node ID.",
+        "de": "ID des Zielknotens."
+    },
+    "command:ezsubtreecopy --keep-creator": {
+        "en": "Do not change the creator (user) for the copied content objects.",
+        "de": "Den Ersteller (Benutzer) der kopierten Inhaltsobjekte nicht ändern."
+    },
+    "command:ezsubtreecopy --keep-time": {
+        "en": "Do not change the creation and modification time of the copied content objects.",
+        "de": "Die Zeitpunkte der Erstellung und Änderung der kopierten Inhaltsobjekte nicht ändern."
+    },
+    "command:ezsubtreecopy --src-node-id": {
+        "en": "Source subtree parent node ID.",
+        "de": "ID des Elternknotens des Quell-Teilbaums."
+    },
+    "command:ezsubtreeremove": {
+        "en": "Remove content subtrees by node ID, to the trash unless --ignore-trash is given",
+        "de": "Entfernt Teilbäume von Inhalten nach Knoten-ID, in den Papierkorb, außer --ignore-trash ist angegeben"
+    },
+    "command:ezsubtreeremove --ignore-trash": {
+        "en": "Ignore trash ('move to trash' by default).",
+        "de": "Papierkorb übergehen (standardmäßig 'in den Papierkorb verschieben')."
+    },
+    "command:ezsubtreeremove --nodes-id": {
+        "en": "Subtree nodes ID (separated by comma ',').",
+        "de": "IDs der Teilbaumknoten (durch Komma ',' getrennt)."
+    },
+    "command:eztc": {
+        "en": "Compile the templates of a siteaccess into the template cache (--force recompiles all)",
+        "de": "Kompiliert die Templates eines Siteaccess in den Template-Cache (--force kompiliert alle neu)"
+    },
+    "command:eztc --access-path": {
+        "en": "Extra access path",
+        "de": "Zusätzlicher Zugriffspfad"
+    },
+    "command:eztc --compile-directory": {
+        "en": "Where to place compiled files,\ndefault is template/compiled in current cache directory",
+        "de": "Wohin die kompilierten Dateien gelegt werden,\nStandard ist template/compiled im aktuellen Cache-Verzeichnis"
+    },
+    "command:eztc --force": {
+        "en": "Force compilation of template whether it has changed or not",
+        "de": "Templates kompilieren, ob sie sich geändert haben oder nicht"
+    },
+    "command:eztc --full-url": {
+        "en": "Makes sure generated urls have http:// in them (i.e. global), used mainly by sites that include the Exponential HTML (e.g payment gateways)",
+        "de": "Sorgt dafür, dass erzeugte URLs http:// enthalten (also global sind), vor allem für Websites, die das HTML von Exponential einbinden (z. B. Zahlungs-Gateways)"
+    },
+    "command:eztc --index-file": {
+        "en": "The name of your index.php if you are running in non-virtualhost mode",
+        "de": "Der Name Ihrer index.php, wenn Sie im Modus ohne virtuellen Host arbeiten"
+    },
+    "command:eztc --no-full-url": {
+        "en": "Makes sure generated urls are relative to the site. (default)",
+        "de": "Sorgt dafür, dass erzeugte URLs relativ zur Website sind. (Standard)"
+    },
+    "command:eztc --www-dir": {
+        "en": "The part before the index.php in your URL, you should supply this if you are running in non-virtualhost mode",
+        "de": "Der Teil vor der index.php in Ihrer URL; geben Sie ihn an, wenn Sie im Modus ohne virtuellen Host arbeiten"
+    },
+    "command:eztemplatecheck": {
+        "en": "Check the syntax of the templates of a siteaccess or of a design directory",
+        "de": "Prüft die Syntax der Templates eines Siteaccess oder eines Design-Verzeichnisses"
+    },
+    "command:ezwebincommon": {
+        "en": "Helper library of ezwebininstall and ezwebinupgrade, not meant to be run directly",
+        "de": "Hilfsbibliothek von ezwebininstall und ezwebinupgrade, nicht zum direkten Ausführen gedacht"
+    },
+    "command:ezwebininstall": {
+        "en": "Install the ezwebin site package and configure the site",
+        "de": "Installiert das Seitenpaket ezwebin und konfiguriert die Website"
+    },
+    "command:ezwebininstall --admin-siteaccess": {
+        "en": "Will be used as base for eZWebin admin siteaccess",
+        "de": "Wird als Basis für den Administrations-Siteaccess von eZWebin verwendet"
+    },
+    "command:ezwebininstall --package-dir": {
+        "en": "Path to directory with packed(ezpkg) packages(default is '/tmp/ezwebin') ",
+        "de": "Pfad zum Verzeichnis mit gepackten (ezpkg) Paketen (Standard ist '/tmp/ezwebin') "
+    },
+    "command:ezwebininstall --repository": {
+        "en": "Path to repository where unpacked(unarchived) packages are \nplaced. it's relative to 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]' \n(default is 'var/storage/packages/ez_systems')",
+        "de": "Pfad zum Repository, in dem die entpackten Pakete \nliegen. Er ist relativ zu 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]' \n(Standard ist 'var/storage/packages/ez_systems')"
+    },
+    "command:ezwebininstall --url": {
+        "en": "URL to download packages, f.e. 'http://packages.ez.no/Exponential/3.9'.\n'package-dir' can be specified to store uploaded packages on local computer.\nif 'package-dir' is not specified then default dir('/tmp/ezwebin') will be used.",
+        "de": "URL zum Herunterladen der Pakete, z. B. 'http://packages.ez.no/Exponential/3.9'.\nMit 'package-dir' können die heruntergeladenen Pakete auf dem lokalen Rechner gespeichert werden.\nOhne 'package-dir' wird das Standardverzeichnis ('/tmp/ezwebin') verwendet."
+    },
+    "command:ezwebininstall --user-siteaccess": {
+        "en": "Will be used as base for eZWebin user siteaccesses",
+        "de": "Wird als Basis für die Benutzer-Siteaccesses von eZWebin verwendet"
+    },
+    "command:ezwebinupgrade": {
+        "en": "Upgrade an existing ezwebin installation to the current package version (--to-version)",
+        "de": "Aktualisiert eine vorhandene ezwebin-Installation auf die aktuelle Paketversion (--to-version)"
+    },
+    "command:ezwebinupgrade --package": {
+        "en": "Package(s) to install, f.e. 'ezwebin_classes'",
+        "de": "Zu installierende(s) Paket(e), z. B. 'ezwebin_classes'"
+    },
+    "command:ezwebinupgrade --to-version": {
+        "en": "Specify what upgrade path to use. \n available options: '1.2-0' - upgrade 1.1-1 to 1.2-0\n                    '1.3-0' - upgrade 1.2-0 to 1.3-0\n                    '1.4-0' - upgrade 1.3-0 to 1.4-0",
+        "de": "Den zu verwendenden Upgrade-Pfad angeben. \n Verfügbare Optionen: '1.2-0' - Upgrade von 1.1-1 auf 1.2-0\n                    '1.3-0' - Upgrade von 1.2-0 auf 1.3-0\n                    '1.4-0' - Upgrade von 1.3-0 auf 1.4-0"
+    },
+    "command:flatten": {
+        "en": "Remove unused data from the database: contentobject, contentclass, workflow, role or all",
+        "de": "Entfernt ungenutzte Daten aus der Datenbank: contentobject, contentclass, workflow, role oder all"
+    },
+    "command:flatten --db-database": {
+        "en": "Database name",
+        "de": "Datenbankname"
+    },
+    "command:flatten --db-driver": {
+        "en": "Database driver",
+        "de": "Datenbanktreiber"
+    },
+    "command:flatten --db-host": {
+        "en": "Database host",
+        "de": "Datenbankhost"
+    },
+    "command:flatten --db-password": {
+        "en": "Database password",
+        "de": "Datenbankpasswort"
+    },
+    "command:flatten --db-type": {
+        "en": "Database driver, alias for --db-driver",
+        "de": "Datenbanktreiber, Alias für --db-driver"
+    },
+    "command:flatten --db-user": {
+        "en": "Database user",
+        "de": "Datenbankbenutzer"
+    },
+    "command:flatten --sql": {
+        "en": "Display sql queries",
+        "de": "SQL-Abfragen anzeigen"
+    },
+    "command:frankenphp": {
+        "en": "Control the FrankenPHP engine of the Exponential web server",
+        "de": "Steuert die FrankenPHP-Engine des Exponential-Webservers"
+    },
+    "command:frankenphp --all": {
+        "en": "start, stop, restart, graceful, kill or status every engine, one after the other",
+        "de": "start, stop, restart, graceful, kill oder status für jede Engine, eine nach der anderen"
+    },
+    "command:frankenphp --check": {
+        "en": "install: re-hash the installed binary against its SHA-256",
+        "de": "install: den Hash der installierten Binärdatei erneut gegen ihre SHA-256 prüfen"
+    },
+    "command:frankenphp --engine": {
+        "en": "override the frankenphp default for this command only (php, qbix, or several)",
+        "de": "den frankenphp-Standard nur für diesen Befehl überschreiben (php, qbix oder mehrere)"
+    },
+    "command:frankenphp --force": {
+        "en": "install: download again even if the binary is already there",
+        "de": "install: erneut herunterladen, auch wenn die Binärdatei schon da ist"
+    },
+    "command:frankenphp --from": {
+        "en": "install: take the binary from this file instead of downloading it",
+        "de": "install: die Binärdatei aus dieser Datei nehmen, statt sie herunterzuladen"
+    },
+    "command:frankenphp --json": {
+        "en": "Report as JSON, for a caller that is not a person",
+        "de": "Als JSON berichten, für einen Aufrufer, der kein Mensch ist"
+    },
+    "command:frankenphp --trust-github-digest": {
+        "en": "install: accept the digest GitHub publishes when no Sha256 is pinned",
+        "de": "install: den von GitHub veröffentlichten Digest akzeptieren, wenn keine Sha256 festgelegt ist"
+    },
+    "command:i18n": {
+        "en": "The translation fallbacks: per locale the chain of translations it falls back to, and how much of the kernel and of each extension it shows translated; --check for CI",
+        "de": "Die Übersetzungs-Fallbacks: pro Locale die Kette der Übersetzungen, auf die sie zurückfällt, und wie viel vom Kernel und von jeder Erweiterung übersetzt angezeigt wird; --check für CI"
+    },
+    "command:i18n --check": {
+        "en": "Check the fallbacks as the check action does, after the list",
+        "de": "Nach der Liste die Fallbacks so prüfen wie die Aktion check"
+    },
+    "command:i18n --format": {
+        "en": "table (default) or json",
+        "de": "table (Standard) oder json"
+    },
+    "command:i18n --locale": {
+        "en": "Only these locales, comma separated (esl-AR,ger-AT): each step of the chain and every extension",
+        "de": "Nur diese Locales, durch Kommas getrennt (esl-AR,ger-AT): jeder Schritt der Kette und jede Erweiterung"
+    },
+    "command:i18n --no-extensions": {
+        "en": "Leave out the coverage of the extensions (reading their files the first time takes seconds)",
+        "de": "Die Abdeckung der Erweiterungen weglassen (das erste Lesen ihrer Dateien dauert Sekunden)"
+    },
+    "command:i18n --only": {
+        "en": "With the list: own (a translation of its own), fallback (translated through a fallback) or untranslated",
+        "de": "Mit der Liste: own (eine eigene Übersetzung), fallback (über einen Fallback übersetzt) oder untranslated"
+    },
+    "command:i18n --strict": {
+        "en": "With check: warnings (a configured locale without a locale file, a chain without a translation) fail too",
+        "de": "Mit check: auch Warnungen (eine konfigurierte Locale ohne Locale-Datei, eine Kette ohne Übersetzung) lassen es scheitern"
+    },
+    "command:ini": {
+        "en": "Read and change INI settings in every scope: get, set, add, rem, clear, toggle, copy, move, where, list, scopes",
+        "de": "INI-Einstellungen in jedem Bereich lesen und ändern: get, set, add, rem, clear, toggle, copy, move, where, list, scopes"
+    },
+    "command:install": {
+        "en": "One-command installation, SQLite by default, no kickstart.ini needed",
+        "de": "Installation mit einem Befehl, standardmäßig mit SQLite, ohne kickstart.ini"
+    },
+    "command:kickstarter": {
+        "en": "Kickstarter runner. Supports \"ini\" generation and full \"run\" setup subcommands",
+        "de": "Kickstarter-Runner. Unterstützt die Unterbefehle \"ini\" zum Erzeugen und \"run\" für die vollständige Einrichtung"
+    },
+    "command:mailbounces": {
+        "en": "Read the bounce mailbox: hard bounces and spam complaints go on the suppression list",
+        "de": "Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste"
+    },
+    "command:mailbounces --dry-run": {
+        "en": "Report only: nothing is suppressed, no message is changed, the status is not written",
+        "de": "Nur berichten: nichts wird gesperrt, keine Nachricht geändert, der Status nicht geschrieben"
+    },
+    "command:mailbounces --file": {
+        "en": "Read these saved messages (.eml file, or a directory of them) instead of the mailbox",
+        "de": "Diese gespeicherten Nachrichten (.eml-Datei oder ein Verzeichnis davon) statt des Postfachs lesen"
+    },
+    "command:mailbounces --status": {
+        "en": "Show the last run and stop",
+        "de": "Den letzten Lauf zeigen und aufhören"
+    },
+    "command:mailconsent": {
+        "en": "The consent log of the e-mail preferences: list, export as CSV, retention cleanup",
+        "de": "Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen"
+    },
+    "command:mailconsent --action": {
+        "en": "on, off, pending, confirm, ...",
+        "de": "on, off, pending, confirm, ..."
+    },
+    "command:mailconsent --addresses": {
+        "en": "list: show addresses instead of hiding them",
+        "de": "list: Adressen zeigen, statt sie zu verbergen"
+    },
+    "command:mailconsent --category": {
+        "en": "a category identifier",
+        "de": "ein Kategoriebezeichner"
+    },
+    "command:mailconsent --dry-run": {
+        "en": "cleanup: count only",
+        "de": "cleanup: nur zählen"
+    }
+}

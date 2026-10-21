@@ -93,18 +93,34 @@ They come from one command, run from the installation root:
 ./console exp:help index --rebuild          # then rebuild the help index
 ```
 
+The same command writes the German pages with `--language=ger-de`, into `doc/ger-de/beispiele/`, and lists them in
+`doc/ger-de/.paths.json`:
+
+```bash
+./console exp:help:examples --language=ger-de
+./console exp:help:examples --language=ger-de --check
+./console exp:help:examples --language=ger-de --worklist=var/tmp/todo.json
+```
+
 The output is deterministic. The same sources always produce the same files: input is sorted, and pages contain no
 dates and no host names. Run the command after a change to an operator, a fetch function, a view, a policy, an INI
 file, a datatype, a workflow event, a cronjob or a command, then commit the changed pages with that change.
 `--check` in a review or CI job catches pages that were not regenerated.
+
+A translation reads its text from `doc/<language>/.examples/`: `strings.json` holds the fixed text of the pages
+(headings, labels, sentences) with their `{placeholders}`, and `descriptions/*.json` the comments and descriptions
+quoted from the sources, by item (such as `ini:settings/site.ini [Block] Setting`), each with the English text it
+translates. A translation is used only while its English text is the source's; the worklist of `--worklist` lists the
+texts to translate again. Code, INI keys and values, commands and identifiers are never translated. The English pages
+do not depend on any translation.
 
 Every generated page has `generated: exp:help:examples` in its front matter. The command only replaces or removes
 pages with that marker, inside the areas listed above. It never touches the hand-written pages: this one, the web
 server examples and the cookbook. To change a generated page, change its source and run the command again. Edits to
 the page itself are lost the next time the command runs.
 
-The code is `kernel/classes/help/exphelpexamplesgenerator.php` (class `expHelpExamplesGenerator`), and the command
-is `kernel/private/classes/commands/exphelpexamples.php`. To add an area, give the class an `area<Name>()` method and
+The code is `kernel/classes/help/exphelpexamplesgenerator.php` (class `expHelpExamplesGenerator`), the translation
+`kernel/classes/help/exphelpexamplestranslation.php` (class `expHelpExamplesTranslation`), and the command is `kernel/private/classes/commands/exphelpexamples.php`. To add an area, give the class an `area<Name>()` method and
 an entry in `AREAS`.
 
 ## Help settings for this section

@@ -59,7 +59,7 @@ Halten Sie die Zahl der Personen, die direkt veröffentlichen können, klein und
 - **Jede Woche**: Führen Sie die wöchentliche Routine des Betreibers durch ([Wöchentliche Routine des Betreibers](../alltag/woechentliche-routine-des-betreibers.md)),
   einschließlich kaputter Links und Bilder ohne Alternativtext.
 - **Vor einem großen Nachrichtentag** (eine Wahl, ein Spiel, ein Launch): Fragen Sie Ihren Hoster, ob die Website für die
-  Spitze vorbereitet ist, und vereinbaren Sie, wer Bereitschaft hat ([Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)).
+  Spitze vorbereitet ist, und vereinbaren Sie, wer Bereitschaft hat ([Planung für Lastspitzen](../../unternehmen/zuverlaessigkeit/lastspitzen-planen.md)).
 
 > **Tipp**
 > Eine Korrektur ist eine neue Version, keine Bearbeitung der Geschichte. Wenn eine veröffentlichte Geschichte geändert
@@ -82,5 +82,5 @@ Sprachen veröffentlicht, ergänzen Sie den [Lesepfad für mehrsprachige Website
 - [Lesepfad für Nachrichtenredaktionen](lesepfad-nachrichtenredaktionen.md)
 - [Magazine: hier beginnen](magazine-hier-beginnen.md)
 - [Redaktionskalender](../alltag/redaktionskalender.md)
-- [Neuigkeiten und Ankündigungen in einem Intranet](../../../../eng-us/help/businesses/intranets/news-and-announcements.md)
+- [Neuigkeiten und Ankündigungen in einem Intranet](../../unternehmen/intranets/neuigkeiten-und-ankuendigungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

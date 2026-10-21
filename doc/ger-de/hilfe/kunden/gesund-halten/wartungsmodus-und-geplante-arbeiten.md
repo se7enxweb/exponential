@@ -12,7 +12,7 @@ type: help
 Manche Arbeiten, etwa ein Upgrade, ein großer Import oder eine Reparatur, sind sicherer, wenn die Website kurz vom Netz
 ist. Exponential hat dafür einen Wartungsmodus. Diese Seite ist der Teil des Betreibers: entscheiden, ankündigen und
 prüfen. Die Person, die die Arbeit erledigt, folgt [Wartungsmodus](../../../anleitungen/wartungsmodus.md), und die Sicht
-für Unternehmen steht unter [Wartungsmodus und geplante Arbeiten für Unternehmen](../../../../eng-us/help/businesses/reliability/maintenance-mode-and-planned-work.md).
+für Unternehmen steht unter [Wartungsmodus und geplante Arbeiten für Unternehmen](../../unternehmen/zuverlaessigkeit/wartungsmodus-und-geplante-arbeiten.md).
 
 ## Was Besucher und Suchmaschinen sehen
 
@@ -29,7 +29,7 @@ wenn die erwartete Zeit verstreicht“: Jemand muss die Website zurückholen.
 
 | Entscheidung | Hinweise |
 |---|---|
-| Ob die Arbeit die Website vom Netz nehmen muss | Viele Änderungen müssen das nicht; fragen Sie die Person, die die Arbeit erledigt ([Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md)) |
+| Ob die Arbeit die Website vom Netz nehmen muss | Viele Änderungen müssen das nicht; fragen Sie die Person, die die Arbeit erledigt ([Unterbrechungsfreie Deployments](../../unternehmen/zuverlaessigkeit/unterbrechungsfreie-deployments.md)) |
 | Wann | Außerhalb Ihrer geschäftigsten Zeiten; nie während einer Kampagne oder eines Newsletter-Versands |
 | Wie lange, ehrlich | Die Seite kann das voraussichtliche Ende zeigen |
 | Die Nachricht | In den Worten der Besucher, mit der Angabe, wann die Website zurück ist |

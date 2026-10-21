@@ -1,0 +1,802 @@
+{
+    "command:accesscheck": {
+        "en": "Check what a user may do with a node or object (content/read, edit, ...) and which limitation refuses it",
+        "de": "Prüft, was ein Benutzer mit einem Knoten oder Objekt tun darf (content/read, edit, ...) und welche Einschränkung es verweigert"
+    },
+    "command:accesscheck --function": {
+        "en": "The content function (default read)",
+        "de": "Die content-Funktion (Standard read)"
+    },
+    "command:accesscheck --json": {
+        "en": "One JSON object instead of the text",
+        "de": "Ein JSON-Objekt statt des Textes"
+    },
+    "command:accesscheck --language": {
+        "en": "A language code, for edit and translate",
+        "de": "Ein Sprachcode, für edit und translate"
+    },
+    "command:accesscheck --node": {
+        "en": "The node ID to check",
+        "de": "Die zu prüfende Knoten-ID"
+    },
+    "command:accesscheck --object": {
+        "en": "The object ID to check (instead of a node)",
+        "de": "Die zu prüfende Objekt-ID (statt eines Knotens)"
+    },
+    "command:accesscheck --user": {
+        "en": "The user: its content object ID or its login; \"anonymous\" for the anonymous user",
+        "de": "Der Benutzer: seine Inhaltsobjekt-ID oder sein Login; \"anonymous\" für den anonymen Benutzer"
+    },
+    "command:addexphelpreadpolicy": {
+        "en": "Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first)",
+        "de": "Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf)"
+    },
+    "command:addexphelpreadpolicy --dry-run": {
+        "en": "List what would be granted, change nothing",
+        "de": "Auflisten, was gewährt würde, nichts ändern"
+    },
+    "command:addoauthauthorizepolicy": {
+        "en": "Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first)",
+        "de": "Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf)"
+    },
+    "command:audit": {
+        "en": "Audit log: tail, show one event, verify the hash chains, list the channels",
+        "de": "Audit-Log: die letzten Einträge, ein Ereignis anzeigen, die Hash-Ketten prüfen, die Kanäle auflisten"
+    },
+    "command:audit --archives": {
+        "en": "verify: also the archives (manifests, HMAC, checksums, the chain through them); reindex: also the archives",
+        "de": "verify: auch die Archive (Manifeste, HMAC, Prüfsummen, die Kette durch sie hindurch); reindex: auch die Archive"
+    },
+    "command:audit --before": {
+        "en": "archive: the days before this date (default: older than LiveDays)",
+        "de": "archive: die Tage vor diesem Datum (Standard: älter als LiveDays)"
+    },
+    "command:audit --channel": {
+        "en": "Only this channel (content, access, system, commerce, read)",
+        "de": "Nur dieser Kanal (content, access, system, commerce, read)"
+    },
+    "command:audit --daily": {
+        "en": "cron: run the daily tasks now",
+        "de": "cron: die täglichen Aufgaben jetzt ausführen"
+    },
+    "command:audit --date": {
+        "en": "verify: only that day's files; restore: the archived day (YYYY-MM-DD, UTC)",
+        "de": "verify: nur die Dateien dieses Tages; restore: der archivierte Tag (YYYY-MM-DD, UTC)"
+    },
+    "command:audit --dir": {
+        "en": "import: the directory of the 4.x audit files (default: the audit LogDir)",
+        "de": "import: das Verzeichnis der Audit-Dateien von 4.x (Standard: das LogDir des Audits)"
+    },
+    "command:audit --dry-run": {
+        "en": "rotate, archive, purge, import, pseudonymise: only say what would be done",
+        "de": "rotate, archive, purge, import, pseudonymise: nur sagen, was getan würde"
+    },
+    "command:audit --file": {
+        "en": "import: only this 4.x file (login.log)",
+        "de": "import: nur diese Datei von 4.x (login.log)"
+    },
+    "command:audit --files": {
+        "en": "search: read the files, not the index",
+        "de": "search: die Dateien lesen, nicht den Index"
+    },
+    "command:audit --follow": {
+        "en": "tail: keep printing new records as they are written (Ctrl-C ends)",
+        "de": "tail: neue Einträge weiter ausgeben, sobald sie geschrieben werden (Strg-C beendet)"
+    },
+    "command:audit --format": {
+        "en": "archive: the format handler; export: jsonl, csv or bundle",
+        "de": "archive: der Format-Handler; export: jsonl, csv oder bundle"
+    },
+    "command:audit --from": {
+        "en": "search, export: from this time (YYYY-MM-DD[THH:MM[:SS]], UTC unless it ends in Z or +HH:MM)",
+        "de": "search, export: ab diesem Zeitpunkt (YYYY-MM-DD[THH:MM[:SS]], UTC, außer er endet auf Z oder +HH:MM)"
+    },
+    "command:audit --incremental": {
+        "en": "reindex: only what is new (default: rebuild)",
+        "de": "reindex: nur das Neue (Standard: neu aufbauen)"
+    },
+    "command:audit --json": {
+        "en": "Print records and results as JSON",
+        "de": "Einträge und Ergebnisse als JSON ausgeben"
+    },
+    "command:audit --keep-originals": {
+        "en": "import: leave the 4.x files in place after archiving them",
+        "de": "import: die Dateien von 4.x nach dem Archivieren an ihrem Platz lassen"
+    },
+    "command:audit --limit": {
+        "en": "search: how many records (default 50); export: at most MaxExportRecords",
+        "de": "search: wie viele Einträge (Standard 50); export: höchstens MaxExportRecords"
+    },
+    "command:audit --lines": {
+        "en": "tail: how many records (default 20)",
+        "de": "tail: wie viele Einträge (Standard 20)"
+    },
+    "command:audit --name": {
+        "en": "tail, search, export: only names matching this pattern: *, access.*, access.session.*, content.node.move",
+        "de": "tail, search, export: nur Namen, die auf dieses Muster passen: *, access.*, access.session.*, content.node.move"
+    },
+    "command:audit --out": {
+        "en": "export: the file (jsonl, csv) or directory (bundle)",
+        "de": "export: die Datei (jsonl, csv) oder das Verzeichnis (bundle)"
+    },
+    "command:audit --pseudonym": {
+        "en": "key rotate: replace the pseudonym key instead of the signing key",
+        "de": "key rotate: den Pseudonym-Schlüssel statt des Signaturschlüssels ersetzen"
+    },
+    "command:audit --query": {
+        "en": "search, export: full-text search over names, object names and before/after values",
+        "de": "search, export: Volltextsuche über Namen, Objektnamen und Werte vorher/nachher"
+    },
+    "command:audit --replay": {
+        "en": "alerts test: run the rule over the records since this date, without firing",
+        "de": "alerts test: die Regel über die Einträge seit diesem Datum laufen lassen, ohne auszulösen"
+    },
+    "command:audit --rule": {
+        "en": "alerts recipients: only this rule",
+        "de": "alerts recipients: nur diese Regel"
+    },
+    "command:audit --subject-user": {
+        "en": "export: every record by or about this user id (an access request)",
+        "de": "export: jeder Eintrag von diesem oder über diesen Benutzer (eine Auskunftsanfrage)"
+    },
+    "command:audit --to": {
+        "en": "restore: the directory (default <LogDir>/restored); search, export: up to and including this time (as --from)",
+        "de": "restore: das Verzeichnis (Standard <LogDir>/restored); search, export: bis einschließlich zu diesem Zeitpunkt (wie --from)"
+    },
+    "command:benchmark": {
+        "en": "Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check",
+        "de": "Misst diese Installation: Seitenzeiten über HTTP, A/B zwischen Servern, Kernel-Messungen, Regressionsprüfung"
+    },
+    "command:benchmark --all-checks": {
+        "en": "Show every comparison, not only the regressions",
+        "de": "Jeden Vergleich anzeigen, nicht nur die Regressionen"
+    },
+    "command:benchmark --auth": {
+        "en": "HTTP basic auth, user:password (or the EXP_BENCHMARK_AUTH variable)",
+        "de": "HTTP-Basic-Auth, benutzer:passwort (oder die Variable EXP_BENCHMARK_AUTH)"
+    },
+    "command:benchmark --base": {
+        "en": "Server to measure (default: https:// and the SiteURL of the siteaccess)",
+        "de": "Der zu messende Server (Standard: https:// und die SiteURL des Siteaccess)"
+    },
+    "command:benchmark --baseline": {
+        "en": "Compare with this saved run; exit 1 when a metric regressed",
+        "de": "Mit diesem gespeicherten Lauf vergleichen; Exit-Code 1, wenn sich ein Messwert verschlechtert hat"
+    },
+    "command:benchmark --boot-repeat": {
+        "en": "kernel: new processes for boot and the cold render (default 5)",
+        "de": "kernel: neue Prozesse für den Start und das kalte Rendern (Standard 5)"
+    },
+    "command:benchmark --cold": {
+        "en": "A unique query string on every request, so no response cache answers",
+        "de": "Bei jeder Anfrage eine eindeutige Query-Zeichenkette, damit kein Antwort-Cache antwortet"
+    },
+    "command:benchmark --cold-clear": {
+        "en": "Clear the content view cache once before the run (this installation only)",
+        "de": "Vor dem Lauf einmal den View-Cache der Inhalte leeren (nur diese Installation)"
+    },
+    "command:benchmark --compare": {
+        "en": "Two or more servers, comma separated, measured back to back (A/B)",
+        "de": "Zwei oder mehr Server, durch Kommas getrennt, direkt nacheinander gemessen (A/B)"
+    },
+    "command:benchmark --concurrency": {
+        "en": "Requests at the same time (default 4)",
+        "de": "Gleichzeitige Anfragen (Standard 4)"
+    },
+    "command:benchmark --cookie": {
+        "en": "A Cookie header to send, e.g. to measure a signed-in page",
+        "de": "Ein zu sendender Cookie-Header, z. B. um eine Seite im angemeldeten Zustand zu messen"
+    },
+    "command:benchmark --csv": {
+        "en": "Print the rows as CSV",
+        "de": "Die Zeilen als CSV ausgeben"
+    },
+    "command:benchmark --duration": {
+        "en": "Seconds per URL for wrk (default 10)",
+        "de": "Sekunden pro URL für wrk (Standard 10)"
+    },
+    "command:benchmark --encoding": {
+        "en": "The Accept-Encoding to send (default gzip; \"none\" for none)",
+        "de": "Das zu sendende Accept-Encoding (Standard gzip; \"none\" für keines)"
+    },
+    "command:benchmark --force": {
+        "en": "Allow more than the polite limits against a host that is not loopback",
+        "de": "Mehr als die rücksichtsvollen Grenzen gegen einen Host erlauben, der nicht Loopback ist"
+    },
+    "command:benchmark --format": {
+        "en": "Output: table (default), json or csv",
+        "de": "Ausgabe: table (Standard), json oder csv"
+    },
+    "command:benchmark --http": {
+        "en": "HTTP version: 1.1 or 2 (default: what curl negotiates)",
+        "de": "HTTP-Version: 1.1 oder 2 (Standard: was curl aushandelt)"
+    },
+    "command:benchmark --insecure": {
+        "en": "Do not verify TLS certificates (self-signed servers)",
+        "de": "TLS-Zertifikate nicht prüfen (selbstsignierte Server)"
+    },
+    "command:benchmark --json": {
+        "en": "Print the run as JSON",
+        "de": "Den Lauf als JSON ausgeben"
+    },
+    "command:benchmark --micro": {
+        "en": "The same as the micro mode",
+        "de": "Dasselbe wie der Modus micro"
+    },
+    "command:benchmark --min-delta": {
+        "en": "Milliseconds a latency must grow by, too, to count (default 1)",
+        "de": "Millisekunden, um die eine Latenz außerdem wachsen muss, damit es zählt (Standard 1)"
+    },
+    "command:benchmark --no-admin": {
+        "en": "Leave the admin login page out of the default list",
+        "de": "Die Anmeldeseite der Administration aus der Standardliste weglassen"
+    },
+    "command:benchmark --no-keepalive": {
+        "en": "A new connection for every request",
+        "de": "Für jede Anfrage eine neue Verbindung"
+    },
+    "command:benchmark --no-search": {
+        "en": "Leave the search page out of the default list",
+        "de": "Die Suchseite aus der Standardliste weglassen"
+    },
+    "command:benchmark --node": {
+        "en": "kernel: the node to render and fetch (default: the front page)",
+        "de": "kernel: der zu rendernde und abzurufende Knoten (Standard: die Startseite)"
+    },
+    "command:benchmark --pages": {
+        "en": "How many pages of the menu the default list takes (default 3)",
+        "de": "Wie viele Seiten des Menüs die Standardliste nimmt (Standard 3)"
+    },
+    "command:benchmark --repeat": {
+        "en": "kernel: runs of every probe (default 20); micro: measured iterations of every probe (default 30)",
+        "de": "kernel: Läufe jeder Messung (Standard 20); micro: gemessene Iterationen jeder Messung (Standard 30)"
+    },
+    "command:benchmark --requests": {
+        "en": "Requests per URL and server (default 100)",
+        "de": "Anfragen pro URL und Server (Standard 100)"
+    },
+    "command:benchmark --rounds": {
+        "en": "Split the requests into rounds, alternating the server order (default 2)",
+        "de": "Die Anfragen in Runden aufteilen, mit wechselnder Reihenfolge der Server (Standard 2)"
+    },
+    "command:benchmark --runs": {
+        "en": "The same as --requests: measured runs per URL and server",
+        "de": "Dasselbe wie --requests: gemessene Läufe pro URL und Server"
+    },
+    "command:benchmark --save": {
+        "en": "Write the run as JSON to this file",
+        "de": "Den Lauf als JSON in diese Datei schreiben"
+    },
+    "command:benchmark --search": {
+        "en": "The words the default search page searches for (default: the first word of the first menu page)",
+        "de": "Die Wörter, nach denen die Standard-Suchseite sucht (Standard: das erste Wort der ersten Menüseite)"
+    },
+    "command:benchmark --threshold": {
+        "en": "Percent a metric may get worse before it counts as a regression (default 15; micro: 40, after normalisation)",
+        "de": "Prozent, um die sich ein Messwert verschlechtern darf, bevor es als Regression zählt (Standard 15; micro: 40, nach Normalisierung)"
+    },
+    "command:benchmark --timeout": {
+        "en": "Seconds per request (default 30)",
+        "de": "Sekunden pro Anfrage (Standard 30)"
+    },
+    "command:benchmark --tool": {
+        "en": "curl (default, built in), ab, wrk or oha when installed",
+        "de": "curl (Standard, eingebaut), ab, wrk oder oha, wenn installiert"
+    },
+    "command:benchmark --urls-file": {
+        "en": "A file with one URL or path per line (# starts a comment)",
+        "de": "Eine Datei mit einer URL oder einem Pfad pro Zeile (# beginnt einen Kommentar)"
+    },
+    "command:benchmark --warmup": {
+        "en": "Unmeasured runs first: requests per URL and server (default 5, at least one per connection), micro: iterations per probe (default 3)",
+        "de": "Zuerst ungemessene Läufe: Anfragen pro URL und Server (Standard 5, mindestens eine pro Verbindung), micro: Iterationen pro Messung (Standard 3)"
+    },
+    "command:cache": {
+        "en": "Clear and inspect caches by tag, id or all: content, static, HTTP, Velocity, OPcache, APCu",
+        "de": "Caches nach Tag, ID oder alle leeren und untersuchen: Inhalte, statisch, HTTP, Velocity, OPcache, APCu"
+    },
+    "command:cache --all": {
+        "en": "clear: every cache",
+        "de": "clear: jeder Cache"
+    },
+    "command:cache --dry-run": {
+        "en": "List what would be cleared and change nothing",
+        "de": "Auflisten, was geleert würde, und nichts ändern"
+    },
+    "command:cache --expiry": {
+        "en": "with --purge: only entries older than this, e.g. \"-2 days\"",
+        "de": "mit --purge: nur Einträge, die älter sind, z. B. \"-2 days\""
+    },
+    "command:cache --id": {
+        "en": "clear: caches with these ids (comma separated)",
+        "de": "clear: Caches mit diesen IDs (durch Kommas getrennt)"
+    },
+    "command:cache --iteration-max": {
+        "en": "with --purge: entries per iteration",
+        "de": "mit --purge: Einträge pro Iteration"
+    },
+    "command:cache --iteration-sleep": {
+        "en": "with --purge: seconds to sleep between iterations",
+        "de": "mit --purge: Sekunden Pause zwischen den Iterationen"
+    },
+    "command:cache --json": {
+        "en": "Report as one JSON object",
+        "de": "Als ein JSON-Objekt berichten"
+    },
+    "command:cache --keep": {
+        "en": "static regenerate: add to what is stored instead of replacing it",
+        "de": "static regenerate: zum Gespeicherten hinzufügen, statt es zu ersetzen"
+    },
+    "command:cache --max-depth": {
+        "en": "static regenerate: follow links this many steps (default 12)",
+        "de": "static regenerate: Links so viele Schritte weit folgen (Standard 12)"
+    },
+    "command:cache --max-pages": {
+        "en": "static regenerate: stop after this many pages per site (default 2500)",
+        "de": "static regenerate: nach so vielen Seiten pro Website aufhören (Standard 2500)"
+    },
+    "command:cache --node": {
+        "en": "static, httpcache purge: node ids, comma separated",
+        "de": "static, httpcache purge: Knoten-IDs, durch Kommas getrennt"
+    },
+    "command:cache --path": {
+        "en": "static: pages relative to the site, comma separated",
+        "de": "static: Seiten relativ zur Website, durch Kommas getrennt"
+    },
+    "command:cache --purge": {
+        "en": "clear, imagealias: remove the entries for real",
+        "de": "clear, imagealias: die Einträge wirklich entfernen"
+    },
+    "command:cache --site": {
+        "en": "static: the siteaccess to generate or clear (default every cacheable one)",
+        "de": "static: der Siteaccess, der erzeugt oder geleert wird (Standard: jeder cachebare)"
+    },
+    "command:cache --sizes": {
+        "en": "list: count the files and bytes of each cache",
+        "de": "list: Dateien und Bytes jedes Caches zählen"
+    },
+    "command:cache --tag": {
+        "en": "clear: caches with these tags (comma separated); httpcache purge: these HTTP cache tags",
+        "de": "clear: Caches mit diesen Tags (durch Kommas getrennt); httpcache purge: diese HTTP-Cache-Tags"
+    },
+    "command:cache --url": {
+        "en": "httpcache purge: urls, comma separated",
+        "de": "httpcache purge: URLs, durch Kommas getrennt"
+    },
+    "command:changelog2xmltext": {
+        "en": "Convert a Changelog file to XML text format and print it to standard output",
+        "de": "Wandelt eine Changelog-Datei in das XML-Textformat um und gibt sie auf der Standardausgabe aus"
+    },
+    "command:checkclasses": {
+        "en": "Load every declared class and report the ones PHP refuses to load",
+        "de": "Lädt jede deklarierte Klasse und meldet die, deren Laden PHP verweigert"
+    },
+    "command:checkclasses --kernel": {
+        "en": "Check the kernel classes as well as the extension ones. Slower, and they are the ones least likely to be wrong.",
+        "de": "Die Kernel-Klassen ebenso prüfen wie die der Erweiterungen. Langsamer, und sie sind am wenigsten wahrscheinlich fehlerhaft."
+    },
+    "command:checkclasses --quiet-ok": {
+        "en": "Print nothing when everything loads.",
+        "de": "Nichts ausgeben, wenn alles lädt."
+    },
+    "command:checkclasses --tests": {
+        "en": "Include classes that live under a tests directory. Left out by default: they are usually written against whichever version of phpunit was current, and a test class that will not load breaks nothing anybody is looking at.",
+        "de": "Klassen einbeziehen, die unter einem Verzeichnis tests liegen. Standardmäßig weggelassen: Sie sind meist gegen die jeweils aktuelle Version von phpunit geschrieben, und eine Testklasse, die nicht lädt, macht nichts kaputt, worauf jemand schaut."
+    },
+    "command:checkdbfiles": {
+        "en": "Verify the database update files against the upgrade path; reports missing or stray files",
+        "de": "Prüft die Datenbank-Update-Dateien gegen den Upgrade-Pfad; meldet fehlende oder überzählige Dateien"
+    },
+    "command:checkdbfiles --export-path": {
+        "en": "Directory in which a new directory for the SVN exports is made and removed again (default var/tmp)",
+        "de": "Verzeichnis, in dem ein neues Verzeichnis für die SVN-Exporte angelegt und wieder entfernt wird (Standard var/tmp)"
+    },
+    "command:checkdbfiles --no-verify-branches": {
+        "en": "Do not verify the content of the files with previous branches (To avoid SVN usage)",
+        "de": "Den Inhalt der Dateien nicht mit früheren Branches vergleichen (um SVN zu vermeiden)"
+    },
+    "command:cleanuppolicies": {
+        "en": "Remove policies of modules that no longer exist (--dry-run lists them first)",
+        "de": "Entfernt Richtlinien von Modulen, die es nicht mehr gibt (--dry-run listet sie zuerst auf)"
+    },
+    "command:cleanuppolicies --dry-run": {
+        "en": "Test mode, output the list of affected policies without removing them",
+        "de": "Testmodus: die Liste der betroffenen Richtlinien ausgeben, ohne sie zu entfernen"
+    },
+    "command:cleanuppolicies -n": {
+        "en": "Do not wait",
+        "de": "Nicht warten"
+    },
+    "command:cleanuprss": {
+        "en": "Trim RSS-imported content, keeping the newest items of each active import",
+        "de": "Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports"
+    },
+    "command:cleanuprss --dry-run": {
+        "en": "List what would be removed, and remove nothing",
+        "de": "Auflisten, was entfernt würde, und nichts entfernen"
+    },
+    "command:cleanuprss --keep": {
+        "en": "Keep this many items per feed instead of the configured number",
+        "de": "So viele Einträge pro Feed behalten statt der konfigurierten Anzahl"
+    },
+    "command:cleanupversions": {
+        "en": "Remove archived content versions beyond the VersionManagement limits (-n: do not wait)",
+        "de": "Entfernt archivierte Inhaltsversionen über die Grenzen von VersionManagement hinaus (-n: nicht warten)"
+    },
+    "command:clusterize": {
+        "en": "Move var files into the database cluster storage (-u moves them back)",
+        "de": "Verschiebt die Dateien aus var in den Cluster-Speicher der Datenbank (-u verschiebt sie zurück)"
+    },
+    "command:clusterize --skip-binary-files": {
+        "en": "Skip copying binary files",
+        "de": "Binärdateien nicht kopieren"
+    },
+    "command:clusterize --skip-images": {
+        "en": "Skip copying images",
+        "de": "Bilder nicht kopieren"
+    },
+    "command:clusterize --skip-media-files": {
+        "en": "Skip copying media files",
+        "de": "Mediendateien nicht kopieren"
+    },
+    "command:clusterize -r": {
+        "en": "Remove files after copying",
+        "de": "Dateien nach dem Kopieren entfernen"
+    },
+    "command:clusterize -u": {
+        "en": "Unclusterize",
+        "de": "Aus dem Cluster zurückholen"
+    },
+    "command:clusterpurge": {
+        "en": "Physically purge the cluster files of the given scopes (--scopes=scope1,scope2)",
+        "de": "Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2)"
+    },
+    "command:clusterpurge --dry-run": {
+        "en": "Test mode, output the list of affected files without removing them",
+        "de": "Testmodus: die Liste der betroffenen Dateien ausgeben, ohne sie zu entfernen"
+    },
+    "command:clusterpurge --expiry": {
+        "en": "Number of days since the file was expired. Only files older than this will be purged. Default is 30, minimum is 1.",
+        "de": "Anzahl der Tage, seit die Datei abgelaufen ist. Nur ältere Dateien werden gelöscht. Standard ist 30, Minimum 1."
+    },
+    "command:clusterpurge --iteration-limit": {
+        "en": "Amount of items to remove in each iteration when performing a purge operation. Default is 100.",
+        "de": "Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. Standard ist 100."
+    },
+    "command:clusterpurge --iteration-sleep": {
+        "en": "Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. Default is one second.",
+        "de": "Sekunden Pause zwischen den Iterationen beim Löschen, auch als Dezimalzahl. Standard ist eine Sekunde."
+    },
+    "command:clusterpurge --memory-monitoring": {
+        "en": "Generates memory monitoring output. If set, memory usage will be logged in var/log/clusterpurge.log.",
+        "de": "Erzeugt eine Ausgabe zur Speicherüberwachung. Wenn gesetzt, wird der Speicherverbrauch in var/log/clusterpurge.log protokolliert."
+    },
+    "command:clusterpurge --scopes": {
+        "en": "Comma separated list of file types to purge. Possible values are: classattridentifiers, classidentifiers, content, expirycache, statelimitations, user-info-cache, viewcache, wildcard-cache-index, image, binaryfile, media.",
+        "de": "Durch Kommas getrennte Liste der zu löschenden Dateitypen. Mögliche Werte: classattridentifiers, classidentifiers, content, expirycache, statelimitations, user-info-cache, viewcache, wildcard-cache-index, image, binaryfile, media."
+    },
+    "command:collaborationsampledata": {
+        "en": "Build sample content for the collaboration tool (approvals, comments, groups), or remove it again",
+        "de": "Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder"
+    },
+    "command:collaborationsampledata --dry-run": {
+        "en": "Show what would be done and change nothing",
+        "de": "Zeigen, was getan würde, und nichts ändern"
+    },
+    "command:collaborationsampledata --remove": {
+        "en": "Delete the sample data (and only that)",
+        "de": "Die Beispieldaten löschen (und nur sie)"
+    },
+    "command:contentcheck": {
+        "en": "Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run)",
+        "de": "Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Verknüpfungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur ein Bericht, außer mit --fix, --quarantine oder --fix-permissions ohne --dry-run)"
+    },
+    "command:contentcheck --broken": {
+        "en": "List the broken relations below --node (all pages) and in the layouts",
+        "de": "Die defekten Verknüpfungen unter --node (alle Seiten) und in den Layouts auflisten"
+    },
+    "command:contentcheck --build-index": {
+        "en": "Build the reference index and keep it in the cache",
+        "de": "Den Referenzindex aufbauen und im Cache behalten"
+    },
+    "command:contentcheck --dry-run": {
+        "en": "With --fix, --quarantine or --fix-permissions: show what would be done, change nothing",
+        "de": "Mit --fix, --quarantine oder --fix-permissions: zeigen, was getan würde, nichts ändern"
+    },
+    "command:contentcheck --fix": {
+        "en": "Resolve: regenerate, restore, replace, remove or review (the findings of --missing-files, or --items)",
+        "de": "Beheben: neu erzeugen, wiederherstellen, ersetzen, entfernen oder prüfen (die Befunde von --missing-files oder --items)"
+    },
+    "command:contentcheck --fix-permissions": {
+        "en": "With --storage: set the expected owner and mode of used files with a wrong one",
+        "de": "Mit --storage: bei verwendeten Dateien mit falschem Eigentümer oder Modus den erwarteten setzen"
+    },
+    "command:contentcheck --items": {
+        "en": "With --fix: field versions as <attribute id>-<version>, separated by commas",
+        "de": "Mit --fix: Feldversionen als <attribute id>-<version>, durch Kommas getrennt"
+    },
+    "command:contentcheck --login": {
+        "en": "The user whose access the lists use (default admin)",
+        "de": "Der Benutzer, dessen Zugriffsrechte die Listen verwenden (Standard admin)"
+    },
+    "command:contentcheck --missing-files": {
+        "en": "List the fields below --node whose files are missing, and images with missing or stale aliases",
+        "de": "Die Felder unter --node auflisten, deren Dateien fehlen, und Bilder mit fehlenden oder veralteten Aliasen"
+    },
+    "command:contentcheck --node": {
+        "en": "The node the lists start from (default: content.ini [NodeSettings] RootNode)",
+        "de": "Der Knoten, bei dem die Listen beginnen (Standard: content.ini [NodeSettings] RootNode)"
+    },
+    "command:contentcheck --problems": {
+        "en": "With --missing-files: missing,alias_missing,alias_stale,alias_absent (default: the first three)",
+        "de": "Mit --missing-files: missing,alias_missing,alias_stale,alias_absent (Standard: die ersten drei)"
+    },
+    "command:contentcheck --quarantine": {
+        "en": "With --storage: move the orphan files of the scan to the quarantine (each checked again)",
+        "de": "Mit --storage: die verwaisten Dateien des Durchlaufs in die Quarantäne verschieben (jede wird erneut geprüft)"
+    },
+    "command:contentcheck --replace-with": {
+        "en": "With --fix=replace: the file put at the expected path (one item)",
+        "de": "Mit --fix=replace: die Datei, die an den erwarteten Pfad gelegt wird (ein Eintrag)"
+    },
+    "command:contentcheck --storage": {
+        "en": "Scan the storage files (all of it, in batches) and keep the result for the storage view",
+        "de": "Die Speicherdateien durchsuchen (alle, in Stapeln) und das Ergebnis für die Speicheransicht behalten"
+    },
+    "command:contentcheck --unreferenced": {
+        "en": "List the unused assets below --node",
+        "de": "Die ungenutzten Assets unter --node auflisten"
+    },
+    "command:contentcheck --versions": {
+        "en": "With --missing-files: published,draft (default: both)",
+        "de": "Mit --missing-files: published,draft (Standard: beide)"
+    },
+    "command:contentcheck --why": {
+        "en": "Object ids: say what uses each of them",
+        "de": "Objekt-IDs: sagen, was jede von ihnen verwendet"
+    },
+    "command:convertprice2multiprice": {
+        "en": "Convert content objects with 'price' datatype attributes to 'multiprice'",
+        "de": "Wandelt Inhaltsobjekte mit Attributen vom Datentyp 'price' in 'multiprice' um"
+    },
+    "command:dfscleanup": {
+        "en": "Check database and DFS files against each other (-S, -B) and delete nonexistent ones (-D)",
+        "de": "Gleicht Datenbank und DFS-Dateien miteinander ab (-S, -B) und löscht nicht vorhandene (-D)"
+    },
+    "command:dfscleanup --iteration-limit": {
+        "en": "Amount of items to remove in each iteration when performing a purge operation. Default is all in one iteration.",
+        "de": "Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. Standard ist alles in einer Iteration."
+    },
+    "command:dfscleanup --path": {
+        "en": "Path to limit checks to (e.g.: var/storage/content - Default: var/)",
+        "de": "Pfad, auf den die Prüfungen beschränkt werden (z. B. var/storage/content; Standard: var/)"
+    },
+    "command:dfscleanup -B": {
+        "en": "Checks files in database against files on DFS share",
+        "de": "Prüft die Dateien in der Datenbank gegen die Dateien auf der DFS-Freigabe"
+    },
+    "command:dfscleanup -D": {
+        "en": "Delete nonexistent files",
+        "de": "Nicht vorhandene Dateien löschen"
+    },
+    "command:dfscleanup -S": {
+        "en": "Check files on DFS share against files in the database",
+        "de": "Prüft die Dateien auf der DFS-Freigabe gegen die Dateien in der Datenbank"
+    },
+    "command:expcontentjob": {
+        "en": "Run, list, resume and cancel content jobs: large subtree removes and copies in batches",
+        "de": "Inhaltsaufträge ausführen, auflisten, fortsetzen und abbrechen: große Teilbäume stapelweise entfernen und kopieren"
+    },
+    "command:expcontentjob --all": {
+        "en": "list: every job, not only the active and failed ones",
+        "de": "list: jeder Auftrag, nicht nur die aktiven und fehlgeschlagenen"
+    },
+    "command:expcontentjob --all-versions": {
+        "en": "copy: copy all versions of each object, not only the current one",
+        "de": "copy: alle Versionen jedes Objekts kopieren, nicht nur die aktuelle"
+    },
+    "command:expcontentjob --background": {
+        "en": "remove, copy, resume: start a detached worker and return",
+        "de": "remove, copy, resume: einen abgekoppelten Worker starten und zurückkehren"
+    },
+    "command:expcontentjob --delete": {
+        "en": "remove: delete the objects permanently",
+        "de": "remove: die Objekte endgültig löschen"
+    },
+    "command:expcontentjob --json": {
+        "en": "show: the job as JSON",
+        "de": "show: der Auftrag als JSON"
+    },
+    "command:expcontentjob --keep-creator": {
+        "en": "copy: keep the owner and creator of the copied objects",
+        "de": "copy: Eigentümer und Ersteller der kopierten Objekte beibehalten"
+    },
+    "command:expcontentjob --keep-time": {
+        "en": "copy: keep the creation and modification times",
+        "de": "copy: die Zeitpunkte der Erstellung und Änderung beibehalten"
+    },
+    "command:expcontentjob --trash": {
+        "en": "remove: move the objects to the trash (the default of content.ini [RemoveSettings])",
+        "de": "remove: die Objekte in den Papierkorb verschieben (der Standard von content.ini [RemoveSettings])"
+    },
+    "command:expfetch": {
+        "en": "The system card: the Exponential \"e\" next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project)",
+        "de": "Die Systemkarte: das Exponential-„e“ neben den Fakten dieser Installation, ihrer Engine und ihres Rechners, mit Hinweisen zum Zustand (exp:info ergänzt ein Inventar, exp:about das Projekt)"
+    },
+    "command:exphelp": {
+        "en": "The help system on the command line: build and describe the index of doc/, search it, show a page's metadata, check its links and images",
+        "de": "Das Hilfesystem auf der Kommandozeile: den Index von doc/ aufbauen und beschreiben, darin suchen, die Metadaten einer Seite zeigen, ihre Links und Bilder prüfen"
+    },
+    "command:exphelp --all": {
+        "en": "check: also list the notices (links to files that are not help pages)",
+        "de": "check: auch die Hinweise auflisten (Links auf Dateien, die keine Hilfeseiten sind)"
+    },
+    "command:exphelp --audience": {
+        "en": "search, index --list: only pages for this audience (editor, admin, developer, user)",
+        "de": "search, index --list: nur Seiten für diese Zielgruppe (editor, admin, developer, user)"
+    },
+    "command:exphelp --base-url": {
+        "en": "pdf: scheme and host for the links and the page address (https://www.example.com)",
+        "de": "pdf: Schema und Host für die Links und die Adresse der Seite (https://www.example.com)"
+    },
+    "command:exphelp --below": {
+        "en": "check, index --list: only the pages whose id starts with this (e.g. guides/)",
+        "de": "check, index --list: nur die Seiten, deren ID damit beginnt (z. B. guides/)"
+    },
+    "command:exphelp --category": {
+        "en": "search, index --list: only pages of this category",
+        "de": "search, index --list: nur Seiten dieser Kategorie"
+    },
+    "command:exphelp --dirnames": {
+        "en": "maps --fix: also merge the entries of this JSON file into .dirnames.json",
+        "de": "maps --fix: außerdem die Einträge dieser JSON-Datei in .dirnames.json übernehmen"
+    },
+    "command:exphelp --fix": {
+        "en": "maps: write .paths.json and .dirnames.json as the union of their entries, sorted",
+        "de": "maps: .paths.json und .dirnames.json als Vereinigung ihrer Einträge schreiben, sortiert"
+    },
+    "command:exphelp --json": {
+        "en": "Print one JSON document instead of the text",
+        "de": "Ein JSON-Dokument statt des Textes ausgeben"
+    },
+    "command:exphelp --language": {
+        "en": "the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; the old en/us and de are accepted)",
+        "de": "die Sprache der Dokumentation: ein Verzeichnis aus exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; die alten en/us und de werden akzeptiert)"
+    },
+    "command:exphelp --limit": {
+        "en": "search: the number of results (default 10)",
+        "de": "search: die Anzahl der Ergebnisse (Standard 10)"
+    },
+    "command:exphelp --list": {
+        "en": "index: list every page",
+        "de": "index: jede Seite auflisten"
+    },
+    "command:exphelp --out": {
+        "en": "pdf: the file to write (default: the page title as file name, in the current directory)",
+        "de": "pdf: die zu schreibende Datei (Standard: der Seitentitel als Dateiname, im aktuellen Verzeichnis)"
+    },
+    "command:exphelp --paths": {
+        "en": "maps --fix: also merge the entries of this JSON file into .paths.json",
+        "de": "maps --fix: außerdem die Einträge dieser JSON-Datei in .paths.json übernehmen"
+    },
+    "command:exphelp --rebuild": {
+        "en": "index: build the index again even when the cached one is current",
+        "de": "index: den Index neu aufbauen, auch wenn der im Cache aktuell ist"
+    },
+    "command:exphelp --strict": {
+        "en": "check: exit 1 on warnings too",
+        "de": "check: auch bei Warnungen Exit-Code 1"
+    },
+    "command:exphelp --type": {
+        "en": "search, index --list: only pages of this type (guide, feature, bc, changelog ...)",
+        "de": "search, index --list: nur Seiten dieses Typs (guide, feature, bc, changelog ...)"
+    },
+    "command:exphelpcontent": {
+        "en": "Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall",
+        "de": "Hilfe als Inhalt gepflegt: die Hilfeklassen, Sektionen, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Styleguide prüfen, das Glossar und die Themen befüllen, berichten und deinstallieren"
+    },
+    "command:exphelpcontent --dry-run": {
+        "en": "Show what would change, change nothing",
+        "de": "Zeigen, was sich ändern würde, nichts ändern"
+    },
+    "command:exphelpcontent --file": {
+        "en": "seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)",
+        "de": "seed-glossary, seed-topics: die Datendatei (Standard share/help/seed-glossary.json, share/help/seed-topics.json)"
+    },
+    "command:exphelpcontent --fix": {
+        "en": "check: set the section of each topic, figure, chapter and manual from the audience",
+        "de": "check: die Sektion jedes Themas, jeder Abbildung, jedes Kapitels und Handbuchs aus der Zielgruppe setzen"
+    },
+    "command:exphelpcontent --format": {
+        "en": "export: epub, pdf or dita",
+        "de": "export: epub, pdf oder dita"
+    },
+    "command:exphelpcontent --login": {
+        "en": "The user who creates the classes and objects (default admin)",
+        "de": "Der Benutzer, der die Klassen und Objekte anlegt (Standard admin)"
+    },
+    "command:exphelpcontent --manual": {
+        "en": "export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual",
+        "de": "export, dita, ebooks: die remote_id des Handbuchs (help-manual-...); dita und ebooks ohne sie: jedes Handbuch"
+    },
+    "command:exphelpcontent --output": {
+        "en": "export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages)",
+        "de": "export: die zu schreibende Datei (Standard <cache>/exphelp/ebooks/<remote_id>.<format>); dita: das Verzeichnis (Standard <cache>/exphelp/dita/all oder /<remote_id>); package: das Verzeichnis (Standard <cache>/exphelp/packages)"
+    },
+    "command:exphelpcontent --release": {
+        "en": "seed-topics: set new topics, chapters and manuals to Released",
+        "de": "seed-topics: neue Themen, Kapitel und Handbücher auf Released setzen"
+    },
+    "command:exphelpcontent --update": {
+        "en": "seed-*: also update existing objects that differ from the file",
+        "de": "seed-*: auch vorhandene Objekte aktualisieren, die von der Datei abweichen"
+    },
+    "command:exphelpcontent --version": {
+        "en": "package: the release, MAJOR.MINOR.PATCH (default: the version of this installation)",
+        "de": "package: das Release, MAJOR.MINOR.PATCH (Standard: die Version dieser Installation)"
+    },
+    "command:exphelpcontent --with-content": {
+        "en": "uninstall: also the help tree (into the trash), the classes, the state group and the sections",
+        "de": "uninstall: auch den Hilfebaum (in den Papierkorb), die Klassen, die Zustandsgruppe und die Sektionen"
+    },
+    "command:exphelpexamples": {
+        "en": "Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points",
+        "de": "Erzeugt die Referenzbeispiele der Hilfe unter doc/eng-us/examples/ aus dem Code: Template-Operatoren und -Funktionen, Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs, Konsolenbefehle und Erweiterungspunkte"
+    },
+    "command:exphelpexamples --area": {
+        "en": "Only these areas, comma separated (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points)",
+        "de": "Nur diese Bereiche, durch Kommas getrennt (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points)"
+    },
+    "command:exphelpexamples --check": {
+        "en": "Compare the generated pages with the files and change nothing; exit 1 on a difference",
+        "de": "Die erzeugten Seiten mit den Dateien vergleichen und nichts ändern; Exit-Code 1 bei einem Unterschied"
+    },
+    "command:exphelpexamples --language": {
+        "en": "Write the pages in a translation: a language directory below doc/ (ger-de); default the English original",
+        "de": "Die Seiten in einer Übersetzung schreiben: ein Sprachverzeichnis unter doc/ (ger-de); Standard ist das englische Original"
+    },
+    "command:exphelpexamples --list": {
+        "en": "List the areas with their page counts",
+        "de": "Die Bereiche mit der Anzahl ihrer Seiten auflisten"
+    },
+    "command:exphelpexamples --out": {
+        "en": "The output directory relative to the installation root (default doc/eng-us/examples, or the translation's directory)",
+        "de": "Das Ausgabeverzeichnis relativ zum Wurzelverzeichnis der Installation (Standard doc/eng-us/examples oder das Verzeichnis der Übersetzung)"
+    },
+    "command:exphelpexamples --worklist": {
+        "en": "With --language: write the source texts without a translation to this file, as a description catalogue to fill in",
+        "de": "Mit --language: die Quelltexte ohne Übersetzung in diese Datei schreiben, als auszufüllenden Beschreibungskatalog"
+    },
+    "command:explogs": {
+        "en": "The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives",
+        "de": "Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen"
+    },
+    "command:explogs --archives": {
+        "en": "List the logs that can be rotated, with their archives (.1 .. .N, .gz) and sizes, and the limits",
+        "de": "Die rotierbaren Logs mit ihren Archiven (.1 .. .N, .gz), Größen und Grenzen auflisten"
+    },
+    "command:explogs --case": {
+        "en": "With --search: case sensitive",
+        "de": "Mit --search: Groß- und Kleinschreibung beachten"
+    },
+    "command:explogs --color": {
+        "en": "Color the levels: auto (default: when the output is a terminal), always, never",
+        "de": "Die Stufen einfärben: auto (Standard: wenn die Ausgabe ein Terminal ist), always, never"
+    },
+    "command:explogs --compress": {
+        "en": "Compress the plain archives from .2 on: of every log, or of these keys",
+        "de": "Die unkomprimierten Archive ab .2 komprimieren: von jedem Log oder von diesen Schlüsseln"
+    },
+    "command:explogs --cursor": {
+        "en": "With --search: go on from where an earlier search stopped (printed as \"More: --cursor=...\")",
+        "de": "Mit --search: dort weitermachen, wo eine frühere Suche aufgehört hat (ausgegeben als \"More: --cursor=...\")"
+    },
+    "command:explogs --days": {
+        "en": "With --prune: remove archives older than this many days instead of MaxAgeDays",
+        "de": "Mit --prune: Archive entfernen, die älter als so viele Tage sind, statt MaxAgeDays"
+    },
+    "command:explogs --dry-run": {
+        "en": "With --rotate, --rotate-all, --prune, --compress or --truncate: only print the plan",
+        "de": "Mit --rotate, --rotate-all, --prune, --compress oder --truncate: nur den Plan ausgeben"
+    }
+}

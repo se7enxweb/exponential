@@ -80,7 +80,7 @@ rückgängig machen. **Papierkorb leeren** leert den ganzen Papierkorb, unabhän
 
 - prüfen Sie, dass nichts mehr auf die Elemente verweist (kaputte Beziehungen, [Inhalts-Audits](inhalts-audits.md));
 - prüfen Sie, ob Ihre Organisation bestimmte Unterlagen für einen Zeitraum aufbewahren muss (fragen Sie die
-  zuständige Person; dies ist keine Rechtsberatung, siehe [Datenaufbewahrung und Löschung](../../../../eng-us/help/businesses/security/data-retention-and-deletion.md));
+  zuständige Person; dies ist keine Rechtsberatung, siehe [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md));
 - denken Sie daran, dass die Backups die Inhalte so lange enthalten, wie sie aufbewahrt werden.
 
 ## Eine Routine für den Papierkorb

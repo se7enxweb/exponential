@@ -1,0 +1,930 @@
+{
+    "ini:settings/image.ini": {
+        "en": "Exponential configuration file for image handling\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/image.ini.append or\n      settings/override/image.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für den Umgang mit Bildern\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/image.ini.append oder\n      settings/override/image.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/image.ini [AliasSettings]": {
+        "en": "-------- Image alias settings --------",
+        "de": "-------- Einstellungen der Bild-Aliase --------"
+    },
+    "ini:settings/image.ini [AliasSettings] AliasList": {
+        "en": "Defines a list of aliases that are available to\nthe template engine and other clients.\nThe alias must be defined as a separate INI block.",
+        "de": "Legt eine Liste von Aliasen fest, die der\nTemplate-Engine und anderen Clients zur Verfügung stehen.\nDer Alias muss als eigener INI-Block definiert sein."
+    },
+    "ini:settings/image.ini [AnalyzerSettings]": {
+        "en": "-------- Image analysis settings --------",
+        "de": "-------- Einstellungen der Bildanalyse --------"
+    },
+    "ini:settings/image.ini [AnalyzerSettings] AnalyzerMIMEList": {
+        "en": "A list of formats that need extra analysis\nGIF images must be analyzed to check for\nanimated GIFs, animated GIFs are hard to convert\nto other formats.",
+        "de": "Eine Liste der Formate, die eine zusätzliche Analyse brauchen\nGIF-Bilder müssen analysiert werden, um\nanimierte GIFs zu erkennen; animierte GIFs lassen sich schwer\nin andere Formate umwandeln."
+    },
+    "ini:settings/image.ini [AnalyzerSettings] ExtensionList": {
+        "en": "A list of extensions which have analyzers, it will look in the imageanalyzer subdir.",
+        "de": "Eine Liste der Erweiterungen, die Analysatoren haben; gesucht wird im Unterverzeichnis imageanalyzer."
+    },
+    "ini:settings/image.ini [AnalyzerSettings] ImageAnalyzerAlias": {
+        "en": "A list of aliases for analyzer, can be used to redirect certain\nanalyzers to your own.",
+        "de": "Eine Liste von Aliasen für Analysatoren; damit lassen sich bestimmte\nAnalysatoren auf eigene umleiten."
+    },
+    "ini:settings/image.ini [AnalyzerSettings] ImageAnalyzers": {
+        "en": "A list of active analyzers",
+        "de": "Eine Liste der aktiven Analysatoren"
+    },
+    "ini:settings/image.ini [AnalyzerSettings] RepositoryList": {
+        "en": "Where to look for analyzers",
+        "de": "Wo nach Analysatoren gesucht wird"
+    },
+    "ini:settings/image.ini [AnimatedGIF]": {
+        "en": "Fallback if jpeg is disabled as output.\nConversionRules[]=image/jpeg;image/png\nOverride for animated GIFs, this is needed to properly\nhandle image/gif files with multiple image frames.\nIt will turn off any geometry filters to leave the images untouched.",
+        "de": "Ausweichlösung, wenn jpeg als Ausgabe deaktiviert ist.\nConversionRules[]=image/jpeg;image/png\nOverride für animierte GIFs; nötig, um\nDateien vom Typ image/gif mit mehreren Bildern richtig zu behandeln.\nEs schaltet alle Geometriefilter ab, damit die Bilder unverändert bleiben."
+    },
+    "ini:settings/image.ini [AnimatedGIF] DisallowedFilters": {
+        "en": "A list of filters which are not allowed to be run on this image,\nwildcards can also be used.",
+        "de": "Eine Liste von Filtern, die auf dieses Bild nicht angewendet werden dürfen;\nPlatzhalter sind ebenfalls möglich."
+    },
+    "ini:settings/image.ini [AnimatedGIF] ExtraFilters": {
+        "en": "A list of filters which are allowed to be run on this image,\nwildcards can also be used. If this is supplied only filters that\nare in this list will be allowed\nNote that resizing of animated gifs is not supported using GD2, at least not until PHP 5.3.\nSee: http://www.libgd.org/FAQ_PHP\nAllowedFilters[]\nA list of extra filters to add for this image.",
+        "de": "Eine Liste von Filtern, die auf dieses Bild angewendet werden dürfen;\nPlatzhalter sind ebenfalls möglich. Wenn angegeben, sind nur die Filter\nin dieser Liste erlaubt\nBeachten Sie, dass das Skalieren animierter GIFs mit GD2 nicht unterstützt wird, zumindest nicht vor PHP 5.3.\nSiehe: http://www.libgd.org/FAQ_PHP\nAllowedFilters[]\nEine Liste zusätzlicher Filter für dieses Bild."
+    },
+    "ini:settings/image.ini [AnimatedGIF] MIMEType": {
+        "en": "The MIME type which this override works on",
+        "de": "Der MIME-Typ, für den dieses Override gilt"
+    },
+    "ini:settings/image.ini [AnimatedGIF] Match": {
+        "en": "A list of matches that needs to be satisified for this override to be used",
+        "de": "Eine Liste von Bedingungen, die erfüllt sein müssen, damit dieses Override verwendet wird"
+    },
+    "ini:settings/image.ini [AnimatedGIF] OverrideMIMEType": {
+        "en": "Alternative MIME type for the image, currently unused.",
+        "de": "Alternativer MIME-Typ für das Bild, derzeit unbenutzt."
+    },
+    "ini:settings/image.ini [EXIFAnalyzer]": {
+        "en": "Analyzer for EXIF data, currently supports JPEG and TIFF",
+        "de": "Analysator für EXIF-Daten, unterstützt derzeit JPEG und TIFF"
+    },
+    "ini:settings/image.ini [FileSettings] DirPermissions": {
+        "en": "Permission for new image directories, setting it to 0777 means that anyone\ncan read and write the files and can be considered a security risk.\nIt's preferred to use 0770 and make sure the web server has correct\nuser/group access.",
+        "de": "Berechtigung für neue Bildverzeichnisse; 0777 bedeutet, dass jeder\ndie Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0770, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
+    },
+    "ini:settings/image.ini [FileSettings] ImagePermissions": {
+        "en": "Permission for new images, setting it to 0666 means that anyone\ncan read and write the files and can be considered a security risk.\nIt's preferred to use 0660 and make sure the web server has correct\nuser/group access.",
+        "de": "Berechtigung für neue Bilder; 0666 bedeutet, dass jeder\ndie Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0660, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
+    },
+    "ini:settings/image.ini [FileSettings] PublishedImages": {
+        "en": "Wich subdirectory of var/storage to use for publish images",
+        "de": "Welches Unterverzeichnis von var/storage für veröffentlichte Bilder verwendet wird"
+    },
+    "ini:settings/image.ini [FileSettings] TemporaryDir": {
+        "en": "Which subdirectory of var/cache to use for temporary image files.",
+        "de": "Welches Unterverzeichnis von var/cache für temporäre Bilddateien verwendet wird."
+    },
+    "ini:settings/image.ini [FileSettings] VersionedImages": {
+        "en": "Wich subdirectory of var/storage to use for non-published (drafts, archived) images",
+        "de": "Welches Unterverzeichnis von var/storage für nicht veröffentlichte Bilder (Entwürfe, archivierte) verwendet wird"
+    },
+    "ini:settings/image.ini [GDSettings] HasGD2": {
+        "en": "If set to true more advanced functionality will be available\nwhich is present in GD2. This requires GD2 to be compiled in\nthe PHP module.\nThis only decides whether the texttoimage layers are drawn as\ntrue colour or palette images. It does not affect the GD\nimage converter ([GD] below), which keeps the colour type of\nthe image it converts.",
+        "de": "Wenn true, sind erweiterte Funktionen verfügbar,\ndie es in GD2 gibt. Dafür muss GD2 in das\nPHP-Modul einkompiliert sein.\nDies entscheidet nur, ob die Ebenen von texttoimage als\nTrue-Color- oder Palettenbilder gezeichnet werden. Es betrifft nicht den\nBildkonverter GD ([GD] unten), der den Farbtyp des\numgewandelten Bildes beibehält."
+    },
+    "ini:settings/image.ini [GD] Handler": {
+        "en": "Which PHP handler to use for the conversion,\nezimagegd means to use the ImageGD extension in PHP",
+        "de": "Welcher PHP-Handler für die Umwandlung verwendet wird;\nezimagegd bedeutet die Erweiterung ImageGD in PHP"
+    },
+    "ini:settings/image.ini [GIFAnalyzer]": {
+        "en": "GIF analyzer, figures out details about GIF images\nIs primarily used to determine GIF animation.",
+        "de": "GIF-Analysator, ermittelt Details zu GIF-Bildern\nWird vor allem verwendet, um GIF-Animationen zu erkennen."
+    },
+    "ini:settings/image.ini [ImageConverterSettings] ImageConverters": {
+        "en": "List of converters to use, each entry is the name of the converter\nwhich is defined in a ini block.\nYou can use ImageMagick and GD handlers by default.\nThe order of the convertes are important since the first\napplicable converter will be used. The last handler is\nusually a fallback converter which can take care of most formats.\n\nGD comes first: it is the image extension built into PHP, so it\nconverts in process, without starting an external program for\nevery image, and needs nothing installed beside PHP. It reads and\nwrites JPEG, PNG, GIF and WBMP and supports every geometry filter\nthe default aliases use.\nImageMagick stays in the list as the fallback. It is used for the\nformats GD cannot read (for example PSD, TIFF, PDF or WebP) and for\nthe filters only it supports (for example flatten, resize,\nfilter/swirl or filter/noise), and it takes over completely when the\nGD extension is missing or [GD] IsEnabled=false.\nTo prefer ImageMagick again, override the list in\nsettings/override/image.ini.append.php:\n  ImageConverters[]\n  ImageConverters[]=ImageMagick\n  ImageConverters[]=GD\nThe list can also contain converters which cannot work\non the installed server, the converter should check this\nand tell the image system to not use it.\n\nFor any other converter make sure you have a INI section\nwith the same name as your converter's\n\nFor example :\nImageConverters[]=MyCustomConverter\n[MyCustomConverter]\nwith the same INI variables as GD or ImageMagick INI sections",
+        "de": "Liste der zu verwendenden Konverter; jeder Eintrag ist der Name des Konverters,\nder in einem INI-Block definiert ist.\nStandardmäßig können Sie die Handler ImageMagick und GD verwenden.\nDie Reihenfolge der Konverter ist wichtig, weil der erste\npassende Konverter verwendet wird. Der letzte Handler ist\nmeist ein Ausweichkonverter, der die meisten Formate beherrscht.\n\nGD steht zuerst: Es ist die in PHP eingebaute Bilderweiterung, es\nwandelt also im Prozess um, ohne für jedes Bild ein externes Programm\nzu starten, und braucht außer PHP nichts Installiertes. Es liest und\nschreibt JPEG, PNG, GIF und WBMP und unterstützt jeden Geometriefilter,\nden die Standard-Aliase verwenden.\nImageMagick bleibt als Ausweichlösung in der Liste. Es wird für die\nFormate verwendet, die GD nicht lesen kann (zum Beispiel PSD, TIFF, PDF oder WebP), und für\ndie Filter, die nur es unterstützt (zum Beispiel flatten, resize,\nfilter/swirl oder filter/noise), und es übernimmt ganz, wenn die\nGD-Erweiterung fehlt oder [GD] IsEnabled=false ist.\nUm wieder ImageMagick zu bevorzugen, überschreiben Sie die Liste in\nsettings/override/image.ini.append.php:\n  ImageConverters[]\n  ImageConverters[]=ImageMagick\n  ImageConverters[]=GD\nDie Liste darf auch Konverter enthalten, die auf dem installierten\nServer nicht funktionieren; der Konverter sollte das prüfen\nund dem Bildsystem sagen, ihn nicht zu verwenden.\n\nFür jeden anderen Konverter sorgen Sie für einen INI-Abschnitt\nmit demselben Namen wie Ihr Konverter\n\nZum Beispiel:\nImageConverters[]=MyCustomConverter\n[MyCustomConverter]\nmit denselben INI-Variablen wie die INI-Abschnitte GD oder ImageMagick"
+    },
+    "ini:settings/image.ini [ImageConverterSettings] LockTimeout": {
+        "en": "Waiting time for processes in queue to get an exclusive writing lock\nfor writing a specific image alias.\n\nIf a process spends longer than this time waiting, the process holding the lock\nwill be ended, and the waiting process will continue, generating the image alias.",
+        "de": "Wartezeit für Prozesse in der Warteschlange, um eine exklusive Schreibsperre\nzum Schreiben eines bestimmten Bild-Alias zu erhalten.\n\nWartet ein Prozess länger, wird der Prozess, der die Sperre hält,\nbeendet, und der wartende Prozess macht weiter und erzeugt den Bild-Alias."
+    },
+    "ini:settings/image.ini [ImageMagick]": {
+        "en": "The following filters are supported by GD\ngeometry/scale\ngeometry/scalewidth\ngeometry/scaleheight\ngeometry/scaledownonly\ngeometry/scalewidthdownonly\ngeometry/scaleheightdownonly\ngeometry/scaleexact\ngeometry/scalepercent\ngeometry/crop\ncolorspace/gray\nluminance/gray\nluminance/sepia\ncolor/monochrome\nborder\nborder/color\nborder/width",
+        "de": "Die folgenden Filter werden von GD unterstützt\ngeometry/scale\ngeometry/scalewidth\ngeometry/scaleheight\ngeometry/scaledownonly\ngeometry/scalewidthdownonly\ngeometry/scaleheightdownonly\ngeometry/scaleexact\ngeometry/scalepercent\ngeometry/crop\ncolorspace/gray\nluminance/gray\nluminance/sepia\ncolor/monochrome\nborder\nborder/color\nborder/width"
+    },
+    "ini:settings/image.ini [ImageMagick] Executable": {
+        "en": "Name of the executable",
+        "de": "Name der ausführbaren Datei"
+    },
+    "ini:settings/image.ini [ImageMagick] ExecutablePath": {
+        "en": "The path to the executable, can be empty for global path.",
+        "de": "Der Pfad zur ausführbaren Datei; kann für den globalen Pfad leer sein."
+    },
+    "ini:settings/image.ini [ImageMagick] Filters": {
+        "en": "A list of filter ImageMagick supports, add more if needed\nThe same filter names are used in aliases and MIME type overrides with optional parameters.",
+        "de": "Eine Liste der Filter, die ImageMagick unterstützt; fügen Sie bei Bedarf weitere hinzu\nDieselben Filternamen werden in Aliasen und Overrides für MIME-Typen mit optionalen Parametern verwendet."
+    },
+    "ini:settings/image.ini [ImageMagick] FrameRangeParameters": {
+        "en": "This setting will provide the possibility to postpend options to the source file  filename.\nThis behavior is needed to address a specific layer in PSD files.\nThis array needs a semicolon seperated value which will build like this:\n<mimetype>;<option>\nSet frame range to handle PSD files with ImageMagick",
+        "de": "Diese Einstellung erlaubt, Optionen an den Dateinamen der Quelldatei anzuhängen.\nDas ist nötig, um eine bestimmte Ebene in PSD-Dateien anzusprechen.\nDieses Array braucht einen durch Semikolon getrennten Wert, der so aufgebaut ist:\n<mimetype>;<option>\nBildbereich setzen, um PSD-Dateien mit ImageMagick zu behandeln"
+    },
+    "ini:settings/image.ini [ImageMagick] Handler": {
+        "en": "Which PHP handler to use for the conversion,\nezimageshell means to use the generic shell handler which\ncreates a command line and executes it with system().",
+        "de": "Welcher PHP-Handler für die Umwandlung verwendet wird;\nezimageshell bedeutet den allgemeinen Shell-Handler, der\neine Befehlszeile bildet und mit system() ausführt."
+    },
+    "ini:settings/image.ini [ImageMagick] InputMIMEList": {
+        "en": "MIME types that the converter can get as input",
+        "de": "MIME-Typen, die der Konverter als Eingabe erhalten kann"
+    },
+    "ini:settings/image.ini [ImageMagick] IsEnabled": {
+        "en": "If set to true then this handler will be used,\nThe setup wizard will turn this off it ImageMagick is not found on the system",
+        "de": "Wenn true, wird dieser Handler verwendet;\nder Setup-Assistent schaltet ihn ab, wenn ImageMagick auf dem System nicht gefunden wird"
+    },
+    "ini:settings/image.ini [ImageMagick] MIMETagMap": {
+        "en": "Maps a MIME type to a tag name which is prepended to the destination name for ImageMagick",
+        "de": "Ordnet einem MIME-Typ einen Tag-Namen zu, der für ImageMagick dem Zielnamen vorangestellt wird"
+    },
+    "ini:settings/image.ini [ImageMagick] OutputMIMEList": {
+        "en": "MIME types that the converter can generate",
+        "de": "MIME-Typen, die der Konverter erzeugen kann"
+    },
+    "ini:settings/image.ini [ImageMagick] PostParameters": {
+        "en": "Parameters that must be run after the filenames and filters.",
+        "de": "Parameter, die nach den Dateinamen und Filtern stehen müssen."
+    },
+    "ini:settings/image.ini [ImageMagick] PreParameters": {
+        "en": "Name of the executable for windows,\nuncomment ExecutableMac for Mac specific converter and\nExecutableUnix for Unix/Linux specific converter\nExecutableWin32=convertim\nExecutableMac=convert\nExecutableUnix=convert\nParameters that must be run before the filenames and filters.",
+        "de": "Name der ausführbaren Datei für Windows;\nentfernen Sie den Kommentar von ExecutableMac für einen Mac-spezifischen Konverter und\nvon ExecutableUnix für einen Unix/Linux-spezifischen Konverter\nExecutableWin32=convertim\nExecutableMac=convert\nExecutableUnix=convert\nParameter, die vor den Dateinamen und Filtern stehen müssen."
+    },
+    "ini:settings/image.ini [ImageMagick] QualityParameters": {
+        "en": "A list of mime types and their quality parameters",
+        "de": "Eine Liste von MIME-Typen und ihren Qualitätsparametern"
+    },
+    "ini:settings/image.ini [ImageMagick] UseTypeTag": {
+        "en": "Whether the destination name should be prefixed with a TAG name (see MIMETagMap below)\nThe variable contains the separator between the TAG and the filename.\nThis is needed for ImageMagick to provide proper conversions of some formats.",
+        "de": "Ob dem Zielnamen ein TAG-Name vorangestellt wird (siehe MIMETagMap unten)\nDie Variable enthält das Trennzeichen zwischen dem TAG und dem Dateinamen.\nDas braucht ImageMagick, um manche Formate richtig umzuwandeln."
+    },
+    "ini:settings/image.ini [ImageUploadSettings]": {
+        "en": "Which uploaded files are accepted as images: the image datatype (edit form,\nupload module, rich text editor upload, AJAX uploader, WebDAV, imports) and\nthe package thumbnails. The type is read from the file's content with PHP's\nfileinfo extension, not from its name, and must be on AllowedMIMETypes[].\nA refused file is not stored. Without fileinfo the type comes from\ngetimagesize() (or the file name) and one warning is logged per process.",
+        "de": "Welche hochgeladenen Dateien als Bilder akzeptiert werden: der Datentyp Bild (Bearbeitungsformular,\nModul upload, Upload im Rich-Text-Editor, AJAX-Uploader, WebDAV, Importe) und\ndie Vorschaubilder der Pakete. Der Typ wird mit der PHP-Erweiterung fileinfo aus dem Inhalt der Datei gelesen,\nnicht aus ihrem Namen, und muss in AllowedMIMETypes[] stehen.\nEine abgelehnte Datei wird nicht gespeichert. Ohne fileinfo kommt der Typ aus\ngetimagesize() (oder dem Dateinamen), und pro Prozess wird eine Warnung protokolliert."
+    },
+    "ini:settings/image.ini [ImageUploadSettings] AllowedMIMETypes": {
+        "en": "The accepted types. SVG (image/svg+xml, .svg and .svgz) is accepted\nbecause it is sanitized on upload (SanitizeSVG below): only the SVG\nelements and attributes known to be safe are stored, without script, event\nattributes, foreignObject or external references. Every alias of an SVG is\nthe sanitized file itself; it is never scaled. Serve the files with the\nheaders in doc/eng-us/bc/6.0/svg-images.md. Remove the line to refuse SVG.",
+        "de": "Die akzeptierten Typen. SVG (image/svg+xml, .svg und .svgz) wird akzeptiert,\nweil es beim Hochladen bereinigt wird (SanitizeSVG unten): Nur die SVG-\nElemente und -Attribute, die als sicher bekannt sind, werden gespeichert, ohne Skripte, Event-\nAttribute, foreignObject oder externe Verweise. Jeder Alias eines SVG ist\ndie bereinigte Datei selbst; sie wird nie skaliert. Liefern Sie die Dateien mit den\nHeadern aus doc/eng-us/bc/6.0/svg-images.md aus. Entfernen Sie die Zeile, um SVG abzulehnen."
+    },
+    "ini:settings/image.ini [ImageUploadSettings] SanitizeSVG": {
+        "en": "enabled (default) or disabled. enabled: an SVG image is stored as the\noutput of the SVG sanitizer (expSvgSanitizer); a file it cannot read, or in\nwhich nothing safe remains, is refused. disabled: SVG is refused, whatever\nAllowedMIMETypes[] says, so an SVG is never stored unsanitized.",
+        "de": "enabled (Standard) oder disabled. enabled: Ein SVG-Bild wird als die\nAusgabe des SVG-Bereinigers (expSvgSanitizer) gespeichert; eine Datei, die er nicht lesen kann, oder in\nder nichts Sicheres übrig bleibt, wird abgelehnt. disabled: SVG wird abgelehnt, egal was\nAllowedMIMETypes[] sagt, damit ein SVG nie unbereinigt gespeichert wird."
+    },
+    "ini:settings/image.ini [ImageUploadSettings] ValidateMIMEType": {
+        "en": "enabled (default) or disabled. disabled only checks that the file is an\nimage by getimagesize() or its name, as before the allow-list.",
+        "de": "enabled (Standard) oder disabled. disabled prüft nur, ob die Datei ein\nBild ist, per getimagesize() oder ihren Namen, wie vor der Positivliste."
+    },
+    "ini:settings/image.ini [MIMETypeSettings]": {
+        "en": "According to the RSS 1.0 / RSS 2.0 specification:\nmaximum value for width is 144, default value is 88,\nmaximum value for height is 400, default value is 31.\nOptional image alias used in rss feed items if you specify image\nattribute as source for description tag, 'rss' is used instead if disabled\n\n[rssitem]\nReference=reference\nFilters[]=geometry/scaledownonly=128;128\nAn example alias which converts the image to grayscale\n\n[gray]\nReference=large\nFilters[]\nFilters[]=colorspace/gray\nAn example alias which crops the image to specific size\nand adds a border.\n\n[zoom]\nReference=reference\nFilters[]\nFilters[]=geometry/crop=200;200;155;155\nFilters[]=border/color=0;0;0\nFilters[]=border=4;4\n\n-------- Image MIME type settings --------",
+        "de": "Gemäß der Spezifikation von RSS 1.0 / RSS 2.0:\nHöchstwert für die Breite ist 144, Standard 88,\nHöchstwert für die Höhe ist 400, Standard 31.\nOptionaler Bild-Alias für Einträge im RSS-Feed, wenn Sie ein Bild-\nattribut als Quelle des Tags description angeben; wenn deaktiviert, wird stattdessen 'rss' verwendet\n\n[rssitem]\nReference=reference\nFilters[]=geometry/scaledownonly=128;128\nEin Beispiel-Alias, der das Bild in Graustufen umwandelt\n\n[gray]\nReference=large\nFilters[]\nFilters[]=colorspace/gray\nEin Beispiel-Alias, der das Bild auf eine bestimmte Größe zuschneidet\nund einen Rahmen hinzufügt.\n\n[zoom]\nReference=reference\nFilters[]\nFilters[]=geometry/crop=200;200;155;155\nFilters[]=border/color=0;0;0\nFilters[]=border=4;4\n\n-------- Einstellungen der MIME-Typen von Bildern --------"
+    },
+    "ini:settings/image.ini [MIMETypeSettings] ConversionRules": {
+        "en": "The global conversion rules\nMost will be converted to jpeg except gif and xpms",
+        "de": "Die globalen Umwandlungsregeln\nDie meisten werden in jpeg umgewandelt, außer gif und xpm"
+    },
+    "ini:settings/image.ini [MIMETypeSettings] OverrideList": {
+        "en": "A list of settings which override certain MIME types\nThe overrides can define allowed and disallowed filters\nas well as extra filters.l",
+        "de": "Eine Liste von Einstellungen, die bestimmte MIME-Typen überschreiben\nDie Overrides können erlaubte und nicht erlaubte Filter\nsowie zusätzliche Filter festlegen."
+    },
+    "ini:settings/image.ini [MIMETypeSettings] Quality": {
+        "en": "A list of mimetypes and their image quality value\nThe value varies from mime type to mime type.\nSet JPEG quality from 0 (worst quality, smallest file) to 100 (best quality, biggest file)",
+        "de": "Eine Liste von MIME-Typen und ihrem Wert für die Bildqualität\nDer Wert ist je MIME-Typ verschieden.\nJPEG-Qualität von 0 (schlechteste Qualität, kleinste Datei) bis 100 (beste Qualität, größte Datei) setzen"
+    },
+    "ini:settings/image.ini [OutputSettings] AllowedOutputFormat": {
+        "en": "A list of MIME types that are allowed as output type\nThis determines which formats you want your web page to display",
+        "de": "Eine Liste von MIME-Typen, die als Ausgabetyp erlaubt sind\nDies bestimmt, welche Formate Ihre Webseite anzeigen soll"
+    },
+    "ini:settings/image.ini [ShellSettings]": {
+        "en": "-------- Image converter settings --------",
+        "de": "-------- Einstellungen der Bildkonverter --------"
+    },
+    "ini:settings/image.ini [reference]": {
+        "en": "AliasList[]=rssitem\nAliasList[]=gray\nAliasList[]=zoom\nExample of an image alias, the group is called the same as the alias name\n[myalias]\n\nTells the system to use the original alias as reference image. The reference\nimage is the base of conversion and filtering. original is the default and\ncan be omitted\nReference=reference\n\nThe MIME type of the output image. Can be specified if you want a specific\nformat for the alias, if not skip it and let the image system decide.\nA useful application for this is screenshots, normally you don't want\nto use image/jpeg for screenshot but rather image/png or image/gif.\nMIMEType=image/png\n\nOverride quality by MIME type for this alias only\nThis follows the pattern from the global [MIMETypeSettings] settings\nQuality[]\nQuality[]=image/jpeg;80\n\nA list of filters to run, each filter must be supported by the active image converters\nFilters[]=geometry/scale=300;300\nreference, small, medium and large for backwards compatability\nYou can for instance remove the reference if don't want the extra disk usage\nBy defining the 'original' alias and setting some filters\nor changing the MIME type you can even force a conversion of\nthe originally uploaded image.\nThis is useful to save space or make sure the image is in a specific format\n[original]\nFilters[]\nFilters[]=colorspace/gray\n[original]\nFilters[]\nFilters[]=filter/swirl=210\n# MIMEType=image/png",
+        "de": "AliasList[]=rssitem\nAliasList[]=gray\nAliasList[]=zoom\nBeispiel eines Bild-Alias; die Gruppe heißt so wie der Alias\n[myalias]\n\nSagt dem System, den Alias original als Referenzbild zu verwenden. Das Referenz-\nbild ist die Grundlage für Umwandlung und Filter. original ist der Standard und\nkann weggelassen werden\nReference=reference\n\nDer MIME-Typ des Ausgabebildes. Kann angegeben werden, wenn Sie für den Alias\nein bestimmtes Format wollen; sonst lassen Sie es weg und das Bildsystem entscheidet.\nEine sinnvolle Anwendung sind Bildschirmfotos: Für ein Bildschirmfoto will man\nnormalerweise nicht image/jpeg, sondern eher image/png oder image/gif.\nMIMEType=image/png\n\nQualität nach MIME-Typ nur für diesen Alias überschreiben\nFolgt dem Muster der globalen Einstellungen in [MIMETypeSettings]\nQuality[]\nQuality[]=image/jpeg;80\n\nEine Liste auszuführender Filter; jeder Filter muss von den aktiven Bildkonvertern unterstützt werden\nFilters[]=geometry/scale=300;300\nreference, small, medium und large zur Rückwärtskompatibilität\nSie können zum Beispiel reference entfernen, wenn Sie den zusätzlichen Speicherplatz nicht wollen\nWenn Sie den Alias 'original' definieren und Filter setzen\noder den MIME-Typ ändern, können Sie sogar eine Umwandlung\ndes ursprünglich hochgeladenen Bildes erzwingen.\nDas ist nützlich, um Platz zu sparen oder sicherzustellen, dass das Bild in einem bestimmten Format vorliegt\n[original]\nFilters[]\nFilters[]=colorspace/gray\n[original]\nFilters[]\nFilters[]=filter/swirl=210\n# MIMEType=image/png"
+    },
+    "ini:settings/ini.ini": {
+        "en": "Settings of the exp:ini command (bin/php/ini.php) and of the settings editor\nbehind it (kernel/classes/ini/). Guide: doc/eng-us/bc/6.0/console-exp-ini.md",
+        "de": "Einstellungen des Befehls exp:ini (bin/php/ini.php) und des Einstellungseditors\ndahinter (kernel/classes/ini/). Anleitung: doc/eng-us/bc/6.0/console-exp-ini.md"
+    },
+    "ini:settings/ini.ini [IniCommandSettings] ActionAliases": {
+        "en": "Other names of actions: ActionAliases[<alias>]=<action name>.",
+        "de": "Andere Namen von Aktionen: ActionAliases[<alias>]=<action name>."
+    },
+    "ini:settings/ini.ini [IniCommandSettings] Actions": {
+        "en": "The actions of the command: Actions[<name>]=<class>. The class implements\nexpIniAction (kernel/classes/ini/actions/expiniaction.php): name(),\ndescription(), usage() and run( expIniCommandContext $c ), which returns the\nexit code. \"exp:ini <name> ...\" makes the class and runs it.\n\nAn extension adds an action by an INI append of its own, e.g.\nextension/myext/settings/ini.ini.append.php:\n\n  [IniCommandSettings]\n  Actions[dump]=myExtIniActionDump\n\nthen regenerates the extension autoloads (php bin/php/ezpgenerateautoloads.php -e)\nso the class is found. The same name as a built-in replaces the built-in;\nan empty value (Actions[copy]=) switches an action off.",
+        "de": "Die Aktionen des Befehls: Actions[<name>]=<class>. Die Klasse implementiert\nexpIniAction (kernel/classes/ini/actions/expiniaction.php): name(),\ndescription(), usage() und run( expIniCommandContext $c ), das den\nExit-Code zurückgibt. \"exp:ini <name> ...\" erzeugt die Klasse und führt sie aus.\n\nEine Erweiterung fügt eine Aktion mit einem eigenen INI-Append hinzu, z. B.\nextension/myext/settings/ini.ini.append.php:\n\n  [IniCommandSettings]\n  Actions[dump]=myExtIniActionDump\n\nund erzeugt dann die Autoloads der Erweiterungen neu (php bin/php/ezpgenerateautoloads.php -e),\ndamit die Klasse gefunden wird. Derselbe Name wie eine eingebaute ersetzt die eingebaute;\nein leerer Wert (Actions[copy]=) schaltet eine Aktion ab."
+    },
+    "ini:settings/ini.ini [IniCommandSettings] ScopeProviders": {
+        "en": "The scope providers: classes implementing expIniScopeProvider\n(kernel/classes/ini/expiniscopeprovider.php), whose scopes( $root ) returns\nexpIniScope objects. The two built-ins give global, default, every siteaccess,\nevery extension and every extension siteaccess directory. An extension adds a\nscope (a cluster-wide directory, one per environment, ...) by an INI append:\n\n  [IniCommandSettings]\n  ScopeProviders[]=myExtIniScopeProvider\n\nThe first scope of a name wins, so a provider cannot take over a built-in one.",
+        "de": "Die Bereichs-Provider: Klassen, die expIniScopeProvider implementieren\n(kernel/classes/ini/expiniscopeprovider.php), deren scopes( $root ) Objekte\nexpIniScope zurückgibt. Die beiden eingebauten liefern global, default, jeden Siteaccess,\njede Erweiterung und jedes Siteaccess-Verzeichnis jeder Erweiterung. Eine Erweiterung fügt einen\nBereich (ein Verzeichnis für den ganzen Cluster, eines pro Umgebung, ...) mit einem INI-Append hinzu:\n\n  [IniCommandSettings]\n  ScopeProviders[]=myExtIniScopeProvider\n\nDer erste Bereich eines Namens gewinnt, ein Provider kann also keinen eingebauten übernehmen."
+    },
+    "ini:settings/layout.ini": {
+        "en": "Exponential configuration file for layout module\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/layout.ini.append or\n      settings/override/layout.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\n\nConsists of groups which are the layout name\nA layout group can have the followin variables\n- ContentType   - Sets 'Content-Type' to use for output on a specific layout.\n                  example: ContentType=text/xml\n- PageLayout    - Sets the pagelayout to use for a specific layout.\n- UseAccessPass - Include or exclude the layout path in links.\n                  example : UseAccessPass=false\n- UseFullUrl    - Turns usage of full urls on links ON or OFF.\n                  example : UseFullUrl=true",
+        "de": "Exponential-Konfigurationsdatei für das Modul layout\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/layout.ini.append oder\n      settings/override/layout.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\n\nBesteht aus Gruppen, die den Namen des Layouts tragen\nEine Layout-Gruppe kann folgende Variablen haben\n- ContentType   - setzt den 'Content-Type' für die Ausgabe eines bestimmten Layouts.\n                  Beispiel: ContentType=text/xml\n- PageLayout    - setzt das Pagelayout für ein bestimmtes Layout.\n- UseAccessPass - den Layout-Pfad in Links ein- oder ausschließen.\n                  Beispiel: UseAccessPass=false\n- UseFullUrl    - schaltet volle URLs in Links ein oder aus.\n                  Beispiel: UseFullUrl=true"
+    },
+    "ini:settings/ldap.ini": {
+        "en": "Exponential configuration file for connection and authentication of users via LDAP",
+        "de": "Exponential-Konfigurationsdatei für die Verbindung und Authentifizierung von Benutzern über LDAP"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] KeepGroupAssignment": {
+        "en": "if 'enabled' you can move LDAP users to a different group and they will not\nbe automatically moved back (to the group they are configured to be placed in)\nwhen the user logs in again.",
+        "de": "Wenn 'enabled', können Sie LDAP-Benutzer in eine andere Gruppe verschieben, und sie werden\nbei der nächsten Anmeldung nicht automatisch zurückverschoben (in die Gruppe, in die sie\nlaut Konfiguration gehören)."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPBaseDn": {
+        "en": "Specifies the base DN for the directory.",
+        "de": "Gibt die Basis-DN des Verzeichnisses an."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPBindPassword": {
+        "en": "If the server does not allow anonymous bind, specify the password for the bind here.",
+        "de": "Erlaubt der Server keinen anonymen Bind, geben Sie hier das Passwort für den Bind an."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPBindUser": {
+        "en": "If the server does not allow anonymous bind, specify the user name for the bind here.",
+        "de": "Erlaubt der Server keinen anonymen Bind, geben Sie hier den Benutzernamen für den Bind an."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPCreateMissingGroups": {
+        "en": "When 'LDAPGroupMappingType' is set to 'UseGroupAttribute', this setting decides whether groups that\nare not found in Exponential, should be created.",
+        "de": "Wenn 'LDAPGroupMappingType' auf 'UseGroupAttribute' steht, entscheidet diese Einstellung, ob Gruppen, die\nin Exponential nicht gefunden werden, angelegt werden."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPDebugTrace": {
+        "en": "Enable tracing the the ldap login, outputs extensive debug info for use during setup\nNOTE: Do not keep this enabled on production setup as login name and passwords will be\nlogged to logfiles or outputted if DebugOutput settings are enabled.",
+        "de": "Aktiviert die Verfolgung der LDAP-Anmeldung, gibt ausführliche Debug-Informationen für die Einrichtung aus\nHINWEIS: Lassen Sie dies auf einem Produktivsystem nicht aktiviert, weil Anmeldenamen und Passwörter\nin Logdateien protokolliert oder bei aktivierter DebugOutput ausgegeben werden."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPEmailAttribute": {
+        "en": "LDAP attribute for email. Normally, mail",
+        "de": "LDAP-Attribut für die E-Mail. Normalerweise mail"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPEmailEmptyAttributeSuffix": {
+        "en": "For use if LDAP does not return mail, creates one using login name + email suffix, like '@example.com'",
+        "de": "Falls LDAP keine Mail zurückgibt, wird eine aus Anmeldename + E-Mail-Suffix gebildet, etwa '@example.com'"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPEnabled": {
+        "en": "Set to true if use LDAP server",
+        "de": "Auf true setzen, wenn ein LDAP-Server verwendet wird"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPEqualSign": {
+        "en": "Use the equla sign to replace \"=\" when specify LDAPBaseDn or LDAPSearchFilters",
+        "de": "Mit diesem Gleichheitszeichen \"=\" ersetzen, wenn LDAPBaseDn oder LDAPSearchFilters angegeben werden"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPFirstNameAttribute": {
+        "en": "LDAP attribute for First name. Normally, givenname",
+        "de": "LDAP-Attribut für den Vornamen. Normalerweise givenname"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPFirstNameIsCommonName": {
+        "en": "If cn (common name) is used for first name, sn (Last name) will be removed from first name",
+        "de": "Wird cn (common name) als Vorname verwendet, wird sn (Nachname) aus dem Vornamen entfernt"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPFollowReferrals": {
+        "en": "Determines whether the LDAP library automatically follows referrals returned by LDAP servers or not.\nset to 1 to enable",
+        "de": "Legt fest, ob die LDAP-Bibliothek von LDAP-Servern zurückgegebenen Verweisen automatisch folgt.\nzum Aktivieren auf 1 setzen"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPGroupBaseDN": {
+        "en": "Base LDAP dn which should be used to fetch user group objects from LDAP",
+        "de": "Basis-DN in LDAP, unter der die Objekte der Benutzergruppen aus LDAP geholt werden"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPGroupClass": {
+        "en": "LDAP user group class",
+        "de": "LDAP-Klasse für Benutzergruppen"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPGroupDescriptionAttribute": {
+        "en": "Attribute which contain description of LDAP group, optional",
+        "de": "Attribut mit der Beschreibung der LDAP-Gruppe, optional"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPGroupMappingType": {
+        "en": "Possible values: UseGroupAttribute (old style group assigning using LDAPUserGroupAttribute setting),\nSimpleMapping (using LDAPUserGroupMap array for name-to-name group mapping), and GetGroupsTree\n(automatic name-to-name group mapping, creating groups as needed)",
+        "de": "Mögliche Werte: UseGroupAttribute (alte Zuweisung der Gruppe über die Einstellung LDAPUserGroupAttribute),\nSimpleMapping (über das Array LDAPUserGroupMap, Gruppe für Gruppe nach Namen zugeordnet) und GetGroupsTree\n(automatische Zuordnung nach Namen, legt Gruppen bei Bedarf an)"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPGroupMemberAttribute": {
+        "en": "Attribute of LDAP user which should be used to obtain groups which user(group) belongs to.\nRequired then 'LDAPGroupMappingType' is set to 'GetGroupsTree' or 'SimpleMapping'",
+        "de": "Attribut des LDAP-Benutzers, über das die Gruppen ermittelt werden, zu denen der Benutzer (die Gruppe) gehört.\nErforderlich, wenn 'LDAPGroupMappingType' auf 'GetGroupsTree' oder 'SimpleMapping' steht"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPGroupNameAttribute": {
+        "en": "Attribute which should be used to obtain name of an LDAP group\nRequired then 'LDAPGroupMappingType' is set to 'GetGroupsTree' or 'SimpleMapping'\nand when 'LDAPGroupMappingType' is set to 'UseGroupAttribute' and 'LDAPUserGroupAttributeType' is 'dn'",
+        "de": "Attribut, über das der Name einer LDAP-Gruppe ermittelt wird\nErforderlich, wenn 'LDAPGroupMappingType' auf 'GetGroupsTree' oder 'SimpleMapping' steht\nund wenn 'LDAPGroupMappingType' auf 'UseGroupAttribute' und 'LDAPUserGroupAttributeType' auf 'dn' steht"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPGroupRootNodeId": {
+        "en": "Group mapping settings:\nRoot node id where LDAP groups are created, node id: 5 is used if blank",
+        "de": "Einstellungen der Gruppenzuordnung:\nID des Wurzelknotens, unter dem LDAP-Gruppen angelegt werden; wenn leer, wird Knoten-ID 5 verwendet"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPLastNameAttribute": {
+        "en": "LDAP attribute for Last name. Normally, sn",
+        "de": "LDAP-Attribut für den Nachnamen. Normalerweise sn"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPLoginAttribute": {
+        "en": "LDAP attribute for login. Normally, uid",
+        "de": "LDAP-Attribut für das Login. Normalerweise uid"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPPort": {
+        "en": "Port nr for LDAP, default is 389",
+        "de": "Portnummer für LDAP, Standard ist 389"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPSearchFilters": {
+        "en": "Add extra search requirment. Uncomment it if you don't need it.\nExample LDAPSearchFilters[]=objectClass--inetOrgPerson",
+        "de": "Zusätzliche Suchbedingung hinzufügen. Kommentieren Sie sie aus, wenn Sie sie nicht brauchen.\nBeispiel LDAPSearchFilters[]=objectClass--inetOrgPerson"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPSearchScope": {
+        "en": "Could be sub, one, base.",
+        "de": "Kann sub, one oder base sein."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPServer": {
+        "en": "LDAP host",
+        "de": "LDAP-Host"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPUserGroup": {
+        "en": "Default place to store LDAP users. Could be content object id or group name for LDAP user group,\ndepends on LDAPUserGroupType.",
+        "de": "Standardort für LDAP-Benutzer. Kann die Inhaltsobjekt-ID oder der Gruppenname der LDAP-Benutzergruppe sein,\nje nach LDAPUserGroupType."
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPUserGroupAttribute": {
+        "en": "LDAP attribute for user group. For example, employeetype. If specified, LDAP users\nwill be saved under the same group as in LDAP server.\nDepends on the value of LDAPUserGroupAttributeType:\nname: attribute holding name of group\nid: attribute holding nummeric id of group\ndn: attribute holding DN of group",
+        "de": "LDAP-Attribut für die Benutzergruppe. Zum Beispiel employeetype. Wenn angegeben, werden LDAP-Benutzer\nin derselben Gruppe wie auf dem LDAP-Server gespeichert.\nHängt vom Wert von LDAPUserGroupAttributeType ab:\nname: Attribut mit dem Namen der Gruppe\nid: Attribut mit der numerischen ID der Gruppe\ndn: Attribut mit der DN der Gruppe"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPUserGroupAttributeType": {
+        "en": "LDAP attribute type for user group. Could be name, id or dn",
+        "de": "LDAP-Attributtyp für die Benutzergruppe. Kann name, id oder dn sein"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPUserGroupMap": {
+        "en": "Group names map (from LDAP to exponential user-groups),\nused then 'LDAPGroupMappingType' is set to 'SimpleMapping'",
+        "de": "Zuordnung der Gruppennamen (von LDAP zu den Benutzergruppen von Exponential),\nverwendet, wenn 'LDAPGroupMappingType' auf 'SimpleMapping' steht"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPUserGroupType": {
+        "en": "Could be id or name",
+        "de": "Kann id oder name sein"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] LDAPVersion": {
+        "en": "Set LDAP version number",
+        "de": "Die LDAP-Versionsnummer setzen"
+    },
+    "ini:settings/ldap.ini [LDAPSettings] Utf8Encoding": {
+        "en": "LDAP encoding is utf-8 or not",
+        "de": "Ob die LDAP-Kodierung utf-8 ist"
+    },
+    "ini:settings/logfile.ini": {
+        "en": "Exponential configuration file for parse apache log file",
+        "de": "Exponential-Konfigurationsdatei zum Auswerten der Apache-Logdatei"
+    },
+    "ini:settings/logfile.ini [AccessLogFileSettings] LogFileName": {
+        "en": "The name of log file, for example mytest.log",
+        "de": "Der Name der Logdatei, zum Beispiel mytest.log"
+    },
+    "ini:settings/logfile.ini [AccessLogFileSettings] PathPrefix": {
+        "en": "If any site accesses use the PathPrefix setting, enter them here",
+        "de": "Wenn Siteaccesses die Einstellung PathPrefix verwenden, tragen Sie sie hier ein"
+    },
+    "ini:settings/logfile.ini [AccessLogFileSettings] SitePrefix": {
+        "en": "If using site match by URL, the site may like http://siteurl/mysite and\napache log will start with for example mysite/content/view/full/node_id. To\nremove this prefix in apache log before analysis the log, add mysite to\nSitePrefix. Example: SitePrefix[]=mysite",
+        "de": "Bei der Erkennung der Website über die URL kann die Website etwa http://siteurl/mysite lauten, und\ndas Apache-Log beginnt dann zum Beispiel mit mysite/content/view/full/node_id. Um\ndieses Präfix im Apache-Log vor der Auswertung zu entfernen, tragen Sie mysite in\nSitePrefix ein. Beispiel: SitePrefix[]=mysite"
+    },
+    "ini:settings/logfile.ini [AccessLogFileSettings] StorageDir": {
+        "en": "Storage of the log file, for example /var/log/httpd\nDo not add trailing slash",
+        "de": "Speicherort der Logdatei, zum Beispiel /var/log/httpd\nOhne Schrägstrich am Ende"
+    },
+    "ini:settings/logviewer.ini": {
+        "en": "The log viewer (Setup > Log files, setup/logs): the log files of the installation, followed live,\nsearched, cross-referenced and, when switched on here, downloaded, rotated, emptied or removed.\nGuide: doc/eng-us/features/6.0/log-viewer.md\n\nDo not edit this file: override it in settings/override/logviewer.ini.append.php or in the\nadministration siteaccess's logviewer.ini.append.php.\n\nWho may use it is decided by role policies, not here:\n  setup/logs        open the viewer, follow and search the logs, download a range (read only)\n  setup/managelogs  rotate, empty and remove archived rotations (each action also switched on below)\n  setup/unmasklogs  show e-mail addresses, IP addresses, tokens and session ids unmasked (a toggle per viewer)\nNo role but Administrator (which holds every policy) has them in a new installation.",
+        "de": "Der Log-Viewer (Setup > Logdateien, setup/logs): die Logdateien der Installation, live verfolgt,\ndurchsucht, querverwiesen und, wenn hier eingeschaltet, heruntergeladen, rotiert, geleert oder entfernt.\nAnleitung: doc/eng-us/features/6.0/log-viewer.md\n\nBearbeiten Sie diese Datei nicht: Überschreiben Sie sie in settings/override/logviewer.ini.append.php oder in der\nlogviewer.ini.append.php des Administrations-Siteaccess.\n\nWer ihn verwenden darf, entscheiden die Richtlinien der Rollen, nicht diese Datei:\n  setup/logs        den Viewer öffnen, die Logs verfolgen und durchsuchen, einen Bereich herunterladen (nur lesen)\n  setup/managelogs  rotieren, leeren und archivierte Rotationen entfernen (jede Aktion auch unten eingeschaltet)\n  setup/unmasklogs  E-Mail-Adressen, IP-Adressen, Tokens und Sitzungs-IDs unmaskiert zeigen (ein Schalter pro Viewer)\nIn einer neuen Installation hat sie keine Rolle außer Administrator (die jede Richtlinie hält)."
+    },
+    "ini:settings/logviewer.ini [ActionSettings] Compress": {
+        "en": "Compress archived rotations (.N to .N.gz) on Setup > Log files > Manage logs (setup/logsmanage). Audited as\nsystem.log.rotate with after.action compress.",
+        "de": "Archivierte Rotationen komprimieren (.N zu .N.gz) unter Setup > Logdateien > Logs verwalten (setup/logsmanage). Auditiert als\nsystem.log.rotate mit after.action compress."
+    },
+    "ini:settings/logviewer.ini [ActionSettings] Download": {
+        "en": "The actions offered next to viewing. Download needs setup/logs, the others setup/managelogs; each one is\naudited (system.log.download, system.log.rotate, system.log.truncate, system.log.delete).\nenabled | disabled",
+        "de": "Die neben der Ansicht angebotenen Aktionen. Download braucht setup/logs, die anderen setup/managelogs; jede\nwird auditiert (system.log.download, system.log.rotate, system.log.truncate, system.log.delete).\nenabled | disabled"
+    },
+    "ini:settings/logviewer.ini [ActionSettings] MaxBundleBytes": {
+        "en": "\"Download all logs\" (Setup > Manage logs): the most bytes of logs (and archives) one archive may hold, counted before\nit is built; over it the page says so. The archive is built in var/tmp/logbundle and removed once it is sent.",
+        "de": "„Alle Logs herunterladen“ (Setup > Logs verwalten): die meisten Bytes an Logs (und Archiven), die ein Archiv enthalten darf, gezählt, bevor\nes gebaut wird; darüber sagt die Seite das. Das Archiv wird in var/tmp/logbundle gebaut und entfernt, sobald es gesendet ist."
+    },
+    "ini:settings/logviewer.ini [ActionSettings] MaxDownloadBytes": {
+        "en": "The largest range one download sends, in bytes (compressed with gzip on the way).",
+        "de": "Der größte Bereich, den ein Download sendet, in Bytes (unterwegs mit gzip komprimiert)."
+    },
+    "ini:settings/logviewer.ini [DigestSettings] GroupBy": {
+        "en": "How the entries of a log are grouped, by its key:\n  message        the normalized message (the default)\n  category-rule  the first word of the line, <category>/<rule> (security.log: probe/wp-login, injection/sql ...)\n  reason         the reason= field, with ids and paths set aside (404.log: module:foo, view:content/view, node:# ...)\n  reason-kind    only the kind of the reason= field (module, view, disabled, node, object, rule, kernel)\n  uri            the method and the path, without the query, numbers set aside (GET /blog/#)\n  directive-blocked  the directive and the origin of what it blocked (csp.log: csp/script-src blocked=inline,\n                 csp/img-src blocked=https://maps.example.com); the path of a blocked URI set aside\nAn entry that has no such field is grouped by its message.",
+        "de": "Wie die Einträge eines Logs gruppiert werden, nach seinem Schlüssel:\n  message        die normalisierte Meldung (der Standard)\n  category-rule  das erste Wort der Zeile, <category>/<rule> (security.log: probe/wp-login, injection/sql ...)\n  reason         das Feld reason=, ohne IDs und Pfade (404.log: module:foo, view:content/view, node:# ...)\n  reason-kind    nur die Art des Feldes reason= (module, view, disabled, node, object, rule, kernel)\n  uri            die Methode und der Pfad, ohne Query, Zahlen beiseitegelassen (GET /blog/#)\n  directive-blocked  die Direktive und die Herkunft dessen, was sie blockiert hat (csp.log: csp/script-src blocked=inline,\n                 csp/img-src blocked=https://maps.example.com); der Pfad einer blockierten URI beiseitegelassen\nEin Eintrag ohne ein solches Feld wird nach seiner Meldung gruppiert."
+    },
+    "ini:settings/logviewer.ini [DigestSettings] Hours": {
+        "en": "The error digest (Setup > Log files > Error digest, setup/logsdigest): the distinct messages of the last Hours\nhours of each kernel log (or of one log), normalized (numbers, ids, hexadecimal values, quoted values and paths set\naside) and counted, most frequent first. Always masked. Known messages are hidden per user (the preference\nadmin_logviewer_known). The hours of the window when the page names none (1 to 168).",
+        "de": "Die Fehlerübersicht (Setup > Logdateien > Fehlerübersicht, setup/logsdigest): die verschiedenen Meldungen der letzten Hours\nStunden jedes Kernel-Logs (oder eines Logs), normalisiert (Zahlen, IDs, Hexadezimalwerte, Werte in Anführungszeichen und Pfade\nbeiseitegelassen) und gezählt, die häufigsten zuerst. Immer maskiert. Bekannte Meldungen werden pro Benutzer ausgeblendet (die Einstellung\nadmin_logviewer_known). Die Stunden des Zeitfensters, wenn die Seite keine nennt (1 bis 168)."
+    },
+    "ini:settings/logviewer.ini [DigestSettings] Levels": {
+        "en": "The levels listed.",
+        "de": "Die aufgeführten Stufen."
+    },
+    "ini:settings/logviewer.ini [DigestSettings] LogLevels": {
+        "en": "The levels listed for one log, by its key, instead of Levels[]: a comma list. The not found requests (404.log) are\nnotices, so the digest lists them only through this.",
+        "de": "Die für ein Log aufgeführten Stufen, nach seinem Schlüssel, statt Levels[]: eine Kommaliste. Die nicht gefundenen Anfragen (404.log) sind\nnotices, die Übersicht listet sie also nur hierüber auf."
+    },
+    "ini:settings/logviewer.ini [DigestSettings] MaxBytesPerFile": {
+        "en": "The most bytes read per log from the start of the window (the start is found by a binary search on the times).",
+        "de": "Die meisten Bytes, die pro Log ab dem Beginn des Zeitfensters gelesen werden (der Beginn wird per Binärsuche über die Zeiten gefunden)."
+    },
+    "ini:settings/logviewer.ini [DigestSettings] MaxMessages": {
+        "en": "The most messages listed per log.",
+        "de": "Die meisten pro Log aufgeführten Meldungen."
+    },
+    "ini:settings/logviewer.ini [HealthSettings] DiskBudget": {
+        "en": "Setup > Log files > Health (setup/logshealth): the disk all log files and their archives may use together, in bytes.\nThe page warns from 80 % of it and marks the logs over it; 0 sets no budget. Default 268435456 (256 MB).",
+        "de": "Setup > Logdateien > Zustand (setup/logshealth): der Speicherplatz, den alle Logdateien und ihre Archive zusammen belegen dürfen, in Bytes.\nDie Seite warnt ab 80 % davon und markiert die Logs darüber; 0 setzt kein Budget. Standard 268435456 (256 MB)."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] DefaultKey": {
+        "en": "The log opened when the page is opened without one: a key (see below), else the file DefaultFile (relative to the\nroot). When neither can be opened: the first kernel log.",
+        "de": "Das Log, das geöffnet wird, wenn die Seite ohne eines geöffnet wird: ein Schlüssel (siehe unten), sonst die Datei DefaultFile (relativ zum\nWurzelverzeichnis). Wenn sich keines öffnen lässt: das erste Kernel-Log."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] Directories": {
+        "en": "The directories whose log files are shown, relative to the installation root (or absolute, still inside it).\nA * matches one directory name (var/*/log is the log directory of every site). Only the files directly in a\ndirectory are listed, never its subdirectories (the audit trail in var/log/audit has its own console), and a\ndirectory or file that resolves (realpath) outside the installation root is never shown, so a symbolic link\ncannot lead anywhere else. {log_dir} is the log directory eZDebug writes to (var/log, or var/<site>/log with\nsite.ini [FileSettings] UseGlobalLogDir=disabled).",
+        "de": "Die Verzeichnisse, deren Logdateien angezeigt werden, relativ zum Wurzelverzeichnis der Installation (oder absolut, aber darin).\nEin * passt auf einen Verzeichnisnamen (var/*/log ist das Log-Verzeichnis jeder Website). Nur die Dateien direkt in einem\nVerzeichnis werden aufgeführt, nie seine Unterverzeichnisse (der Audit-Trail in var/log/audit hat seine eigene Konsole), und ein\nVerzeichnis oder eine Datei, die (per realpath) außerhalb des Wurzelverzeichnisses der Installation liegt, wird nie angezeigt, sodass ein symbolischer Link\nnirgendwo anders hinführen kann. {log_dir} ist das Log-Verzeichnis, in das eZDebug schreibt (var/log, oder var/<site>/log mit\nsite.ini [FileSettings] UseGlobalLogDir=disabled)."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] ExcludePatterns": {
+        "en": "File names never shown (shell patterns), whatever the lists above say.",
+        "de": "Dateinamen, die nie angezeigt werden (Shell-Muster), egal was die Listen oben sagen."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] FileLevels": {
+        "en": "The level of a file whose lines do not name one: <file name pattern>;<level> (error, warning, notice, debug).\nThe first pattern that matches wins; a line that names its level (\"Error:\", \"[warning]\") always wins.\nThe request logs name no level: a not found request is a notice (it is an answer, not a fault), a request the\nclassifier took for an attack a warning (worth a look, listed by the error digest by default).",
+        "de": "Die Stufe einer Datei, deren Zeilen keine nennen: <file name pattern>;<level> (error, warning, notice, debug).\nDas erste passende Muster gewinnt; eine Zeile, die ihre Stufe nennt (\"Error:\", \"[warning]\"), gewinnt immer.\nDie Anfrage-Logs nennen keine Stufe: Eine nicht gefundene Anfrage ist eine notice (sie ist eine Antwort, kein Fehler), eine Anfrage, die der\nKlassifizierer für einen Angriff hielt, eine warning (einen Blick wert, standardmäßig in der Fehlerübersicht aufgeführt)."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] FilePatterns": {
+        "en": "The file names shown (shell patterns): the log files, their rotations (.1 .. .N) and compressed rotations\n(.gz, read only: viewed and searched, never followed).",
+        "de": "Die angezeigten Dateinamen (Shell-Muster): die Logdateien, ihre Rotationen (.1 .. .N) und komprimierten Rotationen\n(.gz, nur lesen: angesehen und durchsucht, nie verfolgt)."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] KernelLogs": {
+        "en": "The groups of the navigator. A file whose name matches KernelLogs[] is in \"Kernel\", a file in another site's\nlog directory (var/<site>/log) in \"Site\", any other in \"Extensions\"; a rotation (.1 .. .N, .gz) is in \"Rotated\narchives\". Shell patterns of the current file's name.\nThe request logs (doc/eng-us/features/6.0/request-logs.md): the not found requests (404, 410) and the requests the\nrequest classifier took for an attack (any status), one line per request.",
+        "de": "Die Gruppen des Navigators. Eine Datei, deren Name auf KernelLogs[] passt, steht unter „Kernel“, eine Datei im Log-Verzeichnis\neiner anderen Website (var/<site>/log) unter „Website“, jede andere unter „Erweiterungen“; eine Rotation (.1 .. .N, .gz) steht unter „Rotierte\nArchive“. Shell-Muster auf den Namen der aktuellen Datei.\nDie Anfrage-Logs (doc/eng-us/features/6.0/request-logs.md): die nicht gefundenen Anfragen (404, 410) und die Anfragen, die der\nAnfrage-Klassifizierer für einen Angriff hielt (jeder Status), eine Zeile pro Anfrage."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] LogList": {
+        "en": "Every log has a key, used in its permalink /setup/logs/view/<key> (doc/eng-us/features/6.0/log-viewer.md, \"Permalinks\"):\n  var/log/<name>.log         <name>              e.g. /setup/logs/view/error, /setup/logs/view/debug\n  var/<site>/log/<name>.log  <site>-<name>       e.g. /setup/logs/view/site-storage\nand the logs configured here by key, such as the web server's. A key names only these: never a path.\nLogList[] lists the configured keys, LogPath[<key>] the file (absolute, or relative to the root; it may be outside\nthe installation, as the web server's logs are; its rotations <name>.N and <name>.N.gz beside it are listed too),\nLogLabel[<key>] the name the navigator shows, LogGroup[<key>] its group (kernel, site, extensions, webserver; the\ndefault webserver). A key without a LogPath is not shown: the web server's logs are opt-in, never guessed. The web\nserver's user must be able to read the file (Plesk: /var/www/vhosts/<domain>/logs/access_ssl_log and error_log).\nThe actions rotate, empty and remove are never offered for the webserver group: the web server owns those files.\nLogLabel[<key>] also names a log of the log directories by its key (var/log/404.log is the key 404); the label is\ntranslated (context kernel/logviewer) when the translation has it.",
+        "de": "Jedes Log hat einen Schlüssel, verwendet in seinem Permalink /setup/logs/view/<key> (doc/eng-us/features/6.0/log-viewer.md, \"Permalinks\"):\n  var/log/<name>.log         <name>              z. B. /setup/logs/view/error, /setup/logs/view/debug\n  var/<site>/log/<name>.log  <site>-<name>       z. B. /setup/logs/view/site-storage\nund die hier per Schlüssel konfigurierten Logs, etwa die des Webservers. Ein Schlüssel nennt nur diese: nie einen Pfad.\nLogList[] listet die konfigurierten Schlüssel auf, LogPath[<key>] die Datei (absolut oder relativ zum Wurzelverzeichnis; sie darf außerhalb\nder Installation liegen, wie die Logs des Webservers; ihre Rotationen <name>.N und <name>.N.gz daneben werden ebenfalls aufgeführt),\nLogLabel[<key>] den Namen, den der Navigator zeigt, LogGroup[<key>] ihre Gruppe (kernel, site, extensions, webserver; der\nStandard ist webserver). Ein Schlüssel ohne LogPath wird nicht angezeigt: Die Logs des Webservers müssen eingeschaltet werden, sie werden nie erraten. Der\nBenutzer des Webservers muss die Datei lesen können (Plesk: /var/www/vhosts/<domain>/logs/access_ssl_log und error_log).\nDie Aktionen Rotieren, Leeren und Entfernen werden für die Gruppe webserver nie angeboten: Diese Dateien gehören dem Webserver.\nLogLabel[<key>] benennt auch ein Log der Log-Verzeichnisse über seinen Schlüssel (var/log/404.log hat den Schlüssel 404); die Beschriftung wird\nübersetzt (Kontext kernel/logviewer), wenn die Übersetzung sie hat."
+    },
+    "ini:settings/logviewer.ini [LogViewerSettings] LogViewer": {
+        "en": "enabled | disabled. With disabled, setup/logs and its feed answer 404.",
+        "de": "enabled | disabled. Mit disabled antworten setup/logs und sein Feed mit 404."
+    },
+    "ini:settings/logviewer.ini [RateLimitSettings] Requests": {
+        "en": "The most feed requests (polls, searches, related lines) one session may make in Window seconds. A request over\nthe limit is answered 429 with Retry-After, and the page backs off.",
+        "de": "Die meisten Feed-Anfragen (Abfragen, Suchen, zugehörige Zeilen), die eine Sitzung in Window Sekunden stellen darf. Eine Anfrage über\nder Grenze wird mit 429 und Retry-After beantwortet, und die Seite wartet länger."
+    },
+    "ini:settings/logviewer.ini [RedactionSettings] MaskEmails": {
+        "en": "Mask in what the viewer shows: e-mail addresses, IP addresses, and secrets (passwords in addresses and\npairs, tokens, keys, session ids, cookies). A user with setup/unmasklogs can switch masking off for\nthemselves on the page; the secrets of the settings below never are.",
+        "de": "Was der Viewer zeigt, maskieren: E-Mail-Adressen, IP-Adressen und Geheimnisse (Passwörter in Adressen und\nPaaren, Tokens, Schlüssel, Sitzungs-IDs, Cookies). Ein Benutzer mit setup/unmasklogs kann das Maskieren für\nsich auf der Seite abschalten; die Geheimnisse der Einstellungen unten nie."
+    },
+    "ini:settings/logviewer.ini [RedactionSettings] SecretSettings": {
+        "en": "The settings whose values are never shown, even unmasked: <file>;<group>;<variable>. Every value of them\nthat occurs in a log line is replaced by ***. Variables whose name says they hold a secret (Password,\nSecret, Token, Key ...) in these groups are covered too.",
+        "de": "Die Einstellungen, deren Werte nie angezeigt werden, auch unmaskiert nicht: <file>;<group>;<variable>. Jeder ihrer Werte,\nder in einer Logzeile vorkommt, wird durch *** ersetzt. Variablen, deren Name sagt, dass sie ein Geheimnis enthalten (Password,\nSecret, Token, Key ...), in diesen Gruppen sind ebenfalls abgedeckt."
+    },
+    "ini:settings/logviewer.ini [RotationSettings] MaxSize": {
+        "en": "The limits of each log for rotation, pruning and compression on demand (./console exp:logs --rotate, --prune,\n--compress; the log viewer's actions) and by the cronjob part \"logs\" (php runcronjobs.php logs; in no default part).\nGuide: doc/eng-us/features/6.0/log-rotation.md. A log without an entry here takes site.ini [FileSettings]:\n  MaxSize[<key>]     bytes; the cronjob part rotates a log bigger than this     (LogFileMaxSize, 2097152)\n  Keep[<key>]        archives kept, .1 .. .N                                    (LogFileRotateCount, 3)\n  Compress[<key>]    enabled | disabled: archives from .2 on compressed to .gz  (LogFileCompress, disabled)\n  MaxAgeDays[<key>]  a prune removes archives older than this; 0: no age limit (LogFileMaxAge, 0)\nThe key is the log's key in the viewer's permalinks: error, debug, storage, site-storage ... e.g.\n  Keep[debug]=1\n  MaxSize[debug]=10485760\nThe request logs (doc/eng-us/features/6.0/request-logs.md) keep more and older archives than the kernel default. The writer\nof 404.log and security.log still rotates at site.ini [FileSettings] LogFileMaxSize while it writes.\nThe size-triggered rotation of eZDebug and eZLog while a log is written uses the site.ini values only.",
+        "de": "Die Grenzen jedes Logs für Rotation, Bereinigung und Komprimierung auf Anforderung (./console exp:logs --rotate, --prune,\n--compress; die Aktionen des Log-Viewers) und durch den Cronjob-Teil \"logs\" (php runcronjobs.php logs; in keinem Standardteil).\nAnleitung: doc/eng-us/features/6.0/log-rotation.md. Ein Log ohne Eintrag hier nimmt site.ini [FileSettings]:\n  MaxSize[<key>]     Bytes; der Cronjob-Teil rotiert ein Log, das größer ist     (LogFileMaxSize, 2097152)\n  Keep[<key>]        behaltene Archive, .1 .. .N                                (LogFileRotateCount, 3)\n  Compress[<key>]    enabled | disabled: Archive ab .2 zu .gz komprimiert       (LogFileCompress, disabled)\n  MaxAgeDays[<key>]  eine Bereinigung entfernt ältere Archive; 0: keine Altersgrenze (LogFileMaxAge, 0)\nDer Schlüssel ist der Schlüssel des Logs in den Permalinks des Viewers: error, debug, storage, site-storage ... z. B.\n  Keep[debug]=1\n  MaxSize[debug]=10485760\nDie Anfrage-Logs (doc/eng-us/features/6.0/request-logs.md) behalten mehr und ältere Archive als der Standard des Kernels. Der Schreiber\nvon 404.log und security.log rotiert weiterhin bei site.ini [FileSettings] LogFileMaxSize, während er schreibt.\nDie größengesteuerte Rotation von eZDebug und eZLog beim Schreiben eines Logs verwendet nur die Werte aus site.ini."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] BacktrackLimit": {
+        "en": "The backtracking limit of a regular expression search (pcre.backtrack_limit while it runs): a pattern that\nneeds more on one line is stopped and reported as too expensive.",
+        "de": "Die Backtracking-Grenze einer Suche mit regulärem Ausdruck (pcre.backtrack_limit, während sie läuft): Ein Muster, das\nauf einer Zeile mehr braucht, wird angehalten und als zu aufwendig gemeldet."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] MaxBytesPerRequest": {
+        "en": "The most bytes one search request reads; a search over more continues with \"More results\" from where it stopped.",
+        "de": "Die meisten Bytes, die eine Suchanfrage liest; eine Suche über mehr macht mit „Weitere Ergebnisse“ dort weiter, wo sie aufgehört hat."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] MaxGzipBytes": {
+        "en": "The most bytes of a compressed rotation one search unpacks.",
+        "de": "Die meisten Bytes einer komprimierten Rotation, die eine Suche entpackt."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] MaxPatternLength": {
+        "en": "The longest search text or regular expression.",
+        "de": "Der längste Suchtext oder reguläre Ausdruck."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] MaxResults": {
+        "en": "The most matching entries one request returns.",
+        "de": "Die meisten passenden Einträge, die eine Anfrage zurückgibt."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] RequestWindow": {
+        "en": "The seconds before and after an entry that count as the same request (related lines).",
+        "de": "Die Sekunden vor und nach einem Eintrag, die als dieselbe Anfrage zählen (zugehörige Zeilen)."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] Rotations": {
+        "en": "Search the rotations (.1 .. .N and .gz) of a file too, when the page asks for it.",
+        "de": "Auch die Rotationen (.1 .. .N und .gz) einer Datei durchsuchen, wenn die Seite danach fragt."
+    },
+    "ini:settings/logviewer.ini [SearchSettings] TimeLimit": {
+        "en": "The longest a search request reads, in milliseconds (also the regular expression's time budget).",
+        "de": "Wie lange eine Suchanfrage höchstens liest, in Millisekunden (auch das Zeitbudget des regulären Ausdrucks)."
+    },
+    "ini:settings/logviewer.ini [TailSettings] ChunkCacheMaxBytes": {
+        "en": "The most bytes of a chunk the cache keeps.",
+        "de": "Die meisten Bytes eines Abschnitts, die der Cache behält."
+    },
+    "ini:settings/logviewer.ini [TailSettings] ChunkCacheTTL": {
+        "en": "The server keeps the last chunk read of each file for this many seconds, so several viewers of the same file,\nand a poll whose file has not changed, are answered without opening it. 0 switches the cache off.",
+        "de": "Der Server behält den zuletzt gelesenen Abschnitt jeder Datei so viele Sekunden, sodass mehrere Betrachter derselben Datei\nund eine Abfrage, deren Datei sich nicht geändert hat, beantwortet werden, ohne sie zu öffnen. 0 schaltet den Cache ab."
+    },
+    "ini:settings/logviewer.ini [TailSettings] InitialBytes": {
+        "en": "How much of a file the page shows when it is opened: the last InitialBytes bytes, from the first whole line.",
+        "de": "Wie viel einer Datei die Seite beim Öffnen zeigt: die letzten InitialBytes Bytes, ab der ersten vollständigen Zeile."
+    },
+    "ini:settings/logviewer.ini [TailSettings] MaxBytesPerPoll": {
+        "en": "The most bytes one poll reads (a file that grew more than that is caught up over the next polls).",
+        "de": "Die meisten Bytes, die eine Abfrage liest (eine Datei, die um mehr gewachsen ist, wird über die nächsten Abfragen eingeholt)."
+    },
+    "ini:settings/logviewer.ini [TailSettings] MaxLinesKept": {
+        "en": "The most lines the page keeps (older lines are dropped from the page, never from the file).",
+        "de": "Die meisten Zeilen, die die Seite behält (ältere Zeilen fallen von der Seite, nie aus der Datei)."
+    },
+    "ini:settings/logviewer.ini [TailSettings] MaxPollInterval": {
+        "en": "While nothing arrives the interval doubles after each empty poll, up to MaxPollInterval milliseconds.",
+        "de": "Solange nichts ankommt, verdoppelt sich das Intervall nach jeder leeren Abfrage, bis zu MaxPollInterval Millisekunden."
+    },
+    "ini:settings/logviewer.ini [TailSettings] PollInterval": {
+        "en": "The poll interval of the page in milliseconds, while lines arrive.",
+        "de": "Das Abfrageintervall der Seite in Millisekunden, solange Zeilen ankommen."
+    },
+    "ini:settings/logviewer.ini [TailSettings] WrapLines": {
+        "en": "Whether long lines are wrapped for a viewer who has not chosen yet. The page's \"Wrap lines\" switch stores each\nviewer's choice as the user preference admin_logviewer_wrap (1 or 0), kept for every log and every visit.\nenabled | disabled",
+        "de": "Ob lange Zeilen für einen Betrachter umgebrochen werden, der noch nicht gewählt hat. Der Schalter „Zeilen umbrechen“ der Seite speichert die\nWahl jedes Betrachters als Benutzereinstellung admin_logviewer_wrap (1 oder 0), für jedes Log und jeden Besuch.\nenabled | disabled"
+    },
+    "ini:settings/logviewer.ini [ViewerAuditSettings] ReadInterval": {
+        "en": "Record system.log.read when a file is opened in the viewer (once per file and session within this many\nseconds), so following a file does not write one record per poll.",
+        "de": "system.log.read festhalten, wenn eine Datei im Viewer geöffnet wird (einmal pro Datei und Sitzung innerhalb so vieler\nSekunden), damit das Verfolgen einer Datei nicht pro Abfrage einen Eintrag schreibt."
+    },
+    "ini:settings/mailpreferences.ini": {
+        "en": "Exponential configuration file for the e-mail preferences and consent system.\n\nEvery person can switch e-mail on and off per category on one page\n(mailpreferences/settings, mailpreferences/manage/<token> without login).\nThe mail gate in eZMailTransport::send() checks every mail that declares a\ncategory (eZMail::setCategory() or the X-Exp-Mail-Category header) against\nthe master switch, the category, the suppression list and a pending double\nopt-in; optional mail gets a footer, a one-click unsubscribe link and the\nRFC 8058 List-Unsubscribe and List-Unsubscribe-Post headers.\n\nNOTE: It is not recommended to edit this file directly, instead a file in\n      override should be created for the values the site needs:\n      settings/override/mailpreferences.ini.append.php\n\nThe site secret for the links and the address hashes ([SecretSettings]) is\ngenerated on first use into settings/override/mailpreferences.ini.append.php.\nThat file is never committed.",
+        "de": "Exponential-Konfigurationsdatei für das System der E-Mail-Einstellungen und Einwilligungen.\n\nJede Person kann E-Mail pro Kategorie auf einer Seite ein- und ausschalten\n(mailpreferences/settings, mailpreferences/manage/<token> ohne Anmeldung).\nDas Mail-Gate in eZMailTransport::send() prüft jede Mail, die eine\nKategorie angibt (eZMail::setCategory() oder der Header X-Exp-Mail-Category), gegen\nden Hauptschalter, die Kategorie, die Sperrliste und ein ausstehendes Double-\nOpt-in; optionale Mail erhält eine Fußzeile, einen Abmeldelink mit einem Klick und die\nHeader List-Unsubscribe und List-Unsubscribe-Post nach RFC 8058.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen eine Datei in\n      override für die Werte an, die die Website braucht:\n      settings/override/mailpreferences.ini.append.php\n\nDas Website-Geheimnis für die Links und die Hashes der Adressen ([SecretSettings]) wird\nbei der ersten Verwendung in settings/override/mailpreferences.ini.append.php erzeugt.\nDiese Datei wird nie committet."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] AfterRead": {
+        "en": "keep: IMAP reads only unread messages and marks them read, POP3 reads every\nmessage each time (an address is not added twice). delete: the messages\nthat were understood (bounces and complaints) are deleted after reading.",
+        "de": "keep: IMAP liest nur ungelesene Nachrichten und markiert sie als gelesen, POP3 liest jedes Mal jede\nNachricht (eine Adresse wird nicht zweimal hinzugefügt). delete: Die Nachrichten,\ndie verstanden wurden (Rückläufer und Beschwerden), werden nach dem Lesen gelöscht."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] Folder": {
+        "en": "IMAP only: the folder that is read.",
+        "de": "Nur IMAP: der Ordner, der gelesen wird."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] HardStatusCodes": {
+        "en": "The status codes of a failed delivery that make it a hard bounce; a code\nending in a dot matches every code that starts with it. Other failures and\ndelays are counted, not suppressed.\n5.1.x: the address or the domain does not exist; 5.2.1: the mailbox is\ndisabled; 5.4.4: no mail server for the domain.",
+        "de": "Die Statuscodes einer fehlgeschlagenen Zustellung, die sie zum Hard Bounce machen; ein Code,\nder auf einen Punkt endet, passt auf jeden Code, der damit beginnt. Andere Fehler und\nVerzögerungen werden gezählt, nicht gesperrt.\n5.1.x: die Adresse oder die Domain existiert nicht; 5.2.1: das Postfach ist\ndeaktiviert; 5.4.4: kein Mailserver für die Domain."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] MaxMessages": {
+        "en": "At most this many messages per run.",
+        "de": "Höchstens so viele Nachrichten pro Lauf."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] MessageListeners": {
+        "en": "Classes that get every message the reader reads, after the reader's own\nclassification and suppression: static mailMessage( $raw, $classification,\n$dryRun ), true when the message was for them (AfterRead=delete then\nremoves it). For another system's own bounces, or mail to its own addresses\nthat arrives in this mailbox (cjw_newsletter: subscribe and unsubscribe by\ne-mail, soft-bounce retries). A listener must not change anything in a dry\nrun; one that fails is logged and the reading goes on. Extensions add their\nclass in their own settings.",
+        "de": "Klassen, die jede vom Leser gelesene Nachricht erhalten, nach dessen eigener\nEinordnung und Sperrung: static mailMessage( $raw, $classification,\n$dryRun ), true, wenn die Nachricht für sie war (AfterRead=delete entfernt sie\ndann). Für die eigenen Rückläufer eines anderen Systems oder Mail an dessen eigene Adressen,\ndie in diesem Postfach ankommt (cjw_newsletter: An- und Abmelden per\nE-Mail, erneute Versuche bei Soft Bounces). Ein Listener darf in einem Probelauf\nnichts ändern; einer, der scheitert, wird protokolliert, und das Lesen geht weiter. Erweiterungen fügen ihre\nKlasse in ihren eigenen Einstellungen hinzu."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] Port": {
+        "en": "Empty: 993 for IMAP and 995 for POP3 with SSL, 143 and 110 without.",
+        "de": "Leer: 993 für IMAP und 995 für POP3 mit SSL, 143 und 110 ohne."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] Protocol": {
+        "en": "imap or pop3",
+        "de": "imap oder pop3"
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] Reader": {
+        "en": "The mailbox that bounces and spam complaints arrive in (the Return-Path of\nthe mail, and the address given to the feedback loops of the large mail\nproviders). Hard bounces (RFC 3464 delivery status notifications) and\ncomplaints (RFC 5965 ARF reports) put the address on the suppression list.\nRead by the cronjob part mailbounces (also in the frequent group) and by\n./console exp:mail:bounces (--dry-run shows what it would do).\nSet the server, the user and the password ONLY in\nsettings/override/mailpreferences.ini.append.php, which is never committed.\nenabled: read the mailbox; disabled (the default): nothing is read.",
+        "de": "Das Postfach, in dem Rückläufer und Spam-Beschwerden ankommen (der Return-Path\nder Mail und die Adresse, die den Feedback-Schleifen der großen Mail-\nAnbieter angegeben ist). Hard Bounces (Zustellungsberichte nach RFC 3464) und\nBeschwerden (ARF-Berichte nach RFC 5965) setzen die Adresse auf die Sperrliste.\nGelesen vom Cronjob-Teil mailbounces (auch in der Gruppe frequent) und von\n./console exp:mail:bounces (--dry-run zeigt, was er täte).\nSetzen Sie Server, Benutzer und Passwort NUR in\nsettings/override/mailpreferences.ini.append.php, die nie committet wird.\nenabled: das Postfach lesen; disabled (der Standard): Es wird nichts gelesen."
+    },
+    "ini:settings/mailpreferences.ini [BounceSettings] StatusFile": {
+        "en": "The last run (time, counts, error) for the status page and exp:mail:status,\nrelative to the var directory.",
+        "de": "Der letzte Lauf (Zeit, Zahlen, Fehler) für die Statusseite und exp:mail:status,\nrelativ zum var-Verzeichnis."
+    },
+    "ini:settings/mailpreferences.ini [CategorySettings] AllowDefaultOn": {
+        "en": "The categories, in the order the preference page shows them. Each has a\nblock [Category_<identifier>]:\n  Name, Description   shown on the page (translated through the\n                      kernel/mailpreferences/categories context)\n  Essential           true: never switchable, always sent (account\n                      security, orders, legal notices, admin alerts)\n  DefaultOn           only for optional categories; false (opt-in) is the\n                      default and the only lawful choice in the EU. true is\n                      refused (treated as false, with a warning on the status\n                      page) unless AllowDefaultOn=enabled below\n  Frequencies[]       immediate, daily, weekly; empty: the category keeps\n                      its own schedule\n  DoubleOptIn         true: switching on sends a confirmation mail first\n  HandlerClass        optional PHP class implementing\n                      expMailCategoryHandler, which reads existing data\n                      (subscriptions) as the state of the category\nExtensions add categories in their own mailpreferences.ini.append.php.\n\nAllowDefaultOn: enabled lets an optional category be on for everybody who never\nchose (DefaultOn=true: opt-out). Only for a site whose recipients are under a\nlaw that allows it for that mail (never marketing in the EU or to Canada).\ndisabled (the default): DefaultOn=true is treated as false.",
+        "de": "Die Kategorien, in der Reihenfolge, in der die Einstellungsseite sie zeigt. Jede hat einen\nBlock [Category_<identifier>]:\n  Name, Description   auf der Seite angezeigt (übersetzt über den\n                      Kontext kernel/mailpreferences/categories)\n  Essential           true: nie abschaltbar, immer gesendet (Konto-\n                      sicherheit, Bestellungen, rechtliche Hinweise, Alarme für Administratoren)\n  DefaultOn           nur für optionale Kategorien; false (Opt-in) ist der\n                      Standard und in der EU die einzige zulässige Wahl. true wird\n                      abgelehnt (als false behandelt, mit einer Warnung auf der Status-\n                      seite), außer AllowDefaultOn=enabled unten\n  Frequencies[]       immediate, daily, weekly; leer: Die Kategorie behält\n                      ihren eigenen Zeitplan\n  DoubleOptIn         true: Das Einschalten sendet zuerst eine Bestätigungsmail\n  HandlerClass        optionale PHP-Klasse, die\n                      expMailCategoryHandler implementiert und vorhandene Daten\n                      (Abonnements) als Zustand der Kategorie liest\nErweiterungen fügen Kategorien in ihrer eigenen mailpreferences.ini.append.php hinzu.\n\nAllowDefaultOn: enabled lässt eine optionale Kategorie für alle an sein, die nie\ngewählt haben (DefaultOn=true: Opt-out). Nur für eine Website, deren Empfänger einem\nRecht unterliegen, das es für diese Mail erlaubt (nie Werbung in der EU oder nach Kanada).\ndisabled (der Standard): DefaultOn=true wird als false behandelt."
+    },
+    "ini:settings/mailpreferences.ini [ConsentSettings] PendingDays": {
+        "en": "Days a pending double opt-in waits for its confirmation.",
+        "de": "Tage, die ein ausstehendes Double-Opt-in auf seine Bestätigung wartet."
+    },
+    "ini:settings/mailpreferences.ini [ConsentSettings] RetentionDays": {
+        "en": "Days the consent log of a person is kept after the account (or the last\npreference of an address without account) is gone. 1095 = 3 years.",
+        "de": "Tage, die das Einwilligungsprotokoll einer Person aufbewahrt wird, nachdem das Konto (oder die letzte\nEinstellung einer Adresse ohne Konto) nicht mehr da ist. 1095 = 3 Jahre."
+    },
+    "ini:settings/mailpreferences.ini [EmailChangeSettings] Confirm": {
+        "en": "enabled (the default): a new e-mail address of an account (user/edit, the\nadmin's edit, the account services) takes effect only once it is confirmed\nwith the link sent to the new address; the account keeps its old address\nuntil then. disabled: the address changes at once, as before.",
+        "de": "enabled (der Standard): Eine neue E-Mail-Adresse eines Kontos (user/edit, das\nBearbeiten durch den Administrator, die Kontodienste) wird erst wirksam, wenn sie mit dem\nan die neue Adresse gesendeten Link bestätigt ist; bis dahin behält das Konto seine alte Adresse.\ndisabled: Die Adresse ändert sich wie bisher sofort."
+    },
+    "ini:settings/mailpreferences.ini [EmailChangeSettings] NotifyOldAddress": {
+        "en": "enabled: the old address gets a notice that a change was asked for.",
+        "de": "enabled: Die alte Adresse erhält einen Hinweis, dass eine Änderung angefordert wurde."
+    },
+    "ini:settings/mailpreferences.ini [FooterSettings] OrganisationName": {
+        "en": "Required by CAN-SPAM, CASL and the EU rules: who sends the mail and a\nvalid postal address. The gate adds both to every optional mail; the status\npage and exp:mail:status warn while they are empty.",
+        "de": "Von CAN-SPAM, CASL und den EU-Regeln verlangt: wer die Mail sendet, und eine\ngültige Postanschrift. Das Gate fügt beides jeder optionalen Mail hinzu; die Status-\nseite und exp:mail:status warnen, solange sie leer sind."
+    },
+    "ini:settings/mailpreferences.ini [FooterSettings] PrivacyURL": {
+        "en": "The privacy notice, linked from the footer of optional mail and from the\npreference page (GDPR art. 13): a full https:// address or a path of the\nsite (/privacy). Empty: the node of menu.ini [SiteInfo] PrivacyPolicyID of\nthe public siteaccess when there is one, else no link.",
+        "de": "Die Datenschutzerklärung, verlinkt aus der Fußzeile optionaler Mail und von der\nEinstellungsseite (DSGVO Art. 13): eine vollständige https://-Adresse oder ein Pfad der\nWebsite (/privacy). Leer: der Knoten aus menu.ini [SiteInfo] PrivacyPolicyID des\nöffentlichen Siteaccess, wenn es einen gibt, sonst kein Link."
+    },
+    "ini:settings/mailpreferences.ini [FooterSettings] Template": {
+        "en": "The template of the footer (text and HTML parts); the built-in text is used\nwhen the template does not exist.",
+        "de": "Das Template der Fußzeile (Text- und HTML-Teil); der eingebaute Text wird verwendet,\nwenn das Template nicht existiert."
+    },
+    "ini:settings/mailpreferences.ini [GateSettings] EssentialSenders": {
+        "en": "Mail without a category is always sent, as before. It is logged as\n\"uncategorised\" unless its sender is listed here: an e-mail address of the\nFrom header, or a file of the code that hands the mail to eZMailTransport\n(path relative to the installation), or a class name in that call stack.\nSenders listed here are logged as essential.",
+        "de": "Mail ohne Kategorie wird wie bisher immer gesendet. Sie wird als\n\"uncategorised\" protokolliert, außer ihr Absender steht hier: eine E-Mail-Adresse aus dem\nHeader From, eine Datei des Codes, der die Mail an eZMailTransport übergibt\n(Pfad relativ zur Installation), oder ein Klassenname in diesem Aufrufstapel.\nHier aufgeführte Absender werden als essential protokolliert."
+    },
+    "ini:settings/mailpreferences.ini [GateSettings] Gate": {
+        "en": "enabled: categorised optional mail is checked and blocked when the person\nhas not switched the category on. disabled: every mail is sent as before\n(optional mail still gets its footer and headers).",
+        "de": "enabled: Kategorisierte optionale Mail wird geprüft und blockiert, wenn die Person\ndie Kategorie nicht eingeschaltet hat. disabled: Jede Mail wird wie bisher gesendet\n(optionale Mail erhält trotzdem ihre Fußzeile und Header)."
+    },
+    "ini:settings/mailpreferences.ini [GateSettings] LogFile": {
+        "en": "The gate's own log of decisions (blocked, sent, uncategorised), JSON lines,\nwithout addresses, relative to the var directory. Rotated at MaxLogSize bytes.",
+        "de": "Das eigene Protokoll der Entscheidungen des Gates (blocked, sent, uncategorised), JSON-Zeilen,\nohne Adressen, relativ zum var-Verzeichnis. Bei MaxLogSize Bytes rotiert."
+    },
+    "ini:settings/mailpreferences.ini [GateSettings] SplitRecipients": {
+        "en": "Optional mail to several recipients is sent as one message per recipient,\nso each gets a working unsubscribe link of its own.",
+        "de": "Optionale Mail an mehrere Empfänger wird als eine Nachricht pro Empfänger gesendet,\ndamit jeder einen eigenen, funktionierenden Abmeldelink erhält."
+    },
+    "ini:settings/mailpreferences.ini [LinkSettings] BaseURL": {
+        "en": "Where the links in mail point to: scheme and host (and path of the\nsiteaccess), e.g. https://www.example.com. Empty: https:// and the SiteURL\nof the default siteaccess.",
+        "de": "Wohin die Links in Mails zeigen: Schema und Host (und Pfad des\nSiteaccess), z. B. https://www.example.com. Leer: https:// und die SiteURL\ndes Standard-Siteaccess."
+    },
+    "ini:settings/mailpreferences.ini [SecretSettings] TokenSecret": {
+        "en": "The site secret of the links and the address hashes: generated on first use\ninto settings/override/mailpreferences.ini.append.php (never committed).\nChanging it makes every link in sent mail invalid and every stored hash\nunmatchable.",
+        "de": "Das Website-Geheimnis der Links und der Adress-Hashes: bei der ersten Verwendung\nin settings/override/mailpreferences.ini.append.php erzeugt (nie committet).\nEine Änderung macht jeden Link in gesendeten Mails ungültig und jeden gespeicherten Hash\nunauffindbar."
+    },
+    "ini:settings/mailpreferences.ini [SuppressionSettings] Listeners": {
+        "en": "Classes told when an address is suppressed or lifted, so another system's\nown block list stays the same as this one (cjw_newsletter adds its\nblacklist here): static suppressionAdded( $email, $hash, $reason ) and\nsuppressionLifted( $hash, $email or null, $reason ).",
+        "de": "Klassen, die benachrichtigt werden, wenn eine Adresse gesperrt oder entsperrt wird, damit die eigene\nSperrliste eines anderen Systems dieser gleich bleibt (cjw_newsletter fügt seine\nBlacklist hier hinzu): static suppressionAdded( $email, $hash, $reason ) und\nsuppressionLifted( $hash, $email or null, $reason )."
+    },
+    "ini:settings/mailpreferences.ini [SuppressionSettings] Reasons": {
+        "en": "Reasons an address can be suppressed with.",
+        "de": "Gründe, mit denen eine Adresse gesperrt werden kann."
+    },
+    "ini:settings/mailpreferences.ini [SuppressionSettings] RetentionDays": {
+        "en": "Days a suppressed address stays suppressed; 0 is forever (the default:\nonly the hash is stored, the address cannot be read from it).",
+        "de": "Tage, die eine gesperrte Adresse gesperrt bleibt; 0 ist für immer (der Standard:\nNur der Hash wird gespeichert, die Adresse lässt sich daraus nicht lesen)."
+    },
+    "ini:settings/mailpreferences.ini [TokenSettings] RequestLinkTTL": {
+        "en": "The \"send me a link\" page: the lifetime of the link it sends, and how many\nlinks one address can ask for per hour.",
+        "de": "Die Seite „Link zusenden“: die Lebensdauer des Links, den sie sendet, und wie viele\nLinks eine Adresse pro Stunde anfordern kann."
+    },
+    "ini:settings/mailpreferences.ini [TokenSettings] TTL": {
+        "en": "Lifetime of the links in seconds, per purpose; 0 never expires. The\nunsubscribe and manage links in mail must keep working long after the mail\nwas sent (CAN-SPAM: at least 30 days, CASL: 60 days). A value for\nunsubscribe or manage between 0 and 5184000 (60 days) is raised to 60 days,\nwith a warning on the status page.",
+        "de": "Lebensdauer der Links in Sekunden, pro Zweck; 0 läuft nie ab. Die\nAbmelde- und Verwaltungslinks in Mails müssen lange nach dem Versand der Mail\nfunktionieren (CAN-SPAM: mindestens 30 Tage, CASL: 60 Tage). Ein Wert für\nunsubscribe oder manage zwischen 0 und 5184000 (60 Tage) wird auf 60 Tage angehoben,\nmit einer Warnung auf der Statusseite."
+    },
+    "ini:settings/menu.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in siteaccess should be created for setting the\n      values that is required for your site. Create\n      a file called settings/siteaccess/mysite/menu.ini.append.php.",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei im Siteaccess an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie\n      eine Datei settings/siteaccess/mysite/menu.ini.append.php an."
+    },
+    "ini:settings/menu.ini [LeftMenuSettings]": {
+        "en": "Controls the display of the left menu for the administration interface.\nWidth setting can be used to setup the widths (the measure is em) for the\ndifferent menu sizes (small/medium/large).",
+        "de": "Steuert die Anzeige des linken Menüs der Administrationsoberfläche.\nMit der Einstellung Width lassen sich die Breiten (in em) für die\nverschiedenen Menügrößen (small/medium/large) festlegen."
+    },
+    "ini:settings/menu.ini [Leftmenu_audit]": {
+        "en": "Hidden by default as of 4.3\nLinks[my_shopping_basket]=shop/basket\nPolicyList_my_shopping_basket[]=shop/buy\nHidden by default as of 4.3\nLinks[my_wish_list]=shop/wishlist\nPolicyList_my_wish_list[]=shop/buy\nThe left menu of the audit tab (design:audit/menu.tpl). Archives and Settings need audit/manage.",
+        "de": "Seit 4.3 standardmäßig ausgeblendet\nLinks[my_shopping_basket]=shop/basket\nPolicyList_my_shopping_basket[]=shop/buy\nSeit 4.3 standardmäßig ausgeblendet\nLinks[my_wish_list]=shop/wishlist\nPolicyList_my_wish_list[]=shop/buy\nDas linke Menü des Reiters Audit (design:audit/menu.tpl). Archive und Einstellungen brauchen audit/manage."
+    },
+    "ini:settings/menu.ini [Leftmenu_audit] LinkIcons": {
+        "en": "The tiles of these links where the Setup overview shows this menu ([Leftmenu_setup] GroupSections[audit]);\ntranslated in design/admin/parts/audit/menu\nThe AI events link the extension expai appends here, for admin4's mega menu of the Dashboard tab\n([Leftmenu_my_mega] adds this menu to its group \"activity\")",
+        "de": "Die Kacheln dieser Links, wo die Setup-Übersicht dieses Menü zeigt ([Leftmenu_setup] GroupSections[audit]);\nübersetzt in design/admin/parts/audit/menu\nDer Link KI-Ereignisse, den die Erweiterung expai hier anhängt, für das Mega-Menü des Reiters Dashboard in admin4\n([Leftmenu_my_mega] fügt dieses Menü seiner Gruppe \"activity\" hinzu)"
+    },
+    "ini:settings/menu.ini [Leftmenu_design]": {
+        "en": "Definition of the custom topmenu\nNote: This is just an example\n\n[Topmenu_custom]\n# Uses a custom navigation part (See list NavigationPart group above)\nNavigationPartIdentifier=ezcustomnavigationpart\nName=Custom\nTooltip=A custom tab for Exponential\nURL[]\nURL[default]=custom/list\nEnabled[]\nEnabled[default]=true\nEnabled[browse]=false\nEnabled[edit]=false\nShown[]\nShown[default]=true\nShown[edit]=true\nShown[navigation]=true\n# We don't show it in browse mode\nShown[browse]=false\n[Leftmenu_example]\nTranslated name value (so use eng-GB here)\nNote: If you wish to have the name translatable you will need to\n      add string hidden in a template somewhere with |i18n() call or\n      a dummy PHP file with the following in it:\nezpI18n::tr( 'design/admin/parts/example/menu', 'Example menu', 'Leftmenu name for example menu' );\nThis will cause the ezlupdate to include it in the .ts file.\nNote2: For custom menues (on custom tabs) you can also pass a hash of translations to ini_menu.tpl\nso it will use strings in that if name of menu or link index exists in the hash.\n(see design/admin/templates/parts/setup/menu.tpl for example)\nName=Content Menu\nPolicy list for menu items, hides box if false\nvalue an be either in \"<node_id>\" or \"<module>/<function>\" form (\"<module>/*\" for a module without\npolicy functions)\nPolicyList[]=<value>\nList of link URLs and index, index is used for LinkNames and PolicyList settings\nLinks[]\nLink name, see note on 'Name' for how to translate\nLinkNames[<Links_index>]=<value>\nPolicy list pr link using index from Links array as part of name and\nvalue an be either in \"<node_id>\" or \"<module>/<function>\" form\nMenu item is disabled (no link) if this returns false\nPolicyList_<Links_index>[]=<value>\nEnabled sets if menuitem is clickable in current ui_context or value 'default'\nBy default 'default' is considered true and 'edit' + 'browse' is false\nEnabled_<Links_index>[browse]=false\nUncomment the following to add a left menu to content area\n[Leftmenu_content]\nName=Content Menu\nLinks[languages]=content/translations\nLinkNames[languages]=Languages\nPolicyList_languages[]=content/translations",
+        "de": "Definition des eigenen Hauptmenüeintrags\nHinweis: Dies ist nur ein Beispiel\n\n[Topmenu_custom]\n# Uses a custom navigation part (See list NavigationPart group above)\nNavigationPartIdentifier=ezcustomnavigationpart\nName=Custom\nTooltip=A custom tab for Exponential\nURL[]\nURL[default]=custom/list\nEnabled[]\nEnabled[default]=true\nEnabled[browse]=false\nEnabled[edit]=false\nShown[]\nShown[default]=true\nShown[edit]=true\nShown[navigation]=true\n# We don't show it in browse mode\nShown[browse]=false\n[Leftmenu_example]\nÜbersetzter Wert des Namens (verwenden Sie hier also eng-GB)\nHinweis: Wenn der Name übersetzbar sein soll, müssen Sie\n      die Zeichenkette versteckt in einem Template mit einem Aufruf |i18n() hinzufügen oder\n      eine Dummy-PHP-Datei mit folgendem Inhalt anlegen:\nezpI18n::tr( 'design/admin/parts/example/menu', 'Example menu', 'Leftmenu name for example menu' );\nDann nimmt ezlupdate sie in die .ts-Datei auf.\nHinweis 2: Für eigene Menüs (auf eigenen Reitern) können Sie ini_menu.tpl auch einen Hash von Übersetzungen übergeben,\nsodass es deren Zeichenketten verwendet, wenn der Name des Menüs oder der Index des Links im Hash vorkommt.\n(Beispiel siehe design/admin/templates/parts/setup/menu.tpl)\nName=Content Menu\nRichtlinienliste für Menüeinträge, blendet die Box aus, wenn false\nder Wert kann die Form \"<node_id>\" oder \"<module>/<function>\" haben (\"<module>/*\" für ein Modul ohne\nRichtlinienfunktionen)\nPolicyList[]=<value>\nListe der Link-URLs und Indizes; der Index wird für die Einstellungen LinkNames und PolicyList verwendet\nLinks[]\nName des Links; zum Übersetzen siehe den Hinweis zu 'Name'\nLinkNames[<Links_index>]=<value>\nRichtlinienliste pro Link, mit dem Index aus dem Array Links als Teil des Namens;\nder Wert kann die Form \"<node_id>\" oder \"<module>/<function>\" haben\nDer Menüeintrag ist deaktiviert (kein Link), wenn dies false ergibt\nPolicyList_<Links_index>[]=<value>\nEnabled legt fest, ob der Menüeintrag im aktuellen ui_context anklickbar ist, oder der Wert 'default'\nStandardmäßig gilt 'default' als true und 'edit' + 'browse' als false\nEnabled_<Links_index>[browse]=false\nEntfernen Sie den Kommentar der folgenden Zeilen, um dem Inhaltsbereich ein linkes Menü hinzuzufügen\n[Leftmenu_content]\nName=Content Menu\nLinks[languages]=content/translations\nLinkNames[languages]=Languages\nPolicyList_languages[]=content/translations"
+    },
+    "ini:settings/menu.ini [Leftmenu_design] LinkIcons": {
+        "en": "The tiles of these links where the Setup overview shows this menu ([Leftmenu_setup] GroupSections[design]);\ntranslated in design/admin/parts/design/menu\nThe Missing alt text link the extension expai appends here, for admin4's mega menu of the Dashboard tab\n([Leftmenu_my_mega] adds this menu to its group \"ei\")",
+        "de": "Die Kacheln dieser Links, wo die Setup-Übersicht dieses Menü zeigt ([Leftmenu_setup] GroupSections[design]);\nübersetzt in design/admin/parts/design/menu\nDer Link Fehlender Alternativtext, den die Erweiterung expai hier anhängt, für das Mega-Menü des Reiters Dashboard in admin4\n([Leftmenu_my_mega] fügt dieses Menü seiner Gruppe \"ei\" hinzu)"
+    },
+    "ini:settings/menu.ini [Leftmenu_design] Links": {
+        "en": "The menus of the classic site designs (visual/menuconfig, doc/eng-us/guides/classic-menu-settings.md); its page marks\nthe Design tab (kernel/visual/module.php)",
+        "de": "Die Menüs der klassischen Website-Designs (visual/menuconfig, doc/eng-us/guides/classic-menu-settings.md); seine Seite markiert\nden Reiter Design (kernel/visual/module.php)"
+    },
+    "ini:settings/menu.ini [Leftmenu_media]": {
+        "en": "Removed from 4.3. Enable if you have special requirements.\nLinks[templates]=visual/templatelist\nPolicyList_templates[]=visual/*",
+        "de": "Seit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.\nLinks[templates]=visual/templatelist\nPolicyList_templates[]=visual/*"
+    },
+    "ini:settings/menu.ini [Leftmenu_my]": {
+        "en": "Name=Media Menu\nLinks[]\nLinkNames[]",
+        "de": "Name=Media Menu\nLinks[]\nLinkNames[]"
+    },
+    "ini:settings/menu.ini [Leftmenu_my] LinkIcons": {
+        "en": "No PolicyList: the profile is edited through content/edit, open with user/selfedit or with\ncontent/edit on the user's own object; CheckViewAccess asks the object itself (canEdit).\nIcons and descriptions of some of these links, for admin4's mega menu of the Users tab ([Leftmenu_user_mega] adds\nthis menu to its group \"account\"); descriptions are translated in design/admin/parts/my/menu\nIcons and descriptions of the other links, for admin4's mega menu of the Dashboard tab ([Leftmenu_my_mega] adds\nthis menu to its groups), including the links the extension expai appends here; translated in\ndesign/admin/parts/my/menu",
+        "de": "Keine PolicyList: Das Profil wird über content/edit bearbeitet, offen mit user/selfedit oder mit\ncontent/edit auf dem eigenen Objekt des Benutzers; CheckViewAccess fragt das Objekt selbst (canEdit).\nSymbole und Beschreibungen einiger dieser Links für das Mega-Menü des Reiters Benutzer in admin4 ([Leftmenu_user_mega] fügt\ndieses Menü seiner Gruppe \"account\" hinzu); die Beschreibungen werden in design/admin/parts/my/menu übersetzt\nSymbole und Beschreibungen der anderen Links für das Mega-Menü des Reiters Dashboard in admin4 ([Leftmenu_my_mega] fügt\ndieses Menü seinen Gruppen hinzu), einschließlich der Links, die die Erweiterung expai hier anhängt; übersetzt in\ndesign/admin/parts/my/menu"
+    },
+    "ini:settings/menu.ini [Leftmenu_my] Links": {
+        "en": "The user's own work, right after Collaboration\nThe e-mail preferences: which optional e-mail the user gets, consent history, data download\nThe Help center (exphelp/dashboard), the start page of the help: guides, search, how to report an error\nThe audit console, only with audit/read (doc/eng-us/bc/6.0/audit.md, \"Placement\"); the last kernel link, so the links\nextensions append follow it",
+        "de": "Die eigene Arbeit des Benutzers, direkt nach Zusammenarbeit\nDie E-Mail-Einstellungen: welche optionalen E-Mails der Benutzer erhält, Einwilligungsverlauf, Datendownload\nDas Hilfecenter (exphelp/dashboard), die Startseite der Hilfe: Anleitungen, Suche, wie man einen Fehler meldet\nDie Audit-Konsole, nur mit audit/read (doc/eng-us/bc/6.0/audit.md, \"Placement\"); der letzte Link des Kernels, sodass die Links,\ndie Erweiterungen anhängen, danach folgen"
+    },
+    "ini:settings/menu.ini [Leftmenu_my] TrailLinks": {
+        "en": "Change password and Edit profile close the menu, after the links extensions append (parts/ini_menu.tpl)",
+        "de": "Passwort ändern und Profil bearbeiten schließen das Menü ab, nach den Links, die Erweiterungen anhängen (parts/ini_menu.tpl)"
+    },
+    "ini:settings/menu.ini [Leftmenu_my_mega]": {
+        "en": "admin4's mega menu of the Dashboard tab ([TopAdminMenu] MegaMenuTabs[]=dashboard, [Topmenu_dashboard]\nMegaMenuTemplate, drawn by parts/my/mega_menu.tpl through parts/ini_menu.tpl). Not a left menu: the Dashboard tab's\nleft menu is [Leftmenu_my], one list. This section only sorts the tab's functions into groups and reuses the menus\nthat define them instead of restating them: each group adds [Leftmenu_my] (GroupSections[]), with the links the\nextensions append there (Exponential Intelligence: expai, expai_vector, expai_chain, expai_log, expai_help; the\nHelp center, which a site adds to the choice as overview-help_center once its link is there), the group \"ei\" adds [Leftmenu_design] too (Missing alt text, expai_alttext), the group \"activity\"\nadds [Leftmenu_audit] (the audit console and the AI events). Their addresses, policies, icons and descriptions are\nthose of their menus, so a link of an extension that is not active, or one the user may not open, is not shown.\nNamed Leftmenu_my_* so that it shares the translation context of the tab's menu, design/admin/parts/my/menu.\nMegaMenuLinks[] chooses from them as <group>-<key>, in this order (the groups follow the order of their first link:\nthe audit before Exponential Intelligence, Change password and Edit profile last, as in the left menu); at most 19\nare shown. My shopping basket and the preferred currency stay in the left menu.",
+        "de": "Das Mega-Menü des Reiters Dashboard in admin4 ([TopAdminMenu] MegaMenuTabs[]=dashboard, [Topmenu_dashboard]\nMegaMenuTemplate, gezeichnet von parts/my/mega_menu.tpl über parts/ini_menu.tpl). Kein linkes Menü: Das linke Menü des Reiters Dashboard\nist [Leftmenu_my], eine Liste. Dieser Abschnitt sortiert nur die Funktionen des Reiters in Gruppen und verwendet die Menüs,\ndie sie definieren, wieder, statt sie zu wiederholen: Jede Gruppe fügt [Leftmenu_my] hinzu (GroupSections[]), mit den Links, die die\nErweiterungen dort anhängen (Exponential Intelligence: expai, expai_vector, expai_chain, expai_log, expai_help; das\nHilfecenter, das eine Website als overview-help_center zur Auswahl hinzufügt, sobald sein Link da ist), die Gruppe \"ei\" fügt auch [Leftmenu_design] hinzu (Fehlender Alternativtext, expai_alttext), die Gruppe \"activity\"\nfügt [Leftmenu_audit] hinzu (die Audit-Konsole und die KI-Ereignisse). Ihre Adressen, Richtlinien, Symbole und Beschreibungen sind\ndie ihrer Menüs, sodass ein Link einer Erweiterung, die nicht aktiv ist, oder einer, den der Benutzer nicht öffnen darf, nicht angezeigt wird.\nLeftmenu_my_* benannt, damit er den Übersetzungskontext des Menüs des Reiters teilt, design/admin/parts/my/menu.\nMegaMenuLinks[] wählt daraus als <group>-<key>, in dieser Reihenfolge (die Gruppen folgen der Reihenfolge ihres ersten Links:\ndas Audit vor Exponential Intelligence, Passwort ändern und Profil bearbeiten zuletzt, wie im linken Menü); höchstens 19\nwerden angezeigt. Mein Warenkorb und die bevorzugte Währung bleiben im linken Menü."
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] GroupLinks_ai": {
+        "en": "extensions: expai",
+        "de": "Erweiterungen: expai"
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] GroupLinks_system": {
+        "en": "extensions: expqueue (the job queue, also shipped with expai), sevenx_dse (the database editor)",
+        "de": "Erweiterungen: expqueue (die Auftragswarteschlange, auch mit expai ausgeliefert), sevenx_dse (der Datenbankeditor)"
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] GroupLinks_updates": {
+        "en": "extensions: ezupdate, git_manager",
+        "de": "Erweiterungen: ezupdate, git_manager"
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] GroupTabs": {
+        "en": "A group that stands for a top tab (admin4): GroupTabs[<group>]=<tab> shows the group only while the tab is not in\nthe top menu (left out of [TopAdminMenu] Tabs[], named in HiddenTabs[], or named in SetupTabs[] for a user who\nmay open setup/menu); then the tab's pages (its\nNavigationPartIdentifier) mark the Setup tab and draw this menu. While the tab is shown, the group and its links\nare not here at all. GroupSections[<group>]=<section> adds the links of another left menu to the group, after its\nGroupLinks_<group>[]: that section's Links[], names, PolicyList[] and PolicyList_<key>[], Enabled_<key>[] and tile\nsettings (LinkIcons[], LinkDescriptions[], LinkFigureTemplates[]), so the tab's menu and the group stay one list.\nA Setup link to an address the added menu has too shows in that group only.",
+        "de": "Eine Gruppe, die für einen Reiter des Hauptmenüs steht (admin4): GroupTabs[<group>]=<tab> zeigt die Gruppe nur, solange der Reiter nicht im\nHauptmenü ist (in [TopAdminMenu] Tabs[] ausgelassen, in HiddenTabs[] genannt oder in SetupTabs[] genannt für einen Benutzer, der\nsetup/menu öffnen darf); dann markieren die Seiten des Reiters (sein\nNavigationPartIdentifier) den Reiter Setup und zeichnen dieses Menü. Solange der Reiter angezeigt wird, sind die Gruppe und ihre Links\ngar nicht hier. GroupSections[<group>]=<section> fügt der Gruppe die Links eines anderen linken Menüs hinzu, nach ihren\nGroupLinks_<group>[]: Links[], Namen, PolicyList[] und PolicyList_<key>[], Enabled_<key>[] und Kachel-\neinstellungen (LinkIcons[], LinkDescriptions[], LinkFigureTemplates[]) dieses Abschnitts, sodass das Menü des Reiters und die Gruppe eine Liste bleiben.\nEin Setup-Link auf eine Adresse, die auch das hinzugefügte Menü hat, erscheint nur in dieser Gruppe."
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] Groups": {
+        "en": "Groups of the left menu (admin4, parts/ini_menu.tpl): Groups[] in their order, GroupNames[<group>] the title,\nGroupLinks_<group>[] the link keys. Links in no group follow under \"More\", the last group. For one plain list\nreset Groups[] (a line Groups[] with no values) in an override. Only the arrangement changes: access is checked per\nlink as before.\nThe groups ai and updates hold the links of extensions: a key listed there whose extension is not active shows\nnothing, and a group without a link the user may open is not drawn. An extension puts its own link in a group with\nGroupLinks_<group>[]=<key> in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md, \"Setup overview\").",
+        "de": "Gruppen des linken Menüs (admin4, parts/ini_menu.tpl): Groups[] in ihrer Reihenfolge, GroupNames[<group>] der Titel,\nGroupLinks_<group>[] die Link-Schlüssel. Links in keiner Gruppe folgen unter „Mehr“, der letzten Gruppe. Für eine einfache Liste\nsetzen Sie Groups[] in einem Override zurück (eine Zeile Groups[] ohne Werte). Nur die Anordnung ändert sich: Der Zugriff wird wie bisher\npro Link geprüft.\nDie Gruppen ai und updates enthalten die Links von Erweiterungen: Ein dort aufgeführter Schlüssel, dessen Erweiterung nicht aktiv ist, zeigt\nnichts, und eine Gruppe ohne einen Link, den der Benutzer öffnen darf, wird nicht gezeichnet. Eine Erweiterung legt ihren eigenen Link mit\nGroupLinks_<group>[]=<key> in ihrer menu.ini.append.php in eine Gruppe (doc/eng-us/features/6.0/admin4-design.md, \"Setup overview\")."
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] LeadLinks": {
+        "en": "Links shown before the groups and in none of them: the overview (setup/menu), every link of this menu as a tile\nin the same groups. An extension's link in no group shows under \"More\" in the menu and on the overview.",
+        "de": "Links, die vor den Gruppen und in keiner davon angezeigt werden: die Übersicht (setup/menu), jeder Link dieses Menüs als Kachel\nin denselben Gruppen. Der Link einer Erweiterung in keiner Gruppe erscheint unter „Mehr“ im Menü und in der Übersicht."
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] LinkIcons": {
+        "en": "The Setup overview (setup/menu) draws this menu as tiles. Per link key, all optional:\n  LinkIcons[<key>]=<icon>         an icon of design.ini [AdminDesignSettings] IconList[] (a Bootstrap icon name,\n                                  e.g. bar-chart); a name not listed there, or no entry, draws the plug icon\n  LinkDescriptions[<key>]=<text>  one line on what the function does, translated in the menu's context\n                                  (design/admin/parts/setup/menu) like LinkNames[]\n  LinkFigureTemplates[<key>]=design:<path>.tpl  a template that draws the tile's figure, included with\n                                  figure_key=<key> for a shown tile only; empty or not design: draws none\nAn extension sets them for its own link in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).",
+        "de": "Die Setup-Übersicht (setup/menu) zeichnet dieses Menü als Kacheln. Pro Link-Schlüssel, alles optional:\n  LinkIcons[<key>]=<icon>         ein Symbol aus design.ini [AdminDesignSettings] IconList[] (der Name eines Bootstrap-Symbols,\n                                  z. B. bar-chart); ein dort nicht aufgeführter Name oder kein Eintrag zeichnet das Stecker-Symbol\n  LinkDescriptions[<key>]=<text>  eine Zeile dazu, was die Funktion tut, im Kontext des Menüs übersetzt\n                                  (design/admin/parts/setup/menu) wie LinkNames[]\n  LinkFigureTemplates[<key>]=design:<path>.tpl  ein Template, das die Abbildung der Kachel zeichnet, mit\n                                  figure_key=<key> nur für eine angezeigte Kachel eingebunden; leer oder nicht design: zeichnet keine\nEine Erweiterung setzt sie für ihren eigenen Link in ihrer menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md)."
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] Links": {
+        "en": "No PolicyList_overview[]: the view opens with any one of the setup module's functions (kernel/setup/module.php),\nwhich one PolicyList entry cannot say; CheckViewAccess asks the view itself.\nThe audit settings and archives (doc/eng-us/bc/6.0/audit.md, \"Placement\"), only with audit/manage\nThe content finder (doc/eng-us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search\nThe content checks (doc/eng-us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only\nwith its policy\nThe cronjobs console. LinkNames is what the entry reads as: without it the\nmenu falls back to the key, and \"cronjobs\" is not a label.\nThe log viewer (doc/eng-us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs\nThe Design tab's page (its URL[default]), in the group that stands for the tab (GroupTabs[design]): shown only\nwhile the tab is not in the top menu\nRemoved from 4.3. Enable if you have special requirements.\nLinks[global_setting]=content/edit/52\nPolicyList_global_setting[]=54\nThe translation fallbacks of every interface language (doc/eng-us/languages.md), read only\nThe e-mail preferences for administrators: status, categories, suppression list, consent log\nRemoved from 4.3. Enable if you have special requirements.\nLinks[look_and_feel]=content/edit/54\nPolicyList_look_and_feel[]=56\nThe menus of the classic site designs (visual/menuconfig) are a link of the Design menu ([Leftmenu_design])\nThe notification status (pending events, digest messages, the last runs of the notification cronjob, problems)\nPreload Sites, RSS and Packages open the group \"Site and URLs\" (GroupLinks_site[]), RAD closes it: a group draws its\nlinks in the order of Links[], so their order here is the order of the group\nDisabled by default in 4.3 as it is also present in user account tab.\nLinks[roles_and_policies]=role/list\nPolicyList_roles_and_policies[]=role/*\nCheck user accounts (doc/eng-us/features/6.0/user-hygiene.md): never signed in, not seen for long, disabled, locked,\norphaned, a shared e-mail address; only with user/hygiene. The same key is in [Leftmenu_user].\nThe rows of ezsite_data, read only (Setup > Site data)\nThe Help center, the start page of the help (exphelp/dashboard)\nRemoved from 4.3. Enable if you have special requirements.\nLinks[templates]=visual/templatelist\nPolicyList_templates[]=visual/*\nRemoved from 4.3. Enable if you have special requirements.\nLinks[toolbar_management]=visual/toolbarlist\nPolicyList_toolbar_management[]=visual/*\nRAD closes the group \"Site and URLs\"",
+        "de": "Kein PolicyList_overview[]: Die Ansicht öffnet sich mit einer beliebigen Funktion des Moduls setup (kernel/setup/module.php),\nwas ein Eintrag in PolicyList nicht sagen kann; CheckViewAccess fragt die Ansicht selbst.\nDie Einstellungen und Archive des Audits (doc/eng-us/bc/6.0/audit.md, \"Placement\"), nur mit audit/manage\nDer Inhaltsfinder (doc/eng-us/features/6.0/content-finder.md): Inhalte über ID oder Pfad finden, nur mit contentfinder/search\nDie Inhaltsprüfungen (doc/eng-us/features/6.0/content-checks.md): nicht referenzierte Objekte und defekte Verknüpfungen, jede nur\nmit ihrer Richtlinie\nDie Cronjob-Konsole. LinkNames ist das, was der Eintrag zeigt: Ohne ihn\nfällt das Menü auf den Schlüssel zurück, und \"cronjobs\" ist keine Beschriftung.\nDer Log-Viewer (doc/eng-us/features/6.0/log-viewer.md): Logdateien verfolgen, durchsuchen und querverweisen, nur mit setup/logs\nDie Seite des Reiters Design (seine URL[default]), in der Gruppe, die für den Reiter steht (GroupTabs[design]): nur angezeigt,\nsolange der Reiter nicht im Hauptmenü ist\nSeit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.\nLinks[global_setting]=content/edit/52\nPolicyList_global_setting[]=54\nDie Übersetzungs-Fallbacks jeder Oberflächensprache (doc/eng-us/languages.md), nur lesend\nDie E-Mail-Einstellungen für Administratoren: Status, Kategorien, Sperrliste, Einwilligungsprotokoll\nSeit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.\nLinks[look_and_feel]=content/edit/54\nPolicyList_look_and_feel[]=56\nDie Menüs der klassischen Website-Designs (visual/menuconfig) sind ein Link des Menüs Design ([Leftmenu_design])\nDer Benachrichtigungsstatus (ausstehende Ereignisse, Nachrichten der Zusammenfassungen, die letzten Läufe des Benachrichtigungs-Cronjobs, Probleme)\nWebsites vorwärmen, RSS und Pakete eröffnen die Gruppe „Website und URLs“ (GroupLinks_site[]), RAD schließt sie ab: Eine Gruppe zeichnet ihre\nLinks in der Reihenfolge von Links[], ihre Reihenfolge hier ist also die Reihenfolge der Gruppe\nIn 4.3 standardmäßig deaktiviert, weil es auch im Reiter Benutzerkonto vorhanden ist.\nLinks[roles_and_policies]=role/list\nPolicyList_roles_and_policies[]=role/*\nBenutzerkonten prüfen (doc/eng-us/features/6.0/user-hygiene.md): nie angemeldet, lange nicht gesehen, deaktiviert, gesperrt,\nverwaist, eine gemeinsame E-Mail-Adresse; nur mit user/hygiene. Derselbe Schlüssel steht in [Leftmenu_user].\nDie Zeilen von ezsite_data, nur lesend (Setup > Website-Daten)\nDas Hilfecenter, die Startseite der Hilfe (exphelp/dashboard)\nSeit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.\nLinks[templates]=visual/templatelist\nPolicyList_templates[]=visual/*\nSeit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.\nLinks[toolbar_management]=visual/toolbarlist\nPolicyList_toolbar_management[]=visual/*\nRAD schließt die Gruppe „Website und URLs“ ab"
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] MegaMenuLinks": {
+        "en": "admin4's mega menu (prototype, [TopAdminMenu] MegaMenuTabs[]=setup): the links of this menu it shows, by link key,\nin this order; at most 19 (6 to 19 read best), the rest is one click away under \"Go to Setup\" (the overview).\nEach link keeps its group (GroupNames[]) and its access checks: a link the user may not open, or whose extension is not\nactive, is left out, and so is a group with no link left. The groups follow the order of their first link here.\nA list reset to no values shows every link of the menu, as the overview does.\nLog files (setup/logs) took the place of Link management (url/list), which stays one click away in the\ngroup \"Site and URLs\" of the overview. Collected information (Content model) and RSS (Site and URLs) were added\nin 6.0.15, and so were Preload sites and Packages (Site and URLs) and EI: Models and EI: Budgets (AI) and oAuth admin\n(Users and messages): the list holds nineteen.",
+        "de": "Das Mega-Menü von admin4 (Prototyp, [TopAdminMenu] MegaMenuTabs[]=setup): die Links dieses Menüs, die es zeigt, nach Link-Schlüssel,\nin dieser Reihenfolge; höchstens 19 (6 bis 19 lesen sich am besten), der Rest ist einen Klick entfernt unter „Zu Setup“ (die Übersicht).\nJeder Link behält seine Gruppe (GroupNames[]) und seine Zugriffsprüfungen: Ein Link, den der Benutzer nicht öffnen darf oder dessen Erweiterung nicht\naktiv ist, entfällt, und ebenso eine Gruppe, in der kein Link übrig bleibt. Die Gruppen folgen hier der Reihenfolge ihres ersten Links.\nEine auf keine Werte zurückgesetzte Liste zeigt jeden Link des Menüs, wie die Übersicht.\nLogdateien (setup/logs) nahmen den Platz der Linkverwaltung (url/list) ein, die einen Klick entfernt in der\nGruppe „Website und URLs“ der Übersicht bleibt. Gesammelte Informationen (Inhaltsmodell) und RSS (Website und URLs) kamen\nin 6.0.15 hinzu, ebenso Websites vorwärmen und Pakete (Website und URLs) sowie EI: Modelle und EI: Budgets (KI) und oAuth admin\n(Benutzer und Nachrichten): Die Liste enthält neunzehn."
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] PolicyList_oauth_list": {
+        "en": "The views of oauthadmin define no policy functions: the module's own access (oauthadmin/*), as the kernel checks it",
+        "de": "Die Ansichten von oauthadmin definieren keine Richtlinienfunktionen: der eigene Zugriff des Moduls (oauthadmin/*), wie der Kernel ihn prüft"
+    },
+    "ini:settings/menu.ini [Leftmenu_user] LinkIcons": {
+        "en": "Icons and descriptions of these links in admin4's mega menu of the Users tab ([Leftmenu_user_mega] adds this menu\nto its group \"access\"); descriptions are translated in design/admin/parts/user/menu",
+        "de": "Symbole und Beschreibungen dieser Links im Mega-Menü des Reiters Benutzer in admin4 ([Leftmenu_user_mega] fügt dieses Menü\nseiner Gruppe \"access\" hinzu); die Beschreibungen werden in design/admin/parts/user/menu übersetzt"
+    },
+    "ini:settings/menu.ini [Leftmenu_user] Links": {
+        "en": "Check user accounts (doc/eng-us/features/6.0/user-hygiene.md), also a tile of the Setup overview under the same key",
+        "de": "Benutzerkonten prüfen (doc/eng-us/features/6.0/user-hygiene.md), auch eine Kachel der Setup-Übersicht unter demselben Schlüssel"
+    },
+    "ini:settings/menu.ini [Leftmenu_user_mega]": {
+        "en": "admin4's mega menu of the Users tab ([TopAdminMenu] MegaMenuTabs[]=users, [Topmenu_users] MegaMenuTemplate,\ndrawn by parts/user/mega_menu.tpl through parts/ini_menu.tpl). Not a left menu: the Users tab's left menu is the\nuser tree and [Leftmenu_user] (parts/user/menu.tpl), and a tree is no list of links. This section only gathers\nthe tab's functions in groups, and it reuses the menus that already define them instead of restating them:\nGroupSections[] adds [Leftmenu_user] (Roles and policies, Unactivated users) and [Leftmenu_my] (the user's own\nsettings) with their addresses, policies, icons and descriptions; its own links are the two the Users tab has no\nmenu entry for, the user tree and the sessions. Named Leftmenu_user_* so that it shares the translation context\nof the tab's menu, design/admin/parts/user/menu. MegaMenuLinks[] chooses from all of them, a link of an added\nsection as <group>-<key>; at most 12 are shown, each in its group and only when the user may open it.",
+        "de": "Das Mega-Menü des Reiters Benutzer in admin4 ([TopAdminMenu] MegaMenuTabs[]=users, [Topmenu_users] MegaMenuTemplate,\ngezeichnet von parts/user/mega_menu.tpl über parts/ini_menu.tpl). Kein linkes Menü: Das linke Menü des Reiters Benutzer ist der\nBenutzerbaum und [Leftmenu_user] (parts/user/menu.tpl), und ein Baum ist keine Liste von Links. Dieser Abschnitt sammelt nur\ndie Funktionen des Reiters in Gruppen und verwendet die Menüs, die sie schon definieren, wieder, statt sie zu wiederholen:\nGroupSections[] fügt [Leftmenu_user] (Rollen und Richtlinien, Nicht aktivierte Benutzer) und [Leftmenu_my] (die eigenen\nEinstellungen des Benutzers) mit ihren Adressen, Richtlinien, Symbolen und Beschreibungen hinzu; seine eigenen Links sind die zwei, für die der Reiter Benutzer keinen\nMenüeintrag hat, der Benutzerbaum und die Sitzungen. Leftmenu_user_* benannt, damit er den Übersetzungskontext\ndes Menüs des Reiters teilt, design/admin/parts/user/menu. MegaMenuLinks[] wählt aus all diesen, einen Link eines hinzugefügten\nAbschnitts als <group>-<key>; höchstens 12 werden angezeigt, jeder in seiner Gruppe und nur, wenn der Benutzer ihn öffnen darf."
+    },
+    "ini:settings/menu.ini [Leftmenu_user_mega] Links": {
+        "en": "The user tree, the Users tab's own page (its PolicyList[] and URL[default]; content.ini [NodeSettings] UserRootNode:\na site with another user root node changes these two lines as it changes [Topmenu_users])",
+        "de": "Der Benutzerbaum, die eigene Seite des Reiters Benutzer (seine PolicyList[] und URL[default]; content.ini [NodeSettings] UserRootNode:\neine Website mit einem anderen Wurzelknoten der Benutzer ändert diese beiden Zeilen, wie sie [Topmenu_users] ändert)"
+    },
+    "ini:settings/menu.ini [MenuAccessSettings]": {
+        "en": "Example of a custom navigation part\nSee TopMenuAdminMenu for how you can combine this with a\nnew top menu\nPart[ezcustomnavigationpart]=Custom navigation",
+        "de": "Beispiel eines eigenen Navigationsbereichs\nWie Sie dies mit einem neuen Hauptmenüeintrag kombinieren,\nsiehe TopMenuAdminMenu\nPart[ezcustomnavigationpart]=Custom navigation"
+    },
+    "ini:settings/menu.ini [MenuAccessSettings] CheckViewAccess": {
+        "en": "Shows a top tab ([Topmenu_*] URL) or a left menu link ([Leftmenu_*] Links[]) only to a user who\ncan open the address it points to, checked the way the kernel checks the request (expViewAccess):\nthe URL alias, the view's policy functions with their limitations (a view without functions needs\nthe module), the siteaccess's [SiteAccessRules], RequireUserLogin, the user/login SiteAccess\nlimitation, and the node or object of content/view and content/edit. It comes on top of the\nPolicyList settings below, which stay for what an address cannot tell (a node to be readable, a\npolicy the view itself asks for). Templates ask the same: fetch( 'user', 'can_open', hash( 'uri', ... ) ).\nenabled | disabled",
+        "de": "Zeigt einen Reiter des Hauptmenüs ([Topmenu_*] URL) oder einen Link des linken Menüs ([Leftmenu_*] Links[]) nur einem Benutzer, der\ndie Adresse öffnen kann, auf die er zeigt, geprüft wie der Kernel die Anfrage prüft (expViewAccess):\nder URL-Alias, die Richtlinienfunktionen der Ansicht mit ihren Einschränkungen (eine Ansicht ohne Funktionen braucht\ndas Modul), die [SiteAccessRules] des Siteaccess, RequireUserLogin, die Einschränkung SiteAccess von user/login\nund der Knoten oder das Objekt von content/view und content/edit. Es kommt zu den\nEinstellungen PolicyList unten hinzu, die für das bleiben, was eine Adresse nicht sagen kann (ein lesbarer Knoten, eine\nRichtlinie, nach der die Ansicht selbst fragt). Templates fragen dasselbe: fetch( 'user', 'can_open', hash( 'uri', ... ) ).\nenabled | disabled"
+    },
+    "ini:settings/menu.ini [MenuAccessSettings] NoAccessLinks": {
+        "en": "What becomes of a left menu link the user cannot open:\n  hidden    the link is left out (and a menu with no link left is left out)\n  disabled  its name is shown without a link (the behaviour of the 4.x releases)",
+        "de": "Was aus einem Link des linken Menüs wird, den der Benutzer nicht öffnen kann:\n  hidden    der Link entfällt (und ein Menü ohne übrig gebliebenen Link entfällt)\n  disabled  sein Name wird ohne Link angezeigt (das Verhalten der Releases 4.x)"
+    },
+    "ini:settings/menu.ini [MenuContentSettings] LeftIdentifierList": {
+        "en": "This list contains the identifiers of the classse\nthat are allowed to be shown in left menues",
+        "de": "Diese Liste enthält die Bezeichner der Klassen,\ndie in linken Menüs angezeigt werden dürfen"
+    },
+    "ini:settings/menu.ini [MenuContentSettings] TopIdentifierList": {
+        "en": "This list contains the identifiers of the classse\nthat are allowed to be shown in top menues",
+        "de": "Diese Liste enthält die Bezeichner der Klassen,\ndie in oberen Menüs angezeigt werden dürfen"
+    },
+    "ini:settings/menu.ini [NavigationPart]": {
+        "en": "A list of the current navigation parts and their names\nEach entry consists of the identifier as key and the name\nas value.\nNote: If you wish to have the name translatable you will\n      need to create a dummy PHP file with the following in it\nezpI18n::tr( 'kernel/navigationpart', 'Custom navigation', 'Navigation part' );\nThis will cause the ezlupdate to include it in the .ts file.",
+        "de": "Eine Liste der aktuellen Navigationsbereiche und ihrer Namen\nJeder Eintrag besteht aus dem Bezeichner als Schlüssel und dem Namen\nals Wert.\nHinweis: Wenn der Name übersetzbar sein soll, müssen Sie\n      eine Dummy-PHP-Datei mit folgendem Inhalt anlegen\nezpI18n::tr( 'kernel/navigationpart', 'Custom navigation', 'Navigation part' );\nDann nimmt ezlupdate sie in die .ts-Datei auf."
+    },
+    "ini:settings/menu.ini [TopAdminMenu] HiddenTabs": {
+        "en": "Tabs the top menu leaves out, whatever Tabs[] says: a siteaccess cannot take a tab\nout of Tabs[] that an extension appends (extension settings are read after the\nsiteaccess's). The editor siteaccess hides the administration's tabs with it.\n\nFewer tabs, nothing lost (admin4, doc/eng-us/features/6.0/admin4-design.md \"Moving a tab into Setup\"):\ndesign and audit have a group of the Setup menu and overview ([Leftmenu_setup] GroupTabs[]),\nshown only while their tab is not in the top menu; their pages then mark the Setup tab and\ndraw the Setup menu. Without the dashboard tab the logo leads to the dashboard. In a\nsiteaccess or override menu.ini.append.php:\n  HiddenTabs[]\n  HiddenTabs[]=dashboard\n  HiddenTabs[]=design\n  HiddenTabs[]=audit\nor restate the whole list (Tabs[] with no value, then the tabs to keep); an extension's tab\ncan only be left out with HiddenTabs[].",
+        "de": "Reiter, die das Hauptmenü weglässt, egal was Tabs[] sagt: Ein Siteaccess kann keinen Reiter\naus Tabs[] herausnehmen, den eine Erweiterung anhängt (die Einstellungen der Erweiterungen werden nach denen\ndes Siteaccess gelesen). Der Siteaccess editor blendet damit die Reiter der Administration aus.\n\nWeniger Reiter, nichts verloren (admin4, doc/eng-us/features/6.0/admin4-design.md \"Moving a tab into Setup\"):\nDesign und Audit haben eine Gruppe im Setup-Menü und in der Übersicht ([Leftmenu_setup] GroupTabs[]),\nnur angezeigt, solange ihr Reiter nicht im Hauptmenü ist; ihre Seiten markieren dann den Reiter Setup und\nzeichnen das Setup-Menü. Ohne den Reiter Dashboard führt das Logo zum Dashboard. In einer\nmenu.ini.append.php eines Siteaccess oder eines Overrides:\n  HiddenTabs[]\n  HiddenTabs[]=dashboard\n  HiddenTabs[]=design\n  HiddenTabs[]=audit\noder wiederholen Sie die ganze Liste (Tabs[] ohne Wert, dann die zu behaltenden Reiter); der Reiter einer Erweiterung\nlässt sich nur mit HiddenTabs[] weglassen."
+    },
+    "ini:settings/menu.ini [TopAdminMenu] MegaMenuTabs": {
+        "en": "admin4 (prototype): tabs that get a mega menu, a panel under the header with the groups and\nlinks of the tab's menu, opened by a small button beside the tab (the tab stays a link).\nA tab takes part when its [Topmenu_<tab>] names a MegaMenuTemplate: setup (the Setup menu,\n[Leftmenu_setup]), users ([Leftmenu_user_mega]) and dashboard ([Leftmenu_my_mega]) do; a name without one is\nignored (named in the debug report). The\npanel holds the menu's links with their names, icons (LinkIcons[]), descriptions\n(LinkDescriptions[]) and access checks, a short choice of them (MegaMenuLinks[] of the menu's\nsection), loaded from user/megamenu/<tab> when it is first opened. A tab name is lower case\nletters, digits and _; a tab with a mega menu should be access checked (PolicyList[], or its URL under\nCheckViewAccess). Shown from 576px, where\nthe main menu is one line (not in the phone menu). Empty by default: no button, no script. To switch it on, in a\nsiteaccess or override menu.ini.append.php:\n  MegaMenuTabs[]=setup\n  MegaMenuTabs[]=users\n  MegaMenuTabs[]=dashboard\n(doc/eng-us/features/6.0/admin4-design.md, \"Mega menu\")",
+        "de": "admin4 (Prototyp): Reiter, die ein Mega-Menü erhalten, ein Panel unter dem Kopf mit den Gruppen und\nLinks des Menüs des Reiters, geöffnet über eine kleine Schaltfläche neben dem Reiter (der Reiter bleibt ein Link).\nEin Reiter nimmt teil, wenn sein [Topmenu_<tab>] ein MegaMenuTemplate nennt: setup (das Setup-Menü,\n[Leftmenu_setup]), users ([Leftmenu_user_mega]) und dashboard ([Leftmenu_my_mega]) tun das; ein Name ohne eines wird\nignoriert (im Debug-Bericht genannt). Das\nPanel enthält die Links des Menüs mit ihren Namen, Symbolen (LinkIcons[]), Beschreibungen\n(LinkDescriptions[]) und Zugriffsprüfungen, eine kurze Auswahl davon (MegaMenuLinks[] des Menü-\nabschnitts), geladen von user/megamenu/<tab>, wenn es zum ersten Mal geöffnet wird. Ein Reitername besteht aus Klein-\nbuchstaben, Ziffern und _; ein Reiter mit Mega-Menü sollte zugriffsgeprüft sein (PolicyList[] oder seine URL unter\nCheckViewAccess). Angezeigt ab 576px, wo\ndas Hauptmenü eine Zeile ist (nicht im Telefonmenü). Standardmäßig leer: keine Schaltfläche, kein Skript. Zum Einschalten, in einer\nmenu.ini.append.php eines Siteaccess oder eines Overrides:\n  MegaMenuTabs[]=setup\n  MegaMenuTabs[]=users\n  MegaMenuTabs[]=dashboard\n(doc/eng-us/features/6.0/admin4-design.md, \"Mega menu\")"
+    },
+    "ini:settings/menu.ini [TopAdminMenu] SetupTabs": {
+        "en": "Tabs that move into the Setup menu for a user who may open the Setup overview (setup/menu):\nsuch a user finds the tab's group there ([Leftmenu_setup] GroupTabs[]) and has no tab; a user\nwho may not open the overview (a role that holds only the tab's own policy) keeps the tab.\nEmpty by default, e.g. SetupTabs[]=audit in a siteaccess or override menu.ini.append.php.",
+        "de": "Reiter, die für einen Benutzer, der die Setup-Übersicht (setup/menu) öffnen darf, in das Setup-Menü wandern:\nEin solcher Benutzer findet die Gruppe des Reiters dort ([Leftmenu_setup] GroupTabs[]) und hat keinen Reiter; ein Benutzer,\nder die Übersicht nicht öffnen darf (eine Rolle, die nur die eigene Richtlinie des Reiters hält), behält den Reiter.\nStandardmäßig leer, z. B. SetupTabs[]=audit in einer menu.ini.append.php eines Siteaccess oder eines Overrides."
+    },
+    "ini:settings/menu.ini [TopAdminMenu] Tabs": {
+        "en": "This list contains menuitems of the top menu in admin interface\nHidden by default as of 4.3\nTabs[]=shop\nUnhidden by default as of 6.0\nHidden by default as of 4.3\nTabs[]=design\nUnhidden by default as of 6.0.6\nThe audit console (doc/eng-us/bc/6.0/audit.md): shown only with the policy audit/read",
+        "de": "Diese Liste enthält die Einträge des Hauptmenüs in der Administrationsoberfläche\nSeit 4.3 standardmäßig ausgeblendet\nTabs[]=shop\nSeit 6.0 standardmäßig eingeblendet\nSeit 4.3 standardmäßig ausgeblendet\nTabs[]=design\nSeit 6.0.6 standardmäßig eingeblendet\nDie Audit-Konsole (doc/eng-us/bc/6.0/audit.md): nur mit der Richtlinie audit/read angezeigt"
+    },
+    "ini:settings/menu.ini [Topmenu_content]": {
+        "en": "Example of adding a custom topmenu entry\nSee the commented Topmenu_custom entry at the bottom\nTabs[]=custom\nHere are the settings which controls behavour of each\nmenuitem in top admin menu.\nURL['ui_context'] - which view item points to in different contextes.\nNavigationPartIdentifier  - Navigation part identifier of the menu item.\nName - name which is shown on the menu item, if it is not set the default value\n       is used. Write it in English: it is translated like any other interface\n       text, in the context TranslationContext names, and shown as it is when\n       the current language has no translation for it.\nTooltip - tooltip which is shown for the menu item, if it is not set the default value\n          is used. Translated the same way as Name.\nTranslationContext - (optional) the translation context Name and Tooltip are\n       looked up in, design/admin/pagelayout (the context of the default tab\n       names) when it is not set. An extension that adds a tab puts the\n       translations of its Name and Tooltip into its own translation.ts under\n       this context.\nIcon - (optional) the name of an icon admin4 draws before the tab's name: a name of design.ini\n       [AdminDesignSettings] IconList[] (Bootstrap Icons); a name it does not know draws no icon.\nEnabled[ui_context] - sets if menuitem is clickable in current ui_context.\nShown[ui_context]  - sets if menuitem is clickable in current ui_context\nPolicyList[] - list of policies, either in \"<node_id>\" or \"<module>/<function>\" form; a module without\n               policy functions (visual, class, role, workflow ...) is \"<module>/*\"\n               In case of node id, content/read is checked!",
+        "de": "Beispiel für das Hinzufügen eines eigenen Eintrags im Hauptmenü\nSiehe den auskommentierten Eintrag Topmenu_custom ganz unten\nTabs[]=custom\nHier die Einstellungen, die das Verhalten jedes\nEintrags im oberen Menü der Administration steuern.\nURL['ui_context'] - auf welche Ansicht der Eintrag in verschiedenen Kontexten zeigt.\nNavigationPartIdentifier  - Bezeichner des Navigationsbereichs des Menüeintrags.\nName - Name, der auf dem Menüeintrag angezeigt wird; ist er nicht gesetzt, wird der Standardwert\n       verwendet. Schreiben Sie ihn auf Englisch: Er wird wie jeder andere Oberflächen-\n       text im Kontext übersetzt, den TranslationContext nennt, und so angezeigt, wie er ist, wenn\n       die aktuelle Sprache keine Übersetzung dafür hat.\nTooltip - Tooltip, der für den Menüeintrag angezeigt wird; ist er nicht gesetzt, wird der Standardwert\n          verwendet. Wie Name übersetzt.\nTranslationContext - (optional) der Übersetzungskontext, in dem Name und Tooltip\n       nachgeschlagen werden, design/admin/pagelayout (der Kontext der Standardnamen\n       der Reiter), wenn er nicht gesetzt ist. Eine Erweiterung, die einen Reiter hinzufügt, legt die\n       Übersetzungen seines Namens und Tooltips unter diesem Kontext in ihre eigene translation.ts.\nIcon - (optional) der Name eines Symbols, das admin4 vor den Namen des Reiters zeichnet: ein Name aus design.ini\n       [AdminDesignSettings] IconList[] (Bootstrap Icons); ein unbekannter Name zeichnet kein Symbol.\nEnabled[ui_context] - legt fest, ob der Menüeintrag im aktuellen ui_context anklickbar ist.\nShown[ui_context]  - legt fest, ob der Menüeintrag im aktuellen ui_context anklickbar ist\nPolicyList[] - Liste von Richtlinien, in der Form \"<node_id>\" oder \"<module>/<function>\"; ein Modul ohne\n               Richtlinienfunktionen (visual, class, role, workflow ...) ist \"<module>/*\"\n               Bei einer Knoten-ID wird content/read geprüft!"
+    },
+    "ini:settings/menu.ini [Topmenu_content] Enabled": {
+        "en": "Name=Content structure\nTooltip=Manage the main content structure of the site.",
+        "de": "Name=Content structure\nTooltip=Manage the main content structure of the site."
+    },
+    "ini:settings/menu.ini [Topmenu_dashboard] MegaMenuLayout": {
+        "en": "The panel's layout: wide sets the groups in up to four balanced columns (three at 960px, two below), for a choice of\nmany links that would not fit the window's height in the default three columns of the Setup and Users tabs",
+        "de": "Das Layout des Panels: wide setzt die Gruppen in bis zu vier ausgeglichene Spalten (drei bei 960px, darunter zwei), für eine Auswahl\nvieler Links, die in den drei Standardspalten der Reiter Setup und Benutzer nicht in die Höhe des Fensters passen würden"
+    },
+    "ini:settings/menu.ini [Topmenu_dashboard] MegaMenuSection": {
+        "en": "The menu section whose MegaMenuLinks[] the template uses, for the check of its keys (unknown ones are named in the\ndebug report, parts/a4_mega_menu_check.tpl)",
+        "de": "Der Menüabschnitt, dessen MegaMenuLinks[] das Template verwendet, für die Prüfung seiner Schlüssel (unbekannte werden im\nDebug-Bericht genannt, parts/a4_mega_menu_check.tpl)"
+    },
+    "ini:settings/menu.ini [Topmenu_dashboard] MegaMenuTemplate": {
+        "en": "admin4's mega menu ([TopAdminMenu] MegaMenuTabs[]=dashboard): the template that draws its links, a choice of\n[Leftmenu_my_mega] (see there)",
+        "de": "Das Mega-Menü von admin4 ([TopAdminMenu] MegaMenuTabs[]=dashboard): das Template, das seine Links zeichnet, eine Auswahl aus\n[Leftmenu_my_mega] (siehe dort)"
+    },
+    "ini:settings/menu.ini [Topmenu_dashboard] URL": {
+        "en": "Name=My account\nTooltip=Manage items and settings that belong to your account.",
+        "de": "Name=My account\nTooltip=Manage items and settings that belong to your account."
+    },
+    "ini:settings/menu.ini [Topmenu_design] PolicyList": {
+        "en": "The design root node (content.ini [NodeSettings] DesignRootNode) must be readable",
+        "de": "Der Wurzelknoten des Designs (content.ini [NodeSettings] DesignRootNode) muss lesbar sein"
+    },
+    "ini:settings/menu.ini [Topmenu_design] URL": {
+        "en": "Name=Design\nTooltip=Manage templates, menus, toolbars and other things related to appearence.\nURL[default]=visual/toolbarlist\nThe design top node (content.ini [NodeSettings] DesignRootNode) by its node id, not by its URL alias\n\"Design/\", which a renamed node or another language's alias would break",
+        "de": "Name=Design\nTooltip=Manage templates, menus, toolbars and other things related to appearence.\nURL[default]=visual/toolbarlist\nDer oberste Knoten des Designs (content.ini [NodeSettings] DesignRootNode) über seine Knoten-ID, nicht über seinen URL-Alias\n\"Design/\", den ein umbenannter Knoten oder der Alias einer anderen Sprache zerstören würde"
+    },
+    "ini:settings/menu.ini [Topmenu_media] URL": {
+        "en": "Tooltip=Manage images, files, documents, etc.",
+        "de": "Tooltip=Manage images, files, documents, etc."
+    },
+    "ini:settings/menu.ini [Topmenu_setup] MegaMenuTemplate": {
+        "en": "No PolicyList[]: setup/menu opens with any one of its functions (setup, administrate, managecache, managecronjobs,\npreload, system_info), which [MenuAccessSettings] CheckViewAccess asks. [TopAdminMenu] SetupTabs[] leave the top\nmenu for the same users, so the tab that holds them asks for nothing more (setup/managecache took it from a user\nwith system_info only, and the tabs moved into Setup were nowhere).\nadmin4's mega menu ([TopAdminMenu] MegaMenuTabs[]=setup): the template that draws its links, the Setup menu\n([Leftmenu_setup] MegaMenuLinks[])",
+        "de": "Keine PolicyList[]: setup/menu öffnet sich mit einer beliebigen seiner Funktionen (setup, administrate, managecache, managecronjobs,\npreload, system_info), wonach [MenuAccessSettings] CheckViewAccess fragt. [TopAdminMenu] SetupTabs[] verlassen das Haupt-\nmenü für dieselben Benutzer, der Reiter, der sie aufnimmt, verlangt also nichts weiter (setup/managecache nahm ihn einem Benutzer\nmit nur system_info, und die in Setup verschobenen Reiter waren nirgends).\nDas Mega-Menü von admin4 ([TopAdminMenu] MegaMenuTabs[]=setup): das Template, das seine Links zeichnet, das Setup-Menü\n([Leftmenu_setup] MegaMenuLinks[])"
+    },
+    "ini:settings/menu.ini [Topmenu_setup] URL": {
+        "en": "Name=Setup\nTooltip=Configure settings and manage advanced functionality.\nThe Setup overview (setup/menu): every function of the Setup menu as a tile, grouped as the left menu",
+        "de": "Name=Setup\nTooltip=Configure settings and manage advanced functionality.\nDie Setup-Übersicht (setup/menu): jede Funktion des Setup-Menüs als Kachel, gruppiert wie das linke Menü"
+    },
+    "ini:settings/menu.ini [Topmenu_shop] URL": {
+        "en": "Tooltip=Manage customers, orders, discounts and VAT types; view sales statistics.",
+        "de": "Tooltip=Manage customers, orders, discounts and VAT types; view sales statistics."
+    },
+    "ini:settings/menu.ini [Topmenu_users] MegaMenuTemplate": {
+        "en": "admin4's mega menu ([TopAdminMenu] MegaMenuTabs[]=users): the template that draws its links, a choice of\n[Leftmenu_user_mega] (see there)",
+        "de": "Das Mega-Menü von admin4 ([TopAdminMenu] MegaMenuTabs[]=users): das Template, das seine Links zeichnet, eine Auswahl aus\n[Leftmenu_user_mega] (siehe dort)"
+    },
+    "ini:settings/menu.ini [Topmenu_users] URL": {
+        "en": "Tooltip=Manage users, user groups and permission settings.",
+        "de": "Tooltip=Manage users, user groups and permission settings."
+    },
+    "ini:settings/mime.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/mime.ini.append or\n      settings/override/mime.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/mime.ini.append oder\n      settings/override/mime.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/module.ini": {
+        "en": "Exponential configuration file for modules\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/module.ini.append or\n      settings/override/module.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für Module\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/module.ini.append oder\n      settings/override/module.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/module.ini [ModuleOverrides]": {
+        "en": "This controls overriding of navigations parts defined\nmodule.php or by dynamic code.\n\nYou can use the module name alone or with a view",
+        "de": "Dies steuert das Überschreiben von Navigationsbereichen, die in\nmodule.php oder durch dynamischen Code definiert sind.\n\nSie können den Modulnamen allein oder mit einer Ansicht verwenden"
+    },
+    "ini:settings/module.ini [ModuleSettings] ExtensionRepositories": {
+        "en": "A list of extensions which have modules\nIt's common to create a settings/module.ini.append file\nin your extension and add the extension name to automatically\nget modules from the extension when it's turned on.",
+        "de": "Eine Liste der Erweiterungen, die Module haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/module.ini.append\nan und trägt den Namen der Erweiterung ein, um automatisch\ndie Module der Erweiterung zu erhalten, wenn sie eingeschaltet ist."
+    },
+    "ini:settings/module.ini [ModuleSettings] ModuleList": {
+        "en": "An array of known modules in the system, extensions should\nappend to this array.\nThis is currently used to avoid URL aliases overriding\nexisting module names",
+        "de": "Ein Array der im System bekannten Module; Erweiterungen sollten\nan dieses Array anhängen.\nEs wird derzeit verwendet, damit URL-Aliase keine\nvorhandenen Modulnamen überschreiben"
+    },
+    "ini:settings/module.ini [ModuleSettings] ModuleRepositories": {
+        "en": "An array of directories to search for modules",
+        "de": "Ein Array von Verzeichnissen, in denen nach Modulen gesucht wird"
+    },
+    "ini:settings/notification.ini": {
+        "en": "Exponential configuration file for notification.\n\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/notification.ini.append or\n      settings/override/notification.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für Benachrichtigungen.\n\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/notification.ini.append oder\n      settings/override/notification.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/notification.ini [MailSettings] EmailSender": {
+        "en": "Which email address to use when sending notification mail\nIf empty site.ini/MailSettings/AdminEmail is used.",
+        "de": "Welche E-Mail-Adresse beim Senden von Benachrichtigungsmails verwendet wird\nWenn leer, wird site.ini/MailSettings/AdminEmail verwendet."
+    },
+    "ini:settings/notification.ini [NotificationSettings] NotificationFilterByClassIdentifier": {
+        "en": "enabled makes notification events (the mails and digest items of the\nsubscribers of a location) only for publications of the classes in\nIncludeClasses[] (class identifiers; a class ID names its class too); a\npublication of any other class counts as published without notification\n(the filter content/notification/create gets false).\nWith an empty list nothing makes an event. disabled (default): every class.\nApproval (collaboration) notifications are not concerned.\ndoc/eng-us/features/6.0/publish-without-notification.md",
+        "de": "enabled erzeugt Benachrichtigungsereignisse (die Mails und Einträge der Zusammenfassungen der\nAbonnenten einer Platzierung) nur für Veröffentlichungen der Klassen in\nIncludeClasses[] (Klassenbezeichner; eine Klassen-ID nennt ihre Klasse ebenfalls); eine\nVeröffentlichung jeder anderen Klasse gilt als ohne Benachrichtigung veröffentlicht\n(der Filter content/notification/create erhält false).\nBei einer leeren Liste erzeugt nichts ein Ereignis. disabled (Standard): jede Klasse.\nBenachrichtigungen zu Freigaben (Zusammenarbeit) sind nicht betroffen.\ndoc/eng-us/features/6.0/publish-without-notification.md"
+    },
+    "ini:settings/notification.ini [NotificationSettings] PublishWithoutNotification": {
+        "en": "enabled shows \"Publish without notification\" next to the publish button of\ncontent/edit and of the version preview: the version is published, but no\nnotification event is made, so the subscribers of its location get no mail\n(the filter content/notification/create gets false). disabled hides the button\nand publishes every version with notification.\nThe button is shown to, and counts for, users whose role has the policy\nfunction content/publish_without_notification (a content/* policy includes\nit). For anybody else, and with the setting disabled, a posted button\npublishes with notification. Only the ezpublish event of the version is left\nout: approval (collaboration) notifications are sent as before. Set it per\nsiteaccess (the admin siteaccess only, for example) to offer it there only.\ndoc/eng-us/features/6.0/publish-without-notification.md",
+        "de": "enabled zeigt „Ohne Benachrichtigung veröffentlichen“ neben der Schaltfläche Veröffentlichen von\ncontent/edit und der Versionsvorschau: Die Version wird veröffentlicht, aber kein\nBenachrichtigungsereignis erzeugt, die Abonnenten ihrer Platzierung erhalten also keine Mail\n(der Filter content/notification/create erhält false). disabled blendet die Schaltfläche aus\nund veröffentlicht jede Version mit Benachrichtigung.\nDie Schaltfläche wird Benutzern angezeigt, deren Rolle die Richtlinienfunktion\ncontent/publish_without_notification hat (eine Richtlinie content/* schließt\nsie ein), und gilt nur für sie. Für alle anderen und mit deaktivierter Einstellung veröffentlicht eine abgeschickte Schaltfläche\nmit Benachrichtigung. Nur das Ereignis ezpublish der Version entfällt:\nBenachrichtigungen zu Freigaben (Zusammenarbeit) werden wie bisher gesendet. Setzen Sie es pro\nSiteaccess (zum Beispiel nur im Administrations-Siteaccess), um es nur dort anzubieten.\ndoc/eng-us/features/6.0/publish-without-notification.md"
+    },
+    "ini:settings/notification.ini [RuleSettings]": {
+        "en": "IncludeClasses[]=article\nIncludeClasses[]=file",
+        "de": "IncludeClasses[]=article\nIncludeClasses[]=file"
+    },
+    "ini:settings/notification.ini [RuleSettings] LimitDeleteElements": {
+        "en": "Maximum number of notification digest elements removed in one query.\nThis is needed to prevent exceeding DBMS limits\n(maximum query length, maximum number of elements in IN() clause).",
+        "de": "Höchstzahl der Elemente der Benachrichtigungs-Zusammenfassung, die in einer Abfrage entfernt werden.\nNötig, um die Grenzen des DBMS nicht zu überschreiten\n(maximale Abfragelänge, maximale Zahl der Elemente in einer IN()-Klausel)."
+    },
+    "ini:settings/notification.ini [RuleSettings] RetryHours": {
+        "en": "How many hours a notification that the mail transport did not take is tried again, at every run, before it is given up\nand counted as dropped on the notification status page.",
+        "de": "Wie viele Stunden eine Benachrichtigung, die der Mail-Transport nicht angenommen hat, bei jedem Lauf erneut versucht wird, bevor sie aufgegeben\nund auf der Seite des Benachrichtigungsstatus als verworfen gezählt wird."
+    },
+    "ini:settings/notification.ini [TransportSettings]": {
+        "en": "AvailableNotificationEventTypes[]=ezsimpledigest",
+        "de": "AvailableNotificationEventTypes[]=ezsimpledigest"
+    },
+    "ini:settings/notification.ini [TransportSettings] TransportPluginPath": {
+        "en": "An array of pathes to the transport plugins\nTransportPluginPath[]=path/to/plugin1\nTransportPluginPath[]=path/to/plugin2",
+        "de": "Ein Array von Pfaden zu den Transport-Plugins\nTransportPluginPath[]=path/to/plugin1\nTransportPluginPath[]=path/to/plugin2"
+    },
+    "ini:settings/override.ini": {
+        "en": "Exponential configuration file for template overrides.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/override.ini.append or\n      settings/override/override.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\nTemplate Override configuration file\nPlace your own override configuration file\nin settings/siteaccess/myaccess/override.ini.append\n\nThis file should only be used for overrides that are\ncommon for all siteaccesses\nExample syntax\n[article]\nSource=node/view/full.tpl\nMatchFile=article.tpl\nSubdir=templates\nMatch[section]=1\nMatch[class]=2",
+        "de": "Exponential-Konfigurationsdatei für Template-Overrides.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/override.ini.append oder\n      settings/override/override.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\nKonfigurationsdatei der Template-Overrides\nLegen Sie Ihre eigene Override-Konfigurationsdatei\nin settings/siteaccess/myaccess/override.ini.append ab\n\nDiese Datei sollte nur für Overrides verwendet werden, die\nallen Siteaccesses gemeinsam sind\nBeispielsyntax\n[article]\nSource=node/view/full.tpl\nMatchFile=article.tpl\nSubdir=templates\nMatch[section]=1\nMatch[class]=2"
+    }
+}

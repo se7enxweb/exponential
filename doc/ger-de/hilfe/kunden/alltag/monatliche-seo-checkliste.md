@@ -82,5 +82,5 @@ Crawl errors in webmaster tools: ____   Sent to partner/host: ______________
 
 - [SEO-Prüfungen](seo-pruefungen.md)
 - [Wöchentliche Routine des Betreibers](woechentliche-routine-des-betreibers.md)
-- [Monatliche Checkliste für den Betrieb](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)
+- [Monatliche Checkliste für den Betrieb](../../unternehmen/vorlagen/monatliche-betriebscheckliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

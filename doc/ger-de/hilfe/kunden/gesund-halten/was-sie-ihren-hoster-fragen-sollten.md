@@ -13,16 +13,16 @@ Ihr Hoster betreibt den Server, PHP, die Datenbank und oft auch die Updates. Die
 auf, mit dem, wie eine gute Antwort aussieht. Verwenden Sie sie, wenn Sie einen Hoster auswählen (siehe auch
 [Einen Hoster auswählen](../partner-und-hoster/einen-hoster-auswaehlen.md)), und einmal im Jahr für den Hoster, den Sie haben
 ([Ihren Anbieter jedes Jahr überprüfen](../partner-und-hoster/anbieter-jedes-jahr-ueberpruefen.md)). Die Fragen an einen
-neuen Hoster vor der Unterschrift stehen auch unter [Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-hosting.md).
+neuen Hoster vor der Unterschrift stehen auch unter [Hosting auswählen](../../unternehmen/auswahl/hosting-auswaehlen.md).
 
 ## Die Plattform
 
 | Fragen Sie | Eine gute Antwort |
 |---|---|
-| Welche PHP-Version betreibt unsere Website, und bis wann wird sie unterstützt? | Eine Version ab 8.0 (auch für Velocity), mit einem Datum; die README empfiehlt „die neueste Version von PHP, die auf Ihrem Betriebssystem verfügbar ist“ ([Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)) |
-| Welche Datenbank-Engine und Version? | Eine benannte Engine; das Projekt listet sie in einer offiziellen Reihenfolge ([Datenbankwahl für Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/database-choice-for-reliability.md)) |
+| Welche PHP-Version betreibt unsere Website, und bis wann wird sie unterstützt? | Eine Version ab 8.0 (auch für Velocity), mit einem Datum; die README empfiehlt „die neueste Version von PHP, die auf Ihrem Betriebssystem verfügbar ist“ ([Release-Linie und Support-Richtlinie](../../unternehmen/zuverlaessigkeit/release-linie-und-support-richtlinie.md)) |
+| Welche Datenbank-Engine und Version? | Eine benannte Engine; das Projekt listet sie in einer offiziellen Reihenfolge ([Datenbankwahl für Zuverlässigkeit](../../unternehmen/zuverlaessigkeit/datenbankwahl-fuer-zuverlaessigkeit.md)) |
 | Welcher Webserver oder welche Engine liefert die Website aus? | Exponential Velocity, FrankenPHP, Apache oder nginx mit PHP-FPM, oder ein anderer benannter |
-| Läuft Cron für unsere Website, wie oft? | Ja, mit benannten Cronjob-Teilen; ohne Cron schlägt Hintergrundarbeit unbemerkt fehl ([Cronjobs und Hintergrundaufträge](../../../../eng-us/help/businesses/reliability/cronjobs-and-background-jobs.md)) |
+| Läuft Cron für unsere Website, wie oft? | Ja, mit benannten Cronjob-Teilen; ohne Cron schlägt Hintergrundarbeit unbemerkt fehl ([Cronjobs und Hintergrundaufträge](../../unternehmen/zuverlaessigkeit/cronjobs-und-hintergrundjobs.md)) |
 | Funktioniert ausgehende E-Mail, mit welchem Absender? | Ja; Formulare, Belege, Passwort-Zurücksetzungen und Newsletter hängen davon ab |
 | Läuft jeder Name über HTTPS, und wer erneuert die Zertifikate? | Ja; die Erneuerung wird überwacht ([Runbook für ablaufende Zertifikate](../../hosting/runbooks/ablauf-von-zertifikaten.md)) |
 

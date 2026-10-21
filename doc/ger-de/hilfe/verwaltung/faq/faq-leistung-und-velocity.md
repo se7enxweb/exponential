@@ -29,7 +29,7 @@ Geschwindigkeit: Messen Sie Ihre eigene Website. Die Antworten stammen aus
 Das hängt von Ihrem Design, Ihren Inhalten, Caches, der Engine und der Hardware ab. Bitten Sie die Bieter, Ihre Website
 unter der erwarteten Last zu messen, und schreiben Sie das Ergebnis in die Abnahmetests. Wie veröffentlichte Zahlen
 gemessen werden, ist für die Presse unter
-[Wie die Zahlen von Velocity gemessen werden](../../../../eng-us/help/press/story-how-velocity-figures-are-measured.md) erklärt.
+[Wie die Zahlen von Velocity gemessen werden](../../presse/thema-wie-die-velocity-zahlen-gemessen-werden.md) erklärt.
 
 ## Was ist Exponential Velocity?
 
