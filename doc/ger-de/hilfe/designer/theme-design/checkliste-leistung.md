@@ -34,7 +34,7 @@ Artikel und einer Liste, einmal direkt nach dem Leeren der Caches und noch einma
 
 - [ ] Vollansichten liegen im View-Cache; nichts Benutzerspezifisches darin ([Caching für Designer](caching-fuer-designer.md)).
 - [ ] Menüs und Fußbereiche in Cache-Blöcken mit korrekten, kleinen Schlüsseln.
-- [ ] Jedes Listen-fetch hat ein `limit`; kein fetch innerhalb eines `foreach` ([Performance von fetch](../templates/fetch-leistung.md)).
+- [ ] Jedes Listen-fetch hat ein `limit`; kein fetch innerhalb eines `foreach` ([Performance von fetch](../vorlagen/fetch-leistung.md)).
 - [ ] Der aktuelle Knoten wird einmal im Pagelayout geholt und von den Teilen wiederverwendet.
 - [ ] Die Debug-Ausgabe (auf einem Test-Siteaccess) zeigt eine vernünftige Zahl von Datenbankabfragen für die Seite.
 

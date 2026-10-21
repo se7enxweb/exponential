@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Designer und Administratoren, wenn sich ein Theme nicht wie erwartet verhält. Suchen Sie das
 Anzeichen, lesen Sie die Ursache, wenden Sie die Abhilfe an. Für Probleme innerhalb von Templates siehe
-[Ein Design debuggen](../theme-design/ein-design-debuggen.md) und [Häufige Template-Fehler](../templates/haeufige-template-fehler.md).
+[Ein Design debuggen](../theme-design/ein-design-debuggen.md) und [Häufige Template-Fehler](../vorlagen/haeufige-template-fehler.md).
 
 | Sie sehen | Wahrscheinliche Ursache | Abhilfe |
 |---|---|---|

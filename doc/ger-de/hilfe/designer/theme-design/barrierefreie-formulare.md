@@ -96,9 +96,9 @@ Ein Suchfeld im Kopfbereich braucht eine Beschriftung (sichtbar oder `.sr-only`)
 
 ## Verwandte Seiten
 
-- [Formulare in Templates](../templates/formulare-in-templates.md)
+- [Formulare in Templates](../vorlagen/formulare-in-templates.md)
 - [Tastatur und Fokus](tastatur-und-fokus.md)
-- [Bearbeitungstemplates der Datentypen](../templates/datentyp-bearbeitungstemplates.md)
+- [Bearbeitungstemplates der Datentypen](../vorlagen/datentyp-bearbeitungstemplates.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

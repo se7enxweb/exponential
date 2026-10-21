@@ -19,7 +19,7 @@ Telefonnummern hinein, und machen Sie sie nur für die Personen lesbar, die sie 
 ## Interne Rollen
 
 Der Vorfallplan für kleine Teams nennt drei Rollen: eine leitende Person, die entscheidet, eine Person, die behebt, und
-eine Person, die kommuniziert ([Vorfallreaktion für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md)).
+eine Person, die kommuniziert ([Vorfallreaktion für kleine Teams](../../unternehmen/zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md)).
 
 | Rolle | Name | Geschäftliche Telefonnummer | E-Mail | Vertretung |
 |---|---|---|---|---|

@@ -43,7 +43,7 @@ aufgebaut ist, wie es seine Dateien lädt und worauf Sie achten sollten, wenn Si
 4. bindet `page_head.tpl`, `page_head_style.tpl`, `page_head_script.tpl`, den Kopfbereich und die Menüs, den Inhalt und den Fußbereich ein.
 
 Der Cache-Block macht den Rahmen günstig: Er wird einmal pro URI und Benutzer gerendert und dann aus dem Cache gelesen. Die Regeln zu den
-Schlüsseln stehen in [Cache-block](../templates/cache-block.md).
+Schlüsseln stehen in [Cache-block](../vorlagen/cache-block.md).
 
 ## Stylesheets und Skripte aus design.ini
 
@@ -90,7 +90,7 @@ Es wird nach den Dateien von simple ausgegeben, sodass Ihre Regeln bei gleicher 
 `templates/menu/` enthält mehrere Menü-Templates (`flat_top.tpl`, `double_top.tpl`, `dropdown.tpl`, `multi-dropdown.tpl`, `topbar.tpl`,
 `social-media.tpl`). `page_header.tpl` bindet `menu/dropdown.tpl` ein; die anderen Möglichkeiten stehen als auskommentierte Einbindungen
 da, sodass ein Menüwechsel eine Änderung von einer Zeile in einer Kopie von `page_header.tpl` in Ihrem Design ist. Menüs holen die Kinder
-des Wurzelknotens; siehe [Menüs und Navigation](../templates/menues-und-navigation.md).
+des Wurzelknotens; siehe [Menüs und Navigation](../vorlagen/menues-und-navigation.md).
 
 Der Ordner enthält auch Überbleibsel von Editoren (Dateien `*.backup`, `*.save`, `#...#`). Das Design verwendet sie nicht; kopieren Sie sie
 nicht.

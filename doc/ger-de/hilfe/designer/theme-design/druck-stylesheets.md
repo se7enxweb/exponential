@@ -68,7 +68,7 @@ Verwenden Sie die Druckvorschau des Browsers und „Druckmedien emulieren“ der
 ## Verwandte Seiten
 
 - [Stylesheets laden](stylesheets-laden.md)
-- [View-Modi](../templates/ansichtsmodi.md)
+- [View-Modi](../vorlagen/ansichtsmodi.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

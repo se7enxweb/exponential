@@ -16,7 +16,7 @@ enthält, die einer Installation sagen, wer das Theme ist. Dieser Bereich zeigt,
 ihn als Composer-Paket oder als Exponential-Paket (`.ezpkg`) packen.
 
 Wie das Design selbst entsteht (Templates, Overrides, Stylesheets, Dunkelmodus, Barrierefreiheit), erklären
-[Theme-Design](../theme-design/design-erweiterungen.md) und [Templates](../templates/templates-ueberblick.md). Dieser Bereich
+[Theme-Design](../theme-design/design-erweiterungen.md) und [Templates](../vorlagen/templates-ueberblick.md). Dieser Bereich
 handelt von dem Behälter darum herum.
 
 ## Eine Lesereihenfolge

@@ -88,6 +88,6 @@ nutzen würden, bevor Sie sie brauchen.
 ## Verwandte Seiten
 
 - [Remote-Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)
-- [Remote-Dienste für Unternehmen](../../../../eng-us/help/businesses/mobile-and-headless/remote-services.md)
+- [Remote-Dienste für Unternehmen](../../unternehmen/mobil-und-headless/entfernte-dienste.md)
 - [Eine Integration planen](eine-integration-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

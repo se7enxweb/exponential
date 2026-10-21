@@ -80,7 +80,7 @@ auch unter einer strengen Content Security Policy.
 Der Titel nimmt den letzten Eintrag des Pfads der Seite (jeder Eintrag ist ein Hash mit `text` und `url`), dann den Namen der Website. Die
 meisten Designs bauen den Titel in einem eigenen Teil-Template; die `pagelayout/head/title.tpl` des Designs media liest den Namen des Knotens
 oder seinen Meta-Titel und einen lesbaren Text für Fehlerseiten. Der Operator `|wash` maskiert jeden Wert, der aus Inhalten oder
-Einstellungen stammt ([Wash und Maskierung](../templates/wash-und-maskierung.md)).
+Einstellungen stammt ([Wash und Maskierung](../vorlagen/wash-und-maskierung.md)).
 
 ## Es in Teile aufteilen
 

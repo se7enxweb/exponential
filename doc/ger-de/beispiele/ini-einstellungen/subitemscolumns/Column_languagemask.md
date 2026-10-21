@@ -1,0 +1,124 @@
+---
+title: subitemscolumns.ini [Column_languagemask]
+audience: developer, admin
+category: examples
+summary: "Die Einstellungen von [Column_languagemask] in subitemscolumns.ini: Name, Group, Type, Class, Field, Align, Order, Description"
+keywords: Einstellung, subitemscolumns.ini, Column_languagemask, INI, setting, Name, Group, Type, Class, Field, Align, Order, Description
+type: generated
+generated: exp:help:examples
+---
+# subitemscolumns.ini [Column_languagemask]
+
+Der Block `[Column_languagemask]` von `settings/subitemscolumns.ini`, mit 8 Einstellung(en).
+
+Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
+
+- `settings/override/subitemscolumns.ini.append.php` für jeden Siteaccess,
+- `settings/siteaccess/<siteaccess>/subitemscolumns.ini.append.php` für einen Siteaccess,
+- `extension/<extension>/settings/subitemscolumns.ini.append.php` in einer Erweiterung (gelesen, wenn die Erweiterung aktiv ist).
+
+## Name
+
+Standard: `Language mask`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Name=Language mask
+*/ ?>
+```
+
+## Group
+
+Standard: `Technical`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Group=Technical
+*/ ?>
+```
+
+## Type
+
+Standard: `number`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Type=number
+*/ ?>
+```
+
+## Class
+
+Standard: `expSubitemsObjectColumn`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Class=expSubitemsObjectColumn
+*/ ?>
+```
+
+## Field
+
+Standard: `language_mask`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Field=language_mask
+*/ ?>
+```
+
+## Align
+
+Standard: `right`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Align=right
+*/ ?>
+```
+
+## Order
+
+Standard: `1510`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Order=1510
+*/ ?>
+```
+
+## Description
+
+Standard: `The object's language bit mask (bit 0: always available).`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/subitemscolumns.ini.append.php
+[Column_languagemask]
+Description=The object's language bit mask (bit 0: always available).
+*/ ?>
+```
+
+## Siehe auch
+
+- [Alle Blöcke von subitemscolumns.ini](README.md)
+- [Alle INI-Dateien](../README.md)
+- [Die Einstellungsseite](../../../anleitungen/einstellungsseite.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/subitemscolumns.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

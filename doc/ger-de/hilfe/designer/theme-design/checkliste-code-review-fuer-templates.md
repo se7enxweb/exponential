@@ -22,16 +22,16 @@ angenommen werden soll. Sie folgt der Review-Liste des Projekts für Admin-Templ
 
 ## Korrektheit und Sicherheit
 
-- [ ] Jeder Wert aus Inhalten, Einstellungen oder der Anfrage wird bei der Ausgabe maskiert ([Wash und Maskierung](../templates/wash-und-maskierung.md)).
+- [ ] Jeder Wert aus Inhalten, Einstellungen oder der Anfrage wird bei der Ausgabe maskiert ([Wash und Maskierung](../vorlagen/wash-und-maskierung.md)).
 - [ ] URLs mit `ezurl`/`ezroot` gebaut, Design-Dateien mit `ezimage`/`ezdesign`; keine fest eingetragenen Pfade von Siteaccesses.
 - [ ] Optionale Felder vor der Verwendung mit `has_content` geprüft.
 - [ ] `{def}`-Variablen in eingebundenen Templates mit `{undef}` entfernt; keine Kollision mit den Namen des Einbindenden.
-- [ ] Override-Regeln: eindeutige Namen mit Präfix, ein korrektes `Match`, `Priority`, wo es darauf ankommt ([Reihenfolge der Overrides](../templates/override-reihenfolge.md)).
+- [ ] Override-Regeln: eindeutige Namen mit Präfix, ein korrektes `Match`, `Priority`, wo es darauf ankommt ([Reihenfolge der Overrides](../vorlagen/override-reihenfolge.md)).
 - [ ] Das Template lässt sich parsen: `./console exp:eztemplatecheck <file or folder>`.
 
 ## Performance
 
-- [ ] Jedes Listen-fetch hat ein Limit; kein fetch in einer Schleife ([Performance von fetch](../templates/fetch-leistung.md)).
+- [ ] Jedes Listen-fetch hat ein Limit; kein fetch in einer Schleife ([Performance von fetch](../vorlagen/fetch-leistung.md)).
 - [ ] Die Schlüssel der Cache-Blöcke decken alles ab, was die Ausgabe ändert, und nicht mehr.
 - [ ] Nichts Benutzerspezifisches in einem im View-Cache gespeicherten Template; kein `csp_nonce()` in zwischengespeicherter Ausgabe.
 
@@ -60,8 +60,8 @@ angenommen werden soll. Sie folgt der Review-Liste des Projekts für Admin-Templ
 ## Verwandte Seiten
 
 - [Checkliste: Start eines Themes](checkliste-theme-start.md)
-- [Stilleitfaden für Templates](../templates/template-styleguide.md)
-- [Häufige Template-Fehler](../templates/haeufige-template-fehler.md)
+- [Stilleitfaden für Templates](../vorlagen/template-styleguide.md)
+- [Häufige Template-Fehler](../vorlagen/haeufige-template-fehler.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

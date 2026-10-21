@@ -12,7 +12,7 @@ type: help
 Ihr Partner (eine Agentur, ein freiberuflicher Entwickler oder ein Implementierungspartner des Exponential-Programms) hat
 die Website gebaut oder entwickelt sie weiter. Diese Seite listet auf, was Sie ihn fragen sollten, zu Beginn eines
 Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die ausführlichen Gesprächsfragen unter
-[Fragen an einen Partner](../../../../eng-us/help/businesses/choosing/questions-to-ask-a-partner.md).
+[Fragen an einen Partner](../../unternehmen/auswahl/fragen-an-einen-partner.md).
 
 ## Die Website, die er gebaut hat
 
@@ -20,8 +20,8 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 |---|---|
 | Welche Erweiterungen verwendet die Website, und wer pflegt jede davon? | Eine Liste mit Versionen; **Setup > Extensions** zeigt sie an ([Liste der Erweiterungen](../../../../eng-us/features/6.0/extension-list-and-downloads.md)) |
 | Welche Teile sind individuell: Templates, Designs, Erweiterungen, Inhaltsklassen? | Eine Liste, und wo der Code aufbewahrt wird |
-| Haben Sie Dateien von Exponential selbst geändert? | Im Idealfall keine; jede Änderung wird in einer Versionsverwaltung gehalten und erscheint in der Upgrade-Prüfung ([Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses/reliability/upgrade-check-and-file-consistency.md)) |
-| Wo wird der Code unserer Website aufbewahrt? | Ein Git-Repository, das Ihnen gehört oder das Sie kopieren können ([Einen Partner auswählen](../../../../eng-us/help/businesses/choosing/choosing-a-partner.md)) |
+| Haben Sie Dateien von Exponential selbst geändert? | Im Idealfall keine; jede Änderung wird in einer Versionsverwaltung gehalten und erscheint in der Upgrade-Prüfung ([Upgrade-Prüfung und Dateikonsistenz](../../unternehmen/zuverlaessigkeit/upgrade-pruefung-und-dateikonsistenz.md)) |
+| Wo wird der Code unserer Website aufbewahrt? | Ein Git-Repository, das Ihnen gehört oder das Sie kopieren können ([Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md)) |
 | Gibt es ein Dokument, das die Website beschreibt? | Ein Übergabedokument: Inhaltsmodell, Rollen, Einstellungen, Kontakte ([Projektvorlagen](../../fuehrung/projektvorlagen.md)) |
 
 ## Updates und die lange Sicht
@@ -45,7 +45,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 - Wie fordern wir eine Änderung an, wie wird sie geschätzt und genehmigt ([Änderungsanfragen](../partner-und-hoster/aenderungsanfragen.md))?
 - Wird jede Änderung auf einer Kopie ausprobiert, bevor sie live geht?
 - Können wir einen Probelauf eines Deployments sehen? Das Deployment mit einem Befehl gibt jeden Schritt zuerst aus
-  ([Unterbrechungsfreie Deployments](../../../../eng-us/help/businesses/reliability/graceful-deploys.md)).
+  ([Unterbrechungsfreie Deployments](../../unternehmen/zuverlaessigkeit/unterbrechungsfreie-deployments.md)).
 
 ## Schulung und Dokumentation
 
@@ -56,7 +56,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 ## Eigentum und Ausstieg
 
 - Gehören uns die Designs, Templates und Erweiterungen, die Sie für uns erstellt haben? Ist das schriftlich festgehalten
-  ([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md), keine Rechtsberatung)?
+  ([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md), keine Rechtsberatung)?
 - Exponential steht unter der GPL; ein Partner, der eine Website baut und Ihnen den Code übergibt, „verbreitet ihn an
   Sie, und Sie erhalten die Rechte der GPL, einschließlich des Quellcodes“ (dieselbe Seite).
 - Wenn wir den Vertrag beenden, was übergeben Sie, und wie schnell ([Checkliste für die Übergabe](../partner-und-hoster/checkliste-uebergabe.md))?
@@ -64,7 +64,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 > **Tipp**
 > Ein Partner des Exponential-Programms hat eine Stufe und eigene, veröffentlichte Support-Stufen beim Projekt
 > ([Partnerstufen](../../partner/partnerstufen.md)). Die Stufe sagt Ihnen etwas über sein Engagement für das Programm;
-> sie „ist keine Qualitätsgarantie für Ihr Projekt“ ([Einen Partner auswählen](../../../../eng-us/help/businesses/choosing/choosing-a-partner.md)).
+> sie „ist keine Qualitätsgarantie für Ihr Projekt“ ([Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md)).
 
 ## Verwandte Seiten
 

@@ -69,7 +69,7 @@ Schließen Sie aufwendige Teile des Pagelayouts (Menüs, Fußbereiche) in einen 
 
 Parameter (`lib/eztemplate/classes/eztemplatecachefunction.php`): `keys`, `expiry` (Sekunden; Standard 7200; `0` für keine
 zeitliche Grenze), `ignore_content_expiry` (behalten, wenn Inhalte veröffentlicht werden), `subtree_expiry` (ablaufen, wenn unter
-einem Knoten etwas veröffentlicht wird). Einzelheiten: [Cache-block](../templates/cache-block.md).
+einem Knoten etwas veröffentlicht wird). Einzelheiten: [Cache-block](../vorlagen/cache-block.md).
 
 ## Regeln für Templates
 
@@ -95,8 +95,8 @@ Die vollständige Tabelle steht in [Der Packer-Cache und Deploys](packer-cache-u
 
 ## Verwandte Seiten
 
-- [Cache-block](../templates/cache-block.md)
-- [Template-Kompilierung und Cache](../templates/template-kompilierung-und-cache.md)
+- [Cache-block](../vorlagen/cache-block.md)
+- [Template-Kompilierung und Cache](../vorlagen/template-kompilierung-und-cache.md)
 - [Performance von Themes](theme-leistung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

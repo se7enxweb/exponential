@@ -95,6 +95,6 @@ Schalter `[AISettings] Enabled` schaltet ihn überall auf einmal oder pro Siteac
 ## Verwandte Seiten
 
 - [KI-Entwürfe verantwortungsvoll nutzen](ki-entwuerfe-verantwortungsvoll-nutzen.md)
-- [Unterstützte Übersetzung mit Exponential Intelligence](../../../../eng-us/help/businesses/multilingual/assisted-translation-with-exponential-intelligence.md)
+- [Unterstützte Übersetzung mit Exponential Intelligence](../../unternehmen/mehrsprachig/unterstuetzte-uebersetzung-mit-exponential-intelligence.md)
 - [expai: Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

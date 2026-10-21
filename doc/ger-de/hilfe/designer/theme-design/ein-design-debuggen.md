@@ -72,7 +72,7 @@ Gehen Sie diese Punkte der Reihe nach durch:
 4. **Die Kaskade.** Ein weiter oben stehendes Design kann dieselbe Datei haben. Die Kommentare mit Template-Pfaden zeigen, welche Kopie
    gewonnen hat ([Die Design-Kaskade](die-design-kaskade.md)).
 5. **Die Reihenfolge der Overrides.** Eine andere Regel für dieselbe `Source` kann zuerst passen. Regeln werden nach `Priority`
-   versucht (niedrigste zuerst; ohne `Priority` ganz am Ende), und der erste Treffer gewinnt ([Reihenfolge der Overrides](../templates/override-reihenfolge.md)).
+   versucht (niedrigste zuerst; ohne `Priority` ganz am Ende), und der erste Treffer gewinnt ([Reihenfolge der Overrides](../vorlagen/override-reihenfolge.md)).
 6. **Die Erweiterung.** Ist die Design-Erweiterung für diesen Siteaccess aktiv und in `DesignExtensions[]` aufgeführt?
 
 ## Meine Stylesheet-Änderung erscheint nicht
@@ -131,8 +131,8 @@ dem Siteaccess nicht aktiv ist.
 
 ## Verwandte Seiten
 
-- [Templates debuggen](../templates/template-debugging.md)
-- [Template-Kompilierung und Cache](../templates/template-kompilierung-und-cache.md)
+- [Templates debuggen](../vorlagen/template-debugging.md)
+- [Template-Kompilierung und Cache](../vorlagen/template-kompilierung-und-cache.md)
 - [Caching für Designer](caching-fuer-designer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

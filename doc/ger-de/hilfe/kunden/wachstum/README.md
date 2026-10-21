@@ -53,10 +53,10 @@ wöchentlicher Blick auf die Website. Planen Sie dann mit dem [Arbeitsblatt für
 
 | Fähigkeit | Wird mit Exponential geliefert | Braucht meist einen Partner für |
 |---|---|---|
-| Newsletter (`cjw_newsletter`) | ja, in `composer.json` ([Newsletter für Unternehmen](../../../../eng-us/help/businesses/newsletters/README.md)) | Klassen, Cronjobs, E-Mail-Transport, Absenderdomain |
+| Newsletter (`cjw_newsletter`) | ja, in `composer.json` ([Newsletter für Unternehmen](../../unternehmen/newsletter/README.md)) | Klassen, Cronjobs, E-Mail-Transport, Absenderdomain |
 | Landingpages (Exponential Layouts) | ja ([Der Layouts-Editor](../../layout-editor.md)) | neue Layout-Typen oder Block-Typen |
 | Weitere Inhaltssprachen | ja ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)) | Siteaccess-Einstellungen, Sprachumschalter |
-| Weitere Websites in einer Installation | ja ([Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md)) | Siteaccess, DNS, Zertifikate |
+| Weitere Websites in einer Installation | ja ([Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md)) | Siteaccess, DNS, Zertifikate |
 | REST-API und API-Schlüssel | ja ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)) | die App oder das Frontend selbst |
 | Remote-Dienste (`expservices`) | ja, in der Standarddistribution ([Remote-Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)) | Skripte und Portale |
 | Schreibassistent (`expai`) | ja, auf neuen Installationen aktiv; ohne Schlüssel eines Anbieters untätig (`README.md`) | Wahl des Anbieters, Cron, Datenrichtlinie |
@@ -66,6 +66,6 @@ wöchentlicher Blick auf die Website. Planen Sie dann mit dem [Arbeitsblatt für
 ## Verwandte Seiten
 
 - [Ihre Website im Alltag betreiben](../alltag/README.md)
-- [Mobil und Headless für Unternehmen](../../../../eng-us/help/businesses/mobile-and-headless/README.md)
+- [Mobil und Headless für Unternehmen](../../unternehmen/mobil-und-headless/README.md)
 - [Was Sie bauen können](../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -71,7 +71,7 @@ Eine Inhaltsansicht (`content/view`) füllt `content_info` mit diesen Schlüssel
 | `class_group`, `state`, `state_identifier` | Klassengruppen und Objektzustände |
 | `current_language`, `language_mask` | die gezeigte Sprache |
 | `offset` | der Versatz beim Blättern |
-| `persistent_variable` | was View-Templates für das Pagelayout gesetzt haben ([Die persistent variable](../templates/die-persistent-variable.md)) |
+| `persistent_variable` | was View-Templates für das Pagelayout gesetzt haben ([Die persistent variable](../vorlagen/die-persistent-variable.md)) |
 
 `content_info` ist auf Seiten anderer Module (Suche, Benutzer, Fehler) kein Array. Prüfen Sie immer, bevor Sie es lesen:
 
@@ -136,8 +136,8 @@ Das Sprachattribut und die Richtung:
 ## Verwandte Seiten
 
 - [Das Pagelayout](das-pagelayout.md)
-- [Modulergebnis und Inhaltsinformation](../templates/module-result-und-content-info.md)
-- [Brotkrumenpfade](../templates/brotkrumen.md)
+- [Modulergebnis und Inhaltsinformation](../vorlagen/module-result-und-content-info.md)
+- [Brotkrumenpfade](../vorlagen/brotkrumen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

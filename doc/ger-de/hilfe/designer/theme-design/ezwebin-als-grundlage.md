@@ -70,7 +70,7 @@ Klasse kennt:
 
 `ezpagedata_set` schreibt in die persistent variable der View, die das Pagelayout über
 `$module_result.content_info.persistent_variable` erreicht; `ezpagedata()` liest sie dort. `ezpagedata_append` ergänzt eine Liste,
-statt sie zu ersetzen. Siehe [Die persistent variable](../templates/die-persistent-variable.md).
+statt sie zu ersetzen. Siehe [Die persistent variable](../vorlagen/die-persistent-variable.md).
 
 ## Menüs aus menu.ini
 
@@ -111,7 +111,7 @@ Beginnen Sie mit dem Logo, dem Fußbereich und dem Stylesheet; mehr braucht eine
 
 - [Ein Rundgang durch das Theme simple](rundgang-durch-das-simple-theme.md)
 - [Die Design-Kaskade](die-design-kaskade.md)
-- [Menüs und Navigation](../templates/menues-und-navigation.md)
+- [Menüs und Navigation](../vorlagen/menues-und-navigation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

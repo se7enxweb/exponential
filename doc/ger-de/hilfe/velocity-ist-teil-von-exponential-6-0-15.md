@@ -161,7 +161,7 @@ gleichzeitig offenen Verbindungen ausliefert, und das Neuladen eines wiederkehre
 statt mit der ganzen Seite beantwortet wird. Die README sagt auch deutlich, dass der größte Teil der Geschwindigkeit
 von der Verbesserung von Exponential und seinem Cache kam, was auch unter Apache und nginx hilft; Velocity hebt die
 Obergrenze noch weiter an. Wie die Zahlen gemessen werden:
-[How Velocity figures are measured](../../eng-us/help/press/story-how-velocity-figures-are-measured.md).
+[How Velocity figures are measured](presse/thema-wie-die-velocity-zahlen-gemessen-werden.md).
 
 ## Was es für Sie bedeutet
 

@@ -37,7 +37,7 @@ Browser (was er laden und zeichnen muss) und auf dem Server (was Templates holen
 |---|---|
 | Der View-Cache | halten Sie Vollansichten zwischenspeicherbar; nichts Benutzerspezifisches darin ([Caching für Designer](caching-fuer-designer.md)) |
 | Cache-Blöcke | schließen Sie Menüs und Fußbereiche mit den richtigen Schlüsseln ein |
-| Weniger fetch-Aufrufe | einmal im Pagelayout holen, das Ergebnis an Teile übergeben; Werte aus `content_info` vorziehen ([Performance von fetch](../templates/fetch-leistung.md)) |
+| Weniger fetch-Aufrufe | einmal im Pagelayout holen, das Ergebnis an Teile übergeben; Werte aus `content_info` vorziehen ([Performance von fetch](../vorlagen/fetch-leistung.md)) |
 | Limits | immer ein `limit` bei Listen-fetch; blättern |
 | Kein fetch in einer Schleife | die Kinder einmal holen, nicht ein fetch pro Eintrag |
 

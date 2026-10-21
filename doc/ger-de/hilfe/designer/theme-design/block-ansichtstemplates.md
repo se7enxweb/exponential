@@ -77,7 +77,7 @@ Die Einträge der Sammlung des mitgelieferten Listenblocks sind Knoten (`$block.
 ```
 
 Jeden Eintrag mit `node_view_gui` und einem View-Modus zu zeichnen (`line` oder einem eigenen wie `card`), verwendet die
-line-Templates und Overrides Ihres Designs wieder ([node_view_gui](../templates/node-view-gui.md)).
+line-Templates und Overrides Ihres Designs wieder ([node_view_gui](../vorlagen/node-view-gui.md)).
 
 ## Container und ihre Kinder
 

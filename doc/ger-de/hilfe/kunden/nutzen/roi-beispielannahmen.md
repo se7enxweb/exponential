@@ -81,7 +81,7 @@ Rechnung für die Zeilen: 16.800 + 2.160 = 18.960 und 18.960 - 13.700 = 5.260, 5
 
 > **Tipp**
 > Das Update wegzulassen, um die Zahl zu verbessern, ist eine falsche Ersparnis: Eine nicht gepflegte Website kostet
-> später mehr. Behalten Sie eine jährliche Zeile für Updates, wie [Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)
+> später mehr. Behalten Sie eine jährliche Zeile für Updates, wie [Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)
 > sie in seinem Wartungskalender einplant.
 
 ## Was dieses Beispiel weglässt
@@ -90,7 +90,7 @@ Dinge, die real sind, sich aber schwer beziffern lassen und neben den Zahlen in 
 
 - der Wert von Kunden, die wiederkommen, und der Newsletter-Liste;
 - weniger Risiko durch den Betrieb auf einer gepflegten Release-Linie (`SECURITY.md`);
-- die Kosten eines vermiedenen Ausfalls ([Arbeitsblatt zu den Kosten von Ausfällen](../../../../eng-us/help/businesses/costs/cost-of-downtime-worksheet.md)).
+- die Kosten eines vermiedenen Ausfalls ([Arbeitsblatt zu den Kosten von Ausfällen](../../unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md)).
 
 ## Die Zahlen ersetzen
 
@@ -103,6 +103,6 @@ Dinge, die real sind, sich aber schwer beziffern lassen und neben den Zahlen in 
 
 - [Den ROI messen](den-roi-messen.md)
 - [ROI-Arbeitsblatt](roi-arbeitsblatt.md)
-- [Durchgerechnetes Beispiel: ein kleiner Shop](../../../../eng-us/help/businesses/costs/worked-example-small-store.md)
-- [Return on Investment von Stabilität](../../../../eng-us/help/businesses/costs/roi-of-stability.md)
+- [Durchgerechnetes Beispiel: ein kleiner Shop](../../unternehmen/kosten/durchgerechnetes-beispiel-kleiner-shop.md)
+- [Return on Investment von Stabilität](../../unternehmen/kosten/rendite-der-stabilitaet.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

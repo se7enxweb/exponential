@@ -104,7 +104,7 @@ Siehe [Bildaliase](bildaliase.md).
 
 - [Bildaliase](bildaliase.md)
 - [Symbole in einem Design](icons-in-einem-design.md)
-- [URL-Operatoren](../templates/url-operatoren.md)
+- [URL-Operatoren](../vorlagen/url-operatoren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

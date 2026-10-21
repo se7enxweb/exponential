@@ -114,7 +114,7 @@ Ein Template wird also in `media` gesucht, dann in `ezwebin`, dann in `standard`
 - [Designs und Siteaccesses](designs-und-siteaccesses.md): wie ein Siteaccess gewählt wird und wie er seine Designs nennt.
 - [Die Design-Kaskade](die-design-kaskade.md): die genaue Suchreihenfolge.
 - [Das Pagelayout](das-pagelayout.md): das Template, das jede Seite einrahmt.
-- [Templates im Überblick](../templates/templates-ueberblick.md): die Template-Sprache.
+- [Templates im Überblick](../vorlagen/templates-ueberblick.md): die Template-Sprache.
 
 ## Verwandte Seiten
 

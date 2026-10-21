@@ -103,7 +103,7 @@ Dieser Bereich verweist auf die anderen Bereiche, statt sie zu wiederholen:
 |---|---|
 | [Inhalte bearbeiten](../inhalte-bearbeiten.md), [Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md), [Medien und Uploads](../medien-und-uploads.md) | Die Schritte im Editor |
 | [Rundgang durch die Administration](../rundgang-durch-die-administration.md) | Ein Rundgang durch die Administration |
-| [Unternehmen](../../../eng-us/help/businesses/businesses-start-here.md) | Organisationen, die Exponential noch prüfen |
+| [Unternehmen](../unternehmen/unternehmen-hier-beginnen.md) | Organisationen, die Exponential noch prüfen |
 | [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) | Die Personen, die die Website bauen und ändern |
 | [Hosting-Anbieter](../hosting/hosting-anbieter-hier-beginnen.md) | Die Sicht Ihres Hosters |
 | [Partner](../partner/partner-hier-beginnen.md) | Die Sicht Ihres Implementierungspartners |

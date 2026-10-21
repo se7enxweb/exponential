@@ -41,7 +41,7 @@ während die Seite lädt; **Largest Contentful Paint (LCP)** misst, wann das gr�
 - das Hauptbild, lazy geladen oder in einer weit größeren Größe als angezeigt;
 - Skripte im Kopf, die das Rendern blockieren;
 - viele Stylesheets oder Schrift-CSS von Drittanbietern, bevor irgendein Text gezeichnet werden kann;
-- eine langsame Serverantwort: eine nicht zwischengespeicherte Vollansicht mit vielen fetch-Aufrufen ([Performance von fetch](../templates/fetch-leistung.md)).
+- eine langsame Serverantwort: eine nicht zwischengespeicherte Vollansicht mit vielen fetch-Aufrufen ([Performance von fetch](../vorlagen/fetch-leistung.md)).
 
 ## Wie Sie messen
 

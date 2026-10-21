@@ -104,7 +104,7 @@ solcher Block in ein Stylesheet wandern (zum Beispiel eine Regel pro Sprache in 
 
 - [Die Themes, die mit Exponential geliefert werden](themes-die-mit-exponential-kommen.md)
 - [Designs und Siteaccesses](designs-und-siteaccesses.md)
-- [Einen einzelnen Knoten überschreiben](../templates/einen-einzelnen-knoten-ueberschreiben.md)
+- [Einen einzelnen Knoten überschreiben](../vorlagen/einen-einzelnen-knoten-ueberschreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

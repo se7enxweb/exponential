@@ -1,0 +1,546 @@
+{
+    "ini:settings/package.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/package.ini.append or\n      settings/override/package.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/package.ini.append oder\n      settings/override/package.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/package.ini [CreationSettings] HandlerList": {
+        "en": "A list of extensions which have package creation handlers support\nThe extension must place package creation handlers in the\nsubdirectory packagecreators.\nThe order here is the order the Create package page lists the wizards in:\ncontent first, then its classes, then extensions, then site styles.",
+        "de": "Eine Liste der Erweiterungen, die Handler zum Erstellen von Paketen unterstützen\nDie Erweiterung muss die Handler zum Erstellen von Paketen im\nUnterverzeichnis packagecreators ablegen.\nDie Reihenfolge hier ist die, in der die Seite Paket erstellen die Assistenten auflistet:\nzuerst Inhalte, dann ihre Klassen, dann Erweiterungen, dann Website-Styles."
+    },
+    "ini:settings/package.ini [ExtensionExportSettings] AllowedExtensions": {
+        "en": "Exporting an extension as a package (Setup > Extensions, the package wizard, ezpm.php add) is switched off by\ndefault. Every way also refuses an extension that holds secret values or key material\n(eZExtensionPackageHandler::packRefusal()).\n\nAn extension's maintainer can name findings of the check that are known not to be secrets (a documentation\nexample the check cannot tell from a real value) in a file package_check.ini at the root of the extension, one\nper line: AllowedFindings[]=<path below the extension>:<setting name or (kind)>, for example\nAllowedFindings[]=settings/recaptcha.ini.append.php:PrivateKey. It can only leave out what it names: key files, a\nprivate key block, a copy of a settings file and a link are always refused. Guide:\ndoc/eng-us/bc/6.0/extension-package-secret-check.md\n\nACTION REQUIRED to export: list the extension here AND grant the policy package/export_extension to the role.\n\nThe extensions that may be exported. Empty (the default): none. \"*\": every extension the check lets through.\nApplies to every way, the command line included.\nExample:\nAllowedExtensions[]=myextension\nAllowedExtensions[]=*",
+        "de": "Das Exportieren einer Erweiterung als Paket (Setup > Erweiterungen, der Paketassistent, ezpm.php add) ist standardmäßig\nabgeschaltet. Jeder Weg lehnt außerdem eine Erweiterung ab, die geheime Werte oder Schlüsselmaterial enthält\n(eZExtensionPackageHandler::packRefusal()).\n\nDer Maintainer einer Erweiterung kann Befunde der Prüfung nennen, von denen bekannt ist, dass sie keine Geheimnisse sind (ein Dokumentations-\nbeispiel, das die Prüfung nicht von einem echten Wert unterscheiden kann), in einer Datei package_check.ini im Wurzelverzeichnis der Erweiterung, einer\npro Zeile: AllowedFindings[]=<path below the extension>:<setting name or (kind)>, zum Beispiel\nAllowedFindings[]=settings/recaptcha.ini.append.php:PrivateKey. Sie kann nur auslassen, was sie nennt: Schlüsseldateien, ein\nBlock mit privatem Schlüssel, eine Kopie einer Einstellungsdatei und ein Link werden immer abgelehnt. Anleitung:\ndoc/eng-us/bc/6.0/extension-package-secret-check.md\n\nHANDLUNG ERFORDERLICH zum Exportieren: Tragen Sie die Erweiterung hier ein UND gewähren Sie der Rolle die Richtlinie package/export_extension.\n\nDie Erweiterungen, die exportiert werden dürfen. Leer (der Standard): keine. \"*\": jede Erweiterung, die die Prüfung durchlässt.\nGilt für jeden Weg, die Kommandozeile eingeschlossen.\nBeispiel:\nAllowedExtensions[]=myextension\nAllowedExtensions[]=*"
+    },
+    "ini:settings/package.ini [ExtensionExportSettings] RequirePolicy": {
+        "en": "enabled (the default): exporting an extension in the administration also needs the policy\npackage/export_extension (the Administrator role with all functions has it). disabled: the access to\nSetup > Extensions or to the package wizard is enough. The command line runs as no user and is not asked.",
+        "de": "enabled (der Standard): Das Exportieren einer Erweiterung in der Administration braucht außerdem die Richtlinie\npackage/export_extension (die Rolle Administrator mit allen Funktionen hat sie). disabled: Der Zugriff auf\nSetup > Erweiterungen oder auf den Paketassistenten genügt. Die Kommandozeile läuft als kein Benutzer und wird nicht gefragt."
+    },
+    "ini:settings/package.ini [InstallerSettings] HandlerList": {
+        "en": "A list of extensions which have package installation handlers support\nThe extension must place package creation handlers in the\nsubdirectory packageinstallers.",
+        "de": "Eine Liste der Erweiterungen, die Handler zum Installieren von Paketen unterstützen\nDie Erweiterung muss die Handler zum Erstellen von Paketen im\nUnterverzeichnis packageinstallers ablegen."
+    },
+    "ini:settings/package.ini [InstallerSettings] InstallBatchMaxItems": {
+        "en": "Maximum number of non-interactive install items processed per request.",
+        "de": "Höchstzahl nicht interaktiver Installationseinträge, die pro Anfrage verarbeitet werden."
+    },
+    "ini:settings/package.ini [InstallerSettings] InstallBatchTimeBudgetSeconds": {
+        "en": "Maximum wall-clock seconds spent processing install items per request.",
+        "de": "Höchstzahl der Sekunden Echtzeit, die pro Anfrage für die Verarbeitung von Installationseinträgen verwendet werden."
+    },
+    "ini:settings/package.ini [LicenseSettings] AliasList": {
+        "en": "Other names a stored license is known by, mapped to a LicenseList identifier.\nPackages made before the license became a choice store \"GPL\", which always\nmeant the GNU GPL version 2 or (at your option) any later version, the license\nof Exponential itself. An alias is shown as the license it stands for, and a\nposted alias is stored as that license's identifier.",
+        "de": "Andere Namen, unter denen eine gespeicherte Lizenz bekannt ist, einem Bezeichner aus LicenseList zugeordnet.\nPakete, die erstellt wurden, bevor die Lizenz wählbar wurde, speichern \"GPL\", was immer\ndie GNU GPL Version 2 oder (nach Ihrer Wahl) jede spätere Version bedeutete, die Lizenz\nvon Exponential selbst. Ein Alias wird als die Lizenz angezeigt, für die er steht, und ein\nabgeschickter Alias wird als Bezeichner dieser Lizenz gespeichert."
+    },
+    "ini:settings/package.ini [LicenseSettings] DefaultLicense": {
+        "en": "The licenses a package can be given in the package creation wizards\n(Setup > Packages > Create new package, every creator's \"Package information\"\nstep). The license is a strict choice from this list: the step shows a\ndrop-down and refuses any value that is not listed here.\n\nThe value stored in a package's package.xml (<licence>) is the license's\nidentifier. Use the SPDX identifier where one exists (https://spdx.org/licenses/),\notherwise an SPDX style \"LicenseRef-<name>\" identifier.\n\nThe identifier chosen when the step opens. Must be one of LicenseList.",
+        "de": "Die Lizenzen, die ein Paket in den Assistenten zum Erstellen von Paketen erhalten kann\n(Setup > Pakete > Neues Paket erstellen, der Schritt „Paketinformationen“ jedes Erstellers). Die Lizenz ist\neine feste Auswahl aus dieser Liste: Der Schritt zeigt ein\nAuswahlfeld und lehnt jeden Wert ab, der hier nicht steht.\n\nDer in der package.xml eines Pakets gespeicherte Wert (<licence>) ist der\nBezeichner der Lizenz. Verwenden Sie den SPDX-Bezeichner, wo es einen gibt (https://spdx.org/licenses/),\nsonst einen Bezeichner im SPDX-Stil \"LicenseRef-<name>\".\n\nDer Bezeichner, der beim Öffnen des Schritts gewählt ist. Muss einer aus LicenseList sein."
+    },
+    "ini:settings/package.ini [LicenseSettings] GroupList": {
+        "en": "The drop-down's groups (<optgroup>), in the order shown. Each group has a\n[LicenseGroup_<group>] block with Name=, the group's heading. A license whose\nGroup= is not listed here is shown under \"Other licenses\" at the end.",
+        "de": "Die Gruppen des Auswahlfelds (<optgroup>), in der angezeigten Reihenfolge. Jede Gruppe hat einen\nBlock [LicenseGroup_<group>] mit Name=, der Überschrift der Gruppe. Eine Lizenz, deren\nGroup= hier nicht steht, erscheint am Ende unter „Andere Lizenzen“."
+    },
+    "ini:settings/package.ini [LicenseSettings] LicenseList": {
+        "en": "The licenses that can be chosen, in the order shown within their group. Each\none has a [License_<identifier>] block:\n  Name=         the license's official name (shown as it is, not translated)\n  URL=          the official page of the license\n  Group=        the group it is listed under (see GroupList)\n  Description=  optional, a short text shown below the drop-down\n\nTo add a license, in settings/override/package.ini.append.php:\n  [LicenseSettings]\n  LicenseList[]=Apache-2.0\n  [License_Apache-2.0]\n  Name=Apache License 2.0\n  URL=https://www.apache.org/licenses/LICENSE-2.0\n  Group=software\n\nTo replace the whole list, start with an empty LicenseList[] line in the\noverride and list only the licenses you want (and set DefaultLicense to one\nof them).",
+        "de": "Die wählbaren Lizenzen, in der Reihenfolge, in der sie innerhalb ihrer Gruppe angezeigt werden. Jede\nhat einen Block [License_<identifier>]:\n  Name=         der offizielle Name der Lizenz (so angezeigt, wie er ist, nicht übersetzt)\n  URL=          die offizielle Seite der Lizenz\n  Group=        die Gruppe, unter der sie aufgeführt wird (siehe GroupList)\n  Description=  optional, ein kurzer Text unter dem Auswahlfeld\n\nUm eine Lizenz hinzuzufügen, in settings/override/package.ini.append.php:\n  [LicenseSettings]\n  LicenseList[]=Apache-2.0\n  [License_Apache-2.0]\n  Name=Apache License 2.0\n  URL=https://www.apache.org/licenses/LICENSE-2.0\n  Group=software\n\nUm die ganze Liste zu ersetzen, beginnen Sie im Override mit einer leeren Zeile LicenseList[]\nund führen nur die gewünschten Lizenzen auf (und setzen DefaultLicense auf eine\ndavon)."
+    },
+    "ini:settings/package.ini [License_CC-BY-1.0]": {
+        "en": "Version 1.0 had the same six Attribution licenses as the later versions; its\nNonCommercial-NoDerivs one was named \"NoDerivs-NonCommercial\" (by-nd-nc in its URL).",
+        "de": "Version 1.0 hatte dieselben sechs Attribution-Lizenzen wie die späteren Versionen; ihre\nNonCommercial-NoDerivs hieß \"NoDerivs-NonCommercial\" (by-nd-nc in ihrer URL)."
+    },
+    "ini:settings/package.ini [License_LicenseRef-PDM-1.0]": {
+        "en": "The Public Domain Mark labels a work that is already free of known copyright\nrestrictions; it has no SPDX identifier.",
+        "de": "Die Public Domain Mark kennzeichnet ein Werk, das bereits frei von bekannten urheberrechtlichen\nBeschränkungen ist; sie hat keinen SPDX-Bezeichner."
+    },
+    "ini:settings/package.ini [License_LicenseRef-Proprietary]": {
+        "en": "All rights reserved: the package may be used only as its owner allows. There is\nno SPDX identifier for this; the terms are the owner's, stated in the package.",
+        "de": "Alle Rechte vorbehalten: Das Paket darf nur so verwendet werden, wie sein Eigentümer es erlaubt. Dafür gibt es\nkeinen SPDX-Bezeichner; die Bedingungen sind die des Eigentümers, im Paket angegeben."
+    },
+    "ini:settings/package.ini [PackageFormatSettings] MaxDocumentBytes": {
+        "en": "The largest JSON document of a package that is read, in bytes",
+        "de": "Das größte JSON-Dokument eines Pakets, das gelesen wird, in Bytes"
+    },
+    "ini:settings/package.ini [PackageFormatSettings] RawXMLDatatypes": {
+        "en": "The JSON package format (doc/eng-us/bc/6.0/package-json-format.md).\nDatatypes whose attribute value is kept as an XML string in a JSON document ([\"#xml\", \"...\"])",
+        "de": "Das JSON-Paketformat (doc/eng-us/bc/6.0/package-json-format.md).\nDatentypen, deren Attributwert in einem JSON-Dokument als XML-Zeichenkette gehalten wird ([\"#xml\", \"...\"])"
+    },
+    "ini:settings/package.ini [PackageSettings] ExtensionDirectories": {
+        "en": "A list of extensions which have package handlers support\nThe extension must place package handlers in the\nsubdirectory packagehandlers.",
+        "de": "Eine Liste der Erweiterungen, die Paket-Handler unterstützen\nDie Erweiterung muss die Paket-Handler im\nUnterverzeichnis packagehandlers ablegen."
+    },
+    "ini:settings/package.ini [PackageSettings] HandlerAlias": {
+        "en": "Aliases for handlers, this allows handlers to have\nnicer names and also shortcuts for doing specific items.",
+        "de": "Aliase für Handler; damit können Handler\nschönere Namen und auch Kürzel für bestimmte Einträge haben."
+    },
+    "ini:settings/package.ini [PackageSettings] TypeList": {
+        "en": "Packages of extensions: the extension export wizard makes them, and the package server has\nseveral (ezwebin_extension ...). Listed since 6.0.15, so the Type limitation of the package\npolicies can name them.",
+        "de": "Pakete von Erweiterungen: Der Assistent zum Exportieren von Erweiterungen erstellt sie, und der Paketserver hat\nmehrere (ezwebin_extension ...). Seit 6.0.15 aufgeführt, damit die Einschränkung Type der Paket-\nrichtlinien sie nennen kann."
+    },
+    "ini:settings/package.ini [RepositorySettings] AdditionalRemotePackagesIndexURLs": {
+        "en": "More package servers for the setup wizard, the kickstarter and exp:install (all three\nread the index the same way, eZStepSiteTypes). Each is a folder with an index.xml, an\nhttp:// or https:// address. They are read after RemotePackagesIndexURL: a package an\nearlier index lists is kept as it is, a further server only adds the packages the\nearlier ones do not have, and a server that cannot be read is skipped.",
+        "de": "Weitere Paketserver für den Setup-Assistenten, den Kickstarter und exp:install (alle drei\nlesen den Index gleich, eZStepSiteTypes). Jeder ist ein Ordner mit einer index.xml, eine\nhttp://- oder https://-Adresse. Sie werden nach RemotePackagesIndexURL gelesen: Ein Paket, das ein\nfrüherer Index aufführt, bleibt, wie es ist, ein weiterer Server fügt nur die Pakete hinzu, die die\nfrüheren nicht haben, und ein Server, der sich nicht lesen lässt, wird übersprungen."
+    },
+    "ini:settings/package.ini [RepositorySettings] DownloadAttempts": {
+        "en": "Downloading a package (and the index): how many times the setup tries before\nit gives up, and how many seconds it waits before each further attempt (the\nlast value is used for the attempts after it). A package server that is being\nrepublished answers with errors for a few minutes.",
+        "de": "Herunterladen eines Pakets (und des Index): wie oft das Setup es versucht, bevor\nes aufgibt, und wie viele Sekunden es vor jedem weiteren Versuch wartet (der\nletzte Wert gilt für die Versuche danach). Ein Paketserver, der gerade\nneu veröffentlicht wird, antwortet einige Minuten lang mit Fehlern."
+    },
+    "ini:settings/package.ini [RepositorySettings] DownloadTimeout": {
+        "en": "Seconds a whole download may take, and seconds to wait for the connection",
+        "de": "Sekunden, die ein ganzer Download dauern darf, und Sekunden Wartezeit auf die Verbindung"
+    },
+    "ini:settings/package.ini [RepositorySettings] RemotePackagesIndexSources": {
+        "en": "Lists of further package servers kept in other settings files, as\n<file>.ini;<block>;<setting>, the setting an array of <name>=<URL>. The default reads\nthe servers added on ezupdate's Package servers page (Setup > Updates and packages),\nwhich it keeps in settings/override/ezupdate.ini.append.php. Empty the list to read\nonly the servers named above.",
+        "de": "Listen weiterer Paketserver, die in anderen Einstellungsdateien gehalten werden, als\n<file>.ini;<block>;<setting>, die Einstellung ein Array aus <name>=<URL>. Der Standard liest\ndie Server, die auf der Seite Paketserver von ezupdate hinzugefügt wurden (Setup > Updates und Pakete),\ndie es in settings/override/ezupdate.ini.append.php hält. Leeren Sie die Liste, um\nnur die oben genannten Server zu lesen."
+    },
+    "ini:settings/package.ini [RepositorySettings] RemotePackagesIndexURL": {
+        "en": "URL where Exponential setup wizard will fetch packages from\nIf you want to use the old packages which were available in\nversions prior to 3.9 use the following URL instead:\nhttp://packages.ez.no/exponential/3.9legacypackages",
+        "de": "URL, von der der Setup-Assistent von Exponential Pakete holt\nWenn Sie die alten Pakete verwenden wollen, die in\nVersionen vor 3.9 verfügbar waren, verwenden Sie stattdessen diese URL:\nhttp://packages.ez.no/exponential/3.9legacypackages"
+    },
+    "ini:settings/package.ini [RepositorySettings] RemotePackagesIndexURLBase": {
+        "en": "If RemotePackagesIndexURL is empty, the RemotePackagesIndexURLBase setting\nwill be used, appended with the Exponential version numbers, like\nRemotePackagesIndexURLBase/x.y/x.y.z for a stable release (6.0/6.0.15) and\nRemotePackagesIndexURLBase/x.y/x.y.zalpha1 for any other\n(ExponentialSDK::packageServerPath())",
+        "de": "Ist RemotePackagesIndexURL leer, wird die Einstellung RemotePackagesIndexURLBase\nverwendet, ergänzt um die Versionsnummern von Exponential, etwa\nRemotePackagesIndexURLBase/x.y/x.y.z für ein stabiles Release (6.0/6.0.15) und\nRemotePackagesIndexURLBase/x.y/x.y.zalpha1 für jedes andere\n(ExponentialSDK::packageServerPath())"
+    },
+    "ini:settings/package.ini [RepositorySettings] Vendor": {
+        "en": "Vendor name of the Exponential package directory",
+        "de": "Herstellername des Paketverzeichnisses von Exponential"
+    },
+    "ini:settings/package.ini [UploadSettings]": {
+        "en": "The limits of a package archive uploaded on package/upload, the setup wizard or ezpm import\n(eZPackageUploadInspector). An archive is also refused, whatever these say, when an entry points outside the\npackage (\"..\", an absolute path), is a link or a device, or its package.xml is not a well formed definition.\nGuide: doc/eng-us/guides/packages.md",
+        "de": "Die Grenzen eines Paketarchivs, das über package/upload, den Setup-Assistenten oder ezpm import hochgeladen wird\n(eZPackageUploadInspector). Ein Archiv wird außerdem abgelehnt, egal was diese sagen, wenn ein Eintrag aus dem\nPaket hinauszeigt (\"..\", ein absoluter Pfad), ein Link oder ein Gerät ist oder seine package.xml keine wohlgeformte Definition ist.\nAnleitung: doc/eng-us/guides/packages.md"
+    },
+    "ini:settings/package.ini [UploadSettings] AllowedSuffixes": {
+        "en": "The endings an uploaded file's name may have",
+        "de": "Die Endungen, die der Name einer hochgeladenen Datei haben darf"
+    },
+    "ini:settings/package.ini [UploadSettings] MaxArchiveSize": {
+        "en": "The largest archive accepted, in bytes (256 MiB). PHP's upload_max_filesize and post_max_size apply first.",
+        "de": "Das größte akzeptierte Archiv, in Bytes (256 MiB). Zuerst gelten upload_max_filesize und post_max_size von PHP."
+    },
+    "ini:settings/package.ini [UploadSettings] MaxEntries": {
+        "en": "The most entries (files and directories) an archive may have",
+        "de": "Die meisten Einträge (Dateien und Verzeichnisse), die ein Archiv haben darf"
+    },
+    "ini:settings/package.ini [UploadSettings] MaxUnpackedSize": {
+        "en": "The most its entries may unpack to, in bytes (2 GiB)",
+        "de": "Wie viel seine Einträge entpackt höchstens ergeben dürfen, in Bytes (2 GiB)"
+    },
+    "ini:settings/pdf.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/pdf.ini.append or\n      settings/override/pdf.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/pdf.ini.append oder\n      settings/override/pdf.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/pdf.ini [PDFGeneral] Font": {
+        "en": "The font used unless a template selects another.\n\nA name without an extension is one of the faces bundled beside the library -\nHelvetica, Times-Roman, Courier. Those are simple fonts: 256 slots, one byte\nper character, so the text has to be squeezed into OutputCharset first and\nanything that does not fit is transliterated or lost.\n\nGive the full path of a .ttf file instead and the font is embedded as a\ncomposite font, which addresses its glyphs by number rather than through a\n256 entry table. Then there is nothing to squeeze text into: utf-8 goes\nthrough as it is, OutputCharset and Transliterate stop applying, and every\ncharacter the font actually has is drawn. The text stays selectable and\nsearchable, because the map back to unicode is written with it.\n\nWhat you get is then decided by the font rather than by this software.\nDejaVuSans covers latin, latin extended, greek, cyrillic, hebrew, armenian\nand georgian. For chinese, japanese or korean point this at a font that has\nthem - DroidSansFallback, or one of the Noto CJK faces.\n\nFont=/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+        "de": "Die verwendete Schrift, sofern ein Template keine andere wählt.\n\nEin Name ohne Endung ist eine der Schriften, die neben der Bibliothek mitgeliefert werden:\nHelvetica, Times-Roman, Courier. Das sind einfache Schriften: 256 Plätze, ein Byte\npro Zeichen, der Text muss also zuerst in OutputCharset gepresst werden, und\nwas nicht passt, wird transliteriert oder geht verloren.\n\nGeben Sie stattdessen den vollen Pfad einer .ttf-Datei an, wird die Schrift als\nzusammengesetzte Schrift eingebettet, die ihre Glyphen über Nummern statt über eine\nTabelle mit 256 Einträgen anspricht. Dann muss nichts gepresst werden: utf-8 geht\nunverändert durch, OutputCharset und Transliterate gelten nicht mehr, und jedes\nZeichen, das die Schrift tatsächlich hat, wird gezeichnet. Der Text bleibt markierbar und\ndurchsuchbar, weil die Rückzuordnung zu Unicode mitgeschrieben wird.\n\nWas Sie erhalten, entscheidet dann die Schrift und nicht diese Software.\nDejaVuSans deckt Lateinisch, erweitertes Lateinisch, Griechisch, Kyrillisch, Hebräisch, Armenisch\nund Georgisch ab. Für Chinesisch, Japanisch oder Koreanisch zeigen Sie auf eine Schrift, die sie\nhat: DroidSansFallback oder eine der Noto-CJK-Schriften.\n\nFont=/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf"
+    },
+    "ini:settings/pdf.ini [PDFGeneral] FontEncoding": {
+        "en": "Which glyph each of the font's 256 slots holds. Must agree with OutputCharset\nor accents land on the wrong characters. WinAnsiEncoding is windows-1252,\nMacRomanEncoding is mac-roman, and StandardEncoding is the fonts' own layout,\nwhich is neither.",
+        "de": "Welche Glyphe jeder der 256 Plätze der Schrift enthält. Muss zu OutputCharset passen,\nsonst landen Akzente auf den falschen Zeichen. WinAnsiEncoding ist windows-1252,\nMacRomanEncoding ist mac-roman, und StandardEncoding ist die eigene Belegung der Schriften,\ndie keines von beiden ist."
+    },
+    "ini:settings/pdf.ini [PDFGeneral] ImageScaling": {
+        "en": "Set to disabled to draw images at whatever size they are handed over at,\nwhich is what happened before, overflowing page and all.",
+        "de": "Auf disabled setzen, um Bilder in der Größe zu zeichnen, in der sie übergeben werden,\nwie früher, samt Überlauf über die Seite."
+    },
+    "ini:settings/pdf.ini [PDFGeneral] LinkUnderline": {
+        "en": "Draw a rule under a link as well as colouring it blue.\n\nThe rule used to be drawn far too short, because the end of a link was\nmeasured from the start of the line rather than from the start of the link.\nThat is fixed, so this is on. Set it to disabled for links that are coloured\nand clickable but not underlined.",
+        "de": "Unter einem Link zusätzlich zur blauen Farbe eine Linie zeichnen.\n\nDie Linie wurde früher viel zu kurz gezeichnet, weil das Ende eines Links vom\nZeilenanfang statt vom Anfang des Links aus gemessen wurde.\nDas ist behoben, daher ist dies an. Setzen Sie es auf disabled für Links, die farbig\nund anklickbar, aber nicht unterstrichen sind."
+    },
+    "ini:settings/pdf.ini [PDFGeneral] MaxImageWidth": {
+        "en": "How large an image may be drawn, in points, 72 to the inch.\n\nThe templates hand images over at their pixel size and that size is then used\nas points, so a photograph 1600 pixels wide asked for 1600 points on a page\n595 points wide and ran off the paper in every direction. Images are now\nscaled down to fit, keeping their proportions. Only down: something already\nsmall enough is left as it is.\n\nLeft empty each falls back to what the page has room for - the paper less its\nmargins - which is the sensible ceiling. Set them to hold images well inside\nthe text, for instance 360 for a half page width on A4.",
+        "de": "Wie groß ein Bild gezeichnet werden darf, in Punkt, 72 pro Zoll.\n\nDie Templates übergeben Bilder in ihrer Pixelgröße, und diese Größe wird dann\nals Punkt verwendet, ein Foto mit 1600 Pixeln Breite verlangte also 1600 Punkt auf einer Seite\nmit 595 Punkt Breite und lief in jede Richtung über das Papier. Bilder werden jetzt\nunter Beibehaltung ihrer Proportionen passend verkleinert. Nur verkleinert: Was schon\nklein genug ist, bleibt, wie es ist.\n\nLeer gelassen fällt jeder Wert auf den Platz zurück, den die Seite hat (das Papier abzüglich seiner\nRänder), was die sinnvolle Obergrenze ist. Setzen Sie sie, um Bilder deutlich innerhalb\ndes Textes zu halten, zum Beispiel 360 für eine halbe Seitenbreite auf A4."
+    },
+    "ini:settings/pdf.ini [PDFGeneral] OutputCharset": {
+        "en": "The charset the pdf text is written in.\n\nIgnored when Font below names a .ttf file, because a composite font needs no\nconversion at all - see Font.\n\nOtherwise it has to be a single byte charset. The bundled fonts have a 256\nentry encoding, so a multi byte charset would be drawn one byte at a time and\nread as mojibake - \"cafÃ©\" rather than \"café\". Setting utf-8 here while using\none of those fonts is refused, with an error in the debug log, and\nwindows-1252 used instead. Point Font at a .ttf to get real utf-8.\n\nThis shipped as iso-8859-1, which was the wrong choice: the fonts are written\nwith /Encoding /WinAnsiEncoding, and WinAnsi and iso-8859-1 disagree over\n0x80-0x9F. That range holds the em dash, the euro sign, the bullet and the\ncurly quotes, so the font could draw them and the conversion threw them away\nand wrote a question mark. windows-1252 is what WinAnsiEncoding is, so it\nkeeps them. Change this only together with FontEncoding below.",
+        "de": "Der Zeichensatz, in dem der PDF-Text geschrieben wird.\n\nIgnoriert, wenn Font unten eine .ttf-Datei nennt, weil eine zusammengesetzte Schrift gar keine\nUmwandlung braucht, siehe Font.\n\nSonst muss es ein Ein-Byte-Zeichensatz sein. Die mitgelieferten Schriften haben eine Kodierung mit 256\nEinträgen, ein Mehrbyte-Zeichensatz würde also Byte für Byte gezeichnet und\nals Zeichensalat gelesen: \"cafÃ©\" statt \"café\". utf-8 hier zu setzen, während eine\ndieser Schriften verwendet wird, wird abgelehnt, mit einem Fehler im Debug-Log, und\nstattdessen windows-1252 verwendet. Zeigen Sie mit Font auf eine .ttf, um echtes utf-8 zu erhalten.\n\nAusgeliefert wurde dies als iso-8859-1, was die falsche Wahl war: Die Schriften werden\nmit /Encoding /WinAnsiEncoding geschrieben, und WinAnsi und iso-8859-1 unterscheiden sich bei\n0x80-0x9F. Dieser Bereich enthält den Geviertstrich, das Eurozeichen, den Aufzählungspunkt und die\ntypografischen Anführungszeichen; die Schrift konnte sie also zeichnen, die Umwandlung warf sie aber weg\nund schrieb ein Fragezeichen. windows-1252 ist das, was WinAnsiEncoding ist, es behält sie also. Ändern Sie dies nur zusammen mit FontEncoding unten."
+    },
+    "ini:settings/pdf.ini [PDFGeneral] Transliterate": {
+        "en": "Ignored when Font names a .ttf file, where nothing needs degrading.\n\nDegrade a character the charset above cannot hold to its closest ascii rather\nthan to a question mark, so a name in Polish or Czech comes out readable:\nLódz rather than ód. Characters with no ascii likeness at all, Japanese for\ninstance, still cannot be drawn by these fonts.",
+        "de": "Ignoriert, wenn Font eine .ttf-Datei nennt, wo nichts vereinfacht werden muss.\n\nEin Zeichen, das der Zeichensatz oben nicht aufnehmen kann, zum nächstliegenden ASCII-Zeichen vereinfachen\nstatt zu einem Fragezeichen, sodass ein polnischer oder tschechischer Name lesbar bleibt:\nLódz statt ód. Zeichen ohne jede Ähnlichkeit mit ASCII, zum Beispiel Japanisch,\nkönnen diese Schriften weiterhin nicht zeichnen."
+    },
+    "ini:settings/querycache.ini": {
+        "en": "The SQL query cache: the rows a SELECT returned, answered again until a write\nto one of the tables it read makes them stale. For the SQL engines (MySQL,\nMariaDB, PostgreSQL, SQLite, and Oracle through the ezoracle extension's\ndriver); the MongoDB driver does not use it.\nSee doc/eng-us/bc/6.0/sql-query-cache.md.",
+        "de": "Der SQL-Abfrage-Cache: die Zeilen, die ein SELECT zurückgegeben hat, erneut geliefert, bis ein Schreibzugriff\nauf eine der gelesenen Tabellen sie veraltet macht. Für die SQL-Engines (MySQL,\nMariaDB, PostgreSQL, SQLite und Oracle über den Treiber der Erweiterung\nezoracle); der MongoDB-Treiber verwendet ihn nicht.\nSiehe doc/eng-us/bc/6.0/sql-query-cache.md."
+    },
+    "ini:settings/querycache.ini [DebugSettings] Report": {
+        "en": "With the debug output on: accumulators of the group \"Query cache\" (hits,\nmisses, stores, statements not cached), a timing point when the state is\nread, and a report at the bottom with this request's counters, the database\ntime the hits saved, why statements were not cached and which writes made\neverything stale. enabled | disabled",
+        "de": "Mit eingeschalteter Debug-Ausgabe: Akkumulatoren der Gruppe „Query cache“ (Treffer,\nFehltreffer, Speicherungen, nicht gecachte Anweisungen), ein Zeitpunkt, wenn der Zustand\ngelesen wird, und ein Bericht unten mit den Zählern dieser Anfrage, der Datenbank-\nzeit, die die Treffer gespart haben, warum Anweisungen nicht gecacht wurden und welche Schreibzugriffe\nalles veraltet gemacht haben. enabled | disabled"
+    },
+    "ini:settings/querycache.ini [QueryCacheSettings] ApcuReserve": {
+        "en": "APCu is one memory for every site of the PHP-FPM pool. Full with valid\nentries, it empties itself completely: every other cache and counter in it\nis lost. With less than this share of APCu free (percent), shared mode stops\nadding results to APCu and keeps them for the request only, until entries\nexpire (below the reserve the cache deletes its expired entries from APCu,\nonce a minute for the pool). 0 never stops. Only with the APCu storage.",
+        "de": "APCu ist ein Speicher für jede Website des PHP-FPM-Pools. Voll mit gültigen\nEinträgen leert es sich vollständig: Jeder andere Cache und Zähler darin\ngeht verloren. Ist weniger als dieser Anteil von APCu frei (Prozent), fügt der gemeinsame Modus\nAPCu keine Ergebnisse mehr hinzu und behält sie nur für die Anfrage, bis Einträge\nablaufen (unter der Reserve löscht der Cache seine abgelaufenen Einträge aus APCu,\neinmal pro Minute für den Pool). 0 hört nie auf. Nur mit dem Speicher APCu."
+    },
+    "ini:settings/querycache.ini [QueryCacheSettings] ExcludeTables": {
+        "en": "Tables whose SELECTs are never cached.",
+        "de": "Tabellen, deren SELECTs nie gecacht werden."
+    },
+    "ini:settings/querycache.ini [QueryCacheSettings] MaxAge": {
+        "en": "Longest life of a result even when no write touched its tables, in seconds:\nthe bound for a write made outside Exponential (another program, a hand-run\nstatement), which the cache cannot see.",
+        "de": "Längste Lebensdauer eines Ergebnisses, auch wenn kein Schreibzugriff seine Tabellen berührt hat, in Sekunden:\ndie Grenze für einen Schreibzugriff außerhalb von Exponential (ein anderes Programm, eine von Hand ausgeführte\nAnweisung), den der Cache nicht sehen kann."
+    },
+    "ini:settings/querycache.ini [QueryCacheSettings] MaxRows": {
+        "en": "Results with more rows are not kept.",
+        "de": "Ergebnisse mit mehr Zeilen werden nicht behalten."
+    },
+    "ini:settings/querycache.ini [QueryCacheSettings] Mode": {
+        "en": "off      nothing is kept (the default)\nrequest  a memo for the length of one request: an identical SELECT is not\n         run twice in the same request\nshared   the memo, and results kept across requests (see Storage); any\n         other process (scripts, the admin host, Velocity) invalidates\n         through the shared state file in var/<site>/cache/querycache/",
+        "de": "off      nichts wird behalten (der Standard)\nrequest  ein Merkzettel für die Dauer einer Anfrage: Ein identisches SELECT wird\n         in derselben Anfrage nicht zweimal ausgeführt\nshared   der Merkzettel und über Anfragen hinweg behaltene Ergebnisse (siehe Storage); jeder\n         andere Prozess (Skripte, der Administrations-Host, Velocity) macht sie\n         über die gemeinsame Zustandsdatei in var/<site>/cache/querycache/ ungültig"
+    },
+    "ini:settings/querycache.ini [QueryCacheSettings] Storage": {
+        "en": "Where shared mode keeps results across requests:\nauto  APCu where this PHP process has it, else files (the default); on the\n      command line (cronjobs, scripts) without APCu only the request's memo\napcu  APCu only; without APCu shared works as request\nfile  files in var/<site>/cache/querycache/entries/, one per result, even\n      with APCu: every web server that mounts var/ (a cluster on NFS or a\n      SAN) shares them. The cronjob part cache_cleanup\n      (cronjobs/querycache_cleanup.php) removes the files older than MaxAge;\n      clearing the cache removes them too.",
+        "de": "Wo der gemeinsame Modus Ergebnisse über Anfragen hinweg behält:\nauto  APCu, wo dieser PHP-Prozess es hat, sonst Dateien (der Standard); auf der\n      Kommandozeile (Cronjobs, Skripte) ohne APCu nur der Merkzettel der Anfrage\napcu  nur APCu; ohne APCu arbeitet shared wie request\nfile  Dateien in var/<site>/cache/querycache/entries/, eine pro Ergebnis, auch\n      mit APCu: Jeder Webserver, der var/ einhängt (ein Cluster auf NFS oder einem\n      SAN), teilt sie. Der Cronjob-Teil cache_cleanup\n      (cronjobs/querycache_cleanup.php) entfernt die Dateien, die älter als MaxAge sind;\n      das Leeren des Caches entfernt sie ebenfalls."
+    },
+    "ini:settings/rad.ini": {
+        "en": "The registries the extension point survey reads entry by entry (Setup > RAD tools > Extension point survey,\nsetup/radsurvey/(show)/registries; doc/eng-us/bc/6.0/rad-extension-surface.md \"Registries declared in rad.ini\").\n\nA registry is a list of implementations that something reads from its settings or from its code: AI providers,\nMCP tools, queue job types, event listeners. Each one is declared here by the kernel, or by an extension in\nextension/<name>/settings/rad.ini.append.php, so that the survey counts its entries, checks each of them, and\nadds them to the headline numbers of setup/rad, without the kernel having to know the extension.\n\nDeclarations are read from settings/rad.ini, settings/override/rad.ini.append.php and the rad.ini.append.php of\nevery active extension. A later file replaces a single value of an earlier one and adds to an array; a line\n\"Registries[]\" without a value empties the list first, as everywhere in the settings (so an extension never starts\nits own list with one: it would drop the kernel's registries and every other extension's before it).",
+        "de": "Die Register, die die Übersicht der Erweiterungspunkte Eintrag für Eintrag liest (Setup > RAD-Werkzeuge > Übersicht der Erweiterungspunkte,\nsetup/radsurvey/(show)/registries; doc/eng-us/bc/6.0/rad-extension-surface.md \"Registries declared in rad.ini\").\n\nEin Register ist eine Liste von Implementierungen, die etwas aus seinen Einstellungen oder aus seinem Code liest: KI-Provider,\nMCP-Werkzeuge, Auftragstypen der Warteschlange, Event-Listener. Jedes wird hier vom Kernel deklariert oder von einer Erweiterung in\nextension/<name>/settings/rad.ini.append.php, damit die Übersicht seine Einträge zählt, jeden prüft und\nsie zu den Kopfzahlen von setup/rad hinzufügt, ohne dass der Kernel die Erweiterung kennen muss.\n\nDeklarationen werden aus settings/rad.ini, settings/override/rad.ini.append.php und der rad.ini.append.php\njeder aktiven Erweiterung gelesen. Eine spätere Datei ersetzt einen einzelnen Wert einer früheren und ergänzt ein Array; eine Zeile\n\"Registries[]\" ohne Wert leert die Liste zuerst, wie überall in den Einstellungen (eine Erweiterung beginnt ihre\neigene Liste also nie damit: Sie würde die Register des Kernels und jeder Erweiterung davor verwerfen)."
+    },
+    "ini:settings/rad.ini [RegistrySettings] Registries": {
+        "en": "The keys of the registries: [Registry_<key>] for each. A key listed without its block is shown as broken.",
+        "de": "Die Schlüssel der Register: [Registry_<key>] für jeden. Ein aufgeführter Schlüssel ohne seinen Block wird als defekt angezeigt."
+    },
+    "ini:settings/rad.ini [Registry_eventlisteners]": {
+        "en": "[Registry_<key>]\nTitle=<what the entries are>                 shown on setup/rad and setup/radsurvey (required)\nDescription=<one sentence>                    shown when the pointer rests on the registry on setup/rad\nDoc=<path to the documentation>\nTranslationContext=<context>                  of Title and Description; default kernel/setup/rad\n\nEntries read from an ini file:\n  Ini=<file>.ini                              the kernel's, the override's and every extension's copy are read\n  Section=<name> | <prefix>* | /<pattern>/    one block, a family of blocks (the rest of the name, or the first\n  Sections[]=...                                group of the pattern, is the entry's name), or several of them\n  Entries[<variable>]=<check>                 every value of <variable> in those blocks is one entry\n  Skip=<variable>                             a block in which this is true is no point (a built-in one)\nEntries a class gives (a registry that lives in code rather than in settings):\n  List=<class>::<CONSTANT> | <class>::<method>   name => class, name => array( 'class' => ... ), or a list of names\n  Implements=<class or interface>             what each class must extend or implement\nInTotal=enabled | disabled                    disabled: listed and checked, not added to the total (a list that\n                                              only refers to points counted somewhere else)\n\nA check is one of:\n  <class or interface>    the value is a class that extends or implements it\n  class                   the value is any class (an empty check means the same)\n  callable                <class>::<method>\n  listener                <event>@<class>::<method> or <event>@<function>, as [Event] Listeners[]\n  template                a template some design has (design:<path> or <path>)\n  section:<prefix>        the same ini file has a block [<prefix><value>]\n  in:<class>::<NAME>      the value is a key or a value of that class constant or public static method\n  one-of:<a>,<b>,...      the value is one of these words\n  name                    any value: the entry is counted, nothing is checked\nAn entry that fails its check is shown as broken.",
+        "de": "[Registry_<key>]\nTitle=<what the entries are>                 auf setup/rad und setup/radsurvey angezeigt (erforderlich)\nDescription=<one sentence>                    angezeigt, wenn der Zeiger auf setup/rad über dem Register ruht\nDoc=<path to the documentation>\nTranslationContext=<context>                  von Title und Description; Standard kernel/setup/rad\n\nAus einer INI-Datei gelesene Einträge:\n  Ini=<file>.ini                              die Kopie des Kernels, des Overrides und jeder Erweiterung wird gelesen\n  Section=<name> | <prefix>* | /<pattern>/    ein Block, eine Familie von Blöcken (der Rest des Namens oder die erste\n  Sections[]=...                                Gruppe des Musters ist der Name des Eintrags) oder mehrere davon\n  Entries[<variable>]=<check>                 jeder Wert von <variable> in diesen Blöcken ist ein Eintrag\n  Skip=<variable>                             ein Block, in dem dies true ist, ist kein Punkt (ein eingebauter)\nEinträge, die eine Klasse liefert (ein Register, das im Code statt in den Einstellungen lebt):\n  List=<class>::<CONSTANT> | <class>::<method>   name => class, name => array( 'class' => ... ) oder eine Liste von Namen\n  Implements=<class or interface>             was jede Klasse erweitern oder implementieren muss\nInTotal=enabled | disabled                    disabled: aufgeführt und geprüft, nicht zur Summe gezählt (eine Liste, die\n                                              nur auf Punkte verweist, die anderswo gezählt werden)\n\nEine Prüfung ist eine von:\n  <class or interface>    der Wert ist eine Klasse, die sie erweitert oder implementiert\n  class                   der Wert ist eine beliebige Klasse (eine leere Prüfung bedeutet dasselbe)\n  callable                <class>::<method>\n  listener                <event>@<class>::<method> oder <event>@<function>, wie [Event] Listeners[]\n  template                ein Template, das ein Design hat (design:<path> oder <path>)\n  section:<prefix>        dieselbe INI-Datei hat einen Block [<prefix><value>]\n  in:<class>::<NAME>      der Wert ist ein Schlüssel oder Wert dieser Klassenkonstante oder öffentlichen statischen Methode\n  one-of:<a>,<b>,...      der Wert ist eines dieser Wörter\n  name                    jeder Wert: der Eintrag wird gezählt, nichts geprüft\nEin Eintrag, der seine Prüfung nicht besteht, wird als defekt angezeigt."
+    },
+    "ini:settings/requestclassifier.ini": {
+        "en": "The request classifier: tells a probe (/wp-login.php, /.env, /backup.zip), a path traversal (../), an injection\n(union select, {{7*7}}, <script>), a known attack tool and a burst of not-found answers from an ordinary request,\nand writes one line for each such request to var/log/security.log instead of 404.log, notice.log or error.log.\nGuide: doc/eng-us/features/6.0/request-logs.md\n\nDo not edit this file: override it in settings/override/requestclassifier.ini.append.php, in a siteaccess's\nrequestclassifier.ini.append.php or in an extension's settings.\n\nClassification only. Nothing is blocked, slowed down or answered differently because of a verdict: the request\ngets the answer it would get anyway, and its log line goes to security.log. Blocking and rate limiting are left\nto listeners (Listeners[] below) and to the web server in front (request-shield under Velocity refuses some\nprobes before PHP runs, so those never reach this classifier).\n\nCost: no database. The patterns of a rule set are compiled into one regular expression, cached per version of\nthese settings in var/<site>/cache/requestclassifier/ (safe to delete; made again on the next request). Only a\n404 or 410 answer touches the not-found counter.\n\nA line in security.log (the address masked as site.ini [RequestLogSettings] MaskIP says, the query values with\nsecrets and e-mail addresses masked, the user agent as a short hash and its first 60 characters):\n[ Oct 17 2026 09:00:00 ] [203.0.x.x] probe/wp-login confidence=high 404 GET /wp-login.php siteaccess=site namespace=/wp-login.php ua=3f2a9c1b \"curl/8.5.0\"\n  probe/wp-login      <category>/<rule>: the category of the rule set and the rule that matched\n  confidence=high     low | medium | high, how sure the rule is\n  404 GET /wp-login.php   the final HTTP status (- when unknown), the method and the URI\n  namespace=          the path below the siteaccess: /admin/wp-login.php and /site/wp-login.php are both\n                      /wp-login.php, so a rule sees the same path under every siteaccess",
+        "de": "Der Anfrage-Klassifizierer: unterscheidet eine Sondierung (/wp-login.php, /.env, /backup.zip), eine Pfadüberschreitung (../), eine Injektion\n(union select, {{7*7}}, <script>), ein bekanntes Angriffswerkzeug und eine Häufung von Nicht-gefunden-Antworten von einer gewöhnlichen Anfrage\nund schreibt für jede solche Anfrage eine Zeile in var/log/security.log statt in 404.log, notice.log oder error.log.\nAnleitung: doc/eng-us/features/6.0/request-logs.md\n\nBearbeiten Sie diese Datei nicht: Überschreiben Sie sie in settings/override/requestclassifier.ini.append.php, in der\nrequestclassifier.ini.append.php eines Siteaccess oder in den Einstellungen einer Erweiterung.\n\nNur Einordnung. Wegen eines Urteils wird nichts blockiert, verlangsamt oder anders beantwortet: Die Anfrage\nerhält die Antwort, die sie ohnehin erhielte, und ihre Logzeile geht nach security.log. Blockieren und Ratenbegrenzung bleiben\nden Listenern (Listeners[] unten) und dem vorgelagerten Webserver überlassen (request-shield unter Velocity lehnt manche\nSondierungen ab, bevor PHP läuft, diese erreichen den Klassifizierer also nie).\n\nKosten: keine Datenbank. Die Muster eines Regelsatzes werden zu einem regulären Ausdruck kompiliert, pro Version\ndieser Einstellungen in var/<site>/cache/requestclassifier/ gecacht (darf gelöscht werden; bei der nächsten Anfrage neu erzeugt). Nur eine\nAntwort 404 oder 410 berührt den Zähler der Nicht-gefunden-Antworten.\n\nEine Zeile in security.log (die Adresse maskiert, wie site.ini [RequestLogSettings] MaskIP sagt, die Query-Werte mit\nGeheimnissen und E-Mail-Adressen maskiert, der User-Agent als kurzer Hash und seine ersten 60 Zeichen):\n[ Oct 17 2026 09:00:00 ] [203.0.x.x] probe/wp-login confidence=high 404 GET /wp-login.php siteaccess=site namespace=/wp-login.php ua=3f2a9c1b \"curl/8.5.0\"\n  probe/wp-login      <category>/<rule>: die Kategorie des Regelsatzes und die Regel, die zutraf\n  confidence=high     low | medium | high, wie sicher die Regel ist\n  404 GET /wp-login.php   der endgültige HTTP-Status (- wenn unbekannt), die Methode und die URI\n  namespace=          der Pfad unter dem Siteaccess: /admin/wp-login.php und /site/wp-login.php sind beide\n                      /wp-login.php, eine Regel sieht also unter jedem Siteaccess denselben Pfad"
+    },
+    "ini:settings/requestclassifier.ini [ClassifierSettings] Classification": {
+        "en": "enabled | disabled. With disabled no request is classified: probes are logged as the not-found answers they\nare (404.log) and security.log stays empty.",
+        "de": "enabled | disabled. Mit disabled wird keine Anfrage eingeordnet: Sondierungen werden als die Nicht-gefunden-Antworten protokolliert, die sie\nsind (404.log), und security.log bleibt leer."
+    },
+    "ini:settings/requestclassifier.ini [ClassifierSettings] CompileCache": {
+        "en": "enabled | disabled. With enabled the compiled patterns are kept in a PHP file in the cache directory (and in\nAPCu where it is available), so a worker that starts fresh (Velocity resets its state between requests) does not\ncompile them again. With disabled they are compiled once per request.",
+        "de": "enabled | disabled. Mit enabled werden die kompilierten Muster in einer PHP-Datei im Cache-Verzeichnis gehalten (und in\nAPCu, wo es verfügbar ist), sodass ein frisch startender Worker (Velocity setzt seinen Zustand zwischen Anfragen zurück) sie\nnicht neu kompiliert. Mit disabled werden sie einmal pro Anfrage kompiliert."
+    },
+    "ini:settings/requestclassifier.ini [ClassifierSettings] Listeners": {
+        "en": "Classes told about every verdict after its line is written: classes that implement\nexpRequestVerdictListenerInterface (onVerdict( $verdict, $context )), for example to feed a ban list or a\nnotification. None by default. A listener runs at the end of the request; one that fails is skipped.",
+        "de": "Klassen, die nach dem Schreiben der Zeile über jedes Urteil informiert werden: Klassen, die\nexpRequestVerdictListenerInterface implementieren (onVerdict( $verdict, $context )), zum Beispiel um eine Sperrliste oder eine\nBenachrichtigung zu speisen. Standardmäßig keine. Ein Listener läuft am Ende der Anfrage; einer, der scheitert, wird übersprungen."
+    },
+    "ini:settings/requestclassifier.ini [ClassifierSettings] LogFile": {
+        "en": "The file the lines are written to, in the log directory of the installation (var/log, or var/<site>/log with\nsite.ini [FileSettings] UseGlobalLogDir=disabled). It is rotated like the other logs (site.ini [FileSettings]\nLogMaxSize, LogMaxCount).",
+        "de": "Die Datei, in die die Zeilen geschrieben werden, im Log-Verzeichnis der Installation (var/log, oder var/<site>/log mit\nsite.ini [FileSettings] UseGlobalLogDir=disabled). Sie wird wie die anderen Logs rotiert (site.ini [FileSettings]\nLogMaxSize, LogMaxCount)."
+    },
+    "ini:settings/requestclassifier.ini [ClassifierSettings] RuleSets": {
+        "en": "The rule sets, in the order they are tried; the first one that has a verdict wins, so a request is in one line\nwith one rule. Each entry is an identifier; its class and its settings are in the group [RuleSet-<identifier>]\nbelow. Built in:\n  probes      category probe: things an Exponential site does not have and scanners look for\n  traversal   category traversal: ../ and its encodings, null bytes\n  injection   category injection: SQL, command, template and script injection in the URL\n  scanner     category scanner: the user agents of known attack tools\n  threshold   category threshold: more than [ThresholdSettings] Max404PerMinute not-found answers a minute\nAn extension adds its own set with RuleSets[]=<identifier> and a group [RuleSet-<identifier>] with\nClass=<its class>, a class that implements expRequestRuleSetInterface (or extends expRequestPatternRuleSet) and\nis in the extension's autoload. A class that does not exist or does not implement the interface is skipped with\na warning in the debug output. Leave a built-in set out of the list to switch it off.",
+        "de": "Die Regelsätze, in der Reihenfolge, in der sie versucht werden; der erste mit einem Urteil gewinnt, eine Anfrage steht also in einer Zeile\nmit einer Regel. Jeder Eintrag ist ein Bezeichner; seine Klasse und seine Einstellungen stehen in der Gruppe [RuleSet-<identifier>]\nunten. Eingebaut:\n  probes      Kategorie probe: Dinge, die eine Exponential-Website nicht hat und nach denen Scanner suchen\n  traversal   Kategorie traversal: ../ und seine Kodierungen, Null-Bytes\n  injection   Kategorie injection: SQL-, Befehls-, Template- und Skript-Injektion in der URL\n  scanner     Kategorie scanner: die User-Agents bekannter Angriffswerkzeuge\n  threshold   Kategorie threshold: mehr als [ThresholdSettings] Max404PerMinute Nicht-gefunden-Antworten pro Minute\nEine Erweiterung fügt ihren eigenen Satz mit RuleSets[]=<identifier> und einer Gruppe [RuleSet-<identifier>] mit\nClass=<its class> hinzu, einer Klasse, die expRequestRuleSetInterface implementiert (oder expRequestPatternRuleSet erweitert) und\nim Autoload der Erweiterung steht. Eine Klasse, die nicht existiert oder die Schnittstelle nicht implementiert, wird mit\neiner Warnung in der Debug-Ausgabe übersprungen. Lassen Sie einen eingebauten Satz aus der Liste weg, um ihn abzuschalten."
+    },
+    "ini:settings/requestclassifier.ini [RuleSet-injection] Class": {
+        "en": "Matched against the query and the path, decoded once; a posted body is never looked at. Rules: sql-union,\nsql-tautology (' or '1'='1), sql-boolean (or 1=1--), sql-time (sleep(, benchmark(), sql-schema\n(information_schema), sql-stacked (;drop table), sql-function, cmd-file (/etc/passwd), cmd-chain (;id, |cat, $(...),\nbackticks), jndi, ssti ({{7*7}}, ${7*7}, #{...}, <%= %>), xss-script (<script, %3Cscript), xss-event (onerror=,\n<svg/on...), xss-url (javascript:), php-code.\nA search for \"union station\", O'Reilly, \"select or drop\" or <b> is no injection.",
+        "de": "Gegen die Query und den einmal dekodierten Pfad geprüft; ein abgeschickter Inhalt wird nie angesehen. Regeln: sql-union,\nsql-tautology (' or '1'='1), sql-boolean (or 1=1--), sql-time (sleep(, benchmark(), sql-schema\n(information_schema), sql-stacked (;drop table), sql-function, cmd-file (/etc/passwd), cmd-chain (;id, |cat, $(...),\nBackticks), jndi, ssti ({{7*7}}, ${7*7}, #{...}, <%= %>), xss-script (<script, %3Cscript), xss-event (onerror=,\n<svg/on...), xss-url (javascript:), php-code.\nEine Suche nach \"union station\", O'Reilly, \"select or drop\" oder <b> ist keine Injektion."
+    },
+    "ini:settings/requestclassifier.ini [RuleSet-probes]": {
+        "en": "The groups of the rule sets: [RuleSet-<identifier>]. For a set built on expRequestPatternRuleSet (the built-in\nsets but threshold) these settings add to its built-in rules:\n  Class=<class>               the class of the set (needed for an extension's set; empty: the built-in class)\n  Patterns[<rule>]=<regex>    a rule of your own (or a built-in rule replaced: same name). PCRE without\n                              delimiters, matched case-insensitively; no back references (\\1) or named groups.\n                              A pattern that does not compile is left out with a warning. Avoid ## (the INI\n                              comment marker) in a pattern.\n  Disabled[]=<rule>           a built-in rule switched off\n  Excludes[<name>]=<regex>    a request whose path matches is never flagged by this set (probes: the decoded\n                              namespace path); Excludes[<built-in name>]= (empty) removes a built-in exclude\n  Confidence[<rule>]=low|medium|high, DefaultConfidence=high\nThe rule names below are the built-in ones (the second part of the first token of a line).",
+        "de": "Die Gruppen der Regelsätze: [RuleSet-<identifier>]. Für einen auf expRequestPatternRuleSet aufbauenden Satz (die eingebauten\nSätze außer threshold) ergänzen diese Einstellungen seine eingebauten Regeln:\n  Class=<class>               die Klasse des Satzes (nötig für den Satz einer Erweiterung; leer: die eingebaute Klasse)\n  Patterns[<rule>]=<regex>    eine eigene Regel (oder eine ersetzte eingebaute: gleicher Name). PCRE ohne\n                              Begrenzer, ohne Beachtung der Groß-/Kleinschreibung geprüft; keine Rückverweise (\\1) oder benannten Gruppen.\n                              Ein Muster, das sich nicht kompilieren lässt, wird mit einer Warnung ausgelassen. Vermeiden Sie ## (das\n                              Kommentarzeichen der INI) in einem Muster.\n  Disabled[]=<rule>           eine abgeschaltete eingebaute Regel\n  Excludes[<name>]=<regex>    eine Anfrage, deren Pfad passt, wird von diesem Satz nie markiert (probes: der dekodierte\n                              Namespace-Pfad); Excludes[<built-in name>]= (leer) entfernt einen eingebauten Ausschluss\n  Confidence[<rule>]=low|medium|high, DefaultConfidence=high\nDie Regelnamen unten sind die eingebauten (der zweite Teil des ersten Tokens einer Zeile)."
+    },
+    "ini:settings/requestclassifier.ini [RuleSet-probes] Class": {
+        "en": "Matched against the decoded namespace path. Rules: wp-login, wp-admin, wp-content, wp-includes, wp-config,\nxmlrpc, env, git, vcs (.svn .hg .bzr), ds-store, hidden (.htpasswd .htaccess .aws .ssh ...), dbtool (phpMyAdmin,\npma, adminer ...), phpunit, cgi-bin, server-status, actuator, phpinfo, config-file (composer.json, *.ini ...),\nexploit (hnap1, boaform ...), backup (an archive or dump at the namespace root, or with a backup-like name),\nbackup-copy (*.bak, *.old, *~).\nBuilt-in excludes, never a probe: download (/content/download/...), storage (var/storage, var/<site>/storage),\npublic-cache (var/<site>/cache/public: packed scripts and styles), assets (stylesheets, scripts, images and fonts\nunder design/, extension/ and share/).\nExample, a path of your own:\nPatterns[old-admin]=^/administrator(/|$)",
+        "de": "Gegen den dekodierten Namespace-Pfad geprüft. Regeln: wp-login, wp-admin, wp-content, wp-includes, wp-config,\nxmlrpc, env, git, vcs (.svn .hg .bzr), ds-store, hidden (.htpasswd .htaccess .aws .ssh ...), dbtool (phpMyAdmin,\npma, adminer ...), phpunit, cgi-bin, server-status, actuator, phpinfo, config-file (composer.json, *.ini ...),\nexploit (hnap1, boaform ...), backup (ein Archiv oder Dump in der Wurzel des Namespace oder mit einem nach Sicherung klingenden Namen),\nbackup-copy (*.bak, *.old, *~).\nEingebaute Ausschlüsse, nie eine Sondierung: download (/content/download/...), storage (var/storage, var/<site>/storage),\npublic-cache (var/<site>/cache/public: gepackte Skripte und Styles), assets (Stylesheets, Skripte, Bilder und Schriften\nunter design/, extension/ und share/).\nBeispiel, ein eigener Pfad:\nPatterns[old-admin]=^/administrator(/|$)"
+    },
+    "ini:settings/requestclassifier.ini [RuleSet-scanner] Class": {
+        "en": "Matched against the user agent; the rule is the tool's name: sqlmap, nikto, nuclei, masscan, zgrab, wpscan,\ndirbuster, dirb, gobuster, feroxbuster, ffuf (Fuzz Faster U Fool), wfuzz, nmap, acunetix, netsparker, nessus,\nopenvas, w3af, arachni, skipfish, jaeles, hydra, zmeu, jorgee. General clients are no tools and are never flagged\nhere: curl, wget, python-requests, headless browsers (Playwright, HeadlessChrome), search engines.",
+        "de": "Gegen den User-Agent geprüft; die Regel ist der Name des Werkzeugs: sqlmap, nikto, nuclei, masscan, zgrab, wpscan,\ndirbuster, dirb, gobuster, feroxbuster, ffuf (Fuzz Faster U Fool), wfuzz, nmap, acunetix, netsparker, nessus,\nopenvas, w3af, arachni, skipfish, jaeles, hydra, zmeu, jorgee. Allgemeine Clients sind keine Werkzeuge und werden hier nie\nmarkiert: curl, wget, python-requests, Headless-Browser (Playwright, HeadlessChrome), Suchmaschinen."
+    },
+    "ini:settings/requestclassifier.ini [RuleSet-threshold] Class": {
+        "en": "The limits are in [ThresholdSettings] above. Rule: 404-rate.",
+        "de": "Die Grenzen stehen oben in [ThresholdSettings]. Regel: 404-rate."
+    },
+    "ini:settings/requestclassifier.ini [RuleSet-traversal] Class": {
+        "en": "Matched against the raw URI and the URI decoded once. Rules: double-encoded (%252e), null-byte (%00),\nencoded-dot-dot (%2e%2e, ..%2f in any case), dot-dot (../ and ..\\).",
+        "de": "Gegen die rohe URI und die einmal dekodierte URI geprüft. Regeln: double-encoded (%252e), null-byte (%00),\nencoded-dot-dot (%2e%2e, ..%2f in jeder Schreibweise), dot-dot (../ und ..\\)."
+    },
+    "ini:settings/requestclassifier.ini [ThresholdSettings] Max404PerMinute": {
+        "en": "More than this many not-found answers (Statuses[]) to one client within WindowSeconds makes every further one in\nthat window a verdict threshold/404-rate (medium; high above twice the limit). 0 switches the rule off. The client\nis counted by a salted hash of its address in var/<site>/cache/requestclassifier/counter/, shared by every PHP\nprocess of the installation (the web server's and Velocity's); the address itself is never stored.",
+        "de": "Mehr als so viele Nicht-gefunden-Antworten (Statuses[]) an einen Client innerhalb von WindowSeconds machen jede weitere in\ndiesem Zeitfenster zu einem Urteil threshold/404-rate (medium; high über dem Doppelten der Grenze). 0 schaltet die Regel ab. Der Client\nwird über einen gesalzenen Hash seiner Adresse in var/<site>/cache/requestclassifier/counter/ gezählt, gemeinsam für jeden PHP-\nProzess der Installation (den des Webservers und den von Velocity); die Adresse selbst wird nie gespeichert."
+    },
+    "ini:settings/requestrules.ini": {
+        "en": "Request rules: what happens to a request before its module view runs.\n\nGuide with every condition, action and fact, and recipes:\n  doc/eng-us/bc/6.0/view_full_security.md\n\nA rule is a group [Rule-<name>] with conditions and an action. The rules\nnamed in RuleList[] are asked in that order about every module view the\nkernel is about to run -- after the URL alias is translated and after the\nuser's role policies allowed the view. The first rule whose conditions all\nmatch decides; when none does, the request runs as it always has.\n\nRules only ever take access away or send the visitor elsewhere. They never\ngive access that a policy refused.\n\nDo not edit this file. Override it in\n  settings/override/requestrules.ini.append.php           every siteaccess\n  settings/siteaccess/<name>/requestrules.ini.append.php  one siteaccess\n  extension/<name>/settings/requestrules.ini.append.php   from an extension\n\nCheck the settings and see what the rules decide for any address with\n  php bin/php/ezrequestrules.php -s <siteaccess> --check\n  php bin/php/ezrequestrules.php -s <siteaccess> --uri=content/view/full/2",
+        "de": "Anfrageregeln: was mit einer Anfrage geschieht, bevor ihre Modulansicht läuft.\n\nAnleitung mit jeder Bedingung, Aktion und Tatsache und mit Rezepten:\n  doc/eng-us/bc/6.0/view_full_security.md\n\nEine Regel ist eine Gruppe [Rule-<name>] mit Bedingungen und einer Aktion. Die in RuleList[]\ngenannten Regeln werden in dieser Reihenfolge zu jeder Modulansicht gefragt, die der\nKernel gleich ausführt, nachdem der URL-Alias übersetzt wurde und nachdem die\nRollenrichtlinien des Benutzers die Ansicht erlaubt haben. Die erste Regel, deren Bedingungen alle\npassen, entscheidet; wenn keine passt, läuft die Anfrage wie immer.\n\nRegeln nehmen immer nur Zugriff weg oder schicken den Besucher woandershin. Sie geben nie\nZugriff, den eine Richtlinie verweigert hat.\n\nBearbeiten Sie diese Datei nicht. Überschreiben Sie sie in\n  settings/override/requestrules.ini.append.php           jeder Siteaccess\n  settings/siteaccess/<name>/requestrules.ini.append.php  ein Siteaccess\n  extension/<name>/settings/requestrules.ini.append.php   aus einer Erweiterung\n\nPrüfen Sie die Einstellungen und sehen Sie, was die Regeln für eine Adresse entscheiden, mit\n  php bin/php/ezrequestrules.php -s <siteaccess> --check\n  php bin/php/ezrequestrules.php -s <siteaccess> --uri=content/view/full/2"
+    },
+    "ini:settings/requestrules.ini [RequestRuleSettings] ConditionHandlers": {
+        "en": "Conditions and actions by name, added to the built-in ones (listed in the\nguide). An extension adds its own:\n  ConditionHandlers[customer_tier]=myCustomerTierCondition\n  ActionHandlers[paywall]=myPaywallAction",
+        "de": "Bedingungen und Aktionen nach Namen, zusätzlich zu den eingebauten (in der\nAnleitung aufgeführt). Eine Erweiterung fügt ihre eigenen hinzu:\n  ConditionHandlers[customer_tier]=myCustomerTierCondition\n  ActionHandlers[paywall]=myPaywallAction"
+    },
+    "ini:settings/requestrules.ini [RequestRuleSettings] Enabled": {
+        "en": "true or false. With false no rule is asked; the kernel behaves as before\nthis feature existed.",
+        "de": "true oder false. Mit false wird keine Regel gefragt; der Kernel verhält sich wie vor\ndieser Funktion."
+    },
+    "ini:settings/requestrules.ini [RequestRuleSettings] FactProviders": {
+        "en": "Facts added to every request, for conditions such as Conditions[fact:<name>]:\nclasses implementing ezpRequestFactProvider.",
+        "de": "Tatsachen, die jeder Anfrage hinzugefügt werden, für Bedingungen wie Conditions[fact:<name>]:\nKlassen, die ezpRequestFactProvider implementieren."
+    },
+    "ini:settings/requestrules.ini [RequestRuleSettings] MaxRewrites": {
+        "en": "How many times one request may be rewritten (Action=rewrite) before it is\nanswered with \"not found\". Stops a rewrite loop.",
+        "de": "Wie oft eine Anfrage umgeschrieben werden darf (Action=rewrite), bevor sie mit\n„nicht gefunden“ beantwortet wird. Beendet eine Umschreibschleife."
+    },
+    "ini:settings/requestrules.ini [RequestRuleSettings] RuleList": {
+        "en": "The rules asked, in order. Empty: no rule (and no cost). A siteaccess\noverride that starts with RuleList[] (empty) replaces the list.",
+        "de": "Die gefragten Regeln, in Reihenfolge. Leer: keine Regel (und keine Kosten). Ein Siteaccess-\nOverride, das mit RuleList[] (leer) beginnt, ersetzt die Liste."
+    },
+    "ini:settings/requestrules.ini [RequestRuleSettings] RuleProviders": {
+        "en": "Rules computed in PHP: classes implementing ezpRequestRuleProvider. Their\nrules come after the RuleList rules.",
+        "de": "In PHP berechnete Regeln: Klassen, die ezpRequestRuleProvider implementieren. Ihre\nRegeln kommen nach den Regeln aus RuleList."
+    },
+    "ini:settings/requestrules.ini [Rule-system_url_full_view_to_alias]": {
+        "en": "--- Rules shipped ready to use -----------------------------------------------\nDefined here and off. Switch one on for a siteaccess by adding its name to\nRuleList[] there, e.g. in settings/siteaccess/site/requestrules.ini.append.php:\n\n  [RequestRuleSettings]\n  RuleList[]=system_url_full_view_to_alias",
+        "de": "--- Fertig mitgelieferte Regeln -----------------------------------------------\nHier definiert und aus. Schalten Sie eine für einen Siteaccess ein, indem Sie ihren Namen dort\nRuleList[] hinzufügen, z. B. in settings/siteaccess/site/requestrules.ini.append.php:\n\n  [RequestRuleSettings]\n  RuleList[]=system_url_full_view_to_alias"
+    },
+    "ini:settings/rest.ini [ApiKeySettings]": {
+        "en": "Personal API keys (publishing keys): doc/eng-us/guides/api-keys.md.\nA signed in user with the apikey/create policy makes keys on the API access page (apikey/list) and\nsends one as \"Authorization: Bearer expk_<id>_<secret>\". The request runs as the key's owner, limited\nto the key's scopes. Administrators see and revoke every key at oauthadmin/keys.",
+        "de": "Persönliche API-Schlüssel (Veröffentlichungsschlüssel): doc/eng-us/guides/api-keys.md.\nEin angemeldeter Benutzer mit der Richtlinie apikey/create erstellt Schlüssel auf der Seite API-Zugang (apikey/list) und\nsendet einen als \"Authorization: Bearer expk_<id>_<secret>\". Die Anfrage läuft als Eigentümer des Schlüssels, beschränkt\nauf die Bereiche des Schlüssels. Administratoren sehen und widerrufen jeden Schlüssel unter oauthadmin/keys."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] ApiKeys": {
+        "en": "enabled or disabled. Disabled: no key is accepted and none can be made; the pages say so.",
+        "de": "enabled oder disabled. Disabled: Kein Schlüssel wird akzeptiert, und keiner lässt sich erstellen; die Seiten sagen das."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] DefaultExpiryDays": {
+        "en": "The lifetime chosen when the form opens.",
+        "de": "Die Lebensdauer, die beim Öffnen des Formulars gewählt ist."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] DefaultReadScope": {
+        "en": "The scope a route needs: <controller class>_<action>=<scope>. A GET or HEAD route that is not\nlisted needs DefaultReadScope; any other route that is not listed is refused for a key.",
+        "de": "Der Bereich, den eine Route braucht: <controller class>_<action>=<scope>. Eine GET- oder HEAD-Route, die nicht\naufgeführt ist, braucht DefaultReadScope; jede andere nicht aufgeführte Route wird für einen Schlüssel abgelehnt."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] ExamplePath": {
+        "en": "The REST path the API access page shows in its curl examples, after ApiPrefix. Empty: a node read\nof the ezp provider, /ezp/v2/... with the ezprestapi extension, /ezp/v1/... otherwise.",
+        "de": "Der REST-Pfad, den die Seite API-Zugang in ihren curl-Beispielen nach ApiPrefix zeigt. Leer: ein Lesezugriff auf einen Knoten\ndes Providers ezp, /ezp/v2/... mit der Erweiterung ezprestapi, sonst /ezp/v1/...."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] ExpiryChoices": {
+        "en": "The lifetimes offered when a key is made, in days. 0 = does not expire, offered only when\nMaxExpiryDays is 0.",
+        "de": "Die beim Erstellen eines Schlüssels angebotenen Lebensdauern, in Tagen. 0 = läuft nicht ab, nur angeboten, wenn\nMaxExpiryDays 0 ist."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] LastUsedInterval": {
+        "en": "last_used and last_ip of a key are written at most once in this many seconds, so a busy key does\nnot write the database on every request.",
+        "de": "last_used und last_ip eines Schlüssels werden höchstens einmal in so vielen Sekunden geschrieben, damit ein viel genutzter Schlüssel\nnicht bei jeder Anfrage in die Datenbank schreibt."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] MaxExpiryDays": {
+        "en": "The longest lifetime a key may have, in days; 0 = no limit (keys that never expire are allowed).",
+        "de": "Die längste Lebensdauer, die ein Schlüssel haben darf, in Tagen; 0 = keine Grenze (Schlüssel, die nie ablaufen, sind erlaubt)."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] MaxKeysPerUser": {
+        "en": "How many keys that are not revoked or expired one user may have; 0 = no limit.",
+        "de": "Wie viele nicht widerrufene oder abgelaufene Schlüssel ein Benutzer haben darf; 0 = keine Grenze."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] RateLimitPerMinute": {
+        "en": "Requests per minute one key may send; 0 = no limit. Counted in APCu (per PHP-FPM pool or per\napplication server); without APCu the limit is not enforced and oauthadmin/keys says so.",
+        "de": "Anfragen pro Minute, die ein Schlüssel senden darf; 0 = keine Grenze. In APCu gezählt (pro PHP-FPM-Pool oder pro\nAnwendungsserver); ohne APCu wird die Grenze nicht durchgesetzt, und oauthadmin/keys sagt das."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] RouteGuards": {
+        "en": "The owner's rights checked on the node a write route acts on: create (content/create of the posted\nclassIdentifier under the posted parentNodeID), edit or remove (the route's nodeId).",
+        "de": "Die Rechte des Eigentümers, die am Knoten geprüft werden, auf den eine schreibende Route wirkt: create (content/create der abgeschickten\nclassIdentifier unter dem abgeschickten parentNodeID), edit oder remove (die nodeId der Route)."
+    },
+    "ini:settings/rest.ini [ApiKeySettings] Scopes": {
+        "en": "The scopes a key can be given: <scope>=<module>/<function> of the policy the owner needs for it,\nchecked when the key is made and again on every request.",
+        "de": "Die Bereiche, die ein Schlüssel erhalten kann: <scope>=<module>/<function> der Richtlinie, die der Eigentümer dafür braucht,\ngeprüft beim Erstellen des Schlüssels und erneut bei jeder Anfrage."
+    },
+    "ini:settings/rest.ini [Authentication] DefaultUserID": {
+        "en": "Default user to authenticate when authentication is disabled or the route used doesn't need authentication\nIf left empty, site.ini/[UserSettings].AnonymousUserID will be used",
+        "de": "Standardbenutzer, der authentifiziert wird, wenn die Authentifizierung deaktiviert ist oder die verwendete Route keine Authentifizierung braucht\nWenn leer, wird site.ini/[UserSettings].AnonymousUserID verwendet"
+    },
+    "ini:settings/rest.ini [Authentication] RequireHTTPS": {
+        "en": "AuthenticationStyle=ezpRestBasicAuthStyle",
+        "de": "AuthenticationStyle=ezpRestBasicAuthStyle"
+    },
+    "ini:settings/rest.ini [CacheSettings] ApplicationCache": {
+        "en": "Global switch to enable/disable REST application cache",
+        "de": "Globaler Schalter zum Aktivieren/Deaktivieren des REST-Anwendungs-Caches"
+    },
+    "ini:settings/rest.ini [CacheSettings] ApplicationCacheDefault": {
+        "en": "Default value if no specific value has been defined for your controller/action\nIf enabled, result of each service call will be cached\nYou can refine this with setting specific to your controller/action\nThe system will look for a [<controllerClass>_<action>_CacheSettings] block to check\nif cache can be used, and if so, which TTL to use\nIf this block cannot be found, the system will search at the controller level,\nand so look for a [<controllerClass>_CacheSettings] block.\nSee example block below for more information\nBasically this setting allow you to activate the cache to your controllers/actions individually",
+        "de": "Standardwert, wenn für Ihren Controller/Ihre Aktion kein eigener Wert definiert ist\nWenn aktiviert, wird das Ergebnis jedes Dienstaufrufs gecacht\nSie können das mit Einstellungen für Ihren Controller/Ihre Aktion verfeinern\nDas System sucht einen Block [<controllerClass>_<action>_CacheSettings], um zu prüfen,\nob der Cache verwendet werden darf und, wenn ja, welche TTL\nWird dieser Block nicht gefunden, sucht das System auf Ebene des Controllers,\nalso nach einem Block [<controllerClass>_CacheSettings].\nWeitere Informationen im Beispielblock unten\nIm Grunde erlaubt diese Einstellung, den Cache für Ihre Controller/Aktionen einzeln zu aktivieren"
+    },
+    "ini:settings/rest.ini [CacheSettings] DefaultCacheTTL": {
+        "en": "Set default TTL to 10min, in seconds",
+        "de": "Standard-TTL auf 10 Minuten setzen, in Sekunden"
+    },
+    "ini:settings/rest.ini [CacheSettings] RouteApcCache": {
+        "en": "Example for action \"viewContent\", in \"ezpRestContentController\" controller class\n[ezpRestContentController_viewContent_CacheSettings]\nApplicationCache=enabled\nCacheTTL=3600\nBelow an example for every actions contained in \"ezpRestContentController\" controller class\n[ezpRestContentController_CacheSettings]\nApplicationCache=enabled\nCacheTTL=1200\nSwitch to enable/disable Routes cache with APC",
+        "de": "Beispiel für die Aktion \"viewContent\" in der Controller-Klasse \"ezpRestContentController\"\n[ezpRestContentController_viewContent_CacheSettings]\nApplicationCache=enabled\nCacheTTL=3600\nUnten ein Beispiel für alle Aktionen der Controller-Klasse \"ezpRestContentController\"\n[ezpRestContentController_CacheSettings]\nApplicationCache=enabled\nCacheTTL=1200\nSchalter zum Aktivieren/Deaktivieren des Routen-Caches mit APC"
+    },
+    "ini:settings/rest.ini [CacheSettings] RouteApcCacheTTL": {
+        "en": "TTL for Route APC cache, in seconds",
+        "de": "TTL des APC-Routen-Caches, in Sekunden"
+    },
+    "ini:settings/rest.ini [OAuthSettings] AuthorizeRequiresPolicy": {
+        "en": "enabled or disabled. Enabled (the default): a signed in user may authorize an OAuth client at oauth/authorize only\nwith the policy oauth/authorize (optionally limited by siteaccess); without it the client gets error=access_denied.\ndisabled: every signed in user may authorize clients, as before 6.0.15. Use it only for a short time during an\nupgrade, until \"php bin/php/addoauthauthorizepolicy.php\" has granted the policy (doc/eng-us/bc/6.0/oauth-authorize-policy.md).",
+        "de": "enabled oder disabled. Enabled (der Standard): Ein angemeldeter Benutzer darf einen OAuth-Client unter oauth/authorize nur\nmit der Richtlinie oauth/authorize autorisieren (wahlweise nach Siteaccess eingeschränkt); ohne sie erhält der Client error=access_denied.\ndisabled: Jeder angemeldete Benutzer darf Clients autorisieren, wie vor 6.0.15. Verwenden Sie es nur kurz während eines\nUpgrades, bis \"php bin/php/addoauthauthorizepolicy.php\" die Richtlinie gewährt hat (doc/eng-us/bc/6.0/oauth-authorize-policy.md)."
+    },
+    "ini:settings/rest.ini [OAuthSettings] TokenTTL": {
+        "en": "OAuth token/authcode time to live, in seconds\nDefault is one hour",
+        "de": "Lebensdauer von OAuth-Token/Autorisierungscode, in Sekunden\nStandard ist eine Stunde"
+    },
+    "ini:settings/rest.ini [PreRoutingFilters]": {
+        "en": "Skip (auth) filter for every action in 'myController' which is of API version 2\nSkipFilter[]=myController_*;2\nFor future use\nRunFilter[]",
+        "de": "(Auth-)Filter für jede Aktion in 'myController' der API-Version 2 überspringen\nSkipFilter[]=myController_*;2\nFür künftige Verwendung\nRunFilter[]"
+    },
+    "ini:settings/rest.ini [PreRoutingFilters] Filters": {
+        "en": "Custom filters implementing ezpRestPreRoutingFilterInterface to be executed,\nbefore routes are created.",
+        "de": "Eigene Filter, die ezpRestPreRoutingFilterInterface implementieren und ausgeführt werden,\nbevor die Routen erzeugt werden."
+    },
+    "ini:settings/rest.ini [RequestFilters] Filters": {
+        "en": "Custom filters implementing ezpRestRequestFilterInterface, to be executed,\nafter the request object has been created.",
+        "de": "Eigene Filter, die ezpRestRequestFilterInterface implementieren und ausgeführt werden,\nnachdem das Anfrageobjekt erzeugt wurde."
+    },
+    "ini:settings/rest.ini [ResponseFilters] Filters": {
+        "en": "Custom filters implementing ezpRestResponseFilterInterface, to be executed,\nafter the view has generated a response.",
+        "de": "Eigene Filter, die ezpRestResponseFilterInterface implementieren und ausgeführt werden,\nnachdem die View eine Antwort erzeugt hat."
+    },
+    "ini:settings/rest.ini [ResultFilters] Filters": {
+        "en": "Custom filters implementing ezpRestResultFilterInterface, to be executed,\nafter the result has been computed.",
+        "de": "Eigene Filter, die ezpRestResultFilterInterface implementieren und ausgeführt werden,\nnachdem das Ergebnis berechnet wurde."
+    },
+    "ini:settings/rest.ini [RouteSettings] SkipFilter": {
+        "en": "Pattern for the skip filter\nSkipFilter[]=controller_action;version\nIf the version component is not listed version \"1\" is assumed.",
+        "de": "Muster für den Überspring-Filter\nSkipFilter[]=controller_action;version\nIst der Versionsteil nicht angegeben, wird Version \"1\" angenommen."
+    },
+    "ini:settings/rest.ini [ezp7xRestContentController_viewContent_OutputSettings]": {
+        "en": "The same template for the content controller of the ezprestapi extension, which serves the node reads of\nREST API v1 and v2 (the XHTML renderer looks the section up by controller class and action)",
+        "de": "Dasselbe Template für den Inhalts-Controller der Erweiterung ezprestapi, der die Lesezugriffe auf Knoten der\nREST API v1 und v2 bedient (der XHTML-Renderer sucht den Abschnitt nach Controller-Klasse und Aktion)"
+    },
+    "ini:settings/setup.ini": {
+        "en": "Exponential configuration file for eZ Setup\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/setup.ini.append or\n      settings/override/setup.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\n\nThis file has settings for all tests that are run\nby the setup and also has some settings for the\nsetup system itself.",
+        "de": "Exponential-Konfigurationsdatei für eZ Setup\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/setup.ini.append oder\n      settings/override/setup.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\n\nDiese Datei enthält Einstellungen für alle Tests, die\ndas Setup ausführt, und einige Einstellungen für das\nSetup-System selbst."
+    },
+    "ini:settings/setup.ini [DatabaseSettings] DefaultPort_pgsql": {
+        "en": "Default<Setting>_<type> replaces the value above on the database page for\nthat system: a PostgreSQL server has no user root and listens on 5432.",
+        "de": "Default<Setting>_<type> ersetzt auf der Datenbankseite den Wert oben für\ndieses System: Ein PostgreSQL-Server hat keinen Benutzer root und lauscht auf 5432."
+    },
+    "ini:settings/setup.ini [DatabaseSettings] DefaultType": {
+        "en": "The database system the setup wizard lists first and preselects.\nOne of sqlite3, mysqli, pgsql, mongodb. SQLite needs no database server;\nwhen the PHP sqlite3 extension is missing the wizard falls back to the\nfirst available system and says so.",
+        "de": "Das Datenbanksystem, das der Setup-Assistent zuerst aufführt und vorauswählt.\nEines von sqlite3, mysqli, pgsql, mongodb. SQLite braucht keinen Datenbankserver;\nfehlt die PHP-Erweiterung sqlite3, weicht der Assistent auf das\nerste verfügbare System aus und sagt das."
+    },
+    "ini:settings/setup.ini [DatabaseSettings] SQLSchema": {
+        "en": "CleanSQL=kernel_clean.sql\nDemoSQL=demokernel.sql",
+        "de": "CleanSQL=kernel_clean.sql\nDemoSQL=demokernel.sql"
+    },
+    "ini:settings/setup.ini [RegistrationSettings] Receiver": {
+        "en": "Where the setup's registration step mails its report when kickstart.ini\n[registration] Send=true (the default is false). Empty: nothing is sent.\nThe old upstream registration address no longer exists and is never used.",
+        "de": "Wohin der Registrierungsschritt des Setups seinen Bericht mailt, wenn kickstart.ini\n[registration] Send=true (der Standard ist false). Leer: Es wird nichts gesendet.\nDie alte Registrierungsadresse des Upstream-Projekts existiert nicht mehr und wird nie verwendet."
+    },
+    "ini:settings/setup.ini [ezcversion] TestClass": {
+        "en": "Check for correct eZ Components version by existence of\nclass and function since there are no way of getting version information atm",
+        "de": "Die richtige Version der eZ Components anhand vorhandener\nKlasse und Funktion prüfen, da es derzeit keine Möglichkeit gibt, Versionsinformationen zu erhalten"
+    },
+    "ini:settings/shop.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/shop.ini.append or\n      settings/override/shop.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/shop.ini.append oder\n      settings/override/shop.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/shop.ini [BasketInfoSettings] ExtensionDirectories": {
+        "en": "If you are going to implement your basketinfo handler in an extension\nthen you should add the extension name to the list below.\nIn that case basketinfo handlers will be searched for\nin the following (hardcoded) directory:\nextension/<your_extension>/basketinfohandlers\nbeside directories specified in 'RepositoryDirectories' setting.",
+        "de": "Wenn Sie Ihren Basketinfo-Handler in einer Erweiterung umsetzen wollen,\nfügen Sie den Namen der Erweiterung der Liste unten hinzu.\nDann werden Basketinfo-Handler im folgenden\n(fest eingestellten) Verzeichnis gesucht:\nextension/<your_extension>/basketinfohandlers\nneben den Verzeichnissen aus der Einstellung 'RepositoryDirectories'."
+    },
+    "ini:settings/shop.ini [BasketInfoSettings] Handler": {
+        "en": "Specifies basketinfo handler class/file name. For example, if the value is\n\"ezcustom\", then the handler class should be named\neZCustomBasketInfoHandler (case does not matter) and placed to file\nezcustombasketinfohandler.php residing in a directory specified by\n\"RepositoryDirectories\" and \"ExtensionDirectories\" settings.\nezdefault is the default basket info handler, that provides basic\ncalculated information about basket items.",
+        "de": "Gibt den Klassen-/Dateinamen des Basketinfo-Handlers an. Ist der Wert zum Beispiel\n\"ezcustom\", muss die Handler-Klasse\neZCustomBasketInfoHandler heißen (Groß-/Kleinschreibung egal) und in der Datei\nezcustombasketinfohandler.php in einem Verzeichnis liegen, das die Einstellungen\n\"RepositoryDirectories\" und \"ExtensionDirectories\" angeben.\nezdefault ist der Standard-Handler für Warenkorbinformationen, der grundlegende\nberechnete Informationen über die Einträge im Warenkorb liefert."
+    },
+    "ini:settings/shop.ini [BasketInfoSettings] RepositoryDirectories": {
+        "en": "Directories where basketinfo handlers should be searched for.",
+        "de": "Verzeichnisse, in denen nach Basketinfo-Handlern gesucht wird."
+    },
+    "ini:settings/shop.ini [BasketSettings] BasketViewName": {
+        "en": "The view name the shop uses for the basket page, and for every redirect,\nform action and breadcrumb that targets it. Any simple token works - letters,\ndigits, dash and underscore - and the shop is then served at /shop/<name>/:\n\n  BasketViewName=basket   -> /shop/basket/   (default)\n  BasketViewName=cart     -> /shop/cart/\n  BasketViewName=buyer    -> /shop/buyer/\n\n/shop/basket/ stays registered whatever the setting, so existing links and\nbookmarks keep resolving; the setting decides where the shop sends people.\n\nA design may theme a name by adding shop/<name>.tpl - shop/cart.tpl ships as\nan example. Without one, the ordinary shop/basket.tpl is used, so a new name\nneeds no template of its own. Anything outside the allowed characters falls\nback to basket rather than producing a URL that routes nowhere.",
+        "de": "Der Ansichtsname, den der Shop für die Warenkorbseite verwendet, und für jede Weiterleitung,\njede Formularaktion und jeden Brotkrumenpfad, der darauf zielt. Jedes einfache Token funktioniert (Buchstaben,\nZiffern, Bindestrich und Unterstrich), und der Shop ist dann unter /shop/<name>/ erreichbar:\n\n  BasketViewName=basket   -> /shop/basket/   (Standard)\n  BasketViewName=cart     -> /shop/cart/\n  BasketViewName=buyer    -> /shop/buyer/\n\n/shop/basket/ bleibt unabhängig von der Einstellung registriert, vorhandene Links und\nLesezeichen funktionieren also weiter; die Einstellung entscheidet, wohin der Shop die Leute schickt.\n\nEin Design kann einen Namen gestalten, indem es shop/<name>.tpl hinzufügt; shop/cart.tpl wird als\nBeispiel mitgeliefert. Ohne eines wird das gewöhnliche shop/basket.tpl verwendet, ein neuer Name\nbraucht also kein eigenes Template. Alles außerhalb der erlaubten Zeichen fällt\nauf basket zurück, statt eine URL zu erzeugen, die nirgendwohin führt."
+    },
+    "ini:settings/shop.ini [CurrencySettings] PreferredCurrency": {
+        "en": "Default currency for shopping.",
+        "de": "Standardwährung für den Einkauf."
+    },
+    "ini:settings/shop.ini [ExchangeRatesSettings] BaseCurrency": {
+        "en": "Base currency for rates: USD/<base>, NOK/<base>, UAH/<base>, ...",
+        "de": "Basiswährung für die Kurse: USD/<base>, NOK/<base>, UAH/<base>, ..."
+    },
+    "ini:settings/shop.ini [ExchangeRatesSettings] ExchangeRatesUpdateHandler": {
+        "en": "eZECB - european central bank",
+        "de": "eZECB - Europäische Zentralbank"
+    },
+    "ini:settings/shop.ini [ExchangeRatesSettings] ExtensionDirectories": {
+        "en": "A list of extensions containing exchange rates update handlers\nThese handlers must be placed in : <extension>/<your_extension>/exchangeratehandlers/<handler_name>/<handler_name>handler.php\nAnd contain a class called : <handler_name>Handler\nThis class must implement eZExchangeRatesUpdateHandler ( kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php )\nIt's common to create a settings/shop.ini.append file\nin your extension and define 'ExtensionDirectories' in it to automatically\nget handler from the extension when it's turned on.",
+        "de": "Eine Liste der Erweiterungen mit Handlern zum Aktualisieren der Wechselkurse\nDiese Handler müssen hier liegen: <extension>/<your_extension>/exchangeratehandlers/<handler_name>/<handler_name>handler.php\nUnd eine Klasse namens <handler_name>Handler enthalten\nDiese Klasse muss eZExchangeRatesUpdateHandler implementieren ( kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php )\nÜblicherweise legt man in der Erweiterung eine Datei settings/shop.ini.append\nan und definiert darin 'ExtensionDirectories', um automatisch\nden Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist."
+    },
+    "ini:settings/shop.ini [MathSettings] MathHandler": {
+        "en": "eZPHPMath   - using php floating point calculations\neZBCMath    - using bcmath extension.",
+        "de": "eZPHPMath   - mit Gleitkommaberechnungen von PHP\neZBCMath    - mit der Erweiterung bcmath."
+    },
+    "ini:settings/shop.ini [MathSettings] MathScale": {
+        "en": "MathScale defines significant digits after the decimal point\nNote: applyes for eZBCMath handler only.",
+        "de": "MathScale legt die signifikanten Stellen nach dem Dezimalpunkt fest\nHinweis: gilt nur für den Handler eZBCMath."
+    },
+    "ini:settings/shop.ini [MathSettings] RoundingPrecision": {
+        "en": "RoundingPrecision defines significant digits after the decimal point\nwhich should be kept.\nvalues:\n  numeric, e.g. 0, 1, 2, ...",
+        "de": "RoundingPrecision legt die signifikanten Stellen nach dem Dezimalpunkt fest,\ndie erhalten bleiben sollen.\nWerte:\n  numerisch, z. B. 0, 1, 2, ..."
+    },
+    "ini:settings/shop.ini [MathSettings] RoundingTarget": {
+        "en": "RoundingTarget forces rounding for specified target.\nExample:\ninput: number = 89.468543\n       precision = 2\n       target_1 = 5\n       target_2 = 99\nusual rounding: round( number, precision ) = 89.47\napply target_1: round( number, precision, target ) = 89.45\napply target_2: round( number, precision, target ) = 89.99\nvalues:\n  numeric, e.g. 1,2,...\n  false",
+        "de": "RoundingTarget erzwingt das Runden auf ein angegebenes Ziel.\nBeispiel:\ninput: number = 89.468543\n       precision = 2\n       target_1 = 5\n       target_2 = 99\nübliches Runden: round( number, precision ) = 89.47\nmit target_1: round( number, precision, target ) = 89.45\nmit target_2: round( number, precision, target ) = 89.99\nWerte:\n  numerisch, z. B. 1,2,...\n  false"
+    },
+    "ini:settings/shop.ini [MathSettings] RoundingType": {
+        "en": "RoundingType defines rounding method for autoconversions.\nPossible values: none, round, ceil, floor",
+        "de": "RoundingType legt die Rundungsmethode für automatische Umrechnungen fest.\nMögliche Werte: none, round, ceil, floor"
+    },
+    "ini:settings/shop.ini [OrderReceiptSettings] BcryptCost": {
+        "en": "bcrypt cost for the receipt signature, 4 to 6: enough work to make guessing\nexpensive, little enough that a receipt opens instantly. Receipts made at an\nearlier cost keep working.",
+        "de": "bcrypt-Aufwand für die Signatur des Belegs, 4 bis 6: genug Arbeit, um Raten\nteuer zu machen, wenig genug, dass sich ein Beleg sofort öffnet. Belege, die mit einem\nfrüheren Aufwand erstellt wurden, funktionieren weiter."
+    },
+    "ini:settings/shop.ini [OrderReceiptSettings] Secret": {
+        "en": "The secret that signs receipt addresses. Leave empty to have one generated\nfor this installation on first use and kept in <VarDir>/secrets/orderreceipt.key\n(mode 0600, outside the web root's served paths). Set it (32 characters or\nmore) to share receipts between installations that share a database. Set it\nin an override file, never here. Changing it changes every receipt address.",
+        "de": "Das Geheimnis, das die Adressen der Belege signiert. Lassen Sie es leer, damit bei der ersten Verwendung eines\nfür diese Installation erzeugt und in <VarDir>/secrets/orderreceipt.key gehalten wird\n(Modus 0600, außerhalb der vom Webserver ausgelieferten Pfade). Setzen Sie es (32 Zeichen oder\nmehr), um Belege zwischen Installationen zu teilen, die sich eine Datenbank teilen. Setzen Sie es\nin einer Override-Datei, nie hier. Eine Änderung ändert jede Belegadresse."
+    },
+    "ini:settings/shop.ini [OrderViewSettings] OrderLinkView": {
+        "en": "Where the system links a placed order: after checkout, in the customer's\norder list and history, and in the order confirmation e-mail.\n  orderview    - shop/orderview/<id>: the classic order view. For an order\n                 placed without an account it works only in the session that\n                 placed it, and stops working once that session expires.\n  orderreceipt - shop/orderreceipt/<token>: the order's permanent receipt.\n                 It never expires, can be bookmarked, printed and downloaded,\n                 and opens for whoever holds the link -- from any browser or\n                 device, with or without an account, no sign-in needed. The\n                 signed token is the key, so the link is as private as the\n                 receipt. Shop administrators, and a signed-in customer for\n                 their own orders, can open it without the link.\nshop/orderreceipt/<token> works either way; this only picks what is linked.\nThe administration interface keeps linking orders to shop/orderview, where\nthey are managed. shop/orderreciept/<token> redirects to shop/orderreceipt.",
+        "de": "Wohin das System eine aufgegebene Bestellung verlinkt: nach dem Bezahlvorgang, in der Bestellliste und dem\nVerlauf des Kunden und in der Bestätigungsmail der Bestellung.\n  orderview    - shop/orderview/<id>: die klassische Bestellansicht. Für eine Bestellung,\n                 die ohne Konto aufgegeben wurde, funktioniert sie nur in der Sitzung, die\n                 sie aufgegeben hat, und nicht mehr, sobald diese Sitzung abläuft.\n  orderreceipt - shop/orderreceipt/<token>: der dauerhafte Beleg der Bestellung.\n                 Er läuft nie ab, lässt sich als Lesezeichen speichern, drucken und herunterladen\n                 und öffnet sich für jeden, der den Link hat, von jedem Browser oder\n                 Gerät, mit oder ohne Konto, ohne Anmeldung. Das\n                 signierte Token ist der Schlüssel, der Link ist also so privat wie der\n                 Beleg. Shop-Administratoren und ein angemeldeter Kunde für seine\n                 eigenen Bestellungen können ihn ohne den Link öffnen.\nshop/orderreceipt/<token> funktioniert in beiden Fällen; dies wählt nur, was verlinkt wird.\nDie Administrationsoberfläche verlinkt Bestellungen weiterhin auf shop/orderview, wo\nsie verwaltet werden. shop/orderreciept/<token> leitet auf shop/orderreceipt weiter."
+    },
+    "ini:settings/shop.ini [ShippingSettings] ExtensionDirectories": {
+        "en": "If you are going to implement your shipping handler in an extension\nthen you should add the extension name to the list below.\nIn that case shipping handlers will be searched for\nin the following (hardcoded) directory:\nextension/<your_extension>/shippinghandlers\nbeside directories specified in 'RepositoryDirectories' setting.",
+        "de": "Wenn Sie Ihren Versand-Handler in einer Erweiterung umsetzen wollen,\nfügen Sie den Namen der Erweiterung der Liste unten hinzu.\nDann werden Versand-Handler im folgenden\n(fest eingestellten) Verzeichnis gesucht:\nextension/<your_extension>/shippinghandlers\nneben den Verzeichnissen aus der Einstellung 'RepositoryDirectories'."
+    },
+    "ini:settings/shop.ini [ShippingSettings] RepositoryDirectories": {
+        "en": "Specifies shipping handler class/file name. For example, if the value is\n\"ezcustom\", then the handler class should be named\neZCustomShippingHandler (case does not matter) and placed to file\nezcustomshippinghandler.php residing in a directory specified by\n\"RepositoryDirectories\" and \"ExtensionDirectories\" settings.\nHandler=ezdefault\nDirectories where shippping handlers should be searched for.",
+        "de": "Gibt den Klassen-/Dateinamen des Versand-Handlers an. Ist der Wert zum Beispiel\n\"ezcustom\", muss die Handler-Klasse\neZCustomShippingHandler heißen (Groß-/Kleinschreibung egal) und in der Datei\nezcustomshippinghandler.php in einem Verzeichnis liegen, das die Einstellungen\n\"RepositoryDirectories\" und \"ExtensionDirectories\" angeben.\nHandler=ezdefault\nVerzeichnisse, in denen nach Versand-Handlern gesucht wird."
+    },
+    "ini:settings/shop.ini [VATSettings] DynamicVatTypeName": {
+        "en": "Name of the dynamic VAT type displayed in class/object view/edit GUI.",
+        "de": "Name des dynamischen Mehrwertsteuertyps, der in der Oberfläche zum Anzeigen/Bearbeiten von Klassen und Objekten angezeigt wird."
+    },
+    "ini:settings/shop.ini [VATSettings] ExtensionDirectories": {
+        "en": "If you are going to implement your VAT handler in an extension\nthen you should add the extension name to the list below.\nIn that case VAT handlers will be searched for in the following directory:\nextension/<your_extension>/vathandlers",
+        "de": "Wenn Sie Ihren Mehrwertsteuer-Handler in einer Erweiterung umsetzen wollen,\nfügen Sie den Namen der Erweiterung der Liste unten hinzu.\nDann werden Mehrwertsteuer-Handler im folgenden Verzeichnis gesucht:\nextension/<your_extension>/vathandlers"
+    },
+    "ini:settings/shop.ini [VATSettings] ProductCategoryAttribute": {
+        "en": "Specifies VAT handler class/file name. For example, if the value is\n\"ezdefault\", then the handler class should be named\neZDefaultVATHandler (case does not matter) and placed to file\nezdefaultvathandler.php residing in a directory specified by\n\"RepositoryDirectories\" and \"ExtensionDirectories\" settings.\nHandler=ezdefault\nIdentifier of the product category content attribute.\nE.g. \"ProductCategoryAttribute=category\".",
+        "de": "Gibt den Klassen-/Dateinamen des Mehrwertsteuer-Handlers an. Ist der Wert zum Beispiel\n\"ezdefault\", muss die Handler-Klasse\neZDefaultVATHandler heißen (Groß-/Kleinschreibung egal) und in der Datei\nezdefaultvathandler.php in einem Verzeichnis liegen, das die Einstellungen\n\"RepositoryDirectories\" und \"ExtensionDirectories\" angeben.\nHandler=ezdefault\nBezeichner des Inhaltsattributs für die Produktkategorie.\nZ. B. \"ProductCategoryAttribute=category\"."
+    },
+    "ini:settings/shop.ini [VATSettings] RepositoryDirectories": {
+        "en": "Directories where VAT handlers should be searched for.",
+        "de": "Verzeichnisse, in denen nach Mehrwertsteuer-Handlern gesucht wird."
+    },
+    "ini:settings/shop.ini [VATSettings] RequireUserCountry": {
+        "en": "If set to false, no errors will be displayed in case if user country\nis not specified. One might want this when using a custom VAT handler.",
+        "de": "Wenn false, werden keine Fehler angezeigt, falls das Land des Benutzers\nnicht angegeben ist. Das kann man bei einem eigenen Mehrwertsteuer-Handler wollen."
+    },
+    "ini:settings/shop.ini [VATSettings] UserCountryAttribute": {
+        "en": "Identifier of the user country content attribute.\nE.g. \"UserCountryAttribute=country\".",
+        "de": "Bezeichner des Inhaltsattributs für das Land des Benutzers.\nZ. B. \"UserCountryAttribute=country\"."
+    },
+    "ini:settings/shopaccount.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/shopaccount.ini.append or\n      settings/override/shopaccount.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/shopaccount.ini.append oder\n      settings/override/shopaccount.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/shopaccount.ini [AccountSettings]": {
+        "en": "Settings for how user accounts should be handled in the shop/checkout\ndefault is to use internal user accounts in the system\nsimple is for handling account information without user registration",
+        "de": "Einstellungen dazu, wie Benutzerkonten im Shop/Bezahlvorgang behandelt werden\ndefault verwendet die internen Benutzerkonten des Systems\nsimple behandelt Kontoinformationen ohne Benutzerregistrierung"
+    },
+    "ini:settings/shopaccount.ini [AccountSettings] Alias": {
+        "en": "Handler=ezdefault\nAllows for overriding a handler with another",
+        "de": "Handler=ezdefault\nErlaubt, einen Handler durch einen anderen zu ersetzen"
+    },
+    "ini:settings/shopaccount.ini [ConfirmOrderSettings]": {
+        "en": "Alias[ezdefault]=eztest\nSettings for how order emails should be handled in the shop/checkout\ndefault is to send confirmation emails to both customer and admin.",
+        "de": "Alias[ezdefault]=eztest\nEinstellungen dazu, wie Bestellmails im Shop/Bezahlvorgang behandelt werden\nStandard ist, Bestätigungsmails an Kunde und Administrator zu senden."
+    },
+    "ini:settings/shopaccount.ini [HandlerSettings] ExtensionRepositories": {
+        "en": "A list of extensions which have shop account handlers\nIt's common to create a settings/shopaccount.ini.append file\nin your extension and add the extension name to automatically\nget handlers from the extension when it's turned on.",
+        "de": "Eine Liste der Erweiterungen, die Handler für Shop-Konten haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/shopaccount.ini.append\nan und trägt den Namen der Erweiterung ein, um automatisch\ndie Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist."
+    },
+    "ini:settings/shopaccount.ini [HandlerSettings] Repositories": {
+        "en": "A list of directories to search for shopaccount handlers",
+        "de": "Eine Liste der Verzeichnisse, in denen nach Handlern für Shop-Konten gesucht wird"
+    }
+}

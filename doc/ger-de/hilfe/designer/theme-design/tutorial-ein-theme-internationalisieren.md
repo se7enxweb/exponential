@@ -32,7 +32,7 @@ gruppiert. Verwenden Sie `design/<your theme>/<area>`:
 ```
 
 Auch Attributwerte (`title`, `aria-label`, `alt` von Design-Bildern, `placeholder`): Maskieren Sie sie, wenn sie in ein Attribut gehen,
-`|i18n( ... )|wash`. Siehe [Der Operator i18n](../templates/der-i18n-operator.md).
+`|i18n( ... )|wash`. Siehe [Der Operator i18n](../vorlagen/der-i18n-operator.md).
 
 ## Schritt 2: Platzhalter, keine Verkettung
 
@@ -92,7 +92,7 @@ TranslationExtensions[]=mytheme
 ## Schritt 5: Daten, Zahlen und Richtung
 
 - Daten und Zahlen über `l10n`: `{$date|l10n( 'shortdate' )}`, `{$amount|l10n( 'number' )}`
-  ([Daten, Zahlen und l10n](../templates/datum-zahlen-und-l10n.md)).
+  ([Daten, Zahlen und l10n](../vorlagen/datum-zahlen-und-l10n.md)).
 - `lang` und `dir` am `<html>` aus `$site` ([Designs für rechts nach links](rechts-nach-links-designs.md)).
 - Lassen Sie Platz: Deutsche und französische Texte sind oft ein Drittel länger als englische. Knöpfe und Menüs müssen umbrechen oder
   wachsen.
@@ -110,7 +110,7 @@ php bin/php/ezcache.php --clear-id=translation
 
 ## Verwandte Seiten
 
-- [Texte in Templates übersetzen](../templates/template-texte-uebersetzen.md)
+- [Texte in Templates übersetzen](../vorlagen/template-texte-uebersetzen.md)
 - [Übersetzungen in einem Theme](../erweiterungen/uebersetzungen-in-einem-theme.md)
 - [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -91,7 +91,7 @@ override/templates/
 ```
 
 Das Design media hat hier `content`, `edit`, `embed`, `full`, `line`, `node`, `standard` und `view`. Siehe
-[Grundlagen der Overrides](../templates/override-grundlagen.md).
+[Grundlagen der Overrides](../vorlagen/override-grundlagen.md).
 
 ## Zwei echte Beispiele
 

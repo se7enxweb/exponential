@@ -85,7 +85,7 @@ Betreiber entscheidet, ob und mit welchem Anbieter ([expai](../../../../eng-us/f
 | Der Log-Viewer | Administrator, Hoster | [Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md) |
 | Wartungsmodus mit einer freundlichen Seite | Administrator | [Wartungsmodus](../../../anleitungen/wartungsmodus.md) |
 | Die Upgrade-Prüfung von Dateien und Datenbank | Administrator, Partner | [Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
-| Exponential Velocity, der mitgelieferte Anwendungsserver | Hoster | [Velocity für Unternehmen](../../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) |
+| Exponential Velocity, der mitgelieferte Anwendungsserver | Hoster | [Velocity für Unternehmen](../../unternehmen/zuverlaessigkeit/velocity-fuer-unternehmen.md) |
 | Das Hilfesystem in der Administration (`/exphelp/dashboard`) | Mitarbeitende, deren Rolle `exphelp/read` hat | [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md) |
 
 ## Sicherheit
@@ -106,7 +106,7 @@ oft die günstigste Verbesserung, die Sie vornehmen können.
 ## Verwandte Seiten
 
 - [Funktionen, die Kunden oft übersehen](oft-uebersehene-funktionen.md)
-- [Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)
-- [Wofür Sie nicht bezahlen](../../../../eng-us/help/businesses/costs/what-you-do-not-pay-for.md)
+- [Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)
+- [Wofür Sie nicht bezahlen](../../unternehmen/kosten/wofuer-sie-nicht-bezahlen.md)
 - [Jährliche Überprüfung des Nutzens](jaehrliche-ueberpruefung-des-nutzens.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

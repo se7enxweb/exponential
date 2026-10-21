@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für die Leitung und die Person, die Konten verwaltet, wenn jemand das Team verlässt, der Vertrag eines
 Freiberuflers endet oder eine Agentur die Arbeit zurückgibt. Der Zugriff sollte am letzten Arbeitstag enden, nicht bei
-der nächsten jährlichen Überprüfung ([Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)). In
+der nächsten jährlichen Überprüfung ([Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)). In
 Exponential ist der sichere Weg, das Konto zu **deaktivieren**, statt es zu entfernen.
 
 ## Inhalt
@@ -89,5 +89,5 @@ Checked by (manager): ______________
 
 - [Neue Mitarbeitende einarbeiten](neue-mitarbeitende-einarbeiten.md)
 - [Konten, Passwörter und zweistufige Anmeldung](konten-passwoerter-und-zweistufige-anmeldung.md)
-- [Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

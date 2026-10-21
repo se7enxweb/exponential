@@ -54,7 +54,7 @@ Eine Handvoll Dateien: genug, um einen Siteaccess auf das Design umzustellen und
   Match[class_identifier]=article
   ```
 
-  die zeigt, wie ein Override die Vollansicht einer Klasse ersetzt ([Grundlagen der Overrides](../templates/override-grundlagen.md)).
+  die zeigt, wie ein Override die Vollansicht einer Klasse ersetzt ([Grundlagen der Overrides](../vorlagen/override-grundlagen.md)).
 - Ein Siteaccess verwendet das Design, sobald sein `SiteDesign` (oder `AdditionalSiteDesignList[]`) `sevenx_themes_super` nennt.
 
 ## Drei Zeilen, die zu korrigieren sind
@@ -91,7 +91,7 @@ Schreiben Sie bei der Gelegenheit den Zeichensatz schlicht: `<meta charset="utf-
    [Theme-Erweiterungen: hier beginnen](../erweiterungen/theme-erweiterungen-hier-beginnen.md)).
 2. Ersetzen Sie den Rahmen durch ein Pagelayout mit Landmarks und einem Skip-Link ([Landmarks und Überschriften](landmarks-und-ueberschriften.md)).
 3. Fügen Sie `site.css` Design-Token und einen dunklen Modus hinzu ([Design-Token](design-tokens.md)).
-4. Fügen Sie Override-Regeln pro Klasse und View-Modus hinzu ([Knoten-Templates nach Klasse](../templates/knoten-templates-nach-klasse.md)).
+4. Fügen Sie Override-Regeln pro Klasse und View-Modus hinzu ([Knoten-Templates nach Klasse](../vorlagen/knoten-templates-nach-klasse.md)).
 5. Fügen Sie Übersetzungen für seine Texte hinzu ([Tutorial: ein Theme internationalisieren](tutorial-ein-theme-internationalisieren.md)).
 
 ## Verwandte Seiten

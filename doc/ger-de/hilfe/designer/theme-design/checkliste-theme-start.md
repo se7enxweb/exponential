@@ -33,7 +33,7 @@ Kopieren Sie sie in Ihr Ticket und haken Sie sie ab.
 ## Templates
 
 - [ ] `./console exp:eztemplatecheck <design>/templates/` meldet jede Datei als gültig ([Ein Design debuggen](ein-design-debuggen.md)).
-- [ ] Jeder ausgegebene Wert ist maskiert ([Wash und Maskierung](../templates/wash-und-maskierung.md)).
+- [ ] Jeder ausgegebene Wert ist maskiert ([Wash und Maskierung](../vorlagen/wash-und-maskierung.md)).
 - [ ] Jeder Text der Oberfläche läuft über `i18n` mit dem Kontext des Themes.
 - [ ] Jedes Listen-fetch hat ein Limit; kein fetch in einer Schleife.
 - [ ] Cache-Blöcke haben die richtigen Schlüssel; nichts Benutzerspezifisches in Templates im View-Cache ([Caching für Designer](caching-fuer-designer.md)).

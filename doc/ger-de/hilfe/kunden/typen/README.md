@@ -69,7 +69,7 @@ Ihr Administrator, Ihr Hosting-Anbieter oder Ihr Implementierungspartner.
 ## Verwandte Seiten
 
 - [Welcher Kundentyp sind Sie?](welcher-kundentyp-sind-sie.md)
-- [Welcher Bereich zu Ihrer Organisation passt](../../../../eng-us/help/businesses/which-section-fits-your-organization.md): dieselbe Frage aus Sicht einer Organisation, die noch auswählt
+- [Welcher Bereich zu Ihrer Organisation passt](../../unternehmen/welcher-bereich-zu-ihrer-organisation-passt.md): dieselbe Frage aus Sicht einer Organisation, die noch auswählt
 - [Was Sie bauen können](../../../../eng-us/help/creators/website-creators/what-you-can-build.md): die Sicht der Website-Ersteller
 - [Erste Schritte](../../erste-schritte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -38,7 +38,7 @@ dieser Hilfe steht.
    die **Design-Kaskade**, und nimmt die erste Datei, die er findet ([Die Design-Kaskade](theme-design/die-design-kaskade.md)).
 3. Das **Pagelayout** rahmt jede Seite um das Ergebnis des Moduls ein ([Das Pagelayout](theme-design/das-pagelayout.md)).
 4. **Templates** in der Sprache TPL stellen Inhalte dar, und **Overrides** wählen ein Template je Klasse, Knoten oder
-   Sektion ([Templates im Überblick](templates/templates-ueberblick.md), [Override-Grundlagen](templates/override-grundlagen.md)).
+   Sektion ([Templates im Überblick](vorlagen/templates-ueberblick.md), [Override-Grundlagen](vorlagen/override-grundlagen.md)).
 5. Stylesheets und Skripte erreichen den Browser von ezjscore **gepackt**, ohne Inline-Code
    ([Stylesheets laden](theme-design/stylesheets-laden.md), [CSP-sicheres Design](theme-design/csp-sicheres-design.md)).
 
@@ -51,8 +51,8 @@ dieser Hilfe steht.
 
 ### Tag 2: die Template-Sprache
 
-- [ ] [TPL-Syntax: Grundlagen](templates/tpl-syntax-grundlagen.md), [Variablen und def](templates/variablen-und-def.md),
-      [Foreach-Schleifen](templates/foreach-schleifen.md), [Wash und Maskierung](templates/wash-und-maskierung.md).
+- [ ] [TPL-Syntax: Grundlagen](vorlagen/tpl-syntax-grundlagen.md), [Variablen und def](vorlagen/variablen-und-def.md),
+      [Foreach-Schleifen](vorlagen/foreach-schleifen.md), [Wash und Maskierung](vorlagen/wash-und-maskierung.md).
 
 ### Tag 3: Ihr eigenes Theme
 
@@ -60,7 +60,7 @@ dieser Hilfe steht.
 
 ### Tag 4: Inhalte und Overrides
 
-- [ ] Rufen Sie eine Liste ab ([Fetch-Grundlagen](templates/fetch-grundlagen.md)) und überschreiben Sie eine Vollansicht
+- [ ] Rufen Sie eine Liste ab ([Fetch-Grundlagen](vorlagen/fetch-grundlagen.md)) und überschreiben Sie eine Vollansicht
       ([Tutorial: eine Vollansicht überschreiben](theme-design/tutorial-eine-vollansicht-ueberschreiben.md)).
 
 ### Tag 5: Qualität
@@ -73,7 +73,7 @@ dieser Hilfe steht.
 | Bereich | Was er abdeckt | Beginnen Sie mit |
 |---|---|---|
 | Theme-Design | Designs, Kaskade, Pagelayout, CSS und JS, Bilder und Schriften, Responsive Design, Barrierefreiheit, Dunkelmodus, rechts nach links, CSP, Leistung, Layout-Editor | [Die Design-Kaskade](theme-design/die-design-kaskade.md) |
-| Templates | die Sprache TPL, Operatoren und Funktionen, Inhalte abrufen, Ansichtsmodi, Overrides, Debugging | [Templates im Überblick](templates/templates-ueberblick.md) |
+| Templates | die Sprache TPL, Operatoren und Funktionen, Inhalte abrufen, Ansichtsmodi, Overrides, Debugging | [Templates im Überblick](vorlagen/templates-ueberblick.md) |
 | Theme-Erweiterungen | Metadaten, Einstellungen, Paketierung, die RAD-Assistenten für Designs und Pakete | [Theme-Erweiterungen: hier beginnen](erweiterungen/theme-erweiterungen-hier-beginnen.md) |
 | Veröffentlichung | Repositories, Versionen, Releases, Packagist, Lizenzen, Veröffentlichen | [Ein Theme veröffentlichen: hier beginnen](veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md) |
 | Verkauf | Themes und Dienstleistungen verkaufen | [Themes und Dienstleistungen verkaufen: hier beginnen](verkauf/verkaufen-hier-beginnen.md) |

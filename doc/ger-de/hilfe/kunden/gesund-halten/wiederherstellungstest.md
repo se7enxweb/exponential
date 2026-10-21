@@ -12,16 +12,16 @@ type: help
 „Ein Backup, das Sie nie wiederhergestellt haben, ist eine Hoffnung“ ([Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md)).
 Diese Seite ist für den Betreiber, der einen Beweis statt einer Hoffnung möchte: was er verlangen soll, was ein guter
 Wiederherstellungstest prüft und was als Protokoll aufzubewahren ist. Die Übung Schritt für Schritt steht unter
-[Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md) und, für Hoster, unter
+[Wiederherstellungsübungen](../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md) und, für Hoster, unter
 [Wiederherstellung und Wiederherstellungstests](../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md).
 
 ## Wie oft
 
 Die Quellen setzen ein Minimum: wiederherstellen „mindestens einmal auf einem anderen Rechner und nach jedem größeren
 Upgrade“, und die wöchentliche Checkliste des Betriebsleitfadens verlangt, dass ein aktuelles Backup „mindestens einmal
-auf einem anderen Rechner wiederhergestellt wurde“ ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)).
+auf einem anderen Rechner wiederhergestellt wurde“ ([Wiederherstellungsübungen](../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md)).
 Die Backup-Checkliste für Unternehmen verlangt eine Wiederherstellung auf einem anderen Rechner „im letzten Quartal“
-([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)). Wählen Sie einen
+([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)). Wählen Sie einen
 Rhythmus, tragen Sie ihn in den Kalender ein und benennen Sie die Person, die Ihnen das Ergebnis meldet.
 
 ## Was Sie verlangen sollten
@@ -39,7 +39,7 @@ Ihnen Folgendes zu schicken:
 
 ## Prüfungen, die eine Wiederherstellung beweisen
 
-Aus [Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md):
+Aus [Wiederherstellungsübungen](../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md):
 
 | Prüfung | Gutes Ergebnis |
 |---|---|
@@ -57,7 +57,7 @@ Bei einem Shop zusätzlich: Die neueste Bestellung, die Sie erwarten, steht in d
 ## Die Kopie still und vertraulich halten
 
 Eine wiederhergestellte Kopie ist eine vollständige Website mit echten Konten und echten E-Mail-Adressen. Die Seite zur
-Übung nennt vier Regeln ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)):
+Übung nennt vier Regeln ([Wiederherstellungsübungen](../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md)):
 
 1. E-Mails werden in Dateien geschrieben, nicht versendet (`[MailSettings] Transport=file` auf dem Testrechner).
 2. Die Crontab wird auf dem Testrechner nicht installiert, sodass keine Benachrichtigungen oder Newsletter laufen.
@@ -85,7 +85,7 @@ Test copy removed on:     ____
 ```
 
 Bewahren Sie die Protokolle zusammen auf. Sie sind Nachweise für eine Prüfung, einen Versicherer oder einen Kunden, der
-fragt, wie Sie seine Daten schützen ([Compliance-Nachweise aus dem Prüfprotokoll](../../../../eng-us/help/businesses/security/compliance-evidence-from-the-audit-trail.md)).
+fragt, wie Sie seine Daten schützen ([Compliance-Nachweise aus dem Prüfprotokoll](../../unternehmen/sicherheit/compliance-nachweise-aus-dem-audit-trail.md)).
 
 ## Wenn ein Test fehlschlägt
 
@@ -93,7 +93,7 @@ Ein fehlgeschlagener Test ist ein Erfolg des Verfahrens: Sie haben es an einem r
 Behebung, ein Datum und einen neuen Test. Häufige Befunde laut der Seite zur Übung: fehlende Bilder, weil die Hälfte mit
 den Dateien nicht gesichert wurde, Fehler über fehlende Tabellen, weil das Backup von einem anderen Release stammt,
 alte Inhalte, weil Caches nicht geleert wurden, und eine Wiederherstellung, die viel länger dauert als erwartet, weil die
-Website gewachsen ist ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)). Beheben Sie die
+Website gewachsen ist ([Wiederherstellungsübungen](../../unternehmen/zuverlaessigkeit/wiederherstellungsuebungen.md)). Beheben Sie die
 Ursache, aktualisieren Sie das schriftliche Verfahren und testen Sie erneut.
 
 ## Verwandte Seiten

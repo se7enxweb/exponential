@@ -93,7 +93,7 @@ Dieselbe Suche läuft für `stylesheets/index.css` (über `ezcss_load`) und für
 Wenn ein Template angefordert wird, prüft der Kernel zuerst die Override-Regeln von `override.ini` für dieses Template. Passt eine Regel auf
 die aktuelle Seite (Klasse, Knoten, View-Modus ...), wird ihre `MatchFile` verwendet, gesucht unter `override/templates/` über dieselben
 Basen. Nur wenn keine Regel passt, wird die einfache Kopie der Kaskade verwendet. Siehe
-[Grundlagen der Overrides](../templates/override-grundlagen.md).
+[Grundlagen der Overrides](../vorlagen/override-grundlagen.md).
 
 ## Die Caches der Kaskade
 

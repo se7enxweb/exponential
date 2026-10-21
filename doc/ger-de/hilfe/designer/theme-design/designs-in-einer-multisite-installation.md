@@ -99,7 +99,7 @@ SiteDesign=example
 - **Bilder und Links in gemeinsamen Templates.** Verwenden Sie `ezimage`, `ezdesign` und `ezurl`, nie Pfade mit einem Design- oder
   Siteaccess-Namen darin, damit dasselbe Template für jede Website funktioniert.
 - **Overrides nach Knoten-id** unterscheiden sich pro Website-Baum. Ziehen Sie Klassenbezeichner, Sektionen oder Remote-ids vor
-  ([Match-Schlüssel der Overrides](../templates/override-match-schluessel.md)).
+  ([Match-Schlüssel der Overrides](../vorlagen/override-match-schluessel.md)).
 
 ## Verwandte Seiten
 

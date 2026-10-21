@@ -22,13 +22,13 @@ stehen in alphabetischer Reihenfolge der englischen Fachwörter; jeder verweist 
 
 **Attribut (Attribute).** Ein Feld eines Inhaltsobjekts (der Titel, der Haupttext, das Bild). In Templates
 `$node.data_map.<identifier>`; gezeichnet mit `{attribute_view_gui attribute=...}`. Siehe
-[attribute_view_gui](../templates/attribute-view-gui.md).
+[attribute_view_gui](../vorlagen/attribute-view-gui.md).
 
 **Block.** Ein Element in einer Zone eines Layouts (Text, Bild, Liste, Hero ...), gezeichnet von einem Block-Template. Siehe
 [Blockdefinitionen](blockdefinitionen.md).
 
 **Cache-Block.** Ein Bereich `{cache-block}` ... `{/cache-block}` eines Templates, dessen Ausgabe gespeichert und wiederverwendet wird.
-Siehe [Cache-block](../templates/cache-block.md).
+Siehe [Cache-block](../vorlagen/cache-block.md).
 
 **Kaskade (Design-Kaskade, cascade).** Die geordnete Liste der Design-Ordner, die der Kernel nach einer Datei durchsucht. Siehe
 [Die Design-Kaskade](die-design-kaskade.md).
@@ -43,7 +43,7 @@ sich oft pro Klasse (`class_identifier`).
 Richtlinie blockiert Inline-Code. Siehe [CSP-sicheres Design](csp-sicheres-design.md).
 
 **Datentyp (datatype).** Die Art eines Feldes (Textzeile, Rich Text, Bild, Datum). Jeder hat Ansichts- und Bearbeitungstemplates unter
-`content/datatype/`. Siehe [Ansichtstemplates der Datentypen](../templates/datentyp-ansichtstemplates.md).
+`content/datatype/`. Siehe [Ansichtstemplates der Datentypen](../vorlagen/datentyp-ansichtstemplates.md).
 
 **Design.** Ein benannter Ordner mit Templates, Stylesheets, Skripten und Bildern. Siehe [Was ein Design ist](was-ein-design-ist.md).
 
@@ -51,12 +51,12 @@ Richtlinie blockiert Inline-Code. Siehe [CSP-sicheres Design](csp-sicheres-desig
 [Design-Erweiterungen](design-erweiterungen.md).
 
 **fetch-Funktion (fetch function).** Ein Template-Aufruf, der Daten liest: `fetch( 'content', 'list', hash( ... ) )`. Siehe
-[Grundlagen von fetch](../templates/fetch-grundlagen.md).
+[Grundlagen von fetch](../vorlagen/fetch-grundlagen.md).
 
 ## G bis O
 
 **i18n.** Der Template-Operator, der einen Text übersetzt: `'Read more'|i18n( 'design/mytheme' )`. Siehe
-[Der Operator i18n](../templates/der-i18n-operator.md).
+[Der Operator i18n](../vorlagen/der-i18n-operator.md).
 
 **Layout (Layout-Editor).** Eine benannte Anordnung von Zonen mit Blöcken, die einer Seite durch eine Regel zugewiesen wird. Siehe
 [Layouts für Designer](layouts-fuer-designer.md).
@@ -65,15 +65,15 @@ Richtlinie blockiert Inline-Code. Siehe [CSP-sicheres Design](csp-sicheres-desig
 Siehe [Variablen des Pagelayouts](pagelayout-variablen.md).
 
 **Knoten (node).** Ein Ort eines Inhaltsobjekts im Inhaltsbaum. Ein Objekt kann mehrere Knoten haben. Templates von Ansichten erhalten
-`$node`. Siehe [Knoten, Objekte und Attribute](../templates/knoten-objekte-und-attribute.md).
+`$node`. Siehe [Knoten, Objekte und Attribute](../vorlagen/knoten-objekte-und-attribute.md).
 
 **Objekt (Inhaltsobjekt, object).** Ein Stück Inhalt mit seinen Feldern und Versionen.
 
 **Operator.** Eine Template-Funktion, verwendet mit Pipe- oder Aufrufsyntax: `$text|wash`, `concat( 'a', 'b' )`. Siehe
-[Operatoren im Überblick](../templates/operatoren-ueberblick.md).
+[Operatoren im Überblick](../vorlagen/operatoren-ueberblick.md).
 
 **Override.** Eine Regel in `override.ini`, die für eine Seite, die Bedingungen erfüllt, ein anderes Template verwendet. Siehe
-[Grundlagen der Overrides](../templates/override-grundlagen.md).
+[Grundlagen der Overrides](../vorlagen/override-grundlagen.md).
 
 ## P bis Z
 
@@ -83,7 +83,7 @@ Siehe [Variablen des Pagelayouts](pagelayout-variablen.md).
 **Pagelayout.** Das äußerste Template, `pagelayout.tpl`, das jede Seite einrahmt. Siehe [Das Pagelayout](das-pagelayout.md).
 
 **Persistente Variable (persistent variable).** Ein Hash, den ein View-Template für das Pagelayout füllt. Siehe
-[Die persistent variable](../templates/die-persistent-variable.md).
+[Die persistent variable](../vorlagen/die-persistent-variable.md).
 
 **Regel (Layouts, rule).** Die Zuordnung von Anfragen zu einem Layout, mit Zielen, Bedingungen und einer Priorität. Siehe
 [Layout-Regeln](layout-regeln.md).
@@ -93,7 +93,7 @@ Siehe [Variablen des Pagelayouts](pagelayout-variablen.md).
 
 **StandardDesign.** Das letzte Design jeder Kaskade, standardmäßig `standard`.
 
-**Template.** Eine `.tpl`-Datei in der Template-Sprache. Siehe [Templates im Überblick](../templates/templates-ueberblick.md).
+**Template.** Eine `.tpl`-Datei in der Template-Sprache. Siehe [Templates im Überblick](../vorlagen/templates-ueberblick.md).
 
 **Token (Design-Token).** Eine benannte CSS-Custom-Property für eine Farbe, eine Größe oder eine Schrift, mit einem Wert pro Theme.
 Siehe [Design-Token](design-tokens.md).
@@ -102,9 +102,9 @@ Siehe [Design-Token](design-tokens.md).
 [Caching für Designer](caching-fuer-designer.md).
 
 **View-Modus (view mode).** Die Art, wie ein Knoten gezeigt wird: `full`, `line`, `embed`, `embed-inline` ... Siehe
-[View-Modi](../templates/ansichtsmodi.md).
+[View-Modi](../vorlagen/ansichtsmodi.md).
 
-**Wash.** Der Operator, der Text für die HTML-Ausgabe maskiert. Siehe [Wash und Maskierung](../templates/wash-und-maskierung.md).
+**Wash.** Der Operator, der Text für die HTML-Ausgabe maskiert. Siehe [Wash und Maskierung](../vorlagen/wash-und-maskierung.md).
 
 **Zone.** Ein benannter Bereich eines Layouts (`main`, `sidebar`, `footer`), der Blöcke enthält. Siehe
 [Layouttypen und Zonen](layouttypen-und-zonen.md).

@@ -208,7 +208,7 @@ Match[class_identifier]=article
 </article>
 ```
 
-Verwenden Sie die Attributbezeichner der Artikelklasse Ihrer Installation ([Grundlagen der Overrides](../templates/override-grundlagen.md)).
+Verwenden Sie die Attributbezeichner der Artikelklasse Ihrer Installation ([Grundlagen der Overrides](../vorlagen/override-grundlagen.md)).
 
 ## Schritt 7: ein Siteaccess, der das Design verwendet
 

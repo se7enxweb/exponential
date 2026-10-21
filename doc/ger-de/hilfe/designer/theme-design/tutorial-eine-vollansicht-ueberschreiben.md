@@ -72,7 +72,7 @@ Match[class_identifier]=event
 </article>
 ```
 
-Das Vollansichts-Template erhält `$node` (den gezeigten Knoten), `$view_parameters` und `$language_code` ([Vollansicht](../templates/vollansicht.md)).
+Das Vollansichts-Template erhält `$node` (den gezeigten Knoten), `$view_parameters` und `$language_code` ([Vollansicht](../vorlagen/vollansicht.md)).
 Prüfen Sie `has_content`, bevor Sie optionale Felder ausgeben.
 
 ## Schritt 4: Caches leeren und ansehen
@@ -94,9 +94,9 @@ Seitenquelltext `override/templates/full/event.tpl` um den Inhalt. Wird noch das
 
 ## Verwandte Seiten
 
-- [Grundlagen der Overrides](../templates/override-grundlagen.md)
-- [Knoten-Templates nach Klasse](../templates/knoten-templates-nach-klasse.md)
-- [View-Modi](../templates/ansichtsmodi.md)
+- [Grundlagen der Overrides](../vorlagen/override-grundlagen.md)
+- [Knoten-Templates nach Klasse](../vorlagen/knoten-templates-nach-klasse.md)
+- [View-Modi](../vorlagen/ansichtsmodi.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

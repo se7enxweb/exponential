@@ -81,7 +81,7 @@ ebenso. Kopieren Sie nur die Block-Templates, deren Markup Sie ändern möchten.
 ## Verwandte Seiten
 
 - [Das Pagelayout](das-pagelayout.md)
-- [Ein Layout in Templates holen](../templates/ein-layout-in-templates-abrufen.md)
+- [Ein Layout in Templates holen](../vorlagen/ein-layout-in-templates-abrufen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

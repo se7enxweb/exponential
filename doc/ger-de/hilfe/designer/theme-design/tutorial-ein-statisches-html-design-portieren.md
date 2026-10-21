@@ -59,7 +59,7 @@ Fußbereich und Menü in Teile `pagelayout/*.tpl` auf ([Das Pagelayout](das-page
 | `<title>Site</title>` | einen Titel aus dem Pfad der Seite und `$site.title` |
 | `href="index.html"` | `href={'/'\|ezurl}` |
 | `src="img/logo.svg"` | `src={'logo.svg'\|ezimage}` |
-| ein festes Menü | ein fetch der Kinder der Wurzel ([Menüs und Navigation](../templates/menues-und-navigation.md)) |
+| ein festes Menü | ein fetch der Kinder der Wurzel ([Menüs und Navigation](../vorlagen/menues-und-navigation.md)) |
 
 ## Schritt 4: Seitentypen werden zu View-Templates
 

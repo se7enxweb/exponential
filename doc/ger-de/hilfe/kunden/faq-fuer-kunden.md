@@ -109,5 +109,5 @@ Es sind Vorlagen, keine Rechtsberatung.
 - [Glossar für Kunden](glossar-fuer-kunden.md)
 - [Kunden: hier beginnen](kunden-hier-beginnen.md)
 - [Shop-FAQ](handel/shop-faq.md)
-- [FAQ für Unternehmen](../../../eng-us/help/businesses/businesses-faq.md)
+- [FAQ für Unternehmen](../unternehmen/faq-fuer-unternehmen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

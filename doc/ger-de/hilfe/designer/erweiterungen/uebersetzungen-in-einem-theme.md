@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Designer, deren Theme eigene Texte zeigt („Weiterlesen“, „Diese Website durchsuchen“,
 Schaltflächenbeschriftungen) und in mehr als einer Sprache funktionieren soll. Die Seite der Templates erklärt
-[Template-Texte übersetzen](../templates/template-texte-uebersetzen.md); hier geht es um die Dateien in der Erweiterung.
+[Template-Texte übersetzen](../vorlagen/template-texte-uebersetzen.md); hier geht es um die Dateien in der Erweiterung.
 
 ## Die Dateien
 

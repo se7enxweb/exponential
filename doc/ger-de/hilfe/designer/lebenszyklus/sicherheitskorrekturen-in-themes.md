@@ -17,7 +17,7 @@ haben; ein Template, das sie ohne Maskierung ausgibt, lässt jemanden Skripte in
 
 | Problem | Beispiel | Korrektur |
 |---|---|---|
-| Ausgabe nicht maskiert | `{$node.name}` in HTML | `{$node.name\|wash}` ([Wash und Maskierung](../templates/wash-und-maskierung.md)) |
+| Ausgabe nicht maskiert | `{$node.name}` in HTML | `{$node.name\|wash}` ([Wash und Maskierung](../vorlagen/wash-und-maskierung.md)) |
 | Für den falschen Kontext maskiert | Nur für JavaScript maskiert, aber der Wert landet in HTML | Für jeden Kontext maskieren, den er durchläuft |
 | Werte in Inline-Skripten | Ein Titel, in einen Skriptblock geschrieben | In einem `data-*`-Attribut übergeben; kein Inline-Skript |
 | Besuchereingaben in URLs | Ein Suchbegriff in einem Link | Für die URL maskieren, dann für HTML |
