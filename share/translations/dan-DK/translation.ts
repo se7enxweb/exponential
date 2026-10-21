@@ -20938,8 +20938,8 @@ Navigeringsdel</translation>
         <translation>INI-indstillinger</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Hver INI-fil læses i lag: settings/&lt;file&gt;.ini først, derefter filerne fra de aktive udvidelser og fra siteaccessen, derefter settings/override. En senere fil vinder: den erstatter en simpel værdi og tilføjer til et array, medmindre den først tømmer arrayet. Denne side viser den gældende værdi, den fil, den kommer fra, og hver fil, der angiver den. Adgangskoder, nøgler, tokens og andre hemmeligheder vises aldrig.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Hver INI-fil læses i lag: settings/&lt;file&gt;.ini først, derefter ActiveAccessExtensions, derefter siteaccessen (udvidelserne først, settings/siteaccess sidst), derefter ActiveExtensions, derefter settings/override. En senere fil vinder: den erstatter en simpel værdi og tilføjer til et array, medmindre den først tømmer arrayet. Denne side viser den gældende værdi, den fil, den kommer fra, og hver fil, der angiver den. Adgangskoder, nøgler, tokens og andre hemmeligheder vises aldrig.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

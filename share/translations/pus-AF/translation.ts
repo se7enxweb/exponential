@@ -20724,8 +20724,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>د INI امستنې</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>هره INI دوتنه په پوړونو کې لوستل کېږي: لومړی settings/&lt;file&gt;.ini، بیا د فعالو غځونو او د سایټ لاسرسي (siteaccess) دوتنې، بیا settings/override. وروستۍ دوتنه ګټي: یو ساده ارزښت ځای ناستې کوي، او په یوه لړۍ (array) کې عناصر ورزیاتوي، مګر دا چې لومړی لړۍ خالي کړي. دغه پاڼه اغېزمن ارزښت، هغه دوتنه چې ارزښت ترې راځي او هره دوتنه چې دا ټاکي ښيي. پټنومونه، کیلي، ټوکنونه او نور رازونه هېڅکله نه ښودل کېږي.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>هره INI دوتنه په پوړونو کې لوستل کېږي: لومړی settings/&lt;file&gt;.ini، بیا ActiveAccessExtensions، بیا د سایټ لاسرسی (siteaccess؛ لومړی غځونه، settings/siteaccess وروستی)، بیا ActiveExtensions، بیا settings/override. وروستۍ دوتنه ګټي: یو ساده ارزښت ځای ناستې کوي، او په یوه لړۍ (array) کې عناصر ورزیاتوي، مګر دا چې لومړی لړۍ خالي کړي. دغه پاڼه اغېزمن ارزښت، هغه دوتنه چې ارزښت ترې راځي او هره دوتنه چې دا ټاکي ښيي. پټنومونه، کیلي، ټوکنونه او نور رازونه هېڅکله نه ښودل کېږي.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

@@ -20732,8 +20732,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>إعدادات INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>يُقرأ كل ملف INI على طبقات: settings/&lt;file&gt;.ini أولًا، ثم ملفات الامتدادات النشطة وملفات الـ siteaccess، ثم settings/override. الملف اللاحق هو الذي يسري: فهو يستبدل القيمة البسيطة، ويضيف إلى المصفوفة ما لم يفرّغها أولًا. تعرض هذه الصفحة القيمة السارية، والملف الذي تأتي منه، وكل ملف يعيّنها. لا تُعرض أبدًا كلمات المرور والمفاتيح والرموز المميزة (tokens) والأسرار الأخرى.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>يُقرأ كل ملف INI على طبقات: settings/&lt;file&gt;.ini أولًا، ثم ActiveAccessExtensions، ثم الـ siteaccess (الامتدادات أولًا، وsettings/siteaccess أخيرًا)، ثم ActiveExtensions، ثم settings/override. الملف اللاحق هو الذي يسري: فهو يستبدل القيمة البسيطة، ويضيف إلى المصفوفة ما لم يفرّغها أولًا. تعرض هذه الصفحة القيمة السارية، والملف الذي تأتي منه، وكل ملف يعيّنها. لا تُعرض أبدًا كلمات المرور والمفاتيح والرموز المميزة (tokens) والأسرار الأخرى.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

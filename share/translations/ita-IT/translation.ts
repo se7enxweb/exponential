@@ -20827,8 +20827,8 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Impostazioni INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Ogni file INI viene letto a livelli: prima settings/&lt;file&gt;.ini, poi i file delle estensioni attive e del siteaccess, poi settings/override. Un file successivo vince: sostituisce un valore semplice e aggiunge elementi a un array, a meno che non lo svuoti prima. Questa pagina mostra il valore in vigore, il file da cui proviene e ogni file che lo imposta. Password, chiavi, token e altri segreti non vengono mai mostrati.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Ogni file INI viene letto a livelli: prima settings/&lt;file&gt;.ini, poi le ActiveAccessExtensions, poi il siteaccess (prima le estensioni, settings/siteaccess per ultimo), poi le ActiveExtensions, poi settings/override. Un file successivo vince: sostituisce un valore semplice e aggiunge elementi a un array, a meno che non lo svuoti prima. Questa pagina mostra il valore in vigore, il file da cui proviene e ogni file che lo imposta. Password, chiavi, token e altri segreti non vengono mai mostrati.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

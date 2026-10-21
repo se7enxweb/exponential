@@ -20732,8 +20732,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Налаштування INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Кожен файл INI читається шарами: спершу settings/&lt;file&gt;.ini, потім файли активних розширень і доступу до сайту, потім settings/override. Пізніший файл перемагає: він замінює просте значення й доповнює масив, якщо спершу його не очищує. Ця сторінка показує чинне значення, файл, з якого воно походить, і всі файли, що його задають. Паролі, ключі, токени та інші секрети ніколи не показуються.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Кожен файл INI читається шарами: спершу settings/&lt;file&gt;.ini, потім ActiveAccessExtensions, потім доступ до сайту (спершу розширення, settings/siteaccess останнім), потім ActiveExtensions, потім settings/override. Пізніший файл перемагає: він замінює просте значення й доповнює масив, якщо спершу його не очищує. Ця сторінка показує чинне значення, файл, з якого воно походить, і всі файли, що його задають. Паролі, ключі, токени та інші секрети ніколи не показуються.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

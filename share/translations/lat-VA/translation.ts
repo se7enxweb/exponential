@@ -20735,8 +20735,8 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Optiones INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Quisque fasciculus INI per strata legitur: primum settings/&lt;file&gt;.ini, deinde fasciculi extensionum activarum et aditus situs, deinde settings/override. Fasciculus posterior vincit: valorem simplicem substituit, et ordini addit, nisi ordinem prius vacuefacit. Haec pagina valorem qui valet ostendit, fasciculum unde venit et omnes fasciculos qui eum statuunt. Tesserae, claves, signa et alia secreta numquam ostenduntur.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Quisque fasciculus INI per strata legitur: primum settings/&lt;file&gt;.ini, deinde ActiveAccessExtensions, deinde aditus situs (primum extensiones, settings/siteaccess postremum), deinde ActiveExtensions, deinde settings/override. Fasciculus posterior vincit: valorem simplicem substituit, et ordini addit, nisi ordinem prius vacuefacit. Haec pagina valorem qui valet ostendit, fasciculum unde venit et omnes fasciculos qui eum statuunt. Tesserae, claves, signa et alia secreta numquam ostenduntur.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>

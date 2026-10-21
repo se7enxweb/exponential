@@ -20724,8 +20724,8 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Mîhengên INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Her pela INI bi qatan tê xwendin: pêşî settings/&lt;file&gt;.ini, paşê pelên pêvekên çalak û yên gihîştina malperê, paşê settings/override. Pelek paşîn bi ser dikeve: ew li şûna nirxeke sade diguherîne, û li array-ekê zêde dike, heke pêşî wê vala neke. Ev rûpel nirxa derbasdar, pela ku jê tê û her pela ku wê datîne nîşan dide. Şîfre, mifte, token û nepeniyên din qet nayên nîşandan.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Her pela INI bi qatan tê xwendin: pêşî settings/&lt;file&gt;.ini, paşê ActiveAccessExtensions, paşê gihîştina malperê (pêşî pêvek, settings/siteaccess dawî), paşê ActiveExtensions, paşê settings/override. Pelek paşîn bi ser dikeve: ew li şûna nirxeke sade diguherîne, û li array-ekê zêde dike, heke pêşî wê vala neke. Ev rûpel nirxa derbasdar, pela ku jê tê û her pela ku wê datîne nîşan dide. Şîfre, mifte, token û nepeniyên din qet nayên nîşandan.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
