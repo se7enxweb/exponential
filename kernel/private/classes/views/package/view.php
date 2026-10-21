@@ -118,7 +118,8 @@ class View extends \Exponential\Runnable\ModuleView
             //   package/view/full/<name>/(type)/object/(search)/abc/(limit)/100/(offset)/4300/(file)/4342
             // Each is left out at its default (no type, no search, 50 per page, offset 0, no file open).
             // The kernel URL-decodes the whole path before splitting it, so the search, the one free text,
-            // is written encoded twice (see $browseURL) and decoded once more here; the rest are keywords
+            // is written as every view parameter is (expViewParameters::encode(), see $browseURL) and decoded
+            // here; the double encoding of before (%2520) is read too (rawurldecode()); the rest are keywords
             // and numbers. The filter form is sent with POST (BrowseApply with BrowseType, BrowseSearch,
             // BrowseLimit) and answered with a 303 to the same state as view parameters, so the address bar
             // only ever shows the clean form. The options are view parameters only: a query string is never
@@ -143,7 +144,7 @@ class View extends \Exponential\Runnable\ModuleView
                 if ( $state['type'] !== '' )
                     $url .= '/(type)/' . $state['type'];
                 if ( $state['search'] !== '' )
-                    $url .= '/(search)/' . rawurlencode( rawurlencode( $state['search'] ) );
+                    $url .= '/(search)/' . \expViewParameters::encode( $state['search'] );
                 if ( $state['limit'] !== '50' )
                     $url .= '/(limit)/' . $state['limit'];
                 if ( $state['offset'] === 'last' || $state['offset'] > 0 )
@@ -167,7 +168,7 @@ class View extends \Exponential\Runnable\ModuleView
 
             $state = $normalise(
                 isset( $userParameters['type'] ) ? $userParameters['type'] : '',
-                isset( $userParameters['search'] ) ? rawurldecode( $userParameters['search'] ) : '',
+                isset( $userParameters['search'] ) ? \expViewParameters::decode( rawurldecode( $userParameters['search'] ) ) : '',
                 isset( $userParameters['limit'] ) ? $userParameters['limit'] : '50',
                 isset( $userParameters['offset'] ) ? $userParameters['offset'] : 0,
                 isset( $userParameters['file'] ) ? $userParameters['file'] : -1

@@ -306,7 +306,7 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 36500, expUserHygiene::normaliseFilters( array( 'days' => '99999999' ), true )['days'] );
         $this->assertSame( 'email', expUserHygiene::normaliseFilters( array( 'sort' => 'email' ), true )['sort'] );
         $this->assertSame( 'name', expUserHygiene::normaliseFilters( array( 'sort' => 'email' ), false )['sort'], 'no e-mail order without the right' );
-        $this->assertSame( 'a b', expUserHygiene::normaliseFilters( array( 'q' => " a/(b) \x00" ), true )['q'] );
+        $this->assertSame( 'a/(b)', expUserHygiene::normaliseFilters( array( 'q' => " a/(b) \x00" ), true )['q'], 'slashes and brackets are kept; control characters go' );
 
         $this->assertSame( '', expUserHygiene::queryString( $defaults ) );
         $this->assertSame( '?filter=inactive&days=30', expUserHygiene::queryString( $defaults, array( 'filter' => 'inactive', 'days' => 30 ) ) );

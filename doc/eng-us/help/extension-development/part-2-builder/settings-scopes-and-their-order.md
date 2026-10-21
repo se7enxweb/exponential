@@ -19,8 +19,9 @@ files live, the order the kernel reads them in, and how to pick the right place 
 | Scope | Directory | Read for | What belongs there |
 |---|---|---|---|
 | default | `settings/` | everything | the kernel's defaults; never edited |
-| extension siteaccess (`sa-extension`) | `extension/<ext>/settings/siteaccess/<sa>/`, `extension/<ext>/settings/override__<group>/`, `extension/<ext>/settings/override/` | the siteaccesses an extension owns | per-site settings kept inside an extension |
-| siteaccess | `settings/siteaccess/<sa>/` | one siteaccess | the settings of one site or of the administration |
+| siteaccess extensions (`sa-extension`) | `extension/<ext>/settings/` of the extensions in `ActiveAccessExtensions[]` | the siteaccesses that switch them on | extensions active for one siteaccess only |
+| siteaccess, inside extensions (`siteaccess`) | `extension/<ext>/settings/siteaccess/<sa>/`, `extension/<ext>/settings/override__<group>/`, `extension/<ext>/settings/override/` | the siteaccesses an extension owns | per-site settings kept inside an extension |
+| siteaccess (`siteaccess`) | `settings/siteaccess/<sa>/` | one siteaccess | the settings of one site or of the administration |
 | extension | `extension/<ext>/settings/` | every request, for active extensions | the defaults an extension ships |
 | override | `settings/override/` | every request | this installation's own global settings |
 
@@ -28,8 +29,8 @@ files live, the order the kernel reads them in, and how to pick the right place 
 
 After the default file, the kernel reads the override directories in this order, and **a later file wins**:
 
-1. the extension siteaccess directories (`sa-extension`),
-2. `settings/siteaccess/<sa>/` (`siteaccess`),
+1. `extension/<ext>/settings/` of the extensions in `ActiveAccessExtensions[]` (`sa-extension`),
+2. the extension siteaccess directories, then `settings/siteaccess/<sa>/` (both `siteaccess`),
 3. `extension/<ext>/settings/` of each active extension (`extension`),
 4. `settings/override/` (`override`).
 
@@ -46,8 +47,9 @@ one, which is why an installation's own settings extension is usually listed fir
 > **Note**
 > Notice that the `extension` scope is read **after** the `siteaccess` scope. A value an extension ships in
 > `extension/<ext>/settings/` beats the same value in `settings/siteaccess/<sa>/`. When a site needs a different value
-> than an extension's default, put it in `settings/override/` or in the extension's own per-siteaccess folder, not in
-> `settings/siteaccess/<sa>/`.
+> than an extension's default, put it in `settings/override/` (which applies to every siteaccess), or remove the key
+> from the extension's `settings/` file. The extension's own per-siteaccess folders do not help: they are in the
+> `siteaccess` scope too, and the extension's `settings/` beats them as well.
 
 ## The per-site folders inside an extension
 

@@ -2,7 +2,8 @@
 /**
  * The permalinks of the log viewer (doc/eng-us/features/6.0/log-viewer.md, "Permalinks"): setup/logs/view/<key>/(name)/value.
  *
- *  LV-70  encode() / decode(): letters, digits, _ . , - stay; every other byte is ~XX (UTF-8 per byte, ( ) / ~ space);
+ *  LV-70  encode() / decode(): expViewParameters::encode() (/ ( ) ~ % + ? # as ~XX, the rest readable), and the
+ *         links of before (every other byte ~XX) are read the same;
  *         decode() is the inverse, a ~ without two hex digits stays
  *  LV-71  state(): every view parameter read, defaults for the missing, malformed values dropped
  *  LV-72  state() with $encoded=false: the old query string names (q, levels as array or comma list ...)
@@ -24,21 +25,27 @@ class expLogPermalinkTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'timeout', expLogPermalink::encode( 'timeout' ) );
         $this->assertSame( 'error,warning', expLogPermalink::encode( 'error,warning' ) );
         $this->assertSame( 'a_b.c-d', expLogPermalink::encode( 'a_b.c-d' ) );
-        $this->assertSame( 'foo~20bar', expLogPermalink::encode( 'foo bar' ) );
+        $this->assertSame( 'foo%20bar', expLogPermalink::encode( 'foo bar' ) );
         $this->assertSame( '~2Fadmin~2Fcontent', expLogPermalink::encode( '/admin/content' ) );
         $this->assertSame( '~28x~29', expLogPermalink::encode( '(x)' ) );
         $this->assertSame( '~7E', expLogPermalink::encode( '~' ) );
-        $this->assertSame( '~3F~26~3D~25~23', expLogPermalink::encode( '?&=%#' ) );
-        $this->assertSame( 'M~C3~BCller', expLogPermalink::encode( 'Müller' ) );
+        $this->assertSame( '~3F%26=~25~23', expLogPermalink::encode( '?&=%#' ) );
+        $this->assertSame( 'M%C3%BCller', expLogPermalink::encode( 'Müller' ) );
+        $this->assertSame( '2026-10-17T01:00', expLogPermalink::encode( '2026-10-17T01:00' ) );
         foreach ( array( 'Müller ünd ~ (x)/y', "a\tb", '~2F', 'ERR-0123456789', '', '日本語', '^\d+$' ) as $v )
         {
             $e = expLogPermalink::encode( $v );
-            $this->assertMatchesRegularExpression( '/^[A-Za-z0-9_.,~\-]*$/', $e, 'only safe characters in a path segment' );
-            $this->assertSame( $v, expLogPermalink::decode( $e ), $v );
+            $this->assertSame( expViewParameters::encode( $v ), $e, 'the encoding of every view parameter' );
+            $this->assertMatchesRegularExpression( '/^[A-Za-z0-9_.,:@=!*~%\-]*$/', $e, 'only safe characters in a path segment' );
+            $this->assertSame( $v, expLogPermalink::decode( urldecode( $e ) ), $v );
         }
         $this->assertSame( 'a~zz', expLogPermalink::decode( 'a~zz' ), 'a ~ without hex digits stays' );
         $this->assertSame( 'a~', expLogPermalink::decode( 'a~' ) );
         $this->assertSame( '/', expLogPermalink::decode( '~2f' ), 'lower case hex digits are read too' );
+        // the links of before (every character other than A-Z a-z 0-9 _ . , - as ~XX) are read the same
+        $this->assertSame( 'foo bar', expLogPermalink::decode( 'foo~20bar' ) );
+        $this->assertSame( 'Müller', expLogPermalink::decode( 'M~C3~BCller' ) );
+        $this->assertSame( '?&=%#', expLogPermalink::decode( '~3F~26~3D~25~23' ) );
     }
 
     /** LV-71 */
@@ -124,9 +131,9 @@ class expLogPermalinkTest extends PHPUnit\Framework\TestCase
                       'reference' => 'ERR-0123456789', 'scope' => 'kernel', 'rotations' => true, 'cursor' => '0:10', 'offset' => 20,
                       'follow' => false, 'wrap' => true, 'unmask' => true, 'done' => 'truncate', 'ok' => true );
         $url = expLogPermalink::build( 'site-storage', $all );
-        $this->assertSame( 'setup/logs/view/site-storage/(archive)/1/(level)/error,warning/(search)/a~20b/(regex)/1/(case)/1'
+        $this->assertSame( 'setup/logs/view/site-storage/(archive)/1/(level)/error,warning/(search)/a%20b/(regex)/1/(case)/1'
                            . '/(from)/2026-10-17/(to)/2026-10-18/(siteaccess)/admin/(uri)/~2Fx/(ip)/192.0.2.1/(reference)/ERR-0123456789'
-                           . '/(scope)/kernel/(rotations)/1/(cursor)/0~3A10/(offset)/20/(follow)/0/(wrap)/1/(unmask)/1/(done)/truncate/(ok)/1', $url );
+                           . '/(scope)/kernel/(rotations)/1/(cursor)/0:10/(offset)/20/(follow)/0/(wrap)/1/(unmask)/1/(done)/truncate/(ok)/1', $url );
         // the names come in the order of PARAMS
         preg_match_all( '/\(([a-z]+)\)/', $url, $m );
         $this->assertSame( array_keys( expLogPermalink::PARAMS ), $m[1] );
@@ -165,7 +172,7 @@ class expLogPermalinkTest extends PHPUnit\Framework\TestCase
             $parts = explode( '/', substr( $url, strlen( 'setup/logs/view/error' ) ) );
             $params = array();
             for ( $i = 1; $i + 1 < count( $parts ); $i += 2 )
-                $params[trim( $parts[$i], '()' )] = $parts[$i + 1];
+                $params[trim( $parts[$i], '()' )] = urldecode( $parts[$i + 1] ); // as the kernel decodes the address
             $this->assertSame( $state, expLogPermalink::state( $params ), $url );
         }
     }
