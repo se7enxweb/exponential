@@ -74925,7 +74925,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>E-commerce</source>
-        <translation>E-commerce</translation>
+        <translation>Elektronický obchod</translation>
     </message>
     <message>
         <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>

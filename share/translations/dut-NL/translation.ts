@@ -74676,7 +74676,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Community</source>
-        <translation>Community</translation>
+        <translation>Gemeenschap</translation>
     </message>
     <message>
         <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>

@@ -74804,7 +74804,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>E-commerce</source>
-        <translation>E-commerce</translation>
+        <translation>Commerce électronique</translation>
     </message>
     <message>
         <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>

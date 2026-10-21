@@ -75635,7 +75635,7 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>E-commerce</source>
-        <translation>E-commerce</translation>
+        <translation>Comércio eletrônico</translation>
     </message>
     <message>
         <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
