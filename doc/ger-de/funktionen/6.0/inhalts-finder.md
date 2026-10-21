@@ -133,6 +133,13 @@ sie auflöst.
 Höchstens `ResultLimit` Objekte (25) werden für eine Suche beschrieben, und höchstens `FileRowLimit` Dateizeilen (50)
 werden für einen Pfad oder ein Präfix gelesen; die Seite sagt, wenn es mehr gab.
 
+## Die Adresse einer Suche
+
+Eine Suche ist eine Adresse mit View-Parametern, `contentfinder/search/(type)/object/(text)/58`: `(text)` ist der
+Text (unverändert, wenn er aus Buchstaben, Ziffern, Leerzeichen und `. _ : @ , + = -` besteht, sonst `~` und sein
+base64url, wie bei einem Pfad oder einer URL), und `(type)` ist der Typ (keiner für *auto*). Das Formular wird per
+POST gesendet und mit einem 303 auf diese Adresse beantwortet; ein Query-String wie `?SearchText=` wird nicht gelesen.
+
 ## Wer ihn verwenden darf
 
 | Richtlinie | Was sie erlaubt |

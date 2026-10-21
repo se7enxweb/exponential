@@ -11218,7 +11218,7 @@ ab5424b77daa326c46977ff0a6f066bb  doc/ger-de/bc/6.0/uebersetzte-dokumentation.md
 4e1d0af73788c9437a6b13fd0e1d5c39  doc/ger-de/bc/6.0/ui-umschalter.md
 a4f67b64577d8394ba4f1c4c96417994  doc/ger-de/bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md
 aae54fb556b95a220df9ac103021fa01  doc/ger-de/bc/6.0/velocity-engine-upgrade-hinweise.md
-7a9eda5285fde75bc77213cc12127d45  doc/ger-de/bc/6.0/velocity-engines.md
+bf129078a072561e6ac9a7d652187169  doc/ger-de/bc/6.0/velocity-engines.md
 c5c0436579f5d0eb52f6b8edfbf2048e  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
 4a7fc2dce1d3ebfc4a4237c93bc7b515  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-07-08.md
 cdafa44a9232bd9a3c7c51422bae5463  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-09b.md
@@ -13784,12 +13784,12 @@ baa59f83c3ef5870a392ba703eb25989  doc/ger-de/funktionen/6.0/filter-fuer-cronjob-
 b98e1f4c65674f4228b4041468a1744b  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 15c34192b05d61cc8e2600c86aee341e  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 e53eca0c0d2ba237a8e4280d053521a4  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-4a2c9be6912dda9353aafa0a9c6d3bf2  doc/ger-de/funktionen/6.0/hilfesystem.md
+2fed72b8870a97a1f75f0b8ce5e75c3c  doc/ger-de/funktionen/6.0/hilfesystem.md
 792e03329c8d74a6c743a7ce62b3669a  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 60d1ed0436a90277dc23ff0aa4979701  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
-1eb2ee49763daf3baee4ec98045229e5  doc/ger-de/funktionen/6.0/inhalts-finder.md
+e300534c972f689c3509e73936c9827d  doc/ger-de/funktionen/6.0/inhalts-finder.md
 a3dc3bf8c5a022075ec4af43310e12ed  doc/ger-de/funktionen/6.0/inhaltsauftraege.md
-7811065388481cdcd11991b7f0bd17bb  doc/ger-de/funktionen/6.0/inhaltspruefungen.md
+580225fd96e512892ae4bc3def243e86  doc/ger-de/funktionen/6.0/inhaltspruefungen.md
 ed1d769b9b56b95917fc6c2a380b6553  doc/ger-de/funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md
 98d44e67476c0f7f7a6cccf52df02909  doc/ger-de/funktionen/6.0/installation-mit-einem-befehl.md
 c0dd49d65c40891412337436706f717d  doc/ger-de/funktionen/6.0/installationsname-in-seiten.md

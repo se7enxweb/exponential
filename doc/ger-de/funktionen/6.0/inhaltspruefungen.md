@@ -283,6 +283,20 @@ Links beibehalten). Seine Styles sind die gemeinsame Komponente `.a4-quickpick` 
 die Presets und Reihen stammen aus `expNodeQuickPick`, das auch die Schnellauswahl-Buttons für Orte auf anderen Seiten
 verwenden (`quick-location-buttons.md`). Die Ansichten, die einen Startort annehmen (und zu denen die Knotenauswahl
 zurückkehren darf), sind in `ViewList[]` aufgeführt; eine weitere Prüfung fügt ihre Ansicht dort hinzu.
+## Optionen in der Adresse
+
+Die Optionen jeder Prüfung sind View-Parameter, nie ein Query-String (ein `?Show=` oder `?Kind[]=` wird nicht gelesen):
+
+| Ansicht | View-Parameter |
+|------|-----------------|
+| `contentcheck/unreferenced/<node id>` | `(class)` (Klassen-IDs, durch Kommas getrennt), `(sort)`, `(order)`, `(containers)/1`, `(selectall)/1`, `(offset)` |
+| `contentcheck/brokenrelations/<node id>` | `(exclude)` (Knoten-IDs), `(kind)`, `(relation)` (Kommalisten, `none`, wenn nichts angehakt ist), `(after)` und für die fehlenden Dateien `(problem)`, `(version)`, `(selectall)/1`, `(file_offset)` |
+| `contentcheck/storage/<node id>` | `(show)` (orphans, problems, quarantine), `(sort)`, `(order)`, `(kind)` (Kommaliste oder `none`), `(selectall)/1`, `(offset)` |
+
+Zum Beispiel `contentcheck/brokenrelations/58/(kind)/deleted,trash/(after)/1200`. Die Filterformulare werden per POST
+gesendet (sie tragen das Formular-Token) und mit einem 303 auf diese Adresse beantwortet, sodass sich eine gefilterte
+Liste als Lesezeichen speichern und weitergeben lässt.
+
 ## Ein einheitlicher Aufbau
 
 Jede Prüfung hat dieselbe Reihenfolge: den **Startort**, die **Filter** (eine Gruppe von Auswahlmöglichkeiten hat

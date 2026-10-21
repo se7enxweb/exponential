@@ -5,6 +5,24 @@ wählen oder PHP-Änderungen auf einer Website bereitstellen, die Velocity ausli
 Webservern mit denselben Verben (`start`, `stop`, `graceful`, `restart`, `kill`, `status`, `deploy`, `command`,
 `config`, `install`) und derselben `velocity.ini`.
 
+## Velocity ist seit 6.0.15 Teil von Exponential
+
+Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.54`; vorher
+schlug sie das Paket nur vor. Was sich dadurch für eine bestehende Installation ändert:
+
+| | |
+|---|---|
+| Was sich ändert | `composer install` installiert das Velocity-Paket mit dem Rest von Exponential, die Engine `qbix` ist also immer verfügbar; `exp:velocity start --engine=qbix` bricht auf einer frischen Installation nicht mehr mit `velocity: no server script at ...` ab. |
+| PHP | Velocity 0.0.4.54 läuft auf PHP 8.0 bis 8.5, demselben Bereich wie der Kernel; er braucht `ext-sockets` (`pcntl` und `openssl` empfohlen). |
+| Was sich nicht ändert | Die ausgelieferte Standard-Engine bleibt `php`; eine Website, die Apache, nginx oder FrankenPHP ausliefert, wird weiter so ausgeliefert. Nichts startet von sich aus einen Server. |
+| So prüfen Sie es | `php bin/php/console exp:velocity status` meldet das Engine-Paket und seine Version. |
+| Was zu tun ist | Nichts außer `composer install`. Um den Server zu verwenden, setzen Sie `Engine=qbix` und stellen mit `exp:velocity deploy` bereit. |
+
+Das ist der Wendepunkt der Linie 6.0: Der Internet- und Webanwendungsserver ist ein Eckpfeiler des Kernprodukts, und
+der ganze Weg von einer Anfrage bis zur fertig dargestellten Seite gehört zu einem Produkt. Velocitys eigener Server
+ist die empfohlene Engine für jede Stufe; FrankenPHP ist die produktionsreife Alternative. Die Geschichte für jeden
+Leser: [Velocity ist Teil von Exponential 6.0.15](../../hilfe/velocity-ist-teil-von-exponential-6-0-15.md).
+
 ## Kurz gesagt
 
 | | |
