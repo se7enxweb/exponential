@@ -74602,5 +74602,77 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Help Start</source>
         <translation>Help-start</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Deze pagina is nog niet vertaald in het %reader. Ze wordt getoond in het %original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Engels</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Duits</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Leestaal:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Een taal kiezen verandert de taal van de hele beheeromgeving.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count van %total pagina&apos;s</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>De help in andere talen</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Het origineel in het %language openen</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>U leest het origineel van deze pagina in het %language.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Terug naar de pagina in het %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Deze pagina is een vertaling.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Het origineel in het %language lezen</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>De documentatie die de actieve extensies meebrengen: hun handleidingen, README, changelog en licentie.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>In de documentatie van %extension zoeken</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Geen enkele actieve extensie brengt eigen documentatie mee.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Alleen de documentatie van de extensie %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>De pagina&apos;s ervan</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>In de hele help zoeken</translation>
+    </message>
 </context>
 </TS>

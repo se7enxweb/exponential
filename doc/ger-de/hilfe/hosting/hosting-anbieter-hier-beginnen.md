@@ -54,7 +54,7 @@ keine: Sie zeigen, wie Sie messen und entscheiden.
 
 | Bedarf | Minimum | Hinweise |
 |---|---|---|
-| PHP | 8.0 (8.1 für Velocity) | das neueste 8.x, das Ihr System anbietet; 8.5 wird unterstützt |
+| PHP | 8.0 (einschließlich Velocity) | das neueste 8.x, das Ihr System anbietet; 8.5 wird unterstützt |
 | Datenbank | eine der sechs | in der offiziellen Reihenfolge: 1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich. |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an | vom Setup-Assistenten geprüft |
 | Webserver | keiner erforderlich | Velocity liefert HTTP und HTTPS selbst aus; oder Apache/nginx mit PHP-FPM |

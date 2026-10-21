@@ -4,7 +4,7 @@
 <div class="order-receipt">
     <div class="order-receipt-actions">
         <button type="button" class="primary order-receipt-print">{'Print'|i18n( 'design/standard/shop/orderreceipt' )}</button>
-        <a href={concat( $receipt_url, '?download=1' )|ezurl} download>{'Download'|i18n( 'design/standard/shop/orderreceipt' )}</a>
+        <a href={concat( $receipt_url, '/(download)/1' )|ezurl} download>{'Download'|i18n( 'design/standard/shop/orderreceipt' )}</a>
         <span class="order-receipt-hint">{'Bookmark this page to come back to your receipt at any time; you will be asked to sign in.'|i18n( 'design/standard/shop/orderreceipt' )}</span>
     </div>
     {include uri='design:shop/orderreceipt_body.tpl' order=$order receipt_url=$receipt_url}

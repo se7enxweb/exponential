@@ -73375,5 +73375,77 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Help Start</source>
         <translation>د مرستې پیل</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>دغه پاڼه لا %reader ته نه ده ژباړل شوې. په %original ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>انګرېزي</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>الماني</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>د لوستلو ژبه:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>د یوې ژبې ټاکل د ټولې ادارې ژبه بدلوي.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count له %total پاڼو څخه</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>مرسته په نورو ژبو</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>اصلي نسخه په %language پرانیستل</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>تاسو د دې پاڼې اصلي نسخه په %language لولئ.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>په %language پاڼې ته بېرته تلل</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>دغه پاڼه ژباړه ده.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>اصلي نسخه په %language لوستل</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>هغه اسناد چې فعالې غځونې یې له ځانه سره راوړي: د هغوی لارښوونې، README، د بدلونونو لړلیک او جواز.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>د %extension په اسنادو کې لټون</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>هېڅ فعاله غځونه خپل اسناد نه راوړي.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>یوازې د %extension غځونې اسناد.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>د هغې پاڼې</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>په ټوله مرسته کې لټون</translation>
+    </message>
 </context>
 </TS>

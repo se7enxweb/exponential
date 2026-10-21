@@ -29,7 +29,8 @@ $ViewList["orderreceipt"] = array(
     "functions" => array(),
     "script" => "orderreceipt.php",
     "default_navigation_part" => 'ezshopnavigationpart',
-    "params" => array( "Token" ) );
+    "params" => array( "Token" ),
+    "unordered_params" => array( "download" => "Download" ) );
 
 // The common misspelling, redirected permanently to orderreceipt.
 $ViewList["orderreciept"] = array(

@@ -55,7 +55,14 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $sort = self::sortKey( isset( $userParameters['sort'] ) ? $userParameters['sort'] : '' );
-        $search = self::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        // The search form without scripts is posted (q): answered with 303 to its /(q)/... address
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+        {
+            \expViewParameters::redirect( 'url/list/' . $ViewMode . \expViewParameters::suffix( array(
+                'sort' => $sort !== self::SORTS[0] ? $sort : '',
+                'q' => self::searchText( \expViewParameters::posted( $_POST, 'q' ) ) ) ) );
+        }
+        $search = self::searchText( \expViewParameters::text( $Params, 'q', 'Query' ) );
 
         $feedback = false;
         if ( $Module->isCurrentAction( 'SetValid' ) || $Module->isCurrentAction( 'SetInvalid' ) )
@@ -103,7 +110,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'url_sort', $sort );
         $tpl->setVariable( 'url_sorts', self::SORTS );
         $tpl->setVariable( 'url_search', $search );
-        $tpl->setVariable( 'url_search_suffix', $search !== '' ? '?q=' . rawurlencode( $search ) : '' );
+        $tpl->setVariable( 'url_search_suffix', \expViewParameters::suffix( array( 'q' => $search ) ) );
         $tpl->setVariable( 'url_summary', self::summary() );
         $tpl->setVariable( 'url_usage', self::usageFromDatabase( $list ) );
         $tpl->setVariable( 'url_feedback', $feedback );

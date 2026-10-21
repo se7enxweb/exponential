@@ -96,7 +96,7 @@
 
 {* Try an address *}
 <section class="a4-card" aria-labelledby="wildcard-test-title">
-<form method="get" action={concat( 'content/urlwildcards/', $kind_part )|ezurl}>
+<form method="post" action={concat( 'content/urlwildcards/', $kind_part, $search_suffix )|ezurl}>
 <div class="a4-section-head">
     <h2 class="a4-h2" id="wildcard-test-title">{'Try an address'|i18n( 'design/admin/content/urlalias_wildcard' )}</h2>
     <p>{'See which wildcard an address matches and where it would lead. Nothing is changed.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p>
@@ -105,7 +105,6 @@
     <label for="wildcard-test">{'Address'|i18n( 'design/admin/content/urlalias_wildcard' )}</label>
     <div class="a4-searchrow">
         <input type="text" id="wildcard-test" name="test" value="{$test|wash}" spellcheck="false" maxlength="200" aria-describedby="wildcard-test-help" />
-        {if $search|ne( '' )}<input type="hidden" name="q" value="{$search|wash}" />{/if}
         <button type="submit" class="a4-btn">{'Try'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
     </div>
     <span class="a4-help" id="wildcard-test-help">{'Without the host, for example news/2026/october.'|i18n( 'design/admin/content/urlalias_wildcard' )}</span>
@@ -259,7 +258,7 @@
 
 </form>
 {* The search is a form of its own (GET); its fields point to it with form="" *}
-<form id="wildcard-search-form" method="get" action={concat( 'content/urlwildcards/', $kind_part )|ezurl}></form>
+<form id="wildcard-search-form" method="post" action={concat( 'content/urlwildcards/', $kind_part )|ezurl}></form>
 
 </div></div></div>
 </div>

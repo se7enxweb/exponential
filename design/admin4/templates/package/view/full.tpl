@@ -294,7 +294,7 @@
             <span class="pvf-count">{'%shown of %total files'|i18n('design/admin/package',,hash('%shown', $ContentsBrowser.total_filtered, '%total', $ContentsBrowser.total_all))}</span>
         </div>
 
-        <form class="pvf-filter" method="get" action={$browseBaseURL}>
+        <form class="pvf-filter" method="post" action={$browseBaseURL}>
             <div class="pvf-field">
                 <label for="browse-type">{'Type'|i18n('design/admin/package')}</label>
                 <select id="browse-type" name="BrowseType">

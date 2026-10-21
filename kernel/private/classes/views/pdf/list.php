@@ -113,7 +113,7 @@ class ListView extends \Exponential\Runnable\ModuleView
                 $uri .= '/(' . $name . ')/' . rawurlencode( (string)$state[$name] );
         }
         if ( isset( $state['search'] ) && $state['search'] !== '' )
-            $uri .= '?search=' . rawurlencode( $state['search'] );
+            $uri .= \expViewParameters::suffix( array( 'search' => $state['search'] ) );
         return $uri;
     }
 
@@ -224,9 +224,19 @@ class ListView extends \Exponential\Runnable\ModuleView
             return isset( $user[$name] ) ? (string)$user[$name] : '';
         };
 
-        $search = self::searchOf( $http->hasGetVariable( 'search' ) ? $http->getVariable( 'search' ) : rawurldecode( $param( 'search' ) ) );
+        $search = self::searchOf( $param( 'search' ) );
         $filter = in_array( $param( 'filter' ), \expPDFExportInfo::FILTERS, true ) ? $param( 'filter' ) : '';
         $sort = \expPDFExportInfo::sortOf( $param( 'sort' ), $param( 'dir' ) );
+
+        // The search form without scripts is posted (search): answered with 303 to its /(search)/... address,
+        // which keeps the order, the filter and the page size. A ?search= query string is not read.
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'search' ) ) )
+        {
+            \expViewParameters::redirect( self::listURI( array( 'sort' => $param( 'sort' ) !== '' ? $sort['field'] : '',
+                                                                 'dir' => $param( 'dir' ) !== '' ? $sort['direction'] : '',
+                                                                 'filter' => $filter, 'limit' => $param( 'limit' ),
+                                                                 'search' => self::searchOf( \expViewParameters::posted( $_POST, 'search' ) ) ) ) );
+        }
 
         $default = \expAdminPagination::limit( 'pdf/list' );
         $sizes = self::sizesOf( $default, \expAdminPagination::sizes( 'pdf/list' ) );
@@ -287,9 +297,9 @@ class ListView extends \Exponential\Runnable\ModuleView
         // For the pager (design:navigator/google.tpl): the state it carries along, with the search after it
         $tpl->setVariable( 'pdfexport_pager_parameters', array( 'offset' => $offset, 'sort' => $sort['field'], 'dir' => $sort['direction'],
                                                                 'filter' => $filter, 'limit' => $state['limit'] ) );
-        $tpl->setVariable( 'pdfexport_pager_suffix', $search !== '' ? '?search=' . rawurlencode( $search ) : '' );
+        $tpl->setVariable( 'pdfexport_pager_suffix', \expViewParameters::suffix( array( 'search' => $search ) ) );
         $tpl->setVariable( 'pdfexport_list_uri', self::listURI( $state ) );
-        // The search form sends search=... to this address, which keeps the order, the filter and the page size
+        // The search form posts search to this address (answered with 303 to /(search)/...), which keeps the order, the filter and the page size
         $tpl->setVariable( 'pdfexport_search_action', self::listURI( array( 'search' => '' ) + $state ) );
         $tpl->setVariable( 'pdfexport_storage_directory', \expPDFExportFile::directory() );
 

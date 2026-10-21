@@ -38,9 +38,13 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
         $viewParameters = array( 'offset' => $Offset );
 
         // A search over the alias and its destination, and the kind of alias, both off the address
-        $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        // (view parameters /(q)/ and /(kind)/; a ?q= is not read, the search form is posted and answered with a 303)
+        $search = \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
         $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $kind = self::kindKey( isset( $userParameters['kind'] ) ? $userParameters['kind'] : '' );
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+            return \expViewParameters::redirect( 'content/urltranslator' . ( $kind !== 'all' ? '/(kind)/' . $kind : '' )
+                . \expViewParameters::suffix( array( 'q' => \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::posted( $_POST, 'q' ) ) ) ) );
         // What the form held, given back to it when the alias could not be created
         $aliasForm = array( 'language' => false, 'all_languages' => false, 'redirects' => true );
 
@@ -301,7 +305,7 @@ class UrlaliasGlobal extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'alias_info', $aliasInfo );
         $tpl->setVariable( 'alias_limit', $limitValues[$limitID] );
         $tpl->setVariable( 'alias_search', $search );
-        $tpl->setVariable( 'alias_search_suffix', $search !== '' ? '?q=' . rawurlencode( $search ) : '' );
+        $tpl->setVariable( 'alias_search_suffix', \expViewParameters::suffix( array( 'q' => $search ) ) );
         $tpl->setVariable( 'alias_kind', $kind );
         $tpl->setVariable( 'alias_form', $aliasForm );
 

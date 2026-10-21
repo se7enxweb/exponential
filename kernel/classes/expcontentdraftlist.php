@@ -33,7 +33,7 @@ class expContentDraftList
 
     /**
      * The filters and order of the address: (language)/<locale>, (class)/<identifier>, (age)/<days>, (sort)/<order>,
-     * and the search text (?q=). A value that is not one of them is left out.
+     * and the search text (q), all view parameters. A value that is not one of them is left out.
      *
      * @param array $userParameters the view's user parameters
      * @param mixed $search the search text of the request
@@ -66,7 +66,7 @@ class expContentDraftList
     }
 
     /**
-     * The address part that keeps the filters and order (not the search, which is a query parameter).
+     * The address part that keeps the filters and order (not the search: searchSuffix()).
      *
      * @param array $filters from filters()
      * @param array $change filters to set differently in this address
@@ -85,6 +85,17 @@ class expContentDraftList
         if ( !empty( $filters['sort'] ) && $filters['sort'] !== self::SORTS[0] )
             $suffix .= '/(sort)/' . $filters['sort'];
         return $suffix;
+    }
+
+    /**
+     * The address part of the search, "/(q)/<text>" (a view parameter, never a query string), '' for none.
+     *
+     * @param array $filters from filters()
+     * @return string
+     */
+    static function searchSuffix( array $filters )
+    {
+        return expViewParameters::suffix( array( 'q' => isset( $filters['search'] ) ? $filters['search'] : '' ) );
     }
 
     /**

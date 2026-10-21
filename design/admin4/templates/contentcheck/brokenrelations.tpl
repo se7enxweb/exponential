@@ -32,8 +32,7 @@
                           'parameter', 'Block parameter'|i18n( 'kernel/contentcheck' ),
                           'rule', 'Rule target'|i18n( 'kernel/contentcheck' ) )
      $node = $result.node
-     $findings = $result.findings
-     $separator = cond( $filter_suffix|eq( '' ), '?', '&' )}
+     $findings = $result.findings}
 
 <div class="context-block a4-page a4-contentcheck">
 
@@ -51,7 +50,7 @@
 
 <section aria-labelledby="cc-filter-title">
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
-<form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
+<form class="a4-filterbar" method="post" action={$page_uri|ezurl}>
     {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <div class="a4-field">
         <label for="cc-exclude">{'Leave out the nodes below'|i18n( 'kernel/contentcheck' )}</label>
@@ -128,7 +127,7 @@
          limit=$limit limit_choices=$limit_choices limit_preference=$limit_preference
          size_title='Show %count findings per page.'|i18n( 'kernel/contentcheck' )
          start_url=cond( $params.after|gt( 0 ), concat( $page_uri, $filter_suffix ), '' )
-         next_url=cond( $result.done, '', concat( $page_uri, $filter_suffix, $separator, 'After=', $result.last ) )}
+         next_url=cond( $result.done, '', concat( $page_uri, $filter_suffix, '/(after)/', $result.last ) )}
 </section>
 {/if}
 
@@ -170,4 +169,4 @@
 
 </div></div></div>
 </div>
-{undef $kind_names $kind_classes $relation_names $via_names $hint_names $where_names $node $findings $separator}
+{undef $kind_names $kind_classes $relation_names $via_names $hint_names $where_names $node $findings}

@@ -28,15 +28,11 @@ class Sitedata extends \Exponential\Runnable\ModuleView
     {
         $Params = $scope['Params'];
         $Module = $Params['Module'];
-        $http = \eZHTTPTool::instance();
-
-        // the filter comes from the form (GET or POST) or from the (filter) parameter of a paging link
-        $filter = '';
-        if ( $http->hasVariable( 'Filter' ) )
-            $filter = (string)$http->variable( 'Filter' );
-        elseif ( isset( $Params['Filter'] ) )
-            $filter = (string)$Params['Filter'];
-        $filter = self::cleanFilter( $filter );
+        // the filter is the (filter) view parameter; the form without scripts is sent with POST and answered 303 with
+        // setup/sitedata/(filter)/<name>. A query string is never read.
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'Filter' ) ) )
+            \expViewParameters::redirect( 'setup/sitedata' . \expViewParameters::suffix( array( 'filter' => self::cleanFilter( \expViewParameters::posted( $_POST, 'Filter' ) ) ) ) );
+        $filter = self::cleanFilter( (string)\expViewParameters::get( $Params, 'filter', 'Filter' ) );
 
         $offset = isset( $Params['Offset'] ) ? max( 0, (int)$Params['Offset'] ) : 0;
         $count = \eZSiteData::fetchListCount( $filter );

@@ -8,7 +8,7 @@
 {include uri='design:mailpreferences/parts/notice.tpl' notice=first_set( $notice, false() )}
 
 <section class="mp-card">
-    <form method="get" action={'mailpreferences/admin/user'|ezurl}>
+    <form method="post" action={'mailpreferences/admin/user'|ezurl}>
         <div class="mp-field">
             <label for="mp-user-q">{'Name, login, e-mail address or user ID'|i18n( 'design/admin/mailpreferences' )}</label>
             <input type="text" id="mp-user-q" name="q" value="{$query|wash}" required="required" />

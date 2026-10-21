@@ -236,7 +236,8 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         $renderer = new expHelpMarkdownRenderer( array(
             'link_resolver' => array( __CLASS__, 'linkResolver' ),
             'image_resolver' => array( 'expHelpLinks', 'image' ),
-            'image_sources' => expContentSecurityPolicy::imageSources() ) );
+            'image_sources' => expContentSecurityPolicy::imageSources(),
+            'remote_images' => class_exists( 'expHelpRemoteImages' ) ? array( new expHelpRemoteImages(), 'resolve' ) : null ) );
         return $renderer->render( self::markdown( $topic ), '' );
     }
 

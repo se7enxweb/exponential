@@ -31,6 +31,15 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
         $Module =& $Params['Module'];
         $http = \eZHTTPTool::instance();
 
+        // the search form without scripts (POST): to the canonical /(q)/ address, the kind kept (view parameters only)
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+        {
+            $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
+            $kind = UrlaliasGlobal::kindKey( isset( $userParameters['kind'] ) ? $userParameters['kind'] : '' );
+            return \expViewParameters::redirect( 'content/urlwildcards' . ( $kind !== 'all' ? '/(kind)/' . $kind : '' )
+                . \expViewParameters::suffix( array( 'q' => \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::posted( $_POST, 'q' ) ) ) ) );
+        }
+
         $Offset = $Params['Offset'];
         if ( $Module->hasActionParameter( 'Offset' ) )
         {
@@ -161,11 +170,12 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
         }
 
         // A search over pattern and destination and the kind of wildcard, both off the address
-        $search = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        $search = \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
         $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
         $kind = UrlaliasGlobal::kindKey( isset( $userParameters['kind'] ) ? $userParameters['kind'] : '' );
-        // An address to try against the wildcards, and what it gives
-        $testText = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasGetVariable( 'test' ) ? $http->getVariable( 'test' ) : '' );
+        // An address to try against the wildcards, and what it gives: posted by the Try form and answered on the page
+        // (an address holds "/", which a view parameter cannot carry; it changes nothing, so it needs no redirect)
+        $testText = \Exponential\View\Kernel\Url\ListView::searchText( $http->hasPostVariable( 'test' ) ? $http->postVariable( 'test' ) : '' );
         $testResult = false;
 
         // Fetch wildcads
@@ -234,7 +244,7 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
         // since 6.0.15: the search, the kind, how many there are in all and the address tried
         $tpl->setVariable( 'wildcards_total_count', $wildcardsTotalCount );
         $tpl->setVariable( 'wildcard_search', $search );
-        $tpl->setVariable( 'wildcard_search_suffix', $search !== '' ? '?q=' . rawurlencode( $search ) : '' );
+        $tpl->setVariable( 'wildcard_search_suffix', \expViewParameters::suffix( array( 'q' => $search ) ) );
         $tpl->setVariable( 'wildcard_kind', $kind );
         $tpl->setVariable( 'wildcard_test', $testText );
         $tpl->setVariable( 'wildcard_test_result', $testResult );

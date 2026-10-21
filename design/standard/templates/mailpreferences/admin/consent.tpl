@@ -12,7 +12,7 @@
 
 <section class="mp-card">
     <h2>{'Filter'|i18n( 'design/admin/mailpreferences' )}</h2>
-    <form method="get" action={'mailpreferences/admin/consent'|ezurl}>
+    <form method="post" action={'mailpreferences/admin/consent'|ezurl}>
         <div class="mp-filters">
             <div class="mp-field">
                 <label for="mp-log-person">{'E-mail address or user ID'|i18n( 'design/admin/mailpreferences' )}</label>

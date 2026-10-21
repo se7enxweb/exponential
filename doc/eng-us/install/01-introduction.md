@@ -22,7 +22,16 @@ Exponential 6 continues a long-lived code base (its copyright lines start in 199
 PHP 8.0 to 8.5, installs with Composer and stores its content in SQLite, MySQL or MariaDB, PostgreSQL, MongoDB or
 Oracle. Since 6.0.15 it also ships its own application server, **Exponential Velocity**, which is the recommended way
 to serve it at every stage, from a developer's laptop to production. Apache or nginx with PHP-FPM remain fully
-supported, and they are the way to run Exponential on PHP 8.0, where Velocity does not run.
+supported, and FrankenPHP is a production-ready alternative.
+
+**As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential.** The root `composer.json`
+requires `se7enxweb/exponential-velocity ~0.0.4.54` instead of suggesting it, so every installation made with
+Composer has it, on every PHP the kernel supports, PHP 8.0 included. This is a turning point for the project, a
+cornerstone and a capstone: a new level of application system integration that provides even greater features out of
+the box in the core product, by default. Exponential is a whole working unit rather than a framework to be completed:
+one installation is a rapid application development (RAD) stack for Internet applications, a CMS, a digital
+experience platform and an e-commerce system, from the server to the rendered page. See
+[Velocity is part of Exponential 6.0.15](../help/velocity-is-part-of-exponential-6-0-15.md).
 
 The product is maintained by [7x](https://se7enx.com). The source code is on GitHub at
 [github.com/se7enxweb/exponential](https://github.com/se7enxweb/exponential), and the kernel and every extension are
@@ -252,7 +261,7 @@ Exponential Velocity is the application server developed together with Exponenti
 application once, keeps it in persistent workers, has its own response cache and serves HTTP and HTTPS itself, with
 its own certificates. It is driven by the console command `exp:velocity`, which also runs two other engines: PHP's
 built-in server (`php`, for development) and FrankenPHP (`frankenphp`, a production-ready alternative). Velocity is
-optional to install but recommended to use; the site runs without it behind Apache or nginx. Because the workers keep
+installed with every copy and recommended to use; the site also runs without it behind Apache or nginx. Because the workers keep
 the code and the settings in memory, a change to a PHP class or an INI file reaches a Velocity-served site only after
 `exp:velocity restart` (or `exp:velocity deploy`). See [Velocity engines](../bc/6.0/velocity-engines.md) and the
 project [README](../../../README.md#exponential-velocity--the-fast-option).
