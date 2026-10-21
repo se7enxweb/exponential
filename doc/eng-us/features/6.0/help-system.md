@@ -413,6 +413,27 @@ This covers all 6.x documentation, including pages contributed through pull requ
 earlier versions keep their own notice (`exphelp.ini [License] OtherLicensePathRules[]`). `[License] Enabled=false`
 hides the notices.
 
+## The partner card
+
+Almost every help page ends with the **Become an Exponential Partner** paragraph (in German **Werden Sie
+Exponential-Partner**), written between two markers that GitHub does not show:
+
+```markdown
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, ... Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->
+```
+
+The viewer shows it as a card like the footer blocks of the help dashboard: the partner icon on a tile, the bold
+lead as its heading, the text, and the links of its last sentence as buttons (the first one primary), through the
+same link policy as every other link. `expHelpMarkdownRenderer` does this with its option `partner_card`, which the
+viewer sets (`section.a4-help-partner`, styled by `stylesheets/modules/help.css` of admin and admin4 with the shared
+tokens, light and dark). Nothing is recognized by its words, so every language works the same: a translation keeps
+the markers around its own text. A marked block that is not one paragraph starting with a bold lead, or has no end
+marker, is shown as the paragraph it is. The PDF prints the card as a box with its links on one line; the search,
+the DITA and content exports and every other output keep the plain paragraph.
+
 ## Related
 
 - `doc/eng-us/help/develop-with-git.md`: working from a Git clone with its history, and growing from a user to a developer.

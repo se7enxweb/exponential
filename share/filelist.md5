@@ -343,7 +343,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin/stylesheets/modules/content.css
-8111a52f93de74acf0b82ebfb6793e15  design/admin/stylesheets/modules/help.css
+f384c9d9a5f3d22ce6b96a3f3bcf852b  design/admin/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin/stylesheets/modules/structure.css
@@ -1078,7 +1078,7 @@ ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin4/stylesheets/modules/content.css
-8111a52f93de74acf0b82ebfb6793e15  design/admin4/stylesheets/modules/help.css
+f384c9d9a5f3d22ce6b96a3f3bcf852b  design/admin4/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin4/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin4/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin4/stylesheets/modules/structure.css
@@ -3204,7 +3204,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-5528bccb6cd3a2e4b2cf332b59a5ae7c  doc/changelogs/6.0/6.0.15.md
+749a09010a476d827ed57cb7b56d2869  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6236,7 +6236,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 0e464036cacc73b686d0d651d329bf98  doc/eng-us/features/6.0/help-content.md
-8c025bc60baf2d43b03197ab188ef89a  doc/eng-us/features/6.0/help-system.md
+6820d3fd79bce2b6dce634e2d964b9ee  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 695c0016c5a385b9902ba21c168a66ce  doc/eng-us/features/6.0/install-in-one-command.md
@@ -15005,7 +15005,7 @@ b3f4195f79b892bca854beb80acf293a  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 339e70d0ff63ba7702504a938cee731f  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-ef66cf4707c285238daaf22a0a60cea4  doc/ger-de/funktionen/6.0/hilfesystem.md
+541c1a3b9f5ffe6b54698b8c017cb962  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 644c0221d0cfa8304484565ac4c458ac  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -20387,12 +20387,12 @@ a751884f8cfc853ab4bce48644073bf4  kernel/classes/help/exphelplanguage.php
 cf446fca58833273b9ed1de03365679e  kernel/classes/help/exphelplicense.php
 6eb352c3dd568a1a708b0518ef552379  kernel/classes/help/exphelplinkcheck.php
 ef6a7583e07a1fe331d53c774d93c327  kernel/classes/help/exphelplinks.php
-6f11569e46ac6be01dda6ae43b6dda86  kernel/classes/help/exphelpmarkdownrenderer.php
+7aeac860e32f0280495f9d1ad6765f10  kernel/classes/help/exphelpmarkdownrenderer.php
 49922b87b0a898c5486f7cb66943e6da  kernel/classes/help/exphelpnavigation.php
 aa7d848a480aad552b21c7f8b1463207  kernel/classes/help/exphelppdf.php
 2c5541b07210503b242739e8b83b19ed  kernel/classes/help/exphelppdfcanvas.php
 b2bed9760dc6c4e54bf26595b49b1fc5  kernel/classes/help/exphelppdffontsubset.php
-aee83b97ef10c018a999fc83feb68f39  kernel/classes/help/exphelppdfwriter.php
+f7effc41230d544e41a80cf064a96a9d  kernel/classes/help/exphelppdfwriter.php
 61657e73c198af717fbfac518a9e78a1  kernel/classes/help/exphelpprojectfiles.php
 7040601f170d784b39ec006f577da0a4  kernel/classes/help/exphelpreadpolicygrant.php
 d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
@@ -21093,7 +21093,7 @@ ab74fa4ca149142fbf85422a1cf7e4cc  kernel/private/classes/views/exphelp/pdf.php
 cdee68d946457166da7d306e6e439f10  kernel/private/classes/views/exphelp/report.php
 2b0b1bb7dc080f5d1cc08db6b253c517  kernel/private/classes/views/exphelp/search.php
 a799beabc0a479a7e04e7cbf5e1f3e20  kernel/private/classes/views/exphelp/topic.php
-c1dded0a16fbde36631e3901aa7633c9  kernel/private/classes/views/exphelp/viewer.php
+59aa5fd48f9c0571558dadf6dfb273d8  kernel/private/classes/views/exphelp/viewer.php
 fe0f835accff4b0fab6b692539d4d1b1  kernel/private/classes/views/ezinfo/about.php
 6b83629a5884d62bd1ab252501a7e88c  kernel/private/classes/views/ezinfo/copyright.php
 6b068b315af351ad5985598cfc5f3ec5  kernel/private/classes/views/ezinfo/isalive.php
@@ -23506,6 +23506,7 @@ c8a1fc45578273af4fa89f2d7eeec6a0  tests/tests/kernel/classes/help/expHelpMarkdow
 2a77b883cf51ac663ba37ce28cdd8e2b  tests/tests/kernel/classes/help/expHelpNavigationTest.php
 af362f2295cd6582156efb0755a4a476  tests/tests/kernel/classes/help/expHelpPageOrderTest.php
 23cbb4d5af73143198b7adbc185d3443  tests/tests/kernel/classes/help/expHelpPageTitlesTest.php
+53d378aa1832af4170f70176c5655902  tests/tests/kernel/classes/help/expHelpPartnerCardTest.php
 b33f7662af4ec33ba73bccf286d6b0d4  tests/tests/kernel/classes/help/expHelpPdfTest.php
 84323ff02193037437748b236e525ac3  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
