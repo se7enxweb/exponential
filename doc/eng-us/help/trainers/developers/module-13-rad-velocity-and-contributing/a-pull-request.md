@@ -87,6 +87,10 @@ and distribute it in any way, without asking or paying the author, who cannot wi
 - **Secrets in the commit.** `settings/override/` and `settings/siteaccess/` may hold passwords; never commit them.
   Check `git diff --cached --name-only` before every commit.
 - **A pull request that does many things.** Split it; small pull requests are reviewed faster.
+- **"Fixing" deliberate behavior.** Some reported bugs are
+  [negative features](../../../project/getting-support.md#negative-features): on purpose, or open to interpretation,
+  and other sites depend on them. Changing one needs a clear justification and several review rounds, so steer
+  learners to a different first fix, or to an option instead of a new default.
 
 ## Hands-on exercise
 

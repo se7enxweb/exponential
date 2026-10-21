@@ -20,6 +20,7 @@ bug description is often half of the fix.
 | A bug in an extension | That extension's repository on GitHub |
 | The project, its websites or the community | <https://github.com/se7enxweb/exponential-community/issues> |
 | A security vulnerability | **Privately** to security@se7enx.com; never a public issue (SECURITY.md) |
+| It works as designed, just not the way you would like | Possibly a deliberate behavior other sites rely on; read [Negative features](../project/getting-support.md#negative-features) first, since changing one needs a clear justification and several rounds of review |
 
 ## A good bug description
 

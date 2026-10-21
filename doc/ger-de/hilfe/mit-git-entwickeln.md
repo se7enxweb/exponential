@@ -227,6 +227,11 @@ stattdessen in Ihren Fork, sodass Sie keinen Schreibzugriff auf das Projekt brau
 zuerst `CONTRIBUTING.md` im Wurzelverzeichnis der Installation: Es erklärt den Commit-Hook (`make hooks`) und das
 Dateimanifest (`make manifest-fix`), die jeder Pull-Request für den Kernel aktuell hält.
 
+Nicht jeder vermeintliche Fehler ist einer: Manches Verhalten ist beabsichtigt oder Auslegungssache, und andere Sites
+verlassen sich darauf. Ein Pull-Request, der es ändert, braucht eine klare Begründung und oft mehrere Runden der
+Prüfung, bevor er übernommen wird; bieten Sie das neue Verhalten lieber als Option an als als neuen Standard
+([Negative Funktionen](projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 Eine eigene Erweiterung gebaut? [Erweiterungen zurückgeben](erweiterungen-zurueckgeben.md) zeigt, wie Sie sie auf
 GitHub und Packagist veröffentlichen, damit jede Site sie installieren kann, und was die GPL verlangt, wenn Sie eine
 Erweiterung an andere weitergeben.

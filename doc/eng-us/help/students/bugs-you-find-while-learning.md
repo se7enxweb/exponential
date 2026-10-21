@@ -31,6 +31,7 @@ Before you file an issue, rule out the usual causes on a study site:
 | Is the setting in the right file and siteaccess? | [Understanding siteaccesses and settings](understanding-siteaccesses-and-settings.md#common-mistakes) |
 | Does it happen on a fresh installation? | [Resetting and rebuilding your study site](resetting-and-rebuilding-your-study-site.md) |
 | Is it already known? | Search the tracker first |
+| Is it on purpose? | Some behavior that looks wrong is deliberate or open to interpretation, and other sites depend on it; changing it needs a clear justification and often several rounds of review. See [Negative features](../project/getting-support.md#negative-features) |
 
 If it still happens on a fresh installation with the documented steps, it is probably a bug. If a help page tells
 you something the software does not do, that is a bug of the documentation: file it too, or fix it

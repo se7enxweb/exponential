@@ -32,6 +32,9 @@ To get through review faster (same source):
 - Answer every review comment in the pull request, with a change or a reason.
 - Keep your branch current: rebase it on `main` before asking for the next round.
 - Do not take many rounds personally.
+- If your change alters a [negative feature](../../project/getting-support.md#negative-features), behavior that is
+  deliberate or open to interpretation and that other sites depend on, expect more rounds still: justify the use case,
+  and offer the new behavior as an option rather than a new default.
 
 Every pull request is merged in the end: its author revises it as the reviews ask
 ([How the project grows](../../who-is-the-exponential-foundation.md#how-the-project-grows)).

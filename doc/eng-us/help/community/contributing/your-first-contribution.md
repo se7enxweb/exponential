@@ -40,6 +40,10 @@ request, its summary "shows the lines to change" (`CONTRIBUTING.md`, "Submitting
 3. Write the steps, what you expected and what happened. Remove anything private.
 4. Watch the issue and answer questions from maintainers.
 
+Some behavior that looks like a bug is deliberate, or open to interpretation, and other sites depend on it. If a
+maintainer calls it a [negative feature](../../project/getting-support.md#negative-features), the discussion is not
+over: explain your use case, and expect a change to come as an option and only after careful review.
+
 [Filing a bug](filing-a-bug.md) has the details.
 
 ## Option C: your first pull request with code

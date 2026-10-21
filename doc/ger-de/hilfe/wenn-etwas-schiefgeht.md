@@ -50,6 +50,11 @@ Ein Bildschirmfoto hilft, solange es keine Passwörter und keine personenbezogen
 
 ## Einen Fehler in Exponential melden
 
+> **Bevor Sie ihn melden:** Nicht alles, was wie ein Fehler aussieht, ist einer. Ein Verhalten kann beabsichtigt
+> oder Auslegungssache sein, was Fachleute eine negative Funktion nennen. Eine Änderung daran kann jede Site
+> betreffen, die sich darauf verlässt, und braucht deshalb eine starke Begründung und oft mehrere Runden der Prüfung.
+> Siehe [Negative Funktionen](projekt/unterstuetzung-erhalten.md#negative-funktionen).
+
 Stellt Ihr Administrator (oder Sie als Administrator) fest, dass das Problem in der Software selbst liegt und nicht
 in der Einrichtung der Site, melden Sie es öffentlich, damit es für alle behoben werden kann. Die Seite **Fehler
 melden** der Hilfe (`exphelp/report` in der Administration) führt Sie durch die Meldung, füllt eine Zusammenfassung

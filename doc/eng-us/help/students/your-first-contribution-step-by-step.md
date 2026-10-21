@@ -96,6 +96,11 @@ CLA:      <signed / not needed (documentation fix in an extension of my own, etc
 The kernel's pull request template has a checkbox for the CLA. Keep personal data, passwords and server details out
 of the description and the screenshots.
 
+For a first contribution, pick a fix nobody can disagree with. If the behavior you want to change might be on
+purpose or open to interpretation, it may be a [negative feature](../project/getting-support.md#negative-features)
+other sites depend on: such a change needs a strong "Why", is better offered as an option than a new default, and
+can take several rounds of review before it is merged.
+
 ## After you send it
 
 - **Expect review rounds.** 7x reviews in many more rounds than usual; it "is not a judgment of you"

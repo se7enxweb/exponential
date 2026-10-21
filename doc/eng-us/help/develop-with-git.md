@@ -219,7 +219,9 @@ installation first: it explains the commit hook (`make hooks`) and the file mani
 kernel pull request keeps current.
 
 **Expect many review rounds.** 7x reviews a commit or pull request in many more rounds than usual, sometimes hundreds
-of revisions; be ready to revise your change until it is simple to accept. While the pull request is open, squash it
+of revisions; be ready to revise your change until it is simple to accept. A fix for behavior that turns out to be
+deliberate, a [negative feature](project/getting-support.md#negative-features) other sites depend on, needs a clear
+justification on top, and an option is easier to accept than a new default. While the pull request is open, squash it
 and rebase it onto `main` as the reviews ask, which 7x requires:
 
 ```bash

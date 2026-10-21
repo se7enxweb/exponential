@@ -232,8 +232,10 @@ stop maintaining it, so that someone else can take it over.
 Contributing back also means sending your fixes to an extension you did not write, instead of keeping a changed
 copy. Fork it, fix it on a branch and open a pull request, exactly as
 [Develop with Git: Contribute a change with a pull request](develop-with-git.md#contribute-a-change-with-a-pull-request)
-shows. If the original author no longer answers, fork it respectfully: keep the history, the copyright and the
-license, and credit them in the README
+shows. Whether the extension belongs to Exponential or to any other project, a change to behavior its author chose on
+purpose, which other sites rely on (a [negative feature](project/getting-support.md#negative-features)), needs a clear
+justification and may take several rounds of review; offer it as an option. If the original author no longer
+answers, fork it respectfully: keep the history, the copyright and the license, and credit them in the README
 ([Contributing extensions back upstream](partners/contributing-extensions-back.md)).
 
 ## Related pages

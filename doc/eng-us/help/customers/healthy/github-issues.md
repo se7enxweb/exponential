@@ -44,6 +44,10 @@ From [When something goes wrong](../../when-something-goes-wrong.md):
 
 The help's report page drafts such an issue for you ([The help report page](the-help-report-page.md)).
 
+Not every surprise is a bug: some behavior is deliberate or open to interpretation, and other sites depend on it. An
+issue asking to change such a [negative feature](../../project/getting-support.md#negative-features) needs a clear
+justification and may take several rounds of discussion; asking for an option rather than a new default helps.
+
 ## Never post
 
 - Passwords, keys, session cookies, database addresses.

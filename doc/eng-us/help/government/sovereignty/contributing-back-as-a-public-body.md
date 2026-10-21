@@ -71,6 +71,11 @@ Report on a clean installation where possible, with steps to reproduce, and with
 secrets ([Filing bugs as a partner](../../partners/filing-bugs-as-a-partner.md); the same rules suit everyone). Security
 problems go privately to the address in the project's SECURITY.md, not to a public issue.
 
+Before filing, consider whether the behavior is deliberate or open to interpretation: other sites, including other
+public bodies, may depend on it. A request to change such a
+[negative feature](../../project/getting-support.md#negative-features) needs a clear justification and may take
+several rounds of review; a new option is easier to accept than a new default.
+
 ## Requiring it from suppliers
 
 Write into contracts that generic improvements a supplier makes for you are offered back to the project, with your

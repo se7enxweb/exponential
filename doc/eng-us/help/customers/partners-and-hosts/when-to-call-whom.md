@@ -28,6 +28,7 @@ Problems get solved faster when they reach the right person first. Keep this tab
 | A suspected break-in: unknown accounts, changed files | Host, at once, as severity 1 | Partner; your data protection officer if personal data may be exposed |
 | A security weakness in Exponential itself | Privately to security@se7enx.com, usually through your partner | ([Private security reports](../healthy/private-security-reports.md)) |
 | A reproducible bug in Exponential itself | Partner or administrator, who files it | The public tracker ([GitHub issues](../healthy/github-issues.md)) |
+| Exponential works as designed, but not as your business needs | Partner, who checks whether it is a deliberate [negative feature](../../project/getting-support.md#negative-features) other sites rely on | An issue with a clear justification, ideally for an option; expect several rounds of review |
 | You need guaranteed help and your providers cannot give it | Paid support from 7x ([Working with 7x and the project](working-with-7x-and-the-project.md)) | |
 
 ## Before you call

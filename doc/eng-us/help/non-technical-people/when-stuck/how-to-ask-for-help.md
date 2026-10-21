@@ -75,6 +75,10 @@ publicly so it is fixed for everyone. The **Report an error** page of the help p
 ([Filing a bug in Exponential](../../when-something-goes-wrong.md#filing-a-bug-in-exponential)). You need a free
 GitHub account to report it yourself.
 
+Not everything that feels wrong is a mistake: some behavior is chosen on purpose, and other sites depend on it. A
+request to change such a [negative feature](../../project/getting-support.md#negative-features) needs a good reason
+and can take several rounds of discussion before anything changes.
+
 A **security problem** is never reported publicly: send it privately to the address in
 [Security problems](../../when-something-goes-wrong.md#security-problems).
 

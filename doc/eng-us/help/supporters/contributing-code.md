@@ -44,6 +44,9 @@ database, so a development installation needs no database server ([Database supp
 - It is reviewed, and every pull request is merged. While it is open, you squash it and rebase it onto `main` as the
   reviews ask (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to your pull request
   branch only); once it is merged, `main`'s history is never rewritten (`doc/eng-us/bc/6.0/ci.md`).
+- A pull request that changes deliberate behavior, a [negative feature](../project/getting-support.md#negative-features)
+  other sites depend on, needs a clear justification and can take several rounds of review before it is accepted and
+  merged. Adding an option instead of changing the default is the easier path.
 
 ## License
 

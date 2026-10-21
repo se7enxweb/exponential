@@ -41,6 +41,11 @@ Use the issue tracker of the repository. Include the PHP version, `composer show
 [SQLite for development](sqlite-for-development.md)). [Writing good issues](../extension-development/part-5-extend-fork-contribute/writing-good-issues.md)
 applies here as well.
 
+Check first that the behavior is not deliberate. Some reported bugs are
+[negative features](../project/getting-support.md#negative-features): behavior that is on purpose or open to
+interpretation, which other projects depend on. Changing one needs a clear justification, works best as an option
+rather than a new default, and may take several rounds of review before it is merged.
+
 ## A pull request, step by step
 
 The skeleton's README describes the path:

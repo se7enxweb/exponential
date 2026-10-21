@@ -44,6 +44,11 @@ Die Administration hat eine Anleitung für Fehlerberichte: **Hilfe > Fehler meld
 Zusammenfassung der Installation ein und öffnet ein vorbereitetes GitHub-Issue. Siehe
 [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md).
 
+Bevor Sie einen Fehler melden, bedenken Sie: Manches Verhalten ist beabsichtigt oder Auslegungssache, und andere Sites
+verlassen sich darauf. Eine Änderung daran braucht eine klare Begründung und oft mehrere Runden der Prüfung; eine
+Option ist besser als ein neuer Standard
+([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 ## Wie Sie eine Frage schreiben, die andere beantworten können
 
 Eine gute Frage hat fünf Teile:

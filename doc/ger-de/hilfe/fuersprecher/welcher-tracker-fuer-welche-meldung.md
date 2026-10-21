@@ -60,6 +60,9 @@ Empfehlen Sie sie allen, die sich anmelden können.
   und sagen Sie das; die Betreuer können es verschieben.
 - Wenn es kein Softwarefehler ist, ist der Community-Tracker der richtige Ort.
 - Suchen Sie zuerst: Ergänzen Sie ein bestehendes Issue, statt ein Duplikat zu eröffnen.
+- Wenn das Verhalten beabsichtigt oder Auslegungssache sein könnte, sagen Sie der meldenden Person, dass andere Sites
+  sich darauf verlassen können: Eine Änderung braucht dann eine klare Begründung und mehrere Prüfrunden, und eine
+  Option ist besser als ein neuer Standard ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Verwandte Seiten
 
