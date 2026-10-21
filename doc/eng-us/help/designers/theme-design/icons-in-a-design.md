@@ -28,7 +28,8 @@ its icons, how to add one, and how to make icon-only controls accessible.
 | Crystal | `share/icons/crystal`, `crystal-admin` | the classic class and file type icons |
 | Font Awesome (CSS and font) | `extension/sevenx_themes_simple/design/simple/stylesheets/libs/fontawesome/`, the starter design's `fonts/` | the simple and starter designs |
 
-`share/icons/` is served as static files by the shipped rewrite rules.
+`share/icons/` and, since 6.0.15, the icon themes of extensions (`extension/<name>/icons/`) are served as static files
+by the shipped rewrite rules.
 
 ## Icons in a public design
 

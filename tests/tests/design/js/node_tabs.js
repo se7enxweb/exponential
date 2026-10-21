@@ -7,7 +7,8 @@ const fs = require('fs');
 const vm = require('vm');
 const source = fs.readFileSync(process.argv[2], 'utf8');
 
-function run(cookie, steps) {
+function run(cookie, steps, opts) {
+    opts = opts || {};
     const selectors = [];
     const written = [];
     const saved = [];
@@ -35,12 +36,12 @@ function run(cookie, steps) {
         return q(arg);
     }
     $.ez = { url: '/ezjscore/' };
-    $.post = (url) => saved.push('post ' + url);
-    const document = { getElementById: () => null };
+    $.post = (url, data) => saved.push('post ' + url + ' ' + data);
+    const document = { getElementById: (id) => (opts.token !== undefined && id === 'ezxform_token_js' ? { getAttribute: () => opts.token } : null) };
     Object.defineProperty(document, 'cookie', { get: () => jar, set: (v) => { written.push(v); } });
     const sandbox = { jQuery: $, document, setTimeout: (fn) => fn(), clearTimeout() {}, location: { protocol: 'https:' } };
     sandbox.window = sandbox;
-    sandbox.a4Pref = { set: (n, v) => saved.push(n + '=' + v) };
+    if (!opts.noPref) sandbox.a4Pref = { set: (n, v) => saved.push(n + '=' + v) };
     vm.createContext(sandbox);
     let error = null;
     try {
@@ -61,4 +62,5 @@ process.stdout.write(JSON.stringify({
     'a cookie of another name is not read': run('xadminNavigationTab=details'),
     'opening a tab writes the cookie': run('', ['open']),
     'the switch saves through a4Pref': run('', ['toggle']),
+    'the token is URL-encoded in the legacy post': run('', ['toggle'], { noPref: true, token: 'a+b&c=d%e f' }),
 }));

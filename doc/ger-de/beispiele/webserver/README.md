@@ -26,9 +26,10 @@ Jedes Beispiel auf diesen Seiten ist eine vollständige Datei zum Kopieren; erse
    wird ausgeführt, nur weil sein Pfad angefragt wurde.
 3. `/api/...` und `/index_rest.php` gehen an `index_rest.php`, `/content/treemenu...` (mit oder ohne vorangestellten
    Siteaccess) an `index_treemenu.php`.
-4. Die Asset-Liste wird als Datei gesendet: Design- und Erweiterungs-Design-Verzeichnisse, `share/icons`, gespeicherte
-   Bilder, die Bild-Originale, gespeicherte PDF-Exporte, die öffentlichen Caches, Paketvorschauen, `favicon.ico`,
-   `robots.txt`, `index.js`, `sw.js` und `w3c/p3p.xml`.
+4. Die Asset-Liste wird als Datei gesendet: Design- und Erweiterungs-Design-Verzeichnisse, `share/icons`, die
+   Icon-Themes der Erweiterungen (`extension/<name>/icons/`: SVG-, PNG- und GIF-Bilder mit genau einer Dateiendung),
+   gespeicherte Bilder, die Bild-Originale, gespeicherte PDF-Exporte, die öffentlichen Caches, Paketvorschauen,
+   `favicon.ico`, `robots.txt`, `index.js`, `sw.js` und `w3c/p3p.xml`.
 5. Alles andere geht an `index.php`.
 
 ## Welche Konfiguration

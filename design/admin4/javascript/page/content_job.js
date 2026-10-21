@@ -40,8 +40,8 @@
     if (s.can_resume && !box.hasAttribute('data-can-resume')) { location.reload(); return; }
     if (s.state === 'done') {
       var done = q('.a4-content-job-done'), a = q('.a4-content-job-open'), n = 3; done.hidden = false;
-      if (s.redirect_url) a.href = s.redirect_url;
-      (function tick() { q('.a4-content-job-auto').textContent = t('opening', {'%seconds': n}); if (n-- <= 0) location.href = a.href; else setTimeout(tick, 1000); })();
+      if (s.redirect_url && window.a4SafeURL && window.a4SafeURL(s.redirect_url, 'content_job')) a.href = s.redirect_url;
+      (function tick() { q('.a4-content-job-auto').textContent = t('opening', {'%seconds': n}); if (n-- <= 0) { if (window.a4SafeURL && window.a4SafeURL(a.href, 'content_job')) location.href = a.href; } else setTimeout(tick, 1000); })();
       return;
     }
     if (s.state !== first && s.state !== 'running' && s.state !== 'queued') { location.reload(); return; }

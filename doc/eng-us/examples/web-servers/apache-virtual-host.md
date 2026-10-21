@@ -155,6 +155,8 @@ them is free documentation (GFDL 1.3 or later), like this page.
         #RewriteRule ^/var_cache/([^/]+/)?cache/(texttoimage|public)/.* - [L]
         RewriteRule ^/design/[^/]+/(stylesheets|images|javascript|fonts)/.* - [L]
         RewriteRule ^/share/icons/.* - [L]
+        # Icon themes of extensions (icon.ini [ExtensionSettings] IconExtensions[]): images with exactly one extension
+        RewriteRule ^/extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
         RewriteRule ^/extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.* - [L]
         RewriteRule ^/packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
         RewriteRule ^/packages/styles/.+/thumbnail/.* - [L]
@@ -204,7 +206,7 @@ them is free documentation (GFDL 1.3 or later), like this page.
             ExpiresActive On
             ExpiresDefault "access plus 7 days"
         </LocationMatch>
-        <LocationMatch "^/share/icons/">
+        <LocationMatch "^/(share|extension/[^/]+)/icons/">
             ExpiresActive On
             ExpiresDefault "access plus 7 days"
         </LocationMatch>

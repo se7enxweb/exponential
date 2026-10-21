@@ -157,6 +157,8 @@ RewriteRule ^/?var/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 #RewriteRule ^/?var_cache/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 RewriteRule ^/?design/[^/]+/(stylesheets|images|javascript|fonts)/.* - [L]
 RewriteRule ^/?share/icons/.* - [L]
+# Icon themes of extensions (icon.ini [ExtensionSettings] IconExtensions[]): images with exactly one extension
+RewriteRule ^/?extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
 RewriteRule ^/?extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.* - [L]
 RewriteRule ^/?packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
 RewriteRule ^/?packages/styles/.+/thumbnail/.* - [L]

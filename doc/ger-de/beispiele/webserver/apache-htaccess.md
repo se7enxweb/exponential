@@ -130,6 +130,10 @@ RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 #RewriteRule ^var_cache/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 RewriteRule ^design/[^/]+/(stylesheets|images|javascript|fonts)/.* - [L]
 RewriteRule ^share/icons/.* - [L]
+# Icon themes shipped by extensions (icon.ini [ExtensionSettings] IconExtensions[],
+# extension/<name>/icons/). Only images with exactly one extension: a name like
+# a.php.svg could otherwise be handed to PHP by an AddHandler mapping.
+RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
 RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.* - [L]
 RewriteRule ^packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
 RewriteRule ^packages/styles/.+/thumbnail/.* - [L]
@@ -216,7 +220,7 @@ RewriteRule .* index.php
         ExpiresActive On
         ExpiresDefault "access plus 7 days"
     </ElseIf>
-    <ElseIf "%{REQUEST_URI} =~ m#^/share/icons/#">
+    <ElseIf "%{REQUEST_URI} =~ m#^/(share|extension/[^/]+)/icons/#">
         ExpiresActive On
         ExpiresDefault "access plus 7 days"
     </ElseIf>
@@ -239,6 +243,7 @@ RewriteRule .* index.php
 | `^var/([^/]+/)?cache/(texttoimage\|public)/.*` | die öffentlichen Caches (gepackte Skripte und Styles) | der Packer von `ezjscore` schreibt dorthin |
 | `^var_cache/...` (auskommentiert) | die öffentlichen Caches in einem eigenen Baum | nur mit `site.ini [FileSettings] CacheVarDir=var_cache` |
 | `^design/...`, `^share/icons/.*`, `^extension/[^/]+/design/...` | Stylesheets, Bilder, Skripte und Schriften der Designs | nur die jeweils gelisteten Verzeichnisarten; bei einer Erweiterung auch `vendor` und `media` |
+| `^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg\|png\|gif)$` | die Icon-Themes der Erweiterungen (`icon.ini [ExtensionSettings] IconExtensions[]`) | nur SVG-, PNG- und GIF-Bilder mit genau einer Dateiendung: ein Name wie `a.php.svg` könnte sonst über ein `AddHandler`-Mapping an PHP gehen |
 | `^packages/styles/...`, `^var/storage/packages/.+\.(png\|jpe?g\|gif\|webp)$` | Paket-Styles und Vorschaubilder | XML, SQL und Einstellungen eines Pakets sind nicht fürs Web bestimmt; SVG ist nicht gelistet, es kann Skript enthalten |
 | `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml` | aus dem Wurzelverzeichnis gesendet | der Service Worker muss aus dem Wurzelverzeichnis ausgeliefert werden |
 | `RewriteRule .* index.php` | alles andere führt `index.php` aus | URL-Aliase und Module; auch `settings/site.ini`, `composer.json`, `var/log/...`, die `index.php` mit einer Seite oder einem 404 beantwortet, niemals mit der Datei |

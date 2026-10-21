@@ -6,6 +6,7 @@
 'use strict';
 const fs = require('fs');
 const vm = require('vm');
+const path = require('path');
 const source = fs.readFileSync(process.argv[2], 'utf8');
 
 const elements = {};
@@ -82,6 +83,8 @@ sandbox.menuArray = {
     } },
 };
 vm.createContext(sandbox);
+// the shared address check of the page head (a4_url.js), loaded before the menu script
+vm.runInContext(fs.readFileSync(path.join(path.dirname(process.argv[2]), '..', 'a4_url.js'), 'utf8'), sandbox);
 vm.runInContext(source, sandbox);
 
 const out = {};

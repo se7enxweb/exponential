@@ -55,12 +55,6 @@ parameters:
 			path: kernel/audit/settings.php
 
 		-
-			message: '#^Variable \$Params might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/class/delete.php
-
-		-
 			message: '#^Caught class eZClusterFileHandlerGeneralException not found\.$#'
 			identifier: class.notFound
 			count: 1
@@ -1211,12 +1205,6 @@ parameters:
 			identifier: variable.undefined
 			count: 3
 			path: kernel/content/attribute_edit.php
-
-		-
-			message: '#^Variable \$Params might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/content/error.php
 
 		-
 			message: '#^Static call to instance method eZContentClass\:\:canInstantiateClasses\(\)\.$#'
@@ -6653,12 +6641,6 @@ parameters:
 			identifier: array.duplicateKey
 			count: 1
 			path: kernel/user/module.php
-
-		-
-			message: '#^Variable \$Params might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/workflow/list.php
 
 		-
 			message: '#^Access to constant RETURN_DOCUMENT_AFTER on an unknown class MongoDB\\Operation\\FindOneAndUpdate\.$#'

@@ -76,7 +76,7 @@ Whatever IIS rule set you write must do what `.htaccess_root` does
 | an existing `.php`, `.phtml` or `.phar` below the root | 404 |
 | `/api/...` | `index_rest.php` |
 | `/content/treemenu...`, `/<siteaccess>/content/treemenu...` | `index_treemenu.php` |
-| a listed asset path (design and extension stylesheets, images, scripts and fonts; `var/*/storage/images`; image originals; stored PDF exports; public caches; `share/icons`; package previews; `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml`) | sent as a file |
+| a listed asset path (design and extension stylesheets, images, scripts and fonts; `var/*/storage/images`; image originals; stored PDF exports; public caches; `share/icons`; the icon themes of extensions, `extension/<name>/icons/`, images with exactly one extension; package previews; `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml`) | sent as a file |
 | everything else | `index.php` |
 
 The regular expressions of each line are in `.htaccess_root` and, for the asset list, in

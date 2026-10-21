@@ -415,7 +415,8 @@ Kopf sagt: *"Do not edit: it is rewritten on every start, graceful and restart."
   Jeder hat `bind <Host>`, `import exp` und `import "<SiteInclude>"`, wenn gesetzt.
 
 `STATIC_PATHS` (der genaue reguläre Ausdruck) passt auf Stylesheets/Bilder/JavaScript/Schriften von Designs und
-Erweiterungen, `share/icons/`, `var/*/storage/images`, Originale im Speicher für Bilder, öffentliche Caches und
+Erweiterungen, `share/icons/`, Icon-Themes von Erweiterungen
+(`extension/<name>/icons/`, Bilder mit genau einer Dateiendung), `var/*/storage/images`, Originale im Speicher für Bilder, öffentliche Caches und
 texttoimage-Caches, Styles von Paketen, `var/storage/packages/`, `favicon.ico`, `robots.txt`, `index.js`, `sw.js`,
 `w3c/p3p.xml`. `NEVER_STATIC` = `(?i)(\.(php\d?|phtml|phar)$|/\.)` — kein PHP-Quelltext und keine Punktdatei wird je
 als Datei ausgeliefert, auch nicht unterhalb eines Asset-Verzeichnisses; beide fallen an `index.php` durch. Deshalb

@@ -455,7 +455,8 @@ graceful and restart."*
   `import exp`, and `import "<SiteInclude>"` when set.
 
 `STATIC_PATHS` (the exact regexp) matches design/extension
-stylesheets/images/javascript/fonts, `share/icons/`, `var/*/storage/images`,
+stylesheets/images/javascript/fonts, `share/icons/`, extension icon themes
+(`extension/<name>/icons/`, images with exactly one extension), `var/*/storage/images`,
 storage originals for images, public/texttoimage caches, package styles,
 `var/storage/packages/`, `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml`.
 `NEVER_STATIC` = `(?i)(\.(php\d?|phtml|phar)$|/\.)` — no PHP source and no

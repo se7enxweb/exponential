@@ -131,7 +131,7 @@ die Sicherheits-Header.
         </rule>
         <!-- 4. Files served as they are: the list of .htaccess_root -->
         <rule name="exp-static" stopProcessing="true">
-          <match url="^(var/([^/]+/)?storage/images(-versioned)?/.*|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/.*|design/[^/]+/(stylesheets|images|javascript|fonts)/.*|share/icons/.*|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.*|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.*|packages/styles/.+/thumbnail/.*|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico|design/standard/images/favicon\.ico|robots\.txt|index\.js$|sw\.js$|w3c/p3p\.xml)" />
+          <match url="^(var/([^/]+/)?storage/images(-versioned)?/.*|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/.*|design/[^/]+/(stylesheets|images|javascript|fonts)/.*|share/icons/.*|extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.*|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.*|packages/styles/.+/thumbnail/.*|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico|design/standard/images/favicon\.ico|robots\.txt|index\.js$|sw\.js$|w3c/p3p\.xml)" />
           <action type="None" />
         </rule>
         <!-- With site.ini [FileSettings] CacheVarDir=var_cache (multi-site hosting),

@@ -71,7 +71,9 @@ Extensions listed in `IconExtensions[]` are searched before `share/icons/`, in t
 3. `StandardTheme`.
 4. The theme's or override's `Default` icon, so a missing file never produces a broken image tag.
 
-Icons in extensions are plain static files: the web server serves them with no extra PHP work per image.
+Icons in extensions are plain static files: the web server serves them with no extra PHP work per image. The shipped
+rules (`.htaccess_root`, the web server examples, Velocity) serve `extension/<name>/icons/` since 6.0.15; a server
+configuration of your own needs the one rule in [Web server rules](../../bc/6.0/ICONS.md#web-server-rules).
 
 The `crystal-admin` theme now ships an icon for the content class identifier `job`.
 

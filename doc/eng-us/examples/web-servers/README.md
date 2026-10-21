@@ -23,9 +23,10 @@ replace. Each one implements the same list, in this order:
 2. an existing `.php`, `.phtml` or `.phar` below the root answers 404: no script runs because its path was asked for;
 3. `/api/...` and `/index_rest.php` go to `index_rest.php`, `/content/treemenu...` (with or without a siteaccess in
    front) to `index_treemenu.php`;
-4. the asset list is sent as files: design and extension design directories, `share/icons`, stored images, the image
-   originals, stored PDF exports, the public caches, package previews, `favicon.ico`, `robots.txt`, `index.js`,
-   `sw.js` and `w3c/p3p.xml`;
+4. the asset list is sent as files: design and extension design directories, `share/icons`, the icon
+   themes of extensions (`extension/<name>/icons/`: SVG, PNG and GIF images with exactly one extension), stored
+   images, the image originals, stored PDF exports, the public caches, package previews, `favicon.ico`, `robots.txt`,
+   `index.js`, `sw.js` and `w3c/p3p.xml`;
 5. everything else goes to `index.php`.
 
 ## Which one

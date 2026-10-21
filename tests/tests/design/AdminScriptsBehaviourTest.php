@@ -215,6 +215,9 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, $s['opening a tab writes the cookie']['written'] );
         $this->assertStringEndsWith( '; path=/; SameSite=Lax; Secure', $s['opening a tab writes the cookie']['written'][0] );
         $this->assertSame( array( 'admin_navigation_content=0' ), $s['the switch saves through a4Pref']['saved'] );
+        // without a4Pref the legacy post carries the token URL-encoded (a + or & in it must not split or change the field)
+        $this->assertCount( 1, $s['the token is URL-encoded in the legacy post']['saved'] );
+        $this->assertStringEndsWith( ' ezxform_token=a%2Bb%26c%3Dd%25e%20f', $s['the token is URL-encoded in the legacy post']['saved'][0] );
     }
 
     public function testTheThemeStylesheetIsNotNamedByAPreference()

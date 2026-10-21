@@ -1,0 +1,53 @@
+---
+title: Muster in kernel/classes/ini
+audience: developer
+category: standards
+order: 494
+summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/ini mit den Entwurfsmustern.
+keywords: kernel/classes/ini, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
+type: catalogue
+---
+# Muster in kernel/classes/ini
+
+> **Hinweis**
+> Diese Seite wird aus dem Quellcode von `php bin/php/exppatterncatalogue.php --write` erzeugt. Bearbeiten Sie sie nicht von Hand:
+> Ändern Sie den Code oder den Generator und führen Sie den Befehl dann erneut aus. Wie die Muster erkannt werden: [der Musterkatalog](README.md#how-the-catalogue-is-built).
+
+Jede Klasse, Schnittstelle und jeder Trait von `kernel/classes/ini` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
+
+## Klassen (32)
+
+| Klasse | Art | Muster | Datei | Beschreibung |
+| --- | --- | --- | --- | --- |
+| `expIniAction` | interface | [Schnittstelle (Vertrag)](schnittstelle.md) | `kernel/classes/ini/actions/expiniaction.php:15` | Eine Aktion des Befehls exp:ini (get, set, add, rem, ...). |
+| `expIniActionActions` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionactions.php:14` | exp:ini actions: die Aktionen des Befehls, die eingebauten und die, die Extensions in ini.ini [IniCommandSettings] Actions[] registrieren, mit ihren Al… |
+| `expIniActionAdd` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionadd.php:14` | exp:ini add: hängt einen Wert an ein Array (Variable[]=value) in der Datei eines Scopes an und legt die Datei und den Block an, wenn sie fehlen (außer mit --no-c… |
+| `expIniActionBase` | abstract class implements expIniAction | [Schablonenmethode / abstrakte Basisklasse](schablonenmethode.md) | `kernel/classes/ini/actions/expiniactionbase.php:15` | Was die eingebauten exp:ini-Aktionen gemeinsam haben: die drei beschreibenden Methoden aus Klassenkonstanten, die Ausgabe eines Werts als INI-Zeilen und die kleine Prüf… |
+| `expIniActionClear` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionclear.php:13` | exp:ini clear: schreibt die Array-Reset-Zeile Variable[] in die Datei eines Scopes, sodass die Werte der zuvor geladenen Dateien verworfen werden und nur, was fo… |
+| `expIniActionCopy` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactioncopy.php:15` | exp:ini copy: kopiert eine Einstellung aus der Datei eines Scopes in die eines anderen: eine einfache Variable oder ein Hash-Eintrag erhält denselben Wert, ein ganzes Array wird geschrie… |
+| `expIniActionGet` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionget.php:14` | exp:ini get: der wirksame Wert (alle Dateien in Ladereihenfolge zusammengeführt, für den aktuellen Siteaccess oder den von -s) oder, mit einem Scope, der Wert, den dieser Scope… |
+| `expIniActionList` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionlist.php:14` | exp:ini list: die Blöcke einer INI-Datei oder die Variablen eines Blocks, wirksam (alle Dateien zusammengeführt, für den aktuellen Siteaccess) oder als Datei eines Scopes… |
+| `expIniActionMove` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionmove.php:16` | exp:ini move: verschiebt einen Block (mit seinen Kommentaren und Leerzeilen, in Reihenfolge) oder jeden Block einer Datei von einem Scope in einen anderen, typischerweise von settin… |
+| `expIniActionMoveAll` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionmoveall.php:15` | exp:ini move-all: verschiebt jede INI-Datei eines Scopes (oder die, die --files nennt) Block für Block in einen anderen Scope, eine Transaktion je Datei wie exp:ini mo… |
+| `expIniActionRegistry` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Registry](registry.md) | `kernel/classes/ini/actions/expiniactionregistry.php:22` | Die Aktionen des Befehls exp:ini und die Bereichsanbieter des Einstellungseditors, gelesen aus ini.ini [IniCommandSettings]: |
+| `expIniActionRem` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionrem.php:14` | exp:ini rem (Alias remove): entfernt eine Variable aus der Datei eines Scopes oder einen Wert eines Arrays oder einen Eintrag eines Hashs. |
+| `expIniActionScopes` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionscopes.php:14` | exp:ini scopes: die Scopes, die diese Installation hat (global, default, jeder Siteaccess, jede Extension und die Siteaccess-Verzeichnisse der Extensions, und di… |
+| `expIniActionSet` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionset.php:14` | exp:ini set: setzt eine einfache Variable (Variable=value) oder einen Hash-Eintrag (Variable[key]=value) in der Datei eines Scopes und legt die Datei und den Block an, wenn s… |
+| `expIniActionToggle` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactiontoggle.php:14` | exp:ini toggle: schaltet einen Schalter in der Datei eines Scopes so um, wie die Einstellung ihn schreibt: enableddisabled, truefalse, yesno, onoff, 10 (die Groß-/Kleinschreibung bleibt erhalten). |
+| `expIniActionWhere` | class extends expIniActionBase | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `kernel/classes/ini/actions/expiniactionwhere.php:14` | exp:ini where: jede Datei, die eine Variable setzt, in der Reihenfolge, in der eZINI sie lädt (bei einem einfachen Wert gewinnt die letzte, Arrays summieren sich, außer eine Datei setzt zurü… |
+| `expIniCommand` | class | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ini/actions/expinicommand.php:15` | Der Befehl exp:ini ohne sein Skript: Zerlegen der Befehlszeile, die Hilfetexte, Finden der Aktion in der Registry, Ausführen mit einem expIniComm… |
+| `expIniCommandContext` | class | – | `kernel/classes/ini/actions/expinicommandcontext.php:22` | Was eine exp:ini-Aktion übergeben bekommt: die Argumente nach dem Namen der Aktion, die Optionen, die Ausgabe (Text oder ein JSON-Objekt mit --json), die Einstellungen… |
+| `expIniCoreScopeProvider` | class implements expIniScopeProvider | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Strategie / Handler](strategie-handler.md) | `kernel/classes/ini/expinicorescopeprovider.php:16` | global (settings/override), default (settings/, die mitgelieferten Standardwerte, per Richtlinie nicht beschreibbar) und ein Bereich pro Siteaccess: jedes Verzeichnis in settin… |
+| `expIniEditor` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Registry](registry.md) | `kernel/classes/ini/expinieditor.php:27` | Der INI-Editor. |
+| `expIniException` | class extends Exception | [Ausnahmehierarchie](ausnahme.md), [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/ini/expiniexception.php:15` | Ein Fehler des INI-Editors. |
+| `expIniExtensionScopeProvider` | class implements expIniScopeProvider | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Strategie / Handler](strategie-handler.md) | `kernel/classes/ini/expiniextensionscopeprovider.php:14` | extension: für jedes Verzeichnis in extension/ (aktiv oder nicht; die Beschriftung sagt, welches) und extension::siteaccess: für jedes extension//settings/siteacces… |
+| `expIniLocator` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ini/expinilocator.php:25` | Jede Datei, die eine Variable setzt, in der Reihenfolge, in der eZINI sie für einen Siteaccess lädt, und der wirksame Wert. |
+| `expIniMover` | class | – | `kernel/classes/ini/actions/expinimover.php:20` | Verschiebt Einstellungsblöcke aus der Datei eines Geltungsbereichs in die eines anderen, für exp:ini move und move-all: ein Block mit seinen Kommentaren und Leerzeilen in Reihenfolge, jeder Bl… |
+| `expIniScope` | class | – | `kernel/classes/ini/expiniscope.php:22` | Ein INI-Geltungsbereich: ein Einstellungsverzeichnis und die Regel für den Dateinamen darin. |
+| `expIniScopeProvider` | interface | [Schnittstelle (Vertrag)](schnittstelle.md), [Strategie / Handler](strategie-handler.md) | `kernel/classes/ini/expiniscopeprovider.php:20` | Eine Quelle von INI-Bereichen (Orte, an die eine INI-Datei geschrieben werden kann). |
+| `expIniWriter` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/ini/expiniwriter.php:26` | Eine INI-Datei als Liste von Zeilen, genau so gelesen, wie eZINI::parseFile() sie liest, und Zeile für Zeile geändert: Kommentare, Leerzeilen, die Reihenfolge d… |
+| `expIniWriteResult` | class | – | `kernel/classes/ini/expiniwriteresult.php:13` | Das Ergebnis eines expIniEditor::save(). |
+| `expSettingsChain` | class | [Zuständigkeitskette (Chain of Responsibility)](kette.md), [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/ini/expsettingschain.php:32` | Die Überschreibungskette einer INI-Datei, einmal aufgebaut aus den Dateien, die eZINI dafür liest, in eZINIs eigener Reihenfolge. |
+| `expSettingsPage` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ini/expsettingspage.php:18` | Die Zeilen, Zahlen, Suchen und Vergleiche der Einstellungsseiten und was auf einen Schreibvorgang folgt. |
+| `expSettingsSecretRule` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/classes/ini/expsettingssecretrule.php:30` | Die Regel, nach der die Einstellungsseiten (settings/view, settings/edit) Werte maskieren. |
+| `expSettingsTarget` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/classes/ini/expsettingstarget.php:19` | Die Prüfungen zwischen einer Anfrage und einer Einstellungsdatei. |

@@ -811,31 +811,11 @@ function _SubstituteAndRedirect( href )
     location.href = href;
 }
 
-// True for an address of this site: resolved against the page, http or https and the page's origin. Anything else
-// (javascript:, data:, //other.host, an address that does not parse) is refused with an error in the console.
+// True for an address of this site, see a4SafeURL() in a4_url.js (loaded in the page head before this file). Without
+// it nothing is followed.
 function _isSafeURL( url )
 {
-    var safe = false;
-    try
-    {
-        if ( typeof URL === 'function' )
-        {
-            var page = new URL( window.location.href ), target = new URL( String( url ), page.href );
-            safe = ( target.protocol === 'http:' || target.protocol === 'https:' ) && target.origin === page.origin;
-        }
-        else
-        {
-            // no URL parser: only a path of this site
-            safe = /^\/(?![\/\\])/.test( String( url ) );
-        }
-    }
-    catch ( e )
-    {
-        safe = false;
-    }
-    if ( !safe && window.console )
-        window.console.error( 'ezpopupmenu: refused the address ' + url + ' (not of this site)' );
-    return safe;
+    return typeof window.a4SafeURL === 'function' && window.a4SafeURL( url, 'ezpopupmenu' );
 }
 
 function _getScreenProperties()

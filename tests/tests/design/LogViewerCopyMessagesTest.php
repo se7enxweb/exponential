@@ -71,7 +71,7 @@ class LogViewerCopyMessagesTest extends PHPUnit\Framework\TestCase
         $tpl = file_get_contents( "$root/design/admin4/templates/setup/logs.tpl" );
         $this->assertMatchesRegularExpression( '#<div class="a4-setup-log-picker-actions"><button type="button" class="a4-btn a4-btn-primary" id="log-copy-messages"[^>]*aria-describedby="log-copy-messages-help"[^>]*>.*?</button><button type="button" class="a4-btn a4-btn-primary" id="log-copy-link"#', $tpl );
         $this->assertStringContainsString( 'id="log-copy-messages-help"', $tpl );
-        $this->assertStringContainsString( "{ezscript( array( 'page/setup_logs_copy.js', 'page/setup_logs.js' ) )}", $tpl );
+        $this->assertStringContainsString( "{ezscript( array( 'a4_url.js', 'page/setup_logs_copy.js', 'page/setup_logs.js' ) )}", $tpl );
         foreach ( array( 'data-text-lines-copied=', 'data-text-lines-copied-one=', 'data-text-lines-copy-failed=' ) as $attr )
             $this->assertStringContainsString( $attr, $tpl );
         $js = file_get_contents( "$root/design/admin4/javascript/page/setup_logs.js" );

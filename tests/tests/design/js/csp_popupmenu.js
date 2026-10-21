@@ -6,6 +6,7 @@
 'use strict';
 const fs = require('fs');
 const vm = require('vm');
+const path = require('path');
 const { createDocument } = require('./mini_dom.js');
 
 const source = fs.readFileSync(process.argv[2], 'utf8');
@@ -53,6 +54,8 @@ const sandbox = { innerWidth: 1200, innerHeight: 800, pageXOffset: 0, pageYOffse
 sandbox.window = sandbox;
 const window = sandbox;
 vm.createContext(sandbox);
+// the shared address check of the page head (a4_url.js), loaded before the menu script
+vm.runInContext(fs.readFileSync(path.join(path.dirname(process.argv[2]), '..', 'a4_url.js'), 'utf8'), sandbox);
 vm.runInContext(source, sandbox);
 
 // what a submitted form carried at the moment it was sent
