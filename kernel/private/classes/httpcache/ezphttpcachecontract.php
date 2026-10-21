@@ -29,11 +29,10 @@
  */
 if ( !class_exists( 'eZTrustedProxy', false ) )
     require_once dirname( __DIR__, 4 ) . '/lib/ezutils/classes/eztrustedproxy.php';
-// The early exit (ezphttpcacheearlyexit.php) runs before the autoloader: the mode helpers are loaded here
-if ( !class_exists( 'eZFile', false ) )
-    require_once dirname( __DIR__, 4 ) . '/lib/ezfile/classes/ezfile.php';
-if ( !class_exists( 'eZDir', false ) )
-    require_once dirname( __DIR__, 4 ) . '/lib/ezfile/classes/ezdir.php';
+// eZFile and eZDir are not loaded here, although the modes come from them: Velocity's parent process loads this file
+// before its source transform is in place, and every worker inherits the classes it compiled. eZFile compiled there
+// kept PHP's own header(), which does nothing under the CLI SAPI, so every content/download on Velocity went out as
+// text/html without its Content-Type, Content-Disposition or 206. See fileMode() and dirMode() below.
 
 class ezpHttpCacheContract
 {
@@ -1236,8 +1235,70 @@ class ezpHttpCacheContract
 
     public function ensureDir( $dir )
     {
-        if ( !is_dir( $dir ) && @mkdir( $dir, eZDir::dirMode( 0770 ), true ) )
+        if ( !is_dir( $dir ) && @mkdir( $dir, self::dirMode( 0770 ), true ) )
             $this->adopt( $dir );
+    }
+
+    /**
+     * $mode within EZP_FILE_MODE_MAX, as eZFile::fileMode(). eZFile answers when it is loaded already (the kernel's
+     * store path); before the autoloader (the early exit) and in Velocity's parent the same rule is applied here,
+     * because loading eZFile from this file is what must not happen (see the top of the file).
+     *
+     * @param int $mode
+     * @return int
+     */
+    public static function fileMode( $mode )
+    {
+        if ( class_exists( 'eZFile', false ) )
+            return eZFile::fileMode( $mode );
+        $limit = self::modeLimit( 'EZP_FILE_MODE_MAX', 0600 );
+        if ( $limit === null )
+        {
+            $dirLimit = self::modeLimit( 'EZP_DIR_MODE_MAX', 0700 );
+            $limit = $dirLimit === null ? null : ( $dirLimit & 0666 );
+        }
+        return $limit === null ? (int)$mode : ( (int)$mode & $limit );
+    }
+
+    /**
+     * $mode within EZP_DIR_MODE_MAX, as eZDir::dirMode(); see fileMode().
+     *
+     * @param int $mode
+     * @return int
+     */
+    public static function dirMode( $mode )
+    {
+        if ( class_exists( 'eZDir', false ) && class_exists( 'eZFile', false ) )
+            return eZDir::dirMode( $mode );
+        $limit = self::modeLimit( 'EZP_DIR_MODE_MAX', 0700 );
+        if ( $limit === null )
+        {
+            $fileLimit = self::modeLimit( 'EZP_FILE_MODE_MAX', 0600 );
+            $limit = $fileLimit === null ? null : ( $fileLimit | ( ( $fileLimit & 0444 ) >> 2 ) );
+        }
+        return $limit === null ? (int)$mode : ( (int)$mode & $limit );
+    }
+
+    /**
+     * The limit the constant $name sets, as eZFile::limitFromConstant() and eZFile::modeFromSetting() read it: an
+     * integer mode or a string of octal digits that leaves the owner $ownerBits, else null (no limit). eZFile reports
+     * an unusable value to the error log; it is loaded on every request, so that is not repeated here.
+     *
+     * @param string $name EZP_FILE_MODE_MAX or EZP_DIR_MODE_MAX
+     * @param int $ownerBits The rights the owner must keep
+     * @return int|null
+     */
+    private static function modeLimit( $name, $ownerBits )
+    {
+        if ( !defined( $name ) )
+            return null;
+        $value = constant( $name );
+        $mode = null;
+        if ( is_int( $value ) )
+            $mode = $value >= 0 && $value <= 0777 ? $value : ( preg_match( '/^[0-7]{3}$/', (string)$value ) ? octdec( (string)$value ) : null );
+        else if ( is_string( $value ) && preg_match( '/^0*([0-7]{1,3})$/', trim( $value ), $match ) )
+            $mode = octdec( $match[1] );
+        return $mode !== null && ( $mode & $ownerBits ) === $ownerBits ? $mode : null;
     }
 
     public function atomicWrite( $path, $data )
@@ -1245,7 +1306,7 @@ class ezpHttpCacheContract
         $tmp = $path . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $tmp, $data ) === false )
             return false;
-        @chmod( $tmp, eZFile::fileMode( 0660 ) );
+        @chmod( $tmp, self::fileMode( 0660 ) );
         $this->adopt( $tmp );
         return @rename( $tmp, $path );
     }
