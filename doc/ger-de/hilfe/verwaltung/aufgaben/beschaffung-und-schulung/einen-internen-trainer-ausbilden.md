@@ -28,19 +28,19 @@ Hintergrund: [Ein internes Schulungsteam aufbauen](../../../../../eng-us/help/go
 
 1. **Train the Trainer**: 34 Lektionen, etwa 21 Stunden, sechs Module: Vorbereitung auf das Unterrichten, Aufbau der
    Laborumgebung, Gestaltung eines Kurses, Durchführung, Barrierefreiheit und Inklusion, Prüfung und Nachbereitung
-   ([Train the Trainer](../../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+   ([Train the Trainer](../../../trainer/train-the-trainer/README.md)).
 2. **Der fachliche Kurs** als Teilnehmer, zum Beispiel Redakteure 101.
 3. **Bauen Sie ihre Laborumgebung auf** und üben Sie ein Zurücksetzen
-   ([Die Laborumgebung aufbauen](../../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md),
-   [Kurzkarte zum Labor](../../../../../eng-us/help/trainers/lab-quick-card.md)).
+   ([Die Laborumgebung aufbauen](../../../trainer/train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md),
+   [Kurzkarte zum Labor](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md)).
 4. **Passen Sie einen Kurs** an Ihre Site an: Inhaltsklassen, Sektionen, redaktionelle Regeln; behalten Sie die Hinweise
    der GFDL ([Freie Dokumentation](../../../freie-dokumentation.md)).
 5. **Proben Sie jede Übung** auf Ihrer Produktionsversion
-   ([Übungen schreiben, die funktionieren](../../../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/writing-exercises-that-work.md)).
+   ([Übungen schreiben, die funktionieren](../../../trainer/train-the-trainer/modul-03-einen-kurs-gestalten/uebungen-schreiben-die-funktionieren.md)).
 6. **Lassen Sie zurückunterrichten**: eine Pilotsitzung für Kollegen, wenn möglich von einem erfahrenen Trainer
    beobachtet.
 7. **Sammeln Sie Rückmeldungen** und verbessern Sie
-   ([Rückmeldungen sammeln](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md)).
+   ([Rückmeldungen sammeln](../../../trainer/train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md)).
 8. **Nehmen Sie die Person in den Plan für die Einarbeitung auf**
    ([Neue Mitarbeiter einarbeiten](../../../../../eng-us/help/government/procurement/training/onboarding-new-staff.md)).
 9. **Planen Sie die Pflege**: Überprüfen Sie das Material nach jedem Upgrade.
@@ -58,8 +58,8 @@ Ein Trainer in Ihrer Organisation, der neue Redakteure jederzeit mit aktuellem M
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
-- [FAQ für Trainer](../../../../../eng-us/help/trainers/trainer-faq.md)
+- [Trainer: hier beginnen](../../../trainer/trainer-hier-beginnen.md)
+- [FAQ für Trainer](../../../trainer/trainer-faq.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

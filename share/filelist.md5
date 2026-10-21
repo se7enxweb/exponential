@@ -12760,7 +12760,7 @@ e31de05a5e59b2ce1ef9e504eaf3185b  doc/ger-de/hilfe/velocity-ist-teil-von-exponen
 d8add6eb6ce0ba7e7d61ea6cec2cab04  doc/ger-de/hilfe/verwaltung/aufbauen/README.md
 f38c9eb3957bdad07eebfe87e659b93f  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/README.md
 5615a8c826c2ad3245433c91a326d598  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/anmeldung-und-sitzungen.md
-027d7e503d4e6efbc1c375ef3bcc2643  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/benutzerdokumentation-und-support.md
+181d2cfa7fcf1c3431595505f44be0d7  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/benutzerdokumentation-und-support.md
 5a2963e6f99432ff2274101763992dcd  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/deaktivierung-und-entfernung.md
 9d1fc434cecaac136d737e119083af7c  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/kontenhygiene.md
 9aebfff80069e98fdc49403e0789a15a  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/passwortregeln.md
@@ -12863,15 +12863,15 @@ ef6bff838cb0d50ef1e4106e98eff471  doc/ger-de/hilfe/verwaltung/aufbauen/veranstal
 d809a488630fe7b545dc38b1f26c6067  doc/ger-de/hilfe/verwaltung/aufbauen/veranstaltungen/was-fuer-veranstaltungen-mitgeliefert-wird.md
 f4d51fe8ffedff893a7abe1dcc0e2548  doc/ger-de/hilfe/verwaltung/aufgaben/README.md
 192bc0e3dc448a9a6fb1040e218ac029  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/README.md
-776434d513aed0c768be6fb2d278c109  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/administratoren-im-kurs-fuer-site-administratoren-anmelden.md
-d8df572e46a2e89a8b4d400c2630ad81  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/aufwand-fuer-personal-und-schulung-schaetzen.md
+8b7385d63f483b0d7bd25b0f16c08849  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/administratoren-im-kurs-fuer-site-administratoren-anmelden.md
+14c55156bb689c4d8474837f9bc39058  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/aufwand-fuer-personal-und-schulung-schaetzen.md
 118f8dcc5b976e17e37f77e7ede884be  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/das-erste-upgrade-im-budget-einplanen.md
 654d560ec859cc05eff4a770a07b2b33  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/den-bewertungsbogen-schreiben.md
 e98da052b9a124c8b72c3fb8e807f4c8  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/den-plan-fuer-den-abnahmetest-schreiben.md
 1d80269879c717f0b1a5703d35a6c9b5  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/die-aussagen-eines-anbieters-zur-barrierefreiheit-pruefen.md
 2098a149e1853df41d6391fd8299ce5c  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/die-dokumentation-am-vertragsende-uebergeben.md
 c8534193561fe75ae18932ee904f93f0  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/die-release-und-sicherheitshistorie-des-projekts-pruefen.md
-43f61a53bbbaccdfbfd15f0480d0051c  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/die-schulung-der-redakteure-einer-abteilung-planen.md
+95aa54372daee63af61eb666f9ca0461  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/die-schulung-der-redakteure-einer-abteilung-planen.md
 fd32e17bfc4489af56ac83085024f033  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/ein-bewertungsteam-bilden.md
 1915b8f38db9b75408bde5da17f3f427  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/ein-supportangebot-bei-einem-partner-anfragen.md
 e0886ad4e9c2bd203f2ae02ef67cc706  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/eine-anforderung-an-die-barrierefreiheit-fuer-eine-ausschreibung-schreiben.md
@@ -12880,7 +12880,7 @@ fca45e64c61ae56d90dfeeb65accca5c  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffu
 2c56e4842ff0e25a917bbf2e52b6f5e1  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/eine-demo-fuer-das-bewertungsgremium-vorbereiten.md
 c1845f4f7622a9579fdbd0b81ea20c8a  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/eine-sicherheitsanforderung-fuer-eine-ausschreibung-schreiben.md
 a9be57d211641d83095c2562fd28e932  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/einen-ausstiegsplan-schreiben.md
-670d12acfb71094202feb98a037fa4aa  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/einen-internen-trainer-ausbilden.md
+35635e020709bf48a017e36f6f0f7eb7  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/einen-internen-trainer-ausbilden.md
 f3a974ecf340b20a1ee1c135d564ee10  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/einen-neuen-redakteur-einarbeiten.md
 1df7f86a805a82a80146ca80ff444272  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/einen-proof-of-concept-auf-sqlite-mit-einem-befehl-durchfuehren.md
 30278e40b50ba2507fd1f8ddb7022363  doc/ger-de/hilfe/verwaltung/aufgaben/beschaffung-und-schulung/hosting-angebote-vergleichen.md
@@ -12975,7 +12975,7 @@ ec3408fb2a49375f067fe5098e7ed1a4  doc/ger-de/hilfe/verwaltung/aufgaben/complianc
 8b338833b5132967bcb0fa807a24d6cc  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/pruefen-ob-die-formulartoken-aktiv-sind.md
 da263dd2c8afb757fea96a5ada1bdc3c  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/redakteure-beim-design-admin4-halten.md
 7dd336c90504490a82ec83dfe6099bf0  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/sichere-sitzungscookies-setzen.md
-cb726b2828896411ae5ac39f668ae0df  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/README.md
+168a8c78afa9750cc5785642dc77fc89  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/README.md
 b61d1eb891b9176d722d53fe8bb2b7a8  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/besucher-eine-neue-sektion-lesen-lassen.md
 009ccbf48adce78591efe9d4bd287f8a  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/das-passwort-eines-mitarbeiters-zuruecksetzen.md
 8329efe03f07dbdf204b7c1add9f0d55  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/die-kontenliste-fuer-eine-ueberpruefung-exportieren.md
@@ -12984,7 +12984,7 @@ f858ad669acf07dfb4c37a69d8f971c6  doc/ger-de/hilfe/verwaltung/aufgaben/personen-
 9545a14645660bda2fed08992a0710ff  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/die-zweistufige-anmeldung-fuer-mitarbeiter-einschalten.md
 ae09a63fe3447433083ea53b03871557  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/ein-gesperrtes-konto-entsperren.md
 535f770564505a8af0d42bf5b495f813  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/ein-passwort-auf-der-kommandozeile-zuruecksetzen.md
-7aada2a00501bb664d6a5be2bc720787  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/eine-benutzergruppe-fuer-eine-abteilung-anlegen.md
+a64fca8456ec92739fccbbbd41525411  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/eine-benutzergruppe-fuer-eine-abteilung-anlegen.md
 615eb4d416d4e3e2039b63139d4fa174  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/eine-redakteursrolle-einer-abteilung-fuer-einen-teilbaum-anlegen.md
 abc6393ee4ea1190069bd683567c5f0e  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/eine-rolle-fuer-eine-neue-abteilung-kopieren.md
 6c5b9b041dd94c8fd099da8ebaae6997  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/eine-rolle-mit-einer-einschraenkung-auf-eine-sektion-zuweisen.md
@@ -13050,7 +13050,7 @@ c4022b299c7e1e614c8f0cce2a2925d5  doc/ger-de/hilfe/verwaltung/aufgaben/sites-und
 f207045e49261bd55d0f7c8cb17536c7  doc/ger-de/hilfe/verwaltung/aufgaben/sites-und-sprachen/uebersetzungen-mit-lorem-ipsum-testen.md
 f316c35abe9a2c6ffaaa1141c6ee713f  doc/ger-de/hilfe/verwaltung/aufgaben/sites-und-sprachen/verwaiste-konten-von-auftragnehmern-pruefen-und-deaktivieren.md
 2f3390a11a1312fe46fa35e29892d115  doc/ger-de/hilfe/verwaltung/aufgaben/sites-und-sprachen/von-einer-abteilungs-site-auf-eine-andere-verlinken.md
-2827a8cec6501ea64a03316ffbec2de9  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/README.md
+47fd828857dfb775763e3f0875cec6b6  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/README.md
 8cd4559d4a17cdbf565d1d638b64b5a0  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/aenderungen-mit-benachrichtigungen-verfolgen.md
 076ebf52dbd7833331d94415f2aceced  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/alte-adressen-nach-einer-umstrukturierung-weiterleiten.md
 076f6ace852cca137c8cdfdaa428b5d3  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/bildern-alternativtext-geben.md

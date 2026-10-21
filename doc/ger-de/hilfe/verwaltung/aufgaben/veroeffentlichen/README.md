@@ -123,7 +123,7 @@ Nach oben: [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md). Für
 
 - [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md)
 - [Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md)
-- [Kurs Redakteure 101](../../../../../eng-us/help/trainers/editors-101/README.md)
+- [Kurs Redakteure 101](../../../trainer/redakteure-101/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

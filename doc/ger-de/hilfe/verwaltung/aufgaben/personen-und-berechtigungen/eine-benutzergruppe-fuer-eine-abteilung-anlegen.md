@@ -75,7 +75,7 @@ wählen Sie die neue Gruppe ([Eine Rolle mit einer Einschränkung auf einen Teil
 - [Eine Redakteursrolle einer Abteilung für einen Teilbaum anlegen](eine-redakteursrolle-einer-abteilung-fuer-einen-teilbaum-anlegen.md)
 - [Eintritte, Wechsel und Austritte](../../../../../eng-us/help/government/operations/people-and-permissions/joiners-movers-leavers.md)
 - [Anleitung zu Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)
-- [Kurs für Site-Administratoren](../../../../../eng-us/help/trainers/site-administrators/README.md)
+- [Kurs für Site-Administratoren](../../../trainer/website-administratoren/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

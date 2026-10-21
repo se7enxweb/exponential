@@ -93,7 +93,7 @@ Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../verwaltungen-hi
 ## Verwandte Seiten
 - [Aufgaben im Betrieb](../betrieb/README.md)
 - [Anleitung zu Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)
-- [Kurs für Site-Administratoren](../../../../../eng-us/help/trainers/site-administrators/README.md)
+- [Kurs für Site-Administratoren](../../../trainer/website-administratoren/README.md)
 - [Anleitung zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

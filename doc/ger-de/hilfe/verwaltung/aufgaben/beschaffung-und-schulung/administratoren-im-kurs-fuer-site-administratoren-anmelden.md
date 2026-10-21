@@ -10,8 +10,8 @@ type: help
 # Administratoren im Kurs für Site-Administratoren anmelden
 
 **Wer:** der Schulungskoordinator und die IT-Leitung. **Wann:** während des Aufbaus, vor dem Go-live, damit die Menschen,
-die die Site betreiben werden, übernehmen können. Kurs: [Site-Administration](../../../../../eng-us/help/trainers/site-administrators/README.md),
-48 Lektionen, etwa 30 Stunden ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)).
+die die Site betreiben werden, übernehmen können. Kurs: [Site-Administration](../../../trainer/website-administratoren/README.md),
+48 Lektionen, etwa 30 Stunden ([Kurskatalog](../../../trainer/kurskatalog.md)).
 
 ## Inhalt
 
@@ -29,20 +29,20 @@ die die Site betreiben werden, übernehmen können. Kurs: [Site-Administration](
 ## Schritte
 
 1. **Prüfen Sie die Voraussetzungen**: Lassen Sie die Personen bei Bedarf zuerst die Module 1 bis 3 von Redakteure 101
-   durchlaufen ([Redakteure 101](../../../../../eng-us/help/trainers/editors-101/README.md)).
+   durchlaufen ([Redakteure 101](../../../trainer/redakteure-101/README.md)).
 2. **Wählen Sie einen Zeitplan**: den ganzen Kurs (etwa fünf Tage) oder einen kürzeren Zeitplan aus der
    Kursübersicht; der Katalog nennt auch einen intensiven Viertagesplan für einen Administrator eines Intranets
-   ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md#combinations-for-common-groups)).
+   ([Kurskatalog](../../../trainer/kurskatalog.md#kombinationen-für-typische-gruppen)).
 3. **Stellen Sie sicher, dass die Module zur Sicherheit enthalten sind**:
-   [Modul 7: Logs und das Audit-Protokoll](../../../../../eng-us/help/trainers/site-administrators/module-07-logs-and-the-audit-trail/README.md)
-   und [Modul 8: Sicherheit](../../../../../eng-us/help/trainers/site-administrators/module-08-security/README.md) sowie
-   [Modul 9: Sicherungen und Wartung](../../../../../eng-us/help/trainers/site-administrators/module-09-backups-and-maintenance/README.md).
+   [Modul 7: Logs und das Audit-Protokoll](../../../trainer/website-administratoren/modul-07-logs-und-das-audit-protokoll/README.md)
+   und [Modul 8: Sicherheit](../../../trainer/website-administratoren/modul-08-sicherheit/README.md) sowie
+   [Modul 9: Sicherungen und Wartung](../../../trainer/website-administratoren/modul-09-sicherungen-und-wartung/README.md).
 4. **Stellen Sie eine Laborumgebung bereit** mit derselben Version von Exponential wie Ihre Site
-   ([Kurzkarte zum Labor](../../../../../eng-us/help/trainers/lab-quick-card.md)).
+   ([Kurzkarte zum Labor](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md)).
 5. **Buchen Sie den Trainer**: Ihren eigenen Trainer, einen Partner oder 7x
    ([Schulungen bei einem Partner einkaufen](../../../../../eng-us/help/government/procurement/training/buying-training-from-a-partner.md)).
 6. **Prüfen Sie**: der schriftliche Test und die praktische Aufgabe für Site-Administratoren
-   ([Praktische Aufgabe für Site-Administratoren](../../../../../eng-us/help/trainers/assessments/module-03-administration-courses/site-administrators-practical-task.md)).
+   ([Praktische Aufgabe für Site-Administratoren](../../../trainer/pruefungen/modul-03-administrationskurse/website-administratoren-praktische-aufgabe.md)).
 7. **Übergeben Sie die Rolle**: nach dem Kurs die Administratorrolle, mit zweistufiger Anmeldung, wo Ihre Site sie
    verwendet ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)); gehen Sie die Betriebsroutine gemeinsam
    durch ([Eine Site betreiben](../../../../anleitungen/betrieb-einer-website.md)).

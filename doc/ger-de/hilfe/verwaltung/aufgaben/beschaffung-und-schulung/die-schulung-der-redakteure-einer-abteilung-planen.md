@@ -10,7 +10,7 @@ type: help
 # Die Schulung der Redakteure einer Abteilung planen
 
 **Wer:** der Schulungskoordinator, mit der Redaktionsleitung der Abteilung. **Wann:** zwei bis vier Wochen, bevor die
-Abteilung mit dem Veröffentlichen beginnt. Kurse: [Redakteure 101](../../../../../eng-us/help/trainers/editors-101/README.md) und der
+Abteilung mit dem Veröffentlichen beginnt. Kurse: [Redakteure 101](../../../trainer/redakteure-101/README.md) und der
 [Redaktionstag](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/editors-day.md).
 
 ## Inhalt
@@ -24,7 +24,7 @@ Abteilung mit dem Veröffentlichen beginnt. Kurse: [Redakteure 101](../../../../
 
 - Bereich, Sektion und Rollen der Abteilung existieren
   ([Eine Abteilung einführen](../../checklisten/eine-abteilung-einfuehren.md)).
-- Eine Schulungsinstallation ([Kurzkarte zum Labor](../../../../../eng-us/help/trainers/lab-quick-card.md)).
+- Eine Schulungsinstallation ([Kurzkarte zum Labor](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md)).
 
 ## Schritte
 
@@ -41,13 +41,13 @@ Abteilung mit dem Veröffentlichen beginnt. Kurse: [Redakteure 101](../../../../
 5. **Passen Sie die Übungen an** die echten Inhaltstypen der Abteilung an (zum Beispiel eine Dienstleistungsseite oder
    eine Bekanntmachung).
 6. **Planen Sie** nahe an der ersten Veröffentlichung; buchen Sie Räume oder eine Online-Sitzung; versenden Sie
-   Vorbereitungsaufgaben ([Werkzeugkasten für Trainer](../../../../../eng-us/help/trainers/trainer-toolkit.md)).
+   Vorbereitungsaufgaben ([Werkzeugkasten für Trainer](../../../trainer/trainer-werkzeugkasten.md)).
 7. **Führen Sie den Kurs** und die Abschlussaufgabe **durch**
-   ([Modul 9: der Siteaccess der Redakteure](../../../../../eng-us/help/trainers/editors-101/module-09-the-editor-siteaccess/README.md)).
+   ([Modul 9: der Siteaccess der Redakteure](../../../trainer/redakteure-101/modul-09-der-editor-siteaccess/README.md)).
 8. **Zeichnen Sie** jeden Teilnehmer nach einer begleiteten Veröffentlichung **ab**; weisen Sie dann die Live-Rolle zu
    ([Einen neuen Redakteur einarbeiten](einen-neuen-redakteur-einarbeiten.md)).
 9. **Sammeln Sie Rückmeldungen** und passen Sie an
-   ([Rückmeldungen sammeln](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md)).
+   ([Rückmeldungen sammeln](../../../trainer/train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md)).
 
 ## Ergebnis
 

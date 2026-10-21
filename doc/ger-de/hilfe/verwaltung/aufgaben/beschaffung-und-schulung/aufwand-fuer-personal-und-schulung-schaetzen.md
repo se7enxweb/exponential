@@ -37,7 +37,7 @@ oft der größte Kostenblock, und der einzige, der nicht in Rechnung gestellt wi
    [Eine Site über einen mehrjährigen Vertrag aktuell halten](../../../../../eng-us/help/government/procurement/lifecycle/keeping-a-site-current.md)
    und der [Vierteljährlichen Überprüfung des Zugangs](../../checklisten/vierteljaehrliche-zugriffspruefung.md).
 3. **Nehmen Sie die Schulungsstunden aus dem Katalog**: Redakteure 101 etwa 19,5 Stunden, Redakteure 201 etwa 16,
-   Site-Administration etwa 30, Hosting und Betrieb etwa 20 ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)).
+   Site-Administration etwa 30, Hosting und Betrieb etwa 20 ([Kurskatalog](../../../trainer/kurskatalog.md)).
 4. **Rechnen Sie die Fluktuation hinzu**: wie viele neue Personen je Jahr, von denen jede eine Einarbeitung braucht
    ([Neue Mitarbeiter einarbeiten](../../../../../eng-us/help/government/procurement/training/onboarding-new-staff.md)).
 5. **Rechnen Sie einmalige Arbeit hinzu**: Migration der Inhalte durch Redakteure, Abnahmetests, die Ausstiegsübung.
