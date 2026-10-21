@@ -88,7 +88,7 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht; die Daten sind Da
 
 ## Verwandte Seiten
 
-- [Thema: Inhalte bearbeiten](../../../eng-us/help/press/story-editing-content.md)
+- [Thema: Inhalte bearbeiten](thema-inhalte-bearbeiten.md)
 - [ezoe und TinyMCE 8 (Hinweise zum Upgrade)](../../../eng-us/bc/6.0/ezoe-tinymce8.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

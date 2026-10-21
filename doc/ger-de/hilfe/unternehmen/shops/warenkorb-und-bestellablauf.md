@@ -78,7 +78,7 @@ Die Länderauswahl zeigt die meistgenutzten Länder zuerst ([Ländergruppen und 
 ## Schritt 4 Bestätigung
 
 Die Bestätigungsseite zeigt die Bestellung mit Versand und USt. Die Versandkosten werden hier von einem Workflow am
-Auslöser `before_shop_confirmorder` hinzugefügt ([Versand und Bearbeitung](../../../../eng-us/help/businesses/stores/shipping-and-handling.md)). Seit 6.0.15
+Auslöser `before_shop_confirmorder` hinzugefügt ([Versand und Bearbeitung](versand-und-bearbeitung.md)). Seit 6.0.15
 führt **Abbrechen** in diesem Schritt den Kunden zu seinem Warenkorb mit dessen Artikeln zurück statt zu einem leeren
 Warenkorb, und die Zurück-Schaltfläche oder ein zweiter Tab führen die Bestätigung nicht mehr zweimal aus
 ([Dauerhafte Bestellbelege](../../../../eng-us/features/6.0/order-receipts.md#a-checkout-fix-made-on-the-way)).
@@ -87,18 +87,18 @@ Warenkorb, und die Zurück-Schaltfläche oder ein zweiter Tab führen die Bestä
 
 Beim Bezahlen läuft der Zahlungsanbieter als Workflow am Auslöser `shop_checkout`. Ein Anbieter mit Weiterleitung wie
 PayPal schickt den Kunden zum Anbieter; ein Anbieter mit Formular fragt die Kartendaten auf Ihrer Website ab
-([Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md)).
+([Zahlungsanbieter für Unternehmen](zahlungsanbieter-fuer-unternehmen.md)).
 
 ## Schritt 6 Die aufgegebene Bestellung
 
 Die Bestellung ist aufgegeben, und die Bestätigungsmail geht an den Kunden und an den Shop
-([Bestellbelege und Bestätigungsmails](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md)). Der Kunde sieht die Bestellung oder
+([Bestellbelege und Bestätigungsmails](bestellbelege-und-bestaetigungsmails.md)). Der Kunde sieht die Bestellung oder
 einen dauerhaften Beleg, den er drucken, herunterladen und als Lesezeichen speichern kann.
 
 ## Abgebrochene Warenkörbe
 
 Nicht aus jedem Warenkorb wird eine Bestellung. Das Shop-Dashboard zählt laufende und abgebrochene Warenkörbe und listet
-die neuesten Warenkörbe und unbestätigten Bestellvorgänge auf ([Shop-Dashboard und Berichte](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md)).
+die neuesten Warenkörbe und unbestätigten Bestellvorgänge auf ([Shop-Dashboard und Berichte](shop-uebersicht-und-berichte.md)).
 
 Alte Warenkörbe entfernt der Cron-Teil `basket_cleanup` (`settings/cronjob.ini`, Teil `infrequent`), wie es
 `site.ini [Session] BasketCleanup=cronjob` vorsieht. Die „Nächste Schritte“ des Dashboards warnen, wenn die
@@ -126,7 +126,7 @@ Die vollständige Testliste steht unter [Warenkorb, Kasse und Bestellungen](../.
 
 - [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
 - [Kundenkonten und Gastbestellung](kundenkonten-und-gastbestellung.md)
-- [Checkliste für den Shop-Start](../../../../eng-us/help/businesses/stores/store-launch-checklist.md)
+- [Checkliste für den Shop-Start](checkliste-fuer-den-shop-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

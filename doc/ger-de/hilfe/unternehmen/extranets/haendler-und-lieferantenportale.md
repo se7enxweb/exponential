@@ -110,7 +110,7 @@ Buchhaltungssystem, Versandetiketten und Marktplätze; planen Sie diese als Erwe
 Planen Sie für ein Handelsportal bei Bedarf außerdem: die Freigabe von Bestellungen innerhalb der Organisation des
 Händlers, Kreditlimits und eine Schnittstelle zu Ihrem ERP. Die REST API und die Remote-Dienste von Exponential sind der
 übliche Ausgangspunkt für solche Integrationen
-([Headless mit der REST API](../../../../eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md),
+([Headless mit der REST API](../mobil-und-headless/headless-mit-der-rest-api.md),
 [Entfernte Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)).
 
 ## Checkliste
@@ -127,7 +127,7 @@ Händlers, Kreditlimits und eine Schnittstelle zu Ihrem ERP. Die REST API und di
 
 - [Shops](../shops/README.md)
 - [Wie Unternehmen online verkaufen](../wie-unternehmen-online-verkaufen.md)
-- [Verkaufen über Netzwerke und Partner](../../../../eng-us/help/businesses/mobile-and-headless/selling-through-networks-and-partners.md)
+- [Verkaufen über Netzwerke und Partner](../mobil-und-headless/verkaufen-ueber-netzwerke-und-partner.md)
 - [Warenkorb, Bestellablauf und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

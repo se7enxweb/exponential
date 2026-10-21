@@ -26,7 +26,7 @@ Kunden ohne deren Einwilligung.**
 
 - Es ist keine Kundenliste von 7x und keine Liste der Anwender von Exponential veröffentlicht. Wenn Sie erfahren, dass
   eine Organisation Exponential einsetzt, fragen Sie diese Organisation, bevor Sie sie als Anwender nennen
-  ([Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md)).
+  ([Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)).
 - Eine öffentliche Website, die „Powered by Exponential“ zeigt, sagt damit etwas über sich selbst; fragen Sie trotzdem,
   bevor Sie ihr Innenleben beschreiben oder ihre Mitarbeiter zitieren.
 - Partner veröffentlichen Kundengeschichten nur mit schriftlicher Erlaubnis ([Eine Fallstudie schreiben](../partner/eine-fallstudie-schreiben.md));

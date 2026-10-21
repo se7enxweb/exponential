@@ -25,7 +25,7 @@ nicht zugestimmt hat. Die einfache Regel: **Nehmen Sie nur mit Demodaten auf.**
 ## Demodaten verwenden
 
 Nehmen Sie auf einer Installation auf, die Sie für diesen Zweck eingerichtet haben, nie auf einer Produktionswebsite
-oder in der Administration eines Kunden ([Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md)). Legen
+oder in der Administration eines Kunden ([Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)). Legen
 Sie erfundene Benutzer mit Namen wie „Demo Editor“ und E-Mail-Adressen unter `example.com` an, das für Beispiele
 reserviert ist. Die Seite der Fürsprecher [Die Privatsphäre von Menschen schützen](../fuersprecher/privatsphaere-schuetzen.md)
 hat dieselben Regeln für Vorträge und Beiträge.
@@ -62,7 +62,7 @@ hat dieselben Regeln für Vorträge und Beiträge.
 3. Wenn ein Passwort, Token oder Schlüssel zu sehen war, ändern Sie es sofort.
 4. Sagen Sie der betroffenen Person, was passiert ist, wenn Sie wissen, wer es ist.
 5. Vermerken Sie in der Beschreibung, dass das Video bearbeitet wurde, ohne die Daten zu wiederholen
-   ([Ein Video oder einen Beitrag korrigieren](../../../eng-us/help/press/correcting-a-video-or-post.md)).
+   ([Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)).
 
 Die Gesetze zu personenbezogenen Daten unterscheiden sich von Land zu Land; wenn Sie sich über Ihre Pflichten nicht
 sicher sind, fragen Sie jemanden, der die Regeln dort kennt, wo Sie veröffentlichen.

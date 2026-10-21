@@ -40,7 +40,7 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
       neuen Hoster ändern.
 - [ ] Eigene Erweiterungen und Designs, oder die Adressen ihrer Git-Repositorys.
 - [ ] Die Signaturschlüssel des Prüfprotokolls (`settings/override/audit.ini.append.php`) und, wenn Sie die Historie
-      möchten, die Einträge des Prüfprotokolls ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)).
+      möchten, die Einträge des Prüfprotokolls ([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - [ ] Erstellt bei eingeschaltetem Wartungsmodus, damit Datenbank und Dateien zusammenpassen.
 
 ## Unterlagen

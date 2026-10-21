@@ -47,7 +47,7 @@ Die Seiten dieses Bereichs behandeln:
 | Sie sind | Beginnen Sie mit |
 |---|---|
 | Geschäftsinhaber und entscheiden, ob Sie mit Exponential online verkaufen | [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md) |
-| Shop-Verantwortlicher und bearbeiten täglich Bestellungen | [Einen Shop im Alltag betreiben](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md) |
+| Shop-Verantwortlicher und bearbeiten täglich Bestellungen | [Einen Shop im Alltag betreiben](einen-shop-im-alltag-betreiben.md) |
 | Projektleiter und planen den Start | [Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md) |
 | Die Person, die den Shop einrichtet | die technische Seite [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md) |
 
@@ -57,28 +57,28 @@ Die Seiten dieses Bereichs behandeln:
 |---|---|
 | [Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md) | Die Entscheidungen, die vor jeder Einrichtungsarbeit fallen müssen |
 | [Was der eingebaute Shop kann](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md) | Die Teile des Shops und was er ohne Zusätze nicht kann |
-| [Produktklassen und Katalog](../../../../eng-us/help/businesses/stores/product-classes-and-catalog.md) | Wie Produkte modelliert und geordnet werden |
-| [Preise und Währungen](../../../../eng-us/help/businesses/stores/prices-and-currencies.md) | Preise in einer und in mehreren Währungen, Wechselkurse und Rundung |
+| [Produktklassen und Katalog](produktklassen-und-katalog.md) | Wie Produkte modelliert und geordnet werden |
+| [Preise und Währungen](preise-und-waehrungen.md) | Preise in einer und in mehreren Währungen, Wechselkurse und Rundung |
 | [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) | Wie der Shop Mehrwertsteuer und Umsatzsteuer berechnet |
 | [Ländergruppen und Regionen](laendergruppen-und-regionen.md) | Die Länderliste, aus der Kunden wählen, und der Verkauf in mehrere Länder |
-| [Versand und Bearbeitung](../../../../eng-us/help/businesses/stores/shipping-and-handling.md) | Pauschale Versandkosten und eigene Versandregeln |
+| [Versand und Bearbeitung](versand-und-bearbeitung.md) | Pauschale Versandkosten und eigene Versandregeln |
 | [Warenkorb und Bestellablauf](warenkorb-und-bestellablauf.md) | Der Weg des Kunden von der Produktseite bis zur aufgegebenen Bestellung |
 | [Kundenkonten und Gastbestellung](kundenkonten-und-gastbestellung.md) | Kaufen mit oder ohne Konto |
-| [Bestellungen und Bestellstatus](../../../../eng-us/help/businesses/stores/orders-and-order-statuses.md) | Die siebzehn mitgelieferten Status und wie Sie sie nutzen |
-| [Bestellbelege und Bestätigungsmails](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md) | Was der Kunde nach dem Kauf erhält |
-| [Shop-Dashboard und Berichte](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md) | Die Zahlen und Aufgabenlisten, die der Tab Shop zeigt |
-| [Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md) | Wie Zahlungsanbieter angebunden werden und wie Sie einen auswählen |
-| [Zahlungen mit PayPal](../../../../eng-us/help/businesses/stores/paypal-payments.md) | Die Erweiterung ezpaypal aus Sicht des Unternehmens |
+| [Bestellungen und Bestellstatus](bestellungen-und-bestellstatus.md) | Die siebzehn mitgelieferten Status und wie Sie sie nutzen |
+| [Bestellbelege und Bestätigungsmails](bestellbelege-und-bestaetigungsmails.md) | Was der Kunde nach dem Kauf erhält |
+| [Shop-Dashboard und Berichte](shop-uebersicht-und-berichte.md) | Die Zahlen und Aufgabenlisten, die der Tab Shop zeigt |
+| [Zahlungsanbieter für Unternehmen](zahlungsanbieter-fuer-unternehmen.md) | Wie Zahlungsanbieter angebunden werden und wie Sie einen auswählen |
+| [Zahlungen mit PayPal](zahlungen-mit-paypal.md) | Die Erweiterung ezpaypal aus Sicht des Unternehmens |
 | [Kartenzahlungen und PCI-Grundlagen](kartenzahlungen-und-pci-grundlagen.md) | Weiterleitung oder Kartenformular und was das für die Kartensicherheit bedeutet |
-| [Rabatte und Wunschlisten](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md) | Rabattgruppen und die Wunschliste des Kunden |
+| [Rabatte und Wunschlisten](rabatte-und-wunschlisten.md) | Rabattgruppen und die Wunschliste des Kunden |
 | [Digitale Produkte und Downloads](digitale-produkte-und-downloads.md) | Dateien verkaufen und was dafür ergänzt werden muss |
 | [Suche und Navigation im Shop](../../../../eng-us/help/businesses/stores/store-search-and-navigation.md) | Kunden helfen, Produkte zu finden |
-| [Ihren Shop bewerben](../../../../eng-us/help/businesses/stores/promoting-your-store.md) | Suchmaschinen, Teilen in sozialen Netzwerken, Newsletter und Landingpages |
-| [Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/store-performance-at-peak-times.md) | Schnell bleiben während eines Ausverkaufs oder einer arbeitsreichen Saison |
+| [Ihren Shop bewerben](ihren-shop-bewerben.md) | Suchmaschinen, Teilen in sozialen Netzwerken, Newsletter und Landingpages |
+| [Shop-Leistung zu Spitzenzeiten](shop-leistung-zu-spitzenzeiten.md) | Schnell bleiben während eines Ausverkaufs oder einer arbeitsreichen Saison |
 | [Sicherheitscheckliste für Shops](../../../../eng-us/help/businesses/stores/store-security-checklist.md) | Die Sicherheitsaufgaben, die ein Shop-Inhaber prüfen sollte |
-| [Checkliste für den Shop-Start](../../../../eng-us/help/businesses/stores/store-launch-checklist.md) | Alles, was Sie vor der ersten echten Bestellung testen |
-| [Einen Shop im Alltag betreiben](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md) | Tägliche, wöchentliche und monatliche Routinen |
-| [Shop-FAQ](../../../../eng-us/help/businesses/stores/store-faq.md) | Kurze Antworten auf häufige Fragen |
+| [Checkliste für den Shop-Start](checkliste-fuer-den-shop-start.md) | Alles, was Sie vor der ersten echten Bestellung testen |
+| [Einen Shop im Alltag betreiben](einen-shop-im-alltag-betreiben.md) | Tägliche, wöchentliche und monatliche Routinen |
+| [Shop-FAQ](shop-faq.md) | Kurze Antworten auf häufige Fragen |
 
 ## Empfohlene Lesereihenfolge
 
@@ -90,7 +90,7 @@ Die Seiten dieses Bereichs behandeln:
 5. Werbung, Leistung und die Seite zum Alltag, nach der Eröffnung.
 
 > **Tipp**
-> Geben Sie die [Checkliste für den Shop-Start](../../../../eng-us/help/businesses/stores/store-launch-checklist.md) am ersten Tag an die Person, die den Shop
+> Geben Sie die [Checkliste für den Shop-Start](checkliste-fuer-den-shop-start.md) am ersten Tag an die Person, die den Shop
 > aufbaut. Sie listet jede Entscheidung auf, die diese Person von Ihnen braucht.
 
 ## Was Sie hier nicht finden
@@ -106,9 +106,9 @@ beschreiben nur, was die Software tut.
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md) und [Wie Unternehmen mit Exponential online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md), um Kunden auf dem Laufenden zu halten
 - [Kosten und Rendite](../kosten/README.md), darunter [ein durchgerechnetes Beispiel für einen kleinen Shop](../kosten/durchgerechnetes-beispiel-kleiner-shop.md)
-- [Sicherheit](../../../../eng-us/help/businesses/security/README.md) und [Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/README.md)
+- [Sicherheit](../../../../eng-us/help/businesses/security/README.md) und [Zuverlässigkeit](../zuverlaessigkeit/README.md)
 - [Mehrsprachige Websites](../../../../eng-us/help/businesses/multilingual/README.md) für Shops in mehreren Sprachen
-- [Mobil und headless](../../../../eng-us/help/businesses/mobile-and-headless/README.md) für den Verkauf über Apps und Partner
+- [Mobil und headless](../mobil-und-headless/README.md) für den Verkauf über Apps und Partner
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
 
 ## Verwandte Seiten

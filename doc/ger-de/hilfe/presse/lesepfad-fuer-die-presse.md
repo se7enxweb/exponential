@@ -27,9 +27,9 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 |---|---|---|
 | 1 | [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md) | Was es ist und wer dahintersteht |
 | 2 | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) | Welche Version aktuell ist |
-| 3 | [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md) | Wie Sie die Neuigkeit melden |
+| 3 | [Über ein Release berichten](ueber-ein-release-berichten.md) | Wie Sie die Neuigkeit melden |
 | 4 | [Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md) | Die richtigen Namen |
-| 5 | [Standardbeschreibungen, die Sie kopieren dürfen](../../../eng-us/help/press/boilerplate-descriptions.md) | Einen „Über“-Absatz |
+| 5 | [Standardbeschreibungen, die Sie kopieren dürfen](standardbeschreibungen.md) | Einen „Über“-Absatz |
 
 ## Ein Feature an einem Nachmittag
 
@@ -40,18 +40,18 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 | 3 | [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) | Die Anfänge des Unternehmens |
 | 4 | [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) | Wer was macht |
 | 5 | [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md) | Zwei oder drei Funktionen zum Zeigen |
-| 6 | [Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md) | Die Fragen, die Sie stellen sollten |
+| 6 | [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md) | Die Fragen, die Sie stellen sollten |
 | 7 | [Fragen an 7x](fragen-an-7x.md), [Fragen an die Foundation](fragen-an-die-foundation.md) | Ihren Interviewplan |
 
 ## Eine technische Rezension
 
 | Schritt | Seite | Was Sie mitnehmen |
 |---|---|---|
-| 1 | [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md) | Ihre eigene Installation |
+| 1 | [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md) | Ihre eigene Installation |
 | 2 | [Thema: Exponential Velocity](thema-exponential-velocity.md), [Thema: wie die Velocity-Zahlen gemessen werden](thema-wie-die-velocity-zahlen-gemessen-werden.md) | Den Server und seine Zahlen |
 | 3 | [Thema: Sicherheit](thema-sicherheit.md) | Das Sicherheitsverfahren |
-| 4 | [Vergleiche, fair gemacht](../../../eng-us/help/press/comparisons-done-fairly.md) | Eine faire Methode |
-| 5 | [Eine faire Rezension schreiben](../../../eng-us/help/press/writing-a-fair-review.md) | Eine Rezension, die standhält |
+| 4 | [Vergleiche, fair gemacht](faire-vergleiche.md) | Eine faire Methode |
+| 5 | [Eine faire Rezension schreiben](eine-faire-rezension-schreiben.md) | Eine Rezension, die standhält |
 
 ## Ein Video, ein Stream oder ein Podcast
 
@@ -59,10 +59,10 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 |---|---|---|
 | 1 | [Creator und Influencer: hier beginnen](../../../eng-us/help/press/creators-and-influencers-start-here.md) | Die Übersicht für Creator |
 | 2 | [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md) | Transparenz gegenüber den Zuschauern |
-| 3 | [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md) | Eine sichere Installation |
+| 3 | [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md) | Eine sichere Installation |
 | 4 | Ein Demo-Skript, zum Beispiel [Demo-Skript: Überblick in fünf Minuten](../../../eng-us/help/press/demo-script-five-minute-overview.md) | Was Sie zeigen |
 | 5 | [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md), [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md) | Eine sichere Aufnahme |
-| 6 | [Untertitel und barrierefreies Video](../../../eng-us/help/press/captions-and-accessible-video.md) | Ein Video, dem alle folgen können |
+| 6 | [Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md) | Ein Video, dem alle folgen können |
 
 ## Ihr erstes Interview
 
@@ -71,12 +71,12 @@ Reihenfolge lesen sollen. Wählen Sie Ihren Pfad; jeder Schritt nennt die Seite 
 | 1 | [Ein Interview anfragen](ein-interview-anfragen.md) |
 | 2 | [Ein Briefing vorbereiten](ein-briefing-vorbereiten.md) |
 | 3 | [Fragensammlung für Interviews](fragensammlung-fuer-interviews.md) |
-| 4 | [Richtlinie für Zitate](richtlinie-fuer-zitate.md), [Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md) |
+| 4 | [Richtlinie für Zitate](richtlinie-fuer-zitate.md), [Aussagen zuordnen](aussagen-zuordnen.md) |
 
 ## Vor jeder Veröffentlichung
 
 1. [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md)
-2. [Häufige Fehler in der Berichterstattung](../../../eng-us/help/press/common-errors-in-coverage.md)
+2. [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md)
 3. [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md)
 
 ## Verwandte Seiten

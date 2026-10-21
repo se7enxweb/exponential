@@ -59,11 +59,11 @@ finanziert ([Die Exponential Foundation für Reporter](die-foundation-fuer-repor
 **Ist Exponential dasselbe wie eZ Publish?**
 Es führt dieselbe Codebasis weiter. Die Software hieß eZ Publish, solange eZ Systems sie entwickelte; dieses Produkt
 wurde von seinem Schöpfer nach fast 18 Jahren eingestellt. 7x übernahm die Codebasis im Dezember 2023 und benannte das
-Produkt im August 2025 in Exponential um ([Über die Jahre von eZ Publish schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md)).
+Produkt im August 2025 in Exponential um ([Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md)).
 
 **Hat es mit Ibexa zu tun?**
 Nein. „This project is not associated with the original eZ Publish software or its original developer, eZ Systems or
-Ibexa“ (README). Die Umbenennung erfolgte auf Bitten von Ibexa ([Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md)).
+Ibexa“ (README). Die Umbenennung erfolgte auf Bitten von Ibexa ([Warum es Exponential heißt](warum-es-exponential-heisst.md)).
 
 **Wann hat 7x angefangen?**
 Gegründet 2001 als Brookins Consulting; die Idee von 7x 2014, das Projekt 2022, der Start im Dezember 2023
@@ -77,12 +77,12 @@ Professional License wird also nicht mehr angeboten. 7x verkauft Dienstleistunge
 
 **Wie wird es finanziert?**
 Durch die Beiträge von 7x und durch Sponsoren, über GitHub-Sponsors-Seiten für 7x und für die Foundation
-([Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md)).
+([Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md)).
 
 ## Nutzung und Verbreitung
 
 **Wie viele Websites nutzen es?**
-Keine Quelle zählt Installationen, Anwender oder Kunden ([Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md)).
+Keine Quelle zählt Installationen, Anwender oder Kunden ([Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)).
 
 **Wer nutzt es?**
 Es ist keine Kundenliste veröffentlicht. Nennen Sie eine Organisation nur mit ihrer Einwilligung als Anwender
@@ -110,7 +110,7 @@ info@se7enx.com oder das Kontaktformular auf exponential.earth ([Pressekontakte]
 
 **Wo sind Logos und Bilder?**
 Das Pressekit auf exponential.earth und die Bildschirmfotos dieser Hilfe unter der GNU FDL ([Das Pressekit](das-pressekit.md),
-[Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md)).
+[Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md)).
 
 **Kann ich ein Zitat bekommen?**
 Fragen Sie per E-Mail; Zitate kommen nur von den Organisationen, nie aus dieser Dokumentation ([Richtlinie für Zitate](richtlinie-fuer-zitate.md)).

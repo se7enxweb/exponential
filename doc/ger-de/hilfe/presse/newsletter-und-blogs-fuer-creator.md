@@ -25,16 +25,16 @@ decken einen Großteil des Handwerks ab; diese Seite ergänzt, was ein Creator m
 
 | Format | Leitfaden |
 |---|---|
-| Release-Überblick: was sich in einem getaggten Release geändert hat | [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md), [Über ein Release schreiben](../fuersprecher/ueber-ein-release-schreiben.md) |
+| Release-Überblick: was sich in einem getaggten Release geändert hat | [Über ein Release berichten](ueber-ein-release-berichten.md), [Über ein Release schreiben](../fuersprecher/ueber-ein-release-schreiben.md) |
 | Tutorial: eine Aufgabe, von Anfang bis Ende | [Ein Tutorial schreiben, das funktioniert](../fuersprecher/ein-tutorial-schreiben.md) |
 | Beitrag zur Geschichte | [Die Geschichte für lange Beiträge](die-geschichte-fuer-lange-beitraege.md) |
-| Rezension | [Eine faire Rezension schreiben](../../../eng-us/help/press/writing-a-fair-review.md) |
-| Vergleich | [Vergleiche, fair gemacht](../../../eng-us/help/press/comparisons-done-fairly.md) |
+| Rezension | [Eine faire Rezension schreiben](eine-faire-rezension-schreiben.md) |
+| Vergleich | [Vergleiche, fair gemacht](faire-vergleiche.md) |
 | „Diese Woche im Repository“ | [Die Geschichtsseiten als Quelle](die-geschichtsseiten-als-quelle.md) |
 
 ## Quellen und Links
 
-- Verlinken Sie für jeden Fakt die Primärquelle: den Tag, das Changelog, die Funktionsseite ([Wo die Fakten stehen, für die Presse](../../../eng-us/help/press/where-the-facts-live-for-press.md)).
+- Verlinken Sie für jeden Fakt die Primärquelle: den Tag, das Changelog, die Funktionsseite ([Wo die Fakten stehen, für die Presse](wo-die-fakten-stehen-fuer-die-presse.md)).
 - Setzen Sie die Version und das Datum an den Anfang von Tutorials: „Getestet mit Exponential 6.0.14 am <Datum>“.
 - Verlinken Sie für Arbeitsschritte die Hilfeseiten, statt lange Anleitungen zu kopieren; sie werden mit der Software
   aktualisiert.
@@ -59,14 +59,14 @@ oder einem Partner zusammenarbeiten ([Offenlegung und Ethik beim Sponsoring](../
 ## Beiträge aktuell halten
 
 - Wenn eine als „kommend“ beschriebene Version veröffentlicht wird, ergänzen Sie einen Aktualisierungshinweis
-  ([Korrekturen und Aktualisierungen](../../../eng-us/help/press/corrections-and-updates.md)).
-- Wenn ein Leser einen Fehler meldet, korrigieren Sie ihn offen ([Ein Video oder einen Beitrag korrigieren](../../../eng-us/help/press/correcting-a-video-or-post.md)).
+  ([Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md)).
+- Wenn ein Leser einen Fehler meldet, korrigieren Sie ihn offen ([Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)).
 - Prüfen Sie einmal im Jahr Ihre meistgelesenen Tutorials gegen das aktuelle Release.
 
 ## Verwandte Seiten
 
 - [Einen Blogbeitrag schreiben](../fuersprecher/einen-blogbeitrag-schreiben.md)
-- [Social-Media-Beiträge für Creator](../../../eng-us/help/press/social-posts-for-creators.md)
+- [Social-Media-Beiträge für Creator](social-media-beitraege-fuer-creator.md)
 - [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

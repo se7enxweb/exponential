@@ -41,13 +41,13 @@ Die wichtigste einzelne Frage der Kartensicherheit lautet: **Wo gibt der Kunde d
 | In einem Formular auf Ihrer Website | Formular auf der Website (`ezauthorize`) | Ja: Die Kartennummer läuft auf dem Weg zum Anbieter über Ihren Webserver |
 
 Beide Arten werden auf dieselbe Weise in die Kasse eingebunden, als Workflow-Ereignis an `shop_checkout`
-([Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md)).
+([Zahlungsanbieter für Unternehmen](zahlungsanbieter-fuer-unternehmen.md)).
 
 ## Zahlungsanbieter mit Weiterleitung
 
 Bei einem Anbieter mit Weiterleitung wie ezpaypal bezahlt der Kunde auf der Seite des Anbieters; Ihre Website erhält
 nur eine Benachrichtigung, die die Erweiterung beim Anbieter überprüft und mit Betrag und Währung der Bestellung
-abgleicht ([Zahlungen mit PayPal](../../../../eng-us/help/businesses/stores/paypal-payments.md#what-the-extension-checks)). Ihre Website sieht die Kartennummer
+abgleicht ([Zahlungen mit PayPal](zahlungen-mit-paypal.md#was-die-erweiterung-prüft)). Ihre Website sieht die Kartennummer
 nie.
 
 Für ein kleines Unternehmen bedeutet das meist deutlich weniger, das abgesichert werden muss. Ihre Website bleibt
@@ -110,7 +110,7 @@ verweist, die eine Website auf HTTPS mit einer Content Security Policy blockiert
 Für die meisten kleinen Unternehmen ist ein Anbieter mit Weiterleitung die einfachere Wahl. Wenn es Ihnen wichtig ist,
 auf Ihrer eigenen Website zu bleiben, fragen Sie einen Partner, ob Ihr Anbieter eine gehostete Zahlungsseite oder
 gehostete Eingabefelder anbietet und ob es dafür eine Anbindung gibt oder sie als Erweiterung im Stil einer
-Weiterleitung geschrieben werden kann ([Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md#other-providers)).
+Weiterleitung geschrieben werden kann ([Zahlungsanbieter für Unternehmen](zahlungsanbieter-fuer-unternehmen.md#andere-anbieter)).
 
 ## Grundlagen für jeden Shop, der Karten annimmt
 

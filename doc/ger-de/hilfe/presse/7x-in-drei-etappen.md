@@ -76,7 +76,7 @@ Jede öffentliche Quelle nennt die Etappe, die sie beschreibt, und deshalb unter
 
 - [7x für Reporter](7x-fuer-reporter.md)
 - [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md)
-- [Daten prüfen](../../../eng-us/help/press/verifying-dates.md)
+- [Daten prüfen](daten-pruefen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

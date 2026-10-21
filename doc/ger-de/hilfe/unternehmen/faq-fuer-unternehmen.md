@@ -79,7 +79,7 @@ sowie Zahlungsanbietern wie PayPal über `ezpaypal`. Siehe [Online-Shops](shops/
 **Können wir eine mobile App haben?**
 Ja, über die REST API („A headless CRUD REST API“, `README.md`), die dieselben Berechtigungen prüft wie die Website
 ([REST API v1 und v2: eine Extension](../../anleitungen/rest-api-v1-und-v2.md)). Viele Unternehmen beginnen mit einer
-responsiven Website. Siehe [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md).
+responsiven Website. Siehe [Mobil und headless](mobil-und-headless/README.md).
 
 **Wie viele Sprachen?**
 268 Locale-Dateien lassen sich als Inhaltssprachen und Siteaccess-Locales wählen, 40 davon werden von rechts nach
@@ -87,7 +87,7 @@ links geschrieben; die Administration hat 33 Übersetzungen, neunzehn davon voll
 ([Sprachen in Exponential](../../../eng-us/languages.md)). Siehe [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md).
 
 **Können wir mehrere Marken aus einer Installation betreiben?**
-Ja, „Multi-site support“ ist eingebaut (`README.md`). Siehe [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md).
+Ja, „Multi-site support“ ist eingebaut (`README.md`). Siehe [Marken mit Multisite](multisite/README.md).
 
 **Können Mitarbeiter, Partner und die Öffentlichkeit dieselbe Installation nutzen?**
 Ja. Rollen, Richtlinien, Sektionen und Siteaccesses entscheiden, wer was sieht

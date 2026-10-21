@@ -82,8 +82,8 @@ Das Land ist eine Entscheidung unter mehreren. Ein Shop, der ins Ausland verkauf
 | Thema | Lesen Sie |
 |---|---|
 | USt pro Land | [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) |
-| Preise in anderen Währungen | [Preise und Währungen](../../../../eng-us/help/businesses/stores/prices-and-currencies.md) |
-| Versandkosten pro Zone | [Versand und Bearbeitung](../../../../eng-us/help/businesses/stores/shipping-and-handling.md) |
+| Preise in anderen Währungen | [Preise und Währungen](preise-und-waehrungen.md) |
+| Versandkosten pro Zone | [Versand und Bearbeitung](versand-und-bearbeitung.md) |
 | Shop-Seiten in anderen Sprachen | [Mehrsprachigkeit planen](../../../../eng-us/help/businesses/multilingual/multilingual-planning.md) |
 | Getrennte Websites pro Land | [Mehrere Marken planen](../../../../eng-us/help/businesses/multisite/multi-brand-planning.md) |
 | Sprachen mit Schrift von rechts nach links | [Märkte mit Schrift von rechts nach links](../../../../eng-us/help/businesses/multilingual/right-to-left-markets.md) |
@@ -114,7 +114,7 @@ Länder liefern“.
 
 - [Die gruppierte Länderliste](../../../../eng-us/features/6.0/country-groups.md)
 - [USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)
-- [Versand und Bearbeitung](../../../../eng-us/help/businesses/stores/shipping-and-handling.md)
+- [Versand und Bearbeitung](versand-und-bearbeitung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

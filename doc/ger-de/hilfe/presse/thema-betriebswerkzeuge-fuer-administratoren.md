@@ -58,9 +58,9 @@ einer eigenen Seite dokumentiert.
 
 ## Verwandte Seiten
 
-- [Thema: Audit-Trail](../../../eng-us/help/press/story-audit-trail.md)
+- [Thema: Audit-Trail](thema-audit-trail.md)
 - [Thema: das Velocity Control Panel](thema-das-velocity-control-panel.md)
-- [Thema: Inhaltsjobs](../../../eng-us/help/press/story-content-jobs.md)
+- [Thema: Inhaltsjobs](thema-inhaltsjobs.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

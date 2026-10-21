@@ -93,7 +93,7 @@ Wenn ein Changelog sagt, ein Paket „benötigt `~1.4.39`“, schreiben Sie „b
 
 - [Kurzkarte der Namensregeln](../fuersprecher/kurzkarte-namensregeln.md)
 - [Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md)
-- [Ein Release selbst überprüfen](../../../eng-us/help/press/verifying-a-release-yourself.md)
+- [Ein Release selbst überprüfen](ein-release-selbst-pruefen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

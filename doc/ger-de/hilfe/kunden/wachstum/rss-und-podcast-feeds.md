@@ -77,7 +77,7 @@ eigenen Websites. Bevor Sie einen anfordern:
   Feed-Liste kann aufräumen, was ein Import angelegt hat ([RSS, Podcast und die Feed-Liste](../../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)).
 
 Für das Teilen in beide Richtungen zwischen Ihren eigenen Installationen siehe
-[Feeds und Syndikation](../../../../eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md).
+[Feeds und Syndikation](../../unternehmen/mobil-und-headless/feeds-und-syndication.md).
 
 ## Feeds funktionsfähig halten
 

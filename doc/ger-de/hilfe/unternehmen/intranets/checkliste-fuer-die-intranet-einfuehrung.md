@@ -92,7 +92,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 - [ ] Cronjobs eingeplant, einschließlich der Gruppe `frequent` (Workflow, Benachrichtigungen, Audit)
   ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Backups eingeplant und eine Wiederherstellung getestet
-  ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)).
+  ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - [ ] Status des Audit-Trails geprüft: `./console exp:audit status`
   ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes)).
 - [ ] Plan für Aktualisierungen vereinbart

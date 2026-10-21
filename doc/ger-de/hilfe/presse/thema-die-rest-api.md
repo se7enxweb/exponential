@@ -55,7 +55,7 @@ authenticated with“. Clients authentifizieren sich mit einem OAuth2-Token oder
 
 ## Verwandte Seiten
 
-- [Thema: Inhalte bearbeiten](../../../eng-us/help/press/story-editing-content.md)
+- [Thema: Inhalte bearbeiten](thema-inhalte-bearbeiten.md)
 - [Thema: Sicherheit](thema-sicherheit.md)
 - [Gesprächspunkte für Entwickler](../fuersprecher/gespraechspunkte-fuer-entwickler.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

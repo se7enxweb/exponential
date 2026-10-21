@@ -33,7 +33,7 @@ nötig ist ([Exponential mit einem Befehl installieren](../../../eng-us/features
 Führen Sie ihn in einer Kopie des Codes aus, die Sie so bekommen haben, wie
 [Den Code beschaffen](../../installation/03-den-code-beschaffen.md) es beschreibt.
 
-Die Seite nennt die Voraussetzungen und Optionen; [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md)
+Die Seite nennt die Voraussetzungen und Optionen; [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)
 führt Creator Schritt für Schritt hindurch. Notieren Sie die installierte Version (`git describe --tags`): Ihre
 Bildunterschriften werden sie brauchen.
 
@@ -79,7 +79,7 @@ Machen Sie keine Bildschirmfotos von der Live-Website oder der Administration an
 - [ ] Das Standardpasswort des Administrators ist nicht das, das Sie verwendet haben.
 - [ ] Der Bildschirm zeigt, was die Bildunterschrift sagt, in der Version, die die Bildunterschrift nennt.
 - [ ] Nichts Unveröffentlichtes wird als veröffentlicht dargestellt: Ein Bildschirmfoto aus einem Entwicklungsstand zeigt
-      Arbeit an 6.0.15, die „in Entwicklung“ ist ([Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md)).
+      Arbeit an 6.0.15, die „in Entwicklung“ ist ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Bildunterschriften
 
@@ -91,8 +91,8 @@ Machen Sie keine Bildschirmfotos von der Live-Website oder der Administration an
 
 ## Verwandte Seiten
 
-- [Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md)
-- [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md)
+- [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md)
+- [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)
 - [Datenschutz vor der Kamera](privatsphaere-vor-der-kamera.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

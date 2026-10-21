@@ -95,7 +95,7 @@ Deadline: <date and time, time zone>. Contact: <e-mail>.
   um Stellungnahme geantwortet“ oder „Die Exponential Foundation hat nicht geantwortet ...“, mit dem Datum Ihrer
   Anfrage.
 - Füllen Sie das Schweigen nie mit einem Zitat aus dem Gedächtnis, einem Forenbeitrag, der als offizielle Antwort
-  ausgegeben wird, oder einer Umschreibung, die als Stellungnahme ausgegeben wird ([Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)).
+  ausgegeben wird, oder einer Umschreibung, die als Stellungnahme ausgegeben wird ([Aussagen zuordnen](aussagen-zuordnen.md)).
 
 ## Verwandte Seiten
 

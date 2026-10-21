@@ -67,7 +67,7 @@ liefert nichts zurück.
 
 ## Verwandte Seiten
 
-- [Thema: sechs Datenbanken](../../../eng-us/help/press/story-databases.md)
+- [Thema: sechs Datenbanken](thema-sechs-datenbanken.md)
 - [Thema: SQLite als Standard](thema-sqlite-als-standard.md)
 - [Datenbankunterstützung](../datenbankunterstuetzung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

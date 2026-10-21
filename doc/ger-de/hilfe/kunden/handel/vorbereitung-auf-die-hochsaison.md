@@ -12,13 +12,13 @@ type: help
 Diese Seite ist für den Eigentümer und die Shop-Leitung, die mit geschäftigen Tagen rechnen. Sie ist ein Zeitplan, der
 die Vorbereitung auf mehrere Wochen verteilt, sodass die letzten Tage ruhig bleiben. Warum sich Shop-Seiten unter Last
 anders verhalten, und welche technischen Stellschrauben es gibt, steht unter
-[Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/store-performance-at-peak-times.md); diese Seite ist der Plan.
+[Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-spitzenzeiten.md); diese Seite ist der Plan.
 
 ## Warum es einen Plan braucht
 
 Produkt-, Kategorie- und Landingpages sind für alle gleich und können aus dem Cache ausgeliefert werden. Warenkorb,
 Kasse, Kontoseiten und Zahlungsbenachrichtigungen sind persönlich und können das nicht
-([Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/store-performance-at-peak-times.md)). An einem Spitzentag
+([Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-spitzenzeiten.md)). An einem Spitzentag
 haben beide Arten viel zu tun, und auf den persönlichen Seiten wird das Geld verdient.
 
 ## Sechs Wochen vorher
@@ -42,7 +42,7 @@ haben beide Arten viel zu tun, und auf den persönlichen Seiten wird das Geld ve
 
 ## Die Woche davor
 
-Aus [Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/store-performance-at-peak-times.md), mit ergänzten Namen:
+Aus [Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-spitzenzeiten.md), mit ergänzten Namen:
 
 | Aufgabe | Wer |
 |---|---|
@@ -50,7 +50,7 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/s
 | Landingpages veröffentlicht; Caches vom Hoster vorgewärmt | Marketing, Hoster |
 | Eine Testbestellung von Anfang bis Ende, mit Zahlung | Shop-Leitung |
 | Cronjobs laufen, sodass alte Warenkörbe bereinigt werden ([Cronjobs](../../../anleitungen/cronjobs.md)) | Hoster |
-| Backups überprüft ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)) | Hoster |
+| Backups überprüft ([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)) | Hoster |
 | Statusseite und Support-Kontakt des Zahlungsanbieters griffbereit | Shop-Leitung |
 | Schriftlich festgehalten, wer über den Wartungsmodus entscheidet und wer den Hoster anruft | Eigentümer |
 | Newsletter-Versand gestaffelt, wenn Ihr Newsletter-Werkzeug das erlaubt | Marketing |
@@ -68,7 +68,7 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/s
 
 > **Warnung**
 > Leeren Sie während der Spitze nicht alle Caches: Jede Seite muss dann im ungünstigsten Moment neu aufgebaut werden.
-> Leeren Sie nur, was eine Änderung erfordert, und überlassen Sie das dem Hoster ([Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/store-performance-at-peak-times.md)).
+> Leeren Sie nur, was eine Änderung erfordert, und überlassen Sie das dem Hoster ([Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-spitzenzeiten.md)).
 
 ## Danach
 
@@ -89,7 +89,7 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/s
 
 ## Verwandte Seiten
 
-- [Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/store-performance-at-peak-times.md)
+- [Shop-Leistung zu Spitzenzeiten](../../unternehmen/shops/shop-leistung-zu-spitzenzeiten.md)
 - [Planung für Lastspitzen](../../../../eng-us/help/businesses/reliability/peak-traffic-planning.md)
 - [Vor einer Kampagne](../nutzen/checklisten/vor-einer-kampagne.md)
 - [Wöchentliche Shop-Checkliste](woechentliche-shop-checkliste.md)

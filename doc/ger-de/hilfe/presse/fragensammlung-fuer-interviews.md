@@ -92,13 +92,13 @@ bereits beantwortet, zitieren Sie die Dokumentation und nutzen Sie Ihre Zeit fü
 - **Zu Einzelpersonen.** Fragen Sie nach Rollen, nicht nach dem Privatleben; drucken Sie persönliche Angaben nur mit
   Einwilligung.
 - **Antworten mit Zahlen.** Fragen Sie „Wo können die Leser das nachprüfen?“ und drucken Sie die Quelle zusammen mit
-  der Zahl ([Zahlen überprüfen](../../../eng-us/help/press/verifying-numbers.md)).
+  der Zahl ([Zahlen überprüfen](zahlen-pruefen.md)).
 
 ## Verwandte Seiten
 
 - [Ein Briefing vorbereiten](ein-briefing-vorbereiten.md)
 - [Ein Interview anfragen](ein-interview-anfragen.md)
-- [Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)
+- [Aussagen zuordnen](aussagen-zuordnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

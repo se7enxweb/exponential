@@ -75,14 +75,14 @@ Zwei Folgen für die Genauigkeit:
 |---|---|
 | „ein gepatchtes 6.0.14“ | „die nächste Version nach 6.0.14“ |
 | „das Release wurde zurückgezogen“ | Nur, wenn eine Quelle das sagt; die dokumentierte Praxis ist, Tags bestehen zu lassen |
-| „6.0.14 wurde neu veröffentlicht“ | So arbeitet das Projekt nicht; prüfen Sie die Liste der Tags ([Ein Release selbst überprüfen](../../../eng-us/help/press/verifying-a-release-yourself.md)) |
+| „6.0.14 wurde neu veröffentlicht“ | So arbeitet das Projekt nicht; prüfen Sie die Liste der Tags ([Ein Release selbst überprüfen](ein-release-selbst-pruefen.md)) |
 | „stillschweigend behoben“ | „behoben in Version X, wie ihr Changelog aufführt“ |
 
 ## Verwandte Seiten
 
 - [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md)
 - [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)
-- [Korrekturen und Aktualisierungen](../../../eng-us/help/press/corrections-and-updates.md) (dasselbe Prinzip für Ihre eigenen Beiträge)
+- [Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md) (dasselbe Prinzip für Ihre eigenen Beiträge)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

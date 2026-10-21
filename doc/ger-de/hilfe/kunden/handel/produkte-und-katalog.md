@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Eigentümer und Shop-Leitungen, die für den Katalog verantwortlich sind, sobald der Shop läuft. Es
 geht um die Pflege: wer sich um Produkte kümmert, welche Prüfungen regelmäßig anstehen und wie Sie mit Produkten
 umgehen, die ausverkauft sind, zurückkommen oder sich ändern. Wie Produkte in Exponential abgebildet werden, ist für
-Entscheider unter [Produktklassen und Katalog](../../../../eng-us/help/businesses/stores/product-classes-and-catalog.md) erklärt.
+Entscheider unter [Produktklassen und Katalog](../../unternehmen/shops/produktklassen-und-katalog.md) erklärt.
 
 ## Ein Produkt ist eine Seite
 
@@ -95,7 +95,7 @@ Mehrere ausgewählte Unterelemente lassen sich in einem Schritt kopieren ([Ausge
 ## Verwandte Seiten
 
 - [Ein Produkt anlegen](ein-produkt-anlegen.md)
-- [Produktklassen und Katalog (für Unternehmen)](../../../../eng-us/help/businesses/stores/product-classes-and-catalog.md)
+- [Produktklassen und Katalog (für Unternehmen)](../../unternehmen/shops/produktklassen-und-katalog.md)
 - [Suche und Navigation im Shop](../../../../eng-us/help/businesses/stores/store-search-and-navigation.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

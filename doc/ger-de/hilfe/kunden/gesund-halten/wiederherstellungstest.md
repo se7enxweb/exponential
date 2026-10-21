@@ -21,7 +21,7 @@ Die Quellen setzen ein Minimum: wiederherstellen „mindestens einmal auf einem 
 Upgrade“, und die wöchentliche Checkliste des Betriebsleitfadens verlangt, dass ein aktuelles Backup „mindestens einmal
 auf einem anderen Rechner wiederhergestellt wurde“ ([Wiederherstellungsübungen](../../../../eng-us/help/businesses/reliability/restore-drills.md)).
 Die Backup-Checkliste für Unternehmen verlangt eine Wiederherstellung auf einem anderen Rechner „im letzten Quartal“
-([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)). Wählen Sie einen
+([Backups, die sich wiederherstellen lassen](../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)). Wählen Sie einen
 Rhythmus, tragen Sie ihn in den Kalender ein und benennen Sie die Person, die Ihnen das Ergebnis meldet.
 
 ## Was Sie verlangen sollten

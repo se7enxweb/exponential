@@ -12,11 +12,11 @@ type: help
 Caches machen die Website schnell und halten sie unter Last stabil. Sie erklären auch die beiden häufigsten Fragen von
 Betreibern: „Warum ist die Website langsam?“ und „Warum erscheint meine Änderung nicht?“. Diese Seite beantwortet beide
 aus Sicht des Betreibers. Die technischen Seiten sind [Caches](../../../anleitungen/caches.md) und
-[Caching für Verfügbarkeit](../../../../eng-us/help/businesses/reliability/caching-for-availability.md).
+[Caching für Verfügbarkeit](../../unternehmen/zuverlaessigkeit/caching-fuer-verfuegbarkeit.md).
 
 ## Die Schichten in einer Tabelle
 
-Aus [Caching für Verfügbarkeit](../../../../eng-us/help/businesses/reliability/caching-for-availability.md):
+Aus [Caching für Verfügbarkeit](../../unternehmen/zuverlaessigkeit/caching-fuer-verfuegbarkeit.md):
 
 | Schicht | In einfachen Worten | Ausgeliefert |
 |---|---|---|
@@ -37,7 +37,7 @@ Ein Content Delivery Network oder ein cachender Proxy vor der Website ist option
 - **Versuchen Sie ein privates Fenster**, das den Cache Ihres Browsers ignoriert.
 - Erscheint sie dann immer noch nicht, nennen Sie Ihrem Administrator die Seitenadresse und die Uhrzeit, zu der Sie
   veröffentlicht haben. Caches zu leeren ist seine Aufgabe: „Leeren Sie das Kleinste, was das Problem behebt“, denn
-  alles zu leeren „kostet die nächsten Besucher jeweils eine langsame Seite“ ([Caching für Verfügbarkeit](../../../../eng-us/help/businesses/reliability/caching-for-availability.md)).
+  alles zu leeren „kostet die nächsten Besucher jeweils eine langsame Seite“ ([Caching für Verfügbarkeit](../../unternehmen/zuverlaessigkeit/caching-fuer-verfuegbarkeit.md)).
 
 ## „Die Website ist langsam“
 

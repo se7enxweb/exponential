@@ -17,7 +17,7 @@ bedeutet.
 > **Hinweis**
 > Diese Seite gibt wieder, was die Quellen darüber sagen, was die Software ist und tut. Sie verspricht keinen
 > Verfügbarkeitswert: Die Verfügbarkeit hängt ebenso vom Hosting, von den Menschen, die die Website betreiben, und von
-> der Art ab, wie sie gebaut ist, wie von der Software. Der Bereich [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md) erklärt,
+> der Art ab, wie sie gebaut ist, wie von der Software. Der Bereich [Zuverlässigkeit](zuverlaessigkeit/README.md) erklärt,
 > wie Sie dorthin kommen.
 
 ## Inhalt
@@ -154,7 +154,7 @@ durch Ihre eigenen ersetzen.
 Ehrliche Grenzen, damit später niemand überrascht ist:
 
 - **Die Software sichert sich nicht selbst.** Jemand muss Backups erstellen und testen, dass sie sich wiederherstellen
-  lassen ([Backups, die sich wiederherstellen lassen](../../../eng-us/help/businesses/reliability/backups-that-restore.md)).
+  lassen ([Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - **Updates installieren sich nicht von selbst.** Jemand muss Sicherheits-Releases einspielen
   ([Sicherheitsupdates und Offenlegung](../../../eng-us/help/businesses/security/security-updates-and-disclosure.md)).
 - **Eigener Code liegt in Ihrer Verantwortung.** Erweiterungen und Templates, die für Sie geschrieben wurden, müssen

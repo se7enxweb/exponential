@@ -69,7 +69,7 @@ Ein Testhost oder eine Staging-Adresse lässt Sie die Marke sehen, bevor sie öf
   ([Designs pro Marke](../../../../eng-us/help/businesses/multisite/per-brand-designs.md)).
 - Einstellungen, Logs und Caches lassen sich pro Website trennen
   ([Einstellungen und Logs pro Website](../../../../eng-us/help/businesses/multisite/per-site-settings-and-logs.md)).
-- Links zwischen den Marken: [Website-übergreifende Links](../../../../eng-us/help/businesses/multisite/cross-site-links.md).
+- Links zwischen den Marken: [Website-übergreifende Links](../../unternehmen/multisite/links-zwischen-ihren-websites.md).
 
 Aktualisieren Sie das [Arbeitsblatt für Teamrollen](../alltag/arbeitsblatt-teamrollen.md): wer welche Marke
 bearbeitet, wer freigibt.

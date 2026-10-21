@@ -28,7 +28,7 @@ eine Folge über Exponential vorzubereiten, die korrekt bleibt.
 - Für 7x oder die Foundation schreiben Sie an die Adressen auf [Pressekontakte](pressekontakte.md) und fragen, wer in
   welcher Rolle sprechen kann ([Ein Interview anfragen](ein-interview-anfragen.md)).
 - Für einen Gast aus der Community fragen Sie in den Foren oder im Chat; notieren Sie, in welcher Beziehung er zum
-  Projekt steht, und legen Sie das in der Sendung offen ([Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)).
+  Projekt steht, und legen Sie das in der Sendung offen ([Aussagen zuordnen](aussagen-zuordnen.md)).
 - Sagen Sie dem Gast, ob die Sendung live oder aufgezeichnet ist, wie lange sie dauert und wo sie veröffentlicht wird.
 
 ## Das Vorgespräch
@@ -54,7 +54,7 @@ Lesen Sie [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brie
 | se7enx.com | Sagen Sie „seven x dot com“; buchstabieren Sie es in den Shownotes |
 | die Exponential Foundation | Bei der ersten Nennung den vollen Namen verwenden |
 | Velocity, Exponential Intelligence, Exponential Layouts | Bei der ersten Nennung die vollen Produktnamen |
-| eZ Publish | Nur für die Geschichte, in der Vergangenheitsform ([Über die Jahre von eZ Publish schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md)) |
+| eZ Publish | Nur für die Geschichte, in der Vergangenheitsform ([Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md)) |
 
 Fragen Sie den Gast, wie sein eigener Name ausgesprochen wird.
 
@@ -71,7 +71,7 @@ Fragen Sie den Gast, wie sein eigener Name ausgesprochen wird.
 - Wenn ein Gast eine Zahl nennt, die Sie live nicht prüfen können, ordnen Sie sie in der Sendung zu: „nach Ihren
   Angaben“.
 - Lassen Sie unüberprüfbare Behauptungen nicht als Tatsache stehen: Nutzerzahlen, Ranglisten, „das sicherste“
-  ([Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md)).
+  ([Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)).
 - Wenn ein Gast eine Sicherheitslücke erwähnt, die noch nicht behoben ist, lenken Sie ab und schneiden Sie sie aus der
   Aufnahme ([Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md)).
 - Wenn die Folge gesponsert ist, sagen Sie das am Anfang ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
@@ -94,7 +94,7 @@ Disclosure: <sponsorship or relationship, or "none">
 
 - Veröffentlichen Sie ein Transkript ([Barrierefreie Berichterstattung](barrierefreie-berichterstattung.md)).
 - Prüfen Sie die Behauptungen aus der Sendung; korrigieren Sie in den Shownotes und, wenn nötig, am Anfang der nächsten
-  Folge ([Ein Video oder einen Beitrag korrigieren](../../../eng-us/help/press/correcting-a-video-or-post.md)).
+  Folge ([Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)).
 
 ## Verwandte Seiten
 

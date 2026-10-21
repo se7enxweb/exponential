@@ -103,18 +103,18 @@ Repository Vorrang:
 
 Die Tabelle mit den wichtigen Fakten im Kit enthält außerdem zwei Zählungen („Active Properties“ und „Forge Projects“),
 für die diese Dokumentation keine Quelle hat. Drucken Sie sie nicht, ohne zu fragen, wie gezählt wurde
-([Zahlen prüfen](../../../eng-us/help/press/verifying-numbers.md)).
+([Zahlen prüfen](zahlen-pruefen.md)).
 
 ## Was diese Hilfe zum Kit ergänzt
 
 | Sie brauchen | Seite |
 |---|---|
 | Ein Faktenblatt mit Quellen | [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md) |
-| Beschreibungen in mehreren Längen | [Textbausteine, die Sie kopieren dürfen](../../../eng-us/help/press/boilerplate-descriptions.md) |
+| Beschreibungen in mehreren Längen | [Textbausteine, die Sie kopieren dürfen](standardbeschreibungen.md) |
 | Eine datierte Zeitleiste | [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md) |
 | Die Namen richtig geschrieben | [Kurzreferenz zu Namen für Nachrichtenredakteure](namens-kurzreferenz-fuer-redaktionen.md) |
 | Blickwinkel nach Funktion | [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md) |
-| Bildschirmfotos unter einer bekannten Lizenz | [Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md) |
+| Bildschirmfotos unter einer bekannten Lizenz | [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md) |
 | Kontakte | [Pressekontakte](pressekontakte.md) |
 
 ## Fehlendes Material anfragen

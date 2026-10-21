@@ -48,7 +48,7 @@ Schritt vorankommen wollen.
 | „Legacy heißt veraltet“ | „Legacy“ bezeichnet Exponential 6, das neben Symfony läuft |
 | „Nexus ist ein Produkt von Netgen“ | Eine Distribution von 7x, gebaut auf den Open-Source-Paketen von Netgen, mit Nennung ([Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md)) |
 | „Der Starter ist stabil“ | Seine Beschreibung sagt Public Beta |
-| „Jedes Nexus enthält Exponential 6“ | Die Linie 1.3.0.x und der v5-Starter nicht ([Über Releases von Exponential Platform berichten](../../../eng-us/help/press/covering-platform-releases.md)) |
+| „Jedes Nexus enthält Exponential 6“ | Die Linie 1.3.0.x und der v5-Starter nicht ([Über Releases von Exponential Platform berichten](ueber-platform-releases-berichten.md)) |
 
 ## Blickwinkel und Ideen für Überschriften
 
@@ -59,7 +59,7 @@ Schritt vorankommen wollen.
 
 - [Thema: Exponential Platform DXP](thema-exponential-platform-dxp.md)
 - [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md)
-- [Über Releases von Exponential Platform berichten](../../../eng-us/help/press/covering-platform-releases.md)
+- [Über Releases von Exponential Platform berichten](ueber-platform-releases-berichten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -57,7 +57,7 @@ Die vollständige Übersicht steht unter [Die Kanäle der Community](../fuerspre
 
 ## Was Sie nicht versprechen sollten
 
-- Release-Termine, Funktionen oder Korrekturen: Sie entscheiden nicht darüber ([Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md)).
+- Release-Termine, Funktionen oder Korrekturen: Sie entscheiden nicht darüber ([Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)).
 - Support von 7x oder der Foundation.
 - Dass ein Fehler „bald behoben wird“.
 
@@ -78,7 +78,7 @@ You are right, I got that wrong. The correct version: <statement> (<link>). I ha
 
 ## Verwandte Seiten
 
-- [Ein Video oder einen Beitrag korrigieren](../../../eng-us/help/press/correcting-a-video-or-post.md)
+- [Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)
 - [Öffentlich antworten](../fuersprecher/oeffentlich-antworten.md)
 - [Leitfaden für Livestreams](leitfaden-fuer-livestreams.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

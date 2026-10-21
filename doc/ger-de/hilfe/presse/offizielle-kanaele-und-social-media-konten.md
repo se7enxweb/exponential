@@ -81,7 +81,7 @@ Liste, und Benutzernamen können sich ändern.
 - Markieren Sie das Produktkonto für Produktneuigkeiten und das Konto von 7x für Unternehmensneuigkeiten; markieren Sie
   die Foundation für ihre eigenen Ankündigungen ([Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md)).
 - Ein Beitrag auf diesen Konten ist eine veröffentlichte Aussage des Kontoinhabers; zitieren Sie ihn mit Link und Datum
-  ([Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)).
+  ([Aussagen zuordnen](aussagen-zuordnen.md)).
 - Ein offizielles Hashtag ist nicht dokumentiert. Verwenden Sie den Produktnamen im Klartext.
 - Creator: Ein Konto zu markieren ist keine Billigung durch dieses Konto und darf nicht als solche dargestellt werden
   ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
@@ -89,7 +89,7 @@ Liste, und Benutzernamen können sich ändern.
 ## Verwandte Seiten
 
 - [Pressekontakte](pressekontakte.md)
-- [Über die Community schreiben](../../../eng-us/help/press/writing-about-the-community.md)
+- [Über die Community schreiben](ueber-die-community-schreiben.md)
 - [Richtlinien für Social Media](../fuersprecher/richtlinien-fuer-soziale-medien.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

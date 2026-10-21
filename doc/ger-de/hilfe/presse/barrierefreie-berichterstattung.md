@@ -10,7 +10,7 @@ type: help
 # Barrierefreie Berichterstattung
 
 Diese Seite ist für Autoren, Bildredakteure und Produzenten. Die Administration von Exponential wird auf Kontrast und
-Größe der Bedienflächen getestet ([Thema: Barrierefreiheit](../../../eng-us/help/press/story-accessibility.md)); Berichte darüber sollten für
+Größe der Bedienflächen getestet ([Thema: Barrierefreiheit](thema-barrierefreiheit.md)); Berichte darüber sollten für
 dieselben Menschen lesbar sein: Leser, die Screenreader, Vergrößerung, Untertitel oder nur die Tastatur verwenden.
 
 ## Inhalt
@@ -57,12 +57,12 @@ Sie diesen Text auch in den Artikel.
 
 - Nennen Sie die Zahlen im Text oder in einer Tabelle neben dem Diagramm.
 - Verlassen Sie sich nicht allein auf Farbe; beschriften Sie Linien und Balken.
-- Lassen Sie die Bedingungen von Leistungszahlen beim Diagramm stehen ([Zahlen überprüfen](../../../eng-us/help/press/verifying-numbers.md)).
+- Lassen Sie die Bedingungen von Leistungszahlen beim Diagramm stehen ([Zahlen überprüfen](zahlen-pruefen.md)).
 
 ## Video und Audio
 
 - Untertitel für jedes Video, von einem Menschen geprüft, besonders bei Produktnamen und Befehlen
-  ([Untertitel und barrierefreies Video](../../../eng-us/help/press/captions-and-accessible-video.md)).
+  ([Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md)).
 - Sagen Sie laut, was Sie anklicken: „Ich öffne Setup, dann Extensions“ statt „Ich klicke hier“.
 - Transkripte für Podcasts, mit ausgeschriebenen Befehlen und Links.
 
@@ -75,7 +75,7 @@ Sie diesen Text auch in den Artikel.
 
 ## Verwandte Seiten
 
-- [Thema: Barrierefreiheit](../../../eng-us/help/press/story-accessibility.md)
+- [Thema: Barrierefreiheit](thema-barrierefreiheit.md)
 - [Barrierefreie Folien und Bilder](../fuersprecher/barrierefreie-folien-und-grafiken.md)
 - [Stil und Schreibweise für die Berichterstattung](stil-und-schreibweise-fuer-berichte.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

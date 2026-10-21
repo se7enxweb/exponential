@@ -93,7 +93,7 @@ Oktober in mehreren Schritten hinzu; verwenden Sie also die datierte Zahl der Sp
 
 - [Gesprächspunkte: Sprachen und Schreibrichtung von rechts nach links](../fuersprecher/gespraechspunkte-sprachen-und-rtl.md)
 - [Thema: Multisite](thema-multisite.md)
-- [Thema: Barrierefreiheit](../../../eng-us/help/press/story-accessibility.md)
+- [Thema: Barrierefreiheit](thema-barrierefreiheit.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

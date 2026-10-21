@@ -88,7 +88,7 @@ Fragen Sie schriftlich unter support@exponential.earth an und bewahren Sie die A
 ## Verwandte Seiten
 
 - [Das Pressekit](das-pressekit.md)
-- [Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md)
+- [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md)
 - [Titel, Vorschaubilder und Beschreibungen](titel-vorschaubilder-und-beschreibungen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

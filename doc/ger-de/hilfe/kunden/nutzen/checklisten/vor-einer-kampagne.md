@@ -83,6 +83,6 @@ eingeplant.
 
 - [Vorbereitung auf die Hochsaison](../../handel/vorbereitung-auf-die-hochsaison.md)
 - [Nach einem Vorfall](nach-einem-vorfall.md)
-- [Ihren Shop bewerben](../../../../../eng-us/help/businesses/stores/promoting-your-store.md)
+- [Ihren Shop bewerben](../../../unternehmen/shops/ihren-shop-bewerben.md)
 - [Checklisten für Betreiber](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

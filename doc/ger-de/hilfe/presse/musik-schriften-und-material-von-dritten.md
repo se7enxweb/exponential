@@ -26,7 +26,7 @@ Sie ist eine praktische Anleitung, keine Rechtsberatung; die Regeln unterscheide
 | Material | Bedingungen | Seite |
 |---|---|---|
 | Die Oberfläche der Software (in Ihren Bildschirmfotos zu sehen) | GPL-Software | [Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md) |
-| Texte und Bilder dieser Dokumentation | GNU FDL 1.3 oder später | [Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md), [Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md) |
+| Texte und Bilder dieser Dokumentation | GNU FDL 1.3 oder später | [Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md), [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md) |
 | Logos und Markenmaterial aus dem Pressekit | Die Richtlinien des Pressekits: redaktionelle Berichte, Rezensionen und Berichte über Partnerschaften | [Logos und Markenmaterial](logos-und-markenmaterial.md) |
 | Mitgelieferte Bibliotheken von Dritten (jQuery, TinyMCE, Bootstrap Icons und andere) | Ihre eigenen Lizenzen | Die Lizenzdatei der Bibliothek im Repository |
 
@@ -48,7 +48,7 @@ Im Zweifel verwenden Sie Material, das Sie selbst gemacht haben, oder Material u
 ## Bildschirmfotos und Websites anderer
 
 - Zeigen Sie die Website oder die Administration einer anderen Person nicht ohne Erlaubnis ([Datenschutz vor der Kamera](privatsphaere-vor-der-kamera.md)).
-- Die Galerien mit Bildschirmfotos auf exponential.earth nennen keine Lizenz; fragen Sie vor einer Wiederverwendung ([Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md)).
+- Die Galerien mit Bildschirmfotos auf exponential.earth nennen keine Lizenz; fragen Sie vor einer Wiederverwendung ([Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md)).
 - Videos und Bilder anderer Creator gehören diesen; verlinken Sie sie, laden Sie sie nicht erneut hoch.
 
 ## Quellenangaben
@@ -70,7 +70,7 @@ Anspruch gegen Ihr Video erhoben wird, können Sie ihn in wenigen Minuten beantw
 ## Verwandte Seiten
 
 - [Logos und Markenmaterial](logos-und-markenmaterial.md)
-- [Leitfaden für Video-Rundgänge](../../../eng-us/help/press/video-walkthrough-guide.md)
+- [Leitfaden für Video-Rundgänge](leitfaden-fuer-video-rundgaenge.md)
 - [Quellen angeben und Ihre Texte lizenzieren](../fuersprecher/quellen-zitieren-und-texte-lizenzieren.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

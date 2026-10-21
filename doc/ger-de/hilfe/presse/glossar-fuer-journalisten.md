@@ -47,7 +47,7 @@ und die Geschichte.
 
 | Begriff | Bedeutung |
 |---|---|
-| **eZ Publish** | Der Name der Software, solange eZ Systems sie entwickelte; ein Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat. Nur Geschichte. [Über die Jahre von eZ Publish schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md) |
+| **eZ Publish** | Der Name der Software, solange eZ Systems sie entwickelte; ein Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat. Nur Geschichte. [Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md) |
 | **eZ Systems, Ibexa** | Der ursprüngliche Entwickler und sein Nachfolgeunternehmen; nicht mit Exponential verbunden. [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md) |
 | **eZ Platform, Ibexa DXP OSS** | Die auf Symfony basierenden Nachfolger von eZ Publish |
 | **Fork** | Eine Kopie einer Codebasis, die getrennt weitergeführt wird; das Repository von Exponential ist ein GitHub-Fork |
@@ -60,7 +60,7 @@ und die Geschichte.
 |---|---|
 | **Inhaltsmodell** | Die Arten von Inhalten, die eine Website festlegt, und ihre Felder |
 | **Inhaltsklasse, Objekt** | Eine Art von Inhalt (Klasse) und ein einzelnes Element davon (Objekt) |
-| **Version, Entwurf** | Jede Bearbeitung ist eine neue Version; ein Entwurf ist eine, die noch nicht veröffentlicht ist. [Thema: Inhalte bearbeiten](../../../eng-us/help/press/story-editing-content.md) |
+| **Version, Entwurf** | Jede Bearbeitung ist eine neue Version; ein Entwurf ist eine, die noch nicht veröffentlicht ist. [Thema: Inhalte bearbeiten](thema-inhalte-bearbeiten.md) |
 | **Sektion, Status** | Möglichkeiten, Inhalte für Berechtigungen und Workflows zu gruppieren |
 | **Siteaccess** | Ein Zugang zu einer Installation: eine Website, eine Sprache oder die Administration |
 | **Multisite** | Mehrere Websites aus einer Installation |
@@ -91,7 +91,7 @@ und die Geschichte.
 
 | Begriff | Bedeutung |
 |---|---|
-| **CSP** | Content Security Policy: sagt dem Browser, welche Skripte eine Seite ausführen darf. [Thema: die Content Security Policy](../../../eng-us/help/press/story-content-security-policy.md) |
+| **CSP** | Content Security Policy: sagt dem Browser, welche Skripte eine Seite ausführen darf. [Thema: die Content Security Policy](thema-content-security-policy.md) |
 | **Audit-Trail** | Ein manipulationssicheres Protokoll dessen, was in der Administration geschehen ist |
 | **Zweistufige Anmeldung (2FA)** | Ein zweiter Faktor bei der Anmeldung, etwa ein Code aus einer App |
 | **Vertrauliche Meldung** | Eine Sicherheitslücke vertraulich melden, damit sie behoben ist, bevor Einzelheiten öffentlich werden. [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md) |

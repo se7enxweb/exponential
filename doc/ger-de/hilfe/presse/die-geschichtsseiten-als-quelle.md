@@ -79,7 +79,7 @@ Zwei Warnungen:
 
 - **Release-Status.** Eine Monatsseite kann Arbeit an der Entwicklungslinie beschreiben. Die Hauptnachricht des Oktober
   2026 lautet „no release tag; they belong to the 6.0.15 line“. Machen Sie aus der Arbeit eines Monats kein Release
-  ([Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md)).
+  ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
 - **Upstream-Geschichte.** Geforkte Repositorys tragen ältere Geschichte mit sich, die das Team von se7enxweb nicht
   gemacht hat. Die Seite „Wer ist 7x?“ zählt „6,556 ledger changes in 53 repositories since December 2023, 1,037 of them
   made by the se7enxweb team, the rest upstream history that the forks carry along“ ([Wer ist 7x?](../wer-ist-7x.md#verantwortung-von-einer-ruhenden-codebasis-zu-exponential-6)).
@@ -87,8 +87,8 @@ Zwei Warnungen:
 
 ## Verwandte Seiten
 
-- [Wo Changelogs und Release Notes stehen](../../../eng-us/help/press/where-changelogs-and-release-notes-live.md)
-- [Daten prüfen](../../../eng-us/help/press/verifying-dates.md)
+- [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md)
+- [Daten prüfen](daten-pruefen.md)
 - [Richtig über die Geschichte schreiben](../fuersprecher/richtig-ueber-die-geschichte-schreiben.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -84,8 +84,8 @@ October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 
 - Nennen Sie den Tag nur, wenn die Quelle ihn nennt: „am 1. Januar 2024“, „im Dezember 2023“, „2022“.
 - Für die Umbenennung genügt „im August 2025“; die beiden Tage stehen für die Website und das Repository.
 - Wenn Sie über eZ Publish schreiben, bleiben Sie in der Vergangenheitsform: „Die Codebasis wurde ab 1999 als
-  eZ Publish entwickelt“ ([Über die eZ-Publish-Jahre schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md)).
-- Wenn Sie „heute“ oder „derzeit“ schreiben, nennen Sie das Datum, an dem Sie es geprüft haben ([Daten prüfen](../../../eng-us/help/press/verifying-dates.md)).
+  eZ Publish entwickelt“ ([Über die eZ-Publish-Jahre schreiben](ueber-die-ez-publish-jahre-schreiben.md)).
+- Wenn Sie „heute“ oder „derzeit“ schreiben, nennen Sie das Datum, an dem Sie es geprüft haben ([Daten prüfen](daten-pruefen.md)).
 
 ## Verwandte Seiten
 

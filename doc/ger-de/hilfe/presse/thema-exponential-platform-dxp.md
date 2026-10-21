@@ -56,7 +56,7 @@ Zeitplaner und nicht den Legacy-Kernel mit
 
 - [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md)
 - [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md)
-- [Über Releases von Exponential Platform berichten](../../../eng-us/help/press/covering-platform-releases.md)
+- [Über Releases von Exponential Platform berichten](ueber-platform-releases-berichten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -62,7 +62,7 @@ Oracle.
 ## Verwandte Seiten
 
 - [Thema: SQLite als Standard](thema-sqlite-als-standard.md)
-- [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md)
+- [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)
 - [Erste Schritte](../erste-schritte.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

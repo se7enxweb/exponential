@@ -10,7 +10,7 @@ type: help
 # Namens-Kurzreferenz für Redaktionen
 
 Diese Seite ist für Schlussredakteure, Korrektoren und Faktenprüfer. Hängen Sie sie neben den Styleguide Ihres Hauses.
-Die Begründung für jede Zeile steht auf [Marke und Namen für Medien](../../../eng-us/help/press/brand-and-naming-for-media.md).
+Die Begründung für jede Zeile steht auf [Marke und Namen für Medien](marke-und-namen-fuer-medien.md).
 
 ## Inhalt
 
@@ -92,7 +92,7 @@ Code haben sich nicht geändert; `eZContentObject` ist der echte Klassenname.
 
 ## Verwandte Seiten
 
-- [Marke und Namen für Medien](../../../eng-us/help/press/brand-and-naming-for-media.md)
+- [Marke und Namen für Medien](marke-und-namen-fuer-medien.md)
 - [Kurzkarte mit den Namensregeln](../fuersprecher/kurzkarte-namensregeln.md)
 - [Stil und Schreibweise für die Berichterstattung](stil-und-schreibweise-fuer-berichte.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

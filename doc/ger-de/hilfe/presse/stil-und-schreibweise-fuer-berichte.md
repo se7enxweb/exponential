@@ -56,16 +56,16 @@ Schreiben Sie Namen von Menüs und Schaltflächen so, wie sie erscheinen, fett, 
 
 - Bezeichner im Code, Dateinamen, Paketnamen und Befehle in Code-Schrift, wenn Ihr Medium das kann: `eZContentObject`,
   `SECURITY.md`, `expai`, `./console exp:install`.
-- Übersetzen oder „korrigieren“ Sie Namen aus dem Code nie ([Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md)).
+- Übersetzen oder „korrigieren“ Sie Namen aus dem Code nie ([Warum es Exponential heißt](warum-es-exponential-heisst.md)).
 - Paketnamen werden klein geschrieben, wie in `composer.json`.
 
 ## Zahlen, Versionen und Daten
 
 | Element | Stil |
 |---|---|
-| Versionen | 6.0.14, ohne „v“; das „v“ gehört zu Git-Tags ([Versionsnummern im Text](../../../eng-us/help/press/version-numbers-in-print.md)) |
+| Versionen | 6.0.14, ohne „v“; das „v“ gehört zu Git-Tags ([Versionsnummern im Text](versionsnummern-im-text.md)) |
 | Zählungen | Mit dem Datum, an dem gezählt wurde ([Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md)) |
-| Daten | So genau wie die Quelle: „1. Januar 2024“, „Dezember 2023“, „2022“ ([Daten prüfen](../../../eng-us/help/press/verifying-dates.md)) |
+| Daten | So genau wie die Quelle: „1. Januar 2024“, „Dezember 2023“, „2022“ ([Daten prüfen](daten-pruefen.md)) |
 | Geschwindigkeitswerte | Mit ihren Bedingungen: „0,36 ms pro gecachter Seite“ |
 
 ## Begriffe, die Sie allgemeinen Lesern erklären sollten
@@ -86,7 +86,7 @@ Weitere Begriffe: [Glossar für Journalisten](glossar-fuer-journalisten.md).
 
 ## Verwandte Seiten
 
-- [Marke und Namen für Medien](../../../eng-us/help/press/brand-and-naming-for-media.md)
+- [Marke und Namen für Medien](marke-und-namen-fuer-medien.md)
 - [Kurzreferenz zu Namen für Nachrichtenredakteure](namens-kurzreferenz-fuer-redaktionen.md)
 - [Barrierefreie Berichterstattung](barrierefreie-berichterstattung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

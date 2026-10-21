@@ -113,7 +113,7 @@ laufenden Kosten betragen 1.200 / 12 = 100; jeder Monat trägt also 1.080 - 100 
 
 Für einen kleinen Shop ist der direkte Verlust eines kurzen Ausfalls gering; das verlorene Vertrauen ist es nicht. Das
 [Arbeitsblatt: Kosten eines Ausfalls](arbeitsblatt-kosten-eines-ausfalls.md) fügt die anderen Posten hinzu, und
-[Shop-Leistung zu Spitzenzeiten](../../../../eng-us/help/businesses/stores/store-performance-at-peak-times.md) erklärt, wie Sie an den geschäftigen
+[Shop-Leistung zu Spitzenzeiten](../shops/shop-leistung-zu-spitzenzeiten.md) erklärt, wie Sie an den geschäftigen
 Tagen erreichbar bleiben.
 
 ## Was Sie für Ihren Shop ändern
@@ -124,7 +124,7 @@ Tagen erreichbar bleiben.
 - [ ] Zählen Sie nur die Bestellungen, die der Shop hinzufügt, nicht die, die er aus einem anderen Kanal verlagert.
 - [ ] Prüfen Sie die USt-Pflichten für die Länder, in die Sie verkaufen
       ([USt-Regeln und USt-Typen](../../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md)).
-- [ ] Planen Sie den Start mit der [Checkliste für den Shop-Start](../../../../eng-us/help/businesses/stores/store-launch-checklist.md).
+- [ ] Planen Sie den Start mit der [Checkliste für den Shop-Start](../shops/checkliste-fuer-den-shop-start.md).
 
 ## Verwandte Seiten
 

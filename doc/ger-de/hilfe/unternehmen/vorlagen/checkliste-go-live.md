@@ -78,8 +78,8 @@ Go / No-Go: ________   Entschieden von: ______________   am: ________
 
 Worauf jede Zeile beruht: Datenschutz und Mail-Fußzeile unter [Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md);
 Konten unter [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md); der Shop in der
-[Checkliste für den Shop-Start](../../../../eng-us/help/businesses/stores/store-launch-checklist.md); Backups unter
-[Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md); Monitoring unter
+[Checkliste für den Shop-Start](../shops/checkliste-fuer-den-shop-start.md); Backups unter
+[Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md); Monitoring unter
 [Zustandsprüfungen und Verfügbarkeit](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md); Audit-Warnungen unter
 [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#try-it-in-two-minutes).
 
@@ -114,7 +114,7 @@ Der Wartungsmodus zeigt Besuchern eine freundliche Seite, während gearbeitet wi
 ## Verwandte Seiten
 
 - [Monatliche Betriebscheckliste](monatliche-betriebscheckliste.md)
-- [Checkliste für den Shop-Start](../../../../eng-us/help/businesses/stores/store-launch-checklist.md)
+- [Checkliste für den Shop-Start](../shops/checkliste-fuer-den-shop-start.md)
 - [Checkliste für die Intranet-Einführung](../intranets/checkliste-fuer-die-intranet-einfuehrung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

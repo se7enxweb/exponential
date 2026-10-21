@@ -97,7 +97,7 @@ Velocity in Exponential gehört zur Entwicklungslinie 6.0.15, die nicht veröffe
 ## Verwandte Seiten
 
 - [Gesprächspunkte: Geschwindigkeit und Velocity](../fuersprecher/gespraechspunkte-geschwindigkeit-und-velocity.md)
-- [Thema: Engines, Velocity, FrankenPHP und die klassischen Server](../../../eng-us/help/press/story-engines-velocity-frankenphp-and-classic.md)
+- [Thema: Engines, Velocity, FrankenPHP und die klassischen Server](thema-engines-velocity-frankenphp-und-klassische-server.md)
 - [Thema: das Velocity Control Panel](thema-das-velocity-control-panel.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

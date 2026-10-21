@@ -80,13 +80,13 @@ Die Hilfe zeigt auf ihnen einen anderen Hinweis. Prüfen Sie den Hinweis unten a
 
 Ein Satz aus der Dokumentation sagt den Lesern, was die Dokumentation sagt. Er ist nicht „7x sagte“ oder „die
 Foundation sagte“. Schreiben Sie „laut der Dokumentation des Projekts“ oder „die README erklärt“. Für Aussagen der
-Organisationen siehe [Richtlinie für Zitate](richtlinie-fuer-zitate.md) und [Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md).
+Organisationen siehe [Richtlinie für Zitate](richtlinie-fuer-zitate.md) und [Aussagen zuordnen](aussagen-zuordnen.md).
 
 ## Verwandte Seiten
 
 - [Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md)
 - [Quellen nennen und Ihre Texte lizenzieren](../fuersprecher/quellen-zitieren-und-texte-lizenzieren.md)
-- [Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md)
+- [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

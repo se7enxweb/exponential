@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Journalisten und Creator, die über KI im Content-Management berichten. Exponential Intelligence lässt
 sich leicht falsch beschreiben; diese Seite gibt den genauen Wortlaut der Quellen, die Daten und die Aussagen, die Sie
-nicht machen dürfen. Das nächste Thema, [ein Assistent, der nur Entwürfe schreibt](../../../eng-us/help/press/story-ai-that-writes-drafts-only.md),
+nicht machen dürfen. Das nächste Thema, [ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md),
 führt einen Blickwinkel weiter.
 
 ## Inhalt
@@ -95,7 +95,7 @@ Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
 
 - [Gesprächspunkte: Exponential Intelligence](../fuersprecher/gespraechspunkte-exponential-intelligence.md)
 - [Einwand: „Was ist mit den KI-Funktionen?“](../fuersprecher/einwand-ki-funktionen.md)
-- [Thema: ein Assistent, der nur Entwürfe schreibt](../../../eng-us/help/press/story-ai-that-writes-drafts-only.md)
+- [Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

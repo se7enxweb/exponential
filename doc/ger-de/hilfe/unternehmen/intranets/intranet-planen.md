@@ -73,7 +73,7 @@ Ein Intranet kann in einer eigenen Installation liegen oder neben einer öffentl
 Eine Installation mit mehreren Siteaccesses teilt sich den Inhaltsbaum, die Benutzer und die Betriebsarbeit; getrennte
 Installationen halten alles auseinander. Beide Formen sind unter
 [Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md) und im Bereich
-[Multisite](../../../../eng-us/help/businesses/multisite/README.md) beschrieben.
+[Multisite](../multisite/README.md) beschrieben.
 
 > **Tipp**
 > Wenn Intranet und öffentliche Website eine Installation teilen, stellen Sie sicher, dass die Rolle Anonymous des
@@ -123,7 +123,7 @@ Kopieren Sie diese Liste in die Projektbeschreibung
 - [ ] Bestandsaufnahme der Dokumente und Migrationsplan.
 - [ ] Entscheidung zur Suche: eingebaut oder Solr.
 - [ ] Entscheidung zu Benachrichtigungen: welchen Einträgen Mitarbeiter standardmäßig folgen.
-- [ ] Hosting und Backups entschieden ([Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/README.md)).
+- [ ] Hosting und Backups entschieden ([Zuverlässigkeit](../zuverlaessigkeit/README.md)).
 - [ ] Benannte verantwortliche Person und ein Termin für die erste Zugriffsprüfung
       ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
 

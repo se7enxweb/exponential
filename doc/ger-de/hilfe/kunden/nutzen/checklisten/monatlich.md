@@ -60,7 +60,7 @@ STORE (if you sell)
 |---|---|---|
 | Neue Releases | Partner; Sicherheitskorrekturen werden mit dem nächsten Release 6.0.x veröffentlicht | `SECURITY.md`, [Upgrade](../../../../anleitungen/aktualisieren.md) |
 | Upgrade-Prüfung | **Setup > Upgrade-Prüfung**; beide Prüfungen lesen nur | [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
-| Backups und Wiederherstellungstests | Hoster | [Backups, die sich wiederherstellen lassen](../../../../../eng-us/help/businesses/reliability/backups-that-restore.md) |
+| Backups und Wiederherstellungstests | Hoster | [Backups, die sich wiederherstellen lassen](../../../unternehmen/zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) |
 | Alarme des Prüfprotokolls | Das Dashboard des Prüfprotokolls, Richtlinie `audit/read` | [Das Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
 | HTTPS | Hoster | [TLS und HTTPS](../../../hosting/sicherheit/tls-und-https.md) |
 | Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) |

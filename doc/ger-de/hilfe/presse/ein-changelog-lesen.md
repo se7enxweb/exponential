@@ -90,13 +90,13 @@ Faustregeln:
 Das [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md) ist anders: Es beginnt mit „Not released yet“, ist nach
 Zeitabschnitten statt nach Arten gegliedert und ist lang („four months of work“, vier Monate Arbeit). Lesen Sie die
 Liste „How this page is organised“ am Anfang und wählen Sie einen Zeitabschnitt. Über alles darauf muss als „in
-Entwicklung“ berichtet werden ([Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md)).
+Entwicklung“ berichtet werden ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Verwandte Seiten
 
-- [Wo Changelogs und Release Notes stehen](../../../eng-us/help/press/where-changelogs-and-release-notes-live.md)
-- [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md)
-- [Ein Release selbst überprüfen](../../../eng-us/help/press/verifying-a-release-yourself.md)
+- [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md)
+- [Über ein Release berichten](ueber-ein-release-berichten.md)
+- [Ein Release selbst überprüfen](ein-release-selbst-pruefen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

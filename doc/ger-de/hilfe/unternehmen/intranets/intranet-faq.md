@@ -126,7 +126,7 @@ Beispielannahmen sind, die Sie ersetzen.
 
 **Brauchen Mitarbeiter eine App auf ihren Telefonen?**
 Zum Lesen des Intranets ist keine App nötig; es ist eine Website. Die Authenticator-App wird nur gebraucht, wenn die
-zweistufige Anmeldung mit App-Codes verwendet wird ([Mobil und headless](../../../../eng-us/help/businesses/mobile-and-headless/README.md)).
+zweistufige Anmeldung mit App-Codes verwendet wird ([Mobil und headless](../mobil-und-headless/README.md)).
 
 ## Verwandte Seiten
 

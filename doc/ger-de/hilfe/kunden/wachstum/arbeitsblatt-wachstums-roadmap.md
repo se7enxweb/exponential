@@ -52,7 +52,7 @@ keinem Ihrer Ziele dienen.
 | Feeds oder ein Podcast | RSS-, Atom- und Apple-Podcasts-Exporte | [RSS- und Podcast-Feeds](rss-und-podcast-feeds.md) | |
 | Formulare und Lead-Erfassung | Information Collector | [Formulare und gesammelte Informationen](formulare-und-gesammelte-informationen.md) | |
 | Ein Mitgliederbereich | Registrierung, Sektionen, Rollen | [Mitgliederbereiche und Registrierung](mitgliederbereiche-und-registrierung.md) | |
-| Ein Onlineshop | der eingebaute Shop | [Einen Shop im Alltag betreiben](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md) | |
+| Ein Onlineshop | der eingebaute Shop | [Einen Shop im Alltag betreiben](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md) | |
 | Bessere Auffindbarkeit | Suchstatistiken, SEO-Prüfungen | [SEO-Prüfungen](../alltag/seo-pruefungen.md) | |
 
 ## Teil 3: Bewertung

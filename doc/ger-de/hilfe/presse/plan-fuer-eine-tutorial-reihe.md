@@ -86,14 +86,14 @@ DESCRIPTION: help page link, commands shown, chapters, license of the video
 | Ein Release wird getaggt | Lesen Sie seinen Changelog im Hinblick auf die Bildschirme jeder Folge; notieren Sie, was sich geändert hat |
 | Ein Schritt funktioniert nicht mehr | Heften Sie eine Korrektur an die Folge; korrigieren Sie die Beschreibung; nehmen Sie neu auf, wenn der Schritt zentral ist |
 | Eine Folge ist veraltet | Sagen Sie es in ihrem Titel; verlinken Sie den Ersatz |
-| Ein Zuschauer meldet einen Fehler | Prüfen Sie ihn anhand der Hilfe; bedanken Sie sich; korrigieren Sie öffentlich ([Ein Video oder einen Beitrag korrigieren](../../../eng-us/help/press/correcting-a-video-or-post.md)) |
+| Ein Zuschauer meldet einen Fehler | Prüfen Sie ihn anhand der Hilfe; bedanken Sie sich; korrigieren Sie öffentlich ([Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)) |
 
 Führen Sie eine kleine Tabelle Ihrer Folgen mit der Version und dem Datum, an dem Sie jede zuletzt geprüft haben.
 
 ## Verwandte Seiten
 
 - [Ein Tutorial schreiben, das funktioniert](../fuersprecher/ein-tutorial-schreiben.md)
-- [Leitfaden für Video-Rundgänge](../../../eng-us/help/press/video-walkthrough-guide.md)
+- [Leitfaden für Video-Rundgänge](leitfaden-fuer-video-rundgaenge.md)
 - [Gliederungen für Podcast-Folgen](gliederungen-fuer-podcast-folgen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

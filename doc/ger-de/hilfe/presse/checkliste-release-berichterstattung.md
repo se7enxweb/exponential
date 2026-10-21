@@ -26,8 +26,8 @@ Beantworten Sie zuerst drei Fragen; sie entscheiden über den ganzen Beitrag.
 
 | Frage | Wo Sie nachsehen |
 |---|---|
-| Ist es erschienen (es gibt einen Tag), oder ist es die Entwicklungslinie? | [Ein Release selbst überprüfen](../../../eng-us/help/press/verifying-a-release-yourself.md) |
-| Um welches Produkt geht es: den Kernel, eine Erweiterung, Velocity oder ein Platform-Paket? | [Wo Changelogs und Release Notes stehen](../../../eng-us/help/press/where-changelogs-and-release-notes-live.md) |
+| Ist es erschienen (es gibt einen Tag), oder ist es die Entwicklungslinie? | [Ein Release selbst überprüfen](ein-release-selbst-pruefen.md) |
+| Um welches Produkt geht es: den Kernel, eine Erweiterung, Velocity oder ein Platform-Paket? | [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md) |
 | Wer ist mein Publikum: allgemein, Wirtschaft, Technik, lokal oder Bildung? | [Vorlagen für Release-Beiträge](vorlagen-fuer-release-beitraege.md) |
 
 ## Die vollständige Checkliste
@@ -73,12 +73,12 @@ AFTERWARDS
 [ ] I know how I will publish a correction if something is wrong
 ```
 
-Die Seiten hinter den Zeilen: [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md),
-[Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md),
+Die Seiten hinter den Zeilen: [Über ein Release berichten](ueber-ein-release-berichten.md),
+[Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md),
 [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md), [Regeln für Marke und Namen](../geschaeft/marken-und-namensregeln.md),
-[Zahlen überprüfen](../../../eng-us/help/press/verifying-numbers.md), [Richtlinie für Zitate](richtlinie-fuer-zitate.md),
+[Zahlen überprüfen](zahlen-pruefen.md), [Richtlinie für Zitate](richtlinie-fuer-zitate.md),
 [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md), [Offenlegung und Interessenkonflikte](../fuersprecher/offenlegung-und-interessenkonflikte.md),
-[Korrekturen und Aktualisierungen](../../../eng-us/help/press/corrections-and-updates.md). Die Zeile zum Upgrade stammt aus
+[Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md). Die Zeile zum Upgrade stammt aus
 [Über ein Release schreiben](../fuersprecher/ueber-ein-release-schreiben.md#checkliste): Das Installationsprogramm „must never
 run over an existing site“, darf also nie über eine bestehende Website laufen.
 
@@ -98,13 +98,13 @@ Auf Deutsch gesprochen lautet die Versionsnummer zum Beispiel „sechs Punkt nul
 
 - Bewahren Sie Ihre Checkliste mit dem Datum auf; sie zeigt, was Sie geprüft haben, wenn ein Leser einen Fakt anzweifelt.
 - Wenn das nächste Release erscheint, bearbeiten Sie den alten Beitrag nicht, um ihn aktuell zu machen; ergänzen Sie
-  eine Aktualisierungszeile ([Korrekturen und Aktualisierungen](../../../eng-us/help/press/corrections-and-updates.md)).
+  eine Aktualisierungszeile ([Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md)).
 
 ## Verwandte Seiten
 
 - [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md)
-- [Häufige Fehler in der Berichterstattung](../../../eng-us/help/press/common-errors-in-coverage.md)
-- [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md)
+- [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md)
+- [Über ein Release berichten](ueber-ein-release-berichten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

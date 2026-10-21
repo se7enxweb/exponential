@@ -54,7 +54,7 @@ mit einer Abdeckungsseite, die zeigt, dass keine fehlt
 ## Verwandte Seiten
 
 - [Die Geschichtsseiten als Quelle](die-geschichtsseiten-als-quelle.md)
-- [Thema: jeder Pull Request wird übernommen](../../../eng-us/help/press/story-every-pull-request-merged.md)
+- [Thema: jeder Pull Request wird übernommen](thema-jeder-pull-request-wird-uebernommen.md)
 - [Mit Git entwickeln](../mit-git-entwickeln.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

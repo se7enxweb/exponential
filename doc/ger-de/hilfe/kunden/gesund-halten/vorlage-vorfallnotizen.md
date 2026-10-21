@@ -74,7 +74,7 @@ INCIDENT NOTES                                    Reference: <your own number or
 
 | Fakt | Quelle |
 |---|---|
-| Genaue Zeiten von Deployments, Einstellungsänderungen, Ein- und Ausschalten der Wartung | Der Kanal `system` des Prüfprotokolls; Umschaltungen der Wartung werden als `system.maintenance.change` festgehalten ([Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Prüfprotokoll für den Betrieb](../../../../eng-us/help/businesses/reliability/audit-trail-for-operations.md)) |
+| Genaue Zeiten von Deployments, Einstellungsänderungen, Ein- und Ausschalten der Wartung | Der Kanal `system` des Prüfprotokolls; Umschaltungen der Wartung werden als `system.maintenance.change` festgehalten ([Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Prüfprotokoll für den Betrieb](../../unternehmen/zuverlaessigkeit/audit-trail-fuer-den-betrieb.md)) |
 | Der technische Fehler hinter einer Referenz | **Setup > Logdateien**, Feld **Fehlerreferenz** ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)) |
 | Wer sich angemeldet oder Inhalte geändert hat | Das Prüfprotokoll ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
 | Verfügbarkeit und Zeitpunkte von Alarmen | Ihre externe Überwachung ([Überwachung](ueberwachung.md)) |

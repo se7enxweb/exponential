@@ -74,7 +74,7 @@ darauf, dass Ihre Verträge diese Freiheit erhalten.
 ## Benachbarte Bereiche
 
 - [Kosten](../kosten/README.md): was Hosting und Dienstleistungen kosten, und der Ertrag.
-- [Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/README.md): was Sie von einer gut betriebenen Website erwarten können.
+- [Zuverlässigkeit](../zuverlaessigkeit/README.md): was Sie von einer gut betriebenen Website erwarten können.
 - [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): was Sie einen Hoster und einen Partner zu Daten fragen sollten.
 - [Vorlagen](../vorlagen/README.md): Projektbeschreibung, Anforderungen, Bewertungsbogen.
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).

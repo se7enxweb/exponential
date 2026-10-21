@@ -10,7 +10,7 @@ type: help
 # Thema: Finanzierung und Sponsoren
 
 Diese Seite ist für Journalisten, die über die Ökonomie von Open Source berichten. Der praktische Leitfaden ist
-[Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md); diese Seite gibt das Thema.
+[Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md); diese Seite gibt das Thema.
 
 ## Inhalt
 
@@ -53,7 +53,7 @@ Sponsor“ ([7x, der erste Sponsor](../sponsoren/7x-der-erste-sponsor.md)).
 
 ## Verwandte Seiten
 
-- [Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md)
+- [Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md)
 - [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md)
 - [Sponsoren: Hier beginnen](../sponsoren/sponsoren-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

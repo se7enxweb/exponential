@@ -46,7 +46,7 @@ Quellen: [Wer ist 7x?](../wer-ist-7x.md), [Die Geschichte von Exponential](../..
 | Das Unternehmen, das geblieben ist | 2000 bis 2023 | [Von Brookins Consulting zu 7x](../wer-ist-7x.md#von-brookins-consulting-zu-7x-in-drei-stufen); [7x in drei Etappen](7x-in-drei-etappen.md) |
 | Der Monat, in dem der Code den Besitzer wechselte | Dezember 2023 | [Dezember 2023](../../../eng-us/history/2023/2023-12.md); [Verwaltung](../wer-ist-7x.md#verantwortung-von-einer-ruhenden-codebasis-zu-exponential-6) |
 | Die Releases 6.0.x | 2024 bis 2026 | [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x) |
-| Ein eigener Name | August 2025 | [August 2025](../../../eng-us/history/2025/2025-08.md); [Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md) |
+| Ein eigener Name | August 2025 | [August 2025](../../../eng-us/history/2025/2025-08.md); [Warum es Exponential heißt](warum-es-exponential-heisst.md) |
 | Eine gemeinnützige Organisation für das Projekt | März 2026 | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | Ein in PHP geschriebener Webserver | Juli bis September 2026 | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
 | Die Linie 6.0.15 | 2026 | [Oktober 2026](../../../eng-us/history/2026/2026-10.md); [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
@@ -73,14 +73,14 @@ Die [Geschichte](../../../eng-us/history/README.md) erzählt jede Änderung seit
 | Open Source als Versicherung | Die GPL hat es einem neuen Verwalter ermöglicht, den Code fortzuführen | [Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md) |
 | Mehr als zwanzig Jahre einer Codebasis | Commits seit 2002, Urheberrecht seit 1999 | [Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen) |
 | Ein kleines Unternehmen und eine neue gemeinnützige Organisation | Zwei Organisationen mit einem Projekt | [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) |
-| Alter Code, aktuelles PHP | PHP 8.0 bis 8.5 werden unterstützt | [Thema: aktuelles PHP](../../../eng-us/help/press/story-current-php.md) |
+| Alter Code, aktuelles PHP | PHP 8.0 bis 8.5 werden unterstützt | [Thema: aktuelles PHP](thema-aktuelles-php.md) |
 | Anerkennung über Unternehmensgrenzen hinweg | Die Arbeit von Netgen, Mugo Web und CJW Network wird namentlich genannt | [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md) |
 
 ## Grenzen, die Sie nicht überschreiten sollten
 
 - **Keine Dramatik, die die Quellen nicht zeigen.** Die Quellen beschreiben keine Streitigkeiten zwischen 7x und
   eZ Systems oder Ibexa; die Umbenennung erfolgte „At the specific request of Ibexa“, und mehr sagen sie nicht
-  ([Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md)).
+  ([Warum es Exponential heißt](warum-es-exponential-heisst.md)).
 - **Keine unterstellte Kontinuität von Unternehmen.** Exponential führt eine Codebasis fort, kein Unternehmen; es ist
   „not associated with“ eZ Systems oder Ibexa ([Nicht mit eZ Systems oder Ibexa verbunden](nicht-verbunden-mit-ez-systems-oder-ibexa.md)).
 - **Keine erfundenen Personen oder Zitate.** Nennen Sie Personen nur so, wie die öffentlichen Quellen sie nennen, und
@@ -101,7 +101,7 @@ git tag -l 'v6.0.*' --sort=version:refname           # the releases, in order
 ## Verwandte Seiten
 
 - [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md)
-- [Über die eZ-Publish-Jahre schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md)
+- [Über die eZ-Publish-Jahre schreiben](ueber-die-ez-publish-jahre-schreiben.md)
 - [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md)
 - [Geschichtsbeiträge schreiben](../fuersprecher/beitraege-zur-geschichte-schreiben.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

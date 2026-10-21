@@ -90,7 +90,7 @@ Halten Sie bei jedem Modell schriftlich fest, wer welche Aufgabe übernimmt
 | Kleiner Shop mit saisonalen Spitzen | VPS mit Velocity, verwaltet oder mit einem Partner | der Antwortcache von Velocity bedient Seiten aus dem Cache ohne Worker (`README.md`) |
 | Gemeinnützige Organisation oder Verein mit Ehrenamtlichen | Managed oder Shared Hosting | wenige Pflichten bleiben bei den Ehrenamtlichen |
 | Unternehmen mit eigenem IT-Team | VPS oder dediziert | volle Kontrolle, Velocity, eigene Abläufe |
-| Mehrere Marken oder Websites | ein VPS oder dedizierter Server mit Multisite | eine Installation, viele Websites ([Multisite](../../../../eng-us/help/businesses/multisite/README.md)) |
+| Mehrere Marken oder Websites | ein VPS oder dedizierter Server mit Multisite | eine Installation, viele Websites ([Multisite](../multisite/README.md)) |
 | Organisation, die bereits Container betreibt | Container oder Kubernetes | passt zum bestehenden Betrieb |
 | Websites, die eine strikte Trennung zwischen Kunden brauchen | eine Instanz pro Website, jede unter eigenem Benutzer | „ein einzelner Serverprozess, der mehrere Websites ausliefert, ist eine Bequemlichkeit beim Routing, keine Sicherheitsgrenze“ (`README.md`) |
 
@@ -108,7 +108,7 @@ es nahelegen.
 
 - [Hosting auswählen](hosting-auswaehlen.md)
 - [Kostentreiber beim Hosting](../kosten/kostentreiber-beim-hosting.md)
-- [Clustering und Hochverfügbarkeit](../../../../eng-us/help/businesses/reliability/clustering-and-high-availability.md)
+- [Clustering und Hochverfügbarkeit](../zuverlaessigkeit/clustering-und-hochverfuegbarkeit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

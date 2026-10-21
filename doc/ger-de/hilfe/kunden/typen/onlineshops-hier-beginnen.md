@@ -77,7 +77,7 @@ Folgen Sie dem [Lesepfad für Onlineshops](lesepfad-onlineshops.md).
 ## Verwandte Seiten
 
 - [Lesepfad für Onlineshops](lesepfad-onlineshops.md)
-- [Einen Shop im Alltag betreiben (Unternehmen)](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md)
+- [Einen Shop im Alltag betreiben (Unternehmen)](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md)
 - [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
 - [Sicherheits-Checkliste für den Shop](../../../../eng-us/help/businesses/stores/store-security-checklist.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

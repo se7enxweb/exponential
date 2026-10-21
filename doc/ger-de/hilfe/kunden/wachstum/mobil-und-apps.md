@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Betreiber, denen die Frage „Sollten wir eine App haben?“ gestellt wird oder die möchten, dass die
 Website auf Smartphones besser funktioniert. Exponential bietet responsive Designs, eine REST-API für Inhalte,
 persönliche API-Schlüssel und OAuth für Apps, Remote-Dienste, Feeds und einen optionalen Navigations-Cache im Browser
-für wiederkehrende Besuche ([Mobil und Headless für Unternehmen](../../../../eng-us/help/businesses/mobile-and-headless/README.md)). Die
+für wiederkehrende Besuche ([Mobil und Headless für Unternehmen](../../unternehmen/mobil-und-headless/README.md)). Die
 meisten Organisationen sollten zuerst die Nutzung der Website auf dem Smartphone richtig hinbekommen.
 
 ## Inhalt
@@ -32,22 +32,22 @@ Eine responsive Website funktioniert auf jedem Smartphone ohne Installation. Pr�
 - [ ] Schaltflächen sind groß genug, und Formulare lassen sich leicht ausfüllen.
 - [ ] Text lässt sich auf 200 % vergrößern, ohne seitliches Scrollen ([Barrierefreiheit pflegen](../alltag/barrierefreiheit-pflegen.md)).
 
-Der Testplan für Unternehmen steht unter [Responsive Websites](../../../../eng-us/help/businesses/mobile-and-headless/responsive-sites.md).
+Der Testplan für Unternehmen steht unter [Responsive Websites](../../unternehmen/mobil-und-headless/responsive-websites.md).
 Auch Redakteure können auf dem Smartphone arbeiten: Die Administration hat responsive Designs
 ([admin3, die responsive Administration](../../../../eng-us/features/6.0/admin3-responsive-admin.md)).
 
 ## Die Kanäle im Überblick
 
-Aus [Mobil und Headless für Unternehmen](../../../../eng-us/help/businesses/mobile-and-headless/README.md):
+Aus [Mobil und Headless für Unternehmen](../../unternehmen/mobil-und-headless/README.md):
 
 | Kanal | Was Exponential bietet | Für Betreiber |
 |---|---|---|
-| Besucher auf Smartphones | responsive öffentliche Designs | [Responsive Websites](../../../../eng-us/help/businesses/mobile-and-headless/responsive-sites.md) |
+| Besucher auf Smartphones | responsive öffentliche Designs | [Responsive Websites](../../unternehmen/mobil-und-headless/responsive-websites.md) |
 | Ihre eigene App oder Ihr eigenes Frontend | die REST-API für Inhalte, Lesen in v1 und v2, Schreiben in v2 | [Die REST-API für Betreiber](rest-api-fuer-betreiber.md) |
-| Programme und Integrationen | persönliche API-Schlüssel, OAuth2 für Apps, Tokens für Remote-Dienste | [Apps und API-Schlüssel](../../../../eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md) |
+| Programme und Integrationen | persönliche API-Schlüssel, OAuth2 für Apps, Tokens für Remote-Dienste | [Apps und API-Schlüssel](../../unternehmen/mobil-und-headless/apps-und-api-schluessel.md) |
 | Fernverwaltung, Portale, Skripte | über tausend benannte Remote-Dienste | [Remote-Dienste (expservices)](remote-dienste-expservices.md) |
 | Feed-Reader und Podcast-Verzeichnisse | Exporte als RSS, Atom, OPML und für Apple Podcasts | [RSS- und Podcast-Feeds](rss-und-podcast-feeds.md) |
-| Wiederkehrende Besucher | ein optionaler Navigations-Cache im Browser | [Offline und wiederkehrende Besuche](../../../../eng-us/help/businesses/mobile-and-headless/offline-and-repeat-visits.md) |
+| Wiederkehrende Besucher | ein optionaler Navigations-Cache im Browser | [Offline und wiederkehrende Besuche](../../unternehmen/mobil-und-headless/offline-und-wiederholte-besuche.md) |
 
 ## Bevor Sie eine App beauftragen
 
@@ -55,9 +55,9 @@ Aus [Mobil und Headless für Unternehmen](../../../../eng-us/help/businesses/mob
 |---|---|
 | Was kann die App, was die Website nicht kann? | eine App ist ein zweites Produkt, das gepflegt werden muss |
 | Liest sie nur Inhalte, oder schreibt sie auch (Kommentare, Bestellungen, Formulare)? | Schreiben braucht v2 der REST-API oder die Remote-Dienste, und sorgfältige Berechtigungen |
-| Melden sich ihre Benutzer an? | Apps, deren Benutzer sich anmelden, verwenden OAuth2; ein Programm, das als ein Benutzer handelt, verwendet einen API-Schlüssel ([Apps und API-Schlüssel](../../../../eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md)) |
+| Melden sich ihre Benutzer an? | Apps, deren Benutzer sich anmelden, verwenden OAuth2; ein Programm, das als ein Benutzer handelt, verwendet einen API-Schlüssel ([Apps und API-Schlüssel](../../unternehmen/mobil-und-headless/apps-und-api-schluessel.md)) |
 | Wer baut und aktualisiert die App für jedes neue Smartphone-Betriebssystem? | die App ist nicht Teil von Exponential |
-| Was geschieht, wenn die Website in Wartung ist? | die App ist darauf angewiesen, dass die API verfügbar ist ([Zuverlässigkeit des App-Backends](../../../../eng-us/help/businesses/mobile-and-headless/app-backend-reliability.md)) |
+| Was geschieht, wenn die Website in Wartung ist? | die App ist darauf angewiesen, dass die API verfügbar ist ([Zuverlässigkeit des App-Backends](../../unternehmen/mobil-und-headless/zuverlaessigkeit-des-app-backends.md)) |
 | Welche Inhalte darf die App zeigen? | die API wendet dieselben Richtlinien an wie die Website |
 
 Planen Sie sie wie jede Integration: [Eine Integration planen](eine-integration-planen.md).
@@ -66,7 +66,7 @@ Planen Sie sie wie jede Integration: [Eine Integration planen](eine-integration-
 
 | Aufgabe | Wer |
 |---|---|
-| Die Kanäle festlegen und wofür jeder da ist | Betreiber ([Mobile Strategie](../../../../eng-us/help/businesses/mobile-and-headless/mobile-strategy.md)) |
+| Die Kanäle festlegen und wofür jeder da ist | Betreiber ([Mobile Strategie](../../unternehmen/mobil-und-headless/mobile-strategie.md)) |
 | Die App bauen und veröffentlichen | App-Entwickler oder Partner |
 | Die Zugangsdaten der App anlegen und einschränken | Administrator |
 | Die Inhalte korrekt halten | das Redaktionsteam, wie für die Website |
@@ -79,11 +79,11 @@ Planen Sie sie wie jede Integration: [Eine Integration planen](eine-integration-
   deaktiviert wird ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Informieren Sie den App-Entwickler vor Upgrades; fragen Sie Ihren Partner, was sich für API-Clients ändert
   ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)).
-- Verwenden Sie vor jedem Release der App die [Mobil-Checkliste](../../../../eng-us/help/businesses/mobile-and-headless/mobile-checklist.md).
+- Verwenden Sie vor jedem Release der App die [Mobil-Checkliste](../../unternehmen/mobil-und-headless/checkliste-mobil.md).
 
 ## Verwandte Seiten
 
-- [Mobil und Headless für Unternehmen](../../../../eng-us/help/businesses/mobile-and-headless/README.md)
-- [Headless mit der REST-API](../../../../eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md)
+- [Mobil und Headless für Unternehmen](../../unternehmen/mobil-und-headless/README.md)
+- [Headless mit der REST-API](../../unternehmen/mobil-und-headless/headless-mit-der-rest-api.md)
 - [Die REST-API für Betreiber](rest-api-fuer-betreiber.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

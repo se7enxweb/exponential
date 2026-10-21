@@ -55,7 +55,7 @@ und Container.
 ## Verwandte Seiten
 
 - [Thema: Freiheit beim Hosting](thema-freiheit-beim-hosting.md)
-- [Thema: aktuelles PHP](../../../eng-us/help/press/story-current-php.md)
+- [Thema: aktuelles PHP](thema-aktuelles-php.md)
 - [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

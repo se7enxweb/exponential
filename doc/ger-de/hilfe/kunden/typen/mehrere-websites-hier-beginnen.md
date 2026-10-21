@@ -16,7 +16,7 @@ Inhalte) und bringt eine neue Art von Frage mit sich: Ist diese Änderung für e
 
 Diese Seite ist für den Betreiber einer Gruppe von Websites (Marken, Regionen, Abteilungen, Kampagnen-Websites) und die
 Personen, die jede davon leiten. Die Planung einer solchen Einrichtung behandelt
-[Mehrere Marken für Unternehmen](../../../../eng-us/help/businesses/multisite/README.md).
+[Mehrere Marken für Unternehmen](../../unternehmen/multisite/README.md).
 
 ## Was geteilt wird und was pro Website gilt
 

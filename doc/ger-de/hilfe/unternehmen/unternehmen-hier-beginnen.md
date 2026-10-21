@@ -77,7 +77,7 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
   schnell, und Velocity hebt die Obergrenze weiter an (`README.md`, „The part that matters even if you never run
   Velocity“).
 - **Belege, wenn etwas schiefgeht.** Ein manipulationssicherer Audit-Trail, Log-Viewer und Fehlerreferenzen
-  ([Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md)).
+  ([Zuverlässigkeit](zuverlaessigkeit/README.md)).
 
 ## Finden Sie Ihre Art von Organisation
 
@@ -91,9 +91,9 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 | Eine Bibliothek, ein Archiv oder jemand mit einem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md) |
 | Eine gemeinnützige oder wohltätige Organisation | [Gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/README.md) |
 | Eine kleine Gruppe oder ein Verein, von Ehrenamtlichen geführt | [Kleine Gruppen und Vereine](vereine/README.md) |
-| Eine Marke oder Gruppe mit mehreren Websites | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md) |
+| Eine Marke oder Gruppe mit mehreren Websites | [Marken mit Multisite](multisite/README.md) |
 | Ein Unternehmen, das in mehreren Sprachen verkauft | [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md) |
-| Ein Unternehmen mit einer mobilen App oder anderen Systemen, die die Inhalte nutzen | [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md) |
+| Ein Unternehmen mit einer mobilen App oder anderen Systemen, die die Inhalte nutzen | [Mobil und headless](mobil-und-headless/README.md) |
 | Eine Behörde oder öffentliche Stelle | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
 
 Nicht sicher? [Welcher Bereich passt zu Ihrer Organisation?](welcher-bereich-zu-ihrer-organisation-passt.md) stellt einige
@@ -103,12 +103,12 @@ erklärt die drei Kanäle: Website-Anwendungen, mobile Apps und Netzwerke.
 ## Betrieb ohne Überraschungen
 
 Der größte Teil der Kosten einer Website liegt nicht im Aufbau, sondern im jahrelangen Betrieb. Der Bereich
-[Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md) behandelt, was eine Website für Kunden erreichbar hält:
+[Zuverlässigkeit](zuverlaessigkeit/README.md) behandelt, was eine Website für Kunden erreichbar hält:
 
 - [Warum Stabilität wichtig ist](../../../eng-us/help/businesses/reliability/why-stability-matters.md) und [Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md);
-- [Backups, die sich wiederherstellen lassen](../../../eng-us/help/businesses/reliability/backups-that-restore.md) und [Wiederherstellungsübungen](../../../eng-us/help/businesses/reliability/restore-drills.md);
+- [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) und [Wiederherstellungsübungen](../../../eng-us/help/businesses/reliability/restore-drills.md);
 - [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) und [unterbrechungsfreie Deployments](../../../eng-us/help/businesses/reliability/graceful-deploys.md);
-- [Caching für Verfügbarkeit](../../../eng-us/help/businesses/reliability/caching-for-availability.md) und [Lastspitzen planen](../../../eng-us/help/businesses/reliability/peak-traffic-planning.md);
+- [Caching für Verfügbarkeit](zuverlaessigkeit/caching-fuer-verfuegbarkeit.md) und [Lastspitzen planen](../../../eng-us/help/businesses/reliability/peak-traffic-planning.md);
 - [Monitoring](../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md) und [Störungsbehandlung für kleine Teams](../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md);
 - [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md).
 

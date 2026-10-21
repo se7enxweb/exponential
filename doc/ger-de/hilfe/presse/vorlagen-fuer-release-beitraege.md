@@ -81,7 +81,7 @@ release is 6.0.14 of 7 June 2026, and the project has not announced a release da
 <What the feature does, from its feature page.> <Whether it is active by default, if the source says.>
 ```
 
-Regeln für diese Vorlage: [Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md).
+Regeln für diese Vorlage: [Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md).
 
 ## Notiz zu einer Erweiterung oder zu Velocity
 
@@ -123,7 +123,7 @@ Entwicklung“.
 
 ## Verwandte Seiten
 
-- [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md)
+- [Über ein Release berichten](ueber-ein-release-berichten.md)
 - [Checkliste für die Release-Berichterstattung](checkliste-release-berichterstattung.md)
 - [Vorlagen für Social-Media-Beiträge](../fuersprecher/vorlagen-fuer-soziale-medien.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

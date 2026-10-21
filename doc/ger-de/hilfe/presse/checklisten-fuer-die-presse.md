@@ -33,7 +33,7 @@ Notizen; jede Zeile verweist auf die Seite, die sie erklärt.
 
 Seiten: [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md),
 [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md), [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md),
-[Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md), [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md).
+[Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md), [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md).
 
 ## Vor einem Interview
 
@@ -47,7 +47,7 @@ Seiten: [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md),
 
 Seiten: [Ein Interview anfragen](ein-interview-anfragen.md), [Fragen an 7x](fragen-an-7x.md),
 [Fragen an die Foundation](fragen-an-die-foundation.md), [Richtlinie für Zitate](richtlinie-fuer-zitate.md),
-[Zitate überprüfen](../../../eng-us/help/press/verifying-quotes.md), [Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md).
+[Zitate überprüfen](zitate-pruefen.md), [Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md).
 
 ## Vor der Veröffentlichung einer Nachricht
 
@@ -61,7 +61,7 @@ Seiten: [Ein Interview anfragen](ein-interview-anfragen.md), [Fragen an 7x](frag
 [ ] Headline checked against the story
 ```
 
-Seiten: [Häufige Fehler in der Berichterstattung](../../../eng-us/help/press/common-errors-in-coverage.md), [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md),
+Seiten: [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md), [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md),
 [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md).
 
 ## Vor der Veröffentlichung eines Features oder einer Rezension
@@ -75,9 +75,9 @@ Seiten: [Häufige Fehler in der Berichterstattung](../../../eng-us/help/press/co
 [ ] Alt text and accessible structure                           (Making your coverage accessible)
 ```
 
-Seiten: [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md), [Vergleiche, fair gemacht](../../../eng-us/help/press/comparisons-done-fairly.md),
-[Zahlen überprüfen](../../../eng-us/help/press/verifying-numbers.md), [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md),
-[Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md), [Barrierefreie Berichterstattung](barrierefreie-berichterstattung.md).
+Seiten: [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md), [Vergleiche, fair gemacht](faire-vergleiche.md),
+[Zahlen überprüfen](zahlen-pruefen.md), [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md),
+[Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md), [Barrierefreie Berichterstattung](barrierefreie-berichterstattung.md).
 
 ## Vor der Veröffentlichung eines Videos oder Streams
 
@@ -91,7 +91,7 @@ Seiten: [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-gui
 ```
 
 Seiten: [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.md), [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md),
-[Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md), [Untertitel und barrierefreies Video](../../../eng-us/help/press/captions-and-accessible-video.md),
+[Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md), [Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md),
 [Titel, Vorschaubilder und Beschreibungen](titel-vorschaubilder-und-beschreibungen.md).
 
 ## Nach der Veröffentlichung
@@ -106,7 +106,7 @@ Seiten: [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.m
 
 - [Lesepfad für die Presse](lesepfad-fuer-die-presse.md)
 - [Checklisten für Fürsprecher](../fuersprecher/checklisten-fuer-fuersprecher.md)
-- [Korrekturen und Aktualisierungen](../../../eng-us/help/press/corrections-and-updates.md)
+- [Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

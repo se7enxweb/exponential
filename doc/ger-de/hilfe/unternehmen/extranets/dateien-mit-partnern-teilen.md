@@ -89,7 +89,7 @@ Download-Ordner ab und verschickt gesammelte Informationen mit der Datei als Anh
 - **Zweistufige Anmeldung** für Partnerkonten, wenn die Dateien sensibel sind
   ([Zwei-Faktor und Anmeldung](../intranets/zwei-faktor-und-anmeldung.md)).
 - **Backups**, die das Speicherverzeichnis einschließen
-  ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)).
+  ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 
 ## Wissen, was geschehen ist
 

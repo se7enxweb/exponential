@@ -47,7 +47,7 @@ Programms ist nicht eingeschränkt). In der Praxis:
 | Sie dürfen ohne Gebühr | Warum |
 |---|---|
 | Redakteure, Administratoren und Mitglieder ohne Grenze hinzufügen | Keine Klausel zählt Benutzer |
-| Mehrere Websites aus einer Installation betreiben | Multisite ist eine eingebaute Funktion (`README.md`, „Main Exponential features“); siehe [Multisite](../../../../eng-us/help/businesses/multisite/README.md) |
+| Mehrere Websites aus einer Installation betreiben | Multisite ist eine eingebaute Funktion (`README.md`, „Main Exponential features“); siehe [Multisite](../multisite/README.md) |
 | Server für Last oder Verfügbarkeit hinzufügen | Das Ausführen ist nicht eingeschränkt; Cluster werden unterstützt (`README.md`, „Support for highly available and scalable configurations“) |
 | Eine Staging- und eine Testkopie halten | Kopien für den eigenen Gebrauch sind Ausführen des Programms |
 
@@ -78,7 +78,7 @@ Aus `README.md`, „Main Exponential features“, und den Erweiterungen, die `co
 | Audit-Trail | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicherer Audit-Trail mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
 | Suche | „Built in search engine“ (eingebaute Suchmaschine); Solr über `ezfind` ist optional | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
 | Sprachen | „Advanced multi-lingual support“ (umfassende Mehrsprachigkeit) | [Mehrsprachig](../../../../eng-us/help/businesses/multilingual/README.md) |
-| Headless und Apps | „A headless CRUD REST API“ | [Mobil und headless](../../../../eng-us/help/businesses/mobile-and-headless/README.md) |
+| Headless und Apps | „A headless CRUD REST API“ | [Mobil und headless](../mobil-und-headless/README.md) |
 | Seitenbaukasten | Exponential Layouts | [Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md) |
 | Formulare | „Contact forms“ (Kontaktformulare) mit dem Information Collector; Erweiterungen für reCAPTCHA und hCaptcha | [Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
 | Aktualisierungen in der Administration | `ezupdate` wird verlangt | [Automatische Aktualisierungen mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md) |

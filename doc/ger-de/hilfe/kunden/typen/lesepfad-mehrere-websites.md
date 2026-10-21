@@ -27,7 +27,7 @@ kennenlernen. Folgen Sie ihm neben dem Lesepfad des Typs jeder Website. Jeder Sc
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 6 | [Gemeinsame Inhalte über Marken hinweg](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md) | Website-Leitungen | Wer gemeinsame Elemente ändern darf |
-| 7 | [Website-übergreifende Links](../../../../eng-us/help/businesses/multisite/cross-site-links.md) | Website-Leitungen | Links, die sich in der richtigen Website öffnen |
+| 7 | [Website-übergreifende Links](../../unternehmen/multisite/links-zwischen-ihren-websites.md) | Website-Leitungen | Links, die sich in der richtigen Website öffnen |
 | 8 | [Designs pro Marke](../../../../eng-us/help/businesses/multisite/per-brand-designs.md) | Betreiber | Jede Website mit eigenem Erscheinungsbild |
 | 9 | [Einstellungen und Logs pro Website](../../../../eng-us/help/businesses/multisite/per-site-settings-and-logs.md) | Administrator | Einstellungen und Logs pro Website |
 | 10 | [Redaktionskalender](../alltag/redaktionskalender.md) | Website-Leitungen | Ein Kalender oder einer pro Website |

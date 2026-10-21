@@ -27,9 +27,9 @@ die Quellen.
 | Zeit | Segment | Material |
 |---|---|---|
 | 0:00 | Kalter Einstieg: der älteste Commit, September 2002 | [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
-| 2:00 | Die Jahre von eZ Publish, in der Vergangenheitsform | [Über die Jahre von eZ Publish schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md) |
+| 2:00 | Die Jahre von eZ Publish, in der Vergangenheitsform | [Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md) |
 | 10:00 | 2014, 2022, Dezember 2023: wie 7x übernahm | [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) |
-| 20:00 | Die Umbenennung und die Foundation | [Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md), [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) |
+| 20:00 | Die Umbenennung und die Foundation | [Warum es Exponential heißt](warum-es-exponential-heisst.md), [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) |
 | 30:00 | Fragen an den Gast | [Fragen an 7x](fragen-an-7x.md) |
 | 40:00 | Abschluss: wo man mehr erfährt | Shownotes |
 
@@ -37,19 +37,19 @@ die Quellen.
 
 | Zeit | Segment | Material |
 |---|---|---|
-| 0:00 | Was veröffentlicht wurde, mit dem Datum des Tags | [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md) |
+| 0:00 | Was veröffentlicht wurde, mit dem Datum des Tags | [Über ein Release berichten](ueber-ein-release-berichten.md) |
 | 3:00 | Drei wichtige Änderungen aus dem Changelog | [Ein Changelog lesen](ein-changelog-lesen.md) |
 | 15:00 | Was es für Redakteure, Administratoren und Entwickler bedeutet | [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md) |
 | 25:00 | Wie man aktualisiert, wo man fragt | [Hilfeseiten nach Thema, für die Presse](hilfeseiten-nach-thema-fuer-die-presse.md) |
 
 Nehmen Sie die Folge erst auf, wenn der Tag existiert; vorher nennen Sie sie eine Vorschau auf ein Release in
-Entwicklung ([Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md)).
+Entwicklung ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Folge: wer bezahlt freie Software?
 
 | Zeit | Segment | Material |
 |---|---|---|
-| 0:00 | Die Frage | [Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md) |
+| 0:00 | Die Frage | [Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md) |
 | 5:00 | Ein Unternehmen und eine gemeinnützige Organisation | [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) |
 | 15:00 | Was Sponsoring finanziert | [Was Sponsoring finanziert](../sponsoren/was-sponsoring-finanziert.md) |
 | 25:00 | Die Fragen ohne öffentliche Antwort | [Fragen an die Foundation](fragen-an-die-foundation.md) |
@@ -62,13 +62,13 @@ Legen Sie es offen, wenn Sie das Projekt selbst sponsern.
 |---|---|---|
 | 0:00 | Schriften von rechts nach links und warum sie schwierig sind | [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) |
 | 10:00 | Übersetzungen durch die Community | [Sprachen in Exponential](../../../eng-us/languages.md) |
-| 20:00 | Barrierefreiheit, durch Tests geprüft | [Thema: Barrierefreiheit](../../../eng-us/help/press/story-accessibility.md) |
+| 20:00 | Barrierefreiheit, durch Tests geprüft | [Thema: Barrierefreiheit](thema-barrierefreiheit.md) |
 
 ## Folge: ein in PHP geschriebener Webserver
 
 | Zeit | Segment | Material |
 |---|---|---|
-| 0:00 | Wie PHP-Websites üblicherweise ausgeliefert werden | [Thema: Engines, Velocity, FrankenPHP und die klassischen Server](../../../eng-us/help/press/story-engines-velocity-frankenphp-and-classic.md) |
+| 0:00 | Wie PHP-Websites üblicherweise ausgeliefert werden | [Thema: Engines, Velocity, FrankenPHP und die klassischen Server](thema-engines-velocity-frankenphp-und-klassische-server.md) |
 | 8:00 | Was Velocity anders macht | [Thema: Exponential Velocity](thema-exponential-velocity.md) |
 | 18:00 | Die Zahlen und ihre Bedingungen | [Thema: wie die Velocity-Zahlen gemessen werden](thema-wie-die-velocity-zahlen-gemessen-werden.md) |
 | 28:00 | Wann ein klassischer Server noch die richtige Wahl ist | README, „When a traditional server is still the right answer“ |

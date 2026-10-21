@@ -63,7 +63,7 @@ gemeinsam“, nie „7x gehört Exponential“.
 - 7x verkauft Dienstleistungen rund um die Software: Entwicklung, Support, Hosting, Schulungen und Migrationen
   ([7x für Reporter](7x-fuer-reporter.md#was-es-verkauft-und-was-kostenlos-bleibt)).
 - Das Partnerprogramm hat kostenpflichtige Stufen für Unternehmen ([Partnerpläne und Preise](../partner/partnertarife-und-preise.md)).
-- Sponsoring finanziert die Arbeit ([Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md)).
+- Sponsoring finanziert die Arbeit ([Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md)).
 
 ## Formulierungen, die oft falsch berichtet werden
 

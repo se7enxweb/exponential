@@ -97,8 +97,8 @@ auch für Reporter: [Sicherheitsmeldungen bleiben vertraulich](../fuersprecher/s
 ## Verwandte Seiten
 
 - [Gesprächspunkte: Sicherheit](../fuersprecher/gespraechspunkte-sicherheit.md)
-- [Thema: die Content Security Policy](../../../eng-us/help/press/story-content-security-policy.md)
-- [Thema: der Audit-Trail](../../../eng-us/help/press/story-audit-trail.md)
+- [Thema: die Content Security Policy](thema-content-security-policy.md)
+- [Thema: der Audit-Trail](thema-audit-trail.md)
 - [Thema: zweistufige Anmeldung](thema-zweistufige-anmeldung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

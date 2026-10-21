@@ -86,7 +86,7 @@ beschreibt. Veröffentlichen Sie keine Einzelheiten, bevor eine Korrektur erschi
 
 - Eine eigene E-Mail-Adresse oder Telefonnummer einer Pressestelle.
 - Ein namentlich genannter Pressesprecher. Fragen Sie, wen Sie zitieren sollen, und ordnen Sie entsprechend zu
-  ([Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)).
+  ([Aussagen zuordnen](aussagen-zuordnen.md)).
 - Eine Richtlinie für Sperrfristen ([Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md)).
 
 ## Verwandte Seiten

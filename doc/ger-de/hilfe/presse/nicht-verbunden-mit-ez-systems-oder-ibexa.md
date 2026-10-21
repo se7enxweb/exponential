@@ -46,7 +46,7 @@ Die Fakten, die die Namen verbinden, betreffen den **Code**, nicht die Unternehm
 - eZ Systems AS entwickelte eZ Publish; sein Urheberrecht von 1999 bis 2014 bleibt im Code (COPYRIGHT.md).
 - Der Code steht unter der GNU GPL, die es jedem erlaubt, ihn weiterzuführen ([Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md)).
 - 7x übernahm 2023 die Leitung dieser Codebasis und benannte das Produkt im August 2025 um
-  ([Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md)).
+  ([Warum es Exponential heißt](warum-es-exponential-heisst.md)).
 - Die eigene Produktlinie von Ibexa ging einen anderen Weg: eZ Platform, dann Ibexa DXP (README, „What was eZ Platform?“).
 - Die Produktlinie Exponential Platform führt den freien Code von eZ Platform und Ibexa OSS unter eigenem Namen weiter
   ([Thema: Exponential Platform DXP](thema-exponential-platform-dxp.md)).
@@ -63,19 +63,19 @@ Auf Deutsch etwa: „Der Code von Exponential wurde zuerst von eZ Systems als eZ
 
 Vergleiche sind legitimer Journalismus; machen Sie sie sachlich. Die Dokumentation vergleicht nur, was sie belegen
 kann, und veröffentlicht keine Benchmarks gegen andere Produkte ([Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md)).
-Verwenden Sie die Methode auf [Vergleiche, fair gemacht](../../../eng-us/help/press/comparisons-done-fairly.md): dieselben Kriterien, Quellen auf
+Verwenden Sie die Methode auf [Vergleiche, fair gemacht](faire-vergleiche.md): dieselben Kriterien, Quellen auf
 beiden Seiten, das Datum und die eigene Beschreibung der anderen Seite von ihrem Produkt.
 
 ## eZ Systems oder Ibexa fragen
 
 Wenn Ihr Beitrag eine Behauptung über eZ Systems oder Ibexa aufstellt, bitten Sie diese über ihre eigenen
 Pressekanäle um eine Stellungnahme. Diese Dokumentation spricht nicht für sie und enthält keine Aussagen von ihnen außer
-der Bitte um Umbenennung, die auf [Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md) zitiert ist.
+der Bitte um Umbenennung, die auf [Warum es Exponential heißt](warum-es-exponential-heisst.md) zitiert ist.
 
 ## Verwandte Seiten
 
-- [Über die Jahre von eZ Publish schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md)
-- [Marke und Namen für Medien](../../../eng-us/help/press/brand-and-naming-for-media.md)
+- [Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md)
+- [Marke und Namen für Medien](marke-und-namen-fuer-medien.md)
 - [Mythen und Richtigstellungen](mythen-und-richtigstellungen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

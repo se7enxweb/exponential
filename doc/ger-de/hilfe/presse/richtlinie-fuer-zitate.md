@@ -35,7 +35,7 @@ legt die Regeln dar, denen diese Dokumentation folgt, und bittet Sie, ihnen eben
    ihn gelesen haben. Rechtschreibung und Grammatik des Originals bleiben, wie sie sind; kennzeichnen Sie eine
    Auslassung mit „...“.
 4. **Dokumentation ist kein Sprecher.** Ein Satz aus der README oder aus dieser Hilfe ist „was die Dokumentation sagt“,
-   nie „7x sagte“ ([Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)).
+   nie „7x sagte“ ([Aussagen zuordnen](aussagen-zuordnen.md)).
 5. **Menschen sprechen für sich selbst.** Ein Mitglied der Community, ein Fürsprecher oder ein Partner, der in einem
    Beitrag zitiert wird, spricht für sich selbst, es sei denn, 7x oder die Foundation haben ihn gebeten, für sie zu
    sprechen ([Offenlegung und Interessenkonflikte](../fuersprecher/offenlegung-und-interessenkonflikte.md)).
@@ -81,18 +81,18 @@ Wrong:  7x said: "Velocity is a web server written in PHP ..."             (that
 
 Eine Umschreibung ist in Ordnung, wenn sie getreu ist. Setzen Sie eine Umschreibung nicht in Anführungszeichen, und
 machen Sie aus einer Aussage durch Umschreibung keine stärkere Behauptung: Aus „schreibt nur Entwürfe“ darf nicht
-„kann Ihre Website schreiben“ werden ([Thema: ein Assistent, der nur Entwürfe schreibt](../../../eng-us/help/press/story-ai-that-writes-drafts-only.md)).
+„kann Ihre Website schreiben“ werden ([Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md)).
 
 ## Wenn sich ein Zitat als falsch herausstellt
 
-Korrigieren Sie es offen und sagen Sie, was sich geändert hat ([Korrekturen und Aktualisierungen](../../../eng-us/help/press/corrections-and-updates.md)).
+Korrigieren Sie es offen und sagen Sie, was sich geändert hat ([Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md)).
 Wenn jemand in Ihrer Berichterstattung eine Organisation falsch zitiert hat, sagen Sie der Organisation, dass Sie es
 korrigiert haben.
 
 ## Verwandte Seiten
 
-- [Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)
-- [Zitate überprüfen](../../../eng-us/help/press/verifying-quotes.md)
+- [Aussagen zuordnen](aussagen-zuordnen.md)
+- [Zitate überprüfen](zitate-pruefen.md)
 - [Pressemitteilungen und Ankündigungen](../partner/pressemitteilungen-und-ankuendigungen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

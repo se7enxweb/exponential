@@ -100,11 +100,11 @@ License of this video: <your choice>. Help pages quoted are under the GNU FDL 1.
 - **Hashtags**: Die Quellen nennen keinen offiziellen Hashtag. `#Exponential` allein ist mehrdeutig; geben Sie im Text
   Zusammenhang dazu ([Richtlinien für soziale Medien](../fuersprecher/richtlinien-fuer-soziale-medien.md#namen-und-links)).
 - **Kapitel**: eines pro Schritt Ihres Skripts; sie helfen allen, auch Nutzern von Screenreadern.
-- **Angehefteter Kommentar**: Nutzen Sie ihn für Korrekturen ([Ein Video oder einen Beitrag korrigieren](../../../eng-us/help/press/correcting-a-video-or-post.md)).
+- **Angehefteter Kommentar**: Nutzen Sie ihn für Korrekturen ([Ein Video oder einen Beitrag korrigieren](ein-video-oder-einen-beitrag-korrigieren.md)).
 
 ## Verwandte Seiten
 
-- [Leitfaden für Video-Rundgänge](../../../eng-us/help/press/video-walkthrough-guide.md)
+- [Leitfaden für Video-Rundgänge](leitfaden-fuer-video-rundgaenge.md)
 - [Musik, Schriften und Material von Dritten](musik-schriften-und-material-von-dritten.md)
 - [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

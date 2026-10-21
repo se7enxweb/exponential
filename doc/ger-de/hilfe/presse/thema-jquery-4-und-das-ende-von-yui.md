@@ -65,7 +65,7 @@ YUI-Anfrage mehr“ ([jQuery 4 in der Administration, und YUI ist weg](../../../
 
 ## Verwandte Seiten
 
-- [Thema: admin4, das Design der Administration](../../../eng-us/help/press/story-admin4.md)
+- [Thema: admin4, das Design der Administration](thema-admin4.md)
 - [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

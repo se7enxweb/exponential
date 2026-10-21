@@ -47,7 +47,7 @@ meisten Unternehmen brauchen:
 | Bedarf | Bereitgestellt durch | Lesen |
 |---|---|---|
 | Produkte verkaufen | „Advanced e-Commerce Stores (Built in)“: Produkte, Warenkorb, Bestellungen, USt, Währungen | [Online-Shops](shops/README.md) |
-| Zahlungen annehmen | Zahlungsanbieter über das Workflow-System, zum Beispiel PayPal mit `ezpaypal` | [Zahlungsanbieter für Unternehmen](../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md) |
+| Zahlungen annehmen | Zahlungsanbieter über das Workflow-System, zum Beispiel PayPal mit `ezpaypal` | [Zahlungsanbieter für Unternehmen](shops/zahlungsanbieter-fuer-unternehmen.md) |
 | Interessenten und Anfragen sammeln | „Contact forms“ und der Informationssammler | [Formulare mit dem Informationssammler](../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
 | Zugang verkaufen | Registrierung und Bereiche nur für Mitglieder über Rollen und Sektionen | [Mitgliederwebsites](mitglieder/README.md) |
 | Partner und Händler bedienen | Extranets auf derselben Installation | [Extranets und Partnerportale](extranets/README.md) |
@@ -69,8 +69,8 @@ Für ein Unternehmen bedeutet das:
 - die App braucht kein eigenes Inhalts-Backend, also ein System weniger, das gehostet und abgesichert werden muss.
 
 Eine mobilfreundliche Website ist oft der erste Schritt und braucht gar keine App. Die Möglichkeiten werden in
-[Mobile Strategie](../../../eng-us/help/businesses/mobile-and-headless/mobile-strategy.md) verglichen; die technische Seite steht in
-[Headless mit der REST API](../../../eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md) und
+[Mobile Strategie](mobil-und-headless/mobile-strategie.md) verglichen; die technische Seite steht in
+[Headless mit der REST API](mobil-und-headless/headless-mit-der-rest-api.md) und
 [Headless Exponential](../../../eng-us/help/creators/app-creators/headless-exponential.md).
 
 ## Kanal 3: Netzwerke von Websites und Partnern
@@ -79,12 +79,12 @@ Viele Organisationen verdienen über die Websites anderer und über mehrere eige
 
 | Netzwerk | Bereitgestellt durch | Lesen |
 |---|---|---|
-| Feedreader, Podcast-Apps, Aggregatoren | „RSS feeds“, „ATOM feeds“, „iTunes RSS feeds“, „OPML feeds“ | [RSS-Feeds: Exporte veröffentlichen und Importe einlesen](../../anleitungen/rss-feeds.md), [Feeds und Syndication](../../../eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md) |
-| Ihre eigenen Marken oder Länder | „Multi-site support“ aus einer Installation | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md) |
+| Feedreader, Podcast-Apps, Aggregatoren | „RSS feeds“, „ATOM feeds“, „iTunes RSS feeds“, „OPML feeds“ | [RSS-Feeds: Exporte veröffentlichen und Importe einlesen](../../anleitungen/rss-feeds.md), [Feeds und Syndication](mobil-und-headless/feeds-und-syndication.md) |
+| Ihre eigenen Marken oder Länder | „Multi-site support“ aus einer Installation | [Marken mit Multisite](multisite/README.md) |
 | Websites von Partnern und Händlern, die Ihre Inhalte tragen | Die Erweiterung `syndication` exportiert einen Teil des Inhaltsbaums als Feed, den eine andere Installation importiert, in eine Richtung oder in beide, auch für „große E-Commerce-Netzwerke“ | [syndication](../../../eng-us/features/6.0/extensions/syndication.md) |
-| Andere Systeme und Dienste | Entfernte Dienste und die REST API | [Entfernte Dienste](../../../eng-us/help/businesses/mobile-and-headless/remote-services.md) |
+| Andere Systeme und Dienste | Entfernte Dienste und die REST API | [Entfernte Dienste](mobil-und-headless/entfernte-dienste.md) |
 
-Wie Sie diese planen, steht in [Verkaufen über Netzwerke und Partner](../../../eng-us/help/businesses/mobile-and-headless/selling-through-networks-and-partners.md).
+Wie Sie diese planen, steht in [Verkaufen über Netzwerke und Partner](mobil-und-headless/verkaufen-ueber-netzwerke-und-partner.md).
 
 ## Was Besucher zu jedem Kanal bringt
 
@@ -102,7 +102,7 @@ Marketingseiten für Menschen, die Exponential selbst verkaufen, sind ein andere
 ## Warum Verfügbarkeit Teil des Verkaufs ist
 
 Jeder der Kanäle oben endet bei derselben Installation. Ist sie nicht erreichbar oder langsam, fallen Website, App und
-Partner-Websites gemeinsam aus. Deshalb ist der Bereich [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md) für einen
+Partner-Websites gemeinsam aus. Deshalb ist der Bereich [Zuverlässigkeit](zuverlaessigkeit/README.md) für einen
 Vertriebsleiter genauso wichtig wie für die Person, die den Server betreibt, und deshalb sollte ein Unternehmen seine
 [Kosten eines Ausfalls](kosten/arbeitsblatt-kosten-eines-ausfalls.md) kennen, bevor es ein Hosting wählt.
 
@@ -131,7 +131,7 @@ Cost of one hour unavailable (all channels): <from the cost of downtime workshee
 
 - [Unternehmen: hier beginnen](unternehmen-hier-beginnen.md)
 - [Online-Shops](shops/README.md)
-- [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md)
+- [Mobil und headless](mobil-und-headless/README.md)
 - [Funktionshighlights, den Bedürfnissen der Kunden zugeordnet](../geschaeft/funktionshighlights-fuer-kunden.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

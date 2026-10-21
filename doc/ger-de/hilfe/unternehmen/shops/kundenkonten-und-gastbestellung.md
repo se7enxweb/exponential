@@ -60,7 +60,7 @@ gleich, welche Art von Kunde es war.
 > **Tipp**
 > Gäste sollten in ihrer Bestätigungsmail den Link zum dauerhaften Beleg erhalten. Ohne ihn funktioniert die
 > Bestellansicht eines Gastes nicht mehr, sobald seine Browsersitzung endet
-> ([Bestellbelege und Bestätigungsmails](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md)).
+> ([Bestellbelege und Bestätigungsmails](bestellbelege-und-bestaetigungsmails.md)).
 
 ## Bestellung nur mit Konto
 
@@ -81,7 +81,7 @@ angemeldete Kunden sehen dürfen ([Händler- und Lieferantenportale](../extranet
 |---|---|---|
 | Kaufen | ja (mit `ezuser`) | ja |
 | Anschrift beim nächsten Mal ausgefüllt | nein | ja |
-| Wunschliste | nicht sinnvoll: Die Wunschliste wird pro Benutzerkonto geführt | ja ([Rabatte und Wunschlisten](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md)) |
+| Wunschliste | nicht sinnvoll: Die Wunschliste wird pro Benutzerkonto geführt | ja ([Rabatte und Wunschlisten](rabatte-und-wunschlisten.md)) |
 | Rabattgruppen | nein | ja, Rabatte folgen der Gruppe des Benutzers |
 | Beleg ohne den Link | nein | ja, der Kunde, der die Bestellung aufgegeben hat, kann sie angemeldet öffnen |
 | Seite mit E-Mail-Einstellungen | über den Link in einer Mail | ja, im Profil ([Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md)) |

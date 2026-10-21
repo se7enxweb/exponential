@@ -129,7 +129,7 @@ Geprüft von: ______________   Nächste Prüfung: ____________
 | Runbooks | Hilfe Schritt für Schritt bei einer ausgefallenen Website, einer vollen Festplatte oder einem abgelaufenen Zertifikat | [Website ausgefallen](../../hosting/runbooks/website-nicht-erreichbar.md), [Festplatte voll](../../hosting/runbooks/festplatte-voll.md), [Zertifikat abgelaufen](../../hosting/runbooks/ablauf-von-zertifikaten.md) |
 | Wartungsmodus | Macht aus riskanter Arbeit geplante Ausfallzeit | [Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md) |
 
-Der Bereich [Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/README.md) erklärt jede Praxis für Unternehmen, einschließlich der
+Der Bereich [Zuverlässigkeit](../zuverlaessigkeit/README.md) erklärt jede Praxis für Unternehmen, einschließlich der
 [Störungsbehandlung für kleine Teams](../../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md).
 
 ## Verwandte Seiten

@@ -72,7 +72,7 @@ GNU FDL ([Thema: freie Dokumentation](thema-freie-dokumentation.md)).
 ## Wen Sie fragen können
 
 7x, das die Entwicklung leitet ([Pressekontakte](pressekontakte.md)). Um die Hilfe selbst zu sehen, installieren Sie
-eine Demo ([Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md)).
+eine Demo ([Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)).
 
 ## Verwandte Seiten
 

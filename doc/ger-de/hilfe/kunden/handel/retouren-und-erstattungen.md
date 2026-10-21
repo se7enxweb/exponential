@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Shop-Leitung, den Kundenservice und den Eigentümer. Sie gibt eine Routine für Retouren und
 Erstattungen vor, die Geld, Ware und Bestellstatus in Einklang hält. Die Bedeutung der Status steht unter
 [Bestellstatus](bestellstatus.md); die allgemeine Routine für Unternehmen unter
-[Einen Shop im Alltag betreiben](../../../../eng-us/help/businesses/stores/running-a-store-day-to-day.md).
+[Einen Shop im Alltag betreiben](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md).
 
 > **Hinweis**
 > Keine Rechtsberatung. Welche Rückgabe- und Widerrufsrechte Ihre Kunden haben, hängt davon ab, wo und an wen Sie
@@ -88,5 +88,5 @@ Kopieren Sie keine Adressen oder Zahlungsdaten von Kunden hinein; die Bestellnum
 - [Bestellstatus](bestellstatus.md)
 - [Bestellungen im Alltag](bestellungen-im-alltag.md)
 - [Zahlungsanbieter](zahlungsanbieter.md)
-- [Bestellungen und Bestellstatus für Unternehmen](../../../../eng-us/help/businesses/stores/orders-and-order-statuses.md)
+- [Bestellungen und Bestellstatus für Unternehmen](../../unternehmen/shops/bestellungen-und-bestellstatus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

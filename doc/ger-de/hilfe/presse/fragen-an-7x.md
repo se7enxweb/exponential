@@ -43,7 +43,7 @@ Bereits dokumentiert: Dezember 2023, die ersten Änderungen, 6.0.0 am 1. Januar 
 ## Releases und Pläne
 
 Bereits dokumentiert: die Liste der Releases, das Changelog von 6.0.15. Nicht dokumentiert: ein Erscheinungsdatum für
-6.0.15, eine langfristige Roadmap mit Terminen ([Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md)).
+6.0.15, eine langfristige Roadmap mit Terminen ([Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)).
 
 - Wann erwarten Sie 6.0.15, und was entscheidet, dass es fertig ist?
 - Wie lange wird die Produktlinie 6.0 gepflegt?
@@ -59,7 +59,7 @@ Bereits dokumentiert: was Velocity, Exponential Intelligence und Exponential Lay
 
 ## Geschäft und Finanzierung
 
-Bereits dokumentiert: 7x verkauft Dienstleistungen; die Software ist frei; es gibt Sponsorenseiten ([Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md)).
+Bereits dokumentiert: 7x verkauft Dienstleistungen; die Software ist frei; es gibt Sponsorenseiten ([Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md)).
 
 - Welcher Anteil der Arbeit wird durch Dienstleistungen finanziert, welcher durch Sponsoring?
 - Was würde mehr Sponsoring ändern?
@@ -75,7 +75,7 @@ sich nie ([Thema: Sicherheit](thema-sicherheit.md)).
 
 ## Community
 
-Bereits dokumentiert: die Kanäle, jeder Pull Request wird übernommen ([Thema: die Community](../../../eng-us/help/press/story-community.md)).
+Bereits dokumentiert: die Kanäle, jeder Pull Request wird übernommen ([Thema: die Community](thema-community.md)).
 
 - Wer außerhalb von 7x trägt am meisten bei, und wie kann ein Neuling anfangen?
 - Sind Veranstaltungen oder Treffen geplant?
@@ -84,7 +84,7 @@ Bereits dokumentiert: die Kanäle, jeder Pull Request wird übernommen ([Thema: 
 
 - Schicken Sie die Themen vorab, wenn Ihr Medium das erlaubt ([Ein Briefing vorbereiten](ein-briefing-vorbereiten.md)).
 - Zeichnen Sie auf oder machen Sie Notizen, mit denen Sie wörtlich zitieren können ([Richtlinie für Zitate](richtlinie-fuer-zitate.md)).
-- Prüfen Sie jede im Interview genannte Zahl an einer Quelle, oder ordnen Sie sie klar zu ([Zahlen überprüfen](../../../eng-us/help/press/verifying-numbers.md)).
+- Prüfen Sie jede im Interview genannte Zahl an einer Quelle, oder ordnen Sie sie klar zu ([Zahlen überprüfen](zahlen-pruefen.md)).
 
 ## Verwandte Seiten
 

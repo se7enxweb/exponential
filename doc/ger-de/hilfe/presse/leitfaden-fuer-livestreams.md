@@ -28,7 +28,7 @@ ergänzt, was speziell für das Streaming gilt.
 | Entscheidung | Empfehlung |
 |---|---|
 | Thema | Ein Thema pro Stream: Bearbeiten, Layouts, Exponential Intelligence, Velocity, eine Installation |
-| Installation | Ihre eigene Demo-Installation mit erfundenen Inhalten ([Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md)) |
+| Installation | Ihre eigene Demo-Installation mit erfundenen Inhalten ([Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)) |
 | Version | Nennen Sie sie im Titel und zu Beginn: ein Release oder die Entwicklungslinie 6.0.15 mit Datum |
 | Skript | Eines der Demo-Skripte in diesem Bereich, mit Zeit für Fragen |
 | Offenlegung | Im Titel oder im Infobereich und zu Beginn gesprochen ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)) |
@@ -102,7 +102,7 @@ niemand bemerkt hat: Streams werden aufgezeichnet und zu Clips geschnitten.
 1. Sehen Sie sich die Aufzeichnung an, bevor Sie sie öffentlich lassen; schneiden Sie heraus, was durchgesickert ist,
    oder stellen Sie sie auf privat.
 2. Ergänzen Sie Kapitel, Untertitel und die Links, die Sie im Chat gepostet haben
-   ([Untertitel und barrierefreie Videos](../../../eng-us/help/press/captions-and-accessible-video.md)).
+   ([Untertitel und barrierefreie Videos](untertitel-und-barrierefreie-videos.md)).
 3. Posten Sie die versprochenen Antworten, mit Quellen.
 4. Setzen Sie die Demo-Installation zurück: Entwürfe verwerfen, Schlüssel widerrufen, die Oberfläche wieder auf
    Englisch umstellen.

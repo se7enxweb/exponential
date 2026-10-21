@@ -22,7 +22,7 @@ neuen Hoster vor der Unterschrift stehen auch unter [Hosting auswählen](../../u
 | Welche PHP-Version betreibt unsere Website, und bis wann wird sie unterstützt? | Eine Version ab 8.0 (8.1 oder neuer für Velocity), mit einem Datum; die README empfiehlt „die neueste Version von PHP, die auf Ihrem Betriebssystem verfügbar ist“ ([Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)) |
 | Welche Datenbank-Engine und Version? | Eine benannte Engine; das Projekt listet sie in einer offiziellen Reihenfolge ([Datenbankwahl für Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/database-choice-for-reliability.md)) |
 | Welcher Webserver oder welche Engine liefert die Website aus? | Exponential Velocity, FrankenPHP, Apache oder nginx mit PHP-FPM, oder ein anderer benannter |
-| Läuft Cron für unsere Website, wie oft? | Ja, mit benannten Cronjob-Teilen; ohne Cron schlägt Hintergrundarbeit unbemerkt fehl ([Cronjobs und Hintergrundaufträge](../../../../eng-us/help/businesses/reliability/cronjobs-and-background-jobs.md)) |
+| Läuft Cron für unsere Website, wie oft? | Ja, mit benannten Cronjob-Teilen; ohne Cron schlägt Hintergrundarbeit unbemerkt fehl ([Cronjobs und Hintergrundaufträge](../../unternehmen/zuverlaessigkeit/cronjobs-und-hintergrundjobs.md)) |
 | Funktioniert ausgehende E-Mail, mit welchem Absender? | Ja; Formulare, Belege, Passwort-Zurücksetzungen und Newsletter hängen davon ab |
 | Läuft jeder Name über HTTPS, und wer erneuert die Zertifikate? | Ja; die Erneuerung wird überwacht ([Runbook für ablaufende Zertifikate](../../hosting/runbooks/ablauf-von-zertifikaten.md)) |
 

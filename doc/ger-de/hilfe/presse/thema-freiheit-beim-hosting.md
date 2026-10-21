@@ -90,7 +90,7 @@ wählen“ ([Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting
 ## Verwandte Seiten
 
 - [Gesprächspunkte: Hosting, Datenbanken und Freiheit](../fuersprecher/gespraechspunkte-hosting-datenbanken-freiheit.md)
-- [Thema: sechs Datenbanken](../../../eng-us/help/press/story-databases.md)
+- [Thema: sechs Datenbanken](thema-sechs-datenbanken.md)
 - [Thema: Betriebssysteme](thema-betriebssysteme.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

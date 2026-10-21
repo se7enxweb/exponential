@@ -65,7 +65,7 @@ beiden Seiten denselben Zeitraum (meist ein Jahr oder die fünf Jahre Ihrer
 | Nachweis nach einem Vorfall | Ein manipulationssicherer Audit-Trail zeichnet auf, wer was getan hat | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
 | Sichere Aktualisierungen | Die Upgrade-Prüfung vergleicht die Dateien mit ihren Prüfsummen und die Datenbank mit dem Schema und ändert nichts | [Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 
-Der Bereich [Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/README.md) erklärt jede dieser Praktiken für Unternehmen.
+Der Bereich [Zuverlässigkeit](../zuverlaessigkeit/README.md) erklärt jede dieser Praktiken für Unternehmen.
 
 ## Ein durchgerechnetes Beispiel
 

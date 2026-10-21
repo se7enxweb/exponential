@@ -52,7 +52,7 @@ Generation der Codebasis ab: Sein Repository ist ein Fork von `brookinsconsultin
 ## Verwandte Seiten
 
 - [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md)
-- [Briefing für Bildungs- und Studierendenmedien](../../../eng-us/help/press/briefing-for-education-and-student-media.md)
+- [Briefing für Bildungs- und Studierendenmedien](briefing-fuer-bildungs-und-studierendenmedien.md)
 - [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

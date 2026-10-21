@@ -89,7 +89,7 @@ Quelle: [Unterstützte Datenbanken, SQLite 3](../datenbankunterstuetzung.md#1-sq
 
 ## Verwandte Seiten
 
-- [Thema: sechs Datenbanken](../../../eng-us/help/press/story-databases.md)
+- [Thema: sechs Datenbanken](thema-sechs-datenbanken.md)
 - [Thema: Installation mit einem Befehl](thema-installation-mit-einem-befehl.md)
 - [Unterstützung der SQLite-Datenbank](../../../eng-us/features/6.0/sqlite-database.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)

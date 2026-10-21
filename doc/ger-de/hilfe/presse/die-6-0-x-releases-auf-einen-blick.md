@@ -46,7 +46,7 @@ Geschichtsseiten für dieses Release keine einzelne Hauptnachricht nennen; lesen
 
 Die Releases 6.0.0 bis 6.0.9 wurden veröffentlicht, als das Produkt noch seinen früheren Namen trug; bezeichnen Sie sie
 in der Vergangenheitsform als Releases von Exponential, zum Beispiel „6.0.0, veröffentlicht am 1. Januar 2024“
-([Versionsnummern im Text](../../../eng-us/help/press/version-numbers-in-print.md)).
+([Versionsnummern im Text](versionsnummern-im-text.md)).
 
 ## Die Changelogs
 
@@ -58,7 +58,7 @@ in der Vergangenheitsform als Releases von Exponential, zum Beispiel „6.0.0, v
 | 6.0.15 (in Entwicklung) | [6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Jedes Release | [Changelogs](../../../changelogs/README.md) |
 
-Wie Sie sie lesen: [Wo Changelogs und Release Notes stehen](../../../eng-us/help/press/where-changelogs-and-release-notes-live.md) und
+Wie Sie sie lesen: [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md) und
 [Einen Changelog lesen](ein-changelog-lesen.md).
 
 ## Die Liste selbst prüfen
@@ -74,13 +74,13 @@ Sortieren Sie nach Version, nie nach Name: Eine einfache Sortierung nach Name se
 
 ## Über Releases schreiben
 
-- Ein Release ist ein Git-Tag; solange der Tag nicht existiert, ist die Version „in Entwicklung“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md)).
+- Ein Release ist ein Git-Tag; solange der Tag nicht existiert, ist die Version „in Entwicklung“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
 - Ein veröffentlichtes Release wird nie geändert; eine Korrektur kommt als nächstes Release ([Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md)).
 - Schreiben Sie die Version im Fließtext ohne „v“: „Exponential 6.0.14“.
 
 ## Verwandte Seiten
 
-- [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md)
+- [Über ein Release berichten](ueber-ein-release-berichten.md)
 - [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

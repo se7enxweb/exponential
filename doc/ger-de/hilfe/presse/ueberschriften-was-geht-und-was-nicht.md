@@ -49,7 +49,7 @@ Menschen lesen werden. Eine Überschrift ist eine Behauptung; sie braucht diesel
 | Wort | Fragen Sie |
 |---|---|
 | „neu“, „erstes“ | Erstes im Vergleich wozu, und gibt es eine Quelle? |
-| „schnellstes“, „sicherstes“, „bestes“ | Gibt es einen veröffentlichten Vergleich? Meist nicht ([Fair vergleichen](../../../eng-us/help/press/comparisons-done-fairly.md)). |
+| „schnellstes“, „sicherstes“, „bestes“ | Gibt es einen veröffentlichten Vergleich? Meist nicht ([Fair vergleichen](faire-vergleiche.md)). |
 | „veröffentlicht“, „startet“ | Gibt es einen Tag oder eine datierte Ankündigung? |
 | „offiziell“ | Offiziell für wen? Nur 7x und die Foundation können etwas offiziell machen. |
 | „KI“ | Welches Produkt, und was genau tut es? |
@@ -72,9 +72,9 @@ Menschen lesen werden. Eine Überschrift ist eine Behauptung; sie braucht diesel
 
 ## Verwandte Seiten
 
-- [Marke und Namen für Medien](../../../eng-us/help/press/brand-and-naming-for-media.md)
-- [Häufige Fehler in der Berichterstattung](../../../eng-us/help/press/common-errors-in-coverage.md)
-- [Versionsnummern im Druck](../../../eng-us/help/press/version-numbers-in-print.md)
+- [Marke und Namen für Medien](marke-und-namen-fuer-medien.md)
+- [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md)
+- [Versionsnummern im Druck](versionsnummern-im-text.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

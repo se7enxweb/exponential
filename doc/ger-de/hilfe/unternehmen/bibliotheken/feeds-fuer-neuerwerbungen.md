@@ -145,7 +145,7 @@ Einwilligung, Versand und alles Weitere stehen im Bereich [Newsletter](../../../
 - [Bibliotheken und Kataloge](README.md)
 - [RSS-Feeds (Anleitung)](../../../anleitungen/rss-feeds.md)
 - [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
-- [Feeds und Syndication](../../../../eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md)
+- [Feeds und Syndication](../mobil-und-headless/feeds-und-syndication.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -33,7 +33,7 @@ Bereits veröffentlicht: das Leitbild und die Gruppen, denen die Foundation dien
 
 ## Leitungsstruktur
 
-Nicht veröffentlicht: Vorstand, Leitungsstruktur, Mitglieder ([Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md)).
+Nicht veröffentlicht: Vorstand, Leitungsstruktur, Mitglieder ([Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)).
 
 - Wer sitzt im Vorstand, und wie werden Mitglieder ausgewählt?
 - Können Mitwirkende oder Sponsoren Mitglieder werden, und mit welchen Rechten?
@@ -79,7 +79,7 @@ Bereits veröffentlicht: Die Dokumentation ist frei unter der GNU FDL; das Hilfe
 ## Mit den Antworten umgehen
 
 - Zitieren Sie Antworten wörtlich und ordnen Sie sie der genannten Person und Rolle zu ([Richtlinie für Zitate](richtlinie-fuer-zitate.md)).
-- Wenn eine Frage nicht beantwortet wird, sagen Sie das klar; spekulieren Sie nicht ([Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)).
+- Wenn eine Frage nicht beantwortet wird, sagen Sie das klar; spekulieren Sie nicht ([Aussagen zuordnen](aussagen-zuordnen.md)).
 - Sagen Sie den Lesern, welche Fakten von der Foundation selbst stammen und welche aus unabhängigen Unterlagen.
 
 ## Verwandte Seiten

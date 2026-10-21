@@ -40,7 +40,7 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 | Begriff | Bedeutung | Lesen |
 |---|---|---|
 | Siteaccess | Ein Zugang zur Installation: eine öffentliche Website, eine Sprachversion, die Administration, ein Partnerportal. Gewählt über Hostnamen, Pfad oder Port | [Siteaccess-Zuordnung nach Host und Sprache](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md) |
-| Multisite | Mehrere Websites aus einer Installation | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md) |
+| Multisite | Mehrere Websites aus einer Installation | [Marken mit Multisite](multisite/README.md) |
 | Rolle | Eine benannte Menge von Berechtigungen, Benutzern oder Gruppen zugewiesen | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md) |
 | Richtlinie | Eine Berechtigung innerhalb einer Rolle, etwa „Inhalte lesen“, auf Wunsch eingeschränkt | ebenda |
 | Sektion | Eine Kennzeichnung eines Teils des Inhaltsbaums, mit der Berechtigungen und Designs eingeschränkt werden (zum Beispiel „Nur für Partner“) | [Sektionen](../../anleitungen/sektionen.md) |
@@ -56,9 +56,9 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 | Shop | Der eingebaute E-Commerce: Produkte, Warenkorb, Bestellungen | [Online-Shops](shops/README.md) |
 | USt-Typ | Ein Steuersatz, dem Produkte zugeordnet werden | [USt-Regeln und USt-Typen](../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) |
 | Ländergruppe | Eine Menge von Ländern, die gleich behandelt werden, zum Beispiel bei der USt | [Ländergruppen](../../../eng-us/features/6.0/country-groups.md) |
-| Zahlungsanbieter | Die Anbindung an einen Zahlungsdienstleister, ausgeführt als Workflow-Ereignis an der Kasse | [Zahlungsanbieter für Unternehmen](../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md) |
-| Bestellstatus | Wo eine Bestellung in ihrem Ablauf steht: ausstehend, in Bearbeitung, geliefert und weitere, die Sie festlegen | [Bestellungen und Bestellstatus](../../../eng-us/help/businesses/stores/orders-and-order-statuses.md) |
-| Headless | Die Inhalte ohne die Website nutzen, zum Beispiel aus einer App | [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md) |
+| Zahlungsanbieter | Die Anbindung an einen Zahlungsdienstleister, ausgeführt als Workflow-Ereignis an der Kasse | [Zahlungsanbieter für Unternehmen](shops/zahlungsanbieter-fuer-unternehmen.md) |
+| Bestellstatus | Wo eine Bestellung in ihrem Ablauf steht: ausstehend, in Bearbeitung, geliefert und weitere, die Sie festlegen | [Bestellungen und Bestellstatus](shops/bestellungen-und-bestellstatus.md) |
+| Headless | Die Inhalte ohne die Website nutzen, zum Beispiel aus einer App | [Mobil und headless](mobil-und-headless/README.md) |
 | REST API | Die Schnittstelle, über die Apps und andere Systeme Inhalte lesen und schreiben | [REST API v1 und v2: eine Extension](../../anleitungen/rest-api-v1-und-v2.md) |
 | API-Schlüssel / OAuth | Zwei Wege, auf denen eine App sich gegenüber der REST API ausweist | [Persönliche API-Schlüssel: über REST veröffentlichen, ohne Passwort](../../anleitungen/api-schluessel.md) |
 | Feed (RSS, ATOM) | Eine maschinenlesbare Liste neuer Inhalte, die andere Websites und Apps aufgreifen | [RSS-Feeds: Exporte veröffentlichen und Importe einlesen](../../anleitungen/rss-feeds.md) |
@@ -70,14 +70,14 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 |---|---|---|
 | Velocity | Der eigene Anwendungsserver von Exponential, der die Anwendung zwischen den Anfragen geladen hält | [Velocity für Unternehmen](../../../eng-us/help/businesses/reliability/velocity-for-businesses.md) |
 | Cache | Gespeicherte Ergebnisse, die Seiten schnell machen; werden geleert, wenn sich Inhalte ändern | [Caches: was jeder enthält und wie Sie ihn leeren](../../anleitungen/caches.md) |
-| View-Cache | Die zwischengespeicherte Ausgabe einer Inhaltsseite | [Caching für Verfügbarkeit](../../../eng-us/help/businesses/reliability/caching-for-availability.md) |
+| View-Cache | Die zwischengespeicherte Ausgabe einer Inhaltsseite | [Caching für Verfügbarkeit](zuverlaessigkeit/caching-fuer-verfuegbarkeit.md) |
 | Statischer Cache | Seiten, die als einfache Dateien auf die Festplatte geschrieben werden | [Statischer Cache und Antwortcache](../../../eng-us/help/businesses/reliability/static-and-response-cache.md) |
 | Cronjob | Eine Aufgabe, die nach Zeitplan läuft, zum Beispiel das Versenden von Benachrichtigungen | [Cronjobs: ausführen, planen und verfolgen](../../anleitungen/cronjobs.md) |
 | Wartungsmodus | Eine Seite, die Besuchern angezeigt wird, während gearbeitet wird | [Wartungsmodus: die Site vom Netz nehmen und zurückholen](../../anleitungen/wartungsmodus.md) |
 | Audit-Trail | Ein manipulationssicheres Protokoll darüber, wer was geändert hat | [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
 | Upgrade-Prüfung | Eine Prüfung der Datenbank und der Dateien gegen das Release vor einem Upgrade | [Die Upgrade-Prüfung: Dateien und Datenbank vor einem Upgrade](../../anleitungen/upgrade-pruefung.md) |
 | Erweiterung | Ein Paket, das Funktionen hinzufügt | [Extensions: finden, installieren, konfigurieren, bauen und veröffentlichen](../../anleitungen/extensions.md) |
-| Cluster | Mehrere Server, die sich die Arbeit und die Dateien teilen | [Clustering und Hochverfügbarkeit](../../../eng-us/help/businesses/reliability/clustering-and-high-availability.md) |
+| Cluster | Mehrere Server, die sich die Arbeit und die Dateien teilen | [Clustering und Hochverfügbarkeit](zuverlaessigkeit/clustering-und-hochverfuegbarkeit.md) |
 
 ## Geschäfts- und Vertragsbegriffe
 
@@ -88,7 +88,7 @@ Das sind allgemeine Begriffe, nicht spezifisch für Exponential.
 | TCO (Total Cost of Ownership, Gesamtbetriebskosten) | Alle Kosten eines Systems über seine Lebensdauer, nicht nur Kauf oder Aufbau | [Gesamtbetriebskosten](kosten/gesamtbetriebskosten.md) |
 | ROI (Return on Investment, Rendite) | Was ein System im Vergleich zu seinen Kosten einbringt oder einspart | [Rendite der Stabilität](kosten/rendite-der-stabilitaet.md) |
 | SLA (Service Level Agreement) | Eine schriftliche Zusage zu Verfügbarkeit, Reaktions- und Wiederherstellungszeiten | [Grundlagen zu Verträgen und SLAs](auswahl/grundlagen-zu-vertraegen-und-slas.md) |
-| RTO (Recovery Time Objective) | Wie lange es nach einem Ausfall dauern darf, bis alles wieder läuft | [Backups, die sich wiederherstellen lassen](../../../eng-us/help/businesses/reliability/backups-that-restore.md) |
+| RTO (Recovery Time Objective) | Wie lange es nach einem Ausfall dauern darf, bis alles wieder läuft | [Backups, die sich wiederherstellen lassen](zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) |
 | RPO (Recovery Point Objective) | Wie viele aktuelle Daten Sie sich zu verlieren leisten können; bestimmt, wie oft Sie sichern | ebenda |
 | DSGVO | Die Datenschutz-Grundverordnung der Europäischen Union | [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) |
 | GPL | Die GNU General Public License, die Lizenz von Exponential | [Lizenzen für Käufer erklärt: GPL-Code, GFDL-Dokumentation](../geschaeft/lizenzen-fuer-kaeufer.md) |

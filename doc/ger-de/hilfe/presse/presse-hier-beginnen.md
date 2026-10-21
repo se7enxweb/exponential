@@ -47,7 +47,7 @@ dem Namen eZ Publish, einem Produkt, das sein Schöpfer nach fast 18 Jahren eins
 Leben und startete sie im Dezember 2023 neu, und seit August 2025 heißt das Produkt Exponential. Quellen:
 [Wer ist 7x?](../wer-ist-7x.md#kurz-gesagt), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#kurz-gesagt).
 
-Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardbeschreibungen, die Sie kopieren dürfen](../../../eng-us/help/press/boilerplate-descriptions.md).
+Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardbeschreibungen, die Sie kopieren dürfen](standardbeschreibungen.md).
 
 ## Ihre ersten fünfzehn Minuten
 
@@ -56,7 +56,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
    mit ihrer Quelle und dem Datum, an dem sie geprüft wurde.
 3. **Schreiben Sie die Namen richtig** (3 Minuten): [Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md).
 4. **Wissen Sie, wen Sie fragen** (3 Minuten): [Pressekontakte](pressekontakte.md) und [Das Pressekit](das-pressekit.md).
-5. **Wissen Sie, was Sie nicht behaupten sollten** (3 Minuten): [Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md)
+5. **Wissen Sie, was Sie nicht behaupten sollten** (3 Minuten): [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md)
    und [Mythen und Richtigstellungen](mythen-und-richtigstellungen.md).
 
 ## Fünf Regeln für jeden Beitrag
@@ -64,7 +64,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 1. **Nennen Sie die Quelle.** Zahlen und Daten ändern sich mit den Releases. Verlinken Sie die Seite oder Datei, aus der
    Sie sie haben, und schreiben Sie dazu, wann Sie sie geprüft haben ([Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md)).
 2. **Verwenden Sie die richtigen Namen.** Das Produkt ist **Exponential**, das Unternehmen **7x**, die gemeinnützige
-   Organisation **die Exponential Foundation**. Der alte Name gehört nur in die Geschichte ([Marke und Namen für Medien](../../../eng-us/help/press/brand-and-naming-for-media.md)).
+   Organisation **die Exponential Foundation**. Der alte Name gehört nur in die Geschichte ([Marke und Namen für Medien](marke-und-namen-fuer-medien.md)).
 3. **Erfinden Sie nie ein Zitat.** Zitieren Sie veröffentlichten Text wörtlich mit seinem Link, oder bitten Sie
    schriftlich um ein Zitat ([Richtlinie für Zitate](richtlinie-fuer-zitate.md)).
 4. **Halten Sie Sicherheitslücken vertraulich.** Wenn Sie von einem nicht behobenen Sicherheitsproblem erfahren, geht
@@ -81,17 +81,17 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 | [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md) | Das Produkt, die Menschen und die Geschichte in fünf Minuten verstehen |
 | [Das Pressekit](das-pressekit.md) | Wissen, was das offizielle Pressekit enthält und welche Teile veraltet sind |
 | [Faktenblatt für Journalisten](../../../eng-us/help/press/fact-sheet-for-journalists.md), [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) | Fakten und Zahlen mit ihren Quellen drucken |
-| [Standardbeschreibungen, die Sie kopieren dürfen](../../../eng-us/help/press/boilerplate-descriptions.md) | Eine fertige Beschreibung von 25 bis 250 Wörtern verwenden |
+| [Standardbeschreibungen, die Sie kopieren dürfen](standardbeschreibungen.md) | Eine fertige Beschreibung von 25 bis 250 Wörtern verwenden |
 | [Pressekontakte](pressekontakte.md), [Offizielle Kanäle und Social-Media-Konten](offizielle-kanaele-und-social-media-konten.md) | Die richtigen Menschen über überprüfte Adressen erreichen |
 | [Frühere Pressemitteilungen und Berichte](../../../eng-us/help/press/earlier-press-releases-and-coverage.md) | Finden, was früher veröffentlicht wurde |
-| [Wo die Fakten stehen, für die Presse](../../../eng-us/help/press/where-the-facts-live-for-press.md), [Was die Quellen nicht sagen](../../../eng-us/help/press/what-the-sources-do-not-say.md) | Schnell eine Quelle finden und die Lücken kennen |
+| [Wo die Fakten stehen, für die Presse](wo-die-fakten-stehen-fuer-die-presse.md), [Was die Quellen nicht sagen](was-die-quellen-nicht-sagen.md) | Schnell eine Quelle finden und die Lücken kennen |
 
 ### Geschichte und Organisationen
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
 | [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md), [Die Geschichte für lange Beiträge](die-geschichte-fuer-lange-beitraege.md) | Die Geschichte von 1999 bis heute richtig erzählen |
-| [Warum es Exponential heißt](../../../eng-us/help/press/why-it-is-called-exponential.md), [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) | Den Namen und die Anfänge des Unternehmens erklären |
+| [Warum es Exponential heißt](warum-es-exponential-heisst.md), [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) | Den Namen und die Anfänge des Unternehmens erklären |
 | [7x für Reporter](7x-fuer-reporter.md), [Die Exponential Foundation für Reporter](die-foundation-fuer-reporter.md), [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md) | Das Unternehmen und die gemeinnützige Organisation beschreiben, ohne sie zu verwechseln |
 | [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md), [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) | Das richtige Produkt und das richtige Release nennen |
 
@@ -99,11 +99,11 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
-| [Marke und Namen für Medien](../../../eng-us/help/press/brand-and-naming-for-media.md), [Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md) | Jeden Namen richtig schreiben |
-| [Über die Jahre von eZ Publish schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md), [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md), [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md) | Fair über die Vergangenheit und über andere Unternehmen schreiben |
-| [Logos und Markenmaterial](logos-und-markenmaterial.md), [Bildschirmfotos: was Sie verwenden dürfen](../../../eng-us/help/press/screenshots-what-you-may-use.md), [Eigene Bildschirmfotos machen](eigene-bildschirmfotos-aufnehmen.md) | Bilder im Rahmen der veröffentlichten Regeln verwenden |
+| [Marke und Namen für Medien](marke-und-namen-fuer-medien.md), [Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md) | Jeden Namen richtig schreiben |
+| [Über die Jahre von eZ Publish schreiben](ueber-die-ez-publish-jahre-schreiben.md), [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md), [Netgen, Mugo Web und CJW Network nennen](../../../eng-us/help/press/crediting-other-projects.md) | Fair über die Vergangenheit und über andere Unternehmen schreiben |
+| [Logos und Markenmaterial](logos-und-markenmaterial.md), [Bildschirmfotos: was Sie verwenden dürfen](bildschirmfotos-was-sie-verwenden-duerfen.md), [Eigene Bildschirmfotos machen](eigene-bildschirmfotos-aufnehmen.md) | Bilder im Rahmen der veröffentlichten Regeln verwenden |
 | [Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md), [Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md) | Text legal wiederverwenden und GPL, GFDL und MIT erklären |
-| [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md), [Versionsnummern im Druck](../../../eng-us/help/press/version-numbers-in-print.md), [Stil und Schreibweise für die Berichterstattung](stil-und-schreibweise-fuer-berichte.md) | Überschriften und Texte schreiben, die korrekt bleiben |
+| [Überschriften: was geht und was nicht](ueberschriften-was-geht-und-was-nicht.md), [Versionsnummern im Druck](versionsnummern-im-text.md), [Stil und Schreibweise für die Berichterstattung](stil-und-schreibweise-fuer-berichte.md) | Überschriften und Texte schreiben, die korrekt bleiben |
 
 ### Funktionsthemen
 
@@ -111,16 +111,16 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 |---|---|
 | [Funktionsthemen: Übersicht](../../../eng-us/help/press/feature-stories-index.md) | Ein Thema nach Bereich wählen: Bearbeiten, Layouts, Exponential Intelligence, Velocity, Sicherheit, Barrierefreiheit, Sprachen, Multisite, Suche, Hosting, Open Source, Dokumentation und mehr |
 | [Thema: Exponential Velocity](thema-exponential-velocity.md), [Thema: Exponential Intelligence](thema-exponential-intelligence.md), [Thema: Exponential Layouts, der Seitenbaukasten](thema-exponential-layouts.md) | Die drei wichtigsten Funktionen der Produktlinie 6.0.15 |
-| [Thema: Sicherheit](thema-sicherheit.md), [Thema: Barrierefreiheit](../../../eng-us/help/press/story-accessibility.md), [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) | Werte und Standards, mit Belegen |
+| [Thema: Sicherheit](thema-sicherheit.md), [Thema: Barrierefreiheit](thema-barrierefreiheit.md), [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) | Werte und Standards, mit Belegen |
 
 ### Über Releases berichten
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
-| [Über ein Release berichten](../../../eng-us/help/press/covering-a-release.md), [Checkliste für die Release-Berichterstattung](checkliste-release-berichterstattung.md) | Schritt für Schritt über eine neue Version berichten |
-| [Wo Changelogs und Release Notes stehen](../../../eng-us/help/press/where-changelogs-and-release-notes-live.md), [Ein Changelog lesen](ein-changelog-lesen.md) | Die offizielle Aufzeichnung finden und lesen |
-| [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md), [Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md), [Ein Release selbst überprüfen](../../../eng-us/help/press/verifying-a-release-yourself.md) | Versionsnummern verstehen und prüfen |
-| [Über 6.0.15 berichten, solange es in Entwicklung ist](../../../eng-us/help/press/covering-6-0-15-while-in-development.md), [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md) | Verantwortungsvoll über unveröffentlichte Arbeit und über Korrekturen berichten |
+| [Über ein Release berichten](ueber-ein-release-berichten.md), [Checkliste für die Release-Berichterstattung](checkliste-release-berichterstattung.md) | Schritt für Schritt über eine neue Version berichten |
+| [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md), [Ein Changelog lesen](ein-changelog-lesen.md) | Die offizielle Aufzeichnung finden und lesen |
+| [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md), [Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md), [Ein Release selbst überprüfen](ein-release-selbst-pruefen.md) | Versionsnummern verstehen und prüfen |
+| [Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md), [Über Sicherheitskorrekturen berichten](../../../eng-us/help/press/covering-security-fixes.md) | Verantwortungsvoll über unveröffentlichte Arbeit und über Korrekturen berichten |
 | [Vorlagen für Release-Beiträge](vorlagen-fuer-release-beitraege.md) | Mit einer belegten Vorlage beginnen |
 
 ### Interviews, Briefings und Faktencheck
@@ -128,10 +128,10 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
 | [Ein Interview anfragen](ein-interview-anfragen.md), [Ein Briefing vorbereiten](ein-briefing-vorbereiten.md), [Fragensammlung für Interviews](fragensammlung-fuer-interviews.md) | Ein Interview bekommen und vorbereiten |
-| [Briefing für die Fachpresse](../../../eng-us/help/press/briefing-for-technical-press.md), [für die Wirtschaftspresse](../../../eng-us/help/press/briefing-for-business-press.md), [für lokale und regionale Presse](../../../eng-us/help/press/briefing-for-local-and-regional-press.md), [für Bildungs- und Studierendenmedien](../../../eng-us/help/press/briefing-for-education-and-student-media.md), [Gäste in Podcast und Radio](gaeste-in-podcast-und-radio.md) | Jede Art von Medium briefen |
-| [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md), [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md), [Zahlen überprüfen](../../../eng-us/help/press/verifying-numbers.md), [Daten überprüfen](../../../eng-us/help/press/verifying-dates.md), [Zitate überprüfen](../../../eng-us/help/press/verifying-quotes.md) | Prüfen, bevor Sie veröffentlichen |
-| [Richtlinie für Zitate](richtlinie-fuer-zitate.md), [Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md), [Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md) | Richtig zitieren und zuordnen |
-| [Häufige Fehler in der Berichterstattung](../../../eng-us/help/press/common-errors-in-coverage.md), [Korrekturen und Aktualisierungen](../../../eng-us/help/press/corrections-and-updates.md), [Vergleiche, fair gemacht](../../../eng-us/help/press/comparisons-done-fairly.md) | Fehler vermeiden und korrigieren |
+| [Briefing für die Fachpresse](briefing-fuer-fachpresse.md), [für die Wirtschaftspresse](briefing-fuer-wirtschaftspresse.md), [für lokale und regionale Presse](briefing-fuer-lokal-und-regionalpresse.md), [für Bildungs- und Studierendenmedien](briefing-fuer-bildungs-und-studierendenmedien.md), [Gäste in Podcast und Radio](gaeste-in-podcast-und-radio.md) | Jede Art von Medium briefen |
+| [Leitfaden zum Faktencheck](../../../eng-us/help/press/fact-checking-guide.md), [Checkliste zum Faktencheck](../../../eng-us/help/press/fact-checking-checklist.md), [Zahlen überprüfen](zahlen-pruefen.md), [Daten überprüfen](daten-pruefen.md), [Zitate überprüfen](zitate-pruefen.md) | Prüfen, bevor Sie veröffentlichen |
+| [Richtlinie für Zitate](richtlinie-fuer-zitate.md), [Aussagen zuordnen](aussagen-zuordnen.md), [Sperrfristen und Timing](../../../eng-us/help/press/embargoes-and-timing.md) | Richtig zitieren und zuordnen |
+| [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md), [Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md), [Vergleiche, fair gemacht](faire-vergleiche.md) | Fehler vermeiden und korrigieren |
 
 ### Influencer und Creator
 
@@ -139,10 +139,10 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 |---|---|
 | [Creator und Influencer: hier beginnen](../../../eng-us/help/press/creators-and-influencers-start-here.md) | Die Übersicht dieses Bereichs für Creator |
 | [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md), [Bezahlte, geschenkte und Affiliate-Inhalte](bezahlte-geschenkte-und-affiliate-inhalte.md) | Transparent gegenüber Ihrem Publikum sein |
-| [Eine Demo-Installation einrichten](../../../eng-us/help/press/setting-up-a-demo-installation.md), [Leitfaden für Video-Rundgänge](../../../eng-us/help/press/video-walkthrough-guide.md), [Leitfaden für Livestreams](leitfaden-fuer-livestreams.md) | Exponential auf einer Installation zeigen, die Sie kontrollieren |
+| [Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md), [Leitfaden für Video-Rundgänge](leitfaden-fuer-video-rundgaenge.md), [Leitfaden für Livestreams](leitfaden-fuer-livestreams.md) | Exponential auf einer Installation zeigen, die Sie kontrollieren |
 | [Demo-Skript: Überblick in fünf Minuten](../../../eng-us/help/press/demo-script-five-minute-overview.md), [Rundgang für Redakteure](../../../eng-us/help/press/demo-script-editor-tour.md), [Exponential Layouts](../../../eng-us/help/press/demo-script-layouts.md), [Exponential Intelligence](../../../eng-us/help/press/demo-script-exponential-intelligence.md), [Velocity](../../../eng-us/help/press/demo-script-velocity.md), [Installation von null an](../../../eng-us/help/press/demo-script-install-from-zero.md), [Rundgang für Administratoren](../../../eng-us/help/press/demo-script-administrator-tour.md) | Einem getesteten Demo-Skript folgen |
-| [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md), [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md), [Untertitel und barrierefreies Video](../../../eng-us/help/press/captions-and-accessible-video.md) | Sicher und barrierefrei aufnehmen |
-| [Eine faire Rezension schreiben](../../../eng-us/help/press/writing-a-fair-review.md), [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.md), [FAQ für Creator](../../../eng-us/help/press/creator-faq.md) | Fair rezensieren und Ihre Arbeit prüfen |
+| [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md), [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md), [Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md) | Sicher und barrierefrei aufnehmen |
+| [Eine faire Rezension schreiben](eine-faire-rezension-schreiben.md), [Checkliste für Creator](../../../eng-us/help/press/creator-checklist.md), [FAQ für Creator](../../../eng-us/help/press/creator-faq.md) | Fair rezensieren und Ihre Arbeit prüfen |
 
 ### Nachschlagen
 
@@ -152,7 +152,7 @@ Längere und kürzere Fassungen, die Sie kopieren dürfen, stehen auf [Standardb
 | [Lesepfad für die Presse](lesepfad-fuer-die-presse.md), [Checklisten für die Presse](checklisten-fuer-die-presse.md), [Hilfeseiten nach Thema, für die Presse](hilfeseiten-nach-thema-fuer-die-presse.md) | Der Reihe nach lesen, prüfen und die weiterführenden Seiten finden |
 | [Fragen an 7x](fragen-an-7x.md), [Fragen an die Foundation](fragen-an-die-foundation.md), [Mythen und Richtigstellungen](mythen-und-richtigstellungen.md) | Fragen vorbereiten und verbreitete Mythen richtigstellen |
 | [Privatsphäre in Ihrer Berichterstattung](privatsphaere-in-ihrer-berichterstattung.md), [Barrierefreie Berichterstattung](barrierefreie-berichterstattung.md) | Menschen schützen und alle erreichen |
-| [Über die Community schreiben](../../../eng-us/help/press/writing-about-the-community.md), [Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md) | Über die Menschen und das Geld hinter dem Projekt berichten |
+| [Über die Community schreiben](ueber-die-community-schreiben.md), [Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md) | Über die Menschen und das Geld hinter dem Projekt berichten |
 
 ## Seiten für andere Zielgruppen, die Sie verwenden werden
 

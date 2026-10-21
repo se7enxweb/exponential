@@ -81,7 +81,7 @@ Ein leeres Formular für die Berechnung steht im Bereich Vorlagen:
 
 ## Benachbarte Bereiche
 
-- [Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/README.md): die Praktiken, die Ausfälle und damit ihre Kosten niedrig halten.
+- [Zuverlässigkeit](../zuverlaessigkeit/README.md): die Praktiken, die Ausfälle und damit ihre Kosten niedrig halten.
 - [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): die Grundlagen, die ein Unternehmen zum Schutz von Kundendaten
   braucht.
 - [Hosting und Partner auswählen](../auswahl/README.md): wohin das Geld für Hosting und Dienstleistungen geht.

@@ -34,12 +34,12 @@ Die README: „Exponential has made it beyond it's end of life in 2021 and survi
 
 ### 3. „Es läuft nur auf altem PHP.“
 
-Es unterstützt PHP 8.0 bis 8.5; Websites mit PHP 7.4 bleiben auf 6.0.7 ([Thema: aktuelles PHP](../../../eng-us/help/press/story-current-php.md)).
+Es unterstützt PHP 8.0 bis 8.5; Websites mit PHP 7.4 bleiben auf 6.0.7 ([Thema: aktuelles PHP](thema-aktuelles-php.md)).
 
 ### 4. „Die KI schreibt und veröffentlicht Ihre Website.“
 
 Exponential Intelligence schreibt Entwürfe, als der angemeldete Redakteur mit dessen Rechten, und veröffentlicht nie
-von sich aus ([Thema: ein Assistent, der nur Entwürfe schreibt](../../../eng-us/help/press/story-ai-that-writes-drafts-only.md)).
+von sich aus ([Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md)).
 
 ### 5. „Open Source bedeutet unsicher.“
 
@@ -91,7 +91,7 @@ erlaubt, ihn zu behalten und weiterzuführen ([Lizenzen für Reporter erklärt](
 
 ## Verwandte Seiten
 
-- [Häufige Fehler in der Berichterstattung](../../../eng-us/help/press/common-errors-in-coverage.md)
+- [Häufige Fehler in der Berichterstattung](haeufige-fehler-in-berichten.md)
 - [Einwände als Fürsprecher beantworten](../fuersprecher/einwaende-beantworten.md)
 - [FAQ für Reporter](faq-fuer-reporter.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -106,7 +106,7 @@ Vorlagen mit vollständigen Sätzen stehen auf [Offenlegung und Ethik beim Spons
 ## Verwandte Seiten
 
 - [Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)
-- [Eine faire Rezension schreiben](../../../eng-us/help/press/writing-a-fair-review.md)
+- [Eine faire Rezension schreiben](eine-faire-rezension-schreiben.md)
 - [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md)
 - [Empfehlungen und Kontakte](../partner/empfehlungen-und-leads.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

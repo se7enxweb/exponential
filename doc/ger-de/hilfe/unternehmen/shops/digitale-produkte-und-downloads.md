@@ -40,7 +40,7 @@ verstanden, und die Möglichkeiten stehen unten.
 | Sektionen und Rollen | Legen fest, wer welche Inhalte lesen darf | [Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md), [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 | Benutzergruppen | Sammeln die Kunden, die herunterladen dürfen | [Mitgliederregistrierung und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
 | Workflow-Auslöser im Shop | Führen an der Kasse einen eigenen Schritt aus | [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md#workflow-triggers) |
-| Dauerhafte Belege | Ein signierter Link zur Bestellung, jahrelang gültig | [Bestellbelege und Bestätigungsmails](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md) |
+| Dauerhafte Belege | Ein signierter Link zur Bestellung, jahrelang gültig | [Bestellbelege und Bestätigungsmails](bestellbelege-und-bestaetigungsmails.md) |
 
 Die Berechtigungsprüfung der Download-Ansicht bedeutet, dass eine Datei in einer Sektion nur für Mitglieder auch nur
 von Mitgliedern heruntergeladen werden kann, und Dateien dürfen nie direkt aus dem Speicherverzeichnis verlinkt
@@ -60,7 +60,7 @@ werden, was die Prüfung umgehen würde
 
 Wenn eine Bestellung den Status **Paid** erreicht, schickt ein Mitarbeiter die Datei oder fügt das Konto des Kunden der
 Benutzergruppe hinzu, die sie lesen darf, und setzt die Bestellung auf **Completed**
-([Bestellungen und Bestellstatus](../../../../eng-us/help/businesses/stores/orders-and-order-statuses.md)).
+([Bestellungen und Bestellstatus](bestellungen-und-bestellstatus.md)).
 
 - Gut für: eine Handvoll Bestellungen pro Woche.
 - Kosten: Arbeitszeit der Mitarbeiter; Wartezeit für den Kunden.
@@ -92,7 +92,7 @@ begrenzten Download-Link schickt (in der Idee ähnlich dem signierten Beleg-Link
 - Verwenden Sie eine Produktklasse mit einem Preis und, getrennt davon, ein geschütztes Dateiobjekt für die
   Lieferung: Die öffentliche Produktseite darf die Datei nicht selbst tragen, sonst kann jeder, der die Seite lesen
   kann, sie herunterladen.
-- Lassen Sie den Versand bei rein digitalen Bestellungen weg ([Versand und Bearbeitung](../../../../eng-us/help/businesses/stores/shipping-and-handling.md)).
+- Lassen Sie den Versand bei rein digitalen Bestellungen weg ([Versand und Bearbeitung](versand-und-bearbeitung.md)).
 - Nennen Sie den Kunden Format und Größe vor dem Kauf; für viele Websites ist das auch eine Anforderung der
   Barrierefreiheit
   ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#download-links-in-templates)).

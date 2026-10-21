@@ -34,9 +34,9 @@ Etwa 30 Minuten decken die Grundlagen ab:
 | 5 | Das Changelog des neuesten Releases, zum Beispiel [6.0.14](../../../changelogs/6.0/6.0.14.md) | Was gerade erschienen ist |
 | 5 | [Regeln für Marke und Namen, Gebote und Verbote](../geschaeft/marken-und-namensregeln.md#richtig-und-falsch) | Wie Sie alles benennen |
 
-Ergänzen Sie dann das Briefing für Ihre Art von Medium: [Fachpresse](../../../eng-us/help/press/briefing-for-technical-press.md),
-[Wirtschaftspresse](../../../eng-us/help/press/briefing-for-business-press.md), [lokale und regionale Presse](../../../eng-us/help/press/briefing-for-local-and-regional-press.md)
-oder [Bildungs- und Studierendenmedien](../../../eng-us/help/press/briefing-for-education-and-student-media.md).
+Ergänzen Sie dann das Briefing für Ihre Art von Medium: [Fachpresse](briefing-fuer-fachpresse.md),
+[Wirtschaftspresse](briefing-fuer-wirtschaftspresse.md), [lokale und regionale Presse](briefing-fuer-lokal-und-regionalpresse.md)
+oder [Bildungs- und Studierendenmedien](briefing-fuer-bildungs-und-studierendenmedien.md).
 
 ## Der Briefing-Bogen
 
@@ -76,7 +76,7 @@ Exponential Intelligence - Exponential Platform (Legacy, Nexus, DXP)
   öffentliche Quelle sie beantwortet“: der Vorstand, die Leitungsstruktur, die Mitglieder und das Budget. Das sind
   legitime Interviewfragen.
 - **Fragen Sie vorsichtig nach Terminen.** Wenn Sie fragen, wann 6.0.15 erscheint, notieren Sie die Antwort als Antwort,
-  mit dem Sprecher, und drucken Sie sie nur als das, was gesagt wurde, nie als Tatsache ([Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)).
+  mit dem Sprecher, und drucken Sie sie nur als das, was gesagt wurde, nie als Tatsache ([Aussagen zuordnen](aussagen-zuordnen.md)).
 - Wählen Sie fünf bis acht Fragen aus der [Fragensammlung für Interviews](fragensammlung-fuer-interviews.md) und ordnen Sie sie
   von leicht nach schwer.
 
@@ -97,7 +97,7 @@ Exponential Intelligence - Exponential Platform (Legacy, Nexus, DXP)
 | Zitate am selben Tag transkribieren oder notieren | Die Erinnerung verändert Worte |
 | Jeden gehörten Fakt mit der Dokumentation abgleichen | Eine gesprochene Zahl kann aus dem Gedächtnis kommen; die Quelle gilt, oder Sie berichten beides |
 | Markieren, welche Aussagen Zitate, welche Umschreibungen und welche Hintergrund sind | Damit nichts aus dem Hintergrund namentlich zugeordnet wird |
-| Bei Unklarem nachfragen | Besser als raten ([Zitate überprüfen](../../../eng-us/help/press/verifying-quotes.md)) |
+| Bei Unklarem nachfragen | Besser als raten ([Zitate überprüfen](zitate-pruefen.md)) |
 | Aufnahmen löschen, wenn Sie sie nicht mehr brauchen, falls Sie das zugesagt haben | Privatsphäre ([Die Privatsphäre von Menschen schützen](../fuersprecher/privatsphaere-schuetzen.md)) |
 
 ## Verwandte Seiten

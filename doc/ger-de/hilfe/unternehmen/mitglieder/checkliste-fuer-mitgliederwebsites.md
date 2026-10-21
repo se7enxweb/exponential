@@ -92,7 +92,7 @@ haken Sie sie erst ab, wenn sie ausprobiert wurde, nicht wenn sie eingerichtet w
 
 - [ ] Cronjobs eingeplant, einschließlich der Gruppe `frequent` ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Backups eingeplant und eine Wiederherstellung ausprobiert
-  ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)).
+  ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md)).
 - [ ] Plan für Aktualisierungen und eine Ansprechperson für Probleme
   ([Aktualisierungen ohne Überraschungen](../../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md)).
 - [ ] Zweistufige Anmeldung für Administratoren und Redakteure

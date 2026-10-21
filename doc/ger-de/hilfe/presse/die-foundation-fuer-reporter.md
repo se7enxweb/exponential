@@ -45,7 +45,7 @@ Das Profil von se7enxweb listet auf, wofür ein Sponsoring der Foundation bezahl
 Kerndokumentation, Integrationsschichten für GraphQL, REST und Solr, Community-Infrastruktur und Sicherheitshärtung der
 Zeta Components ([Was die Foundation finanziert](../wer-ist-die-exponential-foundation.md#was-die-foundation-finanziert)).
 Ihre Sponsorenseite ist <https://github.com/sponsors/exponentialcms>. Siehe
-[Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md).
+[Über Finanzierung und Sponsoren schreiben](ueber-finanzierung-und-sponsoren-schreiben.md).
 
 ## Wie sie zu 7x steht
 
