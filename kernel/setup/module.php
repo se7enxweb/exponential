@@ -337,8 +337,8 @@ $ViewList['systemupgrade'] = array(
 
 // The log viewer (doc/eng-us/features/6.0/log-viewer.md): the page, its feed (polls, searches, related lines; JSON, short
 // requests, never held open) and its actions (POST only). The page's permalinks name a log by its key and its state
-// by view parameters: setup/logs/view/<key>/(level)/error/(search)/timeout/(follow)/0 (expLogPermalink); a link of
-// the old form setup/logs?file=<path> answers 301 with the permalink.
+// by view parameters: setup/logs/view/<key>/(level)/error/(search)/timeout/(follow)/0 (expLogPermalink). A query
+// string is never read; the search form without JavaScript is a POST answered 303 with the permalink.
 $ViewList['logs'] = array(
     'functions' => array( 'logs' ),
     'script' => 'logs.php',
@@ -386,7 +386,13 @@ $ViewList['logsfeed'] = array(
     'script' => 'logsfeed.php',
     'ui_context' => 'ajax',
     'default_navigation_part' => 'ezsetupnavigationpart',
-    'params' => array() );
+    'params' => array(),
+    // the options as view parameters, never a query string (values as expLogPermalink::encode() writes them)
+    'unordered_params' => array( 'action' => 'action', 'file' => 'file', 'offset' => 'offset', 'ino' => 'ino', 'unmask' => 'unmask',
+                                 'q' => 'q', 'regex' => 'regex', 'case' => 'case', 'levels' => 'levels', 'from' => 'from',
+                                 'to' => 'to', 'siteaccess' => 'siteaccess', 'uri' => 'uri', 'ip' => 'ip',
+                                 'reference' => 'reference', 'scope' => 'scope', 'rotations' => 'rotations',
+                                 'cursor' => 'cursor' ) );
 
 $ViewList['logsaction'] = array(
     'functions' => array( 'logs' ),

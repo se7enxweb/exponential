@@ -18,7 +18,7 @@
 <p>{"Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[]."|i18n( 'design/admin/setup/sitedata' )}&nbsp;
 {if $template_readable|count|gt( 0 )}{'Listed now: %names.'|i18n( 'design/admin/setup/sitedata',, hash( '%names', $template_readable|implode( ', ' )|wash ) )}{else}{'No name is listed now.'|i18n( 'design/admin/setup/sitedata' )}{/if}</p>
 
-<form method="get" action={'/setup/sitedata'|ezurl} class="exp-sitedata-filter">
+<form method="post" action={'/setup/sitedata'|ezurl} class="exp-sitedata-filter">
 <div class="block">
     <label for="exp-sitedata-filter">{'Name'|i18n( 'design/admin/setup/sitedata' )}</label>
     <input type="text" id="exp-sitedata-filter" name="Filter" value="{$filter|wash}" size="30" maxlength="100" />

@@ -404,8 +404,10 @@ var eZAjaxSubitemsExpDataTable = (function () {
             var presetOf = function (id) { for (var i = 0; i < presets.length; i++) { if (presets[i].id === id) { return presets[i]; } } return null; };
             var exportURL = function (table) {
                 var s = table.state.sort || sortOptions;
-                return confObj.exportURL + '?columns=' + encodeURIComponent(table.shownColumns().join(',')) +
-                       '&sort=' + encodeURIComponent(sortName(s.key)) + '&order=' + (s.dir === 'asc' ? '1' : '0');
+                // view parameters /(name)/value, never a query string
+                var columns = table.shownColumns().join(','), sort = sortName(s.key);
+                return confObj.exportURL + (columns ? '/(columns)/' + encodeURIComponent(columns) : '') +
+                       (sort ? '/(sort)/' + encodeURIComponent(sort) : '') + '/(order)/' + (s.dir === 'asc' ? '1' : '0');
             };
 
             return {

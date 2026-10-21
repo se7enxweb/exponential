@@ -68,11 +68,13 @@ class expContentCheckFilesTest extends PHPUnit\Framework\TestCase
 
         // every target ticked is named, so that missing_file alone keeps meaning "only the missing files"
         $defaults = expContentCheckFiles::parameters( array(), 2 );
-        $this->assertSame( '?Exclude=5&Kind%5B%5D=deleted&Kind%5B%5D=trash&Kind%5B%5D=missing_file',
-                           expContentCheckFiles::querySuffix( '?Exclude=5&Kind%5B%5D=deleted', array( 'deleted', 'trash' ), $defaults ) );
-        $this->assertSame( '?Kind%5B%5D=missing_file', expContentCheckFiles::querySuffix( '?', array(), $defaults ) );
-        $this->assertSame( '?Kind%5B%5D=missing_file&Problem%5B%5D=missing&Version%5B%5D=draft',
-                           expContentCheckFiles::querySuffix( '?', array(), expContentCheckFiles::parameters( array( 'Problem' => array( 'missing' ), 'Version' => array( 'draft' ) ), 2 ) ) );
+        $this->assertSame( '/(exclude)/5/(kind)/deleted,trash,missing_file',
+                           expContentCheckFiles::querySuffix( '/(exclude)/5/(kind)/deleted', array( 'deleted', 'trash' ), $defaults ) );
+        $this->assertSame( '/(kind)/missing_file', expContentCheckFiles::querySuffix( '', array(), $defaults ) );
+        $this->assertSame( '/(kind)/missing_file/(problem)/none/(version)/none',
+                           expContentCheckFiles::querySuffix( '', array(), array( 'problems' => array(), 'versions' => array() ) ) );
+        $this->assertSame( '/(kind)/missing_file/(problem)/missing/(version)/draft',
+                           expContentCheckFiles::querySuffix( '', array(), expContentCheckFiles::parameters( array( 'Problem' => array( 'missing' ), 'Version' => array( 'draft' ) ), 2 ) ) );
         $this->assertNotContains( expContentCheckFiles::TARGET, expContentCheckBrokenRelations::KINDS, 'never a state of a relation target' );
 
         $root = dirname( __DIR__, 4 ) . '/';

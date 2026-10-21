@@ -113,7 +113,7 @@
 
 <section aria-labelledby="package-find-title">
 <h2 class="a4-sr-only" id="package-find-title">{'Find packages'|i18n( 'design/admin/package/list' )}</h2>
-<form class="a4-filterbar" method="get" action={'/package/list'|ezurl}>
+<form class="a4-filterbar" method="post" action={'/package/list'|ezurl}>
     <input type="hidden" name="PackageFilter" value="1" />
     <div class="a4-field">
         <label for="package-search">{'Search'|i18n( 'design/admin/package/list' )}</label>

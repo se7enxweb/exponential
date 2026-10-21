@@ -271,10 +271,10 @@ behandeln Sie die Seite entsprechend und setzen Sie sie zurück, wenn die Zahlen
 
 | Seite | Adresse | Parameter |
 |---|---|---|
-| Linkliste | `/url/list/<all\|valid\|invalid\|unchecked>` | `(sort)/checked`, `(sort)/modified`, `(offset)/<n>`, `?q=<text>` |
-| Globale Aliase | `/content/urltranslator` | `(kind)/redirect`, `(kind)/direct`, `(offset)/<n>`, `?q=<text>` |
-| Platzhalter | `/content/urlwildcards` | `(kind)/...`, `(offset)/<n>`, `?q=<text>`, `?test=<address>` |
-| Suchstatistiken | `/search/stats` | `(sort)/phrase`, `(sort)/fewest`, `(show)/none`, `(offset)/<n>`, `?q=<text>` |
+| Linkliste | `/url/list/<all\|valid\|invalid\|unchecked>` | `(sort)/checked`, `(sort)/modified`, `(offset)/<n>`, `(q)/<text>` |
+| Globale Aliase | `/content/urltranslator` | `(kind)/redirect`, `(kind)/direct`, `(offset)/<n>`, `(q)/<text>` |
+| Platzhalter | `/content/urlwildcards` | `(kind)/...`, `(offset)/<n>`, `(q)/<text>`; das Formular Ausprobieren sendet `test` (eine Adresse) per POST |
+| Suchstatistiken | `/search/stats` | `(sort)/phrase`, `(sort)/fewest`, `(show)/none`, `(offset)/<n>`, `(q)/<text>` |
 
 Unbekannte Werte fallen auf die Voreinstellungen zurück. Die Formulare, ihre Feldnamen und ihre Schaltflächen
 (`SetValid`, `SetInvalid`, `URLSelection[]`, `NewAliasButton`, `RemoveAliasButton`, `RemoveAllAliasesButton`,

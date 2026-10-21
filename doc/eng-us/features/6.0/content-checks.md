@@ -230,7 +230,7 @@ Each check has a **start location** field (the node id) and, beneath it, two row
 
 The current start location's button is marked (`aria-current="true"`, the primary color). Every button is a plain
 link to `contentcheck/<view>/<node id>`, so it works without JavaScript, by keyboard (Tab, Enter) and wraps on
-phones; the storage files keep the list shown (`?Show=...`). A check reads its node from the form (`NodeID`), else
+phones; the storage files keep the list shown (`/(show)/...`). A check reads its node from the posted form (`NodeID`), else
 from the address (`contentcheck/<view>/<node id>`), else from your last choice, else the content tree's top node. A
 node given in the form or the address becomes your last choice (the preference `admin_contentcheck_scope`), so the
 next check opens there; the address always carries it, so a link to a check shows the same subtree to everyone who
@@ -251,10 +251,23 @@ SiteRowLimit=12
 
 The selector is one template, `design:contentcheck/scope.tpl` (the same file in design/admin and design/admin4),
 included in the filter form of every check; the view passes `expContentCheckScope::forTemplate( $nodeID, '<view>' )`
-(a third argument lists plain GET fields the links keep). Its styles are the shared component `.a4-quickpick` in
+(a third argument lists plain view parameters the links keep, e.g. `array( 'show' => 'problems' )`). Its styles are the shared component `.a4-quickpick` in
 `stylesheets/components.css`, and the presets and rows come from `expNodeQuickPick`, which other pages' quick location
 buttons share (`quick-location-buttons.md`). The views that take a start location (and that the node picker may return to) are
 listed in `ViewList[]`; another check adds its view there.
+## Options in the address
+
+The options of every check are view parameters, never a query string (a `?Show=` or `?Kind[]=` is not read):
+
+| View | View parameters |
+|------|-----------------|
+| `contentcheck/unreferenced/<node id>` | `(class)` (class ids, comma separated), `(sort)`, `(order)`, `(containers)/1`, `(selectall)/1`, `(offset)` |
+| `contentcheck/brokenrelations/<node id>` | `(exclude)` (node ids), `(kind)`, `(relation)` (comma lists, `none` for none ticked), `(after)`, and of the missing files `(problem)`, `(version)`, `(selectall)/1`, `(file_offset)` |
+| `contentcheck/storage/<node id>` | `(show)` (orphans, problems, quarantine), `(sort)`, `(order)`, `(kind)` (comma list or `none`), `(selectall)/1`, `(offset)` |
+
+For example `contentcheck/brokenrelations/58/(kind)/deleted,trash/(after)/1200`. The filter forms are sent with POST
+(they carry the form token) and answered with a 303 to that address, so a filtered list can be bookmarked and shared.
+
 ## One layout
 
 Every check has the same order: the **start location**, the **filters** (a group of choices has **Select all** and
@@ -263,7 +276,7 @@ Every check has the same order: the **start location**, the **filters** (a group
 **Select all on this page** and **Select none**), the **bulk actions** (the ticked rows, or "all N results": the whole
 list with its filters, at most one batch, always with the plan or the confirmation first) and the **pager** (page
 sizes and page links, the filters kept in the address). The parts are shared templates in `contentcheck/`:
-`scope.tpl`, `filter_choice.tpl` (`group=`, read as GET `<group>Choice=all|none`), `results_head.tpl`, `select_all.tpl`,
+`scope.tpl`, `filter_choice.tpl` (`group=`, posted as `<group>Choice=all|none`; "none" is kept in the address as `/(<group>)/none`), `results_head.tpl`, `select_all.tpl`,
 `bulkbar.tpl` (with `select_count.tpl`), `pager.tpl` (`offset_name` for a second list on a page) and
 `contentcheck_select.js`.
 
@@ -343,7 +356,7 @@ root and PHP-FPM as the site user, so some files end up owned by root), run the 
 `./console exp:content-check --storage --fix-permissions --dry-run`, then without `--dry-run`.
 ## Missing files
 
-Tick the target **Missing files in var/<site>/storage** on **Broken relations** (`Kind[]=missing_file`; Setup >
+Tick the target **Missing files in var/<site>/storage** on **Broken relations** (`/(kind)/...,missing_file`; Setup >
 Content model > Broken relations, or the context menu's **Broken relations in subtree**) and the page lists, below the
 broken relations, the file-backed fields of the content below the node whose file is not where the field says it
 is, and the images whose aliases are missing or out of date. Ticked alone, no relation is checked and only the
@@ -385,7 +398,7 @@ in between, nothing is done and the list says so.
 - **Selecting**: the box in the table's header ticks or clears every row of the page and shows a mixed state when
   some are ticked; "N of M selected" counts them (`contentcheck_select.js`, the same as the other lists of the
   checks). Without JavaScript, **Select all on this page** and **Select none** do the same on the server
-  (`SelectAll=1`). When there are more pages, **Preview for all N results** takes every row of
+  (`/(selectall)/1`). When there are more pages, **Preview for all N results** takes every row of
   every page with the same filters, at most `MaxFixItems`, and shows the preview as well.
 - The filter groups **Missing files: problems** and **Missing files: versions** have **Select all** and **Select
   none** buttons (submit buttons, so they work without JavaScript); with none ticked nothing is looked for.

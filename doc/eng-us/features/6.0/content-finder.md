@@ -122,6 +122,13 @@ URL aliases are case-insensitive, as `eZURLAliasML` resolves them.
 At most `ResultLimit` objects (25) are described for one search, and at most `FileRowLimit` file rows (50) are read
 for one path or prefix; the page says when there were more.
 
+## The address of a search
+
+A search is an address with view parameters, `contentfinder/search/(type)/object/(text)/58`: `(text)` is the text
+(plain when it is made of letters, digits, spaces and `. _ : @ , + = -`, else `~` and its base64url, as for a path or a
+URL) and `(type)` the type (none for *auto*). The form is sent with POST and answered with a 303 to that address; a
+query string such as `?SearchText=` is not read.
+
 ## Who may use it
 
 | Policy | What it allows |

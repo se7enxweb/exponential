@@ -61,7 +61,7 @@
 
 <section aria-labelledby="stats-find-title">
 <h2 class="a4-sr-only" id="stats-find-title">{'Find phrases'|i18n( 'design/admin/search/stats' )}</h2>
-<form class="a4-filterbar" method="get" action={concat( '/search/stats', $sort_part, $show_part )|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={concat( '/search/stats', $sort_part, $show_part )|ezurl} role="search">
     <div class="a4-field a4-field-wide">
         <label for="stats-search">{'Find a phrase'|i18n( 'design/admin/search/stats' )}</label>
         <div class="a4-searchrow">

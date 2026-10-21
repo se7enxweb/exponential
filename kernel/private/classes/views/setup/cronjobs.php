@@ -116,8 +116,9 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
 
         // Asked for the answer rather than a new page, so the console can act on it
         // without the page going anywhere. The action above has already run either way;
-        // this only decides how it is reported.
-        if ( $actionTaken && $http->hasVariable( 'Ajax' ) )
+        // this only decides how it is reported. The flag is a field of the POST (Ajax=1),
+        // never read off the query string.
+        if ( $actionTaken && $http->hasPostVariable( 'Ajax' ) )
         {
             // Nothing but the json may reach the browser. Debug output is on by default
             // on an administration siteaccess and is appended to whatever a request
