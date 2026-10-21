@@ -14,7 +14,7 @@ verantwortlich sind, und an die Administratoren, die ihn durchführen. Sie erkl�
 Einstellungen, Logs und Caches jeder Marke getrennt gehalten werden können, was das im täglichen Betrieb und im Support
 ändert und welche Einstellungen das technische Team verwendet. Nichts davon ist standardmäßig eingeschaltet: Jede
 Einstellung „behält das bisherige Verhalten bei“, bis jemand sie setzt
-([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#in-short)).
+([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#kurz-gefasst)).
 
 ## Inhalt
 
@@ -41,7 +41,7 @@ Markenteam seine eigenen Einstellungen mit weniger Risiko für die anderen ände
 
 Seit Januar 2026 kann eine Erweiterung, die eine Website enthält, **Override-Einstellungen mitbringen, die nur aktiv
 sind, während einer ihrer eigenen Siteaccesses läuft**
-([Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)). Für eine
+([Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)). Für eine
 Erweiterung `site_example`:
 
 | Verzeichnis | Gilt für |
@@ -94,14 +94,14 @@ wie es unter Setup > Caches steht.
 
 **Setup > Logdateien** zeigt die Logdateien der Installation, einschließlich der Logs jeder Website
 (`var/<site>/log/*.log`) und derjenigen, die Erweiterungen schreiben, mit einer Navigation, die nach Kernel, Website,
-Erweiterungen, Webserver und rotierten Archiven gruppiert ist ([Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+Erweiterungen, Webserver und rotierten Archiven gruppiert ist ([Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 Jede Ansicht hat einen Permalink, sodass der Support einem Kollegen genau die gefilterte Ansicht schicken kann. Eine
 Fehlerseite zeigt eine Referenz, die zu den Zeilen der fehlgeschlagenen Anfrage führt
 ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)).
 
 Eine weitere nützliche Funktion für Teams mit Staging-Kopien: Der Installationsname stellt den Namen einer
 Nicht-Produktivinstallation vor den Seitentitel, sodass niemand die falsche Kopie bearbeitet
-([Installationsname in Seiten](../../../../eng-us/features/6.0/installation-name-in-pages.md)).
+([Installationsname in Seiten](../../../funktionen/6.0/installationsname-in-seiten.md)).
 
 ## Was Sie mit Ihrem Administrator vereinbaren sollten
 
@@ -116,15 +116,15 @@ Nicht-Produktivinstallation vor den Seitentitel, sodass niemand die falsche Kopi
 
 - [Eine Installation, viele Websites](eine-installation-viele-websites.md)
 - [Checkliste für mehrere Marken](checkliste-fuer-mehrere-marken.md)
-- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)
-- [Einstellungen pro Website innerhalb von Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
+- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)
+- [Einstellungen pro Website innerhalb von Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)
 - [Multisite in einer Installation (für Hoster)](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md#logs-und-caches-pro-website)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

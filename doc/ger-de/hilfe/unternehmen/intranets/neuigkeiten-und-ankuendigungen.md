@@ -38,8 +38,8 @@ was veröffentlichen darf. Jede hier genannte Funktion gehört zu Exponential od
 
 Neuigkeiten sind Inhaltsobjekte einer Artikelklasse, abgelegt in einem Ordner. Das fertige Website-Design `ezwebin`
 bringt Klassen und Templates für Artikel, Blogs, Veranstaltungen, Foren und mehr mit
-([ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md)), und die Seite
-[Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) erklärt, wie Sie eigene
+([ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md)), und die Seite
+[Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) erklärt, wie Sie eigene
 wählen oder definieren. Jeder Artikel hat eigene Versionen, einen Eigentümer und ein Veröffentlichungsdatum.
 
 Eine einfache Struktur, die für viele Organisationen funktioniert:
@@ -67,13 +67,13 @@ Veranstaltungen“:
 
 | Werkzeug | Was es ist | Quelle |
 |---|---|---|
-| Der Layout-Editor | Landingpages aus Layouttypen, Zonen und Blöcken, in einem Browser-Editor bearbeitet | [Landingpages mit Layouts](../../../../eng-us/help/creators/website-creators/landing-pages-with-layouts.md) |
-| `ezflow` | die klassischen Landingpages mit Blöcken und Zeitleisten | [Klassische Landingpages mit ezflow](../../../../eng-us/help/creators/website-creators/classic-landing-pages-with-ezflow.md) |
+| Der Layout-Editor | Landingpages aus Layouttypen, Zonen und Blöcken, in einem Browser-Editor bearbeitet | [Landingpages mit Layouts](../../ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md) |
+| `ezflow` | die klassischen Landingpages mit Blöcken und Zeitleisten | [Klassische Landingpages mit ezflow](../../ersteller/website-ersteller/klassische-landingpages-mit-ezflow.md) |
 
 Der Vergleich der beiden steht unter
-[ezflow oder der Layout-Editor](../../../../eng-us/help/creators/website-creators/classic-landing-pages-with-ezflow.md#ezflow-or-the-layouts-editor).
+[ezflow oder der Layout-Editor](../../ersteller/website-ersteller/klassische-landingpages-mit-ezflow.md#ezflow-oder-der-layouts-editor).
 Ein gemeinsamer Kopf- und Fußbereich für jede Seite ist unter
-[Gemeinsamer Kopf- und Fußbereich](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md) beschrieben.
+[Gemeinsamer Kopf- und Fußbereich](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md) beschrieben.
 
 ## Zu einer festgelegten Zeit veröffentlichen
 
@@ -89,8 +89,8 @@ Ihren Partner, es einzurichten und mit einem Artikel zu testen, bevor Sie sich d
 
 | Weg | Wie er funktioniert | Quelle |
 |---|---|---|
-| Benachrichtigungen | ein Mitarbeiter folgt dem Nachrichtenordner (**Benachrichtigen**) und bekommt eine Mail, wenn darunter etwas veröffentlicht wird, sofort oder als täglicher, wöchentlicher oder monatlicher Digest | [Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md) |
-| Ein Newsletter | `cjw_newsletter` schickt Ausgaben an Listen mit Double-Opt-in | [Bereich Newsletter](../newsletter/README.md) |
+| Benachrichtigungen | ein Mitarbeiter folgt dem Nachrichtenordner (**Benachrichtigen**) und bekommt eine Mail, wenn darunter etwas veröffentlicht wird, sofort oder als täglicher, wöchentlicher oder monatlicher Digest | [Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md) |
+| Ein Newsletter | `cjw_newsletter` schickt Ausgaben an Listen mit Double-Opt-in | [Bereich Newsletter](../newsletters/README.md) |
 | Die Startseite | die neuesten Einträge in einem Block | siehe oben |
 
 Benachrichtigungen verschickt der Lauf der Benachrichtigungen, den die Cronjob-Gruppe `frequent` startet
@@ -136,8 +136,8 @@ Atom, OPML oder als Feed für Apple Podcasts ([RSS-Feeds](../../../anleitungen/r
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

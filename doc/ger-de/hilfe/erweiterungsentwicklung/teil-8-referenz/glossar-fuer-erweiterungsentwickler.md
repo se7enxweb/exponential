@@ -36,7 +36,7 @@ begegnen.
 | Erweiterungspunkt (extension point) | ein registrierter Weg, über den sich eine Erweiterung einklinkt | [Erweiterungspunkte auf einen Blick](erweiterungspunkte-auf-einen-blick.md) |
 | Fetch-Funktion (fetch function) | eine Leseoperation eines Moduls, aus Templates mit `fetch()` aufgerufen | [Eingebaute Fetch-Funktionen nach Modul](referenz-der-fetch-funktionen.md) |
 | Fork | eine Kopie eines Repositorys, die Sie pflegen | [Wann forken und wann nicht](../teil-5-erweitern-forken-zurueckgeben/wann-forken.md) |
-| Formular-Token (form token) | das Geheimnis je Session, das jeder POST eines angemeldeten Benutzers mitführen muss | [ezformtoken und CSRF-Schutz](ezformtoken-und-csrf.md) |
+| Formular-Token (form token) | das Geheimnis je Sitzung, das jeder POST eines angemeldeten Benutzers mitführen muss | [ezformtoken und CSRF-Schutz](ezformtoken-und-csrf.md) |
 | Handler | eine durch eine Einstellung benannte Klasse, die einen Dienst bereitstellt (Mail-Transport, Bild-Handler) | [Durch Einstellungen benannte Handler](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) |
 | Kernel | der Kern von Exponential: `kernel/`, `lib/`, `settings/`, die mitgelieferten Designs | |
 | Kernel-Override (kernel override) | der Ersatz einer Kernel-Klasse durch eine Erweiterung: das letzte Mittel | [Kernel-Overrides: das letzte Mittel](../teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md) |
@@ -74,8 +74,8 @@ veröffentlichte Demo-Passwort. [Demomodus für Entwickler](demomodus-fuer-entwi
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -40,7 +40,7 @@ Ausbruch wartet nicht auf den Starttermin. Der Plan setzt voraus, dass eine Inst
 | Sektionen und Rollen anlegen; die medizinische Prüfung einrichten ([Struktur](struktur-sektionen-und-rollen.md)) | die Änderung einer Redakteurin oder eines Redakteurs wartet; eine prüfende Person gibt sie frei |
 | Bestätigen, dass der Workflow-Cronjob oft genug läuft | Statusleiste unter **Setup > Workflow-Prozesse** |
 | Die meistbesuchten Themen migrieren, in einfacher Sprache neu geschrieben | jedes hat eine Zusammenfassung, ein Überprüfungsdatum und eine prüfende Person |
-| Test der Barrierefreiheit der Templates | kein offener schwerwiegender Befund ([Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)) |
+| Test der Barrierefreiheit der Templates | kein offener schwerwiegender Befund ([Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)) |
 
 ## Tage 61 bis 90: Sprachen, Last und Start
 
@@ -48,9 +48,9 @@ Ausbruch wartet nicht auf den Starttermin. Der Plan setzt voraus, dass eine Inst
 |---|---|
 | Sprach-Siteaccesses und Rollen für Übersetzende einrichten | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
 | Vorlagen für Warnungen und die wichtigsten Themen in die vorrangigen Sprachen übersetzen | |
-| Lasttest mit eingeschalteten Caches und Entscheidung über statischen Cache oder ein CDN für Spitzen | [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md) |
+| Lasttest mit eingeschalteten Caches und Entscheidung über statischen Cache oder ein CDN für Spitzen | [Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md) |
 | Ein Wartungsfenster und eine Wiederherstellung proben | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
-| Start | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Start | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 Prüfungen beim Start:
 
@@ -71,12 +71,13 @@ Prüfungen beim Start:
 
 - [Öffentliche Gesundheit](README.md)
 - [Warnungen in vielen Sprachen und in einfacher Sprache](warnungen-mehrsprachig-und-in-einfacher-sprache.md)
-- [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

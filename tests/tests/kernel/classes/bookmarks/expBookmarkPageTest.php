@@ -216,7 +216,7 @@ class expBookmarkPageTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'content/bookmark', expBookmarkPage::path( expBookmarkPage::SCOPE_ALL ) );
         $this->assertSame( 'content/bookmark/(folder)/top/(sort)/name', expBookmarkPage::path( 0, 'name' ) );
         // the search is a view parameter: "/" cannot travel in one and becomes a space
-        $this->assertSame( 'content/bookmark/(folder)/12/(offset)/25/(q)/a%20b%20%3Cx%3E', expBookmarkPage::path( 12, 'evil', 'a/b <x>', 25 ) );
+        $this->assertSame( 'content/bookmark/(folder)/12/(offset)/25/(q)/a~2Fb%20%3Cx%3E', expBookmarkPage::path( 12, 'evil', 'a/b <x>', 25 ) );
         $this->assertStringNotContainsString( '?', expBookmarkPage::path( 12, 'own', 'x', 0 ) );
         $this->assertStringNotContainsString( '//', expBookmarkPage::path( 3, 'own', '//evil.example' ) );
     }

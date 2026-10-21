@@ -19,7 +19,7 @@ aktiv sind.
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Inhaltsklassen, die Sie selbst definieren (Artikel, Produkte, Veranstaltungen ...) | Partner definiert, Redaktion füllt | [Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md) |
+| Inhaltsklassen, die Sie selbst definieren (Artikel, Produkte, Veranstaltungen ...) | Partner definiert, Redaktion füllt | [Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md) |
 | Versionskontrolle: Jede Veröffentlichung bewahrt die frühere Version | Redaktion | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Freigabe von Inhalten und zeitgesteuerte Veröffentlichung | Redaktion, freigebende Personen | [Workflows](../../../anleitungen/workflows.md) |
 | Multimedia mit automatischer Umwandlung und Skalierung von Bildern | Redaktion | [Medien und Uploads](../../medien-und-uploads.md) |
@@ -32,15 +32,15 @@ aktiv sind.
 |---|---|---|
 | Exponential Layouts: Layouts, Zonen und Blöcke, von der Redaktion angeordnet, und Regeln, die entscheiden, welche Seiten sie erhalten | Redaktion, Marketing | [Der Layouts-Editor](../../layout-editor.md) |
 | Gemeinsame Layouts: ein Header oder Footer, einmal gebaut und in andere Layouts verknüpft | Partner richtet ein, Redaktion pflegt | `README.md`, „Exponential Layouts“ |
-| Trennung von Inhalt und Darstellung, eine erweiterbare Template-Engine | Partner, Designer | [Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md) |
+| Trennung von Inhalt und Darstellung, eine erweiterbare Template-Engine | Partner, Designer | [Template-Overrides](../../ersteller/website-ersteller/template-overrides.md) |
 
 ## Sprachen und Websites
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
 | Mehrsprachige Inhalte, mit 219 Locales | Übersetzer, Redaktion | [Sprachen](../../sprachen.md), [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
-| Sprachen mit Schreibrichtung von rechts nach links | Redaktion | [Von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md) |
-| Mehrere Websites aus einer Installation | Betreiber, Administrator | [Multisite-Einrichtung](../../../../eng-us/help/creators/website-creators/multisite-setup.md) |
+| Sprachen mit Schreibrichtung von rechts nach links | Redaktion | [Von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md) |
+| Mehrere Websites aus einer Installation | Betreiber, Administrator | [Multisite-Einrichtung](../../ersteller/website-ersteller/multisite-einrichten.md) |
 
 ## Handel
 
@@ -56,9 +56,9 @@ aktiv sind.
 |---|---|---|
 | Kontaktformulare (der Information Collector) | Besucher; Mitarbeitende lesen die Einsendungen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | Feeds als RSS, ATOM, iTunes-RSS und OPML | Leser, Partner, Podcast-Hörer | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
-| E-Mail-Einstellungen: eine Seite, auf der Menschen wählen, welche E-Mails sie erhalten | Besucher, Mitglieder | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
-| Benachrichtigungen, wenn sich verfolgte Inhalte ändern | Redaktion, Mitglieder | [Benachrichtigungen](../../../../eng-us/features/6.0/notifications.md) |
-| Newsletter mit der Erweiterung `cjw_newsletter` | Marketing | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
+| E-Mail-Einstellungen: eine Seite, auf der Menschen wählen, welche E-Mails sie erhalten | Besucher, Mitglieder | [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md) |
+| Benachrichtigungen, wenn sich verfolgte Inhalte ändern | Redaktion, Mitglieder | [Benachrichtigungen](../../../funktionen/6.0/benachrichtigungen.md) |
+| Newsletter mit der Erweiterung `cjw_newsletter` | Marketing | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
 
 ## Integration
 
@@ -73,28 +73,28 @@ aktiv sind.
 Exponential Intelligence schreibt Entwürfe in der Administration und veröffentlicht nie von sich aus; jedes Nachschlagen
 und jeder Entwurf läuft mit den eigenen Berechtigungen des Redakteurs, Kosten lassen sich deckeln, und eine einzige
 Einstellung schaltet ihn überall ab (`README.md`, „Exponential Intelligence“). Wer ihn nutzt: die Redaktion, wobei der
-Betreiber entscheidet, ob und mit welchem Anbieter ([expai](../../../../eng-us/features/6.0/extensions/expai.md)).
+Betreiber entscheidet, ob und mit welchem Anbieter ([expai](../../../funktionen/6.0/erweiterungen/expai.md)).
 
 ## Betrieb
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Ein manipulationssicheres Prüfprotokoll: wer was getan hat | Betreiber, Administrator | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
-| Der Inhaltsfinder: Inhalte anhand von ID, Adresse oder Dateipfad finden | Administrator, erfahrene Redakteure | [Der Inhaltsfinder](../../../../eng-us/features/6.0/content-finder.md) |
-| Inhaltsaufträge: große Entfernungen, Kopien und Verschiebungen im Hintergrund | Redaktion, Administrator | [Inhaltsaufträge](../../../../eng-us/features/6.0/content-jobs.md) |
-| Der Log-Viewer | Administrator, Hoster | [Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md) |
+| Ein manipulationssicheres Prüfprotokoll: wer was getan hat | Betreiber, Administrator | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
+| Der Inhaltsfinder: Inhalte anhand von ID, Adresse oder Dateipfad finden | Administrator, erfahrene Redakteure | [Der Inhaltsfinder](../../../funktionen/6.0/inhalts-finder.md) |
+| Inhaltsaufträge: große Entfernungen, Kopien und Verschiebungen im Hintergrund | Redaktion, Administrator | [Inhaltsaufträge](../../../funktionen/6.0/inhaltsauftraege.md) |
+| Der Log-Viewer | Administrator, Hoster | [Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md) |
 | Wartungsmodus mit einer freundlichen Seite | Administrator | [Wartungsmodus](../../../anleitungen/wartungsmodus.md) |
 | Die Upgrade-Prüfung von Dateien und Datenbank | Administrator, Partner | [Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Exponential Velocity, der mitgelieferte Anwendungsserver | Hoster | [Velocity für Unternehmen](../../unternehmen/zuverlaessigkeit/velocity-fuer-unternehmen.md) |
-| Das Hilfesystem in der Administration (`/exphelp/dashboard`) | Mitarbeitende, deren Rolle `exphelp/read` hat | [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md) |
+| Das Hilfesystem in der Administration (`/exphelp/dashboard`) | Mitarbeitende, deren Rolle `exphelp/read` hat | [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md) |
 
 ## Sicherheit
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
 | Zweistufige Anmeldung | Alle mit einem Konto | [Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Formular-Tokens gegen Cross-Site Request Forgery | Automatisch | [„This form has expired“](../../../../eng-us/features/6.0/form-expired-page.md) |
-| Content Security Policy | Hoster, Administrator | [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) |
+| Formular-Tokens gegen Cross-Site Request Forgery | Automatisch | [„This form has expired“](../../../funktionen/6.0/seite-abgelaufenes-formular.md) |
+| Content Security Policy | Hoster, Administrator | [Content Security Policy](../../../funktionen/6.0/content-security-policy.md) |
 | Ratschläge zur Härtung von Produktiv-Websites | Hoster, Partner | [Sicherheitshärtung](../../sicherheitshaertung.md) |
 
 ## Den Rundgang nutzen
@@ -110,3 +110,11 @@ oft die günstigste Verbesserung, die Sie vornehmen können.
 - [Wofür Sie nicht bezahlen](../../unternehmen/kosten/wofuer-sie-nicht-bezahlen.md)
 - [Jährliche Überprüfung des Nutzens](jaehrliche-ueberpruefung-des-nutzens.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

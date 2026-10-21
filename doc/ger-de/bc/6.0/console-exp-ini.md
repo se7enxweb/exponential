@@ -276,7 +276,7 @@ sodass Editor und Befehl immer übereinstimmen.
 - **Atomar.** Die Datei wird in eine temporäre Datei im selben Verzeichnis geschrieben und dann umbenannt. Hat sich die
   Datei auf der Festplatte geändert, nachdem der Befehl sie gelesen hat, wird das Schreiben mit Exit 4 abgelehnt.
 - **Zeilen `[Include ...]`** (eine Einstellungsdatei, die andere Dateien liest, siehe
-  [die Anleitung zur Seite der Einstellungen](../../../eng-us/guides/settings-page.md#splitting-a-large-settings-file-with-include-))
+  [die Anleitung zur Seite der Einstellungen](../../anleitungen/einstellungsseite.md#eine-große-einstellungsdatei-mit-include--aufteilen))
   bleiben, wie sie geschrieben sind. Sie werden nicht aufgelöst: `get`, `where` und `list` zeigen die Einstellungen der
   Datei selbst, und eine neue Einstellung der Gruppe vor einer solchen Zeile kommt in diese Gruppe, über die Zeile.
 - **Sicherungen.** Vor jedem Schreiben wird die Datei nach `var/backup/ini/<timestamp>/<path>` kopiert.
@@ -515,8 +515,8 @@ Ladereihenfolge) stehen in `tests/tests/kernel/classes/ini/` (`expIniEditorTest`
 ## Verwandte Seiten
 
 - [eZINI behält beim Speichern die Kommentare](ezini-behaelt-kommentare.md)
-- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../eng-us/features/6.0/exp-ini-command.md)
-- [Juni 2026, zweite Hälfte (16. bis 30. Juni)](../../../eng-us/history/2026/2026-06b.md)
+- [Einstellungen auf der Kommandozeile ändern: exp:ini](../../funktionen/6.0/exp-ini-befehl.md)
+- [Juni 2026, zweite Hälfte (16. bis 30. Juni)](../../geschichte/2026/2026-06b.md)
 - [Die Leiste Exp Debug](debug-leiste.md) (schreibt über dieselbe Engine)
 - [Exponential-Konsole](konsole.md)
 - [Spezifikation: Verzeichnisse und Platzierungen von INI-Overrides](../../spezifikationen/6.0/ini-override-platzierungen.md)

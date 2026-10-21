@@ -25,19 +25,19 @@ Das Entfernen, Kopieren oder Verschieben eines großen Teils des Inhaltsbaums ei
 einzigen Webanfrage und konnte am Zeitlimit, am Speicherlimit oder an einer riesigen Transaktion scheitern“. Ab der
 Produktlinie 6.0.15 bietet die Administration an, einen solchen Vorgang als **Inhaltsjob** auszuführen: „ein
 Hintergrundprozess, der in Stapeln arbeitet, nach jedem Stapel einen Prüfpunkt setzt und genau dort weitermacht, wo er
-aufgehört hat, sogar nach einem `kill -9`“ ([Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md)). Seit dem
+aufgehört hat, sogar nach einem `kill -9`“ ([Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md)). Seit dem
 12. Oktober 2026 installiert dieselbe Engine auch Pakete im Hintergrund und schreibt große Audit-Exporte in eine Datei.
 
 ## Fakten, die Sie drucken können
 
 | Fakt | Quelle |
 |---|---|
-| Inhaltsjobs wurden am 2. Oktober 2026 hinzugefügt | [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) |
+| Inhaltsjobs wurden am 2. Oktober 2026 hinzugefügt | [Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md) |
 | Stapel, ein Prüfpunkt nach jedem Stapel, Fortsetzen nach einer Unterbrechung | ebenda |
-| Jobs lassen sich in der Administration und auf der Kommandozeile starten und verfolgen | [Von der Kommandozeile](../../../eng-us/features/6.0/content-jobs.md#from-the-command-line) |
-| Paketinstallation und Audit-Exporte verwenden dieselbe Engine (seit 12. Oktober 2026) | [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) |
-| Die eingereihte Arbeit von Erweiterungen (zum Beispiel Exponential Intelligence) läuft in einer eigenen Job-Warteschlange, `expqueue` | [expqueue](../../../eng-us/features/6.0/extensions/expqueue.md) |
-| Entwickler können eigene Jobtypen hinzufügen | [Inhaltsjobs (Entwickler)](../../../eng-us/bc/6.0/content-jobs.md) |
+| Jobs lassen sich in der Administration und auf der Kommandozeile starten und verfolgen | [Von der Kommandozeile](../../funktionen/6.0/inhaltsauftraege.md#auf-der-kommandozeile) |
+| Paketinstallation und Audit-Exporte verwenden dieselbe Engine (seit 12. Oktober 2026) | [Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md) |
+| Die eingereihte Arbeit von Erweiterungen (zum Beispiel Exponential Intelligence) läuft in einer eigenen Job-Warteschlange, `expqueue` | [expqueue](../../funktionen/6.0/erweiterungen/expqueue.md) |
+| Entwickler können eigene Jobtypen hinzufügen | [Inhaltsjobs (Entwickler)](../../bc/6.0/inhaltsjobs.md) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -54,14 +54,14 @@ aufgehört hat, sogar nach einem `kill -9`“ ([Inhaltsjobs](../../../eng-us/fea
 ## Verwandte Seiten
 
 - [Thema: Betriebswerkzeuge für Administratoren](thema-betriebswerkzeuge-fuer-administratoren.md)
-- [Thema: der Audit-Trail](thema-audit-trail.md)
+- [Thema: das Prüfprotokoll](thema-audit-trail.md)
 - [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

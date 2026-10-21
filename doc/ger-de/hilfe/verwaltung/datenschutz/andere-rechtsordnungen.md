@@ -28,7 +28,7 @@ die Dokumente des Projekts zuordnen, und zeigt einen funktionsbasierten Ansatz.
 
 | Gesetz | Was das Projekt dokumentiert | Wo |
 |---|---|---|
-| CAN-SPAM Act (Vereinigte Staaten, 15 U.S.C. 7701 ff.) | **„Complies“** (erfüllt) für E-Mails über das E-Mail-Gate: Abmeldelink und `List-Unsubscribe` werden sofort beachtet; die Postanschrift des Absenders bleibt der Website überlassen | [Datenschutzstandards](../../../../eng-us/standards/privacy.md#can-spam-act-and-one-click-unsubscribe) |
+| CAN-SPAM Act (Vereinigte Staaten, 15 U.S.C. 7701 ff.) | **„Erfüllt“** für E-Mails über das E-Mail-Gate: Abmeldelink und `List-Unsubscribe` werden sofort beachtet; die Postanschrift des Absenders bleibt der Website überlassen | [Datenschutzstandards](../../../standards/datenschutz.md#can-spam-act-und-abmeldung-mit-einem-klick) |
 | CASL (Kanada) und CCPA/CPRA (Kalifornien) | die Funktionen der E-Mail-Einstellungen, in einer Checkliste zugeordnet | [die Rechts-Checkliste](../../../spezifikationen/6.0/mail-einstellungen-compliance.md) |
 
 E-Mails öffentlicher Stellen sind nicht immer „kommerziell“ im Sinne solcher Gesetze; fragen Sie Ihre Rechtsberatung,
@@ -60,14 +60,15 @@ zu:
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Die DSGVO und Exponential](dsgvo-zuordnung.md)
 - [Abmelden mit einem Klick](abmelden-mit-einem-klick.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

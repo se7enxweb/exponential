@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die finden, dass gute Dokumentation allen gehören sollte. Die Dokumentation von
 Exponential ist frei: „Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors“,
-lizenziert unter der GNU Free Documentation License 1.3 oder später ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+lizenziert unter der GNU Free Documentation License 1.3 oder später ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).
 
 ## Inhalt
 
@@ -25,7 +25,7 @@ lizenziert unter der GNU Free Documentation License 1.3 oder später ([Die Lizen
 - Wissen in einem Chat verschwindet; Wissen in der Dokumentation bleibt.
 - Freie Dokumentation kann ohne Nachfrage übersetzt, gedruckt und unterrichtet werden.
 - Verbesserungen werden unter derselben Lizenz angenommen und bleiben so für alle frei
-  ([Zur Dokumentation beitragen](../../../eng-us/README-LICENSE.md#contributing-to-the-documentation)).
+  ([Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumentation-beitragen)).
 
 ## Was Leser dürfen
 

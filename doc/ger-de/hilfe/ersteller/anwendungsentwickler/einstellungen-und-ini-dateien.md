@@ -51,14 +51,26 @@ ExtensionRepositories[]=expdemo
 
 ## Die Schichten
 
-Ein Wert wird in dieser Reihenfolge gelesen; der letzte gewinnt:
+Nach `settings/<file>.ini` (den Standardwerten des Kernels) liest `eZINI::overrideDirs()` die Override-Verzeichnisse
+Geltungsbereich für Geltungsbereich: `sa-extension`, `siteaccess`, `extension`, `override`. Ein Wert wird in dieser
+Reihenfolge gelesen; der letzte gewinnt:
 
-1. `settings/<file>.ini` (die Standardwerte des Kernels; bei Ihrer eigenen Datei die `settings/<file>.ini` der
-   Erweiterung)
-2. `settings/<file>.ini.append.php` der aktiven Erweiterungen
-3. `settings/siteaccess/<siteaccess>/` und `settings/siteaccess/<siteaccess>/` der Erweiterungen
-4. `settings/override/` der Erweiterungen für ihre eigenen Siteaccesses ([Einstellungen je Website](../../../../eng-us/features/6.0/multi-site-ini-overrides.md))
-5. `settings/override/<file>.ini.append.php` der Installation
+1. `settings/<file>.ini`, die Standardwerte des Kernels
+2. `sa-extension`: `settings/` der Erweiterungen, die der Siteaccess in `ActiveAccessExtensions[]` einschaltet
+3. `siteaccess`: die Siteaccess-Verzeichnisse in Erweiterungen (`settings/siteaccess/<siteaccess>/`, dann
+   `settings/override__<group>/` und `settings/override/`, nur gelesen für einen Siteaccess, für den die Erweiterung
+   ein Verzeichnis `settings/siteaccess/<siteaccess>/` hat; [Einstellungen je Website](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)),
+   danach `settings/siteaccess/<siteaccess>/` der Installation
+4. `extension`: `settings/` jeder Erweiterung in `ActiveExtensions[]`, also auch die `<file>.ini` und
+   `<file>.ini.append.php`, die Ihre Erweiterung mitbringt
+5. `override`: `settings/override/` der Installation
+
+Ein Wert in `settings/` einer aktiven Erweiterung gewinnt also gegenüber demselben Wert in
+`settings/siteaccess/<siteaccess>/`; nur `settings/override/` gewinnt gegenüber ihm, und das gilt für jeden Siteaccess.
+Muss eine Website einen Schlüssel je Siteaccess setzen können, liefern Sie diesen Schlüssel nicht in der
+`settings/`-Datei Ihrer Erweiterung aus; geben Sie seinen Standardwert im Code mit `hasVariable()` an (unten).
+Innerhalb einer Schicht gewinnt eine Erweiterung, die früher in `ActiveExtensions[]` steht, gegenüber einer späteren.
+`./console exp:ini where <file>/<block>/<key> <siteaccess>` zeigt die Dateien einer Einstellung in dieser Reihenfolge.
 
 Arrays addieren sich über die Schichten; eine leere Zeile `Key[]` löscht, was vorher kam.
 
@@ -78,7 +90,7 @@ wenn ein Schlüssel fehlen kann.
 ## Einstellungen ändern
 
 `exp:ini` liest und schreibt jeden Geltungsbereich Zeile für Zeile und behält Kommentare bei
-([Einstellungen auf der Kommandozeile ändern](../../../../eng-us/features/6.0/exp-ini-command.md)):
+([Einstellungen auf der Kommandozeile ändern](../../../funktionen/6.0/exp-ini-befehl.md)):
 
 ```bash
 ./console exp:ini get expdemo.ini/ListSettings/DefaultLimit
@@ -110,8 +122,8 @@ Einstellungen werden gecacht. Nach einer Änderung: `php bin/php/ezcache.php --c
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

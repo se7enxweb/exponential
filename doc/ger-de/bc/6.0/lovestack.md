@@ -54,7 +54,7 @@ Was die 36 Funktionen sind, gruppiert danach, was sie nach dem Upgrade mit einer
 
 | | Funktion | Was Sie sehen würden |
 |---|---|---|
-| [L03](#l03--das-abmelden-beendet-die-session-und-ihr-cookie) | Das Abmelden beendet die Session wirklich | nach dem Abmelden sind die Session und ihr Cookie weg, statt nur eine neue ID zu erhalten |
+| [L03](#l03--das-abmelden-beendet-die-sitzung-und-ihr-cookie) | Das Abmelden beendet die Sitzung wirklich | nach dem Abmelden sind die Sitzung und ihr Cookie weg, statt nur eine neue ID zu erhalten |
 | [L05](#l05--hochgeladene-bilder-werden-anhand-ihres-inhalts-geprüft) | Hochgeladene Bilder werden anhand ihres Inhalts geprüft | eine Datei, die kein aufgeführter Bildtyp ist (eine umbenannte Datei, HEIC, SVG), wird abgelehnt |
 | [L06](#l06--vorschaubilder-von-paketen-werden-ebenso-geprüft) | Vorschaubilder von Paketen werden ebenso geprüft | ein gefälschtes Bild als Vorschaubild eines Pakets oder Bild eines Styles wird abgelehnt |
 | [L11](#l11--datenbankfehler-tragen-die-fehlernummer-des-treibers) | Datenbankfehler tragen die Fehlernummer des Treibers | Entwickler können im Code „doppelter Schlüssel“ von „Tabelle fehlt“ unterscheiden |
@@ -77,7 +77,7 @@ Was die 36 Funktionen sind, gruppiert danach, was sie nach dem Upgrade mit einer
 | [L09](#l09--eine-warnung-für-einen-operator-parameter-ohne-standardwert) | Eine Warnung, wenn ein Parameter eines Template-Operators keinen Standardwert hat | für Template-Entwickler |
 | [L15](#l15--eine-schaltfläche-kopieren-in-der-vollständigen-admin-ansicht) | Eine Schaltfläche Kopieren in der vollständigen Admin-Ansicht | bisher gab es Kopieren nur im Kontextmenü |
 | [L27](#l27--die-template-operatoren-rawurlencode-und-rawurldecode) | Die Template-Operatoren `rawurlencode` und `rawurldecode` | für Template-Entwickler |
-| [SameSite](#die-session-einstellung-samesite-von-lovestack-wird-ebenfalls-gelesen) | Die Einstellung `[Session] SameSite` von LoveStack wird ebenfalls gelesen | für LoveStack geschriebene Einstellungen funktionieren weiter |
+| [SameSite](#die-sitzungseinstellung-samesite-von-lovestack-wird-ebenfalls-gelesen) | Die Einstellung `[Session] SameSite` von LoveStack wird ebenfalls gelesen | für LoveStack geschriebene Einstellungen funktionieren weiter |
 
 ### Neue Optionen, ausgeschaltet, bis Sie sie einschalten
 
@@ -135,7 +135,7 @@ Siteaccess, nie in die ausgelieferte Datei; leeren Sie danach den INI-Cache
 (`php bin/php/ezcache.php --clear-tag=ini`). Die Testdateien liegen unter `tests/tests/` und laufen für sich:
 `php vendor/bin/phpunit tests/tests/<path>`.
 
-### Sicherheit und Sessions
+### Sicherheit und Sitzungen
 
 #### L01 — Knotendaten-Aufrufe können eine Richtlinie verlangen
 
@@ -152,7 +152,7 @@ zusätzlich die Richtlinie *ezjscore / call* mit der Funktionsliste `ezjscnode`.
 | Einschalten | geben Sie *ezjscore / call* mit der Funktionsliste `ezjscnode` jeder Rolle, deren Benutzer die Administration ohne vollen Zugriff verwenden, und setzen Sie dann `RequirePolicy=enabled` in `settings/override/ezjscore.ini.append.php`. Die ausgelieferten Designs rufen `ezjscnode` nie für anonyme Besucher auf; siehe [wer ezjscnode aufruft](love/l01-aufrufer.md) |
 | Test | `extension/ezjscore/ezjscServerRouterPolicyTest.php` |
 | LoveStack | [`aa307a7ff3`](https://github.com/mugoweb/ezpublish-legacy/commit/aa307a7ff3110121006b1b97f19fdcbdeab41190) (2024) |
-| Anleitung | [Rollen und Richtlinien, Abschnitt 8](../../../eng-us/guides/roles-and-policies.md#8-decide-who-may-register-and-who-may-read-node-data) |
+| Anleitung | [Rollen und Richtlinien, Abschnitt 8](../../anleitungen/rollen-und-richtlinien.md#8-festlegen-wer-sich-registrieren-und-wer-knotendaten-lesen-darf) |
 
 #### L02 — Die Registrierung kann eine Richtlinie verlangen
 
@@ -171,24 +171,24 @@ Website ohne offene Registrierung keinen toten Link zeigt.
 | Für Entwickler | `expPolicyOmitList::entries()`, `::excluded()`, `::omits( $module, $view )`; in Templates `fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) )` |
 | Tests | `kernel/classes/expPolicyOmitListTest.php`, `kernel/content/eZLoginTemplatesRegisterLinkTest.php` |
 | LoveStack | [`98854ab935`](https://github.com/mugoweb/ezpublish-legacy/commit/98854ab9352eecbfd00e42b067d0cb3b7d26e6f7) (2021) |
-| Anleitung | [Rollen und Richtlinien, Abschnitt 8](../../../eng-us/guides/roles-and-policies.md#8-decide-who-may-register-and-who-may-read-node-data) |
+| Anleitung | [Rollen und Richtlinien, Abschnitt 8](../../anleitungen/rollen-und-richtlinien.md#8-festlegen-wer-sich-registrieren-und-wer-knotendaten-lesen-darf) |
 
-#### L03 — Das Abmelden beendet die Session und ihr Cookie
+#### L03 — Das Abmelden beendet die Sitzung und ihr Cookie
 
-Für **alle**. Das Abmelden entfernt die Session und ihren Inhalt, statt ihr eine neue ID zu geben und den Inhalt zu
-behalten. Jeder Session-Handler sendet das Session-Cookie abgelaufen, mit demselben Pfad, derselben Domain, `Secure`,
+Für **alle**. Das Abmelden entfernt die Sitzung und ihren Inhalt, statt ihr eine neue ID zu geben und den Inhalt zu
+behalten. Jeder Session-Handler sendet das Sitzungs-Cookie abgelaufen, mit demselben Pfad, derselben Domain, `Secure`,
 `HttpOnly` und `SameSite`, mit denen es gesetzt wurde, sodass der Browser genau dieses Cookie verwirft und die alte
-Session-ID niemanden mehr anmeldet. Eine später in derselben Anfrage gestartete Session erhält eine neue ID, unter
+Sitzungs-ID niemanden mehr anmeldet. Eine später in derselben Anfrage gestartete Sitzung erhält eine neue ID, unter
 PHP-FPM wie unter Velocity.
 
 | | |
 |---|---|
 | Einstellungen | keine |
 | Neue Installation und Upgrade | ein |
-| Hinweis für Entwickler | eigener Code, der nach `eZUser::logoutCurrent()` Session-Variablen liest, findet die Session leer. Neu: `eZSession::expiredCookie()`, `eZSession::expireCookie()` |
+| Hinweis für Entwickler | eigener Code, der nach `eZUser::logoutCurrent()` Sitzungsvariablen liest, findet die Sitzung leer. Neu: `eZSession::expiredCookie()`, `eZSession::expireCookie()` |
 | Test | `kernel/classes/eZUserLogoutTest.php` |
 | LoveStack | [`13ace6c9c8`](https://github.com/mugoweb/ezpublish-legacy/commit/13ace6c9c87ace0869ab234672aeffb377412e29) (2019) |
-| Anleitung | [Sicherheit und Audit, Abschnitt 1](../../../eng-us/guides/security-and-audit.md#1-check-the-hardening-that-is-already-on-5-minutes) |
+| Anleitung | [Sicherheit und Audit, Abschnitt 1](../../anleitungen/sicherheit-und-audit.md#1-die-bereits-aktive-härtung-prüfen-5-minuten) |
 
 #### L04 — Ein Konto pro Anmeldename
 
@@ -207,7 +207,7 @@ ein anderes Konto hat; zwei Anfragen, die gleichzeitig dasselbe Konto anlegen, e
 | Für Entwickler | `expUserLoginIntegrity::duplicates()`, `indexStatus()`, `addUniqueIndex()`, `loginTakenBy()`, `storeUser()` |
 | Test | `kernel/classes/expUserLoginIntegrityTest.php` |
 | LoveStack | [`826e1d4647`](https://github.com/mugoweb/ezpublish-legacy/commit/826e1d4647060b30ed6af1be5dff3233ced17840) (2020) |
-| Anleitung | [Sicherheit und Audit, Abschnitt 7](../../../eng-us/guides/security-and-audit.md#7-one-account-per-login-2-minutes) |
+| Anleitung | [Sicherheit und Audit, Abschnitt 7](../../anleitungen/sicherheit-und-audit.md#7-ein-konto-pro-login-2-minuten) |
 
 #### L05 — Hochgeladene Bilder werden anhand ihres Inhalts geprüft
 
@@ -224,7 +224,7 @@ Importe; `eZContentUpload` lehnt eine solche Datei ab, bevor es ein Objekt anleg
 | Für Entwickler | `expImageUploadValidator::validate( $path, $originalName = null )` gibt `array( 'valid' => bool, 'mime' => string )` zurück |
 | Tests | `kernel/classes/expImageUploadValidatorTest.php`, `extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php` |
 | LoveStack | [`c8e45fced7`](https://github.com/mugoweb/ezpublish-legacy/commit/c8e45fced70f3b9f3a03c1b4329f3eb863c72188) (2017) |
-| Anleitung | [Verhaltensänderungen vom Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md#access-and-security) |
+| Anleitung | [Verhaltensänderungen vom Oktober 2026](verhaltensaenderungen-2026-10.md#zugriff-und-sicherheit) |
 
 #### L06 — Vorschaubilder von Paketen werden ebenso geprüft
 
@@ -237,12 +237,12 @@ Style-Pakets mit derselben Prüfung des Inhalts und derselben Liste erlaubter Ty
 | Neue Installation und Upgrade | ein |
 | Test | `kernel/classes/packages/eZStylePackageCreatorTest.php` |
 | LoveStack | [`04b3b6985a`](https://github.com/mugoweb/ezpublish-legacy/commit/04b3b6985a0d8b07f1d0f32d0d9840c1b308fb62) (2018) |
-| Anleitung | [Verhaltensänderungen vom Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md#access-and-security) |
+| Anleitung | [Verhaltensänderungen vom Oktober 2026](verhaltensaenderungen-2026-10.md#zugriff-und-sicherheit) |
 
-#### Die Session-Einstellung `SameSite` von LoveStack wird ebenfalls gelesen
+#### Die Sitzungseinstellung `SameSite` von LoveStack wird ebenfalls gelesen
 
 Für **Administratoren** von Websites, die von LoveStack kommen. `site.ini [Session] SameSite=`, der Name, den
-LoveStack für das Attribut SameSite des Session-Cookies verwendet, wird gelesen, wenn `CookieSameSite` von Exponential
+LoveStack für das Attribut SameSite des Sitzungs-Cookies verwendet, wird gelesen, wenn `CookieSameSite` von Exponential
 nicht gesetzt ist (`CookieSameSite` gewinnt, wenn beide gesetzt sind), und einmal pro Anfrage auf der
 Deprecation-Stufe der Debug-Ausgabe vermerkt. Für Besucher ändert sich nichts; benennen Sie die Einstellung in
 `CookieSameSite` um, damit der Hinweis verschwindet.
@@ -251,7 +251,7 @@ Deprecation-Stufe der Debug-Ausgabe vermerkt. Für Besucher ändert sich nichts;
 |---|---|
 | Test | `lib/ezsession/eZSessionSameSiteAliasTest.php` |
 | LoveStack | [`e56cb305f0`](https://github.com/mugoweb/ezpublish-legacy/commit/e56cb305f0d83548bf3ec8ac44668be7ff4bc796) (2025) |
-| Anleitung | [Sicherheit und Audit, Abschnitt 1](../../../eng-us/guides/security-and-audit.md#1-check-the-hardening-that-is-already-on-5-minutes) |
+| Anleitung | [Sicherheit und Audit, Abschnitt 1](../../anleitungen/sicherheit-und-audit.md#1-die-bereits-aktive-härtung-prüfen-5-minuten) |
 
 ### Diagnose und Protokollierung
 
@@ -269,7 +269,7 @@ den anderen Meldungen aufgelistet. Unter PHP 8 hält das die Debug-Ausgabe lesba
 | Für Entwickler | `eZDebug::LEVEL_DEPRECATED`, `eZDebug::SHOW_DEPRECATED` (Teil von `SHOW_ALL`), `eZDebug::writeDeprecated()`, `eZDebug::deprecatedCount()` |
 | Test | `lib/ezutils/eZDebugDeprecatedTest.php` |
 | LoveStack | [`fbbd333a85`](https://github.com/mugoweb/ezpublish-legacy/commit/fbbd333a85350123a2234db1357fc5fd9478ca3b), [`e20570a7ad`](https://github.com/mugoweb/ezpublish-legacy/commit/e20570a7ad846b31f3e60609dec0b9c0f7e44086), [`b7832d110e`](https://github.com/mugoweb/ezpublish-legacy/commit/b7832d110e4790edc4510328353f24acfb7df19b) (2025) |
-| Anleitung | [PHP-Deprecations und Größe der Log-Dateien](../../../eng-us/guides/operating-a-site.md#php-deprecations-and-log-file-sizes) |
+| Anleitung | [PHP-Deprecations und Größe der Log-Dateien](../../anleitungen/betrieb-einer-website.md#php-deprecations-und-größe-der-logdateien) |
 
 #### L08 — Größe der Log-Dateien in site.ini
 
@@ -282,7 +282,7 @@ sind Einstellungen, die eZLog und eZDebug lesen.
 | Neue Installation und Upgrade | Log-Dateien werden bei 2 MB statt bei 200 KB rotiert; `LogFileMaxSize=204800` behält die alte Größe |
 | Test | `lib/ezfile/eZLogMaxSizeTest.php` |
 | LoveStack | [`e39dde30ff`](https://github.com/mugoweb/ezpublish-legacy/commit/e39dde30ff3213bc32e7423b0827ef29f07d55af) (2021) |
-| Anleitung | [PHP-Deprecations und Größe der Log-Dateien](../../../eng-us/guides/operating-a-site.md#php-deprecations-and-log-file-sizes) |
+| Anleitung | [PHP-Deprecations und Größe der Log-Dateien](../../anleitungen/betrieb-einer-website.md#php-deprecations-und-größe-der-logdateien) |
 
 #### L09 — Eine Warnung für einen Operator-Parameter ohne Standardwert
 
@@ -296,7 +296,7 @@ Kompilieren).
 | Neue Installation und Upgrade | ein; nur die Warnung ist neu |
 | Test | `lib/eztemplate/eZTemplateOperatorDefaultWarningTest.php` |
 | LoveStack | [`0bb0bac618`](https://github.com/mugoweb/ezpublish-legacy/commit/0bb0bac618273b2eea8ba139864677b666c0b382) (2016) |
-| Anleitung | [Ein Operator-Parameter ohne Standardwert](../../../eng-us/guides/templates-and-design.md#an-operator-parameter-without-a-default-value) |
+| Anleitung | [Ein Operator-Parameter ohne Standardwert](../../anleitungen/templates-und-design.md#ein-operator-parameter-ohne-standardwert) |
 
 #### L10 — Bearbeitungslinks in der Liste der verwendeten Templates
 
@@ -309,7 +309,7 @@ auf eine Adresse Ihrer Wahl zeigen, zum Beispiel auf den Template-Editor der Adm
 | Neue Installation und Upgrade | unverändert, bis gesetzt |
 | Test | `kernel/common/eZTemplatesStatisticsReporterEditUrlTest.php` |
 | LoveStack | [`fb20bee0d2`](https://github.com/mugoweb/ezpublish-legacy/commit/fb20bee0d2be87187f992284971abe0347798106) (2019) |
-| Anleitung | [Bearbeitungslinks in der Liste der verwendeten Templates](../../../eng-us/guides/templates-and-design.md#edit-links-in-the-list-of-used-templates) |
+| Anleitung | [Bearbeitungslinks in der Liste der verwendeten Templates](../../anleitungen/templates-und-design.md#bearbeiten-links-in-der-liste-der-verwendeten-templates) |
 
 #### L11 — Datenbankfehler tragen die Fehlernummer des Treibers
 
@@ -324,7 +324,7 @@ dass die Verbindung verloren ging oder nicht hergestellt werden konnte.
 | Neue Installation und Upgrade | ein. Das `errorNumber()` von PostgreSQL ist der SQLSTATE statt `1`; bei eingeschalteter Behandlung von Ausnahmen wirft MySQL unter PHP 8.1 und neuer `eZDBException` statt `mysqli_sql_exception` |
 | Test | `lib/ezdb/eZDBExceptionCodeTest.php` |
 | LoveStack | [`3d18f47551`](https://github.com/mugoweb/ezpublish-legacy/commit/3d18f475510fa3a81a4b0984854d87ace79fd269) (2017) |
-| Anleitung | [Kennen Sie Ihren Datenbanktreiber](../../../eng-us/guides/operating-a-site.md#7-know-your-database-driver) |
+| Anleitung | [Kennen Sie Ihren Datenbanktreiber](../../anleitungen/betrieb-einer-website.md#7-den-eigenen-datenbanktreiber-kennen) |
 
 #### L12 — Eine Warnung, wenn eine Änderung jeden View-Cache leert
 
@@ -337,7 +337,7 @@ Knoten und den Schwellenwert (bisher war es eine Debug-Meldung).
 | Neue Installation und Upgrade | ein |
 | Test | `kernel/classes/eZContentCacheManagerThresholdWarningTest.php` |
 | LoveStack | [`f9691221a3`](https://github.com/mugoweb/ezpublish-legacy/commit/f9691221a3d3999722544285a9be7da52a1f44d6) (2018) |
-| Anleitung | [Caches, häufige Fragen](../../../eng-us/guides/caches.md#6-usual-questions) |
+| Anleitung | [Caches, häufige Fragen](../../anleitungen/caches.md#6-häufige-fragen) |
 
 ### Inhalte, Datentypen und die Administration
 
@@ -357,7 +357,7 @@ zugeordnet, sodass Aufrufe von `eZAudit::writeAudit()` und Audit-Dateien mit die
 | Einschalten | `Enabled[]=content.node.add` und `Enabled[]=content.node.main` unter `[AuditEventSettings]` in `settings/override/audit.ini.append.php` |
 | Test | `kernel/content/eZAuditLocationTest.php` (braucht eine Datenbank; rollt zurück, was er schreibt) |
 | LoveStack | [`9c931192e0`](https://github.com/mugoweb/ezpublish-legacy/commit/9c931192e06022a7be9929f62d4c851a91fe25b7) (2017) |
-| Anleitung | [Audit-Referenz: Änderungen an Orten](../../../eng-us/bc/6.0/audit.md#location-changes-who-added-removed-or-chose-a-location) |
+| Anleitung | [Audit-Referenz: Änderungen an Orten](audit.md#änderungen-an-orten-wer-einen-ort-hinzugefügt-entfernt-oder-gewählt-hat) |
 
 #### L14 — Site-Daten in Templates und in der Administration
 
@@ -373,7 +373,7 @@ mit Filter und Seitenaufteilung auf, in admin, admin3 und admin4.
 | Für Entwickler | `eZSiteData::createNew()`, `templateReadableNames()`, `isTemplateReadable()`, `fetchList()`, `fetchListCount()` |
 | Tests | `kernel/content/eZContentFunctionCollectionSiteDataTest.php`, `kernel/classes/eZSiteDataCreateTest.php` |
 | LoveStack | [`55029bd473`](https://github.com/mugoweb/ezpublish-legacy/commit/55029bd473e47e73b86f748f0d2d264a5e14843a), [`a679a13176`](https://github.com/mugoweb/ezpublish-legacy/commit/a679a131768b3bbdb2337c82c16d15ec9e58c854), [`94b7b6c239`](https://github.com/mugoweb/ezpublish-legacy/commit/94b7b6c239f7abbf58cbefed07ac28784933c997) (2017–2019) |
-| Anleitungen | [Site-Daten in Templates](../../../eng-us/guides/templates-and-design.md#9-site-data-in-templates), [Site-Daten in den Systeminformationen](../../../eng-us/guides/system-information.md#9-site-data) |
+| Anleitungen | [Site-Daten in Templates](../../anleitungen/templates-und-design.md#9-site-daten-in-templates), [Site-Daten in den Systeminformationen](../../anleitungen/systeminformationen.md#9-site-daten) |
 
 #### L15 — Eine Schaltfläche Kopieren in der vollständigen Admin-Ansicht
 
@@ -386,7 +386,7 @@ dieselben Schritte zum Kopieren wie das Kontextmenü.
 | Neue Installation und Upgrade | ein |
 | Test | `kernel/content/eZAdminFullViewCopyButtonTest.php` |
 | LoveStack | [`4d56593614`](https://github.com/mugoweb/ezpublish-legacy/commit/4d565936146cd970051a51f27350abb30ecfa853) (2019) |
-| Anleitung | [Aus der vollständigen Ansicht kopieren](../../../eng-us/guides/content-model-and-editing.md#copy-from-the-full-view) |
+| Anleitung | [Aus der vollständigen Ansicht kopieren](../../anleitungen/inhaltsmodell-und-bearbeitung.md#kopieren-aus-der-vollansicht) |
 
 #### L16 — Pflicht-Alternativtext für Bildfelder
 
@@ -402,7 +402,7 @@ Klassen mit einem Bildattribut. Pakete tragen die Option mit.
 | Einschalten | pro Bildattribut, auf der Seite zur Bearbeitung der Klasse |
 | Tests | `kernel/classes/datatypes/eZImageTypeAltTextTest.php`, `extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php` |
 | LoveStack | [`a28863d9c0`](https://github.com/mugoweb/ezpublish-legacy/commit/a28863d9c08e8ad417d1e1abcbbd664b777c743c) (2017) |
-| Anleitung | [Alternativtext ist erforderlich](../../../eng-us/guides/content-model-and-editing.md#alternative-text-is-required-image-fields) |
+| Anleitung | [Alternativtext ist erforderlich](../../anleitungen/inhaltsmodell-und-bearbeitung.md#alternativtext-ist-erforderlich-bildfelder) |
 
 #### L17 — Den gespeicherten Wert von Textzeilenfeldern trimmen
 
@@ -416,7 +416,7 @@ entfernen, im Bearbeitungsformular, bei der Informationssammlung, bei Importen u
 | Einschalten | pro Textzeilenattribut, auf der Seite zur Bearbeitung der Klasse |
 | Test | `kernel/classes/datatypes/eZStringTypeTrimTest.php` |
 | LoveStack | [`6a5c7dd23e`](https://github.com/mugoweb/ezpublish-legacy/commit/6a5c7dd23efffa349d255f65bc03b7de55483915) (2020) |
-| Anleitung | [Gespeicherten Wert trimmen](../../../eng-us/guides/content-model-and-editing.md#trim-the-stored-value-text-line-fields) |
+| Anleitung | [Gespeicherten Wert trimmen](../../anleitungen/inhaltsmodell-und-bearbeitung.md#den-gespeicherten-wert-trimmen-textzeilenfelder) |
 
 #### L18 — Von einer PHP-Klasse erzeugte Namen
 
@@ -431,7 +431,7 @@ implementiert. Jeder andere Name wird protokolliert, und das Muster wird wie üb
 | Für Entwickler | `expNamePatternResolverInterface::resolveNamePattern( $object, $version, $translation, $length, $sequence )`; `eZNamePatternResolver::resolve()`, `customResolver()`, `limitName()`. Der Konstruktor und `resolveNamePattern()` sind unverändert |
 | Tests | `kernel/classes/eZNamePatternResolverClassTest.php`, `kernel/classes/eZNamePatternResolverLimitTest.php` |
 | LoveStack | [`95d86f5990`](https://github.com/mugoweb/ezpublish-legacy/commit/95d86f5990ba83be39e4871bd88c2ecf120e8099) (2020) |
-| Anleitung | [Von einer PHP-Klasse erzeugte Namen](../../../eng-us/guides/content-model-and-editing.md#names-made-by-a-php-class-developers) |
+| Anleitung | [Von einer PHP-Klasse erzeugte Namen](../../anleitungen/inhaltsmodell-und-bearbeitung.md#von-einer-php-klasse-erzeugte-namen-entwickler) |
 
 #### L19 — Standard des Klassenfilters für Fetches
 
@@ -444,7 +444,7 @@ Für **Template-Entwickler**. Der Typ des Klassenfilters, den die Fetch-Funktion
 | Neue Installation und Upgrade | leer |
 | Test | `kernel/content/eZContentFunctionCollectionClassFilterTypeTest.php` |
 | LoveStack | [`9c0ff40a78`](https://github.com/mugoweb/ezpublish-legacy/commit/9c0ff40a784057bc2cd5c0eb2600510ce8c7ba1c) (2018) |
-| Anleitung | [Standard des Klassenfilters für Fetches](../../../eng-us/guides/content-model-and-editing.md#class-filter-default-for-fetches-template-developers) |
+| Anleitung | [Standard des Klassenfilters für Fetches](../../anleitungen/inhaltsmodell-und-bearbeitung.md#standard-klassenfilter-für-fetches-template-entwickler) |
 
 #### L20 — Das Fenster Orte lässt einen versteckten Ort versteckt
 
@@ -457,7 +457,7 @@ er angegeben wurde (EZP-26501).
 | Neue Installation und Upgrade | ein (eine Korrektur) |
 | Test | `kernel/content/eZEditLocationsVisibilityTest.php` |
 | LoveStack | [`f1b7f056b4`](https://github.com/mugoweb/ezpublish-legacy/commit/f1b7f056b48ae296d9b0cee7b340dc5bd8879011) (2016) |
-| Anleitung | [Das Fenster Orte](../../../eng-us/guides/content-model-and-editing.md#the-locations-window-keeps-a-hidden-location-hidden) |
+| Anleitung | [Das Fenster Orte](../../anleitungen/inhaltsmodell-und-bearbeitung.md#das-fenster-orte-lässt-einen-versteckten-ort-versteckt) |
 
 #### L21 — Auswahl- und Matrixfelder ohne überzählige Zeilenumbrüche
 
@@ -469,7 +469,7 @@ Für **Designer** und Besucher. Die View-Templates der Datentypen Auswahl und Ma
 | Neue Installation und Upgrade | ein, für jede Website, die diese Templates nicht überschreibt |
 | Test | `kernel/datatypes/eZSelectionMatrixViewTemplateTest.php` |
 | LoveStack | [`eee7f69fc3`](https://github.com/mugoweb/ezpublish-legacy/commit/eee7f69fc3aa06243b5e9d1dc5f5a3c5c948bdcc), [`67eec8f972`](https://github.com/mugoweb/ezpublish-legacy/commit/67eec8f972ffb023d588dafef0a91beea1be3e80), [`492a946963`](https://github.com/mugoweb/ezpublish-legacy/commit/492a946963082c988b69d24023854d60dd8bac62) |
-| Anleitung | [Auswahl- und Matrixfelder](../../../eng-us/guides/content-model-and-editing.md#selection-and-matrix-fields-without-stray-line-breaks) |
+| Anleitung | [Auswahl- und Matrixfelder](../../anleitungen/inhaltsmodell-und-bearbeitung.md#auswahl--und-matrixfelder-ohne-überflüssige-zeilenumbrüche) |
 
 ### Rich-Text-Editor
 
@@ -486,7 +486,7 @@ angezeigt, gerendert, ist bearbeitbar und wird unverändert zurückgespeichert.
 | Für Entwickler | `eZOEXMLInput::hiddenCustomTags()`, `offeredCustomTags()`, die Schlüssel `hidden` und `preview` von `getCustomTagDefinitions()` |
 | Test | `extension/ezoe/expOECustomTagListTest.php` |
 | LoveStack | [`e21ef46691`](https://github.com/mugoweb/ezpublish-legacy/commit/e21ef466914d44d384666fd024080f06be4c426c) (2019) |
-| Anleitung | [Versteckte Custom Tags](../../../eng-us/guides/content-model-and-editing.md#hidden-custom-tags) |
+| Anleitung | [Versteckte Custom Tags](../../anleitungen/inhaltsmodell-und-bearbeitung.md#versteckte-custom-tags) |
 
 #### L23 — Bedienelemente für Custom Tags im Rich-Text-Editor
 
@@ -506,7 +506,7 @@ dasselbe in exp_oe_tiptap 0.1.2.
 | Einschalten | `CustomTagControls=enabled` in `settings/override/ezoe.ini.append.php`, dann den INI-Cache und die gepackten Skripte leeren: `php bin/php/ezcache.php --clear-tag=ini --clear-id=ezjscore-packer` |
 | Test | `extension/ezoe/expOECustomTagAssetsTest.php` |
 | LoveStack | [`63334f1681`](https://github.com/mugoweb/ezpublish-legacy/commit/63334f16818083e9d545cc7a99190d8d2ca9f109) (2019; sein Plugin `custom_tags_controls` trägt "Copyright 2014, Mugo Web") |
-| Anleitung | [Bedienelemente für Custom Tags](../../../eng-us/guides/content-model-and-editing.md#custom-tag-controls) |
+| Anleitung | [Bedienelemente für Custom Tags](../../anleitungen/inhaltsmodell-und-bearbeitung.md#bedienelemente-für-custom-tags) |
 
 #### L24 — Der Dialog sub/sup schließt bei OK
 
@@ -531,7 +531,7 @@ wie der Template-Operator `ezurl` (Indexdatei und Siteaccess davor; mit `$full` 
 |---|---|
 | Test | `lib/ezutils/eZURIBuildTest.php` |
 | LoveStack | [`f2284944b2`](https://github.com/mugoweb/ezpublish-legacy/commit/f2284944b27f0ba38e2f41876804ae9400fd25ce) (2020) |
-| Anleitung | [URLs, für Entwickler](../../../eng-us/guides/urls-and-aliases.md#for-developers) |
+| Anleitung | [URLs, für Entwickler](../../anleitungen/urls-und-aliase.md#für-entwickler) |
 
 #### L26 — Eine Nachricht mit einem anderen Mail-Transport
 
@@ -543,7 +543,7 @@ einem anderen Transport aus `site.ini [MailSettings] TransportAlias[]` (zum Beis
 |---|---|
 | Test | `lib/ezutils/eZMailTransportSendTest.php` |
 | LoveStack | [`df07cb1ef5`](https://github.com/mugoweb/ezpublish-legacy/commit/df07cb1ef5de68eaedc0ba86e2dbc91cfccea5d2) (2019) |
-| Anleitung | [Testen, ohne Mails zu senden](../../../eng-us/guides/mail-preferences-developer.md#8-testing-without-sending-mail) |
+| Anleitung | [Testen, ohne Mails zu senden](../../anleitungen/mail-einstellungen-entwickler.md#8-testen-ohne-mails-zu-senden) |
 
 #### L27 — Die Template-Operatoren `rawurlencode` und `rawurldecode`
 
@@ -557,7 +557,7 @@ für einen Wert, der nicht gesetzt ist.
 | Neue Installation und Upgrade | verfügbar |
 | Test | `kernel/common/eZTemplateRawURLEncodeOperatorTest.php` |
 | LoveStack | [`627004e5c4`](https://github.com/mugoweb/ezpublish-legacy/commit/627004e5c4ab08917804382cca0b6c67afc68c47) (2021) |
-| Anleitung | [Einen Wert für eine URL kodieren](../../../eng-us/guides/templates-and-design.md#10-encoding-a-value-for-a-url-rawurlencode-and-rawurldecode) |
+| Anleitung | [Einen Wert für eine URL kodieren](../../anleitungen/templates-und-design.md#10-einen-wert-für-eine-url-kodieren-rawurlencode-und-rawurldecode) |
 
 #### L28 — `[Include …]` in Einstellungsdateien
 
@@ -575,7 +575,7 @@ lösen sie nicht auf.
 | Für Entwickler | `eZINI::includedFiles()` |
 | Test | `lib/ezutils/eZINIIncludeTest.php` |
 | LoveStack | [`f7c382bc2b`](https://github.com/mugoweb/ezpublish-legacy/commit/f7c382bc2bb4abcbeeb521653f08ca2617eb277f) (2018) |
-| Anleitung | [Eine große Einstellungsdatei aufteilen](../../../eng-us/guides/settings-page.md#splitting-a-large-settings-file-with-include-) |
+| Anleitung | [Eine große Einstellungsdatei aufteilen](../../anleitungen/einstellungsseite.md#eine-große-einstellungsdatei-mit-include--aufteilen) |
 
 #### L29 — Antwort-Header für Fehlerseiten
 
@@ -589,7 +589,7 @@ mit einem Zeilenumbruch wird mit einer Warnung weggelassen.
 | Neue Installation und Upgrade | nichts ändert sich, bis ein Eintrag hinzugefügt wird |
 | Test | `kernel/error/ErrorHeaderListTest.php` |
 | LoveStack | [`97690e9c93`](https://github.com/mugoweb/ezpublish-legacy/commit/97690e9c93b156f8c49724b13b69a0de699fed49) (2017) |
-| Anleitung | [Antwort-Header von Fehlerseiten](../../../eng-us/guides/templates-and-design.md#12-response-headers-of-error-pages) |
+| Anleitung | [Antwort-Header von Fehlerseiten](../../anleitungen/templates-und-design.md#12-antwort-header-von-fehlerseiten) |
 
 #### L30 — Die Reihenfolge der Suchergebnisse in den Dialogen der Redakteure
 
@@ -602,7 +602,7 @@ von der Relationssuche) sortiert Ergebnisse von eZ Find nach den Sucheinstellung
 | Neue Installation und Upgrade | unveränderte Reihenfolge; ohne eZ Find oder die Einstellung bleibt die Reihenfolge Neuestes zuerst |
 | Test | `extension/ezjscore/ezjscServerFunctionsJsSearchSortByTest.php` |
 | LoveStack | [`3d2d337b0d`](https://github.com/mugoweb/ezpublish-legacy/commit/3d2d337b0dd44de0be91fc703f21dbd96622f35e), [`3af1ec3aee`](https://github.com/mugoweb/ezpublish-legacy/commit/3af1ec3aeef93ae9da652c13828ccdc92513302d) (2025) |
-| Anleitung | [Die Reihenfolge der Suchergebnisse](../../../eng-us/guides/content-model-and-editing.md#the-order-of-search-results-in-the-editors-dialogs) |
+| Anleitung | [Die Reihenfolge der Suchergebnisse](../../anleitungen/inhaltsmodell-und-bearbeitung.md#die-reihenfolge-der-suchergebnisse-in-den-dialogen-des-editors) |
 
 #### L31 — Templates können Layout-Ansichten unterscheiden
 
@@ -615,7 +615,7 @@ Neu: `eZTemplateDesignResource::setKeyValue( string $key, $value, bool $override
 | Neue Installation und Upgrade | ein |
 | Test | `kernel/common/eZTemplateDesignResourceSetKeyValueTest.php` |
 | LoveStack | [`856a95e240`](https://github.com/mugoweb/ezpublish-legacy/commit/856a95e240b4f2422c60d5253f9730ed99e033af) (2016) |
-| Anleitung | [Der Schlüssel layout](../../../eng-us/guides/templates-and-design.md#11-telling-a-layout-view-apart-the-layout-key) |
+| Anleitung | [Der Schlüssel layout](../../anleitungen/templates-und-design.md#11-eine-layout-ansicht-erkennen-der-schlüssel-layout) |
 
 ### URLs und Suche
 
@@ -633,7 +633,7 @@ die Schlüssel des Antwort-Caches werden daraus gebildet, daher ändern sie sich
 | Für Entwickler | `new eZURI( $uri, $decode )`, `setURIString( $uri, $fullInitialize, $decode )` (`null`: der Einstellung folgen), `eZURI::decodeOnce()` |
 | Test | `lib/ezutils/eZSysRequestURIDecodeOnceTest.php` |
 | LoveStack | [`f435c2f91e`](https://github.com/mugoweb/ezpublish-legacy/commit/f435c2f91eaeba686d8f3bda4a6f8c41bb3e7329) (2018) |
-| Anleitung | [Adressen dekodieren und bereinigen](../../../eng-us/guides/urls-and-aliases.md#8-decoding-and-cleaning-addresses-two-optional-settings) |
+| Anleitung | [Adressen dekodieren und bereinigen](../../anleitungen/urls-und-aliase.md#8-adressen-dekodieren-und-bereinigen-zwei-optionale-einstellungen) |
 
 #### L33 — Das doppelte Anführungszeichen in IRI-URL-Aliasen
 
@@ -650,7 +650,7 @@ Trennzeichen und wie die anderen an den Enden entfernt.
 | Für Entwickler | `eZCharTransform::trailingCleanup()` |
 | Test | `lib/ezi18n/eZCharTransformTrailingCleanupTest.php` |
 | LoveStack | [`7517c0e925`](https://github.com/mugoweb/ezpublish-legacy/commit/7517c0e925178e5f932ac653439a39203ec03cb0) (2017) |
-| Anleitung | [Adressen dekodieren und bereinigen](../../../eng-us/guides/urls-and-aliases.md#8-decoding-and-cleaning-addresses-two-optional-settings) |
+| Anleitung | [Adressen dekodieren und bereinigen](../../anleitungen/urls-und-aliase.md#8-adressen-dekodieren-und-bereinigen-zwei-optionale-einstellungen) |
 
 #### L34 — Sehr große Zahlen halten den Suchindex nicht mehr an
 
@@ -665,7 +665,7 @@ der als Gleitkommazahl geschrieben ist.
 | Neue Installation und Upgrade | ein |
 | Test | `kernel/search/eZSearchEngineIntegerClampTest.php` |
 | LoveStack | [`3774a54ead`](https://github.com/mugoweb/ezpublish-legacy/commit/3774a54ead854dd3e6d525e08b9d77b9853bfef6) (2018) |
-| Anleitung | [Zahlen im eingebauten Suchindex](../../../eng-us/guides/operating-a-site.md#numbers-in-the-built-in-search-index) |
+| Anleitung | [Zahlen im eingebauten Suchindex](../../anleitungen/betrieb-einer-website.md#zahlen-im-eingebauten-suchindex) |
 
 #### L35 — Relationen verknüpfter Objekte bleiben aus dem Suchindex heraus
 
@@ -677,7 +677,7 @@ einzuschalten und keine Einstellung; eine Website, die von LoveStack kommt, erh�
 |---|---|
 | Test | `kernel/datatypes/eZObjectRelationMetaDataTest.php` (dokumentiert das Verhalten, einschließlich eines Zyklus von Relationen) |
 | LoveStack | [`5c089f6250`](https://github.com/mugoweb/ezpublish-legacy/commit/5c089f6250645e2354342deda3a510fed63dcc7f) (2017) |
-| Anleitung | [Zahlen im eingebauten Suchindex](../../../eng-us/guides/operating-a-site.md#numbers-in-the-built-in-search-index) |
+| Anleitung | [Zahlen im eingebauten Suchindex](../../anleitungen/betrieb-einer-website.md#zahlen-im-eingebauten-suchindex) |
 
 #### L36 — Der Cronjob hide und der Suchindex
 
@@ -691,7 +691,7 @@ Knoten-IDs nimmt, funktioniert weiter.
 | Neue Installation und Upgrade | ein |
 | Tests | `kernel/classes/runnable/HideCronjobSearchIndexTest.php`, `kernel/classes/eZContentCacheEventSendersTest.php` |
 | LoveStack | [`3298b53584`](https://github.com/mugoweb/ezpublish-legacy/commit/3298b535848044a39e7211f9413711c1b62f97f3), [`89a5a73877`](https://github.com/mugoweb/ezpublish-legacy/commit/89a5a738777f83ec1b219638d06ee24b96c91195) (2018) |
-| Anleitung | [Cronjobs](../../../eng-us/guides/cronjobs.md#1-parts-scripts-and-the-global-part) |
+| Anleitung | [Cronjobs](../../anleitungen/cronjobs.md#1-teile-skripte-und-der-globale-teil) |
 
 ### PHP-8-Prüfung und weitere Korrekturen
 
@@ -763,7 +763,7 @@ Diese LoveStack-Funktionen waren bereits in Exponential, gleich oder auf die eig
 
 | LoveStack-Funktion | In Exponential |
 |---|---|
-| SameSite-Session-Cookies (2025) | `site.ini [Session] CookieSameSite`, Standard `Lax`, `None` nur mit `Secure`; der Name `SameSite` von LoveStack wird ebenfalls gelesen ([oben](#die-session-einstellung-samesite-von-lovestack-wird-ebenfalls-gelesen)) |
+| SameSite-Sitzungs-Cookies (2025) | `site.ini [Session] CookieSameSite`, Standard `Lax`, `None` nur mit `Secure`; der Name `SameSite` von LoveStack wird ebenfalls gelesen ([oben](#die-sitzungseinstellung-samesite-von-lovestack-wird-ebenfalls-gelesen)) |
 | Passwörter werden nie stillschweigend als MD5 gespeichert | der Standardalgorithmus von PHP, `HashType=php_default` |
 | Längere Mindestpasswörter und generierte Passwörter | 10 und 16 Zeichen |
 | Erhöhte Passwortsicherheit (EZP-24744) | ja |
@@ -813,7 +813,7 @@ Arbeit; jeder Punkt hat hier einfach eine andere Antwort.
 Jede der oben genannten Funktionen ist in der PHPUnit-Suite von Exponential abgedeckt. Jede Testdatei läuft für sich,
 und abgesehen von einigen Tests, die als datenbankabhängig markiert sind (und zurückrollen, was sie schreiben), laufen
 sie ohne Datenbank. Die Tests, die eine Änderung braucht, lassen sich allein ausführen: siehe
-[nur die Tests einer Änderung ausführen](../../../eng-us/features/6.0/quality-checks.md#run-only-the-tests-of-a-change).
+[nur die Tests einer Änderung ausführen](../../funktionen/6.0/qualitaetspruefungen.md#nur-die-tests-einer-änderung-ausführen).
 `kernel/classes/expShippedFeatureDefaultsTest.php` prüft, dass eine aktualisierte Website die Standardwerte behält, die
 diese Seite nennt.
 

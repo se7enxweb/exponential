@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratorinnen und Administratoren. Exponential 
 Zahl fehlgeschlagener Anmeldungen sperren, aber **die Sperre ist standardmäßig aus**
 (`settings/site.ini [UserSettings] MaxNumberOfFailedLogin=0`). Brute-Force-Versuche erkennen die Alarmregeln des Audits
 in jedem Fall; der Kernel selbst bremst Anmeldungen nicht
-([Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/security.md#known-gaps)).
+([Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken)).
 
 ## Inhalt
 
@@ -63,7 +63,7 @@ laden Sie PHP neu.
   ([Sicherheit und Audit, 6](../../../anleitungen/sicherheit-und-audit.md#6-ein-konto-auf-seiner-kontoseite-prüfen-2-minuten)).
 - **Mehrere**: **Benutzer > Benutzerkonten prüfen** (`/user/hygiene`), Filter **Gesperrt**, ankreuzen, **Entsperren**,
   **Bestätigen**. Jede Entsperrung wird als `access.user.unlock` aufgezeichnet
-  ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+  ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - Sehen Sie sich vor dem Entsperren die fehlgeschlagenen Anmeldungen in der Audit-Konsole an:
   `/audit/console/(name)/access.session.login.failed`. Viele Fehlschläge aus unbekannten Netzen deuten auf einen
   Angriff hin: Ändern Sie dann auch das Passwort.
@@ -81,13 +81,14 @@ laden Sie PHP neu.
 ## Verwandte Seiten
 
 - [13.6 Passwörter und Anmeldung: fehlgeschlagene Anmeldungen](../../../installation/13-sicherheitshaertung.md#fehlgeschlagene-anmeldungen)
-- [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)
 - [Audit-Alarme und ihre Empfänger](audit-alarme-und-empfaenger.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

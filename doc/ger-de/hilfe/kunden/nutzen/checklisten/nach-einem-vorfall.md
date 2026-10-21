@@ -53,10 +53,10 @@ NOTES
 | Punkt | Wo | Lesen Sie |
 |---|---|---|
 | Wartungsmodus | **Setup > Wartung** | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
-| Pausierte Cron-Teile | **Setup > Cronjobs** | [Cronjob-Teile pausieren](../../../../../eng-us/features/6.0/cronjob-pause.md) |
+| Pausierte Cron-Teile | **Setup > Cronjobs** | [Cronjob-Teile pausieren](../../../../funktionen/6.0/cronjobs-pausieren.md) |
 | Fehlerreferenzen | **Setup > Logdateien**, Feld **Fehlerreferenz** | [Einen Fehler anhand seiner Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
-| Die Fehler des letzten Tages | **Setup > Logdateien > Fehlerübersicht** | [Der Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md) |
-| Wer was getan hat | Das Prüfprotokoll; es hält Anmeldungen, Inhaltsänderungen, Schreibvorgänge in Einstellungen, das Leeren von Caches, Deployments, Bestellungen und Änderungen der Mehrwertsteuer fest | [Das Prüfprotokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Die Fehler des letzten Tages | **Setup > Logdateien > Fehlerübersicht** | [Der Log-Viewer](../../../../funktionen/6.0/log-betrachter.md) |
+| Wer was getan hat | Das Prüfprotokoll; es hält Anmeldungen, Inhaltsänderungen, Schreibvorgänge in Einstellungen, das Leeren von Caches, Deployments, Bestellungen und Änderungen der Mehrwertsteuer fest | [Das Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Inhalte verloren oder geändert | Versionen und der Papierkorb | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Eine Wiederherstellung | Hoster | [Aus einem Backup wiederherstellen](../../../hosting/runbooks/aus-einem-backup-wiederherstellen.md) |
 | Eine kompromittierte Website | Hoster | [Kompromittierte Website](../../../hosting/runbooks/kompromittierte-website.md) |
@@ -68,7 +68,7 @@ NOTES
   Geheimnisse und personenbezogene Daten weg.
 - **Ein Fehler** in Exponential geht an <https://github.com/se7enxweb/exponential/issues>. Die Meldeseite der Hilfe in der
   Administration, `/exphelp/report`, füllt das Issue vor und listet die zu kopierenden Diagnosedaten, nie Passwörter,
-  Schlüssel, Datenbankhosts oder personenbezogene Daten ([Das Hilfesystem](../../../../../eng-us/features/6.0/help-system.md)).
+  Schlüssel, Datenbankhosts oder personenbezogene Daten ([Das Hilfesystem](../../../../funktionen/6.0/hilfesystem.md)).
 - **Ein Problem mit dem Code oder der Einrichtung Ihrer eigenen Website** geht an Ihren Partner.
 
 ## Vorfallnotizen
@@ -98,3 +98,11 @@ Reported to the project: no / bug # ______ / security report sent ________
 - [Tägliche Checkliste](taeglich.md)
 - [Checklisten für Betreiber](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

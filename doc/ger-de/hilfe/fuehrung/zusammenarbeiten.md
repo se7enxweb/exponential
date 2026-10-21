@@ -65,7 +65,7 @@ Projekten beginnen bei einer Übergabe, bei der etwas angenommen statt aufgeschr
 | Projektleiter | Redakteur | Eine Inhaltsaufgabe (neuer Bereich, Migration, Übersetzung) | Das Inhaltsmodell, die Frist, wer freigibt | Das Issue und, in der Administration, der Ordner oder die Sektion, zu der sie gehört |
 | Redakteur | Projektleiter | „Die Inhalte sind fertig“ | Welche Objekte, in welchen Sprachen, ob sie veröffentlicht sind oder auf Freigabe warten | **Meine Entwürfe** und **Meine Warteliste** ([Meine Entwürfe und meine Warteliste](../../anleitungen/entwuerfe-und-ausstehende-objekte.md)) |
 | Entwickler | Administrator | Eine auszurollende Änderung | Der Branch oder Tag, zu ändernde Einstellungen, ein Datenbank-Update, welche Caches zu leeren sind | Die Beschreibung des Pull-Requests und das Changelog ([Ausrollen](../../anleitungen/bereitstellung.md)) |
-| Administrator | Redakteur | Ein neues Konto oder ein neuer Zugriff | Der Benutzer, die Gruppe, die Rolle und ihre Einschränkung (Sektion oder Teilbaum) | **Benutzer > Rollen und Richtlinien**; die Änderung wird im Audit-Protokoll festgehalten ([Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)) |
+| Administrator | Redakteur | Ein neues Konto oder ein neuer Zugriff | Der Benutzer, die Gruppe, die Rolle und ihre Einschränkung (Sektion oder Teilbaum) | **Benutzer > Rollen und Richtlinien**; die Änderung wird im Audit-Protokoll festgehalten ([Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)) |
 | Redakteur oder Besucher | Administrator | „Etwas ist schiefgegangen“ | Die Fehlerreferenz (`ERR-...`), die Uhrzeit, die Adresse, die Schritte | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md) |
 | Administrator | Entwickler | Ein Fehler, der im Code liegt, nicht in der Einrichtung | Die Referenz, die Logzeilen, der Bericht mit den Systeminformationen | [Einen Fehler über seine Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md), [Systeminformationen](../../anleitungen/systeminformationen.md) |
 | Entwickler | Die Community | Eine Korrektur oder Verbesserung für alle | Ein Pull-Request an das Repository des Projekts | [Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen) |
@@ -76,7 +76,7 @@ Projekten beginnen bei einer Übergabe, bei der etwas angenommen statt aufgeschr
 1. **Verlinken statt umschreiben.** Wenn ein Versprechen auf einer Funktion beruht, verlinken Sie die Hilfeseite dieser
    Funktion. Die Hilfe ist die gemeinsame verbindliche Quelle dafür, was das Produkt leistet; jede Seite liegt im
    eigenen Verzeichnis `doc/` der Installation und wird unter `/exphelp/dashboard` angezeigt
-   ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)).
+   ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)).
 2. **Rolle und Richtlinie benennen.** „Der Redakteur kann das“ reicht nicht. Sagen Sie, welche Rolle, mit welcher
    Richtlinie und welcher Einschränkung. Wenn niemand das benennen kann, entscheidet der Administrator, bevor die
    Arbeit beginnt.
@@ -100,16 +100,16 @@ nennt, und wer sie in einer **neuen** Installation innehat. Die letzte Spalte is
 | Reiter **Layouts** und der Layout-Editor | Layouts-Richtlinien der Rolle | Hängt von der Rolle ab | Redakteure, zusammen mit einem Designer | [Der Layout-Editor](../layout-editor.md) |
 | **Benutzer > Rollen und Richtlinien** | das Modul `role` | Administrator | Administrator | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md) |
 | **Benutzer > Nicht aktivierte Benutzer** | `user/activation` | Administrator | Administrator | ebenda |
-| **Benutzer > Benutzerkonten prüfen** | `user/hygiene` | Administrator | Administrator | [Benutzerkonten prüfen](../../../eng-us/features/6.0/user-hygiene.md) |
-| Reiter **Audit** | `audit/read`, `audit/manage` | „In einer neuen Installation hat sie nur Administrator“ | Administrator; `audit/read` für einen Prüfer | [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
-| **Setup > Logdateien** und der Fehlerüberblick | `setup/logs`, `setup/managelogs`, `setup/unmasklogs` | „In einer neuen Installation nur Administrator“ | Administrator | [Der Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
-| **Setup > Cronjobs** | `setup/managecronjobs` | Administrator | Administrator | [Cronjob-Konsole](../../../eng-us/features/6.0/cronjobs-console.md) |
+| **Benutzer > Benutzerkonten prüfen** | `user/hygiene` | Administrator | Administrator | [Benutzerkonten prüfen](../../funktionen/6.0/benutzerpflege.md) |
+| Reiter **Audit** | `audit/read`, `audit/manage` | „In einer neuen Installation hat sie nur Administrator“ | Administrator; `audit/read` für einen Prüfer | [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md) |
+| **Setup > Logdateien** und der Fehlerüberblick | `setup/logs`, `setup/managelogs`, `setup/unmasklogs` | „In einer neuen Installation nur Administrator“ | Administrator | [Der Log-Viewer](../../funktionen/6.0/log-betrachter.md) |
+| **Setup > Cronjobs** | `setup/managecronjobs` | Administrator | Administrator | [Cronjob-Konsole](../../funktionen/6.0/cronjobs-in-der-konsole.md) |
 | **Setup > Systeminformationen** | `setup/system_info` | Administrator | Administrator; mit Entwicklern als Bericht geteilt | [Systeminformationen](../../anleitungen/systeminformationen.md) |
 | **Setup > Upgrade-Prüfung** | (Seite der Administration `/setup/systemupgrade`) | Administrator | Administrator, vor einem Upgrade zusammen mit dem Entwickler | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
-| **Setup > Inhaltsfinder** | `contentfinder/search` und weitere | „Keine Rolle außer Administrator“ | Administrator; kann erfahrenen Redakteuren gegeben werden | [Inhaltsfinder](../../../eng-us/features/6.0/content-finder.md) |
+| **Setup > Inhaltsfinder** | `contentfinder/search` und weitere | „Keine Rolle außer Administrator“ | Administrator; kann erfahrenen Redakteuren gegeben werden | [Inhaltsfinder](../../funktionen/6.0/inhalts-finder.md) |
 | Wartungsmodus | (Seite der Administration und `bin/php/maintenance.php`) | Administrator | Administrator, auf das Signal des Projektleiters | [Wartungsmodus](../../anleitungen/wartungsmodus.md) |
-| Der Reiter **Intelligence** (Exponential Intelligence) | `expai/write`, `expai/vector` und weitere | „in einer neuen Installation nur von der Rolle Administrator gehalten“ | Redakteure, sobald das Projekt entscheidet, es zu nutzen | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
-| Die Hilfe (`/exphelp/dashboard`) | `exphelp/read` | Administrator und Editor | Alle im Team | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Der Reiter **Intelligence** (Exponential Intelligence) | `expai/write`, `expai/vector` und weitere | „in einer neuen Installation nur von der Rolle Administrator gehalten“ | Redakteure, sobald das Projekt entscheidet, es zu nutzen | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
+| Die Hilfe (`/exphelp/dashboard`) | `exphelp/read` | Administrator und Editor | Alle im Team | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | Code, Templates, Einstellungsdateien | (außerhalb der Administration: Git) | entfällt | Entwickler | [Mit Git entwickeln](../mit-git-entwickeln.md) |
 
 Quellen für die zitierten Inhaber: die in der letzten Spalte verlinkten Seiten und der Abschnitt „Exponential
@@ -145,7 +145,7 @@ oder im Repository; das Team muss sich nur darauf einigen, sie zu nutzen.
 | Das Changelog | Was sich in jedem Release geändert hat | `doc/changelogs/` ([Changelogs](../../../changelogs/README.md)); ein eigenes für Ihre Site | Entwickler | Alle |
 | Workflows | Freigabe vor dem Veröffentlichen und andere Prozesse | **Setup > Workflows** ([Workflows](../../anleitungen/workflows.md)) | Administrator, nach Entscheidung des Projektleiters | Redakteure |
 | Layouts und Regeln | Welche Seite welche Anordnung von Blöcken erhält | Reiter **Layouts** ([Der Layout-Editor](../layout-editor.md)) | Redakteure | Projektleiter, Vertrieb (für Demos) |
-| Das Audit-Protokoll | Wer was getan hat, manipulationssicher | Reiter **Audit** ([Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)) | Administrator | Prüfer, Projektleiter |
+| Das Audit-Protokoll | Wer was getan hat, manipulationssicher | Reiter **Audit** ([Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)) | Administrator | Prüfer, Projektleiter |
 | Bericht mit den Systeminformationen | Worauf die Site läuft, ohne Geheimnisse | **Setup > Systeminformationen**, *Bericht als Text kopieren* | Administrator | Entwickler, Support |
 | Bericht der Upgrade-Prüfung | Konsistenz von Dateien und Datenbank vor einem Upgrade | **Setup > Upgrade-Prüfung**, herunterladbar | Administrator | Entwickler, Projektleiter |
 
@@ -161,9 +161,9 @@ Sie jede Besprechung kurz und beenden Sie sie mit schriftlichen Entscheidungen i
 
 | Besprechung | Wann | Wer | Tagesordnung | Input aus dem Produkt |
 |---|---|---|---|---|
-| **Tägliche Abstimmung** (10 Minuten) | Jeden Arbeitstag während Aufbau und Launch | Projektleiter, Entwickler, leitender Redakteur | Blockaden, heute fällige Übergaben | Offene Pull-Requests und ihr CI-Status ([Continuous Integration](../../../eng-us/bc/6.0/ci.md)) |
+| **Tägliche Abstimmung** (10 Minuten) | Jeden Arbeitstag während Aufbau und Launch | Projektleiter, Entwickler, leitender Redakteur | Blockaden, heute fällige Übergaben | Offene Pull-Requests und ihr CI-Status ([Continuous Integration](../../bc/6.0/ci.md)) |
 | **Inhalts-Stand-up** (15 Minuten) | Zweimal pro Woche während der Inhaltserfassung | Projektleiter, Redakteure | Was als Entwurf vorliegt, was wartet, was veröffentlicht ist | **Meine Entwürfe**, **Meine Warteliste**, die Zahlen im Dashboard ([Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md#das-dashboard)) |
-| **Wöchentliche Betriebsbesprechung** (30 Minuten) | Wöchentlich, ab dem Launch | Administrator, Projektleiter, ein Entwickler | Fehler, Sicherheitsereignisse, Cronjobs, Backups | Der Fehlerüberblick ([Der Log-Viewer](../../../eng-us/features/6.0/log-viewer.md)), Warnungen des Audit-Protokolls, die wöchentliche Checkliste aus [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md) |
+| **Wöchentliche Betriebsbesprechung** (30 Minuten) | Wöchentlich, ab dem Launch | Administrator, Projektleiter, ein Entwickler | Fehler, Sicherheitsereignisse, Cronjobs, Backups | Der Fehlerüberblick ([Der Log-Viewer](../../funktionen/6.0/log-betrachter.md)), Warnungen des Audit-Protokolls, die wöchentliche Checkliste aus [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md) |
 | **Sprint- oder Meilenstein-Review** (60 Minuten) | Alle zwei bis vier Wochen | Alle, einschließlich Vertrieb | Was geliefert wurde, gezeigt in der echten Administration | Eine Demo auf Ihrer eigenen Installation ([Demo-Drehbücher](../geschaeft/demo-drehbuecher.md)) |
 | **Release-Planung** (45 Minuten) | Wenn ein neues Release Exponential 6.0.x oder ein Release einer Erweiterung erscheint | Projektleiter, Administrator, Entwickler | Upgrade ja oder nein, wann, mit welchen Prüfungen | Das Changelog, die BC-Hinweise, die Upgrade-Prüfung ([Release- und Upgrade-Planung](release-und-upgrade-planung.md)) |
 | **Pipeline-Abgleich** (30 Minuten) | Alle zwei Wochen | Vertrieb und Marketing, Projektleiter | Laufende Versprechen, Demo-Anfragen, Geschichten zum Erzählen | [Positionierung und Nutzenversprechen](../geschaeft/positionierung-und-nutzenversprechen.md) |
@@ -259,7 +259,7 @@ Ein Interessent fragt während einer Demo: „Können unsere Redakteure Kampagne
 
 - [ ] Die Rollen folgen der Rollenmatrix; niemand hat zusätzlichen Zugriff dadurch bekommen, dass die Rolle
       Administrator bearbeitet wurde.
-- [ ] Die Cronjob-Gruppe `frequent` läuft, sodass das Audit-Protokoll indexiert und warnt ([Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)).
+- [ ] Die Cronjob-Gruppe `frequent` läuft, sodass das Audit-Protokoll indexiert und warnt ([Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md)).
 - [ ] Die wöchentliche Checkliste aus [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md) ist erledigt und berichtet.
 
 ### Entwickler
@@ -279,3 +279,11 @@ Ein Interessent fragt während einer Demo: „Können unsere Redakteure Kampagne
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md)
 - [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -47,7 +47,12 @@ oder in den Bildern unterscheiden, sind getrennte Produkte meist übersichtliche
 |---|---|---|
 | Mehrwertsteuertypen | **Shop > USt-Typen** (`shop/vattype`) | benannte Prozentsätze: Normalsatz, ermäßigt, null |
 | Mehrwertsteuerregeln | `shop/vatrules`, `shop/editvatrule` | welcher Mehrwertsteuertyp je Land des Kunden und Produktkategorie gilt |
-| Einstellungen | `shop.ini [VATSettings]` | `ProductCategoryAttribute`, `UserCountryAttribute`, `RequireUserCountry=true`, `DynamicVatTypeName` |
+| Einstellungen | `shop.ini [VATSettings]` | `Handler` (ausgeliefert nicht gesetzt), `ProductCategoryAttribute`, `UserCountryAttribute`, `RequireUserCountry=true`, `DynamicVatTypeName` |
+
+Mehrwertsteuerregeln wirken erst, wenn ein Mehrwertsteuer-Handler gesetzt ist: Tragen Sie `Handler=ezdefault` in
+`[VATSettings]` von `settings/override/shop.ini.append.php` ein. Die ausgelieferte `settings/shop.ini` lässt die Zeile
+auskommentiert, weil das Einschalten den Checkout eines bestehenden Shops verändert (das Land des Kunden wird
+Pflicht); die Seite **VAT rules** zeigt einen Hinweis, solange Regeln vorhanden sind und kein Handler sie anwendet.
 
 Mit Mehrwertsteuerregeln wählen Sie am Preis den Mehrwertsteuertyp "Durch Regeln für die Mehrwertsteuer bestimmt"
 (`DynamicVatTypeName`), legen fest, welches Attribut die Produktkategorie und welches Benutzerattribut das Land enthält,
@@ -83,8 +88,8 @@ Regeln je Gruppe (`shop/discountruleedit`).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

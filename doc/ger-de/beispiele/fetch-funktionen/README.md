@@ -26,7 +26,7 @@ Jedes `fetch( 'module', 'function', hash( ... ) )`, das der Kernel und die mitge
 | [package](package/README.md) | 15 | `kernel/package/function_definition.php` |
 | [role](role/README.md) | 3 | `kernel/role/function_definition.php` |
 | [rss](rss/README.md) | 2 | `kernel/rss/function_definition.php` |
-| [search](search/README.md) | 2 | `kernel/search/function_definition.php` |
+| [search](suche/README.md) | 2 | `kernel/search/function_definition.php` |
 | [section](section/README.md) | 6 | `kernel/section/function_definition.php` |
 | [setup](setup/README.md) | 13 | `kernel/setup/function_definition.php` |
 | [shop](shop/README.md) | 15 | `kernel/shop/function_definition.php` |

@@ -41,10 +41,10 @@ veröffentlichen (allgemeine Praxis im öffentlichen Sektor), und was jede Art v
 | Beschäftigte der Zweigstellen tragen ihre eigenen Veranstaltungen ein | eine Rolle, eingeschränkt auf den Teilbaum oder die Sektion der Zweigstelle | [Struktur, Sektionen und Rollen](struktur-sektionen-und-rollen.md) |
 | Öffnungszeiten an einer Stelle | ein Objekt Zweigstelle je Zweigstelle, aus anderen Seiten verknüpft | [Inhaltsmodell](inhaltsmodell.md) |
 | Kurzfristige Schließungen | ein Hinweis auf der Seite der Zweigstelle und der Startseite | [Der Layout-Editor](../../../layout-editor.md) |
-| Veranstaltungen nach Thema oder Zielgruppe | Tags | [Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md) |
-| Anmeldung zu Veranstaltungen | der Informationssammler oder das Veranstaltungssystem, das Sie verwenden | [Formulare mit dem Informationssammler](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
-| Ein Newsletter mit Veranstaltungen | cjw_newsletter | [Newsletter mit CJW Newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md) |
-| Mehrere Sprachen | Übersetzungen je Objekt | [Mehrsprachige Websites](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md) |
+| Veranstaltungen nach Thema oder Zielgruppe | Tags | [Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md) |
+| Anmeldung zu Veranstaltungen | der Informationssammler oder das Veranstaltungssystem, das Sie verwenden | [Formulare mit dem Informationssammler](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
+| Ein Newsletter mit Veranstaltungen | cjw_newsletter | [Newsletter mit CJW Newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md) |
+| Mehrere Sprachen | Übersetzungen je Objekt | [Mehrsprachige Websites](../../../ersteller/website-ersteller/mehrsprachige-websites.md) |
 
 ## Was die Website nicht tun sollte
 
@@ -53,7 +53,7 @@ veröffentlichen (allgemeine Praxis im öffentlichen Sektor), und was jede Art v
 | Den Katalog als Inhaltsobjekte nachbauen | auf die Suche des Katalogs verlinken; höchstens ein Suchfeld einbetten, das die Anfrage dorthin schickt |
 | Ausleih- oder Leserdaten im CMS speichern | das Bibliotheksmanagementsystem enthält sie |
 | In einem Formular der Website nach der Nummer des Bibliotheksausweises fragen | die Menschen zur eigenen Anmeldung des Katalogs schicken |
-| Mit Analysediensten Dritter verfolgen, was Besucher lesen | datenschutzfreundliche Statistik verwenden ([Statistik und Analyse](../../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)) |
+| Mit Analysediensten Dritter verfolgen, was Besucher lesen | datenschutzfreundliche Statistik verwenden ([Statistik und Analyse](../../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)) |
 
 ## Zu klärende Fragen
 
@@ -66,12 +66,13 @@ veröffentlichen (allgemeine Praxis im öffentlichen Sektor), und was jede Art v
 
 - [Öffentliche Bibliotheken](README.md)
 - [Inhaltsmodell für öffentliche Bibliotheken](inhaltsmodell.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

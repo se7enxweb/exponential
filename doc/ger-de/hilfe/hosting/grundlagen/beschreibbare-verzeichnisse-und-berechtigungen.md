@@ -50,7 +50,7 @@ nicht ändern kann, ist ein starker Schutz: Eine Schwachstelle in einer Erweiter
 > **Tipp**
 > Websites, die aus der Versionsverwaltung ausgerollt werden, können ihre Einstellungen mit
 > `[ConfigurationSettings] ManagedByDeployment=enabled` sperren; dann schreibt die Administration auf dem Server keine
-> Einstellungen und Templates mehr ([ManagedByDeployment](../../../../eng-us/features/6.0/managed-by-deployment.md)). Änderungen an
+> Einstellungen und Templates mehr ([ManagedByDeployment](../../../funktionen/6.0/durch-deployment-verwaltet.md)). Änderungen an
 > Einstellungen kommen dann nur noch über das Ausrollen, nie über den Browser.
 
 ## Wer schreibt
@@ -122,7 +122,7 @@ find var -type f -exec chmod 0660 {} +
 
 `settings/image.ini [FileSettings]` hat eigene `DirPermissions` und `ImagePermissions` (mitgeliefert `0777` und `0666`)
 für Bildverzeichnisse und -dateien; setzen Sie sie genauso. `config.php` kann jeden Modus mit `EZP_DIR_MODE_MAX` und
-`EZP_FILE_MODE_MAX` begrenzen ([Dateimodi](../../../../eng-us/bc/6.0/file-modes.md)).
+`EZP_FILE_MODE_MAX` begrenzen ([Dateimodi](../../../bc/6.0/dateimodi.md)).
 
 > **Warnung**
 > Auf einem Server mit mehr als einem Kunden erlauben für alle beschreibbare Dateien dem PHP eines Kunden, die Website
@@ -136,7 +136,7 @@ Verzeichnis der Website, zum Beispiel unter `var/`.
 `settings/override/` und `settings/siteaccess/` enthalten die Zugangsdaten zur Datenbank. Halten Sie sie auf `0640` oder
 strenger. Seit 6.0.15 behält ein Speichern aus der Administration oder mit `exp:ini` Modus, Eigentümer und Gruppe der
 Datei bei und legt eine neue Einstellungsdatei mit `0640` an; prüfen Sie einmal, dass nichts für alle beschreibbar
-geblieben ist ([Dateiberechtigungen beim Speichern von INI-Dateien](../../../../eng-us/bc/6.0/ini-save-file-permissions.md)):
+geblieben ist ([Dateiberechtigungen beim Speichern von INI-Dateien](../../../bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md)):
 
 ```bash
 find settings extension/*/settings -perm -o+w
@@ -188,3 +188,11 @@ beschreibbar.
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

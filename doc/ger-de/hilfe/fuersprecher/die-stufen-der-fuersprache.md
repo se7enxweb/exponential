@@ -106,7 +106,7 @@ steht in [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehru
 **Dokumentierte Gelegenheiten für Leitungen.**
 
 - Übersetzungen: Zehn Übersetzungen der Administration sind vollständig; für jede andere Sprache ist das Übersetzen der
-  seit 6.0 hinzugekommenen Texte „die nützlichste Arbeit“ ([Sprachen in Exponential, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)).
+  seit 6.0 hinzugekommenen Texte „die nützlichste Arbeit“ ([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 - Dokumentation: Jede Hilfeseite lässt sich mit **Auf GitHub bearbeiten** verbessern ([Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)).
 - Erweiterungen: Eine Erweiterung nennt ihre Version in ihren eigenen Dateien und wird als Composer-Paket veröffentlicht
   ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
@@ -143,3 +143,11 @@ Niemand schuldet dem Projekt seine Zeit. Eine gute Übergabe ist ein letzter Bei
 - [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehrung/community-leiter-werden.md)
 - [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -40,7 +40,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
+Quelle: [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
 
 1. **Die Einstellungen** (6 Minuten):
 
@@ -112,7 +112,7 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.3.
    php bin/php/console exp:ini set site.ini/FileSettings/INICacheDir site extension:site_clubb:siteaccess:site_b
    ```
 
-4. Starten Sie Velocity neu, wenn es die Übungsumgebung ausliefert, und fragen Sie dann `/site_b` und `/site` je
+4. Starten Sie Velocity neu, wenn er die Übungsumgebung ausliefert, und fragen Sie dann `/site_b` und `/site` je
    einmal mit `curl -s -o /dev/null` an.
 5. Zählen Sie die Dateien beider INI-Caches (ersetzen Sie `var/site` durch das `VarDir` aus Schritt 2):
 
@@ -166,9 +166,9 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.3.
 
 1. **B.** `global_ini` leert `var/cache/ini/`.
 2. Sie enthält, wann Caches und Bild-Aliase zuletzt geleert wurden; geleert, gälten Bild-Aliase, die vor einem Leeren
-   erzeugt wurden, wieder als aktuell ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#a-site-with-its-cache-in-memory)).
+   erzeugt wurden, wieder als aktuell ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#eine-website-mit-ihrem-cache-im-arbeitsspeicher)).
 3. Ihre Caches gehen nach `var_cache/shop/cache`.
-4. Velocity neu starten (es schreibt seine Liste ausgelieferter Pfade beim Start); für Apache die Regel `var_cache` in
+4. Velocity neu starten (er schreibt seine Liste ausgelieferter Pfade beim Start); für Apache die Regel `var_cache` in
    `.htaccess_root` aktivieren.
 5. Nichts.
 
@@ -176,23 +176,23 @@ Verwenden Sie Ihre Schulungsinstallation aus Lektion 3.3.
 
 ## Weiterführende Informationen
 
-- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md):
+- [Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md):
   jeder Fall, der Cluster und die Tests.
 - [Caches](../../../../anleitungen/caches.md): die Cache-IDs und Tags.
-- [Caches vor dem Löschen beiseite umbenennen](../../../../../eng-us/features/6.0/cache-clear-rename-aside.md).
+- [Caches vor dem Löschen beiseite umbenennen](../../../../funktionen/6.0/cache-leeren-durch-umbenennen.md).
 - [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md): die Sicht des Hosters auf `var/`.
 
 ## Verwandte Seiten
 
 - [Modul 3: Einstellungen, Logs und Caches pro Website](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

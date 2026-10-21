@@ -159,7 +159,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - [Ein Rundgang durch die Administration](../../../rundgang-durch-die-administration.md): jeder Teil des Bildschirms, mit Bildern.
 - [Tastenkürzel](../../../tastenkuerzel.md): die Tasten der Kopfzeile, der Menüs und des Baums.
 - [Sprachen](../../../sprachen.md): die Sprache der Oberfläche und die Inhaltssprachen.
-- [Das Design der Administration wählen](../../../../../eng-us/features/6.0/ui-switch-design.md): die Designs, die eine Rolle
+- [Das Design der Administration wählen](../../../../funktionen/6.0/ui-umschalter-design.md): die Designs, die eine Rolle
   wählen darf.
 
 ## Verwandte Seiten
@@ -170,9 +170,9 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

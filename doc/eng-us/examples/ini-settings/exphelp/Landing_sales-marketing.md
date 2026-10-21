@@ -31,7 +31,7 @@ StartPage=help/business/sales-and-marketing-start-here.md
 
 ## Related
 
-Default: a list of 3: `advocate`, `partner`, `project-manager`.
+Default: a list of 4: `advocate`, `partner`, `project-manager`, `reseller`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,6 +42,7 @@ Related[]
 Related[]=advocate
 Related[]=partner
 Related[]=project-manager
+Related[]=reseller
 */ ?>
 ```
 

@@ -9,11 +9,11 @@ Die Geschichte umfasst 6556 Änderungen des Änderungsverzeichnisses in 53 Repos
 | Sie wollen | Verwenden Sie | Lesen Sie |
 |---|---|---|
 | Das Legacy-CMS Exponential 6 (diese Installation) | `se7enxweb/exponential` | [exponential](oekosystem/exponential.md) |
-| Eine Website mit Symfony 7.4 / PHP 8.4+ mit Layouts, REST und GraphQL | `se7enxweb/exponential-platform-nexus-starter` oder `se7enxweb/exponential-platform-dxp-skeleton` | [Nexus-Starter](../../eng-us/features/6.0/platform-nexus-starter.md), [DXP-Skeleton](../../eng-us/features/6.0/platform-dxp-skeleton.md) |
-| Eine bestehende Website mit Exponential 6 behalten und die Symfony-Plattform daneben stellen | `se7enxweb/legacy-bridge` | [Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md) |
-| Eine Datenbank ohne Server | SQLite-Installation der Plattform | [SQLite für die Plattform](../../eng-us/features/6.0/platform-sqlite-install.md) |
+| Eine Website mit Symfony 7.4 / PHP 8.4+ mit Layouts, REST und GraphQL | `se7enxweb/exponential-platform-nexus-starter` oder `se7enxweb/exponential-platform-dxp-skeleton` | [Nexus-Starter](../funktionen/6.0/plattform-nexus-starter.md), [DXP-Skeleton](../funktionen/6.0/plattform-dxp-skeleton.md) |
+| Eine bestehende Website mit Exponential 6 behalten und die Symfony-Plattform daneben stellen | `se7enxweb/legacy-bridge` | [Legacy Bridge](../funktionen/6.0/legacy-bridge.md) |
+| Eine Datenbank ohne Server | SQLite-Installation der Plattform | [SQLite für die Plattform](../funktionen/6.0/plattform-sqlite-installation.md) |
 | Wissen, welches Paket welches Upstream-Paket ersetzt | die Paketübersicht | [Paketübersicht](../spezifikationen/6.0/platform-paketzuordnung.md) |
-| Wissen, was sich beim Upgrade eines Forks ändert | den Upgrade-Hinweis | [Paket-Forks und umbenannte Befehle](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md) |
+| Wissen, was sich beim Upgrade eines Forks ändert | den Upgrade-Hinweis | [Paket-Forks und umbenannte Befehle](../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md) |
 
 ## Distributionen und Starter
 
@@ -134,6 +134,6 @@ Die Geschichte umfasst 6556 Änderungen des Änderungsverzeichnisses in 53 Repos
 
 - [Vollständige Änderungsverzeichnisse](aenderungsverzeichnis/README.md)
 - [Paketübersicht der Plattform](../spezifikationen/6.0/platform-paketzuordnung.md) und [Konsolenbefehle](../spezifikationen/6.0/platform-konsolenbefehle.md)
-- [Paket-Forks und umbenannte Befehle](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Administrationsoberfläche](../../eng-us/features/6.0/platform-admin-ui-fork.md), [Nexus-Starter](../../eng-us/features/6.0/platform-nexus-starter.md), [layouts-core](../../eng-us/features/6.0/platform-layouts-core-fork.md), [Framework-Forks](../../eng-us/features/6.0/platform-php85-framework-forks.md), [Site-Bundles](../../eng-us/features/6.0/platform-site-bundles.md)
+- [Paket-Forks und umbenannte Befehle](../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
+- [Administrationsoberfläche](../funktionen/6.0/plattform-admin-ui-fork.md), [Nexus-Starter](../funktionen/6.0/plattform-nexus-starter.md), [layouts-core](../funktionen/6.0/plattform-layouts-core-fork.md), [Framework-Forks](../funktionen/6.0/plattform-php85-framework-forks.md), [Site-Bundles](../funktionen/6.0/plattform-site-bundles.md)
 - [Release-Changelogs der Pakete](../../changelogs/extensions/README.md)

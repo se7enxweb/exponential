@@ -14,10 +14,10 @@ Eine Ansicht des Moduls `oauthadmin`, definiert in `kernel/private/modules/oauth
 ## Adresse
 
 ```text
-/oauthadmin/keys/(status)/<Status>/(user)/<UserID>/(offset)/<Offset>
+/oauthadmin/keys/(status)/<Status>/(user)/<UserID>/(offset)/<Offset>/(q)/<Query>
 ```
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(status)` setzt `Status`, `(user)` setzt `UserID`, `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(status)` setzt `Status`, `(user)` setzt `UserID`, `(offset)` setzt `Offset`, `(q)` setzt `Query`.
 
 ## Wer sie öffnen darf
 

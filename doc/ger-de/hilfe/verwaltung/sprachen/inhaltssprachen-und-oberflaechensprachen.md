@@ -37,7 +37,7 @@ Ein Siteaccess kann deutsche Inhalte mit einer englischen Oberfläche zeigen und
 Eine **Locale** (`share/locale/<code>.ini`) enthält die Namen einer Sprache und eines Landes, die HTTP-Sprachangabe,
 die Schreibrichtung sowie Datums- und Zahlenformate. Eine Inhaltssprache ist ein Locale-Code, deshalb lässt sich nur
 eine Locale mit Datei hinzufügen; die `Locale` des Siteaccess entscheidet, wie Datum und Zahlen geschrieben werden
-([Sprachen in Exponential, Abschnitt 1](../../../../eng-us/languages.md#1-locales-translations-content-languages-and-siteaccesses)).
+([Sprachen in Exponential, Abschnitt 1](../../../sprachen.md#1-locales-übersetzungen-inhaltssprachen-und-siteaccesses)).
 
 ## Typische Kombinationen
 
@@ -52,19 +52,20 @@ eine Locale mit Datei hinzufügen; die `Locale` des Siteaccess entscheidet, wie 
 Texte, die in Templates stehen („Suchen“, „Kontakt“, Beschriftungen in der Fußzeile), sind Oberflächentexte: Sie
 laufen durch `|i18n( 'design/<your design>' )` und werden in `.ts`-Dateien Ihrer Design-Erweiterung übersetzt. Texte,
 die Redakteure schreiben (Menüs, als Objekte gepflegte Inhalte der Fußzeile), sind Inhalte und werden im Editor
-übersetzt ([Eine mehrsprachige Website bauen](../../../../eng-us/help/creators/website-creators/multilingual-sites.md#templates-and-interface-texts)).
+übersetzt ([Eine mehrsprachige Website bauen](../../ersteller/website-ersteller/mehrsprachige-websites.md#templates-und-oberflächentexte)).
 Wenn Sie möglichst viele feste Texte als Inhalte halten, können Redakteure sie ohne Entwickler übersetzen.
 
 ## Verwandte Seiten
 
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
-- [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)
+- [Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Sprachen (für Redakteure)](../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

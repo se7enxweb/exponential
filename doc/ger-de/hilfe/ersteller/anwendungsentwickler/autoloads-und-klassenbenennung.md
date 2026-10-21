@@ -50,13 +50,13 @@ ausgeliefert sein, bevor die Einstellung, die sie verwendet, live geht.
   offizielle öffentliche PHP-Code-Präfix von 7x (ein Klassenname kann nicht mit einer Ziffer beginnen, daher kann "7x"
   keines sein), und 7x verwendet `exp` bewusst für Arbeit, die es dem Exponential-Projekt und der Exponential
   Foundation überträgt. Verwenden Sie `exp` nur für Code, den Sie zum Projekt beitragen. Siehe
-  [Benennungspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md).
+  [Benennungspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md).
 - Eine Klasse pro Datei; Dateiname in Kleinbuchstaben: `classes/acmedemolist.php`.
 - Verwenden Sie für eine neue Klasse nie einen Kernel-Namen (`eZ...`) wieder; benennen Sie nie einen bestehenden
   Kernel-Bezeichner um.
 
-Siehe [Schichten und Benennung](../../../../eng-us/standards/architecture/layering-and-naming.md) und
-[Coding-Standards](../../../../eng-us/standards/coding-standards.md).
+Siehe [Schichten und Benennung](../../../standards/architektur/schichten-und-benennung.md) und
+[Coding-Standards](../../../standards/programmierstandards.md).
 
 ## Klassen mit Namensraum
 
@@ -90,8 +90,8 @@ Installation installiert sie nach `vendor/`. Liefern Sie `vendor/` nicht innerha
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

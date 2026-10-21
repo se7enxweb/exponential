@@ -176,15 +176,15 @@ the override directories by scope in this order, a later file winning:
 
 | Order | Scope | Directories |
 |---|---|---|
-| 1 | `sa-extension` | per-siteaccess directories inside extensions (`extension/<ext>/settings/siteaccess/<sa>/` and related) |
-| 2 | `siteaccess` | `settings/siteaccess/<sa>/` |
+| 1 | `sa-extension` | `extension/<ext>/settings/` of the extensions in `ActiveAccessExtensions[]` |
+| 2 | `siteaccess` | per-siteaccess directories inside extensions (`extension/<ext>/settings/siteaccess/<sa>/` and related), then `settings/siteaccess/<sa>/` |
 | 3 | `extension` | `extension/<ext>/settings/` of each active extension |
 | 4 | `override` | `settings/override/` |
 
 Override files are named `<file>.ini.append.php` (the `.php` suffix keeps them from being served as text).
 Extensions are switched on in `site.ini [ExtensionSettings] ActiveExtensions[]` (global) and
-`ActiveAccessExtensions[]` (per siteaccess). Note the order: an extension's `settings/` wins over
-`settings/siteaccess/<sa>/`, and `settings/override/` wins over everything. The full reference is
+`ActiveAccessExtensions[]` (per siteaccess). Note the order: the `settings/` of an extension in
+`ActiveExtensions[]` wins over `settings/siteaccess/<sa>/` (one in `ActiveAccessExtensions[]` does not), and `settings/override/` wins over everything. The full reference is
 [INI override directories and placements](../../specifications/6.0/ini-override-placements.md); per-site settings in
 extensions are described in [multi-site INI overrides](../../features/6.0/multi-site-ini-overrides.md).
 

@@ -57,7 +57,7 @@ class Logs extends \Exponential\Runnable\ModuleView
 
     /**
      * The search of a view as view parameters of the feed (setup/logsfeed): "/(file)/<id>/(q)/..." with every value
-     * written as a permalink writes it (expLogPermalink::encode()), never a query string.
+     * written as every view parameter is (expViewParameters::encode()), never a query string.
      *
      * @param string $fileID
      * @param array $criteria expLogSearch::criteria() plus from_text and to_text
@@ -82,7 +82,7 @@ class Logs extends \Exponential\Runnable\ModuleView
         $suffix = '';
         foreach ( $pairs as $name => $value )
             if ( $value !== '' )
-                $suffix .= '/(' . $name . ')/' . \expLogPermalink::encode( $value );
+                $suffix .= '/(' . $name . ')/' . \expViewParameters::encode( $value );
         return $suffix;
     }
 

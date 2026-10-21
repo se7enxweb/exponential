@@ -10,7 +10,7 @@ Zahl und jede Meldung unten wurde am Code geprüft (`kernel/private/classes/view
 und zwar am 6. Oktober 2026 auf dem Demonstrationsserver, unter Apache mit PHP-FPM und unter FrankenPHP.
 
 [Anleitungen](README.md) · Siehe auch: [Templates und Design](templates-und-design.md),
-[Blättern, Sortieren und Seitengrößen](../../eng-us/features/6.0/admin-list-paging.md), [Sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md)
+[Blättern, Sortieren und Seitengrößen](../funktionen/6.0/seitenweise-listen-im-admin.md), [Sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md)
 
 ## Kurz gesagt
 
@@ -112,7 +112,7 @@ entfernt wurde. Ein Neuladen entfernt nie zweimal.
 | „Die PDF-Templates haben keine Datei geschrieben“ | Ein Override von `node/view/pdf.tpl` oder `node/view/execute_pdf.tpl` ist fehlgeschlagen. Siehe `var/log/error.log` |
 | Ein gespeichertes PDF zeigt alte Inhalte | Einmal erzeugt behält die Datei; drücken Sie Neu erzeugen oder wechseln Sie zu „bei Bedarf“ |
 | Ein großer Baum läuft bei Bedarf in eine Zeitüberschreitung | Stellen Sie ihn auf Einmalig erstellen um und erzeugen Sie ihn außerhalb der Stoßzeiten neu |
-| Ein Export mit einer Tabelle antwortet unter PHP 8 mit 500 (`TypeError` in `lib/ezpdf/classes/ezpdf.php`) | Behoben am 12.10.2026; aktualisieren Sie auf den aktuellen Code von 6.0.15 ([PDF-Export](../../eng-us/features/6.0/pdf-export.md#what-was-repaired)) |
+| Ein Export mit einer Tabelle antwortet unter PHP 8 mit 500 (`TypeError` in `lib/ezpdf/classes/ezpdf.php`) | Behoben am 12.10.2026; aktualisieren Sie auf den aktuellen Code von 6.0.15 ([PDF-Export](../funktionen/6.0/pdf-export.md#was-repariert-wurde)) |
 
 ## Für Entwickler
 
@@ -124,3 +124,11 @@ entfernt wurde. Ein Neuladen entfernt nie zweimal.
 - `expPDFExportForm::read()`: das Formular, wobei die Prüfungen, die die Datenbank brauchen, hineingereicht werden.
 - Tests ohne Datenbank: `php vendor/bin/phpunit tests/tests/kernel/classes/expPDFExportTest.php`.
 - Velocity: Die Klassen sind Kernel-Klassen; stellen Sie sie mit `exp:velocity deploy --kernel` bereit.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

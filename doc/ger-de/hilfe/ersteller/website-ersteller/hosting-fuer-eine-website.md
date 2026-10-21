@@ -54,7 +54,7 @@ Aus [8.1 Die Wahl in einer Tabelle](../../../installation/08-die-website-auslief
 Also:
 
 - **Ein Server oder VPS, den Sie kontrollieren:** Velocity
-  ([Exponential Velocity](../../../../eng-us/features/6.0/velocity-web-server.md)).
+  ([Exponential Velocity](../../../funktionen/6.0/velocity-webserver.md)).
 - **Shared Hosting:** Apache mit PHP-FPM und den mitgelieferten Regeln aus `.htaccess_root`
   ([8.5 Apache mit PHP-FPM](../../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm)).
 - **Ein nginx, den Sie bereits betreiben:**
@@ -80,7 +80,7 @@ Einzelheiten, Grenzen und die Reihenfolge der Unterstützung: [Datenbankunterst�
 | Beschreibbare Verzeichnisse `var/` und `settings/` für den Benutzer des Webservers | Caches, Uploads, Logs, die SQLite-Datei | [8.7 Dateirechte und Eigentümer](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer) |
 | Ein Cronjob alle paar Minuten | `runcronjobs.php` führt die periodischen Jobs aus: Benachrichtigungen, Linkprüfungen, Aufräumen | [10.3 Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs) |
 | Ausgehende Mail | Formulare, Registrierung, Zurücksetzen von Passwörtern, Newsletter | [10.4 Mail](../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand) |
-| HTTPS | jede öffentliche Website; Velocity kann Zertifikate selbst beziehen | [Velocity: HTTPS-Zertifikate](../../../../eng-us/features/6.0/velocity-https-certificates.md) |
+| HTTPS | jede öffentliche Website; Velocity kann Zertifikate selbst beziehen | [Velocity: HTTPS-Zertifikate](../../../funktionen/6.0/velocity-https-zertifikate.md) |
 | Backups der Datenbank, von `var/storage` und Ihren Einstellungen | Wiederherstellung nach einem Fehler | [Backups und Wiederherstellungen](backups-und-wiederherstellungen.md) |
 | Speicherplatz für Medien | Bilder und Dateien wachsen mit der Website | [Bilder und Bildvarianten](bilder-und-bildvarianten.md) |
 | Optional: ein Solr-Server | Suche für große Websites mit `ezfind` | [Suche mit ezfind und Solr](suche-mit-ezfind-und-solr.md) |
@@ -115,8 +115,8 @@ Kopieren und senden:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

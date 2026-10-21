@@ -50,7 +50,7 @@ Dann gilt für ein Speichern:
 Ist eine Bedingung nicht erfüllt, schreibt der alte Serialisierer die Datei wie bisher.
 
 Eine Zeile `[Include <pattern>]` (6.0.15, siehe
-[die Anleitung zur Einstellungsseite](../../../eng-us/guides/settings-page.md#splitting-a-large-settings-file-with-include-))
+[die Anleitung zur Einstellungsseite](../../anleitungen/einstellungsseite.md#eine-große-einstellungsdatei-mit-include--aufteilen))
 bleibt beim Round Trip so erhalten, wie sie geschrieben ist: Sie ist kein Abschnitt, sie beendet den Abschnitt davor,
 und ein vollständiges Speichern entfernt sie nie. Eine Instanz mit direktem Zugriff liest die eingebundenen Dateien
 nicht, daher werden deren Einstellungen nie in die gespeicherte Datei kopiert.
@@ -122,6 +122,6 @@ Bei der Änderung festgehaltene Ergebnisse:
 
 ## Verwandte Seiten
 
-- [Einstellungen von der Kommandozeile aus ändern: exp:ini](../../../eng-us/features/6.0/exp-ini-command.md)
+- [Einstellungen von der Kommandozeile aus ändern: exp:ini](../../funktionen/6.0/exp-ini-befehl.md)
 - [Einstellungen von der Kommandozeile aus ändern: `exp:ini`](console-exp-ini.md)
-- [Juni 2026, zweite Hälfte (16. bis 30. Juni)](../../../eng-us/history/2026/2026-06b.md)
+- [Juni 2026, zweite Hälfte (16. bis 30. Juni)](../../geschichte/2026/2026-06b.md)

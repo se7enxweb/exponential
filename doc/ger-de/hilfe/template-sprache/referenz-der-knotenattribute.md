@@ -164,7 +164,7 @@ url:             fitness/why-should-you-choose-strength-training
 - `sort_array` ist eine Liste von Paaren `array( sort field, ascending )`, die Sortierung der Kinder des Knotens, wie
   `fetch( 'content', 'list' )` sie versteht (hier: nach Veröffentlichungsdatum, aufsteigend ist `1`).
 - `children`, `subtree` und `children_count` führen bei jedem Lesen eine Abfrage aus. Nutzen Sie in einer Liste mit vielen Einträgen
-  stattdessen `fetch( 'content', 'list', ... )` mit `limit` (siehe [Leistung von fetch](../../../eng-us/help/designers/templates/fetch-performance.md)).
+  stattdessen `fetch( 'content', 'list', ... )` mit `limit` (siehe [Leistung von fetch](../designer/vorlagen/fetch-leistung.md)).
 - `can_read`, `can_edit`, `can_hide`, `can_remove`, `can_move`, `can_create` prüfen die Richtlinien des aktuellen Benutzers an diesem Ort;
   ihre Ergebnisse hängen davon ab, wer die Seite ansieht, weshalb solche Prüfungen außerhalb von Ausgaben im View-Cache gehören oder in
   Templates, deren Cache nach Rolle variiert (die Schlüssel des Content-View-Cache enthalten die Rollen-IDs des Benutzers).
@@ -177,6 +177,14 @@ url:             fitness/why-should-you-choose-strength-training
 - [Das Objektmodell in Templates](das-objektmodell-in-templates.md)
 - [Referenz der Attribute von Inhaltsobjekten](referenz-der-objektattribute.md)
 - [Referenz von Inhaltsattribut und Version](referenz-von-inhaltsattribut-und-version.md)
-- [Knoten, Objekte und Attribute](../../../eng-us/help/designers/templates/nodes-objects-attributes.md)
-- [Knoten und Listen holen](../../../eng-us/help/designers/templates/fetching-nodes-and-lists.md)
+- [Knoten, Objekte und Attribute](../designer/vorlagen/knoten-objekte-und-attribute.md)
+- [Knoten und Listen holen](../designer/vorlagen/knoten-und-listen-abrufen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

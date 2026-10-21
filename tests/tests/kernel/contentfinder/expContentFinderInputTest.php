@@ -151,21 +151,30 @@ class expContentFinderInputTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', expContentFinderInput::parse( "abc\xFF" )['text'], 'an invalid text is not echoed' );
     }
 
-    /** CF-08 the search is the view parameters (type) and (text); a path travels as ~base64url and comes back unchanged */
+    /**
+     * CF-08 the search is the view parameters (type) and (text); a path travels as every view parameter does
+     * (expViewParameters::encode(), "~2F" for "/") and comes back unchanged; the "~" + base64url links of before too
+     */
     public function testTheSearchIsViewParameters()
     {
         $search = '\\Exponential\\View\\Kernel\\Contentfinder\\Search';
         $this->assertSame( '/contentfinder/search/(type)/object/(text)/58', $search::searchURI( '58', 'object' ) );
         $this->assertSame( '/contentfinder/search', $search::searchURI( ' ', 'auto' ) );
-        $this->assertSame( '/contentfinder/search/(text)/node%3A42', $search::searchURI( 'node:42', 'nonsense' ) );
-        foreach ( array( 'var/site/storage/images/a/b (1).jpg', 'https://www.example.com/News?x=1', '~58', "\xC3\xA4rger/%2F" ) as $text )
+        $this->assertSame( '/contentfinder/search/(text)/node:42', $search::searchURI( 'node:42', 'nonsense' ) );
+        $this->assertSame( '/contentfinder/search/(text)/example.com~2Fa', $search::searchURI( 'example.com/a' ) );
+        foreach ( array( 'var/site/storage/images/a/b (1).jpg', 'https://www.example.com/News?x=1', '~58', '~L3g', "\xC3\xA4rger/%2F", '~2F', '~' ) as $text )
         {
             $param = $search::textParameter( $text );
-            $this->assertMatchesRegularExpression( '/^~[A-Za-z0-9_-]+$/', $param, $text );
-            $this->assertSame( $text, $search::textFromParameter( $param ) );
+            $this->assertSame( expViewParameters::encode( $text ), $param, $text );
+            // the kernel hands the view the decoded address
+            $this->assertSame( $text, $search::textFromParameter( urldecode( $param ) ), $text );
+            // the form of before
+            $legacy = '~' . rtrim( strtr( base64_encode( $text ), '+/', '-_' ), '=' );
+            $this->assertSame( $text, $search::textFromParameter( $legacy ), "$legacy" );
         }
         $this->assertSame( '58', $search::textFromParameter( '58' ) );
-        $this->assertSame( '', $search::textFromParameter( '~***' ) );
+        $this->assertSame( '/x', $search::textFromParameter( '~L3g' ), 'the base64url of "/x", written before' );
+        $this->assertSame( '~***', $search::textFromParameter( '~***' ), 'neither form: as it is' );
         $this->assertSame( '', $search::textFromParameter( false ) );
     }
 }

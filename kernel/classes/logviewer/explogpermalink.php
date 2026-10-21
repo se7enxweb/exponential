@@ -8,9 +8,11 @@
  *   /setup/logs/view/error/(level)/error,warning/(search)/timeout/(follow)/0/(offset)/20480
  *   /setup/logs/view/webserver-access/(archive)/1/(search)/~2Fadmin~2F
  *
- * A value is written as is when it is made of letters, digits, - _ . and , only; any other character is ~ and its
- * two hexadecimal digits (a space ~20, a slash ~2F, a ~ itself ~7E), so a value never holds a / or a ( that would
- * end it. The page's script writes the same (page/setup_logs.js). The names, in the order a link writes them:
+ * A value is written as every view parameter is (expViewParameters::encode()): "/", "(", ")", "~", "%", "+" and the
+ * other characters the address would change are ~ and two hexadecimal digits (a slash ~2F, a ~ itself ~7E), the rest
+ * stays readable (a space %20), so a value never holds a / or a ( that would end it. The page's script writes the
+ * same (window.a4ViewParameter.encode(), a4_url.js). A link of before, every other character ~XX (a space ~20), is
+ * read the same. The names, in the order a link writes them:
  * archive (the rotation N: .N, or .N.gz when there is no plain one; (rotation)/N is read as the same), level, search,
  * regex, case, from, to, siteaccess, uri, ip, reference, scope, rotations, cursor, offset,
  * follow, wrap, unmask, done, ok. A value that is the default is left out. Pure: nothing here reads a file.
@@ -39,29 +41,26 @@ class expLogPermalink
     const MAX_VALUE = 300;
 
     /**
-     * A value as a permalink writes it.
+     * A value as a permalink writes it: expViewParameters::encode().
      *
      * @param string $value
      * @return string
      */
     public static function encode( $value )
     {
-        return preg_replace_callback( '/[^A-Za-z0-9_.,\-]/', function ( $m ) {
-            return '~' . strtoupper( bin2hex( $m[0] ) );
-        }, (string)$value );
+        return expViewParameters::encode( (string)$value );
     }
 
     /**
-     * A value of a permalink as it was written (a ~ that is not followed by two hexadecimal digits stays).
+     * A value of a permalink as it was written (expViewParameters::decode(); a ~ that is not followed by two
+     * hexadecimal digits stays).
      *
      * @param string $value
      * @return string
      */
     public static function decode( $value )
     {
-        return preg_replace_callback( '/~([0-9A-Fa-f]{2})/', function ( $m ) {
-            return chr( hexdec( $m[1] ) );
-        }, (string)$value );
+        return expViewParameters::decode( (string)$value );
     }
 
     /**

@@ -39,9 +39,9 @@ composer require se7enxweb/doctrine-bundle
 
 ## Verwandte Seiten
 
-- [Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
+- [Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/DoctrineBundle.md)
 - Plattform-Ökosystem nach Monat: [2026-01](monate/2026-01.md)

@@ -19,7 +19,7 @@ Softwarelizenzen auskennt.
 | Teil | Lizenz | Wo das steht |
 |---|---|---|
 | Die Software | GNU General Public License, Version 2 oder später (`GPL-2.0-or-later`) | die `composer.json` im Wurzelverzeichnis |
-| Die Dokumentation (`doc/`) | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../../../eng-us/README-LICENSE.md) |
+| Die Dokumentation (`doc/`) | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../../README-LIZENZ.md) |
 | Die Themes von 7x (`sevenx_themes_simple`, `sevenx_themes_media`, `cjw_themes_jumper`) | `GPL-2.0-or-later` | `composer.json` und `LICENSE` jedes Themes |
 
 ## Die vier Entscheidungen

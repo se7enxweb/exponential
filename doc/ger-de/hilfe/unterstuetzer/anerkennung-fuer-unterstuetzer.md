@@ -19,7 +19,7 @@ arbeiten.
   bleiben so erhalten, wie der Mitwirkende sie geschrieben hat, und werden niemals umgeschrieben“
   (`doc/eng-us/bc/6.0/ci.md`). `git shortlog -sn` zeigt alle, die beigetragen haben.
 - **Der Urheberrechtsvermerk der Dokumentation** nennt „the Exponential contributors“ neben 7x und der Foundation
-  ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+  ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).
 - **Nennung im README** für die Arbeit anderer Projekte, zum Beispiel „with full credit to Mugo Web“ (README).
 
 ## Sponsoren
@@ -41,7 +41,7 @@ Ihr Sponsoring öffentlich angezeigt wird (GitHub Docs, „About sponsorships, f
 ## Partner
 
 Partner werden durch Stufen, Einträge und Punkte für ihre Arbeit in der Community gewürdigt
-([Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)).
+([Partner: Hier beginnen](../partner/partner-hier-beginnen.md)).
 
 ## Noch nicht festgelegt
 
@@ -56,3 +56,11 @@ Website der Foundation hat einen Bereich „Supporters“, der derzeit die Beitr
 - [Wie Sponsoren gewürdigt werden](../sponsoren/anerkennung-fuer-sponsoren.md)
 - [Unterstützer-FAQ](unterstuetzer-faq.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

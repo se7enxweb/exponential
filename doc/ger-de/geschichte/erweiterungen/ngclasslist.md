@@ -1,8 +1,8 @@
 # ngclasslist (Datentyp Klassenliste): Chronik
 
-Der Datentyp Klassenliste wurde Ende August und im September 2026 neu paketiert und erhielt im Oktober Übersetzungen. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ngclasslist.md).
+Der Datentyp Klassenliste wurde Ende August und im September 2026 neu paketiert und erhielt im Oktober Übersetzungen. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ngclasslist.md).
 
-Diese Seite führt **jede der 9 Änderungen** des Repositorys `ngclasslist` zwischen 2026-03-02 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ngclasslist.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ngclasslist.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ngclasslist.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 9 Änderungen** des Repositorys `ngclasslist` zwischen 2026-03-02 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ngclasslist.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ngclasslist.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ngclasslist.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -53,7 +53,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ngclasslist.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ngclasslist.md)
 - [Release Notes](../../../changelogs/extensions/ngclasslist.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ngclasslist.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

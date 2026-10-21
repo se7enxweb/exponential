@@ -238,8 +238,8 @@ zuerst mit `--dry-run`, auf einer Kopie der Installation.
 
 ## Verwandte Seiten
 
-- [RSS: Feed-Liste, Podcasts und sicherere Exporte](../../../eng-us/features/6.0/rss-podcast-and-feed-list.md) und [OPML-Exporte](opml.md)
-- [September 2026, erste Hälfte: 15. September](../../../eng-us/history/2026/2026-09a.md#15-september-paging-everywhere)
+- [RSS: Feed-Liste, Podcasts und sicherere Exporte](../../funktionen/6.0/rss-podcast-und-feed-liste.md) und [OPML-Exporte](opml.md)
+- [September 2026, erste Hälfte: 15. September](../../geschichte/2026/2026-09a.md#15-september-überall-seitenweise-anzeige)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Konsole für Cronjobs](../../../eng-us/features/6.0/cronjobs-console.md)
+- [Konsole für Cronjobs](../../funktionen/6.0/cronjobs-in-der-konsole.md)
 - [Spezifikation der Syndizierung](../../spezifikationen/6.0/syndikation.md)

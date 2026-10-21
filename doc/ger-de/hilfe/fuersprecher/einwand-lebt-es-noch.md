@@ -36,9 +36,9 @@ hat, das Projekt zu verfolgen, hat allen Grund zu fragen.
 |---|---|
 | 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026: fünfzehn Releases, 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
 | „6556 Änderungen im Änderungsbuch in 53 Repositorys seit Dezember 2023“ | [Mit Einwänden umgehen, Wird es gepflegt?](../geschaeft/einwandbehandlung.md#wird-es-gepflegt) |
-| Tests laufen bei jedem Push und Pull Request, auf PHP 8.1 bis 8.5 | [CI](../../../eng-us/bc/6.0/ci.md), [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| Tests laufen bei jedem Push und Pull Request, auf PHP 8.1 bis 8.5 | [CI](../../bc/6.0/ci.md), [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Was die aktuelle Linie hinzufügt: Velocity, admin4, Prüfprotokoll, Layouts, Exponential Intelligence, die Hilfe | [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md) |
-| Jeder Monat Arbeit wird in der Geschichte erzählt | [Die Geschichte](../../../eng-us/history/README.md) |
+| Jeder Monat Arbeit wird in der Geschichte erzählt | [Die Geschichte](../../geschichte/README.md) |
 | Ein Unternehmen leitet es (7x), und eine gemeinnützige Organisation betreibt es (die Exponential Foundation, gegründet 2026) | [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
 | Pull Requests kommen von mehreren Organisationen und werden übernommen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 
@@ -52,7 +52,7 @@ git log -10 --format='%ad %s'                 # the latest changes, with dates
 ```
 
 Oder ohne Terminal: die [Releases auf GitHub](https://github.com/se7enxweb/exponential/releases) und der jüngste Monat
-der [Geschichte](../../../eng-us/history/README.md).
+der [Geschichte](../../geschichte/README.md).
 
 ## Antwortvorlagen
 
@@ -87,3 +87,11 @@ since January 2024 - I can show you the list on my phone."
 - [Die Geschichte von Exponential in zwei Minuten](die-geschichte-in-zwei-minuten.md)
 - [Einwände als Fürsprecher beantworten](einwaende-beantworten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

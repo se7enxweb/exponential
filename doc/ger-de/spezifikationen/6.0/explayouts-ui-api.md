@@ -4,7 +4,7 @@ Diese Seite ist die Referenz für die JSON-API hinter dem Layout-Editor der Exte
 (Releases 1.0.0 bis 1.3.7): ihre Modul-Views, der Dispatcher, die Regel zum Formular-Token, jeder Endpunkt, die
 Schreibregeln, Templates und Übersetzungen. Lesen Sie sie, wenn Sie Layouts per Skript bearbeiten, den Editor debuggen
 oder einen eigenen Client bauen. Die Beschreibung für Anwender steht auf der
-[Funktionsseite](../../../eng-us/features/6.0/extensions/explayouts_ui_api.md).
+[Funktionsseite](../../funktionen/6.0/erweiterungen/explayouts_ui_api.md).
 
 ## Kurz gesagt
 
@@ -145,6 +145,6 @@ Platzhaltern (`%kind`, `%language`, `%name`, `%count`) und haben Singular- und P
 
 ## Verwandte Seiten
 
-- Funktionen: [explayouts_ui_api](../../../eng-us/features/6.0/extensions/explayouts_ui_api.md), [explayouts_ui](../../../eng-us/features/6.0/extensions/explayouts_ui.md), [Exponential Layouts](../../../eng-us/bc/6.0/LAYOUTS.md)
-- [Verhaltensänderungen der Extensions](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
-- [Chronik](../../../eng-us/history/extensions/explayouts_ui_api.md), [Release-Notes](../../../changelogs/extensions/explayouts_ui_api.md); Monate [2026-07](../../../eng-us/history/extensions/months/2026-07.md), [2026-08](../../../eng-us/history/extensions/months/2026-08.md), [2026-09](../../../eng-us/history/extensions/months/2026-09.md)
+- Funktionen: [explayouts_ui_api](../../funktionen/6.0/erweiterungen/explayouts_ui_api.md), [explayouts_ui](../../funktionen/6.0/erweiterungen/explayouts_ui.md), [Exponential Layouts](../../bc/6.0/layouts.md)
+- [Verhaltensänderungen der Extensions](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)
+- [Chronik](../../geschichte/erweiterungen/explayouts_ui_api.md), [Release-Notes](../../../changelogs/extensions/explayouts_ui_api.md); Monate [2026-07](../../geschichte/erweiterungen/monate/2026-07.md), [2026-08](../../geschichte/erweiterungen/monate/2026-08.md), [2026-09](../../geschichte/erweiterungen/monate/2026-09.md)

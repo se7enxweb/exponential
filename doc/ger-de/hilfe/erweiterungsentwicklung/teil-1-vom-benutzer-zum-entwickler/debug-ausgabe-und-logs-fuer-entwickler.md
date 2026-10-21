@@ -61,7 +61,7 @@ Prüfen Sie jede davon mit `./console exp:ini where site.ini/<Block>/<Setting>`.
 
 Mit `ShowTemplatePathComments=enabled` sehen Sie sich den Seitenquelltext an: Jeder Teil des HTML ist von Kommentaren
 umschlossen, die sein Template nennen. Das ist der schnellste Weg von „dieser Teil der Seite“ zu „diese Datei“.
-Siehe [Template-Pfadkommentare](../../../../eng-us/features/6.0/template-path-comments.md).
+Siehe [Template-Pfadkommentare](../../../funktionen/6.0/template-pfad-kommentare.md).
 
 ## Die Log-Dateien
 
@@ -85,7 +85,7 @@ grep -c "" var/log/deprecated.log    # how many deprecation lines
 ```
 
 Die Administration hat einen Viewer für dieselben Dateien, mit Suche und Permalinks: **Setup > Logs**, beschrieben in
-[Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md). Jeder Fehler trägt eine Referenz, die zu jeder Zeile seiner
+[Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md). Jeder Fehler trägt eine Referenz, die zu jeder Zeile seiner
 Anfrage führt: [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md). Auf
 der Kommandozeile heißt das `./console exp:explogs`.
 
@@ -150,8 +150,8 @@ Autoloads, Caches und der RAD-Gesundheitscheck.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

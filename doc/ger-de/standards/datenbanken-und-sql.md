@@ -118,7 +118,7 @@ was der Adapter stattdessen tut („nicht untersucht" markiert eine Zelle, die d
 | MD5 | `md5()` als benutzerdefinierte Funktion registriert | `encode( digest( s, 'md5' ), 'hex' )`, benötigt `pgcrypto` | `MD5()` | `STANDARD_HASH( s, 'MD5' )`, Hex in Kleinbuchstaben | ein Literal in Anführungszeichen wird in PHP gehasht |
 | Bitweises AND, OR | `&`, `\|`; Aggregate `BIT_OR`, `BIT_AND` registriert | `&`, `\|` | `&`, `\|` nach `SIGNED` gecastet | `BITAND()`; OR als `a + b - BITAND( a, b )` | `&`, `\|`, vom Adapter ausgewertet |
 | MySQL-`UPDATE ... JOIN` | in eine Form umgeschrieben, die SQLite akzeptiert (`rewriteJoinedUpdate()`, benötigt 3.33) | nicht umgeschrieben | nativ | nicht umgeschrieben | nicht anwendbar |
-| MySQL-Session-Anweisungen `SET` | akzeptiert und ignoriert | nur `SET NAMES` | nativ | nicht unterstützt | nicht anwendbar |
+| MySQL-Sitzungsanweisungen `SET` | akzeptiert und ignoriert | nur `SET NAMES` | nativ | nicht unterstützt | nicht anwendbar |
 | Beginn einer Transaktion | `BEGIN IMMEDIATE`, nach der Schreibsperre | `BEGIN WORK` | `BEGIN WORK` | kein Auto-Commit (`OCI_DEFAULT`) | keiner: jede Operation committet für sich |
 | Leere Zeichenkette | gespeichert als `''` | gespeichert als `''` | gespeichert als `''` | gespeichert als NULL; `OracleEmptyStringForNull=enabled` liefert `''` | nicht untersucht |
 | Vergleich von Zeichenketten | `=` mit Beachtung der Groß- und Kleinschreibung, `LIKE` ohne für ASCII | mit Beachtung der Groß- und Kleinschreibung | ohne (Standard-Kollationen) | mit; `OracleCaseInsensitive=enabled` für linguistischen Vergleich | mit, sofern keine Kollation gesetzt ist |

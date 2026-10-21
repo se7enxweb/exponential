@@ -21,7 +21,7 @@ die Fakten der Installation (Version, PHP, die Engine, die Datenbank) und danach
 Exponential Foundation und 7x, Exponential Velocity, die Lizenz (GPL 2.0 oder neuer für den Code, GFDL 1.3 oder neuer
 für die Dokumentation), die Links und wie Sie beitragen oder Partner werden. Jeder Satz des Projektteils stammt aus
 der Dokumentation, Sie können ihn also laut aussprechen, ohne ihn noch einmal zu prüfen. Referenz:
-[Die Systemkarte](../../../eng-us/features/6.0/system-card.md).
+[Die Systemkarte](../../funktionen/6.0/systemkarte.md).
 
 ## Gut zeigen
 
@@ -47,7 +47,7 @@ Demo-Installation zu erwarten; sagen Sie das, wenn jemand fragt.
 
 ## Verwandte Seiten
 
-- [Die Systemkarte](../../../eng-us/features/6.0/system-card.md)
+- [Die Systemkarte](../../funktionen/6.0/systemkarte.md)
 - [Demos zeigen](demos-zeigen.md)
 - [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md)
 - [Demo-Skript: Überblick in fünf Minuten](../presse/demo-skript-ueberblick-in-fuenf-minuten.md)

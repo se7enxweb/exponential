@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei Hosting
 welche Art von Änderung geleert wird, in welcher Reihenfolge, mit welchem Befehl, wie sich das Leeren auf einer ausgelasteten
 Website verhält und wie Sie eine Website danach vorwärmen, damit die ersten Besucher nicht dafür bezahlen. Die Quellen sind
 [Caches](../../../anleitungen/caches.md), [Kapitel 10, Abschnitt 10.6](../../../installation/10-nach-der-installation.md#106-caches),
-[Cache-Steuerung aus der Konsole](../../../../eng-us/bc/6.0/cache-console.md) und [Caches vorladen](../../../anleitungen/caches-vorwaermen.md).
+[Cache-Steuerung aus der Konsole](../../../bc/6.0/cache-konsole.md) und [Caches vorladen](../../../anleitungen/caches-vorwaermen.md).
 
 ## Inhalt
 
@@ -63,12 +63,12 @@ tut genau das, mit `PASS` oder `FAIL` pro Schritt, auf Velocity und auf Websites
 | 3 | Caches für Templates, Template-Overrides, Übersetzungen und design_base |
 | 4 | Engine-Archiv, wenn Velocity aus einem läuft |
 | 5 | PHP-FPM: warten, bis OPcache neu geprüft hat, oder neu laden |
-| 6 | Velocity neu starten, wenn es läuft |
+| 6 | Velocity neu starten, wenn er läuft |
 | 7 | Caches für Inhalte, exphttpcache, (mit `--packer`) ezjscore-packer und Template-Blöcke |
 | 8 | der Antwort-Cache von Velocity |
 | 9 | Vorwärmen: jede `[DeploySettings] WarmUpURL[]` wird einmal im Hintergrund angefragt |
 
-Die Schritte sind aus [Engines von Velocity](../../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy) verdichtet.
+Die Schritte sind aus [Engines von Velocity](../../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy) verdichtet.
 
 ```bash
 php bin/php/console exp:velocity deploy --dry-run --allow-root-user
@@ -99,7 +99,7 @@ was zu Skripten passt.
 ## Leeren auf einer ausgelasteten Website
 
 Seit 6.0.15 **benennt** ein Leeren ein Cache-Verzeichnis in einem Schritt zur Seite **um** und löscht es von dort
-([Leeren von Caches, das Verzeichnisse zur Seite verschiebt](../../../../eng-us/features/6.0/cache-clear-rename-aside.md)): Es kehrt auch bei
+([Leeren von Caches, das Verzeichnisse zur Seite verschiebt](../../../funktionen/6.0/cache-leeren-durch-umbenennen.md)): Es kehrt auch bei
 Hunderttausenden von Dateien schnell zurück, und nichts, was in der Zwischenzeit erzeugt wird, wird vom Löschen erfasst.
 Einstellungen: `site.ini [FileSettings] RenameBeforeDelete=enabled` und `RenameExpiredCaches=enabled` (beide mitgeliefert).
 
@@ -147,7 +147,7 @@ php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1
 - Vorwärmen rendert Seiten und kostet daher CPU. Planen Sie es auf einer geteilten Maschine in ruhigen Stunden und versetzt für die
   Kunden.
 - Auf der Testinstallation der Quelle brauchte `exp:warm` kalt 9,6 s für 142 Seiten und warm 0,3 s
-  ([HTTP/2 und Vorwärmen des Caches](../../../../eng-us/bc/6.0/http2-and-cache-warming.md#keeping-the-cache-full)).
+  ([HTTP/2 und Vorwärmen des Caches](../../../bc/6.0/http2-und-cache-vorwaermen.md#den-cache-gefüllt-halten)).
 
 ## Wer was geleert hat
 
@@ -170,5 +170,13 @@ Der Support kann daher beantworten, wer den Cache geleert hat, bevor die Website
 - [Änderungen ausrollen](../betrieb/aenderungen-ausrollen.md)
 - [Langsame Website](../runbooks/langsame-website.md)
 - [Caches vorladen](../../../anleitungen/caches-vorwaermen.md)
-- [Cache-Steuerung aus der Konsole](../../../../eng-us/bc/6.0/cache-console.md)
+- [Cache-Steuerung aus der Konsole](../../../bc/6.0/cache-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

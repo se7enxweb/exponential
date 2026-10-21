@@ -27,7 +27,7 @@ Baum an.
 Typische Aufgaben: Seiten überall auf der öffentlichen Website anlegen und anordnen, Inhalte anderer Teams korrigieren, die Medienbibliothek
 verwalten, Inhalte zwischen Sektionen und Zuständen bewegen, nach einer Änderung Caches leeren, prüfen, ob Cronjobs gelaufen sind, und die
 Logs lesen, wenn etwas falsch aussieht. Es legt in der Regel **keine** Rollen an, ändert keine Einstellungen, installiert keine Extensions
-und verwaltet nicht den Audit-Trail; das bleibt bei den Systemadministratoren (siehe [Funktionstrennung](funktionstrennung.md)).
+und verwaltet nicht das Prüfprotokoll; das bleibt bei den Systemadministratoren (siehe [Funktionstrennung](funktionstrennung.md)).
 
 ## Die Rolle „Web-Team“
 
@@ -53,7 +53,7 @@ geschrieben, und das ist der Nachweis, den Sie aufbewahren.
 
 Fügen Sie `content/publish_without_notification` nur hinzu, wenn `notification.ini [NotificationSettings] PublishWithoutNotification`
 aktiviert ist und das Team häufig Tippfehler korrigiert
-([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)).
+([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)).
 
 ## Was bewusst weggelassen wird
 
@@ -74,27 +74,28 @@ aktiviert ist und das Team häufig Tippfehler korrigiert
    gewähren**, wo eine Einschränkung aufgeführt ist, oder **Vollen Zugriff gewähren** für diese Funktion, wo keine aufgeführt ist.
 3. **Speichern**.
 4. Legen Sie im Baum Benutzer eine Benutzergruppe „Web-Team“ an, falls Sie keine haben
-   ([Eine Benutzergruppe für einen Fachbereich anlegen](../../../../../eng-us/help/government/tasks/people-and-permissions/create-a-user-group-for-a-department.md)).
+   ([Eine Benutzergruppe für einen Fachbereich anlegen](../../aufgaben/personen-und-berechtigungen/eine-benutzergruppe-fuer-eine-abteilung-anlegen.md)).
 5. **Weisen** Sie die Rolle auf der Rollenseite der Gruppe **zu**.
 
 ## Prüfen
 
 - Melden Sie sich in einem privaten Browserfenster als Mitglied an: Das Setup-Menü zeigt Cache-Verwaltung, Cronjobs, Logdateien und
   Systeminformationen, und unter Benutzer gibt es kein Rollen und Richtlinien.
-- Öffnen Sie `/role/list`, indem Sie es eintippen: Die Seite wird abgewiesen, und die Abweisung wird im Audit-Trail als
-  `access.permission.refused` erfasst ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md#who-may-look)).
+- Öffnen Sie `/role/list`, indem Sie es eintippen: Die Seite wird abgewiesen, und die Abweisung wird im Prüfprotokoll als
+  `access.permission.refused` erfasst ([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md#wer-hineinsehen-darf)).
 - Die Rollenseite zeigt kein Kennzeichen *Voller Zugriff* oder *Kann Rollen ändern*.
 
 ## Verwandte Seiten
 - [Rollenentwurf: Redaktionen der Fachbereiche](rollenentwurf-fachredaktionen.md)
 - [Grundsätze der geringsten Rechte](prinzip-der-geringsten-rechte.md)
-- [Einer Kollegin oder einem Kollegen das Recht zum Leeren des Caches geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-a-colleague-cache-clearing-rights.md)
+- [Einer Kollegin oder einem Kollegen das Recht zum Leeren des Caches geben](../../aufgaben/personen-und-berechtigungen/einer-kollegin-das-recht-geben-caches-zu-leeren.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../../anleitungen/rollen-und-richtlinien.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

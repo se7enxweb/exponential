@@ -61,12 +61,12 @@ solche Eigenschaften (CSV hat keine). Exponential speichert die Datei unverände
 | Was | Wo | Für die Öffentlichkeit sichtbar |
 |---|---|---|
 | Die Version und ihr Ersteller | die Versionsgeschichte des Objekts | nein, Mitarbeitende mit `content/versionread` |
-| Ereignisse zum Veröffentlichen und Entfernen | der Audit-Trail, Kanal `content` | nein, Mitarbeitende mit `audit/read` |
+| Ereignisse zum Veröffentlichen und Entfernen | das Prüfprotokoll, Kanal `content` | nein, Mitarbeitende mit `audit/read` |
 | Der ursprüngliche Dateiname | das Dateifeld und die Download-Adresse | ja, der Dateiname erscheint in der Adresse |
 | Der Eigentümer des Objekts | Objektinformationen | hängt von Ihren Templates ab; geben Sie ihn auf öffentlichen Seiten nicht aus |
 
 Wählen Sie Dateinamen ohne personenbezogene Daten, weil sie in der Download-Adresse erscheinen
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
 
 ## Wenn personenbezogene Daten veröffentlicht wurden
 
@@ -76,20 +76,21 @@ Wählen Sie Dateinamen ohne personenbezogene Daten, weil sie in der Download-Adr
 2. Leeren Sie die Caches vor der Website, damit keine Kopien mehr ausgeliefert werden ([Caches](../../../anleitungen/caches.md)).
 3. Informieren Sie Ihre Datenschutzbeauftragten; sie entscheiden über Meldepflichten.
 4. Finden Sie heraus, wohin die Daten gegangen sind: Die Anfrageprotokolle und, wenn das Aufzeichnen von Lesezugriffen
-   eingeschaltet ist, der Kanal `read` des Audit-Trails können Downloads zeigen
-   ([Anfrageprotokolle](../../../../eng-us/features/6.0/request-logs.md), [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+   eingeschaltet ist, der Kanal `read` des Prüfprotokolls können Downloads zeigen
+   ([Anfrageprotokolle](../../../funktionen/6.0/anfrageprotokolle.md), [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 5. Veröffentlichen Sie die berichtigte Datei und einen Hinweis auf der Datensatzseite.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Datensätze versionieren und aktualisieren](datensaetze-versionieren-und-aktualisieren.md)
 - [Wer Datensätze veröffentlichen darf](wer-datensaetze-veroeffentlichen-darf.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

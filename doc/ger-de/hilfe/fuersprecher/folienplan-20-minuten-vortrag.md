@@ -53,7 +53,7 @@ für eine fünfminütige Live-Demo und einen Katalog von Fragen, die Sie wahrsch
 | 13 | Freie Software | GPL + GFDL | Code und Dokumentation sind frei | [Gesprächspunkte: Open Source](gespraechspunkte-open-source-und-lizenzierung.md) |
 | 14 | Jeder Pull Request wird übernommen | Ein Screenshot eines übernommenen PR (öffentlich) | Die Regel des Projekts | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | 15 | Machen Sie mit | Foren, Telegram, eZpedia, GitHub, Projects | Nur dokumentierte Kanäle | [Die Community-Kanäle](community-kanaele.md) |
-| 16 | Probieren Sie es aus | `./console exp:install` + Links | Ein Befehl, SQLite | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| 16 | Probieren Sie es aus | `./console exp:install` + Links | Ein Befehl, SQLite | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 
 ## Der Abschnitt mit der Live-Demo
 
@@ -96,3 +96,11 @@ Laptop ausfallen. Regeln: [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.
 - [Ablaufplan für einen Praxis-Workshop](ablaufplan-praxis-workshop.md)
 - [Demo-Skripte, Die 45-Minuten-Demo](../geschaeft/demo-drehbuecher.md#die-45-minuten-demo)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -38,10 +38,10 @@ erstellen ein Override und machen es rückgängig.
 
 | Zeit | Block | Verwendet | Kontrollpunkt |
 |---|---|---|---|
-| 9:00 | Begrüßung, die Geschichte von Exponential, Anmeldung (45 Min.) | [Namen und Geschichte im Kurs](../../../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/names-and-history-in-class.md), [Die erste Stunde gestalten](../../../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/running-the-first-hour.md) | Alle angemeldet |
-| 9:45 | Kernkonzepte (45 Min.) | [Die Kernkonzepte unterrichten](../../../../../eng-us/help/trainers/teaching-the-core-concepts.md) | Quiz der Seite zu den Konzepten |
+| 9:00 | Begrüßung, die Geschichte von Exponential, Anmeldung (45 Min.) | [Namen und Geschichte im Kurs](../../train-the-trainer/modul-01-den-unterricht-vorbereiten/namen-und-geschichte-im-unterricht.md), [Die erste Stunde gestalten](../../train-the-trainer/modul-04-durchfuehren/die-erste-stunde-gestalten.md) | Alle angemeldet |
+| 9:45 | Kernkonzepte (45 Min.) | [Die Kernkonzepte unterrichten](../../die-kernkonzepte-unterrichten.md) | Quiz der Seite zu den Konzepten |
 | 10:30 | Pause (15 Min.) | | |
-| 10:45 | Anlegen, veröffentlichen, versionieren (75 Min.) | [Ihren ersten Artikel anlegen](../../../../../eng-us/help/trainers/editors-101/module-03-creating-and-editing/creating-your-first-article.md) | Artikel in Version 2 |
+| 10:45 | Anlegen, veröffentlichen, versionieren (75 Min.) | [Ihren ersten Artikel anlegen](../../redakteure-101/modul-03-erstellen-und-bearbeiten/ihren-ersten-artikel-erstellen.md) | Artikel in Version 2 |
 | 12:00 | Mittagspause (45 Min.) | | |
 | 12:45 | Parallele Stränge (2 Std. 15 Min. mit einer Pause): | | |
 | | Redakteure: formatierter Text, Links, Bilder | [Der Tag für Redakteure](tag-fuer-redakteure.md), Blöcke des Nachmittags | Bild mit Alternativtext |
@@ -49,7 +49,7 @@ erstellen ein Override und machen es rückgängig.
 | | Entwickler: Templates und ein Override | [Der Tag für Entwickler](tag-fuer-entwickler.md), Block zu Templates | Override gezeigt und entfernt |
 | 15:00 | Pause (15 Min.) | | |
 | 15:15 | Jeder Strang zeigt den anderen, was er gebaut hat (45 Min.) | | Drei kurze Vorführungen |
-| 16:00 | Nächste Schritte pro Rolle; Rückmeldung (30 Min.) | [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md) | Rückmeldezettel |
+| 16:00 | Nächste Schritte pro Rolle; Rückmeldung (30 Min.) | [Kurskatalog](../../kurskatalog.md) | Rückmeldezettel |
 | 16:30 | Ende | | |
 
 ## Hinweise für Trainer
@@ -79,8 +79,8 @@ verwenden die Abschlussprojekte ihrer eintägigen Agenden, gekürzt.
 <details>
 <summary>Antworten</summary>
 
-1. Zum Beispiel Objekt und Knoten, Versionen, Rollen ([Die Kernkonzepte unterrichten](../../../../../eng-us/help/trainers/teaching-the-core-concepts.md)).
-2. Redakteure 101; Website-Administration; Entwickler ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)).
+1. Zum Beispiel Objekt und Knoten, Versionen, Rollen ([Die Kernkonzepte unterrichten](../../die-kernkonzepte-unterrichten.md)).
+2. Redakteure 101; Website-Administration; Entwickler ([Kurskatalog](../../kurskatalog.md)).
 3. Einen Artikel mit einem Bild und einem Link; eine einer Gruppe zugewiesene Rolle; ein gezeigtes und entferntes
    Override.
 
@@ -88,20 +88,20 @@ verwenden die Abschlussprojekte ihrer eintägigen Agenden, gekürzt.
 
 ## Weiterführende Informationen
 
-- [Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)
+- [Kurskatalog](../../kurskatalog.md)
 - [Gliederung eines praktischen Workshops](../../../fuersprecher/ablaufplan-praxis-workshop.md)
 
 ## Verwandte Seiten
 
 - [Modul 2: Eintägige Agenden](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

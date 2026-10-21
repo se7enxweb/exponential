@@ -224,7 +224,8 @@ class ListView extends \Exponential\Runnable\ModuleView
             return isset( $user[$name] ) ? (string)$user[$name] : '';
         };
 
-        $search = self::searchOf( $param( 'search' ) );
+        // the one free text: written by expViewParameters::suffix(), so read decoded
+        $search = self::searchOf( (string)\expViewParameters::get( $params, 'search', 'Search' ) );
         $filter = in_array( $param( 'filter' ), \expPDFExportInfo::FILTERS, true ) ? $param( 'filter' ) : '';
         $sort = \expPDFExportInfo::sortOf( $param( 'sort' ), $param( 'dir' ) );
 

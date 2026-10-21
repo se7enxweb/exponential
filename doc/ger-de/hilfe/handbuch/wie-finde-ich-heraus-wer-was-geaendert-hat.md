@@ -4,13 +4,13 @@ audience: admin
 category: manual
 order: 220
 summary: Öffnen Sie Audit > Konsole, filtern Sie nach Login, Objekt (node:275), Ereignisname oder Zeit, und lesen Sie jedes Ereignis mit Akteur, Objekt, Ergebnis und Anfrage; Jetzt prüfen belegt, dass die Aufzeichnung nicht verändert wurde.
-keywords: Audit, Audit-Trail, Audit-Konsole, wer hat geändert, Verlauf, Akteur, Ereignis, Filter, Jetzt prüfen, audit/read, Compliance, audit trail, audit console, who changed, history, actor, event, filter, verify now, compliance
+keywords: Audit, Prüfprotokoll, Audit-Konsole, wer hat geändert, Verlauf, Akteur, Ereignis, Filter, Jetzt prüfen, audit/read, Compliance, audit trail, audit console, who changed, history, actor, event, filter, verify now, compliance
 context: audit/console
 type: help
 ---
 # Wie finde ich heraus, wer was wann geändert hat?
 
-Jede Änderung im System wird in den Audit-Trail geschrieben: wer sie vorgenommen hat, an welchem Objekt, wann, von
+Jede Änderung im System wird in das Prüfprotokoll geschrieben: wer sie vorgenommen hat, an welchem Objekt, wann, von
 welcher Adresse und mit welchem Ergebnis. Die **Audit-Konsole** findet die Ereignisse, die Sie brauchen.
 
 ## Wer das tun kann
@@ -51,15 +51,15 @@ aber nicht `access`), sodass Sie nur die Ereignisse sehen, die Ihre Rolle erlaub
 
 ## Verwandte Seiten
 
-- [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md)
+- [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md)
 - [Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)
 - [Verlauf von Inhalten](../../anleitungen/inhaltsverlauf.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

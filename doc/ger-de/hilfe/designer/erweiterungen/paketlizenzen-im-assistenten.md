@@ -63,5 +63,5 @@ Leeren Sie dann den INI-Cache. Der neue Eintrag erscheint in der Auswahlliste je
 
 - [Lizenzwahl: ein Überblick](../veroeffentlichung/lizenzwahl-ueberblick.md)
 - [Die LICENSE-Datei eines Themes](die-license-datei.md)
-- [Paketlizenzen und -versionen](../../../../eng-us/features/6.0/package-licenses-and-versions.md)
+- [Paketlizenzen und -versionen](../../../funktionen/6.0/paketlizenzen-und-versionen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

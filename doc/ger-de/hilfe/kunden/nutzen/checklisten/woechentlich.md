@@ -50,11 +50,11 @@ ASK THE ADMINISTRATOR OR HOST (answer "yes" expected)
 | Punkt | Wo | Lesen Sie |
 |---|---|---|
 | Entwürfe | **Meine Entwürfe** | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
-| Kaputte Links | **Setup > URL-Verwaltung** (`/url/list`); die Linkprüfung läuft im Cron-Teil `infrequent` | [Kaputte Links und Inhaltsprüfungen](../../../../../eng-us/help/creators/website-creators/link-and-content-checks.md) |
-| Nicht gefundene Seiten | `404.log`, gelesen unter **Setup > Logdateien** | [Request-Logs](../../../../../eng-us/features/6.0/request-logs.md) |
+| Kaputte Links | **Setup > URL-Verwaltung** (`/url/list`); die Linkprüfung läuft im Cron-Teil `infrequent` | [Kaputte Links und Inhaltsprüfungen](../../../ersteller/website-ersteller/link-und-inhaltspruefungen.md) |
+| Nicht gefundene Seiten | `404.log`, gelesen unter **Setup > Logdateien** | [Request-Logs](../../../../funktionen/6.0/anfrageprotokolle.md) |
 | Weiterleitungen für verschobene Seiten | URL-Aliase und Wildcards | [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md) |
-| Suchbegriffe | Die Suchstatistiken der Website | [Website-Suche](../../../../../eng-us/help/creators/website-creators/site-search.md) |
-| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) |
+| Suchbegriffe | Die Suchstatistiken der Website | [Website-Suche](../../../ersteller/website-ersteller/suche-auf-der-website.md) |
+| Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md) |
 | Shop | Shop-Dashboard | [Wöchentliche Shop-Checkliste](../../handel/woechentliche-shop-checkliste.md) |
 
 ## Die wöchentlichen Prüfungen des Administrators
@@ -82,3 +82,11 @@ einem kurzen Gespräch.
 - [Wöchentliche Shop-Checkliste](../../handel/woechentliche-shop-checkliste.md)
 - [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

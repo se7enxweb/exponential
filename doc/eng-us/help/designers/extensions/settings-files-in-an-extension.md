@@ -42,9 +42,10 @@ DesignExtensions[]=mytheme
 
 ## Where settings win
 
-From weakest to strongest: the kernel's `settings/*.ini`, the active extensions' `settings/` (earlier extensions
-win over later ones), siteaccess settings (also those inside extensions), and finally the installation's
-`settings/override/`. The full list is in
+From weakest to strongest: the kernel's `settings/*.ini`, siteaccess settings (first those inside extensions, then
+`settings/siteaccess/<siteaccess>/`), the active extensions' `settings/` (earlier extensions win over later ones),
+and finally the installation's `settings/override/`. So a value in your theme's `settings/` wins over the same value in
+a siteaccess; only `settings/override/` wins over it. The full list is in
 [Settings override placements](../../../specifications/6.0/ini-override-placements.md).
 
 ## Step by step: add and check a setting

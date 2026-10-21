@@ -83,7 +83,7 @@ konfiguriert.
 > Standardwerten des Servers zum Zeitpunkt der Installation ab: `kernel/sql/mysql/kernel_schema.sql` nennt
 > `ENGINE=InnoDB`, aber kein `CHARSET`. Kommentare in `kernel/classes/datatypes/ezurl/ezurl.php` und
 > `kernel/classes/expuserloginintegrity.php` gehen von Spalten mit `utf8mb4_general_ci` aus. Welche Sortierung eine
-> bestimmte Installation hat, ist hier **nicht überprüft**.
+> bestimmte Installation hat, ist hier **nicht geprüft**.
 
 ## Unicode CLDR und ICU
 
@@ -161,7 +161,7 @@ Gruppenname der Code nach ISO 3166-1 alpha-2 ist. Sie hat 246 Einträge. Der Dat
 gruppiert sie.
 
 **Status: Erfüllt.** Ob die Liste Eintrag für Eintrag der aktuellen Ausgabe von ISO 3166-1 entspricht, ist
-**nicht überprüft**.
+**nicht geprüft**.
 
 ## ISO-4217-Währungscodes
 
@@ -176,7 +176,7 @@ gruppiert sie.
 - Der Kommentarblock von `lib/ezlocale/classes/ezlocale.php` nennt ISO 639 und ISO 4217 als seine Referenzen.
 
 **Status: Erfüllt** für das Format. Ob jeder `ShortName` ein derzeit gültiger Code nach ISO 4217 ist, ist
-**nicht überprüft**.
+**nicht geprüft**.
 
 ## Zeitzonen: die IANA-tz-Datenbank
 
@@ -197,7 +197,7 @@ fest; die Datumsfunktionen von PHP verwenden sie.
 
 **Bekannte Lücken.** Es gibt eine Zeitzone pro Installation (oder pro Siteaccess); eine Zeitzone pro Benutzer gibt es
 im Kernel nicht. Der Kommentar in `site.ini` warnt noch vor Webservern mit Threads; ob diese Warnung für PHP-FPM und
-Exponential Velocity noch gilt, ist **nicht überprüft**.
+Exponential Velocity noch gilt, ist **nicht geprüft**.
 
 ## Rechts-nach-links-Text und der Unicode Bidirectional Algorithm
 

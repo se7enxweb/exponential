@@ -44,7 +44,7 @@ ReadingPath[]
 
 ## Related
 
-Default: a list of 3: `sales-marketing`, `website-creator`, `partner`.
+Default: a list of 4: `sales-marketing`, `website-creator`, `partner`, `adopter`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -55,6 +55,7 @@ Related[]
 Related[]=sales-marketing
 Related[]=website-creator
 Related[]=partner
+Related[]=adopter
 */ ?>
 ```
 

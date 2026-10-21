@@ -14,14 +14,14 @@ type: help
 
 Diese Seite richtet sich an die Administration, die Zuständigen für Schriftgut und Datenschutzzuständige, die Logs lange
 genug für Sicherheit und Audit aufbewahren müssen und nicht länger als erlaubt. Quellen:
-[Rotation und Bereinigung von Logs](../../../../../eng-us/features/6.0/log-rotation.md),
-[Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded) und
+[Rotation und Bereinigung von Logs](../../../../funktionen/6.0/log-rotation.md),
+[Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md#was-aufgezeichnet-wird) und
 [Aufbewahrung von Logs und Daten (Hosting)](../../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md).
 
 ## Inhalt
 1. [Die Standardwerte](#die-standardwerte)
 2. [Die Aufbewahrung je Log festlegen](#die-aufbewahrung-je-log-festlegen)
-3. [Die eigene Aufbewahrung des Audit-Trails](#die-eigene-aufbewahrung-des-audit-trails)
+3. [Die eigene Aufbewahrung des Prüfprotokolls](#die-eigene-aufbewahrung-des-prüfprotokolls)
 4. [Rotation auf Anforderung und per Cron](#rotation-auf-anforderung-und-per-cron)
 5. [Ihre Fristen festlegen](#ihre-fristen-festlegen)
 6. [Verwandte Seiten](#verwandte-seiten)
@@ -56,7 +56,7 @@ MaxAgeDays[error]=180
 Eintrag verwenden die Werte aus `site.ini [FileSettings]`. **Zustand der Logs** zeigt die für jedes Log geltenden
 Einstellungen und woher sie jeweils stammen.
 
-## Die eigene Aufbewahrung des Audit-Trails
+## Die eigene Aufbewahrung des Prüfprotokolls
 
 Je Kanal in `settings/override/audit.ini.append.php`: `LiveDays`, `ArchiveDays`, `MaxFileSize`, `ArchiveFormat`.
 Archive werden komprimiert, zurückgelesen und verglichen, bevor die laufende Datei entfernt wird, und in einem
@@ -90,15 +90,16 @@ Schreiben Sie die Fristen in Ihren Aufbewahrungsplan und konfigurieren Sie sie i
 Änderungskontrolle.
 
 ## Verwandte Seiten
-- [Logs rotieren und bereinigen](../../../../../eng-us/help/government/tasks/operations/rotate-and-prune-logs.md)
-- [Audit-Trail-Archive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
-- [Datenschutzstandard](../../../../../eng-us/standards/privacy.md)
+- [Logs rotieren und bereinigen](../../aufgaben/betrieb/logs-rotieren-und-bereinigen.md)
+- [Prüfprotokollarchive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
+- [Datenschutzstandard](../../../../standards/datenschutz.md)
 - [Fehlerübersicht und Zustand der Logs](fehleruebersicht-und-zustand-der-logs.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

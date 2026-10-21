@@ -29,7 +29,7 @@ dass ein wechselndes Team von Ehrenamtlichen es betreiben kann, und wie Sie es s
 | Mehrere Ehrenamtliche bearbeiten sicher | Persönliche Konten, auf einen Teilbaum oder eine Sektion beschränkte Rollen, Versionen jeder Änderung | [Gemeinsam bearbeiten mit Ehrenamtlichen](gemeinsam-bearbeiten-mit-ehrenamtlichen.md) |
 | Neuigkeiten und ein Veranstaltungskalender | Die `ezwebin`-Klassen `article`, `event`, `event_calendar`, `blog` und Feeds | [Veranstaltungen und Neuigkeiten für Gruppen](veranstaltungen-und-neuigkeiten-fuer-gruppen.md) |
 | Kontakt, Rückmeldungen, Umfragen, Anmeldungen | Formulare des Informationssammlers mit den Typen form, feedback und poll | [Formulare und Rückmeldungen von Mitgliedern](formulare-und-rueckmeldungen-von-mitgliedern.md) |
-| Übernahme, wenn Ehrenamtliche gehen | Kontoprüfungen, Eigentümerwechsel, Zurücksetzen des Passworts, Audit-Trail | [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
+| Übernahme, wenn Ehrenamtliche gehen | Kontoprüfungen, Eigentümerwechsel, Zurücksetzen des Passworts, Prüfprotokoll | [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
 | Geringe Betriebskosten | Keine Lizenzgebühr; SQLite als Standarddatenbank | [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md) |
 
 Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezwebin/packages/`), und die Erweiterung
@@ -65,22 +65,22 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md): Spenden, Anmeldung von Ehrenamtlichen, Kampagnen,
   Barrierefreiheit, kleine Budgets.
 - [Mitglieder](../mitglieder/README.md): Registrierung von Mitgliedern und Inhalte nur für Mitglieder.
-- [Newsletter](../newsletter/README.md): Mails an Mitglieder und Unterstützer.
+- [Newsletter](../newsletters/README.md): Mails an Mitglieder und Unterstützer.
 - [Bibliotheken und Kataloge](../bibliotheken/README.md): für Gruppen, die eine Sammlung pflegen.
 - [Sicherheit und Datenschutz](../sicherheit/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.
-- Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
 - [Welcher Bereich passt zu Ihrer Organisation?](../welcher-bereich-zu-ihrer-organisation-passt.md)
-- [Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)
+- [Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

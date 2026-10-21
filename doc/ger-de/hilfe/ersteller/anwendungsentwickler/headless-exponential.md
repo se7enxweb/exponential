@@ -54,10 +54,24 @@ Ihrem Server.
 
 ## Rich Text, Bilder und Links
 
-- `OutputFormat=xhtml` liefert gerendertes XHTML der Rich-Text-Felder (`renderedOutput`), sodass das Frontend das
-  interne XML nicht parsen muss.
-- Bilder: Die Felder enthalten das Original und die Varianten; definieren Sie Bildvarianten für die Größen Ihres
-  Frontends ([Bilder und Bildvarianten](../website-ersteller/bilder-und-bildvarianten.md)).
+- Jedes REST-Feld hat `type`, `identifier`, `value`, `id` und `classattribute_id`. Der `value` eines Rich-Text-Felds
+  ist reiner Text: seine gerenderte Ausgabe ohne Tags.
+- `OutputFormat=xhtml` ergänzt `renderedOutput`: den ganzen Knoten, von Templates gerendert, im View-Modus `rest`,
+  innerhalb des Templates aus `rest.ini [<Controller>_viewContent_OutputSettings] Template` (`rest_pagelayout.tpl`).
+  Das mitgelieferte `rest_pagelayout.tpl` ist nur eine Platzhalterseite; überschreiben Sie es in Ihrem Design und
+  ergänzen Sie ein `node/view/rest.tpl`, um brauchbares Markup zu erhalten.
+- Bilder: Der REST-`value` eines Bildfelds ist nur der Pfad der Originaldatei, relativ zum Wurzelverzeichnis der
+  Website (zum Beispiel `var/<site>/storage/images/.../name.jpg`); er enthält keine Bildvarianten, keine Größe und
+  keinen Alternativtext. Adressen der Bildvarianten erhalten Sie heute so:
+  - über die Bilddomäne von expservices, `ezjscore/call/expimage::url::<Knoten-ID>::<Attribut>::<Variante>` für eine
+    Variante (die Datei wird erzeugt, wenn sie fehlt) oder `expimage::urls::<Knoten-ID>::<Attribut>` für alle
+    konfigurierten Varianten, jeweils mit `url`, `absolute_url`, Breite, Höhe und MIME-Typ
+    ([Entfernte Dienste mit expservices](entfernte-dienste-expservices.md)); oder
+  - indem Sie sie in Ihr `rest`-View-Template schreiben (`$node.data_map.<Attribut>.content.<Variante>.url`) und
+    `renderedOutput` lesen.
+
+  Definieren Sie Bildvarianten für die Größen Ihres Frontends in `image.ini`
+  ([Bilder und Bildvarianten](../website-ersteller/bilder-und-bildvarianten.md)).
 - Links im Rich Text zeigen auf Adressen der Website; bilden Sie sie per URL-Alias oder Knoten-ID auf die Routen Ihres
   Frontends ab.
 
@@ -83,13 +97,13 @@ SEO für die Website einfach, und die App erhält dieselben Inhalte. Beginnen Si
 
 - [Die REST-API](rest-api.md)
 - [OAuth und API-Schlüssel](oauth-und-api-schluessel.md)
-- [Standard für APIs und Protokolle](../../../../eng-us/standards/apis-and-protocols.md)
+- [Standard für APIs und Protokolle](../../../standards/apis-und-protokolle.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

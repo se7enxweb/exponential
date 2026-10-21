@@ -10,7 +10,7 @@ type: help
 # Einer Datensatzklasse ein Lizenzfeld hinzufügen
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund: [Datensätze lizenzieren](../../offene-daten/datensaetze-lizenzieren.md)
-und [Inhaltsklassen für Websites](../../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md).
+und [Inhaltsklassen für Websites](../../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md).
 
 ## Bevor Sie beginnen
 

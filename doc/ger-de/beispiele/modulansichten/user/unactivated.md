@@ -14,12 +14,12 @@ Eine Ansicht des Moduls `user`, definiert in `kernel/user/module.php` und ausgef
 ## Adresse
 
 ```text
-/user/unactivated/<SortField>/<SortOrder>/(offset)/<Offset>
+/user/unactivated/<SortField>/<SortOrder>/(offset)/<Offset>/(q)/<Query>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `SortField`, `SortOrder`.
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`, `(q)` setzt `Query`.
 
 ## Wer sie öffnen darf
 

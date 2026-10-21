@@ -54,19 +54,19 @@ October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 
 | 2017 bis 2021 | Die letzten Releases von eZ Publish, bis v2019.03.6.1 am 3. September 2021 | [Release-Übersicht](../../../eng-us/release-overview) |
 | 2022 | 7x, zweite Etappe: Das Projekt beginnt | [7x in drei Etappen](7x-in-drei-etappen.md) |
 | 5. Oktober 2023 | Das Repository `se7enxweb/exponential` wird auf GitHub angelegt | GitHub-API, zitiert auf [Wer ist 7x?](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
-| Dezember 2023 | 7x, dritte Etappe: der Start; erste Änderung von außen am 11. Dezember 2023 übernommen | [Dezember 2023](../../../eng-us/history/2023/2023-12.md) |
+| Dezember 2023 | 7x, dritte Etappe: der Start; erste Änderung von außen am 11. Dezember 2023 übernommen | [Dezember 2023](../../geschichte/2023/2023-12.md) |
 | 1. Januar 2024 | 6.0.0, das erste stabile Release der Linie | [Release-Übersicht](../../../eng-us/release-overview) |
-| 22. August 2024 | admin3, ein responsives Design der Administration | [August 2024](../../../eng-us/history/2024/2024-08.md) |
-| April 2025 | PHP 8.4 wird unterstützt; Websites mit PHP 7 bleiben bei 6.0.7 | [April 2025](../../../eng-us/history/2025/2025-04.md) |
-| 11. und 12. August 2025 | Das Produkt wird in Exponential umbenannt (Website, dann Repository) | <https://exponential.earth/about/project>, [August 2025](../../../eng-us/history/2025/2025-08.md) |
+| 22. August 2024 | admin3, ein responsives Design der Administration | [August 2024](../../geschichte/2024/2024-08.md) |
+| April 2025 | PHP 8.4 wird unterstützt; Websites mit PHP 7 bleiben bei 6.0.7 | [April 2025](../../geschichte/2025/2025-04.md) |
+| 11. und 12. August 2025 | Das Produkt wird in Exponential umbenannt (Website, dann Repository) | <https://exponential.earth/about/project>, [August 2025](../../geschichte/2025/2025-08.md) |
 | 28. August 2025 | 6.0.10, das erste Release unter dem Namen Exponential | [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x) |
-| Dezember 2025 | PHP 8.5 wird unterstützt | [Dezember 2025](../../../eng-us/history/2025/2025-12.md) |
+| Dezember 2025 | PHP 8.5 wird unterstützt | [Dezember 2025](../../geschichte/2025/2025-12.md) |
 | 19. März 2026 | Die Exponential Foundation wird in Seattle, Washington, gegründet | <https://foundation.exponential.earth/> |
-| 1. Juni 2026 | MongoDB 8 als Datenbank | [Juni 2026](../../../eng-us/history/2026/2026-06a.md) |
+| 1. Juni 2026 | MongoDB 8 als Datenbank | [Juni 2026](../../geschichte/2026/2026-06a.md) |
 | 7. Juni 2026 | 6.0.14 | Release-Übersicht |
-| 20. Juli 2026 | Erste Commits des Webservers Velocity | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
-| 22. September 2026 | Velocity kommt zu Exponential | [September 2026](../../../eng-us/history/2026/2026-09b.md) |
-| Oktober 2026 | jQuery 4 und admin4, der Audit-Trail, Exponential Intelligence, die LoveStack-Funktionen von Mugo Web, das Hilfesystem | [Oktober 2026](../../../eng-us/history/2026/2026-10.md) |
+| 20. Juli 2026 | Erste Commits des Webservers Velocity | [Chronik von Velocity](../../geschichte/velocity/README.md) |
+| 22. September 2026 | Velocity kommt zu Exponential | [September 2026](../../geschichte/2026/2026-09b.md) |
+| Oktober 2026 | jQuery 4 und admin4, das Prüfprotokoll, Exponential Intelligence, die LoveStack-Funktionen von Mugo Web, das Hilfesystem | [Oktober 2026](../../geschichte/2026/2026-10.md) |
 
 ## Daten, bei denen man sich leicht irrt
 
@@ -96,8 +96,8 @@ October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

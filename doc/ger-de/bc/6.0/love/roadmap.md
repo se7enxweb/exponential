@@ -6,7 +6,7 @@ Teil von Exponential 6.0.15.
 | Phase | Name | Geliefert |
 |---|---|---|
 | 0 | Ausgangslage und die LoveStack-Prüfung | eine Testdatenbank in der Form von LoveStack (das Schema von Exponential plus die Schemaschritte 1 bis 4 von LoveStack), auf der dieselben Inhaltsoperationen ausgeführt wurden wie auf einer Exponential-Datenbank, mit denselben Ergebnissen; `./console exp:lovestack check` |
-| 1 | Sicherheit und Sessions | L01–L06 und der Name der Einstellung `SameSite` von LoveStack: die Richtlinie für Knotendaten-Aufrufe, die Richtlinie für die Registrierung, ein Abmelden, das die Session beendet, eindeutige Anmeldenamen mit einem Prüfbefehl, Bild-Uploads, die anhand ihres Inhalts geprüft werden |
+| 1 | Sicherheit und Sitzungen | L01–L06 und der Name der Einstellung `SameSite` von LoveStack: die Richtlinie für Knotendaten-Aufrufe, die Richtlinie für die Registrierung, ein Abmelden, das die Sitzung beendet, eindeutige Anmeldenamen mit einem Prüfbefehl, Bild-Uploads, die anhand ihres Inhalts geprüft werden |
 | 2 | Diagnose | L07–L12: die Debug-Stufe und das Log für Deprecations, die Einstellung der Log-Größe, die Warnung für Template-Operatoren, die Bearbeitungs-URL für Templates, Fehlernummern der Datenbank, die Warnung vor „alles leeren“ |
 | 3 | Inhalte und Administration | L13–L21: Audit von Änderungen an Orten, Site-Daten in Templates und der Administration, die Schaltfläche Kopieren, Pflicht-Alternativtext, getrimmte Textzeilen, Klassen zum Auflösen von Namensmustern, der Standard des Klassenfilters, zwei Template-Korrekturen |
 | 4 | Rich-Text-Editor | L22–L24: versteckte Custom Tags, Bedienelemente für Custom Tags für TinyMCE 3, TinyMCE 8 und Tiptap, der Dialog sub/sup |

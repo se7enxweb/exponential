@@ -99,8 +99,8 @@ Den Siteaccess der Redaktion legt der Kernel nach der Nachinstallation an: `crea
 Siteaccess der Administration und setzt `SiteDesign=editor`, `AdditionalSiteDesignList` `admin4l`, `admin4`, `admin3`, `admin2`, `admin`,
 `ExtensionSettingsSiteAccess=admin` und `SiteName=Editor`. Der Siteaccess `adminui` wird aus den Dateien des Siteaccess der Administration
 mit der Designkette von Admin UI angelegt; er ist nur über die URI erreichbar (`/adminui`). Siehe
-[Der Setup-Assistent und der Siteaccess der Redaktion](../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md) und
-[Admin UI](../../../../eng-us/features/6.0/exp-adminui.md).
+[Der Setup-Assistent und der Siteaccess der Redaktion](../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md) und
+[Admin UI](../../../funktionen/6.0/exp-adminui.md).
 
 ## Einstellungen, die alle Siteaccesses teilen
 
@@ -147,7 +147,15 @@ jede `SiteLanguageList` aufgenommen (`fallback_locales`), sodass Seiten ihre Inh
 - [sevenx_multisite](README.md)
 - [Das Skript des Multisite-Installers](das-skript-des-multisite-installers.md)
 - [Was Sie nach der Installation haben](was-sie-nach-der-installation-von-sevenx-multisite-haben.md)
-- [Zuordnung von Siteaccesses nach Host und Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)
+- [Zuordnung von Siteaccesses nach Host und Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)
 - [Sprachen](../../sprachen.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

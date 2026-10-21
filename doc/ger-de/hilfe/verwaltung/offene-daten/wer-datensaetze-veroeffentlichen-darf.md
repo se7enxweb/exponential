@@ -41,7 +41,7 @@ Nennen Sie in Ihrer Dokumentation Funktionen, keine Personen; ordnen Sie Persone
 2. Weisen Sie ihr den Katalogordner mit **Inhalt zuweisen** zu; alles darunter erhält die Sektion, und neue Datensätze
    übernehmen die Sektion ihres übergeordneten Objekts.
 3. Stellen Sie sicher, dass die Rolle Anonymous die Sektion lesen darf, sonst sehen Besucher den Katalog nicht
-   ([Rechte für Besucher](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)).
+   ([Rechte für Besucher](../../ersteller/website-ersteller/rechte-fuer-besucher.md)).
 
 ## Die Rolle Datenveröffentlichung
 
@@ -78,9 +78,9 @@ Die Version einer veröffentlichenden Person wartet dann als **ausstehend**; die
 ## Aufzeichnen, wer was getan hat
 
 - Die Versionsgeschichte zeigt, wer jede Version erstellt hat ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)).
-- Der Audit-Trail zeichnet Veröffentlichen, Entfernen, Änderungen von Sektion und Zustand im Kanal `content` und
-  Rollenzuweisungen im Kanal `access` auf; er ist standardmäßig eingeschaltet
-  ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+- Das Prüfprotokoll zeichnet Veröffentlichen, Entfernen, Änderungen von Sektion und Zustand im Kanal `content` und
+  Rollenzuweisungen im Kanal `access` auf; es ist standardmäßig eingeschaltet
+  ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Checkliste
 
@@ -93,13 +93,14 @@ Die Version einer veröffentlichenden Person wartet dann als **ausstehend**; die
 ## Verwandte Seiten
 
 - [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)
-- [Sektionen und Objektzustände für Websiteersteller](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Sektionen und Objektzustände für Websiteersteller](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Entwürfe und ausstehende Einträge](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

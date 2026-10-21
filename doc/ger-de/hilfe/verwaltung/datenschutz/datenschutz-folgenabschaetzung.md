@@ -28,7 +28,7 @@ oder KI-Funktionen möglicherweise schon. Exponential entscheidet das nicht für
 
 - Konten für Bürgerinnen und Bürger mit persönlichen Profilen oder Mitgliederbereiche mit sensiblen Themen.
 - Formulare, die besondere Kategorien von Daten (Gesundheit, soziale Lage) oder Daten über Kinder erheben.
-- Überwachung von Beschäftigten über den Audit-Trail über Sicherheitszwecke hinaus.
+- Überwachung von Beschäftigten über das Prüfprotokoll über Sicherheitszwecke hinaus.
 - Webanalyse oder Tracking über Dienste hinweg.
 - KI-Verarbeitung von Inhalten oder Bildern, die personenbezogene Daten enthalten (die optionale Erweiterung
   Exponential Intelligence sendet Inhalte nach ihrer Datenrichtlinie an Anbieter).
@@ -54,19 +54,20 @@ Nutzen Sie die Seiten dieses Bereichs:
 | Zu lange aufbewahrte Daten | Aufbewahrungseinstellungen für Audit, Protokolle und Einwilligungen; Routinen zum Entfernen bei Formularen |
 | Datenabfluss über Protokolle | Maskierung in Anfrageprotokollen und im Protokollbetrachter |
 | Daten an Drittanbieter | Erweiterungen standardmäßig inaktiv; CSP beschränkt Hosts; Einwilligung vor dem Laden |
-| Unentdeckter Missbrauch | Audit-Trail standardmäßig an, Warnregeln, Weiterleitung an ein SIEM |
+| Unentdeckter Missbrauch | Prüfprotokoll standardmäßig an, Warnregeln, Weiterleitung an ein SIEM |
 | Versehentliche Veröffentlichung | Versionen, Vorschau, Freigabe-Workflows, Papierkorb ([Workflows](../../../anleitungen/workflows.md)) |
 
 ## Verwandte Seiten
 
 - [Die DSGVO und Exponential](dsgvo-zuordnung.md)
 - [Checkliste Datenschutz durch Technikgestaltung](checkliste-datenschutz-durch-technikgestaltung.md)
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

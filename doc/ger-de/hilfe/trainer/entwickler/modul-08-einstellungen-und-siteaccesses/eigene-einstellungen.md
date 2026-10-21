@@ -3,7 +3,7 @@ title: "Lektion 8.4: Eigene Einstellungen"
 audience: trainer, developer
 category: training
 order: 84
-summary: Die Teilnehmenden geben ihrer Erweiterung eine eigene INI-Datei mit dokumentierten Standardwerten, lesen sie in PHP mit eZINI und in Templates mit ezini, lassen einen Siteaccess sie überschreiben und gehen sicher mit fehlenden Einstellungen um. 45 Minuten.
+summary: Die Teilnehmenden geben ihrer Erweiterung eine eigene INI-Datei mit dokumentierten Standardwerten, lesen sie in PHP mit eZINI und in Templates mit ezini, überschreiben sie im globalen Override und gehen sicher mit fehlenden Einstellungen um. 45 Minuten.
 keywords: entwickler, eigene ini-datei, eigene einstellungen, mysite.ini, eZINI instance, variable, hasVariable, hasGroup, variableArray, ezini-operator, ezini_hasvariable, standardwerte, einstellungen einer erweiterung, siteaccess-override, developers course, own ini file, defaults, extension settings, siteaccess override
 type: help
 ---
@@ -12,7 +12,7 @@ type: help
 Code, der eine Zahl oder eine Knoten-ID fest einprogrammiert, muss für jede Website bearbeitet werden. Eine gute
 Erweiterung liest solche Werte aus einer eigenen INI-Datei mit dokumentierten Standardwerten, die eine Website
 überschreiben kann. In dieser Lektion fügen die Teilnehmenden ihrer Erweiterung `mysite.ini` hinzu, lesen sie aus PHP
-und aus Templates und überschreiben einen Wert für einen Siteaccess.
+und aus Templates und finden heraus, welche Datei einen ihrer Werte überschreiben kann.
 
 ## Auf einen Blick
 
@@ -32,15 +32,16 @@ Nach dieser Lektion können die Teilnehmenden:
 - in einer Erweiterung eine eigene INI-Datei mit einem Kommentar zu jeder Einstellung anlegen;
 - sie in PHP mit `eZINI::instance()`, `variable()`, `hasVariable()` und `variableArray()` lesen;
 - sie in Templates mit `ezini()` und `ezini_hasvariable()` lesen;
-- einen Wert für einen Siteaccess überschreiben und das Ergebnis mit `exp:ini where` prüfen;
+- einen Wert in `settings/override/` überschreiben und mit `exp:ini where` zeigen, warum eine Siteaccess-Datei das
+  nicht kann;
 - auf einen sicheren Standardwert zurückfallen, wenn eine Einstellung fehlt.
 
 ## Hinweise für Trainer
 
 ### So präsentieren Sie es
 
-Quellen: [Eine eigene INI-Datei](../../../../../eng-us/help/designers/extensions/your-own-ini-file.md) und
-[Einstellungsdateien in einer Erweiterung](../../../../../eng-us/help/designers/extensions/settings-files-in-an-extension.md).
+Quellen: [Eine eigene INI-Datei](../../../designer/erweiterungen/eine-eigene-ini-datei.md) und
+[Einstellungsdateien in einer Erweiterung](../../../designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md).
 
 1. **Die Datei** (3 Minuten). Eine Erweiterung kann unter `settings/` eine neue INI-Datei mitbringen, hier
    `extension/mysite_hello/settings/mysite.ini.append.php`. Jede Einstellung erhält einen Kommentar, der sagt, was
@@ -50,8 +51,11 @@ Quellen: [Eine eigene INI-Datei](../../../../../eng-us/help/designers/extensions
    `variableArray()` zerlegt Werte, die mit `;` getrennte Listen enthalten.
 3. **Templates** (2 Minuten). `{ezini( 'GreetSettings', 'MaxTimes', 'mysite.ini' )}`; `ezini_hasvariable()` prüft
    vorher.
-4. **Overrides** (3 Minuten). Eine Website ändert einen Wert mit `exp:ini set mysite.ini/GreetSettings/MaxTimes 3
-   siteaccess:<sa>`; die Datei der Erweiterung wird nie für eine einzelne Website bearbeitet.
+4. **Overrides** (3 Minuten). Eine Installation ändert einen Wert mit `exp:ini set mysite.ini/GreetSettings/MaxTimes 3
+   global` (`settings/override/`); die Datei der Erweiterung wird nie für eine einzelne Website bearbeitet. Eine
+   Siteaccess-Datei genügt nicht: `eZINI::overrideDirs()` liest `settings/siteaccess/<sa>/` vor den `settings/` der
+   Erweiterungen, also gewinnt der Wert der Erweiterung. Ein Wert, der je Siteaccess abweichen muss, wird nicht in der
+   Datei der Erweiterung ausgeliefert; der Code gibt seinen Standardwert vor.
 5. **Präfixe** (2 Minuten). Alle Erweiterungen teilen sich die Namen der INI-Dateien; benennen Sie Ihre nach Ihrer
    Erweiterung oder Ihrem Präfix (`mysite.ini`), nicht `settings.ini`.
 
@@ -105,19 +109,23 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 4. Verwenden Sie den Begrüßungstext in `greet.tpl`:
    `{ezini( 'GreetSettings', 'Greeting', 'mysite.ini' )|wash}, {$name|wash}!`.
 5. Prüfen Sie mit `php -l`, leeren Sie die Caches `ini` und Template, und öffnen Sie `/hello/greet/Ada/(times)/9`.
-6. Überschreiben Sie den Wert nur für Ihre Website:
+6. Versuchen Sie, den Wert für Ihre Website zu überschreiben:
    `php bin/php/console exp:ini set mysite.ini/GreetSettings/MaxTimes 2 siteaccess:<sa>`, und öffnen Sie die Adresse
    erneut.
-7. Führen Sie `exp:ini where` aus Schritt 2 erneut aus und lesen Sie beide Dateien.
-8. Entfernen Sie den Override mit `exp:ini rem mysite.ini/GreetSettings/MaxTimes siteaccess:<sa>` und committen Sie
-   die Dateien der Erweiterung.
+7. Führen Sie `exp:ini where` aus Schritt 2 erneut aus und lesen Sie beide Dateien und ihre Reihenfolge.
+8. Entfernen Sie diesen Wert mit `exp:ini rem mysite.ini/GreetSettings/MaxTimes siteaccess:<sa>`, setzen Sie ihn
+   stattdessen im globalen Override (`exp:ini set mysite.ini/GreetSettings/MaxTimes 2 global`), leeren Sie den
+   `ini`-Cache und öffnen Sie die Adresse erneut. Entfernen Sie ihn danach
+   (`exp:ini rem mysite.ini/GreetSettings/MaxTimes global`) und committen Sie die Dateien der Erweiterung.
 
 ## Erwartetes Ergebnis
 
 - Schritt 2: die Datei der Erweiterung mit `MaxTimes=5` und `In effect:`.
 - Schritt 5: fünf Begrüßungen (das Maximum), jede beginnt mit „Hello“.
-- Schritt 6: zwei Begrüßungen.
-- Schritt 7: zwei Dateien in Ladereihenfolge, der Wert des Siteaccess ist wirksam.
+- Schritt 6: weiterhin fünf Begrüßungen.
+- Schritt 7: zwei Dateien in Ladereihenfolge, zuerst die Siteaccess-Datei, danach die Datei der Erweiterung, und
+  `MaxTimes=5` der Erweiterung ist wirksam.
+- Schritt 8: zwei Begrüßungen.
 - Der Trainer prüft die `mysite.ini.append.php` einer Person auf Kommentare zu jeder Einstellung.
 
 ## Quiz
@@ -135,17 +143,18 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 1. In ihrem Ordner `settings/`, als `<name>.ini.append.php`.
 2. **B.** `hasVariable( 'GreetSettings', 'MaxTimes' )`.
 3. `{ezini( 'GreetSettings', 'MaxTimes', 'mysite.ini' )}`.
-4. Ein Override im Geltungsbereich der Website (ein Siteaccess oder der globale Override), niemals die Datei der
-   Erweiterung.
+4. Der globale Override (`settings/override/`), niemals die Datei der Erweiterung. Eine Siteaccess-Datei verliert
+   gegen einen Wert, den `settings/` der Erweiterung setzt, weil die Einstellungen der Erweiterungen nach dem
+   Siteaccess gelesen werden.
 5. Alle Erweiterungen teilen sich die Namen der INI-Dateien; ein Name mit Präfix kann nicht kollidieren.
 
 </details>
 
 ## Weiterführende Literatur
 
-- [Eine eigene INI-Datei](../../../../../eng-us/help/designers/extensions/your-own-ini-file.md).
-- [Einstellungsdateien in einer Erweiterung](../../../../../eng-us/help/designers/extensions/settings-files-in-an-extension.md).
-- [Siteaccess-Einstellungen in einer Erweiterung](../../../../../eng-us/help/designers/extensions/siteaccess-settings-in-an-extension.md).
+- [Eine eigene INI-Datei](../../../designer/erweiterungen/eine-eigene-ini-datei.md).
+- [Einstellungsdateien in einer Erweiterung](../../../designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md).
+- [Siteaccess-Einstellungen in einer Erweiterung](../../../designer/erweiterungen/siteaccess-einstellungen-in-einem-theme.md).
 
 ## Verwandte Seiten
 
@@ -155,9 +164,9 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

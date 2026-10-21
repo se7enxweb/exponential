@@ -56,20 +56,21 @@ Sie sie im Override und leeren Sie die Caches.
 ## Wenn ein Token abgewiesen wird
 
 Die Antwort ist 403 mit der Seite „Formular abgelaufen“; kein Token wird ins Protokoll geschrieben
-([Seite „Formular abgelaufen“](../../../../eng-us/features/6.0/form-expired-page.md)). Häufige harmlose Ursachen: Die Sitzung ist
+([Seite „Formular abgelaufen“](../../../funktionen/6.0/seite-abgelaufenes-formular.md)). Häufige harmlose Ursachen: Die Sitzung ist
 abgelaufen, während ein Formular offen war, oder der Benutzer hat sich in einem anderen Tab erneut angemeldet. Wiederholte
 Abweisungen für viele Benutzer nach einer Änderung deuten auf ein Proxy- oder Caching-Problem hin.
 
 ## Verwandte Seiten
 
 - [13.8 Formular-Tokens](../../../installation/13-sicherheitshaertung.md#138-formular-tokens-gegen-cross-site-request-forgery)
-- [Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)
-- [Sicherheitsstandards: OWASP Cheat Sheets](../../../../eng-us/standards/security.md#owasp-cheat-sheets-reflected-in-the-code)
+- [Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)
+- [Sicherheitsstandards: OWASP Cheat Sheets](../../../standards/sicherheit.md#owasp-cheat-sheets-die-sich-im-code-wiederfinden)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

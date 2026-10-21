@@ -7,7 +7,7 @@ Nein. Die Funktionen sind Teil von Exponential 6.0.15. Unter
 
 **Verhält sich meine Website nach dem Upgrade anders?**
 Nur dort, wo eine Funktion einen eindeutigen Fehler behebt oder eine Sicherheitslücke für jede Website schließt (das
-Abmelden löscht das Session-Cookie, hochgeladene Bilder werden anhand ihres Inhalts geprüft), dazu einige kleine
+Abmelden löscht das Sitzungs-Cookie, hochgeladene Bilder werden anhand ihres Inhalts geprüft), dazu einige kleine
 Änderungen an der Protokollierung (Deprecations in einem eigenen Log, Log-Dateien von 2 MB) und eine Schaltfläche
 Kopieren in der Administration. Funktionen, die ändern könnten, was Besucher oder Redakteure sehen, sind auf
 vorhandenen Websites ausgeschaltet. [funktionen.md](funktionen.md) führt den Standard jeder Funktion auf.

@@ -27,7 +27,7 @@ stammen vom Demonstrationsserver am 6. Oktober 2026, nur lesend erhoben.
 - **Übersichtskarten**: Exponential, Server, PHP, OPcache und APCu, Datenbank, Speicher, Caches, Cronjobs, E-Mail,
   Gebietsschema und Zeit, Maschine.
 - **Bericht herunterladen (.txt)**, **Als JSON herunterladen** und **Bericht als Text kopieren** liefern denselben
-  Bericht für eine Supportanfrage. Passwörter, Schlüssel, Tokens, Session-IDs, Zugangsdaten in Adressen und
+  Bericht für eine Supportanfrage. Passwörter, Schlüssel, Tokens, Sitzungs-IDs, Zugangsdaten in Adressen und
   vollständige Serverpfade stehen niemals darin.
 - **Größen messen** (`/setup/info/sizes`) ergänzt die Größe von `var/`, jedes Cache-Verzeichnisses und einer
   Datenbank auf einem Server. Das Messen liest jede Datei von `var/` einmal (die Cache-Verzeichnisse werden im selben
@@ -234,17 +234,17 @@ hinzufügen, niemals entfernen. Tests: `expSecretRuleTest`, `expSystemReportMask
 - Ein Wert, dessen Name ein Geheimnis bezeichnet (er enthält password, passwd, passphrase, secret, token, salt,
   credential, privatekey oder apikey, endet auf pwd oder dsn, lautet „key“ oder endet auf Key, _key oder -key; SortKey,
   KeyField und Ähnliche nicht), zeigt nur „(gesetzt, verborgen)“ oder „(nicht gesetzt)“; der Bericht ergänzt eine
-  Session-ID, ein Cookie, einen Authorization- und einen Signature-Wert; der Datenbankbenutzer wird immer verborgen;
+  Sitzungs-ID, ein Cookie, einen Authorization- und einen Signature-Wert; der Datenbankbenutzer wird immer verborgen;
 - das Passwort innerhalb einer Adresse wird abgeschnitten: `mysql://user:pw@db/site` wird zu `mysql://user:***@db/site`;
 - `password=...`, `token: ...` und Ähnliches in freiem Text verlieren ihren Wert;
-- eine Folge von 26 oder mehr Buchstaben und Ziffern, die eine Ziffer enthält (eine Session-ID, ein Token, ein
+- eine Folge von 26 oder mehr Buchstaben und Ziffern, die eine Ziffer enthält (eine Sitzungs-ID, ein Token, ein
   Schlüssel), wird zu `***`;
 - Pfade innerhalb der Installation werden relativ zu ihr angegeben (`var/site/cache`), Pfade unter einem Web- oder
   Home-Verzeichnis außerhalb von ihr behalten nur ihre letzten beiden Teile (`…/other/site`); Systempfade wie
   `/etc/vc/vc.conf` bleiben erhalten.
 
 `/setup/info/php` ruft `phpinfo()` ohne seine Variablen- und Umgebungsteile auf, die die HTTP-Anmeldung, das
-Session-Cookie und alles enthalten, was ein Server in die Umgebung legt. Unter Velocity ist es reiner Text, so wie die
+Sitzungs-Cookie und alles enthalten, was ein Server in die Umgebung legt. Unter Velocity ist es reiner Text, so wie die
 Kommandozeilen-SAPI von PHP ihn schreibt.
 
 ## 8. Von der Kommandozeile
@@ -288,8 +288,16 @@ Setup > Cronjobs schreiben, werden nicht gesehen. Leiten Sie ihre Ausgabe nach `
 
 ## Siehe auch
 
-- [Datenbankunterstützung](../../eng-us/help/database-support.md): was Engine und Version auf der Datenbank-Karte bedeuten, die
+- [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md): was Engine und Version auf der Datenbank-Karte bedeuten, die
   unterstützten Datenbanken in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL)
   und die Versionen, die jede braucht.
-- [Unterstützte Betriebssysteme](../../eng-us/help/os-support.md): die Betriebssysteme, Prozessoren, Webserver und PHP-SAPIs, die
+- [Unterstützte Betriebssysteme](../hilfe/betriebssystemunterstuetzung.md): die Betriebssysteme, Prozessoren, Webserver und PHP-SAPIs, die
   die Karten Server und PHP anzeigen können, in Stufen eingeteilt.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

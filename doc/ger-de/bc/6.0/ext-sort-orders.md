@@ -5,7 +5,7 @@ Paket-Assistenten überschreiben oder wissen möchten, wie sich die Erweiterungs
 2026 ist die Liste sortiert, zeigt die Version und die letzte Änderung jeder Erweiterung und bietet einen direkten
 Download an. Die Seite bewahrt außerdem den ursprünglichen Entwurf und die Antworten auf seine offenen Fragen. Wie Sie
 die Seite verwenden, beschreibt
-[Erweiterungsliste: jede Erweiterung sortieren, untersuchen und herunterladen](../../../eng-us/features/6.0/extension-list-and-downloads.md).
+[Erweiterungsliste: jede Erweiterung sortieren, untersuchen und herunterladen](../../funktionen/6.0/extension-liste-und-downloads.md).
 
 ## Kurz gesagt
 
@@ -29,7 +29,7 @@ Jetzt (Commits `74bc4ccbd8`, `104a4b487a`, `3d125848e8`):
 - **Sortierung.** Die Spaltenköpfe sind Links; die Wahl wird als View-Parameter übertragen,
   `/setup/extensions/(sort)/version/(dir)/desc`. Standard ist seit dem 29. September 2026 die Ladereihenfolge
   (`cb5d523bde`); am 5. August war es A bis Z, natürlich und ohne Beachtung der Groß- und Kleinschreibung. Siehe
-  [Setup > Extensions: Ladereihenfolge](../../../eng-us/features/6.0/extension-loading-order.md).
+  [Setup > Extensions: Ladereihenfolge](../../funktionen/6.0/ladereihenfolge-der-extensions.md).
 - **Version** stammt aus `extension.xml`, `ezinfo.php` oder `composer.json`
   ([Metadaten von Erweiterungen](../../spezifikationen/6.0/extension-metadaten.md)); ein Strich bedeutet, dass
   keine angegeben ist.
@@ -92,9 +92,9 @@ Wie die Umsetzung seine offenen Fragen beantwortet hat:
 
 ## Verwandte Seiten
 
-- [Erweiterungsliste: jede Erweiterung sortieren, untersuchen und herunterladen](../../../eng-us/features/6.0/extension-list-and-downloads.md)
-- [Setup > Extensions: Ladereihenfolge](../../../eng-us/features/6.0/extension-loading-order.md)
+- [Erweiterungsliste: jede Erweiterung sortieren, untersuchen und herunterladen](../../funktionen/6.0/extension-liste-und-downloads.md)
+- [Setup > Extensions: Ladereihenfolge](../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Metadaten von Erweiterungen](../../spezifikationen/6.0/extension-metadaten.md)
 - [Die Klasse expInfo und der Operator expinfo](expinfo-operator.md)
 - [Zusätzliche Erweiterungsverzeichnisse](zusaetzliche-erweiterungsverzeichnisse.md)
-- [August 2026](../../../eng-us/history/2026/2026-08.md)
+- [August 2026](../../geschichte/2026/2026-08.md)

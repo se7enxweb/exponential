@@ -76,7 +76,7 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 - **Schnell unter Last.** Die Cache-Korrekturen der Linie 6.0.15 machen die Anwendung auch unter Apache oder Nginx
   schnell, und Velocity hebt die Obergrenze weiter an (`README.md`, „The part that matters even if you never run
   Velocity“).
-- **Belege, wenn etwas schiefgeht.** Ein manipulationssicherer Audit-Trail, Log-Viewer und Fehlerreferenzen
+- **Belege, wenn etwas schiefgeht.** Ein manipulationssicheres Prüfprotokoll, Log-Viewer und Fehlerreferenzen
   ([Zuverlässigkeit](zuverlaessigkeit/README.md)).
 
 ## Finden Sie Ihre Art von Organisation
@@ -87,14 +87,14 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 | Ein Unternehmen, das ein Intranet für seine Mitarbeiter braucht | [Intranets](intranets/README.md) |
 | Ein Unternehmen, das Informationen mit Partnern, Händlern, Lieferanten oder Kunden teilt | [Extranets und Partnerportale](extranets/README.md) |
 | Ein Verein, ein Berufsverband oder jemand mit Mitgliedern | [Mitgliederwebsites](mitglieder/README.md) |
-| Herausgeber eines Newsletters | [Newsletter](newsletter/README.md) |
+| Herausgeber eines Newsletters | [Newsletter](newsletters/README.md) |
 | Eine Bibliothek, ein Archiv oder jemand mit einem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md) |
 | Eine gemeinnützige oder wohltätige Organisation | [Gemeinnützige Organisationen](gemeinnuetzige/README.md) |
 | Eine kleine Gruppe oder ein Verein, von Ehrenamtlichen geführt | [Kleine Gruppen und Vereine](vereine/README.md) |
 | Eine Marke oder Gruppe mit mehreren Websites | [Marken mit Multisite](multisite/README.md) |
 | Ein Unternehmen, das in mehreren Sprachen verkauft | [Mehrsprachige Unternehmen](mehrsprachig/README.md) |
 | Ein Unternehmen mit einer mobilen App oder anderen Systemen, die die Inhalte nutzen | [Mobil und headless](mobil-und-headless/README.md) |
-| Eine Behörde oder öffentliche Stelle | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
+| Eine Behörde oder öffentliche Stelle | Der eigene Bereich [Behörden](../verwaltung/verwaltungen-hier-beginnen.md) |
 
 Nicht sicher? [Welcher Bereich passt zu Ihrer Organisation?](welcher-bereich-zu-ihrer-organisation-passt.md) stellt einige
 Fragen und weist Ihnen den richtigen Ort. [Wie Unternehmen mit Exponential online verkaufen](wie-unternehmen-online-verkaufen.md)
@@ -143,8 +143,8 @@ Die vollständige Lesereihenfolge steht im [Lesepfad](lesepfad-fuer-unternehmen.
 |---|---|
 | [Vertrieb und Marketing](../geschaeft/vertrieb-und-marketing-hier-beginnen.md) | Menschen, die Exponential und Exponential-Projekte verkaufen |
 | [Projektleiter](../fuehrung/projektleiter-hier-beginnen.md) | Ein Exponential-Projekt planen und durchführen |
-| [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) | Die Website bauen |
-| [Anwendungsentwickler](../../../eng-us/help/creators/app-creators/app-creators-start-here.md) | Eigene Anwendungen und Integrationen bauen |
+| [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md) | Die Website bauen |
+| [Anwendungsentwickler](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) | Eigene Anwendungen und Integrationen bauen |
 | [Hosting-Anbieter](../hosting/hosting-anbieter-hier-beginnen.md) | Exponential für Kunden betreiben |
 | [Presse](../presse/presse-hier-beginnen.md) | Journalisten und Rezensenten |
 
@@ -159,8 +159,8 @@ Die vollständige Lesereihenfolge steht im [Lesepfad](lesepfad-fuer-unternehmen.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

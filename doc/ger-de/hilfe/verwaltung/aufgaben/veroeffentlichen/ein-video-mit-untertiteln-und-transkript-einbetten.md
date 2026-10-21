@@ -35,7 +35,7 @@ Videoplattform ein.
 | Weg | Für | Vorsicht |
 |---|---|---|
 | Die Datei in ein Video-Objekt hochladen | kurze Videos, kein Drittanbieter | große Dateien und Bandbreite; der Player Ihres Templates muss Untertitel unterstützen |
-| Den Player einer Plattform einbetten | lange Videos, Streaming | die Plattform erhält Besucherdaten, sobald der Player lädt; eine Einwilligung kann nötig sein ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)); eine Content Security Policy muss es erlauben |
+| Den Player einer Plattform einbetten | lange Videos, Streaming | die Plattform erhält Besucherdaten, sobald der Player lädt; eine Einwilligung kann nötig sein ([Datenschutzstandards](../../../../standards/datenschutz.md)); eine Content Security Policy muss es erlauben |
 | Ein Link zur Plattform | am einfachsten, kein Tracking bis zum Klick | die Besucher verlassen die Seite |
 
 ## Schritte
@@ -72,12 +72,13 @@ Videoplattform ein.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Barrierefreie Informationen zu Veranstaltungen](../../aufbauen/veranstaltungen/barrierefreie-informationen-zu-veranstaltungen.md)
-- [SVG und Bildformate](../../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md)
+- [SVG und Bildformate](../../../ersteller/website-ersteller/svg-und-bildformate.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

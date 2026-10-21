@@ -29,7 +29,7 @@ teaches developers to read the load order, to choose the scope a setting belongs
 | [Lesson 8.1: How settings are read](how-settings-are-read.md) | 45 minutes | The file format, the scope order, arrays and resets, `exp:ini where` |
 | [Lesson 8.2: Siteaccess settings](siteaccess-settings.md) | 45 minutes | Siteaccesses, matching, `-s`, choosing the scope of a setting |
 | [Lesson 8.3: Changing settings with exp:ini](changing-settings-with-exp-ini.md) | 50 minutes | Actions, dry runs, backups, exit codes, moving into an extension |
-| [Lesson 8.4: Settings of your own](settings-of-your-own.md) | 45 minutes | `mysite.ini` with defaults, read from PHP and templates, overridden per siteaccess |
+| [Lesson 8.4: Settings of your own](settings-of-your-own.md) | 45 minutes | `mysite.ini` with defaults, read from PHP and templates, overridden in the global override |
 
 ## Preparing this module
 

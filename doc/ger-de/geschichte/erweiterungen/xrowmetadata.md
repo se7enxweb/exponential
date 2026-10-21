@@ -1,8 +1,8 @@
 # xrowmetadata (Metadaten und Sitemaps): Chronik
 
-Die Erweiterung für Metadaten und Sitemaps erhielt im August 2026 ein Open-Graph-Bild (1.3.6, 1.3.7), im Herbst dann Korrekturen für dauerhaft laufende Worker, Übersetzungen und jQuery 4 sowie eine Korrektur des Sitemap-Cronjobs. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/xrowmetadata.md).
+Die Erweiterung für Metadaten und Sitemaps erhielt im August 2026 ein Open-Graph-Bild (1.3.6, 1.3.7), im Herbst dann Korrekturen für dauerhaft laufende Worker, Übersetzungen und jQuery 4 sowie eine Korrektur des Sitemap-Cronjobs. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/xrowmetadata.md).
 
-Diese Seite führt **jede der 24 Änderungen** des Repositorys `xrowmetadata` zwischen 2023-12-24 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/xrowmetadata.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/xrowmetadata.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/xrowmetadata.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 24 Änderungen** des Repositorys `xrowmetadata` zwischen 2023-12-24 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/xrowmetadata.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/xrowmetadata.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/xrowmetadata.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -85,7 +85,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/xrowmetadata.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/xrowmetadata.md)
 - [Release Notes](../../../changelogs/extensions/xrowmetadata.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/xrowmetadata.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

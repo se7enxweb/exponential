@@ -3,8 +3,8 @@ title: Checkliste Schriftgut
 audience: government, admin, project-manager
 category: public-sector
 order: 60
-summary: Eine Checkliste für öffentliche Stellen, die Inhalte der Website als Schriftgut aufbewahren müssen - was Exponential aufbewahrt (Versionen, Papierkorb, Audit-Trail), was es nicht tut (Aufbewahrungspläne, Vernichtung, Abgabe an ein Archiv) und die Abläufe, die die Lücke schließen.
-keywords: Schriftgutverwaltung, Schriftgut, Aufbewahrungsplan, Versionen, Geschichte, Audit-Trail, Archiv, Vernichtung, Kassation, ISO 15489, OAIS, Export, öffentlicher Sektor, records management, records, retention schedule, versions, history, audit trail, archive, disposal, export, public sector
+summary: Eine Checkliste für öffentliche Stellen, die Inhalte der Website als Schriftgut aufbewahren müssen - was Exponential aufbewahrt (Versionen, Papierkorb, Prüfprotokoll), was es nicht tut (Aufbewahrungspläne, Vernichtung, Abgabe an ein Archiv) und die Abläufe, die die Lücke schließen.
+keywords: Schriftgutverwaltung, Schriftgut, Aufbewahrungsplan, Versionen, Geschichte, Prüfprotokoll, Archiv, Vernichtung, Kassation, ISO 15489, OAIS, Export, öffentlicher Sektor, records management, records, retention schedule, versions, history, audit trail, archive, disposal, export, public sector
 type: help
 ---
 # Checkliste Schriftgut
@@ -29,14 +29,14 @@ was Sie darum herum organisieren müssen.
 ## Entscheiden, was Schriftgut ist
 
 - [ ] Ihr Aufbewahrungsplan nennt, welche Website-Inhalte Schriftgut sind (zum Beispiel Beschlüsse, Bekanntmachungen, Unterlagen zu Beteiligungsverfahren).
-- [ ] Jede solche Art von Inhalt hat eine eigene Inhaltsklasse, damit sie nach Klasse gefunden und exportiert werden kann ([Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)).
+- [ ] Jede solche Art von Inhalt hat eine eigene Inhaltsklasse, damit sie nach Klasse gefunden und exportiert werden kann ([Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)).
 - [ ] Die Aufbewahrungsfrist jeder Klasse ist schriftlich festgehalten.
 
 ## Was Exponential aufbewahrt
 
 - [ ] **Versionen.** Jedes Objekt behält seine Versionen; sie können auf der Versionsseite verglichen und wiederhergestellt werden ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)). Prüfen Sie, wie viele Versionen Ihre Einstellungen aufbewahren, bevor ältere entfernt werden.
-- [ ] **Papierkorb.** Entfernte Objekte warten im Papierkorb, mit Angabe, wer sie entfernt hat und von wo, bis sie endgültig gelöscht werden ([Papierkorb](../../../../eng-us/features/6.0/trash-who-and-where.md)).
-- [ ] **Audit-Trail.** Wer hat wann was geändert, mit Hash-Kette; standardmäßig 90 Tage aktiv und 2 Jahre archiviert pro Kanal ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md), [Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
+- [ ] **Papierkorb.** Entfernte Objekte warten im Papierkorb, mit Angabe, wer sie entfernt hat und von wo, bis sie endgültig gelöscht werden ([Papierkorb](../../../funktionen/6.0/papierkorb-wer-und-wo.md)).
+- [ ] **Prüfprotokoll.** Wer hat wann was geändert, mit Hash-Kette; standardmäßig 90 Tage aktiv und 2 Jahre archiviert pro Kanal ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md), [Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
 - [ ] **Objektzustände.** Kennzeichnen Sie Inhalte zum Beispiel als „Schriftgut“ oder „archiviert“ und beschränken Sie, wer sie ändern darf ([Objektzustände](../../../anleitungen/objektzustaende.md)).
 
 ## Was Exponential nicht tut
@@ -74,8 +74,9 @@ Planen Sie für jede Lücke, die Sie betrifft, Abläufe oder Werkzeuge ein.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -1,8 +1,8 @@
 # syndication (Syndikation von Inhalten): Chronik
 
-Syndication wurde im September 2025 von 7x veröffentlicht, nachdem es von PHP 5 auf PHP 8 portiert und dokumentiert worden war, und im Juli 2026 um eine HTTP-Authentifizierung für Importe erweitert. Im Herbst kamen Sicherheit für dauerhaft laufende Worker und ein portables Schema hinzu. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/syndication.md).
+Syndication wurde im September 2025 von 7x veröffentlicht, nachdem es von PHP 5 auf PHP 8 portiert und dokumentiert worden war, und im Juli 2026 um eine HTTP-Authentifizierung für Importe erweitert. Im Herbst kamen Sicherheit für dauerhaft laufende Worker und ein portables Schema hinzu. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/syndication.md).
 
-Diese Seite führt **jede der 19 Änderungen** des Repositorys `syndication` zwischen 2025-09-13 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/syndication.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/syndication.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/syndication.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 19 Änderungen** des Repositorys `syndication` zwischen 2025-09-13 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/syndication.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/syndication.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/syndication.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -72,8 +72,8 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/syndication.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/syndication.md)
 - [Release Notes](../../../changelogs/extensions/syndication.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/syndication.md)
 - [Spezifikation](../../spezifikationen/6.0/syndikation.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

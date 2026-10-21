@@ -33,7 +33,7 @@ aus Ihren Vergabeunterlagen, nie von dieser Seite.
 - Jede bewertende Person erklärt Interessenkonflikte, bevor sie die Angebote sieht.
 - Legen Sie vorab fest, welche Nachweise zählen: das schriftliche Angebot, die Demo, der Proof of Concept, die
   öffentliche Dokumentation. Für Exponential ist die öffentliche Dokumentation das Verzeichnis `doc/` des Repositorys,
-  zum Beispiel die [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) und die [Sicherheitsstandards](../../../../../eng-us/standards/security.md).
+  zum Beispiel die [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) und die [Sicherheitsstandards](../../../../standards/sicherheit.md).
 
 ## Eine Punkteskala mit Regeln für Nachweise
 
@@ -88,10 +88,10 @@ Die Seiten zu den Standards von Exponential verwenden feste Statusangaben. Eine 
 
 | Status in `doc/eng-us/standards/` | Höchstens bewerten mit | Warum |
 |---|---|---|
-| **Complies** | 3, oder 4, wenn Sie es nachvollzogen haben | die Seite nennt die Nachweise (Tests, Einstellungen, Dateien) |
-| **Partly complies** | 2 | die Seite nennt, was abgedeckt ist, und die Lücken |
-| **Unverified** | 1 | es wurde keine Bewertung durchgeführt; zum Beispiel sind EN 301 549, Section 508 und OWASP ASVS „Unverified“ |
-| **Does not comply** | 0 | klar ausgesprochen, zum Beispiel unsignierte Commits in [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) |
+| **Erfüllt** | 3, oder 4, wenn Sie es nachvollzogen haben | die Seite nennt die Nachweise (Tests, Einstellungen, Dateien) |
+| **Teilweise erfüllt** | 2 | die Seite nennt, was abgedeckt ist, und die Lücken |
+| **Nicht geprüft** | 1 | es wurde keine Bewertung durchgeführt; zum Beispiel sind EN 301 549, Section 508 und OWASP ASVS „Nicht geprüft“ |
+| **Nicht erfüllt** | 0 | klar ausgesprochen, zum Beispiel unsignierte Commits in [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md) |
 
 Ein Bieter kann eine Punktzahl mit eigenen Nachweisen anheben, zum Beispiel mit einem Audit der Barrierefreiheit des
 öffentlichen Designs, das er für Sie baut. Bewerten Sie diesen Nachweis, nicht nur die Produktdokumentation.
@@ -100,7 +100,7 @@ Ein Bieter kann eine Punktzahl mit eigenen Nachweisen anheben, zum Beispiel mit 
 
 - Den Glanz der Demo bewerten statt der Anforderung. Notieren Sie, welche Anforderung jede Minute der Demo gezeigt hat.
 - Behauptungen „vollständiger Konformität“ belohnen, die kein Dokument stützt. Die Dokumentation von Exponential selbst
-  beansprucht keine WCAG-Konformität und kein VPAT ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#section-508)).
+  beansprucht keine WCAG-Konformität und kein VPAT ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#section-508)).
 - Die Person, die den Preis bewertet, zuerst die Qualitätspunkte sehen lassen oder umgekehrt, wenn Ihre Regeln das
   trennen.
 - Die Links zu den Nachweisen verlieren: Bewahren Sie sie im Bogen auf.
@@ -108,12 +108,13 @@ Ein Bieter kann eine Punktzahl mit eigenen Nachweisen anheben, zum Beispiel mit 
 ## Verwandte Seiten
 - [Bewertung: Übersicht](README.md)
 - [Beschaffung: Übersicht](../README.md)
-- [Standards: wie der Status zu lesen ist](../../../../../eng-us/standards/README.md#how-to-read-the-status)
+- [Standards: wie der Status zu lesen ist](../../../../standards/README.md#wie-sie-den-status-lesen)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

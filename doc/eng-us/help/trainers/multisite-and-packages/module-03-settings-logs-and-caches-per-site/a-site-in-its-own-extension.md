@@ -56,7 +56,7 @@ Source: [Changing settings from the command line: exp:ini, Moving settings into 
 3. **Safety** (6 minutes). The target is written first, then the block leaves the source; files are never deleted.
    Before and after the write, the command reads the value in effect of every moved variable for every siteaccess; if
    any differs, both files are put back and the move is refused with exit 3. Load order explains why: an extension's
-   settings load before `settings/siteaccess/<sa>`, which loads before `settings/override`, so a value moved out of the
+   siteaccess directory loads before `settings/siteaccess/<sa>`, which loads before `settings/override`, so a value moved out of the
    override into an extension can lose to a siteaccess file. Every changed file is first copied to
    `var/backup/ini/<timestamp>/<path>` (mode 0600).
 4. **Creating and activating** (5 minutes). `--create-extension` makes `extension/<ext>/` with `settings/`, an
@@ -150,7 +150,9 @@ Use your training installation from module 2. Commands run in the installation r
 <details>
 <summary>Answers</summary>
 
-1. An extension's settings, then `settings/siteaccess/<sa>`, then the global override, which has the last word.
+1. `settings/siteaccess/<sa>`, then an extension's settings (`extension/<ext>/settings/`), then the global override,
+   which has the last word. Only an extension's siteaccess directories (`extension/<ext>/settings/siteaccess/<sa>/`)
+   load before `settings/siteaccess/<sa>`.
 2. **B.** Unless `--force` is given
    ([exp:ini](../../../../bc/6.0/console-exp-ini.md#moving-settings-into-an-extension)).
 3. An extension cannot activate itself: its settings are read only once it is active.

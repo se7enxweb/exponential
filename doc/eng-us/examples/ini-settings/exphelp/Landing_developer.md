@@ -52,7 +52,7 @@ Blocks[]=related
 
 ## Related
 
-Default: a list of 4: `app-creator`, `designer`, `admin`, `supporter`.
+Default: a list of 12: `app-creator`, `designer`, `admin`, `supporter`, `ecosystem`, `php-developer`, `ai-agents`, `software-engineer`, `web-framework-developer`, `cms-developer`, `dxp-developer`, `integrator`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -64,6 +64,14 @@ Related[]=app-creator
 Related[]=designer
 Related[]=admin
 Related[]=supporter
+Related[]=ecosystem
+Related[]=php-developer
+Related[]=ai-agents
+Related[]=software-engineer
+Related[]=web-framework-developer
+Related[]=cms-developer
+Related[]=dxp-developer
+Related[]=integrator
 */ ?>
 ```
 

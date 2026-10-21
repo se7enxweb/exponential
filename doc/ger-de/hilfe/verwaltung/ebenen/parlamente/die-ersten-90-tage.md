@@ -27,7 +27,7 @@ Plan setzt voraus, dass eine Installation existiert ([Erste Schritte](../../../.
 | Jede Art von Aufzeichnung ihrem Quellsystem und ihrer verantwortlichen Stelle zuordnen (Gesetzentwürfe, Abstimmungen, Protokolle, Video) | eine Quellenkarte |
 | Für jede entscheiden: in das CMS kopiert oder zur Quelle verlinkt | eine Entscheidung je Art der Aufzeichnung |
 | Veröffentlichungszeiten vereinbaren (zum Beispiel Abstimmungen innerhalb einer festgelegten Zeit nach der Sitzung) | Service-Level |
-| Das Adressschema (Wahlperiode, Nummer) für Einträge der Aufzeichnung vereinbaren | eine URL-Regel ([URL-Aliase und sprechende URLs](../../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)) |
+| Das Adressschema (Wahlperiode, Nummer) für Einträge der Aufzeichnung vereinbaren | eine URL-Regel ([URL-Aliase und sprechende URLs](../../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)) |
 | Die Weiterverwendung von Daten vereinbaren: Formate und Lizenz | eine Datenrichtlinie |
 
 ## Tage 31 bis 60: Modell und Importe
@@ -46,10 +46,10 @@ Plan setzt voraus, dass eine Installation existiert ([Erste Schritte](../../../.
 | Schritt | Lesen |
 |---|---|
 | Mitglieder migrieren, aktuelle und ehemalige, mit Daten | [Inhaltsmodell](inhaltsmodell.md) |
-| Die Geschäfte der laufenden Wahlperiode migrieren; ältere Wahlperioden mit dem alten Archiv verlinken | [Umleitungen und verschobene Inhalte](../../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
+| Die Geschäfte der laufenden Wahlperiode migrieren; ältere Wahlperioden mit dem alten Archiv verlinken | [Umleitungen und verschobene Inhalte](../../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
 | Die Parlamentsverwaltung in der Veröffentlichung jeder Art von Aufzeichnung schulen | [Tagesordnungen, Gesetzentwürfe und Abstimmungsergebnisse](tagesordnungen-gesetzentwuerfe-und-abstimmungsergebnisse.md) |
-| Test der Barrierefreiheit der Seiten der Aufzeichnung und der Videoseite | [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
-| Start in einer sitzungsfreien Zeit | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Test der Barrierefreiheit der Seiten der Aufzeichnung und der Videoseite | [Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
+| Start in einer sitzungsfreien Zeit | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 Prüfungen beim Start:
 
@@ -70,12 +70,13 @@ Prüfungen beim Start:
 
 - [Parlamente](README.md)
 - [Tagesordnungen, Gesetzentwürfe und Abstimmungsergebnisse](tagesordnungen-gesetzentwuerfe-und-abstimmungsergebnisse.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

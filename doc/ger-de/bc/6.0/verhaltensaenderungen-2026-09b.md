@@ -4,8 +4,8 @@ Lesen Sie diese Seite, bevor Sie die Änderungen vom 16. bis 30. September 2026 
 Exponential 6.0 übernehmen. Sie führt auf, was Besucher, Redakteure, Installierende und Betreiber bemerken werden und
 was dagegen zu tun ist. Jede Zeile nennt die Änderung, wer betroffen ist, die Einstellung, die sie steuert, und die zu
 ergreifende Maßnahme; längere Erklärungen sind verlinkt. Dies ist der Begleiter zum Upgrade für die
-[Chronik des Zeitraums](../../../eng-us/history/2026/2026-09b.md). Der vorherige Zeitraum steht in der
-[Chronik vom 1. bis 15. September](../../../eng-us/history/2026/2026-09a.md), der nächste in den
+[Chronik des Zeitraums](../../geschichte/2026/2026-09b.md). Der vorherige Zeitraum steht in der
+[Chronik vom 1. bis 15. September](../../geschichte/2026/2026-09a.md), der nächste in den
 [Verhaltensänderungen vom Oktober 2026](verhaltensaenderungen-2026-10.md).
 
 ## Reihenfolge beim Bereitstellen
@@ -21,8 +21,8 @@ systemctl reload <php-fpm service>      # the PHP-FPM service that serves your s
 
 Die drei Änderungen, bei denen die meisten Websites handeln müssen:
 
-1. **Sicherheits-Header und das Session-Cookie** (die ersten beiden Zeilen unten): Prüfen Sie jeden Host, der die
-   Administration in einen Frame einbettet, und jedes Skript, das das Session-Cookie liest.
+1. **Sicherheits-Header und das Sitzungs-Cookie** (die ersten beiden Zeilen unten): Prüfen Sie jeden Host, der die
+   Administration in einen Frame einbettet, und jedes Skript, das das Sitzungs-Cookie liest.
 2. **Der Inhaltsbaum der Administration beginnt beim obersten Knoten:** Setzen Sie `RootNodeID=2`, wenn Redakteure den
    alten Baum möchten.
 3. **Fügen Sie den Cronjob-Teil `cache_cleanup`** Ihrer crontab hinzu (siehe „Caches und Webserver“).
@@ -32,18 +32,18 @@ Die drei Änderungen, bei denen die meisten Websites handeln müssen:
 | Änderung | Wer betroffen ist | Einstellung | Was zu tun ist |
 |---|---|---|---|
 | Jede Seite wird mit Sicherheits-Headern gesendet; die Administration kann nicht von anderen Websites in einen Frame eingebettet werden. | Alle, die die Administration oder die Website einbetten; Proxys, die Header erneut hinzufügen. | `site.ini [HTTPHeaderSettings] SecurityHeaders[]` | Bettet ein Redaktions-Host die Administration ein, überschreiben Sie `Content-Security-Policy` (siehe [Sicherheitsstandards](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)). |
-| Das Session-Cookie ist `HttpOnly`, `SameSite=Lax` und über HTTPS `Secure`. | Integrationen, die das Cookie per Skript lesen oder seitenübergreifend verwenden. | `site.ini [Session] CookieHttponly`, `CookieSameSite`, `CookieSecure=auto` | Setzen Sie die Werte ausdrücklich, wenn Sie das alte Verhalten brauchen. |
-| Ein POST mit fehlendem oder falschem Formular-Token antwortet mit 403 und der Seite „Formular abgelaufen“, nicht mit 500. | Überwachung, die bei 500 alarmiert; eigene Fehler-Templates. | `site.ini [HTMLForms] RefusalLogCollapseSeconds`; `design:error/kernel/6.tpl` | Siehe [Seite „Formular abgelaufen“](../../../eng-us/features/6.0/form-expired-page.md). Alarmieren Sie stattdessen bei der Menge an 403. |
+| Das Sitzungs-Cookie ist `HttpOnly`, `SameSite=Lax` und über HTTPS `Secure`. | Integrationen, die das Cookie per Skript lesen oder seitenübergreifend verwenden. | `site.ini [Session] CookieHttponly`, `CookieSameSite`, `CookieSecure=auto` | Setzen Sie die Werte ausdrücklich, wenn Sie das alte Verhalten brauchen. |
+| Ein POST mit fehlendem oder falschem Formular-Token antwortet mit 403 und der Seite „Formular abgelaufen“, nicht mit 500. | Überwachung, die bei 500 alarmiert; eigene Fehler-Templates. | `site.ini [HTMLForms] RefusalLogCollapseSeconds`; `design:error/kernel/6.tpl` | Siehe [Seite „Formular abgelaufen“](../../funktionen/6.0/seite-abgelaufenes-formular.md). Alarmieren Sie stattdessen bei der Menge an 403. |
 | „Passwort vergessen?“ gibt für unbekannte und bekannte Adressen dieselbe Antwort. | Redakteure, die sich auf die Meldung „kein solcher Benutzer“ verlassen haben. | keine | Keine. |
-| Seiten geben `lang="nb-NO"`, `sv-SE`, `nl-NL` ... statt `no-bokmaal`, `swe-SE`, `dut-NL` aus. | CSS oder JavaScript, das nach den alten Werten von `lang` auswählt. | Locale-Dateien `[HTTP] ContentLanguage` | Passen Sie die Selektoren an; Tabelle unter [Übersetzungen](../../../eng-us/features/6.0/translations-and-languages.md). |
-| Der Inhaltsbaum der Administration beginnt beim obersten Knoten, und die Tabs im Kopf heißen Medien, Benutzer und Shop. | Redakteure; Dokumentation mit Screenshots; Skripte, die auf Tab-Namen klicken. | `contentstructuremenu.ini [TreeMenu] RootNodeID` (jetzt `1`), `MaxDepth` (jetzt beachtet, `0` = alle) | Setzen Sie `RootNodeID=2` für den alten Baum. Siehe [Navigation](../../../eng-us/features/6.0/admin-content-tree-top-node.md). |
+| Seiten geben `lang="nb-NO"`, `sv-SE`, `nl-NL` ... statt `no-bokmaal`, `swe-SE`, `dut-NL` aus. | CSS oder JavaScript, das nach den alten Werten von `lang` auswählt. | Locale-Dateien `[HTTP] ContentLanguage` | Passen Sie die Selektoren an; Tabelle unter [Übersetzungen](../../funktionen/6.0/uebersetzungen-und-sprachen.md). |
+| Der Inhaltsbaum der Administration beginnt beim obersten Knoten, und die Tabs im Kopf heißen Medien, Benutzer und Shop. | Redakteure; Dokumentation mit Screenshots; Skripte, die auf Tab-Namen klicken. | `contentstructuremenu.ini [TreeMenu] RootNodeID` (jetzt `1`), `MaxDepth` (jetzt beachtet, `0` = alle) | Setzen Sie `RootNodeID=2` für den alten Baum. Siehe [Navigation](../../funktionen/6.0/oberster-knoten-des-inhaltsbaums-im-admin.md). |
 | Der Tab Shop öffnet das Shop-Dashboard. | Shop-Mitarbeiter. | keine | Die Bestellliste ist der zweite Eintrag des Shop-Menüs. |
 | Ein ausgeschaltetes Modul antwortet mit 404 wie ein unbekanntes Modul. | Tests, die die Seite „Modul ist ausgeschaltet“ erwarten. | `site.ini [SiteAccessRules] DisabledModuleResult=disabled` bringt die alte Seite zurück | Setzen Sie es, wenn Sie das alte Verhalten brauchen. |
 | Ein fataler Fehler, eine nicht abgefangene Ausnahme oder eine fehlgeschlagene Datenbanktransaktion zeigt die statische Fehlerseite der Website mit 500, oder 503, wenn die Datenbank nicht erreichbar ist (abgelehnt, unbekannter Host, falsches Passwort, Host nicht erlaubt, zu viele Verbindungen, Verbindung verloren). Details nur mit eingeschalteter Debug-Ausgabe. | Alle, die den alten nackten Text „Fatal error“ auswerten. | `error.ini [ErrorSettings] StaticErrorPage[<code>]` (zum Beispiel `[500]`, `[503]`, `[default]`) | Alarmieren Sie bei 503. Neben die Details wird eine Referenz in das Fehlerprotokoll geschrieben. |
-| Bestell-E-Mails und Bestätigungslinks können auf einen dauerhaften Beleg zeigen. | Kunden; E-Mail-Templates. | `shop.ini [OrderViewSettings] OrderLinkView` (Standard `orderview`); `AnonymousOrderLinkView` wurde entfernt | Siehe [Bestellbelege](../../../eng-us/features/6.0/order-receipts.md). |
-| Paketversionen beginnen bei `1.0.0`; die Lizenz ist eine strikte Auswahl. | Paketautoren. | `package.ini [LicenseSettings]` | Siehe [Lizenzen und Versionen](../../../eng-us/features/6.0/package-licenses-and-versions.md). |
+| Bestell-E-Mails und Bestätigungslinks können auf einen dauerhaften Beleg zeigen. | Kunden; E-Mail-Templates. | `shop.ini [OrderViewSettings] OrderLinkView` (Standard `orderview`); `AnonymousOrderLinkView` wurde entfernt | Siehe [Bestellbelege](../../funktionen/6.0/bestellbelege.md). |
+| Paketversionen beginnen bei `1.0.0`; die Lizenz ist eine strikte Auswahl. | Paketautoren. | `package.ini [LicenseSettings]` | Siehe [Lizenzen und Versionen](../../funktionen/6.0/paketlizenzen-und-versionen.md). |
 | `Setup > Extensions` speichert nur die Erweiterungen, die es anzeigt. | Administratoren. | keine | Prüfen Sie `ActiveExtensions` nach der Änderung einmal. Vor jedem Speichern wird eine Kopie der Datei in `var/<site>/backups/settings-override` abgelegt. |
-| `Design > Templates` schreibt nur Zeilen mit `Priority` und geänderte Bedingungen. | Teams, die `override.ini.append.php` von Hand bearbeitet haben. | keine | Siehe [Reihenfolge der Overrides](../../../eng-us/features/6.0/template-override-ordering.md). |
+| `Design > Templates` schreibt nur Zeilen mit `Priority` und geänderte Bedingungen. | Teams, die `override.ini.append.php` von Hand bearbeitet haben. | keine | Siehe [Reihenfolge der Overrides](../../funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md). |
 | Die Richtlinien einer Rolle werden in der Reihenfolge ihrer IDs aufgeführt. | Redakteure, die die alphabetische Reihenfolge gewohnt sind. | keine | Verwenden Sie die neuen Sortierüberschriften. |
 
 ## Installierende und Betreiber
@@ -52,15 +52,15 @@ Die drei Änderungen, bei denen die meisten Websites handeln müssen:
 |---|---|---|
 | Der Kickstarter und der Setup-Assistent verwenden standardmäßig SQLite. | `kickstart.ini [database_choice] Type` | Nennen Sie Ihre Engine ausdrücklich. |
 | Kickstart endet nicht mehr mit einem erratbaren Administratorpasswort. | `var/log/initial-admin-password` | Lesen Sie es nach der Installation einmal und löschen Sie die Datei. |
-| `DatabaseImplementation` wird aus der laufenden `site.ini` übernommen, nicht aus `Type`. | `settings/override/site.ini.append.php` | Wenn Sie auf eine andere Engine installieren, setzen Sie es zuerst (siehe [Seite zur Installation](../../../eng-us/features/6.0/install-in-one-command.md)). |
+| `DatabaseImplementation` wird aus der laufenden `site.ini` übernommen, nicht aus `Type`. | `settings/override/site.ini.append.php` | Wenn Sie auf eine andere Engine installieren, setzen Sie es zuerst (siehe [Seite zur Installation](../../funktionen/6.0/installation-mit-einem-befehl.md)). |
 | `./console exp:install` installiert mit einem Befehl. | `exp:install --help` | Neu; nichts zu migrieren. |
-| Der Wartungsmodus umschließt Installationen. | `var/maintenance.json` | Ist ein Lauf fehlgeschlagen, beenden Sie ihn mit `php bin/php/maintenance.php off`. Siehe [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md). |
+| Der Wartungsmodus umschließt Installationen. | `var/maintenance.json` | Ist ein Lauf fehlgeschlagen, beenden Sie ihn mit `php bin/php/maintenance.php off`. Siehe [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md). |
 | Eine Standardinstallation konvertiert Bilder zuerst mit GD. | `image.ini [ImageConverterSettings] ImageConverters[]` (ausgelieferte Reihenfolge `GD`, `ImageMagick`) | Stellen Sie ImageMagick in `settings/override/image.ini.append.php` an die erste Stelle, wenn Sie seine Filter brauchen. |
 | Neue Installationen beginnen mit den Ordnern Konfiguration und Archive und der Klassengruppe Konfiguration; Setup hat den Alias `x-setup`. | Seed-Daten | Bestehende Installationen werden nicht angefasst. Siehe [Seed-Daten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md). |
 | Vierzehn Bestellstatus kommen hinzu. | `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` | Führen Sie das Datenbank-Update für 6.0.15 aus; eigene Status behalten ihre Zeilen. |
 | Die Versionsklasse ist `ExponentialSDK`; die Beispiel-crontab ist `exponential.cron`. Die alten Namen funktionieren weiterhin. | | Siehe [ExponentialSDK und exponential.cron](exponentialsdk-und-exponential-cron.md). |
 | Ausgehende Anfragen und E-Mails geben sich als Exponential zu erkennen. | | Ändern Sie Webserver-Regeln, die auf den früheren User-Agent des Generators für den statischen Cache passten. |
-| `ExtensionSettingsSiteAccess` lässt einen Übersetzungs-Siteaccess die Erweiterungseinstellungen eines anderen Siteaccess verwenden. | `site.ini [SiteAccessSettings]` | Neu; siehe [Ladereihenfolge](../../../eng-us/features/6.0/extension-loading-order.md). |
+| `ExtensionSettingsSiteAccess` lässt einen Übersetzungs-Siteaccess die Erweiterungseinstellungen eines anderen Siteaccess verwenden. | `site.ini [SiteAccessSettings]` | Neu; siehe [Ladereihenfolge](../../funktionen/6.0/ladereihenfolge-der-extensions.md). |
 | Protokollzeilen nennen den Siteaccess und die vollständige Anfrageadresse, auch unter Velocity. | `error.log`, `warning.log` | Passen Sie Log-Parser an, die nur die IP des Clients erwartet haben. |
 | Die Konsole versteht `--version`, `--about` und `--copyright` vor dem Namen des Befehls. | `./console --version` | Neu. |
 
@@ -68,13 +68,13 @@ Die drei Änderungen, bei denen die meisten Websites handeln müssen:
 
 | Änderung | Einstellung | Maßnahme |
 |---|---|---|
-| Das Leeren von Caches schiebt Verzeichnisse durch Umbenennen beiseite. | `site.ini [FileSettings] RenameBeforeDelete`, `RenameExpiredCaches` | Keine; setzen Sie `disabled`, um zurückzukehren. Siehe [Leeren von Caches](../../../eng-us/features/6.0/cache-clear-rename-aside.md). |
+| Das Leeren von Caches schiebt Verzeichnisse durch Umbenennen beiseite. | `site.ini [FileSettings] RenameBeforeDelete`, `RenameExpiredCaches` | Keine; setzen Sie `disabled`, um zurückzukehren. Siehe [Leeren von Caches](../../funktionen/6.0/cache-leeren-durch-umbenennen.md). |
 | Neuer Cronjob-Teil `cache_cleanup`. | `cronjob.ini [CacheCleanupSettings]` | Fügen Sie Ihrer crontab für jedes var-Verzeichnis `php runcronjobs.php -s <siteaccess> cache_cleanup` hinzu. |
 | Neuer rollenabhängiger HTTP-Cache (standardmäßig aus). | `httpcache.ini [HttpCacheSettings] Enabled` | Siehe [HTTP-Cache](httpcache.md). Header mit Purge-Tags sind jetzt aus, sofern `TagHeader` keinen nennt. |
 | Neuer SQL-Abfrage-Cache (standardmäßig aus). | `querycache.ini [QueryCacheSettings] Mode` | Siehe [SQL-Abfrage-Cache](sql-abfrage-cache.md). |
 | Die ausgelieferten Apache-Regeln sperren `.php` unterhalb des Wurzelverzeichnisses, Punktdateien und den größten Teil von `var/storage/packages`. | `.htaccess_root`, `.htaccess_root_static` | Übernehmen Sie sie in Ihre eigenen Regeln. |
 | Der Service Worker der Website ist `/index.js`; `/sw.js` ist ein einzeiliges Skript, das ihn lädt. | Document Root | Lassen Sie `/sw.js`, wo es ist: Browser, die es registriert haben, führen es weiter aus und prüfen diese Adresse auf Aktualisierungen. Die Cache-Version `exp-nav-v4` verwirft Seiten, die `v3` gespeichert hat. Sie hält sich außerdem von den eigenen Ansichten `/Q/` und der API von Velocity fern. |
-| Velocity: `Engine=php` ist der ausgelieferte Standard; qbix wird empfohlen; Worker sind persistent (`ForkPerRequest=disabled`). | `velocity.ini` | Siehe [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md). |
+| Velocity: `Engine=php` ist der ausgelieferte Standard; qbix wird empfohlen; Worker sind persistent (`ForkPerRequest=disabled`). | `velocity.ini` | Siehe [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md). |
 | Das Engine-Paket von Velocity wurde in `se7enxweb/exponential-velocity` umbenannt. | `velocity.ini [ServerSettings] ScriptPath` | Der Standard zeigt auf `vendor/se7enxweb/exponential-velocity`; das alte Verzeichnis wird weiterhin gefunden. |
 
 ## Korrekturen, die Ergebnisse ändern
@@ -140,7 +140,7 @@ nicht wiederholt.
   `var/tmp/sql_profile.log` wiederholte früher die Zahlen des Vorwärmens; eine Anfrage, die nichts an die Datenbank
   sendet, schreibt keine Zeile.
 - **Größe von APCu**: Der Cache und der Antwort-Cache teilen sich APCu; das PHP von Velocity erhält
-  `apc.shm_size=256M` (siehe [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)). Mehrere
+  `apc.shm_size=256M` (siehe [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)). Mehrere
   Server auf einem Port (`[ServerSettings] Instances`) sind in
   [Velocity-Engines](velocity-engines.md#mehrere-qbix-server-auf-einem-port-instances) beschrieben.
 
@@ -169,20 +169,20 @@ nicht wiederholt.
   die `Workers` des mitgelieferten Servers, die überwiegend untätige Prozesse zählen (gemessen mit 64 gleichzeitigen
   Seiten: 16,0 Anfragen pro Sekunde mit 12 bis 48 Threads, 14,6 mit 96 oder 590).
 - `exp:webserver`, `exp:frankenphp` und `exp:solr`:
-  [Befehle zur Serversteuerung](../../../eng-us/features/6.0/web-server-and-solr-commands.md).
+  [Befehle zur Serversteuerung](../../funktionen/6.0/befehle-fuer-webserver-und-solr.md).
 
 ### Vorladen
 
 „Vorladen starten“ unter Setup > Vorladen führt das Crawlen als Hintergrundprozess aus, sodass es hinter Velocity und
 hinter Proxys funktioniert, die gestreamte Antworten puffern. Nichts zu konfigurieren; siehe
-[Seiten vorladen](../../../eng-us/features/6.0/preload-sites-view.md#it-runs-in-the-background).
+[Seiten vorladen](../../funktionen/6.0/ansicht-websites-vorladen.md#es-läuft-im-hintergrund).
 
 ## Verwandte Seiten
 
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Sicherheitsstandards](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Härtung von Datentypen und Eingaben](../../spezifikationen/6.0/datentyp-eingabehaertung.md)
 - [Datenbanktreiber und Installationsprogramme, September 2026](../../spezifikationen/6.0/datenbanktreiber-2026-09.md)
-- [Befehle zur Serversteuerung](../../../eng-us/features/6.0/web-server-and-solr-commands.md)
-- [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md), [Bestellbelege](../../../eng-us/features/6.0/order-receipts.md), [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md)
+- [Befehle zur Serversteuerung](../../funktionen/6.0/befehle-fuer-webserver-und-solr.md)
+- [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md), [Bestellbelege](../../funktionen/6.0/bestellbelege.md), [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

@@ -159,7 +159,7 @@ InstallBatchTimeBudgetSeconds=6
 
 Sie liegen in `kernel/classes/packageinstallers/` und fügen der Installation Seiten hinzu (zum Beispiel die Wahl, wohin Inhalte gehen).
 `InstallBatchMaxItems` und `InstallBatchTimeBudgetSeconds` teilen eine lange Installation in Stapel; siehe
-[Stapelverarbeitung im Paket-Installer](../../../../eng-us/features/6.0/package-installer-batching.md).
+[Stapelverarbeitung im Paket-Installer](../../../funktionen/6.0/paketinstallation-in-teilschritten.md).
 
 ## Verwandte Seiten
 
@@ -171,3 +171,11 @@ Sie liegen in `kernel/classes/packageinstallers/` und fügen der Installation Se
 - [Anleitung zu Paketen, 7. Installieren und Deinstallieren](../../../anleitungen/pakete.md#7-installieren-und-deinstallieren)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

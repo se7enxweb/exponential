@@ -432,12 +432,12 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 
 ## Verwandte Seiten
 
-- [Funktionen des Kernels von Exponential 6: SQLite](../../../eng-us/features/6.0/sqlite-database.md)
-- [Responsive Administration](../../../eng-us/features/6.0/admin3-responsive-admin.md)
-- [Unterstützung für PHP 8](../../../eng-us/bc/6.0/php8.md)
-- [Umbenennung](../../../eng-us/features/6.0/rebranding-to-exponential.md)
+- [Funktionen des Kernels von Exponential 6: SQLite](../../funktionen/6.0/sqlite-datenbank.md)
+- [Responsive Administration](../../funktionen/6.0/admin3-responsives-admin.md)
+- [Unterstützung für PHP 8](../../bc/6.0/php8.md)
+- [Umbenennung](../../funktionen/6.0/umbenennung-in-exponential.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/exponential.md)
 - [Spezifikation des SQLite-Installers](../../spezifikationen/6.0/platform-sqlite-installer.md)

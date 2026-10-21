@@ -40,11 +40,11 @@ die Beschreibung. Ein Clip, eine Idee, eine Quelle.
 | Zuerst Entwürfe | **Bearbeiten**, ein Feld ändern, **Vorschau** in Telefonbreite | „In Exponential ist jede Bearbeitung ein Entwurf. Die Website zeigt die veröffentlichte Version, bis Sie veröffentlichen.“ | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md#in-der-praxis-einen-ordner-bearbeiten) |
 | Rückgängig über Versionen | **Versionen verwalten**, **Vergleichen** | „Jede Version bleibt erhalten. Vergleichen Sie zwei, oder beginnen Sie einen neuen Entwurf aus einer älteren.“ | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
 | Einen Block ziehen | Layout-Editor: einen Block **Title** in eine Zone ziehen | „Seiten werden aus Zonen und Blöcken gebaut. Ziehen, einstellen, veröffentlichen.“ | [Der Layout-Editor](../layout-editor.md) |
-| Von rechts nach links | **Oberfläche**, Arabisch, **Anwenden** | „Stellen Sie die Administration auf Arabisch oder Hebräisch um, und sie dreht sich um.“ | [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
+| Von rechts nach links | **Oberfläche**, Arabisch, **Anwenden** | „Stellen Sie die Administration auf Arabisch oder Hebräisch um, und sie dreht sich um.“ | [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
 | Schrägstrich zum Suchen | `/` drücken | „Drücken Sie an jeder Stelle der Administration den Schrägstrich, um zu suchen.“ | [Tastenkürzel](../tastenkuerzel.md) |
-| Installation mit einem Befehl | `exp:install --dry-run`, dann die erste Ausgabezeile (nie die Zusammenfassung) | „Ein Befehl installiert eine vollständige Website auf SQLite, ohne Datenbankserver.“ | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
-| Nur Entwürfe | Der Reiter **Intelligence** und die Liste der Entwürfe | „Der Schreibassistent schreibt nur Entwürfe. Er veröffentlicht nie von sich aus.“ | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
-| Eingebaute Hilfe | Die Schaltfläche **Hilfe**, dann **Als PDF herunterladen** | „Die Hilfe steckt im Produkt, und jede Seite lässt sich als PDF herunterladen.“ | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| Installation mit einem Befehl | `exp:install --dry-run`, dann die erste Ausgabezeile (nie die Zusammenfassung) | „Ein Befehl installiert eine vollständige Website auf SQLite, ohne Datenbankserver.“ | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
+| Nur Entwürfe | Der Reiter **Intelligence** und die Liste der Entwürfe | „Der Schreibassistent schreibt nur Entwürfe. Er veröffentlicht nie von sich aus.“ | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
+| Eingebaute Hilfe | Die Schaltfläche **Hilfe**, dann **Als PDF herunterladen** | „Die Hilfe steckt im Produkt, und jede Seite lässt sich als PDF herunterladen.“ | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 
 ## Eine Desktop-Oberfläche für das Telefon ins Bild setzen
 
@@ -87,8 +87,8 @@ CAPTION  <one sentence> Source: <link>. <disclosure>. #OpenSource
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -27,7 +27,7 @@ Wie der Shop Kundendaten erfasst, entscheidet der Shop-Account-Handler, `setting
 | `bcusauser` | Das `ezuser`-Formular mit einem US-Adressmodell |
 
 Fragen Sie Ihren Partner, welcher Handler in Ihrem Shop verwendet wird, und schreiben Sie es in Ihre Shop-Notizen. Der
-Abschnitt „So funktioniert Ihr Shop“ des Shop-Dashboards nennt ihn ebenfalls ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+Abschnitt „So funktioniert Ihr Shop“ des Shop-Dashboards nennt ihn ebenfalls ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Die Kundenliste
 
@@ -47,7 +47,7 @@ bisherigen Kunden.
 | „Ich habe mein Passwort vergessen“ | Der Kunde selbst | Über die Passwort-Zurücksetzung der Website ([Konten und Anmeldung](../../konten-und-anmeldung.md)) |
 | „Ich habe die Aktivierungs-E-Mail nie bekommen“ | Shop-Leitung oder Administrator | Das Konto unter **Benutzer** prüfen; siehe [Konten und Anmeldung](../../konten-und-anmeldung.md) |
 | „Ändern Sie meine E-Mail-Adresse“ | Der Kunde in seinem Profil oder ein Administrator | Konto bearbeiten |
-| „Schicken Sie mir keine Angebote mehr“ | Der Kunde, über den Link in der E-Mail oder die Einstellungsseite | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
+| „Schicken Sie mir keine Angebote mehr“ | Der Kunde, über den Link in der E-Mail oder die Einstellungsseite | [E-Mail-Einstellungen](../../../funktionen/6.0/e-mail-einstellungen.md) |
 | „Löschen Sie mein Konto und meine Daten“ | Der Eigentümer entscheidet, ein Administrator handelt | [DSGVO-Anfragen](dsgvo-anfragen.md) |
 | „Kann ich ohne Konto kaufen?“ | Shop-Leitung | Ja mit `ezuser`; nicht mit `ezdefault` |
 
@@ -55,7 +55,7 @@ bisherigen Kunden.
 
 **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) listet Konten, die niemand nutzt, Konten, die deaktiviert oder
 gesperrt sind, Konten, die ihr Benutzerobjekt verloren haben, und Konten, die sich eine E-Mail-Adresse teilen
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 - [ ] Vierteljährlich: Sehen Sie die Liste mit dem Eigentümer durch und entscheiden Sie, was mit lange ungenutzten
   Kundenkonten geschieht, im Einklang mit Ihren Aufbewahrungsregeln ([Datenexport und Löschung](datenexport-und-loeschung.md)).
@@ -75,5 +75,13 @@ ihren Beleg-Link behalten, wenn dauerhafte Belege eingeschaltet sind ([Rechnunge
 - [Kundenkonten und Gastbestellung für Unternehmen](../../unternehmen/shops/kundenkonten-und-gastbestellung.md)
 - [Konten und Anmeldung](../../konten-und-anmeldung.md)
 - [DSGVO-Anfragen](dsgvo-anfragen.md)
-- [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)
+- [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -39,9 +39,12 @@ class expPaymentServices extends expServiceBase
         $names = $ini->hasVariable( 'GatewaysSettings', 'AvailableGateways' ) ? array_filter( $ini->variable( 'GatewaysSettings', 'AvailableGateways' ) ) : array();
         $dirs = $ini->hasVariable( 'GatewaysSettings', 'GatewaysDirectories' ) ? array_filter( $ini->variable( 'GatewaysSettings', 'GatewaysDirectories' ) ) : array();
         $files = array();
+        // The files the kernel would load: <directory>/<gateway>/classes/<gateway>gateway.php
+        // (eZPaymentGatewayType::loadAndRegisterBuiltInGateways()).
         foreach ( $dirs as $d )
-            foreach ( (array)glob( $d . '/*gateway.php' ) as $f )
-                $files[] = basename( $f, 'gateway.php' );
+            foreach ( (array)glob( $d . '/*/classes/*gateway.php' ) as $f )
+                if ( basename( $f ) === basename( dirname( $f, 2 ) ) . 'gateway.php' )
+                    $files[] = basename( dirname( $f, 2 ) );
         return array( 'available' => array_values( $names ), 'directories' => array_values( $dirs ), 'files' => $files );
     }
 

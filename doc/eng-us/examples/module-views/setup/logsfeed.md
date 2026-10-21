@@ -14,8 +14,10 @@ A view of the `setup` module, defined in `kernel/setup/module.php` and run by `k
 ## Address
 
 ```text
-/setup/logsfeed
+/setup/logsfeed/(action)/<action>/(file)/<file>/(offset)/<offset>/(ino)/<ino>/(unmask)/<unmask>/(q)/<q>/(regex)/<regex>/(case)/<case>/(levels)/<levels>/(from)/<from>/(to)/<to>/(siteaccess)/<siteaccess>/(uri)/<uri>/(ip)/<ip>/(reference)/<reference>/(scope)/<scope>/(rotations)/<rotations>/(cursor)/<cursor>
 ```
+
+Unordered parameters, in any order as `/(name)/value`: `(action)` sets `action`, `(file)` sets `file`, `(offset)` sets `offset`, `(ino)` sets `ino`, `(unmask)` sets `unmask`, `(q)` sets `q`, `(regex)` sets `regex`, `(case)` sets `case`, `(levels)` sets `levels`, `(from)` sets `from`, `(to)` sets `to`, `(siteaccess)` sets `siteaccess`, `(uri)` sets `uri`, `(ip)` sets `ip`, `(reference)` sets `reference`, `(scope)` sets `scope`, `(rotations)` sets `rotations`, `(cursor)` sets `cursor`.
 
 ## Who may open it
 
@@ -38,6 +40,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/setup/logsfeed'|ezurl}>setup/logsfeed</a>
+<a href={concat( '/setup/logsfeed/(action)/', 1 )|ezurl}>setup/logsfeed</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

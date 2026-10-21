@@ -42,8 +42,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#the-parts)
-und die [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md). Die Feldbeschriftungen unten sind
+Quellen: [Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#die-bestandteile)
+und die [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md). Die Feldbeschriftungen unten sind
 die, die das Bearbeitungsformular einer Standardinstallation zeigt; prüfen Sie Ihr eigenes Formular einmal vor dem
 Kurs.
 
@@ -128,10 +128,10 @@ Ihren Vornamen.
 <details>
 <summary>Antworten</summary>
 
-1. **C.** Der Return-Path ist die Adresse, an die Mailserver unzustellbare Mail zurückschicken ([Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+1. **C.** Der Return-Path ist die Adresse, an die Mailserver unzustellbare Mail zurückschicken ([Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 2. Weil die Ausgabe dort gerendert wird und ihre Links und Bilder auf die Website-URL dieses Siteaccess zeigen.
 3. Das Füllen von Platzhaltern wie dem Namen des Abonnenten, wenn die Daten vorhanden sind (siehe Lektion 6.1 und die
-   Rendering-Anleitung, verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+   Rendering-Anleitung, verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 4. `EmailSender` in den Einstellungen oder der Absender einer Liste ([Spezifikation](../../../../spezifikationen/6.0/cjw_newsletter.md#probleme-die-das-dashboard-meldet)).
 5. Nein. Eine Ausgabe gehört zu einer Liste.
 
@@ -139,24 +139,24 @@ Ihren Vornamen.
 
 ## Weiterführende Informationen
 
-- [Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md):
+- [Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md):
   Status und wo Abonnenten verwaltet werden.
-- [Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md): Absenderdomain und
+- [Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md): Absenderdomain und
   Transporte für echten Versand.
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden):
   die Einstellungen hinter den Standardwerten der Liste.
 
 ## Verwandte Seiten
 
 - [Modul 2: Systeme, Listen und Ausgaben](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

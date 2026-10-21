@@ -1,8 +1,8 @@
 # cjw_newsletter (Newsletter): Chronik
 
-Das Newsletter-System kam mit den PHP-8.5-Korrekturen vom August 2026 in dieses Repository (Release-Linie 4.0.0.0). Im September und Oktober lernte es, unter PHP 8, in einem dauerhaft laufenden Worker und auf Oracle zu laufen; sein Integritätsmanifest wurde korrigiert, es wurde übersetzt, und am 2. Oktober schloss eine Prüfung der ganzen Erweiterung Dutzende Sicherheits- und Robustheitsmängel (Release 4.1.15). Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/cjw_newsletter.md).
+Das Newsletter-System kam mit den PHP-8.5-Korrekturen vom August 2026 in dieses Repository (Release-Linie 4.0.0.0). Im September und Oktober lernte es, unter PHP 8, in einem dauerhaft laufenden Worker und auf Oracle zu laufen; sein Integritätsmanifest wurde korrigiert, es wurde übersetzt, und am 2. Oktober schloss eine Prüfung der ganzen Erweiterung Dutzende Sicherheits- und Robustheitsmängel (Release 4.1.15). Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/cjw_newsletter.md).
 
-Diese Seite führt **jede der 56 Änderungen** des Repositorys `cjw_newsletter` zwischen 2024-01-28 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/cjw_newsletter.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/cjw_newsletter.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/cjw_newsletter.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 56 Änderungen** des Repositorys `cjw_newsletter` zwischen 2024-01-28 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/cjw_newsletter.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/cjw_newsletter.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/cjw_newsletter.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -132,7 +132,7 @@ Die Commits von 4.1.15 oben gibt es im Klon auch unter anderen Hashes (eine zwei
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/cjw_newsletter.md)
 - [Release Notes](../../../changelogs/extensions/cjw_newsletter.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/cjw_newsletter.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

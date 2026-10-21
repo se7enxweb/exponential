@@ -55,7 +55,7 @@ ließ, sagt die Seite das.
 - **Sie teilt sich das Urheberrecht.** Der Copyright-Vermerk des Kernels lautet „Copyright (C) 1998 - 2026 7x &
   Exponential Foundation“ ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **Alles ist freie Software.** Der Code steht unter der GPL v2 oder später, die Dokumentation unter der GFDL 1.3 oder
-  später ([Die Lizenz dieser Dokumentation](../../eng-us/README-LICENSE.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
+  später ([Die Lizenz dieser Dokumentation](../README-LIZENZ.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 
 ## Was die Foundation ist
 
@@ -137,7 +137,7 @@ Die Spalte „Stand“ gibt den Stand vom 18. Oktober 2026 mit seiner Quelle an.
 | [Exponential Intelligence](#exponential-intelligence) | Ein Schreibassistent in der Administration | Redakteure und ihre Vorgesetzten | Seit 6.0.15 Pflicht, `~0.0.1.12` in composer.json |
 | [Exponential Layouts](#exponential-layouts) | Ein visueller Seitenbaukasten: Layouts, Zonen, Blöcke und Regeln | Redakteure und Designer | Seit 6.0.15 Pflicht, `~1.4.39` in composer.json |
 | [AdminUI](#adminui) | Eine alternative Administrationsoberfläche | Redakteure, die sie bevorzugen | Seit 6.0.15 Pflicht, `~1.0.0.46` in composer.json |
-| [Das Hilfesystem](#das-hilfesystem) | Die Hilfe, die Sie gerade lesen | Alle Benutzer der Administration | Phase 1 in 6.0.15 ([Hilfe als Inhalt](../../eng-us/features/6.0/help-content.md)) |
+| [Das Hilfesystem](#das-hilfesystem) | Die Hilfe, die Sie gerade lesen | Alle Benutzer der Administration | Phase 1 in 6.0.15 ([Hilfe als Inhalt](../funktionen/6.0/hilfeinhalte.md)) |
 | [Die Erweiterungen](#das-ökosystem-der-erweiterungen) | 66 se7enxweb-Pakete, die der Kernel voraussetzt | Site-Entwickler | Jede mit eigenen Releases |
 
 ## Die Produkte im Einzelnen
@@ -162,7 +162,7 @@ Installation betreiben, und Entwickler, die Anwendungen auf seinem Framework bau
 das Design admin4, ein Audit-Protokoll, Exponential Layouts, Exponential Intelligence, Inhalts-Jobs, Pakete von Anfang
 bis Ende, 219 Locales nach der Zählung des README, die LoveStack-Funktionen von Mugo Web und dieses Hilfesystem
 ([Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), README „Recent improvements“). Die Geschichte jeder Änderung
-seit Dezember 2023 steht in [der Geschichte](../../eng-us/history/README.md).
+seit Dezember 2023 steht in [der Geschichte](../geschichte/README.md).
 
 ### Exponential Basic
 
@@ -195,7 +195,7 @@ Das README führt die Linien 2.5.x, 3.3.x, 4.6.x und 5.0.x als „Dual Kernel Sy
 of Exponential 6“.
 
 **Für wen es ist.** Bestehende Exponential-Sites, auch solche, die gebaut wurden, als die Software noch eZ Publish hieß,
-die Symfony daneben stellen und Schritt für Schritt weitergehen wollen ([Legacy-Bridge](../../eng-us/features/6.0/legacy-bridge.md)).
+die Symfony daneben stellen und Schritt für Schritt weitergehen wollen ([Legacy-Bridge](../funktionen/6.0/legacy-bridge.md)).
 
 ### Exponential Platform Nexus
 
@@ -205,7 +205,7 @@ die Symfony daneben stellen und Schritt für Schritt weitergehen wollen ([Legacy
 `netgen/layouts-ui` voraus und liefert damit den Layout-Editor mit. Das README nennt Nexus 1.0.0.x bis 1.3.0.x für
 Platform v2.5 bis v5. Es gibt eine CJW-Variante (`se7enxweb/cjw-exponential-platform-nexus`) und einen sofort
 lauffähigen Starter (`exponential-platform-nexus-starter`, laut Beschreibung „Currently In Public Beta“)
-([Nexus-Starter](../../eng-us/features/6.0/platform-nexus-starter.md)).
+([Nexus-Starter](../funktionen/6.0/plattform-nexus-starter.md)).
 
 **Für wen es ist.** Agenturen und Teams, die in wenigen Minuten eine vollständige Website mit Demo-Inhalten, Layouts
 und einer Administration wollen.
@@ -228,7 +228,7 @@ Was es laut README gegenüber Ibexa DXP OSS ergänzt: „The SQLite database dri
 
 **Für wen es ist.** Organisationen mit vielen strukturierten Inhalten, Teams, die eZ Platform oder Ibexa OSS
 verlassen, und Symfony-Entwickler (README, „Who it is for“). Beginnen Sie mit dem
-[DXP-Skeleton](../../eng-us/features/6.0/platform-dxp-skeleton.md).
+[DXP-Skeleton](../funktionen/6.0/plattform-dxp-skeleton.md).
 
 ### Exponential Velocity
 
@@ -242,7 +242,7 @@ production“ (README, „Engines“). FrankenPHP ist „the production-ready al
 Vorgabe für die Entwicklung.
 
 **Wo es steht.** Erste Commits im Juli 2026, erstes Release `v0.0.1` im September 2026, seit dem 22. September 2026
-Teil von Exponential ([Velocity-Chronik](../../eng-us/history/velocity/README.md)); das README nennt es als erforderlich in `~0.0.4.54`, dem ersten Release, das unter PHP 8.0 läuft.
+Teil von Exponential ([Velocity-Chronik](../geschichte/velocity/README.md)); das README nennt es als erforderlich in `~0.0.4.54`, dem ersten Release, das unter PHP 8.0 läuft.
 
 ### Exponential Intelligence
 
@@ -256,7 +256,7 @@ Beschreibung des Repositorys).
 
 **Wo es steht.** Seit 6.0.15 in `composer.json` vorausgesetzt; „A new installation activates it by default“, und es
 „sends nothing anywhere until you add a provider key“ (README). Lesen Sie
-[Exponential Intelligence](../../eng-us/features/6.0/extensions/expai.md), bevor Sie es einschalten.
+[Exponential Intelligence](../funktionen/6.0/erweiterungen/expai.md), bevor Sie es einschalten.
 
 ### Exponential Layouts
 
@@ -278,40 +278,40 @@ Administration; Admin 4 ist dasjenige, das die meisten Installationen verwenden
 
 **Was es ist.** Die Hilfe in der Administration, die die per Git verwaltete Dokumentation aus `doc/` anzeigt, sicher
 dargestellt, durchsuchbar und nach Zielgruppe gefiltert, mit einer Kontexthilfe-Schaltfläche „?“ auf jeder Seite
-([Hilfesystem](../../eng-us/features/6.0/help-system.md)). Ihre Seiten sind freie Dokumentation
+([Hilfesystem](../funktionen/6.0/hilfesystem.md)). Ihre Seiten sind freie Dokumentation
 ([Freie Dokumentation](freie-dokumentation.md)). Hilfeseiten, die als Inhalt in der Datenbank geschrieben werden, sind
-in Phasen geplant; Phase 1 ist in 6.0.15 enthalten ([Hilfe als Inhalt](../../eng-us/features/6.0/help-content.md)).
+in Phasen geplant; Phase 1 ist in 6.0.15 enthalten ([Hilfe als Inhalt](../funktionen/6.0/hilfeinhalte.md)).
 
 ### Das Ökosystem der Erweiterungen
 
 `composer.json` setzt 66 Pakete `se7enxweb/*` voraus: Themes, das PayPal-Gateway des Shops, Tags, Newsletter,
 Zwei-Faktor-Authentifizierung, den Oracle-Treiber, die REST-API, die Job-Warteschlange, den Seitenbaukasten und mehr.
 Die Liste mit je einer Zeile steht auf [Wer ist 7x?](wer-ist-7x.md#das-ökosystem-der-erweiterungen) und in
-[Die Standard-Erweiterungsdistribution](../../eng-us/features/6.0/default-extension-distribution.md). Auf Packagist hat der
+[Die Standard-Erweiterungsdistribution](../funktionen/6.0/standard-extension-auslieferung.md). Auf Packagist hat der
 Vendor se7enxweb 219 Pakete (<https://packagist.org/packages/list.json?vendor=se7enxweb>).
 
 ### Begleitprojekte
 
 - **request-shield** ist ein Projekt von CJW Network (<https://github.com/cjw-network/request-shield>), nicht der
   Foundation. Exponential dokumentiert, wie sein HTTP-Cache mit vorgeschaltetem request-shield arbeitet
-  ([HTTP-Cache](../../eng-us/bc/6.0/httpcache.md)) und wie man es unter Velocity lädt (`config.php-RECOMMENDED`). Seine Website
+  ([HTTP-Cache](../bc/6.0/httpcache.md)) und wie man es unter Velocity lädt (`config.php-RECOMMENDED`). Seine Website
   <https://request-shield.com/> war nicht öffentlich, als diese Seite geschrieben wurde; deshalb steht hier nicht mehr
   dazu.
 - **Der Paketserver** `exponential.packages.exponential.earth` liefert die Pakete des Setup-Assistenten aus („Users do
   not need to use this server outside the setup wizard usage“, Beschreibung des Repositorys).
-- **AdminNeo** über `sevenx_dse`, den Datenbank-Quelltexteditor ([sevenx_dse](../../eng-us/features/6.0/extensions/sevenx_dse.md)).
+- **AdminNeo** über `sevenx_dse`, den Datenbank-Quelltexteditor ([sevenx_dse](../funktionen/6.0/erweiterungen/sevenx_dse.md)).
 
 ## Welches Produkt zu Ihnen passt
 
 | Sie wollen | Wählen Sie | Lesen Sie |
 |---|---|---|
 | Ein CMS mit Shop, Multisite und vielen Sprachen, nur mit PHP, ohne Datenbankserver | Exponential 6 mit SQLite | [Erste Schritte](erste-schritte.md), [Datenbankunterstützung](datenbankunterstuetzung.md) |
-| Die schnellste Art, es auszuliefern | Exponential Velocity | [Server mit persistenten Workern](../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
+| Die schnellste Art, es auszuliefern | Exponential Velocity | [Server mit persistenten Workern](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 | Redakteure, die Seiten selbst bauen | Exponential Layouts | [Der Layout-Editor](layout-editor.md) |
-| Hilfe beim Schreiben und Übersetzen von Inhalten | Exponential Intelligence | [expai](../../eng-us/features/6.0/extensions/expai.md) |
-| Ein Symfony-Projekt mit REST und GraphQL, ohne Legacy-Kernel | Exponential Platform DXP | [DXP-Skeleton](../../eng-us/features/6.0/platform-dxp-skeleton.md) |
-| Eine vollständige Demo-Site mit Layouts auf der Symfony-Plattform | Exponential Platform Nexus | [Nexus-Starter](../../eng-us/features/6.0/platform-nexus-starter.md) |
-| Eine Exponential-6-Site behalten und Symfony daneben stellen | Exponential Platform Legacy | [Legacy-Bridge](../../eng-us/features/6.0/legacy-bridge.md) |
+| Hilfe beim Schreiben und Übersetzen von Inhalten | Exponential Intelligence | [expai](../funktionen/6.0/erweiterungen/expai.md) |
+| Ein Symfony-Projekt mit REST und GraphQL, ohne Legacy-Kernel | Exponential Platform DXP | [DXP-Skeleton](../funktionen/6.0/plattform-dxp-skeleton.md) |
+| Eine vollständige Demo-Site mit Layouts auf der Symfony-Plattform | Exponential Platform Nexus | [Nexus-Starter](../funktionen/6.0/plattform-nexus-starter.md) |
+| Eine Exponential-6-Site behalten und Symfony daneben stellen | Exponential Platform Legacy | [Legacy-Bridge](../funktionen/6.0/legacy-bridge.md) |
 | Ein kleines, einfaches CMS zum Lernen | Exponential Basic | <https://basic.exponential.earth> |
 
 ## Die Zusage zur Unterstützung
@@ -324,12 +324,12 @@ genannten Stelle schriftlich festgehalten; zusammen beschreiben sie, wie sich da
 | PHP | Exponential 6 | Quelle |
 |---|---|---|
 | 7.4 | Nur bis 6.0.7 („PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7“) | README |
-| 8.0 | Die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt, ab dem Velocity-Release 0.0.4.54 auch unter Velocity (bis dahin brauchte Velocity 8.1) | README, [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md) |
+| 8.0 | Die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt, ab dem Velocity-Release 0.0.4.54 auch unter Velocity (bis dahin brauchte Velocity 8.1) | README, [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md) |
 | 8.1 bis 8.5 | Unterstützt, auch für Velocity | README |
 | 8.6 und neuer | Durch die `php`-Anforderung in `composer.json` zugelassen (bis 8.8); das Projekt zielt auf „PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9“ | composer.json, README |
 
 Die kontinuierliche Integration führt die Testsuite auf PHP 8.1 bis 8.5 aus und prüft, dass PHP 8.0 noch startet, bei
-jedem Push auf `main` und bei jedem Pull-Request ([CI](../../eng-us/bc/6.0/ci.md)).
+jedem Push auf `main` und bei jedem Pull-Request ([CI](../bc/6.0/ci.md)).
 
 ### Sicherheitskorrekturen
 
@@ -357,23 +357,23 @@ jedem Push auf `main` und bei jedem Pull-Request ([CI](../../eng-us/bc/6.0/ci.md
 ### Dokumentation
 
 - Die Dokumentation liegt im Repository, in `doc/`, und diese Hilfe zeigt sie in der Administration an
-  ([Hilfesystem](../../eng-us/features/6.0/help-system.md)).
+  ([Hilfesystem](../funktionen/6.0/hilfesystem.md)).
 - Sie ist freie Dokumentation unter der GNU Free Documentation License 1.3 oder später
-  ([Die Lizenz dieser Dokumentation](../../eng-us/README-LICENSE.md)).
-- Jede Änderung seit Dezember 2023 wird in [der Geschichte](../../eng-us/history/README.md) erzählt und in
-  [den Hauptbüchern](../../eng-us/history/ledger/README.md) festgehalten.
+  ([Die Lizenz dieser Dokumentation](../README-LIZENZ.md)).
+- Jede Änderung seit Dezember 2023 wird in [der Geschichte](../geschichte/README.md) erzählt und in
+  [den Hauptbüchern](../geschichte/aenderungsverzeichnis/README.md) festgehalten.
 
 ### Sprachen und Barrierefreiheit
 
 - 268 Locale-Dateien, 40 davon von rechts nach links, und 32 Übersetzungen der Administration, zehn davon vollständig
-  ([Sprachen](../../eng-us/languages.md)); `dir="rtl"` in Inhalten und Administration ([Von rechts nach links](../../eng-us/features/6.0/right-to-left.md)).
+  ([Sprachen](../sprachen.md)); `dir="rtl"` in Inhalten und Administration ([Von rechts nach links](../funktionen/6.0/rechts-nach-links.md)).
 - Das Design admin4 folgt WCAG-Regeln, die Tests prüfen: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus
-  und Zielgrößen von mindestens 24 mal 24 Pixeln ([Gestaltung der Administration](../../eng-us/bc/6.0/admin4-styling.md)).
+  und Zielgrößen von mindestens 24 mal 24 Pixeln ([Gestaltung der Administration](../bc/6.0/admin4-gestaltung.md)).
 
 ### Sicherheits-Header und die Content Security Policy
 
 Exponential sendet eine Content Security Policy aus `site.ini [ContentSecurityPolicy]`; „By default it is
-**report-only on the administration** and off on the sites“ ([Content Security Policy](../../eng-us/features/6.0/content-security-policy.md)).
+**report-only on the administration** and off on the sites“ ([Content Security Policy](../funktionen/6.0/content-security-policy.md)).
 Neue Templates der Administration enthalten keine Inline-Styles oder -Skripte, damit eine strenge Richtlinie
 durchgesetzt werden kann ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 
@@ -387,7 +387,7 @@ clones with their full history“ (README, „Installation“; [Mit Git entwicke
 ### Mitwirkende und Pull-Requests
 
 - **Jeder Pull-Request wird gemergt.** „Every pull request is merged, and its commits are kept as the contributor wrote
-  them and never rewritten“ ([CI](../../eng-us/bc/6.0/ci.md), Commit-Nachrichten). Was korrigiert werden muss, wird in Commits
+  them and never rewritten“ ([CI](../bc/6.0/ci.md), Commit-Nachrichten). Was korrigiert werden muss, wird in Commits
   darüber korrigiert.
 - **Beiträge bleiben frei.** „any modifications made to the project are also released under the same GPLv2 or
   later license“ ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
@@ -419,11 +419,11 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 | PHP | Die Sprache | Unterstützung jeder neuen PHP-Version | README |
 | Composer und Packagist | Installation des Kernels und jeder Erweiterung | 219 von se7enxweb veröffentlichte Pakete | composer.json, Packagist |
 | Zeta Components | Die Bibliotheken des Kernels (Cache, Datenbank, Feeds, Bildkonvertierung ...) | „Forked and patched 47+ Zeta Components repos“; „14 security PRs submitted upstream to zetacomponents“ | composer.json, se7enxweb-Profil-README |
-| Symfony, Twig, Doctrine | Die Plattform-Linie | Gepflegte Forks für PHP 8.4 und 8.5 | [Ökosystem](../../eng-us/history/ecosystem.md) |
-| Netgen Layouts, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Exponential-Kernel; ein Fork von layouts-core | README, [Ökosystem](../../eng-us/history/ecosystem.md) |
+| Symfony, Twig, Doctrine | Die Plattform-Linie | Gepflegte Forks für PHP 8.4 und 8.5 | [Ökosystem](../geschichte/oekosystem.md) |
+| Netgen Layouts, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Exponential-Kernel; ein Fork von layouts-core | README, [Ökosystem](../geschichte/oekosystem.md) |
 | Qbix-Webserver | Die Engine von Velocity | Ein darauf gebauter Produktionsserver | Velocity-README |
-| AdminNeo | Der Datenbank-Quelltexteditor | | [sevenx_dse](../../eng-us/features/6.0/extensions/sevenx_dse.md) |
-| jQuery, TinyMCE, Bootstrap Icons | Skripte, Editor und Symbole der Administration | | [Oktober 2026](../../eng-us/history/2026/2026-10.md) |
+| AdminNeo | Der Datenbank-Quelltexteditor | | [sevenx_dse](../funktionen/6.0/erweiterungen/sevenx_dse.md) |
+| jQuery, TinyMCE, Bootstrap Icons | Skripte, Editor und Symbole der Administration | | [Oktober 2026](../geschichte/2026/2026-10.md) |
 
 ## Zeitleiste
 
@@ -435,15 +435,15 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 | 2014 | Die erste Idee von 7x: Die Domain se7enx.com wird still registriert und der Fork des gesamten Ökosystems vorbereitet | Darstellung von 7x (Inhaber, 18. Oktober 2026); [Wer ist 7x?](wer-ist-7x.md#von-brookins-consulting-zu-7x-in-drei-stufen) |
 | 2021 | „The platform originally known as eZ Publish reached end-of-life in 2021. We kept going.“ | se7enxweb-Profil-README |
 | 2022 | Das Projekt von 7x beginnt | Darstellung von 7x (Inhaber, 18. Oktober 2026); README.md |
-| Dezember 2023 | Das Projekt von 7x startet und übernimmt die Codebasis; die erste Änderung von außen wird am 11. Dezember gemergt | [Dezember 2023](../../eng-us/history/2023/2023-12.md) |
+| Dezember 2023 | Das Projekt von 7x startet und übernimmt die Codebasis; die erste Änderung von außen wird am 11. Dezember gemergt | [Dezember 2023](../geschichte/2023/2023-12.md) |
 | 1. Januar 2024 | Exponential 6.0.0 (damals noch unter dem Namen eZ Publish) | [Release-Übersicht](../../eng-us/release-overview) |
 | 2024 bis 2026 | Die Repositorys von Exponential Platform, Legacy, Nexus und DXP entstehen (Februar 2024 bis März 2026) | GitHub-API |
-| Juli 2025 | `COPYRIGHT.md` und `LICENSE.md` kommen hinzu | [Juli 2025](../../eng-us/history/2025/2025-07.md) |
-| 11. und 12. August 2025 | Das Produkt wird zu Exponential | <https://exponential.earth/about/project>, [August 2025](../../eng-us/history/2025/2025-08.md) |
+| Juli 2025 | `COPYRIGHT.md` und `LICENSE.md` kommen hinzu | [Juli 2025](../geschichte/2025/2025-07.md) |
+| 11. und 12. August 2025 | Das Produkt wird zu Exponential | <https://exponential.earth/about/project>, [August 2025](../geschichte/2025/2025-08.md) |
 | 19. März 2026 | Die Exponential Foundation wird in Seattle gegründet | <https://foundation.exponential.earth/> |
 | April 2026 | 14 Sicherheits-Pull-Requests an Zeta Components | se7enxweb-Profil-README |
 | 7. Juni 2026 | Exponential 6.0.14 | Release-Übersicht |
-| September 2026 | Exponential Velocity kommt zu Exponential | [Velocity-Chronik](../../eng-us/history/velocity/README.md) |
+| September 2026 | Exponential Velocity kommt zu Exponential | [Velocity-Chronik](../geschichte/velocity/README.md) |
 | Oktober 2026 | Exponential Intelligence, die LoveStack-Funktionen und das Hilfesystem in der Linie 6.0.15 | [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
 
 ## Unterstützen oder mitmachen
@@ -456,7 +456,7 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 - **Code beitragen**: Fork, Branch, Pull-Request ([Mit Git entwickeln](mit-git-entwickeln.md),
   [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 - **Fehler melden**: [Wenn etwas schiefgeht](wenn-etwas-schiefgeht.md).
-- **Übersetzen und dokumentieren**: [Sprachen](../../eng-us/languages.md); jede Hilfeseite hat „Edit on GitHub“.
+- **Übersetzen und dokumentieren**: [Sprachen](../sprachen.md); jede Hilfeseite hat „Edit on GitHub“.
 - **Mit Menschen sprechen**: in den [Foren](https://share.exponential.earth/forums) und auf [Telegram](https://t.me/exponentialcms).
 
 ## Glossar
@@ -497,10 +497,10 @@ Dateien im Repository (`se7enxweb/exponential`):
 [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md),
 [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md),
 [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json),
-[Release-Übersicht](../../eng-us/release-overview), [Geschichte](../../eng-us/history/README.md), [Ökosystem](../../eng-us/history/ecosystem.md),
-[CI](../../eng-us/bc/6.0/ci.md), [Erweiterungen](../anleitungen/extensions.md), [Sprachen](../../eng-us/languages.md),
-[Content Security Policy](../../eng-us/features/6.0/content-security-policy.md),
-[Gestaltung der Administration](../../eng-us/bc/6.0/admin4-styling.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
+[Release-Übersicht](../../eng-us/release-overview), [Geschichte](../geschichte/README.md), [Ökosystem](../geschichte/oekosystem.md),
+[CI](../bc/6.0/ci.md), [Erweiterungen](../anleitungen/extensions.md), [Sprachen](../sprachen.md),
+[Content Security Policy](../funktionen/6.0/content-security-policy.md),
+[Gestaltung der Administration](../bc/6.0/admin4-gestaltung.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
 
 Andere Repositorys, gelesen über die GitHub-API am 18. Oktober 2026: die `composer.json` und die Beschreibung von
 `exponential-platform`, `exponential-platform-legacy`, `exponential-platform-nexus`, `exponential-platform-dxp`,
@@ -518,6 +518,14 @@ Die eigene Darstellung von 7x zu seinen drei Etappen (2014, 2022, 2023), vom Inh
 ## Verwandte Seiten
 
 - [Wer ist 7x?](wer-ist-7x.md)
-- [Die Geschichte von Exponential](../../eng-us/history/README.md)
+- [Die Geschichte von Exponential](../geschichte/README.md)
 - [Mit Git entwickeln](mit-git-entwickeln.md)
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

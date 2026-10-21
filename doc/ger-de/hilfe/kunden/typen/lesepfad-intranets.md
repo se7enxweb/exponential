@@ -39,9 +39,9 @@ Die Reihenfolge, in der ein Intranet-Team seine Website kennenlernt. Jeder Schri
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 15 | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) | Intranet-Verantwortliche | Konten, die niemand nutzt |
+| 15 | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) | Intranet-Verantwortliche | Konten, die niemand nutzt |
 | 16 | [Inhalts-Audits](../alltag/inhalts-audits.md) | Redakteure der Abteilungen | Seiten, die noch stimmen |
-| 17 | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) | Intranet-Verantwortliche, IT | Wer was geändert hat |
+| 17 | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) | Intranet-Verantwortliche, IT | Wer was geändert hat |
 | 18 | [Barrierefreiheit pflegen](../alltag/barrierefreiheit-pflegen.md) | Redakteure der Abteilungen | Ein Intranet, das alle Mitarbeitenden nutzen können |
 | 19 | [Sicherheitsgrundlagen](../gesund-halten/sicherheitsgrundlagen.md) | Intranet-Verantwortliche | Intern bedeutet nicht sicher |
 | 20 | [Wie Updates funktionieren](../gesund-halten/wie-updates-funktionieren.md) | Intranet-Verantwortliche, IT | Upgrades nach Plan |
@@ -57,3 +57,11 @@ Lesen Sie die Schritte 1, 4, 12 und 13: wer wofür zuständig ist, Rollen, neue 
 - [Intranets: hier beginnen](intranets-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

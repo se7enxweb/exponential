@@ -35,7 +35,7 @@ Aufsichtsbehörde ein Muster veröffentlicht, folgen Sie diesem.
 | Formulare | welche Formulare, was erhoben wird, wer es liest, wie lange Sie es aufbewahren |
 | Konten | für Beschäftigte oder Mitglieder: was gespeichert wird, Anmeldeaufzeichnungen, zweistufige Anmeldung, falls genutzt |
 | E-Mail | Kategorien, Opt-in und Double-Opt-in, der Einwilligungsnachweis (Zeit, Wortlaut, IP-Adresse), Abmelden in jeder E-Mail, Aufbewahrung des Einwilligungsprotokolls |
-| Sicherheit und Audit | ein Audit-Trail der administrativen Handlungen, minimiert (gekürzte Adressen, gehashte Sitzungen), Aufbewahrung |
+| Sicherheit und Audit | ein Prüfprotokoll der administrativen Handlungen, minimiert (gekürzte Adressen, gehashte Sitzungen), Aufbewahrung |
 | Suche | ob Suchbegriffe aufgezeichnet werden und dass sie zurückgesetzt werden |
 | Drittanbieter | jeder aktive Dienst (Webanalyse, CAPTCHA, Karten, Social Login, KI-Anbieter): was er erhält, warum |
 | Empfänger und Auftragsverarbeiter | Hosting-Unternehmen, Umsetzungs- und Supportpartner |

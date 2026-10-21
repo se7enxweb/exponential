@@ -320,7 +320,7 @@ UseGlobalLogDir=enabled
 > var\_cache/example/cache (ein Speicher-Dateisystem für alle Websites; setzen Sie dann  
 > ExpiryDir). LogVarDir darf ein absoluter Pfad sein (Logs werden nie ausgeliefert).  
 > CacheVarDir ist ein Verzeichnis innerhalb der Installation: Velocity liefert die  
-> öffentlichen Caches darunter aus (es liest beim Start CacheVarDir jedes Siteaccess);  
+> öffentlichen Caches darunter aus (er liest beim Start CacheVarDir jedes Siteaccess);  
 > für Apache und nginx aktivieren Sie die Regel var\_cache in .htaccess\_root oder  
 > der Serverkonfiguration. Ein absolutes CacheVarDir wird verwendet, aber seine öffentlichen  
 > Caches werden nicht ausgeliefert, wie bei einem absoluten CacheDir. Leer: innerhalb von VarDir, wie  

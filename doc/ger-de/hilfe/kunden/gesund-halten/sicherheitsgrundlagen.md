@@ -27,7 +27,7 @@ vertrauen“ ([Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-un
 | Eine echte Abmeldung | Die alte Sitzungs-ID meldet niemanden mehr an |
 | Upload-Prüfungen nach Inhalt | Ein Bild wird anhand dessen angenommen, was es enthält, nicht anhand seines Namens |
 | Ein zufälliges erstes Administratorpasswort | Wenn der Installer keines oder ein allgemein bekanntes erhalten hat |
-| Das Prüfprotokoll, standardmäßig eingeschaltet | Ein manipulationssicherer Nachweis von Anmeldungen, Inhaltsänderungen, Einstellungen und Deployments ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Das Prüfprotokoll, standardmäßig eingeschaltet | Ein manipulationssicherer Nachweis von Anmeldungen, Inhaltsänderungen, Einstellungen und Deployments ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 
 Bitten Sie Ihren Anbieter, die Prüfungen aus [Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md)
 einmal durchzuführen und Ihnen das Ergebnis zu schicken.
@@ -84,3 +84,11 @@ haben, in der [Vorlage für Vorfallnotizen](vorlage-vorfallnotizen.md).
 - [Sicherheitsgrundlagen für Unternehmen](../../unternehmen/sicherheit/sicherheitsgrundlagen-fuer-unternehmen.md)
 - [DSGVO-Grundlagen](../../unternehmen/sicherheit/dsgvo-grundlagen.md) (keine Rechtsberatung)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -54,14 +54,15 @@ Auf MongoDB vergleicht die Prüfung Collections und bietet für fehlende den Bef
 
 ## Verwandte Seiten
 - [Die Konsistenz nach einem Upgrade prüfen](die-konsistenz-nach-einem-upgrade-pruefen.md)
-- [Überblick über Upgrades für den öffentlichen Sektor](../../../../../eng-us/help/government/operations/upgrades-and-change/upgrade-overview-for-public-sector.md)
-- [Upgrades von PHP und Datenbank](../../../../../eng-us/help/government/operations/upgrades-and-change/php-and-database-upgrades.md)
+- [Überblick über Upgrades für den öffentlichen Sektor](../../betrieb/aktualisierungen-und-aenderungen/aktualisierungen-im-oeffentlichen-sektor-im-ueberblick.md)
+- [Upgrades von PHP und Datenbank](../../betrieb/aktualisierungen-und-aenderungen/php-und-datenbank-aktualisierungen.md)
 - [Datenbankunterstützung](../../../datenbankunterstuetzung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

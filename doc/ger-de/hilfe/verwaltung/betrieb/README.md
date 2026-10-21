@@ -45,9 +45,9 @@ Pflichten zur Kontinuität, Prüfungen und die Erwartung, dass alles dokumentier
 
 Zwei Aufgabenordner enthalten kurze, nummerierte Abläufe, die auf die Ordner oben zurückverweisen:
 
-- [Betriebsaufgaben](../../../../eng-us/help/government/tasks/operations/README.md): Wartungsfenster, Datensicherungen und Wiederherstellungen, Caches,
-  Cronjobs, Logs, der Audit-Trail, Upgrade-Prüfungen, Zertifikate, Replikate.
-- [Aufgaben zu Personen und Berechtigungen](../../../../eng-us/help/government/tasks/people-and-permissions/README.md): Rollen für einen Fachbereich,
+- [Betriebsaufgaben](../aufgaben/betrieb/README.md): Wartungsfenster, Datensicherungen und Wiederherstellungen, Caches,
+  Cronjobs, Logs, das Prüfprotokoll, Upgrade-Prüfungen, Zertifikate, Replikate.
+- [Aufgaben zu Personen und Berechtigungen](../aufgaben/personen-und-berechtigungen/README.md): Rollen für einen Fachbereich,
   Freigebende, Eintritte und Austritte, Zurücksetzen von Passwörtern, externe Dienstleister, Überprüfung der
   Administrationszugänge.
 
@@ -59,7 +59,7 @@ Zwei Aufgabenordner enthalten kurze, nummerierte Abläufe, die auf die Ordner ob
    [Redaktionelle Workflows](redaktionelle-workflows/README.md), damit Zugänge und Freigaben vom ersten Tag an stimmen.
 3. **Den Dienst betreiben:** [Vorfälle](vorfaelle/README.md) und
    [Aktualisierungen und Änderungen](aktualisierungen-und-aenderungen/README.md), mit den
-   [Betriebsaufgaben](../../../../eng-us/help/government/tasks/operations/README.md) griffbereit.
+   [Betriebsaufgaben](../aufgaben/betrieb/README.md) griffbereit.
 4. **Planung für Wachstum oder strengere Kontinuitätspflichten:** [Verfügbarkeit](verfuegbarkeit/README.md).
 
 Projektleitungen, die nur den Überblick brauchen, können die README jedes Ordners lesen: Jede enthält eine einzeilige
@@ -93,14 +93,15 @@ den anderen Teilen des Bereichs Behörden ein.
 ## Verwandte Seiten
 - [Hoster: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md): die Sicht des Hosting-Anbieters auf dieselben Themen.
 - [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md): Caches, Cronjobs, Datensicherungen und Reparaturen im Alltag.
-- [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md): Härtung, Rollen und der Audit-Trail.
+- [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md): Härtung, Rollen und das Prüfprotokoll.
 - [Sicherheitshärtung](../../sicherheitshaertung.md): die Bedrohungen einzeln betrachtet.
-- [Kurs für Website-Administratoren](../../../../eng-us/help/trainers/site-administrators/README.md): ein Schulungskurs zu denselben Aufgaben.
+- [Kurs für Website-Administratoren](../../trainer/website-administratoren/README.md): ein Schulungskurs zu denselben Aufgaben.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

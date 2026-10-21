@@ -59,7 +59,7 @@ Balancers. Der Load Balancer muss `X-Forwarded-Proto: https` setzen, wenn er TLS
 Host weitergeben. Velocity hat eine eigene Liste, `Q.webserver.proxy.trusted` in der Engine-Konfiguration, weil es
 entscheidet, bevor der Kernel läuft.
 
-Warum das für eine öffentliche Stelle wichtig ist: Ohne diese Einstellung erscheint jeder Besucher im Audit-Trail und
+Warum das für eine öffentliche Stelle wichtig ist: Ohne diese Einstellung erscheint jeder Besucher im Prüfprotokoll und
 in den Anfrage-Logs mit der Adresse des Load Balancers, sodass eine Untersuchung Anmeldungen nicht auseinanderhalten
 kann, und HTTPS-Seiten können `http`-Links erzeugen.
 
@@ -68,7 +68,7 @@ kann, und HTTPS-Seiten können `http`-Links erzeugen.
 Installieren Sie die Crontab nur auf einem Knoten. Jedes Skript setzt eine Sperre, aber diese Sperre ist eine Datei
 im eigenen Cache-Verzeichnis des Knotens und hält daher einen anderen Knoten nicht davon ab, denselben Job
 auszuführen. Um Cronjob-Teile für alle Knoten anzuhalten, richten Sie `cronjob.ini [PauseSettings] Directory` auf ein
-gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../../../eng-us/features/6.0/cronjob-pause.md)). Dokumentieren Sie,
+gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../../funktionen/6.0/cronjobs-pausieren.md)). Dokumentieren Sie,
 welcher Knoten die Cronjobs ausführt und wie ein anderer Knoten übernimmt, wenn er ausfällt.
 
 ## Bereitstellungen und Cache-Leerungen auf jedem Knoten
@@ -123,8 +123,9 @@ Geben Sie dem Netzwerkteam eine kurze, schriftliche Spezifikation:
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

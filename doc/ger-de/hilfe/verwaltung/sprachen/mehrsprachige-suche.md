@@ -24,7 +24,7 @@ Suchmaschine ab.
 ## Die eingebaute Suchmaschine
 
 `site.ini [SearchSettings] SearchEngine=eZSearchEngine` hält ihren Index in der Datenbank
-([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)). Im Kernel geprüft
+([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)). Im Kernel geprüft
 (`kernel/search/plugins/ezsearchengine/ezsearchengine.php`):
 
 - Wenn ein Objekt indiziert wird, kommen die durchsuchbaren Attribute **aller seiner Übersetzungen** in einen Index
@@ -43,7 +43,7 @@ Die eingebaute Suchmaschine führt keine Stammformreduktion pro Sprache durch; `
 ## Solr über ezfind
 
 Die Erweiterung `ezfind` bindet einen Solr-Server an
-([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)). Ihre Einstellungen in
+([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)). Ihre Einstellungen in
 `ezfind.ini [LanguageSearch]`:
 
 | Einstellung | Ausgeliefert | Bedeutung |
@@ -78,14 +78,15 @@ gefunden wird und in welcher Sprache es angezeigt wird.
 
 ## Verwandte Seiten
 
-- [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)
-- [Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)
+- [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)
+- [Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)
 - [Ersatzregeln für unübersetzte Inhalte](ersatzregeln-fuer-unuebersetzte-inhalte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

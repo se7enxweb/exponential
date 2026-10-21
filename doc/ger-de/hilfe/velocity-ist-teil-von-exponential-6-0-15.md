@@ -85,12 +85,12 @@ Experience Platform und ein E-Commerce-System ist:
 
 | Schicht | Was mitgeliefert wird | Weiterlesen |
 |---|---|---|
-| Server | Exponential Velocity: HTTP/1.1, HTTP/2 über TLS, WebSockets, eigene HTTPS-Zertifikate, ein Antwort-Cache, statische Dateien und Bilder | [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md) |
+| Server | Exponential Velocity: HTTP/1.1, HTTP/2 über TLS, WebSockets, eigene HTTPS-Zertifikate, ein Antwort-Cache, statische Dateien und Bilder | [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md) |
 | Anwendungsplattform | Der Kernel von Exponential: Inhaltsklassen und Objekte, Versionen, Rollen und Richtlinien, Multisite, 219 Locales, REST, Cronjobs, die Konsole | [README](https://github.com/se7enxweb/exponential/blob/main/README.md) |
-| Schnelle Entwicklung | Die RAD-Werkzeuge: ein Katalog der Erweiterungspunkte, Assistenten, die eine funktionierende Erweiterung schreiben, eine Bestandsaufnahme und eine Zustandsprüfung | [RAD-Werkzeuge](../../eng-us/features/6.0/rad-tools.md) |
+| Schnelle Entwicklung | Die RAD-Werkzeuge: ein Katalog der Erweiterungspunkte, Assistenten, die eine funktionierende Erweiterung schreiben, eine Bestandsaufnahme und eine Zustandsprüfung | [RAD-Werkzeuge](../funktionen/6.0/rad-werkzeuge.md) |
 | Content-Management | Die Administration (Admin 4), der Online-Editor, Veröffentlichen und Versionen, der Papierkorb, das Prüfprotokoll | [Hilfe für Redakteure und Benutzer](README.md) |
 | Digital Experience | Exponential Layouts (ein visueller Seitenbaukasten mit Zonen, Blöcken und Regeln), Multisite und mehrsprachige Sites, der Schreibassistent Exponential Intelligence, der nur Entwürfe schreibt | [Der Layout-Editor](layout-editor.md) |
-| E-Commerce | Der Shop: Warenkorb, Bestellungen, Zahlungsgateways, Bestellbelege und das Shop-Dashboard | [Shop-Dashboard](../../eng-us/features/6.0/store-dashboard.md) |
+| E-Commerce | Der Shop: Warenkorb, Bestellungen, Zahlungsgateways, Bestellbelege und das Shop-Dashboard | [Shop-Dashboard](../funktionen/6.0/shop-dashboard.md) |
 | Daten | Standardmäßig SQLite; PostgreSQL, MongoDB, MariaDB, Oracle und MySQL auf demselben Kernel | [Datenbankunterstützung](datenbankunterstuetzung.md) |
 
 Zur Familie von Exponential gehört außerdem Exponential Platform DXP, das reine Symfony-Mitglied, für Teams, die die
@@ -109,15 +109,15 @@ Jede dieser Funktionen ist eine dokumentierte, ausgelieferte Funktion von Veloci
 
 | Funktion | Was sie tut | Seite |
 |---|---|---|
-| Persistente Worker | Die Anwendung startet einmal in einen Elternprozess; ein Pool von Workern hält sie zwischen den Anfragen geladen. | [Server mit persistenten Workern](../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
-| Antwort-Cache | Öffentliche Seiten werden im Serverprozess beantwortet, bevor ein Worker ausgewählt wird, mit `304`, `ETag` und stale-while-revalidate. | [Antwort-Cache](../../eng-us/features/6.0/velocity-response-cache.md) |
-| HTTPS, das sich selbst versorgt | Ein selbstsigniertes Zertifikat, wenn keines eingerichtet ist; Ihre eigenen Dateien, ein PKCS#12-Bündel, Let's Encrypt oder eine andere ACME-Zertifizierungsstelle, wenn eines eingerichtet ist; erneuerte Zertifikate werden ohne Neustart eingewechselt. | [HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md) |
-| Statische Dateien und Bilder | Dateien werden ohne PHP ausgeliefert, validiert, komprimiert und in Bereichen gesendet, und Bilder werden auf Anfrage umgewandelt oder skaliert. | [Statische Dateien und Bilder](../../eng-us/features/6.0/velocity-static-files-and-images.md) |
-| Echtzeit | WebSockets, Server-Sent Events und Räume, in den Server eingebaut. | [WebSockets und Ereignisse](../../eng-us/features/6.0/velocity-websockets-and-events.md) |
-| Dashboard und Bedienfeld | Laufende Anfragen, Worker und Speicher unter `/Q/dashboard`; ein passwortgeschütztes Bedienfeld unter `/Q/panel`. | [Bedienfeld und Dashboard](../../eng-us/features/6.0/velocity-control-panel.md) |
-| Q-Shell | Eine ausklappbare Konsole auf jeder Ansicht des Servers für Status, Worker, Cache, Sites, Zertifikate und Logs. | [Q-Shell](../../eng-us/features/6.0/velocity-q-shell.md) |
-| Zeitplaner | Ein kleiner Cron im Server für wiederkehrende Arbeit, ohne zweiten Prozessmanager. | [Zeitplaner](../../eng-us/features/6.0/velocity-scheduler.md) |
-| Pakete und Binärdateien | Systempakete, Docker-Images und einzelne Binärdateien für den Einsatz außerhalb einer Installation von Exponential. | [Pakete und Binärdateien](../../eng-us/features/6.0/velocity-packages-and-binaries.md) |
+| Persistente Worker | Die Anwendung startet einmal in einen Elternprozess; ein Pool von Workern hält sie zwischen den Anfragen geladen. | [Server mit persistenten Workern](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
+| Antwort-Cache | Öffentliche Seiten werden im Serverprozess beantwortet, bevor ein Worker ausgewählt wird, mit `304`, `ETag` und stale-while-revalidate. | [Antwort-Cache](../funktionen/6.0/velocity-antwort-cache.md) |
+| HTTPS, das sich selbst versorgt | Ein selbstsigniertes Zertifikat, wenn keines eingerichtet ist; Ihre eigenen Dateien, ein PKCS#12-Bündel, Let's Encrypt oder eine andere ACME-Zertifizierungsstelle, wenn eines eingerichtet ist; erneuerte Zertifikate werden ohne Neustart eingewechselt. | [HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md) |
+| Statische Dateien und Bilder | Dateien werden ohne PHP ausgeliefert, validiert, komprimiert und in Bereichen gesendet, und Bilder werden auf Anfrage umgewandelt oder skaliert. | [Statische Dateien und Bilder](../funktionen/6.0/velocity-statische-dateien-und-bilder.md) |
+| Echtzeit | WebSockets, Server-Sent Events und Räume, in den Server eingebaut. | [WebSockets und Ereignisse](../funktionen/6.0/velocity-websockets-und-ereignisse.md) |
+| Dashboard und Bedienfeld | Laufende Anfragen, Worker und Speicher unter `/Q/dashboard`; ein passwortgeschütztes Bedienfeld unter `/Q/panel`. | [Bedienfeld und Dashboard](../funktionen/6.0/velocity-control-panel.md) |
+| Q-Shell | Eine ausklappbare Konsole auf jeder Ansicht des Servers für Status, Worker, Cache, Sites, Zertifikate und Logs. | [Q-Shell](../funktionen/6.0/velocity-q-shell.md) |
+| Zeitplaner | Ein kleiner Cron im Server für wiederkehrende Arbeit, ohne zweiten Prozessmanager. | [Zeitplaner](../funktionen/6.0/velocity-zeitplaner.md) |
+| Pakete und Binärdateien | Systempakete, Docker-Images und einzelne Binärdateien für den Einsatz außerhalb einer Installation von Exponential. | [Pakete und Binärdateien](../funktionen/6.0/velocity-pakete-und-binaerdateien.md) |
 | Vertraute Konfiguration | Eine Verzeichnisstruktur im Stil von Debians `/etc/apache2`: `sites-available`, `conf-available`, `mods-available`, aktiviert mit `exp:velocity site\|conf\|mod enable`. | [Verzeichnisstruktur](../bc/6.0/velocity-verzeichnisstruktur.md) |
 
 ## Velocity neben Apache, nginx und FrankenPHP
@@ -194,8 +194,8 @@ Führen Sie wie gewohnt `composer install` aus; es installiert den Server. Nicht
 
 ## Weiterlesen
 
-- [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md) und
-  [Exponential in einem Webserver mit persistenten Workern betreiben](../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md) und
+  [Exponential in einem Webserver mit persistenten Workern betreiben](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Velocity-Engines: Qbix, FrankenPHP, der eingebaute Server von PHP](../bc/6.0/velocity-engines.md)
 - [Installation, Kapitel 8: Die Website ausliefern](../installation/08-die-website-ausliefern.md)
 - [Das Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md)

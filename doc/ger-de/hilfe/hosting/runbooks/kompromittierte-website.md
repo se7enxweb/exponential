@@ -81,11 +81,11 @@ kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen.
 1. **Zugangsdaten**: Ändern Sie die Administratorpasswörter; das Datenbankpasswort (und aktualisieren Sie
    `settings/override/site.ini.append.php`); API-Schlüssel und Tokens, die die Website hält; Passwörter für SFTP und Panel.
 2. **Sitzungen**: Eine Passwortänderung meldet jede andere Sitzung dieses Benutzers ab (`[PasswordSettings] EndOtherSessions=enabled`);
-   nach einem vermuteten Einbruch entfernen Sie außerdem alle Sitzungen (**Setup** > **Sitzungen**, mit dem Sitzungs-Handler für die
+   nach einem vermuteten Einbruch entfernen Sie außerdem alle Sitzungen (**Setup** > **Sitzungen**, mit dem Session-Handler für die
    Datenbank) ([Sicherheitshärtung](../../sicherheitshaertung.md#sitzungsübernahme)).
 3. **Konten**: Entfernen Sie Konten und Rollenzuweisungen, die der Angreifer angelegt hat.
 4. **Caches**: Leeren Sie alles, damit keine zwischengespeicherte Seite aus dem kompromittierten Zustand ausgeliefert wird:
-   `php bin/php/ezcache.php --clear-all --allow-root-user`, und mit Velocity starten Sie es neu und leeren seinen Antwort-Cache.
+   `php bin/php/ezcache.php --clear-all --allow-root-user`, und mit Velocity starten Sie ihn neu und leeren seinen Antwort-Cache.
 5. Prüfen Sie, und schalten Sie dann den Wartungsmodus aus.
 
 ## Berichten und benachrichtigen
@@ -113,3 +113,11 @@ kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen.
 - [Aus einem Backup wiederherstellen](aus-einem-backup-wiederherstellen.md)
 - [Kapitel 13: Sicherheitshärtung](../../../installation/13-sicherheitshaertung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

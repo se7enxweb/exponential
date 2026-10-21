@@ -39,9 +39,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md),
-[admin4l](../../../../../eng-us/features/6.0/admin4l.md) und
-[Das Administrationsdesign für Ihre Sitzung wählen](../../../../../eng-us/features/6.0/ui-switch-design.md).
+Quellen: [Das Design admin4](../../../../funktionen/6.0/admin4-design.md),
+[admin4l](../../../../funktionen/6.0/admin4l.md) und
+[Das Administrationsdesign für Ihre Sitzung wählen](../../../../funktionen/6.0/ui-umschalter-design.md).
 
 1. **Zwei Welten, ein Mechanismus** (4 Minuten). Ein Siteaccess ist entweder eine öffentliche Website oder eine
    Administration. Beide haben ein `SiteDesign` und eine Kette. Ein öffentlicher Siteaccess verwendet ein
@@ -145,9 +145,9 @@ Schulungs-Administratorkonto.
 <details>
 <summary>Antworten</summary>
 
-1. `admin4` ([Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md)).
+1. `admin4` ([Das Design admin4](../../../../funktionen/6.0/admin4-design.md)).
 2. **B.** Der Schalter ändert das Design nur für die eigenen Anfragen des Benutzers
-   ([Das Administrationsdesign für Ihre Sitzung wählen](../../../../../eng-us/features/6.0/ui-switch-design.md)).
+   ([Das Administrationsdesign für Ihre Sitzung wählen](../../../../funktionen/6.0/ui-umschalter-design.md)).
 3. `admin4l`.
 4. `uiswitch/design`.
 5. `SiteDesign` in den Einstellungen des Siteaccess der Administration, `settings/siteaccess/admin/site.ini.append.php`,
@@ -157,12 +157,12 @@ Schulungs-Administratorkonto.
 
 ## Weiterführende Literatur
 
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md): Umschalten, heller und dunkler Modus, gemerkte
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md): Umschalten, heller und dunkler Modus, gemerkte
   Auswahl.
-- [Das Design admin4l](../../../../../eng-us/features/6.0/admin4l.md): die aus Layouts gebaute Administrationsseite.
-- [Das Administrationsdesign für Ihre Sitzung wählen](../../../../../eng-us/features/6.0/ui-switch-design.md): das Werkzeug
+- [Das Design admin4l](../../../../funktionen/6.0/admin4l.md): die aus Layouts gebaute Administrationsseite.
+- [Das Administrationsdesign für Ihre Sitzung wählen](../../../../funktionen/6.0/ui-umschalter-design.md): das Werkzeug
   **Oberfläche** im Detail.
-- [Das neue Aussehen des Setup-Assistenten und der Siteaccess editor](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
+- [Das neue Aussehen des Setup-Assistenten und der Siteaccess editor](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
 
 ## Verwandte Seiten
 
@@ -172,9 +172,9 @@ Schulungs-Administratorkonto.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

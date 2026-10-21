@@ -42,13 +42,13 @@ dass das Formular erkannt wird.
 **CSV exportieren** lädt `<name>-collected.csv` herunter (UTF-8 mit Byte Order Mark): Sammlungs-ID, Sende- und
 Änderungszeit (UTC), Benutzer-ID, dann eine Spalte pro Sammelattribut. Werte, die eine Tabellenkalkulation als Formel
 lesen würde, beginnen mit einem Apostroph. Höchstens 50 000 Zeilen, die neuesten zuerst. Jeder Export wird im
-Audit-Trail festgehalten, mit der Zeilenanzahl und niemals den Werten ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Prüfprotokoll festgehalten, mit der Zeilenanzahl und niemals den Werten ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Einsendungen entfernen
 
 Markieren Sie Formulare in der Übersicht (oder Einsendungen in der Liste eines Formulars) und klicken Sie auf
 **Ausgewählte entfernen**; die Bestätigung nennt, wie viele es sind. Die Formulare selbst bleiben. Entfernungen werden im
-Audit-Trail festgehalten. Exportieren Sie zuerst, wenn die Daten noch gebraucht werden.
+Prüfprotokoll festgehalten. Exportieren Sie zuerst, wenn die Daten noch gebraucht werden.
 
 ## Wer sie sehen darf
 
@@ -76,8 +76,8 @@ Einsendungen anderer Formulare sind ihrem Wesen nach privat; veröffentlichen Si
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

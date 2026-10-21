@@ -30,13 +30,13 @@ aus Erweiterungen, die in `composer.json` aufgeführt sind:
 
 | Bedarf | Funktion | Quelle |
 |---|---|---|
-| Menschen registrieren sich und bestätigen ihre Adresse | `user/register`, E-Mail-Bestätigung | [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
+| Menschen registrieren sich und bestätigen ihre Adresse | `user/register`, E-Mail-Bestätigung | [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md) |
 | Seiten, die nur Mitglieder lesen dürfen | eine Mitgliedersektion, die die Rolle Anonymous nicht liest | [Sektionen, 13.1](../../../anleitungen/sektionen.md#131-ein-mitgliederbereich) |
-| Newsletter mit Double-Opt-in | `cjw_newsletter` | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
-| Mail, wenn neue Inhalte erscheinen | Benachrichtigungen | [Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md) |
-| Jede Person wählt, welche Mails sie bekommt | E-Mail-Einstellungen | [E-Mail-Einstellungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md) |
+| Newsletter mit Double-Opt-in | `cjw_newsletter` | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
+| Mail, wenn neue Inhalte erscheinen | Benachrichtigungen | [Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md) |
+| Jede Person wählt, welche Mails sie bekommt | E-Mail-Einstellungen | [E-Mail-Einstellungen: die Anleitung für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md) |
 | Veranstaltungen und Kalender | die Klassen `event`, `event_calendar` und `multicalendar` von `ezwebin` | [Veranstaltungen und Kalender](veranstaltungen-und-kalender.md) |
-| Diskussionen | die Forenklassen von `ezwebin` | [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md) |
+| Diskussionen | die Forenklassen von `ezwebin` | [ezwebin](../../../funktionen/6.0/erweiterungen/ezwebin.md) |
 
 > **Hinweis**
 > Dieser Bereich beschreibt, was das Repository und die Demonstrationsinstallation enthalten. Er nennt keine
@@ -78,23 +78,23 @@ aus Erweiterungen, die in `composer.json` aufgeführt sind:
 
 - [Vereine und kleine Gruppen](../vereine/README.md): eine Website mit Ehrenamtlichen betreiben.
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md): Spenden, Ehrenamtliche und Kampagnen.
-- [Newsletter](../newsletter/README.md): das Newsletter-System im Detail.
+- [Newsletter](../newsletters/README.md): das Newsletter-System im Detail.
 - [Extranets](../extranets/README.md) und [Intranets](../intranets/README.md): dieselben Werkzeuge für Partner und
   Mitarbeiter.
 - [Sicherheit](../sicherheit/README.md): DSGVO-Grundlagen, Einwilligung und Konten.
-- Öffentliche Stellen: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Öffentliche Stellen: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
 - [Welcher Bereich zu Ihrer Organisation passt](../welcher-bereich-zu-ihrer-organisation-passt.md)
-- [Was Besucher sehen dürfen: die Rolle Anonymous](../../../../eng-us/help/creators/website-creators/visitor-permissions.md)
+- [Was Besucher sehen dürfen: die Rolle Anonymous](../../ersteller/website-ersteller/rechte-fuer-besucher.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

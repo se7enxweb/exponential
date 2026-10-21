@@ -123,7 +123,7 @@ left out, so a plain view is just `/setup/logs/view/<key>`:
 | `(search)` | text | | the search text |
 | `(regex)` | `1` / `0` | `0` | the search text is a regular expression |
 | `(case)` | `1` / `0` | `0` | case sensitive |
-| `(from)`, `(to)` | a time, e.g. `2026-10-17T01~3A00` | | the time range |
+| `(from)`, `(to)` | a time, e.g. `2026-10-17T01:00` | | the time range |
 | `(siteaccess)` | a name | | the siteaccess |
 | `(uri)` | text | | part of the request address |
 | `(ip)` | the start of an address | | the client |
@@ -137,10 +137,12 @@ left out, so a plain view is just `/setup/logs/view/<key>`:
 | `(unmask)` | `1` / `0` | `0` | shown unmasked (only with `setup/unmasklogs`; never part of a copied permalink) |
 | `(done)`, `(ok)` | an action, `1` / `0` | | the outcome of rotate, empty or remove (set by the action, not copied) |
 
-**The encoding of a value.** Letters, digits and `_ . , -` are written as they are; every other byte is `~` and its
-two hexadecimal digits, so a value never holds a `/` or a `(` that would end it: a space is `~20`, a slash `~2F`, a
-colon `~3A`, a `~` itself `~7E`, and a character outside ASCII one `~XX` per byte of its UTF-8 (`ü` is `~C3~BC`).
-Examples:
+**The encoding of a value.** A value is written as every view parameter is
+([how a value travels](../../guides/urls-and-aliases.md#9-view-parameters-how-a-value-travels-in-an-address),
+`expViewParameters::encode()`): `/`, `(`, `)`, `~`, `%`, `+`, `\`, `?`, `#` and control characters are `~` and two
+hexadecimal digits, so a value never holds a `/` or a `(` that would end it (a slash is `~2F`, a `~` itself `~7E`);
+the rest stays readable, a space `%20`, a colon `:`, `ü` `%C3%BC`. Links written before, with every other character
+as `~XX` too (a space `~20`, a colon `~3A`, `ü` `~C3~BC`), are read the same. Examples:
 
 ```
 /setup/logs/view/error/(level)/error/(search)/timeout/(follow)/0
@@ -218,7 +220,7 @@ own virtual host).
 ## Following a file live
 
 The page polls `setup/logsfeed/(action)/tail/(file)/<id>/(offset)/<n>/(ino)/<n>`, each value written as a permalink
-writes it (`~2F` for `/`, `expLogPermalink::encode()`); a search asks `setup/logsfeed/(action)/search/(file)/<id>/(q)/...`
+writes it (`~2F` for `/`, `expViewParameters::encode()`); a search asks `setup/logsfeed/(action)/search/(file)/<id>/(q)/...`
 with the criteria of the form and `(cursor)` for the next results. A query string is never read:
 
 - **A cheap `stat()` first.** A file that has not grown since the offset is answered without opening it.

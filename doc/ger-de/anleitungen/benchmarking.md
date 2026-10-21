@@ -13,7 +13,7 @@ jeder Standardwert unten wurde am Code geprüft, und jede Ausgabe ist echt: Sie 
 Demonstrationsserver (12 CPUs, geteilt mit anderer Arbeit bei einer Last von 5 bis 11) am 5. Oktober 2026 ausgegeben,
 nur lesend, wobei lange Zeilen an den markierten Stellen gekürzt sind.
 
-[Anleitungen](README.md) · Funktionsreferenz: [Benchmark: exp:benchmark](../../eng-us/features/6.0/benchmark.md) · Im
+[Anleitungen](README.md) · Funktionsreferenz: [Benchmark: exp:benchmark](../funktionen/6.0/benchmark.md) · Im
 Installationshandbuch: [10.12 Performance-Tuning](../installation/10-nach-der-installation.md#1012-performance-tuning)
 
 ## Kurz gesagt
@@ -622,7 +622,7 @@ the numbers compare the set-ups too`.
 ### 11.2 Apache gegen Velocity
 
 1. Beide Server müssen dieselbe Installation ausliefern (Velocity auf einem eigenen Port, z. B. 8080; siehe
-   [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md#running-them-side-by-side)).
+   [Velocity-Engines](../bc/6.0/velocity-engines.md#sie-nebeneinander-betreiben)).
 2. Seiten aus dem Cache: `./console exp:benchmark --compare=https://www.example.com,https://www.example.com:8080 --allow-root-user`.
 3. Gerenderte Seiten: dasselbe mit `--cold --runs=30`.
 4. Lesen Sie die A/B-Tabelle pro Seite, und vergleichen Sie nur Zeilen mit derselben `cache`-Antwort (Abschnitt 8).
@@ -656,7 +656,7 @@ Velocity ist die empfohlene Engine für jede Stufe; FrankenPHP und Apache mit PH
 ([Bereitstellung](bereitstellung.md#1-wählen-sie-wie-die-site-ausgeliefert-wird)). Die drei können nebeneinander auf verschiedenen
 Ports laufen, also messen Sie sie auf Ihrer eigenen Site, bevor Sie sich entscheiden:
 
-1. Starten Sie die Kandidaten auf eigenen Ports ([Engines im Vergleich](../../eng-us/bc/6.0/velocity-engines.md)).
+1. Starten Sie die Kandidaten auf eigenen Ports ([Engines im Vergleich](../bc/6.0/velocity-engines.md)).
 2. `./console exp:benchmark --compare=https://www.example.com,https://www.example.com:8080,https://www.example.com:8443 --allow-root-user`
    (drei oder mehr Server: Jeder wird mit dem ersten verglichen).
 3. Dasselbe mit `--cold` und mit einer Seite für angemeldete Benutzer (`--cookie=...`), wenn Redakteure wichtig sind.
@@ -666,7 +666,7 @@ Ports laufen, also messen Sie sie auf Ihrer eigenen Site, bevor Sie sich entsche
 ### 11.5 Prüfen, dass eine Bereitstellung keine Regression gebracht hat
 
 1. Vor der Bereitstellung: `./console exp:benchmark --cold --runs=50 --save=var/benchmark/pre-deploy.json --allow-root-user`.
-2. Bereitstellen, z. B. `./console exp:velocity deploy --allow-root-user` ([Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy)).
+2. Bereitstellen, z. B. `./console exp:velocity deploy --allow-root-user` ([Velocity-Engines](../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy)).
 3. Wärmen Sie die Caches vor, die die Bereitstellung geleert hat (`php bin/php/warm.php --allow-root-user`), damit Sie
    Gleiches mit Gleichem vergleichen.
 4. `./console exp:benchmark --cold --runs=50 --baseline=var/benchmark/pre-deploy.json --min-delta=5 --allow-root-user;
@@ -897,17 +897,17 @@ Rest für alle.
 
 ## Quellen
 
-- [Benchmark: exp:benchmark](../../eng-us/features/6.0/benchmark.md): die Funktionsreferenz, mit der Dateiliste.
+- [Benchmark: exp:benchmark](../funktionen/6.0/benchmark.md): die Funktionsreferenz, mit der Dateiliste.
 - [10.12 Performance-Tuning](../installation/10-nach-der-installation.md#1012-performance-tuning): die Stellschrauben, geordnet
   nach Wirkung.
 - [Bereitstellung](bereitstellung.md): Apache mit PHP-FPM, Velocity, FrankenPHP; eine Änderung ausliefern.
-- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md): die Server, die Sie vergleichen wollen, eine PHP-Änderung
+- [Velocity-Engines](../bc/6.0/velocity-engines.md): die Server, die Sie vergleichen wollen, eine PHP-Änderung
   bereitstellen, OPcache unter Velocity.
-- [FrankenPHP](../../eng-us/bc/6.0/frankenphp.md): die dritte Engine.
-- [HTTP-Caching](../../eng-us/bc/6.0/http-caching.md) und [Caches vorwärmen](../../eng-us/bc/6.0/http2-and-cache-warming.md): was die
+- [FrankenPHP](../bc/6.0/frankenphp.md): die dritte Engine.
+- [HTTP-Caching](../bc/6.0/http-caching.md) und [Caches vorwärmen](../bc/6.0/http2-und-cache-vorwaermen.md): was die
   warmen Zahlen messen.
-- [Qualitätsprüfungen](../../eng-us/features/6.0/quality-checks.md): die anderen Prüfungen, die die CI des Repositorys ausführt.
-- [Konsole](../../eng-us/bc/6.0/console.md): jeder Befehl.
+- [Qualitätsprüfungen](../funktionen/6.0/qualitaetspruefungen.md): die anderen Prüfungen, die die CI des Repositorys ausführt.
+- [Konsole](../bc/6.0/konsole.md): jeder Befehl.
 - Code: `kernel/private/classes/commands/benchmark.php` (Optionen, Sicherheitsregeln, Ausgabe),
   `kernel/classes/expbenchmark.php` (Statistik, Formate, Vergleiche, Umgebung),
   `kernel/classes/expbenchmarkhttp.php` (der HTTP-Client), `kernel/classes/expbenchmarkkernel.php` (Kernel-Messpunkte),
@@ -915,3 +915,11 @@ Rest für alle.
   `.github/workflows/performance.yml`, Tests in `tests/tests/kernel/classes/benchmark/`.
 - Perzentile: Hyndman und Fan, „Sample quantiles in statistical packages“, *The American Statistician* 50 (1996),
   Methode 7.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

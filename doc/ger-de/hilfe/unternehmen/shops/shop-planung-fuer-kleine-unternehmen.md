@@ -48,7 +48,7 @@ erfasst werden. Wer das früh entscheidet, hält die Einrichtung kurz und die er
 ## Personen und Rollen
 
 Die Berechtigungen des Shops sind in `kernel/shop/module.php` in Funktionen aufgeteilt: `buy`, `administrate`,
-`setup`, `edit_status` und `setstatus` ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)).
+`setup`, `edit_status` und `setstatus` ([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)).
 Mit dieser Aufteilung kann ein kleines Unternehmen jeder Person nur das geben, was ihre Aufgabe braucht.
 
 | Person | Typische Richtlinie | Tut |
@@ -71,7 +71,7 @@ einer Packhilfe zum Beispiel nur erlaubt werden kann, Bestellungen von Paid auf 
 
 Der technische Überblick listet auf, was der Shop nicht kann und was als Erweiterung oder Integration geplant werden
 sollte: Lagerverwaltung, Rechnungen in einem Buchhaltungssystem, Versandetiketten und Marktplätze
-([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)). Entscheiden Sie früh, ob Sie
+([Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md)). Entscheiden Sie früh, ob Sie
 etwas davon brauchen und ob ein Partner es bauen oder anbinden wird. Siehe
 [Einen Partner auswählen](../auswahl/einen-partner-auswaehlen.md) und
 [Fragen an einen Partner](../auswahl/fragen-an-einen-partner.md).
@@ -100,7 +100,7 @@ eine Checkliste der Anforderungen unter [Checkliste: Anforderungen](../vorlagen/
 ## Nach der Planung
 
 1. Geben Sie das Arbeitsblatt der Person, die den Shop baut, zusammen mit
-   [Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md), wo die Reihenfolge der
+   [Einen Shop betreiben: Überblick](../../ersteller/website-ersteller/shop-ueberblick.md), wo die Reihenfolge der
    Einrichtung steht.
 2. Vereinbaren Sie eine Testphase mit echten Testbestellungen im Testmodus des Zahlungsanbieters.
 3. Verwenden Sie vor der Eröffnung die [Checkliste für den Shop-Start](checkliste-fuer-den-shop-start.md).
@@ -110,14 +110,14 @@ eine Checkliste der Anforderungen unter [Checkliste: Anforderungen](../vorlagen/
 ## Verwandte Seiten
 
 - [Was der eingebaute Shop kann](was-der-eingebaute-shop-kann.md)
-- [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
+- [Ihre Website planen](../../ersteller/website-ersteller/ihre-website-planen.md)
+- [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

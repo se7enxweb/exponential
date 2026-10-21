@@ -94,7 +94,7 @@ gutes Vorbild. Kurz gefasst:
 - [ ] Sicherheitsupdates für Betriebssystem und PHP sind eingespielt, und die PHP-Version wird noch unterstützt.
 - [ ] Ein Backup wurde auf einem anderen Rechner wiederhergestellt ([Wiederherstellungsübungen](wiederherstellungsuebungen.md)).
 - [ ] Der Plattenplatz für Speicher, Caches, Logs und Datenbank liegt im Plan.
-- [ ] `security.log` und der Audit-Trail zeigen nichts Unerwartetes; Konten ausgeschiedener Personen sind entfernt.
+- [ ] `security.log` und das Prüfprotokoll zeigen nichts Unerwartetes; Konten ausgeschiedener Personen sind entfernt.
 - [ ] Zertifikate sind länger gültig als die Erneuerungsfrist.
 - [ ] Ein kurzer Bericht geht an den Inhaber der Website: Verfügbarkeit laut externer Prüfung, Störungen, Updates,
       Wachstum des Plattenplatzes.
@@ -134,9 +134,9 @@ Deployment, jeden Import und jede Änderung an Einstellungen:
 ## Es aufschreiben
 
 Führen Sie ein kurzes Betriebsprotokoll: Datum, was geprüft oder geändert wurde, von wem und mit welchem Ergebnis. Das
-kostet eine Minute pro Eintrag und zahlt sich am ersten schlechten Tag aus. Der Audit-Trail zeichnet bereits viele
+kostet eine Minute pro Eintrag und zahlt sich am ersten schlechten Tag aus. Das Prüfprotokoll zeichnet bereits viele
 Aktionen für Sie auf, etwa geschriebene Einstellungen, geleerte Caches, Deployments und Wartung
-([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)), aber er zeichnet nicht auf, was Sie geprüft und für in
+([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)), aber es zeichnet nicht auf, was Sie geprüft und für in
 Ordnung befunden haben.
 
 ## Verwandte Seiten
@@ -148,8 +148,8 @@ Ordnung befunden haben.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Anwendungsentwickler, deren Anwendung Arbeit hat, die nicht in einer Web-Anfrage stattfinden
 darf: Aufrufe langsamer Dienste, Massenaktualisierungen, Versand, KI-Anfragen. `expqueue` ist eine Job-Warteschlange in
 der Datenbank: Erzeuger reihen einen Job mit einem einzigen Aufruf ein; Worker führen ihn auf der Kommandozeile aus
-([expqueue](../../../../eng-us/features/6.0/extensions/expqueue.md)). Die vollständige Dokumentation steht in
+([expqueue](../../../funktionen/6.0/erweiterungen/expqueue.md)). Die vollständige Dokumentation steht in
 `extension/expqueue/doc/` (`api.md`, `scheduling.md`, `workers-cron-systemd.md`).
 
 ![Die Job-Warteschlange in der Administration: wartende, laufende, erledigte und fehlgeschlagene Jobs je Warteschlange](../../../../eng-us/help/images/creators/job-queue-dashboard.webp)
@@ -116,8 +116,8 @@ oder Gruppe pausieren.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

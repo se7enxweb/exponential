@@ -19,8 +19,9 @@ Ort wählen. Die Fakten stammen aus `eZINI::overrideDirs()` in `lib/ezutils/clas
 | Ebene | Verzeichnis | Gelesen für | Was dorthin gehört |
 |---|---|---|---|
 | default | `settings/` | alles | die Standardwerte des Kernels; werden nie bearbeitet |
-| Erweiterungs-Siteaccess (`sa-extension`) | `extension/<ext>/settings/siteaccess/<sa>/`, `extension/<ext>/settings/override__<group>/`, `extension/<ext>/settings/override/` | die Siteaccesses, die einer Erweiterung gehören | Einstellungen je Website innerhalb einer Erweiterung |
-| siteaccess | `settings/siteaccess/<sa>/` | einen Siteaccess | die Einstellungen einer Website oder der Administration |
+| Siteaccess-Erweiterungen (`sa-extension`) | `extension/<ext>/settings/` der Erweiterungen in `ActiveAccessExtensions[]` | die Siteaccesses, die sie einschalten | Erweiterungen, die nur für einen Siteaccess aktiv sind |
+| Siteaccess in Erweiterungen (`siteaccess`) | `extension/<ext>/settings/siteaccess/<sa>/`, `extension/<ext>/settings/override__<group>/`, `extension/<ext>/settings/override/` | die Siteaccesses, die einer Erweiterung gehören | Einstellungen je Website innerhalb einer Erweiterung |
+| siteaccess (`siteaccess`) | `settings/siteaccess/<sa>/` | einen Siteaccess | die Einstellungen einer Website oder der Administration |
 | extension | `extension/<ext>/settings/` | jede Anfrage, für aktive Erweiterungen | die Standardwerte, die eine Erweiterung mitbringt |
 | override | `settings/override/` | jede Anfrage | die eigenen globalen Einstellungen dieser Installation |
 
@@ -29,8 +30,8 @@ Ort wählen. Die Fakten stammen aus `eZINI::overrideDirs()` in `lib/ezutils/clas
 Nach der Standarddatei liest der Kernel die Override-Verzeichnisse in dieser Reihenfolge, und **eine spätere Datei
 gewinnt**:
 
-1. die Erweiterungs-Siteaccess-Verzeichnisse (`sa-extension`),
-2. `settings/siteaccess/<sa>/` (`siteaccess`),
+1. `extension/<ext>/settings/` der Erweiterungen in `ActiveAccessExtensions[]` (`sa-extension`),
+2. die Siteaccess-Verzeichnisse der Erweiterungen, dann `settings/siteaccess/<sa>/` (beide `siteaccess`),
 3. `extension/<ext>/settings/` jeder aktiven Erweiterung (`extension`),
 4. `settings/override/` (`override`).
 
@@ -48,8 +49,10 @@ Installation meist an erster Stelle.
 > **Hinweis**
 > Beachten Sie, dass die Ebene `extension` **nach** der Ebene `siteaccess` gelesen wird. Ein Wert, den eine Erweiterung
 > in `extension/<ext>/settings/` mitbringt, schlägt denselben Wert in `settings/siteaccess/<sa>/`. Braucht eine Website
-> einen anderen Wert als den Standard einer Erweiterung, legen Sie ihn in `settings/override/` oder in den eigenen
-> Siteaccess-Ordner der Erweiterung, nicht in `settings/siteaccess/<sa>/`.
+> einen anderen Wert als den Standard einer Erweiterung, legen Sie ihn in `settings/override/` (das für jeden
+> Siteaccess gilt), oder entfernen Sie den Schlüssel aus der `settings/`-Datei der Erweiterung. Die eigenen
+> Siteaccess-Ordner der Erweiterung helfen nicht: Sie gehören ebenfalls zur Ebene `siteaccess`, und `settings/` der
+> Erweiterung schlägt auch sie.
 
 ## Die Ordner je Website in einer Erweiterung
 
@@ -64,7 +67,7 @@ einziger Ordner ist:
 
 Sie werden nur für einen Siteaccess registriert, der seinen Ordner `extension/<ext>/settings/siteaccess/<sa>/` hat;
 dieser Ordner macht die Erweiterung zu seiner Eigentümerin. Einzelheiten und ein Beispiel stehen in
-[Einstellungen je Website in Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md).
+[Einstellungen je Website in Erweiterungen](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 
 ## Platzierungen: Woher kommt ein Wert?
 
@@ -124,13 +127,13 @@ entspricht, was Sie wollen. Die nächsten Kapitel bauen damit eine Website-Erwei
 - Zurück: [Wie INI-Einstellungen funktionieren](wie-ini-einstellungen-funktionieren.md)
 - Weiter: [Siteaccess-Einstellungen](siteaccess-einstellungen.md)
 - [INI-Override-Verzeichnisse und Platzierungen](../../../spezifikationen/6.0/ini-override-platzierungen.md)
-- [Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)
+- [Ladereihenfolge der Erweiterungen](../../../funktionen/6.0/ladereihenfolge-der-extensions.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

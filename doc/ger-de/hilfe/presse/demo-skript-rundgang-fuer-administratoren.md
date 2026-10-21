@@ -3,8 +3,8 @@ title: "Demo-Skript: Rundgang für Administratoren"
 audience: press
 category: press-media
 order: 161
-summary: Ein zehnminütiges Videoskript für das, was ein Administrator in Exponential sieht - das Inhaltsmodell, Rollen, Sprachen, der Log-Viewer mit seiner Maskierung personenbezogener Daten, die Upgrade-Prüfung, Caches und Systeminformationen, der Audit-Trail, die zweistufige Anmeldung und die Checkliste zur Sicherheitshärtung - mit den Bildschirmen, die Daten preisgeben, und wie Sie sie sicher filmen.
-keywords: Demo-Skript, Administrator, Rundgang Administration, Setup, Klassen, Rollen und Richtlinien, Logdateien, Upgrade-Prüfung, Caches, Systeminformationen, Audit-Trail, zweistufige Anmeldung, Sicherheit, Video, Creator, demo script, admin tour, classes, roles and policies, log files, upgrade check, system information, audit trail, two-step sign-in, security
+summary: Ein zehnminütiges Videoskript für das, was ein Administrator in Exponential sieht - das Inhaltsmodell, Rollen, Sprachen, der Log-Viewer mit seiner Maskierung personenbezogener Daten, die Upgrade-Prüfung, Caches und Systeminformationen, das Prüfprotokoll, die zweistufige Anmeldung und die Checkliste zur Sicherheitshärtung - mit den Bildschirmen, die Daten preisgeben, und wie Sie sie sicher filmen.
+keywords: Demo-Skript, Administrator, Rundgang Administration, Setup, Klassen, Rollen und Richtlinien, Logdateien, Upgrade-Prüfung, Caches, Systeminformationen, Prüfprotokoll, zweistufige Anmeldung, Sicherheit, Video, Creator, demo script, admin tour, classes, roles and policies, log files, upgrade check, system information, audit trail, two-step sign-in, security
 type: help
 ---
 # Demo-Skript: Rundgang für Administratoren
@@ -42,18 +42,18 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 1. **Benutzer > Rollen und Richtlinien**: Öffnen Sie die Rolle *Editor*. Sagen Sie: „Was jede Gruppe tun darf, ist eine
    Menge von Richtlinien.“ Quelle: [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md).
 2. Zeigen Sie auf die Richtlinie, die die Hilfe öffnet: „Die Hilfe ist für Redakteure auf einer neuen Installation über
-   die Richtlinie `exphelp/read` lesbar.“ ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md#who-may-read-it))
+   die Richtlinie `exphelp/read` lesbar.“ ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md#wer-sie-lesen-darf))
 3. **Setup > Sprachen**: Zeigen Sie die Inhaltssprachen. Nennen Sie die dokumentierten Zahlen mit ihrer Quelle:
    268 Locale-Dateien können als Inhaltssprachen verwendet werden; es gibt 33 Übersetzungen der Administration, neunzehn
-   davon vollständig (19. Oktober 2026) ([Sprachen in Exponential](../../../eng-us/languages.md)).
+   davon vollständig (19. Oktober 2026) ([Sprachen in Exponential](../../sprachen.md)).
 
 ![Rollen, gezeigt in Teil 2](../../../eng-us/help/images/help/pr-admin-roles.webp)
 
 ## Teil 3: Betrieb (3 Minuten)
 
 1. **Setup > Logdateien**: der Navigator und eine Suche. Sagen Sie: „Datenschutz zuerst: E-Mail-Adressen, IP-Adressen,
-   Passwörter, Tokens, Schlüssel und Session-IDs werden in dieser Ansicht maskiert.“ Klicken Sie vor der Kamera nie auf
-   **Unmaskiert zeigen**, und lesen Sie trotzdem jede Zeile, die Sie zeigen ([Log-Viewer](../../../eng-us/features/6.0/log-viewer.md)).
+   Passwörter, Tokens, Schlüssel und Sitzungs-IDs werden in dieser Ansicht maskiert.“ Klicken Sie vor der Kamera nie auf
+   **Unmaskiert zeigen**, und lesen Sie trotzdem jede Zeile, die Sie zeigen ([Log-Viewer](../../funktionen/6.0/log-betrachter.md)).
 2. **Setup > Upgrade-Prüfung**: „Vor einem Upgrade vergleicht dies jede Datei mit dem Release.“
    ([Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md))
 3. **Setup > Caches**: Zeigen Sie auf die Schaltflächen; sagen Sie, wozu das Leeren eines Caches dient. Leeren Sie
@@ -68,13 +68,13 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 
 1. Öffnen Sie den Tab **Audit** (`/audit/dashboard`), dann **Konsole**. Sagen Sie: „Meine Anmeldung ist bereits
    festgehalten. Jeder Eintrag trägt den Hash des vorherigen, sodass eine Änderung am Protokoll auffällt.“
-   ([Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md))
+   ([Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md))
 2. In einem Terminal, außerhalb des geteilten Bildschirms, wenn es einen Prompt zeigt, der Sie stört:
    `./console exp:audit verify --allow-root-user`.
 3. Öffnen Sie `/user2fa/setup` mit dem Demo-Konto: Zeigen Sie die Wahl zwischen einer Authenticator-App und einem Code per
    E-Mail. **Schließen Sie die Einrichtung nicht vor der Kamera ab**: Der QR-Code und das Geheimnis sind der zweite
    Faktor ([Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md)).
-4. Öffnen Sie in der Hilfe [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) und sagen Sie:
+4. Öffnen Sie in der Hilfe [Content Security Policy](../../funktionen/6.0/content-security-policy.md) und sagen Sie:
    „Standardmäßig ist sie in der Administration auf report-only und auf den Websites aus; die Seite erklärt, wie man sie
    erzwingt.“
 5. Schließen Sie mit der [Checkliste der Sicherheitshärtung](../sicherheitshaertung.md#checkliste).
@@ -107,8 +107,8 @@ Mehr: [Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhal
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

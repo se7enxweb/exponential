@@ -68,18 +68,18 @@ G.9 Testing. Acceptance tests are run in every language, including search,
 ```
 
 Die internen Locale-Codes von Exponential haben die Form `ger-DE`, `ara-SA` und ähnlich, und Browser erhalten
-BCP-47-Tags ([Standards zur Internationalisierung](../../../../../eng-us/standards/internationalization.md)).
+BCP-47-Tags ([Standards zur Internationalisierung](../../../../standards/internationalisierung.md)).
 
 ## Was ein auf Exponential beruhendes Angebot zeigen kann
 
 | Klausel | Nachweis |
 |---|---|
 | G.1, G.7 | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md), [Sprachen](../../../sprachen.md) |
-| G.2 | [Zuordnung von Siteaccesses nach Host und Sprache](../../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md), [Sprachumschalter und Sprach-URLs](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
-| G.5 | [Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md), [Websites von rechts nach links](../../../../../eng-us/help/creators/website-creators/right-to-left-sites.md) |
-| G.6 | [Sprachen in Exponential](../../../../../eng-us/languages.md) (Übersetzungen der Administration und ihre Vollständigkeit), [UI-Umschalter: Sprachen der Oberfläche](../../../../../eng-us/features/6.0/ui-switch-languages.md) |
-| G.8 | Interne Kodierung UTF-8 Complies; unter MySQL und MariaDB verwendet die Verbindung Drei-Byte-`utf8` (Partly complies) |
-| Lücke bei G.4 | Übersetzungen der Oberfläche haben keine Pluralformen (Does not comply) |
+| G.2 | [Zuordnung von Siteaccesses nach Host und Sprache](../../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md), [Sprachumschalter und Sprach-URLs](../../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md) |
+| G.5 | [Sprachen von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md), [Websites von rechts nach links](../../../ersteller/website-ersteller/websites-von-rechts-nach-links.md) |
+| G.6 | [Sprachen in Exponential](../../../../sprachen.md) (Übersetzungen der Administration und ihre Vollständigkeit), [UI-Umschalter: Sprachen der Oberfläche](../../../../funktionen/6.0/ui-umschalter-sprachen.md) |
+| G.8 | Interne Kodierung UTF-8: Erfüllt; unter MySQL und MariaDB verwendet die Verbindung Drei-Byte-`utf8` (Teilweise erfüllt) |
+| Lücke bei G.4 | Übersetzungen der Oberfläche haben keine Pluralformen (Nicht erfüllt) |
 
 ## Hinweise für die bewertende Person
 
@@ -93,5 +93,5 @@ BCP-47-Tags ([Standards zur Internationalisierung](../../../../../eng-us/standar
 - [Ausschreibungsvorlagen](README.md)
 - [Anforderungen an Sprache und Mehrsprachigkeit](../anforderungen/anforderungen-an-sprache-und-mehrsprachigkeit.md)
 - [Klausel zum Abnahmetest](klausel-abnahmetest.md)
-- [Mehrsprachige Websites](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
+- [Mehrsprachige Websites](../../../ersteller/website-ersteller/mehrsprachige-websites.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -83,7 +83,7 @@ können, unverändert, und legen Sie Ihre eigene Konfiguration in Dateien, die z
 | Komponenten von Drittanbietern | ihre eigene | die Tabelle **Software von Drittanbietern** auf der Seite Über |
 
 Prüfen Sie die Seite Über der Installation, die Sie ausliefern, bevor Sie sagen, alles stehe unter der GPL
-([Seiten Über und Copyright](../../../../eng-us/features/6.0/about-and-package-pages.md)).
+([Seiten Über und Copyright](../../../funktionen/6.0/info-und-paketseiten.md)).
 
 ## Diese Dokumentation kopieren
 

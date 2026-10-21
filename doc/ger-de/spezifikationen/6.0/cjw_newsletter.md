@@ -4,7 +4,7 @@ Diese Seite ist die Referenz für die Extension `cjw_newsletter` (4.1.17). Sie f
 Parameter, die Konsolenbefehle, die Cronjob-Teile, die Hintergrundläufe, die Audit-Ereignisse, die Tabellen und die
 Einstellungen auf, die Sie ändern können. Lesen Sie sie, wenn Sie den Newsletter installieren, zeitlich planen, per Skript
 steuern oder debuggen. Den Rundgang für Redakteure und den Probedurchlauf ohne E-Mail-Versand finden Sie auf der
-[Funktionsseite](../../../eng-us/features/6.0/extensions/cjw_newsletter.md).
+[Funktionsseite](../../funktionen/6.0/erweiterungen/cjw_newsletter.md).
 
 ## Kurz gesagt
 
@@ -111,6 +111,6 @@ Ein Ereignis je Lauf, geschrieben, wenn das Audit eingeschaltet ist: `system.cjw
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/cjw_newsletter.md)
 - [Ausführbare Befehle, Cronjob-Teile und Views](ausfuehrbare-befehle-cronjobs-ansichten.md)
 - [Audit-Ereignismodell](audit-ereignismodell.md)

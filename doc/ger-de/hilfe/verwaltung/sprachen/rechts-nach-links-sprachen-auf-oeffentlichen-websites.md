@@ -13,7 +13,7 @@ Diese Seite richtet sich an Websiteersteller und Administratoren öffentlicher W
 die von rechts nach links lesen. Die Administration von Exponential spiegelt sich bei Oberflächensprachen mit
 Schreibrichtung von rechts nach links selbst; ein öffentliches Design tut, was seine Templates und Stylesheets sagen,
 deshalb muss das Design einige Dinge ergänzen
-([Websites mit Schreibrichtung von rechts nach links](../../../../eng-us/help/creators/website-creators/right-to-left-sites.md)).
+([Websites mit Schreibrichtung von rechts nach links](../../ersteller/website-ersteller/websites-von-rechts-nach-links.md)).
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ deshalb muss das Design einige Dinge ergänzen
 
 40 Locale-Dateien in `share/locale/` tragen `TextDirection=rtl`: Arabisch für viele Länder, Hebräisch, Jiddisch,
 Persisch und Dari, Urdu, Paschtu, Westpanjabi, Sindhi, Kaschmiri, Uigurisch, Zentralkurdisch (Sorani), Syrisch, N'Ko
-und Dhivehi ([Sprachen in Exponential, Abschnitt 9](../../../../eng-us/languages.md#9-right-to-left-languages)). Sprachen, die
+und Dhivehi ([Sprachen in Exponential, Abschnitt 9](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden)). Sprachen, die
 in lateinischer Schrift geschrieben werden, wie das kurmandschische Kurdisch, laufen von links nach rechts.
 
 ## Woher die Schreibrichtung kommt
@@ -55,7 +55,7 @@ englischen Seite. `design/standard/templates/parts/exp_content_direction.tpl` gi
 nach links ` lang="..." dir="rtl"` aus und für eine von links nach rechts nichts; binden Sie es an dem Element ein,
 das den Inhalt umschließt. Die Online-Editoren stellen ihre Schreibrichtung für Texte von rechts nach links um, sodass
 Redakteure in der richtigen Richtung schreiben
-([Sprachen mit Schreibrichtung von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md#content)).
+([Sprachen mit Schreibrichtung von rechts nach links in der Administration](../../../funktionen/6.0/rechts-nach-links.md#inhalte)).
 
 ## Tests
 
@@ -67,14 +67,15 @@ Redakteure in der richtigen Richtung schreiben
 
 ## Verwandte Seiten
 
-- [Websites mit Schreibrichtung von rechts nach links](../../../../eng-us/help/creators/website-creators/right-to-left-sites.md)
+- [Websites mit Schreibrichtung von rechts nach links](../../ersteller/website-ersteller/websites-von-rechts-nach-links.md)
 - [Rechts nach links in der Administration](rechts-nach-links-in-der-administration.md)
-- [Stylesheets und Skripte](../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md)
+- [Stylesheets und Skripte](../../ersteller/website-ersteller/stylesheets-und-skripte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

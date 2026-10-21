@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Implementierungs- und Hosting-Partner, die eine Kunden-Website übernehmen, ein Angebot dafür
 erstellen oder sie warten. Die Systemkarte (system card) liefert Ihnen mit einem einzigen Befehl ein vollständiges
 Bild einer Installation, das keine Geheimnisse enthält. Referenz:
-[Die Systemkarte](../../../eng-us/features/6.0/system-card.md) (auf Englisch).
+[Die Systemkarte](../../funktionen/6.0/systemkarte.md) (auf Englisch).
 
 ## Die Prüfung
 
@@ -53,7 +53,7 @@ als Information des Kunden ([Kundendaten schützen](kundendaten-schuetzen.md)).
 
 ## Verwandte Seiten
 
-- [Die Systemkarte](../../../eng-us/features/6.0/system-card.md) (auf Englisch)
+- [Die Systemkarte](../../funktionen/6.0/systemkarte.md) (auf Englisch)
 - [Kunden-Websites aktuell halten](kunden-websites-aktuell-halten.md)
 - [Ein Leitfaden für Implementierungsprojekte](leitfaden-fuer-implementierungsprojekte.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

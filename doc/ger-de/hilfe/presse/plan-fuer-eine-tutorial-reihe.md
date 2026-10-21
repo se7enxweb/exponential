@@ -45,7 +45,7 @@ Hilfe gehören zur Entwicklungslinie 6.0.15, die kein Veröffentlichungsdatum ha
 
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
-| B1 | Von null auf SQLite installieren | 10 Min. | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) | [Installation von null](demo-skript-installation-von-null.md) |
+| B1 | Von null auf SQLite installieren | 10 Min. | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) | [Installation von null](demo-skript-installation-von-null.md) |
 | B2 | Layouts, Zonen und Blöcke | 8 Min. | [Der Layout-Editor](../layout-editor.md) | [Exponential Layouts](demo-skript-exponential-layouts.md) |
 | B3 | Inhaltstypen: Klassen und Attribute | 8 Min. | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) | [Rundgang für Administratoren, Teil 1](demo-skript-rundgang-fuer-administratoren.md#teil-1-das-inhaltsmodell-2-minuten) |
 | B4 | Arbeiten mit Git: der eigene Branch, Updates und ein erster Pull Request | 10 Min. | [Mit Git entwickeln](../mit-git-entwickeln.md) | Ihr eigenes, nach der Hilfeseite |
@@ -54,8 +54,8 @@ Hilfe gehören zur Entwicklungslinie 6.0.15, die kein Veröffentlichungsdatum ha
 
 | # | Folge | Länge | Hilfeseite | Skript |
 |---|---|---|---|---|
-| C1 | Die Website unter Velocity betreiben | 8 Min. | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) | [Velocity](demo-skript-velocity.md) |
-| C2 | Rollen, zweistufige Anmeldung und der Audit-Trail | 8 Min. | [Sicherheitshärtung](../sicherheitshaertung.md) | [Rundgang für Administratoren, Teil 4](demo-skript-rundgang-fuer-administratoren.md#teil-4-sicherheit-3-minuten) |
+| C1 | Die Website unter Velocity betreiben | 8 Min. | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) | [Velocity](demo-skript-velocity.md) |
+| C2 | Rollen, zweistufige Anmeldung und das Prüfprotokoll | 8 Min. | [Sicherheitshärtung](../sicherheitshaertung.md) | [Rundgang für Administratoren, Teil 4](demo-skript-rundgang-fuer-administratoren.md#teil-4-sicherheit-3-minuten) |
 | C3 | Logs, Upgrade-Prüfung und Caches | 8 Min. | [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md) | [Rundgang für Administratoren, Teil 3](demo-skript-rundgang-fuer-administratoren.md#teil-3-betrieb-3-minuten) |
 
 Ein optionaler vierter Strang kann Exponential Intelligence zeigen ([sein Demo-Skript](demo-skript-exponential-intelligence.md)),
@@ -99,8 +99,8 @@ Führen Sie eine kleine Tabelle Ihrer Folgen mit der Version und dem Datum, an d
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

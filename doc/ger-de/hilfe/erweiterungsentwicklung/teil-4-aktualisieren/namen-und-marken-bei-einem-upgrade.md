@@ -27,7 +27,7 @@ Benennen Sie um, was **Menschen lesen**; benennen Sie nie um, worauf **Code oder
 | Namen, Abschnitte und Einstellungen von INI-Dateien | nein | Websites haben Overrides dafür |
 | Datenbanktabellen und -spalten | nein | Umbenennen braucht ein Upgrade-Skript und bricht andere Leser |
 | Übersetzungskontexte (`'extension/myoldext'`) | nein | bestehende Übersetzungen sind danach verschlüsselt |
-| Neue Klassen, Dateien, Operatoren und Einstellungen, die Sie hinzufügen | `exp` für Code des Exponential-Projekts, sonst Ihr eigenes Präfix | die Konvention für neuen Code; siehe [Namenspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md) |
+| Neue Klassen, Dateien, Operatoren und Einstellungen, die Sie hinzufügen | `exp` für Code des Exponential-Projekts, sonst Ihr eigenes Präfix | die Konvention für neuen Code; siehe [Namenspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md) |
 
 ## Produktnamen in Texten
 
@@ -59,7 +59,7 @@ Lizenzhinweises).
 Alte Erweiterungen benennen alles mit `ez`, weil der Kernel es tat. In Exponential 6 ist die Konvention für **neuen**
 Code `exp` (oder für die eigenen Erweiterungen von 7x `sevenx`): Ein neues Modul, eine neue Klasse, ein neuer
 Template-Operator oder eine neue Einstellung heißt `exp...`, niemals `ez...`; Ihre eigene Erweiterung verwendet Ihr
-eigenes Präfix. Die Gründe stehen in [Namenspräfixe: sevenx und exp](../../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md).
+eigenes Präfix. Die Gründe stehen in [Namenspräfixe: sevenx und exp](../../../standards/namenspraefixe-sevenx-und-exp.md).
 Bestehende Namen behalten ihr Präfix: `ezmyoperator` in `expmyoperator` umzubenennen, bricht jedes Template, das dafür
 geschrieben wurde.
 
@@ -77,7 +77,7 @@ Entfernen Sie den alten Namen nur in einem Major-Release, das vorher angekündig
 
 se7enxweb/explayouts_ui_api hat in Commit 2a95edc einen Text umbenannt, den Menschen sehen: Die Edition der Anwendung
 im Tooltip des Logos wurde zu „Exponential Layouts“. Sein späterer Commit 8273a03 ging weiter und benannte die
-Seiten-Tags, globalen Variablen und den Session-Schlüssel des Editors vom Präfix des Upstream-Projekts in
+Seiten-Tags, globalen Variablen und den Sitzungsschlüssel des Editors vom Präfix des Upstream-Projekts in
 `explayouts`-Namen um, weil das die eigenen Interna der Erweiterung waren, von niemand anderem verwendet, und der
 Editor in diesem Commit als Ganzes geändert wurde.
 
@@ -119,8 +119,8 @@ Die Ethik dahinter ist ein eigenes Kapitel: [Ethisches Rebranding](../teil-5-erw
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

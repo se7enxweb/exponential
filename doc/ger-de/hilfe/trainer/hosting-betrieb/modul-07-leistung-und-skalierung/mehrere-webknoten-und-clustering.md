@@ -3,7 +3,7 @@ title: "Lektion 7.4: Mehrere Webknoten und Clustering"
 audience: trainer, hosting, admin
 category: training
 order: 74
-summary: Die Teilnehmenden entscheiden, was gemeinsam genutzt werden muss und was lokal bleibt, wenn mehrere Webknoten eine Website ausliefern, erklären den DFS-Cluster-Dateihandler und die Sitzungs-Handler und planen Cron, Bereitstellungen, Wartung und Logs für einen Cluster. 45 Minuten.
+summary: Die Teilnehmenden entscheiden, was gemeinsam genutzt werden muss und was lokal bleibt, wenn mehrere Webknoten eine Website ausliefern, erklären den DFS-Cluster-Dateihandler und die Session-Handler und planen Cron, Bereitstellungen, Wartung und Logs für einen Cluster. 45 Minuten.
 keywords: hosting und betrieb, mehrere webknoten, cluster, load balancer, eZDFSFileHandler, NFS, ezdfsfile, index_cluster.php, sitzungen, ezpSessionHandlerDB, sticky sessions, cron auf einem knoten, var nicht gemeinsam, hosting and operations, several web nodes, sessions, cron on one node, var not shared
 type: help
 ---
@@ -97,7 +97,7 @@ Eine Entwurfsübung in Dreiergruppen. Es wird kein Cluster gebraucht.
    [Mehrere Webknoten](../../../hosting/betrieb/mehrere-web-knoten.md#was-geteilt-werden-muss-was-lokal-bleibt) mit Ihren
    konkreten Entscheidungen aus.
 4. Wählen Sie den Dateihandler und notieren Sie den Namen der globalen Override-Datei, in die er gehört.
-5. Wählen Sie den Sitzungs-Handler und schreiben Sie einen Satz dazu, was mit angemeldeten Benutzern passiert, wenn ein
+5. Wählen Sie den Session-Handler und schreiben Sie einen Satz dazu, was mit angemeldeten Benutzern passiert, wenn ein
    Knoten ausfällt.
 6. Legen Sie fest, welcher Knoten die Crontab ausführt und wo das Pausenverzeichnis liegt.
 7. Schreiben Sie das Bereitstellungsverfahren in vier Zeilen: auf welchen Knoten, in welcher Reihenfolge und wann der
@@ -143,7 +143,7 @@ Eine Entwurfsübung in Dreiergruppen. Es wird kein Cluster gebraucht.
 
 - [Mehrere Webknoten](../../../hosting/betrieb/mehrere-web-knoten.md)
 - [Clustering und gemeinsamer Speicher](../../../hosting/betrieb/clustering-und-gemeinsamer-speicher.md)
-- [Sitzungen](../../../../anleitungen/sitzungen.md): die Sitzungs-Handler.
+- [Sitzungen](../../../../anleitungen/sitzungen.md): die Session-Handler.
 - [Kubernetes](../../../hosting/modelle/kubernetes.md) und
   [Container, Docker und Podman](../../../hosting/modelle/container-docker-und-podman.md): Knoten als Container.
 
@@ -151,13 +151,13 @@ Eine Entwurfsübung in Dreiergruppen. Es wird kein Cluster gebraucht.
 
 - [Modul 7: Leistung und Skalierung](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -917,9 +917,9 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 ## Verwandte Seiten
 
 - [Velocity-Engines — Qbix, FrankenPHP, der eingebaute Server von PHP](velocity-engines.md)
-- [Befehle zur Serversteuerung](../../../eng-us/features/6.0/web-server-and-solr-commands.md) (`exp:webserver`, `exp:frankenphp`, `exp:solr`)
-- [Verhaltensänderungen vom 16. bis 30. September 2026: Engines und die Serverbefehle](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md#engines-and-the-server-commands)
-- [Der Velocity-Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Befehle zur Serversteuerung](../../funktionen/6.0/befehle-fuer-webserver-und-solr.md) (`exp:webserver`, `exp:frankenphp`, `exp:solr`)
+- [Verhaltensänderungen vom 16. bis 30. September 2026: Engines und die Serverbefehle](verhaltensaenderungen-2026-09b.md#engines-und-die-serverbefehle)
+- [Der Velocity-Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Anleitung zum Bereitstellen](../../anleitungen/bereitstellung.md)

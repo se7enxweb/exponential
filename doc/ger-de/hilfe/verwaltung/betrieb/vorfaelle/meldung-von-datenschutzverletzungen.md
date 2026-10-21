@@ -3,8 +3,8 @@ title: Meldung von Datenschutzverletzungen
 audience: government, admin, project-manager
 category: public-sector
 order: 70
-summary: Wie das technische Team die Entscheidung einer öffentlichen Stelle über die Meldung einer Verletzung des Schutzes personenbezogener Daten unterstützt - feststellen, welche Daten, wessen Daten und wann, mit dem Audit-Trail, den Logs und den Exporten, die Exponential bietet - ohne Rechtsberatung zu geben.
-keywords: Datenschutzverletzung, Verletzung des Schutzes personenbezogener Daten, Meldung, DSGVO, Aufsichtsbehörde, Datenschutzbeauftragte, Beweise, Audit-Trail, Zeitablauf, betroffene Personen, Vorfall, Datenschutz, data breach, personal data breach, notification, GDPR, supervisory authority, data protection officer, evidence, audit trail, timeline, affected persons, incident, privacy
+summary: Wie das technische Team die Entscheidung einer öffentlichen Stelle über die Meldung einer Verletzung des Schutzes personenbezogener Daten unterstützt - feststellen, welche Daten, wessen Daten und wann, mit dem Prüfprotokoll, den Logs und den Exporten, die Exponential bietet - ohne Rechtsberatung zu geben.
+keywords: Datenschutzverletzung, Verletzung des Schutzes personenbezogener Daten, Meldung, DSGVO, Aufsichtsbehörde, Datenschutzbeauftragte, Beweise, Prüfprotokoll, Zeitablauf, betroffene Personen, Vorfall, Datenschutz, data breach, personal data breach, notification, GDPR, supervisory authority, data protection officer, evidence, audit trail, timeline, affected persons, incident, privacy
 type: help
 ---
 # Meldung von Datenschutzverletzungen
@@ -46,7 +46,7 @@ Führen Sie ab dem ersten Anzeichen einen Zeitablauf.
 
 | Frage | Quelle in Exponential |
 |---|---|
-| Wann es begann | Audit-Trail (Anmeldungen im Kanal `access`, Änderungen im Kanal `content`), `security.log`, Logs des Webservers |
+| Wann es begann | Prüfprotokoll (Anmeldungen im Kanal `access`, Änderungen im Kanal `content`), `security.log`, Logs des Webservers |
 | Welche Konten gehandelt haben | `./console exp:audit search --login=<login> --allow-root-user`; die Konsole nach Benutzer gefiltert |
 | Was exportiert wurde | Ereignisse `data.export.csv` (Kontoliste, Exporte von Unterelementen) mit Zeilenzahlen; Audit-Exporte |
 | Welche Datensätze sich geändert haben | der Kanal `content`; Versionsseiten |
@@ -63,9 +63,9 @@ enthielt.
 |---|---|---|
 | Benutzerkonten (Name, Login, E-Mail, Passwort-Hash) | Benutzer und die Benutzerklasse | [Pflege von Benutzerkonten](../personen-und-berechtigungen/pflege-von-benutzerkonten.md) |
 | Formulareinsendungen | gesammelte Informationen | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
-| Newsletter-Abonnenten und Einwilligungsprotokoll | cjw_newsletter, E-Mail-Einstellungen | [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md) |
-| Shop-Bestellungen, falls ein Shop läuft | Bestellungen | [Shop-Dashboard](../../../../../eng-us/features/6.0/store-dashboard.md) |
-| Logs und Audit (maskierte Adressen, pseudonymisiert, wo konfiguriert) | `var/log/`, Audit | [Datenschutzstandard](../../../../../eng-us/standards/privacy.md) |
+| Newsletter-Abonnenten und Einwilligungsprotokoll | cjw_newsletter, E-Mail-Einstellungen | [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md) |
+| Shop-Bestellungen, falls ein Shop läuft | Bestellungen | [Shop-Dashboard](../../../../funktionen/6.0/shop-dashboard.md) |
+| Logs und Audit (maskierte Adressen, pseudonymisiert, wo konfiguriert) | `var/log/`, Audit | [Datenschutzstandard](../../../../standards/datenschutz.md) |
 | Datensicherungen von allem oben Genannten | Ihr Speicher für Datensicherungen | [Schlüssel und Geheimnisse in Datensicherungen](../datensicherung-und-wiederherstellung/schluessel-und-geheimnisse-in-datensicherungen.md) |
 
 Ihr Verzeichnis von Verarbeitungstätigkeiten sollte bereits angeben, welche davon Ihre Website enthält.
@@ -85,8 +85,9 @@ Ihr Verzeichnis von Verarbeitungstätigkeiten sollte bereits angeben, welche dav
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

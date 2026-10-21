@@ -7,17 +7,17 @@ Einstellungen, wie Sie sie einschalten, ihren Test und den LoveStack-Commit.
 
 „Ein“ bedeutet ohne jede Einstellung aktiv; „aus“ bedeutet verfügbar, aber inaktiv, bis Sie sie einschalten.
 
-## Sicherheit und Sessions
+## Sicherheit und Sitzungen
 
 | ID | Funktion | Für | Upgrade | Neue Installation |
 |---|---|---|---|---|
 | [L01](../lovestack.md#l01--knotendaten-aufrufe-können-eine-richtlinie-verlangen) | Die Knotendaten-Aufrufe `ezjscnode::load`, `::subtree`, `::updatepriority` können die Richtlinie *ezjscore / call* mit der Funktion `ezjscnode` verlangen (`RequirePolicy`) | Administratoren | aus (`RequirePolicy=disabled`) | ein; die Rolle Editor erhält die Richtlinie |
 | [L02](../lovestack.md#l02--die-registrierung-kann-eine-richtlinie-verlangen) | Die Registrierung kann die Richtlinie *User / Register* verlangen (`PolicyOmitListExclude[]`); Anmeldeseiten zeigen den Link zum Registrieren nur denen, die sich registrieren dürfen | Administratoren | aus (Registrierung offen, wie bisher) | ein (`PolicyOmitListExclude[]=user/register`) |
-| [L03](../lovestack.md#l03--das-abmelden-beendet-die-session-und-ihr-cookie) | Das Abmelden beendet die Session und lässt ihr Cookie ablaufen | alle | ein | ein |
+| [L03](../lovestack.md#l03--das-abmelden-beendet-die-sitzung-und-ihr-cookie) | Das Abmelden beendet die Sitzung und lässt ihr Cookie ablaufen | alle | ein | ein |
 | [L04](../lovestack.md#l04--ein-konto-pro-anmeldename) | Ein Konto pro Anmeldename: `exp:user-login-check` meldet Duplikate, `--fix-index` fügt den eindeutigen Index hinzu | Administratoren | Bericht verfügbar; Index auf Wunsch hinzugefügt | Index im Schema |
 | [L05](../lovestack.md#l05--hochgeladene-bilder-werden-anhand-ihres-inhalts-geprüft) | Hochgeladene Bilder werden anhand ihres Inhalts gegen `AllowedMIMETypes[]` geprüft (SVG nicht aufgeführt) | alle | ein | ein |
 | [L06](../lovestack.md#l06--vorschaubilder-von-paketen-werden-ebenso-geprüft) | Dieselbe Prüfung für Vorschaubilder von Paketen und Bilder von Style-Paketen | Administratoren | ein | ein |
-| [SameSite](../lovestack.md#die-session-einstellung-samesite-von-lovestack-wird-ebenfalls-gelesen) | `[Session] SameSite` von LoveStack wird gelesen, wenn `CookieSameSite` nicht gesetzt ist | Administratoren | ein | ein |
+| [SameSite](../lovestack.md#die-sitzungseinstellung-samesite-von-lovestack-wird-ebenfalls-gelesen) | `[Session] SameSite` von LoveStack wird gelesen, wenn `CookieSameSite` nicht gesetzt ist | Administratoren | ein | ein |
 
 ## Diagnose und Protokollierung
 

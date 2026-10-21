@@ -35,7 +35,7 @@ Wahl zwischen binären und dezimalen Präfixen aus `[UnitSettings]` in `site.ini
 
 Eingabe: die Zahl, über die Pipe. Gibt eine Zeichenkette zurück: die Zahl, ein Leerzeichen, das Präfixsymbol und das
 Einheitensymbol. Eine unbekannte Einheit protokolliert "No such unit" und lässt die Zahl unverändert; ein unbekanntes
-Präfix protokolliert "Prefix ... not found". Generierte Referenz: [si](../../../eng-us/examples/template-operators/si.md).
+Präfix protokolliert "Prefix ... not found". Generierte Referenz: [si](../../beispiele/template-operatoren/si.md).
 
 ## Einheiten und Präfixe
 
@@ -127,12 +127,13 @@ Die Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe.
 
 - [Locale-Operatoren](locale-operatoren.md): `l10n( 'number' )` ohne Einheit
 - [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md): `number_format`
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -71,7 +71,7 @@ etwas kaputt, das keine Wiederherstellung von Inhalten reparieren kann:
 
 | Datei | Enthält | Wenn sie verloren geht |
 |---|---|---|
-| `settings/override/audit.ini.append.php` | die Signatur- und Pseudonymschlüssel des Prüfprotokolls | die vorhandenen Aufzeichnungen lassen sich nicht mehr als unversehrt prüfen ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| `settings/override/audit.ini.append.php` | die Signatur- und Pseudonymschlüssel des Prüfprotokolls | die vorhandenen Aufzeichnungen lassen sich nicht mehr als unversehrt prüfen ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 | `settings/override/mailpreferences.ini.append.php` | `[SecretSettings] TokenSecret`, das Website-Geheimnis der E-Mail-Einstellungen | ein neues Geheimnis macht jeden Link in jeder bereits versandten Mail ungültig, und kein Eintrag der Unterdrückungsliste passt mehr ([E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md)) |
 | Der Konfigurationsbaum von Velocity (`/etc/vc` oder `var/vc/qbix/etc`, wenn `/etc/vc` nicht genutzt wird) | die Konfiguration der Website und, in seinem Verzeichnis `ssl/`, private Schlüssel von Zertifikaten (Modus `0600`) | HTTPS auf Velocity muss neu eingerichtet werden ([8.3.10](../../../installation/08-die-website-ausliefern.md#8310-der-konfigurationsbaum-etcvc-im-debian-stil)) |
 
@@ -127,7 +127,7 @@ Optionen dar.
 Für Kunden ohne Shell fügt die Erweiterung `git_manager` **Setup > Backup** (`/git_manager/backup`) hinzu: Backups mit
 Zeitstempel („Captions“) von Datenbank und Dateien, optionale Verschlüsselung mit GnuPG und bereinigte SQL-Dumps. Für den
 Datenbankteil braucht sie `mysqldump`, sie deckt also Websites auf MySQL und MariaDB ab
-([git_manager](../../../../eng-us/features/6.0/extensions/git_manager.md)). Ein Backup jeder Engine auf Seiten des Hosters bleibt die
+([git_manager](../../../funktionen/6.0/erweiterungen/git_manager.md)). Ein Backup jeder Engine auf Seiten des Hosters bleibt die
 eigene Aufgabe des Hosters.
 
 ## Checkliste
@@ -150,3 +150,11 @@ eigene Aufgabe des Hosters.
 - [Aufbau des Speichers](aufbau-des-speichers.md)
 - [Sicherheitshärtung: Backups und Wiederherstellung](../../sicherheitshaertung.md#sicherungen-und-wiederherstellung)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->
