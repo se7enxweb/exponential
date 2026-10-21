@@ -69,7 +69,7 @@ Stelle, zum Beispiel die Sitzungen eines Jahres.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Inhalte erstellen und bearbeiten: viele Elemente auf einmal](../../../inhalte-bearbeiten.md#viele-objekte-auf-einmal)
-- [Mehrfachbearbeitung](../../../../../eng-us/bc/6.0/multi-node-edit.md)
+- [Mehrfachbearbeitung](../../../../bc/6.0/mehrere-elemente-bearbeiten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

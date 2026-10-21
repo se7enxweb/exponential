@@ -62,7 +62,7 @@ Debug-Schalter.
 ## Verwandte Seiten
 
 - [Debug-Ausgabe in der Produktion](../../../../../eng-us/help/government/security/debug-output-in-production.md)
-- [Die Debug-Leiste von Exp](../../../../../eng-us/bc/6.0/debug-bar.md)
+- [Die Debug-Leiste von Exp](../../../../bc/6.0/debug-leiste.md)
 - [13.4 Debug-Ausgabe und Anzeige von Fehlern](../../../../installation/13-sicherheitshaertung.md#134-debug-ausgabe-und-fehleranzeige)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

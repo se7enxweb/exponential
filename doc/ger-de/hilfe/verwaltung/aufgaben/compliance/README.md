@@ -88,9 +88,9 @@ betreffen: [Die zweistufige Anmeldung für Mitarbeiter einschalten](../personen-
 
 ## Verwandte Seiten
 
-- [Behörden: hier beginnen](../../../../../eng-us/help/government/government-start-here.md) und der Index der Aufgaben ([Aufgaben](../README.md))
+- [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md) und der Index der Aufgaben ([Aufgaben](../README.md))
 - [Barrierefreiheit für Behörden](../../../../../eng-us/help/government/accessibility/README.md), [Sicherheit für Behörden](../../../../../eng-us/help/government/security/README.md),
-  [Datenschutz für Behörden](../../../../../eng-us/help/government/privacy/README.md), [Schriftgut und Archivierung](../../../../../eng-us/help/government/records-and-archiving/README.md)
+  [Datenschutz für Behörden](../../datenschutz/README.md), [Schriftgut und Archivierung](../../schriftgut-und-archivierung/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

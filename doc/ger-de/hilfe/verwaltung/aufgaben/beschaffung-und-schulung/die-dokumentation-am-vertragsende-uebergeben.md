@@ -39,7 +39,7 @@ type: help
    Staging, nur mit der übergebenen Dokumentation.
 5. **Halten Sie Lücken fest** und geben Sie dem Lieferanten ein Datum, sie zu schließen.
 6. **Zeichnen Sie ab**, wenn die Prüfungen bestanden sind; schließen Sie dann den Zugang des Lieferanten
-   ([Offboarding eines Auftragnehmers](../../../../../eng-us/help/government/checklists/offboarding-a-contractor.md)).
+   ([Offboarding eines Auftragnehmers](../../checklisten/einen-auftragnehmer-verabschieden.md)).
 
 ## Übergabeliste
 
@@ -52,7 +52,7 @@ type: help
 | Eigene Erweiterungen und Designs, in Ihrem Repository | **Setup > Upgrade-Prüfung** für geänderte Dateien des Kernels |
 | Ablauf des Deployments und Umgebungen | ein Deployment auf Staging ([Bereitstellung](../../../../anleitungen/bereitstellung.md)) |
 | Cronjobs und ihr Zeitplan | **Setup > Cronjobs** ([Cronjobs](../../../../anleitungen/cronjobs.md)) |
-| Ablauf von Sicherung und Wiederherstellung | ein Test der Wiederherstellung ([Bereitschaft der Sicherungen](../../../../../eng-us/help/government/checklists/backup-readiness.md)) |
+| Ablauf von Sicherung und Wiederherstellung | ein Test der Wiederherstellung ([Bereitschaft der Sicherungen](../../checklisten/bereitschaft-fuer-datensicherungen.md)) |
 | Dienste Dritter und ihre Konten | die Liste der aktiven Erweiterungen |
 | Offene Punkte, bekannte Risiken, geplante Arbeit | das Ticketsystem |
 
@@ -70,7 +70,7 @@ Dokumentation, die Ihre Organisation besitzt und getestet hat, genug, damit ein 
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Einen Ausstiegsplan schreiben](einen-ausstiegsplan-schreiben.md)
-- [Bereitschaft für den Ausstieg](../../../../../eng-us/help/government/checklists/exit-readiness.md)
+- [Bereitschaft für den Ausstieg](../../checklisten/bereitschaft-fuer-den-ausstieg.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

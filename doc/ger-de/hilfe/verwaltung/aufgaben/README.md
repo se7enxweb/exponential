@@ -14,7 +14,7 @@ Behörde mit Exponential erledigt, von „Die Tagesordnung einer Ratssitzung ver
 Mitarbeiter entfernen“ oder „Einen Ausstiegsplan schreiben“. Sie richten sich an Redakteure, Site-Administratoren,
 IT-Betrieb, Projektleiter und Beschaffungsverantwortliche.
 
-Zurück zum Anfang der Hilfe für Behörden: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+Zurück zum Anfang der Hilfe für Behörden: [Behörden: hier beginnen](../verwaltungen-hier-beginnen.md).
 
 ## Inhalt
 
@@ -47,7 +47,7 @@ Administration, admin3) zeigen dieselben Funktionen in einer anderen Anordnung; 
 |---|---|---|
 | [Veröffentlichen](veroeffentlichen/README.md) | Redakteure | die Tagesordnung einer Ratssitzung veröffentlichen, das Protokoll nach der Genehmigung veröffentlichen, eine öffentliche Bekanntmachung veröffentlichen, eine veröffentlichte Bekanntmachung korrigieren |
 | [Compliance](compliance/README.md) | Administratoren, Sicherheits- und Datenschutzbeauftragte | die zweistufige Anmeldung einschalten, die Content Security Policy durchsetzen, die Aufbewahrung der Logs festlegen, die Bekanntmachungen des Vorjahres archivieren |
-| [Sites und Sprachen](../../../../eng-us/help/government/tasks/sites-and-languages/README.md) | Administratoren, Website-Ersteller | eine Seite in die zweite Amtssprache übersetzen, eine Abteilungs-Site einrichten, eine Sprache mit Schreibrichtung von rechts nach links hinzufügen |
+| [Sites und Sprachen](sites-und-sprachen/README.md) | Administratoren, Website-Ersteller | eine Seite in die zweite Amtssprache übersetzen, eine Abteilungs-Site einrichten, eine Sprache mit Schreibrichtung von rechts nach links hinzufügen |
 | [Betrieb](betrieb/README.md) | IT-Betrieb | Wartungsmodus für ein Upgrade, eine Sicherung auf einem Testserver wiederherstellen, prüfen, ob die Cronjobs laufen |
 | [Personen und Berechtigungen](personen-und-berechtigungen/README.md) | Administratoren | eine Redakteursrolle für eine Abteilung anlegen, einen ausscheidenden Mitarbeiter entfernen, einen Freigabe-Workflow einrichten |
 | [Beschaffung und Schulung](beschaffung-und-schulung/README.md) | Projektleiter, Beschaffungsverantwortliche, Schulungskoordinatoren | eine Anforderung an die Barrierefreiheit schreiben, einen Proof of Concept durchführen, die Schulung der Redakteure planen |
@@ -81,7 +81,7 @@ Administration, admin3) zeigen dieselben Funktionen in einer anderen Anordnung; 
 
 ## Verwandte Seiten
 
-- [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md)
+- [Behörden: hier beginnen](../verwaltungen-hier-beginnen.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md) und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md)
 - [Eine Site betreiben](../../../anleitungen/betrieb-einer-website.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

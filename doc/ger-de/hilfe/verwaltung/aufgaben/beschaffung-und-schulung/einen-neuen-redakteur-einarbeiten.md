@@ -60,7 +60,7 @@ Zugangs.
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Neue Mitarbeiter einarbeiten](../../../../../eng-us/help/government/procurement/training/onboarding-new-staff.md)
-- [Vierteljährliche Überprüfung des Zugangs](../../../../../eng-us/help/government/checklists/quarterly-access-review.md)
+- [Vierteljährliche Überprüfung des Zugangs](../../checklisten/vierteljaehrliche-zugriffspruefung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

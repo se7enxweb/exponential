@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, mit der Entscheidung des Datenschutzbeauftragten. Das mitgelieferte Audit minimiert bereits
 (Adressen gekürzt, Sitzungen gehasht, keine Inhaltswerte). Das Profil für strengen Datenschutz aus der Anleitung behält
-noch weniger ([Datenschutz im Audit-Protokoll](../../../../../eng-us/help/government/privacy/audit-trail-privacy.md)).
+noch weniger ([Datenschutz im Audit-Protokoll](../../datenschutz/datenschutz-im-audit-trail.md)).
 
 ## Inhalt
 
@@ -70,9 +70,9 @@ noch weniger ([Datenschutz im Audit-Protokoll](../../../../../eng-us/help/govern
 
 ## Verwandte Seiten
 
-- [Anleitung zum Audit, 6.4 Strenger Datenschutz](../../../../../eng-us/bc/6.0/audit.md#64-strict-privacy)
-- [Datenschutz im Audit-Protokoll](../../../../../eng-us/help/government/privacy/audit-trail-privacy.md)
-- [Aufbewahrung des Audits](../../../../../eng-us/help/government/privacy/audit-retention.md)
+- [Anleitung zum Audit, 6.4 Strenger Datenschutz](../../../../bc/6.0/audit.md#64-strenger-datenschutz)
+- [Datenschutz im Audit-Protokoll](../../datenschutz/datenschutz-im-audit-trail.md)
+- [Aufbewahrung des Audits](../../datenschutz/aufbewahrung-von-audit-eintraegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

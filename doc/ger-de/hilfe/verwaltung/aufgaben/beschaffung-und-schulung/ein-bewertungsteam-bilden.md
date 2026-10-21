@@ -73,7 +73,7 @@ Lücken und einer Aufteilung der Kriterien.
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Bewertung](../../../../../eng-us/help/government/procurement/evaluation/README.md)
-- [Vor einer Ausschreibung](../../../../../eng-us/help/government/checklists/before-a-tender.md)
+- [Vor einer Ausschreibung](../../checklisten/vor-einer-ausschreibung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

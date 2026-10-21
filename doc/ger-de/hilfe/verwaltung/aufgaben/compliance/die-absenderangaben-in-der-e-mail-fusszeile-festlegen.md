@@ -51,9 +51,9 @@ Abbestellen. Name und Postanschrift der Organisation werden **leer** ausgeliefer
 
 ## Verwandte Seiten
 
-- [Abbestellen mit einem Klick](../../../../../eng-us/help/government/privacy/one-click-unsubscribe.md)
+- [Abbestellen mit einem Klick](../../datenschutz/abmelden-mit-einem-klick.md)
 - [13.13 E-Mail: Einwilligung und Sperrliste](../../../../installation/13-sicherheitshaertung.md#1313-mail-einwilligung-und-sperrliste)
-- [E-Mail-Kategorien und Opt-in](../../../../../eng-us/help/government/privacy/mail-categories-and-opt-in.md)
+- [E-Mail-Kategorien und Opt-in](../../datenschutz/e-mail-kategorien-und-opt-in.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

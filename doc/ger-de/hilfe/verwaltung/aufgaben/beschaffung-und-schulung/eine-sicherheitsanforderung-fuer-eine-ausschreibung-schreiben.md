@@ -48,7 +48,7 @@ Die Fakten stammen aus den [Sicherheitsstandards](../../../../../eng-us/standard
 5. **Verlangen Sie Tests**: wenn Ihre Regeln es verlangen, einen Penetrationstest der gelieferten Site durch einen
    unabhängigen Tester vor dem Go-live; das Projekt veröffentlicht keinen.
 6. **Verlangen Sie Pflichten bei Vorfällen**: Meldefrist und Mitwirkung
-   ([Bereitschaft für Vorfälle](../../../../../eng-us/help/government/checklists/incident-readiness.md)).
+   ([Bereitschaft für Vorfälle](../../checklisten/bereitschaft-fuer-vorfaelle.md)).
 
 ## Beispiel
 
@@ -66,7 +66,7 @@ SEC-05  Before acceptance, <an independent tester> shall test the Site against <
 ## Ergebnis
 
 Anforderungen, die ein Bieter mit einem Plan beantwortet und die Sie bei der Abnahme mit der
-[Checkliste zur Sicherheit](../../../../../eng-us/help/government/checklists/security-checklist.md) prüfen.
+[Checkliste zur Sicherheit](../../checklisten/checkliste-sicherheit.md) prüfen.
 
 ## Fallstricke
 

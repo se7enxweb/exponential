@@ -60,7 +60,7 @@ Bruch.
 ## Verwandte Seiten
 
 - [Integrität und Verifikation des Audits](../../../../../eng-us/help/government/security/audit-integrity-and-verification.md)
-- [Anleitung zum Audit, 4.4 Verifizieren und wiederherstellen](../../../../../eng-us/bc/6.0/audit.md#44-verify-and-restore)
+- [Anleitung zum Audit, 4.4 Verifizieren und wiederherstellen](../../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)
 - [Das Audit-Protokoll an ein SIEM weiterleiten](../../../../../eng-us/help/government/security/forwarding-audit-to-a-siem.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

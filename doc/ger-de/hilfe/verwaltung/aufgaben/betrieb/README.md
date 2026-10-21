@@ -99,7 +99,7 @@ Fehlerübersicht, wöchentlich das Sicherheits-Log, die monatliche Überprüfung
 Deployment und Wiederherstellung für Änderungsfenster bereit.
 
 Nach oben: [Aufgaben](../README.md) und [Exponential im öffentlichen Sektor betreiben](../../../../../eng-us/help/government/operations/README.md). Die
-Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../../../../eng-us/help/government/government-start-here.md).
+Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 - [Aufgaben zu Personen und Berechtigungen](../personen-und-berechtigungen/README.md)

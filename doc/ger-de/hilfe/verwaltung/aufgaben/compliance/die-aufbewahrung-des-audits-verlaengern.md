@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, auf Entscheidung der Verantwortlichen für das Schriftgut. Die mitgelieferte Aufbewahrung beträgt je
 Kanal 90 Tage live und 730 Tage archiviert; die mitgelieferten Kanalblöcke setzen beide Werte, also ändern Sie sie je
-Kanal ([Aufbewahrung des Audits](../../../../../eng-us/help/government/privacy/audit-retention.md)).
+Kanal ([Aufbewahrung des Audits](../../datenschutz/aufbewahrung-von-audit-eintraegen.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -60,9 +60,9 @@ Kanal ([Aufbewahrung des Audits](../../../../../eng-us/help/government/privacy/a
 
 ## Verwandte Seiten
 
-- [Aufbewahrung des Audits](../../../../../eng-us/help/government/privacy/audit-retention.md)
-- [Langfristige Aufbewahrung des Audits](../../../../../eng-us/help/government/records-and-archiving/long-term-audit-retention.md)
-- [Anleitung zum Audit, 4.3 Aufbewahrung](../../../../../eng-us/bc/6.0/audit.md#43-retention)
+- [Aufbewahrung des Audits](../../datenschutz/aufbewahrung-von-audit-eintraegen.md)
+- [Langfristige Aufbewahrung des Audits](../../schriftgut-und-archivierung/langfristige-aufbewahrung-von-audit-eintraegen.md)
+- [Anleitung zum Audit, 4.3 Aufbewahrung](../../../../bc/6.0/audit.md#43-aufbewahrung)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -11,7 +11,7 @@ type: help
 
 Für Redakteure und Administratoren, wenn eine Seite versehentlich entfernt wurde. Entfernte Inhalte bleiben im
 Papierkorb, bis er geleert oder bereinigt wird
-([Der Papierkorb und das Wiederherstellen von Inhalten](../../../../../eng-us/help/government/records-and-archiving/trash-and-restore.md)).
+([Der Papierkorb und das Wiederherstellen von Inhalten](../../schriftgut-und-archivierung/papierkorb-und-wiederherstellen.md)).
 Benutzerkonten liegen nie im Papierkorb.
 
 ## Inhalt
@@ -48,7 +48,7 @@ Benutzerkonten liegen nie im Papierkorb.
 
 ## Verwandte Seiten
 
-- [Die Ansicht des Papierkorbs](../../../../../eng-us/bc/6.0/trash.md)
+- [Die Ansicht des Papierkorbs](../../../../bc/6.0/papierkorb.md)
 - [Elemente im Papierkorb 90 Tage aufbewahren](elemente-im-papierkorb-90-tage-aufbewahren.md)
 - [Sicherungen und Wiederherstellung](../../../../../eng-us/help/government/security/backups-and-recovery.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

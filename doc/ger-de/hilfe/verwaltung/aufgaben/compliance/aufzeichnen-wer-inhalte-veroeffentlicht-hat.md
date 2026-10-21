@@ -13,7 +13,7 @@ Für Administratoren und Projektleiter. „Wer hat das veröffentlicht?“ ist l
 gestellte Frage, und die mitgelieferte Voreinstellung lässt sie ausgeschaltet:
 `settings/audit.ini [AuditEventSettings] Enabled[]` zeichnet Verschieben, Verstecken, Entfernen, Zustände und Sektionen
 auf, aber nicht das Anlegen und Veröffentlichen
-([Anleitung zum Audit, 6.2 Stark besuchte Site](../../../../../eng-us/bc/6.0/audit.md#62-busy-site)). Behörden möchten es meist
+([Anleitung zum Audit, 6.2 Stark besuchte Site](../../../../bc/6.0/audit.md#62-stark-ausgelastete-website)). Behörden möchten es meist
 eingeschaltet.
 
 ## Inhalt
@@ -57,8 +57,8 @@ Das Schreiben der Einstellung selbst wird als `system.setting.write` aufgezeichn
 ## Verwandte Seiten
 
 - [Das Audit-Protokoll für Behörden](../../../../../eng-us/help/government/security/audit-trail-for-public-bodies.md)
-- [Versionen und Inhaltsverlauf](../../../../../eng-us/help/government/records-and-archiving/versions-and-content-history.md)
-- [Anleitung zum Audit, 8 Referenz der Ereignisse](../../../../../eng-us/bc/6.0/audit.md#8-event-reference)
+- [Versionen und Inhaltsverlauf](../../schriftgut-und-archivierung/versionen-und-inhaltsgeschichte.md)
+- [Anleitung zum Audit, 8 Referenz der Ereignisse](../../../../bc/6.0/audit.md#8-referenz-der-ereignisse)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

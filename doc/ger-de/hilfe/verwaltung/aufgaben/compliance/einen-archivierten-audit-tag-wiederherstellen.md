@@ -12,7 +12,7 @@ type: help
 Für Administratoren. Audit-Tage, die älter als `LiveDays` (90) sind, werden in Archive mit einem signierten Manifest
 komprimiert; der Index der Konsole behält zwei Jahre an Zeilen. Um die Einträge eines archivierten Tages vollständig zu
 lesen, stellen Sie ihn wieder her
-([Anleitung zum Audit, 4.4 Verifizieren und wiederherstellen](../../../../../eng-us/bc/6.0/audit.md#44-verify-and-restore)).
+([Anleitung zum Audit, 4.4 Verifizieren und wiederherstellen](../../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)).
 
 ## Inhalt
 
@@ -57,8 +57,8 @@ lesen, stellen Sie ihn wieder her
 
 ## Verwandte Seiten
 
-- [Aufbewahrung des Audits](../../../../../eng-us/help/government/privacy/audit-retention.md)
-- [Langfristige Aufbewahrung des Audits](../../../../../eng-us/help/government/records-and-archiving/long-term-audit-retention.md)
+- [Aufbewahrung des Audits](../../datenschutz/aufbewahrung-von-audit-eintraegen.md)
+- [Langfristige Aufbewahrung des Audits](../../schriftgut-und-archivierung/langfristige-aufbewahrung-von-audit-eintraegen.md)
 - [Audit-Einträge für eine Untersuchung exportieren](audit-eintraege-fuer-eine-untersuchung-exportieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

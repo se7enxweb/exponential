@@ -67,7 +67,7 @@ Ein kurzer, konkreter Plan als Anlage zum Vertrag, dem ein Nachfolger folgen kö
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Ausstiegspläne](../../../../../eng-us/help/government/procurement/exit-plans/README.md)
-- [Bereitschaft für den Ausstieg](../../../../../eng-us/help/government/checklists/exit-readiness.md)
+- [Bereitschaft für den Ausstieg](../../checklisten/bereitschaft-fuer-den-ausstieg.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

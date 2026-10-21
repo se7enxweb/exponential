@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, die von Rechtsabteilung, Personalabteilung, Innenrevision oder Polizei um Aufzeichnungen darüber
 gebeten werden, was auf der Site geschehen ist. Die Methode steht in
-[Audit-Einträge als Beweismittel](../../../../../eng-us/help/government/records-and-archiving/audit-records-as-evidence.md); diese Seite ist der Ablauf.
+[Audit-Einträge als Beweismittel](../../schriftgut-und-archivierung/audit-eintraege-als-nachweis.md); diese Seite ist der Ablauf.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -58,8 +58,8 @@ gebeten werden, was auf der Site geschehen ist. Die Methode steht in
 
 ## Verwandte Seiten
 
-- [Audit-Einträge als Beweismittel](../../../../../eng-us/help/government/records-and-archiving/audit-records-as-evidence.md)
-- [Anleitung zum Audit: Exportieren](../../../../../eng-us/bc/6.0/audit.md#exporting)
+- [Audit-Einträge als Beweismittel](../../schriftgut-und-archivierung/audit-eintraege-als-nachweis.md)
+- [Anleitung zum Audit: Exportieren](../../../../bc/6.0/audit.md#exportieren)
 - [Das Audit-Protokoll verifizieren](das-audit-protokoll-verifizieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

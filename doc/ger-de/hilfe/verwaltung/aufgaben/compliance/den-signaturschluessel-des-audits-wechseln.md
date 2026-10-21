@@ -12,7 +12,7 @@ type: help
 Für Administratoren. Das Audit signiert seine täglichen Checkpoints und Archivmanifeste mit einem Schlüssel, der in
 `settings/override/audit.ini.append.php` liegt. Wechseln Sie ihn einmal im Jahr (das Dashboard erinnert Sie nach 365
 Tagen) und sofort, wenn er gelesen worden sein könnte
-([Anleitung zum Audit, 4.6 Schlüssel](../../../../../eng-us/bc/6.0/audit.md#46-keys)).
+([Anleitung zum Audit, 4.6 Schlüssel](../../../../bc/6.0/audit.md#46-schlüssel)).
 
 ## Inhalt
 
@@ -56,7 +56,7 @@ noch gebraucht werden. Der Pseudonym-Schlüssel ist ein anderer Schlüssel und w
 
 - [Integrität und Verifikation des Audits](../../../../../eng-us/help/government/security/audit-integrity-and-verification.md)
 - [Geheimnisse in settings/override](../../../../../eng-us/help/government/security/secrets-in-settings-override.md)
-- [Langfristige Aufbewahrung des Audits](../../../../../eng-us/help/government/records-and-archiving/long-term-audit-retention.md)
+- [Langfristige Aufbewahrung des Audits](../../schriftgut-und-archivierung/langfristige-aufbewahrung-von-audit-eintraegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

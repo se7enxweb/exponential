@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren. Suchstatistiken sind standardmäßig ausgeschaltet (`[SearchSettings] LogSearchStats=disabled`); wo
 sie eingeschaltet sind, behalten sie, was Besucher eingetippt haben, und das kann Namen und Aktenzeichen einschließen
-([Suchbegriffe](../../../../../eng-us/help/government/privacy/search-phrases.md)).
+([Suchbegriffe](../../datenschutz/suchbegriffe.md)).
 
 ## Inhalt
 
@@ -43,9 +43,9 @@ Die Seite zeigt keine Begriffe; nach neuen Suchen auf einem aufzeichnenden Sitea
 
 ## Verwandte Seiten
 
-- [Suchbegriffe](../../../../../eng-us/help/government/privacy/search-phrases.md)
+- [Suchbegriffe](../../datenschutz/suchbegriffe.md)
 - [URLs und Suchstatistiken](../../../../anleitungen/urls-und-aliase.md#5-suchstatistiken)
-- [Datenminimierung](../../../../../eng-us/help/government/privacy/data-minimization.md)
+- [Datenminimierung](../../datenschutz/datenminimierung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

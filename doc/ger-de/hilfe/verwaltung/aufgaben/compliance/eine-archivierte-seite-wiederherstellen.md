@@ -11,7 +11,7 @@ type: help
 
 Für Redakteure und Administratoren, wenn eine archivierte Bekanntmachung oder Seite wieder aktuell sein muss (ein wieder
 eröffnetes Beteiligungsverfahren, eine noch gültige Bekanntmachung). Wie das rückgängig gemacht wird, hängt davon ab, wie
-sie archiviert wurde ([Alte Bekanntmachungen archivieren](../../../../../eng-us/help/government/records-and-archiving/archiving-old-notices.md)).
+sie archiviert wurde ([Alte Bekanntmachungen archivieren](../../schriftgut-und-archivierung/alte-bekanntmachungen-archivieren.md)).
 
 ## Inhalt
 
@@ -52,8 +52,8 @@ wiederherstellen“.
 ## Verwandte Seiten
 
 - [Die Bekanntmachungen des Vorjahres archivieren](die-bekanntmachungen-des-vorjahres-archivieren.md)
-- [Inhalte verstecken](../../../../../eng-us/help/government/records-and-archiving/hiding-content.md)
-- [Objektzustände für Schriftgut](../../../../../eng-us/help/government/records-and-archiving/object-states-for-records.md)
+- [Inhalte verstecken](../../schriftgut-und-archivierung/inhalte-verbergen.md)
+- [Objektzustände für Schriftgut](../../schriftgut-und-archivierung/objektzustaende-fuer-schriftgut.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren und Verantwortliche für Formulare. Nichts entfernt Formulareinsendungen automatisch; eine monatliche
 oder vierteljährliche Routine hält sie innerhalb Ihrer Aufbewahrungsregeln
-([Formulare zur Informationssammlung und Datenschutz](../../../../../eng-us/help/government/privacy/information-collection-forms.md)).
+([Formulare zur Informationssammlung und Datenschutz](../../datenschutz/formulare-des-information-collectors.md)).
 
 ## Inhalt
 
@@ -48,7 +48,7 @@ oder vierteljährliche Routine hält sie innerhalb Ihrer Aufbewahrungsregeln
 ## Verwandte Seiten
 
 - [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)
-- [Formulareinsendungen als Schriftgut](../../../../../eng-us/help/government/records-and-archiving/collected-information-as-records.md)
+- [Formulareinsendungen als Schriftgut](../../schriftgut-und-archivierung/gesammelte-informationen-als-schriftgut.md)
 - [Formulareinsendungen für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/form-submissions.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

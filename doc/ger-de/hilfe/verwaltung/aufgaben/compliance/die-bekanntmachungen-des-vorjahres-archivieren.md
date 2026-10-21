@@ -11,7 +11,7 @@ type: help
 
 Für Redakteure und Administratoren. Eine jährliche Routine für Bekanntmachungen, Ankündigungen oder Nachrichten: Sie
 verlassen die aktuelle Liste, bleiben aber verfügbar und behalten ihren Verlauf
-([Alte Bekanntmachungen archivieren](../../../../../eng-us/help/government/records-and-archiving/archiving-old-notices.md)).
+([Alte Bekanntmachungen archivieren](../../schriftgut-und-archivierung/alte-bekanntmachungen-archivieren.md)).
 
 ## Inhalt
 
@@ -49,9 +49,9 @@ verlassen die aktuelle Liste, bleiben aber verfügbar und behalten ihren Verlauf
 
 ## Verwandte Seiten
 
-- [Alte Bekanntmachungen archivieren](../../../../../eng-us/help/government/records-and-archiving/archiving-old-notices.md)
+- [Alte Bekanntmachungen archivieren](../../schriftgut-und-archivierung/alte-bekanntmachungen-archivieren.md)
 - [Eine archivierte Seite wiederherstellen](eine-archivierte-seite-wiederherstellen.md)
-- [URLs erhalten](../../../../../eng-us/help/government/records-and-archiving/preserving-urls.md)
+- [URLs erhalten](../../schriftgut-und-archivierung/urls-erhalten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

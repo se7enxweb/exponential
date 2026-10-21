@@ -64,4 +64,4 @@ haben, den Code zu pflegen, zu ändern und weiterzugeben.
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Anforderungen zu Open Source und Lizenzierung](../../../../../eng-us/help/government/procurement/requirements/open-source-and-licensing-requirements.md)
-- [FAQ: Lizenzierung und Open Source](../../../../../eng-us/help/government/faq/licensing-and-open-source-faq.md)
+- [FAQ: Lizenzierung und Open Source](../../faq/faq-lizenzen-und-open-source.md)

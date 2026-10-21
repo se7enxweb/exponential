@@ -88,7 +88,7 @@ Anmeldung, bei Bedarf Kontosperre); dann Mitarbeiter hinzufügen. Nach dem Go-li
 Überprüfungen zur Routine.
 
 Nach oben: [Aufgaben](../README.md) und [Exponential im öffentlichen Sektor betreiben](../../../../../eng-us/help/government/operations/README.md). Die
-Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../../../../eng-us/help/government/government-start-here.md).
+Einstiegsseite des Bereichs ist [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 - [Aufgaben im Betrieb](../betrieb/README.md)

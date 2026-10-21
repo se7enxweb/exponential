@@ -42,7 +42,7 @@ erste Upgrade zeigt, ob die Site so gebaut wurde, dass sie sich aktualisieren l�
 7. **Schreiben Sie die Testliste**, die Sie nach jedem Upgrade verwenden (Startseite, Suche, ein Formular, Anmeldung,
    Veröffentlichen).
 8. **Halten Sie nach dem Upgrade** Stunden, Probleme und Korrekturen **fest**; verwenden Sie sie, um die folgenden
-   Upgrades zu budgetieren ([Bereitschaft für Upgrades](../../../../../eng-us/help/government/checklists/upgrade-readiness.md)).
+   Upgrades zu budgetieren ([Bereitschaft für Upgrades](../../checklisten/bereitschaft-fuer-aktualisierungen.md)).
 
 ## Ergebnis
 

@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren. Entfernte Inhalte warten im Papierkorb, bis jemand ihn leert. Ein Bereinigen nach Plan verhindert,
 dass der Papierkorb personenbezogene Daten für immer hält, und lässt dennoch Zeit, Fehler rückgängig zu machen
-([Die Ansicht des Papierkorbs](../../../../../eng-us/bc/6.0/trash.md#keeping-items-in-the-trash-for-a-while)).
+([Die Ansicht des Papierkorbs](../../../../bc/6.0/papierkorb.md#elemente-eine-zeit-lang-im-papierkorb-behalten)).
 
 ## Inhalt
 
@@ -59,7 +59,7 @@ dass der Papierkorb personenbezogene Daten für immer hält, und lässt dennoch 
 
 ## Verwandte Seiten
 
-- [Der Papierkorb und das Wiederherstellen von Inhalten](../../../../../eng-us/help/government/records-and-archiving/trash-and-restore.md)
+- [Der Papierkorb und das Wiederherstellen von Inhalten](../../schriftgut-und-archivierung/papierkorb-und-wiederherstellen.md)
 - [Ein Element aus dem Papierkorb wiederherstellen](ein-element-aus-dem-papierkorb-wiederherstellen.md)
 - [Cronjobs](../../../../anleitungen/cronjobs.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

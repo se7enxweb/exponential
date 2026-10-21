@@ -66,8 +66,8 @@ Anforderungen ([Eine Anforderung an die Barrierefreiheit schreiben](eine-anforde
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Checkliste zur Barrierefreiheit](../../../../../eng-us/help/government/checklists/accessibility-checklist.md)
-- [FAQ: Barrierefreiheit](../../../../../eng-us/help/government/faq/accessibility-faq.md)
+- [Checkliste zur Barrierefreiheit](../../checklisten/checkliste-barrierefreiheit.md)
+- [FAQ: Barrierefreiheit](../../faq/faq-barrierefreiheit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

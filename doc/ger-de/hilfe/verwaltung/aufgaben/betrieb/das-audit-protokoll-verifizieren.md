@@ -46,7 +46,7 @@ Für einen Tag eines Kanals: `--channel=access --date=2026-10-01`.
 | Fehler (Exit 2) | das Audit-Verzeichnis oder die Schlüssel lassen sich nicht lesen; Berechtigungen und `settings/override/audit.ini.append.php` prüfen |
 
 Ein Absturz oder ein voller Datenträger kann die letzte Zeile einer Datei beschädigen; die Anleitung zum Audit erklärt
-jede Art von Bruch ([Anleitung zum Audit, Abschnitt 4.4](../../../../../eng-us/bc/6.0/audit.md#44-verify-and-restore)).
+jede Art von Bruch ([Anleitung zum Audit, Abschnitt 4.4](../../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)).
 
 ## Verwandte Seiten
 - [Audit-Einträge für einen Prüfer exportieren](audit-eintraege-fuer-einen-pruefer-exportieren.md)

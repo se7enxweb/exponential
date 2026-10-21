@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren. Abgesehen von `404.log` (30 Tage), `security.log` (90) und `csp.log` (30) werden die Kernel-Logs
 nur nach Größe rotiert und haben standardmäßig keine Altersgrenze
-([Aufbewahrung der Logs](../../../../../eng-us/help/government/privacy/log-retention.md)).
+([Aufbewahrung der Logs](../../datenschutz/aufbewahrung-von-protokollen.md)).
 
 ## Inhalt
 
@@ -57,9 +57,9 @@ Nach der ersten Nacht zeigt das Audit `system.log.delete` für bereinigte Archiv
 
 ## Verwandte Seiten
 
-- [Aufbewahrung der Logs](../../../../../eng-us/help/government/privacy/log-retention.md)
+- [Aufbewahrung der Logs](../../datenschutz/aufbewahrung-von-protokollen.md)
 - [Rotation und Bereinigung der Logs](../../../../../eng-us/features/6.0/log-rotation.md)
-- [Aufbewahrung personenbezogener Daten: ein Überblick](../../../../../eng-us/help/government/privacy/retention-overview.md)
+- [Aufbewahrung personenbezogener Daten: ein Überblick](../../datenschutz/aufbewahrung-im-ueberblick.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

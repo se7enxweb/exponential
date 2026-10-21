@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, die ein Auskunftsersuchen einer Mitarbeiterin, eines Mitarbeiters oder eines registrierten
 Benutzers beantworten. Das Audit hat dafür einen eigenen Export
-([Anleitung zum Audit, 4.12 Aufgaben zu Datenschutz und DSGVO](../../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)).
+([Anleitung zum Audit, 4.12 Aufgaben zu Datenschutz und DSGVO](../../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -52,8 +52,8 @@ selbst aufgezeichnet (`system.audit.export`).
 
 ## Verwandte Seiten
 
-- [Das Auskunftsrecht](../../../../../eng-us/help/government/privacy/right-of-access.md)
-- [Datenschutz im Audit-Protokoll](../../../../../eng-us/help/government/privacy/audit-trail-privacy.md)
+- [Das Auskunftsrecht](../../datenschutz/auskunftsrecht.md)
+- [Datenschutz im Audit-Protokoll](../../datenschutz/datenschutz-im-audit-trail.md)
 - [Ein Auskunftsersuchen zu E-Mail-Einstellungen beantworten](ein-auskunftsersuchen-zu-e-mail-einstellungen-beantworten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

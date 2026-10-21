@@ -83,7 +83,7 @@ Eine Anforderung, die ein Bieter ehrlich beantworten kann und die Sie bei der Ab
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Anforderungen an die Barrierefreiheit](../../../../../eng-us/help/government/procurement/requirements/accessibility-requirements.md)
-- [Checkliste zur Barrierefreiheit](../../../../../eng-us/help/government/checklists/accessibility-checklist.md)
+- [Checkliste zur Barrierefreiheit](../../checklisten/checkliste-barrierefreiheit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

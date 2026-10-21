@@ -12,7 +12,7 @@ type: help
 Für Administratoren, wenn jemand per Telefon, Brief oder E-Mail bittet, nichts mehr zu erhalten. Die Sperrliste
 blockiert optionale E-Mails, Bestätigungen und E-Mails vom Typ „Schicken Sie mir einen Link“ an die Adresse; notwendige
 E-Mails (Zurücksetzen des Passworts, Bestellungen) gehen weiterhin hinaus
-([Die Sperrliste](../../../../../eng-us/help/government/privacy/suppression-list.md)).
+([Die Sperrliste](../../datenschutz/sperrliste.md)).
 
 ## Inhalt
 
@@ -51,8 +51,8 @@ Nur auf Wunsch der Person: **Aufheben** auf der Seite der Sperrliste oder
 
 ## Verwandte Seiten
 
-- [Die Sperrliste](../../../../../eng-us/help/government/privacy/suppression-list.md)
-- [Abbestellen mit einem Klick](../../../../../eng-us/help/government/privacy/one-click-unsubscribe.md)
+- [Die Sperrliste](../../datenschutz/sperrliste.md)
+- [Abbestellen mit einem Klick](../../datenschutz/abmelden-mit-einem-klick.md)
 - [E-Mail-Einstellungen für Administratoren: die Sperrliste](../../../../anleitungen/mail-einstellungen-administrator.md#7-die-sperrliste)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

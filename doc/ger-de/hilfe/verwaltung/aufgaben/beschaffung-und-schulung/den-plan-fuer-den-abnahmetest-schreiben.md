@@ -46,12 +46,12 @@ darauf verweisen kann; verfeinern Sie ihn während des Aufbaus. Klausel:
 
 | Bereich | Beispieltests | Hilfe |
 |---|---|---|
-| Funktion | jeden Inhaltstyp anlegen, freigeben und veröffentlichen; Formulare; Suche; Sprachen | [Checkliste zur redaktionellen Qualität](../../../../../eng-us/help/government/checklists/editorial-quality.md) |
-| Barrierefreiheit | die vereinbarte Bewertung von Templates und wichtigen Seiten; Aufgaben nur mit der Tastatur | [Checkliste zur Barrierefreiheit](../../../../../eng-us/help/government/checklists/accessibility-checklist.md) |
-| Sicherheit | Grundhärtung, 2FA für Administratoren, Header, Kette des Audits verifiziert | [Checkliste zur Sicherheit](../../../../../eng-us/help/government/checklists/security-checklist.md) |
-| Datenschutz | Texte zur Einwilligung, Dritte wie genehmigt, Einstellungen zur Aufbewahrung | [Checkliste zum Datenschutz](../../../../../eng-us/help/government/checklists/privacy-checklist.md) |
+| Funktion | jeden Inhaltstyp anlegen, freigeben und veröffentlichen; Formulare; Suche; Sprachen | [Checkliste zur redaktionellen Qualität](../../checklisten/redaktionelle-qualitaet.md) |
+| Barrierefreiheit | die vereinbarte Bewertung von Templates und wichtigen Seiten; Aufgaben nur mit der Tastatur | [Checkliste zur Barrierefreiheit](../../checklisten/checkliste-barrierefreiheit.md) |
+| Sicherheit | Grundhärtung, 2FA für Administratoren, Header, Kette des Audits verifiziert | [Checkliste zur Sicherheit](../../checklisten/checkliste-sicherheit.md) |
+| Datenschutz | Texte zur Einwilligung, Dritte wie genehmigt, Einstellungen zur Aufbewahrung | [Checkliste zum Datenschutz](../../checklisten/checkliste-datenschutz.md) |
 | Leistung | wichtige Seiten unter der vereinbarten Last, gemessen mit `exp:benchmark` | [Benchmarking](../../../../anleitungen/benchmarking.md) |
-| Betrieb | Sicherung und Wiederherstellung auf Staging, ein routinemäßiges Update, Cronjobs, Monitoring | [Bereitschaft der Sicherungen](../../../../../eng-us/help/government/checklists/backup-readiness.md), [Bereitschaft für Upgrades](../../../../../eng-us/help/government/checklists/upgrade-readiness.md) |
+| Betrieb | Sicherung und Wiederherstellung auf Staging, ein routinemäßiges Update, Cronjobs, Monitoring | [Bereitschaft der Sicherungen](../../checklisten/bereitschaft-fuer-datensicherungen.md), [Bereitschaft für Upgrades](../../checklisten/bereitschaft-fuer-aktualisierungen.md) |
 | Aktualisierbarkeit | **Setup > Upgrade-Prüfung** zeigt keine geänderten Dateien des Kernels | [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
 | Dokumentation und Übergabe | Dokumente gegen die Site geprüft; Administratorkonten für Ihre Mitarbeiter | [Die Dokumentation am Vertragsende übergeben](die-dokumentation-am-vertragsende-uebergeben.md) |
 | Ausstieg | eine Übung des Exports auf Staging | [Eine Ausstiegsübung durchführen](eine-ausstiegsuebung-durchfuehren.md) |
@@ -69,7 +69,7 @@ Ein von beiden Parteien vereinbarter Plan, der „fertig“ in eine Liste bestan
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Checkliste für den Go-live einer öffentlichen Site](../../../../../eng-us/help/government/checklists/go-live-checklist.md)
+- [Checkliste für den Go-live einer öffentlichen Site](../../checklisten/checkliste-fuer-den-livegang.md)
 - [Anforderungen Nachweisen zuordnen](../../../../../eng-us/help/government/procurement/requirements/mapping-requirements-to-evidence.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

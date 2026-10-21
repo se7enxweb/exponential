@@ -10,7 +10,7 @@ type: help
 # Ein Auskunftsersuchen zu E-Mail-Einstellungen beantworten
 
 Für Administratoren, die Datenschutzanfragen bearbeiten. Die E-Mail-Einstellungen und das Einwilligungsprotokoll sind
-der Teil der Daten einer Person, den Exponential direkt exportiert ([Das Auskunftsrecht](../../../../../eng-us/help/government/privacy/right-of-access.md)).
+der Teil der Daten einer Person, den Exponential direkt exportiert ([Das Auskunftsrecht](../../datenschutz/auskunftsrecht.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -60,9 +60,9 @@ Die Datei wird mit dem Modus 0600 geschrieben. Die Ausgabe der Konsole verbirgt 
 
 ## Verwandte Seiten
 
-- [Das Auskunftsrecht](../../../../../eng-us/help/government/privacy/right-of-access.md)
+- [Das Auskunftsrecht](../../datenschutz/auskunftsrecht.md)
 - [E-Mail-Einstellungen für Administratoren: Anfragen](../../../../anleitungen/mail-einstellungen-administrator.md#6-anfragen-nach-dem-datenschutzrecht)
-- [Einwilligungsnachweise für E-Mails](../../../../../eng-us/help/government/privacy/consent-records-for-mail.md)
+- [Einwilligungsnachweise für E-Mails](../../datenschutz/einwilligungsnachweise-fuer-e-mail.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

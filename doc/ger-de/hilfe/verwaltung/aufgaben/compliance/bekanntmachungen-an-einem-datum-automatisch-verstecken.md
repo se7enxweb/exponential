@@ -12,7 +12,7 @@ type: help
 Für Administratoren und Entwickler. Das Cronjob-Skript `hide.php` des Kernels (im Standardteil der Cronjobs) versteckt
 Objekte ausgewählter Klassen, deren Datumsattribut verstrichen ist; es tut nichts, bevor es konfiguriert ist. Versteckte
 Bekanntmachungen bleiben mit ihrem Verlauf im Baum und lassen sich wieder einblenden
-([Alte Bekanntmachungen archivieren](../../../../../eng-us/help/government/records-and-archiving/archiving-old-notices.md#pattern-hide-on-a-date)).
+([Alte Bekanntmachungen archivieren](../../schriftgut-und-archivierung/alte-bekanntmachungen-archivieren.md#muster-an-einem-datum-verstecken)).
 
 ## Inhalt
 
@@ -59,8 +59,8 @@ Nicht zu verwechseln mit `unpublish.php` und `[UnpublishSettings]`, die Objekte 
 
 ## Verwandte Seiten
 
-- [Alte Bekanntmachungen archivieren](../../../../../eng-us/help/government/records-and-archiving/archiving-old-notices.md)
-- [Inhalte verstecken](../../../../../eng-us/help/government/records-and-archiving/hiding-content.md)
+- [Alte Bekanntmachungen archivieren](../../schriftgut-und-archivierung/alte-bekanntmachungen-archivieren.md)
+- [Inhalte verstecken](../../schriftgut-und-archivierung/inhalte-verbergen.md)
 - [Cronjobs](../../../../anleitungen/cronjobs.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

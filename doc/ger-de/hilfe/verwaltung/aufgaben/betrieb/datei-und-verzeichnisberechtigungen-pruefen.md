@@ -59,7 +59,7 @@ define( 'EZP_DIR_MODE_MAX', 0750 );
 define( 'EZP_FILE_MODE_MAX', 0640 );
 ```
 
-und schränken Sie das Bestehende einmal ein ([Grenzen für Dateimodi](../../../../../eng-us/bc/6.0/file-modes.md)). Mit
+und schränken Sie das Bestehende einmal ein ([Grenzen für Dateimodi](../../../../bc/6.0/dateimodi.md)). Mit
 eingeschaltetem [ManagedByDeployment](die-konfiguration-mit-managedbydeployment-sperren.md) müssen `settings/` und `design/`
 für PHP überhaupt nicht beschreibbar sein.
 

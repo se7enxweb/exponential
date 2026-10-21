@@ -12,7 +12,7 @@ type: help
 Für Administratoren, nachdem ein Löschantrag geprüft und genehmigt wurde. Das Entfernen eines Benutzerobjekts ist in
 Exponential **endgültig**: Benutzer kommen nie in den Papierkorb. Wenn das Konto nur nicht mehr funktionieren soll,
 deaktivieren Sie es oder verwenden Sie stattdessen Deaktivieren und verschieben
-([Das Recht auf Löschung](../../../../../eng-us/help/government/privacy/right-to-erasure.md)).
+([Das Recht auf Löschung](../../datenschutz/recht-auf-loeschung.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -59,7 +59,7 @@ deaktivieren Sie es oder verwenden Sie stattdessen Deaktivieren und verschieben
 
 ## Verwandte Seiten
 
-- [Das Recht auf Löschung](../../../../../eng-us/help/government/privacy/right-to-erasure.md)
+- [Das Recht auf Löschung](../../datenschutz/recht-auf-loeschung.md)
 - [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
 - [E-Mail-Daten zu einer Adresse löschen](e-mail-daten-zu-einer-adresse-loeschen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

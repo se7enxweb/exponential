@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren, auf Wunsch der Verantwortlichen für das Schriftgut. Wenn ein Objekt sein Versionslimit erreicht,
 entfernt das Veröffentlichen die älteste archivierte Version. Voreingestellt sind 45 je Objekt; Klassen können ein
-eigenes Limit haben ([Das Limit der Versionsgeschichte](../../../../../eng-us/help/government/records-and-archiving/version-history-limit.md)).
+eigenes Limit haben ([Das Limit der Versionsgeschichte](../../schriftgut-und-archivierung/grenze-der-versionsgeschichte.md)).
 
 ## Inhalt
 
@@ -49,8 +49,8 @@ Schriftgut aus: Das entfernt archivierte Versionen über dem neuen Limit.
 
 ## Verwandte Seiten
 
-- [Das Limit der Versionsgeschichte](../../../../../eng-us/help/government/records-and-archiving/version-history-limit.md)
-- [Versionen und Inhaltsverlauf](../../../../../eng-us/help/government/records-and-archiving/versions-and-content-history.md)
+- [Das Limit der Versionsgeschichte](../../schriftgut-und-archivierung/grenze-der-versionsgeschichte.md)
+- [Versionen und Inhaltsverlauf](../../schriftgut-und-archivierung/versionen-und-inhaltsgeschichte.md)
 - [Eine frühere Version einer Seite zurückholen](eine-fruehere-version-einer-seite-zurueckholen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -72,7 +72,7 @@ Hostnamen der Installation benannt ist): `./console exp:velocity config get Depl
 - [Die Caches nach einem Deployment vorwärmen](die-caches-nach-einem-deployment-vorwaermen.md)
 - [Caches nach einer Änderung an Einstellungen leeren](caches-nach-einer-aenderung-an-einstellungen-leeren.md)
 - [Änderungen ausrollen (Hosting)](../../../hosting/betrieb/aenderungen-ausrollen.md)
-- [Engines von Velocity: eine PHP-Änderung ausrollen](../../../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy)
+- [Engines von Velocity: eine PHP-Änderung ausrollen](../../../../bc/6.0/velocity-engines.md#welches-php-fpm)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -56,7 +56,7 @@ Zeiten ohne Offset sind auf der Kommandozeile UTC und in der Konsole die Zeitzon
 
 ## Verwandte Seiten
 
-- [Anleitung zum Audit: die Oberfläche der Administration](../../../../../eng-us/bc/6.0/audit.md#32-the-admin-interface)
+- [Anleitung zum Audit: die Oberfläche der Administration](../../../../bc/6.0/audit.md#32-die-administrationsoberfläche)
 - [Audit-Einträge für eine Untersuchung exportieren](audit-eintraege-fuer-eine-untersuchung-exportieren.md)
 - [Aufzeichnen, wer Inhalte veröffentlicht hat](aufzeichnen-wer-inhalte-veroeffentlicht-hat.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

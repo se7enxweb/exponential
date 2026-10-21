@@ -60,8 +60,8 @@ automatisch; siehe „Ein Benutzerkonto löschen“.)
 
 ## Verwandte Seiten
 
-- [Das Recht auf Löschung](../../../../../eng-us/help/government/privacy/right-to-erasure.md)
-- [Die Sperrliste](../../../../../eng-us/help/government/privacy/suppression-list.md)
+- [Das Recht auf Löschung](../../datenschutz/recht-auf-loeschung.md)
+- [Die Sperrliste](../../datenschutz/sperrliste.md)
 - [E-Mail-Einstellungen für Administratoren: Anfragen](../../../../anleitungen/mail-einstellungen-administrator.md#6-anfragen-nach-dem-datenschutzrecht)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -35,7 +35,7 @@ oft der größte Kostenblock, und der einzige, der nicht in Rechnung gestellt wi
 2. **Schätzen Sie die Routinestunden je Rolle und Monat** aus den Aufgaben, die sie erledigen. Für Administratoren
    nehmen Sie die Routine aus
    [Eine Site über einen mehrjährigen Vertrag aktuell halten](../../../../../eng-us/help/government/procurement/lifecycle/keeping-a-site-current.md)
-   und der [Vierteljährlichen Überprüfung des Zugangs](../../../../../eng-us/help/government/checklists/quarterly-access-review.md).
+   und der [Vierteljährlichen Überprüfung des Zugangs](../../checklisten/vierteljaehrliche-zugriffspruefung.md).
 3. **Nehmen Sie die Schulungsstunden aus dem Katalog**: Redakteure 101 etwa 19,5 Stunden, Redakteure 201 etwa 16,
    Site-Administration etwa 30, Hosting und Betrieb etwa 20 ([Kurskatalog](../../../../../eng-us/help/trainers/course-catalogue.md)).
 4. **Rechnen Sie die Fluktuation hinzu**: wie viele neue Personen je Jahr, von denen jede eine Einarbeitung braucht

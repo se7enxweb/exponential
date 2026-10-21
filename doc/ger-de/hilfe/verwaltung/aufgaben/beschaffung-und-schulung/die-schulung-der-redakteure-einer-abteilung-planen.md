@@ -23,7 +23,7 @@ Abteilung mit dem Veröffentlichen beginnt. Kurse: [Redakteure 101](../../../../
 ## Bevor Sie beginnen
 
 - Bereich, Sektion und Rollen der Abteilung existieren
-  ([Eine Abteilung einführen](../../../../../eng-us/help/government/checklists/onboarding-a-department.md)).
+  ([Eine Abteilung einführen](../../checklisten/eine-abteilung-einfuehren.md)).
 - Eine Schulungsinstallation ([Kurzkarte zum Labor](../../../../../eng-us/help/trainers/lab-quick-card.md)).
 
 ## Schritte
@@ -64,7 +64,7 @@ geschult wurde.
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Ein Schulungsplan für eine Behörde](../../../../../eng-us/help/government/procurement/training/training-plan-for-a-public-body.md)
-- [Checkliste zur redaktionellen Qualität](../../../../../eng-us/help/government/checklists/editorial-quality.md)
+- [Checkliste zur redaktionellen Qualität](../../checklisten/redaktionelle-qualitaet.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

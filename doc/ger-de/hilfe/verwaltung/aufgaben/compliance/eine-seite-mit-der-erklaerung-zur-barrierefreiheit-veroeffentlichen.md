@@ -62,7 +62,7 @@ Muster Ihres Landes.
 
 - [Eine Erklärung zur Barrierefreiheit schreiben](../../../../../eng-us/help/government/accessibility/writing-an-accessibility-statement.md)
 - [Überwachung und Rückmeldungen](../../../../../eng-us/help/government/accessibility/monitoring-and-feedback.md)
-- [URLs erhalten](../../../../../eng-us/help/government/records-and-archiving/preserving-urls.md)
+- [URLs erhalten](../../schriftgut-und-archivierung/urls-erhalten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

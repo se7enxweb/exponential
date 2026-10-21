@@ -47,7 +47,7 @@ Sie machen aus einer davon einen neuen Entwurf ([Versionen eines Objekts](../../
 
 ## Verwandte Seiten
 
-- [Versionen und Inhaltsverlauf](../../../../../eng-us/help/government/records-and-archiving/versions-and-content-history.md)
+- [Versionen und Inhaltsverlauf](../../schriftgut-und-archivierung/versionen-und-inhaltsgeschichte.md)
 - [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md)
 - [Das Versionslimit für Bekanntmachungen anheben](das-versionslimit-fuer-bekanntmachungen-anheben.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

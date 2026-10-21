@@ -26,7 +26,7 @@ Fakten stammen aus den [Datenschutzstandards](../../../../../eng-us/standards/pr
 ## Bevor Sie beginnen
 
 - Listen Sie die personenbezogenen Daten auf, die die Site halten wird: Konten, Formulareinsendungen,
-  Newsletter-Abonnenten, Logs ([Checkliste zum Datenschutz](../../../../../eng-us/help/government/checklists/privacy-checklist.md)).
+  Newsletter-Abonnenten, Logs ([Checkliste zum Datenschutz](../../checklisten/checkliste-datenschutz.md)).
 - Wissen Sie, was die Software bietet: Einwilligungsprotokoll, E-Mail-Kategorien mit Opt-in, Löschung beim Entfernen des
   Kontos, Maskierung der Logs und Einstellungen zur Aufbewahrung; und was ihr fehlt: kein „alle meine Daten
   exportieren“, kein Cookie-Banner ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md#known-gaps)).

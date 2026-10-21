@@ -71,7 +71,7 @@ Personalwechsel die Warnungen nicht unterbrechen. Leeren Sie danach den INI-Cach
 - [Das Audit-Protokoll verifizieren](das-audit-protokoll-verifizieren.md)
 - [Audit-Warnungen](../../../../../eng-us/help/government/operations/monitoring/audit-alerts.md)
 - [Probleme mit E-Mails](../../../../../eng-us/help/government/operations/incidents/mail-problems.md)
-- [Anleitung zum Audit, Abschnitt 4.5](../../../../../eng-us/bc/6.0/audit.md#45-alerts-and-their-recipients)
+- [Anleitung zum Audit, Abschnitt 4.5](../../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

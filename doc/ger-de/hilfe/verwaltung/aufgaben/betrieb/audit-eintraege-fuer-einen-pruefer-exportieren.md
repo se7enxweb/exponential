@@ -44,7 +44,7 @@ Nachweis, dass das Protokoll unversehrt war.
 Jeder Export gibt die Zahl der Einträge und den SHA-256 der Datei aus. Das Format `bundle` schreibt `records.jsonl` mit
 einem signierten `manifest.json`, was zu Nachweisen passt, die später geprüft werden müssen. `export` nimmt dieselben
 Filter wie `search` (`--channel`, `--name`, `--user`, `--login`, `--object`, `--result`, `--from`, `--to`, `--query` ...)
-([die Anleitung zum Audit, Abschnitt 3.3](../../../../../eng-us/bc/6.0/audit.md#33-the-command-expaudit)). Für ein
+([die Anleitung zum Audit, Abschnitt 3.3](../../../../bc/6.0/audit.md#33-der-befehl-expaudit)). Für ein
 Auskunftsersuchen einer betroffenen Person liefert `--subject-user=<id>` jeden Eintrag von oder über diesen Benutzer.
 
 ## Das Nachweispaket
