@@ -68,7 +68,7 @@ Jeder Kursüberblick listet kürzere Zeitpläne auf, die aus seinen Modulen zusa
 
 1. Lesen Sie den Kursüberblick und seinen Lesepfad.
 2. Proben Sie jede Übung mit der Version, die Sie unterrichten werden
-   ([Übungen schreiben, die funktionieren](../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/writing-exercises-that-work.md)).
+   ([Übungen schreiben, die funktionieren](train-the-trainer/modul-03-einen-kurs-gestalten/uebungen-schreiben-die-funktionieren.md)).
 3. Bauen Sie die Übungsumgebung auf ([Modul 2 von Train the Trainer](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md)).
 4. Führen Sie die Module nach ihren Zeitplänen durch; prüfen Sie das Verständnis mit den Quizfragen und den
    erwarteten Ergebnissen.

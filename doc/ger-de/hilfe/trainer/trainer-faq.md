@@ -30,7 +30,7 @@ Ja, und Ihre Fassung unter derselben Lizenz teilen, als geändert gekennzeichnet
 
 **Eine Lektion ist für die aktuelle Version falsch. Was nun?**
 Korrigieren Sie sie mit **Auf GitHub bearbeiten**, oder melden Sie es auf der Seite **Fehler melden** des Hilfe-Centers
-([Lektion 3.5](../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/adapting-and-improving-these-courses.md)).
+([Lektion 3.5](train-the-trainer/modul-03-einen-kurs-gestalten/diese-kurse-anpassen-und-verbessern.md)).
 
 ## Zur Übungsumgebung
 

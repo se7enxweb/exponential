@@ -18,7 +18,7 @@ erklärt.
 - [ ] Kurs und Module für die Gruppe gewählt ([Lektion 1.3](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihre-teilnehmenden-kennen.md))
 - [ ] Umfrage vor dem Kurs verschickt, einschließlich der Frage nach Vorkehrungen ([Lektion 5.4](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md))
 - [ ] Release gewählt; Aufbau der Übungsumgebung gewählt: eine Installation pro Teilnehmer oder eine gemeinsame Website ([Lektion 2.7](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/gemeinsamer-server-oder-einer-pro-teilnehmer.md))
-- [ ] Jede Übung mit diesem Release geprobt ([Lektion 3.4](../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/writing-exercises-that-work.md))
+- [ ] Jede Übung mit diesem Release geprobt ([Lektion 3.4](train-the-trainer/modul-03-einen-kurs-gestalten/uebungen-schreiben-die-funktionieren.md))
 - [ ] Rechneranforderungen an die Teilnehmenden geschickt ([Lektion 2.1](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/anforderungen-an-einen-schulungsrechner.md))
 - [ ] Handouts barrierefrei und korrekt lizenziert ([Lektion 5.1](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accessible-course-materials.md), [Lektion 1.4](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihr-material-und-die-gfdl.md))
 
@@ -33,7 +33,7 @@ erklärt.
 ## Checkliste: am Kurstag
 
 - [ ] Erste Stunde: Alle sind angemeldet, haben ein eigenes Passwort und haben das Hilfe-Center gefunden ([Lektion 4.1](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/running-the-first-hour.md))
-- [ ] Mindestens jede Stunde eine Pause; Puffer nach Installationen ([Lektion 3.3](../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/timing-and-pacing.md))
+- [ ] Mindestens jede Stunde eine Pause; Puffer nach Installationen ([Lektion 3.3](train-the-trainer/modul-03-einen-kurs-gestalten/zeitplanung-und-tempo.md))
 - [ ] Erwartete Ergebnisse auf jedem Bildschirm geprüft ([Lektion 6.1](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/checking-understanding-during-class.md))
 - [ ] Feedbackzettel am Ende eingesammelt ([Lektion 6.3](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md))
 

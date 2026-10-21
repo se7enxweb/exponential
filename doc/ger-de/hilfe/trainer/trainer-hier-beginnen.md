@@ -92,7 +92,7 @@ zeigt, wie Sie herausfinden, wer Ihre Teilnehmenden sind.
 
 1. **Unterrichten Sie am echten System.** Proben Sie jede Übung mit der Version, die Sie unterrichten. Wenn eine
    Lektion und die Software nicht übereinstimmen, hat die Software recht, und die Lektion wird korrigiert
-   ([Diese Kurse anpassen und verbessern](../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/adapting-and-improving-these-courses.md)).
+   ([Diese Kurse anpassen und verbessern](train-the-trainer/modul-03-einen-kurs-gestalten/diese-kurse-anpassen-und-verbessern.md)).
 2. **Verwenden Sie Schulungsinstallationen.** Niemals eine Live-Website, niemals echte Kundendaten, niemals ein
    gemeinsam genutztes Administratorkonto ([Sicher vorführen](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/demonstrating-safely.md)).
 3. **Testkonten verwenden `example.invalid`.** Keine Übung darf E-Mails an eine echte Person senden.

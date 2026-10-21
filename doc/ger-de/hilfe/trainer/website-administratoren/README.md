@@ -43,13 +43,13 @@ die Website sichern und wiederherstellen und ein Upgrade planen und prüfen.
 | [1. Orientierung als Website-Administrator](modul-01-orientierung/README.md) | 5 | 2 Std. 55 Min. | Kennt die Aufgabe, den Setup-Bereich, die Systeminformationen, die Einstellungsseite und exp:ini |
 | [2. Benutzer und Gruppen](modul-02-benutzer-und-gruppen/README.md) | 5 | 3 Std. 10 Min. | Legt Konten an und verwaltet sie, setzt Passwörter zurück, prüft Konten, ändert Eigentümer |
 | [3. Rollen und Richtlinien](modul-03-rollen-und-richtlinien/README.md) | 5 | 3 Std. 15 Min. | Baut, weist zu und testet Rollen; steuert den anonymen Zugriff und die Registrierung |
-| [4. Sektionen, Siteaccesses und Objektzustände](../../../../eng-us/help/trainers/site-administrators/module-04-sections-siteaccesses-and-states/README.md) | 4 | 2 Std. 50 Min. | Nutzt Sektionen und Objektzustände, liest Siteaccesses, verwaltet Inhaltssprachen |
-| [5. Caches](../../../../eng-us/help/trainers/site-administrators/module-05-caches/README.md) | 5 | 2 Std. 55 Min. | Benennt und leert den richtigen Cache in der Administration und auf der Kommandozeile, füllt Caches vorab |
-| [6. Cronjobs, Workflows und Benachrichtigungen](../../../../eng-us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/README.md) | 5 | 3 Std. 30 Min. | Führt Cronjobs aus und plant sie, baut einen Freigabe-Workflow, betreibt Benachrichtigungen sicher |
+| [4. Sektionen, Siteaccesses und Objektzustände](modul-04-sektionen-siteaccesses-und-zustaende/README.md) | 4 | 2 Std. 50 Min. | Nutzt Sektionen und Objektzustände, liest Siteaccesses, verwaltet Inhaltssprachen |
+| [5. Caches](modul-05-caches/README.md) | 5 | 2 Std. 55 Min. | Benennt und leert den richtigen Cache in der Administration und auf der Kommandozeile, füllt Caches vorab |
+| [6. Cronjobs, Workflows und Benachrichtigungen](modul-06-cronjobs-workflows-und-benachrichtigungen/README.md) | 5 | 3 Std. 30 Min. | Führt Cronjobs aus und plant sie, baut einen Freigabe-Workflow, betreibt Benachrichtigungen sicher |
 | [7. Logs und das Audit-Protokoll](../../../../eng-us/help/trainers/site-administrators/module-07-logs-and-the-audit-trail/README.md) | 5 | 3 Std. 15 Min. | Liest die Logs und den Log-Viewer, folgt einer Fehlerreferenz, ermittelt mit dem Audit-Protokoll |
-| [8. Sicherheit](../../../../eng-us/help/trainers/site-administrators/module-08-security/README.md) | 5 | 3 Std. 20 Min. | Härtet eine Website, legt Anmelderichtlinien und die zweistufige Anmeldung, Sitzungen und eine Content Security Policy fest |
-| [9. Sicherungen und Wartung](../../../../eng-us/help/trainers/site-administrators/module-09-backups-and-maintenance/README.md) | 4 | 2 Std. 55 Min. | Sichert eine Website und stellt sie wieder her, nutzt den Wartungsmodus, prüft Dateien und Speicher |
-| [10. Upgrades, Erweiterungen und Pakete](../../../../eng-us/help/trainers/site-administrators/module-10-upgrades-extensions-and-packages/README.md) | 5 | 3 Std. 20 Min. | Plant und prüft ein Upgrade, nutzt ezupdate und git_manager, die Seite der Erweiterungen und Pakete |
+| [8. Sicherheit](modul-08-sicherheit/README.md) | 5 | 3 Std. 20 Min. | Härtet eine Website, legt Anmelderichtlinien und die zweistufige Anmeldung, Sitzungen und eine Content Security Policy fest |
+| [9. Sicherungen und Wartung](modul-09-sicherungen-und-wartung/README.md) | 4 | 2 Std. 55 Min. | Sichert eine Website und stellt sie wieder her, nutzt den Wartungsmodus, prüft Dateien und Speicher |
+| [10. Upgrades, Erweiterungen und Pakete](modul-10-upgrades-erweiterungen-und-pakete/README.md) | 5 | 3 Std. 20 Min. | Plant und prüft ein Upgrade, nutzt ezupdate und git_manager, die Seite der Erweiterungen und Pakete |
 
 ## Lesepfad
 
