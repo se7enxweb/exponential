@@ -5,7 +5,7 @@
 <h1 class="context-title">
 {'"%contentObjectName" (%children_count): Sub items that are used by other objects '|i18n( 'design/admin/content/reverserelatedlist',,
                 hash( '%contentObjectName', $content_object_name ,
-                      '%children_count', $reverse_list_children_count ) )}</h1>
+                      '%children_count', $reverse_list_children_count ) )|wash}</h1>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 
