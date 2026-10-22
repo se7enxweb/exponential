@@ -3206,7 +3206,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-961ddd2cec4245d2b798ba2255304784  doc/changelogs/6.0/6.0.15.md
+d4a14a7d04b8f5f5d7c4817a0bf7a79c  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -21880,7 +21880,7 @@ d0439b8f2b787ccf297f4018fe42e6e1  lib/version.php
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 d75f9c86a66f0ee1b7d3208547666681  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-3473a8c6a4056f6864256712b29c82c4  phpunit.xml
+13c43e8ddb430f34405c1ed4a8b29b7e  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -23158,6 +23158,7 @@ abe87695b0129240038005d88c363c48  tests/tests/extension/ezoe/expOEUploadRulesTes
 a1fc7b448e95e5b9f8256737a973c160  tests/tests/extension/ezoe/ezoeSpellcheckRpcRawInputTest.php
 f129e8f6df7dcda001d08dac96f1e4e2  tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
+d655c67415c0fe81327d520f206ad1ff  tests/tests/extension/ezprestapi/ezprestapiProviderIndependenceTest.php
 0ad46106024a19fb56a0f6b40385963a  tests/tests/extension/ezupdate/ezUpdateAdminStylingTest.php
 8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
 7cbc222f8785f2bf803a6704595b6cbc  tests/tests/extension/ezupdate/ezUpdateComposerVersionCacheTest.php
