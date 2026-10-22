@@ -12317,7 +12317,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 d8ec17ec6fcc8d49b62f81830d2d61b8  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-2fcd1a57e28f496237ad5dfad2cd1c90  doc/ger-de/.paths.json
+d1e159346c7c317c0534b82adc0ed53e  doc/ger-de/.paths.json
 cda223dc1e4d14ac9943e964893cf0ea  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -15731,6 +15731,7 @@ c66e54f9b40badde921a7cb982234fbc  doc/ger-de/hilfe/designer/veroeffentlichung/ve
 b7409176f8fd317a2c0126b3b67d32bc  doc/ger-de/hilfe/designer/veroeffentlichung/versionsbedingungen-fuer-nutzer.md
 0764882f03d099f6ae35b8ba2fab2583  doc/ger-de/hilfe/designer/veroeffentlichung/waehlen-wo-veroeffentlicht-wird.md
 97932890c8fb377799cd80a8e73d0880  doc/ger-de/hilfe/designer/veroeffentlichung/wenn-ein-release-schiefgeht.md
+4f4989f88d31b7904139711dedf8cb1a  doc/ger-de/hilfe/designer/vorlagen/alternative-layouts.md
 9daef9f8cc6fa6c133fd06baf690e9bf  doc/ger-de/hilfe/designer/vorlagen/ansichtsmodi.md
 92a040c2b9bb83ce898c350c8d1390bf  doc/ger-de/hilfe/designer/vorlagen/array-operatoren.md
 30c8bab30c5c7b949a840166797db911  doc/ger-de/hilfe/designer/vorlagen/attribute-und-punktnotation.md
@@ -15749,6 +15750,7 @@ ad4363f4341e0858487e6a4dfa42617c  doc/ger-de/hilfe/designer/vorlagen/der-i18n-op
 12ad6b5c2b9a6a775d49a7640eed43df  doc/ger-de/hilfe/designer/vorlagen/der-template-editor.md
 d1d5590dee020a857766025e871ac0e7  doc/ger-de/hilfe/designer/vorlagen/die-persistent-variable.md
 8c6ca5e0a162c02f021ded775b9f9480  doc/ger-de/hilfe/designer/vorlagen/eigene-ansichtsmodi.md
+fff3e6ccb06555e0decca0ed15debe3f  doc/ger-de/hilfe/designer/vorlagen/eigene-bearbeitungstemplates.md
 c7f4f306988ff25822f6edb05a1061c7  doc/ger-de/hilfe/designer/vorlagen/ein-layout-in-templates-abrufen.md
 f83fc49d237e792eecf9f4c4675c5a88  doc/ger-de/hilfe/designer/vorlagen/einen-einzelnen-knoten-ueberschreiben.md
 c4bd80fe5f1a43033c90865e670dbc4f  doc/ger-de/hilfe/designer/vorlagen/embed-ansicht.md
@@ -15786,6 +15788,7 @@ e07d066cfb9fe653ca93638c4cabc572  doc/ger-de/hilfe/designer/vorlagen/override-gr
 bd1449888b097f936f0e27994df341e6  doc/ger-de/hilfe/designer/vorlagen/rich-text-templates.md
 8bb76eb66a9a02a5afaaeb7c0e2ef107  doc/ger-de/hilfe/designer/vorlagen/rollen-und-richtlinien-operatoren.md
 88c5ae7b3fe7ef217e64624d272d372c  doc/ger-de/hilfe/designer/vorlagen/run-once.md
+19e14948209dfc9f6d5e490a58d3e82c  doc/ger-de/hilfe/designer/vorlagen/schaltflaechen-zum-bearbeiten-entfernen-und-anlegen.md
 6c1b76822370fb7707768c7e3cbaf14a  doc/ger-de/hilfe/designer/vorlagen/section-legacy.md
 d67a452041fbffd14146b2c0d17cf0c0  doc/ger-de/hilfe/designer/vorlagen/seitenumbruch.md
 b327f93ee3d98b933e4f61bcc2cb470f  doc/ger-de/hilfe/designer/vorlagen/set-block-und-append-block.md
