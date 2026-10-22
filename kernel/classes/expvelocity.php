@@ -1832,6 +1832,12 @@ class expVelocity
                 'file'  => $this->rootDir . '/kernel/private/classes/httpcache/ezphttpcachecontract.php',
                 'class' => 'ezpHttpCacheContract',
                 'dir'   => $this->rootDir . '/' . eZSys::cacheDirectory() . '/exphttpcache',
+                // The contract loads eZTrustedProxy on purpose (its forwarded-host
+                // parsing must match the kernel's). That class only reads strings
+                // and arrays -- no header(), setcookie() or exit -- so compiling it
+                // before the source transform is harmless; listed so the engine's
+                // early-load check does not warn about it.
+                'allow' => array( 'eZTrustedProxy' ),
             );
         }
 

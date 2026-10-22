@@ -297,8 +297,8 @@ nicht verfolgte Notiz im Wurzelverzeichnis nie indiziert wird.
 ## Externe Bilder
 
 Eine Seite kann ein Bild einer anderen Website zeigen: `README.md` bettet seine Screenshots von
-`github.com/user-attachments` ein, als `![alt](https://...)` oder
-`<img width="1200" height="693" alt="..." src="https://...">`. Die Content Security Policy der Administration erlaubt
+`github.com/user-attachments` ein, als `![alt](URL)` oder
+`<img width="1200" height="693" alt="..." src="URL">`. Die Content Security Policy der Administration erlaubt
 Bilder nur von `'self'` (`img-src 'self' data: blob:`), deshalb zeigt die Hilfe eine **lokale Kopie**, und die Policy
 bleibt, wie sie ist:
 

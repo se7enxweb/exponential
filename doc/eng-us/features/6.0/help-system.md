@@ -281,7 +281,7 @@ database), among others that an untracked root note is never indexed.
 ## External images
 
 A page can show an image of another site: `README.md` embeds its screenshots from `github.com/user-attachments`, as
-`![alt](https://...)` or `<img width="1200" height="693" alt="..." src="https://...">`. The administration's Content
+`![alt](URL)` or `<img width="1200" height="693" alt="..." src="URL">`. The administration's Content
 Security Policy allows images from `'self'` only (`img-src 'self' data: blob:`), so the help shows a **local copy**
 and the policy stays as it is:
 

@@ -10,10 +10,15 @@
    file is in design/admin and design/admin4. Guide: doc/eng-us/guides/class-groups.md *}
 
 <div class="context-block a4-page exp-classgroups exp-classview">
+{* A class or attribute without a name or description in $language_code (the language asked for, or the
+   class's top priority language; its attributes may lack it) shows the one of the prioritized languages, with no
+   template error. *}
+{def $class_name        = first_set( $class.nameList[$language_code], $class.name )
+     $class_description = first_set( $class.descriptionList[$language_code], $class.description, '' )}
 
 <div class="box-header"><div class="box-ml">
 <div class="a4-title-row">
-<h1 class="context-title" title="{'Class name and number of objects'|i18n( 'design/admin/class/view' )}">{$class.identifier|class_icon( 'normal', $class.nameList[$language_code]|wash )}&nbsp;{$class.nameList[$language_code]|wash}</h1>
+<h1 class="context-title" title="{'Class name and number of objects'|i18n( 'design/admin/class/view' )}">{$class.identifier|class_icon( 'normal', $class_name|wash )}&nbsp;{$class_name|wash}</h1>
 <code class="a4-muted">{$class.identifier|wash}</code>
 <span class="a4-meta">{'ID %id'|i18n( 'design/admin/class/grouplist',, hash( '%id', $class.id ) )}</span>
 </div>
@@ -74,14 +79,14 @@
 <div class="a4-card-head"><h2 class="a4-h2" id="class-view-settings">{'Settings'|i18n( 'design/admin/class/view' )}</h2></div>
 <div class="a4-card-body">
 <dl class="a4-facts">
-    <div><dt>{'Name'|i18n( 'design/admin/class/view' )}</dt><dd>{$class.nameList[$language_code]|wash}</dd></div>
+    <div><dt>{'Name'|i18n( 'design/admin/class/view' )}</dt><dd>{$class_name|wash}</dd></div>
     <div><dt>{'Identifier'|i18n( 'design/admin/class/view' )}</dt><dd><code>{$class.identifier|wash}</code></dd></div>
     <div><dt>{'Object name pattern'|i18n( 'design/admin/class/view' )}</dt><dd><code>{$class.contentobject_name|wash}</code></dd></div>
     <div><dt>{'URL alias name pattern'|i18n( 'design/admin/class/view' )}</dt><dd>{if $class.url_alias_name|ne( '' )}<code>{$class.url_alias_name|wash}</code>{else}<span class="a4-muted">{'as the object name'|i18n( 'design/admin/class/view' )}</span>{/if}</dd></div>
     <div><dt>{'Container'|i18n( 'design/admin/class/view' )}</dt><dd>{if $class.is_container|eq( 1 )}{'Yes'|i18n( 'design/admin/class/view' )}{else}{'No'|i18n( 'design/admin/class/view' )}{/if}</dd></div>
     <div><dt>{'Default object availability'|i18n( 'design/admin/class/view' )}</dt><dd>{if $class.always_available|eq( 0 )}{'Not available'|i18n( 'design/admin/class/view' )}{else}{'Available'|i18n( 'design/admin/class/view' )}{/if}</dd></div>
     <div><dt>{'Default sorting of children'|i18n( 'design/admin/class/view' )}</dt><dd>{def $sort_fields = fetch( content, available_sort_fields )}{if is_set( $sort_fields[$class.sort_field] )}{$sort_fields[$class.sort_field]|wash}{else}{$class.sort_field|wash}{/if} / {if eq( $class.sort_order, 0 )}{'Descending'|i18n( 'design/admin/class/edit' )}{else}{'Ascending'|i18n( 'design/admin/class/edit' )}{/if}{undef $sort_fields}</dd></div>
-    <div class="a4-field-wide"><dt>{'Description'|i18n( 'design/admin/class/view' )}</dt><dd>{if $class.descriptionList[$language_code]|ne( '' )}{$class.descriptionList[$language_code]|wash}{else}<span class="a4-muted">{'None'|i18n( 'design/admin/class/view' )}</span>{/if}</dd></div>
+    <div class="a4-field-wide"><dt>{'Description'|i18n( 'design/admin/class/view' )}</dt><dd>{if $class_description|ne( '' )}{$class_description|wash}{else}<span class="a4-muted">{'None'|i18n( 'design/admin/class/view' )}</span>{/if}</dd></div>
 </dl>
 </div>
 </section>
@@ -103,7 +108,7 @@
     <input type="hidden" name="ContentAttribute_position[]" value="{$attribute.placement}" />
     <div class="a4-card-head">
         <div class="a4-card-title">
-            <h3 class="a4-h3">{inc( $index )}. {$attribute.nameList[$language_code]|wash}</h3>
+            <h3 class="a4-h3">{inc( $index )}. {first_set( $attribute.nameList[$language_code], $attribute.name )|wash}</h3>
             <code class="a4-muted">{$attribute.identifier|wash}</code>
             <ul class="a4-badges">
                 <li class="a4-badge is-info">{$attribute.data_type.information.name|wash}</li>
@@ -118,7 +123,7 @@
     <dl class="a4-facts">
         <div><dt>{'Category'|i18n( 'design/admin/class/view' )}</dt><dd>{if $attribute.category|not}{'Default'|i18n( 'design/admin/class/edit' )} ({$attribute_categorys[ $attribute_default_category ]|wash}){elseif is_set( $attribute_categorys[ $attribute.category ] )}{$attribute_categorys[ $attribute.category ]|wash}{else}{$attribute_categorys[ $attribute_default_category ]|wash}{/if}</dd></div>
         <div><dt>{'Flags'|i18n( 'design/admin/class/view' )}</dt><dd>{if $attribute.is_required}{'Is required'|i18n( 'design/admin/class/view' )}{else}{'Is not required'|i18n( 'design/admin/class/view' )}{/if}, {if and( $attribute.data_type.is_indexable, $attribute.is_searchable )}{'Is searchable'|i18n( 'design/admin/class/view' )}{else}{'Is not searchable'|i18n( 'design/admin/class/view' )}{/if}, {if and( $attribute.data_type.is_information_collector, $attribute.is_information_collector )}{'Collects information'|i18n( 'design/admin/class/view' )}{else}{'Does not collect information'|i18n( 'design/admin/class/view' )}{/if}</dd></div>
-        <div class="a4-field-wide"><dt>{'Description'|i18n( 'design/admin/class/view' )}</dt><dd>{if $attribute.descriptionList[$language_code]|ne( '' )}{$attribute.descriptionList[$language_code]|wash}{else}<span class="a4-muted">{'None'|i18n( 'design/admin/class/view' )}</span>{/if}</dd></div>
+        <div class="a4-field-wide"><dt>{'Description'|i18n( 'design/admin/class/view' )}</dt><dd>{if first_set( $attribute.descriptionList[$language_code], $attribute.description, '' )|ne( '' )}{first_set( $attribute.descriptionList[$language_code], $attribute.description )|wash}{else}<span class="a4-muted">{'None'|i18n( 'design/admin/class/view' )}</span>{/if}</dd></div>
     </dl>
     <div class="a4-class-datatype">{class_attribute_view_gui class_attribute=$attribute}</div>
 </li>
@@ -132,3 +137,4 @@
 
 </div></div></div>
 </div>
+{undef $class_name $class_description}
