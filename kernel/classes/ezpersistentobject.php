@@ -70,6 +70,13 @@ class eZPersistentObject
     }
 
     /**
+     * The connection of the call in progress when it is not the site's database (onConnection()), else null.
+     *
+     * @var eZDBInterface|null
+     */
+    protected static $connectionDB = null;
+
+    /**
      * Initializes the object with the $row.
      *
      * It will try to set each field taken from the database row. Calls fill
@@ -308,7 +315,11 @@ class eZPersistentObject
      */
     public static function removeObject( $def, $conditions = null, $extraConditions = null )
     {
-        $db = eZDB::instance();
+        $db = self::dbFor( $def );
+        if ( self::needsConnectionSwitch( $db ) )
+            return self::onConnection( $db, function () use ( $def, $conditions, $extraConditions ) {
+                return self::removeObject( $def, $conditions, $extraConditions );
+            } );
 
         $table = $def["name"];
         if ( is_array( $extraConditions ) )
@@ -401,10 +412,14 @@ class eZPersistentObject
 
     public static function storeObject( $obj, $fieldFilters = null )
     {
-        $db = eZDB::instance();
+        $def = $obj->definition();
+        $db = self::dbFor( $def );
+        if ( self::needsConnectionSwitch( $db ) )
+            return self::onConnection( $db, function () use ( $obj, $fieldFilters ) {
+                return self::storeObject( $obj, $fieldFilters );
+            } );
         $useFieldFilters = ( isset( $fieldFilters ) && is_array( $fieldFilters ) && $fieldFilters );
 
-        $def = $obj->definition();
         $fields = $def["fields"];
         $keys = $def["keys"];
         $table = $def["name"];
@@ -799,7 +814,8 @@ class eZPersistentObject
      */
     public static function conditionTextByRow( $conditions, $row )
     {
-        $db = eZDB::instance();
+        // escaped for the connection of the class being read or written (onConnection()), else the site's database
+        $db = self::$connectionDB ?: eZDB::instance();
 
         $where_text = "";
         if ( is_array( $conditions ) and
@@ -971,7 +987,11 @@ class eZPersistentObject
                               $custom_tables = null,
                               $custom_conds = null )
     {
-        $db = eZDB::instance();
+        $db = self::dbFor( $def );
+        if ( self::needsConnectionSwitch( $db ) )
+            return self::onConnection( $db, function () use ( $def, $field_filters, $conds, $sorts, $limit, $asObject, $grouping, $custom_fields, $custom_tables, $custom_conds ) {
+                return self::fetchObjectList( $def, $field_filters, $conds, $sorts, $limit, $asObject, $grouping, $custom_fields, $custom_tables, $custom_conds );
+            } );
         $fields = $def["fields"];
         $tables = $def["name"];
         $class_name = $def["class_name"];
@@ -1270,7 +1290,7 @@ class eZPersistentObject
 
         if ( is_array( $rows ) )
         {
-            $db = eZDB::instance();
+            $db = self::$connectionDB ?: self::dbFor( $objectDefinition );
             foreach( $rows as &$row )
             {
                 self::replaceFieldsWithLongNames( $db, $objectDefinition['fields'], $row );
@@ -1313,7 +1333,7 @@ class eZPersistentObject
      */
     public static function swapRow( $table, $keys, $order_id, $rows, $id1, $id2 )
     {
-        $db = eZDB::instance();
+        $db = self::$connectionDB ?: eZDB::instance();
         $text = $order_id . "='" . $db->escapeString( $rows[$id1][$order_id] ) . "' WHERE ";
         $i = 0;
         foreach ( $keys as $key )
@@ -1340,7 +1360,11 @@ class eZPersistentObject
      */
     public static function newObjectOrder( $def, $orderField, $conditions )
     {
-        $db = eZDB::instance();
+        $db = self::dbFor( $def );
+        if ( self::needsConnectionSwitch( $db ) )
+            return self::onConnection( $db, function () use ( $def, $orderField, $conditions ) {
+                return self::newObjectOrder( $def, $orderField, $conditions );
+            } );
         $table = $def["name"];
         $keys = $def["keys"];
 
@@ -1392,7 +1416,11 @@ class eZPersistentObject
      */
     public static function reorderObject( $def, $orderField, $conditions, $down = true )
     {
-        $db = eZDB::instance();
+        $db = self::dbFor( $def );
+        if ( self::needsConnectionSwitch( $db ) )
+            return self::onConnection( $db, function () use ( $def, $orderField, $conditions, $down ) {
+                return self::reorderObject( $def, $orderField, $conditions, $down );
+            } );
         $table = $def["name"];
         $keys = $def["keys"];
 
@@ -1507,6 +1535,56 @@ class eZPersistentObject
     }
 
     /**
+     * The database a definition reads and writes: the named connection it declares ('connection' => '<identifier>',
+     * or datatable.ini [ClassSettings] Connection[<class>]), else the site's database (doc/eng-us/features/6.0/data-tables.md,
+     * "Persistent classes on a connection"). The site's path costs two isset() calls and one lookup.
+     *
+     * @param array $def
+     * @return eZDBInterface
+     */
+    public static function dbFor( $def )
+    {
+        if ( is_array( $def ) && class_exists( 'expDataConnections' )
+             && ( !empty( $def['connection'] ) || ( isset( $def['class_name'] ) && expDataConnections::classHasConnection( (string)$def['class_name'] ) ) ) )
+            return expDataConnections::dbFor( $def );
+        return eZDB::instance();
+    }
+
+    /**
+     * Whether a call must run on another connection than the one in use: a class on its own connection, or a class of
+     * the site's database read while another connection's class is being read (a function attribute, a relation).
+     *
+     * @param eZDBInterface $db
+     * @return bool
+     */
+    protected static function needsConnectionSwitch( $db )
+    {
+        return $db !== self::$connectionDB && ( self::$connectionDB !== null || $db !== eZDB::instance() );
+    }
+
+    /**
+     * Runs a call with $db as the connection in use: conditionText(), escapeArray(), swapRow() and handleRows() escape
+     * and map for it, not for the site's database (MySQL and SQLite escape a quote differently).
+     *
+     * @param eZDBInterface $db
+     * @param callable $call
+     * @return mixed what the call returns
+     */
+    protected static function onConnection( $db, $call )
+    {
+        $previous = self::$connectionDB;
+        self::$connectionDB = $db;
+        try
+        {
+            return $call();
+        }
+        finally
+        {
+            self::$connectionDB = $previous;
+        }
+    }
+
+    /**
      * Escapes strings in an array with the help of {@link eZDBInterface::escapeString()}
      *
      * @param array $array
@@ -1514,7 +1592,7 @@ class eZPersistentObject
      */
     public static function escapeArray( $array )
     {
-        $db = eZDB::instance();
+        $db = self::$connectionDB ?: eZDB::instance();
         $out = array();
         foreach( $array as $key => $value )
         {
@@ -1546,8 +1624,12 @@ class eZPersistentObject
      */
     public static function updateObjectList( $parameters )
     {
-        $db = eZDB::instance();
         $def = $parameters['definition'];
+        $db = self::dbFor( $def );
+        if ( self::needsConnectionSwitch( $db ) )
+            return self::onConnection( $db, function () use ( $parameters ) {
+                return self::updateObjectList( $parameters );
+            } );
         $table = $def['name'];
         $fields = $def['fields'];
         $keys = $def['keys'];

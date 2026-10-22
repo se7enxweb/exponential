@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-6b831f77d0794fccbcda43bfdffac0b9  autoload/ezp_kernel.php
+7c090e7568bb256a163dbee09580c7c4  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3214,7 +3214,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b281d9b98a3dfc55ca633d43c04db856  doc/changelogs/6.0/6.0.15.md
+569d2690c97e8017b178bc06565e94ac  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6151,7 +6151,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-eb46987faece2d4c6d03944c702dcb2b  doc/eng-us/features/6.0/README.md
+c3cf747743d913747db9da73d88d85bc  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -12330,7 +12330,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-0d3ac21cef3a1caecaa0a978bcae8ca5  doc/ger-de/.paths.json
+fc16663297c87eb7c849cc3189376779  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -14973,7 +14973,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-94893ef62e9e6e3992a70e6c0de3f53a  doc/ger-de/funktionen/6.0/README.md
+8d3a806962f0260d97208fd5c449218b  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 daea7f2e38000ce15caa57c898b75b10  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -21591,7 +21591,7 @@ dee39131826612b8eda0d249f761b4b8  kernel/classes/ezpackageuploadinspector.php
 281fb4c5c551758190a823df8e1c43ed  kernel/classes/ezpathelement.php
 a2852263baec56cf69eb8d53f12b2483  kernel/classes/ezpdfexport.php
 3d3da61017eaaab0308ec6ff06cd9c83  kernel/classes/ezpendingactions.php
-5f65d9d67be7e0c83002b86e9513dc6a  kernel/classes/ezpersistentobject.php
+655f5c04c22c49259b43c098d44072db  kernel/classes/ezpersistentobject.php
 ae33e6f5393513d196e4bd53f6c63b92  kernel/classes/ezpolicy.php
 79388fb542ea43277c1ff809aee45e48  kernel/classes/ezpolicylimitation.php
 fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
@@ -22881,12 +22881,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-26e14858dbc5b6ca1655f04fa713ab31  kernel/sql/mysql/kernel_schema.sql
-5ce5773f624282fbda0ec97c8b3e98ba  kernel/sql/postgresql/kernel_schema.sql
+89e3652f2493249f2213c959e1de0f4f  kernel/sql/mysql/kernel_schema.sql
+dd70f7245cb9774bb7cc8aa53a1aa96c  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
-b0bfac416014b562f46f95b17622dd62  kernel/sql/postgresql/setval.sql
+8913c5b61ea21eee40e8cd773b65c797  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-95ae9bbee50d612a23bf39a869aba964  kernel/sql/sqlite/schema.sql
+2e056935f96ea5ab40ee993a30c9724e  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
 dada858accc356c23164e35bcc5d26b1  kernel/state/group.php
@@ -23222,9 +23222,9 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-16b3ae17276f02a0b427f88050b8a752  settings/menu.ini
+071618ee00344ac4d5cf0155a9dc17d8  settings/menu.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
-e1d9c5932ac1b3e42db487331851a747  settings/module.ini
+3ebb85a2b5557e6e96d53251b2ba2c2b  settings/module.ini
 4a0dab3096ea132c689422d49e89cba9  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 c2fbd3f88b13951fd0a7ff1503cf8f29  settings/package.ini
@@ -23313,7 +23313,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-b5804a34ce2a9a3e3fe16608ad0c5690  share/db_schema.dba
+d03459f2945ecc9af292526d29819400  share/db_schema.dba
 0d2dc77620a59815f0f637d7099cc90b  share/help/seed-glossary.json
 e5c09d9e4932f30d364759d243eb01df  share/help/seed-topics.json
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
@@ -24080,7 +24080,7 @@ dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-a9298506db5940938837b3119d8606be  share/translations/eng-US/translation.ts
+e360cf1ed9fdba90e7ad48f37a85fe8f  share/translations/eng-US/translation.ts
 494a72237f2b99e7ff098df6fa9339d6  share/translations/esl-ES/translation.ts
 a7a28901e0614f18dca43236ab43815e  share/translations/esl-MX/translation.ts
 0d893017d9cb28076b20f47b84f583cc  share/translations/fas-IR/translation.ts
@@ -24088,7 +24088,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 c2548f11cf751134fed7560c3f0b0204  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-d5fc145d144ee7c6cf6360c03a7e6b9d  share/translations/ger-DE/translation.ts
+d46be713591085acab7b373ae1325f77  share/translations/ger-DE/translation.ts
 6b1954808805a24407921e51baa34a0b  share/translations/heb-IL/translation.ts
 061c1972d59c9c6deefd8c903aa2708c  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -24108,7 +24108,7 @@ ff02ef2713c7b6d98935892ba8cda520  share/translations/swe-SE/translation.ts
 e33d8d06d236157cdb29177ac7e13cdf  share/translations/tur-TR/translation.ts
 ba3bac76c0c480ad49967a5cafdb8976  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-403d45adf2f58d9fd61699c1b66a8b5d  share/translations/untranslated/translation.ts
+175f4f7babcac311b76fa122de5d0aa5  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -24216,7 +24216,7 @@ b8a095816c4adb83244dce76e6d2690b  tests/tests/design/AdminLandmarksTest.php
 b6d6afb887a7aa995c0135bfef804f04  tests/tests/design/AdminLanguageBadgeTest.php
 581d3c8caa19bd6c79a01747c228b43e  tests/tests/design/AdminLanguageStatesTest.php
 07a7a3043f1352749310d984f400f16e  tests/tests/design/AdminLeftColumnFontTest.php
-bd3ad8901b548dce716e5a6f3bb28e17  tests/tests/design/AdminLeftMenuGroupsTest.php
+6fcb08681e6917af353d038967fb3e7d  tests/tests/design/AdminLeftMenuGroupsTest.php
 11725412969d2fd8de40d2eb0604e69f  tests/tests/design/AdminLegacyControlsTest.php
 787c93133cc75367bb9363930408a431  tests/tests/design/AdminLogoTest.php
 176550e8953237cbc9b52b8ccd2ec581  tests/tests/design/AdminMegaMenuTest.php
@@ -24564,6 +24564,7 @@ c73fd8d4f3d55afe486254a66926a61b  tests/tests/kernel/classes/contentmodel/eZSeri
 5c9b7947f2722161129dbe4bea8d2baa  tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListTest.php
 98c7fb9b0847a4b55acfdc559a733d02  tests/tests/kernel/classes/contentmodel/eZUserAndRoleLiveTest.php
 b0f5e308de066b9c9634ee29f470b137  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
+715cb611b342593215299954601754f6  tests/tests/kernel/classes/datatable/expPersistentObjectOnConnectionTest.php
 0f7d6b3a3845de6e9fb082f635076e4f  tests/tests/kernel/classes/datatypes/eZChoiceDatatypesTest.php
 458caf640f2064f029fb48db96abc5ac  tests/tests/kernel/classes/datatypes/eZDataTypeBaseTest.php
 fc299aa103c4f996d3dbf0ab2178bf80  tests/tests/kernel/classes/datatypes/eZDatatypeTestFixtures.php
@@ -25780,7 +25781,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-18bfafa0e3b341b00e46b2a52594bd53  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+d69be638565a05f951a455a5deeb6b4a  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -25839,9 +25840,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-fbd7a3a3597dc5e761afc4cdf7ac5c50  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+32a461e0941bf867cc40775eb7cd49bc  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-c99adc641df77ada336c61b5fddfa625  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+f96bb7d30a7837783b0b2141ee54bb5a  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9e2db96d75614e14c654a873ac90fdd6  webdav.php
