@@ -1,100 +1,154 @@
 /*
  * admin4 class/edit: focuses the error list or the attribute changed last, and moves attributes in place.
- * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/eng-us/features/6.0/content-security-policy.md).
+ * Plain JavaScript, no jQuery. A file of its own, so the page runs under a Content Security Policy without
+ * 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
-jQuery(function( $ )//called on document.ready
+(function( fn )
 {
+    if ( document.readyState !== 'loading' ) fn(); else document.addEventListener( 'DOMContentLoaded', fn );
+})(function()//called on document.ready
+{
+    var each = function( list, fn ){ Array.prototype.forEach.call( list, fn ); };
+
     var errors = document.getElementById( 'class-edit-errors' );
     if ( errors ) errors.focus();
 
-    // .length, not .size(): jQuery 3 removed .size().
-    var el = $('#LastChangedID input[name^=ContentAttribute_name]');
-    if ( el.length ) {
-        window.scrollTo(0, Math.max( el.offset().top - 180, 0 ));
-        el.trigger( 'focus' );
+    var el = document.querySelector( '#LastChangedID input[name^=ContentAttribute_name]' );
+    if ( el )
+    {
+        window.scrollTo( 0, Math.max( el.getBoundingClientRect().top + window.pageYOffset - 180, 0 ) );
+        el.focus();
     }
 
-    var list = $('#ezcca-edit-list');
-    var status = $('<p class="ezcca-move-status a4-class-move-status" role="status" aria-live="polite"></p>').insertBefore( list ).data( 'failed', list.attr( 'data-move-failed' ) );
+    // The type menu at the top and the one at the bottom share a name: only the one beside the button pressed counts.
+    var newTop = document.getElementById( 'NewButtonTop' );
+    if ( newTop )
+    {
+        newTop.addEventListener( 'click', function()
+        {
+            var bottom = document.getElementById( 'DataTypeString' );
+            if ( bottom ) bottom.disabled = true;
+        } );
+    }
+
+    var list = document.getElementById( 'ezcca-edit-list' );
+    if ( !list )
+        return;
+
+    var failed = list.getAttribute( 'data-move-failed' ) || '';
+    var status = document.createElement( 'p' );
+    status.className = 'ezcca-move-status a4-class-move-status';
+    status.setAttribute( 'role', 'status' );
+    status.setAttribute( 'aria-live', 'polite' );
+    list.parentNode.insertBefore( status, list );
+
+    function say( text, error )
+    {
+        status.textContent = text;
+        status.classList.toggle( 'is-error', !!error );
+    }
+
+    function rows()
+    {
+        return Array.prototype.slice.call( list.querySelectorAll( ':scope > tbody > tr.ezcca-edit-list-item' ) );
+    }
 
     // The numbers in front of the names and the row colours follow the rows.
     function renumberAttributes()
     {
-        list.children('tbody').children('tr.ezcca-edit-list-item').each( function( i )
+        rows().forEach( function( tr, i )
         {
-            var th = $(this).find('> td > table > tbody > tr > th.wide, > td > table > tr > th.wide').first();
-            th.html( th.html().replace( /^\s*\d+\./, ( i + 1 ) + '.' ) );
-            $(this).removeClass( 'bglight bgdark' ).addClass( i % 2 ? 'bgdark' : 'bglight' );
-        });
+            var th = tr.querySelector( ':scope > td > table > tbody > tr > th.wide, :scope > td > table > tr > th.wide' );
+            if ( th ) th.innerHTML = th.innerHTML.replace( /^\s*\d+\./, ( i + 1 ) + '.' );
+            tr.classList.remove( 'bglight', 'bgdark' );
+            tr.classList.add( i % 2 ? 'bgdark' : 'bglight' );
+        } );
+    }
+
+    function moveButtons()
+    {
+        return list.querySelectorAll( 'div.listbutton input[name^=Move]' );
     }
 
     function buttons( on )
     {
-        list.find('div.listbutton input[name^=Move]').prop( 'disabled', !on ).toggleClass( 'disabled', !on );
+        each( moveButtons(), function( button )
+        {
+            button.disabled = !on;
+            button.classList.toggle( 'disabled', !on );
+        } );
+    }
+
+    // The priority fields follow the rows, so Apply and OK store the order shown.
+    function priorities()
+    {
+        rows().forEach( function( tr, i )
+        {
+            each( tr.querySelectorAll( 'input[name^=ContentAttribute_priority]' ), function( input ){ input.value = ( i + 1 ) * 10; } );
+        } );
     }
 
     // Move up, down, to the top or to the bottom, in place; the server stores it, and a move it did not store is
-    // put back, so the page never shows an order that is not saved. The priority fields follow the rows, so Apply
-    // and OK store the order shown.
-    function rows()
+    // put back, so the page never shows an order that is not saved.
+    each( moveButtons(), function( button )
     {
-        return list.children('tbody').children('tr.ezcca-edit-list-item');
-    }
-    function priorities()
-    {
-        rows().each( function( i ) { $(this).find('input[name^=ContentAttribute_priority]').val( ( i + 1 ) * 10 ); } );
-    }
-    list.find('div.listbutton input[name^=Move]').on('click', function( e )
-    {
-        e.preventDefault();
-        var tr = $(this).closest('tr.ezcca-edit-list-item'), param = this.name.split('_'), action = param[0];
-        var all = rows(), from = all.index( tr ), last = all.length - 1;
-        var to = { MoveUp: from - 1, MoveDown: from + 1, MoveTop: 0, MoveBottom: last }[ action ];
-        if ( to === undefined || to < 0 || to > last || to === from )
-            return false;
-        buttons( false );
-        var place = function( index )
+        button.addEventListener( 'click', function( e )
         {
-            var others = rows().not( tr );
-            if ( index >= others.length ) others.last().after( tr ); else others.eq( index ).before( tr );
-            renumberAttributes();
-            priorities();
-        };
-        place( to );
+            e.preventDefault();
+            e.stopPropagation();
+            var tr = this.closest( 'tr.ezcca-edit-list-item' ), param = this.name.split( '_' ), action = param[0];
+            var all = rows(), from = all.indexOf( tr ), last = all.length - 1;
+            var to = { MoveUp: from - 1, MoveDown: from + 1, MoveTop: 0, MoveBottom: last }[ action ];
+            if ( from === -1 || to === undefined || to < 0 || to > last || to === from )
+                return;
+            buttons( false );
+            var place = function( index )
+            {
+                var others = rows().filter( function( row ){ return row !== tr; } );
+                if ( index >= others.length )
+                    others[others.length - 1].parentNode.insertBefore( tr, others[others.length - 1].nextSibling );
+                else
+                    others[index].parentNode.insertBefore( tr, others[index] );
+                renumberAttributes();
+                priorities();
+            };
+            place( to );
 
-        var postVar = { 'ContentClassHasInput': 0 }, _tokenNode = document.getElementById('ezxform_token_js');
-        var meta = document.querySelector('meta[name="csrf-token"]');
-        postVar[ action ] = param[1];
-        if ( _tokenNode ) postVar['ezxform_token'] = _tokenNode.getAttribute('title');
-        $.ajax({
-            type: 'POST',
-            url: $('#ClassEdit').attr('action'),
-            data: postVar,
-            headers: meta ? { 'X-CSRF-Token': meta.getAttribute('content') } : {}
-        }).done( function( data, text, xhr )
-        {
-            if ( xhr.getResponseHeader( 'X-Class-Attribute-Moved' ) !== '1' )
+            var data = new URLSearchParams(), token = document.getElementById( 'ezxform_token_js' );
+            var meta = document.querySelector( 'meta[name="csrf-token"]' ), form = document.getElementById( 'ClassEdit' );
+            var headers = { 'X-Requested-With': 'XMLHttpRequest' };
+            data.append( 'ContentClassHasInput', '0' );
+            data.append( action, param[1] );
+            if ( token ) data.append( 'ezxform_token', token.getAttribute( 'title' ) );
+            if ( meta ) headers['X-CSRF-Token'] = meta.getAttribute( 'content' );
+
+            fetch( ( form && form.getAttribute( 'action' ) ) || window.location.href, {
+                method: 'POST',
+                body: data,
+                headers: headers,
+                credentials: 'same-origin'
+            } ).then( function( response )
+            {
+                if ( !response.ok )
+                {
+                    place( from );
+                    say( failed + ' (HTTP ' + response.status + ')', true );
+                }
+                else if ( response.headers.get( 'X-Class-Attribute-Moved' ) !== '1' )
+                {
+                    place( from );
+                    say( failed, true );
+                }
+                else
+                    say( '', false );
+            }, function()
             {
                 place( from );
-                status.text( status.data( 'failed' ) ).addClass( 'is-error' );
-                return;
-            }
-            status.text( '' ).removeClass( 'is-error' );
-        }).fail( function( xhr )
-        {
-            place( from );
-            status.text( status.data( 'failed' ) + ' (HTTP ' + xhr.status + ')' ).addClass( 'is-error' );
-        }).always( function()
-        {
-            buttons( true );
-        });
-        return false;
-    });
-
-    // The type menu at the top and the one at the bottom share a name: only the one beside the button pressed counts.
-    jQuery('#NewButtonTop').on('click', function()
-    {
-        jQuery('#DataTypeString').prop('disabled', true);
-    });
+                say( failed + ' (HTTP 0)', true );
+            } ).then( function()
+            {
+                buttons( true );
+            } );
+        } );
+    } );
 });

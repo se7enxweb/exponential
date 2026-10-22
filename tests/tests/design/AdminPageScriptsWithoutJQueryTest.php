@@ -26,6 +26,8 @@ class AdminPageScriptsWithoutJQueryTest extends PHPUnit\Framework\TestCase
         'user_register.js' => 'PublishButton',
         'content_urlalias.js' => 'aliasform',
         'template_look_edit.js' => 'editform',
+        'class_edit.js' => 'ezcca-edit-list',
+        'content_multiedit.js' => 'MultiStoreButton',
     );
 
     private static function root()
