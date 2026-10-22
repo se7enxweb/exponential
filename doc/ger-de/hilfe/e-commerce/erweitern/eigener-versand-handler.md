@@ -113,7 +113,7 @@ Ob der Versand Umsatzsteuer trägt und zu welchem Satz, ist eine Frage für Ihre
 
 - [Den Shop erweitern](README.md)
 - [Versand und Bearbeitung (Unternehmen)](../../unternehmen/shops/versand-und-bearbeitung.md)
-- [shop.ini durchgegangen](../einstellungen/shop-ini-durchgegangen.md#shippingsettings)
+- [shop.ini durchgegangen](../settings/shop-ini-durchgegangen.md#shippingsettings)
 - [Freie Dokumentation](../../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

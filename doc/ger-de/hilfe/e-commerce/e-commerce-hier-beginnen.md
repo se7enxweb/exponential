@@ -67,7 +67,7 @@ Die Shop-Bereiche beantworten „was“ und „wie oft“. Dieser Bereich beantw
 - **Katalogmodellierung im Detail**: die Wahl zwischen `ezprice` und `ezmultiprice`, Optionen, Produktkategorien für
   die USt. und die Ordnerstruktur eines Katalogs ([Katalogmodellierung](katalog/README.md)).
 - **Die Shop-Einstellungen durchgegangen**: jede Einstellung rund um den Shop, Datei für Datei, mit dem
-  ausgelieferten Wert und wann Sie ihn ändern ([Die Shop-Einstellungen durchgegangen](einstellungen/README.md)).
+  ausgelieferten Wert und wann Sie ihn ändern ([Die Shop-Einstellungen durchgegangen](settings/README.md)).
 - **Die Kasse von innen**: die vier Shop-Operationen, die temporäre Bestellung, die Workflow-Trigger und die
   Ereignisse Zahlungs-Gateway, einfacher Versand und Multiplexer ([Kasse und Workflows](kasse/README.md)).
 - **Bestellbetrieb**: der Lebenszyklus einer Bestellung in der Datenbank, Statusübergänge, begrenzt durch
@@ -98,7 +98,7 @@ Jeder Schritt wird in [Die Kassenoperationen Schritt für Schritt](kasse/die-kas
 |---|---|
 | [Pfade nach Rolle](rollen/README.md) | Händler, Shop-Manager, Entwickler, Agentur |
 | [Katalogmodellierung](katalog/README.md) | Modellierung im Detail, Preisfelder im Vergleich, Optionen und Varianten, Produktkategorien und USt-Regeln |
-| [Die Shop-Einstellungen durchgegangen](einstellungen/README.md) | `shop.ini`, `site.ini [ShopSettings]`, `shopaccount.ini`, `workflow.ini`, `paymentgateways.ini` |
+| [Die Shop-Einstellungen durchgegangen](settings/README.md) | `shop.ini`, `site.ini [ShopSettings]`, `shopaccount.ini`, `workflow.ini`, `paymentgateways.ini` |
 | [Kasse und Workflows](kasse/README.md) | die Operationen, temporäre Bestellungen, Trigger, Zahlungs-Gateway, einfacher Versand, Multiplexer |
 | [Bestellbetrieb](bestellungen/README.md) | Lebenszyklus, Statusberechtigungen, Archivieren und Aufräumen, Bestellmails und Belege |
 | [Den Shop erweitern](erweitern/README.md) | Versand, USt., Zahlungs-Gateways, Shop-Konten, Warenkorbinformationen und Bestellbestätigung, Wechselkurse, Preis-Datentypen |

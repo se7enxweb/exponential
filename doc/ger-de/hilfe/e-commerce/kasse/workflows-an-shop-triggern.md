@@ -34,7 +34,7 @@ die eine Kasse kaputt machen.
 | `shop` `checkout` nachher | `post_checkout` | Die aufgegebene Bestellung mit ihrer Nummer; die Mail wurde versendet | Berichte, Exporte in andere Systeme, Analyse |
 
 Welche Trigger überhaupt erscheinen, entscheidet `workflow.ini [OperationSettings]`
-([workflow.ini für den Shop](../einstellungen/workflow-ini-fuer-den-shop.md)). Welche Ereignistypen an einen Trigger gelegt
+([workflow.ini für den Shop](../settings/workflow-ini-fuer-den-shop.md)). Welche Ereignistypen an einen Trigger gelegt
 werden dürfen, entscheidet jeder Ereignistyp selbst: `ezsimpleshipping` erlaubt nur `shop` `confirmorder` vorher.
 
 ## Den Versand-Workflow einrichten
@@ -50,7 +50,7 @@ Einzelheiten und Grenzen: [Das Ereignis einfacher Versand](das-ereignis-einfache
 ## Den Zahlungs-Workflow einrichten
 
 1. Aktivieren Sie die Gateway-Erweiterung und stellen Sie ihre Anbieterdatei auf den Testmodus
-   ([paymentgateways.ini durchgegangen](../einstellungen/paymentgateways-ini-durchgegangen.md)).
+   ([paymentgateways.ini durchgegangen](../settings/paymentgateways-ini-durchgegangen.md)).
 2. **Setup > Workflows**, **Neuer Workflow**, Name „Payment“.
 3. Fügen Sie das Ereignis **Payment Gateway** hinzu; wählen Sie im Ereignis die Gateways aus, die Kunden verwenden
    dürfen; speichern Sie.

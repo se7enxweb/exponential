@@ -42,7 +42,7 @@ die zusätzlichen Seiten pro Rolle.
 ## Phase 2: einrichten
 
 1. [Katalogmodellierung](katalog/README.md) und ihre vier Seiten.
-2. [Die Shop-Einstellungen durchgegangen](einstellungen/README.md) und der Durchgang pro Datei.
+2. [Die Shop-Einstellungen durchgegangen](settings/README.md) und der Durchgang pro Datei.
 3. [Kasse und Workflows](kasse/README.md), dann [Workflows an Shop-Triggern](kasse/workflows-an-shop-triggern.md).
 4. [Das Ereignis Zahlungs-Gateway](kasse/das-ereignis-zahlungs-gateway.md) und [Das Ereignis einfacher Versand](kasse/das-ereignis-einfacher-versand.md).
 5. [Der Lebenszyklus einer Bestellung im Betrieb](bestellungen/der-lebenszyklus-einer-bestellung-im-betrieb.md) und [Statusübergänge und Berechtigungen](bestellungen/statusuebergaenge-und-berechtigungen.md).

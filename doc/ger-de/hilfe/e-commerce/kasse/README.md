@@ -62,7 +62,7 @@ einem Trigger auszuführen, legen Sie sie in der gewünschten Reihenfolge in ein
 
 - [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md)
 - [Workflows, Trigger und Ereignisse](../../ersteller/anwendungsentwickler/workflows-und-ereignisse.md)
-- [workflow.ini für den Shop](../einstellungen/workflow-ini-fuer-den-shop.md)
+- [workflow.ini für den Shop](../settings/workflow-ini-fuer-den-shop.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

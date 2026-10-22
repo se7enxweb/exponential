@@ -64,7 +64,7 @@ Die Währungsliste (`shop/currencylist`, Richtlinie `shop/setup`) hat die Schalt
 
 In den ausgelieferten Einstellungen werden die Kurse nicht durch einen Cronjob aktualisiert; jemand drückt die
 Schaltflächen, oder ein Entwickler plant das ein. Die Rundung folgt `shop.ini [MathSettings]`
-([shop.ini durchgegangen](../einstellungen/shop-ini-durchgegangen.md#mathsettings)). Die tägliche Arbeit mit Währungen ist
+([shop.ini durchgegangen](../settings/shop-ini-durchgegangen.md#mathsettings)). Die tägliche Arbeit mit Währungen ist
 für Inhaber unter [Preise und Währungen](../../kunden/handel/preise-und-waehrungen.md) beschrieben.
 
 ## Textformate für Importe und Exporte

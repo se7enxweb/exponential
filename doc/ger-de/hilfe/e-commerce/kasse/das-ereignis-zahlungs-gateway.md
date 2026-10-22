@@ -30,7 +30,7 @@ Der Ereignistyp (`kernel/classes/workflowtypes/event/ezpaymentgateway/ezpaymentg
 
 | Menge | Bedeutung |
 |---|---|
-| Verfügbar | Jedes Gateway, das geladen wurde und `registerGateway()` aufgerufen hat ([paymentgateways.ini durchgegangen](../einstellungen/paymentgateways-ini-durchgegangen.md)) |
+| Verfügbar | Jedes Gateway, das geladen wurde und `registerGateway()` aufgerufen hat ([paymentgateways.ini durchgegangen](../settings/paymentgateways-ini-durchgegangen.md)) |
 | Ausgewählt | Die Gateways, die Sie beim Bearbeiten des Ereignisses im Workflow ankreuzen |
 | Aktuell | Das Gateway, über das diese Zahlung läuft |
 

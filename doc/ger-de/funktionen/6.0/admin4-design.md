@@ -750,12 +750,12 @@ einer langen Auswahl kann dasselbe Layout mit `MegaMenuLayout=wide` in seinem `[
   Schaltfläche (Enter, Leertaste, Pfeil nach unten öffnen sie). Mit drei Tabs, die eines haben (Dashboard, Benutzer,
   Setup), braucht die Reihe weniger
   Platz als zuvor mit zwei.
-- **Die Tab-Symbole der Reihe ab 1600px.** Zwischen 576 und 1599px zeigen die Tabs der einzeiligen Reihe ihre Namen
-  ohne
-  ihre Symbole (`menu.ini [Topmenu_<tab>] Icon`), etwa 22px je Tab: Bei 1440px bleiben so Setup und die Pfeile mit dem
-  Hilfe-Link der Kopfzeile in der
-  Reihe. In „Mehr“ und in den Kacheln des Telefonmenüs bleiben die Symbole. Der Tab der aktuellen Seite
-  wandert als letzter in „Mehr“ (`admin4.js`), sodass er ausgewählt in der Reihe erscheint.
+- **Die Tabs zeigen ihre Symbole bei jeder Breite.** Jeder Tab zeichnet sein Symbol (`menu.ini [Topmenu_<tab>] Icon`)
+  vor seinem Namen, in der einzeiligen Reihe, in „Mehr“ und in den Kacheln des Telefonmenüs. Ein Tab, der nicht in
+  die Reihe passt, wandert in „Mehr“; der Tab der aktuellen Seite wandert als letzter (`admin4.js`), sodass er
+  ausgewählt in der Reihe erscheint. (Bis zum 22.10.2026 blendete die Reihe die Symbole zwischen 576 und 1599px aus,
+  um mehr Tabs unterzubringen; inzwischen geben auch die Erweiterungen ihren Tabs Symbole, und an den Symbolen sind
+  die Tabs auf einen Blick zu unterscheiden.)
 - **Unbekannte Einstellungen werden im Debug-Bericht genannt.** `parts/a4_mega_menu_check.tpl` (mit dem Skript
   eingebunden, also nur, solange `MegaMenuTabs[]` einen Tab nennt) schreibt eine Debug-Meldung für einen Wert in
   `MegaMenuTabs[]` ohne

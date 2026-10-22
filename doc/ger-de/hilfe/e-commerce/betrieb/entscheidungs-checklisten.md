@@ -52,7 +52,7 @@ Erstes: ein USt-Typ. Zweites: mehrere USt-Typen, je Produkt gewählt. Drittes: U
 - [ ] Wir brauchen Felder, die den mitgelieferten Formularen fehlen (Firma, USt-ID, Lieferadresse).
 
 Gäste und vollständige Adresse: `ezuser`. Kurzes Formular: `ezsimple`. Nur Konten: `ezdefault`. Zusätzliche Felder:
-eigener Handler. ([Durchgang durch shopaccount.ini](../einstellungen/shopaccount-ini-durchgegangen.md))
+eigener Handler. ([Durchgang durch shopaccount.ini](../settings/shopaccount-ini-durchgegangen.md))
 
 ## Versand
 
@@ -80,7 +80,7 @@ Gateway, mit der Arbeit für die Kartensicherheit, die das mit sich bringt.
 - [ ] Die Dokumentation des Zahlungsanbieters verlangt einen leeren Warenkorb vor der Zahlung: `ClearBasketOnCheckout=enabled`.
 - [ ] Computer werden gemeinsam genutzt: `ClearBasketOnLogout=enabled`.
 
-([Durchgang durch shop.ini](../einstellungen/shop-ini-durchgegangen.md), [Durchgang durch die Shop-Einstellungen in site.ini](../einstellungen/shop-einstellungen-in-site-ini-durchgegangen.md))
+([Durchgang durch shop.ini](../settings/shop-ini-durchgegangen.md), [Durchgang durch die Shop-Einstellungen in site.ini](../settings/shop-einstellungen-in-site-ini-durchgegangen.md))
 
 ## Mehrere Sites
 

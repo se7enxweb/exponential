@@ -48,7 +48,7 @@ Systemmails verwendet wird ([Handler für Warenkorbinformationen und Bestellbest
 
 Text und Betreff kommen aus dem Template `shop/orderemail.tpl`; der Betreff ist eine Template-Variable, die darin gesetzt
 wird. Das Template kann `content_type` für eine HTML-Mail setzen. Mit `shop.ini [OrderViewSettings] OrderLinkView=orderreceipt`
-verweist die Mail auf den dauerhaften Beleg ([shop.ini durchgegangen](../einstellungen/shop-ini-durchgegangen.md#orderviewsettings)).
+verweist die Mail auf den dauerhaften Beleg ([shop.ini durchgegangen](../settings/shop-ini-durchgegangen.md#orderviewsettings)).
 
 ## Beleglinks im Kundenservice
 
@@ -77,7 +77,7 @@ Behandeln Sie einen Beleglink wie den Beleg selbst: Senden Sie ihn nur an die ei
 
 - [Bestellbetrieb](README.md)
 - [Rechnungen und Belege](../../kunden/handel/rechnungen-und-belege.md)
-- [Die Shop-Einstellungen in site.ini durchgegangen](../einstellungen/shop-einstellungen-in-site-ini-durchgegangen.md)
+- [Die Shop-Einstellungen in site.ini durchgegangen](../settings/shop-einstellungen-in-site-ini-durchgegangen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

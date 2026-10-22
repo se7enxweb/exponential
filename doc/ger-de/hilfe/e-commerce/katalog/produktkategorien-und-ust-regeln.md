@@ -94,7 +94,7 @@ Kunde ohne Land passt nur zu Regeln mit „beliebig“ auf dieser Seite. Zwei pr
 bevorzugte Land), und liest andernfalls das Feld `UserCountryAttribute` des Benutzers. Der Bestätigungsschritt führt die
 Methode `handle-user-country` der Operation `confirmorder` aus, bevor der Versand berechnet wird. Gäste und neue Kunden
 brauchen daher im Kassenformular ein Länderfeld, das Ihr Konto-Handler speichert
-([shopaccount.ini durchgegangen](../einstellungen/shopaccount-ini-durchgegangen.md)). Die Länderliste selbst, mit den am
+([shopaccount.ini durchgegangen](../settings/shopaccount-ini-durchgegangen.md)). Die Länderliste selbst, mit den am
 häufigsten verwendeten Ländern zuerst, erklärt [Ländergruppen und Regionen](../../unternehmen/shops/laendergruppen-und-regionen.md).
 
 ## Ein durchgerechneter Regelsatz
@@ -124,7 +124,7 @@ sind, klärt Ihre Steuerberatung.
 - [Katalogmodellierung](README.md)
 - [Eigener USt-Handler](../erweitern/eigener-ust-handler.md)
 - [USt-Typen und -Regeln (Ihren Shop betreiben)](../../kunden/handel/ust-typen-und-ust-regeln.md)
-- [shop.ini durchgegangen](../einstellungen/shop-ini-durchgegangen.md)
+- [shop.ini durchgegangen](../settings/shop-ini-durchgegangen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -50,7 +50,7 @@ Für Shops mit mehreren Währungen und automatischen Preisen ergänzen Sie **Aut
 | Aufgabe | Wer | Wo |
 |---|---|---|
 | Aufbewahrung: archivierte Bestellungen prüfen, die älter als der vereinbarte Zeitraum sind | Händler, Datenschutzberater | [Archivieren, Entfernen und Aufräumen](../bestellungen/archivieren-entfernen-und-aufraeumen.md#eine-aufbewahrungspraxis) |
-| Zahlungsanbieter: Vertrag, Gebühren, Zugangsdaten, Callback-Adresse | Händler, Entwickler | [Durchgang durch paymentgateways.ini](../einstellungen/paymentgateways-ini-durchgegangen.md) |
+| Zahlungsanbieter: Vertrag, Gebühren, Zugangsdaten, Callback-Adresse | Händler, Entwickler | [Durchgang durch paymentgateways.ini](../settings/paymentgateways-ini-durchgegangen.md) |
 | Selbstbewertung der Kartensicherheit, falls Kartendaten Ihre Site berühren | Händler | [Kartenzahlungen und PCI-Grundlagen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md) |
 | Versandtarife und -bedingungen | Händler | [Versand und Abwicklung](../../kunden/handel/versand-und-abwicklung.md) |
 | Prüfung der Barrierefreiheit des Shops | Entwickler, Agentur | [Barrierefreiheit im Shop](barrierefreiheit-im-shop.md) |

@@ -212,12 +212,8 @@ body,
   transition: background-color .15s ease, color .15s ease;
 }
 .navbar-menu li a > .a4-icon { margin-inline-end: 0.4em; }   /* menu.ini [Topmenu_<tab>] Icon */
-/* In the header's one-line row the tabs show their icons from 1600px: below, the row needs that room for the tabs
-   themselves (about 22px a tab; at 1440px it keeps Setup and the mega menus' carets in the row). In "More" and in the
-   phone menu's tiles the icons stay. */
-@media screen and (min-width: 576px) and (max-width: 1599.98px) {
-  .navbar-menu .navbar-bar > li > a > .a4-icon { display: none; }
-}
+/* The tabs show their icons at every width: in the one-line row, in "More" and in the phone menu's tiles. A tab that
+   does not fit the row moves into "More" (admin4.js), the current page's tab last. */
 .navbar-menu li a:hover {
   background-color: var(--a4-header-hover);
   color: var(--a4-header-ink);

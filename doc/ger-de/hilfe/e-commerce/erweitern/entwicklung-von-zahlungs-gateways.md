@@ -53,7 +53,7 @@ extension/mypay/
 ```
 
 Der Dateiname des Gateways muss `classes/<extension>gateway.php` sein, damit es automatisch geladen wird
-([paymentgateways.ini durchgegangen](../einstellungen/paymentgateways-ini-durchgegangen.md#wie-gateways-geladen-werden)).
+([paymentgateways.ini durchgegangen](../settings/paymentgateways-ini-durchgegangen.md#wie-gateways-geladen-werden)).
 
 ## Die Gateway-Klasse
 

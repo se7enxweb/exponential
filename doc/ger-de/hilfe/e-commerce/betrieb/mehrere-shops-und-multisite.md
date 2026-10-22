@@ -42,7 +42,7 @@ Warenkörbe gehören zu Sitzungen, sodass sie der Sitzung des Besuchers auf der 
 ## Was je Siteaccess abweichen kann
 
 Einstellungen in `settings/siteaccess/<siteaccess>/` überschreiben die der Installation für diese Site
-([Durchgänge durch die Shop-Einstellungen](../einstellungen/README.md#wohin-shop-einstellungen-gehören),
+([Durchgänge durch die Shop-Einstellungen](../settings/README.md#wohin-shop-einstellungen-gehören),
 [Einstellungen und Logs je Site](../../unternehmen/multisite/einstellungen-logs-und-caches-pro-website.md)):
 
 | Kann abweichen | Einstellung oder Ort |

@@ -27,7 +27,7 @@ wie Sie eine andere Quelle verwenden.
 
 `eZECBHandler` (`kernel/shop/classes/exchangeratehandlers/ezecb/ezecbhandler.php`) liest Server, Port und Adresse
 aus `shop.ini [ECBExchangeRatesSettings]` und dort die tägliche Kursdatei. Seine Kurse beziehen sich auf den Euro,
-passend zum mitgelieferten `[ExchangeRatesSettings] BaseCurrency=EUR` ([shop.ini durchgegangen](../einstellungen/shop-ini-durchgegangen.md#exchangeratessettings)).
+passend zum mitgelieferten `[ExchangeRatesSettings] BaseCurrency=EUR` ([shop.ini durchgegangen](../settings/shop-ini-durchgegangen.md#exchangeratessettings)).
 
 ## Die Basisklasse
 

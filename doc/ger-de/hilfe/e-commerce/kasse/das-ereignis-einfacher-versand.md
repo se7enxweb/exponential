@@ -80,7 +80,7 @@ ein Rezept für einen Versand-Handler ([Pfad für Entwickler](../rollen/pfad-fue
 ## Verwandte Seiten
 
 - [Kasse und Workflows](README.md)
-- [workflow.ini für den Shop](../einstellungen/workflow-ini-fuer-den-shop.md)
+- [workflow.ini für den Shop](../settings/workflow-ini-fuer-den-shop.md)
 - [Versand und Bearbeitung (Ihren Shop betreiben)](../../kunden/handel/versand-und-abwicklung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -77,7 +77,7 @@ nur, wenn die Alternativen den Preis nicht ausdrücken können.
 
 - [Den Shop erweitern](README.md)
 - [Preisfelder im Vergleich](../katalog/preisfelder-im-vergleich.md)
-- [Die Shop-Einstellungen in site.ini durchgegangen](../einstellungen/shop-einstellungen-in-site-ini-durchgegangen.md)
+- [Die Shop-Einstellungen in site.ini durchgegangen](../settings/shop-einstellungen-in-site-ini-durchgegangen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
