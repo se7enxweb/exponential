@@ -28,6 +28,9 @@ The guides and feature pages explain the background; these pages are for doing t
 | [How do I set up VAT for my products?](how-do-i-set-up-vat.md) | Store |
 | [How do I give a group of customers a discount?](how-do-i-give-customers-a-discount.md) | Store |
 | [How do I add a currency to the store?](how-do-i-add-a-currency.md) | Store |
+| [How do I give a product options such as size or color?](how-do-i-give-a-product-options.md) | Content structure |
+| [How do I set a product's price in each currency?](how-do-i-set-a-product-price-per-currency.md) | Content structure |
+| [How do I see my customers and what sold best?](how-do-i-see-customers-and-product-statistics.md) | Store |
 | [What can I change in the Design tab?](what-can-i-change-in-the-design-tab.md) | Design |
 | [What is on the Setup overview, and why don't I see every tile?](what-is-on-the-setup-overview.md) | Setup |
 | [How do I find out who changed what, and when?](how-do-i-find-out-who-changed-what.md) | Audit |
@@ -66,6 +69,25 @@ The guides and feature pages explain the background; these pages are for doing t
 | [How do I build a page with Layouts?](how-do-i-build-a-page-with-layouts.md) | Editors |
 | [How do I send a newsletter?](how-do-i-send-a-newsletter.md) | Editors |
 | [How do I use the AI assistant in the editor?](how-do-i-use-the-ai-assistant-in-the-editor.md) | Editors |
+| [How do I move or copy an item?](how-do-i-move-or-copy-an-item.md) | Editors |
+| [How do I show an item in more than one place?](how-do-i-show-an-item-in-more-than-one-place.md) | Editors |
+| [How do I hide an item without removing it?](how-do-i-hide-an-item.md) | Editors |
+| [How do I swap two items in the tree?](how-do-i-swap-two-items.md) | Editors |
+| [How do I remove an item?](how-do-i-remove-an-item.md) | Editors |
+| [How do I go back to an earlier version?](how-do-i-go-back-to-an-earlier-version.md) | Editors |
+| [How do I preview a draft before I publish it?](how-do-i-preview-a-draft.md) | Editors |
+| [What do I do about a "Possible edit conflict"?](what-do-i-do-about-a-possible-edit-conflict.md) | Editors |
+| [How do I relate other items to the one I am editing?](how-do-i-relate-other-items-while-editing.md) | Editors |
+| [How do I reuse an image or file from the media library?](how-do-i-reuse-an-image-or-file.md) | Editors |
+| [How do I edit content from the website itself?](how-do-i-edit-from-the-website.md) | Editors |
+| [How do I remove a translation or change the main language?](how-do-i-remove-a-translation-or-change-the-main-language.md) | Editors |
+| [How do I show an item in languages it is not translated into?](how-do-i-show-an-item-in-untranslated-languages.md) | Editors |
+| [How do I add an anchor and link to it in the Online Editor?](how-do-i-add-an-anchor-in-the-online-editor.md) | Editors |
+| [How do I insert a custom tag such as a fact box or a quote?](how-do-i-insert-a-custom-tag.md) | Editors |
+| [How do I write rich text without the Online Editor?](how-do-i-write-rich-text-without-the-online-editor.md) | Editors |
+| [Why does search not find an item I know exists?](why-does-search-not-find-an-item.md) | Editors |
+| [How do I import or export a word processor document?](how-do-i-import-or-export-a-text-document.md) | Editors |
+| [How do I work with content as files over WebDAV?](how-do-i-work-with-content-over-webdav.md) | Editors |
 
 ## Administrators and site managers
 
@@ -80,12 +102,24 @@ The guides and feature pages explain the background; these pages are for doing t
 | [How do I give a page an extra address (URL alias)?](how-do-i-give-a-page-an-extra-address.md) |
 | [How do I redirect a group of old addresses (URL wildcards)?](how-do-i-redirect-old-addresses.md) |
 | [How do I add a content language?](how-do-i-add-a-content-language.md) |
+| [How do I let a translator work in one language only?](how-do-i-let-a-translator-edit-one-language.md) |
+| [How do I see what visitors search for?](how-do-i-see-what-visitors-search-for.md) |
 | [How do I read the log files?](how-do-i-read-the-log-files.md) |
 | [What does the content check find, and what do I do about it?](what-does-the-content-check-find.md) |
 | [How do I see the active extensions and the system information?](how-do-i-see-active-extensions-and-system-information.md) |
 | [How do I publish an RSS feed of my content?](how-do-i-publish-an-rss-feed.md) |
 | [How do I import an RSS feed from another site?](how-do-i-import-an-rss-feed.md) |
 | [How do I give an external application an API key?](how-do-i-give-an-external-application-access.md) |
+| [How do I create a section and put content into it?](how-do-i-create-a-section-and-assign-content.md) |
+| [How do I set up a members-only area?](how-do-i-set-up-a-members-only-area.md) |
+| [How do I add a user or a user group?](how-do-i-add-a-user-or-a-user-group.md) |
+| [How do I move a user to another group, or put them in two groups?](how-do-i-move-a-user-to-another-group.md) |
+| [How do I see what a user may do?](how-do-i-see-what-a-user-may-do.md) |
+| [How do I publish content at a later time?](how-do-i-publish-content-at-a-later-time.md) |
+| [How do I set up approval before publishing?](how-do-i-set-up-approval-before-publishing.md) |
+| [How do I add an attribute to a content class?](how-do-i-add-an-attribute-to-a-content-class.md) |
+| [How do I change how many versions of an object are kept?](how-do-i-change-how-many-versions-are-kept.md) |
+| [How do I turn an extension on or off?](how-do-i-turn-an-extension-on-or-off.md) |
 
 ## Exponential Intelligence
 
