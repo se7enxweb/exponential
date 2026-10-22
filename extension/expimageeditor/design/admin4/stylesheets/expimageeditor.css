@@ -1,0 +1,247 @@
+/*
+ * Copyright CJW Network and Exponential Foundation. All rights reserved.
+ * GNU General Public License v2.0 (or any later version).
+ *
+ * expimageeditor: the editor dialog (expimageeditor.js) in admin4's colours. Light and dark come from admin4's
+ * tokens (html[data-a4-theme]); each value has a fallback for a page without admin4.css.
+ * Icons: Bootstrap Icons 1.13.2 (MIT, images/expimageeditor/icons/LICENSE) as masks, so they take the text colour.
+ */
+
+.expimageeditor-open[hidden] { display: none; }
+
+dialog.expimageeditor {
+    box-sizing: border-box;
+    display: none;
+    width: min(1200px, calc(100vw - 2rem));
+    height: min(860px, calc(100vh - 2rem));
+    max-width: none;
+    max-height: none;
+    padding: 0;
+    border: 1px solid var(--a4-line, #c8ccd2);
+    border-radius: var(--a4-radius-m, 10px);
+    background: var(--a4-card, #fff);
+    color: var(--a4-ink, #1d2129);
+    font: inherit;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, .35);
+    overflow: hidden;
+}
+dialog.expimageeditor[open] {
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+}
+dialog.expimageeditor::backdrop { background: rgba(10, 14, 20, .55); }
+
+.expimageeditor-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--a4-space-2, .5rem) var(--a4-space-4, 1rem);
+    padding: var(--a4-space-3, .75rem) var(--a4-space-4, 1rem);
+    border-bottom: 1px solid var(--a4-line, #c8ccd2);
+}
+.expimageeditor-head h2 {
+    margin: 0;
+    font-size: var(--a4-text-l, 1.125rem);
+    overflow-wrap: anywhere;
+}
+.expimageeditor-status {
+    margin: 0;
+    color: var(--a4-muted, #5b6370);
+    font-size: var(--a4-text-s, .875rem);
+}
+.expimageeditor-status.is-error { color: var(--a4-bad, #b42318); font-weight: 600; }
+
+/* toolbar: groups of square icon buttons */
+.expimageeditor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--a4-space-2, .5rem) var(--a4-space-4, 1rem);
+    padding: var(--a4-space-2, .5rem) var(--a4-space-4, 1rem);
+    border-bottom: 1px solid var(--a4-line, #c8ccd2);
+    background: var(--a4-soft, #f3f4f6);
+}
+.expimageeditor-group {
+    display: flex;
+    gap: 2px;
+    padding-inline-end: var(--a4-space-4, 1rem);
+    border-inline-end: 1px solid var(--a4-line, #c8ccd2);
+}
+.expimageeditor-group:last-child { border-inline-end: 0; padding-inline-end: 0; }
+.expimageeditor-tool {
+    display: inline-grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: var(--a4-radius-s, 6px);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.expimageeditor-tool:hover:not(:disabled) { background: var(--a4-card, #fff); border-color: var(--a4-line, #c8ccd2); }
+.expimageeditor-tool[aria-pressed="true"] {
+    background: var(--a4-accent, #2563eb);
+    border-color: var(--a4-accent, #2563eb);
+    color: var(--a4-on-accent, #fff);
+}
+.expimageeditor-tool:disabled { opacity: .4; cursor: default; }
+.expimageeditor-tool:focus-visible,
+.expimageeditor button:focus-visible,
+.expimageeditor input:focus-visible,
+.expimageeditor select:focus-visible {
+    outline: 3px solid var(--a4-ring, #93b4f5);
+    outline-offset: 1px;
+}
+
+.expimageeditor-icon {
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: currentColor;
+    -webkit-mask: var(--expimageeditor-icon) center / contain no-repeat;
+    mask: var(--expimageeditor-icon) center / contain no-repeat;
+}
+
+/* stage and the options panel beside it */
+.expimageeditor-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 0;
+}
+.expimageeditor-stage {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    /* a checkerboard shows transparency */
+    background-color: var(--a4-soft, #eceef1);
+    background-image:
+        linear-gradient(45deg, rgba(127, 127, 127, .14) 25%, transparent 25%, transparent 75%, rgba(127, 127, 127, .14) 75%),
+        linear-gradient(45deg, rgba(127, 127, 127, .14) 25%, transparent 25%, transparent 75%, rgba(127, 127, 127, .14) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+.expimageeditor.is-busy .expimageeditor-stage { cursor: progress; }
+.expimageeditor-panel {
+    box-sizing: border-box;
+    width: 17rem;
+    max-width: 40vw;
+    padding: var(--a4-space-3, .75rem) var(--a4-space-4, 1rem);
+    border-inline-start: 1px solid var(--a4-line, #c8ccd2);
+    overflow-y: auto;
+}
+.expimageeditor-panel[hidden] { display: none; }
+.expimageeditor-panel-title { margin: 0 0 var(--a4-space-3, .75rem); font-weight: 600; }
+.expimageeditor-panel p { font-size: var(--a4-text-s, .875rem); color: var(--a4-muted, #5b6370); }
+.expimageeditor-field { display: grid; gap: 2px; margin-bottom: var(--a4-space-3, .75rem); }
+.expimageeditor-field label { font-size: var(--a4-text-s, .875rem); }
+.expimageeditor-field-range { grid-template-columns: minmax(0, 1fr) 3rem; }
+.expimageeditor-field-range label { grid-column: 1 / -1; }
+.expimageeditor-field-range output { text-align: end; font-variant-numeric: tabular-nums; }
+.expimageeditor-field-radio { margin: 0 0 var(--a4-space-3, .75rem); padding: 0; border: 0; min-width: 0; }
+.expimageeditor-field-radio legend { margin-bottom: 2px; padding: 0; font-size: var(--a4-text-s, .875rem); }
+.expimageeditor-radio { display: flex; align-items: center; gap: var(--a4-space-2, .5rem); }
+.expimageeditor-field-checkbox { grid-template-columns: auto 1fr; align-items: center; gap: var(--a4-space-2, .5rem); }
+.expimageeditor-field input[type="number"],
+.expimageeditor-field input[type="text"],
+.expimageeditor-field select { width: 100%; box-sizing: border-box; }
+.expimageeditor-field input[type="color"] { width: 3rem; height: 2rem; padding: 0; }
+.expimageeditor-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2, .5rem); }
+
+.expimageeditor-foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--a4-space-2, .5rem);
+    padding: var(--a4-space-3, .75rem) var(--a4-space-4, 1rem);
+    border-top: 1px solid var(--a4-line, #c8ccd2);
+}
+.expimageeditor-confirm { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2, .5rem); }
+.expimageeditor-confirm[hidden] { display: none; }
+/* an option of saving (ctx.foot), at the start of the footer */
+.expimageeditor-foot .expimageeditor-foot-option { margin: 0 auto 0 0; }
+[dir="rtl"] .expimageeditor-foot .expimageeditor-foot-option { margin: 0 0 0 auto; }
+
+/* raster editor: Cropper.js fills the stage */
+.expimageeditor-raster cropper-canvas { width: 100%; height: 100%; }
+.expimageeditor-raster cropper-selection { outline-color: var(--a4-accent, #2563eb); }
+.expimageeditor-raster .expimageeditor-preview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* SVG editor: the drawing area scrolls */
+.expimageeditor-svg .expimageeditor-stage { overflow: auto; }
+.expimageeditor-svg .expimageeditor-stage:focus-visible { outline: 3px solid var(--a4-ring, #93b4f5); outline-offset: -3px; }
+/* svgcanvas' root <svg> sits in the host, whose size expimageeditor_svg.js sets for the zoom */
+.expimageeditor-svg-host { position: relative; line-height: normal; }
+.expimageeditor-svg-host > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.expimageeditor-svg-host[data-mode="rect"],
+.expimageeditor-svg-host[data-mode="ellipse"],
+.expimageeditor-svg-host[data-mode="line"],
+.expimageeditor-svg-host[data-mode="path"],
+.expimageeditor-svg-host[data-mode="fhpath"] { cursor: crosshair; }
+.expimageeditor-svg-host[data-mode="text"],
+.expimageeditor-svg-host[data-mode="textedit"] { cursor: text; }
+/* the page of the drawing: a sheet with a thin edge, in both themes */
+.expimageeditor-svg-host #canvasBackground > rect { stroke: var(--a4-line, #c8ccd2); }
+.expimageeditor-svg .expimageeditor-field input[type="color"]:disabled { opacity: .4; }
+
+@media (max-width: 760px) {
+    dialog.expimageeditor { width: 100vw; height: 100vh; border-radius: 0; }
+    .expimageeditor-body { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
+    .expimageeditor-panel { width: auto; max-width: none; max-height: 40vh; border-inline-start: 0; border-top: 1px solid var(--a4-line, #c8ccd2); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .expimageeditor-tool { transition: background-color .12s, border-color .12s; }
+}
+
+/* the icons */
+.expimageeditor-icon-crop { --expimageeditor-icon: url(../images/expimageeditor/icons/crop.svg); }
+.expimageeditor-icon-arrow-counterclockwise { --expimageeditor-icon: url(../images/expimageeditor/icons/arrow-counterclockwise.svg); }
+.expimageeditor-icon-arrow-clockwise { --expimageeditor-icon: url(../images/expimageeditor/icons/arrow-clockwise.svg); }
+.expimageeditor-icon-arrow-repeat { --expimageeditor-icon: url(../images/expimageeditor/icons/arrow-repeat.svg); }
+.expimageeditor-icon-symmetry-vertical { --expimageeditor-icon: url(../images/expimageeditor/icons/symmetry-vertical.svg); }
+.expimageeditor-icon-symmetry-horizontal { --expimageeditor-icon: url(../images/expimageeditor/icons/symmetry-horizontal.svg); }
+.expimageeditor-icon-aspect-ratio { --expimageeditor-icon: url(../images/expimageeditor/icons/aspect-ratio.svg); }
+.expimageeditor-icon-arrows-angle-expand { --expimageeditor-icon: url(../images/expimageeditor/icons/arrows-angle-expand.svg); }
+.expimageeditor-icon-brightness-high { --expimageeditor-icon: url(../images/expimageeditor/icons/brightness-high.svg); }
+.expimageeditor-icon-circle-half { --expimageeditor-icon: url(../images/expimageeditor/icons/circle-half.svg); }
+.expimageeditor-icon-droplet-half { --expimageeditor-icon: url(../images/expimageeditor/icons/droplet-half.svg); }
+.expimageeditor-icon-sunset { --expimageeditor-icon: url(../images/expimageeditor/icons/sunset.svg); }
+.expimageeditor-icon-grid-3x3 { --expimageeditor-icon: url(../images/expimageeditor/icons/grid-3x3.svg); }
+.expimageeditor-icon-eye-slash { --expimageeditor-icon: url(../images/expimageeditor/icons/eye-slash.svg); }
+.expimageeditor-icon-type { --expimageeditor-icon: url(../images/expimageeditor/icons/type.svg); }
+.expimageeditor-icon-image { --expimageeditor-icon: url(../images/expimageeditor/icons/image.svg); }
+.expimageeditor-icon-arrow-90deg-left { --expimageeditor-icon: url(../images/expimageeditor/icons/arrow-90deg-left.svg); }
+.expimageeditor-icon-arrow-90deg-right { --expimageeditor-icon: url(../images/expimageeditor/icons/arrow-90deg-right.svg); }
+.expimageeditor-icon-zoom-in { --expimageeditor-icon: url(../images/expimageeditor/icons/zoom-in.svg); }
+.expimageeditor-icon-zoom-out { --expimageeditor-icon: url(../images/expimageeditor/icons/zoom-out.svg); }
+.expimageeditor-icon-bullseye { --expimageeditor-icon: url(../images/expimageeditor/icons/bullseye.svg); }
+.expimageeditor-icon-cursor { --expimageeditor-icon: url(../images/expimageeditor/icons/cursor.svg); }
+.expimageeditor-icon-square { --expimageeditor-icon: url(../images/expimageeditor/icons/square.svg); }
+.expimageeditor-icon-circle { --expimageeditor-icon: url(../images/expimageeditor/icons/circle.svg); }
+.expimageeditor-icon-slash-lg { --expimageeditor-icon: url(../images/expimageeditor/icons/slash-lg.svg); }
+.expimageeditor-icon-pencil { --expimageeditor-icon: url(../images/expimageeditor/icons/pencil.svg); }
+.expimageeditor-icon-bezier2 { --expimageeditor-icon: url(../images/expimageeditor/icons/bezier2.svg); }
+.expimageeditor-icon-fonts { --expimageeditor-icon: url(../images/expimageeditor/icons/fonts.svg); }
+.expimageeditor-icon-trash { --expimageeditor-icon: url(../images/expimageeditor/icons/trash.svg); }
+.expimageeditor-icon-front { --expimageeditor-icon: url(../images/expimageeditor/icons/front.svg); }
+.expimageeditor-icon-back { --expimageeditor-icon: url(../images/expimageeditor/icons/back.svg); }
+.expimageeditor-icon-files { --expimageeditor-icon: url(../images/expimageeditor/icons/files.svg); }
+.expimageeditor-icon-paint-bucket { --expimageeditor-icon: url(../images/expimageeditor/icons/paint-bucket.svg); }
+.expimageeditor-icon-border-width { --expimageeditor-icon: url(../images/expimageeditor/icons/border-width.svg); }
+.expimageeditor-icon-x-lg { --expimageeditor-icon: url(../images/expimageeditor/icons/x-lg.svg); }
+.expimageeditor-icon-check-lg { --expimageeditor-icon: url(../images/expimageeditor/icons/check-lg.svg); }

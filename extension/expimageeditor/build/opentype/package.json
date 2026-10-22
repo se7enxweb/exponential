@@ -1,0 +1,14 @@
+{
+  "name": "expimageeditor-opentype-build",
+  "private": true,
+  "description": "Builds design/admin4/javascript/opentype.min.js (IIFE, window.opentype) from opentype.js",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "opentype.js": "2.0.0"
+  }
+}

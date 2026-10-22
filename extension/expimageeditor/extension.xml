@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>Exponential Image Editor</name>
+        <version>1.0.0</version>
+        <copyright>Copyright CJW Network and Exponential Foundation. All rights reserved.</copyright>
+        <license>GNU General Public License v2.0 (or any later version)</license>
+
+        <software>
+            <uses>
+                <name>Cropper.js</name>
+                <license>MIT License</license>
+                <copyright>Copyright (c) 2015-present Chen Fengyuan</copyright>
+                <version>2.3.1</version>
+            </uses>
+            <uses>
+                <name>@svgedit/svgcanvas</name>
+                <license>MIT License</license>
+                <copyright>Copyright (c) 2009-2022 by SVG-edit authors</copyright>
+                <version>7.4.2</version>
+            </uses>
+            <uses>
+                <name>pathseg</name>
+                <license>BSD 3-Clause License</license>
+                <copyright>Copyright 2015 The Chromium Authors</copyright>
+                <version>1.2.1</version>
+            </uses>
+            <uses>
+                <name>opentype.js</name>
+                <license>MIT License</license>
+                <copyright>Copyright (c) 2020 Frederik De Bleser</copyright>
+                <version>2.0.0</version>
+            </uses>
+            <uses>
+                <name>tiny-inflate</name>
+                <license>MIT License</license>
+                <copyright>Copyright (c) 2015-present Devon Govett</copyright>
+                <version>1.0.3</version>
+            </uses>
+            <uses>
+                <name>Lora (sample font, @fontsource/lora)</name>
+                <license>SIL Open Font License 1.1</license>
+                <copyright>Copyright 2011 The Lora Project Authors, with Reserved Font Name "Lora"</copyright>
+                <version>3.008 (@fontsource/lora 5.3.0)</version>
+            </uses>
+            <uses>
+                <name>Bootstrap Icons</name>
+                <license>MIT License</license>
+                <copyright>Copyright (c) 2019-2024 The Bootstrap Authors</copyright>
+                <version>1.13.2</version>
+            </uses>
+        </software>
+    </metadata>
+</software>

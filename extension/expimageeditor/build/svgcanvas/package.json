@@ -1,0 +1,15 @@
+{
+  "name": "expimageeditor-svgcanvas-build",
+  "private": true,
+  "description": "Builds design/admin4/javascript/svgcanvas.min.js (IIFE, window.SvgCanvas) from @svgedit/svgcanvas",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@svgedit/svgcanvas": "7.4.2",
+    "esbuild": "0.28.2",
+    "pathseg": "1.2.1"
+  }
+}

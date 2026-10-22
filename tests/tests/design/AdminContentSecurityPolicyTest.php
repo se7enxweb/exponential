@@ -99,7 +99,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     );
 
     /** The extensions this repository ships (share/filelist.md5): checked always; an allowlisted one missing fails under CI=1 */
-    const SHIPPED_EXTENSIONS = array( 'expservices', 'ezformtoken', 'ezjscore', 'ezoe' );
+    const SHIPPED_EXTENSIONS = array( 'expimageeditor', 'expservices', 'ezformtoken', 'ezjscore', 'ezoe' );
 
     /**
      * Templates of extensions still carrying inline code: extension => array( 'why' => what is left and why, 'files'
