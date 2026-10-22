@@ -147,7 +147,7 @@ class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
         $table = self::read( 'design/admin4/javascript/ezajaxsubitems_expdatatable.js' );
         $this->assertStringContainsString( 'var drag = confObj.priorityDrag && window.a4SubitemsPriorityDrag ? window.a4SubitemsPriorityDrag.create(confObj, labelsObj.DRAG) : null;', $table );
         $this->assertStringContainsString( "canEdit: function (row) { return row.can_edit === true && !(drag && drag.busy()); },", $table );
-        $this->assertStringContainsString( "if (drag) { drag.attach(\$list.data('expDataTable')); }", $table );
+        $this->assertStringContainsString( "if (drag) { drag.attach(table); }", $table );
         $this->assertFileDoesNotExist( self::root() . '/design/admin/javascript/subitems_priority_drag.js', 'admin4 only' );
 
         // it saves through the inline priority editor's server function, with the parent's object for the cache

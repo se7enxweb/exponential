@@ -206,18 +206,22 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
     {
         $s = $this->harness( 'node_tabs.js', array( 'design/admin4/javascript/node_tabs.js' ) );
         $this->assertNull( $s['a tab name opens its tab']['error'] );
-        $this->assertContains( 'div.tab-block ul.tabs.tabs-by-cookie #node-tab-details', $s['a tab name opens its tab']['opened'] );
-        $this->assertSame( 1, $s['a tab name opens its tab']['block'], 'the tab block is found by its class' );
-        // jQuery 4 threw on it
+        $this->assertSame( 'node-tab-details', $s['a tab name opens its tab']['selected'] );
+        $this->assertSame( 'node-tab-details-content', $s['a tab name opens its tab']['panel'], 'the panel of the tab block is shown' );
+        $this->assertSame( 'tablist', $s['a tab name opens its tab']['tablist'] );
+        // a selector would throw on it
         $this->assertNull( $s['a broken value is not a selector']['error'] );
-        $this->assertSame( array(), $s['a broken value is not a selector']['opened'] );
-        $this->assertSame( array(), $s['a cookie of another name is not read']['opened'] );
+        $this->assertSame( 'node-tab-view', $s['a broken value is not a selector']['selected'] );
+        $this->assertSame( 'node-tab-view', $s['a cookie of another name is not read']['selected'] );
+        $this->assertStringContainsString( "document.querySelector('div.tab-block ul.tabs.tabs-by-cookie #node-tab-' + openTab)",
+                                           self::read( 'design/admin4/javascript/node_tabs.js' ) );
         $this->assertCount( 1, $s['opening a tab writes the cookie']['written'] );
         $this->assertStringEndsWith( '; path=/; SameSite=Lax; Secure', $s['opening a tab writes the cookie']['written'][0] );
         $this->assertSame( array( 'admin_navigation_content=0' ), $s['the switch saves through a4Pref']['saved'] );
-        // without a4Pref the legacy post carries the token URL-encoded (a + or & in it must not split or change the field)
-        $this->assertCount( 1, $s['the token is URL-encoded in the legacy post']['saved'] );
-        $this->assertStringEndsWith( ' ezxform_token=a%2Bb%26c%3Dd%25e%20f', $s['the token is URL-encoded in the legacy post']['saved'][0] );
+        // without a4Pref the legacy post carries the token URL-encoded (a + or & in it must not split or change the field),
+        // a space as + as jQuery's $.post() sent it
+        $this->assertSame( array( 'post /user/preferences/set_and_exit/admin_navigation_content/0 ezxform_token=a%2Bb%26c%3Dd%25e+f' ),
+                           $s['the token is URL-encoded in the legacy post']['saved'] );
     }
 
     public function testTheThemeStylesheetIsNotNamedByAPreference()

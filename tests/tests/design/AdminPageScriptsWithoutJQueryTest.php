@@ -5,7 +5,7 @@
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminPageScriptsWithoutJQueryTest.php
  *
- * @copyright Copyright (C) 2026 CJW Network and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright CJW Network and Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

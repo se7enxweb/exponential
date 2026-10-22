@@ -26,7 +26,7 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
     {
         $js = self::file( 'design/admin4/javascript/node_tabs.js' );
         foreach ( array( "'role', 'tablist'", "'role', 'tab'", "'aria-selected'", "'aria-controls'", "'role', 'tabpanel'",
-                         "'aria-labelledby'", "'ArrowRight'", "'ArrowLeft'", "'Home'", "'End'", "on( 'keydown', NodeTab.keydown )" ) as $needle )
+                         "'aria-labelledby'", "'ArrowRight'", "'ArrowLeft'", "'Home'", "'End'", "addEventListener( 'keydown', NodeTab.keydown )" ) as $needle )
             $this->assertStringContainsString( $needle, $js, $needle );
         // the clicked element may be a child of the link: the tab is the li around it
         $this->assertStringNotContainsString( 'e.target.parentNode', $js );
@@ -50,7 +50,8 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
     public function testATabListWithoutSelectionKeepsATabStop()
     {
         $js = self::file( 'design/admin4/javascript/node_tabs.js' );
-        $this->assertStringContainsString( "noneSelected = !\$ul.children( 'li.selected' ).children( 'a' ).length", $js );
+        $this->assertStringContainsString( "if ( a.length && li.classList.contains( 'selected' ) ) noneSelected = false;", $js );
+        $this->assertStringContainsString( "stop = selected || ( noneSelected && a === first );", $js );
         $this->assertStringContainsString( "a.setAttribute( 'tabindex', stop ? '0' : '-1' );", $js );
     }
 
