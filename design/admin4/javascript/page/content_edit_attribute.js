@@ -84,9 +84,9 @@ jQuery(function( $ )
         if ( !name ) return;
         dataControls( this ).each( function(){
             if ( ( this.labels && this.labels.length ) || this.title || this.getAttribute('aria-label') || this.getAttribute('aria-labelledby') ) return;
-            var label = $.trim( $( name ).text() ), cell = $( this ).closest('td, th')[0], row = cell && $( cell ).closest('table').find('tr').first()[0];
+            var label = $( name ).text().trim(), cell = $( this ).closest('td, th')[0], row = cell && $( cell ).closest('table').find('tr').first()[0];
             var head = row && row.cells[cell.cellIndex];
-            if ( head && head.tagName === 'TH' && head !== cell && $.trim( $( head ).text() ) ) label += ': ' + $.trim( $( head ).text() );
+            if ( head && head.tagName === 'TH' && head !== cell && $( head ).text().trim() ) label += ': ' + $( head ).text().trim();
             if ( label ) this.setAttribute( 'aria-label', label );
         } );
     } );
