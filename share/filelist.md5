@@ -12301,7 +12301,7 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-a2a866c0ba8951b6bdf02035ccc93ab3  doc/ger-de/.dirnames.json
+5a9f20ba3e3281dadfd7fa13841ad114  doc/ger-de/.dirnames.json
 4a17b507552fd50a4a416c8e6d5261d6  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 8b6e6fcc0c5f7375fdebc91173ae73b5  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 20a5b83b04efe02e2e54eaf74249f68b  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
@@ -12317,7 +12317,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 d8ec17ec6fcc8d49b62f81830d2d61b8  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-2897b49572df1cefa8ce998dab023fc8  doc/ger-de/.paths.json
+5f0ad4604260ac9892192ce2ff6bba1c  doc/ger-de/.paths.json
 cda223dc1e4d14ac9943e964893cf0ea  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -15488,6 +15488,15 @@ ce030b6ccdfe4601188003989aa000b7  doc/ger-de/hilfe/administratorpasswort-aendern
 1b4ca06dff8c67733d40517a66d087ee  doc/ger-de/hilfe/anmelden-im-editor.md
 039e4ea8ec763a21f6d36e8255d64305  doc/ger-de/hilfe/anmelden-in-der-administration.md
 2a9ee156f03361536cfe681a10810aff  doc/ger-de/hilfe/betriebssystemunterstuetzung.md
+350c5360e57a5661c3267b39a701f02a  doc/ger-de/hilfe/buch-eine-website-bauen/README.md
+ed96548fca982e0f59765089b9ebfe9f  doc/ger-de/hilfe/buch-eine-website-bauen/das-gaestebuch.md
+2fd888b0a7af9abc32a681748e8a1c8b  doc/ger-de/hilfe/buch-eine-website-bauen/das-hauptlayout.md
+72132283dea8ccc3affc754b72020f9d  doc/ger-de/hilfe/buch-eine-website-bauen/das-projekt-beginnen.md
+8b333dcf54f66e06aea82db549a7bbe6  doc/ger-de/hilfe/buch-eine-website-bauen/die-linkseite.md
+c3ac769c03febbae8340bcb2b835217e  doc/ger-de/hilfe/buch-eine-website-bauen/die-mitgliederseite.md
+114ac291573bbf2f8da97b8b94655f71  doc/ger-de/hilfe/buch-eine-website-bauen/die-nachrichtenseiten.md
+229f647dbdbc3db2df5770a2079500fe  doc/ger-de/hilfe/buch-eine-website-bauen/gaestebucheintraege-freigeben.md
+1c8284804e0dc4f940b57a58440b17ac  doc/ger-de/hilfe/buch-eine-website-bauen/sektionen-und-die-startseite.md
 227b6bd6b720d854da03feba2e1ebc57  doc/ger-de/hilfe/buch-lernen/README.md
 42e82367a13b22e674c6e5f38fdf59c6  doc/ger-de/hilfe/buch-lernen/benutzer-gruppen-und-rollen-im-beispiel.md
 79a4a79fb11f60db436059400399a9c0  doc/ger-de/hilfe/buch-lernen/bereitstellen-planen-und-pruefen.md
