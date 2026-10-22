@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-37cbbea9d9b1bfcee9c077c913988363  autoload/ezp_kernel.php
+6b831f77d0794fccbcda43bfdffac0b9  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3214,7 +3214,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-180f45be72882f5c116ca2f2ae879d7d  doc/changelogs/6.0/6.0.15.md
+b281d9b98a3dfc55ca633d43c04db856  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6316,7 +6316,8 @@ ad0cbcb7b00ee64e8f462a1f8f672b7e  doc/eng-us/features/6.0/subitems-table-options
 dd6ffd0934859a25b68301e43d20d3b0  doc/eng-us/features/6.0/template-editor-overrides.md
 7b608591724a5589bf96bf7a2cc4d09e  doc/eng-us/features/6.0/template-override-ordering.md
 bfe652712727cd6ca24daa78a9ddc1f3  doc/eng-us/features/6.0/template-path-comments.md
-84d2bc7e5047606ba62b0358307f2594  doc/eng-us/features/6.0/transfer-registry.md
+c1d35c36ad8001ff08accbbb4dcb4b7f  doc/eng-us/features/6.0/transfer-registry.md
+80fae419ced337dd1d77773ae1695e64  doc/eng-us/features/6.0/transfer-runs.md
 57c4106059d194a44e5f1db41823a12d  doc/eng-us/features/6.0/translations-and-languages.md
 52655ccd8d99de4f991040e3be60a92a  doc/eng-us/features/6.0/trash-who-and-where.md
 01c1af354bf09f4fd77c533d051b7106  doc/eng-us/features/6.0/ui-switch-design.md
@@ -7594,7 +7595,7 @@ c5a551b215bec55a858288d4a11849ca  doc/eng-us/help/customers/value/features-custo
 d5394140aa0f893580a2e77c150e9120  doc/eng-us/help/customers/value/roi-example-assumptions.md
 9e3662b84c208fac88b0ad7dc439b659  doc/eng-us/help/customers/value/roi-worksheet.md
 d540ac722870544539a5c7f96833d41e  doc/eng-us/help/customers/what-you-own.md
-275fc1103de8acdc33c238d2fc0c4f34  doc/eng-us/help/database-administrators/applying-the-6-0-15-database-update.md
+73ac62835b33419e0b9f7fa10a121ec3  doc/eng-us/help/database-administrators/applying-the-6-0-15-database-update.md
 b395e87aace8d32bef3c1dbccce95367  doc/eng-us/help/database-administrators/backups-per-engine.md
 92550e94f1b9bad1263405563fcce995  doc/eng-us/help/database-administrators/character-sets-and-collations.md
 84ceb2f4698993ef3959c4174bf36603  doc/eng-us/help/database-administrators/checking-the-schema-after-an-upgrade.md
@@ -9851,7 +9852,7 @@ baf66aa17d127641f5998381cf0a59c3  doc/eng-us/help/images/update-cli-a5-check.web
 2ee3c65057ea308d18a427bc3e0450a3  doc/eng-us/help/images/update-maintenance.webp
 1f80a35c16fb4004febb83c4a11c98e2  doc/eng-us/help/images/update-upgrade-check.webp
 f7310491d28b2e21502fa6ba5b206888  doc/eng-us/help/images/versions.webp
-9114b91eff9b7bba33f02f3d7f157e87  doc/eng-us/help/import-export-tools.md
+0c5f5df168d2bc6da47f5e02556ec25d  doc/eng-us/help/import-export-tools.md
 3f1fd52ae8ba44cde8a744607256f9d8  doc/eng-us/help/individuals/blogs/README.md
 6f49f66fc0315af888a25f434845d86f  doc/eng-us/help/individuals/blogs/comments-on-your-blog.md
 ab5a57b3c773d891ac7b4daf2ad7b868  doc/eng-us/help/individuals/blogs/moving-from-another-blog-platform.md
@@ -12329,7 +12330,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-6ddc7dd4378f87a6ab8f1c93924e780c  doc/ger-de/.paths.json
+0d3ac21cef3a1caecaa0a978bcae8ca5  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -15131,7 +15132,8 @@ fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-uebe
 e74cdba13351e2357f5d44752cfb4e3e  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
 13be67ed0258c4ebe40353d3ef07dafd  doc/ger-de/funktionen/6.0/template-operatoren-fuer-zeichenketten.md
 0caf6f8a83e6258e50740659d8b5ea4c  doc/ger-de/funktionen/6.0/template-pfad-kommentare.md
-f4a95e2557c57dc2914714367f4f664f  doc/ger-de/funktionen/6.0/transfer-register.md
+e24a7bd7bc416dfbe85b84c2aa2a29d9  doc/ger-de/funktionen/6.0/transfer-laeufe.md
+cf540cda5c81291d0b6b879de40bd2f7  doc/ger-de/funktionen/6.0/transfer-register.md
 d8811a6943bde3813b7afe286f9d2629  doc/ger-de/funktionen/6.0/uebersetzungen-und-sprachen.md
 de3819d9e1d4985d7a1647e5e065add1  doc/ger-de/funktionen/6.0/ui-umschalter-design.md
 31d14e5c1b5fad8438595b66c4a6b54e  doc/ger-de/funktionen/6.0/ui-umschalter-sprachen.md
@@ -15696,7 +15698,7 @@ a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 a0a95170364184e6d1dc3132a010f634  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
-34c3967b0cec9a7363033d994489464c  doc/ger-de/hilfe/datenbankadministratoren/das-datenbank-update-6-0-15-anwenden.md
+beb3696351ba44b245c50f7bf1178be2  doc/ger-de/hilfe/datenbankadministratoren/das-datenbank-update-6-0-15-anwenden.md
 ced62c6996019200e8471a6a57a4a3d5  doc/ger-de/hilfe/datenbankadministratoren/das-dba-schemaformat.md
 193e59b5ea0c3adbd7db6e84d4099ad7  doc/ger-de/hilfe/datenbankadministratoren/das-schema-nach-einem-upgrade-pruefen.md
 0bfb167a8f44104dcacac8df0bfd7a19  doc/ger-de/hilfe/datenbankadministratoren/datenbankadministratoren-hier-beginnen.md
@@ -16935,7 +16937,7 @@ a03cffad6f781a2fbcd82672906f920a  doc/ger-de/hilfe/hosting/sicherheit/sicherheit
 773ccaaa6454d632c683fd475ede31dd  doc/ger-de/hilfe/hosting/sicherheit/tls-und-https.md
 89600dda8a132d475ce027d3fb9ac5a5  doc/ger-de/hilfe/hosting/sicherheit/trennung-von-mandanten.md
 b7007a5a1e0ad8960cadd403d87caa73  doc/ger-de/hilfe/hosting/sicherheit/zweistufige-anmeldung.md
-6641b4ef55a931f0c0e009e54a32536e  doc/ger-de/hilfe/import-oder-export-werkzeug.md
+84be7c1ff50cd671be05484e23ab7448  doc/ger-de/hilfe/import-oder-export-werkzeug.md
 94bdd42e822a3953ce31051f080ee6a1  doc/ger-de/hilfe/inhalte-bearbeiten.md
 0530058a847a325a95b5520e3d6f2f9f  doc/ger-de/hilfe/integratoren/anbindung-einer-suchmaschine.md
 47264559aec7552a1f459da8390c37c1  doc/ger-de/hilfe/integratoren/arbeitsblatt-zur-bestandsaufnahme-einer-integration.md
@@ -21337,6 +21339,7 @@ f25e252d0822980021557dfd3a75ec00  kernel/classes/contentjob/expcontentjobremoves
 bb2ae7894e7743352cf3d6bdd3eaefe2  kernel/classes/contentjob/expcontentjobsectionsubtree.php
 909a7e26586f93a8827908cc86847cff  kernel/classes/contentjob/expcontentjobstatesubtree.php
 6617d7ed34cf4d2efe4157c92f302c79  kernel/classes/contentjob/expcontentjobstore.php
+d9add8b8d3ad7b5888d56f75e0f67d49  kernel/classes/contentjob/expcontentjobtransfer.php
 d8226b00b7469da9040b293266a47da4  kernel/classes/contentjob/expcontentjobtype.php
 130779b1aed31be7b3468442ebbb7e98  kernel/classes/contentjob/expcontentjobworker.php
 b87309023dcf0632588ba95e277c245b  kernel/classes/datatypes/ezauthor/ezauthor.php
@@ -21859,8 +21862,16 @@ c80009e7c21251cb23badd3d86a3594b  kernel/classes/syscard/providers/expsyscardsit
 18c292805ab8c84882aed37ef370e51a  kernel/classes/syscard/providers/expsyscardsiteprovider.php
 987feb8ad7ad2f5437adc41bb3470581  kernel/classes/syscard/providers/expsyscardvelocityprovider.php
 7aa52fe706a3bd37ef0520b3f0493e51  kernel/classes/syscard/providers/expsyscardwebserverprovider.php
+98327cd87cba84cbe47f66b24bb688f8  kernel/classes/transfer/expkerneltransfercancelledexception.php
+428825071f40182b0eab64f754ba509a  kernel/classes/transfer/expkerneltransfercontext.php
+97faaab36631a81773233731e3f0e099  kernel/classes/transfer/expkerneltransferhistory.php
+64c93ce86f609b4b124101641074e0f1  kernel/classes/transfer/expkerneltransferqueuehandler.php
 b26bdd352a18ee7576b21adae64fa0e0  kernel/classes/transfer/expkerneltransferregistry.php
-3c4c045a772df28bd34c7a55827a8dbd  kernel/classes/transfer/expkerneltransfertool.php
+1aa163911f39ec914ed13084d89204b3  kernel/classes/transfer/expkerneltransferrun.php
+234bb3a53195fd7fc16f769f8b0aa38d  kernel/classes/transfer/expkerneltransferrunner.php
+93a8d0db5c64bbbcac8526fcce519ebb  kernel/classes/transfer/expkerneltransferrunschema.php
+fcb8f52f2118ee9e605f129c6723ff9d  kernel/classes/transfer/expkerneltransfertask.php
+3e015343c58fde0e208b1f68b7e4a6a6  kernel/classes/transfer/expkerneltransfertool.php
 df88021792b0b11ae5e52e4fb8714679  kernel/classes/uiswitch/expuiswitch.php
 cd54fa40fed2f285f3992b4a8a4634aa  kernel/classes/uiswitch/expuiswitchdesignprovider.php
 2eaf46fffb8bf8a2ef20e950ec19528c  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
@@ -22194,7 +22205,7 @@ bd6f99ac9c002a50e9e11430c84f0589  kernel/private/classes/cronjobs/basket_cleanup
 0f438bcd95a07ea3b3f39836fb6f05d6  kernel/private/classes/cronjobs/cleanuprss.php
 7c41753264d1062b5010c1d6bdd7e687  kernel/private/classes/cronjobs/clusterpurge.php
 c56354a5e68b234d2cbec47e836de0e8  kernel/private/classes/cronjobs/contentcheck.php
-dcf2d585f44d078594a3872c77ca4df7  kernel/private/classes/cronjobs/contentjobs.php
+cd220cce70462e43b7d7a6e68fd24991  kernel/private/classes/cronjobs/contentjobs.php
 03b493c0cac44613989b351eeb3afd7d  kernel/private/classes/cronjobs/explogrotate.php
 7fcb036605c7fd4d375725ef04e7f3e2  kernel/private/classes/cronjobs/hide.php
 2bff337db4f2d189d8677690e2da60b0  kernel/private/classes/cronjobs/httpcache_cleanup.php
@@ -22870,12 +22881,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-e2675be86c12836749501b976f3bf35d  kernel/sql/mysql/kernel_schema.sql
-97fc0e2588c6f7f991b07f1f3a5d9223  kernel/sql/postgresql/kernel_schema.sql
+26e14858dbc5b6ca1655f04fa713ab31  kernel/sql/mysql/kernel_schema.sql
+5ce5773f624282fbda0ec97c8b3e98ba  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
-ce03b8330af52b5e601c91208fee1ffd  kernel/sql/postgresql/setval.sql
+b0bfac416014b562f46f95b17622dd62  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-14b2cad11e2265a15ececd7afe1033d4  kernel/sql/sqlite/schema.sql
+95ae9bbee50d612a23bf39a869aba964  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
 dada858accc356c23164e35bcc5d26b1  kernel/state/group.php
@@ -23180,7 +23191,7 @@ f99a41a30ace913f63ff7525de52d0ff  settings/browse.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-b95a531ef8b0eb990307a7af4fd9b829  settings/content.ini
+18c560850c9baadd195e1d7cac2a5f39  settings/content.ini
 5a57137294a415e06b0009c05e110036  settings/contentcheck.ini
 3f17f13b308164f04a7c3dad1613e464  settings/contentfinder.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
@@ -23242,6 +23253,7 @@ d991cf1227c1908a98f4ca754bae65c1  settings/syscard.ini
 aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 07043a08c7729eca52c81e7bca768cff  settings/texttoimage.ini
 79b1ecac748b56b0557db0578d643e1f  settings/toolbar.ini
+af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
@@ -23301,7 +23313,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-95dc22f8bc40318a4d8c66b55e5e58ca  share/db_schema.dba
+b5804a34ce2a9a3e3fe16608ad0c5690  share/db_schema.dba
 0d2dc77620a59815f0f637d7099cc90b  share/help/seed-glossary.json
 e5c09d9e4932f30d364759d243eb01df  share/help/seed-topics.json
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
@@ -24076,7 +24088,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 c2548f11cf751134fed7560c3f0b0204  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-b9da4378cc1eb1ac28e81ff8f48f6542  share/translations/ger-DE/translation.ts
+d5fc145d144ee7c6cf6360c03a7e6b9d  share/translations/ger-DE/translation.ts
 6b1954808805a24407921e51baa34a0b  share/translations/heb-IL/translation.ts
 061c1972d59c9c6deefd8c903aa2708c  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -24993,6 +25005,7 @@ f90a315e3f45bb3f6f647f93cc58fbc5  tests/tests/kernel/classes/syscard/expSysCardC
 3aa58dd1ef1bf5a526f5209d9b8f69e6  tests/tests/kernel/classes/syscard/expsyscardtestini.php
 65ea0f4fc996e4b55c80a262b019b5d7  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
+8d063f09007257af11653d5610b25e2e  tests/tests/kernel/classes/transfer/expKernelTransferRunsTest.php
 173c7582c0a9772090ad0f6f0e8cf2ca  tests/tests/kernel/classes/trash/TrashListMongoTest.php
 397cc60950363e47baa1ab8cbbcaafb9  tests/tests/kernel/classes/trash/TrashListPagedTest.php
 2cdb0ad8f51e15f030e8ca024863a522  tests/tests/kernel/classes/trash/TrashPurgeKeepDaysTest.php
@@ -25700,6 +25713,7 @@ bf625f57144144427b01aecee3a6f9f8  update/common/scripts/5.4/cleanupfieldvaluerel
 895b419a0138eea6b196f43965f519b1  update/common/scripts/5.4/fixtrashedimagereferences.php
 be0ae0aa7baa6e05635c1b233a529337  update/common/scripts/6.0/createapikeytable.php
 f07dfabe3b5632bed2ae68a1977706fb  update/common/scripts/6.0/createaudittables.php
+b83dbbb08f4886434931632bc5ffefc5  update/common/scripts/6.0/createtransferruntable.php
 a40735b2add3690c0cffe61f7f886270  update/common/scripts/6.0/movetrashrecords.php
 a31b7f17bf452d571ea23b33e005831e  update/common/scripts/cleanup.php
 18d258c9c59f4e4e0b5d8d1361630f20  update/common/scripts/updatecontentobjectname.php
@@ -25766,7 +25780,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-f40cdd7fb8a94f18915d91c5b115cc92  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+18bfafa0e3b341b00e46b2a52594bd53  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -25825,9 +25839,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-185ba3036e3a5c569666ef73c1c57254  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+fbd7a3a3597dc5e761afc4cdf7ac5c50  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-980cf4f41e6b4ef4bb7f90ac06b998e1  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+c99adc641df77ada336c61b5fddfa625  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9e2db96d75614e14c654a873ac90fdd6  webdav.php

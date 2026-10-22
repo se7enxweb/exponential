@@ -139,6 +139,12 @@ information), `transfer.audit` (Audit export), `transfer.pdf` (PDF export). Exte
 `transfer.xrowextract`, `transfer.bccie`, `transfer.sqliimport`, `transfer.syndication`, `transfer.newsletter`
 (cjw_newsletter), `transfer.ezodf`.
 
+## Background runs and the run history
+
+A tool runs its background work through `expKernelTransferRunner` (the job queue, else the kernel's content jobs,
+else its own process) and records every run in `exp_transfer_run`; three more keys of its block say how:
+`Engine=`, `QueueJobType=` and `HistoryAllPermission=`. See [Transfer runs](transfer-runs.md).
+
 ## Tests
 
 `tests/tests/kernel/classes/expKernelTransferRegistryTest.php` (DB-less, testsuite kernel-classes): the shipped

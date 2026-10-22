@@ -2800,6 +2800,7 @@
     "funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md": "features/6.0/role-and-policy-template-operators.md",
     "funktionen/6.0/template-operatoren-fuer-zeichenketten.md": "features/6.0/string-template-operators.md",
     "funktionen/6.0/template-pfad-kommentare.md": "features/6.0/template-path-comments.md",
+    "funktionen/6.0/transfer-laeufe.md": "features/6.0/transfer-runs.md",
     "funktionen/6.0/transfer-register.md": "features/6.0/transfer-registry.md",
     "funktionen/6.0/uebersetzungen-und-sprachen.md": "features/6.0/translations-and-languages.md",
     "funktionen/6.0/ui-umschalter-design.md": "features/6.0/ui-switch-design.md",

@@ -85,6 +85,11 @@ Schema-Handler jeder Engine anlegt und eine bestehende Tabelle in Ruhe lässt. D
 SQLite legen dieselbe Tabelle an; auf Oracle und MongoDB führen Sie das Skript aus (zuerst `--dry-run`)
 ([API-Schlüssel](../../anleitungen/api-schluessel.md#10-das-datenmodell-und-das-upgrade)).
 
+`createtransferruntable.php` tut dasselbe für die Lauf-Historie der Import- und Export-Werkzeuge (`exp_transfer_run`):
+die SQL-Update-Dateien legen sie auf MySQL, MariaDB, PostgreSQL und SQLite an, das Skript auf jeder Engine. Solange die
+Tabelle fehlt, arbeiten die Werkzeuge wie bisher und schreiben keine Historie
+([Transfer-Läufe](../../funktionen/6.0/transfer-laeufe.md#die-tabelle-und-das-update)).
+
 ## Schritt 4: die Papierkorb-Einträge
 
 Solange `trashed_by` und `trashed_via` nicht existieren, schreibt der Kernel nach `<VarDir>/trash/trashed.json`, wer ein Objekt

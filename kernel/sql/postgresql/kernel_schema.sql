@@ -764,6 +764,15 @@ CREATE SEQUENCE expapikey_id_seq
 
 
 
+CREATE SEQUENCE exp_transfer_run_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 
 
 
@@ -2396,6 +2405,41 @@ CREATE TABLE expapikey (
 
 
 
+CREATE TABLE exp_transfer_run (
+    bytes bigint DEFAULT 0 NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    detail text,
+    detail_url character varying(255) DEFAULT ''::character varying NOT NULL,
+    direction character varying(10) DEFAULT ''::character varying NOT NULL,
+    duration integer DEFAULT 0 NOT NULL,
+    engine character varying(16) DEFAULT ''::character varying NOT NULL,
+    error character varying(255) DEFAULT ''::character varying NOT NULL,
+    file_ref character varying(255) DEFAULT ''::character varying NOT NULL,
+    finished integer DEFAULT 0 NOT NULL,
+    format character varying(32) DEFAULT ''::character varying NOT NULL,
+    id integer DEFAULT nextval('exp_transfer_run_id_seq'::text) NOT NULL,
+    job_ref character varying(64) DEFAULT ''::character varying NOT NULL,
+    kind character varying(20) DEFAULT ''::character varying NOT NULL,
+    modified integer DEFAULT 0 NOT NULL,
+    rows_done integer DEFAULT 0 NOT NULL,
+    rows_failed integer DEFAULT 0 NOT NULL,
+    rows_total integer DEFAULT 0 NOT NULL,
+    scope character varying(20) DEFAULT ''::character varying NOT NULL,
+    scope_ref character varying(255) DEFAULT ''::character varying NOT NULL,
+    siteaccess character varying(64) DEFAULT ''::character varying NOT NULL,
+    started integer DEFAULT 0 NOT NULL,
+    state character varying(16) DEFAULT ''::character varying NOT NULL,
+    title character varying(255) DEFAULT ''::character varying NOT NULL,
+    tool character varying(64) DEFAULT ''::character varying NOT NULL,
+    tool_ref character varying(64) DEFAULT ''::character varying NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+
+
+
 
 CREATE TABLE ezproductcategory (
     id integer DEFAULT nextval('ezproductcategory_id_seq'::text) NOT NULL,
@@ -3819,6 +3863,22 @@ CREATE INDEX expapikey_user ON expapikey USING btree (user_id);
 
 
 
+CREATE INDEX exp_transfer_run_started ON exp_transfer_run USING btree (started);
+
+
+
+CREATE INDEX exp_transfer_run_tool ON exp_transfer_run USING btree (tool, started);
+
+
+
+CREATE INDEX exp_transfer_run_toolref ON exp_transfer_run USING btree (tool, tool_ref);
+
+
+
+CREATE INDEX exp_transfer_run_user ON exp_transfer_run USING btree (user_id);
+
+
+
 
 
 
@@ -4863,6 +4923,11 @@ ALTER TABLE ONLY ezprest_token
 
 ALTER TABLE ONLY expapikey
     ADD CONSTRAINT expapikey_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_transfer_run
+    ADD CONSTRAINT exp_transfer_run_pkey PRIMARY KEY (id);
 
 
 

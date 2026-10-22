@@ -69,7 +69,19 @@ Some exports can be imported again. These pairs are made to work together:
   another site".
 - The **?** help menu on a tool's page links back to this page.
 
+## Where your runs are listed
+
+Every run of Imports, Export and CIE is recorded in one run history: who ran it, when, how long it took, how many
+records it handled and how it ended. The run list and the **Statistics** page of Imports have a **Tool** filter:
+choose Imports, Export, CIE or all import and export tools. A run of Export or CIE links to its own page (the job
+with its file). Each tool's own pages keep their lists and have a link **All import and export runs**.
+
+You see your own runs, and every user's runs of a tool when your role allows it (for Export, the "all jobs" policy).
+Long exports run in the background on the job queue, or on the content jobs when the queue is not set up; you can
+leave the page and come back.
+
 ## For developers
 
 The tools are listed by the transfer registry of the kernel: each tool declares itself in `kernelservices.ini`, and
-every list and link above reads it. See [The transfer registry](../features/6.0/transfer-registry.md).
+every list and link above reads it. See [The transfer registry](../features/6.0/transfer-registry.md). How a tool runs
+in the background and records its runs: [Transfer runs](../features/6.0/transfer-runs.md).

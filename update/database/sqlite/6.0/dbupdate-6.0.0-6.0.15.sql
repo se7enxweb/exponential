@@ -368,6 +368,48 @@ CREATE TABLE IF NOT EXISTS expapikey (
 CREATE UNIQUE INDEX IF NOT EXISTS expapikey_prefix ON expapikey ( key_prefix );
 CREATE INDEX IF NOT EXISTS expapikey_user ON expapikey ( user_id );
 
+-- The run history of the import and export tools (doc/eng-us/features/6.0/transfer-runs.md).
+--
+-- One row per run of a tool of the transfer registry (Export, CIE, Imports ...): tool is the registry id
+-- (transfer.xrowextract), direction import or export, kind export, import, dry_run, retry or undo, state queued,
+-- running, done, failed or cancelled; the counts, the duration in seconds, the engine that ran it (expqueue,
+-- contentjob, process) with its job (job_ref), the tool's own job or run (tool_ref), a file reference relative to
+-- the tool (never a path) and the link to the tool's own page of the run. Written with IF NOT EXISTS, so running
+-- these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exp_transfer_run (
+  bytes integer NOT NULL DEFAULT 0,
+  created integer NOT NULL DEFAULT 0,
+  detail longtext,
+  detail_url varchar(255) NOT NULL DEFAULT '',
+  direction varchar(10) NOT NULL DEFAULT '',
+  duration integer NOT NULL DEFAULT 0,
+  engine varchar(16) NOT NULL DEFAULT '',
+  error varchar(255) NOT NULL DEFAULT '',
+  file_ref varchar(255) NOT NULL DEFAULT '',
+  finished integer NOT NULL DEFAULT 0,
+  format varchar(32) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  job_ref varchar(64) NOT NULL DEFAULT '',
+  kind varchar(20) NOT NULL DEFAULT '',
+  modified integer NOT NULL DEFAULT 0,
+  rows_done integer NOT NULL DEFAULT 0,
+  rows_failed integer NOT NULL DEFAULT 0,
+  rows_total integer NOT NULL DEFAULT 0,
+  scope varchar(20) NOT NULL DEFAULT '',
+  scope_ref varchar(255) NOT NULL DEFAULT '',
+  siteaccess varchar(64) NOT NULL DEFAULT '',
+  started integer NOT NULL DEFAULT 0,
+  state varchar(16) NOT NULL DEFAULT '',
+  title varchar(255) NOT NULL DEFAULT '',
+  tool varchar(64) NOT NULL DEFAULT '',
+  tool_ref varchar(64) NOT NULL DEFAULT '',
+  user_id integer NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS exp_transfer_run_started ON exp_transfer_run ( started );
+CREATE INDEX IF NOT EXISTS exp_transfer_run_tool ON exp_transfer_run ( tool, started );
+CREATE INDEX IF NOT EXISTS exp_transfer_run_toolref ON exp_transfer_run ( tool, tool_ref );
+CREATE INDEX IF NOT EXISTS exp_transfer_run_user ON exp_transfer_run ( user_id );
+
 --
 -- ezuser.login: one account per login.
 --

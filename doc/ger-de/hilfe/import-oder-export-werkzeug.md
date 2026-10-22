@@ -73,7 +73,20 @@ Manche Exporte lassen sich wieder importieren. Diese Paare sind dafür gemacht:
   „auf eine andere Site kopieren".
 - Das Hilfemenü **?** auf der Seite eines Werkzeugs verweist auf diese Seite zurück.
 
+## Wo Ihre Läufe aufgelistet sind
+
+Jeder Lauf von Imports, Export und CIE wird in einer gemeinsamen Lauf-Historie festgehalten: wer ihn ausgeführt hat,
+wann, wie lange er dauerte, wie viele Datensätze er bearbeitet hat und wie er endete. Die Lauf-Liste und die Seite
+**Statistik** von Imports haben einen Filter **Werkzeug**: wählen Sie Imports, Export, CIE oder alle Import- und
+Export-Werkzeuge. Ein Lauf von Export oder CIE verweist auf seine eigene Seite (den Job mit seiner Datei). Die eigenen
+Seiten jedes Werkzeugs behalten ihre Listen und haben einen Verweis **Alle Import- und Export-Läufe**.
+
+Sie sehen Ihre eigenen Läufe, und die Läufe aller Benutzer eines Werkzeugs, wenn Ihre Rolle es erlaubt (bei Export
+die Richtlinie „alle Jobs“). Lange Exporte laufen im Hintergrund in der Job-Warteschlange, oder in den Inhalts-Jobs,
+wenn die Warteschlange nicht eingerichtet ist; Sie können die Seite verlassen und später zurückkommen.
+
 ## Für Entwickler
 
 Die Werkzeuge listet das Transfer-Register des Kernels: Jedes Werkzeug meldet sich in `kernelservices.ini` an, und
-jede Liste und jeder Verweis oben liest es. Siehe [Das Transfer-Register](../funktionen/6.0/transfer-register.md).
+jede Liste und jeder Verweis oben liest es. Siehe [Das Transfer-Register](../funktionen/6.0/transfer-register.md). Wie
+ein Werkzeug im Hintergrund läuft und seine Läufe festhält: [Transfer-Läufe](../funktionen/6.0/transfer-laeufe.md).
