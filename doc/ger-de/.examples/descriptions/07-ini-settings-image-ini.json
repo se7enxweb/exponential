@@ -68,8 +68,8 @@
         "de": "Berechtigung für neue Bildverzeichnisse; 0777 bedeutet, dass jeder\ndie Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0770, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
     },
     "ini:settings/image.ini [FileSettings] ImagePermissions": {
-        "en": "Permission for new images, setting it to 0666 means that anyone\ncan read and write the files and can be considered a security risk.\nIt's preferred to use 0660 and make sure the web server has correct\nuser/group access.",
-        "de": "Berechtigung für neue Bilder; 0666 bedeutet, dass jeder\ndie Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.\nBesser ist 0660, wobei Sie sicherstellen, dass der Webserver den richtigen\nBenutzer-/Gruppenzugriff hat."
+        "en": "Permission for new images and their variations. Empty: the same as every\nother stored file, site.ini [FileSettings] StorageFilePermissions. A value\nhere applies to images only; 0666 means that anyone can read and write\nthe files and can be considered a security risk.",
+        "de": "Berechtigung für neue Bilder und ihre Varianten. Leer: dieselbe wie für\njede andere gespeicherte Datei, site.ini [FileSettings] StorageFilePermissions. Ein Wert\nhier gilt nur für Bilder; 0666 bedeutet, dass jeder die Dateien lesen und\nschreiben kann, was als Sicherheitsrisiko gelten kann."
     },
     "ini:settings/image.ini [FileSettings] PublishedImages": {
         "en": "Wich subdirectory of var/storage to use for publish images",

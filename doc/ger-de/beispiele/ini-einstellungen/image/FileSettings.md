@@ -78,18 +78,18 @@ DirPermissions=0777
 
 ## ImagePermissions
 
-> Berechtigung für neue Bilder; 0666 bedeutet, dass jeder  
-> die Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.  
-> Besser ist 0660, wobei Sie sicherstellen, dass der Webserver den richtigen  
-> Benutzer-/Gruppenzugriff hat.  
+> Berechtigung für neue Bilder und ihre Varianten. Leer: dieselbe wie für  
+> jede andere gespeicherte Datei, site.ini \[FileSettings\] StorageFilePermissions. Ein Wert  
+> hier gilt nur für Bilder; 0666 bedeutet, dass jeder die Dateien lesen und  
+> schreiben kann, was als Sicherheitsrisiko gelten kann.  
 
-Standard: `0666`.
+Standard: leer.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/image.ini.append.php
 [FileSettings]
-ImagePermissions=0666
+ImagePermissions=
 */ ?>
 ```
 
