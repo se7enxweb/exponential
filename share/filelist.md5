@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-19b2aeca82da55ca91b20af04083bf30  autoload/ezp_kernel.php
+2f2eb8b17d0fd4178f5dec892c1b2da9  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -135,6 +135,7 @@ d3ac25976f9d6e85ef034422ce8bbaec  bin/php/phar.php
 9b1f10566305bcb6e0aa69681f36577c  bin/php/preloadjob.php
 75efb466ac6abaeb440ddf71d80cd193  bin/php/publish_content.php
 dd082fa405efd942fe866dab5198c60c  bin/php/resetuserpassword.php
+bfdb1a645df7c10ea86e37055a13a1aa  bin/php/services.php
 f50da9f6847e4fb456ecfd2238692a46  bin/php/solr.php
 48493b670037161e4213d50e48ad88d1  bin/php/systeminfo.php
 36c68132c66b63fe8aec8fe302f38ba7  bin/php/trashpurge.php
@@ -3205,7 +3206,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-961ddd2cec4245d2b798ba2255304784  doc/changelogs/6.0/6.0.15.md
+1a4e6eeb4293ff9c3a8892484ddd07c9  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3418,7 +3419,7 @@ fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/eng-us/bc/6.0/ui-switch.md
 7928239ba6369a6bb899ee998ce94b05  doc/eng-us/bc/6.0/user-password-change.md
 e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-notes.md
-d799ce63a4995aa55e438ea451fcf9ee  doc/eng-us/bc/6.0/velocity-engines.md
+87aaf4f7ddacb613f61d734de64dfa27  doc/eng-us/bc/6.0/velocity-engines.md
 bd1cd88ecdff9dd1dba0ce963c6e5b5f  doc/eng-us/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/eng-us/bc/6.0/view_full_security.md
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
@@ -9300,7 +9301,7 @@ d870babc7a2405887c61bfc8de783325  doc/eng-us/help/hosting/panels/ispconfig.md
 c689973045ba27314c8e26f53a221c3f  doc/eng-us/help/hosting/panels/plesk.md
 aa9479873bd1b70d024253b8b2b821bb  doc/eng-us/help/hosting/panels/tls-certificates-in-panels.md
 db86da8d06053001f49acb25555d7c85  doc/eng-us/help/hosting/panels/webmin.md
-331f7b05aa111476955b79ae78854af3  doc/eng-us/help/hosting/performance/README.md
+cfb2ccb3750352982141be1a72f28821  doc/eng-us/help/hosting/performance/README.md
 1f0166d48f1422de3ee9c3acac8e18c4  doc/eng-us/help/hosting/performance/benchmarking-a-hosted-site.md
 4454a3fee80e1d2754b4631aaab02dad  doc/eng-us/help/hosting/performance/cache-clearing-and-warming.md
 40d5b4c8a488bb7b1d41606ae56e48cb  doc/eng-us/help/hosting/performance/caching-layers.md
@@ -9357,7 +9358,7 @@ d543ef93b268175c0acf94ad8ad72fc5  doc/eng-us/help/hosting/servers/run-a-public-d
 fab637db5169daca04eff6ddfa16fd60  doc/eng-us/help/hosting/servers/velocity-beside-apache-or-nginx.md
 8b6392cc6136b65b4bbcc4c4b3a740be  doc/eng-us/help/hosting/servers/velocity-for-hosts.md
 cf9a0fa15c2ac294d88ac309af072f78  doc/eng-us/help/hosting/servers/velocity-https-certificates.md
-4bc4009ba4b1f9ceee40c330e12b5299  doc/eng-us/help/hosting/servers/velocity-workers-and-pools.md
+86f811bb9fe49ca9c1915aea1a6e3361  doc/eng-us/help/hosting/servers/velocity-workers-and-pools.md
 fcdea3299a32c3730f641822280611cf  doc/eng-us/help/images/accounts/admin-tour-header-dark.webp
 58926ad2a9a9b9f7a48a56d711f50cf0  doc/eng-us/help/images/accounts/change-password-form.webp
 86837f82d2244615e6714193b4b371a0  doc/eng-us/help/images/accounts/current-user-box.webp
@@ -10365,7 +10366,7 @@ aeafe16d270c8f56a264c37e3f4c5191  doc/eng-us/help/php-developers/php-8-migration
 f6a99ddf2cb329481e3218310b39f584  doc/eng-us/help/php-developers/php-developer-checklists.md
 1acb16fd7c51052bbc12595731a5a86a  doc/eng-us/help/php-developers/php-developer-faq.md
 b509c34c8ea33c384d213e35e6016fed  doc/eng-us/help/php-developers/php-developer-reading-path.md
-409a5cb0eca05e2e39ae89c17dc9eafc  doc/eng-us/help/php-developers/php-developers-start-here.md
+03bcf016b102b7480cad8e7b4349cb9e  doc/eng-us/help/php-developers/php-developers-start-here.md
 243f20963e115c3f5390b5ce8e1a1555  doc/eng-us/help/php-developers/phpunit-without-a-database.md
 d3629abedfca76a98baea8529819c2ec  doc/eng-us/help/php-developers/profiling-php-code.md
 1978cea8924a22d5c456afe360eec4a5  doc/eng-us/help/php-developers/reading-settings-with-ezini.md
@@ -11953,7 +11954,7 @@ a0237419a9a0faf1b387874abb50760b  doc/eng-us/install/02-requirements.md
 247e7f750faa09e797a03dd0f6e6d5f2  doc/eng-us/install/05-setup-wizard.md
 f091808bae7212316fcb774ef6f272ae  doc/eng-us/install/06-kickstarter.md
 cf7364a723710a1f5c6372ab0d796214  doc/eng-us/install/07-console-install.md
-fd4cb620f03e0ecaba9912eedf5520a0  doc/eng-us/install/08-serving-the-site.md
+9a12e7e615a4c3c3d162616e5d525473  doc/eng-us/install/08-serving-the-site.md
 559c7384992bfa437f9c09d337f5adcf  doc/eng-us/install/09-databases.md
 d32a7227e8099eea652b62dae1636692  doc/eng-us/install/10-after-installing.md
 6358e6c131dd4a2b382ac2cb46782a93  doc/eng-us/install/11-upgrading.md
@@ -20159,7 +20160,7 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
 0c75a7bca2a0dce8da13908f7a1ee322  kernel/classes/expbenchmarkmicro.php
 ac3eb6ffed0a983ad2838e99457cc40a  kernel/classes/expbookmarkpage.php
-7b324effcb7e1404dbf35cf8ab2abaf1  kernel/classes/expcachecatalogue.php
+4c41c074f7ffa8b82424c373c5c80fa9  kernel/classes/expcachecatalogue.php
 c38d493128fc6296be9d66ba02d82e49  kernel/classes/expcachemanager.php
 bcf102d8550fd2f6ed4ceff8e035e572  kernel/classes/expcachewarm.php
 fd2ca96475a6e9594009777bebbc445f  kernel/classes/expcleanuprss.php
@@ -20179,6 +20180,11 @@ abe3acce6caa2e41c7583d94be5bc607  kernel/classes/expdemomode.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 6a26dd8312653231ab2187eea9655b65  kernel/classes/expjsonschemavalidator.php
+933bd2dd795e196483af744989fda260  kernel/classes/expkernelextensionoverridelist.php
+a07d28763822146949ee6db4c4f9c99d  kernel/classes/expkernelservicecompiler.php
+b744014d45bbb8a080e82b39cec611c9  kernel/classes/expkernelservicecontainer.php
+734d185d9c5493c4f018eee4c442edce  kernel/classes/expkernelservices.php
+2c972d6cb57e5557335a061521870369  kernel/classes/expkernelservicescope.php
 2a96f379f935f105bea29c86d75aca44  kernel/classes/expkickstarter.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 260fe378605929bcf0d4755cb2240c9c  kernel/classes/explinkcheck.php
@@ -20208,10 +20214,10 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 69e945b04dd9717d0446cf7306528fe7  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-93aa9a12c083f563be050b543e22080e  kernel/classes/expvelocity.php
+d92de8de8bce572806baf9e811b4834e  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 61f3e1980b4093057ceac49b80ec6fd6  kernel/classes/expvelocityconfiglayout.php
-71de74a3d7ef045020b4f88f4ede5292  kernel/classes/expvelocitydeploy.php
+5ae615730949619c3e5c0c0413c157c5  kernel/classes/expvelocitydeploy.php
 ca152db03e020c7bbe4ba8951c72a906  kernel/classes/expvelocityfrankenphp.php
 7c4ebba6437621654ba6ac7004296173  kernel/classes/expvelocityfrankenphpinstaller.php
 600c52c5993053d67fa78bde9b37ff99  kernel/classes/expvelocitymarkers.php
@@ -20224,7 +20230,7 @@ deb2ca869c73bf0de05c142ab2596265  kernel/classes/expviewaccess.php
 264b1b4e82ea87360f2a6bc498696978  kernel/classes/ezaudit.php
 6235fea69dfbb9e5d965e4879d7203db  kernel/classes/ezbasket.php
 a8480946c345cbdba00cf4aa5f283a34  kernel/classes/ezbinaryfilehandler.php
-85319b75607990ca62b06b18075f3993  kernel/classes/ezcache.php
+d19acbba4576f2493baa212ee48a09cf  kernel/classes/ezcache.php
 2cea93db58b75780affc83f4c4df3601  kernel/classes/ezcachetrash.php
 b755d73f6bf0e34f04abbcf67fdbcc69  kernel/classes/ezclusterfilefailure.php
 eff4a74fafc031a8bb3b4b5151ad8fdb  kernel/classes/ezclusterfilehandler.php
@@ -20884,6 +20890,7 @@ a53300d2b6eb0afbc337252492936c30  kernel/private/classes/commands/notificationst
 8be263fbc63147105258a3541907547b  kernel/private/classes/commands/publish_content.php
 fbd90b652ba8c22a12ad6d61b11cd039  kernel/private/classes/commands/resetuserpassword.php
 5f25043efdf4dd50521e98baf1063de5  kernel/private/classes/commands/runcronjobs.php
+1c5682954c8dce38aa81c09e6a5e56da  kernel/private/classes/commands/services.php
 8b5575a7eae1944b34a0bce991416ed1  kernel/private/classes/commands/solr.php
 fb5e9a16c6103e4cc55d5376f4d6fac1  kernel/private/classes/commands/syscard.php
 4465a716b5fc1723bd7bcdba839111cf  kernel/private/classes/commands/systeminfo.php
@@ -20964,7 +20971,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 e6ce6d62141661a4cf4b57a97febf591  kernel/private/classes/ezpkerneltreemenu.php
-dd6c61857903969b8666c646677ab165  kernel/private/classes/ezpkernelweb.php
+0d4a77a7939a5c60ba12740b7cb471a5  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -21836,7 +21843,7 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 9aaad506ff8b06ee6e95ef9ae0592556  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
-a067fbe363b203646807dd40f1aac0fd  lib/ezutils/classes/ezextension.php
+a256bb774de5a0c3c51dc54091759972  lib/ezutils/classes/ezextension.php
 072c8aadc71992ed763c699b6999fda2  lib/ezutils/classes/ezfatalusererror.php
 9e4092daa80dcaa119d74d48870c65d1  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
@@ -21845,7 +21852,7 @@ b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
 bc562a9b40207fedd00c05e8e70c4fa6  lib/ezutils/classes/ezhttpfile.php
 e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
 22ced16f31fcbc9ff36db4ccfc78f10b  lib/ezutils/classes/ezhttptool.php
-bdba020683d8cc798c0a08bb2a48d6ac  lib/ezutils/classes/ezini.php
+5bbb1b1d33b211b3f1ff047d0c03d5b6  lib/ezutils/classes/ezini.php
 6ee94ad4b0549a535ff40c1dc5e9326d  lib/ezutils/classes/ezinputvalidator.php
 081fb5c82a7fe6ec4e9f97d6fd96c3fa  lib/ezutils/classes/ezintegervalidator.php
 cb5821291cb049256ae9d7b1f5089550  lib/ezutils/classes/ezmail.php
@@ -21915,6 +21922,7 @@ d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
 1f9f8117c0d4eb89b6644d8f1fe4d46d  settings/image.ini
 4a4a4433b13da984646838763e782bad  settings/ini.ini
+d96380c893b8a852ab6e42630fd9f996  settings/kernelservices.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
