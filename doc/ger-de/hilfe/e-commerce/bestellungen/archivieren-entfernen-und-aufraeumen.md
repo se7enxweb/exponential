@@ -65,7 +65,7 @@ Führen Sie es nie auf einem Live-Shop aus. Erstellen Sie auch auf einer Testkop
 
 | Daten | Entfernt durch | Wann |
 |---|---|---|
-| Warenkörbe abgelaufener Sessions | Cron-Skript `basket_cleanup.php`, Teil `infrequent` | Wie `site.ini [Session] BasketCleanup*` es festlegt ([Die Shop-Einstellungen in site.ini durchgegangen](../einstellungen/shop-einstellungen-in-site-ini-durchgegangen.md#session-aufräumen-von-warenkörben)) |
+| Warenkörbe abgelaufener Sessions | Cron-Skript `basket_cleanup.php`, Teil `infrequent` | Wie `site.ini [Session] BasketCleanup*` es festlegt ([Die Shop-Einstellungen in site.ini durchgegangen](../settings/shop-einstellungen-in-site-ini-durchgegangen.md#session-aufräumen-von-warenkörben)) |
 | Wunschlisten | Nur durch den Kunden oder durch das Skript zur Shop-Bereinigung | Nie automatisch |
 | Temporäre Bestellungen | Nicht durch die Warenkorb-Bereinigung entfernt | Nie als Bestellungen angezeigt ([Temporäre Bestellungen und Aktivierung](../kasse/temporaere-bestellungen-und-aktivierung.md)) |
 

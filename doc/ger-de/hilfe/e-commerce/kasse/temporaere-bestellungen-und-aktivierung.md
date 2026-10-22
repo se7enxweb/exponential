@@ -53,7 +53,7 @@ temporäre Bestellung teilen sich eine Produktsammlung, Posten werden also nicht
 Direkt nach der Aktivierung versendet die Kassenoperation die Bestellmail (`send-order-email`) und führt den
 Nachher-Trigger von `shop_checkout` aus. Der Warenkorb wird geleert, wenn die Kasse abgeschlossen ist, es sei denn,
 `ClearBasketOnCheckout=enabled` hat ihn früher geleert
-([Die Shop-Einstellungen in site.ini durchgegangen](../einstellungen/shop-einstellungen-in-site-ini-durchgegangen.md)).
+([Die Shop-Einstellungen in site.ini durchgegangen](../settings/shop-einstellungen-in-site-ini-durchgegangen.md)).
 
 ## Wo temporäre Bestellungen erscheinen und wo nicht
 

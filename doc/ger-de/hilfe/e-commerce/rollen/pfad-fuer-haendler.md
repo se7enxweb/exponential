@@ -44,7 +44,7 @@ Shop für Entscheider. Dieser Pfad setzt voraus, dass Sie sich entschieden haben
 
 Eine Währung oder mehrere? Wenn mehrere: Legen Sie jeden Preis von Hand fest, oder rechnen Wechselkurse um? Die Antwort
 entscheidet zwischen den Feldern `ezprice` und `ezmultiprice` ([Preisfelder im Vergleich](../katalog/preisfelder-im-vergleich.md))
-und über die Währungseinstellungen in `shop.ini` ([shop.ini durchgegangen](../einstellungen/shop-ini-durchgegangen.md)).
+und über die Währungseinstellungen in `shop.ini` ([shop.ini durchgegangen](../settings/shop-ini-durchgegangen.md)).
 
 ## Entscheidung 3 Steuern
 
@@ -56,7 +56,7 @@ Ihrer Steuerberatung ([USt-Regeln und USt-Typen](../../unternehmen/shops/ust-reg
 ## Entscheidung 4 Kundendaten und Konten
 
 Müssen Kunden ein Konto anlegen, dürfen sie als Gast kaufen, und welche Adressfelder brauchen Sie? Der Shop-Konto-Handler
-setzt die Antwort um ([shopaccount.ini durchgegangen](../einstellungen/shopaccount-ini-durchgegangen.md),
+setzt die Antwort um ([shopaccount.ini durchgegangen](../settings/shopaccount-ini-durchgegangen.md),
 [Kundenkonten und Gastbestellung](../../unternehmen/shops/kundenkonten-und-gastbestellung.md)).
 
 ## Entscheidung 5 Versand

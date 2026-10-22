@@ -50,7 +50,7 @@ Bei **Kasse** im Warenkorb (`kernel/private/classes/views/shop/basket.php`):
 1. Gesendete Mengen werden gespeichert.
 2. Der Shop-Konto-Handler wird gefragt, ob er die Daten des Kunden hat (`verifyAccountInformation()`). Falls nicht,
    schickt er den Kunden zu seinem Formular (`shop/userregister`, `shop/register`) oder zur Anmeldung
-   ([shopaccount.ini durchgegangen](../einstellungen/shopaccount-ini-durchgegangen.md)). Dieses Formular legt die Bestellung
+   ([shopaccount.ini durchgegangen](../settings/shopaccount-ini-durchgegangen.md)). Dieses Formular legt die Bestellung
    an, wenn es abgeschickt wird.
 3. Die Preise werden aktualisiert und der Warenkorb wird **geprüft**: Das Produkt jedes Postens muss noch veröffentlicht
    sein, und sein Preis, die Angabe zur enthaltenen USt. und der USt-Prozentsatz müssen mit dem übereinstimmen, was der

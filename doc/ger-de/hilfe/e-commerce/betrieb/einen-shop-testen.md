@@ -29,10 +29,10 @@ Plan dahinter.
 - Testen Sie, wann immer möglich, auf einer Kopie der Site, nicht im Live-Shop
   ([Mit Git entwickeln](../../mit-git-entwickeln.md), [Sicherungen und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 - Versetzen Sie jeden Zahlungsanbieter in seinen Testmodus: `paypal.ini [ServerSettings]` auf die Sandbox gerichtet oder
-  `ezauthorize.ini TestMode=true` ([Durchgang durch paymentgateways.ini](../einstellungen/paymentgateways-ini-durchgegangen.md)).
+  `ezauthorize.ini TestMode=true` ([Durchgang durch paymentgateways.ini](../settings/paymentgateways-ini-durchgegangen.md)).
 - Stoppen Sie echte Mails: `site.ini [MailSettings] Transport=file` schreibt Mails in Dateien, statt sie zu senden.
   Prüfen Sie, welcher Wert gilt, denn eine Override-Datei kann einen anderen Transport setzen
-  ([Durchgänge durch die Shop-Einstellungen](../einstellungen/README.md#den-wirksamen-wert-prüfen)).
+  ([Durchgänge durch die Shop-Einstellungen](../settings/README.md#den-wirksamen-wert-prüfen)).
 - Verwenden Sie Test-Kundenkonten mit Adressen auf reservierten Domains wie `example.invalid`, niemals Adressen oder
   Daten echter Kunden.
 - Der Callback des Anbieters muss die Test-Site erreichen; eine Test-Site hinter einer Anmeldung oder einem VPN kann ihn

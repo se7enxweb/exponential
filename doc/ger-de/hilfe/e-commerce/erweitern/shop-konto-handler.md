@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Entwickler, die an der Kasse andere Kundendaten abfragen müssen: einen Firmennamen, eine
 USt-IdNr., eine separate Lieferadresse, eine Telefonnummer. Der Shop-Konto-Handler entscheidet, welches Formular der
 Kunde ausfüllt und wie die Kundendaten der Bestellung zurückgelesen werden. Die mitgelieferten Handler sind unter
-[shopaccount.ini durchgegangen](../einstellungen/shopaccount-ini-durchgegangen.md) beschrieben.
+[shopaccount.ini durchgegangen](../settings/shopaccount-ini-durchgegangen.md) beschrieben.
 
 ## Inhalt
 

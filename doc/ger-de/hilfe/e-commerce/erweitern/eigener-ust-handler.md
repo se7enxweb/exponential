@@ -61,7 +61,7 @@ RequireUserCountry=false
 
 Die Klasse `mystoreVATHandler` gehört in `extension/mystore_shop/vathandlers/mystorevathandler.php`. Setzen Sie
 `RequireUserCountry=false` nur, wenn Ihr Handler das Land nicht braucht; der mitgelieferte Kommentar sagt das ebenfalls
-([shop.ini durchgegangen](../einstellungen/shop-ini-durchgegangen.md#vatsettings)).
+([shop.ini durchgegangen](../settings/shop-ini-durchgegangen.md#vatsettings)).
 
 ## Auf dem Standard-Handler aufbauen
 

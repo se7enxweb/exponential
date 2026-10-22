@@ -71,7 +71,7 @@ Meistens wurde im Laufe des Tages ein Preis geändert. Sagen Sie dem Kunden, er 
 | Symptom | Ursache |
 |---|---|
 | Keine Versandzeile | Der Versand-Workflow liegt nicht auf `shop` `confirmorder` before oder hat kein Ereignis einfacher Versand |
-| Falscher Betrag | `workflow.ini [SimpleShippingWorkflow] ShippingCost` in einer anderen Override-Datei gewinnt ([Durchgänge durch die Shop-Einstellungen](../einstellungen/README.md#den-wirksamen-wert-prüfen)) |
+| Falscher Betrag | `workflow.ini [SimpleShippingWorkflow] ShippingCost` in einer anderen Override-Datei gewinnt ([Durchgänge durch die Shop-Einstellungen](../settings/README.md#den-wirksamen-wert-prüfen)) |
 | Zwei Versandkosten | Sowohl ein Versand-Handler als auch der Workflow für einfachen Versand sind aktiv |
 | Handler ignoriert | Debug-Log: „Shipping handler ... not found“; prüfen Sie `ExtensionDirectories[]` und den Dateinamen |
 
@@ -91,7 +91,7 @@ Einzelheiten: [Produktkategorien und USt-Regeln](../katalog/produktkategorien-un
 
 Das Ereignis Zahlungs-Gateway listet nur registrierte Gateways auf. Prüfen Sie, ob die Erweiterung aktiv ist, die Datei
 `classes/<extension>gateway.php` heißt, sie `eZPaymentGatewayType::registerGateway()` aufruft und der INI-Cache geleert
-wurde ([Durchgang durch paymentgateways.ini](../einstellungen/paymentgateways-ini-durchgegangen.md#prüfen-ob-ein-gateway-verfügbar-ist)).
+wurde ([Durchgang durch paymentgateways.ini](../settings/paymentgateways-ini-durchgegangen.md#prüfen-ob-ein-gateway-verfügbar-ist)).
 
 ## Keine Bestellmail
 

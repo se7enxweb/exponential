@@ -31,7 +31,7 @@ Reihenfolge der Umsetzung und was Sie übergeben.
 | Steuern | Welche Länder, welche Steuerklassen für Produkte? | USt-Typen, -Regeln und ein USt-Handler ([Produktkategorien und USt-Regeln](../katalog/produktkategorien-und-ust-regeln.md)) |
 | Versand | Pauschal, nach Gewicht, nach Zone, nach Tarif des Versanddienstleisters, Abholung? | Einfacher Versand oder ein Handler ([Eigener Versand-Handler](../erweitern/eigener-versand-handler.md)) |
 | Zahlung | Welcher Anbieter? Hat er eine Weiterleitungsseite? | Vorhandene Erweiterung oder ein neues Gateway ([Entwicklung von Zahlungs-Gateways](../erweitern/entwicklung-von-zahlungs-gateways.md)) |
-| Kunden | Konten, Gäste, B2B-Gruppen mit Rabatten? | Konto-Handler, Rabattgruppen ([shopaccount.ini durchgegangen](../einstellungen/shopaccount-ini-durchgegangen.md)) |
+| Kunden | Konten, Gäste, B2B-Gruppen mit Rabatten? | Konto-Handler, Rabattgruppen ([shopaccount.ini durchgegangen](../settings/shopaccount-ini-durchgegangen.md)) |
 | Backoffice | Lager, Buchhaltung, ERP, Etiketten? | Integrationen, nicht im Kernel ([Entscheidungs-Checklisten](../betrieb/entscheidungs-checklisten.md)) |
 | Websites | Ein Shop oder mehrere Marken und Sprachen? | [Mehrere Shops und Multisite](../betrieb/mehrere-shops-und-multisite.md) |
 | Daten | Produkte von wo importieren? | [Produktimporte und Migrationen](../betrieb/produktimporte-und-migrationen.md) |
@@ -49,7 +49,7 @@ Schätzen Sie die Spalte „individuell“ als Erweiterungsarbeit mit eigenen Te
 
 ## Reihenfolge der Umsetzung
 
-1. Grundgerüst der Einstellungen in einer Erweiterung oder in `settings/override/` ([Die Shop-Einstellungen durchgegangen](../einstellungen/README.md)).
+1. Grundgerüst der Einstellungen in einer Erweiterung oder in `settings/override/` ([Die Shop-Einstellungen durchgegangen](../settings/README.md)).
 2. Produktklassen und ein Testkatalog; dann Importe.
 3. USt-Typen und -Regeln; Währungen; Rundung.
 4. Templates: Vollansicht des Produkts, Warenkorb, Kassenseiten, Bestellmail.

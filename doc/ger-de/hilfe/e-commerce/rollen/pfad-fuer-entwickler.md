@@ -74,7 +74,7 @@ darauf verlassen, und führen Sie danach `php bin/php/checkclasses.php --quiet-o
    [Warenkorb, Kasse und Bestellungen](../../ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md): die Teile.
 2. [Die Kassenoperationen Schritt für Schritt](../kasse/die-kassenoperationen-schritt-fuer-schritt.md) und
    [Temporäre Bestellungen und Aktivierung](../kasse/temporaere-bestellungen-und-aktivierung.md): was wann läuft.
-3. [Die Shop-Einstellungen durchgegangen](../einstellungen/README.md): jede Einstellung.
+3. [Die Shop-Einstellungen durchgegangen](../settings/README.md): jede Einstellung.
 4. [Workflows an Shop-Triggern](../kasse/workflows-an-shop-triggern.md) und
    [Das Ereignis Zahlungs-Gateway](../kasse/das-ereignis-zahlungs-gateway.md).
 5. Die Seite des Erweiterungspunkts, den Sie brauchen, in [Den Shop erweitern](../erweitern/README.md).
@@ -83,7 +83,7 @@ darauf verlassen, und führen Sie danach `php bin/php/checkclasses.php --quiet-o
 ## Faustregeln
 
 - Legen Sie Shop-Einstellungen in `settings/override/` oder einen Siteaccess-Ordner, nie in die ausgelieferten
-  `settings/*.ini` ([Die Shop-Einstellungen durchgegangen](../einstellungen/README.md#wohin-shop-einstellungen-gehören)).
+  `settings/*.ini` ([Die Shop-Einstellungen durchgegangen](../settings/README.md#wohin-shop-einstellungen-gehören)).
 - Legen Sie Handler und Gateways in eine eigene Erweiterung, nicht in `kernel/`
   ([Als Erweiterung paketieren](../../ersteller/anwendungsentwickler/als-erweiterung-paketieren.md)).
 - Protokollieren oder speichern Sie nie Kartendaten; der Prüfpfad zeichnet Zahlungen ohne sie auf, und Ihr Code sollte
