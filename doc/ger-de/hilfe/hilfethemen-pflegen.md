@@ -53,6 +53,29 @@ gespeichert, sodass die früheren Ausgaben in ihrer Versionshistorie bleiben. Ei
 was Sie lesen dürfen. Die gespeicherten E-Books unter **E-Books** sind die Ausgaben für alle, die das Handbuch lesen
 dürfen.
 
+## Handbücher aus den Seiten der Hilfe
+
+Die meisten Handbücher in der Liste der Handbücher entstehen aus den Seiten dieser Hilfe: ein Handbuch für jede
+Gruppe von Seiten (für Redakteure, für Administratoren, für die Presse ...), eines für das Benutzerhandbuch, eines für
+jedes Buch und je eines für die Installationsanleitung, die Anleitungen, die Funktionen, die Hinweise für
+Mitwirkende, die Standards und die Spezifikationen. Jeder Ordner mit Seiten ist ein Kapitel, jede Seite ein Thema.
+Wo eine Seite ins Deutsche übersetzt ist, hat das Thema die deutsche Übersetzung, und das deutsche E-Book des
+Handbuchs verwendet sie.
+
+Diese Handbücher werden jedes Mal neu aus den Seiten erstellt, wenn eine neue Version von Exponential installiert
+wird. Deshalb gilt:
+
+- **Korrigieren Sie diese Themen nicht in der Administrationsoberfläche.** Eine Änderung dort wird bei der nächsten
+  Aktualisierung durch die Seite ersetzt. Korrigieren Sie stattdessen die Seite, oder melden Sie den Fehler (**Fehler melden** in der
+  Hilfe).
+- Sie erkennen sie an ihrer Remote-ID, die mit `help-gen-` beginnt, und an ihrer Hilfe-ID, die mit `doc.` beginnt
+  (`doc.help.editors.publishing` ist die Seite `help/editors/publishing.md`).
+- Themen, Kapitel und Handbücher, die Sie selbst schreiben, ändert die Aktualisierung nie.
+
+Ihr Administrator führt die Aktualisierung mit `./console exp:help:content build-manuals -s admin --release` aus und
+erstellt die E-Books mit `./console exp:help:content ebooks -s admin` (mit `--language=ger-DE` die deutsche Ausgabe).
+Siehe [Hilfe als Inhalt gepflegt](../funktionen/6.0/hilfeinhalte.md).
+
 ## Die Hilfe als DITA
 
 DITA ist das Standardformat für technische Dokumentation. Andere Dokumentationswerkzeuge, Übersetzungsdienste und

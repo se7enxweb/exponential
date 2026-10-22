@@ -51,6 +51,26 @@ releases.
 **Download EPUB** and **Download PDF** next to the manual's title make a book on the spot, with only what you may
 read. The stored e-books under **E-books** are the editions for everyone who may read the manual.
 
+## Manuals made from the help pages
+
+Most manuals in the list of manuals are made from the pages of this help: one manual for each group of pages (for
+editors, for administrators, for the press ...), one for the user manual, one for each book, and one each for the
+installation guide, the guides, the features, the contributor notes, the standards and the specifications. Each
+folder of pages is a chapter, each page a topic. Where a page is translated into German, the topic has the German
+translation, and the German e-book of the manual uses it.
+
+These manuals are made again from the pages each time a new version of Exponential is installed. So:
+
+- **Do not correct these topics in the administration.** A change made there is replaced by the page at the next
+  update. Correct the page instead, or report the mistake (**Report an error** in the help).
+- You recognize them by their remote ID, which starts with `help-gen-`, and by their help ID, which starts with
+  `doc.` (`doc.help.editors.publishing` is the page `help/editors/publishing.md`).
+- The topics, chapters and manuals you write yourself are never changed by the update.
+
+Your administrator runs the update with `./console exp:help:content build-manuals -s admin --release`, and builds
+the e-books with `./console exp:help:content ebooks -s admin` (add `--language=ger-DE` for the German edition). See
+[help maintained as content](../features/6.0/help-content.md#manuals-from-the-markdown-help).
+
 ## The help as DITA
 
 DITA is the standard format for technical documentation. Other documentation tools, translation services and print

@@ -3210,7 +3210,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-911add3760586e14cb52bfce6442531d  doc/changelogs/6.0/6.0.15.md
+7b3fab5da83dfd021a28edd5694237e0  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6242,7 +6242,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-0e464036cacc73b686d0d651d329bf98  doc/eng-us/features/6.0/help-content.md
+b83a9206d625fc77155e7470b0515a2a  doc/eng-us/features/6.0/help-content.md
 3b51634fa66e26d10a01c4063d66db8e  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
@@ -10034,7 +10034,7 @@ c329d580bc7a32af9f83029d40467528  doc/eng-us/help/local-businesses/simple-shop/v
 60c0aaaa3135cd494a3bb52da730523f  doc/eng-us/help/local-businesses/templates/website-brief-for-a-local-business.md
 3df344903995a78673f9dcea325f2453  doc/eng-us/help/logging-into-the-admin.md
 b49194a3a7d8fddac219aa13dadcc1a3  doc/eng-us/help/logging-into-the-editor.md
-49414c647fbbc47b40af44479db9c7d5  doc/eng-us/help/maintaining-help-topics.md
+691b7fe33782b86900e71058d3dabcc2  doc/eng-us/help/maintaining-help-topics.md
 b6f53929208624cdd2030096b8bfd298  doc/eng-us/help/manual/README.md
 748035c032cc85c5d75213012c1177da  doc/eng-us/help/manual/a-user-lost-their-phone-how-do-they-sign-in.md
 90c576b3e72c30a505c0e99bb4a7d7ed  doc/eng-us/help/manual/how-do-i-add-a-content-language.md
@@ -15052,7 +15052,7 @@ b3f4195f79b892bca854beb80acf293a  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 9d9894268f854965be088eb0dcfdd36c  doc/ger-de/funktionen/6.0/filter-fuer-cronjob-teile.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
-0e1186ec6a7f9d557da524d06bc404c2  doc/ger-de/funktionen/6.0/hilfeinhalte.md
+50fd21d891d4536e754d0586cc161975  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 963b9da2ea59e31f718ce59b040357a5  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
@@ -16528,7 +16528,7 @@ f76c13425d20730964afc5a1ac96d860  doc/ger-de/hilfe/handbuch/wie-waehle-ich-meine
 e9a2cdaff011ecaceffbebfceee25107  doc/ger-de/hilfe/handbuch/wie-zeige-ich-ein-element-in-nicht-uebersetzten-sprachen.md
 0254c1bc6a928c4e311581e9b3048289  doc/ger-de/hilfe/handbuch/wo-sehe-ich-meine-wartenden-elemente.md
 60649e9f1907ddda8310b502de82120b  doc/ger-de/hilfe/hilfe-in-anderen-sprachen-lesen.md
-c5f349a2295c645f31646e6e51e4d9f1  doc/ger-de/hilfe/hilfethemen-pflegen.md
+d55ce5de69dc648656d7efba4a2adc88  doc/ger-de/hilfe/hilfethemen-pflegen.md
 e5bdc0065a100c3d10da2b40928b0d86  doc/ger-de/hilfe/hosting/bereitstellung/README.md
 f324c77c7d7562c283998207e60181e8  doc/ger-de/hilfe/hosting/bereitstellung/bereitstellung-automatisieren.md
 5f9d4562b335e712891086d89e3b76c8  doc/ger-de/hilfe/hosting/bereitstellung/der-kickstarter-fuer-hoster.md

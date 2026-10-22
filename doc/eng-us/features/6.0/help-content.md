@@ -19,6 +19,7 @@ administration like any other content, and delivered into the help of the admini
 | The roles "Help editor" and "Help release" and the one additional policy of Anonymous | `./console exp:help:content roles` |
 | The validator of the style guide, `--fix` sets the sections from the audience | `./console exp:help:content check` |
 | The initial glossary and topics (the templates of the style guide, one manual) | `./console exp:help:content seed-glossary`, `seed-topics` |
+| The manuals made from the Markdown help: one per folder of `doc/eng-us/help/` and per reference area, rebuilt on each release, with the German translation | `./console exp:help:content build-manuals` ([below](#manuals-from-the-markdown-help)) |
 | What is installed, uninstall | `./console exp:help:content report`, `uninstall` |
 | An e-book (EPUB, PDF) of a manual | `./console exp:help:content export`, **Download EPUB/PDF** on the manual's page |
 | The DITA 1.3 export (bookmaps, DITAVAL, topics, glossary), checked after writing | `./console exp:help:content dita`, **Download DITA** on the manual's page and the list of manuals |
@@ -54,11 +55,147 @@ editors left them unless `--update` is given.
 
 ### On a new installation
 
-Nothing is created by the installer itself. After an installation, run `./console exp:help:content install -s
-<admin siteaccess>` once (and `seed-glossary`, `seed-topics` if the starting content is wanted): the same command
-that extends an existing site creates everything on a new one, and finds what is already there by identifier and
-remote_id, so a site built from a package that already carries the classes is only completed. The data the
-installer needs are the files of the kernel: the content model in `expHelpContentSchema`, the seeds in `share/help/`.
+The kickstarter and `./console exp:install` run `./console exp:help:content install -s admin` and
+`build-manuals -s admin --release` at the end of an installation, while the site is still in maintenance mode
+(`expKickstarter::installHelpManuals()`), so a new site has the classes, the tree, the roles and the manuals.
+`exphelp.ini [ManualSettings] BuildOnInstall=disabled` leaves both out. A step that fails is reported and the
+installation stands: the site works without them, and the commands can be run at any time. The setup wizard in the
+browser does not run them (a first build takes minutes, too long for a web request): after a wizard installation,
+run the two commands once. `seed-glossary` and `seed-topics` are run by hand when the starting content is wanted.
+
+The same commands that extend an existing site create everything on a new one, and find what is already there by
+identifier and remote_id, so a site built from a package that already carries the classes is only completed. The
+data the installer needs are the files of the kernel: the content model in `expHelpContentSchema`, the seeds in
+`share/help/`, the list of manuals in `exphelp.ini [ManualSettings]`.
+
+## Manuals from the Markdown help
+
+The pages of the help in `doc/eng-us/` (and their translations in `doc/ger-de/`) are the real help: thousands of
+pages. `build-manuals` makes manuals of them, so they are also content of the site: readable as manuals in the help,
+as e-books, as DITA and as context help, with sections, states and permissions like every other topic.
+
+**The Markdown stays the source.** The manuals are rebuilt from it on each release: a run makes the manuals,
+chapters and topics match the pages again. An edit made only in the administration is overwritten by the next run;
+a correction belongs in the Markdown page. Objects the command did not make are never touched: everything it makes
+has a remote_id that starts with `help-gen-`, and only those objects are changed or removed. The style guide's seed
+topics, the glossary and anything editors wrote stay as they are.
+
+```
+./console exp:help:content build-manuals -s admin --dry-run    # what would change
+./console exp:help:content build-manuals -s admin --release    # make, update, remove; set Released
+./console exp:help:content build-manuals -s admin --release    # No change.
+./console exp:help:content build-manuals -s admin --manual=press --release   # one manual
+./console exp:help:content build-manuals -s admin --language=none            # without the translations
+./console exp:help:content ebooks -s admin                     # the e-books of every Released manual
+./console exp:help:content ebooks -s admin --language=ger-DE   # and their German edition
+```
+
+### What becomes what
+
+| Markdown help | Content |
+|---|---|
+| a line of `exphelp.ini [ManualSettings] Manuals[]`: a folder below `doc/eng-us/` | a manual (`help_manual`, remote_id `help-gen-manual-<key>`) below the folder Manuals |
+| a subfolder (and a subfolder of it) | a chapter (`help_section`, `help-gen-chapter-<hash of the folder>`) below its manual or chapter |
+| a Markdown page | a topic (`help-gen-topic-<hash of the page>`) below its chapter or manual |
+| the folder's `README.md` | the first topic of its manual or chapter; its title is the chapter's title |
+| `<folder>/*.md` in `Manuals[]` | a manual of the pages directly in the folder, without chapters ("Getting started": `help/*.md`) |
+| the page's place in the help | the order: front matter `order`, then the title (as the help's navigation shows it) |
+| `doc/ger-de/` (paired through `doc/ger-de/.paths.json`) | the ger-DE translation of the same objects |
+
+- **Topic type.** Front matter `topic_type: concept|task|reference|troubleshooting` decides. Without it: reference for
+  the reference pages of the help (type `reference`, `catalogue`, `specification`, `generated`), a task for a page
+  whose title starts with "How to" and that has exactly one numbered list (the text before it is the context, the
+  list the steps, the text after it the result), else a concept. A troubleshooting page needs the headings
+  Condition (Symptom, Problem) and Remedy (Solution, Fix); a page that does not have the parts of its type is made a
+  concept and reported (`notice`).
+- **Text.** The page without its front matter and its title, as Markdown in the topic's text fields. A link to a
+  page that is a topic becomes `help:<help_id>`, so it opens the topic; a link to any other page or image of the help
+  becomes `/doc/eng-us/<path>`, which the help resolves when it shows the topic (the help viewer, the help's
+  images). Links with a scheme, anchors and code are left alone.
+- **Identifiers.** The help_id is `doc.<path of the page>`: `doc.help.editors.publishing` for
+  `help/editors/publishing.md` (area `doc`; a path longer than 80 characters, or two pages that would get the same
+  one, end in a hash). The remote_ids depend only on the path, so a run finds every object again; a page that moves
+  is a new topic, and the old one is removed.
+- **Title and short description.** The page's title; the short description is the first sentence of its summary
+  (front matter `summary`, else its first paragraph), at most 250 characters. A manual's title is its line's title,
+  else the title of the folder's `README.md`, else of its start page without ": start here" (`Adopters: start here`
+  gives `Adopters`). A translated title of a manual whose title comes from its line: `TranslatedTitles[]`.
+- **Audience, section, state.** The help's audiences of the page (front matter `audience`, else `[AudienceSettings]
+  PathRules[]` ...), each as the first audience option that `[ContentSettings] AudienceMap[]` maps to it. The section
+  is `help_public` only when one of them is a public audience (`PublicAudiences[]`, Visitors: the pages for `user`),
+  else `help_internal`; a chapter of a public manual is public. New objects are Draft; `--release` sets every
+  generated object to Released (the first build of a release does that, so the manuals are delivered).
+- **Translations.** Each language of `[ManualSettings] Languages[]` (ger-DE) that the installation has as a content
+  language: a page with a translation (not the English page shown instead) is the translation of its topic; a chapter
+  or manual is translated when it contains a translated topic. A language the installation does not have is
+  reported and never created; add it under Setup, Languages, then run again. A topic whose translation no longer
+  exists loses the translation.
+- **Audience options.** The audiences of the help are appended to `[ContentSettings] Audiences[]` (Developers,
+  Partners, Press ...) with their `AudienceMap[]`, and `build-manuals` appends them to the classes first, as the
+  `classes` step does (only ever appended, so the stored audiences keep their meaning).
+
+### Updates, removals, "No change."
+
+What is stored is read with three queries and compared with what the pages give before anything is written: an
+object whose values are the same costs no write. Then the command:
+
+- creates what is missing (a new topic with its translation in **one** published version),
+- updates what differs (a new version, in the language that differs),
+- moves an object whose manual or chapter changed, makes an object of another type again,
+- sets the chapters and topics of each manual and chapter (the relation list), the section and, with `--release`,
+  the state,
+- removes the generated objects whose page or folder is gone, and with `--manual=<key>` only those below that manual.
+
+A run that finds nothing to do prints `No change.`. Removing a line from `Manuals[]` removes its manual with its
+chapters and topics at the next run without `--manual`.
+
+### How long it takes
+
+The first build makes every object: on the copy of alpha's SQLite database, 52 manuals, 342 chapters and 5,315
+topics (4,614 of them with a German translation) took 28 minutes on a busy shared server (load around 23, the
+command at the lowest priority); a second run, which only compares, 34 seconds, most of it reading the pages. Most
+of a first build is the publishing of each object (its version, node, names and URL aliases). A release that changes a few pages updates a few objects. The command is
+written for that:
+
+- one published version per new object, with its translations (a translation published on its own would double the
+  first build);
+- the writes in transactions of `[ManualSettings] BatchSize` objects (50);
+- published without notification (no mail to the subscribers of the help tree);
+- the search index is updated by the `indexcontent` cronjob afterwards (`DelayedIndexing` for this run only: the help
+  searches its topics itself), and the view cache is not cleared per object (help topics are shown by `exphelp`);
+  the help's own cache is cleared once at the end;
+- every 250 objects of a run that changes something, a line says how far it is.
+
+### On each release
+
+The Markdown changes with every release, so the manuals are rebuilt with it. After the release is deployed:
+
+```
+./console exp:help:content install -s admin                    # new audience options, roles (usually No change.)
+./console exp:help:content build-manuals -s admin --release
+./console exp:help:content ebooks -s admin
+./console exp:help:content ebooks -s admin --language=ger-DE
+```
+
+`--release` releases what the build made or changed: the pages were reviewed in the repository before the release.
+Without it, new and changed topics wait in Draft for a release manager.
+
+### Settings: exphelp.ini [ManualSettings]
+
+| Setting | Default | |
+|---|---|---|
+| `Manuals[]` | 52 manuals: the 45 folders of `doc/eng-us/help/`, Getting started (`help/*.md`), install, guides, features, bc (Contributor notes), standards, specifications | `<key>;<folder>[;<title>]`, in the order of the manuals; the scope is an edit of this list |
+| `Languages[]` | ger-DE | the translations written, when the installation has the language |
+| `TranslatedTitles[]` | Getting started, Contributor notes in German | `<key>;<locale>;<title>` |
+| `License` | GNU Free Documentation License 1.3 | the license of each manual |
+| `BuildOnInstall` | `enabled` | the kickstarter and `exp:install` run `install` and `build-manuals --release` after an installation |
+| `BatchSize` | `50` | objects per database transaction |
+
+`doc/eng-us/history/` and `doc/eng-us/examples/` (generated) are not in the list.
+
+Classes: `expHelpManualBuilder` (the plan: pages to manuals, chapters and topics, no database),
+`expHelpManualSource` (the help's index of one language as the source), `expHelpManualSync` (the database made to
+match the plan). Tests: `tests/tests/kernel/classes/help/expHelpManualBuilderTest.php`.
 
 ## The content model
 
@@ -185,11 +322,11 @@ can never name `content/...`, and a provider that does not implement the interfa
 |---|---|---|
 | `Enabled` | `enabled` | `disabled`: the topic, manual and context views are 404 |
 | `ParentNode` | `media` | where `help-root` is created: `media`, `content`, `users` or a remote_id |
-| `Audiences[]` | Visitors, Members, Editors, Administrators | the audience options (only ever appended) |
+| `Audiences[]` | Visitors, Members, Editors, Administrators, then the other audiences of the help (Developers, Partners, Press, media and influencers ...) | the audience options (only ever appended) |
 | `PublicAudiences[]` | Visitors | an audience that makes a topic public |
 | `Platforms[]` | Web, Admin, Mobile | the platform options |
-| `Areas[]` | account, content, media, search, users, setup, privacy, help | the areas of help_ids |
-| `AudienceMap[<name>]` | visitors, members: user; editors: editor; administrators: admin | the help's audience of an audience option |
+| `Areas[]` | account, content, media, search, users, setup, privacy, help, doc | the areas of help_ids (`doc`: the topics of `build-manuals`) |
+| `AudienceMap[<name>]` | visitors, members: user; editors: editor; administrators: admin; developers: developer ... one per audience of the help | the help's audience of an audience option |
 | `ContextHelpIds[<key>]` | none | `module/view` (or `module`, `design:module/view`) = help_id |
 | `AnonymousContextHelp` | `disabled` | `enabled`: the roles step gives Anonymous `exphelp/context` |
 | `EbooksOnRelease` | `enabled` | a release builds the stored e-books of the manuals again; `disabled`: only `exp:help:content ebooks` does |
@@ -228,9 +365,15 @@ the class **file** below the folder E-books (remote_id `help-ebooks`), found by 
 `help-ebook-<manual remote_id>-<format>` (`help-ebook-help-manual-editors-epub`).
 
 ```
-./console exp:help:content ebooks -s admin [--manual=help-manual-editors] [--dry-run] [--json]
+./console exp:help:content ebooks -s admin [--manual=help-manual-editors] [--language=ger-DE] [--dry-run] [--json]
 ```
 
+- **Languages.** Without `--language` the books are the edition of the default language. `--language=ger-DE` builds
+  the German edition: the topics, chapters and manual in their German translation, in English where a topic has
+  none, stored as `help-ebook-<manual remote_id>-ger-de-<format>` and named "<title> (EPUB, ger-DE)". The manual's
+  page lists the editions of the default language and of `[ManualSettings] Languages[]`. `export` takes `--language`
+  too. The rebuild on release builds the edition of the default language; the other editions are built by the
+  command.
 - **Rebuilt on release.** When an object of the help is set to Released (the state assignment of the
   administration, or any code that assigns states through `eZContentOperationCollection::updateObjectState()`), the
   books of every Released manual that contains it (the manual itself, its chapters, their topics, the figures of

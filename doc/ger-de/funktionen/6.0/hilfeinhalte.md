@@ -20,6 +20,7 @@ Kontexthilfe in anderen Clients.
 | Die Rollen "Help editor" und "Help release" sowie die eine zusätzliche Richtlinie von Anonymous | `./console exp:help:content roles` |
 | Der Validator des Styleguides; `--fix` setzt die Sektionen anhand der Zielgruppe | `./console exp:help:content check` |
 | Das anfängliche Glossar und die ersten Themen (die Vorlagen des Styleguides, ein Handbuch) | `./console exp:help:content seed-glossary`, `seed-topics` |
+| Die Handbücher aus der Markdown-Hilfe: eines je Ordner von `doc/eng-us/help/` und je Referenzbereich, bei jedem Release neu erstellt, mit der deutschen Übersetzung | `./console exp:help:content build-manuals` ([unten](#handbücher-aus-der-markdown-hilfe)) |
 | Was installiert ist, Deinstallation | `./console exp:help:content report`, `uninstall` |
 | Ein E-Book (EPUB, PDF) eines Handbuchs | `./console exp:help:content export`, **EPUB/PDF herunterladen** auf der Seite des Handbuchs |
 | Der DITA-1.3-Export (Bookmaps, DITAVAL, Themen, Glossar), nach dem Schreiben geprüft | `./console exp:help:content dita`, **DITA herunterladen** auf der Seite des Handbuchs und in der Liste der Handbücher |
@@ -55,11 +56,154 @@ vorhandene Objekte so, wie die Redakteure sie hinterlassen haben, sofern nicht `
 
 ### Bei einer neuen Installation
 
-Der Installer selbst legt nichts an. Führen Sie nach einer Installation einmal `./console exp:help:content install -s
-<admin siteaccess>` aus (und `seed-glossary`, `seed-topics`, wenn Sie die Startinhalte möchten): Derselbe Befehl, der
-eine bestehende Site erweitert, legt auf einer neuen alles an und findet Vorhandenes über Bezeichner und remote_id,
-sodass eine Site, die aus einem Paket mit den Klassen erstellt wurde, nur ergänzt wird. Die Daten, die der Installer
-braucht, sind Dateien des Kernels: das Inhaltsmodell in `expHelpContentSchema`, die Startdaten in `share/help/`.
+Der Kickstarter und `./console exp:install` führen am Ende einer Installation `./console exp:help:content install -s
+admin` und `build-manuals -s admin --release` aus, solange die Site noch im Wartungsmodus ist
+(`expKickstarter::installHelpManuals()`), sodass eine neue Site die Klassen, den Baum, die Rollen und die Handbücher
+hat. `exphelp.ini [ManualSettings] BuildOnInstall=disabled` lässt beides weg. Ein Schritt, der fehlschlägt, wird
+gemeldet, und die Installation bleibt bestehen: Die Site funktioniert ohne sie, und die Befehle können jederzeit
+ausgeführt werden. Der Setup-Assistent im Browser führt sie nicht aus (ein erster Aufbau dauert Minuten, zu lange für
+eine Webanfrage): Führen Sie nach einer Installation mit dem Assistenten die beiden Befehle einmal aus. `seed-glossary`
+und `seed-topics` führen Sie von Hand aus, wenn Sie die Startinhalte möchten.
+
+Dieselben Befehle, die eine bestehende Site erweitern, legen auf einer neuen alles an und finden Vorhandenes über
+Bezeichner und remote_id, sodass eine Site, die aus einem Paket mit den Klassen erstellt wurde, nur ergänzt wird. Die
+Daten, die der Installer braucht, sind Dateien des Kernels: das Inhaltsmodell in `expHelpContentSchema`, die
+Startdaten in `share/help/`, die Liste der Handbücher in `exphelp.ini [ManualSettings]`.
+
+## Handbücher aus der Markdown-Hilfe
+
+Die Seiten der Hilfe in `doc/eng-us/` (und ihre Übersetzungen in `doc/ger-de/`) sind die eigentliche Hilfe: Tausende
+von Seiten. `build-manuals` macht daraus Handbücher, sodass sie auch Inhalt der Site sind: als Handbücher in der Hilfe,
+als E-Books, als DITA und als Kontexthilfe lesbar, mit Sektionen, Status und Berechtigungen wie jedes andere Thema.
+
+**Das Markdown bleibt die Quelle.** Die Handbücher werden bei jedem Release daraus neu erstellt: Ein Lauf bringt
+Handbücher, Kapitel und Themen wieder in Übereinstimmung mit den Seiten. Eine Änderung, die nur in der
+Administrationsoberfläche gemacht wurde, wird beim nächsten Lauf überschrieben; eine Korrektur gehört in die
+Markdown-Seite. Objekte, die der Befehl nicht erstellt hat, werden nie angefasst: Alles, was er erstellt, hat eine
+remote_id, die mit `help-gen-` beginnt, und nur diese Objekte werden geändert oder entfernt. Die Startthemen des
+Styleguides, das Glossar und alles, was Redakteure geschrieben haben, bleiben, wie sie sind.
+
+```
+./console exp:help:content build-manuals -s admin --dry-run    # was sich ändern würde
+./console exp:help:content build-manuals -s admin --release    # anlegen, aktualisieren, entfernen; Veröffentlicht setzen
+./console exp:help:content build-manuals -s admin --release    # No change.
+./console exp:help:content build-manuals -s admin --manual=press --release   # ein Handbuch
+./console exp:help:content build-manuals -s admin --language=none            # ohne die Übersetzungen
+./console exp:help:content ebooks -s admin                     # die E-Books jedes veröffentlichten Handbuchs
+./console exp:help:content ebooks -s admin --language=ger-DE   # und ihre deutsche Ausgabe
+```
+
+### Was woraus wird
+
+| Markdown-Hilfe | Inhalt |
+|---|---|
+| eine Zeile von `exphelp.ini [ManualSettings] Manuals[]`: ein Ordner unterhalb von `doc/eng-us/` | ein Handbuch (`help_manual`, remote_id `help-gen-manual-<Schlüssel>`) unterhalb des Ordners Manuals |
+| ein Unterordner (und dessen Unterordner) | ein Kapitel (`help_section`, `help-gen-chapter-<Hash des Ordners>`) unterhalb seines Handbuchs oder Kapitels |
+| eine Markdown-Seite | ein Thema (`help-gen-topic-<Hash der Seite>`) unterhalb seines Kapitels oder Handbuchs |
+| die `README.md` des Ordners | das erste Thema seines Handbuchs oder Kapitels; ihr Titel ist der Titel des Kapitels |
+| `<Ordner>/*.md` in `Manuals[]` | ein Handbuch aus den Seiten direkt im Ordner, ohne Kapitel ("Getting started": `help/*.md`) |
+| der Platz der Seite in der Hilfe | die Reihenfolge: Front Matter `order`, dann der Titel (wie die Navigation der Hilfe sie zeigt) |
+| `doc/ger-de/` (zugeordnet über `doc/ger-de/.paths.json`) | die Übersetzung ger-DE derselben Objekte |
+
+- **Thementyp.** Das Front Matter `topic_type: concept|task|reference|troubleshooting` entscheidet. Ohne es: eine
+  Referenz für die Referenzseiten der Hilfe (Typ `reference`, `catalogue`, `specification`, `generated`), eine
+  Aufgabe für eine Seite, deren Titel mit "How to" beginnt und die genau eine nummerierte Liste hat (der Text davor
+  ist der Kontext, die Liste die Schritte, der Text danach das Ergebnis), sonst ein Konzept. Eine
+  Fehlerbehebungsseite braucht die Überschriften Condition (Symptom, Problem) und Remedy (Solution, Fix); eine Seite
+  ohne die Teile ihres Typs wird ein Konzept und gemeldet (`notice`).
+- **Text.** Die Seite ohne Front Matter und Titel, als Markdown in den Textfeldern des Themas. Ein Link auf eine Seite,
+  die ein Thema ist, wird `help:<help_id>` und öffnet so das Thema; ein Link auf eine andere Seite oder ein Bild der
+  Hilfe wird `/doc/eng-us/<Pfad>`, den die Hilfe beim Anzeigen des Themas auflöst (Hilfe-Viewer, Bilder der Hilfe).
+  Links mit einem Schema, Anker und Code bleiben unverändert.
+- **Kennungen.** Die help_id ist `doc.<Pfad der Seite>`: `doc.help.editors.publishing` für
+  `help/editors/publishing.md` (Bereich `doc`; ein Pfad über 80 Zeichen oder zwei Seiten, die dieselbe bekämen, enden
+  mit einem Hash). Die remote_ids hängen nur vom Pfad ab, sodass ein Lauf jedes Objekt wiederfindet; eine verschobene
+  Seite ist ein neues Thema, und das alte wird entfernt.
+- **Titel und Kurzbeschreibung.** Der Titel der Seite; die Kurzbeschreibung ist der erste Satz ihrer Zusammenfassung
+  (Front Matter `summary`, sonst ihr erster Absatz), höchstens 250 Zeichen. Der Titel eines Handbuchs ist der Titel
+  seiner Zeile, sonst der Titel der `README.md` des Ordners, sonst der seiner Startseite ohne ": start here"
+  (`Adopters: start here` ergibt `Adopters`). Übersetzte Titel von Handbüchern, deren Titel aus ihrer Zeile kommt:
+  `TranslatedTitles[]`.
+- **Zielgruppe, Sektion, Status.** Die Zielgruppen der Seite in der Hilfe (Front Matter `audience`, sonst
+  `[AudienceSettings] PathRules[]` ...), jeweils als die erste Zielgruppenoption, die `[ContentSettings]
+  AudienceMap[]` ihr zuordnet. Die Sektion ist nur dann `help_public`, wenn eine davon öffentlich ist
+  (`PublicAudiences[]`, Visitors: die Seiten für `user`), sonst `help_internal`; ein Kapitel eines öffentlichen
+  Handbuchs ist öffentlich. Neue Objekte sind Entwurf; `--release` setzt jedes erstellte Objekt auf Veröffentlicht
+  (der erste Aufbau eines Releases tut das, damit die Handbücher ausgeliefert werden).
+- **Übersetzungen.** Jede Sprache von `[ManualSettings] Languages[]` (ger-DE), die die Installation als Inhaltssprache
+  hat: Eine Seite mit Übersetzung (nicht die stattdessen angezeigte englische Seite) ist die Übersetzung ihres Themas;
+  ein Kapitel oder Handbuch wird übersetzt, wenn es ein übersetztes Thema enthält. Eine Sprache, die die Installation
+  nicht hat, wird gemeldet und nie angelegt; legen Sie sie unter Einrichtung, Sprachen an und starten Sie den Lauf
+  erneut. Ein Thema, dessen Übersetzung nicht mehr existiert, verliert die Übersetzung.
+- **Zielgruppenoptionen.** Die Zielgruppen der Hilfe werden an `[ContentSettings] Audiences[]` angehängt
+  (Developers, Partners, Press ...) mit ihrem `AudienceMap[]`, und `build-manuals` hängt sie zuerst an die Klassen an,
+  wie es der Schritt `classes` tut (immer nur angehängt, damit die gespeicherten Zielgruppen ihre Bedeutung behalten).
+
+### Aktualisieren, Entfernen, "No change."
+
+Was gespeichert ist, wird mit drei Abfragen gelesen und mit dem verglichen, was die Seiten ergeben, bevor etwas
+geschrieben wird: Ein Objekt mit denselben Werten kostet keinen Schreibvorgang. Dann
+
+- legt der Befehl an, was fehlt (ein neues Thema mit seiner Übersetzung in **einer** veröffentlichten Version),
+- aktualisiert, was abweicht (eine neue Version, in der abweichenden Sprache),
+- verschiebt ein Objekt, dessen Handbuch oder Kapitel sich geändert hat, legt ein Objekt eines anderen Typs neu an,
+- setzt die Kapitel und Themen jedes Handbuchs und Kapitels (die Relationsliste), die Sektion und mit `--release` den
+  Status,
+- entfernt die erstellten Objekte, deren Seite oder Ordner nicht mehr existiert, mit `--manual=<Schlüssel>` nur die
+  unterhalb dieses Handbuchs.
+
+Ein Lauf, der nichts zu tun findet, gibt `No change.` aus. Eine aus `Manuals[]` entfernte Zeile entfernt beim nächsten
+Lauf ohne `--manual` ihr Handbuch samt Kapiteln und Themen.
+
+### Wie lange es dauert
+
+Der erste Aufbau legt jedes Objekt an: Auf der Kopie der SQLite-Datenbank von alpha dauerten 52 Handbücher, 342
+Kapitel und 5.315 Themen (4.614 davon mit deutscher Übersetzung) auf einem stark ausgelasteten gemeinsamen Server
+(Last um 23, der Befehl mit der niedrigsten Priorität) 28 Minuten; ein zweiter Lauf, der nur vergleicht, 34 Sekunden,
+das meiste davon für das Lesen der Seiten. Den größten Teil eines ersten Aufbaus kostet das Veröffentlichen jedes
+Objekts (seine Version, sein Knoten, seine Namen und URL-Aliase). Ein Release, das wenige Seiten ändert,
+aktualisiert wenige Objekte. Dafür ist der Befehl gebaut:
+
+- eine veröffentlichte Version je neuem Objekt, mit seinen Übersetzungen (eine eigens veröffentlichte Übersetzung würde
+  den ersten Aufbau verdoppeln);
+- die Schreibvorgänge in Transaktionen von `[ManualSettings] BatchSize` Objekten (50);
+- ohne Benachrichtigung veröffentlicht (keine E-Mail an die Abonnenten des Hilfebaums);
+- der Suchindex wird danach vom Cronjob `indexcontent` aktualisiert (`DelayedIndexing` nur für diesen Lauf: Die Hilfe
+  durchsucht ihre Themen selbst), und der View-Cache wird nicht je Objekt geleert (Hilfethemen zeigt `exphelp`); der
+  eigene Cache der Hilfe wird am Ende einmal geleert;
+- alle 250 Objekte eines Laufs, der etwas ändert, sagt eine Zeile, wie weit er ist.
+
+### Bei jedem Release
+
+Das Markdown ändert sich mit jedem Release, also werden die Handbücher mit ihm neu erstellt. Nach dem Deployment des
+Releases:
+
+```
+./console exp:help:content install -s admin                    # neue Zielgruppenoptionen, Rollen (meist No change.)
+./console exp:help:content build-manuals -s admin --release
+./console exp:help:content ebooks -s admin
+./console exp:help:content ebooks -s admin --language=ger-DE
+```
+
+`--release` veröffentlicht, was der Aufbau erstellt oder geändert hat: Die Seiten wurden vor dem Release im Repository
+geprüft. Ohne die Option warten neue und geänderte Themen als Entwurf auf einen Release-Verantwortlichen.
+
+### Einstellungen: exphelp.ini [ManualSettings]
+
+| Einstellung | Standard | |
+|---|---|---|
+| `Manuals[]` | 52 Handbücher: die 45 Ordner von `doc/eng-us/help/`, Getting started (`help/*.md`), install, guides, features, bc (Hinweise für Mitwirkende), standards, specifications | `<Schlüssel>;<Ordner>[;<Titel>]`, in der Reihenfolge der Handbücher; der Umfang ist eine Änderung dieser Liste |
+| `Languages[]` | ger-DE | die geschriebenen Übersetzungen, wenn die Installation die Sprache hat |
+| `TranslatedTitles[]` | Getting started, Contributor notes auf Deutsch | `<Schlüssel>;<Locale>;<Titel>` |
+| `License` | GNU Free Documentation License 1.3 | die Lizenz jedes Handbuchs |
+| `BuildOnInstall` | `enabled` | der Kickstarter und `exp:install` führen nach einer Installation `install` und `build-manuals --release` aus |
+| `BatchSize` | `50` | Objekte je Datenbanktransaktion |
+
+`doc/eng-us/history/` und `doc/eng-us/examples/` (generiert) stehen nicht in der Liste.
+
+Klassen: `expHelpManualBuilder` (der Plan: Seiten zu Handbüchern, Kapiteln und Themen, ohne Datenbank),
+`expHelpManualSource` (der Index der Hilfe in einer Sprache als Quelle), `expHelpManualSync` (die Datenbank, die dem
+Plan angeglichen wird). Tests: `tests/tests/kernel/classes/help/expHelpManualBuilderTest.php`.
 
 ## Das Inhaltsmodell
 
@@ -197,11 +341,11 @@ implementiert, ebenfalls nicht.
 |---|---|---|
 | `Enabled` | `enabled` | `disabled`: die Ansichten für Themen, Handbücher und Kontext liefern 404 |
 | `ParentNode` | `media` | wo `help-root` angelegt wird: `media`, `content`, `users` oder eine remote_id |
-| `Audiences[]` | Visitors, Members, Editors, Administrators | die Optionen für Zielgruppen (werden immer nur angehängt) |
+| `Audiences[]` | Visitors, Members, Editors, Administrators, dann die übrigen Zielgruppen der Hilfe (Developers, Partners, Press, media and influencers ...) | die Optionen für Zielgruppen (werden immer nur angehängt) |
 | `PublicAudiences[]` | Visitors | eine Zielgruppe, die ein Thema öffentlich macht |
 | `Platforms[]` | Web, Admin, Mobile | die Optionen für Plattformen |
-| `Areas[]` | account, content, media, search, users, setup, privacy, help | die Bereiche der help_ids |
-| `AudienceMap[<name>]` | visitors, members: user; editors: editor; administrators: admin | die Zielgruppe der Hilfe zu einer Zielgruppenoption |
+| `Areas[]` | account, content, media, search, users, setup, privacy, help, doc | die Bereiche der help_ids (`doc`: die Themen von `build-manuals`) |
+| `AudienceMap[<name>]` | visitors, members: user; editors: editor; administrators: admin; developers: developer ... eine je Zielgruppe der Hilfe | die Zielgruppe der Hilfe zu einer Zielgruppenoption |
 | `ContextHelpIds[<key>]` | keine | `module/view` (oder `module`, `design:module/view`) = help_id |
 | `AnonymousContextHelp` | `disabled` | `enabled`: der Rollenschritt gibt Anonymous `exphelp/context` |
 | `EbooksOnRelease` | `enabled` | eine Veröffentlichung erstellt die gespeicherten E-Books der Handbücher neu; `disabled`: nur `exp:help:content ebooks` tut das |
@@ -241,9 +385,15 @@ Handbuchs ist ein Objekt der Klasse **file** unterhalb des Ordners E-books (remo
 seine remote_id `help-ebook-<manual remote_id>-<format>` (`help-ebook-help-manual-editors-epub`).
 
 ```
-./console exp:help:content ebooks -s admin [--manual=help-manual-editors] [--dry-run] [--json]
+./console exp:help:content ebooks -s admin [--manual=help-manual-editors] [--language=ger-DE] [--dry-run] [--json]
 ```
 
+- **Sprachen.** Ohne `--language` sind die Bücher die Ausgabe der Standardsprache. `--language=ger-DE` erstellt die
+  deutsche Ausgabe: Themen, Kapitel und Handbuch in ihrer deutschen Übersetzung, auf Englisch, wo ein Thema keine hat,
+  gespeichert als `help-ebook-<manual remote_id>-ger-de-<format>` und benannt "<Titel> (EPUB, ger-DE)". Die Seite des
+  Handbuchs listet die Ausgaben der Standardsprache und von `[ManualSettings] Languages[]`. Auch `export` nimmt
+  `--language`. Der Neuaufbau beim Veröffentlichen erstellt die Ausgabe der Standardsprache; die anderen Ausgaben
+  erstellt der Befehl.
 - **Bei der Veröffentlichung neu erstellt.** Wenn ein Objekt der Hilfe auf Veröffentlicht gesetzt wird (die
   Statuszuweisung der Administrationsoberfläche oder beliebiger Code, der Status über
   `eZContentOperationCollection::updateObjectState()` zuweist), werden die Bücher jedes veröffentlichten Handbuchs,
