@@ -4,13 +4,21 @@
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
-jQuery('#ezasi-sort-field, #ezasi-sort-order').each( function(){
-    jQuery( this ).attr( 'initial', this.value );
-} ).on('change', function(){
-    var t = $(this), o = $(this.id === 'ezasi-sort-field' ? '#ezasi-sort-order' : '#ezasi-sort-field'), s = $('#ezasi-sort-set');
-    // signal in gui if user needs to save this or not
-    if ( t.val() === t.attr('initial') && o.val() === o.attr('initial') )
-        s.removeClass('defaultbutton').addClass('button');
-    else
-        s.removeClass('button').addClass('defaultbutton');
-});
+Array.prototype.forEach.call( document.querySelectorAll('#ezasi-sort-field, #ezasi-sort-order'), function( el ){
+    el.setAttribute( 'initial', el.value );
+    el.addEventListener('change', function(){
+        var t = this, o = document.getElementById(this.id === 'ezasi-sort-field' ? 'ezasi-sort-order' : 'ezasi-sort-field'), s = document.getElementById('ezasi-sort-set');
+        if ( !s ) return;
+        // signal in gui if user needs to save this or not
+        if ( t.value === t.getAttribute('initial') && ( !o || o.value === o.getAttribute('initial') ) )
+        {
+            s.classList.remove('defaultbutton');
+            s.classList.add('button');
+        }
+        else
+        {
+            s.classList.remove('button');
+            s.classList.add('defaultbutton');
+        }
+    });
+} );

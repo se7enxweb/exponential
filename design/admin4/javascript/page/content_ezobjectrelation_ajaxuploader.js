@@ -10,8 +10,8 @@
     Exp.ready(function ($) {
         if (!$.fn.expAjaxUploader) { return; }
         // the texts of the dialog: data-text-* of the first button (each button carries the same)
-        var button = $('.simple-relation-upload-new').first();
-        var text = function (name) { return button.attr('data-text-' + name) || ''; };
+        var button = document.querySelector('.simple-relation-upload-new');
+        var text = function (name) { return (button && button.getAttribute('data-text-' + name)) || ''; };
         $('.simple-relation-upload-new').expAjaxUploader({
             open: {
                 action: 'ezajaxuploader::uploadform::ezobjectrelation'
@@ -31,22 +31,48 @@
 
                 // this is the uploader: the object just created goes into the relation
                 callback: function () {
-                    var box = $('#ezobjectrelation_browse_' + this.conf.target.ObjectRelationsAttributeId),
-                        table = box.find('table.list').first(),
-                        tds = table.find('tbody').first().children().last().children(),
-                        result = this.lastMetaData;
+                    var box = document.getElementById('ezobjectrelation_browse_' + this.conf.target.ObjectRelationsAttributeId),
+                        table = box && box.querySelector('table.list'),
+                        tbody = table && table.querySelector('tbody'),
+                        tr = tbody && tbody.lastElementChild,
+                        tds = tr ? tr.children : [],
+                        result = this.lastMetaData,
+                        first = function (selector) { return box && box.querySelector(selector); },
+                        input, button;
+                    // as jQuery's text(): undefined sets nothing
+                    var setText = function (td, value) { if (td && value !== undefined) { td.textContent = value; } };
 
-                    table.removeClass('hide');
-                    tds.eq(0).text(result.object_info.name);
-                    tds.eq(1).text(result.object_info.class_name);
-                    tds.eq(2).text(result.object_info.section_name);
-                    tds.eq(3).text(result.object_info.published);
+                    if (table) {
+                        table.classList.remove('hide');
+                    }
+                    setText(tds[0], result.object_info.name);
+                    setText(tds[1], result.object_info.class_name);
+                    setText(tds[2], result.object_info.section_name);
+                    setText(tds[3], result.object_info.published);
 
-                    box.find('input[name*=_data_object_relation_id_]').first().val(result.object_info.id);
-                    box.find('.ezobject-relation-remove-button').first().removeClass('button-disabled').addClass('button').prop('disabled', false);
-                    box.find('.ezobject-relation-no-relation').addClass('hide');
-                    box.find('.ezobject-relation-add-button').first().addClass('button-disabled').prop('disabled', true);
-                    box.find('.simple-relation-upload-new').first().addClass('button-disabled').prop('disabled', true);
+                    input = first('input[name*=_data_object_relation_id_]');
+                    if (input) {
+                        input.value = result.object_info.id == null ? '' : result.object_info.id;
+                    }
+                    button = first('.ezobject-relation-remove-button');
+                    if (button) {
+                        button.classList.remove('button-disabled');
+                        button.classList.add('button');
+                        button.disabled = false;
+                    }
+                    if (box) {
+                        Array.prototype.forEach.call(box.querySelectorAll('.ezobject-relation-no-relation'), function (el) { el.classList.add('hide'); });
+                    }
+                    button = first('.ezobject-relation-add-button');
+                    if (button) {
+                        button.classList.add('button-disabled');
+                        button.disabled = true;
+                    }
+                    button = first('.simple-relation-upload-new');
+                    if (button) {
+                        button.classList.add('button-disabled');
+                        button.disabled = true;
+                    }
 
                     this.close();
                 }

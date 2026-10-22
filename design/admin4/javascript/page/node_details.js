@@ -4,22 +4,31 @@
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
-(function( $ )
+(function()
 {
-    $('#tab-details-states-list select, #tab-details-states-subtree').on('change', function()
+    function highlight( id )
     {
-        var btn = $('#tab-details-set-states');
-        if ( !btn.attr('disabled') )
+        var btn = document.getElementById( id );
+        if ( btn && !btn.disabled )
         {
-            btn.removeClass('button').addClass('defaultbutton');
+            btn.classList.remove('button');
+            btn.classList.add('defaultbutton');
         }
-    });
-    $('#selected-section-id').on('change', function()
+    }
+    var fields = document.querySelectorAll('#tab-details-states-list select, #tab-details-states-subtree');
+    for ( var i = 0; i < fields.length; i++ )
     {
-        var btn = $('#tab-details-set-section');
-        if ( !btn.attr('disabled') )
+        fields[i].addEventListener('change', function()
         {
-            btn.removeClass('button').addClass('defaultbutton');
-        }
-    });
-})( jQuery );
+            highlight('tab-details-set-states');
+        });
+    }
+    var section = document.getElementById('selected-section-id');
+    if ( section )
+    {
+        section.addEventListener('change', function()
+        {
+            highlight('tab-details-set-section');
+        });
+    }
+})();

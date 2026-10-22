@@ -148,7 +148,7 @@ class AdminContentEditAttributeKindsTest extends PHPUnit\Framework\TestCase
     {
         $js = AdminFiles::read( self::root() . '/design/admin4/javascript/page/content_edit_attribute.js' );
         $this->assertStringContainsString( "'a[href^=\"#ezcca-attr-\"]'", $js );
-        $this->assertStringContainsString( "removeClass('ezcca-collapsed')", $js );
+        $this->assertStringContainsString( "classList.remove('ezcca-collapsed')", $js );
     }
 
     /**

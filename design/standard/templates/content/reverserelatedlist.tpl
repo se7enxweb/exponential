@@ -1,7 +1,7 @@
 <h2 class="context-title">
 {'"%contentObjectName" [%children_count]: Sub items that are used by other objects '|i18n( 'design/admin/content/reverserelatedlist',,
                 hash( '%contentObjectName', $content_object_name ,
-                      '%children_count', $reverse_list_children_count ) )}
+                      '%children_count', $reverse_list_children_count ) )|wash}
 </h2>
 
 <table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">

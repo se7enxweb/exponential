@@ -4,24 +4,36 @@
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
-(function( $ )
+(function()
 {
+    var disableSources = function( disabled )
+    {
+        Array.prototype.forEach.call( document.querySelectorAll( '#ezcoeditlanguages-sourcets input[type=radio]' ), function( radio )
+        {
+            radio.disabled = disabled;
+        });
+    };
+    var onChange = function( selector, disabled )
+    {
+        Array.prototype.forEach.call( document.querySelectorAll( selector ), function( radio )
+        {
+            radio.addEventListener( 'change', function()
+            {
+                disableSources( disabled );
+            });
+        });
+    };
+
     if ( document.getElementById('ezcoeditlanguages-sourcets') )
     {
         // setup onchange events
-        jQuery( '#ezcoeditlanguages-existingts input[type=radio]' ).on('change', function()
-        {
-            jQuery( '#ezcoeditlanguages-sourcets input[type=radio]' ).prop( 'disabled', true );
-        });
-        jQuery( '#ezcoeditlanguages-newts input[type=radio]' ).on('change', function()
-        {
-            jQuery( '#ezcoeditlanguages-sourcets input[type=radio]' ).prop( 'disabled', false );
-        });
+        onChange( '#ezcoeditlanguages-existingts input[type=radio]', true );
+        onChange( '#ezcoeditlanguages-newts input[type=radio]', false );
 
         // disable source translations if existing translation is selected
-        if ( jQuery( '#ezcoeditlanguages-existingts input[checked=checked]' ).length > 0 )
+        if ( document.querySelector( '#ezcoeditlanguages-existingts input[checked=checked]' ) )
         {
-            jQuery( '#ezcoeditlanguages-sourcets input[type=radio]' ).prop( 'disabled', true );
+            disableSources( true );
         }
     }
-})( jQuery );
+})();

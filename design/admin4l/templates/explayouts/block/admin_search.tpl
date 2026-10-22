@@ -5,4 +5,5 @@
         {* the sections of the search popup, fetched once for both copies of the search (page_search.tpl reads them) *}
         {def $search_sections = cond( $ui_context_edit, array(), fetch( 'section', 'list' ) )}
         {include uri='design:page_search.tpl'}
+        {undef $search_sections}
     </div>

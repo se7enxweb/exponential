@@ -10,6 +10,7 @@
  *  HCB-03  remote_ids of stored books, and public manuals from their audience
  *  HCB-04  the EPUB entries carry the book's content date, not the clock
  *  HCB-05  the state assignment calls the release hook, guarded for a server that does not have the class yet
+ *  HCB-06  a manual has an edition in the default language, and in another only when it is translated into it
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -113,6 +114,17 @@ class expHelpContentEbooksTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( expHelpContentEbooks::isPublicManual( array( 'audience' => array( 'Members', 'Visitors' ) ) ) );
         $this->assertFalse( expHelpContentEbooks::isPublicManual( array( 'audience' => array( 'Editors' ) ) ) );
         $this->assertFalse( expHelpContentEbooks::isPublicManual( array( 'audience' => array() ) ) );
+    }
+
+    /** HCB-06 */
+    public function testEditionOnlyInTheManualsLanguages()
+    {
+        $this->assertTrue( expHelpContentEbooks::hasEdition( array( 'eng-US' ), 'eng-US', 'eng-US' ), 'the default edition always' );
+        $this->assertTrue( expHelpContentEbooks::hasEdition( array(), 'eng-US', 'eng-US' ), 'the default edition even without a language list' );
+        $this->assertTrue( expHelpContentEbooks::hasEdition( array( 'eng-US', 'ger-DE' ), 'ger-DE', 'eng-US' ) );
+        $this->assertFalse( expHelpContentEbooks::hasEdition( array( 'eng-US' ), 'ger-DE', 'eng-US' ),
+                            'an untranslated manual has no German book (it would be a copy of the English one)' );
+        $this->assertTrue( expHelpContentEbooks::hasEdition( array( 'eng-US', 'ger-DE' ), 'ger-de', 'eng-US' ), 'as --language=ger-de is accepted' );
     }
 
     /** HCB-04 */

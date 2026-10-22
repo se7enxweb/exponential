@@ -399,7 +399,9 @@ the class **file** below the folder E-books (remote_id `help-ebooks`), found by 
   the German edition: the topics, chapters and manual in their German translation, in English where a topic has
   none, stored as `help-ebook-<manual remote_id>-ger-de-<format>` and named "<title> (EPUB, ger-DE)". The manual's
   page lists the editions of the default language and of `[ManualSettings] Languages[]`. `export` takes `--language`
-  too. The rebuild on release builds the edition of the default language; the other editions are built by the
+  too. A manual that is not itself translated into the language has no edition in it: the book is skipped ("the
+  manual has no translation in ger-DE"), and one stored by an earlier build goes to the trash. The rebuild on
+  release builds the edition of the default language; the other editions are built by the
   command.
 - **Rebuilt on release.** When an object of the help is set to Released (the state assignment of the
   administration, or any code that assigns states through `eZContentOperationCollection::updateObjectState()`), the

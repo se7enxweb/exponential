@@ -3,10 +3,18 @@
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
-(function( $ )
+(function()
 {
-    $('#tab-translations-alwaysavailable-checkbox').on('change', function()
+    var checkbox = document.getElementById('tab-translations-alwaysavailable-checkbox');
+    if ( !checkbox )
+        return;
+    checkbox.addEventListener('change', function()
     {
-        $('#tab-translations-alwaysavailable-btn').removeClass('button').addClass('defaultbutton');
+        var btn = document.getElementById('tab-translations-alwaysavailable-btn');
+        if ( btn )
+        {
+            btn.classList.remove('button');
+            btn.classList.add('defaultbutton');
+        }
     });
-})( jQuery );
+})();
