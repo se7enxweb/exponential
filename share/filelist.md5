@@ -10845,6 +10845,11 @@ c8039cc5c1b49bddded1428e8d7ddab9  doc/eng-us/help/sponsors/sponsoring-7x.md
 d2efb2d8bc08edc8fd0835d289e88cd3  doc/eng-us/help/sponsors/sponsors-start-here.md
 18b7d3b749ba29f1b1efd2bcb4c4fcbb  doc/eng-us/help/sponsors/two-organizations-two-sponsor-pages.md
 974ea7c86f7bfa06fd31a49b4c612a76  doc/eng-us/help/sponsors/what-sponsorship-funds.md
+dd77cf99a9e4f5889f8a8fe230977bd9  doc/eng-us/help/sqli-import/README.md
+6f99aa62a2901dfc735abb485334a844  doc/eng-us/help/sqli-import/getting-started.md
+ea3ba9fcea4425846610f9345f5fbe05  doc/eng-us/help/sqli-import/imports-and-runs.md
+5a6939bab2b2416e0b74e0230f53d35c  doc/eng-us/help/sqli-import/schedules-and-cron.md
+fbcac03fd0f3fb4b0ad1abee4026ce6d  doc/eng-us/help/sqli-import/upgrading-from-1x.md
 0a15a3cdf80e301b1531867ca2882cb8  doc/eng-us/help/students/asking-for-help-and-study-groups.md
 acdb522552b0a53695952072877c4e3e  doc/eng-us/help/students/bugs-you-find-while-learning.md
 0d35124d3c0a85d30a5ab96d26e03fb5  doc/eng-us/help/students/building-a-portfolio.md
@@ -12301,7 +12306,7 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-e58af173efcd90d97d89f81fdfcb5bf7  doc/ger-de/.dirnames.json
+fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 4a17b507552fd50a4a416c8e6d5261d6  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 8b6e6fcc0c5f7375fdebc91173ae73b5  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 20a5b83b04efe02e2e54eaf74249f68b  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
@@ -12317,7 +12322,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-6f1f5856a9fa98b8e6257e2a1585a4e3  doc/ger-de/.paths.json
+eb02b3c2549eac7ea02ad6e5275f50d0  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -18033,6 +18038,11 @@ f273289f4966bfd42594a07b7fb9620a  doc/ger-de/hilfe/sponsoren/sponsoren-hier-begi
 7344b0019cd6864596fe8d752f622754  doc/ger-de/hilfe/sponsoren/weitere-wege-zu-geben.md
 50d23904846d26388fca8f21a5940869  doc/ger-de/hilfe/sponsoren/zwei-organisationen-zwei-sponsorenseiten.md
 1b8ba1e3ce8c469ec9327bb9e96f9163  doc/ger-de/hilfe/sprachen.md
+ed76615af835fb5e8c3cc6f5fd47f0a1  doc/ger-de/hilfe/sqli-import/README.md
+92a53a513c4df394384b1977f1d074e0  doc/ger-de/hilfe/sqli-import/aktualisierung-von-1x.md
+e0a03ad3bce02a174cb8afe8fedbc928  doc/ger-de/hilfe/sqli-import/erste-schritte.md
+827096d2962cd65491643b91579b2f06  doc/ger-de/hilfe/sqli-import/importe-und-laeufe.md
+d22dc4ee68d85b4fdceb1f2a732a3b12  doc/ger-de/hilfe/sqli-import/zeitplaene-und-cron.md
 a249bf4399119d8a25602f14a66d6855  doc/ger-de/hilfe/standard-administratorpasswort.md
 92efd310179ab092a8cfe670f3e35181  doc/ger-de/hilfe/suchen.md
 76f963434797c96b92c3d4169ab34f81  doc/ger-de/hilfe/tastenkuerzel.md
