@@ -779,6 +779,52 @@ CREATE TABLE `exp_secret` (
 ,  `name` varchar(128) NOT NULL DEFAULT ''
 ,  `scope` varchar(64) NOT NULL DEFAULT ''
 );
+CREATE TABLE `exp_data_sync` (
+  `class_name` varchar(128) NOT NULL DEFAULT ''
+,  `conflict_rule` varchar(16) NOT NULL DEFAULT ''
+,  `content_class` varchar(128) NOT NULL DEFAULT ''
+,  `created` integer NOT NULL DEFAULT '0'
+,  `creator_id` integer NOT NULL DEFAULT '0'
+,  `direction` varchar(16) NOT NULL DEFAULT ''
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `interval_seconds` integer NOT NULL DEFAULT '0'
+,  `key_columns` varchar(255) NOT NULL DEFAULT ''
+,  `last_run` integer NOT NULL DEFAULT '0'
+,  `last_run_id` integer NOT NULL DEFAULT '0'
+,  `map` longtext
+,  `modified` integer NOT NULL DEFAULT '0'
+,  `name` varchar(255) NOT NULL DEFAULT ''
+,  `next_run` integer NOT NULL DEFAULT '0'
+,  `options` longtext
+,  `run_mode` varchar(16) NOT NULL DEFAULT ''
+,  `state` varchar(16) NOT NULL DEFAULT ''
+,  `subtree_node_id` integer NOT NULL DEFAULT '0'
+);
+CREATE TABLE `exp_data_sync_conflict` (
+  `content_values` longtext
+,  `detected` integer NOT NULL DEFAULT '0'
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `link_id` integer NOT NULL DEFAULT '0'
+,  `object_id` integer NOT NULL DEFAULT '0'
+,  `resolution` varchar(16) NOT NULL DEFAULT ''
+,  `resolved` integer NOT NULL DEFAULT '0'
+,  `resolver_id` integer NOT NULL DEFAULT '0'
+,  `row_key` varchar(255) NOT NULL DEFAULT ''
+,  `row_values` longtext
+,  `state` varchar(16) NOT NULL DEFAULT ''
+,  `sync_id` integer NOT NULL DEFAULT '0'
+);
+CREATE TABLE `exp_data_sync_link` (
+  `content_hash` varchar(32) NOT NULL DEFAULT ''
+,  `content_modified` integer NOT NULL DEFAULT '0'
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `object_id` integer NOT NULL DEFAULT '0'
+,  `row_hash` varchar(32) NOT NULL DEFAULT ''
+,  `row_key` varchar(255) NOT NULL DEFAULT ''
+,  `row_modified` integer NOT NULL DEFAULT '0'
+,  `sync_id` integer NOT NULL DEFAULT '0'
+,  `synced` integer NOT NULL DEFAULT '0'
+);
 CREATE TABLE `ezproductcategory` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `name` varchar(255) NOT NULL DEFAULT ''
@@ -1297,6 +1343,10 @@ CREATE INDEX exp_transfer_run_user ON exp_transfer_run ( user_id );
 CREATE UNIQUE INDEX exp_data_connection_identifier ON exp_data_connection ( identifier );
 CREATE UNIQUE INDEX exp_secret_name ON exp_secret ( name );
 CREATE INDEX exp_secret_scope ON exp_secret ( scope );
+CREATE INDEX exp_data_sync_mode ON exp_data_sync ( run_mode, state );
+CREATE INDEX exp_data_sync_conflict_state ON exp_data_sync_conflict ( sync_id, state );
+CREATE UNIQUE INDEX exp_data_sync_link_key ON exp_data_sync_link ( sync_id, row_key );
+CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link ( sync_id, object_id );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);

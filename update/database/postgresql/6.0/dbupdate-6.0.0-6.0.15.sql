@@ -680,6 +680,97 @@ BEGIN
 END
 $$;
 
+-- The synchronisation between content and data tables (doc/eng-us/features/6.0/data-tables.md, "Synchronisation").
+--
+-- exp_data_sync holds the definitions (class, content class, node, map, key, direction, mode, conflict rule),
+-- exp_data_sync_link the pairing of a row and an object with the hashes of both at the last run, and
+-- exp_data_sync_conflict the conflicts of the rule "ask" until they are resolved in the administration. The page
+-- Setup > Data tables > Synchronisations creates them when they are missing.
+-- Created only when a table is missing (a DO block, PostgreSQL 9.0 or newer), so running these blocks again
+-- changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_data_sync' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_data_sync_id_seq' ) THEN
+            CREATE SEQUENCE exp_data_sync_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_data_sync (
+          class_name character varying(128) DEFAULT ''::character varying NOT NULL,
+          conflict_rule character varying(16) DEFAULT ''::character varying NOT NULL,
+          content_class character varying(128) DEFAULT ''::character varying NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          creator_id integer DEFAULT 0 NOT NULL,
+          direction character varying(16) DEFAULT ''::character varying NOT NULL,
+          id integer DEFAULT nextval('exp_data_sync_id_seq'::text) NOT NULL,
+          interval_seconds integer DEFAULT 0 NOT NULL,
+          key_columns character varying(255) DEFAULT ''::character varying NOT NULL,
+          last_run integer DEFAULT 0 NOT NULL,
+          last_run_id integer DEFAULT 0 NOT NULL,
+          map text,
+          modified integer DEFAULT 0 NOT NULL,
+          name character varying(255) DEFAULT ''::character varying NOT NULL,
+          next_run integer DEFAULT 0 NOT NULL,
+          options text,
+          run_mode character varying(16) DEFAULT ''::character varying NOT NULL,
+          state character varying(16) DEFAULT ''::character varying NOT NULL,
+          subtree_node_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY exp_data_sync ADD CONSTRAINT exp_data_sync_pkey PRIMARY KEY ( id );
+        CREATE INDEX exp_data_sync_mode ON exp_data_sync USING btree ( run_mode, state );
+    END IF;
+END
+$$;
+
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_data_sync_conflict' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_data_sync_conflict_id_seq' ) THEN
+            CREATE SEQUENCE exp_data_sync_conflict_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_data_sync_conflict (
+          content_values text,
+          detected integer DEFAULT 0 NOT NULL,
+          id integer DEFAULT nextval('exp_data_sync_conflict_id_seq'::text) NOT NULL,
+          link_id integer DEFAULT 0 NOT NULL,
+          object_id integer DEFAULT 0 NOT NULL,
+          resolution character varying(16) DEFAULT ''::character varying NOT NULL,
+          resolved integer DEFAULT 0 NOT NULL,
+          resolver_id integer DEFAULT 0 NOT NULL,
+          row_key character varying(255) DEFAULT ''::character varying NOT NULL,
+          row_values text,
+          state character varying(16) DEFAULT ''::character varying NOT NULL,
+          sync_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY exp_data_sync_conflict ADD CONSTRAINT exp_data_sync_conflict_pkey PRIMARY KEY ( id );
+        CREATE INDEX exp_data_sync_conflict_state ON exp_data_sync_conflict USING btree ( sync_id, state );
+    END IF;
+END
+$$;
+
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_data_sync_link' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_data_sync_link_id_seq' ) THEN
+            CREATE SEQUENCE exp_data_sync_link_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_data_sync_link (
+          content_hash character varying(32) DEFAULT ''::character varying NOT NULL,
+          content_modified integer DEFAULT 0 NOT NULL,
+          id integer DEFAULT nextval('exp_data_sync_link_id_seq'::text) NOT NULL,
+          object_id integer DEFAULT 0 NOT NULL,
+          row_hash character varying(32) DEFAULT ''::character varying NOT NULL,
+          row_key character varying(255) DEFAULT ''::character varying NOT NULL,
+          row_modified integer DEFAULT 0 NOT NULL,
+          sync_id integer DEFAULT 0 NOT NULL,
+          synced integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY exp_data_sync_link ADD CONSTRAINT exp_data_sync_link_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX exp_data_sync_link_key ON exp_data_sync_link USING btree ( sync_id, row_key );
+        CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link USING btree ( sync_id, object_id );
+    END IF;
+END
+$$;
+
 --
 -- ezuser.login: one account per login.
 --

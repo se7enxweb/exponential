@@ -791,6 +791,33 @@ CREATE SEQUENCE exp_secret_id_seq
 
 
 
+CREATE SEQUENCE exp_data_sync_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
+CREATE SEQUENCE exp_data_sync_conflict_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
+CREATE SEQUENCE exp_data_sync_link_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 
 
 
@@ -2495,6 +2522,61 @@ CREATE TABLE exp_secret (
 
 
 
+CREATE TABLE exp_data_sync (
+    class_name character varying(128) DEFAULT ''::character varying NOT NULL,
+    conflict_rule character varying(16) DEFAULT ''::character varying NOT NULL,
+    content_class character varying(128) DEFAULT ''::character varying NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    creator_id integer DEFAULT 0 NOT NULL,
+    direction character varying(16) DEFAULT ''::character varying NOT NULL,
+    id integer DEFAULT nextval('exp_data_sync_id_seq'::text) NOT NULL,
+    interval_seconds integer DEFAULT 0 NOT NULL,
+    key_columns character varying(255) DEFAULT ''::character varying NOT NULL,
+    last_run integer DEFAULT 0 NOT NULL,
+    last_run_id integer DEFAULT 0 NOT NULL,
+    map text,
+    modified integer DEFAULT 0 NOT NULL,
+    name character varying(255) DEFAULT ''::character varying NOT NULL,
+    next_run integer DEFAULT 0 NOT NULL,
+    options text,
+    run_mode character varying(16) DEFAULT ''::character varying NOT NULL,
+    state character varying(16) DEFAULT ''::character varying NOT NULL,
+    subtree_node_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+CREATE TABLE exp_data_sync_conflict (
+    content_values text,
+    detected integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('exp_data_sync_conflict_id_seq'::text) NOT NULL,
+    link_id integer DEFAULT 0 NOT NULL,
+    object_id integer DEFAULT 0 NOT NULL,
+    resolution character varying(16) DEFAULT ''::character varying NOT NULL,
+    resolved integer DEFAULT 0 NOT NULL,
+    resolver_id integer DEFAULT 0 NOT NULL,
+    row_key character varying(255) DEFAULT ''::character varying NOT NULL,
+    row_values text,
+    state character varying(16) DEFAULT ''::character varying NOT NULL,
+    sync_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+CREATE TABLE exp_data_sync_link (
+    content_hash character varying(32) DEFAULT ''::character varying NOT NULL,
+    content_modified integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('exp_data_sync_link_id_seq'::text) NOT NULL,
+    object_id integer DEFAULT 0 NOT NULL,
+    row_hash character varying(32) DEFAULT ''::character varying NOT NULL,
+    row_key character varying(255) DEFAULT ''::character varying NOT NULL,
+    row_modified integer DEFAULT 0 NOT NULL,
+    sync_id integer DEFAULT 0 NOT NULL,
+    synced integer DEFAULT 0 NOT NULL
+);
+
+
+
 
 
 
@@ -3949,6 +4031,22 @@ CREATE INDEX exp_secret_scope ON exp_secret USING btree (scope);
 
 
 
+CREATE INDEX exp_data_sync_mode ON exp_data_sync USING btree (run_mode, state);
+
+
+
+CREATE INDEX exp_data_sync_conflict_state ON exp_data_sync_conflict USING btree (sync_id, state);
+
+
+
+CREATE UNIQUE INDEX exp_data_sync_link_key ON exp_data_sync_link USING btree (sync_id, row_key);
+
+
+
+CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link USING btree (sync_id, object_id);
+
+
+
 
 
 
@@ -5008,6 +5106,21 @@ ALTER TABLE ONLY exp_data_connection
 
 ALTER TABLE ONLY exp_secret
     ADD CONSTRAINT exp_secret_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_data_sync
+    ADD CONSTRAINT exp_data_sync_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_data_sync_conflict
+    ADD CONSTRAINT exp_data_sync_conflict_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_data_sync_link
+    ADD CONSTRAINT exp_data_sync_link_pkey PRIMARY KEY (id);
 
 
 

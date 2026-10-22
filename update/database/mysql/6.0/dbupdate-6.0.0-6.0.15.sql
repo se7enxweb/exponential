@@ -524,6 +524,70 @@ CREATE TABLE IF NOT EXISTS exp_secret (
 ) ENGINE=InnoDB;
 
 --
+-- The synchronisation between content and data tables (doc/eng-us/features/6.0/data-tables.md, "Synchronisation").
+--
+-- exp_data_sync holds the definitions (class, content class, node, map, key, direction, mode, conflict rule),
+-- exp_data_sync_link the pairing of a row and an object with the hashes of both at the last run, and
+-- exp_data_sync_conflict the conflicts of the rule "ask" until they are resolved in the administration. The page
+-- Setup > Data tables > Synchronisations creates them when they are missing.
+-- Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exp_data_sync (
+  class_name varchar(128) NOT NULL DEFAULT '',
+  conflict_rule varchar(16) NOT NULL DEFAULT '',
+  content_class varchar(128) NOT NULL DEFAULT '',
+  created int(11) NOT NULL DEFAULT '0',
+  creator_id int(11) NOT NULL DEFAULT '0',
+  direction varchar(16) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  interval_seconds int(11) NOT NULL DEFAULT '0',
+  key_columns varchar(255) NOT NULL DEFAULT '',
+  last_run int(11) NOT NULL DEFAULT '0',
+  last_run_id int(11) NOT NULL DEFAULT '0',
+  map longtext,
+  modified int(11) NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  next_run int(11) NOT NULL DEFAULT '0',
+  options longtext,
+  run_mode varchar(16) NOT NULL DEFAULT '',
+  state varchar(16) NOT NULL DEFAULT '',
+  subtree_node_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY exp_data_sync_mode ( run_mode, state )
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS exp_data_sync_conflict (
+  content_values longtext,
+  detected int(11) NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  link_id int(11) NOT NULL DEFAULT '0',
+  object_id int(11) NOT NULL DEFAULT '0',
+  resolution varchar(16) NOT NULL DEFAULT '',
+  resolved int(11) NOT NULL DEFAULT '0',
+  resolver_id int(11) NOT NULL DEFAULT '0',
+  row_key varchar(255) NOT NULL DEFAULT '',
+  row_values longtext,
+  state varchar(16) NOT NULL DEFAULT '',
+  sync_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY exp_data_sync_conflict_state ( sync_id, state )
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS exp_data_sync_link (
+  content_hash varchar(32) NOT NULL DEFAULT '',
+  content_modified int(11) NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  object_id int(11) NOT NULL DEFAULT '0',
+  row_hash varchar(32) NOT NULL DEFAULT '',
+  row_key varchar(255) NOT NULL DEFAULT '',
+  row_modified int(11) NOT NULL DEFAULT '0',
+  sync_id int(11) NOT NULL DEFAULT '0',
+  synced int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY exp_data_sync_link_key ( sync_id, row_key ),
+  KEY exp_data_sync_link_object ( sync_id, object_id )
+) ENGINE=InnoDB;
+
+--
 -- ezuser.login: one account per login.
 --
 -- A new installation has the unique index ezuser_login from the kernel schema.

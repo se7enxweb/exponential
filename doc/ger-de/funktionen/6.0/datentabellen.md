@@ -10,11 +10,11 @@ im [Geheimnisspeicher](geheimnisspeicher.md).
 | | |
 |---|---|
 | Was eine Datentabelle ist | Die Tabelle einer persistenten Klasse: eine PHP-Klasse, die `eZPersistentObject` erweitert und ihre Tabelle in `definition()` beschreibt (Felder, Schlüssel, Tabellenname). Der Kernel hat Hunderte davon, die meisten Extensions bringen eigene mit. |
-| Was 6.0.15 hinzufügt | Einen Katalog aller dieser Klassen mit Tabelle, Feldern, Schlüsseln und Beziehungen zu Inhalten; eine Beschreibung jeder Tabelle, wie ihre Datenbank sie führt, und wo sie von der Definition abweicht; benannte Datenbankverbindungen (eine SQLite-Datei, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, lokal oder entfernt); und persistente Klassen, die auf einer solchen Verbindung lesen und schreiben statt in der Datenbank der Installation. Dazu: das Schema einer Tabelle auf jeder Verbindung aus der Administration anlegen oder aktualisieren, ihre Zeilen ansehen, die Zeilen, die auf ein Objekt verweisen, in der Inhaltsansicht zeigen, ein Schreiber für jedes Werkzeug, das Zeilen in eine Tabelle bringt, und Fetch-Funktionen für Templates. Und ein Assistent, der eine neue Tabelle mit Klasse, Schema, Administration, Richtlinien, Fetch-Funktionen und JSON-Endpunkt erstellt und im Browser installiert. |
-| Wo | **Setup > Datentabellen** (Modul `datatable`): Datentabellen, Verbindungen. **Setup > Geheimnisse** (Modul `secrets`) für ihre Passwörter. **Setup > RAD > Modultabelle** (`setup/moduletable`) für eine neue Tabelle. |
+| Was 6.0.15 hinzufügt | Einen Katalog aller dieser Klassen mit Tabelle, Feldern, Schlüsseln und Beziehungen zu Inhalten; eine Beschreibung jeder Tabelle, wie ihre Datenbank sie führt, und wo sie von der Definition abweicht; benannte Datenbankverbindungen (eine SQLite-Datei, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, lokal oder entfernt); und persistente Klassen, die auf einer solchen Verbindung lesen und schreiben statt in der Datenbank der Installation. Dazu: das Schema einer Tabelle auf jeder Verbindung aus der Administration anlegen oder aktualisieren, ihre Zeilen ansehen, die Zeilen, die auf ein Objekt verweisen, in der Inhaltsansicht zeigen, ein Schreiber für jedes Werkzeug, das Zeilen in eine Tabelle bringt, und Fetch-Funktionen für Templates. Und ein Assistent, der eine neue Tabelle mit Klasse, Schema, Administration, Richtlinien, Fetch-Funktionen und JSON-Endpunkt erstellt und im Browser installiert. Und die Synchronisation zwischen Tabellen und Inhalten: einmal, nach Zeitplan oder live (beim Veröffentlichen, Verschieben und Entfernen), in eine oder beide Richtungen, mit Konfliktregeln und einer Warteschlange von Konflikten zum Auflösen. |
+| Wo | **Setup > Datentabellen** (Modul `datatable`): Datentabellen, Verbindungen, Synchronisationen. **Setup > Geheimnisse** (Modul `secrets`) für ihre Passwörter. **Setup > RAD > Modultabelle** (`setup/moduletable`) für eine neue Tabelle. |
 | Kein Befehl nötig | Die Kernel-Tabellen werden auf der Seite Datentabellen angelegt, der Katalog entsteht beim ersten Aufruf der Seite, Verbindungen werden im Browser angelegt und getestet. |
-| Klassen | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()`; `expModuleTableWizard`, `expModuleTableCode`, `expDataTableFieldSource`, `expDataTableFieldSources` |
-| Einstellungen | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<klasse>_<spalte>]`) |
+| Klassen | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()`; `expModuleTableWizard`, `expModuleTableCode`, `expDataTableFieldSource`, `expDataTableFieldSources`; `expDataSync`, `expDataSyncDefinition`, `expDataSyncLink`, `expDataSyncConflict`, `expDataSyncTask`, `expDataSyncListener`, `expDataTableMirrorType` |
+| Einstellungen | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<klasse>_<spalte>]`); `cronjob.ini` (der Teil `datatable` und `datatablesync.php` in `frequent`); `workflow.ini` (`event_expdatatablemirror`) |
 
 ## Der Katalog
 
@@ -384,6 +384,9 @@ Rückweg, sodass jedes im Kasten „Suchen Sie …?" des anderen erscheint.
 | Eine Verbindung: neu, ändern, testen, entfernen | `datatable/connection/<bezeichner>` (`new` für eine neue) | `datatable/connections` |
 | Die Zeilen einer Tabelle, 25 je Seite, nach einem Feld gefiltert | `datatable/rows/<klasse>`, `datatable/rows/<klasse>/(<feld>)/<wert>` | `datatable/read` |
 | Tabellen auf einer Verbindung anlegen oder aktualisieren | `datatable/schema`, `datatable/schema/(class)/<klasse>`, `datatable/schema/(extension)/<name>` | `datatable/manage` |
+| Synchronisationen, ihre Läufe, Jetzt ausführen; ihre Tabellen anlegen | `datatable/syncs` | `datatable/sync` |
+| Eine Synchronisation: neu, ändern, ausführen, entfernen | `datatable/sync/<id>` (`new` für eine neue, `new/(class)/<klasse>/(content_class)/<bezeichner>` aus einem anderen Werkzeug) | `datatable/sync` |
+| Die offenen Konflikte der Regel „ask" | `datatable/conflicts`, `datatable/conflicts/(sync)/<id>` | `datatable/sync` |
 | Geheimnisse | `secrets/list` | `secrets/manage` |
 
 | Richtlinie | Erlaubt |
@@ -391,10 +394,10 @@ Rückweg, sodass jedes im Kasten „Suchen Sie …?" des anderen erscheint.
 | `datatable/read` | den Katalog, die Seite und die Zeilen jeder Klasse, den Reiter **Datentabellen** der Inhaltsansicht, die Fetch-Funktionen auf den Tabellen des Kernels |
 | `datatable/manage` | die Kernel-Tabellen anlegen, den Katalog neu erstellen, Tabellen auf einer Verbindung anlegen und aktualisieren |
 | `datatable/connections` | Verbindungen anlegen, ändern, testen und entfernen |
-| `datatable/sync` | die Synchronisation zwischen Tabellen und Inhalten (siehe „Als Nächstes") |
+| `datatable/sync` | die Synchronisationen zwischen Tabellen und Inhalten: anlegen, ändern, ausführen und entfernen, ihre Konflikte auflösen |
 
 In einer neuen Installation hat nur die Rolle Administrator sie. Das Setup-Menü hat eine Gruppe **Datentabellen** mit
-**Datentabellen**, **Verbindungen** und **Geheimnisse**.
+**Datentabellen**, **Verbindungen**, **Geheimnisse** und **Synchronisationen**.
 
 ## Die Kernel-Tabellen
 
@@ -402,12 +405,17 @@ In einer neuen Installation hat nur die Rolle Administrator sie. Das Setup-Menü
 |---|---|
 | `exp_data_connection` | die in der Administration angelegten Verbindungen: Bezeichner (eindeutig), Name, System, Server, Port, Datenbank, Benutzer, den Namen des Geheimnisses, Optionen (JSON: Zeichensatz, Socket, Treiber, DSN), Beschreibung, nur lesbar, wer sie wann angelegt und geändert hat |
 | `exp_secret` | den [Geheimnisspeicher](geheimnisspeicher.md) |
+| `exp_data_sync` | die Synchronisationen: Name, Richtung, Laufmodus (`run_mode`: once, scheduled, live), Klasse, Inhaltsklasse, Knoten, Zuordnung (JSON), Schlüsselspalten, Konfliktregel, Intervall, letzter und nächster Lauf, die Verlaufszeile des letzten Laufs, Zustand, Optionen (JSON) |
+| `exp_data_sync_link` | die Paare aus einer Zeile (ihrem Schlüssel) und einem Objekt einer Synchronisation, mit den Prüfsummen und Zeiten beider Seiten beim letzten Lauf; der Schlüssel ist je Synchronisation eindeutig |
+| `exp_data_sync_conflict` | die Konflikte der Regel „ask": das Paar, die Werte beider Seiten (JSON), wann er gefunden wurde, sein Zustand (offen, aufgelöst), wie und von wem er aufgelöst wurde |
 
-Eine neue Installation hat beide aus dem Kernel-Schema. Eine Installation von vor 6.0.15 bekommt sie aus den
+Eine neue Installation hat sie aus dem Kernel-Schema. Eine Installation von vor 6.0.15 bekommt sie aus den
 Update-Dateien für MySQL, PostgreSQL und SQLite (`update/database/<system>/6.0/dbupdate-6.0.0-6.0.15.sql`, die sie nur
-anlegen, wenn sie fehlen), oder auf der Seite Datentabellen: Solange eine von ihnen fehlt, sagt die Seite das, und
-**Tabellen anlegen** (Richtlinie `datatable/manage`) legt sie in der Datenbank der Installation über den
-Schema-Handler des Systems an, auf jedem System, das der Kernel unterstützt, MongoDB eingeschlossen.
+anlegen, wenn sie fehlen), oder aus der Administration: Solange eine von ihnen fehlt, sagt die Seite das, und
+**Tabellen anlegen** legt sie in der Datenbank der Installation über den Schema-Handler des Systems an, auf jedem
+System, das der Kernel unterstützt, MongoDB eingeschlossen: die Verbindungen und den Geheimnisspeicher auf der Seite
+Datentabellen (Richtlinie `datatable/manage`), die drei Tabellen der Synchronisation auf der Seite Synchronisationen
+(Richtlinie `datatable/sync`).
 `expKernelTableSchema` tut das für jede Tabelle eines `.dba`-Schemas:
 
 ```php
@@ -547,12 +555,108 @@ Lesen braucht `<modul>/read` (die Richtlinie der Ansicht), Schreiben `<modul>/ed
 gespeichert werden kann, ergibt 422 mit den Problemen von `fromInput()`. Ein Schreiben aus einer Seite der Site trägt
 wie jeder POST den Formular-Token (den Header `X-CSRF-Token`).
 
-## Als Nächstes
+## Synchronisation
 
-Die Synchronisation zwischen Tabellen und Inhalten baut auf dieser Schicht auf: eine einmalige Kopie in beide
-Richtungen, eine geplante Synchronisation in eine Richtung über eindeutige Schlüssel, ein Live-Spiegel beim
-Veröffentlichen, Verschieben und Entfernen, und eine Synchronisation in beide Richtungen mit Konfliktregeln und einer
-Warteschlange von Konflikten, die in der Administration aufgelöst werden.
+Eine Synchronisation hält eine Datentabelle und Inhalte einer Klasse im Gleichschritt (**Setup > Datentabellen >
+Synchronisationen**, `datatable/syncs`, Richtlinie `datatable/sync`). Sie nennt:
+
+| | |
+|---|---|
+| Die Datentabelle | eine persistente Klasse des Katalogs (ihre Verbindung wird verwendet) |
+| Die Inhalte | eine Inhaltsklasse und einen Knoten: den Teilbaum, der für die Tabelle gelesen wird, und den übergeordneten Knoten der Objekte, die aus Zeilen entstehen |
+| Die Zuordnung | eine Zeile je Spalte, `spalte = quelle` |
+| Den Schlüssel | die zugeordnete(n) Spalte(n), über die eine Zeile gefunden wird, z. B. `contentobject_id` oder `remote_id` |
+| Die Richtung | `content_to_table`, `table_to_content` oder `two_way` |
+| Wie sie läuft | `once` (wenn gestartet), `scheduled` (alle `interval` Sekunden), `live` (sofort bei jeder Veröffentlichung, Verschiebung und Entfernung, und zusätzlich nach Zeitplan) |
+| Die Konfliktregel | was ein Lauf in beide Richtungen tut, wenn sich beide Seiten geändert haben: `newest`, `content`, `table` oder `ask` |
+| Optionen | die Zeile eines Objekts entfernen, das entfernt wird oder den Teilbaum verlässt (`remove_missing`); die Sprache der Objekte, die aus Zeilen entstehen (`language`) |
+
+Eine Quelle ist der Bezeichner eines Attributs der Inhaltsklasse oder eine von `@object_id`, `@node_id`,
+`@parent_node_id`, `@remote_id`, `@node_remote_id`, `@name`, `@published`, `@modified`, `@class`, `@section`, `@owner`
+und `@path` (der URL-Alias des Knotens). Ein Attribut wird mit `toString()` seines Datentyps gelesen und mit
+`fromString()` geschrieben; die `@`-Quellen werden nur in die Tabelle geschrieben, nie in Inhalte. **Zuordnung
+vorschlagen** füllt die Zuordnung mit den Spalten, die wie ein Attribut heißen (oder `attr_<bezeichner>`, wie der
+Assistent für Modultabellen sie nennt) oder wie eine bekannte Quelle (`contentobject_id`, `node_id`, `remote_id`,
+`name`, `published`, `modified` ...).
+
+```text
+contentobject_id = @object_id
+node_id = @node_id
+remote_id = @remote_id
+name = @name
+modified = @modified
+title = title
+intro = intro
+```
+
+Was ein Lauf tut:
+
+| Richtung | |
+|---|---|
+| Inhalte in die Tabelle | Jedes Objekt der Klasse unter dem Knoten (sein Hauptort, versteckte eingeschlossen) wird eine Zeile, über den Schlüssel mit `expDataTableWriter` eingefügt oder aktualisiert. Eine Zeile mit den Werten ihres Objekts bleibt unverändert. Mit `remove_missing` wird die Zeile eines Objekts entfernt, das nicht mehr da ist (entfernt, aus dem Teilbaum verschoben). |
+| Die Tabelle in Inhalte | Jede Zeile wird ein Objekt unter dem Knoten: Eine Zeile, die schon mit einem Objekt gepaart ist oder deren Spalte `@object_id` oder `@remote_id` eines nennt, aktualisiert es (eine neue Version, veröffentlicht); jede andere Zeile erstellt ein neues Objekt (mit der Remote-ID der Zeile, wenn eine zugeordnet ist). Die Zeile erfährt dann ihr Objekt: Die Spalten, die `@object_id`, `@node_id` und den anderen `@`-Quellen zugeordnet sind, werden zurückgeschrieben. |
+| In beide Richtungen | Jedes Paar aus Zeile und Objekt wird mit dem letzten Lauf verglichen (die Prüfsummen beider Seiten, `exp_data_sync_link`): Hat sich nur der Inhalt geändert, folgt die Zeile; hat sich nur die Zeile geändert, folgt der Inhalt; haben sich beide geändert, entscheidet die Konfliktregel. Eine Zeile oder ein Objekt ohne Partner wird über den Schlüssel gepaart oder auf der anderen Seite erstellt. Inhalte werden von einer Synchronisation nie entfernt. |
+
+Werte werden so verglichen, wie die Felder der Tabelle sie typisieren: Eine leere Beziehung ist `0` in einer
+Ganzzahlspalte und `''` als Zeichenkette eines Attributs, und beides bedeutet dasselbe. Nur die Attribute, deren Wert
+sich unterscheidet, werden in ein Objekt geschrieben, so wird ein Bild oder eine Beziehungsliste nie aus ihrer eigenen
+Zeichenkette neu geschrieben. Inhalte, die eine Synchronisation schreibt, spiegelt der Live-Spiegel nicht zurück.
+
+Jeder Lauf geht über den Transfer-Runner (die Job-Warteschlange, die Inhalts-Jobs oder die Anfrage selbst) und steht im
+Verlauf der Läufe der Import- und Export-Werkzeuge (Werkzeug `transfer.datatable`); die Seite einer Synchronisation
+zeigt ihre letzten Läufe. **Jetzt ausführen** (in der Liste) und **Speichern und jetzt ausführen** (auf ihrer Seite)
+starten einen. Der Cronjob-Teil `datatable` (`cronjobs/datatablesync.php`, auch in der Gruppe `frequent`) startet jede
+eingeschaltete geplante oder Live-Synchronisation, deren Intervall abgelaufen ist: `php runcronjobs.php datatable`.
+
+```php
+$sync = expDataSync::define( array( 'name' => 'Artikel ins Archiv', 'direction' => 'content_to_table', 'mode' => 'scheduled',
+                                    'class' => 'myArchiveRow', 'content_class' => 'article', 'subtree' => 2,
+                                    'map' => "contentobject_id = @object_id\ntitle = title", 'keys' => 'contentobject_id',
+                                    'conflict' => 'newest', 'interval' => 3600 ), $problems );
+$run = expDataSync::start( $sync );     // über den Transfer-Runner; $run['engine'], $run['run_id']
+$counts = expDataSync::run( $sync );    // dieselbe Arbeit in diesem Prozess
+```
+
+## Live-Spiegel
+
+Der Kernel meldet drei Ereignisse (`ezpEvent`), die jeder Listener übernehmen kann (`site.ini [Event] Listeners[]`):
+
+| Ereignis | Argumente | Wann |
+|---|---|---|
+| `content/publish` | Objekt-ID, Version | eine Version wurde veröffentlicht |
+| `content/move` | Knoten-ID, Objekt-ID, alter und neuer übergeordneter Knoten | ein Knoten wurde verschoben |
+| `content/remove` | Objekt-IDs, Knoten-IDs | Orte wurden entfernt |
+
+Für den Live-Spiegel ruft der Kernel `expDataSyncListener` selbst auf, in jedem Prozess (eine Webanfrage, ein Befehl,
+ein Worker der Warteschlange), beim Veröffentlichen, Verschieben, Entfernen eines Ortes, endgültigen Löschen und beim
+Verschieben in den Papierkorb. Der Listener merkt sich die Objekte und erledigt die Arbeit am Ende der Anfrage, nach der
+Transaktion der Veröffentlichung, und nur, wenn es eine Live-Synchronisation gibt: Jedes Objekt wird in die Tabellen der
+Live-Synchronisationen seiner Klasse geschrieben, deren Teilbaum es enthält. Ein Objekt, das den Teilbaum verlassen hat,
+in den Papierkorb kam, endgültig gelöscht wurde oder seinen letzten Ort verloren hat, verliert seine Zeilen (außer die
+Synchronisation behält sie). Ein Fehler wird protokolliert und erreicht nie den Redakteur. Ein langer Prozess spiegelt
+alle 50 Objekte.
+
+Das Workflow-Ereignis **In Datentabellen spiegeln** (`expdatatablemirror`, bei content publish after) tut dasselbe als
+Schritt eines Workflows, für die im Ereignis angekreuzten Synchronisationen (oder jede Synchronisation der Klasse des
+Objekts, wenn keine angekreuzt ist), gleich welcher Modus: für eine Site, die den Spiegel nach einer Freigabe oder vor
+einer Benachrichtigung will. Es hält nie einen Workflow an.
+
+## Konflikte
+
+Ein Lauf in beide Richtungen findet einen Konflikt, wenn sich seit dem letzten Lauf sowohl der Inhalt als auch die Zeile
+geändert haben. Die Konfliktregel entscheidet:
+
+| Regel | |
+|---|---|
+| `newest` | die spätere Änderung gewinnt: die Änderungszeit des Objekts gegen die der Zeile (eine Spalte, die `@modified` zugeordnet ist, oder eine Spalte namens `modified`); eine Tabelle ohne Zeit verliert |
+| `content` | der Inhalt gewinnt: die Zeile wird überschrieben |
+| `table` | die Tabelle gewinnt: das Objekt bekommt eine neue Version mit den Werten der Zeile |
+| `ask` | nichts wird geschrieben; der Konflikt wartet in der Warteschlange |
+
+**Setup > Datentabellen > Synchronisationen > Konflikte** (`datatable/conflicts`) zeigt die offenen Konflikte mit den
+Werten, die sich unterscheiden, und **Den Inhalt übernehmen** oder **Die Tabelle übernehmen** löst einen auf: Die
+andere Seite wird überschrieben, das Paar merkt sich beide Seiten, und der Konflikt wird mit dem, der ihn aufgelöst hat,
+und der Art der Auflösung geschlossen.
 
 ## Tests
 
@@ -568,4 +672,10 @@ Datenbank der Site. Ebenda geprüft ist der Assistent für Modultabellen: die Fe
 Einstellungen und ihre Probleme, jede Datei, die er schreibt (jede PHP-Datei besteht `php -l`, kein Template enthält
 Inline-Stile), die Definition, die er erstellt, das Ergänzen einer vorhandenen Extension (Dateien bleiben unverändert,
 Einstellungs- und Schemadateien werden einmal erweitert) und die erzeugte Klasse, die auf einer SQLite-Verbindung Zeilen
-speichert, liest und prüft. `tests/tests/lib/ezdb/expPDODBTest.php` prüft den PDO-Treiber auf pdo_sqlite und das SQL der anderen Dialekte.
+speichert, liest und prüft. Ebenda geprüft ist die Synchronisation: ihre Definitionen (Werte, die Zuordnung und ihr
+Text, die Probleme), die Prüfsummen, Schlüssel, Konfliktregeln und typisierten Werte, die Definitionen, Paare und
+Konflikte auf einer SQLite-Datenbank (mit den Werten, die sich unterscheiden), der Listener des Live-Spiegels (was er
+sich merkt und wann er schreibt), der Cronjob-Teil, der Typ des Workflow-Ereignisses und die Aufrufe des Listeners im
+Kernel; ihre drei Tabellen müssen überall gleich sein wie die anderen. Was Inhalte liest oder veröffentlicht (ein Lauf
+in jede Richtung, ein aufgelöster Konflikt, der Live-Spiegel nach einer Veröffentlichung und einer Entfernung), wird in
+einer Wegwerf-Installation geprüft. `tests/tests/lib/ezdb/expPDODBTest.php` prüft den PDO-Treiber auf pdo_sqlite und das SQL der anderen Dialekte.

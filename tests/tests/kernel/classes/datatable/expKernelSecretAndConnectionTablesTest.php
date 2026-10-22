@@ -1,7 +1,8 @@
 <?php
 /**
- * The kernel tables of the secret store (exp_secret, doc/eng-us/features/6.0/secret-store.md) and of the named
- * connections of the data tables (exp_data_connection, doc/eng-us/features/6.0/data-tables.md). No installation: the
+ * The kernel tables of the secret store (exp_secret, doc/eng-us/features/6.0/secret-store.md), of the named
+ * connections of the data tables (exp_data_connection) and of their synchronisation (exp_data_sync, exp_data_sync_link,
+ * exp_data_sync_conflict; doc/eng-us/features/6.0/data-tables.md). No installation: the
  * tables are checked in their schema files and in a SQLite database built in var/tmp.
  *
  *  ST-01 - Each table is the same in share/db_schema.dba, its persistent object, the kernel schemas of MySQL,
@@ -33,6 +34,31 @@ class expKernelSecretAndConnectionTablesTest extends PHPUnit\Framework\TestCase
             'unique' => 'identifier',
             'class' => 'expDataConnection',
             'file' => 'kernel/classes/datatable/expdataconnection.php',
+        ),
+        'exp_data_sync' => array(
+            'columns' => array( 'class_name', 'conflict_rule', 'content_class', 'created', 'creator_id', 'direction', 'id', 'interval_seconds',
+                                'key_columns', 'last_run', 'last_run_id', 'map', 'modified', 'name', 'next_run', 'options', 'run_mode', 'state',
+                                'subtree_node_id' ),
+            'indexes' => array( 'exp_data_sync_mode' => array( 'non-unique', array( 'run_mode', 'state' ) ) ),
+            'unique' => '',
+            'class' => 'expDataSyncDefinition',
+            'file' => 'kernel/classes/datatable/sync/expdatasyncdefinition.php',
+        ),
+        'exp_data_sync_conflict' => array(
+            'columns' => array( 'content_values', 'detected', 'id', 'link_id', 'object_id', 'resolution', 'resolved', 'resolver_id', 'row_key',
+                                'row_values', 'state', 'sync_id' ),
+            'indexes' => array( 'exp_data_sync_conflict_state' => array( 'non-unique', array( 'sync_id', 'state' ) ) ),
+            'unique' => '',
+            'class' => 'expDataSyncConflict',
+            'file' => 'kernel/classes/datatable/sync/expdatasyncdefinition.php',
+        ),
+        'exp_data_sync_link' => array(
+            'columns' => array( 'content_hash', 'content_modified', 'id', 'object_id', 'row_hash', 'row_key', 'row_modified', 'sync_id', 'synced' ),
+            'indexes' => array( 'exp_data_sync_link_key' => array( 'unique', array( 'sync_id', 'row_key' ) ),
+                                'exp_data_sync_link_object' => array( 'non-unique', array( 'sync_id', 'object_id' ) ) ),
+            'unique' => 'sync_id, row_key',
+            'class' => 'expDataSyncLink',
+            'file' => 'kernel/classes/datatable/sync/expdatasyncdefinition.php',
         ),
     );
 
@@ -173,6 +199,9 @@ class expKernelSecretAndConnectionTablesTest extends PHPUnit\Framework\TestCase
             }
             $pdo->exec( "INSERT INTO exp_secret (name, scope, ciphertext, key_id) VALUES ('archive_db', 'datatable', 'AQ==', '0123456789abcdef')" );
             $pdo->exec( "INSERT INTO exp_data_connection (identifier, name, engine, database_name) VALUES ('archive', 'Archive', 'sqlite', 'var/datatable/archive.db')" );
+            $pdo->exec( "INSERT INTO exp_data_sync (name, direction, run_mode, class_name, content_class) VALUES ('Articles', 'two_way', 'live', 'myRow', 'article')" );
+            $pdo->exec( "INSERT INTO exp_data_sync_link (sync_id, row_key, object_id) VALUES (1, '42', 42)" );
+            $pdo->exec( "INSERT INTO exp_data_sync_conflict (sync_id, link_id, object_id, row_key, state) VALUES (1, 1, 42, '42', 'open')" );
             $apply();
             foreach ( self::$tables as $tableName => $spec )
             {
@@ -182,7 +211,8 @@ class expKernelSecretAndConnectionTablesTest extends PHPUnit\Framework\TestCase
                 $this->assertSame( array_keys( $spec['indexes'] ), $names, $tableName );
             }
             foreach ( array( "INSERT INTO exp_secret (name) VALUES ('archive_db')",
-                             "INSERT INTO exp_data_connection (identifier) VALUES ('archive')" ) as $duplicate )
+                             "INSERT INTO exp_data_connection (identifier) VALUES ('archive')",
+                             "INSERT INTO exp_data_sync_link (sync_id, row_key) VALUES (1, '42')" ) as $duplicate )
             {
                 $refused = false;
                 try

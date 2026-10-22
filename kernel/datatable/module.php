@@ -45,6 +45,26 @@ $ViewList['schema'] = array(
     'params' => array(),
     'unordered_params' => array( 'class' => 'ClassName', 'extension' => 'Extension', 'connection' => 'Connection' ) );
 
+$ViewList['syncs'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'syncs.php',
+    'functions' => array( 'sync' ),
+    'params' => array() );
+
+$ViewList['sync'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'sync.php',
+    'functions' => array( 'sync' ),
+    'params' => array( 'SyncID' ),
+    'unordered_params' => array( 'class' => 'ClassName', 'content_class' => 'ContentClass' ) );
+
+$ViewList['conflicts'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'conflicts.php',
+    'functions' => array( 'sync' ),
+    'params' => array(),
+    'unordered_params' => array( 'sync' => 'SyncID', 'offset' => 'Offset' ) );
+
 $ViewList['connections'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'connections.php',

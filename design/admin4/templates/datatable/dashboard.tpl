@@ -11,6 +11,7 @@
     </div>
     <div class="a4-pagehead-actions a4-actions">
         {if $can_connect}<a class="a4-btn" href={'datatable/connections'|ezurl}><span class="a4-icon a4-bi-plug" aria-hidden="true"></span> {'Connections (%count)'|i18n( 'design/admin/datatable',, hash( '%count', $connection_count ) )}</a>{/if}
+        {if $can_sync}<a class="a4-btn" href={'datatable/syncs'|ezurl}><span class="a4-icon a4-bi-arrow-down-up" aria-hidden="true"></span> {'Synchronisations'|i18n( 'design/admin/datatable' )}</a>{/if}
         {if $can_manage}<a class="a4-btn" href={'datatable/schema'|ezurl}><span class="a4-icon a4-bi-wrench-adjustable" aria-hidden="true"></span> {'Schema'|i18n( 'design/admin/datatable' )}</a>{/if}
         <a class="a4-btn" href={'secrets/list'|ezurl}><span class="a4-icon a4-bi-key" aria-hidden="true"></span> {'Secrets'|i18n( 'design/admin/datatable' )}</a>
     </div>

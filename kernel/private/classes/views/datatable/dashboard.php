@@ -92,6 +92,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'messages', $messages );
         $tpl->setVariable( 'can_manage', $canManage );
         $tpl->setVariable( 'can_connect', self::may( 'connections' ) );
+        $tpl->setVariable( 'can_sync', self::may( 'sync' ) );
         $tpl->setVariable( 'connections_installed', \expDataConnections::installed( true ) );
         $tpl->setVariable( 'secrets_installed', \expSecrets::installed( true ) );
         $tpl->setVariable( 'connection_count', count( \expDataConnections::all() ) - 1 );

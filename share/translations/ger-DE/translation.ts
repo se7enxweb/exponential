@@ -17712,6 +17712,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>The tables of the persistent classes, their fields, relations and storage.</source>
         <translation>Die Tabellen der persistenten Klassen, ihre Felder, Beziehungen und ihr Speicherort.</translation>
     </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Inhalte und Datentabellen im Gleichschritt: einmal, nach Zeitplan oder live.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronisationen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -67597,6 +67605,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>eZ Page swap workflow event</source>
         <translation>eZ-Seitentausch-Workflow-Ereignis</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>In Datentabellen spiegeln</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -73146,6 +73158,286 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>written</source>
         <translation>geschrieben</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count Konflikte</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name ist gelaufen: %rows Zeilen und %objects Objekte geschrieben, %same unverändert, %conflicts Konflikte, %failed fehlgeschlagen.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name wurde im Hintergrund gestartet (%engine); der Lauf steht im Verlauf der Läufe.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Eine Zuordnung wurde vorgeschlagen: prüfen Sie sie und speichern Sie dann.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Eine Quelle ist der Bezeichner eines Attributs der Inhaltsklasse oder eine von: %list. Nur Attribute werden in Inhalte geschrieben.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Nachfragen: ein Konflikt zum Auflösen</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Der Inhalt und die Zeile haben sich seit dem letzten Lauf einer Synchronisation in beide Richtungen geändert, die nachfragt. Übernehmen Sie eine Seite; die andere wird überschrieben.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>In beide Richtungen</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Konflikte</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Konflikte (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Inhalt</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Inhalt und Tabelle</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Inhalte in eine Datentabelle kopiert, eine Tabelle in Inhalte kopiert oder beides im Gleichschritt gehalten: einmal, nach Zeitplan oder live bei jeder Veröffentlichung, Verschiebung und Entfernung.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Inhalte in die Tabelle</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Der Inhalt gewinnt</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Datentabelle (persistente Klasse)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Richtung</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Alle (Sekunden)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Gefunden %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Schlüsselspalte(n)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Letzter Lauf</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Live und nach Zeitplan</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Live: jede Veröffentlichung, Verschiebung und Entfernung eines Objekts der Klasse unter dem Knoten wird sofort in die Tabelle geschrieben.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Zuordnung: eine Zeile je Spalte, Spalte = Quelle</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Neue Synchronisation</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Keine Spalte der Klasse passt zu einem Attribut oder einer bekannten Quelle: schreiben Sie die Zuordnung selbst.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Kein offener Konflikt.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Noch keine Synchronisation.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Nach Zeitplan</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Zuordnung vorschlagen</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Die Zeile eines Objekts entfernen, das entfernt wird oder den Teilbaum verlässt</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Diese Synchronisation entfernen</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Jetzt ausführen</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Läuft</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Speichern und jetzt ausführen</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Ausgeschaltet (keine geplanten oder Live-Läufe)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronisationen</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Den Inhalt übernehmen</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Die Tabelle übernehmen</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Der Konflikt konnte nicht aufgelöst werden; er bleibt offen.</translation>
+    </message>
+    <message>
+        <source>The content's values were written to the table.</source>
+        <translation>Die Werte des Inhalts wurden in die Tabelle geschrieben.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Die letzten Läufe</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Die zugeordnete(n) Spalte(n), über die eine Zeile gefunden wird, z. B. contentobject_id oder remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Die neuere Änderung gewinnt</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Die Zeilen und die Inhalte bleiben; nur die Zuordnung der Paare und die offenen Konflikte werden entfernt.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Der Teilbaum, der für die Tabelle gelesen wird, und der übergeordnete Knoten der Objekte, die aus Zeilen entstehen.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Die Synchronisation wurde nicht gespeichert</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Die Synchronisation wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object's class</source>
+        <translation>Die Synchronisationen der Klasse des veröffentlichten Objekts</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Die Tabelle in Inhalte</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Die Tabelle gewinnt</translation>
+    </message>
+    <message>
+        <source>The table's values were published to the content.</source>
+        <translation>Die Werte der Tabelle wurden im Inhalt veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Die Tabellen der Synchronisation sind noch nicht installiert</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Es gibt noch keine Synchronisation von Datentabellen (Einrichtung &gt; Datentabellen &gt; Synchronisationen).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Wenn sich beide Seiten geändert haben</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Wenn gestartet</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Ist keine angekreuzt, wird das Objekt in jede Synchronisation seiner Klasse geschrieben, deren Teilbaum es enthält.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>in beide Richtungen</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>Inhalte in die Tabelle</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>alle %minutes Minuten</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link und exp_data_sync_conflict werden mit der Schaltfläche in dieser Datenbank angelegt; sonst ändert sich nichts.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>live</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>Objekt %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>Tabelle in Inhalte</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>wenn gestartet</translation>
     </message>
 </context>
 <context>

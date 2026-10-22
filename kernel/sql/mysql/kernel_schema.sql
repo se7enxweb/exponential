@@ -1321,6 +1321,74 @@ CREATE TABLE exp_secret (
 
 
 
+CREATE TABLE exp_data_sync (
+  class_name varchar(128) NOT NULL default '',
+  conflict_rule varchar(16) NOT NULL default '',
+  content_class varchar(128) NOT NULL default '',
+  created int(11) NOT NULL default '0',
+  creator_id int(11) NOT NULL default '0',
+  direction varchar(16) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  interval_seconds int(11) NOT NULL default '0',
+  key_columns varchar(255) NOT NULL default '',
+  last_run int(11) NOT NULL default '0',
+  last_run_id int(11) NOT NULL default '0',
+  map longtext,
+  modified int(11) NOT NULL default '0',
+  name varchar(255) NOT NULL default '',
+  next_run int(11) NOT NULL default '0',
+  options longtext,
+  run_mode varchar(16) NOT NULL default '',
+  state varchar(16) NOT NULL default '',
+  subtree_node_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  KEY exp_data_sync_mode (run_mode,state)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_data_sync_conflict (
+  content_values longtext,
+  detected int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  link_id int(11) NOT NULL default '0',
+  object_id int(11) NOT NULL default '0',
+  resolution varchar(16) NOT NULL default '',
+  resolved int(11) NOT NULL default '0',
+  resolver_id int(11) NOT NULL default '0',
+  row_key varchar(255) NOT NULL default '',
+  row_values longtext,
+  state varchar(16) NOT NULL default '',
+  sync_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  KEY exp_data_sync_conflict_state (sync_id,state)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_data_sync_link (
+  content_hash varchar(32) NOT NULL default '',
+  content_modified int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  object_id int(11) NOT NULL default '0',
+  row_hash varchar(32) NOT NULL default '',
+  row_key varchar(255) NOT NULL default '',
+  row_modified int(11) NOT NULL default '0',
+  sync_id int(11) NOT NULL default '0',
+  synced int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  UNIQUE KEY exp_data_sync_link_key (sync_id,row_key),
+  KEY exp_data_sync_link_object (sync_id,object_id)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE ezproductcategory (
   id int(11) NOT NULL auto_increment,
   name varchar(255) NOT NULL default '',

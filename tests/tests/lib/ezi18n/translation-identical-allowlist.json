@@ -1704,6 +1704,7 @@
     },
     "ger-DE": {
         "Schema": "the same word in German (a database schema)",
+        "live": "the same word in German (a synchronisation that runs live)",
         "Socket": "the same word in German (a database socket)",
         "#level1 - #level2": "only placeholders, units or tokens; nothing to translate",
         "#levelIndex1:#levelIndex2": "only placeholders, units or tokens; nothing to translate",

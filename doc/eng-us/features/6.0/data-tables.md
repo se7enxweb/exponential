@@ -9,11 +9,11 @@ installation talks to. The passwords of those databases live in the [secret stor
 | | |
 |---|---|
 | What a data table is | The table of a persistent class: a PHP class that extends `eZPersistentObject` and describes its table in `definition()` (fields, keys, the table name). The kernel has hundreds of them; most extensions add their own. |
-| What 6.0.15 adds | A catalogue of every such class with its table, fields, keys and relations to content; a description of each table as its database has it, and where it differs from the definition; named database connections (a SQLite file, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, here or remote); and persistent classes that read and write on such a connection instead of the installation's database. Then: a table's schema created or upgraded on any connection from the administration, its rows browsed, the rows that point at an item shown in the content view, one writer for every tool that puts rows into a table, and fetch functions for templates. And a wizard that makes a new table with its class, schema, administration, policies, fetch functions and JSON endpoint, and installs it from the browser. |
-| Where | **Setup > Data tables** (module `datatable`): Data tables, Connections. **Setup > Secrets** (module `secrets`) for their passwords. **Setup > RAD > Module table** (`setup/moduletable`) for a new table. |
+| What 6.0.15 adds | A catalogue of every such class with its table, fields, keys and relations to content; a description of each table as its database has it, and where it differs from the definition; named database connections (a SQLite file, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, here or remote); and persistent classes that read and write on such a connection instead of the installation's database. Then: a table's schema created or upgraded on any connection from the administration, its rows browsed, the rows that point at an item shown in the content view, one writer for every tool that puts rows into a table, and fetch functions for templates. And a wizard that makes a new table with its class, schema, administration, policies, fetch functions and JSON endpoint, and installs it from the browser. And the synchronisation between tables and content: once, scheduled or live (on publish, move and removal), in either direction or both, with conflict rules and a queue of conflicts to resolve. |
+| Where | **Setup > Data tables** (module `datatable`): Data tables, Connections, Synchronisations. **Setup > Secrets** (module `secrets`) for their passwords. **Setup > RAD > Module table** (`setup/moduletable`) for a new table. |
 | No command needed | The kernel tables are created from the Data tables page, the catalogue is made when the page is first opened, connections are made and tested in the browser. |
-| Classes | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()`; `expModuleTableWizard`, `expModuleTableCode`, `expDataTableFieldSource`, `expDataTableFieldSources` |
-| Settings | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<class>_<column>]`) |
+| Classes | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()`; `expModuleTableWizard`, `expModuleTableCode`, `expDataTableFieldSource`, `expDataTableFieldSources`; `expDataSync`, `expDataSyncDefinition`, `expDataSyncLink`, `expDataSyncConflict`, `expDataSyncTask`, `expDataSyncListener`, `expDataTableMirrorType` |
+| Settings | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<class>_<column>]`); `cronjob.ini` (the part `datatable`, and `datatablesync.php` in `frequent`); `workflow.ini` (`event_expdatatablemirror`) |
 
 ## The catalogue
 
@@ -367,6 +367,9 @@ box.
 | One connection: new, change, test, remove | `datatable/connection/<identifier>` (`new` for a new one) | `datatable/connections` |
 | The rows of one table, 25 a page, filtered by one field | `datatable/rows/<class>`, `datatable/rows/<class>/(<field>)/<value>` | `datatable/read` |
 | Create or upgrade tables on a connection | `datatable/schema`, `datatable/schema/(class)/<class>`, `datatable/schema/(extension)/<name>` | `datatable/manage` |
+| Synchronisations, their runs, Run now; creating their tables | `datatable/syncs` | `datatable/sync` |
+| One synchronisation: new, change, run, remove | `datatable/sync/<id>` (`new` for a new one, `new/(class)/<class>/(content_class)/<identifier>` from another tool) | `datatable/sync` |
+| The open conflicts of the rule "ask" | `datatable/conflicts`, `datatable/conflicts/(sync)/<id>` | `datatable/sync` |
 | Secrets | `secrets/list` | `secrets/manage` |
 
 | Policy | Allows |
@@ -374,10 +377,10 @@ box.
 | `datatable/read` | the catalogue, the page and the rows of each class, the **Data tables** tab of the content view, the fetch functions on the kernel's tables |
 | `datatable/manage` | creating the kernel tables, making the catalogue again, creating and upgrading tables on a connection |
 | `datatable/connections` | making, changing, testing and removing connections |
-| `datatable/sync` | the synchronisation between tables and content (see "Coming next") |
+| `datatable/sync` | the synchronisations between tables and content: make, change, run and remove them, resolve their conflicts |
 
 Only the Administrator role has them in a new installation. The Setup menu has a group **Data tables** with
-**Data tables**, **Connections** and **Secrets**.
+**Data tables**, **Connections**, **Secrets** and **Synchronisations**.
 
 ## The kernel tables
 
@@ -385,12 +388,16 @@ Only the Administrator role has them in a new installation. The Setup menu has a
 |---|---|
 | `exp_data_connection` | the connections made in the administration: identifier (unique), name, engine, server, port, database, user, the secret's name, options (JSON: charset, socket, driver, DSN), description, read-only, who made and changed it and when |
 | `exp_secret` | the [secret store](secret-store.md) |
+| `exp_data_sync` | the synchronisations: name, direction, run mode (`run_mode`: once, scheduled, live), class, content class, node, map (JSON), key columns, conflict rule, interval, last and next run, the last run's history row, state, options (JSON) |
+| `exp_data_sync_link` | the pairs of a row (its key) and an object of a synchronisation, with the hashes and times of both sides at the last run; the key is unique per synchronisation |
+| `exp_data_sync_conflict` | the conflicts of the rule "ask": the pair, the values of both sides (JSON), when it was found, its state (open, resolved), how and by whom it was resolved |
 
-A new installation has both from the kernel schema. An installation made before 6.0.15 gets them from the update
+A new installation has them from the kernel schema. An installation made before 6.0.15 gets them from the update
 files of MySQL, PostgreSQL and SQLite (`update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, which create them
-only when they are missing), or from the Data tables page: while one of them is missing the page says so, and
-**Create the tables** (policy `datatable/manage`) creates them on the installation's database through the engine's
-schema handler, on every engine the kernel supports, MongoDB included. `expKernelTableSchema` does this for any table
+only when they are missing), or from the administration: while one of them is missing the page says so, and
+**Create the tables** creates them on the installation's database through the engine's schema handler, on every
+engine the kernel supports, MongoDB included: the connections and the secret store on the Data tables page (policy
+`datatable/manage`), the three tables of the synchronisation on the Synchronisations page (policy `datatable/sync`). `expKernelTableSchema` does this for any table
 of a `.dba` schema:
 
 ```php
@@ -526,11 +533,104 @@ Reading needs `<module>/read` (the view's policy), writing `<module>/edit` (403 
 stored is 422 with the problems of `fromInput()`. A write from a page of the site carries the form token like every
 POST (the header `X-CSRF-Token`).
 
-## Coming next
+## Synchronisation
 
-The synchronisation between tables and content builds on this layer: a one-off copy either way, a scheduled one-way
-sync by unique keys, a live mirror on publish, move and remove, and a two-way sync with conflict rules and a queue of
-conflicts to resolve in the administration.
+A synchronisation keeps a data table and content of one class in step (**Setup > Data tables > Synchronisations**,
+`datatable/syncs`, policy `datatable/sync`). It names:
+
+| | |
+|---|---|
+| The data table | a persistent class of the catalogue (its connection is used) |
+| The content | a content class and a node: the subtree that is read for the table, and the parent of objects made from rows |
+| The map | one line per column, `column = source` |
+| The key | the mapped column(s) a row is matched by, e.g. `contentobject_id` or `remote_id` |
+| The direction | `content_to_table`, `table_to_content` or `two_way` |
+| How it runs | `once` (when started), `scheduled` (every `interval` seconds), `live` (at once on every publish, move and removal, and on the schedule too) |
+| The conflict rule | what a two-way run does when both sides changed: `newest`, `content`, `table` or `ask` |
+| Options | remove the row of an object that is removed or leaves the subtree (`remove_missing`); the language of objects made from rows (`language`) |
+
+A source is an attribute identifier of the content class, or one of `@object_id`, `@node_id`, `@parent_node_id`,
+`@remote_id`, `@node_remote_id`, `@name`, `@published`, `@modified`, `@class`, `@section`, `@owner` and `@path` (the
+node's URL alias). An attribute is read with its datatype's `toString()` and written with `fromString()`; the `@`
+sources are written to the table only, never to content. **Propose the map** fills the map with the columns named
+like an attribute (or `attr_<identifier>`, as the module table wizard names them) or like a known source
+(`contentobject_id`, `node_id`, `remote_id`, `name`, `published`, `modified` ...).
+
+```text
+contentobject_id = @object_id
+node_id = @node_id
+remote_id = @remote_id
+name = @name
+modified = @modified
+title = title
+intro = intro
+```
+
+What a run does:
+
+| Direction | |
+|---|---|
+| Content to table | Every object of the class below the node (its main location, hidden ones too) becomes a row, upserted by the key through `expDataTableWriter`. A row whose values are those of its object is left alone. With `remove_missing`, the row of an object that is no longer there (removed, moved out of the subtree) is removed. |
+| Table to content | Every row becomes an object below the node: a row already paired with an object, or whose `@object_id` or `@remote_id` column names one, updates it (a new version, published); any other row makes a new object (with the row's remote id when one is mapped). The row then learns its object: the columns mapped to `@object_id`, `@node_id` and the other `@` sources are written back. |
+| Both ways | Each pair of row and object is compared with the last run (the hashes of both sides, `exp_data_sync_link`): only the content changed, the row follows; only the row changed, the content follows; both changed, the conflict rule decides. A row or an object without its pair is paired by the key, or made on the other side. The content is never removed by a synchronisation. |
+
+Values are compared as the table's fields type them: an empty relation is `0` in an integer column and `''` as an
+attribute's string, and both mean the same. Only the attributes whose value differs are written to an object, so an
+image or a relation list is never written again from its own string. Content that a synchronisation writes is not
+mirrored back by the live mirror.
+
+Every run goes through the transfer runner (the job queue, the content jobs or the request itself) and is recorded in
+the run history of the import and export tools (tool `transfer.datatable`); the page of a synchronisation lists its
+last runs. **Run now** (on the list) and **Save and run now** (on its page) start one. The cronjob part `datatable`
+(`cronjobs/datatablesync.php`, also in the `frequent` group) starts every enabled scheduled or live synchronisation
+whose interval has passed: `php runcronjobs.php datatable`.
+
+```php
+$sync = expDataSync::define( array( 'name' => 'Articles to the archive', 'direction' => 'content_to_table', 'mode' => 'scheduled',
+                                    'class' => 'myArchiveRow', 'content_class' => 'article', 'subtree' => 2,
+                                    'map' => "contentobject_id = @object_id\ntitle = title", 'keys' => 'contentobject_id',
+                                    'conflict' => 'newest', 'interval' => 3600 ), $problems );
+$run = expDataSync::start( $sync );     // through the transfer runner; $run['engine'], $run['run_id']
+$counts = expDataSync::run( $sync );    // the same work in this process
+```
+
+## Live mirror
+
+The kernel notifies three events (`ezpEvent`), which any listener can take (`site.ini [Event] Listeners[]`):
+
+| Event | Arguments | When |
+|---|---|---|
+| `content/publish` | object id, version | a version was published |
+| `content/move` | node id, object id, old parent, new parent | a node was moved |
+| `content/remove` | object ids, node ids | locations were removed |
+
+For the live mirror the kernel calls `expDataSyncListener` itself, in every process (a web request, a command, a
+queue worker), at publish, move, location removal, purge and trash. The listener notes the objects and does the work
+at the end of the request, after the publish transaction, and only when a live synchronisation exists: each object is
+written to the tables of the live synchronisations of its class whose subtree holds it. An object that left the
+subtree, went to the trash, was purged or lost its last location loses its rows (unless the synchronisation keeps
+them). A failure is logged and never reaches the editor. A long process mirrors every 50 objects.
+
+The workflow event **Mirror to data tables** (`expdatatablemirror`, on content publish after) does the same as a step
+of a workflow, for the synchronisations ticked in the event (or every synchronisation of the object's class when none
+is ticked), whatever their mode: for a site that wants the mirror after an approval, or before a notification. It never
+stops a workflow.
+
+## Conflicts
+
+A two-way run finds a conflict when both the content and the row changed since the last run. The conflict rule
+decides:
+
+| Rule | |
+|---|---|
+| `newest` | the later change wins: the object's modification time against the row's (a column mapped to `@modified`, or a column named `modified`); a table without a time loses |
+| `content` | the content wins: the row is written over |
+| `table` | the table wins: the object gets a new version with the row's values |
+| `ask` | nothing is written; the conflict waits in the queue |
+
+**Setup > Data tables > Synchronisations > Conflicts** (`datatable/conflicts`) lists the open conflicts with the
+values that differ, and **Take the content** or **Take the table** resolves one: the other side is written over, the
+pair remembers both sides, and the conflict is closed with who resolved it and how.
 
 ## Tests
 
@@ -545,4 +645,10 @@ a SQLite database in memory as the site's. The module table wizard is tested the
 field sources, the settings and their problems, every file it writes (every PHP file passes `php -l`, no template holds
 inline styles), the definition it makes, adding a table to an existing extension (files left alone, settings and
 schema files extended once), and the generated class storing, reading and checking rows on a SQLite connection.
+The synchronisation is tested there too: its definitions (values, the map and its text, the problems), the hashes,
+keys, conflict rules and typed values, the definitions, pairs and conflicts on a SQLite database (with the values that
+differ), the live mirror's listener (what it notes and when it flushes), the cronjob part, the workflow event type, and
+the kernel's calls of the listener; its three tables must be the same everywhere as the others. What reads or
+publishes content (a run in each direction, a conflict resolved, the live mirror after a publish and a removal) is
+tested in a throwaway installation.
 `tests/tests/lib/ezdb/expPDODBTest.php` tests the PDO driver on pdo_sqlite and the SQL of the other dialects.

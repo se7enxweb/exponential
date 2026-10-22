@@ -15302,6 +15302,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>The tables of the persistent classes, their fields, relations and storage.</source>
         <translation>The tables of the persistent classes, their fields, relations and storage.</translation>
     </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Content and data tables kept in step: once, on a schedule or live.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronisations</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -58910,6 +58918,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page swap workflow event</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Mirror to data tables</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -64439,6 +64451,286 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>written</source>
         <translation>written</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count conflicts</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name was started in the background (%engine); the run history shows it.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>A map was proposed: check it, then save.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Ask: a conflict to resolve</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Both ways</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Conflicts</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Conflicts (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Content</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Content and table</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Content to the table</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Content wins</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Data table (persistent class)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direction</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Every (seconds)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Failed</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Found %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Key column(s)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Last run</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Live, and on a schedule</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Map: one line per column, column = source</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>New synchronisation</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>No column of the class matches an attribute or a known source: write the map yourself.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>No open conflict.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>No synchronisation yet.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>On a schedule</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Propose the map</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Remove the row of an object that is removed or leaves the subtree</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Remove this synchronisation</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Run now</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Runs</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Save and run now</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Started</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Switched off (no scheduled or live runs)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronisations</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Take the content</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Take the table</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>The conflict could not be resolved; it stays open.</translation>
+    </message>
+    <message>
+        <source>The content's values were written to the table.</source>
+        <translation>The content's values were written to the table.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>The last runs</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>The newer change wins</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>The rows and the content stay; only the pairing and the open conflicts go.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>The subtree read for the table, and the parent of objects made from rows.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>The synchronisation was not saved</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>The synchronisation was saved.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object's class</source>
+        <translation>The synchronisations of the published object's class</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>The table to content</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>The table wins</translation>
+    </message>
+    <message>
+        <source>The table's values were published to the content.</source>
+        <translation>The table's values were published to the content.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>The tables of the synchronisation are not installed yet</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>When both sides changed</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>When started</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>both ways</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>content to table</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>every %minutes minutes</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>live</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>object %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>off</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>table to content</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>when started</translation>
     </message>
 </context>
 <context>
