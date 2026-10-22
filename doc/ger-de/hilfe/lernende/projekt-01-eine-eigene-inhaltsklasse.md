@@ -100,7 +100,7 @@ Prüfungen (8):
 
 ## Zusatzziele
 
-- Fügen Sie ein Attribut **Objekt Vernüpfungsliste** hinzu, das auf eine Klasse „Veranstaltungsort“ zeigt, die Sie
+- Fügen Sie ein Attribut **Objekt Verknüpfungsliste** hinzu, das auf eine Klasse „Veranstaltungsort“ zeigt, die Sie
   ebenfalls anlegen.
 - Übersetzen Sie den Klassennamen für eine zweite Sprache, wenn Ihre Website eine hat: Klassen haben auf ihrer Seite
   unter **Setup > Klassen** ein Fenster **Übersetzungen** ([Inhaltssprachen](../../anleitungen/inhaltssprachen.md#7-inhalte-im-editor-übersetzen)).

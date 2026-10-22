@@ -62723,7 +62723,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>Object relations</source>
         <comment>Datatype name</comment>
-        <translation>Objekt Vernüpfungsliste</translation>
+        <translation>Objekt Verknüpfungsliste</translation>
     </message>
     <message>
         <source>Text block</source>

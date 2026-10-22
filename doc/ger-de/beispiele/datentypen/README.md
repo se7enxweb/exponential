@@ -35,7 +35,7 @@ Jeder Datentyp des Kernels und der mitgelieferten Erweiterungen: sein Bezeichner
 | [ezmultioption2](ezmultioption2.md) | Mehrfachoption 2 | `eZMultiOption2Type` | ja |
 | [ezmultiprice](ezmultiprice.md) | Multi-Preis | `eZMultiPriceType` | ja |
 | [ezobjectrelation](ezobjectrelation.md) | Objekt Verknüpfung | `eZObjectRelationType` | ja |
-| [ezobjectrelationlist](ezobjectrelationlist.md) | Objekt Vernüpfungsliste | `eZObjectRelationListType` | ja |
+| [ezobjectrelationlist](ezobjectrelationlist.md) | Objekt Verknüpfungsliste | `eZObjectRelationListType` | ja |
 | [ezoption](ezoption.md) | Option | `eZOptionType` | ja |
 | [ezpackage](ezpackage.md) | Paket | `eZPackageType` | ja |
 | [ezprice](ezprice.md) | Preis | `eZPriceType` | ja |
