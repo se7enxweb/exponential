@@ -73340,6 +73340,30 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Download DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Manuals are being built (%1 of %2)</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>You may not create content (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>The manuals are already being built.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>There is no manual %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Build the help manual %1 from the Markdown help</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Build the help manuals from the Markdown help</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-books</translation>
     </message>

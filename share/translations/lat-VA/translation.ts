@@ -73048,6 +73048,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>DITA depromere</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Enchiridia aedificantur (%1 ex %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>Libri electronici</translation>
     </message>

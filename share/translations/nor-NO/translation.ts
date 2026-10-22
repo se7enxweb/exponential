@@ -74540,6 +74540,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Last ned DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Håndbøkene bygges (%1 av %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-bøker</translation>
     </message>

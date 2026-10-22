@@ -1084,6 +1084,7 @@ return array(
       'expContentJobBatchType'                                       => 'kernel/classes/contentjob/expcontentjobbatchtype.php',
       'expContentJobCopySubtree'                                     => 'kernel/classes/contentjob/expcontentjobcopysubtree.php',
       'expContentJobException'                                       => 'kernel/classes/contentjob/expcontentjobexception.php',
+      'expContentJobHelpManuals'                                     => 'kernel/classes/contentjob/expcontentjobhelpmanuals.php',
       'expContentJobHideSubtree'                                     => 'kernel/classes/contentjob/expcontentjobhidesubtree.php',
       'expContentJobLock'                                            => 'kernel/classes/contentjob/expcontentjoblock.php',
       'expContentJobMoveSubtree'                                     => 'kernel/classes/contentjob/expcontentjobmovesubtree.php',

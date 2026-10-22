@@ -73048,6 +73048,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>DITA yIlI'</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>paqmey chenmoHlu'taH (%1 vo' %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>paq De'wI'</translation>
     </message>

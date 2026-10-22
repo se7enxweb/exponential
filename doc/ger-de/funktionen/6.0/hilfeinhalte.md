@@ -56,14 +56,16 @@ vorhandene Objekte so, wie die Redakteure sie hinterlassen haben, sofern nicht `
 
 ### Bei einer neuen Installation
 
-Der Kickstarter und `./console exp:install` führen am Ende einer Installation `./console exp:help:content install -s
-admin` und `build-manuals -s admin --release` aus, solange die Site noch im Wartungsmodus ist
-(`expKickstarter::installHelpManuals()`), sodass eine neue Site die Klassen, den Baum, die Rollen und die Handbücher
-hat. `exphelp.ini [ManualSettings] BuildOnInstall=disabled` lässt beides weg. Ein Schritt, der fehlschlägt, wird
-gemeldet, und die Installation bleibt bestehen: Die Site funktioniert ohne sie, und die Befehle können jederzeit
-ausgeführt werden. Der Setup-Assistent im Browser führt sie nicht aus (ein erster Aufbau dauert Minuten, zu lange für
-eine Webanfrage): Führen Sie nach einer Installation mit dem Assistenten die beiden Befehle einmal aus. `seed-glossary`
-und `seed-topics` führen Sie von Hand aus, wenn Sie die Startinhalte möchten.
+Der Kickstarter und `./console exp:install` stellen am Ende einer Installation den Aufbau der Handbücher in die
+Warteschlange (`./console exp:help:content build-manuals -s admin --queue`, aus `expKickstarter::installHelpManuals()`)
+und warten nicht darauf: Die Installation dauert nur wenige Sekunden länger. Der Inhaltsjob `helpmanuals` installiert
+die Hilfe als Inhalt (Klassen, Baum, Rollen) und baut dann die Handbücher in den folgenden 20 bis 30 Minuten im
+Hintergrund auf, während die Site schon genutzt wird ([der Hintergrundjob](#der-hintergrundjob)). `exphelp.ini
+[ManualSettings] BuildOnInstall=disabled` lässt das weg. Scheitert das Einreihen, wird es gemeldet, und die
+Installation bleibt bestehen: Die Site funktioniert ohne die Handbücher, und der Befehl kann jederzeit ausgeführt
+werden. Der Setup-Assistent im Browser reiht ihn nicht ein: Führen Sie nach einer Installation mit dem Assistenten
+einmal `./console exp:help:content build-manuals -s admin --queue` aus. `seed-glossary` und `seed-topics` führen Sie
+von Hand aus, wenn Sie die Startinhalte möchten.
 
 Dieselben Befehle, die eine bestehende Site erweitern, legen auf einer neuen alles an und finden Vorhandenes über
 Bezeichner und remote_id, sodass eine Site, die aus einem Paket mit den Klassen erstellt wurde, nur ergänzt wird. Die
@@ -89,6 +91,8 @@ Styleguides, das Glossar und alles, was Redakteure geschrieben haben, bleiben, w
 ./console exp:help:content build-manuals -s admin --release    # No change.
 ./console exp:help:content build-manuals -s admin --manual=press --release   # ein Handbuch
 ./console exp:help:content build-manuals -s admin --language=none            # ohne die Übersetzungen
+./console exp:help:content build-manuals -s admin --queue                    # dasselbe im Hintergrund (Inhaltsjob)
+./console exp:help:content report -s admin                     # "Handbücher werden erstellt (n von 52)", solange er läuft
 ./console exp:help:content ebooks -s admin                     # die E-Books jedes veröffentlichten Handbuchs
 ./console exp:help:content ebooks -s admin --language=ger-DE   # und ihre deutsche Ausgabe
 ```
@@ -173,6 +177,29 @@ aktualisiert wenige Objekte. Dafür ist der Befehl gebaut:
   eigene Cache der Hilfe wird am Ende einmal geleert;
 - alle 250 Objekte eines Laufs, der etwas ändert, sagt eine Zeile, wie weit er ist.
 
+### Der Hintergrundjob
+
+`build-manuals --queue` (und eine neue Installation) erledigt dieselbe Arbeit als Inhaltsjob `helpmanuals`
+(`expContentJobHelpManuals`, `content.ini [ContentJobSettings] JobTypes[helpmanuals]`), mit der Maschinerie der
+Inhaltsjobs: ein abgekoppelter Worker (`bin/php/expcontentjob.php run <id>`), sein Protokoll und Fortschritt auf der
+Jobseite (`content/job/<id>`) und der Cronjob-Teil `contentjobs` (in `frequent`), der einen Job fortsetzt, dessen
+Worker abgebrochen ist.
+
+- **Nie der Site im Weg.** Der Worker läuft mit der niedrigsten CPU-Priorität; er legt je Durchgang `[ManualSettings]
+  JobBatchSize` Objekte an (10), jeden Durchgang in einer eigenen Transaktion, und wartet danach `JobPause`
+  Millisekunden (200), damit die eigenen Schreibvorgänge der Site nie lange warten.
+- **Zweimal ausführen ist sicher.** Es ist immer nur ein `helpmanuals`-Job aktiv: Ein zweites `--queue` gibt den
+  laufenden zurück. Der Job hält die Teilbaumsperre der Hilfe-Wurzel, sodass kein Inhaltsjob sie währenddessen
+  entfernt oder verschiebt. Jeder Durchgang ist idempotent: Ein fortgesetzter Job findet, was schon angelegt ist, und
+  macht weiter.
+- **Zuerst die Hilfe als Inhalt.** Der Job führt zuerst den Schritt `install` aus (Klassen, Baum, Rollen; `No change.`,
+  wenn es sie gibt), sodass eine neue Installation nichts weiter braucht.
+- **Wie weit er ist.** Solange er läuft, zeigen die Handbuchseiten der Hilfe und `./console exp:help:content report -s
+  admin` "Handbücher werden erstellt (n von 52)": n zählt die Handbücher, deren Objekte angelegt sind.
+- Von root gestartet, wechselt der Worker vor dem Start zum Eigentümer von `var/` (wie jeder Inhaltsjob); gehört die
+  Installation root, läuft er als root (Inhaltsjobs, die root startet, geben ihrem Worker jetzt `--allow-root-user`
+  mit, statt dass er nicht startet).
+
 ### Bei jedem Release
 
 Das Markdown ändert sich mit jedem Release, also werden die Handbücher mit ihm neu erstellt. Nach dem Deployment des
@@ -196,7 +223,9 @@ geprüft. Ohne die Option warten neue und geänderte Themen als Entwurf auf eine
 | `Languages[]` | ger-DE | die geschriebenen Übersetzungen, wenn die Installation die Sprache hat |
 | `TranslatedTitles[]` | Getting started, Contributor notes auf Deutsch | `<Schlüssel>;<Locale>;<Titel>` |
 | `License` | GNU Free Documentation License 1.3 | die Lizenz jedes Handbuchs |
-| `BuildOnInstall` | `enabled` | der Kickstarter und `exp:install` führen nach einer Installation `install` und `build-manuals --release` aus |
+| `BuildOnInstall` | `enabled` | der Kickstarter und `exp:install` reihen nach einer Installation den Aufbau im Hintergrund ein (`build-manuals --queue`) |
+| `JobBatchSize` | `10` | Objekte je Durchgang des Hintergrundjobs, jeder Durchgang eine eigene Transaktion |
+| `JobPause` | `200` | Millisekunden, die der Hintergrundjob nach jedem Durchgang wartet |
 | `BatchSize` | `50` | Objekte je Datenbanktransaktion |
 
 `doc/eng-us/history/` und `doc/eng-us/examples/` (generiert) stehen nicht in der Liste.

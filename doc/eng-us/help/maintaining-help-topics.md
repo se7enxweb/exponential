@@ -66,6 +66,8 @@ These manuals are made again from the pages each time a new version of Exponenti
 - You recognize them by their remote ID, which starts with `help-gen-`, and by their help ID, which starts with
   `doc.` (`doc.help.editors.publishing` is the page `help/editors/publishing.md`).
 - The topics, chapters and manuals you write yourself are never changed by the update.
+- On a new site the manuals are built in the background in the first half hour. Meanwhile the list of manuals says
+  **Manuals are being built (n of 52)**.
 
 Your administrator runs the update with `./console exp:help:content build-manuals -s admin --release`, and builds
 the e-books with `./console exp:help:content ebooks -s admin` (add `--language=ger-DE` for the German edition). See

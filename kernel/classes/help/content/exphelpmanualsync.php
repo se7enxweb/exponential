@@ -100,14 +100,160 @@ class expHelpManualSync
         return array( 'languages' => $languages, 'missing' => $missing );
     }
 
+    /** The passes of a synchronisation, in order */
+    const PHASES = array( 'objects', 'refs', 'translations', 'sections', 'remove', 'done' );
+
     /**
-     * Makes the database match the plan
+     * Makes the database match the plan, in one go (the command; the background job uses step())
      *
      * @param array $plan expHelpManualBuilder::plan()
      * @param string[] $languages the translations to write (locales that exist)
      */
     public function run( array $plan, array $languages = array() )
     {
+        $cursor = array();
+        try
+        {
+            while ( !$this->step( $plan, $languages, $cursor, PHP_INT_MAX ) )
+            {
+            }
+        }
+        finally
+        {
+            $this->close();
+        }
+    }
+
+    /**
+     * Does at most $limit units of the synchronisation from where $cursor says (array( phase, offset ), empty at
+     * the start), and moves the cursor on. A unit is an object of a pass; the removal is one unit. The background
+     * job (expContentJobHelpManuals) does one call per batch of the content job, each in a transaction of its own;
+     * what is stored is read once per instance and kept up to date as it writes, so the same instance goes on
+     * where it stopped, and a new one (after a crash) finds what was done and does not do it again.
+     *
+     * @param array $plan
+     * @param string[] $languages
+     * @param array $cursor by reference: array( 'phase' => one of PHASES, 'offset' => int )
+     * @param int $limit
+     * @return bool whether it is finished
+     */
+    public function step( array $plan, array $languages, array &$cursor, $limit )
+    {
+        $cursor += array( 'phase' => 'objects', 'offset' => 0 );
+        if ( $cursor['phase'] === 'done' )
+            return true;
+        if ( !$this->open( $plan, $languages ) )
+        {
+            $cursor = array( 'phase' => 'done', 'offset' => 0 );
+            return true;
+        }
+        $items = $this->items;
+        $keys = array_keys( $items );
+        $units = 0;
+        // a unit is an object that changed: objects found as they should be cost no write, so a call goes past
+        // them (up to 50 times the limit), and a pass that has nothing to do is over in a few calls
+        $looked = 0;
+        $lookLimit = $limit >= PHP_INT_MAX / 50 ? PHP_INT_MAX : $limit * 50;
+        try
+        {
+            while ( $units < $limit && $looked < $lookLimit && $cursor['phase'] !== 'done' )
+            {
+                $phase = $cursor['phase'];
+                if ( $phase === 'remove' )
+                {
+                    // 5. the generated objects that are no longer in the plan
+                    $this->removeGone( $plan, $this->manualsNode );
+                    $units++;
+                    $cursor = array( 'phase' => 'done', 'offset' => 0 );
+                    break;
+                }
+                if ( $cursor['offset'] >= count( $keys ) )
+                {
+                    $this->flush();
+                    $cursor = array( 'phase' => self::PHASES[array_search( $phase, self::PHASES, true ) + 1], 'offset' => 0 );
+                    continue;
+                }
+                $item = $items[$keys[$cursor['offset']]];
+                $cursor['offset']++;
+                $looked++;
+                $before = count( $this->changes );
+                switch ( $phase )
+                {
+                    case 'objects':
+                        // 1. the objects and their values in the default language (with their translations when new), parents first
+                        $this->ensureObject( $item, (int)$this->manualsNode->attribute( 'node_id' ), $this->sections );
+                        if ( $this->progress !== null && $cursor['offset'] % 250 === 0 )
+                            call_user_func( $this->progress, $cursor['offset'], count( $keys ), count( $this->changes ) );
+                        break;
+                    case 'refs':
+                        // 2. the chapters and topics of each manual and chapter (now that every object has an id)
+                        if ( $item['kind'] !== 'topic' )
+                            $this->ensureRefs( $item );
+                        break;
+                    case 'translations':
+                        // 3. the translations of objects that existed already
+                        foreach ( $this->translationLanguages as $locale )
+                            $this->ensureTranslation( $item, $locale );
+                        break;
+                    case 'sections':
+                        // 4. the sections and states
+                        $this->ensureSectionAndState( $item, $this->sections, $this->releasedState );
+                        break;
+                }
+                if ( count( $this->changes ) > $before )
+                    $units++;
+            }
+        }
+        finally
+        {
+            $this->flush();
+        }
+        return $cursor['phase'] === 'done';
+    }
+
+    /**
+     * How many manuals of the plan the first pass has gone through at a cursor (for "n of 52")
+     *
+     * @param array $plan
+     * @param array $cursor
+     * @return int
+     */
+    public static function manualsDone( array $plan, array $cursor )
+    {
+        $cursor += array( 'phase' => 'objects', 'offset' => 0 );
+        if ( $cursor['phase'] !== 'objects' )
+            return count( $plan['manuals'] );
+        $last = array();
+        $index = 0;
+        foreach ( $plan['items'] as $item )
+            $last[$item['manual']] = $index++;
+        $done = 0;
+        foreach ( $last as $position )
+            if ( $position < (int)$cursor['offset'] )
+                $done++;
+        return $done;
+    }
+
+    /** @var array|null the items of this run (the plan's, or one manual's) once open() */
+    protected $items = null;
+    /** @var eZContentObjectTreeNode|null */
+    protected $manualsNode = null;
+    /** @var array section identifier => id */
+    protected $sections = array();
+    /** @var eZContentObjectState|null */
+    protected $releasedState = null;
+    /** @var array|null the settings changed for the run, to put back */
+    protected $savedSettings = null;
+
+    /**
+     * Reads what is stored and sets this run's settings, once per instance
+     *
+     * @return bool false when the run cannot start (the change says why)
+     */
+    protected function open( array $plan, array $languages )
+    {
+        if ( $this->items !== null )
+            return true;
         $default = $this->language;
         $this->translationLanguages = array_values( array_filter( $languages, function ( $locale ) use ( $default ) { return $locale !== $default; } ) );
         $this->loadClasses();
@@ -116,74 +262,47 @@ class expHelpManualSync
         if ( !$manualsNode instanceof eZContentObjectTreeNode )
         {
             $this->change( 'error', 'the folder Manuals (remote_id ' . expHelpContentSchema::MANUALS . ') does not exist (run exp:help:content install)' );
-            return;
+            return false;
         }
         if ( $this->manual !== null && !isset( $plan['manuals'][$this->manual] ) )
         {
             $this->change( 'error', "no manual with the key {$this->manual} in [ManualSettings] Manuals[]" );
-            return;
+            return false;
         }
+        $this->manualsNode = $manualsNode;
         $this->loadStored();
-        $items = array();
+        $this->items = array();
         foreach ( $plan['items'] as $remoteId => $item )
         {
             if ( $this->manual === null || $item['manual'] === $this->manual )
-                $items[$remoteId] = $item;
+                $this->items[$remoteId] = $item;
         }
-        $sections = array();
         foreach ( expHelpContentSchema::sections() as $identifier => $name )
         {
             $section = eZSection::fetchByIdentifier( $identifier );
-            $sections[$identifier] = $section instanceof eZSection ? (int)$section->attribute( 'id' ) : 0;
+            $this->sections[$identifier] = $section instanceof eZSection ? (int)$section->attribute( 'id' ) : 0;
         }
-
+        $this->releasedState = expHelpContentEbooks::releasedState();
         $ini = eZINI::instance();
-        $delayed = $ini->variable( 'SearchSettings', 'DelayedIndexing' );
+        $this->savedSettings = array( 'DelayedIndexing' => $ini->variable( 'SearchSettings', 'DelayedIndexing' ),
+                                      'ViewCaching' => $ini->variable( 'ContentSettings', 'ViewCaching' ) );
         $ini->setVariable( 'SearchSettings', 'DelayedIndexing', 'enabled' );
-        $viewCaching = $ini->variable( 'ContentSettings', 'ViewCaching' );
         $ini->setVariable( 'ContentSettings', 'ViewCaching', 'disabled' );
-        try
+        return true;
+    }
+
+    /**
+     * Commits what is open and puts the settings of the run back
+     */
+    public function close()
+    {
+        $this->flush();
+        if ( $this->savedSettings !== null )
         {
-            // 1. the objects and their values in the default language, parents first
-            $done = 0;
-            foreach ( $items as $remoteId => $item )
-            {
-                $this->ensureObject( $item, (int)$manualsNode->attribute( 'node_id' ), $sections );
-                if ( $this->progress !== null && ++$done % 250 === 0 )
-                    call_user_func( $this->progress, $done, count( $items ), count( $this->changes ) );
-            }
-            $this->flush();
-            // 2. the chapters and topics of each manual and chapter (now that every object has an id)
-            foreach ( $items as $remoteId => $item )
-            {
-                if ( $item['kind'] !== 'topic' )
-                    $this->ensureRefs( $item );
-            }
-            $this->flush();
-            // 3. the translations
-            foreach ( $items as $remoteId => $item )
-            {
-                foreach ( $languages as $locale )
-                {
-                    if ( $locale !== $this->language )
-                        $this->ensureTranslation( $item, $locale );
-                }
-            }
-            $this->flush();
-            // 4. the sections and states
-            $released = expHelpContentEbooks::releasedState();
-            foreach ( $items as $remoteId => $item )
-                $this->ensureSectionAndState( $item, $sections, $released );
-            $this->flush();
-            // 5. the generated objects that are no longer in the plan
-            $this->removeGone( $plan, $manualsNode );
-            $this->flush();
-        }
-        finally
-        {
-            $this->flush();
-            $ini->setVariable( 'SearchSettings', 'DelayedIndexing', $delayed );
-            $ini->setVariable( 'ContentSettings', 'ViewCaching', $viewCaching );
+            $ini = eZINI::instance();
+            $ini->setVariable( 'SearchSettings', 'DelayedIndexing', $this->savedSettings['DelayedIndexing'] );
+            $ini->setVariable( 'ContentSettings', 'ViewCaching', $this->savedSettings['ViewCaching'] );
+            $this->savedSettings = null;
         }
     }
 

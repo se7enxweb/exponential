@@ -75274,6 +75274,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>Baixar DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Os manuais estão sendo criados (%1 de %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>Livros digitais</translation>
     </message>

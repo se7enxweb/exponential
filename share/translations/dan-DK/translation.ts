@@ -73958,6 +73958,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Hent DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Manualerne bygges (%1 af %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-bøger</translation>
     </message>

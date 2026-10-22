@@ -769,11 +769,12 @@ class expKickstarter
     }
 
     /**
-     * After an installation: help maintained as content and its manuals (doc/eng-us/features/6.0/help-content.md,
-     * "Manuals from the Markdown help"), as "./console exp:help:content install -s admin" and "build-manuals -s admin
-     * --release" would make them, each in a process of its own on the new site's settings. exphelp.ini [ManualSettings]
-     * BuildOnInstall=disabled leaves both out (the commands can be run later). A step that fails is reported and never
-     * fails the installation: the site works without them.
+     * After an installation: queues the build of the help's manuals (doc/eng-us/features/6.0/help-content.md,
+     * "Manuals from the Markdown help") as the background content job helpmanuals, with "./console exp:help:content
+     * build-manuals --queue -s admin" in a process of its own on the new site's settings. The job installs the help as
+     * content and builds the manuals over the next 20 to 30 minutes; the installation does not wait for it.
+     * exphelp.ini [ManualSettings] BuildOnInstall=disabled leaves it out. A queue that fails is reported and never fails
+     * the installation: the site works without the manuals, and the command can be run later.
      */
     private function installHelpManuals()
     {
@@ -783,36 +784,31 @@ class expKickstarter
         $script = getcwd() . '/bin/php/exphelpcontent.php';
         if ( !is_file( $script ) || !function_exists( 'proc_open' ) )
         {
-            $this->cli->output( 'Help manuals: not built here (run ./console exp:help:content install -s admin, then build-manuals -s admin --release)' );
+            $this->cli->output( 'Help manuals: not queued here (run ./console exp:help:content build-manuals -s admin --queue)' );
             return;
         }
         $rootUser = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 ? array( '--allow-root-user' ) : array();
-        foreach ( array( array( 'install' ), array( 'build-manuals', '--release' ) ) as $arguments )
+        $command = array_merge( array( PHP_BINARY, $script, 'build-manuals', '--queue', '-s', 'admin' ), $rootUser );
+        $process = proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, getcwd() );
+        if ( !is_resource( $process ) )
         {
-            $this->cli->output( 'Help manuals: exp:help:content ' . implode( ' ', $arguments ) . ' -s admin' );
-            $command = array_merge( array( PHP_BINARY, $script ), $arguments, array( '-s', 'admin' ), $rootUser );
-            $process = proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, getcwd() );
-            if ( !is_resource( $process ) )
-            {
-                $this->cli->output( 'Help manuals: could not be started; run the command above later' );
-                return;
-            }
-            $last = '';
-            while ( ( $line = fgets( $pipes[1] ) ) !== false )
-            {
-                // the summary and progress lines; every created object is in the setup log's output only
-                if ( preg_match( '/^(PASS|FAIL|\s+\d+ of \d+ objects)/', $line ) )
-                    $this->cli->output( '  ' . rtrim( $line ) );
-                $last = rtrim( $line );
-            }
-            fclose( $pipes[1] );
-            $code = proc_close( $process );
-            if ( $code !== 0 )
-            {
-                $this->cli->output( "Help manuals: exp:help:content {$arguments[0]} ended with $code ($last); the site works without them, run it again later" );
-                return;
-            }
+            $this->cli->output( 'Help manuals: could not be queued; run ./console exp:help:content build-manuals -s admin --queue later' );
+            return;
         }
+        $last = '';
+        while ( ( $line = fgets( $pipes[1] ) ) !== false )
+        {
+            if ( trim( $line ) !== '' )
+                $last = rtrim( $line );
+        }
+        fclose( $pipes[1] );
+        $code = proc_close( $process );
+        if ( $code !== 0 )
+        {
+            $this->cli->output( "Help manuals: could not be queued ($last); the site works without them, run ./console exp:help:content build-manuals -s admin --queue later" );
+            return;
+        }
+        $this->cli->output( 'Help manuals: built in the background over the next 20 to 30 minutes (./console exp:help:content report -s admin shows how far)' );
     }
 
     private function showSummary()

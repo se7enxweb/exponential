@@ -71,6 +71,8 @@ wird. Deshalb gilt:
 - Sie erkennen sie an ihrer Remote-ID, die mit `help-gen-` beginnt, und an ihrer Hilfe-ID, die mit `doc.` beginnt
   (`doc.help.editors.publishing` ist die Seite `help/editors/publishing.md`).
 - Themen, Kapitel und Handbücher, die Sie selbst schreiben, ändert die Aktualisierung nie.
+- Auf einer neuen Site werden die Handbücher in der ersten halben Stunde im Hintergrund erstellt. Währenddessen zeigt
+  die Liste der Handbücher **Handbücher werden erstellt (n von 52)**.
 
 Ihr Administrator führt die Aktualisierung mit `./console exp:help:content build-manuals -s admin --release` aus und
 erstellt die E-Books mit `./console exp:help:content ebooks -s admin` (mit `--language=ger-DE` die deutsche Ausgabe).

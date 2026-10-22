@@ -52,6 +52,9 @@ class Manual extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_manual', $manual === false ? false : $manual );
         $tpl->setVariable( 'help_manual_toc', self::twoLevels( $toc ) );
         $tpl->setVariable( 'help_manuals', $manuals );
+        // while the background job builds the manuals from the Markdown help: "Manuals are being built (n of 52)"
+        $tpl->setVariable( 'help_manuals_build', class_exists( 'expContentJobHelpManuals' ) && \expContentJobHelpManuals::available()
+                                                 ? \expContentJobHelpManuals::status() : null );
         $tpl->setVariable( 'help_ebook_formats', $manual ? \expHelpContentExport::formats() : array() );
         // the DITA 1.3 export as a zip: of this manual, or (on the list) of every manual, the topic pool and the glossary
         $tpl->setVariable( 'help_dita', class_exists( 'expHelpContentDita' ) && \expHelpContentDita::canZip() );

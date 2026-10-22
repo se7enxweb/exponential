@@ -15,6 +15,7 @@
  *  HMB-08  translations: translated pages pair with the same topics; chapters and manuals only with a translated topic
  *  HMB-09  idempotence: the same pages give the same plan; an unchanged stored value is no difference
  *  HMB-10  removal: only generated objects missing from the plan, the deepest first, only below the manual given
+ *  HMB-11  the background job: registered, "n of 52" from the cursor, the installer only queues it
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -423,6 +424,29 @@ class expHelpManualBuilderTest extends PHPUnit\Framework\TestCase
         $gone = expHelpManualSync::gone( $stored, $items );
         $this->assertSame( array( 'help-gen-topic-aaaa', 'help-gen-chapter-bbbb', 'help-gen-topic-other' ), array_keys( $gone ) );
         $this->assertSame( array( 'help-gen-topic-aaaa', 'help-gen-chapter-bbbb' ), array_keys( expHelpManualSync::gone( $stored, $items, '/100/' ) ) );
+    }
+
+    // ---------------------------------------------------------------- HMB-11
+
+    public function testBackgroundJob()
+    {
+        // registered as a content job type, in the settings and in the defaults
+        $ini = (string)file_get_contents( self::root() . '/settings/content.ini' );
+        $this->assertStringContainsString( "\nJobTypes[helpmanuals]=expContentJobHelpManuals\n", $ini );
+        $this->assertSame( 'expContentJobHelpManuals', expContentJob::$defaults['JobTypes']['helpmanuals'] );
+        $this->assertTrue( in_array( 'expContentJobType', class_implements( 'expContentJobHelpManuals' ), true ) );
+        // "n of 52": the manuals whose objects the first pass has gone through
+        $plan = ( new expHelpManualBuilder( self::source(), array(), self::options() ) )->plan( self::manuals() );
+        $this->assertSame( 0, expHelpManualSync::manualsDone( $plan, array() ) );
+        $editorsItems = count( array_filter( $plan['items'], function ( $item ) { return $item['manual'] === 'editors'; } ) );
+        $this->assertSame( 0, expHelpManualSync::manualsDone( $plan, array( 'phase' => 'objects', 'offset' => $editorsItems - 1 ) ) );
+        $this->assertSame( 1, expHelpManualSync::manualsDone( $plan, array( 'phase' => 'objects', 'offset' => $editorsItems ) ) );
+        $this->assertSame( 2, expHelpManualSync::manualsDone( $plan, array( 'phase' => 'refs', 'offset' => 0 ) ) );
+        $this->assertSame( array( 'objects', 'refs', 'translations', 'sections', 'remove', 'done' ), expHelpManualSync::PHASES );
+        // the installer only queues the job; it never waits for the build
+        $kickstarter = (string)file_get_contents( self::root() . '/kernel/classes/expkickstarter.php' );
+        $this->assertStringContainsString( "'build-manuals', '--queue'", $kickstarter );
+        $this->assertStringNotContainsString( "array( 'build-manuals', '--release' )", $kickstarter );
     }
 }
 

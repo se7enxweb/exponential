@@ -74585,6 +74585,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Ladda ned DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Handböckerna byggs (%1 av %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-böcker</translation>
     </message>

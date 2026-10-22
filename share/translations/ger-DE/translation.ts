@@ -80332,6 +80332,30 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>DITA herunterladen</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Handbücher werden erstellt (%1 von %2)</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Sie dürfen keine Inhalte anlegen (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Die Handbücher werden bereits erstellt.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Es gibt kein Handbuch %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Das Hilfe-Handbuch %1 aus der Markdown-Hilfe erstellen</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Die Hilfe-Handbücher aus der Markdown-Hilfe erstellen</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-Books</translation>
     </message>

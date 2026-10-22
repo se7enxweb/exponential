@@ -73280,6 +73280,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>دانلود DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>راهنماها در حال ساخت هستند (%1 از %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>کتاب‌های الکترونیکی</translation>
     </message>

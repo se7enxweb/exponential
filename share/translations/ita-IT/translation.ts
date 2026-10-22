@@ -74689,6 +74689,10 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Scarica DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Creazione dei manuali in corso (%1 di %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-book</translation>
     </message>

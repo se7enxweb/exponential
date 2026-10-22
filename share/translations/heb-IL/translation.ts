@@ -73079,6 +73079,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הורדת DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>המדריכים נבנים (%1 מתוך %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>ספרים אלקטרוניים</translation>
     </message>

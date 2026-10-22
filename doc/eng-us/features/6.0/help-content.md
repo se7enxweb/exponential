@@ -55,13 +55,15 @@ editors left them unless `--update` is given.
 
 ### On a new installation
 
-The kickstarter and `./console exp:install` run `./console exp:help:content install -s admin` and
-`build-manuals -s admin --release` at the end of an installation, while the site is still in maintenance mode
-(`expKickstarter::installHelpManuals()`), so a new site has the classes, the tree, the roles and the manuals.
-`exphelp.ini [ManualSettings] BuildOnInstall=disabled` leaves both out. A step that fails is reported and the
-installation stands: the site works without them, and the commands can be run at any time. The setup wizard in the
-browser does not run them (a first build takes minutes, too long for a web request): after a wizard installation,
-run the two commands once. `seed-glossary` and `seed-topics` are run by hand when the starting content is wanted.
+The kickstarter and `./console exp:install` queue the build of the manuals at the end of an installation
+(`./console exp:help:content build-manuals -s admin --queue`, from `expKickstarter::installHelpManuals()`) and do not
+wait for it: the installation takes a few seconds longer, no more. The content job `helpmanuals` installs the help
+as content (classes, tree, roles) and then builds the manuals in the background over the next 20 to 30 minutes,
+while the site is already in use ([the background job](#the-background-job)). `exphelp.ini [ManualSettings]
+BuildOnInstall=disabled` leaves it out. A queue that fails is reported and the installation stands: the site works
+without the manuals, and the command can be run at any time. The setup wizard in the browser does not queue it:
+after a wizard installation, run `./console exp:help:content build-manuals -s admin --queue` once. `seed-glossary`
+and `seed-topics` are run by hand when the starting content is wanted.
 
 The same commands that extend an existing site create everything on a new one, and find what is already there by
 identifier and remote_id, so a site built from a package that already carries the classes is only completed. The
@@ -86,6 +88,8 @@ topics, the glossary and anything editors wrote stay as they are.
 ./console exp:help:content build-manuals -s admin --release    # No change.
 ./console exp:help:content build-manuals -s admin --manual=press --release   # one manual
 ./console exp:help:content build-manuals -s admin --language=none            # without the translations
+./console exp:help:content build-manuals -s admin --queue                    # the same in the background (content job)
+./console exp:help:content report -s admin                     # "Manuals are being built (n of 52)" while it runs
 ./console exp:help:content ebooks -s admin                     # the e-books of every Released manual
 ./console exp:help:content ebooks -s admin --language=ger-DE   # and their German edition
 ```
@@ -166,6 +170,27 @@ written for that:
   the help's own cache is cleared once at the end;
 - every 250 objects of a run that changes something, a line says how far it is.
 
+### The background job
+
+`build-manuals --queue` (and a new installation) does the same work as the content job `helpmanuals`
+(`expContentJobHelpManuals`, `content.ini [ContentJobSettings] JobTypes[helpmanuals]`), with the engine of the
+content jobs: a detached worker (`bin/php/expcontentjob.php run <id>`), its log and progress on the job page
+(`content/job/<id>`), and the cronjob part `contentjobs` (in `frequent`), which resumes a job whose worker died.
+
+- **Never in the way of the site.** The worker runs at the lowest CPU priority; it makes `[ManualSettings]
+  JobBatchSize` objects (10) per batch, each batch a transaction of its own, and waits `JobPause` milliseconds (200)
+  after each, so the site's own writes never wait long.
+- **Safe to run twice.** One `helpmanuals` job is active at a time: a second `--queue` returns the running one. The
+  job holds the subtree lock of the help root, so no content job removes or moves it meanwhile. Every batch is
+  idempotent: a resumed job finds what was made and goes on.
+- **First the help as content.** The job runs the `install` step first (classes, tree, roles; `No change.` when they
+  exist), so a new installation needs nothing else.
+- **How far it is.** While it runs, the help's manual pages and `./console exp:help:content report -s admin` say
+  "Manuals are being built (n of 52)": n counts the manuals whose objects are made.
+- Started by root, the worker becomes the owner of `var/` before it starts (as every content job does); when the
+  installation belongs to root, it runs as root (content jobs started by root now pass `--allow-root-user` to their
+  worker instead of failing to start).
+
 ### On each release
 
 The Markdown changes with every release, so the manuals are rebuilt with it. After the release is deployed:
@@ -188,7 +213,9 @@ Without it, new and changed topics wait in Draft for a release manager.
 | `Languages[]` | ger-DE | the translations written, when the installation has the language |
 | `TranslatedTitles[]` | Getting started, Contributor notes in German | `<key>;<locale>;<title>` |
 | `License` | GNU Free Documentation License 1.3 | the license of each manual |
-| `BuildOnInstall` | `enabled` | the kickstarter and `exp:install` run `install` and `build-manuals --release` after an installation |
+| `BuildOnInstall` | `enabled` | the kickstarter and `exp:install` queue the background build (`build-manuals --queue`) after an installation |
+| `JobBatchSize` | `10` | objects per batch of the background job, each batch a transaction of its own |
+| `JobPause` | `200` | milliseconds the background job waits after each batch |
 | `BatchSize` | `50` | objects per database transaction |
 
 `doc/eng-us/history/` and `doc/eng-us/examples/` (generated) are not in the list.

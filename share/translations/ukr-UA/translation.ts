@@ -73033,6 +73033,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Завантажити DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Посібники створюються (%1 з %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>Електронні книги</translation>
     </message>

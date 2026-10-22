@@ -74494,6 +74494,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Pobierz DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Trwa tworzenie podręczników (%1 z %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-booki</translation>
     </message>

@@ -74507,6 +74507,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>DITA downloaden</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Handleidingen worden opgebouwd (%1 van %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-boeken</translation>
     </message>

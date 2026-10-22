@@ -73208,6 +73208,30 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation type="unfinished"></translation>
     </message>

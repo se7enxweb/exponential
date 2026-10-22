@@ -24,6 +24,8 @@ class expHelpContentTranslationsTest extends PHPUnit\Framework\TestCase
         'State', 'Overdue', 'Actions', 'Review date %date passed %days days ago', 'In Review for %days days without a change',
         'Edit', 'Set state', '%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.',
         'Before you begin', 'Steps', 'Result', 'What to do next', 'Condition', 'Cause', 'Remedy',
+        // the manual pages while the background job builds the manuals from the Markdown help
+        'Manuals are being built (%1 of %2)',
     );
 
     private static function root()

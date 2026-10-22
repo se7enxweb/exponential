@@ -5,7 +5,8 @@
    Variables (kernel/private/classes/views/exphelp/manual.php): help_manual (false for the list; else title, subtitle,
    shortdesc, edition, license, authors[], preview), help_manual_toc (nested: kind chapter|topic, title, shortdesc,
    url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_dita (the DITA download), help_ebooks_stored (format, name, url, size, modified,
-   version, node_url: the e-books stored as file objects), help_json_url,
+   version, node_url: the e-books stored as file objects), help_manuals_build (null, or manuals, total while the
+   background job builds the manuals from the Markdown help), help_json_url,
    help_i18n_json.
 
    The same file is in design/admin and design/admin4. *}
@@ -20,6 +21,10 @@
         <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/manual'|ezurl}><span class="a4-icon a4-bi-journal-text" aria-hidden="true"></span> {'Manuals'|i18n( 'kernel/exphelp' )}</a>
         {/if}
     </div>
+
+    {if and( is_set( $help_manuals_build ), $help_manuals_build )}
+    <div class="a4-notice is-info" role="status"><span class="a4-icon a4-bi-hourglass-split" aria-hidden="true"></span> {'Manuals are being built (%1 of %2)'|i18n( 'kernel/exphelp',, array( $help_manuals_build.manuals, $help_manuals_build.total ) )|wash}</div>
+    {/if}
 
     {if $help_manual}
     <header class="a4-help-pagehead">

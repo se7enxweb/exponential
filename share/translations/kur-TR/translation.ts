@@ -73280,6 +73280,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>DITA daxistin</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Rêber têne amadekirin (%1 ji %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>Pirtûkên elektronîk</translation>
     </message>

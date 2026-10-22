@@ -77274,6 +77274,10 @@ Gracias por la retroalimentación</translation>
         <translation>Descargar DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Se están creando los manuales (%1 de %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>Libros electrónicos</translation>
     </message>

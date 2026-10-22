@@ -74564,6 +74564,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Stáhnout DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Příručky se vytvářejí (%1 z %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-knihy</translation>
     </message>

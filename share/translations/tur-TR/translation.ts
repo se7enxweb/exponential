@@ -73287,6 +73287,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>DITA indir</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Kılavuzlar oluşturuluyor (%1 / %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-kitaplar</translation>
     </message>

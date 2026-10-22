@@ -74335,6 +74335,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Preuzmi DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Priručnici se izrađuju (%1 od %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>E-knjige</translation>
     </message>

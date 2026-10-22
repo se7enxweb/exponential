@@ -74443,6 +74443,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Télécharger le DITA</translation>
     </message>
     <message>
+        <source>Manuals are being built (%1 of %2)</source>
+        <translation>Création des manuels en cours (%1 sur %2)</translation>
+    </message>
+    <message>
         <source>E-books</source>
         <translation>Livres numériques</translation>
     </message>

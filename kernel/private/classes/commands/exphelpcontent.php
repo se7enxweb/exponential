@@ -29,7 +29,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "./console exp:help:content check -s ... [--fix]   the validator (check_help.php); --fix sets the sections from the audience\n" .
                                  "./console exp:help:content seed-glossary -s ... [--file=] [--update]   the glossary (seed_glossary.php)\n" .
                                  "./console exp:help:content seed-topics -s ... [--file=] [--update] [--release]   topics and manuals (seed_topics.php)\n" .
-                                 "./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--dry-run]\n" .
+                                 "./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--dry-run] [--queue]\n" .
                                  "                                              the manuals of the Markdown help (exphelp.ini [ManualSettings]):\n" .
                                  "                                              made, updated and removed so they match the pages (help-gen-...)\n" .
                                  "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
@@ -56,7 +56,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:][language:]', '', array(
+        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:][language:][queue]', '', array(
+            'queue'        => 'build-manuals: queue the build as a background content job (helpmanuals) and return at once; nothing is queued while one runs',
             'dry-run'      => 'Show what would change, change nothing',
             'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience',
             'file'         => 'seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)',
@@ -128,13 +129,15 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                     $code = $this->seed( $action, $options, $common, $json );
                     break;
                 case 'build-manuals':
-                    $code = $this->buildManuals( $options, $common, $json );
+                    $code = !empty( $options['queue'] ) ? $this->queueManuals( $options, $user, $json, $dryRun )
+                                                        : $this->buildManuals( $options, $common, $json );
                     break;
                 case 'check':
                     $code = $this->check( !empty( $options['fix'] ), $common, $json );
                     break;
                 case 'report':
-                    $this->printReport( \expHelpContentInstaller::report(), $json );
+                    $this->printReport( \expHelpContentInstaller::report()
+                                        + array( 'manual_build' => \expContentJobHelpManuals::available() ? \expContentJobHelpManuals::status() : null ), $json );
                     break;
                 case 'export':
                     $code = isset( $options['format'] ) && strtolower( (string)$options['format'] ) === 'dita'
@@ -317,6 +320,47 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                $parts ? ' (' . implode( '; ', $parts ) . ')' : '', $done ? implode( ', ', $done ) : 'no change',
                                $planned - $started, microtime( true ) - $started ) );
         return $code;
+    }
+
+    /**
+     * build-manuals --queue: the build as the background content job helpmanuals (expContentJobHelpManuals), which
+     * also installs the help as content first. Returns at once; while a build runs, nothing more is queued.
+     */
+    protected function queueManuals( array $options, \eZUser $user, $json, $dryRun )
+    {
+        $cli = $this->cli();
+        if ( !\expContentJobHelpManuals::available() )
+        {
+            $cli->error( 'FAIL: the content job type helpmanuals is not registered (content.ini [ContentJobSettings] JobTypes[helpmanuals])' );
+            return 2;
+        }
+        $params = array( 'release' => true );
+        if ( !empty( $options['manual'] ) )
+            $params['manual'] = preg_replace( '/^' . preg_quote( \expHelpManualBuilder::MANUAL_PREFIX, '/' ) . '/', '', (string)$options['manual'] );
+        if ( isset( $options['language'] ) && $options['language'] !== '' )
+            $params['languages'] = strtolower( (string)$options['language'] ) === 'none' ? array() : array_map( 'trim', explode( ',', (string)$options['language'] ) );
+        if ( $dryRun )
+        {
+            $active = \expContentJobHelpManuals::activeJob();
+            $cli->output( $active ? 'A build of the manuals runs already: content job ' . $active->id() : 'Would queue the content job helpmanuals' );
+            return 0;
+        }
+        $result = \expContentJobHelpManuals::queue( $user, $params );
+        $job = $result['job'];
+        if ( $json )
+        {
+            $this->printJson( array( 'job' => $job->id(), 'queued' => $result['queued'], 'started' => $result['started'], 'state' => $job->state() ) );
+            return 0;
+        }
+        $cli->output( ( $result['queued'] ? 'PASS queued' : 'PASS already queued:' ) . ' content job ' . $job->id() . ' (' . $job->description() . '), '
+                      . ( $result['started'] ? 'its worker runs in the background' : 'the cronjob part contentjobs starts it' )
+                      . '; progress: ./console exp:help:content report -s ' . $this->siteaccessName() );
+        return 0;
+    }
+
+    protected function siteaccessName()
+    {
+        return isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : 'admin';
     }
 
     protected function export( array $options, $dryRun, $json )
@@ -591,6 +635,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                    $report['content']['topics'], implode( ', ', $states ), $report['content']['figures'],
                                    $report['content']['manuals_and_chapters'], $report['content']['glossary'] ) );
         }
+        if ( !empty( $report['manual_build'] ) )
+            $cli->output( $report['manual_build']['message'] . ' (content job ' . $report['manual_build']['job_id'] . ', ' . $report['manual_build']['state'] . ')' );
     }
 
     protected function printJson( $data )
