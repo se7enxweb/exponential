@@ -16332,6 +16332,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Nothing new</source>
+        <translation>Nichts Neues</translation>
+    </message>
+    <message>
         <source>Environment</source>
         <translation>Umgebung</translation>
     </message>

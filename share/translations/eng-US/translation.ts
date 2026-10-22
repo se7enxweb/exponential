@@ -14034,6 +14034,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Nothing new</source>
+        <translation>Nothing new</translation>
+    </message>
+    <message>
         <source>Environment</source>
         <translation>Environment</translation>
     </message>
