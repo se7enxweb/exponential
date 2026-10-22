@@ -46,12 +46,17 @@ class expHelpContentEbooks
     /** @var string[]|null the formats to build (default: expHelpContentExport::formats()) */
     protected $formats;
 
+    /** @var string the language the file objects are stored in */
+    protected $storeLanguage;
+
     public function __construct( array $options = array() )
     {
         $this->dryRun = !empty( $options['dry_run'] );
         $this->userId = isset( $options['user_id'] ) ? (int)$options['user_id'] : (int)eZUser::currentUserID();
-        $this->language = isset( $options['language'] ) ? (string)$options['language']
-                        : ( class_exists( 'eZContentObject' ) ? (string)eZContentObject::defaultLanguage() : 'eng-US' );
+        // the file objects are stored in the default language; the language of the edition (the topics' text, the
+        // remote_id and name of its books) is the option language, read as expHelpContentEbooks::useLanguage() set it
+        $this->storeLanguage = class_exists( 'eZContentObject' ) ? (string)eZContentObject::defaultLanguage() : 'eng-US';
+        $this->language = isset( $options['language'] ) ? (string)$options['language'] : $this->storeLanguage;
         $this->formats = isset( $options['formats'] ) ? (array)$options['formats'] : null;
     }
 
@@ -68,9 +73,32 @@ class expHelpContentEbooks
      * @param string $format
      * @return string
      */
-    public static function remoteId( $manualRemoteId, $format )
+    public static function remoteId( $manualRemoteId, $format, $language = '' )
     {
-        return self::REMOTE_PREFIX . $manualRemoteId . '-' . $format;
+        $suffix = '';
+        if ( (string)$language !== '' && (string)$language !== (string)eZContentObject::defaultLanguage() )
+            $suffix = strtolower( (string)$language ) . '-';
+        return self::REMOTE_PREFIX . $manualRemoteId . '-' . $suffix . $format;
+    }
+
+    /**
+     * Reads the help in a language from now on (for the edition of a manual in that language): its translation, else
+     * the default language. Objects already read are forgotten.
+     *
+     * @param string $locale
+     * @return bool false when the installation has no such content language
+     */
+    public static function useLanguage( $locale )
+    {
+        $language = eZContentLanguage::fetchByLocale( (string)$locale );
+        if ( !$language instanceof eZContentLanguage )
+            return false;
+        $default = (string)eZContentObject::defaultLanguage();
+        eZContentLanguage::setPrioritizedLanguages( array_values( array_unique( array( (string)$locale, $default ) ) ) );
+        eZContentObject::clearCache();
+        expHelpContentRepository::resetInstance();
+        expHelpContentProvider::resetInstance();
+        return true;
     }
 
     /**
@@ -135,7 +163,7 @@ class expHelpContentEbooks
      */
     protected function buildOne( expHelpContentRepository $repository, array $manual, $format, eZContentObjectTreeNode $folderNode )
     {
-        $remoteId = self::remoteId( $manual['remote_id'], $format );
+        $remoteId = self::remoteId( $manual['remote_id'], $format, $this->language );
         $public = self::isPublicManual( $manual );
         $export = new expHelpContentExport( new expHelpContentEditionProvider( $repository, $public ), $manual );
         if ( !$export->topics() )
@@ -158,7 +186,7 @@ class expHelpContentEbooks
         $stored = $object instanceof eZContentObject ? self::storedFile( $object ) : null;
         $same = $stored !== null && is_file( $stored ) && sha1_file( $stored ) === sha1_file( $result['file'] );
         $sectionId = self::sectionId( $public ? expHelpContentSchema::SECTION_PUBLIC : expHelpContentSchema::SECTION_INTERNAL );
-        $title = $manual['title'] . ' (' . strtoupper( $format ) . ')';
+        $title = $manual['title'] . ' (' . strtoupper( $format ) . ( $this->language !== $this->storeLanguage ? ', ' . $this->language : '' ) . ')';
         $stores = false;
         if ( $object instanceof eZContentObject && $same )
         {
@@ -175,7 +203,7 @@ class expHelpContentEbooks
             $attributes = array( 'name' => $title, 'file' => $result['file'] . '|' . basename( $result['file'] ) );
             if ( $object instanceof eZContentObject )
             {
-                eZContentFunctions::updateAndPublishObject( $object, array( 'attributes' => $attributes, 'language' => $this->language ) );
+                eZContentFunctions::updateAndPublishObject( $object, array( 'attributes' => $attributes, 'language' => $this->storeLanguage ) );
                 $object = eZContentObject::fetch( (int)$object->attribute( 'id' ) );
                 $this->change( 'update', "$remoteId: version " . (int)$object->attribute( 'current_version' ) . " ({$result['topics']} topics)" );
             }
@@ -186,7 +214,7 @@ class expHelpContentEbooks
                     'parent_node_id' => (int)$folderNode->attribute( 'node_id' ),
                     'creator_id' => $this->userId,
                     'remote_id' => $remoteId,
-                    'language' => $this->language,
+                    'language' => $this->storeLanguage,
                     'attributes' => $attributes,
                 ) );
                 if ( !$object instanceof eZContentObject )
@@ -281,9 +309,17 @@ class expHelpContentEbooks
     public static function stored( $manualRemoteId )
     {
         $list = array();
-        foreach ( array( 'epub', 'pdf' ) as $format )
+        // the edition of the default language, then those of the manuals' translations ([ManualSettings] Languages[])
+        $languages = array_values( array_unique( array_merge( array( (string)eZContentObject::defaultLanguage() ),
+                                                              (array)expHelpManualBuilder::setting( 'Languages', array() ) ) ) );
+        $editions = array();
+        foreach ( $languages as $language )
+            foreach ( array( 'epub', 'pdf' ) as $format )
+                $editions[] = array( $format, $language );
+        foreach ( $editions as $edition )
         {
-            $object = eZContentObject::fetchByRemoteID( self::remoteId( $manualRemoteId, $format ) );
+            list( $format, $language ) = $edition;
+            $object = eZContentObject::fetchByRemoteID( self::remoteId( $manualRemoteId, $format, $language ) );
             if ( !$object instanceof eZContentObject || !$object->canRead() )
                 continue;
             $dataMap = $object->attribute( 'data_map' );
@@ -295,6 +331,7 @@ class expHelpContentEbooks
             $node = $object->attribute( 'main_node' );
             $list[] = array(
                 'format' => $format,
+                'language' => $language,
                 'name' => (string)$object->attribute( 'name' ),
                 'url' => 'content/download/' . (int)$object->attribute( 'id' ) . '/' . (int)$dataMap['file']->attribute( 'id' ) . '/file/'
                        . rawurlencode( (string)$binary->attribute( 'original_filename' ) ),

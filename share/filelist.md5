@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-2f2eb8b17d0fd4178f5dec892c1b2da9  autoload/ezp_kernel.php
+6ff08d37de6fe220227522a9bea9b7d1  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -20920,7 +20920,7 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
 809731dbdb99481738c541cba4ac6bdc  kernel/classes/help/content/exphelpcontentdita.php
-fdb7fca31ced7db107593e2c23056ee2  kernel/classes/help/content/exphelpcontentebooks.php
+30d1265c87abc59842f371ebbb33144b  kernel/classes/help/content/exphelpcontentebooks.php
 55413d93f88a3bc7acc6f3dd8368de64  kernel/classes/help/content/exphelpcontenteditionprovider.php
 76c95ab6db140a4516e4320aa888839a  kernel/classes/help/content/exphelpcontentexport.php
 55f92f1a206b102c012d371f1dd5f36a  kernel/classes/help/content/exphelpcontentinstaller.php
@@ -20932,6 +20932,9 @@ e1152c3d56925c2ed77bf537e343d44c  kernel/classes/help/content/exphelpcontentrevi
 731dacfbc9e210d26a6115321f360d89  kernel/classes/help/content/exphelpcontentseeder.php
 c688f344dfe084ee747eda734fb17e89  kernel/classes/help/content/exphelpcontentvalidator.php
 48e384647599d779d6911558b7547f37  kernel/classes/help/content/exphelpditamarkup.php
+a799ad20f40c5c70a6abbe4b69ff1c17  kernel/classes/help/content/exphelpmanualbuilder.php
+d91399e64d489b89bc4efb1b59e9fa1e  kernel/classes/help/content/exphelpmanualsource.php
+510da84b3aa20d176fad668e80039317  kernel/classes/help/content/exphelpmanualsync.php
 085cfc7a0a8c8a953d7d32e051cc002a  kernel/classes/help/exphelp.php
 08577a78a42affb345573dd7a1788329  kernel/classes/help/exphelpallowlist.php
 178ee1795e57ac17da82402fb45bd0ea  kernel/classes/help/exphelpaudience.php
@@ -21386,7 +21389,7 @@ fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborations
 5e242e01ae17e9af4730a1dfa8c42a71  kernel/private/classes/commands/dfscleanup.php
 629cddb79ec70350f282b31fd6fe7387  kernel/private/classes/commands/expcontentjob.php
 7454fdd05a72f8378dd7173255b9e426  kernel/private/classes/commands/exphelp.php
-5aae3542c5add78b69755ac4b8219943  kernel/private/classes/commands/exphelpcontent.php
+3c0f3487e2f440849ec429bc8037a559  kernel/private/classes/commands/exphelpcontent.php
 5d62cc9053a5337cfddce50e7b770eff  kernel/private/classes/commands/exphelpexamples.php
 532ba01b895e20eab4ad19d93c091358  kernel/private/classes/commands/explogs.php
 95572d3690cc6ceaa5bcdcbe2bad29eb  kernel/private/classes/commands/exploremipsumfill.php
@@ -22469,7 +22472,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 612796f3f7de7e69cb1f941fbdc6e1b5  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-f8ba004bd4f3f668e182d0eee51e5d91  settings/exphelp.ini
+c08f41dab9290a6a8a9275079aab47a6  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -24069,6 +24072,7 @@ e3108c584ad6c8c6c23d164379b86948  tests/tests/kernel/classes/help/expHelpIndexSt
 cb92b4eb70167d5bda73818eb96732c8  tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php
 43904089f9346a58754bed58de240191  tests/tests/kernel/classes/help/expHelpLicenseTest.php
 c70a01cbe8505ec3959eee2007ad30e5  tests/tests/kernel/classes/help/expHelpLinksTest.php
+3f8ce8a3f7848e62eb877285e8f1a60e  tests/tests/kernel/classes/help/expHelpManualBuilderTest.php
 c8a1fc45578273af4fa89f2d7eeec6a0  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
 9258043533b09d510aa0eacd9d0d22ff  tests/tests/kernel/classes/help/expHelpMigrationHubTest.php
 5749ee12dcd0df7a7d0d0d9bb997ee55  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php

@@ -29,13 +29,16 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "./console exp:help:content check -s ... [--fix]   the validator (check_help.php); --fix sets the sections from the audience\n" .
                                  "./console exp:help:content seed-glossary -s ... [--file=] [--update]   the glossary (seed_glossary.php)\n" .
                                  "./console exp:help:content seed-topics -s ... [--file=] [--update] [--release]   topics and manuals (seed_topics.php)\n" .
+                                 "./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--dry-run]\n" .
+                                 "                                              the manuals of the Markdown help (exphelp.ini [ManualSettings]):\n" .
+                                 "                                              made, updated and removed so they match the pages (help-gen-...)\n" .
                                  "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
-                                 "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file]\n" .
+                                 "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file] [--language=]\n" .
                                  "                                              an e-book of the Released topics of a manual (export_manual.php)\n" .
                                  "./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run]\n" .
                                  "                                              the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a\n" .
                                  "                                              directory, checked after writing (also: export --format=dita)\n" .
-                                 "./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--dry-run]   build the e-books of the\n" .
+                                 "./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--dry-run]   build the e-books of the\n" .
                                  "                                              Released manuals and store them as file objects under E-books\n" .
                                  "./console exp:help:content review -s ... [--json]   the topics whose review is overdue\n" .
                                  "./console exp:help:content package -s ... [--output=dir] [--version=6.0.15]   the eight classes as the content\n" .
@@ -53,16 +56,17 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:]', '', array(
+        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:][language:]', '', array(
             'dry-run'      => 'Show what would change, change nothing',
             'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience',
             'file'         => 'seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)',
             'update'       => 'seed-*: also update existing objects that differ from the file',
-            'release'      => 'seed-topics: set new topics, chapters and manuals to Released',
+            'release'      => 'seed-topics: set new topics, chapters and manuals to Released; build-manuals: set every generated one to Released',
+            'language'     => 'build-manuals: the translations to write (default [ManualSettings] Languages[]; "none" for none); ebooks, export: the language of the edition (default: the default language)',
             'with-content' => 'uninstall: also the help tree (into the trash), the classes, the state group and the sections',
             'login'        => 'The user who creates the classes and objects (default admin)',
             'json'         => 'Print one JSON document instead of the text',
-            'manual'       => 'export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual',
+            'manual'       => 'export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual; build-manuals: the key of one manual of [ManualSettings] Manuals[]',
             'format'       => 'export: epub, pdf or dita',
             'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages)',
             'version'      => 'package: the release, MAJOR.MINOR.PATCH (default: the version of this installation)',
@@ -79,7 +83,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $this->shutdown( 2 );
             return;
         }
-        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export',
+        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'build-manuals', 'report', 'uninstall', 'export',
                         'dita', 'ebooks', 'review', 'package', 'verify-package' );
         if ( !in_array( $action, $known, true ) )
         {
@@ -123,6 +127,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 case 'seed-topics':
                     $code = $this->seed( $action, $options, $common, $json );
                     break;
+                case 'build-manuals':
+                    $code = $this->buildManuals( $options, $common, $json );
+                    break;
                 case 'check':
                     $code = $this->check( !empty( $options['fix'] ), $common, $json );
                     break;
@@ -143,7 +150,13 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                         $code = 2;
                         break;
                     }
-                    $books = new \expHelpContentEbooks( $common );
+                    if ( !empty( $options['language'] ) && !\expHelpContentEbooks::useLanguage( (string)$options['language'] ) )
+                    {
+                        $cli->error( 'FAIL: the installation has no content language ' . $options['language'] );
+                        $code = 2;
+                        break;
+                    }
+                    $books = new \expHelpContentEbooks( $common + ( !empty( $options['language'] ) ? array( 'language' => (string)$options['language'] ) : array() ) );
                     $books->build( !empty( $options['manual'] ) ? (string)$options['manual'] : null );
                     $code = $this->printChanges( array_values( array_filter( $books->changes(), function ( $c ) use ( $json ) {
                         // skipped manuals are reported, but are no change
@@ -203,6 +216,109 @@ class Exphelpcontent extends \Exponential\Runnable\Command
         return $this->printChanges( $changes, $json );
     }
 
+    /**
+     * The manuals of the Markdown help (doc/eng-us/features/6.0/help-content.md, "Manuals from the Markdown help"): the
+     * classes get the audience options first (as "classes" does), then expHelpManualBuilder plans every manual of
+     * [ManualSettings] Manuals[] and expHelpManualSync makes the database match it. Run on every release.
+     */
+    protected function buildManuals( array $options, array $common, $json )
+    {
+        $cli = $this->cli();
+        $started = microtime( true );
+        if ( !\expHelpContentRepository::isInstalled() )
+        {
+            $cli->error( 'FAIL: help as content is not installed (./console exp:help:content install -s <siteaccess>)' );
+            return 2;
+        }
+        $changes = array();
+        // the audience options the pages need ([ContentSettings] Audiences[]), appended as the classes step does
+        $installer = new \expHelpContentInstaller( $common );
+        $installer->install( array( 'classes' ) );
+        $changes = array_merge( $changes, $installer->changes() );
+
+        $settings = \expHelpManualBuilder::manualsFromSettings();
+        foreach ( $settings['errors'] as $error )
+            $changes[] = array( 'step' => 'manuals', 'action' => 'error', 'what' => $error );
+        $manual = isset( $options['manual'] ) ? preg_replace( '/^' . preg_quote( \expHelpManualBuilder::MANUAL_PREFIX, '/' ) . '/', '', (string)$options['manual'] ) : '';
+
+        $default = (string)\eZContentObject::defaultLanguage();
+        $wanted = isset( $options['language'] ) && $options['language'] !== ''
+                ? ( strtolower( (string)$options['language'] ) === 'none' ? array() : array_map( 'trim', explode( ',', (string)$options['language'] ) ) )
+                : (array)\expHelpManualBuilder::setting( 'Languages', array() );
+        $wanted = array_values( array_filter( $wanted, function ( $locale ) use ( $default ) { return $locale !== '' && $locale !== $default; } ) );
+        $existing = \expHelpManualSync::existingLanguages( $wanted );
+        $languages = array();
+        $translations = array();
+        foreach ( $existing['missing'] as $locale )
+            $changes[] = array( 'step' => 'manuals', 'action' => 'skip', 'what' => "$locale: the installation has no such content language (not created; add it, then run again)" );
+        foreach ( $existing['languages'] as $locale )
+        {
+            $source = \expHelpManualSource::forLocale( $locale );
+            if ( $source === null )
+            {
+                $changes[] = array( 'step' => 'manuals', 'action' => 'skip', 'what' => "$locale: the help has no pages in that language ([DocLanguages])" );
+                continue;
+            }
+            $languages[] = $locale;
+            $translations[$locale] = $source;
+        }
+
+        $builder = new \expHelpManualBuilder( new \expHelpManualSource( \expHelpDocumentIndex::instance() ), $translations, array(
+            'edition' => \expHelpContentPackage::release( '' )['version'],
+            'license' => (string)\expHelpManualBuilder::setting( 'License', '' ),
+            'translated_titles' => \expHelpManualBuilder::translatedTitlesFromSettings(),
+        ) );
+        $plan = $builder->plan( $settings['manuals'] );
+        $planned = microtime( true );
+
+        $sync = new \expHelpManualSync( $common + array( 'release' => !empty( $options['release'] ), 'manual' => $manual, 'language' => $default,
+            // a long first build says how far it is; a run that changes nothing stays quiet ("No change.")
+            'progress' => $json ? null : function ( $done, $total, $changed ) use ( $cli, $started ) {
+                if ( $changed > 0 )
+                    $cli->output( sprintf( '         %d of %d objects done (%.0fs)', $done, $total, microtime( true ) - $started ) );
+            } ) );
+        $sync->run( $plan, $languages );
+        $changes = array_merge( $changes, $sync->changes() );
+
+        // what the plan has, for the summary
+        $counts = array( 'manual' => 0, 'chapter' => 0, 'topic' => 0 );
+        $translated = array();
+        foreach ( $plan['items'] as $item )
+        {
+            if ( $manual !== '' && $item['manual'] !== $manual )
+                continue;
+            $counts[$item['kind']]++;
+            foreach ( array_keys( $item['translations'] ) as $locale )
+                if ( in_array( $locale, $languages, true ) )
+                    $translated[$locale][$item['kind']] = isset( $translated[$locale][$item['kind']] ) ? $translated[$locale][$item['kind']] + 1 : 1;
+        }
+        $notices = $builder->notices();
+        if ( $json )
+        {
+            $errors = count( array_filter( $changes, function ( $c ) { return $c['action'] === 'error'; } ) );
+            $this->printJson( array( 'manuals' => $counts['manual'], 'chapters' => $counts['chapter'], 'topics' => $counts['topic'],
+                                     'translated' => $translated, 'languages' => $languages, 'changes' => $changes, 'counts' => $sync->counts(),
+                                     'notices' => $notices, 'errors' => $errors, 'seconds' => round( microtime( true ) - $started, 1 ),
+                                     'dry_run' => !empty( $common['dry_run'] ) ) );
+            return $errors ? 1 : 0;
+        }
+        $code = $this->printChanges( $changes, false );
+        foreach ( $notices as $notice )
+            $cli->output( sprintf( '%-8s %-8s %s', 'manuals', 'notice', $notice ) );
+        $parts = array();
+        foreach ( $translated as $locale => $kinds )
+            $parts[] = sprintf( '%s: %d manuals, %d chapters, %d topics', $locale, isset( $kinds['manual'] ) ? $kinds['manual'] : 0,
+                                isset( $kinds['chapter'] ) ? $kinds['chapter'] : 0, isset( $kinds['topic'] ) ? $kinds['topic'] : 0 );
+        $done = array();
+        foreach ( $sync->counts() as $action => $count )
+            $done[] = "$action $count";
+        $cli->output( sprintf( '%s %d manuals, %d chapters, %d topics%s; %s; planned in %.1fs, %.1fs in all',
+                               $code ? 'FAIL' : 'PASS', $counts['manual'], $counts['chapter'], $counts['topic'],
+                               $parts ? ' (' . implode( '; ', $parts ) . ')' : '', $done ? implode( ', ', $done ) : 'no change',
+                               $planned - $started, microtime( true ) - $started ) );
+        return $code;
+    }
+
     protected function export( array $options, $dryRun, $json )
     {
         $cli = $this->cli();
@@ -217,6 +333,11 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $cli->error( "FAIL: this installation cannot write $format (EPUB needs the zip extension, PDF the help's PDF writer)" );
             return 2;
         }
+        if ( !empty( $options['language'] ) && !\expHelpContentEbooks::useLanguage( (string)$options['language'] ) )
+        {
+            $cli->error( 'FAIL: the installation has no content language ' . $options['language'] );
+            return 2;
+        }
         $provider = \expHelpContentProvider::instance();
         $manual = $provider->manual( isset( $options['manual'] ) ? (string)$options['manual'] : '' );
         if ( $manual === null )
@@ -226,7 +347,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
         }
         $export = new \expHelpContentExport( $provider, $manual );
         $file = !empty( $options['output'] ) ? (string)$options['output']
-              : rtrim( \expHelp::cacheDirectory(), '/' ) . '/ebooks/' . $manual['remote_id'] . '.' . $format;
+              : rtrim( \expHelp::cacheDirectory(), '/' ) . '/ebooks/' . $manual['remote_id']
+                . ( !empty( $options['language'] ) ? '-' . strtolower( (string)$options['language'] ) : '' ) . '.' . $format;
         $topics = count( $export->topics() );
         if ( $dryRun )
         {
