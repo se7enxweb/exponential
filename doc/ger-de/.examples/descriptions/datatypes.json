@@ -85,7 +85,7 @@
     },
     "datatype:ezobjectrelationlist": {
         "en": "Object relations",
-        "de": "Objekt Vernüpfungsliste"
+        "de": "Objekt Verknüpfungsliste"
     },
     "datatype:ezoption": {
         "en": "Option",
