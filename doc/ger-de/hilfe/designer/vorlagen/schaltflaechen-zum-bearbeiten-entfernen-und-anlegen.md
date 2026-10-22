@@ -143,7 +143,7 @@ angesehen hat. Geben Sie eine Adresse auf derselben Website an, zum Beispiel den
 - [Eigene Bearbeitungstemplates](eigene-bearbeitungstemplates.md)
 - [Operatoren für Rollen und Richtlinien](rollen-und-richtlinien-operatoren.md)
 - [Referenz der Fetch-Funktionen](../../erweiterungsentwicklung/teil-8-referenz/referenz-der-fetch-funktionen.md)
-- [Häufige Template-Aufgaben](../../../../eng-us/help/book-learning/common-template-tasks.md)
+- [Häufige Template-Aufgaben](../../buch-lernen/haeufige-aufgaben-mit-templates.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
