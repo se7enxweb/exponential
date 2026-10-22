@@ -406,7 +406,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'innerHTML', substr( $js, strpos( $js, 'function headerItems()' ), 4000 ) );
         $this->assertStringContainsString( "        headerItems();\n", $js );
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
-        $this->assertSame( 'var(--a4-accent)', $rules['.a4-header-count']['background-color'] );
+        $this->assertSame( 'var(--a4-accent-strong)', $rules['.a4-header-count']['background-color'], 'white on it keeps 4.5:1 (on --a4-accent it is 3:1)' );
         $this->assertSame( 'var(--a4-on-accent)', $rules['.a4-header-count']['color'] );
         $this->assertSame( 'none', $rules['.a4-header-count[hidden], .a4-header-panel-empty[hidden]']['display'] );
     }

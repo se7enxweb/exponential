@@ -1077,7 +1077,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-fe5cc22aeeafea92258f14f46b38d655  design/admin4/stylesheets/admin4.css
+31c78efd57bca291c4dc01fdd74fc07c  design/admin4/stylesheets/admin4.css
 67a7f54f18b4eef977b1d5e4e6fbba0e  design/admin4/stylesheets/components.css
 a87bec7d01d40f3de1611df181975ceb  design/admin4/stylesheets/content.css
 ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
@@ -6163,7 +6163,7 @@ f591dfeee412831cbf4c9ec450c93dc6  doc/eng-us/features/6.0/admin-links-follow-per
 730f4bd870741ba72e0b822ed910c9fd  doc/eng-us/features/6.0/admin-list-paging.md
 a47dfcc6efe2e2c9c161f250da461f72  doc/eng-us/features/6.0/admin3-responsive-admin.md
 a29a680e52b85935874388c9c6d885bd  doc/eng-us/features/6.0/admin3-sidebar-width-and-font-size.md
-cc53cf2ce5b97e919ed0e4e72ac72968  doc/eng-us/features/6.0/admin4-design.md
+d54c6be1c605fd78c61bddfd9893c137  doc/eng-us/features/6.0/admin4-design.md
 c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 4e6288e58d6f4884e2c040b863cbb545  doc/eng-us/features/6.0/adminneo-database-manager.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
@@ -14980,7 +14980,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 daea7f2e38000ce15caa57c898b75b10  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
 e2836e805e1dcad6c266afcbd5b608a8  doc/ger-de/funktionen/6.0/admin3-seitenleistenbreite-und-schriftgroesse.md
-e7241b49d4fa57397e2582b69f7a3396  doc/ger-de/funktionen/6.0/admin4-design.md
+b68d81a94eef0e95d9c9de9a8139249a  doc/ger-de/funktionen/6.0/admin4-design.md
 ecf960bb3b6486904ede97299bf12ff9  doc/ger-de/funktionen/6.0/admin4l.md
 60e8c726f4ab01642d28261fd8386769  doc/ger-de/funktionen/6.0/adminneo-datenbankverwaltung.md
 b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
@@ -24203,7 +24203,7 @@ a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.
 e346ed955a8e8ed87acad81858095cfb  tests/tests/design/AdminFormErrorsTest.php
 32f9d6fe78017afe3382814f71cb124e  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
-433a04c6379eec1f8b7fffc8fb896e25  tests/tests/design/AdminHeaderTest.php
+7401193e6fd2292d0a19bd483cb3a397  tests/tests/design/AdminHeaderTest.php
 8aa3887e5c845ddb8c8d3b843b2b4e65  tests/tests/design/AdminHelpFrameClassScopeTest.php
 c239764eaf3a9faa20a382734df78387  tests/tests/design/AdminHelpLanguageLineTest.php
 3db40fcd5528d2caec0149d7ed92795b  tests/tests/design/AdminHelpScriptTest.php

@@ -1106,7 +1106,7 @@ from a cache block kept per user, so the count is not drawn with the page: the i
 Without the script the item is a link to `item_url`. With it, a disclosure button takes the link's place:
 `aria-expanded` and `aria-controls`, the Arrow keys, Home, End and Escape as in the site and Help menus. The count is
 part of the button's name ("Notifications: 3 new"), the badge itself is `aria-hidden`. The entries are made with
-`textContent`, never as HTML. The badge takes the accent's tokens (`--a4-accent`, `--a4-on-accent`), so it follows
+`textContent`, never as HTML. The badge takes the accent's tokens (`--a4-accent-strong`, `--a4-on-accent`, at least 4.5:1), so it follows
 light and dark mode; in forced colors it draws in system colours. admin4 and admin4l include the same part,
 `parts/a4_header_items.tpl`. Checked by `AdminHeaderTest::testExtensionsAddHeaderItemsAfterHelp`.
 

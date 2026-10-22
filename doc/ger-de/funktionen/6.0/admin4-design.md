@@ -1400,7 +1400,7 @@ eine JSON-Quelle, und `admin4.js` lädt sie, wenn die Seite gezeichnet wird und 
 Ohne Skript ist das Werkzeug ein Link auf `item_url`. Mit Skript tritt ein Aufklappknopf an seine Stelle:
 `aria-expanded` und `aria-controls`, Pfeiltasten, Pos1, Ende und Esc wie im Site- und im Hilfemenü. Die Zahl ist Teil
 des Namens des Knopfs („Benachrichtigungen: 3 neu“), das Abzeichen selbst ist `aria-hidden`. Die Einträge entstehen mit
-`textContent`, nie als HTML. Das Abzeichen nimmt die Tokens der Akzentfarbe (`--a4-accent`, `--a4-on-accent`) und folgt
+`textContent`, nie als HTML. Das Abzeichen nimmt die Tokens der Akzentfarbe (`--a4-accent-strong`, `--a4-on-accent`, mindestens 4,5:1) und folgt
 so dem hellen und dem dunklen Modus; bei erzwungenen Farben zeichnet es in Systemfarben. admin4 und admin4l binden
 denselben Teil ein, `parts/a4_header_items.tpl`. Geprüft von `AdminHeaderTest::testExtensionsAddHeaderItemsAfterHelp`.
 

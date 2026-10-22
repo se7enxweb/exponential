@@ -1025,7 +1025,7 @@ body,
   padding: 0 var(--a4-space-1);
   border: 1px solid var(--a4-card);
   border-radius: 999px;
-  background-color: var(--a4-accent);
+  background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
   font-size: var(--a4-text-xs);
   font-weight: 700;
