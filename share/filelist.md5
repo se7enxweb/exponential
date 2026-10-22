@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-fe6165bfbea6afcfca5b052bf163b8d8  autoload/ezp_kernel.php
+86dc91798188d4f1230cdbb00d7db12f  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -732,6 +732,7 @@ c2f57b52097e6d4817b1e652f78187d9  design/admin/templates/setup/logs_menu.tpl
 65afbb2a1f2023124d5eca1217a0bde5  design/admin/templates/setup/logs_nav.tpl
 88bed0ac1bea35ce39b48aa1493a8a12  design/admin/templates/setup/maintenance.tpl
 9a4fb6ab7593ffb61017ad511864ed25  design/admin/templates/setup/moduleextension.tpl
+b4cb687c520a3a58aa854758c72fa721  design/admin/templates/setup/moduletable.tpl
 f77824b79e586dca95a6d3ed3c36768d  design/admin/templates/setup/modulewizard.tpl
 a63b0567fa226c2b8dc7a48b8022a2ac  design/admin/templates/setup/preload.tpl
 f408b291026d7e10ce8a536a2b2c7fcd  design/admin/templates/setup/quick_settings.tpl
@@ -1524,6 +1525,7 @@ c2f57b52097e6d4817b1e652f78187d9  design/admin4/templates/setup/logs_menu.tpl
 65afbb2a1f2023124d5eca1217a0bde5  design/admin4/templates/setup/logs_nav.tpl
 ec2d3bd9af2681375dd91caf57bf57ea  design/admin4/templates/setup/maintenance.tpl
 9119132eb17685160266dbc84a654759  design/admin4/templates/setup/moduleextension.tpl
+b4cb687c520a3a58aa854758c72fa721  design/admin4/templates/setup/moduletable.tpl
 c28edbce0961a2ea4b91b71c95aa0b15  design/admin4/templates/setup/modulewizard.tpl
 c87483db8a45c77e8dc13482d4f07bc8  design/admin4/templates/setup/preload.tpl
 0965b0d01b929e43ee7fff0032c88d1b  design/admin4/templates/setup/quick_settings.tpl
@@ -3232,7 +3234,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-9d24ce90b4377fe270deec4c8a6983a7  doc/changelogs/6.0/6.0.15.md
+dc6157f470e96fe89d6b17cbc2e8495c  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6198,7 +6200,7 @@ e37ff9e9d23c49c89dc1a5bdb3f64abb  doc/eng-us/features/6.0/country-groups.md
 96a6e64d47c01adcbcc938f8a2fe8971  doc/eng-us/features/6.0/cronjob-pause.md
 f58ef44439a83c0f3bd4e9ede1173901  doc/eng-us/features/6.0/cronjobs-console.md
 49183904218a17f119fbc88d9bbf6ccb  doc/eng-us/features/6.0/custom-items-per-page.md
-f43db3d182730849469c7774bd7c52c5  doc/eng-us/features/6.0/data-tables.md
+3fddf229b5fad53ac62539b61d23df56  doc/eng-us/features/6.0/data-tables.md
 038ad003cc7c482d85ba9496eb507bf6  doc/eng-us/features/6.0/debug-output-improvements.md
 2ede246757068e064cab00fcf3fb1795  doc/eng-us/features/6.0/default-extension-distribution.md
 8bb25377c53c0d863e0b1ad669e226da  doc/eng-us/features/6.0/environment-settings.md
@@ -15018,7 +15020,7 @@ c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-pol
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
 9a18c784488620d01443a220aeb513b0  doc/ger-de/funktionen/6.0/dateikonsistenzpruefung.md
-fec4d3ed063ffc87604a4666f165cbc0  doc/ger-de/funktionen/6.0/datentabellen.md
+26bbb728874d4673fc6d3080b244cafa  doc/ger-de/funktionen/6.0/datentabellen.md
 9fa97c0f8e47e189f172c2cfdabd9d20  doc/ger-de/funktionen/6.0/durch-deployment-verwaltet.md
 b3e456d2f10a16a5331ce2c08d501420  doc/ger-de/funktionen/6.0/e-mail-einstellungen.md
 236706d8d28dba7a4d469e4f69ed7006  doc/ger-de/funktionen/6.0/eigene-anzahl-eintraege-pro-seite.md
@@ -21368,6 +21370,8 @@ d8226b00b7469da9040b293266a47da4  kernel/classes/contentjob/expcontentjobtype.ph
 e5bf4833e3b0cc2a8725e0fd0b362dd0  kernel/classes/datatable/expdataconnections.php
 bc4a968b92a941fb58185301aa45a2f3  kernel/classes/datatable/expdatatablecatalogue.php
 9de865061e822631e1dab4f63bea9d22  kernel/classes/datatable/expdatatabledescriber.php
+fb5e5d220170e0ccb74c7b4791e05292  kernel/classes/datatable/expdatatablefieldsource.php
+f48c196a16e65e86d8b677bf273d51a0  kernel/classes/datatable/expdatatablefieldsources.php
 07ca39c2c94fa44ccf69f2bdde3d7998  kernel/classes/datatable/expdatatablefunctioncollection.php
 0f61b5f86625d0a1229a64fd8c257933  kernel/classes/datatable/expdatatablerelation.php
 220f5502a162eb2c2c2fca8e8d8139df  kernel/classes/datatable/expdatatableschema.php
@@ -22516,6 +22520,7 @@ d68cd7312ea399f2e77c3f18058d2399  kernel/private/classes/views/setup/logsaction.
 ea5852bc83179ec816f15ededc256a55  kernel/private/classes/views/setup/maintenance.php
 d76e8a2cbff742594e1ccc5257ba4f99  kernel/private/classes/views/setup/menuconfig.php
 3b2eaa3ca4c7a7f30bbfc8b7508d23f0  kernel/private/classes/views/setup/moduleextension.php
+ecf139a92357281201617f85f3e5faa3  kernel/private/classes/views/setup/moduletable.php
 46d13f783639a6f39c1f1efaa7cacc17  kernel/private/classes/views/setup/modulewizard.php
 af48a2f347c465205dc1be57ef8106b5  kernel/private/classes/views/setup/preload.php
 13490f8edf449b3f69dc5af3b5828120  kernel/private/classes/views/setup/preloadjob.php
@@ -22803,9 +22808,11 @@ b0f357020c2a66612f4bb6207b4d13db  kernel/setup/expextensionwizard.php
 be9d74ef628233b7b31f888a25fb6076  kernel/setup/exphandlerwizard.php
 8dcd3e914c27dd70475d60c14cc917f2  kernel/setup/expkerneloverridewizard.php
 93be9f38034705c82e97c75e7d5d6cf3  kernel/setup/expmoduleextensionwizard.php
+6b5be3f478c7cc1d593d93f07ac6deb2  kernel/setup/expmoduletablecode.php
+dcd3a2e65adcf65dddde08b047e0d0cf  kernel/setup/expmoduletablewizard.php
 7d874e8a0a728f966e4fe80ef8a8050a  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
-32390bfa6bd690e300505de4b8517109  kernel/setup/expradcatalogue.php
+a53fede73eed3eca75b98cfed0cc07ac  kernel/setup/expradcatalogue.php
 def82e9940456bf5dc25932788b70e45  kernel/setup/expradhealth.php
 fc32c69d2f9b56f92a7ba4ebf90611e8  kernel/setup/expradsurvey.php
 f9c1bc8aa5a0d2918cf560c5573bf199  kernel/setup/expsettingsextensionwizard.php
@@ -22831,8 +22838,9 @@ f5c3ac3287cc41ffd8436e5874d5787d  kernel/setup/logshealth.php
 cee49ff6dec89a7c29a22fc24f59da51  kernel/setup/logsmanage.php
 52e7621ffe33cd09606c50406d16a4ed  kernel/setup/maintenance.php
 55ee736cdd6ac1037e93af940d9b33c1  kernel/setup/menuconfig.php
-729e901f976a7c67696e8fe62b7959e6  kernel/setup/module.php
+55e706ee088f9c3360a49de403eb3254  kernel/setup/module.php
 e29ec70a985ee0e4961c6b216dbc6d19  kernel/setup/moduleextension.php
+eb2415031ecaa6b3487a7e2840c8d483  kernel/setup/moduletable.php
 6b23c64b22f573e384f9bc710880a4b4  kernel/setup/modulewizard.php
 53b7f3f41cec233793df249b286ebf6a  kernel/setup/preload.php
 73bf2bc486ad7718495380d8b0cb843d  kernel/setup/preloadjob.php
@@ -24134,7 +24142,7 @@ dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-561c9c6dceb2c745feb86452d6140cb1  share/translations/eng-US/translation.ts
+ecbdbc6aa1bcae36b7581a24426de663  share/translations/eng-US/translation.ts
 494a72237f2b99e7ff098df6fa9339d6  share/translations/esl-ES/translation.ts
 a7a28901e0614f18dca43236ab43815e  share/translations/esl-MX/translation.ts
 0d893017d9cb28076b20f47b84f583cc  share/translations/fas-IR/translation.ts
@@ -24142,7 +24150,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 c2548f11cf751134fed7560c3f0b0204  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-75374dd6d1b22e286793daf4b78ccb3f  share/translations/ger-DE/translation.ts
+58f4c5095d2a4bfb60315707309fc1d4  share/translations/ger-DE/translation.ts
 6b1954808805a24407921e51baa34a0b  share/translations/heb-IL/translation.ts
 061c1972d59c9c6deefd8c903aa2708c  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -24162,7 +24170,7 @@ ff02ef2713c7b6d98935892ba8cda520  share/translations/swe-SE/translation.ts
 e33d8d06d236157cdb29177ac7e13cdf  share/translations/tur-TR/translation.ts
 ba3bac76c0c480ad49967a5cafdb8976  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-ba7a0ef94183a6dab75b2602ef06815b  share/translations/untranslated/translation.ts
+c33416e1ce5f8b2ab8acd5a02ed282f4  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -24621,13 +24629,15 @@ b0f5e308de066b9c9634ee29f470b137  tests/tests/kernel/classes/contentmodel/expCon
 0321349fed5a1463c9cdb4127fc3a42d  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
 8c572ff076224149c2cb091cc2ab20f4  tests/tests/kernel/classes/datatable/expDataTableCatalogueTest.php
 0f6630e9a1f8a3a05137e05fdeb7a07c  tests/tests/kernel/classes/datatable/expDataTableDescriberTest.php
+feb9345c8571958f8b3e9dfef3e166e7  tests/tests/kernel/classes/datatable/expDataTableFieldSourcesTest.php
 0d747488869b15b077892ed097695493  tests/tests/kernel/classes/datatable/expDataTableRegistryEntryTest.php
 5cc7fce967620f3fbb3872085ff3d7f4  tests/tests/kernel/classes/datatable/expDataTableRelationTest.php
 c789a8b6f4d91c2a7c1f34ffdf2ed317  tests/tests/kernel/classes/datatable/expDataTableSchemaTest.php
 3d2ab50aaf748b6f77d9e7f6b0e45701  tests/tests/kernel/classes/datatable/expDataTableSqliteFixture.php
-7abc84618341876b1b3405e5166b26ea  tests/tests/kernel/classes/datatable/expDataTableTestLoader.php
+b711325167b0e55379e03d2e4db3cfdf  tests/tests/kernel/classes/datatable/expDataTableTestLoader.php
 1681c4da70c4c1d5acae57b694c09d72  tests/tests/kernel/classes/datatable/expDataTableWriterTest.php
 1ead794e5c8967248a03d1e47035c1e3  tests/tests/kernel/classes/datatable/expKernelSecretAndConnectionTablesTest.php
+dbfe40264d618a091f3cf3562afdc7a9  tests/tests/kernel/classes/datatable/expModuleTableWizardTest.php
 715cb611b342593215299954601754f6  tests/tests/kernel/classes/datatable/expPersistentObjectOnConnectionTest.php
 0f7d6b3a3845de6e9fb082f635076e4f  tests/tests/kernel/classes/datatypes/eZChoiceDatatypesTest.php
 458caf640f2064f029fb48db96abc5ac  tests/tests/kernel/classes/datatypes/eZDataTypeBaseTest.php

@@ -10,10 +10,10 @@ im [Geheimnisspeicher](geheimnisspeicher.md).
 | | |
 |---|---|
 | Was eine Datentabelle ist | Die Tabelle einer persistenten Klasse: eine PHP-Klasse, die `eZPersistentObject` erweitert und ihre Tabelle in `definition()` beschreibt (Felder, Schlüssel, Tabellenname). Der Kernel hat Hunderte davon, die meisten Extensions bringen eigene mit. |
-| Was 6.0.15 hinzufügt | Einen Katalog aller dieser Klassen mit Tabelle, Feldern, Schlüsseln und Beziehungen zu Inhalten; eine Beschreibung jeder Tabelle, wie ihre Datenbank sie führt, und wo sie von der Definition abweicht; benannte Datenbankverbindungen (eine SQLite-Datei, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, lokal oder entfernt); und persistente Klassen, die auf einer solchen Verbindung lesen und schreiben statt in der Datenbank der Installation. Dazu: das Schema einer Tabelle auf jeder Verbindung aus der Administration anlegen oder aktualisieren, ihre Zeilen ansehen, die Zeilen, die auf ein Objekt verweisen, in der Inhaltsansicht zeigen, ein Schreiber für jedes Werkzeug, das Zeilen in eine Tabelle bringt, und Fetch-Funktionen für Templates. |
-| Wo | **Setup > Datentabellen** (Modul `datatable`): Datentabellen, Verbindungen. **Setup > Geheimnisse** (Modul `secrets`) für ihre Passwörter. |
+| Was 6.0.15 hinzufügt | Einen Katalog aller dieser Klassen mit Tabelle, Feldern, Schlüsseln und Beziehungen zu Inhalten; eine Beschreibung jeder Tabelle, wie ihre Datenbank sie führt, und wo sie von der Definition abweicht; benannte Datenbankverbindungen (eine SQLite-Datei, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, lokal oder entfernt); und persistente Klassen, die auf einer solchen Verbindung lesen und schreiben statt in der Datenbank der Installation. Dazu: das Schema einer Tabelle auf jeder Verbindung aus der Administration anlegen oder aktualisieren, ihre Zeilen ansehen, die Zeilen, die auf ein Objekt verweisen, in der Inhaltsansicht zeigen, ein Schreiber für jedes Werkzeug, das Zeilen in eine Tabelle bringt, und Fetch-Funktionen für Templates. Und ein Assistent, der eine neue Tabelle mit Klasse, Schema, Administration, Richtlinien, Fetch-Funktionen und JSON-Endpunkt erstellt und im Browser installiert. |
+| Wo | **Setup > Datentabellen** (Modul `datatable`): Datentabellen, Verbindungen. **Setup > Geheimnisse** (Modul `secrets`) für ihre Passwörter. **Setup > RAD > Modultabelle** (`setup/moduletable`) für eine neue Tabelle. |
 | Kein Befehl nötig | Die Kernel-Tabellen werden auf der Seite Datentabellen angelegt, der Katalog entsteht beim ersten Aufruf der Seite, Verbindungen werden im Browser angelegt und getestet. |
-| Klassen | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()` |
+| Klassen | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()`; `expModuleTableWizard`, `expModuleTableCode`, `expDataTableFieldSource`, `expDataTableFieldSources` |
 | Einstellungen | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<klasse>_<spalte>]`) |
 
 ## Der Katalog
@@ -441,17 +441,118 @@ expKernelTableSchema::tables( $db );                   // alle Tabellen einer Ve
 6. **Datentabellen** führt `myArchiveItem` mit der Verbindung `archive`; ihre Seite zeigt die Tabelle in der
    SQLite-Datei, ihre Zeilen und `node_id` als Beziehung zu einem Knoten.
 
+## Der Assistent für Modultabellen
+
+**Setup > RAD > Modultabelle** (`setup/moduletable`, Richtlinie `setup/setup`) erstellt eine NEUE Datentabelle mit
+allem, was dazugehört, als neue Extension oder ergänzt in einer vorhandenen. Das sind `expModuleTableWizard` (die Seite)
+und `expModuleTableCode` (der Code, den er schreibt), neben dem Assistenten für Modul-Extensions, der dasselbe für
+Tabellen tut, die es schon gibt.
+
+### Woher die Felder kommen
+
+| Quelle | Verweis | Was sie liefert |
+|---|---|---|
+| Eine Liste, auf der Seite eingegeben | (keiner) | Ein Feld pro Zeile: `name typ[(länge)] [required] [unique]`, `#` beginnt einen Kommentar |
+| Eine Inhaltsklasse | der Bezeichner der Klasse | `contentobject_id` (eindeutig), `node_id`, `remote_id`, `name`, `published`, `modified`, dann eine Spalte je Attribut, typisiert nach seinem Datentyp |
+| Eine vorhandene Tabelle | `verbindung:tabelle`, z. B. `site:my_table` | die Spalten, wie die Datenbank sie beschreibt |
+| Eine Feldquelle einer Extension | was die Quelle verlangt (die ID eines Imports ...) | die Felder der Quelle |
+
+Die Typen sind `string` (mit Länge, Vorgabe 255), `text`, `integer`, `float`, `boolean`, `date`, `datetime`, `json`
+und die Beziehungen zu Inhalten `object` (die ID eines Inhaltsobjekts), `node` (die ID eines Knotens) und `user` (die
+Objekt-ID eines Benutzers). Jede Tabelle bekommt außerdem `id`, einen Schlüssel, den die Datenbank hochzählt. Die Seite
+kann `contentobject_id` und/oder `node_id` ergänzen, um jede Zeile mit Inhalt zu verknüpfen, sowie `created` und
+`modified`. **Ihre Felder in die Liste übernehmen** macht aus den Feldern einer Klasse, einer Tabelle oder einer Quelle
+die bearbeitbare Liste.
+
+```
+title string(120) required
+remote_id string(64) unique
+price float
+published date
+article object
+notes text
+```
+
+Ein Link kann den Assistenten mit schon gewählter Quelle öffnen: `setup/moduletable/(source)/<quell-id>/(ref)/<verweis>`,
+oder `setup/moduletable/(class)/<klassenbezeichner>` für eine Inhaltsklasse. So öffnet ihn eine Karte des Katalogs von
+7x SQLI Import für die Felder eines Imports.
+
+Eine Extension bietet eine eigene Quelle als Kernel-Dienst mit dem Tag `datatable.field_source` an, eine Klasse, die
+`expDataTableFieldSource` implementiert: `dataTableSourceName()`, `dataTableReferences()` (eine Liste zur Auswahl oder
+keine), `dataTableFields( array( 'ref' => ... ) )` (die Felder wie oben: name, label, type, length, required, unique)
+und `dataTableSourceLabel()`. Die ID der Quelle ist die Dienst-ID ohne `datatable.field_source.`.
+
+```ini
+[Service_datatable.field_source.myimport]
+Class=myImportFieldSource
+Scope=worker
+Tags[]=datatable.field_source
+Description=The fields of an import of my tool.
+```
+
+### Was er schreibt
+
+| Bestandteil | Dateien |
+|---|---|
+| Persistente Klasse | `classes/<klasse>.php`: `definition()` mit der Verbindung (wenn es nicht die Datenbank der Site ist), den Beziehungen der Felder `object`, `node` und `user` und den eindeutigen Schlüsseln; `fields()`, `create()`, `fetch()`, `fetchList()`, `fetchListCount()`, `target( <feld> )` und je Beziehung ein `<feld>Target()` (Funktionsattribut `<feld>_target`), `toArray()` und `fromInput()`, das die Werte eines Formulars oder eines JSON-Körpers typisiert und Pflichtfelder, Eindeutigkeit, Zahlen, JSON und Längen prüft |
+| Schema und Installations-SQL | `share/db_schema.dba`, `sql/<system>/schema.sql` für MySQL, PostgreSQL, SQLite, Oracle und SQL Server |
+| Modul | `modules/<modul>/module.php` mit den Ansichten `list`, `edit`, `remove` und `json` und den Richtlinien `read` und `edit` |
+| Templates der Administration | `design/admin4/templates/<modul>/{list,edit,remove}.tpl` und dieselben Dateien in `design/admin`: nur admin4-Komponenten, kein `<style>`-Block und kein `style`-Attribut |
+| Fetch-Funktionen | `modules/<modul>/function_definition.php` und `classes/<klasse>functioncollection.php`: `fetch( <modul>, 'list'|'count'|'row' )` |
+| Einstellungen | `module.ini.append.php` (das Modul), `design.ini.append.php` (die Design-Extension), `menu.ini.append.php` (ein Link in der Gruppe **Datentabellen** des Setup-Menüs für Benutzer mit `<modul>/read`) |
+| Nur neue Extension | `ezinfo.php`, `extension.xml`, `composer.json`, `LICENSE` |
+| README | `README.md` einer neuen Extension, `doc/<tabelle>.md` in einer vorhandenen |
+
+Die Seite zeigt jede Datei, bevor etwas geschrieben wird. Ein Tabellenname, der mit `ez` oder `exp_` beginnt, wird auf
+der Datenbank der Site abgelehnt; auf einer benannten Verbindung ist der Name frei.
+
+### Neue oder vorhandene Extension
+
+Gibt es die Extension nicht, schreibt **Extension schreiben** alle Dateien unter `extension/<name>`. Gibt es sie,
+ergänzt **Der Extension hinzufügen**, was fehlt, und ändert nichts, was schon da ist:
+
+- eine Datei, die die Extension schon hat, bleibt, wie sie ist, und wird auf der Seite genannt;
+- `settings/module.ini.append.php`, `design.ini.append.php` und `menu.ini.append.php` bekommen den Block des
+  Assistenten einmal angehängt (markiert mit `# module table wizard: <modul>`), innerhalb der PHP-Hülle der Datei;
+- `share/db_schema.dba` bekommt die neue Tabelle neben den Tabellen, die sie schon hat;
+- `sql/<system>/schema.sql` bekommt die Anweisungen der Tabelle einmal angehängt.
+
+**Als ZIP herunterladen** liefert stattdessen dieselben Dateien, für einen Server, auf dem der Webserver nicht in
+`extension/` schreiben darf.
+
+### Installieren von der Seite aus
+
+| Schaltfläche | Was sie tut |
+|---|---|
+| **Tabelle anlegen** / **Tabelle auf den neuesten Stand bringen** | Legt die Tabelle auf ihrer Verbindung aus dem Schema an oder ergänzt, was fehlt (siehe [Schema](#schema-tabellen-auf-einer-verbindung-anlegen-und-aktualisieren)) |
+| **Extension aktivieren** | Die Aktivierung des Kernels: `ActiveExtensions[]=<name>` kommt in `settings/override/site.ini.append.php`, vorher wird eine Kopie der Datei in `var/<site>/backups/settings-override/` abgelegt; danach werden die Caches geleert und die Autoload-Arrays neu erzeugt |
+| **Auffrischen: Autoloads und Caches** | Für eine schon aktive Extension: erzeugt die Autoload-Arrays neu und leert die INI-, Template-, Override- und Benutzer-Caches |
+
+Kein Schritt braucht die Kommandozeile. Die Rollen, die die Zeilen sehen oder ändern sollen, bekommen `<modul>/read` und
+`<modul>/edit`.
+
+### Der JSON-Endpunkt
+
+`<modul>/json` antwortet in JSON (`{"data": ...}` oder `{"error": ..., "problems": [...]}`) mit dem HTTP-Status:
+
+| Anfrage | Antwort |
+|---|---|
+| `GET <modul>/json?offset=0&limit=50&<feld>=<wert>` | Die Zeilen (höchstens 500), nach Feldern gefiltert: `data`, `total`, `offset`, `limit` |
+| `GET <modul>/json/<id>` | Eine Zeile, 404, wenn es sie nicht gibt |
+| `POST <modul>/json` | Eine neue Zeile aus einem JSON-Objekt (`Content-Type: application/json`) oder Formularfeldern: 201 |
+| `PUT <modul>/json/<id>` | Eine Änderung: 200; auch `POST` mit `_method=PUT` |
+| `DELETE <modul>/json/<id>` | Ein Entfernen: 200; auch `POST` mit `_method=DELETE` |
+
+Lesen braucht `<modul>/read` (die Richtlinie der Ansicht), Schreiben `<modul>/edit` (sonst 403). Eine Zeile, die nicht
+gespeichert werden kann, ergibt 422 mit den Problemen von `fromInput()`. Ein Schreiben aus einer Seite der Site trägt
+wie jeder POST den Formular-Token (den Header `X-CSRF-Token`).
+
 ## Als Nächstes
 
-Die nächsten Schritte der Datentabellen bauen auf dieser Schicht auf:
-
-- ein RAD-Assistent, der eine neue Modultabelle erstellt (die persistente Klasse, ihr Schema je System, die Seiten der
-  Administration mit ihren Richtlinien, Fetch-Funktionen und einen JSON-Endpunkt), aus einer Feldliste, einer
-  Inhaltsklasse oder den Feldern einer Importquelle;
-- die Synchronisation zwischen Tabellen und Inhalten: eine einmalige Kopie in beide Richtungen, eine geplante
-  Synchronisation in eine Richtung über eindeutige Schlüssel, ein Live-Spiegel beim Veröffentlichen, Verschieben und
-  Entfernen, und eine Synchronisation in beide Richtungen mit Konfliktregeln und einer Warteschlange von Konflikten, die
-  in der Administration aufgelöst werden.
+Die Synchronisation zwischen Tabellen und Inhalten baut auf dieser Schicht auf: eine einmalige Kopie in beide
+Richtungen, eine geplante Synchronisation in eine Richtung über eindeutige Schlüssel, ein Live-Spiegel beim
+Veröffentlichen, Verschieben und Entfernen, und eine Synchronisation in beide Richtungen mit Konfliktregeln und einer
+Warteschlange von Konflikten, die in der Administration aufgelöst werden.
 
 ## Tests
 
@@ -463,4 +564,8 @@ müssen. Ebenda geprüft: das Schema (Definitionen als `.dba`, das SQL jedes Sys
 anlegen, eine Spalte ergänzen, zurückgehaltenes Löschen), der Schreiber (Typen, Modi, Probelauf, eine abgelehnte Zeile
 scheitert allein, Verweise, die Klassenzuordnung), die Beziehungen und die Fetch-Funktionen, sowie der Eintrag im
 Register mit dem Reiter der Inhaltsansicht, auf einer SQLite-Verbindung mit einer SQLite-Datenbank im Speicher als
-Datenbank der Site. `tests/tests/lib/ezdb/expPDODBTest.php` prüft den PDO-Treiber auf pdo_sqlite und das SQL der anderen Dialekte.
+Datenbank der Site. Ebenda geprüft ist der Assistent für Modultabellen: die Feldliste und die Feldquellen, die
+Einstellungen und ihre Probleme, jede Datei, die er schreibt (jede PHP-Datei besteht `php -l`, kein Template enthält
+Inline-Stile), die Definition, die er erstellt, das Ergänzen einer vorhandenen Extension (Dateien bleiben unverändert,
+Einstellungs- und Schemadateien werden einmal erweitert) und die erzeugte Klasse, die auf einer SQLite-Verbindung Zeilen
+speichert, liest und prüft. `tests/tests/lib/ezdb/expPDODBTest.php` prüft den PDO-Treiber auf pdo_sqlite und das SQL der anderen Dialekte.

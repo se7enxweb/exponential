@@ -27728,6 +27728,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Find</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site's database or a named connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -64846,6 +64862,286 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>upgrade</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>written</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

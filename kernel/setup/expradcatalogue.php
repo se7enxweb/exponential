@@ -262,6 +262,17 @@ class expRADCatalogue
 
         // ── Modules and views ───────────────────────────────────────────────
 
+        'moduletable' => array(
+            'group' => 'modules',
+            'title' => 'Module table',
+            'what'  => 'A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.',
+            'where' => ezpI18n::tr( 'design/admin/setup/rad', 'extension/<name>/classes/, modules/<module>/, share/db_schema.dba and sql/' ),
+            'register' => ezpI18n::tr( 'design/admin/setup/rad', 'module.ini [ModuleSettings] ExtensionRepositories[] and ModuleList[]' ),
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'eZPersistentObject, on the site\'s database or a named connection' ),
+            'mechanism' => 'directory',
+            'source' => 'kernel/classes/ezpersistentobject.php',
+            'tool'  => 'setup/moduletable' ),
+
         'moduletables' => array(
             'group' => 'modules',
             'title' => 'Module over existing tables',

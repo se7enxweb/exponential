@@ -9,10 +9,10 @@ installation talks to. The passwords of those databases live in the [secret stor
 | | |
 |---|---|
 | What a data table is | The table of a persistent class: a PHP class that extends `eZPersistentObject` and describes its table in `definition()` (fields, keys, the table name). The kernel has hundreds of them; most extensions add their own. |
-| What 6.0.15 adds | A catalogue of every such class with its table, fields, keys and relations to content; a description of each table as its database has it, and where it differs from the definition; named database connections (a SQLite file, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, here or remote); and persistent classes that read and write on such a connection instead of the installation's database. Then: a table's schema created or upgraded on any connection from the administration, its rows browsed, the rows that point at an item shown in the content view, one writer for every tool that puts rows into a table, and fetch functions for templates. |
-| Where | **Setup > Data tables** (module `datatable`): Data tables, Connections. **Setup > Secrets** (module `secrets`) for their passwords. |
+| What 6.0.15 adds | A catalogue of every such class with its table, fields, keys and relations to content; a description of each table as its database has it, and where it differs from the definition; named database connections (a SQLite file, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, here or remote); and persistent classes that read and write on such a connection instead of the installation's database. Then: a table's schema created or upgraded on any connection from the administration, its rows browsed, the rows that point at an item shown in the content view, one writer for every tool that puts rows into a table, and fetch functions for templates. And a wizard that makes a new table with its class, schema, administration, policies, fetch functions and JSON endpoint, and installs it from the browser. |
+| Where | **Setup > Data tables** (module `datatable`): Data tables, Connections. **Setup > Secrets** (module `secrets`) for their passwords. **Setup > RAD > Module table** (`setup/moduletable`) for a new table. |
 | No command needed | The kernel tables are created from the Data tables page, the catalogue is made when the page is first opened, connections are made and tested in the browser. |
-| Classes | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()` |
+| Classes | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()`; `expModuleTableWizard`, `expModuleTableCode`, `expDataTableFieldSource`, `expDataTableFieldSources` |
 | Settings | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<class>_<column>]`) |
 
 ## The catalogue
@@ -424,16 +424,113 @@ expKernelTableSchema::tables( $db );                   // every table of a conne
 6. **Data tables** lists `myArchiveItem` with the connection `archive`; its page shows the table in the SQLite file,
    its rows, and `node_id` as a relation to a node.
 
+## The module table wizard
+
+**Setup > RAD > Module table** (`setup/moduletable`, policy `setup/setup`) makes a NEW data table and everything around
+it, as a new extension or added to an existing one. It is `expModuleTableWizard` (the page) and `expModuleTableCode`
+(the code it writes), beside the module extension wizard, which does the same for tables that exist already.
+
+### Where the fields come from
+
+| Source | Reference | What it gives |
+|---|---|---|
+| A list typed on the page | (none) | One field per line: `name type[(length)] [required] [unique]`, `#` starts a comment |
+| A content class | the class identifier | `contentobject_id` (unique), `node_id`, `remote_id`, `name`, `published`, `modified`, then one column per attribute, typed by its datatype |
+| An existing table | `connection:table`, e.g. `site:my_table` | the columns as the database describes them |
+| A field source of an extension | what the source asks for (an import's id ...) | the source's fields |
+
+The types are `string` (with a length, 255 by default), `text`, `integer`, `float`, `boolean`, `date`, `datetime`,
+`json`, and the relations to content `object` (a content object id), `node` (a node id) and `user` (a user's object
+id). Every table also gets `id`, a key the database counts up. The page can add `contentobject_id` and/or `node_id` to
+tie each row to content, and `created` and `modified`. **Copy its fields into the list** turns the fields of a class,
+a table or a source into the editable list.
+
+```
+title string(120) required
+remote_id string(64) unique
+price float
+published date
+article object
+notes text
+```
+
+A link can open the wizard with a source already chosen: `setup/moduletable/(source)/<source id>/(ref)/<reference>`, or
+`setup/moduletable/(class)/<class identifier>` for a content class. This is how a catalogue card of 7x SQLI Import opens
+it for an import's fields.
+
+An extension offers its own source as a kernel service tagged `datatable.field_source`, a class implementing
+`expDataTableFieldSource`: `dataTableSourceName()`, `dataTableReferences()` (a list to choose from, or none),
+`dataTableFields( array( 'ref' => ... ) )` (the fields as above: name, label, type, length, required, unique) and
+`dataTableSourceLabel()`. The id of the source is the service id without `datatable.field_source.`.
+
+```ini
+[Service_datatable.field_source.myimport]
+Class=myImportFieldSource
+Scope=worker
+Tags[]=datatable.field_source
+Description=The fields of an import of my tool.
+```
+
+### What it writes
+
+| Part | Files |
+|---|---|
+| Persistent class | `classes/<class>.php`: `definition()` with the connection (when it is not the site's database), the relations of the `object`, `node` and `user` fields, the unique keys; `fields()`, `create()`, `fetch()`, `fetchList()`, `fetchListCount()`, `target( <field> )` and one `<field>Target()` per relation (function attribute `<field>_target`), `toArray()` and `fromInput()`, which types the values of a form or a JSON body and checks required, unique, numbers, JSON and lengths |
+| Schema and install SQL | `share/db_schema.dba`, `sql/<engine>/schema.sql` for MySQL, PostgreSQL, SQLite, Oracle and SQL Server |
+| Module | `modules/<module>/module.php` with the views `list`, `edit`, `remove` and `json` and the policies `read` and `edit` |
+| Admin templates | `design/admin4/templates/<module>/{list,edit,remove}.tpl` and the same files in `design/admin`: the admin4 components only, no `<style>` block and no `style` attribute |
+| Fetch functions | `modules/<module>/function_definition.php` and `classes/<class>functioncollection.php`: `fetch( <module>, 'list'|'count'|'row' )` |
+| Settings | `module.ini.append.php` (the module), `design.ini.append.php` (the design extension), `menu.ini.append.php` (a link in the **Data tables** group of the Setup menu for users with `<module>/read`) |
+| New extension only | `ezinfo.php`, `extension.xml`, `composer.json`, `LICENSE` |
+| README | `README.md` of a new extension, `doc/<table>.md` in an existing one |
+
+The page shows every file before anything is written. A table name starting with `ez` or `exp_` is refused on the
+site's database; on a named connection the name is free.
+
+### A new extension or an existing one
+
+When the extension does not exist, **Write the extension** writes all files below `extension/<name>`. When it exists,
+**Add to the extension** adds what is missing and changes nothing that is there:
+
+- a file the extension has already is left as it is and named on the page;
+- `settings/module.ini.append.php`, `design.ini.append.php` and `menu.ini.append.php` get the wizard's block appended
+  once (marked `# module table wizard: <module>`), inside the file's PHP wrapper;
+- `share/db_schema.dba` gets the new table beside the tables it has;
+- `sql/<engine>/schema.sql` gets the table's statements appended once.
+
+**Download as zip** hands the same files over instead, for a server whose `extension/` the web server cannot write.
+
+### Installing from the page
+
+| Button | What it does |
+|---|---|
+| **Create the table** / **Bring the table up to date** | Creates the table on its connection from the schema, or adds what is missing (see [Schema](#schema-creating-and-upgrading-tables-on-a-connection)) |
+| **Activate the extension** | The kernel's own activation: `ActiveExtensions[]=<name>` is added to `settings/override/site.ini.append.php`, a copy of the file is kept first in `var/<site>/backups/settings-override/`, then the caches are cleared and the autoload arrays regenerated |
+| **Refresh: autoloads and caches** | For an extension that is active already: regenerates the autoload arrays and clears the INI, template, override and user caches |
+
+No step needs the command line. The roles that should see or change the rows get `<module>/read` and `<module>/edit`.
+
+### The JSON endpoint
+
+`<module>/json` answers in JSON (`{"data": ...}`, or `{"error": ..., "problems": [...]}`) with the HTTP status:
+
+| Request | Answer |
+|---|---|
+| `GET <module>/json?offset=0&limit=50&<field>=<value>` | The rows (at most 500), filtered by fields: `data`, `total`, `offset`, `limit` |
+| `GET <module>/json/<id>` | One row, 404 when there is none |
+| `POST <module>/json` | A new row from a JSON object (`Content-Type: application/json`) or form fields: 201 |
+| `PUT <module>/json/<id>` | A change: 200; also `POST` with `_method=PUT` |
+| `DELETE <module>/json/<id>` | A removal: 200; also `POST` with `_method=DELETE` |
+
+Reading needs `<module>/read` (the view's policy), writing `<module>/edit` (403 without it). A row that cannot be
+stored is 422 with the problems of `fromInput()`. A write from a page of the site carries the form token like every
+POST (the header `X-CSRF-Token`).
+
 ## Coming next
 
-The next steps of the data tables build on this layer:
-
-- a RAD wizard that makes a new module table (the persistent class, its schema per engine, the administration pages
-  with their policies, fetch functions and a JSON endpoint) from a list of fields, a content class or the fields of an
-  import source;
-- the synchronisation between tables and content: a one-off copy either way, a scheduled one-way sync by unique keys, a
-  live mirror on publish, move and remove, and a two-way sync with conflict rules and a queue of conflicts to resolve
-  in the administration.
+The synchronisation between tables and content builds on this layer: a one-off copy either way, a scheduled one-way
+sync by unique keys, a live mirror on publish, move and remove, and a two-way sync with conflict rules and a queue of
+conflicts to resolve in the administration.
 
 ## Tests
 
@@ -444,5 +541,8 @@ must be the same in `share/db_schema.dba`, the persistent classes, the three ker
 The schema (definitions to `.dba`, the SQL of every engine, plan and apply on SQLite: create, add a column, held drops),
 the writer (types, modes, dry run, a refused row failing alone, references, the class map), the relations and the
 fetch functions, and the registry entry with the content view's tab are tested there too, on a SQLite connection with
-a SQLite database in memory as the site's.
+a SQLite database in memory as the site's. The module table wizard is tested there as well: the field list and the
+field sources, the settings and their problems, every file it writes (every PHP file passes `php -l`, no template holds
+inline styles), the definition it makes, adding a table to an existing extension (files left alone, settings and
+schema files extended once), and the generated class storing, reading and checking rows on a SQLite connection.
 `tests/tests/lib/ezdb/expPDODBTest.php` tests the PDO driver on pdo_sqlite and the SQL of the other dialects.

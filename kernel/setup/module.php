@@ -193,6 +193,16 @@ $ViewList["workflowevent"] = array(
     "default_navigation_part" => 'ezsetupnavigationpart',
     "params" => array( ) );
 
+// The module table wizard: a new data table, its class, schema, module, templates and JSON endpoint
+// (doc/eng-us/features/6.0/data-tables.md, "The module table wizard")
+$ViewList["moduletable"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "moduletable.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( ),
+    'unordered_params' => array( 'source' => 'Source', 'ref' => 'Ref', 'class' => 'ContentClass' ) );
+
 $ViewList["moduleextension"] = array(
     'functions' => array( 'setup' ),
     "script" => "moduleextension.php",

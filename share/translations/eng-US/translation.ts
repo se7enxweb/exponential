@@ -28060,6 +28060,22 @@ Note: The packages will not be uninstalled.</translation>
         <source>Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed. runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first script starts; only true runs the part.</source>
         <translation>Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed. runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first script starts; only true runs the part.</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Module table</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site's database or a named connection</source>
+        <translation>eZPersistentObject, on the site's database or a named connection</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -64139,6 +64155,286 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>upgrade</source>
         <translation>upgrade</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines lines</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>A content class</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>A content object (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>A link in the Data tables group of the Setup menu, for users with the policy read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>A list of fields typed here</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>A new name, or an existing extension to add the table to.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>A node (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Activate the extension</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Add created and modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Add to the extension</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Admin templates</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>An existing table (connection:table)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Author</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Both</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Bring the table up to date</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Copy its fields into the list</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Download as zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Each table also gets id, a key counted up by the database.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Fields, one per line: name type[(length)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Left as they are: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>License</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Module</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Module table wizard</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Open the module</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP class</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Parts, license and author</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Persistent class</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Rapid Application Development</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Refresh: autoloads and caches</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Schema and install SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Setup menu entry</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Show the files</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Template fetch functions</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>The eZPersistentObject class of the table, with its fields, connection and relations.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>The extension and the table</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>The extension is active.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>The extension is written but not active.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>The fields</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>The fields of %source are in the list now: change them as you need.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>The files (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>The license text (a new extension only).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>The pages of the module in the administration (admin4 components, no inline styles).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>The table does not exist yet.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>The table exists.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Tie each row to content</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>To install the extension as a package (a new extension only).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Unique</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>What the about page shows (a new extension only).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>What was made, and how to install and use it.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Where the fields come from</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Which one</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Write the extension</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>exists, left as it is</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php and extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>written</translation>
     </message>
 </context>
 <context>
