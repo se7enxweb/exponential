@@ -8,7 +8,7 @@
  *          the other server user, and does not fetch a stored image again
  *  HRI-02  refused: http, a redirect to http, a user name, another port, too many redirects, a status other than 200,
  *          a body over MAX_BYTES, SVG and other content types, bytes that are not the type the header says
- *  HRI-03  references() finds ![](https://), <img src=https://> and reference definitions, as the renderer resolves them
+ *  HRI-03  references() finds ![](https://), <img src=https://> and reference definitions, as the renderer resolves them; image syntax inside code blocks and code spans is skipped
  *  HRI-04  the renderer shows the copy as an <img> with the local address, keeps width, height and alt of an <img>
  *          tag as attributes, and keeps the link fallback for an image without a copy
  *  HRI-05  the view exphelp/image names a file only for the 64 hex id of a stored copy: unknown ids, upper case,
@@ -172,6 +172,11 @@ class expHelpRemoteImagesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'https://github.com/user-attachments/assets/b16a', 'https://github.com/user-attachments/assets/ef51',
                                   'https://example.com/shot.webp' ),
                            expHelpRemoteImages::references( $md ) );
+        $code = "Write `![alt](https://example.com/span.png)` for an image.\n\n"
+            . "```markdown\n![alt](https://example.com/fence.png)\n<img src=\"https://example.com/fence2.png\">\n```\n\n"
+            . "~~~\n![alt](https://example.com/tilde.png)\n~~~\n"
+            . "![real](https://example.com/real.png)\n";
+        $this->assertSame( array( 'https://example.com/real.png' ), expHelpRemoteImages::references( $code ), 'examples in code are not images' );
         $this->assertSame( 'https://example.com/a.png', expHelpRemoteImages::normalize( '//example.com/a.png' ), 'as the renderer sees it' );
         $this->assertNull( expHelpRemoteImages::normalize( 'img/a.png' ) );
     }

@@ -392,7 +392,7 @@ dbe5def951f76a833fe3992eb68bf430  design/admin/templates/class/exp_list_script.t
 06850be333353d9dd80636d5d7cf527d  design/admin/templates/class/select_language.tpl
 0968be0f253ab2b80b5c43d2aab0827b  design/admin/templates/class/templates.tpl
 831d2c3b05d77eb493de4ae71e3846c2  design/admin/templates/class/translations.tpl
-42ea0b2e6fbb000416a1b8e998199575  design/admin/templates/class/view.tpl
+f5dc69d471e0b6eed124b1be1435a6e0  design/admin/templates/class/view.tpl
 4581eb88f3baec539c96d289d36131b4  design/admin/templates/class/window_controls.tpl
 03a840054c5ab652032b65fa93bd3e2a  design/admin/templates/class/windows.tpl
 480c83b0bac58273d014cac3af49ca33  design/admin/templates/collaboration/group/view/list.tpl
@@ -579,6 +579,7 @@ c8c277782088582b8a0e8fce4ece5e66  design/admin/templates/notification/handler/ez
 b5c832d529e7ed9b2c32be06badaf57a  design/admin/templates/notification/removeresult.tpl
 bad8545e8a97034967109a6e5b74543e  design/admin/templates/notification/runfilter.tpl
 d01bbc72014abdbc972a2a2245c13083  design/admin/templates/notification/settings.tpl
+d71ca23597b73fa3a9678fdeac1fbeef  design/admin/templates/notification/status.tpl
 67b919e7f0138b2336de502eaf162770  design/admin/templates/oauthadmin/delete_confirmation.tpl
 299f4894744d48800e170ca089309e1a  design/admin/templates/oauthadmin/edit.tpl
 3ffa5900d52c4e875c0f77e2f60b73df  design/admin/templates/oauthadmin/key_revoke_confirmation.tpl
@@ -710,7 +711,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin/templates/settings/exp_origin.tpl
 afea2c896730f8b9142080fee6e1ebdd  design/admin/templates/setup/designextension.tpl
 11f0aa0693cddbf698731e7dc5e1e576  design/admin/templates/setup/extensions.tpl
 e7c49888f84d392e3d9c0fac2a8ed395  design/admin/templates/setup/handlerextension.tpl
-d7a035a7cf92aaccc6715c0b4e2a6ec8  design/admin/templates/setup/info.tpl
+b9dbafa10d6369d4d1aa5bae3a810485  design/admin/templates/setup/info.tpl
 b6cd17ce32f4503e4efa3de4023ae532  design/admin/templates/setup/kerneloverride.tpl
 26834e98fce147b8eb87749da5233252  design/admin/templates/setup/languages.tpl
 bb038cf7a9fdc88514696d5cf6ce35a9  design/admin/templates/setup/logs.tpl
@@ -1130,7 +1131,7 @@ ce3b91619885f77dcd20a2a20ec07d2f  design/admin4/templates/class/grouplist.tpl
 06850be333353d9dd80636d5d7cf527d  design/admin4/templates/class/select_language.tpl
 0968be0f253ab2b80b5c43d2aab0827b  design/admin4/templates/class/templates.tpl
 8eee0867bd7296f075e74e6a4d708c91  design/admin4/templates/class/translations.tpl
-2f822872021ccbeb8d8c376f7917c2a6  design/admin4/templates/class/view.tpl
+7ada7eb4dc4f1b21e26acb474c8a6173  design/admin4/templates/class/view.tpl
 287cedb6f59889a93ee22e4cdf92ddff  design/admin4/templates/class/window_controls.tpl
 03a840054c5ab652032b65fa93bd3e2a  design/admin4/templates/class/windows.tpl
 ecda0ad69c9b183cee1135ab0f1af39c  design/admin4/templates/collaboration/group/view/list.tpl
@@ -1493,7 +1494,7 @@ b19bea8949b01eb13fbddf1ef40fb06b  design/admin4/templates/setup/contentextension
 dddca14898250d79c04a924be8a93168  design/admin4/templates/setup/designextension.tpl
 f05c99b45e66c3df695d4b315c7ae1b0  design/admin4/templates/setup/extensions.tpl
 499ac5c3d06675c2c30b7be31bdaf2d7  design/admin4/templates/setup/handlerextension.tpl
-150ac5ce290ba91f1f879a303f30eb3e  design/admin4/templates/setup/info.tpl
+bd83335042f92294b1b2bcb95070f4da  design/admin4/templates/setup/info.tpl
 3c64396c201ce7fc624bac2464b38930  design/admin4/templates/setup/kerneloverride.tpl
 26834e98fce147b8eb87749da5233252  design/admin4/templates/setup/languages.tpl
 bb038cf7a9fdc88514696d5cf6ce35a9  design/admin4/templates/setup/logs.tpl
@@ -3208,7 +3209,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-1bc0f64a35dcb6523fa3241a1e6faf0e  doc/changelogs/6.0/6.0.15.md
+81ab96bb24031b094c58a8fada02a811  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6240,7 +6241,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 0e464036cacc73b686d0d651d329bf98  doc/eng-us/features/6.0/help-content.md
-6820d3fd79bce2b6dce634e2d964b9ee  doc/eng-us/features/6.0/help-system.md
+3b51634fa66e26d10a01c4063d66db8e  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 695c0016c5a385b9902ba21c168a66ce  doc/eng-us/features/6.0/install-in-one-command.md
@@ -15009,7 +15010,7 @@ b3f4195f79b892bca854beb80acf293a  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 339e70d0ff63ba7702504a938cee731f  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-541c1a3b9f5ffe6b54698b8c017cb962  doc/ger-de/funktionen/6.0/hilfesystem.md
+963b9da2ea59e31f718ce59b040357a5  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 644c0221d0cfa8304484565ac4c458ac  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -20211,7 +20212,7 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 69e945b04dd9717d0446cf7306528fe7  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-93aa9a12c083f563be050b543e22080e  kernel/classes/expvelocity.php
+607277ce0b8be9f6284b72501f649fdc  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 61f3e1980b4093057ceac49b80ec6fd6  kernel/classes/expvelocityconfiglayout.php
 71de74a3d7ef045020b4f88f4ede5292  kernel/classes/expvelocitydeploy.php
@@ -20400,7 +20401,7 @@ f7effc41230d544e41a80cf064a96a9d  kernel/classes/help/exphelppdfwriter.php
 61657e73c198af717fbfac518a9e78a1  kernel/classes/help/exphelpprojectfiles.php
 7040601f170d784b39ec006f577da0a4  kernel/classes/help/exphelpreadpolicygrant.php
 d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
-bd6a8e8266d2adf9c050c4ff790ee826  kernel/classes/help/exphelpremoteimages.php
+c27d8162e494a41713e53e5af9cf0d7e  kernel/classes/help/exphelpremoteimages.php
 ee756ea5fba2ba58e03c8c75da88abd7  kernel/classes/help/exphelpsearch.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
@@ -20627,7 +20628,7 @@ ce9600aa8d2d9a4d05280d8739b41630  kernel/common/ezpi18n.php
 f96a90033dfa982c5532d6e86250f804  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
 7d8a5a3184eadfd4d955dc09d8bcf50f  kernel/common/eztemplateautoload.php
-5bd855003c810187b6d3b2b35b650ae5  kernel/common/eztemplatedesignresource.php
+9ceb4c9f830f1adb379fb9ebcd1aad62  kernel/common/eztemplatedesignresource.php
 9a8a326aaf46c622ad345e92a192ab41  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 c1b77acfcb295ee03ada1972e12a84d6  kernel/common/eztopmenuoperator.php
@@ -21157,7 +21158,7 @@ f86ea06247131f9bb463f3ca72c6b0a7  kernel/private/classes/views/setup/cronjobsstr
 5957a06fa0d58e7749c8a3409cf46e3d  kernel/private/classes/views/setup/extensions.php
 d20e53a9eb38c6817005501482fff8ab  kernel/private/classes/views/setup/ezsetup.php
 ae11e7010436d30804244b58f892c156  kernel/private/classes/views/setup/handlerextension.php
-fa104229cacb6d0503e74fc57f21b836  kernel/private/classes/views/setup/info.php
+d498fd598cbd04c6c8082cd27e4a1c8b  kernel/private/classes/views/setup/info.php
 145b00435bed599bec736dee0133ebc6  kernel/private/classes/views/setup/kerneloverride.php
 13fe24ae58def29446be495e0332940f  kernel/private/classes/views/setup/languages.php
 05deb174a40b531102c80330b7cfd599  kernel/private/classes/views/setup/logs.php
@@ -21882,7 +21883,7 @@ d0439b8f2b787ccf297f4018fe42e6e1  lib/version.php
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 d75f9c86a66f0ee1b7d3208547666681  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-3473a8c6a4056f6864256712b29c82c4  phpunit.xml
+13c43e8ddb430f34405c1ed4a8b29b7e  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -23160,6 +23161,7 @@ abe87695b0129240038005d88c363c48  tests/tests/extension/ezoe/expOEUploadRulesTes
 a1fc7b448e95e5b9f8256737a973c160  tests/tests/extension/ezoe/ezoeSpellcheckRpcRawInputTest.php
 f129e8f6df7dcda001d08dac96f1e4e2  tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
+d655c67415c0fe81327d520f206ad1ff  tests/tests/extension/ezprestapi/ezprestapiProviderIndependenceTest.php
 0ad46106024a19fb56a0f6b40385963a  tests/tests/extension/ezupdate/ezUpdateAdminStylingTest.php
 8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
 7cbc222f8785f2bf803a6704595b6cbc  tests/tests/extension/ezupdate/ezUpdateComposerVersionCacheTest.php
@@ -23183,6 +23185,7 @@ a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapi
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php
 89b118c6d391cbf19c7af686e98794a2  tests/tests/extension/sevenx_dse/fixtures/adminneo_throws_other.php
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
+d8aef2fead647bf588799e969b3627e3  tests/tests/kernel/classes/SiteAccessDesignAndAdminViewWarningsTest.php
 94e110c5205488d8c6b08cfe9136eeca  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
 80f2b4056adbe4f9240733cdcfd4d5d9  tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php
 633325175e872eb956f557b4c8948323  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
@@ -23515,7 +23518,7 @@ b33f7662af4ec33ba73bccf286d6b0d4  tests/tests/kernel/classes/help/expHelpPdfTest
 84323ff02193037437748b236e525ac3  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 4f25918ec9e72e0507962b20d24233b6  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
-a5cbd6f6d778cd7432f702b933033f3f  tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php
+6df7f1b384b125f8b8c123573716affb  tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php
 c6e73304dfc317b383e271cdd00cab68  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
 41726599964dc05529c6180acaeef567  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 66f45986e6d0a6db9811c5310289cbc2  tests/tests/kernel/classes/help/expHelpSearchHrefTest.php
