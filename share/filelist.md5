@@ -10030,6 +10030,7 @@ b6f53929208624cdd2030096b8bfd298  doc/eng-us/help/manual/README.md
 90c576b3e72c30a505c0e99bb4a7d7ed  doc/eng-us/help/manual/how-do-i-add-a-content-language.md
 6574f4c33807b183d6c6a805b383cb8e  doc/eng-us/help/manual/how-do-i-add-a-currency.md
 ec5d32f7cdf2fb46474c189f9096a84e  doc/eng-us/help/manual/how-do-i-add-a-link-in-the-online-editor.md
+3bc243fa3c66058087f56e8de22b3ded  doc/eng-us/help/manual/how-do-i-add-a-user-or-a-user-group.md
 f236bb065077cd7aa3c644e3be6cb195  doc/eng-us/help/manual/how-do-i-add-an-anchor-in-the-online-editor.md
 f0b32da6dd13fe644d9f8072649751cd  doc/eng-us/help/manual/how-do-i-add-an-attribute-to-a-content-class.md
 82e4ac9e252487df109ca401a8df0b00  doc/eng-us/help/manual/how-do-i-approve-or-reject-content.md
@@ -10068,9 +10069,11 @@ b36c121bc572f5243e73092b3d7976ab  doc/eng-us/help/manual/how-do-i-go-back-to-an-
 c8e2c9980894582709149a5f8b3e030d  doc/eng-us/help/manual/how-do-i-insert-an-image-in-the-online-editor.md
 9b04eda87ed19596dae2b82a482adfef  doc/eng-us/help/manual/how-do-i-keep-the-tag-tree-tidy.md
 3e0485cb4c42902138e1fdaae534d9f2  doc/eng-us/help/manual/how-do-i-let-a-translator-edit-one-language.md
+51615c85cd2f385492b585220ccac6f5  doc/eng-us/help/manual/how-do-i-move-a-user-to-another-group.md
 48c26958f9722cf7012f9cd944842e13  doc/eng-us/help/manual/how-do-i-move-or-copy-an-item.md
 e390552fb9582a509a1e89b5dfa805e0  doc/eng-us/help/manual/how-do-i-preview-a-draft.md
 1950bb284472f3457240d92559697ef8  doc/eng-us/help/manual/how-do-i-publish-an-rss-feed.md
+e5b10f990624936faf089fd2b4e08c07  doc/eng-us/help/manual/how-do-i-publish-content-at-a-later-time.md
 680558c8f58cba3d277e806143f1f0cf  doc/eng-us/help/manual/how-do-i-read-the-log-files.md
 382a5ea6ef20f4838397033aeb6c28bc  doc/eng-us/help/manual/how-do-i-redirect-old-addresses.md
 d691ea29861a1b47c43330fecd12f52f  doc/eng-us/help/manual/how-do-i-relate-other-items-while-editing.md
@@ -10081,11 +10084,14 @@ b58125781c06715625a71b5db62546a6  doc/eng-us/help/manual/how-do-i-see-active-ext
 f8872687aae28406db7c08149f12fee6  doc/eng-us/help/manual/how-do-i-see-all-products-and-prices.md
 94edb8f14a07f6993439426f9e108984  doc/eng-us/help/manual/how-do-i-see-customers-and-product-statistics.md
 f9b70f16458b909a02057b62bbdecb7a  doc/eng-us/help/manual/how-do-i-see-form-submissions.md
+6d08f9ae7f19c914b98a4a3a51ebc792  doc/eng-us/help/manual/how-do-i-see-what-a-user-may-do.md
 4701a7402c9f6ba876e200b62ec1c679  doc/eng-us/help/manual/how-do-i-see-what-visitors-search-for.md
 27f7f1c5227d42176f6f28f0ee9a53c4  doc/eng-us/help/manual/how-do-i-send-a-newsletter.md
 a22266b884b22f2b0ea67ad51ef5b98a  doc/eng-us/help/manual/how-do-i-send-content-for-approval.md
 cb2519208dfb17656146fdc9f478598e  doc/eng-us/help/manual/how-do-i-set-a-product-price-per-currency.md
 2a7b1f8ceeb42cd10292a1a3903e64ef  doc/eng-us/help/manual/how-do-i-set-the-seo-title-and-description.md
+3ebb28f2a608619cdc7b489411dfd7ea  doc/eng-us/help/manual/how-do-i-set-up-a-members-only-area.md
+0e494c4d8a385eaaf6b8c0c6fac4749d  doc/eng-us/help/manual/how-do-i-set-up-approval-before-publishing.md
 4f145b69d6cf6013db0847c4e2373e04  doc/eng-us/help/manual/how-do-i-set-up-vat.md
 74a8ced4798965b7ce67b37a95940d8d  doc/eng-us/help/manual/how-do-i-show-an-item-in-more-than-one-place.md
 4c96c828477e39c29a6b3ed9602735d4  doc/eng-us/help/manual/how-do-i-show-an-item-in-untranslated-languages.md
