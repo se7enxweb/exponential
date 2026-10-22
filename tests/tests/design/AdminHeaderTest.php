@@ -324,7 +324,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
 
         $css = self::css( 'admin4.css' );
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );
-        $this->assertSame( '3', $tablet['.header-site, .header-theme, .header-help']['order'], 'same order as light/dark: the markup puts it first' );
+        $this->assertSame( '3', $tablet['.header-site, .header-theme, .header-help, .header-items']['order'], 'same order as light/dark: the markup puts it first' );
         $this->assertSame( '4', $tablet['.header-user']['order'] );
         $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'auto', $phone['.header-site']['margin-inline-start'], 'the tools stand together at the row\'s end' );
@@ -359,7 +359,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $checked = 0;
         foreach ( $rules as $selector => $declarations )
         {
-            if ( !preg_match( '/\.a4-(nav-more|header-btn|user-menu|logout)/', $selector ) )
+            if ( !preg_match( '/\.a4-(nav-more|header-btn|user-menu|logout|header-count|header-panel|header-item)/', $selector ) )
                 continue;
             foreach ( $declarations as $property => $value )
             {
@@ -370,5 +370,44 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThan( 40, $checked, 'the header rules were not read' );
         $forced = AdminBaseStylesheetsTest::rules( $css, true );
         $this->assertSame( 'ButtonText', $forced['.a4-header-btn, .a4-nav-more-list, .a4-user-menu']['border-color'] );
+    }
+
+    /**
+     * The header items of the extensions (design.ini [AdminHeaderSettings] HeaderItems[]): one shared part included
+     * after Help and before the user menu in admin4 and admin4l; each item a link that a disclosure button replaces
+     * with the script (aria-expanded, aria-controls), its count aria-hidden and in the button's name, a feed loaded by
+     * admin4.js and drawn with textContent; no inline style or script; the colours from tokens.
+     */
+    public function testExtensionsAddHeaderItemsAfterHelp()
+    {
+        $this->assertMatchesRegularExpression( '/^\[AdminHeaderSettings\]\n(#[^\n]*\n)+HeaderItems\[\]$/m', self::file( 'settings/design.ini' ) );
+        $include = "{include uri='design:parts/a4_header_items.tpl'}";
+        foreach ( array( 'design/admin4/templates/page_topmenu.tpl', 'design/admin4l/templates/explayouts/block/admin_theme_switch.tpl' ) as $path )
+        {
+            $top = self::file( $path );
+            $this->assertSame( 1, substr_count( $top, $include ), $path );
+            $this->assertLessThan( strpos( $top, $include ), strpos( $top, "{include uri='design:parts/a4_header_help.tpl'}" ), "$path: after Help" );
+            $this->assertLessThan( strpos( $top, "{include uri='design:parts/a4_header_user.tpl'}" ), strpos( $top, $include ), "$path: before the user menu" );
+        }
+        $items = self::file( 'design/admin4/templates/parts/a4_header_items.tpl' );
+        $this->assertStringContainsString( "{foreach ezini( 'AdminHeaderSettings', 'HeaderItems', 'design.ini' ) as \$a4_header_item}{include uri=concat( 'design:', \$a4_header_item )}{/foreach}", $items );
+        $item = self::file( 'design/admin4/templates/parts/a4_header_item.tpl' );
+        foreach ( array( 'class="a4-header-btn a4-header-item-link"', '<div class="a4-site-menu-wrap a4-header-item-wrap" hidden>',
+                         'aria-expanded="false" aria-controls="{$a4_hi_id}-panel"', 'data-a4-header-feed="{$a4_hi_feed|wash}"',
+                         '<span class="a4-header-count" aria-hidden="true"', 'class="a4-site-menu a4-header-panel" hidden' ) as $needle )
+            $this->assertStringContainsString( $needle, $item );
+        foreach ( array( $items, $item ) as $tpl )
+        {
+            $this->assertDoesNotMatchRegularExpression( '/<style|style="|<script/i', $tpl );
+        }
+        $js = self::file( 'design/admin4/javascript/admin4.js' );
+        $this->assertStringContainsString( "button.setAttribute('aria-label', label);", $js, 'the count is in the name' );
+        $this->assertStringContainsString( 'text.textContent = entry.text;', $js, 'entries are text, never HTML' );
+        $this->assertStringNotContainsString( 'innerHTML', substr( $js, strpos( $js, 'function headerItems()' ), 4000 ) );
+        $this->assertStringContainsString( "        headerItems();\n", $js );
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
+        $this->assertSame( 'var(--a4-accent)', $rules['.a4-header-count']['background-color'] );
+        $this->assertSame( 'var(--a4-on-accent)', $rules['.a4-header-count']['color'] );
+        $this->assertSame( 'none', $rules['.a4-header-count[hidden], .a4-header-panel-empty[hidden]']['display'] );
     }
 }

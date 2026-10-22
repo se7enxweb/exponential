@@ -261,7 +261,8 @@ body,
   }
   .header-site,
   .header-theme,
-  .header-help { order: 3; }   /* the site link first: same order, so the markup's order decides */
+  .header-help,
+  .header-items { order: 3; }   /* the site link first: same order, so the markup's order decides */
   .header-user { order: 4; }
   .navbar-menu {
     order: 5;
@@ -1004,6 +1005,52 @@ body,
 }
 .a4-site-menu-list { margin: 0; padding: 0; list-style: none; }
 .a4-site-menu-list li { margin: 0; }
+/* The header items of the extensions (parts/a4_header_item.tpl, design.ini [AdminHeaderSettings] HeaderItems[]): round
+   tools as Help, side by side; the count on the button's corner, in the accent's colours, hidden at 0. The count is
+   also in the button's name, so the badge itself is aria-hidden. */
+.header-items,
+.header-item {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+}
+.a4-header-item-toggle { position: relative; }
+.a4-header-count {
+  position: absolute;
+  top: calc(-1 * var(--a4-space-1));
+  inset-inline-end: calc(-1 * var(--a4-space-1));
+  box-sizing: border-box;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 var(--a4-space-1);
+  border: 1px solid var(--a4-card);
+  border-radius: 999px;
+  background-color: var(--a4-accent);
+  color: var(--a4-on-accent);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  pointer-events: none;
+}
+.a4-header-count[hidden],
+.a4-header-panel-empty[hidden] { display: none; }
+.a4-header-panel { min-width: 18rem; }
+.a4-header-panel .a4-header-panel-heading { margin-top: 0; border-top: 0; }
+.a4-header-panel-empty {
+  margin: 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  color: var(--a4-muted);
+}
+.a4-header-panel .a4-header-panel-all { margin: var(--a4-space-1) 0 0; }
+@media (forced-colors: active) {
+  .a4-header-count {
+    border-color: CanvasText;
+    background-color: Canvas;
+    color: CanvasText;
+    forced-color-adjust: none;
+  }
+}
 /* The Help menu (parts/a4_header_help.tpl): the site menu's panel and entries, with a search of the help on top and
    the Help center at the end */
 .a4-help-menu { min-width: 18rem; }

@@ -282,11 +282,78 @@
             });
         }
     }
+
+    // the header items of the extensions (parts/a4_header_item.tpl): the button takes the place of the link, which
+    // stays for a browser without the script. An item with a feed (data-a4-header-feed, JSON: count, label, items)
+    // loads it now and each time its panel opens, since the header is drawn from a cache block: the count on the
+    // corner, the button's name ("Notifications: 3 new") and the entries, made with textContent.
+    function headerItems() {
+        Array.prototype.forEach.call(document.querySelectorAll('.a4-header-item'), function (item) {
+            var wrap = item.querySelector('.a4-header-item-wrap');
+            var button = item.querySelector('.a4-header-item-toggle');
+            var panel = button && document.getElementById(button.getAttribute('aria-controls'));
+            if (!wrap || !button || !panel) return;
+            var link = item.querySelector('.a4-header-item-link');
+            wrap.hidden = false;
+            if (link) link.hidden = true;
+            disclosure(button, panel);
+            var feed = button.getAttribute('data-a4-header-feed');
+            if (!feed || !window.fetch) return;
+            var count = button.querySelector('.a4-header-count');
+            var list = panel.querySelector('.a4-header-panel-list');
+            var empty = panel.querySelector('.a4-header-panel-empty');
+            var name = button.getAttribute('data-a4-header-label') || '';
+            function show(data) {
+                if (data && data.content && typeof data.content === 'object') data = data.content;
+                if (!data || typeof data !== 'object') return;
+                var n = parseInt(data.count, 10) || 0;
+                var label = typeof data.label === 'string' && data.label !== '' ? data.label : name;
+                button.setAttribute('aria-label', label);
+                button.setAttribute('title', label);
+                if (count) {
+                    count.textContent = n > 99 ? '99+' : String(n);
+                    count.hidden = n === 0;
+                }
+                if (!list || !Array.isArray(data.items)) return;
+                while (list.firstChild) list.removeChild(list.firstChild);
+                data.items.forEach(function (entry) {
+                    if (!entry || typeof entry.text !== 'string') return;
+                    var li = document.createElement('li');
+                    var a = document.createElement(entry.url ? 'a' : 'span');
+                    if (entry.url) a.setAttribute('href', String(entry.url));
+                    var text = document.createElement('span');
+                    text.className = 'a4-site-menu-name';
+                    text.textContent = entry.text;
+                    a.appendChild(text);
+                    if (entry.meta) {
+                        var meta = document.createElement('span');
+                        meta.className = 'a4-site-menu-meta';
+                        meta.textContent = String(entry.meta);
+                        a.appendChild(meta);
+                    }
+                    li.appendChild(a);
+                    list.appendChild(li);
+                });
+                if (empty) empty.hidden = list.firstChild !== null;
+            }
+            function load() {
+                window.fetch(feed, { credentials: 'same-origin', headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' } })
+                    .then(function (r) { return r.ok ? r.json() : null; })
+                    .then(show)
+                    .catch(function () {});
+            }
+            load();
+            button.addEventListener('click', function () {
+                if (button.getAttribute('aria-expanded') === 'true') load();
+            });
+        });
+    }
     function init() {
         overflowMenu();
         disclosure(document.getElementById('a4-user-toggle'), document.getElementById('a4-user-menu'));
         siteMenu();
         helpMenu();
+        headerItems();
         // any other disclosure (uiswitch/choices.tpl): a hidden button[data-a4-disclosure] with aria-controls; the
         // script shows the button and closes its panel, which stays open without the script
         Array.prototype.forEach.call(document.querySelectorAll('button[data-a4-disclosure][aria-controls]'), function (button) {

@@ -962,7 +962,7 @@ f8432aa870359774108e8df134437550  design/admin4/javascript/a4_actions.js
 a1fa637f329246a1e5f8acc012291d83  design/admin4/javascript/a4_head.js
 01ea871f6ca6124d661784a91fd73c98  design/admin4/javascript/a4_mega_menu.js
 c500ef710f1fcf31270ce339c169589c  design/admin4/javascript/a4_url.js
-1302557ad668c54a60df9d132d734f2f  design/admin4/javascript/admin4.js
+b3a875f17040b76bfa11ad635da86aeb  design/admin4/javascript/admin4.js
 887be83feca2a551d0d055694b8cb861  design/admin4/javascript/contentcheck_select.js
 c298e839ce3acde72bc6126b87eb17c6  design/admin4/javascript/contentcheck_storage.js
 ed3da8fa2032b6fd3b0f21f7b3993f81  design/admin4/javascript/contentstructuremenu_dynamic.js
@@ -1077,7 +1077,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-068d8d256a6081d7bb9c12e9f15bb64a  design/admin4/stylesheets/admin4.css
+fe5cc22aeeafea92258f14f46b38d655  design/admin4/stylesheets/admin4.css
 67a7f54f18b4eef977b1d5e4e6fbba0e  design/admin4/stylesheets/components.css
 a87bec7d01d40f3de1611df181975ceb  design/admin4/stylesheets/content.css
 ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
@@ -1396,12 +1396,14 @@ b8e61d3a5a8ce7617372a96054f362bb  design/admin4/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin4/templates/page_login_copyright.tpl
 731c29db23a2287e002ba2ed8e8d248a  design/admin4/templates/page_mainarea.tpl
 ad2b16b7e90d3d850e074f97acd807d4  design/admin4/templates/page_search.tpl
-b4fb859581095c667b7fa2b69b4c4e28  design/admin4/templates/page_topmenu.tpl
+3d4afea787dd6fc64ddbc5f6d7e973d6  design/admin4/templates/page_topmenu.tpl
 262c20c7eaf7f90d393c1872af532d33  design/admin4/templates/page_topmenuitem.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
 75df05e2e3d28222f8d6cac41b06073f  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 b4673e247c3d0aade999bd6f38e6e06d  design/admin4/templates/parts/a4_header_help.tpl
+32a2ced2131b7d1a0aed712e1147485a  design/admin4/templates/parts/a4_header_item.tpl
+50793e365774ac54d69fd75fbf48130b  design/admin4/templates/parts/a4_header_items.tpl
 41b309bce99292420eca74f538bedc24  design/admin4/templates/parts/a4_header_site.tpl
 4321818ff67ec7372e68e6559a776370  design/admin4/templates/parts/a4_header_user.tpl
 302762e589dd7ade916c47265ed2955f  design/admin4/templates/parts/a4_logo.tpl
@@ -1636,7 +1638,7 @@ d32ea5c9ac61787a910308fd75511a3c  design/admin4l/templates/explayouts/block/admi
 90b75c1d6b6266c873e119761108757a  design/admin4l/templates/explayouts/block/admin_sidebar_controls.tpl
 d8f8c5a91a12f6f93ce18621962b332d  design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl
 676e515f817ff888d98dc2e1c6e30179  design/admin4l/templates/explayouts/block/admin_tab_menu.tpl
-f1bb365da04942b2a7c6e659a681a87d  design/admin4l/templates/explayouts/block/admin_theme_switch.tpl
+ac760fb7abe0c74c082db3e09d724006  design/admin4l/templates/explayouts/block/admin_theme_switch.tpl
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
@@ -6161,7 +6163,7 @@ f591dfeee412831cbf4c9ec450c93dc6  doc/eng-us/features/6.0/admin-links-follow-per
 730f4bd870741ba72e0b822ed910c9fd  doc/eng-us/features/6.0/admin-list-paging.md
 a47dfcc6efe2e2c9c161f250da461f72  doc/eng-us/features/6.0/admin3-responsive-admin.md
 a29a680e52b85935874388c9c6d885bd  doc/eng-us/features/6.0/admin3-sidebar-width-and-font-size.md
-82beb9c335cecb4f08c48052d1c2ac6a  doc/eng-us/features/6.0/admin4-design.md
+cc53cf2ce5b97e919ed0e4e72ac72968  doc/eng-us/features/6.0/admin4-design.md
 c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 4e6288e58d6f4884e2c040b863cbb545  doc/eng-us/features/6.0/adminneo-database-manager.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
@@ -14978,7 +14980,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 daea7f2e38000ce15caa57c898b75b10  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
 e2836e805e1dcad6c266afcbd5b608a8  doc/ger-de/funktionen/6.0/admin3-seitenleistenbreite-und-schriftgroesse.md
-d1b2d1be9357fd4a0147789e9680934e  doc/ger-de/funktionen/6.0/admin4-design.md
+e7241b49d4fa57397e2582b69f7a3396  doc/ger-de/funktionen/6.0/admin4-design.md
 ecf960bb3b6486904ede97299bf12ff9  doc/ger-de/funktionen/6.0/admin4l.md
 60e8c726f4ab01642d28261fd8386769  doc/ger-de/funktionen/6.0/adminneo-datenbankverwaltung.md
 b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
@@ -23204,7 +23206,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
-612796f3f7de7e69cb1f941fbdc6e1b5  settings/design.ini
+0973ad511506c82658a9745c80125813  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
 9a695c459de8062029335f92587308db  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
@@ -24080,7 +24082,7 @@ dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-a9298506db5940938837b3119d8606be  share/translations/eng-US/translation.ts
+62e6775feed12abdfa610c6a506d9049  share/translations/eng-US/translation.ts
 494a72237f2b99e7ff098df6fa9339d6  share/translations/esl-ES/translation.ts
 a7a28901e0614f18dca43236ab43815e  share/translations/esl-MX/translation.ts
 0d893017d9cb28076b20f47b84f583cc  share/translations/fas-IR/translation.ts
@@ -24088,7 +24090,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 c2548f11cf751134fed7560c3f0b0204  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-d5fc145d144ee7c6cf6360c03a7e6b9d  share/translations/ger-DE/translation.ts
+3de57d3db5a2af81dc758ee01a585ea8  share/translations/ger-DE/translation.ts
 6b1954808805a24407921e51baa34a0b  share/translations/heb-IL/translation.ts
 061c1972d59c9c6deefd8c903aa2708c  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -24108,7 +24110,7 @@ ff02ef2713c7b6d98935892ba8cda520  share/translations/swe-SE/translation.ts
 e33d8d06d236157cdb29177ac7e13cdf  share/translations/tur-TR/translation.ts
 ba3bac76c0c480ad49967a5cafdb8976  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-403d45adf2f58d9fd61699c1b66a8b5d  share/translations/untranslated/translation.ts
+7871a626776086a2c55d5aed6083759a  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -24201,7 +24203,7 @@ a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.
 e346ed955a8e8ed87acad81858095cfb  tests/tests/design/AdminFormErrorsTest.php
 32f9d6fe78017afe3382814f71cb124e  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
-a473ae5da1336c436df67200b19ab55d  tests/tests/design/AdminHeaderTest.php
+433a04c6379eec1f8b7fffc8fb896e25  tests/tests/design/AdminHeaderTest.php
 8aa3887e5c845ddb8c8d3b843b2b4e65  tests/tests/design/AdminHelpFrameClassScopeTest.php
 c239764eaf3a9faa20a382734df78387  tests/tests/design/AdminHelpLanguageLineTest.php
 3db40fcd5528d2caec0149d7ed92795b  tests/tests/design/AdminHelpScriptTest.php
