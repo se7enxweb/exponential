@@ -473,6 +473,57 @@ CREATE TABLE IF NOT EXISTS exp_transfer_run (
 ) ENGINE=InnoDB;
 
 --
+-- The named database connections of the data tables (doc/eng-us/features/6.0/data-tables.md).
+--
+-- One row per connection made in the administration (Setup > Data tables > Connections): its identifier, the
+-- engine (sqlite, mysql, postgresql, oracle, sqlserver, mongodb), server, port, database (for SQLite the file) and
+-- user, and the NAME of the secret that holds its password (never the password). The administration creates the
+-- table when it is missing. Written with IF NOT EXISTS, so running this statement again changes nothing.
+CREATE TABLE IF NOT EXISTS exp_data_connection (
+  created int(11) NOT NULL DEFAULT '0',
+  creator_id int(11) NOT NULL DEFAULT '0',
+  database_name varchar(255) NOT NULL DEFAULT '',
+  description varchar(255) NOT NULL DEFAULT '',
+  engine varchar(32) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  identifier varchar(64) NOT NULL DEFAULT '',
+  modified int(11) NOT NULL DEFAULT '0',
+  modifier_id int(11) NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  options longtext,
+  port int(11) NOT NULL DEFAULT '0',
+  read_only int(11) NOT NULL DEFAULT '0',
+  secret varchar(128) NOT NULL DEFAULT '',
+  server varchar(255) NOT NULL DEFAULT '',
+  user_name varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY exp_data_connection_identifier ( identifier )
+) ENGINE=InnoDB;
+
+--
+-- The kernel's secret store (doc/eng-us/features/6.0/secret-store.md).
+--
+-- One row per secret of a tool (a connection's password, an import source's token): its name, the tool it belongs
+-- to (scope), and its value encrypted with XChaCha20-Poly1305 under the store's key (key_id names the key, never
+-- holds it). The administration (Setup > Secrets) shows names only, and creates the table when it is missing.
+-- Written with IF NOT EXISTS, so running this statement again changes nothing.
+CREATE TABLE IF NOT EXISTS exp_secret (
+  ciphertext longtext,
+  created int(11) NOT NULL DEFAULT '0',
+  creator_id int(11) NOT NULL DEFAULT '0',
+  description varchar(255) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  key_id varchar(16) NOT NULL DEFAULT '',
+  modified int(11) NOT NULL DEFAULT '0',
+  modifier_id int(11) NOT NULL DEFAULT '0',
+  name varchar(128) NOT NULL DEFAULT '',
+  scope varchar(64) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY exp_secret_name ( name ),
+  KEY exp_secret_scope ( scope )
+) ENGINE=InnoDB;
+
+--
 -- ezuser.login: one account per login.
 --
 -- A new installation has the unique index ezuser_login from the kernel schema.

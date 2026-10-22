@@ -14942,6 +14942,30 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -63932,6 +63956,768 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The audit trail of this node</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick "Yes, rotate the key" first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation's own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty for the engine's usual port.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href="%url"&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This installation's own database, from site.ini. It can be tested here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick "Yes, remove it" to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>yes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -611,6 +611,75 @@ BEGIN
 END
 $$;
 
+-- The named database connections of the data tables (doc/eng-us/features/6.0/data-tables.md).
+--
+-- One row per connection made in the administration (Setup > Data tables > Connections): its identifier, the
+-- engine (sqlite, mysql, postgresql, oracle, sqlserver, mongodb), server, port, database (for SQLite the file) and
+-- user, and the NAME of the secret that holds its password (never the password). The administration creates the
+-- table when it is missing. Created only when the table is missing (a DO block, PostgreSQL 9.0 or newer), so
+-- running this block again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_data_connection' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_data_connection_id_seq' ) THEN
+            CREATE SEQUENCE exp_data_connection_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_data_connection (
+          created integer DEFAULT 0 NOT NULL,
+          creator_id integer DEFAULT 0 NOT NULL,
+          database_name character varying(255) DEFAULT ''::character varying NOT NULL,
+          description character varying(255) DEFAULT ''::character varying NOT NULL,
+          engine character varying(32) DEFAULT ''::character varying NOT NULL,
+          id integer DEFAULT nextval('exp_data_connection_id_seq'::text) NOT NULL,
+          identifier character varying(64) DEFAULT ''::character varying NOT NULL,
+          modified integer DEFAULT 0 NOT NULL,
+          modifier_id integer DEFAULT 0 NOT NULL,
+          name character varying(255) DEFAULT ''::character varying NOT NULL,
+          options text,
+          port integer DEFAULT 0 NOT NULL,
+          read_only integer DEFAULT 0 NOT NULL,
+          secret character varying(128) DEFAULT ''::character varying NOT NULL,
+          server character varying(255) DEFAULT ''::character varying NOT NULL,
+          user_name character varying(255) DEFAULT ''::character varying NOT NULL
+        );
+        ALTER TABLE ONLY exp_data_connection ADD CONSTRAINT exp_data_connection_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX exp_data_connection_identifier ON exp_data_connection USING btree ( identifier );
+    END IF;
+END
+$$;
+
+-- The kernel's secret store (doc/eng-us/features/6.0/secret-store.md).
+--
+-- One row per secret of a tool (a connection's password, an import source's token): its name, the tool it belongs
+-- to (scope), and its value encrypted with XChaCha20-Poly1305 under the store's key (key_id names the key, never
+-- holds it). The administration (Setup > Secrets) shows names only, and creates the table when it is missing.
+-- Created only when the table is missing (a DO block, PostgreSQL 9.0 or newer), so running this block again
+-- changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_secret' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_secret_id_seq' ) THEN
+            CREATE SEQUENCE exp_secret_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_secret (
+          ciphertext text,
+          created integer DEFAULT 0 NOT NULL,
+          creator_id integer DEFAULT 0 NOT NULL,
+          description character varying(255) DEFAULT ''::character varying NOT NULL,
+          id integer DEFAULT nextval('exp_secret_id_seq'::text) NOT NULL,
+          key_id character varying(16) DEFAULT ''::character varying NOT NULL,
+          modified integer DEFAULT 0 NOT NULL,
+          modifier_id integer DEFAULT 0 NOT NULL,
+          name character varying(128) DEFAULT ''::character varying NOT NULL,
+          scope character varying(64) DEFAULT ''::character varying NOT NULL
+        );
+        ALTER TABLE ONLY exp_secret ADD CONSTRAINT exp_secret_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX exp_secret_name ON exp_secret USING btree ( name );
+        CREATE INDEX exp_secret_scope ON exp_secret USING btree ( scope );
+    END IF;
+END
+$$;
+
 --
 -- ezuser.login: one account per login.
 --

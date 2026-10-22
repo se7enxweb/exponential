@@ -66,6 +66,8 @@ nginx with PHP-FPM keep working as before.
 - [SQLite database support](sqlite-database.md)
 - [MongoDB as the database](mongodb-database-support.md)
 - [AdminNeo: the database manager behind the Database Source Editor](adminneo-database-manager.md)
+- [Data tables: module tables as part of the system](data-tables.md): the catalogue of persistent classes, named
+  database connections, classes on their own connection
 
 ## Rapid application development and extensions
 
@@ -151,6 +153,7 @@ nginx with PHP-FPM keep working as before.
 ## Users, permissions and security
 
 - [The audit trail: who did what, and proof that nobody changed the record](audit-trail.md)
+- [The secret store: passwords and keys of the tools, encrypted, by name](secret-store.md)
 - [Content Security Policy](content-security-policy.md)
 - [Safe redirects and "back to where you came from"](safe-redirects.md)
 - ["This form has expired": form token refusals](form-expired-page.md)

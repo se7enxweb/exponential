@@ -410,6 +410,53 @@ CREATE INDEX IF NOT EXISTS exp_transfer_run_tool ON exp_transfer_run ( tool, sta
 CREATE INDEX IF NOT EXISTS exp_transfer_run_toolref ON exp_transfer_run ( tool, tool_ref );
 CREATE INDEX IF NOT EXISTS exp_transfer_run_user ON exp_transfer_run ( user_id );
 
+-- The named database connections of the data tables (doc/eng-us/features/6.0/data-tables.md).
+--
+-- One row per connection made in the administration (Setup > Data tables > Connections): its identifier, the
+-- engine (sqlite, mysql, postgresql, oracle, sqlserver, mongodb), server, port, database (for SQLite the file) and
+-- user, and the NAME of the secret that holds its password (never the password). The administration creates the
+-- table when it is missing. Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exp_data_connection (
+  created integer NOT NULL DEFAULT 0,
+  creator_id integer NOT NULL DEFAULT 0,
+  database_name varchar(255) NOT NULL DEFAULT '',
+  description varchar(255) NOT NULL DEFAULT '',
+  engine varchar(32) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  identifier varchar(64) NOT NULL DEFAULT '',
+  modified integer NOT NULL DEFAULT 0,
+  modifier_id integer NOT NULL DEFAULT 0,
+  name varchar(255) NOT NULL DEFAULT '',
+  options longtext,
+  port integer NOT NULL DEFAULT 0,
+  read_only integer NOT NULL DEFAULT 0,
+  secret varchar(128) NOT NULL DEFAULT '',
+  server varchar(255) NOT NULL DEFAULT '',
+  user_name varchar(255) NOT NULL DEFAULT ''
+);
+CREATE UNIQUE INDEX IF NOT EXISTS exp_data_connection_identifier ON exp_data_connection ( identifier );
+
+-- The kernel's secret store (doc/eng-us/features/6.0/secret-store.md).
+--
+-- One row per secret of a tool (a connection's password, an import source's token): its name, the tool it belongs
+-- to (scope), and its value encrypted with XChaCha20-Poly1305 under the store's key (key_id names the key, never
+-- holds it). The administration (Setup > Secrets) shows names only, and creates the table when it is missing.
+-- Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exp_secret (
+  ciphertext longtext,
+  created integer NOT NULL DEFAULT 0,
+  creator_id integer NOT NULL DEFAULT 0,
+  description varchar(255) NOT NULL DEFAULT '',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  key_id varchar(16) NOT NULL DEFAULT '',
+  modified integer NOT NULL DEFAULT 0,
+  modifier_id integer NOT NULL DEFAULT 0,
+  name varchar(128) NOT NULL DEFAULT '',
+  scope varchar(64) NOT NULL DEFAULT ''
+);
+CREATE UNIQUE INDEX IF NOT EXISTS exp_secret_name ON exp_secret ( name );
+CREATE INDEX IF NOT EXISTS exp_secret_scope ON exp_secret ( scope );
+
 --
 -- ezuser.login: one account per login.
 --

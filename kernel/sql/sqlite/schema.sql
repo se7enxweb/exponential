@@ -749,6 +749,36 @@ CREATE TABLE `exp_transfer_run` (
 ,  `tool_ref` varchar(64) NOT NULL DEFAULT ''
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `exp_data_connection` (
+  `created` integer NOT NULL DEFAULT '0'
+,  `creator_id` integer NOT NULL DEFAULT '0'
+,  `database_name` varchar(255) NOT NULL DEFAULT ''
+,  `description` varchar(255) NOT NULL DEFAULT ''
+,  `engine` varchar(32) NOT NULL DEFAULT ''
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `identifier` varchar(64) NOT NULL DEFAULT ''
+,  `modified` integer NOT NULL DEFAULT '0'
+,  `modifier_id` integer NOT NULL DEFAULT '0'
+,  `name` varchar(255) NOT NULL DEFAULT ''
+,  `options` longtext
+,  `port` integer NOT NULL DEFAULT '0'
+,  `read_only` integer NOT NULL DEFAULT '0'
+,  `secret` varchar(128) NOT NULL DEFAULT ''
+,  `server` varchar(255) NOT NULL DEFAULT ''
+,  `user_name` varchar(255) NOT NULL DEFAULT ''
+);
+CREATE TABLE `exp_secret` (
+  `ciphertext` longtext
+,  `created` integer NOT NULL DEFAULT '0'
+,  `creator_id` integer NOT NULL DEFAULT '0'
+,  `description` varchar(255) NOT NULL DEFAULT ''
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `key_id` varchar(16) NOT NULL DEFAULT ''
+,  `modified` integer NOT NULL DEFAULT '0'
+,  `modifier_id` integer NOT NULL DEFAULT '0'
+,  `name` varchar(128) NOT NULL DEFAULT ''
+,  `scope` varchar(64) NOT NULL DEFAULT ''
+);
 CREATE TABLE `ezproductcategory` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `name` varchar(255) NOT NULL DEFAULT ''
@@ -1264,6 +1294,9 @@ CREATE INDEX exp_transfer_run_started ON exp_transfer_run ( started );
 CREATE INDEX exp_transfer_run_tool ON exp_transfer_run ( tool, started );
 CREATE INDEX exp_transfer_run_toolref ON exp_transfer_run ( tool, tool_ref );
 CREATE INDEX exp_transfer_run_user ON exp_transfer_run ( user_id );
+CREATE UNIQUE INDEX exp_data_connection_identifier ON exp_data_connection ( identifier );
+CREATE UNIQUE INDEX exp_secret_name ON exp_secret ( name );
+CREATE INDEX exp_secret_scope ON exp_secret ( scope );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);

@@ -1276,6 +1276,51 @@ CREATE TABLE exp_transfer_run (
 
 
 
+CREATE TABLE exp_data_connection (
+  created int(11) NOT NULL default '0',
+  creator_id int(11) NOT NULL default '0',
+  database_name varchar(255) NOT NULL default '',
+  description varchar(255) NOT NULL default '',
+  engine varchar(32) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  identifier varchar(64) NOT NULL default '',
+  modified int(11) NOT NULL default '0',
+  modifier_id int(11) NOT NULL default '0',
+  name varchar(255) NOT NULL default '',
+  options longtext,
+  port int(11) NOT NULL default '0',
+  read_only int(11) NOT NULL default '0',
+  secret varchar(128) NOT NULL default '',
+  server varchar(255) NOT NULL default '',
+  user_name varchar(255) NOT NULL default '',
+  PRIMARY KEY  (id),
+  UNIQUE KEY exp_data_connection_identifier (identifier)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_secret (
+  ciphertext longtext,
+  created int(11) NOT NULL default '0',
+  creator_id int(11) NOT NULL default '0',
+  description varchar(255) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  key_id varchar(16) NOT NULL default '',
+  modified int(11) NOT NULL default '0',
+  modifier_id int(11) NOT NULL default '0',
+  name varchar(128) NOT NULL default '',
+  scope varchar(64) NOT NULL default '',
+  PRIMARY KEY  (id),
+  UNIQUE KEY exp_secret_name (name),
+  KEY exp_secret_scope (scope)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE ezproductcategory (
   id int(11) NOT NULL auto_increment,
   name varchar(255) NOT NULL default '',

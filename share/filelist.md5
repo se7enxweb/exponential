@@ -510,6 +510,10 @@ d15376799ac95a2f3c136d58a8e19ad6  design/admin/templates/contentfinder/reason.tp
 8c3f0f19cb620da56e90831427559bdf  design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
 77ed01484110d99c96b5ed0f10d2e2d3  design/admin/templates/contentstructuremenu/show_content_structure.tpl
 5c7af3c96616feaad45a8fb0ee726359  design/admin/templates/dashboard/maintenance.tpl
+2826e482c65ffdc3e255078729572061  design/admin/templates/datatable/connection.tpl
+b3959647fb9dc7132c79e52b8ffecc76  design/admin/templates/datatable/connections.tpl
+7e287c49f906edf3f198094a1ed52536  design/admin/templates/datatable/dashboard.tpl
+da731f961977469793022161c201d7eb  design/admin/templates/datatable/table.tpl
 49c6fe304e603e648cd750a7c74e48ca  design/admin/templates/details.tpl
 a421b586c89014c6a06cedce3b588a94  design/admin/templates/error/kernel/1.tpl
 3fe66dddcfcaf8f3a4c869e6a11dff5f  design/admin/templates/error/kernel/2.tpl
@@ -695,6 +699,7 @@ b116c649bcd813b34c0f08e1215e2374  design/admin/templates/rss/edit_import_denied.
 dbe5def951f76a833fe3992eb68bf430  design/admin/templates/rss/exp_list_script.tpl
 d6d8c28d155fa0e53cb163b3f25813d4  design/admin/templates/rss/list.tpl
 1943a083b2679d1c7377c4ef5521c327  design/admin/templates/search/stats.tpl
+5aadf22a6e875f3dd63220775c575db2  design/admin/templates/secrets/list.tpl
 052720f7c97b8455598f98c6d090eefd  design/admin/templates/section/assign_notification.tpl
 a4279bae7d293e5c7babc015f7c32f67  design/admin/templates/section/browse_assign.tpl
 bf6314823439a205012aeedadb7ae4a6  design/admin/templates/section/confirmremove.tpl
@@ -1270,6 +1275,10 @@ d15376799ac95a2f3c136d58a8e19ad6  design/admin4/templates/contentfinder/reason.t
 77ed01484110d99c96b5ed0f10d2e2d3  design/admin4/templates/contentstructuremenu/show_content_structure.tpl
 c2f2279dc4eb09341fade0cba9889a20  design/admin4/templates/dashboard/audit.tpl
 5c7af3c96616feaad45a8fb0ee726359  design/admin4/templates/dashboard/maintenance.tpl
+2826e482c65ffdc3e255078729572061  design/admin4/templates/datatable/connection.tpl
+b3959647fb9dc7132c79e52b8ffecc76  design/admin4/templates/datatable/connections.tpl
+7e287c49f906edf3f198094a1ed52536  design/admin4/templates/datatable/dashboard.tpl
+da731f961977469793022161c201d7eb  design/admin4/templates/datatable/table.tpl
 71774485f8c0b23da86ebce89f30064d  design/admin4/templates/details.tpl
 e21d87d653b584807136c9b2cb0c19ef  design/admin4/templates/error/kernel/1.tpl
 909eb0b6486adcde8a59ff626ecda0b0  design/admin4/templates/error/kernel/2.tpl
@@ -1478,6 +1487,7 @@ b116c649bcd813b34c0f08e1215e2374  design/admin4/templates/rss/edit_import_denied
 728a97edf507e070286c58b5085dd8f6  design/admin4/templates/rss/exp_list_script.tpl
 a63cf3ee963929585a4aa9a082df317e  design/admin4/templates/rss/list.tpl
 1943a083b2679d1c7377c4ef5521c327  design/admin4/templates/search/stats.tpl
+5aadf22a6e875f3dd63220775c575db2  design/admin4/templates/secrets/list.tpl
 052720f7c97b8455598f98c6d090eefd  design/admin4/templates/section/assign_notification.tpl
 a4279bae7d293e5c7babc015f7c32f67  design/admin4/templates/section/browse_assign.tpl
 bf6314823439a205012aeedadb7ae4a6  design/admin4/templates/section/confirmremove.tpl
@@ -6180,6 +6190,7 @@ e37ff9e9d23c49c89dc1a5bdb3f64abb  doc/eng-us/features/6.0/country-groups.md
 96a6e64d47c01adcbcc938f8a2fe8971  doc/eng-us/features/6.0/cronjob-pause.md
 f58ef44439a83c0f3bd4e9ede1173901  doc/eng-us/features/6.0/cronjobs-console.md
 49183904218a17f119fbc88d9bbf6ccb  doc/eng-us/features/6.0/custom-items-per-page.md
+7f47a10dbdafb38657a29fd4e86b13b3  doc/eng-us/features/6.0/data-tables.md
 038ad003cc7c482d85ba9496eb507bf6  doc/eng-us/features/6.0/debug-output-improvements.md
 2ede246757068e064cab00fcf3fb1795  doc/eng-us/features/6.0/default-extension-distribution.md
 8bb25377c53c0d863e0b1ad669e226da  doc/eng-us/features/6.0/environment-settings.md
@@ -6303,6 +6314,7 @@ f7cbe38d847fe4d918e89191f4cc6d99  doc/eng-us/features/6.0/role-assignment-paging
 dc1fd58d472fa3c3a1c8e324f1cf8729  doc/eng-us/features/6.0/role-policy-order.md
 af2ea1c17487c15b45d19b7ce95ab33d  doc/eng-us/features/6.0/rss-podcast-and-feed-list.md
 136749fff30f5b083e52648257ed2e7d  doc/eng-us/features/6.0/safe-redirects.md
+feeacad1371c0dcfb7a2afc264bf32bd  doc/eng-us/features/6.0/secret-store.md
 1671b58594af2d53ae16a4bc8b67a51e  doc/eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md
 a3c9e2957fb512acbbbb3f7ecbf57df4  doc/eng-us/features/6.0/siteaccess-host-and-language-matching.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
@@ -14998,6 +15010,7 @@ c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-pol
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
 9a18c784488620d01443a220aeb513b0  doc/ger-de/funktionen/6.0/dateikonsistenzpruefung.md
+bbfab1993e3f7ffeb41a3b9117d4c432  doc/ger-de/funktionen/6.0/datentabellen.md
 9fa97c0f8e47e189f172c2cfdabd9d20  doc/ger-de/funktionen/6.0/durch-deployment-verwaltet.md
 b3e456d2f10a16a5331ce2c08d501420  doc/ger-de/funktionen/6.0/e-mail-einstellungen.md
 236706d8d28dba7a4d469e4f69ed7006  doc/ger-de/funktionen/6.0/eigene-anzahl-eintraege-pro-seite.md
@@ -15063,6 +15076,7 @@ b3f4195f79b892bca854beb80acf293a  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 0de4b3d8a279a43c0f19fcb08c3b54ec  doc/ger-de/funktionen/6.0/extension-liste-und-downloads.md
 2e31533efcf8f0f4f1dce7fa4d593a7b  doc/ger-de/funktionen/6.0/ezpm-paketmanager-cli.md
 9d9894268f854965be088eb0dcfdd36c  doc/ger-de/funktionen/6.0/filter-fuer-cronjob-teile.md
+be024ce43b83d098e3f788a3b450d3f9  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 dcc5fc4cf6299f35586872893ac83565  doc/ger-de/funktionen/6.0/hilfeinhalte.md
@@ -21342,6 +21356,11 @@ bb2ae7894e7743352cf3d6bdd3eaefe2  kernel/classes/contentjob/expcontentjobsection
 d9add8b8d3ad7b5888d56f75e0f67d49  kernel/classes/contentjob/expcontentjobtransfer.php
 d8226b00b7469da9040b293266a47da4  kernel/classes/contentjob/expcontentjobtype.php
 130779b1aed31be7b3468442ebbb7e98  kernel/classes/contentjob/expcontentjobworker.php
+1d8b832eecfb80dc796a06810788b7b9  kernel/classes/datatable/expdataconnection.php
+5b11291bfe982e0d2732ff82d8827435  kernel/classes/datatable/expdataconnections.php
+858a243bd410577c511b675d9f1069fe  kernel/classes/datatable/expdatatablecatalogue.php
+9de865061e822631e1dab4f63bea9d22  kernel/classes/datatable/expdatatabledescriber.php
+b79885d1e69d4b0f8a4e23aa31bd3dc5  kernel/classes/datatable/expkerneltableschema.php
 b87309023dcf0632588ba95e277c245b  kernel/classes/datatypes/ezauthor/ezauthor.php
 947a63267a510aeeb225845c19aed101  kernel/classes/datatypes/ezauthor/ezauthortype.php
 fb75d46b05bf6f49f29fafd0d7c71fe5  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
@@ -21810,6 +21829,9 @@ db61c9e4cce019e2e98d05083814a049  kernel/classes/requestclassifier/exprequestver
 eb78def01da4fef4c8d3826bef26752c  kernel/classes/role/exprolegrantcheck.php
 71ecdf5f28d06bb754e0dee6dab697fc  kernel/classes/role/exprolepage.php
 dc665737a69c0b50fbeee0f5a53f2582  kernel/classes/role/exprolepolicysentence.php
+f3e1e7f1cee12005376e69f9e9c3b046  kernel/classes/secrets/expsecret.php
+e3c4697b80509b8fb5ff1d8143095ee9  kernel/classes/secrets/expsecretkey.php
+faf04259679ee99949096af74ab67d5b  kernel/classes/secrets/expsecrets.php
 7151991c9e4cebc0c6a794031bf4363b  kernel/classes/shopaccounthandlers/bcusausershopaccounthandler.php
 53b261c599de9de6ed8d524eddabdcd2  kernel/classes/shopaccounthandlers/ezdefaultshopaccounthandler.php
 92c1d7da90b886d164711f97975e2577  kernel/classes/shopaccounthandlers/ezsimpleshopaccounthandler.php
@@ -22001,6 +22023,11 @@ e48cb6fe11121cf4f565d9fde9b7745a  kernel/contentcheck/unreferenced.php
 a3a4f261ea75cc5d67e660735d891f8f  kernel/contentfinder/search.php
 df4dada9be41854ea0e88d808ced77ba  kernel/csp/module.php
 981ead61e390365d22ef26abec1a70c3  kernel/csp/report.php
+b24e8d53cb6d0649958c06e6f204d4da  kernel/datatable/connection.php
+81ab8dfff528ea29a019fb7d72586e30  kernel/datatable/connections.php
+fbc1f54ce5d91a6cedb79cb2d98b4c95  kernel/datatable/dashboard.php
+25d240743c9938210532a52a63bdeff1  kernel/datatable/module.php
+107190913d7403cb9220c66764d1c156  kernel/datatable/table.php
 26769ecf1f69fca7a10592eea1b17135  kernel/error/module.php
 49c653b7029afbd4ec85651acc7eba62  kernel/error/view.php
 0eb69b8cb99db85a96af40edbd31f8cd  kernel/exphelp/asset.php
@@ -22382,6 +22409,10 @@ e4b995714fc77e6c60e912df4e05c29c  kernel/private/classes/views/contentcheck/unre
 923f74d673c52c8ab4b15525ba6e0112  kernel/private/classes/views/contentfinder/action.php
 06743b3a7bfece967f8025168740cd33  kernel/private/classes/views/contentfinder/search.php
 4da8ed162f09512a7e7e9823736a6ed3  kernel/private/classes/views/csp/report.php
+b5e229c98097ccae8d7f1dcf8a5e1704  kernel/private/classes/views/datatable/connection.php
+e0ee4961f4f854ea1bee74612347b719  kernel/private/classes/views/datatable/connections.php
+51464d8e33de4613acbd7fe7e05b35c8  kernel/private/classes/views/datatable/dashboard.php
+0b1976b364f8d1ec4955ed19d30a594e  kernel/private/classes/views/datatable/table.php
 6d71c9b30560afbeb8dca1a0955f6c00  kernel/private/classes/views/error/view.php
 359f0dcfd7c0719d31fa53665cf0972b  kernel/private/classes/views/exphelp/asset.php
 3e05eb609d86ceb23a37a47aa6a92576  kernel/private/classes/views/exphelp/audience.php
@@ -22439,6 +22470,7 @@ a8030849a6e4f72c3ddb4c34a40b54c2  kernel/private/classes/views/rss/edit_export.p
 6ebf8a276f0aa3f2998c5f066a0908bd  kernel/private/classes/views/rss/feed.php
 2a463ec56671997cff3538550205a8a1  kernel/private/classes/views/rss/list.php
 94bbabb2c40ad43d8823f6a132fa6eed  kernel/private/classes/views/search/stats.php
+24b2d1a970be473e0b6393e4ccfee094  kernel/private/classes/views/secrets/list.php
 20741d9e1035189182e7fdd6ac6d1a7a  kernel/private/classes/views/section/assign.php
 c4070bfd53591451aab08268c53ad29b  kernel/private/classes/views/section/edit.php
 5b9b58c996b0f202cc6c2db817773c1b  kernel/private/classes/views/section/list.php
@@ -22725,6 +22757,8 @@ fdffdc9520e14603f42c96c15fc026d4  kernel/search/function_definition.php
 3395bd920b1ed11da2414e6df2f53354  kernel/search/module.php
 8a9ec8a45321ac9ffad78fed2cf28dca  kernel/search/plugins/ezsearchengine/ezsearchengine.php
 c184a2c19e4356edf8d714fb61356091  kernel/search/stats.php
+29696a8516f46d76e1b2e2f9928ddbf4  kernel/secrets/list.php
+bd614260848b36224bac8c44d05de5b8  kernel/secrets/module.php
 e48da813ef5e533b912e399f8e057728  kernel/section/assign.php
 9dfa74efbcd321c2a6d6c2bd27e15d6f  kernel/section/edit.php
 8471fb768196fd6722377cf5bfc15e4f  kernel/section/ezsectionfunctioncollection.php
@@ -22949,6 +22983,7 @@ c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
 29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
 9ba91d57d77c458fd031b4a0751ce000  lib/ezdb/classes/expmongodb.php
+8ecdb06b33b43f1967a0e0924eb8205e  lib/ezdb/classes/exppdodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
 e3a1ffc6a2c9f262f92f520cc63b13ae  lib/ezdb/classes/ezdbinterface.php
 ef13807c34f7f869c16504e03beb456b  lib/ezdb/classes/ezdbquerycache.php
@@ -23199,6 +23234,7 @@ bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
 ee38fe027250131e8952f8dacf0f18c9  settings/countrygroups.ini
 3cca6b28e6d0ccdfa2a69414c4daf88d  settings/cronjob.ini
 dc72e22f5c98f3c85457b235dc87073b  settings/dashboard.ini
+99e2e7968716216ef3f3b0c580fe1e8b  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
@@ -23235,6 +23271,7 @@ bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
 a5de15343b43044c3212fdc6953d813f  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 9a8e812661c23ad6b1dffe863ade3c43  settings/rest.ini
+0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
@@ -24564,6 +24601,11 @@ c73fd8d4f3d55afe486254a66926a61b  tests/tests/kernel/classes/contentmodel/eZSeri
 5c9b7947f2722161129dbe4bea8d2baa  tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListTest.php
 98c7fb9b0847a4b55acfdc559a733d02  tests/tests/kernel/classes/contentmodel/eZUserAndRoleLiveTest.php
 b0f5e308de066b9c9634ee29f470b137  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
+0321349fed5a1463c9cdb4127fc3a42d  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
+8c572ff076224149c2cb091cc2ab20f4  tests/tests/kernel/classes/datatable/expDataTableCatalogueTest.php
+0f6630e9a1f8a3a05137e05fdeb7a07c  tests/tests/kernel/classes/datatable/expDataTableDescriberTest.php
+2a9da4c34e8ca80401a216b953ac7f78  tests/tests/kernel/classes/datatable/expDataTableTestLoader.php
+1ead794e5c8967248a03d1e47035c1e3  tests/tests/kernel/classes/datatable/expKernelSecretAndConnectionTablesTest.php
 715cb611b342593215299954601754f6  tests/tests/kernel/classes/datatable/expPersistentObjectOnConnectionTest.php
 0f7d6b3a3845de6e9fb082f635076e4f  tests/tests/kernel/classes/datatypes/eZChoiceDatatypesTest.php
 458caf640f2064f029fb48db96abc5ac  tests/tests/kernel/classes/datatypes/eZDataTypeBaseTest.php
@@ -24946,6 +24988,7 @@ cd0df33127aea30289ff55824df77907  tests/tests/kernel/classes/runnable/fixtures/r
 96654662aa2f326c3c1e2069acfeab9c  tests/tests/kernel/classes/runnable/fixtures/radregistry/rad.ini
 1c6c28b42e0acc19cbc2c59ae3bcc917  tests/tests/kernel/classes/runnable/fixtures/radregistry/radfixture.ini
 79c911a18db2fd725a84abec3b804393  tests/tests/kernel/classes/runnable/fixtures/settings/site.ini
+865c4f5cc903fab2f65c841a2b796112  tests/tests/kernel/classes/secrets/expSecretsTest.php
 8e16d25035367dbc1eac8487aaff5c36  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 fdb21b66365e5254b9daaa9d4a2dfec1  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
 b0c7de44d801b8eac1d9e710da913eac  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
@@ -25445,6 +25488,7 @@ d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStrin
 a0c0ae8787effaa5ef6bf8c35edc273a  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
 6692179605b9a4b1f193f7396448e17e  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
+73b21f6d7ea1ac12151a02b2606d2cdc  tests/tests/lib/ezdb/expPDODBTest.php
 a0cfc060f83bf5becb309e1ec1003f2f  tests/tests/lib/ezdb/ezdbinterface_test.php
 9050ccc1183ed7d205ba7d47042b29c1  tests/tests/lib/ezdb/ezmysqlcharsettest.php
 f725ee9eb15406052f599712365f5eee  tests/tests/lib/ezdb/ezmysqldb_fk_test.php

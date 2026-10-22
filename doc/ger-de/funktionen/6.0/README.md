@@ -71,6 +71,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md)
 - [MongoDB als Datenbank](mongodb-datenbankunterstuetzung.md)
 - [AdminNeo: die Datenbankverwaltung hinter dem Database Source Editor](adminneo-datenbankverwaltung.md)
+- [Datentabellen: die Tabellen der Module als Teil des Systems](datentabellen.md): der Katalog der persistenten
+  Klassen, benannte Datenbankverbindungen, Klassen auf ihrer eigenen Verbindung
 
 ## Schnelle Anwendungsentwicklung und Erweiterungen
 
@@ -156,6 +158,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 ## Benutzer, Berechtigungen und Sicherheit
 
 - [Das Prüfprotokoll: wer was getan hat, und der Nachweis, dass niemand den Eintrag geändert hat](pruefprotokoll.md)
+- [Der Geheimnisspeicher: Passwörter und Schlüssel der Werkzeuge, verschlüsselt, nach Namen](geheimnisspeicher.md)
 - [Content Security Policy](content-security-policy.md)
 - [Sichere Weiterleitungen und „zurück, woher Sie gekommen sind“](sichere-weiterleitungen.md)
 - [„Dieses Formular ist abgelaufen“: Ablehnungen durch das Formular-Token](seite-abgelaufenes-formular.md)

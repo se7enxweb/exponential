@@ -773,6 +773,24 @@ CREATE SEQUENCE exp_transfer_run_id_seq
 
 
 
+CREATE SEQUENCE exp_data_connection_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
+CREATE SEQUENCE exp_secret_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 
 
 
@@ -2439,6 +2457,46 @@ CREATE TABLE exp_transfer_run (
 
 
 
+CREATE TABLE exp_data_connection (
+    created integer DEFAULT 0 NOT NULL,
+    creator_id integer DEFAULT 0 NOT NULL,
+    database_name character varying(255) DEFAULT ''::character varying NOT NULL,
+    description character varying(255) DEFAULT ''::character varying NOT NULL,
+    engine character varying(32) DEFAULT ''::character varying NOT NULL,
+    id integer DEFAULT nextval('exp_data_connection_id_seq'::text) NOT NULL,
+    identifier character varying(64) DEFAULT ''::character varying NOT NULL,
+    modified integer DEFAULT 0 NOT NULL,
+    modifier_id integer DEFAULT 0 NOT NULL,
+    name character varying(255) DEFAULT ''::character varying NOT NULL,
+    options text,
+    port integer DEFAULT 0 NOT NULL,
+    read_only integer DEFAULT 0 NOT NULL,
+    secret character varying(128) DEFAULT ''::character varying NOT NULL,
+    server character varying(255) DEFAULT ''::character varying NOT NULL,
+    user_name character varying(255) DEFAULT ''::character varying NOT NULL
+);
+
+
+
+
+
+CREATE TABLE exp_secret (
+    ciphertext text,
+    created integer DEFAULT 0 NOT NULL,
+    creator_id integer DEFAULT 0 NOT NULL,
+    description character varying(255) DEFAULT ''::character varying NOT NULL,
+    id integer DEFAULT nextval('exp_secret_id_seq'::text) NOT NULL,
+    key_id character varying(16) DEFAULT ''::character varying NOT NULL,
+    modified integer DEFAULT 0 NOT NULL,
+    modifier_id integer DEFAULT 0 NOT NULL,
+    name character varying(128) DEFAULT ''::character varying NOT NULL,
+    scope character varying(64) DEFAULT ''::character varying NOT NULL
+);
+
+
+
+
+
 
 
 CREATE TABLE ezproductcategory (
@@ -3879,6 +3937,18 @@ CREATE INDEX exp_transfer_run_user ON exp_transfer_run USING btree (user_id);
 
 
 
+CREATE UNIQUE INDEX exp_data_connection_identifier ON exp_data_connection USING btree (identifier);
+
+
+
+CREATE UNIQUE INDEX exp_secret_name ON exp_secret USING btree (name);
+
+
+
+CREATE INDEX exp_secret_scope ON exp_secret USING btree (scope);
+
+
+
 
 
 
@@ -4928,6 +4998,16 @@ ALTER TABLE ONLY expapikey
 
 ALTER TABLE ONLY exp_transfer_run
     ADD CONSTRAINT exp_transfer_run_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_data_connection
+    ADD CONSTRAINT exp_data_connection_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_secret
+    ADD CONSTRAINT exp_secret_pkey PRIMARY KEY (id);
 
 
 

@@ -10,6 +10,8 @@ SELECT setval('ezcontentbrowsebookmark_id_seq',max(id)+1) FROM ezcontentbrowsebo
 SELECT setval('expbookmark_folder_id_seq',max(id)+1) FROM expbookmark_folder;
 SELECT setval('expapikey_id_seq',max(id)+1) FROM expapikey;
 SELECT setval('exp_transfer_run_id_seq',max(id)+1) FROM exp_transfer_run;
+SELECT setval('exp_data_connection_id_seq',max(id)+1) FROM exp_data_connection;
+SELECT setval('exp_secret_id_seq',max(id)+1) FROM exp_secret;
 SELECT setval('ezcontentbrowserecent_id_seq',max(id)+1) FROM ezcontentbrowserecent;
 SELECT setval('ezcontentclass_attribute_id_seq',max(id)+1) FROM ezcontentclass_attribute;
 SELECT setval('ezcontentclassgroup_id_seq',max(id)+1) FROM ezcontentclassgroup;

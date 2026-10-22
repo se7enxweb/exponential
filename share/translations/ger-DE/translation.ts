@@ -17684,6 +17684,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Anleitungen, Suche und wie Sie einen Fehler melden.</translation>
     </message>
+    <message>
+        <source>Connections</source>
+        <translation>Verbindungen</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datentabellen</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Benannte Datenbanken: SQLite-Dateien, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Passwörter und Schlüssel der Werkzeuge, verschlüsselt gespeichert, nur mit Namen angezeigt.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Geheimnisse</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Die Tabellen der persistenten Klassen, ihre Felder, Beziehungen und ihr Speicherort.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -71932,6 +71956,768 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Background exports are not available here.</source>
         <translation>Exporte im Hintergrund sind hier nicht verfügbar.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count Geheimnisse sind mit einem anderen als dem aktuellen Schlüssel verschlüsselt.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done Geheimnisse mit dem aktuellen Schlüssel neu verschlüsselt, %current waren es schon, %bad konnten nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(wird beim Ablegen des ersten Geheimnisses erstellt)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Eine Sicherung der Datenbank allein kann die Geheimnisse nicht entschlüsseln</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Ein Name besteht aus Buchstaben, Ziffern und _ . : - (höchstens 128) und beginnt nicht mit env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Ein neuer Schlüssel wird erstellt, jedes Geheimnis wird damit neu verschlüsselt, und der alte Schlüssel bleibt als .previous-Datei erhalten. Sichern Sie danach die neue Schlüsseldatei.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Ein neuer Name, oder der Name eines vorhandenen Geheimnisses, um seinen Wert zu ersetzen. Leerer Wert: nur die Beschreibung ändert sich.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Stammt aus</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabelle anlegen</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Jedes Geheimnis mit dem aktuellen Schlüssel neu verschlüsseln</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Verschlüsselung</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Geben Sie den Wert an.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>Schlüssel-ID</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namen</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Noch kein Geheimnis.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Nur das Werkzeug %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Passwörter, Tokens und API-Schlüssel der Werkzeuge: Datenbankverbindungen, Importquellen, entfernte Server. Ein Werkzeug merkt sich den Namen eines Geheimnisses; der Wert wird hier verschlüsselt gespeichert und nie wieder angezeigt.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Vorheriger Schlüssel</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Wechseln</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Schlüssel wechseln</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Geheimnisse</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Geheimnis setzen</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Einrichtung</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Ablegen</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Die Beschreibung von %name wurde geändert; der Wert bleibt erhalten.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Der Schlüssel</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Der Schlüssel konnte nicht gewechselt werden (ein Schlüssel aus EXP_SECRET_KEY wird gewechselt, indem man einen neuen setzt und den alten als EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Der Schlüssel ist nicht in der Datenbank. Bewahren Sie zu jeder Sicherung eine Kopie der Schlüsseldatei (oder von EXP_SECRET_KEY) an einem eigenen sicheren Ort auf. Ohne sie können die Geheimnisse einer wiederhergestellten Datenbank nicht gelesen werden und müssen neu gesetzt werden.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Der Schlüssel wurde gewechselt: %done Geheimnisse neu verschlüsselt, %bad konnten nicht gelesen werden. Sichern Sie jetzt die neue Schlüsseldatei.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Das Geheimnis %name wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Das Geheimnis %name wurde verschlüsselt abgelegt. Sein Wert wird nicht wieder angezeigt.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Das Geheimnis konnte nicht abgelegt werden: siehe den Schlüssel oben.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Die Tabelle exp_secret fehlt</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Das Werkzeug besteht aus Kleinbuchstaben, Ziffern und _ . - (höchstens 64).</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, rotate the key" first.</source>
+        <translation>Kreuzen Sie zuerst „Ja, Schlüssel wechseln“ an.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Kreuzen Sie das Feld neben dem Geheimnis an, um es zu entfernen. Ein Werkzeug, das es nennt, schlägt fehl, bis es neu gesetzt ist.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>So wechseln Sie einen Schlüssel aus der Umgebung: Setzen Sie den neuen Schlüssel als EXP_SECRET_KEY und den alten als EXP_SECRET_KEY_PREVIOUS, dann verschlüsseln Sie hier jedes Geheimnis neu.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Werkzeug</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Bis sie angelegt ist, können nur die Geheimnisse aus secrets.ini und Umgebungsvariablen (env:NAME) verwendet werden.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Wer es nutzt, z. B. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Ja, %name entfernen</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Ja, Schlüssel wechseln</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>hier nicht entschlüsselbar</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>verschlüsselt</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>die .previous-Datei</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>die Umgebungsvariable EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>die Schlüsseldatei %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count Klassen</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count zu Inhalten</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%shown von %all Klassen angezeigt.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Ein Hostname oder eine Adresse; leer bei SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Ein Geheimnis aus Einrichtung &gt; Geheimnisse, oder env:VARIABLE für eine Umgebungsvariable.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Alle (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Verfügbar</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Zurück zur Liste</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Zeichensatz</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Klasse, Tabelle oder Feld</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Klassen auf dieser Verbindung: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Spalte</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Spalte in der Datenbank</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Über %via in %ms ms verbunden: %version, %tables Tabellen.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Verbindung</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Verbindungen</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Verbindungen (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Inhaltsklasse</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Inhaltsobjekt</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Tabellen anlegen</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datentabellen</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datenbank</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation's own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Datenbanken, die die Datentabellen und die Import- und Exportwerkzeuge neben der eigenen Datenbank dieser Installation nutzen können: eine SQLite-Datei oder ein MySQL-, MariaDB-, PostgreSQL-, Oracle-, SQL-Server- oder MongoDB-Server, lokal oder entfernt. Ein Passwort ist der Name eines Geheimnisses, nie sein Wert.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>In datatable.ini [Connection_%id] von den Einstellungen oder einer Erweiterung festgelegt: dort ändern. Hier kann sie getestet werden.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standardwert</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Abweichungen</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Treiber</translation>
+    </message>
+    <message>
+        <source>Empty for the engine's usual port.</source>
+        <translation>Leer für den üblichen Port des Datenbanksystems.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Datenbanksystem</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Datenbanksysteme auf diesem Server</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Erweiterung %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Feld</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Feld des Ziels</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Felder</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Für SQL Server: sqlsrv, dblib oder odbc (leer: der erste, den dieser Server hat).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Bei SQLite die Datei, z. B. %example (in %dirs). Bei Oracle der Dienstname.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Funktionsattribute: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Schlüssel: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Bekannt aus</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Angelegt in</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Katalog neu erstellen</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Mehr</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Benannte Verbindungen brauchen die Tabelle exp_data_connection, der Geheimnisspeicher die Tabelle exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Neue Verbindung</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Keine persistente Klasse passt.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Keine Beziehung bekannt.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Keine Zeilen.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Knoten</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Nicht angezeigt: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Nur für ein Datenbanksystem, das über PDO erreicht wird, wenn Server, Port und Datenbank nicht genügen. Nie ein Passwort.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>PDO-Datenquellenname (DSN)</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO-Treiber</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Das Passwort selbst</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Passwort: der Name eines Geheimnisses</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Zeigt auf</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Nur lesen: die Synchronisation schreibt nie hinein</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Beziehungen</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Diese Verbindung entfernen</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Pflichtfeld</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite-Dateien dürfen liegen in: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Geheimnisse</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bereich</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Server und Datenbank</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Einrichtung</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Socket</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Wer die Richtlinie datatable/manage hat, kann sie hier anlegen.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Beim Speichern im Geheimnisspeicher ablegen</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Ein Passwort abzulegen erfordert die Richtlinie secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabelle</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testen</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Verbindung testen</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Der Katalog wird aus den Autoload-Arrays erstellt und behalten, bis sie sich ändern.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Der Katalog wurde neu erstellt: %count Klassen.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Die Spalte %column (%type) steht nicht in der Definition.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Die Verbindung ist nach %ms ms gescheitert: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Die Verbindung wurde nicht gespeichert</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Die Verbindung wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Die Definition dieser Klasse kann nicht gelesen werden</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Das Feld %column (%type) hat keine Spalte.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Das Feld %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>Die ersten %count Zeilen</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Das Passwort konnte nicht im Geheimnisspeicher abgelegt werden (Einrichtung &gt; Geheimnisse nennt den Grund).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Die Tabelle %table ist nicht in der Datenbank.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Die Tabelle exp_data_connection fehlt: Eine Verbindung kann getestet, aber erst gespeichert werden, wenn die Tabelle auf der Seite Datentabellen angelegt ist.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href="%url"&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Die Tabelle exp_data_connection fehlt: Legen Sie sie auf der Seite &lt;a href="%url"&gt;Datentabellen&lt;/a&gt; an. Bis dahin werden nur die in datatable.ini festgelegten Verbindungen aufgeführt.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Die Tabelle exp_data_connection fehlt: Legen Sie sie zuerst auf der Seite Datentabellen an.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Die Tabellen der Datentabellen sind noch nicht installiert</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Die Tabellen der persistenten Klassen dieser Installation, wie ihre Definitionen sie beschreiben, und wo jede gespeichert ist.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Die Schaltfläche unten legt sie in dieser Datenbank an; sonst ändert sich nichts.</translation>
+    </message>
+    <message>
+        <source>This installation's own database, from site.ini. It can be tested here.</source>
+        <translation>Die eigene Datenbank dieser Installation, aus site.ini. Hier kann sie getestet werden.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Dieses Geheimnis ist nicht gesetzt.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, remove it" to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Kreuzen Sie „Ja, entfernen“ an, um die Verbindung zu entfernen. Klassen und Werkzeuge, die sie nennen, schlagen dann fehl, bis sie neu angelegt ist.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Kreuzen Sie das Feld unten an, um es verschlüsselt unter dem oben genannten Geheimnis abzulegen (bei leerem Namen datatable. und der Bezeichner).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Wird nur für einen Test verwendet und nie wieder angezeigt.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Unter diesem Namen nennen Klassen und Werkzeuge sie: Kleinbuchstaben, Ziffern und _. Er kann später nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Woher die Klassen stammen</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Wo die Tabelle von der Definition abweicht</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Ja, entfernen</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>ein Fremdschlüssel eines Feldes</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>hochgezählt: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() schlägt fehl</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>vorhanden</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>aus dem Namen erschlossen</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>fehlt</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nein</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>hier nicht verfügbar</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nicht gesetzt</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>nur lesen</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>gesetzt</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>der Administration</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>der Definition</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>unbekannt</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>hier ungetestet</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
     </message>
 </context>
 <context>
