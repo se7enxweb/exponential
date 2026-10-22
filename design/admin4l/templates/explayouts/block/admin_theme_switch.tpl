@@ -21,4 +21,6 @@
     </div>
     {* Help for this page, the context help (parts/a4_header_help.tpl) *}
     {include uri='design:parts/a4_header_help.tpl'}
+    {* The header items of the extensions (parts/a4_header_items.tpl) *}
+    {include uri='design:parts/a4_header_items.tpl'}
     {include uri='design:parts/a4_header_user.tpl'}

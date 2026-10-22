@@ -1369,6 +1369,41 @@ Community“. Ein Template kann auch `$show_community_links` setzen.
   Administrationsoberfläche
   (die 401-Seite, `user/register`, `user/forgotpassword`) sagen „Exponential“.
 
+## Werkzeuge der Erweiterungen im Kopf
+
+Eine Erweiterung kann dem Kopf ein eigenes Werkzeug geben, nach der Hilfe und vor dem Benutzermenü: einen runden
+36-px-Knopf mit einer Zahl an der Ecke und einer Liste, etwa die Glocke der Benachrichtigungen von 7x SQLI Import. Der
+Kopf kommt aus einem Cache-Block je Benutzer, darum wird die Zahl nicht mit der Seite gezeichnet: das Werkzeug nennt
+eine JSON-Quelle, und `admin4.js` lädt sie, wenn die Seite gezeichnet wird und jedes Mal, wenn die Liste aufgeht.
+
+1. Eine Vorlage in `design/admin4/templates/` (oder `design/standard/templates/`) der Erweiterung, die das Markup des
+   Kernels einbindet:
+
+   ```
+   {include uri='design:parts/a4_header_item.tpl'
+            item_id='myext' item_label='Notifications'|i18n( 'extension/myext' ) item_icon='bell'
+            item_url='myext/notices' item_all='All notifications'|i18n( 'extension/myext' )
+            item_feed=concat( 'ezjscore/call/myext::notices'|ezurl( 'no' ), '?ContentType=json' )}
+   ```
+
+2. Der Name der Vorlage in `settings/design.ini.append.php` der Erweiterung:
+
+   ```
+   [AdminHeaderSettings]
+   HeaderItems[]=myext/header_bell.tpl
+   ```
+
+3. Die Quelle antwortet `{ "count": 3, "label": "Benachrichtigungen: 3 neu", "items": [ { "text": "...", "url": "...",
+   "meta": "..." } ] }`, oder dasselbe in `content`, wie ein ezjscore-Aufruf antwortet. Sie prüft die Rechte des
+   Benutzers selbst.
+
+Ohne Skript ist das Werkzeug ein Link auf `item_url`. Mit Skript tritt ein Aufklappknopf an seine Stelle:
+`aria-expanded` und `aria-controls`, Pfeiltasten, Pos1, Ende und Esc wie im Site- und im Hilfemenü. Die Zahl ist Teil
+des Namens des Knopfs („Benachrichtigungen: 3 neu“), das Abzeichen selbst ist `aria-hidden`. Die Einträge entstehen mit
+`textContent`, nie als HTML. Das Abzeichen nimmt die Tokens der Akzentfarbe (`--a4-accent-strong`, `--a4-on-accent`, mindestens 4,5:1) und folgt
+so dem hellen und dem dunklen Modus; bei erzwungenen Farben zeichnet es in Systemfarben. admin4 und admin4l binden
+denselben Teil ein, `parts/a4_header_items.tpl`. Geprüft von `AdminHeaderTest::testExtensionsAddHeaderItemsAfterHelp`.
+
 ## Für Entwickler
 
 - **Gestaltungsregeln: [Die Administrationsoberfläche gestalten](../../bc/6.0/admin4-gestaltung.md).** Kein

@@ -13768,6 +13768,10 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Nothing new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Environment</source>
         <translation type="unfinished"></translation>
     </message>
