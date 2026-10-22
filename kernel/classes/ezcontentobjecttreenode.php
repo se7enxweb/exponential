@@ -5353,6 +5353,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                                     'path' => $newParent ? $newParent->attribute( 'path_string' ) . $nodeID . '/' : null ) );
                 } );
 
+            // content/move ( node id, object id, old parent, new parent ) for listeners (site.ini [Event] Listeners[]),
+            // and the live mirror of the data tables in every process; both act at the end of the request
+            ezpEvent::getInstance()->notify( 'content/move', array( (int)$nodeID, (int)$node->attribute( 'contentobject_id' ), (int)$oldParentNodeID, (int)$newParentNodeID ) );
+            if ( class_exists( 'expDataSyncListener' ) )
+                expDataSyncListener::moved( (int)$nodeID, (int)$node->attribute( 'contentobject_id' ) );
+
             $newParentNode = eZContentObjectTreeNode::fetch( $newParentNodeID );
             $newParentPath = $newParentNode->attribute( 'path_string' );
             $newParentDepth = $newParentNode->attribute( 'depth' );

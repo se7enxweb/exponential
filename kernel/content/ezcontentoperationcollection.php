@@ -270,6 +270,12 @@ class eZContentOperationCollection
 
         if ( $auditBefore !== null )
             self::auditPublished( $object, $version, $auditBefore );
+
+        // content/publish ( object id, version ) for listeners (site.ini [Event] Listeners[]), and the live mirror of
+        // the data tables, in every process (a web request, a command, a queue worker); it acts at the end of the request
+        ezpEvent::getInstance()->notify( 'content/publish', array( (int)$objectID, (int)$versionNum ) );
+        if ( class_exists( 'expDataSyncListener' ) )
+            expDataSyncListener::published( (int)$objectID, (int)$versionNum );
     }
 
     /**
@@ -1416,6 +1422,13 @@ class eZContentOperationCollection
 
         foreach ( $auditRemoved as $auditData )
             expAuditHook::emit( 'content.node.remove', $auditData );
+
+        // content/remove ( object ids, node ids ) for listeners, and the live mirror of the data tables; an object that
+        // keeps another location is still there
+        $removedObjectIDs = array_map( 'intval', array_keys( $objectIdList ) );
+        ezpEvent::getInstance()->notify( 'content/remove', array( $removedObjectIDs, array_map( 'intval', (array)$removeNodeIdList ) ) );
+        if ( class_exists( 'expDataSyncListener' ) )
+            expDataSyncListener::removed( $removedObjectIDs, array_map( 'intval', (array)$removeNodeIdList ) );
         foreach ( $auditMainChanged as $objectId => $change )
             self::auditMainLocationChanged( $objectId, $change[0], $change[1], $change[2], 'location-remove' );
 
