@@ -12317,7 +12317,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 d8ec17ec6fcc8d49b62f81830d2d61b8  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-fc4d9da7262bd4037417899df1c555d6  doc/ger-de/.paths.json
+2fcd1a57e28f496237ad5dfad2cd1c90  doc/ger-de/.paths.json
 cda223dc1e4d14ac9943e964893cf0ea  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -19030,6 +19030,8 @@ f88e8ef0cfdc14aa84bc239512586eab  doc/ger-de/spezifikationen/6.0/explayouts-ui-a
 8ab206556fe45ca48cb6f6c7cca67831  doc/ger-de/spezifikationen/6.0/expservices.md
 582a371747cdeb92f77a8e5d6ca81fa4  doc/ger-de/spezifikationen/6.0/extension-metadaten.md
 ec43191225aa0d9f8213af10faf78ab4  doc/ger-de/spezifikationen/6.0/hilfe-stilrichtlinien.md
+14912518e29118ed2937f134df009ab2  doc/ger-de/spezifikationen/6.0/hilfeklassen-als-paket.md
+2f8670bc9f5688ea08f2eb5f29702e85  doc/ger-de/spezifikationen/6.0/hilfestandards.md
 74b6b7581ff6593f2e410f4132aabe07  doc/ger-de/spezifikationen/6.0/hilfesystem.md
 96b78f92e050e7582a8ff94a2dac5be3  doc/ger-de/spezifikationen/6.0/ini-override-platzierungen.md
 093832af7105cdeffcc7ce6760fc3927  doc/ger-de/spezifikationen/6.0/installer-protokolle-und-startdaten.md

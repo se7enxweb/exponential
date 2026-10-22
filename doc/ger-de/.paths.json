@@ -6711,6 +6711,8 @@
     "spezifikationen/6.0/expservices.md": "specifications/6.0/expservices.md",
     "spezifikationen/6.0/extension-metadaten.md": "specifications/6.0/extension-metadata.md",
     "spezifikationen/6.0/hilfe-stilrichtlinien.md": "specifications/6.0/help-style-guide.md",
+    "spezifikationen/6.0/hilfeklassen-als-paket.md": "specifications/6.0/help-content-package.md",
+    "spezifikationen/6.0/hilfestandards.md": "specifications/6.0/help-standards.md",
     "spezifikationen/6.0/hilfesystem.md": "specifications/6.0/help-system.md",
     "spezifikationen/6.0/ini-override-platzierungen.md": "specifications/6.0/ini-override-placements.md",
     "spezifikationen/6.0/installer-protokolle-und-startdaten.md": "specifications/6.0/installer-logs-and-seed-data.md",
