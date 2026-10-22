@@ -1077,7 +1077,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-902585aa8e62fc6014cc130a7d2e121b  design/admin4/stylesheets/admin4.css
+068d8d256a6081d7bb9c12e9f15bb64a  design/admin4/stylesheets/admin4.css
 67a7f54f18b4eef977b1d5e4e6fbba0e  design/admin4/stylesheets/components.css
 a87bec7d01d40f3de1611df181975ceb  design/admin4/stylesheets/content.css
 ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
@@ -3210,7 +3210,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-911add3760586e14cb52bfce6442531d  doc/changelogs/6.0/6.0.15.md
+73263e20d686496224c2ed5721ae6a0a  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6157,7 +6157,7 @@ f591dfeee412831cbf4c9ec450c93dc6  doc/eng-us/features/6.0/admin-links-follow-per
 730f4bd870741ba72e0b822ed910c9fd  doc/eng-us/features/6.0/admin-list-paging.md
 a47dfcc6efe2e2c9c161f250da461f72  doc/eng-us/features/6.0/admin3-responsive-admin.md
 a29a680e52b85935874388c9c6d885bd  doc/eng-us/features/6.0/admin3-sidebar-width-and-font-size.md
-bb96fcb8886154e1d967170a27b2c660  doc/eng-us/features/6.0/admin4-design.md
+82beb9c335cecb4f08c48052d1c2ac6a  doc/eng-us/features/6.0/admin4-design.md
 c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 4e6288e58d6f4884e2c040b863cbb545  doc/eng-us/features/6.0/adminneo-database-manager.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
@@ -14965,7 +14965,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 daea7f2e38000ce15caa57c898b75b10  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
 e2836e805e1dcad6c266afcbd5b608a8  doc/ger-de/funktionen/6.0/admin3-seitenleistenbreite-und-schriftgroesse.md
-f83749c2fec870940eb1a65064112024  doc/ger-de/funktionen/6.0/admin4-design.md
+d1b2d1be9357fd4a0147789e9680934e  doc/ger-de/funktionen/6.0/admin4-design.md
 ecf960bb3b6486904ede97299bf12ff9  doc/ger-de/funktionen/6.0/admin4l.md
 60e8c726f4ab01642d28261fd8386769  doc/ger-de/funktionen/6.0/adminneo-datenbankverwaltung.md
 b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
@@ -23929,7 +23929,7 @@ b6d6afb887a7aa995c0135bfef804f04  tests/tests/design/AdminLanguageBadgeTest.php
 bd3ad8901b548dce716e5a6f3bb28e17  tests/tests/design/AdminLeftMenuGroupsTest.php
 11725412969d2fd8de40d2eb0604e69f  tests/tests/design/AdminLegacyControlsTest.php
 787c93133cc75367bb9363930408a431  tests/tests/design/AdminLogoTest.php
-114034b47f229a9374a0c60cbf66300b  tests/tests/design/AdminMegaMenuTest.php
+176550e8953237cbc9b52b8ccd2ec581  tests/tests/design/AdminMegaMenuTest.php
 b91ebdadc3ad541ef7590c9f79877960  tests/tests/design/AdminMenuPolicyListTest.php
 8bd26f4d83a90026832a3696b7335882  tests/tests/design/AdminNewsletterPreviewTest.php
 4e03fd4b653ac220610d62cb9b415422  tests/tests/design/AdminNodeBinary.php

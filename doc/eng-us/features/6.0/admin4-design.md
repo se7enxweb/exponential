@@ -633,10 +633,11 @@ window's height without scrolling inside the panel. Another tab with a long choi
   its pill with the caret in it (`--a4-on-accent`). The tab is still a link (Enter follows it); the caret is the
   button (Enter, Space, ArrowDown open it). With three tabs that have one (Dashboard, Users, Setup) the row needs less
   room than two did before.
-- **The row's tab icons from 1600px.** Between 576 and 1599px the tabs of the one-line row show their names without
-  their icons (`menu.ini [Topmenu_<tab>] Icon`), about 22px a tab: at 1440px that keeps Setup and the carets in the
-  row with the header's Help link. In "More" and in the phone menu's tiles the icons stay. The current page's tab
-  is the last to move into "More" (`admin4.js`), so it shows selected in the row.
+- **The tabs show their icons at every width.** Each tab draws its icon (`menu.ini [Topmenu_<tab>] Icon`) before its
+  name in the one-line row, in "More" and in the phone menu's tiles. A tab that does not fit the row moves into
+  "More"; the current page's tab is the last to move (`admin4.js`), so it shows selected in the row. (Until
+  2026-10-22 the row hid the icons between 576 and 1599px to fit more tabs; extensions now give their tabs icons
+  too, and the icons are what tells the tabs apart at a glance.)
 - **Unknown settings are named in the debug report.** `parts/a4_mega_menu_check.tpl` (included with the script, so
   only while `MegaMenuTabs[]` names a tab) writes a debug message for a `MegaMenuTabs[]` value without
   `MegaMenuTemplate` and `NavigationPartIdentifier`, for a key of the section's `MegaMenuLinks[]`
