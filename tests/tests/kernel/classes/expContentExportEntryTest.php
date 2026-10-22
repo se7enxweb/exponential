@@ -162,4 +162,20 @@ class expContentExportEntryTest extends ezpTestCase
             'limited without policies'          => array( array( 'accessWord' => 'limited' ), $yes, false ),
         );
     }
+
+    /** A handler made earlier in the request (creatorList()) is returned again even when it has no reset() */
+    public function testInstanceReturnsACachedHandlerWithoutReset()
+    {
+        $saved = isset( $GLOBALS['eZPackageCreationHandlers'] ) ? $GLOBALS['eZPackageCreationHandlers'] : null;
+        $handler = new stdClass();
+        $GLOBALS['eZPackageCreationHandlers'] = array( 'ezcontentclass' => $handler );
+        try
+        {
+            $this->assertSame( $handler, eZPackageCreationHandler::instance( 'ezcontentclass' ) );
+        }
+        finally
+        {
+            $GLOBALS['eZPackageCreationHandlers'] = $saved;
+        }
+    }
 }

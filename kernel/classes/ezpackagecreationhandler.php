@@ -376,7 +376,10 @@ class eZPackageCreationHandler
         if( isset( $handlers[$handlerName] ) )
         {
             $handler = $handlers[$handlerName];
-            $handler->reset();
+            // A second call in one request (creatorList() made the handler first): only handlers that keep state
+            // between requests have reset(); the kernel's own creators have none
+            if ( method_exists( $handler, 'reset' ) )
+                $handler->reset();
         }
         else
         {
