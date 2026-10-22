@@ -10058,12 +10058,14 @@ b36c121bc572f5243e73092b3d7976ab  doc/eng-us/help/manual/how-do-i-go-back-to-an-
 2382ab26db6e5c82a18062fef6bf19f0  doc/eng-us/help/manual/how-do-i-insert-a-table-in-the-online-editor.md
 c8e2c9980894582709149a5f8b3e030d  doc/eng-us/help/manual/how-do-i-insert-an-image-in-the-online-editor.md
 9b04eda87ed19596dae2b82a482adfef  doc/eng-us/help/manual/how-do-i-keep-the-tag-tree-tidy.md
+3e0485cb4c42902138e1fdaae534d9f2  doc/eng-us/help/manual/how-do-i-let-a-translator-edit-one-language.md
 48c26958f9722cf7012f9cd944842e13  doc/eng-us/help/manual/how-do-i-move-or-copy-an-item.md
 e390552fb9582a509a1e89b5dfa805e0  doc/eng-us/help/manual/how-do-i-preview-a-draft.md
 1950bb284472f3457240d92559697ef8  doc/eng-us/help/manual/how-do-i-publish-an-rss-feed.md
 680558c8f58cba3d277e806143f1f0cf  doc/eng-us/help/manual/how-do-i-read-the-log-files.md
 382a5ea6ef20f4838397033aeb6c28bc  doc/eng-us/help/manual/how-do-i-redirect-old-addresses.md
 d691ea29861a1b47c43330fecd12f52f  doc/eng-us/help/manual/how-do-i-relate-other-items-while-editing.md
+498efd76f0b1bfc30468011e51c743ef  doc/eng-us/help/manual/how-do-i-remove-a-translation-or-change-the-main-language.md
 cc9c2197f40434d3ef0ab4889bad5f10  doc/eng-us/help/manual/how-do-i-remove-an-item.md
 5e95492a175128c880fc2a859c5afc42  doc/eng-us/help/manual/how-do-i-reuse-an-image-or-file.md
 b58125781c06715625a71b5db62546a6  doc/eng-us/help/manual/how-do-i-see-active-extensions-and-system-information.md
@@ -10074,6 +10076,7 @@ a22266b884b22f2b0ea67ad51ef5b98a  doc/eng-us/help/manual/how-do-i-send-content-f
 2a7b1f8ceeb42cd10292a1a3903e64ef  doc/eng-us/help/manual/how-do-i-set-the-seo-title-and-description.md
 4f145b69d6cf6013db0847c4e2373e04  doc/eng-us/help/manual/how-do-i-set-up-vat.md
 74a8ced4798965b7ce67b37a95940d8d  doc/eng-us/help/manual/how-do-i-show-an-item-in-more-than-one-place.md
+4c96c828477e39c29a6b3ed9602735d4  doc/eng-us/help/manual/how-do-i-show-an-item-in-untranslated-languages.md
 de256f18449b9c35ca51a3695f91907e  doc/eng-us/help/manual/how-do-i-swap-two-items.md
 c8757116de5815f5b524b2e8c7c9ad1f  doc/eng-us/help/manual/how-do-i-switch-the-administration-design.md
 717f7a2ec8ec742426a8fc3ec61a42eb  doc/eng-us/help/manual/how-do-i-tag-content.md
