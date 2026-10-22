@@ -1,13 +1,13 @@
 ---
-title: Datentyp ezobjectrelationlist (Objekt Vernüpfungsliste)
+title: Datentyp ezobjectrelationlist (Objekt Verknüpfungsliste)
 audience: developer, admin
 category: examples
-summary: "Der Datentyp ezobjectrelationlist (Objekt Vernüpfungsliste): was er speichert und wie Templates ihn verwenden."
-keywords: Datentyp, Attribut, ezobjectrelationlist, Objekt Vernüpfungsliste, Object relations, datatype, attribute, eZObjectRelationListType
+summary: "Der Datentyp ezobjectrelationlist (Objekt Verknüpfungsliste): was er speichert und wie Templates ihn verwenden."
+keywords: Datentyp, Attribut, ezobjectrelationlist, Objekt Verknüpfungsliste, Object relations, datatype, attribute, eZObjectRelationListType
 type: generated
 generated: exp:help:examples
 ---
-# Der Datentyp ezobjectrelationlist (Objekt Vernüpfungsliste)
+# Der Datentyp ezobjectrelationlist (Objekt Verknüpfungsliste)
 
 Klasse `eZObjectRelationListType` in `kernel/classes/datatypes/ezobjectrelationlist/ezobjectrelationlisttype.php`; Bezeichner `ezobjectrelationlist`, aufgeführt in `settings/content.ini` `[DataTypeSettings] AvailableDataTypes[]`.
 

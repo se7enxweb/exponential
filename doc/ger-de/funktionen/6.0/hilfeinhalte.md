@@ -25,7 +25,7 @@ Kontexthilfe in anderen Clients.
 | Der DITA-1.3-Export (Bookmaps, DITAVAL, Themen, Glossar), nach dem Schreiben geprüft | `./console exp:help:content dita`, **DITA herunterladen** auf der Seite des Handbuchs und in der Liste der Handbücher |
 | Die E-Books, gespeichert als Dateiobjekte unter E-books, versioniert, bei der Veröffentlichung neu erstellt | `./console exp:help:content ebooks` und jede Veröffentlichung eines Themas |
 | Die Themen mit überfälliger Prüfung (Prüfdatum überschritten, zu lange in Prüfung) | das Dashboard der Hilfe, `./console exp:help:content review` |
-| Die acht Klassen als Inhaltsklassen-Paket `exp_help_classes` (.ezpkg) und seine Prüfung | `./console exp:help:content package`, `verify-package` ([das Paket](../../../eng-us/specifications/6.0/help-content-package.md)) |
+| Die acht Klassen als Inhaltsklassen-Paket `exp_help_classes` (.ezpkg) und seine Prüfung | `./console exp:help:content package`, `verify-package` ([das Paket](../../spezifikationen/6.0/hilfeklassen-als-paket.md)) |
 | Ein Thema in der Hilfe: `exphelp/topic/<help_id>`; ein Handbuch: `exphelp/manual/<remote_id>`; die Liste der Handbücher: `exphelp/manual` | Admin, Richtlinie `exphelp/read` |
 | Kontexthilfe als JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | Richtlinie `exphelp/context` |
 
@@ -354,12 +354,12 @@ folgt so dem hellen und dunklen Modus der Administrationsoberfläche; sie hat ke
 Inhaltsklassen-Paket `exp_help_classes` (ein Paketverzeichnis und `exp_help_classes-<version>.ezpkg`), und
 `verify-package --file=<.ezpkg>` vergleicht ein Paket ohne Datenbank mit den Klassen des Release. Das Paket enthält nur
 die Klassen; Sektionen, Status, Baum und Rollen legt weiterhin `exp:help:content install` an. Erstellen, Prüfen und
-Übergabe: [die Hilfeklassen als Paket](../../../eng-us/specifications/6.0/help-content-package.md).
+Übergabe: [die Hilfeklassen als Paket](../../spezifikationen/6.0/hilfeklassen-als-paket.md).
 
 ## Abgleich mit den Spezifikationen
 
 Geprüft am 19. Oktober 2026 gegen den [Plan](../../spezifikationen/6.0/hilfesystem.md), den
-[Styleguide](../../spezifikationen/6.0/hilfe-stilrichtlinien.md) und die [Standards](../../../eng-us/specifications/6.0/help-standards.md)
+[Styleguide](../../spezifikationen/6.0/hilfe-stilrichtlinien.md) und die [Standards](../../spezifikationen/6.0/hilfestandards.md)
 (Pull-Request #288), Punkt für Punkt im Code, nicht anhand dieser Seite. Der DITA-Export, die E-Books als Dateiobjekte,
 die Prüfliste und ihre Übersetzungen, am 19. Oktober noch in Arbeit, folgten am 20. Oktober.
 
@@ -382,7 +382,7 @@ die Prüfliste und ihre Übersetzungen, am 19. Oktober noch in Arbeit, folgten a
 | Export als DITA-Bookmap + DITAVAL, regelmäßiger DITA-Export in ein Git-Repository (Auslieferungswege 3 und 4) | erledigt: `exp:help:content dita`, **DITA herunterladen** ([DITA-Export](#dita-export)); gültig gegen die DTDs von OASIS DITA 1.3. Der regelmäßige Lauf nach Git ist ein Cronjob der Site auf Basis des Exports (nur geänderte Dateien werden geschrieben, daher kann sein Verzeichnis das Git-Repository sein) |
 | E-Book als Dateiobjekt unter "E-books" (`help-ebooks`) gespeichert | erledigt: `exp:help:content ebooks`, bei der Veröffentlichung neu erstellt, versioniert, Sektion anhand der Zielgruppe ([gespeicherte E-Books](#gespeicherte-e-books)) |
 | Liste der Themen mit überschrittenem Prüfdatum im Dashboard (Phase 7) | erledigt: das Dashboard der Hilfe und `exp:help:content review`, auch Themen, die zu lange in Prüfung sind ([überfällige Prüfungen](#überfällige-prüfungen)) |
-| epubcheck und Ace by DAISY für jedes E-Book | ausgelassen: Java- und Node-Werkzeuge, die nicht mit einer PHP-Anwendung ausgeliefert werden. Eine Site, die Bücher veröffentlicht, lässt sie laufen. Das EPUB trägt `dcterms:conformsTo` EPUB Accessibility 1.1 / WCAG 2.2 AA, obwohl Exponential diese Prüfungen nicht ausführt; siehe [die Standards](../../../eng-us/specifications/6.0/help-standards.md#epub-accessibility-11) |
+| epubcheck und Ace by DAISY für jedes E-Book | ausgelassen: Java- und Node-Werkzeuge, die nicht mit einer PHP-Anwendung ausgeliefert werden. Eine Site, die Bücher veröffentlicht, lässt sie laufen. Das EPUB trägt `dcterms:conformsTo` EPUB Accessibility 1.1 / WCAG 2.2 AA, obwohl Exponential diese Prüfungen nicht ausführt; siehe [die Standards](../../spezifikationen/6.0/hilfestandards.md#epub-accessibility-11) |
 | Web-Templates `full/help_*.tpl`, `line/help_*.tpl` für die öffentliche Site (Auslieferungsweg 1) | vorerst ausgelassen: Der Kernel hat kein eigenes Design für eine öffentliche Site, in das sie gehören könnten; die Hilfe wird in der Administrationsoberfläche (`exphelp/topic`, `exphelp/manual`) und als JSON ausgeliefert, das das Design einer Site rendern kann. Ein Site-Paket, das öffentliche Hilfeseiten möchte, fügt die Templates in seinem Design hinzu |
 | "War das hilfreich?" bei jedem Thema (Phase 7) | vorerst ausgelassen: Es braucht einen Ort zum Speichern der Antworten und eine Datenschutzentscheidung (wer geantwortet hat, wie lange aufbewahrt) pro Site |
 | Hilfe nie Quelle für KI-Antworten (RAG), sofern nicht gewollt | standardmäßig erledigt: Der Kernel hat keine Liste von RAG-Quellen, und die Wurzel der Hilfe liegt unter Medien, nicht im Inhaltsbaum. Eine Extension, die eine solche Liste hinzufügt, muss `help-root` auslassen |
