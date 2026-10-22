@@ -3,7 +3,7 @@
  * The asynchronous publishing page (content/queued, ezasynchronouspublishing.js) links to the published node only
  * when ezpublishingqueue::status gives its address: a user who cannot read the published object (the creator of the
  * version) gets the status "finished" without node_uri, and the link "View the published item" is hidden instead
- * of pointing nowhere. Run in node against a stand-in for jQuery and Exp.io (js/asynchronous_publishing.js).
+ * of pointing nowhere. Run in node against a stand-in for the DOM and Exp.io (js/asynchronous_publishing.js).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AsynchronousPublishingLinkTest.php
  *

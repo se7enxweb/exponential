@@ -1,5 +1,5 @@
 // Runs the asynchronous publishing page's script (design/standard/javascript/ezasynchronouspublishing.js) against a
-// small stand-in for jQuery and Exp.io that answers ezpublishingqueue::status with one sample, and prints one JSON
+// small stand-in for the DOM and Exp.io that answers ezpublishingqueue::status with one sample, and prints one JSON
 // line per sample: the placeholder shown and the href and display of the link to the published node.
 // Usage: node asynchronous_publishing.js <path to ezasynchronouspublishing.js>
 'use strict';
@@ -18,35 +18,27 @@ function run(name, answer) {
     const placeholders = ['ezap-message-publishing', 'ezap-message-finished', 'ezap-message-deferred'];
     const children = { 'ezap-message-finished': ['ezap-contentview-uri'], 'ezap-message-deferred': ['ezap-versionview-uri'] };
 
-    function wrap(list) {
-        return {
-            length: list.length,
-            css(prop, value) { list.forEach((el) => { el.style[prop] = value; }); return this; },
-            // as jQuery: attr(key, undefined) reads, it does not write
-            attr(key, value) {
-                if (value === undefined) return list.length ? list[0].attrs[key] : undefined;
-                list.forEach((el) => { el.attrs[key] = String(value); });
-                return this;
-            },
-            html(value) { list.forEach((el) => { el.html = value; }); return this; },
-            find(selector) {
-                const id = selector.charAt(0) === '#' ? selector.slice(1) : null;
-                return wrap(list.reduce((found, el) => found.concat((children[el.id] || []).filter((c) => c === id).map((c) => elements[c])), []));
-            },
-            appendTo() { return this; },
-        };
-    }
+    // as much of the DOM as the script uses: elements by id, the placeholders by class, children by id and class
+    Object.keys(elements).forEach((id) => {
+        const el = elements[id];
+        el.getAttribute = (key) => (key in el.attrs ? el.attrs[key] : null);
+        el.setAttribute = (key, value) => { el.attrs[key] = String(value); };
+        el.removeAttribute = (key) => { delete el.attrs[key]; };
+        el.querySelector = (selector) => (selector.charAt(0) === '#' && (children[id] || []).includes(selector.slice(1)) ? elements[selector.slice(1)] : null);
+        el.querySelectorAll = () => [];
+        el.appendChild = (child) => child;
+        Object.defineProperty(el, 'innerHTML', { get: () => el.html, set: (value) => { el.html = value; } });
+    });
+    const document = {
+        getElementById: (id) => elements[id] || null,
+        querySelectorAll: (selector) => (selector === '.ezap-placeholder' ? placeholders.map((id) => elements[id]) : []),
+        createElement: () => ({ style: {}, className: '', innerHTML: '' }),
+    };
     const ready = [];
-    function $(target) {
-        if (typeof target === 'function') { ready.push(target); return undefined; }
-        if (target === '.ezap-placeholder') return wrap(placeholders.map((id) => elements[id]));
-        if (target.charAt(0) === '#') return wrap(elements[target.slice(1)] ? [elements[target.slice(1)]] : []);
-        return wrap([]);
-    }
-    $.extend = function () { return Object.assign.apply(null, arguments); };
     const io = { call() { return { then(ok) { ok(answer); } }; } };
-    const window = { Exp: { $, io }, setTimeout() {}, console };
-    const sandbox = { window, console };
+    const util = { extend() { return Object.assign.apply(null, arguments); } };
+    const window = { Exp: { io, util, ready(fn) { ready.push(fn); } }, setTimeout() {}, console };
+    const sandbox = { window, document, console };
     vm.createContext(sandbox);
     vm.runInContext(source + '\nthis.app = eZAsynchronousPublishingApp;', sandbox);
     sandbox.app.cfg = { contentobject_id: 7, version: 1, failure_message: 'failed', last_checked_message: '' };

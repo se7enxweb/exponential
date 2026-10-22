@@ -119,10 +119,11 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
         {
             foreach ( array( 'className', 'sectionName', 'publishedTxt' ) as $value )
             {
-                $this->assertStringContainsString( ".text( $value )", $js, $path );
-                $this->assertStringNotContainsString( ".html( $value )", $js, $path );
+                $this->assertMatchesRegularExpression( "/setText\\( tds\\[\\d\\], $value \\);/", $js, $path );
+                $this->assertStringNotContainsString( "innerHTML = $value", $js, $path );
             }
-            $this->assertStringContainsString( ".text( data.content.SearchString )", $js, $path );
+            $this->assertStringContainsString( "setText( em, data.content.SearchString );", $js, $path );
+            $this->assertStringContainsString( "if ( el && value !== undefined ) el.textContent = value;", $js, $path );
             $this->assertStringNotContainsString( "+ data.content.SearchString +", $js, $path );
         }
         foreach ( self::copies( 'javascript/ezajaxsubitems_expdatatable.js' ) as $path => $js )

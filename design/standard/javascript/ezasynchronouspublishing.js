@@ -2,8 +2,8 @@
 /* exported eZAsynchronousPublishingApp */
 /**
  * The asynchronous publishing page (content/queued): checks the status of the version being published at regular
- * intervals and shows what happened, on Exponential UI (jQuery 4 and Exp.io: exp::core and exp::io must be on the
- * page; queued.tpl loads them).
+ * intervals and shows what happened, on Exponential UI in plain JavaScript (Exp.io: exp::core and exp::io must be on
+ * the page; queued.tpl loads them). No jQuery needed.
  */
 var eZAsynchronousPublishingApp = (function() {
     var ret = {cfg: {}},
@@ -35,7 +35,7 @@ var eZAsynchronousPublishingApp = (function() {
      * @method init
      */
     ret.init = function() {
-        if ( window.Exp && window.Exp.io && window.Exp.$ ) {
+        if ( window.Exp && window.Exp.io && window.Exp.util ) {
             initExp(window.Exp);
         } else if ( window.console ) {
             window.console.error("eZAsynchronousPublishingApp: Exponential UI (exp::core, exp::io) is not on the page");
@@ -51,26 +51,45 @@ var eZAsynchronousPublishingApp = (function() {
      * @param {Object} Exp the Exponential UI namespace
      */
     function initExp(Exp) {
-        var $ = Exp.$;
-        ret.cfg = $.extend({}, DEFAULT_CONF, ret.cfg);
+        ret.cfg = Exp.util.extend({}, DEFAULT_CONF, ret.cfg);
         var fn = 'ezpublishingqueue::status', args = [ret.cfg.contentobject_id, ret.cfg.version];
-        var $error, $publishing, $finished, $deferred;
+        var error, publishing, finished, deferred;
 
-        function display($element, message) {
-            $('.ezap-placeholder').css('display', 'none');
-            $element.css('display', 'block');
-            if ( typeof message === 'function' ) {
-                message($element);
+        // as jQuery's .attr(name, value): undefined changes nothing, null removes the attribute
+        function setAttribute(element, name, value) {
+            if ( !element || value === undefined ) {
+                return;
+            }
+            if ( value === null ) {
+                element.removeAttribute(name);
             } else {
-                $element.html(message);
+                element.setAttribute(name, value);
             }
         }
-        function lastCheck($element) {
-            var $last = $element.find('.last-check');
-            if ( !$last.length ) {
-                $last = $('<span class="last-check"></span>').appendTo($element);
+        function display(element, message) {
+            Array.prototype.forEach.call(document.querySelectorAll('.ezap-placeholder'), function (placeholder) {
+                placeholder.style.display = 'none';
+            });
+            if ( !element ) {
+                return;
             }
-            $last.html(ret.cfg.last_checked_message.replace('%times%', checkedCount).replace('%ms%', ret.cfg.wait_time));
+            element.style.display = 'block';
+            if ( typeof message === 'function' ) {
+                message(element);
+            } else if ( message !== undefined ) {
+                element.innerHTML = message;
+            }
+        }
+        function lastCheck(element) {
+            var last = element.querySelectorAll('.last-check');
+            if ( !last.length ) {
+                var span = document.createElement('span');
+                span.className = 'last-check';
+                element.appendChild(span);
+                last = [span];
+            }
+            var html = ret.cfg.last_checked_message.replace('%times%', checkedCount).replace('%ms%', ret.cfg.wait_time);
+            Array.prototype.forEach.call(last, function (span) { span.innerHTML = html; });
         }
         function retry() {
             window.setTimeout(update, ret.cfg.wait_time);
@@ -78,10 +97,10 @@ var eZAsynchronousPublishingApp = (function() {
         function failed(message) {
             failureCount++;
             if ( failureCount > ret.cfg.max_allowed_failures ) {
-                display($error, message);
+                display(error, message);
             } else {
                 if ( checkedCount ) {
-                    display($publishing, lastCheck);
+                    display(publishing, lastCheck);
                 }
                 checkedCount++;
                 retry();
@@ -93,39 +112,43 @@ var eZAsynchronousPublishingApp = (function() {
                     if ( ret.cfg.redirect_uri !== false ) {
                         window.location = ret.cfg.redirect_uri;
                     } else {
-                        display($finished, function ($element) {
+                        display(finished, function (element) {
                             // no node_uri for a user who cannot read the published object: no link to it
-                            var $link = $element.find('#ezap-contentview-uri');
+                            var link = element.querySelector('#ezap-contentview-uri');
+                            if ( !link ) {
+                                return;
+                            }
                             if ( content.node_uri ) {
-                                $link.attr('href', content.node_uri).css('display', '');
+                                setAttribute(link, 'href', content.node_uri);
+                                link.style.display = '';
                             } else {
-                                $link.css('display', 'none');
+                                link.style.display = 'none';
                             }
                         });
                     }
                 } else if ( content && content.status == 'deferred' ) {
-                    display($deferred, function ($element) {
-                        $element.find('#ezap-versionview-uri').attr('href', content.versionview_uri);
+                    display(deferred, function (element) {
+                        setAttribute(element.querySelector('#ezap-versionview-uri'), 'href', content.versionview_uri);
                     });
                 } else {
                     if ( checkedCount ) {
-                        display($publishing, lastCheck);
+                        display(publishing, lastCheck);
                     }
                     checkedCount++;
                     retry();
                 }
-            }, function (error) {
+            }, function (failure) {
                 // the server function's own error text; any other failure: the configured message
-                var r = error && error.response;
+                var r = failure && failure.response;
                 failed(r && typeof r === 'object' && r.error_text ? String(r.error_text) : ret.cfg.failure_message);
             });
         }
 
-        $(function () {
-            $error = $('#ezap-error');
-            $publishing = $('#ezap-message-publishing');
-            $finished = $('#ezap-message-finished');
-            $deferred = $('#ezap-message-deferred');
+        Exp.ready(function () {
+            error = document.getElementById('ezap-error');
+            publishing = document.getElementById('ezap-message-publishing');
+            finished = document.getElementById('ezap-message-finished');
+            deferred = document.getElementById('ezap-message-deferred');
             update();
         });
     }
