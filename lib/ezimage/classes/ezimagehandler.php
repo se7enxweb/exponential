@@ -284,15 +284,16 @@ class eZImageHandler
     /*!
      \static
      Changes the file permissions for image file \a $filepath to the ones
-     defines in image.ini. It uses the group FileSettings and variable ImagePermissions.
+     defines in image.ini. It uses the group FileSettings and variable ImagePermissions;
+     when that is empty, the mode of every other stored file, site.ini [FileSettings]
+     StorageFilePermissions.
      \return \c true on success, \c false otherwise
     */
     static function changeFilePermissions( $filepath )
     {
         if ( !file_exists( $filepath ) )
             return false;
-        $ini = eZINI::instance( 'image.ini' );
-        $perm = $ini->variable( "FileSettings", "ImagePermissions" );
+        $perm = self::imagePermissions();
         // Nothing to change: no chmod. The file at the final name need not be
         // this process's: two servers running as different users (Apache as
         // the site user, Velocity as root) generate the same variation, and
@@ -312,6 +313,22 @@ class eZImageHandler
             $success = true;
         umask( $oldmask );
         return $success;
+    }
+
+    /**
+     * The mode of new image files and variations, as an octal string: image.ini [FileSettings] ImagePermissions, or
+     * when that is empty (the shipped value) site.ini [FileSettings] StorageFilePermissions. With a fixed 0666 in
+     * image.ini, an installation that narrowed StorageFilePermissions still wrote every variation world-writable.
+     *
+     * @return string
+     */
+    static function imagePermissions()
+    {
+        $ini = eZINI::instance( 'image.ini' );
+        $perm = $ini->hasVariable( 'FileSettings', 'ImagePermissions' ) ? trim( (string)$ini->variable( 'FileSettings', 'ImagePermissions' ) ) : '';
+        if ( $perm === '' )
+            $perm = trim( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
+        return $perm;
     }
 
     /*!
