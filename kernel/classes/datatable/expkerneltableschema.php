@@ -269,7 +269,8 @@ class expKernelTableSchema
     public static function handler( $db, array $schema )
     {
         $type = self::type( $db );
-        return eZDbSchema::instance( array( 'type' => $type === 'mongodb' ? $db->databaseName() : $type, 'instance' => $db, 'schema' => $schema ) );
+        // no schema: the handler reads the database's own (schema() reads it only while its schema is false)
+        return eZDbSchema::instance( array( 'type' => $type === 'mongodb' ? $db->databaseName() : $type, 'instance' => $db, 'schema' => $schema ? $schema : false ) );
     }
 
     /**

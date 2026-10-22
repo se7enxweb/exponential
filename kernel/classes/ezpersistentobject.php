@@ -317,9 +317,12 @@ class eZPersistentObject
     {
         $db = self::dbFor( $def );
         if ( self::needsConnectionSwitch( $db ) )
-            return self::onConnection( $db, function () use ( $def, $conditions, $extraConditions ) {
-                return self::removeObject( $def, $conditions, $extraConditions );
+        {
+            self::onConnection( $db, function () use ( $def, $conditions, $extraConditions ) {
+                self::removeObject( $def, $conditions, $extraConditions );
             } );
+            return;
+        }
 
         $table = $def["name"];
         if ( is_array( $extraConditions ) )
@@ -1418,9 +1421,12 @@ class eZPersistentObject
     {
         $db = self::dbFor( $def );
         if ( self::needsConnectionSwitch( $db ) )
-            return self::onConnection( $db, function () use ( $def, $orderField, $conditions, $down ) {
-                return self::reorderObject( $def, $orderField, $conditions, $down );
+        {
+            self::onConnection( $db, function () use ( $def, $orderField, $conditions, $down ) {
+                self::reorderObject( $def, $orderField, $conditions, $down );
             } );
+            return;
+        }
         $table = $def["name"];
         $keys = $def["keys"];
 
@@ -1627,9 +1633,12 @@ class eZPersistentObject
         $def = $parameters['definition'];
         $db = self::dbFor( $def );
         if ( self::needsConnectionSwitch( $db ) )
-            return self::onConnection( $db, function () use ( $parameters ) {
-                return self::updateObjectList( $parameters );
+        {
+            self::onConnection( $db, function () use ( $parameters ) {
+                self::updateObjectList( $parameters );
             } );
+            return;
+        }
         $table = $def['name'];
         $fields = $def['fields'];
         $keys = $def['keys'];

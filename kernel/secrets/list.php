@@ -10,5 +10,5 @@
 // The code is in kernel/private/classes/views/secrets/list.php (#207); this file is the entry point.
 // A server process started before the class existed (a Velocity worker) cannot load it: not available, no 500.
 if ( !class_exists( 'Exponential\\View\\Kernel\\Secrets\\SecretList' ) )
-    return $Params['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+    return get_defined_vars()['Params']['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
 return \Exponential\View\Kernel\Secrets\SecretList::main( __FILE__, get_defined_vars() );

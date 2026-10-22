@@ -9,5 +9,5 @@
 
 // The code is in kernel/private/classes/views/datatable/connection.php (#207); this file is the entry point.
 if ( !class_exists( 'Exponential\\View\\Kernel\\Datatable\\Connection' ) )
-    return $Params['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+    return get_defined_vars()['Params']['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
 return \Exponential\View\Kernel\Datatable\Connection::main( __FILE__, get_defined_vars() );
