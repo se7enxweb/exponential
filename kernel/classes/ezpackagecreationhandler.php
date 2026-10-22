@@ -340,6 +340,26 @@ class eZPackageCreationHandler
     }
 
     /**
+     * The wizard a link opens by its creator alone, package/create/(creator)/<creator id> (the class page's "Export
+     * classes as a package…" of the transfer registry): the creator id when Creator is the only entry parameter and
+     * looks like an id, else false. The view then checks that the user may use that creator (creatorList()).
+     * With a node too it is the content tree's entry (eZContentObjectPackageCreator::entryParameters()).
+     *
+     * @param array<string, mixed> $params the view's parameters: Creator, NodeID, Subtree, IncludeClasses, Versions
+     * @return string|false
+     */
+    static function creatorEntry( array $params )
+    {
+        foreach ( array( 'NodeID', 'Subtree', 'IncludeClasses', 'Versions' ) as $name )
+        {
+            if ( isset( $params[$name] ) && $params[$name] !== false && $params[$name] !== null )
+                return false;
+        }
+        $creator = isset( $params['Creator'] ) && is_string( $params['Creator'] ) ? $params['Creator'] : '';
+        return preg_match( '/^[a-z][a-z0-9_]{0,63}$/', $creator ) ? $creator : false;
+    }
+
+    /**
      * Returns a shared instance of the eZPackageCreationHandler class
      * pr $handlerName as defined in package.ini[CreationSettings]HandlerAlias
      *

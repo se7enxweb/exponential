@@ -38,7 +38,30 @@ class Create extends \Exponential\Runnable\ModuleView
         // the content object wizard starts again with that node or subtree selected. Only a node the user can
         // read, and only for a user who may use that wizard; nothing is made before the user confirms the steps.
         $viewParams = isset( $scope['Params'] ) && is_array( $scope['Params'] ) ? $scope['Params'] : array();
+        $startCreatorID = \eZPackageCreationHandler::creatorEntry( $viewParams );
         if ( !$module->isCurrentAction( 'CreatePackage' ) && !$module->isCurrentAction( 'PackageStep' ) &&
+             $startCreatorID !== false )
+        {
+            // A wizard opened by its creator alone (package/create/(creator)/ezcontentclass, the class page's
+            // "Export classes as a package…"): the same start as choosing it on this page, for a creator the user
+            // may use. Nothing is made before the user confirms the steps.
+            $startCreatorAllowed = false;
+            foreach ( \eZPackageCreationHandler::creatorList() as $listedCreator )
+            {
+                if ( is_object( $listedCreator ) && $listedCreator->attribute( 'id' ) === $startCreatorID )
+                    $startCreatorAllowed = true;
+            }
+            if ( !$startCreatorAllowed )
+                return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            $creatorID = $startCreatorID;
+            $creator = \eZPackageCreationHandler::instance( $creatorID );
+            $persistentData = array();
+            $http->setSessionVariable( 'eZPackageCreatorData' . $creatorID, $persistentData );
+            $initializeStep = true;
+            $package = false;
+            $creator->generateStepMap( $package, $persistentData );
+        }
+        else if ( !$module->isCurrentAction( 'CreatePackage' ) && !$module->isCurrentAction( 'PackageStep' ) &&
              \eZContentObjectPackageCreator::isEntry( $viewParams ) )
         {
             $entry = \eZContentObjectPackageCreator::entryParameters( $viewParams );

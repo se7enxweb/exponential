@@ -84,6 +84,21 @@ class expContentExportEntryTest extends ezpTestCase
         $this->assertTrue( eZContentObjectPackageCreator::isEntry( self::params( array( 'Versions' => 'all' ) ) ) );
     }
 
+    /** package/create/(creator)/<id> alone (the class page's "Export classes as a package…") opens that wizard */
+    public function testACreatorAloneOpensItsWizard()
+    {
+        $this->assertSame( 'ezcontentclass', eZPackageCreationHandler::creatorEntry( self::params( array( 'Creator' => 'ezcontentclass' ) ) ) );
+        $this->assertSame( 'ezcontentobject', eZPackageCreationHandler::creatorEntry( self::params( array( 'Creator' => 'ezcontentobject' ) ) ) );
+        $this->assertFalse( eZPackageCreationHandler::creatorEntry( self::params( array() ) ), 'no creator: the page lists the wizards' );
+        $this->assertFalse( eZPackageCreationHandler::creatorEntry( self::params( array( 'Creator' => 'ezcontentobject', 'NodeID' => '42' ) ) ),
+                            'with a node it is the content tree entry' );
+        foreach ( array( '', 'EZ', '../x', '<script>', '1abc', str_repeat( 'a', 65 ) ) as $bad )
+            $this->assertFalse( eZPackageCreationHandler::creatorEntry( self::params( array( 'Creator' => $bad ) ) ), $bad );
+        $this->assertFalse( eZPackageCreationHandler::creatorEntry( self::params( array( 'Creator' => array( 'ezcontentclass' ) ) ) ) );
+        $this->assertTrue( eZContentObjectPackageCreator::isEntry( self::params( array( 'Creator' => 'ezcontentclass' ) ) ),
+                           'the view checks the creator entry first, so this one never reaches the content entry' );
+    }
+
     public function testPositiveID()
     {
         $this->assertSame( 1, eZContentObjectPackageCreator::positiveID( '1' ) );
