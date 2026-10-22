@@ -30,6 +30,13 @@ class ezprestapiProviderIndependenceTest extends PHPUnit\Framework\TestCase
         return dirname( __DIR__, 4 ) . '/extension/ezprestapi';
     }
 
+    /** a checkout without the composer extensions (no extension/ezprestapi) skips, as the other extension suites do */
+    public static function setUpBeforeClass(): void
+    {
+        if ( !is_dir( self::root() . '/classes' ) )
+            self::markTestSkipped( 'ezprestapi is not installed in extension/' );
+    }
+
     /** @return string[] the PHP files under classes/ */
     private static function classFiles(): array
     {
