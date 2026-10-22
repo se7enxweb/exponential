@@ -389,7 +389,10 @@ They need an engine that sets `REQUEST_TIME_FLOAT` per request and carries heade
 Between requests the worker restores static class properties, superglobals, custom globals, output buffers, handlers
 and response headers to the state it was forked with. A few registries in the kernel are filled with `include_once`
 and could never be refilled once cleared, so they must be **kept**: the datatype, workflow event, notification event
-and payment gateway registries. Those names are built in (`expVelocity::DEFAULT_KEEP_GLOBALS`) and need no setting.
+and payment gateway registries. The worker scope of the kernel service container (`expKernelServicesWorker`) is kept
+too: it holds the settings files of each siteaccess, built once per worker instead of on every request
+([the kernel service container](../bc/6.0/kernel-services.md)). Those names are built in
+(`expVelocity::DEFAULT_KEEP_GLOBALS`) and need no setting.
 
 ```ini
 [ApplicationSettings]

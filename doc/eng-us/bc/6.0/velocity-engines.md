@@ -77,7 +77,7 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 |---|---|---|
 | 1 | extension autoloads | `php bin/php/ezpgenerateautoloads.php -e` |
 | 2 | kernel autoloads, only with `--kernel` | `php bin/php/ezpgenerateautoloads.php -k`, restricted to `kernel/` and `lib/` |
-| 3 | INI caches | `php bin/php/ezcache.php --clear-tag=ini` |
+| 3 | INI caches, and the compiled kernel service container (cache item `kernelservices`, [kernel services](kernel-services.md)) | `php bin/php/ezcache.php --clear-tag=ini` (`./console exp:services:compile` for the container alone) |
 | 4 | template, template-override, translation and design_base caches | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, one id per call |
 | 5 | engine archive, when Velocity runs from one | `php bin/php/phar.php build`: rebuilt only when a file in `kernel/`, `lib/` or `autoload/` changed, every file parsed first |
 | 6 | PHP-FPM: wait until its OPcache has revalidated the changed files (no reload), or reload it when that cannot be relied on | `sleep <revalidate_freq + 1>`, or `systemctl reload <[DeploySettings] PhpFpmService>` |

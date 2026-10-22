@@ -134,7 +134,9 @@ from the server and the log says so.
 Measured on a signed-in administration page: 256 to 284 ms with a fresh worker per request, 73 to 80 ms with
 persistent workers ([Chapter 8, section 8.3.7](../../../install/08-serving-the-site.md#837-persistent-workers-and-keepglobals)).
 Between requests the worker restores static properties, superglobals, globals, buffers and handlers. Four kernel
-registries are kept on purpose (`expVelocity::DEFAULT_KEEP_GLOBALS`); `[ApplicationSettings] KeepGlobals[]` adds
+registries and the worker scope of the kernel service container (`expKernelServicesWorker`: the settings files of
+each siteaccess, built once per worker, see [the compiled kernel container](../performance/compiled-kernel-container.md))
+are kept on purpose (`expVelocity::DEFAULT_KEEP_GLOBALS`); `[ApplicationSettings] KeepGlobals[]` adds
 names only for a global filled once by `include_once`. Keep nothing else: a request-scoped global kept between
 requests leaks one visitor's request into the next.
 
