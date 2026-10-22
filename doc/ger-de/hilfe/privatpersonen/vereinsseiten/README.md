@@ -15,7 +15,7 @@ außen öffentlich (wer wir sind, wann wir uns treffen, wie man beitritt) und ha
 (Neuigkeiten, Dokumente, Anmeldungen, ein Newsletter).
 
 Ein eingetragener gemeinnütziger Verein oder eine größere Organisation mit Angestellten findet mehr unter
-[Gemeinnützige Organisationen](../../../../eng-us/help/non-profits/non-profits-start-here.md) und unter
+[Gemeinnützige Organisationen](../../non-profit-organisationen/non-profit-organisationen-hier-beginnen.md) und unter
 [Kleine Gruppen und Vereine](../../unternehmen/vereine/README.md).
 
 ## Inhalt
@@ -77,7 +77,7 @@ Ein eingetragener gemeinnütziger Verein oder eine größere Organisation mit An
 - [Privatpersonen: hier beginnen](../privatpersonen-hier-beginnen.md)
 - [Mitgliederwebsites (Unternehmen)](../../unternehmen/mitglieder/README.md)
 - [Kleine Gruppen und Vereine](../../unternehmen/vereine/README.md)
-- [Gemeinnützige Organisationen: hier beginnen](../../../../eng-us/help/non-profits/non-profits-start-here.md)
+- [Gemeinnützige Organisationen: hier beginnen](../../non-profit-organisationen/non-profit-organisationen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

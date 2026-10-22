@@ -116,7 +116,7 @@ niemand diese Aufgabe übernehmen will, planen Sie von Anfang an ein, einen Host
 | [Kunden: hier beginnen](../kunden/kunden-hier-beginnen.md) | Betreiber einer laufenden Exponential-Website |
 | [Bereich für Shop-Betreiber](../kunden/handel/README.md) | tägliche und wöchentliche Routinen für einen laufenden Shop |
 | [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md) | wer auch immer die Website baut |
-| [Gemeinnützige Organisationen](../../../eng-us/help/non-profits/non-profits-start-here.md) | Wohltätigkeitsorganisationen, Vereine und Gemeinschaftsgruppen |
+| [Gemeinnützige Organisationen](../non-profit-organisationen/non-profit-organisationen-hier-beginnen.md) | Wohltätigkeitsorganisationen, Vereine und Gemeinschaftsgruppen |
 | [Privatpersonen](../privatpersonen/privatpersonen-hier-beginnen.md) | eine Person mit einer eigenen Website |
 | [Nicht-technische Menschen](../../../eng-us/help/non-technical-people/non-technical-people-start-here.md) | alle, die lieber keine technischen Seiten lesen |
 
