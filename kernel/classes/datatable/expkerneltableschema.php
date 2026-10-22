@@ -243,7 +243,7 @@ class expKernelTableSchema
      */
     public static function sql( array $schema, $type )
     {
-        $handler = eZDbSchema::instance( array( 'type' => $type === 'mongodb' ? 'mongo' : $type, 'instance' => new eZNullDB( array() ), 'schema' => $schema ) );
+        $handler = eZDbSchema::instance( array( 'type' => $type === 'mongodb' ? 'mongo' : $type, 'instance' => self::nullDB(), 'schema' => $schema ) );
         if ( !$handler )
             return '';
         $options = array( 'schema' => true, 'data' => false, 'allow_multi_insert' => false, 'diff_friendly' => false,
@@ -257,6 +257,20 @@ class expKernelTableSchema
         {
             return '';
         }
+    }
+
+    /**
+     * A database that connects to nothing, for writing SQL without a connection (the schema handlers want an instance).
+     *
+     * @return eZNullDB
+     */
+    public static function nullDB()
+    {
+        return new eZNullDB( array( 'server' => '', 'port' => false, 'user' => '', 'password' => '', 'database' => '',
+                                    'use_slave_server' => false, 'slave_server' => '', 'slave_port' => false, 'slave_user' => '',
+                                    'slave_password' => '', 'slave_database' => '', 'socket' => false, 'charset' => 'utf-8',
+                                    'is_internal_charset' => false, 'builtin_encoding' => false, 'connect_retries' => 0,
+                                    'use_persistent_connection' => false, 'show_errors' => false ) );
     }
 
     /**

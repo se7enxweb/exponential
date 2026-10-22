@@ -12,9 +12,9 @@
     </div>
     <div class="a4-table-wrap" role="region" aria-labelledby="datatable-tab-{$t.class|wash}-{$t.column|wash}" tabindex="0">
     <table class="a4-table is-compact">
-        <thead><tr>{foreach $t.fields as $f}<th scope="col">{$f|wash}</th>{/foreach}</tr></thead>
+        <thead><tr>{foreach $t.fields as $f max 6}<th scope="col">{$f|wash}</th>{/foreach}</tr></thead>
         <tbody>
-        {foreach $t.rows as $row}<tr>{foreach $t.fields as $f}<td>{if is_set( $row[$f] )}{$row[$f]|shorten( 60 )|wash}{/if}</td>{/foreach}</tr>{/foreach}
+        {foreach $t.rows as $row}<tr>{foreach $t.fields as $f max 6}<td>{if is_set( $row[$f] )}{$row[$f]|shorten( 60 )|wash}{/if}</td>{/foreach}</tr>{/foreach}
         </tbody>
     </table>
     </div>
