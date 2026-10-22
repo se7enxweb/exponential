@@ -3205,7 +3205,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-961ddd2cec4245d2b798ba2255304784  doc/changelogs/6.0/6.0.15.md
+7ef7d759db7f74ea92b95b08d8a90399  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6237,7 +6237,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 0e464036cacc73b686d0d651d329bf98  doc/eng-us/features/6.0/help-content.md
-6820d3fd79bce2b6dce634e2d964b9ee  doc/eng-us/features/6.0/help-system.md
+3b51634fa66e26d10a01c4063d66db8e  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 695c0016c5a385b9902ba21c168a66ce  doc/eng-us/features/6.0/install-in-one-command.md
@@ -15006,7 +15006,7 @@ b3f4195f79b892bca854beb80acf293a  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 339e70d0ff63ba7702504a938cee731f  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-541c1a3b9f5ffe6b54698b8c017cb962  doc/ger-de/funktionen/6.0/hilfesystem.md
+963b9da2ea59e31f718ce59b040357a5  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 644c0221d0cfa8304484565ac4c458ac  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -20208,7 +20208,7 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 69e945b04dd9717d0446cf7306528fe7  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-93aa9a12c083f563be050b543e22080e  kernel/classes/expvelocity.php
+607277ce0b8be9f6284b72501f649fdc  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 61f3e1980b4093057ceac49b80ec6fd6  kernel/classes/expvelocityconfiglayout.php
 71de74a3d7ef045020b4f88f4ede5292  kernel/classes/expvelocitydeploy.php
@@ -20397,7 +20397,7 @@ f7effc41230d544e41a80cf064a96a9d  kernel/classes/help/exphelppdfwriter.php
 61657e73c198af717fbfac518a9e78a1  kernel/classes/help/exphelpprojectfiles.php
 7040601f170d784b39ec006f577da0a4  kernel/classes/help/exphelpreadpolicygrant.php
 d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
-bd6a8e8266d2adf9c050c4ff790ee826  kernel/classes/help/exphelpremoteimages.php
+c27d8162e494a41713e53e5af9cf0d7e  kernel/classes/help/exphelpremoteimages.php
 ee756ea5fba2ba58e03c8c75da88abd7  kernel/classes/help/exphelpsearch.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
@@ -23512,7 +23512,7 @@ b33f7662af4ec33ba73bccf286d6b0d4  tests/tests/kernel/classes/help/expHelpPdfTest
 84323ff02193037437748b236e525ac3  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 4f25918ec9e72e0507962b20d24233b6  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
-a5cbd6f6d778cd7432f702b933033f3f  tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php
+6df7f1b384b125f8b8c123573716affb  tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php
 c6e73304dfc317b383e271cdd00cab68  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
 41726599964dc05529c6180acaeef567  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 66f45986e6d0a6db9811c5310289cbc2  tests/tests/kernel/classes/help/expHelpSearchHrefTest.php
