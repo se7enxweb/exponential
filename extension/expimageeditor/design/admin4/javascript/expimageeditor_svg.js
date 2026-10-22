@@ -128,6 +128,13 @@
         return sheet;
     }
 
+    /** An empty drawing of "<width>x<height>" (800x600 when that is no size) */
+    function emptyDrawing(size) {
+        var m = /^\s*(\d{1,5})\s*x\s*(\d{1,5})\s*$/i.exec(String(size || ''));
+        var w = m && Number(m[1]) > 0 ? Number(m[1]) : 800, h = m && Number(m[2]) > 0 ? Number(m[2]) : 600;
+        return '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '"></svg>';
+    }
+
     /** width, height and viewBox of the root element (quoted as in the file), read from the text */
     function rootAttributes(text) {
         var tag = ROOT_TAG.exec(text.replace(/<!--[\s\S]*?-->/g, ''));
@@ -841,10 +848,12 @@
             });
         }
 
-        return window.fetch(ctx.src, { credentials: 'same-origin' }).then(function (response) {
+        // no stored image: a new, empty drawing in the size of [EditorSettings] NewDrawingSize
+        var source = ctx.src ? window.fetch(ctx.src, { credentials: 'same-origin' }).then(function (response) {
             if (!response.ok) { throw new Error(String(response.status)); }
             return response.text();
-        }).then(function (text) {
+        }) : Promise.resolve(emptyDrawing(ctx.conf.newDrawingSize));
+        return source.then(function (text) {
             // read as text: a DOMParser document has the page's CSP, and would report every style="" and <style>
             hadLayers = /<g\b(?:[^>"']|"[^"]*"|'[^']*')*\bclass\s*=\s*["'][^"']*\blayer\b/.test(text);
             rootSize = rootAttributes(text);

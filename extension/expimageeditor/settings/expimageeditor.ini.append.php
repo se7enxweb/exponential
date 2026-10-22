@@ -11,6 +11,10 @@ OutputMIMETypes[]=image/webp
 OutputMIMETypes[]=image/svg+xml
 # Quality of a saved JPEG or WebP, 0.1 to 1
 Quality=0.92
+# The size of a new drawing, <width>x<height> in pixels: an image attribute
+# without an image offers "New SVG drawing" (needs image/svg+xml here and in
+# image.ini AllowedMIMETypes[])
+NewDrawingSize=800x600
 # Aspect ratios the crop tool offers, <width>:<height>, after those of the
 # image aliases with a fixed shape (geometry/scaleexact or geometry/crop)
 AspectRatios[]

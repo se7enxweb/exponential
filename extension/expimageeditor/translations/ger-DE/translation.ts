@@ -15,6 +15,22 @@
 <context>
     <name>extension/expimageeditor</name>
     <message>
+        <source>New drawing</source>
+        <translation>Neue Zeichnung</translation>
+    </message>
+    <message>
+        <source>The image shows the result. Apply makes it a step; another tool drops it.</source>
+        <translation>Das Bild zeigt das Ergebnis. „Anwenden“ übernimmt es als Schritt; ein anderes Werkzeug verwirft es.</translation>
+    </message>
+    <message>
+        <source>New SVG drawing</source>
+        <translation>Neue SVG-Zeichnung</translation>
+    </message>
+    <message>
+        <source>A new drawing must be an SVG image.</source>
+        <translation>Eine neue Zeichnung muss ein SVG-Bild sein.</translation>
+    </message>
+    <message>
         <source>The request did not come from the edit form.</source>
         <translation>Die Anfrage kam nicht aus dem Bearbeitungsformular.</translation>
     </message>

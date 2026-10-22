@@ -177,17 +177,22 @@
         this.toolbar = el('div', { 'class': 'expimageeditor-toolbar', role: 'toolbar', 'aria-label': t('tools'), 'aria-controls': 'expimageeditor-stage' });
         this.stage = el('div', { 'class': 'expimageeditor-stage', id: 'expimageeditor-stage' });
         this.panel = el('div', { 'class': 'expimageeditor-panel', role: 'group', hidden: true });
-        this.saveButton = el('button', { type: 'button', 'class': 'button defaultbutton expimageeditor-save', disabled: true, text: t('save') });
-        this.cancelButton = el('button', { type: 'button', 'class': 'button expimageeditor-cancel', text: t('cancel') });
-        this.discardButton = el('button', { type: 'button', 'class': 'button expimageeditor-discard', text: t('discard') });
-        this.keepButton = el('button', { type: 'button', 'class': 'button expimageeditor-keep', text: t('keep_editing') });
+        // admin4's controls (components.css): .a4-btn, .a4-btn-primary, .a4-icon-btn, .a4-field
+        this.saveButton = el('button', { type: 'button', 'class': 'a4-btn a4-btn-primary expimageeditor-save', disabled: true, text: t('save') });
+        this.cancelButton = el('button', { type: 'button', 'class': 'a4-btn expimageeditor-cancel', text: t('cancel') });
+        this.discardButton = el('button', { type: 'button', 'class': 'a4-btn a4-btn-outline-danger expimageeditor-discard', text: t('discard') });
+        this.keepButton = el('button', { type: 'button', 'class': 'a4-btn expimageeditor-keep', text: t('keep_editing') });
+        this.closeButton = el('button', { type: 'button', 'class': 'a4-icon-btn expimageeditor-close', title: t('cancel'), 'aria-label': t('cancel') }, [icon('x-lg')]);
         this.confirm = el('div', { 'class': 'expimageeditor-confirm', role: 'alert', hidden: true }, [
             el('span', { text: t('discard_question') }), this.discardButton, this.keepButton
         ]);
         this.dialog = el('dialog', { 'class': 'expimageeditor expimageeditor-' + this.kind, 'aria-labelledby': titleId }, [
             el('header', { 'class': 'expimageeditor-head' }, [
-                el('h2', { id: titleId, text: t('title', this.data.name) }),
-                this.status
+                el('div', { 'class': 'expimageeditor-heading' }, [
+                    el('h2', { id: titleId, text: this.data.src ? t('title', this.data.name) : t('title_new') }),
+                    this.status
+                ]),
+                this.closeButton
             ]),
             this.toolbar,
             el('div', { 'class': 'expimageeditor-body' }, [this.stage, this.panel]),
@@ -196,6 +201,7 @@
 
         this.saveButton.addEventListener('click', function () { self.save(); });
         this.cancelButton.addEventListener('click', function () { self.cancel(); });
+        this.closeButton.addEventListener('click', function () { self.cancel(); });
         this.discardButton.addEventListener('click', function () { self.close(); });
         this.keepButton.addEventListener('click', function () { self.showConfirm(false); });
         // Escape: the same question as Cancel
@@ -311,7 +317,7 @@
                 // a choice is a group of radio buttons, not a <select>: WebKit reports a <select> under
                 // style-src 'self' (style-src-attr, from its own controls, also for a <select> in the page's HTML)
                 if (options.type === 'radio') {
-                    return el('fieldset', { 'class': 'expimageeditor-field expimageeditor-field-radio' },
+                    return el('fieldset', { 'class': 'a4-field expimageeditor-field expimageeditor-field-radio' },
                         [el('legend', { text: options.label })].concat((options.options || []).map(function (option, index) {
                             var radio = el('input', { type: 'radio', name: id, id: id + '-' + index, value: option[0],
                                 checked: String(option[0]) === String(options.value) });
@@ -322,12 +328,13 @@
                         })));
                 }
                 if (options.type === 'select') {
-                    input = el('select', { id: id }, (options.options || []).map(function (option) {
+                    input = el('select', { id: id, 'class': 'a4-input' }, (options.options || []).map(function (option) {
                         return el('option', { value: option[0], selected: String(option[0]) === String(options.value), text: option[1] });
                     }));
                 } else {
                     input = el('input', {
-                        id: id, type: options.type || 'text', min: options.min, max: options.max, step: options.step,
+                        id: id, 'class': /^(text|number)$/.test(options.type || 'text') ? 'a4-input' : null,
+                        type: options.type || 'text', min: options.min, max: options.max, step: options.step,
                         value: options.type === 'checkbox' ? null : options.value, checked: options.type === 'checkbox' && !!options.value
                     });
                 }
@@ -342,7 +349,7 @@
                 });
                 input.addEventListener('change', function () { if (options.onChange) { options.onChange(read()); } });
                 var label = el('label', { 'for': id, text: options.label });
-                return el('div', { 'class': 'expimageeditor-field expimageeditor-field-' + (options.type || 'text') },
+                return el('div', { 'class': 'a4-field expimageeditor-field expimageeditor-field-' + (options.type || 'text') },
                     options.type === 'checkbox' ? [input, label] : [label, input, output]);
             },
             /**
@@ -381,7 +388,7 @@
             },
             /** A plain button for the panel */
             action: function (text, handler, primary) {
-                var button = el('button', { type: 'button', 'class': 'button' + (primary ? ' defaultbutton' : ''), text: text });
+                var button = el('button', { type: 'button', 'class': 'a4-btn a4-btn-small' + (primary ? ' a4-btn-primary' : ''), text: text });
                 button.addEventListener('click', handler);
                 return button;
             },

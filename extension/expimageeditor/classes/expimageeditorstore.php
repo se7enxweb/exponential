@@ -16,8 +16,9 @@
  *   content/edit requires). The anonymous user is refused: all anonymous visitors share one user ID.
  * - checkUpload(): the posted file must be an image the datatype stores (eZImageType::imageFileError(): type by
  *   content, AllowedMIMETypes[], size in pixels, SVG through the sanitizer), of the same kind as the stored one (an
- *   SVG stays an SVG, a raster image stays a raster image), of a type on expimageeditor.ini [EditorSettings]
- *   OutputMIMETypes[], and within the class attribute's maximum file size.
+ *   SVG stays an SVG, a raster image stays a raster image; an attribute without an image takes a new drawing, which
+ *   must be an SVG and is stored as drawing.svg), of a type on expimageeditor.ini [EditorSettings] OutputMIMETypes[],
+ *   and within the class attribute's maximum file size.
  * - store(): stores it through eZImageAliasHandler::initializeFromFile(), which writes an SVG only as the output of
  *   expSvgSanitizer, and keeps the alternative text. The previous version keeps its own image. The new original must
  *   exist afterwards, else nothing is recorded; files of the draft that initializeFromFile() has already replaced are
@@ -118,12 +119,16 @@ class expImageEditorStore
             throw new expImageEditorException( 413, 'The edited image is larger than this image field accepts.' );
 
         $content = $attribute->attribute( 'content' );
-        $original = $content instanceof eZImageAliasHandler ? $content->attribute( 'original' ) : null;
-        if ( !is_array( $original ) || empty( $original['is_valid'] ) )
-            throw new expImageEditorException( 404, 'The attribute has no image to edit.' );
+        if ( !$content instanceof eZImageAliasHandler )
+            throw new expImageEditorException( 404, 'The image does not exist.' );
+        $original = $content->attribute( 'original' );
+        // an attribute without an image takes a new drawing, which is an SVG
+        $isNew = !is_array( $original ) || empty( $original['is_valid'] );
 
         $isSVG = expSvgSanitizer::isSVGFile( $path );
-        $wasSVG = isset( $original['mime_type'] ) && $original['mime_type'] === 'image/svg+xml';
+        if ( $isNew && !$isSVG )
+            throw new expImageEditorException( 415, 'A new drawing must be an SVG image.' );
+        $wasSVG = $isNew || ( isset( $original['mime_type'] ) && $original['mime_type'] === 'image/svg+xml' );
         if ( $isSVG !== $wasSVG )
             throw new expImageEditorException( 415, $wasSVG ? 'An SVG image can only be replaced by an SVG image here.'
                                                             : 'A raster image can only be replaced by a raster image here.' );
@@ -136,7 +141,7 @@ class expImageEditorStore
         if ( !in_array( $mime, self::outputMIMETypes(), true ) || !isset( self::EXTENSIONS[$mime] ) )
             throw new expImageEditorException( 415, 'The editor may not store images of this type.' );
 
-        $originalName = isset( $original['original_filename'] ) ? (string)$original['original_filename'] : '';
+        $originalName = !$isNew && isset( $original['original_filename'] ) ? (string)$original['original_filename'] : 'drawing';
         return array( 'path' => $path, 'name' => self::targetName( $originalName, $mime ), 'mime' => $mime );
     }
 

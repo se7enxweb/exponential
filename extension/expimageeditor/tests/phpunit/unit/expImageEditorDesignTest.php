@@ -1,8 +1,10 @@
 <?php
 /**
  * The design files of the image editor, read as files (no kernel, no database).
- *  ID-01 - the edit template: behind the policy expimageeditor/edit, the settings once per page (not in the save view's
- *          answer), the button hidden until the script is there, the data attributes the frame reads
+ *  ID-01 - the edit templates (beside an image: ezimage_editor.tpl; without one: ezimage_new.tpl, a new SVG drawing)
+ *          behind the policy expimageeditor/edit, the settings once per page from expimageeditor/config.tpl (not in the
+ *          save view's answer), the button hidden until the script is there, the data attributes the frame reads; the
+ *          new drawing only where SVG is accepted, and admin4's ezimage.tpl includes ezimage_new.tpl without an image
  *  ID-02 - every text the scripts ask for (t('key')) is in the template's data-labels, and every label is used
  *  ID-03 - every icon the scripts use has its file (Bootstrap Icons) and its class in the stylesheet
  *  ID-04 - the scripts the template names exist, and the frame script is the only one the page loads at once
@@ -34,35 +36,59 @@ class expImageEditorDesignTest extends PHPUnit\Framework\TestCase
         return file_get_contents( $file );
     }
 
-    private static function template()
+    /** A template without its {* comments *} */
+    private static function code( $name = 'expimageeditor/config.tpl' )
     {
-        return self::read( 'templates/content/datatype/edit/ezimage_editor.tpl' );
+        return preg_replace( '/\{\*.*?\*\}/s', '', self::read( 'templates/' . $name ) );
     }
 
-    /** The template without its {* comments *} */
-    private static function code()
+    /** The button of an edit template, its attributes */
+    private function button( $code )
     {
-        return preg_replace( '/\{\*.*?\*\}/s', '', self::template() );
+        $this->assertSame( 1, preg_match( '/<button class="button expimageeditor-open" type="button" hidden(.*?)>/s', $code, $button ) );
+        foreach ( array( 'save', 'src', 'type', 'name' ) as $data )
+            $this->assertStringContainsString( "data-expimageeditor-$data=", $button[1] );
+        $this->assertStringContainsString( "concat( 'expimageeditor/save/', \$attribute.id, '/', \$attribute.version )|ezurl( 'no' )", $button[1] );
+        return $button[1];
     }
 
     /** ID-01 */
     public function testTheTemplateIsGuardedAndCarriesTheData()
     {
+        $access = "fetch( 'user', 'has_access_to', hash( 'module', 'expimageeditor', 'function', 'edit' ) )";
+        $include = "{include uri='design:expimageeditor/config.tpl'}";
+
+        $editor = trim( self::code( 'content/datatype/edit/ezimage_editor.tpl' ) );
+        $this->assertStringStartsWith( "{if $access}", $editor );
+        $this->assertStringEndsWith( '{/if}', $editor );
+        $this->assertStringContainsString( $include, $editor );
+        $this->assertStringContainsString( 'data-expimageeditor-src="{$attribute.content.original.url|ezroot( \'no\' )}"', $this->button( $editor ) );
+
+        $new = trim( self::code( 'content/datatype/edit/ezimage_new.tpl' ) );
+        $this->assertStringStartsWith( "{if and( $access,", $new );
+        foreach ( array( "ezini( 'ImageUploadSettings', 'AllowedMIMETypes', 'image.ini' )|contains( 'image/svg+xml' )",
+                         "ezini( 'ImageUploadSettings', 'SanitizeSVG', 'image.ini' )|ne( 'disabled' )",
+                         "ezini( 'EditorSettings', 'OutputMIMETypes', 'expimageeditor.ini' )|contains( 'image/svg+xml' )" ) as $condition )
+            $this->assertStringContainsString( $condition, $new, 'a new drawing only where SVG is accepted' );
+        $this->assertStringEndsWith( '{/if}', $new );
+        $this->assertStringContainsString( $include, $new );
+        $button = $this->button( $new );
+        $this->assertStringContainsString( 'data-expimageeditor-src=""', $button );
+        $this->assertStringContainsString( 'data-expimageeditor-type="image/svg+xml"', $button );
+        // admin4's image template includes it where there is no image, and draws nothing of its own
+        $core = dirname( __DIR__, 5 ) . '/design/admin4/templates/content/datatype/edit/';
+        $this->assertMatchesRegularExpression( "/\\{else\\}\\s*\\{include uri='design:content\\/datatype\\/edit\\/ezimage_new.tpl'\\}/", (string)file_get_contents( $core . 'ezimage.tpl' ) );
+        $this->assertSame( '', trim( preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( $core . 'ezimage_new.tpl' ) ) ) );
+
         $code = trim( self::code() );
-        $this->assertStringStartsWith( "{if fetch( 'user', 'has_access_to', hash( 'module', 'expimageeditor', 'function', 'edit' ) )}", $code );
-        $this->assertStringEndsWith( '{/if}', $code );
-        $this->assertMatchesRegularExpression( '/\{if is_set\( \$expimageeditor_response \)\|not\(\)\}\s*\{run-once\}/', $code,
+        $this->assertMatchesRegularExpression( '/^\{if is_set\( \$expimageeditor_response \)\|not\(\)\}\s*\{run-once\}/', $code,
             'the settings are written once per page, and not into the save view\'s answer' );
+        $this->assertStringEndsWith( "{/run-once}\n{/if}", $code );
         $this->assertStringContainsString( "{ezscript_require( 'expimageeditor.js' )}", $code );
         $this->assertStringContainsString( "{ezcss_require( 'expimageeditor.css' )}", $code );
         $this->assertSame( 1, preg_match_all( '/<div id="expimageeditor-config" hidden/', $code ) );
         $this->assertMatchesRegularExpression( '/data-conf="\{json_encode\( hash\(.*?\) \)\|wash\}"/s', $code );
         $this->assertMatchesRegularExpression( '/data-labels="\{json_encode\( hash\(.*?\) \)\|wash\}"/s', $code );
-
-        $this->assertSame( 1, preg_match( '/<button class="button expimageeditor-open" type="button" hidden(.*?)>/s', $code, $button ) );
-        foreach ( array( 'save', 'src', 'type', 'name' ) as $data )
-            $this->assertStringContainsString( "data-expimageeditor-$data=", $button[1] );
-        $this->assertStringContainsString( "concat( 'expimageeditor/save/', \$attribute.id, '/', \$attribute.version )|ezurl( 'no' )", $button[1] );
         // the module's view and its policy function
         $module = file_get_contents( dirname( __DIR__, 3 ) . '/modules/expimageeditor/module.php' );
         $this->assertMatchesRegularExpression( "/\\\$ViewList\\['save'\\].*'functions' => array\\( 'edit' \\)/s", $module );

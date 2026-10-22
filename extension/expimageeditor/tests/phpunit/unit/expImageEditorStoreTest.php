@@ -8,6 +8,7 @@
  *  IE-05 - a hostile SVG passes the check (it is stored as the sanitizer's output); one with nothing safe in it does not
  *  IE-06 - the class attribute's maximum file size applies
  *  IE-07 - only the user's own draft, and only with edit access in the attribute's language
+ *  IE-08 - an attribute without an image takes a new drawing: an SVG, stored as drawing.svg; a raster image is refused
  * The store itself (initializeFromFile() and the ezimagefile rows) needs the database; it is checked in the browser on a
  * running installation (README.md, "Checks").
  *
@@ -78,11 +79,11 @@ class expImageEditorStoreTest extends PHPUnit\Framework\TestCase
     /**
      * An image attribute whose stored image has this type and name, in a class attribute with this maximum size (MB)
      */
-    private function attribute( $mime, $name, $maxMegabytes = 0 )
+    private function attribute( $mime, $name, $maxMegabytes = 0, $valid = true )
     {
         $handler = $this->createStub( eZImageAliasHandler::class );
         $handler->method( 'attribute' )->willReturnMap( array(
-            array( 'original', array( 'is_valid' => true, 'mime_type' => $mime, 'original_filename' => $name ) ),
+            array( 'original', $valid ? array( 'is_valid' => true, 'mime_type' => $mime, 'original_filename' => $name ) : array( 'is_valid' => false ) ),
         ) );
         $classAttribute = $this->createStub( eZContentClassAttribute::class );
         $classAttribute->method( 'attribute' )->willReturnMap( array( array( 'data_int1', $maxMegabytes ) ) );
@@ -187,6 +188,19 @@ class expImageEditorStoreTest extends PHPUnit\Framework\TestCase
 
         $this->assertRefused( 413, function () use ( $big ) { expImageEditorStore::checkUpload( self::upload( $big ), $this->attribute( 'image/png', 'big.png', 1 ), false ); } );
         $this->assertSame( 'big.png', expImageEditorStore::checkUpload( self::upload( $big ), $this->attribute( 'image/png', 'big.png', 0 ), false )['name'] );
+    }
+
+    /** IE-08 */
+    public function testAnAttributeWithoutAnImageTakesANewDrawing()
+    {
+        $empty = $this->attribute( '', '', 0, false );
+        $svg = $this->file( 'new.svg', '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="10" height="10"/></svg>' );
+        $checked = expImageEditorStore::checkUpload( self::upload( $svg ), $empty, false );
+        $this->assertSame( array( 'path' => $svg, 'name' => 'drawing.svg', 'mime' => 'image/svg+xml' ), $checked );
+
+        $png = $this->raster( 'new.png' );
+        $e = $this->assertRefused( 415, function () use ( $png, $empty ) { expImageEditorStore::checkUpload( self::upload( $png ), $empty, false ); } );
+        $this->assertSame( 'A new drawing must be an SVG image.', $e->getMessage() );
     }
 
     /** IE-07 */

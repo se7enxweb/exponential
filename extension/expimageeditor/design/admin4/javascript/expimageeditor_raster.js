@@ -252,6 +252,7 @@
     /** Makes a canvas the next step and shows it */
     RasterEditor.prototype.commit = function (canvas, label, keepSelection) {
         this.preview = null;
+        if (this.effectTimer) { window.clearTimeout(this.effectTimer); this.effectTimer = null; }
         this.push(canvas, label);
         this.ctx.setDirty(this.position > 0);
         if (!keepSelection) { this.clearSelection(); }
@@ -259,7 +260,10 @@
         var self = this;
         return this.show(canvas).then(function () {
             self.ctx.announce(self.t('applied', label) + ' ' + self.sizeText());
+            // the panel of the same tool again, without putting its effect over the result at once
+            self.justApplied = true;
             self.refreshPanel();
+            self.justApplied = false;
         });
     };
 
@@ -338,7 +342,10 @@
     /** Shows a canvas (the current step or a preview) */
     RasterEditor.prototype.show = function (canvas) {
         var self = this;
+        // toBlob() is asynchronous: of two show() calls in a row only the later one may reach the stage
+        var ticket = this.showTicket = (this.showTicket || 0) + 1;
         return toBlob(canvas, 'image/png').then(function (blob) {
+            if (ticket !== self.showTicket) { return null; }
             var url = window.URL.createObjectURL(blob);
             var region = self.selectedRegion();
             var image = self.ctx.el('cropper-image', { src: url, alt: self.ctx.name, 'initial-center-size': 'contain' });
@@ -351,7 +358,10 @@
             return image.$ready().then(function () {
                 image.$center('contain');
                 if (region && canvas.width === self.current().width && canvas.height === self.current().height) {
+                    // putting the selection back is no change of the user's: no new preview for it
+                    self.restoring = true;
                     self.setSelection(region);
+                    window.setTimeout(function () { self.restoring = false; }, 0);
                 }
             });
         });
@@ -403,6 +413,12 @@
         }
         if (this.cropButton) { this.cropButton.disabled = !region; }
         if (this.regionNote) { this.regionNote.hidden = !!region; }
+        // an effect's preview follows the region it works on
+        if (this.effectPreview && !this.restoring) {
+            var self = this;
+            if (this.effectTimer) { window.clearTimeout(this.effectTimer); }
+            this.effectTimer = window.setTimeout(function () { self.effectTimer = null; if (self.effectPreview) { self.effectPreview(); } }, 150);
+        }
     };
 
     RasterEditor.prototype.setZoom = function (zoom) {
@@ -446,8 +462,8 @@
         var adjust = ctx.group(t('group_adjust'));
         this.toolButton(adjust, 'brightness', 'brightness-high', t('brightness'), 'b');
         this.toolButton(adjust, 'contrast', 'circle-half', t('contrast'), 'k');
-        ctx.button(adjust, { icon: 'droplet-half', label: t('grayscale'), shortcut: 'g', onClick: function () { self.applyFilter('grayscale', t('grayscale')); } });
-        ctx.button(adjust, { icon: 'sunset', label: t('sepia'), shortcut: 'e', onClick: function () { self.applyFilter('sepia', t('sepia')); } });
+        this.toolButton(adjust, 'grayscale', 'droplet-half', t('grayscale'), 'g');
+        this.toolButton(adjust, 'sepia', 'sunset', t('sepia'), 'e');
 
         var region = ctx.group(t('group_region'));
         this.toolButton(region, 'pixelate', 'grid-3x3', t('pixelate'), 'p');
@@ -469,6 +485,8 @@
     };
 
     RasterEditor.prototype.chooseTool = function (id, button) {
+        this.effectPreview = null;
+        if (this.effectTimer) { window.clearTimeout(this.effectTimer); this.effectTimer = null; }
         if (this.preview) {
             this.preview = null;
             this.show(this.current());
@@ -548,6 +566,8 @@
                 ];
             },
             brightness: function () { return self.sliderPanel('brightness', t('brightness')); },
+            grayscale: function () { return self.effectPanel('grayscale', t('grayscale')); },
+            sepia: function () { return self.effectPanel('sepia', t('sepia')); },
             contrast: function () { return self.sliderPanel('contrast', t('contrast')); },
             pixelate: function () { return self.regionPanel('pixelate', t('pixelate'), 4, 64, 12); },
             blur: function () { return self.regionPanel('blur', t('blur'), 1, 40, 8); },
@@ -592,6 +612,24 @@
         var canvas = copyCanvas(this.current());
         filters[name](canvas, this.workRegion(), value);
         return this.commit(canvas, label, true);
+    };
+
+    /**
+     * Black and white or sepia: the stage shows the result at once, for the selection or the whole image, and follows
+     * a new selection; Apply makes it a step, another tool drops the preview
+     */
+    RasterEditor.prototype.effectPanel = function (name, label) {
+        var ctx = this.ctx, self = this;
+        this.effectPreview = function () {
+            var canvas = copyCanvas(self.current());
+            filters[name](canvas, self.workRegion());
+            self.preview = canvas;
+            self.show(canvas);
+        };
+        if (!this.justApplied) { this.effectPreview(); }
+        return [ctx.el('p', { text: this.t('effect_hint') }), this.regionNoteNode(), ctx.el('div', { 'class': 'expimageeditor-actions' }, [
+            ctx.action(this.t('apply'), function () { self.applyFilter(name, label); }, true)
+        ])];
     };
 
     /** Brightness or contrast: previewed while the slider moves, a step with Apply */

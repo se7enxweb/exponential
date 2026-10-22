@@ -49,6 +49,12 @@
                 <copyright>Copyright (c) 2019-2024 The Bootstrap Authors</copyright>
                 <version>1.13.2</version>
             </uses>
+            <uses>
+                <name>Noto Sans and Noto Serif (sample fonts)</name>
+                <license>SIL Open Font License 1.1</license>
+                <copyright>Copyright 2022 The Noto Project Authors</copyright>
+                <version>2.015</version>
+            </uses>
         </software>
     </metadata>
 </software>

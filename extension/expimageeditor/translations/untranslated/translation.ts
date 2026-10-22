@@ -4,6 +4,22 @@
 <context>
     <name>extension/expimageeditor</name>
     <message>
+        <source>New drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The image shows the result. Apply makes it a step; another tool drops it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New SVG drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new drawing must be an SVG image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The request did not come from the edit form.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -7,14 +7,17 @@ GNU General Public License v2.0 (or any later version).
 An image editor for the image datatype (`ezimage`) in the admin design `admin4`. It takes the place of the
 editor of `ezie`: a button **Edit image** beside the stored image of a draft opens a modal dialog, the image is
 edited in the browser, and **Save** stores the result as the image of that draft. Nothing changes in the published
-version until the draft is published; **Cancel** leaves the draft untouched.
+version until the draft is published; **Cancel** leaves the draft untouched. An image attribute without an image
+offers **New SVG drawing** instead: the SVG editor starts with an empty drawing, and **Save** stores it as
+`drawing.svg` (only where SVG is accepted, see `NewDrawingSize`).
 
 Two editors share one frame:
 
 - **Raster images** (JPEG, PNG, WebP, GIF), on [Cropper.js](https://github.com/fengyuanchen/cropperjs) 2.3.1 and
   canvas tools of its own: crop (free, the image's own ratio, the ratios of fixed-shape image aliases and of
   `AspectRatios[]`), rotate by 90° or by a free angle with a background colour, flip, resize, brightness, contrast,
-  black and white, sepia, pixelate or blur a region, watermark (text in the system font or a configured font, or a
+  black and white, sepia (each shown on the image at once, for the selection or the whole image, and made a step
+  with **Apply**), pixelate or blur a region, watermark (text in the system font or a configured font, or a
   configured image), undo/redo, zoom.
 - **SVG images**, on [@svgedit/svgcanvas](https://github.com/SVG-Edit/svgedit) 7.4.2 with a toolbar of its own (not
   SVG-Edit's UI): select, rectangle, ellipse, line, path, freehand, text, delete, duplicate, bring to front, send to
@@ -81,6 +84,7 @@ All in `[EditorSettings]`; override in `settings/override/expimageeditor.ini.app
 |---|---|---|
 | `OutputMIMETypes[]` | `image/jpeg`, `image/png`, `image/webp`, `image/svg+xml` | The types the editor may store. A raster image is saved in its own type when that type is listed, otherwise as PNG (so a GIF becomes a PNG by default, and an animated GIF loses its animation). An SVG stays an SVG. Each type must also be on `image.ini [ImageUploadSettings] AllowedMIMETypes[]`, or the datatype refuses it. |
 | `Quality` | `0.92` | Quality of a saved JPEG or WebP, 0.1 to 1. |
+| `NewDrawingSize` | `800x600` | The size of a new drawing in pixels, `<width>x<height>`. **New SVG drawing** is offered beside an image attribute without an image when SVG is accepted (`image.ini AllowedMIMETypes[]` with `image/svg+xml`, `SanitizeSVG` not disabled) and `OutputMIMETypes[]` lists `image/svg+xml`. admin4's `content/datatype/edit/ezimage.tpl` includes `ezimage_new.tpl` there; its own copy draws nothing, this extension's draws the button. |
 | `AspectRatios[]` | `1:1`, `4:3`, `3:2`, `16:9` | Ratios the crop tool offers, `<width>:<height>`. They come after the ratios of the image aliases that give an image a fixed shape: an alias of `image.ini [AliasSettings] AliasList[]` with a `Filters[]` entry `geometry/scaleexact=<w>;<h>` or `geometry/crop=<w>;<h>;...`, labelled `<alias> (<w>:<h>)`. A ratio appears once, under its first label. "Free" and "Original" are always there. |
 | `Watermarks[]` | empty | Images the watermark tool offers besides a text, `<label>;<design path>`, resolved like `ezdesign` (a PNG with transparency works best). Example: `Watermarks[]=Logo;images/watermarks/logo.png`. An entry without exactly two parts is ignored. |
 | `Fonts[]` | empty | Fonts the text tools offer besides the system font (the watermark text of the raster editor, the text tool of the SVG editor): `<label>;<font-family>;<design path>[;<outline path>]`. See below. |
@@ -102,8 +106,20 @@ Fonts[]=Lora;Lora;fonts/expimageeditor/lora-latin-400-normal.woff2;fonts/expimag
   `.otf`, **not** `.woff2`. Give the same font in one of those formats here. Without it, the design path is used if
   it is not `.woff2`; a font given only as `.woff2` is offered all the same, but its text stays text in the saved SVG.
 
-The sample above is shipped (Lora Regular, Latin subset, SIL Open Font License 1.1,
-`design/admin4/fonts/expimageeditor/LICENSE`); it is commented out in the shipped settings.
+Three fonts are shipped in `design/admin4/fonts/expimageeditor/`, all under the SIL Open Font License 1.1; the
+shipped settings list none of them:
+
+```ini
+Fonts[]=Lora;Lora;fonts/expimageeditor/lora-latin-400-normal.woff2;fonts/expimageeditor/lora-latin-400-normal.woff
+Fonts[]=Noto Serif;Noto Serif;fonts/expimageeditor/noto-serif-regular.woff2;fonts/expimageeditor/noto-serif-regular.woff
+Fonts[]=Noto Sans;Noto Sans;fonts/expimageeditor/noto-sans-regular.woff2;fonts/expimageeditor/noto-sans-regular.woff
+```
+
+- Lora Regular, Latin (@fontsource/lora 5.3.0, `LICENSE`).
+- Noto Serif and Noto Sans Regular 2.015 (`LICENSE-Noto.txt`), from the releases of
+  [notofonts/latin-greek-cyrillic](https://github.com/notofonts/latin-greek-cyrillic), unhinted TTF converted to
+  woff2 and woff with fontTools, glyphs unchanged: Latin with its extensions, Greek, Cyrillic and Vietnamese
+  (2965 characters each, about 155 KB as woff2).
 
 With "Save text in added fonts as paths" ticked, a text whose characters are all in configured fonts is saved as a
 `<g role="img" aria-label="...">` with a `<title>` (the words) and one `<path>` per run of characters, so it looks
@@ -223,7 +239,7 @@ in its tooltip and in `aria-keyshortcuts`.
 | `design/admin4/javascript/licenses/` | Their licence texts |
 | `design/admin4/stylesheets/expimageeditor.css` | The dialog in admin4's tokens, light and dark |
 | `design/admin4/images/expimageeditor/icons/` | Bootstrap Icons 1.13.2 (MIT), used as CSS masks |
-| `design/admin4/fonts/expimageeditor/` | The sample font Lora (OFL 1.1) |
+| `design/admin4/fonts/expimageeditor/` | The sample fonts Lora, Noto Serif and Noto Sans (OFL 1.1) |
 | `build/svgcanvas/`, `build/opentype/` | Reproducible esbuild bundles of the two libraries |
 | `translations/` | German, and the untranslated template |
 
@@ -238,6 +254,7 @@ in its tooltip and in `aria-keyshortcuts`.
 | tiny-inflate | 1.0.3 | MIT | in `opentype.min.js` |
 | Bootstrap Icons | 1.13.2 | MIT | `images/expimageeditor/icons/` |
 | Lora (@fontsource/lora 5.3.0) | 3.008 | SIL OFL 1.1 | `fonts/expimageeditor/` |
+| Noto Serif, Noto Sans (notofonts/latin-greek-cyrillic) | 2.015 | SIL OFL 1.1 | `fonts/expimageeditor/LICENSE-Noto.txt` |
 
 The licence texts are in `design/admin4/javascript/licenses/`, `design/admin4/images/expimageeditor/icons/LICENSE`
 and `design/admin4/fonts/expimageeditor/LICENSE`; `extension.xml` lists them. The extension itself is GPL v2 or later.
