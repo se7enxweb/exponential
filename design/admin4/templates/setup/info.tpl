@@ -334,10 +334,13 @@
             <small>{if eq( $key, 'opcache' )}{'compiled PHP scripts'|i18n( 'design/admin/setup/info' )}{else}{'data in shared memory'|i18n( 'design/admin/setup/info' )}{/if}</small>
             {if $cache|not}
                 <span class="a4-badge">{'not installed'|i18n( 'design/admin/setup/info' )}</span>
-            {elseif $cache.enabled}
-                <span class="a4-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{if $cache.version}<small>{$cache.version|wash}</small>{/if}
             {else}
-                <span class="a4-badge is-warn">{'off'|i18n( 'design/admin/setup/info' )}</span>
+                {* not an elseif: the if function evaluates every elseif, $cache.enabled on false logs an error *}
+                {if $cache.enabled}
+                    <span class="a4-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{if $cache.version}<small>{$cache.version|wash}</small>{/if}
+                {else}
+                    <span class="a4-badge is-warn">{'off'|i18n( 'design/admin/setup/info' )}</span>
+                {/if}
             {/if}
         </div>
         {if and( $cache, $cache.enabled|not )}<p class="a4-help">{$cache.why_off|wash}</p>{/if}

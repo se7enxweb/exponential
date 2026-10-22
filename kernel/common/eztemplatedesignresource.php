@@ -650,11 +650,14 @@ class eZTemplateDesignResource extends eZTemplateFileResource
     /*!
      \static
      \return An array containing the names of the design extensions that are
-             currently active
+             currently active, or those of \a $siteAccess when one is given.
+             findDesignBase() reads the site.ini of that siteaccess, so its
+             design.ini (with its siteaccess and access extension settings)
+             must come from the same siteaccess
     */
-    static function designExtensions()
+    static function designExtensions( $siteAccess = false )
     {
-        $designINI = eZINI::instance( 'design.ini' );
+        $designINI = $siteAccess ? eZSiteAccess::getIni( $siteAccess, 'design.ini' ) : eZINI::instance( 'design.ini' );
         $extensions = $designINI->variable( 'ExtensionSettings', 'DesignExtensions' );
         return array_reverse( $extensions );
     }
@@ -782,7 +785,7 @@ class eZTemplateDesignResource extends eZTemplateFileResource
 
         $designBaseList     = array();
         $designStartPath    = eZTemplateDesignResource::designStartPath();
-        $extensions         = eZTemplateDesignResource::designExtensions();
+        $extensions         = eZTemplateDesignResource::designExtensions( $siteAccess );
 
         foreach ( $siteDesignList as $design )
         {

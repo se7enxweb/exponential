@@ -442,12 +442,9 @@ class Info extends \Exponential\Runnable\ModuleView
 
         // safe_mode and register_globals were removed from PHP (5.4); the keys stay, always off, for templates that read them.
         $phpINI = array( 'safe_mode' => false, 'register_globals' => false, 'file_uploads' => (bool)ini_get( 'file_uploads' ) );
+        // Every key is set, an empty one too (open_basedir is '' when not restricted): the templates read them all.
         foreach ( array( 'open_basedir', 'post_max_size', 'memory_limit', 'max_execution_time', 'upload_max_filesize' ) as $iniName )
-        {
-            $value = ini_get( $iniName );
-            if ( $value !== '' )
-                $phpINI[$iniName] = $value;
-        }
+            $phpINI[$iniName] = (string)ini_get( $iniName );
         $tpl->setVariable( 'php_ini', $phpINI );
     }
 
