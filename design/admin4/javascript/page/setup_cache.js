@@ -42,7 +42,7 @@
         });
         groups.forEach(function (s) {
             var visible = !g || s.dataset.group === g;
-            if (q && visible) visible = s.querySelectorAll('tr.a4-setup-cache-row:not([hidden])').length > 0 || s.dataset.group === 'velocity' && !q;
+            if (q && visible) visible = s.querySelectorAll('tr.a4-setup-cache-row:not([hidden])').length > 0;
             s.hidden = !visible;
         });
         count.textContent = shown + ' / ' + rows.length + ' ' + texts.shown;
