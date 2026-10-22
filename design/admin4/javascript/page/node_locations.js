@@ -4,13 +4,26 @@
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
-(function( $ )
+(function()
 {
-    $('#tab-locations-list input.main-locations-radio').on('change', function()
+    var radios = document.querySelectorAll('#tab-locations-list input.main-locations-radio');
+    for ( var i = 0; i < radios.length; i++ )
     {
-        if ( this.className === 'main-locations-radio' )
-            $('#tab-locations-list-set-main').removeClass('button').addClass('defaultbutton');
-        else
-            $('#tab-locations-list-set-main').removeClass('defaultbutton').addClass('button');
-    });
-})( jQuery );
+        radios[i].addEventListener('change', function()
+        {
+            var btn = document.getElementById('tab-locations-list-set-main');
+            if ( !btn )
+                return;
+            if ( this.className === 'main-locations-radio' )
+            {
+                btn.classList.remove('button');
+                btn.classList.add('defaultbutton');
+            }
+            else
+            {
+                btn.classList.remove('defaultbutton');
+                btn.classList.add('button');
+            }
+        });
+    }
+})();

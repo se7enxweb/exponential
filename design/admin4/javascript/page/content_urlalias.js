@@ -4,7 +4,10 @@
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
-jQuery(function( $ )//called on document.ready
+(function( fn )
+{
+    if ( document.readyState !== 'loading' ) fn(); else document.addEventListener( 'DOMContentLoaded', fn );
+})(function()//called on document.ready
 {
     with( document.aliasform )
     {
