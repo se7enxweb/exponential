@@ -1,5 +1,5 @@
 // Runs sidebarToggle() of design/admin4/javascript/ezadmin_menubar.js against a small stand-in for the browser
-// (matchMedia, jQuery's few calls, the keydown listeners, two focusable links in each column) and prints one JSON
+// (matchMedia, the columns' and tabs' classes and attributes, the keydown listeners, two focusable links in each column) and prints one JSON
 // line per scenario.
 // Usage: node sidebar_drawer.js <path to ezadmin_menubar.js>
 'use strict';
@@ -26,6 +26,12 @@ function run(width, prefsIn, steps) {
         };
     }
     const controls = { left: element('left'), right: element('right') };
+    ['left', 'right'].forEach((s) => Object.assign(controls[s], {
+        classList: { toggle() {} },
+        setAttribute(name, value) { if (name === 'aria-expanded') state[s].expanded = value; },
+        removeAttribute() {},
+        addEventListener(evt, fn) { handlers[s] = fn; },
+    }));
     const links = { left: [element('left1'), element('left2')], right: [element('right1'), element('right2')] };
     const columns = {};
     ['left', 'right'].forEach((s) => {
@@ -36,18 +42,15 @@ function run(width, prefsIn, steps) {
         };
     });
     function side(sel) { return sel.indexOf('left') >= 0 ? 'left' : 'right'; }
-    function $(sel) {
+    // the column (its class "show" is what the scenarios read) and its tab
+    function all(sel) {
         const s = side(sel);
-        const api = {
-            toggleClass(cls, on) { if (sel.indexOf('.sidebar.') === 0 && cls === 'show') state[s].show = on; return api; },
-            attr(name, value) { if (name === 'aria-expanded') state[s].expanded = value; return api; },
-            removeAttr() { return api; },
-            on(evt, fn) { handlers[s] = fn; return api; },
-        };
-        return api;
+        if (sel.indexOf('.sidebar.') === 0) {
+            return [{ classList: { toggle(cls, on) { if (cls === 'show') state[s].show = on; } } }];
+        }
+        return sel.indexOf('.sidebar-control.') === 0 ? [controls[s]] : [];
     }
     sandbox = {
-        $,
         window: {
             matchMedia(q) {
                 const max = parseFloat(q.match(/max-width: ([\d.]+)px/)[1]);
@@ -62,7 +65,7 @@ function run(width, prefsIn, steps) {
         document: {
             getElementById: () => ({}),
             querySelector: (sel) => (sel.indexOf('.sidebar-control.') === 0 ? controls[side(sel)] : columns[side(sel)]),
-            querySelectorAll: () => [],
+            querySelectorAll: all,
             addEventListener: (t, f) => { if (t === 'keydown') keydowns.push(f); },
             activeElement: null,
         },

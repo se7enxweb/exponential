@@ -164,7 +164,7 @@ class AdminFirstPaintColumnsTest extends PHPUnit\Framework\TestCase
     public function testTheScriptEndsThePreloadTwoFramesAfterItHasAppliedTheState()
     {
         $js = self::read( 'design/admin4/javascript/ezadmin_menubar.js' );
-        $this->assertMatchesRegularExpression( '/\$\(function \(\) \{\s*(?:\/\/[^\n]*\s*)?try \{\s*sidebarToggle\(\);\s*\} finally \{\s*endPreload\(\);\s*\}/', $js,
+        $this->assertMatchesRegularExpression( '/function init\(\) \{\s*(?:\/\/[^\n]*\s*)?try \{\s*sidebarToggle\(\);\s*\} finally \{\s*endPreload\(\);\s*\}/', $js,
             'right after the columns have their state' );
 
         $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );

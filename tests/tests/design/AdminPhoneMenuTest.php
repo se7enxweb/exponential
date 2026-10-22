@@ -247,7 +247,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'block', self::phone()['.navbar-bar > :is(.header-search-mobile, .a4-phone-only)']['display'] );
         $this->assertStringContainsString( "return li !== more && !li.classList.contains('header-search-mobile') && !li.classList.contains('a4-phone-only');",
                                            AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' ) );
-        $this->assertStringContainsString( '$(".a4-phone-close-button").on(\'click\'', AdminFiles::read( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
+        $this->assertStringContainsString( 'document.querySelectorAll(".a4-phone-close-button").forEach((button) => button.addEventListener(\'click\'', AdminFiles::read( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
 
         // the user's actions: the header user menu's links under the same conditions, and logout
         $user = self::template( 'admin4/templates/parts/a4_phone_user.tpl' );

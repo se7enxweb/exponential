@@ -897,7 +897,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'class="sidebar-control right" aria-controls="rightmenu"', $tpl );
         $this->assertStringContainsString( "'Left column'|i18n( 'design/admin/pagelayout' )|wash", $tpl );
         $js = AdminFiles::read( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' );
-        $this->assertStringContainsString( '.attr("aria-expanded", open ? "true" : "false")', $js );
+        $this->assertStringContainsString( '.setAttribute("aria-expanded", open ? "true" : "false")', $js );
         $this->assertStringContainsString( 'e.key !== "Escape"', $js );
         $this->assertStringContainsString( 'control.focus();', $js );
         // while a context menu is shown, Escape belongs to the menu, whatever the script order

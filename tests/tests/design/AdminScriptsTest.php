@@ -93,8 +93,8 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $path = 'design/admin4/javascript/ezadmin_menubar.js';
         $js = self::code( $path );
         $this->assertSame( 0, preg_match_all( '/^(function|const|let|var)\s/m', $js ), "$path: a declaration at the top level is a global" );
-        $this->assertMatchesRegularExpression( '/^\(\(\$\) => \{$/m', $js );
-        $this->assertStringEndsWith( "})(jQuery);\n", self::read( $path ) );
+        $this->assertMatchesRegularExpression( '/^\(\(\) => \{$/m', $js );
+        $this->assertStringEndsWith( "})();\n", self::read( $path ) );
         // the header height is admin4.js's, the table wrapper was never called
         $this->assertStringNotContainsString( 'adjustHeaderHeight', $js );
         $this->assertStringNotContainsString( 'wrapTable', $js );
