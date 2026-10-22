@@ -6242,7 +6242,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-1afe983504e5fc0d388402142e951471  doc/eng-us/features/6.0/help-content.md
+35e3d3421cc8c48f6116b4750f7471ee  doc/eng-us/features/6.0/help-content.md
 3b51634fa66e26d10a01c4063d66db8e  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
@@ -21630,7 +21630,7 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
 809731dbdb99481738c541cba4ac6bdc  kernel/classes/help/content/exphelpcontentdita.php
-30d1265c87abc59842f371ebbb33144b  kernel/classes/help/content/exphelpcontentebooks.php
+e04ee46f0297d3e42d103f76846bbb1f  kernel/classes/help/content/exphelpcontentebooks.php
 55413d93f88a3bc7acc6f3dd8368de64  kernel/classes/help/content/exphelpcontenteditionprovider.php
 76c95ab6db140a4516e4320aa888839a  kernel/classes/help/content/exphelpcontentexport.php
 55f92f1a206b102c012d371f1dd5f36a  kernel/classes/help/content/exphelpcontentinstaller.php
@@ -24762,7 +24762,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 15ce983a094e9cdcc0d658817e44997c  tests/tests/kernel/classes/help/expHelpCachePruneTest.php
 ab48655d2b55173d9a7de603c97a4643  tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
 83c90ccb65e3d61eb3c65a6c62afc6d7  tests/tests/kernel/classes/help/expHelpContentDitaTest.php
-7356fd529f77e2245d46428b8b774c6f  tests/tests/kernel/classes/help/expHelpContentEbooksTest.php
+b9d42fd5fe587845e22012d9363ae7cf  tests/tests/kernel/classes/help/expHelpContentEbooksTest.php
 d3242d9bfe2f82d0261d2e4c061aec4e  tests/tests/kernel/classes/help/expHelpContentExportTest.php
 e65692aa5c652521877848dfcbec2000  tests/tests/kernel/classes/help/expHelpContentPackageTest.php
 76c79716bf06b3eddb6dc7f5635c7870  tests/tests/kernel/classes/help/expHelpContentReviewTest.php
