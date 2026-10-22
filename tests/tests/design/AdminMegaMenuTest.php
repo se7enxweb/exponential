@@ -1232,9 +1232,8 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '.navbar-menu .navbar-bar > li.a4-mega-item > a.selected:hover { padding-inline-end: var(--a4-space-5); }', $wide );
         $this->assertMatchesRegularExpression( '/\.navbar-bar > li\.a4-mega-item > \.a4-mega-toggle \{\s*position: absolute;\s*inset-inline-end: 0;/', $wide );
         $this->assertStringContainsString( '.navbar-bar > li.a4-mega-item > a.selected + .a4-mega-toggle { color: var(--a4-on-accent); }', $wide );
-        // the row's tab icons from 1600px only, so the tabs keep their room at 1440px and 960px
-        $this->assertStringContainsString( '.navbar-menu .navbar-bar > li > a > .a4-icon { display: none; }',
-                                           self::media( self::css(), 'screen and (min-width: 576px) and (max-width: 1599.98px)' ) );
+        // the row's tabs show their icons at every width (a tab that does not fit moves into "More")
+        $this->assertStringNotContainsString( '.navbar-bar > li > a > .a4-icon { display: none; }', self::css(), 'tab icons are never hidden' );
         $this->assertStringContainsString( 'columns: 15rem 4;', $wide );
         $this->assertMatchesRegularExpression( '/\.a4-mega-wide \.a4-mega-group \{[^}]*break-inside: avoid;/', $wide, 'a group is never split' );
         // three columns of 15rem (16px) and their gaps fit 960px less the card's insets and padding: no inner scroll there
