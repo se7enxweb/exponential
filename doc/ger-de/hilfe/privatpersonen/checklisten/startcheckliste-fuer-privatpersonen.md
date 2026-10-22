@@ -27,8 +27,8 @@ Einzelheiten ist die [Startcheckliste für Website-Ersteller](../../ersteller/we
 
 ## Vor dem Umzug zum Hoster
 
-- [ ] Die echte Website auf dem `_clean`-Paket gebaut oder Demo-Inhalte entfernt ([Ein Seitenpaket und ein Theme wählen](../einrichtung/ein-seitenpaket-und-ein-theme-waehlen.md)).
-- [ ] Hoster geprüft: PHP-Version, Erweiterungen, Cron, E-Mail, HTTPS ([Shared Hosting oder ein kleiner Server](../einrichtung/shared-hosting-oder-ein-kleiner-server.md)).
+- [ ] Die echte Website auf dem `_clean`-Paket gebaut oder Demo-Inhalte entfernt ([Ein Seitenpaket und ein Theme wählen](../setup/ein-seitenpaket-und-ein-theme-waehlen.md)).
+- [ ] Hoster geprüft: PHP-Version, Erweiterungen, Cron, E-Mail, HTTPS ([Shared Hosting oder ein kleiner Server](../setup/shared-hosting-oder-ein-kleiner-server.md)).
 - [ ] Eine vollständige Sicherung der lokalen Website ([Sicherungen für eine Person](../im-betrieb/sicherungen-fuer-eine-person.md)).
 
 ## Konten und Sicherheit
@@ -41,7 +41,7 @@ Einzelheiten ist die [Startcheckliste für Website-Ersteller](../../ersteller/we
 
 ## Adresse und HTTPS
 
-- [ ] Domain zeigt auf den Server; `www` und der Name ohne `www` verhalten sich wie beschlossen ([Domainnamen und HTTPS](../einrichtung/domainnamen-und-https.md)).
+- [ ] Domain zeigt auf den Server; `www` und der Name ohne `www` verhalten sich wie beschlossen ([Domainnamen und HTTPS](../setup/domainnamen-und-https.md)).
 - [ ] Die Website-URL und die Host-Einstellungen von Exponential verwenden die echte Adresse ([Livegang](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] HTTPS auf jeder Seite; `http://` wird weitergeleitet.
 - [ ] Die Administration ist unter ihrer Adresse über HTTPS erreichbar.

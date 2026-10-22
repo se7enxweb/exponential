@@ -34,7 +34,7 @@ die meisten davon.
 - **Zweistufige Anmeldung** mit einer App ([Zwei-Faktor-Anmeldung](zwei-faktor-anmeldung.md)).
 - **Ein eigenes Redakteurskonto** für das tägliche Schreiben, damit das Administratorkonto nur für die Verwaltung
   genutzt wird.
-- **HTTPS** auf jeder Seite ([Domainnamen und HTTPS](../einrichtung/domainnamen-und-https.md)).
+- **HTTPS** auf jeder Seite ([Domainnamen und HTTPS](../setup/domainnamen-und-https.md)).
 
 ## Was Besucher erstellen dürfen
 

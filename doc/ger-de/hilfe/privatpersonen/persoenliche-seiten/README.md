@@ -51,7 +51,7 @@ Die Klassennamen sind die des Standard-Seitenpakets; siehe
   Empfänger gemailt werden ([Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)).
 - **Lesbare Adressen** entstehen aus den Seitennamen ([URL-Aliase und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)).
 - **Grundlagen für Suchmaschinen**: Titel, Beschreibungen und eine Sitemap ([SEO-Grundlagen](../../ersteller/website-ersteller/seo-grundlagen.md)).
-- **Ein Theme**: das Standarddesign `sevenx_themes_simple` ([Ein Seitenpaket und ein Theme wählen](../einrichtung/ein-seitenpaket-und-ein-theme-waehlen.md)).
+- **Ein Theme**: das Standarddesign `sevenx_themes_simple` ([Ein Seitenpaket und ein Theme wählen](../setup/ein-seitenpaket-und-ein-theme-waehlen.md)).
 
 ## Später ausbauen
 

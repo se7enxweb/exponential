@@ -64,8 +64,8 @@ Ungewöhnliche.
 
 ## Einmal im Jahr
 
-- [ ] Verlängerungsdatum der Domain geprüft; Zahlungsmittel aktuell ([Domainnamen und HTTPS](../einrichtung/domainnamen-und-https.md)).
-- [ ] Hostingvertrag und Kosten überprüft ([Mit kleinem Budget betreiben](../einrichtung/mit-kleinem-budget-betreiben.md)).
+- [ ] Verlängerungsdatum der Domain geprüft; Zahlungsmittel aktuell ([Domainnamen und HTTPS](../setup/domainnamen-und-https.md)).
+- [ ] Hostingvertrag und Kosten überprüft ([Mit kleinem Budget betreiben](../setup/mit-kleinem-budget-betreiben.md)).
 - [ ] Texte für Über mich, Kontakt und Datenschutz erneut gelesen.
 - [ ] Familienseiten: erneut die [Checkliste zur Privatsphäre der Familie](checkliste-zur-privatsphaere-der-familie.md).
 - [ ] Die Vertretung weiß noch, wo die Sicherungen und Passwörter liegen.

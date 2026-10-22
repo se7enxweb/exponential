@@ -56,9 +56,9 @@ Inhalte darüber hinauswachsen ([Umzug von einer anderen Blogplattform](blogs/um
 
 | Bedarf | Wie viel | Wo Sie es lernen |
 |---|---|---|
-| Zeit zum Installieren und Lernen | Ein Wochenende für eine erste Website | [Eine Installationsmethode wählen](einrichtung/eine-installationsmethode-waehlen.md) |
-| Einen Ort, an dem sie läuft | Shared Hosting, ein kleiner virtueller Server oder Ihr eigener Rechner | [Shared Hosting oder ein kleiner Server](einrichtung/shared-hosting-oder-ein-kleiner-server.md) |
-| Einen Domainnamen | Jedes Jahr bei einem Registrar gemietet | [Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md) |
+| Zeit zum Installieren und Lernen | Ein Wochenende für eine erste Website | [Eine Installationsmethode wählen](setup/eine-installationsmethode-waehlen.md) |
+| Einen Ort, an dem sie läuft | Shared Hosting, ein kleiner virtueller Server oder Ihr eigener Rechner | [Shared Hosting oder ein kleiner Server](setup/shared-hosting-oder-ein-kleiner-server.md) |
+| Einen Domainnamen | Jedes Jahr bei einem Registrar gemietet | [Domainnamen und HTTPS](setup/domainnamen-und-https.md) |
 | Regelmäßige Pflege | Etwa eine Stunde im Monat für Prüfungen, Sicherungen und Updates | [Monatliche Pflegecheckliste](checklisten/monatliche-pflegecheckliste.md) |
 | Designänderungen | HTML und CSS, in Templates und Stylesheets | [Template-Overrides](../ersteller/website-ersteller/template-overrides.md) |
 | Kommandozeile | Hilfreich, nicht erforderlich: Der Einrichtungsassistent braucht nur einen Browser und FTP | [Shared Hosting](../hosting/modelle/shared-hosting.md) |
@@ -82,7 +82,7 @@ zuerst die oben genannten Alternativen an.
 ## Wenn Sie unsicher sind
 
 - Installieren Sie es mit SQLite auf Ihrem eigenen Computer und probieren Sie es einen Abend lang aus; es geht nichts
-  verloren, wenn Sie sich dagegen entscheiden ([Eine Installationsmethode wählen](einrichtung/eine-installationsmethode-waehlen.md)).
+  verloren, wenn Sie sich dagegen entscheiden ([Eine Installationsmethode wählen](setup/eine-installationsmethode-waehlen.md)).
 - Sehen Sie sich die Demonstrationsinstallation unter <https://alpha.se7enx.com> an.
 - Fragen Sie in der Community ([Community-Kanäle](../fuersprecher/community-kanaele.md)).
 - Wenn Sie Studierende oder Lehrende sind, ziehen Sie die Partnerstufe Student in Betracht

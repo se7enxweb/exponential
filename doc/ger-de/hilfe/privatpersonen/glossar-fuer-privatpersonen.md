@@ -33,7 +33,7 @@ Informationen.
 | **Comment** (Kommentar) | Bei den mitgelieferten Klassen ein kleines Inhaltsobjekt (Betreff, Autor, Nachricht), das unter einem Blogbeitrag gespeichert wird. | [Kommentare in Ihrem Blog](blogs/kommentare-in-ihrem-blog.md) |
 | **Cron job** (Cronjob) | Ein Befehl, den der Server nach einem Zeitplan ausführt. Newsletter, zeitgesteuertes Veröffentlichen und Feed-Importe brauchen einen. | [Cronjobs](../../anleitungen/cronjobs.md) |
 | **Datatype** (Datentyp) | Die Art des Werts, den ein Feld enthält: Text, Bild, Datum, ein Geburtsdatum (`ezbirthday`). | [Datentypen wählen](../ersteller/website-ersteller/datentypen-waehlen.md) |
-| **DNS** | Das Adressbuch des Internets. Sie stellen es bei Ihrem Registrar ein, damit Ihr Domainname auf Ihren Server zeigt. | [Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md) |
+| **DNS** | Das Adressbuch des Internets. Sie stellen es bei Ihrem Registrar ein, damit Ihr Domainname auf Ihren Server zeigt. | [Domainnamen und HTTPS](setup/domainnamen-und-https.md) |
 | **Draft** (Entwurf) | Eine Version, an der Sie noch arbeiten. Niemand sonst sieht sie, bevor Sie veröffentlichen. | [Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md) |
 | **Extension** (Erweiterung) | Ein Zusatz im Ordner `extension/`, der Funktionen, Designs oder beides hinzufügt. | [Erweiterungen](../../anleitungen/extensions.md) |
 | **Feed (RSS, Atom)** | Eine maschinenlesbare Liste Ihrer neuesten Einträge, der Leser in einem Feedreader folgen. | [RSS-Feeds für Ihr Blog](blogs/rss-feeds-fuer-ihr-blog.md) |
@@ -43,7 +43,7 @@ Informationen.
 | Begriff | Bedeutung | Mehr |
 |---|---|---|
 | **Gallery** (Galerie) | Eine mitgelieferte Klasse, die Bilder unter sich aufnimmt und sie als Galerie anzeigt. | [Eine Bildergalerie aufbauen](portfolios/eine-bildergalerie-aufbauen.md) |
-| **HTTPS** | Verschlüsselte Verbindungen, das Schloss in der Adressleiste. Braucht ein Zertifikat für Ihre Domain. | [Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md) |
+| **HTTPS** | Verschlüsselte Verbindungen, das Schloss in der Adressleiste. Braucht ein Zertifikat für Ihre Domain. | [Domainnamen und HTTPS](setup/domainnamen-und-https.md) |
 | **Image variation (alias)** (Bildvariante) | Eine verkleinerte Kopie eines hochgeladenen Bildes für einen bestimmten Zweck, etwa ein Vorschaubild. | [Bildvarianten für Portfolios](portfolios/bildvarianten-fuer-portfolios.md) |
 | **Information collector** (Informationssammler) | Felder, die Besucher ausfüllen, etwa ein Kontaktformular oder eine Umfrage; die Antworten werden gespeichert und können per E-Mail verschickt werden. | [Formulare mit dem Informationssammler](../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md) |
 | **Maintenance mode** (Wartungsmodus) | Ein Schalter, der Besuchern eine kurze Nachricht zeigt, während Sie an der Website arbeiten. | [Wartungsmodus](../ersteller/website-ersteller/wartungsmodus.md) |
@@ -51,7 +51,7 @@ Informationen.
 | **Object (content object)** (Objekt, Inhaltsobjekt) | Ein einzelnes Stück Inhalt: ein Blogbeitrag, eine Fotografie. | [Inhalte bearbeiten](../inhalte-bearbeiten.md) |
 | **Pagelayout** | Das Template, das jede Seite umschließt: Kopfbereich, Menü, Fußbereich. | [Das Pagelayout](../ersteller/website-ersteller/das-pagelayout.md) |
 | **Policy** (Richtlinie) | Eine einzelne Berechtigung innerhalb einer Rolle, etwa „Inhalte in der Sektion Members lesen". | [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md) |
-| **Registrar** | Das Unternehmen, bei dem Sie einen Domainnamen mieten. Außerhalb von Exponential. | [Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md) |
+| **Registrar** | Das Unternehmen, bei dem Sie einen Domainnamen mieten. Außerhalb von Exponential. | [Domainnamen und HTTPS](setup/domainnamen-und-https.md) |
 | **Role** (Rolle) | Ein benannter Satz von Richtlinien, der Benutzern oder Gruppen zugewiesen wird, etwa *Member* oder *Editor*. | [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md) |
 | **RSS export** (RSS-Export) | Ein Feed, den Ihre Website veröffentlicht, eingerichtet unter **Setup > RSS**. | [RSS-Feeds](../../anleitungen/rss-feeds.md) |
 
@@ -60,7 +60,7 @@ Informationen.
 | Begriff | Bedeutung | Mehr |
 |---|---|---|
 | **Section** (Sektion) | Eine Kennzeichnung eines Teils des Inhaltsbaums, auf die sich Berechtigungen beziehen können; der übliche Weg, einen Bereich privat zu machen. | [Sektionen](../../anleitungen/sektionen.md) |
-| **Site package** (Seitenpaket) | Der Ausgangspunkt einer Installation: Klassen, ein Design, Inhalte, Rollen und Einstellungen. | [Ein Seitenpaket und ein Theme wählen](einrichtung/ein-seitenpaket-und-ein-theme-waehlen.md) |
+| **Site package** (Seitenpaket) | Der Ausgangspunkt einer Installation: Klassen, ein Design, Inhalte, Rollen und Einstellungen. | [Ein Seitenpaket und ein Theme wählen](setup/ein-seitenpaket-und-ein-theme-waehlen.md) |
 | **Siteaccess** | Ein Zugang zur Installation, etwa die öffentliche Website, die Administration oder eine Website nur für Mitglieder. | [Livegang: Hosts, HTTPS und Siteaccesses](../ersteller/website-ersteller/livegang-hosts-und-https.md) |
 | **SQLite** | Eine Datenbank, die in einer einzigen Datei gespeichert wird, der Standard von Exponential. Kein Server nötig. | [SQLite für Hoster](../hosting/grundlagen/sqlite-fuer-hoster.md) |
 | **Tag** | Ein Wort, das an Inhalte angehängt wird, um sie nach Thema zu gruppieren: das Schlüsselwortfeld der mitgelieferten Klassen oder die Erweiterung `eztags` für eine verwaltete Liste. | [Tags und Kategorien](blogs/tags-und-kategorien.md) |

@@ -40,7 +40,7 @@ Ihres Hosters.
 | Jeden Monat | Die [monatliche Pflegecheckliste](../checklisten/monatliche-pflegecheckliste.md): Sicherung prüfen, Updates, Konten, Links | |
 | Nach jeder Version | Die Hinweise lesen; Sicherheitskorrekturen zügig einspielen | [Updates für eine Person](updates-fuer-eine-person.md) |
 | Zweimal im Jahr | Eine Sicherung auf einem anderen Rechner wiederherstellen; Konten und Rollen prüfen | [Sicherungen für eine Person](sicherungen-fuer-eine-person.md) |
-| Einmal im Jahr | Die Domain verlängern; Über-mich- und Datenschutztexte erneut lesen; die Tag-Liste prüfen | [Domainnamen und HTTPS](../einrichtung/domainnamen-und-https.md) |
+| Einmal im Jahr | Die Domain verlängern; Über-mich- und Datenschutztexte erneut lesen; die Tag-Liste prüfen | [Domainnamen und HTTPS](../setup/domainnamen-und-https.md) |
 
 Der Bereich für Kunden hat denselben Rhythmus für Inhaber, die einen Dienstleister haben:
 [Das Jahr eines Inhabers auf einen Blick](../../kunden/das-jahr-des-betreibers.md).

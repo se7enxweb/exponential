@@ -36,7 +36,7 @@ ist dieselbe Arbeit, auf ein Wochenende verteilt.
 
 1. Holen Sie den Code ([Den Code beschaffen](../../../installation/03-den-code-beschaffen.md)).
 2. Installieren Sie über die Konsole mit deren Standardwerten: SQLite und das Standard-Seitenpaket. Auf Ihrem eigenen
-   Computer ist das der schnellste Weg ([Eine Installationsmethode wählen](../einrichtung/eine-installationsmethode-waehlen.md)):
+   Computer ist das der schnellste Weg ([Eine Installationsmethode wählen](../setup/eine-installationsmethode-waehlen.md)):
 
    ```bash
    php bin/php/console exp:install --dry-run
@@ -44,7 +44,7 @@ ist dieselbe Arbeit, auf ein Wochenende verteilt.
    ```
 
    Für eine echte Website ist später das saubere Paket ohne Demo-Inhalte der bessere Anfang
-   ([Ein Seitenpaket und ein Theme wählen](../einrichtung/ein-seitenpaket-und-ein-theme-waehlen.md)).
+   ([Ein Seitenpaket und ein Theme wählen](../setup/ein-seitenpaket-und-ein-theme-waehlen.md)).
 3. Liefern Sie sie aus, mit dem eingebauten Server von PHP oder mit Velocity ([Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)).
 4. Melden Sie sich in der Administration an ([Anmelden in der Administration](../../anmelden-in-der-administration.md)) und
    ändern Sie sofort das Standardpasswort ([Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)).
@@ -86,7 +86,7 @@ ist dieselbe Arbeit, auf ein Wochenende verteilt.
 | Titel und Beschreibungen | [SEO-Grundlagen](../../ersteller/website-ersteller/seo-grundlagen.md) |
 | Bilder haben Alternativtext | Das Bearbeitungsformular jedes Bildes öffnen |
 
-Entscheiden Sie dann, wo sie liegen wird ([Mit kleinem Budget betreiben](../einrichtung/mit-kleinem-budget-betreiben.md)), und
+Entscheiden Sie dann, wo sie liegen wird ([Mit kleinem Budget betreiben](../setup/mit-kleinem-budget-betreiben.md)), und
 gehen Sie die [Startcheckliste](../checklisten/startcheckliste-fuer-privatpersonen.md) durch. Der Umzug von Ihrem
 Computer zu einem Hoster bedeutet, die Datenbankdatei und `var/storage` zusammen mit dem Code zu kopieren und dann
 die echte Adresse einzustellen

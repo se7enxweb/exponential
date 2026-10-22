@@ -43,8 +43,8 @@ heißt, dass es Teil der Standardinstallation ist.
 | Karten für einen Ort | `se7enxweb/ezgmaplocation` | [ezgmaplocation](../../funktionen/6.0/erweiterungen/ezgmaplocation.md) |
 | Zweistufige Anmeldung | `se7enxweb/sevenx_authentication_2fa` | [Zwei-Faktor-Anmeldung](im-betrieb/zwei-faktor-anmeldung.md) |
 | CAPTCHA-Felder | `se7enxweb/recaptcha`, `se7enxweb/hcaptcha` (jedes braucht Schlüssel seines Dienstes) | [Grundlagen zu Spam und Sicherheit](im-betrieb/grundlagen-zu-spam-und-sicherheit.md) |
-| SQLite-3-Datenbank | Kernel, der Standard | [Mit kleinem Budget betreiben](einrichtung/mit-kleinem-budget-betreiben.md) |
-| Webserver Velocity | `se7enxweb/exponential-velocity` | [Shared Hosting oder ein kleiner Server](einrichtung/shared-hosting-oder-ein-kleiner-server.md) |
+| SQLite-3-Datenbank | Kernel, der Standard | [Mit kleinem Budget betreiben](setup/mit-kleinem-budget-betreiben.md) |
+| Webserver Velocity | `se7enxweb/exponential-velocity` | [Shared Hosting oder ein kleiner Server](setup/shared-hosting-oder-ein-kleiner-server.md) |
 | Sicherungen aus der Administration | `se7enxweb/git_manager` (**Setup > Backup**) | [Sicherungen für eine Person](im-betrieb/sicherungen-fuer-eine-person.md) |
 | Schreibassistent | `se7enxweb/expai` (nur Entwürfe) | [Der Schreibassistent](im-betrieb/schreibassistent-expai.md) |
 
@@ -78,7 +78,7 @@ Exponential-Installationen über SOAP ([syndication](../../funktionen/6.0/erweit
 
 | Bedarf | Warum extern |
 |---|---|
-| Ein Domainname und sein DNS | Bei einem Registrar gemietet ([Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md)) |
+| Ein Domainname und sein DNS | Bei einem Registrar gemietet ([Domainnamen und HTTPS](setup/domainnamen-und-https.md)) |
 | E-Mail-Zustellung | Der Mailserver Ihres Hosters oder ein E-Mail-Anbieter verschickt die E-Mails, die Exponential schreibt |
 | KI-Texterzeugung | Ein Anbieter (oder ein lokales Modell, das Sie betreiben) schreibt; `expai` spricht nur mit ihm |
 | CAPTCHA-Prüfungen | reCAPTCHA oder hCaptcha |

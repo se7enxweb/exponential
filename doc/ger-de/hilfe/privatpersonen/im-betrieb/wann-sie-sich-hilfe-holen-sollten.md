@@ -36,7 +36,7 @@ die monatliche Pflege. Nichts davon braucht einen Profi.
 | Ihr eigenes Design | Templates und Stylesheets | [Template-Overrides](../../ersteller/website-ersteller/template-overrides.md) |
 | Ein größerer Bild-Alias und eine Galerieansicht | Einstellungen und Templates, ein kleiner Auftrag | [Bildvarianten für Portfolios](../portfolios/bildvarianten-fuer-portfolios.md) |
 | E-Mails, die in Postfächern ankommen | DNS-Einträge, Einrichtung des Mailservers | [E-Mail-Zustellung von Newslettern](../../unternehmen/newsletters/zustellung-der-newsletter-mails.md) |
-| Einen Server mit Velocity, Sicherungen und Cron einrichten | Arbeit am Betriebssystem | [Shared Hosting oder ein kleiner Server](../einrichtung/shared-hosting-oder-ein-kleiner-server.md) |
+| Einen Server mit Velocity, Sicherungen und Cron einrichten | Arbeit am Betriebssystem | [Shared Hosting oder ein kleiner Server](../setup/shared-hosting-oder-ein-kleiner-server.md) |
 | Eine Funktion, die es nicht gibt (Erinnerungen, eine Begrenzung von Anmeldungen, Zahlung von Beiträgen) | Eigener Code | [Was es gibt und was nicht](../was-es-gibt-und-was-nicht.md) |
 | Ein gescheitertes Update, das Sie nicht zurücknehmen können | Fehlersuche unter Druck | [Updates für eine Person](updates-fuer-eine-person.md) |
 | Den Schreibassistenten einschalten | Einstellungen, Schlüssel, Tabellen, Rollen | [Der Schreibassistent](schreibassistent-expai.md) |

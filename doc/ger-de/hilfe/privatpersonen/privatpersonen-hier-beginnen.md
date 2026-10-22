@@ -49,7 +49,7 @@ listet, durchsucht und veröffentlicht sie. Das meiste, was eine einzelne Person
 | Einen privaten Bereich für Familie oder Mitglieder | Sektionen und Rollen | [Private Bereiche](familienseiten/private-bereiche-mit-rollen-und-sektionen.md) |
 | Mitglieder, die sich selbst registrieren | Benutzerregistrierung mit Aktivierung per E-Mail | [Mitglieder und Registrierung](vereinsseiten/mitglieder-und-registrierung.md) |
 | Einen Newsletter für einen Verein | Die Erweiterung `cjw_newsletter` | [Vereinsnewsletter](vereinsseiten/vereinsnewsletter.md) |
-| Keinen Datenbankserver, um den Sie sich kümmern müssen | SQLite 3, die Standarddatenbank | [Mit kleinem Budget betreiben](einrichtung/mit-kleinem-budget-betreiben.md) |
+| Keinen Datenbankserver, um den Sie sich kümmern müssen | SQLite 3, die Standarddatenbank | [Mit kleinem Budget betreiben](setup/mit-kleinem-budget-betreiben.md) |
 | Eine sicherere Anmeldung | Zweistufige Anmeldung (`sevenx_authentication_2fa`) | [Zwei-Faktor-Anmeldung](im-betrieb/zwei-faktor-anmeldung.md) |
 | Hilfe bei einem ersten Entwurf | Exponential Intelligence (`expai`), nur Entwürfe, mit einem Anbieterschlüssel, den Sie mitbringen | [Der Schreibassistent](im-betrieb/schreibassistent-expai.md) |
 
@@ -75,17 +75,17 @@ zusätzlich zu diesem Bereich.
 
 ## Die Einrichtung
 
-Die Seiten zur [Einrichtung](einrichtung/README.md) gehen die Entscheidungen der Reihe nach durch:
+Die Seiten zur [Einrichtung](setup/README.md) gehen die Entscheidungen der Reihe nach durch:
 
-1. [Eine Installationsmethode wählen](einrichtung/eine-installationsmethode-waehlen.md): der Browser-Assistent, die Installation
+1. [Eine Installationsmethode wählen](setup/eine-installationsmethode-waehlen.md): der Browser-Assistent, die Installation
    auf der Konsole oder der Kickstarter.
-2. [Ein Seitenpaket und ein Theme wählen](einrichtung/ein-seitenpaket-und-ein-theme-waehlen.md): was die mitgelieferten Pakete
+2. [Ein Seitenpaket und ein Theme wählen](setup/ein-seitenpaket-und-ein-theme-waehlen.md): was die mitgelieferten Pakete
    und Themes Ihnen bieten.
-3. [Mit kleinem Budget betreiben](einrichtung/mit-kleinem-budget-betreiben.md): SQLite, ein kleiner Server, wenige bewegliche
+3. [Mit kleinem Budget betreiben](setup/mit-kleinem-budget-betreiben.md): SQLite, ein kleiner Server, wenige bewegliche
    Teile.
-4. [Shared Hosting oder ein kleiner Server](einrichtung/shared-hosting-oder-ein-kleiner-server.md): was wo funktioniert und warum
+4. [Shared Hosting oder ein kleiner Server](setup/shared-hosting-oder-ein-kleiner-server.md): was wo funktioniert und warum
    Velocity einen eigenen Server braucht.
-5. [Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md): was Sie außerhalb von Exponential regeln.
+5. [Domainnamen und HTTPS](setup/domainnamen-und-https.md): was Sie außerhalb von Exponential regeln.
 
 ## Allein betreiben
 
@@ -103,7 +103,7 @@ monatliche Pflegeliste, eine Checkliste zur Privatsphäre der Familie und ein Ar
 Manche Dinge liegen außerhalb der Software. Wer sie früh kennt, spart sich ein Wochenende:
 
 - **Domainnamen und DNS** kaufen Sie bei einem Registrar und richten sie auf Ihren Server; Exponential kann keine
-  Domain registrieren ([Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md)).
+  Domain registrieren ([Domainnamen und HTTPS](setup/domainnamen-und-https.md)).
 - **Es gibt keinen Ein-Klick-Import aus einer anderen Blogplattform**; der Umzug von Inhalten ist ein kleines Projekt
   ([Umzug von einer anderen Blogplattform](blogs/umzug-von-einer-anderen-blogplattform.md)).
 - **Kommentare stammen aus der mitgelieferten Klasse *Comment***, nicht aus einem separaten Kommentarsystem; in dieser
@@ -120,9 +120,9 @@ Die vollständige Liste steht unter [Was es gibt und was nicht](was-es-gibt-und-
 | Wann | Was tun | Lesen |
 |---|---|---|
 | Freitagabend | Notieren, wozu die Website dient, wer sie liest und was privat bleiben muss | [Arbeitsblatt für die Websiteplanung](checklisten/arbeitsblatt-fuer-die-websiteplanung.md) |
-| Samstagvormittag | Exponential mit SQLite auf dem eigenen Computer installieren und sich umsehen | [Eine Installationsmethode wählen](einrichtung/eine-installationsmethode-waehlen.md), [Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
+| Samstagvormittag | Exponential mit SQLite auf dem eigenen Computer installieren und sich umsehen | [Eine Installationsmethode wählen](setup/eine-installationsmethode-waehlen.md), [Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | Samstagnachmittag | Die ersten Seiten und Bilder anlegen; den Editor ausprobieren | [Inhalte bearbeiten](../inhalte-bearbeiten.md), [Eine persönliche Website an einem Wochenende](persoenliche-seiten/eine-persoenliche-website-an-einem-wochenende.md) |
-| Sonntagvormittag | Entscheiden, wo die Website liegen wird und was sie kostet | [Mit kleinem Budget betreiben](einrichtung/mit-kleinem-budget-betreiben.md) |
+| Sonntagvormittag | Entscheiden, wo die Website liegen wird und was sie kostet | [Mit kleinem Budget betreiben](setup/mit-kleinem-budget-betreiben.md) |
 | Sonntagnachmittag | Die zweistufige Anmeldung einschalten und eine erste Sicherung anlegen | [Zwei-Faktor-Anmeldung](im-betrieb/zwei-faktor-anmeldung.md), [Sicherungen für eine Person](im-betrieb/sicherungen-fuer-eine-person.md) |
 
 Die vollständige Lesereihenfolge ist der [Lesepfad](lesepfad-fuer-privatpersonen.md). Kurze Antworten stehen in den

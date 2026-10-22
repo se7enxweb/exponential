@@ -39,8 +39,8 @@ Ein Wochenende. Am Ende läuft Exponential auf Ihrem eigenen Computer, und Sie f
 
 | # | Seite | Warum |
 |---|---|---|
-| 6 | [Eine Installationsmethode wählen](einrichtung/eine-installationsmethode-waehlen.md) | Assistent, Konsole oder Kickstarter |
-| 7 | [Ein Seitenpaket und ein Theme wählen](einrichtung/ein-seitenpaket-und-ein-theme-waehlen.md) | Voll oder leer, welches Design |
+| 6 | [Eine Installationsmethode wählen](setup/eine-installationsmethode-waehlen.md) | Assistent, Konsole oder Kickstarter |
+| 7 | [Ein Seitenpaket und ein Theme wählen](setup/ein-seitenpaket-und-ein-theme-waehlen.md) | Voll oder leer, welches Design |
 | 8 | [Erste Schritte](../erste-schritte.md) | Anmelden und die ersten Schritte |
 | 9 | [Rundgang durch die Administration](../rundgang-durch-die-administration.md) | Wo alles zu finden ist |
 | 10 | [Inhalte bearbeiten](../inhalte-bearbeiten.md) | Schreiben und veröffentlichen |
@@ -67,9 +67,9 @@ Ein Tag für den Start, danach eine Stunde im Monat.
 
 | # | Seite | Warum |
 |---|---|---|
-| 14 | [Mit kleinem Budget betreiben](einrichtung/mit-kleinem-budget-betreiben.md) | Wo die Website liegt und was sie kostet |
-| 15 | [Shared Hosting oder ein kleiner Server](einrichtung/shared-hosting-oder-ein-kleiner-server.md) | Was wo funktioniert |
-| 16 | [Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md) | Ihre Adresse und das Schloss |
+| 14 | [Mit kleinem Budget betreiben](setup/mit-kleinem-budget-betreiben.md) | Wo die Website liegt und was sie kostet |
+| 15 | [Shared Hosting oder ein kleiner Server](setup/shared-hosting-oder-ein-kleiner-server.md) | Was wo funktioniert |
+| 16 | [Domainnamen und HTTPS](setup/domainnamen-und-https.md) | Ihre Adresse und das Schloss |
 | 17 | [Zwei-Faktor-Anmeldung](im-betrieb/zwei-faktor-anmeldung.md) | Ihr Konto schützen |
 | 18 | [Grundlagen zu Spam und Sicherheit](im-betrieb/grundlagen-zu-spam-und-sicherheit.md) | Formulare, Kommentare und Anmeldungen ziehen Bots an |
 | 19 | [Sicherungen für eine Person](im-betrieb/sicherungen-fuer-eine-person.md) | Kopien, die Sie wiederherstellen können |

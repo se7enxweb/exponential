@@ -99,8 +99,8 @@ Kreuzen Sie an, was Sie brauchen, und prüfen Sie, ob es das gibt ([Was es gibt 
 | Domainname | |
 | HTTPS durch den Hoster oder Velocity? | |
 
-Hilfe: [Shared Hosting oder ein kleiner Server](../einrichtung/shared-hosting-oder-ein-kleiner-server.md),
-[Domainnamen und HTTPS](../einrichtung/domainnamen-und-https.md).
+Hilfe: [Shared Hosting oder ein kleiner Server](../setup/shared-hosting-oder-ein-kleiner-server.md),
+[Domainnamen und HTTPS](../setup/domainnamen-und-https.md).
 
 ## Budget und Zeit
 
@@ -112,7 +112,7 @@ Hilfe: [Shared Hosting oder ein kleiner Server](../einrichtung/shared-hosting-od
 | Bezahlte Hilfe | |
 | Stunden pro Monat, die Sie aufbringen können | |
 
-Hilfe: [Mit kleinem Budget betreiben](../einrichtung/mit-kleinem-budget-betreiben.md).
+Hilfe: [Mit kleinem Budget betreiben](../setup/mit-kleinem-budget-betreiben.md).
 
 ## Personen
 

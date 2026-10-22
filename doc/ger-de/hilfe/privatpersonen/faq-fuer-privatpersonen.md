@@ -30,12 +30,12 @@ und, wenn Sie sie möchten, externe Dienste wie einen E-Mail-Anbieter oder einen
 **Was ist die kleinste Einrichtung, die funktioniert?**
 PHP 8.0 oder neuer, SQLite 3 (kein Datenbankserver) und entweder ein gängiger Webserver oder mit Velocity gar kein
 Webserver ([Anforderungen auf einen Blick](../hosting/grundlagen/anforderungen-auf-einen-blick.md),
-[Mit kleinem Budget betreiben](einrichtung/mit-kleinem-budget-betreiben.md)).
+[Mit kleinem Budget betreiben](setup/mit-kleinem-budget-betreiben.md)).
 
 **Kann ich günstiges Shared Hosting nutzen?**
 Oft ja, mit Apache oder LiteSpeed und `.htaccess`, installiert über den Einrichtungsassistenten. Velocity passt
 meist nicht zu Shared Hosting, weil es einen dauerhaft laufenden Prozess braucht
-([Shared Hosting oder ein kleiner Server](einrichtung/shared-hosting-oder-ein-kleiner-server.md)).
+([Shared Hosting oder ein kleiner Server](setup/shared-hosting-oder-ein-kleiner-server.md)).
 
 **Brauche ich einen Datenbankserver?**
 Nein. SQLite 3 ist der Standard und speichert alles in einer Datei. PostgreSQL, MongoDB, MariaDB, Oracle und MySQL
@@ -43,14 +43,14 @@ werden ebenfalls unterstützt, wenn Ihr Hoster eine davon anbietet ([Datenbankun
 
 **Kann ich es ausprobieren, bevor ich für irgendetwas bezahle?**
 Ja. Installieren Sie es mit `exp:install` und dessen Standardwerten (SQLite, das Standard-Seitenpaket) auf Ihrem
-eigenen Computer ([Eine Installationsmethode wählen](einrichtung/eine-installationsmethode-waehlen.md)).
+eigenen Computer ([Eine Installationsmethode wählen](setup/eine-installationsmethode-waehlen.md)).
 
 ## Die Website bauen
 
 **Muss ich programmieren können?**
 Zum Schreiben und Veröffentlichen nicht. Um das Aussehen der Website über die Optionen des Themes hinaus zu ändern,
 bearbeiten Sie Templates und Stylesheets, was eher HTML als Programmieren ist
-([Ein Seitenpaket und ein Theme wählen](einrichtung/ein-seitenpaket-und-ein-theme-waehlen.md)).
+([Ein Seitenpaket und ein Theme wählen](setup/ein-seitenpaket-und-ein-theme-waehlen.md)).
 
 **Mit welchem Theme sollte ich beginnen?**
 Die Standardinstallation verwendet `sevenx_themes_simple`. Das ältere Design `ezwebin` bleibt für Websites erhalten,
@@ -62,7 +62,7 @@ brauchen ihn nie; Ordner und Artikel genügen.
 
 **Kann ich meinen Domainnamen über Exponential registrieren?**
 Nein. Domains werden bei einem Registrar gekauft und auf Ihren Server gerichtet. Exponential muss nur seine Adresse
-kennen ([Domainnamen und HTTPS](einrichtung/domainnamen-und-https.md)).
+kennen ([Domainnamen und HTTPS](setup/domainnamen-und-https.md)).
 
 ## Blogs und Portfolios
 

@@ -35,7 +35,7 @@ Bitten Sie in einer Vorstandssitzung um eine Stunde und gehen Sie mit Antworten 
 | Wer darf im Namen des Vereins veröffentlichen? | Rollen und Freigabe |
 | Was muss intern bleiben? | Der Mitgliederbereich |
 | Wem gehören die Domain und das Hostingkonto? | Dem Verein, nicht einer ehrenamtlichen Person privat |
-| Welches Budget gibt es? | Hosting, Domain, E-Mail ([Mit kleinem Budget betreiben](../einrichtung/mit-kleinem-budget-betreiben.md)) |
+| Welches Budget gibt es? | Hosting, Domain, E-Mail ([Mit kleinem Budget betreiben](../setup/mit-kleinem-budget-betreiben.md)) |
 
 ## Öffentlich und nur für Mitglieder
 
@@ -80,11 +80,11 @@ Alle Klassen werden mit dem Standard-Seitenpaket geliefert; für den Anfang brau
 |---|---|---|
 | Zuverlässig E-Mails versenden | Registrierung, Zurücksetzen des Passworts, Formularbenachrichtigungen, Newsletter | [E-Mail-Zustellung von Newslettern](../../unternehmen/newsletters/zustellung-der-newsletter-mails.md) |
 | Cron ausführen | Newsletter werden per Cron versendet; zeitgesteuertes Veröffentlichen ebenso | [Cronjobs](../../../anleitungen/cronjobs.md) |
-| HTTPS | Mitglieder melden sich an | [Domainnamen und HTTPS](../einrichtung/domainnamen-und-https.md) |
+| HTTPS | Mitglieder melden sich an | [Domainnamen und HTTPS](../setup/domainnamen-und-https.md) |
 | Sicherungen | Mitgliederdaten | [Sicherungen für eine Person](../im-betrieb/sicherungen-fuer-eine-person.md) |
 
 Fragen Sie jeden Hoster vor dem Vertragsabschluss nach E-Mail und Cron
-([Shared Hosting oder ein kleiner Server](../einrichtung/shared-hosting-oder-ein-kleiner-server.md)).
+([Shared Hosting oder ein kleiner Server](../setup/shared-hosting-oder-ein-kleiner-server.md)).
 
 ## Geld
 

@@ -41,7 +41,7 @@ Der Betrieb einer persönlichen, Familien- oder Vereinsseite ist bereits ein Leh
 
 | Sie tun | Sie lernen | Seite |
 |---|---|---|
-| Mit SQLite installieren | Anforderungen, den Installer, Siteaccesses | [Eine Installationsmethode wählen](../einrichtung/eine-installationsmethode-waehlen.md) |
+| Mit SQLite installieren | Anforderungen, den Installer, Siteaccesses | [Eine Installationsmethode wählen](../setup/eine-installationsmethode-waehlen.md) |
 | Baum und Klassen planen | Inhaltsmodellierung | [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md) |
 | Einen privaten Bereich anlegen | Sektionen, Rollen, Richtlinien | [Private Bereiche mit Rollen und Sektionen](../familienseiten/private-bereiche-mit-rollen-und-sektionen.md) |
 | Das Aussehen eines Seitentyps ändern | Templates und Overrides | [Template-Overrides](../../ersteller/website-ersteller/template-overrides.md) |
