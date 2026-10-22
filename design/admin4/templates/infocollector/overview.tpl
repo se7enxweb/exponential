@@ -208,3 +208,6 @@
 
 {ezscript( array( 'page/infocollector_overview.js' ) )}
 {undef $summary $search $sort $order $feedback $can_filter $recent_days $candidates $candidate_count}
+
+{* the other import and export tools (the transfer registry, transfer/looking_for.tpl) *}
+{include uri='design:transfer/looking_for.tpl' tool='transfer.infocollector'}

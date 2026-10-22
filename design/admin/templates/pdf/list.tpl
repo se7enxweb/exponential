@@ -244,3 +244,6 @@
 
 {undef $infos $summary $feedback $search $filter $sort}
 {include uri='design:pdf/exp_list_script.tpl' text_selected='%count selected.'|i18n( 'design/admin/pdf/list' )}
+
+{* the other import and export tools (the transfer registry, transfer/looking_for.tpl) *}
+{include uri='design:transfer/looking_for.tpl' tool='transfer.pdf'}

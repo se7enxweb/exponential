@@ -78,6 +78,9 @@
 
 </div>
 
+{* Import and export tools that match the search words (the transfer registry, transfer/search_suggestions.tpl) *}
+{include uri='design:transfer/search_suggestions.tpl' query=$search_text}
+
 {* Search result. *}
 {if $search_count}
 <div class="context-block">

@@ -80875,4 +80875,98 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.</translation>
     </message>
 </context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Suchen Sie einen anderen Import oder Export?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Import</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Import und Export</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Arbeitet mit diesem Werkzeug zusammen</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Welches Import- oder Export-Werkzeug brauche ich?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Welches Werkzeug brauche ich?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Import- und Export-Werkzeuge für diese Aufgabe</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Pakete</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Inhalte mit ihren Klassen, oder Klassen, Extensions und Designs, als Paketdatei in eine andere Installation bringen.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Klassen als Paket exportieren …</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Ein Paket hochladen und installieren …</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS-Import</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Inhalte aus einem RSS- oder Atom-Feed einer anderen Website anlegen, immer wieder durch den Cronjob rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS-Export</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Die neuesten Objekte eines Ordners als RSS- oder Atom-Feed veröffentlichen, oder eine Liste von Feeds als OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Gesammelte Informationen</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Herunterladen, was ein Formular gesammelt hat, als CSV-Datei, aus der Liste der gesammelten Informationen.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Audit-Export</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Die Einträge des Audit-Trails herunterladen, gefiltert wie in der Konsole, als CSV, JSON Lines oder JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF-Export</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Ein PDF-Dokument aus einem Ordner und seinen Objekten machen, zum Drucken oder Verschicken.</translation>
+    </message>
+</context>
 </TS>

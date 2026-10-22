@@ -91,6 +91,9 @@
 </div>
 </section>
 
+{* The import and export tools that work on the objects of this class (the transfer registry, transfer/actions.tpl) *}
+{include uri='design:transfer/actions.tpl' context='class' values=hash( '%classID%', $class.id, '%classIdentifier%', $class.identifier )}
+
 <section class="a4-section" aria-labelledby="class-view-attributes">
 <div class="a4-section-head">
     <h2 class="a4-h2" id="class-view-attributes">{'Attributes'|i18n( 'design/admin/class/view' )}</h2>

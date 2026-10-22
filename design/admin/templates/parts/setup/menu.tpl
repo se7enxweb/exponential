@@ -62,6 +62,8 @@
 
 {* Left menu width control (not on the overview page, which draws the menu as tiles). *}
 {if $setup_menu_layout|ne( 'tiles' )}
+{* every import and export tool the user may use (the transfer registry, transfer/left_menu.tpl) *}
+{include uri='design:transfer/left_menu.tpl'}
 <div id="widthcontrol-links" class="widthcontrol">
 <p>
 {switch match=ezpreference( 'admin_left_menu_size' )}

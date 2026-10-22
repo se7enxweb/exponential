@@ -319,3 +319,6 @@
 
 {undef $export_info $import_info $summary $cronjob $feedback $cache_time}
 {include uri='design:rss/exp_list_script.tpl' text_shown='%shown of %count feeds on this page shown'|i18n( 'design/admin/rss/list' ) text_all='Feeds on this page: %count'|i18n( 'design/admin/rss/list' ) text_selected='%count selected.'|i18n( 'design/admin/rss/list' )}
+
+{* the other import and export tools (the transfer registry, transfer/looking_for.tpl) *}
+{include uri='design:transfer/looking_for.tpl' tool='transfer.rss_import'}

@@ -30,10 +30,28 @@
 {/foreach}
 {/if}
 {/set-block}
+{* the transfer registry (doc/eng-us/features/6.0/transfer-registry.md): the "node" entries of every import and export
+   tool the user may use, and in the Import/Export menu the "container" entries, shown only for a container below
+   which the user may create (%canImport%); the menu's script fills in %nodeID% and %objectID% when it opens *}
+{set-block variable=$transfer_registry_items}
+{foreach transfer_actions( 'node', hash( '%nodeID%', '%nodeID%', '%objectID%', '%objectID%' ) ) as $transfer_index => $transfer_item}
+    <a id="{$item_prefix}-transfer-node-{$transfer_index}" data-menu-url={$transfer_item.url|ezurl} href="#"><span class="a4-icon {if eq( $transfer_item.direction, 'import' )}a4-bi-upload{else}a4-bi-download{/if}" aria-hidden="true"></span> {$transfer_item.label|wash}</a>
+{/foreach}
+{if $with_import}
+{foreach transfer_actions( 'container', hash( '%nodeID%', '%nodeID%', '%objectID%', '%objectID%' ) ) as $transfer_index => $transfer_item}
+    <a id="{$item_prefix}-transfer-container-{$transfer_index}" data-menu-url={$transfer_item.url|ezurl} data-menu-shown-if="%canImport%" href="#"><span class="a4-icon {if eq( $transfer_item.direction, 'import' )}a4-bi-upload{else}a4-bi-download{/if}" aria-hidden="true"></span> {$transfer_item.label|wash}</a>
+{/foreach}
+{/if}
+{/set-block}
 {def $export_groups = array()}
-{foreach array( $export_package_items, $export_extension_items, $import_extension_items ) as $export_group}
+{foreach array( $export_package_items, $export_extension_items, $import_extension_items, $transfer_registry_items ) as $export_group}
     {if $export_group|trim|ne( '' )}{set $export_groups = $export_groups|append( $export_group )}{/if}
 {/foreach}
+{* with any entry: the page that answers "Which import or export tool do I need?" *}
+{if and( $with_import, $export_groups|count )}
+    {set $export_groups = $export_groups|append( concat( '<a id="', $item_prefix|wash, '-transfer-help" href=', 'exphelp/viewer/help/import-export-tools.md'|ezurl, '><span class="a4-icon a4-bi-question-circle" aria-hidden="true"></span> ', 'Which import or export tool do I need?'|i18n( 'design/admin/transfer' )|wash, '</a>' ) )}
+{/if}
+{undef $transfer_registry_items}
 {foreach $export_groups as $export_index => $export_group}
 {if $export_index|gt( 0 )}
     <hr />

@@ -73931,4 +73931,98 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>This installation is a public demo: the passwords of administrators cannot be changed or reset.</translation>
     </message>
 </context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Looking for another import or export?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Import</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Import and export</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Works with this tool</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Which import or export tool do I need?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Which tool do I need?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Import and export tools for this task</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Packages</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Export classes as a package…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Upload and install a package…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS import</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS export</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Collected information</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Download what one form collected as a CSV file, from the list of collected information.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Audit export</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF export</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Make a PDF document of a folder and its items, to print or to send.</translation>
+    </message>
+</context>
 </TS>

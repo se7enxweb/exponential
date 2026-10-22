@@ -305,3 +305,6 @@
 </script>
 {/literal}
 {undef $q $repo_base $state_labels $state_badges $sort_labels $reason_labels $filtered $can_export}
+
+{* the other import and export tools (the transfer registry, transfer/looking_for.tpl) *}
+{include uri='design:transfer/looking_for.tpl' tool='transfer.package'}

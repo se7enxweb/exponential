@@ -72,3 +72,6 @@
 
 {* DESIGN: Content END *}</div></div></div>
 </div>
+
+{* the other import and export tools (the transfer registry, transfer/looking_for.tpl) *}
+{include uri='design:transfer/looking_for.tpl' tool='transfer.audit'}

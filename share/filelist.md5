@@ -369,7 +369,7 @@ e3d02557044b7bc71d9324c6527a42f0  design/admin/templates/audit/alerts.tpl
 d9f071b4ce6023b15350ac10a0da9192  design/admin/templates/audit/console.tpl
 fe9cd74ec8bcabe30893217abea1eff4  design/admin/templates/audit/dashboard.tpl
 df16806da810b6189d6698e67f9b4fc8  design/admin/templates/audit/event.tpl
-8fa10eeb66862dde2c965b495d61fe28  design/admin/templates/audit/export.tpl
+fe0d61b17e87d4792be334f5525812e4  design/admin/templates/audit/export.tpl
 e30412269e3a1949f8e0be42fab23608  design/admin/templates/audit/menu.tpl
 c7eb697cccc88a7038703f8fcc862659  design/admin/templates/audit/reauth.tpl
 d8edfe4bd7af7efd97f8819de5d247b8  design/admin/templates/audit/recent.tpl
@@ -393,7 +393,7 @@ dbe5def951f76a833fe3992eb68bf430  design/admin/templates/class/exp_list_script.t
 06850be333353d9dd80636d5d7cf527d  design/admin/templates/class/select_language.tpl
 0968be0f253ab2b80b5c43d2aab0827b  design/admin/templates/class/templates.tpl
 831d2c3b05d77eb493de4ae71e3846c2  design/admin/templates/class/translations.tpl
-f5dc69d471e0b6eed124b1be1435a6e0  design/admin/templates/class/view.tpl
+3959728ecb14d10c6dce0c40a30fd5ba  design/admin/templates/class/view.tpl
 4581eb88f3baec539c96d289d36131b4  design/admin/templates/class/window_controls.tpl
 03a840054c5ab652032b65fa93bd3e2a  design/admin/templates/class/windows.tpl
 480c83b0bac58273d014cac3af49ca33  design/admin/templates/collaboration/group/view/list.tpl
@@ -466,7 +466,7 @@ deffb644bbfdf3644f9cf76d6a4901d8  design/admin/templates/content/related/file.tp
 78b07c4c10cd3ce8bb22693ce14dda7f  design/admin/templates/content/removetranslation.tpl
 72a5f36046a954b1a36ae80cd8df26bb  design/admin/templates/content/restore.tpl
 b6e48b9b258ffbd0df2b2b9714d066fd  design/admin/templates/content/reverserelatedlist.tpl
-58c4d63b49ca3a6c45df13fee786fe0f  design/admin/templates/content/search.tpl
+2126b13b153e41fb13790ddc4eb6e1dc  design/admin/templates/content/search.tpl
 c58456f930801986a94ae1c6a68e4fdc  design/admin/templates/content/searchresult.tpl
 45081f95eb7dedfaf4165ca148e7e8b4  design/admin/templates/content/translationnew.tpl
 309adfdcc06a0f07b383af5304df8de8  design/admin/templates/content/translations.tpl
@@ -550,7 +550,7 @@ a3a9ed0ab849c9c28ac4c2e462b48ace  design/admin/templates/exphelp/viewer.tpl
 be642b13d020aa2e44360d60c283fbc5  design/admin/templates/infocollection_validation.tpl
 077c07093a9ce159754474dbac2837a5  design/admin/templates/infocollector/collectionlist.tpl
 8f8b7d70c41a6658c9be431faf7e5d73  design/admin/templates/infocollector/confirmremoval.tpl
-410aed622d2c02b7cccb082fa3506a9c  design/admin/templates/infocollector/overview.tpl
+522c10e4478a695c4453427972239254  design/admin/templates/infocollector/overview.tpl
 de4e5cdee8dfb17cd7debdcb194f465f  design/admin/templates/infocollector/view.tpl
 206ff2ded62a0d5f745fa3a56ca134d6  design/admin/templates/locations.tpl
 66be13ab3d3a1d7da6294774cab36a63  design/admin/templates/loginpagelayout.tpl
@@ -615,7 +615,7 @@ c622ac17e9b000d162a7574d5ef212ca  design/admin/templates/package/creators/ezstyl
 1ca0d4a1629e355be2d98a63445ca4a3  design/admin/templates/package/install.tpl
 edea714c4527ac2dcd106c4e392a8dda  design/admin/templates/package/install_error.tpl
 5ebdfeb16e698e0f7b3e839bd60500f5  design/admin/templates/package/install_header.tpl
-1f9f1a1b6fad15f4b99ee99b7837da78  design/admin/templates/package/list.tpl
+2bf0a8577bc43b07807ae55edfad0147  design/admin/templates/package/list.tpl
 63d74fb2d54c7ae9678cebba7c391791  design/admin/templates/package/navigator.tpl
 ba711f3e3838e7a97fdf74925c62e907  design/admin/templates/package/uninstall.tpl
 f282688f9c5b255781005e8124e243cc  design/admin/templates/package/uninstall_error.tpl
@@ -645,7 +645,7 @@ e36329025b09f023b15222452941ff02  design/admin/templates/parts/ini_menu_tiles.tp
 377177c4ae5a5b55ebaad3add2df9f24  design/admin/templates/parts/language_badge.tpl
 29b9aac282e8e53f74896ae53ef83e66  design/admin/templates/parts/media/menu.tpl
 f4a8526ee0b3caf6992d6d50697ed543  design/admin/templates/parts/my/menu.tpl
-f19a8232b73ef163e9baa703453c4f27  design/admin/templates/parts/setup/menu.tpl
+e98bed717e348a12477355bbc597761a  design/admin/templates/parts/setup/menu.tpl
 5e8c66765634965c6ba3277fe9cee745  design/admin/templates/parts/shop/menu.tpl
 e32e963f4d25c52a7f8d3eb520c0b227  design/admin/templates/parts/user/menu.tpl
 97e2df50c1ee29bf057fddc6002db800  design/admin/templates/parts/visual/menu.tpl
@@ -654,12 +654,12 @@ e32e963f4d25c52a7f8d3eb520c0b227  design/admin/templates/parts/user/menu.tpl
 9d658a6bc2db1ad50df9df9c1b66c51c  design/admin/templates/pdf/edit_validation.tpl
 c8135bd451de867268976159ccea8841  design/admin/templates/pdf/exp_list_script.tpl
 fbb04a3d65ad3b1456df03c573757770  design/admin/templates/pdf/exp_problem.tpl
-692c7bbc215d8e3f39f2a5e928ca8de2  design/admin/templates/pdf/list.tpl
+e8089ded8bfd97822262895cfc4f5018  design/admin/templates/pdf/list.tpl
 a1577e9e5e83f6519547ba1a9943c010  design/admin/templates/policies.tpl
 e1a0c2dd058501083d6d68f51c3eae38  design/admin/templates/popupmenu/popup_bookmark_menu.tpl
 0c933a8a4823432ea0770eb43eb77769  design/admin/templates/popupmenu/popup_class_menu.tpl
 75e173ccdce6c55a63d4bce19fd60d08  design/admin/templates/popupmenu/popup_context_menu.tpl
-ddeae7a463df12fb86d0a1a6b6835ec1  design/admin/templates/popupmenu/popup_export_items.tpl
+857fcddd524286ed5ee42f56be5bdc96  design/admin/templates/popupmenu/popup_export_items.tpl
 1458d4bc28cc112faac27de0121bce13  design/admin/templates/popupmenu/popup_import_export_menu.tpl
 9f1dd21b909d4f1bfecd0b80d235f76f  design/admin/templates/popupmenu/popup_menu.tpl
 f20c62d1526c0a941b2584243f08dbbf  design/admin/templates/popupmenu/popup_sub_advance_menu.tpl
@@ -693,7 +693,7 @@ e8957d98d02ed11a1602202767ad673b  design/admin/templates/rss/confirmremove.tpl
 03fd311c7627cc1893088ff21a78a757  design/admin/templates/rss/edit_import.tpl
 b116c649bcd813b34c0f08e1215e2374  design/admin/templates/rss/edit_import_denied.tpl
 dbe5def951f76a833fe3992eb68bf430  design/admin/templates/rss/exp_list_script.tpl
-a42b3d892ad265ee4930b36534b0cb02  design/admin/templates/rss/list.tpl
+d6d8c28d155fa0e53cb163b3f25813d4  design/admin/templates/rss/list.tpl
 1943a083b2679d1c7377c4ef5521c327  design/admin/templates/search/stats.tpl
 052720f7c97b8455598f98c6d090eefd  design/admin/templates/section/assign_notification.tpl
 a4279bae7d293e5c7babc015f7c32f67  design/admin/templates/section/browse_assign.tpl
@@ -1107,7 +1107,7 @@ c20531ad4a051efb351cbda3956a85f9  design/admin4/templates/audit/alerts.tpl
 953b9598c4462aba83ef3152d8dd2ed3  design/admin4/templates/audit/console.tpl
 06723a5b5c5d8d178671b97d04939934  design/admin4/templates/audit/dashboard.tpl
 bb4be82737913f6bcac5dd528f603f13  design/admin4/templates/audit/event.tpl
-e5830af45ba722908f1d3c8e929700c5  design/admin4/templates/audit/export.tpl
+c7eb61d28396cc970a339e2328834ffc  design/admin4/templates/audit/export.tpl
 e30412269e3a1949f8e0be42fab23608  design/admin4/templates/audit/menu.tpl
 c7eb697cccc88a7038703f8fcc862659  design/admin4/templates/audit/reauth.tpl
 5c5b73653074e2bc5bb00bf12586d5c9  design/admin4/templates/audit/recent.tpl
@@ -1132,7 +1132,7 @@ ce3b91619885f77dcd20a2a20ec07d2f  design/admin4/templates/class/grouplist.tpl
 06850be333353d9dd80636d5d7cf527d  design/admin4/templates/class/select_language.tpl
 0968be0f253ab2b80b5c43d2aab0827b  design/admin4/templates/class/templates.tpl
 8eee0867bd7296f075e74e6a4d708c91  design/admin4/templates/class/translations.tpl
-7ada7eb4dc4f1b21e26acb474c8a6173  design/admin4/templates/class/view.tpl
+ad3b33e6a71336e4f4a949b5c7a96074  design/admin4/templates/class/view.tpl
 287cedb6f59889a93ee22e4cdf92ddff  design/admin4/templates/class/window_controls.tpl
 03a840054c5ab652032b65fa93bd3e2a  design/admin4/templates/class/windows.tpl
 ecda0ad69c9b183cee1135ab0f1af39c  design/admin4/templates/collaboration/group/view/list.tpl
@@ -1225,7 +1225,7 @@ ee9413387057151e421be661a3e3f0a1  design/admin4/templates/content/removeeditvers
 8af7e1a595938e62b11a169e03623ba0  design/admin4/templates/content/removetranslation.tpl
 72a5f36046a954b1a36ae80cd8df26bb  design/admin4/templates/content/restore.tpl
 b6e48b9b258ffbd0df2b2b9714d066fd  design/admin4/templates/content/reverserelatedlist.tpl
-cfd30bd384f7065da4028cfb8e2e15dc  design/admin4/templates/content/search.tpl
+bf15598a8d5eb20519ad48bed269804f  design/admin4/templates/content/search.tpl
 9050c722c511b224d365ddcc20c509a2  design/admin4/templates/content/searchresult.tpl
 f5c05b96a0d08b1c2aa472d971a245c2  design/admin4/templates/content/translationnew.tpl
 c60276c0a804238b6e5f375ccf4a61c5  design/admin4/templates/content/translations.tpl
@@ -1310,7 +1310,7 @@ a3a9ed0ab849c9c28ac4c2e462b48ace  design/admin4/templates/exphelp/viewer.tpl
 1930afe53fb5c2737daf2736356f4ca7  design/admin4/templates/infocollection_validation.tpl
 72abfe665421f43e983aacf2c464d832  design/admin4/templates/infocollector/collectionlist.tpl
 8f8b7d70c41a6658c9be431faf7e5d73  design/admin4/templates/infocollector/confirmremoval.tpl
-b3cdd2f40d888f0d068c611f652d4de5  design/admin4/templates/infocollector/overview.tpl
+a4ccc1bd52199f1b05404e4c4188763b  design/admin4/templates/infocollector/overview.tpl
 de4e5cdee8dfb17cd7debdcb194f465f  design/admin4/templates/infocollector/view.tpl
 d50ed721307da0cf67c3a8441de732a1  design/admin4/templates/locations.tpl
 4afaa15906dd467794c56fafc71176bb  design/admin4/templates/loginpagelayout.tpl
@@ -1377,7 +1377,7 @@ c622ac17e9b000d162a7574d5ef212ca  design/admin4/templates/package/creators/ezsty
 8542ba3a5e0921daf92a9ec3614e1d0a  design/admin4/templates/package/install.tpl
 fbc7903dcace3834930a9aec298d6d4c  design/admin4/templates/package/install_error.tpl
 5ebdfeb16e698e0f7b3e839bd60500f5  design/admin4/templates/package/install_header.tpl
-3232ad8771afc1d7b365d224b7c90140  design/admin4/templates/package/list.tpl
+bd6282874c2c8d0c41e47076bef4e901  design/admin4/templates/package/list.tpl
 63d74fb2d54c7ae9678cebba7c391791  design/admin4/templates/package/navigator.tpl
 ba711f3e3838e7a97fdf74925c62e907  design/admin4/templates/package/uninstall.tpl
 c13004679d63848d4d5f9d8027f91910  design/admin4/templates/package/uninstall_error.tpl
@@ -1427,7 +1427,7 @@ fa8f8c371e071bca043dc0ab05acd3dd  design/admin4/templates/parts/left_trash.tpl
 a0ccfa5e791431fc4654b5b3286aba11  design/admin4/templates/parts/my/mega_menu.tpl
 5622ed968a7d626e4219712e8b6bace4  design/admin4/templates/parts/my/menu.tpl
 cb5a028b13368bef7b3a094ad29e1ff7  design/admin4/templates/parts/setup/mega_menu.tpl
-7d1b0e0c989b6c91404c4fdb0cee303b  design/admin4/templates/parts/setup/menu.tpl
+79dfe2adaa14ecabaf2d85ad9854f7b1  design/admin4/templates/parts/setup/menu.tpl
 6b9cc8299e00a57f5695f7b9488b9e91  design/admin4/templates/parts/shop/menu.tpl
 23f43c9b4d1cc6d6043c29a0eb348d47  design/admin4/templates/parts/user/mega_menu.tpl
 990583de768c53cddecd0eb66eae658a  design/admin4/templates/parts/user/menu.tpl
@@ -1437,12 +1437,12 @@ c21d185b898e17117cea60a33acaff35  design/admin4/templates/parts/visual/menu.tpl
 2afbf845c7c8f5f8976e9c9d4ee526d1  design/admin4/templates/pdf/edit.tpl
 cecfc25166de6b8d63b0f6019fcc6d3b  design/admin4/templates/pdf/exp_list_script.tpl
 fbb04a3d65ad3b1456df03c573757770  design/admin4/templates/pdf/exp_problem.tpl
-53589acbeaad43e99e25980469f66b33  design/admin4/templates/pdf/list.tpl
+4f48c84672998242f0b6d4eea78ed107  design/admin4/templates/pdf/list.tpl
 042f35e32a4dd09de9fb6a6ebb134c1b  design/admin4/templates/policies.tpl
 e1a0c2dd058501083d6d68f51c3eae38  design/admin4/templates/popupmenu/popup_bookmark_menu.tpl
 0c933a8a4823432ea0770eb43eb77769  design/admin4/templates/popupmenu/popup_class_menu.tpl
 75e173ccdce6c55a63d4bce19fd60d08  design/admin4/templates/popupmenu/popup_context_menu.tpl
-ddeae7a463df12fb86d0a1a6b6835ec1  design/admin4/templates/popupmenu/popup_export_items.tpl
+857fcddd524286ed5ee42f56be5bdc96  design/admin4/templates/popupmenu/popup_export_items.tpl
 1458d4bc28cc112faac27de0121bce13  design/admin4/templates/popupmenu/popup_import_export_menu.tpl
 9f1dd21b909d4f1bfecd0b80d235f76f  design/admin4/templates/popupmenu/popup_menu.tpl
 f20c62d1526c0a941b2584243f08dbbf  design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl
@@ -1476,7 +1476,7 @@ f75bc9474618a9c0532c426899429b04  design/admin4/templates/rss/edit_export.tpl
 5fbad5ef39e0a3e4dc1e30362d34bf8b  design/admin4/templates/rss/edit_import.tpl
 b116c649bcd813b34c0f08e1215e2374  design/admin4/templates/rss/edit_import_denied.tpl
 728a97edf507e070286c58b5085dd8f6  design/admin4/templates/rss/exp_list_script.tpl
-3b7f46db4319f32097df8ecffa6e8281  design/admin4/templates/rss/list.tpl
+a63cf3ee963929585a4aa9a082df317e  design/admin4/templates/rss/list.tpl
 1943a083b2679d1c7377c4ef5521c327  design/admin4/templates/search/stats.tpl
 052720f7c97b8455598f98c6d090eefd  design/admin4/templates/section/assign_notification.tpl
 a4279bae7d293e5c7babc015f7c32f67  design/admin4/templates/section/browse_assign.tpl
@@ -3004,6 +3004,10 @@ ae2e9135bb5590d8c6a29323dee3f340  design/standard/templates/toolbar/line/node_li
 2ccc62b1ad01e26bae81820c94f46226  design/standard/templates/toolbar/line/searchbox.tpl
 7feba948e049b54441cd8d839db5d4ba  design/standard/templates/toolbar/line/setup_link.tpl
 4de0de4d35cf0a20d1c4fbce4f499fe0  design/standard/templates/toolbar/line/users.tpl
+a24b01c7dcf986c2e50fe256678c924f  design/standard/templates/transfer/actions.tpl
+ac7d950ef9f22adfb377f48f18ff0c7e  design/standard/templates/transfer/left_menu.tpl
+bd825ba562186bb84f01d55bfbb2f498  design/standard/templates/transfer/looking_for.tpl
+c26d83da42e6d58b7cd48639f9ee3530  design/standard/templates/transfer/search_suggestions.tpl
 75f53ce9586269831ab066c62dc3c4c0  design/standard/templates/trigger/list.tpl
 1cb2833e901579db065bbb148f962e9a  design/standard/templates/uiswitch/grouped.tpl
 7385d34bdc856c78d52c411b7cd735c5  design/standard/templates/uiswitch/refused.tpl
@@ -24064,7 +24068,7 @@ dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-b76810b8e697327a27e03f9034fec37e  share/translations/eng-US/translation.ts
+a9298506db5940938837b3119d8606be  share/translations/eng-US/translation.ts
 494a72237f2b99e7ff098df6fa9339d6  share/translations/esl-ES/translation.ts
 a7a28901e0614f18dca43236ab43815e  share/translations/esl-MX/translation.ts
 0d893017d9cb28076b20f47b84f583cc  share/translations/fas-IR/translation.ts
@@ -24072,7 +24076,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 c2548f11cf751134fed7560c3f0b0204  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-9a98c315aa030fceb2aaa716bf509c46  share/translations/ger-DE/translation.ts
+b9da4378cc1eb1ac28e81ff8f48f6542  share/translations/ger-DE/translation.ts
 6b1954808805a24407921e51baa34a0b  share/translations/heb-IL/translation.ts
 061c1972d59c9c6deefd8c903aa2708c  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -24092,7 +24096,7 @@ ff02ef2713c7b6d98935892ba8cda520  share/translations/swe-SE/translation.ts
 e33d8d06d236157cdb29177ac7e13cdf  share/translations/tur-TR/translation.ts
 ba3bac76c0c480ad49967a5cafdb8976  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-941b39e64d58370ee09131fd637318f9  share/translations/untranslated/translation.ts
+403d45adf2f58d9fd61699c1b66a8b5d  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
