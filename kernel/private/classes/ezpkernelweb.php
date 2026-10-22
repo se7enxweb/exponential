@@ -126,28 +126,15 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     public function __construct( array $settings = array() )
     {
-        // A new request: the query cache's memo, settings and state view start
-        // empty, also in a persistent worker that served one before.
-        if ( class_exists( 'eZDBQueryCache' ) )
-            eZDBQueryCache::resetRequest();
-        if ( method_exists( 'eZDBInterface', 'resetSQLProfile' ) )
-            eZDBInterface::resetSQLProfile();
-        // The Content Security Policy nonce of the request before is not reused
-        if ( method_exists( 'expContentSecurityPolicy', 'reset' ) )
-            expContentSecurityPolicy::reset();
-        // The audit too: what a previous request left is flushed, then its buffer, request id, open parent
-        // events and cached actors are cleared (doc/eng-us/bc/6.0/audit.md, "Buffering and flushing")
-        if ( class_exists( 'expAudit' ) )
-            expAudit::resetRequest();
-        // What the debug bar's Rendering tab shows of the previous request
-        if ( class_exists( 'expRenderStats' ) )
-            expRenderStats::resetRequest();
-        // The request log (404.log, security.log): the reason and the verdict of the previous request are gone
-        if ( class_exists( 'expRequestLog' ) )
-            expRequestLog::reset();
-        // and the classifier is built again from this request's siteaccess settings when it is first asked
-        if ( class_exists( 'expRequestClassifier' ) && method_exists( 'expRequestClassifier', 'reset' ) )
-            expRequestClassifier::reset();
+        // A new request: the request scope of the kernel service container starts. Its reset hooks are the
+        // kernel's per-request resets, in the order they always ran here (the query cache's memo, the SQL
+        // profile, the Content Security Policy nonce, the audit, the render statistics, the request log and its
+        // classifier: expKernelServiceScope::DEFAULT_RESET_HOOKS), then those registered with
+        // expKernelServiceScope::onRequestReset(); also in a persistent worker that served one before. Loaded by
+        // path when the class map of a running worker does not know the class yet.
+        if ( !class_exists( 'expKernelServiceScope' ) )
+            require_once __DIR__ . '/../../classes/expkernelservicescope.php';
+        expKernelServiceScope::resetRequest();
 
         if ( isset( $settings['injected-settings'] ) )
         {
@@ -202,6 +189,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             'module-repositories' => array(),// List of directories to search for modules
         );
         $this->siteBasics =& $GLOBALS['eZSiteBasics'];
+
+        // The kernel service container (settings/kernelservices.ini). With a compiled container the two extension
+        // activation passes below apply what was recorded for this installation, and the settings files are kept
+        // for the worker; without one, with [ContainerSettings] Mode other than compiled, or when this request does
+        // not start from the recorded state, everything below runs as it always did. Not called when the class map
+        // of a running worker does not know the class yet.
+        if ( class_exists( 'expKernelServices' ) )
+            expKernelServices::bootWeb( $this->settings );
 
         // Reads settings from i18n.ini and passes them to eZTextCodec.
         list(
@@ -326,6 +321,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         // Now that all extensions are activated and siteaccess has been changed, reset
         // all eZINI instances as they may not take into account siteaccess specific settings.
         eZINI::resetAllInstances( false );
+        // With the compiled container applied: from here on the settings files of this siteaccess come from the
+        // worker scope (built once per worker), and the container of the request has the compiled definitions
+        if ( class_exists( 'expKernelServices', false ) )
+            expKernelServices::enterSiteAccess();
 
         ezpEvent::getInstance()->registerEventListeners();
 

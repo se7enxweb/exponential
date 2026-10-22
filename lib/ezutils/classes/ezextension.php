@@ -348,6 +348,14 @@ class eZExtension
      */
     static function activateExtensions( $extensionType = 'default', ?eZINI $siteINI = null )
     {
+        // The kernel service container (expKernelServices, booted by the web kernel) holds the result of this pass
+        // for the global site.ini, recorded from an earlier run with exactly the same starting state; it applies it
+        // and says so, or says no and records this run. Not loaded here: without a booted container, nothing changes.
+        $container = $siteINI === null && ( $extensionType === 'default' || $extensionType === 'access' )
+                     && class_exists( 'expKernelServices', false ) && expKernelServices::isBooted();
+        if ( $container && expKernelServices::applyExtensionStage( $extensionType ) )
+            return;
+
         if ( $siteINI === null )
         {
             $siteINI = eZINI::instance();
@@ -380,6 +388,51 @@ class eZExtension
         }
         if ( $hasExtensions )
             $siteINI->load();
+
+        if ( $container )
+            expKernelServices::recordExtensionStage( $extensionType );
+    }
+
+    /**
+     * The extension name, path and active-list caches of this process, for the kernel service container to record.
+     *
+     * @since 6.0.15
+     * @return array array( 'paths' => array, 'names' => array, 'active' => array )
+     */
+    public static function exportCaches()
+    {
+        return array( 'paths' => self::$extensionPathCache, 'names' => self::$extensionNameCache,
+                      'active' => self::$activeExtensionsCache );
+    }
+
+    /**
+     * Fills the extension name, path and active-list caches from a recording of the kernel service container, so
+     * the directories are not looked up on disk again. Entries already known stay.
+     *
+     * @since 6.0.15
+     * @param array $caches As exportCaches() returns
+     */
+    public static function seedCaches( array $caches )
+    {
+        if ( !empty( $caches['paths'] ) && is_array( $caches['paths'] ) )
+            self::$extensionPathCache += $caches['paths'];
+        if ( !empty( $caches['names'] ) && is_array( $caches['names'] ) )
+            self::$extensionNameCache += $caches['names'];
+        if ( !empty( $caches['active'] ) && is_array( $caches['active'] ) )
+            self::$activeExtensionsCache += $caches['active'];
+    }
+
+    /**
+     * Forgets the extension name, path and active-list caches of this process (the kernel service compiler, which
+     * records one siteaccess after another as if each were the first request of a process).
+     *
+     * @since 6.0.15
+     */
+    public static function clearCaches()
+    {
+        self::$extensionPathCache = array();
+        self::$extensionNameCache = array();
+        self::clearActiveExtensionsMemoryCache();
     }
 
     /**

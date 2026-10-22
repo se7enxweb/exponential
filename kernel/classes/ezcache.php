@@ -234,6 +234,18 @@ class eZCache
                                        'function' => array( 'eZSSLZone', 'clearCache' ),
                                        'purge-function' => array( 'eZSSLZone', 'clearCache' )
                                 ),
+                                // The compiled kernel service container (settings/kernelservices.ini): a recording
+                                // of the extension activation per siteaccess. Last of the INI caches, so a compile
+                                // on the command line reads the settings files afresh; a web request only removes
+                                // it (each siteaccess records itself again on its next request).
+                                array( 'name' => ezpI18n::tr( 'kernel/cache', 'Kernel services (compiled container)' ),
+                                       'id' => 'kernelservices',
+                                       'tag' => array( 'ini' ),
+                                       'enabled' => class_exists( 'expKernelServiceCompiler' ) && expKernelServiceCompiler::cacheItemEnabled(),
+                                       'path' => false,
+                                       'function' => array( 'expKernelServiceCompiler', 'clearCacheItem' ),
+                                       'purge-function' => array( 'expKernelServiceCompiler', 'clearCacheItem' )
+                                ),
             );
 
             // Append cache items defined (in ini) by extensions, see site.ini[Cache] for details

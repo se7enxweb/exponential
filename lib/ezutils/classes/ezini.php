@@ -118,6 +118,28 @@ class eZINI
     static protected $instances = array();
 
     /**
+     * The worker-scoped store of the kernel service container (expKernelServices), or null when none is attached.
+     *
+     * An object with a public array property "ini": [state][instance key] => eZINI, each a pristine copy taken
+     * right after the instance was built. While a store is attached, instance() hands out a copy of the stored
+     * instance instead of loading the file again, and stores a copy of every instance it builds. The container
+     * attaches it only while the override directories are exactly those of a recorded state (see
+     * attachSharedStore()); any change of the global override directories, any reset and any save detaches or
+     * empties it again, so the next instance is built from the files as before. An object and never a reference:
+     * a persistent worker that puts every static back after a request then only drops the handle.
+     *
+     * @var object|null
+     */
+    static protected $sharedStore = null;
+
+    /**
+     * The state the attached store is used for (a string the container chose), or null.
+     *
+     * @var string|null
+     */
+    static protected $sharedState = null;
+
+    /**
      * Contains whether INI cache is globally enabled.
      *
      * @var bool
@@ -1358,6 +1380,9 @@ class eZINI
             return false;
         }
 
+        // a settings file is written: no copy the kernel service container keeps for its worker scope is current
+        self::flushSharedStore();
+
         $lineSeparator = eZSys::lineSeparator();
         $pathArray = array();
         $dirArray = array();
@@ -2236,7 +2261,11 @@ class eZINI
         if ( $this->UseLocalOverrides == true )
             $dirs =& $this->LocalOverrideDirArray;
         else
+        {
             $dirs =& self::$GlobalOverrideDirArray;
+            // the global directories change: no stored instance of the kernel service container matches them
+            self::detachSharedStore();
+        }
 
         if ( $scope === false )
             $dirs = $newDirs;
@@ -2254,6 +2283,7 @@ class eZINI
     static public function resetGlobalOverrideDirs()
     {
         self::$GlobalOverrideDirArray = self::defaultOverrideDirs();
+        self::detachSharedStore();
     }
 
     /**
@@ -2277,7 +2307,11 @@ class eZINI
         if ( $this->UseLocalOverrides == true )
             $dirs =& $this->LocalOverrideDirArray;
         else
+        {
             $dirs =& self::$GlobalOverrideDirArray;
+            // the global directories change: no stored instance of the kernel service container matches them
+            self::detachSharedStore();
+        }
 
         if ( !$identifier || !is_string( $identifier ) )
         {
@@ -2321,7 +2355,11 @@ class eZINI
         if ( $this->UseLocalOverrides == true )
             $dirs =& $this->LocalOverrideDirArray;
         else
+        {
             $dirs =& self::$GlobalOverrideDirArray;
+            // the global directories change: no stored instance of the kernel service container matches them
+            self::detachSharedStore();
+        }
 
         $scope = self::selectOverrideScope( $scope, $identifier, $dir, 'extension' );
 
@@ -2365,7 +2403,11 @@ class eZINI
         if ( $this->UseLocalOverrides == true )
             $dirs =& $this->LocalOverrideDirArray;
         else
+        {
             $dirs =& self::$GlobalOverrideDirArray;
+            // the global directories change: no stored instance of the kernel service container matches them
+            self::detachSharedStore();
+        }
 
         $scope = self::selectOverrideScope( $scope, $identifier, $dir, 'override' );
 
@@ -2967,9 +3009,98 @@ class eZINI
         $key = "$rootDir-$fileName-$useLocalOverrides";
         if ( !isset( self::$instances[$key] ) )
         {
+            if ( self::$sharedState !== null )
+            {
+                // the kernel service container's worker scope: the same file under the same override directories
+                // was built before (by this request or an earlier one of this worker)
+                $state = self::$sharedState;
+                if ( isset( self::$sharedStore->ini[$state][$key] ) )
+                {
+                    self::$instances[$key] = clone self::$sharedStore->ini[$state][$key];
+                    return self::$instances[$key];
+                }
+                $instance = new eZINI( $fileName, $rootDir, $useTextCodec, $useCache, $useLocalOverrides, $directAccess, $addArrayDefinition );
+                self::$instances[$key] = $instance;
+                // building it can have changed the override directories (override.ini prepends the extension
+                // siteaccesses): stored only when the store is still attached to the same state
+                if ( self::$sharedState === $state )
+                    self::$sharedStore->ini[$state][$key] = clone $instance;
+                return $instance;
+            }
             self::$instances[$key] = new eZINI( $fileName, $rootDir, $useTextCodec, $useCache, $useLocalOverrides, $directAccess, $addArrayDefinition );
         }
         return self::$instances[$key];
+    }
+
+    /**
+     * Attaches the worker-scoped store of the kernel service container for one state of the override directories.
+     *
+     * Called by expKernelServices only, right after it has set the global override directories to a recorded
+     * state, and only when the INI cache does not check file times either (EZP_INI_FILEMTIME_CHECK false): a
+     * stored instance is then exactly what loading the file again would give. The instances built so far stay;
+     * those built from now on come from, and go into, $store->ini[$state].
+     *
+     * @since 6.0.15
+     * @param object $store An object with a public array property "ini"
+     * @param string $state
+     */
+    static function attachSharedStore( $store, $state )
+    {
+        if ( !is_object( $store ) || !is_string( $state ) || $state === '' )
+        {
+            self::detachSharedStore();
+            return;
+        }
+        if ( !isset( $store->ini ) || !is_array( $store->ini ) )
+            $store->ini = array();
+        self::$sharedStore = $store;
+        self::$sharedState = $state;
+    }
+
+    /**
+     * Detaches the worker-scoped store: instance() builds from the files again, as without a container. The store
+     * stays known, so that a save() or resetInstance() later in the request still empties it.
+     *
+     * @since 6.0.15
+     */
+    static function detachSharedStore()
+    {
+        self::$sharedState = null;
+    }
+
+    /**
+     * Forgets the worker-scoped store altogether (expKernelServices::reset(), tests).
+     *
+     * @since 6.0.15
+     */
+    static function releaseSharedStore()
+    {
+        self::$sharedStore = null;
+        self::$sharedState = null;
+    }
+
+    /**
+     * The state the worker-scoped store is attached for, or null when none is attached.
+     *
+     * @since 6.0.15
+     * @return string|null
+     */
+    static function sharedStoreState()
+    {
+        return self::$sharedState;
+    }
+
+    /**
+     * Empties the worker-scoped store (every state) and detaches it: after a settings file was written or the INI
+     * cache cleared, no stored instance may be handed out again.
+     *
+     * @since 6.0.15
+     */
+    static function flushSharedStore()
+    {
+        if ( self::$sharedStore !== null )
+            self::$sharedStore->ini = array();
+        self::detachSharedStore();
     }
 
     /*!
@@ -3048,7 +3179,14 @@ class eZINI
      */
     static function resetInstance( $fileName = 'site.ini', $rootDir = 'settings', $useLocalOverrides = null )
     {
-        unset( self::$instances["$rootDir-$fileName-$useLocalOverrides"] );
+        $key = "$rootDir-$fileName-$useLocalOverrides";
+        unset( self::$instances[$key] );
+        // the next instance() reads the file again, not a stored copy
+        if ( self::$sharedStore !== null )
+        {
+            foreach ( array_keys( self::$sharedStore->ini ) as $state )
+                unset( self::$sharedStore->ini[$state][$key] );
+        }
     }
 
     /**
@@ -3075,6 +3213,9 @@ class eZINI
     static function resetAllInstances( $resetGlobalOverrideDirs = true )
     {
         self::$instances = array();
+        // every instance is built again from the files; the kernel service container attaches its store again
+        // once the override directories are those of a recorded state
+        self::detachSharedStore();
 
         if ( $resetGlobalOverrideDirs )
             self::resetGlobalOverrideDirs();

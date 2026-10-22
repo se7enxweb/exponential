@@ -50,7 +50,10 @@ class expVelocity
      * which cannot be refilled once cleared because include_once will not run
      * that file again: clearing one leaves a worker unable to resolve a
      * datatype, a workflow event, a notification event or a payment gateway
-     * for the rest of its life. They are facts about the kernel, not choices
+     * for the rest of its life. The last one is the worker scope of the
+     * kernel service container (expKernelServices), which is what makes a
+     * worker build its settings once instead of on every request; without it
+     * the container works as on PHP-FPM, one request long. They are facts about the kernel, not choices
      * of an installation, so they live here rather than in a file under /etc
      * or a setting someone has to remember. Settings and --keep-global append
      * to this list; [ApplicationSettings] KeepGlobalsDefaults=disabled drops it.
@@ -60,6 +63,9 @@ class expVelocity
         'eZWorkflowTypes', 'eZWorkflowTypeObjects', 'eZWorkflowAllowedTypes',
         'eZNotificationEventTypes', 'eZNotificationEventTypeObjects', 'eZNotificationEventTypeAllowedTypes',
         'eZPaymentGateways',
+        // The worker scope of the kernel service container (expKernelServiceScope::WORKER_GLOBAL): the settings
+        // objects and worker-scoped services of each siteaccess, built once per worker. Holds nothing of a request.
+        'expKernelServicesWorker',
     );
 
     /**

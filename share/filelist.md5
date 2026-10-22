@@ -23387,6 +23387,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 4aa8729ed24e4daafb1546cee1942e99  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 487e832749fab3848ed2ef2c039cf0c8  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
+6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
 005e68dac380fb8240e13d69320e6dce  tests/tests/kernel/classes/expLoveStackCheckTest.php
 8e2cf124d80d40e3228e49c616a36389  tests/tests/kernel/classes/expLoveStackFixture.php

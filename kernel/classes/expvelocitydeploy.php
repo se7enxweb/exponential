@@ -21,7 +21,9 @@
  *
  *   1  extension autoloads             bin/php/ezpgenerateautoloads.php -e
  *   2  kernel autoloads (--kernel)     bin/php/ezpgenerateautoloads.php -k, kernel/ and lib/ only
- *   3  INI caches                      bin/php/ezcache.php --clear-tag=ini
+ *   3  INI caches                      bin/php/ezcache.php --clear-tag=ini; its last item,
+ *                                      kernelservices, compiles the kernel service
+ *                                      container again (exp:services:compile)
  *   4  template, template-override, translation and design_base caches,
  *      one id per call
  *   5  engine archive                  bin/php/phar.php build: rebuilt only when a file

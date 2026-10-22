@@ -33,6 +33,7 @@ class expCacheCatalogue
         'design_base' => 'templates', 'ezjscore-packer' => 'templates', 'texttoimage' => 'templates',
         'global_ini' => 'settings', 'ini' => 'settings', 'active_extensions' => 'settings', 'sslzones' => 'settings',
         'codepage' => 'settings', 'rest-routes' => 'settings', 'translation' => 'settings', 'chartrans' => 'settings',
+        'kernelservices' => 'settings',
         'imagealias' => 'images',
         'exphttpcache' => 'velocity', 'querycache' => 'velocity',
     );
@@ -70,6 +71,7 @@ class expCacheCatalogue
         'rest'              => 'Answers of the REST interface.',
         'rest-routes'       => 'The routes of the REST interface.',
         'ezjscore-packer'   => 'Packed and minified scripts and style sheets.',
+        'kernelservices'    => 'The compiled kernel service container: the extension activation of each siteaccess, recorded.',
     );
 
     /** Caches a running Velocity keeps in memory as well: clearing the files is not enough for it */
